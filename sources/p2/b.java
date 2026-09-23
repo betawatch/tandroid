@@ -33,17 +33,18 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.f90;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.oc;
-import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.vc;
-import org.telegram.ui.bo;
-import org.telegram.ui.mj0;
-import pg.a1;
-import pg.c1;
-import pg.q0;
-import pg.x0;
+import org.telegram.ui.Components.b2;
+import org.telegram.ui.Components.g90;
+import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.xc;
+import org.telegram.ui.dt;
+import org.telegram.ui.xn;
+import pg.b1;
+import pg.d1;
+import pg.r0;
+import pg.y0;
 import qg.a2;
 import qg.m2;
 import qg.p0;
@@ -56,9 +57,10 @@ import s4.c0;
 import tg.b0;
 import tg.n1;
 import tg.w;
-import u2.u0;
+import tg.x0;
+import u2.t0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -102,24 +104,24 @@ public final /* synthetic */ class b implements Runnable {
                 cVar.d(uri);
                 return;
             case 1:
-                q0 q0Var = (q0) this.b;
-                x0 x0Var = (x0) this.c;
-                q0Var.v = true;
-                ByteBuffer byteBuffer = (ByteBuffer) q0Var.h(q0Var.f(), true, false, false).c;
-                RectF f7 = q0Var.f();
-                Object obj = q0Var.a.b;
-                q0Var.w = new a5.a(byteBuffer, 0, f7);
-                q0Var.a(false);
-                x0Var.run();
+                r0 r0Var = (r0) this.b;
+                y0 y0Var = (y0) this.c;
+                r0Var.v = true;
+                ByteBuffer byteBuffer = (ByteBuffer) r0Var.h(r0Var.f(), true, false, false).c;
+                RectF f7 = r0Var.f();
+                Object obj = r0Var.a.b;
+                r0Var.w = new a5.a(byteBuffer, 0, f7);
+                r0Var.a(false);
+                y0Var.run();
                 return;
             case 2:
-                c1 c1Var = (c1) this.b;
+                d1 d1Var = (d1) this.b;
                 Runnable runnable = (Runnable) this.c;
-                a1 a1Var = c1Var.d;
-                if (a1Var == null || !a1Var.f) {
+                b1 b1Var = d1Var.d;
+                if (b1Var == null || !b1Var.f) {
                     return;
                 }
-                a1.b(a1Var);
+                b1.b(b1Var);
                 runnable.run();
                 return;
             case 3:
@@ -133,7 +135,7 @@ public final /* synthetic */ class b implements Runnable {
                     pVar.a = null;
                     pVar.b = bVar;
                 }
-                aVar.j(bVar);
+                aVar.g(bVar);
                 return;
             case 4:
                 a();
@@ -157,7 +159,7 @@ public final /* synthetic */ class b implements Runnable {
                     p2Var.b0.setScaleX(0.3f);
                     p2Var.b0.setScaleY(0.3f);
                     p2Var.b0.setAlpha(0.0f);
-                    p2Var.b0.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(250L).setInterpolator(qr.f).start();
+                    p2Var.b0.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(250L).setInterpolator(rr.f).start();
                     return;
                 }
                 return;
@@ -194,7 +196,7 @@ public final /* synthetic */ class b implements Runnable {
                 j0 j0Var = (j0) this.b;
                 TLObject tLObject = (TLObject) this.c;
                 ArrayList arrayList2 = j0Var.i0;
-                ll0 ll0Var = j0Var.d;
+                ml0 ml0Var = j0Var.d;
                 if (tLObject != null) {
                     arrayList2.clear();
                     arrayList2.addAll(((TLRPC.TL_messages_chats) tLObject).chats);
@@ -202,17 +204,17 @@ public final /* synthetic */ class b implements Runnable {
                     j0Var.J0.b(j0Var.n0 + 4);
                     int i12 = 0;
                     while (true) {
-                        if (i12 >= ll0Var.getChildCount()) {
+                        if (i12 >= ml0Var.getChildCount()) {
                             i10 = 0;
-                        } else if (ll0Var.getChildAt(i12) instanceof i0) {
-                            i10 = ll0Var.getChildAt(i12).getTop();
+                        } else if (ml0Var.getChildAt(i12) instanceof i0) {
+                            i10 = ml0Var.getChildAt(i12).getTop();
                         } else {
                             i12++;
                         }
                     }
                     j0Var.M1();
                     if (j0Var.l0 >= 0 && i10 != 0) {
-                        ((c0) ll0Var.getLayoutManager()).h1(j0Var.l0 + 1, i10);
+                        ((c0) ml0Var.getLayoutManager()).h1(j0Var.l0 + 1, i10);
                     }
                 }
                 int max = Math.max(arrayList2.size(), j0Var.M0.b);
@@ -223,7 +225,7 @@ public final /* synthetic */ class b implements Runnable {
                 h0Var.requestLayout();
                 return;
             case 13:
-                ((j0) this.b).m1((f90) this.c, true);
+                ((j0) this.b).m1((g90) this.c, true);
                 return;
             case 14:
                 z1 z1Var = (z1) this.b;
@@ -243,13 +245,13 @@ public final /* synthetic */ class b implements Runnable {
                 }
                 return;
             case 17:
-                ((tg.x0) this.b).run((ArrayList) this.c);
+                ((x0) this.b).run((ArrayList) this.c);
                 return;
             case 18:
                 ((w) this.b).run((TLRPC.TL_error) this.c);
                 return;
             case 19:
-                ((mj0) this.b).run((ArrayList) this.c);
+                ((dt) this.b).run((ArrayList) this.c);
                 return;
             case 20:
                 MessagesStorage messagesStorage = (MessagesStorage) this.b;
@@ -258,10 +260,10 @@ public final /* synthetic */ class b implements Runnable {
                 if (smallGroupsParticipantsCount == null || smallGroupsParticipantsCount.isEmpty()) {
                     return;
                 }
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.a2(callback, smallGroupsParticipantsCount, 1));
+                AndroidUtilities.runOnUIThread(new b2(callback, smallGroupsParticipantsCount, 1));
                 return;
             case 21:
-                oc M = vc.a0((bo) this.b).M(LocaleController.getString(R.string.StarsGiveawaySentPopup), AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("StarsGiveawaySentPopupInfo", (int) ((TL_stars.TL_starsGiveawayOption) this.c).stars)), R.raw.stars_send);
+                qc M = xc.a0((xn) this.b).M(LocaleController.getString(R.string.StarsGiveawaySentPopup), AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("StarsGiveawaySentPopupInfo", (int) ((TL_stars.TL_starsGiveawayOption) this.c).stars)), R.raw.stars_send);
                 M.j = 5000;
                 M.k(true);
                 return;
@@ -278,7 +280,7 @@ public final /* synthetic */ class b implements Runnable {
                 ((e2.h) this.b).accept(this.c);
                 return;
             case 25:
-                ((u0) this.b).A((c3.b0) this.c);
+                ((t0) this.b).A((c3.b0) this.c);
                 return;
             case 26:
                 uf.c cVar2 = (uf.c) this.b;

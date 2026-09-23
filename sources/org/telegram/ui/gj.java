@@ -1,24 +1,46 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class gj extends org.telegram.ui.Components.sv {
-    public final /* synthetic */ bo W;
+public final class gj extends dh.b {
+    public final /* synthetic */ int n;
+    public final /* synthetic */ xn r;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gj(bo boVar, org.telegram.ui.ActionBar.n2 n2Var, Activity activity, org.telegram.ui.ActionBar.e6 e6Var, ArrayList arrayList) {
-        super(n2Var, activity, e6Var, arrayList);
-        this.W = boVar;
+    public /* synthetic */ gj(xn xnVar, org.telegram.ui.ActionBar.d6 d6Var, int i10, int i11) {
+        super(i10, d6Var);
+        this.n = i11;
+        this.r = xnVar;
     }
 
-    @Override // org.telegram.ui.Components.sv, org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
-    public final void dismiss() {
-        super.dismiss();
-        bo boVar = this.W;
-        boVar.getClass();
-        boVar.g8(false, true, 0.0f);
+    @Override // dh.b, dh.a
+    public final int H() {
+        int i10;
+        int i11;
+        switch (this.n) {
+            case 0:
+                xn xnVar = this.r;
+                i10 = ((org.telegram.ui.ActionBar.n2) xnVar).currentAccount;
+                if (!eh.b.c(i10, xnVar.ea)) {
+                    break;
+                } else if (xnVar.ea != null && !org.telegram.ui.ActionBar.h6.I.q()) {
+                    break;
+                } else {
+                    break;
+                }
+                break;
+            default:
+                xn xnVar2 = this.r;
+                i11 = ((org.telegram.ui.ActionBar.n2) xnVar2).currentAccount;
+                if (!eh.b.c(i11, xnVar2.ea)) {
+                    break;
+                } else if (xnVar2.ea != null && !org.telegram.ui.ActionBar.h6.I.q()) {
+                    break;
+                } else {
+                    break;
+                }
+                break;
+        }
+        return this.d;
     }
 }

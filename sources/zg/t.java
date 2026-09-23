@@ -12,16 +12,16 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Cells.t1;
-import org.telegram.ui.Components.kb0;
-import org.telegram.ui.Components.qr;
-import org.telegram.ui.bo;
-import org.telegram.ui.hk;
-import org.telegram.ui.uj;
+import org.telegram.ui.Components.kg0;
+import org.telegram.ui.Components.rr;
+import org.telegram.ui.ek;
+import org.telegram.ui.rj;
+import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class t extends FrameLayout {
-    public final bo a;
+    public final xn a;
     public s b;
     public List c;
     public boolean d;
@@ -36,17 +36,17 @@ public final class t extends FrameLayout {
     public boolean x;
     public final int[] y;
 
-    public t(bo boVar, Context context) {
+    public t(xn xnVar, Context context) {
         super(context);
         this.c = Collections.EMPTY_LIST;
         this.f = 22;
         this.h = 24;
         this.y = new int[2];
         setVisibility(8);
-        this.a = boVar;
+        this.a = xnVar;
         setClipToPadding(false);
         setClipChildren(false);
-        boVar.x0.j(new kb0(this, 22));
+        xnVar.x0.j(new kg0(this, 21));
     }
 
     public final void a(boolean z10) {
@@ -114,17 +114,17 @@ public final class t extends FrameLayout {
             }
             AndroidUtilities.runOnUIThread(new r(this, 0));
         }
-        bo boVar = this.a;
-        uj ujVar = boVar.x0;
+        xn xnVar = this.a;
+        rj rjVar = xnVar.x0;
         int[] iArr = this.y;
-        ujVar.getLocationInWindow(iArr);
+        rjVar.getLocationInWindow(iArr);
         boolean z13 = true;
         float f12 = iArr[1];
         getLocationInWindow(iArr);
-        float f13 = (f12 - iArr[1]) - boVar.N9;
+        float f13 = (f12 - iArr[1]) - xnVar.N9;
         boolean z14 = false;
-        for (int i10 = 0; i10 < ujVar.getChildCount(); i10++) {
-            View childAt = ujVar.getChildAt(i10);
+        for (int i10 = 0; i10 < rjVar.getChildCount(); i10++) {
+            View childAt = rjVar.getChildAt(i10);
             if (childAt instanceof t1) {
                 t1 t1Var = (t1) childAt;
                 MessageObject messageObject = t1Var.getMessageObject();
@@ -146,7 +146,7 @@ public final class t extends FrameLayout {
                         }
                         sVar3.setPadding(i12, dp2, dp3 + i11, AndroidUtilities.dp(f14));
                     }
-                    int height2 = getHeight() != 0 ? getHeight() : ujVar.getHeight();
+                    int height2 = getHeight() != 0 ? getHeight() : rjVar.getHeight();
                     if (t1Var.getCurrentMessagesGroup() != null) {
                         MessageObject.GroupedMessages.TransitionParams transitionParams = t1Var.getCurrentMessagesGroup().transitionParams;
                         height = transitionParams.bottom - transitionParams.top;
@@ -156,9 +156,9 @@ public final class t extends FrameLayout {
                     float y3 = (t1Var.getY() + f13) - AndroidUtilities.dp(74.0f);
                     float dp4 = AndroidUtilities.dp(14.0f);
                     float dp5 = height2 - AndroidUtilities.dp(218.0f);
-                    hk hkVar = boVar.X1;
-                    if (hkVar != null && hkVar.getVisibility() == 0) {
-                        dp4 += hkVar.getHeight();
+                    ek ekVar = xnVar.X1;
+                    if (ekVar != null && ekVar.getVisibility() == 0) {
+                        dp4 += ekVar.getHeight();
                     }
                     float f15 = height;
                     if (y3 > dp4 - (f15 / 2.0f) && y3 < dp5) {
@@ -171,7 +171,7 @@ public final class t extends FrameLayout {
                             if (!z10) {
                                 this.n = this.r;
                             }
-                            float interpolation = (qr.f.getInterpolation(this.n) * this.s) + y3;
+                            float interpolation = (rr.f.getInterpolation(this.n) * this.s) + y3;
                             sVar = this.b;
                             if (sVar != null) {
                                 return;
@@ -187,7 +187,7 @@ public final class t extends FrameLayout {
                                     this.b.setVisibility(0);
                                     if (!this.x) {
                                         this.x = true;
-                                        this.b.p(this.e, boVar.Z7, true);
+                                        this.b.p(this.e, xnVar.Z7, true);
                                     }
                                 }
                             }
@@ -233,7 +233,7 @@ public final class t extends FrameLayout {
                     z12 = true;
                     if (!z10) {
                     }
-                    float interpolation2 = (qr.f.getInterpolation(this.n) * this.s) + y3;
+                    float interpolation2 = (rr.f.getInterpolation(this.n) * this.s) + y3;
                     sVar = this.b;
                     if (sVar != null) {
                     }
@@ -267,10 +267,10 @@ public final class t extends FrameLayout {
         TLRPC.ChatFull chatFull;
         TLRPC.Message message;
         this.c = list;
-        bo boVar = this.a;
-        int i10 = boVar.R3;
+        xn xnVar = this.a;
+        int i10 = xnVar.R3;
         boolean z10 = true;
-        if (i10 != 1 && i10 != 5 && i10 != 6 && !boVar.A9() && !boVar.v() && (((chatFull = boVar.Z7) == null || !(chatFull.available_reactions instanceof TLRPC.TL_chatReactionsNone)) && !list.isEmpty())) {
+        if (i10 != 1 && i10 != 5 && i10 != 6 && !xnVar.A9() && !xnVar.v() && (((chatFull = xnVar.Z7) == null || !(chatFull.available_reactions instanceof TLRPC.TL_chatReactionsNone)) && !list.isEmpty())) {
             long j3 = 0;
             boolean z11 = false;
             for (MessageObject messageObject : list) {

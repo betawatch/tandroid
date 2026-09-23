@@ -1,44 +1,132 @@
 package org.telegram.ui.Components;
 
-import android.view.KeyEvent;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.view.View;
+import android.view.animation.DecelerateInterpolator;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n80 implements org.telegram.ui.ActionBar.a2, org.telegram.ui.ActionBar.l1 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ v80 b;
+public final class n80 extends View {
+    public static DecelerateInterpolator v;
+    public static Paint w;
+    public long a;
+    public float b;
+    public float c;
+    public long d;
+    public float e;
+    public float f;
+    public int h;
+    public int n;
+    public final RectF r;
+    public org.telegram.ui.Components.voip.h s;
 
-    public /* synthetic */ n80(v80 v80Var, int i10) {
-        this.a = i10;
-        this.b = v80Var;
-    }
-
-    @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        switch (this.a) {
-            case 0:
-                u80 u80Var = this.b.r;
-                if (u80Var != null) {
-                    u80Var.j();
-                    break;
-                }
-                break;
-            default:
-                u80 u80Var2 = this.b.r;
-                if (u80Var2 != null) {
-                    u80Var2.c();
-                    break;
-                }
-                break;
+    public n80(Context context) {
+        super(context);
+        this.f = 1.0f;
+        this.r = new RectF();
+        if (v == null) {
+            v = new DecelerateInterpolator();
+            Paint paint = new Paint(1);
+            w = paint;
+            paint.setStrokeCap(Paint.Cap.ROUND);
+            w.setStrokeWidth(AndroidUtilities.dp(2.0f));
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.l1
-    public void o(KeyEvent keyEvent) {
-        v80 v80Var = this.b;
-        v80Var.getClass();
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && v80Var.s.isShowing()) {
-            v80Var.s.d(true);
+    public final void a(float f7, boolean z10) {
+        if (z10) {
+            this.c = this.e;
+        } else {
+            this.e = f7;
+            this.c = f7;
         }
+        if (f7 != 1.0f) {
+            this.f = 1.0f;
+        }
+        this.b = f7;
+        this.d = 0L;
+        this.a = System.currentTimeMillis();
+        invalidate();
+    }
+
+    public float getCurrentProgress() {
+        return this.b;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        int i10 = this.h;
+        RectF rectF = this.r;
+        if (i10 != 0 && this.e != 1.0f) {
+            w.setColor(i10);
+            w.setAlpha((int) (this.f * 255.0f));
+            getWidth();
+            rectF.set(0.0f, 0.0f, getWidth(), getHeight());
+            canvas.drawRoundRect(rectF, getHeight() / 2.0f, getHeight() / 2.0f, w);
+        }
+        w.setColor(this.n);
+        w.setAlpha((int) (this.f * 255.0f));
+        rectF.set(0.0f, 0.0f, getWidth() * this.e, getHeight());
+        canvas.drawRoundRect(rectF, getHeight() / 2.0f, getHeight() / 2.0f, w);
+        if (this.f > 0.0f) {
+            if (this.s == null) {
+                org.telegram.ui.Components.voip.h hVar = new org.telegram.ui.Components.voip.h(160, 0);
+                this.s = hVar;
+                hVar.k = false;
+                hVar.n = 0.8f;
+                hVar.m = 1.2f;
+            }
+            this.s.f = getMeasuredWidth();
+            this.s.a(getHeight() / 2.0f, canvas, rectF, null);
+            invalidate();
+        }
+        long currentTimeMillis = System.currentTimeMillis();
+        long j3 = currentTimeMillis - this.a;
+        this.a = currentTimeMillis;
+        float f7 = this.e;
+        if (f7 != 1.0f) {
+            float f10 = this.b;
+            if (f7 != f10) {
+                float f11 = this.c;
+                float f12 = f10 - f11;
+                if (f12 > 0.0f) {
+                    long j10 = this.d + j3;
+                    this.d = j10;
+                    if (j10 >= 300) {
+                        this.e = f10;
+                        this.c = f10;
+                        this.d = 0L;
+                    } else {
+                        this.e = (v.getInterpolation(j10 / 300.0f) * f12) + f11;
+                    }
+                }
+                invalidate();
+            }
+        }
+        float f13 = this.e;
+        if (f13 < 1.0f || f13 != 1.0f) {
+            return;
+        }
+        float f14 = this.f;
+        if (f14 != 0.0f) {
+            float f15 = f14 - (j3 / 200.0f);
+            this.f = f15;
+            if (f15 <= 0.0f) {
+                this.f = 0.0f;
+            }
+            invalidate();
+        }
+    }
+
+    public void setBackColor(int i10) {
+        this.h = i10;
+    }
+
+    public void setProgressColor(int i10) {
+        this.n = i10;
     }
 }

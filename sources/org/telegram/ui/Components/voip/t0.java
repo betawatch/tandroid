@@ -10,15 +10,15 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
-import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.u9;
+import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.w9;
 import w7.x5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class t0 extends FrameLayout {
     public final s0 a;
-    public final u9 b;
+    public final w9 b;
     public AnimatorSet c;
     public boolean d;
     public boolean e;
@@ -33,14 +33,14 @@ public final class t0 extends FrameLayout {
             invalidate();
         }
         s0Var.e = true;
-        u9 u9Var = new u9(activity);
-        this.b = u9Var;
-        addView(u9Var, x5.e(135, 135, 17));
+        w9 w9Var = new w9(activity);
+        this.b = w9Var;
+        addView(w9Var, x5.e(135, 135, 17));
         setWillNotDraw(false);
         AnimatorSet animatorSet = new AnimatorSet();
         this.c = animatorSet;
         animatorSet.playTogether(ObjectAnimator.ofFloat(this, (Property<t0, Float>) View.SCALE_X, 1.0f, 1.05f, 1.0f, 1.05f, 1.0f), ObjectAnimator.ofFloat(this, (Property<t0, Float>) View.SCALE_Y, 1.0f, 1.05f, 1.0f, 1.05f, 1.0f));
-        this.c.setInterpolator(qr.g);
+        this.c.setInterpolator(rr.g);
         this.c.setDuration(3000L);
         boolean isEnabled = LiteMode.isEnabled(512);
         this.f = isEnabled;
@@ -62,7 +62,7 @@ public final class t0 extends FrameLayout {
         AnimatorSet animatorSet2 = new AnimatorSet();
         this.c = animatorSet2;
         animatorSet2.playTogether(ObjectAnimator.ofFloat(this, (Property<t0, Float>) View.SCALE_X, getScaleX(), 1.05f, 1.0f), ObjectAnimator.ofFloat(this, (Property<t0, Float>) View.SCALE_Y, getScaleY(), 1.05f, 1.0f));
-        this.c.setInterpolator(qr.g);
+        this.c.setInterpolator(rr.g);
         this.c.setDuration(400L);
         this.c.start();
     }

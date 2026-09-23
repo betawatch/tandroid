@@ -1,39 +1,38 @@
 package org.telegram.ui;
 
-import android.view.View;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class ep0 extends org.telegram.ui.Components.a81 {
-    public final /* synthetic */ aq0 a;
+public final /* synthetic */ class ep0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ op0 b;
 
-    public ep0(aq0 aq0Var) {
-        this.a = aq0Var;
+    public /* synthetic */ ep0(op0 op0Var, int i10) {
+        this.a = i10;
+        this.b = op0Var;
     }
 
-    @Override // org.telegram.ui.Components.a81
-    public final View d(int i10) {
-        aq0 aq0Var = this.a;
-        if (i10 == 1) {
-            return aq0Var.h;
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        op0 op0Var = this.b;
+        switch (i10) {
+            case 0:
+                if (op0Var.G) {
+                    op0Var.b.invalidate();
+                    break;
+                }
+                break;
+            case 1:
+                op0Var.h();
+                break;
+            case 2:
+                int i11 = op0.q0;
+                op0Var.h();
+                break;
+            default:
+                int i12 = op0.q0;
+                op0Var.h();
+                break;
         }
-        if (i10 == 0) {
-            return aq0Var.n;
-        }
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.a81
-    public final int e() {
-        return 2;
-    }
-
-    @Override // org.telegram.ui.Components.a81
-    public final int h(int i10) {
-        return i10;
-    }
-
-    @Override // org.telegram.ui.Components.a81
-    public final void b(View view, int i10, int i11) {
     }
 }

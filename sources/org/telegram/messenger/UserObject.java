@@ -5,7 +5,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public class UserObject {
     public static final long ANONYMOUS = 2666000;
@@ -215,7 +215,7 @@ public class UserObject {
         if (removeRTL.length() != 0 || TextUtils.isEmpty(user.phone)) {
             return removeRTL;
         }
-        return vl.h(new StringBuilder("+"), user.phone, gf.b.c());
+        return ul.h(new StringBuilder("+"), user.phone, gf.b.c());
     }
 
     public static boolean hasFallbackPhoto(TLRPC.UserFull userFull) {

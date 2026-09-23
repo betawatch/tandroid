@@ -3,13 +3,13 @@ package dh;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public class b implements a {
-    public final e6 a;
+    public final d6 a;
     public final int b;
     public final float c;
     public int d;
@@ -17,8 +17,8 @@ public class b implements a {
     public int f;
     public int h;
 
-    public b(int i10, e6 e6Var) {
-        this(e6Var, i10, LiteMode.isEnabled(262144) ? 0.85f : 0.76f);
+    public b(int i10, d6 d6Var) {
+        this(d6Var, i10, LiteMode.isEnabled(262144) ? 0.85f : 0.76f);
     }
 
     @Override // dh.a
@@ -32,7 +32,7 @@ public class b implements a {
     }
 
     public boolean b() {
-        return AndroidUtilities.computePerceivedBrightness(i6.v0(this.b, this.a)) < 0.721f;
+        return AndroidUtilities.computePerceivedBrightness(h6.v0(this.b, this.a)) < 0.721f;
     }
 
     @Override // dh.a
@@ -41,7 +41,7 @@ public class b implements a {
     }
 
     public final void d() {
-        this.d = i6.l1(this.c, i6.v0(this.b, this.a));
+        this.d = h6.l1(this.c, h6.v0(this.b, this.a));
         if (b()) {
             this.f = 687865855;
             this.h = 352321535;
@@ -58,8 +58,8 @@ public class b implements a {
         return this.e;
     }
 
-    public b(e6 e6Var, int i10, float f7) {
-        this.a = e6Var;
+    public b(d6 d6Var, int i10, float f7) {
+        this.a = d6Var;
         this.b = i10;
         this.c = f7;
         d();

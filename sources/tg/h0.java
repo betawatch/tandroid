@@ -4,35 +4,35 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import ci.d9;
+import ci.a9;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.oc;
-import org.telegram.ui.uy;
+import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.qc;
+import org.telegram.ui.ry;
 import w7.x5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class h0 extends rg.k1 {
     public static h0 S0;
     public final vg.a Q0;
     public final String R0;
 
-    public h0(n2 n2Var, int i10, TLRPC.User user, rg.k kVar, String str, boolean z10, e6 e6Var) {
-        super(n2Var, i10, user, kVar, null, e6Var);
+    public h0(n2 n2Var, int i10, TLRPC.User user, rg.k kVar, String str, boolean z10, d6 d6Var) {
+        super(n2Var, i10, user, kVar, null, d6Var);
         this.R0 = str;
-        oc.a((FrameLayout) this.containerView, new d9(15));
+        qc.a((FrameLayout) this.containerView, new a9(15));
         if (!z10) {
-            ll0 ll0Var = this.d;
+            ml0 ml0Var = this.d;
             int i11 = this.backgroundPaddingLeft;
-            ll0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(68.0f));
+            ml0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(68.0f));
             vg.a aVar = new vg.a(getContext(), this.resourcesProvider);
             this.Q0 = aVar;
             aVar.setOnClickListener(new org.telegram.ui.Components.voip.o(this, 11));
@@ -41,7 +41,7 @@ public final class h0 extends rg.k1 {
             ci.d dVar = aVar2.a;
             dVar.setEnabled(true);
             dVar.g(LocaleController.getString(R.string.GiftPremiumActivateForFree), false, true);
-            aVar2.b.setBackgroundColor(i6.v0(i6.h5, aVar2.c));
+            aVar2.b.setBackgroundColor(h6.v0(h6.h5, aVar2.c));
             this.containerView.addView(this.Q0, x5.d(-1, 68.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
         }
         fixNavigationBar();
@@ -62,9 +62,9 @@ public final class h0 extends rg.k1 {
 
     public static void e0(h0 h0Var) {
         String str = "https://t.me/giftcode/" + h0Var.R0;
-        uy uyVar = new uy(org.telegram.messenger.y0.e(3, "onlySelect", "dialogsType", true));
-        uyVar.C2 = new d(4, h0Var, str);
-        h0Var.n.presentFragment(uyVar);
+        ry ryVar = new ry(org.telegram.messenger.z0.e(3, "onlySelect", "dialogsType", true));
+        ryVar.C2 = new d(4, h0Var, str);
+        h0Var.n.presentFragment(ryVar);
         h0Var.dismiss();
     }
 
@@ -94,7 +94,7 @@ public final class h0 extends rg.k1 {
         this.P0.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
         ((ViewGroup.MarginLayoutParams) this.P0.getLayoutParams()).bottomMargin = AndroidUtilities.dp(14.0f);
         ((ViewGroup.MarginLayoutParams) this.P0.getLayoutParams()).topMargin = AndroidUtilities.dp(12.0f);
-        this.P0.setText(AndroidUtilities.replaceCharSequence("%1$s", AndroidUtilities.replaceSingleTag(LocaleController.getString("GiftPremiumAboutThisLink", R.string.GiftPremiumAboutThisLink), i6.gc, 0, new f0(this, 0)), AndroidUtilities.replaceTags(LocaleController.getString("GiftPremiumAboutThisLinkEnd", R.string.GiftPremiumAboutThisLinkEnd))));
+        this.P0.setText(AndroidUtilities.replaceCharSequence("%1$s", AndroidUtilities.replaceSingleTag(LocaleController.getString("GiftPremiumAboutThisLink", R.string.GiftPremiumAboutThisLink), h6.gc, 0, new f0(this, 0)), AndroidUtilities.replaceTags(LocaleController.getString("GiftPremiumAboutThisLinkEnd", R.string.GiftPremiumAboutThisLinkEnd))));
     }
 
     @Override // rg.k1

@@ -1,9 +1,9 @@
 package ii;
 
-import org.telegram.ui.Components.n70;
+import org.telegram.ui.Components.o70;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public interface p0 {
-    n70 a(i1 i1Var);
+    o70 a(i1 i1Var);
 }

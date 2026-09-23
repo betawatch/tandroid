@@ -1,11 +1,11 @@
 package ii;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class b3 implements e5 {
-    public final /* synthetic */ w3 a;
+public final class b3 {
+    public final /* synthetic */ x3 a;
 
-    public b3(w3 w3Var) {
-        this.a = w3Var;
+    public b3(x3 x3Var) {
+        this.a = x3Var;
     }
 }

@@ -3,14 +3,14 @@ package i;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import ii.u0;
-import org.telegram.ui.Components.cd;
-import org.telegram.ui.Components.d31;
-import org.telegram.ui.Components.eq;
+import org.telegram.ui.Components.c31;
+import org.telegram.ui.Components.ed;
+import org.telegram.ui.Components.fq;
 import org.telegram.ui.Components.ko0;
-import yh.n3;
+import yh.m3;
 import zg.n0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class f implements Drawable.Callback {
     public final /* synthetic */ int a;
@@ -25,16 +25,16 @@ public final class f implements Drawable.Callback {
                 ((u0) this.b).b.invalidate();
                 break;
             case 2:
-                ((eq) this.b).invalidateSelf();
+                ((fq) this.b).invalidateSelf();
                 break;
             case 3:
                 ((ko0) this.b).b.run();
                 break;
             case 4:
-                ((cd) this.b).invalidateSelf();
+                ((ed) this.b).invalidateSelf();
                 break;
             case 5:
-                ((d31) this.b).invalidateSelf();
+                ((c31) this.b).invalidateSelf();
                 break;
             case 6:
                 ((wg.a) this.b).c.invalidate();
@@ -46,7 +46,7 @@ public final class f implements Drawable.Callback {
                 ((x4.d) this.b).invalidateSelf();
                 break;
             case 9:
-                ((n3) this.b).f.invalidate();
+                ((m3) this.b).f.invalidate();
                 break;
             default:
                 n0 n0Var = (n0) this.b;
@@ -75,12 +75,12 @@ public final class f implements Drawable.Callback {
             case 1:
                 break;
             case 2:
-                ((eq) this.b).scheduleSelf(runnable, j3);
+                ((fq) this.b).scheduleSelf(runnable, j3);
                 break;
             case 3:
                 break;
             case 4:
-                ((cd) this.b).scheduleSelf(runnable, j3);
+                ((ed) this.b).scheduleSelf(runnable, j3);
                 break;
             case 5:
                 break;
@@ -118,12 +118,12 @@ public final class f implements Drawable.Callback {
             case 1:
                 break;
             case 2:
-                ((eq) this.b).unscheduleSelf(runnable);
+                ((fq) this.b).unscheduleSelf(runnable);
                 break;
             case 3:
                 break;
             case 4:
-                ((cd) this.b).unscheduleSelf(runnable);
+                ((ed) this.b).unscheduleSelf(runnable);
                 break;
             case 5:
                 break;

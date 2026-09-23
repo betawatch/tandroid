@@ -7,30 +7,30 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class hb0 extends ll0 {
-    public final /* synthetic */ pb0 X2;
+public final class hb0 extends ml0 {
+    public final /* synthetic */ ob0 X2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hb0(pb0 pb0Var, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, e6Var);
-        this.X2 = pb0Var;
+    public hb0(ob0 ob0Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, d6Var);
+        this.X2 = ob0Var;
     }
 
     /* JADX WARN: Type inference failed for: r3v19 */
     /* JADX WARN: Type inference failed for: r3v2, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r3v6 */
-    @Override // org.telegram.ui.Components.ll0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ml0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         boolean z10;
         Canvas canvas2;
-        pb0 pb0Var;
+        ob0 ob0Var;
         float f7;
         MessageObject.GroupedMessages currentMessagesGroup;
         MessageObject.GroupedMessages currentMessagesGroup2;
-        pb0 pb0Var2 = this.X2;
-        org.telegram.ui.w8 w8Var = pb0Var2.b;
+        ob0 ob0Var2 = this.X2;
+        org.telegram.ui.w8 w8Var = ob0Var2.b;
         boolean z11 = false;
         for (int i10 = 0; i10 < getChildCount(); i10++) {
             View childAt = getChildAt(i10);
@@ -48,10 +48,10 @@ public final class hb0 extends ll0 {
         }
         int i12 = 0;
         while (i12 < 3) {
-            vb0 vb0Var = pb0Var2.c0;
-            ArrayList arrayList = vb0Var.E;
-            hb0 hb0Var = pb0Var2.f;
-            vb0Var.E.clear();
+            ub0 ub0Var = ob0Var2.c0;
+            ArrayList arrayList = ub0Var.E;
+            hb0 hb0Var = ob0Var2.f;
+            ub0Var.E.clear();
             if (i12 != 2 || hb0Var.X1) {
                 int i13 = 0;
                 ?? r32 = z11;
@@ -116,7 +116,7 @@ public final class hb0 extends ll0 {
                 while (i18 < arrayList.size()) {
                     MessageObject.GroupedMessages groupedMessages2 = (MessageObject.GroupedMessages) arrayList.get(i18);
                     if (groupedMessages2 == null) {
-                        pb0Var = pb0Var2;
+                        ob0Var = ob0Var2;
                     } else {
                         float E2 = groupedMessages2.transitionParams.cell.E2(z10);
                         MessageObject.GroupedMessages.TransitionParams transitionParams3 = groupedMessages2.transitionParams;
@@ -137,13 +137,13 @@ public final class hb0 extends ll0 {
                         boolean z12 = (groupedMessages2.transitionParams.cell.getScaleX() == 1.0f && groupedMessages2.transitionParams.cell.getScaleY() == 1.0f) ? false : true;
                         if (z12) {
                             canvas.save();
-                            pb0Var = pb0Var2;
+                            ob0Var = ob0Var2;
                             canvas2 = canvas;
                             f7 = 2.0f;
                             canvas2.scale(groupedMessages2.transitionParams.cell.getScaleX(), groupedMessages2.transitionParams.cell.getScaleY(), com.google.android.gms.internal.vision.e2.A(f12, f10, 2.0f, f10), com.google.android.gms.internal.vision.e2.A(f13, f11, 2.0f, f11));
                         } else {
                             canvas2 = canvas;
-                            pb0Var = pb0Var2;
+                            ob0Var = ob0Var2;
                             f7 = 2.0f;
                         }
                         MessageObject.GroupedMessages.TransitionParams transitionParams4 = groupedMessages2.transitionParams;
@@ -169,17 +169,17 @@ public final class hb0 extends ll0 {
                     }
                     i18++;
                     z10 = true;
-                    pb0Var2 = pb0Var;
+                    ob0Var2 = ob0Var;
                 }
             }
             i12++;
             z11 = false;
-            pb0Var2 = pb0Var2;
+            ob0Var2 = ob0Var2;
         }
         super.dispatchDraw(canvas);
     }
 
-    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.ml0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean drawChild(Canvas canvas, View view, long j3) {
         if (!(view instanceof org.telegram.ui.Cells.t1)) {
             return super.drawChild(canvas, view, j3);
@@ -224,29 +224,29 @@ public final class hb0 extends ll0 {
         this.X2.e.H();
     }
 
-    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ml0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        pb0 pb0Var = this.X2;
-        int i14 = pb0Var.a;
-        if (pb0Var.K) {
+        ob0 ob0Var = this.X2;
+        int i14 = ob0Var.a;
+        if (ob0Var.K) {
             if (i14 != 0) {
                 u0(0);
             }
-            pb0Var.K = false;
+            ob0Var.K = false;
         }
         super.onLayout(z10, i10, i11, i12, i13);
-        pb0Var.i();
-        hb0 hb0Var = pb0Var.f;
-        if (pb0Var.U) {
+        ob0Var.i();
+        hb0 hb0Var = ob0Var.f;
+        if (ob0Var.U) {
             if (hb0Var.computeVerticalScrollRange() > hb0Var.computeVerticalScrollExtent()) {
-                pb0Var.postDelayed(new ab0(pb0Var, 0), 0L);
+                ob0Var.postDelayed(new ab0(ob0Var, 0), 0L);
             }
-            pb0Var.U = false;
+            ob0Var.U = false;
         }
-        if (pb0Var.N && i14 == 0) {
-            int i15 = pb0Var.L;
-            int i16 = pb0Var.M;
-            pb0Var.N = false;
+        if (ob0Var.N && i14 == 0) {
+            int i15 = ob0Var.L;
+            int i16 = ob0Var.M;
+            ob0Var.N = false;
             post(new gg.n(this, i15, i16, 10));
         }
     }

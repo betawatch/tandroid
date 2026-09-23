@@ -2,8 +2,9 @@ package org.telegram.ui.Components;
 
 import android.app.Activity;
 import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class k3 extends FrameLayout {
     public final /* synthetic */ org.telegram.ui.Cells.z1[] a;
@@ -19,7 +20,7 @@ public final class k3 extends FrameLayout {
         super.onMeasure(i10, i11);
         org.telegram.ui.Cells.z1[] z1VarArr = this.a;
         if (z1VarArr[0] != null) {
-            setMeasuredDimension(getMeasuredWidth(), z1VarArr[0].getMeasuredHeight() + getMeasuredHeight());
+            setMeasuredDimension(getMeasuredWidth(), AndroidUtilities.dp(7.0f) + z1VarArr[0].getMeasuredHeight() + getMeasuredHeight());
         }
     }
 }

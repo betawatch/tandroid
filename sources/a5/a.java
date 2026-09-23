@@ -1,7 +1,6 @@
 package a5;
 
 import ai.c9;
-import ai.g3;
 import android.animation.ValueAnimator;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
@@ -24,7 +23,6 @@ import c3.i;
 import c3.p;
 import c3.u;
 import c5.v;
-import ci.s7;
 import com.google.android.gms.common.api.internal.l;
 import com.google.android.gms.common.api.internal.w;
 import com.google.android.gms.internal.cast.c0;
@@ -64,12 +62,13 @@ import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.ak;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.Components.gi;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.qr;
-import org.telegram.ui.ua0;
-import org.telegram.ui.web.m;
+import org.telegram.ui.Components.hi;
+import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.t50;
+import org.telegram.ui.da;
 import org.xmlpull.v1.XmlPullParserException;
 import rg.w1;
 import u2.f0;
@@ -97,7 +96,7 @@ import z7.x;
 import z7.y;
 import z7.zf;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public class a implements i, r {
     public final /* synthetic */ int a;
@@ -604,13 +603,13 @@ public class a implements i, r {
     public void j(e2.h hVar) {
         Iterator it = ((CopyOnWriteArrayList) this.d).iterator();
         while (it.hasNext()) {
-            u2.j0 j0Var = (u2.j0) it.next();
-            e2.d0.U(j0Var.a, new p2.b(24, hVar, j0Var.b));
+            i0 i0Var = (i0) it.next();
+            e2.d0.U(i0Var.a, new p2.b(24, hVar, i0Var.b));
         }
     }
 
     public void k(int i10, s sVar, int i11, Object obj, long j3) {
-        j(new g3(11, this, new u2.b0(1, i10, sVar, i11, obj, e2.d0.e0(j3), -9223372036854775807L)));
+        j(new tg.d(6, this, new u2.b0(1, i10, sVar, i11, obj, e2.d0.e0(j3), -9223372036854775807L)));
     }
 
     public long l(p pVar) {
@@ -692,7 +691,7 @@ public class a implements i, r {
     }
 
     public void q(t tVar, int i10, int i11, s sVar, int i12, Object obj, long j3, long j10, IOException iOException, boolean z10) {
-        j(new i0(this, tVar, new u2.b0(i10, i11, sVar, i12, obj, e2.d0.e0(j3), e2.d0.e0(j10)), iOException, z10));
+        j(new ak(this, tVar, new u2.b0(i10, i11, sVar, i12, obj, e2.d0.e0(j3), e2.d0.e0(j10)), iOException, z10));
     }
 
     public void r(t tVar, int i10, IOException iOException, boolean z10) {
@@ -700,7 +699,7 @@ public class a implements i, r {
     }
 
     public void s(t tVar, int i10, int i11, s sVar, int i12, Object obj, long j3, long j10, int i13) {
-        j(new ua0(this, tVar, new u2.b0(i10, i11, sVar, i12, obj, e2.d0.e0(j3), e2.d0.e0(j10)), i13, 1));
+        j(new da(this, tVar, new u2.b0(i10, i11, sVar, i12, obj, e2.d0.e0(j3), e2.d0.e0(j10)), i13, 10));
     }
 
     public a u(Object obj, Object obj2) {
@@ -725,7 +724,7 @@ public class a implements i, r {
     }
 
     public void v(int i10) {
-        w(i10, 200L, qr.f);
+        w(i10, 200L, rr.f);
     }
 
     public void w(int i10, long j3, Interpolator interpolator) {
@@ -739,7 +738,7 @@ public class a implements i, r {
         ValueAnimator ofInt = ValueAnimator.ofInt(0, i10);
         this.c = ofInt;
         ofInt.addUpdateListener(new ai.x(24, this, iArr));
-        ((ValueAnimator) this.c).addListener(new gi(this, i10, iArr, 1));
+        ((ValueAnimator) this.c).addListener(new hi(this, i10, iArr, 1));
         ((ValueAnimator) this.c).setDuration(j3);
         ((ValueAnimator) this.c).setInterpolator(interpolator);
         ((ValueAnimator) this.c).start();
@@ -761,7 +760,7 @@ public class a implements i, r {
         u2.b0 b0Var = new u2.b0(1, i10, null, 3, null, e2.d0.e0(j3), e2.d0.e0(j10));
         f0 f0Var = (f0) this.c;
         f0Var.getClass();
-        j(new s7(this, f0Var, b0Var, 3));
+        j(new t50(this, f0Var, b0Var, 10));
     }
 
     public void z(String str, k6.c cVar) {
@@ -891,9 +890,9 @@ public class a implements i, r {
         this.b = i10;
     }
 
-    public a(ll0 ll0Var) {
+    public a(ml0 ml0Var) {
         this.a = 15;
-        this.d = ll0Var;
+        this.d = ml0Var;
     }
 
     public a(ByteBuffer byteBuffer, int i10, RectF rectF) {
@@ -925,10 +924,10 @@ public class a implements i, r {
         }
     }
 
-    public a(m mVar) {
+    public a(s0.b bVar) {
         this.a = 21;
         this.c = new SparseArray();
-        this.d = mVar;
+        this.d = bVar;
         this.b = -1;
     }
 

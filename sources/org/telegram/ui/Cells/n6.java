@@ -3,11 +3,11 @@ package org.telegram.ui.Cells;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.view.MotionEvent;
-import org.telegram.ui.Components.ac0;
+import org.telegram.ui.Components.zb0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class n6 extends org.telegram.ui.Components.u9 {
+public final class n6 extends org.telegram.ui.Components.w9 {
     public final /* synthetic */ int G;
     public final /* synthetic */ o6 H;
 
@@ -18,11 +18,11 @@ public final class n6 extends org.telegram.ui.Components.u9 {
         this.G = i10;
     }
 
-    @Override // org.telegram.ui.Components.u9, android.view.View
+    @Override // org.telegram.ui.Components.w9, android.view.View
     public final void onDraw(Canvas canvas) {
         o6 o6Var = this.H;
         m6 m6Var = o6Var.y;
-        ac0 ac0Var = o6.G;
+        zb0 zb0Var = o6.G;
         if (this.G != 1) {
             super.onDraw(canvas);
         } else {

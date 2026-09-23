@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class zf0 implements Runnable {
     public final /* synthetic */ int a;
@@ -44,7 +44,7 @@ public final /* synthetic */ class zf0 implements Runnable {
                 PhotoViewer photoViewer2 = eg0Var2.V;
                 if (photoViewer2 != null) {
                     if ((photoViewer2.F2 != null || eg0Var2.r != null) && !eg0Var2.c0 && !eg0Var2.Y && !eg0Var2.w && !eg0Var2.s.isInProgress() && eg0Var2.f0) {
-                        g71 g71Var = eg0Var2.V.F2;
+                        f71 f71Var = eg0Var2.V.F2;
                         boolean z10 = eg0Var2.g0[0] >= (((float) eg0Var2.t()) * eg0Var2.J) * 0.5f;
                         long l4 = eg0Var2.l();
                         long m11 = eg0Var2.m();
@@ -55,7 +55,7 @@ public final /* synthetic */ class zf0 implements Runnable {
                                 photoViewer3.c4.startRewind(qf0Var, z10, eg0Var2.g0[0], photoViewer3.t1, eg0Var2.R);
                             } else {
                                 PhotoViewer photoViewer4 = eg0Var2.V;
-                                photoViewer4.c4.startRewind(g71Var, z10, eg0Var2.g0[0], photoViewer4.t1, eg0Var2.R);
+                                photoViewer4.c4.startRewind(f71Var, z10, eg0Var2.g0[0], photoViewer4.t1, eg0Var2.R);
                             }
                             if (!eg0Var2.E) {
                                 eg0Var2.E = true;

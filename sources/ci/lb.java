@@ -1,37 +1,96 @@
 package ci;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class lb extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ oc d;
+public final class lb implements pc {
+    public final /* synthetic */ bi.v a;
 
-    public /* synthetic */ lb(oc ocVar, int i10, int i11, int i12) {
-        this.a = i12;
-        this.d = ocVar;
-        this.b = i10;
-        this.c = i11;
+    public lb(bi.v vVar) {
+        this.a = vVar;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.d.N(this.b, this.c);
-                break;
-            default:
-                int i10 = this.b;
-                int i11 = this.c;
-                if (i10 != i11) {
-                    this.d.Q(i10, i11);
-                    break;
-                }
-                break;
-        }
+    @Override // ci.pc
+    public final void H(float f7, boolean z10) {
+        this.a.run(Boolean.FALSE, Float.valueOf(f7));
+    }
+
+    @Override // ci.pc
+    public final /* synthetic */ void F(float f7) {
+    }
+
+    @Override // ci.pc
+    public final /* synthetic */ void O(long j3) {
+    }
+
+    @Override // ci.pc
+    public final /* synthetic */ void Q(boolean z10) {
+    }
+
+    @Override // ci.pc
+    public final /* synthetic */ void V(float f7) {
+    }
+
+    @Override // ci.pc
+    public final /* synthetic */ void Z(float f7) {
+    }
+
+    @Override // ci.pc
+    public final /* synthetic */ void b(int i10) {
+    }
+
+    @Override // ci.pc
+    public final /* synthetic */ void e0(float f7) {
+    }
+
+    @Override // ci.pc
+    public final /* synthetic */ void f0() {
+    }
+
+    @Override // ci.pc
+    public final /* synthetic */ void h(float f7) {
+    }
+
+    @Override // ci.pc
+    public final /* synthetic */ void i0(float f7) {
+    }
+
+    @Override // ci.pc
+    public final /* synthetic */ void n(float f7) {
+    }
+
+    @Override // ci.pc
+    public final /* synthetic */ void o0(long j3) {
+    }
+
+    @Override // ci.pc
+    public final /* synthetic */ void s() {
+    }
+
+    @Override // ci.pc
+    public final /* synthetic */ void u(float f7) {
+    }
+
+    @Override // ci.pc
+    public final /* synthetic */ void w(boolean z10) {
+    }
+
+    @Override // ci.pc
+    public final /* synthetic */ void C(float f7, int i10) {
+    }
+
+    @Override // ci.pc
+    public final /* synthetic */ void T(float f7, int i10) {
+    }
+
+    @Override // ci.pc
+    public final /* synthetic */ void d0(float f7, int i10) {
+    }
+
+    @Override // ci.pc
+    public final /* synthetic */ void j0(int i10, long j3) {
+    }
+
+    @Override // ci.pc
+    public final /* synthetic */ void o(long j3, boolean z10) {
     }
 }

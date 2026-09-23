@@ -1,16 +1,32 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
-/* loaded from: classes3.dex */
-public final class lk0 extends s4.j {
-    public final /* synthetic */ NotificationsCustomSettingsActivity F;
+import android.view.View;
 
-    public lk0(NotificationsCustomSettingsActivity notificationsCustomSettingsActivity) {
-        this.F = notificationsCustomSettingsActivity;
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class lk0 implements org.telegram.ui.Components.bl0, org.telegram.ui.ActionBar.a2 {
+    public final /* synthetic */ NotificationsSettingsActivity a;
+
+    public /* synthetic */ lk0(NotificationsSettingsActivity notificationsSettingsActivity) {
+        this.a = notificationsSettingsActivity;
     }
 
-    @Override // s4.j
-    public final void P(s4.c1 c1Var) {
-        this.F.a.invalidate();
+    @Override // org.telegram.ui.Components.bl0
+    public void c(float f7, float f10, int i10, View view) {
+        NotificationsSettingsActivity.Y(this.a, view, i10, f7);
+    }
+
+    @Override // org.telegram.ui.Components.bl0
+    public /* synthetic */ boolean d1(View view) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.a2
+    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        NotificationsSettingsActivity.Z(this.a);
+    }
+
+    @Override // org.telegram.ui.Components.bl0
+    public /* synthetic */ void r0(View view, float f7, float f10) {
     }
 }

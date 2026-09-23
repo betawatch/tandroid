@@ -13,7 +13,7 @@ import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public abstract class ou0 extends qt0 {
     public final HashSet f3;
@@ -61,7 +61,7 @@ public abstract class ou0 extends qt0 {
     /* JADX WARN: Removed duplicated region for block: B:132:0x03c8 A[SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:222:0x0718  */
     /* JADX WARN: Removed duplicated region for block: B:225:0x071e  */
-    @Override // org.telegram.ui.Components.ga, org.telegram.ui.Components.ll0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ia, org.telegram.ui.Components.ml0, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -80,8 +80,8 @@ public abstract class ou0 extends qt0 {
         boolean z10;
         int i16;
         Float valueOf = Float.valueOf(1.0f);
-        tk0 movingAdapter = getMovingAdapter();
-        tk0 supportingAdapter = getSupportingAdapter();
+        uk0 movingAdapter = getMovingAdapter();
+        uk0 supportingAdapter = getSupportingAdapter();
         if (!B1() || getAdapter() != movingAdapter) {
             for (int i17 = 0; i17 < getChildCount(); i17++) {
                 View childAt = getChildAt(i17);
@@ -180,7 +180,7 @@ public abstract class ou0 extends qt0 {
                 }
             }
             arrayList3.addAll(arrayList4);
-            sk0 fastScroll = getFastScroll();
+            tk0 fastScroll = getFastScroll();
             if (fastScroll != null && fastScroll.getTag() != null) {
                 float H = movingAdapter.H(this);
                 float H2 = supportingAdapter.H(getSupportingListView());
@@ -380,9 +380,9 @@ public abstract class ou0 extends qt0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ga, org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.ia, org.telegram.ui.Components.ml0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean drawChild(Canvas canvas, View view, long j3) {
-        tk0 movingAdapter = getMovingAdapter();
+        uk0 movingAdapter = getMovingAdapter();
         if (B1() && getAdapter() == movingAdapter && z1() && (view instanceof org.telegram.ui.Cells.t7)) {
             return true;
         }
@@ -405,7 +405,7 @@ public abstract class ou0 extends qt0 {
         return null;
     }
 
-    public tk0 getMovingAdapter() {
+    public uk0 getMovingAdapter() {
         return null;
     }
 
@@ -413,7 +413,7 @@ public abstract class ou0 extends qt0 {
         return 0;
     }
 
-    public tk0 getSupportingAdapter() {
+    public uk0 getSupportingAdapter() {
         return null;
     }
 

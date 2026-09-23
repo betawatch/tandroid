@@ -1,122 +1,126 @@
 package ci;
 
-import android.animation.ValueAnimator;
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.graphics.RenderNode;
-import android.os.Build;
-import android.view.MotionEvent;
-import android.widget.FrameLayout;
-import java.util.Arrays;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.af0;
-import org.telegram.ui.Components.hk0;
-import org.telegram.ui.Components.jv0;
-import org.telegram.ui.Components.ye0;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
+import android.view.View;
+import org.telegram.messenger.voip.GroupCallMessage;
+import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PremiumPreviewFragment;
+import org.telegram.ui.cf0;
+import org.telegram.ui.e40;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class ac extends FrameLayout {
-    public final Rect a;
-    public final Rect b;
-    public RenderNode c;
-    public final /* synthetic */ oc d;
+public final class ac extends ClickableSpan {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ac(oc ocVar, Activity activity) {
-        super(activity);
-        this.d = ocVar;
-        this.a = new Rect();
-        this.b = new Rect();
+    public /* synthetic */ ac(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        Canvas canvas2;
-        boolean z10;
-        int i10 = Build.VERSION.SDK_INT;
-        if (i10 < 31 || !canvas.isHardwareAccelerated() || AndroidUtilities.makingGlobalBlurBitmap) {
-            canvas2 = canvas;
-            z10 = false;
-        } else {
-            if (this.c == null) {
-                this.c = new RenderNode("StoryRecorder.PreviewView");
-            }
-            this.c.setPosition(0, 0, getWidth(), getHeight());
-            canvas2 = this.c.beginRecording();
-            z10 = true;
-        }
-        super.dispatchDraw(canvas2);
-        if (!z10 || i10 < 31) {
-            return;
-        }
-        this.c.endRecording();
-        org.telegram.ui.Components.ha haVar = this.d.r0;
-        if (haVar != null) {
-            haVar.g(this, this.c);
-        }
-        canvas.drawRenderNode(this.c);
-    }
-
-    @Override // android.view.View
-    public final void invalidate() {
-        ValueAnimator valueAnimator = this.d.E;
-        if (valueAnimator == null || !valueAnimator.isRunning()) {
-            super.invalidate();
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        if (Build.VERSION.SDK_INT >= 29) {
-            int i14 = i12 - i10;
-            int i15 = i13 - i11;
-            int dp = i15 - AndroidUtilities.dp(120.0f);
-            int dp2 = AndroidUtilities.dp(40.0f);
-            Rect rect = this.a;
-            rect.set(0, dp, dp2, i15);
-            int dp3 = i14 - AndroidUtilities.dp(40.0f);
-            int dp4 = i15 - AndroidUtilities.dp(120.0f);
-            Rect rect2 = this.b;
-            rect2.set(dp3, dp4, i14, i15);
-            setSystemGestureExclusionRects(Arrays.asList(rect, rect2));
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        GroupCallMessage groupCallMessage;
+        org.telegram.ui.ActionBar.d6 d6Var;
+        switch (this.a) {
+            case 0:
+                ((bc) this.b).S1.T();
+                break;
+            case 1:
+                lh.c cVar = (lh.c) this.b;
+                lh.a aVar = cVar.I;
+                if (aVar != null && (groupCallMessage = cVar.H) != null) {
+                    ((e40) aVar).a(groupCallMessage);
+                    break;
+                }
+                break;
+            case 2:
+                org.telegram.ui.Cells.x1 x1Var = (org.telegram.ui.Cells.x1) this.b;
+                nf.f.s(x1Var.getContext(), "https://fragment.com/username/" + ((org.telegram.ui.pa) x1Var.M).e.r);
+                break;
+            case 3:
+                ((org.telegram.ui.ub) this.b).finishFragment();
+                break;
+            case 4:
+                ((org.telegram.ui.r1) this.b).run();
+                break;
+            case 5:
+                ((org.telegram.ui.Components.xc) this.b).a.presentFragment(new PremiumPreviewFragment(0, "settings"));
+                break;
+            case 6:
+                ((ActionBarLayout) ((LaunchActivity) this.b).O()).P(new PremiumPreviewFragment(0, "gift"));
+                break;
+            case 7:
+                ((cf0) this.b).q(false);
+                break;
+            case 8:
+                rg.j0 j0Var = ((rg.c0) this.b).c;
+                org.telegram.ui.ActionBar.n2 n2Var = j0Var.n;
+                long j3 = j0Var.a0;
+                d6Var = ((org.telegram.ui.ActionBar.f3) j0Var).resourcesProvider;
+                tg.o.m(n2Var, d6Var, j3, null);
+                break;
         }
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        oc ocVar = this.d;
-        af0 af0Var = ocVar.F1;
-        if (af0Var != null) {
-            float measuredWidth = af0Var.getMeasuredWidth();
-            float measuredHeight = ocVar.F1.getMeasuredHeight();
-            hk0 hk0Var = af0Var.e;
-            hk0Var.a = 0.0f;
-            hk0Var.b = 0.0f;
-            hk0Var.c = measuredWidth;
-            hk0Var.d = measuredHeight;
-        }
-        ye0 ye0Var = ocVar.E1;
-        if (ye0Var != null) {
-            float measuredWidth2 = ye0Var.getMeasuredWidth();
-            float measuredHeight2 = ocVar.E1.getMeasuredHeight();
-            jv0 jv0Var = ye0Var.d;
-            jv0Var.a = measuredWidth2;
-            jv0Var.b = measuredHeight2;
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        org.telegram.ui.ActionBar.d6 d6Var;
+        switch (this.a) {
+            case 0:
+                textPaint.setUnderlineText(false);
+                break;
+            case 1:
+                break;
+            case 2:
+                super.updateDrawState(textPaint);
+                textPaint.setUnderlineText(false);
+                break;
+            case 3:
+                super.updateDrawState(textPaint);
+                textPaint.setUnderlineText(false);
+                break;
+            case 4:
+                super.updateDrawState(textPaint);
+                textPaint.setUnderlineText(false);
+                break;
+            case 5:
+                super.updateDrawState(textPaint);
+                textPaint.setUnderlineText(false);
+                break;
+            case 6:
+                super.updateDrawState(textPaint);
+                textPaint.setUnderlineText(false);
+                break;
+            case 7:
+                super.updateDrawState(textPaint);
+                textPaint.setUnderlineText(false);
+                break;
+            case 8:
+                super.updateDrawState(textPaint);
+                textPaint.setUnderlineText(false);
+                int i10 = org.telegram.ui.ActionBar.h6.gc;
+                d6Var = ((org.telegram.ui.ActionBar.f3) ((rg.c0) this.b).c).resourcesProvider;
+                textPaint.setColor(org.telegram.ui.ActionBar.h6.v0(i10, d6Var));
+                break;
+            default:
+                super.updateDrawState(textPaint);
+                textPaint.setUnderlineText(false);
+                Integer num = ((rg.k1) this.b).u0;
+                if (num != null) {
+                    textPaint.setColor(num.intValue());
+                    break;
+                }
+                break;
         }
     }
 
-    /* JADX WARN: Type inference failed for: r0v1, types: [android.widget.FrameLayout, ci.kc] */
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        ?? r02 = this.d.v2;
-        if (r02 == 0) {
-            return super.onTouchEvent(motionEvent);
-        }
-        r02.m(motionEvent);
-        return true;
+    private final void a(View view) {
+    }
+
+    private final void b(TextPaint textPaint) {
     }
 }

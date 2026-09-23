@@ -1,50 +1,25 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.widget.ImageView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gk0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ NotificationsCustomSettingsActivity b;
-    public final /* synthetic */ tk0 c;
-    public final /* synthetic */ View d;
+public final class gk0 extends org.telegram.ui.Cells.s8 {
+    public ImageView Q;
 
-    public /* synthetic */ gk0(NotificationsCustomSettingsActivity notificationsCustomSettingsActivity, tk0 tk0Var, View view, int i10, int i11) {
-        this.a = i11;
-        this.b = notificationsCustomSettingsActivity;
-        this.c = tk0Var;
-        this.d = view;
+    @Override // org.telegram.ui.Cells.s8, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        int dp = LocaleController.isRTL ? AndroidUtilities.dp(17.0f) : (i12 - i10) - AndroidUtilities.dp(41.0f);
+        int y3 = org.telegram.messenger.ul.y(24.0f, i13 - i11, 2);
+        this.Q.layout(dp, y3, AndroidUtilities.dp(24.0f) + dp, AndroidUtilities.dp(24.0f) + y3);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.k0(this.c, this.d, false);
-                break;
-            case 1:
-                this.b.e0(this.c, this.d);
-                break;
-            case 2:
-                NotificationsCustomSettingsActivity.X(this.b, this.c, this.d);
-                break;
-            case 3:
-                NotificationsCustomSettingsActivity.V(this.b, this.c, this.d);
-                break;
-            case 4:
-                this.b.e0(this.c, this.d);
-                break;
-            default:
-                this.b.k0(this.c, this.d, true);
-                break;
-        }
-    }
-
-    public /* synthetic */ gk0(NotificationsCustomSettingsActivity notificationsCustomSettingsActivity, tk0 tk0Var, View view, boolean z10, int i10) {
-        this.a = i10;
-        this.b = notificationsCustomSettingsActivity;
-        this.c = tk0Var;
-        this.d = view;
+    @Override // org.telegram.ui.Cells.s8, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        this.Q.measure(i10, i11);
     }
 }

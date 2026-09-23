@@ -1,66 +1,21 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
 import android.app.Activity;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class dl extends org.telegram.ui.Components.fk0 {
-    public final int[] l1;
-    public ValueAnimator m1;
-    public boolean n1;
-    public final /* synthetic */ bo o1;
+public final class dl extends org.telegram.ui.Components.x50 {
+    public final /* synthetic */ xn d1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dl(bo boVar, bo boVar2, Activity activity, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(3, i10, activity, boVar2, e6Var);
-        this.o1 = boVar;
-        this.l1 = new int[2];
-        this.n1 = true;
+    public dl(xn xnVar, Activity activity, org.telegram.ui.Components.p50 p50Var, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(activity, p50Var, d6Var, true);
+        this.d1 = xnVar;
     }
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        org.telegram.ui.ActionBar.k kVar;
-        super.onLayout(z10, i10, i11, i12, i13);
-        kVar = ((org.telegram.ui.ActionBar.n2) this.o1).actionBar;
-        org.telegram.ui.ActionBar.v0 k10 = kVar.j(null).k(28);
-        if (k10 != null) {
-            int[] iArr = this.l1;
-            getLocationInWindow(iArr);
-            float x10 = getX();
-            float width = getWidth() + x10;
-            k10.getLocationInWindow(iArr);
-            float width2 = (k10.getWidth() / 2.0f) + iArr[0];
-            int dp = AndroidUtilities.dp(20.0f);
-            boolean z11 = LocaleController.isRTL;
-            float f7 = width2 + (dp * (z11 ? -1 : 1));
-            if (z11) {
-                s(f7 - x10, !this.n1);
-            } else {
-                s(f7 - width, !this.n1);
-            }
-            this.n1 = false;
-        }
-    }
-
-    public final void s(float f7, boolean z10) {
-        ValueAnimator valueAnimator = this.m1;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-            this.m1 = null;
-        }
-        if (!z10) {
-            setBubbleOffset(f7);
-            return;
-        }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.U0, f7);
-        this.m1 = ofFloat;
-        ofFloat.addUpdateListener(new b3(this, 6));
-        this.m1.setInterpolator(org.telegram.ui.Components.qr.h);
-        this.m1.setDuration(420L);
-        this.m1.start();
+    @Override // org.telegram.ui.Components.x50
+    public final void m(boolean z10, boolean z11) {
+        super.m(z10, z11);
+        this.d1.uc.a(z10, true);
     }
 }

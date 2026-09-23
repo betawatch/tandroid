@@ -3,41 +3,41 @@ package org.telegram.ui;
 import android.view.KeyEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class t implements mv0, org.telegram.ui.Components.bl0, org.telegram.ui.ActionBar.l1 {
-    public final /* synthetic */ h4 a;
+public final /* synthetic */ class t implements fv0, org.telegram.ui.Components.cl0, org.telegram.ui.ActionBar.l1 {
+    public final /* synthetic */ i4 a;
 
-    public /* synthetic */ t(h4 h4Var) {
-        this.a = h4Var;
+    public /* synthetic */ t(i4 i4Var) {
+        this.a = i4Var;
     }
 
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.cl0
     public boolean d(int i10, View view) {
-        h4 h4Var = this.a;
-        h4Var.getClass();
-        if (!(view instanceof h2)) {
+        i4 i4Var = this.a;
+        i4Var.getClass();
+        if (!(view instanceof i2)) {
             return false;
         }
-        b4 b4Var = ((h2) view).n;
-        h4Var.Z(b4Var.a.articles.get(b4Var.b).url);
+        c4 c4Var = ((i2) view).n;
+        i4Var.Z(c4Var.a.articles.get(c4Var.b).url);
         return true;
     }
 
-    @Override // org.telegram.ui.mv0
+    @Override // org.telegram.ui.fv0
     public void g(float[] fArr) {
-        h4 h4Var = this.a;
-        fArr[0] = h4Var.I0;
-        fArr[1] = h4Var.u0[0].b.getMeasuredHeight();
+        i4 i4Var = this.a;
+        fArr[0] = i4Var.I0;
+        fArr[1] = i4Var.u0[0].b.getMeasuredHeight();
     }
 
     @Override // org.telegram.ui.ActionBar.l1
     public void o(KeyEvent keyEvent) {
         org.telegram.ui.ActionBar.n1 n1Var;
-        h4 h4Var = this.a;
-        h4Var.getClass();
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (n1Var = h4Var.H) != null && n1Var.isShowing()) {
-            h4Var.H.d(true);
+        i4 i4Var = this.a;
+        i4Var.getClass();
+        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (n1Var = i4Var.H) != null && n1Var.isShowing()) {
+            i4Var.H.d(true);
         }
     }
 }

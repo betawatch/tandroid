@@ -1,85 +1,67 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.graphics.Paint;
+import android.animation.ValueAnimator;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
-import android.graphics.RectF;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.widget.FrameLayout;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class b51 extends FrameLayout {
-    public final Paint a;
-    public final Paint b;
-    public final RectF c;
-    public final org.telegram.ui.Components.x11 d;
-    public boolean e;
-    public long f;
-    public long h;
-    public final org.telegram.ui.Components.xi0 n;
-    public final TextPaint r;
-    public StaticLayout s;
-    public float v;
-    public float w;
-    public final /* synthetic */ SecretMediaViewer x;
+public final /* synthetic */ class b51 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ z61 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b51(SecretMediaViewer secretMediaViewer, Activity activity) {
-        super(activity);
-        this.x = secretMediaViewer;
-        this.c = new RectF();
-        this.d = new org.telegram.ui.Components.x11();
-        this.r = new TextPaint(1);
-        setWillNotDraw(false);
-        Paint paint = new Paint(1);
-        this.b = paint;
-        paint.setStrokeWidth(AndroidUtilities.dp(1.5f));
-        paint.setColor(-1644826);
-        Paint.Cap cap = Paint.Cap.ROUND;
-        paint.setStrokeCap(cap);
-        Paint.Style style = Paint.Style.STROKE;
-        paint.setStyle(style);
-        Paint paint2 = new Paint(1);
-        this.a = paint2;
-        paint2.setStyle(style);
-        paint2.setStrokeCap(cap);
-        paint2.setColor(-1644826);
-        paint2.setStrokeWidth(AndroidUtilities.dp(2.0f));
-        new Paint(1).setColor(2130706432);
-        org.telegram.ui.Components.xi0 xi0Var = new org.telegram.ui.Components.xi0(R.raw.fire_on, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f));
-        this.n = xi0Var;
-        xi0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-        xi0Var.R(this);
-        xi0Var.start();
+    public /* synthetic */ b51(z61 z61Var, int i10) {
+        this.a = i10;
+        this.b = z61Var;
     }
 
-    /*  JADX ERROR: NullPointerException in pass: LoopRegionVisitor
-        java.lang.NullPointerException: Cannot invoke "jadx.core.dex.instructions.args.SSAVar.use(jadx.core.dex.instructions.args.RegisterArg)" because "ssaVar" is null
-        	at jadx.core.dex.nodes.InsnNode.rebindArgs(InsnNode.java:493)
-        	at jadx.core.dex.nodes.InsnNode.rebindArgs(InsnNode.java:496)
-        */
-    @Override // android.view.View
-    public final void onDraw(android.graphics.Canvas r11) {
-        /*
-            Method dump skipped, instructions count: 227
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: org.telegram.ui.b51.onDraw(android.graphics.Canvas):void");
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        float measuredWidth = getMeasuredWidth() - AndroidUtilities.dp(35.0f);
-        float measuredHeight = getMeasuredHeight() / 2.0f;
-        float dpf2 = AndroidUtilities.dpf2(10.5f);
-        this.c.set(measuredWidth - dpf2, measuredHeight - dpf2, measuredWidth + dpf2, dpf2 + measuredHeight);
-        setPivotX(measuredWidth);
-        setPivotY(measuredHeight);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                z61 z61Var = this.b;
+                z61Var.getClass();
+                z61Var.E(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            case 1:
+                this.b.m();
+                break;
+            case 2:
+                z61 z61Var2 = this.b;
+                View view = z61Var2.t0;
+                if (view != null) {
+                    view.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                }
+                int v = org.telegram.ui.ActionBar.h6.v(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.G8, z61Var2.Z0), i0.a.k(-16777216, (int) (((Float) valueAnimator.getAnimatedValue()).floatValue() * 255.0f)));
+                View view2 = z61Var2.m0;
+                if (view2 != null) {
+                    view2.getBackground().setColorFilter(new PorterDuffColorFilter(v, PorterDuff.Mode.MULTIPLY));
+                }
+                org.telegram.ui.Components.ln lnVar = z61Var2.n0;
+                if (lnVar != null) {
+                    lnVar.getBackground().setColorFilter(new PorterDuffColorFilter(v, PorterDuff.Mode.MULTIPLY));
+                    break;
+                }
+                break;
+            default:
+                z61 z61Var3 = this.b;
+                t51 t51Var = z61Var3.a0;
+                float floatValue = 1.0f - ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                z61Var3.setTranslationY((1.0f - floatValue) * AndroidUtilities.dp(8.0f));
+                View view3 = z61Var3.m0;
+                if (view3 != null) {
+                    view3.setAlpha(floatValue);
+                }
+                org.telegram.ui.Components.ln lnVar2 = z61Var3.n0;
+                if (lnVar2 != null) {
+                    lnVar2.setAlpha(floatValue * floatValue);
+                }
+                t51Var.setAlpha(floatValue);
+                t51Var.invalidate();
+                z61Var3.invalidate();
+                break;
+        }
     }
 }

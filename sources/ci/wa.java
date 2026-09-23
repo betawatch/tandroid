@@ -1,43 +1,32 @@
 package ci;
 
-import android.animation.ValueAnimator;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class wa implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class wa implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ oc b;
+    public final /* synthetic */ lc b;
 
-    public /* synthetic */ wa(oc ocVar, int i10) {
+    public /* synthetic */ wa(lc lcVar, int i10) {
         this.a = i10;
-        this.b = ocVar;
+        this.b = lcVar;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                this.b.M0.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            case 1:
-                this.b.r1.setAppearProgress(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            case 2:
-                this.b.r1.setAppearProgress(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            case 3:
-                this.b.s1.setAppearProgress(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            case 4:
-                this.b.s1.setAppearProgress(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                lc lcVar = this.b;
+                lcVar.X0.x(3, false);
+                lcVar.q0 = null;
                 break;
             default:
-                oc ocVar = this.b;
-                ocVar.getClass();
-                ocVar.I = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ocVar.o();
-                ocVar.r.invalidate();
-                ocVar.n.invalidate();
+                zb zbVar = this.b.X0;
+                if (zbVar != null) {
+                    zbVar.x(4, false);
+                    break;
+                }
                 break;
         }
     }

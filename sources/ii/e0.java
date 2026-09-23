@@ -1,6 +1,6 @@
 package ii;
 
-import ai.n8;
+import ai.o8;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.view.MotionEvent;
@@ -11,14 +11,14 @@ import org.telegram.messenger.RichMessageLayout;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class e0 extends View {
     public final RichMessageLayout.RichButton a;
     public final int b;
     public boolean c;
     public boolean d;
-    public final n8 e;
+    public final o8 e;
     public final /* synthetic */ h0 f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -26,11 +26,11 @@ public final class e0 extends View {
         super(context);
         this.f = h0Var;
         this.b = i10;
-        RichMessageLayout.RichButton createEditorPageButton = RichMessageLayout.createEditorPageButton(h0Var.n, hg.c.f(32.0f, AndroidUtilities.displaySize.x, AndroidUtilities.dp(240.0f)), h0Var.r, pageButton, new i2.g0(this, 3));
+        RichMessageLayout.RichButton createEditorPageButton = RichMessageLayout.createEditorPageButton(h0Var.n, hg.c.f(32.0f, AndroidUtilities.displaySize.x, AndroidUtilities.dp(240.0f)), h0Var.r, pageButton, new i2.h0(this, 3));
         this.a = createEditorPageButton;
-        this.e = new n8(this, i10, 10);
+        this.e = new o8(this, i10, 10);
         createEditorPageButton.width = createEditorPageButton.getPreferredWidth();
-        setContentDescription(f6.l(pageButton.text));
+        setContentDescription(g6.l(pageButton.text));
         setClickable(true);
         setLongClickable(true);
     }
@@ -71,30 +71,30 @@ public final class e0 extends View {
         f0 f0Var;
         a aVar;
         int actionMasked = motionEvent.getActionMasked();
-        n8 n8Var = this.e;
+        o8 o8Var = this.e;
         RichMessageLayout.RichButton richButton = this.a;
         if (actionMasked == 0) {
             this.c = true;
             this.d = false;
             richButton.setPressed(true);
-            AndroidUtilities.runOnUIThread(n8Var, ViewConfiguration.getLongPressTimeout());
+            AndroidUtilities.runOnUIThread(o8Var, ViewConfiguration.getLongPressTimeout());
             return true;
         }
         if (actionMasked == 1) {
             boolean z10 = this.c && !this.d;
             this.c = false;
             richButton.setPressed(false);
-            AndroidUtilities.cancelRunOnUIThread(n8Var);
+            AndroidUtilities.cancelRunOnUIThread(o8Var);
             if (z10 && (f0Var = (h0Var = this.f).E) != null && (aVar = h0Var.a) != null) {
-                w3 w3Var = ((o3) f0Var).a;
+                x3 x3Var = ((p3) f0Var).a;
                 TL_iv.PageBlock pageBlock = aVar.b;
                 if (pageBlock instanceof TL_iv.pageBlockButtonRow) {
                     TL_iv.pageBlockButtonRow pageblockbuttonrow = (TL_iv.pageBlockButtonRow) pageBlock;
                     int i10 = this.b;
                     if (i10 >= 0 && i10 < pageblockbuttonrow.buttons.size()) {
-                        h2 h2Var = w3Var.J3;
-                        if (h2Var != null) {
-                            h2Var.d();
+                        i2 i2Var = x3Var.J3;
+                        if (i2Var != null) {
+                            i2Var.d();
                         }
                         TL_keyboard.PageButton pageButton = pageblockbuttonrow.buttons.get(i10);
                         if (pageButton != null) {
@@ -110,12 +110,12 @@ public final class e0 extends View {
                             richButtonStyle.link = false;
                             pageButton.style = richButtonStyle;
                         }
-                        w3Var.Y2.N(false);
-                        h2 h2Var2 = w3Var.J3;
-                        if (h2Var2 != null) {
-                            h2Var2.h();
+                        x3Var.Y2.N(false);
+                        i2 i2Var2 = x3Var.J3;
+                        if (i2Var2 != null) {
+                            i2Var2.h();
                         }
-                        w3Var.h3.onContentChanged();
+                        x3Var.h3.onContentChanged();
                     }
                 }
             }
@@ -126,13 +126,13 @@ public final class e0 extends View {
                 }
                 this.c = false;
                 richButton.setPressed(false);
-                AndroidUtilities.cancelRunOnUIThread(n8Var);
+                AndroidUtilities.cancelRunOnUIThread(o8Var);
                 return true;
             }
             if (motionEvent.getX() < 0.0f || motionEvent.getY() < 0.0f || motionEvent.getX() > getWidth() || motionEvent.getY() > getHeight()) {
                 this.c = false;
                 richButton.setPressed(false);
-                AndroidUtilities.cancelRunOnUIThread(n8Var);
+                AndroidUtilities.cancelRunOnUIThread(o8Var);
                 return true;
             }
         }

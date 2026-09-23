@@ -1,106 +1,36 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.app.Dialog;
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.os.Build;
-import android.os.Bundle;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.R;
+import android.view.View;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class r50 extends Dialog {
-    public final ai.n4 a;
-    public final s50 b;
-    public Bitmap c;
-    public Paint d;
-    public BitmapShader e;
-    public final Matrix f;
-    public float h;
-    public ValueAnimator n;
-    public boolean r;
+public final /* synthetic */ class r50 implements org.telegram.ui.Components.w5 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public r50(Context context, s50 s50Var) {
-        super(context, R.style.TransparentDialog);
-        this.f = new Matrix();
-        this.b = s50Var;
-        s50Var.setVisibility(4);
-        AndroidUtilities.makeGlobalBlurBitmap(new nf(27, this, s50Var), 14.0f);
-        ai.n4 n4Var = new ai.n4(this, context, s50Var);
-        this.a = n4Var;
-        n4Var.setOnClickListener(new a(this, 29));
+    public /* synthetic */ r50(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    public final void b(float f7, q50 q50Var) {
-        ValueAnimator valueAnimator = this.n;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-            this.n = null;
+    @Override // org.telegram.ui.Components.w5
+    public final void invalidate() {
+        switch (this.a) {
+            case 0:
+                Iterator it = ((s50) this.b).i.iterator();
+                while (it.hasNext()) {
+                    ((View) it.next()).invalidate();
+                }
+                break;
+            default:
+                i61 i61Var = (i61) this.b;
+                i61Var.getClass();
+                if (!zg.f0.b && i61Var.getParent() != null) {
+                    ((View) i61Var.getParent()).invalidate();
+                    break;
+                }
+                break;
         }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.h, f7);
-        this.n = ofFloat;
-        ofFloat.addUpdateListener(new b3(this, 16));
-        this.n.addListener(new ai.t2(this, f7, q50Var, 3));
-        this.n.setDuration(420L);
-        this.n.setInterpolator(org.telegram.ui.Components.qr.h);
-        this.n.start();
-    }
-
-    @Override // android.app.Dialog, android.content.DialogInterface
-    public final void dismiss() {
-        if (this.r) {
-            return;
-        }
-        this.r = true;
-        b(0.0f, new q50(this, 0));
-        try {
-            WindowManager.LayoutParams attributes = getWindow().getAttributes();
-            attributes.flags |= 16;
-            getWindow().setAttributes(attributes);
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
-    }
-
-    @Override // android.app.Dialog
-    public final void onCreate(Bundle bundle) {
-        super.onCreate(bundle);
-        Window window = getWindow();
-        window.setWindowAnimations(R.style.DialogNoAnimation);
-        setContentView(this.a, new ViewGroup.LayoutParams(-1, -1));
-        WindowManager.LayoutParams attributes = window.getAttributes();
-        attributes.width = -1;
-        attributes.height = -1;
-        attributes.gravity = 119;
-        attributes.dimAmount = 0.0f;
-        int i10 = attributes.flags & (-3);
-        attributes.softInputMode = 48;
-        attributes.flags = (-2013069056) | i10;
-        if (!BuildVars.DEBUG_PRIVATE_VERSION) {
-            attributes.flags = i10 | (-2013060864);
-            AndroidUtilities.logFlagSecure();
-        }
-        attributes.flags |= 1152;
-        if (Build.VERSION.SDK_INT >= 28) {
-            attributes.layoutInDisplayCutoutMode = 1;
-        }
-        window.setAttributes(attributes);
-    }
-
-    @Override // android.app.Dialog
-    public final void show() {
-        super.show();
-        b(1.0f, null);
-        AndroidUtilities.runOnUIThread(new q50(this, 1), 16L);
     }
 }

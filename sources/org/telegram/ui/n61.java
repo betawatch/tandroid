@@ -1,39 +1,27 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
+import android.content.Context;
+import org.telegram.messenger.LiteMode;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n61 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ q61 b;
+public final class n61 extends org.telegram.ui.Components.vw0 {
+    public final /* synthetic */ o61 z3;
 
-    public /* synthetic */ n61(q61 q61Var, int i10) {
-        this.a = i10;
-        this.b = q61Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public n61(o61 o61Var, Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, i10, d6Var);
+        this.z3 = o61Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                q61 q61Var = this.b;
-                q61Var.N = floatValue;
-                q61Var.V.h0.invalidate();
-                break;
-            case 1:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                q61 q61Var2 = this.b;
-                q61Var2.N = floatValue2;
-                q61Var2.V.h0.invalidate();
-                break;
-            default:
-                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                q61 q61Var3 = this.b;
-                q61Var3.N = floatValue3;
-                q61Var3.V.h0.invalidate();
-                break;
-        }
+    @Override // org.telegram.ui.Components.vw0
+    public final boolean A1() {
+        return LiteMode.isEnabled(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD) || this.z3.y.W == 4;
+    }
+
+    @Override // org.telegram.ui.Components.vw0
+    public final void E1(int i10) {
+        super.E1(i10);
+        this.z3.d(false);
     }
 }

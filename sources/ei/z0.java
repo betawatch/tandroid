@@ -4,11 +4,11 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import ci.uc;
+import ci.rc;
 import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class z0 implements SensorEventListener {
     public long a;
@@ -58,9 +58,9 @@ public final class z0 implements SensorEventListener {
     @Override // android.hardware.SensorEventListener
     public final void onSensorChanged(SensorEvent sensorEvent) {
         a1 a1Var = this.e;
-        uc ucVar = a1Var.s;
-        if (ucVar != null) {
-            AndroidUtilities.cancelRunOnUIThread(ucVar);
+        rc rcVar = a1Var.s;
+        if (rcVar != null) {
+            AndroidUtilities.cancelRunOnUIThread(rcVar);
             a1Var.s = null;
         }
         if (a1Var.l || a1Var.k == null) {
@@ -69,9 +69,9 @@ public final class z0 implements SensorEventListener {
         long currentTimeMillis = System.currentTimeMillis() - this.a;
         long j3 = a1Var.j;
         if (currentTimeMillis < j3) {
-            uc ucVar2 = new uc(this, 12);
-            a1Var.s = ucVar2;
-            AndroidUtilities.runOnUIThread(ucVar2, j3 - currentTimeMillis);
+            rc rcVar2 = new rc(this, 12);
+            a1Var.s = rcVar2;
+            AndroidUtilities.runOnUIThread(rcVar2, j3 - currentTimeMillis);
         } else {
             if (sensorEvent.sensor.getType() == 15) {
                 this.b = sensorEvent.values;

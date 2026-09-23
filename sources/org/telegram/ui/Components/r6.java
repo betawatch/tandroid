@@ -1,30 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Typeface;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.LaunchActivity;
+import android.util.Property;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class r6 extends lb {
-    public r6(LaunchActivity launchActivity, org.telegram.ui.lb0 lb0Var) {
-        super(launchActivity, null);
-        org.telegram.ui.Cells.q qVar = new org.telegram.ui.Cells.q(getContext());
-        TextView textView = new TextView(getContext());
-        addView(qVar, w7.x5.i(30.0f, 30.0f, 8388627, 12.0f, 8.0f, 12.0f, 8.0f));
-        textView.setGravity(8388611);
-        textView.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
-        textView.setTextColor(getThemedColor(org.telegram.ui.ActionBar.i6.Hi));
-        textView.setTextSize(1, 15.0f);
-        textView.setTypeface(Typeface.SANS_SERIF);
-        addView(textView, w7.x5.i(-1.0f, -2.0f, 8388627, 56.0f, 0.0f, 16.0f, 0.0f));
-        qVar.setImageDrawable(launchActivity.getDrawable(lb0Var.b));
-        qVar.setOuterPadding(AndroidUtilities.dp(8.0f));
-        qVar.setBackgroundOuterPadding(AndroidUtilities.dp(24.0f));
-        qVar.setForeground(lb0Var.c);
-        org.telegram.messenger.vl.q(R.string.AppIconChangedTo, new Object[]{LocaleController.getString(lb0Var.d)}, textView);
+public abstract class r6 extends Property {
+    public final /* synthetic */ int a;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public r6(String str, int i10) {
+        super(Float.class, str);
+        this.a = i10;
+        switch (i10) {
+            case 1:
+                super(Integer.class, str);
+                break;
+            default:
+                break;
+        }
+    }
+
+    public abstract void a(int i10, Object obj);
+
+    public abstract void b(Object obj, float f7);
+
+    @Override // android.util.Property
+    public final void set(Object obj, Object obj2) {
+        switch (this.a) {
+            case 0:
+                b(obj, ((Float) obj2).floatValue());
+                break;
+            default:
+                a(((Integer) obj2).intValue(), obj);
+                break;
+        }
     }
 }

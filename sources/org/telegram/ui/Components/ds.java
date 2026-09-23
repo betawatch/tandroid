@@ -1,20 +1,47 @@
 package org.telegram.ui.Components;
 
-import android.view.ViewGroup;
+import j$.util.function.Predicate$-CC;
+import java.util.function.Predicate;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class ds extends s4.j {
-    public final /* synthetic */ fs F;
+public final /* synthetic */ class ds implements Predicate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ TLObject b;
 
-    public ds(fs fsVar) {
-        this.F = fsVar;
+    public /* synthetic */ ds(int i10, TLObject tLObject) {
+        this.a = i10;
+        this.b = tLObject;
     }
 
-    @Override // s4.j
-    public final void P(s4.c1 c1Var) {
-        ViewGroup viewGroup;
-        viewGroup = ((org.telegram.ui.ActionBar.f3) this.F).containerView;
-        viewGroup.invalidate();
+    public /* synthetic */ Predicate and(Predicate predicate) {
+        int i10 = this.a;
+        return Predicate$-CC.$default$and(this, predicate);
+    }
+
+    public /* synthetic */ Predicate negate() {
+        switch (this.a) {
+        }
+        return Predicate$-CC.$default$negate(this);
+    }
+
+    public /* synthetic */ Predicate or(Predicate predicate) {
+        int i10 = this.a;
+        return Predicate$-CC.$default$or(this, predicate);
+    }
+
+    @Override // java.util.function.Predicate
+    public final boolean test(Object obj) {
+        switch (this.a) {
+            case 0:
+                return MessageObject.peersEqual((TLRPC.InputPeer) this.b, ((MessageObject) obj).messageOwner.from_id);
+            default:
+                MessageObject messageObject = (MessageObject) obj;
+                TLObject tLObject = this.b;
+                return !(tLObject instanceof TLRPC.User) ? !((tLObject instanceof TLRPC.Chat) && messageObject.messageOwner.from_id.user_id == ((TLRPC.Chat) tLObject).id) : messageObject.messageOwner.from_id.user_id != ((TLRPC.User) tLObject).id;
+        }
     }
 }

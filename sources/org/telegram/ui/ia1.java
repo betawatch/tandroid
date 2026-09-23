@@ -1,49 +1,29 @@
 package org.telegram.ui;
 
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.Typeface;
-import android.text.TextPaint;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class ia1 {
-    public final org.telegram.ui.Components.s00 a;
-    public kg.f b;
-    public final int c;
-    public final /* synthetic */ ja1 d;
+public final class ia1 extends lq {
+    public final /* synthetic */ boolean[] d1;
+    public final /* synthetic */ ra1 e1;
+    public final /* synthetic */ ka1 f1;
 
-    public ia1(ja1 ja1Var, int i10) {
-        this.d = ja1Var;
-        this.c = i10;
-        org.telegram.ui.Components.s00 s00Var = new org.telegram.ui.Components.s00(ja1Var.getContext());
-        s00Var.c = true;
-        TextPaint textPaint = new TextPaint(1);
-        s00Var.e = textPaint;
-        s00Var.f = new Paint(1);
-        Paint paint = new Paint(1);
-        s00Var.h = paint;
-        Paint paint2 = new Paint(1);
-        s00Var.n = paint2;
-        s00Var.w = AndroidUtilities.dp(35.0f);
-        s00Var.x = AndroidUtilities.dp(22.0f);
-        s00Var.y = AndroidUtilities.dp(8.0f);
-        s00Var.E = AndroidUtilities.dp(3.5f);
-        s00Var.F = new RectF();
-        s00Var.G = 0.0f;
-        textPaint.setTextSize(AndroidUtilities.dp(14.0f));
-        textPaint.setTextAlign(Paint.Align.CENTER);
-        textPaint.setTypeface(Typeface.create("sans-serif-medium", 0));
-        paint.setStrokeWidth(AndroidUtilities.dpf2(1.5f));
-        Paint.Style style = Paint.Style.STROKE;
-        paint.setStyle(style);
-        paint2.setStyle(style);
-        paint2.setStrokeCap(Paint.Cap.ROUND);
-        paint2.setStrokeWidth(AndroidUtilities.dp(2.0f));
-        this.a = s00Var;
-        s00Var.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
-        ja1Var.h.addView(s00Var);
-        ja1Var.n.add(this);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ia1(ka1 ka1Var, long j3, long j10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str, boolean z10, boolean[] zArr, ra1 ra1Var) {
+        super(j3, j10, tL_chatAdminRights, null, tL_chatBannedRights, str, 0, true, z10, null);
+        this.f1 = ka1Var;
+        this.d1 = zArr;
+        this.e1 = ra1Var;
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
+        if (!z10 && z11 && this.d1[0]) {
+            ra1 ra1Var = this.e1;
+            if (org.telegram.ui.Components.xc.a(ra1Var)) {
+                org.telegram.ui.Components.xc.C(ra1Var, this.f1.a.first_name).j();
+            }
+        }
     }
 }

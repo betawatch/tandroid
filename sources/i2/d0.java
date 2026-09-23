@@ -1,25 +1,43 @@
 package i2;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+import android.media.MediaFormat;
+
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final class d0 implements w0 {
-    public final Object a;
-    public final u2.a0 b;
-    public b2.k1 c;
+public final class d0 implements a3.y, j1 {
+    public a3.y a;
+    public d0 b;
 
-    public d0(Object obj, u2.a0 a0Var) {
-        this.a = obj;
-        this.b = a0Var;
-        this.c = a0Var.o;
+    public final void a() {
+        d0 d0Var = this.b;
+        if (d0Var != null) {
+            d0Var.a();
+        }
     }
 
-    @Override // i2.w0
-    public final Object a() {
-        return this.a;
+    @Override // a3.y
+    public final void b(long j3, long j10, b2.s sVar, MediaFormat mediaFormat) {
+        a3.y yVar = this.a;
+        if (yVar != null) {
+            yVar.b(j3, j10, sVar, mediaFormat);
+        }
     }
 
-    @Override // i2.w0
-    public final b2.k1 b() {
-        return this.c;
+    @Override // i2.j1
+    public final void c(int i10, Object obj) {
+        if (i10 == 7) {
+            this.a = (a3.y) obj;
+        } else if (i10 == 8) {
+            this.b = (d0) obj;
+        } else if (i10 == 10000 && obj != null) {
+            throw new ClassCastException();
+        }
+    }
+
+    public final void d() {
+        d0 d0Var = this.b;
+        if (d0Var != null) {
+            d0Var.d();
+        }
     }
 }

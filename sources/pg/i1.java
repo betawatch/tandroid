@@ -1,14 +1,17 @@
 package pg;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class i1 {
     public double a;
     public double b;
-    public double c;
-    public double d;
 
-    public final String toString() {
-        return "RectD{left=" + this.a + ", top=" + this.b + ", right=" + this.c + ", bottom=" + this.d + '}';
+    public i1(double d, double d10) {
+        this.a = d;
+        this.b = d10;
+    }
+
+    public final double a(double d, double d10) {
+        return Math.sqrt(Math.pow(d10 - this.b, 2.0d) + Math.pow(d - this.a, 2.0d));
     }
 }

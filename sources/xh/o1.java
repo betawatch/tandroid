@@ -1,117 +1,113 @@
 package xh;
 
-import android.content.Context;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.TextView;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.c90;
-import org.telegram.ui.Components.e61;
-import org.telegram.ui.Components.h51;
-import org.telegram.ui.Components.i51;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.w51;
-import org.telegram.ui.cc1;
-import w7.x5;
-import w7.z5;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
+import org.telegram.messenger.LiteMode;
+import yh.i8;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final class o1 extends h51 {
-    public static final /* synthetic */ int a = 0;
+public final class o1 extends Drawable {
+    public final int a;
+    public final RectF b;
+    public final Path c;
+    public final Paint d;
+    public final i8 e;
+    public boolean f;
+    public rg.w1 g;
+    public ii.q1 h;
+    public boolean i;
 
-    static {
-        h51.setup(new o1());
+    public o1(int i10) {
+        this(i0.a.k(i10, 128), i10);
     }
 
-    @Override // org.telegram.ui.Components.h51
-    public final void bindView(View view, i51 i51Var, boolean z10, w51 w51Var, e61 e61Var) {
-        p1 p1Var = (p1) view;
-        int i10 = i51Var.d;
-        ArrayList arrayList = (ArrayList) i51Var.G;
-        int i11 = i51Var.z;
-        Utilities.Callback callback = (Utilities.Callback) i51Var.H;
-        cc1 cc1Var = p1Var.a;
-        ArrayList arrayList2 = p1Var.d;
-        boolean z11 = p1Var.r == i10;
-        p1Var.r = i10;
-        if (arrayList2.size() != arrayList.size()) {
-            int i12 = 0;
-            int i13 = 0;
-            while (true) {
-                if (i12 >= arrayList2.size()) {
-                    break;
+    public final void a() {
+        boolean z10 = this.e != null && this.i && LiteMode.isEnabled(131072);
+        if (this.f == z10) {
+            return;
+        }
+        this.f = z10;
+        if (z10) {
+            yf.h d = yf.h.d();
+            rg.w1 w1Var = new rg.w1(this, 16);
+            this.g = w1Var;
+            d.a(15, w1Var);
+        } else {
+            yf.h.d().f(this.g);
+        }
+        invalidateSelf();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Paint paint = this.d;
+        Path path = this.c;
+        canvas.drawPath(path, paint);
+        i8 i8Var = this.e;
+        if (i8Var != null) {
+            if (this.f || !this.i) {
+                canvas.save();
+                canvas.clipPath(path);
+                if (this.g == null) {
+                    i8Var.d();
                 }
-                CharSequence charSequence = i13 < arrayList.size() ? (CharSequence) arrayList.get(i13) : null;
-                if (charSequence == null) {
-                    cc1Var.removeView((View) arrayList2.remove(i12));
-                    i12--;
-                } else {
-                    ((TextView) arrayList2.get(i12)).setText(charSequence);
+                i8Var.a(canvas, this.a);
+                canvas.restore();
+                if (this.g == null) {
+                    invalidateSelf();
                 }
-                i13++;
-                i12++;
             }
-            while (i13 < arrayList.size()) {
-                c90 c90Var = new c90(p1Var.getContext(), null);
-                c90Var.setGravity(17);
-                c90Var.setText((CharSequence) arrayList.get(i13));
-                c90Var.setTypeface(AndroidUtilities.bold());
-                c90Var.setTextColor(i6.v(i6.w0(null, i6.b6, false), i6.w0(null, i6.c6, false)));
-                c90Var.setTextSize(1, 14.0f);
-                c90Var.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
-                c90Var.setEllipsize(TextUtils.TruncateAt.END);
-                c90Var.setSingleLine();
-                c90Var.setMaxLines(1);
-                z5.b(c90Var, 0.075f, 1.4f);
-                cc1Var.addView(c90Var, x5.n(-2, 26));
-                arrayList2.add(c90Var);
-                i13++;
-            }
-        }
-        p1Var.b = i11;
-        if (!z11) {
-            p1Var.c.d(i11, true);
-        }
-        cc1Var.invalidate();
-        for (int i14 = 0; i14 < arrayList2.size(); i14++) {
-            ((TextView) arrayList2.get(i14)).setOnClickListener(new org.telegram.ui.Components.a0(i14, 1, callback));
         }
     }
 
-    @Override // org.telegram.ui.Components.h51
-    public final boolean contentsEquals(i51 i51Var, i51 i51Var2) {
-        return i51Var.z == i51Var2.z && i51Var.H == i51Var2.H && equals(i51Var, i51Var2);
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
     }
 
-    @Override // org.telegram.ui.Components.h51
-    public final View createView(Context context, ll0 ll0Var, int i10, int i11, e6 e6Var) {
-        return new p1(context);
-    }
-
-    @Override // org.telegram.ui.Components.h51
-    public final boolean equals(i51 i51Var, i51 i51Var2) {
-        if (i51Var.d == i51Var2.d) {
-            ArrayList arrayList = (ArrayList) i51Var.G;
-            ArrayList arrayList2 = (ArrayList) i51Var2.G;
-            if (arrayList == arrayList2) {
-                return true;
-            }
-            if (arrayList == null && arrayList2 == null) {
-                return true;
-            }
-            if (arrayList != null && arrayList2 != null && arrayList.size() == arrayList2.size()) {
-                for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                    if (TextUtils.equals((CharSequence) arrayList.get(i10), (CharSequence) arrayList2.get(i10))) {
-                    }
-                }
-                return true;
-            }
+    @Override // android.graphics.drawable.Drawable
+    public final void onBoundsChange(Rect rect) {
+        super.onBoundsChange(rect);
+        float min = Math.min(rect.width(), rect.height()) / 2.0f;
+        RectF rectF = this.b;
+        rectF.set(rect);
+        Path path = this.c;
+        path.rewind();
+        path.addRoundRect(rectF, min, min, Path.Direction.CW);
+        i8 i8Var = this.e;
+        if (i8Var != null) {
+            i8Var.g(rectF);
         }
-        return false;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.d.setAlpha(i10);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.d.setColorFilter(colorFilter);
+    }
+
+    public o1(int i10, int i11) {
+        this.b = new RectF();
+        this.c = new Path();
+        Paint paint = new Paint(1);
+        this.d = paint;
+        this.a = i10;
+        paint.setColor(i11);
+        if (Build.VERSION.SDK_INT >= 29) {
+            this.e = new i8(1, 25);
+        } else {
+            this.e = null;
+        }
     }
 }

@@ -10,36 +10,36 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.ha;
-import org.telegram.ui.Components.la;
-import org.telegram.ui.Components.oq;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.ja;
+import org.telegram.ui.Components.na;
+import org.telegram.ui.Components.pq;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public abstract class f2 extends ci.d {
-    public final la h0;
+    public final na h0;
     public final RectF i0;
     public int j0;
     public final p2 k0;
-    public final e6 l0;
+    public final d6 l0;
     public int m0;
     public boolean n0;
 
-    public f2(p2 p2Var, ContextThemeWrapper contextThemeWrapper, e6 e6Var, ha haVar) {
-        super(contextThemeWrapper, e6Var, false);
+    public f2(p2 p2Var, ContextThemeWrapper contextThemeWrapper, d6 d6Var, ja jaVar) {
+        super(contextThemeWrapper, d6Var, false);
         this.i0 = new RectF();
         this.m0 = 8;
-        this.l0 = e6Var;
+        this.l0 = d6Var;
         this.k0 = p2Var;
-        this.h0 = new la(haVar, this, 0, true);
+        this.h0 = new na(jaVar, this, 0, true);
         setWillNotDraw(false);
         setTextColor(-1);
         setFlickeringLoading(true);
         this.d.u(AndroidUtilities.bold());
         removeView(this.r);
-        setForeground(i6.Y(i6.l1(0.08f, -1), 8, 8));
+        setForeground(h6.Y(h6.l1(0.08f, -1), 8, 8));
         setPadding(AndroidUtilities.dp(24.0f), 0, AndroidUtilities.dp(24.0f), 0);
     }
 
@@ -82,12 +82,12 @@ public abstract class f2 extends ci.d {
     public void setCutOutState(boolean z10) {
         this.j0 = 0;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("d");
-        oq oqVar = new oq(R.drawable.media_magic_cut, 0);
-        oqVar.setSize(AndroidUtilities.dp(22.0f));
-        oqVar.setTranslateX(AndroidUtilities.dp(1.0f));
-        oqVar.setTranslateY(AndroidUtilities.dp(2.0f));
-        oqVar.spaceScaleX = 1.2f;
-        spannableStringBuilder.setSpan(oqVar, 0, 1, 0);
+        pq pqVar = new pq(R.drawable.media_magic_cut, 0);
+        pqVar.setSize(AndroidUtilities.dp(22.0f));
+        pqVar.setTranslateX(AndroidUtilities.dp(1.0f));
+        pqVar.setTranslateY(AndroidUtilities.dp(2.0f));
+        pqVar.spaceScaleX = 1.2f;
+        spannableStringBuilder.setSpan(pqVar, 0, 1, 0);
         spannableStringBuilder.append((CharSequence) " ").append((CharSequence) LocaleController.getString(R.string.SegmentationCutObject));
         g(spannableStringBuilder, z10, true);
     }
@@ -95,10 +95,10 @@ public abstract class f2 extends ci.d {
     public void setEraseState(boolean z10) {
         this.j0 = 3;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("d");
-        oq oqVar = new oq(R.drawable.media_button_erase, 0);
-        oqVar.setSize(AndroidUtilities.dp(20.0f));
-        oqVar.setTranslateX(AndroidUtilities.dp(-3.0f));
-        spannableStringBuilder.setSpan(oqVar, 0, 1, 0);
+        pq pqVar = new pq(R.drawable.media_button_erase, 0);
+        pqVar.setSize(AndroidUtilities.dp(20.0f));
+        pqVar.setTranslateX(AndroidUtilities.dp(-3.0f));
+        spannableStringBuilder.setSpan(pqVar, 0, 1, 0);
         spannableStringBuilder.append((CharSequence) " ").append((CharSequence) LocaleController.getString(R.string.SegmentationErase));
         g(spannableStringBuilder, z10, true);
     }
@@ -106,26 +106,26 @@ public abstract class f2 extends ci.d {
     public void setOutlineState(boolean z10) {
         this.j0 = 6;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("d");
-        oq oqVar = new oq(R.drawable.media_sticker_stroke, 0);
-        oqVar.setSize(AndroidUtilities.dp(20.0f));
-        oqVar.setTranslateX(AndroidUtilities.dp(-3.0f));
-        spannableStringBuilder.setSpan(oqVar, 0, 1, 0);
+        pq pqVar = new pq(R.drawable.media_sticker_stroke, 0);
+        pqVar.setSize(AndroidUtilities.dp(20.0f));
+        pqVar.setTranslateX(AndroidUtilities.dp(-3.0f));
+        spannableStringBuilder.setSpan(pqVar, 0, 1, 0);
         spannableStringBuilder.append((CharSequence) " ").append((CharSequence) LocaleController.getString(R.string.SegmentationOutline));
         g(spannableStringBuilder, z10, true);
     }
 
     public void setRad(int i10) {
         this.m0 = i10;
-        setForeground(i6.Y(i6.v0(i6.i6, this.l0), i10, i10));
+        setForeground(h6.Y(h6.v0(h6.i6, this.l0), i10, i10));
     }
 
     public void setRestoreState(boolean z10) {
         this.j0 = 4;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("d");
-        oq oqVar = new oq(R.drawable.media_button_restore, 0);
-        oqVar.setSize(AndroidUtilities.dp(20.0f));
-        oqVar.setTranslateX(AndroidUtilities.dp(-3.0f));
-        spannableStringBuilder.setSpan(oqVar, 0, 1, 0);
+        pq pqVar = new pq(R.drawable.media_button_restore, 0);
+        pqVar.setSize(AndroidUtilities.dp(20.0f));
+        pqVar.setTranslateX(AndroidUtilities.dp(-3.0f));
+        spannableStringBuilder.setSpan(pqVar, 0, 1, 0);
         spannableStringBuilder.append((CharSequence) " ").append((CharSequence) LocaleController.getString(R.string.SegmentationRestore));
         g(spannableStringBuilder, z10, true);
     }
@@ -137,10 +137,10 @@ public abstract class f2 extends ci.d {
     public void setUndoState(boolean z10) {
         this.j0 = 5;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("d");
-        oq oqVar = new oq(R.drawable.photo_undo2, 0);
-        oqVar.setSize(AndroidUtilities.dp(20.0f));
-        oqVar.setTranslateX(AndroidUtilities.dp(-3.0f));
-        spannableStringBuilder.setSpan(oqVar, 0, 1, 0);
+        pq pqVar = new pq(R.drawable.photo_undo2, 0);
+        pqVar.setSize(AndroidUtilities.dp(20.0f));
+        pqVar.setTranslateX(AndroidUtilities.dp(-3.0f));
+        spannableStringBuilder.setSpan(pqVar, 0, 1, 0);
         spannableStringBuilder.append((CharSequence) " ").append((CharSequence) LocaleController.getString(R.string.SegmentationUndo));
         g(spannableStringBuilder, z10, true);
     }

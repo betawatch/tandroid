@@ -4,10 +4,10 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.c5;
-import org.telegram.ui.bo;
+import org.telegram.ui.Components.e5;
+import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l implements Runnable {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final /* synthetic */ class l implements Runnable {
         switch (this.a) {
             case 0:
                 p pVar = (p) this.e;
-                c5.v0(pVar, LocaleController.getString(R.string.CommunityMenuRemoveFromCommunity), LocaleController.getString(this.b ? R.string.CommunityMenuRemoveBotFromCommunityConfirm : this.c ? R.string.CommunityMenuRemoveChannelFromCommunityConfirm : R.string.CommunityMenuRemoveGroupFromCommunityConfirm), LocaleController.getString(R.string.Remove), true, new g(pVar, this.d, 0));
+                e5.v0(pVar, LocaleController.getString(R.string.CommunityMenuRemoveFromCommunity), LocaleController.getString(this.b ? R.string.CommunityMenuRemoveBotFromCommunityConfirm : this.c ? R.string.CommunityMenuRemoveChannelFromCommunityConfirm : R.string.CommunityMenuRemoveGroupFromCommunityConfirm), LocaleController.getString(R.string.Remove), true, new g(pVar, this.d, 0));
                 break;
             case 1:
                 k0.q((k0) this.e, this.b, this.c, this.d);
@@ -38,14 +38,14 @@ public final /* synthetic */ class l implements Runnable {
                 ((MessagesController) this.e).lambda$setLastCreatedDialogId$55(this.b, this.c, this.d);
                 break;
             default:
-                bo.c1((bo) this.e, this.d, this.b, this.c);
+                xn.c1((xn) this.e, this.d, this.b, this.c);
                 break;
         }
     }
 
-    public /* synthetic */ l(bo boVar, long j3, boolean z10, boolean z11) {
+    public /* synthetic */ l(xn xnVar, long j3, boolean z10, boolean z11) {
         this.a = 3;
-        this.e = boVar;
+        this.e = xnVar;
         this.d = j3;
         this.b = z10;
         this.c = z11;

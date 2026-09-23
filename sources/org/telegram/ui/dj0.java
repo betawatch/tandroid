@@ -1,84 +1,56 @@
 package org.telegram.ui;
 
+import android.content.Context;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dj0 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ jj0 b;
+public final class dj0 extends LinearLayout {
+    public static final /* synthetic */ int d = 0;
+    public final TextView[] a;
+    public final TextView[] b;
+    public final /* synthetic */ ej0 c;
 
-    public /* synthetic */ dj0(jj0 jj0Var, int i10) {
-        this.a = i10;
-        this.b = jj0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public dj0(ej0 ej0Var, Context context) {
+        super(context);
+        this.c = ej0Var;
+        this.a = new TextView[4];
+        this.b = new TextView[4];
+        setOrientation(1);
+        setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f));
+        int i10 = 0;
+        while (i10 < 2) {
+            LinearLayout f7 = org.telegram.messenger.ul.f(context, 0);
+            for (int i11 = 0; i11 < 2; i11++) {
+                LinearLayout f10 = org.telegram.messenger.ul.f(context, 1);
+                LinearLayout f11 = org.telegram.messenger.ul.f(context, 0);
+                int i12 = (i10 * 2) + i11;
+                this.a[i12] = new TextView(context);
+                this.b[i12] = new TextView(context);
+                this.a[i12].setTypeface(AndroidUtilities.bold());
+                this.a[i12].setTextSize(1, 17.0f);
+                this.b[i12].setTextSize(1, 13.0f);
+                this.b[i12].setGravity(3);
+                f11.addView(this.a[i12]);
+                f10.addView(f11);
+                f10.addView(this.b[i12]);
+                f7.addView(f10, w7.x5.l(1.0f, -1, -2));
+            }
+            addView(f7, w7.x5.d(-1, -2.0f, 0, 0.0f, 0.0f, 0.0f, i10 == 0 ? 16.0f : 0.0f));
+            i10++;
+        }
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                final int i10 = 0;
-                final jj0 jj0Var = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.cj0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i10) {
-                            case 0:
-                                jj0.U(jj0Var, tL_error, tLObject);
-                                break;
-                            case 1:
-                                jj0.W(jj0Var, tL_error, tLObject);
-                                break;
-                            default:
-                                jj0.V(jj0Var, tL_error, tLObject);
-                                break;
-                        }
-                    }
-                });
-                break;
-            case 1:
-                final int i11 = 1;
-                final jj0 jj0Var2 = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.cj0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i11) {
-                            case 0:
-                                jj0.U(jj0Var2, tL_error, tLObject);
-                                break;
-                            case 1:
-                                jj0.W(jj0Var2, tL_error, tLObject);
-                                break;
-                            default:
-                                jj0.V(jj0Var2, tL_error, tLObject);
-                                break;
-                        }
-                    }
-                });
-                break;
-            default:
-                final int i12 = 2;
-                final jj0 jj0Var3 = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.cj0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i12) {
-                            case 0:
-                                jj0.U(jj0Var3, tL_error, tLObject);
-                                break;
-                            case 1:
-                                jj0.W(jj0Var3, tL_error, tLObject);
-                                break;
-                            default:
-                                jj0.V(jj0Var3, tL_error, tLObject);
-                                break;
-                        }
-                    }
-                });
-                break;
+    public final void a() {
+        for (int i10 = 0; i10 < 4; i10++) {
+            TextView textView = this.a[i10];
+            int i11 = org.telegram.ui.ActionBar.h6.G6;
+            ej0 ej0Var = this.c;
+            textView.setTextColor(org.telegram.ui.ActionBar.h6.v0(i11, ej0Var.getResourceProvider()));
+            this.b[i10].setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.z6, ej0Var.getResourceProvider()));
         }
     }
 }

@@ -11,9 +11,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.f51;
+import org.telegram.ui.Components.e51;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class l3 {
     public boolean a;
@@ -39,23 +39,23 @@ public final class l3 {
                 String str2 = user == null ? "DELETED" : user.first_name;
                 int minTabletSide = (int) ((AndroidUtilities.isTablet() ? AndroidUtilities.getMinTabletSide() : t1Var.getParentWidth()) * 0.4f);
                 String string = LocaleController.getString(R.string.From);
-                TextPaint textPaint = org.telegram.ui.ActionBar.i6.X2;
+                TextPaint textPaint = org.telegram.ui.ActionBar.h6.X2;
                 int ceil = (int) Math.ceil(textPaint.measureText(string + " "));
                 if (str2 == null) {
                     str2 = "";
                 }
-                String str3 = (String) TextUtils.ellipsize(str2.replace('\n', ' '), org.telegram.ui.ActionBar.i6.Y2, minTabletSide - ceil, TextUtils.TruncateAt.END);
+                String str3 = (String) TextUtils.ellipsize(str2.replace('\n', ' '), org.telegram.ui.ActionBar.h6.Y2, minTabletSide - ceil, TextUtils.TruncateAt.END);
                 String string2 = LocaleController.getString(R.string.FromFormatted);
                 int indexOf = string2.indexOf("%1$s");
                 String format = String.format(string2, str3);
                 if (indexOf >= 0) {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(format);
-                    spannableStringBuilder.setSpan(new f51(AndroidUtilities.bold()), indexOf, str3.length() + indexOf, 33);
+                    spannableStringBuilder.setSpan(new e51(AndroidUtilities.bold()), indexOf, str3.length() + indexOf, 33);
                     str = spannableStringBuilder;
                 } else {
                     str = format;
                 }
-                TextPaint textPaint2 = org.telegram.ui.ActionBar.i6.Z2;
+                TextPaint textPaint2 = org.telegram.ui.ActionBar.h6.Z2;
                 int dp = AndroidUtilities.dp(10.0f) + ((int) (textPaint2.measureText(e, 0, e.length()) + 1.0f));
                 Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
                 this.b = new StaticLayout(e, textPaint2, dp, alignment, 1.0f, 0.0f, false);

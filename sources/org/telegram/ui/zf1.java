@@ -1,94 +1,58 @@
 package org.telegram.ui;
 
+import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class zf1 extends org.telegram.ui.Components.a81 {
-    public final ArrayList a;
-    public final /* synthetic */ ag1 b;
+public final class zf1 implements org.telegram.ui.Components.al0 {
+    public final /* synthetic */ cg1 a;
 
-    public zf1(ag1 ag1Var) {
-        this.b = ag1Var;
-        ArrayList arrayList = new ArrayList();
-        this.a = arrayList;
-        arrayList.add(new wf1(0));
-        wf1 wf1Var = new wf1(2);
-        wf1Var.b = 0;
-        arrayList.add(wf1Var);
-        wf1 wf1Var2 = new wf1(2);
-        wf1Var2.b = 1;
-        arrayList.add(wf1Var2);
-        wf1 wf1Var3 = new wf1(2);
-        wf1Var3.b = 2;
-        arrayList.add(wf1Var3);
-        wf1 wf1Var4 = new wf1(2);
-        wf1Var4.b = 3;
-        arrayList.add(wf1Var4);
-        wf1 wf1Var5 = new wf1(2);
-        wf1Var5.b = 4;
-        arrayList.add(wf1Var5);
+    public zf1(cg1 cg1Var) {
+        this.a = cg1Var;
     }
 
-    @Override // org.telegram.ui.Components.a81
-    public final void b(View view, int i10, int i11) {
-        ag1 ag1Var = this.b;
-        ag1Var.K(view, i10, ag1Var.b0, true);
-    }
-
-    @Override // org.telegram.ui.Components.a81
-    public final View d(int i10) {
-        int i11;
-        ag1 ag1Var = this.b;
-        eg1 eg1Var = ag1Var.t0;
-        if (i10 == 1) {
-            return ag1Var.T;
+    @Override // org.telegram.ui.Components.al0
+    public final void d(int i10, View view) {
+        cg1 cg1Var = this.a;
+        ArrayList arrayList = cg1Var.d;
+        if (((bg1) arrayList.get(i10)).a == 1) {
+            Bundle bundle = new Bundle();
+            bundle.putLong("chat_id", -cg1Var.c);
+            bundle.putBoolean("for_select", true);
+            wf1 wf1Var = new wf1(bundle);
+            wf1Var.A0 = cg1Var.e;
+            wf1Var.v = new xf1(this);
+            cg1Var.presentFragment(wf1Var);
         }
-        if (i10 == 2) {
-            i11 = ((org.telegram.ui.ActionBar.n2) eg1Var).currentAccount;
-            org.telegram.ui.Components.vm0 vm0Var = new org.telegram.ui.Components.vm0(i11, eg1Var);
-            vm0Var.b.j(new yf1(0));
-            vm0Var.setUiCallback(ag1Var);
-            return vm0Var;
+        if (((bg1) arrayList.get(i10)).a == 2) {
+            TLRPC.TL_forumTopic tL_forumTopic = ((bg1) arrayList.get(i10)).c;
+            Bundle bundle2 = new Bundle();
+            bundle2.putLong("dialog_id", cg1Var.c);
+            bundle2.putLong("topic_id", tL_forumTopic.id);
+            bundle2.putBoolean("exception", false);
+            p11 p11Var = new p11(bundle2, null);
+            p11Var.r = new yf1(this, tL_forumTopic);
+            cg1Var.presentFragment(p11Var);
         }
-        x10 x10Var = new x10(eg1Var);
-        x10Var.setChatPreviewDelegate(ag1Var.r0);
-        x10Var.setUiCallback(ag1Var);
-        x10Var.b.j(new yf1(1));
-        return x10Var;
-    }
-
-    @Override // org.telegram.ui.Components.a81
-    public final int e() {
-        return this.a.size();
-    }
-
-    @Override // org.telegram.ui.Components.a81
-    public final CharSequence g(int i10) {
-        ArrayList arrayList = this.a;
-        if (((wf1) arrayList.get(i10)).a == 0) {
-            return LocaleController.getString(R.string.SearchMessages);
+        if (((bg1) arrayList.get(i10)).a == 4) {
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(cg1Var.getParentActivity());
+            alertDialog$Builder.a.R = LocaleController.getString(R.string.NotificationsDeleteAllExceptionTitle);
+            alertDialog$Builder.a.T = LocaleController.getString(R.string.NotificationsDeleteAllExceptionAlert);
+            alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new xf1(this));
+            alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
+            org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
+            cg1Var.showDialog(b2Var);
+            TextView textView = (TextView) b2Var.d(-1);
+            if (textView != null) {
+                textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.q7, false));
+            }
         }
-        if (((wf1) arrayList.get(i10)).a == 1) {
-            return LocaleController.getString(R.string.DownloadsTabs);
-        }
-        gg.q0 q0Var = gg.s0.c3[((wf1) arrayList.get(i10)).b];
-        String str = q0Var.c;
-        return str != null ? str : LocaleController.getString(q0Var.b);
-    }
-
-    @Override // org.telegram.ui.Components.a81
-    public final int h(int i10) {
-        ArrayList arrayList = this.a;
-        if (((wf1) arrayList.get(i10)).a == 0) {
-            return 1;
-        }
-        if (((wf1) arrayList.get(i10)).a == 1) {
-            return 2;
-        }
-        return ((wf1) arrayList.get(i10)).a + i10;
     }
 }

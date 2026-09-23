@@ -14,16 +14,16 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public abstract class s7 extends FrameLayout implements org.telegram.ui.Components.lc0 {
+public abstract class s7 extends FrameLayout implements org.telegram.ui.Components.kc0 {
     public final ArrayList a;
-    public final org.telegram.ui.Components.h81 b;
+    public final org.telegram.ui.Components.g81 b;
     public final View c;
     public final org.telegram.ui.ActionBar.n2 d;
     public final ArrayList e;
     public zh.b f;
-    public final org.telegram.ui.Components.i81 h;
+    public final org.telegram.ui.Components.h81 h;
     public final r7[] n;
     public h7 r;
     public int s;
@@ -44,21 +44,21 @@ public abstract class s7 extends FrameLayout implements org.telegram.ui.Componen
         while (true) {
             r7[] r7VarArr2 = this.n;
             if (i10 >= r7VarArr2.length) {
-                org.telegram.ui.Components.i81 i81Var = new org.telegram.ui.Components.i81(getContext(), null);
-                this.h = i81Var;
-                i81Var.setAllowDisallowInterceptTouch(false);
-                addView(i81Var, w7.x5.d(-1, -1.0f, 0, 0.0f, 48.0f, 0.0f, 0.0f));
-                org.telegram.ui.Components.h81 n10 = i81Var.n(3, true);
+                org.telegram.ui.Components.h81 h81Var = new org.telegram.ui.Components.h81(getContext(), null);
+                this.h = h81Var;
+                h81Var.setAllowDisallowInterceptTouch(false);
+                addView(h81Var, w7.x5.d(-1, -1.0f, 0, 0.0f, 48.0f, 0.0f, 0.0f));
+                org.telegram.ui.Components.g81 n10 = h81Var.n(3, true);
                 this.b = n10;
                 addView(n10, w7.x5.c(48.0f, -1));
                 View view = new View(getContext());
                 this.c = view;
-                view.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.d7, false));
+                view.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.d7, false));
                 addView(view, w7.x5.d(-1, 1.0f, 0, 0.0f, 48.0f, 0.0f, 0.0f));
                 view.getLayoutParams().height = 1;
-                i81Var.setAdapter(new e7(this, context, n2Var));
+                h81Var.setAdapter(new e7(this, context, n2Var));
                 LinearLayout linearLayout = new LinearLayout(context);
-                linearLayout.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.d6, false));
+                linearLayout.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.d6, false));
                 linearLayout.setAlpha(0.0f);
                 linearLayout.setClickable(true);
                 addView(linearLayout, w7.x5.c(48.0f, -1));
@@ -67,10 +67,10 @@ public abstract class s7 extends FrameLayout implements org.telegram.ui.Componen
                 imageView.setScaleType(ImageView.ScaleType.CENTER);
                 org.telegram.ui.ActionBar.g2 g2Var = new org.telegram.ui.ActionBar.g2(true);
                 imageView.setImageDrawable(g2Var);
-                int i11 = org.telegram.ui.ActionBar.i6.y8;
-                g2Var.a(org.telegram.ui.ActionBar.i6.w0(null, i11, false));
-                int i12 = org.telegram.ui.ActionBar.i6.z8;
-                imageView.setBackground(org.telegram.ui.ActionBar.i6.f0(org.telegram.ui.ActionBar.i6.w0(null, i12, false), 1, -1));
+                int i11 = org.telegram.ui.ActionBar.h6.y8;
+                g2Var.a(org.telegram.ui.ActionBar.h6.w0(null, i11, false));
+                int i12 = org.telegram.ui.ActionBar.h6.z8;
+                imageView.setBackground(org.telegram.ui.ActionBar.h6.f0(org.telegram.ui.ActionBar.h6.w0(null, i12, false), 1, -1));
                 imageView.setContentDescription(LocaleController.getString(R.string.Close));
                 linearLayout.addView(imageView, new LinearLayout.LayoutParams(AndroidUtilities.dp(54.0f), -1));
                 this.a.add(imageView);
@@ -94,13 +94,13 @@ public abstract class s7 extends FrameLayout implements org.telegram.ui.Componen
                         }
                     }
                 });
-                org.telegram.ui.Components.n6 n6Var = new org.telegram.ui.Components.n6(context, true, true, true);
-                n6Var.setTextSize(AndroidUtilities.dp(18.0f));
-                n6Var.setTypeface(AndroidUtilities.bold());
-                n6Var.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, i11, false));
-                linearLayout.addView(n6Var, w7.x5.m(1.0f, 0, -1, 18, 0, 0));
-                this.a.add(n6Var);
-                org.telegram.ui.ActionBar.v0 v0Var = new org.telegram.ui.ActionBar.v0(context, null, org.telegram.ui.ActionBar.i6.w0(null, i12, false), org.telegram.ui.ActionBar.i6.w0(null, i11, false), false, null);
+                org.telegram.ui.Components.p6 p6Var = new org.telegram.ui.Components.p6(context, true, true, true);
+                p6Var.setTextSize(AndroidUtilities.dp(18.0f));
+                p6Var.setTypeface(AndroidUtilities.bold());
+                p6Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, i11, false));
+                linearLayout.addView(p6Var, w7.x5.m(1.0f, 0, -1, 18, 0, 0));
+                this.a.add(p6Var);
+                org.telegram.ui.ActionBar.v0 v0Var = new org.telegram.ui.ActionBar.v0(context, null, org.telegram.ui.ActionBar.h6.w0(null, i12, false), org.telegram.ui.ActionBar.h6.w0(null, i11, false), false, null);
                 v0Var.setIcon(R.drawable.msg_clear);
                 v0Var.setContentDescription(LocaleController.getString(R.string.Delete));
                 v0Var.setDuplicateParentStateEnabled(false);
@@ -136,13 +136,13 @@ public abstract class s7 extends FrameLayout implements org.telegram.ui.Componen
         }
     }
 
-    public static void a(s7 s7Var, m7 m7Var, o7 o7Var, org.telegram.ui.Components.ll0 ll0Var) {
+    public static void a(s7 s7Var, m7 m7Var, o7 o7Var, org.telegram.ui.Components.ml0 ml0Var) {
         ArrayList arrayList = o7Var.e;
         PhotoViewer.t1().J2(null, s7Var.d, null);
         if (s7Var.r == null) {
             s7Var.r = new h7(s7Var);
         }
-        s7Var.r.a = ll0Var;
+        s7Var.r.a = ml0Var;
         if (arrayList.indexOf(m7Var) >= 0) {
             PhotoViewer.t1().f2(o7Var.r, arrayList.indexOf(m7Var), -1, false, s7Var.r, null);
         }
@@ -150,16 +150,16 @@ public abstract class s7 extends FrameLayout implements org.telegram.ui.Componen
 
     public static void b(s7 s7Var, zh.a aVar, k7 k7Var) {
         org.telegram.ui.ActionBar.n2 n2Var = s7Var.d;
-        org.telegram.ui.Components.ll0 ll0Var = (org.telegram.ui.Components.ll0) s7Var.h.getCurrentView();
+        org.telegram.ui.Components.ml0 ml0Var = (org.telegram.ui.Components.ml0) s7Var.h.getCurrentView();
         if (k7Var.e == 2) {
-            if (!(ll0Var.getAdapter() instanceof l7)) {
+            if (!(ml0Var.getAdapter() instanceof l7)) {
                 return;
             }
             PhotoViewer.t1().J2(null, n2Var, null);
             if (s7Var.r == null) {
                 s7Var.r = new h7(s7Var);
             }
-            s7Var.r.a = ll0Var;
+            s7Var.r.a = ml0Var;
             File file = aVar.a;
             String lowerCase = file.getName().toLowerCase();
             if (file.getName().endsWith("mp4") || file.getName().endsWith(".jpg") || lowerCase.endsWith(".jpeg") || lowerCase.endsWith(".png") || lowerCase.endsWith(".gif")) {
@@ -217,10 +217,10 @@ public abstract class s7 extends FrameLayout implements org.telegram.ui.Componen
             }
         }
         int size = arrayList2.size();
-        org.telegram.ui.Components.i81 i81Var = this.h;
+        org.telegram.ui.Components.h81 h81Var = this.h;
         if (size == 1 && this.f.a) {
             this.b.setVisibility(8);
-            ((ViewGroup.MarginLayoutParams) i81Var.getLayoutParams()).topMargin = 0;
+            ((ViewGroup.MarginLayoutParams) h81Var.getLayoutParams()).topMargin = 0;
             ((ViewGroup.MarginLayoutParams) this.c.getLayoutParams()).topMargin = 0;
         }
         if (arrayList.size() == arrayList2.size()) {
@@ -233,7 +233,7 @@ public abstract class s7 extends FrameLayout implements org.telegram.ui.Componen
                 ((r7) arrayList2.get(i12)).c.F();
             }
         }
-        i81Var.C(true);
+        h81Var.C(true);
         while (i12 < arrayList2.size()) {
         }
     }
@@ -241,21 +241,21 @@ public abstract class s7 extends FrameLayout implements org.telegram.ui.Componen
     public final void d() {
         int i10 = 0;
         while (true) {
-            org.telegram.ui.Components.i81 i81Var = this.h;
-            if (i10 >= i81Var.getViewPages().length) {
+            org.telegram.ui.Components.h81 h81Var = this.h;
+            if (i10 >= h81Var.getViewPages().length) {
                 return;
             }
-            AndroidUtilities.updateVisibleRows((org.telegram.ui.Components.ll0) i81Var.getViewPages()[i10]);
+            AndroidUtilities.updateVisibleRows((org.telegram.ui.Components.ml0) h81Var.getViewPages()[i10]);
             i10++;
         }
     }
 
-    public org.telegram.ui.Components.ll0 getListView() {
-        org.telegram.ui.Components.i81 i81Var = this.h;
-        if (i81Var.getCurrentView() == null) {
+    public org.telegram.ui.Components.ml0 getListView() {
+        org.telegram.ui.Components.h81 h81Var = this.h;
+        if (h81Var.getCurrentView() == null) {
             return null;
         }
-        return (org.telegram.ui.Components.ll0) i81Var.getCurrentView();
+        return (org.telegram.ui.Components.ml0) h81Var.getCurrentView();
     }
 
     @Override // android.widget.FrameLayout, android.view.View
@@ -267,13 +267,13 @@ public abstract class s7 extends FrameLayout implements org.telegram.ui.Componen
         this.s = i10;
         int i11 = 0;
         while (true) {
-            org.telegram.ui.Components.i81 i81Var = this.h;
-            if (i11 >= i81Var.getViewPages().length) {
+            org.telegram.ui.Components.h81 h81Var = this.h;
+            if (i11 >= h81Var.getViewPages().length) {
                 return;
             }
-            org.telegram.ui.Components.ll0 ll0Var = (org.telegram.ui.Components.ll0) i81Var.getViewPages()[i11];
-            if (ll0Var != null) {
-                ll0Var.setPadding(0, 0, 0, i10);
+            org.telegram.ui.Components.ml0 ml0Var = (org.telegram.ui.Components.ml0) h81Var.getViewPages()[i11];
+            if (ml0Var != null) {
+                ml0Var.setPadding(0, 0, 0, i10);
             }
             i11++;
         }

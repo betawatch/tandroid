@@ -7,7 +7,7 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.ShapeDrawable;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class qr0 extends Drawable {
     public final /* synthetic */ int a;
@@ -16,7 +16,7 @@ public final class qr0 extends Drawable {
 
     public qr0(nr0 nr0Var) {
         this.a = 1;
-        this.b = org.telegram.ui.ActionBar.i6.c0(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), 0);
+        this.b = org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), 0);
         this.c = new Rect();
     }
 
@@ -72,9 +72,9 @@ public final class qr0 extends Drawable {
         this.a = 0;
         int dp = AndroidUtilities.dp(16.0f);
         int dp2 = AndroidUtilities.dp(16.0f);
-        int i10 = org.telegram.ui.ActionBar.i6.d6;
-        org.telegram.ui.ActionBar.e6 e6Var = rr0Var.c;
-        this.b = org.telegram.ui.ActionBar.i6.c0(dp, dp2, org.telegram.ui.ActionBar.i6.v(org.telegram.ui.ActionBar.i6.v0(i10, e6Var), org.telegram.ui.ActionBar.i6.l1(0.04f, org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.G6, e6Var))));
+        int i10 = org.telegram.ui.ActionBar.h6.d6;
+        org.telegram.ui.ActionBar.d6 d6Var = rr0Var.c;
+        this.b = org.telegram.ui.ActionBar.h6.c0(dp, dp2, org.telegram.ui.ActionBar.h6.v(org.telegram.ui.ActionBar.h6.v0(i10, d6Var), org.telegram.ui.ActionBar.h6.l1(0.04f, org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.G6, d6Var))));
         this.c = new Rect();
     }
 

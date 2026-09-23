@@ -1,81 +1,109 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.text.TextPaint;
-import android.util.TypedValue;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public class f40 extends EditTextBoldCursor {
-    public final TextPaint b;
-    public String c;
-    public final Rect d;
+public abstract class f40 extends v51 {
+    public final int N;
+    public final ArrayList O;
+    public boolean P;
+    public ai.v8 Q;
+    public boolean R;
+    public boolean S;
+    public int T;
+    public int U;
+    public boolean V;
+    public int W;
+    public String X;
+    public String Y;
+    public int Z;
+    public xm a0;
+    public final boolean[] b0;
 
-    public f40(Context context) {
-        super(context);
-        TextPaint textPaint = new TextPaint(1);
-        this.b = textPaint;
-        this.d = new Rect();
-        textPaint.setColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.H6, false));
+    public f40(ml0 ml0Var, Context context, int i10) {
+        super(ml0Var, context, i10, 0, false, null, null);
+        this.O = new ArrayList();
+        this.T = 0;
+        this.U = -1;
+        this.b0 = new boolean[1];
+        this.s = new d(this, 16);
+        this.N = i10;
     }
 
-    public String getHintText() {
-        return this.c;
+    public static String X(String str, boolean[] zArr) {
+        if (zArr != null) {
+            zArr[0] = false;
+        }
+        if (str == null || str.isEmpty()) {
+            return null;
+        }
+        String trim = str.trim();
+        if (trim.length() <= 1) {
+            return null;
+        }
+        if ((trim.charAt(0) != '#' && trim.charAt(0) != '$') || trim.indexOf(64) >= 0) {
+            return null;
+        }
+        if (zArr != null) {
+            zArr[0] = trim.charAt(0) == '$';
+        }
+        return trim.substring(1);
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.du, android.widget.TextView, android.view.View
-    public void onDraw(Canvas canvas) {
-        Canvas canvas2;
-        if (this.c != null && length() < this.c.length()) {
-            int i10 = 0;
-            float f7 = 0.0f;
-            while (i10 < this.c.length()) {
-                int length = length();
-                TextPaint textPaint = this.b;
-                float measureText = i10 < length ? getPaint().measureText(getText(), i10, i10 + 1) : textPaint.measureText(this.c, i10, i10 + 1);
-                if (i10 < length()) {
-                    f7 += measureText;
-                    canvas2 = canvas;
-                } else {
-                    int color = textPaint.getColor();
-                    canvas.save();
-                    String str = this.c;
-                    textPaint.getTextBounds(str, 0, str.length(), this.d);
-                    i(i10);
-                    canvas2 = canvas;
-                    canvas2.drawText(this.c, i10, i10 + 1, f7, (r5.height() + getHeight()) / 2.0f, (Paint) textPaint);
-                    f7 += measureText;
-                    canvas2.restore();
-                    textPaint.setColor(color);
-                }
-                i10++;
-                canvas = canvas2;
+    public final void V() {
+        ai.v8 v8Var = this.Q;
+        if (v8Var != null && v8Var.I != 0) {
+            ConnectionsManager.getInstance(v8Var.c).cancelRequest(v8Var.I, true);
+            v8Var.I = 0;
+        }
+        this.P = false;
+        if (this.U >= 0) {
+            ConnectionsManager.getInstance(this.N).cancelRequest(this.U, true);
+            this.U = -1;
+        }
+        AndroidUtilities.cancelRunOnUIThread(this.a0);
+        this.T++;
+        this.S = false;
+    }
+
+    public final void W() {
+        ml0 ml0Var;
+        if (TextUtils.isEmpty(this.X) || this.V || this.S || (ml0Var = this.d) == null) {
+            return;
+        }
+        for (int i10 = 0; i10 < ml0Var.getChildCount(); i10++) {
+            if (ml0Var.getChildAt(i10) instanceof u00) {
+                Y(this.X);
+                return;
             }
         }
-        super.onDraw(canvas);
     }
 
-    @Override // org.telegram.ui.Components.du, android.widget.TextView, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        invalidate();
-    }
-
-    public void setHintText(String str) {
-        this.c = str;
-        invalidate();
-        setText(getText());
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView
-    public void setTextSize(int i10, float f7) {
-        super.setTextSize(i10, f7);
-        this.b.setTextSize(TypedValue.applyDimension(i10, f7, getResources().getDisplayMetrics()));
-    }
-
-    public void i(int i10) {
+    public final void Y(String str) {
+        this.X = str;
+        String X = X(str, this.b0);
+        if (!TextUtils.equals(this.Y, X)) {
+            this.O.clear();
+            this.V = false;
+            this.W = 0;
+            V();
+        } else if (this.S) {
+            return;
+        }
+        int i10 = this.T + 1;
+        this.T = i10;
+        if (X == null) {
+            return;
+        }
+        this.S = true;
+        N(true);
+        xm xmVar = new xm(this, i10, X, 5);
+        this.a0 = xmVar;
+        AndroidUtilities.runOnUIThread(xmVar, 300L);
     }
 }

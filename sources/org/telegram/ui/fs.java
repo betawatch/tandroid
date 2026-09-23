@@ -1,58 +1,36 @@
 package org.telegram.ui;
 
-import android.R;
-import android.content.ClipData;
-import android.content.ClipboardManager;
-import android.view.ActionMode;
-import android.view.Menu;
-import android.view.MenuItem;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class fs implements ActionMode.Callback {
-    public final /* synthetic */ gs a;
+public final /* synthetic */ class fs implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ns b;
 
-    public fs(gs gsVar) {
-        this.a = gsVar;
+    public /* synthetic */ fs(ns nsVar, int i10) {
+        this.a = i10;
+        this.b = nsVar;
     }
 
-    @Override // android.view.ActionMode.Callback
-    public final boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
-        ClipboardManager clipboardManager;
-        ClipData primaryClip;
-        int i10;
-        if (menuItem.getItemId() != 16908322) {
-            return true;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ns nsVar = this.b;
+                if (nsVar.J) {
+                    nsVar.d.b.requestFocus();
+                    AndroidUtilities.showKeyboard(nsVar.d.b);
+                    break;
+                }
+                break;
+            case 1:
+                ns.Z(this.b);
+                break;
+            default:
+                ns nsVar2 = this.b;
+                nsVar2.presentFragment(xn.R9(nsVar2.H), true);
+                break;
         }
-        gs gsVar = this.a;
-        ds dsVar = gsVar.getParent() instanceof ds ? (ds) gsVar.getParent() : null;
-        if (dsVar != null && (clipboardManager = (ClipboardManager) f0.e.f(gsVar.getContext(), ClipboardManager.class)) != null && (primaryClip = clipboardManager.getPrimaryClip()) != null) {
-            String charSequence = primaryClip.getItemAt(0).getText().toString();
-            try {
-                i10 = Integer.parseInt(charSequence);
-            } catch (Exception unused) {
-                i10 = -1;
-            }
-            if (i10 > 0) {
-                dsVar.c(charSequence, true);
-            }
-        }
-        gsVar.hideActionMode();
-        return true;
-    }
-
-    @Override // android.view.ActionMode.Callback
-    public final boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
-        menu.add(0, R.id.paste, 0, R.string.paste);
-        return true;
-    }
-
-    @Override // android.view.ActionMode.Callback
-    public final boolean onPrepareActionMode(ActionMode actionMode, Menu menu) {
-        return true;
-    }
-
-    @Override // android.view.ActionMode.Callback
-    public final void onDestroyActionMode(ActionMode actionMode) {
     }
 }

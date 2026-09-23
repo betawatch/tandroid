@@ -21,13 +21,14 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import k2.b0;
 import k2.u;
 import u2.d0;
 import v7.p7;
 import v8.s;
 import y2.p;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class g extends u2.a {
     public y2.m A;
@@ -98,7 +99,7 @@ public final class g extends u2.a {
         this.N = -9223372036854775807L;
         this.L = -9223372036854775807L;
         this.s = new u(this, 2);
-        this.y = new k2.c0(this, 2);
+        this.y = new b0(this, 2);
         final int i10 = 0;
         this.v = new Runnable(this) { // from class: l2.c
             public final /* synthetic */ g b;

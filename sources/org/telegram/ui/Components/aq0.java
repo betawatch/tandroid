@@ -17,7 +17,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class aq0 implements Runnable {
     public final /* synthetic */ int a;
@@ -93,7 +93,7 @@ public final /* synthetic */ class aq0 implements Runnable {
                     String lowerCase = str2.trim().toLowerCase();
                     if (lowerCase.length() == 0) {
                         dq0Var5.r = -1;
-                        AndroidUtilities.runOnUIThread(new wm(dq0Var5, dq0Var5.r, new ArrayList(), 9));
+                        AndroidUtilities.runOnUIThread(new xm(dq0Var5, dq0Var5.r, new ArrayList(), 9));
                         break;
                     } else {
                         String translitString = LocaleController.getInstance().getTranslitString(lowerCase);
@@ -327,7 +327,7 @@ public final /* synthetic */ class aq0 implements Runnable {
                         }
                         queryFinalized4.dispose();
                         Collections.sort(arrayList3, new org.telegram.ui.df(16));
-                        AndroidUtilities.runOnUIThread(new wm(dq0Var, i12, arrayList3, 9));
+                        AndroidUtilities.runOnUIThread(new xm(dq0Var, i12, arrayList3, 9));
                         break;
                     }
                 } catch (Exception e) {

@@ -1,336 +1,152 @@
 package ci;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
-import android.view.Choreographer;
-import java.io.File;
+import android.content.Context;
+import android.os.Bundle;
+import android.text.style.CharacterStyle;
+import android.view.KeyEvent;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import com.android.billingclient.api.Purchase;
 import java.util.ArrayList;
-import java.util.LinkedHashSet;
+import java.util.HashSet;
+import java.util.regex.Pattern;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.BillingController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.dz;
-import org.telegram.ui.Components.fz;
-import org.telegram.ui.Components.rl;
-import org.telegram.ui.Components.sh;
-import org.telegram.ui.Components.v01;
-import org.telegram.ui.Components.w01;
-import org.telegram.ui.Components.ww0;
-import org.telegram.ui.Components.x01;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.ir0;
-import org.telegram.ui.pf0;
-import org.telegram.ui.q51;
-import org.telegram.ui.tr0;
+import org.telegram.tgnet.tl.TL_update;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.d90;
+import org.telegram.ui.Components.jn0;
+import org.telegram.ui.Components.ux0;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.TwoStepVerificationActivity;
+import org.telegram.ui.ag0;
+import org.telegram.ui.d10;
+import org.telegram.ui.j71;
+import org.telegram.ui.jn;
+import org.telegram.ui.kf0;
+import org.telegram.ui.kg;
+import org.telegram.ui.qg0;
+import org.telegram.ui.wf0;
+import org.telegram.ui.xn;
+import org.telegram.ui.ye;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class hd implements Utilities.Callback {
+public final /* synthetic */ class hd implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
+    public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    public /* synthetic */ hd(Object obj, boolean z10, Object obj2, int i10) {
+    public /* synthetic */ hd(Object obj, Object obj2, Object obj3, Object obj4, Object obj5, int i10) {
         this.a = i10;
-        this.c = obj;
-        this.b = z10;
-        this.d = obj2;
+        this.b = obj;
+        this.c = obj2;
+        this.d = obj3;
+        this.e = obj4;
+        this.f = obj5;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:122:0x0432  */
-    /* JADX WARN: Removed duplicated region for block: B:125:0x0434  */
-    @Override // org.telegram.messenger.Utilities.Callback
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run(Object obj) {
-        int i10;
-        int i11;
-        BitmapFactory.Options options;
-        qg.m2[] m2VarArr;
-        Bitmap bitmap;
-        float f7;
-        Bitmap bitmap2;
-        float f10;
-        float f11;
-        float f12;
-        switch (this.a) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        int i10 = this.a;
+        Object obj = this.f;
+        Object obj2 = this.e;
+        Object obj3 = this.d;
+        Object obj4 = this.c;
+        Object obj5 = this.b;
+        switch (i10) {
             case 0:
-                boolean z10 = this.b;
-                org.telegram.ui.ActionBar.b2 b2Var = (org.telegram.ui.ActionBar.b2) this.c;
-                Utilities.Callback callback = (Utilities.Callback) this.d;
-                nd ndVar = (nd) obj;
-                if (z10) {
-                    b2Var.c(350L);
-                }
-                callback.run(ndVar);
+                AndroidUtilities.runOnUIThread(new ai.z8((int[]) obj5, tLObject, (MessagesController) obj4, (TLRPC.User[]) obj3, (gd) obj2, (ed) obj, 1));
                 break;
             case 1:
-                rl rlVar = (rl) this.c;
-                File file = (File) this.d;
-                boolean z11 = this.b;
-                Integer num = (Integer) obj;
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = rlVar.e;
-                chatAttachAlertPhotoLayout.s0 = false;
-                if (file != null && !chatAttachAlertPhotoLayout.b.V) {
-                    ChatAttachAlertPhotoLayout.q1 = false;
-                    try {
-                        options = new BitmapFactory.Options();
-                        options.inJustDecodeBounds = true;
-                        BitmapFactory.decodeFile(new File(file.getAbsolutePath()).getAbsolutePath(), options);
-                        i10 = options.outWidth;
-                    } catch (Exception unused) {
-                        i10 = 0;
-                    }
-                    try {
-                        i11 = options.outHeight;
-                    } catch (Exception unused2) {
-                        i11 = 0;
-                        int i12 = i10;
-                        int i13 = ChatAttachAlertPhotoLayout.u1;
-                        ChatAttachAlertPhotoLayout.u1 = i13 - 1;
-                        MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, i13, 0L, file.getAbsolutePath(), num.intValue() != -1 ? 0 : num.intValue(), false, i12, i11, 0L);
-                        photoEntry.canDeleteAfter = true;
-                        chatAttachAlertPhotoLayout.j0(photoEntry, z11, false);
-                        return;
-                    }
-                    int i122 = i10;
-                    int i132 = ChatAttachAlertPhotoLayout.u1;
-                    ChatAttachAlertPhotoLayout.u1 = i132 - 1;
-                    MediaController.PhotoEntry photoEntry2 = new MediaController.PhotoEntry(0, i132, 0L, file.getAbsolutePath(), num.intValue() != -1 ? 0 : num.intValue(), false, i122, i11, 0L);
-                    photoEntry2.canDeleteAfter = true;
-                    chatAttachAlertPhotoLayout.j0(photoEntry2, z11, false);
-                }
+                AndroidUtilities.runOnUIThread(new ai.z8(tLObject, (String[]) obj5, (FrameLayout) obj4, (d90) obj3, (org.telegram.ui.ActionBar.f3) obj2, (org.telegram.ui.ActionBar.d6) obj, 4));
                 break;
             case 2:
-                dz dzVar = (dz) this.c;
-                boolean z12 = this.b;
-                Runnable runnable = (Runnable) this.d;
-                ArrayList arrayList = (ArrayList) obj;
-                ArrayList arrayList2 = dzVar.r;
-                fz fzVar = dzVar.w;
-                if (fzVar.M == dzVar.b) {
-                    int i14 = 0;
-                    if (z12) {
-                        int size = arrayList2.size();
-                        arrayList2.clear();
-                        fzVar.y = size == arrayList.size();
-                    }
-                    arrayList2.addAll(arrayList);
-                    int size2 = arrayList.size();
-                    while (i14 < size2) {
-                        Object obj2 = arrayList.get(i14);
-                        i14++;
-                        TLRPC.Document document = (TLRPC.Document) obj2;
-                        dzVar.v.put(document.id, document);
-                    }
-                    dzVar.f.put(arrayList2, fzVar.N);
-                    runnable.run();
-                    break;
-                }
+                AndroidUtilities.runOnUIThread(new ai.z8((xn) obj5, (nf.e) obj4, (org.telegram.ui.Cells.t1) obj3, (String) obj2, tLObject, (CharacterStyle) obj, 6));
                 break;
             case 3:
-                PhotoViewer photoViewer = (PhotoViewer) this.c;
-                boolean z13 = this.b;
-                MediaController.MediaEditState mediaEditState = (MediaController.MediaEditState) this.d;
-                qg.m2 m2Var = (qg.m2) obj;
-                qg.p2 p2Var = photoViewer.p5;
-                if (!p2Var.y || (m2VarArr = p2Var.H) == null || m2VarArr.length <= 0) {
-                    photoViewer.t5.setCutOutState(true);
-                    photoViewer.W2(false, true);
-                } else {
-                    x01 thanosEffect = photoViewer.p5.getThanosEffect();
-                    qg.p2 p2Var2 = photoViewer.p5;
-                    p2Var2.L = true;
-                    p2Var2.E = m2Var;
-                    Bitmap bitmap3 = photoViewer.C4.getBitmap();
-                    photoViewer.C4.getOrientation();
-                    qg.m2 m2Var2 = p2Var2.E;
-                    Bitmap b10 = m2Var2 == null ? p2Var2.I : (!z13 || bitmap3 == null) ? m2Var2.b() : p2Var2.e(bitmap3);
-                    MediaController.PhotoEntry photoEntry3 = (MediaController.PhotoEntry) photoViewer.g7.get(photoViewer.P4);
-                    if (thanosEffect == null) {
-                        Utilities.themeQueue.postRunnable(new tr0(photoViewer, b10, 0));
-                        photoViewer.p5.f();
-                        photoViewer.e0.invalidate();
+                AndroidUtilities.runOnUIThread(new ye((xn) obj5, tL_error, (TLObject) obj4, tLObject, (kg) obj3, (String) obj2, (nf.e) obj));
+                break;
+            case 4:
+                AndroidUtilities.runOnUIThread(new ye((jn) obj5, (org.telegram.ui.ActionBar.b2) obj4, tLObject, (HashSet) obj3, (TLRPC.TL_inputGroupCallInviteMessage) obj2, (MessageObject) obj, tL_error));
+                break;
+            case 5:
+                AndroidUtilities.runOnUIThread(new ai.z8(tL_error, (Context) obj5, (org.telegram.ui.ActionBar.d6) obj4, (d) obj3, (org.telegram.ui.ActionBar.f3) obj2, (Runnable) obj, 7));
+                break;
+            case 6:
+                AndroidUtilities.runOnUIThread(new ai.z8((ux0) obj4, tLObject, (EditTextBoldCursor) obj3, (TextView) obj2, (TextView) obj, (int[]) obj5, 8));
+                break;
+            case 7:
+                Pattern pattern = LaunchActivity.B1;
+                AndroidUtilities.runOnUIThread(new ye((KeyEvent.Callback) obj5, obj4, (Object) tL_error, (String) obj3, obj2, tLObject, obj, 3));
+                break;
+            case 8:
+                ag0 ag0Var = (ag0) obj5;
+                TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode = (TLRPC.TL_inputStorePaymentAuthCode) obj4;
+                Purchase purchase = (Purchase) obj3;
+                TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = (TLRPC.TL_payments_canPurchaseStore) obj2;
+                jn0 jn0Var = (jn0) obj;
+                if (!(tLObject instanceof TLRPC.Updates)) {
+                    if (tL_error != null) {
+                        AndroidUtilities.runOnUIThread(new d10(jn0Var, 25));
                         break;
-                    } else {
-                        qg.p2 p2Var3 = photoViewer.p5;
-                        photoViewer.C4.getOrientation();
-                        p2Var3.getClass();
-                        String str = photoEntry3.filterPath;
-                        Bitmap decodeFile = str != null ? BitmapFactory.decodeFile(str) : p2Var3.getSourceBitmap();
-                        Bitmap decodeFile2 = BitmapFactory.decodeFile(photoEntry3.paintPath);
-                        int width = decodeFile.getWidth();
-                        int height = decodeFile.getHeight();
-                        Bitmap.Config config = Bitmap.Config.ARGB_8888;
-                        Bitmap createBitmap = Bitmap.createBitmap(width, height, config);
-                        Canvas canvas = new Canvas(createBitmap);
-                        Paint paint = new Paint(3);
-                        Paint paint2 = new Paint(3);
-                        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
-                        canvas.drawBitmap(decodeFile, 0.0f, 0.0f, paint2);
-                        Rect rect = new Rect();
-                        float f13 = 0.0f;
-                        Bitmap bitmap4 = decodeFile;
-                        rect.set(0, 0, decodeFile.getWidth(), decodeFile.getHeight());
-                        qg.m2 m2Var3 = p2Var3.E;
-                        if (m2Var3 == null) {
-                            qg.m2[] m2VarArr2 = p2Var3.H;
-                            if (m2VarArr2.length > 0) {
-                                m2Var3 = m2VarArr2[0];
-                            }
-                        }
-                        if (m2Var3 == null) {
-                            bitmap2 = null;
-                            f7 = 2.0f;
-                        } else {
-                            if (m2Var3.c == 0 || !photoEntry3.isFiltered) {
-                                bitmap = createBitmap;
-                                f7 = 2.0f;
-                                canvas.drawBitmap(m2Var3.a(), (Rect) null, rect, paint);
-                            } else {
-                                Matrix matrix = new Matrix();
-                                f7 = 2.0f;
-                                bitmap = createBitmap;
-                                matrix.postRotate(m2Var3.c, m2Var3.a().getWidth() / 2.0f, m2Var3.a().getHeight() / 2.0f);
-                                if ((m2Var3.c / 90) % 2 != 0) {
-                                    float height2 = (m2Var3.a().getHeight() - m2Var3.a().getWidth()) / 2.0f;
-                                    matrix.postTranslate(height2, -height2);
-                                }
-                                matrix.postScale(bitmap4.getWidth() / m2Var3.a().getHeight(), bitmap4.getHeight() / m2Var3.a().getWidth());
-                                canvas.drawBitmap(m2Var3.a(), matrix, paint);
-                            }
-                            if (decodeFile2 != null) {
-                                paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
-                                if (m2Var3.c == 0 || photoEntry3.isFiltered) {
-                                    canvas.drawBitmap(decodeFile2, (Rect) null, rect, paint);
-                                } else {
-                                    Matrix matrix2 = new Matrix();
-                                    matrix2.postRotate(-m2Var3.c, decodeFile2.getWidth() / f7, decodeFile2.getHeight() / f7);
-                                    if ((m2Var3.c / 90) % 2 != 0) {
-                                        float height3 = (decodeFile2.getHeight() - decodeFile2.getWidth()) / f7;
-                                        matrix2.postTranslate(height3, -height3);
-                                    }
-                                    matrix2.postScale(bitmap4.getWidth() / decodeFile2.getHeight(), bitmap4.getHeight() / decodeFile2.getWidth());
-                                    canvas.drawBitmap(decodeFile2, matrix2, paint);
-                                }
-                            }
-                            bitmap2 = bitmap;
-                        }
-                        if (bitmap2 == null) {
-                            Utilities.themeQueue.postRunnable(new tr0(photoViewer, b10, 1));
-                            photoViewer.p5.f();
-                            photoViewer.e0.invalidate();
+                    }
+                } else {
+                    TLRPC.Updates updates = (TLRPC.Updates) tLObject;
+                    ArrayList findUpdatesAndRemove = MessagesController.findUpdatesAndRemove(updates, TL_update.TL_updateSentPhoneCode.class);
+                    int size = findUpdatesAndRemove.size();
+                    int i11 = 0;
+                    while (true) {
+                        int i12 = 3;
+                        if (i11 >= size) {
+                            ag0Var.v.getMessagesController().processUpdates(updates, false);
+                            BillingController.getInstance().consumeGiftPurchase(purchase, tL_payments_canPurchaseStore.purpose, null);
+                            AndroidUtilities.runOnUIThread(new wf0(ag0Var, i12));
                             break;
                         } else {
-                            MediaController.CropState cropState = mediaEditState.cropState;
-                            if (cropState != null) {
-                                bitmap2 = PhotoViewer.I0(bitmap2, cropState, new int[]{photoViewer.C4.getOrientation(), photoViewer.C4.getInvert()}, true);
-                            }
-                            if (bitmap2 == null) {
-                                Utilities.themeQueue.postRunnable(new tr0(photoViewer, b10, 2));
-                                photoViewer.p5.f();
-                                photoViewer.e0.invalidate();
-                                break;
-                            } else {
-                                Matrix matrix3 = new Matrix();
-                                int width2 = bitmap2.getWidth();
-                                int height4 = bitmap2.getHeight();
-                                if (!photoEntry3.isCropped && (photoViewer.C4.getOrientation() / 90) % 2 != 0) {
-                                    width2 = bitmap2.getHeight();
-                                    height4 = bitmap2.getWidth();
-                                }
-                                float f14 = width2;
-                                float f15 = height4;
-                                float min = Math.min(photoViewer.k1(photoViewer.u4) / f14, photoViewer.i1() / f15);
-                                float f16 = f14 * min;
-                                float f17 = f15 * min;
-                                if ((photoViewer.C4.getOrientation() == 0 || photoEntry3.isCropped) && photoViewer.b6 == 0.0f) {
-                                    f10 = f16;
-                                    f11 = f17;
-                                    f12 = 0.0f;
-                                } else {
-                                    float width3 = bitmap2.getWidth();
-                                    float height5 = bitmap2.getHeight();
-                                    float f18 = width3 / f7;
-                                    float f19 = height5 / f7;
-                                    float sqrt = (float) Math.sqrt((f19 * f19) + (f18 * f18));
-                                    float f20 = sqrt * f7;
-                                    int i15 = (int) f20;
-                                    Bitmap createBitmap2 = Bitmap.createBitmap(i15, i15, config);
-                                    Canvas canvas2 = new Canvas(createBitmap2);
-                                    canvas2.save();
-                                    canvas2.rotate((photoEntry3.isCropped ? 0 : photoViewer.C4.getOrientation()) + photoViewer.b6, sqrt, sqrt);
-                                    canvas2.drawBitmap(bitmap2, (f20 - width3) / f7, (f20 - height5) / f7, (Paint) null);
-                                    bitmap2.recycle();
-                                    float f21 = f16 / f7;
-                                    float f22 = f17 / f7;
-                                    f10 = ((float) Math.sqrt((f22 * f22) + (f21 * f21))) * f7;
-                                    f12 = (-(f10 - f17)) / f7;
-                                    f13 = (-(f10 - f16)) / f7;
-                                    bitmap2 = createBitmap2;
-                                    f11 = f10;
-                                }
-                                matrix3.postScale(f10, f11);
-                                float f23 = photoViewer.a6;
-                                matrix3.postScale(f23, f23, f10 / f7, f11 / f7);
-                                matrix3.postTranslate(photoViewer.X5 + f13 + Math.max(0, (int) ((photoViewer.k1(photoViewer.u4) - f16) / f7)), photoViewer.Y5 + f12 + Math.max(0, (int) ((photoViewer.i1() - f17) / f7)));
-                                photoViewer.p5.V = true;
-                                Utilities.themeQueue.postRunnable(new tr0(photoViewer, b10, 3));
-                                ir0 ir0Var = new ir0(photoViewer, 13);
-                                pf0 pf0Var = new pf0(photoViewer, b10, ir0Var, 18);
-                                sh shVar = new sh(26);
-                                v01 v01Var = thanosEffect.a;
-                                if (v01Var != null) {
-                                    v01Var.c(matrix3, bitmap2, pf0Var, shVar);
-                                    Choreographer.getInstance().postFrameCallback(thanosEffect.b);
-                                } else {
-                                    thanosEffect.c.add(new w01(matrix3, bitmap2, pf0Var, shVar));
-                                }
-                                AndroidUtilities.runOnUIThread(ir0Var, 1200L);
-                            }
+                            Object obj6 = findUpdatesAndRemove.get(i11);
+                            i11++;
+                            AndroidUtilities.runOnUIThread(new kf0((Object) ag0Var, (Object) tL_inputStorePaymentAuthCode, obj6, i12));
                         }
                     }
                 }
-                photoViewer.p5.f();
-                photoViewer.e0.invalidate();
+                break;
+            case 9:
+                AndroidUtilities.runOnUIThread(new ye((qg0) obj5, tL_error, tLObject, (Bundle) obj4, (String) obj3, (lf.i) obj2, (TLObject) obj, 5));
+                break;
+            case 10:
+                AndroidUtilities.runOnUIThread(new ye(obj5, (Object) tLObject, (String) obj4, (TLObject) obj3, obj2, (Object) tL_error, obj, 6));
+                break;
+            case 11:
+                AndroidUtilities.runOnUIThread(new ai.z8((j71) obj5, tL_error, (TLRPC.InputCheckPasswordSRP) obj4, (TLRPC.User) obj3, (TwoStepVerificationActivity) obj2, (TLRPC.TL_channels_editCreator) obj, 12));
+                break;
+            case 12:
+                AndroidUtilities.runOnUIThread(new ye(tL_error, (tg.w) obj5, tLObject, (MessagesController) obj4, (TLRPC.TL_inputInvoicePremiumGiftCode) obj3, (org.telegram.ui.ActionBar.n2) obj2, (tg.w) obj, 8));
+                break;
+            case 13:
+                AndroidUtilities.runOnUIThread(new ye(tL_error, (Utilities.Callback) obj5, tLObject, (MessagesController) obj4, (TLRPC.TL_inputInvoicePremiumGiftCode) obj3, (org.telegram.ui.ActionBar.n2) obj2, (Utilities.Callback) obj, 9));
                 break;
             default:
-                boolean z14 = this.b;
-                String str2 = (String) this.c;
-                LinkedHashSet linkedHashSet = (LinkedHashSet) this.d;
-                Runnable runnable2 = (Runnable) obj;
-                if (!z14) {
-                    runnable2.run();
-                    break;
-                } else {
-                    ww0.y3.fetch(UserConfig.selectedAccount, str2, new q51(linkedHashSet, runnable2, 1));
-                    break;
-                }
+                AndroidUtilities.runOnUIThread(new ye((yh.t5) obj5, tLObject, (MessageObject) obj4, (TLRPC.InputInvoice) obj3, (Utilities.Callback) obj2, (org.telegram.ui.Components.xc) obj, tL_error, 11));
+                break;
         }
     }
 
-    public /* synthetic */ hd(rl rlVar, File file, boolean z10) {
-        this.a = 1;
-        this.c = rlVar;
-        this.d = file;
-        this.b = z10;
-    }
-
-    public /* synthetic */ hd(boolean z10, Object obj, Object obj2, int i10) {
-        this.a = i10;
-        this.b = z10;
-        this.c = obj;
-        this.d = obj2;
+    public /* synthetic */ hd(ux0 ux0Var, EditTextBoldCursor editTextBoldCursor, TextView textView, TextView textView2, int[] iArr) {
+        this.a = 6;
+        this.c = ux0Var;
+        this.d = editTextBoldCursor;
+        this.e = textView;
+        this.f = textView2;
+        this.b = iArr;
     }
 }

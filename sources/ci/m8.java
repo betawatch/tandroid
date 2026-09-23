@@ -1,10 +1,27 @@
 package ci;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+import android.view.View;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public interface m8 {
-    Bitmap c(BitmapFactory.Options options);
+public final /* synthetic */ class m8 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ u8 b;
+
+    public /* synthetic */ m8(u8 u8Var, int i10) {
+        this.a = i10;
+        this.b = u8Var;
+    }
+
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                this.b.U();
+                break;
+            default:
+                this.b.X();
+                break;
+        }
+    }
 }

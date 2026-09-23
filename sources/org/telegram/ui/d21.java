@@ -1,28 +1,13 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d21 implements org.telegram.ui.Components.bl0, org.telegram.ui.ActionBar.a2 {
-    public final /* synthetic */ ProxyListActivity a;
-
-    public /* synthetic */ d21(ProxyListActivity proxyListActivity) {
-        this.a = proxyListActivity;
-    }
-
-    @Override // org.telegram.ui.Components.bl0
-    public boolean d(int i10, View view) {
-        ProxyListActivity proxyListActivity = this.a;
-        if (i10 < proxyListActivity.n || i10 >= proxyListActivity.r) {
-            return false;
-        }
-        proxyListActivity.a.G(i10);
-        return true;
-    }
-
-    @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        ProxyListActivity.V(this.a);
+public final class d21 extends xd {
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        invalidate();
     }
 }

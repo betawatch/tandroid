@@ -5,7 +5,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.widget.TextView;
-import ci.uc;
+import ci.rc;
 import java.lang.ref.WeakReference;
 import java.util.Arrays;
 import java.util.WeakHashMap;
@@ -13,7 +13,7 @@ import m.v0;
 import m.w0;
 import r0.i0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class a0 {
     public int a;
@@ -38,7 +38,7 @@ public final class a0 {
     }
 
     public void b() {
-        new Handler(Looper.getMainLooper()).post(new uc(this, 17));
+        new Handler(Looper.getMainLooper()).post(new rc(this, 17));
     }
 
     public synchronized void c() {

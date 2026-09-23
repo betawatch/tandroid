@@ -3,22 +3,22 @@ package jh;
 import android.content.Context;
 import android.widget.FrameLayout;
 import b2.n1;
-import ci.o4;
+import ci.n4;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.wq;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.xq;
 import w7.x5;
 import w7.z5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class h extends FrameLayout implements le.d {
+public final class h extends FrameLayout implements le.e {
     public static final int[] s;
     public final String[] a;
-    public final e6 b;
+    public final d6 b;
     public final dh.a c;
     public final ah.c d;
     public final aa.a[] e;
@@ -33,7 +33,7 @@ public final class h extends FrameLayout implements le.d {
         s = new int[]{i10, i11, R.drawable.mentionbutton, R.drawable.reactionbutton, R.drawable.menu_poll_notify, i11, i11};
     }
 
-    public h(Context context, e6 e6Var, dh.b bVar, ah.c cVar) {
+    public h(Context context, d6 d6Var, dh.b bVar, ah.c cVar) {
         super(context);
         this.a = new String[]{LocaleController.getString(R.string.AttachMenu), LocaleController.getString(R.string.AccDescrPageDown), LocaleController.getString(R.string.AccDescrMentionDown), LocaleController.getString(R.string.AccDescrReactionMentionDown), LocaleController.getString(R.string.AccDescrPollVotesMentionDown), LocaleController.getString(R.string.AccDescrSearchPrev), LocaleController.getString(R.string.AccDescrSearchNext)};
         this.e = new aa.a[7];
@@ -41,11 +41,11 @@ public final class h extends FrameLayout implements le.d {
         this.r = 83;
         this.d = cVar;
         this.c = bVar;
-        this.b = e6Var;
+        this.b = d6Var;
     }
 
-    @Override // le.d
-    public final void D(int i10, float f7, float f10, le.e eVar) {
+    @Override // le.e
+    public final void D(int i10, float f7, float f10, le.f fVar) {
         int i11 = i10 >> 16;
         int i12 = i10 & 65535;
         if (i11 >= 0) {
@@ -70,8 +70,8 @@ public final class h extends FrameLayout implements le.d {
             aa.a aVar = aVarArr[i10];
             if (aVar != null) {
                 ih.b bVar = (ih.b) aVar.b;
-                float f10 = ((le.b) aVar.c).e;
-                float f11 = ((le.b) aVar.d).e;
+                float f10 = ((le.c) aVar.c).e;
+                float f11 = ((le.c) aVar.d).e;
                 bVar.setVisibility(f10 > 0.0f ? 0 : 8);
                 bVar.setAlpha(f10);
                 bVar.setScaleX(AndroidUtilities.lerp(0.7f, 1.0f, f10));
@@ -102,7 +102,7 @@ public final class h extends FrameLayout implements le.d {
         aa.a aVar = this.e[i10];
         if (aVar != null) {
             ((ih.b) aVar.b).a(i11, z10);
-            ((le.b) aVar.d).a(i11 > 0, z10);
+            ((le.c) aVar.d).a(i11 > 0, z10);
         }
     }
 
@@ -122,8 +122,8 @@ public final class h extends FrameLayout implements le.d {
         if (aVar != null || z10) {
             if (aVar == null) {
                 int i13 = i10 << 16;
-                le.b bVar = new le.b(i13 | 1, this, i10 == 0 ? qr.h : ke.a.a, i10 == 0 ? 300L : 280L, false);
-                le.b bVar2 = new le.b(i13 | 2, this, i10 == 0 ? qr.h : ke.a.a, i10 == 0 ? 300L : 280L, false);
+                le.c cVar = new le.c(i13 | 1, this, i10 == 0 ? rr.h : ke.a.a, i10 == 0 ? 300L : 280L, false);
+                le.c cVar2 = new le.c(i13 | 2, this, i10 == 0 ? rr.h : ke.a.a, i10 == 0 ? 300L : 280L, false);
                 if (i10 == 0) {
                     i11 = 50;
                     i12 = 32;
@@ -133,45 +133,45 @@ public final class h extends FrameLayout implements le.d {
                 }
                 Context context = getContext();
                 int i14 = s[i10];
-                e6 e6Var = this.b;
-                ih.b bVar3 = new ih.b(context, e6Var);
-                ih.a d = ih.a.d(context, this.d, this.c, e6Var, i14, i12);
-                bVar3.b = d;
-                bVar3.addView(d, x5.e(i11, i11, 80));
+                d6 d6Var = this.b;
+                ih.b bVar = new ih.b(context, d6Var);
+                ih.a d = ih.a.d(context, this.d, this.c, d6Var, i14, i12);
+                bVar.b = d;
+                bVar.addView(d, x5.e(i11, i11, 80));
                 d.setIconPadding(AndroidUtilities.dp(2.0f));
-                z5.b(bVar3, 0.13f, 2.0f);
+                z5.b(bVar, 0.13f, 2.0f);
                 float f7 = i11 / 2.0f;
-                bVar3.setPivotX(AndroidUtilities.dp(f7));
-                bVar3.setPivotY(AndroidUtilities.dp(f7 + 8.0f));
-                bVar3.setVisibility(8);
-                bVar3.setContentDescription(this.a[i10]);
-                bVar3.setOnClickListener(new o4(this, i10, 4));
-                bVar3.setOnLongClickListener(new g(this, i10, 0));
+                bVar.setPivotX(AndroidUtilities.dp(f7));
+                bVar.setPivotY(AndroidUtilities.dp(f7 + 8.0f));
+                bVar.setVisibility(8);
+                bVar.setContentDescription(this.a[i10]);
+                bVar.setOnClickListener(new n4(this, i10, 4));
+                bVar.setOnLongClickListener(new g(this, i10, 0));
                 if (i10 == 6) {
-                    ih.a aVar2 = bVar3.b;
+                    ih.a aVar2 = bVar.b;
                     aVar2.h = -1.0f;
                     aVar2.a();
                 }
                 if (i10 == 1) {
-                    bVar3.d = true;
-                    wq wqVar = bVar3.c;
-                    if (wqVar != null) {
-                        wqVar.setReverse(true);
+                    bVar.d = true;
+                    xq xqVar = bVar.c;
+                    if (xqVar != null) {
+                        xqVar.setReverse(true);
                     }
                 }
-                addView(bVar3, x5.e(i11, i11 + 8, this.r));
-                aVarArr[i10] = new aa.a(bVar3, bVar, bVar2, false, 24);
+                addView(bVar, x5.e(i11, i11 + 8, this.r));
+                aVarArr[i10] = new aa.a(bVar, cVar, cVar2, false, 24);
                 n1 n1Var = this.f[i10];
                 if (n1Var != null) {
-                    bVar3.a(n1Var.a, false);
-                    bVar.a(false, false);
-                    bVar2.a(n1Var.a > 0, false);
-                    bVar3.c(n1Var.b, false);
-                    bVar3.b(n1Var.c, false);
+                    bVar.a(n1Var.a, false);
+                    cVar.a(false, false);
+                    cVar2.a(n1Var.a > 0, false);
+                    bVar.c(n1Var.b, false);
+                    bVar.b(n1Var.c, false);
                 }
                 a();
             }
-            ((le.b) aVarArr[i10].c).a(z10, z11);
+            ((le.c) aVarArr[i10].c).a(z10, z11);
         }
     }
 
@@ -192,7 +192,7 @@ public final class h extends FrameLayout implements le.d {
         this.n = bVar;
     }
 
-    @Override // le.d
+    @Override // le.e
     public final /* synthetic */ void C(float f7, int i10) {
     }
 }

@@ -1,68 +1,183 @@
 package m4;
 
-import org.telegram.messenger.MediaDataController;
-import org.telegram.tgnet.TLRPC;
+import android.os.Bundle;
+import android.os.Parcel;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class x0 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object n;
+public final class x0 implements q {
+    public final i a;
+    public final int b;
 
-    public /* synthetic */ x0(g1 g1Var, r rVar, m1 m1Var, a0 a0Var, int i10, int i11, f1 f1Var) {
-        this.d = g1Var;
-        this.e = rVar;
-        this.f = m1Var;
-        this.h = a0Var;
+    public x0(i iVar, int i10) {
+        this.a = iVar;
         this.b = i10;
-        this.c = i11;
-        this.n = f1Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                g1 g1Var = (g1) this.d;
-                r rVar = (r) this.e;
-                m1 m1Var = (m1) this.f;
-                a0 a0Var = (a0) this.h;
-                f1 f1Var = (f1) this.n;
-                ni.f fVar = g1Var.b;
-                if (fVar.A(rVar)) {
-                    int i10 = this.b;
-                    if (m1Var == null) {
-                        if (!fVar.C(rVar, this.c)) {
-                            g1.O0(a0Var, rVar, i10, new q1(-4));
-                            break;
-                        }
-                    } else if (!fVar.D(rVar, m1Var)) {
-                        g1.O0(a0Var, rVar, i10, new q1(-4));
-                        break;
-                    }
-                    f1Var.h(a0Var, rVar, i10);
-                    break;
-                }
-                break;
-            default:
-                ((MediaDataController) this.d).lambda$toggleStickerSet$108((boolean[]) this.e, (TLRPC.StickerSet) this.f, this.b, this.c, (TLRPC.TL_messages_stickerSet) this.h, (Runnable) this.n);
-                break;
+    @Override // m4.q
+    public final void a(int i10, l lVar) {
+        Bundle bundle = new Bundle();
+        bundle.putInt(l.d, lVar.a);
+        bundle.putLong(l.e, lVar.b);
+        bundle.putBundle(l.g, lVar.c.a());
+        bundle.putInt(l.f, 4);
+        h hVar = (h) this.a;
+        Parcel obtain = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken("androidx.media3.session.IMediaController");
+            obtain.writeInt(i10);
+            w7.r.a(obtain, bundle);
+            hVar.a.transact(3003, obtain, null, 1);
+        } finally {
+            obtain.recycle();
         }
     }
 
-    public /* synthetic */ x0(MediaDataController mediaDataController, boolean[] zArr, TLRPC.StickerSet stickerSet, int i10, int i11, TLRPC.TL_messages_stickerSet tL_messages_stickerSet, Runnable runnable) {
-        this.d = mediaDataController;
-        this.e = zArr;
-        this.f = stickerSet;
-        this.b = i10;
-        this.c = i11;
-        this.h = tL_messages_stickerSet;
-        this.n = runnable;
+    @Override // m4.q
+    public final void b(int i10) {
+        h hVar = (h) this.a;
+        hVar.getClass();
+        Parcel obtain = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken("androidx.media3.session.IMediaController");
+            obtain.writeInt(i10);
+            hVar.a.transact(3011, obtain, null, 1);
+        } finally {
+            obtain.recycle();
+        }
+    }
+
+    @Override // m4.q
+    public final void c(int i10, b2.x0 x0Var) {
+        Bundle b10 = x0Var.b();
+        h hVar = (h) this.a;
+        Parcel obtain = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken("androidx.media3.session.IMediaController");
+            obtain.writeInt(i10);
+            w7.r.a(obtain, b10);
+            hVar.a.transact(3009, obtain, null, 1);
+        } finally {
+            obtain.recycle();
+        }
+    }
+
+    @Override // m4.q
+    public final void d(int i10, h1 h1Var) {
+        Bundle bundle = Bundle.EMPTY;
+        Bundle bundle2 = new Bundle();
+        bundle2.putInt(h1.f, h1Var.a);
+        bundle2.putString(h1.g, h1Var.b);
+        bundle2.putBundle(h1.h, h1Var.c);
+        h hVar = (h) this.a;
+        Parcel obtain = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken("androidx.media3.session.IMediaController");
+            obtain.writeInt(i10);
+            w7.r.a(obtain, bundle2);
+            w7.r.a(obtain, bundle);
+            hVar.a.transact(3005, obtain, null, 1);
+        } finally {
+            obtain.recycle();
+        }
+    }
+
+    @Override // m4.q
+    public final void e(int i10, k1 k1Var, boolean z10, boolean z11, int i11) {
+        Bundle b10 = k1Var.a(z10, z11).b(i11);
+        h hVar = (h) this.a;
+        Parcel obtain = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken("androidx.media3.session.IMediaController");
+            obtain.writeInt(i10);
+            w7.r.a(obtain, b10);
+            hVar.a.transact(3008, obtain, null, 1);
+        } finally {
+            obtain.recycle();
+        }
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || obj.getClass() != x0.class) {
+            return false;
+        }
+        return Objects.equals(this.a.asBinder(), ((x0) obj).a.asBinder());
+    }
+
+    @Override // m4.q
+    public final void f() {
+        w7.u.a(this.a);
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r3v2 */
+    /* JADX WARN: Type inference failed for: r3v3, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r3v6 */
+    @Override // m4.q
+    public final void g(int i10, d1 d1Var, b2.x0 x0Var, boolean z10, boolean z11) {
+        Parcel obtain;
+        int i11 = this.b;
+        e2.d.g(i11 != 0);
+        ?? r32 = (z10 || !x0Var.a(17)) ? 1 : 0;
+        boolean z12 = z11 || !x0Var.a(30);
+        i iVar = this.a;
+        if (i11 < 2) {
+            Bundle f7 = d1Var.e(x0Var, z10, true).f(i11);
+            h hVar = (h) iVar;
+            obtain = Parcel.obtain();
+            try {
+                obtain.writeInterfaceToken("androidx.media3.session.IMediaController");
+                obtain.writeInt(i10);
+                w7.r.a(obtain, f7);
+                obtain.writeInt(r32);
+                hVar.a.transact(3007, obtain, null, 1);
+                return;
+            } finally {
+            }
+        }
+        Bundle f10 = d1Var.e(x0Var, z10, z11).f(i11);
+        Bundle bundle = new Bundle();
+        bundle.putBoolean(c1.a, r32);
+        bundle.putBoolean(c1.b, z12);
+        h hVar2 = (h) iVar;
+        obtain = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken("androidx.media3.session.IMediaController");
+            obtain.writeInt(i10);
+            w7.r.a(obtain, f10);
+            w7.r.a(obtain, bundle);
+            hVar2.a.transact(3013, obtain, null, 1);
+        } finally {
+        }
+    }
+
+    public final int hashCode() {
+        return Objects.hash(this.a.asBinder());
+    }
+
+    @Override // m4.q
+    public final void i(int i10, l1 l1Var) {
+        Bundle bundle = new Bundle();
+        bundle.putInt(l1.e, l1Var.a);
+        bundle.putBundle(l1.f, l1Var.b);
+        bundle.putLong(l1.g, l1Var.c);
+        j1 j1Var = l1Var.d;
+        if (j1Var != null) {
+            bundle.putBundle(l1.h, j1Var.a());
+        }
+        h hVar = (h) this.a;
+        Parcel obtain = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken("androidx.media3.session.IMediaController");
+            obtain.writeInt(i10);
+            w7.r.a(obtain, bundle);
+            hVar.a.transact(3002, obtain, null, 1);
+        } finally {
+            obtain.recycle();
+        }
     }
 }

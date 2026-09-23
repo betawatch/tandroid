@@ -5,21 +5,21 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class ws0 extends org.telegram.ui.ActionBar.g5 {
+public final class ws0 extends org.telegram.ui.ActionBar.f5 {
     public final /* synthetic */ yu0 f;
 
     public ws0(yu0 yu0Var) {
         this.f = yu0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.g5
+    @Override // org.telegram.ui.ActionBar.f5
     public final void l() {
         this.f.n0.setTranslationX(((View) r0.getParent()).getMeasuredWidth() - r0.getRight());
     }
 
-    @Override // org.telegram.ui.ActionBar.g5
+    @Override // org.telegram.ui.ActionBar.f5
     public final void m() {
         yu0 yu0Var = this.f;
         ls0 ls0Var = yu0Var.J0;
@@ -34,21 +34,21 @@ public final class ws0 extends org.telegram.ui.ActionBar.g5 {
             imageView.setVisibility(0);
         }
         if (ls0Var != null) {
-            ls0Var.d.M(new org.telegram.ui.kr(2));
+            ls0Var.d.M(new org.telegram.ui.gr(2));
             ls0Var.h = 0L;
             ls0Var.g(false);
         }
         et0 et0Var = yu0Var.T;
         if (et0Var != null) {
-            org.telegram.ui.co coVar = et0Var.a;
-            org.telegram.ui.tn tnVar = coVar.nc;
-            if (tnVar != null) {
-                tnVar.m();
+            org.telegram.ui.yn ynVar = et0Var.a;
+            org.telegram.ui.pn pnVar = ynVar.nc;
+            if (pnVar != null) {
+                pnVar.m();
             }
-            coVar.s3 = false;
-            coVar.o0 = false;
-            coVar.hc(false);
-            coVar.Ic();
+            ynVar.s3 = false;
+            ynVar.o0 = false;
+            ynVar.hc(false);
+            ynVar.Ic();
         }
         yu0Var.U0 = false;
         yu0Var.n0.setVisibility(0);
@@ -61,9 +61,9 @@ public final class ws0 extends org.telegram.ui.ActionBar.g5 {
             ju0Var.E(null, null);
         }
         yu0Var.K0(false);
-        aj0 aj0Var = yu0Var.s0;
-        if (aj0Var != null) {
-            aj0Var.animate().scaleX(1.0f).scaleY(1.0f).alpha(1.0f).setDuration(320L).setInterpolator(qr.h).start();
+        bj0 bj0Var = yu0Var.s0;
+        if (bj0Var != null) {
+            bj0Var.animate().scaleX(1.0f).scaleY(1.0f).alpha(1.0f).setDuration(320L).setInterpolator(rr.h).start();
         }
         if (yu0Var.z0) {
             yu0Var.z0 = false;
@@ -72,7 +72,7 @@ public final class ws0 extends org.telegram.ui.ActionBar.g5 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.g5
+    @Override // org.telegram.ui.ActionBar.f5
     public final void n() {
         yu0 yu0Var = this.f;
         yu0Var.V0 = true;
@@ -90,13 +90,13 @@ public final class ws0 extends org.telegram.ui.ActionBar.g5 {
         }
         yu0Var.n0.setVisibility(8);
         yu0Var.K0(true);
-        aj0 aj0Var = yu0Var.s0;
-        if (aj0Var != null) {
-            aj0Var.animate().scaleX(0.6f).scaleY(0.6f).alpha(0.0f).setDuration(320L).setInterpolator(qr.h).start();
+        bj0 bj0Var = yu0Var.s0;
+        if (bj0Var != null) {
+            bj0Var.animate().scaleX(0.6f).scaleY(0.6f).alpha(0.0f).setDuration(320L).setInterpolator(rr.h).start();
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.g5
+    @Override // org.telegram.ui.ActionBar.f5
     public final void p(ci.h2 h2Var) {
         et0 et0Var = this.f.T;
         if (et0Var != null) {
@@ -104,29 +104,29 @@ public final class ws0 extends org.telegram.ui.ActionBar.g5 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.g5
+    @Override // org.telegram.ui.ActionBar.f5
     public final void q(EditText editText) {
         ju0 ju0Var;
         String obj = editText.getText().toString();
         yu0 yu0Var = this.f;
         et0 et0Var = yu0Var.T;
         if (et0Var != null) {
-            org.telegram.ui.co coVar = et0Var.a;
-            org.telegram.ui.ActionBar.v0 v0Var = coVar.j0;
+            org.telegram.ui.yn ynVar = et0Var.a;
+            org.telegram.ui.ActionBar.v0 v0Var = ynVar.j0;
             if (v0Var != null) {
-                coVar.t3 = obj;
+                ynVar.t3 = obj;
                 v0Var.H(obj, false);
             }
             if (TextUtils.isEmpty(obj) && yu0Var.W0 == null) {
-                org.telegram.ui.co coVar2 = et0Var.a;
-                org.telegram.ui.tn tnVar = coVar2.nc;
-                if (tnVar != null) {
-                    tnVar.m();
+                org.telegram.ui.yn ynVar2 = et0Var.a;
+                org.telegram.ui.pn pnVar = ynVar2.nc;
+                if (pnVar != null) {
+                    pnVar.m();
                 }
-                coVar2.s3 = false;
-                coVar2.o0 = false;
-                coVar2.hc(false);
-                coVar2.Ic();
+                ynVar2.s3 = false;
+                ynVar2.o0 = false;
+                ynVar2.hc(false);
+                ynVar2.Ic();
             }
         }
         yu0Var.n0.setVisibility(8);

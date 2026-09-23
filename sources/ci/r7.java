@@ -1,42 +1,42 @@
 package ci;
 
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class r7 implements Utilities.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ w7 b;
+public final class r7 extends s7 {
+    public final /* synthetic */ TLRPC.Chat b;
 
-    public /* synthetic */ r7(w7 w7Var, int i10) {
-        this.a = i10;
-        this.b = w7Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public r7(String str, TLRPC.Chat chat) {
+        super(str);
+        this.b = chat;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        switch (this.a) {
-            case 0:
-                v7 v7Var = (v7) obj;
-                w7 w7Var = this.b;
-                w7Var.H = null;
-                w7Var.E = v7Var;
-                w7Var.y = v7Var != null;
-                w7Var.a();
-                w7Var.invalidate();
-                ka kaVar = w7Var.b;
-                if (kaVar != null) {
-                    kaVar.run();
-                    break;
-                }
-                break;
-            default:
-                org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) obj;
-                v7 v7Var2 = this.b.E;
-                if (v7Var2 != null || n2Var == null) {
-                    v7Var2.c(n2Var);
-                    break;
-                }
-        }
+    @Override // ci.s7
+    public final String a() {
+        return LocaleController.getString(R.string.AccDescrOpenChat);
+    }
+
+    @Override // ci.s7
+    public final String b() {
+        return this.b.title;
+    }
+
+    @Override // ci.s7
+    public final void c(org.telegram.ui.ActionBar.n2 n2Var) {
+        n2Var.presentFragment(xn.R9(-this.b.id));
+    }
+
+    @Override // ci.s7
+    public final void d(ImageReceiver imageReceiver) {
+        org.telegram.ui.Components.h9 h9Var = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.d6) null);
+        TLRPC.Chat chat = this.b;
+        h9Var.q(chat);
+        imageReceiver.setForUserOrChat(chat, h9Var);
     }
 }

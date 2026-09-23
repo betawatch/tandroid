@@ -3,17 +3,17 @@ package tg;
 import j$.util.function.BiConsumer$-CC;
 import java.util.List;
 import java.util.function.BiConsumer;
-import org.telegram.ui.Components.za;
+import org.telegram.ui.Components.bb;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v0 implements BiConsumer {
     public final /* synthetic */ int a;
-    public final /* synthetic */ za b;
+    public final /* synthetic */ bb b;
 
-    public /* synthetic */ v0(za zaVar, int i10) {
+    public /* synthetic */ v0(bb bbVar, int i10) {
         this.a = i10;
-        this.b = zaVar;
+        this.b = bbVar;
     }
 
     @Override // java.util.function.BiConsumer

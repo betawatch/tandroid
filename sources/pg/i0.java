@@ -1,21 +1,9 @@
 package pg;
 
-import java.io.RandomAccessFile;
+import android.graphics.Typeface;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class i0 {
-    public final int a;
-    public final int b;
-    public final int c;
-    public final int d;
-
-    public i0(RandomAccessFile randomAccessFile) {
-        randomAccessFile.readUnsignedShort();
-        this.a = randomAccessFile.readUnsignedShort();
-        randomAccessFile.readUnsignedShort();
-        this.b = randomAccessFile.readUnsignedShort();
-        this.c = randomAccessFile.readUnsignedShort();
-        this.d = randomAccessFile.readUnsignedShort();
-    }
+public interface i0 {
+    Typeface a();
 }

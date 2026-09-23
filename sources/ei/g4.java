@@ -1,12 +1,12 @@
 package ei;
 
-import ai.m8;
+import ai.n8;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g4 implements Runnable {
     public final /* synthetic */ int a;
@@ -54,7 +54,7 @@ public final /* synthetic */ class g4 implements Runnable {
                         tL_messages_prolongWebView.send_as = MessagesController.getInstance(q4Var.F).getInputPeer(peer);
                         tL_messages_prolongWebView.flags |= 8192;
                     }
-                    ConnectionsManager.getInstance(q4Var.F).sendRequest(tL_messages_prolongWebView, new m8(q4Var, 7));
+                    ConnectionsManager.getInstance(q4Var.F).sendRequest(tL_messages_prolongWebView, new n8(q4Var, 7));
                     break;
                 }
                 break;

@@ -1,8 +1,8 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class rv0 extends x50 {
+public final class rv0 extends y50 {
     public final /* synthetic */ tv0 d;
 
     public rv0(tv0 tv0Var) {
@@ -20,17 +20,17 @@ public final class rv0 extends x50 {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.x50
+    @Override // org.telegram.ui.Components.y50
     public final int i() {
         return this.d.F.length - 1;
     }
 
-    @Override // org.telegram.ui.Components.x50
+    @Override // org.telegram.ui.Components.y50
     public final int j() {
         return this.d.I;
     }
 
-    @Override // org.telegram.ui.Components.x50
+    @Override // org.telegram.ui.Components.y50
     public final void k(int i10) {
         this.d.setOption(i10);
     }

@@ -15,25 +15,25 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.f3;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.a7;
 import org.telegram.ui.Cells.m4;
-import org.telegram.ui.Components.c90;
-import org.telegram.ui.Components.kl0;
+import org.telegram.ui.Components.d90;
+import org.telegram.ui.Components.ll0;
 import rg.w1;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class n0 extends kl0 {
+public final class n0 extends ll0 {
     public final /* synthetic */ t0 c;
 
     public n0(t0 t0Var) {
         this.c = t0Var;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.ll0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 3;
     }
@@ -81,14 +81,14 @@ public final class n0 extends kl0 {
             s0 s0Var = (s0) view;
             t0Var.b0 = s0Var;
             TLRPC.Chat chat = t0Var.Z;
-            c90 c90Var = s0Var.e;
+            d90 d90Var = s0Var.e;
             try {
                 SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatPluralString("BoostingReassignBoostTextPluralWithLink", (int) MessagesController.getInstance(UserConfig.selectedAccount).boostsPerSentGift, chat == null ? "" : chat.title, "%3$s"));
-                SpannableStringBuilder replaceSingleTag = AndroidUtilities.replaceSingleTag(LocaleController.getString("BoostingReassignBoostTextLink", R.string.BoostingReassignBoostTextLink), i6.gc, 2, new w1(t0Var, 8));
+                SpannableStringBuilder replaceSingleTag = AndroidUtilities.replaceSingleTag(LocaleController.getString("BoostingReassignBoostTextLink", R.string.BoostingReassignBoostTextLink), h6.gc, 2, new w1(t0Var, 8));
                 int indexOf = TextUtils.indexOf(replaceTags, "%3$s");
                 replaceTags.replace(indexOf, indexOf + 4, (CharSequence) replaceSingleTag);
-                c90Var.setText(replaceTags, TextView.BufferType.EDITABLE);
-                c90Var.post(new qg.v(s0Var, indexOf, 2));
+                d90Var.setText(replaceTags, TextView.BufferType.EDITABLE);
+                d90Var.post(new qg.v(s0Var, indexOf, 2));
             } catch (Exception e) {
                 FileLog.e(e);
             }
@@ -98,7 +98,7 @@ public final class n0 extends kl0 {
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
         View view;
-        e6 e6Var;
+        d6 d6Var;
         Context context = viewGroup.getContext();
         t0 t0Var = this.c;
         if (i10 == 0) {
@@ -106,14 +106,14 @@ public final class n0 extends kl0 {
             s0Var.a(t0Var.X, t0Var.Z);
             view = s0Var;
         } else if (i10 == 1) {
-            view = new a7(context, i6.w0(null, i6.a7, false), 0);
+            view = new a7(context, h6.w0(null, h6.a7, false), 0);
         } else if (i10 == 2) {
             view = new m4(context, 22);
         } else if (i10 != 3) {
             view = new View(context);
         } else {
-            e6Var = ((f3) t0Var).resourcesProvider;
-            view = new xg.l(context, true, false, e6Var, true);
+            d6Var = ((f3) t0Var).resourcesProvider;
+            view = new xg.l(context, true, false, d6Var, true);
         }
         return e2.k(view, view, -1, -2);
     }

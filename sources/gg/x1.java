@@ -12,12 +12,12 @@ import android.net.Uri;
 import android.text.TextUtils;
 import android.view.View;
 import ii.a5;
-import ii.d6;
-import ii.n3;
-import ii.o5;
-import ii.r5;
-import ii.w3;
-import ii.z4;
+import ii.b5;
+import ii.e6;
+import ii.o3;
+import ii.p5;
+import ii.s5;
+import ii.x3;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
@@ -41,12 +41,12 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.g71;
-import org.telegram.ui.Components.i51;
-import org.telegram.ui.Components.id;
-import org.telegram.ui.Components.w51;
+import org.telegram.ui.Components.f71;
+import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.kd;
+import org.telegram.ui.Components.v51;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x1 implements Runnable {
     public final /* synthetic */ int a;
@@ -157,16 +157,16 @@ public final /* synthetic */ class x1 implements Runnable {
                 gVar.d();
                 return;
             case 3:
-                hg.m0.R((hg.m0) this.b, (id) this.c);
+                hg.m0.R((hg.m0) this.b, (kd) this.c);
                 return;
             case 4:
                 MessagesController.getInstance(((hg.v0) this.b).currentAccount).processUpdates((TLRPC.Updates) ((TLObject) this.c), false);
                 return;
             case 5:
                 hg.h1 h1Var = (hg.h1) this.b;
-                i51 i51Var = (i51) this.c;
+                h51 h51Var = (h51) this.c;
                 h1Var.getClass();
-                h1Var.X(i51Var.d);
+                h1Var.X(h51Var.d);
                 return;
             case 6:
                 MessagesStorage messagesStorage = (MessagesStorage) this.b;
@@ -279,43 +279,43 @@ public final /* synthetic */ class x1 implements Runnable {
                 NotificationCenter.getInstance(i17).lambda$postNotificationNameOnUIThread$1(NotificationCenter.quickRepliesUpdated, new Object[0]);
                 return;
             case 9:
-                i2.e0 e0Var = (i2.e0) this.b;
-                i2.l0 l0Var = (i2.l0) this.c;
-                int i20 = e0Var.H - l0Var.b;
-                e0Var.H = i20;
-                if (l0Var.d) {
-                    e0Var.I = l0Var.e;
-                    e0Var.J = true;
+                i2.f0 f0Var = (i2.f0) this.b;
+                i2.m0 m0Var = (i2.m0) this.c;
+                int i20 = f0Var.H - m0Var.b;
+                f0Var.H = i20;
+                if (m0Var.d) {
+                    f0Var.I = m0Var.e;
+                    f0Var.J = true;
                 }
                 if (i20 == 0) {
-                    b2.k1 k1Var = ((i2.g1) l0Var.f).a;
-                    if (!e0Var.j0.a.p() && k1Var.p()) {
-                        e0Var.k0 = -1;
-                        e0Var.l0 = 0L;
+                    b2.k1 k1Var = ((i2.h1) m0Var.f).a;
+                    if (!f0Var.j0.a.p() && k1Var.p()) {
+                        f0Var.k0 = -1;
+                        f0Var.l0 = 0L;
                     }
                     if (!k1Var.p()) {
-                        List asList = Arrays.asList(((i2.l1) k1Var).l);
-                        e2.d.g(asList.size() == e0Var.p.size());
+                        List asList = Arrays.asList(((i2.m1) k1Var).l);
+                        e2.d.g(asList.size() == f0Var.p.size());
                         for (int i21 = 0; i21 < asList.size(); i21++) {
-                            ((i2.d0) e0Var.p.get(i21)).c = (b2.k1) asList.get(i21);
+                            ((i2.e0) f0Var.p.get(i21)).c = (b2.k1) asList.get(i21);
                         }
                     }
                     long j10 = -9223372036854775807L;
-                    if (e0Var.J) {
-                        if (((i2.g1) l0Var.f).b.equals(e0Var.j0.b) && ((i2.g1) l0Var.f).d == e0Var.j0.s) {
+                    if (f0Var.J) {
+                        if (((i2.h1) m0Var.f).b.equals(f0Var.j0.b) && ((i2.h1) m0Var.f).d == f0Var.j0.s) {
                             z13 = false;
                         }
                         if (z13) {
-                            if (k1Var.p() || ((i2.g1) l0Var.f).b.b()) {
-                                j10 = ((i2.g1) l0Var.f).d;
+                            if (k1Var.p() || ((i2.h1) m0Var.f).b.b()) {
+                                j10 = ((i2.h1) m0Var.f).d;
                             } else {
-                                i2.g1 g1Var = (i2.g1) l0Var.f;
-                                u2.f0 f0Var = g1Var.b;
-                                long j11 = g1Var.d;
-                                Object obj = f0Var.a;
-                                b2.h1 h1Var2 = e0Var.o;
-                                k1Var.g(obj, h1Var2);
-                                j10 = j11 + h1Var2.e;
+                                i2.h1 h1Var2 = (i2.h1) m0Var.f;
+                                u2.f0 f0Var2 = h1Var2.b;
+                                long j11 = h1Var2.d;
+                                Object obj = f0Var2.a;
+                                b2.h1 h1Var3 = f0Var.o;
+                                k1Var.g(obj, h1Var3);
+                                j10 = j11 + h1Var3.e;
                             }
                         }
                         j3 = j10;
@@ -324,20 +324,20 @@ public final /* synthetic */ class x1 implements Runnable {
                         j3 = -9223372036854775807L;
                         z10 = false;
                     }
-                    e0Var.J = false;
-                    e0Var.z1((i2.g1) l0Var.f, 1, z10, e0Var.I, j3, -1, false);
+                    f0Var.J = false;
+                    f0Var.z1((i2.h1) m0Var.f, 1, z10, f0Var.I, j3, -1, false);
                     return;
                 }
                 return;
             case 10:
-                i2.b0 b0Var = (i2.b0) this.b;
+                i2.c0 c0Var = (i2.c0) this.b;
                 SurfaceTexture surfaceTexture = (SurfaceTexture) this.c;
-                ArrayList arrayList6 = b0Var.a.n0;
+                ArrayList arrayList6 = c0Var.a.n0;
                 int size = arrayList6.size();
                 while (i14 < size) {
                     Object obj2 = arrayList6.get(i14);
                     i14++;
-                    ((g71) ((b2.w1) obj2)).J.onSurfaceTextureUpdated(surfaceTexture);
+                    ((f71) ((b2.w1) obj2)).J.onSurfaceTextureUpdated(surfaceTexture);
                 }
                 return;
             case 11:
@@ -370,14 +370,14 @@ public final /* synthetic */ class x1 implements Runnable {
                 xVar.c0.set(richMessage);
                 dVar.g(LocaleController.getString(R.string.ArticleAIAddToPage), true, true);
                 xVar.P();
-                w51 w51Var = xVar.Z;
-                if (w51Var != null) {
-                    w51Var.N(true);
+                v51 v51Var = xVar.Z;
+                if (v51Var != null) {
+                    v51Var.N(true);
                     return;
                 }
                 return;
             case 13:
-                w3 w3Var = (w3) this.b;
+                x3 x3Var = (x3) this.b;
                 Uri uri = (Uri) this.c;
                 try {
                     str = AndroidUtilities.getPath(uri);
@@ -387,7 +387,7 @@ public final /* synthetic */ class x1 implements Runnable {
                 }
                 if (TextUtils.isEmpty(str) || !w.c.p(str)) {
                     try {
-                        query = w3Var.getContext().getContentResolver().query(uri, new String[]{"_display_name"}, null, null, null);
+                        query = x3Var.getContext().getContentResolver().query(uri, new String[]{"_display_name"}, null, null, null);
                     } catch (Exception e12) {
                         e = e12;
                         str2 = null;
@@ -395,7 +395,7 @@ public final /* synthetic */ class x1 implements Runnable {
                         if (TextUtils.isEmpty(str2)) {
                         }
                         String replace = str2.replace('/', '_').replace('\\', '_');
-                        openInputStream = w3Var.getContext().getContentResolver().openInputStream(uri);
+                        openInputStream = x3Var.getContext().getContentResolver().openInputStream(uri);
                         if (openInputStream == null) {
                         }
                         str = str3;
@@ -415,7 +415,7 @@ public final /* synthetic */ class x1 implements Runnable {
                                         if (TextUtils.isEmpty(str2)) {
                                         }
                                         String replace2 = str2.replace('/', '_').replace('\\', '_');
-                                        openInputStream = w3Var.getContext().getContentResolver().openInputStream(uri);
+                                        openInputStream = x3Var.getContext().getContentResolver().openInputStream(uri);
                                         if (openInputStream == null) {
                                         }
                                         str = str3;
@@ -430,7 +430,7 @@ public final /* synthetic */ class x1 implements Runnable {
                                     str2 = "document_" + SharedConfig.getLastLocalId();
                                 }
                                 String replace22 = str2.replace('/', '_').replace('\\', '_');
-                                openInputStream = w3Var.getContext().getContentResolver().openInputStream(uri);
+                                openInputStream = x3Var.getContext().getContentResolver().openInputStream(uri);
                                 if (openInputStream == null) {
                                     try {
                                         File file = new File(FileLoader.getDirectory(4), "rich_document_" + Math.abs(uri.hashCode()) + "_" + replace22);
@@ -459,7 +459,7 @@ public final /* synthetic */ class x1 implements Runnable {
                     if (TextUtils.isEmpty(str2)) {
                     }
                     String replace222 = str2.replace('/', '_').replace('\\', '_');
-                    openInputStream = w3Var.getContext().getContentResolver().openInputStream(uri);
+                    openInputStream = x3Var.getContext().getContentResolver().openInputStream(uri);
                     if (openInputStream == null) {
                     }
                     str = str3;
@@ -467,19 +467,19 @@ public final /* synthetic */ class x1 implements Runnable {
                 if (TextUtils.isEmpty(str) || !w.c.p(str)) {
                     return;
                 }
-                AndroidUtilities.runOnUIThread(new x1(14, w3Var, str));
+                AndroidUtilities.runOnUIThread(new x1(14, x3Var, str));
                 return;
             case 14:
-                ((w3) this.b).c2((String) this.c);
+                ((x3) this.b).c2((String) this.c);
                 return;
             case 15:
-                w3 w3Var2 = (w3) this.b;
-                ii.e2 e2Var = (ii.e2) this.c;
-                w3Var2.getClass();
-                long j12 = e2Var.a;
-                int i22 = e2Var.d;
-                int i23 = e2Var.c;
-                ArrayList arrayList7 = w3Var2.l3;
+                x3 x3Var2 = (x3) this.b;
+                ii.f2 f2Var = (ii.f2) this.c;
+                x3Var2.getClass();
+                long j12 = f2Var.a;
+                int i22 = f2Var.d;
+                int i23 = f2Var.c;
+                ArrayList arrayList7 = x3Var2.l3;
                 int i24 = 0;
                 while (true) {
                     if (i24 < arrayList7.size()) {
@@ -493,16 +493,16 @@ public final /* synthetic */ class x1 implements Runnable {
                 if (i11 < 0) {
                     return;
                 }
-                View m10 = w3Var2.X2.m(i11);
-                if (m10 instanceof d6) {
-                    d6 d6Var = (d6) m10;
-                    d6Var.B();
-                    ii.i1 editText = d6Var.getEditText();
+                View m10 = x3Var2.X2.m(i11);
+                if (m10 instanceof e6) {
+                    e6 e6Var = (e6) m10;
+                    e6Var.B();
+                    ii.i1 editText = e6Var.getEditText();
                     int length = editText.length();
                     editText.setSelection(Math.max(0, Math.min(i23, length)), Math.max(0, Math.min(i22, length)));
                     return;
                 }
-                if (!(m10 instanceof o5)) {
+                if (!(m10 instanceof p5)) {
                     if (m10 instanceof ii.m0) {
                         ii.i1 captionEditText = ((ii.m0) m10).getCaptionEditText();
                         captionEditText.r();
@@ -512,10 +512,10 @@ public final /* synthetic */ class x1 implements Runnable {
                     }
                     return;
                 }
-                o5 o5Var = (o5) m10;
-                ii.i1 l4 = o5Var.l(e2Var.b);
+                p5 p5Var = (p5) m10;
+                ii.i1 l4 = p5Var.l(f2Var.b);
                 if (l4 == null) {
-                    l4 = o5Var.l(0);
+                    l4 = p5Var.l(0);
                 }
                 if (l4 == null) {
                     return;
@@ -525,81 +525,81 @@ public final /* synthetic */ class x1 implements Runnable {
                 l4.setSelection(Math.max(0, Math.min(i23, length3)), Math.max(0, Math.min(i22, length3)));
                 return;
             case 16:
-                n3 n3Var = (n3) this.b;
+                o3 o3Var = (o3) this.b;
                 ii.a aVar = (ii.a) this.c;
                 if (aVar == null) {
-                    n3Var.getClass();
+                    o3Var.getClass();
                 } else {
-                    z12 = n3Var.e.z1(aVar);
+                    z12 = o3Var.e.z1(aVar);
                 }
-                if (z12 instanceof d6) {
-                    d6 d6Var2 = (d6) z12;
-                    d6Var2.B();
-                    d6Var2.getEditText().setSelection(d6Var2.getEditText().length());
+                if (z12 instanceof e6) {
+                    e6 e6Var2 = (e6) z12;
+                    e6Var2.B();
+                    e6Var2.getEditText().setSelection(e6Var2.getEditText().length());
                     return;
                 }
                 return;
             case 17:
-                a5 a5Var = (a5) this.b;
+                b5 b5Var = (b5) this.b;
                 TLObject tLObject4 = (TLObject) this.c;
-                boolean z14 = a5Var.e;
-                boolean z15 = a5Var.d;
-                z4 z4Var = a5Var.s;
-                if (a5Var.w) {
+                boolean z14 = b5Var.e;
+                boolean z15 = b5Var.d;
+                a5 a5Var = b5Var.s;
+                if (b5Var.w) {
                     return;
                 }
-                a5Var.y = 0;
-                if (a5Var.c || z15 || z14) {
+                b5Var.y = 0;
+                if (b5Var.c || z15 || z14) {
                     if ((tLObject4 instanceof TLRPC.TL_messageMediaDocument) && (document = ((TLRPC.TL_messageMediaDocument) tLObject4).document) != null) {
                         if (!z14) {
                             if (z15) {
-                                a5Var.x = true;
-                                a5Var.e();
-                                z4Var.e(document);
+                                b5Var.x = true;
+                                b5Var.e();
+                                a5Var.e(document);
                                 return;
                             } else {
-                                a5Var.x = true;
-                                a5Var.e();
-                                z4Var.c(document);
+                                b5Var.x = true;
+                                b5Var.e();
+                                a5Var.c(document);
                                 return;
                             }
                         }
-                        int i25 = a5Var.a;
+                        int i25 = b5Var.a;
                         if (document.id == 0 || document.access_hash == 0) {
-                            a5Var.x = true;
-                            a5Var.e();
-                            z4Var.onError();
+                            b5Var.x = true;
+                            b5Var.e();
+                            a5Var.onError();
                             return;
                         }
-                        a5Var.x = true;
-                        a5Var.e();
-                        if (!TextUtils.isEmpty(a5Var.F) && MessageObject.isDocumentHasThumb(document) && (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 320)) != null) {
-                            FileLoader.getInstance(i25).setLocalPathTo(closestPhotoSizeWithSize, a5Var.F);
-                            AndroidUtilities.copyFileSafe(new File(a5Var.F), FileLoader.getInstance(i25).getPathToAttach(closestPhotoSizeWithSize, true));
+                        b5Var.x = true;
+                        b5Var.e();
+                        if (!TextUtils.isEmpty(b5Var.F) && MessageObject.isDocumentHasThumb(document) && (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 320)) != null) {
+                            FileLoader.getInstance(i25).setLocalPathTo(closestPhotoSizeWithSize, b5Var.F);
+                            AndroidUtilities.copyFileSafe(new File(b5Var.F), FileLoader.getInstance(i25).getPathToAttach(closestPhotoSizeWithSize, true));
                         }
-                        z4Var.d(document);
+                        a5Var.d(document);
                         return;
                     }
                 } else if ((tLObject4 instanceof TLRPC.TL_messageMediaPhoto) && (photo = ((TLRPC.TL_messageMediaPhoto) tLObject4).photo) != null) {
-                    a5Var.x = true;
-                    a5Var.e();
-                    z4Var.b(photo);
+                    b5Var.x = true;
+                    b5Var.e();
+                    a5Var.b(photo);
                     return;
                 }
-                a5Var.x = true;
-                a5Var.e();
-                z4Var.onError();
+                b5Var.x = true;
+                b5Var.e();
+                a5Var.onError();
                 return;
             case 18:
-                a5 a5Var2 = (a5) this.b;
+                b5 b5Var2 = (b5) this.b;
                 String str4 = (String) this.c;
-                if (a5Var2.w || a5Var2.x) {
+                if (b5Var2.w || b5Var2.x) {
                     return;
                 }
-                a5Var2.a(str4);
+                b5Var2.a(str4);
                 return;
             case 19:
-                r5 m11 = ((o5) this.b).v.m((TL_iv.pageTableCell) this.c);
+                s5 m11 = ((p5) this.b).v.m((TL_iv.pageTableCell) this.c);
                 if (m11 == null) {
                     return;
                 }
@@ -627,7 +627,7 @@ public final /* synthetic */ class x1 implements Runnable {
                 String str5 = (String) this.c;
                 k2.j jVar = (k2.j) yVar.c;
                 String str6 = e2.d0.a;
-                j2.f fVar = ((i2.b0) jVar).a.s;
+                j2.f fVar = ((i2.c0) jVar).a.s;
                 j2.a p5 = fVar.p();
                 fVar.q(p5, 1012, new j2.c(p5, str5, 26));
                 return;
@@ -644,7 +644,7 @@ public final /* synthetic */ class x1 implements Runnable {
                 runnable.run();
                 return;
             default:
-                ((m4.a0) this.b).u(null, (m4.k1) this.c);
+                ((m4.a0) this.b).u(null, (m4.f1) this.c);
                 return;
         }
     }

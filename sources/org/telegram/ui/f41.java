@@ -1,479 +1,127 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.content.res.Resources;
-import android.text.TextUtils;
+import android.os.Bundle;
 import android.view.View;
-import android.view.inputmethod.InputMethodInfo;
-import android.view.inputmethod.InputMethodManager;
-import android.view.inputmethod.InputMethodSubtype;
-import android.widget.FrameLayout;
-import j$.util.Collection;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
-import org.telegram.messenger.TranslateController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.SaveToGallerySettingsHelper;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class f41 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
-    public static boolean s;
-    public static HashSet v;
-    public e41 a;
-    public org.telegram.ui.Components.ll0 b;
-    public e41 c;
-    public org.telegram.ui.Components.mz d;
-    public int e;
-    public ArrayList f;
-    public ArrayList h;
-    public HashSet n;
-    public HashSet r;
+public final /* synthetic */ class f41 implements org.telegram.ui.Components.bl0, org.telegram.ui.Components.dl0, ly {
+    public final /* synthetic */ SaveToGallerySettingsActivity a;
 
-    public f41() {
-        super(null);
-        this.e = -1;
+    public /* synthetic */ f41(SaveToGallerySettingsActivity saveToGallerySettingsActivity) {
+        this.a = saveToGallerySettingsActivity;
     }
 
-    public static /* synthetic */ void U(f41 f41Var, View view, int i10) {
-        TranslateController.Language language;
-        ArrayList arrayList;
-        if (f41Var.getParentActivity() == null || f41Var.parentLayout == null || !(view instanceof org.telegram.ui.Cells.x8)) {
+    @Override // org.telegram.ui.ly
+    public /* synthetic */ boolean A() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ly
+    public /* synthetic */ boolean K(ry ryVar) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.bl0
+    public void c(float f7, float f10, int i10, View view) {
+        SaveToGallerySettingsActivity saveToGallerySettingsActivity = this.a;
+        ArrayList arrayList = saveToGallerySettingsActivity.s;
+        if (i10 == saveToGallerySettingsActivity.e) {
+            saveToGallerySettingsActivity.X().savePhoto = !r11.savePhoto;
+            saveToGallerySettingsActivity.Y();
+            saveToGallerySettingsActivity.Z();
             return;
         }
-        int i11 = 0;
-        boolean z10 = f41Var.b.getAdapter() == f41Var.c;
-        if (!z10 || (arrayList = f41Var.f) == null) {
-            int i12 = f41Var.e;
-            if (i12 >= 0 && i10 > i12) {
-                i10--;
-            }
-            language = (i10 < 0 || i10 >= f41Var.h.size()) ? null : (TranslateController.Language) f41Var.h.get(i10);
-        } else {
-            language = (TranslateController.Language) arrayList.get(i10);
-        }
-        if (language == null || language.code == null) {
+        if (i10 == saveToGallerySettingsActivity.f) {
+            saveToGallerySettingsActivity.X().saveVideo = !r11.saveVideo;
+            saveToGallerySettingsActivity.Y();
+            saveToGallerySettingsActivity.Z();
             return;
         }
-        LocaleController.LocaleInfo currentLocaleInfo = LocaleController.getInstance().getCurrentLocaleInfo();
-        String str = language.code;
-        if (f41Var.r.contains(str)) {
-            Collection.-EL.removeIf(f41Var.r, new r80(str, 2));
-        } else {
-            f41Var.r.add(str);
-        }
-        if (f41Var.r.size() == 1 && f41Var.r.contains(currentLocaleInfo.pluralLangCode)) {
-            a0(null, null);
-        } else {
-            a0(f41Var.r, Boolean.TRUE);
-        }
-        if (z10) {
-            int i13 = 0;
-            while (i11 < f41Var.f.size()) {
-                if (TextUtils.equals(str, ((TranslateController.Language) f41Var.f.get(i11)).code)) {
-                    f41Var.Z(i13);
-                }
-                i11++;
-                i13++;
-            }
-        } else {
-            int i14 = 0;
-            while (i11 < f41Var.h.size()) {
-                if (i14 == f41Var.e) {
-                    i14++;
-                }
-                if (TextUtils.equals(str, ((TranslateController.Language) f41Var.h.get(i11)).code)) {
-                    f41Var.Z(i14);
-                }
-                i11++;
-                i14++;
-            }
-        }
-        MessagesController.getInstance(f41Var.currentAccount).getTranslateController().checkRestrictedLanguagesUpdate();
-    }
-
-    public static void V(boolean z10) {
-        final int i10 = 0;
-        boolean z11 = MessagesController.getGlobalMainSettings().getBoolean("translate_button_restricted_languages_changed", false);
-        final int i11 = 2;
-        if (MessagesController.getGlobalMainSettings().getInt("translate_button_restricted_languages_version", 0) != 2 || (z10 && !z11)) {
-            org.telegram.ui.ActionBar.j3 j3Var = new org.telegram.ui.ActionBar.j3(5);
-            final HashSet hashSet = new HashSet();
-            final int i12 = 1;
-            Utilities.doCallbacks(new Utilities.Callback() { // from class: org.telegram.ui.d41
-                @Override // org.telegram.messenger.Utilities.Callback
-                public final void run(Object obj) {
-                    switch (i10) {
-                        case 0:
-                            HashSet hashSet2 = hashSet;
-                            Runnable runnable = (Runnable) obj;
-                            try {
-                                String str = LocaleController.getInstance().getCurrentLocaleInfo().pluralLangCode;
-                                if (org.telegram.ui.Components.v31.E(str, null, null) != null) {
-                                    hashSet2.add(str);
-                                }
-                            } catch (Exception e) {
-                                FileLog.e(e);
-                            }
-                            runnable.run();
-                            break;
-                        case 1:
-                            HashSet hashSet3 = hashSet;
-                            Runnable runnable2 = (Runnable) obj;
-                            try {
-                                String language = Resources.getSystem().getConfiguration().locale.getLanguage();
-                                if (org.telegram.ui.Components.v31.E(language, null, null) != null) {
-                                    hashSet3.add(language);
-                                }
-                            } catch (Exception e7) {
-                                FileLog.e(e7);
-                            }
-                            runnable2.run();
-                            break;
-                        default:
-                            HashSet hashSet4 = hashSet;
-                            Runnable runnable3 = (Runnable) obj;
-                            try {
-                                InputMethodManager inputMethodManager = (InputMethodManager) ApplicationLoader.applicationContext.getSystemService("input_method");
-                                Iterator<InputMethodInfo> it = inputMethodManager.getEnabledInputMethodList().iterator();
-                                while (it.hasNext()) {
-                                    for (InputMethodSubtype inputMethodSubtype : inputMethodManager.getEnabledInputMethodSubtypeList(it.next(), true)) {
-                                        if ("keyboard".equals(inputMethodSubtype.getMode())) {
-                                            String locale = inputMethodSubtype.getLocale();
-                                            if (locale != null && locale.contains("_")) {
-                                                locale = locale.split("_")[0];
-                                            }
-                                            if (org.telegram.ui.Components.v31.E(locale, null, null) != null) {
-                                                hashSet4.add(locale);
-                                            }
-                                        }
-                                    }
-                                }
-                            } catch (Exception e10) {
-                                FileLog.e(e10);
-                            }
-                            runnable3.run();
-                            break;
-                    }
-                }
-            }, new Utilities.Callback() { // from class: org.telegram.ui.d41
-                @Override // org.telegram.messenger.Utilities.Callback
-                public final void run(Object obj) {
-                    switch (i12) {
-                        case 0:
-                            HashSet hashSet2 = hashSet;
-                            Runnable runnable = (Runnable) obj;
-                            try {
-                                String str = LocaleController.getInstance().getCurrentLocaleInfo().pluralLangCode;
-                                if (org.telegram.ui.Components.v31.E(str, null, null) != null) {
-                                    hashSet2.add(str);
-                                }
-                            } catch (Exception e) {
-                                FileLog.e(e);
-                            }
-                            runnable.run();
-                            break;
-                        case 1:
-                            HashSet hashSet3 = hashSet;
-                            Runnable runnable2 = (Runnable) obj;
-                            try {
-                                String language = Resources.getSystem().getConfiguration().locale.getLanguage();
-                                if (org.telegram.ui.Components.v31.E(language, null, null) != null) {
-                                    hashSet3.add(language);
-                                }
-                            } catch (Exception e7) {
-                                FileLog.e(e7);
-                            }
-                            runnable2.run();
-                            break;
-                        default:
-                            HashSet hashSet4 = hashSet;
-                            Runnable runnable3 = (Runnable) obj;
-                            try {
-                                InputMethodManager inputMethodManager = (InputMethodManager) ApplicationLoader.applicationContext.getSystemService("input_method");
-                                Iterator<InputMethodInfo> it = inputMethodManager.getEnabledInputMethodList().iterator();
-                                while (it.hasNext()) {
-                                    for (InputMethodSubtype inputMethodSubtype : inputMethodManager.getEnabledInputMethodSubtypeList(it.next(), true)) {
-                                        if ("keyboard".equals(inputMethodSubtype.getMode())) {
-                                            String locale = inputMethodSubtype.getLocale();
-                                            if (locale != null && locale.contains("_")) {
-                                                locale = locale.split("_")[0];
-                                            }
-                                            if (org.telegram.ui.Components.v31.E(locale, null, null) != null) {
-                                                hashSet4.add(locale);
-                                            }
-                                        }
-                                    }
-                                }
-                            } catch (Exception e10) {
-                                FileLog.e(e10);
-                            }
-                            runnable3.run();
-                            break;
-                    }
-                }
-            }, new Utilities.Callback() { // from class: org.telegram.ui.d41
-                @Override // org.telegram.messenger.Utilities.Callback
-                public final void run(Object obj) {
-                    switch (i11) {
-                        case 0:
-                            HashSet hashSet2 = hashSet;
-                            Runnable runnable = (Runnable) obj;
-                            try {
-                                String str = LocaleController.getInstance().getCurrentLocaleInfo().pluralLangCode;
-                                if (org.telegram.ui.Components.v31.E(str, null, null) != null) {
-                                    hashSet2.add(str);
-                                }
-                            } catch (Exception e) {
-                                FileLog.e(e);
-                            }
-                            runnable.run();
-                            break;
-                        case 1:
-                            HashSet hashSet3 = hashSet;
-                            Runnable runnable2 = (Runnable) obj;
-                            try {
-                                String language = Resources.getSystem().getConfiguration().locale.getLanguage();
-                                if (org.telegram.ui.Components.v31.E(language, null, null) != null) {
-                                    hashSet3.add(language);
-                                }
-                            } catch (Exception e7) {
-                                FileLog.e(e7);
-                            }
-                            runnable2.run();
-                            break;
-                        default:
-                            HashSet hashSet4 = hashSet;
-                            Runnable runnable3 = (Runnable) obj;
-                            try {
-                                InputMethodManager inputMethodManager = (InputMethodManager) ApplicationLoader.applicationContext.getSystemService("input_method");
-                                Iterator<InputMethodInfo> it = inputMethodManager.getEnabledInputMethodList().iterator();
-                                while (it.hasNext()) {
-                                    for (InputMethodSubtype inputMethodSubtype : inputMethodManager.getEnabledInputMethodSubtypeList(it.next(), true)) {
-                                        if ("keyboard".equals(inputMethodSubtype.getMode())) {
-                                            String locale = inputMethodSubtype.getLocale();
-                                            if (locale != null && locale.contains("_")) {
-                                                locale = locale.split("_")[0];
-                                            }
-                                            if (org.telegram.ui.Components.v31.E(locale, null, null) != null) {
-                                                hashSet4.add(locale);
-                                            }
-                                        }
-                                    }
-                                }
-                            } catch (Exception e10) {
-                                FileLog.e(e10);
-                            }
-                            runnable3.run();
-                            break;
-                    }
-                }
-            }, new mj0(7, j3Var, hashSet));
-        }
-    }
-
-    public static void W() {
-        s = false;
-        MessagesController.getGlobalMainSettings().edit().remove("translate_button_restricted_languages_changed").remove("translate_button_restricted_languages_version").remove("translate_button_restricted_languages").apply();
-        V(false);
-    }
-
-    public static HashSet Y() {
-        if (!s) {
-            Set<String> stringSet = MessagesController.getGlobalMainSettings().getStringSet("translate_button_restricted_languages", null);
-            v = stringSet != null ? new HashSet(stringSet) : null;
-            s = true;
-        }
-        if (v == null) {
-            String[] strArr = {LocaleController.getInstance().getCurrentLocaleInfo().pluralLangCode};
-            HashSet hashSet = new HashSet(e9.q.c(1));
-            Collections.addAll(hashSet, strArr);
-            v = hashSet;
-        }
-        return v;
-    }
-
-    public static void a0(HashSet hashSet, Boolean bool) {
-        v = hashSet;
-        s = true;
-        SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
-        if (hashSet == null) {
-            edit.remove("translate_button_restricted_languages");
-        } else {
-            edit.putStringSet("translate_button_restricted_languages", hashSet);
-        }
-        if (bool == null) {
-            edit.remove("translate_button_restricted_languages_changed");
-        } else if (bool.booleanValue()) {
-            edit.putBoolean("translate_button_restricted_languages_changed", true);
-        }
-        edit.apply();
-    }
-
-    public final void X() {
-        this.h = TranslateController.getLanguages();
-        String str = LocaleController.getInstance().getCurrentLocaleInfo().pluralLangCode;
-        ArrayList arrayList = new ArrayList();
-        ArrayList arrayList2 = new ArrayList(this.n);
-        TranslateController.Language language = null;
-        int i10 = 0;
-        while (i10 < this.h.size()) {
-            TranslateController.Language language2 = (TranslateController.Language) this.h.get(i10);
-            if (TextUtils.equals(language2.code, str)) {
-                arrayList2.remove(language2.code);
-                this.h.remove(i10);
-                i10--;
-                language = language2;
-            } else if (this.n.contains(language2.code)) {
-                arrayList.add(language2);
-                arrayList2.remove(language2.code);
-                this.h.remove(i10);
-                i10--;
-            }
-            i10++;
-        }
-        for (int i11 = 0; i11 < arrayList2.size(); i11++) {
-            TranslateController.Language language3 = new TranslateController.Language();
-            String str2 = (String) arrayList2.get(i11);
-            language3.code = str2;
-            String upperCase = str2.toUpperCase();
-            language3.displayName = upperCase;
-            language3.ownDisplayName = upperCase;
-            language3.q = language3.code.toLowerCase();
-            arrayList.add(language3);
-        }
-        this.e = 0;
-        this.h.addAll(0, arrayList);
-        this.e = arrayList.size() + this.e;
-        if (language != null) {
-            this.h.add(0, language);
-            this.e++;
-        }
-        if (this.e <= 0) {
-            this.e = -1;
-        }
-    }
-
-    public final void Z(int i10) {
-        int b10;
-        s4.h0 adapter = this.b.getAdapter();
-        for (int i11 = 0; i11 < this.b.getChildCount(); i11++) {
-            s4.c1 T = this.b.T(this.b.getChildAt(i11));
-            if (T != null && (b10 = T.b()) != -1 && b10 == i10) {
-                adapter.v(T, i10);
+        if (((i41) arrayList.get(i10)).a != 1) {
+            if (((i41) arrayList.get(i10)).a == 2) {
+                Bundle bundle = new Bundle();
+                bundle.putLong("dialog_id", ((i41) arrayList.get(i10)).c.dialogId);
+                bundle.putInt(TeXSymbolParser.TYPE_ATTR, saveToGallerySettingsActivity.a);
+                saveToGallerySettingsActivity.presentFragment(new SaveToGallerySettingsActivity(bundle));
                 return;
             }
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.n2
-    public final View createView(Context context) {
-        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setTitle(LocaleController.getString(R.string.DoNotTranslate));
-        this.actionBar.setActionBarMenuOnItemClick(new v70(this, 26));
-        org.telegram.ui.ActionBar.v0 a2 = this.actionBar.n().a(0, R.drawable.outline_header_search);
-        a2.F();
-        a2.H = new hg.e2(this, 16);
-        a2.setSearchFieldHint(LocaleController.getString(R.string.Search));
-        this.a = new e41(this, context, false);
-        this.c = new e41(this, context, true);
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.fragmentView = frameLayout;
-        frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.a7, false));
-        FrameLayout frameLayout2 = (FrameLayout) this.fragmentView;
-        org.telegram.ui.Components.mz mzVar = new org.telegram.ui.Components.mz(context, null);
-        this.d = mzVar;
-        mzVar.setText(LocaleController.getString(R.string.NoResult));
-        this.d.c();
-        this.d.setShowAtCenter(true);
-        frameLayout2.addView(this.d, w7.x5.c(-1.0f, -1));
-        org.telegram.ui.Components.ll0 ll0Var = new org.telegram.ui.Components.ll0(context, null);
-        this.b = ll0Var;
-        ll0Var.p1();
-        this.b.setEmptyView(this.d);
-        this.b.setLayoutManager(new s4.c0(1, false));
-        this.b.setVerticalScrollBarEnabled(false);
-        this.b.setAdapter(this.a);
-        frameLayout2.addView(this.b, w7.x5.c(-1.0f, -1));
-        this.actionBar.setAdaptiveBackground(this.b);
-        this.b.setOnItemClickListener(new a31(this, 2));
-        this.b.setOnScrollListener(new h3(this, 27));
-        return this.fragmentView;
-    }
-
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 != NotificationCenter.suggestedLangpack || this.a == null) {
+            if (((i41) arrayList.get(i10)).a == 4) {
+                org.telegram.ui.ActionBar.b2 b2Var = org.telegram.ui.Components.e5.O(saveToGallerySettingsActivity.getParentActivity(), LocaleController.getString(R.string.NotificationsDeleteAllExceptionTitle), LocaleController.getString(R.string.NotificationsDeleteAllExceptionAlert), LocaleController.getString(R.string.Delete), new xz0(saveToGallerySettingsActivity, 9), null).a;
+                b2Var.show();
+                b2Var.h();
+                return;
+            }
             return;
         }
-        X();
-        this.a.l();
+        Bundle bundle2 = new Bundle();
+        bundle2.putBoolean("onlySelect", true);
+        bundle2.putBoolean("checkCanWrite", false);
+        int i11 = saveToGallerySettingsActivity.a;
+        if (i11 == 2) {
+            bundle2.putInt("dialogsType", 6);
+        } else if (i11 == 4) {
+            bundle2.putInt("dialogsType", 5);
+        } else {
+            bundle2.putInt("dialogsType", 4);
+        }
+        bundle2.putBoolean("allowGlobalSearch", false);
+        ry ryVar = new ry(bundle2);
+        ryVar.C2 = new f41(saveToGallerySettingsActivity);
+        saveToGallerySettingsActivity.presentFragment(ryVar);
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
-    public final ArrayList getThemeDescriptions() {
-        ArrayList arrayList = new ArrayList();
-        arrayList.add(new org.telegram.ui.ActionBar.k6(this.b, 16, new Class[]{org.telegram.ui.Cells.q4.class}, null, null, null, org.telegram.ui.ActionBar.i6.d6));
-        arrayList.add(new org.telegram.ui.ActionBar.k6(this.fragmentView, 1, null, null, null, null, org.telegram.ui.ActionBar.i6.a7));
-        arrayList.add(new org.telegram.ui.ActionBar.k6(this.b, 32768, null, null, null, null, org.telegram.ui.ActionBar.i6.s8));
-        arrayList.add(new org.telegram.ui.ActionBar.k6(this.actionBar, 64, null, null, null, null, org.telegram.ui.ActionBar.i6.v8));
-        arrayList.add(new org.telegram.ui.ActionBar.k6(this.actionBar, 128, null, null, null, null, org.telegram.ui.ActionBar.i6.A8));
-        arrayList.add(new org.telegram.ui.ActionBar.k6(this.actionBar, 256, null, null, null, null, org.telegram.ui.ActionBar.i6.t8));
-        arrayList.add(new org.telegram.ui.ActionBar.k6(this.actionBar, TLObject.FLAG_27, null, null, null, null, org.telegram.ui.ActionBar.i6.C8));
-        arrayList.add(new org.telegram.ui.ActionBar.k6(this.actionBar, 67108864, null, null, null, null, org.telegram.ui.ActionBar.i6.D8));
-        arrayList.add(new org.telegram.ui.ActionBar.k6(this.b, 4096, null, null, null, null, org.telegram.ui.ActionBar.i6.i6));
-        arrayList.add(new org.telegram.ui.ActionBar.k6(this.d, 4, null, null, null, null, org.telegram.ui.ActionBar.i6.c7));
-        arrayList.add(new org.telegram.ui.ActionBar.k6(this.b, 0, new Class[]{View.class}, org.telegram.ui.ActionBar.i6.k0, null, null, org.telegram.ui.ActionBar.i6.d7));
-        arrayList.add(new org.telegram.ui.ActionBar.k6(this.b, 0, new Class[]{org.telegram.ui.Cells.q4.class}, new String[]{"textView"}, null, null, -1, null, org.telegram.ui.ActionBar.i6.G6));
-        arrayList.add(new org.telegram.ui.ActionBar.k6(this.b, 0, new Class[]{org.telegram.ui.Cells.q4.class}, new String[]{"textView2"}, null, null, -1, null, org.telegram.ui.ActionBar.i6.A6));
-        arrayList.add(new org.telegram.ui.ActionBar.k6(this.b, 0, new Class[]{org.telegram.ui.Cells.q4.class}, new String[]{"checkImage"}, null, null, -1, null, org.telegram.ui.ActionBar.i6.Mh));
-        return arrayList;
+    @Override // org.telegram.ui.Components.bl0
+    public /* synthetic */ boolean d1(View view) {
+        return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
-    public final boolean isSupportEdgeToEdge() {
+    @Override // org.telegram.ui.ly
+    public boolean u(ry ryVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, wf1 wf1Var) {
+        Bundle bundle = new Bundle();
+        bundle.putLong("dialog_id", ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId);
+        SaveToGallerySettingsActivity saveToGallerySettingsActivity = this.a;
+        bundle.putInt(TeXSymbolParser.TYPE_ATTR, saveToGallerySettingsActivity.a);
+        saveToGallerySettingsActivity.presentFragment(new SaveToGallerySettingsActivity(bundle), true);
         return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
-    public final boolean onFragmentCreate() {
-        this.n = Y();
-        this.r = Y();
-        X();
-        LocaleController.getInstance().loadRemoteLanguages(this.currentAccount);
-        NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.suggestedLangpack);
-        return super.onFragmentCreate();
+    @Override // org.telegram.ui.Components.dl0
+    public /* synthetic */ void g() {
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
-    public final void onFragmentDestroy() {
-        super.onFragmentDestroy();
-        NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.suggestedLangpack);
+    @Override // org.telegram.ui.Components.dl0
+    public /* synthetic */ void q(float f7) {
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
-    public final void onInsets(int i10, int i11, int i12, int i13) {
-        this.b.setPadding(0, 0, 0, i13);
-        this.b.setClipToPadding(false);
-    }
-
-    @Override // org.telegram.ui.ActionBar.n2
-    public final void onResume() {
-        super.onResume();
-        e41 e41Var = this.a;
-        if (e41Var != null) {
-            e41Var.l();
+    @Override // org.telegram.ui.Components.dl0
+    public boolean c(float f7, float f10, int i10, View view) {
+        SaveToGallerySettingsActivity saveToGallerySettingsActivity = this.a;
+        ArrayList arrayList = saveToGallerySettingsActivity.s;
+        if (((i41) arrayList.get(i10)).a != 2) {
+            return false;
         }
+        SaveToGallerySettingsHelper.DialogException dialogException = ((i41) arrayList.get(i10)).c;
+        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(saveToGallerySettingsActivity.getParentActivity(), null);
+        org.telegram.ui.ActionBar.f1 c10 = org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_customize, LocaleController.getString(R.string.EditException), false, null);
+        org.telegram.ui.ActionBar.f1 c11 = org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_delete, LocaleController.getString(R.string.DeleteException), false, null);
+        int i11 = org.telegram.ui.ActionBar.h6.p7;
+        c11.c(org.telegram.ui.ActionBar.h6.w0(null, i11, false), org.telegram.ui.ActionBar.h6.w0(null, i11, false));
+        org.telegram.ui.ActionBar.n1 Q = org.telegram.ui.Components.e5.Q(saveToGallerySettingsActivity, actionBarPopupWindow$ActionBarPopupWindowLayout, view, f7, f10);
+        actionBarPopupWindow$ActionBarPopupWindowLayout.setParentWindow(Q);
+        c10.setOnClickListener(new org.telegram.ui.Cells.wa(saveToGallerySettingsActivity, Q, i10, 14));
+        c11.setOnClickListener(new a0(saveToGallerySettingsActivity, Q, dialogException, 15));
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.bl0
+    public /* synthetic */ void r0(View view, float f7, float f10) {
     }
 }

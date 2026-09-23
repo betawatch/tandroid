@@ -1,6 +1,6 @@
 package za;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class f implements ia.d {
     public static final f a = new f();
@@ -11,11 +11,11 @@ public final class f implements ia.d {
 
     @Override // ia.a
     public final void a(Object obj, Object obj2) {
-        p pVar = (p) obj;
+        r rVar = (r) obj;
         ia.e eVar = (ia.e) obj2;
-        eVar.a(b, pVar.a);
-        eVar.e(c, pVar.b);
-        eVar.e(d, pVar.c);
-        eVar.c(e, pVar.d);
+        eVar.a(b, rVar.a);
+        eVar.e(c, rVar.b);
+        eVar.e(d, rVar.c);
+        eVar.c(e, rVar.d);
     }
 }

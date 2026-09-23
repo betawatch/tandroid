@@ -6,11 +6,11 @@ import android.graphics.CornerPathEffect;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Shader;
-import ci.f4;
+import ci.e4;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class d3 extends f4 {
+public final class d3 extends e4 {
     public final Paint L0;
     public final q1 M0;
 
@@ -26,7 +26,7 @@ public final class d3 extends f4 {
         }
     }
 
-    @Override // ci.f4
+    @Override // ci.e4
     public final void c(Canvas canvas, float f7) {
         q1 q1Var = this.M0;
         Shader shader = q1Var.b().getShader();
@@ -42,7 +42,7 @@ public final class d3 extends f4 {
         canvas.restore();
     }
 
-    @Override // ci.f4, android.view.View
+    @Override // ci.e4, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         this.M0.d(getX(), getY());
         super.dispatchDraw(canvas);

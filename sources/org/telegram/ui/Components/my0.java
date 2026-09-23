@@ -1,92 +1,228 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.view.View;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.view.MotionEvent;
 import android.view.animation.OvershootInterpolator;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.Emoji;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class my0 extends View {
-    public String a;
-    public Drawable b;
-    public boolean c;
-    public int d;
-    public final c6 e;
-    public final /* synthetic */ ny0 f;
+public class my0 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
+    public boolean E;
+    public jq0 F;
+    public int G;
+    public String H;
+    public int I;
+    public String[] J;
+    public Runnable K;
+    public long L;
+    public Path M;
+    public Path N;
+    public Paint O;
+    public e6 P;
+    public e6 Q;
+    public e6 R;
+    public e6 S;
+    public Emoji.EmojiSpan T;
+    public float U;
+    public Integer V;
+    public Integer W;
+    public final int a;
+    public float a0;
+    public final org.telegram.ui.ActionBar.d6 b;
+    public e6 b0;
+    public ky0 c;
+    public e6 c0;
+    public ai.f0 d;
+    public e6 d0;
+    public iy0 e;
+    public jy0 f;
+    public int h;
+    public int n;
+    public hy0 r;
+    public boolean s;
+    public boolean v;
+    public ArrayList w;
+    public boolean x;
+    public boolean y;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public my0(ny0 ny0Var, Context context) {
+    public my0(Context context, int i10, org.telegram.ui.jk jkVar, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context);
-        this.f = ny0Var;
-        this.d = 0;
-        this.e = new c6(this, 350L, new OvershootInterpolator(5.0f));
+        this.h = 0;
+        this.n = AndroidUtilities.dp(10.0f);
+        this.L = 0L;
+        this.a = i10;
+        this.c = jkVar;
+        this.b = d6Var;
+        postDelayed(new ei.r2(i10, 10), 260L);
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        float d = ((1.0f - this.e.d(isPressed() ? 1.0f : 0.0f, false)) * 0.2f) + 0.8f;
-        if (this.b != null) {
-            int width = getWidth() / 2;
-            int paddingTop = (getPaddingTop() + (getHeight() - getPaddingBottom())) / 2;
-            this.b.setBounds(getPaddingLeft(), getPaddingTop(), getWidth() - getPaddingRight(), getHeight() - getPaddingBottom());
-            canvas.scale(d, d, width, paddingTop);
-            Drawable drawable = this.b;
-            if (drawable instanceof o5) {
-                ((o5) drawable).q(System.currentTimeMillis());
-            }
-            this.b.draw(canvas);
+    /* JADX INFO: Access modifiers changed from: private */
+    public org.telegram.ui.nt getPreviewDelegate() {
+        if (this.r == null) {
+            this.r = new hy0(this);
+        }
+        return this.r;
+    }
+
+    public final void c() {
+        if (this.e != null) {
+            return;
+        }
+        this.M = new Path();
+        this.N = new Path();
+        ai.f0 f0Var = new ai.f0(this, getContext(), 21);
+        this.d = f0Var;
+        rr rrVar = rr.h;
+        this.P = new e6(f0Var, 120L, 350L, rrVar);
+        this.Q = new e6(this.d, 150L, 600L, rrVar);
+        new OvershootInterpolator(0.4f);
+        this.R = new e6(this.d, 300L, rrVar);
+        this.S = new e6(this.d, 300L, rrVar);
+        this.b0 = new e6(this.d, 200L, rrVar);
+        this.c0 = new e6(this.d, 350L, rrVar);
+        this.d0 = new e6(this.d, 350L, rrVar);
+        iy0 iy0Var = new iy0(this, getContext());
+        this.e = iy0Var;
+        jy0 jy0Var = new jy0(this, this);
+        this.f = jy0Var;
+        iy0Var.setAdapter(jy0Var);
+        getContext();
+        s4.c0 c0Var = new s4.c0();
+        c0Var.j1(0);
+        this.e.setLayoutManager(c0Var);
+        s4.j jVar = new s4.j();
+        jVar.n(45L);
+        jVar.o = rrVar;
+        this.e.setItemAnimator(jVar);
+        this.e.setSelectorDrawableColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.i6, this.b));
+        iy0 iy0Var2 = this.e;
+        j jVar2 = new j(this, 17);
+        iy0Var2.setOnItemClickListener(jVar2);
+        this.e.setOnTouchListener(new ci.q1(4, this, jVar2));
+        this.d.addView(this.e, w7.x5.c(52.0f, -1));
+        addView(this.d, w7.x5.a(-1.0f, 66.66f, 80));
+        ky0 ky0Var = this.c;
+        if (ky0Var != null) {
+            ky0Var.a(new ci.i2(this, 13));
         }
     }
 
+    public int d() {
+        return 2;
+    }
+
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (i10 == NotificationCenter.newEmojiSuggestionsAvailable) {
+            ArrayList arrayList = this.w;
+            if (arrayList == null || arrayList.isEmpty()) {
+                return;
+            }
+            e();
+            return;
+        }
+        if (i10 != NotificationCenter.emojiLoaded || this.e == null) {
+            return;
+        }
+        for (int i12 = 0; i12 < this.e.getChildCount(); i12++) {
+            this.e.getChildAt(i12).invalidate();
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (this.e == null) {
+            return super.dispatchTouchEvent(motionEvent);
+        }
+        float f7 = this.d0.c;
+        float f10 = this.c0.c;
+        RectF rectF = AndroidUtilities.rectTmp;
+        float f11 = f7 / 2.0f;
+        rectF.set(this.e.getTranslationX() + (f10 - f11) + r0.getPaddingLeft(), this.e.getPaddingTop() + this.e.getTop(), Math.min(this.e.getTranslationX() + f10 + f11 + this.e.getPaddingLeft(), getWidth() - this.d.getPaddingRight()), this.e.getBottom());
+        rectF.offset(this.d.getX(), this.d.getY());
+        if (this.s && rectF.contains(motionEvent.getX(), motionEvent.getY())) {
+            return super.dispatchTouchEvent(motionEvent);
+        }
+        if (motionEvent.getAction() == 0) {
+            return false;
+        }
+        if (motionEvent.getAction() == 0) {
+            motionEvent.setAction(3);
+        }
+        return super.dispatchTouchEvent(motionEvent);
+    }
+
+    public final void e() {
+        jq0 jq0Var = this.F;
+        if (jq0Var != null) {
+            AndroidUtilities.cancelRunOnUIThread(jq0Var);
+        }
+        jq0 jq0Var2 = new jq0(this, 11);
+        this.F = jq0Var2;
+        AndroidUtilities.runOnUIThread(jq0Var2, 16L);
+    }
+
+    public final void f() {
+        jq0 jq0Var = this.F;
+        if (jq0Var != null) {
+            AndroidUtilities.cancelRunOnUIThread(jq0Var);
+            this.F = null;
+        }
+        this.s = false;
+        this.v = true;
+        ai.f0 f0Var = this.d;
+        if (f0Var != null) {
+            f0Var.invalidate();
+        }
+    }
+
+    public ky0 getDelegate() {
+        return this.c;
+    }
+
+    public int getDirection() {
+        return this.h;
+    }
+
     @Override // android.view.View
+    public final boolean isShown() {
+        return this.s;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        Drawable drawable = this.b;
-        if (drawable instanceof o5) {
-            ((o5) drawable).a(this);
-        }
-        this.c = true;
+        NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.emojiLoaded);
+        NotificationCenter.getInstance(this.a).addObserver(this, NotificationCenter.newEmojiSuggestionsAvailable);
     }
 
-    @Override // android.view.View
+    @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        Drawable drawable = this.b;
-        if (drawable instanceof o5) {
-            ((o5) drawable).o(this);
-        }
-        this.c = false;
+        NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.emojiLoaded);
+        NotificationCenter.getInstance(this.a).removeObserver(this, NotificationCenter.newEmojiSuggestionsAvailable);
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        setPadding(AndroidUtilities.dp(3.0f), AndroidUtilities.dp((this.d == 0 ? 0.0f : 6.66f) + 3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp((this.d != 0 ? 0.0f : 6.66f) + 3.0f));
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(44.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(52.0f), TLObject.FLAG_30));
+    public void setDelegate(ky0 ky0Var) {
+        this.c = ky0Var;
     }
 
     public void setDirection(int i10) {
-        this.d = i10;
-        invalidate();
-    }
-
-    public void setImageDrawable(Drawable drawable) {
-        Drawable drawable2 = this.b;
-        if (drawable2 instanceof o5) {
-            ((o5) drawable2).o(this);
-        }
-        this.b = drawable;
-        if ((drawable instanceof o5) && this.c) {
-            ((o5) drawable).a(this);
+        if (this.h != i10) {
+            this.h = i10;
+            requestLayout();
         }
     }
 
-    @Override // android.view.View
-    public void setPressed(boolean z10) {
-        super.setPressed(z10);
-        invalidate();
+    public void setHorizontalPadding(int i10) {
+        this.n = i10;
     }
 }

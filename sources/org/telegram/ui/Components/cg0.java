@@ -8,9 +8,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class cg0 extends l20 {
+public final class cg0 extends m20 {
     public float a;
     public float b;
     public final /* synthetic */ int c;
@@ -21,7 +21,7 @@ public final class cg0 extends l20 {
         this.c = i10;
     }
 
-    @Override // org.telegram.ui.Components.l20
+    @Override // org.telegram.ui.Components.m20
     public final boolean a() {
         eg0 eg0Var = this.d;
         PhotoViewer photoViewer = eg0Var.V;
@@ -43,7 +43,7 @@ public final class cg0 extends l20 {
         boolean z10;
         eg0 eg0Var = this.d;
         PhotoViewer photoViewer = eg0Var.V;
-        w61 w61Var = eg0Var.Q;
+        v61 v61Var = eg0Var.Q;
         if (photoViewer != null && ((photoViewer.F2 != null || eg0Var.r != null) && !eg0Var.c0 && !eg0Var.Y && !eg0Var.w && !eg0Var.s.isInProgress() && eg0Var.f0)) {
             eg0Var.V.getClass();
             boolean z11 = motionEvent.getX() >= (((float) eg0Var.t()) * eg0Var.J) * 0.5f;
@@ -58,21 +58,21 @@ public final class cg0 extends l20 {
                         z10 = j3 >= -9000;
                         j3 = 0;
                         if (z10) {
-                            w61Var.e(true);
-                            w61Var.d(!z11);
-                            long j10 = w61Var.o + 10000;
-                            w61Var.o = j10;
-                            w61Var.p = LocaleController.formatPluralString("Seconds", (int) (j10 / 1000), new Object[0]);
+                            v61Var.e(true);
+                            v61Var.d(!z11);
+                            long j10 = v61Var.o + 10000;
+                            v61Var.o = j10;
+                            v61Var.p = LocaleController.formatPluralString("Seconds", (int) (j10 / 1000), new Object[0]);
                             qf0 qf0Var = eg0Var.r;
                             if (qf0Var != null) {
                                 qf0Var.i(j3);
                             } else {
-                                g71 g71Var = eg0Var.V.F2;
-                                if (g71Var != null) {
-                                    g71Var.K(j3);
+                                f71 f71Var = eg0Var.V.F2;
+                                if (f71Var != null) {
+                                    f71Var.K(j3);
                                 }
                             }
-                            w61Var.g(0L);
+                            v61Var.g(0L);
                             eg0Var.Z = j3 / m10;
                             ai.n4 n4Var = eg0Var.b0;
                             if (n4Var != null) {
@@ -166,7 +166,7 @@ public final class cg0 extends l20 {
                 boolean z10 = eg0Var.d0;
                 if (z10) {
                     if (z10) {
-                        eg0Var.M.a(new ci.va(this, rawX, 2));
+                        eg0Var.M.a(new ci.sa(this, rawX, 2));
                         o1.k kVar = eg0Var.M;
                         kVar.b = f12;
                         kVar.c = true;

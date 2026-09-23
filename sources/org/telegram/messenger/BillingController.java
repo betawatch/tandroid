@@ -30,9 +30,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.wg0;
+import org.telegram.ui.rg0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public class BillingController implements c5.q, c5.d {
     public static final r PREMIUM_PRODUCT;
@@ -53,7 +53,7 @@ public class BillingController implements c5.q, c5.d {
     private ArrayList<Runnable> setupListeners = new ArrayList<>();
     private int triesLeft = 0;
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public interface ProductDetailsResponseListenerLegacy {
         void onProductDetailsResponse(c5.h hVar, List<c5.o> list);
     }
@@ -235,7 +235,7 @@ public class BillingController implements c5.q, c5.d {
                 atomicInteger.incrementAndGet();
                 c3.a a2 = c5.h.a();
                 a2.b = 0;
-                onPurchasesUpdatedInternal(a2.a(), Collections.singletonList(purchase), new f0(8, atomicInteger, a0Var, arrayList));
+                onPurchasesUpdatedInternal(a2.a(), Collections.singletonList(purchase), new f0(arrayList, (Object) atomicInteger, (Object) a0Var, 9));
             }
         }
         if (atomicInteger.get() == 0) {
@@ -273,7 +273,7 @@ public class BillingController implements c5.q, c5.d {
             while (i12 < size) {
                 Object obj = findUpdatesAndRemove.get(i12);
                 i12++;
-                AndroidUtilities.runOnUIThread(new f0(accountInstance, tL_payments_assignPlayMarketTransaction, (TL_update.TL_updateSentPhoneCode) obj, 9));
+                AndroidUtilities.runOnUIThread(new f0(accountInstance, tL_payments_assignPlayMarketTransaction, (TL_update.TL_updateSentPhoneCode) obj, 10));
             }
         }
         accountInstance.getMessagesController().processUpdates((TLRPC.Updates) tLObject, false);
@@ -333,15 +333,15 @@ public class BillingController implements c5.q, c5.d {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$onPurchasesUpdatedInternal$7(AccountInstance accountInstance, TLRPC.TL_payments_assignPlayMarketTransaction tL_payments_assignPlayMarketTransaction, TL_update.TL_updateSentPhoneCode tL_updateSentPhoneCode) {
-        wg0 wg0Var = (wg0) LaunchActivity.N();
-        if (wg0Var == null) {
-            wg0Var = new wg0(accountInstance.getCurrentAccount());
+        rg0 rg0Var = (rg0) LaunchActivity.N();
+        if (rg0Var == null) {
+            rg0Var = new rg0(accountInstance.getCurrentAccount());
             org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
             if (U != null) {
-                U.presentFragment(wg0Var);
+                U.presentFragment(rg0Var);
             }
         }
-        wg0Var.q1(((TLRPC.TL_inputStorePaymentAuthCode) tL_payments_assignPlayMarketTransaction.purpose).phone_number, tL_updateSentPhoneCode.sent_code);
+        rg0Var.q1(((TLRPC.TL_inputStorePaymentAuthCode) tL_payments_assignPlayMarketTransaction.purpose).phone_number, tL_updateSentPhoneCode.sent_code);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -521,7 +521,7 @@ public class BillingController implements c5.q, c5.d {
                 tL_inputAppEvent.type = "premium.promo_screen_fail";
                 tL_inputAppEvent.data = new TLRPC.TL_jsonNull();
                 tL_help_saveAppLog.events.add(tL_inputAppEvent);
-                ConnectionsManager.getInstance(UserConfig.selectedAccount).sendRequest(tL_help_saveAppLog, new ai.t7(8));
+                ConnectionsManager.getInstance(UserConfig.selectedAccount).sendRequest(tL_help_saveAppLog, new ai.u7(8));
             }
             Runnable runnable2 = this.onCanceled;
             if (runnable2 != null) {

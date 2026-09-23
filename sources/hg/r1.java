@@ -7,18 +7,18 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.d5;
-import org.telegram.ui.Components.kz;
+import org.telegram.ui.ActionBar.c5;
+import org.telegram.ui.Components.lz;
 import org.telegram.ui.Components.pv0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class r1 extends pv0 {
     public final /* synthetic */ int w0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ r1(Context context, d5 d5Var, int i10) {
-        super(context, d5Var);
+    public /* synthetic */ r1(Context context, c5 c5Var, int i10) {
+        super(context, c5Var);
         this.w0 = i10;
     }
 
@@ -41,8 +41,8 @@ public final class r1 extends pv0 {
     public void addView(View view) {
         switch (this.w0) {
             case 4:
-                if (view instanceof kz) {
-                    ViewGroup.LayoutParams layoutParams = ((kz) view).getLayoutParams();
+                if (view instanceof lz) {
+                    ViewGroup.LayoutParams layoutParams = ((lz) view).getLayoutParams();
                     if (layoutParams == null) {
                         layoutParams = new FrameLayout.LayoutParams(-1, -2);
                     }
@@ -111,7 +111,7 @@ public final class r1 extends pv0 {
                                     i18 = layoutParams.bottomMargin;
                                 }
                                 i19 = i20 + paddingTop;
-                                if (childAt instanceof kz) {
+                                if (childAt instanceof lz) {
                                     i19 = AndroidUtilities.isTablet() ? i21 - measuredHeight : (i21 + R) - measuredHeight;
                                 }
                                 childAt.layout(i16, i19, measuredWidth + i16, measuredHeight + i19);
@@ -120,7 +120,7 @@ public final class r1 extends pv0 {
                                 i18 = layoutParams.bottomMargin;
                             }
                             i19 = i17 - i18;
-                            if (childAt instanceof kz) {
+                            if (childAt instanceof lz) {
                             }
                             childAt.layout(i16, i19, measuredWidth + i16, measuredHeight + i19);
                         } else {
@@ -131,7 +131,7 @@ public final class r1 extends pv0 {
                         if (i24 == 16) {
                         }
                         i19 = i17 - i18;
-                        if (childAt instanceof kz) {
+                        if (childAt instanceof lz) {
                         }
                         childAt.layout(i16, i19, measuredWidth + i16, measuredHeight + i19);
                     }

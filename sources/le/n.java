@@ -1,42 +1,45 @@
 package le;
 
-import android.graphics.RectF;
+import com.google.android.gms.internal.vision.e2;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class n {
-    public final RectF e = new RectF();
-    public final m a = new m(0.0f);
-    public final m b = new m(0.0f);
-    public final m c = new m(0.0f);
-    public final m d = new m(0.0f);
+    public float a;
+    public float b;
+    public float c;
 
-    public final boolean a(float f7) {
-        return this.d.a(f7) || (this.c.a(f7) || (this.b.a(f7) || this.a.a(f7)));
+    public n(float f7) {
+        d(f7);
     }
 
-    public final boolean b(float f7, float f10, float f11, float f12) {
-        return this.a.b(f7) || this.b.b(f10) || this.c.b(f11) || this.d.b(f12);
+    public final boolean a(float f7) {
+        float f10 = this.b;
+        float z10 = e2.z(this.c, f10, f7, f10);
+        if (this.a == z10) {
+            return false;
+        }
+        this.a = z10;
+        return true;
+    }
+
+    public final boolean b(float f7) {
+        return this.c != f7;
     }
 
     public final void c(boolean z10) {
-        this.a.c(z10);
-        this.b.c(z10);
-        this.c.c(z10);
-        this.d.c(z10);
+        if (!z10) {
+            this.b = this.a;
+            return;
+        }
+        float f7 = this.c;
+        this.a = f7;
+        this.b = f7;
     }
 
-    public final void d(float f7, float f10, float f11, float f12) {
-        this.a.d(f7);
-        this.b.d(f10);
-        this.c.d(f11);
-        this.d.d(f12);
-    }
-
-    public final void e(float f7, float f10, float f11, float f12) {
-        this.a.c = f7;
-        this.b.c = f10;
-        this.c.c = f11;
-        this.d.c = f12;
+    public final void d(float f7) {
+        this.b = f7;
+        this.c = f7;
+        this.a = f7;
     }
 }

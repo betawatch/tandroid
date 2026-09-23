@@ -11,8 +11,9 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public abstract class h4 extends v7.r5 implements i9.w {
     public static final boolean d;
@@ -186,7 +187,7 @@ public abstract class h4 extends v7.r5 implements i9.w {
             Object f7 = f(this);
             sb2.append("SUCCESS, result=[");
             if (f7 == null) {
-                sb2.append("null");
+                sb2.append(BuildConfig.BETA_URL);
             } else if (f7 == this) {
                 sb2.append("this future");
             } else {

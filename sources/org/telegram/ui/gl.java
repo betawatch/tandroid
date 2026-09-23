@@ -1,21 +1,31 @@
 package org.telegram.ui;
 
 import android.app.Activity;
+import android.text.style.CharacterStyle;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class gl extends org.telegram.ui.Components.w50 {
-    public final /* synthetic */ bo d1;
+public final class gl extends UndoView {
+    public final /* synthetic */ xn f0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gl(bo boVar, Activity activity, org.telegram.ui.Components.o50 o50Var, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(activity, o50Var, e6Var, true);
-        this.d1 = boVar;
+    public gl(xn xnVar, Activity activity, xn xnVar2, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(activity, xnVar2, true, d6Var);
+        this.f0 = xnVar;
     }
 
-    @Override // org.telegram.ui.Components.w50
-    public final void m(boolean z10, boolean z11) {
-        super.m(z10, z11);
-        this.d1.uc.a(z10, true);
+    @Override // org.telegram.ui.Components.UndoView
+    public final void b(CharacterStyle characterStyle) {
+        this.f0.U7(characterStyle, false, null, null);
+    }
+
+    @Override // org.telegram.ui.Components.UndoView
+    public final void k(long j3, int i10, Object obj, Object obj2, Runnable runnable, Runnable runnable2) {
+        int i11;
+        ek ekVar = this.f0.X1;
+        setAdditionalTranslationY((ekVar == null || !(((i11 = ekVar.T) == 1 || i11 == 3) && ekVar.S)) ? 0.0f : AndroidUtilities.dp(ekVar.getStyleHeight()));
+        super.k(j3, i10, obj, obj2, runnable, runnable2);
     }
 }

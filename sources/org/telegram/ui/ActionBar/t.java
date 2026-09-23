@@ -1,9 +1,9 @@
 package org.telegram.ui.ActionBar;
 
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class t implements Runnable {
     public final /* synthetic */ boolean a;
@@ -77,7 +77,7 @@ public final class t implements Runnable {
             }
             actionBarLayout.H.setNavigationBarColor(d);
         }
-        float interpolation = z12 ? z11 ? actionBarLayout.M.getInterpolation(actionBarLayout.E0) : qr.h.getInterpolation(actionBarLayout.E0) : actionBarLayout.L.getInterpolation(actionBarLayout.E0);
+        float interpolation = z12 ? z11 ? actionBarLayout.M.getInterpolation(actionBarLayout.E0) : rr.h.getInterpolation(actionBarLayout.E0) : actionBarLayout.L.getInterpolation(actionBarLayout.E0);
         if (z11) {
             float a2 = w7.p.a(interpolation, 0.0f, 1.0f);
             actionBarLayout.s.setAlpha(a2);
@@ -94,7 +94,7 @@ public final class t implements Runnable {
                     actionBarLayout.J.setScaleY(f12);
                 }
                 actionBarLayout.r.setAlpha((int) (46.0f * a2));
-                i6.s0.setAlpha((int) (a2 * 255.0f));
+                h6.s0.setAlpha((int) (a2 * 255.0f));
                 actionBarLayout.s.invalidate();
                 actionBarLayout.invalidate();
             } else {
@@ -110,7 +110,7 @@ public final class t implements Runnable {
                 actionBarLayout.v.setScaleY(f14);
                 actionBarLayout.r.setAlpha((int) (46.0f * a10));
                 if (actionBarLayout.J == null) {
-                    i6.s0.setAlpha((int) (a10 * 255.0f));
+                    h6.s0.setAlpha((int) (a10 * 255.0f));
                 }
                 actionBarLayout.s.invalidate();
                 actionBarLayout.invalidate();

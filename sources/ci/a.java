@@ -17,9 +17,9 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.pq;
+import org.telegram.ui.Components.qq;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class a extends View {
     public final ImageReceiver a;
@@ -34,7 +34,7 @@ public final class a extends View {
     public float s;
     public float v;
 
-    public a(Context context, MediaController.PhotoEntry photoEntry, String str, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
+    public a(Context context, MediaController.PhotoEntry photoEntry, String str, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context);
         String str2;
         ImageReceiver imageReceiver = new ImageReceiver(this);
@@ -44,13 +44,13 @@ public final class a extends View {
         TextPaint textPaint2 = new TextPaint(1);
         this.n = textPaint2;
         setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
-        setBackground(org.telegram.ui.ActionBar.i6.K0(false));
+        setBackground(org.telegram.ui.ActionBar.h6.K0(false));
         setMinimumWidth(AndroidUtilities.dp(196.0f));
         setLayoutParams(new LinearLayout.LayoutParams(-1, 48));
-        int i11 = org.telegram.ui.ActionBar.i6.E8;
-        textPaint.setColor(org.telegram.ui.ActionBar.i6.v0(i11, e6Var));
+        int i11 = org.telegram.ui.ActionBar.h6.E8;
+        textPaint.setColor(org.telegram.ui.ActionBar.h6.v0(i11, d6Var));
         textPaint.setTextSize(AndroidUtilities.dp(16.0f));
-        textPaint2.setColor(org.telegram.ui.ActionBar.i6.v0(i11, e6Var));
+        textPaint2.setColor(org.telegram.ui.ActionBar.h6.v0(i11, d6Var));
         textPaint2.setAlpha(102);
         textPaint2.setTextSize(AndroidUtilities.dp(13.0f));
         String str3 = "";
@@ -60,20 +60,20 @@ public final class a extends View {
         imageReceiver.setRoundRadius(AndroidUtilities.dp(4.0f));
         Drawable mutate = context.getResources().getDrawable(R.drawable.msg_media_gallery).mutate();
         mutate.setColorFilter(new PorterDuffColorFilter(1308622847, PorterDuff.Mode.MULTIPLY));
-        pq pqVar = new pq(org.telegram.ui.ActionBar.i6.b0(AndroidUtilities.dp(6.0f), -13750737), mutate);
-        pqVar.w = false;
+        qq qqVar = new qq(org.telegram.ui.ActionBar.h6.b0(AndroidUtilities.dp(6.0f), -13750737), mutate);
+        qqVar.w = false;
         int dp = AndroidUtilities.dp(18.0f);
         int dp2 = AndroidUtilities.dp(18.0f);
-        pqVar.e = dp;
-        pqVar.f = dp2;
+        qqVar.e = dp;
+        qqVar.f = dp2;
         if (photoEntry != null && (str2 = photoEntry.thumbPath) != null) {
-            imageReceiver.setImage(ImageLocation.getForPath(str2), "30.0_30.0", (ImageLocation) null, (String) null, pqVar, (Object) null, 0);
+            imageReceiver.setImage(ImageLocation.getForPath(str2), "30.0_30.0", (ImageLocation) null, (String) null, qqVar, (Object) null, 0);
         } else if (photoEntry == null || photoEntry.path == null) {
-            imageReceiver.setImageBitmap(pqVar);
+            imageReceiver.setImageBitmap(qqVar);
         } else if (photoEntry.isVideo) {
-            imageReceiver.setImage(ImageLocation.getForPath("vthumb://" + photoEntry.imageId + ":" + photoEntry.path), "30.0_30.0", (ImageLocation) null, (String) null, pqVar, (Object) null, 0);
+            imageReceiver.setImage(ImageLocation.getForPath("vthumb://" + photoEntry.imageId + ":" + photoEntry.path), "30.0_30.0", (ImageLocation) null, (String) null, qqVar, (Object) null, 0);
         } else {
-            imageReceiver.setImage(ImageLocation.getForPath("thumb://" + photoEntry.imageId + ":" + photoEntry.path), "30.0_30.0", (ImageLocation) null, (String) null, pqVar, (Object) null, 0);
+            imageReceiver.setImage(ImageLocation.getForPath("thumb://" + photoEntry.imageId + ":" + photoEntry.path), "30.0_30.0", (ImageLocation) null, (String) null, qqVar, (Object) null, 0);
         }
         StringBuilder sb2 = new StringBuilder();
         sb2.append((Object) str4);

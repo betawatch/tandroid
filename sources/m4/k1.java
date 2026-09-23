@@ -1,602 +1,166 @@
 package m4;
 
-import android.os.Looper;
-import android.os.SystemClock;
-import android.view.Surface;
-import b2.x1;
-import java.util.List;
+import android.os.Bundle;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final class k1 implements b2.b1 {
-    public final b2.b1 a;
+public final class k1 {
+    public static final b2.a1 k;
+    public static final k1 l;
+    public static final String m;
+    public static final String n;
+    public static final String o;
+    public static final String p;
+    public static final String q;
+    public static final String r;
+    public static final String s;
+    public static final String t;
+    public static final String u;
+    public static final String v;
+    public final b2.a1 a;
+    public final boolean b;
+    public final long c;
+    public final long d;
+    public final long e;
+    public final int f;
+    public final long g;
+    public final long h;
+    public final long i;
+    public final long j;
 
-    public k1(b2.b1 b1Var) {
-        this.a = b1Var;
+    static {
+        b2.a1 a1Var = new b2.a1(null, 0, null, null, 0, 0L, 0L, -1, -1);
+        k = a1Var;
+        l = new k1(a1Var, false, -9223372036854775807L, -9223372036854775807L, 0L, 0, 0L, -9223372036854775807L, -9223372036854775807L, 0L);
+        String str = e2.d0.a;
+        m = Integer.toString(0, 36);
+        n = Integer.toString(1, 36);
+        o = Integer.toString(2, 36);
+        p = Integer.toString(3, 36);
+        q = Integer.toString(4, 36);
+        r = Integer.toString(5, 36);
+        s = Integer.toString(6, 36);
+        t = Integer.toString(7, 36);
+        u = Integer.toString(8, 36);
+        v = Integer.toString(9, 36);
     }
 
-    @Override // b2.b1
-    public final long A() {
-        S0();
-        return this.a.A();
+    public k1(b2.a1 a1Var, boolean z10, long j3, long j10, long j11, int i10, long j12, long j13, long j14, long j15) {
+        e2.d.b(z10 == (a1Var.h != -1));
+        this.a = a1Var;
+        this.b = z10;
+        this.c = j3;
+        this.d = j10;
+        this.e = j11;
+        this.f = i10;
+        this.g = j12;
+        this.h = j13;
+        this.i = j14;
+        this.j = j15;
     }
 
-    @Override // b2.b1
-    public final boolean A0() {
-        S0();
-        return this.a.A0();
-    }
-
-    @Override // b2.b1
-    public final int B() {
-        S0();
-        return this.a.B();
-    }
-
-    @Override // b2.b1
-    public final b2.q1 B0() {
-        S0();
-        return this.a.B0();
-    }
-
-    @Override // b2.b1
-    public final void C(b2.n0 n0Var) {
-        S0();
-        this.a.C(n0Var);
-    }
-
-    @Override // b2.b1
-    public final long C0() {
-        S0();
-        return this.a.C0();
-    }
-
-    @Override // b2.b1
-    public final void D(b2.z0 z0Var) {
-        S0();
-        this.a.D(new b2.t(this, z0Var));
-    }
-
-    @Override // b2.b1
-    public final void D0(int i10) {
-        S0();
-        this.a.D0(i10);
-    }
-
-    @Override // b2.b1
-    public final x1 E() {
-        S0();
-        return this.a.E();
-    }
-
-    @Override // b2.b1
-    public final void E0() {
-        S0();
-        this.a.E0();
-    }
-
-    @Override // b2.b1
-    public final void F() {
-        S0();
-        this.a.F();
-    }
-
-    @Override // b2.b1
-    public final void F0() {
-        S0();
-        this.a.F0();
-    }
-
-    @Override // b2.b1
-    public final float G() {
-        S0();
-        return this.a.G();
-    }
-
-    @Override // b2.b1
-    public final void G0() {
-        S0();
-        this.a.G0();
-    }
-
-    @Override // b2.b1
-    public final void H() {
-        S0();
-        this.a.H();
-    }
-
-    @Override // b2.b1
-    public final b2.n0 H0() {
-        S0();
-        return this.a.H0();
-    }
-
-    @Override // b2.b1
-    public final b2.e I() {
-        S0();
-        return this.a.I();
-    }
-
-    @Override // b2.b1
-    public final void I0(List list) {
-        S0();
-        this.a.I0(list);
-    }
-
-    @Override // b2.b1
-    public final void J(int i10, boolean z10) {
-        S0();
-        this.a.J(i10, z10);
-    }
-
-    @Override // b2.b1
-    public final long J0() {
-        S0();
-        return this.a.J0();
-    }
-
-    @Override // b2.b1
-    public final b2.l K() {
-        S0();
-        return this.a.K();
-    }
-
-    @Override // b2.b1
-    public final void K0(b2.e eVar, boolean z10) {
-        this.a.K0(eVar, z10);
-    }
-
-    @Override // b2.b1
-    public final void L() {
-        S0();
-        this.a.L();
-    }
-
-    @Override // b2.b1
-    public final long L0() {
-        S0();
-        return this.a.L0();
-    }
-
-    @Override // b2.b1
-    public final void M(int i10, int i11) {
-        S0();
-        this.a.M(i10, i11);
-    }
-
-    @Override // b2.b1
-    public final boolean M0() {
-        S0();
-        return this.a.M0();
-    }
-
-    @Override // b2.b1
-    public final void N(int i10) {
-        S0();
-        this.a.N(i10);
-    }
-
-    public final b2.a1 N0() {
-        boolean m0 = m0(16);
-        boolean m02 = m0(17);
-        return new b2.a1(null, m02 ? l0() : 0, m0 ? w() : null, null, m02 ? B() : 0, m0 ? J0() : 0L, m0 ? a0() : 0L, m0 ? k0() : -1, m0 ? O() : -1);
-    }
-
-    @Override // b2.b1
-    public final int O() {
-        S0();
-        return this.a.O();
-    }
-
-    public final p1 O0() {
-        boolean m0 = m0(16);
-        return new p1(N0(), m0 && o(), SystemClock.elapsedRealtime(), m0 ? getDuration() : -9223372036854775807L, m0 ? c0() : 0L, m0 ? y() : 0, m0 ? r() : 0L, m0 ? p() : -9223372036854775807L, m0 ? A() : -9223372036854775807L, m0 ? C0() : 0L);
-    }
-
-    @Override // b2.b1
-    public final void P(int i10, int i11, List list) {
-        S0();
-        this.a.P(i10, i11, list);
-    }
-
-    public final b2.k0 P0() {
-        if (m0(16)) {
-            return w();
+    public final k1 a(boolean z10, boolean z11) {
+        if (z10 && z11) {
+            return this;
         }
-        return null;
-    }
-
-    @Override // b2.b1
-    public final boolean Q() {
-        return this.a.Q();
-    }
-
-    public final b2.k1 Q0() {
-        return m0(17) ? w0() : m0(16) ? w0().p() ? b2.k1.a : new j1(this) : b2.k1.a;
-    }
-
-    @Override // b2.b1
-    public final void R(int i10) {
-        S0();
-        this.a.R(i10);
-    }
-
-    public final b2.n0 R0() {
-        return m0(18) ? H0() : b2.n0.K;
-    }
-
-    @Override // b2.b1
-    public final void S(int i10, int i11) {
-        S0();
-        this.a.S(i10, i11);
-    }
-
-    public final void S0() {
-        e2.d.g(Looper.myLooper() == this.a.y0());
-    }
-
-    @Override // b2.b1
-    public final void T(long j3, int i10, List list) {
-        S0();
-        this.a.T(j3, i10, list);
-    }
-
-    @Override // b2.b1
-    public final void U(float f7) {
-        S0();
-        this.a.U(f7);
-    }
-
-    @Override // b2.b1
-    public final void V() {
-        S0();
-        this.a.V();
-    }
-
-    @Override // b2.b1
-    public final b2.u0 W() {
-        S0();
-        return this.a.W();
-    }
-
-    @Override // b2.b1
-    public final void X(boolean z10) {
-        S0();
-        this.a.X(z10);
-    }
-
-    @Override // b2.b1
-    public final void Y(int i10) {
-        S0();
-        this.a.Y(i10);
-    }
-
-    @Override // b2.b1
-    public final long Z() {
-        S0();
-        return this.a.Z();
-    }
-
-    @Override // b2.b1
-    public final void a(float f7) {
-        S0();
-        this.a.a(f7);
-    }
-
-    @Override // b2.b1
-    public final long a0() {
-        S0();
-        return this.a.a0();
-    }
-
-    @Override // b2.b1
-    public final void b() {
-        S0();
-        this.a.b();
-    }
-
-    @Override // b2.b1
-    public final void b0(int i10, List list) {
-        S0();
-        this.a.b0(i10, list);
-    }
-
-    @Override // b2.b1
-    public final boolean c() {
-        S0();
-        return this.a.c();
-    }
-
-    @Override // b2.b1
-    public final long c0() {
-        S0();
-        return this.a.c0();
-    }
-
-    @Override // b2.b1
-    public final int d() {
-        S0();
-        return this.a.d();
-    }
-
-    @Override // b2.b1
-    public final boolean d0() {
-        S0();
-        return this.a.d0();
-    }
-
-    @Override // b2.b1
-    public final void e() {
-        S0();
-        this.a.e();
-    }
-
-    @Override // b2.b1
-    public final void e0() {
-        S0();
-        this.a.e0();
-    }
-
-    @Override // b2.b1
-    public final void f(b2.v0 v0Var) {
-        S0();
-        this.a.f(v0Var);
-    }
-
-    @Override // b2.b1
-    public final void f0(int i10) {
-        S0();
-        this.a.f0(i10);
-    }
-
-    @Override // b2.b1
-    public final void g(long j3) {
-        S0();
-        this.a.g(j3);
-    }
-
-    @Override // b2.b1
-    public final b2.s1 g0() {
-        S0();
-        return this.a.g0();
-    }
-
-    @Override // b2.b1
-    public final long getDuration() {
-        S0();
-        return this.a.getDuration();
-    }
-
-    @Override // b2.b1
-    public final b2.v0 h() {
-        S0();
-        return this.a.h();
-    }
-
-    @Override // b2.b1
-    public final b2.n0 h0() {
-        S0();
-        return this.a.h0();
-    }
-
-    @Override // b2.b1
-    public final void i() {
-        S0();
-        this.a.i();
-    }
-
-    @Override // b2.b1
-    public final boolean i0() {
-        S0();
-        return this.a.i0();
-    }
-
-    @Override // b2.b1
-    public final void j(int i10) {
-        S0();
-        this.a.j(i10);
-    }
-
-    @Override // b2.b1
-    public final d2.d j0() {
-        S0();
-        return this.a.j0();
-    }
-
-    @Override // b2.b1
-    public final void k(b2.k0 k0Var, long j3) {
-        S0();
-        this.a.k(k0Var, j3);
-    }
-
-    @Override // b2.b1
-    public final int k0() {
-        S0();
-        return this.a.k0();
-    }
-
-    @Override // b2.b1
-    public final int l() {
-        S0();
-        return this.a.l();
-    }
-
-    @Override // b2.b1
-    public final int l0() {
-        S0();
-        return this.a.l0();
-    }
-
-    @Override // b2.b1
-    public final int m() {
-        S0();
-        return this.a.m();
-    }
-
-    @Override // b2.b1
-    public final boolean m0(int i10) {
-        S0();
-        return this.a.m0(i10);
-    }
-
-    @Override // b2.b1
-    public final void n(Surface surface) {
-        S0();
-        this.a.n(surface);
-    }
-
-    @Override // b2.b1
-    public final void n0(b2.z0 z0Var) {
-        S0();
-        this.a.n0(new b2.t(this, z0Var));
-    }
-
-    @Override // b2.b1
-    public final boolean o() {
-        S0();
-        return this.a.o();
-    }
-
-    @Override // b2.b1
-    public final void o0(boolean z10) {
-        S0();
-        this.a.o0(z10);
-    }
-
-    @Override // b2.b1
-    public final long p() {
-        S0();
-        return this.a.p();
-    }
-
-    @Override // b2.b1
-    public final void p0(b2.k0 k0Var) {
-        S0();
-        this.a.p0(k0Var);
-    }
-
-    @Override // b2.b1
-    public final void q(b2.q1 q1Var) {
-        S0();
-        this.a.q(q1Var);
-    }
-
-    @Override // b2.b1
-    public final void q0(int i10, int i11) {
-        S0();
-        this.a.q0(i10, i11);
-    }
-
-    @Override // b2.b1
-    public final long r() {
-        S0();
-        return this.a.r();
-    }
-
-    @Override // b2.b1
-    public final void r0(int i10, int i11, int i12) {
-        S0();
-        this.a.r0(i10, i11, i12);
-    }
-
-    @Override // b2.b1
-    public final void s(int i10, long j3) {
-        S0();
-        this.a.s(i10, j3);
-    }
-
-    @Override // b2.b1
-    public final void s0(b2.k0 k0Var, int i10) {
-        S0();
-        this.a.s0(k0Var, i10);
-    }
-
-    @Override // b2.b1
-    public final void stop() {
-        S0();
-        this.a.stop();
-    }
-
-    @Override // b2.b1
-    public final b2.x0 t() {
-        S0();
-        return this.a.t();
-    }
-
-    @Override // b2.b1
-    public final boolean t0() {
-        S0();
-        return this.a.t0();
-    }
-
-    @Override // b2.b1
-    public final boolean u() {
-        S0();
-        return this.a.u();
-    }
-
-    @Override // b2.b1
-    public final int u0() {
-        S0();
-        return this.a.u0();
-    }
-
-    @Override // b2.b1
-    public final void v() {
-        S0();
-        this.a.v();
-    }
-
-    @Override // b2.b1
-    public final void v0(List list) {
-        S0();
-        this.a.v0(list);
-    }
-
-    @Override // b2.b1
-    public final b2.k0 w() {
-        S0();
-        return this.a.w();
-    }
-
-    @Override // b2.b1
-    public final b2.k1 w0() {
-        S0();
-        return this.a.w0();
-    }
-
-    @Override // b2.b1
-    public final void x(boolean z10) {
-        S0();
-        this.a.x(z10);
-    }
-
-    @Override // b2.b1
-    public final boolean x0() {
-        S0();
-        return this.a.x0();
-    }
-
-    @Override // b2.b1
-    public final int y() {
-        S0();
-        return this.a.y();
-    }
-
-    @Override // b2.b1
-    public final Looper y0() {
-        return this.a.y0();
-    }
-
-    @Override // b2.b1
-    public final long z() {
-        S0();
-        return this.a.z();
-    }
-
-    @Override // b2.b1
-    public final void z0() {
-        S0();
-        this.a.z0();
+        return new k1(this.a.b(z10, z11), z10 && this.b, this.c, z10 ? this.d : -9223372036854775807L, z10 ? this.e : 0L, z10 ? this.f : 0, z10 ? this.g : 0L, z10 ? this.h : -9223372036854775807L, z10 ? this.i : -9223372036854775807L, z10 ? this.j : 0L);
+    }
+
+    public final Bundle b(int i10) {
+        Bundle bundle = new Bundle();
+        b2.a1 a1Var = this.a;
+        if (i10 < 3 || !k.a(a1Var)) {
+            bundle.putBundle(m, a1Var.c(i10));
+        }
+        boolean z10 = this.b;
+        if (z10) {
+            bundle.putBoolean(n, z10);
+        }
+        long j3 = this.c;
+        if (j3 != -9223372036854775807L) {
+            bundle.putLong(o, j3);
+        }
+        long j10 = this.d;
+        if (j10 != -9223372036854775807L) {
+            bundle.putLong(p, j10);
+        }
+        long j11 = this.e;
+        if (i10 < 3 || j11 != 0) {
+            bundle.putLong(q, j11);
+        }
+        int i11 = this.f;
+        if (i11 != 0) {
+            bundle.putInt(r, i11);
+        }
+        long j12 = this.g;
+        if (j12 != 0) {
+            bundle.putLong(s, j12);
+        }
+        long j13 = this.h;
+        if (j13 != -9223372036854775807L) {
+            bundle.putLong(t, j13);
+        }
+        long j14 = this.i;
+        if (j14 != -9223372036854775807L) {
+            bundle.putLong(u, j14);
+        }
+        long j15 = this.j;
+        if (i10 >= 3 && j15 == 0) {
+            return bundle;
+        }
+        bundle.putLong(v, j15);
+        return bundle;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && k1.class == obj.getClass()) {
+            k1 k1Var = (k1) obj;
+            if (this.c == k1Var.c && this.a.equals(k1Var.a) && this.b == k1Var.b && this.d == k1Var.d && this.e == k1Var.e && this.f == k1Var.f && this.g == k1Var.g && this.h == k1Var.h && this.i == k1Var.i && this.j == k1Var.j) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return Objects.hash(this.a, Boolean.valueOf(this.b));
+    }
+
+    public final String toString() {
+        StringBuilder sb2 = new StringBuilder("SessionPositionInfo {PositionInfo {mediaItemIndex=");
+        b2.a1 a1Var = this.a;
+        sb2.append(a1Var.b);
+        sb2.append(", periodIndex=");
+        sb2.append(a1Var.e);
+        sb2.append(", positionMs=");
+        sb2.append(a1Var.f);
+        sb2.append(", contentPositionMs=");
+        sb2.append(a1Var.g);
+        sb2.append(", adGroupIndex=");
+        sb2.append(a1Var.h);
+        sb2.append(", adIndexInAdGroup=");
+        sb2.append(a1Var.i);
+        sb2.append("}, isPlayingAd=");
+        sb2.append(this.b);
+        sb2.append(", eventTimeMs=");
+        sb2.append(this.c);
+        sb2.append(", durationMs=");
+        sb2.append(this.d);
+        sb2.append(", bufferedPositionMs=");
+        sb2.append(this.e);
+        sb2.append(", bufferedPercentage=");
+        sb2.append(this.f);
+        sb2.append(", totalBufferedDurationMs=");
+        sb2.append(this.g);
+        sb2.append(", currentLiveOffsetMs=");
+        sb2.append(this.h);
+        sb2.append(", contentDurationMs=");
+        sb2.append(this.i);
+        sb2.append(", contentBufferedPositionMs=");
+        return a4.a.s(sb2, this.j, "}");
     }
 }

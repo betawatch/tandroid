@@ -8,15 +8,15 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c3 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ f6 b;
+    public final /* synthetic */ e6 b;
 
-    public /* synthetic */ c3(f6 f6Var, int i10) {
+    public /* synthetic */ c3(e6 e6Var, int i10) {
         this.a = i10;
-        this.b = f6Var;
+        this.b = e6Var;
     }
 
     @Override // java.lang.Runnable
@@ -27,21 +27,21 @@ public final /* synthetic */ class c3 implements Runnable {
                 this.b.j2.setVisibility(8);
                 break;
             case 1:
-                f6 f6Var = this.b;
-                if (!f6Var.J0.H0) {
-                    f6Var.z3 = null;
-                    if (f6Var.H0 == null) {
-                        ci.f4 f4Var = new ci.f4(f6Var.getContext(), 3);
-                        f4Var.l(1.0f, -22.0f);
-                        f6Var.H0 = f4Var;
-                        f4Var.h(i0.a.k(i0.a.d(0.13f, -16777216, -1), 240));
-                        ci.f4 f4Var2 = f6Var.H0;
-                        f4Var2.U = false;
-                        f4Var2.s(LocaleController.getString(R.string.ReactionLongTapHint));
-                        f6Var.H0.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(1.0f));
-                        f6Var.c1.addView(f6Var.H0, w7.x5.d(-1, -2.0f, 85, 0.0f, 0.0f, 0.0f, f6Var.x2 ? 0.0f : 56.0f));
+                e6 e6Var = this.b;
+                if (!e6Var.J0.H0) {
+                    e6Var.z3 = null;
+                    if (e6Var.H0 == null) {
+                        ci.e4 e4Var = new ci.e4(e6Var.getContext(), 3);
+                        e4Var.l(1.0f, -22.0f);
+                        e6Var.H0 = e4Var;
+                        e4Var.h(i0.a.k(i0.a.d(0.13f, -16777216, -1), 240));
+                        ci.e4 e4Var2 = e6Var.H0;
+                        e4Var2.U = false;
+                        e4Var2.s(LocaleController.getString(R.string.ReactionLongTapHint));
+                        e6Var.H0.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(1.0f));
+                        e6Var.c1.addView(e6Var.H0, w7.x5.d(-1, -2.0f, 85, 0.0f, 0.0f, 0.0f, e6Var.x2 ? 0.0f : 56.0f));
                     }
-                    f6Var.H0.u();
+                    e6Var.H0.u();
                     SharedConfig.setStoriesReactionsLongPressHintUsed(true);
                     break;
                 }
@@ -66,22 +66,22 @@ public final /* synthetic */ class c3 implements Runnable {
                 this.b.O0();
                 break;
             case 7:
-                f6 f6Var2 = this.b;
-                f6Var2.L3 = 0L;
-                a4 a4Var = f6Var2.b2;
+                e6 e6Var2 = this.b;
+                e6Var2.L3 = 0L;
+                a4 a4Var = e6Var2.b2;
                 if (a4Var != null) {
                     a4Var.L(true);
-                    f6Var2.b2.S1();
-                    f6Var2.r0(true);
+                    e6Var2.b2.S1();
+                    e6Var2.r0(true);
                     break;
                 }
                 break;
             case 8:
-                f6 f6Var3 = this.b;
-                Activity findActivity = AndroidUtilities.findActivity(f6Var3.getContext());
+                e6 e6Var3 = this.b;
+                Activity findActivity = AndroidUtilities.findActivity(e6Var3.getContext());
                 if (findActivity != null) {
-                    a1.e eVar = new a1.e(11, f6Var3, findActivity);
-                    jc jcVar2 = ((ac) f6Var3.Q1).d;
+                    a1.e eVar = new a1.e(11, e6Var3, findActivity);
+                    jc jcVar2 = ((ac) e6Var3.Q1).d;
                     ic icVar = jcVar2.z0;
                     if (icVar != null) {
                         z10 = icVar.release(eVar);
@@ -108,9 +108,9 @@ public final /* synthetic */ class c3 implements Runnable {
                 MessagesController.getGlobalMainSettings().edit().putInt("taptostorysoundhint", MessagesController.getGlobalMainSettings().getInt("taptostorysoundhint", 0) + 1).apply();
                 break;
             default:
-                f6 f6Var4 = this.b;
-                f6Var4.U3 = true;
-                f6Var4.setActive(false);
+                e6 e6Var4 = this.b;
+                e6Var4.U3 = true;
+                e6Var4.setActive(false);
                 break;
         }
     }

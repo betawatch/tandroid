@@ -11,7 +11,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class q4 extends FrameLayout {
     public final RadioButton a;
@@ -24,19 +24,19 @@ public final class q4 extends FrameLayout {
     public q4(Context context) {
         super(context);
         this.f = 62;
-        if (org.telegram.ui.ActionBar.i6.k0 == null) {
-            org.telegram.ui.ActionBar.i6.P(context);
+        if (org.telegram.ui.ActionBar.h6.k0 == null) {
+            org.telegram.ui.ActionBar.h6.P(context);
         }
         setWillNotDraw(false);
         RadioButton radioButton = new RadioButton(context);
         this.a = radioButton;
         radioButton.setSize(AndroidUtilities.dp(20.0f));
-        radioButton.b(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.D5, false), org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.E5, false));
+        radioButton.b(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.D5, false), org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.E5, false));
         boolean z10 = LocaleController.isRTL;
         addView(radioButton, w7.x5.d(22, 22.0f, (z10 ? 5 : 3) | 16, z10 ? 0 : 20, 0.0f, z10 ? 20 : 0, 0.0f));
         TextView textView = new TextView(context);
         this.b = textView;
-        textView.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.j5, false));
+        textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.j5, false));
         textView.setTextSize(1, 16.0f);
         textView.setSingleLine(true);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
@@ -46,7 +46,7 @@ public final class q4 extends FrameLayout {
         addView(textView, w7.x5.d(-1, -1.0f, (z11 ? 5 : 3) | 48, z11 ? 23 : 62, 0.0f, z11 ? 62 : 23, 17.0f));
         TextView textView2 = new TextView(context);
         this.c = textView2;
-        textView2.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.r5, false));
+        textView2.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.r5, false));
         textView2.setTextSize(1, 13.0f);
         textView2.setSingleLine(true);
         textView2.setEllipsize(truncateAt);
@@ -64,7 +64,7 @@ public final class q4 extends FrameLayout {
         if (this.d) {
             boolean z10 = LocaleController.isRTL;
             int i10 = this.f;
-            canvas.drawLine(z10 ? 0.0f : AndroidUtilities.dp(i10 - 3), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(i10 - 3) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.i6.k0);
+            canvas.drawLine(z10 ? 0.0f : AndroidUtilities.dp(i10 - 3), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(i10 - 3) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.h6.k0);
         }
     }
 

@@ -14,7 +14,7 @@ import android.os.Build;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
-import ci.n6;
+import ci.m6;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
@@ -23,13 +23,13 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
-import org.telegram.ui.Components.dt;
-import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.sh;
+import org.telegram.ui.Components.et;
+import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.th;
 import org.webrtc.RendererCommon;
 import w7.x5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class m2 implements VoIPService.StateListener, rf.a, NotificationCenter.NotificationCenterDelegate {
     public static boolean T = false;
@@ -47,7 +47,7 @@ public final class m2 implements VoIPService.StateListener, rf.a, NotificationCe
     public AnimatorSet N;
     public s2 Q;
     public com.google.android.gms.internal.cast.p R;
-    public final n6 a;
+    public final m6 a;
     public final l2 b;
     public WindowManager c;
     public WindowManager.LayoutParams d;
@@ -75,10 +75,10 @@ public final class m2 implements VoIPService.StateListener, rf.a, NotificationCe
         float f10 = i10 * 0.4f;
         int i13 = ((int) ((1.05f * f10) - f10)) / 2;
         this.y = i13;
-        n6 n6Var = new n6(this, context, context.getDrawable(R.drawable.calls_pip_outershadow), 15);
-        this.a = n6Var;
-        n6Var.setWillNotDraw(false);
-        n6Var.setPadding(i13, i12, i13, i12);
+        m6 m6Var = new m6(this, context, context.getDrawable(R.drawable.calls_pip_outershadow), 15);
+        this.a = m6Var;
+        m6Var.setWillNotDraw(false);
+        m6Var.setPadding(i13, i12, i13, i12);
         l2 l2Var = new l2(this, context);
         this.b = l2Var;
         s2 s2Var = new s2(context, false, true);
@@ -90,9 +90,9 @@ public final class m2 implements VoIPService.StateListener, rf.a, NotificationCe
         l2Var.addView(s2Var);
         l2Var.addView(s2Var2);
         l2Var.setBackgroundColor(-7829368);
-        n6Var.addView(l2Var);
-        n6Var.setClipChildren(false);
-        n6Var.setClipToPadding(false);
+        m6Var.addView(l2Var);
+        m6Var.setClipChildren(false);
+        m6Var.setClipToPadding(false);
         if (z10) {
             View view = new View(context);
             view.setBackground(new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{i0.a.k(-16777216, 76), 0}));
@@ -108,7 +108,7 @@ public final class m2 implements VoIPService.StateListener, rf.a, NotificationCe
             imageView2.setContentDescription(LocaleController.getString(R.string.Open));
             l2Var.addView(imageView2, x5.d(40, 40.0f, 51, 4.0f, 4.0f, 4.0f, 0.0f));
             imageView.setOnClickListener(new ai.e2(15));
-            imageView2.setOnClickListener(new dt(26, this, context));
+            imageView2.setOnClickListener(new et(26, this, context));
         }
         VoIPService sharedInstance = VoIPService.getSharedInstance();
         if (sharedInstance != null) {
@@ -237,9 +237,9 @@ public final class m2 implements VoIPService.StateListener, rf.a, NotificationCe
             sharedInstance.setSinks(this.n.d, this.Q.d);
         }
         WindowManager windowManager = this.c;
-        n6 n6Var = this.a;
-        windowManager.removeView(n6Var);
-        n6Var.invalidate();
+        m6 m6Var = this.a;
+        windowManager.removeView(m6Var);
+        m6Var.invalidate();
     }
 
     @Override // rf.a
@@ -247,14 +247,14 @@ public final class m2 implements VoIPService.StateListener, rf.a, NotificationCe
         this.R = pVar;
         WindowManager windowManager = this.c;
         WindowManager.LayoutParams layoutParams = this.d;
-        n6 n6Var = this.a;
-        windowManager.addView(n6Var, layoutParams);
+        m6 m6Var = this.a;
+        windowManager.addView(m6Var, layoutParams);
         s2 s2Var = this.Q;
         if (s2Var != null) {
             s2Var.d.release();
             this.Q = null;
         }
-        n6Var.invalidate();
+        m6Var.invalidate();
         VoIPService sharedInstance = VoIPService.getSharedInstance();
         if (sharedInstance != null) {
             sharedInstance.setSinks(this.n.d, this.r.d);
@@ -378,7 +378,7 @@ public final class m2 implements VoIPService.StateListener, rf.a, NotificationCe
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.s, this.G ? 1.0f : 0.0f);
             this.v = ofFloat;
             ofFloat.addUpdateListener(this.w);
-            this.v.setDuration(300L).setInterpolator(qr.f);
+            this.v.setDuration(300L).setInterpolator(rr.f);
             this.v.start();
         }
     }
@@ -433,7 +433,7 @@ public final class m2 implements VoIPService.StateListener, rf.a, NotificationCe
     @Override // org.telegram.messenger.voip.VoIPService.StateListener
     public final void onStateChanged(int i10) {
         if (i10 == 11 || i10 == 17 || i10 == 4 || i10 == 10) {
-            AndroidUtilities.runOnUIThread(new sh(14), 200L);
+            AndroidUtilities.runOnUIThread(new th(14), 200L);
         }
         VoIPService sharedInstance = VoIPService.getSharedInstance();
         if (sharedInstance == null) {

@@ -1,78 +1,82 @@
 package pg;
 
 import android.animation.ValueAnimator;
-import android.graphics.RectF;
-import org.telegram.messenger.BotWebViewVibrationEffect;
-import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m0 implements Runnable {
+public final /* synthetic */ class m0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ q0 b;
-    public final /* synthetic */ f1 c;
+    public final /* synthetic */ r0 b;
 
-    public /* synthetic */ m0(q0 q0Var, f1 f1Var, int i10) {
+    public /* synthetic */ m0(r0 r0Var, int i10) {
         this.a = i10;
-        this.b = q0Var;
-        this.c = f1Var;
+        this.b = r0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        f1 f1Var = this.c;
-        q0 q0Var = this.b;
-        switch (i10) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(final ValueAnimator valueAnimator) {
+        switch (this.a) {
             case 0:
-                q0Var.c = f1Var;
-                if (q0Var.h == null) {
-                    q0Var.h = new RectF();
-                }
-                q0Var.c.a(q0Var.h);
-                k2.u uVar = q0Var.a;
-                if (uVar != null) {
-                    uVar.W();
-                    break;
-                }
-                break;
-            default:
-                if (f1Var != null && q0Var.q == 0) {
-                    q0Var.q = r1.b(q0Var.g);
-                }
-                int i11 = 0;
-                if (q0Var.H == (f1Var != null)) {
-                    if (f1Var != q0Var.d) {
-                        q0Var.d = f1Var;
-                        k2.u uVar2 = q0Var.a;
-                        if (uVar2 != null) {
-                            uVar2.W();
-                            break;
+                final r0 r0Var = this.b;
+                final int i10 = 1;
+                r0Var.f.f(new Runnable() { // from class: pg.l0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                r0 r0Var2 = r0Var;
+                                r0Var2.getClass();
+                                r0Var2.J = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                                k2.u uVar = r0Var2.a;
+                                if (uVar != null) {
+                                    uVar.W();
+                                    break;
+                                }
+                                break;
+                            default:
+                                r0 r0Var3 = r0Var;
+                                r0Var3.getClass();
+                                r0Var3.I = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                                k2.u uVar2 = r0Var3.a;
+                                if (uVar2 != null) {
+                                    uVar2.W();
+                                    break;
+                                }
+                                break;
                         }
                     }
-                } else {
-                    q0Var.H = f1Var != null;
-                    ValueAnimator valueAnimator = q0Var.K;
-                    if (valueAnimator != null) {
-                        valueAnimator.cancel();
-                        q0Var.K = null;
+                });
+                break;
+            default:
+                final r0 r0Var2 = this.b;
+                final int i11 = 0;
+                r0Var2.f.f(new Runnable() { // from class: pg.l0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i11) {
+                            case 0:
+                                r0 r0Var22 = r0Var2;
+                                r0Var22.getClass();
+                                r0Var22.J = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                                k2.u uVar = r0Var22.a;
+                                if (uVar != null) {
+                                    uVar.W();
+                                    break;
+                                }
+                                break;
+                            default:
+                                r0 r0Var3 = r0Var2;
+                                r0Var3.getClass();
+                                r0Var3.I = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                                k2.u uVar2 = r0Var3.a;
+                                if (uVar2 != null) {
+                                    uVar2.W();
+                                    break;
+                                }
+                                break;
+                        }
                     }
-                    ValueAnimator ofFloat = ValueAnimator.ofFloat(q0Var.I, q0Var.H ? 1.0f : 0.0f);
-                    q0Var.K = ofFloat;
-                    ofFloat.addUpdateListener(new l0(q0Var, i11));
-                    q0Var.K.addListener(new p0(q0Var, i11));
-                    q0Var.K.setInterpolator(qr.h);
-                    q0Var.K.start();
-                    q0Var.d = f1Var;
-                    k2.u uVar3 = q0Var.a;
-                    if (uVar3 != null) {
-                        uVar3.W();
-                    }
-                    if (q0Var.H) {
-                        BotWebViewVibrationEffect.SELECTION_CHANGE.vibrate();
-                        break;
-                    }
-                }
+                });
                 break;
         }
     }

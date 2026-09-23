@@ -6,16 +6,16 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public class yv0 extends s4.d0 {
-    public final qr r;
+    public final rr r;
     public int s;
     public float t;
 
     public yv0(Context context) {
         super(context);
-        this.r = qr.f;
+        this.r = rr.f;
         this.t = 1.0f;
     }
 

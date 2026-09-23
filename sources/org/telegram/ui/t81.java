@@ -1,48 +1,56 @@
 package org.telegram.ui;
 
+import android.content.Context;
+import android.text.TextUtils;
 import android.view.View;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class t81 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ f91 b;
-
-    public /* synthetic */ t81(f91 f91Var, int i10) {
-        this.a = i10;
-        this.b = f91Var;
+public final class t81 extends org.telegram.ui.Components.g51 {
+    static {
+        org.telegram.ui.Components.g51.setup(new t81());
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                f91 f91Var = this.b;
-                nf.f.s(f91Var.getParentActivity(), f91Var.getMessagesController().premiumManageSubscriptionUrl);
-                f91Var.getMessagesController().removeSuggestion(0L, "PREMIUM_GRACE");
-                break;
-            case 1:
-                f91 f91Var2 = this.b;
-                f91Var2.getClass();
-                f91Var2.presentFragment(new h(3));
-                break;
-            case 2:
-                this.b.getMessagesController().removeSuggestion(0L, "VALIDATE_PHONE_NUMBER");
-                break;
-            case 3:
-                f91 f91Var3 = this.b;
-                f91Var3.getClass();
-                f91Var3.presentFragment(new hh1(8, null));
-                break;
-            case 4:
-                this.b.getMessagesController().removeSuggestion(0L, "VALIDATE_PASSWORD");
-                break;
-            case 5:
-                f91.W(this.b);
-                break;
-            default:
-                f91.Z(this.b);
-                break;
-        }
+    public static org.telegram.ui.Components.h51 a(int i10, int i11, int i12, int i13, CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3) {
+        org.telegram.ui.Components.h51 J = org.telegram.ui.Components.h51.J(t81.class);
+        J.d = i10;
+        J.k = i13;
+        J.l = charSequence;
+        J.m = charSequence2;
+        J.n = charSequence3;
+        J.B = (i11 & 4294967295L) | (i12 << 32);
+        return J;
+    }
+
+    @Override // org.telegram.ui.Components.g51
+    public final void bindView(View view, org.telegram.ui.Components.h51 h51Var, boolean z10, org.telegram.ui.Components.v51 v51Var, org.telegram.ui.Components.d61 d61Var) {
+        long j3 = h51Var.B;
+        int i10 = (int) j3;
+        int i11 = (int) (j3 >>> 32);
+        u81 u81Var = (u81) view;
+        int i12 = h51Var.k;
+        CharSequence charSequence = h51Var.l;
+        CharSequence charSequence2 = h51Var.m;
+        CharSequence charSequence3 = h51Var.n;
+        TextView textView = u81Var.e;
+        TextView textView2 = u81Var.f;
+        u81Var.c.setVisibility(i12 != 0 ? 0 : 8);
+        textView.setTranslationX(i12 == 0 ? AndroidUtilities.dp(2.0f) : 0.0f);
+        textView2.setTranslationX(i12 == 0 ? AndroidUtilities.dp(2.0f) : 0.0f);
+        u81Var.b.b(i10, i11);
+        u81Var.d.setImageResource(i12);
+        textView.setText(charSequence);
+        boolean isEmpty = TextUtils.isEmpty(charSequence2);
+        u81Var.n = !isEmpty;
+        textView2.setVisibility(isEmpty ? 8 : 0);
+        textView2.setText(charSequence2);
+        u81Var.setValue(charSequence3);
+    }
+
+    @Override // org.telegram.ui.Components.g51
+    public final View createView(Context context, org.telegram.ui.Components.ml0 ml0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
+        return new u81(context, d6Var);
     }
 }

@@ -4,20 +4,20 @@ import android.content.Context;
 import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.e61;
-import org.telegram.ui.Components.i51;
-import org.telegram.ui.Components.qr;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.d61;
+import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.rr;
 import s4.c1;
 import w7.x5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public abstract class h0 extends FrameLayout {
     public org.telegram.ui.ActionBar.k a;
     public final jh.f b;
     public final FrameLayout c;
-    public e61 d;
+    public d61 d;
     public boolean e;
     public final /* synthetic */ k0 f;
 
@@ -32,7 +32,7 @@ public abstract class h0 extends FrameLayout {
         addView(frameLayout, x5.e(-1, -1, 119));
         jh.f fVar = new jh.f(getContext());
         this.b = fVar;
-        fVar.setupColorKey(i6.a7);
+        fVar.setupColorKey(h6.a7);
         fVar.setFadeZoneBottom(AndroidUtilities.dp(72.0f) + AndroidUtilities.navigationBarHeight);
         fVar.setFadeHeightBottom(AndroidUtilities.dp(24.0f));
         fVar.setFadeZoneTop(AndroidUtilities.dp(64.0f) + AndroidUtilities.statusBarHeight);
@@ -41,10 +41,10 @@ public abstract class h0 extends FrameLayout {
     }
 
     public final void a() {
-        this.d.j(new ai.r(this, 7));
+        this.d.j(new ai.r(this, 6));
         g0 g0Var = new g0(this);
         g0Var.n(350L);
-        g0Var.o(qr.h);
+        g0Var.o(rr.h);
         g0Var.C = false;
         g0Var.m = false;
         this.d.setItemAnimator(g0Var);
@@ -56,7 +56,7 @@ public abstract class h0 extends FrameLayout {
             View childAt = this.d.getChildAt(i10);
             c1 T = this.d.T(childAt);
             if (T != null) {
-                i51 G = this.d.Y2.G(T.b());
+                h51 G = this.d.Y2.G(T.b());
                 if (G != null && G.d != 99) {
                     f7 = Math.min(childAt.getY() + this.c.getPaddingTop(), f7);
                 }

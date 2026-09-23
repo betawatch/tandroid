@@ -1,125 +1,51 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.ColorFilter;
-import android.view.View;
-import java.util.ArrayList;
+import android.os.Build;
+import androidx.recyclerview.widget.RecyclerView;
+import j$.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.EmojiData;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class nx extends cw {
-    public final /* synthetic */ kz g0;
+public final class nx extends kz {
+    public final /* synthetic */ lz d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nx(kz kzVar, Context context, org.telegram.ui.ActionBar.e6 e6Var, boolean z10, dw dwVar, boolean z11) {
-        super(context, e6Var, true, false, true, z10, 0, dwVar, org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.v6, e6Var), z11);
-        this.g0 = kzVar;
+    public nx(lz lzVar) {
+        super(lzVar, 1);
+        this.d = lzVar;
     }
 
-    @Override // org.telegram.ui.Components.cw
-    public final boolean d() {
-        return this.g0.U0;
+    @Override // org.telegram.ui.Components.kz, s4.s0
+    public final void a(RecyclerView recyclerView, int i10) {
+        if (i10 == 0) {
+            this.d.f0 = false;
+        }
+        super.a(recyclerView, i10);
     }
 
-    @Override // org.telegram.ui.Components.cw
-    public final void e() {
-        kz kzVar = this.g0;
-        ArrayList arrayList = kzVar.n1;
-        if (arrayList.size() <= 0 || ((TLRPC.StickerSetCovered) arrayList.get(0)).set == null || MessagesController.getEmojiSettings(kzVar.c1).getLong("emoji_featured_hidden", 0L) == ((TLRPC.StickerSetCovered) arrayList.get(0)).set.id) {
+    @Override // org.telegram.ui.Components.kz, s4.s0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        ah.h hVar;
+        lz lzVar = this.d;
+        ky kyVar = lzVar.S;
+        kx kxVar = lzVar.Q;
+        lzVar.U(kxVar.I0());
+        if (Build.VERSION.SDK_INT >= 31 && (hVar = lzVar.j2) != null) {
+            hVar.f(i10, i11);
+        }
+        super.b(recyclerView, i10, i11);
+        if (kyVar == null || lzVar.P.getAdapter() != kyVar) {
             return;
         }
-        UserConfig.getInstance(UserConfig.selectedAccount).isPremium();
-    }
-
-    @Override // org.telegram.ui.Components.cw
-    public final boolean g(wx wxVar) {
-        return wxVar.f || this.g0.p1.contains(Long.valueOf(wxVar.b.id));
-    }
-
-    @Override // org.telegram.ui.Components.cw
-    public final ColorFilter getEmojiColorFilter() {
-        return this.g0.e2;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:36:0x0095  */
-    @Override // org.telegram.ui.Components.cw
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean h(int i10) {
-        Integer num;
-        int i11;
-        wy wyVar;
-        kz kzVar = this.g0;
-        ArrayList arrayList = kzVar.q1;
-        sx sxVar = kzVar.R;
-        if (kzVar.f0) {
-            return false;
+        ky kyVar2 = kyVar.x.a;
+        if (kyVar2.F.V.F || kyVar2.E) {
+            return;
         }
-        jy jyVar = kzVar.S;
-        if (jyVar != null) {
-            jyVar.F(null, true);
-        }
-        jw jwVar = kzVar.V;
-        if (jwVar != null && (wyVar = jwVar.r) != null) {
-            wyVar.F1(null);
-        }
-        if (i10 == 0) {
-            num = Integer.valueOf(kzVar.d0 ? 1 : 0);
-        } else {
-            i10--;
-            num = null;
-        }
-        if (num == null && i10 < EmojiData.dataColored.length && sxVar.s.indexOfKey(i10) >= 0) {
-            num = Integer.valueOf(sxVar.s.get(i10));
-        }
-        if (num == null) {
-            ArrayList<wx> emojipacks = kzVar.getEmojipacks();
-            int length = i10 - EmojiData.dataColored.length;
-            if (emojipacks != null && length >= 0 && length < emojipacks.size()) {
-                int i12 = 0;
-                while (true) {
-                    if (i12 >= arrayList.size()) {
-                        i12 = -1;
-                        break;
-                    }
-                    if (((wx) arrayList.get(i12)).b.id == emojipacks.get(length).b.id) {
-                        break;
-                    }
-                    i12++;
-                }
-                num = Integer.valueOf(sxVar.s.get(i12 + EmojiData.dataColored.length));
-                i11 = AndroidUtilities.dp(-9.0f);
-                if (num != null) {
-                    kzVar.P.B0();
-                    kzVar.U(num.intValue());
-                    kzVar.G(num.intValue(), i11);
-                    kzVar.n(0, null);
-                }
-                return true;
-            }
-        }
-        i11 = 0;
-        if (num != null) {
-        }
-        return true;
-    }
-
-    @Override // android.view.View
-    public final void setTranslationY(float f7) {
-        if (getTranslationY() != f7) {
-            super.setTranslationY(f7);
-            kz kzVar = this.g0;
-            View view = kzVar.O;
-            if (view != null) {
-                view.setTranslationY(f7);
-            }
-            kzVar.J.invalidate();
+        if (kxVar.N0() + 20 > kyVar.h()) {
+            jy jyVar = kyVar.x;
+            Objects.requireNonNull(jyVar);
+            AndroidUtilities.runOnUIThread(new sw(jyVar, 1));
         }
     }
 }

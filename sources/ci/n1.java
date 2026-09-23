@@ -9,12 +9,12 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LiteMode;
-import org.telegram.ui.Components.ht;
-import org.telegram.ui.Components.xi0;
+import org.telegram.ui.Components.jt;
+import org.telegram.ui.Components.yi0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class n1 extends ht {
+public final class n1 extends jt {
     public int M;
     public int N;
     public ArrayList O;
@@ -26,10 +26,10 @@ public final class n1 extends ht {
         this.R = p1Var;
     }
 
-    public static void m(Canvas canvas, org.telegram.ui.Components.o5 o5Var, o1 o1Var, float f7) {
-        if (o5Var != null) {
-            o5Var.setAlpha((int) (f7 * 255.0f));
-            o5Var.draw(canvas);
+    public static void m(Canvas canvas, org.telegram.ui.Components.q5 q5Var, o1 o1Var, float f7) {
+        if (q5Var != null) {
+            q5Var.setAlpha((int) (f7 * 255.0f));
+            q5Var.draw(canvas);
         } else if (o1Var.e != null) {
             canvas.save();
             canvas.clipRect(o1Var.e.getImageX(), o1Var.e.getImageY(), o1Var.e.getImageX2(), o1Var.e.getImageY2());
@@ -39,7 +39,7 @@ public final class n1 extends ht {
         }
     }
 
-    @Override // org.telegram.ui.Components.ht
+    @Override // org.telegram.ui.Components.jt
     public final void a(Canvas canvas, long j3, int i10, int i11, float f7) {
         if (this.O == null) {
             return;
@@ -64,7 +64,7 @@ public final class n1 extends ht {
         k();
     }
 
-    @Override // org.telegram.ui.Components.ht
+    @Override // org.telegram.ui.Components.jt
     public final void c(Canvas canvas) {
         int i10 = 0;
         while (true) {
@@ -74,18 +74,18 @@ public final class n1 extends ht {
             }
             o1 o1Var = (o1) arrayList.get(i10);
             o1Var.getClass();
-            org.telegram.ui.Components.o5 o5Var = o1Var.c;
-            if (o5Var != null) {
-                o5Var.setColorFilter(this.R.h3);
+            org.telegram.ui.Components.q5 q5Var = o1Var.c;
+            if (q5Var != null) {
+                q5Var.setColorFilter(this.R.h3);
             }
             o1Var.n.draw(canvas, o1Var.h[this.K]);
             i10++;
         }
     }
 
-    @Override // org.telegram.ui.Components.ht
+    @Override // org.telegram.ui.Components.jt
     public final void d(Canvas canvas, float f7) {
-        org.telegram.ui.Components.o5 o5Var;
+        org.telegram.ui.Components.q5 q5Var;
         if (this.O != null) {
             canvas.save();
             canvas.translate(-this.N, 0.0f);
@@ -96,32 +96,32 @@ public final class n1 extends ht {
                 float alpha = o1Var.getAlpha() * f7;
                 Rect rect = AndroidUtilities.rectTmp2;
                 rect.set(o1Var.getPaddingLeft() + ((int) o1Var.getX()), o1Var.getPaddingTop(), (o1Var.getWidth() + ((int) o1Var.getX())) - o1Var.getPaddingRight(), o1Var.getHeight() - o1Var.getPaddingBottom());
-                org.telegram.ui.Components.o5 o5Var2 = o1Var.c;
-                if (o5Var2 != null) {
-                    o5Var2.setBounds(rect);
+                org.telegram.ui.Components.q5 q5Var2 = o1Var.c;
+                if (q5Var2 != null) {
+                    q5Var2.setBounds(rect);
                 }
                 ImageReceiver imageReceiver = o1Var.e;
                 if (imageReceiver != null) {
                     imageReceiver.setImageCoords(rect);
                 }
                 PorterDuffColorFilter porterDuffColorFilter = this.R.h3;
-                if (porterDuffColorFilter != null && (o5Var = o1Var.c) != null) {
-                    o5Var.setColorFilter(porterDuffColorFilter);
+                if (porterDuffColorFilter != null && (q5Var = o1Var.c) != null) {
+                    q5Var.setColorFilter(porterDuffColorFilter);
                 }
                 if (scale != 1.0f) {
                     canvas.save();
                     canvas.scale(scale, scale, rect.centerX(), rect.centerY());
-                    m(canvas, o5Var2, o1Var, alpha);
+                    m(canvas, q5Var2, o1Var, alpha);
                     canvas.restore();
                 } else {
-                    m(canvas, o5Var2, o1Var, alpha);
+                    m(canvas, q5Var2, o1Var, alpha);
                 }
             }
             canvas.restore();
         }
     }
 
-    @Override // org.telegram.ui.Components.ht
+    @Override // org.telegram.ui.Components.jt
     public final void g() {
         int i10 = 0;
         while (true) {
@@ -140,7 +140,7 @@ public final class n1 extends ht {
 
     /* JADX WARN: Removed duplicated region for block: B:25:0x00e2  */
     /* JADX WARN: Removed duplicated region for block: B:29:0x00fd  */
-    @Override // org.telegram.ui.Components.ht
+    @Override // org.telegram.ui.Components.jt
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -156,13 +156,13 @@ public final class n1 extends ht {
             o1 o1Var = (o1) this.O.get(i11);
             o1Var.getClass();
             ImageReceiver.BackgroundThreadDrawHolder[] backgroundThreadDrawHolderArr = o1Var.h;
-            org.telegram.ui.Components.o5 o5Var = o1Var.c;
-            ImageReceiver imageReceiver = o5Var != null ? o5Var.k : o1Var.e;
+            org.telegram.ui.Components.q5 q5Var = o1Var.c;
+            ImageReceiver imageReceiver = q5Var != null ? q5Var.k : o1Var.e;
             if (imageReceiver != null) {
                 imageReceiver.setAlpha(o1Var.getAlpha());
-                org.telegram.ui.Components.o5 o5Var2 = o1Var.c;
-                if (o5Var2 != null) {
-                    o5Var2.setColorFilter(this.R.h3);
+                org.telegram.ui.Components.q5 q5Var2 = o1Var.c;
+                if (q5Var2 != null) {
+                    q5Var2.setColorFilter(this.R.h3);
                 }
                 int i12 = this.K;
                 ImageReceiver.BackgroundThreadDrawHolder drawInBackgroundThread = imageReceiver.setDrawInBackgroundThread(backgroundThreadDrawHolderArr[i12], i12);
@@ -177,9 +177,9 @@ public final class n1 extends ht {
                 }
                 Rect rect = AndroidUtilities.rectTmp2;
                 rect.set(o1Var.getPaddingLeft(), o1Var.getPaddingTop(), o1Var.getWidth() - o1Var.getPaddingRight(), o1Var.getHeight() - o1Var.getPaddingBottom());
-                xi0 lottieAnimation = imageReceiver.getLottieAnimation();
+                yi0 lottieAnimation = imageReceiver.getLottieAnimation();
                 if (lottieAnimation == null || (i10 = lottieAnimation.c) == 0) {
-                    org.telegram.ui.Components.b6 animation = imageReceiver.getAnimation();
+                    org.telegram.ui.Components.d6 animation = imageReceiver.getAnimation();
                     if (animation == null || animation.getIntrinsicHeight() == 0) {
                         Bitmap bitmap = imageReceiver.getBitmap();
                         if (bitmap != null) {

@@ -1,131 +1,103 @@
 package org.telegram.messenger;
 
-import android.app.Dialog;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.ir0;
-import org.telegram.ui.oy;
-import org.telegram.ui.tx;
-import org.telegram.ui.uy;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class f2 implements Utilities.Callback {
+public final /* synthetic */ class f2 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+    public final /* synthetic */ MessagesStorage b;
 
-    public /* synthetic */ f2(Object obj, long j3, Object obj2, Object obj3, int i10) {
+    public /* synthetic */ f2(MessagesStorage messagesStorage, int i10) {
         this.a = i10;
-        this.c = obj;
-        this.b = j3;
-        this.d = obj2;
-        this.e = obj3;
+        this.b = messagesStorage;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        int i10 = this.a;
-        long j3 = this.b;
-        Object obj2 = this.e;
-        Object obj3 = this.d;
-        Object obj4 = this.c;
-        switch (i10) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                ((FactCheckController) obj4).lambda$loadMissing$3(this.b, (ArrayList) obj3, (HashMap) obj2, (ArrayList) obj);
+                FactCheckController.lambda$clearExpiredInDatabase$7(this.b);
                 break;
             case 1:
-                ((MessagesController) obj4).lambda$checkSensitive$448(this.b, (boolean[]) obj3, (Runnable) obj2, (Boolean) obj);
+                this.b.lambda$saveDialogFilter$73();
                 break;
             case 2:
-                ((TranslateController) obj4).lambda$checkTranslation$6((MessageObject) obj3, (String) obj2, this.b, (TLRPC.TL_textWithEntities) obj);
+                this.b.lambda$clearLocalDatabase$43();
                 break;
             case 3:
-                tx txVar = (tx) obj4;
-                org.telegram.ui.ActionBar.n2[] n2VarArr = (org.telegram.ui.ActionBar.n2[]) obj2;
-                txVar.getClass();
-                ((org.telegram.ui.ActionBar.b2) obj3).dismiss();
-                uy uyVar = txVar.b;
-                uyVar.getMessagesController().loadChannelParticipants(Long.valueOf(j3));
-                oy oyVar = uyVar.C2;
-                uyVar.removeSelfFromStack();
-                if (n2VarArr[1] != null) {
-                    n2VarArr[0].removeSelfFromStack();
-                    n2VarArr[1].finishFragment();
-                } else {
-                    n2VarArr[0].finishFragment();
-                }
-                if (oyVar != null) {
-                    ArrayList arrayList = new ArrayList();
-                    arrayList.add(MessagesStorage.TopicKey.of(-j3, 0L));
-                    oyVar.u(uyVar, arrayList, null, false, uyVar.J2, uyVar.K2, uyVar.L2, null);
-                    break;
-                }
+                this.b.lambda$fixNotificationSettings$9();
                 break;
             case 4:
-                PhotoViewer photoViewer = (PhotoViewer) obj4;
-                String str = (String) obj3;
-                MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) obj2;
-                Bitmap bitmap = (Bitmap) obj;
-                Drawable[] drawableArr = PhotoViewer.U8;
-                if (bitmap == null) {
-                    AndroidUtilities.runOnUIThread(new ir0(photoViewer, 16));
-                    break;
-                } else {
-                    try {
-                        FileOutputStream fileOutputStream = new FileOutputStream(new File(str));
-                        bitmap.compress(Bitmap.CompressFormat.JPEG, 90, fileOutputStream);
-                        fileOutputStream.close();
-                        Bitmap createBitmap = Bitmap.createBitmap(AndroidUtilities.dp(26.0f), AndroidUtilities.dp(26.0f), Bitmap.Config.ARGB_8888);
-                        Canvas canvas = new Canvas(createBitmap);
-                        Paint paint = new Paint(3);
-                        canvas.translate(createBitmap.getWidth() / 2.0f, createBitmap.getHeight() / 2.0f);
-                        float max = Math.max(createBitmap.getWidth() / bitmap.getWidth(), createBitmap.getHeight() / bitmap.getHeight());
-                        canvas.scale(max, max);
-                        canvas.drawBitmap(bitmap, (-bitmap.getWidth()) / 2.0f, (-bitmap.getHeight()) / 2.0f, paint);
-                        AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.f(photoViewer, photoEntry, this.b, str, createBitmap, 6));
-                        break;
-                    } catch (Exception e) {
-                        FileLog.e(e);
-                        AndroidUtilities.runOnUIThread(new ir0(photoViewer, 17));
-                        return;
-                    }
-                }
+                this.b.lambda$getWallpapers$81();
+                break;
+            case 5:
+                this.b.lambda$loadUnreadMessages$77();
+                break;
+            case 6:
+                this.b.lambda$updateMutedDialogsFiltersCounters$36();
+                break;
+            case 7:
+                this.b.lambda$openDatabase$1();
+                break;
+            case 8:
+                this.b.lambda$openDatabase$2();
+                break;
+            case 9:
+                this.b.lambda$updateFiltersReadCounter$119();
+                break;
+            case 10:
+                this.b.lambda$clearLocalDatabase$44();
+                break;
+            case 11:
+                this.b.lambda$checkSQLException$8();
+                break;
+            case 12:
+                this.b.lambda$fullReset$62();
+                break;
+            case 13:
+                this.b.lambda$new$0();
+                break;
+            case 14:
+                this.b.lambda$resetAllUnreadCounters$250();
+                break;
+            case 15:
+                this.b.lambda$reset$61();
+                break;
+            case 16:
+                this.b.lambda$updateDbToLastVersion$3();
+                break;
+            case 17:
+                this.b.lambda$updateDbToLastVersion$4();
+                break;
+            case 18:
+                this.b.lambda$deleteDialog$89();
+                break;
+            case 19:
+                this.b.lambda$loadDialogFilters$67();
+                break;
+            case 20:
+                this.b.lambda$clearSentMedia$163();
+                break;
+            case 21:
+                this.b.lambda$fullReset$63();
+                break;
+            case 22:
+                this.b.lambda$loadPendingTasks$33();
+                break;
+            case 23:
+                this.b.lambda$deleteAllStoryPushMessages$40();
+                break;
+            case 24:
+                this.b.lambda$cleanup$5();
+                break;
+            case 25:
+                this.b.lambda$deleteAllStoryReactionPushMessages$41();
+                break;
+            case 26:
+                this.b.lambda$getContacts$151();
+                break;
             default:
-                xh.b1 b1Var = (xh.b1) obj3;
-                nf.e eVar = (nf.e) obj;
-                eVar.d();
-                b1Var.v1(j3, new ai.e4((xh.q1) obj4, eVar, (Utilities.Callback) obj2, b1Var, 17));
+                this.b.lambda$broadcastQuickRepliesMessagesChange$223();
                 break;
         }
-    }
-
-    public /* synthetic */ f2(Object obj, Dialog dialog, long j3, Object obj2, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.d = dialog;
-        this.b = j3;
-        this.e = obj2;
-    }
-
-    public /* synthetic */ f2(Object obj, Object obj2, Object obj3, long j3, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.d = obj2;
-        this.e = obj3;
-        this.b = j3;
     }
 }

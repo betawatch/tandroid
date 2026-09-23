@@ -1,25 +1,9 @@
 package le;
 
-import android.view.animation.Interpolator;
-import java.util.Collections;
-import java.util.Iterator;
-import n4.y;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final class l implements Iterable {
-    public final j a;
+public interface l {
+    void a();
 
-    public l(k kVar, Interpolator interpolator, long j3) {
-        this.a = new j(new y(this, kVar, false, 23), interpolator, j3);
-    }
-
-    public final void i(Object obj, boolean z10) {
-        this.a.r(obj != null ? Collections.singletonList(obj) : null, z10);
-    }
-
-    @Override // java.lang.Iterable
-    public final Iterator iterator() {
-        return this.a.b.iterator();
-    }
+    void c(m mVar);
 }

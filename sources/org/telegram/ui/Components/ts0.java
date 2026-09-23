@@ -9,20 +9,20 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class ts0 implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ ll0 a;
+    public final /* synthetic */ ml0 a;
     public final /* synthetic */ SparseBooleanArray b;
     public final /* synthetic */ View c;
     public final /* synthetic */ int d;
     public final /* synthetic */ yu0 e;
 
-    public ts0(yu0 yu0Var, ll0 ll0Var, SparseBooleanArray sparseBooleanArray, t00 t00Var, int i10) {
+    public ts0(yu0 yu0Var, ml0 ml0Var, SparseBooleanArray sparseBooleanArray, u00 u00Var, int i10) {
         this.e = yu0Var;
-        this.a = ll0Var;
+        this.a = ml0Var;
         this.b = sparseBooleanArray;
-        this.c = t00Var;
+        this.c = u00Var;
         this.d = i10;
     }
 
@@ -30,46 +30,46 @@ public final class ts0 implements ViewTreeObserver.OnPreDrawListener {
     public final boolean onPreDraw() {
         yu0 yu0Var = this.e;
         yu0Var.getViewTreeObserver().removeOnPreDrawListener(this);
-        final ll0 ll0Var = this.a;
-        s4.h0 adapter = ll0Var.getAdapter();
+        final ml0 ml0Var = this.a;
+        s4.h0 adapter = ml0Var.getAdapter();
         final int i10 = 2;
         final int i11 = 1;
         final int i12 = 0;
         if (adapter == yu0Var.H || adapter == yu0Var.K || adapter == yu0Var.M || adapter == yu0Var.L) {
             SparseBooleanArray sparseBooleanArray = this.b;
             if (sparseBooleanArray != null) {
-                int childCount = ll0Var.getChildCount();
+                int childCount = ml0Var.getChildCount();
                 for (int i13 = 0; i13 < childCount; i13++) {
-                    int p5 = yu0.p(ll0Var.getChildAt(i13));
+                    int p5 = yu0.p(ml0Var.getChildAt(i13));
                     if (p5 != 0 && sparseBooleanArray.get(p5, false)) {
                         yu0Var.O1.put(p5, Float.valueOf(0.0f));
                         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                        ofFloat.addUpdateListener(new ci.x4(this, p5, ll0Var));
+                        ofFloat.addUpdateListener(new ci.w4(this, p5, ml0Var));
                         ofFloat.addListener(new ei.v2(this, p5, 10));
-                        ofFloat.setStartDelay((int) ((Math.min(ll0Var.getMeasuredHeight(), Math.max(0, r10.getTop())) / ll0Var.getMeasuredHeight()) * 100.0f));
+                        ofFloat.setStartDelay((int) ((Math.min(ml0Var.getMeasuredHeight(), Math.max(0, r10.getTop())) / ml0Var.getMeasuredHeight()) * 100.0f));
                         ofFloat.setDuration(250L);
                         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ss0
                             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                                 switch (i12) {
                                     case 0:
-                                        ll0 ll0Var2 = ll0Var;
-                                        if (ll0Var2.b1()) {
-                                            ll0Var2.invalidate();
+                                        ml0 ml0Var2 = ml0Var;
+                                        if (ml0Var2.b1()) {
+                                            ml0Var2.invalidate();
                                             break;
                                         }
                                         break;
                                     case 1:
-                                        ll0 ll0Var3 = ll0Var;
-                                        if (ll0Var3.b1()) {
-                                            ll0Var3.invalidate();
+                                        ml0 ml0Var3 = ml0Var;
+                                        if (ml0Var3.b1()) {
+                                            ml0Var3.invalidate();
                                             break;
                                         }
                                         break;
                                     default:
-                                        ll0 ll0Var4 = ll0Var;
-                                        if (ll0Var4.b1()) {
-                                            ll0Var4.invalidate();
+                                        ml0 ml0Var4 = ml0Var;
+                                        if (ml0Var4.b1()) {
+                                            ml0Var4.invalidate();
                                             break;
                                         }
                                         break;
@@ -78,19 +78,19 @@ public final class ts0 implements ViewTreeObserver.OnPreDrawListener {
                         });
                         ofFloat.start();
                     }
-                    ll0Var.invalidate();
+                    ml0Var.invalidate();
                 }
             }
             return true;
         }
-        int childCount2 = ll0Var.getChildCount();
+        int childCount2 = ml0Var.getChildCount();
         AnimatorSet animatorSet = new AnimatorSet();
         for (int i14 = 0; i14 < childCount2; i14++) {
-            View childAt = ll0Var.getChildAt(i14);
+            View childAt = ml0Var.getChildAt(i14);
             View view = this.c;
             if (childAt != view && RecyclerView.R(childAt) >= this.d - 1) {
                 childAt.setAlpha(0.0f);
-                int min = (int) ((Math.min(ll0Var.getMeasuredHeight(), Math.max(0, childAt.getTop())) / ll0Var.getMeasuredHeight()) * 100.0f);
+                int min = (int) ((Math.min(ml0Var.getMeasuredHeight(), Math.max(0, childAt.getTop())) / ml0Var.getMeasuredHeight()) * 100.0f);
                 ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.ALPHA, 0.0f, 1.0f);
                 ofFloat2.setStartDelay(min);
                 ofFloat2.setDuration(200L);
@@ -99,23 +99,23 @@ public final class ts0 implements ViewTreeObserver.OnPreDrawListener {
                     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                         switch (i11) {
                             case 0:
-                                ll0 ll0Var2 = ll0Var;
-                                if (ll0Var2.b1()) {
-                                    ll0Var2.invalidate();
+                                ml0 ml0Var2 = ml0Var;
+                                if (ml0Var2.b1()) {
+                                    ml0Var2.invalidate();
                                     break;
                                 }
                                 break;
                             case 1:
-                                ll0 ll0Var3 = ll0Var;
-                                if (ll0Var3.b1()) {
-                                    ll0Var3.invalidate();
+                                ml0 ml0Var3 = ml0Var;
+                                if (ml0Var3.b1()) {
+                                    ml0Var3.invalidate();
                                     break;
                                 }
                                 break;
                             default:
-                                ll0 ll0Var4 = ll0Var;
-                                if (ll0Var4.b1()) {
-                                    ll0Var4.invalidate();
+                                ml0 ml0Var4 = ml0Var;
+                                if (ml0Var4.b1()) {
+                                    ml0Var4.invalidate();
                                     break;
                                 }
                                 break;
@@ -125,8 +125,8 @@ public final class ts0 implements ViewTreeObserver.OnPreDrawListener {
                 animatorSet.playTogether(ofFloat2);
             }
             if (view != null && view.getParent() == null) {
-                ll0Var.addView(view);
-                s4.o0 layoutManager = ll0Var.getLayoutManager();
+                ml0Var.addView(view);
+                s4.o0 layoutManager = ml0Var.getLayoutManager();
                 if (layoutManager != null) {
                     layoutManager.M(view);
                     ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, view.getAlpha(), 0.0f);
@@ -136,23 +136,23 @@ public final class ts0 implements ViewTreeObserver.OnPreDrawListener {
                         public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                             switch (i10) {
                                 case 0:
-                                    ll0 ll0Var2 = ll0Var;
-                                    if (ll0Var2.b1()) {
-                                        ll0Var2.invalidate();
+                                    ml0 ml0Var2 = ml0Var;
+                                    if (ml0Var2.b1()) {
+                                        ml0Var2.invalidate();
                                         break;
                                     }
                                     break;
                                 case 1:
-                                    ll0 ll0Var3 = ll0Var;
-                                    if (ll0Var3.b1()) {
-                                        ll0Var3.invalidate();
+                                    ml0 ml0Var3 = ml0Var;
+                                    if (ml0Var3.b1()) {
+                                        ml0Var3.invalidate();
                                         break;
                                     }
                                     break;
                                 default:
-                                    ll0 ll0Var4 = ll0Var;
-                                    if (ll0Var4.b1()) {
-                                        ll0Var4.invalidate();
+                                    ml0 ml0Var4 = ml0Var;
+                                    if (ml0Var4.b1()) {
+                                        ml0Var4.invalidate();
                                         break;
                                     }
                                     break;

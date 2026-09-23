@@ -1,119 +1,63 @@
 package org.telegram.ui;
 
-import android.content.SharedPreferences;
-import android.os.Bundle;
-import java.util.ArrayList;
-import java.util.Iterator;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.NotificationsSettingsFacade;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class hk0 implements oy, org.telegram.ui.ActionBar.a2, w11 {
-    public final /* synthetic */ NotificationsCustomSettingsActivity a;
+public final class hk0 extends og.a {
+    public int c;
+    public int d;
+    public CharSequence e;
+    public CharSequence f;
+    public nk0 g;
+    public int h;
+    public boolean i;
 
-    public /* synthetic */ hk0(NotificationsCustomSettingsActivity notificationsCustomSettingsActivity) {
-        this.a = notificationsCustomSettingsActivity;
+    public static hk0 b(int i10, String str, boolean z10) {
+        hk0 hk0Var = new hk0(1, true);
+        hk0Var.c = i10;
+        hk0Var.e = str;
+        hk0Var.i = z10;
+        return hk0Var;
     }
 
-    @Override // org.telegram.ui.oy
-    public /* synthetic */ boolean A() {
-        return false;
+    public static hk0 c(int i10, String str, String str2) {
+        hk0 hk0Var = new hk0(5, true);
+        hk0Var.c = i10;
+        hk0Var.e = str;
+        hk0Var.f = str2;
+        return hk0Var;
     }
 
-    @Override // org.telegram.ui.oy
-    public /* synthetic */ boolean K(uy uyVar) {
-        return false;
+    public static hk0 d(int i10, String str) {
+        hk0 hk0Var = new hk0(4, true);
+        hk0Var.c = i10;
+        hk0Var.e = str;
+        return hk0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.a;
-        SharedPreferences.Editor edit = notificationsCustomSettingsActivity.getNotificationsSettings().edit();
-        int size = notificationsCustomSettingsActivity.w.size();
-        for (int i11 = 0; i11 < size; i11++) {
-            tk0 tk0Var = (tk0) notificationsCustomSettingsActivity.w.get(i11);
-            if (notificationsCustomSettingsActivity.s == 3) {
-                edit.remove(NotificationsSettingsFacade.PROPERTY_STORIES_NOTIFY + tk0Var.d);
-            } else {
-                edit.remove(NotificationsSettingsFacade.PROPERTY_NOTIFY + tk0Var.d).remove(NotificationsSettingsFacade.PROPERTY_CUSTOM + tk0Var.d);
-            }
-            notificationsCustomSettingsActivity.getMessagesStorage().setDialogFlags(tk0Var.d, 0L);
-            TLRPC.Dialog dialog = (TLRPC.Dialog) notificationsCustomSettingsActivity.getMessagesController().dialogs_dict.f(tk0Var.d);
-            if (dialog != null) {
-                dialog.notify_settings = new TLRPC.TL_peerNotifySettings();
-            }
-        }
-        edit.commit();
-        int size2 = notificationsCustomSettingsActivity.w.size();
-        for (int i12 = 0; i12 < size2; i12++) {
-            notificationsCustomSettingsActivity.getNotificationsController().updateServerNotificationsSettings(((tk0) notificationsCustomSettingsActivity.w.get(i12)).d, 0, false);
-        }
-        notificationsCustomSettingsActivity.w.clear();
-        notificationsCustomSettingsActivity.x.clear();
-        notificationsCustomSettingsActivity.l0(true);
-        notificationsCustomSettingsActivity.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.notificationsSettingsUpdated, new Object[0]);
-    }
-
-    @Override // org.telegram.ui.oy
-    public boolean u(uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, eg1 eg1Var) {
-        int i12 = 0;
-        long j3 = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
-        NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.a;
-        if (notificationsCustomSettingsActivity.s != 3) {
-            Bundle bundle = new Bundle();
-            bundle.putLong("dialog_id", j3);
-            bundle.putBoolean("exception", true);
-            x11 x11Var = new x11(bundle, notificationsCustomSettingsActivity.getResourceProvider());
-            x11Var.r = new hk0(notificationsCustomSettingsActivity);
-            notificationsCustomSettingsActivity.presentFragment(x11Var, true);
+    @Override // og.a
+    public final boolean a(og.a aVar) {
+        if (this == aVar) {
             return true;
         }
-        ArrayList arrayList2 = notificationsCustomSettingsActivity.v;
-        if (arrayList2 != null) {
-            Iterator it = arrayList2.iterator();
-            while (it.hasNext()) {
-                if (((tk0) it.next()).d == j3) {
-                    it.remove();
-                }
-            }
+        if (hk0.class != aVar.getClass()) {
+            return false;
         }
-        ArrayList arrayList3 = notificationsCustomSettingsActivity.w;
-        if (arrayList3 != null) {
-            Iterator it2 = arrayList3.iterator();
-            while (it2.hasNext()) {
-                if (((tk0) it2.next()).d == j3) {
-                    it2.remove();
-                }
-            }
-        }
-        tk0 tk0Var = new tk0();
-        tk0Var.d = j3;
-        tk0Var.e = true;
-        Boolean bool = notificationsCustomSettingsActivity.n;
-        if (bool != null && bool.booleanValue()) {
-            i12 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-        }
-        tk0Var.c = i12;
-        if (notificationsCustomSettingsActivity.w == null) {
-            notificationsCustomSettingsActivity.w = new ArrayList();
-        }
-        notificationsCustomSettingsActivity.w.add(tk0Var);
-        notificationsCustomSettingsActivity.l0(true);
-        return true;
+        hk0 hk0Var = (hk0) aVar;
+        return this.c == hk0Var.c && this.d == hk0Var.d && this.h == hk0Var.h && this.i == hk0Var.i && Objects.equals(this.e, hk0Var.e) && Objects.equals(this.f, hk0Var.f) && this.g == hk0Var.g;
     }
 
-    @Override // org.telegram.ui.w11
-    public void v(tk0 tk0Var) {
-        NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.a;
-        notificationsCustomSettingsActivity.w.add(0, tk0Var);
-        notificationsCustomSettingsActivity.l0(true);
-    }
-
-    @Override // org.telegram.ui.w11
-    public /* synthetic */ void c0() {
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && hk0.class == obj.getClass()) {
+            hk0 hk0Var = (hk0) obj;
+            if (this.c == hk0Var.c && this.h == hk0Var.h && ((this.a == 8 || (this.d == hk0Var.d && Objects.equals(this.e, hk0Var.e) && (this.a == 6 || Objects.equals(this.f, hk0Var.f)))) && this.g == hk0Var.g)) {
+                return true;
+            }
+        }
+        return false;
     }
 }

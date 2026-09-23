@@ -1,88 +1,85 @@
 package org.telegram.ui;
 
-import android.graphics.Rect;
-import android.view.MotionEvent;
+import android.util.SparseArray;
 import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class ni implements View.OnTouchListener {
-    public final /* synthetic */ int a;
-    public final int[] b;
-    public final /* synthetic */ Rect c;
-    public final /* synthetic */ Object d;
+public final class ni {
+    public boolean a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ SparseArray c;
+    public final /* synthetic */ xn d;
 
-    public ni(i60 i60Var, Rect rect) {
-        this.a = 1;
-        this.d = i60Var;
-        this.c = rect;
-        this.b = new int[2];
+    public ni(xn xnVar, boolean z10, SparseArray sparseArray) {
+        this.d = xnVar;
+        this.b = z10;
+        this.c = sparseArray;
     }
 
-    @Override // android.view.View.OnTouchListener
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        i50 i50Var;
-        switch (this.a) {
-            case 0:
-                bo boVar = (bo) this.d;
-                if (motionEvent.getActionMasked() != 0) {
-                    if (motionEvent.getActionMasked() == 4) {
-                        boVar.A7(true);
-                        break;
-                    }
-                } else {
-                    org.telegram.ui.ActionBar.n1 n1Var = boVar.Q8;
-                    if (n1Var != null && n1Var.isShowing()) {
-                        View contentView = boVar.Q8.getContentView();
-                        int[] iArr = this.b;
-                        contentView.getLocationInWindow(iArr);
-                        int i10 = iArr[0];
-                        int i11 = iArr[1];
-                        int measuredWidth = contentView.getMeasuredWidth() + i10;
-                        int measuredHeight = contentView.getMeasuredHeight() + iArr[1];
-                        Rect rect = this.c;
-                        rect.set(i10, i11, measuredWidth, measuredHeight);
-                        if (!rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                            boVar.A7(true);
-                            break;
-                        }
-                    }
-                }
-                break;
-            default:
-                i60 i60Var = (i60) this.d;
-                if (motionEvent.getActionMasked() != 0) {
-                    if (motionEvent.getActionMasked() == 4 && (i50Var = i60Var.f3) != null && i50Var.isShowing()) {
-                        i60Var.f3.dismiss();
-                        break;
-                    }
-                } else {
-                    i50 i50Var2 = i60Var.f3;
-                    if (i50Var2 != null && i50Var2.isShowing()) {
-                        View contentView2 = i60Var.f3.getContentView();
-                        int[] iArr2 = this.b;
-                        contentView2.getLocationInWindow(iArr2);
-                        int i12 = iArr2[0];
-                        int i13 = iArr2[1];
-                        int measuredWidth2 = contentView2.getMeasuredWidth() + i12;
-                        int measuredHeight2 = contentView2.getMeasuredHeight() + iArr2[1];
-                        Rect rect2 = this.c;
-                        rect2.set(i12, i13, measuredWidth2, measuredHeight2);
-                        if (!rect2.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                            i60Var.f3.dismiss();
-                            break;
-                        }
-                    }
-                }
-                break;
+    public final boolean a(int i10) {
+        xn xnVar = this.d;
+        int i11 = i10 - xnVar.A0.J;
+        if (i11 < 0 || i11 >= xnVar.u6.size()) {
+            return false;
         }
-        return false;
+        MessageObject messageObject = (MessageObject) xnVar.u6.get(i11);
+        if (messageObject.contentType != 0) {
+            return false;
+        }
+        SparseArray sparseArray = this.c;
+        boolean z10 = this.b;
+        if (z10 || sparseArray.get(messageObject.getId(), null) != null) {
+            return z10 && sparseArray.get(messageObject.getId(), null) != null;
+        }
+        return true;
     }
 
-    public ni(bo boVar, Rect rect) {
-        this.a = 0;
-        this.d = boVar;
-        this.c = rect;
-        this.b = new int[2];
+    /* JADX WARN: Removed duplicated region for block: B:30:0x007c  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void b(int i10, boolean z10, float f7, float f10) {
+        s4.c1 K;
+        xn xnVar = this.d;
+        ArrayList arrayList = xnVar.u6;
+        SparseArray[] sparseArrayArr = xnVar.W5;
+        int i11 = i10 - xnVar.A0.J;
+        if (this.b) {
+            z10 = !z10;
+        }
+        if (i11 < 0 || i11 >= arrayList.size()) {
+            return;
+        }
+        MessageObject messageObject = (MessageObject) arrayList.get(i11);
+        if (!z10 || (sparseArrayArr[0].indexOfKey(messageObject.getId()) < 0 && sparseArrayArr[1].indexOfKey(messageObject.getId()) < 0)) {
+            if ((z10 || sparseArrayArr[0].indexOfKey(messageObject.getId()) >= 0 || sparseArrayArr[1].indexOfKey(messageObject.getId()) >= 0) && messageObject.contentType == 0) {
+                if (z10) {
+                    if (sparseArrayArr[1].size() + sparseArrayArr[0].size() >= 100) {
+                        this.a = true;
+                        K = xnVar.x0.K(i10);
+                        if (K != null) {
+                            View view = K.a;
+                            if (view instanceof org.telegram.ui.Cells.t1) {
+                                xn.b2(xnVar, view, false, f7, f10);
+                                return;
+                            }
+                        }
+                        xnVar.x6(messageObject, false, true);
+                        xnVar.dc();
+                        xnVar.Wc(false);
+                    }
+                }
+                this.a = false;
+                K = xnVar.x0.K(i10);
+                if (K != null) {
+                }
+                xnVar.x6(messageObject, false, true);
+                xnVar.dc();
+                xnVar.Wc(false);
+            }
+        }
     }
 }

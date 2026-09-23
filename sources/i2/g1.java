@@ -1,119 +1,184 @@
 package i2;
 
-import android.os.SystemClock;
-import java.util.List;
+import android.os.Handler;
+import android.os.Looper;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.IdentityHashMap;
+import java.util.Iterator;
+import java.util.concurrent.CopyOnWriteArrayList;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class g1 {
-    public static final u2.f0 u = new u2.f0(new Object());
-    public final b2.k1 a;
-    public final u2.f0 b;
-    public final long c;
-    public final long d;
-    public final int e;
-    public final n f;
-    public final boolean g;
-    public final u2.o1 h;
-    public final x2.v i;
-    public final List j;
-    public final u2.f0 k;
-    public final boolean l;
-    public final int m;
-    public final int n;
-    public final b2.v0 o;
-    public final boolean p;
-    public volatile long q;
-    public volatile long r;
-    public volatile long s;
-    public volatile long t;
+    public final j2.k a;
+    public final p0 e;
+    public final j2.f h;
+    public final e2.z i;
+    public boolean k;
+    public g2.c0 l;
+    public u2.f1 j = new u2.d1();
+    public final IdentityHashMap c = new IdentityHashMap();
+    public final HashMap d = new HashMap();
+    public final ArrayList b = new ArrayList();
+    public final HashMap f = new HashMap();
+    public final HashSet g = new HashSet();
 
-    public g1(b2.k1 k1Var, u2.f0 f0Var, long j3, long j10, int i10, n nVar, boolean z10, u2.o1 o1Var, x2.v vVar, List list, u2.f0 f0Var2, boolean z11, int i11, int i12, b2.v0 v0Var, long j11, long j12, long j13, long j14, boolean z12) {
-        this.a = k1Var;
-        this.b = f0Var;
-        this.c = j3;
-        this.d = j10;
-        this.e = i10;
-        this.f = nVar;
-        this.g = z10;
-        this.h = o1Var;
-        this.i = vVar;
-        this.j = list;
-        this.k = f0Var2;
-        this.l = z11;
-        this.m = i11;
-        this.n = i12;
-        this.o = v0Var;
-        this.q = j11;
-        this.r = j12;
-        this.s = j13;
-        this.t = j14;
-        this.p = z12;
+    public g1(p0 p0Var, j2.f fVar, e2.z zVar, j2.k kVar) {
+        this.a = kVar;
+        this.e = p0Var;
+        this.h = fVar;
+        this.i = zVar;
     }
 
-    public static g1 k(x2.v vVar) {
-        b2.g1 g1Var = b2.k1.a;
-        u2.o1 o1Var = u2.o1.d;
-        e9.a1 a1Var = e9.a1.e;
-        b2.v0 v0Var = b2.v0.d;
-        u2.f0 f0Var = u;
-        return new g1(g1Var, f0Var, -9223372036854775807L, 0L, 1, null, false, o1Var, vVar, a1Var, f0Var, false, 1, 0, v0Var, 0L, 0L, 0L, 0L, false);
-    }
-
-    public final g1 a() {
-        return new g1(this.a, this.b, this.c, this.d, this.e, this.f, this.g, this.h, this.i, this.j, this.k, this.l, this.m, this.n, this.o, this.q, this.r, l(), SystemClock.elapsedRealtime(), this.p);
-    }
-
-    public final g1 b(boolean z10) {
-        return new g1(this.a, this.b, this.c, this.d, this.e, this.f, z10, this.h, this.i, this.j, this.k, this.l, this.m, this.n, this.o, this.q, this.r, this.s, this.t, this.p);
-    }
-
-    public final g1 c(u2.f0 f0Var) {
-        return new g1(this.a, this.b, this.c, this.d, this.e, this.f, this.g, this.h, this.i, this.j, f0Var, this.l, this.m, this.n, this.o, this.q, this.r, this.s, this.t, this.p);
-    }
-
-    public final g1 d(u2.f0 f0Var, long j3, long j10, long j11, long j12, u2.o1 o1Var, x2.v vVar, List list) {
-        return new g1(this.a, f0Var, j10, j11, this.e, this.f, this.g, o1Var, vVar, list, this.k, this.l, this.m, this.n, this.o, this.q, j12, j3, SystemClock.elapsedRealtime(), this.p);
-    }
-
-    public final g1 e(int i10, int i11, boolean z10) {
-        return new g1(this.a, this.b, this.c, this.d, this.e, this.f, this.g, this.h, this.i, this.j, this.k, z10, i10, i11, this.o, this.q, this.r, this.s, this.t, this.p);
-    }
-
-    public final g1 f(n nVar) {
-        return new g1(this.a, this.b, this.c, this.d, this.e, nVar, this.g, this.h, this.i, this.j, this.k, this.l, this.m, this.n, this.o, this.q, this.r, this.s, this.t, this.p);
-    }
-
-    public final g1 g(b2.v0 v0Var) {
-        return new g1(this.a, this.b, this.c, this.d, this.e, this.f, this.g, this.h, this.i, this.j, this.k, this.l, this.m, this.n, v0Var, this.q, this.r, this.s, this.t, this.p);
-    }
-
-    public final g1 h(int i10) {
-        return new g1(this.a, this.b, this.c, this.d, i10, this.f, this.g, this.h, this.i, this.j, this.k, this.l, this.m, this.n, this.o, this.q, this.r, this.s, this.t, this.p);
-    }
-
-    public final g1 i(boolean z10) {
-        return new g1(this.a, this.b, this.c, this.d, this.e, this.f, this.g, this.h, this.i, this.j, this.k, this.l, this.m, this.n, this.o, this.q, this.r, this.s, this.t, z10);
-    }
-
-    public final g1 j(b2.k1 k1Var) {
-        return new g1(k1Var, this.b, this.c, this.d, this.e, this.f, this.g, this.h, this.i, this.j, this.k, this.l, this.m, this.n, this.o, this.q, this.r, this.s, this.t, this.p);
-    }
-
-    public final long l() {
-        long j3;
-        long j10;
-        if (!m()) {
-            return this.s;
+    public final b2.k1 a(int i10, ArrayList arrayList, u2.f1 f1Var) {
+        if (!arrayList.isEmpty()) {
+            this.j = f1Var;
+            for (int i11 = i10; i11 < arrayList.size() + i10; i11++) {
+                f1 f1Var2 = (f1) arrayList.get(i11 - i10);
+                ArrayList arrayList2 = this.b;
+                if (i11 > 0) {
+                    f1 f1Var3 = (f1) arrayList2.get(i11 - 1);
+                    f1Var2.d = f1Var3.a.o.e.o() + f1Var3.d;
+                    f1Var2.e = false;
+                    f1Var2.c.clear();
+                } else {
+                    f1Var2.d = 0;
+                    f1Var2.e = false;
+                    f1Var2.c.clear();
+                }
+                int o9 = f1Var2.a.o.e.o();
+                for (int i12 = i11; i12 < arrayList2.size(); i12++) {
+                    ((f1) arrayList2.get(i12)).d += o9;
+                }
+                arrayList2.add(i11, f1Var2);
+                this.d.put(f1Var2.b, f1Var2);
+                if (this.k) {
+                    e(f1Var2);
+                    if (this.c.isEmpty()) {
+                        this.g.add(f1Var2);
+                    } else {
+                        e1 e1Var = (e1) this.f.get(f1Var2);
+                        if (e1Var != null) {
+                            e1Var.a.d(e1Var.b);
+                        }
+                    }
+                }
+            }
         }
-        do {
-            j3 = this.t;
-            j10 = this.s;
-        } while (j3 != this.t);
-        return e2.d0.Q(e2.d0.e0(j10) + ((long) ((SystemClock.elapsedRealtime() - j3) * this.o.a)));
+        return b();
     }
 
-    public final boolean m() {
-        return this.e == 3 && this.l && this.n == 0;
+    public final b2.k1 b() {
+        ArrayList arrayList = this.b;
+        if (arrayList.isEmpty()) {
+            return b2.k1.a;
+        }
+        int i10 = 0;
+        for (int i11 = 0; i11 < arrayList.size(); i11++) {
+            f1 f1Var = (f1) arrayList.get(i11);
+            f1Var.d = i10;
+            i10 += f1Var.a.o.e.o();
+        }
+        return new m1(arrayList, this.j);
+    }
+
+    public final void c() {
+        Iterator it = this.g.iterator();
+        while (it.hasNext()) {
+            f1 f1Var = (f1) it.next();
+            if (f1Var.c.isEmpty()) {
+                e1 e1Var = (e1) this.f.get(f1Var);
+                if (e1Var != null) {
+                    e1Var.a.d(e1Var.b);
+                }
+                it.remove();
+            }
+        }
+    }
+
+    public final void d(f1 f1Var) {
+        if (f1Var.e && f1Var.c.isEmpty()) {
+            e1 e1Var = (e1) this.f.remove(f1Var);
+            e1Var.getClass();
+            d1 d1Var = e1Var.c;
+            u2.a aVar = e1Var.a;
+            aVar.p(e1Var.b);
+            aVar.s(d1Var);
+            aVar.r(d1Var);
+            this.g.remove(f1Var);
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r1v0, types: [i2.y0, u2.g0] */
+    public final void e(f1 f1Var) {
+        u2.a0 a0Var = f1Var.a;
+        ?? r12 = new u2.g0() { // from class: i2.y0
+            @Override // u2.g0
+            public final void a(u2.a aVar, b2.k1 k1Var) {
+                e2.z zVar = g1.this.e.n;
+                zVar.d(2);
+                zVar.e(22);
+            }
+        };
+        d1 d1Var = new d1(this, f1Var);
+        this.f.put(f1Var, new e1(a0Var, r12, d1Var));
+        String str = e2.d0.a;
+        Looper myLooper = Looper.myLooper();
+        if (myLooper == null) {
+            myLooper = Looper.getMainLooper();
+        }
+        Handler handler = new Handler(myLooper, null);
+        a0Var.getClass();
+        a5.a aVar = a0Var.c;
+        aVar.getClass();
+        CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) aVar.d;
+        u2.i0 i0Var = new u2.i0();
+        i0Var.a = handler;
+        i0Var.b = d1Var;
+        copyOnWriteArrayList.add(i0Var);
+        Looper myLooper2 = Looper.myLooper();
+        if (myLooper2 == null) {
+            myLooper2 = Looper.getMainLooper();
+        }
+        Handler handler2 = new Handler(myLooper2, null);
+        n2.j jVar = a0Var.d;
+        jVar.getClass();
+        CopyOnWriteArrayList copyOnWriteArrayList2 = jVar.c;
+        n2.i iVar = new n2.i();
+        iVar.a = handler2;
+        iVar.b = d1Var;
+        copyOnWriteArrayList2.add(iVar);
+        a0Var.l(r12, this.l, this.a);
+    }
+
+    public final void f(u2.d0 d0Var) {
+        IdentityHashMap identityHashMap = this.c;
+        f1 f1Var = (f1) identityHashMap.remove(d0Var);
+        f1Var.getClass();
+        f1Var.a.o(d0Var);
+        f1Var.c.remove(((u2.x) d0Var).a);
+        if (!identityHashMap.isEmpty()) {
+            c();
+        }
+        d(f1Var);
+    }
+
+    public final void g(int i10, int i11) {
+        for (int i12 = i11 - 1; i12 >= i10; i12--) {
+            ArrayList arrayList = this.b;
+            f1 f1Var = (f1) arrayList.remove(i12);
+            this.d.remove(f1Var.b);
+            int i13 = -f1Var.a.o.e.o();
+            for (int i14 = i12; i14 < arrayList.size(); i14++) {
+                ((f1) arrayList.get(i14)).d += i13;
+            }
+            f1Var.e = true;
+            if (this.k) {
+                d(f1Var);
+            }
+        }
     }
 }

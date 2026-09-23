@@ -1,54 +1,38 @@
 package m4;
 
+import android.media.session.MediaSession;
 import android.os.Bundle;
-import android.text.TextUtils;
-import j$.util.Objects;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class m1 {
-    public static final e9.a1 d = e9.i0.z(40010);
-    public static final e9.a1 e;
-    public static final String f;
-    public static final String g;
-    public static final String h;
-    public final int a;
-    public final String b;
-    public final Bundle c;
+    public static final String b;
+    public static final String c;
+    public final n1 a;
 
     static {
-        Object[] objArr = {50000, 50001, 50002, 50003, 50004, 50005, 50006};
-        e9.q.d(7, objArr);
-        e = e9.i0.t(7, objArr);
+        b2.l0.a("media3.session");
         String str = e2.d0.a;
-        f = Integer.toString(0, 36);
-        g = Integer.toString(1, 36);
-        h = Integer.toString(2, 36);
+        b = Integer.toString(0, 36);
+        c = Integer.toString(1, 36);
     }
 
-    public m1(int i10) {
-        e2.d.a("commandCode shouldn't be COMMAND_CODE_CUSTOM", i10 != 0);
-        this.a = i10;
-        this.b = "";
-        this.c = Bundle.EMPTY;
+    public m1(int i10, String str, b1 b1Var, Bundle bundle, MediaSession.Token token) {
+        this.a = new n1(i10, str, b1Var, bundle, token);
     }
 
     public final boolean equals(Object obj) {
-        if (!(obj instanceof m1)) {
-            return false;
+        if (obj instanceof m1) {
+            return this.a.equals(((m1) obj).a);
         }
-        m1 m1Var = (m1) obj;
-        return this.a == m1Var.a && TextUtils.equals(this.b, m1Var.b);
+        return false;
     }
 
     public final int hashCode() {
-        return Objects.hash(this.b, Integer.valueOf(this.a));
+        return this.a.hashCode();
     }
 
-    public m1(String str, Bundle bundle) {
-        this.a = 0;
-        this.b = str;
-        bundle.getClass();
-        this.c = new Bundle(bundle);
+    public final String toString() {
+        return this.a.toString();
     }
 }

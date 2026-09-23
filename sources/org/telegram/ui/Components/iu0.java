@@ -8,9 +8,9 @@ import java.util.HashSet;
 import java.util.Iterator;
 import org.telegram.messenger.SavedMessagesController;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class iu0 extends kl0 {
+public final class iu0 extends ll0 {
     public final Context c;
     public final SavedMessagesController d;
     public boolean h;
@@ -35,7 +35,7 @@ public final class iu0 extends kl0 {
         F(false);
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.ll0
     public final boolean D(s4.c1 c1Var) {
         return true;
     }
@@ -172,7 +172,7 @@ public final class iu0 extends kl0 {
         yu0 yu0Var = this.x;
         hu0Var.setDialogCellDelegate(yu0Var);
         hu0Var.r0 = true;
-        hu0Var.setBackgroundColor(yu0Var.h0(org.telegram.ui.ActionBar.i6.d6));
-        return new vk0(hu0Var);
+        hu0Var.setBackgroundColor(yu0Var.h0(org.telegram.ui.ActionBar.h6.d6));
+        return new wk0(hu0Var);
     }
 }

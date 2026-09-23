@@ -30,39 +30,38 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.Executors;
-import k2.c0;
 import org.json.JSONObject;
 import org.telegram.messenger.BotInlineKeyboard;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.vl;
+import org.telegram.messenger.ul;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.Cells.k1;
 import org.telegram.ui.Cells.q3;
-import org.telegram.ui.Cells.r9;
+import org.telegram.ui.Cells.s9;
 import org.telegram.ui.Cells.t1;
-import org.telegram.ui.Components.bb;
 import org.telegram.ui.Components.db;
-import org.telegram.ui.Components.eb;
 import org.telegram.ui.Components.fb;
-import org.telegram.ui.Components.fh;
-import org.telegram.ui.Components.ml;
-import org.telegram.ui.Components.ng;
-import org.telegram.ui.Components.qb;
-import org.telegram.ui.Components.rb;
+import org.telegram.ui.Components.gb;
+import org.telegram.ui.Components.gh;
+import org.telegram.ui.Components.hb;
+import org.telegram.ui.Components.nl;
+import org.telegram.ui.Components.og;
 import org.telegram.ui.Components.sb;
-import org.telegram.ui.Components.ti;
-import org.telegram.ui.Components.x5;
-import org.telegram.ui.pv0;
+import org.telegram.ui.Components.tb;
+import org.telegram.ui.Components.ub;
+import org.telegram.ui.Components.ui;
+import org.telegram.ui.Components.z5;
+import org.telegram.ui.iv0;
 import r2.u;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public class b implements s0, bg.a, cg.a, da.c, fb.n, ti, n5.b, n2.q, q9.d, rb, k1, u, u5.a, z3.l {
+public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.q, q9.d, tb, k1, u, u5.a, z3.k {
     public final /* synthetic */ int a;
 
     public /* synthetic */ b(int i10) {
@@ -154,7 +153,7 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ti, n5.b, n2.q, q9.d, rb, 
         int i10 = this.a;
     }
 
-    @Override // z3.l
+    @Override // z3.k
     public int D(b2.s sVar) {
         String str = sVar.r;
         if (str != null) {
@@ -413,7 +412,7 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ti, n5.b, n2.q, q9.d, rb, 
         }
     }
 
-    @Override // org.telegram.ui.Components.ti
+    @Override // org.telegram.ui.Components.ui
     public /* synthetic */ boolean S1() {
         return false;
     }
@@ -428,17 +427,17 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ti, n5.b, n2.q, q9.d, rb, 
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.rb
-    public void U(sb sbVar, db dbVar, ng ngVar, ml mlVar) {
-        sbVar.setInOutOffset(sbVar.getMeasuredHeight());
-        mlVar.accept(Float.valueOf(sbVar.getTranslationY()));
-        o1.k kVar = new o1.k(sbVar, sb.IN_OUT_OFFSET_Y, 0.0f);
+    @Override // org.telegram.ui.Components.tb
+    public void U(ub ubVar, fb fbVar, og ogVar, nl nlVar) {
+        ubVar.setInOutOffset(ubVar.getMeasuredHeight());
+        nlVar.accept(Float.valueOf(ubVar.getTranslationY()));
+        o1.k kVar = new o1.k(ubVar, ub.IN_OUT_OFFSET_Y, 0.0f);
         kVar.u.a(0.8f);
         kVar.u.b(400.0f);
-        kVar.a(new m4(1, sbVar, ngVar));
-        kVar.b(new qb(mlVar, sbVar, 1));
+        kVar.a(new m4(1, ubVar, ogVar));
+        kVar.b(new sb(nlVar, ubVar, 1));
         kVar.f();
-        dbVar.run();
+        fbVar.run();
     }
 
     @Override // org.telegram.ui.Cells.k1
@@ -465,7 +464,7 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ti, n5.b, n2.q, q9.d, rb, 
         return false;
     }
 
-    @Override // z3.l
+    @Override // z3.k
     public boolean W(b2.s sVar) {
         String str = sVar.r;
         return Objects.equals(str, "text/x-ssa") || Objects.equals(str, "text/vtt") || Objects.equals(str, "application/x-mp4-vtt") || Objects.equals(str, "application/x-subrip") || Objects.equals(str, "application/x-quicktime-tx3g") || Objects.equals(str, "application/pgs") || Objects.equals(str, "application/vobsub") || Objects.equals(str, "application/dvbsubs") || Objects.equals(str, "application/ttml+xml");
@@ -496,7 +495,7 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ti, n5.b, n2.q, q9.d, rb, 
     }
 
     @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ pv0 Y1() {
+    public /* synthetic */ iv0 Y1() {
         switch (this.a) {
         }
         return null;
@@ -553,7 +552,7 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ti, n5.b, n2.q, q9.d, rb, 
         return MediaCodecList.getCodecInfoAt(i10);
     }
 
-    @Override // org.telegram.ui.Components.ti
+    @Override // org.telegram.ui.Components.ui
     public /* synthetic */ boolean c0() {
         return false;
     }
@@ -613,15 +612,15 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ti, n5.b, n2.q, q9.d, rb, 
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.rb
-    public void g(sb sbVar, db dbVar, bb bbVar, eb ebVar) {
-        o1.k kVar = new o1.k(sbVar, sb.IN_OUT_OFFSET_Y, sbVar.getHeight());
+    @Override // org.telegram.ui.Components.tb
+    public void g(ub ubVar, fb fbVar, db dbVar, gb gbVar) {
+        o1.k kVar = new o1.k(ubVar, ub.IN_OUT_OFFSET_Y, ubVar.getHeight());
         kVar.u.a(0.8f);
         kVar.u.b(400.0f);
-        kVar.a(new fb(bbVar, 1));
-        kVar.b(new qb(ebVar, sbVar, 0));
+        kVar.a(new hb(dbVar, 1));
+        kVar.b(new sb(gbVar, ubVar, 0));
         kVar.f();
-        dbVar.run();
+        fbVar.run();
     }
 
     @Override // r2.u
@@ -684,7 +683,7 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ti, n5.b, n2.q, q9.d, rb, 
     @Override // org.telegram.ui.Cells.k1
     public /* synthetic */ boolean h1(MessageObject messageObject) {
         int i10 = this.a;
-        return vl.a(messageObject);
+        return ul.a(messageObject);
     }
 
     @Override // org.telegram.ui.Cells.k1
@@ -772,7 +771,7 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ti, n5.b, n2.q, q9.d, rb, 
     }
 
     @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ boolean o0(x5 x5Var) {
+    public /* synthetic */ boolean o0(z5 z5Var) {
         switch (this.a) {
         }
         return false;
@@ -901,8 +900,8 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ti, n5.b, n2.q, q9.d, rb, 
         return true;
     }
 
-    @Override // z3.l
-    public z3.n x(b2.s sVar) {
+    @Override // z3.k
+    public z3.m x(b2.s sVar) {
         String str = sVar.r;
         List list = sVar.u;
         if (str != null) {
@@ -930,9 +929,9 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ti, n5.b, n2.q, q9.d, rb, 
         throw new IllegalArgumentException(q3.i("Unsupported MIME type: ", str));
     }
 
-    @Override // org.telegram.ui.Components.ti
-    public void x0(fh fhVar) {
-        fhVar.run();
+    @Override // org.telegram.ui.Components.ui
+    public void x0(gh ghVar) {
+        ghVar.run();
     }
 
     @Override // org.telegram.ui.Cells.k1
@@ -975,7 +974,7 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ti, n5.b, n2.q, q9.d, rb, 
     }
 
     @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ r9 z2() {
+    public /* synthetic */ s9 z2() {
         switch (this.a) {
         }
         return null;
@@ -1029,7 +1028,7 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ti, n5.b, n2.q, q9.d, rb, 
     private final /* synthetic */ void d3() {
     }
 
-    @Override // org.telegram.ui.Components.ti
+    @Override // org.telegram.ui.Components.ui
     public /* synthetic */ void K0() {
     }
 
@@ -1037,7 +1036,7 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ti, n5.b, n2.q, q9.d, rb, 
     public void release() {
     }
 
-    @Override // org.telegram.ui.Components.ti
+    @Override // org.telegram.ui.Components.ui
     public /* synthetic */ void u0() {
     }
 
@@ -1201,15 +1200,15 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ti, n5.b, n2.q, q9.d, rb, 
     public void K(byte[] bArr) {
     }
 
-    @Override // org.telegram.ui.Components.ti
+    @Override // org.telegram.ui.Components.ui
     public /* synthetic */ void U0(Object obj) {
     }
 
     @Override // n2.q
-    public void a(c0 c0Var) {
+    public void a(k2.b0 b0Var) {
     }
 
-    @Override // org.telegram.ui.Components.ti
+    @Override // org.telegram.ui.Components.ui
     public /* synthetic */ void j1(TLRPC.User user) {
     }
 
@@ -1379,11 +1378,11 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ti, n5.b, n2.q, q9.d, rb, 
     private final /* synthetic */ void R3(MessageObject messageObject, String str, String str2, String str3, String str4, int i10, int i11) {
     }
 
-    @Override // org.telegram.ui.Components.ti
+    @Override // org.telegram.ui.Components.ui
     public /* synthetic */ void W1(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j3, boolean z11, long j10) {
     }
 
-    @Override // org.telegram.ui.Components.ti
+    @Override // org.telegram.ui.Components.ui
     public void B1(int i10, boolean z10, boolean z11, int i11, int i12, long j3, boolean z12, boolean z13, long j10) {
     }
 }

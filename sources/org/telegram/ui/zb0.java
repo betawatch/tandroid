@@ -1,32 +1,35 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.ConnectionsManager;
+import android.os.Bundle;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class zb0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ fc0 b;
+public final class zb0 extends xn {
+    public boolean Pc;
+    public final /* synthetic */ TLRPC.User Qc;
+    public final /* synthetic */ TLRPC.User[] Rc;
+    public final /* synthetic */ long Sc;
 
-    public /* synthetic */ zb0(fc0 fc0Var, int i10) {
-        this.a = i10;
-        this.b = fc0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zb0(Bundle bundle, TLRPC.User user, TLRPC.User[] userArr, long j3) {
+        super(bundle);
+        this.Qc = user;
+        this.Rc = userArr;
+        this.Sc = j3;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                fc0 fc0Var = this.b;
-                if (fc0Var.h >= 0) {
-                    ConnectionsManager.getInstance(fc0Var.b).cancelRequest(fc0Var.h, true);
-                    fc0Var.h = -1;
-                    break;
-                }
-                break;
-            default:
-                this.b.a();
-                break;
+    @Override // org.telegram.ui.xn, org.telegram.ui.ActionBar.n2
+    public final void onBecomeFullyVisible() {
+        super.onBecomeFullyVisible();
+        if (this.Pc) {
+            return;
         }
+        this.Pc = true;
+        org.telegram.ui.Components.xc.a0(this).M(LocaleController.formatString(R.string.CreateManagedBotCreatedTitle, UserObject.getUserName(this.Qc)), AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.CreateManagedBotCreatedText, UserObject.getUserName(this.Rc[0])), new ai.j(this, this.Sc, 25)), R.raw.contact_check).j();
     }
 }

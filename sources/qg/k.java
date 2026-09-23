@@ -1,12 +1,12 @@
 package qg;
 
 import android.view.View;
-import ci.a8;
+import ci.x7;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.au0;
+import org.telegram.ui.tt0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -36,10 +36,10 @@ public final /* synthetic */ class k implements View.OnClickListener {
                 p0Var2.postDelayed(new n(p0Var2, 1), 350L);
                 x xVar = new x(p0Var2.getContext(), p0Var2.Q1, false, false);
                 xVar.y = new q(p0Var2);
-                xVar.q0(new a8(p0Var2, 3));
+                xVar.q0(new x7(p0Var2, 3));
                 xVar.setOnDismissListener(new s(p0Var2, i10));
                 xVar.show();
-                PhotoViewer photoViewer = ((au0) p0Var2).o2;
+                PhotoViewer photoViewer = ((tt0) p0Var2).o2;
                 if (photoViewer.F2 != null) {
                     photoViewer.H2 = false;
                     photoViewer.u0();

@@ -3,7 +3,7 @@ package i2;
 import android.content.Context;
 import android.os.Looper;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class p {
     public final Context a;
@@ -18,8 +18,8 @@ public final class p {
     public final b2.e j;
     public final int k;
     public final boolean l;
-    public final p1 m;
-    public final o1 n;
+    public final q1 m;
+    public final p1 n;
     public final long o;
     public final long p;
     public final long q;
@@ -49,11 +49,11 @@ public final class p {
         this.j = b2.e.h;
         this.k = 1;
         this.l = true;
-        this.m = p1.e;
+        this.m = q1.e;
         this.o = 5000L;
         this.p = 15000L;
         this.q = 3000L;
-        this.n = o1.b;
+        this.n = p1.b;
         this.r = new i(e2.d0.Q(20L), e2.d0.Q(500L));
         this.b = e2.x.a;
         this.s = 500L;

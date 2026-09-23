@@ -4,101 +4,62 @@ import c3.a0;
 import c3.c0;
 import e2.d0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final class h implements f {
-    public final long a;
-    public final int b;
+public final class h implements g {
+    public final long[] a;
+    public final long[] b;
     public final long c;
-    public final int d;
+    public final long d;
     public final long e;
-    public final long f;
-    public final long[] g;
+    public final int f;
 
-    public h(long j3, int i10, long j10, int i11, long j11, long[] jArr) {
-        this.a = j3;
-        this.b = i10;
-        this.c = j10;
-        this.d = i11;
+    public h(long[] jArr, long[] jArr2, long j3, long j10, long j11, int i10) {
+        this.a = jArr;
+        this.b = jArr2;
+        this.c = j3;
+        this.d = j10;
         this.e = j11;
-        this.g = jArr;
-        this.f = j11 != -1 ? j3 + j11 : -1L;
+        this.f = i10;
     }
 
-    @Override // v3.f
+    @Override // v3.g
     public final long b(long j3) {
-        long j10 = j3 - this.a;
-        if (!f() || j10 <= this.b) {
-            return 0L;
-        }
-        long[] jArr = this.g;
-        e2.d.h(jArr);
-        double d = (j10 * 256.0d) / this.e;
-        int e = d0.e(jArr, (long) d, true);
-        long j11 = this.c;
-        long j12 = (e * j11) / 100;
-        long j13 = jArr[e];
-        int i10 = e + 1;
-        long j14 = (j11 * i10) / 100;
-        return Math.round((j13 == (e == 99 ? 256L : jArr[i10]) ? 0.0d : (d - j13) / (r0 - j13)) * (j14 - j12)) + j12;
+        return this.a[d0.e(this.b, j3, true)];
     }
 
-    @Override // v3.f
+    @Override // v3.g
     public final long d() {
-        return this.f;
+        return this.e;
     }
 
-    @Override // v3.f
+    @Override // v3.g
     public final long e() {
-        return this.a + this.b;
+        return this.d;
     }
 
     @Override // c3.b0
     public final boolean f() {
-        return this.g != null;
+        return true;
     }
 
     @Override // c3.b0
     public final a0 j(long j3) {
-        double d;
-        double d10;
-        boolean f7 = f();
-        int i10 = this.b;
-        long j10 = this.a;
-        if (!f7) {
-            c0 c0Var = new c0(0L, j10 + i10);
+        long[] jArr = this.a;
+        int e = d0.e(jArr, j3, true);
+        long j10 = jArr[e];
+        long[] jArr2 = this.b;
+        c0 c0Var = new c0(j10, jArr2[e]);
+        if (j10 >= j3 || e == jArr.length - 1) {
             return new a0(c0Var, c0Var);
         }
-        long i11 = d0.i(j3, 0L, this.c);
-        double d11 = (i11 * 100.0d) / this.c;
-        double d12 = 0.0d;
-        if (d11 <= 0.0d) {
-            d = 256.0d;
-        } else if (d11 >= 100.0d) {
-            d = 256.0d;
-            d12 = 256.0d;
-        } else {
-            int i12 = (int) d11;
-            long[] jArr = this.g;
-            e2.d.h(jArr);
-            double d13 = jArr[i12];
-            if (i12 == 99) {
-                d = 256.0d;
-                d10 = 256.0d;
-            } else {
-                d = 256.0d;
-                d10 = jArr[i12 + 1];
-            }
-            d12 = ((d10 - d13) * (d11 - i12)) + d13;
-        }
-        long j11 = this.e;
-        c0 c0Var2 = new c0(i11, j10 + d0.i(Math.round((d12 / d) * j11), i10, j11 - 1));
-        return new a0(c0Var2, c0Var2);
+        int i10 = e + 1;
+        return new a0(c0Var, new c0(jArr[i10], jArr2[i10]));
     }
 
-    @Override // v3.f
+    @Override // v3.g
     public final int k() {
-        return this.d;
+        return this.f;
     }
 
     @Override // c3.b0

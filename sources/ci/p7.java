@@ -1,41 +1,42 @@
 package ci;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Path;
-import org.telegram.messenger.camera.CameraView;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class p7 extends CameraView {
-    public final Path a;
-    public final /* synthetic */ q7 b;
+public final /* synthetic */ class p7 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ t7 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p7(q7 q7Var, Context context) {
-        super(context, true, false);
-        this.b = q7Var;
-        this.a = new Path();
+    public /* synthetic */ p7(t7 t7Var, int i10) {
+        this.a = i10;
+        this.b = t7Var;
     }
 
-    @Override // org.telegram.messenger.camera.CameraView, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        canvas.save();
-        Path path = this.a;
-        path.rewind();
-        path.addCircle(getWidth() / 2.0f, getHeight() / 2.0f, Math.min(getWidth() / 2.0f, getHeight() / 2.0f), Path.Direction.CW);
-        canvas.clipPath(path);
-        super.dispatchDraw(canvas);
-        canvas.restore();
-    }
-
-    @Override // org.telegram.messenger.camera.CameraView
-    public final void receivedAmplitude(double d) {
-        ((p) this.b).F.setAmplitude(d);
-    }
-
-    @Override // org.telegram.messenger.camera.CameraView
-    public final boolean square() {
-        return true;
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        switch (this.a) {
+            case 0:
+                s7 s7Var = (s7) obj;
+                t7 t7Var = this.b;
+                t7Var.H = null;
+                t7Var.E = s7Var;
+                t7Var.y = s7Var != null;
+                t7Var.a();
+                t7Var.invalidate();
+                ha haVar = t7Var.b;
+                if (haVar != null) {
+                    haVar.run();
+                    break;
+                }
+                break;
+            default:
+                org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) obj;
+                s7 s7Var2 = this.b.E;
+                if (s7Var2 != null || n2Var == null) {
+                    s7Var2.c(n2Var);
+                    break;
+                }
+        }
     }
 }

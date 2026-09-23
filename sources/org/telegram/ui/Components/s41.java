@@ -1,52 +1,45 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.text.TextUtils;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class s41 {
-    public final /* synthetic */ b51 a;
-    public final /* synthetic */ e51 b;
+public final class s41 extends xm0 {
+    public final /* synthetic */ d51 h;
 
-    public s41(e51 e51Var, b51 b51Var) {
-        this.b = e51Var;
-        this.a = b51Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public s41(d51 d51Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, 14.0f, d6Var);
+        this.h = d51Var;
     }
 
-    public final int a() {
-        return this.b.s.v;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:11:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0029  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void b(boolean z10) {
-        e51 e51Var = this.b;
-        u41 u41Var = e51Var.n;
-        if (z10) {
-            s4.h0 adapter = u41Var.getAdapter();
-            gg.g2 g2Var = e51Var.v;
-            if (adapter != g2Var) {
-                u41Var.setAdapter(g2Var);
-                if (u41Var.getAdapter().h() <= 0) {
-                    e51Var.r.i1(0, AndroidUtilities.dp(58.0f) + (-u41Var.getPaddingTop()) + e51Var.E, false);
-                    return;
-                }
-                return;
-            }
+    @Override // org.telegram.ui.Components.xm0
+    public final void a(String str) {
+        gg.g2 g2Var = this.h.v;
+        gg.e2 e2Var = g2Var.S;
+        int i10 = g2Var.c;
+        if (g2Var.N != 0) {
+            ConnectionsManager.getInstance(i10).cancelRequest(g2Var.N, true);
+            g2Var.N = 0;
         }
-        if (z10) {
-            return;
+        if (g2Var.O != 0) {
+            ConnectionsManager.getInstance(i10).cancelRequest(g2Var.O, true);
+            g2Var.O = 0;
         }
-        s4.h0 adapter2 = u41Var.getAdapter();
-        d51 d51Var = e51Var.s;
-        if (adapter2 == d51Var) {
-            return;
+        if (TextUtils.isEmpty(str)) {
+            g2Var.R = null;
+            g2Var.F.clear();
+            g2Var.I.clear();
+            g2Var.E.clear();
+            g2Var.e.b(false);
+            g2Var.l();
+        } else {
+            g2Var.R = str.toLowerCase();
         }
-        u41Var.setAdapter(d51Var);
-        if (u41Var.getAdapter().h() <= 0) {
-        }
+        AndroidUtilities.cancelRunOnUIThread(e2Var);
+        AndroidUtilities.runOnUIThread(e2Var, 300L);
     }
 }

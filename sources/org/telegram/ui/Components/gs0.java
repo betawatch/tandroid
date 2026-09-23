@@ -3,9 +3,9 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class gs0 extends t00 {
+public final class gs0 extends u00 {
     public final /* synthetic */ ur0 U;
     public final /* synthetic */ yu0 V;
 
@@ -16,12 +16,12 @@ public final class gs0 extends t00 {
         this.U = ur0Var;
     }
 
-    @Override // org.telegram.ui.Components.t00
+    @Override // org.telegram.ui.Components.u00
     public final int getColumnsCount() {
         return this.V.m1[yu0.p0(this.U.F) ? 1 : 0];
     }
 
-    @Override // org.telegram.ui.Components.t00
+    @Override // org.telegram.ui.Components.u00
     public final int getViewType() {
         setIsSingleCell(false);
         int i10 = this.U.F;
@@ -50,10 +50,10 @@ public final class gs0 extends t00 {
         return 6;
     }
 
-    @Override // org.telegram.ui.Components.t00, android.view.View
+    @Override // org.telegram.ui.Components.u00, android.view.View
     public final void onDraw(Canvas canvas) {
         yu0 yu0Var = this.V;
-        yu0Var.T0.setColor(yu0Var.h0(org.telegram.ui.ActionBar.i6.d6));
+        yu0Var.T0.setColor(yu0Var.h0(org.telegram.ui.ActionBar.h6.d6));
         canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), yu0Var.T0);
         super.onDraw(canvas);
     }

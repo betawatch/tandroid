@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class p implements e0 {
     public final c5.g a;
@@ -207,7 +207,7 @@ public final class p implements e0 {
                         b2.s sVar = new b2.s(rVar);
                         tg.d dVar = new tg.d(5, this, sVar);
                         of.b bVar = this.b;
-                        r5.e eVar = new r5.e(dVar, 9);
+                        r5.d dVar2 = new r5.d(dVar, 10);
                         lf.i iVar = new lf.i(5);
                         qb.b bVar2 = new qb.b(26);
                         if (this.c.W(sVar)) {
@@ -231,39 +231,39 @@ public final class p implements e0 {
                         b2.f0 f0Var4 = parse != null ? new b2.f0(parse, null, b0Var4.a != null ? new b2.c0(b0Var4) : uri, null, list3, null, a1Var, -9223372036854775807L) : uri;
                         b2.k0 k0Var3 = new b2.k0("", new b2.a0(yVar2), f0Var4, new b2.e0(d0Var), b2.n0.K, g0Var3);
                         f0Var4.getClass();
-                        aVarArr[i11] = new w0(k0Var3, bVar, eVar, iVar.A(k0Var3), bVar2, 1048576, sVar2);
+                        aVarArr[i11] = new v0(k0Var3, bVar, dVar2, iVar.A(k0Var3), bVar2, 1048576, sVar2);
                     } else {
                         of.b bVar3 = this.b;
                         bVar3.getClass();
-                        aVarArr[i10 + 1] = new l1((b2.j0) i0Var3.get(i10), bVar3, new qb.b(26));
+                        aVarArr[i10 + 1] = new k1((b2.j0) i0Var3.get(i10), bVar3, new qb.b(26));
                     }
                 }
-                a11 = new o0(aVarArr);
+                a11 = new n0(aVarArr);
             }
             b2.a0 a0Var3 = k0Var2.e;
             if (a0Var3.b != 0 || a0Var3.d != Long.MIN_VALUE || a0Var3.f) {
-                e eVar2 = new e(a11);
+                e eVar = new e(a11);
                 long j11 = a0Var3.b;
                 e2.d.b(j11 >= 0);
-                e2.d.g(!eVar2.h);
-                eVar2.b = j11;
+                e2.d.g(!eVar.h);
+                eVar.b = j11;
                 long j12 = a0Var3.d;
-                e2.d.g(!eVar2.h);
-                eVar2.c = j12;
+                e2.d.g(!eVar.h);
+                eVar.c = j12;
                 boolean z10 = !a0Var3.g;
-                e2.d.g(!eVar2.h);
-                eVar2.d = z10;
+                e2.d.g(!eVar.h);
+                eVar.d = z10;
                 boolean z11 = a0Var3.e;
-                e2.d.g(!eVar2.h);
-                eVar2.e = z11;
+                e2.d.g(!eVar.h);
+                eVar.e = z11;
                 boolean z12 = a0Var3.f;
-                e2.d.g(!eVar2.h);
-                eVar2.f = z12;
+                e2.d.g(!eVar.h);
+                eVar.f = z12;
                 boolean z13 = a0Var3.h;
-                e2.d.g(!eVar2.h);
-                eVar2.g = z13;
-                eVar2.h = true;
-                a11 = new h(eVar2);
+                e2.d.g(!eVar.h);
+                eVar.g = z13;
+                eVar.h = true;
+                a11 = new h(eVar);
             }
             k0Var2.b.getClass();
             if (k0Var2.b.d == null) {

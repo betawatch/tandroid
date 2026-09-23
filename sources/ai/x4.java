@@ -2,12 +2,12 @@ package ai;
 
 import android.animation.ValueAnimator;
 import android.view.View;
-import ci.ad;
+import ci.xc;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x4 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -29,14 +29,14 @@ public final /* synthetic */ class x4 implements ValueAnimator.AnimatorUpdateLis
                 z4 z4Var = (z4) this.b;
                 ValueAnimator valueAnimator2 = (ValueAnimator) this.c;
                 boolean[] zArr = (boolean[]) this.d;
-                f6 f6Var = z4Var.a;
-                f6Var.v3 = ((Float) valueAnimator2.getAnimatedValue()).floatValue();
-                f6Var.invalidate();
-                if (f6Var.v3 > 0.8f && !zArr[0]) {
+                e6 e6Var = z4Var.a;
+                e6Var.v3 = ((Float) valueAnimator2.getAnimatedValue()).floatValue();
+                e6Var.invalidate();
+                if (e6Var.v3 > 0.8f && !zArr[0]) {
                     zArr[0] = true;
-                    f6Var.q3 = true;
+                    e6Var.q3 = true;
                     try {
-                        f6Var.performHapticFeedback(3);
+                        e6Var.performHapticFeedback(3);
                         break;
                     } catch (Exception unused) {
                         return;
@@ -44,19 +44,19 @@ public final /* synthetic */ class x4 implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 1:
-                ci.r6 r6Var = (ci.r6) this.b;
+                ci.q6 q6Var = (ci.q6) this.b;
                 View view = (View) this.c;
                 View view2 = (View) this.d;
-                r6Var.a1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                r6Var.W0.invalidate();
-                r6Var.T0.invalidate();
-                r6Var.U0.invalidate();
+                q6Var.a1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                q6Var.W0.invalidate();
+                q6Var.T0.invalidate();
+                q6Var.U0.invalidate();
                 int i10 = 0;
-                while (i10 < r6Var.W0.getChildCount()) {
-                    r6Var.W0.getChildAt(i10).setAlpha(((i10 == r6Var.Z0 ? r6Var.a1 : i10 == r6Var.Y0 ? 1.0f - r6Var.a1 : 0.0f) * 0.4f) + 0.6f);
+                while (i10 < q6Var.W0.getChildCount()) {
+                    q6Var.W0.getChildAt(i10).setAlpha(((i10 == q6Var.Z0 ? q6Var.a1 : i10 == q6Var.Y0 ? 1.0f - q6Var.a1 : 0.0f) * 0.4f) + 0.6f);
                     i10++;
                 }
-                float interpolation = qr.f.getInterpolation(r6Var.a1);
+                float interpolation = rr.f.getInterpolation(q6Var.a1);
                 if (view != null && view2 != null) {
                     float f7 = 1.0f - interpolation;
                     float f10 = (f7 * 0.4f) + 0.6f;
@@ -73,15 +73,15 @@ public final /* synthetic */ class x4 implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 2:
-                ad adVar = (ad) this.b;
+                xc xcVar = (xc) this.b;
                 AtomicBoolean atomicBoolean = (AtomicBoolean) this.c;
                 ci.u uVar = (ci.u) this.d;
-                adVar.getClass();
+                xcVar.getClass();
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 Math.abs(floatValue - 0.5f);
                 if (floatValue >= 0.5f && !atomicBoolean.get()) {
                     atomicBoolean.set(true);
-                    adVar.setDrawable(uVar);
+                    xcVar.setDrawable(uVar);
                     break;
                 }
                 break;
@@ -116,7 +116,7 @@ public final /* synthetic */ class x4 implements ValueAnimator.AnimatorUpdateLis
                     p0Var.f1.getChildAt(i11).setAlpha(((i11 == p0Var.h1 ? p0Var.i1 : i11 == p0Var.g1 ? 1.0f - p0Var.i1 : 0.0f) * 0.4f) + 0.6f);
                     i11++;
                 }
-                float interpolation2 = qr.f.getInterpolation(p0Var.i1);
+                float interpolation2 = rr.f.getInterpolation(p0Var.i1);
                 if (view3 != null && view4 != null) {
                     float f12 = 1.0f - interpolation2;
                     float f13 = (f12 * 0.4f) + 0.6f;

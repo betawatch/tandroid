@@ -4,16 +4,16 @@ import android.animation.ValueAnimator;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class jf implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ bo b;
+    public final /* synthetic */ xn b;
     public final /* synthetic */ View c;
 
-    public /* synthetic */ jf(bo boVar, org.telegram.ui.Cells.w0 w0Var, int i10) {
+    public /* synthetic */ jf(xn xnVar, org.telegram.ui.Cells.w0 w0Var, int i10) {
         this.a = i10;
-        this.b = boVar;
+        this.b = xnVar;
         this.c = w0Var;
     }
 
@@ -21,20 +21,20 @@ public final /* synthetic */ class jf implements ValueAnimator.AnimatorUpdateLis
     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                bo boVar = this.b;
-                boVar.getClass();
+                xn xnVar = this.b;
+                xnVar.getClass();
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                boVar.A9 = AndroidUtilities.dp(30.0f) * floatValue;
-                boVar.o9();
+                xnVar.A9 = AndroidUtilities.dp(30.0f) * floatValue;
+                xnVar.o9();
                 this.c.setAlpha(floatValue);
                 break;
             default:
-                bo boVar2 = this.b;
-                boVar2.getClass();
+                xn xnVar2 = this.b;
+                xnVar2.getClass();
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                boVar2.A9 = AndroidUtilities.dp(30.0f) * floatValue2;
-                boVar2.o9();
-                boVar2.r9();
+                xnVar2.A9 = AndroidUtilities.dp(30.0f) * floatValue2;
+                xnVar2.o9();
+                xnVar2.r9();
                 this.c.setAlpha(floatValue2);
                 break;
         }

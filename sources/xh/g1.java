@@ -1,88 +1,41 @@
 package xh;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import org.telegram.tgnet.TLObject;
-import yh.x7;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final class g1 extends FrameLayout {
+public final /* synthetic */ class g1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ j1 b;
+    public final /* synthetic */ boolean c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ g1(Object obj, Context context, int i10) {
-        super(context);
+    public /* synthetic */ g1(j1 j1Var, boolean z10, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = j1Var;
+        this.c = z10;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 2:
-                if (((x7) this.b).f0) {
-                    return false;
-                }
-                return super.dispatchTouchEvent(motionEvent);
-            default:
-                return super.dispatchTouchEvent(motionEvent);
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        switch (this.a) {
-            case 3:
-                super.onLayout(z10, i10, i11, i12, i13);
-                zg.q qVar = (zg.q) this.b;
-                if (qVar.K && z10) {
-                    qVar.w.setTranslationY(-qVar.c.getMeasuredHeight());
-                    int measuredHeight = qVar.c.getMeasuredHeight();
-                    ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) qVar.y.getLayoutParams();
-                    marginLayoutParams.bottomMargin = measuredHeight;
-                    qVar.y.setLayoutParams(marginLayoutParams);
-                    break;
-                }
-                break;
-            default:
-                super.onLayout(z10, i10, i11, i12, i13);
-                break;
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i10, int i11) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                super.onMeasure(i10, i11);
-                ((i1) this.b).K.measure(View.MeasureSpec.makeMeasureSpec(getMeasuredWidth(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
-                break;
-            default:
-                super.onMeasure(i10, i11);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void setTranslationY(float f7) {
-        switch (this.a) {
-            case 1:
-                super.setTranslationY(f7);
-                yh.z3 z3Var = (yh.z3) this.b;
-                yh.k2 k2Var = z3Var.d0;
-                if (k2Var != null && k2Var.getVisibility() == 0) {
-                    z3Var.d0.invalidate();
+                boolean z10 = this.c;
+                j1 j1Var = this.b;
+                if (!z10) {
+                    j1Var.G.setVisibility(8);
+                    break;
+                } else {
+                    j1Var.getClass();
                     break;
                 }
-                break;
             default:
-                super.setTranslationY(f7);
-                break;
+                boolean z11 = this.c;
+                j1 j1Var2 = this.b;
+                if (!z11) {
+                    j1Var2.v.setVisibility(8);
+                    break;
+                } else {
+                    j1Var2.getClass();
+                    break;
+                }
         }
     }
 }

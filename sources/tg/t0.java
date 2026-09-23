@@ -1,6 +1,6 @@
 package tg;
 
-import ai.o6;
+import ai.n6;
 import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
@@ -12,20 +12,20 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.kl0;
+import org.telegram.ui.Components.bb;
 import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.oc;
-import org.telegram.ui.Components.vc;
-import org.telegram.ui.Components.za;
-import org.telegram.ui.o20;
-import org.telegram.ui.wy0;
+import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.xc;
+import org.telegram.ui.l20;
+import org.telegram.ui.py0;
 import w7.x5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class t0 extends za {
+public final class t0 extends bb {
     public final ArrayList X;
     public final ArrayList Y;
     public final TLRPC.Chat Z;
@@ -51,28 +51,28 @@ public final class t0 extends za {
                 this.Y.add(tL_myBoost2);
             }
         }
-        o20 o20Var = new o20(getContext(), this.resourcesProvider, this.d);
-        o20Var.setClickable(true);
-        o20Var.setOrientation(1);
-        o20Var.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
-        o20Var.setBackgroundColor(i6.v0(i6.h5, this.resourcesProvider));
+        l20 l20Var = new l20(getContext(), this.resourcesProvider, this.d);
+        l20Var.setClickable(true);
+        l20Var.setOrientation(1);
+        l20Var.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
+        l20Var.setBackgroundColor(h6.v0(h6.h5, this.resourcesProvider));
         e0 e0Var = new e0(getContext(), this.resourcesProvider);
         this.a0 = e0Var;
         e0Var.k();
         e0Var.setCounterColor(-6785796);
-        e0Var.setOnClickListener(new wy0(17, this, chat));
-        o20Var.addView(e0Var, x5.q(-1, 48, 87));
+        e0Var.setOnClickListener(new py0(17, this, chat));
+        l20Var.addView(e0Var, x5.q(-1, 48, 87));
         ViewGroup viewGroup = this.containerView;
         int i11 = this.backgroundPaddingLeft;
-        viewGroup.addView(o20Var, x5.f(-2.0f, 87, i11, 0, i11, 0));
-        ll0 ll0Var = this.d;
+        viewGroup.addView(l20Var, x5.f(-2.0f, 87, i11, 0, i11, 0));
+        ml0 ml0Var = this.d;
         int i12 = this.backgroundPaddingLeft;
-        ll0Var.setPadding(i12, 0, i12, AndroidUtilities.dp(64.0f));
-        this.d.setOnItemClickListener(new o6(24, this, chat));
+        ml0Var.setPadding(i12, 0, i12, AndroidUtilities.dp(64.0f));
+        this.d.setOnItemClickListener(new n6(24, this, chat));
         fixNavigationBar();
         N();
         S(false);
-        oc.a(this.container, new l0());
+        qc.a(this.container, new l0());
     }
 
     public static void P(t0 t0Var, TLRPC.Chat chat, View view) {
@@ -80,7 +80,7 @@ public final class t0 extends za {
         if (view instanceof xg.l) {
             xg.l lVar = (xg.l) view;
             if (lVar.getBoost().cooldown_until_date > 0) {
-                new vc(t0Var.container, t0Var.resourcesProvider).G(R.raw.chats_infotip, 5, AndroidUtilities.replaceTags(LocaleController.formatPluralString("BoostingWaitWarningPlural", (int) MessagesController.getInstance(UserConfig.selectedAccount).boostsPerSentGift, new Object[0]))).k(true);
+                new xc(t0Var.container, t0Var.resourcesProvider).G(R.raw.chats_infotip, 5, AndroidUtilities.replaceTags(LocaleController.formatPluralString("BoostingWaitWarningPlural", (int) MessagesController.getInstance(UserConfig.selectedAccount).boostsPerSentGift, new Object[0]))).k(true);
                 return;
             }
             if (arrayList.contains(lVar.getBoost())) {
@@ -124,12 +124,12 @@ public final class t0 extends za {
         this.c0.start();
     }
 
-    @Override // org.telegram.ui.Components.za
-    public final kl0 v(ll0 ll0Var) {
+    @Override // org.telegram.ui.Components.bb
+    public final ll0 v(ml0 ml0Var) {
         return new n0(this);
     }
 
-    @Override // org.telegram.ui.Components.za
+    @Override // org.telegram.ui.Components.bb
     public final CharSequence y() {
         return LocaleController.getString(R.string.BoostingReassignBoost);
     }

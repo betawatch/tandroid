@@ -6,11 +6,11 @@ import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.x5;
+import org.telegram.ui.Components.z5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class m extends x5 {
+public final class m extends z5 {
     public final Bitmap a;
 
     public m(q qVar) {
@@ -22,7 +22,7 @@ public final class m extends x5 {
         mutate.draw(new Canvas(createBitmap));
     }
 
-    @Override // org.telegram.ui.Components.x5, android.text.style.ReplacementSpan
+    @Override // org.telegram.ui.Components.z5, android.text.style.ReplacementSpan
     public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
         super.draw(canvas, charSequence, i10, i11, f7, i12, i13, i14, paint);
         canvas.save();
@@ -33,7 +33,7 @@ public final class m extends x5 {
         canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.x5, android.text.style.ReplacementSpan
+    @Override // org.telegram.ui.Components.z5, android.text.style.ReplacementSpan
     public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
         return AndroidUtilities.dp(5.0f) + super.getSize(paint, charSequence, i10, i11, fontMetricsInt);
     }

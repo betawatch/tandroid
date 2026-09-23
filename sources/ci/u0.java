@@ -13,9 +13,9 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.tp;
+import org.telegram.ui.Components.up;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class u0 extends ImageView {
     public int a;
@@ -23,17 +23,17 @@ public final class u0 extends ImageView {
     public boolean c;
     public boolean d;
     public boolean e;
-    public tp f;
-    public la h;
+    public up f;
+    public ia h;
     public t0 n;
-    public o8 r;
+    public l8 r;
     public r0 s;
     public Uri v;
     public boolean w;
     public boolean x;
 
     public static void a(u0 u0Var) {
-        la laVar = u0Var.h;
+        ia iaVar = u0Var.h;
         int i10 = Build.VERSION.SDK_INT;
         if (i10 >= 23 && ((i10 <= 28 || BuildVars.NO_SCOPED_STORAGE) && u0Var.getContext().checkSelfPermission("android.permission.WRITE_EXTERNAL_STORAGE") != 0)) {
             Activity findActivity = AndroidUtilities.findActivity(u0Var.getContext());
@@ -70,23 +70,23 @@ public final class u0 extends ImageView {
             r0Var.a(true);
             u0Var.s = null;
         }
-        if (laVar != null) {
+        if (iaVar != null) {
             u0Var.e = true;
-            laVar.run(new o0(u0Var, 0));
+            iaVar.run(new o0(u0Var, 0));
         }
         u0Var.d();
-        if (laVar == null) {
+        if (iaVar == null) {
             u0Var.b();
         }
     }
 
     public final void b() {
-        o8 o8Var;
-        if (!this.e || (o8Var = this.r) == null) {
+        l8 l8Var;
+        if (!this.e || (l8Var = this.r) == null) {
             return;
         }
         this.e = false;
-        if (o8Var.E()) {
+        if (l8Var.E()) {
             this.d = true;
             t0 t0Var = new t0(getContext());
             this.n = t0Var;
@@ -144,9 +144,9 @@ public final class u0 extends ImageView {
         }
     }
 
-    public void setEntry(o8 o8Var) {
+    public void setEntry(l8 l8Var) {
         this.v = null;
-        this.r = o8Var;
+        this.r = l8Var;
         r0 r0Var = this.s;
         if (r0Var != null) {
             r0Var.a(true);
@@ -157,7 +157,7 @@ public final class u0 extends ImageView {
             t0Var.a();
             this.n = null;
         }
-        if (o8Var == null) {
+        if (l8Var == null) {
             this.c = false;
             d();
         }

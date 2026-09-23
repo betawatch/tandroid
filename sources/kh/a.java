@@ -1,36 +1,37 @@
 package kh;
 
-import i2.g0;
-import le.d;
+import i2.h0;
+import le.c;
 import le.e;
+import le.f;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.rr;
 import org.telegram.ui.Components.voip.v2;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class a implements d {
-    public final e a;
-    public final e b;
-    public final le.b c;
-    public final le.b d;
+public final class a implements e {
+    public final f a;
+    public final f b;
+    public final c c;
+    public final c d;
     public final v2 e;
-    public final g0 f;
+    public final h0 f;
     public boolean h;
 
-    public a(v2 v2Var, g0 g0Var) {
-        qr qrVar = qr.h;
-        this.a = new e(1, this, qrVar, 350L);
-        this.b = new e(2, this, qrVar, 350L);
-        this.c = new le.b(0, this, qrVar, 350L, true);
-        this.d = new le.b(3, this, qrVar, 350L, true);
+    public a(v2 v2Var, h0 h0Var) {
+        rr rrVar = rr.h;
+        this.a = new f(1, this, rrVar, 350L);
+        this.b = new f(2, this, rrVar, 350L);
+        this.c = new c(0, this, rrVar, 350L, true);
+        this.d = new c(3, this, rrVar, 350L, true);
         this.h = true;
         this.e = v2Var;
-        this.f = g0Var;
+        this.f = h0Var;
     }
 
-    @Override // le.d
-    public final void D(int i10, float f7, float f10, e eVar) {
+    @Override // le.e
+    public final void D(int i10, float f7, float f10, f fVar) {
         v2 v2Var = this.e;
         if (i10 == 1) {
             v2Var.setTranslationX(this.a.e);
@@ -38,24 +39,24 @@ public final class a implements d {
         if (i10 == 2) {
             v2Var.setTranslationY(this.b.e);
         }
-        le.b bVar = this.d;
-        le.b bVar2 = this.c;
+        c cVar = this.d;
+        c cVar2 = this.c;
         if (i10 == 0) {
-            v2Var.setAlpha(AndroidUtilities.lerp(0.5f, 1.0f, bVar.e) * bVar2.e);
+            v2Var.setAlpha(AndroidUtilities.lerp(0.5f, 1.0f, cVar.e) * cVar2.e);
             v2Var.setScaleX(AndroidUtilities.lerp(0.3f, 1.0f, f7));
             v2Var.setScaleY(AndroidUtilities.lerp(0.3f, 1.0f, f7));
             v2Var.setVisibility(f7 > 0.0f ? 0 : 8);
         }
         if (i10 == 3) {
-            v2Var.setAlpha(AndroidUtilities.lerp(0.5f, 1.0f, bVar.e) * bVar2.e);
+            v2Var.setAlpha(AndroidUtilities.lerp(0.5f, 1.0f, cVar.e) * cVar2.e);
         }
-        g0 g0Var = this.f;
-        if (g0Var != null) {
-            g0Var.run();
+        h0 h0Var = this.f;
+        if (h0Var != null) {
+            h0Var.run();
         }
     }
 
-    @Override // le.d
+    @Override // le.e
     public final /* synthetic */ void C(float f7, int i10) {
     }
 }

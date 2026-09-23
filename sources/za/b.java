@@ -2,7 +2,7 @@ package za;
 
 import android.os.Build;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class b {
     public final String a;
@@ -38,10 +38,10 @@ public final class b {
     }
 
     public final int hashCode() {
-        return this.b.hashCode() + ((o.b.hashCode() + a4.a.h((((Build.MODEL.hashCode() + (this.a.hashCode() * 31)) * 31) + 46672439) * 31, 31, Build.VERSION.RELEASE)) * 31);
+        return this.b.hashCode() + ((q.b.hashCode() + a4.a.h((((Build.MODEL.hashCode() + (this.a.hashCode() * 31)) * 31) + 46672439) * 31, 31, Build.VERSION.RELEASE)) * 31);
     }
 
     public final String toString() {
-        return "ApplicationInfo(appId=" + this.a + ", deviceModel=" + Build.MODEL + ", sessionSdkVersion=1.2.0, osVersion=" + Build.VERSION.RELEASE + ", logEnvironment=" + o.b + ", androidAppInfo=" + this.b + ')';
+        return "ApplicationInfo(appId=" + this.a + ", deviceModel=" + Build.MODEL + ", sessionSdkVersion=1.2.0, osVersion=" + Build.VERSION.RELEASE + ", logEnvironment=" + q.b + ", androidAppInfo=" + this.b + ')';
     }
 }

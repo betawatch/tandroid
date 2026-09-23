@@ -10,10 +10,10 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.vl;
-import org.telegram.ui.ActionBar.y5;
+import org.telegram.messenger.ul;
+import org.telegram.ui.ActionBar.x5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class q1 extends TextView {
     public boolean a;
@@ -35,7 +35,7 @@ public final class q1 extends TextView {
         super.onDraw(canvas);
         canvas.restore();
         if (this.a) {
-            int y3 = vl.y(16.0f, getHeight(), 2);
+            int y3 = ul.y(16.0f, getHeight(), 2);
             if (LocaleController.isRTL) {
                 this.b.setBounds(AndroidUtilities.dp(7.0f), y3, AndroidUtilities.dp(23.0f), AndroidUtilities.dp(16.0f) + y3);
             } else {
@@ -49,10 +49,10 @@ public final class q1 extends TextView {
         this.a = z10;
         if (z10) {
             setPadding(AndroidUtilities.dp(LocaleController.isRTL ? 27.0f : 12.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(LocaleController.isRTL ? 12.0f : 27.0f), AndroidUtilities.dp(6.0f));
-            setBackground(y5.d(new float[]{AndroidUtilities.dp(32.0f)}, 0, y5.b(1090519039)));
+            setBackground(x5.d(new float[]{AndroidUtilities.dp(32.0f)}, 0, x5.b(1090519039)));
         } else {
             setPadding(AndroidUtilities.dp(24.0f), AndroidUtilities.dp(14.0f), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(14.0f));
-            setBackground(y5.d(new float[]{0.0f}, 0, y5.b(-14145495)));
+            setBackground(x5.d(new float[]{0.0f}, 0, x5.b(-14145495)));
         }
         if (this.a && this.b == null) {
             Drawable drawable = getContext().getDrawable(R.drawable.photo_expand);

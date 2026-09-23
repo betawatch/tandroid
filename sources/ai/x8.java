@@ -12,7 +12,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class x8 {
     public final int a;
@@ -91,7 +91,7 @@ public final class x8 {
         }
         TL_stories.TL_getAlbums tL_getAlbums = new TL_stories.TL_getAlbums();
         tL_getAlbums.peer = MessagesController.getInstance(i10).getInputPeer(j3);
-        ConnectionsManager.getInstance(i10).sendRequest(tL_getAlbums, new m8(this, 2));
+        ConnectionsManager.getInstance(i10).sendRequest(tL_getAlbums, new n8(this, 2));
     }
 
     public final void e() {

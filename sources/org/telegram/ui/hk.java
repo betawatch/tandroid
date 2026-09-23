@@ -1,40 +1,34 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import org.telegram.ui.Components.FragmentContextView;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class hk extends FragmentContextView {
-    public final /* synthetic */ int P0;
-    public final /* synthetic */ bo Q0;
+public final class hk extends org.telegram.ui.Components.uo {
+    public final /* synthetic */ xn f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hk(bo boVar, Context context, bo boVar2, org.telegram.ui.ActionBar.e6 e6Var, int i10) {
-        super(context, boVar2, null, true, e6Var);
-        this.P0 = i10;
-        switch (i10) {
-            case 1:
-                this.Q0 = boVar;
-                super(context, boVar2, null, false, e6Var);
-                break;
-            default:
-                this.Q0 = boVar;
-                break;
-        }
+    public hk(xn xnVar, Context context) {
+        super(context);
+        this.f = xnVar;
     }
 
-    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
-    public final void setVisibility(int i10) {
-        switch (this.P0) {
-            case 0:
-                bo boVar = this.Q0;
-                boVar.M0.i(boVar.a2, i10 == 0, true);
-                break;
-            default:
-                bo boVar2 = this.Q0;
-                boVar2.M0.i(boVar2.Y1, i10 == 0, true);
-                break;
+    @Override // org.telegram.ui.Components.uo
+    public final void a(boolean z10) {
+        xn xnVar = this.f;
+        xnVar.t7();
+        xnVar.r7();
+        xnVar.u7();
+        xnVar.v7();
+        al alVar = xnVar.ab;
+        if (alVar != null) {
+            alVar.setTranslationY(xnVar.w9 + getCurrentHeight());
+        }
+        if (!z10) {
+            xnVar.o9();
+        } else {
+            xnVar.D9 = true;
+            xnVar.jc();
         }
     }
 }

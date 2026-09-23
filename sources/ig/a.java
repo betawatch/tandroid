@@ -3,9 +3,9 @@ package ig;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import java.util.ArrayList;
-import org.telegram.messenger.vl;
+import org.telegram.messenger.ul;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class a extends g {
     @Override // ig.g
@@ -214,7 +214,7 @@ public final class a extends g {
                                 arrayList2 = arrayList3;
                                 f10 = bVar.e;
                             }
-                            float c10 = vl.c(j3, f10, f12, 1.0f) * (i12 - measuredHeight2);
+                            float c10 = ul.c(j3, f10, f12, 1.0f) * (i12 - measuredHeight2);
                             fArr[i17] = f7;
                             fArr[i17 + 1] = c10;
                             int i19 = i17 + 3;

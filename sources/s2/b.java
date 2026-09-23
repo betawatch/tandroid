@@ -13,19 +13,18 @@ import e2.d0;
 import e2.p;
 import ei.d5;
 import hg.c;
-import i2.b0;
-import i2.e0;
+import i2.c0;
 import i2.f;
+import i2.f0;
 import java.util.ArrayList;
 import n4.y;
-import u2.f0;
 import w7.l;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class b extends f implements Handler.Callback {
     public final a I;
-    public final b0 J;
+    public final c0 J;
     public final Handler K;
     public final l3.a L;
     public l M;
@@ -35,10 +34,10 @@ public final class b extends f implements Handler.Callback {
     public p0 Q;
     public long R;
 
-    public b(b0 b0Var, Looper looper) {
+    public b(c0 c0Var, Looper looper) {
         super(5);
         Handler handler;
-        this.J = b0Var;
+        this.J = c0Var;
         if (looper == null) {
             handler = null;
         } else {
@@ -97,10 +96,10 @@ public final class b extends f implements Handler.Callback {
     }
 
     public final void E(p0 p0Var) {
-        b0 b0Var = this.J;
-        e0 e0Var = b0Var.a;
-        n0 n0Var = e0Var.i0;
-        p pVar = e0Var.m;
+        c0 c0Var = this.J;
+        f0 f0Var = c0Var.a;
+        n0 n0Var = f0Var.i0;
+        p pVar = f0Var.m;
         m0 a2 = n0Var.a();
         int i10 = 0;
         while (true) {
@@ -111,13 +110,13 @@ public final class b extends f implements Handler.Callback {
             o0VarArr[i10].b(a2);
             i10++;
         }
-        e0Var.i0 = new n0(a2);
-        n0 b12 = e0Var.b1();
-        if (!b12.equals(e0Var.O)) {
-            e0Var.O = b12;
-            pVar.c(14, new d5(b0Var, 11));
+        f0Var.i0 = new n0(a2);
+        n0 b12 = f0Var.b1();
+        if (!b12.equals(f0Var.O)) {
+            f0Var.O = b12;
+            pVar.c(14, new d5(c0Var, 10));
         }
-        pVar.c(28, new d5(p0Var, 12));
+        pVar.c(28, new d5(p0Var, 11));
         pVar.b();
     }
 
@@ -160,7 +159,7 @@ public final class b extends f implements Handler.Callback {
     }
 
     @Override // i2.f
-    public final void v(s[] sVarArr, long j3, long j10, f0 f0Var) {
+    public final void v(s[] sVarArr, long j3, long j10, u2.f0 f0Var) {
         this.M = this.I.a(sVarArr[0]);
         p0 p0Var = this.Q;
         if (p0Var != null) {

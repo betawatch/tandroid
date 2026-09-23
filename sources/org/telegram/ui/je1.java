@@ -1,66 +1,106 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class je1 extends org.telegram.ui.Cells.t1 {
-    public final Path Ge;
-    public final Paint He;
-    public final /* synthetic */ int Ie;
-    public final /* synthetic */ int Je;
-    public final /* synthetic */ int Ke;
-    public final /* synthetic */ le1 Le;
+public final /* synthetic */ class je1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ke1 b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ int d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public je1(le1 le1Var, Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var, int i11, int i12, int i13) {
-        super(context, i10, false, null, e6Var);
-        this.Le = le1Var;
-        this.Ie = i11;
-        this.Je = i12;
-        this.Ke = i13;
-        this.Ge = new Path();
-        this.He = new Paint(1);
+    public /* synthetic */ je1(ke1 ke1Var, String str, int i10, int i11) {
+        this.a = i11;
+        this.b = ke1Var;
+        this.c = str;
+        this.d = i10;
     }
 
-    @Override // org.telegram.ui.Cells.t1
-    public final void Y1(Canvas canvas) {
-        this.i6 = 0;
-        this.j6 = this.Y5.size() - 1;
-        super.Y1(canvas);
-    }
-
-    @Override // org.telegram.ui.Cells.t1, android.view.View
-    public final void onDraw(Canvas canvas) {
-        canvas.save();
-        int O2 = O2(this.Ie);
-        float H2 = H2(O2);
-        float G2 = G2(O2);
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(getPollButtonsLeft(), H2, getPollButtonsRight(), G2);
-        Path path = this.Ge;
-        path.rewind();
-        path.addRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), Path.Direction.CW);
-        Paint paint = this.He;
-        paint.setColor(0);
-        paint.setShadowLayer(AndroidUtilities.dp(2.0f), 0.0f, AndroidUtilities.dp(0.66f), org.telegram.ui.ActionBar.i6.l1(this.Le.x * 0.2f, -16777216));
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), paint);
-        canvas.clipPath(path);
-        S1(canvas);
-        canvas.restore();
-    }
-
-    @Override // org.telegram.ui.Cells.t1, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        setMeasuredDimension(this.Je, this.Ke);
-    }
-
-    @Override // org.telegram.ui.Cells.t1, android.view.View
-    public final void setPressed(boolean z10) {
+    /* JADX WARN: Removed duplicated region for block: B:38:0x009d A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x00ac A[SYNTHETIC] */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ke1 ke1Var = this.b;
+                String str = this.c;
+                int i10 = this.d;
+                ke1Var.getClass();
+                Utilities.searchQueue.postRunnable(new je1(ke1Var, str, i10, 1));
+                break;
+            default:
+                ke1 ke1Var2 = this.b;
+                String str2 = this.c;
+                int i11 = this.d;
+                le1 le1Var = ke1Var2.h;
+                ArrayList arrayList = le1Var.f;
+                String lowerCase = str2.trim().toLowerCase();
+                String str3 = null;
+                if (lowerCase.length() != 0) {
+                    String translitString = LocaleController.getInstance().getTranslitString(lowerCase);
+                    if (!lowerCase.equals(translitString) && translitString.length() != 0) {
+                        str3 = translitString;
+                    }
+                    int i12 = (str3 != null ? 1 : 0) + 1;
+                    String[] strArr = new String[i12];
+                    strArr[0] = lowerCase;
+                    if (str3 != null) {
+                        strArr[1] = str3;
+                    }
+                    ArrayList arrayList2 = new ArrayList();
+                    int i13 = 0;
+                    ArrayList arrayList3 = new ArrayList();
+                    int i14 = 0;
+                    while (i14 < arrayList.size()) {
+                        TLRPC.Chat chat = (TLRPC.Chat) arrayList.get(i14);
+                        int i15 = 0;
+                        boolean z10 = false;
+                        while (true) {
+                            if (i15 >= 2) {
+                                break;
+                            }
+                            String publicUsername = i15 == 0 ? chat.title : ChatObject.getPublicUsername(chat);
+                            if (publicUsername != null) {
+                                String lowerCase2 = publicUsername.toLowerCase();
+                                while (i13 < i12) {
+                                    String str4 = strArr[i13];
+                                    if (!lowerCase2.startsWith(str4)) {
+                                        int i16 = i13;
+                                        if (!org.telegram.messenger.z0.w(" ", str4, lowerCase2)) {
+                                            i13 = i16 + 1;
+                                        }
+                                    }
+                                    z10 = true;
+                                    if (!z10) {
+                                        arrayList2.add(chat);
+                                        arrayList3.add((String) le1Var.h.get(i14));
+                                    }
+                                }
+                                if (!z10) {
+                                }
+                            }
+                            i15++;
+                            i13 = 0;
+                        }
+                        i14++;
+                        i13 = 0;
+                    }
+                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.r11(ke1Var2, i11, arrayList2, arrayList3, 12));
+                    break;
+                } else {
+                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.r11(ke1Var2, i11, str3, str3, 12));
+                    break;
+                }
+                break;
+        }
     }
 }

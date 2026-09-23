@@ -1,40 +1,36 @@
 package org.telegram.ui.web;
 
-import android.content.DialogInterface;
-import android.webkit.JsResult;
+import android.view.KeyEvent;
+import android.webkit.JsPromptResult;
+import android.widget.TextView;
+import org.telegram.ui.Components.cu;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class s0 implements DialogInterface.OnDismissListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ JsResult c;
+public final class s0 implements TextView.OnEditorActionListener {
+    public final /* synthetic */ boolean[] a;
+    public final /* synthetic */ JsPromptResult b;
+    public final /* synthetic */ cu c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.b2 d;
 
-    public /* synthetic */ s0(boolean[] zArr, JsResult jsResult, int i10) {
-        this.a = i10;
-        this.b = zArr;
-        this.c = jsResult;
+    public s0(boolean[] zArr, JsPromptResult jsPromptResult, cu cuVar, org.telegram.ui.ActionBar.b2 b2Var) {
+        this.a = zArr;
+        this.b = jsPromptResult;
+        this.c = cuVar;
+        this.d = b2Var;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
-        switch (this.a) {
-            case 0:
-                boolean[] zArr = this.b;
-                if (!zArr[0]) {
-                    zArr[0] = true;
-                    this.c.cancel();
-                    break;
-                }
-                break;
-            default:
-                boolean[] zArr2 = this.b;
-                if (!zArr2[0]) {
-                    zArr2[0] = true;
-                    this.c.cancel();
-                    break;
-                }
-                break;
+    @Override // android.widget.TextView.OnEditorActionListener
+    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
+        if (i10 != 6) {
+            return false;
         }
+        boolean[] zArr = this.a;
+        if (!zArr[0]) {
+            zArr[0] = true;
+            this.b.confirm(this.c.getText().toString());
+            this.d.dismiss();
+        }
+        return true;
     }
 }

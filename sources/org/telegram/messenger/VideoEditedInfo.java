@@ -25,7 +25,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.RLottieNative;
 import org.telegram.ui.Components.gf0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public class VideoEditedInfo {
     public int account;
@@ -49,7 +49,7 @@ public class VideoEditedInfo {
     public boolean fromCamera;
     public Integer gradientBottomColor;
     public Integer gradientTopColor;
-    public ci.n8 hdrInfo;
+    public ci.k8 hdrInfo;
     public boolean isDark;
     public boolean isPhoto;
     public boolean isSticker;
@@ -84,7 +84,7 @@ public class VideoEditedInfo {
     public boolean shouldLimitFps = true;
     public ArrayList<MediaCodecVideoConvertor.MixedSoundInfo> mixedSoundInfos = new ArrayList<>();
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class EmojiEntity extends TLRPC.TL_messageEntityCustomEmoji {
         public String documentAbsolutePath;
         public MediaEntity entity;
@@ -436,9 +436,9 @@ public class VideoEditedInfo {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class Part extends TLObject {
-        public org.telegram.ui.Components.b6 animatedFileDrawable;
+        public org.telegram.ui.Components.d6 animatedFileDrawable;
         public float currentFrame;
         public long duration;
         public int flags;
@@ -466,43 +466,43 @@ public class VideoEditedInfo {
             this.loop = true;
         }
 
-        public static ArrayList<Part> toParts(ci.o8 o8Var) {
-            if (o8Var == null || o8Var.T == null) {
+        public static ArrayList<Part> toParts(ci.l8 l8Var) {
+            if (l8Var == null || l8Var.T == null) {
                 return null;
             }
             ArrayList<Part> arrayList = new ArrayList<>();
-            for (int i10 = 0; i10 < o8Var.T.size(); i10++) {
-                Part part = new Part((ci.o8) o8Var.T.get(i10));
-                part.part = (ci.s) o8Var.S.e.get(i10);
+            for (int i10 = 0; i10 < l8Var.T.size(); i10++) {
+                Part part = new Part((ci.l8) l8Var.T.get(i10));
+                part.part = (ci.s) l8Var.S.e.get(i10);
                 arrayList.add(part);
             }
             return arrayList;
         }
 
-        public static ArrayList<ci.o8> toStoryEntries(ArrayList<Part> arrayList) {
+        public static ArrayList<ci.l8> toStoryEntries(ArrayList<Part> arrayList) {
             if (arrayList == null) {
                 return null;
             }
-            ArrayList<ci.o8> arrayList2 = new ArrayList<>();
+            ArrayList<ci.l8> arrayList2 = new ArrayList<>();
             int size = arrayList.size();
             int i10 = 0;
             while (i10 < size) {
                 Part part = arrayList.get(i10);
                 i10++;
                 Part part2 = part;
-                ci.o8 o8Var = new ci.o8();
-                o8Var.K = part2.isVideo;
-                o8Var.Y = part2.muted;
-                o8Var.L = new File(part2.path);
-                o8Var.P = part2.volume;
-                o8Var.U = part2.loop;
-                o8Var.X = part2.offset;
-                o8Var.V = part2.left;
-                o8Var.W = part2.right;
-                o8Var.k0 = part2.width;
-                o8Var.l0 = part2.height;
-                o8Var.h0 = part2.duration;
-                arrayList2.add(o8Var);
+                ci.l8 l8Var = new ci.l8();
+                l8Var.K = part2.isVideo;
+                l8Var.Y = part2.muted;
+                l8Var.L = new File(part2.path);
+                l8Var.P = part2.volume;
+                l8Var.U = part2.loop;
+                l8Var.X = part2.offset;
+                l8Var.V = part2.left;
+                l8Var.W = part2.right;
+                l8Var.k0 = part2.width;
+                l8Var.l0 = part2.height;
+                l8Var.h0 = part2.duration;
+                arrayList2.add(l8Var);
             }
             return arrayList2;
         }
@@ -543,25 +543,25 @@ public class VideoEditedInfo {
             outputSerializedData.writeInt64(this.duration);
         }
 
-        public Part(ci.o8 o8Var) {
+        public Part(ci.l8 l8Var) {
             this.volume = 1.0f;
             this.offset = 0L;
             this.loop = true;
-            this.isVideo = o8Var.K;
-            this.muted = o8Var.Y;
-            this.path = o8Var.L.getAbsolutePath();
-            this.volume = o8Var.P;
-            this.loop = o8Var.U;
-            this.offset = o8Var.X;
-            this.left = o8Var.V;
-            this.right = o8Var.W;
-            this.width = o8Var.k0;
-            this.height = o8Var.l0;
-            this.duration = o8Var.h0;
+            this.isVideo = l8Var.K;
+            this.muted = l8Var.Y;
+            this.path = l8Var.L.getAbsolutePath();
+            this.volume = l8Var.P;
+            this.loop = l8Var.U;
+            this.offset = l8Var.X;
+            this.left = l8Var.V;
+            this.right = l8Var.W;
+            this.width = l8Var.k0;
+            this.height = l8Var.l0;
+            this.duration = l8Var.h0;
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class MediaEntity {
         public static final byte TYPE_LINK = 7;
         public static final byte TYPE_LOCATION = 3;
@@ -577,7 +577,7 @@ public class VideoEditedInfo {
         public int W;
         public float additionalHeight;
         public float additionalWidth;
-        public org.telegram.ui.Components.b6 animatedFileDrawable;
+        public org.telegram.ui.Components.d6 animatedFileDrawable;
         public Bitmap bitmap;
         public Canvas canvas;
         public int color;
@@ -610,7 +610,7 @@ public class VideoEditedInfo {
         public byte subType;
         public String text;
         public int textAlign;
-        public pg.j0 textTypeface;
+        public pg.k0 textTypeface;
         public String textTypefaceKey;
         public float textViewHeight;
         public float textViewWidth;
@@ -621,7 +621,7 @@ public class VideoEditedInfo {
         public int viewHeight;
         public int viewWidth;
         public zg.p0 visibleReaction;
-        public ci.nd weather;
+        public ci.kd weather;
         public float width;
         public float x;
         public float y;
@@ -706,14 +706,14 @@ public class VideoEditedInfo {
             abstractSerializedData.writeInt32(this.viewWidth);
             abstractSerializedData.writeInt32(this.viewHeight);
             abstractSerializedData.writeInt32(this.textAlign);
-            pg.j0 j0Var = this.textTypeface;
-            if (j0Var == null) {
+            pg.k0 k0Var = this.textTypeface;
+            if (k0Var == null) {
                 str = this.textTypefaceKey;
                 if (str == null) {
                     str = "";
                 }
             } else {
-                str = j0Var.a;
+                str = k0Var.a;
             }
             abstractSerializedData.writeString(str);
             abstractSerializedData.writeFloat(this.scale);
@@ -797,7 +797,7 @@ public class VideoEditedInfo {
         }
 
         public MediaEntity(AbstractSerializedData abstractSerializedData, boolean z10, boolean z11) {
-            pg.j0 j0Var;
+            pg.k0 k0Var;
             this.text = "";
             this.entities = new ArrayList<>();
             this.segmentedPath = "";
@@ -824,19 +824,19 @@ public class VideoEditedInfo {
             this.textAlign = abstractSerializedData.readInt32(z11);
             String readString = abstractSerializedData.readString(z11);
             this.textTypefaceKey = readString;
-            pg.j0 j0Var2 = pg.j0.e;
+            pg.k0 k0Var2 = pg.k0.e;
             qg.q0 q0Var = null;
             if (readString != null && !TextUtils.isEmpty(readString)) {
-                List c10 = pg.j0.c();
+                List c10 = pg.k0.c();
                 for (int i11 = 0; i11 < c10.size(); i11++) {
-                    j0Var = (pg.j0) c10.get(i11);
-                    if (j0Var != null && TextUtils.equals(readString, j0Var.a)) {
+                    k0Var = (pg.k0) c10.get(i11);
+                    if (k0Var != null && TextUtils.equals(readString, k0Var.a)) {
                         break;
                     }
                 }
             }
-            j0Var = null;
-            this.textTypeface = j0Var;
+            k0Var = null;
+            this.textTypeface = k0Var;
             this.scale = abstractSerializedData.readFloat(z11);
             this.textViewWidth = abstractSerializedData.readFloat(z11);
             this.textViewHeight = abstractSerializedData.readFloat(z11);
@@ -900,12 +900,12 @@ public class VideoEditedInfo {
                 return;
             }
             if (b10 == 8 && abstractSerializedData.readInt32(z11) == 132805945) {
-                ci.nd ndVar = new ci.nd();
-                ndVar.a = abstractSerializedData.readDouble(false);
-                ndVar.b = abstractSerializedData.readDouble(false);
-                ndVar.c = abstractSerializedData.readString(false);
-                ndVar.d = abstractSerializedData.readFloat(false);
-                this.weather = ndVar;
+                ci.kd kdVar = new ci.kd();
+                kdVar.a = abstractSerializedData.readDouble(false);
+                kdVar.b = abstractSerializedData.readDouble(false);
+                kdVar.c = abstractSerializedData.readString(false);
+                kdVar.d = abstractSerializedData.readFloat(false);
+                this.weather = kdVar;
             }
         }
     }

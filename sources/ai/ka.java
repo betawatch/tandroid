@@ -6,32 +6,32 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
-import org.telegram.ui.Components.fk0;
-import org.telegram.ui.Components.w50;
+import org.telegram.ui.Components.gk0;
+import org.telegram.ui.Components.x50;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class ka extends z4.a {
     public final ArrayList c = new ArrayList();
     public final /* synthetic */ Context d;
     public final /* synthetic */ jc e;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e6 f;
+    public final /* synthetic */ org.telegram.ui.ActionBar.d6 f;
     public final /* synthetic */ zb g;
 
-    public ka(zb zbVar, Context context, jc jcVar, org.telegram.ui.ActionBar.e6 e6Var) {
+    public ka(zb zbVar, Context context, jc jcVar, org.telegram.ui.ActionBar.d6 d6Var) {
         this.g = zbVar;
         this.d = context;
         this.e = jcVar;
-        this.f = e6Var;
+        this.f = d6Var;
     }
 
     @Override // z4.a
     public final void a(z4.g gVar, Object obj) {
         FrameLayout frameLayout = (FrameLayout) obj;
         gVar.removeView(frameLayout);
-        f6 f6Var = (f6) frameLayout.getChildAt(0);
-        AndroidUtilities.removeFromParent(f6Var);
-        this.c.add(f6Var);
+        e6 e6Var = (e6) frameLayout.getChildAt(0);
+        AndroidUtilities.removeFromParent(e6Var);
+        this.c.add(e6Var);
     }
 
     @Override // z4.a
@@ -43,7 +43,7 @@ public final class ka extends z4.a {
 
     @Override // z4.a
     public final Object e(z4.g gVar, int i10) {
-        f6 jaVar;
+        e6 jaVar;
         Context context = this.d;
         zb zbVar = this.g;
         ma maVar = new ma(zbVar, context);
@@ -53,23 +53,23 @@ public final class ka extends z4.a {
         if (isEmpty) {
             jaVar = new ja(this, this.d, jcVar, zbVar.H0, this.f);
         } else {
-            jaVar = (f6) arrayList.remove(0);
+            jaVar = (e6) arrayList.remove(0);
             jaVar.o1.a.getImageReceiver().setVisible(true, true);
             if (jaVar.e2 != null) {
                 jaVar.b2.Q0();
                 jaVar.b2.setAlpha(1.0f - jaVar.d4);
             }
-            fk0 fk0Var = jaVar.f2;
-            if (fk0Var != null) {
-                fk0Var.n();
+            gk0 gk0Var = jaVar.f2;
+            if (gk0Var != null) {
+                gk0Var.n();
             }
-            fk0 fk0Var2 = jaVar.r3;
-            if (fk0Var2 != null) {
-                fk0Var2.n();
+            gk0 gk0Var2 = jaVar.r3;
+            if (gk0Var2 != null) {
+                gk0Var2.n();
             }
-            w50 w50Var = jaVar.J2;
-            if (w50Var != null) {
-                AndroidUtilities.removeFromParent(w50Var);
+            x50 x50Var = jaVar.J2;
+            if (x50Var != null) {
+                AndroidUtilities.removeFromParent(x50Var);
                 jaVar.J2.h(true);
                 jaVar.J2 = null;
             }

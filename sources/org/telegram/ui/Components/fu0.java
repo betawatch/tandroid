@@ -9,28 +9,28 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class fu0 extends kl0 {
+public final class fu0 extends ll0 {
     public final Context c;
     public final int d;
-    public final org.telegram.ui.ActionBar.e6 e;
+    public final org.telegram.ui.ActionBar.d6 e;
     public final du0 f;
     public final ArrayList h = new ArrayList(10);
     public final ArrayList n = new ArrayList();
     public qt0 r;
     public final /* synthetic */ yu0 s;
 
-    public fu0(yu0 yu0Var, Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
+    public fu0(yu0 yu0Var, Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
         this.s = yu0Var;
         this.c = context;
         this.d = i10;
-        this.e = e6Var;
-        this.f = new du0(this, i10, e6Var);
+        this.e = d6Var;
+        this.f = new du0(this, i10, d6Var);
         E();
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.ll0
     public final boolean D(s4.c1 c1Var) {
         return false;
     }
@@ -110,11 +110,11 @@ public final class fu0 extends kl0 {
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
         if (i10 != 0) {
-            return new vk0(new org.telegram.ui.Cells.w0(this.c, this.e, false));
+            return new wk0(new org.telegram.ui.Cells.w0(this.c, this.e, false));
         }
-        org.telegram.ui.ActionBar.e6 e6Var = this.e;
-        eu0 eu0Var = new eu0(this.c, this.d, false, null, e6Var);
+        org.telegram.ui.ActionBar.d6 d6Var = this.e;
+        eu0 eu0Var = new eu0(this.c, this.d, false, null, d6Var);
         eu0Var.setDelegate(this.f);
-        return new vk0(eu0Var);
+        return new wk0(eu0Var);
     }
 }

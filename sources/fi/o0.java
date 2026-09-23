@@ -8,10 +8,10 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.vc;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o0 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class o0 implements Utilities.Callback2 {
                     u0.d(n2Var, -j3, 1);
                     break;
                 } else if (!TextUtils.equals("COMMUNITY_REQUEST_CREATED", tL_error.text)) {
-                    vc.a0(n2Var).d0(tL_error, false);
+                    xc.a0(n2Var).d0(tL_error, false);
                     break;
                 } else {
                     u0.d(n2Var, -j3, 2);

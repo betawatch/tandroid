@@ -1,56 +1,64 @@
 package org.telegram.messenger;
 
 import android.content.Context;
+import java.util.ArrayList;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.TranslateController;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ml implements RequestDelegate {
+public final /* synthetic */ class ml implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ BaseController b;
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
-    public final /* synthetic */ Object g;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
 
-    public /* synthetic */ ml(BaseController baseController, Object obj, Object obj2, Object obj3, Object obj4, TLObject tLObject, int i10) {
+    public /* synthetic */ ml(BaseController baseController, Object obj, Object obj2, Object obj3, Object obj4, Object obj5, Object obj6, int i10) {
         this.a = i10;
         this.b = baseController;
         this.c = obj;
         this.d = obj2;
         this.e = obj3;
         this.f = obj4;
-        this.g = tLObject;
+        this.h = obj5;
+        this.n = obj6;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((TranslateController) this.b).lambda$translateStory$38((TL_stories.StoryItem) this.c, (String) this.d, (TranslateController.StoryKey) this.e, (Runnable) this.f, (TLRPC.TL_textWithEntities) this.g, tLObject, tL_error);
+                ((TranslateController) this.b).lambda$translateStory$36((TL_stories.StoryItem) this.c, (String) this.d, (TLRPC.TL_textWithEntities) this.e, (TLRPC.TL_textWithEntities) this.f, (TranslateController.StoryKey) this.h, (Runnable) this.n);
                 break;
             case 1:
-                ((MessagesController) this.b).lambda$convertToGigaGroup$270((Context) this.c, (org.telegram.ui.ActionBar.b2) this.d, (MessagesStorage.BooleanCallback) this.e, (org.telegram.ui.ActionBar.n2) this.f, (TLRPC.TL_channels_convertToGigagroup) this.g, tLObject, tL_error);
+                ((MediaDataController) this.b).lambda$loadHints$144((ArrayList) this.c, (ArrayList) this.d, (ArrayList) this.e, (ArrayList) this.f, (ArrayList) this.h, (ArrayList) this.n);
+                break;
+            case 2:
+                ((MessagesController) this.b).lambda$convertToGigaGroup$269((MessagesStorage.BooleanCallback) this.c, (Context) this.d, (org.telegram.ui.ActionBar.b2) this.e, (TLRPC.TL_error) this.f, (org.telegram.ui.ActionBar.n2) this.h, (TLRPC.TL_channels_convertToGigagroup) this.n);
+                break;
+            case 3:
+                ((MessagesController) this.b).lambda$convertToMegaGroup$264((MessagesStorage.LongCallback) this.c, (Context) this.d, (org.telegram.ui.ActionBar.b2) this.e, (TLRPC.TL_error) this.f, (org.telegram.ui.ActionBar.n2) this.h, (TLRPC.TL_messages_migrateChat) this.n);
                 break;
             default:
-                ((SecretChatHelper) this.b).lambda$performSendEncryptedRequest$7((TLRPC.DecryptedMessage) this.c, (TLRPC.EncryptedChat) this.e, (TLRPC.Message) this.f, (MessageObject) this.g, (String) this.d, tLObject, tL_error);
+                ((SecretChatHelper) this.b).lambda$performSendEncryptedRequest$8((TLRPC.EncryptedChat) this.c, (TLRPC.DecryptedMessage) this.e, (TLRPC.Message) this.f, (TLRPC.InputEncryptedFile) this.h, (MessageObject) this.n, (String) this.d);
                 break;
         }
     }
 
-    public /* synthetic */ ml(SecretChatHelper secretChatHelper, TLRPC.DecryptedMessage decryptedMessage, TLRPC.EncryptedChat encryptedChat, TLRPC.Message message, MessageObject messageObject, String str) {
-        this.a = 2;
+    public /* synthetic */ ml(SecretChatHelper secretChatHelper, TLRPC.EncryptedChat encryptedChat, TLRPC.DecryptedMessage decryptedMessage, TLRPC.Message message, TLRPC.InputEncryptedFile inputEncryptedFile, MessageObject messageObject, String str) {
+        this.a = 4;
         this.b = secretChatHelper;
-        this.c = decryptedMessage;
-        this.e = encryptedChat;
+        this.c = encryptedChat;
+        this.e = decryptedMessage;
         this.f = message;
-        this.g = messageObject;
+        this.h = inputEncryptedFile;
+        this.n = messageObject;
         this.d = str;
     }
 }

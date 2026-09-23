@@ -1,285 +1,90 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import android.text.TextUtils;
-import j$.util.Objects;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import android.content.SharedPreferences;
+import android.os.Build;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.SerializedData;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pg0 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ vg0 b;
+public final class pg0 {
+    public final /* synthetic */ qg0 a;
 
-    public /* synthetic */ pg0(vg0 vg0Var, int i10) {
-        this.a = i10;
-        this.b = vg0Var;
+    public pg0(qg0 qg0Var) {
+        this.a = qg0Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                final int i10 = 0;
-                final vg0 vg0Var = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.qg0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        int i11;
-                        vt vtVar;
-                        switch (i10) {
-                            case 0:
-                                vg0 vg0Var2 = vg0Var;
-                                ak0 ak0Var = vg0Var2.a;
-                                HashMap hashMap = vg0Var2.G;
-                                ArrayList arrayList = vg0Var2.E;
-                                HashMap hashMap2 = vg0Var2.F;
-                                if (tL_error == null) {
-                                    arrayList.clear();
-                                    hashMap2.clear();
-                                    hashMap.clear();
-                                    TLRPC.TL_help_countriesList tL_help_countriesList = (TLRPC.TL_help_countriesList) tLObject;
-                                    for (int i12 = 0; i12 < tL_help_countriesList.countries.size(); i12++) {
-                                        TLRPC.TL_help_country tL_help_country = tL_help_countriesList.countries.get(i12);
-                                        for (int i13 = 0; i13 < tL_help_country.country_codes.size(); i13++) {
-                                            TLRPC.TL_help_countryCode tL_help_countryCode = tL_help_country.country_codes.get(i13);
-                                            if (tL_help_countryCode != null) {
-                                                vt vtVar2 = new vt();
-                                                String str = tL_help_country.name;
-                                                vtVar2.a = str;
-                                                String str2 = tL_help_country.default_name;
-                                                vtVar2.b = str2;
-                                                if (str == null && str2 != null) {
-                                                    vtVar2.a = str2;
-                                                }
-                                                vtVar2.c = tL_help_countryCode.country_code;
-                                                vtVar2.d = tL_help_country.iso2;
-                                                arrayList.add(vtVar2);
-                                                List list = (List) hashMap2.get(tL_help_countryCode.country_code);
-                                                if (list == null) {
-                                                    String str3 = tL_help_countryCode.country_code;
-                                                    ArrayList arrayList2 = new ArrayList();
-                                                    hashMap2.put(str3, arrayList2);
-                                                    list = arrayList2;
-                                                }
-                                                list.add(vtVar2);
-                                                if (tL_help_countryCode.patterns.size() > 0) {
-                                                    hashMap.put(tL_help_countryCode.country_code, tL_help_countryCode.patterns);
-                                                }
-                                            }
-                                        }
-                                    }
-                                    wg0 wg0Var = vg0Var2.V;
-                                    if (wg0Var.F == 2) {
-                                        i11 = ((org.telegram.ui.ActionBar.n2) wg0Var).currentAccount;
-                                        String d = gf.b.d(UserConfig.getInstance(i11).getClientPhone(), false);
-                                        if (!TextUtils.isEmpty(d)) {
-                                            if (d.length() > 4) {
-                                                for (int i14 = 4; i14 >= 1; i14--) {
-                                                    String substring = d.substring(0, i14);
-                                                    List list2 = (List) hashMap2.get(substring);
-                                                    vt vtVar3 = null;
-                                                    if (list2 != null) {
-                                                        if (list2.size() > 1) {
-                                                            String string = MessagesController.getGlobalMainSettings().getString("phone_code_last_matched_" + substring, null);
-                                                            if (string != null) {
-                                                                vtVar = (vt) org.telegram.ui.Cells.q3.g(1, list2);
-                                                                int size = arrayList.size();
-                                                                int i15 = 0;
-                                                                while (true) {
-                                                                    if (i15 < size) {
-                                                                        Object obj = arrayList.get(i15);
-                                                                        i15++;
-                                                                        vt vtVar4 = (vt) obj;
-                                                                        if (Objects.equals(vtVar4.d, string)) {
-                                                                            vtVar = vtVar4;
-                                                                        }
-                                                                    }
-                                                                }
-                                                            } else {
-                                                                vtVar = (vt) org.telegram.ui.Cells.q3.g(1, list2);
-                                                            }
-                                                            vtVar3 = vtVar;
-                                                        } else {
-                                                            vtVar3 = (vt) list2.get(0);
-                                                        }
-                                                    }
-                                                    if (vtVar3 != null) {
-                                                        ak0Var.setText(substring);
-                                                        break;
-                                                    }
-                                                }
-                                                ak0Var.setText(d.substring(0, 1));
-                                                break;
-                                            }
-                                        }
-                                    }
-                                }
-                                break;
-                            default:
-                                vg0 vg0Var3 = vg0Var;
-                                vg0Var3.K = false;
-                                wg0 wg0Var2 = vg0Var3.V;
-                                wg0Var2.v1(false, true);
-                                TLRPC.TL_error tL_error2 = tL_error;
-                                if (tL_error2 == null) {
-                                    TL_account.Password password = (TL_account.Password) tLObject;
-                                    if (TwoStepVerificationActivity.i0(password, true)) {
-                                        Bundle bundle = new Bundle();
-                                        SerializedData serializedData = new SerializedData(password.getObjectSize());
-                                        password.serializeToStream(serializedData);
-                                        bundle.putString("password", Utilities.bytesToHex(serializedData.toByteArray()));
-                                        wg0Var2.u1(6, true, bundle, false);
-                                        break;
-                                    } else {
-                                        org.telegram.ui.Components.c5.x0(wg0Var2.getParentActivity(), LocaleController.getString("UpdateAppAlert", R.string.UpdateAppAlert), true);
-                                        break;
-                                    }
-                                } else {
-                                    wg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error2.text);
-                                    break;
-                                }
+    public final void a(fg0 fg0Var) {
+        int i10;
+        qg0 qg0Var = this.a;
+        qg0Var.L = true;
+        rg0 rg0Var = qg0Var.V;
+        rg0Var.J = 0;
+        rg0Var.n1(0, false);
+        int i11 = Build.VERSION.SDK_INT;
+        if (i11 >= 23 && AndroidUtilities.isSimAvailable()) {
+            boolean z10 = rg0Var.getParentActivity().checkSelfPermission("android.permission.READ_PHONE_STATE") == 0;
+            boolean z11 = rg0Var.getParentActivity().checkSelfPermission("android.permission.CALL_PHONE") == 0;
+            boolean z12 = i11 < 28 || rg0Var.getParentActivity().checkSelfPermission("android.permission.READ_CALL_LOG") == 0;
+            boolean z13 = i11 < 26 || rg0Var.getParentActivity().checkSelfPermission("android.permission.READ_PHONE_NUMBERS") == 0;
+            uj0 uj0Var = qg0Var.a;
+            if (uj0Var != null && "888".equals(uj0Var.getText())) {
+                z10 = true;
+                z11 = true;
+                z12 = true;
+                z13 = true;
+            }
+            if (rg0Var.v) {
+                rg0Var.r.clear();
+                if (!z10) {
+                    rg0Var.r.add("android.permission.READ_PHONE_STATE");
+                }
+                if (!z11) {
+                    rg0Var.r.add("android.permission.CALL_PHONE");
+                }
+                if (!z12) {
+                    rg0Var.r.add("android.permission.READ_CALL_LOG");
+                }
+                if (!z13 && i11 >= 26) {
+                    rg0Var.r.add("android.permission.READ_PHONE_NUMBERS");
+                }
+                if (!rg0Var.r.isEmpty()) {
+                    SharedPreferences globalMainSettings = MessagesController.getGlobalMainSettings();
+                    if (!globalMainSettings.getBoolean("firstlogin", true) && !rg0Var.getParentActivity().shouldShowRequestPermissionRationale("android.permission.READ_PHONE_STATE") && !rg0Var.getParentActivity().shouldShowRequestPermissionRationale("android.permission.READ_CALL_LOG")) {
+                        try {
+                            rg0Var.getParentActivity().requestPermissions((String[]) rg0Var.r.toArray(new String[0]), 6);
+                            return;
+                        } catch (Exception e) {
+                            FileLog.e(e);
+                            return;
                         }
                     }
-                });
-                break;
-            default:
-                final int i11 = 1;
-                final vg0 vg0Var2 = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.qg0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        int i112;
-                        vt vtVar;
-                        switch (i11) {
-                            case 0:
-                                vg0 vg0Var22 = vg0Var2;
-                                ak0 ak0Var = vg0Var22.a;
-                                HashMap hashMap = vg0Var22.G;
-                                ArrayList arrayList = vg0Var22.E;
-                                HashMap hashMap2 = vg0Var22.F;
-                                if (tL_error == null) {
-                                    arrayList.clear();
-                                    hashMap2.clear();
-                                    hashMap.clear();
-                                    TLRPC.TL_help_countriesList tL_help_countriesList = (TLRPC.TL_help_countriesList) tLObject;
-                                    for (int i12 = 0; i12 < tL_help_countriesList.countries.size(); i12++) {
-                                        TLRPC.TL_help_country tL_help_country = tL_help_countriesList.countries.get(i12);
-                                        for (int i13 = 0; i13 < tL_help_country.country_codes.size(); i13++) {
-                                            TLRPC.TL_help_countryCode tL_help_countryCode = tL_help_country.country_codes.get(i13);
-                                            if (tL_help_countryCode != null) {
-                                                vt vtVar2 = new vt();
-                                                String str = tL_help_country.name;
-                                                vtVar2.a = str;
-                                                String str2 = tL_help_country.default_name;
-                                                vtVar2.b = str2;
-                                                if (str == null && str2 != null) {
-                                                    vtVar2.a = str2;
-                                                }
-                                                vtVar2.c = tL_help_countryCode.country_code;
-                                                vtVar2.d = tL_help_country.iso2;
-                                                arrayList.add(vtVar2);
-                                                List list = (List) hashMap2.get(tL_help_countryCode.country_code);
-                                                if (list == null) {
-                                                    String str3 = tL_help_countryCode.country_code;
-                                                    ArrayList arrayList2 = new ArrayList();
-                                                    hashMap2.put(str3, arrayList2);
-                                                    list = arrayList2;
-                                                }
-                                                list.add(vtVar2);
-                                                if (tL_help_countryCode.patterns.size() > 0) {
-                                                    hashMap.put(tL_help_countryCode.country_code, tL_help_countryCode.patterns);
-                                                }
-                                            }
-                                        }
-                                    }
-                                    wg0 wg0Var = vg0Var22.V;
-                                    if (wg0Var.F == 2) {
-                                        i112 = ((org.telegram.ui.ActionBar.n2) wg0Var).currentAccount;
-                                        String d = gf.b.d(UserConfig.getInstance(i112).getClientPhone(), false);
-                                        if (!TextUtils.isEmpty(d)) {
-                                            if (d.length() > 4) {
-                                                for (int i14 = 4; i14 >= 1; i14--) {
-                                                    String substring = d.substring(0, i14);
-                                                    List list2 = (List) hashMap2.get(substring);
-                                                    vt vtVar3 = null;
-                                                    if (list2 != null) {
-                                                        if (list2.size() > 1) {
-                                                            String string = MessagesController.getGlobalMainSettings().getString("phone_code_last_matched_" + substring, null);
-                                                            if (string != null) {
-                                                                vtVar = (vt) org.telegram.ui.Cells.q3.g(1, list2);
-                                                                int size = arrayList.size();
-                                                                int i15 = 0;
-                                                                while (true) {
-                                                                    if (i15 < size) {
-                                                                        Object obj = arrayList.get(i15);
-                                                                        i15++;
-                                                                        vt vtVar4 = (vt) obj;
-                                                                        if (Objects.equals(vtVar4.d, string)) {
-                                                                            vtVar = vtVar4;
-                                                                        }
-                                                                    }
-                                                                }
-                                                            } else {
-                                                                vtVar = (vt) org.telegram.ui.Cells.q3.g(1, list2);
-                                                            }
-                                                            vtVar3 = vtVar;
-                                                        } else {
-                                                            vtVar3 = (vt) list2.get(0);
-                                                        }
-                                                    }
-                                                    if (vtVar3 != null) {
-                                                        ak0Var.setText(substring);
-                                                        break;
-                                                    }
-                                                }
-                                                ak0Var.setText(d.substring(0, 1));
-                                                break;
-                                            }
-                                        }
-                                    }
-                                }
-                                break;
-                            default:
-                                vg0 vg0Var3 = vg0Var2;
-                                vg0Var3.K = false;
-                                wg0 wg0Var2 = vg0Var3.V;
-                                wg0Var2.v1(false, true);
-                                TLRPC.TL_error tL_error2 = tL_error;
-                                if (tL_error2 == null) {
-                                    TL_account.Password password = (TL_account.Password) tLObject;
-                                    if (TwoStepVerificationActivity.i0(password, true)) {
-                                        Bundle bundle = new Bundle();
-                                        SerializedData serializedData = new SerializedData(password.getObjectSize());
-                                        password.serializeToStream(serializedData);
-                                        bundle.putString("password", Utilities.bytesToHex(serializedData.toByteArray()));
-                                        wg0Var2.u1(6, true, bundle, false);
-                                        break;
-                                    } else {
-                                        org.telegram.ui.Components.c5.x0(wg0Var2.getParentActivity(), LocaleController.getString("UpdateAppAlert", R.string.UpdateAppAlert), true);
-                                        break;
-                                    }
-                                } else {
-                                    wg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error2.text);
-                                    break;
-                                }
-                        }
+                    globalMainSettings.edit().putBoolean("firstlogin", false).commit();
+                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(rg0Var.getParentActivity());
+                    alertDialog$Builder.k(LocaleController.getString("Continue", R.string.Continue), null);
+                    if (!z10 && (!z11 || !z12)) {
+                        alertDialog$Builder.a.T = LocaleController.getString("AllowReadCallAndLog", R.string.AllowReadCallAndLog);
+                        i10 = R.raw.calls_log;
+                    } else if (z11 && z12) {
+                        alertDialog$Builder.a.T = LocaleController.getString("AllowReadCall", R.string.AllowReadCall);
+                        i10 = R.raw.incoming_calls;
+                    } else {
+                        alertDialog$Builder.a.T = LocaleController.getString("AllowReadCallLog", R.string.AllowReadCallLog);
+                        i10 = R.raw.calls_log;
                     }
-                });
-                break;
+                    alertDialog$Builder.m(i10, 46, org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.L5, false), null);
+                    rg0Var.h = rg0Var.showDialog(alertDialog$Builder.a);
+                    qg0Var.L = true;
+                    return;
+                }
+            }
         }
+        og0 og0Var = new og0(0, fg0Var, this);
+        fg0Var.h.f(true, true);
+        AndroidUtilities.runOnUIThread(og0Var, 400L);
     }
 }

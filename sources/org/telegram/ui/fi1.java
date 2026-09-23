@@ -1,95 +1,23 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.voip.VoIPService;
+import android.content.Context;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fi1 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ui1 b;
+public final class fi1 extends org.telegram.ui.Components.voip.d1 {
+    public final /* synthetic */ mi1 V;
 
-    public /* synthetic */ fi1(ui1 ui1Var, int i10) {
-        this.a = i10;
-        this.b = ui1Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public fi1(mi1 mi1Var, Context context, float f7, float f10) {
+        super(context, f7, f10);
+        this.V = mi1Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        VoIPService sharedInstance;
-        switch (this.a) {
-            case 0:
-                if (VoIPService.getSharedInstance() != null) {
-                    ui1 ui1Var = this.b;
-                    AndroidUtilities.cancelRunOnUIThread(ui1Var.S0);
-                    ui1Var.R0 = false;
-                    VoIPService.getSharedInstance().hangUp();
-                    break;
-                }
-                break;
-            case 1:
-                ui1 ui1Var2 = this.b;
-                if (ui1Var2.n0 && ui1Var2.m0 && System.currentTimeMillis() - ui1Var2.K0 > 500) {
-                    AndroidUtilities.cancelRunOnUIThread(ui1Var2.S0);
-                    ui1Var2.R0 = false;
-                    ui1Var2.K0 = System.currentTimeMillis();
-                    ui1Var2.Z.setRelativePosition(ui1Var2.Y);
-                    ui1Var2.a0 = true;
-                    ui1Var2.H0 = true;
-                    ui1Var2.q0 = ui1Var2.p0;
-                    ui1Var2.H();
-                    break;
-                }
-                break;
-            case 2:
-                ui1 ui1Var3 = this.b;
-                if (ui1Var3.H0 && System.currentTimeMillis() - ui1Var3.K0 > 500) {
-                    AndroidUtilities.cancelRunOnUIThread(ui1Var3.S0);
-                    ui1Var3.R0 = false;
-                    ui1Var3.K0 = System.currentTimeMillis();
-                    ui1Var3.Y.setRelativePosition(ui1Var3.Z);
-                    ui1Var3.a0 = false;
-                    ui1Var3.H0 = false;
-                    ui1Var3.q0 = ui1Var3.p0;
-                    ui1Var3.H();
-                    break;
-                }
-                break;
-            case 3:
-                long currentTimeMillis = System.currentTimeMillis();
-                ui1 ui1Var4 = this.b;
-                if (currentTimeMillis - ui1Var4.K0 >= 500) {
-                    ui1Var4.K0 = System.currentTimeMillis();
-                    boolean z10 = ui1Var4.C0;
-                    if (!z10 && ui1Var4.B0) {
-                        ui1Var4.m(!z10);
-                        break;
-                    }
-                }
-                break;
-            case 4:
-                long currentTimeMillis2 = System.currentTimeMillis();
-                ui1 ui1Var5 = this.b;
-                if (currentTimeMillis2 - ui1Var5.K0 >= 500) {
-                    ui1Var5.K0 = System.currentTimeMillis();
-                    if (ui1Var5.B0) {
-                        ui1Var5.m(!ui1Var5.C0);
-                        break;
-                    }
-                }
-                break;
-            case 5:
-                ui1 ui1Var6 = this.b;
-                if (ui1Var6.K.getTag() != null && (sharedInstance = VoIPService.getSharedInstance()) != null) {
-                    ui1Var6.B();
-                    sharedInstance.toggleSpeakerphoneOrShowRouteSheet(ui1Var6.b, false, Integer.valueOf(sharedInstance.isBluetoothOn() ? 2 : sharedInstance.isSpeakerphoneOn() ? 0 : 1));
-                    break;
-                }
-                break;
-            default:
-                this.b.p();
-                break;
-        }
+    @Override // org.telegram.ui.Components.voip.d1
+    public final int[] getFloatingViewLocation() {
+        int[] iArr = new int[2];
+        mi1 mi1Var = this.V;
+        mi1Var.Y.getLocationOnScreen(iArr);
+        return new int[]{iArr[0], iArr[1], mi1Var.Y.getMeasuredWidth()};
     }
 }

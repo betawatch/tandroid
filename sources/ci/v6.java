@@ -1,148 +1,116 @@
 package ci;
 
-import android.animation.ValueAnimator;
+import android.app.Activity;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.text.SpannableString;
+import android.view.MotionEvent;
 import android.view.View;
-import android.view.animation.LinearInterpolator;
 import android.widget.FrameLayout;
-import java.util.ArrayList;
+import android.widget.ImageView;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.vl;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.qr;
+import org.telegram.messenger.Emoji;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.UserObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class v6 extends FrameLayout {
-    public View a;
-    public ArrayList b;
-    public u6 c;
-    public String d;
-    public boolean e;
-    public Utilities.Callback f;
+    public final int a;
+    public int b;
+    public final ai.w7 c;
+    public final FrameLayout d;
+    public final ai.xa e;
+    public boolean f;
     public boolean h;
-    public float n;
-    public boolean r;
-    public ValueAnimator s;
 
-    public final void a(int i10, int i11, String str) {
-        t6 t6Var = new t6(this, getContext(), i10, i11);
-        t6Var.setContentDescription(str);
-        this.b.add(t6Var);
-        addView(t6Var);
+    public v6(Activity activity, int i10, ai.d dVar) {
+        super(activity);
+        this.b = 1;
+        this.f = false;
+        this.h = false;
+        this.a = i10;
+        TLRPC.User currentUser = UserConfig.getInstance(i10).getCurrentUser();
+        ai.w7 w7Var = new ai.w7(this, getContext());
+        this.c = w7Var;
+        ai.a6 a6Var = new ai.a6(getContext(), null);
+        a6Var.a.getAvatarDrawable().m(i10, currentUser);
+        ai.y5 y5Var = a6Var.a;
+        y5Var.e(currentUser, y5Var.getAvatarDrawable());
+        a6Var.b.l(Emoji.replaceEmoji(UserObject.getUserName(currentUser), a6Var.b.getPaint().getFontMetricsInt(), false), false);
+        a6Var.c(LocaleController.getString(R.string.RightNow), false);
+        w7Var.addView(a6Var, w7.x5.d(-1, -2.0f, 55, 0.0f, 17.0f, 0.0f, 0.0f));
+        ImageView imageView = new ImageView(activity);
+        imageView.setImageDrawable(getContext().getResources().getDrawable(R.drawable.ic_close_white).mutate());
+        imageView.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
+        w7Var.addView(imageView, w7.x5.d(40, 40.0f, 53, 12.0f, 15.0f, 12.0f, 0.0f));
+        addView(w7Var, w7.x5.c(-2.0f, -1));
+        FrameLayout frameLayout = new FrameLayout(getContext());
+        this.d = frameLayout;
+        ai.xa xaVar = new ai.xa(getContext(), dVar);
+        this.e = xaVar;
+        xaVar.s0 = true;
+        xaVar.setTranslationY(AndroidUtilities.dp(8.0f));
+        frameLayout.addView(xaVar, w7.x5.d(-1, -1.0f, 87, 0.0f, 0.0f, 0.0f, 64.0f));
+        ImageView imageView2 = new ImageView(activity);
+        imageView2.setImageResource(R.drawable.msg_share);
+        PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
+        imageView2.setColorFilter(new PorterDuffColorFilter(-1, mode));
+        frameLayout.addView(imageView2, w7.x5.d(28, 28.0f, 85, 0.0f, 0.0f, 12.0f, 16.0f));
+        FrameLayout frameLayout2 = new FrameLayout(activity);
+        frameLayout2.setBackground(org.telegram.ui.ActionBar.h6.b0(AndroidUtilities.dp(22.0f), i0.a.k(-16777216, 122)));
+        TextView textView = new TextView(activity);
+        textView.setTextSize(1, 18.0f);
+        textView.setTextColor(1694498815);
+        textView.setText(LocaleController.getString(R.string.ReplyPrivately));
+        frameLayout2.addView(textView, w7.x5.d(-2, -2.0f, 19, 24.0f, 0.0f, 24.0f, 0.0f));
+        ImageView imageView3 = new ImageView(activity);
+        imageView3.setImageResource(R.drawable.input_attach);
+        imageView3.setColorFilter(new PorterDuffColorFilter(-1, mode));
+        frameLayout2.addView(imageView3, w7.x5.d(28, 28.0f, 21, 0.0f, 0.0f, 9.0f, 0.0f));
+        frameLayout.addView(frameLayout2, w7.x5.d(-1, 44.0f, 87, 9.0f, 8.0f, 55.0f, 8.0f));
+        addView(frameLayout, w7.x5.c(-1.0f, -1));
+        w7Var.setAlpha(0.0f);
+        frameLayout.setAlpha(0.0f);
+        setImportantForAccessibility(4);
     }
 
-    public final void b(boolean z10, boolean z11) {
-        if (this.r == z10) {
+    public final void a(boolean z10, boolean z11, FrameLayout frameLayout) {
+        if (z10) {
+            if (this.f == z11) {
+                return;
+            } else {
+                this.f = z11;
+            }
+        } else if (this.h == z11) {
             return;
-        }
-        ValueAnimator valueAnimator = this.s;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-        }
-        this.r = z10;
-        if (!z11) {
-            this.n = z10 ? 1.0f : 0.0f;
-            e();
-            return;
-        }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.n, z10 ? 1.0f : 0.0f);
-        this.s = ofFloat;
-        ofFloat.addUpdateListener(new ai.a(this, 21));
-        if (this.r) {
-            this.s.setDuration(450L);
-            this.s.setInterpolator(new LinearInterpolator());
         } else {
-            this.s.setDuration(350L);
-            this.s.setInterpolator(qr.h);
+            this.h = z11;
         }
-        this.s.start();
+        View view = z10 ? this.c : this.d;
+        view.clearAnimation();
+        view.animate().alpha(z11 ? z10 ? 0.5f : 0.2f : 0.0f).start();
+        if (frameLayout != null) {
+            frameLayout.clearAnimation();
+            frameLayout.animate().alpha(z11 ? 0.0f : 1.0f).start();
+        }
     }
 
-    public final boolean c() {
-        ArrayList arrayList = this.b;
-        int i10 = 0;
-        while (true) {
-            if (i10 >= arrayList.size()) {
-                break;
-            }
-            t6 t6Var = (t6) arrayList.get(i10);
-            if (t6Var.a != 4) {
-                i10++;
-            } else if (t6Var.getVisibility() == 0) {
-                return true;
-            }
-        }
+    public final void b(CharSequence charSequence) {
+        this.e.b0.b(org.telegram.ui.Components.z5.cloneSpans(new SpannableString(charSequence)), null, null, false, false);
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         return false;
     }
 
-    public final void d(int i10, boolean z10) {
-        ArrayList arrayList = this.b;
-        for (int i11 = 0; i11 < arrayList.size(); i11++) {
-            t6 t6Var = (t6) arrayList.get(i11);
-            if (t6Var.a == i10) {
-                t6Var.setVisibility(z10 ? 0 : 8);
-            }
-        }
-    }
-
-    public final void e() {
-        View view = this.a;
-        view.setAlpha(this.n);
-        view.setTranslationY((1.0f - this.n) * AndroidUtilities.dp(16.0f));
-        for (int i10 = 1; i10 < getChildCount(); i10++) {
-            View childAt = getChildAt(i10);
-            float f7 = this.n;
-            if (this.r) {
-                f7 = qr.h.getInterpolation(AndroidUtilities.cascade(f7, i10 - 1, getChildCount() - 1, 3.0f));
-            }
-            childAt.setAlpha(f7);
-            childAt.setTranslationY((1.0f - f7) * AndroidUtilities.dp(24.0f));
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        ArrayList arrayList = this.b;
-        int i14 = i12 - i10;
-        int i15 = i13 - i11;
-        this.a.layout(0, 0, i14, i15);
-        u6 u6Var = this.c;
-        u6Var.layout(i14 - u6Var.getMeasuredWidth(), (i15 - this.c.getMeasuredHeight()) / 2, i14, (this.c.getMeasuredHeight() + i15) / 2);
-        int dp = (i14 - AndroidUtilities.dp(32.33f)) - this.c.getMeasuredWidth();
-        int i16 = 0;
-        for (int i17 = 0; i17 < arrayList.size(); i17++) {
-            if (((t6) arrayList.get(i17)).getVisibility() == 0) {
-                i16++;
-            }
-        }
-        int min = Math.min(AndroidUtilities.dp(c() ? 20.0f : 30.0f), i16 < 2 ? 0 : vl.A(40.0f, i16, dp) / (i16 - 1));
-        int y3 = vl.y(40.0f, i15, 2);
-        int dp2 = (AndroidUtilities.dp(40.0f) + i15) / 2;
-        int dp3 = AndroidUtilities.dp(12.33f) + (!c() ? (vl.A(40.0f, i16, dp) - ((i16 - 1) * min)) / 2 : 0);
-        for (int i18 = 0; i18 < arrayList.size(); i18++) {
-            if (((t6) arrayList.get(i18)).getVisibility() == 0) {
-                ((t6) arrayList.get(i18)).layout(dp3, y3, AndroidUtilities.dp(40.0f) + dp3, dp2);
-                dp3 = org.telegram.messenger.y0.C(40.0f, min, dp3);
-            }
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(52.0f), TLObject.FLAG_30));
-    }
-
-    public void setOnClickListener(Utilities.Callback<Integer> callback) {
-        this.f = callback;
-    }
-
-    public void setShareEnabled(boolean z10) {
-        if (this.h != z10) {
-            this.h = z10;
-            u6 u6Var = this.c;
-            u6Var.s = z10;
-            u6Var.invalidate();
-        }
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return false;
     }
 }

@@ -2,20 +2,20 @@ package ci;
 
 import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.cw;
+import org.telegram.ui.Components.dw;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class c2 extends cw {
+public final class c2 extends dw {
     public final /* synthetic */ e2 g0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c2(e2 e2Var, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, e6Var, false, false, false, true, 0, null, org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.v6, e6Var), false);
+    public c2(e2 e2Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, d6Var, false, false, false, true, 0, null, org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.v6, d6Var), false);
         this.g0 = e2Var;
     }
 
-    @Override // org.telegram.ui.Components.cw
+    @Override // org.telegram.ui.Components.dw
     public final boolean h(int i10) {
         int i11;
         int paddingTop;

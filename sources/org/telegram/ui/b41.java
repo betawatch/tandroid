@@ -1,90 +1,39 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class b41 extends FrameLayout {
-    public int a;
-    public TLRPC.TL_channels_sponsoredMessageReportResultChooseOption b;
-    public TLRPC.TL_reportResultChooseOption c;
-    public TLRPC.TL_reportResultAddComment d;
-    public final FrameLayout e;
-    public final org.telegram.ui.Components.e61 f;
-    public final t5 h;
-    public a41 n;
-    public FrameLayout r;
-    public ci.d s;
-    public final /* synthetic */ c41 v;
+public final /* synthetic */ class b41 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ e41 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b41(c41 c41Var, Context context) {
-        super(context);
-        org.telegram.ui.ActionBar.e6 e6Var;
-        org.telegram.ui.ActionBar.e6 e6Var2;
-        org.telegram.ui.ActionBar.e6 e6Var3;
-        int i10;
-        org.telegram.ui.ActionBar.e6 e6Var4;
-        this.v = c41Var;
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.e = frameLayout;
-        frameLayout.setPadding(0, AndroidUtilities.statusBarHeight, 0, 0);
-        frameLayout.setClipToPadding(true);
-        addView(frameLayout, w7.x5.e(-1, -1, 119));
-        e6Var = ((org.telegram.ui.ActionBar.f3) c41Var).resourcesProvider;
-        t5 t5Var = new t5(context, e6Var);
-        TextView textView = (TextView) t5Var.d;
-        this.h = t5Var;
-        t5Var.e = new z31(this, 0);
-        if (c41Var.d) {
-            textView.setText(LocaleController.getString(R.string.ReportAd));
-        } else if (c41Var.e) {
-            textView.setText(LocaleController.getString(R.string.ReportStory));
-        } else {
-            textView.setText(LocaleController.getString(R.string.Report2));
-        }
-        org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) t5Var.b;
-        int i11 = org.telegram.ui.ActionBar.i6.G6;
-        e6Var2 = ((org.telegram.ui.ActionBar.f3) c41Var).resourcesProvider;
-        g2Var.a(org.telegram.ui.ActionBar.i6.v0(i11, e6Var2));
-        int i12 = org.telegram.ui.ActionBar.i6.h5;
-        e6Var3 = ((org.telegram.ui.ActionBar.f3) c41Var).resourcesProvider;
-        t5Var.setBackgroundColor(org.telegram.ui.ActionBar.i6.v0(i12, e6Var3));
-        addView(t5Var, w7.x5.e(-1, -2, 55));
-        i10 = ((org.telegram.ui.ActionBar.f3) c41Var).currentAccount;
-        b5 b5Var = new b5(this, 19);
-        tl0 tl0Var = new tl0(this, 15);
-        e6Var4 = ((org.telegram.ui.ActionBar.f3) c41Var).resourcesProvider;
-        org.telegram.ui.Components.e61 e61Var = new org.telegram.ui.Components.e61(context, i10, 0, true, b5Var, tl0Var, null, e6Var4);
-        this.f = e61Var;
-        e61Var.setClipToPadding(false);
-        e61Var.X2.k1(true);
-        e61Var.setOnScrollListener(new h3(this, 26));
-        frameLayout.addView(e61Var, w7.x5.c(-1.0f, -1));
-    }
-
-    public final void a(int i10) {
+    public /* synthetic */ b41(e41 e41Var, int i10) {
         this.a = i10;
-        this.h.b(i10 != 0);
-        org.telegram.ui.Components.e61 e61Var = this.f;
-        if (e61Var != null) {
-            e61Var.Y2.N(true);
-        }
+        this.b = e41Var;
     }
 
-    public final void b(TLRPC.TL_reportResultAddComment tL_reportResultAddComment) {
-        this.b = null;
-        this.c = null;
-        this.d = tL_reportResultAddComment;
-        this.f.Y2.N(false);
-        if (this.n != null) {
-            AndroidUtilities.runOnUIThread(new z31(this, 1), 120L);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                e41 e41Var = this.b;
+                e41Var.getClass();
+                e41Var.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                e41Var.g();
+                break;
+            case 1:
+                e41 e41Var2 = this.b;
+                e41Var2.getClass();
+                e41Var2.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                e41Var2.g();
+                break;
+            default:
+                e41 e41Var3 = this.b;
+                e41Var3.getClass();
+                e41Var3.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                e41Var3.g();
+                break;
         }
     }
 }

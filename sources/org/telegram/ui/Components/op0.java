@@ -13,7 +13,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class op0 implements NotificationCenter.NotificationCenterDelegate {
     public final /* synthetic */ TLRPC.Dialog a;
@@ -54,7 +54,7 @@ public final class op0 implements NotificationCenter.NotificationCenterDelegate 
         int i21;
         int i22;
         hq0 hq0Var = this.d;
-        ll0 ll0Var = hq0Var.E;
+        ml0 ml0Var = hq0Var.E;
         eq0 eq0Var = hq0Var.L;
         org.telegram.ui.ActionBar.k kVar = hq0Var.z0;
         long longValue = ((Long) objArr[0]).longValue();
@@ -85,8 +85,8 @@ public final class op0 implements NotificationCenter.NotificationCenterDelegate 
             if (z10) {
                 return;
             }
-            ll0Var.setVisibility(0);
-            ll0Var.setAlpha(0.0f);
+            ml0Var.setVisibility(0);
+            ml0Var.setAlpha(0.0f);
             kVar.setVisibility(0);
             kVar.setAlpha(0.0f);
             i15 = ((org.telegram.ui.ActionBar.f3) hq0Var).currentAccount;
@@ -115,13 +115,13 @@ public final class op0 implements NotificationCenter.NotificationCenterDelegate 
             int[] iArr = new int[2];
             o1.k kVar3 = new o1.k(new o1.j(0.0f));
             o1.l lVar = new o1.l(1000.0f);
-            org.telegram.ui.bo boVar = hq0Var.f0;
-            lVar.b((boVar == null || !boVar.b) ? 800.0f : 10.0f);
+            org.telegram.ui.xn xnVar = hq0Var.f0;
+            lVar.b((xnVar == null || !xnVar.b) ? 800.0f : 10.0f);
             lVar.a(1.0f);
             kVar3.u = lVar;
             hq0Var.B0 = kVar3;
             kVar3.b(new zo0(this, this.c, iArr, 1));
-            hq0Var.B0.a(new fb(this, 5));
+            hq0Var.B0.a(new hb(this, 5));
             hq0Var.B0.f();
             if (atomicReference.get() != null) {
                 AndroidUtilities.cancelRunOnUIThread((Runnable) atomicReference.get());

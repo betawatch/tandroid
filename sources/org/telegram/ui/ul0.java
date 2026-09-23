@@ -1,72 +1,82 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
+import android.content.Intent;
+import android.net.Uri;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.tl.TL_account;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.UserConfig;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class ul0 extends org.telegram.ui.Components.h51 {
-    public static final /* synthetic */ int a = 0;
+public final /* synthetic */ class ul0 implements org.telegram.ui.ActionBar.a2, wt, wm0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ in0 b;
 
-    static {
-        org.telegram.ui.Components.h51.setup(new ul0());
+    public /* synthetic */ ul0(in0 in0Var, int i10) {
+        this.a = i10;
+        this.b = in0Var;
     }
 
-    @Override // org.telegram.ui.Components.h51
-    public final void bindView(View view, org.telegram.ui.Components.i51 i51Var, boolean z10, org.telegram.ui.Components.w51 w51Var, org.telegram.ui.Components.e61 e61Var) {
-        vl0 vl0Var = (vl0) view;
-        TL_account.Passkey passkey = (TL_account.Passkey) i51Var.G;
-        View.OnClickListener onClickListener = i51Var.D;
-        TextView textView = vl0Var.f;
-        TextView textView2 = vl0Var.e;
-        org.telegram.ui.ActionBar.e6 e6Var = vl0Var.b;
-        FrameLayout frameLayout = vl0Var.c;
-        org.telegram.ui.Components.u9 u9Var = vl0Var.d;
-        vl0Var.r = passkey.id;
-        long j3 = passkey.software_emoji_id;
-        if (j3 != 0) {
-            u9Var.setAnimatedEmojiDrawable(org.telegram.ui.Components.o5.n(vl0Var.a, j3, null, 3));
-            frameLayout.setBackground(null);
-            u9Var.setColorFilter(null);
-            u9Var.setScaleX(1.0f);
-            u9Var.setScaleY(1.0f);
-        } else {
-            int dp = AndroidUtilities.dp(4.0f);
-            int i10 = org.telegram.ui.ActionBar.i6.G6;
-            frameLayout.setBackground(org.telegram.ui.ActionBar.i6.b0(dp, org.telegram.ui.ActionBar.i6.l1(0.04f, org.telegram.ui.ActionBar.i6.v0(i10, e6Var))));
-            u9Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.l1(0.3f, org.telegram.ui.ActionBar.i6.v0(i10, e6Var)), PorterDuff.Mode.SRC_IN));
-            u9Var.setImageResource(R.drawable.msg2_permissions);
-            u9Var.setScaleX(0.666f);
-            u9Var.setScaleY(0.666f);
-            u9Var.setAnimatedEmojiDrawable(null);
+    @Override // org.telegram.ui.wt
+    public void a1(st stVar) {
+        switch (this.a) {
+            case 2:
+                in0 in0Var = this.b;
+                in0Var.Y[5].setText(stVar.a);
+                in0Var.s = stVar.d;
+                break;
+            default:
+                in0 in0Var2 = this.b;
+                in0Var2.Y[0].setText(stVar.a);
+                if (in0Var2.U0.indexOf(stVar.a) != -1) {
+                    in0Var2.Z0 = true;
+                    String str = (String) in0Var2.V0.get(stVar.a);
+                    in0Var2.Y[1].setText(str);
+                    String str2 = (String) in0Var2.X0.get(str);
+                    in0Var2.Y[2].setHintText(str2 != null ? str2.replace('X', (char) 8211) : null);
+                    in0Var2.Z0 = false;
+                }
+                AndroidUtilities.runOnUIThread(new rl0(in0Var2, 3), 300L);
+                in0Var2.Y[2].requestFocus();
+                EditTextBoldCursor editTextBoldCursor = in0Var2.Y[2];
+                editTextBoldCursor.setSelection(editTextBoldCursor.length());
+                break;
         }
-        if (TextUtils.isEmpty(passkey.name)) {
-            textView2.setText(LocaleController.getString(R.string.PasskeyUnknown));
-        } else {
-            textView2.setText(passkey.name);
-        }
-        int i11 = passkey.last_usage_date;
-        if (i11 != 0) {
-            textView.setText(LocaleController.formatString(R.string.PasskeyLastUsedOn, LocaleController.formatDateTime(i11, false)));
-        } else {
-            textView.setText(LocaleController.formatString(R.string.PasskeyCreatedOn, LocaleController.formatDateTime(passkey.date, false)));
-        }
-        vl0Var.h.setOnClickListener(onClickListener);
-        vl0Var.n = z10;
-        vl0Var.setWillNotDraw(!z10);
     }
 
-    @Override // org.telegram.ui.Components.h51
-    public final View createView(Context context, org.telegram.ui.Components.ll0 ll0Var, int i10, int i11, org.telegram.ui.ActionBar.e6 e6Var) {
-        return new vl0(context, i10, e6Var);
+    @Override // org.telegram.ui.wm0
+    public void b(String str, String str2) {
+        this.b.x1();
+    }
+
+    @Override // org.telegram.ui.ActionBar.a2
+    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        switch (this.a) {
+            case 0:
+                in0 in0Var = this.b;
+                in0Var.getClass();
+                try {
+                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+                    intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
+                    in0Var.getParentActivity().startActivity(intent);
+                    break;
+                } catch (Exception e) {
+                    FileLog.e(e);
+                    return;
+                }
+            case 1:
+                this.b.finishFragment();
+                break;
+            case 2:
+            case 3:
+            default:
+                in0.a0(this.b);
+                break;
+            case 4:
+                nf.f.s(r3.getParentActivity(), "https://telegram.org/deactivate?phone=" + UserConfig.getInstance(this.b.currentAccount).getClientPhone());
+                break;
+        }
     }
 }

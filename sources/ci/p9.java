@@ -1,55 +1,75 @@
 package ci;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class p9 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ba b;
+import android.util.Pair;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ResultCallback;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.vw0;
 
-    public /* synthetic */ p9(ba baVar, int i10) {
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class p9 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ Object c;
+
+    public /* synthetic */ p9(Object obj, long j3, int i10) {
         this.a = i10;
-        this.b = baVar;
+        this.c = obj;
+        this.b = j3;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        int i10;
+        long j3;
         switch (this.a) {
             case 0:
-                ia iaVar = this.b.W;
-                org.telegram.ui.Components.oc.h(iaVar.container);
-                super/*org.telegram.ui.ActionBar.f3*/.dismiss();
-                break;
-            case 1:
-                ba baVar = this.b;
-                baVar.v.setLoading(false);
-                ia iaVar2 = baVar.W;
-                iaVar2.f1();
-                iaVar2.b.D(0);
-                break;
-            case 2:
-                this.b.U = false;
-                break;
-            case 3:
-                ia iaVar3 = this.b.W;
-                iaVar3.M = 6;
-                iaVar3.b.D(1);
-                break;
-            case 4:
-                ba baVar2 = this.b;
-                baVar2.n.m(2);
-                baVar2.f.forceLayout();
-                baVar2.j();
-                break;
-            default:
-                ba baVar3 = this.b;
-                ia iaVar4 = baVar3.W;
-                if (baVar3.a != 0) {
-                    iaVar4.onBackPressed();
-                    break;
-                } else {
-                    iaVar4.dismiss();
+                y9 y9Var = (y9) this.c;
+                TLRPC.TL_channels_channelParticipants tL_channels_channelParticipants = (TLRPC.TL_channels_channelParticipants) obj;
+                org.telegram.ui.ActionBar.b2 b2Var = y9Var.G;
+                if (b2Var != null) {
+                    b2Var.c(350L);
+                    y9Var.G = null;
+                }
+                if (tL_channels_channelParticipants != null && !tL_channels_channelParticipants.participants.isEmpty()) {
+                    TLRPC.TL_chatParticipants tL_chatParticipants = new TLRPC.TL_chatParticipants();
+                    while (i10 < tL_channels_channelParticipants.participants.size()) {
+                        TLRPC.ChannelParticipant channelParticipant = tL_channels_channelParticipants.participants.get(i10);
+                        TLRPC.TL_chatParticipant tL_chatParticipant = new TLRPC.TL_chatParticipant();
+                        TLRPC.Peer peer = channelParticipant.peer;
+                        if (peer != null) {
+                            j3 = DialogObject.getPeerDialogId(peer);
+                            i10 = j3 < 0 ? i10 + 1 : 0;
+                        } else {
+                            j3 = channelParticipant.user_id;
+                        }
+                        tL_chatParticipant.user_id = j3;
+                        tL_chatParticipants.participants.add(tL_chatParticipant);
+                    }
+                    y9Var.d(this.b, tL_chatParticipants);
                     break;
                 }
+                break;
+            case 1:
+                ResultCallback resultCallback = (ResultCallback) this.c;
+                dg.a aVar = (dg.a) obj;
+                if (resultCallback != null) {
+                    resultCallback.onComplete(new Pair(Long.valueOf(this.b), aVar));
+                    break;
+                }
+                break;
+            default:
+                vw0 vw0Var = (vw0) this.c;
+                TLRPC.TL_messages_emojiGroups tL_messages_emojiGroups = (TLRPC.TL_messages_emojiGroups) obj;
+                if (tL_messages_emojiGroups != null) {
+                    NotificationCenter.getInstance(UserConfig.selectedAccount).doOnIdle(new a3.h0(vw0Var, tL_messages_emojiGroups, this.b, 23));
+                    break;
+                }
+                break;
         }
     }
 }

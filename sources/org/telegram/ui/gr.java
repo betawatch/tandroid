@@ -1,33 +1,47 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
+import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class gr implements mq {
-    public final /* synthetic */ TLObject a;
-    public final /* synthetic */ ur b;
+public final /* synthetic */ class gr implements q0.a {
+    public final /* synthetic */ int a;
 
-    public gr(ur urVar, TLObject tLObject) {
-        this.b = urVar;
-        this.a = tLObject;
+    public /* synthetic */ gr(int i10) {
+        this.a = i10;
     }
 
-    @Override // org.telegram.ui.mq
-    public final void a(TLRPC.User user) {
-        ur.c0(this.b, user);
-    }
-
-    @Override // org.telegram.ui.mq
-    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
-        TLObject tLObject = this.a;
-        if (tLObject instanceof TLRPC.ChannelParticipant) {
-            TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) tLObject;
-            channelParticipant.admin_rights = tL_chatAdminRights;
-            channelParticipant.banned_rights = tL_chatBannedRights;
-            channelParticipant.rank = str;
-            ur.W(this.b, channelParticipant, tL_chatAdminRights, tL_chatBannedRights);
+    @Override // q0.a
+    public final void accept(Object obj) {
+        switch (this.a) {
+            case 0:
+                break;
+            case 1:
+                View view = (View) obj;
+                boolean z10 = ChatAttachAlertPhotoLayout.q1;
+                if (view instanceof org.telegram.ui.Cells.t5) {
+                    org.telegram.ui.Cells.t5 t5Var = (org.telegram.ui.Cells.t5) view;
+                    t5Var.c(t5Var.getPhotoEntry() != null && t5Var.getPhotoEntry().hasSpoiler, Float.valueOf(250.0f));
+                    t5Var.setHighQuality(t5Var.getPhotoEntry() != null && t5Var.getPhotoEntry().isHighQuality());
+                    t5Var.f(t5Var.getPhotoEntry() != null ? t5Var.getPhotoEntry().starsAmount : 0L, ChatAttachAlertPhotoLayout.s1.size() > 1);
+                    break;
+                }
+                break;
+            case 2:
+                View view2 = (View) obj;
+                if (view2 instanceof org.telegram.ui.Components.hn0) {
+                    ((org.telegram.ui.Components.hn0) view2).a(false, true);
+                    break;
+                }
+                break;
+            default:
+                View view3 = (View) obj;
+                if (view3 instanceof org.telegram.ui.Components.hn0) {
+                    ((org.telegram.ui.Components.hn0) view3).a(false, true);
+                    break;
+                }
+                break;
         }
     }
 }

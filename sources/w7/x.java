@@ -13,10 +13,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.Components.ll0;
+import org.telegram.ui.Components.ml0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public abstract class x {
     public static mg.i a;
@@ -35,14 +35,14 @@ public abstract class x {
             iVar2.F = ViewConfiguration.get(launchActivity).getScaledTouchSlop();
             k2.u uVar = new k2.u(launchActivity, fVar);
             ((GestureDetector) uVar.b).setIsLongpressEnabled(false);
-            ci.n6 n6Var = new ci.n6(iVar2, launchActivity, uVar, 2);
-            iVar2.a = n6Var;
+            ci.m6 m6Var = new ci.m6(iVar2, launchActivity, uVar, 2);
+            iVar2.a = m6Var;
             ImageView imageView = new ImageView(launchActivity);
             imageView.setImageResource(R.drawable.device_phone_android);
-            imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.O9, false), PorterDuff.Mode.SRC_IN));
-            n6Var.addView(imageView);
-            n6Var.setVisibility(8);
-            iVar2.addView(n6Var, x5.c(56.0f, 56));
+            imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.O9, false), PorterDuff.Mode.SRC_IN));
+            m6Var.addView(imageView);
+            m6Var.setVisibility(8);
+            iVar2.addView(m6Var, x5.c(56.0f, 56));
             LinearLayout linearLayout = new LinearLayout(launchActivity);
             iVar2.w = linearLayout;
             linearLayout.setOrientation(1);
@@ -54,12 +54,12 @@ public abstract class x {
             textView.setTypeface(AndroidUtilities.bold());
             textView.setPadding(AndroidUtilities.dp(24.0f), AndroidUtilities.dp(19.0f), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(19.0f));
             linearLayout.addView(textView, x5.n(-1, -2));
-            ll0 ll0Var = new ll0(launchActivity, null);
-            iVar2.y = ll0Var;
-            ll0Var.setLayoutManager(new s4.c0());
-            ll0Var.setAdapter(new mg.g(iVar2, launchActivity));
-            ll0Var.setOnItemClickListener(new ai.g(iVar2, 13));
-            linearLayout.addView(ll0Var, x5.l(1.0f, -1, 0));
+            ml0 ml0Var = new ml0(launchActivity, null);
+            iVar2.y = ml0Var;
+            ml0Var.setLayoutManager(new s4.c0());
+            ml0Var.setAdapter(new mg.g(iVar2, launchActivity));
+            ml0Var.setOnItemClickListener(new ai.g(iVar2, 13));
+            linearLayout.addView(ml0Var, x5.l(1.0f, -1, 0));
             iVar2.addView(linearLayout, x5.d(-1, -1.0f, 0, 8.0f, 8.0f, 8.0f, 8.0f));
             iVar2.d();
             iVar2.setFitsSystemWindows(true);

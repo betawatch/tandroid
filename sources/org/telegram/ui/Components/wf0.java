@@ -16,7 +16,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class wf0 extends FrameLayout {
     public float a;
@@ -33,14 +33,14 @@ public final class wf0 extends FrameLayout {
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        org.telegram.ui.ActionBar.h5 h5Var = org.telegram.ui.ActionBar.i6.k3;
-        if (h5Var != null) {
-            h5Var.setAlpha((int) (getAlpha() * 255.0f));
-            org.telegram.ui.ActionBar.i6.k3.setBounds(AndroidUtilities.dp(1.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(125.0f), AndroidUtilities.dp(125.0f));
-            org.telegram.ui.ActionBar.i6.k3.draw(canvas);
-            org.telegram.ui.ActionBar.i6.S1.setColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.ra, false));
-            org.telegram.ui.ActionBar.i6.S1.setAlpha((int) (getAlpha() * 255.0f));
-            canvas.drawCircle(AndroidUtilities.dp(63.0f), AndroidUtilities.dp(63.0f), AndroidUtilities.dp(59.5f), org.telegram.ui.ActionBar.i6.S1);
+        org.telegram.ui.ActionBar.g5 g5Var = org.telegram.ui.ActionBar.h6.k3;
+        if (g5Var != null) {
+            g5Var.setAlpha((int) (getAlpha() * 255.0f));
+            org.telegram.ui.ActionBar.h6.k3.setBounds(AndroidUtilities.dp(1.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(125.0f), AndroidUtilities.dp(125.0f));
+            org.telegram.ui.ActionBar.h6.k3.draw(canvas);
+            org.telegram.ui.ActionBar.h6.S1.setColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.ra, false));
+            org.telegram.ui.ActionBar.h6.S1.setAlpha((int) (getAlpha() * 255.0f));
+            canvas.drawCircle(AndroidUtilities.dp(63.0f), AndroidUtilities.dp(63.0f), AndroidUtilities.dp(59.5f), org.telegram.ui.ActionBar.h6.S1);
         }
     }
 
@@ -109,7 +109,7 @@ public final class wf0 extends FrameLayout {
                 f10 = a4.a.e(i14, i11, 0.5f, 1.0f);
             } else {
                 if (i14 > AndroidUtilities.displaySize.x - layoutParams.width) {
-                    f10 = org.telegram.messenger.vl.c((i14 - r11) + r10, i11, 0.5f, 1.0f);
+                    f10 = org.telegram.messenger.ul.c((i14 - r11) + r10, i11, 0.5f, 1.0f);
                 }
             }
             if (pipRoundVideoView.a.getAlpha() != f10) {

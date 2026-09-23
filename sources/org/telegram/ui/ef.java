@@ -4,16 +4,16 @@ import android.view.View;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ef implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ bo b;
+    public final /* synthetic */ xn b;
     public final /* synthetic */ int c;
 
-    public /* synthetic */ ef(bo boVar, int i10, int i11) {
+    public /* synthetic */ ef(xn xnVar, int i10, int i11) {
         this.a = i11;
-        this.b = boVar;
+        this.b = xnVar;
         this.c = i10;
     }
 
@@ -32,24 +32,24 @@ public final /* synthetic */ class ef implements Runnable {
                 this.b.getConnectionsManager().cancelRequest(this.c, true);
                 break;
             case 3:
-                bo boVar = this.b;
-                uj ujVar = boVar.x0;
-                if (ujVar != null) {
-                    int childCount = ujVar.getChildCount();
+                xn xnVar = this.b;
+                rj rjVar = xnVar.x0;
+                if (rjVar != null) {
+                    int childCount = rjVar.getChildCount();
                     for (int i10 = 0; i10 < childCount; i10++) {
-                        View childAt = boVar.x0.getChildAt(i10);
-                        if ((childAt instanceof org.telegram.ui.Cells.t1) && (messageObject = (t1Var = (org.telegram.ui.Cells.t1) childAt).getMessageObject()) != null && messageObject.equals(boVar.G3)) {
+                        View childAt = xnVar.x0.getChildAt(i10);
+                        if ((childAt instanceof org.telegram.ui.Cells.t1) && (messageObject = (t1Var = (org.telegram.ui.Cells.t1) childAt).getMessageObject()) != null && messageObject.equals(xnVar.G3)) {
                             t1Var.g4(this.c, true, true);
                         }
                     }
                 }
-                boVar.G3 = null;
+                xnVar.G3 = null;
                 break;
             case 4:
                 this.b.getConnectionsManager().cancelRequest(this.c, true);
                 break;
             case 5:
-                bo.V(this.b, this.c);
+                xn.V(this.b, this.c);
                 break;
             case 6:
                 this.b.actionBar.setSubtitle(LocaleController.formatPluralString("messages", this.c, new Object[0]));
@@ -58,10 +58,10 @@ public final /* synthetic */ class ef implements Runnable {
                 this.b.getConnectionsManager().cancelRequest(this.c, true);
                 break;
             case 8:
-                bo.e0(this.b, this.c);
+                xn.f0(this.b, this.c);
                 break;
             default:
-                bo.e1(this.b, this.c);
+                xn.e1(this.b, this.c);
                 break;
         }
     }

@@ -1,73 +1,33 @@
 package ci;
 
-import android.app.Activity;
-import android.app.Dialog;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import android.text.style.ImageSpan;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class sb extends org.telegram.ui.ActionBar.n2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ oc b;
+public final class sb extends ImageSpan {
+    public final /* synthetic */ Drawable a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public sb(oc ocVar, int i10) {
-        super(null);
-        this.a = i10;
-        switch (i10) {
-            case 1:
-                this.b = ocVar;
-                super(null);
-                this.currentAccount = ocVar.c;
-                break;
-            default:
-                this.b = ocVar;
-                break;
-        }
+    public sb(Drawable drawable, Drawable drawable2) {
+        super(drawable);
+        this.a = drawable2;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
-    public final Activity getParentActivity() {
-        switch (this.a) {
-        }
-        return this.b.b;
+    @Override // android.text.style.DynamicDrawableSpan, android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+        canvas.save();
+        canvas.translate(0.0f, AndroidUtilities.dp(1.0f) + ((i14 - i12) / 2));
+        this.a.setAlpha(paint.getAlpha());
+        super.draw(canvas, charSequence, i10, i11, f7, i12, i13, i14, paint);
+        canvas.restore();
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
-    public final org.telegram.ui.ActionBar.e6 getResourceProvider() {
-        switch (this.a) {
-            case 0:
-                return new ai.x3(7, this.b.a);
-            default:
-                return new ai.x3(8, this.b.a);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.n2
-    public final boolean isLightStatusBar() {
-        switch (this.a) {
-        }
-        return false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.n2
-    public boolean presentFragment(org.telegram.ui.ActionBar.n2 n2Var) {
-        switch (this.a) {
-            case 0:
-                this.b.T();
-                return false;
-            default:
-                return super.presentFragment(n2Var);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.n2
-    public Dialog showDialog(Dialog dialog) {
-        switch (this.a) {
-            case 1:
-                dialog.show();
-                return dialog;
-            default:
-                return super.showDialog(dialog);
-        }
+    @Override // android.text.style.DynamicDrawableSpan, android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
+        return (super.getSize(paint, charSequence, i10, i11, fontMetricsInt) / 3) * 2;
     }
 }

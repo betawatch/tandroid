@@ -1,136 +1,72 @@
 package org.telegram.ui;
 
 import android.view.View;
-import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xo implements RequestDelegate {
+public final /* synthetic */ class xo implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ kp b;
+    public final /* synthetic */ gp b;
 
-    public /* synthetic */ xo(kp kpVar, int i10) {
+    public /* synthetic */ xo(gp gpVar, int i10) {
         this.a = i10;
-        this.b = kpVar;
+        this.b = gpVar;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        int i10 = this.a;
+        gp gpVar = this.b;
+        switch (i10) {
             case 0:
-                if (tLObject instanceof TLRPC.TL_boolTrue) {
-                    AndroidUtilities.runOnUIThread(new zo(this.b, 3));
+                TLRPC.Chat currentChannel = ((org.telegram.ui.Cells.n) view.getParent()).getCurrentChannel();
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(gpVar.getParentActivity());
+                String string = LocaleController.getString(R.string.AppName);
+                org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
+                b2Var.R = string;
+                if (gpVar.a0) {
+                    b2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString("RevokeLinkAlertChannel", R.string.RevokeLinkAlertChannel, gpVar.getMessagesController().linkPrefix + "/" + ChatObject.getPublicUsername(currentChannel), currentChannel.title));
+                } else {
+                    b2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString("RevokeLinkAlert", R.string.RevokeLinkAlert, gpVar.getMessagesController().linkPrefix + "/" + ChatObject.getPublicUsername(currentChannel), currentChannel.title));
+                }
+                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
+                alertDialog$Builder.k(LocaleController.getString(R.string.RevokeButton), new u(15, gpVar, currentChannel));
+                gpVar.showDialog(b2Var);
+                break;
+            case 1:
+                if (!gpVar.V) {
+                    gpVar.V = true;
+                    gpVar.b0();
                     break;
                 }
                 break;
-            case 1:
-                final int i10 = 0;
-                final kp kpVar = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ap
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i10) {
-                            case 0:
-                                boolean z10 = tLObject instanceof TLRPC.TL_boolTrue;
-                                kp kpVar2 = kpVar;
-                                if (z10) {
-                                    for (int i11 = 0; i11 < kpVar2.X.usernames.size(); i11++) {
-                                        TLRPC.TL_username tL_username = kpVar2.X.usernames.get(i11);
-                                        if (tL_username != null && tL_username.active && !tL_username.editable) {
-                                            tL_username.active = false;
-                                        }
-                                    }
-                                }
-                                kpVar2.t0 = false;
-                                AndroidUtilities.runOnUIThread(new zo(kpVar2, 4));
-                                break;
-                            default:
-                                kp kpVar3 = kpVar;
-                                ArrayList arrayList = kpVar3.f0;
-                                kpVar3.d0 = false;
-                                TLObject tLObject2 = tLObject;
-                                if (tLObject2 != null && kpVar3.getParentActivity() != null) {
-                                    for (int i12 = 0; i12 < arrayList.size(); i12++) {
-                                        kpVar3.h.removeView((View) arrayList.get(i12));
-                                    }
-                                    arrayList.clear();
-                                    TLRPC.TL_messages_chats tL_messages_chats = (TLRPC.TL_messages_chats) tLObject2;
-                                    for (int i13 = 0; i13 < tL_messages_chats.chats.size(); i13++) {
-                                        org.telegram.ui.Cells.n nVar = new org.telegram.ui.Cells.n(kpVar3.getParentActivity(), new bp(kpVar3, 0), false, 0);
-                                        TLRPC.Chat chat = tL_messages_chats.chats.get(i13);
-                                        boolean z11 = true;
-                                        if (i13 != tL_messages_chats.chats.size() - 1) {
-                                            z11 = false;
-                                        }
-                                        nVar.a(chat, z11);
-                                        arrayList.add(nVar);
-                                        kpVar3.x.addView(nVar, w7.x5.n(-1, 72));
-                                    }
-                                    kpVar3.b0();
-                                    break;
-                                }
-                                break;
-                        }
-                    }
-                });
-                break;
             case 2:
-                final int i11 = 1;
-                final kp kpVar2 = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ap
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i11) {
-                            case 0:
-                                boolean z10 = tLObject instanceof TLRPC.TL_boolTrue;
-                                kp kpVar22 = kpVar2;
-                                if (z10) {
-                                    for (int i112 = 0; i112 < kpVar22.X.usernames.size(); i112++) {
-                                        TLRPC.TL_username tL_username = kpVar22.X.usernames.get(i112);
-                                        if (tL_username != null && tL_username.active && !tL_username.editable) {
-                                            tL_username.active = false;
-                                        }
-                                    }
-                                }
-                                kpVar22.t0 = false;
-                                AndroidUtilities.runOnUIThread(new zo(kpVar22, 4));
-                                break;
-                            default:
-                                kp kpVar3 = kpVar2;
-                                ArrayList arrayList = kpVar3.f0;
-                                kpVar3.d0 = false;
-                                TLObject tLObject2 = tLObject;
-                                if (tLObject2 != null && kpVar3.getParentActivity() != null) {
-                                    for (int i12 = 0; i12 < arrayList.size(); i12++) {
-                                        kpVar3.h.removeView((View) arrayList.get(i12));
-                                    }
-                                    arrayList.clear();
-                                    TLRPC.TL_messages_chats tL_messages_chats = (TLRPC.TL_messages_chats) tLObject2;
-                                    for (int i13 = 0; i13 < tL_messages_chats.chats.size(); i13++) {
-                                        org.telegram.ui.Cells.n nVar = new org.telegram.ui.Cells.n(kpVar3.getParentActivity(), new bp(kpVar3, 0), false, 0);
-                                        TLRPC.Chat chat = tL_messages_chats.chats.get(i13);
-                                        boolean z11 = true;
-                                        if (i13 != tL_messages_chats.chats.size() - 1) {
-                                            z11 = false;
-                                        }
-                                        nVar.a(chat, z11);
-                                        arrayList.add(nVar);
-                                        kpVar3.x.addView(nVar, w7.x5.n(-1, 72));
-                                    }
-                                    kpVar3.b0();
-                                    break;
-                                }
-                                break;
-                        }
+                if (gpVar.V) {
+                    if (!gpVar.c0) {
+                        gpVar.Z();
+                        break;
+                    } else {
+                        gpVar.V = false;
+                        gpVar.b0();
+                        break;
                     }
-                });
+                }
+                break;
+            case 3:
+                th0 th0Var = new th0(gpVar.Z, 0L, 0);
+                th0Var.g0(gpVar.Y, gpVar.l0);
+                gpVar.presentFragment(th0Var);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new uh(10, this.b, tL_error));
+                boolean z10 = !gpVar.b0;
+                gpVar.b0 = z10;
+                ((org.telegram.ui.Cells.x8) view).setChecked(z10);
                 break;
         }
     }

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public abstract class CacheFetcher<Args, R> {
     private HashMap<Pair<Integer, Args>, R> cachedResults;
@@ -28,7 +28,7 @@ public abstract class CacheFetcher<Args, R> {
     }
 
     private void callCallbacks(Pair<Integer, Args> pair, R r10, boolean z10) {
-        AndroidUtilities.runOnUIThread(new vj(this, pair, r10, z10, 1));
+        AndroidUtilities.runOnUIThread(new uj(this, pair, r10, z10, 1));
     }
 
     private R getCachedResult(Pair<Integer, Args> pair) {
@@ -127,7 +127,7 @@ public abstract class CacheFetcher<Args, R> {
         if (callback == null) {
             return;
         }
-        AndroidUtilities.runOnUIThread(new f0(this, pair, callback, 10));
+        AndroidUtilities.runOnUIThread(new f0(this, pair, callback, 11));
     }
 
     private void saveLastRequested(Pair<Integer, Args> pair) {

@@ -1,93 +1,75 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class pr extends Drawable {
-    public final Drawable a;
-    public final Drawable b;
-    public float c;
-    public float d = 255.0f;
-    public ValueAnimator e;
+public final class pr implements Drawable.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ qr b;
 
-    public pr(Drawable drawable, Drawable drawable2) {
-        this.a = drawable;
-        this.b = drawable2;
-        if (drawable != null) {
-            drawable.setCallback(new or(this, 0));
-        }
-        if (drawable2 != null) {
-            drawable2.setCallback(new or(this, 1));
-        }
+    public /* synthetic */ pr(qr qrVar, int i10) {
+        this.a = i10;
+        this.b = qrVar;
     }
 
-    public final void a(float f7) {
-        ValueAnimator valueAnimator = this.e;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-        }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.c, f7);
-        this.e = ofFloat;
-        ofFloat.addUpdateListener(new i6(this, 15));
-        this.e.setDuration((long) (Math.abs(this.c - f7) * 200.0f));
-        this.e.setInterpolator(qr.f);
-        this.e.start();
-    }
-
-    public final void b(float f7) {
-        this.c = f7;
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        int i10 = (int) ((1.0f - this.c) * this.d);
-        Drawable drawable = this.a;
-        drawable.setAlpha(i10);
-        int i11 = (int) (this.d * this.c);
-        Drawable drawable2 = this.b;
-        drawable2.setAlpha(i11);
-        if (i10 > 0) {
-            drawable.draw(canvas);
-        }
-        if (i11 > 0) {
-            drawable2.draw(canvas);
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void invalidateDrawable(Drawable drawable) {
+        switch (this.a) {
+            case 0:
+                qr qrVar = this.b;
+                if (qrVar.c < 1.0f) {
+                    qrVar.invalidateSelf();
+                    break;
+                }
+                break;
+            default:
+                qr qrVar2 = this.b;
+                if (qrVar2.c > 0.0f) {
+                    qrVar2.invalidateSelf();
+                    break;
+                }
+                break;
         }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return this.a.getIntrinsicHeight();
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j3) {
+        switch (this.a) {
+            case 0:
+                qr qrVar = this.b;
+                if (qrVar.c < 1.0f) {
+                    qrVar.scheduleSelf(runnable, j3);
+                    break;
+                }
+                break;
+            default:
+                qr qrVar2 = this.b;
+                if (qrVar2.c > 0.0f) {
+                    qrVar2.scheduleSelf(runnable, j3);
+                    break;
+                }
+                break;
+        }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return this.a.getIntrinsicWidth();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -3;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        this.a.setBounds(rect);
-        this.b.setBounds(rect);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.d = i10;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.a.setColorFilter(colorFilter);
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
+        switch (this.a) {
+            case 0:
+                qr qrVar = this.b;
+                if (qrVar.c < 1.0f) {
+                    qrVar.unscheduleSelf(runnable);
+                    break;
+                }
+                break;
+            default:
+                qr qrVar2 = this.b;
+                if (qrVar2.c > 0.0f) {
+                    qrVar2.unscheduleSelf(runnable);
+                    break;
+                }
+                break;
+        }
     }
 }

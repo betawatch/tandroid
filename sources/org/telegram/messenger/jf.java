@@ -1,44 +1,26 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final /* synthetic */ class jf implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ jf(MessagesStorage messagesStorage, int i10, int i11) {
-        this.a = i11;
+    public /* synthetic */ jf(MessagesStorage messagesStorage, boolean z10, int i10) {
+        this.a = i10;
         this.b = messagesStorage;
-        this.c = i10;
+        this.c = z10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$readAllDialogs$65(this.c);
-                break;
-            case 1:
-                this.b.lambda$checkIfFolderEmptyInternal$245(this.c);
-                break;
-            case 2:
-                this.b.lambda$clearDownloadQueue$184(this.c);
-                break;
-            case 3:
-                this.b.lambda$putMessagesInternal$196(this.c);
-                break;
-            case 4:
-                this.b.lambda$getDownloadQueue$186(this.c);
-                break;
-            case 5:
-                this.b.lambda$getUnsentMessages$152(this.c);
-                break;
-            case 6:
-                this.b.lambda$checkIfFolderEmpty$246(this.c);
+                this.b.lambda$getCachedPhoneBook$150(this.c);
                 break;
             default:
-                this.b.lambda$clearWidgetDialogs$167(this.c);
+                this.b.lambda$cleanup$6(this.c);
                 break;
         }
     }

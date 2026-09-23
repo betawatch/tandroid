@@ -4,7 +4,7 @@ import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import androidx.appcompat.widget.Toolbar;
-import ci.n6;
+import ci.m6;
 import j$.util.DesugarCollections;
 import java.util.Collections;
 import java.util.Iterator;
@@ -13,20 +13,21 @@ import m.g3;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Cells.ia;
-import org.telegram.ui.Components.b70;
-import org.telegram.ui.Components.dp;
-import org.telegram.ui.Components.m30;
-import org.telegram.ui.Components.mp;
-import org.telegram.ui.Components.v80;
-import org.telegram.ui.Components.vi;
-import org.telegram.ui.Components.vo;
-import org.telegram.ui.bo;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Cells.ja;
+import org.telegram.ui.Components.c70;
+import org.telegram.ui.Components.ep;
+import org.telegram.ui.Components.n30;
+import org.telegram.ui.Components.np;
+import org.telegram.ui.Components.p6;
+import org.telegram.ui.Components.w80;
+import org.telegram.ui.Components.wi;
+import org.telegram.ui.Components.wo;
+import org.telegram.ui.xn;
 import s4.c1;
 import w7.x5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class x implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -81,7 +82,7 @@ public final class x implements View.OnClickListener {
                 if (!(c10.e instanceof p4.p)) {
                     throw new IllegalStateException("There is no currently selected dynamic group route.");
                 }
-                ia b10 = c10.d.b(vVar);
+                ja b10 = c10.d.b(vVar);
                 if (b10 == null || (oVar = (p4.o) b10.b) == null || !oVar.e) {
                     Log.w("GlobalMediaRouter", "Ignoring attempt to transfer to a non-transferable route.");
                 } else {
@@ -108,7 +109,7 @@ public final class x implements View.OnClickListener {
                     if (!(c11.e instanceof p4.p)) {
                         throw new IllegalStateException("There is no currently selected dynamic group route.");
                     }
-                    ia b11 = c11.d.b(vVar2);
+                    ja b11 = c11.d.b(vVar2);
                     if (!DesugarCollections.unmodifiableList(c11.d.v).contains(vVar2) || b11 == null || ((oVar2 = (p4.o) b11.b) != null && !oVar2.c)) {
                         Log.w("GlobalMediaRouter", "Ignoring attempt to remove a non-unselectable member route : " + vVar2);
                     } else if (DesugarCollections.unmodifiableList(c11.d.v).size() <= 1) {
@@ -128,7 +129,7 @@ public final class x implements View.OnClickListener {
                     if (!(c12.e instanceof p4.p)) {
                         throw new IllegalStateException("There is no currently selected dynamic group route.");
                     }
-                    ia b12 = c12.d.b(vVar3);
+                    ja b12 = c12.d.b(vVar3);
                     if (DesugarCollections.unmodifiableList(c12.d.v).contains(vVar3) || b12 == null || (oVar3 = (p4.o) b12.b) == null || !oVar3.d) {
                         Log.w("GlobalMediaRouter", "Ignoring attempt to add a non-groupable route to dynamic group : " + vVar3);
                     } else {
@@ -212,56 +213,56 @@ public final class x implements View.OnClickListener {
                 }
                 return;
             case 8:
-                mp mpVar = (mp) this.b;
-                bo boVar = mpVar.v;
-                vi viVar = new vi(boVar.getParentActivity(), boVar, false, false, false, boVar.getResourceProvider());
-                mpVar.Y = viVar;
-                viVar.drawNavigationBar = true;
-                viVar.L1(LocaleController.getString(R.string.ChooseBackground));
-                vi viVar2 = mpVar.Y;
-                viVar2.Z1 = new dp(mpVar);
-                viVar2.J1(1, false);
-                mpVar.Y.r1();
-                mpVar.Y.j0.f0();
-                mpVar.Y.show();
-                mpVar.Z = new n6(mpVar, mpVar.getContext());
-                org.telegram.ui.Components.n6 n6Var = new org.telegram.ui.Components.n6(mpVar.getContext(), true, true, true);
-                mpVar.a0 = n6Var;
-                n6Var.setTextSize(AndroidUtilities.dp(14.0f));
-                mpVar.a0.setText(LocaleController.getString(R.string.SetColorAsBackground));
-                mpVar.a0.setGravity(17);
-                org.telegram.ui.Components.n6 n6Var2 = mpVar.a0;
-                int i10 = i6.Oh;
-                n6Var2.setTextColor(mpVar.getThemedColor(i10));
-                mpVar.Z.addView(mpVar.a0, x5.e(-1, -2, 17));
-                n6 n6Var3 = mpVar.Z;
+                np npVar = (np) this.b;
+                xn xnVar = npVar.v;
+                wi wiVar = new wi(xnVar.getParentActivity(), xnVar, false, false, false, xnVar.getResourceProvider());
+                npVar.Y = wiVar;
+                wiVar.drawNavigationBar = true;
+                wiVar.L1(LocaleController.getString(R.string.ChooseBackground));
+                wi wiVar2 = npVar.Y;
+                wiVar2.Z1 = new ep(npVar);
+                wiVar2.J1(1, false);
+                npVar.Y.r1();
+                npVar.Y.j0.f0();
+                npVar.Y.show();
+                npVar.Z = new m6(npVar, npVar.getContext());
+                p6 p6Var = new p6(npVar.getContext(), true, true, true);
+                npVar.a0 = p6Var;
+                p6Var.setTextSize(AndroidUtilities.dp(14.0f));
+                npVar.a0.setText(LocaleController.getString(R.string.SetColorAsBackground));
+                npVar.a0.setGravity(17);
+                p6 p6Var2 = npVar.a0;
+                int i10 = h6.Oh;
+                p6Var2.setTextColor(npVar.getThemedColor(i10));
+                npVar.Z.addView(npVar.a0, x5.e(-1, -2, 17));
+                m6 m6Var = npVar.Z;
                 int dp = AndroidUtilities.dp(0.0f);
-                int themedColor = mpVar.getThemedColor(i6.d6);
-                int k10 = i0.a.k(mpVar.getThemedColor(i10), 76);
-                n6Var3.setBackground(i6.i0(dp, dp, dp, dp, themedColor, k10, k10));
-                mpVar.Z.setOnClickListener(new vo(mpVar, 0));
-                mpVar.Y.r1.addView(mpVar.Z, x5.e(-1, -2, 80));
+                int themedColor = npVar.getThemedColor(h6.d6);
+                int k10 = i0.a.k(npVar.getThemedColor(i10), 76);
+                m6Var.setBackground(h6.i0(dp, dp, dp, dp, themedColor, k10, k10));
+                npVar.Z.setOnClickListener(new wo(npVar, 0));
+                npVar.Y.r1.addView(npVar.Z, x5.e(-1, -2, 80));
                 return;
             case 9:
-                b70 b70Var = (b70) this.b;
-                m30 m30Var = (m30) view;
-                if (m30Var.y) {
-                    b70Var.j0 = null;
-                    b70Var.f0.l(m30Var.getUid());
-                    b70Var.U.b(m30Var);
-                    b70Var.a0(true);
-                    AndroidUtilities.updateVisibleRows(b70Var.d);
+                c70 c70Var = (c70) this.b;
+                n30 n30Var = (n30) view;
+                if (n30Var.y) {
+                    c70Var.j0 = null;
+                    c70Var.f0.l(n30Var.getUid());
+                    c70Var.U.b(n30Var);
+                    c70Var.a0(true);
+                    AndroidUtilities.updateVisibleRows(c70Var.d);
                     return;
                 }
-                m30 m30Var2 = b70Var.j0;
-                if (m30Var2 != null) {
-                    m30Var2.a();
+                n30 n30Var2 = c70Var.j0;
+                if (n30Var2 != null) {
+                    n30Var2.a();
                 }
-                b70Var.j0 = m30Var;
-                m30Var.b();
+                c70Var.j0 = n30Var;
+                n30Var.b();
                 return;
             default:
-                ((v80) this.b).e.callOnClick();
+                ((w80) this.b).e.callOnClick();
                 return;
         }
     }

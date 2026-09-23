@@ -15,14 +15,14 @@ import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.vl;
-import org.telegram.ui.Components.qr;
+import org.telegram.messenger.ul;
+import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class c extends FrameLayout {
     public final ImageView a;
-    public final org.telegram.ui.Components.m6 b;
+    public final org.telegram.ui.Components.o6 b;
     public final Paint c;
     public final Paint d;
     public boolean e;
@@ -38,13 +38,13 @@ public final class c extends FrameLayout {
         this.d = paint2;
         this.h = 1.0f;
         w7.z5.a(this);
-        org.telegram.ui.Components.m6 m6Var = new org.telegram.ui.Components.m6(false, true, true, false);
-        this.b = m6Var;
-        m6Var.r(-9866632);
-        m6Var.t(AndroidUtilities.dp(9.0f));
-        m6Var.setCallback(this);
-        m6Var.u(AndroidUtilities.getTypeface("fonts/num.otf"));
-        m6Var.D = true;
+        org.telegram.ui.Components.o6 o6Var = new org.telegram.ui.Components.o6(false, true, true, false);
+        this.b = o6Var;
+        o6Var.r(-9866632);
+        o6Var.t(AndroidUtilities.dp(9.0f));
+        o6Var.setCallback(this);
+        o6Var.u(AndroidUtilities.getTypeface("fonts/num.otf"));
+        o6Var.D = true;
         paint.setColor(-14670806);
         paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
         FrameLayout frameLayout = new FrameLayout(context);
@@ -76,7 +76,7 @@ public final class c extends FrameLayout {
         this.e = z10;
         ImageView imageView = this.a;
         if (z11) {
-            vl.r(imageView.animate().rotation(z10 ? 0.0f : 180.0f), qr.h, 420L);
+            ul.r(imageView.animate().rotation(z10 ? 0.0f : 180.0f), rr.h, 420L);
         } else {
             imageView.setRotation(z10 ? 0.0f : 180.0f);
         }
@@ -87,9 +87,9 @@ public final class c extends FrameLayout {
         canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
         super.dispatchDraw(canvas);
         float f7 = this.h;
-        org.telegram.ui.Components.m6 m6Var = this.b;
-        float g10 = m6Var.g() * f7;
-        float max = Math.max(AndroidUtilities.dp(12.0f), m6Var.d() + AndroidUtilities.dp(6.0f));
+        org.telegram.ui.Components.o6 o6Var = this.b;
+        float g10 = o6Var.g() * f7;
+        float max = Math.max(AndroidUtilities.dp(12.0f), o6Var.d() + AndroidUtilities.dp(6.0f));
         canvas.save();
         RectF rectF = AndroidUtilities.rectTmp;
         rectF.set(getWidth() - max, 0.0f, getWidth(), AndroidUtilities.dp(13.0f));
@@ -98,8 +98,8 @@ public final class c extends FrameLayout {
         canvas.drawRoundRect(rectF, rectF.height() / 2.0f, rectF.height() / 2.0f, this.d);
         rectF.set(getWidth() - max, 0.0f, getWidth(), AndroidUtilities.dp(13.0f));
         canvas.drawRoundRect(rectF, rectF.height() / 2.0f, rectF.height() / 2.0f, this.c);
-        canvas.translate(((max - m6Var.d()) / 2.0f) + rectF.left, AndroidUtilities.dp(7.0f));
-        m6Var.draw(canvas);
+        canvas.translate(((max - o6Var.d()) / 2.0f) + rectF.left, AndroidUtilities.dp(7.0f));
+        o6Var.draw(canvas);
         canvas.restore();
         canvas.restore();
     }

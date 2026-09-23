@@ -14,7 +14,7 @@ import org.telegram.SQLite.SQLiteException;
 import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.messenger.CacheByChatsController;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public class FilePathDatabase {
     private static final String DATABASE_BACKUP_NAME = "file_to_path_backup";
@@ -32,7 +32,7 @@ public class FilePathDatabase {
     private final ConcurrentHashMap<String, String> cache = new ConcurrentHashMap<>();
     private final FileMeta metaTmp = new FileMeta();
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class FileMeta {
         public long dialogId;
         public int messageId;
@@ -40,7 +40,7 @@ public class FilePathDatabase {
         public int messageType;
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class PathData {
         public final int dc;
         public final long id;
@@ -352,19 +352,19 @@ public class FilePathDatabase {
 
     private void migrateDatabase(int i10) {
         if (i10 == 1) {
-            y0.r(this.database, "CREATE INDEX IF NOT EXISTS path_in_paths ON paths(path);");
-            y0.r(this.database, "PRAGMA user_version = 2");
+            z0.r(this.database, "CREATE INDEX IF NOT EXISTS path_in_paths ON paths(path);");
+            z0.r(this.database, "PRAGMA user_version = 2");
             i10 = 2;
         }
         if (i10 == 2) {
-            y0.r(this.database, "CREATE TABLE paths_by_dialog_id(path TEXT PRIMARY KEY, dialog_id INTEGER);");
-            y0.r(this.database, "PRAGMA user_version = 3");
+            z0.r(this.database, "CREATE TABLE paths_by_dialog_id(path TEXT PRIMARY KEY, dialog_id INTEGER);");
+            z0.r(this.database, "PRAGMA user_version = 3");
             i10 = 3;
         }
         if (i10 == 3) {
-            y0.r(this.database, "ALTER TABLE paths_by_dialog_id ADD COLUMN message_id INTEGER default 0");
-            y0.r(this.database, "ALTER TABLE paths_by_dialog_id ADD COLUMN message_type INTEGER default 0");
-            y0.r(this.database, "PRAGMA user_version = 4");
+            z0.r(this.database, "ALTER TABLE paths_by_dialog_id ADD COLUMN message_id INTEGER default 0");
+            z0.r(this.database, "ALTER TABLE paths_by_dialog_id ADD COLUMN message_type INTEGER default 0");
+            z0.r(this.database, "PRAGMA user_version = 4");
             i10 = 4;
         }
         if (i10 == 4 || i10 == 5 || i10 == 6) {
@@ -373,7 +373,7 @@ public class FilePathDatabase {
             } catch (Throwable th2) {
                 FileLog.e(th2);
             }
-            y0.r(this.database, "PRAGMA user_version = 7");
+            z0.r(this.database, "PRAGMA user_version = 7");
         }
     }
 
@@ -418,7 +418,7 @@ public class FilePathDatabase {
         CountDownLatch countDownLatch = new CountDownLatch(1);
         long currentTimeMillis = System.currentTimeMillis();
         long[] jArr = new long[1];
-        postToFrontRunnable(new qk(this, arrayList2, jArr, countDownLatch, 7));
+        postToFrontRunnable(new pk(this, arrayList2, jArr, countDownLatch, 7));
         try {
             countDownLatch.await();
         } catch (InterruptedException e) {
@@ -437,7 +437,7 @@ public class FilePathDatabase {
 
     public void clear() {
         this.cache.clear();
-        postRunnable(new e1(this, 21));
+        postRunnable(new f1(this, 21));
     }
 
     public void createDatabase(int i10, boolean z10) {
@@ -728,7 +728,7 @@ public class FilePathDatabase {
     public LongSparseArray<ArrayList<CacheByChatsController.KeepMediaFile>> lookupFiles(ArrayList<? extends CacheByChatsController.KeepMediaFile> arrayList) {
         CountDownLatch countDownLatch = new CountDownLatch(1);
         LongSparseArray<ArrayList<CacheByChatsController.KeepMediaFile>> longSparseArray = new LongSparseArray<>();
-        postRunnable(new qk(this, arrayList, longSparseArray, countDownLatch, 6));
+        postRunnable(new pk(this, arrayList, longSparseArray, countDownLatch, 6));
         try {
             countDownLatch.await();
             return longSparseArray;
@@ -743,13 +743,13 @@ public class FilePathDatabase {
     }
 
     public void removeFiles(List<zh.a> list) {
-        postRunnable(new b2(8, this, list));
+        postRunnable(new c2(8, this, list));
     }
 
     public void saveFileDialogId(File file, FileMeta fileMeta) {
         if (file == null || fileMeta == null) {
             return;
         }
-        postRunnable(new f0(this, file, fileMeta, 24));
+        postRunnable(new f0(this, file, fileMeta, 25));
     }
 }

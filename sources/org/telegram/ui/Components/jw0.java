@@ -9,7 +9,7 @@ import android.text.TextUtils;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public abstract class jw0 {
     public static final Layout.Alignment[] a = Layout.Alignment.values();
@@ -60,7 +60,7 @@ public abstract class jw0 {
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence.subSequence(0, Math.max(0, offsetForHorizontal - 3)));
             spannableStringBuilder.append((CharSequence) "…");
             if (Build.VERSION.SDK_INT >= 23) {
-                return StaticLayout.Builder.obtain(spannableStringBuilder, 0, spannableStringBuilder.length(), textPaint, i10).setAlignment(alignment).setLineSpacing(f7, 1.0f).setIncludePad(z10).setEllipsize(((x5[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), x5.class)).length > 0 ? null : truncateAt).setEllipsizedWidth(i11).setMaxLines(i12).setBreakStrategy(z11 ? 1 : 0).setHyphenationFrequency(0).build();
+                return StaticLayout.Builder.obtain(spannableStringBuilder, 0, spannableStringBuilder.length(), textPaint, i10).setAlignment(alignment).setLineSpacing(f7, 1.0f).setIncludePad(z10).setEllipsize(((z5[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), z5.class)).length > 0 ? null : truncateAt).setEllipsizedWidth(i11).setMaxLines(i12).setBreakStrategy(z11 ? 1 : 0).setHyphenationFrequency(0).build();
             }
             return new StaticLayout(spannableStringBuilder, textPaint, i10, alignment, 1.0f, f7, z10);
         } catch (Exception e) {

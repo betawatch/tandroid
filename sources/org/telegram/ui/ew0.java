@@ -1,19 +1,59 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.content.Context;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class ew0 implements View.OnClickListener {
-    public final /* synthetic */ org.telegram.ui.Components.n70 a;
+public final class ew0 extends org.telegram.ui.Cells.t1 {
+    public final /* synthetic */ int Ge;
+    public final /* synthetic */ int He;
+    public final /* synthetic */ int Ie;
 
-    public ew0(org.telegram.ui.Components.n70 n70Var) {
-        this.a = n70Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ew0(Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var, int i11, int i12, int i13) {
+        super(context, i10, false, null, d6Var);
+        this.Ge = i13;
+        this.He = i11;
+        this.Ie = i12;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        org.telegram.ui.Components.oc.e();
-        this.a.s();
+    @Override // org.telegram.ui.Cells.t1
+    public final void Y1(Canvas canvas) {
+        switch (this.Ge) {
+            case 0:
+                this.i6 = 0;
+                this.j6 = this.Y5.size() - 1;
+                super.Y1(canvas);
+                break;
+            default:
+                this.i6 = 0;
+                this.j6 = this.Y5.size() - 1;
+                super.Y1(canvas);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Cells.t1, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        switch (this.Ge) {
+            case 0:
+                setMeasuredDimension(this.He, this.Ie);
+                break;
+            default:
+                setMeasuredDimension(this.He, this.Ie);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Cells.t1, android.view.View
+    public final void setPressed(boolean z10) {
+        int i10 = this.Ge;
+    }
+
+    private final void A4(boolean z10) {
+    }
+
+    private final void B4(boolean z10) {
     }
 }

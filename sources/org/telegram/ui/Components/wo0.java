@@ -13,12 +13,12 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class wo0 extends View {
     public static final iv0 v;
     public ImageReceiver a;
-    public f9 b;
+    public h9 b;
     public org.telegram.ui.Cells.z c;
     public Paint d;
     public Paint e;
@@ -29,7 +29,7 @@ public final class wo0 extends View {
     public boolean s;
 
     static {
-        iv0 iv0Var = new iv0(new in0(1), new in0(2));
+        iv0 iv0Var = new iv0(new xc0(15), new xc0(16));
         iv0Var.c = 100.0f;
         v = iv0Var;
     }
@@ -53,8 +53,8 @@ public final class wo0 extends View {
         if (!z11) {
             ValueAnimator duration = ValueAnimator.ofFloat(this.n, f7).setDuration(200L);
             this.h = duration;
-            duration.setInterpolator(qr.f);
-            this.h.addUpdateListener(new h70(this, 16));
+            duration.setInterpolator(rr.f);
+            this.h.addUpdateListener(new i70(this, 16));
             this.h.addListener(new jd0(this, 11));
             this.h.start();
             return;
@@ -73,8 +73,8 @@ public final class wo0 extends View {
         lVar.b(450.0f);
         lVar.a(1.0f);
         kVar2.u = lVar;
-        this.f.b(new mh(this, z12, f10, f11));
-        this.f.a(new fb(this, 3));
+        this.f.b(new nh(this, z12, f10, f11));
+        this.f.a(new hb(this, 3));
         this.f.f();
     }
 
@@ -141,10 +141,10 @@ public final class wo0 extends View {
     }
 
     public void setAvatar(TLObject tLObject) {
-        f9 f9Var = this.b;
+        h9 h9Var = this.b;
         setContentDescription(LocaleController.formatString("AccDescrSendAsPeer", R.string.AccDescrSendAsPeer, tLObject instanceof TLRPC.User ? UserObject.getFirstName((TLRPC.User) tLObject) : tLObject instanceof TLRPC.Chat ? ((TLRPC.Chat) tLObject).title : tLObject instanceof TLRPC.ChatInvite ? ((TLRPC.ChatInvite) tLObject).title : ""));
-        f9Var.p(tLObject);
-        this.a.setForUserOrChat(tLObject, f9Var);
+        h9Var.p(tLObject);
+        this.a.setForUserOrChat(tLObject, h9Var);
     }
 
     public void setProgress(float f7) {

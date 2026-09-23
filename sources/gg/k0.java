@@ -10,14 +10,14 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.at;
+import org.telegram.ui.Components.bt;
 import org.telegram.ui.Components.rt0;
 import org.telegram.ui.Components.voip.p2;
-import org.telegram.ui.Components.ys;
 import org.telegram.ui.Components.yu0;
+import org.telegram.ui.Components.zs;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class k0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -86,14 +86,14 @@ public final class k0 extends AnimatorListenerAdapter {
             case 2:
                 ((s4.c1) this.b).a.setAlpha(1.0f);
                 ((AnimatorSet) this.c).removeAllListeners();
-                at atVar = (at) this.e;
-                ys ysVar = (ys) this.d;
-                atVar.d(ysVar.a);
-                atVar.y.remove(ysVar.a);
-                atVar.A();
-                atVar.d(ysVar.b);
-                atVar.y.remove(ysVar.b);
-                atVar.A();
+                bt btVar = (bt) this.e;
+                zs zsVar = (zs) this.d;
+                btVar.d(zsVar.a);
+                btVar.y.remove(zsVar.a);
+                btVar.A();
+                btVar.d(zsVar.b);
+                btVar.y.remove(zsVar.b);
+                btVar.A();
                 break;
             case 3:
                 ((yu0) this.e).H1 = false;
@@ -130,7 +130,7 @@ public final class k0 extends AnimatorListenerAdapter {
                         p2Var.e(true);
                     } else {
                         textViewArr[1].setText(p2Var.e);
-                        p2Var.a(textViewArr[0], textViewArr[1], new i2.g0(this, 24));
+                        p2Var.a(textViewArr[0], textViewArr[1], new i2.h0(this, 24));
                     }
                     p2Var.e = null;
                     break;
@@ -190,12 +190,12 @@ public final class k0 extends AnimatorListenerAdapter {
                 ((ji.n) this.e).getClass();
                 break;
             case 2:
-                at atVar = (at) this.e;
-                ys ysVar = (ys) this.d;
-                s4.c1 c1Var = ysVar.a;
-                atVar.getClass();
-                s4.c1 c1Var2 = ysVar.b;
-                atVar.getClass();
+                bt btVar = (bt) this.e;
+                zs zsVar = (zs) this.d;
+                s4.c1 c1Var = zsVar.a;
+                btVar.getClass();
+                s4.c1 c1Var2 = zsVar.b;
+                btVar.getClass();
                 break;
             default:
                 super.onAnimationStart(animator);
@@ -219,10 +219,10 @@ public final class k0 extends AnimatorListenerAdapter {
         this.d = viewPropertyAnimator;
     }
 
-    public k0(at atVar, ys ysVar, s4.c1 c1Var, AnimatorSet animatorSet) {
+    public k0(bt btVar, zs zsVar, s4.c1 c1Var, AnimatorSet animatorSet) {
         this.a = 2;
-        this.e = atVar;
-        this.d = ysVar;
+        this.e = btVar;
+        this.d = zsVar;
         this.b = c1Var;
         this.c = animatorSet;
     }

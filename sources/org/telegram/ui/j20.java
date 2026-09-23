@@ -1,78 +1,53 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+import android.text.style.URLSpan;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class j20 implements org.telegram.ui.Components.eo0 {
+public final /* synthetic */ class j20 implements Utilities.CallbackReturn {
     public final /* synthetic */ int a;
-    public final /* synthetic */ sg.a b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ j20(sg.a aVar, int i10) {
+    public /* synthetic */ j20(Object obj, int i10) {
         this.a = i10;
-        this.b = aVar;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.eo0
-    public final void B() {
-        int i10 = this.a;
-    }
-
-    @Override // org.telegram.ui.Components.eo0
-    public final void X(float f7, boolean z10) {
+    @Override // org.telegram.messenger.Utilities.CallbackReturn
+    public final Object run(Object obj) {
         switch (this.a) {
             case 0:
-                sg.f fVar = this.b.c;
-                if (fVar != null) {
-                    fVar.v = f7 * 2.0f;
+                o20 o20Var = (o20) this.b;
+                o20Var.getClass();
+                if (((View) obj).getParent() == o20Var.c) {
+                    break;
+                } else {
                     break;
                 }
-                break;
             case 1:
-                sg.f fVar2 = this.b.c;
-                if (fVar2 != null) {
-                    fVar2.w = f7 * 2.0f;
+                ag0 ag0Var = (ag0) this.b;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj;
+                if (tL_error != null && "PHONE_CODE_EXPIRED".equalsIgnoreCase(tL_error.text)) {
+                    AndroidUtilities.runOnUIThread(new wf0(ag0Var, 1));
                     break;
-                }
-                break;
-            case 2:
-                sg.f fVar3 = this.b.c;
-                if (fVar3 != null) {
-                    fVar3.x = f7;
+                } else {
                     break;
                 }
                 break;
             default:
-                sg.f fVar4 = this.b.c;
-                if (fVar4 != null) {
-                    fVar4.A = f7 * 2.0f;
+                ProfileActivity profileActivity = (ProfileActivity) this.b;
+                URLSpan uRLSpan = (URLSpan) obj;
+                if (uRLSpan == null) {
+                    break;
+                } else {
+                    profileActivity.B4(uRLSpan.getURL(), null);
                     break;
                 }
-                break;
         }
-    }
-
-    @Override // org.telegram.ui.Components.eo0
-    public final /* synthetic */ CharSequence getContentDescription() {
-        switch (this.a) {
-        }
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.eo0
-    public final /* synthetic */ int m0() {
-        switch (this.a) {
-        }
-        return 0;
-    }
-
-    private final void a() {
-    }
-
-    private final void b() {
-    }
-
-    private final void c() {
-    }
-
-    private final void d() {
+        return Boolean.FALSE;
     }
 }

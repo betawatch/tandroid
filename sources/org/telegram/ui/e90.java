@@ -1,126 +1,36 @@
 package org.telegram.ui;
 
+import android.content.DialogInterface;
 import java.util.regex.Pattern;
-import org.telegram.messenger.ChannelBoostsController;
-import org.telegram.messenger.FileLog;
-import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e90 implements e2.h {
-    public final /* synthetic */ int a = 0;
+public final /* synthetic */ class e90 implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ int a;
     public final /* synthetic */ LaunchActivity b;
-    public final /* synthetic */ nf.e c;
-    public final /* synthetic */ Runnable d;
-    public final /* synthetic */ Long e;
-    public final /* synthetic */ org.telegram.ui.Cells.t1 f;
-    public final /* synthetic */ Object g;
 
-    public /* synthetic */ e90(LaunchActivity launchActivity, nf.e eVar, Long l4, TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus, org.telegram.ui.Cells.t1 t1Var, Runnable runnable) {
+    public /* synthetic */ e90(LaunchActivity launchActivity, int i10) {
+        this.a = i10;
         this.b = launchActivity;
-        this.c = eVar;
-        this.e = l4;
-        this.g = tL_premium_boostsStatus;
-        this.f = t1Var;
-        this.d = runnable;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:30:0x008e, code lost:
-    
-        if (((org.telegram.ui.bo) r6).a() == r0.longValue()) goto L32;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:48:0x00a9, code lost:
-    
-        if (r12.getCurrentFragmetDialogId() == r0.longValue()) goto L32;
-     */
-    @Override // e2.h
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void accept(Object obj) {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         int i10 = this.a;
-        Object obj2 = this.g;
+        LaunchActivity launchActivity = this.b;
         switch (i10) {
             case 0:
-                TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = (TL_stories.TL_premium_boostsStatus) obj2;
-                ChannelBoostsController.CanApplyBoost canApplyBoost = (ChannelBoostsController.CanApplyBoost) obj;
+                launchActivity.v1 = false;
+                break;
+            case 1:
                 Pattern pattern = LaunchActivity.B1;
-                nf.e eVar = this.c;
-                if (eVar != null) {
-                    eVar.b();
-                }
-                org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
-                if (R instanceof eh0) {
-                    R = ((eh0) R).X();
-                }
-                org.telegram.ui.ActionBar.n2 n2Var = R;
-                if (n2Var != null) {
-                    org.telegram.ui.ActionBar.e6 resourceProvider = n2Var.getResourceProvider();
-                    if (n2Var.getLastStoryViewer() != null && n2Var.getLastStoryViewer().K0) {
-                        resourceProvider = n2Var.getLastStoryViewer().y;
-                    }
-                    LaunchActivity launchActivity = this.b;
-                    rg.j0 j0Var = new rg.j0(19, launchActivity.O, launchActivity, n2Var, resourceProvider);
-                    j0Var.G1(canApplyBoost);
-                    boolean z10 = n2Var instanceof bo;
-                    Long l4 = this.e;
-                    boolean z11 = true;
-                    boolean z12 = false;
-                    if (z10) {
-                        break;
-                    } else if (n2Var instanceof uy) {
-                        ox oxVar = ((uy) n2Var).F3;
-                        if (oxVar != null) {
-                            break;
-                        }
-                        z11 = false;
-                        z12 = z11;
-                    }
-                    j0Var.F1(tL_premium_boostsStatus, z12);
-                    j0Var.H1(l4.longValue());
-                    j0Var.g0 = this.f;
-                    n2Var.showDialog(j0Var);
-                    Runnable runnable = this.d;
-                    if (runnable != null) {
-                        try {
-                            runnable.run();
-                            break;
-                        } catch (Exception e) {
-                            FileLog.e(e);
-                            return;
-                        }
-                    }
-                }
+                AndroidUtilities.runOnUIThread(new c90(launchActivity, 9), 30000L);
                 break;
             default:
-                ChannelBoostsController channelBoostsController = (ChannelBoostsController) obj2;
-                TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus2 = (TL_stories.TL_premium_boostsStatus) obj;
                 Pattern pattern2 = LaunchActivity.B1;
-                nf.e eVar2 = this.c;
-                Runnable runnable2 = this.d;
-                if (tL_premium_boostsStatus2 != null) {
-                    Long l10 = this.e;
-                    channelBoostsController.userCanBoostChannel(l10.longValue(), tL_premium_boostsStatus2, new e90(this.b, eVar2, l10, tL_premium_boostsStatus2, this.f, runnable2));
-                    break;
-                } else {
-                    if (eVar2 != null) {
-                        eVar2.b();
-                    }
-                    if (runnable2 != null) {
-                        runnable2.run();
-                        break;
-                    }
-                }
+                AndroidUtilities.runOnUIThread(new c90(launchActivity, 10), 30000L);
                 break;
         }
-    }
-
-    public /* synthetic */ e90(LaunchActivity launchActivity, nf.e eVar, Runnable runnable, ChannelBoostsController channelBoostsController, Long l4, org.telegram.ui.Cells.t1 t1Var) {
-        this.b = launchActivity;
-        this.c = eVar;
-        this.d = runnable;
-        this.g = channelBoostsController;
-        this.e = l4;
-        this.f = t1Var;
     }
 }

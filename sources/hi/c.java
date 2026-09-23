@@ -13,29 +13,29 @@ import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.f9;
-import org.telegram.ui.Components.kl0;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.bb;
+import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.oq;
-import org.telegram.ui.Components.u9;
-import org.telegram.ui.Components.w51;
-import org.telegram.ui.Components.za;
+import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.pq;
+import org.telegram.ui.Components.v51;
+import org.telegram.ui.Components.w9;
 import w7.x5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class c extends za {
+public final class c extends bb {
     public final d1 X;
-    public w51 Y;
+    public v51 Y;
 
     public c(Context context, TLRPC.Chat chat, Runnable runnable) {
-        super(context, (e6) null, false);
+        super(context, (d6) null, false);
         this.K = AndroidUtilities.dp(30.0f);
-        ll0 ll0Var = this.d;
+        ml0 ml0Var = this.d;
         int i10 = this.backgroundPaddingLeft;
-        ll0Var.setPadding(i10, 0, i10, AndroidUtilities.dp(130.0f) + AndroidUtilities.navigationBarHeight);
+        ml0Var.setPadding(i10, 0, i10, AndroidUtilities.dp(130.0f) + AndroidUtilities.navigationBarHeight);
         this.d.setClipToPadding(false);
         d dVar = new d(context, this.resourcesProvider, true);
         dVar.setText(LocaleController.getString(R.string.Cancel));
@@ -52,13 +52,13 @@ public final class c extends za {
         TextView textView2 = (TextView) d1Var.c;
         this.X = d1Var;
         d1Var.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), AndroidUtilities.dp(17.0f));
-        ((u9) d1Var.b).e(chat, new f9(chat));
+        ((w9) d1Var.b).e(chat, new h9(chat));
         textView2.setText(DialogObject.getName(chat));
-        int i11 = i6.G6;
+        int i11 = h6.G6;
         textView2.setTextColor(getThemedColor(i11));
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         spannableStringBuilder.append((CharSequence) "* ");
-        spannableStringBuilder.setSpan(new oq(R.drawable.mini_ephemeral_hidden_14, 0), 0, 1, 33);
+        spannableStringBuilder.setSpan(new pq(R.drawable.mini_ephemeral_hidden_14, 0), 0, 1, 33);
         spannableStringBuilder.append((CharSequence) LocaleController.getString(isChannelAndNotMegaGroup ? R.string.CommunityInviteOnlyChannelInfo : R.string.CommunityInviteOnlyGroupInfo));
         textView.setTextColor(getThemedColor(i11));
         textView.setText(spannableStringBuilder);
@@ -67,15 +67,15 @@ public final class c extends za {
         this.Y.N(false);
     }
 
-    @Override // org.telegram.ui.Components.za
-    public final kl0 v(ll0 ll0Var) {
-        w51 w51Var = new w51(this.d, getContext(), this.currentAccount, 0, true, new a(this, 1), this.resourcesProvider);
-        this.Y = w51Var;
-        w51Var.r = false;
-        return w51Var;
+    @Override // org.telegram.ui.Components.bb
+    public final ll0 v(ml0 ml0Var) {
+        v51 v51Var = new v51(this.d, getContext(), this.currentAccount, 0, true, new a(this, 1), this.resourcesProvider);
+        this.Y = v51Var;
+        v51Var.r = false;
+        return v51Var;
     }
 
-    @Override // org.telegram.ui.Components.za
+    @Override // org.telegram.ui.Components.bb
     public final CharSequence y() {
         return null;
     }

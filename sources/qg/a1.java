@@ -3,29 +3,29 @@ package qg;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.view.View;
-import ci.c6;
+import ci.b6;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MessageObject;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.pa0;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.qa0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class a1 extends ll0 {
+public final class a1 extends ml0 {
     public final ArrayList X2;
     public final ArrayList Y2;
     public final ArrayList Z2;
     public final ArrayList a3;
     public final ArrayList b3;
-    public final /* synthetic */ c6 c3;
+    public final /* synthetic */ b6 c3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a1(c6 c6Var, Context context, com.google.firebase.messaging.n nVar) {
+    public a1(b6 b6Var, Context context, com.google.firebase.messaging.n nVar) {
         super(context, nVar);
-        this.c3 = c6Var;
+        this.c3 = b6Var;
         this.X2 = new ArrayList();
         this.Y2 = new ArrayList();
         this.Z2 = new ArrayList();
@@ -34,7 +34,7 @@ public final class a1 extends ll0 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.ui.Components.ll0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ml0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         float f7;
         int i10;
@@ -65,7 +65,7 @@ public final class a1 extends ll0 {
                     MessageObject.GroupedMessages currentMessagesGroup2 = t1Var.getCurrentMessagesGroup();
                     if (currentMessagesGroup2 == null || currentMessagesGroup2 != groupedMessages) {
                         MessageObject.GroupedMessagePosition currentPosition = t1Var.getCurrentPosition();
-                        pa0 backgroundDrawable = t1Var.getBackgroundDrawable();
+                        qa0 backgroundDrawable = t1Var.getBackgroundDrawable();
                         if ((backgroundDrawable.f || t1Var.g3()) && (currentPosition == null || (2 & currentPosition.flags) != 0)) {
                             int y3 = (int) t1Var.getY();
                             canvas.save();
@@ -80,7 +80,7 @@ public final class a1 extends ll0 {
                                     if (childAt2 instanceof org.telegram.ui.Cells.t1) {
                                         org.telegram.ui.Cells.t1 t1Var2 = (org.telegram.ui.Cells.t1) childAt2;
                                         if (t1Var2.getCurrentMessagesGroup() == currentMessagesGroup2) {
-                                            pa0 backgroundDrawable2 = t1Var2.getBackgroundDrawable();
+                                            qa0 backgroundDrawable2 = t1Var2.getBackgroundDrawable();
                                             int min = Math.min(y3, (int) t1Var2.getY());
                                             int max = Math.max(measuredHeight, t1Var2.getMeasuredHeight() + ((int) t1Var2.getY()));
                                             long j10 = backgroundDrawable2.l;
@@ -102,7 +102,7 @@ public final class a1 extends ll0 {
                             int i15 = i12 + y3;
                             canvas.clipRect(0, y3, getMeasuredWidth(), i15);
                             backgroundDrawable.b = null;
-                            backgroundDrawable.a.setColor(i6.v0(i6.Hc, this.p2));
+                            backgroundDrawable.a.setColor(h6.v0(h6.Hc, this.p2));
                             backgroundDrawable.setBounds(0, y3, getMeasuredWidth(), i15);
                             backgroundDrawable.draw(canvas);
                             canvas.restore();
@@ -357,7 +357,7 @@ public final class a1 extends ll0 {
         if ((r10 & 1) != 0) goto L65;
      */
     /* JADX WARN: Removed duplicated region for block: B:129:0x035a  */
-    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.ml0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -369,8 +369,8 @@ public final class a1 extends ll0 {
         int b10;
         int b11;
         int i11;
-        c6 c6Var = this.c3;
-        MessageObject.GroupedMessages groupedMessages = c6Var.t0;
+        b6 b6Var = this.c3;
+        MessageObject.GroupedMessages groupedMessages = b6Var.t0;
         org.telegram.ui.Cells.t1 t1Var = null;
         if (view instanceof org.telegram.ui.Cells.t1) {
             t1Var = (org.telegram.ui.Cells.t1) view;
@@ -432,7 +432,7 @@ public final class a1 extends ll0 {
             if (avatarImage != null) {
                 boolean z10 = this.X1 || (groupedMessages != null && groupedMessages.transitionParams.backgroundChangeBounds);
                 int top = z10 ? view.getTop() : (int) view.getY();
-                if (!t1Var.j() || (b11 = c6Var.r0.T(view).b()) < 0) {
+                if (!t1Var.j() || (b11 = b6Var.r0.T(view).b()) < 0) {
                     f10 = 0.0f;
                 } else {
                     if (groupedMessages == null || currentPosition == null) {

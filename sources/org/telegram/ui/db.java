@@ -4,9 +4,9 @@ import android.content.Context;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class db extends org.telegram.ui.Components.so {
+public final class db extends org.telegram.ui.Components.to {
     public final /* synthetic */ int s;
     public final /* synthetic */ org.telegram.ui.ActionBar.n2 v;
 
@@ -29,7 +29,7 @@ public final class db extends org.telegram.ui.Components.so {
                 break;
             default:
                 if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0) {
-                    ((bo) this.v).A7(true);
+                    ((xn) this.v).A7(true);
                 }
                 break;
         }
@@ -49,7 +49,7 @@ public final class db extends org.telegram.ui.Components.so {
             default:
                 boolean dispatchTouchEvent2 = super.dispatchTouchEvent(motionEvent);
                 if (motionEvent.getAction() == 0 && !dispatchTouchEvent2) {
-                    ((bo) this.v).A7(true);
+                    ((xn) this.v).A7(true);
                 }
                 return dispatchTouchEvent2;
         }

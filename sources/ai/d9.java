@@ -25,7 +25,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public class d9 {
     public static HashMap B;
@@ -190,7 +190,7 @@ public class d9 {
             TL_stories.TL_togglePinnedToTop tL_togglePinnedToTop = new TL_stories.TL_togglePinnedToTop();
             tL_togglePinnedToTop.id.addAll(arrayList3);
             tL_togglePinnedToTop.peer = MessagesController.getInstance(i10).getInputPeer(this.d);
-            ConnectionsManager.getInstance(i10).sendRequest(tL_togglePinnedToTop, new t7(3));
+            ConnectionsManager.getInstance(i10).sendRequest(tL_togglePinnedToTop, new u7(3));
         }
     }
 
@@ -236,7 +236,7 @@ public class d9 {
                 HashMap hashMap = this.j;
                 if (z12 != z13) {
                     if (!z13) {
-                        org.telegram.messenger.y0.n(storyItem2.id, new StringBuilder("StoriesList remove story "));
+                        org.telegram.messenger.z0.n(storyItem2.id, new StringBuilder("StoriesList remove story "));
                         u(storyItem2.id, true);
                         int i13 = this.s;
                         if (i13 != -1) {
@@ -267,7 +267,7 @@ public class d9 {
                         p(Utilities.clamp(size2, 50, 10), true);
                     }
                 } else if (z12 && z13 && ((messageObject = (MessageObject) hashMap.get(Integer.valueOf(storyItem2.id))) == null || z10 || (storyItem = messageObject.storyItem) == null || (storyItem != storyItem2 && (storyItem.id != storyItem2.id || storyItem.media != storyItem2.media || !TextUtils.equals(storyItem.caption, storyItem2.caption))))) {
-                    org.telegram.messenger.y0.n(storyItem2.id, new StringBuilder("StoriesList update story "));
+                    org.telegram.messenger.z0.n(storyItem2.id, new StringBuilder("StoriesList update story "));
                     hashMap.put(Integer.valueOf(storyItem2.id), y(storyItem2));
                 }
                 z11 = true;
@@ -550,7 +550,7 @@ public class d9 {
         sb2.append(j3);
         com.google.android.gms.internal.vision.e2.t("} load", sb2);
         this.u = true;
-        this.A = ConnectionsManager.getInstance(i13).sendRequest(tL_stories_getStoriesArchive, new g8(this, n10, 1));
+        this.A = ConnectionsManager.getInstance(i13).sendRequest(tL_stories_getStoriesArchive, new i8(this, n10, 1));
         return true;
     }
 
@@ -566,7 +566,7 @@ public class d9 {
         int i11 = this.c;
         tL_stories_incrementStoryViews.peer = MessagesController.getInstance(i11).getInputPeer(this.d);
         tL_stories_incrementStoryViews.id.add(Integer.valueOf(i10));
-        ConnectionsManager.getInstance(i11).sendRequest(tL_stories_incrementStoryViews, new t7(8));
+        ConnectionsManager.getInstance(i11).sendRequest(tL_stories_incrementStoryViews, new u7(8));
         NotificationCenter.getInstance(i11).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesReadUpdated, new Object[0]);
         return true;
     }
@@ -636,7 +636,7 @@ public class d9 {
         ArrayList arrayList2 = new ArrayList(this.g);
         c(arrayList, true, true);
         MessagesStorage messagesStorage = MessagesStorage.getInstance(this.c);
-        messagesStorage.getStorageQueue().postRunnable(new i5(this, arrayList, messagesStorage, arrayList2, 3));
+        messagesStorage.getStorageQueue().postRunnable(new h5(this, arrayList, messagesStorage, arrayList2, 3));
     }
 
     public final MessageObject y(TL_stories.StoryItem storyItem) {

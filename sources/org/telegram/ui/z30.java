@@ -1,21 +1,23 @@
 package org.telegram.ui;
 
-import android.graphics.Rect;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class z30 extends s4.n0 {
-    @Override // s4.n0
-    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.z0 z0Var) {
-        recyclerView.getClass();
-        RecyclerView.R(view);
-        if (i60.F3) {
-            rect.set(0, AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f));
-        } else {
-            rect.set(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
-        }
+public final class z30 extends org.telegram.ui.Components.ph0 {
+    public final /* synthetic */ f60 s1;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public z30(f60 f60Var, LaunchActivity launchActivity, b50 b50Var, l50 l50Var, y30 y30Var) {
+        super(launchActivity, b50Var, l50Var, y30Var);
+        this.s1 = f60Var;
+    }
+
+    @Override // android.view.View
+    public final void invalidate() {
+        ViewGroup viewGroup;
+        super.invalidate();
+        viewGroup = ((org.telegram.ui.ActionBar.f3) this.s1).containerView;
+        viewGroup.invalidate();
     }
 }

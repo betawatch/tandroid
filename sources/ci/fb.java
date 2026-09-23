@@ -1,18 +1,46 @@
 package ci;
 
-import android.app.Activity;
-import android.graphics.Path;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class fb extends u4 {
-    public final Path N;
-    public final /* synthetic */ oc O;
+public final /* synthetic */ class fb implements Runnable {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ gb b;
+    public final /* synthetic */ Runnable c;
+    public final /* synthetic */ boolean d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fb(oc ocVar, Activity activity, ai.d dVar, org.telegram.ui.Components.ha haVar) {
-        super(activity, dVar, haVar);
-        this.O = ocVar;
-        this.N = new Path();
+    public /* synthetic */ fb(gb gbVar, Runnable runnable, boolean z10) {
+        this.b = gbVar;
+        this.c = runnable;
+        this.d = z10;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.f(this.c, this.d);
+                break;
+            default:
+                this.c.run();
+                lc lcVar = this.b.a;
+                b4 b4Var = lcVar.T0;
+                b4Var.a.q(LocaleController.getString(this.d ? R.string.StoryHintSwipeToZoom : R.string.StoryHintPinchToZoom), false, true);
+                b4Var.invalidate();
+                lcVar.h(true, true);
+                lcVar.d0(true);
+                lcVar.I0.a(false, true);
+                lcVar.J0.b(true, true);
+                lcVar.i0(true, true);
+                break;
+        }
+    }
+
+    public /* synthetic */ fb(gb gbVar, boolean z10, Runnable runnable) {
+        this.b = gbVar;
+        this.d = z10;
+        this.c = runnable;
     }
 }

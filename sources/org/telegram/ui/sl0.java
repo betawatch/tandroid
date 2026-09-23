@@ -1,57 +1,105 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
+import android.widget.TextView;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class sl0 implements Utilities.Callback2 {
+public final /* synthetic */ class sl0 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ PasskeysActivity b;
+    public final /* synthetic */ in0 b;
 
-    public /* synthetic */ sl0(PasskeysActivity passkeysActivity, int i10) {
+    public /* synthetic */ sl0(in0 in0Var, int i10) {
         this.a = i10;
-        this.b = passkeysActivity;
+        this.b = in0Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
-        int i10 = this.a;
-        PasskeysActivity passkeysActivity = this.b;
-        switch (i10) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
             case 0:
-                ArrayList arrayList = (ArrayList) obj;
-                ArrayList arrayList2 = passkeysActivity.b;
-                passkeysActivity.addPasskeyRow = -1;
-                String string = LocaleController.getString(R.string.PasskeyTopInfo);
-                int i11 = R.raw.passkey;
-                org.telegram.ui.Components.i51 i51Var = new org.telegram.ui.Components.i51(2);
-                i51Var.l = string;
-                i51Var.k = i11;
-                arrayList.add(i51Var);
-                for (int i12 = 0; i12 < arrayList2.size(); i12++) {
-                    TL_account.Passkey passkey = (TL_account.Passkey) arrayList2.get(i12);
-                    k60 k60Var = new k60(passkeysActivity, 15);
-                    int i13 = ul0.a;
-                    org.telegram.ui.Components.i51 J = org.telegram.ui.Components.i51.J(ul0.class);
-                    J.G = passkey;
-                    J.D = k60Var;
-                    arrayList.add(J);
+                in0 in0Var = this.b;
+                in0Var.S0 = 2;
+                in0Var.D1();
+                break;
+            case 1:
+                this.b.d1();
+                break;
+            case 2:
+                in0 in0Var2 = this.b;
+                in0Var2.S0 = 3;
+                in0Var2.D1();
+                break;
+            case 3:
+                in0 in0Var3 = this.b;
+                in0Var3.S0 = 1;
+                in0Var3.D1();
+                break;
+            case 4:
+                in0 in0Var4 = this.b;
+                in0Var4.S0 = 4;
+                in0Var4.D1();
+                break;
+            case 5:
+                in0.e0(this.b);
+                break;
+            case 6:
+                in0 in0Var5 = this.b;
+                in0Var5.f = true;
+                in0Var5.L.callOnClick();
+                in0Var5.f = false;
+                break;
+            case 7:
+                in0 in0Var6 = this.b;
+                in0Var6.S0 = 0;
+                in0Var6.D1();
+                break;
+            case 8:
+                in0 in0Var7 = this.b;
+                in0Var7.S0 = 4;
+                in0Var7.D1();
+                break;
+            case 9:
+                this.b.d1();
+                break;
+            case 10:
+                in0.b0(this.b);
+                break;
+            case 11:
+                in0.c0(this.b);
+                break;
+            case 12:
+                this.b.C1();
+                break;
+            case 13:
+                in0 in0Var8 = this.b;
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(in0Var8.getParentActivity());
+                alertDialog$Builder.a.R = LocaleController.getString(R.string.TelegramPassportDeleteTitle);
+                alertDialog$Builder.a.T = LocaleController.getString(R.string.TelegramPassportDeleteAlert);
+                alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new ul0(in0Var8, 5));
+                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
+                org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
+                in0Var8.showDialog(b2Var);
+                TextView textView = (TextView) b2Var.d(-1);
+                if (textView != null) {
+                    textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.q7, false));
+                    break;
                 }
-                if (arrayList2.size() + 1 <= passkeysActivity.getMessagesController().config.passkeysAccountPasskeysMax.get()) {
-                    passkeysActivity.addPasskeyRow = arrayList.size();
-                    org.telegram.ui.Components.i51 c10 = org.telegram.ui.Components.i51.c(-1, R.drawable.menu_passkey_add, LocaleController.getString(R.string.PasskeyAdd));
-                    c10.q = true;
-                    arrayList.add(c10);
-                }
-                arrayList.add(org.telegram.ui.Components.i51.B(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.PasskeyInfo), new pl0(passkeysActivity, 1)), true)));
+                break;
+            case 14:
+                this.b.C1();
+                break;
+            case 15:
+                in0.V(this.b);
                 break;
             default:
-                PasskeysActivity.U(passkeysActivity, (TL_account.Passkey) obj, (String) obj2);
+                in0 in0Var9 = this.b;
+                in0Var9.f = true;
+                in0Var9.L.callOnClick();
+                in0Var9.f = false;
                 break;
         }
     }

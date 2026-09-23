@@ -38,16 +38,16 @@ import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.q2;
 import org.telegram.ui.Cells.a0;
-import org.telegram.ui.Components.ed;
+import org.telegram.ui.Components.gd;
 import org.telegram.ui.Components.nv0;
-import org.telegram.ui.Components.p01;
+import org.telegram.ui.Components.o01;
 import qg.n0;
 import w7.p;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class h extends Drawable {
     public static final int A;
@@ -104,7 +104,7 @@ public final class h extends Drawable {
         this.h = new ArrayList();
         this.n = -1.0f;
         this.s = 255;
-        this.t = new ed(1);
+        this.t = new gd(1);
         this.z = new RectF();
         for (int i10 = 0; i10 < fArr.length; i10++) {
             this.a[i10] = new Paint();
@@ -129,11 +129,11 @@ public final class h extends Drawable {
         if (layout == null) {
             return;
         }
-        p01[] p01VarArr = (p01[]) spanned.getSpans(0, layout.getText().length(), p01.class);
-        for (int i14 = 0; i14 < Math.min(100, p01VarArr.length); i14++) {
-            if (p01VarArr[i14].c()) {
-                int spanStart = spanned.getSpanStart(p01VarArr[i14]);
-                int spanEnd = spanned.getSpanEnd(p01VarArr[i14]);
+        o01[] o01VarArr = (o01[]) spanned.getSpans(0, layout.getText().length(), o01.class);
+        for (int i14 = 0; i14 < Math.min(100, o01VarArr.length); i14++) {
+            if (o01VarArr[i14].c()) {
+                int spanStart = spanned.getSpanStart(o01VarArr[i14]);
+                int spanEnd = spanned.getSpanEnd(o01VarArr[i14]);
                 if (i10 == -1 && i11 == -1) {
                     int lineForOffset = layout.getLineForOffset(spanEnd);
                     int i15 = ConnectionsManager.DEFAULT_DATACENTER_ID;
@@ -210,7 +210,7 @@ public final class h extends Drawable {
     public static void g(View view, boolean z10, int i10, int i11, AtomicReference atomicReference, int i12, Layout layout, List list, Canvas canvas, boolean z11) {
         StaticLayout staticLayout;
         AtomicReference atomicReference2;
-        p01[] p01VarArr;
+        o01[] o01VarArr;
         int i13;
         if (list == null || list.isEmpty()) {
             f(canvas, layout);
@@ -222,36 +222,36 @@ public final class h extends Drawable {
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(layout.getText());
             if (layout.getText() instanceof Spanned) {
                 Spanned spanned = (Spanned) layout.getText();
-                p01[] p01VarArr2 = (p01[]) spanned.getSpans(0, spanned.length(), p01.class);
+                o01[] o01VarArr2 = (o01[]) spanned.getSpans(0, spanned.length(), o01.class);
                 int i15 = 0;
-                while (i15 < Math.min(100, p01VarArr2.length)) {
-                    p01 p01Var = p01VarArr2[i15];
-                    if (p01Var.c()) {
-                        int spanStart = spanned.getSpanStart(p01Var);
-                        int spanEnd = spanned.getSpanEnd(p01Var);
+                while (i15 < Math.min(100, o01VarArr2.length)) {
+                    o01 o01Var = o01VarArr2[i15];
+                    if (o01Var.c()) {
+                        int spanStart = spanned.getSpanStart(o01Var);
+                        int spanEnd = spanned.getSpanEnd(o01Var);
                         Emoji.EmojiSpan[] emojiSpanArr = (Emoji.EmojiSpan[]) spanned.getSpans(spanStart, spanEnd, Emoji.EmojiSpan.class);
                         int length = emojiSpanArr.length;
                         while (i14 < length) {
-                            p01[] p01VarArr3 = p01VarArr2;
+                            o01[] o01VarArr3 = o01VarArr2;
                             Emoji.EmojiSpan emojiSpan = emojiSpanArr[i14];
-                            spannableStringBuilder.setSpan(new b(emojiSpan), spanned.getSpanStart(emojiSpan), spanned.getSpanEnd(emojiSpan), spanned.getSpanFlags(p01Var));
+                            spannableStringBuilder.setSpan(new b(emojiSpan), spanned.getSpanStart(emojiSpan), spanned.getSpanEnd(emojiSpan), spanned.getSpanFlags(o01Var));
                             spannableStringBuilder.removeSpan(emojiSpan);
                             i14++;
-                            p01VarArr2 = p01VarArr3;
+                            o01VarArr2 = o01VarArr3;
                             i15 = i15;
                             length = length;
                             emojiSpanArr = emojiSpanArr;
                         }
-                        p01VarArr = p01VarArr2;
+                        o01VarArr = o01VarArr2;
                         i13 = i15;
-                        spannableStringBuilder.setSpan(new ForegroundColorSpan(0), spanStart, spanEnd, spanned.getSpanFlags(p01Var));
-                        spannableStringBuilder.removeSpan(p01Var);
+                        spannableStringBuilder.setSpan(new ForegroundColorSpan(0), spanStart, spanEnd, spanned.getSpanFlags(o01Var));
+                        spannableStringBuilder.removeSpan(o01Var);
                     } else {
-                        p01VarArr = p01VarArr2;
+                        o01VarArr = o01VarArr2;
                         i13 = i15;
                     }
                     i15 = i13 + 1;
-                    p01VarArr2 = p01VarArr;
+                    o01VarArr2 = o01VarArr;
                     i14 = 0;
                 }
             }
@@ -321,7 +321,7 @@ public final class h extends Drawable {
             boolean z13 = hVar.p;
             hVar.p = false;
             if (z13) {
-                hVar.h(i0.a.d(Math.max(0.0f, hVar.n), i10, (i12 == 1 ? layout.getPaint() : i6.o2).getColor()));
+                hVar.h(i0.a.d(Math.max(0.0f, hVar.n), i10, (i12 == 1 ? layout.getPaint() : h6.o2).getColor()));
             } else {
                 hVar.h(i10);
             }

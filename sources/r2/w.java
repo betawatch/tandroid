@@ -1,6 +1,6 @@
 package r2;
 
-import ai.c8;
+import ai.e8;
 import android.media.MediaCodecInfo;
 import android.os.Build;
 import android.util.Pair;
@@ -16,7 +16,7 @@ import java.util.List;
 import org.telegram.messenger.MediaController;
 import v7.r6;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public abstract class w {
     public static final HashMap a = new HashMap();
@@ -26,7 +26,7 @@ public abstract class w {
             if (Build.VERSION.SDK_INT < 26 && Build.DEVICE.equals("R9") && arrayList.size() == 1 && ((o) arrayList.get(0)).a.equals("OMX.MTK.AUDIO.DECODER.RAW")) {
                 arrayList.add(o.i("OMX.google.raw.decoder", "audio/raw", "audio/raw", null, false, true, false, false));
             }
-            Collections.sort(arrayList, new c8(new i(), 3));
+            Collections.sort(arrayList, new e8(new i(), 3));
         }
         if (Build.VERSION.SDK_INT >= 32 || arrayList.size() <= 1 || !"OMX.qti.audio.decoder.flac".equals(((o) arrayList.get(0)).a)) {
             return;

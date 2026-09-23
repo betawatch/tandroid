@@ -12,13 +12,13 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.jb;
-import org.telegram.ui.Components.vc;
+import org.telegram.ui.Components.lb;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.bo;
-import org.telegram.ui.c41;
+import org.telegram.ui.u31;
+import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e2 implements Runnable {
     public final /* synthetic */ int a;
@@ -114,7 +114,7 @@ public final /* synthetic */ class e2 implements Runnable {
             case 9:
                 Activity activity = k3Var.k0;
                 if (activity instanceof LaunchActivity) {
-                    ((LaunchActivity) activity).p0(bo.R9(k3Var.H));
+                    ((LaunchActivity) activity).p0(xn.R9(k3Var.H));
                 }
                 k3Var.k(true);
                 break;
@@ -136,7 +136,7 @@ public final /* synthetic */ class e2 implements Runnable {
                 i3Var.setVisibility(0);
                 b3Var2.setBotUser(MessagesController.getInstance(k3Var.G).getUser(Long.valueOf(k3Var.H)));
                 b3Var2.t(k3Var.G, k3Var.H);
-                NotificationCenter.getInstance(b3Var2.M).doOnIdle(new org.telegram.ui.web.t(b3Var2, 2));
+                NotificationCenter.getInstance(b3Var2.M).doOnIdle(new org.telegram.ui.web.s(b3Var2, 2));
                 break;
             case 12:
                 MediaDataController.getInstance(k3Var.G).installShortcut(k3Var.H, MediaDataController.SHORTCUT_TYPE_ATTACHED_BOT);
@@ -147,10 +147,10 @@ public final /* synthetic */ class e2 implements Runnable {
             case 14:
                 int i13 = k3Var.G;
                 Context context = k3Var.getContext();
-                vc vcVar = new vc(jb.a(k3Var.getContext()), k3Var.E);
+                xc xcVar = new xc(lb.a(k3Var.getContext()), k3Var.E);
                 long j3 = k3Var.H;
-                int i14 = c41.v;
-                c41.K(i13, context, j3, false, false, new ArrayList(), vcVar, null, new byte[0], null, null);
+                int i14 = u31.v;
+                u31.K(i13, context, j3, false, false, new ArrayList(), xcVar, null, new byte[0], null, null);
                 break;
             case 15:
                 k3.j(k3Var.G, k3Var.H, new e2(k3Var, 16));

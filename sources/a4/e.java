@@ -1,11 +1,11 @@
 package a4;
 
 import ai.a0;
-import ai.i6;
+import ai.h6;
 import ai.n1;
 import android.util.Pair;
 import android.view.MenuItem;
-import ci.tc;
+import ci.qc;
 import gg.a2;
 import gg.h0;
 import hg.b2;
@@ -17,9 +17,9 @@ import org.telegram.messenger.camera.Size;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_phone;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.x4;
+import org.telegram.ui.ActionBar.w4;
 import org.telegram.ui.Cells.r1;
 import org.telegram.ui.Stories.ProfileStoriesView;
 import org.telegram.ui.s6;
@@ -27,7 +27,7 @@ import org.telegram.ui.u6;
 import s4.c1;
 import zg.p0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements Comparator {
     public final /* synthetic */ int a;
@@ -67,7 +67,7 @@ public final /* synthetic */ class e implements Comparator {
                 return ((Integer) ((Pair) obj).first).intValue() - ((Integer) ((Pair) obj2).first).intValue();
             case 6:
                 int i14 = ProfileStoriesView.s0;
-                return (int) (((i6) obj2).i - ((i6) obj).i);
+                return (int) (((h6) obj2).i - ((h6) obj).i);
             case 7:
                 return (int) (((Long) obj2).longValue() - ((Long) obj).longValue());
             case 8:
@@ -83,7 +83,7 @@ public final /* synthetic */ class e implements Comparator {
                 String str2 = p0Var.f;
                 return i16 - ((str2 == null || !str2.equals("❤")) ? 0 : -1);
             case 11:
-                return (int) (((tc) obj2).e - ((tc) obj).e);
+                return (int) (((qc) obj2).e - ((qc) obj).e);
             case 12:
                 int i17 = ((h0) obj).b;
                 int i18 = ((h0) obj2).b;
@@ -137,37 +137,37 @@ public final /* synthetic */ class e implements Comparator {
             case 23:
                 return ((MenuItem) obj).getOrder() - ((MenuItem) obj2).getOrder();
             case 24:
-                List list = x4.r;
+                List list = w4.r;
                 return (list.contains(Integer.valueOf(((MenuItem) obj).getItemId())) ? 1 : 0) - (list.contains(Integer.valueOf(((MenuItem) obj2).getItemId())) ? 1 : 0);
             case 25:
-                h6 h6Var = (h6) obj;
-                h6 h6Var2 = (h6) obj2;
-                if (h6Var.b == null && h6Var.d == null) {
-                    return -1;
-                }
-                if (h6Var2.b == null && h6Var2.d == null) {
-                    return 1;
-                }
-                return h6Var.a.compareTo(h6Var2.a);
-            case 26:
                 g6 g6Var = (g6) obj;
                 g6 g6Var2 = (g6) obj2;
-                if (org.telegram.ui.ActionBar.i6.g1(g6Var)) {
+                if (g6Var.b == null && g6Var.d == null) {
                     return -1;
                 }
-                if (!org.telegram.ui.ActionBar.i6.g1(g6Var2)) {
-                    ?? r02 = g6Var.z;
-                    ?? r42 = g6Var2.z;
+                if (g6Var2.b == null && g6Var2.d == null) {
+                    return 1;
+                }
+                return g6Var.a.compareTo(g6Var2.a);
+            case 26:
+                f6 f6Var = (f6) obj;
+                f6 f6Var2 = (f6) obj2;
+                if (org.telegram.ui.ActionBar.h6.g1(f6Var)) {
+                    return -1;
+                }
+                if (!org.telegram.ui.ActionBar.h6.g1(f6Var2)) {
+                    ?? r02 = f6Var.z;
+                    ?? r42 = f6Var2.z;
                     if (r02 == r42) {
                         if (r02 != 0) {
-                            int i22 = g6Var.a;
-                            int i23 = g6Var2.a;
+                            int i22 = f6Var.a;
+                            int i23 = f6Var2.a;
                             if (i22 <= i23) {
                                 return i22 < i23 ? -1 : 0;
                             }
                         } else {
-                            int i24 = g6Var.a;
-                            int i25 = g6Var2.a;
+                            int i24 = f6Var.a;
+                            int i25 = f6Var2.a;
                             if (i24 > i25) {
                                 return -1;
                             }

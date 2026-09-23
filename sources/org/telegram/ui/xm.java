@@ -1,23 +1,40 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public abstract class xm extends org.telegram.ui.Components.ll0 implements ai.s9 {
-    public final /* synthetic */ bo X2;
+public final /* synthetic */ class xm implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ jn b;
+    public final /* synthetic */ TLRPC.Chat c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xm(bo boVar, Context context, zn znVar) {
-        super(context, znVar);
-        this.X2 = boVar;
+    public /* synthetic */ xm(jn jnVar, TLRPC.Chat chat, int i10) {
+        this.a = i10;
+        this.b = jnVar;
+        this.c = chat;
     }
 
-    @Override // ai.s9
-    public final void a(int[] iArr) {
-        bo boVar = this.X2;
-        iArr[0] = ((int) boVar.s9) - AndroidUtilities.dp(4.0f);
-        iArr[1] = org.telegram.messenger.y0.z(3.0f, boVar.x0.getPaddingBottom(), boVar.x0.getMeasuredHeight());
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        TLRPC.Chat chat = this.c;
+        jn jnVar = this.b;
+        switch (i10) {
+            case 0:
+                jnVar.x(chat);
+                break;
+            case 1:
+                jnVar.b(chat);
+                break;
+            case 2:
+                jnVar.a.ka(chat);
+                break;
+            default:
+                org.telegram.ui.Components.xc.a0(jnVar.a).Q(R.raw.contact_check, 36, LocaleController.formatString(R.string.YouJoinedChannel, chat == null ? "" : chat.title)).k(true);
+                break;
+        }
     }
 }

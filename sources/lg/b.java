@@ -4,16 +4,16 @@ import ai.g2;
 import android.view.ScaleGestureDetector;
 import android.view.WindowManager;
 import android.widget.ImageView;
-import i2.g0;
+import i2.h0;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.y0;
+import org.telegram.messenger.z0;
 import org.telegram.ui.Components.Crop.CropAreaView;
-import org.telegram.ui.Components.bc0;
+import org.telegram.ui.Components.ac0;
 import org.telegram.ui.Components.eg0;
 import org.telegram.ui.Components.voip.j1;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class b implements ScaleGestureDetector.OnScaleGestureListener {
     public final /* synthetic */ int a;
@@ -73,7 +73,7 @@ public final class b implements ScaleGestureDetector.OnScaleGestureListener {
                         if (f7 * scaleFactor > 30.0f) {
                             scaleFactor = 30.0f / f7;
                         }
-                        n.g(pVar.L, scaleFactor, n.a(pVar.L) * ((focusX - (imageView.getWidth() / 2)) / cropAreaView.getCropWidth()), n.b(pVar.L) * (y0.y((imageView.getHeight() - pVar.y) - (!pVar.r ? AndroidUtilities.statusBarHeight : 0), pVar.E, 2.0f, focusY) / cropAreaView.getCropHeight()));
+                        n.g(pVar.L, scaleFactor, n.a(pVar.L) * ((focusX - (imageView.getWidth() / 2)) / cropAreaView.getCropWidth()), n.b(pVar.L) * (z0.y((imageView.getHeight() - pVar.y) - (!pVar.r ? AndroidUtilities.statusBarHeight : 0), pVar.E, 2.0f, focusY) / cropAreaView.getCropHeight()));
                         pVar.r(false);
                         break;
                     }
@@ -84,7 +84,7 @@ public final class b implements ScaleGestureDetector.OnScaleGestureListener {
                 eg0Var.J = w7.p.a(scaleGestureDetector.getScaleFactor() * eg0Var.J, 0.75f, eg0Var.a);
                 eg0Var.H = (int) (eg0Var.t() * eg0Var.J);
                 eg0Var.I = (int) (eg0Var.r() * eg0Var.J);
-                AndroidUtilities.runOnUIThread(new bc0(this, 12));
+                AndroidUtilities.runOnUIThread(new ac0(this, 12));
                 float dp = scaleGestureDetector.getFocusX() >= ((float) AndroidUtilities.displaySize.x) / 2.0f ? (r2 - eg0Var.H) - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f);
                 o1.k kVar = eg0Var.M;
                 if (kVar.f) {
@@ -111,7 +111,7 @@ public final class b implements ScaleGestureDetector.OnScaleGestureListener {
                 j1Var.P = w7.p.a(scaleGestureDetector.getScaleFactor() * j1Var.P, 0.6f, j1Var.a);
                 j1Var.M = (int) (j1Var.m() * j1Var.P);
                 j1Var.N = (int) (j1Var.l() * j1Var.P);
-                AndroidUtilities.runOnUIThread(new g0(this, 20));
+                AndroidUtilities.runOnUIThread(new h0(this, 20));
                 o1.k kVar3 = j1Var.S;
                 kVar3.b = j1Var.Q;
                 kVar3.c = true;

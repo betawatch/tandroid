@@ -18,20 +18,21 @@ import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BuildConfig;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Cells.v8;
-import org.telegram.ui.Components.oc;
-import org.telegram.ui.bo;
-import org.telegram.ui.gz;
-import org.telegram.ui.or;
+import org.telegram.ui.Cells.w8;
+import org.telegram.ui.Components.qc;
+import org.telegram.ui.dz;
+import org.telegram.ui.kr;
+import org.telegram.ui.mr;
+import org.telegram.ui.om;
 import org.telegram.ui.qr;
-import org.telegram.ui.rm;
-import org.telegram.ui.ur;
+import org.telegram.ui.xn;
 import s4.c1;
 import s4.m0;
 import v7.l8;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class s implements Runnable {
     public final /* synthetic */ int a;
@@ -62,8 +63,8 @@ public final class s implements Runnable {
         try {
             c();
         } catch (Error e) {
-            synchronized (((r9.j) this.c).b) {
-                ((r9.j) this.c).c = 1;
+            synchronized (((r9.i) this.c).b) {
+                ((r9.i) this.c).c = 1;
                 throw e;
             }
         }
@@ -96,7 +97,7 @@ public final class s implements Runnable {
      */
     /* JADX WARN: Code restructure failed: missing block: B:22:0x005d, code lost:
     
-        r9.j.f.log(java.util.logging.Level.SEVERE, "Exception while executing runnable " + ((java.lang.Runnable) r10.b), (java.lang.Throwable) r3);
+        r9.i.f.log(java.util.logging.Level.SEVERE, "Exception while executing runnable " + ((java.lang.Runnable) r10.b), (java.lang.Throwable) r3);
      */
     /* JADX WARN: Code restructure failed: missing block: B:27:0x0043, code lost:
     
@@ -114,19 +115,19 @@ public final class s implements Runnable {
         boolean z11 = false;
         while (true) {
             try {
-                synchronized (((r9.j) this.c).b) {
+                synchronized (((r9.i) this.c).b) {
                     if (!z10) {
-                        r9.j jVar = (r9.j) this.c;
-                        if (jVar.c != 4) {
-                            jVar.d++;
-                            jVar.c = 4;
+                        r9.i iVar = (r9.i) this.c;
+                        if (iVar.c != 4) {
+                            iVar.d++;
+                            iVar.c = 4;
                             z10 = true;
                         }
                     }
-                    Runnable runnable = (Runnable) ((r9.j) this.c).b.poll();
+                    Runnable runnable = (Runnable) ((r9.i) this.c).b.poll();
                     this.b = runnable;
                     if (runnable == null) {
-                        ((r9.j) this.c).c = 1;
+                        ((r9.i) this.c).c = 1;
                     }
                 }
                 if (!z11) {
@@ -476,19 +477,19 @@ public final class s implements Runnable {
                 ((c5.z) this.b).accept(this.c);
                 return;
             case 21:
-                bo boVar = ((rm) this.c).c;
-                if (this == boVar.J5) {
-                    boVar.Ya((CharSequence) this.b, false);
-                    boVar.J5 = null;
+                xn xnVar = ((om) this.c).c;
+                if (this == xnVar.J5) {
+                    xnVar.Ya((CharSequence) this.b, false);
+                    xnVar.J5 = null;
                     return;
                 }
                 return;
             case 22:
-                v8 v8Var = (v8) this.b;
-                boolean z20 = v8Var.d.h;
-                v8Var.setChecked(!z20);
-                ur urVar = ((qr) this.c).d;
-                TLRPC.TL_chatBannedRights tL_chatBannedRights = urVar.E;
+                w8 w8Var = (w8) this.b;
+                boolean z20 = w8Var.d.h;
+                w8Var.setChecked(!z20);
+                qr qrVar = ((mr) this.c).d;
+                TLRPC.TL_chatBannedRights tL_chatBannedRights = qrVar.E;
                 tL_chatBannedRights.send_media = z20;
                 tL_chatBannedRights.send_gifs = z20;
                 tL_chatBannedRights.send_inline = z20;
@@ -503,14 +504,14 @@ public final class s implements Runnable {
                 tL_chatBannedRights.embed_links = z20;
                 tL_chatBannedRights.send_polls = z20;
                 tL_chatBannedRights.send_reactions = z20;
-                AndroidUtilities.updateVisibleRows(urVar.c);
-                or w02 = urVar.w0();
-                urVar.B0();
-                urVar.A0(w02);
+                AndroidUtilities.updateVisibleRows(qrVar.c);
+                kr w02 = qrVar.w0();
+                qrVar.B0();
+                qrVar.A0(w02);
                 return;
             case 23:
-                ((oc) this.b).j();
-                ((gz) this.c).E = null;
+                ((qc) this.b).j();
+                ((dz) this.c).E = null;
                 return;
             case 24:
                 ReferenceQueue referenceQueue = (ReferenceQueue) this.b;
@@ -611,8 +612,8 @@ public final class s implements Runnable {
                     return "SequentialExecutorWorker{running=" + runnable + "}";
                 }
                 StringBuilder sb2 = new StringBuilder("SequentialExecutorWorker{state=");
-                int i10 = ((r9.j) this.c).c;
-                sb2.append(i10 != 1 ? i10 != 2 ? i10 != 3 ? i10 != 4 ? "null" : "RUNNING" : "QUEUED" : "QUEUING" : "IDLE");
+                int i10 = ((r9.i) this.c).c;
+                sb2.append(i10 != 1 ? i10 != 2 ? i10 != 3 ? i10 != 4 ? BuildConfig.BETA_URL : "RUNNING" : "QUEUED" : "QUEUING" : "IDLE");
                 sb2.append("}");
                 return sb2.toString();
             default:
@@ -626,9 +627,9 @@ public final class s implements Runnable {
         this.b = obj2;
     }
 
-    public s(r9.j jVar) {
+    public s(r9.i iVar) {
         this.a = 28;
-        this.c = jVar;
+        this.c = iVar;
     }
 
     public s(s4.y yVar, s4.u uVar, int i10) {

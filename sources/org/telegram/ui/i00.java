@@ -1,30 +1,25 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import android.text.style.ImageSpan;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class i00 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ f10 b;
+public final class i00 extends ImageSpan {
+    public int a;
 
-    public /* synthetic */ i00(f10 f10Var, int i10) {
-        this.a = i10;
-        this.b = f10Var;
-    }
-
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new kw(10, this.b, tLObject));
-                break;
-            default:
-                AndroidUtilities.runOnUIThread(new xq(this.b, tL_error, tLObject, 6));
-                break;
+    @Override // android.text.style.DynamicDrawableSpan, android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+        if (paint.getColor() != this.a && getDrawable() != null) {
+            Drawable drawable = getDrawable();
+            int color = paint.getColor();
+            this.a = color;
+            drawable.setColorFilter(new PorterDuffColorFilter(color, PorterDuff.Mode.MULTIPLY));
         }
+        super.draw(canvas, charSequence, i10, i11, f7, i12, i13, i14, paint);
     }
 }

@@ -1,45 +1,41 @@
 package ci;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.camera.CameraController;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Path;
 import org.telegram.messenger.camera.CameraView;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class n7 implements CameraView.CameraViewDelegate, CameraController.VideoTakeCallback {
-    public final /* synthetic */ q7 a;
+public final class n7 extends CameraView {
+    public final Path a;
+    public final /* synthetic */ o7 b;
 
-    public /* synthetic */ n7(q7 q7Var) {
-        this.a = q7Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public n7(o7 o7Var, Context context) {
+        super(context, true, false);
+        this.b = o7Var;
+        this.a = new Path();
     }
 
-    @Override // org.telegram.messenger.camera.CameraView.CameraViewDelegate
-    public void onCameraInit() {
-        q7 q7Var = this.a;
-        p7 p7Var = q7Var.a;
-        if (q7Var.c > 0) {
-            return;
-        }
-        CameraController.getInstance().recordVideo(p7Var.getCameraSessionObject(), q7Var.b, false, new n7(q7Var), new m7(q7Var, 1), p7Var, true);
+    @Override // org.telegram.messenger.camera.CameraView, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        canvas.save();
+        Path path = this.a;
+        path.rewind();
+        path.addCircle(getWidth() / 2.0f, getHeight() / 2.0f, Math.min(getWidth() / 2.0f, getHeight() / 2.0f), Path.Direction.CW);
+        canvas.clipPath(path);
+        super.dispatchDraw(canvas);
+        canvas.restore();
     }
 
-    @Override // org.telegram.messenger.camera.CameraController.VideoTakeCallback
-    public void onFinishVideoRecording(String str, long j3) {
-        long currentTimeMillis = System.currentTimeMillis();
-        q7 q7Var = this.a;
-        q7Var.d = currentTimeMillis;
-        AndroidUtilities.cancelRunOnUIThread(q7Var.h);
-        if (q7Var.x) {
-            return;
-        }
-        if (j3 <= 1000) {
-            q7Var.a(false);
-            return;
-        }
-        q7Var.a.destroy(true, null);
-        ai.q0 q0Var = q7Var.n;
-        if (q0Var != null) {
-            q0Var.run(q7Var.b, str, Long.valueOf(j3));
-        }
+    @Override // org.telegram.messenger.camera.CameraView
+    public final void receivedAmplitude(double d) {
+        ((p) this.b).F.setAmplitude(d);
+    }
+
+    @Override // org.telegram.messenger.camera.CameraView
+    public final boolean square() {
+        return true;
     }
 }

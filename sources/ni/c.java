@@ -1,10 +1,9 @@
 package ni;
 
-import k2.v;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a;
@@ -45,8 +44,8 @@ public final /* synthetic */ class c implements Runnable {
                         c cVar2 = new c(fVar2, eVar4, 2);
                         fVar2.d = cVar2;
                         AndroidUtilities.runOnUIThread(cVar2, 20000L);
-                        v vVar = eVar4.a;
-                        ((ConnectionsManager) vVar.b).checkWebProxyInternal(eVar4.b, i10, new d(fVar2, eVar4));
+                        le.b bVar = eVar4.a;
+                        ((ConnectionsManager) bVar.b).checkWebProxyInternal(eVar4.b, i10, new d(fVar2, eVar4));
                         break;
                     } else {
                         fVar2.j(eVar4);

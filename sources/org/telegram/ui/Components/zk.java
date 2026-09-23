@@ -1,49 +1,28 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class zk extends s4.s0 {
-    public final /* synthetic */ gl a;
+public final class zk extends s4.d0 {
+    public final /* synthetic */ hg.g0 r;
 
-    public zk(gl glVar) {
-        this.a = glVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zk(hg.g0 g0Var, Context context) {
+        super(context);
+        this.r = g0Var;
     }
 
-    @Override // s4.s0
-    public final void a(RecyclerView recyclerView, int i10) {
-        vk0 vk0Var;
-        gl glVar = this.a;
-        ai.w0 w0Var = glVar.P;
-        vi viVar = glVar.b;
-        boolean z10 = i10 != 0;
-        glVar.L = z10;
-        if (!z10 && glVar.J != null) {
-            glVar.J = null;
-        }
-        if (i10 == 0) {
-            int dp = AndroidUtilities.dp(13.0f);
-            int backgroundPaddingTop = viVar.getBackgroundPaddingTop();
-            if (((viVar.b2[0] - backgroundPaddingTop) - dp) + backgroundPaddingTop >= org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() || (vk0Var = (vk0) w0Var.K(0)) == null) {
-                return;
-            }
-            View view = vk0Var.a;
-            if (view.getTop() > glVar.A0 - glVar.z0) {
-                w0Var.v0(0, view.getTop() - (glVar.A0 - glVar.z0), null);
-            }
-        }
+    @Override // s4.d0
+    public final int k(int i10, View view) {
+        int k10 = super.k(i10, view);
+        hl hlVar = (hl) this.r.V;
+        return k10 - (hlVar.P.getPaddingTop() - (hlVar.A0 - hlVar.z0));
     }
 
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        gl glVar = this.a;
-        glVar.e0();
-        if (glVar.J != null) {
-            glVar.K += i11;
-        }
-        glVar.b.X1(glVar, i11);
+    @Override // s4.d0
+    public final int m(int i10) {
+        return super.m(i10) * 4;
     }
 }

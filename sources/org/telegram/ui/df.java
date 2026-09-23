@@ -13,7 +13,7 @@ import org.telegram.messenger.camera.Size;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class df implements Comparator {
     public final /* synthetic */ int a;
@@ -42,8 +42,8 @@ public final /* synthetic */ class df implements Comparator {
             case 4:
                 TLObject tLObject = (TLObject) obj;
                 TLObject tLObject2 = (TLObject) obj2;
-                int j02 = ur.j0(tLObject);
-                int j03 = ur.j0(tLObject2);
+                int j02 = qr.j0(tLObject);
+                int j03 = qr.j0(tLObject2);
                 if (j02 > j03) {
                     return 1;
                 }
@@ -55,22 +55,22 @@ public final /* synthetic */ class df implements Comparator {
                 }
                 return 0;
             case 5:
-                int j04 = ur.j0((TLObject) obj);
-                int j05 = ur.j0((TLObject) obj2);
+                int j04 = qr.j0((TLObject) obj);
+                int j05 = qr.j0((TLObject) obj2);
                 if (j04 > j05) {
                     return 1;
                 }
                 return j04 < j05 ? -1 : 0;
             case 6:
-                id2 = ((org.telegram.ui.Components.l9) obj2).b;
-                id3 = ((org.telegram.ui.Components.l9) obj).b;
+                id2 = ((org.telegram.ui.Components.n9) obj2).b;
+                id3 = ((org.telegram.ui.Components.n9) obj).b;
                 break;
             case 7:
-                id2 = ((org.telegram.ui.Components.l9) obj2).b;
-                id3 = ((org.telegram.ui.Components.l9) obj).b;
+                id2 = ((org.telegram.ui.Components.n9) obj2).b;
+                id3 = ((org.telegram.ui.Components.n9) obj).b;
                 break;
             case 8:
-                return Long.compare(((org.telegram.ui.Components.ad) obj).c, ((org.telegram.ui.Components.ad) obj2).c);
+                return Long.compare(((org.telegram.ui.Components.cd) obj).c, ((org.telegram.ui.Components.cd) obj2).c);
             case 9:
                 Size size = (Size) obj;
                 Size size2 = (Size) obj2;
@@ -90,14 +90,14 @@ public final /* synthetic */ class df implements Comparator {
                 id3 = ((Integer) obj).intValue();
                 break;
             case 12:
-                float f7 = ((org.telegram.ui.Components.mg0) obj).a;
-                float f10 = ((org.telegram.ui.Components.mg0) obj2).a;
+                float f7 = ((org.telegram.ui.Components.ng0) obj).a;
+                float f10 = ((org.telegram.ui.Components.ng0) obj2).a;
                 if (f7 > f10) {
                     return -1;
                 }
                 return f7 < f10 ? 1 : 0;
             case 13:
-                return Float.compare(((org.telegram.ui.Components.il0) obj).a, ((org.telegram.ui.Components.il0) obj2).a);
+                return Float.compare(((org.telegram.ui.Components.jl0) obj).a, ((org.telegram.ui.Components.jl0) obj2).a);
             case 14:
                 Pair pair = (Pair) obj;
                 Pair pair2 = (Pair) obj2;
@@ -178,7 +178,7 @@ public final /* synthetic */ class df implements Comparator {
                 }
                 return j3 < j10 ? -1 : 0;
             case 20:
-                return Long.compare(((uu) obj2).c, ((uu) obj).c);
+                return Long.compare(((ru) obj2).c, ((ru) obj).c);
             case 21:
                 long j11 = UserConfig.getInstance(((Integer) obj).intValue()).loginTime;
                 long j12 = UserConfig.getInstance(((Integer) obj2).intValue()).loginTime;
@@ -215,8 +215,8 @@ public final /* synthetic */ class df implements Comparator {
             case 27:
                 return (int) (((View) obj).getY() - ((View) obj2).getY());
             case 28:
-                int i18 = obj instanceof j11 ? ((j11) obj).g : obj instanceof MessagesController.FaqSearchResult ? ((MessagesController.FaqSearchResult) obj).num : 0;
-                int i19 = obj2 instanceof j11 ? ((j11) obj2).g : obj2 instanceof MessagesController.FaqSearchResult ? ((MessagesController.FaqSearchResult) obj2).num : 0;
+                int i18 = obj instanceof b11 ? ((b11) obj).g : obj instanceof MessagesController.FaqSearchResult ? ((MessagesController.FaqSearchResult) obj).num : 0;
+                int i19 = obj2 instanceof b11 ? ((b11) obj2).g : obj2 instanceof MessagesController.FaqSearchResult ? ((MessagesController.FaqSearchResult) obj2).num : 0;
                 if (i18 < i19) {
                     return -1;
                 }

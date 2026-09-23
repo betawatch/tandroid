@@ -1,57 +1,33 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.text.TextUtils;
 import android.view.View;
-import org.telegram.messenger.Emoji;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class d91 extends org.telegram.ui.Components.h51 {
-    static {
-        org.telegram.ui.Components.h51.setup(new d91());
+public final /* synthetic */ class d91 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.d6 c;
+
+    public /* synthetic */ d91(Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
+        this.a = i10;
+        this.b = context;
+        this.c = d6Var;
     }
 
-    public static org.telegram.ui.Components.i51 a(String str, CharSequence charSequence, String str2, View.OnClickListener onClickListener, CharSequence charSequence2, View.OnClickListener onClickListener2) {
-        org.telegram.ui.Components.i51 J = org.telegram.ui.Components.i51.J(d91.class);
-        J.l = str;
-        J.m = charSequence;
-        J.n = str2;
-        J.D = onClickListener;
-        J.o = charSequence2;
-        J.E = onClickListener2;
-        return J;
-    }
-
-    @Override // org.telegram.ui.Components.h51
-    public final void bindView(View view, org.telegram.ui.Components.i51 i51Var, boolean z10, org.telegram.ui.Components.w51 w51Var, org.telegram.ui.Components.e61 e61Var) {
-        e91 e91Var = (e91) view;
-        CharSequence charSequence = i51Var.l;
-        CharSequence charSequence2 = i51Var.m;
-        CharSequence charSequence3 = i51Var.n;
-        View.OnClickListener onClickListener = i51Var.D;
-        CharSequence charSequence4 = i51Var.o;
-        View.OnClickListener onClickListener2 = i51Var.E;
-        ci.d dVar = e91Var.e;
-        org.telegram.ui.Components.c90 c90Var = e91Var.b;
-        c90Var.setText(Emoji.replaceEmoji(charSequence, c90Var.getPaint().getFontMetricsInt(), false));
-        org.telegram.ui.Components.c90 c90Var2 = e91Var.c;
-        c90Var2.setText(Emoji.replaceEmoji(charSequence2, c90Var2.getPaint().getFontMetricsInt(), false));
-        ci.d dVar2 = e91Var.d;
-        dVar2.setVisibility(TextUtils.isEmpty(charSequence3) ? 8 : 0);
-        dVar2.setText(charSequence3);
-        dVar2.setOnClickListener(onClickListener);
-        dVar.setText(charSequence4);
-        dVar.setOnClickListener(onClickListener2);
-    }
-
-    @Override // org.telegram.ui.Components.h51
-    public final View createView(Context context, org.telegram.ui.Components.ll0 ll0Var, int i10, int i11, org.telegram.ui.ActionBar.e6 e6Var) {
-        return new e91(context, e6Var);
-    }
-
-    @Override // org.telegram.ui.Components.h51
-    public final boolean isClickable() {
-        return false;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                new yh.m7(this.b, this.c).show();
+                break;
+            case 1:
+                new yh.m7(this.b, this.c).show();
+                break;
+            default:
+                new yh.m7(this.b, this.c).show();
+                break;
+        }
     }
 }

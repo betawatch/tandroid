@@ -1,27 +1,27 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class pj0 extends ci.d {
-    public final /* synthetic */ rj0 h0;
+public final /* synthetic */ class pj0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ wj0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public pj0(rj0 rj0Var, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, e6Var, true);
-        this.h0 = rj0Var;
+    public /* synthetic */ pj0(wj0 wj0Var, int i10) {
+        this.a = i10;
+        this.b = wj0Var;
     }
 
-    @Override // ci.d
-    public final float a(float f7, float f10) {
-        rj0 rj0Var = this.h0;
-        boolean z10 = rj0Var.n0 == 0.0f;
-        rj0Var.n0 = f7;
-        if (z10) {
-            rj0Var.o0 = new org.telegram.ui.Components.ra0(rj0Var, 1);
-            rj0Var.S(false);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.hideKeyboard(this.b.b);
+                break;
+            default:
+                AndroidUtilities.showKeyboard(this.b.d.getEditText());
+                break;
         }
-        return f7;
     }
 }

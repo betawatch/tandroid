@@ -2,14 +2,14 @@ package f5;
 
 import com.google.android.gms.internal.vision.e2;
 import java.nio.ByteBuffer;
-import k2.c0;
+import k2.b0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class z extends a {
-    public static final /* synthetic */ c0 h;
-    public static final /* synthetic */ c0 n;
-    public static final /* synthetic */ c0 r;
+    public static final /* synthetic */ b0 h;
+    public static final /* synthetic */ b0 n;
+    public static final /* synthetic */ b0 r;
     public int e;
     public int[] f;
 
@@ -54,14 +54,14 @@ public final class z extends a {
         e2.q(re.a.b(h, this, this));
         sb2.append(this.e);
         sb2.append(";opcolor0=");
-        c0 c0Var = n;
-        e2.q(re.a.b(c0Var, this, this));
+        b0 b0Var = n;
+        e2.q(re.a.b(b0Var, this, this));
         sb2.append(this.f[0]);
         sb2.append(";opcolor1=");
-        e2.q(re.a.b(c0Var, this, this));
+        e2.q(re.a.b(b0Var, this, this));
         sb2.append(this.f[1]);
         sb2.append(";opcolor2=");
-        e2.q(re.a.b(c0Var, this, this));
+        e2.q(re.a.b(b0Var, this, this));
         return a4.a.o(this.f[2], "]", sb2);
     }
 }

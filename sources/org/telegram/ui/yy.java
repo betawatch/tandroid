@@ -1,52 +1,72 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
-import android.content.SharedPreferences;
-import org.telegram.messenger.MessagesController;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class yy implements DialogInterface.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
+public final class yy extends s4.v {
+    public boolean d;
+    public final /* synthetic */ az e;
 
-    public /* synthetic */ yy(Object obj, int i10, int i11) {
-        this.a = i11;
-        this.c = obj;
-        this.b = i10;
+    public yy(az azVar) {
+        this.e = azVar;
     }
 
-    @Override // android.content.DialogInterface.OnClickListener
-    public final void onClick(DialogInterface dialogInterface, int i10) {
-        switch (this.a) {
-            case 0:
-                dz dzVar = ((zy) this.c).b;
-                if (i10 == 0) {
-                    dzVar.e.remove(this.b - dzVar.n);
-                    dzVar.Z();
-                    cz czVar = dzVar.f;
-                    if (czVar != null) {
-                        czVar.a();
-                        break;
-                    }
-                }
-                break;
-            case 1:
-                NotificationsSettingsActivity.X((NotificationsSettingsActivity) this.c, this.b, i10);
-                break;
-            default:
-                ThemeActivity themeActivity = (ThemeActivity) this.c;
-                themeActivity.getClass();
-                SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
-                edit.putInt("sortContactsBy", i10);
-                edit.commit();
-                gc1 gc1Var = themeActivity.a;
-                if (gc1Var != null) {
-                    gc1Var.m(this.b);
-                    break;
-                }
-                break;
+    @Override // s4.v
+    public final void a(RecyclerView recyclerView, s4.c1 c1Var) {
+        super.a(recyclerView, c1Var);
+        c1Var.a.setPressed(false);
+    }
+
+    @Override // s4.v
+    public final int e(RecyclerView recyclerView, s4.c1 c1Var) {
+        return c1Var.f != 3 ? s4.v.l(0, 0) : s4.v.l(3, 0);
+    }
+
+    @Override // s4.v
+    public final boolean n(RecyclerView recyclerView, s4.c1 c1Var, s4.c1 c1Var2) {
+        if (c1Var.f != c1Var2.f) {
+            return false;
         }
+        int b10 = c1Var.b();
+        int b11 = c1Var2.b();
+        az azVar = this.e;
+        xy xyVar = azVar.a;
+        az azVar2 = xyVar.d;
+        int i10 = azVar2.n;
+        ArrayList arrayList = azVar2.e;
+        int i11 = b10 - i10;
+        int i12 = b11 - i10;
+        int i13 = azVar2.r - i10;
+        if (i11 >= 0 && i12 >= 0 && i11 < i13 && i12 < i13) {
+            Long l4 = (Long) arrayList.get(i11);
+            arrayList.set(i11, (Long) arrayList.get(i12));
+            arrayList.set(i12, l4);
+            xyVar.p(b10, b11);
+            ((org.telegram.ui.Cells.g4) c1Var.a).setDrawDivider(b11 != azVar.r - 1);
+            ((org.telegram.ui.Cells.g4) c1Var2.a).setDrawDivider(b10 != azVar.r - 1);
+            this.d = true;
+        }
+        return true;
+    }
+
+    @Override // s4.v
+    public final void p(s4.c1 c1Var, int i10) {
+        az azVar = this.e;
+        if (i10 != 0) {
+            azVar.b.I0(false);
+            c1Var.a.setPressed(true);
+        } else if (this.d) {
+            zy zyVar = azVar.f;
+            if (zyVar != null) {
+                zyVar.a();
+            }
+            this.d = false;
+        }
+    }
+
+    @Override // s4.v
+    public final void q(s4.c1 c1Var) {
     }
 }

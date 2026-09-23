@@ -6,18 +6,18 @@ import android.view.View;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class r3 extends o1 {
     public final /* synthetic */ jc h0;
-    public final /* synthetic */ f6 i0;
+    public final /* synthetic */ e6 i0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r3(f6 f6Var, Context context, jc jcVar, yb ybVar, View view, FrameLayout frameLayout, jc jcVar2) {
+    public r3(e6 e6Var, Context context, jc jcVar, yb ybVar, View view, FrameLayout frameLayout, jc jcVar2) {
         super(context, jcVar, ybVar, view, frameLayout);
-        this.i0 = f6Var;
+        this.i0 = e6Var;
         this.h0 = jcVar2;
     }
 
@@ -58,9 +58,9 @@ public final class r3 extends o1 {
 
     @Override // ai.o1
     public final void j() {
-        f6 f6Var = this.i0;
-        f6Var.Z1.setCount((int) getStarsCount());
-        f6Var.Z1.setFilled(this.W != null);
+        e6 e6Var = this.i0;
+        e6Var.Z1.setCount((int) getStarsCount());
+        e6Var.Z1.setFilled(this.W != null);
     }
 
     @Override // ai.o1
@@ -80,7 +80,7 @@ public final class r3 extends o1 {
                 ofFloat.addUpdateListener(new a(this, 3));
                 this.e0.addListener(new n(1, this, z10));
                 this.e0.setDuration(420L);
-                this.e0.setInterpolator(qr.h);
+                this.e0.setInterpolator(rr.h);
                 this.e0.start();
             } else {
                 this.a.setAlpha(z10 ? 0.0f : 0.5f);

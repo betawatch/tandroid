@@ -9,12 +9,12 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class l1 extends FrameLayout {
     public final i1 a;
-    public final org.telegram.ui.Components.u9 b;
-    public final org.telegram.ui.Components.f9 c;
+    public final org.telegram.ui.Components.w9 b;
+    public final org.telegram.ui.Components.h9 c;
     public final ImageView d;
     public final j1 e;
     public n1 f;
@@ -26,11 +26,11 @@ public final class l1 extends FrameLayout {
         this.a = i1Var;
         i1Var.setOrientation(0);
         addView(i1Var, w7.x5.d(-2, -2.0f, 119, 0.0f, 0.0f, 6.0f, 0.0f));
-        this.c = new org.telegram.ui.Components.f9((org.telegram.ui.ActionBar.e6) null);
-        org.telegram.ui.Components.u9 u9Var = new org.telegram.ui.Components.u9(context);
-        this.b = u9Var;
-        u9Var.setRoundRadius(AndroidUtilities.dp(11.0f));
-        i1Var.addView(u9Var, w7.x5.p(22, 22, 0.0f, 51, 3, 2, 7, 2));
+        this.c = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.d6) null);
+        org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
+        this.b = w9Var;
+        w9Var.setRoundRadius(AndroidUtilities.dp(11.0f));
+        i1Var.addView(w9Var, w7.x5.p(22, 22, 0.0f, 51, 3, 2, 7, 2));
         ImageView imageView = new ImageView(context);
         this.d = imageView;
         imageView.setVisibility(8);
@@ -48,16 +48,16 @@ public final class l1 extends FrameLayout {
     public void set(n1 n1Var) {
         this.f = n1Var;
         long j3 = n1Var.b;
-        org.telegram.ui.Components.u9 u9Var = this.b;
-        org.telegram.ui.Components.f9 f9Var = this.c;
+        org.telegram.ui.Components.w9 w9Var = this.b;
+        org.telegram.ui.Components.h9 h9Var = this.c;
         if (j3 >= 0) {
             TLRPC.User user = MessagesController.getInstance(UserConfig.selectedAccount).getUser(Long.valueOf(n1Var.b));
-            f9Var.r(user);
-            u9Var.e(user, f9Var);
+            h9Var.r(user);
+            w9Var.e(user, h9Var);
         } else {
             TLRPC.Chat chat = MessagesController.getInstance(UserConfig.selectedAccount).getChat(Long.valueOf(-n1Var.b));
-            f9Var.q(chat);
-            u9Var.e(chat, f9Var);
+            h9Var.q(chat);
+            w9Var.e(chat, h9Var);
         }
         int i10 = n1Var.e;
         ImageView imageView = this.d;

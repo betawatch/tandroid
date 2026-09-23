@@ -41,15 +41,15 @@ import m.l1;
 import m.q;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Cells.p2;
-import org.telegram.ui.Components.m6;
-import org.telegram.ui.ug;
+import org.telegram.ui.Components.o6;
+import org.telegram.ui.sg;
 import r0.i0;
 import v7.v7;
 import w7.c0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final class l implements OnSuccessListener, le.k {
+public final class l implements OnSuccessListener, le.l {
     public static l e;
     public int a;
     public Object b;
@@ -84,7 +84,7 @@ public final class l implements OnSuccessListener, le.k {
         return lVar;
     }
 
-    @Override // le.k
+    @Override // le.l
     public void a() {
         h();
     }
@@ -128,8 +128,8 @@ public final class l implements OnSuccessListener, le.k {
         }
     }
 
-    @Override // le.k
-    public void c(le.l lVar) {
+    @Override // le.l
+    public void c(le.m mVar) {
         h();
     }
 
@@ -243,12 +243,12 @@ public final class l implements OnSuccessListener, le.k {
     public void h() {
         float[] fArr = (float[]) this.b;
         Arrays.fill(fArr, 0.0f);
-        Iterator it = ((le.l) this.d).iterator();
+        Iterator it = ((le.m) this.d).iterator();
         while (it.hasNext()) {
-            le.g gVar = (le.g) it.next();
-            fArr[((Integer) gVar.a).intValue()] = gVar.c();
+            le.h hVar = (le.h) it.next();
+            fArr[((Integer) hVar.a).intValue()] = hVar.c();
         }
-        ((ug) this.c).run();
+        ((sg) this.c).run();
     }
 
     public void i() {
@@ -275,7 +275,7 @@ public final class l implements OnSuccessListener, le.k {
         this.a = b10;
         int numberOfLeadingZeros2 = 31 - Integer.numberOfLeadingZeros(b10);
         if (numberOfLeadingZeros != numberOfLeadingZeros2) {
-            ((le.l) this.d).i(Integer.valueOf(numberOfLeadingZeros2), z11);
+            ((le.m) this.d).i(Integer.valueOf(numberOfLeadingZeros2), z11);
         }
     }
 
@@ -376,12 +376,12 @@ public final class l implements OnSuccessListener, le.k {
                 this.a = 0;
                 break;
             default:
-                m6 m6Var = new m6(true, true, true, false);
-                this.d = m6Var;
+                o6 o6Var = new o6(true, true, true, false);
+                this.d = o6Var;
                 Paint paint = new Paint(1);
-                m6Var.t(AndroidUtilities.dp(13.0f));
-                m6Var.r(-1);
-                m6Var.u(AndroidUtilities.bold());
+                o6Var.t(AndroidUtilities.dp(13.0f));
+                o6Var.r(-1);
+                o6Var.u(AndroidUtilities.bold());
                 paint.setColor(i0.a.k(-16777216, 58));
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                 this.b = spannableStringBuilder;

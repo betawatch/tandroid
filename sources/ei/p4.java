@@ -10,14 +10,14 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 import android.widget.FrameLayout;
-import ci.uc;
-import ci.va;
+import ci.rc;
+import ci.sa;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.GenericProvider;
 import org.telegram.ui.Components.iv0;
-import org.telegram.ui.Components.oc;
+import org.telegram.ui.Components.qc;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public abstract class p4 extends FrameLayout {
     public static final iv0 b0 = new iv0(new d2.c(20), new d2.c(21));
@@ -53,7 +53,7 @@ public abstract class p4 extends FrameLayout {
     public boolean s;
     public o1.k v;
     public boolean w;
-    public org.telegram.ui.web.z0 x;
+    public org.telegram.ui.web.y0 x;
     public Runnable y;
 
     public p4(Context context) {
@@ -79,8 +79,8 @@ public abstract class p4 extends FrameLayout {
     }
 
     public final boolean b(boolean z10) {
-        org.telegram.ui.web.z0 z0Var = this.x;
-        if (z0Var == null || !z0Var.N) {
+        org.telegram.ui.web.y0 y0Var = this.x;
+        if (y0Var == null || !y0Var.N) {
             return true;
         }
         return z10 ? this.O : this.P;
@@ -88,15 +88,15 @@ public abstract class p4 extends FrameLayout {
 
     public final void c() {
         setTranslationY(Math.max(this.e, this.f + this.r));
-        AndroidUtilities.cancelRunOnUIThread(new uc(this, 15));
-        AndroidUtilities.runOnUIThread(new uc(this, 15));
+        AndroidUtilities.cancelRunOnUIThread(new rc(this, 15));
+        AndroidUtilities.runOnUIThread(new rc(this, 15));
         Runnable runnable = this.y;
         if (runnable != null) {
             runnable.run();
         }
-        oc ocVar = oc.w;
-        if (ocVar != null) {
-            ocVar.l();
+        qc qcVar = qc.w;
+        if (qcVar != null) {
+            qcVar.l();
         }
     }
 
@@ -341,7 +341,7 @@ public abstract class p4 extends FrameLayout {
                 p4Var.c();
             }
         });
-        kVar3.a(new va(this, f7, 1));
+        kVar3.a(new sa(this, f7, 1));
         this.v = kVar3;
         kVar3.f();
     }
@@ -377,7 +377,7 @@ public abstract class p4 extends FrameLayout {
         super.setTranslationY(f7);
     }
 
-    public void setWebView(org.telegram.ui.web.z0 z0Var) {
-        this.x = z0Var;
+    public void setWebView(org.telegram.ui.web.y0 y0Var) {
+        this.x = y0Var;
     }
 }

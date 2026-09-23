@@ -7,9 +7,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class mu0 extends hl0 {
+public final class mu0 extends il0 {
     public final Context r;
     public final /* synthetic */ yu0 s;
 
@@ -18,18 +18,18 @@ public final class mu0 extends hl0 {
         this.r = context;
     }
 
-    @Override // org.telegram.ui.Components.tk0
+    @Override // org.telegram.ui.Components.uk0
     public final String F(int i10) {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.tk0
-    public final void G(ll0 ll0Var, float f7, int[] iArr) {
+    @Override // org.telegram.ui.Components.uk0
+    public final void G(ml0 ml0Var, float f7, int[] iArr) {
         iArr[0] = 0;
         iArr[1] = 0;
     }
 
-    @Override // org.telegram.ui.Components.hl0
+    @Override // org.telegram.ui.Components.il0
     public final int M(int i10) {
         nu0[] nu0VarArr = this.s.t1;
         if ((nu0VarArr[3].c.size() == 0 && !nu0VarArr[3].g) || i10 >= nu0VarArr[3].c.size()) {
@@ -39,12 +39,12 @@ public final class mu0 extends hl0 {
         return ((ArrayList) nu0Var.d.get(nu0Var.c.get(i10))).size() + (i10 == 0 ? 0 : 1);
     }
 
-    @Override // org.telegram.ui.Components.hl0
+    @Override // org.telegram.ui.Components.il0
     public final Object O(int i10, int i11) {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.hl0
+    @Override // org.telegram.ui.Components.il0
     public final int P(int i10, int i11) {
         nu0[] nu0VarArr = this.s.t1;
         if (nu0VarArr[3].c.size() == 0 && !nu0VarArr[3].g) {
@@ -60,7 +60,7 @@ public final class mu0 extends hl0 {
     
         if (r0[1] != false) goto L13;
      */
-    @Override // org.telegram.ui.Components.hl0
+    @Override // org.telegram.ui.Components.il0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -81,7 +81,7 @@ public final class mu0 extends hl0 {
         return size + i10;
     }
 
-    @Override // org.telegram.ui.Components.hl0
+    @Override // org.telegram.ui.Components.il0
     public final View T(int i10, View view) {
         yu0 yu0Var = this.s;
         if (view == null) {
@@ -98,7 +98,7 @@ public final class mu0 extends hl0 {
         return view;
     }
 
-    @Override // org.telegram.ui.Components.hl0
+    @Override // org.telegram.ui.Components.il0
     public final boolean V(int i10, int i11, s4.c1 c1Var) {
         nu0[] nu0VarArr = this.s.t1;
         if (nu0VarArr[3].c.size() != 0 || nu0VarArr[3].g) {
@@ -107,7 +107,7 @@ public final class mu0 extends hl0 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.hl0
+    @Override // org.telegram.ui.Components.il0
     public final void W(int i10, int i11, s4.c1 c1Var) {
         yu0 yu0Var = this.s;
         nu0[] nu0VarArr = yu0Var.t1;
@@ -153,25 +153,25 @@ public final class mu0 extends hl0 {
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
         org.telegram.ui.Cells.v3 v3Var;
         yu0 yu0Var = this.s;
-        org.telegram.ui.ActionBar.e6 e6Var = yu0Var.F1;
+        org.telegram.ui.ActionBar.d6 d6Var = yu0Var.F1;
         Context context = this.r;
         if (i10 == 3) {
-            v3Var = new org.telegram.ui.Cells.v3(context, 28, e6Var);
+            v3Var = new org.telegram.ui.Cells.v3(context, 28, d6Var);
         } else if (i10 == 4) {
-            org.telegram.ui.Cells.n7 n7Var = new org.telegram.ui.Cells.n7(context, 0, e6Var);
+            org.telegram.ui.Cells.n7 n7Var = new org.telegram.ui.Cells.n7(context, 0, d6Var);
             n7Var.setDelegate(yu0Var.S1);
             v3Var = n7Var;
         } else {
             if (i10 == 5) {
-                lt0 M = yu0.M(3, yu0Var.j1, context, e6Var);
+                lt0 M = yu0.M(3, yu0Var.j1, context, d6Var);
                 M.setLayoutParams(new s4.p0(-1, -1));
-                return new vk0(M);
+                return new wk0(M);
             }
-            t00 t00Var = new t00(context, e6Var);
-            t00Var.setIsSingleCell(true);
-            t00Var.w = false;
-            t00Var.setViewType(5);
-            v3Var = t00Var;
+            u00 u00Var = new u00(context, d6Var);
+            u00Var.setIsSingleCell(true);
+            u00Var.w = false;
+            u00Var.setViewType(5);
+            v3Var = u00Var;
         }
         return com.google.android.gms.internal.vision.e2.k(v3Var, v3Var, -1, -2);
     }

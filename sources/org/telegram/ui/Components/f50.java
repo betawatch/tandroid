@@ -1,32 +1,44 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Paint;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.ProfileActivity;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class f50 extends Paint {
+public final class f50 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
+    public final /* synthetic */ x50 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ f50(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10) {
-        super(1);
+    public /* synthetic */ f50(x50 x50Var, int i10) {
         this.a = i10;
-        this.b = notificationCenterDelegate;
+        this.b = x50Var;
     }
 
-    @Override // android.graphics.Paint
-    public final void setAlpha(int i10) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                super.setAlpha(i10);
-                ((w50) this.b).invalidate();
+                x50 x50Var = this.b;
+                if (animator.equals(x50Var.G)) {
+                    x50Var.G = null;
+                    break;
+                }
+                break;
+            case 1:
+                x50 x50Var2 = this.b;
+                if (x50Var2.b1 != null) {
+                    x50Var2.b1 = null;
+                    break;
+                }
                 break;
             default:
-                super.setAlpha(i10);
-                ((ProfileActivity) this.b).fragmentView.invalidate();
+                x50 x50Var3 = this.b;
+                if (animator.equals(x50Var3.W)) {
+                    x50Var3.h(true);
+                    x50Var3.W0 = false;
+                    x50Var3.setVisibility(4);
+                    break;
+                }
                 break;
         }
     }

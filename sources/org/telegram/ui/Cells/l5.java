@@ -11,28 +11,28 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.WebFile;
-import org.telegram.messenger.vl;
+import org.telegram.messenger.ul;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class l5 extends FrameLayout {
     public final TextView a;
     public final TextView b;
     public final TextView c;
-    public final org.telegram.ui.Components.u9 d;
+    public final org.telegram.ui.Components.w9 d;
 
     public l5(Context context) {
         super(context);
-        org.telegram.ui.Components.u9 u9Var = new org.telegram.ui.Components.u9(context);
-        this.d = u9Var;
-        u9Var.getImageReceiver().setRoundRadius(AndroidUtilities.dp(8.0f));
-        addView(u9Var, w7.x5.d(100, 100.0f, LocaleController.isRTL ? 5 : 3, 10.0f, 10.0f, 10.0f, 0.0f));
+        org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
+        this.d = w9Var;
+        w9Var.getImageReceiver().setRoundRadius(AndroidUtilities.dp(8.0f));
+        addView(w9Var, w7.x5.d(100, 100.0f, LocaleController.isRTL ? 5 : 3, 10.0f, 10.0f, 10.0f, 0.0f));
         TextView textView = new TextView(context);
         this.a = textView;
-        int i10 = org.telegram.ui.ActionBar.i6.G6;
-        textView.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, i10, false));
+        int i10 = org.telegram.ui.ActionBar.h6.G6;
+        textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, i10, false));
         textView.setTextSize(1, 16.0f);
         textView.setLines(1);
         textView.setTypeface(AndroidUtilities.bold());
@@ -45,7 +45,7 @@ public final class l5 extends FrameLayout {
         addView(textView, w7.x5.d(-1, -2.0f, (z10 ? 5 : 3) | 48, z10 ? 10.0f : 123.0f, 9.0f, z10 ? 123.0f : 10.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.b = textView2;
-        textView2.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, i10, false));
+        textView2.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, i10, false));
         textView2.setTextSize(1, 14.0f);
         textView2.setMaxLines(3);
         textView2.setEllipsize(truncateAt);
@@ -54,7 +54,7 @@ public final class l5 extends FrameLayout {
         addView(textView2, w7.x5.d(-1, -2.0f, (z11 ? 5 : 3) | 48, z11 ? 10.0f : 123.0f, 33.0f, z11 ? 123.0f : 10.0f, 0.0f));
         TextView textView3 = new TextView(context);
         this.c = textView3;
-        vl.s(textView3, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.z6, false), 1, 14.0f, 1);
+        ul.s(textView3, org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.z6, false), 1, 14.0f, 1);
         textView3.setMaxLines(1);
         textView3.setSingleLine(true);
         textView3.setEllipsize(truncateAt);
@@ -81,12 +81,12 @@ public final class l5 extends FrameLayout {
         float dp = f7 / (((int) (min * 0.7f)) - AndroidUtilities.dp(2.0f));
         int i10 = (int) (f7 / dp);
         int i11 = (int) (360 / dp);
-        org.telegram.ui.Components.u9 u9Var = this.d;
+        org.telegram.ui.Components.w9 w9Var = this.d;
         if (webDocument == null || !webDocument.mime_type.startsWith("image/")) {
             textView.setLayoutParams(w7.x5.d(-1, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, 17.0f, 9.0f, 17.0f, 0.0f));
             textView2.setLayoutParams(w7.x5.d(-1, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, 17.0f, 33.0f, 17.0f, 0.0f));
             textView3.setLayoutParams(w7.x5.d(-1, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, 17.0f, 90.0f, 17.0f, 9.0f));
-            u9Var.setVisibility(8);
+            w9Var.setVisibility(8);
             return;
         }
         boolean z10 = LocaleController.isRTL;
@@ -95,9 +95,9 @@ public final class l5 extends FrameLayout {
         textView2.setLayoutParams(w7.x5.d(-1, -2.0f, (z11 ? 5 : 3) | 48, z11 ? 10.0f : 123.0f, 33.0f, z11 ? 123.0f : 10.0f, 0.0f));
         boolean z12 = LocaleController.isRTL;
         textView3.setLayoutParams(w7.x5.d(-1, -2.0f, (z12 ? 5 : 3) | 48, z12 ? 10.0f : 123.0f, 90.0f, z12 ? 123.0f : 10.0f, 0.0f));
-        u9Var.setVisibility(0);
+        w9Var.setVisibility(0);
         Locale locale = Locale.US;
-        u9Var.getImageReceiver().setImage(ImageLocation.getForWebFile(WebFile.createWithWebDocument(webDocument)), a4.a.l(i10, i11, "_"), null, null, -1L, null, obj, 1);
+        w9Var.getImageReceiver().setImage(ImageLocation.getForWebFile(WebFile.createWithWebDocument(webDocument)), a4.a.l(i10, i11, "_"), null, null, -1L, null, obj, 1);
     }
 
     public final void b(TLRPC.TL_messageMediaInvoice tL_messageMediaInvoice, String str) {

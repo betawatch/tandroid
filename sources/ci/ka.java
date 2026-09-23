@@ -1,439 +1,1479 @@
 package ci;
 
-import android.text.SpannableString;
-import android.text.TextUtils;
-import android.view.View;
-import android.view.WindowManager;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
+import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.camera.CameraController;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.ImageLoader;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ka implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ oc b;
+    public final /* synthetic */ lc b;
+    public final /* synthetic */ q6 c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ l8 f;
+    public final /* synthetic */ boolean h;
+    public final /* synthetic */ boolean n;
+    public final /* synthetic */ Runnable r;
 
-    public /* synthetic */ ka(oc ocVar, int i10) {
-        this.a = i10;
-        this.b = ocVar;
+    public /* synthetic */ ka(lc lcVar, nb nbVar, int i10, int i11, l8 l8Var, boolean z10, boolean z11, Runnable runnable, int i12) {
+        this.a = i12;
+        this.b = lcVar;
+        this.c = nbVar;
+        this.d = i10;
+        this.e = i11;
+        this.f = l8Var;
+        this.h = z10;
+        this.n = z11;
+        this.r = runnable;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:229:0x035b  */
+    /* JADX WARN: Code restructure failed: missing block: B:87:0x00e8, code lost:
+    
+        if (r10.isRecycled() != false) goto L46;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x0362  */
+    /* JADX WARN: Removed duplicated region for block: B:130:0x0387  */
+    /* JADX WARN: Removed duplicated region for block: B:137:0x03c8 A[LOOP:1: B:135:0x03c1->B:137:0x03c8, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:142:0x045b  */
+    /* JADX WARN: Removed duplicated region for block: B:150:0x04c6 A[LOOP:2: B:149:0x04c4->B:150:0x04c6, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:155:0x04a2  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x012f  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x0170 A[LOOP:0: B:50:0x0169->B:52:0x0170, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x0212  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x0258  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x0284  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x024e  */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
-        int i10;
-        char c10;
+        q6 q6Var;
+        File file;
+        File file2;
         ArrayList arrayList;
-        cc ccVar;
-        nc ncVar;
-        int i11 = this.a;
-        int i12 = 6;
-        int i13 = 2;
-        int i14 = 1;
-        oc ocVar = this.b;
-        switch (i11) {
+        File file3;
+        l8 l8Var;
+        final File file4;
+        l8 l8Var2;
+        File file5;
+        final File file6;
+        final File file7;
+        int size;
+        int i10;
+        q6 q6Var2;
+        qg.h1 s02;
+        ImageReceiver imageReceiver;
+        int i11;
+        q6 q6Var3;
+        File file8;
+        ArrayList arrayList2;
+        File file9;
+        l8 l8Var3;
+        File file10;
+        boolean z10;
+        final File file11;
+        q6 q6Var4;
+        l8 l8Var4;
+        File file12;
+        final File file13;
+        ImageReceiver imageReceiver2;
+        ImageReceiver imageReceiver3;
+        int i12;
+        File file14;
+        switch (this.a) {
             case 0:
-                ocVar.r();
-                break;
-            case 1:
-                if (ocVar.t2 >= 0) {
-                    MessagesController.getGlobalMainSettings().edit().putFloat("frontflash_warmth", ocVar.s.o).putFloat("frontflash_intensity", ocVar.s.p).apply();
+                final ai.o8 o8Var = (ai.o8) this.r;
+                lc lcVar = this.b;
+                int i13 = lcVar.c;
+                ArrayList arrayList3 = new ArrayList();
+                ArrayList arrayList4 = new ArrayList();
+                q6 q6Var5 = this.c;
+                l8 l8Var5 = this.f;
+                q6Var5.t0(arrayList4, false, false, false, false, l8Var5);
+                if (!l8Var5.K) {
+                    l8Var5.S0 = Utilities.clamp(q6Var5.getLcm(), 7500L, 5000L);
                 }
-                ocVar.s.e(0.0f, 240L, null);
-                ocVar.E0.setSelected(false);
-                break;
-            case 2:
-                ocVar.m();
-                ocVar.W1 = false;
-                int i15 = ocVar.c;
-                if (ocVar.K1 == null) {
-                    ocVar.q(true);
-                    break;
-                } else {
-                    ocVar.y();
-                    la laVar = new la(ocVar, i13);
-                    if (ocVar.H1 == null) {
-                        o8 o8Var = ocVar.K1;
-                        if (o8Var.K && !o8Var.v() && !o8Var.g) {
-                            long j3 = o8Var.h0;
-                            if (j3 > 0 && !o8Var.n) {
-                                long j10 = (long) ((o8Var.a0 - o8Var.Z) * j3);
-                                if (j10 < 68999) {
-                                    i10 = i15;
-                                    arrayList = null;
-                                    c10 = 0;
-                                } else {
-                                    arrayList = new ArrayList();
-                                    o8Var.a0 = (59000.0f / o8Var.h0) + o8Var.Z;
-                                    arrayList.add(o8Var);
-                                    long j11 = 59000;
-                                    long j12 = 59000;
-                                    c10 = 0;
-                                    while (j12 < j10) {
-                                        if (Math.min(j11, j10 - j12) < 1000) {
-                                            i10 = i15;
-                                        } else {
-                                            long j13 = j11;
-                                            o8 g10 = o8Var.g();
-                                            float f7 = o8Var.Z;
-                                            float f10 = o8Var.h0;
-                                            g10.Z = (j12 / f10) + f7;
-                                            g10.a0 = ((r14 + j12) / f10) + o8Var.Z;
-                                            g10.C0 = "";
-                                            j12 += j13;
-                                            arrayList.add(g10);
-                                            j11 = j13;
-                                            i15 = i15;
+                List<TLRPC.InputDocument> masks = q6Var5.getMasks();
+                ArrayList arrayList5 = masks != null ? new ArrayList(masks) : null;
+                boolean z11 = l8Var5.K;
+                boolean E = l8Var5.E();
+                arrayList4.clear();
+                Bitmap t02 = q6Var5.t0(arrayList4, true, false, false, !z11, l8Var5);
+                if (arrayList4.isEmpty()) {
+                    arrayList4 = null;
+                }
+                File w10 = l8.w(i13, "png");
+                arrayList3.add(new ma(t02, w10, 0));
+                final ArrayList arrayList6 = arrayList5;
+                if (l8Var5.u) {
+                    long j3 = l8Var5.z0;
+                    if (j3 != Long.MIN_VALUE) {
+                        Drawable drawable = l8Var5.x0;
+                        if (drawable == null) {
+                            drawable = b7.e(null, i13, j3, lcVar.c2);
+                        }
+                        if (drawable != null) {
+                            file = l8.w(i13, "webp");
+                            Bitmap createBitmap = Bitmap.createBitmap(this.d, this.e, Bitmap.Config.ARGB_8888);
+                            q6Var = q6Var5;
+                            l8.j(new Canvas(createBitmap), drawable, createBitmap.getWidth(), createBitmap.getHeight());
+                            arrayList3.add(new ma(createBitmap, file, 1));
+                            if (l8Var5.u && l8Var5.K) {
+                                int i14 = l8Var5.k0;
+                                int i15 = l8Var5.l0;
+                                s02 = q6Var.s0();
+                                if (s02 != null) {
+                                    qg.a1 a1Var = s02.r0;
+                                    if (a1Var.getChildCount() == 1 && i14 > 0 && i15 > 0) {
+                                        if (a1Var.getChildAt(0) instanceof org.telegram.ui.Cells.t1) {
+                                            imageReceiver = ((org.telegram.ui.Cells.t1) a1Var.getChildAt(0)).getPhotoImage();
+                                            if (imageReceiver != null && ((int) imageReceiver.getImageWidth()) > 0 && ((int) imageReceiver.getImageHeight()) > 0) {
+                                                float f7 = i14;
+                                                float f10 = i15;
+                                                float max = Math.max(imageReceiver.getImageWidth() / f7, imageReceiver.getImageHeight() / f10);
+                                                int i16 = (int) ((f7 * max) / 2.0f);
+                                                int i17 = (int) ((f10 * max) / 2.0f);
+                                                Bitmap createBitmap2 = Bitmap.createBitmap(i16, i17, Bitmap.Config.ARGB_8888);
+                                                float[] fArr = new float[8];
+                                                file2 = file;
+                                                arrayList = arrayList4;
+                                                for (i11 = 0; i11 < imageReceiver.getRoundRadius().length; i11++) {
+                                                    int i18 = i11 * 2;
+                                                    fArr[i18] = imageReceiver.getRoundRadius()[r20];
+                                                    fArr[i18 + 1] = imageReceiver.getRoundRadius()[r20];
+                                                }
+                                                Canvas canvas = new Canvas(createBitmap2);
+                                                Path path = new Path();
+                                                file3 = w10;
+                                                canvas.scale(0.5f, 0.5f);
+                                                RectF rectF = AndroidUtilities.rectTmp;
+                                                float f11 = (i16 * 2.0f) / 2.0f;
+                                                float f12 = (i17 * 2.0f) / 2.0f;
+                                                l8Var = l8Var5;
+                                                rectF.set(f11 - (imageReceiver.getImageWidth() / 2.0f), f12 - (imageReceiver.getImageHeight() / 2.0f), (imageReceiver.getImageWidth() / 2.0f) + f11, (imageReceiver.getImageHeight() / 2.0f) + f12);
+                                                path.addRoundRect(rectF, fArr, Path.Direction.CW);
+                                                Paint paint = new Paint(1);
+                                                paint.setColor(-1);
+                                                canvas.drawPath(path, paint);
+                                                File w11 = l8.w(i13, "webp");
+                                                arrayList3.add(new ma(createBitmap2, w11, 2));
+                                                file4 = w11;
+                                                if (q6Var.u0()) {
+                                                    l8Var2 = l8Var;
+                                                    file5 = l8Var2.R0;
+                                                    file6 = l8Var2.Q0;
+                                                } else {
+                                                    if (E) {
+                                                        q6Var2 = q6Var;
+                                                        l8Var2 = l8Var;
+                                                        file5 = null;
+                                                    } else {
+                                                        q6Var2 = q6Var;
+                                                        l8 l8Var6 = l8Var;
+                                                        Bitmap t03 = q6Var2.t0(new ArrayList(), false, true, false, false, l8Var6);
+                                                        l8Var2 = l8Var6;
+                                                        file5 = l8.w(i13, "png");
+                                                        arrayList3.add(new ma(t03, file5, 3));
+                                                    }
+                                                    if (!this.h) {
+                                                        file7 = file5;
+                                                        file6 = null;
+                                                        final int i19 = 1;
+                                                        final l8 l8Var7 = l8Var2;
+                                                        final boolean z12 = this.n;
+                                                        final File file15 = file2;
+                                                        final ArrayList arrayList7 = arrayList;
+                                                        final File file16 = file3;
+                                                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: ci.la
+                                                            @Override // java.lang.Runnable
+                                                            public final void run() {
+                                                                switch (i19) {
+                                                                    case 0:
+                                                                        l8 l8Var8 = l8Var7;
+                                                                        ha haVar = (ha) o8Var;
+                                                                        try {
+                                                                            File file17 = l8Var8.P0;
+                                                                            if (file17 != null) {
+                                                                                file17.delete();
+                                                                            }
+                                                                        } catch (Exception unused) {
+                                                                        }
+                                                                        try {
+                                                                            File file18 = l8Var8.R0;
+                                                                            if (file18 != null) {
+                                                                                file18.delete();
+                                                                            }
+                                                                        } catch (Exception unused2) {
+                                                                        }
+                                                                        try {
+                                                                            File file19 = l8Var8.Q0;
+                                                                            if (file19 != null) {
+                                                                                file19.delete();
+                                                                            }
+                                                                        } catch (Exception unused3) {
+                                                                        }
+                                                                        l8Var8.P0 = null;
+                                                                        l8Var8.R0 = null;
+                                                                        l8Var8.Q0 = null;
+                                                                        File file20 = l8Var8.Y0;
+                                                                        if (file20 != null) {
+                                                                            try {
+                                                                                file20.delete();
+                                                                            } catch (Exception e) {
+                                                                                FileLog.e(e);
+                                                                            }
+                                                                            l8Var8.Y0 = null;
+                                                                        }
+                                                                        File file21 = l8Var8.X0;
+                                                                        if (file21 != null) {
+                                                                            try {
+                                                                                file21.delete();
+                                                                            } catch (Exception e7) {
+                                                                                FileLog.e(e7);
+                                                                            }
+                                                                            l8Var8.X0 = null;
+                                                                        }
+                                                                        l8Var8.j |= z12;
+                                                                        l8Var8.T0 = arrayList7;
+                                                                        l8Var8.P0 = file16;
+                                                                        l8Var8.Y0 = file15;
+                                                                        l8Var8.R0 = file7;
+                                                                        l8Var8.X0 = file4;
+                                                                        l8Var8.Q0 = file6;
+                                                                        l8Var8.U0 = arrayList6;
+                                                                        haVar.run();
+                                                                        break;
+                                                                    default:
+                                                                        l8 l8Var9 = l8Var7;
+                                                                        ai.o8 o8Var2 = (ai.o8) o8Var;
+                                                                        try {
+                                                                            File file22 = l8Var9.P0;
+                                                                            if (file22 != null) {
+                                                                                file22.delete();
+                                                                            }
+                                                                        } catch (Exception unused4) {
+                                                                        }
+                                                                        try {
+                                                                            File file23 = l8Var9.R0;
+                                                                            if (file23 != null) {
+                                                                                file23.delete();
+                                                                            }
+                                                                        } catch (Exception unused5) {
+                                                                        }
+                                                                        try {
+                                                                            File file24 = l8Var9.Q0;
+                                                                            if (file24 != null) {
+                                                                                file24.delete();
+                                                                            }
+                                                                        } catch (Exception unused6) {
+                                                                        }
+                                                                        l8Var9.P0 = null;
+                                                                        l8Var9.R0 = null;
+                                                                        l8Var9.Q0 = null;
+                                                                        File file25 = l8Var9.Y0;
+                                                                        if (file25 != null) {
+                                                                            try {
+                                                                                file25.delete();
+                                                                            } catch (Exception e10) {
+                                                                                FileLog.e(e10);
+                                                                            }
+                                                                            l8Var9.Y0 = null;
+                                                                        }
+                                                                        File file26 = l8Var9.X0;
+                                                                        if (file26 != null) {
+                                                                            try {
+                                                                                file26.delete();
+                                                                            } catch (Exception e11) {
+                                                                                FileLog.e(e11);
+                                                                            }
+                                                                            l8Var9.X0 = null;
+                                                                        }
+                                                                        l8Var9.j |= z12;
+                                                                        l8Var9.T0 = arrayList7;
+                                                                        l8Var9.P0 = file16;
+                                                                        l8Var9.Y0 = file15;
+                                                                        l8Var9.R0 = file7;
+                                                                        l8Var9.X0 = file4;
+                                                                        l8Var9.Q0 = file6;
+                                                                        l8Var9.U0 = arrayList6;
+                                                                        o8Var2.run();
+                                                                        break;
+                                                                }
+                                                            }
+                                                        });
+                                                        size = arrayList3.size();
+                                                        i10 = 0;
+                                                        while (i10 < size) {
+                                                            Object obj = arrayList3.get(i10);
+                                                            i10++;
+                                                            ((Runnable) obj).run();
+                                                        }
+                                                        return;
+                                                    }
+                                                    Bitmap blurBitmap = q6Var2.getBlurBitmap();
+                                                    file6 = l8.w(i13, "png");
+                                                    arrayList3.add(new ma(blurBitmap, file6, 4));
+                                                }
+                                                file7 = file5;
+                                                final int i192 = 1;
+                                                final l8 l8Var72 = l8Var2;
+                                                final boolean z122 = this.n;
+                                                final File file152 = file2;
+                                                final ArrayList arrayList72 = arrayList;
+                                                final File file162 = file3;
+                                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: ci.la
+                                                    @Override // java.lang.Runnable
+                                                    public final void run() {
+                                                        switch (i192) {
+                                                            case 0:
+                                                                l8 l8Var8 = l8Var72;
+                                                                ha haVar = (ha) o8Var;
+                                                                try {
+                                                                    File file17 = l8Var8.P0;
+                                                                    if (file17 != null) {
+                                                                        file17.delete();
+                                                                    }
+                                                                } catch (Exception unused) {
+                                                                }
+                                                                try {
+                                                                    File file18 = l8Var8.R0;
+                                                                    if (file18 != null) {
+                                                                        file18.delete();
+                                                                    }
+                                                                } catch (Exception unused2) {
+                                                                }
+                                                                try {
+                                                                    File file19 = l8Var8.Q0;
+                                                                    if (file19 != null) {
+                                                                        file19.delete();
+                                                                    }
+                                                                } catch (Exception unused3) {
+                                                                }
+                                                                l8Var8.P0 = null;
+                                                                l8Var8.R0 = null;
+                                                                l8Var8.Q0 = null;
+                                                                File file20 = l8Var8.Y0;
+                                                                if (file20 != null) {
+                                                                    try {
+                                                                        file20.delete();
+                                                                    } catch (Exception e) {
+                                                                        FileLog.e(e);
+                                                                    }
+                                                                    l8Var8.Y0 = null;
+                                                                }
+                                                                File file21 = l8Var8.X0;
+                                                                if (file21 != null) {
+                                                                    try {
+                                                                        file21.delete();
+                                                                    } catch (Exception e7) {
+                                                                        FileLog.e(e7);
+                                                                    }
+                                                                    l8Var8.X0 = null;
+                                                                }
+                                                                l8Var8.j |= z122;
+                                                                l8Var8.T0 = arrayList72;
+                                                                l8Var8.P0 = file162;
+                                                                l8Var8.Y0 = file152;
+                                                                l8Var8.R0 = file7;
+                                                                l8Var8.X0 = file4;
+                                                                l8Var8.Q0 = file6;
+                                                                l8Var8.U0 = arrayList6;
+                                                                haVar.run();
+                                                                break;
+                                                            default:
+                                                                l8 l8Var9 = l8Var72;
+                                                                ai.o8 o8Var2 = (ai.o8) o8Var;
+                                                                try {
+                                                                    File file22 = l8Var9.P0;
+                                                                    if (file22 != null) {
+                                                                        file22.delete();
+                                                                    }
+                                                                } catch (Exception unused4) {
+                                                                }
+                                                                try {
+                                                                    File file23 = l8Var9.R0;
+                                                                    if (file23 != null) {
+                                                                        file23.delete();
+                                                                    }
+                                                                } catch (Exception unused5) {
+                                                                }
+                                                                try {
+                                                                    File file24 = l8Var9.Q0;
+                                                                    if (file24 != null) {
+                                                                        file24.delete();
+                                                                    }
+                                                                } catch (Exception unused6) {
+                                                                }
+                                                                l8Var9.P0 = null;
+                                                                l8Var9.R0 = null;
+                                                                l8Var9.Q0 = null;
+                                                                File file25 = l8Var9.Y0;
+                                                                if (file25 != null) {
+                                                                    try {
+                                                                        file25.delete();
+                                                                    } catch (Exception e10) {
+                                                                        FileLog.e(e10);
+                                                                    }
+                                                                    l8Var9.Y0 = null;
+                                                                }
+                                                                File file26 = l8Var9.X0;
+                                                                if (file26 != null) {
+                                                                    try {
+                                                                        file26.delete();
+                                                                    } catch (Exception e11) {
+                                                                        FileLog.e(e11);
+                                                                    }
+                                                                    l8Var9.X0 = null;
+                                                                }
+                                                                l8Var9.j |= z122;
+                                                                l8Var9.T0 = arrayList72;
+                                                                l8Var9.P0 = file162;
+                                                                l8Var9.Y0 = file152;
+                                                                l8Var9.R0 = file7;
+                                                                l8Var9.X0 = file4;
+                                                                l8Var9.Q0 = file6;
+                                                                l8Var9.U0 = arrayList6;
+                                                                o8Var2.run();
+                                                                break;
+                                                        }
+                                                    }
+                                                });
+                                                size = arrayList3.size();
+                                                i10 = 0;
+                                                while (i10 < size) {
+                                                }
+                                                return;
+                                            }
+                                        }
+                                        imageReceiver = null;
+                                        if (imageReceiver != null) {
+                                            float f72 = i14;
+                                            float f102 = i15;
+                                            float max2 = Math.max(imageReceiver.getImageWidth() / f72, imageReceiver.getImageHeight() / f102);
+                                            int i162 = (int) ((f72 * max2) / 2.0f);
+                                            int i172 = (int) ((f102 * max2) / 2.0f);
+                                            Bitmap createBitmap22 = Bitmap.createBitmap(i162, i172, Bitmap.Config.ARGB_8888);
+                                            float[] fArr2 = new float[8];
+                                            file2 = file;
+                                            arrayList = arrayList4;
+                                            while (i11 < imageReceiver.getRoundRadius().length) {
+                                            }
+                                            Canvas canvas2 = new Canvas(createBitmap22);
+                                            Path path2 = new Path();
+                                            file3 = w10;
+                                            canvas2.scale(0.5f, 0.5f);
+                                            RectF rectF2 = AndroidUtilities.rectTmp;
+                                            float f112 = (i162 * 2.0f) / 2.0f;
+                                            float f122 = (i172 * 2.0f) / 2.0f;
+                                            l8Var = l8Var5;
+                                            rectF2.set(f112 - (imageReceiver.getImageWidth() / 2.0f), f122 - (imageReceiver.getImageHeight() / 2.0f), (imageReceiver.getImageWidth() / 2.0f) + f112, (imageReceiver.getImageHeight() / 2.0f) + f122);
+                                            path2.addRoundRect(rectF2, fArr2, Path.Direction.CW);
+                                            Paint paint2 = new Paint(1);
+                                            paint2.setColor(-1);
+                                            canvas2.drawPath(path2, paint2);
+                                            File w112 = l8.w(i13, "webp");
+                                            arrayList3.add(new ma(createBitmap22, w112, 2));
+                                            file4 = w112;
+                                            if (q6Var.u0()) {
+                                            }
+                                            file7 = file5;
+                                            final int i1922 = 1;
+                                            final l8 l8Var722 = l8Var2;
+                                            final boolean z1222 = this.n;
+                                            final File file1522 = file2;
+                                            final ArrayList arrayList722 = arrayList;
+                                            final File file1622 = file3;
+                                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: ci.la
+                                                @Override // java.lang.Runnable
+                                                public final void run() {
+                                                    switch (i1922) {
+                                                        case 0:
+                                                            l8 l8Var8 = l8Var722;
+                                                            ha haVar = (ha) o8Var;
+                                                            try {
+                                                                File file17 = l8Var8.P0;
+                                                                if (file17 != null) {
+                                                                    file17.delete();
+                                                                }
+                                                            } catch (Exception unused) {
+                                                            }
+                                                            try {
+                                                                File file18 = l8Var8.R0;
+                                                                if (file18 != null) {
+                                                                    file18.delete();
+                                                                }
+                                                            } catch (Exception unused2) {
+                                                            }
+                                                            try {
+                                                                File file19 = l8Var8.Q0;
+                                                                if (file19 != null) {
+                                                                    file19.delete();
+                                                                }
+                                                            } catch (Exception unused3) {
+                                                            }
+                                                            l8Var8.P0 = null;
+                                                            l8Var8.R0 = null;
+                                                            l8Var8.Q0 = null;
+                                                            File file20 = l8Var8.Y0;
+                                                            if (file20 != null) {
+                                                                try {
+                                                                    file20.delete();
+                                                                } catch (Exception e) {
+                                                                    FileLog.e(e);
+                                                                }
+                                                                l8Var8.Y0 = null;
+                                                            }
+                                                            File file21 = l8Var8.X0;
+                                                            if (file21 != null) {
+                                                                try {
+                                                                    file21.delete();
+                                                                } catch (Exception e7) {
+                                                                    FileLog.e(e7);
+                                                                }
+                                                                l8Var8.X0 = null;
+                                                            }
+                                                            l8Var8.j |= z1222;
+                                                            l8Var8.T0 = arrayList722;
+                                                            l8Var8.P0 = file1622;
+                                                            l8Var8.Y0 = file1522;
+                                                            l8Var8.R0 = file7;
+                                                            l8Var8.X0 = file4;
+                                                            l8Var8.Q0 = file6;
+                                                            l8Var8.U0 = arrayList6;
+                                                            haVar.run();
+                                                            break;
+                                                        default:
+                                                            l8 l8Var9 = l8Var722;
+                                                            ai.o8 o8Var2 = (ai.o8) o8Var;
+                                                            try {
+                                                                File file22 = l8Var9.P0;
+                                                                if (file22 != null) {
+                                                                    file22.delete();
+                                                                }
+                                                            } catch (Exception unused4) {
+                                                            }
+                                                            try {
+                                                                File file23 = l8Var9.R0;
+                                                                if (file23 != null) {
+                                                                    file23.delete();
+                                                                }
+                                                            } catch (Exception unused5) {
+                                                            }
+                                                            try {
+                                                                File file24 = l8Var9.Q0;
+                                                                if (file24 != null) {
+                                                                    file24.delete();
+                                                                }
+                                                            } catch (Exception unused6) {
+                                                            }
+                                                            l8Var9.P0 = null;
+                                                            l8Var9.R0 = null;
+                                                            l8Var9.Q0 = null;
+                                                            File file25 = l8Var9.Y0;
+                                                            if (file25 != null) {
+                                                                try {
+                                                                    file25.delete();
+                                                                } catch (Exception e10) {
+                                                                    FileLog.e(e10);
+                                                                }
+                                                                l8Var9.Y0 = null;
+                                                            }
+                                                            File file26 = l8Var9.X0;
+                                                            if (file26 != null) {
+                                                                try {
+                                                                    file26.delete();
+                                                                } catch (Exception e11) {
+                                                                    FileLog.e(e11);
+                                                                }
+                                                                l8Var9.X0 = null;
+                                                            }
+                                                            l8Var9.j |= z1222;
+                                                            l8Var9.T0 = arrayList722;
+                                                            l8Var9.P0 = file1622;
+                                                            l8Var9.Y0 = file1522;
+                                                            l8Var9.R0 = file7;
+                                                            l8Var9.X0 = file4;
+                                                            l8Var9.Q0 = file6;
+                                                            l8Var9.U0 = arrayList6;
+                                                            o8Var2.run();
+                                                            break;
+                                                    }
+                                                }
+                                            });
+                                            size = arrayList3.size();
+                                            i10 = 0;
+                                            while (i10 < size) {
+                                            }
+                                            return;
                                         }
                                     }
-                                    i10 = i15;
                                 }
-                                ocVar.H1 = arrayList;
-                                if (arrayList != null) {
-                                    ocVar.I1 = new ArrayList();
-                                    ocVar.J1 = new ArrayList();
-                                    for (int i16 = 0; i16 < ocVar.H1.size(); i16 = com.google.android.gms.internal.vision.e2.e(i16, i16, 1, ocVar.J1)) {
-                                        ocVar.I1.add(Integer.valueOf(i16));
+                                imageReceiver = null;
+                                if (imageReceiver != null) {
+                                }
+                            }
+                            file2 = file;
+                            arrayList = arrayList4;
+                            file3 = w10;
+                            l8Var = l8Var5;
+                            file4 = null;
+                            if (q6Var.u0()) {
+                            }
+                            file7 = file5;
+                            final int i19222 = 1;
+                            final l8 l8Var7222 = l8Var2;
+                            final boolean z12222 = this.n;
+                            final File file15222 = file2;
+                            final ArrayList arrayList7222 = arrayList;
+                            final File file16222 = file3;
+                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: ci.la
+                                @Override // java.lang.Runnable
+                                public final void run() {
+                                    switch (i19222) {
+                                        case 0:
+                                            l8 l8Var8 = l8Var7222;
+                                            ha haVar = (ha) o8Var;
+                                            try {
+                                                File file17 = l8Var8.P0;
+                                                if (file17 != null) {
+                                                    file17.delete();
+                                                }
+                                            } catch (Exception unused) {
+                                            }
+                                            try {
+                                                File file18 = l8Var8.R0;
+                                                if (file18 != null) {
+                                                    file18.delete();
+                                                }
+                                            } catch (Exception unused2) {
+                                            }
+                                            try {
+                                                File file19 = l8Var8.Q0;
+                                                if (file19 != null) {
+                                                    file19.delete();
+                                                }
+                                            } catch (Exception unused3) {
+                                            }
+                                            l8Var8.P0 = null;
+                                            l8Var8.R0 = null;
+                                            l8Var8.Q0 = null;
+                                            File file20 = l8Var8.Y0;
+                                            if (file20 != null) {
+                                                try {
+                                                    file20.delete();
+                                                } catch (Exception e) {
+                                                    FileLog.e(e);
+                                                }
+                                                l8Var8.Y0 = null;
+                                            }
+                                            File file21 = l8Var8.X0;
+                                            if (file21 != null) {
+                                                try {
+                                                    file21.delete();
+                                                } catch (Exception e7) {
+                                                    FileLog.e(e7);
+                                                }
+                                                l8Var8.X0 = null;
+                                            }
+                                            l8Var8.j |= z12222;
+                                            l8Var8.T0 = arrayList7222;
+                                            l8Var8.P0 = file16222;
+                                            l8Var8.Y0 = file15222;
+                                            l8Var8.R0 = file7;
+                                            l8Var8.X0 = file4;
+                                            l8Var8.Q0 = file6;
+                                            l8Var8.U0 = arrayList6;
+                                            haVar.run();
+                                            break;
+                                        default:
+                                            l8 l8Var9 = l8Var7222;
+                                            ai.o8 o8Var2 = (ai.o8) o8Var;
+                                            try {
+                                                File file22 = l8Var9.P0;
+                                                if (file22 != null) {
+                                                    file22.delete();
+                                                }
+                                            } catch (Exception unused4) {
+                                            }
+                                            try {
+                                                File file23 = l8Var9.R0;
+                                                if (file23 != null) {
+                                                    file23.delete();
+                                                }
+                                            } catch (Exception unused5) {
+                                            }
+                                            try {
+                                                File file24 = l8Var9.Q0;
+                                                if (file24 != null) {
+                                                    file24.delete();
+                                                }
+                                            } catch (Exception unused6) {
+                                            }
+                                            l8Var9.P0 = null;
+                                            l8Var9.R0 = null;
+                                            l8Var9.Q0 = null;
+                                            File file25 = l8Var9.Y0;
+                                            if (file25 != null) {
+                                                try {
+                                                    file25.delete();
+                                                } catch (Exception e10) {
+                                                    FileLog.e(e10);
+                                                }
+                                                l8Var9.Y0 = null;
+                                            }
+                                            File file26 = l8Var9.X0;
+                                            if (file26 != null) {
+                                                try {
+                                                    file26.delete();
+                                                } catch (Exception e11) {
+                                                    FileLog.e(e11);
+                                                }
+                                                l8Var9.X0 = null;
+                                            }
+                                            l8Var9.j |= z12222;
+                                            l8Var9.T0 = arrayList7222;
+                                            l8Var9.P0 = file16222;
+                                            l8Var9.Y0 = file15222;
+                                            l8Var9.R0 = file7;
+                                            l8Var9.X0 = file4;
+                                            l8Var9.Q0 = file6;
+                                            l8Var9.U0 = arrayList6;
+                                            o8Var2.run();
+                                            break;
                                     }
                                 }
+                            });
+                            size = arrayList3.size();
+                            i10 = 0;
+                            while (i10 < size) {
                             }
+                            return;
                         }
-                        i10 = i15;
-                        c10 = 0;
-                        arrayList = null;
-                        ocVar.H1 = arrayList;
-                        if (arrayList != null) {
-                        }
-                    } else {
-                        i10 = i15;
-                        c10 = 0;
                     }
-                    if (ocVar.H1 != null) {
-                        ArrayList arrayList2 = ocVar.J1;
-                        int size = arrayList2.size();
-                        int i17 = 0;
-                        while (i17 < size) {
-                            Object obj = arrayList2.get(i17);
-                            i17++;
-                            Integer num = (Integer) obj;
-                            if (ocVar.I1.contains(num)) {
-                                o8 o8Var2 = (o8) ocVar.H1.get(num.intValue());
-                                o8 o8Var3 = ocVar.K1;
-                                if (o8Var3 == o8Var2) {
-                                    CharSequence[] charSequenceArr = new CharSequence[1];
-                                    charSequenceArr[c10] = ocVar.c1.getText();
-                                    ArrayList<TLRPC.MessageEntity> entities = MessagesController.getInstance(i10).storyEntitiesAllowed() ? MediaDataController.getInstance(i10).getEntities(charSequenceArr, true) : new ArrayList<>();
-                                    CharSequence[] charSequenceArr2 = new CharSequence[1];
-                                    charSequenceArr2[c10] = ocVar.K1.C0;
-                                    ArrayList<TLRPC.MessageEntity> entities2 = MessagesController.getInstance(i10).storyEntitiesAllowed() ? MediaDataController.getInstance(i10).getEntities(charSequenceArr2, true) : new ArrayList<>();
-                                    o8 o8Var4 = ocVar.K1;
-                                    o8Var4.k = (TextUtils.equals(o8Var4.C0, charSequenceArr[c10]) && MediaDataController.entitiesEqual(entities, entities2)) ? false : true;
-                                    ocVar.K1.C0 = new SpannableString(ocVar.c1.getText());
-                                } else if (o8Var2.C0 == null) {
-                                    o8Var3.k = false;
-                                    o8Var3.C0 = new SpannableString("");
+                }
+                q6Var = q6Var5;
+                file = null;
+                if (l8Var5.u) {
+                    int i142 = l8Var5.k0;
+                    int i152 = l8Var5.l0;
+                    s02 = q6Var.s0();
+                    if (s02 != null) {
+                    }
+                    imageReceiver = null;
+                    if (imageReceiver != null) {
+                    }
+                }
+                file2 = file;
+                arrayList = arrayList4;
+                file3 = w10;
+                l8Var = l8Var5;
+                file4 = null;
+                if (q6Var.u0()) {
+                }
+                file7 = file5;
+                final int i192222 = 1;
+                final l8 l8Var72222 = l8Var2;
+                final boolean z122222 = this.n;
+                final File file152222 = file2;
+                final ArrayList arrayList72222 = arrayList;
+                final File file162222 = file3;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: ci.la
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i192222) {
+                            case 0:
+                                l8 l8Var8 = l8Var72222;
+                                ha haVar = (ha) o8Var;
+                                try {
+                                    File file17 = l8Var8.P0;
+                                    if (file17 != null) {
+                                        file17.delete();
+                                    }
+                                } catch (Exception unused) {
                                 }
-                                laVar.run(o8Var2);
-                                c10 = 0;
-                            }
-                        }
-                    } else {
-                        CharSequence[] charSequenceArr3 = {ocVar.c1.getText()};
-                        ArrayList<TLRPC.MessageEntity> entities3 = MessagesController.getInstance(i10).storyEntitiesAllowed() ? MediaDataController.getInstance(i10).getEntities(charSequenceArr3, true) : new ArrayList<>();
-                        ArrayList<TLRPC.MessageEntity> entities4 = MessagesController.getInstance(i10).storyEntitiesAllowed() ? MediaDataController.getInstance(i10).getEntities(new CharSequence[]{ocVar.K1.C0}, true) : new ArrayList<>();
-                        o8 o8Var5 = ocVar.K1;
-                        o8Var5.k = (TextUtils.equals(o8Var5.C0, charSequenceArr3[0]) && MediaDataController.entitiesEqual(entities3, entities4)) ? false : true;
-                        ocVar.K1.C0 = new SpannableString(ocVar.c1.getText());
-                        laVar.run(ocVar.K1);
-                    }
-                    long j14 = UserConfig.getInstance(i10).clientUserId;
-                    TLRPC.InputPeer inputPeer = ocVar.K1.v0;
-                    if (inputPeer != null && !(inputPeer instanceof TLRPC.TL_inputPeerSelf)) {
-                        j14 = DialogObject.getPeerDialogId(inputPeer);
-                    }
-                    ocVar.K1 = null;
-                    ocVar.v = true;
-                    ocVar.w = j14;
-                    ocVar.B2 = true;
-                    ocVar.o();
-                    ai.j jVar = new ai.j(ocVar, j14, 6);
-                    fc fcVar = ocVar.x;
-                    if (fcVar != null) {
-                        fcVar.d(j14, jVar);
-                    } else {
-                        jVar.run();
-                    }
-                    MessagesController.getGlobalMainSettings().edit().putInt("storyhint2", 2).apply();
-                    break;
-                }
-                break;
-            case 3:
-                ocVar.Z(false);
-                break;
-            case 4:
-                o8 o8Var6 = ocVar.K1;
-                if (o8Var6 != null) {
-                    o8Var6.y0 = !o8Var6.y0;
-                    cc ccVar2 = ocVar.X0;
-                    if (ccVar2 != null) {
-                        ccVar2.u(o8Var6);
-                    }
-                    qb qbVar = ocVar.v1;
-                    if (qbVar != null && qbVar.R0 != null) {
-                        while (r10 < ocVar.v1.R0.getChildCount()) {
-                            View childAt = ocVar.v1.R0.getChildAt(r10);
-                            if (childAt instanceof qg.h1) {
-                                ((qg.h1) childAt).setupTheme(ocVar.K1);
-                            }
-                            r10++;
-                        }
-                    }
-                    ocVar.o0(true);
-                    break;
-                }
-                break;
-            case 5:
-                ocVar.q(true);
-                break;
-            case 6:
-                ocVar.d = true;
-                ocVar.v = false;
-                if (ocVar.J == 1) {
-                    ocVar.h0.setAlpha(1.0f);
-                    ocVar.h0.setTranslationX(0.0f);
-                    ocVar.h0.setTranslationY(0.0f);
-                    ocVar.i0.setAlpha(1.0f);
-                    ocVar.k0.setAlpha(1.0f);
-                    ocVar.n.setBackgroundColor(-16777216);
-                    if (ocVar.f0 == 2) {
-                        ocVar.u1.setAlpha(1.0f);
-                    }
-                }
-                ka kaVar = ocVar.x2;
-                if (kaVar != null) {
-                    kaVar.run();
-                    ocVar.x2 = null;
-                } else {
-                    ocVar.P();
-                }
-                o8 o8Var7 = ocVar.K1;
-                if (o8Var7 != null && o8Var7.n) {
-                    ocVar.u();
-                    ocVar.H();
-                    ocVar.s();
-                    break;
-                } else if (o8Var7 != null && o8Var7.u) {
-                    if (o8Var7.K) {
-                        ocVar.X0.t(o8Var7, null, 0L);
-                    }
-                    ocVar.s();
-                    break;
-                }
-                break;
-            case 7:
-                ocVar.g(1.0f, true, new ka(ocVar, i12));
-                break;
-            case 8:
-                ocVar.A0.setCameraThumb(ocVar.A());
-                rb rbVar = ocVar.B0;
-                if (rbVar != null) {
-                    rbVar.destroy(true, null);
-                    AndroidUtilities.removeFromParent(ocVar.B0);
-                    bc bcVar = ocVar.A0;
-                    if (bcVar != null) {
-                        bcVar.setCameraView(null);
-                    }
-                    ocVar.B0 = null;
-                    break;
-                }
-                break;
-            case 9:
-                ocVar.A0.setCameraThumb(ocVar.A());
-                break;
-            case 10:
-                if (ocVar.f0 == 1) {
-                    ocVar.l0(2, false, true);
-                    break;
-                }
-                break;
-            case 11:
-                fb fbVar = ocVar.d1;
-                if (fbVar != null) {
-                    int i18 = -(AndroidUtilities.dp(24.0f) + ocVar.c1.getEditTextHeight());
-                    fbVar.setTranslationY(i18 - (ocVar.Z0 != null ? r3.getContentHeight() - AndroidUtilities.dp(5.0f) : 0));
-                    break;
-                }
-                break;
-            case 12:
-                bc bcVar2 = ocVar.A0;
-                if (bcVar2 != null) {
-                    bcVar2.c.b(ocVar.D0.y ? ocVar.C0.d : null);
-                    break;
-                }
-                break;
-            case 13:
-                ocVar.m0(true);
-                break;
-            case 14:
-                ocVar.s();
-                break;
-            case 15:
-                ec ecVar = ocVar.c1;
-                if (ecVar != null) {
-                    ecVar.m();
-                    break;
-                }
-                break;
-            case 16:
-                if (ocVar.g0 == -1 && ocVar.f0 == 1) {
-                    ec ecVar2 = ocVar.c1;
-                    if (!ecVar2.p0 && !ecVar2.O1) {
-                        zc zcVar = ocVar.Z0;
-                        if (!zcVar.P) {
-                            fb fbVar2 = ocVar.d1;
-                            if (fbVar2.M) {
-                                fbVar2.c(false, true);
+                                try {
+                                    File file18 = l8Var8.R0;
+                                    if (file18 != null) {
+                                        file18.delete();
+                                    }
+                                } catch (Exception unused2) {
+                                }
+                                try {
+                                    File file19 = l8Var8.Q0;
+                                    if (file19 != null) {
+                                        file19.delete();
+                                    }
+                                } catch (Exception unused3) {
+                                }
+                                l8Var8.P0 = null;
+                                l8Var8.R0 = null;
+                                l8Var8.Q0 = null;
+                                File file20 = l8Var8.Y0;
+                                if (file20 != null) {
+                                    try {
+                                        file20.delete();
+                                    } catch (Exception e) {
+                                        FileLog.e(e);
+                                    }
+                                    l8Var8.Y0 = null;
+                                }
+                                File file21 = l8Var8.X0;
+                                if (file21 != null) {
+                                    try {
+                                        file21.delete();
+                                    } catch (Exception e7) {
+                                        FileLog.e(e7);
+                                    }
+                                    l8Var8.X0 = null;
+                                }
+                                l8Var8.j |= z122222;
+                                l8Var8.T0 = arrayList72222;
+                                l8Var8.P0 = file162222;
+                                l8Var8.Y0 = file152222;
+                                l8Var8.R0 = file7;
+                                l8Var8.X0 = file4;
+                                l8Var8.Q0 = file6;
+                                l8Var8.U0 = arrayList6;
+                                haVar.run();
                                 break;
-                            } else {
-                                ocVar.l0(0, false, true);
-                                qb qbVar2 = ocVar.v1;
-                                if (qbVar2 != null) {
-                                    qbVar2.R0(2);
-                                    qbVar2.l2 = true;
-                                    qbVar2.o0(true);
-                                    ocVar.v1.M0 = true;
+                            default:
+                                l8 l8Var9 = l8Var72222;
+                                ai.o8 o8Var2 = (ai.o8) o8Var;
+                                try {
+                                    File file22 = l8Var9.P0;
+                                    if (file22 != null) {
+                                        file22.delete();
+                                    }
+                                } catch (Exception unused4) {
+                                }
+                                try {
+                                    File file23 = l8Var9.R0;
+                                    if (file23 != null) {
+                                        file23.delete();
+                                    }
+                                } catch (Exception unused5) {
+                                }
+                                try {
+                                    File file24 = l8Var9.Q0;
+                                    if (file24 != null) {
+                                        file24.delete();
+                                    }
+                                } catch (Exception unused6) {
+                                }
+                                l8Var9.P0 = null;
+                                l8Var9.R0 = null;
+                                l8Var9.Q0 = null;
+                                File file25 = l8Var9.Y0;
+                                if (file25 != null) {
+                                    try {
+                                        file25.delete();
+                                    } catch (Exception e10) {
+                                        FileLog.e(e10);
+                                    }
+                                    l8Var9.Y0 = null;
+                                }
+                                File file26 = l8Var9.X0;
+                                if (file26 != null) {
+                                    try {
+                                        file26.delete();
+                                    } catch (Exception e11) {
+                                        FileLog.e(e11);
+                                    }
+                                    l8Var9.X0 = null;
+                                }
+                                l8Var9.j |= z122222;
+                                l8Var9.T0 = arrayList72222;
+                                l8Var9.P0 = file162222;
+                                l8Var9.Y0 = file152222;
+                                l8Var9.R0 = file7;
+                                l8Var9.X0 = file4;
+                                l8Var9.Q0 = file6;
+                                l8Var9.U0 = arrayList6;
+                                o8Var2.run();
+                                break;
+                        }
+                    }
+                });
+                size = arrayList3.size();
+                i10 = 0;
+                while (i10 < size) {
+                }
+                return;
+            default:
+                final ha haVar = (ha) this.r;
+                lc lcVar2 = this.b;
+                int i20 = lcVar2.c;
+                ArrayList arrayList8 = new ArrayList();
+                q6 q6Var6 = this.c;
+                l8 l8Var8 = this.f;
+                q6Var6.t0(arrayList8, false, false, false, false, l8Var8);
+                if (!l8Var8.K) {
+                    l8Var8.S0 = Utilities.clamp(q6Var6.getLcm(), 7500L, 5000L);
+                }
+                List<TLRPC.InputDocument> masks2 = q6Var6.getMasks();
+                ArrayList arrayList9 = masks2 != null ? new ArrayList(masks2) : null;
+                boolean z13 = l8Var8.K;
+                boolean E2 = l8Var8.E();
+                arrayList8.clear();
+                Bitmap t04 = q6Var6.t0(arrayList8, true, false, false, !z13, l8Var8);
+                ArrayList arrayList10 = arrayList8.isEmpty() ? null : arrayList8;
+                File pathToAttach = FileLoader.getInstance(i20).getPathToAttach(ImageLoader.scaleAndSaveImage(t04, Bitmap.CompressFormat.PNG, l8Var8.i0, l8Var8.j0, 87, false, 101, 101), true);
+                if (t04 != null && !t04.isRecycled()) {
+                    t04.recycle();
+                }
+                boolean z14 = l8Var8.u;
+                int i21 = this.d;
+                int i22 = this.e;
+                final ArrayList arrayList11 = arrayList9;
+                if (z14) {
+                    long j10 = l8Var8.z0;
+                    if (j10 != Long.MIN_VALUE) {
+                        Drawable drawable2 = l8Var8.x0;
+                        if (drawable2 == null) {
+                            drawable2 = b7.e(null, i20, j10, lcVar2.c2);
+                        }
+                        if (drawable2 != null) {
+                            file8 = l8.w(i20, "webp");
+                            Bitmap createBitmap3 = Bitmap.createBitmap(i21, i22, Bitmap.Config.ARGB_8888);
+                            q6Var3 = q6Var6;
+                            l8.j(new Canvas(createBitmap3), drawable2, createBitmap3.getWidth(), createBitmap3.getHeight());
+                            try {
+                                try {
+                                    createBitmap3.compress(Bitmap.CompressFormat.WEBP, 100, new FileOutputStream(file8));
+                                    break;
+                                } catch (Exception e) {
+                                    FileLog.e(e);
                                     break;
                                 }
-                            }
-                        } else {
-                            zcVar.P = false;
-                            if (zcVar.E && zcVar.h == null) {
-                                zcVar.G = true;
-                                sc scVar = zcVar.a;
-                                if (scVar != null) {
-                                    scVar.Q(true);
-                                    break;
+                            } finally {
+                                if (!createBitmap3.isRecycled()) {
+                                    createBitmap3.recycle();
                                 }
                             }
                         }
                     }
                 }
-                break;
-            case 17:
-                ocVar.N1 = true;
-                ocVar.b1.setShareEnabled(false);
-                u0 u0Var = ocVar.e1;
-                u0Var.getClass();
-                u0Var.c(R.raw.error, LocaleController.getString("VideoConvertFail"));
-                break;
-            case 18:
-                ocVar.A0.setCameraThumb(ocVar.A());
-                break;
-            case 19:
-                nc ncVar2 = ocVar.n;
-                ai.d dVar = ocVar.a;
-                new org.telegram.ui.Components.vc(ncVar2, dVar).Q(R.raw.voip_invite, 36, AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.StoryPremiumFormatting), org.telegram.ui.ActionBar.i6.gc, 0, new ka(ocVar, 27), dVar)).k(true);
-                break;
-            case 20:
-                ia iaVar = ocVar.q0;
-                if (iaVar != null) {
-                    iaVar.dismiss();
-                }
-                ocVar.K(2, true);
-                break;
-            case 21:
-                ocVar.l0(-1, false, true);
-                break;
-            case 22:
-                ocVar.l0(-1, false, true);
-                break;
-            case 23:
-                ocVar.d = false;
-                AndroidUtilities.unlockOrientation(ocVar.b);
-                if (ocVar.B0 != null) {
-                    if (ocVar.Q1) {
-                        CameraController.getInstance().stopVideoRecording(ocVar.B0.getCameraSession(), false);
+                q6Var3 = q6Var6;
+                file8 = null;
+                if (l8Var8.u && l8Var8.K) {
+                    int i23 = l8Var8.k0;
+                    int i24 = l8Var8.l0;
+                    qg.h1 s03 = q6Var3.s0();
+                    if (s03 != null) {
+                        qg.a1 a1Var2 = s03.r0;
+                        if (a1Var2.getChildCount() == 1 && i23 > 0 && i24 > 0) {
+                            if (a1Var2.getChildAt(0) instanceof org.telegram.ui.Cells.t1) {
+                                imageReceiver2 = ((org.telegram.ui.Cells.t1) a1Var2.getChildAt(0)).getPhotoImage();
+                                if (imageReceiver2 != null && ((int) imageReceiver2.getImageWidth()) > 0 && ((int) imageReceiver2.getImageHeight()) > 0) {
+                                    float f13 = i23;
+                                    float f14 = i24;
+                                    float max3 = Math.max(imageReceiver2.getImageWidth() / f13, imageReceiver2.getImageHeight() / f14);
+                                    int i25 = (int) ((f13 * max3) / 2.0f);
+                                    int i26 = (int) ((f14 * max3) / 2.0f);
+                                    Bitmap createBitmap4 = Bitmap.createBitmap(i25, i26, Bitmap.Config.ARGB_8888);
+                                    float[] fArr3 = new float[8];
+                                    imageReceiver3 = imageReceiver2;
+                                    arrayList2 = arrayList10;
+                                    for (i12 = 0; i12 < imageReceiver3.getRoundRadius().length; i12++) {
+                                        int i27 = i12 * 2;
+                                        fArr3[i27] = imageReceiver3.getRoundRadius()[r25];
+                                        fArr3[i27 + 1] = imageReceiver3.getRoundRadius()[r25];
+                                    }
+                                    Canvas canvas3 = new Canvas(createBitmap4);
+                                    Path path3 = new Path();
+                                    file9 = pathToAttach;
+                                    canvas3.scale(0.5f, 0.5f);
+                                    RectF rectF3 = AndroidUtilities.rectTmp;
+                                    float f15 = (i25 * 2.0f) / 2.0f;
+                                    float f16 = (i26 * 2.0f) / 2.0f;
+                                    l8Var3 = l8Var8;
+                                    file10 = file8;
+                                    rectF3.set(f15 - (imageReceiver3.getImageWidth() / 2.0f), f16 - (imageReceiver3.getImageHeight() / 2.0f), (imageReceiver3.getImageWidth() / 2.0f) + f15, (imageReceiver3.getImageHeight() / 2.0f) + f16);
+                                    path3.addRoundRect(rectF3, fArr3, Path.Direction.CW);
+                                    z10 = true;
+                                    Paint paint3 = new Paint(1);
+                                    paint3.setColor(-1);
+                                    canvas3.drawPath(path3, paint3);
+                                    try {
+                                        File w12 = l8.w(i20, "webp");
+                                        createBitmap4.compress(Bitmap.CompressFormat.WEBP, 100, new FileOutputStream(w12));
+                                        file14 = w12;
+                                    } catch (Exception e7) {
+                                        FileLog.e(e7);
+                                        file14 = null;
+                                    }
+                                    createBitmap4.recycle();
+                                    file11 = file14;
+                                    if (E2) {
+                                        q6Var4 = q6Var3;
+                                        l8Var4 = l8Var3;
+                                        file12 = null;
+                                    } else {
+                                        q6Var4 = q6Var3;
+                                        l8Var4 = l8Var3;
+                                        Bitmap t05 = q6Var4.t0(new ArrayList(), false, true, false, false, l8Var4);
+                                        file12 = FileLoader.getInstance(i20).getPathToAttach(ImageLoader.scaleAndSaveImage(t05, Bitmap.CompressFormat.PNG, i21, i22, 87, false, 101, 101), z10);
+                                        if (t05 != null && !t05.isRecycled()) {
+                                            t05.recycle();
+                                        }
+                                    }
+                                    if (this.h) {
+                                        Bitmap blurBitmap2 = q6Var4.getBlurBitmap();
+                                        file13 = FileLoader.getInstance(i20).getPathToAttach(ImageLoader.scaleAndSaveImage(blurBitmap2, Bitmap.CompressFormat.PNG, i21, i22, 87, false, 101, 101), z10);
+                                        if (blurBitmap2 != null && !blurBitmap2.isRecycled()) {
+                                            blurBitmap2.recycle();
+                                        }
+                                    } else {
+                                        file13 = null;
+                                    }
+                                    final int i28 = 0;
+                                    final boolean z15 = this.n;
+                                    final File file17 = file12;
+                                    final l8 l8Var9 = l8Var4;
+                                    final ArrayList arrayList12 = arrayList2;
+                                    final File file18 = file9;
+                                    final File file19 = file10;
+                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: ci.la
+                                        @Override // java.lang.Runnable
+                                        public final void run() {
+                                            switch (i28) {
+                                                case 0:
+                                                    l8 l8Var82 = l8Var9;
+                                                    ha haVar2 = (ha) haVar;
+                                                    try {
+                                                        File file172 = l8Var82.P0;
+                                                        if (file172 != null) {
+                                                            file172.delete();
+                                                        }
+                                                    } catch (Exception unused) {
+                                                    }
+                                                    try {
+                                                        File file182 = l8Var82.R0;
+                                                        if (file182 != null) {
+                                                            file182.delete();
+                                                        }
+                                                    } catch (Exception unused2) {
+                                                    }
+                                                    try {
+                                                        File file192 = l8Var82.Q0;
+                                                        if (file192 != null) {
+                                                            file192.delete();
+                                                        }
+                                                    } catch (Exception unused3) {
+                                                    }
+                                                    l8Var82.P0 = null;
+                                                    l8Var82.R0 = null;
+                                                    l8Var82.Q0 = null;
+                                                    File file20 = l8Var82.Y0;
+                                                    if (file20 != null) {
+                                                        try {
+                                                            file20.delete();
+                                                        } catch (Exception e10) {
+                                                            FileLog.e(e10);
+                                                        }
+                                                        l8Var82.Y0 = null;
+                                                    }
+                                                    File file21 = l8Var82.X0;
+                                                    if (file21 != null) {
+                                                        try {
+                                                            file21.delete();
+                                                        } catch (Exception e72) {
+                                                            FileLog.e(e72);
+                                                        }
+                                                        l8Var82.X0 = null;
+                                                    }
+                                                    l8Var82.j |= z15;
+                                                    l8Var82.T0 = arrayList12;
+                                                    l8Var82.P0 = file18;
+                                                    l8Var82.Y0 = file19;
+                                                    l8Var82.R0 = file17;
+                                                    l8Var82.X0 = file11;
+                                                    l8Var82.Q0 = file13;
+                                                    l8Var82.U0 = arrayList11;
+                                                    haVar2.run();
+                                                    break;
+                                                default:
+                                                    l8 l8Var92 = l8Var9;
+                                                    ai.o8 o8Var2 = (ai.o8) haVar;
+                                                    try {
+                                                        File file22 = l8Var92.P0;
+                                                        if (file22 != null) {
+                                                            file22.delete();
+                                                        }
+                                                    } catch (Exception unused4) {
+                                                    }
+                                                    try {
+                                                        File file23 = l8Var92.R0;
+                                                        if (file23 != null) {
+                                                            file23.delete();
+                                                        }
+                                                    } catch (Exception unused5) {
+                                                    }
+                                                    try {
+                                                        File file24 = l8Var92.Q0;
+                                                        if (file24 != null) {
+                                                            file24.delete();
+                                                        }
+                                                    } catch (Exception unused6) {
+                                                    }
+                                                    l8Var92.P0 = null;
+                                                    l8Var92.R0 = null;
+                                                    l8Var92.Q0 = null;
+                                                    File file25 = l8Var92.Y0;
+                                                    if (file25 != null) {
+                                                        try {
+                                                            file25.delete();
+                                                        } catch (Exception e102) {
+                                                            FileLog.e(e102);
+                                                        }
+                                                        l8Var92.Y0 = null;
+                                                    }
+                                                    File file26 = l8Var92.X0;
+                                                    if (file26 != null) {
+                                                        try {
+                                                            file26.delete();
+                                                        } catch (Exception e11) {
+                                                            FileLog.e(e11);
+                                                        }
+                                                        l8Var92.X0 = null;
+                                                    }
+                                                    l8Var92.j |= z15;
+                                                    l8Var92.T0 = arrayList12;
+                                                    l8Var92.P0 = file18;
+                                                    l8Var92.Y0 = file19;
+                                                    l8Var92.R0 = file17;
+                                                    l8Var92.X0 = file11;
+                                                    l8Var92.Q0 = file13;
+                                                    l8Var92.U0 = arrayList11;
+                                                    o8Var2.run();
+                                                    break;
+                                            }
+                                        }
+                                    });
+                                    return;
+                                }
+                            }
+                            imageReceiver2 = null;
+                            if (imageReceiver2 != null) {
+                                float f132 = i23;
+                                float f142 = i24;
+                                float max32 = Math.max(imageReceiver2.getImageWidth() / f132, imageReceiver2.getImageHeight() / f142);
+                                int i252 = (int) ((f132 * max32) / 2.0f);
+                                int i262 = (int) ((f142 * max32) / 2.0f);
+                                Bitmap createBitmap42 = Bitmap.createBitmap(i252, i262, Bitmap.Config.ARGB_8888);
+                                float[] fArr32 = new float[8];
+                                imageReceiver3 = imageReceiver2;
+                                arrayList2 = arrayList10;
+                                while (i12 < imageReceiver3.getRoundRadius().length) {
+                                }
+                                Canvas canvas32 = new Canvas(createBitmap42);
+                                Path path32 = new Path();
+                                file9 = pathToAttach;
+                                canvas32.scale(0.5f, 0.5f);
+                                RectF rectF32 = AndroidUtilities.rectTmp;
+                                float f152 = (i252 * 2.0f) / 2.0f;
+                                float f162 = (i262 * 2.0f) / 2.0f;
+                                l8Var3 = l8Var8;
+                                file10 = file8;
+                                rectF32.set(f152 - (imageReceiver3.getImageWidth() / 2.0f), f162 - (imageReceiver3.getImageHeight() / 2.0f), (imageReceiver3.getImageWidth() / 2.0f) + f152, (imageReceiver3.getImageHeight() / 2.0f) + f162);
+                                path32.addRoundRect(rectF32, fArr32, Path.Direction.CW);
+                                z10 = true;
+                                Paint paint32 = new Paint(1);
+                                paint32.setColor(-1);
+                                canvas32.drawPath(path32, paint32);
+                                File w122 = l8.w(i20, "webp");
+                                createBitmap42.compress(Bitmap.CompressFormat.WEBP, 100, new FileOutputStream(w122));
+                                file14 = w122;
+                                createBitmap42.recycle();
+                                file11 = file14;
+                                if (E2) {
+                                }
+                                if (this.h) {
+                                }
+                                final int i282 = 0;
+                                final boolean z152 = this.n;
+                                final File file172 = file12;
+                                final l8 l8Var92 = l8Var4;
+                                final ArrayList arrayList122 = arrayList2;
+                                final File file182 = file9;
+                                final File file192 = file10;
+                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: ci.la
+                                    @Override // java.lang.Runnable
+                                    public final void run() {
+                                        switch (i282) {
+                                            case 0:
+                                                l8 l8Var82 = l8Var92;
+                                                ha haVar2 = (ha) haVar;
+                                                try {
+                                                    File file1722 = l8Var82.P0;
+                                                    if (file1722 != null) {
+                                                        file1722.delete();
+                                                    }
+                                                } catch (Exception unused) {
+                                                }
+                                                try {
+                                                    File file1822 = l8Var82.R0;
+                                                    if (file1822 != null) {
+                                                        file1822.delete();
+                                                    }
+                                                } catch (Exception unused2) {
+                                                }
+                                                try {
+                                                    File file1922 = l8Var82.Q0;
+                                                    if (file1922 != null) {
+                                                        file1922.delete();
+                                                    }
+                                                } catch (Exception unused3) {
+                                                }
+                                                l8Var82.P0 = null;
+                                                l8Var82.R0 = null;
+                                                l8Var82.Q0 = null;
+                                                File file20 = l8Var82.Y0;
+                                                if (file20 != null) {
+                                                    try {
+                                                        file20.delete();
+                                                    } catch (Exception e10) {
+                                                        FileLog.e(e10);
+                                                    }
+                                                    l8Var82.Y0 = null;
+                                                }
+                                                File file21 = l8Var82.X0;
+                                                if (file21 != null) {
+                                                    try {
+                                                        file21.delete();
+                                                    } catch (Exception e72) {
+                                                        FileLog.e(e72);
+                                                    }
+                                                    l8Var82.X0 = null;
+                                                }
+                                                l8Var82.j |= z152;
+                                                l8Var82.T0 = arrayList122;
+                                                l8Var82.P0 = file182;
+                                                l8Var82.Y0 = file192;
+                                                l8Var82.R0 = file172;
+                                                l8Var82.X0 = file11;
+                                                l8Var82.Q0 = file13;
+                                                l8Var82.U0 = arrayList11;
+                                                haVar2.run();
+                                                break;
+                                            default:
+                                                l8 l8Var922 = l8Var92;
+                                                ai.o8 o8Var2 = (ai.o8) haVar;
+                                                try {
+                                                    File file22 = l8Var922.P0;
+                                                    if (file22 != null) {
+                                                        file22.delete();
+                                                    }
+                                                } catch (Exception unused4) {
+                                                }
+                                                try {
+                                                    File file23 = l8Var922.R0;
+                                                    if (file23 != null) {
+                                                        file23.delete();
+                                                    }
+                                                } catch (Exception unused5) {
+                                                }
+                                                try {
+                                                    File file24 = l8Var922.Q0;
+                                                    if (file24 != null) {
+                                                        file24.delete();
+                                                    }
+                                                } catch (Exception unused6) {
+                                                }
+                                                l8Var922.P0 = null;
+                                                l8Var922.R0 = null;
+                                                l8Var922.Q0 = null;
+                                                File file25 = l8Var922.Y0;
+                                                if (file25 != null) {
+                                                    try {
+                                                        file25.delete();
+                                                    } catch (Exception e102) {
+                                                        FileLog.e(e102);
+                                                    }
+                                                    l8Var922.Y0 = null;
+                                                }
+                                                File file26 = l8Var922.X0;
+                                                if (file26 != null) {
+                                                    try {
+                                                        file26.delete();
+                                                    } catch (Exception e11) {
+                                                        FileLog.e(e11);
+                                                    }
+                                                    l8Var922.X0 = null;
+                                                }
+                                                l8Var922.j |= z152;
+                                                l8Var922.T0 = arrayList122;
+                                                l8Var922.P0 = file182;
+                                                l8Var922.Y0 = file192;
+                                                l8Var922.R0 = file172;
+                                                l8Var922.X0 = file11;
+                                                l8Var922.Q0 = file13;
+                                                l8Var922.U0 = arrayList11;
+                                                o8Var2.run();
+                                                break;
+                                        }
+                                    }
+                                });
+                                return;
+                            }
+                        }
                     }
-                    ocVar.v(false);
-                }
-                cc ccVar3 = ocVar.X0;
-                if (ccVar3 != null) {
-                    ccVar3.set(null);
-                }
-                ocVar.z();
-                ocVar.y();
-                File file = ocVar.G1;
-                if (file != null && !ocVar.v) {
-                    try {
-                        file.delete();
-                    } catch (Exception unused) {
+                    imageReceiver2 = null;
+                    if (imageReceiver2 != null) {
                     }
                 }
-                ocVar.G1 = null;
-                AndroidUtilities.runOnUIThread(new ka(ocVar, 28), 16L);
-                jc jcVar = ocVar.F;
-                if (jcVar != null) {
-                    jcVar.f(false);
+                arrayList2 = arrayList10;
+                file9 = pathToAttach;
+                l8Var3 = l8Var8;
+                file10 = file8;
+                z10 = true;
+                file11 = null;
+                if (E2) {
                 }
-                if (ocVar.x2 != null) {
-                    ocVar.x2 = null;
+                if (this.h) {
                 }
-                ocVar.l2 = null;
-                oc ocVar2 = oc.F2;
-                if (ocVar2 != null) {
-                    ocVar2.q(false);
-                }
-                oc.F2 = null;
-                nc ncVar3 = ocVar.n;
-                if (ncVar3 != null) {
-                    org.telegram.ui.Components.oc.h(ncVar3);
-                }
-                ai.f0 f0Var = ocVar.l0;
-                if (f0Var != null) {
-                    org.telegram.ui.Components.oc.h(f0Var);
-                }
-                bc bcVar3 = ocVar.A0;
-                if (bcVar3 != null) {
-                    bcVar3.e();
-                    break;
-                }
-                break;
-            case 24:
-                if (!ocVar.K1.b0 && ocVar.q0 != null && (ccVar = ocVar.X0) != null) {
-                    ccVar.h(new la(ocVar, i14), ccVar, ocVar.w1, ocVar.z1);
-                }
-                ocVar.K(1, true);
-                break;
-            case 25:
-                ocVar.j0(false);
-                ocVar.e2 = null;
-                break;
-            case 26:
-                ocVar.j0(false);
-                ocVar.e2 = null;
-                break;
-            case 27:
-                ocVar.T();
-                break;
-            default:
-                WindowManager windowManager = ocVar.f;
-                if (windowManager != null && (ncVar = ocVar.n) != null && ncVar.getParent() != null) {
-                    windowManager.removeView(ocVar.n);
-                    break;
-                }
-                break;
+                final int i2822 = 0;
+                final boolean z1522 = this.n;
+                final File file1722 = file12;
+                final l8 l8Var922 = l8Var4;
+                final ArrayList arrayList1222 = arrayList2;
+                final File file1822 = file9;
+                final File file1922 = file10;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: ci.la
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i2822) {
+                            case 0:
+                                l8 l8Var82 = l8Var922;
+                                ha haVar2 = (ha) haVar;
+                                try {
+                                    File file17222 = l8Var82.P0;
+                                    if (file17222 != null) {
+                                        file17222.delete();
+                                    }
+                                } catch (Exception unused) {
+                                }
+                                try {
+                                    File file18222 = l8Var82.R0;
+                                    if (file18222 != null) {
+                                        file18222.delete();
+                                    }
+                                } catch (Exception unused2) {
+                                }
+                                try {
+                                    File file19222 = l8Var82.Q0;
+                                    if (file19222 != null) {
+                                        file19222.delete();
+                                    }
+                                } catch (Exception unused3) {
+                                }
+                                l8Var82.P0 = null;
+                                l8Var82.R0 = null;
+                                l8Var82.Q0 = null;
+                                File file20 = l8Var82.Y0;
+                                if (file20 != null) {
+                                    try {
+                                        file20.delete();
+                                    } catch (Exception e10) {
+                                        FileLog.e(e10);
+                                    }
+                                    l8Var82.Y0 = null;
+                                }
+                                File file21 = l8Var82.X0;
+                                if (file21 != null) {
+                                    try {
+                                        file21.delete();
+                                    } catch (Exception e72) {
+                                        FileLog.e(e72);
+                                    }
+                                    l8Var82.X0 = null;
+                                }
+                                l8Var82.j |= z1522;
+                                l8Var82.T0 = arrayList1222;
+                                l8Var82.P0 = file1822;
+                                l8Var82.Y0 = file1922;
+                                l8Var82.R0 = file1722;
+                                l8Var82.X0 = file11;
+                                l8Var82.Q0 = file13;
+                                l8Var82.U0 = arrayList11;
+                                haVar2.run();
+                                break;
+                            default:
+                                l8 l8Var9222 = l8Var922;
+                                ai.o8 o8Var2 = (ai.o8) haVar;
+                                try {
+                                    File file22 = l8Var9222.P0;
+                                    if (file22 != null) {
+                                        file22.delete();
+                                    }
+                                } catch (Exception unused4) {
+                                }
+                                try {
+                                    File file23 = l8Var9222.R0;
+                                    if (file23 != null) {
+                                        file23.delete();
+                                    }
+                                } catch (Exception unused5) {
+                                }
+                                try {
+                                    File file24 = l8Var9222.Q0;
+                                    if (file24 != null) {
+                                        file24.delete();
+                                    }
+                                } catch (Exception unused6) {
+                                }
+                                l8Var9222.P0 = null;
+                                l8Var9222.R0 = null;
+                                l8Var9222.Q0 = null;
+                                File file25 = l8Var9222.Y0;
+                                if (file25 != null) {
+                                    try {
+                                        file25.delete();
+                                    } catch (Exception e102) {
+                                        FileLog.e(e102);
+                                    }
+                                    l8Var9222.Y0 = null;
+                                }
+                                File file26 = l8Var9222.X0;
+                                if (file26 != null) {
+                                    try {
+                                        file26.delete();
+                                    } catch (Exception e11) {
+                                        FileLog.e(e11);
+                                    }
+                                    l8Var9222.X0 = null;
+                                }
+                                l8Var9222.j |= z1522;
+                                l8Var9222.T0 = arrayList1222;
+                                l8Var9222.P0 = file1822;
+                                l8Var9222.Y0 = file1922;
+                                l8Var9222.R0 = file1722;
+                                l8Var9222.X0 = file11;
+                                l8Var9222.Q0 = file13;
+                                l8Var9222.U0 = arrayList11;
+                                o8Var2.run();
+                                break;
+                        }
+                    }
+                });
+                return;
         }
     }
 }

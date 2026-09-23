@@ -1,160 +1,191 @@
 package ii;
 
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.text.TextUtils;
-import java.io.File;
-import java.io.FileOutputStream;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
+import android.graphics.drawable.Drawable;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BuildConfig;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class y4 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ a5 b;
+public final class y4 {
+    public static ColorMatrixColorFilter f;
+    public final ImageReceiver a;
+    public final ImageReceiver b;
+    public Bitmap c;
+    public final RadialProgress2 d;
+    public u e;
 
-    public /* synthetic */ y4(a5 a5Var, int i10) {
-        this.a = i10;
-        this.b = a5Var;
+    public y4(v4 v4Var, org.telegram.ui.ActionBar.d6 d6Var) {
+        this.a = new ImageReceiver(v4Var);
+        this.b = new ImageReceiver(v4Var);
+        RadialProgress2 radialProgress2 = new RadialProgress2(v4Var, d6Var);
+        this.d = radialProgress2;
+        radialProgress2.d = -1;
+        radialProgress2.setColors(1711276032, 2130706432, -1, -2500135);
+        radialProgress2.setIcon(3, false, false);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:100:0x018b, code lost:
-    
-        if (r1.isRecycled() == false) goto L75;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:73:0x0114, code lost:
-    
-        if (r1.isRecycled() == false) goto L75;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:74:0x0116, code lost:
-    
-        r1.recycle();
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:85:0x0156, code lost:
-    
-        if (r1.isRecycled() == false) goto L75;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:93:0x0182, code lost:
-    
-        if (r1.isRecycled() == false) goto L75;
-     */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        Bitmap bitmap;
-        switch (this.a) {
-            case 0:
-                a5 a5Var = this.b;
-                String str = a5Var.b;
-                TLRPC.Document document = a5Var.r;
-                String str2 = null;
-                if (document != null && !TextUtils.isEmpty(str)) {
-                    try {
-                        String str3 = document.mime_type;
-                        String lowerCase = str3 == null ? "" : str3.toLowerCase();
-                        bitmap = lowerCase.startsWith("image/") ? ImageLoader.loadBitmap(str, null, 320.0f, 320.0f, true) : lowerCase.equals("video/mp4") ? SendMessagesHelper.createVideoThumbnail(str, 1) : null;
-                        if (bitmap != null) {
-                            try {
-                                ArrayList<TLRPC.DocumentAttribute> arrayList = document.attributes;
-                                int size = arrayList.size();
-                                int i10 = 0;
-                                while (true) {
-                                    if (i10 < size) {
-                                        TLRPC.DocumentAttribute documentAttribute = arrayList.get(i10);
-                                        i10++;
-                                        if (documentAttribute instanceof TLRPC.TL_documentAttributeImageSize) {
-                                        }
-                                    } else {
-                                        TLRPC.TL_documentAttributeImageSize tL_documentAttributeImageSize = new TLRPC.TL_documentAttributeImageSize();
-                                        tL_documentAttributeImageSize.w = bitmap.getWidth();
-                                        tL_documentAttributeImageSize.h = bitmap.getHeight();
-                                        document.attributes.add(tL_documentAttributeImageSize);
-                                    }
-                                }
-                                TLRPC.PhotoSize scaleAndSaveImage = ImageLoader.scaleAndSaveImage(bitmap, 320.0f, 320.0f, 80, false);
-                                if (scaleAndSaveImage != null) {
-                                    document.thumbs.clear();
-                                    document.thumbs.add(scaleAndSaveImage);
-                                    document.flags |= 1;
-                                    File pathToAttach = FileLoader.getInstance(a5Var.a).getPathToAttach(scaleAndSaveImage, true);
-                                    if (pathToAttach != null && pathToAttach.exists()) {
-                                        str2 = pathToAttach.getAbsolutePath();
-                                    }
-                                    break;
-                                } else {
-                                    break;
-                                }
-                            } catch (Throwable unused) {
-                                if (bitmap != null) {
-                                    break;
-                                }
-                                a5Var.F = str2;
-                                AndroidUtilities.runOnUIThread(new y4(a5Var, 2));
-                                return;
-                            }
-                        } else if (bitmap != null) {
-                            break;
-                        }
-                    } catch (Throwable unused2) {
-                        bitmap = null;
-                    }
-                }
-                a5Var.F = str2;
-                AndroidUtilities.runOnUIThread(new y4(a5Var, 2));
-                return;
-            case 1:
-                a5 a5Var2 = this.b;
-                String str4 = a5Var2.b;
-                try {
-                    BitmapFactory.Options options = new BitmapFactory.Options();
-                    options.inJustDecodeBounds = true;
-                    BitmapFactory.decodeFile(str4, options);
-                    String str5 = options.outMimeType;
-                    boolean z10 = str5 != null && (str5.equalsIgnoreCase("image/jpeg") || str5.equalsIgnoreCase("image/jpg"));
-                    float photoSize = AndroidUtilities.getPhotoSize();
-                    Bitmap loadBitmap = ImageLoader.loadBitmap(str4, null, photoSize, photoSize, true);
-                    if (loadBitmap == null) {
-                        loadBitmap = ImageLoader.loadBitmap(str4, null, 800.0f, 800.0f, true);
-                    }
-                    if (loadBitmap != null) {
-                        File file = new File(FileLoader.getDirectory(4), "rich_jpeg_" + Math.abs(str4.hashCode()) + ".jpg");
-                        try {
-                            FileOutputStream fileOutputStream = new FileOutputStream(file);
-                            try {
-                                boolean compress = loadBitmap.compress(Bitmap.CompressFormat.JPEG, 89, fileOutputStream);
-                                fileOutputStream.close();
-                                if (compress && file.length() > 0) {
-                                    if (z10) {
-                                        long length = new File(str4).length();
-                                        if (length > 0 && file.length() >= length) {
-                                        }
-                                    }
-                                    str4 = file.getAbsolutePath();
-                                }
-                            } finally {
-                            }
-                        } finally {
-                            loadBitmap.recycle();
+    public final void a() {
+        String sb2;
+        TLRPC.Photo photo;
+        TLRPC.Document document;
+        TLRPC.PhotoSize photoSize;
+        int abs;
+        u uVar = this.e;
+        TLRPC.PhotoSize photoSize2 = null;
+        ImageReceiver imageReceiver = this.a;
+        if (uVar == null) {
+            imageReceiver.setImageBitmap((Drawable) null);
+            return;
+        }
+        int i10 = AndroidUtilities.displaySize.x;
+        String l4 = a4.a.l(i10, i10, "_");
+        StringBuilder sb3 = new StringBuilder();
+        u uVar2 = this.e;
+        if (uVar2 == null) {
+            sb2 = BuildConfig.BETA_URL;
+        } else {
+            String str = uVar2.b ? "v" : uVar2.c ? "a" : "p";
+            if (uVar2.e != null) {
+                StringBuilder h = w.c.h(str, ":local:");
+                h.append(this.e.e);
+                sb2 = h.toString();
+            } else {
+                long j3 = 0;
+                if (uVar2.b()) {
+                    u uVar3 = this.e;
+                    TLRPC.Document document2 = uVar3.h;
+                    if (document2 != null) {
+                        j3 = document2.id;
+                    } else {
+                        TLRPC.Photo photo2 = uVar3.g;
+                        if (photo2 != null) {
+                            j3 = photo2.id;
                         }
                     }
-                } catch (Throwable unused3) {
                 }
-                AndroidUtilities.runOnUIThread(new gg.x1(18, a5Var2, str4));
+                StringBuilder h10 = w.c.h(str, ":");
+                h10.append(this.e.a);
+                h10.append(":");
+                h10.append(j3);
+                sb2 = h10.toString();
+            }
+        }
+        sb3.append(sb2);
+        sb3.append("@");
+        sb3.append(l4);
+        if (sb3.toString().equals(null)) {
+            return;
+        }
+        this.e.getClass();
+        u uVar4 = this.e;
+        if (!uVar4.b) {
+            if (uVar4.e != null) {
+                imageReceiver.setOrientation(uVar4.l, uVar4.m, true);
+                imageReceiver.setImage(ImageLocation.getForPath(this.e.e), l4, null, null, null, 0);
                 return;
-            default:
-                a5 a5Var3 = this.b;
-                if (a5Var3.w || a5Var3.x) {
+            } else {
+                if (!uVar4.b() || (photo = this.e.g) == null) {
+                    imageReceiver.setImageBitmap((Drawable) null);
                     return;
                 }
-                a5Var3.a(a5Var3.b);
+                TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, AndroidUtilities.getPhotoSize());
+                TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(this.e.g.sizes, 100);
+                imageReceiver.setOrientation(0, 0, false);
+                imageReceiver.setImage(ImageLocation.getForPhoto(closestPhotoSizeWithSize, this.e.g), l4, ImageLocation.getForPhoto(closestPhotoSizeWithSize2, this.e.g), l4, null, 0L, null, this.e.g, 0);
                 return;
+            }
         }
+        if (uVar4.e != null) {
+            imageReceiver.setOrientation(0, 0, false);
+            imageReceiver.setImage(ImageLocation.getForVideoPath(this.e.e), ImageLoader.AUTOPLAY_FILTER, null, l4, null, l4, null, 0L, null, null, 0);
+            return;
+        }
+        if (!uVar4.b() || (document = this.e.h) == null) {
+            imageReceiver.setImageBitmap((Drawable) null);
+            return;
+        }
+        ArrayList<TLRPC.PhotoSize> arrayList = document.thumbs;
+        int photoSize3 = AndroidUtilities.getPhotoSize();
+        if (arrayList == null) {
+            photoSize = null;
+        } else {
+            int i11 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+            photoSize = null;
+            for (int i12 = 0; i12 < arrayList.size(); i12++) {
+                TLRPC.PhotoSize photoSize4 = arrayList.get(i12);
+                if (!(photoSize4 instanceof TLRPC.TL_photoStrippedSize) && !(photoSize4 instanceof TLRPC.TL_photoPathSize) && (abs = Math.abs(Math.max(photoSize4.w, photoSize4.h) - photoSize3)) < i11) {
+                    photoSize = photoSize4;
+                    i11 = abs;
+                }
+            }
+        }
+        ArrayList<TLRPC.PhotoSize> arrayList2 = this.e.h.thumbs;
+        if (arrayList2 != null) {
+            int i13 = 0;
+            while (true) {
+                if (i13 >= arrayList2.size()) {
+                    break;
+                }
+                if (arrayList2.get(i13) instanceof TLRPC.TL_photoStrippedSize) {
+                    photoSize2 = arrayList2.get(i13);
+                    break;
+                }
+                i13++;
+            }
+        }
+        imageReceiver.setOrientation(0, 0, false);
+        imageReceiver.setImage(ImageLocation.getForDocument(this.e.h), ImageLoader.AUTOPLAY_FILTER, ImageLocation.getForDocument(photoSize, this.e.h), l4, ImageLocation.getForDocument(photoSize2, this.e.h), l4, null, 0L, null, this.e.h, 0);
+    }
+
+    public final boolean b() {
+        ImageReceiver imageReceiver;
+        Bitmap bitmap;
+        if (c() && (bitmap = (imageReceiver = this.a).getBitmap()) != null && !bitmap.isRecycled()) {
+            ImageReceiver imageReceiver2 = this.b;
+            if ((imageReceiver2.getBitmap() == null || imageReceiver.getAnimation() == null) && (bitmap != this.c || imageReceiver2.getBitmap() == null)) {
+                this.c = bitmap;
+                imageReceiver2.setImageBitmap(Utilities.stackBlurBitmapMax(bitmap, false));
+                if (f == null) {
+                    ColorMatrix colorMatrix = new ColorMatrix();
+                    AndroidUtilities.multiplyBrightnessColorMatrix(colorMatrix, 0.9f);
+                    AndroidUtilities.adjustSaturationColorMatrix(colorMatrix, 0.6f);
+                    f = new ColorMatrixColorFilter(colorMatrix);
+                }
+                imageReceiver2.setColorFilter(f);
+            }
+            if (imageReceiver2.getBitmap() != null) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final boolean c() {
+        u uVar = this.e;
+        if (uVar != null) {
+            return uVar.e != null || uVar.b();
+        }
+        return false;
+    }
+
+    public final boolean d() {
+        u uVar = this.e;
+        if (uVar == null || uVar.b || uVar.b()) {
+            return false;
+        }
+        int i10 = this.e.l;
+        return i10 == 90 || i10 == 270;
     }
 }

@@ -1,124 +1,82 @@
 package ci;
 
-import android.content.Context;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.PointF;
-import android.media.AudioDeviceInfo;
-import android.net.Uri;
-import android.os.Build;
-import android.os.Handler;
-import android.os.Looper;
-import android.provider.Settings;
-import j$.util.Objects;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.qr;
+import android.os.SystemClock;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class g7 {
-    public boolean a;
-    public final Object b;
-    public Object c;
-    public final Object d;
-    public final Object e;
-    public final Object f;
-    public final Object g;
-    public Object h;
-    public Object i;
-    public Object j;
+public final /* synthetic */ class g7 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ j7 b;
 
-    public g7(Context context, k2.v vVar, b2.e eVar, a6.m mVar) {
-        Context applicationContext = context.getApplicationContext();
-        this.b = applicationContext;
-        this.c = vVar;
-        this.j = eVar;
-        this.i = mVar;
-        String str = e2.d0.a;
-        Looper myLooper = Looper.myLooper();
-        Handler handler = new Handler(myLooper == null ? Looper.getMainLooper() : myLooper, null);
-        this.d = handler;
-        this.e = Build.VERSION.SDK_INT >= 23 ? new k2.c(this) : null;
-        this.f = new androidx.mediarouter.app.g(this, 5);
-        k2.b bVar = k2.b.c;
-        String str2 = Build.MANUFACTURER;
-        Uri uriFor = (str2.equals("Amazon") || str2.equals("Xiaomi")) ? Settings.Global.getUriFor("external_surround_sound_enabled") : null;
-        this.g = uriFor != null ? new k2.d(this, handler, applicationContext.getContentResolver(), uriFor) : null;
+    public /* synthetic */ g7(j7 j7Var, int i10) {
+        this.a = i10;
+        this.b = j7Var;
     }
 
-    public void a(k2.b bVar) {
-        if (!this.a || bVar.equals((k2.b) this.h)) {
-            return;
-        }
-        this.h = bVar;
-        k2.g0 g0Var = (k2.g0) ((k2.v) this.c).b;
-        Looper myLooper = Looper.myLooper();
-        boolean z10 = g0Var.i0 == myLooper;
-        StringBuilder sb2 = new StringBuilder("Current looper (");
-        sb2.append(myLooper == null ? "null" : myLooper.getThread().getName());
-        sb2.append(") is not the playback looper (");
-        Looper looper = g0Var.i0;
-        sb2.append(looper != null ? looper.getThread().getName() : "null");
-        sb2.append(")");
-        e2.d.f(sb2.toString(), z10);
-        k2.b bVar2 = g0Var.y;
-        if (bVar2 == null || bVar.equals(bVar2)) {
-            return;
-        }
-        g0Var.y = bVar;
-        k2.n nVar = g0Var.t;
-        if (nVar != null) {
-            nVar.J();
-        }
-    }
-
-    public void b(f7 f7Var) {
-        if (f7Var != null) {
-            this.c = f7Var;
-        }
-        if (f7Var != null) {
-            float f7 = f7Var.d;
-            float f10 = f7Var.c;
-            PointF[] pointFArr = f7Var.b;
-            if (!this.a) {
-                ((org.telegram.ui.Components.c6) this.e).d(f10, true);
-                ((org.telegram.ui.Components.c6) this.f).d(f7, true);
-                for (int i10 = 0; i10 < Math.min(4, pointFArr.length); i10++) {
-                    ((org.telegram.ui.Components.c6[]) this.g)[i10].d(pointFArr[i10].x - f10, true);
-                    ((org.telegram.ui.Components.c6[]) this.h)[i10].d(pointFArr[i10].y - f7, true);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                j7 j7Var = this.b;
+                j7Var.r0 = false;
+                j7Var.z0 = false;
+                j7Var.v0 = SystemClock.elapsedRealtime();
+                j7Var.u0 = true;
+                j7Var.w0 = false;
+                j7Var.J.c(false);
+                j7Var.K.c(false);
+                j7Var.L.c(false);
+                ((gb) j7Var.a).d(true);
+                break;
+            case 1:
+                long currentTimeMillis = System.currentTimeMillis();
+                j7 j7Var2 = this.b;
+                j7Var2.Q = currentTimeMillis;
+                j7Var2.R = 0L;
+                j7Var2.r0 = true;
+                ((gb) j7Var2.a).a.J0.a(0L, true);
+                break;
+            case 2:
+                j7 j7Var3 = this.b;
+                if (!j7Var3.r0 && !j7Var3.b()) {
+                    if (!lc.d(((gb) j7Var3.a).a)) {
+                        j7Var3.w0 = false;
+                        j7Var3.J.c(false);
+                        j7Var3.K.c(false);
+                        j7Var3.L.c(false);
+                        break;
+                    } else {
+                        j7Var3.z0 = true;
+                        j7Var3.A0 = true;
+                        ((gb) j7Var3.a).e(new g7(j7Var3, 4), true);
+                        break;
+                    }
                 }
-            }
+                break;
+            case 3:
+                j7 j7Var4 = this.b;
+                if (!j7Var4.r0 && !j7Var4.b()) {
+                    ob obVar = ((gb) j7Var4.a).a.B0;
+                    if (obVar != null) {
+                        obVar.toggleDual();
+                    }
+                    j7Var4.d(360.0f);
+                    j7Var4.w0 = false;
+                    j7Var4.J.c(false);
+                    j7Var4.K.c(false);
+                    j7Var4.L.c(false);
+                    break;
+                }
+                break;
+            default:
+                long currentTimeMillis2 = System.currentTimeMillis();
+                j7 j7Var5 = this.b;
+                j7Var5.Q = currentTimeMillis2;
+                j7Var5.r0 = true;
+                h7 h7Var = j7Var5.a;
+                j7Var5.R = 0L;
+                ((gb) h7Var).a.J0.a(0L, true);
+                break;
         }
-        this.a = f7Var != null;
-        ((a0) this.b).run();
-    }
-
-    public void c(AudioDeviceInfo audioDeviceInfo) {
-        a6.m mVar = (a6.m) this.i;
-        if (Objects.equals(audioDeviceInfo, mVar == null ? null : (AudioDeviceInfo) mVar.b)) {
-            return;
-        }
-        a6.m mVar2 = audioDeviceInfo != null ? new a6.m(audioDeviceInfo, 29) : null;
-        this.i = mVar2;
-        a(k2.b.c((Context) this.b, (b2.e) this.j, mVar2));
-    }
-
-    public g7(a0 a0Var) {
-        Paint paint = new Paint(1);
-        this.i = paint;
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setColor(-8697);
-        paint.setStrokeWidth(AndroidUtilities.dp(6.0f));
-        paint.setStrokeJoin(Paint.Join.ROUND);
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        paint.setShadowLayer(1.08045274E9f, 0.0f, AndroidUtilities.dp(3.0f), AndroidUtilities.dp(6.0f));
-        this.j = new Path();
-        this.b = a0Var;
-        qr qrVar = qr.g;
-        this.d = new org.telegram.ui.Components.c6(0.0f, a0Var, 0L, 320L, qrVar);
-        this.e = new org.telegram.ui.Components.c6(0.0f, a0Var, 0L, 160L, qrVar);
-        this.f = new org.telegram.ui.Components.c6(0.0f, a0Var, 0L, 160L, qrVar);
-        this.g = new org.telegram.ui.Components.c6[]{new org.telegram.ui.Components.c6(0.0f, a0Var, 0L, 160L, qrVar), new org.telegram.ui.Components.c6(0.0f, a0Var, 0L, 160L, qrVar), new org.telegram.ui.Components.c6(0.0f, a0Var, 0L, 160L, qrVar), new org.telegram.ui.Components.c6(0.0f, a0Var, 0L, 160L, qrVar)};
-        this.h = new org.telegram.ui.Components.c6[]{new org.telegram.ui.Components.c6(0.0f, a0Var, 0L, 160L, qrVar), new org.telegram.ui.Components.c6(0.0f, a0Var, 0L, 160L, qrVar), new org.telegram.ui.Components.c6(0.0f, a0Var, 0L, 160L, qrVar), new org.telegram.ui.Components.c6(0.0f, a0Var, 0L, 160L, qrVar)};
     }
 }

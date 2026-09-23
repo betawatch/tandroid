@@ -1,44 +1,115 @@
 package ci;
 
-import android.content.Context;
-import android.view.View;
-import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_update;
+import org.telegram.ui.Components.ae0;
+import org.telegram.ui.WallpapersListActivity;
+import org.telegram.ui.gp;
+import org.telegram.ui.jn;
+import org.telegram.ui.k70;
+import org.telegram.ui.ko;
+import org.telegram.ui.qo0;
+import org.telegram.ui.so;
+import org.telegram.ui.um0;
+import org.telegram.ui.uq0;
+import org.telegram.ui.vl0;
+import org.telegram.ui.zg1;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class t3 extends View {
-    public int a;
-    public final /* synthetic */ x3 b;
+public final /* synthetic */ class t3 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ Object c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t3(x3 x3Var, Context context) {
-        super(context);
-        this.b = x3Var;
+    public /* synthetic */ t3(int i10, Object obj, boolean z10) {
+        this.a = i10;
+        this.c = obj;
+        this.b = z10;
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int i12;
-        x3 x3Var = this.b;
-        g3 g3Var = x3Var.e;
-        ArrayList arrayList = x3Var.b0;
-        int size = View.MeasureSpec.getSize(i10);
-        int i13 = this.a;
-        if (i13 != -1) {
-            setMeasuredDimension(size, i13);
-            return;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        int i10 = this.a;
+        int i11 = 3;
+        boolean z10 = this.b;
+        Object obj = this.c;
+        switch (i10) {
+            case 0:
+                AndroidUtilities.runOnUIThread(new y0((v3) obj, tLObject, z10, 1));
+                break;
+            case 1:
+                ((MessagesController) obj).lambda$updateTimerProc$156(z10, tLObject, tL_error);
+                break;
+            case 2:
+                ((VoIPService) obj).lambda$acknowledgeCall$13(z10, tLObject, tL_error);
+                break;
+            case 3:
+                org.telegram.ui.k9 k9Var = (org.telegram.ui.k9) obj;
+                if (tLObject != null) {
+                    TLRPC.TL_messages_affectedFoundMessages tL_messages_affectedFoundMessages = (TLRPC.TL_messages_affectedFoundMessages) tLObject;
+                    TL_update.TL_updateDeleteMessages tL_updateDeleteMessages = new TL_update.TL_updateDeleteMessages();
+                    tL_updateDeleteMessages.messages = tL_messages_affectedFoundMessages.messages;
+                    tL_updateDeleteMessages.pts = tL_messages_affectedFoundMessages.pts;
+                    tL_updateDeleteMessages.pts_count = tL_messages_affectedFoundMessages.pts_count;
+                    TLRPC.TL_updates tL_updates = new TLRPC.TL_updates();
+                    tL_updates.updates.add(tL_updateDeleteMessages);
+                    k9Var.getMessagesController().processUpdates(tL_updates, false);
+                    if (tL_messages_affectedFoundMessages.offset != 0) {
+                        TLRPC.TL_messages_deletePhoneCallHistory tL_messages_deletePhoneCallHistory = new TLRPC.TL_messages_deletePhoneCallHistory();
+                        tL_messages_deletePhoneCallHistory.revoke = z10;
+                        k9Var.getConnectionsManager().sendRequest(tL_messages_deletePhoneCallHistory, new t3(i11, k9Var, z10));
+                        break;
+                    }
+                }
+                break;
+            case 4:
+                AndroidUtilities.runOnUIThread(new y0((jn) obj, tLObject, z10, 13));
+                break;
+            case 5:
+                so soVar = (so) obj;
+                if (!(tLObject instanceof TLRPC.Updates)) {
+                    AndroidUtilities.runOnUIThread(new ko(soVar, i11));
+                    break;
+                } else {
+                    soVar.getMessagesController().processUpdates((TLRPC.Updates) tLObject, false);
+                    AndroidUtilities.runOnUIThread(new bi.f(20, soVar, z10));
+                    break;
+                }
+            case 6:
+                AndroidUtilities.runOnUIThread(new ai.s4((gp) obj, tL_error, tLObject, this.b, 13));
+                break;
+            case 7:
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.p((ae0) obj, tL_error, tLObject, z10));
+                break;
+            case 8:
+                AndroidUtilities.runOnUIThread(new ai.s4((k70) obj, tL_error, tLObject, this.b, 22));
+                break;
+            case 9:
+                AndroidUtilities.runOnUIThread(new ai.s4((um0) obj, tL_error, tLObject, this.b, 23));
+                break;
+            case 10:
+                AndroidUtilities.runOnUIThread(new ai.s4((qo0) obj, tL_error, tLObject, this.b, 26));
+                break;
+            case 11:
+                uq0 uq0Var = (uq0) obj;
+                if (tLObject != null) {
+                    AndroidUtilities.runOnUIThread(new vl0(uq0Var, tLObject, z10, 2));
+                    break;
+                }
+                break;
+            case 12:
+                AndroidUtilities.runOnUIThread(new ai.s4((zg1) obj, tL_error, tLObject, this.b, 28));
+                break;
+            default:
+                int[][] iArr = WallpapersListActivity.k0;
+                AndroidUtilities.runOnUIThread(new vl0((WallpapersListActivity) obj, tLObject, z10, 9));
+                break;
         }
-        if (x3Var.e0 == x3.j0) {
-            i12 = arrayList.size();
-        } else {
-            ArrayList arrayList2 = x3Var.f0;
-            if (arrayList2 != null) {
-                i12 = (x3Var.d0 ? arrayList.size() : 0) + arrayList2.size() + (x3Var.c0 ? 1 : 0);
-            } else {
-                i12 = 0;
-            }
-        }
-        setMeasuredDimension(size, Math.max(0, (AndroidUtilities.displaySize.y - AndroidUtilities.dp(62.0f)) - (((int) (((int) (size / g3Var.J)) * x3Var.O)) * ((int) Math.ceil(i12 / g3Var.J)))));
     }
 }

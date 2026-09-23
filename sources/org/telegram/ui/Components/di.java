@@ -1,68 +1,108 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.text.Editable;
 import android.text.TextUtils;
-import android.view.Menu;
-import android.view.MotionEvent;
-import org.telegram.messenger.AndroidUtilities;
+import android.text.TextWatcher;
+import android.text.style.ImageSpan;
+import org.telegram.messenger.Emoji;
+import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class di extends ju {
-    public final /* synthetic */ vi V;
+public final class di implements TextWatcher {
+    public boolean a;
+    public boolean b;
+    public final /* synthetic */ wi c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public di(vi viVar, Context context, li liVar, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, liVar, null, 1, true, e6Var);
-        this.V = viVar;
+    public di(wi wiVar) {
+        this.c = wiVar;
     }
 
-    @Override // org.telegram.ui.Components.ju
-    public final void f() {
-        super.f();
-        kz emojiView = getEmojiView();
-        if (emojiView != null) {
-            emojiView.w0 = false;
-            emojiView.w2 = false;
-            emojiView.setShouldDrawBackground(false);
-            emojiView.setBottomInset(AndroidUtilities.navigationBarHeight);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.ju
-    public final void i(Menu menu) {
-        org.telegram.ui.ActionBar.n2 n2Var = this.V.f0;
-        if (n2Var instanceof org.telegram.ui.bo) {
-            org.telegram.ui.bo.k8(menu, ((org.telegram.ui.bo) n2Var).h, true, true, true, true);
-        }
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        vi viVar = this.V;
-        di diVar = viVar.P0;
-        if (!viVar.u1) {
-            if (motionEvent.getX() <= diVar.getEditText().getLeft() || motionEvent.getX() >= diVar.getEditText().getRight() || motionEvent.getY() <= diVar.getEditText().getTop() || motionEvent.getY() >= diVar.getEditText().getBottom()) {
-                viVar.t1(diVar.getEditText(), false);
-            } else {
-                viVar.t1(diVar.getEditText(), true);
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        boolean z10;
+        int i10;
+        wi wiVar = this.c;
+        p6 p6Var = wiVar.v;
+        bi biVar = wiVar.E0;
+        p6 p6Var2 = wiVar.s;
+        if (this.b != TextUtils.isEmpty(editable)) {
+            oi oiVar = wiVar.y0;
+            if (oiVar != null) {
+                oiVar.A(oiVar.getSelectedItemsCount());
             }
+            this.b = !this.b;
         }
-        return super.onInterceptTouchEvent(motionEvent);
+        boolean z11 = false;
+        if (this.a) {
+            for (ImageSpan imageSpan : (ImageSpan[]) editable.getSpans(0, editable.length(), ImageSpan.class)) {
+                editable.removeSpan(imageSpan);
+            }
+            Emoji.replaceEmoji(editable, biVar.getEditText().getPaint().getFontMetricsInt(), false);
+            this.a = false;
+        }
+        int codePointCount = Character.codePointCount(editable, 0, editable.length());
+        wiVar.L = codePointCount;
+        wiVar.e.a(codePointCount > 0, true);
+        int i11 = wiVar.K;
+        if (i11 <= 0 || (i10 = i11 - wiVar.L) > 100) {
+            p6Var2.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new r8(this, 4));
+            p6Var.setAlpha(0.0f);
+            z10 = true;
+        } else {
+            if (i10 < -9999) {
+                i10 = -9999;
+            }
+            long j3 = i10;
+            p6Var2.c(LocaleController.formatNumber(j3, ','), p6Var2.getVisibility() == 0, true);
+            if (p6Var2.getVisibility() != 0) {
+                p6Var2.setVisibility(0);
+                p6Var2.setAlpha(0.0f);
+                p6Var2.setScaleX(0.5f);
+                p6Var2.setScaleY(0.5f);
+            }
+            p6Var2.animate().setListener(null).cancel();
+            p6Var2.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(100L).start();
+            if (i10 < 0) {
+                p6Var2.setTextColor(wiVar.getThemedColor(org.telegram.ui.ActionBar.h6.p7));
+                z10 = false;
+            } else {
+                p6Var2.setTextColor(wiVar.getThemedColor(org.telegram.ui.ActionBar.h6.y6));
+                z10 = true;
+            }
+            p6Var.c(LocaleController.formatNumber(j3, ','), false, true);
+            p6Var.setAlpha(1.0f);
+        }
+        if (wiVar.U0 != z10) {
+            wiVar.U0 = z10;
+            wiVar.I0.invalidate();
+        }
+        if (!wiVar.c0) {
+            if (biVar.getEditText().getLineCount() > 2 && !TextUtils.isEmpty(biVar.getText().toString().trim())) {
+                z11 = true;
+            }
+            wiVar.M1(z11);
+        }
+        wiVar.d1(true);
     }
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        this.V.b2();
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        if (i12 - i11 >= 1) {
+            this.a = true;
+        }
+        wi wiVar = this.c;
+        if (wiVar.B2 == null) {
+            wi.Q(wiVar);
+        }
+        if (wiVar.B2.getAdapter() != null) {
+            wiVar.B2.setReversed(false);
+            wiVar.B2.getAdapter().U(charSequence, wiVar.E0.getEditText().getSelectionStart(), null, false, false);
+            wiVar.U1();
+        }
     }
 
-    @Override // org.telegram.ui.Components.ju
-    public final void q(int i10, int i11) {
-        vi viVar = this.V;
-        viVar.b2();
-        if (viVar.c0) {
-            viVar.M1(i11 > 2 && !TextUtils.isEmpty(getEditText().getText().toString().trim()));
-        }
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

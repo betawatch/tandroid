@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class tp0 extends gq0 {
     public final /* synthetic */ hq0 n;
@@ -22,24 +22,24 @@ public final class tp0 extends gq0 {
         this.h = new RectF();
         View view = new View(context);
         int dp = AndroidUtilities.dp(18.0f);
-        int i11 = org.telegram.ui.ActionBar.i6.O5;
+        int i11 = org.telegram.ui.ActionBar.h6.O5;
         int i12 = hq0.a1;
-        view.setBackgroundDrawable(org.telegram.ui.ActionBar.i6.b0(dp, hq0Var.getThemedColor(i11)));
+        view.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.b0(dp, hq0Var.getThemedColor(i11)));
         addView(view, w7.x5.d(-1, 36.0f, 51, 14.0f, 0.0f, 14.0f, 0.0f));
-        ci.eb ebVar = new ci.eb(this, context, 23);
-        this.c = ebVar;
-        addView(ebVar, w7.x5.d(-1, 36.0f, 51, 14.0f, 0.0f, 14.0f, 0.0f));
-        org.telegram.ui.ActionBar.j5 j5Var = new org.telegram.ui.ActionBar.j5(context);
-        this.b = j5Var;
-        int i13 = org.telegram.ui.ActionBar.i6.ng;
-        j5Var.setTextColor(hq0Var.getThemedColor(i13));
-        j5Var.setTextSize(13);
-        j5Var.setLeftDrawable(R.drawable.msg_tabs_mic1);
+        ci.bb bbVar = new ci.bb(this, context, 23);
+        this.c = bbVar;
+        addView(bbVar, w7.x5.d(-1, 36.0f, 51, 14.0f, 0.0f, 14.0f, 0.0f));
+        org.telegram.ui.ActionBar.i5 i5Var = new org.telegram.ui.ActionBar.i5(context);
+        this.b = i5Var;
+        int i13 = org.telegram.ui.ActionBar.h6.ng;
+        i5Var.setTextColor(hq0Var.getThemedColor(i13));
+        i5Var.setTextSize(13);
+        i5Var.setLeftDrawable(R.drawable.msg_tabs_mic1);
         final int i14 = 0;
-        j5Var.l(LocaleController.getString(R.string.VoipGroupInviteCanSpeak), false);
-        j5Var.setGravity(17);
-        addView(j5Var, w7.x5.d(-1, -1.0f, 51, 14.0f, 0.0f, 0.0f, 0.0f));
-        j5Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.fq0
+        i5Var.l(LocaleController.getString(R.string.VoipGroupInviteCanSpeak), false);
+        i5Var.setGravity(17);
+        addView(i5Var, w7.x5.d(-1, -1.0f, 51, 14.0f, 0.0f, 0.0f, 0.0f));
+        i5Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.fq0
             public final /* synthetic */ tp0 b;
 
             {
@@ -58,15 +58,15 @@ public final class tp0 extends gq0 {
                 }
             }
         });
-        org.telegram.ui.ActionBar.j5 j5Var2 = new org.telegram.ui.ActionBar.j5(context);
-        this.a = j5Var2;
-        j5Var2.setTextColor(hq0Var.getThemedColor(i13));
-        j5Var2.setTextSize(13);
-        j5Var2.setLeftDrawable(R.drawable.msg_tabs_mic2);
-        j5Var2.l(LocaleController.getString(R.string.VoipGroupInviteListenOnly), false);
-        j5Var2.setGravity(17);
-        addView(j5Var2, w7.x5.d(-1, -1.0f, 51, 0.0f, 0.0f, 14.0f, 0.0f));
-        j5Var2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.fq0
+        org.telegram.ui.ActionBar.i5 i5Var2 = new org.telegram.ui.ActionBar.i5(context);
+        this.a = i5Var2;
+        i5Var2.setTextColor(hq0Var.getThemedColor(i13));
+        i5Var2.setTextSize(13);
+        i5Var2.setLeftDrawable(R.drawable.msg_tabs_mic2);
+        i5Var2.l(LocaleController.getString(R.string.VoipGroupInviteListenOnly), false);
+        i5Var2.setGravity(17);
+        addView(i5Var2, w7.x5.d(-1, -1.0f, 51, 0.0f, 0.0f, 14.0f, 0.0f));
+        i5Var2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.fq0
             public final /* synthetic */ tp0 b;
 
             {

@@ -9,9 +9,9 @@ import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class m1 extends View {
     public final /* synthetic */ n1 a;
@@ -46,7 +46,7 @@ public final class m1 extends View {
         ImageReceiver imageReceiver2 = n1Var.c;
         ImageReceiver imageReceiver3 = n1Var.d;
         if (n1Var.s) {
-            imageReceiver2.setImage(ImageLocation.getForDocument(n1Var.r), null, DocumentObject.getSvgThumb(n1Var.r, i6.a7, 0.5f), "webp", null, 1);
+            imageReceiver2.setImage(ImageLocation.getForDocument(n1Var.r), null, DocumentObject.getSvgThumb(n1Var.r, h6.a7, 0.5f), "webp", null, 1);
             if (MessageObject.isPremiumSticker(n1Var.r)) {
                 imageReceiver = imageReceiver3;
                 imageReceiver.setImage(ImageLocation.getForDocument(MessageObject.getPremiumStickerAnimation(n1Var.r), n1Var.r), "140_140", (ImageLocation) null, (String) null, "tgs", (Object) null, 1);

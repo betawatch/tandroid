@@ -4,17 +4,17 @@ import android.content.Context;
 import java.util.ArrayList;
 import org.telegram.messenger.DialogObject;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.r01;
+import org.telegram.ui.j01;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class e6 implements n2 {
     public final /* synthetic */ org.telegram.ui.ActionBar.n2 a;
     public final /* synthetic */ Context b;
-    public final /* synthetic */ r01 c;
+    public final /* synthetic */ j01 c;
 
-    public e6(r01 r01Var, org.telegram.ui.ActionBar.n2 n2Var, Context context) {
-        this.c = r01Var;
+    public e6(j01 j01Var, org.telegram.ui.ActionBar.n2 n2Var, Context context) {
+        this.c = j01Var;
         this.a = n2Var;
         this.b = context;
     }

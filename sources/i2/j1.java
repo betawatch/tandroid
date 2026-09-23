@@ -1,38 +1,7 @@
 package i2;
 
-import android.os.Looper;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final class j1 {
-    public final i1 a;
-    public final h1 b;
-    public int c;
-    public Object d;
-    public final Looper e;
-    public boolean f;
-
-    public j1(h1 h1Var, i1 i1Var, b2.k1 k1Var, int i10, Looper looper) {
-        this.b = h1Var;
-        this.a = i1Var;
-        this.e = looper;
-    }
-
-    public final synchronized void a(boolean z10) {
-        synchronized (this) {
-            notifyAll();
-        }
-    }
-
-    public final void b() {
-        e2.d.g(!this.f);
-        this.f = true;
-        o0 o0Var = (o0) this.b;
-        if (!o0Var.X && o0Var.s.getThread().isAlive()) {
-            o0Var.n.a(14, this).b();
-        } else {
-            e2.a.n("ExoPlayerImplInternal", "Ignoring messages sent after release.");
-            a(false);
-        }
-    }
+public interface j1 {
+    void c(int i10, Object obj);
 }

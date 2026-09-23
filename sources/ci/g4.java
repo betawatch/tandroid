@@ -1,10 +1,11 @@
 package ci;
 
 import android.view.View;
+import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class g4 implements View.OnLayoutChangeListener {
+public final /* synthetic */ class g4 implements ViewTreeObserver.OnGlobalLayoutListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -13,16 +14,19 @@ public final /* synthetic */ class g4 implements View.OnLayoutChangeListener {
         this.b = obj;
     }
 
-    @Override // android.view.View.OnLayoutChangeListener
-    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
+    @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
+    public final void onGlobalLayout() {
         switch (this.a) {
             case 0:
-                ((j4) this.b).d();
+                ((i4) this.b).d();
                 break;
             default:
-                kg.c cVar = (kg.c) this.b;
-                cVar.c.setPivotX(r2.getMeasuredWidth() * 0.7f);
-                cVar.b.setPivotX(r1.getMeasuredWidth() * 0.7f);
+                pf.e eVar = (pf.e) this.b;
+                View view = eVar.j;
+                if (view != null) {
+                    eVar.e(view);
+                    break;
+                }
                 break;
         }
     }

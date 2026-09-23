@@ -10,7 +10,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class h implements TextWatcher {
     public int a;
@@ -26,7 +26,7 @@ public final class h implements TextWatcher {
         String str;
         m mVar = this.c;
         e eVar = mVar.c0;
-        org.telegram.ui.Components.n6 n6Var = mVar.v;
+        org.telegram.ui.Components.p6 p6Var = mVar.v;
         mVar.w = Character.codePointCount(editable, 0, editable.length());
         int captionLimit = mVar.getCaptionLimit();
         if (mVar.w + 25 > captionLimit) {
@@ -34,13 +34,13 @@ public final class h implements TextWatcher {
         } else {
             str = null;
         }
-        n6Var.a();
-        n6Var.setText(str);
-        n6Var.setTextColor(mVar.w >= captionLimit ? -1280137 : -1);
+        p6Var.a();
+        p6Var.setText(str);
+        p6Var.setTextColor(mVar.w >= captionLimit ? -1280137 : -1);
         if (mVar.w > captionLimit && !UserConfig.getInstance(mVar.U).isPremium() && mVar.w < mVar.getCaptionPremiumLimit() && mVar.w > this.a && (mVar.e() || MessagesController.getInstance(mVar.U).premiumFeaturesBlocked())) {
             int i10 = -mVar.N;
             mVar.N = i10;
-            AndroidUtilities.shakeViewSpring(n6Var, i10);
+            AndroidUtilities.shakeViewSpring(p6Var, i10);
             BotWebViewVibrationEffect.APP_ERROR.vibrate();
         }
         int i11 = mVar.w;
@@ -78,7 +78,7 @@ public final class h implements TextWatcher {
         if (mVar.M == null) {
             i iVar = new i(mVar, mVar.getContext(), mVar.x, LaunchActivity.R(), new ai.d(), 0);
             mVar.M = iVar;
-            mVar.T = new org.telegram.ui.Components.la(mVar.O, iVar, 0, false);
+            mVar.T = new org.telegram.ui.Components.na(mVar.O, iVar, 0, false);
             mVar.M.p(new a6.i(mVar, 11));
             ah.c cVar = mVar.h0;
             if (cVar != null) {

@@ -9,27 +9,27 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.j5;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.i5;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Cells.g5;
-import org.telegram.ui.Components.f9;
-import org.telegram.ui.Components.kl0;
-import org.telegram.ui.Components.vk0;
-import org.telegram.ui.wq0;
+import org.telegram.ui.Components.h9;
+import org.telegram.ui.Components.ll0;
+import org.telegram.ui.Components.wk0;
+import org.telegram.ui.qq0;
 import rg.i1;
 import s4.c1;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class g extends kl0 {
+public final class g extends ll0 {
     public final /* synthetic */ n c;
 
     public g(n nVar) {
         this.c = nVar;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.ll0
     public final boolean D(c1 c1Var) {
         return c1Var.f == 0;
     }
@@ -97,30 +97,30 @@ public final class g extends kl0 {
         LongSparseArray longSparseArray = nVar.d;
         TLRPC.TL_chatInviteImporter tL_chatInviteImporter = (TLRPC.TL_chatInviteImporter) arrayList.get(i12);
         boolean z10 = i12 != arrayList.size() - 1 || nVar.x;
-        j5 j5Var = g5Var.d;
+        i5 i5Var = g5Var.d;
         g5Var.e = tL_chatInviteImporter;
         g5Var.f = z10;
         g5Var.setWillNotDraw(!z10);
         TLRPC.User user = (TLRPC.User) longSparseArray.get(tL_chatInviteImporter.user_id);
-        f9 f9Var = g5Var.a;
-        f9Var.r(user);
-        g5Var.b.e(user, f9Var);
+        h9 h9Var = g5Var.a;
+        h9Var.r(user);
+        g5Var.b.e(user, h9Var);
         g5Var.c.l(UserObject.getUserName(user), false);
         String formatDateAudio = LocaleController.formatDateAudio(tL_chatInviteImporter.date, false);
         if (tL_chatInviteImporter.via_chatlist) {
-            j5Var.l(LocaleController.getString(R.string.JoinedViaFolder), false);
+            i5Var.l(LocaleController.getString(R.string.JoinedViaFolder), false);
             return;
         }
         long j3 = tL_chatInviteImporter.approved_by;
         if (j3 == 0) {
-            j5Var.l(LocaleController.formatString("RequestedToJoinAt", R.string.RequestedToJoinAt, formatDateAudio), false);
+            i5Var.l(LocaleController.formatString("RequestedToJoinAt", R.string.RequestedToJoinAt, formatDateAudio), false);
             return;
         }
         TLRPC.User user2 = (TLRPC.User) longSparseArray.get(j3);
         if (user2 != null) {
-            j5Var.l(LocaleController.formatString("AddedBy", R.string.AddedBy, UserObject.getFirstName(user2), formatDateAudio), false);
+            i5Var.l(LocaleController.formatString("AddedBy", R.string.AddedBy, UserObject.getFirstName(user2), formatDateAudio), false);
         } else {
-            j5Var.l("", false);
+            i5Var.l("", false);
         }
     }
 
@@ -141,18 +141,18 @@ public final class g extends kl0 {
             view = new g5(viewGroup.getContext(), nVar, z10);
         } else {
             n2 n2Var = nVar.g;
-            wq0 wq0Var = new wq0(n2Var.getParentActivity(), 1, n2Var.getResourceProvider());
+            qq0 qq0Var = new qq0(n2Var.getParentActivity(), 1, n2Var.getResourceProvider());
             if (nVar.B) {
-                wq0Var.setBackgroundColor(i6.v0(i6.d6, n2Var.getResourceProvider()));
+                qq0Var.setBackgroundColor(h6.v0(h6.d6, n2Var.getResourceProvider()));
             }
-            wq0Var.f(i6.d6, i6.a7, -1);
-            wq0Var.setViewType(15);
-            wq0Var.setMemberRequestButton(z10);
-            wq0Var.setIsSingleCell(true);
-            wq0Var.setItemsCount(1);
-            wq0Var.setTag(-33024);
-            view = wq0Var;
+            qq0Var.f(h6.d6, h6.a7, -1);
+            qq0Var.setViewType(15);
+            qq0Var.setMemberRequestButton(z10);
+            qq0Var.setIsSingleCell(true);
+            qq0Var.setItemsCount(1);
+            qq0Var.setTag(-33024);
+            view = qq0Var;
         }
-        return new vk0(view);
+        return new wk0(view);
     }
 }

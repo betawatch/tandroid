@@ -5,7 +5,7 @@ import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class xo0 extends lw0 {
     public boolean a = false;
@@ -48,7 +48,7 @@ public final class xo0 extends lw0 {
     public final void draw(Canvas canvas) {
         Paint paint = this.e;
         if (paint == null) {
-            paint = org.telegram.ui.ActionBar.i6.d2;
+            paint = org.telegram.ui.ActionBar.h6.d2;
         }
         Paint paint2 = paint;
         int i10 = 0;

@@ -1,181 +1,57 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.graphics.Rect;
+import android.view.View;
+import android.widget.ScrollView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class tx implements k70 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.b2 a;
-    public final /* synthetic */ uy b;
+public final class tx extends ScrollView {
+    public final /* synthetic */ int a;
 
-    public tx(uy uyVar, org.telegram.ui.ActionBar.b2 b2Var) {
-        this.b = uyVar;
-        this.a = b2Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ tx(Context context, int i10) {
+        super(context);
+        this.a = i10;
     }
 
-    @Override // org.telegram.ui.k70
-    public final void a(l70 l70Var, final long j3) {
-        final int i10 = 0;
-        final int i11 = 1;
-        final org.telegram.ui.ActionBar.n2[] n2VarArr = {l70Var, null};
-        final int i12 = 0;
-        Utilities.Callback callback = new Utilities.Callback(this) { // from class: org.telegram.ui.rx
-            public final /* synthetic */ tx b;
+    @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec((int) Math.min(View.MeasureSpec.getSize(i11), Math.min(AndroidUtilities.displaySize.y * 0.35f, AndroidUtilities.dp(400.0f))), View.MeasureSpec.getMode(i11)));
+                break;
+            case 1:
+            default:
+                super.onMeasure(i10, i11);
+                break;
+            case 2:
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(260.0f), View.MeasureSpec.getSize(i11)), View.MeasureSpec.getMode(i11)));
+                break;
+        }
+    }
 
-            {
-                this.b = this;
-            }
+    @Override // android.widget.ScrollView, android.view.ViewGroup
+    public boolean onRequestFocusInDescendants(int i10, Rect rect) {
+        switch (this.a) {
+            case 1:
+                return false;
+            default:
+                return super.onRequestFocusInDescendants(i10, rect);
+        }
+    }
 
-            @Override // org.telegram.messenger.Utilities.Callback
-            public final void run(Object obj) {
-                Runnable runnable = (Runnable) obj;
-                switch (i12) {
-                    case 0:
-                        uy uyVar = this.b.b;
-                        Boolean bool = uyVar.G.has_username;
-                        if (bool != null && bool.booleanValue()) {
-                            Bundle bundle = new Bundle();
-                            bundle.putInt("step", 1);
-                            bundle.putLong("chat_id", j3);
-                            bundle.putBoolean("forcePublic", uyVar.G.has_username.booleanValue());
-                            ld ldVar = new ld(bundle);
-                            ldVar.t0 = new b5(runnable, 12);
-                            uyVar.presentFragment(ldVar);
-                            n2VarArr[1] = ldVar;
-                            break;
-                        } else {
-                            runnable.run();
-                            break;
-                        }
-                    default:
-                        tx txVar = this.b;
-                        uy uyVar2 = txVar.b;
-                        uyVar2.Q4(uyVar2.getMessagesController().getChat(Long.valueOf(j3)), runnable, new kw(5, txVar, n2VarArr));
-                        break;
-                }
-            }
-        };
-        final int i13 = 1;
-        Utilities.Callback callback2 = new Utilities.Callback(this) { // from class: org.telegram.ui.rx
-            public final /* synthetic */ tx b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // org.telegram.messenger.Utilities.Callback
-            public final void run(Object obj) {
-                Runnable runnable = (Runnable) obj;
-                switch (i13) {
-                    case 0:
-                        uy uyVar = this.b.b;
-                        Boolean bool = uyVar.G.has_username;
-                        if (bool != null && bool.booleanValue()) {
-                            Bundle bundle = new Bundle();
-                            bundle.putInt("step", 1);
-                            bundle.putLong("chat_id", j3);
-                            bundle.putBoolean("forcePublic", uyVar.G.has_username.booleanValue());
-                            ld ldVar = new ld(bundle);
-                            ldVar.t0 = new b5(runnable, 12);
-                            uyVar.presentFragment(ldVar);
-                            n2VarArr[1] = ldVar;
-                            break;
-                        } else {
-                            runnable.run();
-                            break;
-                        }
-                    default:
-                        tx txVar = this.b;
-                        uy uyVar2 = txVar.b;
-                        uyVar2.Q4(uyVar2.getMessagesController().getChat(Long.valueOf(j3)), runnable, new kw(5, txVar, n2VarArr));
-                        break;
-                }
-            }
-        };
-        org.telegram.ui.ActionBar.b2 b2Var = this.a;
-        Utilities.doCallbacks(callback, callback2, new ku(this, b2Var, j3, i13), new Utilities.Callback(this) { // from class: org.telegram.ui.sx
-            public final /* synthetic */ tx b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // org.telegram.messenger.Utilities.Callback
-            public final void run(Object obj) {
-                switch (i10) {
-                    case 0:
-                        Runnable runnable = (Runnable) obj;
-                        uy uyVar = this.b.b;
-                        if (uyVar.G.bot_admin_rights == null) {
-                            runnable.run();
-                            break;
-                        } else {
-                            TLRPC.User user = uyVar.getMessagesController().getUser(Long.valueOf(uyVar.H));
-                            MessagesController messagesController = uyVar.getMessagesController();
-                            TLRPC.RequestPeerType requestPeerType = uyVar.G;
-                            TLRPC.TL_chatAdminRights tL_chatAdminRights = requestPeerType.bot_admin_rights;
-                            Boolean bool = requestPeerType.bot_participant;
-                            messagesController.setUserAdminRole(j3, user, tL_chatAdminRights, null, false, uyVar, bool == null || !bool.booleanValue(), true, null, runnable, new lf(6, runnable));
-                            break;
-                        }
-                        break;
-                    default:
-                        Runnable runnable2 = (Runnable) obj;
-                        uy uyVar2 = this.b.b;
-                        if (uyVar2.G.user_admin_rights == null) {
-                            runnable2.run();
-                            break;
-                        } else {
-                            MessagesController messagesController2 = uyVar2.getMessagesController();
-                            long j10 = j3;
-                            uyVar2.getMessagesController().setUserAdminRole(j10, uyVar2.getAccountInstance().getUserConfig().getCurrentUser(), pq.s0(messagesController2.getChat(Long.valueOf(j10)).admin_rights, uyVar2.G.user_admin_rights), null, false, uyVar2, false, true, null, runnable2, new lf(7, runnable2));
-                            break;
-                        }
-                }
-            }
-        }, new Utilities.Callback(this) { // from class: org.telegram.ui.sx
-            public final /* synthetic */ tx b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // org.telegram.messenger.Utilities.Callback
-            public final void run(Object obj) {
-                switch (i11) {
-                    case 0:
-                        Runnable runnable = (Runnable) obj;
-                        uy uyVar = this.b.b;
-                        if (uyVar.G.bot_admin_rights == null) {
-                            runnable.run();
-                            break;
-                        } else {
-                            TLRPC.User user = uyVar.getMessagesController().getUser(Long.valueOf(uyVar.H));
-                            MessagesController messagesController = uyVar.getMessagesController();
-                            TLRPC.RequestPeerType requestPeerType = uyVar.G;
-                            TLRPC.TL_chatAdminRights tL_chatAdminRights = requestPeerType.bot_admin_rights;
-                            Boolean bool = requestPeerType.bot_participant;
-                            messagesController.setUserAdminRole(j3, user, tL_chatAdminRights, null, false, uyVar, bool == null || !bool.booleanValue(), true, null, runnable, new lf(6, runnable));
-                            break;
-                        }
-                        break;
-                    default:
-                        Runnable runnable2 = (Runnable) obj;
-                        uy uyVar2 = this.b.b;
-                        if (uyVar2.G.user_admin_rights == null) {
-                            runnable2.run();
-                            break;
-                        } else {
-                            MessagesController messagesController2 = uyVar2.getMessagesController();
-                            long j10 = j3;
-                            uyVar2.getMessagesController().setUserAdminRole(j10, uyVar2.getAccountInstance().getUserConfig().getCurrentUser(), pq.s0(messagesController2.getChat(Long.valueOf(j10)).admin_rights, uyVar2.G.user_admin_rights), null, false, uyVar2, false, true, null, runnable2, new lf(7, runnable2));
-                            break;
-                        }
-                }
-            }
-        }, new org.telegram.messenger.f2(this, b2Var, j3, n2VarArr, 3));
+    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
+    public boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z10) {
+        switch (this.a) {
+            case 1:
+                rect.offset(view.getLeft() - view.getScrollX(), view.getTop() - view.getScrollY());
+                rect.top = AndroidUtilities.dp(20.0f) + rect.top;
+                rect.bottom = AndroidUtilities.dp(50.0f) + rect.bottom;
+                break;
+        }
+        return super.requestChildRectangleOnScreen(view, rect, z10);
     }
 }

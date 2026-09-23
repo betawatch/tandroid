@@ -11,7 +11,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class ob implements org.telegram.ui.Cells.t0 {
     public final /* synthetic */ qb a;
@@ -38,7 +38,7 @@ public final class ob implements org.telegram.ui.Cells.t0 {
                 ub.A0(ubVar, (TLRPC.TL_messages_exportedChatInvite) obj, ubVar.z0);
                 return;
             } else {
-                org.telegram.messenger.y0.o(R.string.LinkHashExpired, org.telegram.ui.Components.vc.a0(ubVar), R.raw.linkbroken, 36);
+                org.telegram.messenger.z0.o(R.string.LinkHashExpired, org.telegram.ui.Components.xc.a0(ubVar), R.raw.linkbroken, 36);
                 return;
             }
         }
@@ -113,7 +113,7 @@ public final class ob implements org.telegram.ui.Cells.t0 {
             bundle.putLong("chat_id", -j3);
             i11 = ((org.telegram.ui.ActionBar.n2) ubVar).currentAccount;
             if (MessagesController.getInstance(i11).checkCanOpenChat(bundle, ubVar)) {
-                ubVar.presentFragment(new bo(bundle), true);
+                ubVar.presentFragment(new xn(bundle), true);
                 return;
             }
             return;

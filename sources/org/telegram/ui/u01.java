@@ -1,21 +1,39 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class u01 extends org.telegram.ui.Cells.c9 {
-    public final /* synthetic */ a11 r;
+public final class u01 implements z4.e {
+    public int a;
+    public final /* synthetic */ v01 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u01(a11 a11Var, Context context, org.telegram.ui.ActionBar.e6 e6Var, boolean z10, boolean z11) {
-        super(18, context, e6Var, z10, z11);
-        this.r = a11Var;
+    public u01(v01 v01Var) {
+        this.b = v01Var;
     }
 
-    @Override // org.telegram.ui.Cells.c9
-    public final int a(int i10) {
-        this.r.e.getClass();
-        return i10;
+    @Override // z4.e
+    public final void a(int i10) {
+        v01 v01Var = this.b;
+        ProfileActivity profileActivity = v01Var.n;
+        int k10 = profileActivity.n0.D0.k(i10);
+        v01Var.a(this.a != k10);
+        this.a = k10;
+        if (profileActivity.q0 == null) {
+            return;
+        }
+        if (profileActivity.T0.t()) {
+            AndroidUtilities.runOnUIThread(new xz0(v01Var, 2), 500L);
+        } else {
+            v01Var.c();
+        }
+    }
+
+    @Override // z4.e
+    public final void c(int i10) {
+    }
+
+    @Override // z4.e
+    public final void b(float f7, int i10, int i11) {
     }
 }

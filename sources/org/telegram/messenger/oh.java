@@ -1,38 +1,44 @@
 package org.telegram.messenger;
 
-import android.content.Context;
+import org.telegram.messenger.PasskeysController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_payments;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final /* synthetic */ class oh implements Utilities.Callback2 {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ int b;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ long b;
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ oh(Context context, int i10, Utilities.Callback2 callback2) {
-        this.c = callback2;
-        this.d = context;
-        this.b = i10;
+    public /* synthetic */ oh(Object obj, Object obj2, long j3, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.d = obj2;
+        this.b = j3;
     }
 
     @Override // org.telegram.messenger.Utilities.Callback2
     public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                PasskeysController.lambda$create$7((Utilities.Callback2) this.c, (Context) this.d, this.b, (v0.c) obj, (Throwable) obj2);
+                PasskeysController.1.lambda$onResult$0((org.telegram.ui.ActionBar.b2) this.c, (Utilities.Callback3) this.d, this.b, (TLRPC.auth_Authorization) obj, (TLRPC.TL_error) obj2);
+                break;
+            case 1:
+                ((BotForumHelper) this.c).lambda$performSendBotTopicCreate$5(this.b, (String) this.d, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
                 break;
             default:
-                ((TranslateController) this.c).lambda$pushToSummarize$19(this.b, (Utilities.Callback) this.d, (TLRPC.TL_textWithEntities) obj, (TLRPC.TL_error) obj2);
+                ((GiftAuctionController) this.c).lambda$getOrRequestAuction$12((Utilities.Callback2) this.d, this.b, (TL_payments.TL_StarGiftAuctionState) obj, (TLRPC.TL_error) obj2);
                 break;
         }
     }
 
-    public /* synthetic */ oh(TranslateController translateController, int i10, Utilities.Callback callback) {
-        this.c = translateController;
-        this.b = i10;
-        this.d = callback;
+    public /* synthetic */ oh(BotForumHelper botForumHelper, long j3, String str) {
+        this.a = 1;
+        this.c = botForumHelper;
+        this.b = j3;
+        this.d = str;
     }
 }

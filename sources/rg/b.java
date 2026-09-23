@@ -4,30 +4,30 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.widget.FrameLayout;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.ll0;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.ml0;
 import w7.x5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public abstract class b extends FrameLayout implements l0 {
-    public final e6 a;
-    public final ll0 b;
+    public final d6 a;
+    public final ml0 b;
     public final s4.c0 c;
 
-    public b(Context context, e6 e6Var) {
+    public b(Context context, d6 d6Var) {
         super(context);
-        this.a = e6Var;
-        ll0 ll0Var = new ll0(context, e6Var);
-        this.b = ll0Var;
-        ll0Var.setNestedScrollingEnabled(true);
-        ll0Var.setAdapter(a());
+        this.a = d6Var;
+        ml0 ml0Var = new ml0(context, d6Var);
+        this.b = ml0Var;
+        ml0Var.setNestedScrollingEnabled(true);
+        ml0Var.setAdapter(a());
         s4.c0 c0Var = new s4.c0(1, false);
         this.c = c0Var;
-        ll0Var.setLayoutManager(c0Var);
-        ll0Var.setClipToPadding(false);
-        addView(ll0Var, x5.c(-1.0f, -1));
+        ml0Var.setLayoutManager(c0Var);
+        ml0Var.setClipToPadding(false);
+        addView(ml0Var, x5.c(-1.0f, -1));
     }
 
     public abstract s4.h0 a();
@@ -35,9 +35,9 @@ public abstract class b extends FrameLayout implements l0 {
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
-        Paint T0 = i6.T0("paintDivider", this.a);
+        Paint T0 = h6.T0("paintDivider", this.a);
         if (T0 == null) {
-            T0 = i6.k0;
+            T0 = h6.k0;
         }
         canvas.drawLine(0.0f, getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, T0);
     }
@@ -45,9 +45,9 @@ public abstract class b extends FrameLayout implements l0 {
     @Override // rg.l0
     public void setOffset(float f7) {
         if (Math.abs(f7 / getMeasuredWidth()) == 1.0f) {
-            ll0 ll0Var = this.b;
-            if (ll0Var.K(0) == null || ll0Var.K(0).a.getTop() != ll0Var.getPaddingTop()) {
-                ll0Var.u0(0);
+            ml0 ml0Var = this.b;
+            if (ml0Var.K(0) == null || ml0Var.K(0).a.getTop() != ml0Var.getPaddingTop()) {
+                ml0Var.u0(0);
             }
         }
     }

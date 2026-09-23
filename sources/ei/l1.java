@@ -4,16 +4,16 @@ import android.text.style.CharacterStyle;
 import java.util.ArrayList;
 import org.telegram.messenger.BotInlineKeyboard;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.vl;
+import org.telegram.messenger.ul;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.Cells.r9;
-import org.telegram.ui.Components.x5;
-import org.telegram.ui.pv0;
+import org.telegram.ui.Cells.s9;
+import org.telegram.ui.Components.z5;
+import org.telegram.ui.iv0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class l1 implements org.telegram.ui.Cells.k1 {
     @Override // org.telegram.ui.Cells.k1
@@ -92,7 +92,7 @@ public final class l1 implements org.telegram.ui.Cells.k1 {
     }
 
     @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ pv0 Y1() {
+    public final /* synthetic */ iv0 Y1() {
         return null;
     }
 
@@ -148,7 +148,7 @@ public final class l1 implements org.telegram.ui.Cells.k1 {
 
     @Override // org.telegram.ui.Cells.k1
     public final /* synthetic */ boolean h1(MessageObject messageObject) {
-        return vl.a(messageObject);
+        return ul.a(messageObject);
     }
 
     @Override // org.telegram.ui.Cells.k1
@@ -162,7 +162,7 @@ public final class l1 implements org.telegram.ui.Cells.k1 {
     }
 
     @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ boolean o0(x5 x5Var) {
+    public final /* synthetic */ boolean o0(z5 z5Var) {
         return false;
     }
 
@@ -182,7 +182,7 @@ public final class l1 implements org.telegram.ui.Cells.k1 {
     }
 
     @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ r9 z2() {
+    public final /* synthetic */ s9 z2() {
         return null;
     }
 

@@ -4,7 +4,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j8 implements Runnable {
     public final /* synthetic */ int a;
@@ -26,7 +26,7 @@ public final /* synthetic */ class j8 implements Runnable {
             case 1:
                 k9 k9Var2 = this.b;
                 k9Var2.n0(false);
-                org.telegram.ui.Components.oc I = (k9Var2.w ? org.telegram.ui.Components.vc.X() : org.telegram.ui.Components.vc.a0(k9Var2)).I(R.raw.contact_check, AndroidUtilities.replaceTags(LocaleController.getString(R.string.GroupCallTabWasHiddenTitle)), LocaleController.getString(R.string.UndoNoCaps), 5000, true, new j8(k9Var2, 5));
+                org.telegram.ui.Components.qc I = (k9Var2.w ? org.telegram.ui.Components.xc.X() : org.telegram.ui.Components.xc.a0(k9Var2)).I(R.raw.contact_check, AndroidUtilities.replaceTags(LocaleController.getString(R.string.GroupCallTabWasHiddenTitle)), LocaleController.getString(R.string.UndoNoCaps), 5000, true, new j8(k9Var2, 5));
                 I.j = 5000;
                 I.j();
                 break;

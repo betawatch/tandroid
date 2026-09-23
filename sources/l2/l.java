@@ -3,11 +3,11 @@ package l2;
 import b2.s;
 import e2.d0;
 import n4.y;
-import u2.b1;
+import u2.a1;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final class l implements b1 {
+public final class l implements a1 {
     public final s a;
     public long[] c;
     public boolean d;
@@ -47,12 +47,12 @@ public final class l implements b1 {
         }
     }
 
-    @Override // u2.b1
+    @Override // u2.a1
     public final boolean e() {
         return true;
     }
 
-    @Override // u2.b1
+    @Override // u2.a1
     public final int f(y yVar, h2.h hVar, int i10) {
         int i11 = this.h;
         boolean z10 = i11 == this.c.length;
@@ -81,7 +81,7 @@ public final class l implements b1 {
         return -4;
     }
 
-    @Override // u2.b1
+    @Override // u2.a1
     public final int j(long j3) {
         int max = Math.max(this.h, d0.a(this.c, j3, true));
         int i10 = max - this.h;
@@ -89,7 +89,7 @@ public final class l implements b1 {
         return i10;
     }
 
-    @Override // u2.b1
+    @Override // u2.a1
     public final void a() {
     }
 }

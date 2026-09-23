@@ -1,40 +1,24 @@
 package za;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final class z {
-    public final String a;
-    public final String b;
-    public final int c;
-    public final long d;
+public final class z extends kd.c {
+    public /* synthetic */ Object a;
+    public int b;
+    public final /* synthetic */ k1.p c;
 
-    public z(int i10, long j3, String sessionId, String firstSessionId) {
-        kotlin.jvm.internal.i.e(sessionId, "sessionId");
-        kotlin.jvm.internal.i.e(firstSessionId, "firstSessionId");
-        this.a = sessionId;
-        this.b = firstSessionId;
-        this.c = i10;
-        this.d = j3;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public z(k1.p pVar, kd.c cVar) {
+        super(cVar);
+        this.c = pVar;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof z)) {
-            return false;
-        }
-        z zVar = (z) obj;
-        return kotlin.jvm.internal.i.a(this.a, zVar.a) && kotlin.jvm.internal.i.a(this.b, zVar.b) && this.c == zVar.c && this.d == zVar.d;
-    }
-
-    public final int hashCode() {
-        int h = (a4.a.h(this.a.hashCode() * 31, 31, this.b) + this.c) * 31;
-        long j3 = this.d;
-        return h + ((int) (j3 ^ (j3 >>> 32)));
-    }
-
-    public final String toString() {
-        return "SessionDetails(sessionId=" + this.a + ", firstSessionId=" + this.b + ", sessionIndex=" + this.c + ", sessionStartTimestampUs=" + this.d + ')';
+    @Override // kd.a
+    public final Object invokeSuspend(Object obj) {
+        this.a = obj;
+        this.b |= TLObject.FLAG_31;
+        return this.c.a(null, this);
     }
 }

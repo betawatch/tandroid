@@ -2,7 +2,7 @@ package org.telegram.ui.ActionBar;
 
 import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class v2 implements Runnable {
     public final /* synthetic */ int a;
@@ -45,10 +45,10 @@ public final class v2 implements Runnable {
                 }
                 break;
             default:
-                v4 v4Var = (v4) this.b;
-                v4Var.k();
-                v4Var.j();
-                v4Var.f.setAlpha(1.0f);
+                u4 u4Var = (u4) this.b;
+                u4Var.k();
+                u4Var.j();
+                u4Var.f.setAlpha(1.0f);
                 break;
         }
     }

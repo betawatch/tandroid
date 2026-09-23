@@ -4,25 +4,25 @@ import android.app.Activity;
 import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.Components.vi;
-import org.telegram.ui.bo;
-import org.telegram.ui.mk;
+import org.telegram.ui.Components.wi;
+import org.telegram.ui.jk;
+import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class g4 extends vi {
+public final class g4 extends wi {
     public final /* synthetic */ int P2;
     public final /* synthetic */ NotificationCenter.NotificationCenterDelegate Q2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ g4(org.telegram.ui.ActionBar.n2 n2Var, Activity activity, org.telegram.ui.ActionBar.n2 n2Var2, org.telegram.ui.ActionBar.e6 e6Var, int i10) {
-        super(activity, n2Var2, false, false, true, e6Var);
+    public /* synthetic */ g4(org.telegram.ui.ActionBar.n2 n2Var, Activity activity, org.telegram.ui.ActionBar.n2 n2Var2, org.telegram.ui.ActionBar.d6 d6Var, int i10) {
+        super(activity, n2Var2, false, false, true, d6Var);
         this.P2 = i10;
         this.Q2 = (NotificationCenter.NotificationCenterDelegate) n2Var;
     }
 
-    @Override // org.telegram.ui.Components.vi, org.telegram.ui.ActionBar.f3
+    @Override // org.telegram.ui.Components.wi, org.telegram.ui.ActionBar.f3
     public void dismissInternal() {
         int i10;
         int i11;
@@ -38,15 +38,15 @@ public final class g4 extends vi {
                 super.dismissInternal();
                 break;
             case 2:
-                bo boVar = (bo) this.Q2;
-                g4 g4Var2 = boVar.J1;
+                xn xnVar = (xn) this.Q2;
+                g4 g4Var2 = xnVar.J1;
                 if (g4Var2 != null && g4Var2.isShowing()) {
-                    Activity parentActivity2 = boVar.getParentActivity();
-                    i11 = ((org.telegram.ui.ActionBar.n2) boVar).classGuid;
+                    Activity parentActivity2 = xnVar.getParentActivity();
+                    i11 = ((org.telegram.ui.ActionBar.n2) xnVar).classGuid;
                     AndroidUtilities.requestAdjustResize(parentActivity2, i11);
                 }
                 super.dismissInternal();
-                boVar.T9(false, true);
+                xnVar.T9(false, true);
                 break;
             default:
                 super.dismissInternal();
@@ -60,14 +60,14 @@ public final class g4 extends vi {
         int i11;
         switch (this.P2) {
             case 0:
-                f6 f6Var = (f6) this.Q2;
-                g4 g4Var = f6Var.I2;
+                e6 e6Var = (e6) this.Q2;
+                g4 g4Var = e6Var.I2;
                 if (g4Var != null) {
                     g4Var.setFocusable(false);
                 }
-                a4 a4Var = f6Var.b2;
+                a4 a4Var = e6Var.b2;
                 if (a4Var != null && a4Var.getEditField() != null) {
-                    f6Var.b2.getEditField().requestFocus();
+                    e6Var.b2.getEditField().requestFocus();
                     break;
                 }
                 break;
@@ -86,30 +86,30 @@ public final class g4 extends vi {
                 }
                 break;
             default:
-                bo boVar = (bo) this.Q2;
-                g4 g4Var4 = boVar.J1;
+                xn xnVar = (xn) this.Q2;
+                g4 g4Var4 = xnVar.J1;
                 if (g4Var4 != null) {
                     g4Var4.setFocusable(false);
                 }
-                mk mkVar = boVar.Y;
-                if (mkVar != null && mkVar.getEditField() != null) {
-                    boVar.Y.getEditField().requestFocus();
+                jk jkVar = xnVar.Y;
+                if (jkVar != null && jkVar.getEditField() != null) {
+                    xnVar.Y.getEditField().requestFocus();
                 }
-                g4 g4Var5 = boVar.J1;
+                g4 g4Var5 = xnVar.J1;
                 if (g4Var5 != null && g4Var5.isShowing()) {
-                    Activity parentActivity2 = boVar.getParentActivity();
-                    i11 = ((org.telegram.ui.ActionBar.n2) boVar).classGuid;
+                    Activity parentActivity2 = xnVar.getParentActivity();
+                    i11 = ((org.telegram.ui.ActionBar.n2) xnVar).classGuid;
                     AndroidUtilities.requestAdjustResize(parentActivity2, i11);
                 }
-                boVar.T9(false, false);
+                xnVar.T9(false, false);
                 break;
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g4(f6 f6Var, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, null, false, false, true, e6Var);
+    public g4(e6 e6Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, null, false, false, true, d6Var);
         this.P2 = 0;
-        this.Q2 = f6Var;
+        this.Q2 = e6Var;
     }
 }

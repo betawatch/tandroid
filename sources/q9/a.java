@@ -6,10 +6,9 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
-import k2.v;
 import w7.r6;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class a {
     public final String a;
@@ -61,7 +60,7 @@ public final class a {
             r6.a(cls2, "Null interface");
             hashSet.add(r.a(cls2));
         }
-        return new a(null, new HashSet(hashSet), new HashSet(hashSet2), 0, 0, new v(obj, 17), hashSet3);
+        return new a(null, new HashSet(hashSet), new HashSet(hashSet2), 0, 0, new le.b(obj, 18), hashSet3);
     }
 
     public final String toString() {

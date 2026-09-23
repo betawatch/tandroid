@@ -14,7 +14,7 @@ import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
 import c7.k;
 import c7.r;
 import c7.u;
-import ci.b9;
+import ci.y8;
 import com.google.android.gms.common.api.f;
 import java.lang.ref.WeakReference;
 import java.util.LinkedHashMap;
@@ -29,11 +29,12 @@ import v7.f0;
 import w0.g;
 import w0.i;
 import w0.j;
+import w7.b9;
 import w7.g8;
 import w7.u7;
 import w7.v7;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class d extends ResultReceiver {
     public final /* synthetic */ int a;
@@ -226,7 +227,7 @@ public final class d extends ResultReceiver {
                     }
                     Executor executor4 = eVar2.g;
                     if (executor4 != null) {
-                        executor4.execute(new b9(7, eVar2, e10));
+                        executor4.execute(new y8(7, eVar2, e10));
                         return;
                     } else {
                         kotlin.jvm.internal.i.h("executor");
@@ -328,7 +329,7 @@ public final class d extends ResultReceiver {
                     }
                     Executor executor9 = dVar2.g;
                     if (executor9 != null) {
-                        executor9.execute(new b9(10, dVar2, a2));
+                        executor9.execute(new y8(10, dVar2, a2));
                         return;
                     } else {
                         kotlin.jvm.internal.i.h("executor");
@@ -347,7 +348,7 @@ public final class d extends ResultReceiver {
                         if (string3 == null) {
                             throw new IllegalArgumentException("Bundle was missing exception type.");
                         }
-                        a10 = w7.b9.a(bundleExtra2.getCharSequence("androidx.credentials.provider.extra.CREATE_CREDENTIAL_EXCEPTION_MESSAGE"), string3);
+                        a10 = b9.a(bundleExtra2.getCharSequence("androidx.credentials.provider.extra.CREATE_CREDENTIAL_EXCEPTION_MESSAGE"), string3);
                     }
                 }
                 CancellationSignal cancellationSignal11 = dVar2.h;
@@ -450,7 +451,7 @@ public final class d extends ResultReceiver {
                         if (string4 == null) {
                             throw new IllegalArgumentException("Bundle was missing exception type.");
                         }
-                        iVar = w7.b9.b(bundleExtra4.getCharSequence("androidx.credentials.provider.extra.CREATE_CREDENTIAL_EXCEPTION_MESSAGE"), string4);
+                        iVar = b9.b(bundleExtra4.getCharSequence("androidx.credentials.provider.extra.CREATE_CREDENTIAL_EXCEPTION_MESSAGE"), string4);
                     }
                 }
                 f0.a(cancellationSignal12, new b1.b(executor12, iVar6, iVar, i11));

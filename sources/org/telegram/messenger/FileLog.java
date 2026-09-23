@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public class FileLog {
     private static volatile FileLog Instance = null;
@@ -50,7 +50,7 @@ public class FileLog {
     private OutputStreamWriter tlStreamWriter = null;
     private File tlRequestsFile = null;
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class ByteArrayHexAdapter extends db.u {
         @Override // db.u
         public byte[] read(lb.a aVar) {
@@ -78,14 +78,14 @@ public class FileLog {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class IgnoreSentException extends Exception {
         public IgnoreSentException(String str) {
             super(str);
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class TLObjectDeserializer implements db.o {
         private TLObjectDeserializer() {
         }
@@ -107,7 +107,7 @@ public class FileLog {
                             if (obj != null) {
                                 Class<?> cls = obj.getClass();
                                 if (!cls.isInstance(DispatchQueue.class)) {
-                                    if (!cls.isInstance(org.telegram.ui.Components.b6.class)) {
+                                    if (!cls.isInstance(org.telegram.ui.Components.d6.class)) {
                                         if (!cls.isInstance(ColorStateList.class)) {
                                             if (cls.isInstance(Context.class)) {
                                             }
@@ -161,7 +161,7 @@ public class FileLog {
             exclusionStrategy = new db.a() { // from class: org.telegram.messenger.FileLog.1
                 @Override // db.a
                 public boolean shouldSkipClass(Class<?> cls) {
-                    return cls.isInstance(DispatchQueue.class) || cls.isInstance(org.telegram.ui.Components.b6.class) || cls.isInstance(ColorStateList.class) || cls.isInstance(Context.class);
+                    return cls.isInstance(DispatchQueue.class) || cls.isInstance(org.telegram.ui.Components.d6.class) || cls.isInstance(ColorStateList.class) || cls.isInstance(Context.class);
                 }
 
                 @Override // db.a
@@ -271,7 +271,7 @@ public class FileLog {
             }
             try {
                 final String str = "req -> " + simpleName + " : " + gson.e(tLObject);
-                String str2 = "null";
+                String str2 = BuildConfig.BETA_URL;
                 if (tLObject2 != null) {
                     str2 = "res -> " + tLObject2.getClass().getSimpleName() + " : " + gson.e(tLObject2);
                 } else if (tL_error != null) {
@@ -311,7 +311,7 @@ public class FileLog {
             ensureInitied();
             Log.e(tag, str, th2);
             if (getInstance().streamWriter != null) {
-                getInstance().logQueue.postRunnable(new b2(7, str, th2));
+                getInstance().logQueue.postRunnable(new c2(7, str, th2));
             }
         }
     }
@@ -562,7 +562,7 @@ public class FileLog {
             ensureInitied();
             Log.w(tag, str);
             if (getInstance().streamWriter != null) {
-                getInstance().logQueue.postRunnable(new t1(str, 1));
+                getInstance().logQueue.postRunnable(new u1(str, 1));
             }
         }
     }
@@ -583,7 +583,7 @@ public class FileLog {
             ensureInitied();
             Log.d(tag, str);
             if (getInstance().streamWriter != null) {
-                getInstance().logQueue.postRunnable(new t1(str, 3));
+                getInstance().logQueue.postRunnable(new u1(str, 3));
             }
         }
     }
@@ -614,7 +614,7 @@ public class FileLog {
             ensureInitied();
             Log.e(tag, str);
             if (getInstance().streamWriter != null) {
-                getInstance().logQueue.postRunnable(new t1(str, 2));
+                getInstance().logQueue.postRunnable(new u1(str, 2));
             }
         }
     }

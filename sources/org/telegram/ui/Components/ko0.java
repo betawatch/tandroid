@@ -14,24 +14,24 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class ko0 extends Drawable {
     public final boolean a;
     public final Runnable b;
     public final Paint c = new Paint(1);
     public final Paint d;
-    public xi0 e;
+    public yi0 e;
     public final Path f;
-    public final g01 g;
+    public final f01 g;
     public final Path h;
     public final Path i;
     public boolean j;
     public int k;
-    public final c6 l;
-    public final c6 m;
-    public final c6 n;
-    public final c6 o;
+    public final e6 l;
+    public final e6 m;
+    public final e6 n;
+    public final e6 o;
     public final jo0 p;
     public boolean q;
     public final RectF r;
@@ -40,14 +40,14 @@ public final class ko0 extends Drawable {
     public long u;
     public float v;
     public boolean w;
-    public final bc0 x;
+    public final ac0 x;
 
     public ko0(Runnable runnable, boolean z10) {
         Paint paint = new Paint(1);
         this.d = paint;
         Path path = new Path();
         this.f = path;
-        this.g = new g01(LocaleController.getString(R.string.SeekSpeedHint), 14.0f, null);
+        this.g = new f01(LocaleController.getString(R.string.SeekSpeedHint), 14.0f, null);
         Path path2 = new Path();
         this.h = path2;
         Path path3 = new Path();
@@ -55,25 +55,25 @@ public final class ko0 extends Drawable {
         this.k = 1;
         this.r = new RectF();
         this.s = new RectF();
-        this.x = new bc0(this, 27);
+        this.x = new ac0(this, 27);
         this.b = runnable;
         this.a = z10;
-        qr qrVar = qr.h;
-        c6 c6Var = new c6(runnable, 360L, qrVar, 0);
-        this.l = c6Var;
-        c6Var.d(0.0f, true);
-        this.m = new c6(runnable, 320L, qrVar, 0);
-        this.n = new c6(runnable, 200L, qrVar, 0);
-        c6 c6Var2 = new c6(runnable, 360L, qrVar, 0);
-        this.o = c6Var2;
-        c6Var2.d(0.0f, true);
+        rr rrVar = rr.h;
+        e6 e6Var = new e6(runnable, 360L, rrVar, 0);
+        this.l = e6Var;
+        e6Var.d(0.0f, true);
+        this.m = new e6(runnable, 320L, rrVar, 0);
+        this.n = new e6(runnable, 200L, rrVar, 0);
+        e6 e6Var2 = new e6(runnable, 360L, rrVar, 0);
+        this.o = e6Var2;
+        e6Var2.d(0.0f, true);
         jo0 jo0Var = new jo0(runnable);
         this.p = jo0Var;
         jo0Var.v = 0.3f;
         jo0Var.u = 0.4f;
         jo0Var.r = 650L;
         jo0Var.t = 1.6f;
-        jo0Var.s = qrVar;
+        jo0Var.s = rrVar;
         jo0Var.u(AndroidUtilities.getTypeface("fonts/num.otf"));
         jo0Var.t(AndroidUtilities.dp(16.0f));
         c(2.0f, false);
@@ -102,14 +102,14 @@ public final class ko0 extends Drawable {
     public final void b(boolean z10) {
         this.j = z10;
         this.b.run();
-        xi0 xi0Var = this.e;
-        if (xi0Var == null || !this.q) {
+        yi0 yi0Var = this.e;
+        if (yi0Var == null || !this.q) {
             return;
         }
         if (z10) {
-            xi0Var.H(false);
+            yi0Var.H(false);
         } else {
-            xi0Var.stop();
+            yi0Var.stop();
         }
     }
 
@@ -163,17 +163,17 @@ public final class ko0 extends Drawable {
         canvas.scale(f11, f11, this.r.centerX(), this.r.top);
         canvas.translate(0.0f, (1.0f - e) * (-AndroidUtilities.dp(15.0f)));
         canvas.clipRect(this.r);
-        this.c.setColor(org.telegram.ui.ActionBar.i6.l1(f10, -16777216));
+        this.c.setColor(org.telegram.ui.ActionBar.h6.l1(f10, -16777216));
         RectF rectF = this.r;
         canvas.drawRoundRect(rectF, rectF.height() / 2.0f, this.r.height() / 2.0f, this.c);
         this.p.m(this.r);
         canvas.save();
         float f12 = -d10;
         canvas.translate(((this.r.centerX() - f7) + AndroidUtilities.dp(9.0f)) - ((1.0f - Math.max(0.0f, f12)) * AndroidUtilities.dp(30.0f)), this.r.centerY());
-        this.d.setColor(org.telegram.ui.ActionBar.i6.l1(((((((float) Math.sin(this.t * 3.141592653589793d)) / 2.0f) + 1.0f) * 0.75f) + 0.2f) * Math.max(0.0f, f12) * e, -1));
+        this.d.setColor(org.telegram.ui.ActionBar.h6.l1(((((((float) Math.sin(this.t * 3.141592653589793d)) / 2.0f) + 1.0f) * 0.75f) + 0.2f) * Math.max(0.0f, f12) * e, -1));
         canvas.drawPath(this.h, this.d);
         canvas.translate(AndroidUtilities.dp(10.66f), 0.0f);
-        this.d.setColor(org.telegram.ui.ActionBar.i6.l1(((((((float) Math.sin((this.t + 0.17f) * 3.141592653589793d)) / 2.0f) + 1.0f) * 0.75f) + 0.2f) * Math.max(0.0f, f12) * e, -1));
+        this.d.setColor(org.telegram.ui.ActionBar.h6.l1(((((((float) Math.sin((this.t + 0.17f) * 3.141592653589793d)) / 2.0f) + 1.0f) * 0.75f) + 0.2f) * Math.max(0.0f, f12) * e, -1));
         canvas.drawPath(this.h, this.d);
         canvas.restore();
         canvas.save();
@@ -184,19 +184,19 @@ public final class ko0 extends Drawable {
         canvas.restore();
         canvas.save();
         canvas.translate(((1.0f - Math.max(0.0f, d10)) * AndroidUtilities.dp(30.0f)) + ((this.r.centerX() + f7) - AndroidUtilities.dp(30.0f)), this.r.centerY());
-        this.d.setColor(org.telegram.ui.ActionBar.i6.l1(((((((float) Math.sin(this.t * 3.141592653589793d)) / 2.0f) + 1.0f) * 0.75f) + 0.2f) * Math.max(0.0f, d10) * e, -1));
+        this.d.setColor(org.telegram.ui.ActionBar.h6.l1(((((((float) Math.sin(this.t * 3.141592653589793d)) / 2.0f) + 1.0f) * 0.75f) + 0.2f) * Math.max(0.0f, d10) * e, -1));
         canvas.drawPath(this.i, this.d);
         canvas.translate(AndroidUtilities.dp(10.66f), 0.0f);
-        this.d.setColor(org.telegram.ui.ActionBar.i6.l1(((((((float) Math.sin((this.t - 0.17f) * 3.141592653589793d)) / 2.0f) + 1.0f) * 0.75f) + 0.2f) * Math.max(0.0f, d10) * e, -1));
+        this.d.setColor(org.telegram.ui.ActionBar.h6.l1(((((((float) Math.sin((this.t - 0.17f) * 3.141592653589793d)) / 2.0f) + 1.0f) * 0.75f) + 0.2f) * Math.max(0.0f, d10) * e, -1));
         canvas.drawPath(this.i, this.d);
         canvas.restore();
         canvas.restore();
         float e7 = this.o.e(this.q && this.j);
         if (e7 > 0.0f) {
             if (this.e == null) {
-                xi0 xi0Var = new xi0(R.raw.seek_speed_hint, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), true, null);
-                this.e = xi0Var;
-                xi0Var.J(true);
+                yi0 yi0Var = new yi0(R.raw.seek_speed_hint, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), true, null);
+                this.e = yi0Var;
+                yi0Var.J(true);
                 this.e.setCallback(new i.f(this, 3));
                 this.e.K(1);
                 this.e.start();
@@ -214,7 +214,7 @@ public final class ko0 extends Drawable {
             canvas.save();
             float f14 = (0.25f * e7) + 0.75f;
             canvas.scale(f14, f14, this.s.centerX(), this.s.top);
-            this.c.setColor(org.telegram.ui.ActionBar.i6.l1(e7 * 0.4f, -16777216));
+            this.c.setColor(org.telegram.ui.ActionBar.h6.l1(e7 * 0.4f, -16777216));
             canvas.save();
             canvas.translate(this.s.centerX(), this.s.top);
             canvas.drawPath(this.f, this.c);

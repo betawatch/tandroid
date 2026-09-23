@@ -6,9 +6,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class xv0 extends vi0 {
+public final class xv0 extends wi0 {
     public int b1;
     public int c1;
     public int d1;
@@ -41,7 +41,7 @@ public final class xv0 extends vi0 {
         return 2;
     }
 
-    @Override // org.telegram.ui.Components.vi0, org.telegram.ui.Components.xi0
+    @Override // org.telegram.ui.Components.wi0, org.telegram.ui.Components.yi0
     public final int B(Bitmap bitmap, boolean z10) {
         if (this.e1 == null) {
             try {
@@ -154,7 +154,7 @@ public final class xv0 extends vi0 {
         return 1;
     }
 
-    @Override // org.telegram.ui.Components.vi0, org.telegram.ui.Components.xi0
+    @Override // org.telegram.ui.Components.wi0, org.telegram.ui.Components.yi0
     public final void C(boolean z10) {
         this.k0 = false;
         this.l0 = true;
@@ -205,7 +205,7 @@ public final class xv0 extends vi0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.vi0, org.telegram.ui.Components.xi0
+    @Override // org.telegram.ui.Components.wi0, org.telegram.ui.Components.yi0
     public final int j() {
         if (this.l0) {
             return 3;
@@ -213,7 +213,7 @@ public final class xv0 extends vi0 {
         return (this.m0 == null || (this.J == 2 && this.U0 == null)) ? 2 : 1;
     }
 
-    @Override // org.telegram.ui.Components.vi0, org.telegram.ui.Components.xi0
+    @Override // org.telegram.ui.Components.wi0, org.telegram.ui.Components.yi0
     public final void p() {
         if (this.V) {
             n();
@@ -232,7 +232,7 @@ public final class xv0 extends vi0 {
         I();
     }
 
-    @Override // org.telegram.ui.Components.vi0, org.telegram.ui.Components.xi0
+    @Override // org.telegram.ui.Components.wi0, org.telegram.ui.Components.yi0
     public final void i() {
     }
 }

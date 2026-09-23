@@ -1,6 +1,6 @@
 package qg;
 
-import ai.v7;
+import ai.w7;
 import android.animation.ValueAnimator;
 import android.app.Dialog;
 import android.content.Context;
@@ -21,15 +21,15 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.q3;
-import org.telegram.ui.Components.n70;
-import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.ub0;
+import org.telegram.ui.Components.o70;
+import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.tb0;
 import org.telegram.ui.xd;
 import w7.x5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class v2 extends Dialog {
     public ValueAnimator E;
@@ -39,7 +39,7 @@ public final class v2 extends Dialog {
     public final int a;
     public final ai.f0 b;
     public final xd c;
-    public final v7 d;
+    public final w7 d;
     public final ImageView e;
     public final t2 f;
     public final Rect h;
@@ -47,8 +47,8 @@ public final class v2 extends Dialog {
     public BitmapShader r;
     public Paint s;
     public Matrix v;
-    public final ub0 w;
-    public final ub0 x;
+    public final tb0 w;
+    public final tb0 x;
     public float y;
 
     public v2(Context context, final int i10) {
@@ -64,12 +64,12 @@ public final class v2 extends Dialog {
         this.c = xdVar;
         xdVar.setOrientation(1);
         f0Var.addView(xdVar, x5.d(-2, -2.0f, 17, 8.0f, 8.0f, 8.0f, 8.0f));
-        v7 v7Var = new v7(this, context, 9);
-        v7Var.setWillNotDraw(false);
-        xdVar.addView(v7Var, x5.p(-1, -2, 1.0f, 49, 0, 0, 0, 0));
+        w7 w7Var = new w7(this, context, 9);
+        w7Var.setWillNotDraw(false);
+        xdVar.addView(w7Var, x5.p(-1, -2, 1.0f, 49, 0, 0, 0, 0));
         FrameLayout frameLayout = new FrameLayout(context);
         frameLayout.setBackgroundColor(-14737633);
-        v7Var.addView(frameLayout, x5.e(-1, 56, 55));
+        w7Var.addView(frameLayout, x5.e(-1, 56, 55));
         TextView textView = new TextView(context);
         textView.setText(LocaleController.getString(R.string.StoryLinkPreviewTitle));
         textView.setTextColor(-1);
@@ -80,21 +80,21 @@ public final class v2 extends Dialog {
         f7.setTextColor(-8421505);
         f7.setTextSize(1, 14.0f);
         frameLayout.addView(f7, x5.d(-1, -2.0f, 55, 18.0f, 31.0f, 18.0f, 0.0f));
-        v7 v7Var2 = new v7(this, context, 10);
-        this.d = v7Var2;
-        v7Var.addView(v7Var2, x5.d(-1, -1.0f, 119, 0.0f, 56.0f, 0.0f, 0.0f));
+        w7 w7Var2 = new w7(this, context, 10);
+        this.d = w7Var2;
+        w7Var.addView(w7Var2, x5.d(-1, -1.0f, 119, 0.0f, 56.0f, 0.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         this.e = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        v7Var2.addView(imageView, x5.e(-1, -1, 119));
+        w7Var2.addView(imageView, x5.e(-1, -1, 119));
         t2 t2Var = new t2(this, context, AndroidUtilities.density);
         this.f = t2Var;
-        v7Var2.addView(t2Var, x5.e(-2, -2, 17));
-        n70 F = n70.F(f0Var, dVar, f0Var);
-        ub0 ub0Var = new ub0(getContext(), R.raw.position_below, LocaleController.getString(R.string.StoryLinkCaptionAbove), R.raw.position_above, LocaleController.getString(R.string.StoryLinkCaptionBelow), dVar);
-        this.w = ub0Var;
+        w7Var2.addView(t2Var, x5.e(-2, -2, 17));
+        o70 F = o70.F(f0Var, dVar, f0Var);
+        tb0 tb0Var = new tb0(getContext(), R.raw.position_below, LocaleController.getString(R.string.StoryLinkCaptionAbove), R.raw.position_above, LocaleController.getString(R.string.StoryLinkCaptionBelow), dVar);
+        this.w = tb0Var;
         final int i11 = 0;
-        ub0Var.setOnClickListener(new View.OnClickListener(this) { // from class: qg.s2
+        tb0Var.setOnClickListener(new View.OnClickListener(this) { // from class: qg.s2
             public final /* synthetic */ v2 b;
 
             {
@@ -123,11 +123,11 @@ public final class v2 extends Dialog {
                 }
             }
         });
-        F.q(ub0Var);
-        ub0 ub0Var2 = new ub0(context, R.raw.media_shrink, LocaleController.getString(R.string.LinkMediaLarger), R.raw.media_enlarge, LocaleController.getString(R.string.LinkMediaSmaller), dVar);
-        this.x = ub0Var2;
+        F.q(tb0Var);
+        tb0 tb0Var2 = new tb0(context, R.raw.media_shrink, LocaleController.getString(R.string.LinkMediaLarger), R.raw.media_enlarge, LocaleController.getString(R.string.LinkMediaSmaller), dVar);
+        this.x = tb0Var2;
         final int i12 = 1;
-        ub0Var2.setOnClickListener(new View.OnClickListener(this) { // from class: qg.s2
+        tb0Var2.setOnClickListener(new View.OnClickListener(this) { // from class: qg.s2
             public final /* synthetic */ v2 b;
 
             {
@@ -156,7 +156,7 @@ public final class v2 extends Dialog {
                 }
             }
         });
-        F.q(ub0Var2);
+        F.q(tb0Var2);
         F.k();
         F.c(R.drawable.msg_select, LocaleController.getString(R.string.ApplyChanges), new r2(this, 2), false);
         F.c(R.drawable.msg_delete, LocaleController.getString(R.string.DoNotLinkPreview), new r2(this, 3), true);
@@ -174,7 +174,7 @@ public final class v2 extends Dialog {
         this.E = ofFloat;
         ofFloat.addUpdateListener(new org.telegram.ui.Components.voip.r0(this, 13));
         this.E.addListener(new androidx.fragment.app.g(this, z10, r2Var, 12));
-        this.E.setInterpolator(qr.h);
+        this.E.setInterpolator(rr.h);
         this.E.setDuration(z10 ? 420L : 320L);
         this.E.start();
     }
@@ -222,14 +222,14 @@ public final class v2 extends Dialog {
         }
         window.setAttributes(attributes);
         f0Var.setSystemUiVisibility(256);
-        AndroidUtilities.setLightNavigationBar(f0Var, !i6.I.q());
+        AndroidUtilities.setLightNavigationBar(f0Var, !h6.I.q());
     }
 
     @Override // android.app.Dialog
     public final void show() {
         if (AndroidUtilities.isSafeToShow(getContext())) {
             super.show();
-            AndroidUtilities.makeGlobalBlurBitmap(new org.telegram.ui.web.b1(this, 6), 14.0f);
+            AndroidUtilities.makeGlobalBlurBitmap(new ii.q1(this, 9), 14.0f);
             b(true, null);
         }
     }

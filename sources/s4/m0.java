@@ -5,9 +5,9 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
-import org.telegram.ui.Components.jk0;
+import org.telegram.ui.Components.kk0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public abstract class m0 {
     public ka.c a;
@@ -61,14 +61,14 @@ public abstract class m0 {
             recyclerView.y0();
             lf.i iVar = recyclerView.e;
             e6.n nVar = (e6.n) iVar.c;
-            k2.c0 c0Var = (k2.c0) iVar.b;
-            int indexOfChild = ((RecyclerView) c0Var.b).indexOfChild(view);
+            k2.b0 b0Var = (k2.b0) iVar.b;
+            int indexOfChild = ((RecyclerView) b0Var.b).indexOfChild(view);
             if (indexOfChild == -1) {
                 iVar.Y(view);
             } else if (nVar.z(indexOfChild)) {
                 nVar.B(indexOfChild);
                 iVar.Y(view);
-                c0Var.r(indexOfChild);
+                b0Var.r(indexOfChild);
             } else {
                 z10 = false;
             }
@@ -89,8 +89,8 @@ public abstract class m0 {
         ArrayList arrayList = this.b;
         int size = arrayList.size();
         for (int i10 = 0; i10 < size; i10++) {
-            jk0 jk0Var = (jk0) arrayList.get(i10);
-            jk0Var.a.c(jk0Var.b, jk0Var.c, jk0Var.d, false);
+            kk0 kk0Var = (kk0) arrayList.get(i10);
+            kk0Var.a.c(kk0Var.b, kk0Var.c, kk0Var.d, false);
         }
         arrayList.clear();
     }

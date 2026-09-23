@@ -13,13 +13,13 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.vc;
-import org.telegram.ui.Components.yd;
+import org.telegram.ui.Components.ae;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.bj0;
-import org.telegram.ui.qf;
+import org.telegram.ui.pf;
+import org.telegram.ui.wi0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -34,7 +34,7 @@ public final /* synthetic */ class v0 implements View.OnClickListener {
     public final void onClick(View view) {
         Utilities.Callback callback;
         ii.a aVar;
-        ii.m4 m4Var;
+        ii.n4 n4Var;
         switch (this.a) {
             case 0:
                 ((r3) this.b).q(!r8.f0, true);
@@ -43,7 +43,7 @@ public final /* synthetic */ class v0 implements View.OnClickListener {
                 ((jc) this.b).N();
                 break;
             case 2:
-                ((w7) this.b).dismiss();
+                ((x7) this.b).dismiss();
                 org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
                 if (R != null) {
                     R.showDialog(new rg.x0(R, 14, false));
@@ -74,7 +74,7 @@ public final /* synthetic */ class v0 implements View.OnClickListener {
                 eVar.run();
                 break;
             case 8:
-                ((ci.ec) this.b).B();
+                ((ci.bc) this.b).B();
                 break;
             case 9:
                 ci.u0.a((ci.u0) this.b);
@@ -83,30 +83,30 @@ public final /* synthetic */ class v0 implements View.OnClickListener {
                 ((s1) this.b).run();
                 break;
             case 11:
-                ci.v6 v6Var = ((ci.u6) this.b).x;
-                if (v6Var.r && (callback = v6Var.f) != null) {
+                ci.u6 u6Var = ((ci.t6) this.b).x;
+                if (u6Var.r && (callback = u6Var.f) != null) {
                     callback.run(5);
                     break;
                 }
                 break;
             case 12:
-                ci.p9 p9Var = (ci.p9) ((ci.m9) this.b).h;
-                if (p9Var != null) {
-                    p9Var.run();
+                ci.m9 m9Var = (ci.m9) ((ci.j9) this.b).h;
+                if (m9Var != null) {
+                    m9Var.run();
                     break;
                 }
                 break;
             case 13:
-                ((qf) this.b).run();
+                ((pf) this.b).run();
                 break;
             case 14:
-                ((qf) this.b).run();
+                ((pf) this.b).run();
                 break;
             case 15:
-                ChatActivityEnterView.h(((yd) ((ei.p0) this.b).d).a, (TL_keyboard.KeyboardButton) view.getTag());
+                ChatActivityEnterView.h(((ae) ((ei.p0) this.b).d).a, (TL_keyboard.KeyboardButton) view.getTag());
                 break;
             case 16:
-                ((i5) this.b).run();
+                ((h5) this.b).run();
                 break;
             case 17:
                 fi.p pVar = (fi.p) this.b;
@@ -160,13 +160,13 @@ public final /* synthetic */ class v0 implements View.OnClickListener {
                 break;
             case 24:
                 hg.f fVar = (hg.f) this.b;
-                org.telegram.ui.Components.n6 n6Var = fVar.f;
+                org.telegram.ui.Components.p6 p6Var = fVar.f;
                 int i10 = fVar.a;
                 boolean z10 = fVar.r;
                 fVar.r = !z10;
                 fVar.h.c(LocaleController.getString(!z10 ? R.string.BizBotStart : R.string.BizBotStop), true, true);
-                n6Var.a();
-                n6Var.c(LocaleController.getString(fVar.r ? R.string.BizBotStatusStopped : R.string.BizBotStatusManages), true, true);
+                p6Var.a();
+                p6Var.c(LocaleController.getString(fVar.r ? R.string.BizBotStatusStopped : R.string.BizBotStatusManages), true, true);
                 if (fVar.r) {
                     fVar.w |= 1;
                 } else {
@@ -182,7 +182,7 @@ public final /* synthetic */ class v0 implements View.OnClickListener {
                 TL_account.TL_businessChatLink tL_businessChatLink = ((hg.v) this.b).f;
                 if (tL_businessChatLink != null) {
                     AndroidUtilities.addToClipboard(tL_businessChatLink.link);
-                    vc.a0(LaunchActivity.R()).k(false).j();
+                    xc.a0(LaunchActivity.R()).k(false).j();
                     break;
                 }
                 break;
@@ -192,40 +192,40 @@ public final /* synthetic */ class v0 implements View.OnClickListener {
             case 27:
                 ii.r rVar = (ii.r) this.b;
                 rVar.I(0, true, 0, false, 0L);
-                bj0 bj0Var = rVar.O;
-                if (bj0Var != null) {
-                    bj0Var.h(true);
+                wi0 wi0Var = rVar.O;
+                if (wi0Var != null) {
+                    wi0Var.h(true);
                     rVar.O = null;
                     break;
                 }
                 break;
             case 28:
                 ii.u0 u0Var = (ii.u0) this.b;
-                ii.d3 d3Var = u0Var.h;
-                if (d3Var != null && (aVar = u0Var.f) != null) {
-                    ii.w3 w3Var = d3Var.a;
-                    w3Var.getClass();
-                    if (ii.w3.x3(aVar)) {
+                ii.e3 e3Var = u0Var.h;
+                if (e3Var != null && (aVar = u0Var.f) != null) {
+                    ii.x3 x3Var = e3Var.a;
+                    x3Var.getClass();
+                    if (ii.x3.x3(aVar)) {
                         TL_iv.pageBlockDetails pageblockdetails = (TL_iv.pageBlockDetails) aVar.b;
-                        ii.h2 h2Var = w3Var.J3;
-                        if (h2Var != null) {
-                            h2Var.d();
+                        ii.i2 i2Var = x3Var.J3;
+                        if (i2Var != null) {
+                            i2Var.d();
                         }
                         pageblockdetails.open = !pageblockdetails.open;
-                        w3Var.Y2.N(true);
-                        ii.h2 h2Var2 = w3Var.J3;
-                        if (h2Var2 != null) {
-                            h2Var2.h();
+                        x3Var.Y2.N(true);
+                        ii.i2 i2Var2 = x3Var.J3;
+                        if (i2Var2 != null) {
+                            i2Var2.h();
                             break;
                         }
                     }
                 }
                 break;
             default:
-                ii.o4 o4Var = (ii.o4) this.b;
-                ii.a aVar2 = o4Var.a;
-                if (aVar2 != null && (m4Var = o4Var.G) != null) {
-                    ((ii.s3) m4Var).a.h3.q(aVar2);
+                ii.p4 p4Var = (ii.p4) this.b;
+                ii.a aVar2 = p4Var.a;
+                if (aVar2 != null && (n4Var = p4Var.G) != null) {
+                    ((ii.t3) n4Var).a.h3.q(aVar2);
                     break;
                 }
                 break;

@@ -1,41 +1,57 @@
 package org.telegram.ui;
 
+import android.content.Context;
+import android.text.TextUtils;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.Emoji;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v81 implements Utilities.Callback5, Utilities.Callback5Return, r0.n {
-    public final /* synthetic */ f91 a;
-
-    public /* synthetic */ v81(f91 f91Var) {
-        this.a = f91Var;
+public final class v81 extends org.telegram.ui.Components.g51 {
+    static {
+        org.telegram.ui.Components.g51.setup(new v81());
     }
 
-    @Override // r0.n
-    public r0.l1 Q0(View view, r0.l1 l1Var) {
-        i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(l1Var, false);
-        int i10 = defaultWindowInsets.d;
-        f91 f91Var = this.a;
-        f91Var.S = i10;
-        f91Var.c.setPadding(0, AndroidUtilities.dp(12.0f) + defaultWindowInsets.b, 0, f91Var.S + f91Var.T);
-        return r0.l1.b;
+    public static org.telegram.ui.Components.h51 a(String str, CharSequence charSequence, String str2, View.OnClickListener onClickListener, CharSequence charSequence2, View.OnClickListener onClickListener2) {
+        org.telegram.ui.Components.h51 J = org.telegram.ui.Components.h51.J(v81.class);
+        J.l = str;
+        J.m = charSequence;
+        J.n = str2;
+        J.D = onClickListener;
+        J.o = charSequence2;
+        J.E = onClickListener2;
+        return J;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback5Return
-    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        return Boolean.valueOf(f91.U(this.a, (org.telegram.ui.Components.i51) obj, (View) obj2));
+    @Override // org.telegram.ui.Components.g51
+    public final void bindView(View view, org.telegram.ui.Components.h51 h51Var, boolean z10, org.telegram.ui.Components.v51 v51Var, org.telegram.ui.Components.d61 d61Var) {
+        w81 w81Var = (w81) view;
+        CharSequence charSequence = h51Var.l;
+        CharSequence charSequence2 = h51Var.m;
+        CharSequence charSequence3 = h51Var.n;
+        View.OnClickListener onClickListener = h51Var.D;
+        CharSequence charSequence4 = h51Var.o;
+        View.OnClickListener onClickListener2 = h51Var.E;
+        ci.d dVar = w81Var.e;
+        org.telegram.ui.Components.d90 d90Var = w81Var.b;
+        d90Var.setText(Emoji.replaceEmoji(charSequence, d90Var.getPaint().getFontMetricsInt(), false));
+        org.telegram.ui.Components.d90 d90Var2 = w81Var.c;
+        d90Var2.setText(Emoji.replaceEmoji(charSequence2, d90Var2.getPaint().getFontMetricsInt(), false));
+        ci.d dVar2 = w81Var.d;
+        dVar2.setVisibility(TextUtils.isEmpty(charSequence3) ? 8 : 0);
+        dVar2.setText(charSequence3);
+        dVar2.setOnClickListener(onClickListener);
+        dVar.setText(charSequence4);
+        dVar.setOnClickListener(onClickListener2);
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        f91.f0(this.a, (org.telegram.ui.Components.i51) obj);
+    @Override // org.telegram.ui.Components.g51
+    public final View createView(Context context, org.telegram.ui.Components.ml0 ml0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
+        return new w81(context, d6Var);
+    }
+
+    @Override // org.telegram.ui.Components.g51
+    public final boolean isClickable() {
+        return false;
     }
 }

@@ -50,7 +50,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public class MessagesStorage extends BaseController {
     public static final String[] DATABASE_TABLES;
@@ -58,7 +58,7 @@ public class MessagesStorage extends BaseController {
     public static final int FORUM_TYPE_CHAT = 1;
     public static final int FORUM_TYPE_CHAT_TABS = 2;
     public static final int FORUM_TYPE_DIRECT = 4;
-    public static final int LAST_DB_VERSION = 178;
+    public static final int LAST_DB_VERSION = 179;
     public static final int SENT_FILE_TYPE_AUDIO = 1;
     public static final int SENT_FILE_TYPE_AUDIO_ENCRYPTED = 4;
     public static final int SENT_FILE_TYPE_PHOTO = 0;
@@ -113,22 +113,22 @@ public class MessagesStorage extends BaseController {
     private static volatile MessagesStorage[] Instance = new MessagesStorage[4];
     private static final Object[] lockObjects = new Object[4];
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public interface BooleanCallback {
         void run(boolean z10);
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public interface IntCallback {
         void run(int i10);
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public interface LongCallback {
         void run(long j3);
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class ReadDialog {
         public int date;
         public int lastMid;
@@ -138,7 +138,7 @@ public class MessagesStorage extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public class SavedReactionsUpdate {
         TLRPC.TL_messageReactions last;
         TLRPC.TL_messageReactions old;
@@ -151,12 +151,12 @@ public class MessagesStorage extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public interface StringCallback {
         void run(String str);
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class TopicKey {
         public long dialogId;
         public long topicId;
@@ -231,7 +231,7 @@ public class MessagesStorage extends BaseController {
         DispatchQueue dispatchQueue = new DispatchQueue(hg.c.i(i10, "storageQueue_"));
         this.storageQueue = dispatchQueue;
         dispatchQueue.setPriority(8);
-        this.storageQueue.postRunnable(new e2(this, 13));
+        this.storageQueue.postRunnable(new f2(this, 13));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:13:0x008b  */
@@ -351,7 +351,7 @@ public class MessagesStorage extends BaseController {
             iVar.k(sparseArray, replyToDialogId);
         }
         if (arrayList == null) {
-            arrayList = y0.j(replyToDialogId, iVar2);
+            arrayList = z0.j(replyToDialogId, iVar2);
         }
         ArrayList arrayList2 = (ArrayList) sparseArray.get(message.reply_to.reply_to_msg_id);
         if (arrayList2 == null) {
@@ -675,7 +675,7 @@ public class MessagesStorage extends BaseController {
     }
 
     private void broadcastQuickRepliesMessagesChange(Long l4, long j3) {
-        AndroidUtilities.runOnUIThread(new e2(this, 27));
+        AndroidUtilities.runOnUIThread(new f2(this, 27));
     }
 
     private void broadcastScheduledMessagesChange(Long l4) {
@@ -851,7 +851,7 @@ public class MessagesStorage extends BaseController {
                 }
                 sQLiteCursor.dispose();
                 if (z10) {
-                    AndroidUtilities.runOnUIThread(new jf(this, i10, i11));
+                    AndroidUtilities.runOnUIThread(new hf(this, i10, i11));
                     this.database.executeFast("DELETE FROM dialogs WHERE did = " + DialogObject.makeFolderDialogId(i10)).stepThis().dispose();
                 }
                 sQLiteCursor.dispose();
@@ -1261,52 +1261,52 @@ public class MessagesStorage extends BaseController {
     }
 
     public static void createTables(SQLiteDatabase sQLiteDatabase) {
-        y0.u(sQLiteDatabase, "CREATE TABLE messages_holes(uid INTEGER, start INTEGER, end INTEGER, PRIMARY KEY(uid, start));", "CREATE INDEX IF NOT EXISTS uid_end_messages_holes_4_dialogs ON messages_holes(uid, end);", "CREATE TABLE media_holes_v2(uid INTEGER, type INTEGER, start INTEGER, end INTEGER, PRIMARY KEY(uid, type, start));", "CREATE INDEX IF NOT EXISTS uid_end_media_holes_v2 ON media_holes_v2(uid, type, end);");
-        y0.u(sQLiteDatabase, "CREATE TABLE scheduled_messages_v2(mid INTEGER, uid INTEGER, send_state INTEGER, date INTEGER, data BLOB, ttl INTEGER, replydata BLOB, reply_to_message_id INTEGER, PRIMARY KEY(mid, uid))", "CREATE INDEX IF NOT EXISTS send_state_idx_scheduled_messages_v2 ON scheduled_messages_v2(mid, send_state, date);", "CREATE INDEX IF NOT EXISTS uid_date_idx_scheduled_messages_v2 ON scheduled_messages_v2(uid, date);", "CREATE INDEX IF NOT EXISTS reply_to_idx_scheduled_messages_v2 ON scheduled_messages_v2(mid, reply_to_message_id);");
-        y0.u(sQLiteDatabase, "CREATE INDEX IF NOT EXISTS idx_to_reply_scheduled_messages_v2 ON scheduled_messages_v2(reply_to_message_id, mid);", "CREATE TABLE messages_v2(mid INTEGER, uid INTEGER, read_state INTEGER, send_state INTEGER, date INTEGER, data BLOB, out INTEGER, ttl INTEGER, media INTEGER, replydata BLOB, imp INTEGER, mention INTEGER, forwards INTEGER, replies_data BLOB, thread_reply_id INTEGER, is_channel INTEGER, reply_to_message_id INTEGER, custom_params BLOB, group_id INTEGER, reply_to_story_id INTEGER, PRIMARY KEY(mid, uid))", "CREATE INDEX IF NOT EXISTS uid_mid_read_out_idx_messages_v2 ON messages_v2(uid, mid, read_state, out);", "CREATE INDEX IF NOT EXISTS uid_date_mid_idx_messages_v2 ON messages_v2(uid, date, mid);");
-        y0.u(sQLiteDatabase, "CREATE INDEX IF NOT EXISTS mid_out_idx_messages_v2 ON messages_v2(mid, out);", "CREATE INDEX IF NOT EXISTS task_idx_messages_v2 ON messages_v2(uid, out, read_state, ttl, date, send_state);", "CREATE INDEX IF NOT EXISTS send_state_idx_messages_v2 ON messages_v2(mid, send_state, date);", "CREATE INDEX IF NOT EXISTS uid_mention_idx_messages_v2 ON messages_v2(uid, mention, read_state);");
-        y0.u(sQLiteDatabase, "CREATE INDEX IF NOT EXISTS is_channel_idx_messages_v2 ON messages_v2(mid, is_channel);", "CREATE INDEX IF NOT EXISTS reply_to_idx_messages_v2 ON messages_v2(mid, reply_to_message_id);", "CREATE INDEX IF NOT EXISTS idx_to_reply_messages_v2 ON messages_v2(reply_to_message_id, mid);", "CREATE INDEX IF NOT EXISTS uid_mid_groupid_messages_v2 ON messages_v2(uid, mid, group_id);");
-        y0.u(sQLiteDatabase, "CREATE TABLE saved_dialogs(did INTEGER, date INTEGER, last_mid INTEGER, pinned INTEGER, flags INTEGER, folder_id INTEGER, last_mid_group INTEGER, count INTEGER, forumChatId INTEGER, unread_count INTEGER, max_read_id INTEGER, read_outbox INTEGER, PRIMARY KEY (did, forumChatId))", "CREATE INDEX IF NOT EXISTS date_idx_4_saved_dialogs ON saved_dialogs(date);", "CREATE INDEX IF NOT EXISTS last_mid_idx_4_saved_dialogs ON saved_dialogs(last_mid);", "CREATE INDEX IF NOT EXISTS folder_id_idx_4_saved_dialogs ON saved_dialogs(folder_id);");
-        y0.u(sQLiteDatabase, "CREATE INDEX IF NOT EXISTS flags_idx_4_saved_dialogs ON saved_dialogs(flags);", "CREATE INDEX IF NOT EXISTS forum_idx_dialogs ON saved_dialogs(forumChatId);", "CREATE TABLE download_queue(uid INTEGER, type INTEGER, date INTEGER, data BLOB, parent TEXT, PRIMARY KEY (uid, type));", "CREATE INDEX IF NOT EXISTS type_date_idx_download_queue ON download_queue(type, date);");
-        y0.u(sQLiteDatabase, "CREATE TABLE user_contacts_v7(key TEXT PRIMARY KEY, uid INTEGER, fname TEXT, sname TEXT, imported INTEGER)", "CREATE TABLE user_phones_v7(key TEXT, phone TEXT, sphone TEXT, deleted INTEGER, PRIMARY KEY (key, phone))", "CREATE INDEX IF NOT EXISTS sphone_deleted_idx_user_phones ON user_phones_v7(sphone, deleted);", "CREATE TABLE dialogs(did INTEGER PRIMARY KEY, date INTEGER, unread_count INTEGER, last_mid INTEGER, inbox_max INTEGER, outbox_max INTEGER, last_mid_i INTEGER, unread_count_i INTEGER, pts INTEGER, date_i INTEGER, pinned INTEGER, flags INTEGER, folder_id INTEGER, data BLOB, unread_reactions INTEGER, last_mid_group INTEGER, ttl_period INTEGER, unread_poll_votes INTEGER)");
-        y0.u(sQLiteDatabase, "CREATE INDEX IF NOT EXISTS date_idx_4_dialogs ON dialogs(date);", "CREATE INDEX IF NOT EXISTS last_mid_idx_4_dialogs ON dialogs(last_mid);", "CREATE INDEX IF NOT EXISTS unread_count_idx_dialogs ON dialogs(unread_count);", "CREATE INDEX IF NOT EXISTS last_mid_i_idx_dialogs ON dialogs(last_mid_i);");
-        y0.u(sQLiteDatabase, "CREATE INDEX IF NOT EXISTS unread_count_i_idx_dialogs ON dialogs(unread_count_i);", "CREATE INDEX IF NOT EXISTS folder_id_idx_4_dialogs ON dialogs(folder_id);", "CREATE INDEX IF NOT EXISTS flags_idx_4_dialogs ON dialogs(flags);", "CREATE TABLE dialog_filter(id INTEGER PRIMARY KEY, ord INTEGER, unread_count INTEGER, flags INTEGER, title TEXT, color INTEGER DEFAULT -1, entities BLOB, noanimate INTEGER)");
-        y0.u(sQLiteDatabase, "CREATE TABLE dialog_filter_ep(id INTEGER, peer INTEGER, PRIMARY KEY (id, peer))", "CREATE TABLE dialog_filter_pin_v2(id INTEGER, peer INTEGER, pin INTEGER, PRIMARY KEY (id, peer))", "CREATE TABLE randoms_v2(random_id INTEGER, mid INTEGER, uid INTEGER, PRIMARY KEY (random_id, mid, uid))", "CREATE INDEX IF NOT EXISTS mid_idx_randoms_v2 ON randoms_v2(mid, uid);");
-        y0.u(sQLiteDatabase, "CREATE TABLE enc_tasks_v4(mid INTEGER, uid INTEGER, date INTEGER, media INTEGER, PRIMARY KEY(mid, uid, media))", "CREATE INDEX IF NOT EXISTS date_idx_enc_tasks_v4 ON enc_tasks_v4(date);", "CREATE TABLE messages_seq(mid INTEGER PRIMARY KEY, seq_in INTEGER, seq_out INTEGER);", "CREATE INDEX IF NOT EXISTS seq_idx_messages_seq ON messages_seq(seq_in, seq_out);");
-        y0.u(sQLiteDatabase, "CREATE TABLE params(id INTEGER PRIMARY KEY, seq INTEGER, pts INTEGER, date INTEGER, qts INTEGER, lsv INTEGER, sg INTEGER, pbytes BLOB)", "INSERT INTO params VALUES(1, 0, 0, 0, 0, 0, 0, NULL)", "CREATE TABLE media_v4(mid INTEGER, uid INTEGER, date INTEGER, type INTEGER, data BLOB, PRIMARY KEY(mid, uid, type))", "CREATE INDEX IF NOT EXISTS uid_mid_type_date_idx_media_v4 ON media_v4(uid, mid, type, date);");
-        y0.u(sQLiteDatabase, "CREATE INDEX IF NOT EXISTS uid_type_date_mid_idx_media_v4 ON media_v4(uid, type, date DESC, mid DESC);", "CREATE INDEX IF NOT EXISTS media_v4_music_browse_idx ON media_v4(uid, date DESC, mid DESC) WHERE type = 4 AND mid > 0 AND uid != 0;", "CREATE TABLE bot_keyboard(uid INTEGER PRIMARY KEY, mid INTEGER, info BLOB)", "CREATE INDEX IF NOT EXISTS bot_keyboard_idx_mid_v2 ON bot_keyboard(mid, uid);");
-        y0.u(sQLiteDatabase, "CREATE TABLE bot_keyboard_topics(uid INTEGER, tid INTEGER, mid INTEGER, info BLOB, PRIMARY KEY(uid, tid))", "CREATE INDEX IF NOT EXISTS bot_keyboard_topics_idx_mid_v2 ON bot_keyboard_topics(mid, uid, tid);", "CREATE TABLE chat_settings_v2(uid INTEGER PRIMARY KEY, info BLOB, pinned INTEGER, online INTEGER, inviter INTEGER, links INTEGER, participants_count INTEGER)", "CREATE INDEX IF NOT EXISTS chat_settings_pinned_idx ON chat_settings_v2(uid, pinned) WHERE pinned != 0;");
-        y0.u(sQLiteDatabase, "CREATE TABLE user_settings(uid INTEGER PRIMARY KEY, info BLOB, pinned INTEGER)", "CREATE INDEX IF NOT EXISTS user_settings_pinned_idx ON user_settings(uid, pinned) WHERE pinned != 0;", "CREATE TABLE chat_pinned_v2(uid INTEGER, mid INTEGER, data BLOB, PRIMARY KEY (uid, mid));", "CREATE TABLE chat_pinned_count(uid INTEGER PRIMARY KEY, count INTEGER, end INTEGER);");
-        y0.u(sQLiteDatabase, "CREATE TABLE chat_hints(did INTEGER, type INTEGER, rating REAL, date INTEGER, PRIMARY KEY(did, type))", "CREATE INDEX IF NOT EXISTS chat_hints_rating_idx ON chat_hints(rating);", "CREATE TABLE botcache(id TEXT PRIMARY KEY, date INTEGER, data BLOB)", "CREATE INDEX IF NOT EXISTS botcache_date_idx ON botcache(date);");
-        y0.u(sQLiteDatabase, "CREATE TABLE users_data(uid INTEGER PRIMARY KEY, about TEXT)", "CREATE TABLE users(uid INTEGER PRIMARY KEY, name TEXT, status INTEGER, data BLOB)", "CREATE TABLE chats(uid INTEGER PRIMARY KEY, name TEXT, data BLOB)", "CREATE TABLE enc_chats(uid INTEGER PRIMARY KEY, user INTEGER, name TEXT, data BLOB, g BLOB, authkey BLOB, ttl INTEGER, layer INTEGER, seq_in INTEGER, seq_out INTEGER, use_count INTEGER, exchange_id INTEGER, key_date INTEGER, fprint INTEGER, fauthkey BLOB, khash BLOB, in_seq_no INTEGER, admin_id INTEGER, mtproto_seq INTEGER)");
-        y0.u(sQLiteDatabase, "CREATE TABLE channel_users_v2(did INTEGER, uid INTEGER, date INTEGER, data BLOB, PRIMARY KEY(did, uid))", "CREATE TABLE channel_admins_v3(did INTEGER, uid INTEGER, data BLOB, PRIMARY KEY(did, uid))", "CREATE TABLE contacts(uid INTEGER PRIMARY KEY, mutual INTEGER)", "CREATE TABLE dialog_photos(uid INTEGER, id INTEGER, num INTEGER, data BLOB, PRIMARY KEY (uid, id))");
-        y0.u(sQLiteDatabase, "CREATE TABLE dialog_photos_count(uid INTEGER PRIMARY KEY, count INTEGER)", "CREATE TABLE dialog_settings(did INTEGER PRIMARY KEY, flags INTEGER);", "CREATE TABLE web_recent_v3(id TEXT, type INTEGER, image_url TEXT, thumb_url TEXT, local_url TEXT, width INTEGER, height INTEGER, size INTEGER, date INTEGER, document BLOB, PRIMARY KEY (id, type));", "CREATE TABLE stickers_v2(id INTEGER PRIMARY KEY, data BLOB, date INTEGER, hash INTEGER);");
-        y0.u(sQLiteDatabase, "CREATE TABLE stickers_featured(id INTEGER PRIMARY KEY, data BLOB, unread BLOB, date INTEGER, hash INTEGER, premium INTEGER, emoji INTEGER);", "CREATE TABLE stickers_dice(emoji TEXT PRIMARY KEY, data BLOB, date INTEGER);", "CREATE TABLE hashtag_recent_v2(id TEXT PRIMARY KEY, date INTEGER);", "CREATE TABLE webpage_pending_v2(id INTEGER, mid INTEGER, uid INTEGER, PRIMARY KEY (id, mid, uid));");
-        y0.u(sQLiteDatabase, "CREATE TABLE sent_files_v2(uid TEXT, type INTEGER, data BLOB, parent TEXT, PRIMARY KEY (uid, type))", "CREATE TABLE search_recent(did INTEGER PRIMARY KEY, date INTEGER);", "CREATE TABLE media_counts_v2(uid INTEGER, type INTEGER, count INTEGER, old INTEGER, PRIMARY KEY(uid, type))", "CREATE TABLE keyvalue(id TEXT PRIMARY KEY, value TEXT)");
-        y0.u(sQLiteDatabase, "CREATE TABLE bot_info_v2(uid INTEGER, dialogId INTEGER, info BLOB, PRIMARY KEY(uid, dialogId))", "CREATE TABLE pending_tasks(id INTEGER PRIMARY KEY, data BLOB);", "CREATE TABLE requested_holes(uid INTEGER, seq_out_start INTEGER, seq_out_end INTEGER, PRIMARY KEY (uid, seq_out_start, seq_out_end));", "CREATE TABLE sharing_locations(uid INTEGER PRIMARY KEY, mid INTEGER, date INTEGER, period INTEGER, message BLOB, proximity INTEGER);");
-        y0.u(sQLiteDatabase, "CREATE TABLE stickersets2(id INTEGER PRIMATE KEY, data BLOB, hash INTEGER, date INTEGER, short_name TEXT);", "CREATE INDEX IF NOT EXISTS stickersets2_id_index ON stickersets2(id);", "CREATE INDEX IF NOT EXISTS stickersets2_id_short_name ON stickersets2(id, short_name);", "CREATE INDEX IF NOT EXISTS stickers_featured_emoji_index ON stickers_featured(emoji);");
-        y0.u(sQLiteDatabase, "CREATE TABLE shortcut_widget(id INTEGER, did INTEGER, ord INTEGER, PRIMARY KEY (id, did));", "CREATE INDEX IF NOT EXISTS shortcut_widget_did ON shortcut_widget(did);", "CREATE TABLE emoji_keywords_v2(lang TEXT, keyword TEXT, emoji TEXT, PRIMARY KEY(lang, keyword, emoji));", "CREATE INDEX IF NOT EXISTS emoji_keywords_v2_keyword ON emoji_keywords_v2(keyword);");
-        y0.u(sQLiteDatabase, "CREATE TABLE emoji_keywords_info_v2(lang TEXT PRIMARY KEY, alias TEXT, version INTEGER, date INTEGER);", "CREATE TABLE wallpapers2(uid INTEGER PRIMARY KEY, data BLOB, num INTEGER)", "CREATE INDEX IF NOT EXISTS wallpapers_num ON wallpapers2(num);", "CREATE TABLE unread_push_messages(uid INTEGER, mid INTEGER, random INTEGER, date INTEGER, data BLOB, fm TEXT, name TEXT, uname TEXT, flags INTEGER, topicId INTEGER, is_reaction INTEGER, PRIMARY KEY(uid, mid))");
-        y0.u(sQLiteDatabase, "CREATE INDEX IF NOT EXISTS unread_push_messages_idx_date ON unread_push_messages(date);", "CREATE INDEX IF NOT EXISTS unread_push_messages_idx_random ON unread_push_messages(random);", "CREATE TABLE polls_v2(mid INTEGER, uid INTEGER, id INTEGER, PRIMARY KEY (mid, uid));", "CREATE INDEX IF NOT EXISTS polls_id_v2 ON polls_v2(id);");
-        y0.u(sQLiteDatabase, "CREATE TABLE reactions(data BLOB, hash INTEGER, date INTEGER);", "CREATE TABLE reaction_mentions(message_id INTEGER, state INTEGER, dialog_id INTEGER, PRIMARY KEY(message_id, dialog_id))", "CREATE INDEX IF NOT EXISTS reaction_mentions_did ON reaction_mentions(dialog_id);", "CREATE TABLE downloading_documents(data BLOB, hash INTEGER, id INTEGER, state INTEGER, date INTEGER, PRIMARY KEY(hash, id));");
-        y0.u(sQLiteDatabase, "CREATE TABLE animated_emoji(document_id INTEGER PRIMARY KEY, data BLOB);", "CREATE TABLE attach_menu_bots(data BLOB, hash INTEGER, date INTEGER);", "CREATE TABLE premium_promo(data BLOB, date INTEGER);", "CREATE TABLE emoji_statuses(data BLOB, type INTEGER);");
-        y0.u(sQLiteDatabase, "CREATE TABLE messages_holes_topics(uid INTEGER, topic_id INTEGER, start INTEGER, end INTEGER, PRIMARY KEY(uid, topic_id, start));", "CREATE INDEX IF NOT EXISTS uid_end_messages_holes_4_topics ON messages_holes_topics(uid, topic_id, end);", "CREATE TABLE messages_topics(mid INTEGER, uid INTEGER, topic_id INTEGER, read_state INTEGER, send_state INTEGER, date INTEGER, data BLOB, out INTEGER, ttl INTEGER, media INTEGER, replydata BLOB, imp INTEGER, mention INTEGER, forwards INTEGER, replies_data BLOB, thread_reply_id INTEGER, is_channel INTEGER, reply_to_message_id INTEGER, custom_params BLOB, reply_to_story_id INTEGER, PRIMARY KEY(mid, topic_id, uid))", "CREATE INDEX IF NOT EXISTS uid_date_mid_idx_messages_topics ON messages_topics(uid, date, mid);");
-        y0.u(sQLiteDatabase, "CREATE INDEX IF NOT EXISTS mid_out_idx_messages_topics ON messages_topics(mid, out);", "CREATE INDEX IF NOT EXISTS task_idx_messages_topics ON messages_topics(uid, out, read_state, ttl, date, send_state);", "CREATE INDEX IF NOT EXISTS send_state_idx_messages_topics ON messages_topics(mid, send_state, date);", "CREATE INDEX IF NOT EXISTS is_channel_idx_messages_topics ON messages_topics(mid, is_channel);");
-        y0.u(sQLiteDatabase, "CREATE INDEX IF NOT EXISTS reply_to_idx_messages_topics ON messages_topics(mid, reply_to_message_id);", "CREATE INDEX IF NOT EXISTS idx_to_reply_messages_topics ON messages_topics(reply_to_message_id, mid);", "CREATE INDEX IF NOT EXISTS mid_uid_messages_topics ON messages_topics(mid, uid);", "CREATE INDEX IF NOT EXISTS uid_mid_read_out_idx_messages_topics ON messages_topics(uid, topic_id, mid, read_state, out);");
-        y0.u(sQLiteDatabase, "CREATE INDEX IF NOT EXISTS uid_mention_idx_messages_topics ON messages_topics(uid, topic_id, mention, read_state);", "CREATE INDEX IF NOT EXISTS uid_topic_id_messages_topics ON messages_topics(uid, topic_id);", "CREATE INDEX IF NOT EXISTS uid_topic_id_date_mid_messages_topics ON messages_topics(uid, topic_id, date, mid);", "CREATE INDEX IF NOT EXISTS uid_topic_id_mid_messages_topics ON messages_topics(uid, topic_id, mid);");
-        y0.u(sQLiteDatabase, "CREATE TABLE media_topics(mid INTEGER, uid INTEGER, topic_id INTEGER, date INTEGER, type INTEGER, data BLOB, PRIMARY KEY(mid, uid, topic_id, type))", "CREATE INDEX IF NOT EXISTS uid_mid_type_date_idx_media_topics ON media_topics(uid, topic_id, mid, type, date);", "CREATE TABLE media_holes_topics(uid INTEGER, topic_id INTEGER, type INTEGER, start INTEGER, end INTEGER, PRIMARY KEY(uid, topic_id, type, start));", "CREATE INDEX IF NOT EXISTS uid_end_media_holes_topics ON media_holes_topics(uid, topic_id, type, end);");
-        y0.u(sQLiteDatabase, "CREATE TABLE topics(did INTEGER, topic_id INTEGER, data BLOB, top_message INTEGER, topic_message BLOB, unread_count INTEGER, max_read_id INTEGER, unread_mentions INTEGER, unread_reactions INTEGER, read_outbox INTEGER, pinned INTEGER, total_messages_count INTEGER, hidden INTEGER, edit_date INTEGER, nopaid_messages_exception INTEGER, unread_poll_votes INTEGER, PRIMARY KEY(did, topic_id));", "CREATE INDEX IF NOT EXISTS did_top_message_topics ON topics(did, top_message);", "CREATE INDEX IF NOT EXISTS did_topics ON topics(did);", "CREATE TABLE media_counts_topics(uid INTEGER, topic_id INTEGER, type INTEGER, count INTEGER, old INTEGER, PRIMARY KEY(uid, topic_id, type))");
-        y0.u(sQLiteDatabase, "CREATE TABLE reaction_mentions_topics(message_id INTEGER, state INTEGER, dialog_id INTEGER, topic_id INTEGER, PRIMARY KEY(message_id, dialog_id, topic_id))", "CREATE INDEX IF NOT EXISTS reaction_mentions_topics_did ON reaction_mentions_topics(dialog_id, topic_id);", "CREATE TABLE emoji_groups(type INTEGER PRIMARY KEY, data BLOB)", "CREATE TABLE app_config(data BLOB)");
-        y0.u(sQLiteDatabase, "CREATE TABLE web_browser_settings(data BLOB)", "CREATE TABLE effects(data BLOB)", "CREATE TABLE stories (dialog_id INTEGER, story_id INTEGER, data BLOB, custom_params BLOB, PRIMARY KEY (dialog_id, story_id));", "CREATE TABLE stories_counter (dialog_id INTEGER PRIMARY KEY, count INTEGER, max_read INTEGER);");
-        y0.u(sQLiteDatabase, "CREATE TABLE profile_stories (dialog_id INTEGER, story_id INTEGER, data BLOB, type INTEGER, seen INTEGER, pin INTEGER, PRIMARY KEY(dialog_id, story_id, type));", "CREATE TABLE profile_stories_albums (dialog_id INTEGER, album_id INTEGER, order_index INTEGER, data BLOB, PRIMARY KEY(dialog_id, album_id));", "CREATE TABLE profile_stories_albums_links (dialog_id INTEGER, album_id INTEGER, story_id INTEGER, order_index INTEGER, PRIMARY KEY (dialog_id, album_id, story_id));", "CREATE TABLE story_drafts (id INTEGER PRIMARY KEY, date INTEGER, data BLOB, type INTEGER);");
-        y0.u(sQLiteDatabase, "CREATE TABLE story_pushes (uid INTEGER, sid INTEGER, date INTEGER, localName TEXT, flags INTEGER, expire_date INTEGER, live INTEGER, PRIMARY KEY(uid, sid));", "CREATE TABLE unconfirmed_auth (data BLOB);", "CREATE TABLE saved_reaction_tags (topic_id INTEGER PRIMARY KEY, data BLOB);", "CREATE TABLE tag_message_id(mid INTEGER, topic_id INTEGER, tag INTEGER, text TEXT);");
-        y0.u(sQLiteDatabase, "CREATE INDEX IF NOT EXISTS tag_idx_tag_message_id ON tag_message_id(tag);", "CREATE INDEX IF NOT EXISTS tag_text_idx_tag_message_id ON tag_message_id(tag, text COLLATE NOCASE);", "CREATE INDEX IF NOT EXISTS tag_topic_idx_tag_message_id ON tag_message_id(topic_id, tag);", "CREATE INDEX IF NOT EXISTS tag_topic_text_idx_tag_message_id ON tag_message_id(topic_id, tag, text COLLATE NOCASE);");
-        y0.u(sQLiteDatabase, "CREATE TABLE business_replies(topic_id INTEGER PRIMARY KEY, name TEXT, order_value INTEGER, count INTEGER);", "CREATE TABLE quick_replies_messages(mid INTEGER, topic_id INTEGER, send_state INTEGER, date INTEGER, data BLOB, ttl INTEGER, replydata BLOB, reply_to_message_id INTEGER, PRIMARY KEY(mid, topic_id))", "CREATE INDEX IF NOT EXISTS send_state_idx_quick_replies_messages ON quick_replies_messages(mid, send_state, date);", "CREATE INDEX IF NOT EXISTS topic_date_idx_quick_replies_messages ON quick_replies_messages(topic_id, date);");
-        y0.u(sQLiteDatabase, "CREATE INDEX IF NOT EXISTS reply_to_idx_quick_replies_messages ON quick_replies_messages(mid, reply_to_message_id);", "CREATE INDEX IF NOT EXISTS idx_to_reply_quick_replies_messages ON quick_replies_messages(reply_to_message_id, mid);", "CREATE TABLE welcome_messages(mid INTEGER, dialog_id INTEGER, send_state INTEGER, date INTEGER, data BLOB, ttl INTEGER, replydata BLOB, reply_to_message_id INTEGER, PRIMARY KEY(mid, dialog_id))", "CREATE INDEX IF NOT EXISTS send_state_idx_welcome_messages ON welcome_messages(mid, send_state, date);");
-        y0.u(sQLiteDatabase, "CREATE INDEX IF NOT EXISTS dialog_date_idx_welcome_messages ON welcome_messages(dialog_id, date);", "CREATE INDEX IF NOT EXISTS reply_to_idx_welcome_messages ON welcome_messages(mid, reply_to_message_id);", "CREATE INDEX IF NOT EXISTS idx_to_reply_welcome_messages ON welcome_messages(reply_to_message_id, mid);", "CREATE TABLE business_links(data BLOB, order_value INTEGER);");
-        y0.u(sQLiteDatabase, "CREATE TABLE fact_checks(hash INTEGER PRIMARY KEY, data BLOB, expires INTEGER);", "CREATE TABLE popular_bots(uid INTEGER PRIMARY KEY, time INTEGER, offset TEXT, pos INTEGER);", "CREATE TABLE star_gifts2(id INTEGER PRIMARY KEY, data BLOB, hash INTEGER, time INTEGER, pos INTEGER);", "CREATE TABLE gift_themes (slug TEXT PRIMARY KEY, data BLOB);");
-        y0.u(sQLiteDatabase, "CREATE TABLE poll_votes_mentions(message_id INTEGER, state INTEGER, dialog_id INTEGER, PRIMARY KEY(message_id, dialog_id))", "CREATE INDEX IF NOT EXISTS poll_votes_mentions_did ON poll_votes_mentions(dialog_id);", "CREATE TABLE poll_votes_mentions_topics(message_id INTEGER, state INTEGER, dialog_id INTEGER, topic_id INTEGER, PRIMARY KEY(message_id, dialog_id, topic_id))", "CREATE INDEX IF NOT EXISTS poll_votes_mentions_topics_did ON poll_votes_mentions_topics(dialog_id, topic_id);");
-        y0.t(sQLiteDatabase, "CREATE TABLE ephemeral_messages (id INTEGER, dialog_id INTEGER, topic_id INTEGER, date INTEGER, data BLOB, PRIMARY KEY(dialog_id, id));", "CREATE INDEX IF NOT EXISTS ephemeral_messages_date_idx ON ephemeral_messages(date);", "PRAGMA user_version = 178");
+        z0.u(sQLiteDatabase, "CREATE TABLE messages_holes(uid INTEGER, start INTEGER, end INTEGER, PRIMARY KEY(uid, start));", "CREATE INDEX IF NOT EXISTS uid_end_messages_holes_4_dialogs ON messages_holes(uid, end);", "CREATE TABLE media_holes_v2(uid INTEGER, type INTEGER, start INTEGER, end INTEGER, PRIMARY KEY(uid, type, start));", "CREATE INDEX IF NOT EXISTS uid_end_media_holes_v2 ON media_holes_v2(uid, type, end);");
+        z0.u(sQLiteDatabase, "CREATE TABLE scheduled_messages_v2(mid INTEGER, uid INTEGER, send_state INTEGER, date INTEGER, data BLOB, ttl INTEGER, replydata BLOB, reply_to_message_id INTEGER, PRIMARY KEY(mid, uid))", "CREATE INDEX IF NOT EXISTS send_state_idx_scheduled_messages_v2 ON scheduled_messages_v2(mid, send_state, date);", "CREATE INDEX IF NOT EXISTS uid_date_idx_scheduled_messages_v2 ON scheduled_messages_v2(uid, date);", "CREATE INDEX IF NOT EXISTS reply_to_idx_scheduled_messages_v2 ON scheduled_messages_v2(mid, reply_to_message_id);");
+        z0.u(sQLiteDatabase, "CREATE INDEX IF NOT EXISTS idx_to_reply_scheduled_messages_v2 ON scheduled_messages_v2(reply_to_message_id, mid);", "CREATE TABLE messages_v2(mid INTEGER, uid INTEGER, read_state INTEGER, send_state INTEGER, date INTEGER, data BLOB, out INTEGER, ttl INTEGER, media INTEGER, replydata BLOB, imp INTEGER, mention INTEGER, forwards INTEGER, replies_data BLOB, thread_reply_id INTEGER, is_channel INTEGER, reply_to_message_id INTEGER, custom_params BLOB, group_id INTEGER, reply_to_story_id INTEGER, PRIMARY KEY(mid, uid))", "CREATE INDEX IF NOT EXISTS uid_mid_read_out_idx_messages_v2 ON messages_v2(uid, mid, read_state, out);", "CREATE INDEX IF NOT EXISTS uid_date_mid_idx_messages_v2 ON messages_v2(uid, date, mid);");
+        z0.u(sQLiteDatabase, "CREATE INDEX IF NOT EXISTS mid_out_idx_messages_v2 ON messages_v2(mid, out);", "CREATE INDEX IF NOT EXISTS task_idx_messages_v2 ON messages_v2(uid, out, read_state, ttl, date, send_state);", "CREATE INDEX IF NOT EXISTS send_state_idx_messages_v2 ON messages_v2(mid, send_state, date);", "CREATE INDEX IF NOT EXISTS uid_mention_idx_messages_v2 ON messages_v2(uid, mention, read_state);");
+        z0.u(sQLiteDatabase, "CREATE INDEX IF NOT EXISTS is_channel_idx_messages_v2 ON messages_v2(mid, is_channel);", "CREATE INDEX IF NOT EXISTS reply_to_idx_messages_v2 ON messages_v2(mid, reply_to_message_id);", "CREATE INDEX IF NOT EXISTS idx_to_reply_messages_v2 ON messages_v2(reply_to_message_id, mid);", "CREATE INDEX IF NOT EXISTS uid_mid_groupid_messages_v2 ON messages_v2(uid, mid, group_id);");
+        z0.u(sQLiteDatabase, "CREATE TABLE saved_dialogs(did INTEGER, date INTEGER, last_mid INTEGER, pinned INTEGER, flags INTEGER, folder_id INTEGER, last_mid_group INTEGER, count INTEGER, forumChatId INTEGER, unread_count INTEGER, max_read_id INTEGER, read_outbox INTEGER, PRIMARY KEY (did, forumChatId))", "CREATE INDEX IF NOT EXISTS date_idx_4_saved_dialogs ON saved_dialogs(date);", "CREATE INDEX IF NOT EXISTS last_mid_idx_4_saved_dialogs ON saved_dialogs(last_mid);", "CREATE INDEX IF NOT EXISTS folder_id_idx_4_saved_dialogs ON saved_dialogs(folder_id);");
+        z0.u(sQLiteDatabase, "CREATE INDEX IF NOT EXISTS flags_idx_4_saved_dialogs ON saved_dialogs(flags);", "CREATE INDEX IF NOT EXISTS forum_idx_dialogs ON saved_dialogs(forumChatId);", "CREATE TABLE download_queue(uid INTEGER, type INTEGER, date INTEGER, data BLOB, parent TEXT, PRIMARY KEY (uid, type));", "CREATE INDEX IF NOT EXISTS type_date_idx_download_queue ON download_queue(type, date);");
+        z0.u(sQLiteDatabase, "CREATE TABLE user_contacts_v7(key TEXT PRIMARY KEY, uid INTEGER, fname TEXT, sname TEXT, imported INTEGER)", "CREATE TABLE user_phones_v7(key TEXT, phone TEXT, sphone TEXT, deleted INTEGER, PRIMARY KEY (key, phone))", "CREATE INDEX IF NOT EXISTS sphone_deleted_idx_user_phones ON user_phones_v7(sphone, deleted);", "CREATE TABLE dialogs(did INTEGER PRIMARY KEY, date INTEGER, unread_count INTEGER, last_mid INTEGER, inbox_max INTEGER, outbox_max INTEGER, last_mid_i INTEGER, unread_count_i INTEGER, pts INTEGER, date_i INTEGER, pinned INTEGER, flags INTEGER, folder_id INTEGER, data BLOB, unread_reactions INTEGER, last_mid_group INTEGER, ttl_period INTEGER, unread_poll_votes INTEGER)");
+        z0.u(sQLiteDatabase, "CREATE INDEX IF NOT EXISTS date_idx_4_dialogs ON dialogs(date);", "CREATE INDEX IF NOT EXISTS last_mid_idx_4_dialogs ON dialogs(last_mid);", "CREATE INDEX IF NOT EXISTS unread_count_idx_dialogs ON dialogs(unread_count);", "CREATE INDEX IF NOT EXISTS last_mid_i_idx_dialogs ON dialogs(last_mid_i);");
+        z0.u(sQLiteDatabase, "CREATE INDEX IF NOT EXISTS unread_count_i_idx_dialogs ON dialogs(unread_count_i);", "CREATE INDEX IF NOT EXISTS folder_id_idx_4_dialogs ON dialogs(folder_id);", "CREATE INDEX IF NOT EXISTS flags_idx_4_dialogs ON dialogs(flags);", "CREATE TABLE dialog_filter(id INTEGER PRIMARY KEY, ord INTEGER, unread_count INTEGER, flags INTEGER, title TEXT, color INTEGER DEFAULT -1, entities BLOB, noanimate INTEGER)");
+        z0.u(sQLiteDatabase, "CREATE TABLE dialog_filter_ep(id INTEGER, peer INTEGER, PRIMARY KEY (id, peer))", "CREATE TABLE dialog_filter_pin_v2(id INTEGER, peer INTEGER, pin INTEGER, PRIMARY KEY (id, peer))", "CREATE TABLE randoms_v2(random_id INTEGER, mid INTEGER, uid INTEGER, PRIMARY KEY (random_id, mid, uid))", "CREATE INDEX IF NOT EXISTS mid_idx_randoms_v2 ON randoms_v2(mid, uid);");
+        z0.u(sQLiteDatabase, "CREATE TABLE enc_tasks_v4(mid INTEGER, uid INTEGER, date INTEGER, media INTEGER, PRIMARY KEY(mid, uid, media))", "CREATE INDEX IF NOT EXISTS date_idx_enc_tasks_v4 ON enc_tasks_v4(date);", "CREATE TABLE messages_seq(mid INTEGER PRIMARY KEY, seq_in INTEGER, seq_out INTEGER);", "CREATE INDEX IF NOT EXISTS seq_idx_messages_seq ON messages_seq(seq_in, seq_out);");
+        z0.u(sQLiteDatabase, "CREATE TABLE params(id INTEGER PRIMARY KEY, seq INTEGER, pts INTEGER, date INTEGER, qts INTEGER, lsv INTEGER, sg INTEGER, pbytes BLOB)", "INSERT INTO params VALUES(1, 0, 0, 0, 0, 0, 0, NULL)", "CREATE TABLE media_v4(mid INTEGER, uid INTEGER, date INTEGER, type INTEGER, data BLOB, PRIMARY KEY(mid, uid, type))", "CREATE INDEX IF NOT EXISTS uid_mid_type_date_idx_media_v4 ON media_v4(uid, mid, type, date);");
+        z0.u(sQLiteDatabase, "CREATE INDEX IF NOT EXISTS uid_type_date_mid_idx_media_v4 ON media_v4(uid, type, date DESC, mid DESC);", "CREATE INDEX IF NOT EXISTS media_v4_music_browse_idx ON media_v4(uid, date DESC, mid DESC) WHERE type = 4 AND mid > 0 AND uid != 0;", "CREATE TABLE bot_keyboard(uid INTEGER PRIMARY KEY, mid INTEGER, info BLOB)", "CREATE INDEX IF NOT EXISTS bot_keyboard_idx_mid_v2 ON bot_keyboard(mid, uid);");
+        z0.u(sQLiteDatabase, "CREATE TABLE bot_keyboard_topics(uid INTEGER, tid INTEGER, mid INTEGER, info BLOB, PRIMARY KEY(uid, tid))", "CREATE INDEX IF NOT EXISTS bot_keyboard_topics_idx_mid_v2 ON bot_keyboard_topics(mid, uid, tid);", "CREATE TABLE chat_settings_v2(uid INTEGER PRIMARY KEY, info BLOB, pinned INTEGER, online INTEGER, inviter INTEGER, links INTEGER, participants_count INTEGER)", "CREATE INDEX IF NOT EXISTS chat_settings_pinned_idx ON chat_settings_v2(uid, pinned) WHERE pinned != 0;");
+        z0.u(sQLiteDatabase, "CREATE TABLE user_settings(uid INTEGER PRIMARY KEY, info BLOB, pinned INTEGER)", "CREATE INDEX IF NOT EXISTS user_settings_pinned_idx ON user_settings(uid, pinned) WHERE pinned != 0;", "CREATE TABLE chat_pinned_v2(uid INTEGER, mid INTEGER, data BLOB, PRIMARY KEY (uid, mid));", "CREATE TABLE chat_pinned_count(uid INTEGER PRIMARY KEY, count INTEGER, end INTEGER);");
+        z0.u(sQLiteDatabase, "CREATE TABLE chat_hints(did INTEGER, type INTEGER, rating REAL, date INTEGER, PRIMARY KEY(did, type))", "CREATE INDEX IF NOT EXISTS chat_hints_rating_idx ON chat_hints(rating);", "CREATE TABLE botcache(id TEXT PRIMARY KEY, date INTEGER, data BLOB)", "CREATE INDEX IF NOT EXISTS botcache_date_idx ON botcache(date);");
+        z0.u(sQLiteDatabase, "CREATE TABLE users_data(uid INTEGER PRIMARY KEY, about TEXT)", "CREATE TABLE users(uid INTEGER PRIMARY KEY, name TEXT, status INTEGER, data BLOB)", "CREATE TABLE chats(uid INTEGER PRIMARY KEY, name TEXT, data BLOB)", "CREATE TABLE enc_chats(uid INTEGER PRIMARY KEY, user INTEGER, name TEXT, data BLOB, g BLOB, authkey BLOB, ttl INTEGER, layer INTEGER, seq_in INTEGER, seq_out INTEGER, use_count INTEGER, exchange_id INTEGER, key_date INTEGER, fprint INTEGER, fauthkey BLOB, khash BLOB, in_seq_no INTEGER, admin_id INTEGER, mtproto_seq INTEGER)");
+        z0.u(sQLiteDatabase, "CREATE TABLE channel_users_v2(did INTEGER, uid INTEGER, date INTEGER, data BLOB, PRIMARY KEY(did, uid))", "CREATE TABLE channel_admins_v3(did INTEGER, uid INTEGER, data BLOB, PRIMARY KEY(did, uid))", "CREATE TABLE contacts(uid INTEGER PRIMARY KEY, mutual INTEGER)", "CREATE TABLE dialog_photos(uid INTEGER, id INTEGER, num INTEGER, data BLOB, PRIMARY KEY (uid, id))");
+        z0.u(sQLiteDatabase, "CREATE TABLE dialog_photos_count(uid INTEGER PRIMARY KEY, count INTEGER)", "CREATE TABLE dialog_settings(did INTEGER PRIMARY KEY, flags INTEGER);", "CREATE TABLE web_recent_v3(id TEXT, type INTEGER, image_url TEXT, thumb_url TEXT, local_url TEXT, width INTEGER, height INTEGER, size INTEGER, date INTEGER, document BLOB, PRIMARY KEY (id, type));", "CREATE TABLE stickers_v2(id INTEGER PRIMARY KEY, data BLOB, date INTEGER, hash INTEGER);");
+        z0.u(sQLiteDatabase, "CREATE TABLE stickers_featured(id INTEGER PRIMARY KEY, data BLOB, unread BLOB, date INTEGER, hash INTEGER, premium INTEGER, emoji INTEGER);", "CREATE TABLE stickers_dice(emoji TEXT PRIMARY KEY, data BLOB, date INTEGER);", "CREATE TABLE hashtag_recent_v2(id TEXT PRIMARY KEY, date INTEGER);", "CREATE TABLE webpage_pending_v2(id INTEGER, mid INTEGER, uid INTEGER, PRIMARY KEY (id, mid, uid));");
+        z0.u(sQLiteDatabase, "CREATE TABLE sent_files_v2(uid TEXT, type INTEGER, data BLOB, parent TEXT, PRIMARY KEY (uid, type))", "CREATE TABLE search_recent(did INTEGER PRIMARY KEY, date INTEGER);", "CREATE TABLE media_counts_v2(uid INTEGER, type INTEGER, count INTEGER, old INTEGER, PRIMARY KEY(uid, type))", "CREATE TABLE keyvalue(id TEXT PRIMARY KEY, value TEXT)");
+        z0.u(sQLiteDatabase, "CREATE TABLE bot_info_v2(uid INTEGER, dialogId INTEGER, info BLOB, PRIMARY KEY(uid, dialogId))", "CREATE TABLE pending_tasks(id INTEGER PRIMARY KEY, data BLOB);", "CREATE TABLE requested_holes(uid INTEGER, seq_out_start INTEGER, seq_out_end INTEGER, PRIMARY KEY (uid, seq_out_start, seq_out_end));", "CREATE TABLE sharing_locations(uid INTEGER PRIMARY KEY, mid INTEGER, date INTEGER, period INTEGER, message BLOB, proximity INTEGER);");
+        z0.u(sQLiteDatabase, "CREATE TABLE stickersets2(id INTEGER PRIMATE KEY, data BLOB, hash INTEGER, date INTEGER, short_name TEXT);", "CREATE INDEX IF NOT EXISTS stickersets2_id_index ON stickersets2(id);", "CREATE INDEX IF NOT EXISTS stickersets2_id_short_name ON stickersets2(id, short_name);", "CREATE INDEX IF NOT EXISTS stickers_featured_emoji_index ON stickers_featured(emoji);");
+        z0.u(sQLiteDatabase, "CREATE TABLE shortcut_widget(id INTEGER, did INTEGER, ord INTEGER, PRIMARY KEY (id, did));", "CREATE INDEX IF NOT EXISTS shortcut_widget_did ON shortcut_widget(did);", "CREATE TABLE emoji_keywords_v2(lang TEXT, keyword TEXT, emoji TEXT, PRIMARY KEY(lang, keyword, emoji));", "CREATE INDEX IF NOT EXISTS emoji_keywords_v2_keyword ON emoji_keywords_v2(keyword);");
+        z0.u(sQLiteDatabase, "CREATE TABLE emoji_keywords_info_v2(lang TEXT PRIMARY KEY, alias TEXT, version INTEGER, date INTEGER);", "CREATE TABLE wallpapers2(uid INTEGER PRIMARY KEY, data BLOB, num INTEGER)", "CREATE INDEX IF NOT EXISTS wallpapers_num ON wallpapers2(num);", "CREATE TABLE unread_push_messages(uid INTEGER, mid INTEGER, random INTEGER, date INTEGER, data BLOB, fm TEXT, name TEXT, uname TEXT, flags INTEGER, topicId INTEGER, is_reaction INTEGER, PRIMARY KEY(uid, mid))");
+        z0.u(sQLiteDatabase, "CREATE INDEX IF NOT EXISTS unread_push_messages_idx_date ON unread_push_messages(date);", "CREATE INDEX IF NOT EXISTS unread_push_messages_idx_random ON unread_push_messages(random);", "CREATE TABLE polls_v2(mid INTEGER, uid INTEGER, id INTEGER, PRIMARY KEY (mid, uid));", "CREATE INDEX IF NOT EXISTS polls_id_v2 ON polls_v2(id);");
+        z0.u(sQLiteDatabase, "CREATE TABLE reactions(data BLOB, hash INTEGER, date INTEGER);", "CREATE TABLE reaction_mentions(message_id INTEGER, state INTEGER, dialog_id INTEGER, PRIMARY KEY(message_id, dialog_id))", "CREATE INDEX IF NOT EXISTS reaction_mentions_did ON reaction_mentions(dialog_id);", "CREATE TABLE downloading_documents(data BLOB, hash INTEGER, id INTEGER, state INTEGER, date INTEGER, PRIMARY KEY(hash, id));");
+        z0.u(sQLiteDatabase, "CREATE TABLE animated_emoji(document_id INTEGER PRIMARY KEY, data BLOB);", "CREATE TABLE attach_menu_bots(data BLOB, hash INTEGER, date INTEGER);", "CREATE TABLE premium_promo(data BLOB, date INTEGER);", "CREATE TABLE emoji_statuses(data BLOB, type INTEGER);");
+        z0.u(sQLiteDatabase, "CREATE TABLE messages_holes_topics(uid INTEGER, topic_id INTEGER, start INTEGER, end INTEGER, PRIMARY KEY(uid, topic_id, start));", "CREATE INDEX IF NOT EXISTS uid_end_messages_holes_4_topics ON messages_holes_topics(uid, topic_id, end);", "CREATE TABLE messages_topics(mid INTEGER, uid INTEGER, topic_id INTEGER, read_state INTEGER, send_state INTEGER, date INTEGER, data BLOB, out INTEGER, ttl INTEGER, media INTEGER, replydata BLOB, imp INTEGER, mention INTEGER, forwards INTEGER, replies_data BLOB, thread_reply_id INTEGER, is_channel INTEGER, reply_to_message_id INTEGER, custom_params BLOB, reply_to_story_id INTEGER, PRIMARY KEY(mid, topic_id, uid))", "CREATE INDEX IF NOT EXISTS uid_date_mid_idx_messages_topics ON messages_topics(uid, date, mid);");
+        z0.u(sQLiteDatabase, "CREATE INDEX IF NOT EXISTS mid_out_idx_messages_topics ON messages_topics(mid, out);", "CREATE INDEX IF NOT EXISTS task_idx_messages_topics ON messages_topics(uid, out, read_state, ttl, date, send_state);", "CREATE INDEX IF NOT EXISTS send_state_idx_messages_topics ON messages_topics(mid, send_state, date);", "CREATE INDEX IF NOT EXISTS is_channel_idx_messages_topics ON messages_topics(mid, is_channel);");
+        z0.u(sQLiteDatabase, "CREATE INDEX IF NOT EXISTS reply_to_idx_messages_topics ON messages_topics(mid, reply_to_message_id);", "CREATE INDEX IF NOT EXISTS idx_to_reply_messages_topics ON messages_topics(reply_to_message_id, mid);", "CREATE INDEX IF NOT EXISTS mid_uid_messages_topics ON messages_topics(mid, uid);", "CREATE INDEX IF NOT EXISTS uid_mid_read_out_idx_messages_topics ON messages_topics(uid, topic_id, mid, read_state, out);");
+        z0.u(sQLiteDatabase, "CREATE INDEX IF NOT EXISTS uid_mention_idx_messages_topics ON messages_topics(uid, topic_id, mention, read_state);", "CREATE INDEX IF NOT EXISTS uid_topic_id_messages_topics ON messages_topics(uid, topic_id);", "CREATE INDEX IF NOT EXISTS uid_topic_id_date_mid_messages_topics ON messages_topics(uid, topic_id, date, mid);", "CREATE INDEX IF NOT EXISTS uid_topic_id_mid_messages_topics ON messages_topics(uid, topic_id, mid);");
+        z0.u(sQLiteDatabase, "CREATE TABLE media_topics(mid INTEGER, uid INTEGER, topic_id INTEGER, date INTEGER, type INTEGER, data BLOB, PRIMARY KEY(mid, uid, topic_id, type))", "CREATE INDEX IF NOT EXISTS uid_mid_type_date_idx_media_topics ON media_topics(uid, topic_id, mid, type, date);", "CREATE TABLE media_holes_topics(uid INTEGER, topic_id INTEGER, type INTEGER, start INTEGER, end INTEGER, PRIMARY KEY(uid, topic_id, type, start));", "CREATE INDEX IF NOT EXISTS uid_end_media_holes_topics ON media_holes_topics(uid, topic_id, type, end);");
+        z0.u(sQLiteDatabase, "CREATE TABLE topics(did INTEGER, topic_id INTEGER, data BLOB, top_message INTEGER, topic_message BLOB, unread_count INTEGER, max_read_id INTEGER, unread_mentions INTEGER, unread_reactions INTEGER, read_outbox INTEGER, pinned INTEGER, total_messages_count INTEGER, hidden INTEGER, edit_date INTEGER, nopaid_messages_exception INTEGER, unread_poll_votes INTEGER, PRIMARY KEY(did, topic_id));", "CREATE INDEX IF NOT EXISTS did_top_message_topics ON topics(did, top_message);", "CREATE INDEX IF NOT EXISTS did_topics ON topics(did);", "CREATE TABLE media_counts_topics(uid INTEGER, topic_id INTEGER, type INTEGER, count INTEGER, old INTEGER, PRIMARY KEY(uid, topic_id, type))");
+        z0.u(sQLiteDatabase, "CREATE TABLE reaction_mentions_topics(message_id INTEGER, state INTEGER, dialog_id INTEGER, topic_id INTEGER, PRIMARY KEY(message_id, dialog_id, topic_id))", "CREATE INDEX IF NOT EXISTS reaction_mentions_topics_did ON reaction_mentions_topics(dialog_id, topic_id);", "CREATE TABLE emoji_groups(type INTEGER PRIMARY KEY, data BLOB)", "CREATE TABLE app_config(data BLOB)");
+        z0.u(sQLiteDatabase, "CREATE TABLE web_browser_settings(data BLOB)", "CREATE TABLE effects(data BLOB)", "CREATE TABLE stories (dialog_id INTEGER, story_id INTEGER, data BLOB, custom_params BLOB, PRIMARY KEY (dialog_id, story_id));", "CREATE TABLE stories_counter (dialog_id INTEGER PRIMARY KEY, count INTEGER, max_read INTEGER);");
+        z0.u(sQLiteDatabase, "CREATE TABLE profile_stories (dialog_id INTEGER, story_id INTEGER, data BLOB, type INTEGER, seen INTEGER, pin INTEGER, PRIMARY KEY(dialog_id, story_id, type));", "CREATE TABLE profile_stories_albums (dialog_id INTEGER, album_id INTEGER, order_index INTEGER, data BLOB, PRIMARY KEY(dialog_id, album_id));", "CREATE TABLE profile_stories_albums_links (dialog_id INTEGER, album_id INTEGER, story_id INTEGER, order_index INTEGER, PRIMARY KEY (dialog_id, album_id, story_id));", "CREATE TABLE story_drafts (id INTEGER PRIMARY KEY, date INTEGER, data BLOB, type INTEGER);");
+        z0.u(sQLiteDatabase, "CREATE TABLE story_pushes (uid INTEGER, sid INTEGER, date INTEGER, localName TEXT, flags INTEGER, expire_date INTEGER, live INTEGER, PRIMARY KEY(uid, sid));", "CREATE TABLE unconfirmed_auth (data BLOB);", "CREATE TABLE saved_reaction_tags (topic_id INTEGER PRIMARY KEY, data BLOB);", "CREATE TABLE tag_message_id(mid INTEGER, topic_id INTEGER, tag INTEGER, text TEXT);");
+        z0.u(sQLiteDatabase, "CREATE INDEX IF NOT EXISTS tag_idx_tag_message_id ON tag_message_id(tag);", "CREATE INDEX IF NOT EXISTS tag_text_idx_tag_message_id ON tag_message_id(tag, text COLLATE NOCASE);", "CREATE INDEX IF NOT EXISTS tag_topic_idx_tag_message_id ON tag_message_id(topic_id, tag);", "CREATE INDEX IF NOT EXISTS tag_topic_text_idx_tag_message_id ON tag_message_id(topic_id, tag, text COLLATE NOCASE);");
+        z0.u(sQLiteDatabase, "CREATE TABLE business_replies(topic_id INTEGER PRIMARY KEY, name TEXT, order_value INTEGER, count INTEGER);", "CREATE TABLE quick_replies_messages(mid INTEGER, topic_id INTEGER, send_state INTEGER, date INTEGER, data BLOB, ttl INTEGER, replydata BLOB, reply_to_message_id INTEGER, PRIMARY KEY(mid, topic_id))", "CREATE INDEX IF NOT EXISTS send_state_idx_quick_replies_messages ON quick_replies_messages(mid, send_state, date);", "CREATE INDEX IF NOT EXISTS topic_date_idx_quick_replies_messages ON quick_replies_messages(topic_id, date);");
+        z0.u(sQLiteDatabase, "CREATE INDEX IF NOT EXISTS reply_to_idx_quick_replies_messages ON quick_replies_messages(mid, reply_to_message_id);", "CREATE INDEX IF NOT EXISTS idx_to_reply_quick_replies_messages ON quick_replies_messages(reply_to_message_id, mid);", "CREATE TABLE welcome_messages(mid INTEGER, dialog_id INTEGER, send_state INTEGER, date INTEGER, data BLOB, ttl INTEGER, replydata BLOB, reply_to_message_id INTEGER, PRIMARY KEY(mid, dialog_id))", "CREATE INDEX IF NOT EXISTS send_state_idx_welcome_messages ON welcome_messages(mid, send_state, date);");
+        z0.u(sQLiteDatabase, "CREATE INDEX IF NOT EXISTS dialog_date_idx_welcome_messages ON welcome_messages(dialog_id, date);", "CREATE INDEX IF NOT EXISTS reply_to_idx_welcome_messages ON welcome_messages(mid, reply_to_message_id);", "CREATE INDEX IF NOT EXISTS idx_to_reply_welcome_messages ON welcome_messages(reply_to_message_id, mid);", "CREATE TABLE business_links(data BLOB, order_value INTEGER);");
+        z0.u(sQLiteDatabase, "CREATE TABLE fact_checks(hash INTEGER PRIMARY KEY, data BLOB, expires INTEGER);", "CREATE TABLE popular_bots(uid INTEGER PRIMARY KEY, time INTEGER, offset TEXT, pos INTEGER);", "CREATE TABLE star_gifts2(id INTEGER PRIMARY KEY, data BLOB, hash INTEGER, time INTEGER, pos INTEGER);", "CREATE TABLE gift_themes (slug TEXT PRIMARY KEY, data BLOB);");
+        z0.u(sQLiteDatabase, "CREATE TABLE poll_votes_mentions(message_id INTEGER, state INTEGER, dialog_id INTEGER, PRIMARY KEY(message_id, dialog_id))", "CREATE INDEX IF NOT EXISTS poll_votes_mentions_did ON poll_votes_mentions(dialog_id);", "CREATE TABLE poll_votes_mentions_topics(message_id INTEGER, state INTEGER, dialog_id INTEGER, topic_id INTEGER, PRIMARY KEY(message_id, dialog_id, topic_id))", "CREATE INDEX IF NOT EXISTS poll_votes_mentions_topics_did ON poll_votes_mentions_topics(dialog_id, topic_id);");
+        z0.t(sQLiteDatabase, "CREATE TABLE ephemeral_messages (id INTEGER, dialog_id INTEGER, topic_id INTEGER, date INTEGER, data BLOB, PRIMARY KEY(dialog_id, id));", "CREATE INDEX IF NOT EXISTS ephemeral_messages_date_idx ON ephemeral_messages(date);", "PRAGMA user_version = 179");
     }
 
     private void createTaskForSecretMedia(long j3, SparseArray<ArrayList<Integer>> sparseArray) {
@@ -1515,7 +1515,7 @@ public class MessagesStorage extends BaseController {
             if (z10) {
                 this.database.commitTransaction();
             }
-            AndroidUtilities.runOnUIThread(new pe(7, arrayList, this));
+            AndroidUtilities.runOnUIThread(new oe(7, arrayList, this));
             if (!z10 || (sQLiteDatabase3 = this.database) == null) {
                 return;
             }
@@ -2136,7 +2136,7 @@ public class MessagesStorage extends BaseController {
                                 linkedHashMap = new LinkedHashMap();
                                 hashMap3 = hashMap5;
                                 arrayList10 = arrayList12;
-                                Collections.sort(arrayList17, new qg(dialogFilter4.pinnedDialogs, 0));
+                                Collections.sort(arrayList17, new pg(dialogFilter4.pinnedDialogs, 0));
                                 int size6 = arrayList17.size();
                                 int i25 = 0;
                                 while (i25 < size6) {
@@ -2615,7 +2615,7 @@ public class MessagesStorage extends BaseController {
         cleanupInternal(true);
         openDatabase(1);
         if (z10) {
-            Utilities.stageQueue.postRunnable(new e2(this, 24));
+            Utilities.stageQueue.postRunnable(new f2(this, 24));
         }
     }
 
@@ -2975,7 +2975,7 @@ public class MessagesStorage extends BaseController {
             this.database.executeFast("VACUUM").stepThis().dispose();
             this.database.executeFast("PRAGMA journal_size_limit = -1").stepThis().dispose();
             getMessagesController().getTopicsController().databaseCleared();
-            AndroidUtilities.runOnUIThread(new e2(this, 2));
+            AndroidUtilities.runOnUIThread(new f2(this, 2));
             SQLiteDatabase sQLiteDatabase4 = this.database;
             if (sQLiteDatabase4 != null) {
                 sQLiteDatabase4.commitTransaction();
@@ -3131,7 +3131,7 @@ public class MessagesStorage extends BaseController {
                 ArrayList<Integer> arrayList = new ArrayList<>();
                 arrayList.add(Integer.valueOf(i13));
                 sparseArray.put(max, arrayList);
-                AndroidUtilities.runOnUIThread(new t8(this, z10, j3, arrayList, 5));
+                AndroidUtilities.runOnUIThread(new u8(this, z10, j3, arrayList, 5));
                 SQLitePreparedStatement executeFast = this.database.executeFast("REPLACE INTO enc_tasks_v4 VALUES(?, ?, ?, ?)");
                 for (int i14 = 0; i14 < sparseArray.size(); i14++) {
                     try {
@@ -3236,7 +3236,7 @@ public class MessagesStorage extends BaseController {
             sQLiteCursor.dispose();
             if (arrayList != null) {
                 j3 = makeEncryptedDialogId;
-                AndroidUtilities.runOnUIThread(new se(this, j3, arrayList2, 7));
+                AndroidUtilities.runOnUIThread(new re(this, j3, arrayList2, 7));
             } else {
                 j3 = makeEncryptedDialogId;
             }
@@ -3735,7 +3735,7 @@ public class MessagesStorage extends BaseController {
                                     checkSQLException(e);
                                     sQLiteCursor3.dispose();
                                     deleteFromDownloadQueue(arrayList, true);
-                                    AndroidUtilities.runOnUIThread(new pe(16, arrayList3, this));
+                                    AndroidUtilities.runOnUIThread(new oe(16, arrayList3, this));
                                     getFileLoader().deleteFiles(arrayList2, i10);
                                     if (i10 != 0) {
                                     }
@@ -3787,7 +3787,7 @@ public class MessagesStorage extends BaseController {
                                     messagesStorage.database.executeFast("DELETE FROM messages_holes WHERE uid = " + j10).stepThis().dispose();
                                     messagesStorage.database.executeFast(str6 + j10).stepThis().dispose();
                                     messagesStorage.getMediaDataController().clearBotKeyboard(j10);
-                                    AndroidUtilities.runOnUIThread(new e2(messagesStorage, 18));
+                                    AndroidUtilities.runOnUIThread(new f2(messagesStorage, 18));
                                     messagesStorage.resetAllUnreadCounters(false);
                                     messagesStorage.updateWidgets(j10);
                                 } catch (Exception e12) {
@@ -3859,7 +3859,7 @@ public class MessagesStorage extends BaseController {
                 arrayList = arrayList4;
                 sQLiteCursor3.dispose();
                 deleteFromDownloadQueue(arrayList, true);
-                AndroidUtilities.runOnUIThread(new pe(16, arrayList3, this));
+                AndroidUtilities.runOnUIThread(new oe(16, arrayList3, this));
                 getFileLoader().deleteFiles(arrayList2, i10);
             } catch (Exception e14) {
                 e = e14;
@@ -4263,7 +4263,7 @@ public class MessagesStorage extends BaseController {
         messagesStorage.database.executeFast("DELETE FROM messages_holes WHERE uid = " + j10).stepThis().dispose();
         messagesStorage.database.executeFast(str6 + j10).stepThis().dispose();
         messagesStorage.getMediaDataController().clearBotKeyboard(j10);
-        AndroidUtilities.runOnUIThread(new e2(messagesStorage, 18));
+        AndroidUtilities.runOnUIThread(new f2(messagesStorage, 18));
         messagesStorage.resetAllUnreadCounters(false);
         messagesStorage.updateWidgets(j10);
     }
@@ -4307,7 +4307,7 @@ public class MessagesStorage extends BaseController {
                 int i14 = ephemeralMessage.anchor_msg_id;
                 if (i14 != 0 && (messageInternal = getMessageInternal(j3, i14)) != null) {
                     if (arrayList2 == null) {
-                        arrayList2 = y0.j(j3, iVar2);
+                        arrayList2 = z0.j(j3, iVar2);
                     }
                     arrayList2.add(new MessageObject(this.currentAccount, messageInternal, true, true));
                 }
@@ -4316,7 +4316,7 @@ public class MessagesStorage extends BaseController {
         if (iVar2.i()) {
             return;
         }
-        AndroidUtilities.runOnUIThread(new of(this, iVar2, 3));
+        AndroidUtilities.runOnUIThread(new nf(this, iVar2, 3));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -4389,7 +4389,7 @@ public class MessagesStorage extends BaseController {
                         messagesStorage = this;
                         messagesStorage.updateDialogsWithDeletedMessages(clientUserId, -clientUserId, arrayList, null);
                         try {
-                            AndroidUtilities.runOnUIThread(new se(this, clientUserId, arrayList, 2));
+                            AndroidUtilities.runOnUIThread(new re(this, clientUserId, arrayList, 2));
                         } catch (Exception e7) {
                             e = e7;
                             exc = e;
@@ -4493,7 +4493,7 @@ public class MessagesStorage extends BaseController {
                                                     messagesStorage.checkSQLException(e);
                                                     queryFinalized.dispose();
                                                     messagesStorage.deleteFromDownloadQueue(arrayList5, true);
-                                                    AndroidUtilities.runOnUIThread(new ai.p8(messagesStorage, arrayList2, j3, arrayList, 16));
+                                                    AndroidUtilities.runOnUIThread(new ai.q8(messagesStorage, arrayList2, j3, arrayList, 16));
                                                     lambda$markMessagesAsDeleted$229(j3, arrayList, false, 0, 0);
                                                     lambda$updateDialogsWithDeletedMessages$228(j3, DialogObject.isChatDialog(j3) ? -j3 : 0L, arrayList, null);
                                                     getFileLoader().deleteFiles(arrayList3, 0);
@@ -4510,7 +4510,7 @@ public class MessagesStorage extends BaseController {
                                         messagesStorage.checkSQLException(e);
                                         queryFinalized.dispose();
                                         messagesStorage.deleteFromDownloadQueue(arrayList5, true);
-                                        AndroidUtilities.runOnUIThread(new ai.p8(messagesStorage, arrayList2, j3, arrayList, 16));
+                                        AndroidUtilities.runOnUIThread(new ai.q8(messagesStorage, arrayList2, j3, arrayList, 16));
                                         lambda$markMessagesAsDeleted$229(j3, arrayList, false, 0, 0);
                                         lambda$updateDialogsWithDeletedMessages$228(j3, DialogObject.isChatDialog(j3) ? -j3 : 0L, arrayList, null);
                                         getFileLoader().deleteFiles(arrayList3, 0);
@@ -4545,7 +4545,7 @@ public class MessagesStorage extends BaseController {
             th = th3;
         }
         try {
-            AndroidUtilities.runOnUIThread(new ai.p8(messagesStorage, arrayList2, j3, arrayList, 16));
+            AndroidUtilities.runOnUIThread(new ai.q8(messagesStorage, arrayList2, j3, arrayList, 16));
             lambda$markMessagesAsDeleted$229(j3, arrayList, false, 0, 0);
             lambda$updateDialogsWithDeletedMessages$228(j3, DialogObject.isChatDialog(j3) ? -j3 : 0L, arrayList, null);
             getFileLoader().deleteFiles(arrayList3, 0);
@@ -4553,7 +4553,7 @@ public class MessagesStorage extends BaseController {
                 return;
             }
             messagesStorage = this;
-            AndroidUtilities.runOnUIThread(new se(messagesStorage, arrayList, j3, 0));
+            AndroidUtilities.runOnUIThread(new re(messagesStorage, arrayList, j3, 0));
         } catch (Exception e13) {
             e = e13;
             messagesStorage = this;
@@ -4880,9 +4880,9 @@ public class MessagesStorage extends BaseController {
                     sQLitePreparedStatement.dispose();
                     sQLitePreparedStatement = null;
                 }
-                AndroidUtilities.runOnUIThread(new pe(2, arrayList8, this));
+                AndroidUtilities.runOnUIThread(new oe(2, arrayList8, this));
             }
-            AndroidUtilities.runOnUIThread(new pe(3, arrayList4, this));
+            AndroidUtilities.runOnUIThread(new oe(3, arrayList4, this));
             getFileLoader().deleteFiles(arrayList3, 0);
             if (sQLitePreparedStatement != null) {
                 sQLitePreparedStatement.dispose();
@@ -4952,7 +4952,7 @@ public class MessagesStorage extends BaseController {
         cleanupInternal(true);
         clearLoadingDialogsOffsets();
         openDatabase(1);
-        AndroidUtilities.runOnUIThread(new e2(this, 12));
+        AndroidUtilities.runOnUIThread(new f2(this, 12));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -5376,7 +5376,7 @@ public class MessagesStorage extends BaseController {
                     r3 = sQLiteCursor.next() ? sQLiteCursor.intValue(0) : -1;
                     sQLiteCursor.dispose();
                 }
-                AndroidUtilities.runOnUIThread(new te(intCallback, r3, i10));
+                AndroidUtilities.runOnUIThread(new se(intCallback, r3, i10));
                 if (sQLiteCursor != null) {
                     sQLiteCursor.dispose();
                 }
@@ -5420,7 +5420,7 @@ public class MessagesStorage extends BaseController {
                 checkSQLException(e);
             }
             sQLiteCursor.dispose();
-            AndroidUtilities.runOnUIThread(new ef(intCallback, iArr, 0));
+            AndroidUtilities.runOnUIThread(new df(intCallback, iArr, 0));
         } catch (Throwable th2) {
             if (sQLiteCursor != null) {
                 sQLiteCursor.dispose();
@@ -6287,7 +6287,7 @@ public class MessagesStorage extends BaseController {
                                 queryFinalized2.dispose();
                                 sQLiteCursor2 = null;
                             }
-                            AndroidUtilities.runOnUIThread(new of(messagesStorage, iVar, 0));
+                            AndroidUtilities.runOnUIThread(new nf(messagesStorage, iVar, 0));
                         } catch (Exception e28) {
                             e = e28;
                         }
@@ -6467,7 +6467,7 @@ public class MessagesStorage extends BaseController {
                     }
                 }
                 queryFinalized.dispose();
-                AndroidUtilities.runOnUIThread(new wf(this, i10, arrayList, 2));
+                AndroidUtilities.runOnUIThread(new vf(this, i10, arrayList, 2));
             } catch (Exception e7) {
                 e = e7;
             }
@@ -6504,7 +6504,7 @@ public class MessagesStorage extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$getEphemeralMessages$208(Utilities.Callback callback, long j3, long j10) {
-        AndroidUtilities.runOnUIThread(new ze(this, callback, j3, j10, 1));
+        AndroidUtilities.runOnUIThread(new ye(this, callback, j3, j10, 1));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -6564,7 +6564,7 @@ public class MessagesStorage extends BaseController {
                 sQLiteCursor = sQLiteDatabase.queryFinalized("SELECT COUNT(mid) FROM messages_v2 WHERE uid = " + j3, new Object[0]);
                 int intValue = sQLiteCursor.next() ? sQLiteCursor.intValue(0) : 0;
                 sQLiteCursor.dispose();
-                AndroidUtilities.runOnUIThread(new te(intCallback, intValue, 0));
+                AndroidUtilities.runOnUIThread(new se(intCallback, intValue, 0));
                 sQLiteCursor.dispose();
             } catch (Exception e) {
                 checkSQLException(e);
@@ -6764,7 +6764,7 @@ public class MessagesStorage extends BaseController {
                 checkSQLException(e);
             }
             sQLiteCursor.dispose();
-            AndroidUtilities.runOnUIThread(new ef(intCallback, iArr, i10));
+            AndroidUtilities.runOnUIThread(new df(intCallback, iArr, i10));
         } catch (Throwable th2) {
             if (sQLiteCursor != null) {
                 sQLiteCursor.dispose();
@@ -6826,7 +6826,7 @@ public class MessagesStorage extends BaseController {
                 sQLiteCursor = queryFinalized;
                 int intValue = sQLiteCursor.next() ? sQLiteCursor.intValue(0) : 0;
                 sQLiteCursor.dispose();
-                AndroidUtilities.runOnUIThread(new te(intCallback, intValue, 2));
+                AndroidUtilities.runOnUIThread(new se(intCallback, intValue, 2));
                 sQLiteCursor.dispose();
             } catch (Exception e) {
                 checkSQLException(e);
@@ -7940,7 +7940,7 @@ public class MessagesStorage extends BaseController {
                     }
                 }
                 sQLiteCursor.dispose();
-                AndroidUtilities.runOnUIThread(new d2(callback, arrayList, 3));
+                AndroidUtilities.runOnUIThread(new e2(callback, arrayList, 3));
             } catch (Throwable th2) {
                 th = th2;
                 sQLiteCursor3 = sQLiteCursor2;
@@ -8063,8 +8063,8 @@ public class MessagesStorage extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadPendingTasks$24(org.telegram.ui.ActionBar.b6 b6Var, boolean z10, long j3) {
-        getMessagesController().saveWallpaperToServer(null, b6Var, z10, j3);
+    public /* synthetic */ void lambda$loadPendingTasks$24(org.telegram.ui.ActionBar.a6 a6Var, boolean z10, long j3) {
+        getMessagesController().saveWallpaperToServer(null, a6Var, z10, j3);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -8130,7 +8130,7 @@ public class MessagesStorage extends BaseController {
                             }
                             break;
                         case 1:
-                            Utilities.stageQueue.postRunnable(new we(byteBufferValue.readInt32(false), byteBufferValue.readInt32(false), longValue, this));
+                            Utilities.stageQueue.postRunnable(new ve(byteBufferValue.readInt32(false), byteBufferValue.readInt32(false), longValue, this));
                             break;
                         case 2:
                         case 5:
@@ -8159,20 +8159,20 @@ public class MessagesStorage extends BaseController {
                             if (readInt32 >= 14) {
                                 tL_dialog.folder_id = byteBufferValue.readInt32(false);
                             }
-                            AndroidUtilities.runOnUIThread(new ai.p8(this, tL_dialog, TLRPC.InputPeer.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false), longValue, 23));
+                            AndroidUtilities.runOnUIThread(new ai.q8(this, tL_dialog, TLRPC.InputPeer.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false), longValue, 23));
                             break;
                         case 3:
                             getSendMessagesHelper().sendGame(TLRPC.InputPeer.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false), (TLRPC.TL_inputMediaGame) TLRPC.InputMedia.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false), byteBufferValue.readInt64(false), longValue);
                             break;
                         case 4:
-                            AndroidUtilities.runOnUIThread(new kg(this, byteBufferValue.readInt64(false), byteBufferValue.readBool(false), TLRPC.InputPeer.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false), longValue));
+                            AndroidUtilities.runOnUIThread(new jg(this, byteBufferValue.readInt64(false), byteBufferValue.readBool(false), TLRPC.InputPeer.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false), longValue));
                             break;
                         case 6:
                             final long readInt322 = byteBufferValue.readInt32(false);
                             final int readInt323 = byteBufferValue.readInt32(false);
                             final TLRPC.InputChannel TLdeserialize2 = TLRPC.InputChannel.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
                             final int i10 = 0;
-                            Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.lg
+                            Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.kg
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     switch (i10) {
@@ -8198,7 +8198,7 @@ public class MessagesStorage extends BaseController {
                                 break;
                             } else {
                                 final int i11 = 0;
-                                AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.mg
+                                AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.lg
                                     public final /* synthetic */ MessagesStorage b;
 
                                     {
@@ -8225,7 +8225,7 @@ public class MessagesStorage extends BaseController {
                         case 11:
                             int readInt326 = byteBufferValue.readInt32(false);
                             long readInt327 = byteBufferValue.readInt32(false);
-                            AndroidUtilities.runOnUIThread(new sf(readInt326, byteBufferValue.readInt32(false), readInt327, longValue, this, readInt327 != 0 ? TLRPC.InputChannel.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false) : null));
+                            AndroidUtilities.runOnUIThread(new rf(readInt326, byteBufferValue.readInt32(false), readInt327, longValue, this, readInt327 != 0 ? TLRPC.InputChannel.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false) : null));
                             break;
                         case 12:
                         case 19:
@@ -8239,7 +8239,7 @@ public class MessagesStorage extends BaseController {
                             final int readInt329 = byteBufferValue.readInt32(false);
                             final boolean readBool2 = byteBufferValue.readBool(false);
                             final TLRPC.InputPeer TLdeserialize4 = TLRPC.InputPeer.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
-                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.zf
+                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.yf
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     MessagesStorage.this.lambda$loadPendingTasks$25(readInt64, readBool, readInt328, readInt329, readBool2, TLdeserialize4, longValue);
@@ -8249,7 +8249,7 @@ public class MessagesStorage extends BaseController {
                         case 15:
                             final TLRPC.InputPeer TLdeserialize5 = TLRPC.InputPeer.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
                             final int i12 = 0;
-                            Utilities.stageQueue.postRunnable(new Runnable(this) { // from class: org.telegram.messenger.ag
+                            Utilities.stageQueue.postRunnable(new Runnable(this) { // from class: org.telegram.messenger.zf
                                 public final /* synthetic */ MessagesStorage b;
 
                                 {
@@ -8276,7 +8276,7 @@ public class MessagesStorage extends BaseController {
                             for (int i13 = 0; i13 < readInt3211; i13++) {
                                 arrayList.add(TLRPC.InputDialogPeer.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false));
                             }
-                            AndroidUtilities.runOnUIThread(new cg(readInt3210, 0, longValue, arrayList, this));
+                            AndroidUtilities.runOnUIThread(new bg(readInt3210, 0, longValue, arrayList, this));
                             break;
                         case 17:
                             int readInt3212 = byteBufferValue.readInt32(false);
@@ -8285,7 +8285,7 @@ public class MessagesStorage extends BaseController {
                             for (int i14 = 0; i14 < readInt3213; i14++) {
                                 arrayList2.add(TLRPC.TL_inputFolderPeer.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false));
                             }
-                            AndroidUtilities.runOnUIThread(new cg(readInt3212, 1, longValue, arrayList2, this));
+                            AndroidUtilities.runOnUIThread(new bg(readInt3212, 1, longValue, arrayList2, this));
                             break;
                         case 18:
                             long readInt642 = byteBufferValue.readInt64(false);
@@ -8299,23 +8299,23 @@ public class MessagesStorage extends BaseController {
                                 break;
                             }
                         case 21:
-                            org.telegram.ui.ActionBar.b6 b6Var = new org.telegram.ui.ActionBar.b6();
+                            org.telegram.ui.ActionBar.a6 a6Var = new org.telegram.ui.ActionBar.a6();
                             byteBufferValue.readInt64(false);
-                            b6Var.i = byteBufferValue.readBool(false);
-                            b6Var.j = byteBufferValue.readBool(false);
-                            b6Var.d = byteBufferValue.readInt32(false);
-                            b6Var.e = byteBufferValue.readInt32(false);
-                            b6Var.h = byteBufferValue.readInt32(false);
-                            b6Var.k = (float) byteBufferValue.readDouble(false);
+                            a6Var.i = byteBufferValue.readBool(false);
+                            a6Var.j = byteBufferValue.readBool(false);
+                            a6Var.d = byteBufferValue.readInt32(false);
+                            a6Var.e = byteBufferValue.readInt32(false);
+                            a6Var.h = byteBufferValue.readInt32(false);
+                            a6Var.k = (float) byteBufferValue.readDouble(false);
                             boolean readBool3 = byteBufferValue.readBool(false);
-                            b6Var.c = byteBufferValue.readString(false);
-                            b6Var.b = byteBufferValue.readString(false);
-                            AndroidUtilities.runOnUIThread(new t8(this, b6Var, readBool3, longValue, 6));
+                            a6Var.c = byteBufferValue.readString(false);
+                            a6Var.b = byteBufferValue.readString(false);
+                            AndroidUtilities.runOnUIThread(new u8(this, a6Var, readBool3, longValue, 6));
                             break;
                         case 22:
                             final TLRPC.InputPeer TLdeserialize7 = TLRPC.InputPeer.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
                             final int i15 = 1;
-                            AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.ag
+                            AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.zf
                                 public final /* synthetic */ MessagesStorage b;
 
                                 {
@@ -8343,7 +8343,7 @@ public class MessagesStorage extends BaseController {
                                 r0 = TLRPC.InputChannel.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
                             }
                             final TLRPC.InputChannel inputChannel = r0;
-                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.uf
+                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.tf
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     MessagesStorage.this.lambda$loadPendingTasks$23(readInt643, readInt3214, inputChannel, readInt3215, longValue, readInt32);
@@ -8362,7 +8362,7 @@ public class MessagesStorage extends BaseController {
                                 break;
                             } else {
                                 final int i16 = 1;
-                                AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.mg
+                                AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.lg
                                     public final /* synthetic */ MessagesStorage b;
 
                                     {
@@ -8388,7 +8388,7 @@ public class MessagesStorage extends BaseController {
                             final int readInt3217 = byteBufferValue.readInt32(false);
                             final TLRPC.InputChannel TLdeserialize9 = TLRPC.InputChannel.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
                             final int i17 = 1;
-                            Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.lg
+                            Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.kg
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     switch (i17) {
@@ -8405,10 +8405,10 @@ public class MessagesStorage extends BaseController {
                         default:
                             switch (readInt32) {
                                 case 100:
-                                    AndroidUtilities.runOnUIThread(new af(this, byteBufferValue.readInt32(false), byteBufferValue.readBool(false), longValue));
+                                    AndroidUtilities.runOnUIThread(new ze(this, byteBufferValue.readInt32(false), byteBufferValue.readBool(false), longValue));
                                     break;
                                 case 102:
-                                    AndroidUtilities.runOnUIThread(new we(this, longValue, byteBufferValue.readInt64(false), byteBufferValue.readInt32(false), 5));
+                                    AndroidUtilities.runOnUIThread(new ve(this, longValue, byteBufferValue.readInt64(false), byteBufferValue.readInt32(false), 5));
                                     break;
                                 case 103:
                                     long readInt646 = byteBufferValue.readInt64(false);
@@ -8752,7 +8752,7 @@ public class MessagesStorage extends BaseController {
                             if (!arrayList5.isEmpty()) {
                                 getUsersInternal(arrayList5, arrayList12);
                             }
-                            AndroidUtilities.runOnUIThread(new eg(this, arrayList12, arrayList11, 1));
+                            AndroidUtilities.runOnUIThread(new dg(this, arrayList12, arrayList11, 1));
                             loadGroupedMessagesForTopics(j10, arrayList);
                         } catch (Exception e15) {
                             e = e15;
@@ -9441,7 +9441,7 @@ public class MessagesStorage extends BaseController {
                                 if (!arrayList2.isEmpty()) {
                                     ArrayList<TLRPC.Chat> arrayList3 = new ArrayList<>();
                                     getChatsInternal(TextUtils.join(",", arrayList2), arrayList3);
-                                    AndroidUtilities.runOnUIThread(new pe(4, arrayList3, this));
+                                    AndroidUtilities.runOnUIThread(new oe(4, arrayList3, this));
                                 }
                                 getMessagesController().processUserInfo(user, userFull2, true, z10, i10, arrayList, hashMap, i12, z12);
                             } catch (Exception e13) {
@@ -9832,7 +9832,7 @@ public class MessagesStorage extends BaseController {
                             for (int i10 = 0; i10 < m10; i10++) {
                                 long j3 = iVar.j(i10);
                                 ArrayList<Integer> arrayList3 = (ArrayList) iVar.n(i10);
-                                AndroidUtilities.runOnUIThread(new pe(6, arrayList3, this));
+                                AndroidUtilities.runOnUIThread(new oe(6, arrayList3, this));
                                 try {
                                     updateDialogsWithReadMessagesInternal(arrayList3, null, null, null, null);
                                     try {
@@ -10070,7 +10070,7 @@ public class MessagesStorage extends BaseController {
             if (arrayList2.isEmpty()) {
                 return;
             }
-            AndroidUtilities.runOnUIThread(new pe(1, arrayList2, this));
+            AndroidUtilities.runOnUIThread(new oe(1, arrayList2, this));
         } catch (Throwable th2) {
             if (0 != 0) {
                 sQLiteCursor.dispose();
@@ -12079,7 +12079,7 @@ public class MessagesStorage extends BaseController {
                 try {
                     sQLitePreparedStatement.dispose();
                     this.database.commitTransaction();
-                    AndroidUtilities.runOnUIThread(new pe(20, arrayList, this));
+                    AndroidUtilities.runOnUIThread(new oe(20, arrayList, this));
                     SQLiteDatabase sQLiteDatabase5 = this.database;
                     if (sQLiteDatabase5 != null) {
                         sQLiteDatabase5.commitTransaction();
@@ -12944,10 +12944,10 @@ public class MessagesStorage extends BaseController {
                 MessageObject messageObject = new MessageObject(this.currentAccount, message, (AbstractMap<Long, TLRPC.User>) hashMap, (AbstractMap<Long, TLRPC.Chat>) hashMap2, true, true);
                 ArrayList arrayList5 = new ArrayList();
                 arrayList5.add(messageObject);
-                AndroidUtilities.runOnUIThread(new z8(19, this, messageObject, arrayList5));
+                AndroidUtilities.runOnUIThread(new n8(this, messageObject, arrayList5, 20));
             }
             if (arrayList3 != null) {
-                AndroidUtilities.runOnUIThread(new pe(5, arrayList3, this));
+                AndroidUtilities.runOnUIThread(new oe(5, arrayList3, this));
             }
             sQLiteDatabase3 = this.database;
             if (sQLiteDatabase3 != null) {
@@ -13075,7 +13075,7 @@ public class MessagesStorage extends BaseController {
                     throw th;
                 }
             }
-            Collections.sort(arrayList2, new qg(longSparseIntArray, 1));
+            Collections.sort(arrayList2, new pg(longSparseIntArray, 1));
             while (true) {
                 j3 = 0;
                 if (arrayList2.size() >= size) {
@@ -13439,7 +13439,7 @@ public class MessagesStorage extends BaseController {
     public /* synthetic */ void lambda$saveDialogFilter$74(MessagesController.DialogFilter dialogFilter, boolean z10, boolean z11) {
         saveDialogFilterInternal(dialogFilter, z10, z11);
         calcUnreadCounters(false);
-        AndroidUtilities.runOnUIThread(new e2(this, 1));
+        AndroidUtilities.runOnUIThread(new f2(this, 1));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -14872,7 +14872,7 @@ public class MessagesStorage extends BaseController {
                         }
                     }
                     tL_chatFull.participants.version = i11;
-                    AndroidUtilities.runOnUIThread(new hf(this, tL_chatFull, 1));
+                    AndroidUtilities.runOnUIThread(new gf(this, tL_chatFull, 1));
                     SQLitePreparedStatement executeFast = this.database.executeFast("REPLACE INTO chat_settings_v2 VALUES(?, ?, ?, ?, ?, ?, ?)");
                     NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(tL_chatFull.getObjectSize());
                     tL_chatFull.serializeToStream(nativeByteBuffer);
@@ -14985,7 +14985,7 @@ public class MessagesStorage extends BaseController {
             queryFinalized.dispose();
             if (tL_chatFull instanceof TLRPC.TL_chatFull) {
                 tL_chatFull.participants = chatParticipants;
-                AndroidUtilities.runOnUIThread(new hf(this, tL_chatFull, 0));
+                AndroidUtilities.runOnUIThread(new gf(this, tL_chatFull, 0));
                 SQLitePreparedStatement executeFast = this.database.executeFast("REPLACE INTO chat_settings_v2 VALUES(?, ?, ?, ?, ?, ?, ?)");
                 NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(tL_chatFull.getObjectSize());
                 tL_chatFull.serializeToStream(nativeByteBuffer);
@@ -16540,7 +16540,7 @@ public class MessagesStorage extends BaseController {
                     executeFast.step();
                     executeFast.dispose();
                     final int i18 = 0;
-                    AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.rg
+                    AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.qg
                         public final /* synthetic */ MessagesStorage b;
 
                         {
@@ -16666,7 +16666,7 @@ public class MessagesStorage extends BaseController {
                     executeFast2.step();
                     executeFast2.dispose();
                     final int i19 = 1;
-                    AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.rg
+                    AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.qg
                         public final /* synthetic */ MessagesStorage b;
 
                         {
@@ -16785,7 +16785,7 @@ public class MessagesStorage extends BaseController {
             }
             sQLiteCursor.dispose();
             if (arrayList.size() > 0) {
-                AndroidUtilities.runOnUIThread(new re(this, j3, j10, str, 0));
+                AndroidUtilities.runOnUIThread(new qe(this, j3, j10, str, 0));
             }
         } finally {
         }
@@ -18361,7 +18361,7 @@ public class MessagesStorage extends BaseController {
     }
 
     private void loadDialogFilters() {
-        this.storageQueue.postRunnable(new e2(this, 19));
+        this.storageQueue.postRunnable(new f2(this, 19));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -18730,7 +18730,7 @@ public class MessagesStorage extends BaseController {
     }
 
     private void loadPendingTasks() {
-        this.storageQueue.postRunnable(new e2(this, 22));
+        this.storageQueue.postRunnable(new f2(this, 22));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -19080,7 +19080,7 @@ public class MessagesStorage extends BaseController {
         if (arrayList == null || arrayList.isEmpty()) {
             return;
         }
-        AndroidUtilities.runOnUIThread(new pe(15, arrayList, this));
+        AndroidUtilities.runOnUIThread(new oe(15, arrayList, this));
     }
 
     private void processAnchoredEphemeralMessagesInternal(ArrayList<TL_ephemeral.EphemeralMessage> arrayList) {
@@ -19953,16 +19953,16 @@ public class MessagesStorage extends BaseController {
     }
 
     private void updateDbToLastVersion(int i10) {
-        AndroidUtilities.runOnUIThread(new e2(this, 16));
-        FileLog.d("MessagesStorage start db migration from " + i10 + " to 178");
+        AndroidUtilities.runOnUIThread(new f2(this, 16));
+        FileLog.d("MessagesStorage start db migration from " + i10 + " to 179");
         FileLog.d("MessagesStorage db migration finished to varsion " + DatabaseMigrationHelper.migrate(this, i10));
-        AndroidUtilities.runOnUIThread(new e2(this, 17));
+        AndroidUtilities.runOnUIThread(new f2(this, 17));
     }
 
     private void updateDialogUnreadReactionsInternal(final long j3, final long j10, final int i10, final boolean z10, boolean z11) {
         final String str = z11 ? "unread_reactions" : "unread_poll_votes";
         final String str2 = z11 ? "unread_reactions" : "unread_poll_votes";
-        this.storageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.dg
+        this.storageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.cg
             @Override // java.lang.Runnable
             public final void run() {
                 MessagesStorage.this.lambda$updateDialogUnreadReactionsInternal$264(z10, str, j3, i10, j10, str2);
@@ -22074,7 +22074,7 @@ public class MessagesStorage extends BaseController {
                                 Locale locale4 = Locale.ENGLISH;
                                 sQLiteDatabase5.executeFast("UPDATE topics SET max_read_id = " + i10 + ", unread_count = " + i12 + " WHERE did = " + j3 + " AND topic_id = " + j10).stepThis().dispose();
                             }
-                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.pg
+                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.og
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     MessagesStorage.this.lambda$updateRepliesMaxReadIdInternal$192(j3, j10, i10, i12, i13);
@@ -22190,7 +22190,7 @@ public class MessagesStorage extends BaseController {
     }
 
     private void updateUnreadReactionsCountInternal(String str, String str2, String str3, String str4, long j3, long j10, int i10, boolean z10) {
-        this.storageQueue.postRunnable(new bg(this, j10, z10, str4, j3, i10, str2, str3, str));
+        this.storageQueue.postRunnable(new ag(this, j10, z10, str4, j3, i10, str2, str3, str));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -22317,14 +22317,14 @@ public class MessagesStorage extends BaseController {
         if ((str2 == null || str2.length() == 0) && document == null) {
             return;
         }
-        this.storageQueue.postRunnable(new qk(this, document, str, str2, 28));
+        this.storageQueue.postRunnable(new pk(this, document, str, str2, 28));
     }
 
     public void applyPhoneBookUpdates(String str, String str2) {
         if (TextUtils.isEmpty(str)) {
             return;
         }
-        this.storageQueue.postRunnable(new z8(this, str, str2, 18));
+        this.storageQueue.postRunnable(new n8((BaseController) this, str, (Object) str2, 19));
     }
 
     public void bindTaskToGuid(Runnable runnable, int i10) {
@@ -22349,17 +22349,17 @@ public class MessagesStorage extends BaseController {
     }
 
     public void checkIfFolderEmpty(int i10) {
-        this.storageQueue.postRunnable(new jf(this, i10, 6));
+        this.storageQueue.postRunnable(new hf(this, i10, 6));
     }
 
     public void checkLoadedRemoteFilters(ArrayList<TLRPC.DialogFilter> arrayList, Runnable runnable) {
-        this.storageQueue.postRunnable(new mf(this, arrayList, runnable, 3));
+        this.storageQueue.postRunnable(new lf(this, arrayList, runnable, 3));
     }
 
     public boolean checkMessageByRandomId(long j3) {
         boolean[] zArr = new boolean[1];
         CountDownLatch countDownLatch = new CountDownLatch(1);
-        this.storageQueue.postRunnable(new vf(0, j3, countDownLatch, this, zArr));
+        this.storageQueue.postRunnable(new uf(0, j3, countDownLatch, this, zArr));
         try {
             countDownLatch.await();
         } catch (Exception e) {
@@ -22371,7 +22371,7 @@ public class MessagesStorage extends BaseController {
     public boolean checkMessageId(long j3, int i10) {
         boolean[] zArr = new boolean[1];
         CountDownLatch countDownLatch = new CountDownLatch(1);
-        this.storageQueue.postRunnable(new ai.l8(this, j3, i10, zArr, countDownLatch, 3));
+        this.storageQueue.postRunnable(new ai.m8(this, j3, i10, zArr, countDownLatch, 3));
         try {
             countDownLatch.await();
         } catch (Exception e) {
@@ -22385,7 +22385,7 @@ public class MessagesStorage extends BaseController {
     }
 
     public void cleanup(boolean z10) {
-        this.storageQueue.postRunnable(new kf(this, z10, 1));
+        this.storageQueue.postRunnable(new jf(this, z10, 1));
     }
 
     public void clearDatabaseValues() {
@@ -22410,27 +22410,27 @@ public class MessagesStorage extends BaseController {
     }
 
     public void clearDownloadQueue(int i10) {
-        this.storageQueue.postRunnable(new jf(this, i10, 2));
+        this.storageQueue.postRunnable(new hf(this, i10, 2));
     }
 
     public void clearLocalDatabase() {
-        this.storageQueue.postRunnable(new e2(this, 10));
+        this.storageQueue.postRunnable(new f2(this, 10));
     }
 
     public void clearSentMedia() {
-        this.storageQueue.postRunnable(new e2(this, 20));
+        this.storageQueue.postRunnable(new f2(this, 20));
     }
 
     public void clearUserPhoto(long j3, long j10) {
-        this.storageQueue.postRunnable(new ve(0, j3, j10, this));
+        this.storageQueue.postRunnable(new ue(0, j3, j10, this));
     }
 
     public void clearUserPhotos(long j3) {
-        this.storageQueue.postRunnable(new lf(1, j3, this));
+        this.storageQueue.postRunnable(new kf(this, j3, 1));
     }
 
     public void clearWidgetDialogs(int i10) {
-        this.storageQueue.postRunnable(new jf(this, i10, 7));
+        this.storageQueue.postRunnable(new hf(this, i10, 7));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -22873,7 +22873,7 @@ public class MessagesStorage extends BaseController {
     public boolean containsLocalDialog(long j3) {
         CountDownLatch countDownLatch = new CountDownLatch(1);
         Boolean[] boolArr = {Boolean.FALSE};
-        this.storageQueue.postRunnable(new ai.p8(this, j3, boolArr, countDownLatch, 20));
+        this.storageQueue.postRunnable(new ai.q8(this, j3, boolArr, countDownLatch, 20));
         try {
             countDownLatch.await();
         } catch (Exception e) {
@@ -22905,7 +22905,7 @@ public class MessagesStorage extends BaseController {
     }
 
     public void createTaskForMid(final long j3, final int i10, final int i11, final int i12, final int i13, final boolean z10) {
-        this.storageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.ig
+        this.storageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.hg
             @Override // java.lang.Runnable
             public final void run() {
                 MessagesStorage.this.lambda$createTaskForMid$116(i11, i12, i13, i10, z10, j3);
@@ -22914,7 +22914,7 @@ public class MessagesStorage extends BaseController {
     }
 
     public void createTaskForSecretChat(final int i10, final int i11, final int i12, final int i13, final ArrayList<Long> arrayList) {
-        this.storageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.tg
+        this.storageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.sg
             @Override // java.lang.Runnable
             public final void run() {
                 MessagesStorage.this.lambda$createTaskForSecretChat$118(i10, arrayList, i13, i11, i12);
@@ -22923,26 +22923,26 @@ public class MessagesStorage extends BaseController {
     }
 
     public void deleteAllReactionsFromChat(long j3, long j10, int i10) {
-        executeInStorageQueue(new we(this, i10, j3, j10, 0));
+        executeInStorageQueue(new ve(this, i10, j3, j10, 0));
     }
 
     public void deleteAllStoryPushMessages() {
-        this.storageQueue.postRunnable(new e2(this, 23));
+        this.storageQueue.postRunnable(new f2(this, 23));
     }
 
     public void deleteAllStoryReactionPushMessages() {
-        this.storageQueue.postRunnable(new e2(this, 25));
+        this.storageQueue.postRunnable(new f2(this, 25));
     }
 
     public void deleteContacts(ArrayList<Long> arrayList) {
         if (arrayList == null || arrayList.isEmpty()) {
             return;
         }
-        this.storageQueue.postRunnable(new pe(8, arrayList, this));
+        this.storageQueue.postRunnable(new oe(8, arrayList, this));
     }
 
     public void deleteDialog(long j3, int i10) {
-        this.storageQueue.postRunnable(new pf(this, i10, j3, 4));
+        this.storageQueue.postRunnable(new of(this, i10, j3, 4));
     }
 
     public void deleteDialogFilter(MessagesController.DialogFilter dialogFilter) {
@@ -22968,19 +22968,19 @@ public class MessagesStorage extends BaseController {
     }
 
     public void deleteSavedDialog(long j3) {
-        this.storageQueue.postRunnable(new lf(4, j3, this));
+        this.storageQueue.postRunnable(new kf(this, j3, 4));
     }
 
     public void deleteStoryPushMessage(long j3) {
-        this.storageQueue.postRunnable(new lf(0, j3, this));
+        this.storageQueue.postRunnable(new kf(this, j3, 0));
     }
 
     public void deleteUserChatHistory(long j3, long j10) {
-        this.storageQueue.postRunnable(new ve(4, j3, j10, this));
+        this.storageQueue.postRunnable(new ue(4, j3, j10, this));
     }
 
     public void deleteWallpaper(long j3) {
-        this.storageQueue.postRunnable(new lf(3, j3, this));
+        this.storageQueue.postRunnable(new kf(this, j3, 3));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:29:0x00e0  */
@@ -23070,7 +23070,7 @@ public class MessagesStorage extends BaseController {
                 u12.append(j10);
                 u12.append(" AND type = ");
                 u12.append(i11);
-                y0.r(sQLiteDatabase5, u12.toString());
+                z0.r(sQLiteDatabase5, u12.toString());
             } else {
                 SQLiteDatabase sQLiteDatabase6 = this.database;
                 Locale locale6 = Locale.US;
@@ -23084,7 +23084,7 @@ public class MessagesStorage extends BaseController {
         } else if (i10 == 0) {
             SQLiteDatabase sQLiteDatabase7 = this.database;
             Locale locale7 = Locale.US;
-            y0.r(sQLiteDatabase7, "DELETE FROM media_holes_v2 WHERE uid = " + j3 + " AND type = " + i11);
+            z0.r(sQLiteDatabase7, "DELETE FROM media_holes_v2 WHERE uid = " + j3 + " AND type = " + i11);
         } else {
             SQLiteDatabase sQLiteDatabase8 = this.database;
             Locale locale8 = Locale.US;
@@ -23131,15 +23131,15 @@ public class MessagesStorage extends BaseController {
     }
 
     public void emptyMessagesMedia(long j3, ArrayList<Integer> arrayList) {
-        this.storageQueue.postRunnable(new se(this, arrayList, j3, 1));
+        this.storageQueue.postRunnable(new re(this, arrayList, j3, 1));
     }
 
     public void fixNotificationSettings() {
-        this.storageQueue.postRunnable(new e2(this, 3));
+        this.storageQueue.postRunnable(new f2(this, 3));
     }
 
     public void fullReset() {
-        this.storageQueue.postRunnable(new e2(this, 21));
+        this.storageQueue.postRunnable(new f2(this, 21));
     }
 
     public void getAnimatedEmoji(String str, ArrayList<TLRPC.Document> arrayList) {
@@ -23226,13 +23226,13 @@ public class MessagesStorage extends BaseController {
     }
 
     public void getCachedPhoneBook(boolean z10) {
-        this.storageQueue.postRunnable(new kf(this, z10, 0));
+        this.storageQueue.postRunnable(new jf(this, z10, 0));
     }
 
     public int getChannelPtsSync(long j3) {
         CountDownLatch countDownLatch = new CountDownLatch(1);
         Integer[] numArr = {0};
-        this.storageQueue.postRunnable(new ai.p8(this, j3, numArr, countDownLatch, 21));
+        this.storageQueue.postRunnable(new ai.q8(this, j3, numArr, countDownLatch, 21));
         try {
             countDownLatch.await();
         } catch (Exception e) {
@@ -23258,7 +23258,7 @@ public class MessagesStorage extends BaseController {
     public TLRPC.Chat getChatSync(long j3) {
         CountDownLatch countDownLatch = new CountDownLatch(1);
         TLRPC.Chat[] chatArr = new TLRPC.Chat[1];
-        this.storageQueue.postRunnable(new ai.p8(this, chatArr, j3, countDownLatch, 22));
+        this.storageQueue.postRunnable(new ai.q8(this, chatArr, j3, countDownLatch, 22));
         try {
             countDownLatch.await();
         } catch (Exception e) {
@@ -23284,7 +23284,7 @@ public class MessagesStorage extends BaseController {
     }
 
     public void getContacts() {
-        this.storageQueue.postRunnable(new e2(this, 26));
+        this.storageQueue.postRunnable(new f2(this, 26));
     }
 
     public SQLiteDatabase getDatabase() {
@@ -23307,17 +23307,17 @@ public class MessagesStorage extends BaseController {
     }
 
     public void getDialogFolderId(long j3, IntCallback intCallback) {
-        this.storageQueue.postRunnable(new gf(this, j3, intCallback, 1));
+        this.storageQueue.postRunnable(new ff(this, j3, intCallback, 1));
     }
 
     public void getDialogMaxMessageId(long j3, IntCallback intCallback) {
-        this.storageQueue.postRunnable(new gf(this, j3, intCallback, 0));
+        this.storageQueue.postRunnable(new ff(this, j3, intCallback, 0));
     }
 
     public int getDialogReadMax(final boolean z10, final long j3) {
         final CountDownLatch countDownLatch = new CountDownLatch(1);
         final Integer[] numArr = {0};
-        this.storageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.df
+        this.storageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.cf
             @Override // java.lang.Runnable
             public final void run() {
                 MessagesStorage.this.lambda$getDialogReadMax$256(z10, j3, numArr, countDownLatch);
@@ -23380,18 +23380,18 @@ public class MessagesStorage extends BaseController {
                 }
             }
         }
-        this.storageQueue.postRunnable(new ci.y6(this, i10, i11, i12, jArr));
+        this.storageQueue.postRunnable(new ci.x6(this, i10, i11, i12, jArr));
     }
 
     public void getDownloadQueue(int i10) {
-        this.storageQueue.postRunnable(new jf(this, i10, 4));
+        this.storageQueue.postRunnable(new hf(this, i10, 4));
     }
 
     public void getEncryptedChat(long j3, CountDownLatch countDownLatch, ArrayList<TLObject> arrayList) {
         if (countDownLatch == null || arrayList == null) {
             return;
         }
-        this.storageQueue.postRunnable(new ai.p8(this, j3, arrayList, countDownLatch, 24));
+        this.storageQueue.postRunnable(new ai.q8(this, j3, arrayList, countDownLatch, 24));
     }
 
     public void getEncryptedChatsInternal(String str, ArrayList<TLRPC.EncryptedChat> arrayList, ArrayList<Long> arrayList2) {
@@ -23444,7 +23444,7 @@ public class MessagesStorage extends BaseController {
     }
 
     public void getEphemeralMessages(long j3, long j10, Utilities.Callback<ArrayList<TL_ephemeral.EphemeralMessage>> callback) {
-        executeInStorageQueue(new ze(this, callback, j3, j10, 0));
+        executeInStorageQueue(new ye(this, callback, j3, j10, 0));
     }
 
     public int getForumTypeFlags(long j3) {
@@ -23580,7 +23580,7 @@ public class MessagesStorage extends BaseController {
 
     public void getMessages(final long j3, final long j10, boolean z10, final int i10, final int i11, final int i12, final int i13, final int i14, final int i15, final int i16, final long j11, final int i17, final boolean z11, final boolean z12, final Timer timer) {
         final Timer.Task start = Timer.start(timer, "MessagesStorage.getMessages: storageQueue.postRunnable");
-        this.storageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.xf
+        this.storageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.wf
             @Override // java.lang.Runnable
             public final void run() {
                 MessagesStorage.this.lambda$getMessages$162(start, timer, j3, j10, i10, i11, i12, i13, i14, i15, i16, j11, i17, z11, z12);
@@ -23589,7 +23589,7 @@ public class MessagesStorage extends BaseController {
     }
 
     public void getMessagesCount(long j3, IntCallback intCallback) {
-        this.storageQueue.postRunnable(new gf(this, j3, intCallback, 2));
+        this.storageQueue.postRunnable(new ff(this, j3, intCallback, 2));
     }
 
     /*  JADX ERROR: Type inference failed
@@ -23609,11 +23609,11 @@ public class MessagesStorage extends BaseController {
     }
 
     public void getNewTask(a0.i iVar, a0.i iVar2) {
-        this.storageQueue.postRunnable(new z8(this, iVar, iVar2, 20));
+        this.storageQueue.postRunnable(new n8(this, iVar, iVar2, 21));
     }
 
     public void getSavedDialogMaxMessageId(long j3, IntCallback intCallback) {
-        this.storageQueue.postRunnable(new gf(this, j3, intCallback, 3));
+        this.storageQueue.postRunnable(new ff(this, j3, intCallback, 3));
     }
 
     public int getSecretG() {
@@ -23688,7 +23688,7 @@ public class MessagesStorage extends BaseController {
     }
 
     public void getUnsentMessages(int i10) {
-        this.storageQueue.postRunnable(new jf(this, i10, 5));
+        this.storageQueue.postRunnable(new hf(this, i10, 5));
     }
 
     public TLRPC.User getUser(long j3) {
@@ -23710,7 +23710,7 @@ public class MessagesStorage extends BaseController {
     public TLRPC.User getUserSync(long j3) {
         CountDownLatch countDownLatch = new CountDownLatch(1);
         TLRPC.User[] userArr = new TLRPC.User[1];
-        this.storageQueue.postRunnable(new ai.p8(this, userArr, j3, countDownLatch, 19));
+        this.storageQueue.postRunnable(new ai.q8(this, userArr, j3, countDownLatch, 19));
         try {
             countDownLatch.await();
         } catch (Exception e) {
@@ -23736,12 +23736,12 @@ public class MessagesStorage extends BaseController {
     }
 
     public void getWallpapers() {
-        this.storageQueue.postRunnable(new e2(this, 4));
+        this.storageQueue.postRunnable(new f2(this, 4));
     }
 
     public void getWidgetDialogIds(final int i10, final int i11, final ArrayList<Long> arrayList, final ArrayList<TLRPC.User> arrayList2, final ArrayList<TLRPC.Chat> arrayList3, final boolean z10) {
         final CountDownLatch countDownLatch = new CountDownLatch(1);
-        this.storageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.yf
+        this.storageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.xf
             @Override // java.lang.Runnable
             public final void run() {
                 MessagesStorage.this.lambda$getWidgetDialogIds$168(i10, arrayList, arrayList2, arrayList3, z10, i11, countDownLatch);
@@ -23756,7 +23756,7 @@ public class MessagesStorage extends BaseController {
 
     public void getWidgetDialogs(int i10, int i11, ArrayList<Long> arrayList, a0.i iVar, a0.i iVar2, ArrayList<TLRPC.User> arrayList2, ArrayList<TLRPC.Chat> arrayList3) {
         CountDownLatch countDownLatch = new CountDownLatch(1);
-        this.storageQueue.postRunnable(new qf(this, i10, arrayList, i11, iVar, iVar2, arrayList3, arrayList2, countDownLatch));
+        this.storageQueue.postRunnable(new pf(this, i10, arrayList, i11, iVar, iVar2, arrayList3, arrayList2, countDownLatch));
         try {
             countDownLatch.await();
         } catch (Exception e) {
@@ -23779,7 +23779,7 @@ public class MessagesStorage extends BaseController {
     public boolean hasInviteMeMessage(long j3) {
         CountDownLatch countDownLatch = new CountDownLatch(1);
         boolean[] zArr = new boolean[1];
-        this.storageQueue.postRunnable(new vf(2, j3, countDownLatch, this, zArr));
+        this.storageQueue.postRunnable(new uf(2, j3, countDownLatch, this, zArr));
         try {
             countDownLatch.await();
         } catch (Exception e) {
@@ -23803,7 +23803,7 @@ public class MessagesStorage extends BaseController {
     public boolean isMigratedChat(long j3) {
         CountDownLatch countDownLatch = new CountDownLatch(1);
         boolean[] zArr = new boolean[1];
-        this.storageQueue.postRunnable(new vf(1, j3, countDownLatch, this, zArr));
+        this.storageQueue.postRunnable(new uf(1, j3, countDownLatch, this, zArr));
         try {
             countDownLatch.await();
         } catch (Exception e) {
@@ -23817,7 +23817,7 @@ public class MessagesStorage extends BaseController {
     }
 
     public void loadChannelAdmins(long j3) {
-        this.storageQueue.postRunnable(new lf(7, j3, this));
+        this.storageQueue.postRunnable(new kf(this, j3, 7));
     }
 
     public TLRPC.ChatFull loadChatInfo(long j3, boolean z10, CountDownLatch countDownLatch, boolean z11, boolean z12) {
@@ -23927,7 +23927,7 @@ public class MessagesStorage extends BaseController {
     }
 
     public void loadMessageAttachPaths(ArrayList<MessageObject> arrayList, Runnable runnable) {
-        this.storageQueue.postRunnable(new mf(this, arrayList, runnable, 0));
+        this.storageQueue.postRunnable(new lf(this, arrayList, runnable, 0));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -24132,15 +24132,15 @@ public class MessagesStorage extends BaseController {
     }
 
     public void loadStoryAlbumsCache(long j3, Consumer<List<ai.e9>> consumer) {
-        this.storageQueue.postRunnable(new sg(this, j3, consumer, 0));
+        this.storageQueue.postRunnable(new rg(this, j3, consumer, 0));
     }
 
     public void loadTopics(long j3, Consumer<ArrayList<TLRPC.TL_forumTopic>> consumer) {
-        this.storageQueue.postRunnable(new sg(this, j3, consumer, 1));
+        this.storageQueue.postRunnable(new rg(this, j3, consumer, 1));
     }
 
     public void loadUnreadMessages() {
-        this.storageQueue.postRunnable(new e2(this, 5));
+        this.storageQueue.postRunnable(new f2(this, 5));
     }
 
     public void loadUserInfo(TLRPC.User user, boolean z10, int i10, int i11) {
@@ -24711,7 +24711,7 @@ public class MessagesStorage extends BaseController {
                                             if (c10 == 1) {
                                                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(ContactsController.formatName(user.first_name, user.last_name));
                                                 d0Var4.c = spannableStringBuilder;
-                                                spannableStringBuilder.setSpan(new ForegroundColorSpan(org.telegram.ui.ActionBar.i6.u0(org.telegram.ui.ActionBar.i6.Z8)), 0, d0Var4.c.length(), 33);
+                                                spannableStringBuilder.setSpan(new ForegroundColorSpan(org.telegram.ui.ActionBar.h6.u0(org.telegram.ui.ActionBar.h6.Z8)), 0, d0Var4.c.length(), 33);
                                             } else {
                                                 d0Var4.c = AndroidUtilities.generateSearchName("@" + UserObject.getPublicUsername(user), null, "@" + str22);
                                             }
@@ -24891,11 +24891,11 @@ public class MessagesStorage extends BaseController {
     }
 
     public void markMentionMessageAsRead(long j3, int i10, long j10) {
-        this.storageQueue.postRunnable(new we(this, i10, j3, j10, 6));
+        this.storageQueue.postRunnable(new ve(this, i10, j3, j10, 6));
     }
 
     public void markMessageAsMention(long j3, int i10) {
-        this.storageQueue.postRunnable(new pf(this, i10, j3, 1));
+        this.storageQueue.postRunnable(new of(this, i10, j3, 1));
     }
 
     public void markMessageAsSendError(TLRPC.Message message, int i10) {
@@ -24903,15 +24903,15 @@ public class MessagesStorage extends BaseController {
     }
 
     public void markMessageAsSendErrorWithParams(TLRPC.Message message, long j3, long j10) {
-        this.storageQueue.postRunnable(new ue(1, getUserConfig().getClientUserId(), this, message));
+        this.storageQueue.postRunnable(new te(1, getUserConfig().getClientUserId(), this, message));
     }
 
     public void markMessagePollVotesAsRead(long j3, long j10, int i10) {
-        executeInStorageQueue(new we(this, j3, j10, i10, 2));
+        executeInStorageQueue(new ve(this, j3, j10, i10, 2));
     }
 
     public void markMessageReactionsAsRead(long j3, long j10, int i10) {
-        executeInStorageQueue(new we(this, j3, j10, i10, 3));
+        executeInStorageQueue(new ve(this, j3, j10, i10, 3));
     }
 
     public ArrayList<Long> markMessagesAsDeleted(long j3, ArrayList<Integer> arrayList, boolean z10, boolean z11, int i10, int i11) {
@@ -24921,7 +24921,7 @@ public class MessagesStorage extends BaseController {
         if (!z10) {
             return lambda$markMessagesAsDeleted$229(j3, arrayList, z11, i10, i11);
         }
-        this.storageQueue.postRunnable(new rf(this, j3, arrayList, z11, i10, i11));
+        this.storageQueue.postRunnable(new qf(this, j3, arrayList, z11, i10, i11));
         return null;
     }
 
@@ -24929,12 +24929,12 @@ public class MessagesStorage extends BaseController {
         if (arrayList.isEmpty()) {
             return;
         }
-        this.storageQueue.postRunnable(new pe(12, arrayList, this));
+        this.storageQueue.postRunnable(new oe(12, arrayList, this));
     }
 
     public void markMessagesAsRead(LongSparseIntArray longSparseIntArray, LongSparseIntArray longSparseIntArray2, SparseIntArray sparseIntArray, boolean z10) {
         if (z10) {
-            this.storageQueue.postRunnable(new qk(this, longSparseIntArray, longSparseIntArray2, sparseIntArray, 29));
+            this.storageQueue.postRunnable(new pk(this, longSparseIntArray, longSparseIntArray2, sparseIntArray, 29));
         } else {
             lambda$markMessagesAsRead$219(longSparseIntArray, longSparseIntArray2, sparseIntArray);
         }
@@ -24951,11 +24951,11 @@ public class MessagesStorage extends BaseController {
         if (isEmpty(arrayList)) {
             return;
         }
-        this.storageQueue.postRunnable(new se(this, arrayList, j3, 4));
+        this.storageQueue.postRunnable(new re(this, arrayList, j3, 4));
     }
 
     public void onDeleteQueryComplete(long j3) {
-        this.storageQueue.postRunnable(new lf(5, j3, this));
+        this.storageQueue.postRunnable(new kf(this, j3, 5));
     }
 
     public void openDatabase(int i10) {
@@ -25031,7 +25031,7 @@ public class MessagesStorage extends BaseController {
                         FileLog.e(e10);
                     }
                 }
-                if (intValue < 178) {
+                if (intValue < 179) {
                     try {
                         updateDbToLastVersion(intValue);
                     } catch (Exception e11) {
@@ -25062,7 +25062,7 @@ public class MessagesStorage extends BaseController {
                 return;
             }
         }
-        AndroidUtilities.runOnUIThread(new e2(this, 7));
+        AndroidUtilities.runOnUIThread(new f2(this, 7));
         loadDialogFilters();
         loadUnreadMessages();
         loadPendingTasks();
@@ -25070,36 +25070,36 @@ public class MessagesStorage extends BaseController {
             this.openSync.countDown();
         } catch (Throwable unused) {
         }
-        AndroidUtilities.runOnUIThread(new e2(this, 8));
+        AndroidUtilities.runOnUIThread(new f2(this, 8));
     }
 
     public void overwriteChannel(long j3, TLRPC.TL_updates_channelDifferenceTooLong tL_updates_channelDifferenceTooLong, int i10, Runnable runnable) {
-        this.storageQueue.postRunnable(new ai.l8(this, j3, i10, tL_updates_channelDifferenceTooLong, runnable, 4));
+        this.storageQueue.postRunnable(new ai.m8(this, j3, i10, tL_updates_channelDifferenceTooLong, runnable, 4));
     }
 
     public void processAnchoredEphemeralMessages(ArrayList<TL_ephemeral.EphemeralMessage> arrayList, Runnable runnable) {
         if (arrayList == null || arrayList.isEmpty()) {
             return;
         }
-        executeInStorageQueue(new mf(this, arrayList, runnable, 1));
+        executeInStorageQueue(new lf(this, arrayList, runnable, 1));
     }
 
     public void processEphemeralEditedMessages(ArrayList<TL_ephemeral.EphemeralMessage> arrayList, Runnable runnable) {
         if (arrayList == null || arrayList.isEmpty()) {
             return;
         }
-        executeInStorageQueue(new mf(this, arrayList, runnable, 4));
+        executeInStorageQueue(new lf(this, arrayList, runnable, 4));
     }
 
     public void processEphemeralMessages(ArrayList<TL_ephemeral.EphemeralMessage> arrayList, Runnable runnable) {
         if (arrayList == null || arrayList.isEmpty()) {
             return;
         }
-        executeInStorageQueue(new mf(this, arrayList, runnable, 2));
+        executeInStorageQueue(new lf(this, arrayList, runnable, 2));
     }
 
     public void processLoadedFilterPeers(final TLRPC.messages_Dialogs messages_dialogs, final TLRPC.messages_Dialogs messages_dialogs2, final ArrayList<TLRPC.User> arrayList, final ArrayList<TLRPC.Chat> arrayList2, final ArrayList<MessagesController.DialogFilter> arrayList3, final SparseArray<MessagesController.DialogFilter> sparseArray, final ArrayList<Integer> arrayList4, final HashMap<Integer, HashSet<Long>> hashMap, final HashSet<Integer> hashSet, final Runnable runnable) {
-        this.storageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.og
+        this.storageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.ng
             @Override // java.lang.Runnable
             public final void run() {
                 MessagesStorage.this.lambda$processLoadedFilterPeers$71(messages_dialogs, messages_dialogs2, arrayList, arrayList2, arrayList3, sparseArray, arrayList4, hashMap, hashSet, runnable);
@@ -25109,7 +25109,7 @@ public class MessagesStorage extends BaseController {
 
     public void processPendingRead(final long j3, final int i10, final int i11, final int i12) {
         final int i13 = this.lastSavedDate;
-        this.storageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.fg
+        this.storageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.eg
             @Override // java.lang.Runnable
             public final void run() {
                 MessagesStorage.this.lambda$processPendingRead$145(j3, i10, i12, i13, i11);
@@ -25138,7 +25138,7 @@ public class MessagesStorage extends BaseController {
 
     public void putContacts(ArrayList<TLRPC.TL_contact> arrayList, boolean z10) {
         if (!arrayList.isEmpty() || z10) {
-            this.storageQueue.postRunnable(new qe(this, z10, new ArrayList(arrayList)));
+            this.storageQueue.postRunnable(new pe(this, z10, new ArrayList(arrayList)));
         }
     }
 
@@ -25153,14 +25153,14 @@ public class MessagesStorage extends BaseController {
         if (encryptedChat == null) {
             return;
         }
-        this.storageQueue.postRunnable(new qk(this, encryptedChat, user, dialog, 27));
+        this.storageQueue.postRunnable(new pk(this, encryptedChat, user, dialog, 27));
     }
 
     public void putEphemeralMessages(ArrayList<TL_ephemeral.EphemeralMessage> arrayList, boolean z10) {
         if (arrayList == null || arrayList.isEmpty()) {
             return;
         }
-        executeInStorageQueue(new qe(this, arrayList, z10));
+        executeInStorageQueue(new pe(this, arrayList, z10));
     }
 
     public void putGiftChatTheme(TLRPC.ChatTheme chatTheme) {
@@ -25193,7 +25193,7 @@ public class MessagesStorage extends BaseController {
     public void putUsersAndChats(List<TLRPC.User> list, List<TLRPC.Chat> list2, boolean z10, boolean z11) {
         if (list == null || !list.isEmpty() || list2 == null || !list2.isEmpty()) {
             if (z11) {
-                this.storageQueue.postRunnable(new vj(this, list, list2, z10, 13));
+                this.storageQueue.postRunnable(new uj(this, list, list2, z10, 13));
             } else {
                 lambda$putUsersAndChats$181(list, list2, z10);
             }
@@ -25201,42 +25201,42 @@ public class MessagesStorage extends BaseController {
     }
 
     public void putWallpapers(ArrayList<TLRPC.WallPaper> arrayList, int i10) {
-        this.storageQueue.postRunnable(new wf(this, i10, arrayList, 0));
+        this.storageQueue.postRunnable(new vf(this, i10, arrayList, 0));
     }
 
     public void putWebPages(a0.i iVar) {
         if (isEmpty(iVar)) {
             return;
         }
-        this.storageQueue.postRunnable(new of(this, iVar, 2));
+        this.storageQueue.postRunnable(new nf(this, iVar, 2));
     }
 
     public void putWidgetDialogs(int i10, ArrayList<TopicKey> arrayList) {
-        this.storageQueue.postRunnable(new wf(this, i10, arrayList, 3));
+        this.storageQueue.postRunnable(new vf(this, i10, arrayList, 3));
     }
 
     public void readAllDialogs(int i10) {
-        this.storageQueue.postRunnable(new jf(this, i10, 0));
+        this.storageQueue.postRunnable(new hf(this, i10, 0));
     }
 
     public void removeAllTopics(long j3) {
-        executeInStorageQueue(new lf(2, j3, this));
+        executeInStorageQueue(new kf(this, j3, 2));
     }
 
     public void removeFromDownloadQueue(long j3, int i10, boolean z10) {
-        this.storageQueue.postRunnable(new af(this, z10, i10, j3));
+        this.storageQueue.postRunnable(new ze(this, z10, i10, j3));
     }
 
     public void removePendingTask(long j3) {
-        this.storageQueue.postRunnable(new lf(6, j3, this));
+        this.storageQueue.postRunnable(new kf(this, j3, 6));
     }
 
     public void removeTopic(long j3, long j10) {
-        this.storageQueue.postRunnable(new ve(3, j3, j10, this));
+        this.storageQueue.postRunnable(new ue(3, j3, j10, this));
     }
 
     public void removeTopics(long j3, ArrayList<Long> arrayList) {
-        this.storageQueue.postRunnable(new se(this, arrayList, j3, 6));
+        this.storageQueue.postRunnable(new re(this, arrayList, j3, 6));
     }
 
     public void replaceMessageIfExists(TLRPC.Message message, ArrayList<TLRPC.User> arrayList, ArrayList<TLRPC.Chat> arrayList2, boolean z10) {
@@ -25248,7 +25248,7 @@ public class MessagesStorage extends BaseController {
 
     public void reset() {
         clearDatabaseValues();
-        AndroidUtilities.runOnUIThread(new e2(this, 15));
+        AndroidUtilities.runOnUIThread(new f2(this, 15));
     }
 
     public void resetAllUnreadCounters(boolean z10) {
@@ -25262,11 +25262,11 @@ public class MessagesStorage extends BaseController {
             }
         }
         calcUnreadCounters(false);
-        AndroidUtilities.runOnUIThread(new e2(this, 14));
+        AndroidUtilities.runOnUIThread(new f2(this, 14));
     }
 
     public void resetDialogs(final TLRPC.messages_Dialogs messages_dialogs, final int i10, final int i11, final int i12, final int i13, final int i14, final a0.i iVar, final a0.i iVar2, final TLRPC.Message message, final int i15) {
-        this.storageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.ug
+        this.storageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.tg
             @Override // java.lang.Runnable
             public final void run() {
                 MessagesStorage.this.lambda$resetDialogs$95(messages_dialogs, i15, i11, i12, i13, i14, message, i10, iVar, iVar2);
@@ -25275,26 +25275,26 @@ public class MessagesStorage extends BaseController {
     }
 
     public void resetMentionsCount(long j3, long j10, int i10) {
-        this.storageQueue.postRunnable(new we(this, j10, j3, i10, 7));
+        this.storageQueue.postRunnable(new ve(this, j10, j3, i10, 7));
     }
 
     public void saveBotCache(String str, TLObject tLObject) {
         if (tLObject == null || TextUtils.isEmpty(str)) {
             return;
         }
-        this.storageQueue.postRunnable(new z8(this, tLObject, str, 17));
+        this.storageQueue.postRunnable(new n8(this, tLObject, str, 18));
     }
 
     public void saveChannelPts(long j3, int i10) {
-        this.storageQueue.postRunnable(new pf(this, i10, j3, 0));
+        this.storageQueue.postRunnable(new of(this, i10, j3, 0));
     }
 
     public void saveChatInviter(long j3, long j10) {
-        this.storageQueue.postRunnable(new ve(1, j10, j3, this));
+        this.storageQueue.postRunnable(new ue(1, j10, j3, this));
     }
 
     public void saveChatLinksCount(long j3, int i10) {
-        this.storageQueue.postRunnable(new pf(this, i10, j3, 6));
+        this.storageQueue.postRunnable(new of(this, i10, j3, 6));
     }
 
     public void saveDialogFilter(MessagesController.DialogFilter dialogFilter, boolean z10, boolean z11) {
@@ -25302,7 +25302,7 @@ public class MessagesStorage extends BaseController {
     }
 
     public void saveDialogFiltersOrder() {
-        this.storageQueue.postRunnable(new pe(17, new ArrayList(getMessagesController().dialogFilters), this));
+        this.storageQueue.postRunnable(new oe(17, new ArrayList(getMessagesController().dialogFilters), this));
     }
 
     public void saveDialogFiltersOrderInternal() {
@@ -25335,7 +25335,7 @@ public class MessagesStorage extends BaseController {
     }
 
     public void saveDiffParams(int i10, int i11, int i12, int i13) {
-        this.storageQueue.postRunnable(new ff(this, i10, i11, i12, i13, 0));
+        this.storageQueue.postRunnable(new ef(this, i10, i11, i12, i13, 0));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -25349,7 +25349,7 @@ public class MessagesStorage extends BaseController {
 
     public void saveTopics(long j3, List<TLRPC.TL_forumTopic> list, boolean z10, boolean z11, int i10) {
         if (z11) {
-            this.storageQueue.postRunnable(new gg(this, j3, list, z10, i10, 0));
+            this.storageQueue.postRunnable(new fg(this, j3, list, z10, i10, 0));
         } else {
             saveTopicsInternal(j3, list, z10, false, i10);
         }
@@ -25359,7 +25359,7 @@ public class MessagesStorage extends BaseController {
         if (callback4 == null) {
             return;
         }
-        this.storageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.ye
+        this.storageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.xe
             @Override // java.lang.Runnable
             public final void run() {
                 MessagesStorage.this.lambda$searchSavedByTag$103(str, j3, reaction, i10, i11, z10, callback4);
@@ -25368,34 +25368,34 @@ public class MessagesStorage extends BaseController {
     }
 
     public void setDialogFlags(long j3, long j10) {
-        this.storageQueue.postRunnable(new ve(2, j3, j10, this));
+        this.storageQueue.postRunnable(new ue(2, j3, j10, this));
     }
 
     public void setDialogPinned(long j3, int i10) {
-        this.storageQueue.postRunnable(new pf(this, i10, j3, 2));
+        this.storageQueue.postRunnable(new of(this, i10, j3, 2));
     }
 
     public void setDialogTtl(long j3, int i10) {
-        this.storageQueue.postRunnable(new pf(this, i10, j3, 3));
+        this.storageQueue.postRunnable(new of(this, i10, j3, 3));
     }
 
     public void setDialogUnread(long j3, boolean z10) {
-        this.storageQueue.postRunnable(new hg(this, 0, z10, j3));
+        this.storageQueue.postRunnable(new gg(this, 0, z10, j3));
     }
 
     public void setDialogViewThreadAsMessages(long j3, boolean z10) {
-        this.storageQueue.postRunnable(new hg(this, 1, z10, j3));
+        this.storageQueue.postRunnable(new gg(this, 1, z10, j3));
     }
 
     public void setDialogsFolderId(ArrayList<TLRPC.TL_folderPeer> arrayList, ArrayList<TLRPC.TL_inputFolderPeer> arrayList2, long j3, int i10) {
         if (arrayList == null && arrayList2 == null && j3 == 0) {
             return;
         }
-        this.storageQueue.postRunnable(new ai.l8(this, arrayList, arrayList2, i10, j3));
+        this.storageQueue.postRunnable(new ai.m8(this, arrayList, arrayList2, i10, j3));
     }
 
     public void setDialogsPinned(ArrayList<Long> arrayList, ArrayList<Integer> arrayList2) {
-        this.storageQueue.postRunnable(new eg(this, arrayList, arrayList2, 0));
+        this.storageQueue.postRunnable(new dg(this, arrayList, arrayList2, 0));
     }
 
     public void setLastDateValue(int i10) {
@@ -25440,7 +25440,7 @@ public class MessagesStorage extends BaseController {
     public void toggleTodo(final long j3, final int i10, final int i11, final boolean z10, final long j10) {
         final long clientUserId = getUserConfig().getClientUserId();
         final int currentTime = getConnectionsManager().getCurrentTime();
-        this.storageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.xe
+        this.storageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.we
             @Override // java.lang.Runnable
             public final void run() {
                 MessagesStorage.this.lambda$toggleTodo$100(j3, i10, clientUserId, j10, i11, z10, currentTime);
@@ -25449,11 +25449,11 @@ public class MessagesStorage extends BaseController {
     }
 
     public void unpinAllDialogsExceptNew(ArrayList<Long> arrayList, int i10) {
-        this.storageQueue.postRunnable(new wf(i10, arrayList, this));
+        this.storageQueue.postRunnable(new vf(i10, arrayList, this));
     }
 
     public void updateChannelUsers(long j3, ArrayList<TLRPC.ChannelParticipant> arrayList) {
-        this.storageQueue.postRunnable(new se(this, j3, arrayList, 3));
+        this.storageQueue.postRunnable(new re(this, j3, arrayList, 3));
     }
 
     public void updateChatDefaultBannedRights(long j3, TLRPC.TL_chatBannedRights tL_chatBannedRights, int i10) {
@@ -25468,7 +25468,7 @@ public class MessagesStorage extends BaseController {
     }
 
     public void updateChatOnlineCount(long j3, int i10) {
-        this.storageQueue.postRunnable(new pf(this, i10, j3, 5));
+        this.storageQueue.postRunnable(new of(this, i10, j3, 5));
     }
 
     public void updateChatParticipants(TLRPC.ChatParticipants chatParticipants) {
@@ -25512,14 +25512,14 @@ public class MessagesStorage extends BaseController {
         if (encryptedChat == null) {
             return;
         }
-        this.storageQueue.postRunnable(new tf(this, encryptedChat, 0));
+        this.storageQueue.postRunnable(new sf(this, encryptedChat, 0));
     }
 
     public void updateEncryptedChatLayer(TLRPC.EncryptedChat encryptedChat) {
         if (encryptedChat == null) {
             return;
         }
-        this.storageQueue.postRunnable(new tf(this, encryptedChat, 1));
+        this.storageQueue.postRunnable(new sf(this, encryptedChat, 1));
     }
 
     public void updateEncryptedChatSeq(TLRPC.EncryptedChat encryptedChat, boolean z10) {
@@ -25533,15 +25533,15 @@ public class MessagesStorage extends BaseController {
         if (encryptedChat == null) {
             return;
         }
-        this.storageQueue.postRunnable(new tf(this, encryptedChat, 2));
+        this.storageQueue.postRunnable(new sf(this, encryptedChat, 2));
     }
 
     public void updateMessageCustomParams(long j3, TLRPC.Message message) {
-        this.storageQueue.postRunnable(new ue(0, j3, this, message));
+        this.storageQueue.postRunnable(new te(0, j3, this, message));
     }
 
     public void updateMessagePollResults(long j3, TLRPC.Poll poll, TLRPC.PollResults pollResults) {
-        this.storageQueue.postRunnable(new ai.p8(this, j3, poll, pollResults, 17));
+        this.storageQueue.postRunnable(new ai.q8(this, j3, poll, pollResults, 17));
     }
 
     public void updateMessageReactions(long j3, int i10, TLRPC.TL_messageReactions tL_messageReactions) {
@@ -25552,7 +25552,7 @@ public class MessagesStorage extends BaseController {
         if (!z10) {
             return lambda$updateMessageStateAndId$213(j3, j10, num, i10, i11, i12, i13);
         }
-        this.storageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.nf
+        this.storageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.mf
             @Override // java.lang.Runnable
             public final void run() {
                 MessagesStorage.this.lambda$updateMessageStateAndId$213(j3, j10, num, i10, i11, i12, i13);
@@ -25562,15 +25562,15 @@ public class MessagesStorage extends BaseController {
     }
 
     public void updateMessageTopicId(long j3, long j10, int i10) {
-        executeInStorageQueue(new we(this, i10, j3, j10, 1));
+        executeInStorageQueue(new ve(this, i10, j3, j10, 1));
     }
 
     public void updateMessageVerifyFlags(ArrayList<TLRPC.Message> arrayList) {
-        Utilities.stageQueue.postRunnable(new pe(9, arrayList, this));
+        Utilities.stageQueue.postRunnable(new oe(9, arrayList, this));
     }
 
     public void updateMessageVoiceTranscription(final long j3, final int i10, final String str, final long j10, final boolean z10) {
-        this.storageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.cf
+        this.storageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.bf
             @Override // java.lang.Runnable
             public final void run() {
                 MessagesStorage.this.lambda$updateMessageVoiceTranscription$108(i10, j3, z10, j10, str);
@@ -25583,7 +25583,7 @@ public class MessagesStorage extends BaseController {
     }
 
     public void updateMutedDialogsFiltersCounters() {
-        this.storageQueue.postRunnable(new e2(this, 6));
+        this.storageQueue.postRunnable(new f2(this, 6));
     }
 
     public void updatePinnedMessages(long j3, ArrayList<Integer> arrayList, boolean z10, int i10, int i11, boolean z11, HashMap<Integer, MessageObject> hashMap) {
@@ -25591,7 +25591,7 @@ public class MessagesStorage extends BaseController {
     }
 
     public void updateRanksInLastMessages(long j3, long j10, String str) {
-        this.storageQueue.postRunnable(new re(this, j3, j10, str, 1));
+        this.storageQueue.postRunnable(new qe(this, j3, j10, str, 1));
     }
 
     public void updateRepliesCount(long j3, int i10, ArrayList<TLRPC.Peer> arrayList, int i11, int i12) {
@@ -25654,7 +25654,7 @@ public class MessagesStorage extends BaseController {
         }
         this.tryRecover = false;
         clearLoadingDialogsOffsets();
-        AndroidUtilities.runOnUIThread(new e2(this, 11));
+        AndroidUtilities.runOnUIThread(new f2(this, 11));
         FileLog.e(new Exception("database restored!!"));
     }
 
@@ -25798,7 +25798,7 @@ public class MessagesStorage extends BaseController {
             return;
         }
         if (z11) {
-            this.storageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.ng
+            this.storageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.mg
                 @Override // java.lang.Runnable
                 public final void run() {
                     MessagesStorage.this.lambda$putMessages$200(arrayList, z10, z12, i10, z13, i11, j3);
@@ -25810,7 +25810,7 @@ public class MessagesStorage extends BaseController {
     }
 
     public void updateChatInfo(final long j3, final long j10, final int i10, final long j11, final int i11) {
-        this.storageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.jg
+        this.storageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.ig
             @Override // java.lang.Runnable
             public final void run() {
                 MessagesStorage.this.lambda$updateChatInfo$140(j3, i10, j10, j11, i11);
@@ -25819,7 +25819,7 @@ public class MessagesStorage extends BaseController {
     }
 
     public void updateMessageVoiceTranscription(long j3, int i10, String str, TLRPC.Message message) {
-        this.storageQueue.postRunnable(new ai.l8(this, i10, j3, message, str));
+        this.storageQueue.postRunnable(new ai.m8(this, i10, j3, message, str, 5));
     }
 
     public void updateTopicData(long j3, TLRPC.TL_forumTopic tL_forumTopic, int i10, int i11) {
@@ -25837,7 +25837,7 @@ public class MessagesStorage extends BaseController {
         updateUnreadReactionsCountInternal("reaction_mentions", "reaction_mentions_topics", "unread_reactions", "unread_reactions", j3, j10, i10, z10);
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class Hole {
         public int end;
         public int start;
@@ -25867,7 +25867,7 @@ public class MessagesStorage extends BaseController {
         if (arrayList.isEmpty() && tL_messageReactions2 != null && tL_messageReactions2.results.isEmpty()) {
             return;
         }
-        AndroidUtilities.runOnUIThread(new ai.p8(this, tL_messageReactions, tL_messageReactions2, j3, 18));
+        AndroidUtilities.runOnUIThread(new ai.q8(this, tL_messageReactions, tL_messageReactions2, j3, 18));
     }
 
     private static boolean isEmpty(SparseIntArray sparseIntArray) {
@@ -25900,7 +25900,7 @@ public class MessagesStorage extends BaseController {
 
     public ArrayList<Long> markMessagesAsDeleted(long j3, int i10, boolean z10, boolean z11) {
         if (z10) {
-            this.storageQueue.postRunnable(new af(this, j3, i10, z11));
+            this.storageQueue.postRunnable(new ze(this, j3, i10, z11));
             return null;
         }
         return lambda$markMessagesAsDeleted$231(j3, i10, z11);
@@ -25911,7 +25911,7 @@ public class MessagesStorage extends BaseController {
     }
 
     public void putMessages(TLRPC.messages_Messages messages_messages, long j3, int i10, int i11, boolean z10, int i12, long j10) {
-        this.storageQueue.postRunnable(new x8(this, i12, messages_messages, j3, j10, i10, i11, z10));
+        this.storageQueue.postRunnable(new y8(this, i12, messages_messages, j3, j10, i10, i11, z10));
     }
 
     public void deleteEphemeralMessages(a0.i iVar, boolean z10) {
@@ -26094,7 +26094,7 @@ public class MessagesStorage extends BaseController {
                                                 r12 = z11;
                                                 sQLiteCursor3.dispose();
                                                 deleteFromDownloadQueue(arrayList6, r12);
-                                                AndroidUtilities.runOnUIThread(new pe(0, arrayList5, this));
+                                                AndroidUtilities.runOnUIThread(new oe(0, arrayList5, this));
                                                 getFileLoader().deleteFiles(arrayList4, 0);
                                                 i13 = 0;
                                                 while (i13 < iVar.m()) {
@@ -26182,7 +26182,7 @@ public class MessagesStorage extends BaseController {
                                         r12 = z11;
                                         sQLiteCursor3.dispose();
                                         deleteFromDownloadQueue(arrayList6, r12);
-                                        AndroidUtilities.runOnUIThread(new pe(0, arrayList5, this));
+                                        AndroidUtilities.runOnUIThread(new oe(0, arrayList5, this));
                                         getFileLoader().deleteFiles(arrayList4, 0);
                                         i13 = 0;
                                         while (i13 < iVar.m()) {
@@ -26228,7 +26228,7 @@ public class MessagesStorage extends BaseController {
                                         r12 = z11;
                                         sQLiteCursor3.dispose();
                                         deleteFromDownloadQueue(arrayList6, r12);
-                                        AndroidUtilities.runOnUIThread(new pe(0, arrayList5, this));
+                                        AndroidUtilities.runOnUIThread(new oe(0, arrayList5, this));
                                         getFileLoader().deleteFiles(arrayList4, 0);
                                         i13 = 0;
                                         while (i13 < iVar.m()) {
@@ -26291,7 +26291,7 @@ public class MessagesStorage extends BaseController {
                 r12 = 1;
                 sQLiteCursor3.dispose();
                 deleteFromDownloadQueue(arrayList6, r12);
-                AndroidUtilities.runOnUIThread(new pe(0, arrayList5, this));
+                AndroidUtilities.runOnUIThread(new oe(0, arrayList5, this));
                 getFileLoader().deleteFiles(arrayList4, 0);
                 i13 = 0;
                 while (i13 < iVar.m()) {

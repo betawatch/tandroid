@@ -1,120 +1,16 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public interface bv0 {
-    boolean A();
+public final class bv0 extends s4.j {
+    public final /* synthetic */ cv0 F;
 
-    void B(int i10);
+    public bv0(cv0 cv0Var) {
+        this.F = cv0Var;
+    }
 
-    CharSequence C(int i10);
-
-    void D();
-
-    dv0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11);
-
-    void F(boolean z10);
-
-    void G();
-
-    int H();
-
-    void I();
-
-    boolean J();
-
-    boolean K();
-
-    void L(VideoEditedInfo videoEditedInfo);
-
-    boolean M();
-
-    boolean N();
-
-    boolean O();
-
-    boolean P();
-
-    int Q(Object obj);
-
-    int R(int i10);
-
-    boolean S();
-
-    boolean T();
-
-    MessageObject U();
-
-    void V();
-
-    void W(int i10);
-
-    void X(int i10);
-
-    boolean Y();
-
-    void Z(int i10);
-
-    long a();
-
-    String a0();
-
-    boolean b();
-
-    CharSequence b0(int i10);
-
-    ArrayList c();
-
-    void d();
-
-    void e(CharSequence charSequence);
-
-    void f(String str, String str2, boolean z10);
-
-    boolean g();
-
-    boolean h();
-
-    void i();
-
-    ImageReceiver.BitmapHolder j(int i10);
-
-    int k(int i10, VideoEditedInfo videoEditedInfo);
-
-    boolean l();
-
-    void m();
-
-    void n();
-
-    void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11);
-
-    boolean p();
-
-    boolean q();
-
-    boolean r();
-
-    void s();
-
-    boolean t();
-
-    boolean u();
-
-    HashMap v();
-
-    boolean w();
-
-    boolean x(int i10);
-
-    int y();
-
-    boolean z();
+    @Override // s4.j
+    public final void P(s4.c1 c1Var) {
+        this.F.invalidate();
+    }
 }

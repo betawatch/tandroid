@@ -6,7 +6,7 @@ import android.media.RingtoneManager;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public class NotificationsSettingsFacade {
     public static final String PROPERTY_CONTENT_PREVIEW = "content_preview_";
@@ -40,9 +40,9 @@ public class NotificationsSettingsFacade {
         ConnectionsManager connectionsManager = ConnectionsManager.getInstance(this.currentAccount);
         MessagesStorage messagesStorage = MessagesStorage.getInstance(this.currentAccount);
         NotificationsController notificationsController = NotificationsController.getInstance(this.currentAccount);
-        int c10 = y0.c(PROPERTY_NOTIFY, sharedPrefKey, getPreferences(), -1);
+        int c10 = z0.c(PROPERTY_NOTIFY, sharedPrefKey, getPreferences(), -1);
         boolean z11 = true;
-        int c11 = y0.c(PROPERTY_NOTIFY_UNTIL, sharedPrefKey, getPreferences(), 0);
+        int c11 = z0.c(PROPERTY_NOTIFY_UNTIL, sharedPrefKey, getPreferences(), 0);
         SharedPreferences.Editor edit = getPreferences().edit();
         if ((peerNotifySettings.flags & 2) != 0) {
             edit.putBoolean(org.telegram.ui.Cells.q3.i(PROPERTY_SILENT, sharedPrefKey), peerNotifySettings.silent);
@@ -120,7 +120,7 @@ public class NotificationsSettingsFacade {
         applySoundSettings(peerNotifySettings.android_sound, edit, j3, j10, 0, false);
         edit.apply();
         if (z11) {
-            AndroidUtilities.runOnUIThread(new vg(this, 2));
+            AndroidUtilities.runOnUIThread(new ug(this, 2));
         }
     }
 

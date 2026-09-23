@@ -8,9 +8,8 @@ import b5.n;
 import b5.o;
 import java.util.Set;
 import java.util.WeakHashMap;
-import k2.v;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final boolean a;
@@ -23,12 +22,12 @@ public abstract class b {
         b = new WeakHashMap();
     }
 
-    public static void a(WebView webView, String str, Set set, v vVar) {
+    public static void a(WebView webView, String str, Set set, le.b bVar) {
         if (!m.c.b()) {
             throw new UnsupportedOperationException("This method is not supported by the current version of the framework and the current WebView APK");
         }
         o c10 = c(webView);
-        c10.a.addWebMessageListener(str, (String[]) set.toArray(new String[0]), new se.a(new a6.m(vVar, 7)));
+        c10.a.addWebMessageListener(str, (String[]) set.toArray(new String[0]), new se.a(new a6.m(bVar, 7)));
     }
 
     public static PackageInfo b() {

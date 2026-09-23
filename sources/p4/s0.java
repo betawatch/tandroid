@@ -19,9 +19,9 @@ import java.util.Iterator;
 import java.util.concurrent.Executor;
 import org.telegram.messenger.MessageObject;
 import org.telegram.ui.Cells.l7;
-import org.telegram.ui.em0;
+import org.telegram.ui.yl0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class s0 {
     public boolean a;
@@ -57,7 +57,7 @@ public final class s0 {
     }
 
     public void b(int i10, Serializable serializable) {
-        ((Executor) this.b).execute(new em0(this, i10, serializable, 13));
+        ((Executor) this.b).execute(new yl0(this, i10, serializable, 13));
     }
 
     public void c() {
@@ -114,7 +114,7 @@ public final class s0 {
                     }
                     if (i13 < 0) {
                         r0 r0Var = new r0((Context) this.b, new ComponentName(serviceInfo.packageName, serviceInfo.name));
-                        r0Var.F = new k2.v(this, r0Var);
+                        r0Var.F = new le.b(this, r0Var);
                         if (!r0Var.w) {
                             r0Var.w = true;
                             r0Var.r();

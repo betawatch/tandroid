@@ -1,48 +1,17 @@
 package ci;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.MotionEvent;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import android.graphics.PointF;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class p6 extends ActionBarPopupWindow$ActionBarPopupWindowLayout {
-    public float T;
-    public float U;
-    public final org.telegram.ui.Components.wc V;
-    public boolean W;
+public final class p6 {
+    public final PointF a;
+    public final float b;
+    public final float c;
 
-    public p6(r6 r6Var, Context context) {
-        super(context, r6Var.G1);
-        this.V = new org.telegram.ui.Components.wc(this);
-        this.W = true;
-    }
-
-    @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        float a2 = this.V.a(0.05f);
-        if (a2 < 1.0f) {
-            canvas.save();
-            canvas.scale(a2, a2, this.T, this.U);
-        }
-        super.dispatchDraw(canvas);
-        if (a2 < 1.0f) {
-            canvas.restore();
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        int action = motionEvent.getAction();
-        org.telegram.ui.Components.wc wcVar = this.V;
-        if (action == 0) {
-            this.T = motionEvent.getX();
-            this.U = motionEvent.getY();
-            wcVar.c(this.W);
-        } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-            wcVar.c(false);
-        }
-        return super.dispatchTouchEvent(motionEvent);
+    public /* synthetic */ p6(PointF pointF, float f7, float f10) {
+        this.a = pointF;
+        this.b = f7;
+        this.c = f10;
     }
 }

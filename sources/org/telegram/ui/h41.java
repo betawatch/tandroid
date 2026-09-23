@@ -1,107 +1,212 @@
 package org.telegram.ui;
 
-import android.util.LongSparseArray;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import java.util.ArrayList;
-import java.util.HashSet;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ContactsController;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
 import org.telegram.messenger.SaveToGallerySettingsHelper;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h41 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class h41 extends og.b {
+    public final /* synthetic */ SaveToGallerySettingsActivity d;
 
-    public /* synthetic */ h41(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public h41(SaveToGallerySettingsActivity saveToGallerySettingsActivity) {
+        this.d = saveToGallerySettingsActivity;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                ((i41) this.b).dismiss();
-                break;
-            case 1:
-                SaveToGallerySettingsActivity saveToGallerySettingsActivity = (SaveToGallerySettingsActivity) this.b;
-                if (saveToGallerySettingsActivity.d) {
-                    LongSparseArray<SaveToGallerySettingsHelper.DialogException> saveGalleryExceptions = saveToGallerySettingsActivity.getUserConfig().getSaveGalleryExceptions(saveToGallerySettingsActivity.a);
-                    SaveToGallerySettingsHelper.DialogException dialogException = saveToGallerySettingsActivity.c;
-                    saveGalleryExceptions.put(dialogException.dialogId, dialogException);
-                    saveToGallerySettingsActivity.getUserConfig().updateSaveGalleryExceptions(saveToGallerySettingsActivity.a, saveGalleryExceptions);
+    @Override // org.telegram.ui.Components.ll0
+    public final boolean D(s4.c1 c1Var) {
+        int i10 = c1Var.f;
+        return i10 == 1 || i10 == 2 || i10 == 4 || i10 == 6;
+    }
+
+    @Override // s4.h0
+    public final int h() {
+        return this.d.s.size();
+    }
+
+    @Override // s4.h0
+    public final int j(int i10) {
+        return ((i41) this.d.s.get(i10)).a;
+    }
+
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
+        String str;
+        int i11;
+        View view = c1Var.a;
+        SaveToGallerySettingsActivity saveToGallerySettingsActivity = this.d;
+        ArrayList arrayList = saveToGallerySettingsActivity.s;
+        if (((i41) arrayList.get(i10)).a == 1) {
+            ((org.telegram.ui.Cells.s8) view).setNeedDivider(saveToGallerySettingsActivity.v.size() > 0);
+            return;
+        }
+        if (((i41) arrayList.get(i10)).a == 6) {
+            org.telegram.ui.Cells.x8 x8Var = (org.telegram.ui.Cells.x8) view;
+            SaveToGallerySettingsHelper.Settings X = saveToGallerySettingsActivity.X();
+            if (i10 == saveToGallerySettingsActivity.e) {
+                x8Var.f(LocaleController.getString(R.string.SaveToGalleryPhotos), X.savePhoto, true);
+                x8Var.c(saveToGallerySettingsActivity.getThemedColor(org.telegram.ui.ActionBar.h6.lj), R.drawable.msg_filled_data_photos);
+                return;
+            } else {
+                x8Var.f(LocaleController.getString(R.string.SaveToGalleryVideos), X.saveVideo, false);
+                x8Var.c(saveToGallerySettingsActivity.getThemedColor(org.telegram.ui.ActionBar.h6.ij), R.drawable.msg_filled_data_videos);
+                return;
+            }
+        }
+        if (((i41) arrayList.get(i10)).a != 7) {
+            if (((i41) arrayList.get(i10)).a == 5) {
+                ((org.telegram.ui.Cells.m4) view).setText(((i41) arrayList.get(i10)).d);
+                return;
+            }
+            if (((i41) arrayList.get(i10)).a == 2) {
+                org.telegram.ui.Cells.bb bbVar = (org.telegram.ui.Cells.bb) view;
+                SaveToGallerySettingsHelper.DialogException dialogException = ((i41) arrayList.get(i10)).c;
+                TLObject userOrChat = saveToGallerySettingsActivity.getMessagesController().getUserOrChat(dialogException.dialogId);
+                if (userOrChat instanceof TLRPC.User) {
+                    TLRPC.User user = (TLRPC.User) userOrChat;
+                    str = user.self ? LocaleController.getString(R.string.SavedMessages) : ContactsController.formatName(user.first_name, user.last_name);
+                } else {
+                    str = userOrChat instanceof TLRPC.Chat ? ((TLRPC.Chat) userOrChat).title : null;
                 }
-                saveToGallerySettingsActivity.finishFragment();
+                bbVar.setSelfAsSavedMessages(true);
+                i11 = ((org.telegram.ui.ActionBar.n2) saveToGallerySettingsActivity).currentAccount;
+                bbVar.d(userOrChat, str, dialogException.createDescription(i11), i10 == arrayList.size() - 1 || ((i41) arrayList.get(i10 + 1)).a == 2);
+                return;
+            }
+            return;
+        }
+        org.telegram.ui.Cells.f9 f9Var = (org.telegram.ui.Cells.f9) view;
+        if (i10 != saveToGallerySettingsActivity.h) {
+            f9Var.setText(((i41) arrayList.get(i10)).d);
+            return;
+        }
+        long j3 = saveToGallerySettingsActivity.X().limitVideo;
+        if (saveToGallerySettingsActivity.c != null) {
+            f9Var.setText(LocaleController.formatString("SaveToGalleryVideoHintCurrent", R.string.SaveToGalleryVideoHintCurrent, new Object[0]));
+            return;
+        }
+        int i12 = saveToGallerySettingsActivity.a;
+        if (i12 == 1) {
+            f9Var.setText(LocaleController.formatString("SaveToGalleryVideoHintUser", R.string.SaveToGalleryVideoHintUser, new Object[0]));
+        } else if (i12 == 4) {
+            f9Var.setText(LocaleController.formatString("SaveToGalleryVideoHintChannels", R.string.SaveToGalleryVideoHintChannels, new Object[0]));
+        } else if (i12 == 2) {
+            f9Var.setText(LocaleController.formatString("SaveToGalleryVideoHintGroup", R.string.SaveToGalleryVideoHintGroup, new Object[0]));
+        }
+    }
+
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        View view;
+        int i11;
+        TLObject chat;
+        int i12;
+        View view2;
+        SaveToGallerySettingsActivity saveToGallerySettingsActivity = this.d;
+        View view3 = null;
+        switch (i10) {
+            case 1:
+                org.telegram.ui.Cells.s8 s8Var = new org.telegram.ui.Cells.s8(viewGroup.getContext());
+                s8Var.m(R.drawable.msg_contact_add, LocaleController.getString(R.string.NotificationsAddAnException), true);
+                s8Var.e(org.telegram.ui.ActionBar.h6.v6, org.telegram.ui.ActionBar.h6.u6);
+                s8Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.d6, false));
+                view3 = s8Var;
                 break;
             case 2:
-                ((s41) this.b).dismiss();
+                View bbVar = new org.telegram.ui.Cells.bb(4, 0, viewGroup.getContext(), null, false, false);
+                bbVar.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.d6, false));
+                view = bbVar;
+                view3 = view;
                 break;
             case 3:
-                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.b;
-                MessageObject messageObject = secretMediaViewer.h0;
-                if (messageObject != null) {
-                    TLRPC.Message message = messageObject.messageOwner;
-                    if (message.destroyTime != 0 || message.ttl == Integer.MAX_VALUE) {
-                        ci.f4 f4Var = secretMediaViewer.r;
-                        if (f4Var.V) {
-                            f4Var.e(true);
-                            break;
-                        } else {
-                            secretMediaViewer.l();
-                            break;
-                        }
-                    }
-                }
+                view2 = new org.telegram.ui.Cells.a7(viewGroup.getContext(), (org.telegram.ui.Cells.q3) null);
+                view3 = view2;
                 break;
             case 4:
-                r71 r71Var = (r71) this.b;
-                if (r71Var.a0 instanceof TLRPC.User) {
-                    ci.d dVar = r71Var.h0;
-                    if (!dVar.N) {
-                        dVar.setLoading(true);
-                        r71Var.T((TLRPC.User) r71Var.a0, null, null);
-                        break;
-                    }
-                }
+                org.telegram.ui.Cells.s8 s8Var2 = new org.telegram.ui.Cells.s8(viewGroup.getContext());
+                s8Var2.i(LocaleController.getString(R.string.NotificationsDeleteAllException), false);
+                s8Var2.e(-1, org.telegram.ui.ActionBar.h6.p7);
+                s8Var2.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.d6, false));
+                view2 = s8Var2;
+                view3 = view2;
                 break;
             case 5:
-                r81.a((r81) this.b);
+                View m4Var = new org.telegram.ui.Cells.m4(viewGroup.getContext());
+                m4Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.d6, false));
+                view2 = m4Var;
+                view3 = view2;
                 break;
             case 6:
-                ((le1) this.b).c(true);
+                View x8Var = new org.telegram.ui.Cells.x8(viewGroup.getContext());
+                x8Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.d6, false));
+                view2 = x8Var;
+                view3 = view2;
                 break;
             case 7:
-                ((le1) ((iw0) this.b).c).c(true);
+                view3 = new org.telegram.ui.Cells.f9(viewGroup.getContext());
                 break;
             case 8:
-                te1 te1Var = (te1) this.b;
-                ArrayList arrayList = te1Var.f;
-                HashSet hashSet = te1Var.w;
-                if (!hashSet.isEmpty()) {
-                    TLRPC.User user = te1Var.getMessagesController().getUser(Long.valueOf(te1Var.getUserConfig().getClientUserId()));
-                    ArrayList arrayList2 = new ArrayList();
-                    for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                        if (hashSet.contains(Long.valueOf(((TLRPC.Chat) arrayList.get(i10)).id))) {
-                            arrayList2.add((TLRPC.Chat) arrayList.get(i10));
-                        }
-                    }
-                    for (int i11 = 0; i11 < arrayList2.size(); i11++) {
-                        TLRPC.Chat chat = (TLRPC.Chat) arrayList2.get(i11);
-                        te1Var.getMessagesController().putChat(chat, false);
-                        te1Var.getMessagesController().deleteParticipantFromChat(chat.id, user);
-                    }
-                    te1Var.finishFragment();
-                    break;
+                LinearLayout linearLayout = new LinearLayout(saveToGallerySettingsActivity.getParentActivity());
+                linearLayout.setOrientation(1);
+                org.telegram.ui.Components.fo0 fo0Var = new org.telegram.ui.Components.fo0(saveToGallerySettingsActivity.getParentActivity());
+                FrameLayout frameLayout = new FrameLayout(saveToGallerySettingsActivity.getParentActivity());
+                j41 j41Var = new j41(saveToGallerySettingsActivity, saveToGallerySettingsActivity.getParentActivity());
+                j41Var.setTextSize(AndroidUtilities.dp(13.0f));
+                j41Var.setText(AndroidUtilities.formatFileSize(524288L, true, false));
+                frameLayout.addView(j41Var, w7.x5.e(-2, -2, 83));
+                j41 j41Var2 = new j41(saveToGallerySettingsActivity, saveToGallerySettingsActivity.getParentActivity());
+                j41Var2.setTextSize(AndroidUtilities.dp(13.0f));
+                frameLayout.addView(j41Var2, w7.x5.e(-2, -2, 81));
+                j41 j41Var3 = new j41(saveToGallerySettingsActivity, saveToGallerySettingsActivity.getParentActivity());
+                j41Var3.setTextSize(AndroidUtilities.dp(13.0f));
+                j41Var3.setText(AndroidUtilities.formatFileSize(4194304000L, true, false));
+                frameLayout.addView(j41Var3, w7.x5.e(-2, -2, 85));
+                linearLayout.addView(frameLayout, w7.x5.t(-1, 20, 0, 21, 10, 21, 0));
+                linearLayout.addView(fo0Var, w7.x5.t(-1, 38, 0, 5, 0, 5, 4));
+                long j3 = saveToGallerySettingsActivity.X().limitVideo;
+                if (j3 < 0 || j3 > 4194304000L) {
+                    j3 = 4194304000L;
                 }
+                fo0Var.setReportChanges(true);
+                fo0Var.setDelegate(new g41(this, fo0Var, j41Var, j41Var2, j41Var3));
+                fo0Var.setProgress(((float) j3) > ((float) SaveToGallerySettingsHelper.DEFAULT_VIDEO_LIMIT) * 0.7f ? a4.a.e(j3 - SaveToGallerySettingsHelper.DEFAULT_VIDEO_LIMIT, 4089446400L, 0.3f, 0.7f) : ((j3 - 524288) / 104333312) * 0.7f);
+                fo0Var.w.X(fo0Var.getProgress(), false);
+                linearLayout.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.d6, false));
+                view = linearLayout;
+                view3 = view;
                 break;
-            default:
-                mj1 mj1Var = (mj1) this.b;
-                mj1Var.a.c(!r0.b(), true);
-                mj1Var.c.setEnabled(mj1Var.a.b());
-                mj1Var.c.animate().alpha(mj1Var.a.b() ? 1.0f : 0.5f).start();
+            case 9:
+                org.telegram.ui.Cells.ab abVar = new org.telegram.ui.Cells.ab(saveToGallerySettingsActivity.getParentActivity(), saveToGallerySettingsActivity.getResourceProvider());
+                if (DialogObject.isUserDialog(saveToGallerySettingsActivity.b)) {
+                    i12 = ((org.telegram.ui.ActionBar.n2) saveToGallerySettingsActivity).currentAccount;
+                    chat = MessagesController.getInstance(i12).getUser(Long.valueOf(saveToGallerySettingsActivity.b));
+                } else {
+                    i11 = ((org.telegram.ui.ActionBar.n2) saveToGallerySettingsActivity).currentAccount;
+                    chat = MessagesController.getInstance(i11).getChat(Long.valueOf(-saveToGallerySettingsActivity.b));
+                }
+                abVar.a(chat, null);
+                abVar.setBackgroundColor(saveToGallerySettingsActivity.getThemedColor(org.telegram.ui.ActionBar.h6.d6));
+                view2 = abVar;
+                view3 = view2;
+                break;
+            case 10:
+                View a7Var = new org.telegram.ui.Cells.a7(viewGroup.getContext(), (org.telegram.ui.Cells.q3) null);
+                a7Var.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.U0(saveToGallerySettingsActivity.getParentActivity(), R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.b7, saveToGallerySettingsActivity.getResourceProvider())));
+                view2 = a7Var;
+                view3 = view2;
                 break;
         }
+        return com.google.android.gms.internal.vision.e2.k(view3, view3, -1, -2);
     }
 }

@@ -1,66 +1,87 @@
 package ci;
 
-import android.text.Editable;
+import android.app.Activity;
 import android.text.TextUtils;
-import android.text.TextWatcher;
+import android.view.ViewPropertyAnimator;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.UserObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class e8 implements TextWatcher {
-    public final /* synthetic */ g8 a;
+public final class e8 extends FrameLayout {
+    public final int a;
+    public final org.telegram.ui.Components.h9 b;
+    public final org.telegram.ui.Components.w9 c;
+    public final TextView d;
+    public ViewPropertyAnimator e;
 
-    public e8(g8 g8Var) {
-        this.a = g8Var;
+    public e8(Activity activity, int i10) {
+        super(activity);
+        this.a = i10;
+        this.b = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.d6) null);
+        org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(activity);
+        this.c = w9Var;
+        w9Var.setRoundRadius(AndroidUtilities.dp(15.0f));
+        addView(w9Var, w7.x5.d(30, 30.0f, 19, 14.0f, 0.0f, 0.0f, 0.0f));
+        TextView textView = new TextView(activity);
+        this.d = textView;
+        textView.setTextSize(1, 14.0f);
+        textView.setTextColor(-1);
+        textView.setTypeface(AndroidUtilities.bold());
+        textView.setSingleLine();
+        textView.setLines(1);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        addView(textView, w7.x5.d(-1, -2.0f, 51, 53.0f, 11.33f, 12.0f, 0.0f));
+        TextView textView2 = new TextView(activity);
+        textView2.setTextSize(1, 12.0f);
+        textView2.setTextColor(org.telegram.ui.ActionBar.h6.l1(0.85f, -1));
+        addView(textView2, w7.x5.d(-1, -2.0f, 51, 53.0f, 29.33f, 12.0f, 0.0f));
+        textView2.setText(AndroidUtilities.replaceArrows(LocaleController.getString(R.string.LiveStoryPeerChange), false, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(0.33f), 1.0f));
+        set(null);
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        int i10;
-        String obj = editable.toString();
-        g8 g8Var = this.a;
-        g8Var.s0 = obj;
-        if (!g8Var.Z) {
-            String str = g8Var.x0;
-            if (obj == null) {
-                obj = "";
-            }
-            boolean equals = TextUtils.equals(str, obj);
-            boolean z10 = false;
-            if (!equals) {
-                g8Var.Z();
-                String str2 = g8Var.s0;
-                g8Var.w0 = str2 != null && str2.length() > 0;
-            }
-            String str3 = g8Var.I0;
-            String str4 = g8Var.s0;
-            if (!TextUtils.equals(str3, str4 != null ? str4 : "")) {
-                g8Var.Y();
-                String str5 = g8Var.s0;
-                if (str5 != null && str5.length() > 3) {
-                    i10 = ((org.telegram.ui.ActionBar.f3) g8Var).currentAccount;
-                    if (!TextUtils.isEmpty(MessagesController.getInstance(i10).config.musicSearchUsername.get())) {
-                        z10 = true;
-                    }
-                }
-                g8Var.D0 = z10;
-            }
-            y7 y7Var = g8Var.z0;
-            AndroidUtilities.cancelRunOnUIThread(y7Var);
-            AndroidUtilities.runOnUIThread(y7Var, 400L);
-            y7 y7Var2 = g8Var.K0;
-            AndroidUtilities.cancelRunOnUIThread(y7Var2);
-            AndroidUtilities.runOnUIThread(y7Var2, 400L);
+    public final void a(boolean z10, boolean z11) {
+        ViewPropertyAnimator viewPropertyAnimator = this.e;
+        if (viewPropertyAnimator != null) {
+            viewPropertyAnimator.cancel();
+            this.e = null;
         }
-        g8Var.q0.N(true);
+        if (!z11) {
+            setVisibility(z10 ? 0 : 8);
+            setAlpha(z10 ? 1.0f : 0.0f);
+        } else {
+            setVisibility(0);
+            ViewPropertyAnimator duration = animate().alpha(z10 ? 1.0f : 0.0f).setInterpolator(rr.h).withEndAction(new bi.f(4, this, z10)).setDuration(320L);
+            this.e = duration;
+            duration.start();
+        }
     }
 
-    @Override // android.text.TextWatcher
-    public final /* synthetic */ void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final /* synthetic */ void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    public void set(TLRPC.InputPeer inputPeer) {
+        int i10 = this.a;
+        long clientUserId = inputPeer == null ? UserConfig.getInstance(i10).getClientUserId() : DialogObject.getPeerDialogId(inputPeer);
+        TextView textView = this.d;
+        org.telegram.ui.Components.w9 w9Var = this.c;
+        org.telegram.ui.Components.h9 h9Var = this.b;
+        if (clientUserId >= 0) {
+            TLRPC.User user = MessagesController.getInstance(i10).getUser(Long.valueOf(clientUserId));
+            h9Var.r(user);
+            w9Var.e(user, h9Var);
+            textView.setText(UserObject.getUserName(user));
+            return;
+        }
+        TLRPC.Chat chat = MessagesController.getInstance(i10).getChat(Long.valueOf(-clientUserId));
+        h9Var.q(chat);
+        w9Var.e(chat, h9Var);
+        textView.setText(chat == null ? "" : chat.title);
     }
 }

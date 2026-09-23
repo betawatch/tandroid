@@ -5,9 +5,9 @@ import android.graphics.Canvas;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.ou0;
 import org.telegram.ui.Components.qt0;
-import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.uk0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class j extends ou0 {
     public final /* synthetic */ u q3;
@@ -23,7 +23,7 @@ public final class j extends ou0 {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.ou0, org.telegram.ui.Components.ga, org.telegram.ui.Components.ll0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ou0, org.telegram.ui.Components.ia, org.telegram.ui.Components.ml0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         int i10 = 0;
@@ -67,7 +67,7 @@ public final class j extends ou0 {
     }
 
     @Override // org.telegram.ui.Components.ou0
-    public final tk0 getMovingAdapter() {
+    public final uk0 getMovingAdapter() {
         u uVar = this.q3;
         if (uVar.G.y != 0 || uVar.W.G.C1) {
             return null;
@@ -76,7 +76,7 @@ public final class j extends ou0 {
     }
 
     @Override // org.telegram.ui.Components.ou0
-    public final tk0 getSupportingAdapter() {
+    public final uk0 getSupportingAdapter() {
         return this.q3.w;
     }
 

@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n implements r0.n, l1, a2 {
     public final /* synthetic */ int a;
@@ -46,26 +46,26 @@ public final /* synthetic */ class n implements r0.n, l1, a2 {
             case 3:
             case 5:
             default:
-                z3 z3Var = (z3) obj;
-                z3Var.e = l1Var;
+                y3 y3Var = (y3) obj;
+                y3Var.e = l1Var;
                 i0.b defaultWindowInsets3 = AndroidUtilities.getDefaultWindowInsets(l1Var, false);
                 i0.b defaultWindowInsets4 = AndroidUtilities.getDefaultWindowInsets(l1Var, true);
-                if (!z3Var.f.equals(defaultWindowInsets3) || !z3Var.h.equals(defaultWindowInsets4)) {
+                if (!y3Var.f.equals(defaultWindowInsets3) || !y3Var.h.equals(defaultWindowInsets4)) {
                     AndroidUtilities.statusBarHeight = defaultWindowInsets3.b;
                     AndroidUtilities.navigationBarHeight = defaultWindowInsets3.d;
-                    z3Var.f = defaultWindowInsets3;
-                    z3Var.h = defaultWindowInsets4;
-                    z3Var.requestLayout();
+                    y3Var.f = defaultWindowInsets3;
+                    y3Var.h = defaultWindowInsets4;
+                    y3Var.requestLayout();
                 }
-                int childCount2 = z3Var.getChildCount();
+                int childCount2 = y3Var.getChildCount();
                 while (i11 < childCount2) {
-                    View childAt = z3Var.getChildAt(i11);
+                    View childAt = y3Var.getChildAt(i11);
                     if ((childAt instanceof ActionBarLayout) || childAt.getTag() == null) {
                         r0.i0.b(childAt, l1Var);
                     }
                     i11++;
                 }
-                z3Var.invalidate();
+                y3Var.invalidate();
                 break;
             case 4:
                 r0.i1 i1Var = l1Var.a;
@@ -83,9 +83,9 @@ public final /* synthetic */ class n implements r0.n, l1, a2 {
             case 6:
                 break;
             case 7:
-                x3 x3Var = (x3) obj;
-                x3Var.s = l1Var.a.f(2).d;
-                x3Var.invalidate();
+                w3 w3Var = (w3) obj;
+                w3Var.s = l1Var.a.f(2).d;
+                w3Var.invalidate();
                 break;
         }
         return r0.l1.b;

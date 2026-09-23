@@ -1,44 +1,36 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.widget.ScrollView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class hp implements org.telegram.ui.Components.zk0 {
-    public final /* synthetic */ jp a;
+public final /* synthetic */ class hp implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ sp b;
 
-    public hp(jp jpVar) {
-        this.a = jpVar;
+    public /* synthetic */ hp(sp spVar, int i10) {
+        this.a = i10;
+        this.b = spVar;
     }
 
-    @Override // org.telegram.ui.Components.zk0
-    public final void d(int i10, View view) {
-        TLRPC.TL_username tL_username;
-        jp jpVar = this.a;
-        kp kpVar = jpVar.a3;
-        if (!(view instanceof na) || (tL_username = ((na) view).v) == null) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                sp spVar = this.b;
+                org.telegram.ui.ActionBar.b2 b2Var = spVar.r;
+                if (b2Var != null) {
+                    b2Var.setOnCancelListener(new ng(spVar, 2));
+                    spVar.showDialog(spVar.r);
+                    break;
+                }
+                break;
+            case 1:
+                sp spVar2 = this.b;
+                spVar2.getMessagesController().loadFullChat(spVar2.E, 0, true);
+                break;
+            default:
+                sp spVar3 = this.b;
+                spVar3.getMessagesController().loadFullChat(spVar3.E, 0, true);
+                break;
         }
-        if (tL_username.editable) {
-            View view2 = kpVar.fragmentView;
-            if (view2 instanceof ScrollView) {
-                ((ScrollView) view2).smoothScrollTo(0, kpVar.y.getTop() - AndroidUtilities.dp(128.0f));
-            }
-            kpVar.a.requestFocus();
-            AndroidUtilities.showKeyboard(kpVar.a);
-            return;
-        }
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(jpVar.getContext(), 0, kpVar.getResourceProvider());
-        alertDialog$Builder.a.R = LocaleController.getString(tL_username.active ? R.string.UsernameDeactivateLink : R.string.UsernameActivateLink);
-        alertDialog$Builder.a.T = LocaleController.getString(tL_username.active ? R.string.UsernameDeactivateLinkChannelMessage : R.string.UsernameActivateLinkChannelMessage);
-        alertDialog$Builder.k(LocaleController.getString(tL_username.active ? R.string.Hide : R.string.Show), new b7(this, tL_username, view, 8));
-        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new m4.u0(21));
-        alertDialog$Builder.o();
     }
 }

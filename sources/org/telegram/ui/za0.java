@@ -1,44 +1,48 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class za0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ab0 b;
-    public final /* synthetic */ AccountInstance c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 e;
+public final class za0 implements qf.c {
+    public final fb0 a;
+    public final /* synthetic */ LaunchActivity b;
 
-    public /* synthetic */ za0(ab0 ab0Var, AccountInstance accountInstance, long j3, org.telegram.ui.ActionBar.n2 n2Var, int i10) {
-        this.a = i10;
-        this.b = ab0Var;
-        this.c = accountInstance;
-        this.d = j3;
-        this.e = n2Var;
+    public za0(LaunchActivity launchActivity) {
+        this.b = launchActivity;
+        Pattern pattern = LaunchActivity.B1;
+        this.a = new fb0(launchActivity, false);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new za0(this.b, this.c, this.d, this.e, 1));
-                break;
-            default:
-                AccountInstance accountInstance = this.c;
-                MessagesController messagesController = accountInstance.getMessagesController();
-                long j3 = this.d;
-                long j10 = -j3;
-                ChatObject.Call groupCall = messagesController.getGroupCall(j10, false);
-                TLRPC.Chat chat = accountInstance.getMessagesController().getChat(Long.valueOf(j10));
-                accountInstance.getMessagesController().getInputPeer(j3);
-                org.telegram.ui.Components.voip.f2.l(chat, null, false, Boolean.valueOf(groupCall == null || !groupCall.call.rtmp_stream), this.b.g, this.e, accountInstance);
-                break;
-        }
+    @Override // qf.c
+    public final void b() {
+        Pattern pattern = LaunchActivity.B1;
+        this.b.getWindow();
+    }
+
+    @Override // qf.c
+    public final void d() {
+        this.a.a(false);
+    }
+
+    @Override // qf.c
+    public final void f() {
+        Pattern pattern = LaunchActivity.B1;
+        LaunchActivity launchActivity = this.b;
+        launchActivity.getClass();
+        this.a.a(true);
+        launchActivity.getWindow();
+    }
+
+    @Override // qf.c
+    public final /* synthetic */ void a() {
+    }
+
+    @Override // qf.c
+    public final /* synthetic */ void c() {
+    }
+
+    @Override // qf.c
+    public final /* synthetic */ void e() {
     }
 }

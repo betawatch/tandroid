@@ -1,12 +1,13 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.LocaleController;
+import android.widget.Button;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class b4 extends uc0 {
-    @Override // org.telegram.ui.Components.uc0
-    public final CharSequence d(int i10) {
-        return LocaleController.formatPluralString("Hours", i10, new Object[0]);
+public final class b4 extends TextView {
+    @Override // android.widget.TextView, android.view.View
+    public final CharSequence getAccessibilityClassName() {
+        return Button.class.getName();
     }
 }

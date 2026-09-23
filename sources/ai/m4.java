@@ -6,17 +6,17 @@ import android.graphics.drawable.Drawable;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class m4 extends FrameLayout {
     public final /* synthetic */ int a;
-    public final /* synthetic */ f6 b;
+    public final /* synthetic */ e6 b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ m4(f6 f6Var, Context context, int i10) {
+    public /* synthetic */ m4(e6 e6Var, Context context, int i10) {
         super(context);
         this.a = i10;
-        this.b = f6Var;
+        this.b = e6Var;
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -24,40 +24,40 @@ public final class m4 extends FrameLayout {
         int x10;
         switch (this.a) {
             case 0:
-                f6 f6Var = this.b;
-                if (f6Var.F2.getVisibility() == 0 && f6Var.F2.getLayoutParams().width != (x10 = (int) (((f6Var.A2.getX() + f6Var.A2.getMeasuredWidth()) - f6Var.F2.getX()) + AndroidUtilities.dp(10.0f)))) {
-                    f6Var.F2.getLayoutParams().width = x10;
-                    f6Var.F2.invalidate();
-                    f6Var.F2.requestLayout();
+                e6 e6Var = this.b;
+                if (e6Var.F2.getVisibility() == 0 && e6Var.F2.getLayoutParams().width != (x10 = (int) (((e6Var.A2.getX() + e6Var.A2.getMeasuredWidth()) - e6Var.F2.getX()) + AndroidUtilities.dp(10.0f)))) {
+                    e6Var.F2.getLayoutParams().width = x10;
+                    e6Var.F2.invalidate();
+                    e6Var.F2.requestLayout();
                 }
                 super.dispatchDraw(canvas);
                 break;
             case 1:
                 super.dispatchDraw(canvas);
-                f6 f6Var2 = this.b;
-                if (f6Var2.D1 && f6Var2.R0 != null) {
+                e6 e6Var2 = this.b;
+                if (e6Var2.D1 && e6Var2.R0 != null) {
                     canvas.save();
-                    canvas.translate((getMeasuredWidth() - f6Var2.R0.d()) - AndroidUtilities.dp(6.0f), 0.0f);
-                    float d = f6Var2.T0.d(f6Var2.V0 ? 1.0f : 0.0f, false);
-                    canvas.scale(d, d, f6Var2.R0.d() / 2.0f, AndroidUtilities.dp(20.0f));
-                    org.telegram.ui.Components.m6 m6Var = f6Var2.R0;
-                    m6Var.w = 255;
-                    m6Var.draw(canvas);
+                    canvas.translate((getMeasuredWidth() - e6Var2.R0.d()) - AndroidUtilities.dp(6.0f), 0.0f);
+                    float d = e6Var2.T0.d(e6Var2.V0 ? 1.0f : 0.0f, false);
+                    canvas.scale(d, d, e6Var2.R0.d() / 2.0f, AndroidUtilities.dp(20.0f));
+                    org.telegram.ui.Components.o6 o6Var = e6Var2.R0;
+                    o6Var.w = 255;
+                    o6Var.draw(canvas);
                     canvas.restore();
                     break;
                 }
                 break;
             default:
                 super.dispatchDraw(canvas);
-                f6 f6Var3 = this.b;
-                if (f6Var3.D1 && f6Var3.Q0 != null) {
+                e6 e6Var3 = this.b;
+                if (e6Var3.D1 && e6Var3.Q0 != null) {
                     canvas.save();
-                    canvas.translate((getMeasuredWidth() - f6Var3.Q0.d()) - AndroidUtilities.dp(6.0f), 0.0f);
-                    float d10 = f6Var3.S0.d(f6Var3.U0 ? 1.0f : 0.0f, false);
-                    canvas.scale(d10, d10, f6Var3.Q0.d() / 2.0f, AndroidUtilities.dp(20.0f));
-                    org.telegram.ui.Components.m6 m6Var2 = f6Var3.Q0;
-                    m6Var2.w = 255;
-                    m6Var2.draw(canvas);
+                    canvas.translate((getMeasuredWidth() - e6Var3.Q0.d()) - AndroidUtilities.dp(6.0f), 0.0f);
+                    float d10 = e6Var3.S0.d(e6Var3.U0 ? 1.0f : 0.0f, false);
+                    canvas.scale(d10, d10, e6Var3.Q0.d() / 2.0f, AndroidUtilities.dp(20.0f));
+                    org.telegram.ui.Components.o6 o6Var2 = e6Var3.Q0;
+                    o6Var2.w = 255;
+                    o6Var2.draw(canvas);
                     canvas.restore();
                     break;
                 }

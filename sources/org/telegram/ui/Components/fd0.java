@@ -20,7 +20,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class fd0 extends FrameLayout {
     public Bitmap a;
@@ -46,9 +46,9 @@ public final class fd0 extends FrameLayout {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r6v2, types: [android.view.View, android.widget.EditText, android.widget.TextView, org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.du, qg.b] */
+    /* JADX WARN: Type inference failed for: r6v2, types: [android.view.View, android.widget.EditText, android.widget.TextView, org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.eu, qg.b] */
     public final void b(ArrayList arrayList, boolean z10, boolean z11, boolean z12) {
-        u9 u9Var;
+        w9 w9Var;
         int i10;
         int i11;
         setClipChildren(z12);
@@ -62,23 +62,23 @@ public final class fd0 extends FrameLayout {
             VideoEditedInfo.MediaEntity mediaEntity = (VideoEditedInfo.MediaEntity) arrayList.get(i12);
             byte b10 = mediaEntity.type;
             if (b10 == 0) {
-                u9 u9Var2 = new u9(getContext());
-                u9Var2.setLayerNum(12);
-                u9Var2.setAspectFit(true);
-                ImageReceiver imageReceiver = u9Var2.getImageReceiver();
+                w9 w9Var2 = new w9(getContext());
+                w9Var2.setLayerNum(12);
+                w9Var2.setAspectFit(true);
+                ImageReceiver imageReceiver = w9Var2.getImageReceiver();
                 if (z10) {
                     imageReceiver.setAllowDecodeSingleFrame(true);
                     imageReceiver.setAllowStartLottieAnimation(false);
                     if (z11) {
-                        imageReceiver.setDelegate(new o2(22));
+                        imageReceiver.setDelegate(new xc0(6));
                     }
                 }
                 imageReceiver.setImage(ImageLocation.getForDocument(mediaEntity.document), null, null, null, ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(mediaEntity.document.thumbs, 90), mediaEntity.document), null, null, 0L, "webp", mediaEntity.parentObject, 1);
                 if ((2 & mediaEntity.subType) != 0) {
-                    u9Var2.setScaleX(-1.0f);
+                    w9Var2.setScaleX(-1.0f);
                 }
-                mediaEntity.view = u9Var2;
-                u9Var = u9Var2;
+                mediaEntity.view = w9Var2;
+                w9Var = w9Var2;
             } else if (b10 == 1) {
                 ?? ed0Var = new ed0(getContext());
                 ed0Var.setBackgroundColor(0);
@@ -93,9 +93,9 @@ public final class fd0 extends FrameLayout {
                     VideoEditedInfo.EmojiEntity emojiEntity = arrayList2.get(i13);
                     i13++;
                     VideoEditedInfo.EmojiEntity emojiEntity2 = emojiEntity;
-                    x5 x5Var = new x5(emojiEntity2.document_id, ed0Var.getPaint().getFontMetricsInt());
+                    z5 z5Var = new z5(emojiEntity2.document_id, ed0Var.getPaint().getFontMetricsInt());
                     int i14 = emojiEntity2.offset;
-                    spannableString.setSpan(x5Var, i14, emojiEntity2.length + i14, 33);
+                    spannableString.setSpan(z5Var, i14, emojiEntity2.length + i14, 33);
                 }
                 Emoji.EmojiSpan[] emojiSpanArr = (Emoji.EmojiSpan[]) spannableString.getSpans(0, spannableString.length(), Emoji.EmojiSpan.class);
                 if (emojiSpanArr != null) {
@@ -150,16 +150,16 @@ public final class fd0 extends FrameLayout {
                 ed0Var.setTextColor(i20);
                 ed0Var.setCursorColor(i20);
                 ed0Var.setHandlesColor(i20);
-                ed0Var.setHighlightColor(org.telegram.ui.ActionBar.i6.l1(0.4f, i20));
+                ed0Var.setHighlightColor(org.telegram.ui.ActionBar.h6.l1(0.4f, i20));
                 mediaEntity.view = ed0Var;
-                u9Var = ed0Var;
+                w9Var = ed0Var;
             } else {
-                u9Var = null;
+                w9Var = null;
             }
-            if (u9Var != null) {
-                addView(u9Var);
-                u9Var.setRotation((float) (((-mediaEntity.rotation) / 3.141592653589793d) * 180.0d));
-                this.b.put(u9Var, mediaEntity);
+            if (w9Var != null) {
+                addView(w9Var);
+                w9Var.setRotation((float) (((-mediaEntity.rotation) / 3.141592653589793d) * 180.0d));
+                this.b.put(w9Var, mediaEntity);
             }
         }
     }

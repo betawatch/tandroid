@@ -2,7 +2,7 @@ package m4;
 
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class i0 implements q {
     public final n4.a0 a;
@@ -42,18 +42,18 @@ public final class i0 implements q {
     }
 
     @Override // m4.q
-    public final /* synthetic */ void d(int i10, m1 m1Var) {
+    public final /* synthetic */ void d(int i10, h1 h1Var) {
     }
 
     @Override // m4.q
-    public final /* synthetic */ void i(int i10, q1 q1Var) {
+    public final /* synthetic */ void i(int i10, l1 l1Var) {
     }
 
     @Override // m4.q
-    public final /* synthetic */ void e(int i10, p1 p1Var, boolean z10, boolean z11, int i11) {
+    public final /* synthetic */ void e(int i10, k1 k1Var, boolean z10, boolean z11, int i11) {
     }
 
     @Override // m4.q
-    public final /* synthetic */ void g(int i10, i1 i1Var, b2.x0 x0Var, boolean z10, boolean z11) {
+    public final /* synthetic */ void g(int i10, d1 d1Var, b2.x0 x0Var, boolean z10, boolean z11) {
     }
 }

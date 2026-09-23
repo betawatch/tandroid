@@ -1,118 +1,65 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class te0 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ xe0 b;
-    public final /* synthetic */ TLRPC.TL_error c;
-    public final /* synthetic */ Bundle d;
-    public final /* synthetic */ TLObject e;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ve0 b;
 
-    public /* synthetic */ te0(xe0 xe0Var, TLObject tLObject, Bundle bundle, TLRPC.TL_error tL_error) {
-        this.b = xe0Var;
-        this.e = tLObject;
-        this.d = bundle;
-        this.c = tL_error;
+    public /* synthetic */ te0(ve0 ve0Var, int i10) {
+        this.a = i10;
+        this.b = ve0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        String str;
         switch (this.a) {
             case 0:
-                xe0 xe0Var = this.b;
-                wg0 wg0Var = xe0Var.a0;
-                xe0Var.M = false;
-                xe0Var.v.invalidate();
-                TLObject tLObject = this.e;
-                if (tLObject == null) {
-                    TLRPC.TL_error tL_error = this.c;
-                    if (tL_error != null && (str = tL_error.text) != null) {
-                        if (!str.contains("PHONE_NUMBER_INVALID")) {
-                            if (!tL_error.text.contains("PHONE_CODE_EMPTY") && !tL_error.text.contains("PHONE_CODE_INVALID")) {
-                                if (!tL_error.text.contains("PHONE_CODE_EXPIRED")) {
-                                    if (!tL_error.text.startsWith("FLOOD_WAIT")) {
-                                        if (tL_error.code != -1000) {
-                                            String string = LocaleController.getString(R.string.RestorePasswordNoEmailTitle);
-                                            StringBuilder sb2 = new StringBuilder();
-                                            org.telegram.messenger.vl.m(R.string.ErrorOccurred, "\n", sb2);
-                                            sb2.append(tL_error.text);
-                                            wg0Var.l1(string, sb2.toString());
-                                            break;
-                                        }
-                                    } else {
-                                        wg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.FloodWait));
-                                        break;
-                                    }
-                                } else {
-                                    xe0Var.c(true);
-                                    wg0Var.u1(0, true, null, true);
-                                    wg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.CodeExpired));
-                                    break;
-                                }
-                            } else {
-                                wg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.InvalidCode));
-                                break;
-                            }
-                        } else {
-                            wg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.InvalidPhoneNumber));
-                            break;
-                        }
-                    }
-                } else {
-                    Bundle bundle = this.d;
-                    xe0Var.S = bundle;
-                    TLRPC.TL_auth_sentCode tL_auth_sentCode = (TLRPC.TL_auth_sentCode) tLObject;
-                    xe0Var.T = tL_auth_sentCode;
-                    wg0Var.g1(bundle, tL_auth_sentCode, true);
+                ve0 ve0Var = this.b;
+                org.telegram.ui.Components.bj0 bj0Var = ve0Var.e;
+                bj0Var.getAnimatedDrawable().N(0, false, false);
+                bj0Var.d();
+                yd0 yd0Var = ve0Var.a;
+                if (yd0Var != null) {
+                    yd0Var.f[0].requestFocus();
                     break;
                 }
                 break;
-            default:
-                xe0 xe0Var2 = this.b;
-                wg0 wg0Var2 = xe0Var2.a0;
-                xe0Var2.R = false;
-                TLRPC.TL_error tL_error2 = this.c;
-                if (tL_error2 == null) {
-                    wg0Var2.g1(this.d, (TLRPC.TL_auth_sentCode) this.e, true);
-                } else {
-                    String str2 = tL_error2.text;
-                    if (str2 != null) {
-                        if (str2.contains("PHONE_NUMBER_INVALID")) {
-                            wg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.InvalidPhoneNumber));
-                        } else if (tL_error2.text.contains("PHONE_CODE_EMPTY") || tL_error2.text.contains("PHONE_CODE_INVALID")) {
-                            wg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.InvalidCode));
-                        } else if (tL_error2.text.contains("PHONE_CODE_EXPIRED")) {
-                            xe0Var2.c(true);
-                            wg0Var2.u1(0, true, null, true);
-                            wg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.CodeExpired));
-                        } else if (tL_error2.text.startsWith("FLOOD_WAIT")) {
-                            wg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.FloodWait));
-                        } else if (tL_error2.code != -1000) {
-                            String string2 = LocaleController.getString(R.string.RestorePasswordNoEmailTitle);
-                            StringBuilder sb3 = new StringBuilder();
-                            org.telegram.messenger.vl.m(R.string.ErrorOccurred, "\n", sb3);
-                            sb3.append(tL_error2.text);
-                            wg0Var2.l1(string2, sb3.toString());
-                        }
+            case 1:
+                ve0 ve0Var2 = this.b;
+                int i10 = 0;
+                ve0Var2.w = false;
+                while (true) {
+                    bs[] bsVarArr = ve0Var2.a.f;
+                    if (i10 >= bsVarArr.length) {
+                        break;
+                    } else {
+                        bsVarArr[i10].i(0.0f);
+                        i10++;
                     }
                 }
-                wg0Var2.k1(false, true);
+            case 2:
+                ve0 ve0Var3 = this.b;
+                ve0Var3.postDelayed(new te0(ve0Var3, 3), 150L);
+                te0 te0Var = ve0Var3.x;
+                ve0Var3.removeCallbacks(te0Var);
+                ve0Var3.postDelayed(te0Var, 3000L);
+                ve0Var3.w = true;
                 break;
+            default:
+                yd0 yd0Var2 = this.b.a;
+                int i11 = 0;
+                yd0Var2.e = false;
+                yd0Var2.f[0].requestFocus();
+                while (true) {
+                    bs[] bsVarArr2 = yd0Var2.f;
+                    if (i11 >= bsVarArr2.length) {
+                        break;
+                    } else {
+                        bsVarArr2[i11].i(0.0f);
+                        i11++;
+                    }
+                }
         }
-    }
-
-    public /* synthetic */ te0(xe0 xe0Var, TLRPC.TL_error tL_error, Bundle bundle, TLObject tLObject) {
-        this.b = xe0Var;
-        this.c = tL_error;
-        this.d = bundle;
-        this.e = tLObject;
     }
 }

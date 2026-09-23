@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -19,7 +19,7 @@ public final /* synthetic */ class b0 implements View.OnClickListener {
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        g5 g5Var;
+        f5 f5Var;
         switch (this.a) {
             case 0:
                 v0 v0Var = this.b;
@@ -36,11 +36,11 @@ public final /* synthetic */ class b0 implements View.OnClickListener {
                     v0Var.m();
                 } else {
                     TextView textView = v0Var.h;
-                    if (textView != null && textView.getVisibility() == 0 && ((g5Var = v0Var.H) == null || g5Var.a())) {
+                    if (textView != null && textView.getVisibility() == 0 && ((f5Var = v0Var.H) == null || f5Var.a())) {
                         v0Var.h.setVisibility(8);
-                        g5 g5Var2 = v0Var.H;
-                        if (g5Var2 != null) {
-                            g5Var2.k();
+                        f5 f5Var2 = v0Var.H;
+                        if (f5Var2 != null) {
+                            f5Var2.k();
                         }
                     }
                 }

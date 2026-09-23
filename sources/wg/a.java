@@ -1,5 +1,6 @@
 package wg;
 
+import ai.i;
 import android.R;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -17,6 +18,7 @@ import android.text.style.RelativeSizeSpan;
 import android.util.StateSet;
 import android.view.MotionEvent;
 import i.f;
+import ii.q1;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -36,19 +38,17 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.y0;
+import org.telegram.messenger.z0;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.j3;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.t1;
 import org.telegram.ui.Cells.z;
-import org.telegram.ui.Components.f9;
+import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.jw0;
-import org.telegram.ui.web.b1;
 import tg.t;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class a {
     public static final HashMap Y;
@@ -74,7 +74,7 @@ public final class a {
     public MessageObject T;
     public boolean U;
     public ImageReceiver[] a;
-    public f9[] b;
+    public h9[] b;
     public final t1 c;
     public ImageReceiver d;
     public CharSequence[] e;
@@ -152,7 +152,7 @@ public final class a {
                     this.X = false;
                     MessageObject messageObject2 = this.T;
                     if (messageObject2 != null && messageObject2.messageOwner != null) {
-                        t.d(messageObject2, new b1(messageObject2, 10), new j3(6));
+                        t.d(messageObject2, new q1(messageObject2, 13), new i(24));
                         return false;
                     }
                 }
@@ -167,7 +167,7 @@ public final class a {
         return false;
     }
 
-    public final void b(Canvas canvas, int i10, int i11, e6 e6Var) {
+    public final void b(Canvas canvas, int i10, int i11, d6 d6Var) {
         float f7;
         boolean[] zArr;
         int color;
@@ -181,31 +181,31 @@ public final class a {
         t1 t1Var = this.c;
         int i13 = 0;
         if (zVar == null) {
-            int w02 = i6.w0(null, i6.i6, false);
+            int w02 = h6.w0(null, h6.i6, false);
             this.R = w02;
-            z Y2 = i6.Y(w02, 12, 12);
+            z Y2 = h6.Y(w02, 12, 12);
             this.S = Y2;
             Y2.setCallback(t1Var);
         }
-        this.E.setColor(i6.o2.getColor());
-        this.F.setColor(i6.l1(0.45f, i6.o2.getColor()));
-        this.G.setColor(i6.l1(0.15f, i6.o2.getColor()));
-        this.H.setColor(i6.o2.getColor());
+        this.E.setColor(h6.o2.getColor());
+        this.F.setColor(h6.l1(0.45f, h6.o2.getColor()));
+        this.G.setColor(h6.l1(0.15f, h6.o2.getColor()));
+        this.H.setColor(h6.o2.getColor());
         if (this.T.isOutOwner()) {
             TextPaint textPaint = this.D;
-            int i14 = i6.Xa;
-            textPaint.setColor(i6.v0(i14, e6Var));
-            this.I.setColor(i6.v0(i14, e6Var));
-            this.J.setColor(i6.v0(i6.ab, e6Var));
+            int i14 = h6.Xa;
+            textPaint.setColor(h6.v0(i14, d6Var));
+            this.I.setColor(h6.v0(i14, d6Var));
+            this.J.setColor(h6.v0(h6.ab, d6Var));
         } else {
             TextPaint textPaint2 = this.D;
-            int i15 = i6.Kc;
-            textPaint2.setColor(i6.v0(i15, e6Var));
-            this.I.setColor(i6.v0(i15, e6Var));
-            this.J.setColor(i6.v0(i6.Uc, e6Var));
+            int i15 = h6.Kc;
+            textPaint2.setColor(h6.v0(i15, d6Var));
+            this.I.setColor(h6.v0(i15, d6Var));
+            this.J.setColor(h6.v0(h6.Uc, d6Var));
         }
         if (this.U) {
-            this.I.setColor(i6.v0(i6.fk, e6Var));
+            this.I.setColor(h6.v0(h6.fk, d6Var));
         }
         canvas2.save();
         int dp = i11 - AndroidUtilities.dp(4.0f);
@@ -257,7 +257,7 @@ public final class a {
         this.y.draw(canvas2);
         canvas2.restore();
         canvas2.translate(0.0f, AndroidUtilities.dp(6.0f) + this.q);
-        int C = y0.C(6.0f, this.q, dp5);
+        int C = z0.C(6.0f, this.q, dp5);
         int i16 = 0;
         int i17 = 0;
         while (true) {
@@ -284,15 +284,15 @@ public final class a {
                 while (true) {
                     TLRPC.Chat chat = this.f[i20];
                     if (this.T.isOutOwner()) {
-                        color = i6.v0(i6.Xa, e6Var);
+                        color = h6.v0(h6.Xa, d6Var);
                     } else {
                         int colorId = ChatObject.getColorId(chat);
                         if (colorId < 7) {
-                            color = i6.v0(i6.r8[colorId], e6Var);
+                            color = h6.v0(h6.r8[colorId], d6Var);
                         } else {
                             MessagesController.PeerColors peerColors = MessagesController.getInstance(UserConfig.selectedAccount).peerColors;
                             MessagesController.PeerColor color2 = peerColors == null ? null : peerColors.getColor(colorId);
-                            color = color2 != null ? color2.getColor(i13, e6Var) : i6.v0(i6.r8[i13], e6Var);
+                            color = color2 != null ? color2.getColor(i13, d6Var) : h6.v0(h6.r8[i13], d6Var);
                         }
                     }
                     int i21 = this.V;
@@ -342,11 +342,11 @@ public final class a {
         canvas2.restore();
         canvas2.restore();
         if (this.V >= 0) {
-            int l1 = i6.l1(i6.I.q() ? 0.12f : 0.1f, i17);
+            int l1 = h6.l1(h6.I.q() ? 0.12f : 0.1f, i17);
             if (this.R != l1) {
                 z zVar2 = this.S;
                 this.R = l1;
-                i6.B1(zVar2, l1, true);
+                h6.B1(zVar2, l1, true);
             }
             this.S.setBounds(this.i[this.V]);
             this.S.setCallback(t1Var);
@@ -434,7 +434,7 @@ public final class a {
             }
             if (this.a == null) {
                 this.a = new ImageReceiver[10];
-                this.b = new f9[10];
+                this.b = new h9[10];
                 this.j = new boolean[10];
                 int i12 = 0;
                 while (true) {
@@ -445,7 +445,7 @@ public final class a {
                     imageReceiverArr[i12] = new ImageReceiver(this.c);
                     this.a[i12].setAllowLoadingOnAttachedOnly(true);
                     this.a[i12].setRoundRadius(AndroidUtilities.dp(12.0f));
-                    this.b[i12] = new f9((e6) null);
+                    this.b[i12] = new h9((d6) null);
                     this.b[i12].u(AndroidUtilities.dp(18.0f));
                     this.i[i12] = new Rect();
                     i12++;
@@ -534,7 +534,7 @@ public final class a {
                     document = null;
                 }
                 if (document != null) {
-                    SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(document.thumbs, i6.c7, 0.2f);
+                    SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(document.thumbs, h6.c7, 0.2f);
                     if (svgThumb != null) {
                         svgThumb.overrideWidthAndHeight(512, 512);
                     }
@@ -550,7 +550,7 @@ public final class a {
             if (imageReceiverArr2.length < size4) {
                 int length = imageReceiverArr2.length;
                 this.a = (ImageReceiver[]) Arrays.copyOf(imageReceiverArr2, size4);
-                this.b = (f9[]) Arrays.copyOf(this.b, size4);
+                this.b = (h9[]) Arrays.copyOf(this.b, size4);
                 this.j = Arrays.copyOf(this.j, size4);
                 this.e = (CharSequence[]) Arrays.copyOf(this.e, size4);
                 this.g = Arrays.copyOf(this.g, size4);
@@ -561,7 +561,7 @@ public final class a {
                     this.a[i16] = new ImageReceiver(this.c);
                     this.a[i16].setAllowLoadingOnAttachedOnly(true);
                     this.a[i16].setRoundRadius(AndroidUtilities.dp(f7));
-                    this.b[i16] = new f9((e6) null);
+                    this.b[i16] = new h9((d6) null);
                     this.b[i16].u(AndroidUtilities.dp(f10));
                     this.i[i16] = new Rect();
                 }

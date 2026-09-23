@@ -41,35 +41,36 @@ import k2.u;
 import n4.y;
 import org.telegram.messenger.BotInlineKeyboard;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.vl;
+import org.telegram.messenger.ul;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.k1;
-import org.telegram.ui.Cells.r9;
+import org.telegram.ui.Cells.s9;
 import org.telegram.ui.Cells.t1;
 import org.telegram.ui.Cells.z1;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.b01;
-import org.telegram.ui.Components.cy0;
+import org.telegram.ui.Components.a01;
+import org.telegram.ui.Components.by0;
 import org.telegram.ui.Components.eo0;
-import org.telegram.ui.Components.la;
+import org.telegram.ui.Components.na;
 import org.telegram.ui.Components.pv0;
-import org.telegram.ui.Components.x5;
+import org.telegram.ui.Components.z5;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.cn0;
-import org.telegram.ui.f31;
-import org.telegram.ui.i5;
+import org.telegram.ui.fv;
+import org.telegram.ui.gv;
 import org.telegram.ui.i7;
-import org.telegram.ui.iv;
-import org.telegram.ui.jv;
-import org.telegram.ui.on0;
-import org.telegram.ui.pl0;
+import org.telegram.ui.in0;
+import org.telegram.ui.iv0;
+import org.telegram.ui.j5;
+import org.telegram.ui.jl0;
+import org.telegram.ui.qm0;
 import org.telegram.ui.s6;
 import org.telegram.ui.wm0;
+import org.telegram.ui.x21;
 import r0.i0;
 import r0.l1;
 import r0.n;
@@ -78,12 +79,13 @@ import r7.o;
 import r7.z;
 import s4.g1;
 import s4.h1;
-import u2.a1;
+import u2.z0;
 import w9.m;
+import za.a0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public class a implements eo0, k1, i7, cn0, fh.a, e6, le.d, s, n5.b, SuccessContinuation, n, ce.b {
+public class a implements eo0, k1, i7, wm0, fh.a, d6, le.e, s, n5.b, SuccessContinuation, n, ce.b {
     public final /* synthetic */ int a;
     public Object b;
     public Object c;
@@ -98,7 +100,7 @@ public class a implements eo0, k1, i7, cn0, fh.a, e6, le.d, s, n5.b, SuccessCont
     }
 
     /* JADX WARN: Removed duplicated region for block: B:12:0x002f  */
-    @Override // le.d
+    @Override // le.e
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -129,8 +131,8 @@ public class a implements eo0, k1, i7, cn0, fh.a, e6, le.d, s, n5.b, SuccessCont
         iVar.a();
     }
 
-    @Override // le.d
-    public void D(int i10, float f7, float f10, le.e eVar) {
+    @Override // le.e
+    public void D(int i10, float f7, float f10, le.f fVar) {
         ph.i iVar = (ph.i) this.c;
         iVar.c.a(f7);
         iVar.d.a(f7);
@@ -138,31 +140,31 @@ public class a implements eo0, k1, i7, cn0, fh.a, e6, le.d, s, n5.b, SuccessCont
         ((Runnable) this.b).run();
     }
 
-    @Override // org.telegram.ui.ActionBar.e6
+    @Override // org.telegram.ui.ActionBar.d6
     public Paint G(String str) {
         switch (this.a) {
             case 8:
-                return i6.S0(str);
+                return h6.S0(str);
             default:
-                e6 e6Var = (e6) this.c;
-                return e6Var == null ? i6.S0(str) : e6Var.G(str);
+                d6 d6Var = (d6) this.c;
+                return d6Var == null ? h6.S0(str) : d6Var.G(str);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.e6
+    @Override // org.telegram.ui.ActionBar.d6
     public int G0(int i10) {
         switch (this.a) {
             case 8:
                 SparseIntArray sparseIntArray = (SparseIntArray) this.b;
-                return sparseIntArray != null ? sparseIntArray.get(i10) : i6.w0(null, i10, false);
+                return sparseIntArray != null ? sparseIntArray.get(i10) : h6.w0(null, i10, false);
             default:
                 SparseIntArray sparseIntArray2 = (SparseIntArray) this.b;
                 int indexOfKey = sparseIntArray2.indexOfKey(i10);
                 if (indexOfKey >= 0) {
                     return sparseIntArray2.valueAt(indexOfKey);
                 }
-                e6 e6Var = (e6) this.c;
-                return e6Var == null ? i6.w0(null, i10, false) : e6Var.G0(i10);
+                d6 d6Var = (d6) this.c;
+                return d6Var == null ? h6.w0(null, i10, false) : d6Var.G0(i10);
         }
     }
 
@@ -173,57 +175,57 @@ public class a implements eo0, k1, i7, cn0, fh.a, e6, le.d, s, n5.b, SuccessCont
 
     @Override // ce.b
     public Object H(ce.c cVar, kd.c cVar2) {
-        Object H = ((y) this.b).H(new p(cVar, (za.y) this.c), cVar2);
+        Object H = ((y) this.b).H(new p(cVar, (a0) this.c), cVar2);
         return H == jd.a.a ? H : gd.i.a;
     }
 
     @Override // org.telegram.ui.i7
     public void H0(s6 s6Var, zh.a aVar, boolean z10) {
-        jv jvVar = (jv) this.c;
-        iv ivVar = jvVar.X;
+        gv gvVar = (gv) this.c;
+        fv fvVar = gvVar.X;
         if (aVar != null) {
             ((zh.b) this.b).i(aVar);
-            jvVar.e0.d();
-            zh.b bVar = jvVar.g0;
-            cy0[] cy0VarArr = jvVar.b0;
-            z1[] z1VarArr = jvVar.c0;
+            gvVar.e0.d();
+            zh.b bVar = gvVar.g0;
+            by0[] by0VarArr = gvVar.b0;
+            z1[] z1VarArr = gvVar.c0;
             z1 z1Var = z1VarArr[0];
             if (z1Var != null) {
-                cy0 cy0Var = cy0VarArr[0];
+                by0 by0Var = by0VarArr[0];
                 boolean z11 = bVar.m;
-                cy0Var.c = z11;
+                by0Var.c = z11;
                 z1Var.c(z11, true);
             }
             z1 z1Var2 = z1VarArr[1];
             if (z1Var2 != null) {
-                cy0 cy0Var2 = cy0VarArr[1];
+                by0 by0Var2 = by0VarArr[1];
                 boolean z12 = bVar.n;
-                cy0Var2.c = z12;
+                by0Var2.c = z12;
                 z1Var2.c(z12, true);
             }
             z1 z1Var3 = z1VarArr[2];
             if (z1Var3 != null) {
-                cy0 cy0Var3 = cy0VarArr[2];
+                by0 by0Var3 = by0VarArr[2];
                 boolean z13 = bVar.o;
-                cy0Var3.c = z13;
+                by0Var3.c = z13;
                 z1Var3.c(z13, true);
             }
             z1 z1Var4 = z1VarArr[3];
             if (z1Var4 != null) {
-                cy0 cy0Var4 = cy0VarArr[3];
+                by0 by0Var4 = by0VarArr[3];
                 boolean z14 = bVar.p;
-                cy0Var4.c = z14;
+                by0Var4.c = z14;
                 z1Var4.c(z14, true);
             }
             z1 z1Var5 = z1VarArr[4];
             if (z1Var5 != null) {
-                cy0 cy0Var5 = cy0VarArr[4];
+                by0 by0Var5 = by0VarArr[4];
                 boolean z15 = bVar.q;
-                cy0Var5.c = z15;
+                by0Var5.c = z15;
                 z1Var5.c(z15, true);
             }
-            jvVar.a0.a(ivVar.d(), true);
-            ivVar.c(true);
+            gvVar.a0.a(fvVar.d(), true);
+            fvVar.c(true);
         }
     }
 
@@ -243,15 +245,15 @@ public class a implements eo0, k1, i7, cn0, fh.a, e6, le.d, s, n5.b, SuccessCont
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.e6
+    @Override // org.telegram.ui.ActionBar.d6
     public void L0(int i10, int i11) {
         switch (this.a) {
             case 8:
                 break;
             default:
-                e6 e6Var = (e6) this.c;
-                if (e6Var != null) {
-                    e6Var.L0(i10, i11);
+                d6 d6Var = (d6) this.c;
+                if (d6Var != null) {
+                    d6Var.L0(i10, i11);
                     break;
                 }
                 break;
@@ -260,7 +262,7 @@ public class a implements eo0, k1, i7, cn0, fh.a, e6, le.d, s, n5.b, SuccessCont
 
     @Override // org.telegram.ui.Cells.k1
     public boolean M0(long j3) {
-        return ((b01) this.c).v;
+        return ((a01) this.c).v;
     }
 
     @Override // org.telegram.ui.Cells.k1
@@ -330,7 +332,7 @@ public class a implements eo0, k1, i7, cn0, fh.a, e6, le.d, s, n5.b, SuccessCont
                 return new c3.n();
             }
             if (i10 == iArr[i11]) {
-                return ((a1[]) this.c)[i11];
+                return ((z0[]) this.c)[i11];
             }
             i11++;
         }
@@ -353,9 +355,9 @@ public class a implements eo0, k1, i7, cn0, fh.a, e6, le.d, s, n5.b, SuccessCont
 
     @Override // org.telegram.ui.Components.eo0
     public void X(float f7, boolean z10) {
-        i5.c = f7;
+        j5.c = f7;
         ((TextView) this.b).setText("Saturation " + (f7 * 5.0f));
-        pv0 pv0Var = ((i5) this.c).b;
+        pv0 pv0Var = ((j5) this.c).b;
         pv0Var.N();
         pv0Var.M();
     }
@@ -366,16 +368,16 @@ public class a implements eo0, k1, i7, cn0, fh.a, e6, le.d, s, n5.b, SuccessCont
     }
 
     @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ org.telegram.ui.pv0 Y1() {
+    public /* synthetic */ iv0 Y1() {
         return null;
     }
 
     /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
-    @Override // org.telegram.ui.ActionBar.e6
+    @Override // org.telegram.ui.ActionBar.d6
     public boolean a() {
         switch (this.a) {
         }
-        return i6.I.q();
+        return h6.I.q();
     }
 
     @Override // org.telegram.ui.Cells.k1
@@ -385,7 +387,7 @@ public class a implements eo0, k1, i7, cn0, fh.a, e6, le.d, s, n5.b, SuccessCont
 
     @Override // org.telegram.ui.Cells.k1
     public boolean a2(long j3) {
-        return ((b01) this.c).s;
+        return ((a01) this.c).s;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:25:0x008c A[Catch: all -> 0x0060, TryCatch #0 {all -> 0x0060, blocks: (B:18:0x004d, B:22:0x005a, B:23:0x006e, B:25:0x008c, B:28:0x0099, B:29:0x0177, B:34:0x00b9, B:37:0x00f9, B:40:0x0118, B:43:0x0125, B:48:0x010f, B:50:0x0063), top: B:17:0x004d }] */
@@ -491,13 +493,13 @@ public class a implements eo0, k1, i7, cn0, fh.a, e6, le.d, s, n5.b, SuccessCont
         }
     }
 
-    @Override // org.telegram.ui.cn0
+    @Override // org.telegram.ui.wm0
     public void b(String str, String str2) {
-        on0 on0Var = ((wm0) this.c).a;
+        in0 in0Var = ((qm0) this.c).a;
         if ("PHONE_VERIFICATION_NEEDED".equals(str)) {
-            on0Var.O1(true, str2, (pl0) this.b, this, on0Var.B1);
+            in0Var.O1(true, str2, (jl0) this.b, this, in0Var.B1);
         } else {
-            on0Var.N1(true, false);
+            in0Var.N1(true, false);
         }
     }
 
@@ -518,7 +520,7 @@ public class a implements eo0, k1, i7, cn0, fh.a, e6, le.d, s, n5.b, SuccessCont
 
     @Override // org.telegram.ui.i7
     public void dismiss() {
-        ((jv) this.c).dismiss();
+        ((gv) this.c).dismiss();
     }
 
     @Override // org.telegram.ui.Cells.k1
@@ -580,25 +582,25 @@ public class a implements eo0, k1, i7, cn0, fh.a, e6, le.d, s, n5.b, SuccessCont
         return arrayList2;
     }
 
-    @Override // org.telegram.ui.ActionBar.e6
+    @Override // org.telegram.ui.ActionBar.d6
     public int g0(int i10) {
         switch (this.a) {
             case 8:
                 return G0(i10);
             default:
-                e6 e6Var = (e6) this.c;
-                return e6Var == null ? i6.w0(null, i10, false) : e6Var.g0(i10);
+                d6 d6Var = (d6) this.c;
+                return d6Var == null ? h6.w0(null, i10, false) : d6Var.g0(i10);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.e6
+    @Override // org.telegram.ui.ActionBar.d6
     public int g1(int i10) {
         switch (this.a) {
             case 8:
                 return G0(i10);
             default:
-                e6 e6Var = (e6) this.c;
-                return e6Var == null ? i6.w0(null, i10, false) : e6Var.g1(i10);
+                d6 d6Var = (d6) this.c;
+                return d6Var == null ? h6.w0(null, i10, false) : d6Var.g1(i10);
         }
     }
 
@@ -617,14 +619,14 @@ public class a implements eo0, k1, i7, cn0, fh.a, e6, le.d, s, n5.b, SuccessCont
         return null;
     }
 
-    @Override // org.telegram.ui.ActionBar.e6
+    @Override // org.telegram.ui.ActionBar.d6
     public Drawable getDrawable(String str) {
         switch (this.a) {
             case 8:
                 return null;
             default:
-                e6 e6Var = (e6) this.c;
-                return e6Var == null ? i6.O0(str) : e6Var.getDrawable(str);
+                d6 d6Var = (d6) this.c;
+                return d6Var == null ? h6.O0(str) : d6Var.getDrawable(str);
         }
     }
 
@@ -640,7 +642,7 @@ public class a implements eo0, k1, i7, cn0, fh.a, e6, le.d, s, n5.b, SuccessCont
 
     @Override // org.telegram.ui.Cells.k1
     public /* synthetic */ boolean h1(MessageObject messageObject) {
-        return vl.a(messageObject);
+        return ul.a(messageObject);
     }
 
     @Override // fh.a
@@ -663,19 +665,19 @@ public class a implements eo0, k1, i7, cn0, fh.a, e6, le.d, s, n5.b, SuccessCont
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.e6
+    @Override // org.telegram.ui.ActionBar.d6
     public void m(float f7, float f10, int i10, int i11) {
         switch (this.a) {
             case 8:
-                i6.q(f7, f10, i10, i11);
+                h6.q(f7, f10, i10, i11);
                 break;
             default:
-                e6 e6Var = (e6) this.c;
-                if (e6Var != null) {
-                    e6Var.m(f7, f10, i10, i11);
+                d6 d6Var = (d6) this.c;
+                if (d6Var != null) {
+                    d6Var.m(f7, f10, i10, i11);
                     break;
                 } else {
-                    i6.q(f7, f10, i10, i11);
+                    h6.q(f7, f10, i10, i11);
                     break;
                 }
         }
@@ -687,18 +689,18 @@ public class a implements eo0, k1, i7, cn0, fh.a, e6, le.d, s, n5.b, SuccessCont
     }
 
     @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ boolean o0(x5 x5Var) {
+    public /* synthetic */ boolean o0(z5 z5Var) {
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.e6
+    @Override // org.telegram.ui.ActionBar.d6
     public boolean p0() {
         switch (this.a) {
             case 8:
                 return false;
             default:
-                e6 e6Var = (e6) this.c;
-                return e6Var == null ? i6.a1() : e6Var.p0();
+                d6 d6Var = (d6) this.c;
+                return d6Var == null ? h6.a1() : d6Var.p0();
         }
     }
 
@@ -786,7 +788,7 @@ public class a implements eo0, k1, i7, cn0, fh.a, e6, le.d, s, n5.b, SuccessCont
         if (trim.length() > 16) {
             trim = trim.substring(0, 16);
         }
-        if (((b01) this.c).s || !TextUtils.isEmpty(trim)) {
+        if (((a01) this.c).s || !TextUtils.isEmpty(trim)) {
             return trim;
         }
         return null;
@@ -797,14 +799,14 @@ public class a implements eo0, k1, i7, cn0, fh.a, e6, le.d, s, n5.b, SuccessCont
         return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.e6
+    @Override // org.telegram.ui.ActionBar.d6
     public ColorFilter x() {
         switch (this.a) {
             case 8:
-                return i6.v3;
+                return h6.v3;
             default:
-                e6 e6Var = (e6) this.c;
-                return e6Var == null ? i6.v3 : e6Var.x();
+                d6 d6Var = (d6) this.c;
+                return d6Var == null ? h6.v3 : d6Var.x();
         }
     }
 
@@ -812,13 +814,13 @@ public class a implements eo0, k1, i7, cn0, fh.a, e6, le.d, s, n5.b, SuccessCont
     public void y(Canvas canvas, float f7, float f10, float f11, float f12) {
         canvas.save();
         canvas.clipRect(f7, f10, f11, f12);
-        ((PhotoViewer) this.c).T0(canvas, (la) this.b, -14277082, 855638016, false, true, true);
+        ((PhotoViewer) this.c).T0(canvas, (na) this.b, -14277082, 855638016, false, true, true);
         canvas.drawColor(637534208);
         canvas.restore();
     }
 
     @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ r9 z2() {
+    public /* synthetic */ s9 z2() {
         return null;
     }
 
@@ -840,10 +842,10 @@ public class a implements eo0, k1, i7, cn0, fh.a, e6, le.d, s, n5.b, SuccessCont
         this.b = new p6.b(context, p6.b.k, new n6.p("mlkit:vision"), com.google.android.gms.common.api.i.c);
     }
 
-    public a(e6 e6Var) {
+    public a(d6 d6Var) {
         this.a = 9;
         this.b = new SparseIntArray();
-        this.c = e6Var;
+        this.c = d6Var;
         c();
     }
 
@@ -853,9 +855,9 @@ public class a implements eo0, k1, i7, cn0, fh.a, e6, le.d, s, n5.b, SuccessCont
         this.c = new AtomicInteger();
     }
 
-    public a(pg.h0 h0Var) {
+    public a(pg.i0 i0Var) {
         this.a = 10;
-        this.b = h0Var;
+        this.b = i0Var;
     }
 
     public a(h1 h1Var) {
@@ -1041,15 +1043,15 @@ public class a implements eo0, k1, i7, cn0, fh.a, e6, le.d, s, n5.b, SuccessCont
     public /* synthetic */ void z(t1 t1Var) {
     }
 
-    public a(f31 f31Var) {
+    public a(x21 x21Var) {
         this.a = 8;
-        this.c = f31Var;
+        this.c = x21Var;
     }
 
     public a(PhotoViewer photoViewer) {
         this.a = 7;
         this.c = photoViewer;
-        this.b = new la(photoViewer.b0, photoViewer.e0, 0, false);
+        this.b = new na(photoViewer.b0, photoViewer.e0, 0, false);
     }
 
     private final /* synthetic */ void K(int i10, int i11) {

@@ -8,10 +8,10 @@ import j$.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
-import org.telegram.ui.Components.cd;
-import org.telegram.ui.web.u0;
+import org.telegram.ui.Components.ed;
+import org.telegram.ui.web.t0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b {
     public final /* synthetic */ int a;
@@ -51,11 +51,11 @@ public final /* synthetic */ class b {
                                         eVar2.d = null;
                                     }
                                     cf.c cVar = eVar2.h;
-                                    if (((cd) cVar.e) != null) {
+                                    if (((ed) cVar.e) != null) {
                                         ((View) cVar.a).setBackground(null);
                                         cVar.e = null;
                                     }
-                                    if (((cd) cVar.d) == null && ((cd) cVar.e) == null && (bitmap2 = (Bitmap) cVar.c) != null) {
+                                    if (((ed) cVar.d) == null && ((ed) cVar.e) == null && (bitmap2 = (Bitmap) cVar.c) != null) {
                                         bitmap2.recycle();
                                         cVar.c = null;
                                     }
@@ -130,11 +130,11 @@ public final /* synthetic */ class b {
                                         eVar22.d = null;
                                     }
                                     cf.c cVar = eVar22.h;
-                                    if (((cd) cVar.e) != null) {
+                                    if (((ed) cVar.e) != null) {
                                         ((View) cVar.a).setBackground(null);
                                         cVar.e = null;
                                     }
-                                    if (((cd) cVar.d) == null && ((cd) cVar.e) == null && (bitmap2 = (Bitmap) cVar.c) != null) {
+                                    if (((ed) cVar.d) == null && ((ed) cVar.e) == null && (bitmap2 = (Bitmap) cVar.c) != null) {
                                         bitmap2.recycle();
                                         cVar.c = null;
                                     }
@@ -185,11 +185,11 @@ public final /* synthetic */ class b {
                 break;
             case 2:
                 cf.c cVar = this.b.h;
-                if (((cd) cVar.e) != null) {
+                if (((ed) cVar.e) != null) {
                     ((View) cVar.a).setBackground(null);
                     cVar.e = null;
                 }
-                if (((cd) cVar.d) == null && ((cd) cVar.e) == null && (bitmap = (Bitmap) cVar.c) != null) {
+                if (((ed) cVar.d) == null && ((ed) cVar.e) == null && (bitmap = (Bitmap) cVar.c) != null) {
                     bitmap.recycle();
                     cVar.c = null;
                 }
@@ -199,7 +199,7 @@ public final /* synthetic */ class b {
                 Log.i("PIP_DEBUG", "[HANDLER] on old source render first frame " + z10);
                 cf.c cVar2 = this.b.h;
                 Objects.requireNonNull(cVar2);
-                AndroidUtilities.runOnUIThread(new u0(cVar2, 24));
+                AndroidUtilities.runOnUIThread(new t0(cVar2, 24));
                 break;
             default:
                 final int i12 = 0;
@@ -227,11 +227,11 @@ public final /* synthetic */ class b {
                                         eVar22.d = null;
                                     }
                                     cf.c cVar3 = eVar22.h;
-                                    if (((cd) cVar3.e) != null) {
+                                    if (((ed) cVar3.e) != null) {
                                         ((View) cVar3.a).setBackground(null);
                                         cVar3.e = null;
                                     }
-                                    if (((cd) cVar3.d) == null && ((cd) cVar3.e) == null && (bitmap2 = (Bitmap) cVar3.c) != null) {
+                                    if (((ed) cVar3.d) == null && ((ed) cVar3.e) == null && (bitmap2 = (Bitmap) cVar3.c) != null) {
                                         bitmap2.recycle();
                                         cVar3.c = null;
                                     }

@@ -1,56 +1,48 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
+import android.view.View;
+import java.util.ArrayList;
+import java.util.Iterator;
+import org.telegram.messenger.GenericProvider;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wx0 implements Utilities.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ yx0 b;
+public final /* synthetic */ class wx0 implements GenericProvider, org.telegram.ui.Components.cl0, x60 {
+    public final /* synthetic */ zx0 a;
 
-    public /* synthetic */ wx0(yx0 yx0Var, int i10) {
-        this.a = i10;
-        this.b = yx0Var;
+    public /* synthetic */ wx0(zx0 zx0Var) {
+        this.a = zx0Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        int i10;
-        int i11;
-        switch (this.a) {
-            case 0:
-                PrivacyControlActivity privacyControlActivity = this.b.d;
-                privacyControlActivity.L = ((Integer) obj).intValue();
-                AndroidUtilities.updateVisibleRow(privacyControlActivity.d, privacyControlActivity.j0);
-                privacyControlActivity.E0();
-                break;
-            default:
-                TL_account.TL_birthday tL_birthday = (TL_account.TL_birthday) obj;
-                TL_account.updateBirthday updatebirthday = new TL_account.updateBirthday();
-                updatebirthday.flags |= 1;
-                updatebirthday.birthday = tL_birthday;
-                yx0 yx0Var = this.b;
-                PrivacyControlActivity privacyControlActivity2 = yx0Var.d;
-                TLRPC.UserFull userFull = privacyControlActivity2.getMessagesController().getUserFull(privacyControlActivity2.getUserConfig().getClientUserId());
-                TL_account.TL_birthday tL_birthday2 = userFull != null ? userFull.birthday : null;
-                if (userFull != null) {
-                    userFull.flags2 |= 32;
-                    userFull.birthday = tL_birthday;
-                    privacyControlActivity2.getMessagesStorage().updateUserInfo(userFull, false);
-                }
-                privacyControlActivity2.getMessagesController().invalidateContentSettings();
-                privacyControlActivity2.getConnectionsManager().sendRequest(updatebirthday, new ns0(yx0Var, userFull, tL_birthday2, 1), 1024);
-                i10 = ((org.telegram.ui.ActionBar.n2) privacyControlActivity2).currentAccount;
-                MessagesController.getInstance(i10).removeSuggestion(0L, "BIRTHDAY_SETUP");
-                i11 = ((org.telegram.ui.ActionBar.n2) privacyControlActivity2).currentAccount;
-                NotificationCenter.getInstance(i11).lambda$postNotificationNameOnUIThread$1(NotificationCenter.premiumPromoUpdated, new Object[0]);
-                privacyControlActivity2.F0(true);
-                break;
+    @Override // org.telegram.ui.x60
+    public void b(ArrayList arrayList, boolean z10, boolean z11) {
+        Iterator it = arrayList.iterator();
+        if (it.hasNext()) {
+            throw null;
         }
+        this.a.V();
+    }
+
+    @Override // org.telegram.ui.Components.cl0
+    public boolean d(int i10, View view) {
+        zx0 zx0Var = this.a;
+        if (i10 < zx0Var.r || i10 >= zx0Var.s) {
+            return false;
+        }
+        if (zx0Var.y != 1) {
+            throw null;
+        }
+        zx0Var.U(Long.valueOf(zx0Var.getMessagesController().blockePeers.keyAt(i10 - zx0Var.r)), view);
+        return true;
+    }
+
+    @Override // org.telegram.messenger.GenericProvider
+    public Object provide(Object obj) {
+        zx0 zx0Var = this.a;
+        zx0Var.getClass();
+        if (((Integer) obj).intValue() == zx0Var.w) {
+            return Integer.valueOf(org.telegram.ui.ActionBar.h6.l1(0.12f, org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.p7, false)));
+        }
+        return null;
     }
 }

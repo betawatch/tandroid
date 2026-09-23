@@ -3,30 +3,31 @@ package ih;
 import android.content.Context;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import le.c;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.Components.tp;
-import org.telegram.ui.Components.wq;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.Components.up;
+import org.telegram.ui.Components.xq;
 import w7.x5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class b extends FrameLayout {
-    public final e6 a;
+    public final d6 a;
     public a b;
-    public wq c;
+    public xq c;
     public boolean d;
 
-    public b(Context context, e6 e6Var) {
+    public b(Context context, d6 d6Var) {
         super(context);
-        this.a = e6Var;
+        this.a = d6Var;
     }
 
     public final void a(int i10, boolean z10) {
         if (this.c == null) {
-            wq wqVar = new wq(getContext(), this.a);
-            this.c = wqVar;
-            wqVar.setReverse(this.d);
+            xq xqVar = new xq(getContext(), this.a);
+            this.c = xqVar;
+            xqVar.setReverse(this.d);
             addView(this.c, x5.e(-1, 28, 48));
         }
         this.c.a.c(i10, z10);
@@ -43,20 +44,20 @@ public final class b extends FrameLayout {
             if (!z10) {
                 return;
             }
-            tp tpVar = new tp(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(1.7f), -9079435);
-            aVar.e = tpVar;
-            tpVar.f = 90.0f;
+            up upVar = new up(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(1.7f), -9079435);
+            aVar.e = upVar;
+            upVar.f = 90.0f;
             ImageView imageView = new ImageView(aVar.getContext());
             aVar.d = imageView;
             imageView.setBackground(aVar.e);
             aVar.d.setVisibility(8);
             aVar.addView(aVar.d, x5.e(46, 46, 17));
         }
-        le.b bVar = aVar.a;
-        if (!bVar.f && bVar.e == 0.0f) {
+        c cVar = aVar.a;
+        if (!cVar.f && cVar.e == 0.0f) {
             aVar.e.c = -1L;
         }
-        bVar.a(z10, z11);
+        cVar.a(z10, z11);
     }
 
     @Override // android.view.View

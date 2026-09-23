@@ -20,13 +20,13 @@ import android.view.accessibility.AccessibilityNodeProvider;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.vl;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.wc;
-import org.telegram.ui.Components.xi0;
-import org.telegram.ui.si1;
+import org.telegram.messenger.ul;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.yi0;
+import org.telegram.ui.ki1;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class e extends View {
     public boolean E;
@@ -45,7 +45,7 @@ public final class e extends View {
     public boolean R;
     public org.telegram.ui.Cells.z S;
     public final Paint T;
-    public final xi0 U;
+    public final yi0 U;
     public final Drawable V;
     public final s0 W;
     public final FabBackgroundDrawable a;
@@ -57,8 +57,8 @@ public final class e extends View {
     public final StaticLayout e;
     public final StaticLayout f;
     public final StaticLayout h;
-    public final wc n;
-    public final wc r;
+    public final yc n;
+    public final yc r;
     public b s;
     public final int v;
     public float w;
@@ -68,8 +68,8 @@ public final class e extends View {
     public e(Activity activity) {
         super(activity);
         Paint paint = new Paint(1);
-        this.n = new wc(this);
-        this.r = new wc(this);
+        this.n = new yc(this);
+        this.r = new yc(this);
         this.y = true;
         this.E = true;
         this.M = new Rect();
@@ -111,15 +111,15 @@ public final class e extends View {
         Drawable mutate = activity.getDrawable(R.drawable.ic_close_white).mutate();
         this.d = mutate;
         mutate.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
-        xi0 xi0Var = new xi0(R.raw.call_accept, AndroidUtilities.dp(48.0f), AndroidUtilities.dp(48.0f), true, null);
-        this.U = xi0Var;
-        xi0Var.K(1);
-        xi0Var.P(90);
-        xi0Var.R(this);
+        yi0 yi0Var = new yi0(R.raw.call_accept, AndroidUtilities.dp(48.0f), AndroidUtilities.dp(48.0f), true, null);
+        this.U = yi0Var;
+        yi0Var.K(1);
+        yi0Var.P(90);
+        yi0Var.R(this);
         this.V = activity.getDrawable(R.drawable.calls_video).mutate();
         paint.setColor(-1);
         paint.setAlpha(20);
-        org.telegram.ui.Cells.z h02 = i6.h0(AndroidUtilities.dp(52.0f), 0, i0.a.k(-1, 76));
+        org.telegram.ui.Cells.z h02 = h6.h0(AndroidUtilities.dp(52.0f), 0, i0.a.k(-1, 76));
         this.S = h02;
         h02.setCallback(this);
     }
@@ -197,7 +197,7 @@ public final class e extends View {
         this.x = (AndroidUtilities.dp(8.0f) * 0.005f) + this.x;
         int measuredWidth = getMeasuredWidth();
         int i10 = this.v;
-        int B = org.telegram.messenger.y0.B(46.0f, measuredWidth, i10);
+        int B = org.telegram.messenger.z0.B(46.0f, measuredWidth, i10);
         int dp5 = AndroidUtilities.dp(40.0f);
         int measuredWidth2 = getMeasuredWidth() - AndroidUtilities.dp(46.0f);
         int dp6 = AndroidUtilities.dp(40.0f) + i10;
@@ -321,7 +321,7 @@ public final class e extends View {
         super.onMeasure(i10, i11);
         int i12 = this.v;
         this.L = (getMeasuredWidth() / 2.0f) - ((i12 / 2.0f) + AndroidUtilities.dp(46.0f));
-        int y3 = vl.y(28.0f, i12, 2);
+        int y3 = ul.y(28.0f, i12, 2);
         this.c.setBounds(y3, y3, AndroidUtilities.dp(28.0f) + y3, AndroidUtilities.dp(28.0f) + y3);
         this.d.setBounds(y3, y3, AndroidUtilities.dp(28.0f) + y3, AndroidUtilities.dp(28.0f) + y3);
         float dp = AndroidUtilities.dp(3.0f);
@@ -341,8 +341,8 @@ public final class e extends View {
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         if (isEnabled()) {
             int action = motionEvent.getAction();
-            wc wcVar = this.n;
-            wc wcVar2 = this.r;
+            yc ycVar = this.n;
+            yc ycVar2 = this.r;
             if (action != 0) {
                 if (action != 1) {
                     if (action == 2) {
@@ -361,7 +361,7 @@ public final class e extends View {
                         ofFloat.start();
                         this.O = ofFloat;
                         if (this.Q != null && (Math.abs(y3) < f7 || this.J > this.L * 0.8f)) {
-                            ((si1) this.Q).b();
+                            ((ki1) this.Q).b();
                         }
                     } else {
                         ValueAnimator ofFloat2 = ValueAnimator.ofFloat(this.K, 0.0f);
@@ -369,35 +369,35 @@ public final class e extends View {
                         ofFloat2.start();
                         this.P = ofFloat2;
                         if (this.Q != null && (Math.abs(y3) < f7 || (-this.K) > this.L * 0.8f)) {
-                            ((si1) this.Q).a();
+                            ((ki1) this.Q).a();
                         }
                     }
                 }
                 getParent().requestDisallowInterceptTouchEvent(false);
                 this.F = false;
-                wcVar2.c(false);
-                wcVar.c(false);
+                ycVar2.c(false);
+                ycVar.c(false);
                 setPressed(false);
                 return false;
             }
             motionEvent.getX();
             this.H = motionEvent.getY();
             if (this.O == null && this.N.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                this.S = i6.h0(AndroidUtilities.dp(52.0f), 0, this.R ? i6.w0(null, i6.i6, false) : -51130);
+                this.S = h6.h0(AndroidUtilities.dp(52.0f), 0, this.R ? h6.w0(null, h6.i6, false) : -51130);
                 this.F = true;
                 this.G = true;
-                wcVar2.c(true);
-                wcVar.c(false);
+                ycVar2.c(true);
+                ycVar.c(false);
                 setPressed(true);
                 invalidate();
                 return true;
             }
             if (this.P == null && this.M.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                this.S = i6.h0(AndroidUtilities.dp(52.0f), 0, -11677354);
+                this.S = h6.h0(AndroidUtilities.dp(52.0f), 0, -11677354);
                 this.F = true;
                 this.G = false;
-                wcVar2.c(false);
-                wcVar.c(true);
+                ycVar2.c(false);
+                ycVar.c(true);
                 setPressed(true);
                 ValueAnimator valueAnimator = this.P;
                 if (valueAnimator != null) {

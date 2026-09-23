@@ -2,7 +2,7 @@ package m4;
 
 import v7.l8;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b0 implements k0 {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public final /* synthetic */ class b0 implements k0 {
                     na.d dVar = a0Var.e;
                     a0Var.s(rVar);
                     dVar.getClass();
-                    l8.b(new q1(-6));
+                    l8.b(new l1(-6));
                     break;
                 }
                 break;
@@ -48,14 +48,14 @@ public final /* synthetic */ class b0 implements k0 {
                 break;
             case 7:
                 a0 a0Var2 = l0Var.g;
-                k1 k1Var = a0Var2.t;
-                if (!e2.d0.a0(k1Var, a0Var2.p)) {
-                    if (k1Var != null && k1Var.m0(1)) {
-                        k1Var.e();
+                f1 f1Var = a0Var2.t;
+                if (!e2.d0.a0(f1Var, a0Var2.p)) {
+                    if (f1Var != null && f1Var.m0(1)) {
+                        f1Var.e();
                         break;
                     }
                 } else {
-                    e2.d0.H(k1Var);
+                    e2.d0.H(f1Var);
                     break;
                 }
                 break;
@@ -69,10 +69,10 @@ public final /* synthetic */ class b0 implements k0 {
                 l0Var.g.g(rVar, true);
                 break;
             default:
-                k1 k1Var2 = l0Var.g.t;
+                f1 f1Var2 = l0Var.g.t;
                 String str = e2.d0.a;
-                if (k1Var2 != null && k1Var2.m0(1)) {
-                    k1Var2.e();
+                if (f1Var2 != null && f1Var2.m0(1)) {
+                    f1Var2.e();
                     break;
                 }
                 break;

@@ -1,127 +1,94 @@
 package org.telegram.ui.Components;
 
-import android.os.Looper;
-import android.text.TextUtils;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Locale;
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.SQLite.SQLiteException;
-import org.telegram.SQLite.SQLitePreparedStatement;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.TLRPC;
+import android.animation.TimeInterpolator;
+import android.os.SystemClock;
+import android.view.View;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h5 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ k5 b;
-    public final /* synthetic */ ArrayList c;
+public final class h5 {
+    public final View a;
+    public final Runnable b;
+    public int c;
+    public int d;
+    public boolean e;
+    public final long f;
+    public final TimeInterpolator g;
+    public boolean h;
+    public long i;
+    public int j;
 
-    public /* synthetic */ h5(k5 k5Var, ArrayList arrayList, int i10) {
-        this.a = i10;
-        this.b = k5Var;
-        this.c = arrayList;
+    public h5(View view) {
+        this.f = 200L;
+        this.g = rr.f;
+        this.a = view;
+        this.e = true;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0056 A[Catch: SQLiteException -> 0x005a, TryCatch #2 {SQLiteException -> 0x005a, blocks: (B:5:0x0013, B:6:0x001a, B:8:0x0020, B:10:0x0028, B:18:0x0056, B:25:0x0050, B:20:0x005c, B:29:0x005f), top: B:4:0x0013 }] */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x005c A[SYNTHETIC] */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        NativeByteBuffer nativeByteBuffer;
-        switch (this.a) {
-            case 0:
-                ArrayList arrayList = this.c;
-                k5 k5Var = this.b;
-                int i10 = k5Var.e;
-                MessagesStorage messagesStorage = MessagesStorage.getInstance(i10);
-                SQLiteDatabase database = messagesStorage.getDatabase();
-                if (database != null) {
-                    try {
-                        String join = TextUtils.join(",", arrayList);
-                        Locale locale = Locale.US;
-                        SQLiteCursor queryFinalized = database.queryFinalized("SELECT data FROM animated_emoji WHERE document_id IN (" + join + ")", new Object[0]);
-                        ArrayList arrayList2 = new ArrayList();
-                        HashSet hashSet = new HashSet(arrayList);
-                        while (queryFinalized.next()) {
-                            NativeByteBuffer byteBufferValue = queryFinalized.byteBufferValue(0);
-                            try {
-                                TLRPC.Document TLdeserialize = TLRPC.Document.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(true), true);
-                                if (TLdeserialize != null && TLdeserialize.id != 0) {
-                                    arrayList2.add(TLdeserialize);
-                                    hashSet.remove(Long.valueOf(TLdeserialize.id));
-                                }
-                            } catch (Exception e) {
-                                FileLog.e(e);
-                            }
-                            if (byteBufferValue != null) {
-                                byteBufferValue.reuse();
-                            }
-                        }
-                        if (Thread.currentThread() == Looper.getMainLooper().getThread()) {
-                            k5Var.d(arrayList2);
-                            if (!hashSet.isEmpty()) {
-                                ArrayList<Long> arrayList3 = new ArrayList<>(hashSet);
-                                TLRPC.TL_messages_getCustomEmojiDocuments tL_messages_getCustomEmojiDocuments = new TLRPC.TL_messages_getCustomEmojiDocuments();
-                                tL_messages_getCustomEmojiDocuments.document_id = arrayList3;
-                                ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getCustomEmojiDocuments, new org.telegram.ui.qo(3, k5Var, arrayList3));
-                            }
-                        } else {
-                            NotificationCenter.getInstance(i10).doOnIdle(new i5(k5Var, arrayList2, hashSet, 0));
-                        }
-                        queryFinalized.dispose();
-                        break;
-                    } catch (SQLiteException e7) {
-                        messagesStorage.checkSQLException(e7);
-                        return;
-                    }
-                }
-                break;
-            default:
-                ArrayList arrayList4 = this.c;
-                try {
-                    SQLitePreparedStatement executeFast = MessagesStorage.getInstance(this.b.e).getDatabase().executeFast("REPLACE INTO animated_emoji VALUES(?, ?)");
-                    for (int i11 = 0; i11 < arrayList4.size(); i11++) {
-                        if (arrayList4.get(i11) instanceof TLRPC.Document) {
-                            TLRPC.Document document = (TLRPC.Document) arrayList4.get(i11);
-                            NativeByteBuffer nativeByteBuffer2 = null;
-                            try {
-                                nativeByteBuffer = new NativeByteBuffer(document.getObjectSize());
-                            } catch (Exception e10) {
-                                e = e10;
-                            }
-                            try {
-                                document.serializeToStream(nativeByteBuffer);
-                                executeFast.requery();
-                                executeFast.bindLong(1, document.id);
-                                executeFast.bindByteBuffer(2, nativeByteBuffer);
-                                executeFast.step();
-                            } catch (Exception e11) {
-                                e = e11;
-                                nativeByteBuffer2 = nativeByteBuffer;
-                                e.printStackTrace();
-                                nativeByteBuffer = nativeByteBuffer2;
-                                if (nativeByteBuffer == null) {
-                                }
-                            }
-                            if (nativeByteBuffer == null) {
-                                nativeByteBuffer.reuse();
-                            }
-                        }
-                    }
-                    executeFast.dispose();
-                    break;
-                } catch (SQLiteException e12) {
-                    FileLog.e(e12);
-                }
+    public final int a(int i10, boolean z10) {
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        long j3 = this.f;
+        if (z10 || j3 <= 0 || this.e) {
+            this.d = i10;
+            this.c = i10;
+            this.h = false;
+            this.e = false;
+        } else if (this.d != i10) {
+            this.h = true;
+            this.d = i10;
+            this.j = this.c;
+            this.i = elapsedRealtime;
         }
+        if (this.h) {
+            float a2 = w7.p.a((elapsedRealtime - this.i) / j3, 0.0f, 1.0f);
+            if (elapsedRealtime - this.i >= 0) {
+                TimeInterpolator timeInterpolator = this.g;
+                if (timeInterpolator == null) {
+                    this.c = i0.a.d(a2, this.j, this.d);
+                } else {
+                    this.c = i0.a.d(timeInterpolator.getInterpolation(a2), this.j, this.d);
+                }
+            }
+            if (a2 >= 1.0f) {
+                this.h = false;
+            } else {
+                View view = this.a;
+                if (view != null) {
+                    view.invalidate();
+                }
+                Runnable runnable = this.b;
+                if (runnable != null) {
+                    runnable.run();
+                }
+            }
+        }
+        return this.c;
+    }
+
+    public h5(View view, long j3, TimeInterpolator timeInterpolator) {
+        this.f = 200L;
+        rr rrVar = rr.f;
+        this.a = view;
+        this.f = j3;
+        this.g = timeInterpolator;
+        this.e = true;
+    }
+
+    public h5(View view, long j3, TimeInterpolator timeInterpolator, int i10) {
+        this.f = 200L;
+        rr rrVar = rr.f;
+        this.a = view;
+        this.f = j3;
+        this.g = timeInterpolator;
+        this.e = true;
+    }
+
+    public h5(Runnable runnable, long j3, TimeInterpolator timeInterpolator) {
+        this.f = 200L;
+        rr rrVar = rr.f;
+        this.b = runnable;
+        this.f = j3;
+        this.g = timeInterpolator;
+        this.e = true;
     }
 }

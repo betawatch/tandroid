@@ -5,17 +5,17 @@ import j$.util.DesugarCollections;
 import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 import java.util.HashMap;
-import k2.c0;
+import k2.b0;
 import org.chromium.support_lib_boundary.WebViewProviderFactoryBoundaryInterface;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class j extends com.googlecode.mp4parser.c {
-    public static final /* synthetic */ c0 E;
-    public static final /* synthetic */ c0 F;
-    public static final /* synthetic */ c0 w;
-    public static final /* synthetic */ c0 x;
-    public static final /* synthetic */ c0 y;
+    public static final /* synthetic */ b0 E;
+    public static final /* synthetic */ b0 F;
+    public static final /* synthetic */ b0 w;
+    public static final /* synthetic */ b0 x;
+    public static final /* synthetic */ b0 y;
     public String e;
     public String f;
     public long h;

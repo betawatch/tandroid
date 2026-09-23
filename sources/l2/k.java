@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import x2.r;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class k {
     public final y2.n a;
@@ -90,7 +90,7 @@ public final class k {
                 d = j11;
                 i13 = 0;
             } else if (pVar.b) {
-                hVar2 = new z3.i(((qb.b) pVar.c).x(sVar2), sVar2);
+                hVar2 = new z3.h(((qb.b) pVar.c).x(sVar2), sVar2);
             } else {
                 dVar = null;
                 mVar = mVar2;

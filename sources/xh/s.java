@@ -1,12 +1,12 @@
 package xh;
 
-import org.telegram.ui.Components.vc;
+import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final class s extends y4 {
-    @Override // xh.y4
-    public final vc X() {
-        return new vc(this.container, this.resourcesProvider);
+public final class s extends z4 {
+    @Override // xh.z4
+    public final xc X() {
+        return new xc(this.container, this.resourcesProvider);
     }
 }

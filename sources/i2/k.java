@@ -3,7 +3,7 @@ package i2;
 import java.util.HashMap;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class k {
     public final y2.d a;
@@ -48,10 +48,10 @@ public final class k {
         return i10;
     }
 
-    public final boolean c(p0 p0Var) {
+    public final boolean c(q0 q0Var) {
         int i10;
         long j3 = this.c;
-        j jVar = (j) this.h.get(p0Var.a);
+        j jVar = (j) this.h.get(q0Var.a);
         jVar.getClass();
         y2.d dVar = this.a;
         synchronized (dVar) {
@@ -59,12 +59,12 @@ public final class k {
         }
         boolean z10 = i10 >= b();
         long j10 = this.b;
-        float f7 = p0Var.c;
+        float f7 = q0Var.c;
         if (f7 > 1.0f) {
             j10 = Math.min(e2.d0.z(j10, f7), j3);
         }
         long max = Math.max(j10, 500000L);
-        long j11 = p0Var.b;
+        long j11 = q0Var.b;
         if (j11 < max) {
             jVar.a = !z10;
             if (z10 && j11 < 500000) {

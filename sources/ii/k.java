@@ -7,7 +7,7 @@ import android.graphics.PorterDuffColorFilter;
 import android.text.TextUtils;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
-import ci.ab;
+import ci.xa;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -21,11 +21,10 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.d80;
+import org.telegram.ui.Components.e80;
 import org.telegram.ui.UserInfoActivity;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k implements Runnable {
     public final /* synthetic */ int a;
@@ -60,7 +59,7 @@ public final /* synthetic */ class k implements Runnable {
                 final boolean[] zArr = (boolean[]) this.e;
                 hi.a aVar = (hi.a) this.f;
                 final ImageView imageView = (ImageView) this.h;
-                final org.telegram.ui.ActionBar.e6 e6Var = (org.telegram.ui.ActionBar.e6) this.n;
+                final org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) this.n;
                 final int[] iArr = (int[]) this.r;
                 if (!TextUtils.isEmpty(strArr[0].trim())) {
                     final boolean z10 = zArr[0];
@@ -73,9 +72,9 @@ public final /* synthetic */ class k implements Runnable {
                             if (TextUtils.equals(str, strArr[0])) {
                                 boolean booleanValue = bool.booleanValue();
                                 ImageView imageView2 = imageView;
-                                org.telegram.ui.ActionBar.e6 e6Var2 = e6Var;
+                                org.telegram.ui.ActionBar.d6 d6Var2 = d6Var;
                                 if (booleanValue) {
-                                    imageView2.setColorFilter(new PorterDuffColorFilter(i6.v0(i6.q7, e6Var2), PorterDuff.Mode.SRC_IN));
+                                    imageView2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.q7, d6Var2), PorterDuff.Mode.SRC_IN));
                                     if (!z10) {
                                         int[] iArr2 = iArr;
                                         int i10 = -iArr2[0];
@@ -83,7 +82,7 @@ public final /* synthetic */ class k implements Runnable {
                                         AndroidUtilities.shakeViewSpring(imageView2, i10);
                                     }
                                 } else {
-                                    imageView2.setColorFilter(new PorterDuffColorFilter(i6.v0(i6.G6, e6Var2), PorterDuff.Mode.SRC_IN));
+                                    imageView2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.G6, d6Var2), PorterDuff.Mode.SRC_IN));
                                 }
                                 if (bitmap != null) {
                                     imageView2.setImageBitmap(bitmap);
@@ -117,7 +116,7 @@ public final /* synthetic */ class k implements Runnable {
                 TLRPC.TL_inputStorePaymentPremiumGiveaway tL_inputStorePaymentPremiumGiveaway = (TLRPC.TL_inputStorePaymentPremiumGiveaway) this.r;
                 if (tL_error == null) {
                     if (tLObject != null) {
-                        BillingController.getInstance().addResultListener(((c5.o) list.get(0)).c, new ci.l5(3, hVar, wVar2));
+                        BillingController.getInstance().addResultListener(((c5.o) list.get(0)).c, new ci.k5(3, hVar, wVar2));
                         BillingController.getInstance().setOnCanceled(new tg.s(wVar, 0));
                         BillingController billingController = BillingController.getInstance();
                         Activity parentActivity = n2Var.getParentActivity();
@@ -143,8 +142,8 @@ public final /* synthetic */ class k implements Runnable {
                 TLRPC.TL_inputStorePaymentPremiumGiftCode tL_inputStorePaymentPremiumGiftCode = (TLRPC.TL_inputStorePaymentPremiumGiftCode) this.r;
                 if (tL_error2 == null) {
                     if (tLObject2 != null) {
-                        BillingController.getInstance().addResultListener(((c5.o) list2.get(0)).c, new ci.l5(2, hVar2, callback2));
-                        BillingController.getInstance().setOnCanceled(new ab(1, callback));
+                        BillingController.getInstance().addResultListener(((c5.o) list2.get(0)).c, new ci.k5(2, hVar2, callback2));
+                        BillingController.getInstance().setOnCanceled(new xa(1, callback));
                         BillingController billingController2 = BillingController.getInstance();
                         Activity parentActivity2 = n2Var2.getParentActivity();
                         AccountInstance accountInstance2 = AccountInstance.getInstance(UserConfig.selectedAccount);
@@ -176,8 +175,8 @@ public final /* synthetic */ class k implements Runnable {
                         break;
                     }
                 } else {
-                    BillingController.getInstance().addResultListener(oVar.c, new ci.l5(5, hVar3, m0Var));
-                    BillingController.getInstance().setOnCanceled(new yh.l4(m0Var, 2));
+                    BillingController.getInstance().addResultListener(oVar.c, new ci.k5(5, hVar3, m0Var));
+                    BillingController.getInstance().setOnCanceled(new yh.k4(m0Var, 2));
                     BillingController billingController3 = BillingController.getInstance();
                     AccountInstance accountInstance3 = AccountInstance.getInstance(UserConfig.selectedAccount);
                     of.b bVar3 = new of.b(7, false);
@@ -189,22 +188,22 @@ public final /* synthetic */ class k implements Runnable {
                 TLObject tLObject4 = (TLObject) this.b;
                 c5.o oVar2 = (c5.o) this.c;
                 c5.h hVar4 = (c5.h) this.d;
-                d80 d80Var = (d80) this.e;
+                e80 e80Var = (e80) this.e;
                 Activity activity2 = (Activity) this.f;
                 TLRPC.TL_inputStorePaymentStarsGift tL_inputStorePaymentStarsGift = (TLRPC.TL_inputStorePaymentStarsGift) this.h;
                 List list4 = (List) this.n;
                 TLRPC.TL_error tL_error4 = (TLRPC.TL_error) this.r;
                 if (!(tLObject4 instanceof TLRPC.TL_boolTrue)) {
                     if (!(tLObject4 instanceof TLRPC.TL_boolFalse)) {
-                        d80Var.run(Boolean.FALSE, tL_error4 != null ? tL_error4.text : "SERVER_ERROR");
+                        e80Var.run(Boolean.FALSE, tL_error4 != null ? tL_error4.text : "SERVER_ERROR");
                         break;
                     } else {
-                        d80Var.run(Boolean.FALSE, "PURCHASE_FORBIDDEN");
+                        e80Var.run(Boolean.FALSE, "PURCHASE_FORBIDDEN");
                         break;
                     }
                 } else {
-                    BillingController.getInstance().addResultListener(oVar2.c, new ci.l5(4, hVar4, d80Var));
-                    BillingController.getInstance().setOnCanceled(new yh.n4(d80Var, 0));
+                    BillingController.getInstance().addResultListener(oVar2.c, new ci.k5(4, hVar4, e80Var));
+                    BillingController.getInstance().setOnCanceled(new yh.m4(e80Var, 0));
                     BillingController billingController4 = BillingController.getInstance();
                     AccountInstance accountInstance4 = AccountInstance.getInstance(UserConfig.selectedAccount);
                     of.b bVar4 = new of.b(7, false);

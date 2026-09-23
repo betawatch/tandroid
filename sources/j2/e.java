@@ -5,21 +5,17 @@ import android.media.MediaDrmResetException;
 import b2.k0;
 import e2.m;
 import e9.i0;
-import java.util.List;
 import m4.a0;
-import m4.e1;
+import m4.a1;
 import m4.f1;
-import m4.k1;
 import m4.n;
 import m4.q;
-import m4.q1;
 import m4.r;
 import m4.z;
-import v7.l8;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class e implements m, d9.e, i5.g, z, f1, e1 {
+public final /* synthetic */ class e implements m, d9.e, i5.g, z, a1, e2.h {
     public final /* synthetic */ int a;
 
     public /* synthetic */ e(int i10) {
@@ -30,18 +26,25 @@ public final /* synthetic */ class e implements m, d9.e, i5.g, z, f1, e1 {
         return (AudioDeviceInfo) obj;
     }
 
-    public static /* bridge */ /* synthetic */ boolean f(Object obj) {
+    public static /* bridge */ /* synthetic */ boolean e(Object obj) {
         return obj instanceof MediaDrmResetException;
     }
 
-    @Override // m4.e1
-    public void a(k1 k1Var, r rVar, List list) {
+    @Override // e2.h
+    public void accept(Object obj) {
+        f1 f1Var = (f1) obj;
         switch (this.a) {
-            case 28:
-                k1Var.v0(list);
+            case 25:
+                f1Var.e();
+                break;
+            case 26:
+                f1Var.e0();
+                break;
+            case 27:
+                f1Var.z0();
                 break;
             default:
-                k1Var.v0(list);
+                f1Var.G0();
                 break;
         }
     }
@@ -66,7 +69,7 @@ public final /* synthetic */ class e implements m, d9.e, i5.g, z, f1, e1 {
         }
     }
 
-    @Override // m4.f1
+    @Override // m4.a1
     public Object h(a0 a0Var, r rVar, int i10) {
         switch (this.a) {
             case 23:
@@ -75,16 +78,8 @@ public final /* synthetic */ class e implements m, d9.e, i5.g, z, f1, e1 {
             case 24:
                 a0Var.getClass();
                 throw new ClassCastException();
-            case 25:
-                return a0Var.n(rVar);
-            case 26:
-                a0Var.getClass();
-                throw new ClassCastException();
             default:
-                na.d dVar = a0Var.e;
-                a0Var.s(rVar);
-                dVar.getClass();
-                return l8.b(new q1(-6));
+                return a0Var.n(rVar);
         }
     }
 
@@ -145,6 +140,6 @@ public final /* synthetic */ class e implements m, d9.e, i5.g, z, f1, e1 {
     }
 
     @Override // i5.g
-    public void c(Exception exc) {
+    public void a(Exception exc) {
     }
 }

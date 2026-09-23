@@ -4,11 +4,11 @@ import android.media.MediaCodec;
 import android.media.MediaFormat;
 import android.os.Handler;
 import android.os.HandlerThread;
-import i2.i0;
+import i2.j0;
 import java.util.ArrayDeque;
-import org.telegram.ui.Cells.ia;
+import org.telegram.ui.Cells.ja;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class f extends MediaCodec.Callback {
     public final HandlerThread b;
@@ -20,7 +20,7 @@ public final class f extends MediaCodec.Callback {
     public long l;
     public boolean m;
     public IllegalStateException n;
-    public ia o;
+    public ja o;
     public final Object a = new Object();
     public final a0.h d = new a0.h();
     public final a0.h e = new a0.h();
@@ -75,19 +75,19 @@ public final class f extends MediaCodec.Callback {
 
     @Override // android.media.MediaCodec.Callback
     public final void onInputBufferAvailable(MediaCodec mediaCodec, int i10) {
-        i0 i0Var;
+        j0 j0Var;
         synchronized (this.a) {
             this.d.a(i10);
-            ia iaVar = this.o;
-            if (iaVar != null && (i0Var = ((r) iaVar.b).W) != null) {
-                i0Var.a();
+            ja jaVar = this.o;
+            if (jaVar != null && (j0Var = ((r) jaVar.b).W) != null) {
+                j0Var.a();
             }
         }
     }
 
     @Override // android.media.MediaCodec.Callback
     public final void onOutputBufferAvailable(MediaCodec mediaCodec, int i10, MediaCodec.BufferInfo bufferInfo) {
-        i0 i0Var;
+        j0 j0Var;
         synchronized (this.a) {
             try {
                 MediaFormat mediaFormat = this.i;
@@ -98,9 +98,9 @@ public final class f extends MediaCodec.Callback {
                 }
                 this.e.a(i10);
                 this.f.add(bufferInfo);
-                ia iaVar = this.o;
-                if (iaVar != null && (i0Var = ((r) iaVar.b).W) != null) {
-                    i0Var.a();
+                ja jaVar = this.o;
+                if (jaVar != null && (j0Var = ((r) jaVar.b).W) != null) {
+                    j0Var.a();
                 }
             } catch (Throwable th2) {
                 throw th2;

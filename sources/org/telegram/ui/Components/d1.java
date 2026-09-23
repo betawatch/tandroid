@@ -7,9 +7,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.lh1;
+import org.telegram.ui.dh1;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d1 implements org.telegram.ui.ActionBar.a2, BillingController.ProductDetailsResponseListenerLegacy {
     public final /* synthetic */ int a;
@@ -36,14 +36,14 @@ public final /* synthetic */ class d1 implements org.telegram.ui.ActionBar.a2, B
             case 0:
                 TLRPC.User user = (TLRPC.User) this.b;
                 AccountInstance accountInstance = (AccountInstance) this.c;
-                org.telegram.ui.bo boVar = (org.telegram.ui.bo) this.d;
+                org.telegram.ui.xn xnVar = (org.telegram.ui.xn) this.d;
                 TLRPC.Chat chat = (TLRPC.Chat) this.e;
                 MessageObject messageObject = (MessageObject) this.f;
                 org.telegram.ui.Cells.z1[] z1VarArr = (org.telegram.ui.Cells.z1[]) this.h;
                 if (user != null) {
-                    accountInstance.getMessagesStorage().deleteUserChatHistory(boVar.a(), user.id);
+                    accountInstance.getMessagesStorage().deleteUserChatHistory(xnVar.a(), user.id);
                 } else {
-                    accountInstance.getMessagesStorage().deleteUserChatHistory(boVar.a(), -chat.id);
+                    accountInstance.getMessagesStorage().deleteUserChatHistory(xnVar.a(), -chat.id);
                 }
                 TLRPC.TL_contacts_blockFromReplies tL_contacts_blockFromReplies = new TLRPC.TL_contacts_blockFromReplies();
                 tL_contacts_blockFromReplies.msg_id = messageObject.getId();
@@ -51,29 +51,29 @@ public final /* synthetic */ class d1 implements org.telegram.ui.ActionBar.a2, B
                 tL_contacts_blockFromReplies.delete_history = true;
                 if (z1VarArr[0].b()) {
                     tL_contacts_blockFromReplies.report_spam = true;
-                    if (boVar.getParentActivity() != null) {
-                        boVar.Q7();
-                        UndoView undoView = boVar.y3;
+                    if (xnVar.getParentActivity() != null) {
+                        xnVar.Q7();
+                        UndoView undoView = xnVar.y3;
                         if (undoView != null) {
                             undoView.j(74, 0L, null);
                         }
                     }
                 }
-                accountInstance.getConnectionsManager().sendRequest(tL_contacts_blockFromReplies, new x1(accountInstance, 0));
+                accountInstance.getConnectionsManager().sendRequest(tL_contacts_blockFromReplies, new y1(accountInstance, 0));
                 break;
             default:
-                org.telegram.ui.wm0 wm0Var = (org.telegram.ui.wm0) this.b;
+                org.telegram.ui.qm0 qm0Var = (org.telegram.ui.qm0) this.b;
                 String str = (String) this.c;
                 String str2 = (String) this.d;
                 String str3 = (String) this.e;
-                org.telegram.ui.pl0 pl0Var = (org.telegram.ui.pl0) this.f;
+                org.telegram.ui.jl0 jl0Var = (org.telegram.ui.jl0) this.f;
                 o0.a aVar = (o0.a) this.h;
-                org.telegram.ui.on0 on0Var = wm0Var.a;
-                on0Var.Y[0].setText(str);
-                on0Var.Y[1].setText(str2);
-                on0Var.Y[2].setText(str3);
-                on0Var.N1(true, true);
-                wm0Var.c(pl0Var, aVar);
+                org.telegram.ui.in0 in0Var = qm0Var.a;
+                in0Var.Y[0].setText(str);
+                in0Var.Y[1].setText(str2);
+                in0Var.Y[2].setText(str3);
+                in0Var.N1(true, true);
+                qm0Var.c(jl0Var, aVar);
                 break;
         }
     }
@@ -92,7 +92,7 @@ public final /* synthetic */ class d1 implements org.telegram.ui.ActionBar.a2, B
                 tL_inputStorePaymentPremiumGiftCode.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_premiumGiftCodeOption.currency)) * (r4.b / Math.pow(10.0d, 6.0d)));
                 TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = new TLRPC.TL_payments_canPurchaseStore();
                 tL_payments_canPurchaseStore.purpose = tL_inputStorePaymentPremiumGiftCode;
-                connectionsManager.sendRequest(tL_payments_canPurchaseStore, new lh1(callback, list, hVar, callback2, n2Var, tL_inputStorePaymentPremiumGiftCode, 2));
+                connectionsManager.sendRequest(tL_payments_canPurchaseStore, new dh1(callback, list, hVar, callback2, n2Var, tL_inputStorePaymentPremiumGiftCode, 2));
                 break;
             default:
                 TLRPC.TL_inputStorePaymentPremiumGiveaway tL_inputStorePaymentPremiumGiveaway = (TLRPC.TL_inputStorePaymentPremiumGiveaway) this.b;
@@ -105,16 +105,16 @@ public final /* synthetic */ class d1 implements org.telegram.ui.ActionBar.a2, B
                 tL_inputStorePaymentPremiumGiveaway.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_premiumGiftCodeOption2.currency)) * (r4.b / Math.pow(10.0d, 6.0d)));
                 TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore2 = new TLRPC.TL_payments_canPurchaseStore();
                 tL_payments_canPurchaseStore2.purpose = tL_inputStorePaymentPremiumGiveaway;
-                connectionsManager2.sendRequest(tL_payments_canPurchaseStore2, new lh1(wVar, list, hVar, wVar2, n2Var2, tL_inputStorePaymentPremiumGiveaway, 1));
+                connectionsManager2.sendRequest(tL_payments_canPurchaseStore2, new dh1(wVar, list, hVar, wVar2, n2Var2, tL_inputStorePaymentPremiumGiveaway, 1));
                 break;
         }
     }
 
-    public /* synthetic */ d1(TLRPC.User user, AccountInstance accountInstance, org.telegram.ui.bo boVar, TLRPC.Chat chat, MessageObject messageObject, org.telegram.ui.Cells.z1[] z1VarArr, org.telegram.ui.ActionBar.e6 e6Var) {
+    public /* synthetic */ d1(TLRPC.User user, AccountInstance accountInstance, org.telegram.ui.xn xnVar, TLRPC.Chat chat, MessageObject messageObject, org.telegram.ui.Cells.z1[] z1VarArr, org.telegram.ui.ActionBar.d6 d6Var) {
         this.a = 0;
         this.b = user;
         this.c = accountInstance;
-        this.d = boVar;
+        this.d = xnVar;
         this.e = chat;
         this.f = messageObject;
         this.h = z1VarArr;

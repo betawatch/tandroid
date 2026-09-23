@@ -1,37 +1,16 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mx0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ PrivacyControlActivity b;
+public final class mx0 extends s4.j {
+    public final /* synthetic */ PrivacyControlActivity F;
 
-    public /* synthetic */ mx0(PrivacyControlActivity privacyControlActivity, int i10) {
-        this.a = i10;
-        this.b = privacyControlActivity;
+    public mx0(PrivacyControlActivity privacyControlActivity) {
+        this.F = privacyControlActivity;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                PrivacyControlActivity privacyControlActivity = this.b;
-                privacyControlActivity.getClass();
-                privacyControlActivity.presentFragment(new PremiumPreviewFragment(0, "noncontacts"));
-                break;
-            case 1:
-                PrivacyControlActivity.U(this.b);
-                break;
-            case 2:
-                PrivacyControlActivity privacyControlActivity2 = this.b;
-                privacyControlActivity2.getClass();
-                privacyControlActivity2.presentFragment(new PremiumPreviewFragment(0, "noncontacts"));
-                break;
-            default:
-                PrivacyControlActivity privacyControlActivity3 = this.b;
-                privacyControlActivity3.getClass();
-                privacyControlActivity3.presentFragment(new PremiumPreviewFragment(0, "settings"));
-                break;
-        }
+    @Override // s4.j
+    public final void P(s4.c1 c1Var) {
+        this.F.d.invalidate();
     }
 }

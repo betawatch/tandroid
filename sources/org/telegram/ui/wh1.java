@@ -1,195 +1,133 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
+import android.animation.ValueAnimator;
+import android.view.animation.LinearInterpolator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.DispatchQueue;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class wh1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ xh1 b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ boolean e;
+    public final /* synthetic */ mi1 b;
 
-    public /* synthetic */ wh1(xh1 xh1Var, String str, boolean z10, boolean z11, int i10) {
+    public /* synthetic */ wh1(mi1 mi1Var, int i10) {
         this.a = i10;
-        this.b = xh1Var;
-        this.c = str;
-        this.d = z10;
-        this.e = z11;
+        this.b = mi1Var;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:75:0x00cd, code lost:
-    
-        if (r3 == false) goto L31;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:77:0x00e1, code lost:
-    
-        if (r4 == false) goto L31;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x017c A[LOOP:1: B:30:0x00fc->B:48:0x017c, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x0136 A[SYNTHETIC] */
     @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public final void run() {
-        String str;
-        char c10;
-        String str2;
-        boolean z10;
-        boolean z11;
-        ArrayList arrayList;
-        String str3;
-        int i10;
         switch (this.a) {
             case 0:
-                xh1 xh1Var = this.b;
-                String str4 = this.c;
-                boolean z12 = this.d;
-                boolean z13 = this.e;
-                xh1Var.getClass();
-                AndroidUtilities.runOnUIThread(new wh1(xh1Var, str4, z12, z13, 1));
+                this.b.u0.b();
                 break;
             case 1:
-                xh1 xh1Var2 = this.b;
-                String str5 = this.c;
-                boolean z14 = this.d;
-                boolean z15 = this.e;
-                xh1Var2.f.g(str5, true, z14, z14, xh1Var2.v.G, 0L, false, 0, 0);
-                DispatchQueue dispatchQueue = Utilities.searchQueue;
-                wh1 wh1Var = new wh1(xh1Var2, str5, z15, z14, 2);
-                xh1Var2.h = wh1Var;
-                dispatchQueue.postRunnable(wh1Var);
+                this.b.u0.b();
                 break;
-            default:
-                xh1 xh1Var3 = this.b;
-                String str6 = this.c;
-                boolean z16 = this.d;
-                boolean z17 = this.e;
-                ArrayList arrayList2 = xh1Var3.r;
-                String lowerCase = str6.trim().toLowerCase();
-                if (lowerCase.length() != 0) {
-                    String translitString = LocaleController.getInstance().getTranslitString(lowerCase);
-                    if (lowerCase.equals(translitString) || translitString.length() == 0) {
-                        translitString = null;
-                    }
-                    int i11 = (translitString != null ? 1 : 0) + 1;
-                    String[] strArr = new String[i11];
-                    strArr[0] = lowerCase;
-                    if (translitString != null) {
-                        strArr[1] = translitString;
-                    }
-                    ArrayList arrayList3 = new ArrayList();
-                    ArrayList arrayList4 = new ArrayList();
-                    int i12 = 0;
-                    while (i12 < arrayList2.size()) {
-                        TLObject tLObject = (TLObject) arrayList2.get(i12);
-                        String[] strArr2 = new String[3];
-                        boolean z18 = tLObject instanceof TLRPC.User;
-                        if (!z18) {
-                            str = null;
-                            c10 = 1;
-                            TLRPC.Chat chat = (TLRPC.Chat) tLObject;
-                            strArr2[0] = chat.title.toLowerCase();
-                            str2 = chat.username;
-                            break;
-                        } else {
-                            str = null;
-                            TLRPC.User user = (TLRPC.User) tLObject;
-                            c10 = 1;
-                            strArr2[0] = ContactsController.formatName(user.first_name, user.last_name).toLowerCase();
-                            str2 = UserObject.getPublicUsername(user);
-                            if (UserObject.isReplyUser(user)) {
-                                strArr2[2] = LocaleController.getString(R.string.RepliesTitle).toLowerCase();
-                            } else if (UserObject.isUserSelf(user)) {
-                                if (xh1Var3.v.G) {
-                                    strArr2[2] = LocaleController.getString(R.string.SavedMessages).toLowerCase();
-                                }
-                                z10 = z16;
-                                z11 = z17;
-                                arrayList = arrayList2;
-                            } else if (user.bot) {
-                            }
-                            String translitString2 = LocaleController.getInstance().getTranslitString(strArr2[0]);
-                            strArr2[c10] = translitString2;
-                            if (strArr2[0].equals(translitString2)) {
-                                strArr2[c10] = str;
-                            }
-                            int i13 = 0;
-                            char c11 = 0;
-                            while (i13 < i11) {
-                                z10 = z16;
-                                String str7 = strArr[i13];
-                                z11 = z17;
-                                arrayList = arrayList2;
-                                int i14 = 0;
-                                while (i14 < 3) {
-                                    String str8 = strArr2[i14];
-                                    if (str8 != null) {
-                                        if (!str8.startsWith(str7)) {
-                                            i10 = i14;
-                                            if (org.telegram.messenger.y0.w(" ", str7, str8)) {
-                                            }
-                                        }
-                                        c11 = 1;
-                                        if (c11 == 0 && str2 != null && str2.toLowerCase().startsWith(str7)) {
-                                            c11 = 2;
-                                        }
-                                        if (c11 == 0) {
-                                            if (c11 != 1) {
-                                                str3 = str;
-                                                arrayList4.add(AndroidUtilities.generateSearchName(org.telegram.ui.Cells.q3.i("@", str2), str3, "@" + str7));
-                                            } else if (z18) {
-                                                TLRPC.User user2 = (TLRPC.User) tLObject;
-                                                arrayList4.add(AndroidUtilities.generateSearchName(user2.first_name, user2.last_name, str7));
-                                                str3 = str;
-                                            } else {
-                                                str3 = str;
-                                                arrayList4.add(AndroidUtilities.generateSearchName(((TLRPC.Chat) tLObject).title, str3, str7));
-                                            }
-                                            arrayList3.add(tLObject);
-                                        } else {
-                                            i13++;
-                                            arrayList2 = arrayList;
-                                            z16 = z10;
-                                            z17 = z11;
-                                        }
-                                    } else {
-                                        i10 = i14;
-                                    }
-                                    i14 = i10 + 1;
-                                }
-                                if (c11 == 0) {
-                                    c11 = 2;
-                                }
-                                if (c11 == 0) {
-                                }
-                            }
-                            z10 = z16;
-                            z11 = z17;
-                            arrayList = arrayList2;
-                        }
-                        i12++;
-                        arrayList2 = arrayList;
-                        z16 = z10;
-                        z17 = z11;
-                    }
-                    AndroidUtilities.runOnUIThread(new yd1(xh1Var3, arrayList3, arrayList4, 6));
-                    break;
-                } else {
-                    AndroidUtilities.runOnUIThread(new yd1(xh1Var3, new ArrayList(), new ArrayList(), 6));
+            case 2:
+                this.b.u0.b();
+                break;
+            case 3:
+                this.b.u0.b();
+                break;
+            case 4:
+                org.telegram.ui.Components.voip.u1 u1Var = this.b.Z;
+                u1Var.c0 = false;
+                u1Var.invalidate();
+                break;
+            case 5:
+                mi1 mi1Var = this.b;
+                mi1Var.q0 = mi1Var.p0;
+                mi1Var.H();
+                break;
+            case 6:
+                this.b.B();
+                break;
+            case 7:
+                int[] iArr = new int[2];
+                mi1 mi1Var2 = this.b;
+                mi1Var2.e0.getLocationOnScreen(iArr);
+                int i10 = iArr[0];
+                int i11 = iArr[1];
+                mi1Var2.e.getLocationOnScreen(iArr);
+                mi1Var2.e.setTranslationX(AndroidUtilities.dp(42.0f) + (i10 - iArr[0]));
+                mi1Var2.e.setTranslationY(AndroidUtilities.dp(44.0f) + (i11 - iArr[1]));
+                mi1Var2.h.getLocationOnScreen(iArr);
+                mi1Var2.h.setTranslationX(AndroidUtilities.dp(42.0f) + (i10 - iArr[0]));
+                mi1Var2.h.setTranslationY(AndroidUtilities.dp(44.0f) + (i11 - iArr[1]));
+                mi1Var2.f.getLocationOnScreen(iArr);
+                mi1Var2.f.setTranslationX(AndroidUtilities.dp(42.0f) + (i10 - iArr[0]));
+                mi1Var2.f.setTranslationY(AndroidUtilities.dp(44.0f) + (i11 - iArr[1]));
+                mi1Var2.n.getLocationOnScreen(iArr);
+                mi1Var2.n.setTranslationX((((mi1Var2.e0.getWidth() + i10) - iArr[0]) - AndroidUtilities.dp(49.0f)) - AndroidUtilities.dp(60.0f));
+                mi1Var2.n.setTranslationY(AndroidUtilities.dp(44.0f) + (i11 - iArr[1]));
+                mi1Var2.n.setAlpha(1.0f);
+                mi1Var2.e.setAlpha(1.0f);
+                mi1Var2.h.setAlpha(1.0f);
+                mi1Var2.f.setAlpha(1.0f);
+                long j3 = 200;
+                mi1Var2.n.animate().setStartDelay(0L).translationY(0.0f).setInterpolator(new LinearInterpolator()).translationX(0.0f).setDuration(j3).start();
+                mi1Var2.e.animate().setStartDelay(0L).translationY(0.0f).setInterpolator(new LinearInterpolator()).translationX(0.0f).setDuration(j3).start();
+                mi1Var2.h.animate().setStartDelay(0L).translationY(0.0f).setInterpolator(new LinearInterpolator()).translationX(0.0f).setDuration(j3).start();
+                mi1Var2.f.animate().setStartDelay(0L).translationY(0.0f).setInterpolator(new LinearInterpolator()).translationX(0.0f).setDuration(j3).start();
+                break;
+            case 8:
+                this.b.u0.b();
+                break;
+            case 9:
+                if (SharedConfig.callEncryptionHintDisplayedCount < 2) {
+                    SharedConfig.incrementCallEncryptionHintDisplayed(1);
+                    mi1 mi1Var3 = this.b;
+                    mi1Var3.O0.setTranslationY(mi1Var3.N.getY() + AndroidUtilities.dp(36.0f));
+                    mi1Var3.O0.u();
                     break;
                 }
+                break;
+            case 10:
+                this.b.u0.b();
+                break;
+            case 11:
+                mi1 mi1Var4 = this.b;
+                mi1Var4.u0.setAlpha(1.0f);
+                mi1Var4.u0.invalidate();
+                ValueAnimator k10 = mi1Var4.k(true);
+                mi1Var4.H.setAlpha(0.0f);
+                mi1Var4.I.setAlpha(0.0f);
+                mi1Var4.N.setAlpha(0.0f);
+                mi1Var4.X.setAlpha(0.0f);
+                mi1Var4.j0.setAlpha(0.0f);
+                mi1Var4.h0.setAlpha(0.0f);
+                mi1Var4.i0.setAlpha(0.0f);
+                mi1Var4.K.setAlpha(0.0f);
+                mi1Var4.M0.setAlpha(0.0f);
+                mi1Var4.Y.b0 = true;
+                AndroidUtilities.runOnUIThread(new hb1(16, mi1Var4, k10), 32L);
+                break;
+            case 12:
+                mi1 mi1Var5 = this.b;
+                mi1Var5.R0 = false;
+                org.telegram.ui.Components.voip.d3 d3Var = mi1Var5.N0;
+                boolean z10 = d3Var != null && d3Var.V;
+                if (mi1Var5.z0 && mi1Var5.x0 && !mi1Var5.C0 && !z10) {
+                    mi1Var5.K0 = System.currentTimeMillis();
+                    mi1Var5.A(false);
+                    mi1Var5.q0 = mi1Var5.p0;
+                    mi1Var5.H();
+                    break;
+                }
+                break;
+            default:
+                mi1 mi1Var6 = this.b;
+                if (mi1Var6.p0 == 3) {
+                    mi1Var6.y.b(true, false);
+                    org.telegram.ui.Components.voip.c3 c3Var = mi1Var6.v;
+                    if (!c3Var.R) {
+                        c3Var.R = true;
+                        break;
+                    }
+                }
+                break;
         }
     }
 }

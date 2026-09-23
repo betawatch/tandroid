@@ -3,13 +3,13 @@ package k1;
 import org.telegram.tgnet.TLObject;
 import v7.t7;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class p implements ce.c {
     public final /* synthetic */ int a = 0;
     public final /* synthetic */ ce.c b;
 
-    public p(ce.c cVar, za.y yVar) {
+    public p(ce.c cVar, za.a0 a0Var) {
         this.b = cVar;
     }
 
@@ -24,7 +24,7 @@ public final class p implements ce.c {
     public final Object a(Object obj, kd.c cVar) {
         o oVar;
         int i10;
-        za.x xVar;
+        za.z zVar;
         int i11;
         int i12 = this.a;
         gd.i iVar = gd.i.a;
@@ -72,14 +72,14 @@ public final class p implements ce.c {
                 if (i10 == 0) {
                 }
             default:
-                if (cVar instanceof za.x) {
-                    xVar = (za.x) cVar;
-                    int i14 = xVar.b;
+                if (cVar instanceof za.z) {
+                    zVar = (za.z) cVar;
+                    int i14 = zVar.b;
                     if ((i14 & TLObject.FLAG_31) != 0) {
-                        xVar.b = i14 - TLObject.FLAG_31;
-                        Object obj4 = xVar.a;
+                        zVar.b = i14 - TLObject.FLAG_31;
+                        Object obj4 = zVar.a;
                         jd.a aVar3 = jd.a.a;
-                        i11 = xVar.b;
+                        i11 = zVar.b;
                         if (i11 == 0) {
                             if (i11 != 1) {
                                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -88,16 +88,16 @@ public final class p implements ce.c {
                             return iVar;
                         }
                         t7.b(obj4);
-                        za.u uVar = za.y.e;
-                        za.m mVar = new za.m((String) ((n1.b) obj).a(za.v.a));
-                        xVar.b = 1;
-                        return cVar2.a(mVar, xVar) == aVar3 ? aVar3 : iVar;
+                        za.w wVar = za.a0.e;
+                        za.n nVar = new za.n((String) ((n1.b) obj).a(za.x.a));
+                        zVar.b = 1;
+                        return cVar2.a(nVar, zVar) == aVar3 ? aVar3 : iVar;
                     }
                 }
-                xVar = new za.x(this, cVar);
-                Object obj42 = xVar.a;
+                zVar = new za.z(this, cVar);
+                Object obj42 = zVar.a;
                 jd.a aVar32 = jd.a.a;
-                i11 = xVar.b;
+                i11 = zVar.b;
                 if (i11 == 0) {
                 }
         }

@@ -4,13 +4,13 @@ import android.app.Activity;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.u70;
+import org.telegram.ui.Components.v70;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.i60;
+import org.telegram.ui.f60;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class x1 implements u70, org.telegram.ui.ActionBar.a2 {
+public final /* synthetic */ class x1 implements v70, org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ TLRPC.User a;
     public final /* synthetic */ TLRPC.Chat b;
     public final /* synthetic */ String c;
@@ -33,7 +33,7 @@ public final /* synthetic */ class x1 implements u70, org.telegram.ui.ActionBar.
         this.r = accountInstance;
     }
 
-    @Override // org.telegram.ui.Components.u70
+    @Override // org.telegram.ui.Components.v70
     public void a(TLRPC.InputPeer inputPeer, boolean z10, boolean z11, boolean z12) {
         boolean z13 = this.d;
         Activity activity = this.h;
@@ -41,7 +41,7 @@ public final /* synthetic */ class x1 implements u70, org.telegram.ui.ActionBar.
         TLRPC.Chat chat = this.b;
         String str = this.c;
         if (z13 && z11) {
-            i60.c1((LaunchActivity) activity, accountInstance, chat, inputPeer, z10, str);
+            f60.c1((LaunchActivity) activity, accountInstance, chat, inputPeer, z10, str);
             return;
         }
         TLRPC.User user = this.a;

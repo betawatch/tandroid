@@ -18,9 +18,9 @@ import org.telegram.messenger.SavedMessagesController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.bo;
+import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -56,7 +56,7 @@ public final /* synthetic */ class f implements Runnable {
                 }
                 break;
             case 4:
-                int i10 = w7.h;
+                int i10 = x7.h;
                 break;
             case 5:
                 Comparator comparator = l9.X;
@@ -90,38 +90,38 @@ public final /* synthetic */ class f implements Runnable {
             case 14:
                 SharedConfig.drawActionBarShadow = !SharedConfig.drawActionBarShadow;
                 SharedConfig.saveDebugConfig();
-                AndroidUtilities.forEachViews(LaunchActivity.G1.z0.getRootView(), new i(18));
+                AndroidUtilities.forEachViews(LaunchActivity.G1.z0.getRootView(), new i(5));
                 break;
             case 15:
                 SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("themeconfig", 0);
                 String str = "Blue";
                 String string = sharedPreferences.getString("lastDayTheme", "Blue");
-                if (org.telegram.ui.ActionBar.i6.N0(string) == null || org.telegram.ui.ActionBar.i6.N0(string).q()) {
+                if (org.telegram.ui.ActionBar.h6.N0(string) == null || org.telegram.ui.ActionBar.h6.N0(string).q()) {
                     string = "Blue";
                 }
                 String str2 = "Dark Blue";
                 String string2 = sharedPreferences.getString("lastDarkTheme", "Dark Blue");
-                if (org.telegram.ui.ActionBar.i6.N0(string2) == null || !org.telegram.ui.ActionBar.i6.N0(string2).q()) {
+                if (org.telegram.ui.ActionBar.h6.N0(string2) == null || !org.telegram.ui.ActionBar.h6.N0(string2).q()) {
                     string2 = "Dark Blue";
                 }
-                org.telegram.ui.ActionBar.h6 h6Var = org.telegram.ui.ActionBar.i6.I;
+                org.telegram.ui.ActionBar.g6 g6Var = org.telegram.ui.ActionBar.h6.I;
                 if (string.equals(string2)) {
-                    if (h6Var.q() || string.equals("Dark Blue") || string.equals("Night")) {
+                    if (g6Var.q() || string.equals("Dark Blue") || string.equals("Night")) {
                         str2 = string2;
-                        AndroidUtilities.runOnUIThread(new i2.g0(org.telegram.ui.ActionBar.i6.I.q() ? org.telegram.ui.ActionBar.i6.N0(str2) : org.telegram.ui.ActionBar.i6.N0(str), 11), 200L);
+                        AndroidUtilities.runOnUIThread(new i2.h0(org.telegram.ui.ActionBar.h6.I.q() ? org.telegram.ui.ActionBar.h6.N0(str2) : org.telegram.ui.ActionBar.h6.N0(str), 11), 200L);
                         break;
                     }
                 } else {
                     str2 = string2;
                 }
                 str = string;
-                AndroidUtilities.runOnUIThread(new i2.g0(org.telegram.ui.ActionBar.i6.I.q() ? org.telegram.ui.ActionBar.i6.N0(str2) : org.telegram.ui.ActionBar.i6.N0(str), 11), 200L);
+                AndroidUtilities.runOnUIThread(new i2.h0(org.telegram.ui.ActionBar.h6.I.q() ? org.telegram.ui.ActionBar.h6.N0(str2) : org.telegram.ui.ActionBar.h6.N0(str), 11), 200L);
                 break;
             case 16:
-                org.telegram.ui.ActionBar.i6.E(false);
+                org.telegram.ui.ActionBar.h6.E(false);
                 break;
             case 17:
-                int i13 = bo.Gc;
+                int i13 = xn.Gc;
                 break;
             case 18:
                 break;
@@ -135,7 +135,7 @@ public final /* synthetic */ class f implements Runnable {
                 globalInstance.lambda$postNotificationNameOnUIThread$1(i14, Boolean.FALSE, bool, bool);
                 break;
             case 21:
-                Pattern pattern = org.telegram.ui.Components.c5.a;
+                Pattern pattern = org.telegram.ui.Components.e5.a;
                 break;
             case 22:
                 org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
@@ -147,14 +147,14 @@ public final /* synthetic */ class f implements Runnable {
                 }
                 break;
             case 23:
-                AndroidUtilities.cancelRunOnUIThread(org.telegram.ui.Components.o5.v);
+                AndroidUtilities.cancelRunOnUIThread(org.telegram.ui.Components.q5.v);
                 try {
-                    if (org.telegram.ui.Components.o5.q != null) {
-                        for (int i15 = 0; i15 < org.telegram.ui.Components.o5.q.size(); i15++) {
-                            LongSparseArray longSparseArray = (LongSparseArray) org.telegram.ui.Components.o5.q.valueAt(i15);
+                    if (org.telegram.ui.Components.q5.q != null) {
+                        for (int i15 = 0; i15 < org.telegram.ui.Components.q5.q.size(); i15++) {
+                            LongSparseArray longSparseArray = (LongSparseArray) org.telegram.ui.Components.q5.q.valueAt(i15);
                             int i16 = 0;
                             while (i16 < longSparseArray.size()) {
-                                if (!((org.telegram.ui.Components.o5) longSparseArray.valueAt(i16)).a) {
+                                if (!((org.telegram.ui.Components.q5) longSparseArray.valueAt(i16)).a) {
                                     longSparseArray.removeAt(i16);
                                     i16--;
                                 }
@@ -172,7 +172,7 @@ public final /* synthetic */ class f implements Runnable {
                 }
                 break;
             case 24:
-                org.telegram.ui.Components.h8 h8Var = org.telegram.ui.Components.h8.T0;
+                org.telegram.ui.Components.j8 j8Var = org.telegram.ui.Components.j8.T0;
                 break;
             case 25:
                 SavedMessagesController.openSavedMessages();

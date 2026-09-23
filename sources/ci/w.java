@@ -3,19 +3,19 @@ package ci;
 import android.content.Context;
 import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.vk0;
+import org.telegram.ui.Components.wk0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class w extends s4.h0 {
     public final /* synthetic */ Context c;
-    public final /* synthetic */ y2 d;
+    public final /* synthetic */ x2 d;
     public final /* synthetic */ y e;
 
-    public w(y yVar, Context context, y2 y2Var) {
+    public w(y yVar, Context context, x2 x2Var) {
         this.e = yVar;
         this.c = context;
-        this.d = y2Var;
+        this.d = x2Var;
     }
 
     @Override // s4.h0
@@ -37,8 +37,8 @@ public final class w extends s4.h0 {
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
         x xVar = new x(this.c);
         xVar.setLayoutParams(new s4.p0(AndroidUtilities.dp(46.0f), AndroidUtilities.dp(56.0f)));
-        xVar.setBackground(org.telegram.ui.ActionBar.i6.f0(553648127, 1, -1));
-        return new vk0(xVar);
+        xVar.setBackground(org.telegram.ui.ActionBar.h6.f0(553648127, 1, -1));
+        return new wk0(xVar);
     }
 
     @Override // s4.h0

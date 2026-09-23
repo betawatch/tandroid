@@ -1,29 +1,31 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class b40 extends q4 {
-    public final /* synthetic */ i60 U;
+public final class b40 implements z4.e {
+    public final /* synthetic */ f60 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b40(i60 i60Var, LaunchActivity launchActivity) {
-        super(launchActivity);
-        this.U = i60Var;
+    public b40(f60 f60Var) {
+        this.a = f60Var;
     }
 
-    @Override // org.telegram.ui.q4, org.telegram.ui.Components.jh0
-    public final void c() {
-        i60 i60Var = this.U;
-        AccountInstance accountInstance = i60Var.d;
-        c40 c40Var = i60Var.b;
-        long dialogId = c40Var.getDialogId();
-        if (dialogId > 0) {
-            TLRPC.User user = accountInstance.getMessagesController().getUser(Long.valueOf(dialogId));
-            c40Var.H(null, ImageLocation.getForUserOrChat(accountInstance.getCurrentAccount(), user, 0), ImageLocation.getForUserOrChat(accountInstance.getCurrentAccount(), user, 1), false);
-        }
+    @Override // z4.e
+    public final void a(int i10) {
+        f60 f60Var = this.a;
+        f60Var.b.D0.k(i10);
+        y30 y30Var = f60Var.D2;
+        y30Var.J = y30Var.L;
+        y30Var.K = y30Var.M;
+        y30Var.N = 0.0f;
+        y30Var.O = 1;
+        y30Var.invalidate();
+    }
+
+    @Override // z4.e
+    public final void c(int i10) {
+    }
+
+    @Override // z4.e
+    public final void b(float f7, int i10, int i11) {
     }
 }

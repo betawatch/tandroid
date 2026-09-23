@@ -10,9 +10,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.n70;
+import org.telegram.ui.Components.o70;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a0 implements Runnable {
     public final /* synthetic */ int a;
@@ -73,15 +73,15 @@ public final /* synthetic */ class a0 implements Runnable {
                         textView.setTextSize(1, 13.0f);
                         textView.setTextColor(-1);
                         frameLayout.addView(textView, w7.x5.d(-1, -2.0f, 23, 47.0f, 8.0f, 24.0f, 8.0f));
-                        n70 F = n70.F(e0Var.a, e0Var.b, e0Var);
+                        o70 F = o70.F(e0Var.a, e0Var.b, e0Var);
                         if (e0Var.j0.n.K) {
-                            i8 i8Var = new i8(e0Var.getContext(), 0);
-                            i8Var.b = 0.0f;
-                            i8Var.c = 1.5f;
-                            i8Var.d(e0Var.j0.n.P);
-                            i8Var.h = new ai.y1(e0Var, 6);
-                            i8Var.R = AndroidUtilities.dp(220.0f);
-                            F.q(i8Var);
+                            f8 f8Var = new f8(e0Var.getContext(), 0);
+                            f8Var.b = 0.0f;
+                            f8Var.c = 1.5f;
+                            f8Var.d(e0Var.j0.n.P);
+                            f8Var.h = new ai.y1(e0Var, 6);
+                            f8Var.R = AndroidUtilities.dp(220.0f);
+                            F.q(f8Var);
                             F.o();
                         }
                         F.T = 220;
@@ -127,8 +127,8 @@ public final /* synthetic */ class a0 implements Runnable {
                 if (mainPart == null) {
                     j3 = 0;
                 } else {
-                    o8 o8Var = mainPart.n;
-                    j3 = o8Var.X + ((long) (o8Var.V * o8Var.h0));
+                    l8 l8Var = mainPart.n;
+                    j3 = l8Var.X + ((long) (l8Var.V * l8Var.h0));
                 }
                 for (int i10 = 0; i10 < e0Var3.h.size(); i10++) {
                     d0 d0Var4 = (d0) e0Var3.h.get(i10);
@@ -137,13 +137,13 @@ public final /* synthetic */ class a0 implements Runnable {
                         long clamp2 = Utilities.clamp((position + j3) - d0Var4.n.X, duration, 0L);
                         if (!e0Var3.n0 || e0Var3.q0) {
                             float f10 = clamp2;
-                            o8 o8Var2 = d0Var4.n;
+                            l8 l8Var2 = d0Var4.n;
                             float f11 = duration;
-                            if (f10 > o8Var2.V * f11 && f10 < o8Var2.W * f11) {
+                            if (f10 > l8Var2.V * f11 && f10 < l8Var2.W * f11) {
                                 z10 = true;
-                                o8 o8Var3 = d0Var4.n;
+                                l8 l8Var3 = d0Var4.n;
                                 float f12 = duration;
-                                clamp = Utilities.clamp(clamp2, (long) (o8Var3.W * f12), (long) (o8Var3.V * f12));
+                                clamp = Utilities.clamp(clamp2, (long) (l8Var3.W * f12), (long) (l8Var3.V * f12));
                                 if (d0Var4.d.isPlaying() != z10) {
                                     if (z10) {
                                         d0Var4.d.play();
@@ -153,9 +153,9 @@ public final /* synthetic */ class a0 implements Runnable {
                                 }
                                 c0 c0Var5 = d0Var4.d;
                                 if (!e0Var3.v0) {
-                                    o8 o8Var4 = d0Var4.n;
-                                    if (!o8Var4.Y && e0Var3.n0) {
-                                        f7 = o8Var4.P;
+                                    l8 l8Var4 = d0Var4.n;
+                                    if (!l8Var4.Y && e0Var3.n0) {
+                                        f7 = l8Var4.P;
                                         c0Var5.setVolume(f7);
                                         if (Math.abs((d0Var4.g >= 0 ? d0Var4.g : d0Var4.d.getCurrentPosition()) - clamp) <= 450 && d0Var4.g < 0) {
                                             c0 c0Var6 = d0Var4.d;
@@ -174,9 +174,9 @@ public final /* synthetic */ class a0 implements Runnable {
                             }
                         }
                         z10 = false;
-                        o8 o8Var32 = d0Var4.n;
+                        l8 l8Var32 = d0Var4.n;
                         float f122 = duration;
-                        clamp = Utilities.clamp(clamp2, (long) (o8Var32.W * f122), (long) (o8Var32.V * f122));
+                        clamp = Utilities.clamp(clamp2, (long) (l8Var32.W * f122), (long) (l8Var32.V * f122));
                         if (d0Var4.d.isPlaying() != z10) {
                         }
                         c0 c0Var52 = d0Var4.d;
@@ -188,13 +188,13 @@ public final /* synthetic */ class a0 implements Runnable {
                         }
                     }
                 }
-                zc zcVar = e0Var3.r0;
-                if (zcVar != null) {
-                    zcVar.setProgress(position);
+                wc wcVar = e0Var3.r0;
+                if (wcVar != null) {
+                    wcVar.setProgress(position);
                 }
-                d7 d7Var = e0Var3.s0;
-                if (d7Var != null) {
-                    d7Var.w(true);
+                b7 b7Var = e0Var3.s0;
+                if (b7Var != null) {
+                    b7Var.w(true);
                     e0Var3.s0.y(true);
                 }
                 if (e0Var3.n0 && e0Var3.q0) {
@@ -252,21 +252,21 @@ public final /* synthetic */ class a0 implements Runnable {
                     if (runnable3 != null) {
                         runnable3.run();
                     }
-                    oc ocVar = ((bc) e0Var5).y0;
-                    ocVar.I0.a(false, true);
+                    lc lcVar = ((yb) e0Var5).y0;
+                    lcVar.I0.a(false, true);
                     if (tVar.e.size() > 1) {
-                        z zVar = ocVar.G0;
-                        ocVar.z0 = tVar;
+                        z zVar = lcVar.G0;
+                        lcVar.z0 = tVar;
                         zVar.a(new u(tVar, false), true);
-                        ocVar.G0.b(true, true);
+                        lcVar.G0.b(true, true);
                     } else {
-                        ocVar.G0.b(false, true);
+                        lcVar.G0.b(false, true);
                     }
-                    ocVar.m0(true);
-                    nb nbVar = ocVar.M0;
-                    if (nbVar != null) {
-                        nbVar.setMultipleOnClick(ocVar.A0.j());
-                        ocVar.M0.setMaxCount(Math.min(10, t.b() - ocVar.A0.getFilledCount()));
+                    lcVar.m0(true);
+                    kb kbVar = lcVar.M0;
+                    if (kbVar != null) {
+                        kbVar.setMultipleOnClick(lcVar.A0.j());
+                        lcVar.M0.setMaxCount(Math.min(10, t.b() - lcVar.A0.getFilledCount()));
                         break;
                     }
                 }

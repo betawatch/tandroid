@@ -9,17 +9,17 @@ import android.view.MotionEvent;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import ci.n6;
+import ci.m6;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.qr;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.rr;
 import w7.x5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class o0 extends LinearLayout {
     public final TextView a;
-    public final n6 b;
+    public final m6 b;
     public ImageView c;
     public ImageView d;
     public float e;
@@ -33,36 +33,36 @@ public final class o0 extends LinearLayout {
         super(context);
         this.r = p0Var;
         setOrientation(0);
-        int i10 = i6.i6;
+        int i10 = h6.i6;
         eh.a aVar = p0Var.Q1;
-        setBackground(i6.f0(i6.v0(i10, aVar), 2, -1));
-        n6 n6Var = new n6(this, context);
-        this.b = n6Var;
-        addView(n6Var, x5.t(-2, -2, 19, 16, 0, 16, 0));
+        setBackground(h6.f0(h6.v0(i10, aVar), 2, -1));
+        m6 m6Var = new m6(this, context);
+        this.b = m6Var;
+        addView(m6Var, x5.t(-2, -2, 19, 16, 0, 16, 0));
         ImageView imageView = new ImageView(context);
         this.c = imageView;
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
         ImageView imageView2 = this.c;
-        int i11 = i6.E8;
-        imageView2.setColorFilter(i6.v0(i11, aVar));
-        n6Var.addView(this.c, x5.e(-2, -2, 17));
+        int i11 = h6.E8;
+        imageView2.setColorFilter(h6.v0(i11, aVar));
+        m6Var.addView(this.c, x5.e(-2, -2, 17));
         ImageView imageView3 = new ImageView(context);
         this.d = imageView3;
         imageView3.setScaleType(scaleType);
-        this.d.setColorFilter(i6.v0(i11, aVar));
+        this.d.setColorFilter(h6.v0(i11, aVar));
         this.d.setVisibility(8);
-        n6Var.addView(this.d, x5.e(-2, -2, 17));
+        m6Var.addView(this.d, x5.e(-2, -2, 17));
         TextView textView = new TextView(context);
         this.a = textView;
-        textView.setTextColor(i6.v0(i11, aVar));
+        textView.setTextColor(h6.v0(i11, aVar));
         textView.setTextSize(1, 16.0f);
         addView(textView, x5.t(-2, -2, 19, 0, 0, 16, 0));
         ImageView imageView4 = new ImageView(context);
         this.n = imageView4;
         imageView4.setImageResource(R.drawable.msg_text_check);
         imageView4.setScaleType(scaleType);
-        imageView4.setColorFilter(new PorterDuffColorFilter(i6.v0(i6.h7, aVar), PorterDuff.Mode.MULTIPLY));
+        imageView4.setColorFilter(new PorterDuffColorFilter(h6.v0(h6.h7, aVar), PorterDuff.Mode.MULTIPLY));
         imageView4.setVisibility(8);
         addView(imageView4, x5.n(50, -1));
     }
@@ -87,7 +87,7 @@ public final class o0 extends LinearLayout {
         this.h = ofFloat;
         ofFloat.addUpdateListener(new bb(11, this, z10));
         this.h.addListener(new n0(this, 0));
-        this.h.setInterpolator(qr.h);
+        this.h.setInterpolator(rr.h);
         this.h.setDuration(420L);
         this.h.start();
     }

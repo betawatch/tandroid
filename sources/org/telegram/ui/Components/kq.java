@@ -1,30 +1,104 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.R;
+import android.graphics.Color;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class kq extends AnimatorListenerAdapter {
-    public final /* synthetic */ mq a;
+public final class kq implements TextWatcher {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ View c;
 
-    public kq(mq mqVar) {
-        this.a = mqVar;
+    public kq(nq nqVar, int i10) {
+        this.c = nqVar;
+        this.b = i10;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        mq mqVar = this.a;
-        ColorPicker$RadioButton[] colorPicker$RadioButtonArr = mqVar.v;
-        if (mqVar.K == 1) {
-            mqVar.F.setVisibility(4);
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        int i10;
+        int i11 = this.a;
+        int i12 = this.b;
+        View view = this.c;
+        switch (i11) {
+            case 0:
+                nq nqVar = (nq) view;
+                EditTextBoldCursor[] editTextBoldCursorArr = nqVar.E;
+                if (!nqVar.r) {
+                    nqVar.r = true;
+                    int i13 = 0;
+                    while (i13 < editable.length()) {
+                        char charAt = editable.charAt(i13);
+                        if ((charAt < '0' || charAt > '9') && ((charAt < 'a' || charAt > 'f') && (charAt < 'A' || charAt > 'F'))) {
+                            editable.replace(i13, i13 + 1, "");
+                            i13--;
+                        }
+                        i13++;
+                    }
+                    if (editable.length() != 0) {
+                        try {
+                            i10 = Integer.parseInt(editTextBoldCursorArr[i12].getText().toString(), 16) | (-16777216);
+                        } catch (Exception unused) {
+                            i10 = -1;
+                        }
+                        nqVar.setColorInner(i10);
+                        int color = nqVar.getColor();
+                        if (editable.length() == 6) {
+                            editable.replace(0, editable.length(), String.format("%02x%02x%02x", Byte.valueOf((byte) Color.red(color)), Byte.valueOf((byte) Color.green(color)), Byte.valueOf((byte) Color.blue(color))).toUpperCase());
+                            editTextBoldCursorArr[i12].setSelection(editable.length());
+                        }
+                        nqVar.v[nqVar.S].a(color);
+                        nqVar.a.x0(color, nqVar.S, true);
+                        nqVar.r = false;
+                        break;
+                    } else {
+                        nqVar.r = false;
+                        break;
+                    }
+                }
+                break;
+            default:
+                NumberTextView numberTextView = (NumberTextView) view;
+                int codePointCount = i12 - Character.codePointCount(editable, 0, editable.length());
+                if (codePointCount >= 30) {
+                    AndroidUtilities.updateViewVisibilityAnimated(numberTextView, false);
+                    break;
+                } else {
+                    numberTextView.a(codePointCount, numberTextView.getVisibility() == 0);
+                    AndroidUtilities.updateViewVisibilityAnimated(numberTextView, true);
+                    break;
+                }
         }
-        for (int i10 = 0; i10 < colorPicker$RadioButtonArr.length; i10++) {
-            if (colorPicker$RadioButtonArr[i10].getTag(R.id.index_tag) == null) {
-                colorPicker$RadioButtonArr[i10].setVisibility(4);
-            }
-        }
-        mqVar.y = null;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        int i13 = this.a;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        int i13 = this.a;
+    }
+
+    public kq(int i10, NumberTextView numberTextView) {
+        this.b = i10;
+        this.c = numberTextView;
+    }
+
+    private final void a(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void b(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
     }
 }

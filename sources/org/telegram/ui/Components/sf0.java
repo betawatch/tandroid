@@ -7,7 +7,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class sf0 extends FrameLayout {
     public final TextView a;
@@ -24,7 +24,7 @@ public final class sf0 extends FrameLayout {
         textView.setTextSize(1, 14.0f);
         textView.setTextColor(-1);
         textView.setGravity(17);
-        textView.setBackground(org.telegram.ui.ActionBar.i6.f0(-12763843, 0, -1));
+        textView.setBackground(org.telegram.ui.ActionBar.h6.f0(-12763843, 0, -1));
         textView.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), 0);
         textView.setText(LocaleController.getString(R.string.Cancel).toUpperCase());
         textView.setTypeface(AndroidUtilities.bold());
@@ -34,7 +34,7 @@ public final class sf0 extends FrameLayout {
         textView2.setTextSize(1, 14.0f);
         textView2.setTextColor(-1);
         textView2.setGravity(17);
-        textView2.setBackgroundDrawable(org.telegram.ui.ActionBar.i6.f0(-12763843, 0, -1));
+        textView2.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.f0(-12763843, 0, -1));
         textView2.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), 0);
         textView2.setText(LocaleController.getString(R.string.Send).toUpperCase());
         textView2.setTypeface(AndroidUtilities.bold());

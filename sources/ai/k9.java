@@ -31,7 +31,7 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Stories.recorder.StoryUploadingService;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class k9 implements NotificationCenter.NotificationCenterDelegate {
     public MessageObject E;
@@ -44,7 +44,7 @@ public final class k9 implements NotificationCenter.NotificationCenterDelegate {
     public TL_bots.botPreviewMedia L;
     public final /* synthetic */ l9 M;
     public final boolean b;
-    public final ci.o8 c;
+    public final ci.l8 c;
     public boolean d;
     public String e;
     public final String f;
@@ -58,27 +58,27 @@ public final class k9 implements NotificationCenter.NotificationCenterDelegate {
     public long x = -1;
     public final long a = Utilities.random.nextLong();
 
-    public k9(l9 l9Var, ci.o8 o8Var) {
+    public k9(l9 l9Var, ci.l8 l8Var) {
         this.M = l9Var;
-        this.c = o8Var;
-        this.b = o8Var.g;
-        File file = o8Var.N0;
+        this.c = l8Var;
+        this.b = l8Var.g;
+        File file = l8Var.N0;
         if (file != null) {
             this.f = file.getAbsolutePath();
         }
-        boolean z10 = o8Var.w;
+        boolean z10 = l8Var.w;
         this.H = z10;
         this.I = z10;
-        long j3 = o8Var.J0;
+        long j3 = l8Var.J0;
         if (j3 != 0) {
             this.J = j3;
             return;
         }
-        if (o8Var.g) {
-            this.J = o8Var.e;
+        if (l8Var.g) {
+            this.J = l8Var.e;
             return;
         }
-        TLRPC.InputPeer inputPeer = o8Var.v0;
+        TLRPC.InputPeer inputPeer = l8Var.v0;
         if (inputPeer == null || (inputPeer instanceof TLRPC.TL_inputPeerSelf)) {
             this.J = UserConfig.getInstance(l9Var.a).clientUserId;
         } else {
@@ -88,14 +88,14 @@ public final class k9 implements NotificationCenter.NotificationCenterDelegate {
 
     public final void a() {
         boolean z10 = this.I;
-        ci.o8 o8Var = this.c;
+        ci.l8 l8Var = this.c;
         l9 l9Var = this.M;
         if (z10) {
-            l9Var.w.b(o8Var);
+            l9Var.w.b(l8Var);
             ((ArrayList) l9Var.b.f(this.J)).remove(this);
         }
         this.v = true;
-        if (o8Var.E()) {
+        if (l8Var.E()) {
             MediaController.getInstance().cancelVideoConvert(this.E);
         }
         FileLoader.getInstance(l9Var.a).cancelFileUpload(this.e, false);
@@ -137,29 +137,29 @@ public final class k9 implements NotificationCenter.NotificationCenterDelegate {
             }
         }
         boolean z11 = this.b;
-        ci.o8 o8Var = this.c;
+        ci.l8 l8Var = this.c;
         if (z11 && (hashMap = (HashMap) l9Var.e.f(j3)) != null) {
-            hashMap.remove(Integer.valueOf(o8Var.f));
+            hashMap.remove(Integer.valueOf(l8Var.f));
         }
         if (this.L != null) {
             d9 A = l9Var.A(this.J, 4, -1, false);
-            if (o8Var == null || !o8Var.g) {
-                if (A instanceof t8) {
-                    ((t8) A).I(this.L);
+            if (l8Var == null || !l8Var.g) {
+                if (A instanceof u8) {
+                    ((u8) A).I(this.L);
                 }
-                String str = o8Var.K0;
+                String str = l8Var.K0;
                 TL_bots.botPreviewMedia botpreviewmedia = this.L;
                 LongSparseArray longSparseArray5 = bi.z.F;
                 if (longSparseArray5 != null && (longSparseArray2 = (LongSparseArray) longSparseArray5.get(i10)) != null) {
-                    t8 t8Var = (t8) longSparseArray2.get(j3);
-                    int i11 = t8Var.c;
-                    ArrayList arrayList3 = t8Var.G;
+                    u8 u8Var = (u8) longSparseArray2.get(j3);
+                    int i11 = u8Var.c;
+                    ArrayList arrayList3 = u8Var.G;
                     if (i11 == i10) {
-                        if (TextUtils.equals(t8Var.E, str)) {
-                            t8Var.I(botpreviewmedia);
+                        if (TextUtils.equals(u8Var.E, str)) {
+                            u8Var.I(botpreviewmedia);
                         } else if (!TextUtils.isEmpty(str) && !arrayList3.contains(str)) {
                             arrayList3.add(str);
-                            y8 y8Var = t8Var.q;
+                            y8 y8Var = u8Var.q;
                             AndroidUtilities.cancelRunOnUIThread(y8Var);
                             AndroidUtilities.runOnUIThread(y8Var);
                         }
@@ -169,30 +169,30 @@ public final class k9 implements NotificationCenter.NotificationCenterDelegate {
                 if (longSparseArray6 != null && (longSparseArray = (LongSparseArray) longSparseArray6.get(i10)) != null && (zVar = (bi.z) longSparseArray.get(j3)) != null) {
                     ArrayList arrayList4 = zVar.f;
                     for (int i12 = 0; i12 < arrayList4.size(); i12++) {
-                        t8 t8Var2 = (t8) arrayList4.get(i12);
-                        if (t8Var2.c == i10 && TextUtils.equals(t8Var2.E, str)) {
-                            t8Var2.I(botpreviewmedia);
+                        u8 u8Var2 = (u8) arrayList4.get(i12);
+                        if (u8Var2.c == i10 && TextUtils.equals(u8Var2.E, str)) {
+                            u8Var2.I(botpreviewmedia);
                         }
                     }
                 }
             } else {
-                if (A instanceof t8) {
-                    ((t8) A).G(o8Var.L0, this.L);
+                if (A instanceof u8) {
+                    ((u8) A).G(l8Var.L0, this.L);
                 }
-                String str2 = o8Var.K0;
-                TLRPC.InputMedia inputMedia = o8Var.L0;
+                String str2 = l8Var.K0;
+                TLRPC.InputMedia inputMedia = l8Var.L0;
                 TL_bots.botPreviewMedia botpreviewmedia2 = this.L;
                 LongSparseArray longSparseArray7 = bi.z.F;
                 if (longSparseArray7 != null && (longSparseArray4 = (LongSparseArray) longSparseArray7.get(i10)) != null) {
-                    t8 t8Var3 = (t8) longSparseArray4.get(j3);
-                    int i13 = t8Var3.c;
-                    ArrayList arrayList5 = t8Var3.G;
+                    u8 u8Var3 = (u8) longSparseArray4.get(j3);
+                    int i13 = u8Var3.c;
+                    ArrayList arrayList5 = u8Var3.G;
                     if (i13 == i10) {
-                        if (TextUtils.equals(t8Var3.E, str2)) {
-                            t8Var3.G(inputMedia, botpreviewmedia2);
+                        if (TextUtils.equals(u8Var3.E, str2)) {
+                            u8Var3.G(inputMedia, botpreviewmedia2);
                         } else if (!TextUtils.isEmpty(str2) && !arrayList5.contains(str2)) {
                             arrayList5.add(str2);
-                            y8 y8Var2 = t8Var3.q;
+                            y8 y8Var2 = u8Var3.q;
                             AndroidUtilities.cancelRunOnUIThread(y8Var2);
                             AndroidUtilities.runOnUIThread(y8Var2);
                         }
@@ -202,9 +202,9 @@ public final class k9 implements NotificationCenter.NotificationCenterDelegate {
                 if (longSparseArray8 != null && (longSparseArray3 = (LongSparseArray) longSparseArray8.get(i10)) != null && (zVar2 = (bi.z) longSparseArray3.get(j3)) != null) {
                     ArrayList arrayList6 = zVar2.f;
                     for (int i14 = 0; i14 < arrayList6.size(); i14++) {
-                        t8 t8Var4 = (t8) arrayList6.get(i14);
-                        if (t8Var4.c == i10 && TextUtils.equals(t8Var4.E, str2)) {
-                            t8Var4.G(inputMedia, botpreviewmedia2);
+                        u8 u8Var4 = (u8) arrayList6.get(i14);
+                        if (u8Var4.c == i10 && TextUtils.equals(u8Var4.E, str2)) {
+                            u8Var4.G(inputMedia, botpreviewmedia2);
                         }
                     }
                 }
@@ -212,8 +212,8 @@ public final class k9 implements NotificationCenter.NotificationCenterDelegate {
             this.L = null;
         }
         NotificationCenter.getInstance(i10).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesUpdated, new Object[0]);
-        if (o8Var != null && !o8Var.h && !this.d) {
-            o8Var.i(false);
+        if (l8Var != null && !l8Var.h && !this.d) {
+            l8Var.i(false);
             this.d = true;
         }
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.uploadStoryEnd, this.e);
@@ -249,14 +249,14 @@ public final class k9 implements NotificationCenter.NotificationCenterDelegate {
         if (this.v) {
             return;
         }
-        ci.o8 o8Var = this.c;
-        o8Var.getClass();
-        ArrayList arrayList2 = o8Var.F0;
-        if (o8Var.n && !o8Var.j && (messageMedia = o8Var.t) != null) {
+        ci.l8 l8Var = this.c;
+        l8Var.getClass();
+        ArrayList arrayList2 = l8Var.F0;
+        if (l8Var.n && !l8Var.j && (messageMedia = l8Var.t) != null) {
             if (messageMedia instanceof TLRPC.TL_messageMediaDocument) {
                 TLRPC.TL_inputMediaDocument tL_inputMediaDocument = new TLRPC.TL_inputMediaDocument();
                 TLRPC.TL_inputDocument tL_inputDocument = new TLRPC.TL_inputDocument();
-                TLRPC.MessageMedia messageMedia2 = o8Var.t;
+                TLRPC.MessageMedia messageMedia2 = l8Var.t;
                 TLRPC.Document document = messageMedia2.document;
                 tL_inputDocument.id = document.id;
                 tL_inputDocument.access_hash = document.access_hash;
@@ -267,7 +267,7 @@ public final class k9 implements NotificationCenter.NotificationCenterDelegate {
             } else if (messageMedia instanceof TLRPC.TL_messageMediaPhoto) {
                 TLRPC.TL_inputMediaPhoto tL_inputMediaPhoto3 = new TLRPC.TL_inputMediaPhoto();
                 TLRPC.TL_inputPhoto tL_inputPhoto = new TLRPC.TL_inputPhoto();
-                TLRPC.Photo photo = o8Var.t.photo;
+                TLRPC.Photo photo = l8Var.t.photo;
                 tL_inputPhoto.id = photo.id;
                 tL_inputPhoto.access_hash = photo.access_hash;
                 tL_inputPhoto.file_reference = photo.file_reference;
@@ -279,42 +279,42 @@ public final class k9 implements NotificationCenter.NotificationCenterDelegate {
             TLRPC.InputMedia inputMedia = tL_inputMediaPhoto;
             inputMedia = tL_inputMediaPhoto;
             if (tL_inputMediaPhoto == null && inputFile != null) {
-                if (o8Var.E()) {
+                if (l8Var.E()) {
                     TLRPC.TL_inputMediaUploadedPhoto tL_inputMediaUploadedPhoto = new TLRPC.TL_inputMediaUploadedPhoto();
                     tL_inputMediaUploadedPhoto.file = inputFile;
                     MimeTypeMap singleton = MimeTypeMap.getSingleton();
                     int lastIndexOf = this.e.lastIndexOf(46);
                     tL_inputMediaUploadedPhoto.mime_type = singleton.getMimeTypeFromExtension(lastIndexOf != -1 ? this.e.substring(lastIndexOf + 1).toLowerCase() : "txt");
-                    List list = o8Var.U0;
+                    List list = l8Var.U0;
                     inputMedia = tL_inputMediaUploadedPhoto;
                     if (list != null) {
                         if (list.isEmpty()) {
-                            ArrayList arrayList3 = o8Var.V0;
+                            ArrayList arrayList3 = l8Var.V0;
                             inputMedia = tL_inputMediaUploadedPhoto;
                             if (arrayList3 != null) {
                                 inputMedia = tL_inputMediaUploadedPhoto;
                             }
                         }
                         tL_inputMediaUploadedPhoto.flags |= 1;
-                        ArrayList arrayList4 = o8Var.V0;
+                        ArrayList arrayList4 = l8Var.V0;
                         if (arrayList4 != null) {
                             tL_inputMediaUploadedPhoto.stickers.addAll(arrayList4);
                         }
-                        tL_inputMediaUploadedPhoto.stickers = new ArrayList<>(o8Var.U0);
+                        tL_inputMediaUploadedPhoto.stickers = new ArrayList<>(l8Var.U0);
                         inputMedia = tL_inputMediaUploadedPhoto;
                     }
                 } else {
                     TLRPC.TL_inputMediaUploadedDocument tL_inputMediaUploadedDocument = new TLRPC.TL_inputMediaUploadedDocument();
                     tL_inputMediaUploadedDocument.file = inputFile;
                     TLRPC.TL_documentAttributeVideo tL_documentAttributeVideo = new TLRPC.TL_documentAttributeVideo();
-                    if (o8Var.c0 != null) {
+                    if (l8Var.c0 != null) {
                         int i12 = 0;
                         while (true) {
-                            if (i12 >= o8Var.c0.attributes.size()) {
+                            if (i12 >= l8Var.c0.attributes.size()) {
                                 break;
                             }
-                            if (o8Var.c0.attributes.get(i12) instanceof TLRPC.TL_documentAttributeVideo) {
-                                tL_documentAttributeVideo = (TLRPC.TL_documentAttributeVideo) o8Var.c0.attributes.get(i12);
+                            if (l8Var.c0.attributes.get(i12) instanceof TLRPC.TL_documentAttributeVideo) {
+                                tL_documentAttributeVideo = (TLRPC.TL_documentAttributeVideo) l8Var.c0.attributes.get(i12);
                                 break;
                             }
                             i12++;
@@ -327,22 +327,22 @@ public final class k9 implements NotificationCenter.NotificationCenterDelegate {
                     int i13 = tL_documentAttributeVideo.flags;
                     tL_documentAttributeVideo.flags = i13 | 4;
                     tL_documentAttributeVideo.preload_prefix_size = (int) this.x;
-                    if (o8Var.e0 >= 0) {
+                    if (l8Var.e0 >= 0) {
                         tL_documentAttributeVideo.flags = i13 | 20;
-                        tL_documentAttributeVideo.video_start_ts = (r13 - (o8Var.Z * o8Var.h0)) / 1000.0d;
+                        tL_documentAttributeVideo.video_start_ts = (r13 - (l8Var.Z * l8Var.h0)) / 1000.0d;
                     }
-                    List list2 = o8Var.U0;
-                    if (list2 != null && (!list2.isEmpty() || ((arrayList = o8Var.V0) != null && !arrayList.isEmpty()))) {
+                    List list2 = l8Var.U0;
+                    if (list2 != null && (!list2.isEmpty() || ((arrayList = l8Var.V0) != null && !arrayList.isEmpty()))) {
                         tL_inputMediaUploadedDocument.flags |= 1;
-                        ArrayList<TLRPC.InputDocument> arrayList5 = new ArrayList<>(o8Var.U0);
+                        ArrayList<TLRPC.InputDocument> arrayList5 = new ArrayList<>(l8Var.U0);
                         tL_inputMediaUploadedDocument.stickers = arrayList5;
-                        ArrayList arrayList6 = o8Var.V0;
+                        ArrayList arrayList6 = l8Var.V0;
                         if (arrayList6 != null) {
                             arrayList5.addAll(arrayList6);
                         }
                         tL_inputMediaUploadedDocument.attributes.add(new TLRPC.TL_documentAttributeHasStickers());
                     }
-                    tL_inputMediaUploadedDocument.nosound_video = o8Var.y == null && (o8Var.Y || !o8Var.K);
+                    tL_inputMediaUploadedDocument.nosound_video = l8Var.y == null && (l8Var.Y || !l8Var.K);
                     tL_inputMediaUploadedDocument.mime_type = "video/mp4";
                     inputMedia = tL_inputMediaUploadedDocument;
                 }
@@ -351,11 +351,11 @@ public final class k9 implements NotificationCenter.NotificationCenterDelegate {
             long j3 = this.J;
             z11 = this.b;
             if (z11) {
-                if (o8Var.J0 != 0) {
+                if (l8Var.J0 != 0) {
                     TL_bots.addPreviewMedia addpreviewmedia = new TL_bots.addPreviewMedia();
-                    addpreviewmedia.bot = MessagesController.getInstance(i11).getInputUser(o8Var.J0);
+                    addpreviewmedia.bot = MessagesController.getInstance(i11).getInputUser(l8Var.J0);
                     addpreviewmedia.media = inputMedia;
-                    addpreviewmedia.lang_code = o8Var.K0;
+                    addpreviewmedia.lang_code = l8Var.K0;
                     tL_stories_sendStory = addpreviewmedia;
                 } else {
                     TL_stories.TL_stories_sendStory tL_stories_sendStory2 = new TL_stories.TL_stories_sendStory();
@@ -364,15 +364,15 @@ public final class k9 implements NotificationCenter.NotificationCenterDelegate {
                     tL_stories_sendStory2.peer = MessagesController.getInstance(i11).getInputPeer(j3);
                     tL_stories_sendStory2.media = inputMedia;
                     tL_stories_sendStory2.privacy_rules.addAll(arrayList2);
-                    tL_stories_sendStory2.pinned = o8Var.G0;
-                    tL_stories_sendStory2.noforwards = !o8Var.H0;
-                    tL_stories_sendStory2.albums = o8Var.w0 != null ? new ArrayList<>(o8Var.w0) : null;
-                    TLRPC.InputDocument inputDocument = o8Var.z;
+                    tL_stories_sendStory2.pinned = l8Var.G0;
+                    tL_stories_sendStory2.noforwards = !l8Var.H0;
+                    tL_stories_sendStory2.albums = l8Var.w0 != null ? new ArrayList<>(l8Var.w0) : null;
+                    TLRPC.InputDocument inputDocument = l8Var.z;
                     if (inputDocument != null) {
                         tL_stories_sendStory2.flags |= 512;
                         tL_stories_sendStory2.music = inputDocument;
                     }
-                    CharSequence charSequence3 = o8Var.C0;
+                    CharSequence charSequence3 = l8Var.C0;
                     if (charSequence3 != null) {
                         tL_stories_sendStory2.flags |= 3;
                         CharSequence[] charSequenceArr = {charSequence3};
@@ -392,22 +392,22 @@ public final class k9 implements NotificationCenter.NotificationCenterDelegate {
                     } else {
                         i10 = 0;
                     }
-                    if (o8Var.n) {
+                    if (l8Var.n) {
                         tL_stories_sendStory2.flags |= 64;
-                        tL_stories_sendStory2.fwd_from_id = MessagesController.getInstance(i11).getInputPeer(o8Var.q);
-                        tL_stories_sendStory2.fwd_from_story = o8Var.r;
+                        tL_stories_sendStory2.fwd_from_id = MessagesController.getInstance(i11).getInputPeer(l8Var.q);
+                        tL_stories_sendStory2.fwd_from_story = l8Var.r;
                         tL_stories_sendStory2.fwd_modified = !z12;
                     }
-                    int i15 = o8Var.I0;
+                    int i15 = l8Var.I0;
                     if (i15 == Integer.MAX_VALUE) {
                         tL_stories_sendStory2.pinned = true;
                     } else {
                         tL_stories_sendStory2.flags |= 8;
                         tL_stories_sendStory2.period = i15;
                     }
-                    if (o8Var.T0 != null) {
-                        while (i10 < o8Var.T0.size()) {
-                            TL_stories.MediaArea mediaArea = ((VideoEditedInfo.MediaEntity) o8Var.T0.get(i10)).mediaArea;
+                    if (l8Var.T0 != null) {
+                        while (i10 < l8Var.T0.size()) {
+                            TL_stories.MediaArea mediaArea = ((VideoEditedInfo.MediaEntity) l8Var.T0.get(i10)).mediaArea;
                             if (mediaArea != null) {
                                 tL_stories_sendStory2.media_areas.add(mediaArea);
                             }
@@ -419,29 +419,29 @@ public final class k9 implements NotificationCenter.NotificationCenterDelegate {
                     }
                     tL_stories_sendStory = tL_stories_sendStory2;
                 }
-            } else if (o8Var.J0 != 0) {
+            } else if (l8Var.J0 != 0) {
                 TL_bots.editPreviewMedia editpreviewmedia = new TL_bots.editPreviewMedia();
-                editpreviewmedia.bot = MessagesController.getInstance(i11).getInputUser(o8Var.J0);
-                editpreviewmedia.media = o8Var.L0;
+                editpreviewmedia.bot = MessagesController.getInstance(i11).getInputUser(l8Var.J0);
+                editpreviewmedia.media = l8Var.L0;
                 editpreviewmedia.new_media = inputMedia;
-                editpreviewmedia.lang_code = o8Var.K0;
+                editpreviewmedia.lang_code = l8Var.K0;
                 tL_stories_sendStory = editpreviewmedia;
             } else {
                 TL_stories.TL_stories_editStory tL_stories_editStory = new TL_stories.TL_stories_editStory();
-                tL_stories_editStory.id = o8Var.f;
+                tL_stories_editStory.id = l8Var.f;
                 tL_stories_editStory.peer = MessagesController.getInstance(i11).getInputPeer(j3);
                 tL_stories_editStory.flags |= 16;
-                TLRPC.InputDocument inputDocument2 = o8Var.z;
+                TLRPC.InputDocument inputDocument2 = l8Var.z;
                 if (inputDocument2 != null) {
                     tL_stories_editStory.music = inputDocument2;
                 } else {
                     tL_stories_editStory.music = new TLRPC.TL_inputDocumentEmpty();
                 }
-                if (inputMedia != null && o8Var.j) {
+                if (inputMedia != null && l8Var.j) {
                     tL_stories_editStory.flags |= 1;
                     tL_stories_editStory.media = inputMedia;
                 }
-                if (o8Var.k && (charSequence2 = o8Var.C0) != null) {
+                if (l8Var.k && (charSequence2 = l8Var.C0) != null) {
                     tL_stories_editStory.flags |= 2;
                     CharSequence[] charSequenceArr2 = {charSequence2};
                     if (charSequence2.length() > i14) {
@@ -457,17 +457,17 @@ public final class k9 implements NotificationCenter.NotificationCenterDelegate {
                     }
                     tL_stories_editStory.caption = charSequenceArr2[0].toString();
                 }
-                if (o8Var.l) {
+                if (l8Var.l) {
                     tL_stories_editStory.flags |= 4;
                     tL_stories_editStory.privacy_rules.addAll(arrayList2);
                 }
-                ArrayList arrayList7 = o8Var.m;
+                ArrayList arrayList7 = l8Var.m;
                 if (arrayList7 != null) {
                     tL_stories_editStory.media_areas.addAll(arrayList7);
                 }
-                if (o8Var.T0 != null) {
-                    for (int i16 = 0; i16 < o8Var.T0.size(); i16++) {
-                        TL_stories.MediaArea mediaArea2 = ((VideoEditedInfo.MediaEntity) o8Var.T0.get(i16)).mediaArea;
+                if (l8Var.T0 != null) {
+                    for (int i16 = 0; i16 < l8Var.T0.size(); i16++) {
+                        TL_stories.MediaArea mediaArea2 = ((VideoEditedInfo.MediaEntity) l8Var.T0.get(i16)).mediaArea;
                         if (mediaArea2 != null) {
                             tL_stories_editStory.media_areas.add(mediaArea2);
                         }
@@ -479,7 +479,7 @@ public final class k9 implements NotificationCenter.NotificationCenterDelegate {
                 tL_stories_sendStory = tL_stories_editStory;
             }
             h9Var = new h9(this, 0);
-            if (BuildVars.DEBUG_PRIVATE_VERSION || z11 || (charSequence = o8Var.C0) == null || !charSequence.toString().contains("#failtest") || this.H) {
+            if (BuildVars.DEBUG_PRIVATE_VERSION || z11 || (charSequence = l8Var.C0) == null || !charSequence.toString().contains("#failtest") || this.H) {
                 this.w = ConnectionsManager.getInstance(i11).sendRequest(tL_stories_sendStory, h9Var, 64);
             }
             TLRPC.TL_error tL_error = new TLRPC.TL_error();
@@ -493,7 +493,7 @@ public final class k9 implements NotificationCenter.NotificationCenterDelegate {
         TLRPC.InputMedia inputMedia2 = tL_inputMediaPhoto;
         inputMedia2 = tL_inputMediaPhoto;
         if (tL_inputMediaPhoto == null) {
-            if (o8Var.E()) {
+            if (l8Var.E()) {
             }
         }
         if (!UserConfig.getInstance(i11).isPremium()) {
@@ -509,17 +509,17 @@ public final class k9 implements NotificationCenter.NotificationCenterDelegate {
     }
 
     public final void d() {
-        ci.o8 o8Var = this.c;
-        if (o8Var.b0) {
+        ci.l8 l8Var = this.c;
+        if (l8Var.b0) {
             TLRPC.TL_inputFileStoryDocument tL_inputFileStoryDocument = new TLRPC.TL_inputFileStoryDocument();
             tL_inputFileStoryDocument.doc = MessagesController.toInputDocument(this.c.c0);
             c(tL_inputFileStoryDocument);
-        } else if ((o8Var.g || (o8Var.n && o8Var.t != null)) && !o8Var.j && o8Var.o0 == null) {
+        } else if ((l8Var.g || (l8Var.n && l8Var.t != null)) && !l8Var.j && l8Var.o0 == null) {
             c(null);
             return;
         }
-        ci.ga gaVar = this.c.E0;
-        this.G = gaVar != null && gaVar.a == 1;
+        ci.da daVar = this.c.E0;
+        this.G = daVar != null && daVar.a == 1;
         NotificationCenter.getInstance(this.M.a).addObserver(this, NotificationCenter.fileUploaded);
         NotificationCenter.getInstance(this.M.a).addObserver(this, NotificationCenter.fileUploadFailed);
         NotificationCenter.getInstance(this.M.a).addObserver(this, NotificationCenter.fileUploadProgressChanged);
@@ -531,13 +531,13 @@ public final class k9 implements NotificationCenter.NotificationCenterDelegate {
         if (E) {
             TLRPC.TL_message tL_message = new TLRPC.TL_message();
             tL_message.id = 1;
-            String absolutePath = ci.o8.x(this.M.a, true).getAbsolutePath();
+            String absolutePath = ci.l8.x(this.M.a, true).getAbsolutePath();
             tL_message.attachPath = absolutePath;
             this.e = absolutePath;
             this.E = new MessageObject(this.M.a, (TLRPC.Message) tL_message, (MessageObject) null, false, false);
             this.c.s(new j9(this, 1));
         } else {
-            File w10 = ci.o8.w(this.M.a, "jpg");
+            File w10 = ci.l8.w(this.M.a, "jpg");
             this.e = w10.getAbsolutePath();
             Utilities.themeQueue.postRunnable(new a1.e(21, this, w10));
         }
@@ -587,16 +587,16 @@ public final class k9 implements NotificationCenter.NotificationCenterDelegate {
         if (i10 == NotificationCenter.filePreparingFailed) {
             if (objArr[0] == this.E) {
                 if (!this.b) {
-                    ci.o8 o8Var = this.c;
-                    o8Var.w = true;
-                    o8Var.x = new TLRPC.TL_error();
-                    TLRPC.TL_error tL_error = o8Var.x;
+                    ci.l8 l8Var = this.c;
+                    l8Var.w = true;
+                    l8Var.x = new TLRPC.TL_error();
+                    TLRPC.TL_error tL_error = l8Var.x;
                     tL_error.code = 400;
                     tL_error.text = "FILE_PREPARE_FAILED";
                     this.d = true;
                     this.I = true;
                     this.H = true;
-                    l9Var.w.d(o8Var);
+                    l9Var.w.d(l8Var);
                 }
                 b();
                 return;
@@ -631,15 +631,15 @@ public final class k9 implements NotificationCenter.NotificationCenterDelegate {
     }
 
     public final void e() {
-        ci.o8 o8Var = this.c;
-        o8Var.getClass();
+        ci.l8 l8Var = this.c;
+        l8Var.getClass();
         FileLoader fileLoader = FileLoader.getInstance(this.M.a);
         String str = this.e;
-        boolean z10 = !o8Var.K;
+        boolean z10 = !l8Var.K;
         if (this.s) {
             VideoEditedInfo videoEditedInfo = this.F;
             r6 = Math.max(1, (int) (videoEditedInfo != null ? videoEditedInfo.estimatedSize : 0L));
         }
-        fileLoader.uploadFile(str, false, z10, r6, o8Var.K ? 33554432 : 16777216, true);
+        fileLoader.uploadFile(str, false, z10, r6, l8Var.K ? 33554432 : 16777216, true);
     }
 }

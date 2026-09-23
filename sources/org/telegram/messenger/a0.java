@@ -14,7 +14,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a0 implements Runnable {
     public final /* synthetic */ int a;
@@ -48,7 +48,7 @@ public final /* synthetic */ class a0 implements Runnable {
                 MediaController.lambda$saveFile$55((File) this.b, (File) this.c, (boolean[]) this.d, (Utilities.Callback) this.e, (org.telegram.ui.ActionBar.b2) this.f, (boolean[]) this.h);
                 break;
             case 3:
-                ((MessagesController) this.b).lambda$didReceivedNotification$44((TLRPC.WallPaper) this.c, (TLRPC.TL_wallPaperSettings) this.d, (org.telegram.ui.ActionBar.b6) this.e, (File) this.f, (String) this.h);
+                ((MessagesController) this.b).lambda$didReceivedNotification$44((TLRPC.WallPaper) this.c, (TLRPC.TL_wallPaperSettings) this.d, (org.telegram.ui.ActionBar.a6) this.e, (File) this.f, (String) this.h);
                 break;
             case 4:
                 ((MessagesController) this.b).lambda$checkCanOpenChat$451((org.telegram.ui.ActionBar.b2) this.c, (nf.e) this.d, (TLObject) this.e, (org.telegram.ui.ActionBar.n2) this.f, (Bundle) this.h);

@@ -1,9 +1,9 @@
 package ii;
 
 import org.telegram.messenger.UserConfig;
-import org.telegram.ui.bj0;
+import org.telegram.ui.wi0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
@@ -20,9 +20,9 @@ public final /* synthetic */ class d implements Runnable {
             case 0:
                 r rVar = this.b;
                 rVar.I(2147483646, true, 0, false, 0L);
-                bj0 bj0Var = rVar.O;
-                if (bj0Var != null) {
-                    bj0Var.h(false);
+                wi0 wi0Var = rVar.O;
+                if (wi0Var != null) {
+                    wi0Var.h(false);
                     rVar.O = null;
                     break;
                 }
@@ -30,9 +30,9 @@ public final /* synthetic */ class d implements Runnable {
             case 1:
                 r rVar2 = this.b;
                 rVar2.I(0, false, 0, false, 0L);
-                bj0 bj0Var2 = rVar2.O;
-                if (bj0Var2 != null) {
-                    bj0Var2.h(true);
+                wi0 wi0Var2 = rVar2.O;
+                if (wi0Var2 != null) {
+                    wi0Var2.h(true);
                     rVar2.O = null;
                     break;
                 }
@@ -46,9 +46,9 @@ public final /* synthetic */ class d implements Runnable {
                 break;
             case 3:
                 r rVar4 = this.b;
-                b4 b4Var = rVar4.s;
-                if (b4Var != null) {
-                    b4Var.setSendEnabled(rVar4.r.M3());
+                c4 c4Var = rVar4.s;
+                if (c4Var != null) {
+                    c4Var.setSendEnabled(rVar4.r.M3());
                     break;
                 }
                 break;

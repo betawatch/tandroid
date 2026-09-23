@@ -4,11 +4,11 @@ import android.content.Context;
 import android.graphics.PointF;
 import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.vl;
-import org.telegram.ui.Components.hk0;
+import org.telegram.messenger.ul;
+import org.telegram.ui.Components.ik0;
 import w7.x5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class t0 extends j {
     public final r0 q0;
@@ -53,16 +53,16 @@ public final class t0 extends j {
     }
 
     @Override // qg.j
-    public hk0 getSelectionBounds() {
+    public ik0 getSelectionBounds() {
         ViewGroup viewGroup = (ViewGroup) getParent();
         if (viewGroup == null) {
-            return new hk0();
+            return new ik0();
         }
         float scaleX = viewGroup.getScaleX();
         float dp = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
         float dp2 = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredHeight());
-        float v = vl.v(dp, 2.0f, getPositionX(), scaleX);
-        return new hk0(v, vl.v(dp2, 2.0f, getPositionY(), scaleX), ((dp * scaleX) + v) - v, dp2 * scaleX);
+        float v = ul.v(dp, 2.0f, getPositionX(), scaleX);
+        return new ik0(v, ul.v(dp2, 2.0f, getPositionY(), scaleX), ((dp * scaleX) + v) - v, dp2 * scaleX);
     }
 
     @Override // qg.j

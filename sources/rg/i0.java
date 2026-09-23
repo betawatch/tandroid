@@ -21,25 +21,25 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
-import org.telegram.messenger.vl;
+import org.telegram.messenger.ul;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.f3;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.l2;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.f9;
-import org.telegram.ui.Components.g01;
-import org.telegram.ui.Components.i9;
-import org.telegram.ui.Components.u9;
+import org.telegram.ui.Components.f01;
+import org.telegram.ui.Components.h9;
+import org.telegram.ui.Components.k9;
+import org.telegram.ui.Components.w9;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.bo;
-import org.telegram.ui.s60;
+import org.telegram.ui.p60;
+import org.telegram.ui.xn;
 import w7.x5;
 import w7.z5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class i0 extends LinearLayout {
     public TextView a;
@@ -110,8 +110,8 @@ public final class i0 extends LinearLayout {
         ArrayList arrayList3;
         int min;
         int i19;
-        e6 e6Var;
-        e6 e6Var2;
+        d6 d6Var;
+        d6 d6Var2;
         ArrayList arrayList4;
         boolean z12;
         int i20;
@@ -128,12 +128,12 @@ public final class i0 extends LinearLayout {
         ArrayList arrayList7;
         ArrayList arrayList8;
         int size2;
-        e6 e6Var3;
+        d6 d6Var3;
         int i27;
         int i28;
-        e6 e6Var4;
-        e6 e6Var5;
-        e6 e6Var6;
+        d6 d6Var4;
+        d6 d6Var5;
+        d6 d6Var6;
         ArrayList arrayList9;
         int i29;
         ArrayList arrayList10;
@@ -143,17 +143,17 @@ public final class i0 extends LinearLayout {
         int i32;
         int i33;
         TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus;
-        e6 e6Var7;
-        e6 e6Var8;
+        d6 d6Var7;
+        d6 d6Var8;
         int i34;
         int i35;
-        e6 e6Var9;
+        d6 d6Var9;
         final int i36;
-        e6 e6Var10;
-        e6 e6Var11;
-        e6 e6Var12;
-        e6 e6Var13;
-        e6 e6Var14;
+        d6 d6Var10;
+        d6 d6Var11;
+        d6 d6Var12;
+        d6 d6Var13;
+        d6 d6Var14;
         int i37;
         boolean z13;
         TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus2;
@@ -191,7 +191,7 @@ public final class i0 extends LinearLayout {
                 spannableStringBuilder.append((CharSequence) " ");
                 spannableStringBuilder.append((CharSequence) LocaleController.formatString(R.string.GroupBoostedByUserWithDescription, s12 == null ? "" : s12.title));
                 str = spannableStringBuilder.toString();
-            } else if (n2Var instanceof s60) {
+            } else if (n2Var instanceof p60) {
                 str = LocaleController.formatPluralString("BoostingGroupBoostWhatAreBoostsDescription", tg.t.g(), new Object[0]);
             } else {
                 SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(j0Var.q1(true));
@@ -287,35 +287,35 @@ public final class i0 extends LinearLayout {
                             i18 = ((f3) j0Var).currentAccount;
                             if (!MessagesController.getInstance(i18).premiumFeaturesBlocked() && (((arrayList = j0Var.D0) != null && !arrayList.isEmpty()) || ((arrayList2 = j0Var.C0) != null && arrayList2.size() >= j0Var.B0.size()))) {
                                 arrayList3 = !j0Var.D0.isEmpty() ? j0Var.C0 : j0Var.D0;
-                                i9 i9Var = new i9(context, false);
-                                i9Var.a.q = AndroidUtilities.dp(3.33f);
-                                i9Var.setSize(AndroidUtilities.dp(72.0f));
-                                i9Var.setStepFactor(0.4f);
+                                k9 k9Var = new k9(context, false);
+                                k9Var.a.q = AndroidUtilities.dp(3.33f);
+                                k9Var.setSize(AndroidUtilities.dp(72.0f));
+                                k9Var.setStepFactor(0.4f);
                                 min = Math.min(arrayList3.size(), 3);
-                                i9Var.setCount(min);
+                                k9Var.setCount(min);
                                 for (i19 = 0; i19 < min; i19++) {
                                     Long l4 = (Long) arrayList3.get(i19);
                                     l4.getClass();
                                     i30 = ((f3) j0Var).currentAccount;
                                     TLRPC.User user = MessagesController.getInstance(i30).getUser(l4);
                                     i31 = ((f3) j0Var).currentAccount;
-                                    i9Var.b(i19, user, i31);
+                                    k9Var.b(i19, user, i31);
                                 }
-                                i9Var.a(false);
-                                addView(i9Var, x5.t(((min - 1) * 30) + 72, 72, 1, 0, 16, 0, 13));
+                                k9Var.a(false);
+                                addView(k9Var, x5.t(((min - 1) * 30) + 72, 72, 1, 0, 16, 0, 13));
                                 TextView textView = new TextView(context);
                                 textView.setGravity(17);
-                                vl.k(20.0f, 1, textView);
-                                int i52 = i6.j5;
-                                e6Var = ((f3) j0Var).resourcesProvider;
-                                textView.setTextColor(i6.v0(i52, e6Var));
+                                ul.k(20.0f, 1, textView);
+                                int i52 = h6.j5;
+                                d6Var = ((f3) j0Var).resourcesProvider;
+                                textView.setTextColor(h6.v0(i52, d6Var));
                                 textView.setText(LocaleController.getString(R.string.InvitePremiumBlockedTitle));
                                 addView(textView, x5.t(-1, -2, 1, 32, 0, 32, 9));
                                 TextView textView2 = new TextView(context);
                                 textView2.setGravity(17);
                                 textView2.setTextSize(1, 14.0f);
-                                e6Var2 = ((f3) j0Var).resourcesProvider;
-                                textView2.setTextColor(i6.v0(i52, e6Var2));
+                                d6Var2 = ((f3) j0Var).resourcesProvider;
+                                textView2.setTextColor(h6.v0(i52, d6Var2));
                                 addView(textView2, x5.t(-1, -2, 1, 32, 0, 32, 19));
                                 boolean z14 = i39 != 34;
                                 arrayList4 = j0Var.C0;
@@ -351,11 +351,11 @@ public final class i0 extends LinearLayout {
                                             i21 = ((f3) j0Var).currentAccount;
                                             String formatPluralString = LocaleController.formatPluralString(str3, size5, forcedFirstName4, UserObject.getForcedFirstName(MessagesController.getInstance(i21).getUser((Long) arrayList3.get(1))));
                                             int size6 = arrayList3.size() - 2;
-                                            int themedColor = j0Var.getThemedColor(i6.h5);
-                                            i9Var.b = new z0(i6.Lj, i6.Mj, -1, -1, null);
-                                            i9Var.c = new g01(hg.c.i(size6, "+"), 12.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
+                                            int themedColor = j0Var.getThemedColor(h6.h5);
+                                            k9Var.b = new z0(h6.Lj, h6.Mj, -1, -1, null);
+                                            k9Var.c = new f01(hg.c.i(size6, "+"), 12.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
                                             Paint paint = new Paint(1);
-                                            i9Var.d = paint;
+                                            k9Var.d = paint;
                                             paint.setColor(themedColor);
                                             str2 = formatPluralString;
                                         }
@@ -378,9 +378,9 @@ public final class i0 extends LinearLayout {
                                             ((ViewGroup.MarginLayoutParams) textView2.getLayoutParams()).bottomMargin = AndroidUtilities.dp(8.0f);
                                             j0Var.j0 = true;
                                         } else {
-                                            e6Var3 = ((f3) j0Var).resourcesProvider;
+                                            d6Var3 = ((f3) j0Var).resourcesProvider;
                                             final int i56 = 0;
-                                            p0 p0Var = new p0(context, e6Var3, false);
+                                            p0 p0Var = new p0(context, d6Var3, false);
                                             z5.b(p0Var, 0.02f, 1.2f);
                                             p0Var.a(LocaleController.getString(R.string.InvitePremiumBlockedSubscribe), new View.OnClickListener(this) { // from class: rg.g0
                                                 public final /* synthetic */ i0 b;
@@ -403,7 +403,7 @@ public final class i0 extends LinearLayout {
                                                             break;
                                                         default:
                                                             j0 j0Var2 = this.b.e;
-                                                            j0Var2.n.presentFragment(bo.R9(j0Var2.a0));
+                                                            j0Var2.n.presentFragment(xn.R9(j0Var2.a0));
                                                             j0Var2.dismiss();
                                                             break;
                                                     }
@@ -415,9 +415,9 @@ public final class i0 extends LinearLayout {
                                             addView(p0Var, x5.k(f13, 0.0f, (i28 / AndroidUtilities.density) + 4.0f, 18.0f, -1, 48));
                                             bi.o oVar2 = new bi.o(this, context);
                                             oVar2.setGravity(17);
-                                            int i57 = i6.z6;
-                                            e6Var4 = ((f3) j0Var).resourcesProvider;
-                                            oVar2.setTextColor(i6.v0(i57, e6Var4));
+                                            int i57 = h6.z6;
+                                            d6Var4 = ((f3) j0Var).resourcesProvider;
+                                            oVar2.setTextColor(h6.v0(i57, d6Var4));
                                             oVar2.setText(" " + LocaleController.getString(R.string.InvitePremiumBlockedOr) + " ");
                                             oVar2.setTextSize(14.0f);
                                             addView(oVar2, x5.t(190, -2, 1, 12, 0, 12, 20));
@@ -425,15 +425,15 @@ public final class i0 extends LinearLayout {
                                             textView3.setGravity(17);
                                             textView3.setTypeface(AndroidUtilities.bold());
                                             textView3.setTextSize(1, 20.0f);
-                                            e6Var5 = ((f3) j0Var).resourcesProvider;
-                                            textView3.setTextColor(i6.v0(i52, e6Var5));
+                                            d6Var5 = ((f3) j0Var).resourcesProvider;
+                                            textView3.setTextColor(h6.v0(i52, d6Var5));
                                             textView3.setText(LocaleController.getString(R.string.InviteBlockedTitle));
                                             addView(textView3, x5.t(-1, -2, 1, 32, 0, 32, 9));
                                             TextView textView4 = new TextView(context);
                                             textView4.setGravity(17);
                                             textView4.setTextSize(1, 14.0f);
-                                            e6Var6 = ((f3) j0Var).resourcesProvider;
-                                            textView4.setTextColor(i6.v0(i52, e6Var6));
+                                            d6Var6 = ((f3) j0Var).resourcesProvider;
+                                            textView4.setTextColor(h6.v0(i52, d6Var6));
                                             arrayList9 = j0Var.D0;
                                             if (arrayList9.size() <= 1) {
                                                 textView4.setText(LocaleController.getString(R.string.InviteBlockedOneMessage));
@@ -465,8 +465,8 @@ public final class i0 extends LinearLayout {
                             }
                         }
                         if (i39 != 31 && i39 != 34) {
-                            e6Var14 = ((f3) j0Var).resourcesProvider;
-                            h0 h0Var = new h0(this, context, i40, i15, i49, f12, e6Var14);
+                            d6Var14 = ((f3) j0Var).resourcesProvider;
+                            h0 h0Var = new h0(this, context, i40, i15, i49, f12, d6Var14);
                             j0Var.x0 = h0Var;
                             if (z11) {
                                 h0Var.setBagePosition(f7);
@@ -518,7 +518,7 @@ public final class i0 extends LinearLayout {
                             imageView.setImageDrawable(f0.e.d(getContext(), R.drawable.large_boosts));
                             i32 = 17;
                             frameLayout.addView(imageView, x5.e(-2, -2, 17));
-                            frameLayout.setBackground(i6.K(AndroidUtilities.dp(79.0f), i6.u0(i6.Oh)));
+                            frameLayout.setBackground(h6.K(AndroidUtilities.dp(79.0f), h6.u0(h6.Oh)));
                             addView(frameLayout, x5.t(79, 79, 1, 0, 23, 0, 0));
                         } else {
                             i32 = 17;
@@ -533,7 +533,7 @@ public final class i0 extends LinearLayout {
                         } else {
                             i33 = 19;
                             if (i39 == 19) {
-                                if (n2Var instanceof s60) {
+                                if (n2Var instanceof p60) {
                                     this.a.setText(LocaleController.getString(R.string.BoostingGroupBoostWhatAreBoosts));
                                 } else {
                                     this.a.setText(j0Var.r1());
@@ -584,9 +584,9 @@ public final class i0 extends LinearLayout {
                                     }
                                     this.a.setTextSize(1, 20.0f);
                                     TextView textView6 = this.a;
-                                    int i58 = i6.G6;
-                                    e6Var7 = ((f3) j0Var).resourcesProvider;
-                                    textView6.setTextColor(i6.v0(i58, e6Var7));
+                                    int i58 = h6.G6;
+                                    d6Var7 = ((f3) j0Var).resourcesProvider;
+                                    textView6.setTextColor(h6.v0(i58, d6Var7));
                                     this.a.setGravity(i32);
                                     if (i39 != i33 || i39 == 32 || j0Var.y1()) {
                                         tg.b bVar = new tg.b(context);
@@ -602,18 +602,18 @@ public final class i0 extends LinearLayout {
                                             linearLayout.setClipChildren(false);
                                             FrameLayout frameLayout2 = new FrameLayout(getContext());
                                             int dp2 = AndroidUtilities.dp(14.0f);
-                                            int i59 = i6.a7;
-                                            e6Var8 = ((f3) j0Var).resourcesProvider;
-                                            frameLayout2.setBackground(i6.b0(dp2, i6.v0(i59, e6Var8)));
-                                            u9 u9Var = new u9(getContext());
-                                            u9Var.setRoundRadius(AndroidUtilities.dp(14.0f));
+                                            int i59 = h6.a7;
+                                            d6Var8 = ((f3) j0Var).resourcesProvider;
+                                            frameLayout2.setBackground(h6.b0(dp2, h6.v0(i59, d6Var8)));
+                                            w9 w9Var = new w9(getContext());
+                                            w9Var.setRoundRadius(AndroidUtilities.dp(14.0f));
                                             i34 = ((f3) j0Var).currentAccount;
                                             TLRPC.Chat chat = MessagesController.getInstance(i34).getChat(Long.valueOf(-j0Var.a0));
-                                            f9 f9Var = new f9();
+                                            h9 h9Var = new h9();
                                             i35 = ((f3) j0Var).currentAccount;
-                                            f9Var.k(i35, chat);
-                                            u9Var.e(chat, f9Var);
-                                            frameLayout2.addView(u9Var, x5.c(28.0f, 28));
+                                            h9Var.k(i35, chat);
+                                            w9Var.e(chat, h9Var);
+                                            frameLayout2.addView(w9Var, x5.c(28.0f, 28));
                                             TextView textView7 = new TextView(getContext());
                                             if (chat != null) {
                                                 textView7.setText(chat.title);
@@ -622,8 +622,8 @@ public final class i0 extends LinearLayout {
                                             textView7.setMaxLines(1);
                                             textView7.setEllipsize(TextUtils.TruncateAt.END);
                                             textView7.setTextSize(1, 13.0f);
-                                            e6Var9 = ((f3) j0Var).resourcesProvider;
-                                            textView7.setTextColor(i6.v0(i58, e6Var9));
+                                            d6Var9 = ((f3) j0Var).resourcesProvider;
+                                            textView7.setTextColor(h6.v0(i58, d6Var9));
                                             frameLayout2.addView(textView7, x5.d(-2, -2.0f, 16, 36.0f, 0.0f, 12.0f, 0.0f));
                                             linearLayout.addView(frameLayout2, x5.t(-2, 28, 80, 18, 0, 18, 0));
                                             LayoutTransition layoutTransition = new LayoutTransition();
@@ -655,7 +655,7 @@ public final class i0 extends LinearLayout {
                                                             break;
                                                         default:
                                                             j0 j0Var2 = this.b.e;
-                                                            j0Var2.n.presentFragment(bo.R9(j0Var2.a0));
+                                                            j0Var2.n.presentFragment(xn.R9(j0Var2.a0));
                                                             j0Var2.dismiss();
                                                             break;
                                                     }
@@ -669,21 +669,21 @@ public final class i0 extends LinearLayout {
                                             TextView textView9 = this.b;
                                             textView9.setLineSpacing(textView9.getLineSpacingExtra(), this.b.getLineSpacingMultiplier() * 1.1f);
                                             if (i39 != 18) {
-                                                e6Var11 = ((f3) j0Var).resourcesProvider;
-                                                if (e6Var11 instanceof ai.d) {
+                                                d6Var11 = ((f3) j0Var).resourcesProvider;
+                                                if (d6Var11 instanceof ai.d) {
                                                     TextView textView10 = this.b;
-                                                    int i60 = i6.y6;
-                                                    e6Var13 = ((f3) j0Var).resourcesProvider;
-                                                    textView10.setTextColor(i6.v0(i60, e6Var13));
+                                                    int i60 = h6.y6;
+                                                    d6Var13 = ((f3) j0Var).resourcesProvider;
+                                                    textView10.setTextColor(h6.v0(i60, d6Var13));
                                                 } else {
                                                     TextView textView11 = this.b;
-                                                    e6Var12 = ((f3) j0Var).resourcesProvider;
-                                                    textView11.setTextColor(i6.v0(i58, e6Var12));
+                                                    d6Var12 = ((f3) j0Var).resourcesProvider;
+                                                    textView11.setTextColor(h6.v0(i58, d6Var12));
                                                 }
                                             } else {
                                                 TextView textView12 = this.b;
-                                                e6Var10 = ((f3) j0Var).resourcesProvider;
-                                                textView12.setTextColor(i6.v0(i58, e6Var10));
+                                                d6Var10 = ((f3) j0Var).resourcesProvider;
+                                                textView12.setTextColor(h6.v0(i58, d6Var10));
                                             }
                                             if (i39 != i33) {
                                                 addView(this.b, x5.t(-2, -2, 1, 24, -2, 24, 17));
@@ -729,9 +729,9 @@ public final class i0 extends LinearLayout {
                             }
                             this.a.setTextSize(1, 20.0f);
                             TextView textView62 = this.a;
-                            int i582 = i6.G6;
-                            e6Var7 = ((f3) j0Var).resourcesProvider;
-                            textView62.setTextColor(i6.v0(i582, e6Var7));
+                            int i582 = h6.G6;
+                            d6Var7 = ((f3) j0Var).resourcesProvider;
+                            textView62.setTextColor(h6.v0(i582, d6Var7));
                             this.a.setGravity(i32);
                             if (i39 != i33) {
                             }
@@ -746,9 +746,9 @@ public final class i0 extends LinearLayout {
                         i33 = 19;
                         this.a.setTextSize(1, 20.0f);
                         TextView textView622 = this.a;
-                        int i5822 = i6.G6;
-                        e6Var7 = ((f3) j0Var).resourcesProvider;
-                        textView622.setTextColor(i6.v0(i5822, e6Var7));
+                        int i5822 = h6.G6;
+                        d6Var7 = ((f3) j0Var).resourcesProvider;
+                        textView622.setTextColor(h6.v0(i5822, d6Var7));
                         this.a.setGravity(i32);
                         if (i39 != i33) {
                         }
@@ -770,29 +770,29 @@ public final class i0 extends LinearLayout {
                 if (!MessagesController.getInstance(i18).premiumFeaturesBlocked()) {
                     if (!j0Var.D0.isEmpty()) {
                     }
-                    i9 i9Var2 = new i9(context, false);
-                    i9Var2.a.q = AndroidUtilities.dp(3.33f);
-                    i9Var2.setSize(AndroidUtilities.dp(72.0f));
-                    i9Var2.setStepFactor(0.4f);
+                    k9 k9Var2 = new k9(context, false);
+                    k9Var2.a.q = AndroidUtilities.dp(3.33f);
+                    k9Var2.setSize(AndroidUtilities.dp(72.0f));
+                    k9Var2.setStepFactor(0.4f);
                     min = Math.min(arrayList3.size(), 3);
-                    i9Var2.setCount(min);
+                    k9Var2.setCount(min);
                     while (i19 < min) {
                     }
-                    i9Var2.a(false);
-                    addView(i9Var2, x5.t(((min - 1) * 30) + 72, 72, 1, 0, 16, 0, 13));
+                    k9Var2.a(false);
+                    addView(k9Var2, x5.t(((min - 1) * 30) + 72, 72, 1, 0, 16, 0, 13));
                     TextView textView13 = new TextView(context);
                     textView13.setGravity(17);
-                    vl.k(20.0f, 1, textView13);
-                    int i522 = i6.j5;
-                    e6Var = ((f3) j0Var).resourcesProvider;
-                    textView13.setTextColor(i6.v0(i522, e6Var));
+                    ul.k(20.0f, 1, textView13);
+                    int i522 = h6.j5;
+                    d6Var = ((f3) j0Var).resourcesProvider;
+                    textView13.setTextColor(h6.v0(i522, d6Var));
                     textView13.setText(LocaleController.getString(R.string.InvitePremiumBlockedTitle));
                     addView(textView13, x5.t(-1, -2, 1, 32, 0, 32, 9));
                     TextView textView22 = new TextView(context);
                     textView22.setGravity(17);
                     textView22.setTextSize(1, 14.0f);
-                    e6Var2 = ((f3) j0Var).resourcesProvider;
-                    textView22.setTextColor(i6.v0(i522, e6Var2));
+                    d6Var2 = ((f3) j0Var).resourcesProvider;
+                    textView22.setTextColor(h6.v0(i522, d6Var2));
                     addView(textView22, x5.t(-1, -2, 1, 32, 0, 32, 19));
                     if (i39 != 34) {
                     }
@@ -817,8 +817,8 @@ public final class i0 extends LinearLayout {
                     return;
                 }
                 if (i39 != 31) {
-                    e6Var14 = ((f3) j0Var).resourcesProvider;
-                    h0 h0Var4 = new h0(this, context, i40, i15, i49, f12, e6Var14);
+                    d6Var14 = ((f3) j0Var).resourcesProvider;
+                    h0 h0Var4 = new h0(this, context, i40, i15, i49, f12, d6Var14);
                     j0Var.x0 = h0Var4;
                     if (z11) {
                     }
@@ -838,9 +838,9 @@ public final class i0 extends LinearLayout {
                 i33 = 19;
                 this.a.setTextSize(1, 20.0f);
                 TextView textView6222 = this.a;
-                int i58222 = i6.G6;
-                e6Var7 = ((f3) j0Var).resourcesProvider;
-                textView6222.setTextColor(i6.v0(i58222, e6Var7));
+                int i58222 = h6.G6;
+                d6Var7 = ((f3) j0Var).resourcesProvider;
+                textView6222.setTextColor(h6.v0(i58222, d6Var7));
                 this.a.setGravity(i32);
                 if (i39 != i33) {
                 }
@@ -880,9 +880,9 @@ public final class i0 extends LinearLayout {
             i33 = 19;
             this.a.setTextSize(1, 20.0f);
             TextView textView62222 = this.a;
-            int i582222 = i6.G6;
-            e6Var7 = ((f3) j0Var).resourcesProvider;
-            textView62222.setTextColor(i6.v0(i582222, e6Var7));
+            int i582222 = h6.G6;
+            d6Var7 = ((f3) j0Var).resourcesProvider;
+            textView62222.setTextColor(h6.v0(i582222, d6Var7));
             this.a.setGravity(i32);
             if (i39 != i33) {
             }
@@ -937,9 +937,9 @@ public final class i0 extends LinearLayout {
         i33 = 19;
         this.a.setTextSize(1, 20.0f);
         TextView textView622222 = this.a;
-        int i5822222 = i6.G6;
-        e6Var7 = ((f3) j0Var).resourcesProvider;
-        textView622222.setTextColor(i6.v0(i5822222, e6Var7));
+        int i5822222 = h6.G6;
+        d6Var7 = ((f3) j0Var).resourcesProvider;
+        textView622222.setTextColor(h6.v0(i5822222, d6Var7));
         this.a.setGravity(i32);
         if (i39 != i33) {
         }

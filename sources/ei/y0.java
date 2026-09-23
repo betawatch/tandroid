@@ -4,11 +4,11 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import ci.uc;
+import ci.rc;
 import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class y0 implements SensorEventListener {
     public long a;
@@ -47,9 +47,9 @@ public final class y0 implements SensorEventListener {
     @Override // android.hardware.SensorEventListener
     public final void onSensorChanged(SensorEvent sensorEvent) {
         a1 a1Var = this.d;
-        uc ucVar = a1Var.q;
-        if (ucVar != null) {
-            AndroidUtilities.cancelRunOnUIThread(ucVar);
+        rc rcVar = a1Var.q;
+        if (rcVar != null) {
+            AndroidUtilities.cancelRunOnUIThread(rcVar);
             a1Var.q = null;
         }
         if (a1Var.l || a1Var.k == null) {
@@ -67,9 +67,9 @@ public final class y0 implements SensorEventListener {
             a();
             return;
         }
-        uc ucVar2 = new uc(this, 11);
-        a1Var.q = ucVar2;
-        AndroidUtilities.runOnUIThread(ucVar2, j3 - currentTimeMillis);
+        rc rcVar2 = new rc(this, 11);
+        a1Var.q = rcVar2;
+        AndroidUtilities.runOnUIThread(rcVar2, j3 - currentTimeMillis);
     }
 
     @Override // android.hardware.SensorEventListener

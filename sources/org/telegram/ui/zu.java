@@ -1,91 +1,34 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.view.View;
+import android.animation.ValueAnimator;
+import android.app.Activity;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class zu extends org.telegram.ui.ActionBar.n2 {
-    public static final int[][] d = {new int[]{-14899731, -15431455}, new int[]{-11154873, -14175180}, new int[]{-11565578, -13276952}, new int[]{-1007845, -1996271}, new int[]{-765355, -2148011}, new int[]{-3903756, -6335009}, new int[]{-13451058, -14836538}};
-    public static final int[] e = {org.telegram.ui.ActionBar.i6.hj, org.telegram.ui.ActionBar.i6.ij, org.telegram.ui.ActionBar.i6.lj, org.telegram.ui.ActionBar.i6.kj, org.telegram.ui.ActionBar.i6.jj, org.telegram.ui.ActionBar.i6.pj, org.telegram.ui.ActionBar.i6.qj};
-    public static final int[] f = {R.drawable.msg_filled_data_videos, R.drawable.msg_filled_data_files, R.drawable.msg_filled_data_photos, R.drawable.msg_filled_data_messages, R.drawable.msg_filled_data_music, R.drawable.msg_filled_data_voice, R.drawable.msg_filled_data_calls};
-    public static final int[] h = {R.string.LocalVideoCache, R.string.LocalDocumentCache, R.string.LocalPhotoCache, R.string.MessagesSettings, R.string.LocalMusicCache, R.string.LocalAudioCache, R.string.CallsDataUsage};
-    public static final int[] n = {2, 5, 4, 1, 7, 3, 0};
-    public org.telegram.ui.Components.i81 a;
-    public org.telegram.ui.Components.h81 b;
-    public boolean c;
+public final class zu implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ float a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ Activity d;
+    public final /* synthetic */ av e;
 
-    public zu() {
-        super(null);
+    public zu(av avVar, float f7, int i10, int i11, Activity activity) {
+        this.e = avVar;
+        this.a = f7;
+        this.b = i10;
+        this.c = i11;
+        this.d = activity;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
-    public final View createView(Context context) {
-        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.actionBar.setTitle(LocaleController.getString(R.string.NetworkUsage));
-        org.telegram.ui.ActionBar.k kVar = this.actionBar;
-        int i10 = org.telegram.ui.ActionBar.i6.w8;
-        kVar.setBackgroundColor(getThemedColor(i10));
-        org.telegram.ui.ActionBar.k kVar2 = this.actionBar;
-        int i11 = org.telegram.ui.ActionBar.i6.G6;
-        kVar2.setTitleColor(getThemedColor(i11));
-        this.actionBar.B(getThemedColor(i11), false);
-        this.actionBar.A(getThemedColor(org.telegram.ui.ActionBar.i6.i6), false);
-        this.actionBar.setCastShadows(false);
-        this.actionBar.setActionBarMenuOnItemClick(new to(this, 19));
-        j0 j0Var = new j0(this, context, 6);
-        j0Var.setBackgroundColor(getThemedColor(org.telegram.ui.ActionBar.i6.a7));
-        org.telegram.ui.Components.i81 i81Var = new org.telegram.ui.Components.i81(context, null);
-        this.a = i81Var;
-        i81Var.setAdapter(new wu(this));
-        org.telegram.ui.Components.h81 n10 = this.a.n(8, true);
-        this.b = n10;
-        n10.setBackgroundColor(getThemedColor(i10));
-        j0Var.addView(this.b, w7.x5.e(-1, 48, 55));
-        j0Var.addView(this.a, w7.x5.d(-1, -1.0f, 119, 0.0f, 48.0f, 0.0f, 0.0f));
-        this.fragmentView = j0Var;
-        return j0Var;
-    }
-
-    @Override // org.telegram.ui.ActionBar.n2
-    public final org.telegram.ui.ActionBar.e6 getResourceProvider() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.ActionBar.n2
-    public final boolean isLightStatusBar() {
-        return !this.c ? super.isLightStatusBar() : AndroidUtilities.computePerceivedBrightness(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.w8, false)) > 0.721f;
-    }
-
-    @Override // org.telegram.ui.ActionBar.n2
-    public final boolean isSwipeBackEnabled(MotionEvent motionEvent) {
-        if (motionEvent != null) {
-            if (motionEvent.getY() <= AndroidUtilities.dp(48.0f) + org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) {
-                return true;
-            }
-        }
-        return this.a.getCurrentPosition() == 0;
-    }
-
-    @Override // org.telegram.ui.ActionBar.n2
-    public final void onTransitionAnimationProgress(boolean z10, float f7) {
-        if (f7 > 0.5f && !this.c) {
-            this.c = true;
-            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needCheckSystemBarColors, new Object[0]);
-        }
-        super.onTransitionAnimationProgress(z10, f7);
-    }
-
-    public final void r0() {
-        View currentView = this.a.getCurrentView();
-        if (currentView instanceof vu) {
-            vu vuVar = (vu) currentView;
-            vuVar.e1(new ru(vuVar), 700, true);
-        }
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        float max = Math.max(0.0f, Math.min(1.0f, ((((Float) valueAnimator.getAnimatedValue()).floatValue() * 350.0f) - this.a) / 150.0f));
+        cv cvVar = this.e.c;
+        cvVar.n = i0.a.d(max, this.b, this.c);
+        int i10 = cvVar.n;
+        Activity activity = this.d;
+        AndroidUtilities.setNavigationBarColor(activity, i10, false);
+        AndroidUtilities.setLightNavigationBar(activity, AndroidUtilities.computePerceivedBrightness(cvVar.n) >= 0.721f);
     }
 }

@@ -1,71 +1,85 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.view.View;
-import android.view.ViewGroup;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class uz0 extends pv0 {
-    public final /* synthetic */ ProfileActivity T;
+public final class uz0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ProfileActivity b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public uz0(ProfileActivity profileActivity, ViewGroup viewGroup, ViewGroup viewGroup2) {
-        super(viewGroup, viewGroup2);
-        this.T = profileActivity;
+    public /* synthetic */ uz0(ProfileActivity profileActivity, int i10) {
+        this.a = i10;
+        this.b = profileActivity;
     }
 
-    @Override // org.telegram.ui.pv0
-    public final void c(Canvas canvas, float f7, float f10, float f11, float f12, float f13) {
-        org.telegram.ui.ActionBar.k kVar;
-        org.telegram.ui.ActionBar.k kVar2;
-        org.telegram.ui.ActionBar.k kVar3;
-        if (f7 > 0.0f) {
-            RectF rectF = AndroidUtilities.rectTmp;
-            ProfileActivity profileActivity = this.T;
-            rectF.set(0.0f, 0.0f, profileActivity.n0.getMeasuredWidth(), AndroidUtilities.dp(30.0f) + profileActivity.n0.getMeasuredHeight());
-            canvas.saveLayerAlpha(rectF, (int) (255.0f * f7), 31);
-            profileActivity.Z.draw(canvas);
-            canvas.save();
-            kVar = ((org.telegram.ui.ActionBar.n2) profileActivity).actionBar;
-            float x10 = kVar.getX();
-            kVar2 = ((org.telegram.ui.ActionBar.n2) profileActivity).actionBar;
-            canvas.translate(x10, kVar2.getY());
-            kVar3 = ((org.telegram.ui.ActionBar.n2) profileActivity).actionBar;
-            kVar3.draw(canvas);
-            canvas.restore();
-            org.telegram.ui.Components.aj0 aj0Var = profileActivity.v;
-            if (aj0Var != null && aj0Var.getVisibility() == 0 && profileActivity.v.getAlpha() > 0.0f) {
-                canvas.save();
-                float f14 = (f7 * 0.5f) + 0.5f;
-                canvas.scale(f14, f14, (profileActivity.v.getMeasuredWidth() / 2.0f) + profileActivity.v.getX(), (profileActivity.v.getMeasuredHeight() / 2.0f) + profileActivity.v.getY());
-                canvas.translate(profileActivity.v.getX(), profileActivity.v.getY());
-                profileActivity.v.draw(canvas);
-                canvas.restore();
-            }
-            canvas.restore();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 2:
+                ProfileActivity profileActivity = this.b;
+                profileActivity.O1 = false;
+                profileActivity.a.N0 = true;
+                break;
+            default:
+                super.onAnimationCancel(animator);
+                break;
         }
     }
 
-    @Override // org.telegram.ui.pv0
-    public final void e() {
-        super.e();
-        ProfileActivity profileActivity = this.T;
-        profileActivity.fragmentView.invalidate();
-        for (int i10 = 0; i10 < profileActivity.n0.getChildCount(); i10++) {
-            profileActivity.n0.getChildAt(i10).invalidate();
-        }
-        org.telegram.ui.Components.aj0 aj0Var = profileActivity.v;
-        if (aj0Var != null) {
-            aj0Var.invalidate();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                super.onAnimationEnd(animator);
+                this.b.k4(true);
+                break;
+            case 1:
+                ProfileActivity profileActivity = this.b;
+                AnimatorSet animatorSet = profileActivity.w;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    profileActivity.w = null;
+                    break;
+                }
+                break;
+            case 2:
+                ProfileActivity profileActivity2 = this.b;
+                profileActivity2.O1 = false;
+                profileActivity2.a.N0 = true;
+                profileActivity2.j2.removeListener(this);
+                profileActivity2.d1.setBackgroundColor(-16777216);
+                profileActivity2.Y.setVisibility(8);
+                profileActivity2.n0.setVisibility(0);
+                profileActivity2.n0.setAlpha(1.0f);
+                break;
+            case 3:
+                ProfileActivity profileActivity3 = this.b;
+                profileActivity3.j2.removeListener(this);
+                profileActivity3.n0.setVisibility(8);
+                profileActivity3.n0.setAlpha(1.0f);
+                break;
+            default:
+                ProfileActivity profileActivity4 = this.b;
+                profileActivity4.w0 = null;
+                profileActivity4.fragmentView.invalidate();
+                break;
         }
     }
 
-    @Override // org.telegram.ui.pv0
-    public final boolean j(View view, ImageReceiver imageReceiver) {
-        return super.j(view, imageReceiver) && this.T.a.getScrollState() != 1;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 2:
+                ProfileActivity profileActivity = this.b;
+                ProfileActivity.s3(profileActivity, false);
+                profileActivity.n0.setAnimatedFileMaybe(profileActivity.e0.getImageReceiver().getAnimation());
+                profileActivity.n0.L();
+                break;
+            default:
+                super.onAnimationStart(animator);
+                break;
+        }
     }
 }

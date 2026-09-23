@@ -3,17 +3,17 @@ package pg;
 import android.content.Context;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import ii.v5;
+import ii.w5;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.r2;
-import org.telegram.ui.km0;
+import org.telegram.ui.em0;
 import w7.x5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class w extends LinearLayout {
     public final v a;
@@ -54,7 +54,7 @@ public final class w extends LinearLayout {
         EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
         this.d = editTextBoldCursor;
         editTextBoldCursor.setTextSize(1, 16.0f);
-        editTextBoldCursor.setBackground(i6.b0(AndroidUtilities.dp(10.0f), 436207615));
+        editTextBoldCursor.setBackground(h6.b0(AndroidUtilities.dp(10.0f), 436207615));
         editTextBoldCursor.setPadding(0, 0, 0, 0);
         editTextBoldCursor.setTextColor(-1);
         editTextBoldCursor.setGravity(17);
@@ -62,8 +62,8 @@ public final class w extends LinearLayout {
         editTextBoldCursor.setImeOptions(6);
         editTextBoldCursor.setImeActionLabel(LocaleController.getString(R.string.Done), 6);
         editTextBoldCursor.setTypeface(AndroidUtilities.bold());
-        editTextBoldCursor.addTextChangedListener(new km0(this));
-        editTextBoldCursor.setOnFocusChangeListener(new v5(this, 2));
+        editTextBoldCursor.addTextChangedListener(new em0(this));
+        editTextBoldCursor.setOnFocusChangeListener(new w5(this, 2));
         editTextBoldCursor.setOnEditorActionListener(new r2(5));
         linearLayout.addView(editTextBoldCursor, x5.n(72, 36));
     }

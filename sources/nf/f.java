@@ -1,6 +1,6 @@
 package nf;
 
-import ai.n8;
+import ai.o8;
 import android.app.Activity;
 import android.app.PendingIntent;
 import android.content.ActivityNotFoundException;
@@ -40,20 +40,19 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m3;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.ActionBar.n3;
-import org.telegram.ui.ActionBar.o3;
 import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.h4;
-import org.telegram.ui.hz;
-import org.telegram.ui.l3;
-import org.telegram.ui.web.z0;
-import org.telegram.ui.y2;
+import org.telegram.ui.ez;
+import org.telegram.ui.i4;
+import org.telegram.ui.web.y0;
+import org.telegram.ui.z2;
 import t7.u;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public abstract class f {
     public static a1 a;
@@ -225,7 +224,7 @@ public abstract class f {
     }
 
     public static boolean e() {
-        hz sheetFragment;
+        ez sheetFragment;
         n2 U = LaunchActivity.U();
         if (U == null || !(U.getParentLayout() instanceof ActionBarLayout) || (sheetFragment = ((ActionBarLayout) U.getParentLayout()).getSheetFragment()) == null || sheetFragment.getArticleViewer() == null) {
             return (U == null || U.getArticleViewer() == null) ? false : true;
@@ -453,27 +452,27 @@ public abstract class f {
     }
 
     public static void n(String str) {
-        o3 P;
-        n3 n3Var;
-        l3[] l3VarArr;
-        l3 l3Var;
+        n3 P;
+        m3 m3Var;
+        org.telegram.ui.m3[] m3VarArr;
+        org.telegram.ui.m3 m3Var2;
         LaunchActivity launchActivity = LaunchActivity.G1;
         if (launchActivity != null && (P = launchActivity.P()) != null) {
             if (!TextUtils.isEmpty(str)) {
-                ArrayList<n3> tabs = P.getTabs();
+                ArrayList<m3> tabs = P.getTabs();
                 for (int i10 = 0; i10 < tabs.size(); i10++) {
-                    n3Var = tabs.get(i10);
-                    h4 h4Var = n3Var.J;
-                    if (h4Var != null && !h4Var.d0.isEmpty()) {
-                        Object h = hg.c.h(1, n3Var.J.d0);
-                        if (h instanceof y2) {
-                            z0 z0Var = ((y2) h).b;
-                            if (z0Var == null && (l3VarArr = n3Var.J.u0) != null && (l3Var = l3VarArr[0]) != null) {
-                                z0Var = l3Var.getWebView();
+                    m3Var = tabs.get(i10);
+                    i4 i4Var = m3Var.J;
+                    if (i4Var != null && !i4Var.d0.isEmpty()) {
+                        Object h = hg.c.h(1, m3Var.J.d0);
+                        if (h instanceof z2) {
+                            y0 y0Var = ((z2) h).b;
+                            if (y0Var == null && (m3VarArr = m3Var.J.u0) != null && (m3Var2 = m3VarArr[0]) != null) {
+                                y0Var = m3Var2.getWebView();
                             }
-                            if (z0Var != null) {
-                                if (TextUtils.equals(o3.p(z0Var.canGoBack() ? z0Var.getUrl() : z0Var.getOpenURL()), o3.p(str))) {
-                                    P.e(n3Var);
+                            if (y0Var != null) {
+                                if (TextUtils.equals(n3.p(y0Var.canGoBack() ? y0Var.getUrl() : y0Var.getOpenURL()), n3.p(str))) {
+                                    P.e(m3Var);
                                     break;
                                 }
                             } else {
@@ -485,8 +484,8 @@ public abstract class f {
                     }
                 }
             }
-            n3Var = null;
-            if (n3Var != null) {
+            m3Var = null;
+            if (m3Var != null) {
                 return;
             }
         }
@@ -773,7 +772,7 @@ public abstract class f {
                                 bundle2.putString("android.support.customtabs.customaction.MENU_ITEM_TITLE", string);
                                 bundle2.putParcelable("android.support.customtabs.customaction.PENDING_INTENT", broadcast);
                                 arrayList.add(bundle2);
-                                intent3.putExtra("android.support.customtabs.extra.TOOLBAR_COLOR", i6.w0(null, i6.S8, false));
+                                intent3.putExtra("android.support.customtabs.extra.TOOLBAR_COLOR", h6.w0(null, h6.S8, false));
                                 intent3.putExtra("android.support.customtabs.extra.TITLE_VISIBILITY", 1);
                                 Bitmap decodeResource = BitmapFactory.decodeResource(context.getResources(), R.drawable.msg_filled_shareout);
                                 String string2 = LocaleController.getString(R.string.ShareFile);
@@ -868,7 +867,7 @@ public abstract class f {
                         } else {
                             i10 = i11;
                             try {
-                                AndroidUtilities.runOnUIThread(new n8(b2VarArr, sendRequest, i12), 1000L);
+                                AndroidUtilities.runOnUIThread(new o8(b2VarArr, sendRequest, i12), 1000L);
                                 return;
                             } catch (Exception unused3) {
                             }

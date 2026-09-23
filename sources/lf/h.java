@@ -5,9 +5,9 @@ import android.graphics.BitmapFactory;
 import java.io.EOFException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import k2.c0;
+import k2.b0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class h extends jf.a {
     public static final Logger s = Logger.getLogger(h.class.getName());
@@ -73,19 +73,19 @@ public final class h extends jf.a {
             case "APIC":
                 if (this.o == null || this.r != 3) {
                     b b10 = eVar.b();
-                    c0 c0Var = eVar.d;
+                    b0 b0Var = eVar.d;
                     if (eVar.b.a == 2) {
                         eVar.c(3, b.c).toUpperCase().getClass();
                     } else {
                         eVar.d(20, b.c);
                     }
-                    byte o9 = c0Var.o();
+                    byte o9 = b0Var.o();
                     eVar.d(200, b10);
                     int e = (int) eVar.a.e();
                     byte[] bArr = new byte[e];
                     int i13 = 0;
                     while (i13 < e) {
-                        int read = ((com.google.firebase.messaging.d) c0Var.b).read(bArr, i13, e - i13);
+                        int read = ((com.google.firebase.messaging.d) b0Var.b).read(bArr, i13, e - i13);
                         if (read <= 0) {
                             throw new EOFException();
                         }

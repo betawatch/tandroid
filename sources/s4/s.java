@@ -12,9 +12,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.Arrays;
 import java.util.WeakHashMap;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ev;
+import org.telegram.ui.bv;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public class s extends c0 {
     public boolean I;
@@ -31,7 +31,7 @@ public class s extends c0 {
         this.J = -1;
         this.M = new SparseIntArray();
         this.N = new SparseIntArray();
-        this.O = new ev(1);
+        this.O = new bv(1);
         this.P = new Rect();
         y1(i10);
     }
@@ -244,11 +244,11 @@ public class s extends c0 {
     }
 
     @Override // s4.o0
-    public void U(of.e eVar, z0 z0Var, View view, s0.c cVar) {
-        AccessibilityNodeInfo accessibilityNodeInfo = cVar.a;
+    public void U(of.e eVar, z0 z0Var, View view, s0.d dVar) {
+        AccessibilityNodeInfo accessibilityNodeInfo = dVar.a;
         ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
         if (!(layoutParams instanceof r)) {
-            T(view, cVar);
+            T(view, dVar);
             return;
         }
         r rVar = (r) layoutParams;
@@ -452,24 +452,24 @@ public class s extends c0 {
     }
 
     @Override // s4.c0
-    public final void a1(of.e eVar, z0 z0Var, i2.l0 l0Var, int i10) {
+    public final void a1(of.e eVar, z0 z0Var, i2.m0 m0Var, int i10) {
         A1();
         if (z0Var.b() > 0 && !z0Var.g) {
             boolean z10 = i10 == 1;
-            int u12 = u1(l0Var.b, eVar, z0Var);
+            int u12 = u1(m0Var.b, eVar, z0Var);
             if (z10) {
                 while (u12 > 0) {
-                    int i11 = l0Var.b;
+                    int i11 = m0Var.b;
                     if (i11 <= 0) {
                         break;
                     }
                     int i12 = i11 - 1;
-                    l0Var.b = i12;
+                    m0Var.b = i12;
                     u12 = u1(i12, eVar, z0Var);
                 }
             } else {
                 int b10 = z0Var.b() - 1;
-                int i13 = l0Var.b;
+                int i13 = m0Var.b;
                 while (i13 < b10) {
                     int i14 = i13 + 1;
                     int u13 = u1(i14, eVar, z0Var);
@@ -479,7 +479,7 @@ public class s extends c0 {
                     i13 = i14;
                     u12 = u13;
                 }
-                l0Var.b = i13;
+                m0Var.b = i13;
             }
         }
         r1();
@@ -784,7 +784,7 @@ public class s extends c0 {
         this.J = -1;
         this.M = new SparseIntArray();
         this.N = new SparseIntArray();
-        this.O = new ev(1);
+        this.O = new bv(1);
         this.P = new Rect();
         y1(i10);
     }

@@ -11,10 +11,10 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.n70;
-import org.telegram.ui.x11;
+import org.telegram.ui.Components.o70;
+import org.telegram.ui.p11;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final /* synthetic */ class t2 implements Runnable {
     public final /* synthetic */ int a;
@@ -69,11 +69,11 @@ public final /* synthetic */ class t2 implements Runnable {
                 ((TopicsController) obj3).lambda$loadTopic$27(this.b, (ArrayList) obj2, this.c, (Runnable) obj);
                 break;
             case 7:
-                ((n70) obj3).u();
+                ((o70) obj3).u();
                 Bundle bundle = new Bundle();
                 bundle.putLong("dialog_id", this.b);
                 bundle.putLong("topic_id", this.c);
-                ((org.telegram.ui.ActionBar.n2) obj2).presentFragment(new x11(bundle, (org.telegram.ui.ActionBar.e6) obj));
+                ((org.telegram.ui.ActionBar.n2) obj2).presentFragment(new p11(bundle, (org.telegram.ui.ActionBar.d6) obj));
                 break;
             default:
                 tg.b0 b0Var = (tg.b0) obj3;
@@ -174,7 +174,7 @@ public final /* synthetic */ class t2 implements Runnable {
                 tL_payments_launchPrepaidGiveaway.giveaway_id = prepaidGiveaway.id;
                 tL_payments_launchPrepaidGiveaway.peer = messagesController.getInputPeer(-chat.id);
                 tL_payments_launchPrepaidGiveaway.purpose = tL_inputStorePaymentStarsGiveaway;
-                connectionsManager.sendRequest(tL_payments_launchPrepaidGiveaway, new ai.t5(wVar, messagesController, zVar, 18));
+                connectionsManager.sendRequest(tL_payments_launchPrepaidGiveaway, new ai.s5(wVar, messagesController, zVar, 18));
                 break;
         }
     }

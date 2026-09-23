@@ -14,17 +14,17 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class du0 implements org.telegram.ui.Cells.k1 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e6 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.d6 b;
     public final /* synthetic */ fu0 c;
 
-    public du0(fu0 fu0Var, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
+    public du0(fu0 fu0Var, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
         this.c = fu0Var;
         this.a = i10;
-        this.b = e6Var;
+        this.b = d6Var;
     }
 
     public static TLRPC.TL_message a(TLRPC.Message message) {
@@ -150,11 +150,11 @@ public final class du0 implements org.telegram.ui.Cells.k1 {
         if (i10 == 80) {
             org.telegram.ui.ActionBar.n2 n2Var = this.c.s.v1;
             MessageObject messageObject = t1Var.getMessageObject();
-            org.telegram.ui.Cells.t8 t8Var = pg0.O;
+            org.telegram.ui.Cells.u8 u8Var = qg0.O;
             if (n2Var == null || n2Var.getParentActivity() == null) {
                 return;
             }
-            n2Var.showDialog(new pg0(n2Var.getContext(), n2Var.getCurrentAccount(), messageObject, n2Var.getResourceProvider()));
+            n2Var.showDialog(new qg0(n2Var.getContext(), n2Var.getCurrentAccount(), messageObject, n2Var.getResourceProvider()));
         }
     }
 
@@ -194,7 +194,7 @@ public final class du0 implements org.telegram.ui.Cells.k1 {
     }
 
     @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ org.telegram.ui.pv0 Y1() {
+    public final /* synthetic */ org.telegram.ui.iv0 Y1() {
         return null;
     }
 
@@ -250,7 +250,7 @@ public final class du0 implements org.telegram.ui.Cells.k1 {
 
     @Override // org.telegram.ui.Cells.k1
     public final /* synthetic */ boolean h1(MessageObject messageObject) {
-        return org.telegram.messenger.vl.a(messageObject);
+        return org.telegram.messenger.ul.a(messageObject);
     }
 
     @Override // org.telegram.ui.Cells.k1
@@ -287,12 +287,12 @@ public final class du0 implements org.telegram.ui.Cells.k1 {
         }
         TLRPC.TL_messageMediaPoll tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) media;
         TLRPC.GeoPoint geoPoint = messageMedia.geo;
-        org.telegram.ui.ActionBar.e6 e6Var = this.b;
+        org.telegram.ui.ActionBar.d6 d6Var = this.b;
         int i13 = this.a;
         if (geoPoint != null) {
             if (AndroidUtilities.isMapsInstalled(yu0Var.v1)) {
                 xt0 xt0Var = new xt0(3);
-                xt0Var.setResourceProvider(e6Var);
+                xt0Var.setResourceProvider(d6Var);
                 TLRPC.TL_message tL_message = new TLRPC.TL_message();
                 tL_message.local_id = -1;
                 tL_message.peer_id = MessagesController.getInstance(i13).getPeer(yu0Var.j1);
@@ -312,9 +312,9 @@ public final class du0 implements org.telegram.ui.Cells.k1 {
             return;
         }
         if (MessageObject.isAnyKindOfStickerOrEmoji(messageMedia.document)) {
-            org.telegram.ui.st.q().w(yu0Var.v1.getParentActivity());
-            org.telegram.ui.st.q().v(new yt0(this, tL_messageMediaPoll, pollAnswer, t1Var));
-            org.telegram.ui.st q6 = org.telegram.ui.st.q();
+            org.telegram.ui.pt.q().w(yu0Var.v1.getParentActivity());
+            org.telegram.ui.pt.q().v(new yt0(this, tL_messageMediaPoll, pollAnswer, t1Var));
+            org.telegram.ui.pt q6 = org.telegram.ui.pt.q();
             TLRPC.Document document4 = messageMedia.document;
             q6.t(document4, null, "", null, null, MessageObject.isAnimatedEmoji(document4) ? 2 : 0, false, t1Var.getMessageObject(), this.b, 200);
             return;
@@ -380,12 +380,12 @@ public final class du0 implements org.telegram.ui.Cells.k1 {
             return;
         }
         messageObject.pollMediaMapping = arrayList;
-        PhotoViewer.t1().J2(null, yu0Var.v1, e6Var);
+        PhotoViewer.t1().J2(null, yu0Var.v1, d6Var);
         PhotoViewer.t1().a2(arrayList2, i11, yu0Var.j1, 0L, 0L, new cu0(this));
     }
 
     @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ boolean o0(x5 x5Var) {
+    public final /* synthetic */ boolean o0(z5 z5Var) {
         return false;
     }
 
@@ -405,7 +405,7 @@ public final class du0 implements org.telegram.ui.Cells.k1 {
     }
 
     @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ org.telegram.ui.Cells.r9 z2() {
+    public final /* synthetic */ org.telegram.ui.Cells.s9 z2() {
         return null;
     }
 

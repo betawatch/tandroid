@@ -39,11 +39,11 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
-import org.telegram.ui.Components.f51;
-import org.telegram.ui.f41;
+import org.telegram.ui.Components.e51;
+import org.telegram.ui.x31;
 import org.xmlpull.v1.XmlPullParser;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public class LocaleController {
     private static volatile LocaleController Instance = null;
@@ -110,7 +110,7 @@ public class LocaleController {
     private ArrayList<LocaleInfo> otherLanguages = new ArrayList<>();
     private boolean patching = false;
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class LocaleInfo {
         public String baseLangCode;
         public int baseVersion;
@@ -227,12 +227,12 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static abstract class PluralRules {
         public abstract int quantityForNumber(int i10);
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class PluralRules_Arabic extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -253,7 +253,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class PluralRules_Balkan extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -275,7 +275,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class PluralRules_Breton extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -295,7 +295,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class PluralRules_Czech extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -306,7 +306,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class PluralRules_French extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -314,7 +314,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class PluralRules_Langi extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -325,7 +325,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class PluralRules_Latvian extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -336,7 +336,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class PluralRules_Lithuanian extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -352,7 +352,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class PluralRules_Macedonian extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -360,7 +360,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class PluralRules_Maltese extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -378,7 +378,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class PluralRules_None extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -386,7 +386,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class PluralRules_One extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -394,7 +394,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class PluralRules_Polish extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -416,7 +416,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class PluralRules_Romanian extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -431,7 +431,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class PluralRules_Serbian extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -447,7 +447,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class PluralRules_Slovenian extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -462,7 +462,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class PluralRules_Tachelhit extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -473,7 +473,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class PluralRules_Two extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -484,7 +484,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class PluralRules_Welsh extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -504,7 +504,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class PluralRules_Zero extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -512,7 +512,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static final class RelativeIcu {
         private RelativeIcu() {
         }
@@ -544,7 +544,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public class TimeZoneChangedReceiver extends BroadcastReceiver {
         private TimeZoneChangedReceiver() {
         }
@@ -559,7 +559,7 @@ public class LocaleController {
 
         @Override // android.content.BroadcastReceiver
         public void onReceive(Context context, Intent intent) {
-            ApplicationLoader.applicationHandler.post(new e1(this, 4));
+            ApplicationLoader.applicationHandler.post(new f1(this, 4));
         }
     }
 
@@ -806,9 +806,9 @@ public class LocaleController {
             sb2.append(" force=");
             sb2.append(z10);
             sb2.append(" currentAccount=");
-            y0.n(i10, sb2);
+            z0.n(i10, sb2);
             int[] iArr = {0};
-            final f0 f0Var = new f0(new int[]{0}, iArr, runnable, 25);
+            final f0 f0Var = new f0(new int[]{0}, iArr, runnable, 26);
             if (z10) {
                 patched(localeInfo2.shortName);
             }
@@ -958,11 +958,11 @@ public class LocaleController {
 
     public static CharSequence bold(CharSequence charSequence) {
         if (charSequence instanceof Spannable) {
-            ((Spannable) charSequence).setSpan(new f51(AndroidUtilities.bold()), 0, charSequence.length(), 33);
+            ((Spannable) charSequence).setSpan(new e51(AndroidUtilities.bold()), 0, charSequence.length(), 33);
             return charSequence;
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence);
-        spannableStringBuilder.setSpan(new f51(AndroidUtilities.bold()), 0, charSequence.length(), 33);
+        spannableStringBuilder.setSpan(new e51(AndroidUtilities.bold()), 0, charSequence.length(), 33);
         return spannableStringBuilder;
     }
 
@@ -2350,7 +2350,7 @@ public class LocaleController {
                 configuration.locale = this.currentLocale;
                 ApplicationLoader.applicationContext.getResources().updateConfiguration(configuration, ApplicationLoader.applicationContext.getResources().getDisplayMetrics());
                 this.changingConfiguration = false;
-                f41.s = false;
+                x31.s = false;
             } else {
                 FileLog.d("saveRemoteLocaleStrings: currentLocaleInfo != localeInfo, do nothing");
             }
@@ -4046,13 +4046,13 @@ public class LocaleController {
                 }
                 if (!z14) {
                     if (z11) {
-                        AndroidUtilities.runOnUIThread(new v1(13));
+                        AndroidUtilities.runOnUIThread(new w1(13));
                         z17 = false;
                     } else {
                         z17 = false;
                         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.reloadInterface, new Object[0]);
                     }
-                    f41.s = z17;
+                    x31.s = z17;
                     if (runnable != null) {
                         runnable.run();
                     }
@@ -4449,7 +4449,7 @@ public class LocaleController {
                     } else if (obj instanceof Long) {
                         str3 = "" + ((Long) objArr[i11]);
                     } else {
-                        str3 = obj == null ? "null" : "";
+                        str3 = obj == null ? BuildConfig.BETA_URL : "";
                     }
                     str4 = "d";
                 }

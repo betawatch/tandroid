@@ -1,74 +1,53 @@
 package ii;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
 import android.view.View;
 import android.widget.HorizontalScrollView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.qr;
-import org.telegram.ui.l20;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class x1 extends HorizontalScrollView {
-    public final l20 a;
-    public final org.telegram.ui.Components.c6 b;
-    public final org.telegram.ui.Components.c6 c;
-    public final /* synthetic */ d2 d;
+    public final /* synthetic */ int a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x1(d2 d2Var, Context context) {
+    public /* synthetic */ x1(Context context, int i10) {
         super(context);
-        this.d = d2Var;
-        this.a = new l20();
-        qr qrVar = qr.h;
-        this.b = new org.telegram.ui.Components.c6(this, 300L, qrVar);
-        this.c = new org.telegram.ui.Components.c6(this, 300L, qrVar);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        Canvas canvas2;
-        float e = this.b.e(canScrollHorizontally(-1));
-        float e7 = this.c.e(canScrollHorizontally(1));
-        if (e > 0.0f || e7 > 0.0f) {
-            canvas2 = canvas;
-            canvas2.saveLayerAlpha(getScrollX(), 0.0f, getWidth() + getScrollX(), getHeight(), 255, 31);
-        } else {
-            canvas2 = canvas;
-        }
-        super.dispatchDraw(canvas2);
-        if (e > 0.0f || e7 > 0.0f) {
-            canvas2.save();
-            l20 l20Var = this.a;
-            if (e > 0.0f) {
-                RectF rectF = AndroidUtilities.rectTmp;
-                rectF.set(getScrollX(), 0.0f, AndroidUtilities.dp(48.0f) + getScrollX(), getHeight());
-                l20Var.b(canvas2, rectF, 0, e);
-            }
-            if (e7 > 0.0f) {
-                RectF rectF2 = AndroidUtilities.rectTmp;
-                rectF2.set((getWidth() + getScrollX()) - AndroidUtilities.dp(48.0f), 0.0f, getWidth() + getScrollX(), getHeight());
-                l20Var.b(canvas2, rectF2, 2, e7);
-            }
-            canvas2.restore();
-        }
+        this.a = i10;
     }
 
     @Override // android.widget.HorizontalScrollView, android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        int mode = View.MeasureSpec.getMode(i10);
-        if (mode == 1073741824) {
-            super.onMeasure(i10, i11);
-            return;
+        switch (this.a) {
+            case 0:
+                int mode = View.MeasureSpec.getMode(i10);
+                int size = View.MeasureSpec.getSize(i10);
+                if (mode != 1073741824) {
+                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, 0), i11);
+                    int measuredWidth = getMeasuredWidth();
+                    if (mode == Integer.MIN_VALUE) {
+                        measuredWidth = Math.min(measuredWidth, size);
+                    }
+                    setMeasuredDimension(measuredWidth, getMeasuredHeight());
+                    break;
+                } else {
+                    super.onMeasure(i10, i11);
+                    break;
+                }
+            default:
+                int mode2 = View.MeasureSpec.getMode(i10);
+                int size2 = View.MeasureSpec.getSize(i10);
+                if (mode2 != 1073741824) {
+                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(size2, 0), i11);
+                    int measuredWidth2 = getMeasuredWidth();
+                    if (mode2 == Integer.MIN_VALUE) {
+                        measuredWidth2 = Math.min(measuredWidth2, size2);
+                    }
+                    setMeasuredDimension(measuredWidth2, getMeasuredHeight());
+                    break;
+                } else {
+                    super.onMeasure(i10, i11);
+                    break;
+                }
         }
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), 0), i11);
-        int measuredWidth = getMeasuredWidth();
-        int i12 = this.d.k0;
-        if (mode == Integer.MIN_VALUE) {
-            i12 = Math.min(i12, View.MeasureSpec.getSize(i10));
-        }
-        setMeasuredDimension(Math.min(measuredWidth, i12), getMeasuredHeight());
     }
 }

@@ -10,9 +10,9 @@ import android.graphics.Rect;
 import android.graphics.RenderNode;
 import android.os.Build;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class e extends d {
     public final fh.a G;
@@ -64,7 +64,7 @@ public final class e extends d {
             w();
         }
         this.O = false;
-        int l1 = i6.l1(this.J.getAlpha() * this.p, this.d);
+        int l1 = h6.l1(this.J.getAlpha() * this.p, this.d);
         if (Color.alpha(l1) != 0) {
             float f7 = this.n;
             float f10 = this.o;

@@ -1,26 +1,36 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class r60 extends rg.j0 {
-    public final /* synthetic */ s60 W0;
+public final /* synthetic */ class r60 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ b70 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r60(s60 s60Var, s60 s60Var2, Activity activity, int i10, int i11, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(i10, i11, activity, s60Var2, e6Var);
-        this.W0 = s60Var;
+    public /* synthetic */ r60(b70 b70Var, int i10) {
+        this.a = i10;
+        this.b = b70Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
-    public final void dismiss() {
-        super.dismiss();
-        this.W0.B0 = false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.f3
-    public final void onOpenAnimationEnd() {
-        this.W0.B0 = false;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.finishFragment();
+                break;
+            case 1:
+                b70 b70Var = this.b;
+                b70Var.i0();
+                b70Var.e0();
+                break;
+            case 2:
+                b70 b70Var2 = this.b;
+                b70Var2.getClass();
+                b70Var2.presentFragment(new PremiumPreviewFragment(0, "noncontacts"));
+                break;
+            default:
+                b70 b70Var3 = this.b;
+                b70Var3.n.postOnAnimation(new r60(b70Var3, 1));
+                break;
+        }
     }
 }

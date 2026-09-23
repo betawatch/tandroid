@@ -1,88 +1,33 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.view.View;
-import org.telegram.messenger.MessageObject;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class he1 implements org.telegram.ui.Components.ek0 {
-    public final /* synthetic */ bo a;
-    public final /* synthetic */ MessageObject b;
-    public final /* synthetic */ org.telegram.ui.Components.fk0 c;
-    public final /* synthetic */ le1 d;
+public final class he1 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ le1 b;
 
-    public he1(le1 le1Var, bo boVar, MessageObject messageObject, org.telegram.ui.Components.fk0 fk0Var) {
-        this.d = le1Var;
-        this.a = boVar;
-        this.b = messageObject;
-        this.c = fk0Var;
+    public /* synthetic */ he1(le1 le1Var, int i10) {
+        this.a = i10;
+        this.b = le1Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:9:0x005f  */
-    @Override // org.telegram.ui.Components.ek0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void h(View view, zg.p0 p0Var, boolean z10, boolean z11) {
-        float f7;
-        zg.q0 q0Var;
-        zg.n0 m10;
-        float f10;
-        int i10;
-        float f11;
-        int id2 = this.b.getId();
-        bo boVar = this.a;
-        org.telegram.ui.Cells.a0 q82 = boVar.q8(id2, true);
-        float f12 = 0.0f;
-        if (q82 instanceof org.telegram.ui.Cells.t1) {
-            zg.q0 q0Var2 = ((org.telegram.ui.Cells.t1) q82).N;
-            zg.n0 m11 = q0Var2.m(p0Var);
-            if (m11 == null) {
-                f11 = 0.0f;
-                f7 = f11;
-                boVar.ab(q82, this.b, this.c, view, f12, f7, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
-                this.d.c(false);
-            }
-            f12 = q0Var2.c + m11.x + (m11.A / 2.0f);
-            f10 = q0Var2.d + m11.y;
-            i10 = m11.B;
-        } else if (!(q82 instanceof org.telegram.ui.Cells.w0) || (m10 = (q0Var = ((org.telegram.ui.Cells.w0) q82).C0).m(p0Var)) == null) {
-            f7 = 0.0f;
-            boVar.ab(q82, this.b, this.c, view, f12, f7, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
-            this.d.c(false);
-        } else {
-            f12 = q0Var.c + m10.x + (m10.A / 2.0f);
-            f10 = q0Var.d + m10.y;
-            i10 = m10.B;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                le1 le1Var = this.b;
+                le1Var.v = 0;
+                le1Var.n.setVisibility(8);
+                break;
+            case 1:
+                this.b.v = 0;
+                break;
+            default:
+                this.b.F.setVisibility(8);
+                break;
         }
-        f11 = f10 + (i10 / 2.0f);
-        f7 = f11;
-        boVar.ab(q82, this.b, this.c, view, f12, f7, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
-        this.d.c(false);
-    }
-
-    @Override // org.telegram.ui.Components.ek0
-    public final /* synthetic */ boolean j() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.ek0
-    public final /* synthetic */ boolean k() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ek0
-    public final /* synthetic */ boolean q() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ek0
-    public final /* synthetic */ void o() {
-    }
-
-    @Override // org.telegram.ui.Components.ek0
-    public final /* synthetic */ void n(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
     }
 }

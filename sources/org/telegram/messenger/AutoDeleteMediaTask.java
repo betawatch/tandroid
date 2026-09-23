@@ -9,12 +9,12 @@ import java.util.Set;
 import org.telegram.messenger.CacheByChatsController;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public class AutoDeleteMediaTask {
     public static Set<String> usingFilePaths = Collections.newSetFromMap(new ConcurrentHashMap());
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class FileInfoInternal extends CacheByChatsController.KeepMediaFile {
         final long lastUsageDate;
 

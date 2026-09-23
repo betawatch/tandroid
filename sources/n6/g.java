@@ -24,8 +24,9 @@ import java.util.Locale;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 import m.p3;
+import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public abstract class g implements com.google.android.gms.common.api.c {
     public static final k6.c[] T = new k6.c[0];
@@ -378,13 +379,13 @@ public abstract class g implements com.google.android.gms.common.api.c {
         }
         printWriter.append(" mService=");
         if (iInterface == null) {
-            printWriter.append("null");
+            printWriter.append(BuildConfig.BETA_URL);
         } else {
             printWriter.append((CharSequence) v()).append("@").append((CharSequence) Integer.toHexString(System.identityHashCode(iInterface.asBinder())));
         }
         printWriter.append(" mServiceBroker=");
         if (yVar == null) {
-            printWriter.println("null");
+            printWriter.println(BuildConfig.BETA_URL);
         } else {
             printWriter.append("IGmsServiceBroker@").println(Integer.toHexString(System.identityHashCode(yVar.a)));
         }

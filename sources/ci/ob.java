@@ -1,96 +1,42 @@
 package ci;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+import android.content.Context;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class ob implements sc {
-    public final /* synthetic */ bi.v a;
+public final class ob extends d1 {
+    public final /* synthetic */ lc b0;
 
-    public ob(bi.v vVar) {
-        this.a = vVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ob(lc lcVar, Context context, boolean z10) {
+        super(context, z10);
+        this.b0 = lcVar;
     }
 
-    @Override // ci.sc
-    public final void H(float f7, boolean z10) {
-        this.a.run(Boolean.FALSE, Float.valueOf(f7));
+    @Override // org.telegram.messenger.camera.CameraView
+    public final void receivedAmplitude(double d) {
+        j7 j7Var = this.b0.O0;
+        if (j7Var != null) {
+            j7Var.g0 = Utilities.clamp((float) (d / 1800.0d), 1.0f, 0.0f);
+        }
     }
 
-    @Override // ci.sc
-    public final /* synthetic */ void F(float f7) {
+    @Override // ci.d1, org.telegram.messenger.camera.CameraView
+    public final void toggleDual() {
+        super.toggleDual();
+        lc lcVar = this.b0;
+        lcVar.F0.setValue(isDual());
+        lcVar.F0.setContentDescription(LocaleController.getString(isDual() ? R.string.AccDescrDualCameraOn : R.string.AccDescrDualCameraOff));
+        lcVar.e0(lcVar.C());
     }
 
-    @Override // ci.sc
-    public final /* synthetic */ void O(long j3) {
-    }
-
-    @Override // ci.sc
-    public final /* synthetic */ void Q(boolean z10) {
-    }
-
-    @Override // ci.sc
-    public final /* synthetic */ void V(float f7) {
-    }
-
-    @Override // ci.sc
-    public final /* synthetic */ void Z(float f7) {
-    }
-
-    @Override // ci.sc
-    public final /* synthetic */ void b(int i10) {
-    }
-
-    @Override // ci.sc
-    public final /* synthetic */ void e0(float f7) {
-    }
-
-    @Override // ci.sc
-    public final /* synthetic */ void f0() {
-    }
-
-    @Override // ci.sc
-    public final /* synthetic */ void h(float f7) {
-    }
-
-    @Override // ci.sc
-    public final /* synthetic */ void i0(float f7) {
-    }
-
-    @Override // ci.sc
-    public final /* synthetic */ void n(float f7) {
-    }
-
-    @Override // ci.sc
-    public final /* synthetic */ void o0(long j3) {
-    }
-
-    @Override // ci.sc
-    public final /* synthetic */ void s() {
-    }
-
-    @Override // ci.sc
-    public final /* synthetic */ void u(float f7) {
-    }
-
-    @Override // ci.sc
-    public final /* synthetic */ void w(boolean z10) {
-    }
-
-    @Override // ci.sc
-    public final /* synthetic */ void C(float f7, int i10) {
-    }
-
-    @Override // ci.sc
-    public final /* synthetic */ void T(float f7, int i10) {
-    }
-
-    @Override // ci.sc
-    public final /* synthetic */ void d0(float f7, int i10) {
-    }
-
-    @Override // ci.sc
-    public final /* synthetic */ void j0(int i10, long j3) {
-    }
-
-    @Override // ci.sc
-    public final /* synthetic */ void o(long j3, boolean z10) {
+    @Override // ci.d1
+    public final void u(boolean z10) {
+        lc lcVar = this.b0;
+        lcVar.o1.b(lcVar.c1.getText());
+        lcVar.o1.a(false, z10, lcVar.k0);
     }
 }

@@ -1,38 +1,68 @@
 package pg;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class w0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ c1 b;
+import android.graphics.PointF;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 
-    public /* synthetic */ w0(c1 c1Var, int i10) {
-        this.a = i10;
-        this.b = c1Var;
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* loaded from: classes3.dex */
+public final class w0 {
+    public float a;
+    public float b;
+    public float c;
+    public float d;
+    public float e;
+    public float f;
+    public double g;
+    public int h;
+    public int i;
+    public ByteBuffer j;
+
+    public final boolean a(PointF pointF, float f7, float f10, float f11, int i10) {
+        if ((i10 != -1 && i10 >= this.i) || this.j.position() == this.j.limit()) {
+            d();
+            return false;
+        }
+        if (i10 != -1) {
+            this.j.position(i10 * 20);
+        }
+        this.j.putFloat(pointF.x);
+        this.j.putFloat(pointF.y);
+        this.j.putFloat(f7);
+        this.j.putFloat(f10);
+        this.j.putFloat(f11);
+        return true;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                b1 b1Var = this.b.a;
-                if (b1Var != null) {
-                    b1Var.b();
-                    break;
-                }
-                break;
-            case 1:
-                c1 c1Var = this.b;
-                c1Var.c.a(c1Var.r);
-                a1 a1Var = c1Var.d;
-                a1Var.getClass();
-                a1Var.postRunnable(new z0(a1Var, 2));
-                c1Var.d = null;
-                break;
-            default:
-                c1 c1Var2 = this.b;
-                c1Var2.c.q(c1Var2.x);
-                break;
+    public final void b(int i10) {
+        int i11 = this.h + i10;
+        if (i11 > this.i || this.j == null) {
+            d();
         }
+        this.h = i11;
+    }
+
+    public final void c() {
+        this.h = 0;
+        if (this.j != null) {
+            return;
+        }
+        this.i = 256;
+        ByteBuffer allocateDirect = ByteBuffer.allocateDirect(256 * 5 * 4);
+        this.j = allocateDirect;
+        allocateDirect.order(ByteOrder.nativeOrder());
+        this.j.position(0);
+    }
+
+    public final void d() {
+        if (this.j != null) {
+            this.j = null;
+        }
+        int max = Math.max(this.i * 2, 256);
+        this.i = max;
+        ByteBuffer allocateDirect = ByteBuffer.allocateDirect(max * 20);
+        this.j = allocateDirect;
+        allocateDirect.order(ByteOrder.nativeOrder());
+        this.j.position(0);
     }
 }

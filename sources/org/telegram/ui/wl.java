@@ -1,69 +1,29 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class wl extends tu0 {
-    public final /* synthetic */ MessageObject a;
-    public final /* synthetic */ MediaController.PhotoEntry b;
-    public final /* synthetic */ bo c;
+public final class wl extends AnimatorListenerAdapter {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ xn d;
 
-    public wl(bo boVar, MessageObject messageObject, MediaController.PhotoEntry photoEntry) {
-        this.c = boVar;
-        this.a = messageObject;
-        this.b = photoEntry;
+    public wl(xn xnVar, boolean z10, boolean z11, boolean z12) {
+        this.d = xnVar;
+        this.a = z10;
+        this.b = z11;
+        this.c = z12;
     }
 
-    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
-    public final dv0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
-        return bo.A1(this.c, this.a, null, i10, z10, true);
-    }
-
-    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
-    public final boolean O() {
-        bo boVar = this.c;
-        if (boVar.Y == null || !boVar.x9()) {
-            return false;
-        }
-        boVar.Y.Q();
-        return true;
-    }
-
-    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
-    public final MessageObject U() {
-        MessageObject messageObject = this.c.p5;
-        MessageObject messageObject2 = this.a;
-        if (messageObject == messageObject2) {
-            return messageObject2;
-        }
-        return null;
-    }
-
-    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
-    public final void e(CharSequence charSequence) {
-        this.c.Y.g1(charSequence, false);
-    }
-
-    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
-    public final boolean g() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
-    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
-        bo boVar = this.c;
-        if (boVar.p5 != this.a) {
-            return;
-        }
-        MediaController.PhotoEntry photoEntry = this.b;
-        if (photoEntry.isCropped || photoEntry.isPainted || photoEntry.isFiltered || videoEditedInfo != null) {
-            boVar.q(photoEntry, videoEditedInfo, z10, i11, 0, z11, 0L);
-        } else {
-            boVar.Y.e0();
-        }
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        xn xnVar = this.d;
+        xnVar.M2 = null;
+        xnVar.J2.setVisibility(this.a ? 0 : 4);
+        xnVar.L2.setVisibility(this.b ? 0 : 4);
+        xnVar.K2.setVisibility(this.c ? 0 : 4);
     }
 }

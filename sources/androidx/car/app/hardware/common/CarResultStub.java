@@ -9,12 +9,12 @@ import j$.util.Objects;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.Executor;
-import org.telegram.ui.js0;
+import pg.e0;
 import r.a;
 import r.c;
 import w.b;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public class CarResultStub<T> extends ICarHardwareResult.Stub {
     private final b mBundle;
@@ -85,7 +85,7 @@ public class CarResultStub<T> extends ICarHardwareResult.Stub {
         int i10 = this.mResultType;
         b bVar = this.mBundle;
         aVar.getClass();
-        g.d("unsubscribeCarHardwareResult", new js0(aVar, i10, bVar));
+        g.d("unsubscribeCarHardwareResult", new e0(aVar, i10, bVar));
         return true;
     }
 }

@@ -1,11 +1,11 @@
 package hg;
 
-import org.telegram.ui.Components.jo;
+import org.telegram.ui.Components.ko;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class j extends jo {
-    @Override // org.telegram.ui.Components.jo, android.widget.LinearLayout, android.view.View
+public final class j extends ko {
+    @Override // org.telegram.ui.Components.ko, android.widget.LinearLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
         super.onMeasure(i10, i11);
         setPivotX(getMeasuredWidth() / 2.0f);

@@ -1,53 +1,17 @@
 package le;
 
-import android.graphics.RectF;
-import w7.p;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final class g implements Comparable {
-    public final Object a;
-    public int b;
-    public final m c;
-    public final m d;
-    public final n e;
-    public final m f;
-    public boolean h = false;
+public interface g {
+    void E();
 
-    public g(int i10, Object obj, boolean z10) {
-        this.a = obj;
-        this.b = i10;
-        this.d = new m(z10 ? 1.0f : 0.0f);
-        this.c = new m(i10);
-        this.e = new n();
-        this.f = new m(0.0f);
-        a(false);
-    }
+    void a();
 
-    public final void a(boolean z10) {
-        this.c.c(z10);
-        this.d.c(z10);
-        this.e.c(z10);
-        this.f.c(z10);
-        Object obj = this.a;
-        if (obj instanceof n) {
-            ((n) obj).c(z10);
-        }
-    }
+    void g(boolean z10);
 
-    public final RectF b() {
-        n nVar = this.e;
-        RectF rectF = nVar.e;
-        rectF.set(nVar.a.a, nVar.b.a, nVar.c.a, nVar.d.a);
-        return rectF;
-    }
+    boolean i();
 
-    public final float c() {
-        return p.a(this.d.a, 0.0f, 1.0f);
-    }
+    boolean k(float f7);
 
-    @Override // java.lang.Comparable
-    public final int compareTo(Object obj) {
-        return Integer.compare(this.b, ((g) obj).b);
-    }
+    void l();
 }

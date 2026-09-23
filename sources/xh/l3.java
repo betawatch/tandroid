@@ -1,70 +1,47 @@
 package xh;
 
 import android.content.Context;
-import android.text.SpannableStringBuilder;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
+import org.telegram.messenger.ul;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.oq;
-import w7.z5;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.w9;
+import org.telegram.ui.Components.yi0;
+import w7.x5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final class l3 extends TextView {
-    public final oq a;
+public final class l3 extends LinearLayout {
+    public final TextView a;
 
-    public l3(Context context, e6 e6Var) {
+    public l3(Context context, d6 d6Var) {
         super(context);
-        int v02 = i6.v0(i6.y8, e6Var);
-        setTextColor(v02);
-        setBackground(i6.Z(i6.l1(0.08f, v02), i6.l1(0.15f, v02), AndroidUtilities.dp(13.0f), AndroidUtilities.dp(13.0f)));
-        setPadding(AndroidUtilities.dp(11.0f), 0, AndroidUtilities.dp(11.0f), 0);
-        setGravity(17);
-        setTypeface(AndroidUtilities.bold());
-        z5.a(this);
-        oq oqVar = new oq(R.drawable.arrows_select, 0);
-        this.a = oqVar;
-        oqVar.spaceScaleX = 0.8f;
-        oqVar.translate(0.0f, AndroidUtilities.dp(1.0f));
+        setOrientation(1);
+        w9 w9Var = new w9(context);
+        w9Var.setImageDrawable(new yi0(R.raw.utyan_empty, AndroidUtilities.dp(130.0f), AndroidUtilities.dp(130.0f)));
+        addView(w9Var, x5.t(64, 64, 17, 0, 32, 0, 0));
+        TextView textView = new TextView(context);
+        this.a = textView;
+        ul.o(h6.A6, d6Var, textView, 1, 14.0f);
+        textView.setGravity(17);
+        addView(textView, x5.t(-1, -2, 7, 12, 12, 12, 24));
     }
 
-    @Override // android.widget.TextView, android.view.View
+    @Override // android.widget.LinearLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(26.0f), TLObject.FLAG_30));
+        int size = View.MeasureSpec.getSize(i10);
+        if (View.MeasureSpec.getMode(i10) == Integer.MIN_VALUE) {
+            size = AndroidUtilities.dp(250.0f);
+        }
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), i11);
     }
 
-    public void setSorting(t3 t3Var) {
-        oq oqVar;
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("v ");
-        if (t3Var == t3.c) {
-            oqVar = new oq(R.drawable.mini_gift_sorting_date, 0);
-            spannableStringBuilder.setSpan(oqVar, 0, 1, 33);
-            spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.ResellGiftFilterSortDateShort));
-        } else if (t3Var == t3.b) {
-            oqVar = new oq(R.drawable.mini_gift_sorting_price, 0);
-            spannableStringBuilder.setSpan(oqVar, 0, 1, 33);
-            spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.ResellGiftFilterSortPriceShort));
-        } else if (t3Var == t3.d) {
-            oqVar = new oq(R.drawable.mini_gift_sorting_num, 0);
-            spannableStringBuilder.setSpan(oqVar, 0, 1, 33);
-            spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.ResellGiftFilterSortNumberShort));
-        } else {
-            oqVar = null;
-        }
-        if (oqVar != null) {
-            oqVar.translate(0.0f, AndroidUtilities.dp(1.0f));
-        }
-        setText(spannableStringBuilder);
-    }
-
-    public void setValue(CharSequence charSequence) {
-        SpannableStringBuilder append = new SpannableStringBuilder(charSequence).append((CharSequence) " v");
-        append.setSpan(this.a, append.length() - 1, append.length(), 33);
-        setText(append);
+    public void set(CharSequence charSequence) {
+        this.a.setText(charSequence);
     }
 }

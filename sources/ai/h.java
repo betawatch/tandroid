@@ -2,7 +2,7 @@ package ai;
 
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h implements Runnable {
     public final /* synthetic */ int a;
@@ -21,9 +21,9 @@ public final /* synthetic */ class h implements Runnable {
                 break;
             case 1:
                 b0 b0Var = this.b;
-                ci.f4 f4Var = b0Var.J;
-                if (f4Var != null) {
-                    f4Var.e(true);
+                ci.e4 e4Var = b0Var.J;
+                if (e4Var != null) {
+                    e4Var.e(true);
                 }
                 b0Var.e0.presentFragment(new PremiumPreviewFragment(0, "stories"));
                 break;

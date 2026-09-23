@@ -10,13 +10,13 @@ import android.view.ViewGroup;
 import j$.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.c6;
-import org.telegram.ui.Components.hk0;
+import org.telegram.ui.Components.e6;
+import org.telegram.ui.Components.ik0;
 import org.telegram.ui.Components.jv0;
-import org.telegram.ui.Components.pk0;
-import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.qk0;
+import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class d2 extends j {
     public jv0 q0;
@@ -25,8 +25,8 @@ public final class d2 extends j {
     public zg.g0 t0;
     public zg.g0 u0;
     public zg.p0 v0;
-    public c6 w0;
-    public c6 x0;
+    public e6 w0;
+    public e6 x0;
     public boolean y0;
     public float z0;
 
@@ -104,16 +104,16 @@ public final class d2 extends j {
     }
 
     @Override // qg.j
-    public hk0 getSelectionBounds() {
+    public ik0 getSelectionBounds() {
         ViewGroup viewGroup = (ViewGroup) getParent();
         if (viewGroup == null) {
-            return new hk0();
+            return new ik0();
         }
         float scaleX = viewGroup.getScaleX();
         float scale = (getScale() + 0.4f) * getMeasuredWidth();
         float f7 = scale / 2.0f;
         float f10 = scale * scaleX;
-        return new hk0((getPositionX() - f7) * scaleX, (getPositionY() - f7) * scaleX, f10, f10);
+        return new ik0((getPositionX() - f7) * scaleX, (getPositionY() - f7) * scaleX, f10, f10);
     }
 
     @Override // qg.j
@@ -173,8 +173,8 @@ public final class d2 extends j {
         boolean[] zArr = {false};
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         ofFloat.addUpdateListener(new ai.x(26, this, zArr));
-        ofFloat.addListener(new pk0(18, this, zArr));
-        ofFloat.setInterpolator(qr.g);
+        ofFloat.addListener(new qk0(18, this, zArr));
+        ofFloat.setInterpolator(rr.g);
         ofFloat.setDuration(350L);
         ofFloat.start();
     }

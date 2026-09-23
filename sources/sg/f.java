@@ -24,10 +24,10 @@ import java.util.regex.Pattern;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
-import org.telegram.messenger.vl;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.messenger.ul;
+import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class f {
     public static final String[] a0 = {"models/star.binobj"};
@@ -161,11 +161,11 @@ public final class f {
                                     fArr2 = null;
                                     fArr3 = null;
                                     e.printStackTrace();
-                                    this.d[i11] = vl.i(ByteBuffer.allocateDirect(fArr.length * 4));
+                                    this.d[i11] = ul.i(ByteBuffer.allocateDirect(fArr.length * 4));
                                     this.d[i11].put(fArr).position(0);
-                                    this.e[i11] = vl.i(ByteBuffer.allocateDirect(fArr2.length * 4));
+                                    this.e[i11] = ul.i(ByteBuffer.allocateDirect(fArr2.length * 4));
                                     this.e[i11].put(fArr2).position(0);
-                                    this.f[i11] = vl.i(ByteBuffer.allocateDirect(fArr3.length * 4));
+                                    this.f[i11] = ul.i(ByteBuffer.allocateDirect(fArr3.length * 4));
                                     this.f[i11].put(fArr3).position(0);
                                     this.t[i11] = fArr.length;
                                     i11++;
@@ -193,11 +193,11 @@ public final class f {
                             fArr2 = null;
                             fArr3 = null;
                             e.printStackTrace();
-                            this.d[i11] = vl.i(ByteBuffer.allocateDirect(fArr.length * 4));
+                            this.d[i11] = ul.i(ByteBuffer.allocateDirect(fArr.length * 4));
                             this.d[i11].put(fArr).position(0);
-                            this.e[i11] = vl.i(ByteBuffer.allocateDirect(fArr2.length * 4));
+                            this.e[i11] = ul.i(ByteBuffer.allocateDirect(fArr2.length * 4));
                             this.e[i11].put(fArr2).position(0);
-                            this.f[i11] = vl.i(ByteBuffer.allocateDirect(fArr3.length * 4));
+                            this.f[i11] = ul.i(ByteBuffer.allocateDirect(fArr3.length * 4));
                             this.f[i11].put(fArr3).position(0);
                             this.t[i11] = fArr.length;
                             i11++;
@@ -285,11 +285,11 @@ public final class f {
                         } catch (IOException e11) {
                             e = e11;
                             e.printStackTrace();
-                            this.d[i11] = vl.i(ByteBuffer.allocateDirect(fArr.length * 4));
+                            this.d[i11] = ul.i(ByteBuffer.allocateDirect(fArr.length * 4));
                             this.d[i11].put(fArr).position(0);
-                            this.e[i11] = vl.i(ByteBuffer.allocateDirect(fArr2.length * 4));
+                            this.e[i11] = ul.i(ByteBuffer.allocateDirect(fArr2.length * 4));
                             this.e[i11].put(fArr2).position(0);
-                            this.f[i11] = vl.i(ByteBuffer.allocateDirect(fArr3.length * 4));
+                            this.f[i11] = ul.i(ByteBuffer.allocateDirect(fArr3.length * 4));
                             this.f[i11].put(fArr3).position(0);
                             this.t[i11] = fArr.length;
                             i11++;
@@ -297,11 +297,11 @@ public final class f {
                     } catch (IOException e12) {
                         e = e12;
                     }
-                    this.d[i11] = vl.i(ByteBuffer.allocateDirect(fArr.length * 4));
+                    this.d[i11] = ul.i(ByteBuffer.allocateDirect(fArr.length * 4));
                     this.d[i11].put(fArr).position(0);
-                    this.e[i11] = vl.i(ByteBuffer.allocateDirect(fArr2.length * 4));
+                    this.e[i11] = ul.i(ByteBuffer.allocateDirect(fArr2.length * 4));
                     this.e[i11].put(fArr2).position(0);
-                    this.f[i11] = vl.i(ByteBuffer.allocateDirect(fArr3.length * 4));
+                    this.f[i11] = ul.i(ByteBuffer.allocateDirect(fArr3.length * 4));
                     this.f[i11].put(fArr3).position(0);
                     this.t[i11] = fArr.length;
                     i11++;
@@ -309,7 +309,7 @@ public final class f {
                 this.U = Bitmap.createBitmap(100, 100, Bitmap.Config.ARGB_8888);
                 Canvas canvas = new Canvas(this.U);
                 Paint paint = new Paint();
-                paint.setShader(new LinearGradient(0.0f, 100.0f, 150.0f, 0.0f, new int[]{i6.w0(null, i6.Lj, false), i6.w0(null, i6.Mj, false), i6.w0(null, i6.Nj, false), i6.w0(null, i6.Oj, false)}, new float[]{0.0f, 0.5f, 0.78f, 1.0f}, Shader.TileMode.CLAMP));
+                paint.setShader(new LinearGradient(0.0f, 100.0f, 150.0f, 0.0f, new int[]{h6.w0(null, h6.Lj, false), h6.w0(null, h6.Mj, false), h6.w0(null, h6.Nj, false), h6.w0(null, h6.Oj, false)}, new float[]{0.0f, 0.5f, 0.78f, 1.0f}, Shader.TileMode.CLAMP));
                 canvas.drawRect(0.0f, 0.0f, 100.0f, 100.0f, paint);
                 int[] iArr = new int[1];
                 GLES20.glGenTextures(1, iArr, 0);
@@ -465,11 +465,11 @@ public final class f {
             fArr = null;
             if (i11 < this.W) {
             }
-            this.d[i11] = vl.i(ByteBuffer.allocateDirect(fArr.length * 4));
+            this.d[i11] = ul.i(ByteBuffer.allocateDirect(fArr.length * 4));
             this.d[i11].put(fArr).position(0);
-            this.e[i11] = vl.i(ByteBuffer.allocateDirect(fArr2.length * 4));
+            this.e[i11] = ul.i(ByteBuffer.allocateDirect(fArr2.length * 4));
             this.e[i11].put(fArr2).position(0);
-            this.f[i11] = vl.i(ByteBuffer.allocateDirect(fArr3.length * 4));
+            this.f[i11] = ul.i(ByteBuffer.allocateDirect(fArr3.length * 4));
             this.f[i11].put(fArr3).position(0);
             this.t[i11] = fArr.length;
             i11++;
@@ -477,7 +477,7 @@ public final class f {
         this.U = Bitmap.createBitmap(100, 100, Bitmap.Config.ARGB_8888);
         Canvas canvas2 = new Canvas(this.U);
         Paint paint2 = new Paint();
-        paint2.setShader(new LinearGradient(0.0f, 100.0f, 150.0f, 0.0f, new int[]{i6.w0(null, i6.Lj, false), i6.w0(null, i6.Mj, false), i6.w0(null, i6.Nj, false), i6.w0(null, i6.Oj, false)}, new float[]{0.0f, 0.5f, 0.78f, 1.0f}, Shader.TileMode.CLAMP));
+        paint2.setShader(new LinearGradient(0.0f, 100.0f, 150.0f, 0.0f, new int[]{h6.w0(null, h6.Lj, false), h6.w0(null, h6.Mj, false), h6.w0(null, h6.Nj, false), h6.w0(null, h6.Oj, false)}, new float[]{0.0f, 0.5f, 0.78f, 1.0f}, Shader.TileMode.CLAMP));
         canvas2.drawRect(0.0f, 0.0f, 100.0f, 100.0f, paint2);
         int[] iArr8 = new int[1];
         GLES20.glGenTextures(1, iArr8, 0);

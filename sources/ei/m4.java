@@ -2,15 +2,15 @@ package ei;
 
 import android.view.ViewGroup;
 import java.util.LinkedList;
-import org.telegram.ui.Components.cc0;
-import org.telegram.ui.Components.fh;
-import org.telegram.ui.Components.gi;
-import org.telegram.ui.Components.ng;
-import org.telegram.ui.Components.sb;
+import org.telegram.ui.Components.bc0;
+import org.telegram.ui.Components.gh;
+import org.telegram.ui.Components.hi;
+import org.telegram.ui.Components.og;
 import org.telegram.ui.Components.sd0;
-import org.telegram.ui.Components.vi;
+import org.telegram.ui.Components.ub;
+import org.telegram.ui.Components.wi;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m4 implements o1.f {
     public final /* synthetic */ int a;
@@ -52,38 +52,38 @@ public final /* synthetic */ class m4 implements o1.f {
                 }
                 break;
             case 1:
-                sb sbVar = (sb) this.b;
-                ng ngVar = (ng) this.c;
-                sbVar.setInOutOffset(0.0f);
+                ub ubVar = (ub) this.b;
+                og ogVar = (og) this.c;
+                ubVar.setInOutOffset(0.0f);
                 if (!z10) {
-                    ngVar.run();
+                    ogVar.run();
                     break;
                 }
                 break;
             case 2:
-                vi.r((vi) this.b, (org.telegram.ui.ActionBar.p) this.c);
+                wi.r((wi) this.b, (org.telegram.ui.ActionBar.p) this.c);
                 break;
             case 3:
-                gi giVar = (gi) this.b;
-                fh fhVar = (fh) this.c;
-                vi viVar = (vi) giVar.d;
-                viVar.z0.setTranslationY(0.0f);
-                viVar.z0.k(viVar.l2);
-                viewGroup = ((org.telegram.ui.ActionBar.f3) viVar).containerView;
+                hi hiVar = (hi) this.b;
+                gh ghVar = (gh) this.c;
+                wi wiVar = (wi) hiVar.d;
+                wiVar.z0.setTranslationY(0.0f);
+                wiVar.z0.k(wiVar.l2);
+                viewGroup = ((org.telegram.ui.ActionBar.f3) wiVar).containerView;
                 viewGroup.invalidate();
-                fhVar.run();
-                viVar.a2(0);
+                ghVar.run();
+                wiVar.a2(0);
                 break;
             default:
                 sd0 sd0Var = (sd0) this.b;
-                cc0 cc0Var = (cc0) this.c;
+                bc0 bc0Var = (bc0) this.c;
                 LinkedList linkedList = sd0Var.M;
                 sd0Var.L = null;
-                cc0Var.D = null;
-                cc0Var.z();
+                bc0Var.D = null;
+                bc0Var.z();
                 if (!z10) {
-                    cc0Var.h = 1.0f;
-                    cc0Var.z();
+                    bc0Var.h = 1.0f;
+                    bc0Var.z();
                     if (!linkedList.isEmpty()) {
                         ((Runnable) linkedList.poll()).run();
                         sd0Var.N.poll();

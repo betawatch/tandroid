@@ -5,7 +5,7 @@ import android.text.Spanned;
 import java.util.Comparator;
 import org.telegram.messenger.CodeHighlighting;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o1 implements Comparator {
     public final /* synthetic */ int a;
@@ -28,8 +28,8 @@ public final /* synthetic */ class o1 implements Comparator {
                 break;
             default:
                 SpannableStringBuilder spannableStringBuilder = (SpannableStringBuilder) this.b;
-                spanStart = spannableStringBuilder.getSpanStart((w9) obj2);
-                spanStart2 = spannableStringBuilder.getSpanStart((w9) obj);
+                spanStart = spannableStringBuilder.getSpanStart((x9) obj2);
+                spanStart2 = spannableStringBuilder.getSpanStart((x9) obj);
                 break;
         }
         return spanStart - spanStart2;

@@ -1,40 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.Layout;
-import android.text.Spanned;
-import android.text.style.LeadingMarginSpan;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class ab implements LeadingMarginSpan {
-    public final int a;
-    public final int b;
+public final class ab {
+    public boolean a;
+    public int b;
+    public boolean c;
+    public boolean d;
+    public boolean e;
+    public int f;
+    public org.telegram.ui.ActionBar.d6 g;
 
-    public ab(int i10, int i11) {
-        this.a = i10;
-        this.b = i11;
+    public ab(ab abVar) {
+        this.a = abVar.a;
+        this.b = abVar.b;
+        this.c = abVar.c;
+        this.d = abVar.d;
+        this.e = abVar.e;
+        this.f = abVar.f;
+        this.g = abVar.g;
     }
 
-    @Override // android.text.style.LeadingMarginSpan
-    public final void drawLeadingMargin(Canvas canvas, Paint paint, int i10, int i11, int i12, int i13, int i14, CharSequence charSequence, int i15, int i16, boolean z10, Layout layout) {
-        if (((Spanned) charSequence).getSpanStart(this) == i15) {
-            Paint.Style style = paint.getStyle();
-            int color = paint.getColor();
-            paint.setColor(-11491093);
-            paint.setStyle(Paint.Style.FILL);
-            if (layout != null) {
-                i14 -= layout.getLineForOffset(i15) != layout.getLineCount() + (-1) ? (int) layout.getSpacingAdd() : 0;
-            }
-            canvas.drawCircle((i11 * r7) + i10, (i12 + i14) / 2.0f, this.b, paint);
-            paint.setColor(color);
-            paint.setStyle(style);
-        }
-    }
-
-    @Override // android.text.style.LeadingMarginSpan
-    public final int getLeadingMargin(boolean z10) {
-        return (this.b * 2) + this.a;
+    public ab() {
+        this.b = 1;
+        this.f = 1;
     }
 }

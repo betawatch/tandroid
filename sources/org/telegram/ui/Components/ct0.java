@@ -17,18 +17,18 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class ct0 implements View.OnClickListener {
     public final /* synthetic */ long a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e6 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.d6 b;
     public final /* synthetic */ Context c;
     public final /* synthetic */ yu0 d;
 
-    public ct0(yu0 yu0Var, long j3, org.telegram.ui.ActionBar.e6 e6Var, Context context) {
+    public ct0(yu0 yu0Var, long j3, org.telegram.ui.ActionBar.d6 d6Var, Context context) {
         this.d = yu0Var;
         this.a = j3;
-        this.b = e6Var;
+        this.b = d6Var;
         this.c = context;
     }
 
@@ -70,7 +70,7 @@ public final class ct0 implements View.OnClickListener {
         int i11 = 11;
         if (yu0.w0(closestTab) && i10 && (j12 = yu0Var.j1(closestTab)) != null) {
             final int i12 = j12.b;
-            final n70 H = n70.H(n2Var, imageView);
+            final o70 H = o70.H(n2Var, imageView);
             int i13 = R.drawable.menu_add_stories;
             String string = LocaleController.getString(R.string.StoriesAlbumMenuAddStories);
             final int i14 = 0;
@@ -91,7 +91,7 @@ public final class ct0 implements View.OnClickListener {
                 }
             }, false);
             yu0Var.x(H, n2Var, j10, i12);
-            H.c(R.drawable.tabs_reorder, LocaleController.getString(R.string.StoriesAlbumMenuReorder), new wm(yu0Var, i12, H, i11), false);
+            H.c(R.drawable.tabs_reorder, LocaleController.getString(R.string.StoriesAlbumMenuReorder), new xm(yu0Var, i12, H, i11), false);
             final int i15 = 1;
             H.c(R.drawable.msg_delete, LocaleController.getString(R.string.StoriesAlbumMenuDeleteAlbum), new Runnable() { // from class: org.telegram.ui.Components.er0
                 @Override // java.lang.Runnable
@@ -119,16 +119,16 @@ public final class ct0 implements View.OnClickListener {
         final int i16 = 5;
         int i17 = 14;
         if (closestTab == 14) {
-            xh.n2 currentPage = nr0Var.getCurrentPage();
-            yh.m5 m5Var = currentPage.e;
-            if (m5Var == null) {
+            xh.o2 currentPage = nr0Var.getCurrentPage();
+            yh.l5 l5Var = currentPage.e;
+            if (l5Var == null) {
                 return;
             }
             long j11 = nr0Var.c;
             int i18 = nr0Var.b;
             boolean canUserDoAction = j11 == UserConfig.getInstance(i18).getClientUserId() ? true : j11 >= 0 ? false : ChatObject.canUserDoAction(MessagesController.getInstance(i18).getChat(Long.valueOf(-j11)), 5);
-            final n70 H2 = n70.H(n2Var, imageView);
-            if (m5Var.c) {
+            final o70 H2 = o70.H(n2Var, imageView);
+            if (l5Var.c) {
                 f1Var = null;
                 z12 = false;
             } else {
@@ -152,7 +152,7 @@ public final class ct0 implements View.OnClickListener {
                             case 0:
                                 nr0 nr0Var2 = this.b.d.V;
                                 nr0Var2.getClass();
-                                nr0Var2.h(null, new xh.s1(nr0Var2, 0));
+                                nr0Var2.h(null, new xh.t1(nr0Var2, 0));
                                 H2.u();
                                 break;
                             case 1:
@@ -162,9 +162,9 @@ public final class ct0 implements View.OnClickListener {
                                 bundle.putInt(TeXSymbolParser.TYPE_ATTR, 2);
                                 yu0 yu0Var2 = ct0Var.d;
                                 bundle.putLong("dialog_id", -yu0Var2.d1.id);
-                                ba0 ba0Var = new ba0(bundle, null);
-                                ba0Var.c = yu0Var2.d1;
-                                yu0Var2.v1.presentFragment(ba0Var);
+                                ca0 ca0Var = new ca0(bundle, null);
+                                ca0Var.c = yu0Var2.d1;
+                                yu0Var2.v1.presentFragment(ca0Var);
                                 H2.u();
                                 break;
                             default:
@@ -177,7 +177,7 @@ public final class ct0 implements View.OnClickListener {
                 z12 = true;
             }
             if (nr0Var.e.h()) {
-                if (!m5Var.h().isEmpty() || currentPage.d) {
+                if (!l5Var.h().isEmpty() || currentPage.d) {
                     final int i20 = 2;
                     H2.c(R.drawable.tabs_reorder, LocaleController.getString(R.string.Gift2Reorder), new Runnable(this) { // from class: org.telegram.ui.Components.xs0
                         public final /* synthetic */ ct0 b;
@@ -192,7 +192,7 @@ public final class ct0 implements View.OnClickListener {
                                 case 0:
                                     nr0 nr0Var2 = this.b.d.V;
                                     nr0Var2.getClass();
-                                    nr0Var2.h(null, new xh.s1(nr0Var2, 0));
+                                    nr0Var2.h(null, new xh.t1(nr0Var2, 0));
                                     H2.u();
                                     break;
                                 case 1:
@@ -202,9 +202,9 @@ public final class ct0 implements View.OnClickListener {
                                     bundle.putInt(TeXSymbolParser.TYPE_ATTR, 2);
                                     yu0 yu0Var2 = ct0Var.d;
                                     bundle.putLong("dialog_id", -yu0Var2.d1.id);
-                                    ba0 ba0Var = new ba0(bundle, null);
-                                    ba0Var.c = yu0Var2.d1;
-                                    yu0Var2.v1.presentFragment(ba0Var);
+                                    ca0 ca0Var = new ca0(bundle, null);
+                                    ca0Var.c = yu0Var2.d1;
+                                    yu0Var2.v1.presentFragment(ca0Var);
                                     H2.u();
                                     break;
                                 default:
@@ -240,21 +240,21 @@ public final class ct0 implements View.OnClickListener {
                 f1Var2 = null;
                 f1Var3 = null;
             }
-            org.telegram.messenger.kk kkVar = new org.telegram.messenger.kk(f1Var, m5Var, h, h10, h11, h12, canUserDoAction, f1Var2, f1Var3, 3);
+            org.telegram.messenger.jk jkVar = new org.telegram.messenger.jk(f1Var, l5Var, h, h10, h11, h12, canUserDoAction, f1Var2, f1Var3, 3);
             org.telegram.ui.ActionBar.f1 f1Var5 = f1Var;
             org.telegram.ui.ActionBar.f1 f1Var6 = f1Var2;
             org.telegram.ui.ActionBar.f1 f1Var7 = f1Var3;
-            kkVar.run();
+            jkVar.run();
             if (f1Var5 != null) {
-                f1Var5.setOnClickListener(new dt(i17, m5Var, kkVar));
+                f1Var5.setOnClickListener(new et(i17, l5Var, jkVar));
             }
-            xh.r2.j(h, m5Var, kkVar, 1);
-            xh.r2.j(h10, m5Var, kkVar, 2);
-            xh.r2.j(h11, m5Var, kkVar, 4);
-            xh.r2.j(h12, m5Var, kkVar, 8);
+            xh.s2.j(h, l5Var, jkVar, 1);
+            xh.s2.j(h10, l5Var, jkVar, 2);
+            xh.s2.j(h11, l5Var, jkVar, 4);
+            xh.s2.j(h12, l5Var, jkVar, 8);
             if (canUserDoAction) {
-                xh.r2.j(f1Var6, m5Var, kkVar, 256);
-                xh.r2.j(f1Var7, m5Var, kkVar, 512);
+                xh.s2.j(f1Var6, l5Var, jkVar, 256);
+                xh.s2.j(f1Var7, l5Var, jkVar, 512);
             }
             H2.Y = true;
             H2.J = false;
@@ -263,7 +263,7 @@ public final class ct0 implements View.OnClickListener {
             return;
         }
         if (closestTab == 13 && user != null && user.bot && user.bot_has_main_app && user.bot_can_edit && mr0Var != null) {
-            n70 H3 = n70.H(n2Var, imageView);
+            o70 H3 = o70.H(n2Var, imageView);
             final int i21 = 0;
             H3.l(R.drawable.msg_addbot, LocaleController.getString(R.string.ProfileBotAddPreview), new Runnable(this) { // from class: org.telegram.ui.Components.ys0
                 public final /* synthetic */ ct0 b;
@@ -278,7 +278,7 @@ public final class ct0 implements View.OnClickListener {
                         case 0:
                             yu0 yu0Var2 = this.b.d;
                             org.telegram.ui.ActionBar.n2 n2Var2 = yu0Var2.v1;
-                            ci.oc E = ci.oc.E(n2Var2.getParentActivity(), n2Var2.getCurrentAccount());
+                            ci.lc E = ci.lc.E(n2Var2.getParentActivity(), n2Var2.getCurrentAccount());
                             long j13 = yu0Var2.j1;
                             String currentLang = yu0Var2.U.getCurrentLang();
                             E.v0 = j13;
@@ -309,7 +309,7 @@ public final class ct0 implements View.OnClickListener {
                             Bundle bundle = new Bundle();
                             org.telegram.ui.ActionBar.n2 n2Var3 = yu0Var3.v1;
                             bundle.putLong("user_id", n2Var3.getUserConfig().getClientUserId());
-                            n2Var3.presentFragment(new org.telegram.ui.bo(bundle), true);
+                            n2Var3.presentFragment(new org.telegram.ui.xn(bundle), true);
                             break;
                         case 5:
                             yu0 yu0Var4 = this.b.d;
@@ -324,7 +324,7 @@ public final class ct0 implements View.OnClickListener {
                             ct0 ct0Var = this.b;
                             org.telegram.ui.ActionBar.n2 n2Var4 = ct0Var.d.v1;
                             TLRPC.User currentUser = n2Var4.getUserConfig().getCurrentUser();
-                            c5.s(n2Var4, false, null, currentUser, false, true, false, true, new mf(14, ct0Var, currentUser));
+                            e5.s(n2Var4, false, null, currentUser, false, true, false, true, new b3(15, ct0Var, currentUser));
                             break;
                     }
                 }
@@ -343,7 +343,7 @@ public final class ct0 implements View.OnClickListener {
                         case 0:
                             yu0 yu0Var2 = this.b.d;
                             org.telegram.ui.ActionBar.n2 n2Var2 = yu0Var2.v1;
-                            ci.oc E = ci.oc.E(n2Var2.getParentActivity(), n2Var2.getCurrentAccount());
+                            ci.lc E = ci.lc.E(n2Var2.getParentActivity(), n2Var2.getCurrentAccount());
                             long j13 = yu0Var2.j1;
                             String currentLang = yu0Var2.U.getCurrentLang();
                             E.v0 = j13;
@@ -374,7 +374,7 @@ public final class ct0 implements View.OnClickListener {
                             Bundle bundle = new Bundle();
                             org.telegram.ui.ActionBar.n2 n2Var3 = yu0Var3.v1;
                             bundle.putLong("user_id", n2Var3.getUserConfig().getClientUserId());
-                            n2Var3.presentFragment(new org.telegram.ui.bo(bundle), true);
+                            n2Var3.presentFragment(new org.telegram.ui.xn(bundle), true);
                             break;
                         case 5:
                             yu0 yu0Var4 = this.b.d;
@@ -389,7 +389,7 @@ public final class ct0 implements View.OnClickListener {
                             ct0 ct0Var = this.b;
                             org.telegram.ui.ActionBar.n2 n2Var4 = ct0Var.d.v1;
                             TLRPC.User currentUser = n2Var4.getUserConfig().getCurrentUser();
-                            c5.s(n2Var4, false, null, currentUser, false, true, false, true, new mf(14, ct0Var, currentUser));
+                            e5.s(n2Var4, false, null, currentUser, false, true, false, true, new b3(15, ct0Var, currentUser));
                             break;
                     }
                 }
@@ -408,7 +408,7 @@ public final class ct0 implements View.OnClickListener {
                         case 0:
                             yu0 yu0Var2 = this.b.d;
                             org.telegram.ui.ActionBar.n2 n2Var2 = yu0Var2.v1;
-                            ci.oc E = ci.oc.E(n2Var2.getParentActivity(), n2Var2.getCurrentAccount());
+                            ci.lc E = ci.lc.E(n2Var2.getParentActivity(), n2Var2.getCurrentAccount());
                             long j13 = yu0Var2.j1;
                             String currentLang = yu0Var2.U.getCurrentLang();
                             E.v0 = j13;
@@ -439,7 +439,7 @@ public final class ct0 implements View.OnClickListener {
                             Bundle bundle = new Bundle();
                             org.telegram.ui.ActionBar.n2 n2Var3 = yu0Var3.v1;
                             bundle.putLong("user_id", n2Var3.getUserConfig().getClientUserId());
-                            n2Var3.presentFragment(new org.telegram.ui.bo(bundle), true);
+                            n2Var3.presentFragment(new org.telegram.ui.xn(bundle), true);
                             break;
                         case 5:
                             yu0 yu0Var4 = this.b.d;
@@ -454,13 +454,13 @@ public final class ct0 implements View.OnClickListener {
                             ct0 ct0Var = this.b;
                             org.telegram.ui.ActionBar.n2 n2Var4 = ct0Var.d.v1;
                             TLRPC.User currentUser = n2Var4.getUserConfig().getCurrentUser();
-                            c5.s(n2Var4, false, null, currentUser, false, true, false, true, new mf(14, ct0Var, currentUser));
+                            e5.s(n2Var4, false, null, currentUser, false, true, false, true, new b3(15, ct0Var, currentUser));
                             break;
                     }
                 }
             }, mr0Var.getItemsCount() > 0);
             final int i24 = 3;
-            H3.m(!TextUtils.isEmpty(mr0Var.getCurrentLang()), R.drawable.msg_delete, LocaleController.formatString(R.string.ProfileBotRemoveLang, v31.E(mr0Var.getCurrentLang(), null, null)), true, new Runnable(this) { // from class: org.telegram.ui.Components.ys0
+            H3.m(!TextUtils.isEmpty(mr0Var.getCurrentLang()), R.drawable.msg_delete, LocaleController.formatString(R.string.ProfileBotRemoveLang, u31.E(mr0Var.getCurrentLang(), null, null)), true, new Runnable(this) { // from class: org.telegram.ui.Components.ys0
                 public final /* synthetic */ ct0 b;
 
                 {
@@ -473,7 +473,7 @@ public final class ct0 implements View.OnClickListener {
                         case 0:
                             yu0 yu0Var2 = this.b.d;
                             org.telegram.ui.ActionBar.n2 n2Var2 = yu0Var2.v1;
-                            ci.oc E = ci.oc.E(n2Var2.getParentActivity(), n2Var2.getCurrentAccount());
+                            ci.lc E = ci.lc.E(n2Var2.getParentActivity(), n2Var2.getCurrentAccount());
                             long j13 = yu0Var2.j1;
                             String currentLang = yu0Var2.U.getCurrentLang();
                             E.v0 = j13;
@@ -504,7 +504,7 @@ public final class ct0 implements View.OnClickListener {
                             Bundle bundle = new Bundle();
                             org.telegram.ui.ActionBar.n2 n2Var3 = yu0Var3.v1;
                             bundle.putLong("user_id", n2Var3.getUserConfig().getClientUserId());
-                            n2Var3.presentFragment(new org.telegram.ui.bo(bundle), true);
+                            n2Var3.presentFragment(new org.telegram.ui.xn(bundle), true);
                             break;
                         case 5:
                             yu0 yu0Var4 = this.b.d;
@@ -519,7 +519,7 @@ public final class ct0 implements View.OnClickListener {
                             ct0 ct0Var = this.b;
                             org.telegram.ui.ActionBar.n2 n2Var4 = ct0Var.d.v1;
                             TLRPC.User currentUser = n2Var4.getUserConfig().getCurrentUser();
-                            c5.s(n2Var4, false, null, currentUser, false, true, false, true, new mf(14, ct0Var, currentUser));
+                            e5.s(n2Var4, false, null, currentUser, false, true, false, true, new b3(15, ct0Var, currentUser));
                             break;
                     }
                 }
@@ -530,7 +530,7 @@ public final class ct0 implements View.OnClickListener {
             return;
         }
         if (yu0Var.getSelectedTab() == 11) {
-            n70 H4 = n70.H(n2Var, imageView);
+            o70 H4 = o70.H(n2Var, imageView);
             final int i25 = 4;
             H4.c(R.drawable.msg_discussion, LocaleController.getString(R.string.SavedViewAsMessages), new Runnable(this) { // from class: org.telegram.ui.Components.ys0
                 public final /* synthetic */ ct0 b;
@@ -545,7 +545,7 @@ public final class ct0 implements View.OnClickListener {
                         case 0:
                             yu0 yu0Var2 = this.b.d;
                             org.telegram.ui.ActionBar.n2 n2Var2 = yu0Var2.v1;
-                            ci.oc E = ci.oc.E(n2Var2.getParentActivity(), n2Var2.getCurrentAccount());
+                            ci.lc E = ci.lc.E(n2Var2.getParentActivity(), n2Var2.getCurrentAccount());
                             long j13 = yu0Var2.j1;
                             String currentLang = yu0Var2.U.getCurrentLang();
                             E.v0 = j13;
@@ -576,7 +576,7 @@ public final class ct0 implements View.OnClickListener {
                             Bundle bundle = new Bundle();
                             org.telegram.ui.ActionBar.n2 n2Var3 = yu0Var3.v1;
                             bundle.putLong("user_id", n2Var3.getUserConfig().getClientUserId());
-                            n2Var3.presentFragment(new org.telegram.ui.bo(bundle), true);
+                            n2Var3.presentFragment(new org.telegram.ui.xn(bundle), true);
                             break;
                         case 5:
                             yu0 yu0Var4 = this.b.d;
@@ -591,7 +591,7 @@ public final class ct0 implements View.OnClickListener {
                             ct0 ct0Var = this.b;
                             org.telegram.ui.ActionBar.n2 n2Var4 = ct0Var.d.v1;
                             TLRPC.User currentUser = n2Var4.getUserConfig().getCurrentUser();
-                            c5.s(n2Var4, false, null, currentUser, false, true, false, true, new mf(14, ct0Var, currentUser));
+                            e5.s(n2Var4, false, null, currentUser, false, true, false, true, new b3(15, ct0Var, currentUser));
                             break;
                     }
                 }
@@ -610,7 +610,7 @@ public final class ct0 implements View.OnClickListener {
                         case 0:
                             yu0 yu0Var2 = this.b.d;
                             org.telegram.ui.ActionBar.n2 n2Var2 = yu0Var2.v1;
-                            ci.oc E = ci.oc.E(n2Var2.getParentActivity(), n2Var2.getCurrentAccount());
+                            ci.lc E = ci.lc.E(n2Var2.getParentActivity(), n2Var2.getCurrentAccount());
                             long j13 = yu0Var2.j1;
                             String currentLang = yu0Var2.U.getCurrentLang();
                             E.v0 = j13;
@@ -641,7 +641,7 @@ public final class ct0 implements View.OnClickListener {
                             Bundle bundle = new Bundle();
                             org.telegram.ui.ActionBar.n2 n2Var3 = yu0Var3.v1;
                             bundle.putLong("user_id", n2Var3.getUserConfig().getClientUserId());
-                            n2Var3.presentFragment(new org.telegram.ui.bo(bundle), true);
+                            n2Var3.presentFragment(new org.telegram.ui.xn(bundle), true);
                             break;
                         case 5:
                             yu0 yu0Var4 = this.b.d;
@@ -656,7 +656,7 @@ public final class ct0 implements View.OnClickListener {
                             ct0 ct0Var = this.b;
                             org.telegram.ui.ActionBar.n2 n2Var4 = ct0Var.d.v1;
                             TLRPC.User currentUser = n2Var4.getUserConfig().getCurrentUser();
-                            c5.s(n2Var4, false, null, currentUser, false, true, false, true, new mf(14, ct0Var, currentUser));
+                            e5.s(n2Var4, false, null, currentUser, false, true, false, true, new b3(15, ct0Var, currentUser));
                             break;
                     }
                 }
@@ -675,7 +675,7 @@ public final class ct0 implements View.OnClickListener {
                         case 0:
                             yu0 yu0Var2 = this.b.d;
                             org.telegram.ui.ActionBar.n2 n2Var2 = yu0Var2.v1;
-                            ci.oc E = ci.oc.E(n2Var2.getParentActivity(), n2Var2.getCurrentAccount());
+                            ci.lc E = ci.lc.E(n2Var2.getParentActivity(), n2Var2.getCurrentAccount());
                             long j13 = yu0Var2.j1;
                             String currentLang = yu0Var2.U.getCurrentLang();
                             E.v0 = j13;
@@ -706,7 +706,7 @@ public final class ct0 implements View.OnClickListener {
                             Bundle bundle = new Bundle();
                             org.telegram.ui.ActionBar.n2 n2Var3 = yu0Var3.v1;
                             bundle.putLong("user_id", n2Var3.getUserConfig().getClientUserId());
-                            n2Var3.presentFragment(new org.telegram.ui.bo(bundle), true);
+                            n2Var3.presentFragment(new org.telegram.ui.xn(bundle), true);
                             break;
                         case 5:
                             yu0 yu0Var4 = this.b.d;
@@ -721,7 +721,7 @@ public final class ct0 implements View.OnClickListener {
                             ct0 ct0Var = this.b;
                             org.telegram.ui.ActionBar.n2 n2Var4 = ct0Var.d.v1;
                             TLRPC.User currentUser = n2Var4.getUserConfig().getCurrentUser();
-                            c5.s(n2Var4, false, null, currentUser, false, true, false, true, new mf(14, ct0Var, currentUser));
+                            e5.s(n2Var4, false, null, currentUser, false, true, false, true, new b3(15, ct0Var, currentUser));
                             break;
                     }
                 }
@@ -731,7 +731,7 @@ public final class ct0 implements View.OnClickListener {
             H4.Z();
             return;
         }
-        final n70 H5 = n70.H(n2Var, imageView);
+        final o70 H5 = o70.H(n2Var, imageView);
         if ((closestTab == 8 || yu0.w0(closestTab)) && i10) {
             c10 = 0;
             H5.c(R.drawable.menu_album_add, LocaleController.getString(R.string.StoriesAlbumAddAlbum), new fr0(this, this.b, H5, 1), false);
@@ -748,7 +748,7 @@ public final class ct0 implements View.OnClickListener {
                     z10 = false;
                     if (!DialogObject.isEncryptedDialog(j3)) {
                         if (user == null || !user.bot) {
-                            H5.c(R.drawable.msg_calendar2, LocaleController.getString(R.string.Calendar), new wm(this, closestTab, H5, 13), false);
+                            H5.c(R.drawable.msg_calendar2, LocaleController.getString(R.string.Calendar), new xm(this, closestTab, H5, 13), false);
                             if (yu0Var.d1 != null && !yu0Var.v0() && (chat = MessagesController.getInstance(n2Var.getCurrentAccount()).getChat(Long.valueOf(yu0Var.d1.id))) != null && (tL_chatAdminRights = chat.admin_rights) != null && tL_chatAdminRights.edit_stories) {
                                 final int i27 = 1;
                                 H5.c(R.drawable.msg_archive, LocaleController.getString(R.string.OpenChannelArchiveStories), new Runnable(this) { // from class: org.telegram.ui.Components.xs0
@@ -764,7 +764,7 @@ public final class ct0 implements View.OnClickListener {
                                             case 0:
                                                 nr0 nr0Var2 = this.b.d.V;
                                                 nr0Var2.getClass();
-                                                nr0Var2.h(null, new xh.s1(nr0Var2, 0));
+                                                nr0Var2.h(null, new xh.t1(nr0Var2, 0));
                                                 H5.u();
                                                 break;
                                             case 1:
@@ -774,9 +774,9 @@ public final class ct0 implements View.OnClickListener {
                                                 bundle.putInt(TeXSymbolParser.TYPE_ATTR, 2);
                                                 yu0 yu0Var2 = ct0Var.d;
                                                 bundle.putLong("dialog_id", -yu0Var2.d1.id);
-                                                ba0 ba0Var = new ba0(bundle, null);
-                                                ba0Var.c = yu0Var2.d1;
-                                                yu0Var2.v1.presentFragment(ba0Var);
+                                                ca0 ca0Var = new ca0(bundle, null);
+                                                ca0Var.c = yu0Var2.d1;
+                                                yu0Var2.v1.presentFragment(ca0Var);
                                                 H5.u();
                                                 break;
                                             default:

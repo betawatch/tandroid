@@ -1,66 +1,29 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.ViewGroup;
+import android.app.Activity;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class ad1 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ wd1 b;
+public final class ad1 extends org.telegram.ui.Components.hq0 {
+    public final /* synthetic */ cd1 b1;
 
-    public /* synthetic */ ad1(wd1 wd1Var, int i10) {
-        this.a = i10;
-        this.b = wd1Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ad1(cd1 cd1Var, Activity activity, String str, String str2) {
+        super(activity, null, str, false, str2, false, null);
+        this.b1 = cd1Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                super.onAnimationEnd(animator);
-                wd1 wd1Var = this.b;
-                wd1Var.x0.invalidate();
-                wd1Var.w0[1].setVisibility(8);
-                wd1Var.c2 = null;
-                break;
-            case 1:
-                this.b.B0 = null;
-                break;
-            case 2:
-                wd1 wd1Var2 = this.b;
-                if (wd1Var2.D0.getTag() == null) {
-                    wd1Var2.D0.setVisibility(4);
-                }
-                wd1Var2.H0 = null;
-                break;
-            case 3:
-                wd1 wd1Var3 = this.b;
-                if (wd1Var3.E0.getTag() == null) {
-                    wd1Var3.E0.setVisibility(4);
-                }
-                wd1Var3.I0 = null;
-                break;
-            case 4:
-                wd1 wd1Var4 = this.b;
-                lc lcVar = wd1Var4.h2;
-                if (lcVar != null) {
-                    if (lcVar.getParent() != null) {
-                        ((ViewGroup) wd1Var4.h2.getParent()).removeView(wd1Var4.h2);
-                    }
-                    wd1Var4.h2 = null;
-                }
-                wd1Var4.j2 = null;
-                super.onAnimationEnd(animator);
-                break;
-            default:
-                wd1 wd1Var5 = this.b;
-                if (!wd1Var5.p1.a()) {
-                    wd1Var5.R1.setVisibility(8);
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Components.hq0
+    public final void R0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        if (z10) {
+            int m10 = iVar.m();
+            cd1 cd1Var = this.b1;
+            if (m10 == 1) {
+                cd1Var.a.l0.m(((TLRPC.Dialog) iVar.n(0)).id, Integer.valueOf(i10), 61);
+            } else {
+                cd1Var.a.l0.k(0L, 61, Integer.valueOf(i10), Integer.valueOf(iVar.m()), null, null);
+            }
         }
     }
 }

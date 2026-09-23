@@ -1,30 +1,54 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class lr implements z60 {
-    public final /* synthetic */ e70 a;
-    public final /* synthetic */ ur b;
+public final /* synthetic */ class lr implements org.telegram.ui.Cells.a5, org.telegram.ui.Components.sv0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ mr b;
 
-    public lr(ur urVar, e70 e70Var) {
-        this.b = urVar;
-        this.a = e70Var;
+    public /* synthetic */ lr(mr mrVar, int i10) {
+        this.a = i10;
+        this.b = mrVar;
     }
 
-    @Override // org.telegram.ui.z60
-    public final void i(TLRPC.User user) {
-        this.b.t0(user.id, null, null, null, "", true, 0, false);
+    @Override // org.telegram.ui.Cells.a5
+    public boolean c(org.telegram.ui.Cells.b5 b5Var, boolean z10) {
+        qr qrVar = this.b.d;
+        return qrVar.h0(qrVar.a.E(((Integer) b5Var.getTag()).intValue()), !z10, b5Var);
     }
 
-    @Override // org.telegram.ui.z60
-    public final void j(int i10, ArrayList arrayList) {
-        if (this.a.getParentActivity() == null) {
-            return;
+    @Override // org.telegram.ui.Components.sv0
+    public void g(int i10) {
+        switch (this.a) {
+            case 1:
+                qr qrVar = this.b.d;
+                if (qrVar.s != null) {
+                    int i11 = qrVar.p1;
+                    boolean z10 = (i11 > 0 && i10 == 0) || (i11 == 0 && i10 > 0);
+                    qrVar.p1 = i10;
+                    if (z10) {
+                        kr w02 = qrVar.w0();
+                        qrVar.B0();
+                        qrVar.A0(w02);
+                    }
+                    qrVar.a.m(qrVar.P0);
+                    break;
+                }
+                break;
+            default:
+                this.b.d.s1 = i10 + 1;
+                break;
         }
-        ur urVar = this.b;
-        urVar.getMessagesController().addUsersToChat(urVar.r, urVar, arrayList, i10, new g3(this, 2), new kr(0), null);
+    }
+
+    @Override // org.telegram.ui.Components.sv0
+    public /* synthetic */ void l() {
+        int i10 = this.a;
+    }
+
+    private final /* synthetic */ void a() {
+    }
+
+    private final /* synthetic */ void b() {
     }
 }

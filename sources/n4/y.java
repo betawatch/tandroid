@@ -58,13 +58,13 @@ import java.util.WeakHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Cells.q9;
+import org.telegram.ui.Cells.r9;
 import p4.t0;
 import v7.t7;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final class y implements OnCompleteListener, ce.b, ea.a, g6.n, h1, c3.i, le.f, n5.b {
+public final class y implements OnCompleteListener, ce.b, ea.a, g6.n, h1, c3.i, le.g, n5.b {
     public final /* synthetic */ int a;
     public Object b;
     public Object c;
@@ -211,7 +211,7 @@ public final class y implements OnCompleteListener, ce.b, ea.a, g6.n, h1, c3.i, 
 
     @Override // ii.h1
     public void D(i1 i1Var, int i10, int i11) {
-        q9 E;
+        r9 E;
         ii.k0 k0Var = (ii.k0) this.b;
         if (((l0) this.c).d || i10 == i11 || (E = k0Var.E()) == null) {
             return;
@@ -222,9 +222,9 @@ public final class y implements OnCompleteListener, ce.b, ea.a, g6.n, h1, c3.i, 
         i1Var.post(new ii.i0(this, i1Var, i11, E, k0Var, i10));
     }
 
-    @Override // le.f
+    @Override // le.g
     public void E() {
-        ((le.k) this.b).c((le.l) this.c);
+        ((le.l) this.b).c((le.m) this.c);
     }
 
     public void F(androidx.fragment.app.s f7, boolean z10) {
@@ -311,7 +311,7 @@ public final class y implements OnCompleteListener, ce.b, ea.a, g6.n, h1, c3.i, 
                 t7.b(obj);
                 th2 = (Throwable) obj;
                 if (th2 != null) {
-                    za.w wVar = (za.w) yVar.c;
+                    za.y yVar2 = (za.y) yVar.c;
                     dVar.d = null;
                     dVar.e = null;
                     dVar.b = 2;
@@ -428,24 +428,24 @@ public final class y implements OnCompleteListener, ce.b, ea.a, g6.n, h1, c3.i, 
     }
 
     public c3.o P(Object... objArr) {
-        Constructor a2;
+        Constructor b10;
         synchronized (((AtomicBoolean) this.c)) {
             if (!((AtomicBoolean) this.c).get()) {
                 try {
-                    a2 = ((w1) this.b).a();
+                    b10 = ((w1) this.b).b();
                 } catch (ClassNotFoundException unused) {
                     ((AtomicBoolean) this.c).set(true);
                 } catch (Exception e) {
                     throw new RuntimeException("Error instantiating extension", e);
                 }
             }
-            a2 = null;
+            b10 = null;
         }
-        if (a2 == null) {
+        if (b10 == null) {
             return null;
         }
         try {
-            return (c3.o) a2.newInstance(objArr);
+            return (c3.o) b10.newInstance(objArr);
         } catch (Exception e7) {
             throw new IllegalStateException("Unexpected error creating extractor", e7);
         }
@@ -688,9 +688,9 @@ public final class y implements OnCompleteListener, ce.b, ea.a, g6.n, h1, c3.i, 
         }
     }
 
-    @Override // le.f
+    @Override // le.g
     public void a() {
-        ((le.k) this.b).a();
+        ((le.l) this.b).a();
     }
 
     public int a0(Context context, com.google.android.gms.common.api.c cVar) {
@@ -827,7 +827,7 @@ public final class y implements OnCompleteListener, ce.b, ea.a, g6.n, h1, c3.i, 
 
     @Override // fd.a
     public Object get() {
-        return new m5.d((Context) ((a9.r) this.b).a, (lf.i) ((k2.c0) this.c).get());
+        return new m5.d((Context) ((a9.r) this.b).a, (lf.i) ((k2.b0) this.c).get());
     }
 
     public void h() {
@@ -835,7 +835,7 @@ public final class y implements OnCompleteListener, ce.b, ea.a, g6.n, h1, c3.i, 
         this.c = null;
     }
 
-    @Override // le.f
+    @Override // le.g
     public boolean i() {
         return false;
     }
@@ -845,7 +845,7 @@ public final class y implements OnCompleteListener, ce.b, ea.a, g6.n, h1, c3.i, 
         ((ii.k0) this.b).S(i10, i11);
     }
 
-    @Override // le.f
+    @Override // le.g
     public boolean k(float f7) {
         return false;
     }
@@ -1097,7 +1097,7 @@ public final class y implements OnCompleteListener, ce.b, ea.a, g6.n, h1, c3.i, 
         this.b = aVar == null ? null : aVar.b;
     }
 
-    @Override // le.f
+    @Override // le.g
     public void l() {
     }
 
@@ -1118,7 +1118,7 @@ public final class y implements OnCompleteListener, ce.b, ea.a, g6.n, h1, c3.i, 
         this.c = new CopyOnWriteArrayList();
     }
 
-    @Override // le.f
+    @Override // le.g
     public void g(boolean z10) {
     }
 

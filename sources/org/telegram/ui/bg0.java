@@ -1,11 +1,11 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.animation.ValueAnimator;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bg0 implements Runnable {
+public final /* synthetic */ class bg0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ fg0 b;
 
@@ -14,32 +14,34 @@ public final /* synthetic */ class bg0 implements Runnable {
         this.b = fg0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                wg0 wg0Var = this.b.v;
-                wg0Var.u1(0, true, null, true);
-                wg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.CodeExpired));
-                break;
-            case 1:
-                wg0 wg0Var2 = this.b.v;
-                wg0Var2.u1(0, true, null, true);
-                wg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.CodeExpired));
-                break;
-            case 2:
-                this.b.p();
-                break;
-            case 3:
-                this.b.b.setLoading(false);
+                fg0 fg0Var = this.b;
+                fg0Var.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                fg0Var.d.setAlpha(floatValue);
+                fg0Var.e.setAlpha(floatValue);
+                fg0Var.f.setProgress(floatValue);
+                FrameLayout frameLayout = fg0Var.w;
+                frameLayout.setAlpha(floatValue);
+                float f7 = (floatValue * 0.5f) + 0.5f;
+                frameLayout.setScaleX(f7);
+                frameLayout.setScaleY(f7);
                 break;
             default:
-                PremiumPreviewFragment premiumPreviewFragment = new PremiumPreviewFragment(0, "sms");
-                wg0 wg0Var3 = this.b.v;
-                i10 = ((org.telegram.ui.ActionBar.n2) wg0Var3).currentAccount;
-                premiumPreviewFragment.setCurrentAccount(i10);
-                wg0Var3.presentFragment(premiumPreviewFragment);
+                fg0 fg0Var2 = this.b;
+                fg0Var2.getClass();
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                fg0Var2.f.setProgress(floatValue2);
+                fg0Var2.d.setAlpha(floatValue2);
+                fg0Var2.e.setAlpha(floatValue2);
+                FrameLayout frameLayout2 = fg0Var2.w;
+                frameLayout2.setAlpha(floatValue2);
+                float f10 = (floatValue2 * 0.5f) + 0.5f;
+                frameLayout2.setScaleX(f10);
+                frameLayout2.setScaleY(f10);
                 break;
         }
     }

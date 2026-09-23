@@ -7,9 +7,9 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class o extends ScrollView {
     public final /* synthetic */ LinearLayout a;
@@ -30,8 +30,8 @@ public final class o extends ScrollView {
         int dp = AndroidUtilities.dp(36.0f);
         RectF rectF = AndroidUtilities.rectTmp;
         rectF.set((getMeasuredWidth() - dp) / 2.0f, y3, (getMeasuredWidth() + dp) / 2.0f, AndroidUtilities.dp(4.0f) + y3);
-        i6.t0.setColor(-10790053);
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), i6.t0);
+        h6.t0.setColor(-10790053);
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), h6.t0);
     }
 
     @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.View

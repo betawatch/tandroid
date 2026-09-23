@@ -1,34 +1,66 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+import java.io.File;
+import java.util.ArrayList;
+import java.util.HashSet;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final /* synthetic */ class zh implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ SavedMessagesController b;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ zh(SavedMessagesController savedMessagesController, int i10) {
+    public /* synthetic */ zh(Object obj, Object obj2, Object obj3, Object obj4, int i10) {
         this.a = i10;
-        this.b = savedMessagesController;
+        this.c = obj;
+        this.b = obj2;
+        this.d = obj3;
+        this.e = obj4;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.update();
+                ((SavedMessagesController) this.c).lambda$loadDialogs$2((TLObject) this.b, (ArrayList) this.d, (TLRPC.TL_error) this.e);
                 break;
             case 1:
-                this.b.saveCache();
+                ((SendMessagesHelper) this.c).lambda$performSendDelayedMessage$57((TLObject) this.b, (SendMessagesHelper.DelayedMessage) this.d, (String) this.e);
                 break;
             case 2:
-                this.b.lambda$deleteCache$12();
+                ((SendMessagesHelper) this.c).lambda$sendMessage$19((TLRPC.TL_messages_forwardMessages) this.b, (ArrayList) this.d, (fj) this.e);
                 break;
             case 3:
-                this.b.lambda$saveCache$10();
+                ((SendMessagesHelper) this.c).lambda$didReceivedNotification$4((SendMessagesHelper.DelayedMessage) this.b, (File) this.d, (MessageObject) this.e);
+                break;
+            case 4:
+                ((UnconfirmedAuthController) this.c).lambda$readCache$0((ArrayList) this.d, (HashSet) this.b, (ArrayList) this.e);
                 break;
             default:
-                this.b.lambda$loadDialogs$1();
+                ((UserNameResolver) this.c).lambda$resolve$0((String) this.d, (TLRPC.TL_error) this.e, (TLObject) this.b);
                 break;
         }
+    }
+
+    public /* synthetic */ zh(String str, UserNameResolver userNameResolver, TLObject tLObject, TLRPC.TL_error tL_error) {
+        this.a = 5;
+        this.c = userNameResolver;
+        this.d = str;
+        this.e = tL_error;
+        this.b = tLObject;
+    }
+
+    public /* synthetic */ zh(UnconfirmedAuthController unconfirmedAuthController, ArrayList arrayList, HashSet hashSet, ArrayList arrayList2) {
+        this.a = 4;
+        this.c = unconfirmedAuthController;
+        this.d = arrayList;
+        this.b = hashSet;
+        this.e = arrayList2;
     }
 }

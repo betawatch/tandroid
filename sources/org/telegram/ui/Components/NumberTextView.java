@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public class NumberTextView extends View {
     public final ArrayList a;
@@ -120,7 +120,7 @@ public class NumberTextView extends View {
             ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", z11 ? -1.0f : 1.0f, 0.0f);
             this.d = ofFloat;
             ofFloat.setDuration(this.h ? 180L : 150L);
-            this.d.addListener(new p8(this, 29));
+            this.d.addListener(new r8(this, 29));
             this.d.start();
         }
         invalidate();
@@ -244,6 +244,6 @@ public class NumberTextView extends View {
         a(this.f, false);
     }
 
-    public void setOnTextWidthProgressChangedListener(vc0 vc0Var) {
+    public void setOnTextWidthProgressChangedListener(uc0 uc0Var) {
     }
 }

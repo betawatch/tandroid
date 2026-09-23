@@ -6,7 +6,7 @@ import android.net.Uri;
 import android.os.Environment;
 import android.text.TextUtils;
 import android.util.Pair;
-import ci.uc;
+import ci.rc;
 import java.io.File;
 import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
@@ -15,7 +15,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class k0 {
     public Long a;
@@ -30,7 +30,7 @@ public final class k0 {
     public long j;
     public boolean k;
     public boolean l;
-    public final Runnable m = new uc(this, 8);
+    public final Runnable m = new rc(this, 8);
     public final /* synthetic */ l0 n;
 
     public k0(l0 l0Var, String str, String str2) {

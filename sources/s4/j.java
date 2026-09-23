@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.WeakHashMap;
 import org.telegram.messenger.BuildVars;
-import org.telegram.ui.Components.xs;
+import org.telegram.ui.Components.ys;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public class j extends f1 {
     public static TimeInterpolator E;
@@ -142,7 +142,7 @@ public class j extends f1 {
         } else {
             animate.setInterpolator(this.i);
         }
-        animate.setDuration(j()).setStartDelay(0L).setListener(new xs(this, c1Var, i14, view, i15, animate, 1)).start();
+        animate.setDuration(j()).setStartDelay(0L).setListener(new ys(this, c1Var, i14, view, i15, animate, 1)).start();
     }
 
     public void D(c1 c1Var) {

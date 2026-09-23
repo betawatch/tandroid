@@ -1,73 +1,120 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.widget.ImageView;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class uu0 extends ImageView {
-    public int a;
-    public boolean b;
-    public boolean c;
-    public boolean d;
-    public org.telegram.ui.Components.g71 e;
-    public final org.telegram.ui.Components.qr f;
-    public ValueAnimator h;
-    public final /* synthetic */ PhotoViewer n;
+public interface uu0 {
+    boolean A();
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public uu0(Context context, PhotoViewer photoViewer) {
-        super(context);
-        this.n = photoViewer;
-        this.a = 0;
-        this.b = false;
-        this.c = false;
-        this.d = false;
-        this.f = org.telegram.ui.Components.qr.i;
-        setAlpha(0.0f);
-    }
+    void B(int i10);
 
-    public static void a(uu0 uu0Var) {
-        PhotoViewer photoViewer = uu0Var.n;
-        org.telegram.ui.Components.g71 g71Var = photoViewer.F2;
-        if (g71Var == null || g71Var.p() == -9223372036854775807L) {
-            ValueAnimator valueAnimator = uu0Var.h;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
-                uu0Var.h = null;
-            }
-            uu0Var.setAlpha(0.0f);
-            return;
-        }
-        long max = Math.max(0L, photoViewer.F2.p() - photoViewer.F2.n());
-        float max2 = 1.0f - Math.max(Math.min(max / 250.0f, 1.0f), 0.0f);
-        if (max2 <= 0.0f) {
-            ValueAnimator valueAnimator2 = uu0Var.h;
-            if (valueAnimator2 != null) {
-                valueAnimator2.cancel();
-                uu0Var.h = null;
-            }
-            uu0Var.setAlpha(0.0f);
-            return;
-        }
-        if (!photoViewer.F2.y()) {
-            ValueAnimator valueAnimator3 = uu0Var.h;
-            if (valueAnimator3 != null) {
-                valueAnimator3.cancel();
-                uu0Var.h = null;
-            }
-            uu0Var.setAlpha(max2);
-            return;
-        }
-        if (uu0Var.h == null) {
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(max2, 1.0f);
-            uu0Var.h = ofFloat;
-            ofFloat.addUpdateListener(new b3(uu0Var, 24));
-            uu0Var.h.setDuration(max);
-            uu0Var.h.setInterpolator(uu0Var.f);
-            uu0Var.h.start();
-            uu0Var.setAlpha(max2);
-        }
-    }
+    CharSequence C(int i10);
+
+    void D();
+
+    wu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11);
+
+    void F(boolean z10);
+
+    void G();
+
+    int H();
+
+    void I();
+
+    boolean J();
+
+    boolean K();
+
+    void L(VideoEditedInfo videoEditedInfo);
+
+    boolean M();
+
+    boolean N();
+
+    boolean O();
+
+    boolean P();
+
+    int Q(Object obj);
+
+    int R(int i10);
+
+    boolean S();
+
+    boolean T();
+
+    MessageObject U();
+
+    void V();
+
+    void W(int i10);
+
+    void X(int i10);
+
+    boolean Y();
+
+    void Z(int i10);
+
+    long a();
+
+    String a0();
+
+    boolean b();
+
+    CharSequence b0(int i10);
+
+    ArrayList c();
+
+    void d();
+
+    void e(CharSequence charSequence);
+
+    void f(String str, String str2, boolean z10);
+
+    boolean g();
+
+    boolean h();
+
+    void i();
+
+    ImageReceiver.BitmapHolder j(int i10);
+
+    int k(int i10, VideoEditedInfo videoEditedInfo);
+
+    boolean l();
+
+    void m();
+
+    void n();
+
+    void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11);
+
+    boolean p();
+
+    boolean q();
+
+    boolean r();
+
+    void s();
+
+    boolean t();
+
+    boolean u();
+
+    HashMap v();
+
+    boolean w();
+
+    boolean x(int i10);
+
+    int y();
+
+    boolean z();
 }

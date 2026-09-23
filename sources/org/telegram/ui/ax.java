@@ -1,32 +1,40 @@
 package org.telegram.ui;
 
-import android.text.SpannableStringBuilder;
+import android.content.Context;
+import org.telegram.ui.Components.FragmentContextView;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class ax extends org.telegram.ui.Components.ii0 {
-    public final /* synthetic */ int f0 = 0;
-    public final /* synthetic */ Object g0;
+public final class ax extends FragmentContextView {
+    public final /* synthetic */ int P0;
+    public final /* synthetic */ ry Q0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ax(eg1 eg1Var, SpannableStringBuilder spannableStringBuilder, SpannableStringBuilder spannableStringBuilder2) {
-        super(spannableStringBuilder, spannableStringBuilder2);
-        this.g0 = eg1Var;
-    }
-
-    @Override // org.telegram.ui.Components.ii0
-    public final float d() {
-        switch (this.f0) {
-            case 0:
-                return ((ty) this.g0).a.getViewOffset();
+    public ax(ry ryVar, Context context, ry ryVar2, int i10) {
+        super(context, ryVar2, true);
+        this.P0 = i10;
+        switch (i10) {
+            case 1:
+                this.Q0 = ryVar;
+                super(context, ryVar2, false);
+                break;
             default:
-                return ((eg1) this.g0).N.f3;
+                this.Q0 = ryVar;
+                break;
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ax(String str, String str2, ty tyVar) {
-        super(str, str2);
-        this.g0 = tyVar;
+    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
+    public final void setVisibility(int i10) {
+        switch (this.P0) {
+            case 0:
+                ry ryVar = this.Q0;
+                ryVar.J1.i(ryVar.G1, i10 == 0, true);
+                break;
+            default:
+                ry ryVar2 = this.Q0;
+                ryVar2.J1.i(ryVar2.I1, i10 == 0, true);
+                break;
+        }
     }
 }

@@ -1,58 +1,91 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.view.View;
+import android.view.WindowInsets;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
+import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class uh1 implements TextWatcher {
-    public final /* synthetic */ UsersSelectActivity a;
+public final /* synthetic */ class uh1 implements org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.voip.t1, r0.n, org.telegram.ui.Components.voip.i3 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ mi1 b;
 
-    public uh1(UsersSelectActivity usersSelectActivity) {
-        this.a = usersSelectActivity;
+    public /* synthetic */ uh1(mi1 mi1Var, int i10) {
+        this.a = i10;
+        this.b = mi1Var;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        UsersSelectActivity usersSelectActivity = this.a;
-        if (usersSelectActivity.c.length() == 0) {
-            usersSelectActivity.M = false;
-            usersSelectActivity.L = false;
-            xh1 xh1Var = usersSelectActivity.h;
-            if (xh1Var.n) {
-                xh1Var.n = false;
-                xh1Var.l();
-            }
-            usersSelectActivity.h.L(null);
-            usersSelectActivity.d.setFastScrollVisible(true);
-            usersSelectActivity.d.setVerticalScrollBarEnabled(false);
-            usersSelectActivity.f.d.setText(LocaleController.getString(R.string.NoContacts));
-            return;
+    @Override // r0.n
+    public r0.l1 Q0(View view, r0.l1 l1Var) {
+        WindowInsets g10 = l1Var.g();
+        mi1 mi1Var = this.b;
+        mi1Var.r0 = g10;
+        ((FrameLayout.LayoutParams) mi1Var.j0.getLayoutParams()).bottomMargin = mi1Var.r0.getSystemWindowInsetBottom();
+        ((FrameLayout.LayoutParams) mi1Var.e0.getLayoutParams()).bottomMargin = mi1Var.r0.getSystemWindowInsetBottom();
+        ((FrameLayout.LayoutParams) mi1Var.H.getLayoutParams()).topMargin = mi1Var.r0.getSystemWindowInsetTop();
+        ((FrameLayout.LayoutParams) mi1Var.I.getLayoutParams()).topMargin = mi1Var.r0.getSystemWindowInsetTop();
+        ((FrameLayout.LayoutParams) mi1Var.K.getLayoutParams()).topMargin = mi1Var.r0.getSystemWindowInsetTop() + AndroidUtilities.dp(56.0f);
+        ((FrameLayout.LayoutParams) mi1Var.X.getLayoutParams()).topMargin = mi1Var.r0.getSystemWindowInsetTop() + AndroidUtilities.dp(135.0f);
+        ((FrameLayout.LayoutParams) mi1Var.N.getLayoutParams()).topMargin = mi1Var.r0.getSystemWindowInsetTop() + AndroidUtilities.dp(17.0f);
+        ((FrameLayout.LayoutParams) mi1Var.y.getLayoutParams()).topMargin = mi1Var.r0.getSystemWindowInsetTop() + AndroidUtilities.dp(93.0f);
+        ((FrameLayout.LayoutParams) mi1Var.O.getLayoutParams()).topMargin = mi1Var.r0.getSystemWindowInsetTop();
+        ((FrameLayout.LayoutParams) mi1Var.R.getLayoutParams()).topMargin = mi1Var.r0.getSystemWindowInsetTop() + AndroidUtilities.dp(118.0f);
+        ((FrameLayout.LayoutParams) mi1Var.Q.getLayoutParams()).topMargin = mi1Var.r0.getSystemWindowInsetTop() + AndroidUtilities.dp(380.0f);
+        ((FrameLayout.LayoutParams) mi1Var.Z.getLayoutParams()).bottomMargin = mi1Var.r0.getSystemWindowInsetBottom();
+        ((FrameLayout.LayoutParams) mi1Var.M0.getLayoutParams()).bottomMargin = mi1Var.r0.getSystemWindowInsetBottom();
+        mi1Var.Y.setInsets(mi1Var.r0);
+        mi1Var.Z.setInsets(mi1Var.r0);
+        mi1Var.s.requestLayout();
+        fi1 fi1Var = mi1Var.o0;
+        if (fi1Var != null) {
+            fi1Var.setBottomPadding(mi1Var.r0.getSystemWindowInsetBottom());
         }
-        xh1 xh1Var2 = usersSelectActivity.h;
-        boolean z10 = xh1Var2.n;
-        if (!z10) {
-            usersSelectActivity.M = true;
-            usersSelectActivity.L = true;
-            if (!z10) {
-                xh1Var2.n = true;
-                xh1Var2.l();
-            }
-            usersSelectActivity.d.setFastScrollVisible(false);
-            usersSelectActivity.d.setVerticalScrollBarEnabled(true);
-            usersSelectActivity.f.d.setText(LocaleController.getString(R.string.NoResult));
+        return r0.l1.b;
+    }
+
+    @Override // org.telegram.ui.ActionBar.a2
+    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        switch (this.a) {
+            case 0:
+                ei1 ei1Var = this.b.u0;
+                if (ei1Var != null) {
+                    ei1Var.b();
+                    break;
+                }
+                break;
+            default:
+                this.b.u0.b();
+                break;
         }
-        usersSelectActivity.f.e(true, true);
-        usersSelectActivity.h.L(usersSelectActivity.c.getText().toString());
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // org.telegram.ui.Components.voip.i3
+    public void h(org.telegram.ui.Components.voip.j3 j3Var) {
+        switch (this.a) {
+            case 5:
+                VoIPService sharedInstance = VoIPService.getSharedInstance();
+                if (sharedInstance != null) {
+                    mi1 mi1Var = this.b;
+                    AndroidUtilities.cancelRunOnUIThread(mi1Var.S0);
+                    mi1Var.R0 = false;
+                    boolean isMicMute = sharedInstance.isMicMute();
+                    boolean z10 = !isMicMute;
+                    if (mi1Var.w0.isTouchExplorationEnabled()) {
+                        j3Var.announceForAccessibility(LocaleController.getString(!isMicMute ? R.string.AccDescrVoipMicOff : R.string.AccDescrVoipMicOn));
+                    }
+                    sharedInstance.setMicMute(z10, false, true);
+                    mi1Var.q0 = mi1Var.p0;
+                    mi1Var.H();
+                    break;
+                }
+                break;
+            default:
+                mi1.i(this.b);
+                break;
+        }
     }
 }

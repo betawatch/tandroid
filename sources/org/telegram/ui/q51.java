@@ -1,40 +1,51 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import java.util.LinkedHashSet;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q51 implements Utilities.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ LinkedHashSet b;
-    public final /* synthetic */ Runnable c;
+public final class q51 extends o61 {
+    public final /* synthetic */ z61 E;
 
-    public /* synthetic */ q51(LinkedHashSet linkedHashSet, Runnable runnable, int i10) {
-        this.a = i10;
-        this.b = linkedHashSet;
-        this.c = runnable;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public q51(z61 z61Var, Context context, boolean z10) {
+        super(z61Var, context, z10);
+        this.E = z61Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        switch (this.a) {
-            case 0:
-                ArrayList arrayList = (ArrayList) obj;
-                if (arrayList != null) {
-                    this.b.addAll(arrayList);
-                }
-                this.c.run();
-                break;
-            default:
-                TLRPC.TL_emojiList tL_emojiList = (TLRPC.TL_emojiList) obj;
-                if (tL_emojiList != null) {
-                    this.b.addAll(tL_emojiList.document_id);
-                }
-                this.c.run();
-                break;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        z61 z61Var = this.E;
+        l51 l51Var = z61Var.g0;
+        q51 q51Var = z61Var.f0;
+        z51 z51Var = z61Var.U;
+        if (z51Var != null) {
+            int measuredWidth = getMeasuredWidth();
+            int measuredHeight = getMeasuredHeight();
+            float x10 = l51Var.getX() + q51Var.getX();
+            float y3 = l51Var.getY() + q51Var.getY();
+            tg.d dVar = (tg.d) z51Var;
+            zg.c0 c0Var = (zg.c0) dVar.b;
+            zg.b0 b0Var = c0Var.a;
+            org.telegram.ui.Components.gk0 gk0Var = (org.telegram.ui.Components.gk0) dVar.c;
+            RectF rectF = AndroidUtilities.rectTmp;
+            float f7 = 0;
+            rectF.set(f7, f7, measuredWidth, measuredHeight);
+            gk0Var.getDelegate().n(canvas, rectF, 0.0f, b0Var.getX() + x10, (c0Var.y == 1 ? b0Var.getY() - AndroidUtilities.statusBarHeight : b0Var.getY() + c0Var.c.getY()) + y3, 255, true);
+        }
+        super.dispatchDraw(canvas);
+    }
+
+    @Override // android.view.View
+    public final void setTranslationY(float f7) {
+        if (f7 != getTranslationY()) {
+            super.setTranslationY(f7);
+            if (this.E.U != null) {
+                invalidate();
+            }
         }
     }
 }

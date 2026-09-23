@@ -1,12 +1,12 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class sn0 extends s4.j {
-    public final /* synthetic */ org.telegram.ui.ey F;
+    public final /* synthetic */ org.telegram.ui.ay F;
 
-    public sn0(org.telegram.ui.ey eyVar) {
-        this.F = eyVar;
+    public sn0(org.telegram.ui.ay ayVar) {
+        this.F = ayVar;
     }
 
     @Override // s4.j

@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qe implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -20,8 +20,8 @@ public final /* synthetic */ class qe implements Runnable {
     public final /* synthetic */ Object h;
     public final /* synthetic */ Object n;
 
-    public /* synthetic */ qe(bo boVar, String str, CharacterStyle characterStyle, MessageObject messageObject, org.telegram.ui.Cells.t1 t1Var, boolean z10, boolean z11) {
-        this.e = boVar;
+    public /* synthetic */ qe(xn xnVar, String str, CharacterStyle characterStyle, MessageObject messageObject, org.telegram.ui.Cells.t1 t1Var, boolean z10, boolean z11) {
+        this.e = xnVar;
         this.c = str;
         this.f = characterStyle;
         this.h = messageObject;
@@ -34,23 +34,23 @@ public final /* synthetic */ class qe implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                bo boVar = (bo) this.e;
+                xn xnVar = (xn) this.e;
                 String str = (String) this.c;
                 CharacterStyle characterStyle = (CharacterStyle) this.f;
                 MessageObject messageObject = (MessageObject) this.h;
                 org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) this.n;
                 if (!str.startsWith("video?")) {
                     if (this.b && !this.d) {
-                        boVar.getParentActivity();
+                        xnVar.getParentActivity();
                         nf.f.n(str);
                         break;
                     } else {
-                        boVar.J9(messageObject, false, false);
-                        boVar.Z9(characterStyle, str, false, t1Var, messageObject);
+                        xnVar.J9(messageObject, false, false);
+                        xnVar.Z9(characterStyle, str, false, t1Var, messageObject);
                         break;
                     }
                 } else {
-                    boVar.U7(characterStyle, false, messageObject, t1Var);
+                    xnVar.U7(characterStyle, false, messageObject, t1Var);
                     break;
                 }
                 break;
@@ -73,7 +73,7 @@ public final /* synthetic */ class qe implements Runnable {
                 }
                 break;
             default:
-                yh.z3.A0((yh.z3) this.e, (TLObject) this.c, this.b, (TLRPC.Document) this.f, this.d, (TLRPC.TL_error) this.h, (TL_stars.saveStarGift) this.n);
+                yh.y3.A0((yh.y3) this.e, (TLObject) this.c, this.b, (TLRPC.Document) this.f, this.d, (TLRPC.TL_error) this.h, (TL_stars.saveStarGift) this.n);
                 break;
         }
     }
@@ -88,8 +88,8 @@ public final /* synthetic */ class qe implements Runnable {
         this.d = z11;
     }
 
-    public /* synthetic */ qe(yh.z3 z3Var, TLObject tLObject, boolean z10, TLRPC.Document document, boolean z11, TLRPC.TL_error tL_error, TL_stars.saveStarGift savestargift) {
-        this.e = z3Var;
+    public /* synthetic */ qe(yh.y3 y3Var, TLObject tLObject, boolean z10, TLRPC.Document document, boolean z11, TLRPC.TL_error tL_error, TL_stars.saveStarGift savestargift) {
+        this.e = y3Var;
         this.c = tLObject;
         this.b = z10;
         this.f = document;

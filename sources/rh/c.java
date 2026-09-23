@@ -15,10 +15,10 @@ import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class c extends qh.e {
     public final String b;
@@ -58,18 +58,18 @@ public final class c extends qh.e {
         TextPaint textPaint = new TextPaint(1);
         textPaint.setTextSize(AndroidUtilities.dp(13.0f));
         textPaint.setTypeface(AndroidUtilities.bold());
-        textPaint.setColor(i6.w0(null, i6.Bi, false));
+        textPaint.setColor(h6.w0(null, h6.Bi, false));
         this.n = new StaticLayout(TextUtils.ellipsize(str2, textPaint, AndroidUtilities.dp(34.0f), TextUtils.TruncateAt.END), textPaint, AndroidUtilities.dp(34.0f), Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
     }
 
     public static b d(View view, String str, String str2, TLRPC.Document document, MessageObject messageObject) {
         b bVar = new b();
-        bVar.a.setColor(i6.w0(null, i6.G6, false));
-        bVar.b.setColor(i6.w0(null, i6.y6, false));
+        bVar.a.setColor(h6.w0(null, h6.G6, false));
+        bVar.b.setColor(h6.w0(null, h6.y6, false));
         RadialProgress2 radialProgress2 = new RadialProgress2(view, null);
         bVar.c = radialProgress2;
         radialProgress2.setCircleRadius(AndroidUtilities.dp(21.0f));
-        bVar.c.g(i6.ie, i6.je, i6.uc, i6.vc);
+        bVar.c.g(h6.ie, h6.je, h6.uc, h6.vc);
         if (MessageObject.isMusicDocument(document)) {
             if (MessageObject.isDocumentHasThumb(document)) {
                 TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, AndroidUtilities.dp(22.0f), true, null, false);
@@ -135,7 +135,7 @@ public final class c extends qh.e {
             TextPaint textPaint = new TextPaint(1);
             textPaint.setTextSize(AndroidUtilities.dp(13.0f));
             textPaint.setTypeface(AndroidUtilities.bold());
-            textPaint.setColor(i6.w0(null, i6.Bi, false));
+            textPaint.setColor(h6.w0(null, h6.Bi, false));
             this.n = new StaticLayout(TextUtils.ellipsize(str, textPaint, AndroidUtilities.dp(34.0f), TextUtils.TruncateAt.END), textPaint, AndroidUtilities.dp(34.0f), Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
             return;
         }

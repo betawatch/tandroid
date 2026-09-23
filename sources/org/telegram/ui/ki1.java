@@ -1,29 +1,55 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.webrtc.RendererCommon;
+import android.content.Intent;
+import android.os.Build;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class ki1 implements RendererCommon.RendererEvents {
-    public final /* synthetic */ ui1 a;
+public final class ki1 implements org.telegram.ui.Components.voip.d {
+    public final /* synthetic */ mi1 a;
 
-    public ki1(ui1 ui1Var) {
-        this.a = ui1Var;
+    public ki1(mi1 mi1Var) {
+        this.a = mi1Var;
     }
 
-    @Override // org.webrtc.RendererCommon.RendererEvents
-    public final void onFirstFrameRendered() {
-        ui1 ui1Var = this.a;
-        com.google.android.gms.internal.cast.p pVar = ui1Var.l1;
-        if (pVar != null) {
-            pVar.run();
-            ui1Var.l1 = null;
+    public final void a() {
+        mi1 mi1Var = this.a;
+        if (mi1Var.p0 != 17) {
+            if (Build.VERSION.SDK_INT >= 23 && mi1Var.b.checkSelfPermission("android.permission.RECORD_AUDIO") != 0) {
+                mi1Var.b.requestPermissions(new String[]{"android.permission.RECORD_AUDIO"}, 101);
+                return;
+            } else {
+                if (VoIPService.getSharedState() != null) {
+                    mi1Var.r(new xz0(this, 24));
+                    return;
+                }
+                return;
+            }
         }
-        AndroidUtilities.runOnUIThread(new f01(this, 22));
+        Intent intent = new Intent(mi1Var.b, (Class<?>) VoIPService.class);
+        intent.putExtra("user_id", mi1Var.d.id);
+        intent.putExtra("is_outgoing", true);
+        intent.putExtra("start_incall_activity", false);
+        intent.putExtra("video_call", mi1Var.U0);
+        intent.putExtra("can_video_call", mi1Var.U0);
+        intent.putExtra("account", mi1Var.a);
+        try {
+            mi1Var.b.startService(intent);
+        } catch (Throwable th2) {
+            FileLog.e(th2);
+        }
     }
 
-    @Override // org.webrtc.RendererCommon.RendererEvents
-    public final void onFrameResolutionChanged(int i10, int i11, int i12) {
+    public final void b() {
+        mi1 mi1Var = this.a;
+        if (mi1Var.p0 == 17) {
+            mi1Var.u0.b();
+        } else if (VoIPService.getSharedState() != null) {
+            VoIPService.getSharedState().declineIncomingCall();
+        } else {
+            mi1Var.u0.b();
+        }
     }
 }

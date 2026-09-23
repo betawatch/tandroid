@@ -3,16 +3,16 @@ package hg;
 import android.content.Context;
 import android.view.View;
 import android.widget.FrameLayout;
-import ci.uc;
+import ci.rc;
 import ei.d5;
 import java.util.ArrayList;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.e61;
+import org.telegram.ui.Components.d61;
 import w7.x5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class j1 extends n2 {
     public final CharSequence a;
@@ -20,9 +20,9 @@ public final class j1 extends n2 {
     public final int c;
     public final int d;
     public final int e;
-    public uc f;
+    public rc f;
     public gg.x1 h;
-    public e61 n;
+    public d61 n;
     public boolean r;
 
     public j1(CharSequence charSequence, ArrayList arrayList, int i10, int i11, int i12) {
@@ -55,10 +55,10 @@ public final class j1 extends n2 {
         this.actionBar.setTitle(this.a);
         this.actionBar.setActionBarMenuOnItemClick(new ei.t(this, 15));
         FrameLayout frameLayout = new FrameLayout(context);
-        frameLayout.setBackgroundColor(i6.w0(null, i6.a7, false));
-        e61 e61Var = new e61(this, new bi.v(this, 28), new d5(this, 4), null);
-        this.n = e61Var;
-        e61Var.p1();
+        frameLayout.setBackgroundColor(h6.w0(null, h6.a7, false));
+        d61 d61Var = new d61(this, new bi.v(this, 28), new d5(this, 4), null);
+        this.n = d61Var;
+        d61Var.p1();
         this.actionBar.setAdaptiveBackground(this.n);
         frameLayout.addView(this.n, x5.c(-1.0f, -1));
         this.fragmentView = frameLayout;
@@ -85,9 +85,9 @@ public final class j1 extends n2 {
             return;
         }
         arrayList.clear();
-        uc ucVar = this.f;
-        if (ucVar != null) {
-            ucVar.run();
+        rc rcVar = this.f;
+        if (rcVar != null) {
+            rcVar.run();
         }
     }
 }

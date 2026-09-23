@@ -11,10 +11,10 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class l extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
-    public org.telegram.ui.Components.ll0 a;
+    public org.telegram.ui.Components.ml0 a;
     public k b;
     public boolean c;
     public TLRPC.GlobalPrivacySettings d;
@@ -66,21 +66,21 @@ public final class l extends org.telegram.ui.ActionBar.n2 implements Notificatio
         this.actionBar.setActionBarMenuOnItemClick(new ei.t(this, 18));
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
-        frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.a7, false));
-        org.telegram.ui.Components.ll0 ll0Var = new org.telegram.ui.Components.ll0(context, null);
-        this.a = ll0Var;
-        ll0Var.p1();
+        frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.a7, false));
+        org.telegram.ui.Components.ml0 ml0Var = new org.telegram.ui.Components.ml0(context, null);
+        this.a = ml0Var;
+        ml0Var.p1();
         this.actionBar.setAdaptiveBackground(this.a);
         this.a.setLayoutManager(new gg.b0(1, false, 2));
         this.a.setVerticalScrollBarEnabled(false);
         this.a.setLayoutAnimation(null);
-        org.telegram.ui.Components.ll0 ll0Var2 = this.a;
+        org.telegram.ui.Components.ml0 ml0Var2 = this.a;
         k kVar = new k(this);
         this.b = kVar;
-        ll0Var2.setAdapter(kVar);
+        ml0Var2.setAdapter(kVar);
         s4.j jVar = new s4.j();
         jVar.n(350L);
-        jVar.o(org.telegram.ui.Components.qr.h);
+        jVar.o(org.telegram.ui.Components.rr.h);
         jVar.C = false;
         jVar.m = false;
         this.a.setItemAnimator(jVar);
@@ -120,11 +120,11 @@ public final class l extends org.telegram.ui.ActionBar.n2 implements Notificatio
                     if (R < arrayList.size()) {
                         int i13 = ((j) arrayList.get(R)).d;
                         if (i13 == 1) {
-                            ((org.telegram.ui.Cells.w8) childAt).setChecked(this.d.keep_archived_unmuted);
+                            ((org.telegram.ui.Cells.x8) childAt).setChecked(this.d.keep_archived_unmuted);
                         } else if (i13 == 4) {
-                            ((org.telegram.ui.Cells.w8) childAt).setChecked(this.d.keep_archived_folders);
+                            ((org.telegram.ui.Cells.x8) childAt).setChecked(this.d.keep_archived_folders);
                         } else if (i13 == 7) {
-                            ((org.telegram.ui.Cells.w8) childAt).setChecked(this.d.archive_and_mute_new_noncontact_peers);
+                            ((org.telegram.ui.Cells.x8) childAt).setChecked(this.d.archive_and_mute_new_noncontact_peers);
                         }
                     }
                 }
@@ -151,7 +151,7 @@ public final class l extends org.telegram.ui.ActionBar.n2 implements Notificatio
         if (this.c) {
             TL_account.setGlobalPrivacySettings setglobalprivacysettings = new TL_account.setGlobalPrivacySettings();
             setglobalprivacysettings.settings = this.d;
-            getConnectionsManager().sendRequest(setglobalprivacysettings, new ai.t7(8));
+            getConnectionsManager().sendRequest(setglobalprivacysettings, new ai.u7(8));
             this.c = false;
         }
     }

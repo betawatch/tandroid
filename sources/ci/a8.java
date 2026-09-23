@@ -1,59 +1,27 @@
 package ci;
 
-import android.graphics.Paint;
-import android.view.KeyEvent;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.vi;
-import org.telegram.ui.pb1;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class a8 implements Utilities.CallbackReturn {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ KeyEvent.Callback b;
+public final class a8 implements View.OnFocusChangeListener {
+    public final /* synthetic */ d8 a;
 
-    public /* synthetic */ a8(KeyEvent.Callback callback, int i10) {
-        this.a = i10;
-        this.b = callback;
+    public a8(d8 d8Var) {
+        this.a = d8Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.CallbackReturn
-    public final Object run(Object obj) {
-        switch (this.a) {
-            case 0:
-                MessageObject messageObject = (MessageObject) obj;
-                ((g8) this.b).r0 = messageObject;
-                return Boolean.valueOf(MediaController.getInstance().setPlaylist(org.telegram.messenger.y0.k(messageObject), messageObject, 0L));
-            case 1:
-                di.d dVar = (di.d) this.b;
-                return dVar.n[((Integer) obj).intValue() % dVar.n.length];
-            case 2:
-                return new pb1(26, (org.telegram.ui.k0) this.b, (Integer) obj);
-            case 3:
-                qg.p0 p0Var = (qg.p0) this.b;
-                if (((Integer) obj).intValue() == 2) {
-                    vi viVar = new vi(p0Var.getContext(), new qg.y(p0Var), false, false, false, p0Var.Q1);
-                    viVar.drawNavigationBar = true;
-                    viVar.L1(LocaleController.getString(R.string.AddImage));
-                    viVar.Z1 = new qg.z(p0Var, viVar);
-                    viVar.setOnDismissListener(new f1(7));
-                    viVar.J1(1, false);
-                    viVar.r1();
-                    MediaController.forceBroadcastNewPhotos = true;
-                    viVar.j0.f0();
-                    viVar.show();
-                }
-                return Boolean.TRUE;
-            case 4:
-                Paint[] paintArr = ((vg.r) this.b).h;
-                return paintArr[((Integer) obj).intValue() % paintArr.length];
-            default:
-                yh.z6 z6Var = (yh.z6) this.b;
-                return z6Var.n[((Integer) obj).intValue() % z6Var.n.length];
+    @Override // android.view.View.OnFocusChangeListener
+    public final void onFocusChange(View view, boolean z10) {
+        if (z10) {
+            d8 d8Var = this.a;
+            d8Var.i0 = true;
+            s4.c0 c0Var = (s4.c0) d8Var.d.getLayoutManager();
+            ji.o oVar = new ji.o(d8Var.getContext(), 2);
+            oVar.a = 1;
+            oVar.p = (org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight) - AndroidUtilities.dp(1.0f);
+            c0Var.w0(oVar);
         }
     }
 }

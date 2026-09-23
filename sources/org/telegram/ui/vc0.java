@@ -1,45 +1,21 @@
 package org.telegram.ui;
 
-import android.content.Intent;
-import android.net.Uri;
-import org.telegram.messenger.FileLog;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class vc0 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ id0 a;
+public final class vc0 extends org.telegram.ui.ActionBar.n1 {
+    public final /* synthetic */ dd0 o;
 
-    public vc0(id0 id0Var) {
-        this.a = id0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public vc0(dd0 dd0Var, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
+        super(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
+        this.o = dd0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i10) {
-        id0 id0Var = this.a;
-        if (i10 == -1) {
-            id0Var.finishFragment();
-            return;
-        }
-        if (i10 != 1) {
-            if (i10 == 5) {
-                id0Var.s0(false);
-                return;
-            } else {
-                if (i10 == 6) {
-                    id0Var.r0(null);
-                    return;
-                }
-                return;
-            }
-        }
-        try {
-            TLRPC.GeoPoint geoPoint = id0Var.B0.messageOwner.media.geo;
-            double d = geoPoint.lat;
-            double d10 = geoPoint._long;
-            id0Var.getParentActivity().startActivity(new Intent("android.intent.action.VIEW", Uri.parse("geo:" + d + "," + d10 + "?q=" + d + "," + d10)));
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
+    @Override // org.telegram.ui.ActionBar.n1, android.widget.PopupWindow
+    public final void dismiss() {
+        d(true);
+        this.o.I0 = null;
     }
 }

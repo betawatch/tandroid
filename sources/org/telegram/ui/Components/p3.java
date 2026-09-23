@@ -1,38 +1,22 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.widget.LinearLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
+import android.view.View;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class p3 extends LinearLayout {
-    public final g01 a;
-    public boolean b;
-    public g01 c;
-    public final /* synthetic */ o3 d;
+public final class p3 extends l51 {
+    public final /* synthetic */ AlertDialog$Builder e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p3(Context context, o3 o3Var) {
-        super(context);
-        this.d = o3Var;
-        this.a = new g01(":", 18.0f, null);
+    public p3(String str, AlertDialog$Builder alertDialog$Builder) {
+        super(str, (n01) null);
+        this.e = alertDialog$Builder;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        int i10 = org.telegram.ui.ActionBar.i6.G6;
-        this.a.c((getWidth() - this.a.c) / 2.0f, getHeight() / 2.0f, 1.0f, org.telegram.ui.ActionBar.i6.w0(null, i10, false), canvas);
-        if (!LocaleController.is24HourFormat) {
-            boolean z10 = this.d.getValue() % 24 < 12;
-            if (this.b != z10 || this.c == null) {
-                this.b = z10;
-                this.c = new g01(z10 ? "AM" : "PM", 18.0f, null);
-            }
-            this.c.c((getWidth() / 2.0f) + AndroidUtilities.dp(43.0f), (getHeight() / 2.0f) + AndroidUtilities.dp(1.0f), 1.0f, org.telegram.ui.ActionBar.i6.w0(null, i10, false), canvas);
-        }
-        super.dispatchDraw(canvas);
+    @Override // org.telegram.ui.Components.l51, android.text.style.URLSpan, android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        this.e.a.L0.run();
+        super.onClick(view);
     }
 }

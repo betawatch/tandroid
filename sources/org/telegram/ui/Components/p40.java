@@ -1,132 +1,81 @@
 package org.telegram.ui.Components;
 
+import android.text.Editable;
 import java.util.ArrayList;
 import java.util.HashMap;
-import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class p40 implements ti {
-    public final /* synthetic */ u40 a;
+public final class p40 implements org.telegram.ui.tq0 {
+    public boolean a;
+    public final /* synthetic */ HashMap b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ v40 d;
 
-    public p40(u40 u40Var) {
-        this.a = u40Var;
+    public p40(v40 v40Var, HashMap hashMap, ArrayList arrayList) {
+        this.d = v40Var;
+        this.b = hashMap;
+        this.c = arrayList;
     }
 
-    @Override // org.telegram.ui.Components.ti
-    public final void B1(int i10, boolean z10, boolean z11, int i11, int i12, long j3, boolean z12, boolean z13, long j10) {
-        vi viVar;
-        u40 u40Var = this.a;
-        org.telegram.ui.ActionBar.n2 n2Var = u40Var.a;
-        if (n2Var == null || n2Var.getParentActivity() == null || (viVar = u40Var.c) == null) {
+    @Override // org.telegram.ui.tq0
+    public final boolean e() {
+        return this.d.b.e();
+    }
+
+    @Override // org.telegram.ui.tq0
+    public final void i(int i10, boolean z10, boolean z11) {
+        HashMap hashMap = this.b;
+        if (hashMap.isEmpty()) {
             return;
         }
-        if (i10 != 8 && i10 != 7) {
-            viVar.dismissWithButtonClick(i10);
-            if (i10 == 0) {
-                u40Var.m();
+        v40 v40Var = this.d;
+        if (v40Var.b == null || this.a || z10) {
+            return;
+        }
+        this.a = true;
+        ArrayList arrayList = new ArrayList();
+        int i11 = 0;
+        while (true) {
+            ArrayList arrayList2 = this.c;
+            if (i11 >= arrayList2.size()) {
+                v40.b(v40Var, false, arrayList);
                 return;
             }
-            return;
-        }
-        HashMap<Object, Object> selectedPhotos = viVar.j0.getSelectedPhotos();
-        ArrayList<Object> selectedPhotosOrder = u40Var.c.j0.getSelectedPhotosOrder();
-        ArrayList arrayList = new ArrayList();
-        boolean z14 = false;
-        for (int i13 = 0; i13 < selectedPhotosOrder.size(); i13++) {
-            Object obj = selectedPhotos.get(selectedPhotosOrder.get(i13));
+            Object obj = hashMap.get(arrayList2.get(i11));
             SendMessagesHelper.SendingMediaInfo sendingMediaInfo = new SendMessagesHelper.SendingMediaInfo();
             arrayList.add(sendingMediaInfo);
-            if (obj instanceof MediaController.PhotoEntry) {
-                MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) obj;
-                String str = photoEntry.imagePath;
+            if (obj instanceof MediaController.SearchImage) {
+                MediaController.SearchImage searchImage = (MediaController.SearchImage) obj;
+                String str = searchImage.imagePath;
                 if (str != null) {
                     sendingMediaInfo.path = str;
                 } else {
-                    sendingMediaInfo.path = photoEntry.path;
-                }
-                sendingMediaInfo.thumbPath = photoEntry.thumbPath;
-                sendingMediaInfo.coverPath = photoEntry.coverPath;
-                sendingMediaInfo.videoEditedInfo = photoEntry.editedInfo;
-                sendingMediaInfo.isLivePhoto = photoEntry.isLivePhoto();
-                sendingMediaInfo.isVideo = photoEntry.isVideo;
-                sendingMediaInfo.livePhotoVideoOffset = photoEntry.livePhotoVideoOffset;
-                sendingMediaInfo.discardLivePhoto = true;
-                CharSequence charSequence = photoEntry.caption;
-                sendingMediaInfo.caption = charSequence != null ? charSequence.toString() : null;
-                sendingMediaInfo.entities = photoEntry.entities;
-                sendingMediaInfo.masks = photoEntry.stickers;
-                sendingMediaInfo.ttl = photoEntry.ttl;
-                TLRPC.VideoSize videoSize = photoEntry.emojiMarkup;
-                sendingMediaInfo.emojiMarkup = videoSize;
-                z14 = videoSize instanceof TLRPC.TL_videoSizeEmojiMarkup;
-            } else if (obj instanceof MediaController.SearchImage) {
-                MediaController.SearchImage searchImage = (MediaController.SearchImage) obj;
-                String str2 = searchImage.imagePath;
-                if (str2 != null) {
-                    sendingMediaInfo.path = str2;
-                } else {
                     sendingMediaInfo.searchImage = searchImage;
                 }
-                sendingMediaInfo.thumbPath = searchImage.thumbPath;
-                sendingMediaInfo.coverPath = searchImage.coverPath;
                 sendingMediaInfo.videoEditedInfo = searchImage.editedInfo;
-                CharSequence charSequence2 = searchImage.caption;
-                sendingMediaInfo.caption = charSequence2 != null ? charSequence2.toString() : null;
+                sendingMediaInfo.thumbPath = searchImage.thumbPath;
+                CharSequence charSequence = searchImage.caption;
+                sendingMediaInfo.caption = charSequence != null ? charSequence.toString() : null;
                 sendingMediaInfo.entities = searchImage.entities;
                 sendingMediaInfo.masks = searchImage.stickers;
                 sendingMediaInfo.ttl = searchImage.ttl;
-                TLRPC.BotInlineResult botInlineResult = searchImage.inlineResult;
-                if (botInlineResult != null && searchImage.type == 1) {
-                    sendingMediaInfo.inlineResult = botInlineResult;
-                    sendingMediaInfo.params = searchImage.params;
-                }
-                searchImage.date = (int) (System.currentTimeMillis() / 1000);
             }
-        }
-        u40.b(u40Var, z14, arrayList);
-        if (i10 != 8) {
-            u40Var.c.dismiss(true);
+            i11++;
         }
     }
 
-    @Override // org.telegram.ui.Components.ti
-    public final void K0() {
-        AndroidUtilities.hideKeyboard(this.a.a.getFragmentView().findFocus());
+    @Override // org.telegram.ui.tq0
+    public final void a() {
     }
 
-    @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ boolean S1() {
-        return false;
+    @Override // org.telegram.ui.tq0
+    public final void b(Editable editable) {
     }
 
-    @Override // org.telegram.ui.Components.ti
-    public final boolean c0() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final void u0() {
-        this.a.r();
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final void x0(fh fhVar) {
-        fhVar.run();
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ void U0(Object obj) {
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final void j1(TLRPC.User user) {
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ void W1(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j3, boolean z11, long j10) {
+    @Override // org.telegram.ui.tq0
+    public final /* synthetic */ void g() {
     }
 }

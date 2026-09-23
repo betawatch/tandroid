@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class kr0 extends s4.v {
     public qt0 d;
@@ -60,7 +60,7 @@ public final class kr0 extends s4.v {
         int b11 = c1Var2.b();
         ArrayList arrayList2 = vu0Var.y;
         if (!vu0Var.h && (d9Var = vu0Var.s) != null && b10 >= 0 && b10 < d9Var.i.size() && b11 >= 0 && b11 < vu0Var.s.i.size()) {
-            if ((vu0Var.s instanceof ai.t8) || vu0Var.n > 0) {
+            if ((vu0Var.s instanceof ai.u8) || vu0Var.n > 0) {
                 arrayList = new ArrayList();
                 for (int i10 = 0; i10 < vu0Var.s.i.size(); i10++) {
                     arrayList.add(Integer.valueOf(((MessageObject) vu0Var.s.i.get(i10)).getId()));
@@ -106,7 +106,7 @@ public final class kr0 extends s4.v {
             vu0 vu0Var = (vu0) this.d.getAdapter();
             ArrayList arrayList2 = vu0Var.y;
             if (!vu0Var.h && (d9Var = vu0Var.s) != null && vu0Var.E) {
-                if ((d9Var instanceof ai.t8) || vu0Var.n > 0) {
+                if ((d9Var instanceof ai.u8) || vu0Var.n > 0) {
                     arrayList = new ArrayList();
                     for (int i11 = 0; i11 < vu0Var.s.i.size(); i11++) {
                         arrayList.add(Integer.valueOf(((MessageObject) vu0Var.s.i.get(i11)).getId()));

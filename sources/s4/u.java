@@ -1,11 +1,11 @@
 package s4;
 
-import ai.l6;
+import ai.k6;
 import android.animation.Animator;
 import android.animation.ValueAnimator;
 import android.view.View;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class u implements Animator.AnimatorListener {
     public final /* synthetic */ c1 E;
@@ -37,7 +37,7 @@ public final class u implements Animator.AnimatorListener {
         this.d = f12;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.h = ofFloat;
-        ofFloat.addUpdateListener(new l6(this, 13));
+        ofFloat.addUpdateListener(new k6(this, 13));
         ofFloat.setTarget(c1Var.a);
         ofFloat.addListener(this);
         this.x = 0.0f;

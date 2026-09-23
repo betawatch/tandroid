@@ -25,18 +25,17 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicInteger;
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
-import k2.v;
 import m4.g0;
 import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
-import org.telegram.ui.Components.f10;
 import org.telegram.ui.Components.g10;
+import org.telegram.ui.Components.h10;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class k implements f10 {
+public final class k implements g10 {
     public static final Object v = new Object();
     public static k w;
     public static k x;
@@ -87,8 +86,8 @@ public final class k implements f10 {
         synchronized (kVar.a) {
             try {
                 if (!kVar.r && kVar.o == null) {
-                    g10 g10Var = g10.getInstance();
-                    if (g10Var != null && g10Var.isBackground()) {
+                    h10 h10Var = h10.getInstance();
+                    if (h10Var != null && h10Var.isBackground()) {
                         kVar.s = true;
                         return;
                     }
@@ -116,7 +115,7 @@ public final class k implements f10 {
                         webView.setWebViewClient(new i(kVar, 0));
                         HashSet hashSet = new HashSet();
                         hashSet.add(kVar.f);
-                        a5.b.a(webView, "TelegramWebProxy", hashSet, new v(kVar, 7));
+                        a5.b.a(webView, "TelegramWebProxy", hashSet, new le.b(kVar, 8));
                         webView.loadUrl(kVar.g);
                     } catch (Exception e) {
                         FileLog.e(e);
@@ -284,9 +283,9 @@ public final class k implements f10 {
                 try {
                     k kVar3 = new k(i10, str2, d);
                     w = kVar3;
-                    g10 g10Var = g10.getInstance();
-                    if (g10Var != null) {
-                        g10Var.addListener(kVar3);
+                    h10 h10Var = h10.getInstance();
+                    if (h10Var != null) {
+                        h10Var.addListener(kVar3);
                     }
                     kVar3.j.execute(new g(kVar3, 1));
                     AndroidUtilities.runOnUIThread(new g(kVar3, 2));
@@ -440,9 +439,9 @@ public final class k implements f10 {
                     this.i.close();
                 } catch (Exception unused) {
                 }
-                g10 g10Var = g10.getInstance();
-                if (g10Var != null) {
-                    g10Var.removeListener(this);
+                h10 h10Var = h10.getInstance();
+                if (h10Var != null) {
+                    h10Var.removeListener(this);
                 }
                 int size = arrayList.size();
                 while (i10 < size) {
@@ -462,12 +461,12 @@ public final class k implements f10 {
         }
     }
 
-    @Override // org.telegram.ui.Components.f10
+    @Override // org.telegram.ui.Components.g10
     public final void onBecameForeground() {
         AndroidUtilities.runOnUIThread(new g(this, 2));
     }
 
-    @Override // org.telegram.ui.Components.f10
+    @Override // org.telegram.ui.Components.g10
     public final void onBecameBackground() {
     }
 }

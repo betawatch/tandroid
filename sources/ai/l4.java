@@ -5,13 +5,13 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.vl;
-import org.telegram.ui.Components.ng;
-import org.telegram.ui.Components.qr;
+import org.telegram.messenger.ul;
+import org.telegram.ui.Components.og;
+import org.telegram.ui.Components.rr;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.fo;
+import org.telegram.ui.ao;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class l4 extends ImageReceiver {
     public final /* synthetic */ int a;
@@ -24,18 +24,18 @@ public final class l4 extends ImageReceiver {
         this.b = view;
     }
 
-    @Override // org.telegram.messenger.ImageReceiver, org.telegram.ui.Components.u5
+    @Override // org.telegram.messenger.ImageReceiver, org.telegram.ui.Components.w5
     public void invalidate() {
         switch (this.a) {
             case 3:
-                View view = ((fo) this.b).b;
+                View view = ((ao) this.b).b;
                 if (view != null) {
                     view.invalidate();
                     break;
                 }
                 break;
             case 4:
-                ((org.telegram.ui.Components.o5) this.b).k();
+                ((org.telegram.ui.Components.q5) this.b).k();
                 super.invalidate();
                 break;
             default:
@@ -51,16 +51,16 @@ public final class l4 extends ImageReceiver {
         Object obj = this.b;
         switch (i12) {
             case 0:
-                f6 f6Var = (f6) obj;
+                e6 e6Var = (e6) obj;
                 boolean imageBitmapByKey = super.setImageBitmapByKey(drawable, str, i10, z10, i11);
-                if (i10 == 1 && (runnable = f6Var.i1) != null) {
+                if (i10 == 1 && (runnable = e6Var.i1) != null) {
                     runnable.run();
-                    f6Var.i1 = null;
+                    e6Var.i1 = null;
                 }
                 return imageBitmapByKey;
             case 1:
                 if (drawable != null && i10 != 1) {
-                    vl.r(((hg.f1) ((z5) obj).H).n.animate().alpha(1.0f).translationY(0.0f), qr.k, 250L);
+                    ul.r(((hg.f1) ((y5) obj).H).n.animate().alpha(1.0f).translationY(0.0f), rr.k, 250L);
                 }
                 return super.setImageBitmapByKey(drawable, str, i10, z10, i11);
             case 2:
@@ -68,12 +68,12 @@ public final class l4 extends ImageReceiver {
             default:
                 return super.setImageBitmapByKey(drawable, str, i10, z10, i11);
             case 4:
-                org.telegram.ui.Components.o5 o5Var = (org.telegram.ui.Components.o5) obj;
-                o5Var.k();
+                org.telegram.ui.Components.q5 q5Var = (org.telegram.ui.Components.q5) obj;
+                q5Var.k();
                 boolean imageBitmapByKey2 = super.setImageBitmapByKey(drawable, str, i10, z10, i11);
-                if (o5Var.m && hasImageLoaded()) {
-                    o5Var.m = false;
-                    AndroidUtilities.runOnUIThread(new ng(o5Var, 4));
+                if (q5Var.m && hasImageLoaded()) {
+                    q5Var.m = false;
+                    AndroidUtilities.runOnUIThread(new og(q5Var, 4));
                 }
                 return imageBitmapByKey2;
             case 5:

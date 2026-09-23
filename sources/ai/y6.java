@@ -14,9 +14,9 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.ql0;
+import org.telegram.ui.Components.rl0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class y6 extends FrameLayout {
     public final LinearLayout a;
@@ -29,36 +29,36 @@ public final class y6 extends FrameLayout {
     public final RectF n;
     public float r;
     public int s;
-    public final ql0 v;
+    public final rl0 v;
     public ValueAnimator w;
-    public final /* synthetic */ j7 x;
+    public final /* synthetic */ k7 x;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y6(j7 j7Var, Context context) {
+    public y6(k7 k7Var, Context context) {
         super(context);
-        this.x = j7Var;
+        this.x = k7Var;
         Paint paint = new Paint(1);
         this.b = paint;
         this.e = new RectF();
         this.n = new RectF();
         this.r = 1.0f;
-        int i10 = org.telegram.ui.ActionBar.i6.i6;
-        d dVar = j7Var.s;
-        paint.setColor(org.telegram.ui.ActionBar.i6.v0(i10, dVar));
+        int i10 = org.telegram.ui.ActionBar.h6.i6;
+        d dVar = k7Var.s;
+        paint.setColor(org.telegram.ui.ActionBar.h6.v0(i10, dVar));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(0);
         TextView textView = new TextView(context);
         this.c = textView;
         textView.setText(LocaleController.getString(R.string.AllViewers));
-        int i11 = org.telegram.ui.ActionBar.i6.j5;
-        textView.setTextColor(org.telegram.ui.ActionBar.i6.v0(i11, dVar));
+        int i11 = org.telegram.ui.ActionBar.h6.j5;
+        textView.setTextColor(org.telegram.ui.ActionBar.h6.v0(i11, dVar));
         textView.setTextSize(1, 14.0f);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(4.0f));
         TextView textView2 = new TextView(context);
         this.d = textView2;
         textView2.setText(LocaleController.getString(R.string.Contacts));
-        textView2.setTextColor(org.telegram.ui.ActionBar.i6.v0(i11, dVar));
+        textView2.setTextColor(org.telegram.ui.ActionBar.h6.v0(i11, dVar));
         textView2.setTextSize(1, 14.0f);
         textView2.setTypeface(AndroidUtilities.bold());
         textView2.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(4.0f));
@@ -68,15 +68,15 @@ public final class y6 extends FrameLayout {
         LinearLayout linearLayout2 = new LinearLayout(getContext());
         this.a = linearLayout2;
         linearLayout2.setPadding(AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f), 0);
-        linearLayout2.setBackground(org.telegram.ui.ActionBar.i6.b0(AndroidUtilities.dp(26.0f), org.telegram.ui.ActionBar.i6.v0(i10, dVar)));
+        linearLayout2.setBackground(org.telegram.ui.ActionBar.h6.b0(AndroidUtilities.dp(26.0f), org.telegram.ui.ActionBar.h6.v0(i10, dVar)));
         linearLayout2.setOrientation(0);
-        ql0 ql0Var = new ql0(getContext());
-        this.v = ql0Var;
-        ql0Var.r = true;
-        ql0Var.a(R.drawable.menu_views_reactions3, false);
+        rl0 rl0Var = new rl0(getContext());
+        this.v = rl0Var;
+        rl0Var.r = true;
+        rl0Var.a(R.drawable.menu_views_reactions3, false);
         ImageView imageView = new ImageView(getContext());
         imageView.setScaleType(ImageView.ScaleType.FIT_XY);
-        imageView.setImageDrawable(ql0Var);
+        imageView.setImageDrawable(rl0Var);
         imageView.setPadding(AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f));
         linearLayout2.addView(imageView, w7.x5.n(26, 26));
         ImageView imageView2 = new ImageView(getContext());
@@ -96,30 +96,30 @@ public final class y6 extends FrameLayout {
             public final void onClick(View view) {
                 switch (i12) {
                     case 0:
-                        j7 j7Var2 = this.b.x;
-                        u6 u6Var = j7Var2.O;
+                        k7 k7Var2 = this.b.x;
+                        u6 u6Var = k7Var2.O;
                         if (u6Var.b) {
                             u6Var.b = false;
-                            j7Var2.h(true);
-                            j7.b(j7Var2);
+                            k7Var2.h(true);
+                            k7.b(k7Var2);
                             break;
                         }
                         break;
                     case 1:
-                        j7 j7Var3 = this.b.x;
-                        u6 u6Var2 = j7Var3.O;
+                        k7 k7Var3 = this.b.x;
+                        u6 u6Var2 = k7Var3.O;
                         if (!u6Var2.b) {
                             u6Var2.b = true;
-                            j7Var3.h(true);
-                            j7.b(j7Var3);
+                            k7Var3.h(true);
+                            k7.b(k7Var3);
                             break;
                         }
                         break;
                     default:
                         y6 y6Var = this.b;
-                        j7 j7Var4 = y6Var.x;
-                        x6 x6Var = new x6(y6Var, y6Var.getContext(), j7Var4.s);
-                        j7Var4.f = x6Var;
+                        k7 k7Var4 = y6Var.x;
+                        x6 x6Var = new x6(y6Var, y6Var.getContext(), k7Var4.s);
+                        k7Var4.f = x6Var;
                         LinearLayout linearLayout3 = y6Var.a;
                         int dp = (-linearLayout3.getMeasuredHeight()) - AndroidUtilities.dp(8.0f);
                         x6Var.b = true;
@@ -140,30 +140,30 @@ public final class y6 extends FrameLayout {
             public final void onClick(View view) {
                 switch (i13) {
                     case 0:
-                        j7 j7Var2 = this.b.x;
-                        u6 u6Var = j7Var2.O;
+                        k7 k7Var2 = this.b.x;
+                        u6 u6Var = k7Var2.O;
                         if (u6Var.b) {
                             u6Var.b = false;
-                            j7Var2.h(true);
-                            j7.b(j7Var2);
+                            k7Var2.h(true);
+                            k7.b(k7Var2);
                             break;
                         }
                         break;
                     case 1:
-                        j7 j7Var3 = this.b.x;
-                        u6 u6Var2 = j7Var3.O;
+                        k7 k7Var3 = this.b.x;
+                        u6 u6Var2 = k7Var3.O;
                         if (!u6Var2.b) {
                             u6Var2.b = true;
-                            j7Var3.h(true);
-                            j7.b(j7Var3);
+                            k7Var3.h(true);
+                            k7.b(k7Var3);
                             break;
                         }
                         break;
                     default:
                         y6 y6Var = this.b;
-                        j7 j7Var4 = y6Var.x;
-                        x6 x6Var = new x6(y6Var, y6Var.getContext(), j7Var4.s);
-                        j7Var4.f = x6Var;
+                        k7 k7Var4 = y6Var.x;
+                        x6 x6Var = new x6(y6Var, y6Var.getContext(), k7Var4.s);
+                        k7Var4.f = x6Var;
                         LinearLayout linearLayout3 = y6Var.a;
                         int dp = (-linearLayout3.getMeasuredHeight()) - AndroidUtilities.dp(8.0f);
                         x6Var.b = true;
@@ -184,30 +184,30 @@ public final class y6 extends FrameLayout {
             public final void onClick(View view) {
                 switch (i14) {
                     case 0:
-                        j7 j7Var2 = this.b.x;
-                        u6 u6Var = j7Var2.O;
+                        k7 k7Var2 = this.b.x;
+                        u6 u6Var = k7Var2.O;
                         if (u6Var.b) {
                             u6Var.b = false;
-                            j7Var2.h(true);
-                            j7.b(j7Var2);
+                            k7Var2.h(true);
+                            k7.b(k7Var2);
                             break;
                         }
                         break;
                     case 1:
-                        j7 j7Var3 = this.b.x;
-                        u6 u6Var2 = j7Var3.O;
+                        k7 k7Var3 = this.b.x;
+                        u6 u6Var2 = k7Var3.O;
                         if (!u6Var2.b) {
                             u6Var2.b = true;
-                            j7Var3.h(true);
-                            j7.b(j7Var3);
+                            k7Var3.h(true);
+                            k7.b(k7Var3);
                             break;
                         }
                         break;
                     default:
                         y6 y6Var = this.b;
-                        j7 j7Var4 = y6Var.x;
-                        x6 x6Var = new x6(y6Var, y6Var.getContext(), j7Var4.s);
-                        j7Var4.f = x6Var;
+                        k7 k7Var4 = y6Var.x;
+                        x6 x6Var = new x6(y6Var, y6Var.getContext(), k7Var4.s);
+                        k7Var4.f = x6Var;
                         LinearLayout linearLayout3 = y6Var.a;
                         int dp = (-linearLayout3.getMeasuredHeight()) - AndroidUtilities.dp(8.0f);
                         x6Var.b = true;

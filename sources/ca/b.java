@@ -1,7 +1,7 @@
 package ca;
 
 import ai.ba;
-import ai.d5;
+import ai.c5;
 import ai.s4;
 import android.content.Context;
 import android.content.Intent;
@@ -14,7 +14,7 @@ import e9.f0;
 import e9.i0;
 import fi.f;
 import i5.g;
-import ii.t3;
+import ii.u3;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -33,9 +33,9 @@ import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.zx0;
+import org.telegram.ui.Components.yx0;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.bo;
+import org.telegram.ui.xn;
 import w9.x;
 import x2.d;
 import x2.e;
@@ -43,7 +43,7 @@ import x2.i;
 import x2.m;
 import x2.p;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements g, MessagesStorage.LongCallback, a2, MessagesController.ErrorDelegate, m {
     public final /* synthetic */ int a;
@@ -60,27 +60,12 @@ public final /* synthetic */ class b implements g, MessagesStorage.LongCallback,
         this.b = z10;
     }
 
-    @Override // x2.m
-    public a1 b(int i10, l1 l1Var, int[] iArr) {
-        p pVar = (p) this.c;
-        i iVar = (i) this.d;
-        int[] iArr2 = (int[]) this.e;
-        pVar.getClass();
-        d dVar = new d(pVar, iVar);
-        int i11 = iArr2[i10];
-        f0 u10 = i0.u();
-        for (int i12 = 0; i12 < l1Var.a; i12++) {
-            u10.b(new e(i10, l1Var, i12, iVar, iArr[i12], this.b, dVar, i11));
-        }
-        return u10.i();
-    }
-
     /* JADX WARN: Removed duplicated region for block: B:24:0x005b  */
     @Override // i5.g
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void c(Exception exc) {
+    public void a(Exception exc) {
         c cVar = (c) this.c;
         TaskCompletionSource taskCompletionSource = (TaskCompletionSource) this.d;
         w9.b bVar = (w9.b) this.e;
@@ -132,6 +117,21 @@ public final /* synthetic */ class b implements g, MessagesStorage.LongCallback,
         taskCompletionSource.trySetResult(bVar);
     }
 
+    @Override // x2.m
+    public a1 b(int i10, l1 l1Var, int[] iArr) {
+        p pVar = (p) this.c;
+        i iVar = (i) this.d;
+        int[] iArr2 = (int[]) this.e;
+        pVar.getClass();
+        d dVar = new d(pVar, iVar);
+        int i11 = iArr2[i10];
+        f0 u10 = i0.u();
+        for (int i12 = 0; i12 < l1Var.a; i12++) {
+            u10.b(new e(i10, l1Var, i12, iVar, iArr[i12], this.b, dVar, i11));
+        }
+        return u10.i();
+    }
+
     @Override // org.telegram.ui.ActionBar.a2
     public void f(b2 b2Var, int i10) {
         switch (this.a) {
@@ -139,38 +139,38 @@ public final /* synthetic */ class b implements g, MessagesStorage.LongCallback,
                 boolean z10 = this.b;
                 s4 s4Var = (s4) this.c;
                 EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.d;
-                t3 t3Var = (t3) this.e;
-                int i11 = t3Var.b;
+                u3 u3Var = (u3) this.e;
+                int i11 = u3Var.b;
                 if (!z10) {
                     s4Var.run();
                     break;
                 } else {
                     String trim = editTextBoldCursor.getText().toString().trim();
                     if (!TextUtils.isEmpty(trim)) {
-                        TL_iv.pageBlockButtonRow d = t3Var.d();
+                        TL_iv.pageBlockButtonRow d = u3Var.d();
                         TL_keyboard.PageButton pageButton = (d == null || i11 < 0 || i11 >= d.buttons.size()) ? null : d.buttons.get(i11);
                         TL_keyboard.InlineButtonType inlineButtonType = pageButton == null ? null : pageButton.type;
                         if ((inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeUserProfile ? ((TL_keyboard.TL_inlineButtonTypeUserProfile) inlineButtonType).user_id : 0L) > 0) {
                             TL_keyboard.TL_inlineButtonTypeUserProfile tL_inlineButtonTypeUserProfile = new TL_keyboard.TL_inlineButtonTypeUserProfile();
-                            TL_iv.pageBlockButtonRow d10 = t3Var.d();
+                            TL_iv.pageBlockButtonRow d10 = u3Var.d();
                             TL_keyboard.PageButton pageButton2 = (d10 == null || i11 < 0 || i11 >= d10.buttons.size()) ? null : d10.buttons.get(i11);
                             TL_keyboard.InlineButtonType inlineButtonType2 = pageButton2 != null ? pageButton2.type : null;
                             tL_inlineButtonTypeUserProfile.user_id = inlineButtonType2 instanceof TL_keyboard.TL_inlineButtonTypeUserProfile ? ((TL_keyboard.TL_inlineButtonTypeUserProfile) inlineButtonType2).user_id : 0L;
-                            t3Var.a(trim, tL_inlineButtonTypeUserProfile);
+                            u3Var.a(trim, tL_inlineButtonTypeUserProfile);
                             break;
                         }
                     }
                 }
                 break;
             case 3:
-                bo boVar = (bo) this.c;
+                xn xnVar = (xn) this.c;
                 MessagesController messagesController = (MessagesController) this.d;
                 CharSequence charSequence = (CharSequence) this.e;
                 boolean z11 = this.b;
                 messagesController.secretWebpagePreview = 1;
-                MessagesController.getGlobalMainSettings().edit().putInt("secretWebpage2", boVar.getMessagesController().secretWebpagePreview).commit();
-                boVar.H5 = null;
-                boVar.Ya(charSequence, z11);
+                MessagesController.getGlobalMainSettings().edit().putInt("secretWebpage2", xnVar.getMessagesController().secretWebpagePreview).commit();
+                xnVar.H5 = null;
+                xnVar.Ya(charSequence, z11);
                 break;
             case 4:
                 boolean z12 = this.b;
@@ -193,22 +193,22 @@ public final /* synthetic */ class b implements g, MessagesStorage.LongCallback,
                     }
                 }
             default:
-                zx0 zx0Var = (zx0) this.c;
+                yx0 yx0Var = (yx0) this.c;
                 Utilities.Callback2 callback2 = (Utilities.Callback2) this.d;
                 Context context2 = (Context) this.e;
                 boolean z13 = this.b;
-                String trim2 = zx0Var.getText().toString().trim();
+                String trim2 = yx0Var.getText().toString().trim();
                 if (!TextUtils.isEmpty(trim2) && !TextUtils.isEmpty(AndroidUtilities.translitSafe(trim2.toString()))) {
-                    AndroidUtilities.hideKeyboard(zx0Var);
+                    AndroidUtilities.hideKeyboard(yx0Var);
                     b2 b2Var2 = new b2(context2, 3, z13 ? null : new ai.d());
                     b2Var2.q(250L);
-                    callback2.run(trim2, new d5(b2Var2, b2Var, zx0Var, 6));
+                    callback2.run(trim2, new c5(b2Var2, b2Var, yx0Var, 8));
                     break;
                 } else {
-                    zx0Var.setErrorText(".");
-                    AndroidUtilities.shakeViewSpring(zx0Var, -6.0f);
+                    yx0Var.setErrorText(".");
+                    AndroidUtilities.shakeViewSpring(yx0Var, -6.0f);
                     BotWebViewVibrationEffect.APP_ERROR.vibrate();
-                    AndroidUtilities.showKeyboard(zx0Var);
+                    AndroidUtilities.showKeyboard(yx0Var);
                     break;
                 }
                 break;

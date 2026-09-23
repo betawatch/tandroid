@@ -1,8 +1,8 @@
 package xh;
 
-import org.telegram.ui.Components.n6;
+import org.telegram.ui.Components.p6;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d0 implements Runnable {
     public final /* synthetic */ int a;
@@ -27,9 +27,9 @@ public final /* synthetic */ class d0 implements Runnable {
                 if (i0Var != null) {
                     i0Var.setTranslationY(-iVar.c());
                 }
-                n6 n6Var = j0Var.w;
-                if (n6Var != null) {
-                    n6Var.setTranslationY(-iVar.c());
+                p6 p6Var = j0Var.w;
+                if (p6Var != null) {
+                    p6Var.setTranslationY(-iVar.c());
                 }
                 j0Var.o();
                 break;

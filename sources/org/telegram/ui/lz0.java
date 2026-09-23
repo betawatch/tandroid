@@ -1,24 +1,43 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class lz0 extends org.telegram.ui.Components.hq0 {
-    public final /* synthetic */ mz0 b1;
+public final class lz0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ ProfileActivity a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lz0(mz0 mz0Var, Activity activity, String str) {
-        super(activity, null, str, false, null, false, null);
-        this.b1 = mz0Var;
+    public lz0(ProfileActivity profileActivity) {
+        this.a = profileActivity;
     }
 
-    @Override // org.telegram.ui.Components.hq0
-    public final void R0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        if (z10) {
-            AndroidUtilities.runOnUIThread(new iy0(this, iVar, i10, 7), 250L);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        org.telegram.ui.ActionBar.k kVar;
+        ProfileActivity profileActivity = this.a;
+        kVar = ((org.telegram.ui.ActionBar.n2) profileActivity).actionBar;
+        kVar.A(profileActivity.p2 ? 1090519039 : profileActivity.Q5 != null ? 553648127 : org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.f8, profileActivity.z0), false);
+        hz0 hz0Var = profileActivity.e0;
+        ImageReceiver imageReceiver = hz0Var.U;
+        org.telegram.ui.Components.d6 animation = imageReceiver.getAnimation();
+        if (animation != null) {
+            animation.w(hz0Var);
         }
+        imageReceiver.clearImage();
+        ImageReceiver.BitmapHolder bitmapHolder = hz0Var.W;
+        if (bitmapHolder != null) {
+            bitmapHolder.release();
+            hz0Var.W = null;
+        }
+        hz0Var.V = 0.0f;
+        hz0Var.invalidate();
+        profileActivity.H0 = false;
+        profileActivity.l5(false);
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationStart(Animator animator) {
     }
 }

@@ -5,13 +5,13 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.y21;
+import org.telegram.ui.Components.x21;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public abstract class c6 {
-    public static int a(y21 y21Var) {
-        y21Var.getClass();
+    public static int a(x21 x21Var) {
+        x21Var.getClass();
         return Math.max(1, (int) Math.ceil(0.5f * AndroidUtilities.density)) + (((int) Math.ceil(1.9f * AndroidUtilities.density)) * 2);
     }
 

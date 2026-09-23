@@ -24,11 +24,11 @@ import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.WriteToSocketDelegate;
 import org.telegram.ui.Components.ao0;
-import org.telegram.ui.bo;
+import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c0 implements ResultCallback, WriteToSocketDelegate, OnSuccessListener, OnFailureListener, ci.m8, TelegramMediaSession.BrowseChildrenCallback, ImageReceiver.ImageReceiverDelegate, RequestTimeDelegate, OnCompleteListener, ao0, org.telegram.ui.ActionBar.a2 {
+public final /* synthetic */ class c0 implements ResultCallback, WriteToSocketDelegate, OnSuccessListener, OnFailureListener, ci.j8, TelegramMediaSession.BrowseChildrenCallback, ImageReceiver.ImageReceiverDelegate, RequestTimeDelegate, OnCompleteListener, ao0, org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -46,7 +46,7 @@ public final /* synthetic */ class c0 implements ResultCallback, WriteToSocketDe
         ((RichMessageLayout.RichAudioBlock) this.b).lambda$new$0(f7);
     }
 
-    @Override // ci.m8
+    @Override // ci.j8
     public Bitmap c(BitmapFactory.Options options) {
         Bitmap lambda$rebuildPhoto$0;
         lambda$rebuildPhoto$0 = ((MediaController.PhotoEntry) this.b).lambda$rebuildPhoto$0(options);
@@ -65,7 +65,7 @@ public final /* synthetic */ class c0 implements ResultCallback, WriteToSocketDe
 
     @Override // org.telegram.ui.ActionBar.a2
     public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        SendMessagesHelper.lambda$sendCallback$42((bo) this.b, b2Var, i10);
+        SendMessagesHelper.lambda$sendCallback$42((xn) this.b, b2Var, i10);
     }
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate

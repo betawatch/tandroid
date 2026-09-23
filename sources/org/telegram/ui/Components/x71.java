@@ -1,112 +1,50 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.View;
+import android.content.Context;
+import android.util.SparseIntArray;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class x71 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ i81 b;
+public final class x71 extends g81 {
+    public final /* synthetic */ h81 t0;
 
-    public /* synthetic */ x71(i81 i81Var, int i10) {
-        this.a = i10;
-        this.b = i81Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public x71(h81 h81Var, Context context, boolean z10, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(i10, context, d6Var, z10);
+        this.t0 = h81Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                i81 i81Var = this.b;
-                View[] viewArr = i81Var.e;
-                View[] viewArr2 = i81Var.e;
-                if (viewArr[1] != null) {
-                    i81Var.F();
-                    i81Var.h.put(i81Var.f[1], viewArr2[1]);
-                    i81Var.removeView(viewArr2[1]);
-                    i81Var.E(viewArr2[0], 0.0f);
-                    viewArr2[1] = null;
-                }
-                i81Var.Q = null;
-                i81Var.w(true);
-                y71 y71Var = i81Var.M;
-                if (y71Var != null) {
-                    y71Var.v.invalidate();
-                    i81Var.M.v.f1();
-                    i81Var.M.invalidate();
-                }
-                i81Var.u();
-                i81Var.J.unlock();
-                break;
-            case 1:
-                i81 i81Var2 = this.b;
-                i81Var2.w = null;
-                View[] viewArr3 = i81Var2.e;
-                if (viewArr3[1] != null) {
-                    if (!i81Var2.F) {
-                        i81Var2.F();
-                    }
-                    i81Var2.h.put(i81Var2.f[1], viewArr3[1]);
-                    i81Var2.removeView(viewArr3[1]);
-                    viewArr3[1].setVisibility(8);
-                    viewArr3[1] = null;
-                }
-                i81Var2.x = false;
-                i81Var2.I = false;
-                y71 y71Var2 = i81Var2.M;
-                if (y71Var2 != null) {
-                    y71Var2.setEnabled(true);
-                }
-                i81Var2.w(false);
-                i81Var2.u();
-                i81Var2.J.unlock();
-                break;
-            case 2:
-                i81 i81Var3 = this.b;
-                i81Var3.w = null;
-                View[] viewArr4 = i81Var3.e;
-                View view = viewArr4[1];
-                if (view != null) {
-                    i81Var3.removeView(view);
-                    viewArr4[1] = null;
-                }
-                i81Var3.x = false;
-                y71 y71Var3 = i81Var3.M;
-                if (y71Var3 != null) {
-                    y71Var3.setEnabled(true);
-                    y71 y71Var4 = i81Var3.M;
-                    y71Var4.J = false;
-                    y71Var4.a = 1.0f;
-                    y71Var4.v.f1();
-                    i81Var3.M.invalidate();
-                    break;
-                }
-                break;
-            default:
-                i81 i81Var4 = this.b;
-                i81Var4.w = null;
-                View[] viewArr5 = i81Var4.e;
-                if (viewArr5[1] != null) {
-                    if (!i81Var4.F) {
-                        i81Var4.F();
-                    }
-                    i81Var4.h.put(i81Var4.f[1], viewArr5[1]);
-                    i81Var4.removeView(viewArr5[1]);
-                    viewArr5[1].setVisibility(8);
-                    viewArr5[1] = null;
-                }
-                i81Var4.x = false;
-                i81Var4.I = false;
-                y71 y71Var5 = i81Var4.M;
-                if (y71Var5 != null) {
-                    y71Var5.setEnabled(true);
-                }
-                i81Var4.w(false);
-                i81Var4.u();
-                i81Var4.J.unlock();
-                break;
+    @Override // org.telegram.ui.Components.g81
+    public final void e(float f7, int i10, int i11) {
+        float f10 = f7 < 0.0f ? 0.0f : f7 > 1.0f ? 1.0f : f7;
+        this.F = i10;
+        SparseIntArray sparseIntArray = this.b0;
+        this.G = sparseIntArray.get(i10);
+        if (f10 > 0.0f) {
+            f81 f81Var = this.y;
+            if (f81Var != null) {
+                z71 z71Var = ((h81) ((ka.c) f81Var).b).L;
+            }
+            this.L = i11;
+            this.M = sparseIntArray.get(i11);
+        } else {
+            this.L = -1;
+            this.M = -1;
         }
+        this.K = f10;
+        this.v.f1();
+        invalidate();
+        c(i10);
+        if (f10 >= 1.0f) {
+            this.L = -1;
+            this.M = -1;
+            this.F = i11;
+            this.G = sparseIntArray.get(i11);
+        }
+        f81 f81Var2 = this.y;
+        if (f81Var2 != null) {
+            ((h81) ((ka.c) f81Var2).b).s();
+        }
+        this.t0.y(f7 <= 0.5f ? i10 : i11, i10 < i11);
     }
 }

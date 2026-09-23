@@ -1,69 +1,22 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.widget.FrameLayout;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class uc1 extends FrameLayout {
-    public final /* synthetic */ int a;
-    public final RectF b;
-    public final /* synthetic */ wd1 c;
+public final class uc1 extends AnimatorListenerAdapter {
+    public final /* synthetic */ od1 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public uc1(wd1 wd1Var, Context context, int i10) {
-        super(context);
-        this.a = i10;
-        switch (i10) {
-            case 1:
-                this.c = wd1Var;
-                super(context);
-                this.b = new RectF();
-                break;
-            default:
-                this.c = wd1Var;
-                this.b = new RectF();
-                break;
-        }
+    public uc1(od1 od1Var) {
+        this.a = od1Var;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        switch (this.a) {
-            case 0:
-                float measuredWidth = getMeasuredWidth();
-                float measuredHeight = getMeasuredHeight();
-                RectF rectF = this.b;
-                rectF.set(0.0f, 0.0f, measuredWidth, measuredHeight);
-                wd1 wd1Var = this.c;
-                uc1 uc1Var = wd1Var.D0;
-                ld1 ld1Var = wd1Var.x0;
-                wc1 wc1Var = wd1Var.a;
-                org.telegram.ui.ActionBar.i6.s(uc1Var, ld1Var, wc1Var);
-                canvas.drawRoundRect(rectF, getMeasuredHeight() / 2, getMeasuredHeight() / 2, wc1Var.G("paintChatActionBackground"));
-                if (org.telegram.ui.ActionBar.i6.a1()) {
-                    canvas.drawRoundRect(rectF, getMeasuredHeight() / 2, getMeasuredHeight() / 2, wc1Var.G("paintChatActionBackgroundDarken"));
-                    break;
-                }
-                break;
-            default:
-                float measuredWidth2 = getMeasuredWidth();
-                float measuredHeight2 = getMeasuredHeight();
-                RectF rectF2 = this.b;
-                rectF2.set(0.0f, 0.0f, measuredWidth2, measuredHeight2);
-                wd1 wd1Var2 = this.c;
-                uc1 uc1Var2 = wd1Var2.E0;
-                ld1 ld1Var2 = wd1Var2.x0;
-                wc1 wc1Var2 = wd1Var2.a;
-                org.telegram.ui.ActionBar.i6.s(uc1Var2, ld1Var2, wc1Var2);
-                canvas.drawRoundRect(rectF2, getMeasuredHeight() / 2, getMeasuredHeight() / 2, wc1Var2.G("paintChatActionBackground"));
-                if (org.telegram.ui.ActionBar.i6.a1()) {
-                    canvas.drawRoundRect(rectF2, getMeasuredHeight() / 2, getMeasuredHeight() / 2, wc1Var2.G("paintChatActionBackgroundDarken"));
-                    break;
-                }
-                break;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        od1 od1Var = this.a;
+        if (od1Var.W0 == null) {
+            od1Var.J0[0].setVisibility(4);
         }
     }
 }

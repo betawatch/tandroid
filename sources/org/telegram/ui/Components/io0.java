@@ -13,13 +13,13 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class io0 {
     public static Paint N;
     public static Paint O;
     public long A;
-    public c6 B;
+    public e6 B;
     public Paint C;
     public float D;
     public int E;
@@ -52,7 +52,7 @@ public final class io0 {
     public float s;
     public float t;
     public boolean u;
-    public c6 v;
+    public e6 v;
     public float w;
     public Path x;
     public Path y;
@@ -60,7 +60,7 @@ public final class io0 {
 
     public final void a(Path path, float f7, float f10) {
         float dpf2 = AndroidUtilities.dpf2(2.0f);
-        int y3 = org.telegram.messenger.vl.y(14.0f, this.h, 2);
+        int y3 = org.telegram.messenger.ul.y(14.0f, this.h, 2);
         float f11 = f10 * this.w;
         RectF rectF = AndroidUtilities.rectTmp;
         float f12 = dpf2 / 2.0f;
@@ -138,7 +138,7 @@ public final class io0 {
         ArrayList arrayList;
         int i11;
         int i12;
-        bc0 bc0Var;
+        ac0 ac0Var;
         float[] fArr;
         float[] fArr2;
         MessageObject messageObject;
@@ -252,7 +252,7 @@ public final class io0 {
         }
         canvas.restore();
         if (this.M == null) {
-            this.M = new ho0(new bc0(this, 26));
+            this.M = new ho0(new ac0(this, 26));
         }
         float f19 = this.K;
         if (f19 < 0.99f && (fArr = this.G) != null) {
@@ -265,7 +265,7 @@ public final class io0 {
                 rectF = AndroidUtilities.rectTmp;
                 float dpf25 = AndroidUtilities.dpf2(f10) * (1.0f - this.K) * f7;
                 float dpf26 = AndroidUtilities.dpf2(2.0f);
-                int y3 = org.telegram.messenger.vl.y(14.0f, this.h, 2);
+                int y3 = org.telegram.messenger.ul.y(14.0f, this.h, 2);
                 float f20 = dpf24 * this.w;
                 float f21 = dpf26 / 2.0f;
                 rectF.set((AndroidUtilities.dpf2(1.0f) + dpf25) - f21, ((-f20) - f21) + AndroidUtilities.dp(7.0f) + y3, AndroidUtilities.dpf2(1.0f) + dpf25 + f21, f20 + f21 + AndroidUtilities.dp(7.0f) + y3);
@@ -323,9 +323,9 @@ public final class io0 {
                     paint.setAlpha((int) (255.0f * f22 * go0Var3.f));
                     canvas.drawPoint(go0Var3.a, go0Var3.b, paint);
                 }
-                bc0Var = (bc0) ho0Var.c;
-                if (bc0Var == null) {
-                    bc0Var.run();
+                ac0Var = (ac0) ho0Var.c;
+                if (ac0Var == null) {
+                    ac0Var.run();
                     return;
                 }
                 return;
@@ -349,21 +349,21 @@ public final class io0 {
         }
         while (i12 < arrayList.size()) {
         }
-        bc0Var = (bc0) ho0Var.c;
-        if (bc0Var == null) {
+        ac0Var = (ac0) ho0Var.c;
+        if (ac0Var == null) {
         }
     }
 
     public final void d(Canvas canvas, float f7) {
-        c6 c6Var = this.B;
+        e6 e6Var = this.B;
         float dpf2 = AndroidUtilities.dpf2(2.0f);
         MessageObject messageObject = this.m;
         boolean z10 = messageObject != null && messageObject.isContentUnread() && !this.m.isOut() && this.c <= 0.0f;
         this.u = z10;
         N.setColor(z10 ? this.q : this.o ? this.r : this.p);
         O.setColor(this.q);
-        c6Var.a = this.n;
-        float d = c6Var.d((!this.z || MediaController.getInstance().isPlayingMessage(this.m)) ? 0.0f : 1.0f, false);
+        e6Var.a = this.n;
+        float d = e6Var.d((!this.z || MediaController.getInstance().isPlayingMessage(this.m)) ? 0.0f : 1.0f, false);
         Paint paint = N;
         paint.setColor(i0.a.d(d, paint.getColor(), this.p));
         float f10 = 1.0f - d;

@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.animation.AnimationUtils;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class fg0 extends Drawable {
     public final Paint a;
@@ -84,16 +84,16 @@ public final class fg0 extends Drawable {
                 }
                 canvas2.translate(com.google.android.gms.internal.vision.e2.z(1.0f, this.d, AndroidUtilities.dp(1.0f), bounds.centerX()), bounds.centerY());
                 float f11 = this.d * 500.0f;
-                float interpolation = f11 >= 100.0f ? qr.j.getInterpolation(f11 / 100.0f) * (-5.0f) : f11 < 484.0f ? (qr.j.getInterpolation((f11 - 100.0f) / 384.0f) * 95.0f) - 5.0f : 90.0f;
+                float interpolation = f11 >= 100.0f ? rr.j.getInterpolation(f11 / 100.0f) * (-5.0f) : f11 < 484.0f ? (rr.j.getInterpolation((f11 - 100.0f) / 384.0f) * 95.0f) - 5.0f : 90.0f;
                 int i11 = this.b;
                 canvas2.scale((i11 * 1.45f) / AndroidUtilities.dp(28.0f), (i11 * 1.5f) / AndroidUtilities.dp(28.0f));
                 canvas2.rotate(interpolation);
-                zd0Var = org.telegram.ui.ActionBar.i6.x3;
+                zd0Var = org.telegram.ui.ActionBar.h6.x3;
                 if (zd0Var != null) {
                     Paint paint = this.a;
                     zd0Var.b(canvas2, paint, f11);
                     canvas2.scale(1.0f, -1.0f);
-                    org.telegram.ui.ActionBar.i6.x3.b(canvas2, paint, f11);
+                    org.telegram.ui.ActionBar.h6.x3.b(canvas2, paint, f11);
                 }
                 canvas2.restore();
             }
@@ -125,7 +125,7 @@ public final class fg0 extends Drawable {
         int i112 = this.b;
         canvas2.scale((i112 * 1.45f) / AndroidUtilities.dp(28.0f), (i112 * 1.5f) / AndroidUtilities.dp(28.0f));
         canvas2.rotate(interpolation);
-        zd0Var = org.telegram.ui.ActionBar.i6.x3;
+        zd0Var = org.telegram.ui.ActionBar.h6.x3;
         if (zd0Var != null) {
         }
         canvas2.restore();

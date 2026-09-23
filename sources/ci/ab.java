@@ -1,34 +1,29 @@
 package ci;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.LaunchActivity;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ab implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Utilities.Callback b;
+    public final /* synthetic */ lc b;
 
-    public /* synthetic */ ab(int i10, Utilities.Callback callback) {
+    public /* synthetic */ ab(lc lcVar, int i10) {
         this.a = i10;
-        this.b = callback;
+        this.b = lcVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.run(LaunchActivity.U());
-                break;
-            case 1:
-                AndroidUtilities.runOnUIThread(new ab(3, this.b));
-                break;
-            case 2:
-                this.b.run(null);
+                lc lcVar = this.b;
+                lcVar.getClass();
+                lcVar.g(1.0f, true, new ha(lcVar, 6));
+                lcVar.b1.b(true, true);
                 break;
             default:
-                this.b.run(null);
+                lc lcVar2 = this.b;
+                lcVar2.f(false);
+                lcVar2.m2 = null;
                 break;
         }
     }

@@ -1,24 +1,27 @@
 package xh;
 
-import android.view.View;
-import org.telegram.ui.Components.m5;
+import android.content.Context;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final class t0 implements View.OnAttachStateChangeListener {
-    public final /* synthetic */ m5 a;
+public final class t0 extends z4 {
+    public final /* synthetic */ r1 x0;
 
-    public t0(m5 m5Var) {
-        this.a = m5Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public t0(r1 r1Var, Context context, int i10, TL_stars.StarGift starGift, long j3, m0 m0Var, boolean z10, boolean z11) {
+        super(context, i10, starGift, null, j3, m0Var, z10, z11);
+        this.x0 = r1Var;
     }
 
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewAttachedToWindow(View view) {
-        this.a.a();
-    }
-
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewDetachedFromWindow(View view) {
-        this.a.b();
+    @Override // xh.z4
+    public final xc X() {
+        d6 d6Var;
+        r1 r1Var = this.x0;
+        org.telegram.ui.ActionBar.d3 d3Var = r1Var.container;
+        d6Var = r1Var.resourcesProvider;
+        return new xc(d3Var, d6Var);
     }
 }

@@ -1,28 +1,45 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class wf0 extends ds {
-    public final /* synthetic */ int h;
-    public final /* synthetic */ zf0 n;
+public final /* synthetic */ class wf0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ag0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ wf0(zf0 zf0Var, Context context, int i10) {
-        super(context);
-        this.h = i10;
-        this.n = zf0Var;
+    public /* synthetic */ wf0(ag0 ag0Var, int i10) {
+        this.a = i10;
+        this.b = ag0Var;
     }
 
-    @Override // org.telegram.ui.ds
-    public final void a() {
-        switch (this.h) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10;
+        switch (this.a) {
             case 0:
-                this.n.h(null);
+                rg0 rg0Var = this.b.v;
+                rg0Var.u1(0, true, null, true);
+                rg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.CodeExpired));
+                break;
+            case 1:
+                rg0 rg0Var2 = this.b.v;
+                rg0Var2.u1(0, true, null, true);
+                rg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.CodeExpired));
+                break;
+            case 2:
+                this.b.p();
+                break;
+            case 3:
+                this.b.b.setLoading(false);
                 break;
             default:
-                this.n.h(null);
+                PremiumPreviewFragment premiumPreviewFragment = new PremiumPreviewFragment(0, "sms");
+                rg0 rg0Var3 = this.b.v;
+                i10 = ((org.telegram.ui.ActionBar.n2) rg0Var3).currentAccount;
+                premiumPreviewFragment.setCurrentAccount(i10);
+                rg0Var3.presentFragment(premiumPreviewFragment);
                 break;
         }
     }

@@ -2,11 +2,11 @@ package yf;
 
 import java.util.ArrayList;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.y0;
+import org.telegram.messenger.z0;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_ephemeral;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public class q {
     public final ArrayList a = new ArrayList();
@@ -26,7 +26,7 @@ public class q {
         tL_messages_messages.messages.add(tL_message);
         ArrayList arrayList = (ArrayList) iVar.f(dialogId);
         if (arrayList == null) {
-            arrayList = y0.j(dialogId, iVar);
+            arrayList = z0.j(dialogId, iVar);
         }
         arrayList.add(messageObject);
     }

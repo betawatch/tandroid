@@ -5,10 +5,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.o20;
+import org.telegram.ui.Components.p20;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class z9 implements Runnable {
     public final /* synthetic */ int a;
@@ -23,7 +23,7 @@ public final class z9 implements Runnable {
         switch (this.a) {
             case 0:
                 Math.abs(Utilities.random.nextInt() % 3);
-                o20[] o20VarArr = ia.a;
+                p20[] p20VarArr = ia.a;
                 NotificationCenter.getInstance(UserConfig.selectedAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.updateInterfaces, 0);
                 AndroidUtilities.runOnUIThread(ia.o, 1000L);
                 LaunchActivity.R().getFragmentView();
@@ -48,12 +48,12 @@ public final class z9 implements Runnable {
             case 2:
                 return;
             case 3:
-                org.telegram.ui.ActionBar.i6.j = false;
-                org.telegram.ui.ActionBar.i6.l(false);
+                org.telegram.ui.ActionBar.h6.j = false;
+                org.telegram.ui.ActionBar.h6.l(false);
                 return;
             case 4:
-                org.telegram.ui.ActionBar.i6.k = false;
-                org.telegram.ui.ActionBar.i6.l(true);
+                org.telegram.ui.ActionBar.h6.k = false;
+                org.telegram.ui.ActionBar.h6.l(true);
                 return;
             case 5:
                 return;
@@ -69,7 +69,7 @@ public final class z9 implements Runnable {
         }
     }
 
-    public z9(org.telegram.ui.t2 t2Var) {
+    public z9(org.telegram.ui.u2 u2Var) {
         this.a = 5;
     }
 

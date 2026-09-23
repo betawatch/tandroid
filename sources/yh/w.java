@@ -12,10 +12,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.uc0;
-import org.telegram.ui.mj0;
+import org.telegram.ui.Components.tc0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -45,40 +44,40 @@ public final /* synthetic */ class w implements View.OnClickListener {
                     int[] iArr = a0.w0;
                     if (i11 >= 6) {
                         String string = LocaleController.getString(R.string.GiftOfferDuration);
-                        org.telegram.ui.web.b1 b1Var = new org.telegram.ui.web.b1(a0Var, 21);
-                        Pattern pattern = org.telegram.ui.Components.c5.a;
+                        ii.q1 q1Var = new ii.q1(a0Var, 24);
+                        Pattern pattern = org.telegram.ui.Components.e5.a;
                         hg.g2 b10 = hg.g2.b(UserConfig.selectedAccount);
                         b10.g();
                         if (!b10.d.isEmpty()) {
-                            int w02 = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.j5, false);
-                            int w03 = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.h5, false);
-                            org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Ji, false);
-                            org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Ni, false);
-                            org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.E8, false);
-                            org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.G8, false);
-                            org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.i6, false);
-                            org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Sh, false);
-                            org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Oh, false);
-                            org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Qh, false);
-                            org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(1, context, (org.telegram.ui.ActionBar.e6) null, false);
+                            int w02 = org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.j5, false);
+                            int w03 = org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.h5, false);
+                            org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Ji, false);
+                            org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Ni, false);
+                            org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.E8, false);
+                            org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.G8, false);
+                            org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.i6, false);
+                            org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Sh, false);
+                            org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Oh, false);
+                            org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Qh, false);
+                            org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(1, context, (org.telegram.ui.ActionBar.d6) null, false);
                             f3Var.fixNavigationBar();
                             f3Var.applyBottomPadding = false;
                             LinearLayout linearLayout = new LinearLayout(context);
                             linearLayout.setOrientation(0);
                             linearLayout.setWeightSum(1.0f);
-                            uc0 uc0Var = new uc0(context, null);
-                            uc0Var.setAllItemsCount(6);
-                            uc0Var.setItemCount(Math.min(6, 8));
-                            uc0Var.setTextColor(w02);
-                            uc0Var.setGravity(17);
-                            uc0Var.setMinValue(0);
-                            uc0Var.setMaxValue(5);
-                            uc0Var.setValue(i12);
-                            linearLayout.addView(uc0Var, w7.x5.l(1.0f, 0, 432));
+                            tc0 tc0Var = new tc0(context, null);
+                            tc0Var.setAllItemsCount(6);
+                            tc0Var.setItemCount(Math.min(6, 8));
+                            tc0Var.setTextColor(w02);
+                            tc0Var.setGravity(17);
+                            tc0Var.setMinValue(0);
+                            tc0Var.setMaxValue(5);
+                            tc0Var.setValue(i12);
+                            linearLayout.addView(tc0Var, w7.x5.l(1.0f, 0, 432));
                             int i13 = 7;
-                            uc0Var.setFormatter(new org.telegram.ui.Components.s(strArr, i13));
-                            org.telegram.ui.Components.u4 u4Var = new org.telegram.ui.Components.u4(context, uc0Var);
-                            u4Var.setOrientation(1);
+                            tc0Var.setFormatter(new org.telegram.ui.Components.s(strArr, i13));
+                            org.telegram.ui.Components.w4 w4Var = new org.telegram.ui.Components.w4(context, tc0Var);
+                            w4Var.setOrientation(1);
                             FrameLayout frameLayout = new FrameLayout(context);
                             TextView textView = new TextView(context);
                             textView.setText(string);
@@ -87,15 +86,15 @@ public final /* synthetic */ class w implements View.OnClickListener {
                             textView.setTypeface(AndroidUtilities.bold());
                             frameLayout.addView(textView, w7.x5.d(-2, -2.0f, 51, 0.0f, 12.0f, 0.0f, 0.0f));
                             textView.setOnTouchListener(new bi.d(10));
-                            u4Var.addView(frameLayout, w7.x5.t(-1, -2, 51, 22, 0, 0, 4));
-                            u4Var.addView(linearLayout, w7.x5.p(-1, -2, 1.0f, 0, 0, 12, 0, 12));
+                            w4Var.addView(frameLayout, w7.x5.t(-1, -2, 51, 22, 0, 0, 4));
+                            w4Var.addView(linearLayout, w7.x5.p(-1, -2, 1.0f, 0, 0, 12, 0, 12));
                             ci.d dVar = new ci.d(context, null, true);
                             dVar.g(LocaleController.getString(R.string.Select), false, true);
-                            dVar.setOnClickListener(new org.telegram.ui.Components.j2(r3, 1));
-                            u4Var.addView(dVar, w7.x5.t(-1, 48, 0, 16, 12, 16, 12));
-                            f3Var.customView = u4Var;
+                            dVar.setOnClickListener(new org.telegram.ui.Components.k2(r3, 1));
+                            w4Var.addView(dVar, w7.x5.t(-1, 48, 0, 16, 12, 16, 12));
+                            f3Var.customView = w4Var;
                             f3Var.show();
-                            f3Var.setOnDismissListener(new ei.e0(i13, b1Var, uc0Var));
+                            f3Var.setOnDismissListener(new ei.e0(i13, q1Var, tc0Var));
                             f3Var.setBackgroundColor(w03);
                             f3Var.fixNavigationBar(w03);
                             org.telegram.ui.ActionBar.f3[] f3VarArr = {f3Var};
@@ -112,12 +111,12 @@ public final /* synthetic */ class w implements View.OnClickListener {
                 break;
             case 1:
                 i0 i0Var = (i0) obj;
-                mj0 mj0Var = (mj0) obj2;
+                p6 p6Var = (p6) obj2;
                 ci.d dVar2 = i0Var.f;
                 if (dVar2.W && !dVar2.N) {
                     AndroidUtilities.hideKeyboard(i0Var.c);
                     dVar2.setLoading(true);
-                    mj0Var.run(i0Var.E);
+                    p6Var.run(i0Var.E);
                     break;
                 }
                 break;
@@ -168,16 +167,16 @@ public final /* synthetic */ class w implements View.OnClickListener {
                 s0Var2.U();
                 break;
             case 4:
-                nf.f.u(((z3) obj).getContext(), ((TL_stars.UniqueStarGiftValueInfo) obj2).fragment_listed_url);
+                nf.f.u(((y3) obj).getContext(), ((TL_stars.UniqueStarGiftValueInfo) obj2).fragment_listed_url);
                 break;
             case 5:
-                ((z3) obj).n2((CharSequence) obj2);
+                ((y3) obj).n2((CharSequence) obj2);
                 break;
             case 6:
-                z2 z2Var = (z2) obj;
-                org.telegram.ui.ActionBar.e6 e6Var = (org.telegram.ui.ActionBar.e6) obj2;
-                if (z2Var.E.getAlpha() >= 1.0f && !z2Var.h0 && !z2Var.j0 && z2Var.d0 != null) {
-                    new s0(z2Var.getContext(), e6Var, z2Var.W, z2Var.c0, z2Var.d0, true).show();
+                y2 y2Var = (y2) obj;
+                org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) obj2;
+                if (y2Var.E.getAlpha() >= 1.0f && !y2Var.h0 && !y2Var.j0 && y2Var.d0 != null) {
+                    new s0(y2Var.getContext(), d6Var, y2Var.W, y2Var.c0, y2Var.d0, true).show();
                     break;
                 }
                 break;

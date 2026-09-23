@@ -28,21 +28,22 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 import m1.j;
-import m4.u0;
+import m4.p0;
 import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.BuildConfig;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.secretmedia.ExtendedDefaultDataSourceFactory;
-import org.telegram.ui.Components.wg;
+import org.telegram.ui.Components.xg;
 import t7.u;
 import yc.i;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class d extends i {
     public static final f l;
     public static final HashMap m;
     public final ExtendedDefaultDataSourceFactory e;
-    public final u0 f;
+    public final p0 f;
     public final u g;
     public final HashMap h;
     public Pair i;
@@ -65,7 +66,7 @@ public final class d extends i {
         this.i = null;
         this.j = false;
         this.k = new AtomicInteger();
-        this.f = new u0(11);
+        this.f = new p0(25);
         this.g = new u();
         this.e = new ExtendedDefaultDataSourceFactory(ApplicationLoader.applicationContext, "Mozilla/5.0 (X11; Linux x86_64; rv:10.0) Gecko/20150101 Firefox/47.0 (Chrome)");
     }
@@ -154,7 +155,7 @@ public final class d extends i {
                 str = "UNLOCK";
                 break;
             default:
-                str = "null";
+                str = BuildConfig.BETA_URL;
                 break;
         }
         l4.append(str);
@@ -165,20 +166,20 @@ public final class d extends i {
         Log.d("CAST_SERVER", l4.toString());
         try {
             yc.g k10 = k(dVar);
-            wg wgVar = k10.e;
-            wgVar.put("Access-Control-Allow-Origin", "*");
-            wgVar.put("Access-Control-Max-Age", "3628800");
-            wgVar.put("Access-Control-Allow-Methods", "*");
-            wgVar.put("Access-Control-Allow-Headers", "*");
+            xg xgVar = k10.e;
+            xgVar.put("Access-Control-Allow-Origin", "*");
+            xgVar.put("Access-Control-Max-Age", "3628800");
+            xgVar.put("Access-Control-Allow-Methods", "*");
+            xgVar.put("Access-Control-Allow-Headers", "*");
             return k10;
         } catch (Throwable unused) {
             Log.d("CAST_SERVER", "Error " + incrementAndGet);
             yc.g c10 = i.c(yc.f.n, "text/plain", "Error reading file");
-            wg wgVar2 = c10.e;
-            wgVar2.put("Access-Control-Allow-Origin", "*");
-            wgVar2.put("Access-Control-Max-Age", "3628800");
-            wgVar2.put("Access-Control-Allow-Methods", "*");
-            wgVar2.put("Access-Control-Allow-Headers", "*");
+            xg xgVar2 = c10.e;
+            xgVar2.put("Access-Control-Allow-Origin", "*");
+            xgVar2.put("Access-Control-Max-Age", "3628800");
+            xgVar2.put("Access-Control-Allow-Methods", "*");
+            xgVar2.put("Access-Control-Allow-Headers", "*");
             return c10;
         }
     }

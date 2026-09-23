@@ -1,43 +1,23 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.voip.VoIPService;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class di1 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ui1 b;
-    public final /* synthetic */ VoIPService c;
+public final class di1 extends AnimatorListenerAdapter {
+    public final /* synthetic */ mi1 a;
 
-    public /* synthetic */ di1(ui1 ui1Var, VoIPService voIPService, int i10) {
-        this.a = i10;
-        this.b = ui1Var;
-        this.c = voIPService;
+    public di1(mi1 mi1Var) {
+        this.a = mi1Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                ui1 ui1Var = this.b;
-                AndroidUtilities.runOnUIThread(new ei1(ui1Var, 8));
-                int i10 = ui1Var.L;
-                if (i10 > 0) {
-                    this.c.sendCallRating(i10);
-                    break;
-                }
-                break;
-            default:
-                ui1 ui1Var2 = this.b;
-                AndroidUtilities.runOnUIThread(new ei1(ui1Var2, 10));
-                int i11 = ui1Var2.L;
-                if (i11 > 0) {
-                    this.c.sendCallRating(i11);
-                    break;
-                }
-                break;
-        }
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        mi1 mi1Var = this.a;
+        mi1Var.E.setText(LocaleController.getString(R.string.VoipCallEnded));
+        mi1Var.E.animate().alpha(1.0f).setDuration(70L).setListener(null).start();
     }
 }

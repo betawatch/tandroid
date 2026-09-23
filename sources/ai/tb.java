@@ -5,7 +5,7 @@ import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class tb implements GestureDetector.OnGestureListener {
     public final /* synthetic */ jc a;
@@ -48,7 +48,7 @@ public final class tb implements GestureDetector.OnGestureListener {
     @Override // android.view.GestureDetector.OnGestureListener
     public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10) {
         float f11;
-        org.telegram.ui.Components.oc ocVar;
+        org.telegram.ui.Components.qc qcVar;
         jc jcVar = this.a;
         if (!jcVar.j0) {
             return false;
@@ -82,9 +82,9 @@ public final class tb implements GestureDetector.OnGestureListener {
                 jcVar.e0 = (0.05f * f10) + f12;
             }
             xb xbVar = jcVar.s;
-            org.telegram.ui.Components.oc ocVar2 = org.telegram.ui.Components.oc.w;
-            if (ocVar2 != null && ocVar2.h == xbVar) {
-                ocVar2.b();
+            org.telegram.ui.Components.qc qcVar2 = org.telegram.ui.Components.qc.w;
+            if (qcVar2 != null && qcVar2.h == xbVar) {
+                qcVar2.b();
             }
             if (jcVar.n0.getCurrentPeerView() != null) {
                 jcVar.n0.getCurrentPeerView().invalidate();
@@ -102,9 +102,9 @@ public final class tb implements GestureDetector.OnGestureListener {
                 f11 = 0.3f;
                 jcVar.W -= f10 * f11;
                 xb xbVar2 = jcVar.s;
-                ocVar = org.telegram.ui.Components.oc.w;
-                if (ocVar != null && ocVar.h == xbVar2) {
-                    ocVar.b();
+                qcVar = org.telegram.ui.Components.qc.w;
+                if (qcVar != null && qcVar.h == xbVar2) {
+                    qcVar.b();
                 }
                 jc.k(jcVar);
                 return true;
@@ -113,9 +113,9 @@ public final class tb implements GestureDetector.OnGestureListener {
         f11 = 0.6f;
         jcVar.W -= f10 * f11;
         xb xbVar22 = jcVar.s;
-        ocVar = org.telegram.ui.Components.oc.w;
-        if (ocVar != null) {
-            ocVar.b();
+        qcVar = org.telegram.ui.Components.qc.w;
+        if (qcVar != null) {
+            qcVar.b();
         }
         jc.k(jcVar);
         return true;
@@ -123,7 +123,7 @@ public final class tb implements GestureDetector.OnGestureListener {
 
     @Override // android.view.GestureDetector.OnGestureListener
     public final boolean onSingleTapUp(MotionEvent motionEvent) {
-        f6 currentPeerView;
+        e6 currentPeerView;
         jc jcVar = this.a;
         if (jcVar.e0 == 0.0f && jcVar.f0) {
             if (jcVar.x || jcVar.L0 || jcVar.m1 || jcVar.i1 || jcVar.j1) {
@@ -132,10 +132,10 @@ public final class tb implements GestureDetector.OnGestureListener {
                     currentPeerView.s0();
                 }
             } else {
-                f6 t10 = jcVar.t();
+                e6 t10 = jcVar.t();
                 if (t10 == null || !t10.O1.f) {
                     boolean z10 = motionEvent.getX() > ((float) jcVar.v.getMeasuredWidth()) * 0.33f;
-                    f6 currentPeerView2 = jcVar.n0.getCurrentPeerView();
+                    e6 currentPeerView2 = jcVar.n0.getCurrentPeerView();
                     if (currentPeerView2 != null && !currentPeerView2.d1(z10)) {
                         if (jcVar.n0.E(z10)) {
                             zb zbVar2 = jcVar.n0;

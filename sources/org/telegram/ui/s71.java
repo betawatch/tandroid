@@ -1,24 +1,25 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
-/* loaded from: classes3.dex */
-public final class s71 extends g.p {
-    public final /* synthetic */ u71 c;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-    public s71(u71 u71Var) {
-        this.c = u71Var;
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* loaded from: classes3.dex */
+public final class s71 implements View.OnClickListener {
+    public final /* synthetic */ v71 a;
+    public final /* synthetic */ TLRPC.TL_authorization b;
+    public final /* synthetic */ w71 c;
+
+    public s71(w71 w71Var, v71 v71Var, TLRPC.TL_authorization tL_authorization) {
+        this.c = w71Var;
+        this.a = v71Var;
+        this.b = tL_authorization;
     }
 
-    @Override // g.p
-    public final int i(int i10) {
-        int i11;
-        u71 u71Var = this.c;
-        org.telegram.ui.Components.nz nzVar = u71Var.X;
-        org.telegram.ui.Components.w51 w51Var = u71Var.d0;
-        if (w51Var == null) {
-            return nzVar.J;
-        }
-        org.telegram.ui.Components.i51 G = w51Var.G(i10 - 1);
-        return (G == null || (i11 = G.u) == -1) ? nzVar.J : i11;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        this.a.d.c(!r0.h, true);
+        this.b.encrypted_requests_disabled = !r4.d.h;
+        w71.n(this.c);
     }
 }

@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import org.telegram.messenger.FileLoader;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.jv0;
-import org.telegram.ui.Components.nz;
+import org.telegram.ui.Components.oz;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class y1 extends nz {
+public final class y1 extends oz {
     public final jv0 X;
     public final /* synthetic */ z1 Y;
 
@@ -25,7 +25,7 @@ public final class y1 extends nz {
         return B();
     }
 
-    @Override // org.telegram.ui.Components.nz
+    @Override // org.telegram.ui.Components.oz
     public final jv0 D1(int i10) {
         TLRPC.Document document;
         ArrayList<TLRPC.DocumentAttribute> arrayList;

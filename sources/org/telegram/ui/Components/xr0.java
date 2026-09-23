@@ -20,7 +20,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class xr0 extends ou0 {
     public float q3;
@@ -61,7 +61,7 @@ public final class xr0 extends ou0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.ml0
     public final Integer W0(int i10) {
         s4.h0 adapter = getAdapter();
         ht0 ht0Var = this.u3.Q;
@@ -71,7 +71,7 @@ public final class xr0 extends ou0 {
         return super.W0(i10);
     }
 
-    @Override // org.telegram.ui.Components.ou0, org.telegram.ui.Components.ga, org.telegram.ui.Components.ll0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ou0, org.telegram.ui.Components.ia, org.telegram.ui.Components.ml0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         View childAt;
         View childAt2;
@@ -96,7 +96,7 @@ public final class xr0 extends ou0 {
                     TextPaint textPaint = new TextPaint(1);
                     this.j3 = textPaint;
                     textPaint.setTextSize(AndroidUtilities.dp(14.0f));
-                    this.j3.setColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.z6, this.p2));
+                    this.j3.setColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.z6, this.p2));
                 }
                 int measuredWidth = getMeasuredWidth() - AndroidUtilities.dp(60.0f);
                 StaticLayout staticLayout = this.k3;
@@ -141,7 +141,7 @@ public final class xr0 extends ou0 {
         yu0Var.p1 = -1;
     }
 
-    @Override // org.telegram.ui.Components.ll0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ml0, android.view.ViewGroup, android.view.View
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         yu0 yu0Var = this.u3;
         org.telegram.ui.ActionBar.n2 n2Var = yu0Var.v1;
@@ -183,13 +183,13 @@ public final class xr0 extends ou0 {
     }
 
     @Override // org.telegram.ui.Components.ou0
-    public final tk0 getMovingAdapter() {
+    public final uk0 getMovingAdapter() {
         yu0 yu0Var = this.u3;
         return yu0.p0(yu0Var.p1) ? yu0Var.k1(yu0Var.p1) : yu0Var.H;
     }
 
     @Override // org.telegram.ui.Components.ou0
-    public final tk0 getSupportingAdapter() {
+    public final uk0 getSupportingAdapter() {
         yu0 yu0Var = this.u3;
         return yu0.p0(yu0Var.p1) ? yu0Var.l1(yu0Var.p1) : yu0Var.I;
     }
@@ -223,7 +223,7 @@ public final class xr0 extends ou0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ml0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
         ur0 ur0Var = this.s3;

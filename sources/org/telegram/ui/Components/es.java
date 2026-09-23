@@ -1,146 +1,20 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class es {
-    public final int a;
-    public String b;
-    public final ArrayList c;
-    public final boolean[] d;
-    public boolean[] e;
-    public boolean f;
-    public final int g;
-    public int h;
-    public int i;
-    public final /* synthetic */ fs j;
+public final class es extends s4.j {
+    public final /* synthetic */ gs F;
 
-    public es(fs fsVar, int i10, ArrayList arrayList) {
-        this.j = fsVar;
-        this.a = i10;
-        int size = arrayList.size();
-        this.g = size;
-        this.i = 0;
-        if (size > 0) {
-            this.c = arrayList;
-            this.d = new boolean[size];
-            this.f = true;
-            g();
-        }
+    public es(gs gsVar) {
+        this.F = gsVar;
     }
 
-    public final boolean a() {
-        boolean[] zArr;
-        for (int i10 = 0; i10 < this.g; i10++) {
-            if (!this.d[i10] || ((zArr = this.e) != null && !zArr[i10])) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    public final boolean b() {
-        return (this.e != null ? this.h : this.g) > 1;
-    }
-
-    public final boolean c() {
-        return (this.e != null ? this.h : this.g) > 0;
-    }
-
-    public final void d() {
-        int i10;
-        boolean[] zArr;
-        boolean[] zArr2;
-        boolean z10 = false;
-        while (true) {
-            int i11 = this.g;
-            zArr = this.d;
-            if (i10 >= i11) {
-                break;
-            } else {
-                i10 = (zArr[i10] && ((zArr2 = this.e) == null || zArr2[i10])) ? 0 : i10 + 1;
-            }
-        }
-        z10 = true;
-        Arrays.fill(zArr, !z10);
-        f();
-        this.j.X.N(true);
-    }
-
-    public final void e(int i10) {
-        boolean[] zArr = this.e;
-        if (zArr == null || zArr[i10]) {
-            boolean[] zArr2 = this.d;
-            boolean z10 = zArr2[i10];
-            zArr2[i10] = !z10;
-            if (z10) {
-                this.i--;
-            } else {
-                this.i++;
-            }
-            this.j.X.N(true);
-        }
-    }
-
-    public final void f() {
-        this.i = 0;
-        this.h = 0;
-        for (int i10 = 0; i10 < this.g; i10++) {
-            boolean[] zArr = this.e;
-            boolean[] zArr2 = this.d;
-            if (zArr == null) {
-                if (zArr2[i10]) {
-                    this.i++;
-                }
-            } else if (zArr[i10]) {
-                this.h++;
-                if (zArr2[i10]) {
-                    this.i++;
-                }
-            }
-        }
-    }
-
-    public final void g() {
-        TLObject tLObject;
-        int i10 = this.g;
-        if (i10 == 0) {
-            return;
-        }
-        for (int i11 = 0; i11 < i10; i11++) {
-            boolean[] zArr = this.e;
-            if (zArr == null || zArr[i11]) {
-                tLObject = (TLObject) this.c.get(i11);
-                break;
-            }
-        }
-        tLObject = null;
-        String forcedFirstName = tLObject instanceof TLRPC.User ? UserObject.getForcedFirstName((TLRPC.User) tLObject) : ContactsController.formatName(tLObject);
-        int i12 = this.a;
-        if (i12 == 0) {
-            this.b = LocaleController.getString(R.string.DeleteReportSpam);
-            return;
-        }
-        if (i12 == 1) {
-            this.b = b() ? LocaleController.getString(R.string.DeleteAllMessagesFromUsers) : LocaleController.formatString(R.string.DeleteAllFrom, forcedFirstName);
-            return;
-        }
-        if (i12 == 3) {
-            this.b = b() ? LocaleController.getString(R.string.DeleteAllReactionsFromUsers) : LocaleController.formatString(R.string.DeleteAllReactionsFrom, forcedFirstName);
-        } else if (i12 == 2) {
-            if (this.j.g0) {
-                this.b = b() ? LocaleController.getString(R.string.DeleteRestrictUsers) : LocaleController.formatString(R.string.DeleteRestrict, forcedFirstName);
-            } else {
-                this.b = b() ? LocaleController.getString(R.string.DeleteBanUsers) : LocaleController.formatString(R.string.DeleteBan, forcedFirstName);
-            }
-        }
+    @Override // s4.j
+    public final void P(s4.c1 c1Var) {
+        ViewGroup viewGroup;
+        viewGroup = ((org.telegram.ui.ActionBar.f3) this.F).containerView;
+        viewGroup.invalidate();
     }
 }

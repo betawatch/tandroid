@@ -8,11 +8,11 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.bu;
+import org.telegram.ui.Components.cu;
 import org.telegram.ui.Components.pv0;
-import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public abstract class f3 extends FrameLayout {
     public boolean a;
@@ -23,32 +23,32 @@ public abstract class f3 extends FrameLayout {
     public boolean f;
     public boolean h;
     public boolean n;
-    public final org.telegram.ui.Components.f5 r;
+    public final org.telegram.ui.Components.h5 r;
     public int s;
-    public final org.telegram.ui.Components.m6 v;
+    public final org.telegram.ui.Components.o6 v;
     public boolean w;
 
-    public f3(Context context, pv0 pv0Var, String str, boolean z10, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
+    public f3(Context context, pv0 pv0Var, String str, boolean z10, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context);
         this.e = -1;
         this.n = true;
-        org.telegram.ui.Components.m6 m6Var = new org.telegram.ui.Components.m6(false, true, true, false);
-        this.v = m6Var;
-        m6Var.k(0.2f, 160L, qr.h);
-        m6Var.t(AndroidUtilities.dp(15.33f));
-        m6Var.b = 5;
+        org.telegram.ui.Components.o6 o6Var = new org.telegram.ui.Components.o6(false, true, true, false);
+        this.v = o6Var;
+        o6Var.k(0.2f, 160L, rr.h);
+        o6Var.t(AndroidUtilities.dp(15.33f));
+        o6Var.b = 5;
         this.c = i10;
-        d3 d3Var = new d3(this, context, pv0Var, e6Var, z10);
+        d3 d3Var = new d3(this, context, pv0Var, d6Var, z10);
         this.b = d3Var;
-        bu editText = d3Var.getEditText();
+        cu editText = d3Var.getEditText();
         editText.setDelegate(new n7.a1(this, editText, false, 3));
         d3Var.setWillNotDraw(false);
-        this.r = new org.telegram.ui.Components.f5(d3Var);
-        m6Var.setCallback(d3Var);
+        this.r = new org.telegram.ui.Components.h5(d3Var);
+        o6Var.setCallback(d3Var);
         editText.setTextSize(1, 17.0f);
-        editText.setHintTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.H6, e6Var));
-        int i11 = org.telegram.ui.ActionBar.i6.G6;
-        editText.setTextColor(org.telegram.ui.ActionBar.i6.v0(i11, e6Var));
+        editText.setHintTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.H6, d6Var));
+        int i11 = org.telegram.ui.ActionBar.h6.G6;
+        editText.setTextColor(org.telegram.ui.ActionBar.h6.v0(i11, d6Var));
         editText.setBackground(null);
         if (z10) {
             editText.setMaxLines(5);
@@ -62,7 +62,7 @@ public abstract class f3 extends FrameLayout {
         editText.setInputType((z10 ? 131072 : 0) | 573441);
         editText.setRawInputType(573441);
         editText.setHint(str);
-        editText.setCursorColor(org.telegram.ui.ActionBar.i6.v0(i11, e6Var));
+        editText.setCursorColor(org.telegram.ui.ActionBar.h6.v0(i11, d6Var));
         editText.setCursorSize(AndroidUtilities.dp(19.0f));
         editText.setCursorWidth(1.5f);
         editText.addTextChangedListener(new e3(this, i10, editText, z10));
@@ -72,7 +72,7 @@ public abstract class f3 extends FrameLayout {
     }
 
     public int a() {
-        return org.telegram.ui.Components.o5.g();
+        return org.telegram.ui.Components.q5.g();
     }
 
     public final void c() {
@@ -97,7 +97,7 @@ public abstract class f3 extends FrameLayout {
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (this.w) {
-            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(22.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(22.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.i6.k0);
+            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(22.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(22.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.h6.k0);
         }
     }
 

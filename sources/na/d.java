@@ -31,21 +31,21 @@ import java.util.Set;
 import java.util.TreeSet;
 import org.telegram.messenger.BotInlineKeyboard;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.vl;
+import org.telegram.messenger.ul;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.Cells.k1;
-import org.telegram.ui.Cells.r9;
+import org.telegram.ui.Cells.s9;
 import org.telegram.ui.Cells.t1;
-import org.telegram.ui.Components.x5;
-import org.telegram.ui.pv0;
+import org.telegram.ui.Components.z5;
+import org.telegram.ui.iv0;
 import qb.k;
 import v2.l;
 import v7.l8;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public class d implements m0, bg.a, q, q9.e, cg.a, n, q9.d, k1, r4.c, Continuation, l, xf.a, y6.d {
     public final /* synthetic */ int a;
@@ -484,7 +484,7 @@ public class d implements m0, bg.a, q, q9.e, cg.a, n, q9.d, k1, r4.c, Continuati
     }
 
     @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ pv0 Y1() {
+    public /* synthetic */ iv0 Y1() {
         switch (this.a) {
         }
         return null;
@@ -654,7 +654,7 @@ public class d implements m0, bg.a, q, q9.e, cg.a, n, q9.d, k1, r4.c, Continuati
     @Override // org.telegram.ui.Cells.k1
     public /* synthetic */ boolean h1(MessageObject messageObject) {
         int i10 = this.a;
-        return vl.a(messageObject);
+        return ul.a(messageObject);
     }
 
     @Override // org.telegram.ui.Cells.k1
@@ -727,7 +727,7 @@ public class d implements m0, bg.a, q, q9.e, cg.a, n, q9.d, k1, r4.c, Continuati
     }
 
     @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ boolean o0(x5 x5Var) {
+    public /* synthetic */ boolean o0(z5 z5Var) {
         switch (this.a) {
         }
         return false;
@@ -947,7 +947,7 @@ public class d implements m0, bg.a, q, q9.e, cg.a, n, q9.d, k1, r4.c, Continuati
     }
 
     @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ r9 z2() {
+    public /* synthetic */ s9 z2() {
         switch (this.a) {
         }
         return null;

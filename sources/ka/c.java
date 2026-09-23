@@ -32,25 +32,25 @@ import n7.a1;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.a81;
-import org.telegram.ui.Components.b5;
-import org.telegram.ui.Components.d71;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.c71;
+import org.telegram.ui.Components.d5;
 import org.telegram.ui.Components.e0;
-import org.telegram.ui.Components.g71;
-import org.telegram.ui.Components.g81;
+import org.telegram.ui.Components.f71;
+import org.telegram.ui.Components.f81;
+import org.telegram.ui.Components.h81;
 import org.telegram.ui.Components.hq0;
-import org.telegram.ui.Components.i81;
-import org.telegram.ui.Components.v50;
-import org.telegram.ui.Components.vi;
 import org.telegram.ui.Components.w50;
+import org.telegram.ui.Components.wi;
+import org.telegram.ui.Components.x50;
+import org.telegram.ui.Components.z71;
 import qg.p2;
 import qg.y1;
 import ye.m;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public class c implements w, i, b5, j, d71, g81, s, y1, r4.c, o, n5.b, OnCompleteListener {
+public class c implements w, i, d5, j, c71, f81, s, y1, r4.c, o, n5.b, OnCompleteListener {
     public final /* synthetic */ int a;
     public final Object b;
 
@@ -65,7 +65,7 @@ public class c implements w, i, b5, j, d71, g81, s, y1, r4.c, o, n5.b, OnComplet
         return false;
     }
 
-    @Override // org.telegram.ui.Components.b5
+    @Override // org.telegram.ui.Components.d5
     public void J(int i10, int i11, boolean z10) {
         e0 e0Var = (e0) this.b;
         e0Var.l0(i10, i11, z10);
@@ -97,16 +97,16 @@ public class c implements w, i, b5, j, d71, g81, s, y1, r4.c, o, n5.b, OnComplet
     public void b(Canvas canvas) {
         switch (this.a) {
             case 7:
-                vi viVar = (vi) this.b;
-                canvas.drawColor(viVar.getThemedColor(i6.d6));
+                wi wiVar = (wi) this.b;
+                canvas.drawColor(wiVar.getThemedColor(h6.d6));
                 if (SharedConfig.chatBlurEnabled()) {
-                    viVar.C2.b(canvas, -3);
+                    wiVar.C2.b(canvas, -3);
                     break;
                 }
                 break;
             default:
                 hq0 hq0Var = (hq0) this.b;
-                canvas.drawColor(hq0Var.getThemedColor(i6.d6));
+                canvas.drawColor(hq0Var.getThemedColor(h6.d6));
                 if (SharedConfig.chatBlurEnabled()) {
                     hq0Var.O0.b(canvas, -3);
                     break;
@@ -129,11 +129,11 @@ public class c implements w, i, b5, j, d71, g81, s, y1, r4.c, o, n5.b, OnComplet
     }
 
     public boolean d(int i10) {
-        a81 a81Var = ((i81) this.b).L;
-        if (a81Var == null) {
+        z71 z71Var = ((h81) this.b).L;
+        if (z71Var == null) {
             return false;
         }
-        return a81Var.c(i10);
+        return z71Var.c(i10);
     }
 
     public String e(Object obj) {
@@ -178,34 +178,34 @@ public class c implements w, i, b5, j, d71, g81, s, y1, r4.c, o, n5.b, OnComplet
     }
 
     public void h(float f7) {
-        i81 i81Var = (i81) this.b;
+        h81 h81Var = (h81) this.b;
         if (f7 == 1.0f) {
-            View[] viewArr = i81Var.e;
-            View[] viewArr2 = i81Var.e;
+            View[] viewArr = h81Var.e;
+            View[] viewArr2 = h81Var.e;
             if (viewArr[1] != null) {
-                i81Var.F();
-                i81Var.h.put(i81Var.f[1], viewArr2[1]);
-                i81Var.removeView(viewArr2[1]);
-                i81Var.E(viewArr2[0], 0.0f);
+                h81Var.F();
+                h81Var.h.put(h81Var.f[1], viewArr2[1]);
+                h81Var.removeView(viewArr2[1]);
+                h81Var.E(viewArr2[0], 0.0f);
                 viewArr2[1] = null;
             }
-            i81Var.z(i81Var.b);
+            h81Var.z(h81Var.b);
             return;
         }
-        View[] viewArr3 = i81Var.e;
-        View[] viewArr4 = i81Var.e;
+        View[] viewArr3 = h81Var.e;
+        View[] viewArr4 = h81Var.e;
         View view = viewArr3[1];
         if (view == null) {
             return;
         }
-        if (i81Var.y) {
-            i81Var.E(view, (1.0f - f7) * viewArr3[0].getMeasuredWidth());
-            i81Var.E(viewArr4[0], (-r2.getMeasuredWidth()) * f7);
+        if (h81Var.y) {
+            h81Var.E(view, (1.0f - f7) * viewArr3[0].getMeasuredWidth());
+            h81Var.E(viewArr4[0], (-r2.getMeasuredWidth()) * f7);
         } else {
-            i81Var.E(view, (1.0f - f7) * (-viewArr3[0].getMeasuredWidth()));
-            i81Var.E(viewArr4[0], r2.getMeasuredWidth() * f7);
+            h81Var.E(view, (1.0f - f7) * (-viewArr3[0].getMeasuredWidth()));
+            h81Var.E(viewArr4[0], r2.getMeasuredWidth() * f7);
         }
-        i81Var.w(false);
+        h81Var.w(false);
     }
 
     public c i(int i10) {
@@ -229,11 +229,11 @@ public class c implements w, i, b5, j, d71, g81, s, y1, r4.c, o, n5.b, OnComplet
     public void m(ah.a aVar) {
         switch (this.a) {
             case 7:
-                aVar.a(((vi) this.b).getThemedColor(i6.d6));
+                aVar.a(((wi) this.b).getThemedColor(h6.d6));
                 aVar.b(SharedConfig.chatBlurEnabled());
                 break;
             default:
-                aVar.a(((hq0) this.b).getThemedColor(i6.d6));
+                aVar.a(((hq0) this.b).getThemedColor(h6.d6));
                 aVar.b(SharedConfig.chatBlurEnabled());
                 break;
         }
@@ -250,32 +250,32 @@ public class c implements w, i, b5, j, d71, g81, s, y1, r4.c, o, n5.b, OnComplet
         }
     }
 
-    @Override // org.telegram.ui.Components.d71
-    public void onError(g71 g71Var, Exception exc) {
+    @Override // org.telegram.ui.Components.c71
+    public void onError(f71 f71Var, Exception exc) {
         FileLog.e(exc);
     }
 
-    @Override // org.telegram.ui.Components.d71
+    @Override // org.telegram.ui.Components.c71
     public /* synthetic */ void onRenderedFirstFrame(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.d71
+    @Override // org.telegram.ui.Components.c71
     public void onStateChanged(boolean z10, int i10) {
-        w50 w50Var;
+        x50 x50Var;
         VideoEditedInfo videoEditedInfo;
-        v50 v50Var = (v50) this.b;
-        g71 g71Var = v50Var.H0.O;
-        if (g71Var != null && g71Var.y() && i10 == 4 && (videoEditedInfo = (w50Var = v50Var.H0).N) != null) {
-            g71 g71Var2 = w50Var.O;
+        w50 w50Var = (w50) this.b;
+        f71 f71Var = w50Var.H0.O;
+        if (f71Var != null && f71Var.y() && i10 == 4 && (videoEditedInfo = (x50Var = w50Var.H0).N) != null) {
+            f71 f71Var2 = x50Var.O;
             long j3 = videoEditedInfo.startTime;
             if (j3 <= 0) {
                 j3 = 0;
             }
-            g71Var2.K(j3);
+            f71Var2.K(j3);
         }
     }
 
-    @Override // org.telegram.ui.Components.d71
+    @Override // org.telegram.ui.Components.c71
     public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         return false;
     }
@@ -371,7 +371,7 @@ public class c implements w, i, b5, j, d71, g81, s, y1, r4.c, o, n5.b, OnComplet
         }
     }
 
-    @Override // org.telegram.ui.Components.d71
+    @Override // org.telegram.ui.Components.c71
     public void onRenderedFirstFrame() {
     }
 
@@ -380,19 +380,19 @@ public class c implements w, i, b5, j, d71, g81, s, y1, r4.c, o, n5.b, OnComplet
         return ((p2) this.b).F;
     }
 
-    @Override // org.telegram.ui.Components.d71
+    @Override // org.telegram.ui.Components.c71
     public /* synthetic */ void onSeekFinished(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.d71
+    @Override // org.telegram.ui.Components.c71
     public /* synthetic */ void onSeekStarted(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.d71
+    @Override // org.telegram.ui.Components.c71
     public /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
     }
 
-    @Override // org.telegram.ui.Components.d71
+    @Override // org.telegram.ui.Components.c71
     public void onVideoSizeChanged(int i10, int i11, int i12, float f7) {
     }
 }

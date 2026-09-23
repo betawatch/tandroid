@@ -1,66 +1,31 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class jv0 extends org.telegram.ui.Components.ll0 {
-    public final Drawable X2;
-    public final Paint Y2;
-    public final RectF Z2;
+public final /* synthetic */ class jv0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ tv0 b;
 
-    public jv0(Context context) {
-        super(context, null);
-        Paint paint = new Paint(1);
-        this.Y2 = paint;
-        this.Z2 = new RectF();
-        setWillNotDraw(false);
-        setClipToPadding(false);
-        setTranslationY(-AndroidUtilities.dp(10.0f));
-        iv0 iv0Var = new iv0(this);
-        setItemAnimator(iv0Var);
-        iv0Var.C = false;
-        iv0Var.m = false;
-        setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(6.0f));
-        paint.setColor(2130706432);
-        this.X2 = context.getResources().getDrawable(R.drawable.photo_tooltip2).mutate();
+    public /* synthetic */ jv0(tv0 tv0Var, int i10) {
+        this.a = i10;
+        this.b = tv0Var;
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        int childCount = getChildCount();
-        if (childCount > 0) {
-            int measuredWidth = getMeasuredWidth() - AndroidUtilities.dp(87.0f);
-            Drawable drawable = this.X2;
-            drawable.setBounds(measuredWidth, 0, drawable.getIntrinsicWidth() + measuredWidth, AndroidUtilities.dp(6.0f));
-            drawable.draw(canvas);
-            int i10 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-            int i11 = TLObject.FLAG_31;
-            for (int i12 = 0; i12 < childCount; i12++) {
-                View childAt = getChildAt(i12);
-                i10 = (int) Math.min(i10, Math.floor(childAt.getX()));
-                i11 = (int) Math.max(i11, Math.ceil(childAt.getX() + childAt.getMeasuredWidth()));
-            }
-            if (i10 == Integer.MAX_VALUE || i11 == Integer.MIN_VALUE) {
-                return;
-            }
-            float dp = i10 - AndroidUtilities.dp(6.0f);
-            float dp2 = AndroidUtilities.dp(6.0f);
-            float dp3 = AndroidUtilities.dp(6.0f) + i11;
-            float dp4 = AndroidUtilities.dp(103.0f);
-            RectF rectF = this.Z2;
-            rectF.set(dp, dp2, dp3, dp4);
-            canvas.drawRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), this.Y2);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                tv0 tv0Var = this.b;
+                tv0Var.getClass();
+                tv0Var.R.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            default:
+                tv0 tv0Var2 = this.b;
+                tv0Var2.getClass();
+                tv0Var2.R.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
         }
     }
 }

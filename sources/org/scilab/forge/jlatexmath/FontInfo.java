@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import ru.noties.jlatexmath.awt.Font;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public class FontInfo {
     public static final int NUMBER_OF_CHAR_CODES = 256;
@@ -35,7 +35,7 @@ public class FontInfo {
     private final Map<CharCouple, Float> kern = new HashMap();
     private char skewChar = 65535;
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public class CharCouple {
         private final char left;
         private final char right;

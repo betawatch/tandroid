@@ -17,7 +17,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public class NotificationCenter {
     private static final long EXPIRE_NOTIFICATIONS_TIME = 5017;
@@ -389,7 +389,7 @@ public class NotificationCenter {
     private final SparseArray<AllowedNotifications> allowedNotifications = new SparseArray<>();
     SparseArray<Runnable> alreadyPostedRunnubles = new SparseArray<>();
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class AllowedNotifications {
         int[] allowedIds;
         final long time;
@@ -399,7 +399,7 @@ public class NotificationCenter {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class DelayedPost {
         private Object[] args;
         private int id;
@@ -410,12 +410,12 @@ public class NotificationCenter {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public interface NotificationCenterDelegate {
         void didReceivedNotification(int i10, int i11, Object... objArr);
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public interface ObserversGroup {
         ObserversGroup add(int i10);
 
@@ -424,7 +424,7 @@ public class NotificationCenter {
         void removeAllObservers();
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static final class ObserversGroupImpl implements ObserversGroup {
         private NotificationCenterDelegate delegate;
         private ObserversGroupImpl globalGroup;
@@ -502,12 +502,12 @@ public class NotificationCenter {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public interface PostponeNotificationCallback {
         boolean needPostpone(int i10, int i11, Object[] objArr);
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static final class WeakObserversGroupImpl implements ObserversGroup, NotificationCenterDelegate {
         private final ObserversGroupImpl observersGroup;
         private final WeakReference<NotificationCenterDelegate> reference;
@@ -724,10 +724,10 @@ public class NotificationCenter {
         liveStoryUpdated = i10 + 174;
         liveStoryMessageUpdate = i10 + 175;
         appDidLogout = i10 + 176;
-        int i12 = i10 + MessagesStorage.LAST_DB_VERSION;
         configLoaded = i10 + 177;
-        needDeleteDialog = i12;
-        newEmojiSuggestionsAvailable = i10 + 179;
+        int i12 = i10 + MessagesStorage.LAST_DB_VERSION;
+        needDeleteDialog = i10 + 178;
+        newEmojiSuggestionsAvailable = i12;
         themeUploadedToServer = i10 + 180;
         themeUploadError = i10 + 181;
         dialogFiltersUpdated = i10 + 182;
@@ -962,7 +962,7 @@ public class NotificationCenter {
             }
         }
         if (j3 != Long.MAX_VALUE) {
-            AndroidUtilities.runOnUIThread(new xg(this, 0), Math.max(17L, EXPIRE_NOTIFICATIONS_TIME - (elapsedRealtime - j3)));
+            AndroidUtilities.runOnUIThread(new wg(this, 0), Math.max(17L, EXPIRE_NOTIFICATIONS_TIME - (elapsedRealtime - j3)));
         }
     }
 
@@ -1051,7 +1051,7 @@ public class NotificationCenter {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkForExpiredNotifications$0() {
-        this.checkForExpiredNotifications = new xg(this, 1);
+        this.checkForExpiredNotifications = new wg(this, 1);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1074,7 +1074,7 @@ public class NotificationCenter {
     }
 
     public static void listenEmojiLoading(View view) {
-        getGlobalInstance().listen(view, emojiLoaded, new a1(view, 2));
+        getGlobalInstance().listen(view, emojiLoaded, new b1(view, 2));
     }
 
     private void postNotificationDebounced(int i10, Object[] objArr) {
@@ -1202,9 +1202,9 @@ public class NotificationCenter {
 
     public Runnable listen(View view, final int i10, final Utilities.Callback<Object[]> callback) {
         if (view == null || callback == null) {
-            return new v1(18);
+            return new w1(18);
         }
-        final NotificationCenterDelegate notificationCenterDelegate = new NotificationCenterDelegate() { // from class: org.telegram.messenger.yg
+        final NotificationCenterDelegate notificationCenterDelegate = new NotificationCenterDelegate() { // from class: org.telegram.messenger.xg
             @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
             public final void didReceivedNotification(int i11, int i12, Object[] objArr) {
                 NotificationCenter.lambda$listen$4(i10, callback, i11, i12, objArr);
@@ -1426,7 +1426,7 @@ public class NotificationCenter {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public class UniqArrayList<T> extends ArrayList<T> {
         HashSet<T> set;
 
@@ -1516,9 +1516,9 @@ public class NotificationCenter {
         allowedNotifications.allowedIds = iArr;
         this.allowedNotifications.put(this.animationInProgressPointer, allowedNotifications);
         if (this.checkForExpiredNotifications == null) {
-            xg xgVar = new xg(this, i11);
-            this.checkForExpiredNotifications = xgVar;
-            AndroidUtilities.runOnUIThread(xgVar, EXPIRE_NOTIFICATIONS_TIME);
+            wg wgVar = new wg(this, i11);
+            this.checkForExpiredNotifications = wgVar;
+            AndroidUtilities.runOnUIThread(wgVar, EXPIRE_NOTIFICATIONS_TIME);
         }
         return this.animationInProgressPointer;
     }

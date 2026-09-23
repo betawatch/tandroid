@@ -4,15 +4,15 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.widget.FrameLayout;
-import org.telegram.ui.Components.i81;
+import org.telegram.ui.Components.h81;
 import org.telegram.ui.Components.mr0;
 import org.telegram.ui.Components.rr0;
 import org.telegram.ui.Components.tr0;
 import org.telegram.ui.Components.yu0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class a extends i81 {
+public final class a extends h81 {
     public final /* synthetic */ int T = 0;
     public Object U;
     public final /* synthetic */ FrameLayout V;
@@ -24,7 +24,7 @@ public final class a extends i81 {
         this.U = rr0Var;
     }
 
-    @Override // org.telegram.ui.Components.i81
+    @Override // org.telegram.ui.Components.h81
     public boolean i(MotionEvent motionEvent) {
         switch (this.T) {
             case 0:
@@ -34,7 +34,7 @@ public final class a extends i81 {
         }
     }
 
-    @Override // org.telegram.ui.Components.i81
+    @Override // org.telegram.ui.Components.h81
     public final void w(boolean z10) {
         switch (this.T) {
             case 0:
@@ -53,7 +53,7 @@ public final class a extends i81 {
         }
     }
 
-    @Override // org.telegram.ui.Components.i81
+    @Override // org.telegram.ui.Components.h81
     public void x(int i10) {
         switch (this.T) {
             case 0:
@@ -68,7 +68,7 @@ public final class a extends i81 {
         }
     }
 
-    @Override // org.telegram.ui.Components.i81
+    @Override // org.telegram.ui.Components.h81
     public void y(int i10, boolean z10) {
         switch (this.T) {
             case 1:
@@ -88,7 +88,7 @@ public final class a extends i81 {
         }
     }
 
-    @Override // org.telegram.ui.Components.i81
+    @Override // org.telegram.ui.Components.h81
     public final void z(int i10) {
         switch (this.T) {
             case 0:

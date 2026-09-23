@@ -2,7 +2,7 @@ package za;
 
 import android.os.Build;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class d implements ia.d {
     public static final d a = new d();
@@ -21,7 +21,7 @@ public final class d implements ia.d {
         eVar.a(c, Build.MODEL);
         eVar.a(d, "1.2.0");
         eVar.a(e, Build.VERSION.RELEASE);
-        eVar.a(f, o.b);
+        eVar.a(f, q.b);
         eVar.a(g, bVar.b);
     }
 }

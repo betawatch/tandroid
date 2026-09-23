@@ -16,12 +16,13 @@ import java.util.ArrayList;
 import java.util.WeakHashMap;
 import m.k1;
 import m.l3;
+import org.telegram.messenger.BuildConfig;
 import org.telegram.ui.Components.voip.r0;
 import r0.i0;
 import r0.l0;
 import v7.j7;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class b0 extends j7 implements m.b {
     public static final AccelerateInterpolator x = new AccelerateInterpolator();
@@ -141,7 +142,7 @@ public final class b0 extends j7 implements m.b {
             wrapper = (k1) findViewById;
         } else {
             if (!(findViewById instanceof Toolbar)) {
-                throw new IllegalStateException("Can't make a decor toolbar out of ".concat(findViewById != null ? findViewById.getClass().getSimpleName() : "null"));
+                throw new IllegalStateException("Can't make a decor toolbar out of ".concat(findViewById != null ? findViewById.getClass().getSimpleName() : BuildConfig.BETA_URL));
             }
             wrapper = ((Toolbar) findViewById).getWrapper();
         }

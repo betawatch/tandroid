@@ -9,15 +9,15 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.sw0;
-import org.telegram.ui.Components.xm0;
+import org.telegram.ui.Components.rw0;
+import org.telegram.ui.Components.ym0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class l2 extends FrameLayout {
-    public final org.telegram.ui.ActionBar.e6 a;
+    public final org.telegram.ui.ActionBar.d6 a;
     public final FrameLayout b;
-    public final xm0 c;
+    public final ym0 c;
     public final h2 d;
     public final int e;
     public k2 f;
@@ -27,13 +27,13 @@ public final class l2 extends FrameLayout {
     public boolean s;
     public Utilities.Callback2 v;
 
-    public l2(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+    public l2(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context);
         this.e = -1;
-        this.a = e6Var;
+        this.a = d6Var;
         FrameLayout frameLayout = new FrameLayout(context);
         this.b = frameLayout;
-        frameLayout.setBackground(org.telegram.ui.ActionBar.i6.b0(AndroidUtilities.dp(18.0f), org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.Ie, e6Var)));
+        frameLayout.setBackground(org.telegram.ui.ActionBar.h6.b0(AndroidUtilities.dp(18.0f), org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Ie, d6Var)));
         frameLayout.setClipToOutline(true);
         frameLayout.setOutlineProvider(new ai.k2(2));
         addView(frameLayout, w7.x5.d(-1, 36.0f, 119, 10.0f, 6.0f, 10.0f, 8.0f));
@@ -42,18 +42,18 @@ public final class l2 extends FrameLayout {
         ImageView imageView = new ImageView(context);
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
-        xm0 xm0Var = new xm0();
-        this.c = xm0Var;
-        xm0Var.c(0, false, false);
-        int i10 = org.telegram.ui.ActionBar.i6.Je;
-        xm0Var.a(org.telegram.ui.ActionBar.i6.v0(i10, e6Var));
-        imageView.setImageDrawable(xm0Var);
+        ym0 ym0Var = new ym0();
+        this.c = ym0Var;
+        ym0Var.c(0, false, false);
+        int i10 = org.telegram.ui.ActionBar.h6.Je;
+        ym0Var.a(org.telegram.ui.ActionBar.h6.v0(i10, d6Var));
+        imageView.setImageDrawable(ym0Var);
         frameLayout.addView(imageView, w7.x5.e(36, 36, 51));
         h2 h2Var = new h2(this, context, 0);
         this.d = h2Var;
         h2Var.setTextSize(1, 16.0f);
-        h2Var.setHintTextColor(org.telegram.ui.ActionBar.i6.v0(i10, e6Var));
-        h2Var.setTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.G6, e6Var));
+        h2Var.setHintTextColor(org.telegram.ui.ActionBar.h6.v0(i10, d6Var));
+        h2Var.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.G6, d6Var));
         h2Var.setBackgroundDrawable(null);
         h2Var.setPadding(0, 0, 0, 0);
         h2Var.setMaxLines(1);
@@ -61,9 +61,9 @@ public final class l2 extends FrameLayout {
         h2Var.setSingleLine(true);
         h2Var.setImeOptions(268435459);
         h2Var.setHint(LocaleController.getString(R.string.Search));
-        int i11 = org.telegram.ui.ActionBar.i6.Mh;
-        h2Var.setCursorColor(org.telegram.ui.ActionBar.i6.v0(i11, e6Var));
-        h2Var.setHandlesColor(org.telegram.ui.ActionBar.i6.v0(i11, e6Var));
+        int i11 = org.telegram.ui.ActionBar.h6.Mh;
+        h2Var.setCursorColor(org.telegram.ui.ActionBar.h6.v0(i11, d6Var));
+        h2Var.setHandlesColor(org.telegram.ui.ActionBar.h6.v0(i11, d6Var));
         h2Var.setCursorSize(AndroidUtilities.dp(20.0f));
         h2Var.setCursorWidth(1.5f);
         h2Var.setTranslationY(AndroidUtilities.dp(-2.0f));
@@ -72,8 +72,8 @@ public final class l2 extends FrameLayout {
         ImageView imageView2 = new ImageView(context);
         this.n = imageView2;
         imageView2.setScaleType(scaleType);
-        imageView2.setImageDrawable(new j2(e6Var));
-        imageView2.setBackground(org.telegram.ui.ActionBar.i6.f0(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.i6, e6Var), 1, AndroidUtilities.dp(15.0f)));
+        imageView2.setImageDrawable(new j2(d6Var));
+        imageView2.setBackground(org.telegram.ui.ActionBar.h6.f0(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.i6, d6Var), 1, AndroidUtilities.dp(15.0f)));
         imageView2.setAlpha(0.0f);
         imageView2.setScaleX(0.7f);
         imageView2.setScaleY(0.7f);
@@ -179,13 +179,13 @@ public final class l2 extends FrameLayout {
                             l2Var.d(false);
                             break;
                         default:
-                            sw0 sw0Var = (sw0) obj;
+                            rw0 rw0Var = (rw0) obj;
                             l2 l2Var2 = this.b;
                             k2 k2Var3 = l2Var2.f;
                             if (k2Var3 != null) {
-                                if (k2Var3.getSelectedCategory() != sw0Var) {
-                                    l2Var2.f.F1(sw0Var);
-                                    String str = sw0Var.a;
+                                if (k2Var3.getSelectedCategory() != rw0Var) {
+                                    l2Var2.f.F1(rw0Var);
+                                    String str = rw0Var.a;
                                     int categoryIndex = l2Var2.f.getCategoryIndex();
                                     Utilities.Callback2 callback2 = l2Var2.v;
                                     if (callback2 != null) {
@@ -224,13 +224,13 @@ public final class l2 extends FrameLayout {
                             l2Var.d(false);
                             break;
                         default:
-                            sw0 sw0Var = (sw0) obj;
+                            rw0 rw0Var = (rw0) obj;
                             l2 l2Var2 = this.b;
                             k2 k2Var3 = l2Var2.f;
                             if (k2Var3 != null) {
-                                if (k2Var3.getSelectedCategory() != sw0Var) {
-                                    l2Var2.f.F1(sw0Var);
-                                    String str = sw0Var.a;
+                                if (k2Var3.getSelectedCategory() != rw0Var) {
+                                    l2Var2.f.F1(rw0Var);
+                                    String str = rw0Var.a;
                                     int categoryIndex = l2Var2.f.getCategoryIndex();
                                     Utilities.Callback2 callback2 = l2Var2.v;
                                     if (callback2 != null) {

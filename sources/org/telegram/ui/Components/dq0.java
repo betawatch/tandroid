@@ -15,11 +15,11 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ec1;
+import org.telegram.ui.wb1;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class dq0 extends kl0 {
+public final class dq0 extends ll0 {
     public int G;
     public cq0 H;
     public int J;
@@ -48,7 +48,7 @@ public final class dq0 extends kl0 {
         bq0Var.a = new k2.u(this, 15);
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.ll0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         return (i10 == 1 || i10 == 4) ? false : true;
@@ -165,19 +165,19 @@ public final class dq0 extends kl0 {
         TLObject tLObject;
         long j10;
         int indexOfIgnoreCase;
-        org.telegram.ui.ActionBar.e6 e6Var;
+        org.telegram.ui.ActionBar.d6 d6Var;
         TLObject tLObject2;
         String str3;
         int i11;
         int indexOfIgnoreCase2;
-        org.telegram.ui.ActionBar.e6 e6Var2;
+        org.telegram.ui.ActionBar.d6 d6Var2;
         hq0 hq0Var = this.K;
         a0.i iVar = hq0Var.U;
         int i12 = c1Var.f;
         View view = c1Var.a;
         if (i12 != 0 && i12 != 5) {
             if (i12 == 2) {
-                ((ll0) view).getAdapter().l();
+                ((ml0) view).getAdapter().l();
                 return;
             }
             return;
@@ -211,9 +211,9 @@ public final class dq0 extends kl0 {
                     tLObject = tLObject3;
                 } else {
                     ?? spannableStringBuilder = new SpannableStringBuilder(str);
-                    int i14 = org.telegram.ui.ActionBar.i6.q6;
-                    e6Var = ((org.telegram.ui.ActionBar.f3) hq0Var).resourcesProvider;
-                    spannableStringBuilder.setSpan(new e10(i14, e6Var), indexOfIgnoreCase, str5.length() + indexOfIgnoreCase, 33);
+                    int i14 = org.telegram.ui.ActionBar.h6.q6;
+                    d6Var = ((org.telegram.ui.ActionBar.f3) hq0Var).resourcesProvider;
+                    spannableStringBuilder.setSpan(new f10(i14, d6Var), indexOfIgnoreCase, str5.length() + indexOfIgnoreCase, 33);
                     tLObject = tLObject3;
                     str2 = spannableStringBuilder;
                 }
@@ -263,9 +263,9 @@ public final class dq0 extends kl0 {
                 str3 = str4;
             } else {
                 ?? spannableStringBuilder2 = new SpannableStringBuilder(str4);
-                int i16 = org.telegram.ui.ActionBar.i6.q6;
-                e6Var2 = ((org.telegram.ui.ActionBar.f3) hq0Var).resourcesProvider;
-                spannableStringBuilder2.setSpan(new e10(i16, e6Var2), indexOfIgnoreCase2, str7.length() + indexOfIgnoreCase2, 33);
+                int i16 = org.telegram.ui.ActionBar.h6.q6;
+                d6Var2 = ((org.telegram.ui.ActionBar.f3) hq0Var).resourcesProvider;
+                spannableStringBuilder2.setSpan(new f10(i16, d6Var2), indexOfIgnoreCase2, str7.length() + indexOfIgnoreCase2, 33);
                 tLObject2 = tLObject4;
                 str3 = spannableStringBuilder2;
             }
@@ -285,55 +285,55 @@ public final class dq0 extends kl0 {
 
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        org.telegram.ui.ActionBar.e6 e6Var;
+        org.telegram.ui.ActionBar.d6 d6Var;
         View view;
-        org.telegram.ui.ActionBar.e6 e6Var2;
+        org.telegram.ui.ActionBar.d6 d6Var2;
         int i11;
-        org.telegram.ui.ActionBar.e6 e6Var3;
-        org.telegram.ui.ActionBar.e6 e6Var4;
-        org.telegram.ui.ActionBar.e6 e6Var5;
+        org.telegram.ui.ActionBar.d6 d6Var3;
+        org.telegram.ui.ActionBar.d6 d6Var4;
+        org.telegram.ui.ActionBar.d6 d6Var5;
         Context context = this.c;
         hq0 hq0Var = this.K;
         if (i10 == 0) {
-            e6Var = ((org.telegram.ui.ActionBar.f3) hq0Var).resourcesProvider;
-            org.telegram.ui.Cells.i6 i6Var = new org.telegram.ui.Cells.i6(context, e6Var);
+            d6Var = ((org.telegram.ui.ActionBar.f3) hq0Var).resourcesProvider;
+            org.telegram.ui.Cells.i6 i6Var = new org.telegram.ui.Cells.i6(context, d6Var);
             i6Var.E0 = true;
             i6Var.l0 = true;
             view = i6Var;
         } else if (i10 == 2) {
-            e6Var2 = ((org.telegram.ui.ActionBar.f3) hq0Var).resourcesProvider;
-            ec1 ec1Var = new ec1(context, 6, e6Var2);
-            ec1Var.setItemAnimator(null);
-            ec1Var.setLayoutAnimation(null);
+            d6Var2 = ((org.telegram.ui.ActionBar.f3) hq0Var).resourcesProvider;
+            wb1 wb1Var = new wb1(context, 6, d6Var2);
+            wb1Var.setItemAnimator(null);
+            wb1Var.setLayoutAnimation(null);
             gg.b0 b0Var = new gg.b0(11);
             b0Var.j1(0);
-            ec1Var.setLayoutManager(b0Var);
+            wb1Var.setLayoutManager(b0Var);
             i11 = ((org.telegram.ui.ActionBar.f3) hq0Var).currentAccount;
-            e6Var3 = ((org.telegram.ui.ActionBar.f3) hq0Var).resourcesProvider;
-            cq0 cq0Var = new cq0(this, context, i11, e6Var3);
+            d6Var3 = ((org.telegram.ui.ActionBar.f3) hq0Var).resourcesProvider;
+            cq0 cq0Var = new cq0(this, context, i11, d6Var3);
             this.H = cq0Var;
-            ec1Var.setAdapter(cq0Var);
-            ec1Var.setOnItemClickListener(new j(this, 12));
-            view = ec1Var;
+            wb1Var.setAdapter(cq0Var);
+            wb1Var.setOnItemClickListener(new j(this, 12));
+            view = wb1Var;
         } else if (i10 == 3) {
-            e6Var4 = ((org.telegram.ui.ActionBar.f3) hq0Var).resourcesProvider;
-            org.telegram.ui.Cells.v3 v3Var = new org.telegram.ui.Cells.v3(context, e6Var4);
-            v3Var.setTextColor(org.telegram.ui.ActionBar.i6.f7);
-            v3Var.setBackgroundColor(hq0Var.getThemedColor(org.telegram.ui.ActionBar.i6.e7));
+            d6Var4 = ((org.telegram.ui.ActionBar.f3) hq0Var).resourcesProvider;
+            org.telegram.ui.Cells.v3 v3Var = new org.telegram.ui.Cells.v3(context, d6Var4);
+            v3Var.setTextColor(org.telegram.ui.ActionBar.h6.f7);
+            v3Var.setBackgroundColor(hq0Var.getThemedColor(org.telegram.ui.ActionBar.h6.e7));
             v3Var.setText(LocaleController.getString(R.string.Recent));
             view = v3Var;
         } else if (i10 == 4) {
-            view = new ci.eb(this, context, 22);
+            view = new ci.bb(this, context, 22);
         } else if (i10 != 5) {
             View view2 = new View(context);
             view2.setLayoutParams(new s4.p0(-1, AndroidUtilities.dp((!hq0Var.h0 || hq0Var.o0[1] == null) ? 56.0f : 109.0f)));
             view = view2;
         } else {
-            e6Var5 = ((org.telegram.ui.ActionBar.f3) hq0Var).resourcesProvider;
-            View f7Var = new org.telegram.ui.Cells.f7(context, 0, e6Var5);
+            d6Var5 = ((org.telegram.ui.ActionBar.f3) hq0Var).resourcesProvider;
+            View f7Var = new org.telegram.ui.Cells.f7(context, 0, d6Var5);
             f7Var.setLayoutParams(new s4.p0(-1, AndroidUtilities.dp(100.0f)));
             view = f7Var;
         }
-        return new vk0(view);
+        return new wk0(view);
     }
 }

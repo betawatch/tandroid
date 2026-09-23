@@ -3,17 +3,18 @@ package kh;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
-import i2.g0;
+import i2.h0;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import le.e;
+import le.c;
+import le.f;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.vl;
+import org.telegram.messenger.ul;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.voip.v2;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public abstract class b extends ViewGroup {
     public int a;
@@ -27,13 +28,13 @@ public abstract class b extends ViewGroup {
 
     public final void a(v2 v2Var) {
         addView(v2Var);
-        this.c.put(v2Var, new a(v2Var, new g0(this, 9)));
+        this.c.put(v2Var, new a(v2Var, new h0(this, 9)));
     }
 
     public final void b(boolean z10, boolean z11) {
         int min;
         int i10;
-        e eVar;
+        f fVar;
         int measuredWidth;
         int i11;
         int measuredWidth2 = getMeasuredWidth();
@@ -54,10 +55,10 @@ public abstract class b extends ViewGroup {
             i12 = 1;
         }
         if (z12) {
-            min = Math.min(AndroidUtilities.dp(50.0f) + Math.max((int) (vl.A(50.0f, i12, measuredHeight) / (i12 + 0.333f)), 0), measuredHeight / i12);
+            min = Math.min(AndroidUtilities.dp(50.0f) + Math.max((int) (ul.A(50.0f, i12, measuredHeight) / (i12 + 0.333f)), 0), measuredHeight / i12);
             i10 = (measuredHeight - (i12 * min)) / 2;
         } else {
-            int min2 = Math.min(AndroidUtilities.dp(50.0f) + Math.max((int) (vl.A(50.0f, i12, measuredWidth2) / (i12 + 0.333f)), 0), measuredWidth2 / i12);
+            int min2 = Math.min(AndroidUtilities.dp(50.0f) + Math.max((int) (ul.A(50.0f, i12, measuredWidth2) / (i12 + 0.333f)), 0), measuredWidth2 / i12);
             min = AndroidUtilities.dp(76.0f);
             i10 = (measuredWidth2 - (i12 * min2)) / 2;
             measuredWidth2 = min2;
@@ -68,9 +69,9 @@ public abstract class b extends ViewGroup {
             a aVar = (a) ((Map.Entry) it2.next()).getValue();
             boolean z13 = aVar.h;
             v2 v2Var = aVar.e;
-            e eVar2 = aVar.b;
-            le.b bVar = aVar.c;
-            e eVar3 = aVar.a;
+            f fVar2 = aVar.b;
+            c cVar = aVar.c;
+            f fVar3 = aVar.a;
             if (z13) {
                 if (z12) {
                     measuredWidth = ((measuredWidth2 - v2Var.getMeasuredWidth()) / 2) + (getMeasuredWidth() - measuredWidth2);
@@ -79,19 +80,19 @@ public abstract class b extends ViewGroup {
                     measuredWidth = ((measuredWidth2 - v2Var.getMeasuredWidth()) / 2) + (measuredWidth2 * i13) + i10;
                     i11 = getMeasuredHeight() - AndroidUtilities.dp(76.0f);
                 }
-                if (z11 || !((z10 || eVar3.g) && bVar.f)) {
-                    eVar3.c(measuredWidth);
+                if (z11 || !((z10 || fVar3.g) && cVar.f)) {
+                    fVar3.c(measuredWidth);
                 } else {
-                    eVar3.a(measuredWidth);
+                    fVar3.a(measuredWidth);
                 }
-                if (z11 || !((z10 || eVar2.g) && bVar.f)) {
-                    eVar2.c(i11);
+                if (z11 || !((z10 || fVar2.g) && cVar.f)) {
+                    fVar2.c(i11);
                 } else {
-                    eVar2.a(i11);
+                    fVar2.a(i11);
                 }
                 i13++;
             }
-            bVar.a(aVar.h, !z11 && (z10 || ((eVar = bVar.h) != null && eVar.g)));
+            cVar.a(aVar.h, !z11 && (z10 || ((fVar = cVar.h) != null && fVar.g)));
         }
         invalidate();
     }

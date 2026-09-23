@@ -6,9 +6,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class h6 extends org.telegram.ui.Components.mc0 {
+public final class h6 extends org.telegram.ui.Components.lc0 {
     public final /* synthetic */ z6 D0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -24,8 +24,8 @@ public final class h6 extends org.telegram.ui.Components.mc0 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void dispatchDraw(Canvas canvas) {
-        org.telegram.ui.ActionBar.d5 d5Var;
-        org.telegram.ui.ActionBar.d5 d5Var2;
+        org.telegram.ui.ActionBar.c5 c5Var;
+        org.telegram.ui.ActionBar.c5 c5Var2;
         super.dispatchDraw(canvas);
         boolean Z = Z();
         z6 z6Var = this.D0;
@@ -35,10 +35,10 @@ public final class h6 extends org.telegram.ui.Components.mc0 {
                 z6Var.j0 = f7 - 0.16f;
                 invalidate();
                 z6Var.j0 = Utilities.clamp(z6Var.j0, 1.0f, 0.0f);
-                d5Var = ((org.telegram.ui.ActionBar.n2) z6Var).parentLayout;
-                if (d5Var == null) {
-                    d5Var2 = ((org.telegram.ui.ActionBar.n2) z6Var).parentLayout;
-                    ActionBarLayout actionBarLayout = (ActionBarLayout) d5Var2;
+                c5Var = ((org.telegram.ui.ActionBar.n2) z6Var).parentLayout;
+                if (c5Var == null) {
+                    c5Var2 = ((org.telegram.ui.ActionBar.n2) z6Var).parentLayout;
+                    ActionBarLayout actionBarLayout = (ActionBarLayout) c5Var2;
                     actionBarLayout.p(canvas, (int) (z6Var.h0 * 255.0f * z6Var.j0), org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight);
                     return;
                 }
@@ -53,8 +53,8 @@ public final class h6 extends org.telegram.ui.Components.mc0 {
             }
         }
         z6Var.j0 = Utilities.clamp(z6Var.j0, 1.0f, 0.0f);
-        d5Var = ((org.telegram.ui.ActionBar.n2) z6Var).parentLayout;
-        if (d5Var == null) {
+        c5Var = ((org.telegram.ui.ActionBar.n2) z6Var).parentLayout;
+        if (c5Var == null) {
         }
     }
 }

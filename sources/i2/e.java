@@ -7,21 +7,21 @@ import android.os.Looper;
 import com.google.android.gms.internal.vision.e2;
 import v7.v6;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class e {
     public final d9.i a;
     public final Handler b;
-    public o0 c;
+    public p0 c;
     public b2.e d;
     public int f;
     public c2.c h;
     public float g = 1.0f;
     public int e = 0;
 
-    public e(Context context, Looper looper, o0 o0Var) {
+    public e(Context context, Looper looper, p0 p0Var) {
         this.a = v6.a(new d(context, 0));
-        this.c = o0Var;
+        this.c = p0Var;
         this.b = new Handler(looper);
     }
 
@@ -34,9 +34,9 @@ public final class e {
     }
 
     public final void b(int i10) {
-        o0 o0Var = this.c;
-        if (o0Var != null) {
-            e2.z zVar = o0Var.n;
+        p0 p0Var = this.c;
+        if (p0Var != null) {
+            e2.z zVar = p0Var.n;
             zVar.getClass();
             e2.y b10 = e2.z.b();
             b10.a = zVar.a.obtainMessage(33, i10, 0);
@@ -54,9 +54,9 @@ public final class e {
             return;
         }
         this.g = f7;
-        o0 o0Var = this.c;
-        if (o0Var != null) {
-            o0Var.n.e(34);
+        p0 p0Var = this.c;
+        if (p0Var != null) {
+            p0Var.n.e(34);
         }
     }
 

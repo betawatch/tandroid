@@ -1,49 +1,17 @@
 package ci;
 
+import android.content.Context;
+import android.graphics.PointF;
 import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.fh;
-import org.telegram.ui.Components.ti;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class b6 implements ti {
-    @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ boolean S1() {
-        return false;
-    }
+public final class b6 extends qg.h1 {
+    public final /* synthetic */ q6 M0;
 
-    @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ boolean c0() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final void x0(fh fhVar) {
-        fhVar.run();
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ void K0() {
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ void U0(Object obj) {
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ void j1(TLRPC.User user) {
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ void u0() {
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final void B1(int i10, boolean z10, boolean z11, int i11, int i12, long j3, boolean z12, boolean z13, long j10) {
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ void W1(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j3, boolean z11, long j10) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b6(q6 q6Var, Context context, PointF pointF, ArrayList arrayList, org.telegram.ui.Components.ja jaVar, boolean z10, a7 a7Var) {
+        super(context, pointF, arrayList, jaVar, z10, a7Var);
+        this.M0 = q6Var;
     }
 }

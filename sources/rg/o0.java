@@ -3,12 +3,12 @@ package rg;
 import android.content.Context;
 import android.graphics.Canvas;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.n6;
-import org.telegram.ui.Components.tp;
+import org.telegram.ui.Components.p6;
+import org.telegram.ui.Components.up;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class o0 extends n6 {
+public final class o0 extends p6 {
     public final /* synthetic */ int s;
     public final /* synthetic */ p0 v;
 
@@ -19,14 +19,14 @@ public final class o0 extends n6 {
         this.v = p0Var;
     }
 
-    @Override // org.telegram.ui.Components.n6, android.view.View
+    @Override // org.telegram.ui.Components.p6, android.view.View
     public final void onDraw(Canvas canvas) {
         switch (this.s) {
             case 0:
                 p0 p0Var = this.v;
                 if (p0Var.M > 0.0f) {
                     if (p0Var.L == null) {
-                        p0Var.L = new tp(p0Var.d.getTextColor());
+                        p0Var.L = new up(p0Var.d.getTextColor());
                     }
                     int dp = (int) ((1.0f - p0Var.M) * AndroidUtilities.dp(24.0f));
                     p0Var.L.setBounds(0, dp, getWidth(), getHeight() + dp);
@@ -53,7 +53,7 @@ public final class o0 extends n6 {
                 p0 p0Var2 = this.v;
                 if (p0Var2.M > 0.0f) {
                     if (p0Var2.L == null) {
-                        p0Var2.L = new tp(p0Var2.d.getTextColor());
+                        p0Var2.L = new up(p0Var2.d.getTextColor());
                     }
                     int dp2 = (int) ((1.0f - p0Var2.M) * AndroidUtilities.dp(24.0f));
                     p0Var2.L.setBounds(0, dp2, getWidth(), getHeight() + dp2);

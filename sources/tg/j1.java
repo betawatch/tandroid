@@ -3,9 +3,9 @@ package tg;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.view.View;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class j1 extends View {
     public final /* synthetic */ n1 a;
@@ -18,6 +18,6 @@ public final class j1 extends View {
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        canvas.drawColor(this.a.getThemedColor(i6.e7));
+        canvas.drawColor(this.a.getThemedColor(h6.e7));
     }
 }

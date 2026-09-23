@@ -7,16 +7,17 @@ import e2.d0;
 import e9.a1;
 import e9.g0;
 import e9.i0;
+import g2.c0;
 import j$.util.DesugarCollections;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import k2.c0;
+import k2.b0;
 import k2.u;
 import v7.y7;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class i {
     public final c a;
@@ -35,11 +36,11 @@ public final class i {
     public Uri p;
     public boolean q;
     public x2.r r;
-    public final c0 j = new c0();
+    public final b0 j = new b0();
     public byte[] m = d0.b;
     public long s = -9223372036854775807L;
 
-    public i(c cVar, p2.d dVar, Uri[] uriArr, b2.s[] sVarArr, u uVar, g2.c0 c0Var, mi.a aVar, List list, j2.k kVar) {
+    public i(c cVar, p2.d dVar, Uri[] uriArr, b2.s[] sVarArr, u uVar, c0 c0Var, mi.a aVar, List list, j2.k kVar) {
         this.a = cVar;
         this.g = dVar;
         this.e = uriArr;
@@ -244,8 +245,8 @@ public final class i {
         if (uri == null) {
             return null;
         }
-        c0 c0Var = this.j;
-        byte[] bArr = (byte[]) ((d) c0Var.b).remove(uri);
+        b0 b0Var = this.j;
+        byte[] bArr = (byte[]) ((d) b0Var.b).remove(uri);
         if (bArr != null) {
             return null;
         }

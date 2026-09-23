@@ -1,33 +1,47 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.Utilities;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ze implements Runnable {
-    public final /* synthetic */ int a;
+    public final /* synthetic */ int a = 2;
     public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ Utilities.Callback c;
-    public final /* synthetic */ long d;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ int d;
     public final /* synthetic */ long e;
 
-    public /* synthetic */ ze(MessagesStorage messagesStorage, Utilities.Callback callback, long j3, long j10, int i10) {
-        this.a = i10;
+    public /* synthetic */ ze(MessagesStorage messagesStorage, int i10, boolean z10, long j3) {
         this.b = messagesStorage;
-        this.c = callback;
-        this.d = j3;
-        this.e = j10;
+        this.d = i10;
+        this.c = z10;
+        this.e = j3;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$getEphemeralMessages$208(this.c, this.d, this.e);
+                this.b.lambda$markMessagesAsDeleted$231(this.e, this.d, this.c);
+                break;
+            case 1:
+                this.b.lambda$removeFromDownloadQueue$182(this.c, this.d, this.e);
                 break;
             default:
-                this.b.lambda$getEphemeralMessages$207(this.c, this.d, this.e);
+                this.b.lambda$loadPendingTasks$31(this.d, this.c, this.e);
                 break;
         }
+    }
+
+    public /* synthetic */ ze(MessagesStorage messagesStorage, long j3, int i10, boolean z10) {
+        this.b = messagesStorage;
+        this.e = j3;
+        this.d = i10;
+        this.c = z10;
+    }
+
+    public /* synthetic */ ze(MessagesStorage messagesStorage, boolean z10, int i10, long j3) {
+        this.b = messagesStorage;
+        this.c = z10;
+        this.d = i10;
+        this.e = j3;
     }
 }

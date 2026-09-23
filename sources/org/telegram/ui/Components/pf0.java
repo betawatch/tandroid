@@ -4,18 +4,18 @@ import android.webkit.JavascriptInterface;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class pf0 {
-    public final /* synthetic */ org.telegram.ui.iu0 a;
+    public final /* synthetic */ org.telegram.ui.bu0 a;
 
-    public pf0(org.telegram.ui.iu0 iu0Var) {
-        this.a = iu0Var;
+    public pf0(org.telegram.ui.bu0 bu0Var) {
+        this.a = bu0Var;
     }
 
     @JavascriptInterface
     public void onPlayerError(String str) {
-        AndroidUtilities.runOnUIThread(new id(this, Integer.parseInt(str), 5));
+        AndroidUtilities.runOnUIThread(new kd(this, Integer.parseInt(str), 5));
     }
 
     @JavascriptInterface
@@ -36,24 +36,24 @@ public final class pf0 {
     @JavascriptInterface
     public void onPlayerNotifyDuration(int i10) {
         int i11 = i10 * MediaDataController.MAX_STYLE_RUNS_COUNT;
-        org.telegram.ui.iu0 iu0Var = this.a;
-        iu0Var.H = i11;
-        String str = iu0Var.s;
+        org.telegram.ui.bu0 bu0Var = this.a;
+        bu0Var.H = i11;
+        String str = bu0Var.s;
         if (str != null) {
-            qf0.a(iu0Var, str);
-            iu0Var.s = null;
+            qf0.a(bu0Var, str);
+            bu0Var.s = null;
         }
     }
 
     @JavascriptInterface
     public void onPlayerStateChange(String str) {
         int parseInt = Integer.parseInt(str);
-        org.telegram.ui.iu0 iu0Var = this.a;
-        boolean z10 = iu0Var.G;
+        org.telegram.ui.bu0 bu0Var = this.a;
+        boolean z10 = bu0Var.G;
         boolean z11 = false;
         int i10 = 1;
-        iu0Var.G = parseInt == 1 || parseInt == 3;
-        iu0Var.b(z10);
+        bu0Var.G = parseInt == 1 || parseInt == 3;
+        bu0Var.b(z10);
         if (parseInt != 0) {
             if (parseInt == 1) {
                 z11 = true;
@@ -67,9 +67,9 @@ public final class pf0 {
         } else {
             i10 = 4;
         }
-        if (i10 == 3 && iu0Var.h.getVisibility() != 4) {
+        if (i10 == 3 && bu0Var.h.getVisibility() != 4) {
             AndroidUtilities.runOnUIThread(new nf0(this, 1), 300L);
         }
-        AndroidUtilities.runOnUIThread(new i2.f0(this, z11, i10, 1));
+        AndroidUtilities.runOnUIThread(new i2.g0(this, z11, i10, 1));
     }
 }

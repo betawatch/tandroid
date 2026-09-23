@@ -13,7 +13,7 @@ import java.util.Collections;
 import java.util.List;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public class b {
     public static final View.AccessibilityDelegate c = new View.AccessibilityDelegate();
@@ -36,8 +36,8 @@ public class b {
         this.a.onInitializeAccessibilityEvent(view, accessibilityEvent);
     }
 
-    public void c(View view, s0.c cVar) {
-        this.a.onInitializeAccessibilityNodeInfo(view, cVar.a);
+    public void c(View view, s0.d dVar) {
+        this.a.onInitializeAccessibilityNodeInfo(view, dVar.a);
     }
 
     public boolean d(View view, int i10, Bundle bundle) {
@@ -47,7 +47,7 @@ public class b {
         if (list == null) {
             list = Collections.EMPTY_LIST;
         }
-        for (int i11 = 0; i11 < list.size() && ((AccessibilityNodeInfo.AccessibilityAction) ((s0.b) list.get(i11)).a).getId() != i10; i11++) {
+        for (int i11 = 0; i11 < list.size() && ((AccessibilityNodeInfo.AccessibilityAction) ((s0.c) list.get(i11)).a).getId() != i10; i11++) {
         }
         boolean performAccessibilityAction = this.a.performAccessibilityAction(view, i10, bundle);
         if (performAccessibilityAction || i10 != R.id.accessibility_action_clickable_span || bundle == null) {

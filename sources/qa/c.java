@@ -23,7 +23,7 @@ import org.json.JSONObject;
 import q9.n;
 import t7.u;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class c implements d {
     public static final Object m = new Object();
@@ -35,7 +35,7 @@ public final class c implements d {
     public final h f;
     public final Object g;
     public final ExecutorService h;
-    public final r9.j i;
+    public final r9.i i;
     public String j;
     public final HashSet k;
     public final ArrayList l;
@@ -44,7 +44,7 @@ public final class c implements d {
         new AtomicInteger(1);
     }
 
-    public c(k9.h hVar, pa.b bVar, ExecutorService executorService, r9.j jVar) {
+    public c(k9.h hVar, pa.b bVar, ExecutorService executorService, r9.i iVar) {
         hVar.a();
         sa.c cVar = new sa.c(hVar.a, bVar);
         a1 a1Var = new a1(hVar);
@@ -55,7 +55,7 @@ public final class c implements d {
         if (j.d == null) {
             j.d = new j(uVar);
         }
-        j jVar2 = j.d;
+        j jVar = j.d;
         n nVar = new n(new q9.c(hVar, 2));
         h hVar2 = new h();
         this.g = new Object();
@@ -64,11 +64,11 @@ public final class c implements d {
         this.a = hVar;
         this.b = cVar;
         this.c = a1Var;
-        this.d = jVar2;
+        this.d = jVar;
         this.e = nVar;
         this.f = hVar2;
         this.h = executorService;
-        this.i = jVar;
+        this.i = iVar;
     }
 
     public final void a(i iVar) {

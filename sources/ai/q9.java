@@ -11,28 +11,28 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class q9 extends View {
-    public final c6 a;
+    public final b6 a;
     public boolean b;
-    public final org.telegram.ui.Components.c6 c;
+    public final org.telegram.ui.Components.e6 c;
     public final ImageReceiver d;
     public final ImageReceiver e;
-    public org.telegram.ui.Components.o5 f;
+    public org.telegram.ui.Components.q5 f;
     public boolean h;
     public boolean n;
     public boolean r;
     public boolean s;
 
-    public q9(Context context, c6 c6Var) {
+    public q9(Context context, b6 b6Var) {
         super(context);
-        this.c = new org.telegram.ui.Components.c6(this);
+        this.c = new org.telegram.ui.Components.e6(this);
         ImageReceiver imageReceiver = new ImageReceiver(this);
         this.d = imageReceiver;
         this.e = new ImageReceiver(this);
         this.h = true;
-        this.a = c6Var;
+        this.a = b6Var;
         imageReceiver.setAllowLoadingOnAttachedOnly(true);
         imageReceiver.ignoreNotifications = true;
     }
@@ -43,9 +43,9 @@ public final class q9 extends View {
         this.d.onAttachedToWindow();
         this.e.onAttachedToWindow();
         this.s = true;
-        org.telegram.ui.Components.o5 o5Var = this.f;
-        if (o5Var != null) {
-            o5Var.a(this);
+        org.telegram.ui.Components.q5 q5Var = this.f;
+        if (q5Var != null) {
+            q5Var.a(this);
         }
     }
 
@@ -55,9 +55,9 @@ public final class q9 extends View {
         this.d.onDetachedFromWindow();
         this.e.onDetachedFromWindow();
         this.s = false;
-        org.telegram.ui.Components.o5 o5Var = this.f;
-        if (o5Var != null) {
-            o5Var.o(this);
+        org.telegram.ui.Components.q5 q5Var = this.f;
+        if (q5Var != null) {
+            q5Var.o(this);
         }
     }
 
@@ -70,17 +70,17 @@ public final class q9 extends View {
     public final void onDraw(Canvas canvas) {
         if (this.n) {
             float d = this.c.d(this.b ? 1.0f : 0.0f, false);
-            c6 c6Var = this.a;
+            b6 b6Var = this.a;
             if (d < 1.0f) {
-                Drawable drawable = c6Var.o;
-                Drawable drawable2 = c6Var.o;
+                Drawable drawable = b6Var.o;
+                Drawable drawable2 = b6Var.o;
                 drawable.setBounds(getPaddingLeft(), getPaddingTop(), getMeasuredWidth() - getPaddingRight(), getMeasuredHeight() - getPaddingBottom());
                 drawable2.setAlpha(255);
                 drawable2.draw(canvas);
             }
             if (d > 0.0f) {
-                Drawable drawable3 = c6Var.p;
-                Drawable drawable4 = c6Var.p;
+                Drawable drawable3 = b6Var.p;
+                Drawable drawable4 = b6Var.p;
                 drawable3.setBounds(getPaddingLeft(), getPaddingTop(), getMeasuredWidth() - getPaddingRight(), getMeasuredHeight() - getPaddingBottom());
                 drawable4.setAlpha((int) (d * 255.0f));
                 drawable4.draw(canvas);
@@ -91,9 +91,9 @@ public final class q9 extends View {
         if (!this.h) {
             return;
         }
-        org.telegram.ui.Components.o5 o5Var = this.f;
+        org.telegram.ui.Components.q5 q5Var = this.f;
         ImageReceiver imageReceiver = this.d;
-        ImageReceiver imageReceiver2 = o5Var != null ? o5Var.k : imageReceiver;
+        ImageReceiver imageReceiver2 = q5Var != null ? q5Var.k : imageReceiver;
         if (this.r) {
             ImageReceiver imageReceiver3 = this.e;
             if (imageReceiver3.getBitmap() != null) {
@@ -137,22 +137,22 @@ public final class q9 extends View {
         } else {
             this.b = true;
         }
-        org.telegram.ui.Components.o5 o5Var = this.f;
-        if (o5Var != null) {
-            o5Var.o(this);
+        org.telegram.ui.Components.q5 q5Var = this.f;
+        if (q5Var != null) {
+            q5Var.o(this);
         }
         this.f = null;
         if (p0Var != null) {
             if (p0Var.g != 0) {
-                org.telegram.ui.Components.o5 o5Var2 = new org.telegram.ui.Components.o5(3, UserConfig.selectedAccount, p0Var.g);
-                this.f = o5Var2;
+                org.telegram.ui.Components.q5 q5Var2 = new org.telegram.ui.Components.q5(3, UserConfig.selectedAccount, p0Var.g);
+                this.f = q5Var2;
                 if (this.s) {
-                    o5Var2.a(this);
+                    q5Var2.a(this);
                 }
             } else {
                 TLRPC.TL_availableReaction tL_availableReaction = MediaDataController.getInstance(UserConfig.selectedAccount).getReactionsMap().get(p0Var.f);
                 if (tL_availableReaction != null) {
-                    this.d.setImage(ImageLocation.getForDocument(tL_availableReaction.center_icon), "40_40_lastreactframe", DocumentObject.getSvgThumb(tL_availableReaction.static_icon, org.telegram.ui.ActionBar.i6.a7, 1.0f), "webp", tL_availableReaction, 1);
+                    this.d.setImage(ImageLocation.getForDocument(tL_availableReaction.center_icon), "40_40_lastreactframe", DocumentObject.getSvgThumb(tL_availableReaction.static_icon, org.telegram.ui.ActionBar.h6.a7, 1.0f), "webp", tL_availableReaction, 1);
                 }
             }
         }

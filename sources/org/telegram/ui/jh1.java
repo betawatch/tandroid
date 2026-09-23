@@ -1,81 +1,61 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.text.TextUtils;
 import android.view.View;
-import android.view.ViewGroup;
-import java.util.WeakHashMap;
+import android.widget.ImageView;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class jh1 extends ViewGroup {
-    public final Paint a;
-    public View b;
-    public boolean c;
+public final class jh1 extends org.telegram.ui.Components.g51 {
+    public static final /* synthetic */ int a = 0;
 
-    public jh1(Context context) {
-        super(context);
-        this.a = new Paint(1);
-        setClipToPadding(false);
+    static {
+        org.telegram.ui.Components.g51.setup(new jh1());
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        float navigationBarThirdButtonsFactor = AndroidUtilities.getNavigationBarThirdButtonsFactor(0.1f, 0.75f, getPaddingBottom());
-        int w02 = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Oh, false);
-        int h = i0.a.h(org.telegram.ui.ActionBar.i6.l1(navigationBarThirdButtonsFactor, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.d6, false)), w02);
-        Paint paint = this.a;
-        paint.setColor(w02);
-        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight() - r0, paint);
-        paint.setColor(h);
-        canvas.drawRect(0.0f, getMeasuredHeight() - r0, getMeasuredWidth(), getMeasuredHeight(), paint);
-        super.dispatchDraw(canvas);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        int childCount = getChildCount();
-        for (int i14 = 0; i14 < childCount; i14++) {
-            View childAt = getChildAt(i14);
-            childAt.layout(0, 0, childAt.getMeasuredWidth(), childAt.getMeasuredHeight());
+    @Override // org.telegram.ui.Components.g51
+    public final void bindView(View view, org.telegram.ui.Components.h51 h51Var, boolean z10, org.telegram.ui.Components.v51 v51Var, org.telegram.ui.Components.d61 d61Var) {
+        kh1 kh1Var = (kh1) view;
+        int i10 = h51Var.k;
+        CharSequence charSequence = h51Var.l;
+        CharSequence charSequence2 = h51Var.m;
+        boolean z11 = h51Var.q;
+        boolean z12 = h51Var.r;
+        int i11 = h51Var.z;
+        TextView textView = kh1Var.d;
+        TextView textView2 = kh1Var.e;
+        ImageView imageView = kh1Var.f;
+        kh1Var.h = z11;
+        kh1Var.n = z12;
+        ImageView imageView2 = kh1Var.b;
+        imageView2.setImageResource(i10);
+        if (i11 != 0) {
+            imageView.setVisibility(0);
+            imageView.setImageResource(i11);
+        } else {
+            imageView.setVisibility(8);
         }
+        textView.setText(charSequence);
+        textView2.setText(charSequence2);
+        textView2.setVisibility(TextUtils.isEmpty(charSequence2) ? 8 : 0);
+        int dp = AndroidUtilities.dp(TextUtils.isEmpty(charSequence2) ? 15.0f : 10.0f);
+        kh1Var.c.setPadding(0, dp, 0, dp);
+        org.telegram.ui.ActionBar.d6 d6Var = kh1Var.a;
+        int v02 = org.telegram.ui.ActionBar.h6.v0(kh1Var.n ? org.telegram.ui.ActionBar.h6.q7 : kh1Var.h ? org.telegram.ui.ActionBar.h6.n6 : org.telegram.ui.ActionBar.h6.G6, d6Var);
+        PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
+        imageView2.setColorFilter(new PorterDuffColorFilter(v02, mode));
+        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(kh1Var.n ? org.telegram.ui.ActionBar.h6.q7 : kh1Var.h ? org.telegram.ui.ActionBar.h6.n6 : org.telegram.ui.ActionBar.h6.G6, d6Var), mode));
+        textView.setTextColor(org.telegram.ui.ActionBar.h6.v0(kh1Var.n ? org.telegram.ui.ActionBar.h6.p7 : kh1Var.h ? org.telegram.ui.ActionBar.h6.n6 : org.telegram.ui.ActionBar.h6.G6, d6Var));
+        textView2.setTextColor(org.telegram.ui.ActionBar.h6.v0(kh1Var.n ? org.telegram.ui.ActionBar.h6.p7 : kh1Var.h ? org.telegram.ui.ActionBar.h6.n6 : org.telegram.ui.ActionBar.h6.y6, d6Var));
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        View view = this.b;
-        boolean z10 = view != null && view.getVisibility() == 0;
-        int size = View.MeasureSpec.getSize(i10);
-        int paddingBottom = z10 ? getPaddingBottom() + AndroidUtilities.dp(44.0f) : 0;
-        setMeasuredDimension(size, paddingBottom);
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30);
-        int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(paddingBottom, TLObject.FLAG_30);
-        int childCount = getChildCount();
-        for (int i12 = 0; i12 < childCount; i12++) {
-            getChildAt(i12).measure(makeMeasureSpec, makeMeasureSpec2);
-        }
-        if (this.c != z10) {
-            this.c = z10;
-            WeakHashMap weakHashMap = r0.i0.a;
-            r0.y.c(this);
-        }
-    }
-
-    @Override // android.view.ViewGroup
-    public final void onViewAdded(View view) {
-        super.onViewAdded(view);
-        this.b = view;
-    }
-
-    @Override // android.view.View
-    public final void setPadding(int i10, int i11, int i12, int i13) {
-        super.setPadding(i10, i11, i12, i13);
-        int childCount = getChildCount();
-        for (int i14 = 0; i14 < childCount; i14++) {
-            getChildAt(i14).setPadding(i10, i11, i12, i13);
-        }
+    @Override // org.telegram.ui.Components.g51
+    public final View createView(Context context, org.telegram.ui.Components.ml0 ml0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
+        return new kh1(context, d6Var);
     }
 }

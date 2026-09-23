@@ -1,145 +1,66 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.text.TextPaint;
+import android.content.Context;
 import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.FrameLayout;
+import java.util.WeakHashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class a10 extends View {
-    public TextPaint a;
-    public Paint b;
-    public Path c;
-    public float[] d;
-    public g01 e;
-    public g01 f;
-    public g01 h;
-    public LinearGradient n;
-    public LinearGradient r;
-    public Paint s;
-    public Paint v;
-    public Matrix w;
-    public Matrix x;
-    public m6 y;
+public final class a10 extends FrameLayout {
+    public final p6 a;
+    public final p6 b;
 
-    public static CharSequence a(CharSequence charSequence) {
-        return "ALL_CHATS".equals(charSequence.toString()) ? LocaleController.getString(R.string.FilterAllChats) : charSequence;
+    public a10(Context context) {
+        super(context);
+        p6 p6Var = new p6(context, true, true, false);
+        this.a = p6Var;
+        p6Var.setTextSize(AndroidUtilities.dp(15.0f));
+        p6Var.setTypeface(AndroidUtilities.bold());
+        int i10 = org.telegram.ui.ActionBar.h6.L6;
+        p6Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, i10, false));
+        p6Var.setGravity(LocaleController.isRTL ? 5 : 3);
+        addView(p6Var, w7.x5.d(-1, 20.0f, (LocaleController.isRTL ? 5 : 3) | 80, 21.0f, 15.0f, 21.0f, 2.0f));
+        p6 p6Var2 = new p6(context, true, true, true);
+        this.b = p6Var2;
+        p6Var2.b(0.45f, 250L, rr.h);
+        p6Var2.setTextSize(AndroidUtilities.dp(15.0f));
+        p6Var2.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, i10, false));
+        p6Var2.setGravity(LocaleController.isRTL ? 3 : 5);
+        addView(p6Var2, w7.x5.d(-2, 20.0f, (LocaleController.isRTL ? 3 : 5) | 80, 21.0f, 15.0f, 21.0f, 2.0f));
+        WeakHashMap weakHashMap = r0.i0.a;
+        new r0.w(R.id.tag_accessibility_heading, Boolean.class, 0, 28, 2).d(this, Boolean.TRUE);
+    }
+
+    public final void a(String str, Runnable runnable) {
+        boolean z10 = !LocaleController.isRTL;
+        p6 p6Var = this.b;
+        p6Var.c(str, z10, true);
+        p6Var.setOnClickListener(new u6(1, runnable));
+    }
+
+    public final void b(String str, boolean z10) {
+        p6 p6Var = this.a;
+        if (z10) {
+            p6Var.a();
+        }
+        p6Var.c(str, z10 && !LocaleController.isRTL, true);
     }
 
     @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        float f7;
-        float f10;
-        float f11;
-        float f12;
-        g01 g01Var;
-        float f13;
-        float f14;
-        Paint paint = this.b;
-        Matrix matrix = this.x;
-        Matrix matrix2 = this.w;
-        Path path = this.c;
-        g01 g01Var2 = this.e;
-        m6 m6Var = this.y;
-        g01 g01Var3 = this.h;
-        super.onDraw(canvas);
-        canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), 255, 31);
-        float measuredWidth = getMeasuredWidth() / 2.0f;
-        float measuredHeight = getMeasuredHeight() / 2.0f;
-        g01 g01Var4 = this.f;
-        if (g01Var4 != null) {
-            canvas.save();
-            float f15 = g01Var4.c;
-            f7 = 15.32f;
-            CharSequence charSequence = m6Var.g;
-            if (charSequence == null || charSequence.length() == 0) {
-                f14 = 0.0f;
-            } else {
-                f14 = m6Var.d() + AndroidUtilities.dp(15.32f);
-            }
-            float f16 = f15 + f14;
-            f10 = measuredWidth - (f16 / 2.0f);
-            canvas.translate(f10, measuredHeight - (g01Var4.j() / 2.0f));
-            g01Var4.d(canvas);
-            canvas.restore();
-            f11 = f16;
-        } else {
-            f7 = 15.32f;
-            f10 = measuredWidth;
-            f11 = 0.0f;
-        }
-        CharSequence charSequence2 = m6Var.g;
-        if (charSequence2 == null || charSequence2.length() == 0) {
-            f12 = measuredHeight;
-            g01Var = g01Var4;
-            f13 = 2.0f;
-        } else {
-            Rect rect = AndroidUtilities.rectTmp2;
-            f13 = 2.0f;
-            int dp = (int) (g01Var4.c + f10 + AndroidUtilities.dp(4.66f));
-            int dp2 = (int) (measuredHeight - AndroidUtilities.dp(9.0f));
-            f12 = measuredHeight;
-            int d = (int) (m6Var.d() + g01Var4.c + f10 + AndroidUtilities.dp(f7));
-            g01Var = g01Var4;
-            rect.set(dp, dp2, d, (int) (f12 + AndroidUtilities.dp(9.0f)));
-            RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(rect);
-            canvas.drawRoundRect(rectF, AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), paint);
-            rect.offset(-AndroidUtilities.dp(0.33f), -AndroidUtilities.dp(0.66f));
-            m6Var.setBounds(rect);
-            m6Var.draw(canvas);
-        }
-        float dp3 = AndroidUtilities.dp(30.0f);
-        float f17 = (f10 - dp3) - g01Var2.c;
-        canvas.save();
-        canvas.translate(f17, (f12 - (g01Var2.j() / f13)) + AndroidUtilities.dp(1.0f));
-        g01Var2.d(canvas);
-        canvas.restore();
-        float f18 = f10 + f11;
-        if (g01Var3 != null) {
-            canvas.save();
-            canvas.translate(f18 + dp3, (f12 - (g01Var3.j() / f13)) + AndroidUtilities.dp(1.0f));
-            g01Var3.d(canvas);
-            canvas.restore();
-            f18 += dp3 + g01Var3.c;
-        }
-        float f19 = f18;
-        float dp4 = AndroidUtilities.dp(12.0f) + (g01Var.j() / f13) + f12;
-        canvas.drawRect(0.0f, dp4, getMeasuredWidth(), 1.0f + dp4, this.a);
-        path.rewind();
-        RectF rectF2 = AndroidUtilities.rectTmp;
-        float f20 = f11 / f13;
-        float f21 = measuredWidth + f20;
-        rectF2.set((measuredWidth - f20) - AndroidUtilities.dp(4.0f), dp4 - AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f) + f21, dp4);
-        path.addRoundRect(rectF2, this.d, Path.Direction.CW);
-        canvas.drawPath(path, paint);
-        canvas.save();
-        float max = Math.max(AndroidUtilities.dp(8.0f), f17);
-        matrix2.reset();
-        matrix2.postTranslate(Math.min(f10, max + AndroidUtilities.dp(8.0f)), 0.0f);
-        this.n.setLocalMatrix(matrix2);
-        float min = Math.min(getMeasuredWidth() - AndroidUtilities.dp(8.0f), f19);
-        matrix.reset();
-        matrix.postTranslate(Math.max(f21, min - AndroidUtilities.dp(88.0f)), 0.0f);
-        this.r.setLocalMatrix(matrix);
-        canvas.drawRect(0.0f, 0.0f, measuredWidth, getMeasuredHeight(), this.s);
-        canvas.drawRect(measuredWidth, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.v);
-        canvas.restore();
-        canvas.restore();
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName("android.widget.TextView");
+        accessibilityNodeInfo.setText(this.a.getText());
     }
 
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.y || super.verifyDrawable(drawable);
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
     }
 }

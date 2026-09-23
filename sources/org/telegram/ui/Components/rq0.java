@@ -10,24 +10,24 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.eg1;
+import org.telegram.ui.wf1;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rq0 implements v10, org.telegram.ui.oy {
+public final /* synthetic */ class rq0 implements w10, org.telegram.ui.ly {
     public final /* synthetic */ yu0 a;
 
     public /* synthetic */ rq0(yu0 yu0Var) {
         this.a = yu0Var;
     }
 
-    @Override // org.telegram.ui.oy
+    @Override // org.telegram.ui.ly
     public /* synthetic */ boolean A() {
         return false;
     }
 
-    @Override // org.telegram.ui.oy
-    public /* synthetic */ boolean K(org.telegram.ui.uy uyVar) {
+    @Override // org.telegram.ui.ly
+    public /* synthetic */ boolean K(org.telegram.ui.ry ryVar) {
         return false;
     }
 
@@ -39,8 +39,8 @@ public final /* synthetic */ class rq0 implements v10, org.telegram.ui.oy {
         yu0Var.setVisibleHeight(yu0Var.M1);
     }
 
-    @Override // org.telegram.ui.oy
-    public boolean u(org.telegram.ui.uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, eg1 eg1Var) {
+    @Override // org.telegram.ui.ly
+    public boolean u(org.telegram.ui.ry ryVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, wf1 wf1Var) {
         yu0 yu0Var = this.a;
         SparseArray[] sparseArrayArr = yu0Var.Z0;
         org.telegram.ui.ActionBar.n2 n2Var = yu0Var.v1;
@@ -85,15 +85,15 @@ public final /* synthetic */ class rq0 implements v10, org.telegram.ui.oy {
                 } else {
                     i15.putLong("chat_id", -j3);
                 }
-                if (!n2Var.getMessagesController().checkCanOpenChat(i15, uyVar)) {
+                if (!n2Var.getMessagesController().checkCanOpenChat(i15, ryVar)) {
                     return true;
                 }
             }
             n2Var.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
-            org.telegram.ui.bo boVar = new org.telegram.ui.bo(i15);
-            ng.d.a(boVar, (MessagesStorage.TopicKey) arrayList.get(0));
-            uyVar.presentFragment(boVar, true);
-            boVar.Ab(arrayList2);
+            org.telegram.ui.xn xnVar = new org.telegram.ui.xn(i15);
+            ng.d.a(xnVar, (MessagesStorage.TopicKey) arrayList.get(0));
+            ryVar.presentFragment(xnVar, true);
+            xnVar.Ab(arrayList2);
             return true;
         }
         yu0Var.r1(true);
@@ -104,7 +104,7 @@ public final /* synthetic */ class rq0 implements v10, org.telegram.ui.oy {
             }
             n2Var.getSendMessagesHelper().sendMessage(arrayList2, j10, false, false, true, 0, 0L);
         }
-        uyVar.finishFragment();
+        ryVar.finishFragment();
         UndoView undoView = n2Var instanceof ProfileActivity ? ((ProfileActivity) n2Var).M : null;
         if (undoView == null) {
             return true;

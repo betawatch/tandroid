@@ -1,12 +1,11 @@
 package org.telegram.messenger;
 
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -24,30 +23,24 @@ public final /* synthetic */ class g0 implements RequestDelegate {
                 ((BirthdayController) this.b).lambda$check$3(tLObject, tL_error);
                 break;
             case 1:
-                ChannelBoostsController.lambda$getBoostsStats$1((e2.h) this.b, tLObject, tL_error);
-                break;
-            case 2:
                 ((DownloadController) this.b).lambda$loadAutoDownloadConfig$2(tLObject, tL_error);
                 break;
-            case 3:
+            case 2:
                 ((FileLoadOperation) this.b).lambda$requestFileOffsets$21(tLObject, tL_error);
                 break;
-            case 4:
+            case 3:
                 MessagesController.lambda$unblockPeer$111((Runnable) this.b, tLObject, tL_error);
                 break;
-            case 5:
-                MessagesController.lambda$getChannelParticipant$472((Utilities.Callback) this.b, tLObject, tL_error);
-                break;
-            case 6:
+            case 4:
                 MessagesController.lambda$checkIsInChat$473((MessagesController.IsInChatCheckedCallback) this.b, tLObject, tL_error);
                 break;
-            case 7:
+            case 5:
                 ((MessagesController.SavedMusicIds) this.b).lambda$load$1(tLObject, tL_error);
                 break;
-            case 8:
+            case 6:
                 ((MessagesController.SavedMusicList) this.b).lambda$load$1(tLObject, tL_error);
                 break;
-            case 9:
+            case 7:
                 ((TopicsController) this.b).lambda$toggleViewForumAsMessages$18(tLObject, tL_error);
                 break;
             default:

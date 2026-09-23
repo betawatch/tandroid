@@ -1,32 +1,41 @@
 package org.telegram.ui;
 
+import android.graphics.Canvas;
 import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rk0 implements org.telegram.ui.Components.al0, org.telegram.ui.ActionBar.a2 {
-    public final /* synthetic */ NotificationsSettingsActivity a;
+public final class rk0 extends FrameLayout {
+    public TextView a;
+    public RadioButton b;
+    public org.telegram.ui.Components.op c;
+    public boolean d;
+    public qk0 e;
 
-    public /* synthetic */ rk0(NotificationsSettingsActivity notificationsSettingsActivity) {
-        this.a = notificationsSettingsActivity;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.d) {
+            canvas.drawLine(AndroidUtilities.dp(LocaleController.isRTL ? 0.0f : 60.0f), getHeight() - 1, getMeasuredWidth() - AndroidUtilities.dp(LocaleController.isRTL ? 60.0f : 0.0f), getHeight() - 1, org.telegram.ui.ActionBar.h6.k0);
+        }
     }
 
-    @Override // org.telegram.ui.Components.al0
-    public void c(float f7, float f10, int i10, View view) {
-        NotificationsSettingsActivity.Y(this.a, view, i10, f7);
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName("android.widget.RadioButton");
+        accessibilityNodeInfo.setCheckable(true);
+        accessibilityNodeInfo.setChecked(this.b.f);
     }
 
-    @Override // org.telegram.ui.Components.al0
-    public /* synthetic */ boolean d1(View view) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        NotificationsSettingsActivity.Z(this.a);
-    }
-
-    @Override // org.telegram.ui.Components.al0
-    public /* synthetic */ void r0(View view, float f7, float f10) {
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
     }
 }

@@ -1,23 +1,16 @@
 package ci;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class g3 extends s4.s {
-    public final /* synthetic */ x3 Q;
+public final class g3 extends g.p {
+    public final /* synthetic */ w3 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g3(x3 x3Var) {
-        super(3);
-        this.Q = x3Var;
+    public g3(w3 w3Var) {
+        this.c = w3Var;
     }
 
-    @Override // s4.s, s4.c0, s4.o0
-    public final void b0(of.e eVar, s4.z0 z0Var) {
-        super.b0(eVar, z0Var);
-        x3 x3Var = this.Q;
-        if (x3Var.U) {
-            x3Var.U = false;
-            x3Var.a();
-        }
+    @Override // g.p
+    public final int i(int i10) {
+        return (i10 == 0 || i10 == 1 || i10 == this.c.f.h() - 1) ? 3 : 1;
     }
 }

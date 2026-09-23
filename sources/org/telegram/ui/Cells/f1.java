@@ -5,11 +5,11 @@ import org.telegram.ui.Components.bo0;
 import org.telegram.ui.Components.eo0;
 import org.telegram.ui.Components.fo0;
 import org.telegram.ui.Components.io0;
-import org.telegram.ui.Components.u00;
+import org.telegram.ui.Components.v00;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class f1 extends u00 {
+public final class f1 extends v00 {
     public final /* synthetic */ int e = 0;
     public final /* synthetic */ ViewGroup f;
 
@@ -33,7 +33,7 @@ public final class f1 extends u00 {
         }
     }
 
-    @Override // org.telegram.ui.Components.u00
+    @Override // org.telegram.ui.Components.v00
     public float h() {
         switch (this.e) {
             case 1:
@@ -47,7 +47,7 @@ public final class f1 extends u00 {
         }
     }
 
-    @Override // org.telegram.ui.Components.u00
+    @Override // org.telegram.ui.Components.v00
     public final float k() {
         float f7;
         int i10;
@@ -81,7 +81,7 @@ public final class f1 extends u00 {
         }
     }
 
-    @Override // org.telegram.ui.Components.u00
+    @Override // org.telegram.ui.Components.v00
     public final void l(float f7) {
         switch (this.e) {
             case 0:

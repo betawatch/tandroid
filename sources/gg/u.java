@@ -13,14 +13,14 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.e40;
+import org.telegram.ui.Components.f40;
 import org.telegram.ui.Components.mq0;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.d9;
 import org.telegram.ui.da;
-import org.telegram.ui.my0;
+import org.telegram.ui.fy0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -54,19 +54,19 @@ public final /* synthetic */ class u implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new c9((d9) this.d, tLObject, this.b, (TLRPC.User) this.c, 11));
                 break;
             case 4:
-                AndroidUtilities.runOnUIThread(new l3(tLObject, this.b, (HashSet) this.d, tL_error, (n2) this.c, 14));
+                AndroidUtilities.runOnUIThread(new l3(tLObject, this.b, (HashSet) this.d, tL_error, (n2) this.c, 15));
                 break;
             case 5:
                 AndroidUtilities.runOnUIThread(new c9((n2) this.d, tLObject, this.b, (Utilities.Callback) this.c, 18));
                 break;
             case 6:
-                AndroidUtilities.runOnUIThread(new c9((e40) this.d, this.b, tLObject, (String) this.c, 20));
+                AndroidUtilities.runOnUIThread(new c9((f40) this.d, this.b, tLObject, (String) this.c, 20));
                 break;
             case 7:
                 AndroidUtilities.runOnUIThread(new c9((mq0) this.d, this.b, tLObject, (String) this.c, 22));
                 break;
             case 8:
-                AndroidUtilities.runOnUIThread(new my0((ProfileActivity) this.d, tL_error, tLObject, (TLRPC.TL_channels_getParticipants) this.c, 0), this.b);
+                AndroidUtilities.runOnUIThread(new fy0((ProfileActivity) this.d, tL_error, tLObject, (TLRPC.TL_channels_getParticipants) this.c, 0), this.b);
                 break;
             default:
                 TLRPC.Chat chat = (TLRPC.Chat) this.d;

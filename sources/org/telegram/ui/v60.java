@@ -1,48 +1,23 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import java.util.Comparator;
+import org.telegram.messenger.ContactsController;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v60 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ e70 b;
-
-    public /* synthetic */ v60(e70 e70Var, int i10) {
-        this.a = i10;
-        this.b = e70Var;
+public final class v60 implements Comparator {
+    public static String a(TLObject tLObject) {
+        if (!(tLObject instanceof TLRPC.User)) {
+            return tLObject instanceof TLRPC.Chat ? ((TLRPC.Chat) tLObject).title : "";
+        }
+        TLRPC.User user = (TLRPC.User) tLObject;
+        return ContactsController.formatName(user.first_name, user.last_name);
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                e70 e70Var = this.b;
-                e70Var.f.r.clearFocus();
-                e70Var.f.r.requestFocus();
-                AndroidUtilities.showKeyboard(e70Var.f.r);
-                break;
-            case 1:
-                this.b.o0();
-                break;
-            case 2:
-                e70 e70Var2 = this.b;
-                e70Var2.n0(e70Var2.l0());
-                break;
-            case 3:
-                e70 e70Var3 = this.b;
-                e70Var3.n0(e70Var3.l0());
-                break;
-            default:
-                e70 e70Var4 = this.b;
-                e70Var4.X = null;
-                e70Var4.Z.b();
-                e70Var4.h.b();
-                e70Var4.k0();
-                e70Var4.r0();
-                e70Var4.s0();
-                break;
-        }
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        return a((TLObject) obj).compareTo(a((TLObject) obj2));
     }
 }

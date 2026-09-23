@@ -1,96 +1,32 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public interface qt {
-    boolean A();
+public final /* synthetic */ class qt implements NotificationCenter.NotificationCenterDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ View b;
 
-    void B(TLRPC.Document document);
+    public /* synthetic */ qt(int i10, View view) {
+        this.a = i10;
+        this.b = view;
+    }
 
-    boolean C();
-
-    boolean D(TLRPC.Document document);
-
-    void E(TLRPC.Document document);
-
-    String F(boolean z10);
-
-    void G(CharSequence charSequence, String str, nf nfVar);
-
-    void H(TLRPC.Document document);
-
-    boolean I();
-
-    boolean J();
-
-    void K();
-
-    void L();
-
-    void M(TLRPC.InputStickerSet inputStickerSet, boolean z10);
-
-    boolean N(TLRPC.Document document);
-
-    void O(String str);
-
-    Boolean P(TLRPC.Document document);
-
-    boolean Q();
-
-    long a();
-
-    boolean b();
-
-    boolean c();
-
-    TLRPC.TL_messageMediaPoll d();
-
-    boolean e(TLRPC.Document document);
-
-    boolean f();
-
-    TLRPC.PollAnswer g();
-
-    boolean h();
-
-    org.telegram.ui.Components.n70 i(ci.n6 n6Var);
-
-    void j(SendMessagesHelper.ImportingSticker importingSticker);
-
-    boolean k();
-
-    boolean l(int i10);
-
-    void m(TLRPC.Document document, String str, Object obj, boolean z10, int i10, int i11);
-
-    void n(String str);
-
-    void o(TLRPC.Document document);
-
-    boolean p();
-
-    void q(TLRPC.Document document);
-
-    void r();
-
-    void s(int i10, int i11, Object obj, TLObject tLObject, boolean z10);
-
-    void t();
-
-    void u(TLRPC.Document document);
-
-    void v(TLRPC.StickerSet stickerSet, String str);
-
-    void w(TLObject tLObject, Object obj);
-
-    boolean x();
-
-    void y(String str);
-
-    MessageObject z();
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object[] objArr) {
+        switch (this.a) {
+            case 0:
+                org.telegram.ui.Cells.fa faVar = (org.telegram.ui.Cells.fa) this.b;
+                if (i10 == NotificationCenter.emojiLoaded) {
+                    faVar.getTextView().invalidate();
+                    break;
+                }
+                break;
+            default:
+                ((tj0) this.b).invalidate();
+                break;
+        }
+    }
 }

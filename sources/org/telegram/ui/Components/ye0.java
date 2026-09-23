@@ -8,7 +8,7 @@ import android.view.MotionEvent;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class ye0 extends FrameLayout {
     public static final float N = AndroidUtilities.dp(20.0f);
@@ -63,7 +63,7 @@ public final class ye0 extends FrameLayout {
         float f11 = jv0Var.b;
         float A = com.google.android.gms.internal.vision.e2.A(height, f11, 2.0f, i10);
         float f12 = jv0Var.a;
-        return new PointF(f10, (this.e.y * f12) + org.telegram.messenger.y0.y(f12, f11, 2.0f, A));
+        return new PointF(f10, (this.e.y * f12) + org.telegram.messenger.z0.y(f12, f11, 2.0f, A));
     }
 
     private float getActualInnerRadius() {
@@ -214,9 +214,9 @@ public final class ye0 extends FrameLayout {
             jf0Var.b0 = pointF3;
             jf0Var.c0 = f30;
             jf0Var.d0 = a2;
-            vz vzVar = jf0Var.l0;
-            if (vzVar != null) {
-                vzVar.e(false, false, false);
+            wz wzVar = jf0Var.l0;
+            if (wzVar != null) {
+                wzVar.e(false, false, false);
             }
         }
     }
@@ -253,9 +253,9 @@ public final class ye0 extends FrameLayout {
             jf0Var.b0 = pointF;
             jf0Var.c0 = f7;
             jf0Var.d0 = a2;
-            vz vzVar = jf0Var.l0;
-            if (vzVar != null) {
-                vzVar.e(false, false, false);
+            wz wzVar = jf0Var.l0;
+            if (wzVar != null) {
+                wzVar.e(false, false, false);
             }
         }
     }

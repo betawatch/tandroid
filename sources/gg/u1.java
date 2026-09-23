@@ -14,21 +14,22 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
-import org.telegram.messenger.vl;
+import org.telegram.messenger.ul;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.i6;
-import org.telegram.ui.Cells.r8;
+import org.telegram.ui.Cells.s8;
 import org.telegram.ui.Cells.v3;
-import org.telegram.ui.Components.e10;
-import org.telegram.ui.Components.kl0;
-import org.telegram.ui.Components.kn;
-import org.telegram.ui.Components.t00;
-import org.telegram.ui.Components.vk0;
+import org.telegram.ui.Components.f10;
+import org.telegram.ui.Components.ll0;
+import org.telegram.ui.Components.ln;
+import org.telegram.ui.Components.u00;
+import org.telegram.ui.Components.wk0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public abstract class u1 extends kl0 {
+public abstract class u1 extends ll0 {
     public int E;
     public int F;
     public ArrayList G;
@@ -48,7 +49,7 @@ public abstract class u1 extends kl0 {
     public long x;
     public boolean y;
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.ll0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         return i10 == 0 || i10 == 2 || i10 == 3;
@@ -171,13 +172,13 @@ public abstract class u1 extends kl0 {
                     return;
                 }
                 ContactsController.Contact contact = (ContactsController.Contact) E(i10);
-                ((i6) view).t(contact, null, ContactsController.formatName(contact.first_name, contact.last_name), vl.h(new StringBuilder("+"), contact.shortPhones.get(0), gf.b.c()), false, false);
+                ((i6) view).t(contact, null, ContactsController.formatName(contact.first_name, contact.last_name), ul.h(new StringBuilder("+"), contact.shortPhones.get(0), gf.b.c()), false, false);
                 return;
             }
             String str2 = (String) E(i10);
-            r8 r8Var = (r8) view;
-            r8Var.e(-1, org.telegram.ui.ActionBar.i6.o6);
-            r8Var.i(LocaleController.formatString(R.string.AddContactByPhone, gf.b.c().b("+" + str2)), false);
+            s8 s8Var = (s8) view;
+            s8Var.e(-1, h6.o6);
+            s8Var.i(LocaleController.formatString(R.string.AddContactByPhone, gf.b.c().b("+" + str2)), false);
             return;
         }
         TLObject tLObject = (TLObject) E(i10);
@@ -247,7 +248,7 @@ public abstract class u1 extends kl0 {
                         } else {
                             indexOfIgnoreCase++;
                         }
-                        spannableStringBuilder.setSpan(new e10(org.telegram.ui.ActionBar.i6.q6, null), indexOfIgnoreCase, length + indexOfIgnoreCase, 33);
+                        spannableStringBuilder.setSpan(new f10(h6.q6, null), indexOfIgnoreCase, length + indexOfIgnoreCase, 33);
                     }
                     charSequence = null;
                     charSequence3 = spannableStringBuilder;
@@ -285,19 +286,19 @@ public abstract class u1 extends kl0 {
             i6Var2.E0 = true;
             view = i6Var2;
         } else if (i10 == 4) {
-            View knVar = new kn(context, 7);
-            knVar.setId(9);
-            knVar.setTag(-33024);
-            view = knVar;
+            View lnVar = new ln(context, 7);
+            lnVar.setId(9);
+            lnVar.setTag(-33024);
+            view = lnVar;
         } else if (i10 != 5) {
-            view = new r8(16, context, false);
+            view = new s8(16, context, false);
         } else {
-            t00 t00Var = new t00(context, null);
-            t00Var.setIsSingleCell(true);
-            t00Var.setViewType(29);
-            t00Var.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.d6, false));
-            view = t00Var;
+            u00 u00Var = new u00(context, null);
+            u00Var.setIsSingleCell(true);
+            u00Var.setViewType(29);
+            u00Var.setBackgroundColor(h6.w0(null, h6.d6, false));
+            view = u00Var;
         }
-        return new vk0(view);
+        return new wk0(view);
     }
 }

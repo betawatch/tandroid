@@ -6,13 +6,13 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.IBinder;
 import android.util.Log;
-import ci.uc;
+import ci.rc;
 import com.google.android.gms.tasks.Task;
 import java.util.ArrayDeque;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class g0 implements ServiceConnection {
     public final Context a;
@@ -64,7 +64,7 @@ public final class g0 implements ServiceConnection {
             }
             f0Var = new f0(intent);
             ScheduledThreadPoolExecutor scheduledThreadPoolExecutor = this.c;
-            f0Var.b.getTask().addOnCompleteListener(scheduledThreadPoolExecutor, new a1.c(scheduledThreadPoolExecutor.schedule(new uc(f0Var, 3), 20L, TimeUnit.SECONDS), 25));
+            f0Var.b.getTask().addOnCompleteListener(scheduledThreadPoolExecutor, new a1.c(scheduledThreadPoolExecutor.schedule(new rc(f0Var, 3), 20L, TimeUnit.SECONDS), 25));
             this.d.add(f0Var);
             a();
         } catch (Throwable th2) {

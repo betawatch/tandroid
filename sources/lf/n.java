@@ -7,10 +7,10 @@ import java.io.EOFException;
 import java.io.FilterInputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import k2.c0;
+import k2.b0;
 import n4.y;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class n extends jf.a {
     public static final Logger r = Logger.getLogger(n.class.getName());
@@ -149,12 +149,12 @@ public final class n extends jf.a {
                 jVar.b = 0;
                 jVar.c = 0;
                 long j13 = dVar.b;
-                c0 c0Var = new c0(dVar, i11);
+                b0 b0Var = new b0(dVar, i11);
                 byte[] bArr = new byte[3];
                 int i12 = 0;
                 while (i12 < i11) {
                     long j14 = j13;
-                    int read = ((com.google.firebase.messaging.d) c0Var.b).read(bArr, i12, 3 - i12);
+                    int read = ((com.google.firebase.messaging.d) b0Var.b).read(bArr, i12, 3 - i12);
                     if (read <= 0) {
                         throw new EOFException();
                     }
@@ -167,14 +167,14 @@ public final class n extends jf.a {
                 if (!"ID3".equals(str5)) {
                     throw new c("Invalid ID3 identifier: ".concat(str5));
                 }
-                byte o9 = c0Var.o();
+                byte o9 = b0Var.o();
                 jVar.a = o9;
                 if (o9 != 2 && o9 != 3 && o9 != 4) {
                     throw new c(hg.c.i(o9, "Unsupported ID3v2 version: "));
                 }
-                byte o10 = c0Var.o();
-                byte o11 = c0Var.o();
-                int q6 = c0Var.q();
+                byte o10 = b0Var.o();
+                byte o11 = b0Var.o();
+                int q6 = b0Var.q();
                 jVar.b = q6 + 10;
                 if (o9 == 2) {
                     jVar.d = (o11 & 128) != 0;
@@ -186,17 +186,17 @@ public final class n extends jf.a {
                         b11 = o10;
                         b12 = o11;
                     } else if (o9 == 3) {
-                        int p5 = c0Var.p();
-                        c0Var.o();
-                        c0Var.o();
-                        c0Var.p();
+                        int p5 = b0Var.p();
+                        b0Var.o();
+                        b0Var.o();
+                        b0Var.p();
                         b11 = o10;
                         b12 = o11;
-                        c0Var.s(p5 - 6);
+                        b0Var.s(p5 - 6);
                     } else {
                         b11 = o10;
                         b12 = o11;
-                        c0Var.s(c0Var.q() - 4);
+                        b0Var.s(b0Var.q() - 4);
                     }
                     if (o9 >= 4 && (b12 & 16) != 0) {
                         jVar.c = 10;
@@ -237,7 +237,7 @@ public final class n extends jf.a {
                     iVar = new i(new ByteArrayInputStream(bArr2, 0, i17), i13, i17, jVar);
                     logger = logger2;
                 }
-                c0 c0Var2 = (c0) iVar.d;
+                b0 b0Var2 = (b0) iVar.d;
                 mf.a aVar2 = (mf.a) iVar.b;
                 while (true) {
                     try {
@@ -266,7 +266,7 @@ public final class n extends jf.a {
                                 if (logger.isLoggable(level)) {
                                     logger.log(level, "ID3 exception occured: " + e.getMessage());
                                 }
-                                c0Var2.s(aVar.e());
+                                b0Var2.s(aVar.e());
                                 i10 = jVar.c;
                                 if (i10 > 0) {
                                 }
@@ -312,7 +312,7 @@ public final class n extends jf.a {
                         aVar = aVar2;
                     }
                 }
-                c0Var2.s(aVar.e());
+                b0Var2.s(aVar.e());
                 i10 = jVar.c;
                 if (i10 > 0) {
                     oVar.skip(i10);

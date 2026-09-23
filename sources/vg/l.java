@@ -10,52 +10,52 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.bu;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.cu;
 import w7.x5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class l extends LinearLayout {
-    public final bu a;
+    public final cu a;
     public final TextView b;
     public k c;
 
-    public l(Context context, e6 e6Var) {
+    public l(Context context, d6 d6Var) {
         super(context);
         setOrientation(0);
-        bu buVar = new bu(context, e6Var);
-        this.a = buVar;
-        buVar.setLines(1);
-        buVar.setSingleLine(true);
+        cu cuVar = new cu(context, d6Var);
+        this.a = cuVar;
+        cuVar.setLines(1);
+        cuVar.setSingleLine(true);
         InputFilter[] inputFilterArr = {new j(this)};
-        buVar.setInputType(16384);
-        buVar.setFilters(inputFilterArr);
-        buVar.setTextSize(1, 16.0f);
-        buVar.setTextColor(i6.v0(i6.Ud, e6Var));
-        buVar.setLinkTextColor(i6.v0(i6.hc, e6Var));
-        buVar.setHighlightColor(i6.v0(i6.uf, e6Var));
-        int i10 = i6.Vd;
-        buVar.setHintColor(i6.v0(i10, e6Var));
-        buVar.setHintTextColor(i6.v0(i10, e6Var));
-        buVar.setCursorColor(i6.v0(i6.Wd, e6Var));
-        buVar.setHandlesColor(i6.v0(i6.vf, e6Var));
-        buVar.setBackground(null);
-        buVar.setHint(LocaleController.getString(R.string.BoostingGiveawayEnterYourPrize));
-        buVar.addTextChangedListener(new i2(this, 18));
-        buVar.setImeOptions(6);
+        cuVar.setInputType(16384);
+        cuVar.setFilters(inputFilterArr);
+        cuVar.setTextSize(1, 16.0f);
+        cuVar.setTextColor(h6.v0(h6.Ud, d6Var));
+        cuVar.setLinkTextColor(h6.v0(h6.hc, d6Var));
+        cuVar.setHighlightColor(h6.v0(h6.uf, d6Var));
+        int i10 = h6.Vd;
+        cuVar.setHintColor(h6.v0(i10, d6Var));
+        cuVar.setHintTextColor(h6.v0(i10, d6Var));
+        cuVar.setCursorColor(h6.v0(h6.Wd, d6Var));
+        cuVar.setHandlesColor(h6.v0(h6.vf, d6Var));
+        cuVar.setBackground(null);
+        cuVar.setHint(LocaleController.getString(R.string.BoostingGiveawayEnterYourPrize));
+        cuVar.addTextChangedListener(new i2(this, 18));
+        cuVar.setImeOptions(6);
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setTextSize(1, 16.0f);
-        textView.setTextColor(i6.v0(i6.j5, e6Var));
+        textView.setTextColor(h6.v0(h6.j5, d6Var));
         if (!LocaleController.isRTL) {
             addView(textView, x5.t(-2, -2, 16, 20, 0, 0, 0));
-            addView(buVar, x5.t(-1, -2, 16, 36, 0, 20, 0));
+            addView(cuVar, x5.t(-1, -2, 16, 36, 0, 20, 0));
         } else {
             LinearLayout.LayoutParams t10 = x5.t(-1, -2, 16, 20, 0, 36, 0);
             t10.weight = 1.0f;
-            addView(buVar, t10);
+            addView(cuVar, t10);
             addView(textView, x5.t(-2, -2, 16, 0, 0, 20, 0));
         }
     }

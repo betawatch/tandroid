@@ -1,95 +1,113 @@
 package org.telegram.ui;
 
-import android.view.WindowManager;
-import java.util.ArrayList;
+import android.graphics.Bitmap;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MediaController;
+import org.telegram.messenger.ImageReceiver;
 import org.telegram.ui.Components.ClippingImageView;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kr0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ PhotoViewer b;
-    public final /* synthetic */ dv0 c;
+public final /* synthetic */ class kr0 implements org.telegram.ui.Components.d5, org.telegram.ui.ActionBar.a2, ImageReceiver.ImageReceiverDelegate, r0.n {
+    public final /* synthetic */ PhotoViewer a;
 
-    public /* synthetic */ kr0(PhotoViewer photoViewer, dv0 dv0Var, int i10) {
-        this.a = i10;
-        this.b = photoViewer;
-        this.c = dv0Var;
+    public /* synthetic */ kr0(PhotoViewer photoViewer) {
+        this.a = photoViewer;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        ClippingImageView clippingImageView;
-        ArrayList arrayList;
-        ArrayList arrayList2;
-        switch (this.a) {
-            case 0:
-                PhotoViewer photoViewer = this.b;
-                photoViewer.h0.setImageBitmap(null);
-                dv0 dv0Var = this.c;
-                if (dv0Var != null && !AndroidUtilities.isTablet() && (clippingImageView = dv0Var.m) != null) {
-                    clippingImageView.setImageBitmap(null);
-                }
-                try {
-                    if (photoViewer.g0.getParent() != null) {
-                        ((WindowManager) photoViewer.y.getSystemService("window")).removeView(photoViewer.g0);
-                        photoViewer.V1();
-                        break;
-                    }
-                } catch (Exception e) {
-                    FileLog.e(e);
-                    return;
-                }
-                break;
-            case 1:
-                PhotoViewer photoViewer2 = this.b;
-                photoViewer2.p4 = null;
-                int i10 = 0;
-                photoViewer2.e0.setLayerType(0, null);
-                photoViewer2.n4 = 0;
-                photoViewer2.F1();
-                photoViewer2.X1(this.c);
-                MediaController.getInstance().tryResumePausedAudio();
-                if (photoViewer2.v7 && !photoViewer2.w7 && (arrayList = photoViewer2.g7) != null) {
-                    int size = arrayList.size();
-                    while (i10 < size) {
-                        Object obj = arrayList.get(i10);
-                        i10++;
-                        if (obj instanceof MediaController.PhotoEntry) {
-                            ((MediaController.PhotoEntry) obj).deleteAll();
-                        }
-                    }
-                    break;
-                }
-                break;
-            default:
-                PhotoViewer photoViewer3 = this.b;
-                photoViewer3.p4 = null;
-                vu0 vu0Var = photoViewer3.e0;
-                if (vu0Var != null) {
-                    int i11 = 0;
-                    vu0Var.setLayerType(0, null);
-                    photoViewer3.n4 = 0;
-                    photoViewer3.X1(this.c);
-                    photoViewer3.e0.setScaleX(1.0f);
-                    photoViewer3.e0.setScaleY(1.0f);
-                    MediaController.getInstance().tryResumePausedAudio();
-                    if (photoViewer3.v7 && !photoViewer3.w7 && (arrayList2 = photoViewer3.g7) != null) {
-                        int size2 = arrayList2.size();
-                        while (i11 < size2) {
-                            Object obj2 = arrayList2.get(i11);
-                            i11++;
-                            if (obj2 instanceof MediaController.PhotoEntry) {
-                                ((MediaController.PhotoEntry) obj2).deleteAll();
-                            }
-                        }
-                        break;
-                    }
-                }
-                break;
+    @Override // org.telegram.ui.Components.d5
+    public void J(int i10, int i11, boolean z10) {
+        Drawable[] drawableArr = PhotoViewer.U8;
+        this.a.v2(z10, i10, i11, false, false, false);
+    }
+
+    @Override // r0.n
+    public r0.l1 Q0(View view, r0.l1 l1Var) {
+        PhotoViewer photoViewer = this.a;
+        cr0 cr0Var = photoViewer.v4;
+        Rect rect = photoViewer.s2;
+        Rect rect2 = new Rect(rect);
+        i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(l1Var, false);
+        int i10 = defaultWindowInsets.a;
+        int i11 = defaultWindowInsets.b;
+        int i12 = defaultWindowInsets.c;
+        rect.set(i10, i11, i12, defaultWindowInsets.d);
+        if (!rect2.equals(rect)) {
+            int i13 = photoViewer.n4;
+            if (i13 == 1 || i13 == 3) {
+                ClippingImageView clippingImageView = photoViewer.h0;
+                clippingImageView.setTranslationX(clippingImageView.getTranslationX() - rect.left);
+                photoViewer.k4[0][2] = photoViewer.h0.getTranslationX();
+            }
+            vu0 vu0Var = photoViewer.g0;
+            if (vu0Var != null) {
+                vu0Var.requestLayout();
+            }
         }
+        View view2 = photoViewer.j0;
+        if (view2 != null) {
+            photoViewer.k0 = rect.bottom;
+            ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) view2.getLayoutParams();
+            int i14 = photoViewer.k0;
+            marginLayoutParams.height = i14;
+            marginLayoutParams.bottomMargin = (-i14) / 2;
+            photoViewer.j0.setLayoutParams(marginLayoutParams);
+        }
+        photoViewer.e0.setPadding(defaultWindowInsets.a, 0, i12, 0);
+        if (photoViewer.F != null) {
+            AndroidUtilities.cancelRunOnUIThread(cr0Var);
+            if (photoViewer.e && photoViewer.n4 == 0) {
+                AndroidUtilities.runOnUIThread(cr0Var, 200L);
+            }
+        }
+        return r0.l1.b;
+    }
+
+    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
+    public void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
+        uu0 uu0Var;
+        int i10;
+        Bitmap bitmap;
+        int i11;
+        PhotoViewer photoViewer = this.a;
+        if (imageReceiver == photoViewer.C4 && z10 && !z11) {
+            if (!photoViewer.r1 && ((photoViewer.u4 == 1 || (i11 = photoViewer.c2) == 1 || i11 == 11) && photoViewer.C1 != null && (bitmap = imageReceiver.getBitmap()) != null)) {
+                org.telegram.ui.Components.ue0 ue0Var = photoViewer.C1;
+                int orientation = imageReceiver.getOrientation();
+                int i12 = photoViewer.c2;
+                ue0Var.b(bitmap, orientation, (i12 == 1 || i12 == 11) ? false : true, true, photoViewer.D1, null, null);
+            }
+            if (photoViewer.y4.getVisibility() == 0) {
+                photoViewer.e0.requestLayout();
+            }
+            photoViewer.Q0();
+        }
+        if (imageReceiver != photoViewer.C4 || !z10 || (uu0Var = photoViewer.d) == null || !uu0Var.J() || photoViewer.k5 || (i10 = photoViewer.c2) == 1 || i10 == 11) {
+            return;
+        }
+        if (photoViewer.T5) {
+            photoViewer.M2();
+        } else {
+            photoViewer.U5 = true;
+        }
+    }
+
+    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
+    public /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
+        org.telegram.messenger.h5.a(this, i10, str, drawable);
+    }
+
+    @Override // org.telegram.ui.ActionBar.a2
+    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        Drawable[] drawableArr = PhotoViewer.U8;
+        this.a.d3(0);
+    }
+
+    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
+    public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
+        org.telegram.messenger.h5.b(this, imageReceiver);
     }
 }

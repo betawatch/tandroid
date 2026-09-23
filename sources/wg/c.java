@@ -1,5 +1,6 @@
 package wg;
 
+import ai.i;
 import android.R;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -18,6 +19,7 @@ import android.text.style.RelativeSizeSpan;
 import android.util.StateSet;
 import android.view.MotionEvent;
 import i.f;
+import ii.q1;
 import java.util.ArrayList;
 import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
@@ -30,23 +32,21 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
-import org.telegram.messenger.y0;
+import org.telegram.messenger.z0;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.j3;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.t1;
 import org.telegram.ui.Cells.z;
-import org.telegram.ui.Components.d90;
-import org.telegram.ui.Components.f9;
+import org.telegram.ui.Components.a90;
+import org.telegram.ui.Components.e90;
+import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.jw0;
-import org.telegram.ui.Components.w80;
-import org.telegram.ui.Components.xi0;
-import org.telegram.ui.Components.z80;
-import org.telegram.ui.web.b1;
+import org.telegram.ui.Components.x80;
+import org.telegram.ui.Components.yi0;
 import tg.t;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class c {
     public TextPaint A;
@@ -66,12 +66,12 @@ public final class c {
     public SpannableStringBuilder R;
     public int S;
     public int T;
-    public z80 U;
+    public a90 U;
     public ImageReceiver[] a;
-    public f9[] b;
+    public h9[] b;
     public final t1 c;
     public ImageReceiver d;
-    public xi0 e;
+    public yi0 e;
     public CharSequence[] f;
     public TLRPC.User[] g;
     public float[] h;
@@ -106,10 +106,10 @@ public final class c {
         int i10;
         MessageObject messageObject = this.M;
         if (messageObject != null && messageObject.isGiveawayResults()) {
-            z80 z80Var = this.U;
+            a90 a90Var = this.U;
             t1 t1Var = this.c;
-            if (z80Var == null) {
-                this.U = new z80(t1Var);
+            if (a90Var == null) {
+                this.U = new a90(t1Var);
             }
             int action = motionEvent.getAction();
             int x10 = (int) motionEvent.getX();
@@ -123,11 +123,11 @@ public final class c {
                         clickableSpanArr[0].onClick(t1Var);
                         return true;
                     }
-                    d90 d90Var = new d90(clickableSpanArr[0], null, x10, y3, 0);
-                    this.U.a(d90Var, null);
+                    e90 e90Var = new e90(clickableSpanArr[0], null, x10, y3, 0);
+                    this.U.a(e90Var, null);
                     try {
                         int spanStart = this.R.getSpanStart(clickableSpanArr[0]);
-                        w80 b10 = d90Var.b();
+                        x80 b10 = e90Var.b();
                         b10.e(this.t, spanStart, this.T, this.S);
                         this.t.getSelectionPath(spanStart, this.R.getSpanEnd(clickableSpanArr[0]), b10);
                         return true;
@@ -170,7 +170,7 @@ public final class c {
                     this.Q = false;
                     MessageObject messageObject2 = this.M;
                     if (messageObject2 != null && messageObject2.messageOwner != null) {
-                        t.d(messageObject2, new b1(messageObject2, 10), new j3(6));
+                        t.d(messageObject2, new q1(messageObject2, 13), new i(24));
                         return false;
                     }
                 }
@@ -186,7 +186,7 @@ public final class c {
         return false;
     }
 
-    public final void b(Canvas canvas, int i10, int i11, e6 e6Var) {
+    public final void b(Canvas canvas, int i10, int i11, d6 d6Var) {
         boolean[] zArr;
         int color1;
         int i12;
@@ -197,30 +197,30 @@ public final class c {
         z zVar = this.L;
         t1 t1Var = this.c;
         if (zVar == null) {
-            int w02 = i6.w0(null, i6.i6, false);
+            int w02 = h6.w0(null, h6.i6, false);
             this.K = w02;
-            z Y = i6.Y(w02, 12, 12);
+            z Y = h6.Y(w02, 12, 12);
             this.L = Y;
             Y.setCallback(t1Var);
         }
-        this.y.setColor(i6.o2.getColor());
-        this.z.setColor(i6.w0(null, i6.q5, false));
-        this.A.setColor(i6.o2.getColor());
+        this.y.setColor(h6.o2.getColor());
+        this.z.setColor(h6.w0(null, h6.q5, false));
+        this.A.setColor(h6.o2.getColor());
         if (this.M.isOutOwner()) {
             TextPaint textPaint = this.x;
-            int i13 = i6.Xa;
-            textPaint.setColor(i6.v0(i13, e6Var));
-            this.B.setColor(i6.v0(i13, e6Var));
-            this.C.setColor(i6.v0(i6.ab, e6Var));
+            int i13 = h6.Xa;
+            textPaint.setColor(h6.v0(i13, d6Var));
+            this.B.setColor(h6.v0(i13, d6Var));
+            this.C.setColor(h6.v0(h6.ab, d6Var));
         } else {
             TextPaint textPaint2 = this.x;
-            int i14 = i6.Kc;
-            textPaint2.setColor(i6.v0(i14, e6Var));
-            this.B.setColor(i6.v0(i14, e6Var));
-            this.C.setColor(i6.v0(i6.Uc, e6Var));
+            int i14 = h6.Kc;
+            textPaint2.setColor(h6.v0(i14, d6Var));
+            this.B.setColor(h6.v0(i14, d6Var));
+            this.C.setColor(h6.v0(h6.Uc, d6Var));
         }
         if (this.N) {
-            this.B.setColor(i6.v0(i6.fk, e6Var));
+            this.B.setColor(h6.v0(h6.fk, d6Var));
         }
         canvas.save();
         int dp = i11 - AndroidUtilities.dp(4.0f);
@@ -257,7 +257,7 @@ public final class c {
         this.t.draw(canvas);
         canvas.restore();
         canvas.translate(0.0f, AndroidUtilities.dp(6.0f) + this.o);
-        int C = y0.C(6.0f, this.o, dp5);
+        int C = z0.C(6.0f, this.o, dp5);
         int i15 = 0;
         int i16 = 0;
         while (true) {
@@ -284,15 +284,15 @@ public final class c {
                 while (true) {
                     TLRPC.User user = this.g[i19];
                     if (this.M.isOutOwner()) {
-                        color1 = i6.v0(i6.Xa, e6Var);
+                        color1 = h6.v0(h6.Xa, d6Var);
                     } else {
                         int colorId = UserObject.getColorId(user);
                         if (colorId < 7) {
-                            color1 = i6.v0(i6.r8[colorId], e6Var);
+                            color1 = h6.v0(h6.r8[colorId], d6Var);
                         } else {
                             MessagesController.PeerColors peerColors = MessagesController.getInstance(UserConfig.selectedAccount).peerColors;
                             MessagesController.PeerColor color = peerColors == null ? null : peerColors.getColor(colorId);
-                            color1 = color != null ? color.getColor1() : i6.v0(i6.r8[0], e6Var);
+                            color1 = color != null ? color.getColor1() : h6.v0(h6.r8[0], d6Var);
                         }
                     }
                     int i20 = this.O;
@@ -334,17 +334,17 @@ public final class c {
         canvas.restore();
         canvas.restore();
         if (this.O >= 0) {
-            int l1 = i6.l1(i6.I.q() ? 0.12f : 0.1f, i16);
+            int l1 = h6.l1(h6.I.q() ? 0.12f : 0.1f, i16);
             if (this.K != l1) {
                 z zVar2 = this.L;
                 this.K = l1;
-                i6.B1(zVar2, l1, true);
+                h6.B1(zVar2, l1, true);
             }
             this.L.setBounds(this.j[this.O]);
             this.L.setCallback(t1Var);
         }
-        z80 z80Var = this.U;
-        if (z80Var == null || !z80Var.f(canvas)) {
+        a90 a90Var = this.U;
+        if (a90Var == null || !a90Var.f(canvas)) {
             return;
         }
         t1Var.invalidate();
@@ -355,9 +355,9 @@ public final class c {
         if (messageObject == null || !messageObject.isGiveawayResults() || this.L == null) {
             return;
         }
-        z80 z80Var = this.U;
-        if (z80Var != null) {
-            z80Var.d(true);
+        a90 a90Var = this.U;
+        if (a90Var != null) {
+            a90Var.d(true);
         }
         t1 t1Var = this.c;
         if (!z10) {
@@ -428,7 +428,7 @@ public final class c {
             }
             if (this.a == null) {
                 this.a = new ImageReceiver[10];
-                this.b = new f9[10];
+                this.b = new h9[10];
                 this.k = new boolean[10];
                 int i11 = 0;
                 while (true) {
@@ -439,7 +439,7 @@ public final class c {
                     imageReceiverArr[i11] = new ImageReceiver(this.c);
                     this.a[i11].setAllowLoadingOnAttachedOnly(true);
                     this.a[i11].setRoundRadius(AndroidUtilities.dp(12.0f));
-                    this.b[i11] = new f9((e6) null);
+                    this.b[i11] = new h9((d6) null);
                     this.b[i11].u(AndroidUtilities.dp(18.0f));
                     this.j[i11] = new Rect();
                     i11++;
@@ -447,7 +447,7 @@ public final class c {
             }
             this.d.setAllowStartLottieAnimation(false);
             if (this.e == null) {
-                this.e = new xi0(org.telegram.messenger.R.raw.giveaway_results, AndroidUtilities.dp(120.0f), AndroidUtilities.dp(120.0f));
+                this.e = new yi0(org.telegram.messenger.R.raw.giveaway_results, AndroidUtilities.dp(120.0f), AndroidUtilities.dp(120.0f));
             }
             this.d.setImageBitmap(this.e);
             TLRPC.TL_messageMediaGiveawayResults tL_messageMediaGiveawayResults = (TLRPC.TL_messageMediaGiveawayResults) messageObject.messageOwner.media;
@@ -456,7 +456,7 @@ public final class c {
             if (imageReceiverArr2.length < size) {
                 int length = imageReceiverArr2.length;
                 this.a = (ImageReceiver[]) Arrays.copyOf(imageReceiverArr2, size);
-                this.b = (f9[]) Arrays.copyOf(this.b, size);
+                this.b = (h9[]) Arrays.copyOf(this.b, size);
                 this.k = Arrays.copyOf(this.k, size);
                 this.f = (CharSequence[]) Arrays.copyOf(this.f, size);
                 this.h = Arrays.copyOf(this.h, size);
@@ -467,7 +467,7 @@ public final class c {
                     this.a[i12] = new ImageReceiver(this.c);
                     this.a[i12].setAllowLoadingOnAttachedOnly(true);
                     this.a[i12].setRoundRadius(AndroidUtilities.dp(12.0f));
-                    this.b[i12] = new f9((e6) null);
+                    this.b[i12] = new h9((d6) null);
                     this.b[i12].u(AndroidUtilities.dp(18.0f));
                     this.j[i12] = new Rect();
                 }
@@ -478,7 +478,7 @@ public final class c {
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(replaceTags);
             spannableStringBuilder.setSpan(new RelativeSizeSpan(1.05f), 0, replaceTags.length(), 33);
             this.R = new SpannableStringBuilder();
-            SpannableStringBuilder replaceSingleTag = AndroidUtilities.replaceSingleTag(LocaleController.getPluralString("BoostingGiveawayResultsMsgWinnersTitle", tL_messageMediaGiveawayResults.winners_count), i6.gc, 0, new b(this, messageObject, tL_messageMediaGiveawayResults, 0));
+            SpannableStringBuilder replaceSingleTag = AndroidUtilities.replaceSingleTag(LocaleController.getPluralString("BoostingGiveawayResultsMsgWinnersTitle", tL_messageMediaGiveawayResults.winners_count), h6.gc, 0, new b(this, messageObject, tL_messageMediaGiveawayResults, 0));
             this.R.append((CharSequence) AndroidUtilities.replaceCharSequence("%1$d", replaceSingleTag, AndroidUtilities.replaceTags("**" + tL_messageMediaGiveawayResults.winners_count + "**")));
             this.R.append((CharSequence) "\n\n");
             this.R.setSpan(new RelativeSizeSpan(0.4f), this.R.length() - 1, this.R.length(), 33);

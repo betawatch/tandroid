@@ -5,7 +5,7 @@ import c3.h0;
 import ei.d5;
 import java.util.List;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class c0 {
     public final /* synthetic */ int a;
@@ -19,14 +19,14 @@ public final class c0 {
             case 1:
                 this.b = list;
                 this.c = new h0[list.size()];
-                e2.c cVar = new e2.c(new d5(this, 28));
+                e2.c cVar = new e2.c(new d5(this, 27));
                 this.d = cVar;
                 cVar.k(3);
                 break;
             default:
                 this.b = list;
                 this.c = new h0[list.size()];
-                this.d = new e2.c(new d5(this, 27));
+                this.d = new e2.c(new d5(this, 26));
                 break;
         }
     }

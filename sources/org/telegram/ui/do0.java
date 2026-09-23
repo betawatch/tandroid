@@ -1,34 +1,34 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
+import org.json.JSONObject;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class do0 implements uo0 {
-    public final /* synthetic */ wo0 a;
-
-    public do0(wo0 wo0Var) {
-        this.a = wo0Var;
-    }
-
-    @Override // org.telegram.ui.uo0
-    public final /* synthetic */ boolean c(String str, String str2, boolean z10, TLRPC.TL_inputPaymentCredentialsGooglePay tL_inputPaymentCredentialsGooglePay, TLRPC.TL_paymentSavedCredentialsCard tL_paymentSavedCredentialsCard) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.uo0
-    public final void d(TLRPC.TL_payments_validateRequestedInfo tL_payments_validateRequestedInfo) {
-        wo0 wo0Var = this.a;
-        wo0Var.I0 = tL_payments_validateRequestedInfo;
-        wo0Var.B0(tL_payments_validateRequestedInfo.info);
-    }
-
-    @Override // org.telegram.ui.uo0
-    public final /* synthetic */ void a(TL_account.Password password) {
-    }
-
-    @Override // org.telegram.ui.uo0
-    public final /* synthetic */ void b() {
+public final class do0 extends JSONObject {
+    public do0(qo0 qo0Var, int i10) {
+        switch (i10) {
+            case 3:
+                put(TeXSymbolParser.TYPE_ATTR, "PAYMENT_GATEWAY");
+                Object obj = qo0Var.M0;
+                if (obj == null) {
+                    do0 do0Var = new do0();
+                    do0Var.put("gateway", "stripe");
+                    do0Var.put("stripe:publishableKey", qo0Var.j0);
+                    do0Var.put("stripe:version", "3.5.0");
+                    put("parameters", do0Var);
+                    break;
+                } else {
+                    put("parameters", obj);
+                    break;
+                }
+            default:
+                put(TeXSymbolParser.TYPE_ATTR, "DIRECT");
+                do0 do0Var2 = new do0();
+                do0Var2.put("protocolVersion", "ECv2");
+                do0Var2.put("publicKey", qo0Var.K0);
+                put("parameters", do0Var2);
+                break;
+        }
     }
 }

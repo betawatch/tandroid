@@ -9,34 +9,34 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.vl;
+import org.telegram.messenger.ul;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.g2;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.voip.o;
 import w7.x5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public class c extends FrameLayout {
-    public final e6 a;
+    public final d6 a;
     public final ImageView b;
     public final TextView c;
     public Runnable d;
     public final g2 e;
     public final Paint f;
 
-    public c(Context context, e6 e6Var) {
+    public c(Context context, d6 d6Var) {
         super(context);
         this.f = new Paint(1);
-        this.a = e6Var;
+        this.a = d6Var;
         TextView textView = new TextView(context);
         this.c = textView;
-        vl.k(20.0f, 1, textView);
+        ul.k(20.0f, 1, textView);
         textView.setGravity(LocaleController.isRTL ? 5 : 3);
-        int i10 = i6.j5;
-        textView.setTextColor(i6.v0(i10, e6Var));
+        int i10 = h6.j5;
+        textView.setTextColor(h6.v0(i10, d6Var));
         boolean z10 = LocaleController.isRTL;
         addView(textView, x5.d(-1, -2.0f, 23, z10 ? 16.0f : 53.0f, 0.0f, z10 ? 53.0f : 16.0f, 0.0f));
         ImageView imageView = new ImageView(context);
@@ -44,8 +44,8 @@ public class c extends FrameLayout {
         g2 g2Var = new g2(false);
         this.e = g2Var;
         imageView.setImageDrawable(g2Var);
-        g2Var.a(i6.v0(i10, e6Var));
-        g2Var.b(i6.v0(i10, e6Var));
+        g2Var.a(h6.v0(i10, d6Var));
+        g2Var.b(h6.v0(i10, d6Var));
         g2Var.k = 220.0f;
         addView(imageView, x5.d(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 16, 16.0f, 0.0f, 16.0f, 0.0f));
         imageView.setOnClickListener(new o(this, 14));
@@ -54,7 +54,7 @@ public class c extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
-        int v02 = i6.v0(i6.d7, this.a);
+        int v02 = h6.v0(h6.d7, this.a);
         Paint paint = this.f;
         paint.setColor(v02);
         canvas.drawRect(0.0f, getHeight() - AndroidUtilities.getShadowHeight(), getWidth(), getHeight(), paint);

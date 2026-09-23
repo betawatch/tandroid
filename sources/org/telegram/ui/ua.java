@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ua implements MessagesStorage.IntCallback {
     public final /* synthetic */ int a;
@@ -16,7 +16,7 @@ public final /* synthetic */ class ua implements MessagesStorage.IntCallback {
 
     @Override // org.telegram.messenger.MessagesStorage.IntCallback
     public final void run(int i10) {
-        vu0 vu0Var;
+        ou0 ou0Var;
         int i11 = this.a;
         Object obj = this.b;
         switch (i11) {
@@ -24,9 +24,9 @@ public final /* synthetic */ class ua implements MessagesStorage.IntCallback {
                 ((ub) obj).U0(true);
                 break;
             case 1:
-                bo boVar = ((nn) obj).a;
-                if (i10 > 0 && boVar.getParentActivity() != null && boVar.fragmentView != null) {
-                    org.telegram.ui.Components.vc.a0(boVar).m(org.telegram.ui.Components.uc.I, i10, 0, 0, boVar.ea).j();
+                xn xnVar = ((jn) obj).a;
+                if (i10 > 0 && xnVar.getParentActivity() != null && xnVar.fragmentView != null) {
+                    org.telegram.ui.Components.xc.a0(xnVar).m(org.telegram.ui.Components.wc.I, i10, 0, 0, xnVar.ea).j();
                     break;
                 }
                 break;
@@ -35,8 +35,8 @@ public final /* synthetic */ class ua implements MessagesStorage.IntCallback {
                 break;
             case 3:
                 PhotoViewer photoViewer = (PhotoViewer) obj;
-                if (photoViewer.y != null && (vu0Var = photoViewer.e0) != null && i10 > 0) {
-                    org.telegram.ui.Components.vc.F(vu0Var, true).j();
+                if (photoViewer.y != null && (ou0Var = photoViewer.e0) != null && i10 > 0) {
+                    org.telegram.ui.Components.xc.F(ou0Var, true).j();
                     break;
                 }
                 break;
@@ -55,12 +55,12 @@ public final /* synthetic */ class ua implements MessagesStorage.IntCallback {
                     break;
                 }
             default:
-                eg1 eg1Var = ((jf1) obj).a;
+                wf1 wf1Var = ((bf1) obj).a;
                 if (i10 != 0) {
-                    eg1Var.finishFragment();
+                    wf1Var.finishFragment();
                     break;
                 } else {
-                    eg1Var.O0(false);
+                    wf1Var.O0(false);
                     break;
                 }
         }

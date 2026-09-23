@@ -1,66 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.drawable.ShapeDrawable;
-import android.graphics.drawable.shapes.RectShape;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class tt extends ShapeDrawable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ EditTextBoldCursor b;
+public final class tt extends o6 {
+    public final /* synthetic */ int W;
+    public final /* synthetic */ EditTextBoldCursor X;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tt(EditTextBoldCursor editTextBoldCursor, RectShape rectShape) {
-        super(rectShape);
-        this.b = editTextBoldCursor;
+    public /* synthetic */ tt(int i10, EditTextBoldCursor editTextBoldCursor) {
+        super(false, false, false, false);
+        this.W = i10;
+        this.X = editTextBoldCursor;
     }
 
-    @Override // android.graphics.drawable.ShapeDrawable, android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        switch (this.a) {
+    @Override // android.graphics.drawable.Drawable
+    public final void invalidateSelf() {
+        switch (this.W) {
             case 0:
-                EditTextBoldCursor editTextBoldCursor = this.b;
-                if (!editTextBoldCursor.drawInMaim) {
-                    super.draw(canvas);
-                    break;
-                } else {
-                    editTextBoldCursor.cursorDrawn = true;
-                    break;
-                }
+                this.X.invalidate();
+                break;
             default:
-                super.draw(canvas);
-                this.b.cursorDrawn = true;
+                this.X.invalidate();
                 break;
         }
-    }
-
-    @Override // android.graphics.drawable.ShapeDrawable, android.graphics.drawable.Drawable
-    public int getIntrinsicHeight() {
-        int i10;
-        switch (this.a) {
-            case 0:
-                i10 = this.b.cursorSize;
-                return AndroidUtilities.dp(i10 + 20);
-            default:
-                return super.getIntrinsicHeight();
-        }
-    }
-
-    @Override // android.graphics.drawable.ShapeDrawable, android.graphics.drawable.Drawable
-    public int getIntrinsicWidth() {
-        float f7;
-        switch (this.a) {
-            case 0:
-                f7 = this.b.cursorWidth;
-                return AndroidUtilities.dp(f7);
-            default:
-                return super.getIntrinsicWidth();
-        }
-    }
-
-    public tt(EditTextBoldCursor editTextBoldCursor) {
-        this.b = editTextBoldCursor;
     }
 }

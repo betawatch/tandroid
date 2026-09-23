@@ -1,33 +1,28 @@
 package org.telegram.ui;
 
-import android.widget.Toast;
-import java.util.List;
-import org.telegram.tgnet.ResultCallback;
-import org.telegram.tgnet.TLRPC;
+import android.app.Activity;
+import android.view.accessibility.AccessibilityNodeInfo;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class u21 implements ResultCallback {
-    public final /* synthetic */ f31 a;
+public final class u21 extends org.telegram.ui.Components.bj0 {
+    public final /* synthetic */ w21 r;
 
-    public u21(f31 f31Var) {
-        this.a = f31Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public u21(w21 w21Var, Activity activity) {
+        super(activity);
+        this.r = w21Var;
     }
 
-    @Override // org.telegram.tgnet.ResultCallback
-    public final void onComplete(Object obj) {
-        List list = (List) obj;
-        this.a.c0(list);
-        f31.S = list;
-    }
-
-    @Override // org.telegram.tgnet.ResultCallback
-    public final /* synthetic */ void onError(Throwable th2) {
-        org.telegram.tgnet.l.a(this, th2);
-    }
-
-    @Override // org.telegram.tgnet.ResultCallback
-    public final void onError(TLRPC.TL_error tL_error) {
-        Toast.makeText(this.a.getParentActivity(), tL_error.text, 0).show();
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        if (this.r.S.K) {
+            accessibilityNodeInfo.setText(LocaleController.getString(R.string.AccDescrSwitchToDayTheme));
+        } else {
+            accessibilityNodeInfo.setText(LocaleController.getString(R.string.AccDescrSwitchToNightTheme));
+        }
     }
 }

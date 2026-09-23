@@ -8,9 +8,9 @@ import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class vr0 extends nz {
+public final class vr0 extends oz {
     public final jv0 X;
     public final /* synthetic */ ur0 Y;
     public final /* synthetic */ yu0 Z;
@@ -31,7 +31,7 @@ public final class vr0 extends nz {
         return B();
     }
 
-    @Override // org.telegram.ui.Components.nz
+    @Override // org.telegram.ui.Components.oz
     public final jv0 D1(int i10) {
         int i11;
         int i12;
@@ -62,9 +62,9 @@ public final class vr0 extends nz {
     }
 
     @Override // s4.s, s4.o0
-    public final void U(of.e eVar, s4.z0 z0Var, View view, s0.c cVar) {
-        super.U(eVar, z0Var, view, cVar);
-        AccessibilityNodeInfo accessibilityNodeInfo = cVar.a;
+    public final void U(of.e eVar, s4.z0 z0Var, View view, s0.d dVar) {
+        super.U(eVar, z0Var, view, dVar);
+        AccessibilityNodeInfo accessibilityNodeInfo = dVar.a;
         AccessibilityNodeInfo.CollectionItemInfo collectionItemInfo = accessibilityNodeInfo.getCollectionItemInfo();
         n7.b bVar = collectionItemInfo != null ? new n7.b(collectionItemInfo) : null;
         if (bVar != null) {

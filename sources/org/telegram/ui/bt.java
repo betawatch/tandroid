@@ -1,54 +1,74 @@
 package org.telegram.ui;
 
-import android.os.Build;
+import android.graphics.Canvas;
+import android.graphics.RectF;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class bt extends s4.s0 {
-    public boolean a;
-    public boolean b;
-    public final /* synthetic */ ContactsActivity c;
+public final /* synthetic */ class bt implements r0.n, org.telegram.ui.Components.fk0 {
+    public final /* synthetic */ pt a;
 
-    public bt(ContactsActivity contactsActivity) {
-        this.c = contactsActivity;
+    public /* synthetic */ bt(pt ptVar) {
+        this.a = ptVar;
     }
 
-    @Override // s4.s0
-    public final void a(RecyclerView recyclerView, int i10) {
-        if (i10 != 1) {
-            this.b = false;
+    @Override // r0.n
+    public r0.l1 Q0(View view, r0.l1 l1Var) {
+        this.a.q = AndroidUtilities.getDefaultWindowInsets(l1Var, false);
+        return l1Var;
+    }
+
+    @Override // org.telegram.ui.Components.fk0
+    public void h(View view, zg.p0 p0Var, boolean z10, boolean z11) {
+        if (p0Var == null) {
             return;
         }
-        ContactsActivity contactsActivity = this.c;
-        if ((contactsActivity.F && contactsActivity.E) || contactsActivity.Z.r.isFocused()) {
-            AndroidUtilities.hideKeyboard(contactsActivity.getParentActivity().getCurrentFocus());
+        pt ptVar = this.a;
+        zg.c0 reactionsWindow = ptVar.P.getReactionsWindow();
+        if (!ptVar.o.contains(p0Var.f)) {
+            ptVar.o.add(p0Var.f);
+            if (ptVar.o.size() > 7) {
+                ptVar.o.remove(0);
+            }
+        } else if (ptVar.o.size() <= 1) {
+            return;
+        } else {
+            ptVar.o.remove(p0Var.f);
         }
-        this.b = true;
+        ptVar.P.setSelectedEmojis(ptVar.o);
+        if (reactionsWindow != null) {
+            zg.y yVar = reactionsWindow.m;
+            ptVar.P.p(null, null, false);
+            if (yVar != null) {
+                yVar.setSelectedReactions(ptVar.o);
+                yVar.setRecentReactions(ptVar.P.V);
+            }
+            reactionsWindow.d();
+        }
     }
 
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        ah.h hVar;
-        ContactsActivity contactsActivity = this.c;
-        int L0 = contactsActivity.n.L0();
-        View childAt = recyclerView.getChildAt(0);
-        int top = childAt != null ? childAt.getTop() : 0;
-        if (contactsActivity.w != null && !contactsActivity.F) {
-            boolean z10 = i11 > 0;
-            if (i11 != 0 && this.a && (z10 || this.b)) {
-                contactsActivity.x = !z10;
-                ContactsActivity.e0(contactsActivity);
-            }
-            this.a = true;
-        }
-        contactsActivity.Y.b(L0 != 0 || top < contactsActivity.f.getPaddingTop(), true);
-        if (Build.VERSION.SDK_INT >= 31 && (hVar = contactsActivity.t0) != null) {
-            hVar.f(i10, i11);
-            contactsActivity.g0();
-        }
-        ContactsActivity.d0(contactsActivity);
+    @Override // org.telegram.ui.Components.fk0
+    public /* synthetic */ boolean j() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.fk0
+    public /* synthetic */ boolean k() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.fk0
+    public /* synthetic */ boolean q() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.fk0
+    public /* synthetic */ void o() {
+    }
+
+    @Override // org.telegram.ui.Components.fk0
+    public /* synthetic */ void n(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
     }
 }

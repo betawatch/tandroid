@@ -11,7 +11,7 @@ import java.util.concurrent.CountDownLatch;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public class PushListenerController {
     public static final int NOTIFICATION_ID = 1;
@@ -19,7 +19,7 @@ public class PushListenerController {
     public static final int PUSH_TYPE_HUAWEI = 13;
     private static CountDownLatch countDownLatch = new CountDownLatch(1);
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static final class GooglePushListenerServiceProvider implements IPushListenerServiceProvider {
         public static final GooglePushListenerServiceProvider INSTANCE = new GooglePushListenerServiceProvider();
         private Boolean hasServices;
@@ -57,7 +57,7 @@ public class PushListenerController {
                 }
                 firebaseMessaging.getClass();
                 TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-                firebaseMessaging.f.execute(new ci.b9(5, firebaseMessaging, taskCompletionSource));
+                firebaseMessaging.f.execute(new ci.y8(5, firebaseMessaging, taskCompletionSource));
                 taskCompletionSource.getTask().addOnCompleteListener(new c0(this, 11));
             } catch (Throwable th2) {
                 FileLog.e(th2);
@@ -97,11 +97,11 @@ public class PushListenerController {
             } else if (BuildVars.DEBUG_PRIVATE_VERSION && BuildVars.LOGS_ENABLED) {
                 FileLog.d("FCM regId = " + str);
             }
-            Utilities.globalQueue.postRunnable(new vg(this, 5));
+            Utilities.globalQueue.postRunnable(new ug(this, 5));
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public interface IPushListenerServiceProvider {
         String getLogTitle();
 
@@ -112,7 +112,7 @@ public class PushListenerController {
         void onRequestPushToken();
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     @Retention(RetentionPolicy.SOURCE)
     public @interface PushType {
     }
@@ -251,7 +251,7 @@ public class PushListenerController {
         if (BuildVars.LOGS_ENABLED) {
             FileLog.d(str + " POST INIT APP");
         }
-        Utilities.stageQueue.postRunnable(new th(0, j3, str, str2));
+        Utilities.stageQueue.postRunnable(new sh(0, j3, str, str2));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -320,7 +320,7 @@ public class PushListenerController {
             FileLog.d(str2.concat(" PRE START PROCESSING"));
         }
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        AndroidUtilities.runOnUIThread(new th(1, j3, str2, str));
+        AndroidUtilities.runOnUIThread(new sh(1, j3, str2, str));
         try {
             countDownLatch.await();
         } catch (Throwable unused) {

@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class gg0 extends lw0 {
     public boolean a = false;
@@ -19,11 +19,11 @@ public final class gg0 extends lw0 {
     public final RectF f = new RectF();
     public float g;
     public final boolean h;
-    public final org.telegram.ui.ActionBar.e6 i;
+    public final org.telegram.ui.ActionBar.d6 i;
 
-    public gg0(org.telegram.ui.ActionBar.e6 e6Var, boolean z10) {
+    public gg0(org.telegram.ui.ActionBar.d6 d6Var, boolean z10) {
         this.h = z10;
-        this.i = e6Var;
+        this.i = d6Var;
     }
 
     @Override // org.telegram.ui.Components.lw0
@@ -47,13 +47,13 @@ public final class gg0 extends lw0 {
         }
         int i10 = dp2;
         boolean z10 = this.h;
-        int v02 = org.telegram.ui.ActionBar.i6.v0(z10 ? org.telegram.ui.ActionBar.i6.p9 : org.telegram.ui.ActionBar.i6.pa, this.i);
+        int v02 = org.telegram.ui.ActionBar.h6.v0(z10 ? org.telegram.ui.ActionBar.h6.p9 : org.telegram.ui.ActionBar.h6.pa, this.i);
         Paint paint = this.b;
         paint.setColor(v02);
         RectF rectF = this.f;
         rectF.set(0.0f, i10, dp, i10 + dp);
         float f7 = this.g;
-        int v = (int) (f7 < 0.5f ? org.telegram.messenger.vl.v(f7, 0.5f, 1.0f, 35.0f) : ((f7 - 0.5f) * 35.0f) / 0.5f);
+        int v = (int) (f7 < 0.5f ? org.telegram.messenger.ul.v(f7, 0.5f, 1.0f, 35.0f) : ((f7 - 0.5f) * 35.0f) / 0.5f);
         for (int i11 = 0; i11 < 3; i11++) {
             float dp3 = AndroidUtilities.dp(9.2f) + (AndroidUtilities.dp(5.0f) * i11);
             float dp4 = AndroidUtilities.dp(5.0f);
@@ -72,7 +72,7 @@ public final class gg0 extends lw0 {
         }
         paint.setAlpha(255);
         canvas.drawArc(rectF, v, 360 - (v * 2), true, paint);
-        paint.setColor(org.telegram.ui.ActionBar.i6.w0(null, z10 ? org.telegram.ui.ActionBar.i6.d6 : org.telegram.ui.ActionBar.i6.s8, false));
+        paint.setColor(org.telegram.ui.ActionBar.h6.w0(null, z10 ? org.telegram.ui.ActionBar.h6.d6 : org.telegram.ui.ActionBar.h6.s8, false));
         canvas.drawCircle(AndroidUtilities.dp(4.0f), ((dp / 2) + i10) - AndroidUtilities.dp(2.0f), AndroidUtilities.dp(1.0f), paint);
         f();
     }
@@ -86,7 +86,7 @@ public final class gg0 extends lw0 {
     public final void f() {
         if (this.e) {
             if (NotificationCenter.getInstance(this.c).isAnimationInProgress()) {
-                AndroidUtilities.runOnUIThread(new bc0(this, 13), 100L);
+                AndroidUtilities.runOnUIThread(new ac0(this, 13), 100L);
                 return;
             }
             long currentTimeMillis = System.currentTimeMillis();

@@ -18,9 +18,9 @@ import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class k1 extends FrameLayout {
     public final Paint a;
@@ -29,53 +29,53 @@ public final class k1 extends FrameLayout {
     public Bitmap d;
     public BitmapShader e;
     public Matrix f;
-    public final org.telegram.ui.Components.c6 h;
+    public final org.telegram.ui.Components.e6 h;
     public final RectF n;
     public Boolean r;
-    public final /* synthetic */ t2 s;
+    public final /* synthetic */ s2 s;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k1(t2 t2Var, Context context) {
+    public k1(s2 s2Var, Context context) {
         super(context);
-        this.s = t2Var;
+        this.s = s2Var;
         this.a = new Paint(1);
         this.b = new Paint(3);
         this.c = new Paint(1);
-        this.h = new org.telegram.ui.Components.c6(this, 0L, 250L, qr.h);
+        this.h = new org.telegram.ui.Components.e6(this, 0L, 250L, rr.h);
         this.n = new RectF();
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        org.telegram.ui.ActionBar.e6 e6Var;
+        org.telegram.ui.ActionBar.d6 d6Var;
         int i10;
         int i11;
-        int i12 = org.telegram.ui.ActionBar.i6.h5;
-        t2 t2Var = this.s;
-        i1 i1Var = t2Var.f;
-        e6Var = ((org.telegram.ui.ActionBar.f3) t2Var).resourcesProvider;
-        int v02 = org.telegram.ui.ActionBar.i6.v0(i12, e6Var);
+        int i12 = org.telegram.ui.ActionBar.h6.h5;
+        s2 s2Var = this.s;
+        i1 i1Var = s2Var.f;
+        d6Var = ((org.telegram.ui.ActionBar.f3) s2Var).resourcesProvider;
+        int v02 = org.telegram.ui.ActionBar.h6.v0(i12, d6Var);
         Paint paint = this.a;
         paint.setColor(v02);
         paint.setAlpha((int) ((this.d == null ? 1.0f : 0.85f) * 255.0f));
         View[] viewPages = i1Var.getViewPages();
-        t2Var.x = 0.0f;
+        s2Var.x = 0.0f;
         boolean z10 = false;
         for (View view : viewPages) {
             if (view instanceof a2) {
                 a2 a2Var = (a2) view;
-                t2Var.x += Utilities.clamp(1.0f - Math.abs(a2Var.getTranslationX() / a2Var.getMeasuredWidth()), 1.0f, 0.0f) * a2Var.b();
+                s2Var.x += Utilities.clamp(1.0f - Math.abs(a2Var.getTranslationX() / a2Var.getMeasuredWidth()), 1.0f, 0.0f) * a2Var.b();
                 if (a2Var.getVisibility() == 0) {
                     a2Var.c();
                 }
             }
         }
-        float d = this.h.d(t2Var.x <= 0.0f ? 1.0f : 0.0f, false);
-        float paddingTop = (t2Var.x + i1Var.getPaddingTop()) - AndroidUtilities.lerp(AndroidUtilities.dp(8.0f), i1Var.getPaddingTop(), d);
+        float d = this.h.d(s2Var.x <= 0.0f ? 1.0f : 0.0f, false);
+        float paddingTop = (s2Var.x + i1Var.getPaddingTop()) - AndroidUtilities.lerp(AndroidUtilities.dp(8.0f), i1Var.getPaddingTop(), d);
         RectF rectF = AndroidUtilities.rectTmp;
-        i10 = ((org.telegram.ui.ActionBar.f3) t2Var).backgroundPaddingLeft;
+        i10 = ((org.telegram.ui.ActionBar.f3) s2Var).backgroundPaddingLeft;
         int width = getWidth();
-        i11 = ((org.telegram.ui.ActionBar.f3) t2Var).backgroundPaddingLeft;
+        i11 = ((org.telegram.ui.ActionBar.f3) s2Var).backgroundPaddingLeft;
         rectF.set(i10, paddingTop, width - i11, AndroidUtilities.dp(8.0f) + getHeight());
         if (this.d != null) {
             this.f.reset();
@@ -88,7 +88,7 @@ public final class k1 extends FrameLayout {
         Boolean bool = this.r;
         if (bool == null || bool.booleanValue() != z11) {
             this.r = Boolean.valueOf(z11);
-            Window window = t2Var.getWindow();
+            Window window = s2Var.getWindow();
             if (z11 && AndroidUtilities.computePerceivedBrightness(paint.getColor()) >= 0.721f) {
                 z10 = true;
             }
@@ -112,9 +112,9 @@ public final class k1 extends FrameLayout {
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         if (motionEvent.getAction() == 0) {
             float y3 = motionEvent.getY();
-            t2 t2Var = this.s;
-            if (y3 < t2Var.x) {
-                t2Var.dismiss();
+            s2 s2Var = this.s;
+            if (y3 < s2Var.x) {
+                s2Var.dismiss();
                 return true;
             }
         }
@@ -133,26 +133,26 @@ public final class k1 extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        org.telegram.ui.ActionBar.e6 e6Var;
-        org.telegram.ui.ActionBar.e6 e6Var2;
+        org.telegram.ui.ActionBar.d6 d6Var;
+        org.telegram.ui.ActionBar.d6 d6Var2;
         super.onLayout(z10, i10, i11, i12, i13);
         if (this.d == null) {
-            t2 t2Var = this.s;
-            e6Var = ((org.telegram.ui.ActionBar.f3) t2Var).resourcesProvider;
-            if (e6Var != null) {
-                e6Var2 = ((org.telegram.ui.ActionBar.f3) t2Var).resourcesProvider;
-                if (!e6Var2.a()) {
+            s2 s2Var = this.s;
+            d6Var = ((org.telegram.ui.ActionBar.f3) s2Var).resourcesProvider;
+            if (d6Var != null) {
+                d6Var2 = ((org.telegram.ui.ActionBar.f3) s2Var).resourcesProvider;
+                if (!d6Var2.a()) {
                     return;
                 }
-            } else if (!org.telegram.ui.ActionBar.i6.I.q()) {
+            } else if (!org.telegram.ui.ActionBar.h6.I.q()) {
                 return;
             }
-            if (t2Var.w == null || SharedConfig.getDevicePerformanceClass() <= 0 || LiteMode.isPowerSaverApplied()) {
+            if (s2Var.w == null || SharedConfig.getDevicePerformanceClass() <= 0 || LiteMode.isPowerSaverApplied()) {
                 return;
             }
             Point point = AndroidUtilities.displaySize;
             Bitmap createBitmap = Bitmap.createBitmap(point.x / 16, point.y / 16, Bitmap.Config.ARGB_8888);
-            t2Var.w.run(createBitmap, Float.valueOf(16.0f));
+            s2Var.w.run(createBitmap, Float.valueOf(16.0f));
             Utilities.stackBlurBitmap(createBitmap, 8);
             this.d = createBitmap;
             Bitmap bitmap = this.d;
@@ -174,14 +174,14 @@ public final class k1 extends FrameLayout {
         int size = View.MeasureSpec.getSize(i10);
         int size2 = View.MeasureSpec.getSize(i11);
         float min = Math.min(size2 * 0.45f, (AndroidUtilities.dp(350.0f) / 0.55f) * 0.45f);
-        t2 t2Var = this.s;
-        t2Var.n = min;
-        i1 i1Var = t2Var.f;
+        s2 s2Var = this.s;
+        s2Var.n = min;
+        i1 i1Var = s2Var.f;
         i1Var.setPadding(0, AndroidUtilities.statusBarHeight, 0, 0);
         i1Var.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
-        s2 s2Var = t2Var.h;
-        if (s2Var != null) {
-            s2Var.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), 0);
+        r2 r2Var = s2Var.h;
+        if (r2Var != null) {
+            r2Var.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), 0);
         }
         setMeasuredDimension(size, size2);
     }

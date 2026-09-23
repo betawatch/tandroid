@@ -1,42 +1,13 @@
 package ci;
 
-import org.telegram.messenger.camera.CameraController;
+import android.text.TextPaint;
+import android.text.style.CharacterStyle;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class hb implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ jb b;
-
-    public /* synthetic */ hb(jb jbVar, int i10) {
-        this.a = i10;
-        this.b = jbVar;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                oc ocVar = this.b.a;
-                h7 h7Var = ocVar.C0;
-                if (h7Var != null) {
-                    h7Var.c(false);
-                }
-                if (ocVar.Q1 && ocVar.R1 && ocVar.B0 != null) {
-                    ocVar.j0(false);
-                    CameraController.getInstance().stopVideoRecording(ocVar.B0.getCameraSessionRecording(), false, false);
-                    break;
-                }
-                break;
-            case 1:
-                this.b.a.K(1, true);
-                break;
-            case 2:
-                this.b.a.K(1, true);
-                break;
-            default:
-                this.b.a.K(1, true);
-                break;
-        }
+public final class hb extends CharacterStyle {
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        textPaint.setAlpha(128);
     }
 }

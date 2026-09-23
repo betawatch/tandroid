@@ -7,9 +7,9 @@ import java.net.SocketException;
 import java.net.SocketTimeoutException;
 import java.util.List;
 import java.util.logging.Level;
-import org.telegram.ui.Cells.ia;
+import org.telegram.ui.Cells.ja;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class a implements Runnable {
     public final InputStream a;
@@ -39,7 +39,7 @@ public final class a implements Runnable {
             th = th2;
         }
         try {
-            d dVar = new d(iVar, new ia(), this.a, outputStream, socket.getInetAddress());
+            d dVar = new d(iVar, new ja(), this.a, outputStream, socket.getInetAddress());
             while (!socket.isClosed()) {
                 dVar.c();
             }

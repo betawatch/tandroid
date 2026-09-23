@@ -2,13 +2,13 @@ package lc;
 
 import com.google.android.gms.internal.vision.e2;
 import java.nio.ByteBuffer;
-import k2.c0;
+import k2.b0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class b extends a {
-    public static final /* synthetic */ c0 n;
-    public static final /* synthetic */ c0 r;
+    public static final /* synthetic */ b0 n;
+    public static final /* synthetic */ b0 r;
 
     static {
         re.a aVar = new re.a(b.class, "ESDescriptorBox.java");

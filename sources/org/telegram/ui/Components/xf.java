@@ -1,17 +1,40 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.MessageObject;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class xf extends MessageObject {
-    @Override // org.telegram.messenger.MessageObject
-    public final boolean isOutOwner() {
-        return true;
+public final class xf extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ChatActivityEnterView b;
+
+    public xf(ChatActivityEnterView chatActivityEnterView, int i10) {
+        this.b = chatActivityEnterView;
+        this.a = i10;
     }
 
-    @Override // org.telegram.messenger.MessageObject
-    public final boolean needDrawShareButton() {
-        return false;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        ChatActivityEnterView chatActivityEnterView = this.b;
+        if (animator.equals(chatActivityEnterView.s2)) {
+            int i10 = this.a;
+            if (i10 != 3 && chatActivityEnterView.E0 != null && !AndroidUtilities.isAccessibilityScreenReaderEnabled()) {
+                chatActivityEnterView.E0.requestFocus();
+            }
+            chatActivityEnterView.A();
+            if (i10 != 3) {
+                rg rgVar = chatActivityEnterView.N1;
+                if (rgVar != null) {
+                    rgVar.setVisibility(8);
+                }
+                ChatActivityEnterView.RecordCircle recordCircle = chatActivityEnterView.M1;
+                if (recordCircle != null) {
+                    recordCircle.d();
+                }
+            }
+        }
     }
 }

@@ -1,11 +1,21 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
-/* loaded from: classes3.dex */
-public final class j30 {
-    public final /* synthetic */ i60 a;
+import android.view.ViewGroup;
+import androidx.recyclerview.widget.RecyclerView;
 
-    public j30(i60 i60Var) {
-        this.a = i60Var;
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* loaded from: classes3.dex */
+public final class j30 extends s4.s0 {
+    public final /* synthetic */ f60 a;
+
+    public j30(f60 f60Var) {
+        this.a = f60Var;
+    }
+
+    @Override // s4.s0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        ViewGroup viewGroup;
+        viewGroup = ((org.telegram.ui.ActionBar.f3) this.a).containerView;
+        viewGroup.invalidate();
     }
 }

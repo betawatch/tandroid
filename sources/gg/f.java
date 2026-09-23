@@ -1,8 +1,8 @@
 package gg;
 
-import org.telegram.ui.ty;
+import org.telegram.ui.qy;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -17,8 +17,8 @@ public final /* synthetic */ class f implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                for (ty tyVar : this.b.R.e0) {
-                    ((s4.c0) tyVar.a.getLayoutManager()).u = false;
+                for (qy qyVar : this.b.R.e0) {
+                    ((s4.c0) qyVar.a.getLayoutManager()).u = false;
                 }
                 break;
             default:

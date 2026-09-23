@@ -15,20 +15,20 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.c90;
+import org.telegram.ui.Components.d90;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.em0;
-import org.telegram.ui.ni1;
-import org.telegram.ui.o20;
-import org.telegram.ui.ug;
-import yh.l7;
-import yh.n7;
-import yh.x5;
-import yh.x7;
-import yh.y3;
+import org.telegram.ui.fi1;
+import org.telegram.ui.l20;
+import org.telegram.ui.sg;
+import org.telegram.ui.yl0;
+import yh.k7;
+import yh.m7;
+import yh.w5;
+import yh.w7;
+import yh.x3;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -64,13 +64,13 @@ public final /* synthetic */ class o implements View.OnClickListener {
                 }
                 break;
             case 2:
-                ni1 ni1Var = (ni1) this.b;
-                if (!ni1Var.a) {
-                    if (ni1Var.w != 0) {
-                        ni1Var.a(false, true);
+                fi1 fi1Var = (fi1) this.b;
+                if (!fi1Var.a) {
+                    if (fi1Var.w != 0) {
+                        fi1Var.a(false, true);
                         break;
                     } else {
-                        ((Activity) ni1Var.getContext()).startActivityForResult(((MediaProjectionManager) ni1Var.getContext().getSystemService("media_projection")).createScreenCaptureIntent(), 520);
+                        ((Activity) fi1Var.getContext()).startActivityForResult(((MediaProjectionManager) fi1Var.getContext().getSystemService("media_projection")).createScreenCaptureIntent(), 520);
                         break;
                     }
                 }
@@ -100,16 +100,16 @@ public final /* synthetic */ class o implements View.OnClickListener {
                 ((pg.x) this.b).dismiss();
                 break;
             case 6:
-                ((em0) this.b).run();
+                ((yl0) this.b).run();
                 break;
             case 7:
                 ((qg.v2) this.b).onBackPressed();
                 break;
             case 8:
-                ((ug) this.b).run();
+                ((sg) this.b).run();
                 break;
             case 9:
-                ((c90) this.b).performClick();
+                ((d90) this.b).performClick();
                 break;
             case 10:
                 rg.k1 k1Var = (rg.k1) this.b;
@@ -183,10 +183,10 @@ public final /* synthetic */ class o implements View.OnClickListener {
                 ((xh.c0) this.b).dismiss();
                 break;
             case 17:
-                if (((xh.q1) this.b).f0.f > 0 && (R = LaunchActivity.R()) != null) {
+                if (((xh.r1) this.b).f0.f > 0 && (R = LaunchActivity.R()) != null) {
                     org.telegram.ui.ActionBar.l2 l2Var = new org.telegram.ui.ActionBar.l2();
                     l2Var.a = true;
-                    R.showAsSheet(new x7(), l2Var);
+                    R.showAsSheet(new w7(), l2Var);
                     break;
                 }
                 break;
@@ -216,21 +216,21 @@ public final /* synthetic */ class o implements View.OnClickListener {
                 ((yh.r1) this.b).run();
                 break;
             case 24:
-                yh.e3 e3Var = (yh.e3) this.b;
-                e3Var.getClass();
-                new n7(e3Var.b, e3Var.g).show();
+                yh.d3 d3Var = (yh.d3) this.b;
+                d3Var.getClass();
+                new m7(d3Var.b, d3Var.g).show();
                 break;
             case 25:
-                ((y3) this.b).dismiss();
+                ((x3) this.b).dismiss();
                 break;
             case 26:
-                ((x5) this.b).run();
+                ((w5) this.b).run();
                 break;
             case 27:
-                if (((l7) ((o20) this.b).d).f > 0 && (R2 = LaunchActivity.R()) != null) {
+                if (((k7) ((l20) this.b).d).f > 0 && (R2 = LaunchActivity.R()) != null) {
                     org.telegram.ui.ActionBar.l2 l2Var2 = new org.telegram.ui.ActionBar.l2();
                     l2Var2.a = true;
-                    R2.showAsSheet(new x7(), l2Var2);
+                    R2.showAsSheet(new w7(), l2Var2);
                     break;
                 }
                 break;

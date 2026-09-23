@@ -4,7 +4,7 @@ import ai.v8;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
-import ci.uc;
+import ci.rc;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.ChatObject;
@@ -15,20 +15,20 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.Cells.r2;
-import org.telegram.ui.Components.kl0;
-import org.telegram.ui.Components.t00;
-import org.telegram.ui.bo;
+import org.telegram.ui.Components.ll0;
+import org.telegram.ui.Components.u00;
+import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class o1 extends kl0 implements NotificationCenter.NotificationCenterDelegate {
+public final class o1 extends ll0 implements NotificationCenter.NotificationCenterDelegate {
     public final Context c;
-    public final bo f;
+    public final xn f;
     public int h;
     public int n;
-    public final e6 s;
+    public final d6 s;
     public final int v;
     public final boolean w;
     public String x;
@@ -36,17 +36,17 @@ public final class o1 extends kl0 implements NotificationCenter.NotificationCent
     public final HashSet d = new HashSet();
     public final ArrayList e = new ArrayList();
     public final int r = UserConfig.selectedAccount;
-    public final uc E = new uc(this, 16);
+    public final rc E = new rc(this, 16);
 
-    public o1(Context context, bo boVar, e6 e6Var, int i10, boolean z10) {
-        this.s = e6Var;
+    public o1(Context context, xn xnVar, d6 d6Var, int i10, boolean z10) {
+        this.s = d6Var;
         this.c = context;
-        this.f = boVar;
+        this.f = xnVar;
         this.v = i10;
         this.w = z10;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.ll0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         return i10 == 0 || i10 == 2;
@@ -173,17 +173,17 @@ public final class o1 extends kl0 implements NotificationCenter.NotificationCent
         View r2Var;
         View view;
         if (i10 != 0) {
-            e6 e6Var = this.s;
+            d6 d6Var = this.s;
             Context context = this.c;
             if (i10 == 1) {
-                t00 t00Var = new t00(context, e6Var);
-                t00Var.setIsSingleCell(true);
-                t00Var.setViewType(7);
-                view = t00Var;
+                u00 u00Var = new u00(context, d6Var);
+                u00Var.setIsSingleCell(true);
+                u00Var.setViewType(7);
+                view = u00Var;
             } else if (i10 != 2) {
                 r2Var = null;
             } else {
-                view = new n1(context, e6Var);
+                view = new n1(context, d6Var);
             }
             r2Var = view;
         } else {

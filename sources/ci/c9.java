@@ -1,61 +1,71 @@
 package ci;
 
 import android.content.Context;
-import android.view.View;
-import org.telegram.ui.Components.a81;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.view.MotionEvent;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class c9 extends a81 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ ia c;
+public final class c9 extends FrameLayout {
+    public final Paint a;
+    public final org.telegram.ui.Components.e6 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.d6 c;
+    public final /* synthetic */ f9 d;
 
-    public /* synthetic */ c9(ia iaVar, Context context, int i10) {
-        this.a = i10;
-        this.c = iaVar;
-        this.b = context;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c9(f9 f9Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context);
+        this.d = f9Var;
+        this.c = d6Var;
+        this.a = new Paint(1);
+        this.b = new org.telegram.ui.Components.e6(this, 0L, 350L, rr.h);
     }
 
-    @Override // org.telegram.ui.Components.a81
-    public final void b(View view, int i10, int i11) {
-        switch (this.a) {
-            case 0:
-                ((ba) view).b(i11);
-                break;
-            default:
-                ((ba) view).b(i11);
-                break;
-        }
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        int i10;
+        int i11;
+        int i12;
+        int i13;
+        int v02 = org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.h5, this.c);
+        Paint paint = this.a;
+        paint.setColor(v02);
+        f9 f9Var = this.d;
+        float max = Math.max(0.0f, f9Var.s());
+        boolean z10 = max < ((float) AndroidUtilities.statusBarHeight);
+        org.telegram.ui.Components.e6 e6Var = this.b;
+        float lerp = AndroidUtilities.lerp(max, 0.0f, e6Var.e(z10));
+        RectF rectF = AndroidUtilities.rectTmp;
+        i10 = ((org.telegram.ui.ActionBar.f3) f9Var).backgroundPaddingLeft;
+        int width = getWidth();
+        i11 = ((org.telegram.ui.ActionBar.f3) f9Var).backgroundPaddingLeft;
+        rectF.set(i10, lerp, width - i11, AndroidUtilities.dp(14.0f) + getHeight());
+        float dp = (1.0f - e6Var.c) * AndroidUtilities.dp(14.0f);
+        canvas.drawRoundRect(rectF, dp, dp, paint);
+        f9Var.n.setTranslationY(Math.max(AndroidUtilities.dp(8.0f) + AndroidUtilities.statusBarHeight, AndroidUtilities.dp(14.0f) + lerp));
+        canvas.save();
+        i12 = ((org.telegram.ui.ActionBar.f3) f9Var).backgroundPaddingLeft;
+        int dp2 = AndroidUtilities.dp(14.0f) + AndroidUtilities.statusBarHeight;
+        int width2 = getWidth();
+        i13 = ((org.telegram.ui.ActionBar.f3) f9Var).backgroundPaddingLeft;
+        canvas.clipRect(i12, dp2, width2 - i13, getHeight());
+        super.dispatchDraw(canvas);
+        canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.a81
-    public final View d(int i10) {
-        switch (this.a) {
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        float y3 = motionEvent.getY();
+        f9 f9Var = this.d;
+        if (y3 >= f9Var.s()) {
+            return super.dispatchTouchEvent(motionEvent);
         }
-        return new ba(this.c, this.b);
-    }
-
-    @Override // org.telegram.ui.Components.a81
-    public final int e() {
-        switch (this.a) {
-            case 0:
-                return 2;
-            default:
-                return 1;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.a81
-    public final int h(int i10) {
-        switch (this.a) {
-            case 0:
-                if (i10 == 0) {
-                    return 0;
-                }
-                return this.c.M;
-            default:
-                return 5;
-        }
+        f9Var.dismiss();
+        return true;
     }
 }

@@ -2,9 +2,9 @@ package qg;
 
 import android.content.Context;
 import android.view.ViewGroup;
-import org.telegram.ui.Components.vk0;
+import org.telegram.ui.Components.wk0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class j1 extends s4.h0 {
     public final /* synthetic */ Context c;
@@ -26,9 +26,9 @@ public final class j1 extends s4.h0 {
         ViewGroup.LayoutParams layoutParams = k1Var.getLayoutParams();
         l1 l1Var = this.d;
         layoutParams.height = ((l1Var.getHeight() - l1Var.getPaddingTop()) - l1Var.getPaddingBottom()) / 2;
-        pg.s0 s0Var = l1Var.a3;
-        if (s0Var != null) {
-            k1Var.a = s0Var.b(i10);
+        pg.t0 t0Var = l1Var.a3;
+        if (t0Var != null) {
+            k1Var.a = t0Var.b(i10);
             k1Var.invalidate();
             k1Var.b = l1Var.Z2 == i10 ? 1.0f : 0.0f;
             k1Var.invalidate();
@@ -37,6 +37,6 @@ public final class j1 extends s4.h0 {
 
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        return new vk0(new k1(this.d, this.c));
+        return new wk0(new k1(this.d, this.c));
     }
 }

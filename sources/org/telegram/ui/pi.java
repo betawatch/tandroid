@@ -1,24 +1,26 @@
 package org.telegram.ui;
 
 import android.app.Activity;
-import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class pi extends org.telegram.ui.Components.sv {
-    public final /* synthetic */ bo W;
+public final class pi extends org.telegram.ui.Components.ko {
+    public final /* synthetic */ xn M;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public pi(bo boVar, org.telegram.ui.ActionBar.n2 n2Var, Activity activity, org.telegram.ui.ActionBar.e6 e6Var, ArrayList arrayList) {
-        super(n2Var, activity, e6Var, arrayList);
-        this.W = boVar;
+    public pi(xn xnVar, Activity activity, int i10, TLRPC.Document document, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(activity, i10, document, d6Var);
+        this.M = xnVar;
     }
 
-    @Override // org.telegram.ui.Components.sv, org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
-    public final void dismiss() {
-        super.dismiss();
-        bo boVar = this.W;
-        boVar.getClass();
-        boVar.g8(false, true, 0.0f);
+    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        float y3 = getY();
+        xn xnVar = this.M;
+        float y10 = xnVar.R0.getY() + y3;
+        this.J = xnVar.X0.getBackgroundSizeY();
+        this.I = y10;
     }
 }

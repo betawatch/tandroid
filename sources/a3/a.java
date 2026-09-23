@@ -6,9 +6,9 @@ import android.os.Trace;
 import android.view.Surface;
 import androidx.media3.decoder.VideoDecoderOutputBuffer;
 import b2.x1;
-import u2.b1;
+import u2.a1;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public abstract class a extends i2.f {
     public final long I;
@@ -137,9 +137,9 @@ public abstract class a extends i2.f {
             } else {
                 if ((this.n == 2) && j3 != this.b0) {
                     if (j12 < -500000) {
-                        b1 b1Var = this.r;
-                        b1Var.getClass();
-                        int j14 = b1Var.j(j3 - this.v);
+                        a1 a1Var = this.r;
+                        a1Var.getClass();
+                        int j14 = a1Var.j(j3 - this.v);
                         if (j14 == 0) {
                             z11 = false;
                         } else {
@@ -440,7 +440,7 @@ public abstract class a extends i2.f {
         this.h0 = elapsedRealtime;
     }
 
-    @Override // i2.f, i2.i1
+    @Override // i2.f, i2.j1
     public final void c(int i10, Object obj) {
         Surface surface;
         if (i10 != 1) {

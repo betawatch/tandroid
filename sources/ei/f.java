@@ -2,10 +2,10 @@ package ei;
 
 import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.p20;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.m20;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class f extends rg.v1 {
     public final /* synthetic */ int n;
@@ -38,19 +38,19 @@ public final class f extends rg.v1 {
                 u1Var2.c();
                 break;
             case 2:
-                p20 p20Var = new p20(50);
-                this.a = p20Var;
-                p20Var.N = 100;
-                p20Var.M = false;
-                p20Var.G = false;
-                p20Var.K = true;
-                p20Var.H = true;
-                p20Var.J = false;
-                p20Var.r = 4;
-                p20Var.w = 0.98f;
-                p20Var.v = 0.98f;
-                p20Var.u = 0.98f;
-                p20Var.c();
+                m20 m20Var = new m20(50);
+                this.a = m20Var;
+                m20Var.N = 100;
+                m20Var.M = false;
+                m20Var.G = false;
+                m20Var.K = true;
+                m20Var.H = true;
+                m20Var.J = false;
+                m20Var.r = 4;
+                m20Var.w = 0.98f;
+                m20Var.v = 0.98f;
+                m20Var.u = 0.98f;
+                m20Var.c();
                 break;
             case 3:
                 rg.u1 u1Var3 = this.a;
@@ -65,7 +65,7 @@ public final class f extends rg.v1 {
                 u1Var4.r = 16;
                 u1Var4.G = false;
                 u1Var4.N = 28;
-                u1Var4.P = i6.Mj;
+                u1Var4.P = h6.Mj;
                 u1Var4.c();
                 break;
             case 4:
@@ -81,7 +81,7 @@ public final class f extends rg.v1 {
                 u1Var6.r = 16;
                 u1Var6.G = false;
                 u1Var6.N = 28;
-                u1Var6.P = i6.Mj;
+                u1Var6.P = h6.Mj;
                 u1Var6.c();
                 break;
             default:

@@ -1,48 +1,98 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.graphics.Matrix;
+import android.content.Context;
+import android.os.Handler;
+import android.os.Looper;
+import android.view.TextureView;
 import android.view.View;
 import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class w01 {
-    public final View a;
-    public final ArrayList b;
-    public final Runnable c;
+public final class w01 extends TextureView {
+    public static Boolean f;
+    public u01 a;
+    public final o1.a b;
+    public final ArrayList c;
     public Runnable d;
-    public final Bitmap e;
-    public final Matrix f;
-    public float g;
+    public boolean e;
 
-    public w01(View view, Runnable runnable) {
-        this.g = 1.0f;
-        this.a = view;
-        this.b = null;
-        this.c = null;
+    public w01(Context context, Runnable runnable) {
+        super(context);
+        this.b = new o1.a(this, 1);
+        this.c = new ArrayList();
         this.d = runnable;
-        this.e = null;
-        this.f = null;
+        setOpaque(false);
+        setSurfaceTextureListener(new k50(this, 2));
     }
 
-    public w01(ArrayList arrayList, gg.t tVar) {
-        this.g = 1.0f;
-        this.a = null;
-        this.b = arrayList;
-        this.c = null;
-        this.d = tVar;
-        this.e = null;
-        this.f = null;
+    public static void b(Runnable runnable) {
+        if (runnable == null) {
+            return;
+        }
+        if (Thread.currentThread() != Looper.getMainLooper().getThread()) {
+            AndroidUtilities.runOnUIThread(runnable);
+        } else {
+            runnable.run();
+        }
     }
 
-    public w01(Matrix matrix, Bitmap bitmap, Runnable runnable, Runnable runnable2) {
-        this.g = 1.0f;
-        this.a = null;
-        this.b = null;
-        this.c = runnable;
-        this.d = runnable2;
-        this.f = matrix;
-        this.e = bitmap;
+    public static boolean c() {
+        if (f == null) {
+            f = Boolean.valueOf(MessagesController.getGlobalMainSettings().getBoolean("nothanos", false));
+        }
+        Boolean bool = f;
+        return bool == null || !bool.booleanValue();
+    }
+
+    public final void a(View view) {
+        int i10 = 0;
+        int i11 = 0;
+        boolean z10 = false;
+        while (true) {
+            ArrayList arrayList = this.c;
+            if (i11 >= arrayList.size()) {
+                break;
+            }
+            v01 v01Var = (v01) arrayList.get(i11);
+            if (v01Var.a == view) {
+                Runnable runnable = v01Var.d;
+                if (runnable != null) {
+                    b(runnable);
+                    v01Var.d = null;
+                }
+                arrayList.remove(i11);
+                i11--;
+                z10 = true;
+            }
+            i11++;
+        }
+        if (z10) {
+            return;
+        }
+        u01 u01Var = this.a;
+        ArrayList arrayList2 = u01Var.W;
+        if (u01Var.b.get()) {
+            Handler handler = u01Var.getHandler();
+            if (handler != null) {
+                handler.sendMessage(handler.obtainMessage(5, view));
+                return;
+            }
+            while (i10 < arrayList2.size()) {
+                t01 t01Var = (t01) arrayList2.get(i10);
+                if (t01Var.a.contains(view)) {
+                    Runnable runnable2 = t01Var.f;
+                    if (runnable2 != null) {
+                        b(runnable2);
+                        t01Var.f = null;
+                    }
+                    arrayList2.remove(i10);
+                    i10--;
+                }
+                i10++;
+            }
+        }
     }
 }

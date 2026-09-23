@@ -1,23 +1,29 @@
 package org.telegram.ui;
 
-import android.view.ViewGroup;
-import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AccountInstance;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class y30 extends s4.s0 {
-    public final /* synthetic */ i60 a;
+public final class y30 extends r4 {
+    public final /* synthetic */ f60 U;
 
-    public y30(i60 i60Var) {
-        this.a = i60Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public y30(f60 f60Var, LaunchActivity launchActivity) {
+        super(launchActivity);
+        this.U = f60Var;
     }
 
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        ViewGroup viewGroup;
-        i60 i60Var = this.a;
-        viewGroup = ((org.telegram.ui.ActionBar.f3) i60Var).containerView;
-        viewGroup.invalidate();
-        i60Var.a2.invalidate();
+    @Override // org.telegram.ui.r4, org.telegram.ui.Components.kh0
+    public final void c() {
+        f60 f60Var = this.U;
+        AccountInstance accountInstance = f60Var.d;
+        z30 z30Var = f60Var.b;
+        long dialogId = z30Var.getDialogId();
+        if (dialogId > 0) {
+            TLRPC.User user = accountInstance.getMessagesController().getUser(Long.valueOf(dialogId));
+            z30Var.H(null, ImageLocation.getForUserOrChat(accountInstance.getCurrentAccount(), user, 0), ImageLocation.getForUserOrChat(accountInstance.getCurrentAccount(), user, 1), false);
+        }
     }
 }

@@ -1,30 +1,26 @@
 package xh;
 
-import android.view.ViewTreeObserver;
-import org.telegram.ui.ActionBar.e6;
+import android.content.Context;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final class c1 extends h4 {
-    public final /* synthetic */ ViewTreeObserver N;
-    public final /* synthetic */ n0 O;
+public final class c1 extends yh.y3 {
+    public final /* synthetic */ r1 r1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c1(long j3, String str, long j10, e6 e6Var, ViewTreeObserver viewTreeObserver, n0 n0Var) {
-        super(j3, str, j10, e6Var);
-        this.N = viewTreeObserver;
-        this.O = n0Var;
+    public c1(r1 r1Var, Context context, int i10, long j3, d6 d6Var) {
+        super(context, i10, j3, d6Var, null);
+        this.r1 = r1Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
-    public final void onPause() {
-        super.onPause();
-        this.N.removeOnPreDrawListener(this.O);
-    }
-
-    @Override // org.telegram.ui.ActionBar.n2
-    public final void onResume() {
-        super.onResume();
-        this.N.addOnPreDrawListener(this.O);
+    @Override // yh.y3, org.telegram.ui.ActionBar.f3, org.telegram.ui.ActionBar.j2
+    public final xc getBulletinFactory() {
+        d6 d6Var;
+        r1 r1Var = this.r1;
+        org.telegram.ui.ActionBar.d3 d3Var = r1Var.container;
+        d6Var = r1Var.resourcesProvider;
+        return new xc(d3Var, d6Var);
     }
 }

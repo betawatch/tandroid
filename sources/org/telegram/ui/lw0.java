@@ -1,59 +1,46 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
+import android.view.View;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class lw0 extends org.telegram.ui.Cells.t1 {
-    public final /* synthetic */ int Ge;
-    public final /* synthetic */ int He;
-    public final /* synthetic */ int Ie;
+public final /* synthetic */ class lw0 implements org.telegram.ui.ActionBar.a2, Utilities.Callback5 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ mw0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ lw0(Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var, int i11, int i12, int i13) {
-        super(context, i10, false, null, e6Var);
-        this.Ge = i13;
-        this.He = i11;
-        this.Ie = i12;
+    public /* synthetic */ lw0(mw0 mw0Var, int i10) {
+        this.a = i10;
+        this.b = mw0Var;
     }
 
-    @Override // org.telegram.ui.Cells.t1
-    public final void Y1(Canvas canvas) {
-        switch (this.Ge) {
+    @Override // org.telegram.ui.ActionBar.a2
+    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        switch (this.a) {
             case 0:
-                this.i6 = 0;
-                this.j6 = this.Y5.size() - 1;
-                super.Y1(canvas);
+                this.b.Y();
                 break;
             default:
-                this.i6 = 0;
-                this.j6 = this.Y5.size() - 1;
-                super.Y1(canvas);
+                this.b.finishFragment();
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Cells.t1, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        switch (this.Ge) {
-            case 0:
-                setMeasuredDimension(this.He, this.Ie);
-                break;
-            default:
-                setMeasuredDimension(this.He, this.Ie);
-                break;
+    @Override // org.telegram.messenger.Utilities.Callback5
+    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        View view = (View) obj2;
+        ((Integer) obj3).intValue();
+        ((Float) obj4).floatValue();
+        ((Float) obj5).floatValue();
+        mw0 mw0Var = this.b;
+        mw0Var.getClass();
+        if (((org.telegram.ui.Components.h51) obj).d == 1) {
+            org.telegram.ui.Cells.x8 x8Var = (org.telegram.ui.Cells.x8) view;
+            boolean z10 = !x8Var.e.h;
+            mw0Var.r = z10;
+            x8Var.setChecked(z10);
+            mw0Var.d.Y2.N(true);
+            mw0Var.V(true);
         }
-    }
-
-    @Override // org.telegram.ui.Cells.t1, android.view.View
-    public final void setPressed(boolean z10) {
-        int i10 = this.Ge;
-    }
-
-    private final void A4(boolean z10) {
-    }
-
-    private final void B4(boolean z10) {
     }
 }

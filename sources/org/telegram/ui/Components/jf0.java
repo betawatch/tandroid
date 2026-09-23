@@ -31,9 +31,9 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.ui.BubbleActivity;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class jf0 extends FrameLayout implements yz, ci.kc {
+public final class jf0 extends FrameLayout implements zz, ci.hc {
     public final ImageView A0;
     public final ImageView B0;
     public final Bitmap C0;
@@ -47,7 +47,7 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
     public float H;
     public final int H0;
     public float I;
-    public final org.telegram.ui.ActionBar.e6 I0;
+    public final org.telegram.ui.ActionBar.d6 I0;
     public float J;
     public int J0;
     public float K;
@@ -82,8 +82,8 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
     public final TextureView i0;
     public final boolean j0;
     public final boolean k0;
-    public vz l0;
-    public final yh m0;
+    public wz l0;
+    public final zh m0;
     public final int n;
     public final FrameLayout n0;
     public final ye0 o0;
@@ -110,14 +110,14 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public jf0(Context context, u61 u61Var, Bitmap bitmap, Bitmap bitmap2, int i10, MediaController.SavedFilterState savedFilterState, fd0 fd0Var, int i11, boolean z10, boolean z11, ha haVar, org.telegram.ui.ActionBar.e6 e6Var) {
+    public jf0(Context context, t61 t61Var, Bitmap bitmap, Bitmap bitmap2, int i10, MediaController.SavedFilterState savedFilterState, fd0 fd0Var, int i11, boolean z10, boolean z11, ja jaVar, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context);
         this.u0 = new RadioButton[4];
         this.E0 = new Rect();
         this.F0 = new Matrix();
         this.G0 = new Paint(2);
         this.k0 = z11;
-        this.I0 = e6Var;
+        this.I0 = d6Var;
         boolean z12 = context instanceof BubbleActivity;
         this.x0 = z12;
         this.v0 = fd0Var;
@@ -145,7 +145,7 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
             this.F = i12 + 10;
             this.n = i13;
         }
-        if (u61Var == null) {
+        if (t61Var == null) {
             int i14 = this.F;
             this.F = i14 + 1;
             this.w = i14;
@@ -191,9 +191,9 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
         this.C0 = bitmap;
         this.D0 = bitmap2;
         this.H0 = i10;
-        if (u61Var != null) {
-            this.i0 = u61Var;
-            u61Var.setDelegate(new bf0(this));
+        if (t61Var != null) {
+            this.i0 = t61Var;
+            t61Var.setDelegate(new bf0(this));
         } else {
             this.j0 = true;
             df0 df0Var = new df0(this, context);
@@ -202,7 +202,7 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                 addView(df0Var, w7.x5.e(-1, -1, 51));
             }
             df0Var.setVisibility(4);
-            df0Var.setSurfaceTextureListener(new ef0(this, z11, haVar));
+            df0Var.setSurfaceTextureListener(new ef0(this, z11, jaVar));
         }
         ye0 ye0Var = new ye0(context);
         ye0Var.a = new PointF();
@@ -234,7 +234,7 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
         af0 af0Var = new af0(context);
         af0Var.a = 0;
         af0Var.c = true;
-        af0Var.e = new hk0();
+        af0Var.e = new ik0();
         Paint paint3 = new Paint(1);
         af0Var.f = paint3;
         Paint paint4 = new Paint(1);
@@ -274,17 +274,17 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
         textView.setTextSize(1, 14.0f);
         textView.setTextColor(-1);
         textView.setGravity(17);
-        textView.setBackgroundDrawable(org.telegram.ui.ActionBar.i6.f0(-12763843, 0, -1));
+        textView.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.f0(-12763843, 0, -1));
         textView.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), 0);
         textView.setText(LocaleController.getString(R.string.Cancel).toUpperCase());
         textView.setTypeface(AndroidUtilities.bold());
         TextView f7 = org.telegram.ui.Cells.q3.f(frameLayout2, textView, w7.x5.e(-2, -1, 51), context);
         this.g0 = f7;
         f7.setTextSize(1, 14.0f);
-        int i16 = org.telegram.ui.ActionBar.i6.zf;
-        f7.setTextColor(org.telegram.ui.ActionBar.i6.v0(i16, e6Var));
+        int i16 = org.telegram.ui.ActionBar.h6.zf;
+        f7.setTextColor(org.telegram.ui.ActionBar.h6.v0(i16, d6Var));
         f7.setGravity(17);
-        f7.setBackgroundDrawable(org.telegram.ui.ActionBar.i6.f0(-12763843, 0, -1));
+        f7.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.f0(-12763843, 0, -1));
         f7.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), 0);
         f7.setText(LocaleController.getString(R.string.Done).toUpperCase());
         f7.setTypeface(AndroidUtilities.bold());
@@ -296,8 +296,8 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
         imageView.setImageResource(R.drawable.msg_photo_settings);
-        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.v0(i16, e6Var), PorterDuff.Mode.MULTIPLY));
-        imageView.setBackgroundDrawable(org.telegram.ui.ActionBar.i6.f0(1090519039, 1, -1));
+        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(i16, d6Var), PorterDuff.Mode.MULTIPLY));
+        imageView.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.f0(1090519039, 1, -1));
         linearLayout.addView(imageView, w7.x5.n(56, 48));
         final int i17 = 0;
         imageView.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.cf0
@@ -313,7 +313,7 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                     case 0:
                         jf0 jf0Var = this.b;
                         jf0Var.y0 = 0;
-                        jf0Var.z0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.zf, jf0Var.I0), PorterDuff.Mode.MULTIPLY));
+                        jf0Var.z0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.zf, jf0Var.I0), PorterDuff.Mode.MULTIPLY));
                         jf0Var.A0.setColorFilter((ColorFilter) null);
                         jf0Var.B0.setColorFilter((ColorFilter) null);
                         jf0Var.f();
@@ -322,7 +322,7 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                         jf0 jf0Var2 = this.b;
                         jf0Var2.y0 = 1;
                         jf0Var2.z0.setColorFilter((ColorFilter) null);
-                        jf0Var2.A0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.zf, jf0Var2.I0), PorterDuff.Mode.MULTIPLY));
+                        jf0Var2.A0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.zf, jf0Var2.I0), PorterDuff.Mode.MULTIPLY));
                         jf0Var2.B0.setColorFilter((ColorFilter) null);
                         jf0Var2.f();
                         break;
@@ -331,7 +331,7 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                         jf0Var3.y0 = 2;
                         jf0Var3.z0.setColorFilter((ColorFilter) null);
                         jf0Var3.A0.setColorFilter((ColorFilter) null);
-                        jf0Var3.B0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.zf, jf0Var3.I0), PorterDuff.Mode.MULTIPLY));
+                        jf0Var3.B0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.zf, jf0Var3.I0), PorterDuff.Mode.MULTIPLY));
                         jf0Var3.f();
                         break;
                     case 3:
@@ -351,9 +351,9 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                         jf0Var5.T = 0;
                         jf0Var5.h();
                         jf0Var5.o0.setVisibility(4);
-                        vz vzVar = jf0Var5.l0;
-                        if (vzVar != null) {
-                            vzVar.e(false, false, false);
+                        wz wzVar = jf0Var5.l0;
+                        if (wzVar != null) {
+                            wzVar.e(false, false, false);
                             break;
                         }
                         break;
@@ -364,9 +364,9 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                         ye0 ye0Var2 = jf0Var6.o0;
                         ye0Var2.setVisibility(0);
                         ye0Var2.setType(1);
-                        vz vzVar2 = jf0Var6.l0;
-                        if (vzVar2 != null) {
-                            vzVar2.e(false, false, false);
+                        wz wzVar2 = jf0Var6.l0;
+                        if (wzVar2 != null) {
+                            wzVar2.e(false, false, false);
                             break;
                         }
                         break;
@@ -377,9 +377,9 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                         ye0 ye0Var3 = jf0Var7.o0;
                         ye0Var3.setVisibility(0);
                         ye0Var3.setType(0);
-                        vz vzVar3 = jf0Var7.l0;
-                        if (vzVar3 != null) {
-                            vzVar3.e(false, false, false);
+                        wz wzVar3 = jf0Var7.l0;
+                        if (wzVar3 != null) {
+                            wzVar3.e(false, false, false);
                             break;
                         }
                         break;
@@ -390,7 +390,7 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
         this.A0 = imageView2;
         imageView2.setScaleType(scaleType);
         imageView2.setImageResource(R.drawable.msg_photo_blur);
-        imageView2.setBackgroundDrawable(org.telegram.ui.ActionBar.i6.f0(1090519039, 1, -1));
+        imageView2.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.f0(1090519039, 1, -1));
         linearLayout.addView(imageView2, w7.x5.n(56, 48));
         final int i18 = 1;
         imageView2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.cf0
@@ -406,7 +406,7 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                     case 0:
                         jf0 jf0Var = this.b;
                         jf0Var.y0 = 0;
-                        jf0Var.z0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.zf, jf0Var.I0), PorterDuff.Mode.MULTIPLY));
+                        jf0Var.z0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.zf, jf0Var.I0), PorterDuff.Mode.MULTIPLY));
                         jf0Var.A0.setColorFilter((ColorFilter) null);
                         jf0Var.B0.setColorFilter((ColorFilter) null);
                         jf0Var.f();
@@ -415,7 +415,7 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                         jf0 jf0Var2 = this.b;
                         jf0Var2.y0 = 1;
                         jf0Var2.z0.setColorFilter((ColorFilter) null);
-                        jf0Var2.A0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.zf, jf0Var2.I0), PorterDuff.Mode.MULTIPLY));
+                        jf0Var2.A0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.zf, jf0Var2.I0), PorterDuff.Mode.MULTIPLY));
                         jf0Var2.B0.setColorFilter((ColorFilter) null);
                         jf0Var2.f();
                         break;
@@ -424,7 +424,7 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                         jf0Var3.y0 = 2;
                         jf0Var3.z0.setColorFilter((ColorFilter) null);
                         jf0Var3.A0.setColorFilter((ColorFilter) null);
-                        jf0Var3.B0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.zf, jf0Var3.I0), PorterDuff.Mode.MULTIPLY));
+                        jf0Var3.B0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.zf, jf0Var3.I0), PorterDuff.Mode.MULTIPLY));
                         jf0Var3.f();
                         break;
                     case 3:
@@ -444,9 +444,9 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                         jf0Var5.T = 0;
                         jf0Var5.h();
                         jf0Var5.o0.setVisibility(4);
-                        vz vzVar = jf0Var5.l0;
-                        if (vzVar != null) {
-                            vzVar.e(false, false, false);
+                        wz wzVar = jf0Var5.l0;
+                        if (wzVar != null) {
+                            wzVar.e(false, false, false);
                             break;
                         }
                         break;
@@ -457,9 +457,9 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                         ye0 ye0Var2 = jf0Var6.o0;
                         ye0Var2.setVisibility(0);
                         ye0Var2.setType(1);
-                        vz vzVar2 = jf0Var6.l0;
-                        if (vzVar2 != null) {
-                            vzVar2.e(false, false, false);
+                        wz wzVar2 = jf0Var6.l0;
+                        if (wzVar2 != null) {
+                            wzVar2.e(false, false, false);
                             break;
                         }
                         break;
@@ -470,23 +470,23 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                         ye0 ye0Var3 = jf0Var7.o0;
                         ye0Var3.setVisibility(0);
                         ye0Var3.setType(0);
-                        vz vzVar3 = jf0Var7.l0;
-                        if (vzVar3 != null) {
-                            vzVar3.e(false, false, false);
+                        wz wzVar3 = jf0Var7.l0;
+                        if (wzVar3 != null) {
+                            wzVar3.e(false, false, false);
                             break;
                         }
                         break;
                 }
             }
         });
-        if (u61Var != null) {
+        if (t61Var != null) {
             imageView2.setVisibility(8);
         }
         ImageView imageView3 = new ImageView(context);
         this.B0 = imageView3;
         imageView3.setScaleType(scaleType);
         imageView3.setImageResource(R.drawable.msg_photo_curve);
-        imageView3.setBackgroundDrawable(org.telegram.ui.ActionBar.i6.f0(1090519039, 1, -1));
+        imageView3.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.f0(1090519039, 1, -1));
         linearLayout.addView(imageView3, w7.x5.n(56, 48));
         final int i19 = 2;
         imageView3.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.cf0
@@ -502,7 +502,7 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                     case 0:
                         jf0 jf0Var = this.b;
                         jf0Var.y0 = 0;
-                        jf0Var.z0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.zf, jf0Var.I0), PorterDuff.Mode.MULTIPLY));
+                        jf0Var.z0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.zf, jf0Var.I0), PorterDuff.Mode.MULTIPLY));
                         jf0Var.A0.setColorFilter((ColorFilter) null);
                         jf0Var.B0.setColorFilter((ColorFilter) null);
                         jf0Var.f();
@@ -511,7 +511,7 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                         jf0 jf0Var2 = this.b;
                         jf0Var2.y0 = 1;
                         jf0Var2.z0.setColorFilter((ColorFilter) null);
-                        jf0Var2.A0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.zf, jf0Var2.I0), PorterDuff.Mode.MULTIPLY));
+                        jf0Var2.A0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.zf, jf0Var2.I0), PorterDuff.Mode.MULTIPLY));
                         jf0Var2.B0.setColorFilter((ColorFilter) null);
                         jf0Var2.f();
                         break;
@@ -520,7 +520,7 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                         jf0Var3.y0 = 2;
                         jf0Var3.z0.setColorFilter((ColorFilter) null);
                         jf0Var3.A0.setColorFilter((ColorFilter) null);
-                        jf0Var3.B0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.zf, jf0Var3.I0), PorterDuff.Mode.MULTIPLY));
+                        jf0Var3.B0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.zf, jf0Var3.I0), PorterDuff.Mode.MULTIPLY));
                         jf0Var3.f();
                         break;
                     case 3:
@@ -540,9 +540,9 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                         jf0Var5.T = 0;
                         jf0Var5.h();
                         jf0Var5.o0.setVisibility(4);
-                        vz vzVar = jf0Var5.l0;
-                        if (vzVar != null) {
-                            vzVar.e(false, false, false);
+                        wz wzVar = jf0Var5.l0;
+                        if (wzVar != null) {
+                            wzVar.e(false, false, false);
                             break;
                         }
                         break;
@@ -553,9 +553,9 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                         ye0 ye0Var2 = jf0Var6.o0;
                         ye0Var2.setVisibility(0);
                         ye0Var2.setType(1);
-                        vz vzVar2 = jf0Var6.l0;
-                        if (vzVar2 != null) {
-                            vzVar2.e(false, false, false);
+                        wz wzVar2 = jf0Var6.l0;
+                        if (wzVar2 != null) {
+                            wzVar2.e(false, false, false);
                             break;
                         }
                         break;
@@ -566,24 +566,24 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                         ye0 ye0Var3 = jf0Var7.o0;
                         ye0Var3.setVisibility(0);
                         ye0Var3.setType(0);
-                        vz vzVar3 = jf0Var7.l0;
-                        if (vzVar3 != null) {
-                            vzVar3.e(false, false, false);
+                        wz wzVar3 = jf0Var7.l0;
+                        if (wzVar3 != null) {
+                            wzVar3.e(false, false, false);
                             break;
                         }
                         break;
                 }
             }
         });
-        yh yhVar = new yh(context, 1);
-        this.m0 = yhVar;
+        zh zhVar = new zh(context, 1);
+        this.m0 = zhVar;
         s4.c0 c0Var = new s4.c0();
         c0Var.j1(1);
-        yhVar.setLayoutManager(c0Var);
-        yhVar.setClipToPadding(false);
-        yhVar.setOverScrollMode(2);
-        yhVar.setAdapter(new if0(this, context));
-        frameLayout.addView(yhVar, w7.x5.e(-1, (!z11 ? 60 : 0) + 120, 51));
+        zhVar.setLayoutManager(c0Var);
+        zhVar.setClipToPadding(false);
+        zhVar.setOverScrollMode(2);
+        zhVar.setAdapter(new if0(this, context));
+        frameLayout.addView(zhVar, w7.x5.e(-1, (!z11 ? 60 : 0) + 120, 51));
         FrameLayout frameLayout3 = new FrameLayout(context);
         this.t0 = frameLayout3;
         frameLayout3.setVisibility(4);
@@ -632,7 +632,7 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                             case 0:
                                 jf0 jf0Var = this.b;
                                 jf0Var.y0 = 0;
-                                jf0Var.z0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.zf, jf0Var.I0), PorterDuff.Mode.MULTIPLY));
+                                jf0Var.z0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.zf, jf0Var.I0), PorterDuff.Mode.MULTIPLY));
                                 jf0Var.A0.setColorFilter((ColorFilter) null);
                                 jf0Var.B0.setColorFilter((ColorFilter) null);
                                 jf0Var.f();
@@ -641,7 +641,7 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                                 jf0 jf0Var2 = this.b;
                                 jf0Var2.y0 = 1;
                                 jf0Var2.z0.setColorFilter((ColorFilter) null);
-                                jf0Var2.A0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.zf, jf0Var2.I0), PorterDuff.Mode.MULTIPLY));
+                                jf0Var2.A0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.zf, jf0Var2.I0), PorterDuff.Mode.MULTIPLY));
                                 jf0Var2.B0.setColorFilter((ColorFilter) null);
                                 jf0Var2.f();
                                 break;
@@ -650,7 +650,7 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                                 jf0Var3.y0 = 2;
                                 jf0Var3.z0.setColorFilter((ColorFilter) null);
                                 jf0Var3.A0.setColorFilter((ColorFilter) null);
-                                jf0Var3.B0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.zf, jf0Var3.I0), PorterDuff.Mode.MULTIPLY));
+                                jf0Var3.B0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.zf, jf0Var3.I0), PorterDuff.Mode.MULTIPLY));
                                 jf0Var3.f();
                                 break;
                             case 3:
@@ -670,9 +670,9 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                                 jf0Var5.T = 0;
                                 jf0Var5.h();
                                 jf0Var5.o0.setVisibility(4);
-                                vz vzVar = jf0Var5.l0;
-                                if (vzVar != null) {
-                                    vzVar.e(false, false, false);
+                                wz wzVar = jf0Var5.l0;
+                                if (wzVar != null) {
+                                    wzVar.e(false, false, false);
                                     break;
                                 }
                                 break;
@@ -683,9 +683,9 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                                 ye0 ye0Var2 = jf0Var6.o0;
                                 ye0Var2.setVisibility(0);
                                 ye0Var2.setType(1);
-                                vz vzVar2 = jf0Var6.l0;
-                                if (vzVar2 != null) {
-                                    vzVar2.e(false, false, false);
+                                wz wzVar2 = jf0Var6.l0;
+                                if (wzVar2 != null) {
+                                    wzVar2.e(false, false, false);
                                     break;
                                 }
                                 break;
@@ -696,9 +696,9 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                                 ye0 ye0Var3 = jf0Var7.o0;
                                 ye0Var3.setVisibility(0);
                                 ye0Var3.setType(0);
-                                vz vzVar3 = jf0Var7.l0;
-                                if (vzVar3 != null) {
-                                    vzVar3.e(false, false, false);
+                                wz wzVar3 = jf0Var7.l0;
+                                if (wzVar3 != null) {
+                                    wzVar3.e(false, false, false);
                                     break;
                                 }
                                 break;
@@ -729,7 +729,7 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                             case 0:
                                 jf0 jf0Var = this.b;
                                 jf0Var.y0 = 0;
-                                jf0Var.z0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.zf, jf0Var.I0), PorterDuff.Mode.MULTIPLY));
+                                jf0Var.z0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.zf, jf0Var.I0), PorterDuff.Mode.MULTIPLY));
                                 jf0Var.A0.setColorFilter((ColorFilter) null);
                                 jf0Var.B0.setColorFilter((ColorFilter) null);
                                 jf0Var.f();
@@ -738,7 +738,7 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                                 jf0 jf0Var2 = this.b;
                                 jf0Var2.y0 = 1;
                                 jf0Var2.z0.setColorFilter((ColorFilter) null);
-                                jf0Var2.A0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.zf, jf0Var2.I0), PorterDuff.Mode.MULTIPLY));
+                                jf0Var2.A0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.zf, jf0Var2.I0), PorterDuff.Mode.MULTIPLY));
                                 jf0Var2.B0.setColorFilter((ColorFilter) null);
                                 jf0Var2.f();
                                 break;
@@ -747,7 +747,7 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                                 jf0Var3.y0 = 2;
                                 jf0Var3.z0.setColorFilter((ColorFilter) null);
                                 jf0Var3.A0.setColorFilter((ColorFilter) null);
-                                jf0Var3.B0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.zf, jf0Var3.I0), PorterDuff.Mode.MULTIPLY));
+                                jf0Var3.B0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.zf, jf0Var3.I0), PorterDuff.Mode.MULTIPLY));
                                 jf0Var3.f();
                                 break;
                             case 3:
@@ -767,9 +767,9 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                                 jf0Var5.T = 0;
                                 jf0Var5.h();
                                 jf0Var5.o0.setVisibility(4);
-                                vz vzVar = jf0Var5.l0;
-                                if (vzVar != null) {
-                                    vzVar.e(false, false, false);
+                                wz wzVar = jf0Var5.l0;
+                                if (wzVar != null) {
+                                    wzVar.e(false, false, false);
                                     break;
                                 }
                                 break;
@@ -780,9 +780,9 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                                 ye0 ye0Var2 = jf0Var6.o0;
                                 ye0Var2.setVisibility(0);
                                 ye0Var2.setType(1);
-                                vz vzVar2 = jf0Var6.l0;
-                                if (vzVar2 != null) {
-                                    vzVar2.e(false, false, false);
+                                wz wzVar2 = jf0Var6.l0;
+                                if (wzVar2 != null) {
+                                    wzVar2.e(false, false, false);
                                     break;
                                 }
                                 break;
@@ -793,9 +793,9 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                                 ye0 ye0Var3 = jf0Var7.o0;
                                 ye0Var3.setVisibility(0);
                                 ye0Var3.setType(0);
-                                vz vzVar3 = jf0Var7.l0;
-                                if (vzVar3 != null) {
-                                    vzVar3.e(false, false, false);
+                                wz wzVar3 = jf0Var7.l0;
+                                if (wzVar3 != null) {
+                                    wzVar3.e(false, false, false);
                                     break;
                                 }
                                 break;
@@ -820,7 +820,7 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                         case 0:
                             jf0 jf0Var = this.b;
                             jf0Var.y0 = 0;
-                            jf0Var.z0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.zf, jf0Var.I0), PorterDuff.Mode.MULTIPLY));
+                            jf0Var.z0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.zf, jf0Var.I0), PorterDuff.Mode.MULTIPLY));
                             jf0Var.A0.setColorFilter((ColorFilter) null);
                             jf0Var.B0.setColorFilter((ColorFilter) null);
                             jf0Var.f();
@@ -829,7 +829,7 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                             jf0 jf0Var2 = this.b;
                             jf0Var2.y0 = 1;
                             jf0Var2.z0.setColorFilter((ColorFilter) null);
-                            jf0Var2.A0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.zf, jf0Var2.I0), PorterDuff.Mode.MULTIPLY));
+                            jf0Var2.A0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.zf, jf0Var2.I0), PorterDuff.Mode.MULTIPLY));
                             jf0Var2.B0.setColorFilter((ColorFilter) null);
                             jf0Var2.f();
                             break;
@@ -838,7 +838,7 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                             jf0Var3.y0 = 2;
                             jf0Var3.z0.setColorFilter((ColorFilter) null);
                             jf0Var3.A0.setColorFilter((ColorFilter) null);
-                            jf0Var3.B0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.zf, jf0Var3.I0), PorterDuff.Mode.MULTIPLY));
+                            jf0Var3.B0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.zf, jf0Var3.I0), PorterDuff.Mode.MULTIPLY));
                             jf0Var3.f();
                             break;
                         case 3:
@@ -858,9 +858,9 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                             jf0Var5.T = 0;
                             jf0Var5.h();
                             jf0Var5.o0.setVisibility(4);
-                            vz vzVar = jf0Var5.l0;
-                            if (vzVar != null) {
-                                vzVar.e(false, false, false);
+                            wz wzVar = jf0Var5.l0;
+                            if (wzVar != null) {
+                                wzVar.e(false, false, false);
                                 break;
                             }
                             break;
@@ -871,9 +871,9 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                             ye0 ye0Var2 = jf0Var6.o0;
                             ye0Var2.setVisibility(0);
                             ye0Var2.setType(1);
-                            vz vzVar2 = jf0Var6.l0;
-                            if (vzVar2 != null) {
-                                vzVar2.e(false, false, false);
+                            wz wzVar2 = jf0Var6.l0;
+                            if (wzVar2 != null) {
+                                wzVar2.e(false, false, false);
                                 break;
                             }
                             break;
@@ -884,9 +884,9 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                             ye0 ye0Var3 = jf0Var7.o0;
                             ye0Var3.setVisibility(0);
                             ye0Var3.setType(0);
-                            vz vzVar3 = jf0Var7.l0;
-                            if (vzVar3 != null) {
-                                vzVar3.e(false, false, false);
+                            wz wzVar3 = jf0Var7.l0;
+                            if (wzVar3 != null) {
+                                wzVar3.e(false, false, false);
                                 break;
                             }
                             break;
@@ -920,7 +920,7 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                     case 0:
                         jf0 jf0Var = this.b;
                         jf0Var.y0 = 0;
-                        jf0Var.z0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.zf, jf0Var.I0), PorterDuff.Mode.MULTIPLY));
+                        jf0Var.z0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.zf, jf0Var.I0), PorterDuff.Mode.MULTIPLY));
                         jf0Var.A0.setColorFilter((ColorFilter) null);
                         jf0Var.B0.setColorFilter((ColorFilter) null);
                         jf0Var.f();
@@ -929,7 +929,7 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                         jf0 jf0Var2 = this.b;
                         jf0Var2.y0 = 1;
                         jf0Var2.z0.setColorFilter((ColorFilter) null);
-                        jf0Var2.A0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.zf, jf0Var2.I0), PorterDuff.Mode.MULTIPLY));
+                        jf0Var2.A0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.zf, jf0Var2.I0), PorterDuff.Mode.MULTIPLY));
                         jf0Var2.B0.setColorFilter((ColorFilter) null);
                         jf0Var2.f();
                         break;
@@ -938,7 +938,7 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                         jf0Var3.y0 = 2;
                         jf0Var3.z0.setColorFilter((ColorFilter) null);
                         jf0Var3.A0.setColorFilter((ColorFilter) null);
-                        jf0Var3.B0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.zf, jf0Var3.I0), PorterDuff.Mode.MULTIPLY));
+                        jf0Var3.B0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.zf, jf0Var3.I0), PorterDuff.Mode.MULTIPLY));
                         jf0Var3.f();
                         break;
                     case 3:
@@ -958,9 +958,9 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                         jf0Var5.T = 0;
                         jf0Var5.h();
                         jf0Var5.o0.setVisibility(4);
-                        vz vzVar = jf0Var5.l0;
-                        if (vzVar != null) {
-                            vzVar.e(false, false, false);
+                        wz wzVar = jf0Var5.l0;
+                        if (wzVar != null) {
+                            wzVar.e(false, false, false);
                             break;
                         }
                         break;
@@ -971,9 +971,9 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                         ye0 ye0Var2 = jf0Var6.o0;
                         ye0Var2.setVisibility(0);
                         ye0Var2.setType(1);
-                        vz vzVar2 = jf0Var6.l0;
-                        if (vzVar2 != null) {
-                            vzVar2.e(false, false, false);
+                        wz wzVar2 = jf0Var6.l0;
+                        if (wzVar2 != null) {
+                            wzVar2.e(false, false, false);
                             break;
                         }
                         break;
@@ -984,9 +984,9 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                         ye0 ye0Var3 = jf0Var7.o0;
                         ye0Var3.setVisibility(0);
                         ye0Var3.setType(0);
-                        vz vzVar3 = jf0Var7.l0;
-                        if (vzVar3 != null) {
-                            vzVar3.e(false, false, false);
+                        wz wzVar3 = jf0Var7.l0;
+                        if (wzVar3 != null) {
+                            wzVar3.e(false, false, false);
                             break;
                         }
                         break;
@@ -1014,7 +1014,7 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                     case 0:
                         jf0 jf0Var = this.b;
                         jf0Var.y0 = 0;
-                        jf0Var.z0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.zf, jf0Var.I0), PorterDuff.Mode.MULTIPLY));
+                        jf0Var.z0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.zf, jf0Var.I0), PorterDuff.Mode.MULTIPLY));
                         jf0Var.A0.setColorFilter((ColorFilter) null);
                         jf0Var.B0.setColorFilter((ColorFilter) null);
                         jf0Var.f();
@@ -1023,7 +1023,7 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                         jf0 jf0Var2 = this.b;
                         jf0Var2.y0 = 1;
                         jf0Var2.z0.setColorFilter((ColorFilter) null);
-                        jf0Var2.A0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.zf, jf0Var2.I0), PorterDuff.Mode.MULTIPLY));
+                        jf0Var2.A0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.zf, jf0Var2.I0), PorterDuff.Mode.MULTIPLY));
                         jf0Var2.B0.setColorFilter((ColorFilter) null);
                         jf0Var2.f();
                         break;
@@ -1032,7 +1032,7 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                         jf0Var3.y0 = 2;
                         jf0Var3.z0.setColorFilter((ColorFilter) null);
                         jf0Var3.A0.setColorFilter((ColorFilter) null);
-                        jf0Var3.B0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.zf, jf0Var3.I0), PorterDuff.Mode.MULTIPLY));
+                        jf0Var3.B0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.zf, jf0Var3.I0), PorterDuff.Mode.MULTIPLY));
                         jf0Var3.f();
                         break;
                     case 3:
@@ -1052,9 +1052,9 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                         jf0Var5.T = 0;
                         jf0Var5.h();
                         jf0Var5.o0.setVisibility(4);
-                        vz vzVar = jf0Var5.l0;
-                        if (vzVar != null) {
-                            vzVar.e(false, false, false);
+                        wz wzVar = jf0Var5.l0;
+                        if (wzVar != null) {
+                            wzVar.e(false, false, false);
                             break;
                         }
                         break;
@@ -1065,9 +1065,9 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                         ye0 ye0Var2 = jf0Var6.o0;
                         ye0Var2.setVisibility(0);
                         ye0Var2.setType(1);
-                        vz vzVar2 = jf0Var6.l0;
-                        if (vzVar2 != null) {
-                            vzVar2.e(false, false, false);
+                        wz wzVar2 = jf0Var6.l0;
+                        if (wzVar2 != null) {
+                            wzVar2.e(false, false, false);
                             break;
                         }
                         break;
@@ -1078,9 +1078,9 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                         ye0 ye0Var3 = jf0Var7.o0;
                         ye0Var3.setVisibility(0);
                         ye0Var3.setType(0);
-                        vz vzVar3 = jf0Var7.l0;
-                        if (vzVar3 != null) {
-                            vzVar3.e(false, false, false);
+                        wz wzVar3 = jf0Var7.l0;
+                        if (wzVar3 != null) {
+                            wzVar3.e(false, false, false);
                             break;
                         }
                         break;
@@ -1108,7 +1108,7 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                     case 0:
                         jf0 jf0Var = this.b;
                         jf0Var.y0 = 0;
-                        jf0Var.z0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.zf, jf0Var.I0), PorterDuff.Mode.MULTIPLY));
+                        jf0Var.z0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.zf, jf0Var.I0), PorterDuff.Mode.MULTIPLY));
                         jf0Var.A0.setColorFilter((ColorFilter) null);
                         jf0Var.B0.setColorFilter((ColorFilter) null);
                         jf0Var.f();
@@ -1117,7 +1117,7 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                         jf0 jf0Var2 = this.b;
                         jf0Var2.y0 = 1;
                         jf0Var2.z0.setColorFilter((ColorFilter) null);
-                        jf0Var2.A0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.zf, jf0Var2.I0), PorterDuff.Mode.MULTIPLY));
+                        jf0Var2.A0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.zf, jf0Var2.I0), PorterDuff.Mode.MULTIPLY));
                         jf0Var2.B0.setColorFilter((ColorFilter) null);
                         jf0Var2.f();
                         break;
@@ -1126,7 +1126,7 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                         jf0Var3.y0 = 2;
                         jf0Var3.z0.setColorFilter((ColorFilter) null);
                         jf0Var3.A0.setColorFilter((ColorFilter) null);
-                        jf0Var3.B0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.zf, jf0Var3.I0), PorterDuff.Mode.MULTIPLY));
+                        jf0Var3.B0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.zf, jf0Var3.I0), PorterDuff.Mode.MULTIPLY));
                         jf0Var3.f();
                         break;
                     case 3:
@@ -1146,9 +1146,9 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                         jf0Var5.T = 0;
                         jf0Var5.h();
                         jf0Var5.o0.setVisibility(4);
-                        vz vzVar = jf0Var5.l0;
-                        if (vzVar != null) {
-                            vzVar.e(false, false, false);
+                        wz wzVar = jf0Var5.l0;
+                        if (wzVar != null) {
+                            wzVar.e(false, false, false);
                             break;
                         }
                         break;
@@ -1159,9 +1159,9 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                         ye0 ye0Var2 = jf0Var6.o0;
                         ye0Var2.setVisibility(0);
                         ye0Var2.setType(1);
-                        vz vzVar2 = jf0Var6.l0;
-                        if (vzVar2 != null) {
-                            vzVar2.e(false, false, false);
+                        wz wzVar2 = jf0Var6.l0;
+                        if (wzVar2 != null) {
+                            wzVar2.e(false, false, false);
                             break;
                         }
                         break;
@@ -1172,9 +1172,9 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
                         ye0 ye0Var3 = jf0Var7.o0;
                         ye0Var3.setVisibility(0);
                         ye0Var3.setType(0);
-                        vz vzVar3 = jf0Var7.l0;
-                        if (vzVar3 != null) {
-                            vzVar3.e(false, false, false);
+                        wz wzVar3 = jf0Var7.l0;
+                        if (wzVar3 != null) {
+                            wzVar3.e(false, false, false);
                             break;
                         }
                         break;
@@ -1196,25 +1196,25 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
             return;
         }
         this.a = z10;
-        vz vzVar = this.l0;
-        if (vzVar != null) {
-            vzVar.e(false, false, false);
+        wz wzVar = this.l0;
+        if (wzVar != null) {
+            wzVar.e(false, false, false);
         }
     }
 
-    @Override // org.telegram.ui.Components.yz
+    @Override // org.telegram.ui.Components.zz
     public final ByteBuffer a() {
         ff0 ff0Var = this.W;
         ff0Var.a();
         return ff0Var.e;
     }
 
-    @Override // org.telegram.ui.Components.yz
+    @Override // org.telegram.ui.Components.zz
     public final boolean b() {
         return this.a || this.V;
     }
 
-    @Override // org.telegram.ui.Components.yz
+    @Override // org.telegram.ui.Components.zz
     public final boolean c() {
         return !this.W.b();
     }
@@ -1265,31 +1265,31 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
         boolean z10 = this.j0;
         TextureView textureView = this.i0;
         if (z10) {
-            vz vzVar = this.l0;
-            if (vzVar != null) {
-                vzVar.postRunnable(new sz(vzVar, 0));
+            wz wzVar = this.l0;
+            if (wzVar != null) {
+                wzVar.postRunnable(new tz(wzVar, 0));
                 this.l0 = null;
             }
             textureView.setVisibility(8);
             return;
         }
-        if (textureView instanceof u61) {
-            u61 u61Var = (u61) textureView;
+        if (textureView instanceof t61) {
+            t61 t61Var = (t61) textureView;
             MediaController.SavedFilterState savedFilterState = this.e0;
             if (savedFilterState == null) {
-                u61Var.setDelegate(null);
+                t61Var.setDelegate(null);
                 return;
             }
-            vz vzVar2 = this.l0;
-            if (vzVar2 != null) {
-                vzVar2.f(new wz(savedFilterState));
+            wz wzVar2 = this.l0;
+            if (wzVar2 != null) {
+                wzVar2.f(new xz(savedFilterState));
             }
         }
     }
 
     public final void f() {
         int i10 = this.y0;
-        yh yhVar = this.m0;
+        zh zhVar = this.m0;
         af0 af0Var = this.p0;
         FrameLayout frameLayout = this.t0;
         FrameLayout frameLayout2 = this.n0;
@@ -1299,11 +1299,11 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
             frameLayout2.setVisibility(4);
             frameLayout.setVisibility(4);
             af0Var.setVisibility(4);
-            yhVar.setVisibility(0);
+            zhVar.setVisibility(0);
             return;
         }
         if (i10 == 1) {
-            yhVar.setVisibility(4);
+            zhVar.setVisibility(4);
             frameLayout.setVisibility(4);
             af0Var.setVisibility(4);
             frameLayout2.setVisibility(0);
@@ -1314,7 +1314,7 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
             return;
         }
         if (i10 == 2) {
-            yhVar.setVisibility(4);
+            zhVar.setVisibility(4);
             frameLayout2.setVisibility(4);
             ye0Var.setVisibility(4);
             frameLayout.setVisibility(0);
@@ -1333,14 +1333,14 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
     }
 
     public Bitmap getBitmap() {
-        vz vzVar = this.l0;
-        if (vzVar == null || !vzVar.f || !vzVar.isAlive()) {
+        wz wzVar = this.l0;
+        if (wzVar == null || !wzVar.f || !wzVar.isAlive()) {
             return null;
         }
         CountDownLatch countDownLatch = new CountDownLatch(1);
         Bitmap[] bitmapArr = new Bitmap[1];
         try {
-            if (vzVar.postRunnable(new org.telegram.ui.ActionBar.p(vzVar, bitmapArr, countDownLatch, 15))) {
+            if (wzVar.postRunnable(new org.telegram.ui.ActionBar.p(wzVar, bitmapArr, countDownLatch, 15))) {
                 countDownLatch.await();
             }
         } catch (Exception e) {
@@ -1349,7 +1349,7 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
         return bitmapArr[0];
     }
 
-    @Override // org.telegram.ui.Components.yz
+    @Override // org.telegram.ui.Components.zz
     public float getBlurAngle() {
         return this.d0;
     }
@@ -1358,22 +1358,22 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
         return this.o0;
     }
 
-    @Override // org.telegram.ui.Components.yz
+    @Override // org.telegram.ui.Components.zz
     public float getBlurExcludeBlurSize() {
         return this.c0;
     }
 
-    @Override // org.telegram.ui.Components.yz
+    @Override // org.telegram.ui.Components.zz
     public PointF getBlurExcludePoint() {
         return this.b0;
     }
 
-    @Override // org.telegram.ui.Components.yz
+    @Override // org.telegram.ui.Components.zz
     public float getBlurExcludeSize() {
         return this.a0;
     }
 
-    @Override // org.telegram.ui.Components.yz
+    @Override // org.telegram.ui.Components.zz
     public int getBlurType() {
         return this.T;
     }
@@ -1382,7 +1382,7 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
         return this.h0;
     }
 
-    @Override // org.telegram.ui.Components.yz
+    @Override // org.telegram.ui.Components.zz
     public float getContrastValue() {
         return a4.a.e(this.I, 100.0f, 0.3f, 1.0f);
     }
@@ -1395,27 +1395,27 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
         return this.g0;
     }
 
-    @Override // org.telegram.ui.Components.yz
+    @Override // org.telegram.ui.Components.zz
     public float getEnhanceValue() {
         return this.G / 100.0f;
     }
 
-    @Override // org.telegram.ui.Components.yz
+    @Override // org.telegram.ui.Components.zz
     public float getExposureValue() {
         return this.H / 100.0f;
     }
 
-    @Override // org.telegram.ui.Components.yz
+    @Override // org.telegram.ui.Components.zz
     public float getFadeValue() {
         return this.L / 100.0f;
     }
 
-    @Override // org.telegram.ui.Components.yz
+    @Override // org.telegram.ui.Components.zz
     public float getGrainValue() {
         return (this.S / 100.0f) * 0.04f;
     }
 
-    @Override // org.telegram.ui.Components.yz
+    @Override // org.telegram.ui.Components.zz
     public float getHighlightsValue() {
         return com.google.android.gms.internal.vision.e2.y(this.P, 0.75f, 100.0f, 100.0f);
     }
@@ -1427,7 +1427,7 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
         return this.i0;
     }
 
-    @Override // org.telegram.ui.Components.yz
+    @Override // org.telegram.ui.Components.zz
     public float getSaturationValue() {
         float f7 = this.K / 100.0f;
         if (f7 > 0.0f) {
@@ -1462,37 +1462,37 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
         return savedFilterState;
     }
 
-    @Override // org.telegram.ui.Components.yz
+    @Override // org.telegram.ui.Components.zz
     public float getShadowsValue() {
         return com.google.android.gms.internal.vision.e2.y(this.Q, 0.55f, 100.0f, 100.0f);
     }
 
-    @Override // org.telegram.ui.Components.yz
+    @Override // org.telegram.ui.Components.zz
     public float getSharpenValue() {
         return a4.a.e(this.U, 100.0f, 0.6f, 0.11f);
     }
 
-    @Override // org.telegram.ui.Components.yz
+    @Override // org.telegram.ui.Components.zz
     public float getSoftenSkinValue() {
         return this.M / 100.0f;
     }
 
-    @Override // org.telegram.ui.Components.yz
+    @Override // org.telegram.ui.Components.zz
     public int getTintHighlightsColor() {
         return this.O;
     }
 
-    @Override // org.telegram.ui.Components.yz
+    @Override // org.telegram.ui.Components.zz
     public float getTintHighlightsIntensityValue() {
         return this.O == 0 ? 0.0f : 0.5f;
     }
 
-    @Override // org.telegram.ui.Components.yz
+    @Override // org.telegram.ui.Components.zz
     public int getTintShadowsColor() {
         return this.N;
     }
 
-    @Override // org.telegram.ui.Components.yz
+    @Override // org.telegram.ui.Components.zz
     public float getTintShadowsIntensityValue() {
         return this.N == 0 ? 0.0f : 0.5f;
     }
@@ -1502,15 +1502,15 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
     }
 
     public Bitmap getUiBlurBitmap() {
-        na naVar;
-        vz vzVar = this.l0;
-        if (vzVar == null || (naVar = vzVar.I) == null) {
+        pa paVar;
+        wz wzVar = this.l0;
+        if (wzVar == null || (paVar = wzVar.I) == null) {
             return null;
         }
-        synchronized (naVar.n) {
+        synchronized (paVar.n) {
             try {
-                if (naVar.q) {
-                    return naVar.p;
+                if (paVar.q) {
+                    return paVar.p;
                 }
                 return null;
             } catch (Throwable th2) {
@@ -1519,12 +1519,12 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
         }
     }
 
-    @Override // org.telegram.ui.Components.yz
+    @Override // org.telegram.ui.Components.zz
     public float getVignetteValue() {
         return this.R / 100.0f;
     }
 
-    @Override // org.telegram.ui.Components.yz
+    @Override // org.telegram.ui.Components.zz
     public float getWarmthValue() {
         return this.J / 100.0f;
     }
@@ -1533,14 +1533,14 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
         int i10 = this.T;
         TextView textView = this.s0;
         TextView textView2 = this.r0;
-        org.telegram.ui.ActionBar.e6 e6Var = this.I0;
+        org.telegram.ui.ActionBar.d6 d6Var = this.I0;
         TextView textView3 = this.q0;
         if (i10 == 0) {
             Drawable mutate = textView3.getContext().getResources().getDrawable(R.drawable.msg_blur_off).mutate();
-            int i11 = org.telegram.ui.ActionBar.i6.zf;
-            mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.v0(i11, e6Var), PorterDuff.Mode.MULTIPLY));
+            int i11 = org.telegram.ui.ActionBar.h6.zf;
+            mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(i11, d6Var), PorterDuff.Mode.MULTIPLY));
             textView3.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, mutate, (Drawable) null, (Drawable) null);
-            textView3.setTextColor(org.telegram.ui.ActionBar.i6.v0(i11, e6Var));
+            textView3.setTextColor(org.telegram.ui.ActionBar.h6.v0(i11, d6Var));
             textView2.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.msg_blur_radial, 0, 0);
             textView2.setTextColor(-1);
             textView.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.msg_blur_linear, 0, 0);
@@ -1549,10 +1549,10 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
             textView3.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.msg_blur_off, 0, 0);
             textView3.setTextColor(-1);
             Drawable mutate2 = textView3.getContext().getResources().getDrawable(R.drawable.msg_blur_radial).mutate();
-            int i12 = org.telegram.ui.ActionBar.i6.zf;
-            mutate2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.v0(i12, e6Var), PorterDuff.Mode.MULTIPLY));
+            int i12 = org.telegram.ui.ActionBar.h6.zf;
+            mutate2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(i12, d6Var), PorterDuff.Mode.MULTIPLY));
             textView2.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, mutate2, (Drawable) null, (Drawable) null);
-            textView2.setTextColor(org.telegram.ui.ActionBar.i6.v0(i12, e6Var));
+            textView2.setTextColor(org.telegram.ui.ActionBar.h6.v0(i12, d6Var));
             textView.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.msg_blur_linear, 0, 0);
             textView.setTextColor(-1);
         } else if (i10 == 2) {
@@ -1561,26 +1561,26 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
             textView2.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.msg_blur_radial, 0, 0);
             textView2.setTextColor(-1);
             Drawable mutate3 = textView3.getContext().getResources().getDrawable(R.drawable.msg_blur_linear).mutate();
-            int i13 = org.telegram.ui.ActionBar.i6.zf;
-            mutate3.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.v0(i13, e6Var), PorterDuff.Mode.MULTIPLY));
+            int i13 = org.telegram.ui.ActionBar.h6.zf;
+            mutate3.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(i13, d6Var), PorterDuff.Mode.MULTIPLY));
             textView.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, mutate3, (Drawable) null, (Drawable) null);
-            textView.setTextColor(org.telegram.ui.ActionBar.i6.v0(i13, e6Var));
+            textView.setTextColor(org.telegram.ui.ActionBar.h6.v0(i13, d6Var));
         }
         g();
     }
 
-    @Override // ci.kc
+    @Override // ci.hc
     public final boolean m(MotionEvent motionEvent) {
         if (motionEvent.getActionMasked() == 0 || motionEvent.getActionMasked() == 5) {
             TextureView textureView = this.i0;
-            if (textureView instanceof u61) {
+            if (textureView instanceof t61) {
                 float x10 = motionEvent.getX();
                 float y3 = motionEvent.getY();
-                hk0 hk0Var = ((u61) textureView).c;
-                float f7 = hk0Var.a;
-                if (x10 >= f7 && x10 <= f7 + hk0Var.c) {
-                    float f10 = hk0Var.b;
-                    if (y3 >= f10 && y3 <= f10 + hk0Var.d) {
+                ik0 ik0Var = ((t61) textureView).c;
+                float f7 = ik0Var.a;
+                if (x10 >= f7 && x10 <= f7 + ik0Var.c) {
+                    float f10 = ik0Var.b;
+                    if (y3 >= f10 && y3 <= f10 + ik0Var.d) {
                         setShowOriginal(true);
                     }
                 }
@@ -1646,11 +1646,11 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
             float f14 = i14;
             float f15 = i15;
             af0 af0Var = this.p0;
-            hk0 hk0Var = af0Var.e;
-            hk0Var.a = f12;
-            hk0Var.b = f13;
-            hk0Var.c = f14;
-            hk0Var.d = f15;
+            ik0 ik0Var = af0Var.e;
+            ik0Var.a = f12;
+            ik0Var.b = f13;
+            ik0Var.c = f14;
+            ik0Var.d = f15;
             ye0 ye0Var = this.o0;
             jv0 jv0Var = ye0Var.d;
             jv0Var.a = f14;
@@ -1677,20 +1677,20 @@ public final class jf0 extends FrameLayout implements yz, ci.kc {
         g();
         int i10 = 0;
         while (true) {
-            yh yhVar = this.m0;
-            if (i10 >= yhVar.getChildCount()) {
+            zh zhVar = this.m0;
+            if (i10 >= zhVar.getChildCount()) {
                 break;
             }
-            View childAt = yhVar.getChildAt(i10);
+            View childAt = zhVar.getChildAt(i10);
             if ((childAt instanceof org.telegram.ui.Cells.v5) && RecyclerView.R(childAt) == this.b) {
                 ((org.telegram.ui.Cells.v5) childAt).a(LocaleController.getString(R.string.Enhance), 0, this.G);
                 break;
             }
             i10++;
         }
-        vz vzVar = this.l0;
-        if (vzVar != null) {
-            vzVar.e(true, false, false);
+        wz wzVar = this.l0;
+        if (wzVar != null) {
+            wzVar.e(true, false, false);
         }
     }
 }

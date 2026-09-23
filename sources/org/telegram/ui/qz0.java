@@ -1,22 +1,109 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class qz0 extends org.telegram.ui.Components.oh0 {
-    public final /* synthetic */ ProfileActivity s1;
+public final class qz0 implements iq {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ TLRPC.ChatParticipant b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ boolean[] d;
+    public final /* synthetic */ ProfileActivity e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qz0(ProfileActivity profileActivity, Context context, long j3, org.telegram.ui.ActionBar.k kVar, gz0 gz0Var, pz0 pz0Var, org.telegram.ui.Components.jh0 jh0Var, org.telegram.ui.Components.fh0 fh0Var) {
-        super(context, j3, kVar, gz0Var, pz0Var, jh0Var, fh0Var);
-        this.s1 = profileActivity;
+    public qz0(ProfileActivity profileActivity, int i10, TLRPC.ChatParticipant chatParticipant, boolean z10, boolean[] zArr) {
+        this.e = profileActivity;
+        this.a = i10;
+        this.b = chatParticipant;
+        this.c = z10;
+        this.d = zArr;
     }
 
-    @Override // org.telegram.ui.Components.oh0
-    public final void setCustomAvatarProgress(float f7) {
-        ProfileActivity profileActivity = this.s1;
-        profileActivity.n5 = f7;
-        profileActivity.B3();
+    @Override // org.telegram.ui.iq
+    public final void a(TLRPC.User user) {
+        ProfileActivity profileActivity = this.e;
+        profileActivity.M.m(-profileActivity.f1, user, profileActivity.E2.megagroup ? 10 : 9);
+    }
+
+    @Override // org.telegram.ui.iq
+    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
+        TLRPC.ChatFull chatFull;
+        boolean z10;
+        int i11 = 0;
+        TLRPC.ChatParticipant chatParticipant = this.b;
+        ProfileActivity profileActivity = this.e;
+        int i12 = this.a;
+        if (i12 == 0) {
+            if (chatParticipant instanceof TLRPC.TL_chatChannelParticipant) {
+                TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant = (TLRPC.TL_chatChannelParticipant) chatParticipant;
+                if (i10 == 1) {
+                    TLRPC.TL_channelParticipantAdmin tL_channelParticipantAdmin = new TLRPC.TL_channelParticipantAdmin();
+                    tL_chatChannelParticipant.channelParticipant = tL_channelParticipantAdmin;
+                    tL_channelParticipantAdmin.flags |= 4;
+                } else {
+                    tL_chatChannelParticipant.channelParticipant = new TLRPC.TL_channelParticipant();
+                }
+                tL_chatChannelParticipant.channelParticipant.inviter_id = profileActivity.getUserConfig().getClientUserId();
+                tL_chatChannelParticipant.channelParticipant.peer = new TLRPC.TL_peerUser();
+                TLRPC.ChannelParticipant channelParticipant = tL_chatChannelParticipant.channelParticipant;
+                channelParticipant.peer.user_id = chatParticipant.user_id;
+                channelParticipant.date = chatParticipant.date;
+                channelParticipant.banned_rights = tL_chatBannedRights;
+                channelParticipant.admin_rights = tL_chatAdminRights;
+                channelParticipant.rank = str;
+            } else if (chatParticipant != null) {
+                TLRPC.ChatParticipant tL_chatParticipantAdmin = i10 == 1 ? new TLRPC.TL_chatParticipantAdmin() : new TLRPC.TL_chatParticipant();
+                tL_chatParticipantAdmin.user_id = chatParticipant.user_id;
+                tL_chatParticipantAdmin.date = chatParticipant.date;
+                tL_chatParticipantAdmin.inviter_id = chatParticipant.inviter_id;
+                int indexOf = profileActivity.u2.participants.participants.indexOf(chatParticipant);
+                if (indexOf >= 0) {
+                    profileActivity.u2.participants.participants.set(indexOf, tL_chatParticipantAdmin);
+                }
+            }
+            if (i10 != 1 || this.c) {
+                return;
+            }
+            this.d[0] = true;
+            return;
+        }
+        if (i12 == 1 && i10 == 0 && profileActivity.E2.megagroup && (chatFull = profileActivity.u2) != null && chatFull.participants != null) {
+            int i13 = 0;
+            while (true) {
+                if (i13 >= profileActivity.u2.participants.participants.size()) {
+                    z10 = false;
+                    break;
+                } else {
+                    if (MessageObject.getPeerId(((TLRPC.TL_chatChannelParticipant) profileActivity.u2.participants.participants.get(i13)).channelParticipant.peer) == chatParticipant.user_id) {
+                        TLRPC.ChatFull chatFull2 = profileActivity.u2;
+                        chatFull2.participants_count--;
+                        chatFull2.participants.participants.remove(i13);
+                        z10 = true;
+                        break;
+                    }
+                    i13++;
+                }
+            }
+            TLRPC.ChatFull chatFull3 = profileActivity.u2;
+            if (chatFull3 != null && chatFull3.participants != null) {
+                while (true) {
+                    if (i11 >= profileActivity.u2.participants.participants.size()) {
+                        break;
+                    }
+                    if (profileActivity.u2.participants.participants.get(i11).user_id == chatParticipant.user_id) {
+                        profileActivity.u2.participants.participants.remove(i11);
+                        z10 = true;
+                        break;
+                    }
+                    i11++;
+                }
+            }
+            if (z10) {
+                profileActivity.h5(true);
+                profileActivity.j5();
+                profileActivity.d.l();
+            }
+        }
     }
 }

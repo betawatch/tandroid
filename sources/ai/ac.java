@@ -13,9 +13,9 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.FileStreamLoadOperation;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class ac implements y5 {
+public final class ac implements x5 {
     public final /* synthetic */ d9 a;
     public final /* synthetic */ ArrayList b;
     public final /* synthetic */ Context c;
@@ -61,15 +61,15 @@ public final class ac implements y5 {
         }
     }
 
-    public final void c(TLRPC.Document document, Uri uri, long j3, e6 e6Var) {
+    public final void c(TLRPC.Document document, Uri uri, long j3, d6 d6Var) {
         long j10;
         ic icVar;
         jc jcVar = this.d;
         ArrayList arrayList = jcVar.M0;
         if (jcVar.H0 || jcVar.U < 0.9f) {
-            ci.l4 l4Var = jcVar.D0;
-            if (l4Var != null) {
-                l4Var.d(0L, null);
+            ci.k4 k4Var = jcVar.D0;
+            if (k4Var != null) {
+                k4Var.d(0L, null);
             }
             d2 d2Var = jcVar.A0;
             if (d2Var != null) {
@@ -81,18 +81,18 @@ public final class ac implements y5 {
                 jcVar.A0 = null;
             }
             FileLog.d("StoryViewer requestPlayer ignored, because closed: " + jcVar.H0 + ", " + jcVar.U);
-            e6Var.a = false;
-            e6Var.c = null;
-            e6Var.b = null;
+            d6Var.a = false;
+            d6Var.c = null;
+            d6Var.b = null;
             return;
         }
         Uri uri2 = jcVar.F0;
         boolean equals = TextUtils.equals(uri2 == null ? null : uri2.toString(), uri == null ? null : uri.toString());
         if (!equals || (icVar = jcVar.z0) == null) {
             jcVar.F0 = uri;
-            ci.l4 l4Var2 = jcVar.D0;
-            if (l4Var2 != null) {
-                l4Var2.d(0L, null);
+            ci.k4 k4Var2 = jcVar.D0;
+            if (k4Var2 != null) {
+                k4Var2.d(0L, null);
             }
             d2 d2Var2 = jcVar.A0;
             if (d2Var2 != null) {
@@ -108,19 +108,19 @@ public final class ac implements y5 {
                 icVar2.release(null);
                 jcVar.z0 = null;
             }
-            e6 e6Var2 = jcVar.G0;
-            if (e6Var2 != null) {
-                e6Var2.c = null;
-                e6Var2.b = null;
-                e6Var2.a = false;
-                e6Var2.e = null;
-                e6Var2.f = null;
-                e6Var2.d = null;
-                e6Var2.b();
+            d6 d6Var2 = jcVar.G0;
+            if (d6Var2 != null) {
+                d6Var2.c = null;
+                d6Var2.b = null;
+                d6Var2.a = false;
+                d6Var2.e = null;
+                d6Var2.f = null;
+                d6Var2.d = null;
+                d6Var2.b();
                 jcVar.G0 = null;
             }
             if (uri != null) {
-                jcVar.G0 = e6Var;
+                jcVar.G0 = d6Var;
                 int i10 = 0;
                 while (true) {
                     if (i10 >= arrayList.size()) {
@@ -140,14 +140,14 @@ public final class ac implements y5 {
                 ic icVar4 = jcVar.z0;
                 icVar4.uri = uri;
                 icVar4.setSpeed(jc.B1);
-                e6 e6Var3 = jcVar.G0;
+                d6 d6Var3 = jcVar.G0;
                 ic icVar5 = jcVar.z0;
-                e6Var3.c = icVar5;
-                e6Var3.a = false;
-                e6Var3.e = jcVar.y0;
-                e6Var3.f = jcVar.B0;
-                e6Var3.d = jcVar.C0;
-                e6Var3.b = null;
+                d6Var3.c = icVar5;
+                d6Var3.a = false;
+                d6Var3.e = jcVar.y0;
+                d6Var3.f = jcVar.B0;
+                d6Var3.d = jcVar.C0;
+                d6Var3.b = null;
                 FileStreamLoadOperation.setPriorityForDocument(icVar5.document, 3);
                 FileLoader.getInstance(jcVar.h).changePriority(3, jcVar.z0.document, null, null, null, null, null);
                 if (j3 == 0) {
@@ -168,15 +168,15 @@ public final class ac implements y5 {
                 FileLog.d("StoryViewer requestPlayer: url is null (1)");
             }
         } else if (equals) {
-            jcVar.G0 = e6Var;
-            e6Var.c = icVar;
-            e6Var.b = null;
+            jcVar.G0 = d6Var;
+            d6Var.c = icVar;
+            d6Var.b = null;
             icVar.setSpeed(jc.B1);
-            e6 e6Var4 = jcVar.G0;
-            e6Var4.a = jcVar.z0.firstFrameRendered;
-            e6Var4.e = jcVar.y0;
-            e6Var4.f = jcVar.B0;
-            e6Var4.d = jcVar.C0;
+            d6 d6Var4 = jcVar.G0;
+            d6Var4.a = jcVar.z0.firstFrameRendered;
+            d6Var4.e = jcVar.y0;
+            d6Var4.f = jcVar.B0;
+            d6Var4.d = jcVar.C0;
             FileLog.d("StoryViewer requestPlayer: same url");
         }
         i(false, uri != null);
@@ -201,11 +201,11 @@ public final class ac implements y5 {
         jc jcVar = this.d;
         if (!jcVar.f1 && z10 && jcVar.k0) {
             jcVar.k0 = false;
-            e6 e6Var = jcVar.G0;
-            if (e6Var != null && (icVar = (ic) e6Var.c) != null) {
+            d6 d6Var = jcVar.G0;
+            if (d6Var != null && (icVar = (ic) d6Var.c) != null) {
                 icVar.setSeeking(false);
             }
-            f6 t10 = jcVar.t();
+            e6 t10 = jcVar.t();
             if (t10 != null) {
                 t10.invalidate();
             }
@@ -226,9 +226,9 @@ public final class ac implements y5 {
 
     public final void i(boolean z10, boolean z11) {
         jc jcVar = this.d;
-        ci.l4 l4Var = jcVar.D0;
-        if (l4Var != null) {
-            l4Var.setVisibility(z10 ? 0 : 8);
+        ci.k4 k4Var = jcVar.D0;
+        if (k4Var != null) {
+            k4Var.setVisibility(z10 ? 0 : 8);
         }
         SurfaceView surfaceView = jcVar.C0;
         if (surfaceView != null) {

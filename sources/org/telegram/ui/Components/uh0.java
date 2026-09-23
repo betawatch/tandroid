@@ -1,10 +1,24 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.messenger.DispatchQueue;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public abstract class uh0 extends View {
-    public static final DispatchQueue a = new DispatchQueue("profileBlurQueue");
+public final class uh0 {
+    public Canvas a;
+    public Bitmap b;
+    public boolean c;
+    public boolean d;
+    public boolean e;
+    public boolean f;
+
+    public final void a() {
+        this.c = true;
+        if (this.e) {
+            return;
+        }
+        this.d = true;
+        this.b.recycle();
+    }
 }

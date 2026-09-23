@@ -1,106 +1,50 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.Utilities;
+import android.app.Activity;
+import android.text.TextUtils;
+import android.view.View;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class re1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ se1 b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ int d;
+public final class re1 extends z61 {
+    public boolean d2;
+    public final /* synthetic */ se1 e2;
 
-    public /* synthetic */ re1(se1 se1Var, String str, int i10, int i11) {
-        this.a = i11;
-        this.b = se1Var;
-        this.c = str;
-        this.d = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public re1(se1 se1Var, se1 se1Var2, Activity activity) {
+        super(se1Var2, activity, false, null, 3, null);
+        this.e2 = se1Var;
+        this.d2 = true;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:38:0x009d A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x00ac A[SYNTHETIC] */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                se1 se1Var = this.b;
-                String str = this.c;
-                int i10 = this.d;
-                se1Var.getClass();
-                Utilities.searchQueue.postRunnable(new re1(se1Var, str, i10, 1));
-                break;
-            default:
-                se1 se1Var2 = this.b;
-                String str2 = this.c;
-                int i11 = this.d;
-                te1 te1Var = se1Var2.h;
-                ArrayList arrayList = te1Var.f;
-                String lowerCase = str2.trim().toLowerCase();
-                String str3 = null;
-                if (lowerCase.length() != 0) {
-                    String translitString = LocaleController.getInstance().getTranslitString(lowerCase);
-                    if (!lowerCase.equals(translitString) && translitString.length() != 0) {
-                        str3 = translitString;
-                    }
-                    int i12 = (str3 != null ? 1 : 0) + 1;
-                    String[] strArr = new String[i12];
-                    strArr[0] = lowerCase;
-                    if (str3 != null) {
-                        strArr[1] = str3;
-                    }
-                    ArrayList arrayList2 = new ArrayList();
-                    int i13 = 0;
-                    ArrayList arrayList3 = new ArrayList();
-                    int i14 = 0;
-                    while (i14 < arrayList.size()) {
-                        TLRPC.Chat chat = (TLRPC.Chat) arrayList.get(i14);
-                        int i15 = 0;
-                        boolean z10 = false;
-                        while (true) {
-                            if (i15 >= 2) {
-                                break;
-                            }
-                            String publicUsername = i15 == 0 ? chat.title : ChatObject.getPublicUsername(chat);
-                            if (publicUsername != null) {
-                                String lowerCase2 = publicUsername.toLowerCase();
-                                while (i13 < i12) {
-                                    String str4 = strArr[i13];
-                                    if (!lowerCase2.startsWith(str4)) {
-                                        int i16 = i13;
-                                        if (!org.telegram.messenger.y0.w(" ", str4, lowerCase2)) {
-                                            i13 = i16 + 1;
-                                        }
-                                    }
-                                    z10 = true;
-                                    if (!z10) {
-                                        arrayList2.add(chat);
-                                        arrayList3.add((String) te1Var.h.get(i14));
-                                    }
-                                }
-                                if (!z10) {
-                                }
-                            }
-                            i15++;
-                            i13 = 0;
-                        }
-                        i14++;
-                        i13 = 0;
-                    }
-                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.s11(se1Var2, i11, arrayList2, arrayList3, 12));
-                    break;
-                } else {
-                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.s11(se1Var2, i11, str3, str3, 12));
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.z61, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        if (this.d2) {
+            this.d2 = false;
+            this.e2.f.s(null);
         }
+    }
+
+    @Override // org.telegram.ui.z61
+    public final void p(View view, Long l4, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
+        int i10;
+        int i11;
+        se1 se1Var = this.e2;
+        i10 = ((org.telegram.ui.ActionBar.n2) se1Var).currentAccount;
+        boolean z10 = false;
+        if (!TextUtils.isEmpty(UserConfig.getInstance(i10).defaultTopicIcons)) {
+            MediaDataController mediaDataController = se1Var.getMediaDataController();
+            i11 = ((org.telegram.ui.ActionBar.n2) se1Var).currentAccount;
+            TLRPC.TL_messages_stickerSet stickerSetByEmojiOrName = mediaDataController.getStickerSetByEmojiOrName(UserConfig.getInstance(i11).defaultTopicIcons);
+            if ((stickerSetByEmojiOrName == null ? 0L : stickerSetByEmojiOrName.set.id) == MediaDataController.getStickerSetId(document)) {
+                z10 = true;
+            }
+        }
+        se1Var.b0(l4, z10);
     }
 }

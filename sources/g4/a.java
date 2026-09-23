@@ -5,6 +5,7 @@ import android.text.style.ForegroundColorSpan;
 import android.text.style.StyleSpan;
 import android.text.style.TypefaceSpan;
 import android.text.style.UnderlineSpan;
+import d2.b;
 import e2.d;
 import e2.d0;
 import e2.h;
@@ -17,14 +18,12 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 import org.telegram.tgnet.TLObject;
-import z3.b;
-import z3.e;
+import z3.l;
 import z3.m;
-import z3.n;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final class a implements n {
+public final class a implements m {
     public final v a = new v();
     public final boolean b;
     public final int c;
@@ -89,13 +88,13 @@ public final class a implements n {
         }
     }
 
-    @Override // z3.n
+    @Override // z3.m
     public final int A() {
         return 2;
     }
 
-    @Override // z3.n
-    public final void B(byte[] bArr, int i10, int i11, m mVar, h hVar) {
+    @Override // z3.m
+    public final void B(byte[] bArr, int i10, int i11, l lVar, h hVar) {
         String v;
         int i12;
         v vVar = this.a;
@@ -118,7 +117,7 @@ public final class a implements n {
         }
         if (v.isEmpty()) {
             g0 g0Var = i0.b;
-            hVar.accept(new b(-9223372036854775807L, -9223372036854775807L, a1.e));
+            hVar.accept(new z3.a(-9223372036854775807L, -9223372036854775807L, a1.e));
             return;
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(v);
@@ -178,15 +177,15 @@ public final class a implements n {
             i13 = 1;
             i14 = 2;
         }
-        hVar.accept(new b(-9223372036854775807L, -9223372036854775807L, i0.z(new d2.b(spannableStringBuilder, null, null, null, f7, 0, 0, -3.4028235E38f, TLObject.FLAG_31, TLObject.FLAG_31, -3.4028235E38f, -3.4028235E38f, -3.4028235E38f, false, -16777216, TLObject.FLAG_31, 0.0f, 0))));
+        hVar.accept(new z3.a(-9223372036854775807L, -9223372036854775807L, i0.z(new b(spannableStringBuilder, null, null, null, f7, 0, 0, -3.4028235E38f, TLObject.FLAG_31, TLObject.FLAG_31, -3.4028235E38f, -3.4028235E38f, -3.4028235E38f, false, -16777216, TLObject.FLAG_31, 0.0f, 0))));
     }
 
-    @Override // z3.n
-    public final /* synthetic */ e r(int i10, int i11, byte[] bArr) {
+    @Override // z3.m
+    public final /* synthetic */ z3.d r(int i10, int i11, byte[] bArr) {
         return w.c.a(this, bArr, i11);
     }
 
-    @Override // z3.n
+    @Override // z3.m
     public final /* synthetic */ void reset() {
     }
 }

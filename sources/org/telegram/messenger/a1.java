@@ -1,31 +1,29 @@
 package org.telegram.messenger;
 
-import android.view.View;
-import java.util.List;
-import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ResultCallback;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class a1 implements Utilities.Callback {
+public final /* synthetic */ class a1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ ResultCallback b;
+    public final /* synthetic */ TLRPC.TL_error c;
 
-    public /* synthetic */ a1(Object obj, int i10) {
+    public /* synthetic */ a1(ResultCallback resultCallback, TLRPC.TL_error tL_error, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = resultCallback;
+        this.c = tL_error;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((ChatThemeController) this.b).lambda$init$0((List) obj);
-                break;
-            case 1:
-                ((Runnable) this.b).run();
+                this.b.onError(this.c);
                 break;
             default:
-                ((View) this.b).invalidate();
+                this.b.onError(this.c);
                 break;
         }
     }

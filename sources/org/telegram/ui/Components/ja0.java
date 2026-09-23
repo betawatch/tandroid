@@ -1,70 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class ja0 extends org.telegram.ui.tu0 {
-    public final /* synthetic */ na0 a;
+public final class ja0 {
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 a;
+    public final /* synthetic */ oa0 b;
 
-    public ja0(na0 na0Var) {
-        this.a = na0Var;
+    public ja0(oa0 oa0Var, org.telegram.ui.ActionBar.n2 n2Var) {
+        this.b = oa0Var;
+        this.a = n2Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0066 A[LOOP:0: B:6:0x001e->B:13:0x0066, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x003d A[SYNTHETIC] */
-    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final org.telegram.ui.dv0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
-        ImageReceiver imageReceiver;
-        if (i10 >= 0) {
-            na0 na0Var = this.a;
-            if (i10 < na0Var.P.size()) {
-                int childCount = na0Var.getListView().getChildCount();
-                Object obj = na0Var.P.get(i10);
-                for (int i11 = 0; i11 < childCount; i11++) {
-                    View childAt = na0Var.getListView().getChildAt(i11);
-                    if (childAt instanceof org.telegram.ui.Cells.e2) {
-                        org.telegram.ui.Cells.e2 e2Var = (org.telegram.ui.Cells.e2) childAt;
-                        if (e2Var.getResult() == obj) {
-                            imageReceiver = e2Var.getPhotoImage();
-                            if (imageReceiver == null) {
-                                int[] iArr = new int[2];
-                                childAt.getLocationInWindow(iArr);
-                                org.telegram.ui.dv0 dv0Var = new org.telegram.ui.dv0();
-                                dv0Var.b = iArr[0];
-                                dv0Var.c = iArr[1];
-                                dv0Var.d = na0Var.getListView();
-                                dv0Var.a = imageReceiver;
-                                dv0Var.e = imageReceiver.getBitmapSafe();
-                                dv0Var.h = imageReceiver.getRoundRadius(true);
-                                return dv0Var;
-                            }
-                        }
-                    }
-                    imageReceiver = null;
-                    if (imageReceiver == null) {
-                    }
-                }
-            }
-        }
-        return null;
-    }
-
-    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
-    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
-        if (i10 >= 0) {
-            na0 na0Var = this.a;
-            if (i10 >= na0Var.P.size()) {
+    public final void a(boolean z10) {
+        oa0 oa0Var = this.b;
+        if (oa0Var.getNeededLayoutManager() != oa0Var.getCurrentLayoutManager() && oa0Var.a()) {
+            if (oa0Var.f.M0 > 0) {
+                oa0Var.N = true;
+                oa0Var.o(false);
                 return;
             }
-            na0Var.x.f((TLRPC.BotInlineResult) na0Var.P.get(i10), z10, i11);
+            oa0Var.b.setLayoutManager(oa0Var.getNeededLayoutManager());
         }
+        if (z10 && !oa0Var.a()) {
+            z10 = false;
+        }
+        oa0Var.o((!z10 || oa0Var.f.K() > 0) ? z10 : false);
+    }
+
+    public final void b(boolean z10) {
+        this.b.l(z10);
+    }
+
+    public final void c() {
+        oa0 oa0Var = this.b;
+        yp ypVar = oa0Var.J;
+        if (oa0Var.b.getLayoutManager() == oa0Var.d || !oa0Var.I) {
+            return;
+        }
+        AndroidUtilities.cancelRunOnUIThread(ypVar);
+        AndroidUtilities.runOnUIThread(ypVar, this.a.getFragmentBeginToShow() ? 0L : 100L);
     }
 }

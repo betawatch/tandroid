@@ -1,38 +1,99 @@
 package yh;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.text.style.ReplacementSpan;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.g01;
+import org.telegram.messenger.BillingController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.UserConfig;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.yc0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class x6 extends ReplacementSpan {
-    public final Paint a;
-    public final g01 b;
-    public final /* synthetic */ int c;
+public final class x6 implements TextWatcher {
+    public boolean a;
+    public int b = 2;
+    public final /* synthetic */ EditTextBoldCursor c;
+    public final /* synthetic */ yc0 d;
+    public final /* synthetic */ long e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ ci.d h;
+    public final /* synthetic */ TextView n;
 
-    public x6(int i10, String str) {
-        this.c = i10;
-        Paint paint = new Paint(1);
-        this.a = paint;
-        paint.setColor(org.telegram.ui.ActionBar.i6.l1(0.1f, i10));
-        this.b = new g01(str, 13.0f, AndroidUtilities.bold());
+    public x6(EditTextBoldCursor editTextBoldCursor, yc0 yc0Var, long j3, boolean z10, ci.d dVar, TextView textView) {
+        this.c = editTextBoldCursor;
+        this.d = yc0Var;
+        this.e = j3;
+        this.f = z10;
+        this.h = dVar;
+        this.n = textView;
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(f7, (r12 - AndroidUtilities.dp(20.0f)) / 2.0f, AndroidUtilities.dp(12.0f) + f7 + this.b.c, (AndroidUtilities.dp(20.0f) + r12) / 2.0f);
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), this.a);
-        int i15 = this.c;
-        this.b.c(f7 + AndroidUtilities.dp(6.0f), (i12 + i14) / 2.0f, 1.0f, i15, canvas);
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0078  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0098  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x00a8  */
+    @Override // android.text.TextWatcher
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void afterTextChanged(Editable editable) {
+        long j3;
+        yc0 yc0Var = this.d;
+        EditTextBoldCursor editTextBoldCursor = this.c;
+        if (this.a) {
+            return;
+        }
+        try {
+            j3 = TextUtils.isEmpty(editable) ? 0L : Long.parseLong(editable.toString());
+        } catch (Exception unused) {
+            j3 = 0;
+        }
+        try {
+            if (j3 > MessagesController.getInstance(UserConfig.selectedAccount).starsPaidPostAmountMax) {
+                this.a = true;
+                j3 = MessagesController.getInstance(UserConfig.selectedAccount).starsPaidPostAmountMax;
+                editTextBoldCursor.setText(Long.toString(j3));
+                editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
+                int i10 = -this.b;
+                this.b = i10;
+                AndroidUtilities.shakeViewSpring(yc0Var, i10);
+            }
+        } catch (Exception unused2) {
+            this.a = true;
+            long j10 = this.e;
+            editTextBoldCursor.setText(j10 <= 0 ? "" : Long.toString(j10));
+            editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
+            this.a = false;
+            if (!this.f) {
+            }
+            yc0Var.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(editTextBoldCursor.getText()));
+            TextView textView = this.n;
+            if (j3 != 0) {
+            }
+        }
+        this.a = false;
+        if (!this.f) {
+            this.h.setEnabled(j3 > 0);
+        }
+        yc0Var.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(editTextBoldCursor.getText()));
+        TextView textView2 = this.n;
+        if (j3 != 0) {
+            textView2.animate().alpha(0.0f).start();
+            textView2.setText("");
+        } else {
+            textView2.animate().alpha(1.0f).start();
+            textView2.setText("≈" + BillingController.getInstance().formatCurrency((long) ((j3 / 1000.0d) * MessagesController.getInstance(UserConfig.selectedAccount).starsUsdWithdrawRate1000), "USD"));
+        }
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        return (int) (AndroidUtilities.dp(12.0f) + this.b.c);
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

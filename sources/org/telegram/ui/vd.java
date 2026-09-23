@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vd implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
@@ -25,14 +25,14 @@ public final /* synthetic */ class vd implements TextView.OnEditorActionListener
         switch (this.a) {
             case 0:
                 je jeVar = (je) this.b;
-                za1 za1Var = (za1) this.c;
+                ra1 ra1Var = (ra1) this.c;
                 if (i10 == 5) {
                     TwoStepVerificationActivity twoStepVerificationActivity = new TwoStepVerificationActivity();
                     rd rdVar = new rd(jeVar, twoStepVerificationActivity, 1);
                     twoStepVerificationActivity.Z = 1;
                     twoStepVerificationActivity.b0 = rdVar;
                     jeVar.Q0.setLoading(true);
-                    twoStepVerificationActivity.s0(new sd(jeVar, za1Var, twoStepVerificationActivity, 1));
+                    twoStepVerificationActivity.s0(new sd(jeVar, ra1Var, twoStepVerificationActivity, 1));
                     break;
                 }
                 break;
@@ -45,22 +45,22 @@ public final /* synthetic */ class vd implements TextView.OnEditorActionListener
                 }
                 break;
             case 2:
-                org.telegram.ui.Components.sn snVar = (org.telegram.ui.Components.sn) this.b;
-                org.telegram.ui.Components.rn rnVar = (org.telegram.ui.Components.rn) this.c;
-                org.telegram.ui.Components.un unVar = snVar.d;
-                ec1 ec1Var = unVar.s;
+                org.telegram.ui.Components.tn tnVar = (org.telegram.ui.Components.tn) this.b;
+                org.telegram.ui.Components.sn snVar = (org.telegram.ui.Components.sn) this.c;
+                org.telegram.ui.Components.vn vnVar = tnVar.d;
+                wb1 wb1Var = vnVar.s;
                 if (i10 == 5) {
-                    View F = ec1Var.F(rnVar);
-                    s4.c1 T = F == null ? null : ec1Var.T(F);
+                    View F = wb1Var.F(snVar);
+                    s4.c1 T = F == null ? null : wb1Var.T(F);
                     if (T != null && (b10 = T.b()) != -1) {
-                        int i11 = b10 - unVar.t0;
-                        int i12 = unVar.M;
+                        int i11 = b10 - vnVar.t0;
+                        int i12 = vnVar.M;
                         int i13 = i12 - 1;
-                        if (i11 == i13 && i12 < unVar.J) {
-                            unVar.P();
+                        if (i11 == i13 && i12 < vnVar.J) {
+                            vnVar.P();
                             break;
                         } else if (i11 != i13) {
-                            s4.c1 K = ec1Var.K(b10 + 1);
+                            s4.c1 K = wb1Var.K(b10 + 1);
                             if (K != null) {
                                 View view = K.a;
                                 if (view instanceof org.telegram.ui.Cells.d6) {
@@ -69,29 +69,29 @@ public final /* synthetic */ class vd implements TextView.OnEditorActionListener
                                 }
                             }
                         } else {
-                            AndroidUtilities.hideKeyboard(rnVar.getTextView());
+                            AndroidUtilities.hideKeyboard(snVar.getTextView());
                             break;
                         }
                     }
                 }
                 break;
             default:
-                yv0 yv0Var = (yv0) this.b;
-                xv0 xv0Var = (xv0) this.c;
-                aw0 aw0Var = yv0Var.d;
+                rv0 rv0Var = (rv0) this.b;
+                qv0 qv0Var = (qv0) this.c;
+                tv0 tv0Var = rv0Var.d;
                 if (i10 == 5) {
-                    ec1 ec1Var2 = aw0Var.c;
-                    View F2 = ec1Var2.F(xv0Var);
-                    s4.c1 T2 = F2 == null ? null : ec1Var2.T(F2);
+                    wb1 wb1Var2 = tv0Var.c;
+                    View F2 = wb1Var2.F(qv0Var);
+                    s4.c1 T2 = F2 == null ? null : wb1Var2.T(F2);
                     if (T2 != null && (b11 = T2.b()) != -1) {
-                        int i14 = b11 - aw0Var.n0;
-                        int i15 = aw0Var.y;
+                        int i14 = b11 - tv0Var.n0;
+                        int i15 = tv0Var.y;
                         int i16 = i15 - 1;
-                        if (i14 == i16 && i15 < aw0Var.n) {
-                            aw0Var.f0();
+                        if (i14 == i16 && i15 < tv0Var.n) {
+                            tv0Var.f0();
                             break;
                         } else if (i14 != i16) {
-                            s4.c1 K2 = aw0Var.c.K(b11 + 1);
+                            s4.c1 K2 = tv0Var.c.K(b11 + 1);
                             if (K2 != null) {
                                 View view2 = K2.a;
                                 if (view2 instanceof org.telegram.ui.Cells.d6) {
@@ -100,7 +100,7 @@ public final /* synthetic */ class vd implements TextView.OnEditorActionListener
                                 }
                             }
                         } else {
-                            AndroidUtilities.hideKeyboard(xv0Var.getTextView());
+                            AndroidUtilities.hideKeyboard(qv0Var.getTextView());
                             break;
                         }
                     }

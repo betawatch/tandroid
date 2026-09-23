@@ -3,19 +3,19 @@ package qg;
 import android.content.DialogInterface;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.au0;
-import yh.u6;
+import org.telegram.ui.tt0;
+import yh.t6;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a = 1;
     public final /* synthetic */ int b;
     public final /* synthetic */ NotificationCenter.NotificationCenterDelegate c;
 
-    public /* synthetic */ s(int i10, u6 u6Var) {
+    public /* synthetic */ s(int i10, t6 t6Var) {
         this.b = i10;
-        this.c = u6Var;
+        this.c = t6Var;
     }
 
     @Override // android.content.DialogInterface.OnDismissListener
@@ -23,7 +23,7 @@ public final /* synthetic */ class s implements DialogInterface.OnDismissListene
         switch (this.a) {
             case 0:
                 p0 p0Var = (p0) this.c;
-                PhotoViewer photoViewer = ((au0) p0Var).o2;
+                PhotoViewer photoViewer = ((tt0) p0Var).o2;
                 if (photoViewer.F2 != null) {
                     photoViewer.H2 = false;
                     photoViewer.u0();
@@ -32,7 +32,7 @@ public final /* synthetic */ class s implements DialogInterface.OnDismissListene
                 p0Var.C0(this.b);
                 break;
             default:
-                NotificationCenter.getInstance(this.b).removeObserver((u6) this.c, NotificationCenter.starSubscriptionsLoaded);
+                NotificationCenter.getInstance(this.b).removeObserver((t6) this.c, NotificationCenter.starSubscriptionsLoaded);
                 break;
         }
     }

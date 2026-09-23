@@ -1,36 +1,29 @@
 package org.telegram.ui.Components;
 
 import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class pe implements b5, bl0 {
-    public final /* synthetic */ ChatActivityEnterView a;
+public final class pe extends View.AccessibilityDelegate {
+    public final /* synthetic */ int a;
 
-    public /* synthetic */ pe(ChatActivityEnterView chatActivityEnterView) {
-        this.a = chatActivityEnterView;
-    }
-
-    @Override // org.telegram.ui.Components.b5
-    public void J(int i10, int i11, boolean z10) {
-        ChatActivityEnterView chatActivityEnterView = this.a;
-        boolean U0 = chatActivityEnterView.U0(i10, z10, i11, true, 0L);
-        kf kfVar = chatActivityEnterView.L0;
-        if (kfVar != null) {
-            kfVar.h(!U0);
-            chatActivityEnterView.L0 = null;
+    @Override // android.view.View.AccessibilityDelegate
+    public final void onInitializeAccessibilityNodeInfo(View view, AccessibilityNodeInfo accessibilityNodeInfo) {
+        switch (this.a) {
+            case 0:
+                super.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
+                accessibilityNodeInfo.setClassName("android.widget.ImageButton");
+                accessibilityNodeInfo.setClickable(true);
+                accessibilityNodeInfo.setLongClickable(true);
+                break;
+            default:
+                super.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
+                if (view.isEnabled()) {
+                    accessibilityNodeInfo.addAction(16);
+                    break;
+                }
+                break;
         }
-    }
-
-    @Override // org.telegram.ui.Components.bl0
-    public boolean d(int i10, View view) {
-        if (!(view instanceof ei.a0)) {
-            return false;
-        }
-        String str = ((ei.a0) view).getCommand() + " ";
-        ChatActivityEnterView chatActivityEnterView = this.a;
-        chatActivityEnterView.setFieldText(str);
-        chatActivityEnterView.m0.c();
-        return true;
     }
 }

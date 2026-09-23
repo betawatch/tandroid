@@ -1,46 +1,30 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
-/* loaded from: classes3.dex */
-public final class jj extends dh.b {
-    public final /* synthetic */ int n;
-    public final /* synthetic */ bo r;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.tgnet.TLRPC;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ jj(bo boVar, org.telegram.ui.ActionBar.e6 e6Var, int i10, int i11) {
-        super(i10, e6Var);
-        this.n = i11;
-        this.r = boVar;
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* loaded from: classes3.dex */
+public final class jj implements MessagesStorage.BooleanCallback {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ kj b;
+
+    public jj(kj kjVar, boolean z10) {
+        this.b = kjVar;
+        this.a = z10;
     }
 
-    @Override // dh.b, dh.a
-    public final int H() {
-        int i10;
-        int i11;
-        switch (this.n) {
-            case 0:
-                bo boVar = this.r;
-                i10 = ((org.telegram.ui.ActionBar.n2) boVar).currentAccount;
-                if (!eh.b.c(i10, boVar.ea)) {
-                    break;
-                } else if (boVar.ea != null && !org.telegram.ui.ActionBar.i6.I.q()) {
-                    break;
-                } else {
-                    break;
-                }
-                break;
-            default:
-                bo boVar2 = this.r;
-                i11 = ((org.telegram.ui.ActionBar.n2) boVar2).currentAccount;
-                if (!eh.b.c(i11, boVar2.ea)) {
-                    break;
-                } else if (boVar2.ea != null && !org.telegram.ui.ActionBar.i6.I.q()) {
-                    break;
-                } else {
-                    break;
-                }
-                break;
+    @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
+    public final void run(boolean z10) {
+        xn xnVar = this.b.b;
+        if (z10) {
+            TLRPC.User user = xnVar.f;
+            boolean z11 = this.a;
+            if (user != null || z11) {
+                xnVar.getMessagesStorage().getMessagesCount(xnVar.T5, new ij(1, this, z11));
+                return;
+            }
         }
-        return this.d;
+        xnVar.qa(xnVar.d4, z10);
     }
 }

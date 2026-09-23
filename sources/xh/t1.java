@@ -1,48 +1,39 @@
 package xh;
 
-import java.util.ArrayList;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.nr0;
-import yh.l5;
+import org.telegram.ui.Components.g81;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class t1 implements Runnable {
+public final /* synthetic */ class t1 implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ nr0 b;
+    public final /* synthetic */ s2 b;
 
-    public /* synthetic */ t1(nr0 nr0Var, int i10) {
+    public /* synthetic */ t1(s2 s2Var, int i10) {
         this.a = i10;
-        this.b = nr0Var;
+        this.b = s2Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                this.b.a();
-                break;
-            case 1:
-                this.b.setReorderingCollections(true);
+                s2 s2Var = this.b;
+                s2Var.e.b((String) obj, new t1(s2Var, 1));
                 break;
             default:
-                l5 l5Var = this.b.e;
-                l5Var.getClass();
-                TL_stars.reorderStarGiftCollections reorderstargiftcollections = new TL_stars.reorderStarGiftCollections();
-                int i10 = l5Var.a;
-                reorderstargiftcollections.peer = MessagesController.getInstance(i10).getInputPeer(l5Var.b);
-                ArrayList arrayList = l5Var.e;
-                int size = arrayList.size();
-                int i11 = 0;
-                while (i11 < size) {
-                    Object obj = arrayList.get(i11);
-                    i11++;
-                    reorderstargiftcollections.order.add(Integer.valueOf(((TL_stars.TL_starGiftCollection) obj).collection_id));
+                s2 s2Var2 = this.b;
+                s2Var2.f(true);
+                g81 g81Var = s2Var2.n;
+                int i10 = ((TL_stars.TL_starGiftCollection) obj).collection_id;
+                g81Var.d(i10, s2Var2.e.f(i10) + 1);
+                org.telegram.ui.ActionBar.n2 n2Var = s2Var2.a;
+                if (n2Var instanceof ProfileActivity) {
+                    ((ProfileActivity) n2Var).G4(true);
                 }
-                ConnectionsManager.getInstance(i10).sendRequest(reorderstargiftcollections, null);
-                l5Var.j();
+                s2Var2.n();
                 break;
         }
     }

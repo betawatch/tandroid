@@ -1,94 +1,35 @@
 package org.telegram.messenger;
 
-import android.content.Context;
-import android.net.Uri;
-import android.view.View;
-import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.kj1;
-import org.telegram.ui.lj1;
-import org.telegram.ui.rv0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class kh implements Utilities.Callback2 {
-    public final /* synthetic */ int a = 1;
+public final /* synthetic */ class kh implements Runnable {
+    public final /* synthetic */ int a;
     public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ kh(ci.d dVar, org.telegram.ui.ActionBar.f3 f3Var, int i10, View view, cf.c cVar) {
-        this.c = dVar;
-        this.d = f3Var;
+    public /* synthetic */ kh(int i10, int i11, int i12) {
+        this.a = i12;
         this.b = i10;
-        this.e = view;
-        this.f = cVar;
+        this.c = i11;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                PasskeysController.lambda$create$9((org.telegram.ui.ActionBar.b2) this.c, (Utilities.Callback2) this.d, (l5.j) this.e, (Context) this.f, this.b, (TL_account.passkeyRegistrationOptions) obj, (TLRPC.TL_error) obj2);
+                PasskeysController.lambda$login$11(this.b, this.c);
+                break;
+            case 1:
+                ConnectionsManager.lambda$onRequestNewServerIpAndPort$18(this.b, this.c);
+                break;
+            case 2:
+                ConnectionsManager.lambda$onConnectionStateChanged$15(this.b, this.c);
                 break;
             default:
-                ci.d dVar = (ci.d) this.c;
-                org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) this.d;
-                View view = (View) this.e;
-                cf.c cVar = (cf.c) this.f;
-                TLRPC.UrlAuthResult urlAuthResult = (TLRPC.UrlAuthResult) obj;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                dVar.setLoading(false);
-                if (!(urlAuthResult instanceof TLRPC.TL_urlAuthResultAccepted)) {
-                    if (tL_error == null) {
-                        new org.telegram.ui.Components.vc(f3Var.topBulletinContainer, f3Var.getResourcesProvider()).c0("NO_TOKEN", false);
-                        break;
-                    } else {
-                        org.telegram.ui.Cells.q3.r(f3Var.topBulletinContainer, f3Var.getResourcesProvider(), tL_error, false);
-                        break;
-                    }
-                } else {
-                    String queryParameter = Uri.parse("?" + Uri.parse(((TLRPC.TL_urlAuthResultAccepted) urlAuthResult).url).getFragment()).getQueryParameter("tgWebAuthToken");
-                    if (queryParameter == null) {
-                        new org.telegram.ui.Components.vc(f3Var.topBulletinContainer, f3Var.getResourcesProvider()).c0("NO_TOKEN", false);
-                        break;
-                    } else {
-                        int i10 = this.b;
-                        int currentDatacenterId = ConnectionsManager.getInstance(i10).getCurrentDatacenterId();
-                        boolean isTestBackend = ConnectionsManager.getInstance(i10).isTestBackend();
-                        StringBuilder m10 = hg.c.m("wear-auth: sending /token account=", i10, " dcId=", currentDatacenterId, " isTest=");
-                        m10.append(isTestBackend);
-                        FileLog.d(m10.toString());
-                        Context applicationContext = view.getContext().getApplicationContext();
-                        try {
-                            byte[] c10 = lj1.c(cVar, queryParameter, currentDatacenterId, isTestBackend);
-                            com.google.android.gms.internal.clearcut.v0 v0Var = new com.google.android.gms.internal.clearcut.v0(applicationContext, com.google.android.gms.common.api.i.c);
-                            String str = (String) cVar.d;
-                            com.google.android.gms.common.api.internal.t0 t0Var = v0Var.h;
-                            b8.e eVar = new b8.e(t0Var, str, "/tg-wear-auth/token", c10);
-                            t0Var.b.d(0, eVar);
-                            n6.l.n(eVar, y8.j0.a).addOnSuccessListener(new rv0(19, cVar, dVar)).addOnFailureListener(new kj1(dVar, 1));
-                            f3Var.dismiss();
-                            break;
-                        } catch (Exception e) {
-                            FileLog.e(e);
-                            new org.telegram.ui.Components.vc(f3Var.topBulletinContainer, f3Var.getResourcesProvider()).c0(e.getMessage(), false);
-                            return;
-                        }
-                    }
-                }
+                ConnectionsManager.getInstance(this.b).cancelRequest(this.c, true);
+                break;
         }
-    }
-
-    public /* synthetic */ kh(org.telegram.ui.ActionBar.b2 b2Var, Utilities.Callback2 callback2, l5.j jVar, Context context, int i10) {
-        this.c = b2Var;
-        this.d = callback2;
-        this.e = jVar;
-        this.f = context;
-        this.b = i10;
     }
 }

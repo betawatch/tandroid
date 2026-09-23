@@ -3,18 +3,18 @@ package ai;
 import android.content.Context;
 import android.view.View;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class ja extends f6 {
+public final class ja extends e6 {
     public final /* synthetic */ ka e4;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ja(ka kaVar, Context context, jc jcVar, c6 c6Var, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, jcVar, c6Var, e6Var);
+    public ja(ka kaVar, Context context, jc jcVar, b6 b6Var, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, jcVar, b6Var, d6Var);
         this.e4 = kaVar;
     }
 
-    @Override // ai.f6
+    @Override // ai.e6
     public final boolean K0() {
         return getParent() != null && ((Integer) ((View) getParent()).getTag()).intValue() == this.e4.g.getCurrentItem();
     }

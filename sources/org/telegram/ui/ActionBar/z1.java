@@ -15,18 +15,18 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.vl;
+import org.telegram.messenger.ul;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.aj0;
-import org.telegram.ui.Components.ku;
-import org.telegram.ui.Components.m80;
-import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.bj0;
+import org.telegram.ui.Components.lu;
+import org.telegram.ui.Components.n80;
+import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class z1 extends LinearLayout {
     public boolean a;
-    public final org.telegram.ui.Components.c6 b;
+    public final org.telegram.ui.Components.e6 b;
     public final Paint c;
     public final /* synthetic */ b2 d;
 
@@ -34,15 +34,15 @@ public final class z1 extends LinearLayout {
     public z1(Context context, b2 b2Var) {
         super(context);
         this.d = b2Var;
-        org.telegram.ui.Components.c6 c6Var = new org.telegram.ui.Components.c6();
-        c6Var.f = 0L;
-        c6Var.g = 200L;
-        c6Var.h = qr.f;
-        c6Var.a = this;
-        c6Var.d = 0.0f;
-        c6Var.c = 0.0f;
-        c6Var.e = false;
-        this.b = c6Var;
+        org.telegram.ui.Components.e6 e6Var = new org.telegram.ui.Components.e6();
+        e6Var.f = 0L;
+        e6Var.g = 200L;
+        e6Var.h = rr.f;
+        e6Var.a = this;
+        e6Var.d = 0.0f;
+        e6Var.c = 0.0f;
+        e6Var.e = false;
+        this.b = e6Var;
         this.c = new Paint(1);
     }
 
@@ -172,7 +172,7 @@ public final class z1 extends LinearLayout {
         int i12;
         int measuredHeight;
         int i13;
-        m80 m80Var;
+        n80 n80Var;
         float f7;
         b2 b2Var = this.d;
         int i14 = b2Var.d0;
@@ -191,7 +191,7 @@ public final class z1 extends LinearLayout {
         }
         int paddingTop = (size2 - getPaddingTop()) - getPaddingBottom();
         int paddingLeft = (size - getPaddingLeft()) - getPaddingRight();
-        int d = vl.d(48.0f, paddingLeft, TLObject.FLAG_30);
+        int d = ul.d(48.0f, paddingLeft, TLObject.FLAG_30);
         int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(paddingLeft, TLObject.FLAG_30);
         ViewGroup viewGroup = b2Var.t0;
         if (viewGroup != null) {
@@ -199,7 +199,7 @@ public final class z1 extends LinearLayout {
             for (int i16 = 0; i16 < childCount; i16++) {
                 View childAt = b2Var.t0.getChildAt(i16);
                 if (childAt instanceof TextView) {
-                    ((TextView) childAt).setMaxWidth(AndroidUtilities.dp(vl.y(24.0f, paddingLeft, 2)));
+                    ((TextView) childAt).setMaxWidth(AndroidUtilities.dp(ul.y(24.0f, paddingLeft, 2)));
                 }
             }
             b2Var.t0.measure(makeMeasureSpec, i11);
@@ -224,9 +224,9 @@ public final class z1 extends LinearLayout {
             LinearLayout.LayoutParams layoutParams3 = (LinearLayout.LayoutParams) b2Var.h.getLayoutParams();
             i12 -= (b2Var.h.getMeasuredHeight() + layoutParams3.bottomMargin) + layoutParams3.topMargin;
         }
-        aj0 aj0Var = b2Var.k0;
-        if (aj0Var != null) {
-            aj0Var.measure(View.MeasureSpec.makeMeasureSpec(paddingLeft, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(b2Var.a0), TLObject.FLAG_30));
+        bj0 bj0Var = b2Var.k0;
+        if (bj0Var != null) {
+            bj0Var.measure(View.MeasureSpec.makeMeasureSpec(paddingLeft, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(b2Var.a0), TLObject.FLAG_30));
             i12 -= b2Var.k0.getMeasuredHeight();
         }
         View view = b2Var.V;
@@ -270,18 +270,18 @@ public final class z1 extends LinearLayout {
                 measuredHeight = b2Var.r.getMeasuredHeight() + layoutParams5.bottomMargin;
                 i13 = layoutParams5.topMargin;
             } else {
-                ku kuVar = b2Var.n;
-                if (kuVar != null) {
-                    kuVar.measure(d, View.MeasureSpec.makeMeasureSpec(i12, TLObject.FLAG_31));
+                lu luVar = b2Var.n;
+                if (luVar != null) {
+                    luVar.measure(d, View.MeasureSpec.makeMeasureSpec(i12, TLObject.FLAG_31));
                     if (b2Var.n.getVisibility() != 8) {
                         LinearLayout.LayoutParams layoutParams6 = (LinearLayout.LayoutParams) b2Var.n.getLayoutParams();
                         measuredHeight = b2Var.n.getMeasuredHeight() + layoutParams6.bottomMargin;
                         i13 = layoutParams6.topMargin;
                     }
                 }
-                m80Var = b2Var.u0;
-                if (m80Var != null) {
-                    m80Var.measure(d, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(4.0f), TLObject.FLAG_30));
+                n80Var = b2Var.u0;
+                if (n80Var != null) {
+                    n80Var.measure(d, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(4.0f), TLObject.FLAG_30));
                     LinearLayout.LayoutParams layoutParams7 = (LinearLayout.LayoutParams) b2Var.u0.getLayoutParams();
                     int measuredHeight2 = i12 - ((b2Var.u0.getMeasuredHeight() + layoutParams7.bottomMargin) + layoutParams7.topMargin);
                     b2Var.v0.measure(d, View.MeasureSpec.makeMeasureSpec(measuredHeight2, TLObject.FLAG_31));
@@ -290,8 +290,8 @@ public final class z1 extends LinearLayout {
                 }
             }
             i12 -= measuredHeight + i13;
-            m80Var = b2Var.u0;
-            if (m80Var != null) {
+            n80Var = b2Var.u0;
+            if (n80Var != null) {
             }
         }
         setMeasuredDimension(size, (getPaddingBottom() + (getPaddingTop() + (paddingTop - i12))) - (b2Var.W ? AndroidUtilities.dp(8.0f) : 0));

@@ -5,7 +5,7 @@ import android.util.LongSparseArray;
 import org.telegram.messenger.FilePathDatabase;
 import org.telegram.messenger.NotificationBadge;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public class SaveToGallerySettingsHelper {
     public static String CHANNELS_PREF_NAME = "channels_save_gallery_exceptions";
@@ -17,7 +17,7 @@ public class SaveToGallerySettingsHelper {
     public static SharedSettings groups;
     public static SharedSettings user;
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class DialogException extends Settings {
         public long dialogId;
 
@@ -46,7 +46,7 @@ public class SaveToGallerySettingsHelper {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static abstract class Settings {
         public long limitVideo = SaveToGallerySettingsHelper.DEFAULT_VIDEO_LIMIT;
         public boolean savePhoto;
@@ -69,7 +69,7 @@ public class SaveToGallerySettingsHelper {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class SharedSettings extends Settings {
         private int type;
 

@@ -3,10 +3,10 @@ package yh;
 import android.view.MotionEvent;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class y extends EditTextBoldCursor {
-    @Override // org.telegram.ui.Components.du, android.view.View
+    @Override // org.telegram.ui.Components.eu, android.view.View
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         return false;
     }

@@ -1,26 +1,49 @@
 package org.telegram.ui.Components;
 
-import android.view.animation.OvershootInterpolator;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.ShapeDrawable;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public abstract class q6 {
-    public static final OvershootInterpolator a = new OvershootInterpolator(1.9f);
-    public static final o6 b = new o6("alpha", 0);
-    public static final org.telegram.ui.Cells.t8 c;
-    public static final o6 d;
-    public static final o6 e;
-    public static final org.telegram.ui.Cells.t8 f;
-    public static final org.telegram.ui.Cells.t8 g;
-    public static final org.telegram.ui.Cells.t8 h;
+public final class q6 extends r6 {
+    public final /* synthetic */ int b;
 
-    static {
-        new o6("color", 1);
-        c = new org.telegram.ui.Cells.t8("currentAlpha", 4);
-        d = new o6("alpha", 2);
-        e = new o6("alpha", 3);
-        f = new org.telegram.ui.Cells.t8("animationProgress", 5);
-        g = new org.telegram.ui.Cells.t8("animationValue", 6);
-        h = new org.telegram.ui.Cells.t8("clipProgress", 7);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ q6(String str, int i10) {
+        super(str, 1);
+        this.b = i10;
+    }
+
+    @Override // org.telegram.ui.Components.r6
+    public final void a(int i10, Object obj) {
+        switch (this.b) {
+            case 0:
+                ((Paint) obj).setAlpha(i10);
+                break;
+            case 1:
+                ((Paint) obj).setColor(i10);
+                break;
+            case 2:
+                ((Drawable) obj).setAlpha(i10);
+                break;
+            default:
+                ((ShapeDrawable) obj).getPaint().setAlpha(i10);
+                break;
+        }
+    }
+
+    @Override // android.util.Property
+    public final Object get(Object obj) {
+        switch (this.b) {
+            case 0:
+                return Integer.valueOf(((Paint) obj).getAlpha());
+            case 1:
+                return Integer.valueOf(((Paint) obj).getColor());
+            case 2:
+                return Integer.valueOf(((Drawable) obj).getAlpha());
+            default:
+                return Integer.valueOf(((ShapeDrawable) obj).getPaint().getAlpha());
+        }
     }
 }

@@ -1,45 +1,25 @@
 package le;
 
-import com.google.android.gms.internal.vision.e2;
+import android.view.animation.Interpolator;
+import java.util.Collections;
+import java.util.Iterator;
+import n4.y;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final class m {
-    public float a;
-    public float b;
-    public float c;
+public final class m implements Iterable {
+    public final k a;
 
-    public m(float f7) {
-        d(f7);
+    public m(l lVar, Interpolator interpolator, long j3) {
+        this.a = new k(new y(this, lVar, false, 23), interpolator, j3);
     }
 
-    public final boolean a(float f7) {
-        float f10 = this.b;
-        float z10 = e2.z(this.c, f10, f7, f10);
-        if (this.a == z10) {
-            return false;
-        }
-        this.a = z10;
-        return true;
+    public final void i(Object obj, boolean z10) {
+        this.a.r(obj != null ? Collections.singletonList(obj) : null, z10);
     }
 
-    public final boolean b(float f7) {
-        return this.c != f7;
-    }
-
-    public final void c(boolean z10) {
-        if (!z10) {
-            this.b = this.a;
-            return;
-        }
-        float f7 = this.c;
-        this.a = f7;
-        this.b = f7;
-    }
-
-    public final void d(float f7) {
-        this.b = f7;
-        this.c = f7;
-        this.a = f7;
+    @Override // java.lang.Iterable
+    public final Iterator iterator() {
+        return this.a.b.iterator();
     }
 }

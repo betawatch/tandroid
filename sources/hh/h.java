@@ -4,13 +4,13 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import b2.q0;
 import e6.n;
-import k2.c0;
+import k2.b0;
 import org.telegram.messenger.MediaDataController;
 import s4.c1;
 import s4.f1;
 import s4.o0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class h {
     public final RecyclerView a;
@@ -63,13 +63,13 @@ public final class h {
         View view = c1Var.a;
         of.e eVar = recyclerView.b;
         lf.i iVar = o0Var.a;
-        c0 c0Var = (c0) iVar.b;
-        int indexOfChild = ((RecyclerView) c0Var.b).indexOfChild(view);
+        b0 b0Var = (b0) iVar.b;
+        int indexOfChild = ((RecyclerView) b0Var.b).indexOfChild(view);
         if (indexOfChild >= 0) {
             if (((n) iVar.c).B(indexOfChild)) {
                 iVar.Y(view);
             }
-            c0Var.r(indexOfChild);
+            b0Var.r(indexOfChild);
         }
         eVar.g(view);
     }

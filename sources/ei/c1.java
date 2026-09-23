@@ -17,18 +17,18 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.aa;
-import org.telegram.ui.bo;
-import org.telegram.ui.eg1;
-import org.telegram.ui.fg0;
-import org.telegram.ui.oy;
-import org.telegram.ui.uy;
-import yh.m7;
-import yh.u5;
+import org.telegram.ui.ag0;
+import org.telegram.ui.ly;
+import org.telegram.ui.ry;
+import org.telegram.ui.wf1;
+import org.telegram.ui.xn;
+import yh.l7;
+import yh.t5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c1 implements View.OnClickListener {
     public final /* synthetic */ int a = 0;
@@ -39,13 +39,13 @@ public final /* synthetic */ class c1 implements View.OnClickListener {
     public final /* synthetic */ Object f;
     public final /* synthetic */ Object h;
 
-    public /* synthetic */ c1(p1 p1Var, TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage, org.telegram.tgnet.e eVar, int i10, long j3, org.telegram.ui.web.t tVar) {
+    public /* synthetic */ c1(p1 p1Var, TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage, org.telegram.tgnet.e eVar, int i10, long j3, org.telegram.ui.web.s sVar) {
         this.d = p1Var;
         this.e = tL_messages_preparedInlineMessage;
         this.f = eVar;
         this.c = i10;
         this.b = j3;
-        this.h = tVar;
+        this.h = sVar;
     }
 
     @Override // android.view.View.OnClickListener
@@ -56,7 +56,7 @@ public final /* synthetic */ class c1 implements View.OnClickListener {
                 final p1 p1Var = (p1) this.d;
                 TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage2 = (TLRPC.TL_messages_preparedInlineMessage) this.e;
                 final org.telegram.tgnet.e eVar = (org.telegram.tgnet.e) this.f;
-                org.telegram.ui.web.t tVar = (org.telegram.ui.web.t) this.h;
+                org.telegram.ui.web.s sVar = (org.telegram.ui.web.s) this.h;
                 final org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
                 if (U != null) {
                     p1Var.b0 = true;
@@ -78,7 +78,7 @@ public final /* synthetic */ class c1 implements View.OnClickListener {
                             TLRPC.InlineQueryPeerType inlineQueryPeerType = arrayList.get(i10);
                             i10++;
                             TLRPC.InlineQueryPeerType inlineQueryPeerType2 = inlineQueryPeerType;
-                            org.telegram.ui.web.t tVar2 = tVar;
+                            org.telegram.ui.web.s sVar2 = sVar;
                             if (inlineQueryPeerType2 instanceof TLRPC.TL_inlineQueryPeerTypePM) {
                                 bundle.putBoolean("allowUsers", true);
                                 tL_messages_preparedInlineMessage = tL_messages_preparedInlineMessage2;
@@ -95,27 +95,27 @@ public final /* synthetic */ class c1 implements View.OnClickListener {
                                 }
                             }
                             tL_messages_preparedInlineMessage2 = tL_messages_preparedInlineMessage;
-                            tVar = tVar2;
+                            sVar = sVar2;
                         }
                     }
-                    org.telegram.ui.web.t tVar3 = tVar;
+                    org.telegram.ui.web.s sVar3 = sVar;
                     final TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage3 = tL_messages_preparedInlineMessage2;
                     n1 n1Var = new n1(p1Var, bundle, eVar);
                     final int i11 = this.c;
                     final long j3 = this.b;
-                    n1Var.C2 = new oy() { // from class: ei.d1
-                        @Override // org.telegram.ui.oy
+                    n1Var.C2 = new ly() { // from class: ei.d1
+                        @Override // org.telegram.ui.ly
                         public final /* synthetic */ boolean A() {
                             return false;
                         }
 
-                        @Override // org.telegram.ui.oy
-                        public final /* synthetic */ boolean K(uy uyVar) {
+                        @Override // org.telegram.ui.ly
+                        public final /* synthetic */ boolean K(ry ryVar) {
                             return false;
                         }
 
-                        @Override // org.telegram.ui.oy
-                        public final boolean u(uy uyVar, ArrayList arrayList2, CharSequence charSequence, boolean z10, boolean z11, int i12, int i13, eg1 eg1Var) {
+                        @Override // org.telegram.ui.ly
+                        public final boolean u(ry ryVar, ArrayList arrayList2, CharSequence charSequence, boolean z10, boolean z11, int i12, int i13, wf1 wf1Var) {
                             MessageObject messageObject;
                             TLRPC.TL_forumTopic findTopic;
                             TLRPC.Message message;
@@ -164,27 +164,27 @@ public final /* synthetic */ class c1 implements View.OnClickListener {
                                 p1Var2.c0 = true;
                                 eVar.run(arrayList3.size() > 0 ? null : "USER_DECLINED", arrayList3);
                             }
-                            if (eg1Var == null) {
-                                uyVar.finishFragment();
+                            if (wf1Var == null) {
+                                ryVar.finishFragment();
                                 return true;
                             }
-                            eg1Var.finishFragment();
-                            uyVar.removeSelfFromStack();
+                            wf1Var.finishFragment();
+                            ryVar.removeSelfFromStack();
                             return true;
                         }
                     };
                     U.presentFragment(n1Var);
                     p1Var.dismiss();
-                    tVar3.run();
+                    sVar3.run();
                     break;
                 }
                 break;
             case 1:
-                fg0 fg0Var = (fg0) this.d;
+                ag0 ag0Var = (ag0) this.d;
                 String str = (String) this.e;
                 String str2 = (String) this.f;
                 String str3 = (String) this.h;
-                ci.d dVar = fg0Var.b;
+                ci.d dVar = ag0Var.b;
                 if (!dVar.N) {
                     dVar.setLoading(true);
                     TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode = new TLRPC.TL_inputStorePaymentAuthCode();
@@ -207,32 +207,32 @@ public final /* synthetic */ class c1 implements View.OnClickListener {
                         tL_dataJSON.data = p5.toString();
                         tL_payments_getPaymentForm.flags |= 1;
                     }
-                    fg0Var.v.getConnectionsManager().sendRequest(tL_payments_getPaymentForm, new aa(fg0Var, tL_inputInvoicePremiumAuthCode, tL_inputStorePaymentAuthCode, 23), 74);
+                    ag0Var.v.getConnectionsManager().sendRequest(tL_payments_getPaymentForm, new aa(ag0Var, tL_inputInvoicePremiumAuthCode, tL_inputStorePaymentAuthCode, 23), 74);
                     break;
                 }
                 break;
             default:
                 yh.e0 e0Var = (yh.e0) this.d;
                 Context context = (Context) this.e;
-                e6 e6Var = (e6) this.f;
+                d6 d6Var = (d6) this.f;
                 Utilities.Callback callback = (Utilities.Callback) this.h;
                 if (e0Var.s.W) {
                     int i12 = this.c;
                     if (!MessagesController.getInstance(i12).isFrozen()) {
-                        u5 x10 = u5.x(i12, e0Var.H.a);
+                        t5 x10 = t5.x(i12, e0Var.H.a);
                         zf.a l4 = x10.e ? zf.a.l(x10.p()) : null;
                         if (!e0Var.c && (l4 == null || l4.b < e0Var.H.b)) {
                             zf.a aVar = e0Var.H;
                             zf.b bVar = aVar.a;
                             if (bVar != zf.b.a) {
                                 if (bVar == zf.b.b) {
-                                    new di.h(context, e6Var, aVar, true, null).show();
+                                    new di.h(context, d6Var, aVar, true, null).show();
                                     break;
                                 }
                             } else {
                                 long a2 = aVar.a();
                                 long j10 = this.b;
-                                new m7(context, e6Var, a2, 13, ng.d.h(i12, j10), null, j10).show();
+                                new l7(context, d6Var, a2, 13, ng.d.h(i12, j10), null, j10).show();
                                 break;
                             }
                         } else {
@@ -249,8 +249,8 @@ public final /* synthetic */ class c1 implements View.OnClickListener {
         }
     }
 
-    public /* synthetic */ c1(fg0 fg0Var, String str, long j3, String str2, String str3, int i10) {
-        this.d = fg0Var;
+    public /* synthetic */ c1(ag0 ag0Var, String str, long j3, String str2, String str3, int i10) {
+        this.d = ag0Var;
         this.e = str;
         this.b = j3;
         this.f = str2;
@@ -258,11 +258,11 @@ public final /* synthetic */ class c1 implements View.OnClickListener {
         this.c = i10;
     }
 
-    public /* synthetic */ c1(yh.e0 e0Var, bo boVar, int i10, Context context, e6 e6Var, long j3, Utilities.Callback callback) {
+    public /* synthetic */ c1(yh.e0 e0Var, xn xnVar, int i10, Context context, d6 d6Var, long j3, Utilities.Callback callback) {
         this.d = e0Var;
         this.c = i10;
         this.e = context;
-        this.f = e6Var;
+        this.f = d6Var;
         this.b = j3;
         this.h = callback;
     }

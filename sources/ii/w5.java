@@ -1,13 +1,69 @@
 package ii;
 
+import android.text.TextUtils;
 import android.view.View;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.yd;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class w5 implements View.OnLongClickListener {
-    @Override // android.view.View.OnLongClickListener
-    public final boolean onLongClick(View view) {
-        int i10 = d6.V;
-        return true;
+public final /* synthetic */ class w5 implements View.OnFocusChangeListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+
+    public /* synthetic */ w5(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
+    }
+
+    @Override // android.view.View.OnFocusChangeListener
+    public final void onFocusChange(View view, boolean z10) {
+        switch (this.a) {
+            case 0:
+                e6.a((e6) this.b, z10);
+                break;
+            case 1:
+                EditTextBoldCursor editTextBoldCursor = ((pg.v) this.b).c;
+                if (!z10 && TextUtils.isEmpty(editTextBoldCursor.getText())) {
+                    editTextBoldCursor.setText("0");
+                    break;
+                }
+                break;
+            case 2:
+                EditTextBoldCursor editTextBoldCursor2 = ((pg.w) this.b).d;
+                if (!z10 && TextUtils.isEmpty(editTextBoldCursor2.getText())) {
+                    editTextBoldCursor2.setText("0");
+                    break;
+                }
+                break;
+            case 3:
+                yd ydVar = ((yh.g) this.b).M;
+                float f7 = z10 ? 1.0f : 0.0f;
+                ydVar.b(f7, f7, true);
+                break;
+            case 4:
+                ((yh.a0) this.b).c0.c(z10, !TextUtils.isEmpty(r2.d0.getText()));
+                break;
+            case 5:
+                ((yh.e0) this.b).f.c(z10, !TextUtils.isEmpty(r2.h.getText()));
+                break;
+            case 6:
+                ((yh.i0) this.b).b.c(z10, !TextUtils.isEmpty(r2.c.getText()));
+                break;
+            default:
+                zg.o oVar = (zg.o) this.b;
+                if (!z10) {
+                    oVar.m();
+                    break;
+                } else {
+                    oVar.n(true);
+                    Runnable runnable = oVar.e;
+                    if (runnable != null) {
+                        runnable.run();
+                        break;
+                    }
+                }
+                break;
+        }
     }
 }

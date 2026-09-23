@@ -1,95 +1,74 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.view.TextureView;
+import android.content.Context;
+import android.view.MotionEvent;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.webkit.WebView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Bitmaps;
-import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class t81 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ c91 b;
+public final class t81 extends WebView {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ t81(c91 c91Var, int i10) {
-        this.a = i10;
-        this.b = c91Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public t81(org.telegram.ui.qo0 qo0Var, Context context) {
+        super(context);
+        this.b = qo0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.webkit.WebView, android.view.ViewGroup, android.view.View
+    public void onAttachedToWindow() {
         switch (this.a) {
             case 0:
-                c91 c91Var = this.b;
-                y81 y81Var = c91Var.f0;
-                g71 g71Var = c91Var.a;
-                if (g71Var != null && g71Var.y()) {
-                    y81Var.c((int) (g71Var.n() / 1000));
-                    y81Var.w = (int) (g71Var.j() / 1000);
-                    y81Var.invalidate();
-                    AndroidUtilities.runOnUIThread(c91Var.i0, 1000L);
-                    break;
-                }
+                AndroidUtilities.checkAndroidTheme((Context) this.b, true);
+                super.onAttachedToWindow();
                 break;
             default:
-                c91 c91Var2 = this.b;
-                y81 y81Var2 = c91Var2.f0;
-                ImageView imageView = c91Var2.e;
-                TextureView textureView = c91Var2.d;
-                c91Var2.W = false;
-                Bitmap bitmap = c91Var2.h;
-                if (bitmap != null) {
-                    bitmap.recycle();
-                    c91Var2.h = null;
-                }
-                c91Var2.S = true;
-                if (imageView != null) {
-                    try {
-                        Bitmap createBitmap = Bitmaps.createBitmap(textureView.getWidth(), textureView.getHeight(), Bitmap.Config.ARGB_8888);
-                        c91Var2.h = createBitmap;
-                        textureView.getBitmap(createBitmap);
-                    } catch (Throwable th2) {
-                        Bitmap bitmap2 = c91Var2.h;
-                        if (bitmap2 != null) {
-                            bitmap2.recycle();
-                            c91Var2.h = null;
-                        }
-                        FileLog.e(th2);
-                    }
-                    if (c91Var2.h != null) {
-                        imageView.setVisibility(0);
-                        imageView.setImageBitmap(c91Var2.h);
-                    } else {
-                        imageView.setImageDrawable(null);
-                    }
-                }
-                c91Var2.U = true;
-                c91Var2.n();
-                c91Var2.o();
-                c91Var2.k();
-                c91Var2.m();
-                ViewGroup viewGroup = (ViewGroup) y81Var2.getParent();
-                if (viewGroup != null) {
-                    viewGroup.removeView(y81Var2);
-                }
-                z81 z81Var = c91Var2.v;
-                y81 y81Var3 = c91Var2.f0;
-                boolean z10 = c91Var2.U;
-                int i10 = c91Var2.g0;
-                int i11 = c91Var2.h0;
-                c91Var2.c.getVideoRotation();
-                TextureView f7 = z81Var.f(y81Var3, z10, i10, i11, c91Var2.I);
-                c91Var2.n = f7;
-                f7.setVisibility(4);
-                ViewGroup viewGroup2 = (ViewGroup) textureView.getParent();
-                if (viewGroup2 != null) {
-                    viewGroup2.removeView(textureView);
-                }
-                y81Var2.d(false, false);
+                super.onAttachedToWindow();
                 break;
         }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public void onDetachedFromWindow() {
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.checkAndroidTheme((Context) this.b, false);
+                super.onDetachedFromWindow();
+                break;
+            default:
+                super.onDetachedFromWindow();
+                break;
+        }
+    }
+
+    @Override // android.webkit.WebView, android.widget.AbsoluteLayout, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.a) {
+            case 1:
+                super.onMeasure(i10, i11);
+                break;
+            default:
+                super.onMeasure(i10, i11);
+                break;
+        }
+    }
+
+    @Override // android.webkit.WebView, android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 1:
+                ((ViewGroup) ((org.telegram.ui.qo0) this.b).fragmentView).requestDisallowInterceptTouchEvent(true);
+                break;
+        }
+        return super.onTouchEvent(motionEvent);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public t81(Context context, Context context2) {
+        super(context);
+        this.b = context2;
     }
 }

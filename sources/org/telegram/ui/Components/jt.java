@@ -1,346 +1,227 @@
 package org.telegram.ui.Components;
 
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
-import android.media.AudioDeviceInfo;
-import android.media.AudioManager;
-import android.os.Build;
-import android.os.PowerManager;
-import org.telegram.messenger.ApplicationLoader;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.ui.PhotoViewer;
-import org.webrtc.MediaStreamTrack;
+import org.telegram.messenger.DispatchQueue;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class jt implements SensorEventListener {
-    public int E;
-    public int F;
-    public long G;
+public abstract class jt implements NotificationCenter.NotificationCenterDelegate {
+    public static ht L;
+    public boolean E;
+    public boolean G;
     public boolean I;
-    public boolean J;
-    public float L;
-    public final SensorManager a;
-    public final AudioManager b;
-    public final Sensor c;
-    public final Sensor d;
-    public final Sensor e;
-    public final Sensor f;
-    public final PowerManager.WakeLock h;
-    public boolean n;
+    public int J;
+    public final int K;
+    public boolean a;
+    public Bitmap b;
+    public Canvas c;
+    public Bitmap d;
+    public Canvas e;
+    public boolean f;
+    public int n;
     public boolean r;
-    public g71 s;
-    public boolean v;
-    public long w;
+    public int v;
+    public int w;
     public int x;
-    public int y;
-    public long H = 0;
-    public float K = -100.0f;
-    public final float[] M = new float[3];
-    public final float[] N = new float[3];
-    public final float[] O = new float[3];
+    public final DispatchQueue y;
+    public int h = 1;
+    public final Paint s = new Paint(1);
+    public final gt F = new gt(this, 0);
+    public final gt H = new gt(this, 1);
 
     public jt() {
-        SensorManager sensorManager = (SensorManager) ApplicationLoader.applicationContext.getSystemService("sensor");
-        this.a = sensorManager;
-        this.c = sensorManager.getDefaultSensor(8);
-        Sensor defaultSensor = sensorManager.getDefaultSensor(10);
-        this.e = defaultSensor;
-        Sensor defaultSensor2 = sensorManager.getDefaultSensor(9);
-        this.f = defaultSensor2;
-        if (defaultSensor == null || defaultSensor2 == null) {
-            if (BuildVars.LOGS_ENABLED) {
-                FileLog.d("gravity or linear sensor not found");
-            }
-            this.d = sensorManager.getDefaultSensor(1);
-            this.e = null;
-            this.f = null;
+        if (L == null) {
+            ht htVar = new ht();
+            htVar.b = new DispatchQueue[2];
+            L = htVar;
         }
-        this.h = ((PowerManager) ApplicationLoader.applicationContext.getSystemService("power")).newWakeLock(32, "telegram:proximity_lock2");
-        this.b = (AudioManager) ApplicationLoader.applicationContext.getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
+        ht htVar2 = L;
+        int i10 = htVar2.a + 1;
+        htVar2.a = i10;
+        if (i10 > 1) {
+            htVar2.a = 0;
+        }
+        DispatchQueue[] dispatchQueueArr = (DispatchQueue[]) htVar2.b;
+        int i11 = htVar2.a;
+        DispatchQueue dispatchQueue = dispatchQueueArr[i11];
+        if (dispatchQueue == null) {
+            dispatchQueue = new DispatchQueue("draw_background_queue_" + htVar2.a);
+            dispatchQueueArr[i11] = dispatchQueue;
+        }
+        this.y = dispatchQueue;
+        this.K = L.a;
     }
 
-    public final void a() {
-        g71 g71Var = this.s;
-        if (g71Var == null) {
+    public void a(Canvas canvas, long j3, int i10, int i11, float f7) {
+        if (this.E) {
+            if (BuildVars.DEBUG_PRIVATE_VERSION) {
+                canvas.drawRect(0.0f, 0.0f, i10, i11, org.telegram.ui.ActionBar.h6.Jl);
+                return;
+            }
             return;
         }
-        g71Var.S(this.r ? 0 : 3);
+        this.w = i11;
+        this.x = i10;
+        if (this.G) {
+            this.G = false;
+            Bitmap bitmap = this.d;
+            Canvas canvas2 = this.e;
+            this.d = this.b;
+            this.e = this.c;
+            this.b = bitmap;
+            this.c = canvas2;
+        }
+        Bitmap bitmap2 = this.d;
+        if (bitmap2 == null || this.I) {
+            this.I = false;
+            if (bitmap2 != null) {
+                ArrayList arrayList = new ArrayList();
+                arrayList.add(this.d);
+                AndroidUtilities.recycleBitmaps(arrayList);
+                this.d = null;
+            }
+            int i12 = this.w + 0;
+            Bitmap bitmap3 = this.d;
+            if (bitmap3 != null && bitmap3.getHeight() == i12 && this.d.getWidth() == this.x) {
+                this.d.eraseColor(0);
+            } else {
+                this.d = Bitmap.createBitmap(this.x, i12, Bitmap.Config.ARGB_8888);
+                this.e = new Canvas(this.d);
+            }
+            this.e.save();
+            this.e.translate(0.0f, 0);
+            d(this.e, f7);
+            this.e.restore();
+        }
+        if (!this.f && !this.r) {
+            this.f = true;
+            i(j3);
+            this.J = this.v;
+            this.y.postRunnable(this.F);
+        }
+        Bitmap bitmap4 = this.d;
+        if (bitmap4 != null) {
+            Paint paint = this.s;
+            paint.setAlpha((int) (f7 * 255.0f));
+            canvas.save();
+            canvas.translate(0.0f, -0);
+            b(canvas, bitmap4, paint);
+            canvas.restore();
+        }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:125:0x02b5, code lost:
-    
-        if (r6.isBluetoothScoOn() == false) goto L157;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x02f9  */
-    @Override // android.hardware.SensorEventListener
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void onSensorChanged(SensorEvent sensorEvent) {
-        Sensor sensor;
-        char c10;
-        char c11;
-        char c12;
-        long j3;
-        Sensor sensor2;
-        double d;
-        boolean z10;
-        int i10;
-        boolean z11;
-        int i11;
-        AudioManager audioManager;
-        PowerManager.WakeLock wakeLock;
-        boolean z12;
-        boolean isHeld;
-        if (this.n && VoIPService.getSharedInstance() == null) {
-            int type = sensorEvent.sensor.getType();
-            Sensor sensor3 = this.f;
-            Sensor sensor4 = this.e;
-            float[] fArr = this.O;
-            float[] fArr2 = this.M;
-            Sensor sensor5 = this.d;
-            float[] fArr3 = this.N;
-            if (type == 8) {
-                if (BuildVars.LOGS_ENABLED) {
-                    FileLog.d("proximity changed to " + sensorEvent.values[0] + " max value = " + sensorEvent.sensor.getMaximumRange());
-                }
-                float f7 = this.K;
-                float f10 = sensorEvent.values[0];
-                if (f7 != f10) {
-                    this.J = true;
-                }
-                this.K = f10;
-                if (this.J) {
-                    this.I = f10 < 5.0f && f10 != this.c.getMaximumRange();
-                }
-                sensor2 = sensor3;
-                c10 = 0;
-                c11 = 2;
-                c12 = 1;
-                j3 = 0;
-            } else {
-                Sensor sensor6 = sensorEvent.sensor;
-                if (sensor6 == sensor5) {
-                    if (this.H == 0) {
-                        d = 0.9800000190734863d;
-                        c11 = 2;
-                        c12 = 1;
-                    } else {
-                        c11 = 2;
-                        c12 = 1;
-                        d = 1.0d / (((sensorEvent.timestamp - r8) / 1.0E9d) + 1.0d);
-                    }
-                    this.H = sensorEvent.timestamp;
-                    double d10 = 1.0d - d;
-                    float[] fArr4 = sensorEvent.values;
-                    j3 = 0;
-                    c10 = 0;
-                    float f11 = (float) ((fArr4[0] * d10) + (fArr2[0] * d));
-                    fArr2[0] = f11;
-                    sensor = sensor3;
-                    float f12 = (float) ((fArr4[c12] * d10) + (fArr2[c12] * d));
-                    fArr2[c12] = f12;
-                    float f13 = (float) ((d10 * fArr4[c11]) + (d * fArr2[c11]));
-                    fArr2[c11] = f13;
-                    fArr3[0] = (fArr4[0] * 0.19999999f) + (f11 * 0.8f);
-                    fArr3[c12] = (fArr4[c12] * 0.19999999f) + (f12 * 0.8f);
-                    fArr3[c11] = (fArr4[c11] * 0.19999999f) + (f13 * 0.8f);
-                    fArr[0] = fArr4[0] - fArr2[0];
-                    fArr[c12] = fArr4[c12] - fArr2[c12];
-                    fArr[c11] = fArr4[c11] - fArr2[c11];
-                } else {
-                    sensor = sensor3;
-                    c10 = 0;
-                    c11 = 2;
-                    c12 = 1;
-                    j3 = 0;
-                    if (sensor6 == sensor4) {
-                        float[] fArr5 = sensorEvent.values;
-                        fArr[0] = fArr5[0];
-                        fArr[1] = fArr5[1];
-                        fArr[2] = fArr5[2];
-                    } else {
-                        sensor2 = sensor;
-                        if (sensor6 == sensor2) {
-                            float[] fArr6 = sensorEvent.values;
-                            float f14 = fArr6[0];
-                            fArr2[0] = f14;
-                            fArr3[0] = f14;
-                            float f15 = fArr6[1];
-                            fArr2[1] = f15;
-                            fArr3[1] = f15;
-                            float f16 = fArr6[2];
-                            fArr2[2] = f16;
-                            fArr3[2] = f16;
-                        }
-                    }
-                }
-                sensor2 = sensor;
-            }
-            Sensor sensor7 = sensorEvent.sensor;
-            if (sensor7 == sensor4 || sensor7 == sensor2 || sensor7 == sensor5) {
-                float f17 = (fArr2[c11] * fArr[c11]) + (fArr2[c12] * fArr[c12]) + (fArr2[c10] * fArr[c10]);
-                int i12 = this.E;
-                if (i12 != 6 && ((f17 > 0.0f && this.L > 0.0f) || (f17 < 0.0f && this.L < 0.0f))) {
-                    if (f17 > 0.0f) {
-                        z10 = f17 > 15.0f;
-                        i10 = 1;
-                    } else {
-                        z10 = f17 < -15.0f;
-                        i10 = 2;
-                    }
-                    int i13 = this.y;
-                    if (i13 != 0 && i13 != i10) {
-                        int i14 = this.x;
-                        if (i14 != 6 || !z10) {
-                            if (!z10) {
-                                this.F++;
-                            }
-                            if (this.F == 10 || i14 != 6 || i12 != 0) {
-                                this.x = 0;
-                                this.y = 0;
-                                this.E = 0;
-                                this.F = 0;
-                            }
-                        } else if (i12 < 6) {
-                            int i15 = i12 + 1;
-                            this.E = i15;
-                            if (i15 == 6) {
-                                this.x = 0;
-                                this.y = 0;
-                                this.F = 0;
-                                this.G = System.currentTimeMillis();
-                                if (BuildVars.LOGS_ENABLED && BuildVars.DEBUG_PRIVATE_VERSION) {
-                                    FileLog.d("motion detected");
-                                }
-                            }
-                        }
-                    } else if (z10 && i12 == 0 && (i13 == 0 || i13 == i10)) {
-                        int i16 = this.x;
-                        if (i16 < 6 && !this.I) {
-                            this.y = i10;
-                            int i17 = i16 + 1;
-                            this.x = i17;
-                            if (i17 == 6) {
-                                this.F = 0;
-                            }
-                        }
-                    } else {
-                        if (!z10) {
-                            this.F++;
-                        }
-                        if (i13 != i10 || this.F == 10 || this.x != 6 || i12 != 0) {
-                            this.E = 0;
-                            this.x = 0;
-                            this.y = 0;
-                            this.F = 0;
-                        }
-                    }
-                }
-                this.L = f17;
-                this.v = fArr3[c12] > 2.5f && Math.abs(fArr3[c11]) < 4.0f && Math.abs(fArr3[0]) > 1.5f;
-            }
-            if (this.E == 6 || this.v) {
-                this.w = System.currentTimeMillis();
-            }
-            if (this.E == 6 || this.v || System.currentTimeMillis() - this.w < 60) {
-                try {
-                    i11 = Build.VERSION.SDK_INT;
-                    audioManager = this.b;
-                } catch (Exception e) {
-                    FileLog.e(e);
-                }
-                if (i11 >= 23) {
-                    AudioDeviceInfo[] devices = audioManager.getDevices(2);
-                    for (AudioDeviceInfo audioDeviceInfo : devices) {
-                        int type2 = audioDeviceInfo.getType();
-                        if ((type2 == 8 || type2 == 7 || type2 == 26 || type2 == 27 || type2 == 4 || type2 == 3) && audioDeviceInfo.isSink()) {
-                            break;
-                        }
-                    }
-                    if (!VoIPService.isAnyKindOfCallActive() && !PhotoViewer.t1().Q1()) {
-                        z11 = true;
-                        wakeLock = this.h;
-                        if (wakeLock != null && !Build.MANUFACTURER.equalsIgnoreCase("samsung")) {
-                            isHeld = wakeLock.isHeld();
-                            if (!isHeld && !z11) {
-                                if (BuildVars.LOGS_ENABLED) {
-                                    FileLog.d("wake lock releasing");
-                                }
-                                wakeLock.release();
-                            } else if (!isHeld && z11) {
-                                if (BuildVars.LOGS_ENABLED) {
-                                    FileLog.d("wake lock acquiring");
-                                }
-                                wakeLock.acquire();
-                            }
-                        }
-                        z12 = this.I;
-                        if (!z12 && z11) {
-                            if (!this.r) {
-                                this.r = true;
-                                a();
-                            }
-                            this.E = 0;
-                            this.x = 0;
-                            this.y = 0;
-                            this.F = 0;
-                        } else if (z12 || !((sensor5 == null || sensor4 == null) && sensor2 == null && !VoIPService.isAnyKindOfCallActive())) {
-                            if (!this.I && this.r) {
-                                this.r = false;
-                                a();
-                            }
-                        } else if (!this.r) {
-                            this.r = true;
-                            a();
-                        }
-                        if (this.G == j3 && this.E == 6 && Math.abs(System.currentTimeMillis() - this.G) > 1000) {
-                            this.E = 0;
-                            this.x = 0;
-                            this.y = 0;
-                            this.F = 0;
-                            this.G = j3;
-                            return;
-                        }
+    public void b(Canvas canvas, Bitmap bitmap, Paint paint) {
+        canvas.drawBitmap(bitmap, 0.0f, 0.0f, paint);
+    }
+
+    public abstract void c(Canvas canvas);
+
+    public abstract void d(Canvas canvas, float f7);
+
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        int i12;
+        if (i10 == NotificationCenter.stopAllHeavyOperations) {
+            Integer num = (Integer) objArr[0];
+            if (this.h < num.intValue()) {
+                if (num.intValue() != 512 || SharedConfig.getDevicePerformanceClass() < 2) {
+                    int intValue = num.intValue() | this.n;
+                    this.n = intValue;
+                    if (intValue == 0 || this.r) {
                         return;
                     }
-                } else if (!audioManager.isWiredHeadsetOn()) {
-                    if (!audioManager.isBluetoothA2dpOn()) {
-                    }
+                    this.r = true;
+                    return;
                 }
+                return;
             }
-            z11 = false;
-            wakeLock = this.h;
-            if (wakeLock != null) {
-                isHeld = wakeLock.isHeld();
-                if (!isHeld) {
-                }
-                if (!isHeld) {
-                    if (BuildVars.LOGS_ENABLED) {
-                    }
-                    wakeLock.acquire();
-                }
+            return;
+        }
+        if (i10 == NotificationCenter.startAllHeavyOperations) {
+            Integer num2 = (Integer) objArr[0];
+            if (this.h >= num2.intValue() || (i12 = this.n) == 0) {
+                return;
             }
-            z12 = this.I;
-            if (!z12) {
-            }
-            if (z12) {
-            }
-            if (!this.I) {
+            int i13 = (~num2.intValue()) & i12;
+            this.n = i13;
+            if (i13 == 0 && this.r) {
                 this.r = false;
-                a();
-            }
-            if (this.G == j3) {
             }
         }
     }
 
-    @Override // android.hardware.SensorEventListener
-    public final void onAccuracyChanged(Sensor sensor, int i10) {
+    public final void e() {
+        if (this.a) {
+            return;
+        }
+        this.a = true;
+        this.E = false;
+        int currentHeavyOperationFlags = NotificationCenter.getGlobalInstance().getCurrentHeavyOperationFlags() & (~this.h);
+        this.n = currentHeavyOperationFlags;
+        if (currentHeavyOperationFlags == 0 && this.r) {
+            this.r = false;
+        }
+        NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.stopAllHeavyOperations);
+        NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.startAllHeavyOperations);
+    }
+
+    public final void f() {
+        if (this.a) {
+            if (!this.f) {
+                j();
+            }
+            this.a = false;
+            NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.stopAllHeavyOperations);
+            NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.startAllHeavyOperations);
+        }
+    }
+
+    public abstract void g();
+
+    public abstract void i(long j3);
+
+    public final void j() {
+        ArrayList arrayList = new ArrayList();
+        Bitmap bitmap = this.d;
+        if (bitmap != null) {
+            arrayList.add(bitmap);
+        }
+        Bitmap bitmap2 = this.b;
+        if (bitmap2 != null) {
+            arrayList.add(bitmap2);
+        }
+        this.d = null;
+        this.b = null;
+        this.c = null;
+        this.e = null;
+        AndroidUtilities.recycleBitmaps(arrayList);
+    }
+
+    public final void k() {
+        this.I = true;
+        this.v++;
+        if (this.d != null) {
+            ArrayList arrayList = new ArrayList();
+            arrayList.add(this.d);
+            this.d = null;
+            AndroidUtilities.recycleBitmaps(arrayList);
+        }
+    }
+
+    public final void l(int i10) {
+        this.h = 7;
+        if (this.a) {
+            this.n = NotificationCenter.getGlobalInstance().getCurrentHeavyOperationFlags() & (~this.h);
+        }
+    }
+
+    public void h() {
     }
 }

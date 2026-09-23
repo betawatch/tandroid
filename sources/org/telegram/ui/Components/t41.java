@@ -1,45 +1,51 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.text.TextUtils;
+import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class t41 extends wm0 {
-    public final /* synthetic */ e51 h;
+public final class t41 extends ml0 {
+    public final /* synthetic */ a51 X2;
+    public final /* synthetic */ d51 Y2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t41(e51 e51Var, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, 14.0f, e6Var);
-        this.h = e51Var;
+    public t41(d51 d51Var, Context context, a51 a51Var) {
+        super(context, null);
+        this.Y2 = d51Var;
+        this.X2 = a51Var;
     }
 
-    @Override // org.telegram.ui.Components.wm0
-    public final void a(String str) {
-        gg.g2 g2Var = this.h.v;
-        gg.e2 e2Var = g2Var.S;
-        int i10 = g2Var.c;
-        if (g2Var.N != 0) {
-            ConnectionsManager.getInstance(i10).cancelRequest(g2Var.N, true);
-            g2Var.N = 0;
+    @Override // org.telegram.ui.Components.ml0
+    public final boolean E0(float f7) {
+        return f7 >= ((float) (AndroidUtilities.dp(58.0f) + this.Y2.E));
+    }
+
+    @Override // org.telegram.ui.Components.ml0, android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        this.Y2.F = true;
+        return super.dispatchTouchEvent(motionEvent);
+    }
+
+    @Override // org.telegram.ui.Components.ml0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return super.onInterceptTouchEvent(motionEvent) || this.X2.d(this, motionEvent);
+    }
+
+    @Override // org.telegram.ui.Components.ml0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        if (this.Y2.L != null) {
+            return false;
         }
-        if (g2Var.O != 0) {
-            ConnectionsManager.getInstance(i10).cancelRequest(g2Var.O, true);
-            g2Var.O = 0;
+        return super.onTouchEvent(motionEvent);
+    }
+
+    @Override // org.telegram.ui.Components.ml0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.Y2.H) {
+            return;
         }
-        if (TextUtils.isEmpty(str)) {
-            g2Var.R = null;
-            g2Var.F.clear();
-            g2Var.I.clear();
-            g2Var.E.clear();
-            g2Var.e.b(false);
-            g2Var.l();
-        } else {
-            g2Var.R = str.toLowerCase();
-        }
-        AndroidUtilities.cancelRunOnUIThread(e2Var);
-        AndroidUtilities.runOnUIThread(e2Var, 300L);
+        super.requestLayout();
     }
 }

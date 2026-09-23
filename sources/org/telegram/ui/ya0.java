@@ -1,26 +1,20 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.TLRPC;
+import j$.util.function.Consumer$-CC;
+import java.util.function.Consumer;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class ya0 implements mq {
-    public final /* synthetic */ uy a;
-    public final /* synthetic */ int b;
-
-    public ya0(uy uyVar, int i10) {
-        this.a = uyVar;
-        this.b = i10;
+public final class ya0 implements Consumer {
+    @Override // java.util.function.Consumer
+    /* renamed from: accept */
+    public final void x(Object obj) {
+        ((Boolean) obj).getClass();
+        Pattern pattern = LaunchActivity.B1;
     }
 
-    @Override // org.telegram.ui.mq
-    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
-        this.a.removeSelfFromStack();
-        NotificationCenter.getInstance(this.b).lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
-    }
-
-    @Override // org.telegram.ui.mq
-    public final void a(TLRPC.User user) {
+    public /* synthetic */ Consumer andThen(Consumer consumer) {
+        return Consumer$-CC.$default$andThen(this, consumer);
     }
 }

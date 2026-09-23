@@ -1,76 +1,42 @@
 package org.telegram.ui.web;
 
 import ai.da;
-import android.content.DialogInterface;
-import org.telegram.messenger.Utilities;
-import yh.u5;
+import android.app.Activity;
+import org.json.JSONObject;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.ui.u9;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class d0 implements DialogInterface.OnDismissListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+public final class d0 implements NotificationCenter.NotificationCenterDelegate {
+    public final /* synthetic */ da a;
+    public final /* synthetic */ b1 b;
 
-    public /* synthetic */ d0(d1 d1Var, boolean[] zArr, da daVar, String str) {
-        this.a = 0;
-        this.c = d1Var;
-        this.b = zArr;
-        this.d = daVar;
-        this.e = str;
+    public d0(b1 b1Var, da daVar) {
+        this.b = b1Var;
+        this.a = daVar;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
-        switch (this.a) {
-            case 0:
-                d1 d1Var = (d1) this.c;
-                da daVar = (da) this.d;
-                String str = (String) this.e;
-                d1Var.getClass();
-                boolean[] zArr = this.b;
-                if (!zArr[0]) {
-                    zArr[0] = true;
-                    d1Var.y(daVar, "requested_chat_failed", d1.B(str, "req_id"));
-                    break;
-                }
-                break;
-            case 1:
-                Utilities.Callback callback = (Utilities.Callback) this.c;
-                boolean[] zArr2 = (boolean[]) this.d;
-                Utilities.Callback2 callback2 = (Utilities.Callback2) this.e;
-                if (callback != null && !this.b[0]) {
-                    callback.run(Boolean.FALSE);
-                    if (!zArr2[0]) {
-                        callback2.run("cancelled", 0L);
-                        zArr2[0] = true;
-                        break;
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        int i12 = NotificationCenter.onRequestPermissionResultReceived;
+        if (i10 == i12) {
+            int intValue = ((Integer) objArr[0]).intValue();
+            int[] iArr = (int[]) objArr[2];
+            if (intValue == 5000) {
+                NotificationCenter.getGlobalInstance().removeObserver(this, i12);
+                int i13 = iArr[0];
+                b1 b1Var = this.b;
+                if (i13 != 0) {
+                    b1Var.y(this.a, "scan_qr_popup_closed", new JSONObject());
+                } else {
+                    Activity activity = b1Var.W;
+                    if (activity == null) {
+                        return;
                     }
+                    b1Var.g0 = u9.e0(activity, 3, new k2.u(b1Var, 16));
                 }
-                break;
-            default:
-                Utilities.Callback callback3 = (Utilities.Callback) this.c;
-                boolean[] zArr3 = (boolean[]) this.d;
-                Utilities.Callback callback4 = (Utilities.Callback) this.e;
-                if (callback3 != null && !this.b[0]) {
-                    callback3.run(Boolean.FALSE);
-                    if (!zArr3[0] && callback4 != null) {
-                        callback4.run("cancelled");
-                        zArr3[0] = true;
-                        break;
-                    }
-                }
-                break;
+            }
         }
-    }
-
-    public /* synthetic */ d0(u5 u5Var, Utilities.Callback callback, boolean[] zArr, boolean[] zArr2, Object obj, int i10) {
-        this.a = i10;
-        this.c = callback;
-        this.b = zArr;
-        this.d = zArr2;
-        this.e = obj;
     }
 }

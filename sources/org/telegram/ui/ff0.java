@@ -1,48 +1,33 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Intent;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ff0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ gf0 b;
+public final class ff0 implements NotificationCenter.NotificationCenterDelegate {
+    public final /* synthetic */ gf0 a;
 
-    public /* synthetic */ ff0(gf0 gf0Var, int i10) {
-        this.a = i10;
-        this.b = gf0Var;
+    public ff0(gf0 gf0Var) {
+        this.a = gf0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                gf0 gf0Var = this.b;
-                hf0 hf0Var = gf0Var.d;
-                if (gf0Var.b) {
-                    boolean z10 = hf0Var.K;
-                    org.telegram.ui.Components.xi0 xi0Var = hf0Var.J;
-                    id idVar = hf0Var.n;
-                    if (z10 && System.currentTimeMillis() - gf0Var.a >= 10000) {
-                        idVar.setAnimation(xi0Var);
-                        xi0Var.N(0, false, false);
-                        xi0Var.t0 = new ff0(gf0Var, 1);
-                        idVar.d();
-                        gf0Var.a = System.currentTimeMillis();
-                    }
-                    idVar.postDelayed(gf0Var.c, 1000L);
-                    break;
-                }
-                break;
-            case 1:
-                AndroidUtilities.runOnUIThread(new ff0(this.b, 2));
-                break;
-            default:
-                hf0 hf0Var2 = this.b.d;
-                org.telegram.ui.Components.xi0 xi0Var2 = hf0Var2.I;
-                xi0Var2.N(0, false, false);
-                hf0Var2.n.setAnimation(xi0Var2);
-                break;
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        gf0 gf0Var = this.a;
+        int intValue = ((Integer) objArr[0]).intValue();
+        ((Integer) objArr[1]).getClass();
+        Intent intent = (Intent) objArr[2];
+        NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.onActivityResultReceived);
+        if (intValue == 200) {
+            try {
+                gf0Var.y = (GoogleSignInAccount) w7.d9.b(intent).getResult(com.google.android.gms.common.api.f.class);
+                gf0Var.h(null);
+            } catch (com.google.android.gms.common.api.f e) {
+                FileLog.e(e);
+            }
         }
     }
 }

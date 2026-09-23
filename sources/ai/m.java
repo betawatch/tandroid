@@ -1,10 +1,13 @@
 package ai;
 
 import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class m implements e2.h {
+public final /* synthetic */ class m implements Utilities.Callback {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
 
@@ -13,25 +16,27 @@ public final /* synthetic */ class m implements e2.h {
         this.b = i10;
     }
 
-    @Override // e2.h
-    public final void accept(Object obj) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        ArrayList<TLRPC.EmojiGroup> arrayList;
         switch (this.a) {
             case 0:
                 a0 a0Var = (a0) ((View) obj);
                 a0Var.invalidate();
                 a0Var.y.setTextColor(this.b);
                 break;
-            case 1:
-                ((m4.k1) obj).f0(this.b);
-                break;
-            case 2:
-                ((m4.k1) obj).N(this.b);
-                break;
-            case 3:
-                ((m4.k1) obj).j(this.b);
-                break;
             default:
-                ((m4.k1) obj).D0(this.b);
+                TLRPC.TL_messages_emojiGroups tL_messages_emojiGroups = (TLRPC.TL_messages_emojiGroups) obj;
+                if (tL_messages_emojiGroups != null && (arrayList = tL_messages_emojiGroups.groups) != null) {
+                    int size = arrayList.size();
+                    int i10 = 0;
+                    while (i10 < size) {
+                        TLRPC.EmojiGroup emojiGroup = arrayList.get(i10);
+                        i10++;
+                        org.telegram.ui.Components.q5.h(this.b).b(emojiGroup.icon_emoji_id, null);
+                    }
+                    break;
+                }
                 break;
         }
     }

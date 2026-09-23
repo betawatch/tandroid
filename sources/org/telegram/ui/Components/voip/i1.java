@@ -3,7 +3,7 @@ package org.telegram.ui.Components.voip;
 import org.telegram.messenger.AndroidUtilities;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class i1 implements RendererCommon.RendererEvents {
     public final /* synthetic */ j1 a;
@@ -21,7 +21,7 @@ public final class i1 implements RendererCommon.RendererEvents {
             pVar.run();
             j1Var.Y = null;
         }
-        AndroidUtilities.runOnUIThread(new i2.g0(this, 21));
+        AndroidUtilities.runOnUIThread(new i2.h0(this, 21));
     }
 
     @Override // org.webrtc.RendererCommon.RendererEvents

@@ -8,18 +8,18 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
 import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.fo0;
-import org.telegram.ui.Components.p6;
+import org.telegram.ui.Components.r6;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class h extends FrameLayout {
     public fo0 a;
     public float b;
     public float c;
     public float d;
-    public p6 e;
+    public r6 e;
     public String f;
     public TextPaint h;
     public int n;
@@ -33,9 +33,9 @@ public final class h extends FrameLayout {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         TextPaint textPaint = this.h;
-        textPaint.setColor(i6.w0(null, i6.G6, false));
+        textPaint.setColor(h6.w0(null, h6.G6, false));
         canvas.drawText(this.f, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), textPaint);
-        textPaint.setColor(i6.w0(null, i6.I6, false));
+        textPaint.setColor(h6.w0(null, h6.I6, false));
         String format = String.format(Locale.ROOT, "%.2f", Float.valueOf(this.d));
         canvas.drawText(format, (getMeasuredWidth() - AndroidUtilities.dp(8.0f)) - textPaint.measureText(format), this.a.getY() + AndroidUtilities.dp(23.0f), textPaint);
     }

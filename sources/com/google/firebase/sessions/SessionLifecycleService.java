@@ -10,13 +10,13 @@ import android.os.Message;
 import android.os.Messenger;
 import android.util.Log;
 import kotlin.jvm.internal.i;
-import za.l0;
+import za.n0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class SessionLifecycleService extends Service {
     public final HandlerThread a = new HandlerThread("FirebaseSessions_HandlerThread");
-    public l0 b;
+    public n0 b;
     public Messenger c;
 
     @Override // android.app.Service
@@ -30,9 +30,9 @@ public final class SessionLifecycleService extends Service {
         if (messenger != null) {
             Message obtain = Message.obtain(null, 4, 0, 0);
             obtain.replyTo = messenger;
-            l0 l0Var = this.b;
-            if (l0Var != null) {
-                l0Var.sendMessage(obtain);
+            n0 n0Var = this.b;
+            if (n0Var != null) {
+                n0Var.sendMessage(obtain);
             }
         }
         Messenger messenger2 = this.c;
@@ -49,7 +49,7 @@ public final class SessionLifecycleService extends Service {
         handlerThread.start();
         Looper looper = handlerThread.getLooper();
         i.d(looper, "handlerThread.looper");
-        this.b = new l0(looper);
+        this.b = new n0(looper);
         this.c = new Messenger(this.b);
     }
 

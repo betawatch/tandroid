@@ -36,29 +36,28 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.ii;
-import org.telegram.messenger.vl;
+import org.telegram.messenger.hi;
+import org.telegram.messenger.ul;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.q3;
-import org.telegram.ui.Cells.w8;
+import org.telegram.ui.Cells.x8;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.c5;
-import org.telegram.ui.Components.dt;
-import org.telegram.ui.Components.mf;
-import org.telegram.ui.Components.w70;
-import org.telegram.ui.Components.y9;
+import org.telegram.ui.Components.aa;
+import org.telegram.ui.Components.e5;
+import org.telegram.ui.Components.et;
+import org.telegram.ui.Components.x70;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.f01;
-import org.telegram.ui.i60;
+import org.telegram.ui.f60;
+import org.telegram.ui.xz0;
 import w7.x5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public abstract class f2 {
     public static long a;
@@ -93,7 +92,7 @@ public abstract class f2 {
             }
             if (z14 && chat != null && !z13 && (chatFull2 = accountInstance.getMessagesController().getChatFull(chat.id)) != null && (peer = chatFull2.groupcall_default_join_as) != null) {
                 final TLRPC.InputPeer inputPeer2 = accountInstance.getMessagesController().getInputPeer(MessageObject.getPeerId(peer));
-                w70.t(activity, -chat.id, accountInstance, new MessagesStorage.BooleanCallback() { // from class: org.telegram.ui.Components.voip.w1
+                x70.t(activity, -chat.id, accountInstance, new MessagesStorage.BooleanCallback() { // from class: org.telegram.ui.Components.voip.w1
                     @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
                     public final void run(boolean z17) {
                         String str2 = str;
@@ -118,7 +117,7 @@ public abstract class f2 {
                 return;
             }
             if (z14 && chat != null) {
-                w70.u(activity, -chat.id, accountInstance, n2Var, !z13 ? 1 : 0, null, new x1(z13, activity, accountInstance, chat, str, user, z11, z12, n2Var));
+                x70.u(activity, -chat.id, accountInstance, n2Var, !z13 ? 1 : 0, null, new x1(z13, activity, accountInstance, chat, str, user, z11, z12, n2Var));
                 return;
             }
             if (z15 && !z10 && (inputPeer instanceof TLRPC.TL_inputPeerUser) && ChatObject.shouldSendAnonymously(chat) && (!ChatObject.isChannel(chat) || chat.megagroup)) {
@@ -155,7 +154,7 @@ public abstract class f2 {
                 }
             }
             if (chat != null && !z13 && (groupCall = accountInstance.getMessagesController().getGroupCall(chat.id, false)) != null && groupCall.isScheduled()) {
-                i60.c1((LaunchActivity) activity, accountInstance, chat, inputPeer, z10, str);
+                f60.c1((LaunchActivity) activity, accountInstance, chat, inputPeer, z10, str);
                 return;
             }
             a = SystemClock.elapsedRealtime();
@@ -270,7 +269,7 @@ public abstract class f2 {
                 if (!TextUtils.isEmpty(str)) {
                     sharedInstance.setGroupCallHash(str);
                 }
-                i60.c1((LaunchActivity) activity, AccountInstance.getInstance(UserConfig.selectedAccount), null, null, false, null);
+                f60.c1((LaunchActivity) activity, AccountInstance.getInstance(UserConfig.selectedAccount), null, null, false, null);
                 return;
             }
             if (sharedInstance.isConference()) {
@@ -341,7 +340,7 @@ public abstract class f2 {
             return;
         }
         if (VoIPService.getSharedInstance() != null) {
-            VoIPService.getSharedInstance().hangUp(new ii.r2(activity, i10, inputGroupCall, z10, groupCall, hashSet));
+            VoIPService.getSharedInstance().hangUp(new ii.s2(activity, i10, inputGroupCall, z10, groupCall, hashSet));
             return;
         }
         a = SystemClock.elapsedRealtime();
@@ -390,23 +389,23 @@ public abstract class f2 {
             alertDialog$Builder.k(LocaleController.getString(R.string.Settings), new ei.q0(activity, 1));
             alertDialog$Builder.h(LocaleController.getString(R.string.ContactsPermissionAlertNotNow), null);
             alertDialog$Builder.a.setOnDismissListener(new c2(0, runnable));
-            alertDialog$Builder.m(z10 ? R.raw.permission_request_camera : R.raw.permission_request_microphone, 72, i6.w0(null, i6.L5, false), null);
+            alertDialog$Builder.m(z10 ? R.raw.permission_request_camera : R.raw.permission_request_microphone, 72, h6.w0(null, h6.L5, false), null);
             alertDialog$Builder.o();
         }
     }
 
     public static void i(Activity activity) {
         final SharedPreferences globalMainSettings = MessagesController.getGlobalMainSettings();
-        LinearLayout f7 = org.telegram.messenger.y0.f(activity, 1);
+        LinearLayout f7 = org.telegram.messenger.z0.f(activity, 1);
         TextView textView = new TextView(activity);
         textView.setTextSize(1, 15.0f);
         textView.setText("Please only change these settings if you know exactly what they do.");
-        textView.setTextColor(i6.w0(null, i6.j5, false));
+        textView.setTextColor(h6.w0(null, h6.j5, false));
         f7.addView(textView, x5.k(16.0f, 8.0f, 16.0f, 8.0f, -1, -2));
-        final w8 w8Var = new w8(activity);
-        w8Var.f("Force TCP", globalMainSettings.getBoolean("dbg_force_tcp_in_calls", false), false);
+        final x8 x8Var = new x8(activity);
+        x8Var.f("Force TCP", globalMainSettings.getBoolean("dbg_force_tcp_in_calls", false), false);
         final int i10 = 0;
-        w8Var.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.voip.a2
+        x8Var.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.voip.a2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 switch (i10) {
@@ -417,7 +416,7 @@ public abstract class f2 {
                         boolean z11 = !z10;
                         edit.putBoolean("dbg_force_tcp_in_calls", z11);
                         edit.commit();
-                        w8Var.setChecked(z11);
+                        x8Var.setChecked(z11);
                         break;
                     case 1:
                         SharedPreferences sharedPreferences2 = globalMainSettings;
@@ -426,7 +425,7 @@ public abstract class f2 {
                         boolean z13 = !z12;
                         edit2.putBoolean("dbg_dump_call_stats", z13);
                         edit2.commit();
-                        w8Var.setChecked(z13);
+                        x8Var.setChecked(z13);
                         break;
                     default:
                         SharedPreferences sharedPreferences3 = globalMainSettings;
@@ -435,17 +434,17 @@ public abstract class f2 {
                         boolean z15 = !z14;
                         edit3.putBoolean("dbg_force_connection_service", z15);
                         edit3.commit();
-                        w8Var.setChecked(z15);
+                        x8Var.setChecked(z15);
                         break;
                 }
             }
         });
-        f7.addView(w8Var);
+        f7.addView(x8Var);
         if (BuildVars.DEBUG_VERSION && BuildVars.LOGS_ENABLED) {
-            final w8 w8Var2 = new w8(activity);
-            w8Var2.f("Dump detailed stats", globalMainSettings.getBoolean("dbg_dump_call_stats", false), false);
+            final x8 x8Var2 = new x8(activity);
+            x8Var2.f("Dump detailed stats", globalMainSettings.getBoolean("dbg_dump_call_stats", false), false);
             final int i11 = 1;
-            w8Var2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.voip.a2
+            x8Var2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.voip.a2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     switch (i11) {
@@ -456,7 +455,7 @@ public abstract class f2 {
                             boolean z11 = !z10;
                             edit.putBoolean("dbg_force_tcp_in_calls", z11);
                             edit.commit();
-                            w8Var2.setChecked(z11);
+                            x8Var2.setChecked(z11);
                             break;
                         case 1:
                             SharedPreferences sharedPreferences2 = globalMainSettings;
@@ -465,7 +464,7 @@ public abstract class f2 {
                             boolean z13 = !z12;
                             edit2.putBoolean("dbg_dump_call_stats", z13);
                             edit2.commit();
-                            w8Var2.setChecked(z13);
+                            x8Var2.setChecked(z13);
                             break;
                         default:
                             SharedPreferences sharedPreferences3 = globalMainSettings;
@@ -474,18 +473,18 @@ public abstract class f2 {
                             boolean z15 = !z14;
                             edit3.putBoolean("dbg_force_connection_service", z15);
                             edit3.commit();
-                            w8Var2.setChecked(z15);
+                            x8Var2.setChecked(z15);
                             break;
                     }
                 }
             });
-            f7.addView(w8Var2);
+            f7.addView(x8Var2);
         }
         if (Build.VERSION.SDK_INT >= 26) {
-            final w8 w8Var3 = new w8(activity);
-            w8Var3.f("Enable ConnectionService", globalMainSettings.getBoolean("dbg_force_connection_service", false), false);
+            final x8 x8Var3 = new x8(activity);
+            x8Var3.f("Enable ConnectionService", globalMainSettings.getBoolean("dbg_force_connection_service", false), false);
             final int i12 = 2;
-            w8Var3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.voip.a2
+            x8Var3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.voip.a2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     switch (i12) {
@@ -496,7 +495,7 @@ public abstract class f2 {
                             boolean z11 = !z10;
                             edit.putBoolean("dbg_force_tcp_in_calls", z11);
                             edit.commit();
-                            w8Var3.setChecked(z11);
+                            x8Var3.setChecked(z11);
                             break;
                         case 1:
                             SharedPreferences sharedPreferences2 = globalMainSettings;
@@ -505,7 +504,7 @@ public abstract class f2 {
                             boolean z13 = !z12;
                             edit2.putBoolean("dbg_dump_call_stats", z13);
                             edit2.commit();
-                            w8Var3.setChecked(z13);
+                            x8Var3.setChecked(z13);
                             break;
                         default:
                             SharedPreferences sharedPreferences3 = globalMainSettings;
@@ -514,12 +513,12 @@ public abstract class f2 {
                             boolean z15 = !z14;
                             edit3.putBoolean("dbg_force_connection_service", z15);
                             edit3.commit();
-                            w8Var3.setChecked(z15);
+                            x8Var3.setChecked(z15);
                             break;
                     }
                 }
             });
-            f7.addView(w8Var3);
+            f7.addView(x8Var3);
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(activity);
         alertDialog$Builder.a.R = LocaleController.getString(R.string.DebugMenuCallSettings);
@@ -544,7 +543,7 @@ public abstract class f2 {
         }
     }
 
-    public static void k(final Context context, f01 f01Var, boolean z10, final long j3, final long j10, final int i10, final boolean z11) {
+    public static void k(final Context context, xz0 xz0Var, boolean z10, final long j3, final long j10, final int i10, final boolean z11) {
         File file;
         String string;
         String str;
@@ -566,21 +565,21 @@ public abstract class f2 {
         final File file4 = file;
         final int[] iArr = {0};
         int i11 = 1;
-        LinearLayout f7 = vl.f(context, 1);
+        LinearLayout f7 = ul.f(context, 1);
         int dp = AndroidUtilities.dp(16.0f);
         f7.setPadding(dp, dp, dp, 0);
         final TextView textView = new TextView(context);
         textView.setTextSize(2, 16.0f);
-        com.google.android.gms.internal.vision.e2.p(i6.j5, null, false, textView, 17);
+        com.google.android.gms.internal.vision.e2.p(h6.j5, null, false, textView, 17);
         textView.setText(LocaleController.getString(R.string.VoipRateCallAlert));
         f7.addView(textView);
-        final y9 y9Var = new y9(context);
-        y9Var.c = new Paint();
-        y9Var.d = 5;
-        y9Var.e = 0;
-        y9Var.a = BitmapFactory.decodeResource(y9Var.getResources(), R.drawable.ic_rating_star_filled).extractAlpha();
-        y9Var.b = BitmapFactory.decodeResource(y9Var.getResources(), R.drawable.ic_rating_star).extractAlpha();
-        f7.addView(y9Var, x5.t(-2, -2, 1, 0, 16, 0, 0));
+        final aa aaVar = new aa(context);
+        aaVar.c = new Paint();
+        aaVar.d = 5;
+        aaVar.e = 0;
+        aaVar.a = BitmapFactory.decodeResource(aaVar.getResources(), R.drawable.ic_rating_star_filled).extractAlpha();
+        aaVar.b = BitmapFactory.decodeResource(aaVar.getResources(), R.drawable.ic_rating_star).extractAlpha();
+        f7.addView(aaVar, x5.t(-2, -2, 1, 0, 16, 0, 0));
         final LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         ai.e2 e2Var = new ai.e2(14);
@@ -645,26 +644,26 @@ public abstract class f2 {
         final EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
         editTextBoldCursor.setHint(LocaleController.getString(R.string.VoipFeedbackCommentHint));
         editTextBoldCursor.setInputType(147457);
-        editTextBoldCursor.setTextColor(i6.w0(null, i6.j5, false));
-        editTextBoldCursor.setHintTextColor(i6.w0(null, i6.t5, false));
+        editTextBoldCursor.setTextColor(h6.w0(null, h6.j5, false));
+        editTextBoldCursor.setHintTextColor(h6.w0(null, h6.t5, false));
         editTextBoldCursor.setBackground(null);
-        editTextBoldCursor.setLineColors(i6.w0(null, i6.u5, false), i6.w0(null, i6.v5, false), i6.w0(null, i6.q7, false));
+        editTextBoldCursor.setLineColors(h6.w0(null, h6.u5, false), h6.w0(null, h6.v5, false), h6.w0(null, h6.q7, false));
         editTextBoldCursor.setPadding(0, AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f));
         editTextBoldCursor.setTextSize(1, 18.0f);
         editTextBoldCursor.setVisibility(8);
         f7.addView(editTextBoldCursor, x5.k(8.0f, 8.0f, 8.0f, 0.0f, -1, -2));
         final boolean[] zArr = {true};
         final org.telegram.ui.Cells.z1 z1Var2 = new org.telegram.ui.Cells.z1(context, 1);
-        dt dtVar = new dt(25, zArr, z1Var2);
+        et etVar = new et(25, zArr, z1Var2);
         z1Var2.e(LocaleController.getString(R.string.CallReportIncludeLogs), null, true, false, false);
         z1Var2.setClipToPadding(false);
-        z1Var2.setOnClickListener(dtVar);
+        z1Var2.setOnClickListener(etVar);
         f7.addView(z1Var2, x5.k(-8.0f, 0.0f, -8.0f, 0.0f, -1, -2));
         final TextView textView2 = new TextView(context);
         textView2.setTextSize(2, 14.0f);
-        textView2.setTextColor(i6.w0(null, i6.r5, false));
+        textView2.setTextColor(h6.w0(null, h6.r5, false));
         textView2.setPadding(q3.b(8.0f, R.string.CallReportLogsExplain, textView2), 0, AndroidUtilities.dp(8.0f), 0);
-        textView2.setOnClickListener(dtVar);
+        textView2.setOnClickListener(etVar);
         f7.addView(textView2);
         z1Var2.setVisibility(8);
         textView2.setVisibility(8);
@@ -674,25 +673,25 @@ public abstract class f2 {
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context);
         alertDialog$Builder.a.R = LocaleController.getString(R.string.CallMessageReportProblem);
         alertDialog$Builder.n(f7);
-        alertDialog$Builder.k(LocaleController.getString(R.string.Send), new t0.a(2));
+        alertDialog$Builder.k(LocaleController.getString(R.string.Send), new s0.b(16));
         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-        alertDialog$Builder.a.setOnDismissListener(new c2(1, f01Var));
+        alertDialog$Builder.a.setOnDismissListener(new c2(1, xz0Var));
         final org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
         if (BuildVars.LOGS_ENABLED && file4.exists()) {
-            mf mfVar = new mf(19, context, file4);
+            org.telegram.ui.Components.b3 b3Var = new org.telegram.ui.Components.b3(20, context, file4);
             b2Var.r0 = "Send log";
-            b2Var.s0 = mfVar;
+            b2Var.s0 = b3Var;
         }
         b2Var.show();
         b2Var.getWindow().setSoftInputMode(3);
         final View d = b2Var.d(-1);
         d.setEnabled(false);
-        y9Var.setOnRatingChangeListener(new le.a(d));
+        aaVar.setOnRatingChangeListener(new le.a(d));
         d.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.voip.v1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                y9 y9Var2 = y9.this;
-                int rating = y9Var2.getRating();
+                aa aaVar2 = aa.this;
+                int rating = aaVar2.getRating();
                 LinearLayout linearLayout2 = linearLayout;
                 EditTextBoldCursor editTextBoldCursor2 = editTextBoldCursor;
                 File file5 = file4;
@@ -701,7 +700,7 @@ public abstract class f2 {
                     int[] iArr2 = iArr;
                     if (iArr2[0] != 1) {
                         iArr2[0] = 1;
-                        y9Var2.setVisibility(8);
+                        aaVar2.setVisibility(8);
                         textView.setVisibility(8);
                         b2Var2.setTitle(LocaleController.getString(R.string.CallReportHint));
                         editTextBoldCursor2.setVisibility(0);
@@ -716,7 +715,7 @@ public abstract class f2 {
                 }
                 int i13 = UserConfig.selectedAccount;
                 TL_phone.setCallRating setcallrating = new TL_phone.setCallRating();
-                setcallrating.rating = y9Var2.getRating();
+                setcallrating.rating = aaVar2.getRating();
                 ArrayList arrayList = new ArrayList();
                 for (int i14 = 0; i14 < linearLayout2.getChildCount(); i14++) {
                     org.telegram.ui.Cells.z1 z1Var3 = (org.telegram.ui.Cells.z1) linearLayout2.getChildAt(i14);
@@ -739,7 +738,7 @@ public abstract class f2 {
                 tL_inputPhoneCall.access_hash = j10;
                 tL_inputPhoneCall.id = j3;
                 setcallrating.user_initiative = z11;
-                ConnectionsManager.getInstance(i10).sendRequest(setcallrating, new ii(i13, zArr2, file5, setcallrating, arrayList, context));
+                ConnectionsManager.getInstance(i10).sendRequest(setcallrating, new hi(i13, zArr2, file5, setcallrating, arrayList, context));
                 b2Var2.dismiss();
             }
         });
@@ -777,7 +776,7 @@ public abstract class f2 {
             return;
         }
         if (userFull != null && userFull.phone_calls_private) {
-            c5.l0(activity, accountInstance.getCurrentAccount(), user.id);
+            e5.l0(activity, accountInstance.getCurrentAccount(), user.id);
             return;
         }
         if (ConnectionsManager.getInstance(UserConfig.selectedAccount).getConnectionState() != 3) {

@@ -10,7 +10,7 @@ import android.os.Looper;
 import android.os.SystemClock;
 import android.util.Pair;
 import e2.d0;
-import i2.g0;
+import i2.h0;
 import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,9 +20,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
+import m4.p0;
 import w7.a0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class b implements g {
     public final List a;
@@ -120,7 +121,7 @@ public final class b implements g {
             eVar.y.add(this);
             Handler handler = eVar.J;
             handler.getClass();
-            handler.postAtTime(new g0(this, 13), this, SystemClock.uptimeMillis() + eVar.v);
+            handler.postAtTime(new h0(this, 13), this, SystemClock.uptimeMillis() + eVar.v);
         } else if (i12 == 0) {
             eVar.w.remove(this);
             if (eVar.G == this) {
@@ -245,11 +246,11 @@ public final class b implements g {
         return this.s;
     }
 
-    public final void i(ai.i iVar) {
+    public final void i(p0 p0Var) {
         Set set;
-        e2.i iVar2 = this.h;
-        synchronized (iVar2.a) {
-            set = iVar2.c;
+        e2.i iVar = this.h;
+        synchronized (iVar.a) {
+            set = iVar.c;
         }
         Iterator it = set.iterator();
         while (it.hasNext()) {

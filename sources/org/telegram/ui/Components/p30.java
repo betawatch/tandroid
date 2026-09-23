@@ -1,51 +1,54 @@
 package org.telegram.ui.Components;
 
 import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class p30 implements gg.b2 {
-    public final /* synthetic */ q30 a;
+public final /* synthetic */ class p30 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ r30 b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ int d;
 
-    public p30(q30 q30Var) {
-        this.a = q30Var;
+    public /* synthetic */ p30(r30 r30Var, String str, int i10, int i11) {
+        this.a = i11;
+        this.b = r30Var;
+        this.c = str;
+        this.d = i10;
     }
 
-    @Override // gg.b2
-    public final /* synthetic */ a0.i F() {
-        return null;
-    }
-
-    @Override // gg.b2
-    public final /* synthetic */ boolean O(int i10) {
-        return true;
-    }
-
-    @Override // gg.b2
-    public final void h(int i10) {
-        q30 q30Var = this.a;
-        r30 r30Var = q30Var.w;
-        if (i10 < 0 || i10 != q30Var.n || q30Var.h) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                r30 r30Var = this.b;
+                String str = this.c;
+                int i10 = this.d;
+                if (r30Var.e != null) {
+                    r30Var.e = null;
+                    AndroidUtilities.runOnUIThread(new p30(r30Var, str, i10, 1));
+                    break;
+                }
+                break;
+            default:
+                r30 r30Var2 = this.b;
+                String str2 = this.c;
+                int i11 = this.d;
+                ArrayList arrayList = null;
+                r30Var2.e = null;
+                if (!ChatObject.isChannel(r30Var2.w.V) && r30Var2.w.W != null) {
+                    arrayList = new ArrayList(r30Var2.w.W.participants.participants);
+                }
+                if (arrayList != null) {
+                    Utilities.searchQueue.postRunnable(new ai.c9(r30Var2, str2, i11, arrayList));
+                } else {
+                    r30Var2.h = false;
+                }
+                r30Var2.d.g(str2, ChatObject.canAddUsers(r30Var2.w.V), false, true, false, ChatObject.isChannel(r30Var2.w.V) ? r30Var2.w.V.id : 0L, false, 2, i11);
+                break;
         }
-        int i11 = q30Var.f - 1;
-        boolean z10 = r30Var.s.getVisibility() == 0;
-        q30Var.l();
-        if (q30Var.f > i11) {
-            r30Var.J(i11);
-        }
-        if (q30Var.d.e() || !r30Var.d.S0()) {
-            return;
-        }
-        r30Var.s.e(false, z10);
-    }
-
-    @Override // gg.b2
-    public final a0.i w() {
-        return this.a.w.e0;
-    }
-
-    @Override // gg.b2
-    public final /* synthetic */ void Q(ArrayList arrayList) {
     }
 }

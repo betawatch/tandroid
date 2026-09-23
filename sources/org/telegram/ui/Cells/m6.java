@@ -1,19 +1,19 @@
 package org.telegram.ui.Cells;
 
 import android.view.View;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.zn;
+import org.telegram.ui.Components.ao;
+import org.telegram.ui.Components.ml0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class m6 extends ai.ca {
     public final /* synthetic */ int S = 1;
     public final /* synthetic */ View T;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m6(o6 o6Var, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(e6Var, false);
+    public m6(o6 o6Var, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(d6Var, false);
         this.T = o6Var;
     }
 
@@ -24,30 +24,30 @@ public final class m6 extends ai.ca {
                 ((o6) this.T).b(j3);
                 break;
             case 1:
-                ab abVar = (ab) this.T;
+                bb bbVar = (bb) this.T;
                 org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
                 if (R != null) {
                     R.getOrCreateStoryViewer().getClass();
-                    R.getOrCreateStoryViewer().D(abVar.getContext(), j3, ai.u9.a((ll0) abVar.getParent()));
+                    R.getOrCreateStoryViewer().D(bbVar.getContext(), j3, ai.u9.a((ml0) bbVar.getParent()));
                     break;
                 }
                 break;
             default:
-                zn znVar = (zn) this.T;
-                znVar.H.getOrCreateStoryViewer().D(znVar.getContext(), j3, new org.telegram.ui.Components.s(this, 25));
+                ao aoVar = (ao) this.T;
+                aoVar.H.getOrCreateStoryViewer().D(aoVar.getContext(), j3, new org.telegram.ui.Components.s(this, 25));
                 break;
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m6(ab abVar) {
+    public m6(bb bbVar) {
         super(null, false);
-        this.T = abVar;
+        this.T = bbVar;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m6(zn znVar) {
+    public m6(ao aoVar) {
         super(null, true);
-        this.T = znVar;
+        this.T = aoVar;
     }
 }

@@ -21,7 +21,7 @@ import n6.i;
 import n6.l;
 import n6.o;
 import ni.f;
-import org.telegram.ui.Cells.ia;
+import org.telegram.ui.Cells.ja;
 import qb.g;
 import qb.j;
 import sb.b;
@@ -38,7 +38,7 @@ import v7.r1;
 import v7.y8;
 import v7.z8;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public class LanguageIdentifierImpl implements b {
     public final y8 a;
@@ -57,9 +57,9 @@ public class LanguageIdentifierImpl implements b {
     }
 
     public static final f6 k() {
-        ia iaVar = new ia(17);
-        iaVar.b = Float.valueOf(-1.0f);
-        return new f6(iaVar);
+        ja jaVar = new ja(17);
+        jaVar.b = Float.valueOf(-1.0f);
+        return new f6(jaVar);
     }
 
     @Override // com.google.android.gms.common.api.n

@@ -6,9 +6,9 @@ import android.view.SurfaceView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.Components.bj0;
+import org.telegram.ui.Components.cj0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class sb extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -21,8 +21,8 @@ public final class sb extends AnimatorListenerAdapter {
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        f6 t10;
-        bj0 bj0Var;
+        e6 t10;
+        cj0 cj0Var;
         switch (this.a) {
             case 0:
                 super.onAnimationEnd(animator);
@@ -50,18 +50,18 @@ public final class sb extends AnimatorListenerAdapter {
                     imageReceiver2.setAlpha(1.0f);
                     gcVar.c.setVisible(true, true);
                 }
-                if (gcVar.d != null && (t10 = jcVar.t()) != null && (bj0Var = t10.o1.d) != null) {
-                    bj0 bj0Var2 = gcVar.d;
-                    bj0Var2.getClass();
-                    bj0Var2.c = bj0Var.c;
-                    bj0Var2.f = bj0Var.f;
-                    bj0Var2.b = bj0Var.b;
-                    bj0Var2.a = System.currentTimeMillis();
-                    bj0Var2.c();
+                if (gcVar.d != null && (t10 = jcVar.t()) != null && (cj0Var = t10.o1.d) != null) {
+                    cj0 cj0Var2 = gcVar.d;
+                    cj0Var2.getClass();
+                    cj0Var2.c = cj0Var.c;
+                    cj0Var2.f = cj0Var.f;
+                    cj0Var2.b = cj0Var.b;
+                    cj0Var2.a = System.currentTimeMillis();
+                    cj0Var2.c();
                 }
-                e6 e6Var = jcVar.G0;
-                if (e6Var != null) {
-                    e6Var.b();
+                d6 d6Var = jcVar.G0;
+                if (d6Var != null) {
+                    d6Var.b();
                 }
                 SurfaceView surfaceView = jcVar.C0;
                 if (surfaceView != null) {
@@ -74,9 +74,9 @@ public final class sb extends AnimatorListenerAdapter {
                 }
                 jcVar.m0 = false;
                 jcVar.d = false;
-                e5 e5Var = jcVar.o1;
-                if (e5Var != null) {
-                    e5Var.run();
+                d5 d5Var = jcVar.o1;
+                if (d5Var != null) {
+                    d5Var.run();
                     jcVar.o1 = null;
                     break;
                 }
@@ -87,7 +87,7 @@ public final class sb extends AnimatorListenerAdapter {
                 jcVar2.Z = 0.0f;
                 jcVar2.d0 = 0.0f;
                 zb zbVar = jcVar2.n0;
-                f6 currentPeerView = zbVar != null ? zbVar.getCurrentPeerView() : null;
+                e6 currentPeerView = zbVar != null ? zbVar.getCurrentPeerView() : null;
                 if (currentPeerView != null) {
                     currentPeerView.invalidate();
                     break;
@@ -118,7 +118,7 @@ public final class sb extends AnimatorListenerAdapter {
                     gcVar2.c.setVisible(true, true);
                     gcVar2.c = null;
                 }
-                f6 t11 = jcVar3.t();
+                e6 t11 = jcVar3.t();
                 if (t11 != null) {
                     t11.f1(false);
                 }
@@ -129,7 +129,7 @@ public final class sb extends AnimatorListenerAdapter {
                 if (jcVar3.w1) {
                     jcVar3.w1 = false;
                     jcVar3.p();
-                    AndroidUtilities.runOnUIThread(new e5(jcVar3, 1), 30L);
+                    AndroidUtilities.runOnUIThread(new d5(jcVar3, 1), 30L);
                 } else if (!SharedConfig.storiesIntroShown) {
                     if (jcVar3.u1 == null && jcVar3.v != null) {
                         p9 p9Var2 = new p9(jcVar3.v.getContext(), jcVar3.s);

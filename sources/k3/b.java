@@ -20,7 +20,7 @@ import java.util.List;
 import org.xmlpull.v1.XmlPullParserException;
 import w3.k;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class b implements o {
     public q b;
@@ -162,7 +162,7 @@ public final class b implements o {
             }
             pVar.p();
             if (this.j == null) {
-                this.j = new k(z3.l.D, 8);
+                this.j = new k(z3.k.D, 8);
             }
             n nVar2 = new n(pVar, this.f);
             this.i = nVar2;

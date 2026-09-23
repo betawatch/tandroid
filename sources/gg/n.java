@@ -21,15 +21,15 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.hb0;
-import org.telegram.ui.Components.ko;
-import org.telegram.ui.Components.oo;
-import org.telegram.ui.Components.pb0;
-import org.telegram.ui.bo;
+import org.telegram.ui.Components.lo;
+import org.telegram.ui.Components.ob0;
+import org.telegram.ui.Components.po;
+import org.telegram.ui.xn;
 import org.webrtc.SurfaceTextureHelper;
 import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n implements Runnable {
     public final /* synthetic */ int a;
@@ -144,15 +144,15 @@ public final /* synthetic */ class n implements Runnable {
                 }
                 break;
             case 1:
-                i2.e0 e0Var = (i2.e0) this.d;
-                e2.p pVar = e0Var.m;
+                i2.f0 f0Var = (i2.f0) this.d;
+                e2.p pVar = f0Var.m;
                 int i15 = this.b;
                 int i16 = this.c;
                 pVar.e(24, new dh.c(i15, i16, 2));
-                e0Var.p1(2, 14, new e2.w(i15, i16));
+                f0Var.p1(2, 14, new e2.w(i15, i16));
                 break;
             case 2:
-                ((i2.b0) this.d).a.m1(this.b, this.c);
+                ((i2.c0) this.d).a.m1(this.b, this.c);
                 break;
             case 3:
                 VoIPGroupNotification.decline((Context) this.d, this.b, this.c);
@@ -164,9 +164,9 @@ public final /* synthetic */ class n implements Runnable {
                 ((ConnectionsManager) this.d).lambda$discardConnection$0(this.b, this.c);
                 break;
             case 6:
-                org.telegram.ui.web.z0 z0Var = (org.telegram.ui.web.z0) this.d;
+                org.telegram.ui.web.y0 y0Var = (org.telegram.ui.web.y0) this.d;
                 for (int i17 = 0; i17 < this.b - this.c; i17++) {
-                    z0Var.goBack();
+                    y0Var.goBack();
                 }
                 break;
             case 7:
@@ -174,30 +174,30 @@ public final /* synthetic */ class n implements Runnable {
                 Bundle bundle = new Bundle();
                 bundle.putLong("user_id", UserConfig.getInstance(this.b).getClientUserId());
                 bundle.putInt("message_id", this.c);
-                n2Var.presentFragment(new bo(bundle));
+                n2Var.presentFragment(new xn(bundle));
                 break;
             case 8:
-                oo ooVar = (oo) this.d;
+                po poVar = (po) this.d;
                 int i18 = this.b;
                 if (i18 != 0) {
                     SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(this.c);
                     notificationsSettings.edit().putInt("last_selected_mute_until_time", i18).putInt("last_selected_mute_until_time2", notificationsSettings.getInt("last_selected_mute_until_time", 0)).apply();
                 }
-                ooVar.t(i18);
+                poVar.t(i18);
                 break;
             case 9:
-                ko koVar = (ko) this.d;
+                lo loVar = (lo) this.d;
                 int i19 = this.b;
                 if (i19 != 0) {
                     SharedPreferences notificationsSettings2 = MessagesController.getNotificationsSettings(this.c);
                     notificationsSettings2.edit().putInt("last_selected_mute_until_time", i19).putInt("last_selected_mute_until_time2", notificationsSettings2.getInt("last_selected_mute_until_time", 0)).apply();
                 }
-                koVar.run(Integer.valueOf(i19));
+                loVar.run(Integer.valueOf(i19));
                 break;
             case 10:
-                pb0 pb0Var = ((hb0) this.d).X2;
-                View d = pb0Var.d();
-                hb0 hb0Var = pb0Var.f;
+                ob0 ob0Var = ((hb0) this.d).X2;
+                View d = ob0Var.d();
+                hb0 hb0Var = ob0Var.f;
                 if (d != null) {
                     int top = d.getTop() + this.b;
                     int top2 = d.getTop() + this.c;
@@ -235,9 +235,9 @@ public final /* synthetic */ class n implements Runnable {
         }
     }
 
-    public /* synthetic */ n(i2.b0 b0Var, SurfaceTexture surfaceTexture, int i10, int i11) {
+    public /* synthetic */ n(i2.c0 c0Var, SurfaceTexture surfaceTexture, int i10, int i11) {
         this.a = 2;
-        this.d = b0Var;
+        this.d = c0Var;
         this.b = i10;
         this.c = i11;
     }

@@ -1,6 +1,6 @@
 package m4;
 
-import ai.i5;
+import ai.h5;
 import android.graphics.Bitmap;
 import android.media.AudioAttributes;
 import android.net.Uri;
@@ -17,7 +17,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.atomic.AtomicInteger;
 import v7.l8;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class j0 implements i9.r, q {
     public b2.n0 a;
@@ -36,20 +36,20 @@ public final class j0 implements i9.r, q {
     @Override // m4.q
     public void c(int i10, b2.x0 x0Var) {
         l0 l0Var = (l0) this.e;
-        k1 k1Var = l0Var.g.t;
-        int i11 = k1Var.m0(20) ? 4 : 0;
+        f1 f1Var = l0Var.g.t;
+        int i11 = f1Var.m0(20) ? 4 : 0;
         if (l0Var.q != i11) {
             l0Var.q = i11;
             ((n4.r) l0Var.k.b).a.setFlags(i11 | 3);
         }
-        l0Var.N(k1Var);
+        l0Var.N(f1Var);
     }
 
     @Override // m4.q
-    public void d(int i10, m1 m1Var) {
+    public void d(int i10, h1 h1Var) {
         Bundle bundle = Bundle.EMPTY;
         n4.y yVar = ((l0) this.e).k;
-        String str = m1Var.b;
+        String str = h1Var.b;
         yVar.getClass();
         if (TextUtils.isEmpty(str)) {
             throw new IllegalArgumentException("event cannot be null or empty");
@@ -71,7 +71,7 @@ public final class j0 implements i9.r, q {
     }
 
     @Override // m4.q
-    public void e(int i10, p1 p1Var, boolean z10, boolean z11, int i11) {
+    public void e(int i10, k1 k1Var, boolean z10, boolean z11, int i11) {
         l0 l0Var = (l0) this.e;
         l0Var.N(l0Var.g.t);
     }
@@ -97,9 +97,9 @@ public final class j0 implements i9.r, q {
 
     public void k() {
         l0 l0Var = (l0) this.e;
-        k1 k1Var = l0Var.g.t;
-        k1Var.K().getClass();
-        int e = k.e(k1Var.m0(21) ? k1Var.I() : b2.e.h);
+        f1 f1Var = l0Var.g.t;
+        f1Var.K().getClass();
+        int e = k.e(f1Var.m0(21) ? f1Var.I() : b2.e.h);
         n4.r rVar = (n4.r) l0Var.k.b;
         rVar.getClass();
         AudioAttributes.Builder builder = new AudioAttributes.Builder();
@@ -126,38 +126,38 @@ public final class j0 implements i9.r, q {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void m(int i10, k1 k1Var, k1 k1Var2) {
+    public void m(int i10, f1 f1Var, f1 f1Var2) {
         l0 l0Var = (l0) this.e;
-        b2.k1 Q0 = k1Var2.Q0();
-        if (k1Var == null || !Objects.equals(k1Var.Q0(), Q0)) {
+        b2.k1 Q0 = f1Var2.Q0();
+        if (f1Var == null || !Objects.equals(f1Var.Q0(), Q0)) {
             q(Q0);
         }
-        b2.n0 h02 = k1Var2.m0(18) ? k1Var2.h0() : b2.n0.K;
-        if (k1Var != null) {
+        b2.n0 h02 = f1Var2.m0(18) ? f1Var2.h0() : b2.n0.K;
+        if (f1Var != null) {
         }
         n(h02);
-        b2.n0 R0 = k1Var2.R0();
-        if (k1Var == null || !Objects.equals(k1Var.R0(), R0)) {
+        b2.n0 R0 = f1Var2.R0();
+        if (f1Var == null || !Objects.equals(f1Var.R0(), R0)) {
             r();
         }
-        if (k1Var == null || k1Var.A0() != k1Var2.A0()) {
-            p(k1Var2.A0());
+        if (f1Var == null || f1Var.A0() != f1Var2.A0()) {
+            p(f1Var2.A0());
         }
-        if (k1Var == null || k1Var.l() != k1Var2.l()) {
-            o(k1Var2.l());
+        if (f1Var == null || f1Var.l() != f1Var2.l()) {
+            o(f1Var2.l());
         }
-        k1Var2.K();
+        f1Var2.K();
         k();
-        int i11 = k1Var2.m0(20) ? 4 : 0;
+        int i11 = f1Var2.m0(20) ? 4 : 0;
         if (l0Var.q != i11) {
             l0Var.q = i11;
             ((n4.r) l0Var.k.b).a.setFlags(i11 | 3);
         }
-        b2.k0 P0 = k1Var2.P0();
-        if (k1Var == null || !Objects.equals(k1Var.P0(), P0)) {
+        b2.k0 P0 = f1Var2.P0();
+        if (f1Var == null || !Objects.equals(f1Var.P0(), P0)) {
             l(P0);
         } else {
-            l0Var.N(k1Var2);
+            l0Var.N(f1Var2);
         }
     }
 
@@ -169,8 +169,8 @@ public final class j0 implements i9.r, q {
         if (TextUtils.equals(queueTitle, charSequence)) {
             return;
         }
-        k1 k1Var = l0Var.g.t;
-        if (!l0Var.v.a(17) || !k1Var.t().a(17)) {
+        f1 f1Var = l0Var.g.t;
+        if (!l0Var.v.a(17) || !f1Var.t().a(17)) {
             charSequence = null;
         }
         ((n4.r) yVar.b).a.setQueueTitle(charSequence);
@@ -250,12 +250,12 @@ public final class j0 implements i9.r, q {
         Uri uri3;
         l0 l0Var = (l0) this.e;
         a0 a0Var = l0Var.g;
-        k1 k1Var = a0Var.t;
-        b2.k0 P0 = k1Var.P0();
-        b2.n0 R0 = k1Var.R0();
+        f1 f1Var = a0Var.t;
+        b2.k0 P0 = f1Var.P0();
+        b2.n0 R0 = f1Var.R0();
         long j10 = -9223372036854775807L;
-        if ((!k1Var.m0(16) || !k1Var.M0()) && k1Var.m0(16)) {
-            j10 = k1Var.getDuration();
+        if ((!f1Var.m0(16) || !f1Var.M0()) && f1Var.m0(16)) {
+            j10 = f1Var.getDuration();
         }
         String str = P0 != null ? P0.a : "";
         Bitmap bitmap = null;
@@ -300,7 +300,7 @@ public final class j0 implements i9.r, q {
                 l0Var.p = j0Var;
                 Handler handler = a0Var.l;
                 Objects.requireNonNull(handler);
-                wVar.a(new i9.s(0, wVar, j0Var), new k2.d0(handler, 0));
+                wVar.a(new i9.s(0, wVar, j0Var), new k2.c0(handler, 0));
                 l0.E(l0Var.k, k.b(n0Var, str, uri2, j3, bitmap));
             }
             try {
@@ -318,8 +318,8 @@ public final class j0 implements i9.r, q {
     public void s(b2.k1 k1Var) {
         l0 l0Var = (l0) this.e;
         a0 a0Var = l0Var.g;
-        k1 k1Var2 = a0Var.t;
-        if (!l0Var.v.a(17) || !k1Var2.t().a(17) || k1Var.p()) {
+        f1 f1Var = a0Var.t;
+        if (!l0Var.v.a(17) || !f1Var.t().a(17) || k1Var.p()) {
             l0.D(l0Var.k, null);
             return;
         }
@@ -330,18 +330,18 @@ public final class j0 implements i9.r, q {
             arrayList.add(k1Var.m(i11, j1Var, 0L).c);
         }
         ArrayList arrayList2 = new ArrayList();
-        i5 i5Var = new i5(this, new AtomicInteger(0), arrayList, arrayList2, 21);
+        h5 h5Var = new h5(this, new AtomicInteger(0), arrayList, arrayList2, 21);
         for (int i12 = 0; i12 < arrayList.size(); i12++) {
             byte[] bArr = ((b2.k0) arrayList.get(i12)).d.k;
             if (bArr == null) {
                 arrayList2.add(null);
-                i5Var.run();
+                h5Var.run();
             } else {
                 i9.w n10 = a0Var.m.n(bArr);
                 arrayList2.add(n10);
                 Handler handler = a0Var.l;
                 Objects.requireNonNull(handler);
-                n10.a(i5Var, new k2.d0(handler, 0));
+                n10.a(h5Var, new k2.c0(handler, 0));
             }
         }
     }
@@ -367,10 +367,10 @@ public final class j0 implements i9.r, q {
     }
 
     @Override // m4.q
-    public /* synthetic */ void i(int i10, q1 q1Var) {
+    public /* synthetic */ void i(int i10, l1 l1Var) {
     }
 
     @Override // m4.q
-    public /* synthetic */ void g(int i10, i1 i1Var, b2.x0 x0Var, boolean z10, boolean z11) {
+    public /* synthetic */ void g(int i10, d1 d1Var, b2.x0 x0Var, boolean z10, boolean z11) {
     }
 }

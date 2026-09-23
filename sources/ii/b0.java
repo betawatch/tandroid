@@ -2,10 +2,10 @@ package ii;
 
 import android.animation.ValueAnimator;
 import java.net.URL;
-import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.rr;
 import v7.o8;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class b0 {
     public int a;
@@ -36,7 +36,7 @@ public final class b0 {
         }
         ValueAnimator ofInt = ValueAnimator.ofInt(i10, b10);
         ofInt.addUpdateListener(new ai.x(6, this, d5Var));
-        ofInt.setInterpolator(qr.f);
+        ofInt.setInterpolator(rr.f);
         ofInt.setDuration(200L);
         this.c = ofInt;
         ofInt.start();

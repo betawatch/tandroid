@@ -19,11 +19,11 @@ import java.util.IdentityHashMap;
 import java.util.List;
 import java.util.Set;
 import java.util.UUID;
-import k2.c0;
-import m4.u0;
+import k2.b0;
+import m4.p0;
 import w7.a0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class e implements m {
     public int E;
@@ -36,7 +36,7 @@ public final class e implements m {
     public j2.k L;
     public volatile androidx.mediarouter.app.c M;
     public final UUID a;
-    public final u0 b;
+    public final p0 b;
     public final com.google.firebase.messaging.m c;
     public final HashMap d;
     public final boolean e;
@@ -261,7 +261,7 @@ public final class e implements m {
                     bVar = new qb.b(13);
                 }
                 this.F = bVar;
-                bVar.a(new c0(this, 6));
+                bVar.a(new b0(this, 6));
                 return;
             } catch (UnsupportedSchemeException e) {
                 throw new w(e);

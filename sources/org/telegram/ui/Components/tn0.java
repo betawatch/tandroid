@@ -6,20 +6,20 @@ import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class tn0 extends ts {
-    public final /* synthetic */ org.telegram.ui.uy d0;
-    public final /* synthetic */ org.telegram.ui.ey e0;
+public final class tn0 extends us {
+    public final /* synthetic */ org.telegram.ui.ry d0;
+    public final /* synthetic */ org.telegram.ui.ay e0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tn0(org.telegram.ui.ey eyVar, ll0 ll0Var, Context context, int i10, int i11, org.telegram.ui.uy uyVar) {
-        super(ll0Var, context, i10, i11);
-        this.e0 = eyVar;
-        this.d0 = uyVar;
+    public tn0(org.telegram.ui.ay ayVar, ml0 ml0Var, Context context, int i10, int i11, org.telegram.ui.ry ryVar) {
+        super(ml0Var, context, i10, i11);
+        this.e0 = ayVar;
+        this.d0 = ryVar;
     }
 
-    @Override // org.telegram.ui.Components.w51
+    @Override // org.telegram.ui.Components.v51
     public final void N(boolean z10) {
         ArrayList arrayList;
         ArrayList arrayList2;

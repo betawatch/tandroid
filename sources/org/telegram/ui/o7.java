@@ -9,12 +9,12 @@ import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class o7 extends g7 {
     public org.telegram.ui.Cells.s7 n;
     public final ArrayList r;
-    public org.telegram.ui.Components.pq s;
+    public org.telegram.ui.Components.qq s;
     public final /* synthetic */ s7 v;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -43,9 +43,9 @@ public final class o7 extends g7 {
     @Override // s4.h0
     public final void v(s4.c1 c1Var, int i10) {
         if (this.s == null) {
-            org.telegram.ui.Components.pq pqVar = new org.telegram.ui.Components.pq(new ColorDrawable(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.X9, false)), org.telegram.ui.ActionBar.i6.R4);
-            this.s = pqVar;
-            pqVar.w = true;
+            org.telegram.ui.Components.qq qqVar = new org.telegram.ui.Components.qq(new ColorDrawable(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.X9, false)), org.telegram.ui.ActionBar.h6.R4);
+            this.s = qqVar;
+            qqVar.w = true;
         }
         org.telegram.ui.Cells.t7 t7Var = (org.telegram.ui.Cells.t7) c1Var.a;
         zh.a aVar = ((m7) this.e.get(i10)).d;
@@ -73,6 +73,6 @@ public final class o7 extends g7 {
         }
         n7 n7Var = new n7(this, viewGroup.getContext(), this.n, this.v.d.getCurrentAccount());
         n7Var.setStyle(1);
-        return new org.telegram.ui.Components.vk0(n7Var);
+        return new org.telegram.ui.Components.wk0(n7Var);
     }
 }

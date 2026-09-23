@@ -5,26 +5,26 @@ import android.graphics.Canvas;
 import android.graphics.Path;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.d6;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final class x extends yh.w3 {
+public final class x extends yh.v3 {
     public final Path A0;
     public final float[] B0;
     public final /* synthetic */ int C0;
     public final /* synthetic */ c0 D0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x(c0 c0Var, Context context, e6 e6Var, rg.w1 w1Var, ai.e2 e2Var, ai.e2 e2Var2, ai.e2 e2Var3, ai.e2 e2Var4, ai.e2 e2Var5, ai.e2 e2Var6, int i10) {
-        super(context, e6Var, w1Var, e2Var, null, e2Var2, e2Var3, e2Var4, e2Var5, e2Var6);
+    public x(c0 c0Var, Context context, d6 d6Var, rg.w1 w1Var, ai.e2 e2Var, ai.e2 e2Var2, ai.e2 e2Var3, ai.e2 e2Var4, ai.e2 e2Var5, ai.e2 e2Var6, int i10) {
+        super(context, d6Var, w1Var, e2Var, null, e2Var2, e2Var3, e2Var4, e2Var5, e2Var6);
         this.D0 = c0Var;
         this.C0 = i10;
         this.A0 = new Path();
         this.B0 = new float[8];
     }
 
-    @Override // yh.w3, android.view.ViewGroup, android.view.View
+    @Override // yh.v3, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         canvas.save();
         canvas.clipPath(this.A0);
@@ -40,12 +40,12 @@ public final class x extends yh.w3 {
         return super.drawChild(canvas, view, j3);
     }
 
-    @Override // yh.w3
+    @Override // yh.v3
     public final int getFinalHeight() {
         return AndroidUtilities.dp(this.C0);
     }
 
-    @Override // yh.w3
+    @Override // yh.v3
     public final float getRealHeight() {
         return AndroidUtilities.dp(this.C0);
     }
@@ -59,7 +59,7 @@ public final class x extends yh.w3 {
         }
     }
 
-    @Override // yh.w3
+    @Override // yh.v3
     public final void j(int i10) {
         this.D0.c0.setRibbonColor(i10);
     }

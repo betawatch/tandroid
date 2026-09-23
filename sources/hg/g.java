@@ -1,13 +1,13 @@
 package hg;
 
-import ai.m8;
+import ai.n8;
 import java.util.ArrayList;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class g {
     public static volatile g[] g = new g[4];
@@ -66,7 +66,7 @@ public final class g {
         }
         if (System.currentTimeMillis() - this.b > 60000 || !(z10 = this.f)) {
             this.e = true;
-            ConnectionsManager.getInstance(this.a).sendRequest(new TL_account.getConnectedBots(), new m8(this, 11));
+            ConnectionsManager.getInstance(this.a).sendRequest(new TL_account.getConnectedBots(), new n8(this, 11));
         } else if (z10) {
             d();
         }

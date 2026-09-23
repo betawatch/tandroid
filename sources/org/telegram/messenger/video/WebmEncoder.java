@@ -31,16 +31,16 @@ import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.messenger.video.MediaCodecVideoConvertor;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RLottieNative;
-import org.telegram.ui.Components.b6;
-import org.telegram.ui.Components.x5;
-import org.telegram.ui.Components.y5;
-import pg.j0;
+import org.telegram.ui.Components.a6;
+import org.telegram.ui.Components.d6;
+import org.telegram.ui.Components.z5;
+import pg.k0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public class WebmEncoder {
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class FrameDrawer {
         private final int H;
         private final int W;
@@ -153,8 +153,8 @@ public class WebmEncoder {
                 for (int i13 = (int) f11; i12 != i13; i13--) {
                     mediaEntity.animatedFileDrawable.r(true);
                 }
-                y5 y5Var = mediaEntity.animatedFileDrawable.v;
-                Bitmap bitmap3 = y5Var != null ? y5Var.b : null;
+                a6 a6Var = mediaEntity.animatedFileDrawable.v;
+                Bitmap bitmap3 = a6Var != null ? a6Var.b : null;
                 if (bitmap3 != null) {
                     canvas.drawBitmap(bitmap3, mediaEntity.matrix, this.bitmapPaint);
                     return;
@@ -210,11 +210,11 @@ public class WebmEncoder {
                 mediaEntity.framesPerDraw = a2 != null ? a2.a[1] / this.fps : 0.0f;
             } else if ((b10 & 4) != 0) {
                 mediaEntity.looped = false;
-                b6 b6Var = new b6(new File(mediaEntity.text), true, 0L, 0, null, null, null, 0L, UserConfig.selectedAccount, true, 512, 512, null, 0, true);
-                mediaEntity.animatedFileDrawable = b6Var;
-                mediaEntity.framesPerDraw = b6Var.d[5] / this.fps;
+                d6 d6Var = new d6(new File(mediaEntity.text), true, 0L, 0, null, null, null, 0L, UserConfig.selectedAccount, true, 512, 512, null, 0, true);
+                mediaEntity.animatedFileDrawable = d6Var;
+                mediaEntity.framesPerDraw = d6Var.d[5] / this.fps;
                 mediaEntity.currentFrame = 1.0f;
-                b6Var.r(true);
+                d6Var.r(true);
                 if (mediaEntity.type == 5) {
                     mediaEntity.firstSeek = true;
                 }
@@ -276,8 +276,8 @@ public class WebmEncoder {
             bVar.drawAnimatedEmojiDrawables = false;
             bVar.setBackgroundColor(0);
             bVar.setPadding(AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f));
-            j0 j0Var = mediaEntity.textTypeface;
-            if (j0Var != null && (d = j0Var.d()) != null) {
+            k0 k0Var = mediaEntity.textTypeface;
+            if (k0Var != null && (d = k0Var.d()) != null) {
                 bVar.setTypeface(d);
             }
             bVar.setTextSize(0, mediaEntity.fontSize);
@@ -293,8 +293,8 @@ public class WebmEncoder {
                     emojiEntity.entity = mediaEntity2;
                     mediaEntity2.text = emojiEntity.documentAbsolutePath;
                     mediaEntity2.subType = emojiEntity.subType;
-                    x5 x5Var = new x5(0L, 1.0f, bVar.getPaint().getFontMetricsInt()) { // from class: org.telegram.messenger.video.WebmEncoder.FrameDrawer.1
-                        @Override // org.telegram.ui.Components.x5, android.text.style.ReplacementSpan
+                    z5 z5Var = new z5(0L, 1.0f, bVar.getPaint().getFontMetricsInt()) { // from class: org.telegram.messenger.video.WebmEncoder.FrameDrawer.1
+                        @Override // org.telegram.ui.Components.z5, android.text.style.ReplacementSpan
                         public void draw(Canvas canvas, CharSequence charSequence, int i12, int i13, float f7, int i14, int i15, int i16, Paint paint) {
                             super.draw(canvas, charSequence, i12, i13, f7, i14, i15, i16, paint);
                             VideoEditedInfo.MediaEntity mediaEntity3 = mediaEntity;
@@ -328,7 +328,7 @@ public class WebmEncoder {
                         }
                     };
                     int i12 = emojiEntity.offset;
-                    spannableString.setSpan(x5Var, i12, emojiEntity.length + i12, 33);
+                    spannableString.setSpan(z5Var, i12, emojiEntity.length + i12, 33);
                 }
                 i10 = i11;
             }
@@ -374,13 +374,13 @@ public class WebmEncoder {
         }
 
         private void setupMatrix(VideoEditedInfo.MediaEntity mediaEntity) {
-            b6 b6Var;
+            d6 d6Var;
             Matrix matrix = new Matrix();
             mediaEntity.matrix = matrix;
             Bitmap bitmap = mediaEntity.bitmap;
-            if (bitmap == null && (b6Var = mediaEntity.animatedFileDrawable) != null) {
-                y5 y5Var = b6Var.v;
-                bitmap = y5Var != null ? y5Var.b : null;
+            if (bitmap == null && (d6Var = mediaEntity.animatedFileDrawable) != null) {
+                a6 a6Var = d6Var.v;
+                bitmap = a6Var != null ? a6Var.b : null;
             }
             if (bitmap != null) {
                 matrix.postScale(1.0f / bitmap.getWidth(), 1.0f / bitmap.getHeight());

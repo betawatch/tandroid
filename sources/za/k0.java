@@ -1,18 +1,39 @@
 package za;
 
-import android.os.Message;
-import java.util.Comparator;
+import java.util.Locale;
+import java.util.UUID;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final class k0 implements Comparator {
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        Long valueOf = Long.valueOf(((Message) obj).getWhen());
-        Long valueOf2 = Long.valueOf(((Message) obj2).getWhen());
-        if (valueOf == valueOf2) {
-            return 0;
+public final class k0 {
+    public final r0 a;
+    public final rd.a b;
+    public final String c;
+    public int d;
+    public b0 e;
+
+    public k0() {
+        j0 j0Var = j0.a;
+        this.a = r0.a;
+        this.b = j0Var;
+        this.c = a();
+        this.d = -1;
+    }
+
+    public final String a() {
+        String uuid = ((UUID) this.b.invoke()).toString();
+        kotlin.jvm.internal.i.d(uuid, "uuidGenerator().toString()");
+        String lowerCase = xd.j.g(uuid, "-", "").toLowerCase(Locale.ROOT);
+        kotlin.jvm.internal.i.d(lowerCase, "this as java.lang.String).toLowerCase(Locale.ROOT)");
+        return lowerCase;
+    }
+
+    public final b0 b() {
+        b0 b0Var = this.e;
+        if (b0Var != null) {
+            return b0Var;
         }
-        return valueOf.compareTo(valueOf2);
+        kotlin.jvm.internal.i.h("currentSession");
+        throw null;
     }
 }

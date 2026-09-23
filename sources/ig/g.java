@@ -22,15 +22,15 @@ import android.view.ViewConfiguration;
 import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.y0;
+import org.telegram.messenger.z0;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.qr;
-import org.telegram.ui.ja1;
-import org.telegram.ui.tl0;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.rr;
+import org.telegram.ui.ba1;
+import org.telegram.ui.nl0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public abstract class g extends View implements i {
     public static final boolean A1;
@@ -93,7 +93,7 @@ public abstract class g extends View implements i {
     public final Rect V;
     public float V0;
     public final Path W;
-    public final e6 W0;
+    public final d6 W0;
     public int X0;
     public int Y0;
     public final Rect Z0;
@@ -157,7 +157,7 @@ public abstract class g extends View implements i {
 
     /* JADX WARN: Type inference failed for: r1v10, types: [ig.b] */
     /* JADX WARN: Type inference failed for: r1v9, types: [ig.b] */
-    public g(Context context, e6 e6Var) {
+    public g(Context context, d6 d6Var) {
         super(context);
         this.b = new ArrayList(10);
         this.c = new ArrayList(25);
@@ -270,7 +270,7 @@ public abstract class g extends View implements i {
         arrayList.add(rect);
         this.b1 = 0L;
         this.i1 = false;
-        this.W0 = e6Var;
+        this.W0 = d6Var;
         t();
         this.A0 = ViewConfiguration.get(context).getScaledTouchSlop();
     }
@@ -405,9 +405,9 @@ public abstract class g extends View implements i {
             e eVar = this.Q0;
             if (eVar != null) {
                 getSelectedDate();
-                ja1 ja1Var = (ja1) ((tl0) eVar).b;
-                ja1Var.f();
-                ja1Var.b.t0.d(false, false);
+                ba1 ba1Var = (ba1) ((nl0) eVar).b;
+                ba1Var.f();
+                ba1Var.b.t0.d(false, false);
             }
             B();
             invalidate();
@@ -586,7 +586,7 @@ public abstract class g extends View implements i {
                 this.v = f11;
             } else {
                 float f13 = this.T0;
-                this.v = (qr.g.getInterpolation(f12) * (f11 - f13)) + f13;
+                this.v = (rr.g.getInterpolation(f12) * (f11 - f13)) + f13;
             }
             invalidate();
         }
@@ -601,7 +601,7 @@ public abstract class g extends View implements i {
                     this.w = f15;
                 } else {
                     float f17 = this.U0;
-                    this.w = (qr.g.getInterpolation(f16) * (f15 - f17)) + f17;
+                    this.w = (rr.g.getInterpolation(f16) * (f15 - f17)) + f17;
                 }
                 invalidate();
             }
@@ -609,23 +609,23 @@ public abstract class g extends View implements i {
     }
 
     public final void G() {
-        int i10 = this.x0 ? i6.Zi : i6.Yi;
-        e6 e6Var = this.W0;
-        int v02 = i6.v0(i10, e6Var);
+        int i10 = this.x0 ? h6.Zi : h6.Yi;
+        d6 d6Var = this.W0;
+        int v02 = h6.v0(i10, d6Var);
         this.N.setColor(v02);
-        this.O.setColor(i6.v0(this.x0 ? i6.Zi : i6.Yi, e6Var));
-        int v03 = i6.v0(i6.Yi, e6Var);
+        this.O.setColor(h6.v0(this.x0 ? h6.Zi : h6.Yi, d6Var));
+        int v03 = h6.v0(h6.Yi, d6Var);
         this.P.setColor(v03);
-        int v04 = i6.v0(i6.aj, e6Var);
+        int v04 = h6.v0(h6.aj, d6Var);
         Paint paint = this.L;
         paint.setColor(v04);
-        int v05 = i6.v0(i6.bj, e6Var);
+        int v05 = h6.v0(h6.bj, d6Var);
         Paint paint2 = this.M;
         paint2.setColor(v05);
-        this.Q.setColor(i6.v0(i6.dj, e6Var));
-        this.R.setColor(i6.v0(i6.cj, e6Var));
-        this.S.setColor(i6.v0(i6.d6, e6Var));
-        this.T.setColor(i6.v0(i6.ej, e6Var));
+        this.Q.setColor(h6.v0(h6.dj, d6Var));
+        this.R.setColor(h6.v0(h6.cj, d6Var));
+        this.S.setColor(h6.v0(h6.d6, d6Var));
+        this.T.setColor(h6.v0(h6.ej, d6Var));
         this.t0.b();
         this.n = paint.getAlpha();
         this.r = paint2.getAlpha();
@@ -955,9 +955,9 @@ public abstract class g extends View implements i {
                                 float f17 = p1;
                                 TextPaint textPaint = this.P;
                                 if (f15 < f17) {
-                                    textPaint.setAlpha((int) (i10 * y0.y(f17, f15, f17, f7) * this.h * f10));
+                                    textPaint.setAlpha((int) (i10 * z0.y(f17, f15, f17, f7) * this.h * f10));
                                 } else if (f15 > f16) {
-                                    textPaint.setAlpha((int) (i10 * y0.y(f15, f16, f12, f7) * this.h * f10));
+                                    textPaint.setAlpha((int) (i10 * z0.y(f15, f16, f12, f7) * this.h * f10));
                                 } else {
                                     textPaint.setAlpha((int) (i10 * this.h * f10));
                                 }

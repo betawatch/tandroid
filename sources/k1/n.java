@@ -2,7 +2,7 @@ package k1;
 
 import v7.t7;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class n extends kd.j implements rd.p {
     public final /* synthetic */ int a;
@@ -58,7 +58,7 @@ public final class n extends kd.j implements rd.p {
                 t7.b(obj);
                 n1.b bVar = (n1.b) this.b;
                 bVar.getClass();
-                n1.d key = za.v.a;
+                n1.d key = za.x.a;
                 kotlin.jvm.internal.i.e(key, "key");
                 bVar.b(key, (String) obj2);
                 return gd.i.a;

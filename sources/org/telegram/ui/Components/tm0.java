@@ -1,32 +1,13 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.DownloadController;
+import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class tm0 implements View.OnClickListener {
-    public final /* synthetic */ um0 a;
-
-    public tm0(um0 um0Var) {
-        this.a = um0Var;
-    }
-
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        vm0 vm0Var = this.a.c;
-        for (int i10 = 0; i10 < vm0Var.e.size(); i10++) {
-            MessageObject messageObject = (MessageObject) vm0Var.e.get(i10);
-            if (vm0Var.H) {
-                AccountInstance.getInstance(UserConfig.selectedAccount).getFileLoader().cancelLoadFile(messageObject.getDocument());
-            } else {
-                AccountInstance.getInstance(UserConfig.selectedAccount).getFileLoader().loadFile(messageObject.getDocument(), messageObject, 0, 0);
-                DownloadController.getInstance(vm0Var.d).updateFilesLoadingPriority();
-            }
-        }
-        vm0Var.d(true);
+public final class tm0 extends org.telegram.ui.Cells.i7 {
+    @Override // org.telegram.ui.Cells.i7
+    public final boolean d(MessageObject messageObject) {
+        return MediaController.getInstance().playMessage(messageObject);
     }
 }

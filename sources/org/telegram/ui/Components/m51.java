@@ -1,53 +1,19 @@
 package org.telegram.ui.Components;
 
-import android.net.Uri;
 import android.text.TextPaint;
-import android.text.style.URLSpan;
-import android.view.View;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public class m51 extends URLSpan {
-    public final boolean a;
-    public final o01 b;
-    public TLObject c;
-    public String d;
-
+public final class m51 extends l51 {
     public m51(String str) {
-        this(str, (o01) null);
+        super(str != null ? str.replace((char) 8238, ' ') : str, (n01) null);
     }
 
-    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
-    public void onClick(View view) {
-        String url = getURL();
-        if (!url.startsWith("@")) {
-            nf.f.s(view.getContext(), url);
-            return;
-        }
-        nf.f.p(view.getContext(), Uri.parse("https://t.me/" + url.substring(1)), true, true);
-    }
-
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public void updateDrawState(TextPaint textPaint) {
-        int i10 = textPaint.linkColor;
-        int color = textPaint.getColor();
+    @Override // org.telegram.ui.Components.l51, android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
         super.updateDrawState(textPaint);
-        o01 o01Var = this.b;
-        if (o01Var != null) {
-            o01Var.a(textPaint);
-        }
-        textPaint.setUnderlineText(i10 == color && !this.a);
-    }
-
-    public m51(String str, int i10) {
-        this(str, (o01) null);
-        this.a = true;
-    }
-
-    public m51(String str, o01 o01Var) {
-        super(str != null ? str.replace((char) 8238, ' ') : str);
-        this.a = false;
-        this.b = o01Var;
+        textPaint.setTypeface(AndroidUtilities.bold());
+        textPaint.setUnderlineText(false);
     }
 }

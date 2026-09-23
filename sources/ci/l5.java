@@ -1,77 +1,26 @@
 package ci;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BillingController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.d80;
-import org.telegram.ui.bm0;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class l5 implements q0.a {
+public final /* synthetic */ class l5 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ q6 b;
 
-    public /* synthetic */ l5(int i10, Object obj, Object obj2) {
+    public /* synthetic */ l5(q6 q6Var, int i10) {
         this.a = i10;
-        this.b = obj;
-        this.c = obj2;
+        this.b = q6Var;
     }
 
-    @Override // q0.a
-    public final void accept(Object obj) {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                r6.Z((qb) this.b, (pg.s0) this.c, (Integer) obj);
-                break;
-            case 1:
-                org.telegram.ui.c5 c5Var = (org.telegram.ui.c5) this.b;
-                org.telegram.ui.x4 x4Var = (org.telegram.ui.x4) this.c;
-                org.telegram.ui.d5[] d5VarArr = x4Var.i;
-                org.telegram.ui.z4 z4Var = x4Var.j;
-                if (!c5Var.E) {
-                    if (!(obj instanceof TLRPC.UserFull)) {
-                        if (obj instanceof TLRPC.ChatFull) {
-                            c5Var.a(org.telegram.ui.x4.a((TLRPC.Chat) z4Var.c, (TLRPC.ChatFull) obj, d5VarArr));
-                            break;
-                        }
-                    } else {
-                        c5Var.a(org.telegram.ui.x4.c((TLRPC.User) z4Var.c, (TLRPC.UserFull) obj, d5VarArr));
-                        break;
-                    }
-                }
-                break;
-            case 2:
-                c5.h hVar = (c5.h) this.b;
-                Utilities.Callback callback = (Utilities.Callback) this.c;
-                if (hVar.a == 0) {
-                    AndroidUtilities.runOnUIThread(new ab(2, callback));
-                    break;
-                }
-                break;
-            case 3:
-                c5.h hVar2 = (c5.h) this.b;
-                tg.w wVar = (tg.w) this.c;
-                if (hVar2.a == 0) {
-                    AndroidUtilities.runOnUIThread(new rg.w1(wVar, 6));
-                    break;
-                }
-                break;
-            case 4:
-                c5.h hVar3 = (c5.h) this.b;
-                d80 d80Var = (d80) this.c;
-                int i10 = hVar3.a;
-                boolean z10 = i10 == 0;
-                AndroidUtilities.runOnUIThread(new bm0(d80Var, z10, z10 ? null : BillingController.getResponseCodeString(i10), 13));
+                this.b.z0(false);
                 break;
             default:
-                c5.h hVar4 = (c5.h) this.b;
-                ai.m0 m0Var = (ai.m0) this.c;
-                int i11 = hVar4.a;
-                boolean z11 = i11 == 0;
-                AndroidUtilities.runOnUIThread(new bm0(m0Var, z11, z11 ? null : BillingController.getResponseCodeString(i11), 14));
+                this.b.z0(false);
                 break;
         }
     }

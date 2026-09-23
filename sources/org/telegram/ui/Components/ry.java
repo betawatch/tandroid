@@ -1,61 +1,120 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
+import java.util.ArrayList;
+import java.util.List;
+import org.telegram.messenger.FileLoader;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class ry extends FrameLayout {
-    public final ImageView a;
-    public final TextView b;
-    public final RadialProgressView c;
-    public boolean d;
-    public final /* synthetic */ kz e;
+public final class ry extends oz {
+    public final jv0 X;
+    public final /* synthetic */ lz Y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ry(kz kzVar, Context context) {
-        super(context);
-        this.e = kzVar;
-        ImageView imageView = new ImageView(getContext());
-        this.a = imageView;
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setImageResource(R.drawable.gif_empty);
-        int i10 = org.telegram.ui.ActionBar.i6.Le;
-        imageView.setColorFilter(new PorterDuffColorFilter(kzVar.z(i10), PorterDuff.Mode.MULTIPLY));
-        addView(imageView, w7.x5.d(-2, -2.0f, 17, 0.0f, 8.0f, 0.0f, 0.0f));
-        TextView textView = new TextView(getContext());
-        this.b = textView;
-        textView.setText(LocaleController.getString(R.string.NoGIFsFound));
-        textView.setTextSize(1, 16.0f);
-        textView.setTextColor(kzVar.z(i10));
-        addView(textView, w7.x5.d(-2, -2.0f, 17, 0.0f, 42.0f, 0.0f, 0.0f));
-        RadialProgressView radialProgressView = new RadialProgressView(context, kzVar.Z1);
-        this.c = radialProgressView;
-        radialProgressView.setVisibility(8);
-        radialProgressView.setProgressColor(kzVar.z(org.telegram.ui.ActionBar.i6.h6));
-        addView(radialProgressView, w7.x5.e(-2, -2, 17));
+    public ry(lz lzVar) {
+        super(100, true);
+        this.Y = lzVar;
+        this.X = new jv0();
+        this.O = new ci.x1(this, 4);
     }
 
-    public final void a(boolean z10) {
-        if (this.d != z10) {
-            this.d = z10;
-            this.a.setVisibility(z10 ? 8 : 0);
-            this.b.setVisibility(z10 ? 8 : 0);
-            this.c.setVisibility(z10 ? 0 : 8);
+    @Override // s4.o0
+    public final int A() {
+        lz lzVar = this.Y;
+        s4.h0 adapter = lzVar.h0.getAdapter();
+        qy qyVar = lzVar.j0;
+        if (adapter == qyVar && qyVar.x.isEmpty()) {
+            return 0;
         }
+        return B() - 1;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(!this.d ? (int) (org.telegram.messenger.vl.y(8.0f, r0 - r4.b1, 3) * 1.7f) : this.e.h0.getMeasuredHeight() - AndroidUtilities.dp(80.0f), TLObject.FLAG_30));
+    @Override // org.telegram.ui.Components.oz
+    public final jv0 D1(int i10) {
+        ArrayList<TLRPC.DocumentAttribute> arrayList;
+        TLRPC.Document document;
+        lz lzVar = this.Y;
+        qy qyVar = lzVar.j0;
+        s4.h0 adapter = lzVar.h0.getAdapter();
+        qy qyVar2 = lzVar.n0;
+        TLRPC.Document document2 = null;
+        r4 = null;
+        ArrayList<TLRPC.DocumentAttribute> arrayList2 = null;
+        if (adapter != qyVar2) {
+            if (qyVar.x.isEmpty()) {
+                arrayList = null;
+                return F1(document2, arrayList);
+            }
+            TLRPC.BotInlineResult botInlineResult = (TLRPC.BotInlineResult) qyVar.x.get(i10);
+            document = botInlineResult.document;
+            if (document != null) {
+                arrayList2 = document.attributes;
+            } else {
+                TLRPC.WebDocument webDocument = botInlineResult.content;
+                if (webDocument != null) {
+                    arrayList2 = webDocument.attributes;
+                } else {
+                    TLRPC.WebDocument webDocument2 = botInlineResult.thumb;
+                    if (webDocument2 != null) {
+                        arrayList2 = webDocument2.attributes;
+                    }
+                }
+            }
+            arrayList = arrayList2;
+            document2 = document;
+            return F1(document2, arrayList);
+        }
+        int i11 = qyVar2.H;
+        if (i10 <= i11) {
+            if (i10 == i11) {
+                return null;
+            }
+            document2 = (TLRPC.Document) lzVar.i1.get(i10);
+            arrayList = document2.attributes;
+            return F1(document2, arrayList);
+        }
+        TLRPC.BotInlineResult botInlineResult2 = (TLRPC.BotInlineResult) qyVar2.x.get((i10 - i11) - 1);
+        document = botInlineResult2.document;
+        if (document != null) {
+            arrayList2 = document.attributes;
+        } else {
+            TLRPC.WebDocument webDocument3 = botInlineResult2.content;
+            if (webDocument3 != null) {
+                arrayList2 = webDocument3.attributes;
+            } else {
+                TLRPC.WebDocument webDocument4 = botInlineResult2.thumb;
+                if (webDocument4 != null) {
+                    arrayList2 = webDocument4.attributes;
+                }
+            }
+        }
+        arrayList = arrayList2;
+        document2 = document;
+        return F1(document2, arrayList);
+    }
+
+    public final jv0 F1(TLRPC.Document document, List list) {
+        TLRPC.PhotoSize closestPhotoSizeWithSize;
+        int i10;
+        int i11;
+        jv0 jv0Var = this.X;
+        jv0Var.b = 100.0f;
+        jv0Var.a = 100.0f;
+        if (document != null && (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 90)) != null && (i10 = closestPhotoSizeWithSize.w) != 0 && (i11 = closestPhotoSizeWithSize.h) != 0) {
+            jv0Var.a = i10;
+            jv0Var.b = i11;
+        }
+        if (list != null) {
+            for (int i12 = 0; i12 < list.size(); i12++) {
+                TLRPC.DocumentAttribute documentAttribute = (TLRPC.DocumentAttribute) list.get(i12);
+                if ((documentAttribute instanceof TLRPC.TL_documentAttributeImageSize) || (documentAttribute instanceof TLRPC.TL_documentAttributeVideo)) {
+                    jv0Var.a = documentAttribute.w;
+                    jv0Var.b = documentAttribute.h;
+                    break;
+                }
+            }
+        }
+        return jv0Var;
     }
 }

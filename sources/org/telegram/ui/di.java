@@ -1,97 +1,24 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.app.Activity;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class di extends AnimatorListenerAdapter {
-    public final /* synthetic */ ao a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.j5 c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ ai.p4 e;
-    public final /* synthetic */ boolean f;
-    public final /* synthetic */ bo h;
+public final class di extends org.telegram.ui.Components.tv {
+    public final /* synthetic */ ei W;
 
-    public di(bo boVar, ao aoVar, boolean z10, org.telegram.ui.ActionBar.j5 j5Var, boolean z11, ai.p4 p4Var, boolean z12) {
-        this.h = boVar;
-        this.a = aoVar;
-        this.b = z10;
-        this.c = j5Var;
-        this.d = z11;
-        this.e = p4Var;
-        this.f = z12;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public di(ei eiVar, org.telegram.ui.ActionBar.n2 n2Var, Activity activity, org.telegram.ui.ActionBar.d6 d6Var, ArrayList arrayList) {
+        super(n2Var, activity, d6Var, arrayList);
+        this.W = eiVar;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        bo boVar = this.h;
-        if (boVar.F2.getTag() != null) {
-            boVar.F2.setVisibility(4);
-            int G8 = boVar.G8();
-            boVar.F2.a(Math.min(G8 - 1, Math.max(1, G8 - boVar.M4[0])), false);
-        } else {
-            boVar.F2.setAlpha(1.0f);
-        }
-        boVar.F2.setTranslationY(0.0f);
-        boVar.D2[0].setTranslationX(0.0f);
-        boVar.D2[1].setTranslationX(0.0f);
-        boVar.F2.setTranslationX(boVar.G2 + 0.0f);
-        ao aoVar = this.a;
-        aoVar.setTranslationY(0.0f);
-        boolean z10 = this.b;
-        if (!z10) {
-            aoVar.setTranslationY(0.0f);
-        }
-        org.telegram.ui.ActionBar.j5 j5Var = this.c;
-        if (!z10) {
-            j5Var.setTranslationY(0.0f);
-        }
-        boolean z11 = this.d;
-        ai.p4 p4Var = this.e;
-        if (!z11) {
-            p4Var.setTranslationY(0.0f);
-        }
-        boVar.C2[0].setTranslationX(0.0f);
-        boVar.C2[1].setTranslationX(0.0f);
-        boVar.B2[1].setAlpha(1.0f);
-        boVar.B2[1].setScaleX(1.0f);
-        boVar.B2[1].setScaleY(1.0f);
-        boVar.B2[0].setAlpha(1.0f);
-        boVar.B2[0].setScaleX(1.0f);
-        boVar.B2[0].setScaleY(1.0f);
-        org.telegram.ui.ActionBar.j5[] j5VarArr = boVar.D2;
-        org.telegram.ui.ActionBar.j5 j5Var2 = j5VarArr[0];
-        j5VarArr[1] = j5Var2;
-        j5VarArr[0] = j5Var;
-        j5Var2.setVisibility(4);
-        ai.p4[] p4VarArr = boVar.E2;
-        ai.p4 p4Var2 = p4VarArr[0];
-        p4VarArr[1] = p4Var2;
-        p4VarArr[0] = p4Var;
-        p4Var2.setVisibility(4);
-        ao[] aoVarArr = boVar.C2;
-        ao aoVar2 = aoVarArr[0];
-        if (aoVar != aoVar2) {
-            aoVarArr[1] = aoVar2;
-            aoVarArr[0] = aoVar;
-            aoVar2.setVisibility(4);
-        }
-        if (this.f) {
-            boVar.B2[1].setImageBitmap(null);
-            boVar.B2[1].setVisibility(4);
-        }
-        org.telegram.ui.Components.u9[] u9VarArr = boVar.B2;
-        org.telegram.ui.Components.u9 u9Var = u9VarArr[1];
-        org.telegram.ui.Components.u9 u9Var2 = u9VarArr[0];
-        u9VarArr[1] = u9Var2;
-        u9VarArr[0] = u9Var;
-        u9Var2.setAlpha(1.0f);
-        boVar.B2[1].setScaleX(1.0f);
-        boVar.B2[1].setScaleY(1.0f);
-        boVar.B2[1].setVisibility(4);
-        boVar.H2[0] = null;
-        boVar.A2 = false;
+    @Override // org.telegram.ui.Components.tv, org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
+    public final void dismiss() {
+        super.dismiss();
+        xn xnVar = this.W.p;
+        xnVar.getClass();
+        xnVar.g8(false, true, 0.0f);
     }
 }

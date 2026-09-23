@@ -18,7 +18,7 @@ import android.view.MotionEvent;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import ci.id;
+import ci.fd;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
@@ -31,14 +31,14 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.messenger.y0;
+import org.telegram.messenger.z0;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.Components.Crop.CropAreaView;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.t61;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public class p extends FrameLayout implements a {
     public float E;
@@ -55,7 +55,7 @@ public class p extends FrameLayout implements a {
     public final CropAreaView a;
     public final ImageView b;
     public final Matrix c;
-    public u61 d;
+    public t61 d;
     public g e;
     public final RectF f;
     public final RectF h;
@@ -345,7 +345,7 @@ public class p extends FrameLayout implements a {
         float f10 = nVar.f * cropWidth;
         cropState.transformRotation = (int) nVar.h;
         if (BuildVars.LOGS_ENABLED) {
-            y0.n(cropState.transformRotation, new StringBuilder("set transformRotation = "));
+            z0.n(cropState.transformRotation, new StringBuilder("set transformRotation = "));
         }
         while (true) {
             i10 = cropState.transformRotation;
@@ -552,9 +552,9 @@ public class p extends FrameLayout implements a {
     }
 
     public int getCurrentHeight() {
-        u61 u61Var = this.d;
-        if (u61Var != null) {
-            return u61Var.getVideoHeight();
+        t61 t61Var = this.d;
+        if (t61Var != null) {
+            return t61Var.getVideoHeight();
         }
         Bitmap bitmap = this.w;
         if (bitmap == null) {
@@ -565,9 +565,9 @@ public class p extends FrameLayout implements a {
     }
 
     public int getCurrentWidth() {
-        u61 u61Var = this.d;
-        if (u61Var != null) {
-            return u61Var.getVideoWidth();
+        t61 t61Var = this.d;
+        if (t61Var != null) {
+            return t61Var.getVideoWidth();
         }
         Bitmap bitmap = this.w;
         if (bitmap == null) {
@@ -782,7 +782,7 @@ public class p extends FrameLayout implements a {
         alertDialog$Builder.f(strArr, new j(i11, this, numArr));
         b2 b2Var = alertDialog$Builder.a;
         b2Var.setCanceledOnTouchOutside(true);
-        b2Var.setOnCancelListener(new id(this, i10));
+        b2Var.setOnCancelListener(new fd(this, i10));
         b2Var.show();
     }
 

@@ -1,25 +1,30 @@
 package org.telegram.ui.ActionBar;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.widget.ImageButton;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class r4 extends ImageButton {
-    public final /* synthetic */ v4 a;
+public final class r4 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ u4 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r4(v4 v4Var, Context context) {
-        super(context);
-        this.a = v4Var;
+    public /* synthetic */ r4(u4 u4Var, int i10) {
+        this.a = i10;
+        this.b = u4Var;
     }
 
-    @Override // android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (this.a.N) {
-            return false;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                NotificationCenter.getInstance(UserConfig.selectedAccount).doOnIdle(new q(this, 13));
+                break;
+            default:
+                NotificationCenter.getInstance(UserConfig.selectedAccount).doOnIdle(new q(this, 14));
+                break;
         }
-        return super.dispatchTouchEvent(motionEvent);
     }
 }

@@ -1,64 +1,34 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.view.accessibility.AccessibilityEvent;
-import android.view.accessibility.AccessibilityNodeInfo;
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class jc0 extends org.telegram.ui.Components.x50 {
-    public final /* synthetic */ lc0 d;
+public final /* synthetic */ class jc0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ dd0 b;
+    public final /* synthetic */ boolean c;
 
-    public jc0(lc0 lc0Var) {
-        this.d = lc0Var;
+    public /* synthetic */ jc0(dd0 dd0Var, boolean z10, int i10) {
+        this.a = i10;
+        this.b = dd0Var;
+        this.c = z10;
     }
 
-    @Override // org.telegram.ui.Components.co0
-    public final void e(View view, AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.e(view, accessibilityNodeInfo);
-        accessibilityNodeInfo.setEnabled(true);
-    }
-
-    @Override // org.telegram.ui.Components.x50
-    public final int h() {
-        return 5;
-    }
-
-    @Override // org.telegram.ui.Components.x50
-    public final int i() {
-        return 100;
-    }
-
-    @Override // org.telegram.ui.Components.x50
-    public final int j() {
-        return LiteMode.getPowerSaverLevel();
-    }
-
-    @Override // org.telegram.ui.Components.x50
-    public final void k(int i10) {
-        lc0 lc0Var = this.d;
-        float f7 = i10 / 100.0f;
-        lc0Var.h.w.X(f7, true);
-        lc0Var.h.setProgress(f7);
-    }
-
-    @Override // android.view.View.AccessibilityDelegate
-    public final void onPopulateAccessibilityEvent(View view, AccessibilityEvent accessibilityEvent) {
-        super.onPopulateAccessibilityEvent(view, accessibilityEvent);
-        StringBuilder sb2 = new StringBuilder(LocaleController.getString(R.string.LiteBatteryTitle));
-        sb2.append(", ");
-        int powerSaverLevel = LiteMode.getPowerSaverLevel();
-        if (powerSaverLevel <= 0) {
-            sb2.append(LocaleController.getString(R.string.LiteBatteryAlwaysDisabled));
-        } else if (powerSaverLevel >= 100) {
-            sb2.append(LocaleController.getString(R.string.LiteBatteryAlwaysEnabled));
-        } else {
-            sb2.append(LocaleController.formatString(R.string.AccDescrLiteBatteryWhenBelow, Integer.valueOf(Math.round(powerSaverLevel))));
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                boolean z10 = this.c;
+                dd0 dd0Var = this.b;
+                if (!z10) {
+                    dd0Var.b.setVisibility(8);
+                    break;
+                } else {
+                    dd0Var.getClass();
+                    break;
+                }
+            default:
+                this.b.s0(this.c);
+                break;
         }
-        accessibilityEvent.setContentDescription(sb2);
-        this.d.setContentDescription(sb2);
     }
 }

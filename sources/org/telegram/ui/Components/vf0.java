@@ -13,7 +13,7 @@ import android.graphics.Shader;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class vf0 extends View {
     public ValueAnimator E;
@@ -23,7 +23,7 @@ public final class vf0 extends View {
     public final Paint I;
     public int J;
     public int K;
-    public final org.telegram.ui.ActionBar.e6 L;
+    public final org.telegram.ui.ActionBar.d6 L;
     public boolean M;
     public int a;
     public int b;
@@ -40,7 +40,7 @@ public final class vf0 extends View {
     public final RectF x;
     public float y;
 
-    public vf0(Activity activity, org.telegram.ui.ActionBar.e6 e6Var) {
+    public vf0(Activity activity, org.telegram.ui.ActionBar.d6 d6Var) {
         super(activity);
         this.a = -1;
         this.b = 0;
@@ -50,7 +50,7 @@ public final class vf0 extends View {
         Paint paint2 = new Paint(1);
         this.I = paint2;
         this.J = -1;
-        this.L = e6Var;
+        this.L = d6Var;
         Paint.Style style = Paint.Style.FILL;
         paint.setStyle(style);
         Paint.Cap cap = Paint.Cap.ROUND;
@@ -108,7 +108,7 @@ public final class vf0 extends View {
             this.E = ofFloat;
             ofFloat.addUpdateListener(new tf0(this, 1));
             this.E.addListener(new uf0(this, 0));
-            this.E.setInterpolator(qr.f);
+            this.E.setInterpolator(rr.f);
             this.E.setDuration(220L);
             this.E.start();
         }
@@ -178,7 +178,7 @@ public final class vf0 extends View {
             this.E = ofFloat;
             ofFloat.addUpdateListener(new tf0(this, 0));
             this.E.addListener(new uf0(this, 1));
-            this.E.setInterpolator(qr.f);
+            this.E.setInterpolator(rr.f);
             this.E.setDuration(220L);
             this.E.start();
         }
@@ -186,7 +186,7 @@ public final class vf0 extends View {
     }
 
     public final void d() {
-        int v02 = org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.ee, this.L);
+        int v02 = org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.ee, this.L);
         this.K = v02;
         this.H.setColor(i0.a.k(v02, (int) ((Color.alpha(v02) / 255.0f) * 112.0f)));
         this.I.setColor(this.K);

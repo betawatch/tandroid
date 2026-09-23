@@ -1,16 +1,66 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
-/* loaded from: classes3.dex */
-public final class sc1 extends s4.j {
-    public final /* synthetic */ wd1 F;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.ViewGroup;
 
-    public sc1(wd1 wd1Var) {
-        this.F = wd1Var;
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* loaded from: classes3.dex */
+public final class sc1 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ od1 b;
+
+    public /* synthetic */ sc1(od1 od1Var, int i10) {
+        this.a = i10;
+        this.b = od1Var;
     }
 
-    @Override // s4.j
-    public final void P(s4.c1 c1Var) {
-        this.F.u0.f1();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                super.onAnimationEnd(animator);
+                od1 od1Var = this.b;
+                od1Var.x0.invalidate();
+                od1Var.w0[1].setVisibility(8);
+                od1Var.c2 = null;
+                break;
+            case 1:
+                this.b.B0 = null;
+                break;
+            case 2:
+                od1 od1Var2 = this.b;
+                if (od1Var2.D0.getTag() == null) {
+                    od1Var2.D0.setVisibility(4);
+                }
+                od1Var2.H0 = null;
+                break;
+            case 3:
+                od1 od1Var3 = this.b;
+                if (od1Var3.E0.getTag() == null) {
+                    od1Var3.E0.setVisibility(4);
+                }
+                od1Var3.I0 = null;
+                break;
+            case 4:
+                od1 od1Var4 = this.b;
+                kc kcVar = od1Var4.h2;
+                if (kcVar != null) {
+                    if (kcVar.getParent() != null) {
+                        ((ViewGroup) od1Var4.h2.getParent()).removeView(od1Var4.h2);
+                    }
+                    od1Var4.h2 = null;
+                }
+                od1Var4.j2 = null;
+                super.onAnimationEnd(animator);
+                break;
+            default:
+                od1 od1Var5 = this.b;
+                if (!od1Var5.p1.a()) {
+                    od1Var5.R1.setVisibility(8);
+                    break;
+                }
+                break;
+        }
     }
 }

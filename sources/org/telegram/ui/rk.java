@@ -1,21 +1,24 @@
 package org.telegram.ui;
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class rk extends jh.e {
-    public final /* synthetic */ bo L;
+public final class rk extends org.telegram.ui.Components.pk0 {
+    public final /* synthetic */ xn l;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rk(bo boVar, Context context, org.telegram.ui.ActionBar.e6 e6Var, jj jjVar, ah.c cVar) {
-        super(cVar, context, jjVar, e6Var);
-        this.L = boVar;
+    public rk(xn xnVar, rj rjVar, uj ujVar) {
+        super(rjVar, ujVar);
+        this.l = xnVar;
     }
 
-    @Override // jh.e, android.view.View
-    public final void setVisibility(int i10) {
-        super.setVisibility(i10);
-        this.L.Ac.j(3, i10 == 0, getMeasuredWidth() > 0);
+    public final void e(int i10) {
+        if (this.l.Pa) {
+            if (i10 == 0) {
+                i10 = 1;
+            } else if (i10 == 1) {
+                i10 = 0;
+            }
+        }
+        this.b = i10;
     }
 }

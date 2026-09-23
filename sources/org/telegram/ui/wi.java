@@ -1,47 +1,62 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MessageObject;
+import android.text.style.CharacterStyle;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class wi implements Runnable {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ org.telegram.ui.Components.fk0 e;
-    public final /* synthetic */ float f;
-    public final /* synthetic */ float h;
-    public final /* synthetic */ zg.p0 n;
-    public final /* synthetic */ MessageObject r;
-    public final /* synthetic */ bo s;
+public final class wi extends nf.e {
+    public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ org.telegram.ui.Cells.t1 f;
+    public final /* synthetic */ xn g;
+    public final /* synthetic */ Object h;
 
-    public wi(bo boVar, boolean z10, boolean z11, int i10, boolean z12, org.telegram.ui.Components.fk0 fk0Var, float f7, float f10, zg.p0 p0Var, MessageObject messageObject) {
-        this.s = boVar;
-        this.a = z10;
-        this.b = z11;
-        this.c = i10;
-        this.d = z12;
-        this.e = fk0Var;
-        this.f = f7;
-        this.h = f10;
-        this.n = p0Var;
-        this.r = messageObject;
+    public /* synthetic */ wi(xn xnVar, int i10, Object obj, org.telegram.ui.Cells.t1 t1Var, int i11) {
+        this.d = i11;
+        this.g = xnVar;
+        this.e = i10;
+        this.h = obj;
+        this.f = t1Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        if (!this.a) {
-            bo boVar = this.s;
-            if (boVar.bc != null) {
-                boVar.bc = null;
-                if (this.b) {
-                    boVar.h8(new vi(this, this.c, this.d, this.e, this.f, this.h, this.n, 0));
-                } else {
-                    boVar.h8(new uh(4, this, this.r));
+    @Override // nf.e
+    public final void c(boolean z10) {
+        switch (this.d) {
+            case 0:
+                if (!z10) {
+                    AndroidUtilities.runOnUIThread(new ai.o8(this, this.e, 20), 240L);
+                    break;
                 }
-                boVar.A7(true);
-            }
+                break;
+            default:
+                if (!z10) {
+                    AndroidUtilities.runOnUIThread(new ai.o8(this, this.e, 22), 240L);
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // nf.e
+    public final void d() {
+        switch (this.d) {
+            case 0:
+                int i10 = this.e;
+                xn xnVar = this.g;
+                xnVar.vb = i10;
+                xnVar.wb = 1;
+                xnVar.xb = (CharacterStyle) this.h;
+                this.f.invalidate();
+                break;
+            default:
+                int i11 = this.e;
+                xn xnVar2 = this.g;
+                xnVar2.vb = i11;
+                xnVar2.wb = 3;
+                xnVar2.yb = (String) this.h;
+                this.f.invalidate();
+                break;
         }
     }
 }

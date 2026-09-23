@@ -1,21 +1,20 @@
 package b3;
 
 import b2.s;
-import e2.d0;
 import e2.v;
 import h2.h;
 import hg.c;
-import i2.c0;
+import i2.d0;
 import i2.f;
 import java.nio.ByteBuffer;
 import n4.y;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class a extends f {
     public final h I;
     public final v J;
-    public c0 K;
+    public d0 K;
     public long L;
 
     public a() {
@@ -29,10 +28,10 @@ public final class a extends f {
         return "application/x-camera-motion".equals(sVar.r) ? c.b(4, 0, 0, 0) : c.b(0, 0, 0, 0);
     }
 
-    @Override // i2.f, i2.i1
+    @Override // i2.f, i2.j1
     public final void c(int i10, Object obj) {
         if (i10 == 8) {
-            this.K = (c0) obj;
+            this.K = (d0) obj;
         }
     }
 
@@ -53,18 +52,18 @@ public final class a extends f {
 
     @Override // i2.f
     public final void o() {
-        c0 c0Var = this.K;
-        if (c0Var != null) {
-            c0Var.d();
+        d0 d0Var = this.K;
+        if (d0Var != null) {
+            d0Var.d();
         }
     }
 
     @Override // i2.f
     public final void q(long j3, boolean z10) {
         this.L = Long.MIN_VALUE;
-        c0 c0Var = this.K;
-        if (c0Var != null) {
-            c0Var.d();
+        d0 d0Var = this.K;
+        if (d0Var != null) {
+            d0Var.d();
         }
     }
 
@@ -85,7 +84,7 @@ public final class a extends f {
             if (this.K != null && !z10) {
                 hVar.c();
                 ByteBuffer byteBuffer = hVar.c;
-                String str = d0.a;
+                String str = e2.d0.a;
                 if (byteBuffer.remaining() != 16) {
                     fArr = null;
                 } else {

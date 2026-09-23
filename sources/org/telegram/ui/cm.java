@@ -1,13 +1,22 @@
 package org.telegram.ui;
 
-import android.view.accessibility.AccessibilityNodeInfo;
+import android.content.Context;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class cm extends org.telegram.ui.Cells.w0 {
-    @Override // org.telegram.ui.Cells.w0, android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setVisibleToUser(true);
+public final class cm extends org.telegram.ui.Cells.h0 {
+    public final /* synthetic */ km L;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public cm(km kmVar, Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, i10, d6Var);
+        this.L = kmVar;
+    }
+
+    @Override // org.telegram.ui.Cells.h0
+    public final int getSideMenuWidth() {
+        xn xnVar = this.L.Q;
+        int i10 = xn.Gc;
+        return xnVar.R8();
     }
 }

@@ -1,39 +1,32 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.content.Context;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class e81 extends org.telegram.ui.ActionBar.f3 {
-    public static final /* synthetic */ int e = 0;
-    public TLRPC.TL_authorization b;
-    public SessionsActivity c;
-    public org.telegram.ui.Components.aj0 d;
+public final class e81 extends UndoView {
+    public final /* synthetic */ SessionsActivity f0;
 
-    public static void m(e81 e81Var, String str) {
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(e81Var.getContext());
-        alertDialog$Builder.f(new CharSequence[]{LocaleController.getString(R.string.Copy)}, new lg.j(11, e81Var, str));
-        alertDialog$Builder.o();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public e81(SessionsActivity sessionsActivity, Context context) {
+        super(context);
+        this.f0 = sessionsActivity;
     }
 
-    public static void n(e81 e81Var) {
-        TL_account.changeAuthorizationSettings changeauthorizationsettings = new TL_account.changeAuthorizationSettings();
-        TLRPC.TL_authorization tL_authorization = e81Var.b;
-        changeauthorizationsettings.encrypted_requests_disabled = tL_authorization.encrypted_requests_disabled;
-        changeauthorizationsettings.call_requests_disabled = tL_authorization.call_requests_disabled;
-        changeauthorizationsettings.flags = 3;
-        changeauthorizationsettings.hash = tL_authorization.hash;
-        ConnectionsManager.getInstance(e81Var.currentAccount).sendRequest(changeauthorizationsettings, new ai.t7(21));
-    }
-
-    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog
-    public final void show() {
-        super.show();
-        this.d.d();
+    @Override // org.telegram.ui.Components.UndoView
+    public final void e(int i10, boolean z10) {
+        int i11;
+        if (!z10 && getCurrentInfoObject() != null) {
+            TLRPC.TL_authorization tL_authorization = (TLRPC.TL_authorization) getCurrentInfoObject();
+            TL_account.resetAuthorization resetauthorization = new TL_account.resetAuthorization();
+            resetauthorization.hash = tL_authorization.hash;
+            i11 = ((org.telegram.ui.ActionBar.n2) this.f0).currentAccount;
+            ConnectionsManager.getInstance(i11).sendRequest(resetauthorization, new wb0(19, this, tL_authorization));
+        }
+        super.e(i10, z10);
     }
 }

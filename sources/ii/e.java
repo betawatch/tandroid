@@ -4,28 +4,28 @@ import java.util.ArrayList;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.bl;
-import org.telegram.ui.Components.dj;
-import org.telegram.ui.Components.vi;
+import org.telegram.ui.Components.cl;
+import org.telegram.ui.Components.ej;
+import org.telegram.ui.Components.wi;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class e implements bl, dj {
+public final /* synthetic */ class e implements cl, ej {
     public final /* synthetic */ r a;
-    public final /* synthetic */ vi b;
+    public final /* synthetic */ wi b;
 
-    public /* synthetic */ e(r rVar, vi viVar) {
+    public /* synthetic */ e(r rVar, wi wiVar) {
         this.a = rVar;
-        this.b = viVar;
+        this.b = wiVar;
     }
 
-    @Override // org.telegram.ui.Components.bl
+    @Override // org.telegram.ui.Components.cl
     public void b(TLRPC.MessageMedia messageMedia, int i10, boolean z10, int i11, long j3) {
         r rVar = this.a;
         rVar.getClass();
-        vi viVar = this.b;
+        wi wiVar = this.b;
         if (messageMedia == null || messageMedia.geo == null) {
-            viVar.dismiss(true);
+            wiVar.dismiss(true);
             return;
         }
         TL_iv.pageBlockMap pageblockmap = new TL_iv.pageBlockMap();
@@ -35,10 +35,10 @@ public final /* synthetic */ class e implements bl, dj {
         pageblockmap.h = 400;
         rVar.r.R1(pageblockmap);
         rVar.V(true);
-        viVar.dismiss(true);
+        wiVar.dismiss(true);
     }
 
-    @Override // org.telegram.ui.Components.dj
+    @Override // org.telegram.ui.Components.ej
     public void h(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j3, boolean z11, long j10) {
         if (!arrayList.isEmpty()) {
             this.a.r.b2((MessageObject) arrayList.get(0));

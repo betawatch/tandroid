@@ -1,36 +1,34 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class zm extends org.telegram.ui.tu0 {
-    public boolean a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ un c;
+public final class zm extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ vn b;
 
-    public zm(un unVar, int i10) {
-        this.c = unVar;
-        this.b = i10;
+    public /* synthetic */ zm(vn vnVar, int i10) {
+        this.a = i10;
+        this.b = vnVar;
     }
 
-    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
-    public final void D() {
-        if (this.a) {
-            this.c.b0(this.b);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.b.E.setTranslationY(0.0f);
+                break;
+            case 1:
+                this.b.E.setTranslationY(0.0f);
+                break;
+            default:
+                vn vnVar = this.b;
+                vnVar.f1 = false;
+                vnVar.E.setTranslationY(0.0f);
+                vnVar.a0();
+                break;
         }
-    }
-
-    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
-    public final void I() {
-        this.c.e0(this.b, null);
-    }
-
-    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
-    public final void V() {
-        this.a = true;
-    }
-
-    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
-    public final boolean z() {
-        return false;
     }
 }

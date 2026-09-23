@@ -1,35 +1,64 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
+import android.view.accessibility.AccessibilityEvent;
+import android.view.accessibility.AccessibilityNodeInfo;
+import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class ec0 extends bo {
-    public boolean Pc;
-    public final /* synthetic */ TLRPC.User Qc;
-    public final /* synthetic */ TLRPC.User[] Rc;
-    public final /* synthetic */ long Sc;
+public final class ec0 extends org.telegram.ui.Components.y50 {
+    public final /* synthetic */ gc0 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ec0(Bundle bundle, TLRPC.User user, TLRPC.User[] userArr, long j3) {
-        super(bundle);
-        this.Qc = user;
-        this.Rc = userArr;
-        this.Sc = j3;
+    public ec0(gc0 gc0Var) {
+        this.d = gc0Var;
     }
 
-    @Override // org.telegram.ui.bo, org.telegram.ui.ActionBar.n2
-    public final void onBecomeFullyVisible() {
-        super.onBecomeFullyVisible();
-        if (this.Pc) {
-            return;
+    @Override // org.telegram.ui.Components.co0
+    public final void e(View view, AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.e(view, accessibilityNodeInfo);
+        accessibilityNodeInfo.setEnabled(true);
+    }
+
+    @Override // org.telegram.ui.Components.y50
+    public final int h() {
+        return 5;
+    }
+
+    @Override // org.telegram.ui.Components.y50
+    public final int i() {
+        return 100;
+    }
+
+    @Override // org.telegram.ui.Components.y50
+    public final int j() {
+        return LiteMode.getPowerSaverLevel();
+    }
+
+    @Override // org.telegram.ui.Components.y50
+    public final void k(int i10) {
+        gc0 gc0Var = this.d;
+        float f7 = i10 / 100.0f;
+        gc0Var.h.w.X(f7, true);
+        gc0Var.h.setProgress(f7);
+    }
+
+    @Override // android.view.View.AccessibilityDelegate
+    public final void onPopulateAccessibilityEvent(View view, AccessibilityEvent accessibilityEvent) {
+        super.onPopulateAccessibilityEvent(view, accessibilityEvent);
+        StringBuilder sb2 = new StringBuilder(LocaleController.getString(R.string.LiteBatteryTitle));
+        sb2.append(", ");
+        int powerSaverLevel = LiteMode.getPowerSaverLevel();
+        if (powerSaverLevel <= 0) {
+            sb2.append(LocaleController.getString(R.string.LiteBatteryAlwaysDisabled));
+        } else if (powerSaverLevel >= 100) {
+            sb2.append(LocaleController.getString(R.string.LiteBatteryAlwaysEnabled));
+        } else {
+            sb2.append(LocaleController.formatString(R.string.AccDescrLiteBatteryWhenBelow, Integer.valueOf(Math.round(powerSaverLevel))));
         }
-        this.Pc = true;
-        org.telegram.ui.Components.vc.a0(this).M(LocaleController.formatString(R.string.CreateManagedBotCreatedTitle, UserObject.getUserName(this.Qc)), AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.CreateManagedBotCreatedText, UserObject.getUserName(this.Rc[0])), new ai.j(this, this.Sc, 25)), R.raw.contact_check).j();
+        accessibilityEvent.setContentDescription(sb2);
+        this.d.setContentDescription(sb2);
     }
 }

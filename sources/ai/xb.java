@@ -20,12 +20,12 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.bj0;
-import org.telegram.ui.Components.fk0;
+import org.telegram.ui.Components.cj0;
+import org.telegram.ui.Components.gk0;
 import org.telegram.ui.Components.pv0;
-import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class xb extends pv0 {
     public final Path A0;
@@ -70,7 +70,7 @@ public final class xb extends pv0 {
         char c10;
         char c11;
         float f10;
-        b6 b6Var;
+        a6 a6Var;
         float f11;
         char c12;
         float f12;
@@ -93,12 +93,12 @@ public final class xb extends pv0 {
         ca caVar2;
         ec ecVar;
         dc dcVar;
-        f6 currentPeerView;
+        e6 currentPeerView;
         a5 a5Var;
         ca caVar3;
         int i10;
-        f6 t10;
-        bj0 bj0Var;
+        e6 t10;
+        cj0 cj0Var;
         jc jcVar = this.I0;
         RectF rectF5 = jcVar.T;
         gc gcVar = jcVar.s0;
@@ -113,24 +113,24 @@ public final class xb extends pv0 {
                 }
             }
         }
-        f6 currentPeerView2 = jcVar.n0.getCurrentPeerView();
+        e6 currentPeerView2 = jcVar.n0.getCurrentPeerView();
         RectF rectF6 = this.F0;
         RectF rectF7 = this.E0;
         if (currentPeerView2 != null) {
-            b6 b6Var2 = currentPeerView2.o1;
+            a6 a6Var2 = currentPeerView2.o1;
             if (jcVar.V0) {
-                b6Var2.a.getImageReceiver().setVisible(jcVar.U == 1.0f, true);
+                a6Var2.a.getImageReceiver().setVisible(jcVar.U == 1.0f, true);
             } else {
-                b6Var2.a.getImageReceiver().setVisible(true, false);
+                a6Var2.a.getImageReceiver().setVisible(true, false);
             }
             if (jcVar.h1) {
                 jcVar.h1 = false;
-                z5 z5Var = b6Var2.a;
+                y5 y5Var = a6Var2.a;
                 float f21 = 0.0f;
                 float f22 = 0.0f;
                 f7 = 255.0f;
                 c10 = 1;
-                for (View view2 = b6Var2.a; view2 != this; view2 = (View) view2.getParent()) {
+                for (View view2 = a6Var2.a; view2 != this; view2 = (View) view2.getParent()) {
                     if (view2.getParent() == this) {
                         f21 += view2.getLeft();
                         f22 += view2.getTop();
@@ -141,7 +141,7 @@ public final class xb extends pv0 {
                 }
                 c11 = 0;
                 f10 = 1.0f;
-                rectF7.set(f21, f22, z5Var.getMeasuredWidth() + f21, z5Var.getMeasuredHeight() + f22);
+                rectF7.set(f21, f22, y5Var.getMeasuredWidth() + f21, y5Var.getMeasuredHeight() + f22);
                 rectF6.set(0.0f, currentPeerView2.c1.getTop() + currentPeerView2.getTop(), jcVar.v.getMeasuredWidth(), jcVar.v.getMeasuredHeight());
                 jcVar.v.getMatrix().mapRect(rectF7);
                 jcVar.v.getMatrix().mapRect(rectF6);
@@ -151,13 +151,13 @@ public final class xb extends pv0 {
                 c11 = 0;
                 f10 = 1.0f;
             }
-            b6Var = b6Var2;
+            a6Var = a6Var2;
         } else {
             f7 = 255.0f;
             c10 = 1;
             c11 = 0;
             f10 = 1.0f;
-            b6Var = null;
+            a6Var = null;
         }
         jcVar.d1.setAlpha(f10 - jcVar.V);
         float clamp = jcVar.X == 0.0f ? 1.0f - Utilities.clamp(Math.abs(jcVar.W / getMeasuredHeight()), 1.0f, 0.0f) : 1.0f;
@@ -308,14 +308,14 @@ public final class xb extends pv0 {
                             canvas.restoreToCount(saveCount);
                         }
                         canvas.restore();
-                        if (b6Var != null) {
-                            z5 z5Var2 = b6Var.a;
+                        if (a6Var != null) {
+                            y5 y5Var2 = a6Var.a;
                             float f34 = jcVar.X;
                             float f35 = jcVar.W;
                             if (jcVar.H0 && jcVar.V0) {
                                 rectF9.set(rectF);
                             } else {
-                                for (View view3 = z5Var2; view3 != this && view3 != null; view3 = (View) view3.getParent()) {
+                                for (View view3 = y5Var2; view3 != this && view3 != null; view3 = (View) view3.getParent()) {
                                     if (view3.getParent() == this) {
                                         f34 += view3.getLeft();
                                         f35 += view3.getTop();
@@ -328,7 +328,7 @@ public final class xb extends pv0 {
                                         break;
                                     }
                                 }
-                                rectF9.set(f34, f35, z5Var2.getMeasuredWidth() + f34, z5Var2.getMeasuredHeight() + f35);
+                                rectF9.set(f34, f35, y5Var2.getMeasuredWidth() + f34, y5Var2.getMeasuredHeight() + f35);
                             }
                             AndroidUtilities.lerp(rectF4, rectF9, jcVar.U, rectF11);
                             int saveCount2 = canvas.getSaveCount();
@@ -343,9 +343,9 @@ public final class xb extends pv0 {
                                     if (gcVar != null && (caVar2 = gcVar.m) != null && caVar2.w) {
                                         canvas.saveLayerAlpha(rectF11.left - AndroidUtilities.dp(4.0f), rectF11.top - AndroidUtilities.dp(4.0f), rectF11.right + AndroidUtilities.dp(4.0f), rectF11.bottom + AndroidUtilities.dp(4.0f), 255, 31);
                                     }
-                                    z5Var2.getImageReceiver().setImageCoords(rectF11);
-                                    z5Var2.getImageReceiver().setRoundRadius((int) AndroidUtilities.lerp(rectF11.width() / 2.0f, ((gcVar == null || gcVar.b == null) ? null : Integer.valueOf((int) (gcVar.b.getRoundRadius()[0] * ((!gcVar.n || (view = gcVar.a) == null || view.getParent() == null) ? 1.0f : ((ViewGroup) gcVar.a.getParent()).getScaleY())))) != null ? r4.intValue() : rectF11.width() / 2.0f, 1.0f - jcVar.U));
-                                    z5Var2.getImageReceiver().setVisible(true, false);
+                                    y5Var2.getImageReceiver().setImageCoords(rectF11);
+                                    y5Var2.getImageReceiver().setRoundRadius((int) AndroidUtilities.lerp(rectF11.width() / 2.0f, ((gcVar == null || gcVar.b == null) ? null : Integer.valueOf((int) (gcVar.b.getRoundRadius()[0] * ((!gcVar.n || (view = gcVar.a) == null || view.getParent() == null) ? 1.0f : ((ViewGroup) gcVar.a.getParent()).getScaleY())))) != null ? r4.intValue() : rectF11.width() / 2.0f, 1.0f - jcVar.U));
+                                    y5Var2.getImageReceiver().setVisible(true, false);
                                     float f36 = z13 ? jcVar.U : 1.0f;
                                     if (gcVar == null || gcVar.k >= 1.0f || (paint = gcVar.j) == null) {
                                         f18 = f16;
@@ -356,11 +356,11 @@ public final class xb extends pv0 {
                                         f18 = f16;
                                         f19 = AndroidUtilities.lerp(gcVar.k, f36, f18);
                                     }
-                                    z5Var2.getImageReceiver().setAlpha(f19);
-                                    b6Var.b(jcVar.U, canvas, rectF11, !jc.A1);
-                                    z5Var2.getImageReceiver().draw(canvas);
-                                    z5Var2.getImageReceiver().setAlpha(f36);
-                                    z5Var2.getImageReceiver().setVisible(false, false);
+                                    y5Var2.getImageReceiver().setAlpha(f19);
+                                    a6Var.b(jcVar.U, canvas, rectF11, !jc.A1);
+                                    y5Var2.getImageReceiver().draw(canvas);
+                                    y5Var2.getImageReceiver().setAlpha(f36);
+                                    y5Var2.getImageReceiver().setVisible(false, false);
                                     if (gcVar != null && (caVar = gcVar.m) != null && caVar.w) {
                                         RectF rectF12 = AndroidUtilities.rectTmp;
                                         rectF12.set(rectF11);
@@ -436,13 +436,13 @@ public final class xb extends pv0 {
                             jcVar.d = false;
                             jc.x1 = true;
                             jcVar.b0 = jcVar.W;
-                            if (gcVar.d != null && (t10 = jcVar.t()) != null && (bj0Var = t10.o1.d) != null) {
-                                bj0 bj0Var2 = gcVar.d;
-                                bj0Var.c = bj0Var2.c;
-                                bj0Var.f = bj0Var2.f;
-                                bj0Var.b = bj0Var2.b;
-                                bj0Var.a = System.currentTimeMillis();
-                                bj0Var.c();
+                            if (gcVar.d != null && (t10 = jcVar.t()) != null && (cj0Var = t10.o1.d) != null) {
+                                cj0 cj0Var2 = gcVar.d;
+                                cj0Var.c = cj0Var2.c;
+                                cj0Var.f = cj0Var2.f;
+                                cj0Var.b = cj0Var2.b;
+                                cj0Var.a = System.currentTimeMillis();
+                                cj0Var.c();
                             }
                             jcVar.E = true;
                             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
@@ -460,7 +460,7 @@ public final class xb extends pv0 {
                             jcVar.F.addListener(new sb(jcVar, i10));
                             jcVar.F.setStartDelay(40L);
                             jcVar.F.setDuration(250L);
-                            jcVar.F.setInterpolator(qr.f);
+                            jcVar.F.setInterpolator(rr.f);
                             jcVar.F.start();
                             if (!arrayList.isEmpty()) {
                                 for (int i12 = 0; i12 < arrayList.size(); i12++) {
@@ -507,7 +507,7 @@ public final class xb extends pv0 {
                 rectF4 = rectF2;
                 f17 = 0.0f;
                 canvas.restore();
-                if (b6Var != null) {
+                if (a6Var != null) {
                 }
                 if (jcVar.M != null) {
                 }
@@ -552,17 +552,17 @@ public final class xb extends pv0 {
         boolean z11;
         zb zbVar;
         int i10;
-        fk0 fk0Var;
+        gk0 gk0Var;
         jc jcVar = this.I0;
         float[] fArr = jcVar.o0;
-        f6 currentPeerView = jcVar.n0.getCurrentPeerView();
+        e6 currentPeerView = jcVar.n0.getCurrentPeerView();
         if (currentPeerView != null) {
-            h5 h5Var = currentPeerView.K0;
-            if (h5Var.W.y()) {
+            g5 g5Var = currentPeerView.K0;
+            if (g5Var.W.y()) {
                 float x10 = currentPeerView.getX();
                 float y3 = ((View) currentPeerView.getParent()).getY() + currentPeerView.getY();
                 motionEvent.offsetLocation(-x10, -y3);
-                if (!h5Var.W.o(currentPeerView.getContext()).onTouchEvent(motionEvent)) {
+                if (!g5Var.W.o(currentPeerView.getContext()).onTouchEvent(motionEvent)) {
                     motionEvent.offsetLocation(x10, y3);
                 }
                 return true;
@@ -570,7 +570,7 @@ public final class xb extends pv0 {
         }
         float f7 = 0.0f;
         int i11 = 0;
-        if (jcVar.p1 && currentPeerView != null && (fk0Var = currentPeerView.r3) != null) {
+        if (jcVar.p1 && currentPeerView != null && (gk0Var = currentPeerView.r3) != null) {
             float f10 = 0.0f;
             for (View view = currentPeerView; view != null && (view.getParent() instanceof View); view = (View) view.getParent()) {
                 f7 += view.getX();
@@ -582,14 +582,14 @@ public final class xb extends pv0 {
                 return true;
             }
             Rect rect = AndroidUtilities.rectTmp2;
-            fk0Var.getHitRect(rect);
+            gk0Var.getHitRect(rect);
             rect.offset((int) f7, (int) f10);
             if (motionEvent.getAction() == 0 && !rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
                 currentPeerView.b1(false);
                 return true;
             }
             motionEvent.offsetLocation(-rect.left, -rect.top);
-            fk0Var.dispatchTouchEvent(motionEvent);
+            gk0Var.dispatchTouchEvent(motionEvent);
             return true;
         }
         if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
@@ -602,7 +602,7 @@ public final class xb extends pv0 {
                 ofFloat.addUpdateListener(new ub(this, i11));
                 jcVar.G.addListener(new vb(this, i11));
                 jcVar.G.setDuration(250L);
-                jcVar.G.setInterpolator(qr.f);
+                jcVar.G.setInterpolator(rr.f);
                 jcVar.G.start();
             }
             if (jcVar.V >= 0.3f) {
@@ -617,15 +617,15 @@ public final class xb extends pv0 {
         if (motionEvent.getAction() == 0) {
             jcVar.a0 = false;
             if (currentPeerView != null) {
-                x5 x5Var = currentPeerView.y0;
+                w5 w5Var = currentPeerView.y0;
                 nb nbVar = currentPeerView.C0;
                 a5 a5Var = currentPeerView.c1;
-                ci.f4 f4Var = currentPeerView.F0;
-                if (f4Var != null && f4Var.V && nbVar != null && !f4Var.r0.contains(motionEvent.getX() - (currentPeerView.F0.getX() + (a5Var.getX() + currentPeerView.getX())), motionEvent.getY() - (currentPeerView.F0.getY() + (a5Var.getY() + currentPeerView.getY()))) && !currentPeerView.H0(motionEvent, nbVar)) {
+                ci.e4 e4Var = currentPeerView.F0;
+                if (e4Var != null && e4Var.V && nbVar != null && !e4Var.r0.contains(motionEvent.getX() - (currentPeerView.F0.getX() + (a5Var.getX() + currentPeerView.getX())), motionEvent.getY() - (currentPeerView.F0.getY() + (a5Var.getY() + currentPeerView.getY()))) && !currentPeerView.H0(motionEvent, nbVar)) {
                     currentPeerView.F0.e(true);
                 }
-                ci.f4 f4Var2 = currentPeerView.G0;
-                if (f4Var2 != null && f4Var2.V && x5Var != null && !f4Var2.r0.contains(motionEvent.getX() - (currentPeerView.G0.getX() + (a5Var.getX() + currentPeerView.getX())), motionEvent.getY() - (currentPeerView.G0.getY() + (a5Var.getY() + currentPeerView.getY()))) && !currentPeerView.H0(motionEvent, x5Var)) {
+                ci.e4 e4Var2 = currentPeerView.G0;
+                if (e4Var2 != null && e4Var2.V && w5Var != null && !e4Var2.r0.contains(motionEvent.getX() - (currentPeerView.G0.getX() + (a5Var.getX() + currentPeerView.getX())), motionEvent.getY() - (currentPeerView.G0.getY() + (a5Var.getY() + currentPeerView.getY()))) && !currentPeerView.H0(motionEvent, w5Var)) {
                     currentPeerView.G0.e(true);
                 }
             }
@@ -654,7 +654,7 @@ public final class xb extends pv0 {
                 if (currentPeerView != null && jcVar.e0 == 0.0f && !jcVar.j0 && !jcVar.L0 && !jcVar.I0 && jcVar.n0.F0 != 1) {
                     AndroidUtilities.getViewPositionInParent(currentPeerView.c1, this, fArr);
                     motionEvent.offsetLocation(-fArr[0], -fArr[1]);
-                    f6 currentPeerView2 = jcVar.n0.getCurrentPeerView();
+                    e6 currentPeerView2 = jcVar.n0.getCurrentPeerView();
                     currentPeerView2.X2.a(motionEvent, currentPeerView2.c1, null, null, 0);
                     motionEvent.offsetLocation(fArr[0], fArr[1]);
                 }
@@ -671,7 +671,7 @@ public final class xb extends pv0 {
                         if (jcVar.e0 != 0.0f && !jcVar.g1 && jcVar.p0 < AndroidUtilities.dp(20.0f)) {
                             jcVar.n(jcVar.w.f > 0.5f);
                         }
-                        f6 t10 = jcVar.t();
+                        e6 t10 = jcVar.t();
                         if (t10 != null) {
                             t10.K0.w0 = false;
                         }
@@ -690,7 +690,7 @@ public final class xb extends pv0 {
         if (currentPeerView != null) {
             AndroidUtilities.getViewPositionInParent(currentPeerView.c1, this, fArr);
             motionEvent.offsetLocation(-fArr[0], -fArr[1]);
-            f6 currentPeerView22 = jcVar.n0.getCurrentPeerView();
+            e6 currentPeerView22 = jcVar.n0.getCurrentPeerView();
             currentPeerView22.X2.a(motionEvent, currentPeerView22.c1, null, null, 0);
             motionEvent.offsetLocation(fArr[0], fArr[1]);
         }
@@ -718,7 +718,7 @@ public final class xb extends pv0 {
             org.telegram.ui.ActionBar.n2 n2Var = this.H0;
             AndroidUtilities.requestAdjustResize(n2Var.getParentActivity(), n2Var.getClassGuid());
         }
-        org.telegram.ui.Components.oc.a(this, new wb(this));
+        org.telegram.ui.Components.qc.a(this, new wb(this));
         NotificationCenter.getInstance(jcVar.h).addObserver(jcVar, NotificationCenter.storiesListUpdated);
         NotificationCenter.getInstance(jcVar.h).addObserver(jcVar, NotificationCenter.storiesUpdated);
         NotificationCenter.getInstance(jcVar.h).addObserver(jcVar, NotificationCenter.articleClosed);
@@ -729,7 +729,7 @@ public final class xb extends pv0 {
     @Override // org.telegram.ui.Components.pv0, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        org.telegram.ui.Components.oc.h(this);
+        org.telegram.ui.Components.qc.h(this);
         jc jcVar = this.I0;
         NotificationCenter.getInstance(jcVar.h).removeObserver(jcVar, NotificationCenter.storiesListUpdated);
         NotificationCenter.getInstance(jcVar.h).removeObserver(jcVar, NotificationCenter.storiesUpdated);
@@ -749,18 +749,18 @@ public final class xb extends pv0 {
         float f7;
         r3 r3Var;
         ic icVar;
-        f6 currentPeerView;
+        e6 currentPeerView;
         boolean z10;
         a3.d dVar;
-        e6 e6Var;
-        f6 currentPeerView2;
         d6 d6Var;
+        e6 currentPeerView2;
+        c6 c6Var;
         TL_stories.StoryItem storyItem;
         TLRPC.MessageMedia messageMedia;
         TLRPC.Document document;
         r3 r3Var2;
         jc jcVar = this.I0;
-        e5 e5Var = jcVar.b1;
+        d5 d5Var = jcVar.b1;
         if (motionEvent.getAction() == 0 && jcVar.U == 1.0f) {
             float x10 = motionEvent.getX();
             this.y0 = x10;
@@ -770,7 +770,7 @@ public final class xb extends pv0 {
             jcVar.f0 = (jcVar.I0 || jc.i(jcVar, jcVar.s, motionEvent.getX(), motionEvent.getY(), false)) ? false : true;
             jcVar.h0 = (jcVar.I0 || jc.i(jcVar, jcVar.s, motionEvent.getX(), motionEvent.getY(), true)) ? false : true;
             jcVar.K(jcVar.f0 && !jcVar.m1);
-            f6 t10 = jcVar.t();
+            e6 t10 = jcVar.t();
             if (jcVar.f0 && t10 != null && (r3Var2 = t10.L0) != null) {
                 r3Var2.setAllowTouches(false);
             }
@@ -780,15 +780,15 @@ public final class xb extends pv0 {
                 AndroidUtilities.runOnUIThread(dVar2, 150L);
             }
             if (jcVar.f0 && !jcVar.x && !jcVar.I0 && !jcVar.j1) {
-                AndroidUtilities.runOnUIThread(e5Var, 400L);
+                AndroidUtilities.runOnUIThread(d5Var, 400L);
             }
             f7 = 1.0f;
         } else if (motionEvent.getAction() == 2) {
             float abs = Math.abs(this.x0 - motionEvent.getY());
             float abs2 = Math.abs(this.w0 - motionEvent.getX());
-            if (jcVar.a1 && jcVar.k0 && !jcVar.f1 && !jcVar.j0 && (e6Var = jcVar.G0) != null && ((ic) e6Var.c) != null && (currentPeerView2 = jcVar.n0.getCurrentPeerView()) != null && (d6Var = currentPeerView2.O1) != null && d6Var.b == null && d6Var.e) {
+            if (jcVar.a1 && jcVar.k0 && !jcVar.f1 && !jcVar.j0 && (d6Var = jcVar.G0) != null && ((ic) d6Var.c) != null && (currentPeerView2 = jcVar.n0.getCurrentPeerView()) != null && (c6Var = currentPeerView2.O1) != null && c6Var.b == null && c6Var.e) {
                 long j3 = currentPeerView2.R2;
-                if (j3 <= 0 && (storyItem = d6Var.a) != null && (messageMedia = storyItem.media) != null && (document = messageMedia.document) != null) {
+                if (j3 <= 0 && (storyItem = c6Var.a) != null && (messageMedia = storyItem.media) != null && (document = messageMedia.document) != null) {
                     j3 = (long) (MessageObject.getDocumentDuration(document) * 1000.0d);
                 }
                 if (j3 > 0) {
@@ -830,7 +830,7 @@ public final class xb extends pv0 {
                                 jcVar.n1.run();
                                 jcVar.n1 = null;
                             }
-                            AndroidUtilities.cancelRunOnUIThread(e5Var);
+                            AndroidUtilities.cancelRunOnUIThread(d5Var);
                         }
                         jcVar.y();
                     }
@@ -861,14 +861,14 @@ public final class xb extends pv0 {
                     dVar = jcVar.n1;
                     if (dVar != null) {
                     }
-                    AndroidUtilities.cancelRunOnUIThread(e5Var);
+                    AndroidUtilities.cancelRunOnUIThread(d5Var);
                 }
                 jcVar.y();
             }
         } else {
             f7 = 1.0f;
             if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                AndroidUtilities.cancelRunOnUIThread(e5Var);
+                AndroidUtilities.cancelRunOnUIThread(d5Var);
                 a3.d dVar3 = jcVar.n1;
                 if (dVar3 != null) {
                     AndroidUtilities.cancelRunOnUIThread(dVar3);
@@ -877,18 +877,18 @@ public final class xb extends pv0 {
                 jcVar.K(false);
                 jcVar.g0 = false;
                 jcVar.k0 = false;
-                e6 e6Var2 = jcVar.G0;
-                if (e6Var2 != null && (icVar = (ic) e6Var2.c) != null) {
+                d6 d6Var2 = jcVar.G0;
+                if (d6Var2 != null && (icVar = (ic) d6Var2.c) != null) {
                     icVar.setSeeking(false);
                 }
-                f6 t11 = jcVar.t();
+                e6 t11 = jcVar.t();
                 if (t11 != null && (r3Var = t11.L0) != null) {
                     r3Var.setAllowTouches(true);
                 }
             }
         }
-        r7 r7Var = jcVar.w;
-        boolean z12 = r7Var != null && r7Var.f == f7;
+        s7 s7Var = jcVar.w;
+        boolean z12 = s7Var != null && s7Var.f == f7;
         if (!jcVar.j0 && !z12) {
             jcVar.i0.onTouchEvent(motionEvent);
         }
@@ -920,10 +920,10 @@ public final class xb extends pv0 {
                 ofFloat.addUpdateListener(new ub(this, i10));
                 jcVar.G.addListener(new vb(this, i10));
                 jcVar.G.setDuration(150L);
-                jcVar.G.setInterpolator(qr.f);
+                jcVar.G.setInterpolator(rr.f);
                 jcVar.G.start();
             }
-            f6 t10 = jcVar.t();
+            e6 t10 = jcVar.t();
             if (t10 != null && (r3Var = t10.L0) != null) {
                 r3Var.setAllowTouches(true);
             }

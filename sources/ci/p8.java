@@ -1,27 +1,20 @@
 package ci;
 
-import android.view.View;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class p8 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ x8 b;
+public final class p8 extends s4.j {
+    public final /* synthetic */ u8 F;
 
-    public /* synthetic */ p8(x8 x8Var, int i10) {
-        this.a = i10;
-        this.b = x8Var;
+    public p8(u8 u8Var) {
+        this.F = u8Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                this.b.U();
-                break;
-            default:
-                this.b.X();
-                break;
-        }
+    @Override // s4.j
+    public final void P(s4.c1 c1Var) {
+        ViewGroup viewGroup;
+        viewGroup = ((org.telegram.ui.ActionBar.f3) this.F).containerView;
+        viewGroup.invalidate();
     }
 }

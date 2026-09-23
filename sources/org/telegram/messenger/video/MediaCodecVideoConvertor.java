@@ -5,7 +5,7 @@ import android.media.MediaExtractor;
 import android.media.MediaFormat;
 import android.media.MediaMuxer;
 import android.os.Build;
-import ci.n8;
+import ci.k8;
 import ci.t;
 import java.io.File;
 import java.nio.ByteBuffer;
@@ -17,7 +17,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.VideoEditedInfo;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public class MediaCodecVideoConvertor {
     private static final int MEDIACODEC_TIMEOUT_DEFAULT = 2500;
@@ -34,14 +34,14 @@ public class MediaCodecVideoConvertor {
     private Muxer muxer;
     private String outputMimeType;
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public class ConversionCanceledException extends RuntimeException {
         public ConversionCanceledException() {
             super("canceled conversion");
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class ConvertVideoParams {
         int account;
         long avatarStartTime;
@@ -58,7 +58,7 @@ public class MediaCodecVideoConvertor {
         int framerate;
         Integer gradientBottomColor;
         Integer gradientTopColor;
-        n8 hdrInfo;
+        k8 hdrInfo;
         boolean isDark;
         boolean isPhoto;
         boolean isRound;
@@ -134,7 +134,7 @@ public class MediaCodecVideoConvertor {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class MixedSoundInfo {
         final String audioFile;
         public long audioOffset;
@@ -189,7 +189,7 @@ public class MediaCodecVideoConvertor {
     }
 
     /*  JADX ERROR: Type inference failed
-        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r112v2 ?? I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]), method size: 7788
+        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r1v183 ?? I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]), method size: 7788
         	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
         	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
         	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
@@ -358,7 +358,7 @@ public class MediaCodecVideoConvertor {
         return sb2.toString();
     }
 
-    private static String hdrFragmentShader(int i10, int i11, int i12, int i13, boolean z10, n8 n8Var, int i14, boolean z11) {
+    private static String hdrFragmentShader(int i10, int i11, int i12, int i13, boolean z10, k8 k8Var, int i14, boolean z11) {
         if (!z10) {
             return createFragmentShader(i10, i11, i12, i13, false, i14, z11);
         }
@@ -407,7 +407,7 @@ public class MediaCodecVideoConvertor {
         String glslFloat5 = glslFloat(min * min2);
         String glslFloat6 = glslFloat(1.0f / f7);
         String glslFloat7 = glslFloat(1.0f / f11);
-        String readRes = n8Var.a() == 1 ? AndroidUtilities.readRes(R.raw.hdr2sdr_hlg) : AndroidUtilities.readRes(R.raw.hdr2sdr_pq);
+        String readRes = k8Var.a() == 1 ? AndroidUtilities.readRes(R.raw.hdr2sdr_hlg) : AndroidUtilities.readRes(R.raw.hdr2sdr_pq);
         StringBuilder sb2 = new StringBuilder();
         sb2.append(readRes);
         sb2.append("\nvarying vec2 vTextureCoord;\nconst float offsetX = ");
@@ -647,7 +647,7 @@ public class MediaCodecVideoConvertor {
         return this.endPresentationTime;
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class Muxer {
         public final MediaMuxer mediaMuxer;
         public final MP4Builder mp4Builder;

@@ -6,13 +6,13 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
-import org.telegram.ui.Components.hl0;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.vk0;
+import org.telegram.ui.Components.il0;
+import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.wk0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class h0 extends hl0 {
+public final class h0 extends il0 {
     public final ArrayList r;
     public final int s;
     public final Context v;
@@ -28,18 +28,18 @@ public final class h0 extends hl0 {
         arrayList.addAll(c2.f(i10).e());
     }
 
-    @Override // org.telegram.ui.Components.tk0
+    @Override // org.telegram.ui.Components.uk0
     public final String F(int i10) {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.tk0
-    public final void G(ll0 ll0Var, float f7, int[] iArr) {
+    @Override // org.telegram.ui.Components.uk0
+    public final void G(ml0 ml0Var, float f7, int[] iArr) {
         iArr[0] = 0;
         iArr[1] = 0;
     }
 
-    @Override // org.telegram.ui.Components.hl0
+    @Override // org.telegram.ui.Components.il0
     public final int M(int i10) {
         if (i10 == 0 || i10 == 2) {
             return 1;
@@ -47,7 +47,7 @@ public final class h0 extends hl0 {
         return this.r.size();
     }
 
-    @Override // org.telegram.ui.Components.hl0
+    @Override // org.telegram.ui.Components.il0
     public final Object O(int i10, int i11) {
         if (i10 != 0 && i11 >= 0) {
             ArrayList arrayList = this.r;
@@ -58,7 +58,7 @@ public final class h0 extends hl0 {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.hl0
+    @Override // org.telegram.ui.Components.il0
     public final int P(int i10, int i11) {
         if (i10 == 0) {
             return 1;
@@ -66,22 +66,22 @@ public final class h0 extends hl0 {
         return i10 == 2 ? 2 : 0;
     }
 
-    @Override // org.telegram.ui.Components.hl0
+    @Override // org.telegram.ui.Components.il0
     public final int R() {
         return 3;
     }
 
-    @Override // org.telegram.ui.Components.hl0
+    @Override // org.telegram.ui.Components.il0
     public final View T(int i10, View view) {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.hl0
+    @Override // org.telegram.ui.Components.il0
     public final boolean V(int i10, int i11, s4.c1 c1Var) {
         return (i10 == 0 || i10 == 2 || i11 >= this.r.size()) ? false : true;
     }
 
-    @Override // org.telegram.ui.Components.hl0
+    @Override // org.telegram.ui.Components.il0
     public final void W(int i10, int i11, s4.c1 c1Var) {
         if (c1Var.f == 0) {
             y1 y1Var = (y1) c1Var.a;
@@ -98,7 +98,7 @@ public final class h0 extends hl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.hl0, s4.h0
+    @Override // org.telegram.ui.Components.il0, s4.h0
     public final void l() {
         ArrayList arrayList = this.r;
         arrayList.clear();
@@ -121,6 +121,6 @@ public final class h0 extends hl0 {
             y1Var.setLayoutParams(new s4.p0(-1, AndroidUtilities.dp(56.0f)));
             y1Var.setTag(-33024);
         }
-        return new vk0(y1Var);
+        return new wk0(y1Var);
     }
 }

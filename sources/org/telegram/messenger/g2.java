@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g2 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -30,13 +30,13 @@ public final /* synthetic */ class g2 implements Utilities.Callback {
                 ((FactCheckController) this.b).lambda$getFactCheck$0((FactCheckController.Key) this.c, (MessageObject) this.d, (TLRPC.TL_factCheck) obj);
                 break;
             case 1:
-                ChannelBoostsController.lambda$userCanBoostChannel$2((ChannelBoostsController.CanApplyBoost) this.b, (TL_stories.TL_premium_boostsStatus) this.c, (e2.h) this.d, (TL_stories.TL_premium_myBoosts) obj);
+                ChannelBoostsController.lambda$userCanBoostChannel$2((ChannelBoostsController.CanApplyBoost) this.b, (TL_stories.TL_premium_boostsStatus) this.c, (Utilities.Callback) this.d, (TL_stories.TL_premium_myBoosts) obj);
                 break;
             case 2:
-                ((FileRefController) this.b).lambda$requestReferenceFromServer$1((String) this.c, (String) this.d, (ai.s8) obj);
+                ((FileRefController) this.b).lambda$requestReferenceFromServer$1((String) this.c, (String) this.d, (ai.t8) obj);
                 break;
             case 3:
-                MediaDataController.lambda$setPlaceholderImage$31((String) this.b, (org.telegram.ui.Components.u9) this.c, (String) this.d, (TLRPC.TL_messages_stickerSet) obj);
+                MediaDataController.lambda$setPlaceholderImage$31((String) this.b, (org.telegram.ui.Components.w9) this.c, (String) this.d, (TLRPC.TL_messages_stickerSet) obj);
                 break;
             case 4:
                 MediaDataController.lambda$fillWithAnimatedEmoji$226((boolean[]) this.b, (ArrayList[]) this.c, (Runnable) this.d, (ArrayList) obj);

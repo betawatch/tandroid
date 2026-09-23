@@ -7,16 +7,16 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class qs0 implements lm0 {
+public final class qs0 implements mm0 {
     public final /* synthetic */ yu0 a;
 
     public qs0(yu0 yu0Var) {
         this.a = yu0Var;
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.mm0
     public final void C() {
         int a2;
         rt0[] rt0VarArr = this.a.k0;
@@ -37,12 +37,12 @@ public final class qs0 implements lm0 {
             rt0VarArr[0].h.x0(0);
             return;
         }
-        ok0 ok0Var = rt0VarArr[0].E;
-        ok0Var.b = 1;
-        ok0Var.c(0, 0, false, false);
+        pk0 pk0Var = rt0VarArr[0].E;
+        pk0Var.b = 1;
+        pk0Var.c(0, 0, false, false);
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.mm0
     public final void C0(float f7) {
         yu0 yu0Var = this.a;
         org.telegram.ui.ActionBar.v0 v0Var = yu0Var.n0;
@@ -81,7 +81,7 @@ public final class qs0 implements lm0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.mm0
     public final void d(int i10, boolean z10) {
         yu0 yu0Var = this.a;
         rt0[] rt0VarArr = yu0Var.k0;
@@ -103,7 +103,7 @@ public final class qs0 implements lm0 {
         yu0Var.q1(true);
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.mm0
     public final boolean n1(int i10, View view) {
         TLRPC.UserFull userFull;
         TLRPC.ProfileTab profileTab;
@@ -114,9 +114,9 @@ public final class qs0 implements lm0 {
                 if (ChatObject.canUserDoAction(n2Var.getMessagesController().getChat(Long.valueOf(yu0Var.d1.id)), 5)) {
                     profileTab = yu0Var.d1.main_tab;
                     if (profileTab != null || (i10 != yu0.e0(profileTab) && yu0Var.R1 != i10)) {
-                        n70 H = n70.H(n2Var, view);
-                        H.W(org.telegram.ui.ActionBar.i6.b0(AndroidUtilities.dp(24.0f), org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.d6, false)));
-                        H.c(R.drawable.tabs_reorder, LocaleController.getString(R.string.ProfileTabSetAsMain), new id(this, i10, 9), false);
+                        o70 H = o70.H(n2Var, view);
+                        H.W(org.telegram.ui.ActionBar.h6.b0(AndroidUtilities.dp(24.0f), org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.d6, false)));
+                        H.c(R.drawable.tabs_reorder, LocaleController.getString(R.string.ProfileTabSetAsMain), new kd(this, i10, 9), false);
                         H.Z();
                         return true;
                     }
@@ -125,9 +125,9 @@ public final class qs0 implements lm0 {
                 profileTab = userFull.main_tab;
                 if (profileTab != null) {
                 }
-                n70 H2 = n70.H(n2Var, view);
-                H2.W(org.telegram.ui.ActionBar.i6.b0(AndroidUtilities.dp(24.0f), org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.d6, false)));
-                H2.c(R.drawable.tabs_reorder, LocaleController.getString(R.string.ProfileTabSetAsMain), new id(this, i10, 9), false);
+                o70 H2 = o70.H(n2Var, view);
+                H2.W(org.telegram.ui.ActionBar.h6.b0(AndroidUtilities.dp(24.0f), org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.d6, false)));
+                H2.c(R.drawable.tabs_reorder, LocaleController.getString(R.string.ProfileTabSetAsMain), new kd(this, i10, 9), false);
                 H2.Z();
                 return true;
             }

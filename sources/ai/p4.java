@@ -8,10 +8,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
-import org.telegram.messenger.vl;
+import org.telegram.messenger.ul;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class p4 extends TextView {
     public final /* synthetic */ int a;
@@ -70,7 +70,7 @@ public final class p4 extends TextView {
     public void onDraw(Canvas canvas) {
         switch (this.a) {
             case 4:
-                canvas.drawLine(0.0f, getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, org.telegram.ui.h4.r1);
+                canvas.drawLine(0.0f, getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, org.telegram.ui.i4.r1);
                 super.onDraw(canvas);
                 break;
             default:
@@ -161,7 +161,7 @@ public final class p4 extends TextView {
                 break;
             case 27:
                 if (View.MeasureSpec.getMode(i10) == Integer.MIN_VALUE) {
-                    i10 = vl.d(52.0f, View.MeasureSpec.getSize(i10), TLObject.FLAG_31);
+                    i10 = ul.d(52.0f, View.MeasureSpec.getSize(i10), TLObject.FLAG_31);
                 }
                 super.onMeasure(i10, i11);
                 break;

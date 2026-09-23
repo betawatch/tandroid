@@ -24,7 +24,7 @@ import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class y9 {
     public int a;
@@ -38,7 +38,7 @@ public final class y9 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void a(y9 y9Var, h8 h8Var) {
+    public static void a(y9 y9Var, z7 z7Var) {
         SQLiteCursor sQLiteCursor;
         boolean z10;
         SQLiteDatabase sQLiteDatabase;
@@ -101,7 +101,7 @@ public final class y9 {
                                         th = th2;
                                         try {
                                             FileLog.e(th);
-                                            AndroidUtilities.runOnUIThread(new a3.d(h8Var, 15));
+                                            AndroidUtilities.runOnUIThread(new a3.d(z7Var, 15));
                                             return;
                                         } finally {
                                             if (sQLiteCursor != 0) {
@@ -125,7 +125,7 @@ public final class y9 {
                                             th = th3;
                                             sQLiteCursor = obj2;
                                             FileLog.e(th);
-                                            AndroidUtilities.runOnUIThread(new a3.d(h8Var, 15));
+                                            AndroidUtilities.runOnUIThread(new a3.d(z7Var, 15));
                                             return;
                                         }
                                     } else {
@@ -224,8 +224,8 @@ public final class y9 {
                     Collections.sort(peerStories.stories, l9.X);
                     i18++;
                 }
-                Collections.sort(tL_stories_allStories.peer_stories, Comparator$-CC.comparingInt(new f7(2)));
-                AndroidUtilities.runOnUIThread(new a1.e(23, h8Var, tL_stories_allStories));
+                Collections.sort(tL_stories_allStories.peer_stories, Comparator$-CC.comparingInt(new g7(2)));
+                AndroidUtilities.runOnUIThread(new a1.e(25, z7Var, tL_stories_allStories));
             } catch (Throwable th5) {
                 th = th5;
                 sQLiteCursor = queryFinalized;
@@ -490,7 +490,7 @@ public final class y9 {
                 messagesStorage.updateChatInfo(chatFull, false);
             }
         }
-        messagesStorage.getStorageQueue().postRunnable(new w9(this, j3, i10, 1));
+        messagesStorage.getStorageQueue().postRunnable(new v9(this, j3, i10, 0));
     }
 
     public final void j(List list) {

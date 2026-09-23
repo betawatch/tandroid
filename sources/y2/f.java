@@ -2,7 +2,7 @@ package y2;
 
 import android.content.Context;
 import android.os.SystemClock;
-import ci.uc;
+import ci.rc;
 import e2.t;
 import e2.x;
 import e9.a1;
@@ -15,7 +15,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.Executor;
 import k2.u;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class f implements c, c0 {
     public static final a1 p = i0.y(4300000L, 3200000L, 2400000L, 1700000L, 860000L);
@@ -75,7 +75,7 @@ public final class f implements c, c0 {
             z10 = a2.a;
         }
         if (z10) {
-            tVar2.b.execute(new uc(tVar2, 5));
+            tVar2.b.execute(new rc(tVar2, 5));
         }
     }
 

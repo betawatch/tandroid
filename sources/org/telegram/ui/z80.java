@@ -1,118 +1,86 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
 import java.util.regex.Pattern;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class z80 implements Runnable {
-    public final /* synthetic */ int a = 0;
+public final /* synthetic */ class z80 implements RequestDelegate {
+    public final /* synthetic */ int a;
     public final /* synthetic */ LaunchActivity b;
-    public final /* synthetic */ TLRPC.TL_error c;
-    public final /* synthetic */ TLObject d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ String f;
-    public final /* synthetic */ ma0 h;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ ia0 d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object g;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object i;
 
-    public /* synthetic */ z80(LaunchActivity launchActivity, TLObject tLObject, int i10, String str, TLRPC.TL_error tL_error, ma0 ma0Var) {
+    public /* synthetic */ z80(LaunchActivity launchActivity, ia0 ia0Var, int i10, TL_account.authorizationForm authorizationform, TL_account.getAuthorizationForm getauthorizationform, String str, String str2, String str3) {
+        this.a = 0;
         this.b = launchActivity;
-        this.d = tLObject;
-        this.e = i10;
+        this.d = ia0Var;
+        this.c = i10;
+        this.i = authorizationform;
+        this.e = getauthorizationform;
         this.f = str;
-        this.c = tL_error;
-        this.h = ma0Var;
+        this.g = str2;
+        this.h = str3;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        org.telegram.ui.Components.vc a02;
-        int i10;
-        int i11;
-        int i12 = this.a;
-        ma0 ma0Var = this.h;
-        String str = this.f;
-        TLObject tLObject = this.d;
-        TLRPC.TL_error tL_error = this.c;
-        switch (i12) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        int i10 = this.a;
+        Object obj = this.h;
+        Object obj2 = this.g;
+        Object obj3 = this.f;
+        Object obj4 = this.e;
+        Object obj5 = this.i;
+        switch (i10) {
             case 0:
                 Pattern pattern = LaunchActivity.B1;
-                boolean z10 = tLObject instanceof TLRPC.User;
+                AndroidUtilities.runOnUIThread(new org.telegram.messenger.jb(this.b, this.d, tLObject, this.c, (TL_account.authorizationForm) obj5, (TL_account.getAuthorizationForm) obj4, (String) obj3, (String) obj2, (String) obj, 2));
+                break;
+            case 1:
+                int[] iArr = (int[]) obj5;
+                TL_account.getAuthorizationForm getauthorizationform = (TL_account.getAuthorizationForm) obj4;
+                String str = (String) obj3;
+                String str2 = (String) obj2;
+                String str3 = (String) obj;
+                Pattern pattern2 = LaunchActivity.B1;
+                TL_account.authorizationForm authorizationform = (TL_account.authorizationForm) tLObject;
                 LaunchActivity launchActivity = this.b;
-                if (z10) {
-                    TLRPC.User user = (TLRPC.User) tLObject;
-                    MessagesController.getInstance(this.e).putUser(user, false);
-                    Bundle bundle = new Bundle();
-                    bundle.putLong("user_id", user.id);
-                    launchActivity.p0(new bo(bundle));
-                } else {
-                    StringBuilder w10 = a4.a.w("cant import contact token. token=", str, " err=");
-                    w10.append(tL_error == null ? null : tL_error.text);
-                    FileLog.e(w10.toString());
-                    org.telegram.messenger.y0.p(R.string.NoUsernameFound, org.telegram.ui.Components.vc.a0((org.telegram.ui.ActionBar.n2) hg.c.h(1, launchActivity.d0)), null);
-                }
-                try {
-                    ma0Var.run();
+                ia0 ia0Var = this.d;
+                if (authorizationform == null) {
+                    AndroidUtilities.runOnUIThread(new tq(launchActivity, ia0Var, tL_error, 14));
                     break;
-                } catch (Exception e) {
-                    FileLog.e(e);
-                    return;
+                } else {
+                    TL_account.getPassword getpassword = new TL_account.getPassword();
+                    int i11 = this.c;
+                    iArr[0] = ConnectionsManager.getInstance(i11).sendRequest(getpassword, new z80(launchActivity, ia0Var, i11, authorizationform, getauthorizationform, str, str2, str3));
+                    break;
                 }
             default:
-                Pattern pattern2 = LaunchActivity.B1;
-                if (tL_error != null) {
-                    org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
-                    if (U != null) {
-                        if ("STARGIFT_ALREADY_BURNED".equalsIgnoreCase(tL_error.text)) {
-                            a02 = org.telegram.ui.Components.vc.a0(U);
-                            i10 = R.raw.fire_on;
-                            i11 = R.string.UniqueGiftNotFoundBurned;
-                        } else {
-                            a02 = org.telegram.ui.Components.vc.a0(U);
-                            i10 = R.raw.error;
-                            i11 = R.string.UniqueGiftNotFound;
-                        }
-                        org.telegram.messenger.y0.o(i11, a02, i10, 36);
-                    }
-                } else if (tLObject instanceof TL_stars.TL_payments_uniqueStarGift) {
-                    TL_stars.TL_payments_uniqueStarGift tL_payments_uniqueStarGift = (TL_stars.TL_payments_uniqueStarGift) tLObject;
-                    LaunchActivity launchActivity2 = this.b;
-                    MessagesController.getInstance(launchActivity2.O).putUsers(tL_payments_uniqueStarGift.users, false);
-                    MessagesController.getInstance(launchActivity2.O).putChats(tL_payments_uniqueStarGift.chats, false);
-                    org.telegram.ui.ActionBar.n2 U2 = LaunchActivity.U();
-                    TL_stars.StarGift starGift = tL_payments_uniqueStarGift.gift;
-                    if (starGift instanceof TL_stars.TL_starGiftUnique) {
-                        yh.z3 z3Var = new yh.z3(launchActivity2, this.e, 0L, null, null);
-                        z3Var.h2(str, (TL_stars.TL_starGiftUnique) starGift, null);
-                        if (U2 == null) {
-                            z3Var.show();
-                        } else if (U2.getLastStoryViewer() == null || !U2.getLastStoryViewer().K0) {
-                            U2.showDialog(z3Var);
-                        } else {
-                            U2.getLastStoryViewer().showDialog(z3Var);
-                        }
-                    }
-                }
-                try {
-                    ma0Var.run();
-                    break;
-                } catch (Exception e7) {
-                    FileLog.e(e7);
-                }
+                Pattern pattern3 = LaunchActivity.B1;
+                AndroidUtilities.runOnUIThread(new org.telegram.messenger.jb(this.b, tLObject, (int[]) obj5, this.c, this.d, (Integer) obj4, (Integer) obj3, (Long) obj2, (Integer) obj, 3));
+                break;
         }
     }
 
-    public /* synthetic */ z80(LaunchActivity launchActivity, TLRPC.TL_error tL_error, TLObject tLObject, int i10, String str, ma0 ma0Var) {
+    public /* synthetic */ z80(LaunchActivity launchActivity, int[] iArr, int i10, ia0 ia0Var, Object obj, Object obj2, Object obj3, Object obj4, int i11) {
+        this.a = i11;
         this.b = launchActivity;
-        this.c = tL_error;
-        this.d = tLObject;
-        this.e = i10;
-        this.f = str;
-        this.h = ma0Var;
+        this.i = iArr;
+        this.c = i10;
+        this.d = ia0Var;
+        this.e = obj;
+        this.f = obj2;
+        this.g = obj3;
+        this.h = obj4;
     }
 }

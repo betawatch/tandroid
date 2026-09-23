@@ -8,7 +8,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class q7 extends g7 {
     public final /* synthetic */ s7 n;
@@ -66,7 +66,7 @@ public final class q7 extends g7 {
                 c3.k0 k0Var = new c3.k0();
                 aVar.e = k0Var;
                 k0Var.b = true;
-                Utilities.globalQueue.postRunnable(new q1(s7Var, aVar, tL_documentAttributeAudio, 4));
+                Utilities.globalQueue.postRunnable(new r1(s7Var, aVar, tL_documentAttributeAudio, 4));
             }
             tL_documentAttributeAudio.flags |= 3;
             tL_message.media.document.attributes.add(tL_documentAttributeAudio);
@@ -99,6 +99,6 @@ public final class q7 extends g7 {
         p7 p7Var = new p7(this, viewGroup.getContext(), k7Var);
         p7Var.setCheckForButtonPress(true);
         k7Var.b.addView(p7Var);
-        return new org.telegram.ui.Components.vk0(k7Var);
+        return new org.telegram.ui.Components.wk0(k7Var);
     }
 }

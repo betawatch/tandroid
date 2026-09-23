@@ -1,157 +1,95 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.DocumentObject;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class w6 implements org.telegram.ui.ActionBar.j6 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class w6 extends View {
+    public final ImageReceiver a;
+    public final Drawable b;
+    public final Paint c;
+    public final Paint d;
 
-    public /* synthetic */ w6(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public w6(Context context) {
+        super(context);
+        Paint paint = new Paint(1);
+        this.c = paint;
+        this.d = new Paint(1);
+        ImageReceiver imageReceiver = new ImageReceiver(this);
+        this.a = imageReceiver;
+        imageReceiver.setAlpha(0.0f);
+        imageReceiver.setDelegate(new s(this, 12));
+        this.b = context.getDrawable(R.drawable.input_attach).mutate().getConstantState().newDrawable();
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(AndroidUtilities.dp(3.0f));
+        paint.setStrokeCap(Paint.Cap.ROUND);
     }
 
-    @Override // org.telegram.ui.ActionBar.j6
-    public final /* synthetic */ void a(float f7) {
-        int i10 = this.a;
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.a.onAttachedToWindow();
     }
 
-    @Override // org.telegram.ui.ActionBar.j6
-    public final void b() {
-        switch (this.a) {
-            case 0:
-                h8 h8Var = (h8) this.b;
-                h8Var.l0.getSearchField().setCursorColor(h8Var.getThemedColor(org.telegram.ui.ActionBar.i6.Oi));
-                org.telegram.ui.ActionBar.v0 v0Var = h8Var.b0;
-                v0Var.setIconColor(h8Var.getThemedColor(((Integer) v0Var.getTag()).intValue()));
-                Drawable background = v0Var.getBackground();
-                int i10 = org.telegram.ui.ActionBar.i6.i6;
-                org.telegram.ui.ActionBar.i6.B1(background, h8Var.getThemedColor(i10), true);
-                org.telegram.ui.ActionBar.v0 v0Var2 = h8Var.N;
-                v0Var2.setIconColor(h8Var.getThemedColor(org.telegram.ui.ActionBar.i6.Wi));
-                org.telegram.ui.ActionBar.i6.B1(v0Var2.getBackground(), h8Var.getThemedColor(i10), true);
-                m80 m80Var = h8Var.S;
-                m80Var.setBackgroundColor(h8Var.getThemedColor(org.telegram.ui.ActionBar.i6.Ti));
-                m80Var.setProgressColor(h8Var.getThemedColor(org.telegram.ui.ActionBar.i6.Vi));
-                h8Var.I0();
-                int i11 = org.telegram.ui.ActionBar.i6.G8;
-                v0Var.B(h8Var.getThemedColor(i11));
-                int i12 = org.telegram.ui.ActionBar.i6.E8;
-                v0Var2.G(h8Var.getThemedColor(i12), false);
-                v0Var2.G(h8Var.getThemedColor(i12), true);
-                v0Var2.B(h8Var.getThemedColor(i11));
-                break;
-            case 1:
-                yj yjVar = (yj) this.b;
-                ai.w0 w0Var = yjVar.s;
-                if (w0Var != null) {
-                    int childCount = w0Var.getChildCount();
-                    for (int i13 = 0; i13 < childCount; i13++) {
-                        View childAt = w0Var.getChildAt(i13);
-                        if (childAt instanceof xj) {
-                            ((xj) childAt).b();
-                        }
-                    }
-                }
-                ri riVar = yjVar.I;
-                if (riVar != null) {
-                    riVar.e();
-                    break;
-                }
-                break;
-            case 2:
-                gl glVar = (gl) this.b;
-                glVar.r.setIconColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.ui, glVar.a));
-                glVar.r.B(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.G8, glVar.a));
-                glVar.r.G(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.F8, glVar.a), true);
-                glVar.r.G(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.E8, glVar.a), false);
-                if (glVar.H != null) {
-                    if (!org.telegram.ui.ActionBar.i6.I.q() && AndroidUtilities.computePerceivedBrightness(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.d6, glVar.a)) >= 0.721f) {
-                        if (glVar.U) {
-                            glVar.U = false;
-                            glVar.H.setMapStyle(null);
-                            break;
-                        }
-                    } else if (!glVar.U) {
-                        glVar.U = true;
-                        glVar.H.setMapStyle(ApplicationLoader.getMapsProvider().loadRawResourceStyle(ApplicationLoader.applicationContext, R.raw.mapstyle_night));
-                        break;
-                    }
-                }
-                break;
-            case 3:
-                mq mqVar = (mq) this.b;
-                org.telegram.ui.ActionBar.v0 v0Var3 = mqVar.I;
-                v0Var3.setIconColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.G6, mqVar.d0));
-                org.telegram.ui.ActionBar.i6.w1(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.I5, mqVar.d0), v0Var3.getBackground());
-                v0Var3.G(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.E8, mqVar.d0), false);
-                v0Var3.G(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.F8, mqVar.d0), true);
-                v0Var3.B(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.G8, mqVar.d0));
-                break;
-            case 4:
-                ((ba0) this.b).Z();
-                break;
-            case 5:
-                ((ae0) this.b).q();
-                break;
-            case 6:
-                ((pg0) this.b).S();
-                break;
-            case 7:
-                NumberTextView numberTextView = ((yn0) this.b).x0;
-                if (numberTextView != null) {
-                    numberTextView.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.y8, false));
-                    break;
-                }
-                break;
-            case 8:
-                ((Runnable) this.b).run();
-                break;
-            case 9:
-                ((vx0) this.b).z0(false);
-                break;
-            default:
-                ((e51) this.b).d();
-                break;
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.a.onDetachedFromWindow();
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(0.0f, 0.0f, getWidth(), AndroidUtilities.dp(10.0f) + getHeight());
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), this.d);
+        float dp = AndroidUtilities.dp(42.0f);
+        float dp2 = AndroidUtilities.dp(42.0f);
+        ImageReceiver imageReceiver = this.a;
+        imageReceiver.setImageCoords((getWidth() / 2.0f) - AndroidUtilities.dp(66.0f), (getHeight() / 2.0f) - (AndroidUtilities.dp(42.0f) / 2.0f), dp, dp2);
+        imageReceiver.draw(canvas);
+        Paint paint = this.c;
+        canvas.drawLine((getWidth() / 2.0f) - AndroidUtilities.dp(8.0f), getHeight() / 2.0f, (getWidth() / 2.0f) + AndroidUtilities.dp(8.0f), getHeight() / 2.0f, paint);
+        canvas.drawLine(getWidth() / 2.0f, (getHeight() / 2.0f) - AndroidUtilities.dp(8.0f), getWidth() / 2.0f, AndroidUtilities.dp(8.0f) + (getHeight() / 2.0f), paint);
+        int dp3 = AndroidUtilities.dp(24.0f) + (getWidth() / 2);
+        int height = (getHeight() / 2) - (AndroidUtilities.dp(42.0f) / 2);
+        int dp4 = AndroidUtilities.dp(66.0f) + (getWidth() / 2);
+        int dp5 = (AndroidUtilities.dp(42.0f) / 2) + (getHeight() / 2);
+        Drawable drawable = this.b;
+        drawable.setBounds(dp3, height, dp4, dp5);
+        drawable.draw(canvas);
+    }
+
+    public void setAttachBot(TLRPC.TL_attachMenuBot tL_attachMenuBot) {
+        TLRPC.TL_attachMenuBotIcon staticAttachMenuBotIcon = MediaDataController.getStaticAttachMenuBotIcon(tL_attachMenuBot);
+        if (staticAttachMenuBotIcon != null) {
+            this.a.setImage(ImageLocation.getForDocument(staticAttachMenuBotIcon.icon), "42_42", DocumentObject.getSvgThumb(staticAttachMenuBotIcon.icon, org.telegram.ui.ActionBar.h6.q5, 1.0f), "svg", tL_attachMenuBot, 0);
         }
     }
 
-    private final /* synthetic */ void c(float f7) {
+    @Override // android.view.View
+    public void setBackgroundColor(int i10) {
+        this.d.setColor(i10);
     }
 
-    private final /* synthetic */ void d(float f7) {
-    }
-
-    private final /* synthetic */ void e(float f7) {
-    }
-
-    private final /* synthetic */ void f(float f7) {
-    }
-
-    private final /* synthetic */ void g(float f7) {
-    }
-
-    private final /* synthetic */ void h(float f7) {
-    }
-
-    private final /* synthetic */ void i(float f7) {
-    }
-
-    private final /* synthetic */ void j(float f7) {
-    }
-
-    private final /* synthetic */ void k(float f7) {
-    }
-
-    private final /* synthetic */ void l(float f7) {
-    }
-
-    private final /* synthetic */ void m(float f7) {
+    public void setColor(int i10) {
+        PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
+        this.b.setColorFilter(i10, mode);
+        this.c.setColor(i10);
+        this.a.setColorFilter(new PorterDuffColorFilter(i10, mode));
     }
 }

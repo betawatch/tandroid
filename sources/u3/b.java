@@ -2,15 +2,15 @@ package u3;
 
 import c3.p;
 import java.util.ArrayDeque;
-import k2.c0;
+import k2.b0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class b {
     public final byte[] a = new byte[8];
     public final ArrayDeque b = new ArrayDeque();
     public final e c = new e();
-    public c0 d;
+    public b0 d;
     public int e;
     public int f;
     public long g;

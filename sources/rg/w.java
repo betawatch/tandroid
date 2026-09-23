@@ -9,12 +9,12 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.l2;
-import org.telegram.ui.Components.vc;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.s50;
+import org.telegram.ui.p50;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w implements Runnable {
     public final /* synthetic */ int a;
@@ -44,7 +44,7 @@ public final /* synthetic */ class w implements Runnable {
                 break;
             case 2:
                 HashSet hashSet = j0Var.y0;
-                vc X = vc.X();
+                xc X = xc.X();
                 if (X != null) {
                     if (hashSet.size() != 1) {
                         X.Q(R.raw.voip_invite, 36, AndroidUtilities.replaceTags(LocaleController.formatPluralString("InviteLinkSent", hashSet.size(), Integer.valueOf(hashSet.size())))).j();
@@ -65,8 +65,8 @@ public final /* synthetic */ class w implements Runnable {
                     if (j0Var.E0.getParent() != null) {
                         ((ViewGroup) j0Var.E0.getParent()).removeView(j0Var.E0);
                     }
-                    s50 s50Var = j0Var.L0;
-                    if (s50Var != null && s50Var.getParent() != null) {
+                    p50 p50Var = j0Var.L0;
+                    if (p50Var != null && p50Var.getParent() != null) {
                         ((ViewGroup) j0Var.L0.getParent()).removeView(j0Var.L0);
                     }
                     j0Var.d.setPadding(0, 0, 0, 0);

@@ -1,13 +1,13 @@
 package dh;
 
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class e implements a {
-    public final e6 a;
+    public final d6 a;
     public d b;
     public d c;
     public d d;
@@ -17,8 +17,8 @@ public final class e implements a {
     public float n;
     public float r;
 
-    public e(e6 e6Var) {
-        this.a = e6Var;
+    public e(d6 d6Var) {
+        this.a = d6Var;
         float dpf2 = AndroidUtilities.dpf2(1.0f);
         float dpf22 = AndroidUtilities.dpf2(0.33333334f);
         this.n = dpf2;
@@ -43,8 +43,8 @@ public final class e implements a {
         if (dVar == null) {
             return 0;
         }
-        e6 e6Var = this.a;
-        return dVar.g(e6Var, ((e6Var instanceof ai.d) || e6Var != null) ? e6Var.a() : i6.I.q());
+        d6 d6Var = this.a;
+        return dVar.g(d6Var, ((d6Var instanceof ai.d) || d6Var != null) ? d6Var.a() : h6.I.q());
     }
 
     @Override // dh.a

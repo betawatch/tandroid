@@ -1,62 +1,57 @@
 package pg;
 
-import v7.z6;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class n1 extends o1 {
-    public final f1 f;
-    public final float g;
-    public final float h;
-    public final /* synthetic */ p1 i;
+public final class n1 extends p1 {
+    public final /* synthetic */ int f;
+    public final /* synthetic */ m1 g;
+    public final /* synthetic */ q1 h;
 
-    public n1(p1 p1Var, f1 f1Var, boolean z10, boolean z11) {
-        this.i = p1Var;
-        this.b = false;
-        this.f = f1Var;
-        this.g = z10 ? -1.0f : 1.0f;
-        this.h = z11 ? -1.0f : 1.0f;
-        a();
+    public /* synthetic */ n1(q1 q1Var, m1 m1Var, int i10) {
+        this.f = i10;
+        this.h = q1Var;
+        this.g = m1Var;
     }
 
-    @Override // pg.o1
+    @Override // pg.p1
     public final void a() {
-        f1 f1Var = this.f;
-        if (f1Var != null) {
-            float f7 = (this.g * f1Var.d) + f1Var.b;
-            float f10 = (this.h * f1Var.e) + f1Var.c;
-            p1 p1Var = this.i;
-            p1Var.c(f7, f10, true);
-            float[] fArr = p1Var.p;
-            float f11 = fArr[0];
-            float f12 = fArr[1];
-            this.d = f11;
-            this.e = f12;
+        switch (this.f) {
+            case 0:
+                g1 g1Var = this.h.h;
+                float f7 = g1Var.i;
+                float f10 = g1Var.j;
+                this.d = f7;
+                this.e = f10;
+                break;
+            default:
+                g1 g1Var2 = this.h.h;
+                float f11 = g1Var2.d;
+                float f12 = g1Var2.e;
+                this.d = f11;
+                this.e = f12;
+                break;
         }
     }
 
-    @Override // pg.o1
+    @Override // pg.p1
     public final void b(float f7, float f10) {
-        this.d = f7;
-        this.e = f10;
-        f1 f1Var = this.f;
-        float f11 = ((-this.g) * f1Var.d) + f1Var.b;
-        float f12 = ((-this.h) * f1Var.e) + f1Var.c;
-        p1 p1Var = this.i;
-        p1Var.c(f7, f10, false);
-        p1Var.c(f11, f12, true);
-        float[] fArr = p1Var.p;
-        float f13 = fArr[0];
-        float f14 = fArr[1];
-        double atan2 = (3.141592653589793d - Math.atan2(f10 - f14, f7 - f13)) - f1Var.h;
-        double cos = Math.cos(atan2) * z6.a(f7, f10, f13, f14);
-        double sin = Math.sin(atan2) * z6.a(f7, f10, f13, f14);
-        f1Var.d = ((float) Math.abs(cos)) / 2.0f;
-        f1Var.e = ((float) Math.abs(sin)) / 2.0f;
-        f1Var.b = (f7 + f13) / 2.0f;
-        f1Var.c = (f10 + f14) / 2.0f;
-        for (int i10 = 0; i10 < p1Var.m.size(); i10++) {
-            ((o1) p1Var.m.get(i10)).a();
+        switch (this.f) {
+            case 0:
+                g1 g1Var = this.h.h;
+                g1Var.i = f7;
+                g1Var.j = f10;
+                this.d = f7;
+                this.e = f10;
+                this.g.a();
+                break;
+            default:
+                g1 g1Var2 = this.h.h;
+                g1Var2.d = f7;
+                g1Var2.e = f10;
+                this.d = f7;
+                this.e = f10;
+                this.g.a();
+                break;
         }
     }
 }

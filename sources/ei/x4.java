@@ -1,11 +1,11 @@
 package ei;
 
 import android.text.style.CharacterStyle;
-import ii.d6;
-import ii.g5;
-import ii.o5;
-import ii.x5;
+import ii.e6;
+import ii.h5;
+import ii.p5;
 import ii.y5;
+import ii.z5;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ContactsController;
@@ -16,10 +16,10 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Cells.q9;
-import org.telegram.ui.bo;
+import org.telegram.ui.Cells.r9;
+import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x4 implements Runnable {
     public final /* synthetic */ int a;
@@ -58,7 +58,7 @@ public final /* synthetic */ class x4 implements Runnable {
             case 0:
                 TLRPC.User user = (TLRPC.User) this.d;
                 TLRPC.Document document = (TLRPC.Document) this.e;
-                c5.g(this.b, user, document, this.c, new s4((org.telegram.ui.web.r) this.f, document, 0));
+                c5.g(this.b, user, document, this.c, new s4((org.telegram.ui.web.q) this.f, document, 0));
                 break;
             case 1:
                 gg.u1 u1Var = (gg.u1) this.d;
@@ -142,7 +142,7 @@ public final /* synthetic */ class x4 implements Runnable {
                                         i11 = i20;
                                         for (int i22 = 0; i22 < 3; i22++) {
                                             String str3 = strArr2[i22];
-                                            if (str3 != null && (str3.startsWith(str2) || org.telegram.messenger.y0.w(" ", str2, str3))) {
+                                            if (str3 != null && (str3.startsWith(str2) || org.telegram.messenger.z0.w(" ", str2, str3))) {
                                                 z10 = true;
                                                 String publicUsername = UserObject.getPublicUsername(user2);
                                                 r42 = (z10 && publicUsername != null && publicUsername.startsWith(str2)) ? 2 : z10;
@@ -190,11 +190,11 @@ public final /* synthetic */ class x4 implements Runnable {
             case 2:
                 ii.r0 r0Var = (ii.r0) this.d;
                 ii.i1 i1Var = (ii.i1) this.e;
-                q9 q9Var = (q9) this.f;
+                r9 r9Var = (r9) this.f;
                 ii.u0 u0Var = r0Var.a;
                 int length2 = i1Var.length();
                 int i23 = this.b;
-                if (length2 >= i23 && i1Var.getSelectionStart() != i1Var.getSelectionEnd() && q9Var.k0(u0Var, 0, this.c, i23)) {
+                if (length2 >= i23 && i1Var.getSelectionStart() != i1Var.getSelectionEnd() && r9Var.k0(u0Var, 0, this.c, i23)) {
                     u0Var.n = true;
                     i1Var.setSelection(i23);
                     u0Var.n = false;
@@ -204,20 +204,20 @@ public final /* synthetic */ class x4 implements Runnable {
             case 3:
                 a4.m mVar = (a4.m) this.d;
                 ii.i1 i1Var2 = (ii.i1) this.e;
-                q9 q9Var2 = (q9) this.f;
-                g5 g5Var = (g5) mVar.b;
+                r9 r9Var2 = (r9) this.f;
+                h5 h5Var = (h5) mVar.b;
                 int length3 = i1Var2.length();
                 int i24 = this.b;
                 if (length3 >= i24 && i1Var2.getSelectionStart() != i1Var2.getSelectionEnd()) {
-                    if (q9Var2.y()) {
-                        g5Var.w = true;
+                    if (r9Var2.y()) {
+                        h5Var.w = true;
                         i1Var2.setSelection(i24);
-                        g5Var.w = false;
+                        h5Var.w = false;
                         break;
-                    } else if (q9Var2.k0(g5Var, 0, this.c, i24)) {
-                        g5Var.w = true;
+                    } else if (r9Var2.k0(h5Var, 0, this.c, i24)) {
+                        h5Var.w = true;
                         i1Var2.setSelection(i24);
-                        g5Var.w = false;
+                        h5Var.w = false;
                         break;
                     }
                 }
@@ -225,55 +225,55 @@ public final /* synthetic */ class x4 implements Runnable {
             case 4:
                 a6.m mVar2 = (a6.m) this.d;
                 ii.i1 i1Var3 = (ii.i1) this.e;
-                q9 q9Var3 = (q9) this.f;
-                o5 o5Var = (o5) mVar2.b;
+                r9 r9Var3 = (r9) this.f;
+                p5 p5Var = (p5) mVar2.b;
                 int length4 = i1Var3.length();
                 int i25 = this.b;
-                if (length4 >= i25 && i1Var3.getSelectionStart() != i1Var3.getSelectionEnd() && q9Var3.k0(o5Var, 0, this.c, i25)) {
-                    o5Var.G = true;
+                if (length4 >= i25 && i1Var3.getSelectionStart() != i1Var3.getSelectionEnd() && r9Var3.k0(p5Var, 0, this.c, i25)) {
+                    p5Var.G = true;
                     i1Var3.setSelection(i25);
-                    o5Var.G = false;
+                    p5Var.G = false;
                     break;
                 }
                 break;
             case 5:
-                x5 x5Var = (x5) this.d;
+                y5 y5Var = (y5) this.d;
                 ii.i1 i1Var4 = (ii.i1) this.e;
-                q9 q9Var4 = (q9) this.f;
-                d6 d6Var = x5Var.a;
+                r9 r9Var4 = (r9) this.f;
+                e6 e6Var = y5Var.a;
                 int length5 = i1Var4.length();
                 int i26 = this.b;
                 if (length5 >= i26 && i1Var4.getSelectionStart() != i1Var4.getSelectionEnd()) {
-                    if (q9Var4.y()) {
-                        d6Var.F = true;
+                    if (r9Var4.y()) {
+                        e6Var.F = true;
                         i1Var4.setSelection(i26);
-                        d6Var.F = false;
+                        e6Var.F = false;
                         break;
-                    } else if (q9Var4.k0(d6Var, 0, this.c, i26)) {
-                        d6Var.F = true;
+                    } else if (r9Var4.k0(e6Var, 0, this.c, i26)) {
+                        e6Var.F = true;
                         i1Var4.setSelection(i26);
-                        d6Var.F = false;
+                        e6Var.F = false;
                         break;
                     }
                 }
                 break;
             case 6:
-                y5 y5Var = (y5) this.d;
+                z5 z5Var = (z5) this.d;
                 ii.i1 i1Var5 = (ii.i1) this.e;
-                q9 q9Var5 = (q9) this.f;
-                d6 d6Var2 = y5Var.a;
+                r9 r9Var5 = (r9) this.f;
+                e6 e6Var2 = z5Var.a;
                 int length6 = i1Var5.length();
                 int i27 = this.b;
                 if (length6 >= i27 && i1Var5.getSelectionStart() != i1Var5.getSelectionEnd()) {
-                    if (q9Var5.y()) {
-                        d6Var2.n = true;
+                    if (r9Var5.y()) {
+                        e6Var2.n = true;
                         i1Var5.setSelection(i27);
-                        d6Var2.n = false;
+                        e6Var2.n = false;
                         break;
-                    } else if (q9Var5.k0(d6Var2, 1, this.c, i27)) {
-                        d6Var2.n = true;
+                    } else if (r9Var5.k0(e6Var2, 1, this.c, i27)) {
+                        e6Var2.n = true;
                         i1Var5.setSelection(i27);
-                        d6Var2.n = false;
+                        e6Var2.n = false;
                         break;
                     }
                 }
@@ -282,24 +282,24 @@ public final /* synthetic */ class x4 implements Runnable {
                 ((MediaController) this.d).lambda$loadMoreMusic$11(this.b, (TLRPC.TL_error) this.e, (TLObject) this.f, this.c);
                 break;
             default:
-                bo boVar = (bo) this.d;
+                xn xnVar = (xn) this.d;
                 CharacterStyle characterStyle = (CharacterStyle) this.e;
                 org.telegram.ui.Cells.t1 t1Var3 = (org.telegram.ui.Cells.t1) this.f;
-                boVar.vb = this.b;
-                boVar.wb = this.c;
-                boVar.xb = characterStyle;
+                xnVar.vb = this.b;
+                xnVar.wb = this.c;
+                xnVar.xb = characterStyle;
                 t1Var3.invalidate();
                 break;
         }
     }
 
-    public /* synthetic */ x4(int i10, TLRPC.User user, TLRPC.Document document, int i11, org.telegram.ui.web.r rVar) {
+    public /* synthetic */ x4(int i10, TLRPC.User user, TLRPC.Document document, int i11, org.telegram.ui.web.q qVar) {
         this.a = 0;
         this.b = i10;
         this.d = user;
         this.e = document;
         this.c = i11;
-        this.f = rVar;
+        this.f = qVar;
     }
 
     public /* synthetic */ x4(Object obj, Object obj2, int i10, Object obj3, int i11, int i12) {
@@ -311,9 +311,9 @@ public final /* synthetic */ class x4 implements Runnable {
         this.c = i11;
     }
 
-    public /* synthetic */ x4(bo boVar, int i10, int i11, CharacterStyle characterStyle, org.telegram.ui.Cells.t1 t1Var) {
+    public /* synthetic */ x4(xn xnVar, int i10, int i11, CharacterStyle characterStyle, org.telegram.ui.Cells.t1 t1Var) {
         this.a = 8;
-        this.d = boVar;
+        this.d = xnVar;
         this.b = i10;
         this.c = i11;
         this.e = characterStyle;

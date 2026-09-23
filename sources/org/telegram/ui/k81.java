@@ -1,37 +1,38 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.tl.TL_account;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class k81 implements Utilities.Callback {
+public final /* synthetic */ class k81 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ SessionsActivity b;
+    public final /* synthetic */ x81 b;
 
-    public /* synthetic */ k81(SessionsActivity sessionsActivity, int i10) {
+    public /* synthetic */ k81(x81 x81Var, int i10) {
         this.a = i10;
-        this.b = sessionsActivity;
+        this.b = x81Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                TL_account.connectedBots connectedbots = (TL_account.connectedBots) obj;
-                SessionsActivity sessionsActivity = this.b;
-                sessionsActivity.getClass();
-                if (connectedbots != null) {
-                    sessionsActivity.h = connectedbots.connected_bots;
-                    if (sessionsActivity.a != null) {
-                        sessionsActivity.m0();
-                        sessionsActivity.a.l();
-                        break;
-                    }
-                }
+                this.b.c.Y2.N(true);
+                break;
+            case 1:
+                nf.f.s(this.b.getParentActivity(), LocaleController.getString(R.string.CheckPhoneNumberLearnMoreUrl));
+                break;
+            case 2:
+                x81 x81Var = this.b;
+                x81Var.c.postOnAnimation(new k81(x81Var, 3));
+                break;
+            case 3:
+                this.b.i0();
                 break;
             default:
-                SessionsActivity.V(this.b, (Boolean) obj);
+                MessagesController.getInstance(this.b.currentAccount).deleteUserPhoto(null);
                 break;
         }
     }

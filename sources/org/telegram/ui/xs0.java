@@ -1,15 +1,22 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.content.DialogInterface;
+import android.widget.ImageView;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class xs0 extends zu0 {
-    public final /* synthetic */ PhotoViewer t;
+public final class xs0 implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ PhotoViewer a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xs0(PhotoViewer photoViewer, View view) {
-        super(photoViewer, view);
-        this.t = photoViewer;
+    public xs0(PhotoViewer photoViewer) {
+        this.a = photoViewer;
+    }
+
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
+        ImageView imageView = this.a.E3;
+        if (imageView != null) {
+            imageView.animate().alpha(0.0f).withEndAction(new jl0(this, 15)).setDuration(150L).start();
+        }
     }
 }

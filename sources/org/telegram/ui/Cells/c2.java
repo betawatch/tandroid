@@ -6,18 +6,18 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.c91;
 import org.telegram.ui.Components.d91;
-import org.telegram.ui.Components.e91;
-import org.telegram.ui.Components.j81;
-import org.telegram.ui.Components.k00;
+import org.telegram.ui.Components.i81;
+import org.telegram.ui.Components.l00;
 import org.telegram.ui.Components.ue0;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.bo;
+import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class c2 extends org.telegram.ui.Components.p6 {
+public final class c2 extends org.telegram.ui.Components.r6 {
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
 
@@ -28,7 +28,7 @@ public final class c2 extends org.telegram.ui.Components.p6 {
         this.c = frameLayout;
     }
 
-    @Override // org.telegram.ui.Components.p6
+    @Override // org.telegram.ui.Components.r6
     public final void b(Object obj, float f7) {
         ViewGroup viewGroup;
         switch (this.b) {
@@ -38,21 +38,21 @@ public final class c2 extends org.telegram.ui.Components.p6 {
                 e2Var.invalidate();
                 break;
             case 1:
-                bo.Hc = f7;
-                bo boVar = (bo) this.c;
-                boVar.R6.setSaturation(f7);
-                boVar.Q6.setColorFilter(new ColorMatrixColorFilter(boVar.R6));
+                xn.Hc = f7;
+                xn xnVar = (xn) this.c;
+                xnVar.R6.setSaturation(f7);
+                xnVar.Q6.setColorFilter(new ColorMatrixColorFilter(xnVar.R6));
                 break;
             case 2:
                 org.telegram.ui.ActionBar.k kVar = (org.telegram.ui.ActionBar.k) obj;
-                org.telegram.ui.Components.h8 h8Var = (org.telegram.ui.Components.h8) this.c;
-                h8Var.Q0 = f7;
-                org.telegram.ui.ActionBar.j5 titleTextView = kVar.getTitleTextView();
+                org.telegram.ui.Components.j8 j8Var = (org.telegram.ui.Components.j8) this.c;
+                j8Var.Q0 = f7;
+                org.telegram.ui.ActionBar.i5 titleTextView = kVar.getTitleTextView();
                 ImageView backButton = kVar.getBackButton();
                 float f10 = 1.0f - f7;
                 titleTextView.setTranslationX(AndroidUtilities.dp(-52.0f) * f10);
                 backButton.setTranslationX(AndroidUtilities.dp(-52.0f) * f10);
-                org.telegram.ui.ActionBar.v0 v0Var = h8Var.l0;
+                org.telegram.ui.ActionBar.v0 v0Var = j8Var.l0;
                 if (v0Var != null && v0Var.getSearchContainer() != null) {
                     v0Var.getSearchContainer().setClipChildren(false);
                     v0Var.getSearchContainer().setClipToPadding(false);
@@ -65,33 +65,33 @@ public final class c2 extends org.telegram.ui.Components.p6 {
                 backButton.setScaleX(AndroidUtilities.lerp(0.6f, 1.0f, f7));
                 backButton.setScaleY(AndroidUtilities.lerp(0.6f, 1.0f, f7));
                 backButton.setAlpha(AndroidUtilities.lerp(0.0f, 1.0f, f7));
-                viewGroup = ((org.telegram.ui.ActionBar.f3) h8Var).containerView;
+                viewGroup = ((org.telegram.ui.ActionBar.f3) j8Var).containerView;
                 viewGroup.invalidate();
                 break;
             case 3:
-                k00 k00Var = (k00) this.c;
-                k00Var.w0 = f7;
-                int i10 = k00Var.U;
-                org.telegram.ui.ActionBar.e6 e6Var = k00Var.a;
-                k00Var.T.setColor(i0.a.d(f7, org.telegram.ui.ActionBar.i6.v0(i10, e6Var), org.telegram.ui.ActionBar.i6.v0(k00Var.c0, e6Var)));
-                ai.w0 w0Var = k00Var.F;
+                l00 l00Var = (l00) this.c;
+                l00Var.w0 = f7;
+                int i10 = l00Var.U;
+                org.telegram.ui.ActionBar.d6 d6Var = l00Var.a;
+                l00Var.T.setColor(i0.a.d(f7, org.telegram.ui.ActionBar.h6.v0(i10, d6Var), org.telegram.ui.ActionBar.h6.v0(l00Var.c0, d6Var)));
+                ai.w0 w0Var = l00Var.F;
                 w0Var.f1();
                 w0Var.invalidate();
-                ((k00) obj).invalidate();
+                ((l00) obj).invalidate();
                 break;
             case 4:
-                j81 j81Var = (j81) this.c;
-                j81Var.x = f7;
-                j81Var.invalidate();
+                i81 i81Var = (i81) this.c;
+                i81Var.x = f7;
+                i81Var.invalidate();
                 break;
             case 5:
-                e91 e91Var = (e91) this.c;
-                e91Var.E = f7;
-                d91 d91Var = e91Var.L;
-                if (d91Var != null) {
-                    d91Var.a(f7);
+                d91 d91Var = (d91) this.c;
+                d91Var.E = f7;
+                c91 c91Var = d91Var.L;
+                if (c91Var != null) {
+                    c91Var.a(f7);
                 }
-                e91Var.invalidate();
+                d91Var.invalidate();
                 break;
             case 6:
                 ((View) obj).setAlpha(f7);
@@ -113,15 +113,15 @@ public final class c2 extends org.telegram.ui.Components.p6 {
             case 0:
                 return Float.valueOf(((e2) this.c).g0);
             case 1:
-                return Float.valueOf(bo.Hc);
+                return Float.valueOf(xn.Hc);
             case 2:
-                return Float.valueOf(((org.telegram.ui.Components.h8) this.c).Q0);
+                return Float.valueOf(((org.telegram.ui.Components.j8) this.c).Q0);
             case 3:
-                return Float.valueOf(((k00) this.c).w0);
+                return Float.valueOf(((l00) this.c).w0);
             case 4:
-                return Float.valueOf(((j81) this.c).x);
+                return Float.valueOf(((i81) this.c).x);
             case 5:
-                return Float.valueOf(((e91) this.c).E);
+                return Float.valueOf(((d91) this.c).E);
             case 6:
                 return Float.valueOf(((View) obj).getAlpha());
             default:
@@ -130,17 +130,17 @@ public final class c2 extends org.telegram.ui.Components.p6 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c2(j81 j81Var) {
+    public c2(i81 i81Var) {
         super("progress", 0);
         this.b = 4;
-        this.c = j81Var;
+        this.c = i81Var;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c2(e91 e91Var) {
+    public c2(d91 d91Var) {
         super("clipProgress", 0);
         this.b = 5;
-        this.c = e91Var;
+        this.c = d91Var;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -158,16 +158,16 @@ public final class c2 extends org.telegram.ui.Components.p6 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c2(bo boVar) {
+    public c2(xn xnVar) {
         super("", 0);
         this.b = 1;
-        this.c = boVar;
+        this.c = xnVar;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c2(org.telegram.ui.Components.h8 h8Var) {
+    public c2(org.telegram.ui.Components.j8 j8Var) {
         super("actionBarSlide", 0);
         this.b = 2;
-        this.c = h8Var;
+        this.c = j8Var;
     }
 }

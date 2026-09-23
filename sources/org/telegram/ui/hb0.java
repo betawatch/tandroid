@@ -1,25 +1,36 @@
 package org.telegram.ui;
 
-import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class hb0 implements View.OnAttachStateChangeListener {
-    public final /* synthetic */ LaunchActivity a;
+public final /* synthetic */ class hb0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ sb0 b;
 
-    public hb0(LaunchActivity launchActivity) {
-        this.a = launchActivity;
+    public /* synthetic */ hb0(sb0 sb0Var, int i10) {
+        this.a = i10;
+        this.b = sb0Var;
     }
 
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewAttachedToWindow(View view) {
-        LaunchActivity launchActivity = this.a;
-        launchActivity.getWindowManager().addCrossWindowBlurEnabledListener(launchActivity.d1);
-    }
-
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewDetachedFromWindow(View view) {
-        LaunchActivity launchActivity = this.a;
-        launchActivity.getWindowManager().removeCrossWindowBlurEnabledListener(launchActivity.d1);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                sb0 sb0Var = this.b;
+                sb0Var.r.b.requestFocus();
+                AndroidUtilities.showKeyboard(sb0Var.r.b);
+                break;
+            case 1:
+                sb0 sb0Var2 = this.b;
+                sb0Var2.r.b.clearFocus();
+                AndroidUtilities.hideKeyboard(sb0Var2.r.b);
+                break;
+            default:
+                nf.f.s(this.b.getParentActivity(), LocaleController.getString(R.string.RequireMonthlyFeeInfoLink));
+                break;
+        }
     }
 }

@@ -3,9 +3,9 @@ package ii;
 import android.text.Editable;
 import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Cells.q9;
+import org.telegram.ui.Cells.r9;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class r0 implements h1 {
     public final /* synthetic */ u0 a;
@@ -16,10 +16,10 @@ public final class r0 implements h1 {
 
     @Override // ii.h1
     public final void D(i1 i1Var, int i10, int i11) {
-        d3 d3Var;
-        q9 textSelectionHelper;
+        e3 e3Var;
+        r9 textSelectionHelper;
         u0 u0Var = this.a;
-        if (u0Var.n || i10 == i11 || (d3Var = u0Var.h) == null || (textSelectionHelper = d3Var.a.getTextSelectionHelper()) == null) {
+        if (u0Var.n || i10 == i11 || (e3Var = u0Var.h) == null || (textSelectionHelper = e3Var.a.getTextSelectionHelper()) == null) {
             return;
         }
         if (textSelectionHelper.y() && textSelectionHelper.W == u0Var) {
@@ -30,11 +30,11 @@ public final class r0 implements h1 {
 
     @Override // ii.h1
     public final void M(CharSequence charSequence) {
-        d3 d3Var = this.a.h;
-        if (d3Var == null || charSequence == null || charSequence.length() <= 0) {
+        e3 e3Var = this.a.h;
+        if (e3Var == null || charSequence == null || charSequence.length() <= 0) {
             return;
         }
-        d3Var.a.t4(charSequence.toString());
+        e3Var.a.t4(charSequence.toString());
     }
 
     @Override // ii.h1
@@ -48,19 +48,19 @@ public final class r0 implements h1 {
         if (aVar != null) {
             TL_iv.PageBlock pageBlock = aVar.b;
             if (pageBlock instanceof TL_iv.pageBlockDetails) {
-                ((TL_iv.pageBlockDetails) pageBlock).title = f6.f(editable);
+                ((TL_iv.pageBlockDetails) pageBlock).title = g6.f(editable);
             }
         }
-        d3 d3Var = u0Var.h;
-        if (d3Var == null || u0Var.f == null) {
+        e3 e3Var = u0Var.h;
+        if (e3Var == null || u0Var.f == null) {
             return;
         }
-        w3 w3Var = d3Var.a;
-        h2 h2Var = w3Var.J3;
-        if (h2Var != null) {
-            h2Var.g();
+        x3 x3Var = e3Var.a;
+        i2 i2Var = x3Var.J3;
+        if (i2Var != null) {
+            i2Var.g();
         }
-        w3Var.h3.onContentChanged();
+        x3Var.h3.onContentChanged();
     }
 
     @Override // ii.h1
@@ -70,45 +70,45 @@ public final class r0 implements h1 {
 
     @Override // ii.h1
     public final void c(i1 i1Var) {
-        d3 d3Var = this.a.h;
-        if (d3Var != null) {
-            w3 w3Var = d3Var.a;
-            w3.M1(w3Var, i1Var);
-            w3Var.h3.t(i1Var, true);
+        e3 e3Var = this.a.h;
+        if (e3Var != null) {
+            x3 x3Var = e3Var.a;
+            x3.M1(x3Var, i1Var);
+            x3Var.h3.t(i1Var, true);
         }
     }
 
     @Override // ii.h1
     public final boolean f() {
         u0 u0Var = this.a;
-        d3 d3Var = u0Var.h;
-        if (d3Var == null || u0Var.f == null) {
+        e3 e3Var = u0Var.h;
+        if (e3Var == null || u0Var.f == null) {
             return false;
         }
-        return d3Var.a.S4();
+        return e3Var.a.S4();
     }
 
     @Override // ii.h1
     public final void m(i1 i1Var) {
         a aVar;
-        w3 w3Var;
+        x3 x3Var;
         ArrayList arrayList;
         int indexOf;
         u0 u0Var = this.a;
-        d3 d3Var = u0Var.h;
-        if (d3Var == null || (aVar = u0Var.f) == null || (indexOf = (arrayList = (w3Var = d3Var.a).l3).indexOf(aVar)) < 0) {
+        e3 e3Var = u0Var.h;
+        if (e3Var == null || (aVar = u0Var.f) == null || (indexOf = (arrayList = (x3Var = e3Var.a).l3).indexOf(aVar)) < 0) {
             return;
         }
         TL_iv.pageBlockDetails pageblockdetails = (TL_iv.pageBlockDetails) aVar.b;
         if (!pageblockdetails.open) {
             pageblockdetails.open = true;
-            w3Var.Y2.N(true);
+            x3Var.Y2.N(true);
         }
         int i10 = indexOf + 1;
-        if (i10 >= arrayList.size() || ((a) arrayList.get(i10)).i || w3.x3((a) arrayList.get(i10))) {
+        if (i10 >= arrayList.size() || ((a) arrayList.get(i10)).i || x3.x3((a) arrayList.get(i10))) {
             return;
         }
-        w3Var.post(new o2(w3Var, (a) arrayList.get(i10), 24));
+        x3Var.post(new p2(x3Var, (a) arrayList.get(i10), 24));
     }
 
     @Override // ii.h1
@@ -130,11 +130,11 @@ public final class r0 implements h1 {
     public final void x() {
         a aVar;
         u0 u0Var = this.a;
-        d3 d3Var = u0Var.h;
-        if (d3Var == null || (aVar = u0Var.f) == null) {
+        e3 e3Var = u0Var.h;
+        if (e3Var == null || (aVar = u0Var.f) == null) {
             return;
         }
-        d3Var.a(aVar);
+        e3Var.a(aVar);
     }
 
     @Override // ii.h1

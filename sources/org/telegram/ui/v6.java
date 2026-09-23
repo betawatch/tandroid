@@ -2,18 +2,18 @@ package org.telegram.ui;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class v6 extends org.telegram.ui.Components.bd {
+public final class v6 extends org.telegram.ui.Components.dd {
     public final /* synthetic */ x6 e0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public v6(x6 x6Var, Context context) {
-        super(context, 11, org.telegram.ui.Components.bd.W, 0, org.telegram.ui.Components.bd.a0);
+        super(context, 11, org.telegram.ui.Components.dd.W, 0, org.telegram.ui.Components.dd.a0);
         this.e0 = x6Var;
     }
 
-    @Override // org.telegram.ui.Components.bd
+    @Override // org.telegram.ui.Components.dd
     public final void d(int i10, boolean z10) {
         z6 z6Var = this.e0.e;
         if (!z10) {
@@ -38,7 +38,7 @@ public final class v6 extends org.telegram.ui.Components.bd {
             }
         }
         if (i11 >= 0) {
-            z6Var.b.e1(new i2.v(i11, 3), 0, true);
+            z6Var.b.e1(new i2.w(i11, 7), 0, true);
         } else {
             z6Var.b.j1();
         }

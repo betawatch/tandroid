@@ -3,7 +3,7 @@ package androidx.credentials.playservices;
 import a1.b;
 import a1.e;
 import a1.g;
-import ai.h6;
+import ai.g6;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.CancellationSignal;
@@ -37,7 +37,7 @@ import w0.c;
 import w0.h;
 import w7.g8;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class CredentialProviderPlayServicesImpl implements j {
     public static final g Companion = new g();
@@ -403,7 +403,7 @@ public final class CredentialProviderPlayServicesImpl implements j {
         e.a = 32701;
         Task e7 = gVar.e(0, e.a());
         i.d(e7, "doRead(...)");
-        e7.addOnSuccessListener(new d5(new e1.b(cancellationSignal, aVar, executor, callback, 1), 1)).addOnFailureListener(new h6(request, aVar, callback, executor, cancellationSignal));
+        e7.addOnSuccessListener(new d5(new e1.b(cancellationSignal, aVar, executor, callback, 1), 1)).addOnFailureListener(new g6(request, aVar, callback, executor, cancellationSignal));
     }
 
     public static /* synthetic */ void getGoogleApiAvailability$annotations() {

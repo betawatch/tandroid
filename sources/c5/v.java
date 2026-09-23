@@ -21,7 +21,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import n7.a1;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Cells.q3;
-import org.telegram.ui.Components.lg;
+import org.telegram.ui.Components.mg;
 import v7.d8;
 import v7.r1;
 import w7.j7;
@@ -33,7 +33,7 @@ import w7.sa;
 import w7.ua;
 import y8.k0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final /* synthetic */ class v implements Runnable {
     public final /* synthetic */ int a;
@@ -213,7 +213,7 @@ public final /* synthetic */ class v implements Runnable {
                 ((Handler) this.d).post(new i9.s(20, (z) this.c, obj));
                 return;
             case 9:
-                ((lg) this.d).n((File) this.c, (ArrayList) this.b);
+                ((mg) this.d).n((File) this.c, (ArrayList) this.b);
                 return;
             case 10:
                 u4.f fVar2 = (u4.f) this.d;

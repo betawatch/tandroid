@@ -16,9 +16,9 @@ import android.widget.RemoteViews;
 import android.widget.RemoteViewsService;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.e10;
+import org.telegram.ui.Components.f10;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
     private AccountInstance accountInstance;
@@ -33,7 +33,7 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
 
     public ChatsRemoteViewsFactory(Context context, Intent intent) {
         this.mContext = context;
-        org.telegram.ui.ActionBar.i6.R(context);
+        org.telegram.ui.ActionBar.h6.R(context);
         this.appWidgetId = intent.getIntExtra("appWidgetId", 0);
         SharedPreferences sharedPreferences = context.getSharedPreferences("shortcut_widget", 0);
         int i10 = sharedPreferences.getInt("account" + this.appWidgetId, -1);
@@ -98,7 +98,7 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
         SpannableStringBuilder spannableStringBuilder;
         CharSequence charSequence2;
         CharSequence charSequence3;
-        org.telegram.ui.Components.f9 f9Var;
+        org.telegram.ui.Components.h9 h9Var;
         TLRPC.UserProfilePhoto userProfilePhoto;
         TLRPC.FileLocation fileLocation3;
         if (this.deleted) {
@@ -203,18 +203,18 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
         Canvas canvas = new Canvas(createBitmap);
         if (decodeFile == null) {
             if (user != null) {
-                f9Var = new org.telegram.ui.Components.f9(0, user);
+                h9Var = new org.telegram.ui.Components.h9(0, user);
                 if (UserObject.isReplyUser(user)) {
-                    f9Var.g(12);
+                    h9Var.g(12);
                 } else if (UserObject.isUserSelf(user)) {
-                    f9Var.g(1);
+                    h9Var.g(1);
                 }
             } else {
-                f9Var = new org.telegram.ui.Components.f9((org.telegram.ui.ActionBar.e6) null);
-                f9Var.k(this.accountInstance.getCurrentAccount(), chat);
+                h9Var = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.d6) null);
+                h9Var.k(this.accountInstance.getCurrentAccount(), chat);
             }
-            f9Var.setBounds(0, 0, dp, dp);
-            f9Var.draw(canvas);
+            h9Var.setBounds(0, 0, dp, dp);
+            h9Var.draw(canvas);
             c10 = 1;
         } else {
             Shader.TileMode tileMode = Shader.TileMode.CLAMP;
@@ -310,7 +310,7 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
                             charSequence = com.google.android.gms.internal.vision.e2.j("🎧 ", messageObject.getMusicAuthor(), " - ", messageObject.getMusicTitle());
                         } else {
                             charSequence = messageObject.messageText;
-                            AndroidUtilities.highlightText(charSequence, messageObject.highlightedWords, (org.telegram.ui.ActionBar.e6) null);
+                            AndroidUtilities.highlightText(charSequence, messageObject.highlightedWords, (org.telegram.ui.ActionBar.d6) null);
                         }
                         CharSequence charSequence5 = charSequence;
                         charSequence2 = charSequence5;
@@ -368,16 +368,16 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
                             objArr3[c10] = string2;
                             SpannableStringBuilder valueOf2 = SpannableStringBuilder.valueOf(String.format("%2$s: \u2068%1$s\u2069", objArr3));
                             try {
-                                valueOf2.setSpan(new e10(org.telegram.ui.ActionBar.i6.o9, null), string2.length() + 2, valueOf2.length(), 33);
+                                valueOf2.setSpan(new f10(org.telegram.ui.ActionBar.h6.o9, null), string2.length() + 2, valueOf2.length(), 33);
                                 spannableStringBuilder = valueOf2;
                             } catch (Exception e) {
                                 FileLog.e(e);
                                 spannableStringBuilder = valueOf2;
                             }
-                            spannableStringBuilder.setSpan(new e10(org.telegram.ui.ActionBar.i6.k9, null), 0, string2.length() + 1, 33);
+                            spannableStringBuilder.setSpan(new f10(org.telegram.ui.ActionBar.h6.k9, null), 0, string2.length() + 1, 33);
                             charSequence2 = spannableStringBuilder;
                         }
-                        spannableStringBuilder.setSpan(new e10(org.telegram.ui.ActionBar.i6.k9, null), 0, string2.length() + 1, 33);
+                        spannableStringBuilder.setSpan(new f10(org.telegram.ui.ActionBar.h6.k9, null), 0, string2.length() + 1, 33);
                         charSequence2 = spannableStringBuilder;
                     } catch (Exception e7) {
                         FileLog.e(e7);

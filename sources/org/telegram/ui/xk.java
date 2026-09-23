@@ -1,20 +1,17 @@
 package org.telegram.ui;
 
-import android.widget.FrameLayout;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class xk extends gz {
-    public final /* synthetic */ bo N;
+public final class xk extends so {
+    public boolean T0;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xk(bo boVar, bo boVar2, FrameLayout frameLayout, uj ujVar, int i10, long j3, long j10) {
-        super(boVar2, frameLayout, ujVar, i10, j3, j10);
-        this.N = boVar;
-    }
-
-    @Override // org.telegram.ui.gz
-    public final void i() {
-        this.N.uc();
+    @Override // org.telegram.ui.ActionBar.n2
+    public final void onBecomeFullyVisible() {
+        super.onBecomeFullyVisible();
+        if (this.T0) {
+            return;
+        }
+        i0();
+        this.T0 = true;
     }
 }

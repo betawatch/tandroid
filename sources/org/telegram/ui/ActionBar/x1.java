@@ -10,23 +10,23 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.vl;
+import org.telegram.messenger.ul;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class x1 extends FrameLayout {
     public final TextView a;
     public final ImageView b;
 
-    public x1(Context context, e6 e6Var) {
+    public x1(Context context, d6 d6Var) {
         super(context);
-        setBackground(i6.f0(i6.v0(i6.I5, e6Var), 2, -1));
+        setBackground(h6.f0(h6.v0(h6.I5, d6Var), 2, -1));
         setPadding(AndroidUtilities.dp(23.0f), 0, AndroidUtilities.dp(23.0f), 0);
         ImageView imageView = new ImageView(context);
         this.b = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setColorFilter(new PorterDuffColorFilter(i6.v0(i6.J5, e6Var), PorterDuff.Mode.MULTIPLY));
+        imageView.setColorFilter(new PorterDuffColorFilter(h6.v0(h6.J5, d6Var), PorterDuff.Mode.MULTIPLY));
         addView(imageView, w7.x5.e(-2, 40, (LocaleController.isRTL ? 5 : 3) | 16));
         TextView textView = new TextView(context);
         this.a = textView;
@@ -34,7 +34,7 @@ public final class x1 extends FrameLayout {
         textView.setSingleLine(true);
         textView.setGravity(1);
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        vl.o(i6.j5, e6Var, textView, 1, 16.0f);
+        ul.o(h6.j5, d6Var, textView, 1, 16.0f);
         addView(textView, w7.x5.e(-2, -2, (LocaleController.isRTL ? 5 : 3) | 16));
     }
 

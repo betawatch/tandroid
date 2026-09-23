@@ -1,45 +1,92 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
+import android.os.Bundle;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class jd0 implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class jd0 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ wg0 b;
+    public final /* synthetic */ rg0 b;
+    public final /* synthetic */ TLRPC.auth_SentCode c;
+    public final /* synthetic */ Bundle d;
+    public final /* synthetic */ boolean e;
 
-    public /* synthetic */ jd0(wg0 wg0Var, int i10) {
+    public /* synthetic */ jd0(int i10, Bundle bundle, TLRPC.auth_SentCode auth_sentcode, rg0 rg0Var, boolean z10) {
         this.a = i10;
-        this.b = wg0Var;
+        this.b = rg0Var;
+        this.c = auth_sentcode;
+        this.d = bundle;
+        this.e = z10;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                wg0 wg0Var = this.b;
-                wg0Var.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                wg0Var.c.setAlpha(floatValue);
-                wg0Var.c.setTranslationY((1.0f - floatValue) * AndroidUtilities.dp(230.0f));
-                break;
-            case 1:
-                wg0 wg0Var2 = this.b;
-                wg0Var2.getClass();
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                wg0Var2.c.setAlpha(floatValue2);
-                wg0Var2.c.setTranslationY((1.0f - floatValue2) * AndroidUtilities.dp(230.0f));
-                break;
+                boolean z10 = tLObject instanceof TLRPC.TL_boolTrue;
+                final rg0 rg0Var = this.b;
+                final TLRPC.auth_SentCode auth_sentcode = this.c;
+                final Bundle bundle = this.d;
+                if (!z10) {
+                    FileLog.d("{PLAYINTEGRITY_REQUESTFIREBASESMS_FALSE} Resend firebase sms because auth.requestFirebaseSms = false");
+                    rg0Var.s1(bundle, auth_sentcode, "PLAYINTEGRITY_REQUESTFIREBASESMS_FALSE");
+                    break;
+                } else {
+                    rg0Var.k1(false, true);
+                    rg0Var.o0 = false;
+                    auth_sentcode.type.verifiedFirebase = true;
+                    final int i10 = 1;
+                    final boolean z11 = this.e;
+                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ld0
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            switch (i10) {
+                                case 0:
+                                    rg0Var.g1(bundle, auth_sentcode, z11);
+                                    break;
+                                default:
+                                    rg0Var.g1(bundle, auth_sentcode, z11);
+                                    break;
+                            }
+                        }
+                    });
+                    break;
+                }
             default:
-                wg0 wg0Var3 = this.b;
-                wg0Var3.getClass();
-                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                float f7 = (0.9f * floatValue3) + 0.1f;
-                wg0Var3.V.setScaleX(f7);
-                wg0Var3.V.setScaleY(f7);
-                wg0Var3.V.setAlpha(floatValue3);
-                break;
+                boolean z12 = tLObject instanceof TLRPC.TL_boolTrue;
+                final rg0 rg0Var2 = this.b;
+                final TLRPC.auth_SentCode auth_sentcode2 = this.c;
+                final Bundle bundle2 = this.d;
+                if (!z12) {
+                    FileLog.d("{SAFETYNET_REQUESTFIREBASESMS_FALSE} Resend firebase sms because auth.requestFirebaseSms = false");
+                    rg0Var2.s1(bundle2, auth_sentcode2, "SAFETYNET_REQUESTFIREBASESMS_FALSE");
+                    break;
+                } else {
+                    rg0Var2.k1(false, true);
+                    rg0Var2.o0 = false;
+                    auth_sentcode2.type.verifiedFirebase = true;
+                    final int i11 = 0;
+                    final boolean z13 = this.e;
+                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ld0
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            switch (i11) {
+                                case 0:
+                                    rg0Var2.g1(bundle2, auth_sentcode2, z13);
+                                    break;
+                                default:
+                                    rg0Var2.g1(bundle2, auth_sentcode2, z13);
+                                    break;
+                            }
+                        }
+                    });
+                    break;
+                }
         }
     }
 }

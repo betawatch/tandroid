@@ -12,9 +12,8 @@ import java.util.Arrays;
 import java.util.List;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.OneUIUtilities;
-import org.telegram.ui.js0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final int[] a = {96000, 88200, 64000, 48000, 44100, 32000, 24000, 22050, androidx.car.app.media.b.AUDIO_CONTENT_SAMPLING_RATE, 12000, 11025, 8000, 7350};
@@ -603,7 +602,7 @@ public abstract class b {
     }
 
     public static p0 s(p pVar, boolean z10) {
-        js0 js0Var = z10 ? null : q3.i.b;
+        pg.e0 e0Var = z10 ? null : q3.i.b;
         e2.v vVar = new e2.v(10);
         p0 p0Var = null;
         int i10 = 0;
@@ -621,7 +620,7 @@ public abstract class b {
                     byte[] bArr = new byte[i11];
                     System.arraycopy(vVar.a, 0, bArr, 0, 10);
                     pVar.a(10, w10, bArr);
-                    p0Var = new q3.i(js0Var).c(i11, bArr);
+                    p0Var = new q3.i(e0Var).c(i11, bArr);
                 } else {
                     pVar.k(w10);
                 }

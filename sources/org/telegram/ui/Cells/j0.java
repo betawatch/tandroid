@@ -3,16 +3,16 @@ package org.telegram.ui.Cells;
 import android.content.Context;
 import android.view.MotionEvent;
 import org.telegram.ui.Components.fo0;
-import org.telegram.ui.wc1;
+import org.telegram.ui.oc1;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class j0 extends fo0 {
     public final /* synthetic */ int l0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ j0(int i10, Context context, org.telegram.ui.ActionBar.e6 e6Var, boolean z10) {
-        super(context, e6Var, z10);
+    public /* synthetic */ j0(int i10, Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10) {
+        super(context, d6Var, z10);
         this.l0 = i10;
     }
 
@@ -50,8 +50,8 @@ public final class j0 extends fo0 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j0(Context context, wc1 wc1Var) {
-        super(context, wc1Var, false);
+    public j0(Context context, oc1 oc1Var) {
+        super(context, oc1Var, false);
         this.l0 = 3;
     }
 }

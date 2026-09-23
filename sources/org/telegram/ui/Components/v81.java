@@ -1,318 +1,304 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import android.transition.TransitionValues;
-import android.view.TextureView;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.WindowManager;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.NotificationsCustomSettingsActivity;
-import org.telegram.ui.ni1;
-import org.webrtc.OrientationHelper;
+import android.os.AsyncTask;
+import java.net.URLEncoder;
+import java.util.HashMap;
+import java.util.Locale;
+import java.util.regex.Matcher;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.telegram.messenger.FileLog;
+import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class v81 extends AnimatorListenerAdapter {
+public final class v81 extends AsyncTask {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public String b;
+    public final String[] c;
+    public final /* synthetic */ b91 d;
 
-    public /* synthetic */ v81(Object obj, int i10) {
+    public v81(b91 b91Var, String str, int i10) {
         this.a = i10;
-        this.b = obj;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 25:
-                ((org.telegram.ui.hf0) this.b).s = null;
-                break;
-            default:
-                super.onAnimationCancel(animator);
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        AnimatorSet animatorSet;
-        org.telegram.ui.ActionBar.k kVar;
-        org.telegram.ui.ActionBar.k kVar2;
-        ViewGroup viewGroup;
-        ViewGroup viewGroup2;
-        switch (this.a) {
-            case 0:
-                ((c91) this.b).e0 = null;
-                break;
+        switch (i10) {
             case 1:
-                ((e91) this.b).K = null;
+                this.d = b91Var;
+                this.c = new String[4];
+                this.b = str;
                 break;
             case 2:
-                super.onAnimationEnd(animator);
-                ((TransitionValues) this.b).view.setEnabled(true);
+                this.d = b91Var;
+                this.c = new String[2];
+                this.b = str;
                 break;
             case 3:
-                org.telegram.ui.Components.voip.u uVar = ((org.telegram.ui.Components.voip.p) this.b).s0;
-                if (uVar.x0.getParent() != null) {
-                    uVar.a.removeView(uVar.x0);
-                    break;
-                }
+                this.d = b91Var;
+                this.c = new String[2];
+                this.b = str;
                 break;
             case 4:
-                super.onAnimationEnd(animator);
-                org.telegram.ui.Components.voip.x0 x0Var = (org.telegram.ui.Components.voip.x0) this.b;
-                if (x0Var.getParent() != null) {
-                    ((ViewGroup) x0Var.getParent()).removeView(x0Var);
-                    break;
-                }
-                break;
-            case 5:
-                ni1 ni1Var = (ni1) this.b;
-                if (!ni1Var.a) {
-                    ni1Var.V.v.S = true;
-                    ni1Var.V.v.invalidate();
-                    break;
-                }
-                break;
-            case 6:
-                org.telegram.ui.Components.voip.q1 q1Var = (org.telegram.ui.Components.voip.q1) this.b;
-                q1Var.i = false;
-                q1Var.l.setAlpha(35);
-                q1Var.k.setAlpha(102);
-                q1Var.j.setAlpha(35);
-                q1Var.c();
-                break;
-            case 7:
-                org.telegram.ui.Components.voip.u1 u1Var = ((org.telegram.ui.Components.voip.s1) this.b).c;
-                u1Var.O = false;
-                u1Var.requestLayout();
-                break;
-            case 8:
-                org.telegram.ui.Components.voip.s2 s2Var = (org.telegram.ui.Components.voip.s2) this.b;
-                s2Var.N = 0.0f;
-                s2Var.O = 0.0f;
-                org.telegram.ui.Components.voip.r2 r2Var = s2Var.d;
-                r2Var.setScaleX(s2Var.T);
-                r2Var.setScaleY(s2Var.T);
-                TextureView textureView = s2Var.e;
-                if (textureView != null) {
-                    textureView.setScaleX(s2Var.U);
-                    textureView.setScaleY(s2Var.U);
-                }
-                s2Var.setTranslationY(0.0f);
-                s2Var.setTranslationX(0.0f);
-                s2Var.W = s2Var.V;
-                s2Var.b0 = null;
-                break;
-            case 9:
-                org.telegram.ui.Components.voip.v2 v2Var = (org.telegram.ui.Components.voip.v2) this.b;
-                v2Var.Q = v2Var.P ? 1.0f : 0.0f;
-                v2Var.a(v2Var.R, v2Var.S);
-                break;
-            case 10:
-                ((org.telegram.ui.Components.voip.w2) this.b).c.unlock();
-                AndroidUtilities.unlockOrientation(((org.telegram.ui.Components.voip.w2) this.b).a);
-                if (((org.telegram.ui.Components.voip.w2) this.b).getParent() != null) {
-                    WindowManager windowManager = (WindowManager) ((org.telegram.ui.Components.voip.w2) this.b).a.getSystemService("window");
-                    ((org.telegram.ui.Components.voip.w2) this.b).setVisibility(8);
-                    try {
-                        windowManager.removeView((org.telegram.ui.Components.voip.w2) this.b);
-                    } catch (Exception unused) {
-                    }
-                    OrientationHelper.cameraRotationDisabled = false;
-                    break;
-                }
-                break;
-            case 11:
-                org.telegram.ui.Components.voip.c3 c3Var = (org.telegram.ui.Components.voip.c3) this.b;
-                c3Var.J = false;
-                c3Var.T.e = false;
-                if (c3Var.U && (animatorSet = c3Var.Q) != null) {
-                    animatorSet.cancel();
-                    c3Var.Q.start();
-                }
-                c3Var.c();
-                break;
-            case 12:
-                ((org.telegram.ui.Components.voip.k3) this.b).e.setVisibility(8);
-                break;
-            case 13:
-                AnimatorSet[] animatorSetArr = (AnimatorSet[]) this.b;
-                if (animator.equals(animatorSetArr[0])) {
-                    animatorSetArr[0] = null;
-                    break;
-                }
-                break;
-            case 14:
-                org.telegram.ui.gu guVar = (org.telegram.ui.gu) this.b;
-                if (animator.equals(guVar.n[0])) {
-                    guVar.n[0] = null;
-                    break;
-                }
-                break;
-            case 15:
-                org.telegram.ui.lv lvVar = (org.telegram.ui.lv) this.b;
-                org.telegram.ui.nv nvVar = lvVar.n;
-                org.telegram.ui.mv[] mvVarArr = nvVar.f;
-                nvVar.h = null;
-                if (nvVar.s) {
-                    mvVarArr[1].setVisibility(8);
-                } else {
-                    org.telegram.ui.mv mvVar = mvVarArr[0];
-                    mvVarArr[0] = mvVarArr[1];
-                    mvVarArr[1] = mvVar;
-                    mvVar.setVisibility(8);
-                    nvVar.w = nvVar.f[0].f == nvVar.e.getFirstTabId();
-                    nvVar.e.j(1.0f, nvVar.f[0].f);
-                }
-                nvVar.n = false;
-                lvVar.c = false;
-                lvVar.b = false;
-                kVar = ((org.telegram.ui.ActionBar.n2) nvVar).actionBar;
-                kVar.setEnabled(true);
-                nvVar.e.setEnabled(true);
-                break;
-            case 16:
-                org.telegram.ui.xw xwVar = (org.telegram.ui.xw) this.b;
-                org.telegram.ui.uy.q1(xwVar.M, xwVar.L, 0.0f);
-                break;
-            case 17:
-                org.telegram.ui.uy uyVar = (org.telegram.ui.uy) this.b;
-                boolean z10 = uyVar.G0;
-                uyVar.H0 = z10 ? 1.0f : 0.0f;
-                if (!z10) {
-                    uyVar.E0.setVisibility(8);
-                }
-                View view = uyVar.fragmentView;
-                if (view != null) {
-                    view.invalidate();
-                    break;
-                }
-                break;
-            case 18:
-                org.telegram.ui.uy uyVar2 = ((org.telegram.ui.ny) this.b).E0;
-                uyVar2.f3 = null;
-                if (!uyVar2.j3) {
-                    org.telegram.ui.ty[] tyVarArr = uyVar2.e0;
-                    org.telegram.ui.ty tyVar = tyVarArr[0];
-                    org.telegram.ui.ty tyVar2 = tyVarArr[1];
-                    tyVarArr[0] = tyVar2;
-                    tyVarArr[1] = tyVar;
-                    uyVar2.z0.g(1.0f, tyVar2.h);
-                    uyVar2.T4(false);
-                    uyVar2.e0[0].d.getClass();
-                    uyVar2.e0[1].d.getClass();
-                }
-                uyVar2.e0[1].setVisibility(8);
-                org.telegram.ui.uy.f1(uyVar2, true);
-                uyVar2.g3 = false;
-                uyVar2.m3 = false;
-                kVar2 = ((org.telegram.ui.ActionBar.n2) uyVar2).actionBar;
-                kVar2.setEnabled(true);
-                uyVar2.z0.setEnabled(true);
-                uyVar2.r3(uyVar2.e0[0]);
-                break;
-            case 19:
-                super.onAnimationEnd(animator);
-                ((org.telegram.ui.qy) this.b).setScrollEnabled(true);
-                break;
-            case 20:
-                r80 r80Var = (r80) this.b;
-                FrameLayout frameLayout = r80Var.b;
-                ci.s6 s6Var = (ci.s6) r80Var.c;
-                if (s6Var.getParent() != null) {
-                    frameLayout.removeView(s6Var);
-                }
-                frameLayout.getViewTreeObserver().removeOnPreDrawListener((org.telegram.ui.ei) r80Var.d);
-                break;
-            case 21:
-                org.telegram.ui.i60 i60Var = ((org.telegram.ui.i50) this.b).o;
-                org.telegram.ui.i60 i60Var2 = org.telegram.ui.i60.D3;
-                i60Var.b1();
-                viewGroup = ((org.telegram.ui.ActionBar.f3) i60Var).containerView;
-                viewGroup.invalidate();
-                i60Var.Q.invalidate();
-                if (i60Var.s0) {
-                    i60Var.s0 = false;
-                    i60Var.O0(true);
-                    break;
-                }
-                break;
-            case 22:
-                super.onAnimationEnd(animator);
-                org.telegram.ui.w50 w50Var = (org.telegram.ui.w50) this.b;
-                w50Var.G = null;
-                org.telegram.ui.i60 i60Var3 = w50Var.L;
-                i60Var3.Q.invalidate();
-                i60Var3.a2.invalidate();
-                viewGroup2 = ((org.telegram.ui.ActionBar.f3) i60Var3).containerView;
-                viewGroup2.invalidate();
-                org.telegram.ui.i60.J0(i60Var3);
-                w50Var.H.clear();
-                w50Var.I.clear();
-                break;
-            case 23:
-                org.telegram.ui.k80 k80Var = (org.telegram.ui.k80) this.b;
-                k80Var.d = null;
-                k80Var.a = null;
-                k80Var.b = false;
-                break;
-            case 24:
-                org.telegram.ui.id0 id0Var = (org.telegram.ui.id0) this.b;
-                id0Var.H = false;
-                id0Var.o0();
-                break;
-            case 25:
-                org.telegram.ui.hf0 hf0Var = (org.telegram.ui.hf0) this.b;
-                if (hf0Var.s != null && hf0Var.n != null) {
-                    hf0Var.r.setVisibility(4);
-                    hf0Var.s = null;
-                    break;
-                }
-                break;
-            case 26:
-                ((org.telegram.ui.jj0) this.b).T.setVisibility(8);
-                break;
-            case 27:
-                org.telegram.ui.ek0 ek0Var = (org.telegram.ui.ek0) this.b;
-                ek0Var.f = 1.0f;
-                ek0Var.invalidate();
-                break;
-            case 28:
-                NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = (NotificationsCustomSettingsActivity) this.b;
-                if (animator.equals(notificationsCustomSettingsActivity.e)) {
-                    notificationsCustomSettingsActivity.e = null;
-                    break;
-                }
+                this.d = b91Var;
+                this.c = new String[2];
+                this.b = str;
                 break;
             default:
-                org.telegram.ui.aq0 aq0Var = (org.telegram.ui.aq0) this.b;
-                org.telegram.ui.lc lcVar = aq0Var.X;
-                if (lcVar != null) {
-                    if (lcVar.getParent() != null) {
-                        ((ViewGroup) aq0Var.X.getParent()).removeView(aq0Var.X);
-                    }
-                    aq0Var.X = null;
-                }
-                aq0Var.Z = null;
-                super.onAnimationEnd(animator);
+                this.d = b91Var;
+                this.c = new String[2];
+                this.b = str;
                 break;
         }
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
+    @Override // android.os.AsyncTask
+    public final Object doInBackground(Object[] objArr) {
         switch (this.a) {
+            case 0:
+                String[] strArr = this.c;
+                Locale locale = Locale.US;
+                String str = "http://www.aparat.com/video/video/embed/vt/frame/showvideo/yes/videohash/" + this.b;
+                this.d.getClass();
+                String c10 = b91.c(this, str, null, true);
+                if (isCancelled()) {
+                    return null;
+                }
+                try {
+                    Matcher matcher = b91.r0.matcher(c10);
+                    if (matcher.find()) {
+                        JSONArray jSONArray = new JSONArray(matcher.group(1));
+                        for (int i10 = 0; i10 < jSONArray.length(); i10++) {
+                            JSONArray jSONArray2 = jSONArray.getJSONArray(i10);
+                            if (jSONArray2.length() != 0) {
+                                JSONObject jSONObject = jSONArray2.getJSONObject(0);
+                                if (jSONObject.has("file")) {
+                                    strArr[0] = jSONObject.getString("file");
+                                    strArr[1] = "other";
+                                }
+                            }
+                        }
+                    }
+                } catch (Exception e) {
+                    FileLog.e(e);
+                }
+                if (isCancelled()) {
+                    return null;
+                }
+                return strArr[0];
+            case 1:
+                String[] strArr2 = this.c;
+                Locale locale2 = Locale.US;
+                String str2 = "https://coub.com/api/v2/coubs/" + this.b + ".json";
+                this.d.getClass();
+                String c11 = b91.c(this, str2, null, true);
+                if (isCancelled()) {
+                    return null;
+                }
+                try {
+                    JSONObject jSONObject2 = new JSONObject(c11).getJSONObject("file_versions").getJSONObject("mobile");
+                    String string = jSONObject2.getString(MediaStreamTrack.VIDEO_TRACK_KIND);
+                    String string2 = jSONObject2.getJSONArray(MediaStreamTrack.AUDIO_TRACK_KIND).getString(0);
+                    if (string != null && string2 != null) {
+                        strArr2[0] = string;
+                        strArr2[1] = "other";
+                        strArr2[2] = string2;
+                        strArr2[3] = "other";
+                    }
+                } catch (Exception e7) {
+                    FileLog.e(e7);
+                }
+                if (isCancelled()) {
+                    return null;
+                }
+                return strArr2[0];
             case 2:
-                super.onAnimationStart(animator);
-                ((TransitionValues) this.b).view.setEnabled(false);
+                String[] strArr3 = this.c;
+                String str3 = this.b;
+                this.d.getClass();
+                String c12 = b91.c(this, str3, null, false);
+                if (isCancelled()) {
+                    return null;
+                }
+                try {
+                    Matcher matcher2 = b91.s0.matcher(c12);
+                    if (matcher2.find()) {
+                        strArr3[0] = new JSONObject(matcher2.group(1)).getJSONArray("quality_options").getJSONObject(0).getString("source");
+                        strArr3[1] = "other";
+                    }
+                } catch (Exception e10) {
+                    FileLog.e(e10);
+                }
+                if (isCancelled()) {
+                    return null;
+                }
+                return strArr3[0];
+            case 3:
+                String[] strArr4 = this.c;
+                HashMap hashMap = new HashMap();
+                hashMap.put("Client-ID", "jzkbprff40iqj646a697cyrvl0zt2m6");
+                int indexOf = this.b.indexOf(38);
+                if (indexOf > 0) {
+                    this.b = this.b.substring(0, indexOf);
+                }
+                Locale locale3 = Locale.US;
+                String str4 = "https://api.twitch.tv/kraken/streams/" + this.b + "?stream_type=all";
+                this.d.getClass();
+                String c13 = b91.c(this, str4, hashMap, false);
+                if (isCancelled()) {
+                    return null;
+                }
+                try {
+                    new JSONObject(c13).getJSONObject("stream");
+                    JSONObject jSONObject3 = new JSONObject(b91.c(this, "https://api.twitch.tv/api/channels/" + this.b + "/access_token", hashMap, false));
+                    String encode = URLEncoder.encode(jSONObject3.getString("sig"), "UTF-8");
+                    String encode2 = URLEncoder.encode(jSONObject3.getString("token"), "UTF-8");
+                    URLEncoder.encode("https://youtube.googleapis.com/v/" + this.b, "UTF-8");
+                    String str5 = "allow_source=true&allow_audio_only=true&allow_spectre=true&player=twitchweb&segment_preference=4&p=" + ((int) (Math.random() * 1.0E7d)) + "&sig=" + encode + "&token=" + encode2;
+                    strArr4[0] = "https://usher.ttvnw.net/api/channel/hls/" + this.b + ".m3u8?" + str5;
+                    strArr4[1] = "hls";
+                } catch (Exception e11) {
+                    FileLog.e(e11);
+                }
+                if (isCancelled()) {
+                    return null;
+                }
+                return strArr4[0];
+            default:
+                String[] strArr5 = this.c;
+                Locale locale4 = Locale.US;
+                String str6 = "https://player.vimeo.com/video/" + this.b + "/config";
+                this.d.getClass();
+                String c14 = b91.c(this, str6, null, true);
+                if (isCancelled()) {
+                    return null;
+                }
+                try {
+                    JSONObject jSONObject4 = new JSONObject(c14).getJSONObject("request").getJSONObject("files");
+                    if (jSONObject4.has("hls")) {
+                        JSONObject jSONObject5 = jSONObject4.getJSONObject("hls");
+                        try {
+                            strArr5[0] = jSONObject5.getString("url");
+                        } catch (Exception unused) {
+                            strArr5[0] = jSONObject5.getJSONObject("cdns").getJSONObject(jSONObject5.getString("default_cdn")).getString("url");
+                        }
+                        strArr5[1] = "hls";
+                    } else if (jSONObject4.has("progressive")) {
+                        strArr5[1] = "other";
+                        strArr5[0] = jSONObject4.getJSONArray("progressive").getJSONObject(0).getString("url");
+                    }
+                } catch (Exception e12) {
+                    FileLog.e(e12);
+                }
+                if (isCancelled()) {
+                    return null;
+                }
+                return strArr5[0];
+        }
+    }
+
+    @Override // android.os.AsyncTask
+    public final void onPostExecute(Object obj) {
+        switch (this.a) {
+            case 0:
+                String str = (String) obj;
+                b91 b91Var = this.d;
+                if (str == null) {
+                    if (!isCancelled()) {
+                        b91Var.h();
+                        break;
+                    }
+                } else {
+                    b91Var.w = true;
+                    b91Var.x = str;
+                    b91Var.y = this.c[1];
+                    if (b91Var.s) {
+                        b91Var.i();
+                    }
+                    b91Var.j(false, true);
+                    b91Var.f0.d(true, true);
+                    break;
+                }
+                break;
+            case 1:
+                String str2 = (String) obj;
+                b91 b91Var2 = this.d;
+                if (str2 == null) {
+                    if (!isCancelled()) {
+                        b91Var2.h();
+                        break;
+                    }
+                } else {
+                    b91Var2.w = true;
+                    b91Var2.x = str2;
+                    String[] strArr = this.c;
+                    b91Var2.y = strArr[1];
+                    b91Var2.E = strArr[2];
+                    b91Var2.F = strArr[3];
+                    if (b91Var2.s) {
+                        b91Var2.i();
+                    }
+                    b91Var2.j(false, true);
+                    b91Var2.f0.d(true, true);
+                    break;
+                }
+                break;
+            case 2:
+                String str3 = (String) obj;
+                b91 b91Var3 = this.d;
+                if (str3 == null) {
+                    if (!isCancelled()) {
+                        b91Var3.h();
+                        break;
+                    }
+                } else {
+                    b91Var3.w = true;
+                    b91Var3.x = str3;
+                    b91Var3.y = this.c[1];
+                    if (b91Var3.s) {
+                        b91Var3.i();
+                    }
+                    b91Var3.j(false, true);
+                    b91Var3.f0.d(true, true);
+                    break;
+                }
+                break;
+            case 3:
+                String str4 = (String) obj;
+                b91 b91Var4 = this.d;
+                if (str4 == null) {
+                    if (!isCancelled()) {
+                        b91Var4.h();
+                        break;
+                    }
+                } else {
+                    b91Var4.w = true;
+                    b91Var4.x = str4;
+                    b91Var4.y = this.c[1];
+                    if (b91Var4.s) {
+                        b91Var4.i();
+                    }
+                    b91Var4.j(false, true);
+                    b91Var4.f0.d(true, true);
+                    break;
+                }
                 break;
             default:
-                super.onAnimationStart(animator);
+                String str5 = (String) obj;
+                b91 b91Var5 = this.d;
+                if (str5 == null) {
+                    if (!isCancelled()) {
+                        b91Var5.h();
+                        break;
+                    }
+                } else {
+                    b91Var5.w = true;
+                    b91Var5.x = str5;
+                    b91Var5.y = this.c[1];
+                    if (b91Var5.s) {
+                        b91Var5.i();
+                    }
+                    b91Var5.j(false, true);
+                    b91Var5.f0.d(true, true);
+                    break;
+                }
                 break;
         }
     }

@@ -13,12 +13,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.ui.js0;
+import org.telegram.ui.rs;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class d implements y2.h {
-    public static final js0 E = new js0(11);
+    public static final rs E = new rs(25);
     public final k2.u a;
     public final t b;
     public final qb.b c;

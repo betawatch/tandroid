@@ -1,44 +1,74 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.UndoView;
+import android.util.SparseIntArray;
+import android.widget.HorizontalScrollView;
+import android.widget.LinearLayout;
+import java.util.concurrent.atomic.AtomicBoolean;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class fi implements org.telegram.ui.Components.l8 {
-    public final /* synthetic */ bo a;
+public final class fi implements z4.e {
+    public final /* synthetic */ AtomicBoolean a;
+    public final /* synthetic */ LinearLayout b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ HorizontalScrollView d;
+    public final /* synthetic */ SparseIntArray e;
+    public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout f;
+    public final /* synthetic */ int[] g;
 
-    public fi(bo boVar) {
-        this.a = boVar;
+    public fi(AtomicBoolean atomicBoolean, LinearLayout linearLayout, int i10, HorizontalScrollView horizontalScrollView, SparseIntArray sparseIntArray, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr) {
+        this.a = atomicBoolean;
+        this.b = linearLayout;
+        this.c = i10;
+        this.d = horizontalScrollView;
+        this.e = sparseIntArray;
+        this.f = actionBarPopupWindow$ActionBarPopupWindowLayout;
+        this.g = iArr;
     }
 
-    @Override // org.telegram.ui.Components.l8
-    public final void U0(int i10, int i11) {
-        bo boVar = this.a;
-        boVar.getMessagesController().setDialogHistoryTTL(boVar.T5, i10);
-        if (boVar.a8 == null && boVar.Z7 == null) {
+    @Override // z4.e
+    public final void a(int i10) {
+        this.f.getSwipeBack().f(this.g[0], this.e.get(i10), true);
+    }
+
+    @Override // z4.e
+    public final void b(float f7, int i10, int i11) {
+        HorizontalScrollView horizontalScrollView;
+        if (this.a.get()) {
             return;
         }
-        boVar.Q7();
-        UndoView undoView = boVar.y3;
-        if (undoView == null) {
-            return;
+        int i12 = 0;
+        float f10 = -1.0f;
+        float f11 = -1.0f;
+        while (true) {
+            LinearLayout linearLayout = this.b;
+            int childCount = linearLayout.getChildCount();
+            horizontalScrollView = this.d;
+            if (i12 >= childCount) {
+                break;
+            }
+            org.telegram.ui.Components.rj0 rj0Var = (org.telegram.ui.Components.rj0) linearLayout.getChildAt(i12);
+            rj0Var.setOutlineProgress(i12 == i10 ? 1.0f - f7 : i12 == (i10 + 1) % this.c ? f7 : 0.0f);
+            if (i12 == i10) {
+                f10 = rj0Var.getX() - ((horizontalScrollView.getWidth() - rj0Var.getWidth()) / 2.0f);
+            }
+            if (i12 == i10 + 1) {
+                f11 = rj0Var.getX() - ((horizontalScrollView.getWidth() - rj0Var.getWidth()) / 2.0f);
+            }
+            i12++;
         }
-        long j3 = boVar.T5;
-        TLRPC.User user = boVar.f;
-        TLRPC.UserFull userFull = boVar.a8;
-        undoView.k(j3, i11, user, Integer.valueOf(userFull != null ? userFull.ttl_period : boVar.Z7.ttl_period), null, null);
+        if (f10 != -1.0f && f11 != -1.0f) {
+            horizontalScrollView.setScrollX((int) com.google.android.gms.internal.vision.e2.z(f11, f10, f7, f10));
+        }
+        SparseIntArray sparseIntArray = this.e;
+        this.f.getSwipeBack().f(this.g[0], (int) ((sparseIntArray.get(i10 + 1, 0) * f7) + ((1.0f - f7) * sparseIntArray.get(i10, 0))), false);
     }
 
-    @Override // org.telegram.ui.Components.l8
-    public final void dismiss() {
-        org.telegram.ui.ActionBar.n1 n1Var = this.a.Q8;
-        if (n1Var != null) {
-            n1Var.dismiss();
+    @Override // z4.e
+    public final void c(int i10) {
+        if (i10 == 0) {
+            this.a.set(false);
         }
-    }
-
-    @Override // org.telegram.ui.Components.l8
-    public final /* synthetic */ void j1() {
     }
 }

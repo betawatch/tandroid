@@ -1,29 +1,32 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.tgnet.TLRPC;
+import android.content.DialogInterface;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class d50 extends org.telegram.ui.Components.hq0 {
-    public final /* synthetic */ i60 b1;
+public final /* synthetic */ class d50 implements DialogInterface.OnShowListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.b2 b;
+    public final /* synthetic */ EditTextBoldCursor c;
+    public final /* synthetic */ Object d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d50(i60 i60Var, Context context, String str, String str2, String str3, String str4) {
-        super(context, null, str, str2, false, str3, str4, true);
-        this.b1 = i60Var;
+    public /* synthetic */ d50(Object obj, org.telegram.ui.ActionBar.b2 b2Var, EditTextBoldCursor editTextBoldCursor, int i10) {
+        this.a = i10;
+        this.d = obj;
+        this.b = b2Var;
+        this.c = editTextBoldCursor;
     }
 
-    @Override // org.telegram.ui.Components.hq0
-    public final void R0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        if (z10) {
-            int m10 = iVar.m();
-            i60 i60Var = this.b1;
-            if (m10 == 1) {
-                i60Var.k1().m(((TLRPC.Dialog) iVar.n(0)).id, Integer.valueOf(i10), 41);
-            } else {
-                i60Var.k1().k(0L, 41, Integer.valueOf(i10), Integer.valueOf(iVar.m()), null, null);
-            }
+    @Override // android.content.DialogInterface.OnShowListener
+    public final void onShow(DialogInterface dialogInterface) {
+        switch (this.a) {
+            case 0:
+                ((i50) this.d).b.s1(null, this.b, this.c, true);
+                break;
+            default:
+                ((e50) this.d).n.b.s1(null, this.b, this.c, true);
+                break;
         }
     }
 }

@@ -1,32 +1,49 @@
 package ai;
 
+import android.app.Activity;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.hx0;
+import org.telegram.ui.Components.g21;
+import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d8 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Utilities.Callback b;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    public /* synthetic */ d8(int i10, Utilities.Callback callback) {
-        this.a = i10;
-        this.b = callback;
+    public /* synthetic */ d8(l9 l9Var, boolean z10, long j3, Utilities.Callback callback, org.telegram.ui.ActionBar.d6 d6Var) {
+        this.d = l9Var;
+        this.b = z10;
+        this.c = j3;
+        this.e = callback;
+        this.f = d6Var;
     }
 
     @Override // org.telegram.tgnet.RequestDelegate
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new a1.e(14, this.b, tL_error));
+                AndroidUtilities.runOnUIThread(new h3((l9) this.d, tL_error, this.b, this.c, (Utilities.Callback) this.e, (org.telegram.ui.ActionBar.d6) this.f));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new hx0(tLObject, this.b, 1));
+                AndroidUtilities.runOnUIThread(new g21((yh.g) this.d, tL_error, (TwoStepVerificationActivity) this.e, (Activity) this.f, this.b, this.c, tLObject));
                 break;
         }
+    }
+
+    public /* synthetic */ d8(yh.g gVar, TwoStepVerificationActivity twoStepVerificationActivity, Activity activity, boolean z10, long j3) {
+        this.d = gVar;
+        this.e = twoStepVerificationActivity;
+        this.f = activity;
+        this.b = z10;
+        this.c = j3;
     }
 }

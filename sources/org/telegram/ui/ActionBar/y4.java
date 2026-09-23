@@ -1,20 +1,27 @@
 package org.telegram.ui.ActionBar;
 
-import android.app.Activity;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class y4 extends ActionBarLayout {
-    public final /* synthetic */ n s1;
+public final class y4 {
+    public static final y4 a;
+    public static final y4 b;
+    public static final /* synthetic */ y4[] c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y4(Activity activity, n nVar) {
-        super(activity, false);
-        this.s1 = nVar;
+    static {
+        y4 y4Var = new y4("BACK", 0);
+        a = y4Var;
+        y4 y4Var2 = new y4("MENU", 1);
+        b = y4Var2;
+        c = new y4[]{y4Var, y4Var2};
     }
 
-    @Override // org.telegram.ui.ActionBar.ActionBarLayout, org.telegram.ui.ActionBar.d5
-    public final f3 getBottomSheet() {
-        return ((f3[]) this.s1.b)[0];
+    public static y4 valueOf(String str) {
+        return (y4) Enum.valueOf(y4.class, str);
+    }
+
+    public static y4[] values() {
+        return (y4[]) c.clone();
     }
 }

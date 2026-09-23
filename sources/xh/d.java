@@ -12,55 +12,55 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.aj0;
-import org.telegram.ui.Components.n6;
-import org.telegram.ui.Components.oq;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.bj0;
+import org.telegram.ui.Components.p6;
+import org.telegram.ui.Components.pq;
 import w7.x5;
-import yh.x7;
+import yh.w7;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class d extends FrameLayout {
     public final ci.d a;
-    public final n6 b;
-    public final n6 c;
+    public final p6 b;
+    public final p6 c;
     public final GiftAuctionController.Auction d;
     public final Paint e;
     public final yf.n f;
-    public final oq h;
-    public final oq[] n;
+    public final pq h;
+    public final pq[] n;
 
     public d(Context context, GiftAuctionController.Auction auction) {
         super(context);
         Paint paint = new Paint(1);
         this.e = paint;
-        this.f = new yf.n(new r5.e(this, 13));
-        this.h = new oq(R.drawable.filled_gift_sell_24, 0);
-        this.n = new oq[1];
+        this.f = new yf.n(new r5.d(this, 14));
+        this.h = new pq(R.drawable.filled_gift_sell_24, 0);
+        this.n = new pq[1];
         this.d = auction;
         setPadding(AndroidUtilities.dp(14.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(14.0f), AndroidUtilities.dp(9.0f));
         paint.setShadowLayer(AndroidUtilities.dp(1.0f), 0.0f, 0.0f, TLObject.FLAG_29);
-        paint.setColor(i6.w0(null, i6.d6, false));
+        paint.setColor(h6.w0(null, h6.d6, false));
         ci.d dVar = new ci.d(context, null, true);
         this.a = dVar;
         dVar.d.o(false, true, true);
-        aj0 aj0Var = new aj0(context);
-        n6 n6Var = new n6(context, false, false, false);
-        this.b = n6Var;
-        n6Var.setTextSize(AndroidUtilities.dp(14.0f));
-        n6Var.setTypeface(AndroidUtilities.bold());
-        n6Var.setTextColor(i6.w0(null, i6.G6, false));
-        n6 n6Var2 = new n6(context, false, false, false);
-        this.c = n6Var2;
-        n6Var2.setTextSize(AndroidUtilities.dp(12.0f));
+        bj0 bj0Var = new bj0(context);
+        p6 p6Var = new p6(context, false, false, false);
+        this.b = p6Var;
+        p6Var.setTextSize(AndroidUtilities.dp(14.0f));
+        p6Var.setTypeface(AndroidUtilities.bold());
+        p6Var.setTextColor(h6.w0(null, h6.G6, false));
+        p6 p6Var2 = new p6(context, false, false, false);
+        this.c = p6Var2;
+        p6Var2.setTextSize(AndroidUtilities.dp(12.0f));
         TLRPC.Document document = auction.gift.sticker;
         if (document != null) {
-            aj0Var.g(44, 44, document);
+            bj0Var.g(44, 44, document);
         }
-        addView(n6Var, x5.d(-1, 18.0f, 51, 64.0f, 15.0f, 15.0f, 0.0f));
-        addView(n6Var2, x5.d(-1, 17.0f, 51, 64.0f, 34.0f, 15.0f, 0.0f));
-        addView(aj0Var, x5.d(44, 44.0f, 51, 14.0f, 11.0f, 0.0f, 0.0f));
+        addView(p6Var, x5.d(-1, 18.0f, 51, 64.0f, 15.0f, 15.0f, 0.0f));
+        addView(p6Var2, x5.d(-1, 17.0f, 51, 64.0f, 34.0f, 15.0f, 0.0f));
+        addView(bj0Var, x5.d(44, 44.0f, 51, 14.0f, 11.0f, 0.0f, 0.0f));
         addView(dVar, x5.d(-1, 44.0f, 80, 15.0f, 0.0f, 15.0f, 15.0f));
         b(false);
     }
@@ -83,14 +83,14 @@ public final class d extends FrameLayout {
         }
         String k10 = hg.c.k(auction.auctionUserState.bid_amount, ',', new StringBuilder("⭐️"));
         boolean isOutbid = auction.getBidStatus().isOutbid();
-        oq[] oqVarArr = this.n;
-        n6 n6Var = this.c;
+        pq[] pqVarArr = this.n;
+        p6 p6Var = this.c;
         if (isOutbid) {
-            n6Var.c(x7.X0(false, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2ActiveAuctionsActiveBidOutbid, k10)), 0.66f, oqVarArr), z10, true);
-            n6Var.setTextColor(i6.w0(null, i6.q7, false));
+            p6Var.c(w7.X0(false, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2ActiveAuctionsActiveBidOutbid, k10)), 0.66f, pqVarArr), z10, true);
+            p6Var.setTextColor(h6.w0(null, h6.q7, false));
         } else {
-            n6Var.c(x7.X0(false, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2ActiveAuctionsActiveBidActive, k10, Integer.valueOf(auction.getApproximatedMyPlace()))), 0.66f, oqVarArr), z10, true);
-            n6Var.setTextColor(i6.w0(null, i6.G6, false));
+            p6Var.c(w7.X0(false, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2ActiveAuctionsActiveBidActive, k10, Integer.valueOf(auction.getApproximatedMyPlace()))), 0.66f, pqVarArr), z10, true);
+            p6Var.setTextColor(h6.w0(null, h6.G6, false));
         }
     }
 

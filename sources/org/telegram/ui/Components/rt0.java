@@ -6,10 +6,10 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public abstract class rt0 extends FrameLayout {
-    public ok0 E;
+    public pk0 E;
     public int F;
     public oq0 G;
     public ar0 H;
@@ -39,7 +39,7 @@ public abstract class rt0 extends FrameLayout {
         if (oq0Var == null || oq0Var.getVisibility() != 0) {
             return;
         }
-        sk0 fastScroll = this.h.getFastScroll();
+        tk0 fastScroll = this.h.getFastScroll();
         if (fastScroll != null) {
             float dp = AndroidUtilities.dp(36.0f) + fastScroll.getScrollBarY();
             if (this.F == 9) {

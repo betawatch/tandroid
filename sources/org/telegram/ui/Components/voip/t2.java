@@ -14,7 +14,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class t2 extends View {
     public StaticLayout a;
@@ -26,7 +26,7 @@ public final class t2 extends View {
     public int h;
     public boolean n;
     public final Drawable r;
-    public final i2.g0 s;
+    public final i2.h0 s;
 
     public t2(Activity activity) {
         super(activity);
@@ -39,7 +39,7 @@ public final class t2 extends View {
         this.f = textPaint;
         this.h = 4;
         this.n = false;
-        this.s = new i2.g0(this, 25);
+        this.s = new i2.h0(this, 25);
         textPaint.setTextSize(AndroidUtilities.dp(15.0f));
         textPaint.setColor(-1);
         paint.setColor(i0.a.k(-1, TLRPC.LAYER));
@@ -50,8 +50,8 @@ public final class t2 extends View {
     }
 
     public final void a() {
-        i2.g0 g0Var = this.s;
-        removeCallbacks(g0Var);
+        i2.h0 h0Var = this.s;
+        removeCallbacks(h0Var);
         VoIPService sharedInstance = VoIPService.getSharedInstance();
         if (sharedInstance == null) {
             return;
@@ -67,7 +67,7 @@ public final class t2 extends View {
             TextPaint textPaint = this.f;
             this.a = new StaticLayout(str2, textPaint, (int) textPaint.measureText(str2), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
         }
-        postDelayed(g0Var, 300L);
+        postDelayed(h0Var, 300L);
         invalidate();
     }
 

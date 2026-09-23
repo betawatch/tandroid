@@ -13,12 +13,12 @@ import com.google.android.gms.internal.vision.h3;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class r0 extends h3 implements ServiceConnection {
     public static final /* synthetic */ int G = 0;
     public boolean E;
-    public k2.v F;
+    public le.b F;
     public final ComponentName r;
     public final com.google.android.gms.internal.cast.c0 s;
     public final ArrayList v;

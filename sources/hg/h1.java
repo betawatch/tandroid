@@ -1,6 +1,6 @@
 package hg;
 
-import ai.m8;
+import ai.n8;
 import android.content.Context;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
@@ -22,23 +22,23 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Cells.j5;
-import org.telegram.ui.Cells.r8;
-import org.telegram.ui.Components.e61;
-import org.telegram.ui.Components.i51;
-import org.telegram.ui.Components.pr;
-import org.telegram.ui.Components.tp;
-import org.telegram.ui.Components.vc;
-import org.telegram.ui.Components.w51;
+import org.telegram.ui.Cells.s8;
+import org.telegram.ui.Components.d61;
+import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.up;
+import org.telegram.ui.Components.v51;
+import org.telegram.ui.Components.xc;
 import w7.x5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class h1 extends n2 implements NotificationCenter.NotificationCenterDelegate {
-    public e61 a;
-    public pr b;
+    public d61 a;
+    public qr b;
     public org.telegram.ui.ActionBar.v0 c;
     public boolean d;
     public boolean e;
@@ -56,7 +56,7 @@ public final class h1 extends n2 implements NotificationCenter.NotificationCente
     public static void U(h1 h1Var, TLRPC.TL_error tL_error, TLObject tLObject) {
         if (tL_error != null) {
             h1Var.b.a(0.0f);
-            vc.b0(tL_error);
+            xc.b0(tL_error);
             return;
         }
         if (!(tLObject instanceof TLRPC.TL_boolFalse)) {
@@ -70,22 +70,22 @@ public final class h1 extends n2 implements NotificationCenter.NotificationCente
             return;
         }
         h1Var.b.a(0.0f);
-        org.telegram.messenger.y0.p(R.string.UnknownError, vc.a0(h1Var), null);
+        org.telegram.messenger.z0.p(R.string.UnknownError, xc.a0(h1Var), null);
     }
 
     public static void V(h1 h1Var, ArrayList arrayList) {
         String string = LocaleController.getString(R.string.BusinessHours);
         String string2 = LocaleController.getString(R.string.BusinessHoursInfo);
         int i10 = R.raw.biz_clock;
-        i51 i51Var = new i51(2);
-        i51Var.l = string;
-        i51Var.o = string2;
-        i51Var.k = i10;
-        arrayList.add(i51Var);
-        i51 i11 = i51.i(-1, LocaleController.getString(R.string.BusinessHoursShow));
+        h51 h51Var = new h51(2);
+        h51Var.l = string;
+        h51Var.o = string2;
+        h51Var.k = i10;
+        arrayList.add(h51Var);
+        h51 i11 = h51.i(-1, LocaleController.getString(R.string.BusinessHoursShow));
         i11.K(h1Var.e);
         arrayList.add(i11);
-        arrayList.add(i51.A(-100, null));
+        arrayList.add(h51.A(-100, null));
         if (!h1Var.e) {
             return;
         }
@@ -94,9 +94,9 @@ public final class h1 extends n2 implements NotificationCenter.NotificationCente
         while (true) {
             ArrayList[] arrayListArr = h1Var.h;
             if (i12 >= arrayListArr.length) {
-                arrayList.add(i51.A(-101, null));
-                arrayList.add(i51.f(LocaleController.getString(R.string.BusinessHoursTimezone), g2.b(h1Var.currentAccount).d(h1Var.r, false), -2));
-                arrayList.add(i51.A(-102, null));
+                arrayList.add(h51.A(-101, null));
+                arrayList.add(h51.f(LocaleController.getString(R.string.BusinessHoursTimezone), g2.b(h1Var.currentAccount).d(h1Var.r, false), -2));
+                arrayList.add(h51.A(-102, null));
                 return;
             }
             if (arrayListArr[i12] == null) {
@@ -105,12 +105,12 @@ public final class h1 extends n2 implements NotificationCenter.NotificationCente
             String displayName = DayOfWeek.values()[i12].getDisplayName(TextStyle.FULL, LocaleController.getInstance().getCurrentLocale());
             String str = displayName.substring(0, 1).toUpperCase() + displayName.substring(1);
             String a02 = a0(h1Var.h[i12]);
-            i51 i51Var2 = new i51(5);
-            i51Var2.d = i12;
-            i51Var2.l = str;
-            i51Var2.m = a02;
-            i51Var2.K(!h1Var.h[i12].isEmpty());
-            arrayList.add(i51Var2);
+            h51 h51Var2 = new h51(5);
+            h51Var2.d = i12;
+            h51Var2.l = str;
+            h51Var2.m = a02;
+            h51Var2.K(!h1Var.h[i12].isEmpty());
+            arrayList.add(h51Var2);
             i12++;
         }
     }
@@ -118,7 +118,7 @@ public final class h1 extends n2 implements NotificationCenter.NotificationCente
     public static /* synthetic */ void W(h1 h1Var, View view, String str) {
         g2 b10 = g2.b(h1Var.currentAccount);
         h1Var.r = str;
-        ((r8) view).u(b10.d(str, false), true);
+        ((s8) view).u(b10.d(str, false), true);
         h1Var.Y(true);
     }
 
@@ -333,19 +333,19 @@ public final class h1 extends n2 implements NotificationCenter.NotificationCente
         this.actionBar.setTitle(LocaleController.getString(R.string.BusinessHours));
         this.actionBar.setActionBarMenuOnItemClick(new ei.t(this, 14));
         Drawable mutate = context.getResources().getDrawable(R.drawable.ic_ab_done).mutate();
-        int i10 = i6.v8;
-        mutate.setColorFilter(new PorterDuffColorFilter(i6.w0(null, i10, false), PorterDuff.Mode.MULTIPLY));
-        this.b = new pr(mutate, new tp(i6.w0(null, i10, false)));
+        int i10 = h6.v8;
+        mutate.setColorFilter(new PorterDuffColorFilter(h6.w0(null, i10, false), PorterDuff.Mode.MULTIPLY));
+        this.b = new qr(mutate, new up(h6.w0(null, i10, false)));
         this.c = this.actionBar.n().i(AndroidUtilities.dp(56.0f), LocaleController.getString(R.string.Done), this.b);
         Y(false);
         FrameLayout frameLayout = new FrameLayout(context);
-        frameLayout.setBackgroundColor(i6.w0(null, i6.a7, false));
-        e61 e61Var = new e61(this, new bi.v(this, 27), new d5(this, 3), null);
-        this.a = e61Var;
-        e61Var.p1();
-        e61 e61Var2 = this.a;
-        e61Var2.Y2.r = false;
-        frameLayout.addView(e61Var2, x5.c(-1.0f, -1));
+        frameLayout.setBackgroundColor(h6.w0(null, h6.a7, false));
+        d61 d61Var = new d61(this, new bi.v(this, 27), new d5(this, 3), null);
+        this.a = d61Var;
+        d61Var.p1();
+        d61 d61Var2 = this.a;
+        d61Var2.Y2.r = false;
+        frameLayout.addView(d61Var2, x5.c(-1.0f, -1));
         this.actionBar.z(this.a, true);
         e0();
         this.fragmentView = frameLayout;
@@ -393,13 +393,13 @@ public final class h1 extends n2 implements NotificationCenter.NotificationCente
             userFull.flags2 &= -2;
             userFull.business_work_hours = null;
         }
-        getConnectionsManager().sendRequest(updatebusinessworkhours, new m8(this, 14));
+        getConnectionsManager().sendRequest(updatebusinessworkhours, new n8(this, 14));
         getMessagesStorage().updateUserInfo(userFull, false);
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        w51 w51Var;
+        v51 v51Var;
         if (i10 == NotificationCenter.userInfoDidLoad) {
             e0();
             return;
@@ -408,16 +408,16 @@ public final class h1 extends n2 implements NotificationCenter.NotificationCente
             if (this.f == null) {
                 this.r = g2.b(this.currentAccount).c();
             }
-            e61 e61Var = this.a;
-            if (e61Var == null || (w51Var = e61Var.Y2) == null) {
+            d61 d61Var = this.a;
+            if (d61Var == null || (v51Var = d61Var.Y2) == null) {
                 return;
             }
-            w51Var.N(true);
+            v51Var.N(true);
         }
     }
 
     public final void e0() {
-        w51 w51Var;
+        v51 v51Var;
         if (this.d) {
             return;
         }
@@ -454,9 +454,9 @@ public final class h1 extends n2 implements NotificationCenter.NotificationCente
             this.f = Z(tL_businessWorkHours.weekly_open);
             this.h = Z(userFull.business_work_hours.weekly_open);
         }
-        e61 e61Var = this.a;
-        if (e61Var != null && (w51Var = e61Var.Y2) != null) {
-            w51Var.N(true);
+        d61 d61Var = this.a;
+        if (d61Var != null && (v51Var = d61Var.Y2) != null) {
+            v51Var.N(true);
         }
         Y(false);
         this.d = true;

@@ -1,42 +1,27 @@
 package org.telegram.ui.Components;
 
-import j$.util.Objects;
-import org.telegram.messenger.ContactsController;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class oj {
-    public final int a;
-    public final long b;
+public final class oj extends s4.d0 {
+    public final /* synthetic */ hg.g0 r;
 
-    public oj(int i10, long j3) {
-        this.a = i10;
-        this.b = j3;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public oj(hg.g0 g0Var, Context context) {
+        super(context);
+        this.r = g0Var;
     }
 
-    public static oj a(Object obj) {
-        if (obj instanceof ContactsController.Contact) {
-            return new oj(2, ((ContactsController.Contact) obj).contact_id);
-        }
-        if (obj instanceof TLRPC.User) {
-            return new oj(1, ((TLRPC.User) obj).id);
-        }
-        return null;
+    @Override // s4.d0
+    public final int k(int i10, View view) {
+        return org.telegram.messenger.z0.z(8.0f, ((zj) this.r.V).s.getPaddingTop() - AndroidUtilities.statusBarHeight, super.k(i10, view));
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || oj.class != obj.getClass()) {
-            return false;
-        }
-        oj ojVar = (oj) obj;
-        return this.b == ojVar.b && this.a == ojVar.a;
-    }
-
-    public final int hashCode() {
-        return Objects.hash(m1.j.a(this.a), Long.valueOf(this.b));
+    @Override // s4.d0
+    public final int m(int i10) {
+        return super.m(i10) * 2;
     }
 }

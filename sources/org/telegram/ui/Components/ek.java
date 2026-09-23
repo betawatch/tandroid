@@ -1,27 +1,73 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class ek extends s4.d0 {
-    public final /* synthetic */ hg.g0 r;
+public final class ek extends ml0 {
+    public final /* synthetic */ int X2;
+    public final Paint Y2;
+    public final /* synthetic */ pk Z2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ek(hg.g0 g0Var, Context context) {
-        super(context);
-        this.r = g0Var;
+    public ek(pk pkVar, Context context, org.telegram.ui.ActionBar.d6 d6Var, int i10) {
+        super(context, d6Var);
+        this.X2 = i10;
+        switch (i10) {
+            case 1:
+                this.Z2 = pkVar;
+                super(context, d6Var);
+                this.Y2 = new Paint();
+                break;
+            default:
+                this.Z2 = pkVar;
+                this.Y2 = new Paint();
+                break;
+        }
     }
 
-    @Override // s4.d0
-    public final int k(int i10, View view) {
-        return org.telegram.messenger.y0.z(56.0f, ((ok) this.r.V).r.getPaddingTop() - AndroidUtilities.statusBarHeight, super.k(i10, view));
+    @Override // org.telegram.ui.Components.ml0, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        switch (this.X2) {
+            case 0:
+                if (this.Z2.n == 2 && getChildCount() > 0) {
+                    float f7 = 2.14748365E9f;
+                    for (int i10 = 0; i10 < getChildCount(); i10++) {
+                        if (getChildAt(i10).getY() < f7) {
+                            f7 = getChildAt(i10).getY();
+                        }
+                    }
+                    this.Y2.setColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.h5, false));
+                }
+                super.dispatchDraw(canvas);
+                break;
+            default:
+                if (this.Z2.n == 1 && getChildCount() > 0) {
+                    float f10 = 2.14748365E9f;
+                    for (int i11 = 0; i11 < getChildCount(); i11++) {
+                        if (getChildAt(i11).getY() < f10) {
+                            f10 = getChildAt(i11).getY();
+                        }
+                    }
+                    this.Y2.setColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.h5, false));
+                }
+                super.dispatchDraw(canvas);
+                break;
+        }
     }
 
-    @Override // s4.d0
-    public final int m(int i10) {
-        return super.m(i10) * 2;
+    @Override // org.telegram.ui.Components.ml0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.X2) {
+            case 0:
+                if (this.Z2.n == 0) {
+                    break;
+                }
+                break;
+        }
+        return super.onTouchEvent(motionEvent);
     }
 }

@@ -7,20 +7,20 @@ import android.net.Uri;
 import android.view.TextureView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class d0 {
     public int a;
-    public final org.telegram.ui.Components.c6 b;
+    public final org.telegram.ui.Components.e6 b;
     public final ImageReceiver c;
     public c0 d;
     public TextureView e;
     public boolean f;
     public s h;
     public boolean m;
-    public o8 n;
+    public l8 n;
     public ValueAnimator o;
     public final /* synthetic */ e0 p;
     public volatile long g = -1;
@@ -31,11 +31,11 @@ public final class d0 {
 
     public d0(e0 e0Var) {
         this.p = e0Var;
-        this.b = new org.telegram.ui.Components.c6(e0Var, 0L, 1200L, qr.g);
+        this.b = new org.telegram.ui.Components.e6(e0Var, 0L, 1200L, rr.g);
         this.c = new ImageReceiver(e0Var);
     }
 
-    public final void a(o8 o8Var) {
+    public final void a(l8 l8Var) {
         float f7;
         c0 c0Var = this.d;
         if (c0Var != null) {
@@ -49,27 +49,27 @@ public final class d0 {
             this.e = null;
         }
         this.f = false;
-        this.n = o8Var;
+        this.n = l8Var;
         StringBuilder sb2 = new StringBuilder();
         sb2.append((int) Math.ceil(AndroidUtilities.displaySize.x / AndroidUtilities.density));
         sb2.append("_");
         sb2.append((int) Math.ceil(AndroidUtilities.displaySize.y / AndroidUtilities.density));
-        String t10 = a4.a.t(sb2, (o8Var == null || !o8Var.K) ? "" : "_g", "_exif");
-        o8 o8Var2 = this.n;
+        String t10 = a4.a.t(sb2, (l8Var == null || !l8Var.K) ? "" : "_g", "_exif");
+        l8 l8Var2 = this.n;
         e0 e0Var = this.p;
         ImageReceiver imageReceiver = this.c;
-        if (o8Var2 == null) {
+        if (l8Var2 == null) {
             imageReceiver.clearImage();
-        } else if (o8Var2.K) {
-            Bitmap bitmap = o8Var2.M0;
+        } else if (l8Var2.K) {
+            Bitmap bitmap = l8Var2.M0;
             if (bitmap != null) {
                 imageReceiver.setImageBitmap(bitmap);
             } else {
-                Bitmap bitmap2 = o8Var2.b1;
+                Bitmap bitmap2 = l8Var2.b1;
                 if (bitmap2 != null) {
                     imageReceiver.setImageBitmap(bitmap2);
                 } else {
-                    String str = o8Var2.N;
+                    String str = l8Var2.N;
                     if (str != null) {
                         imageReceiver.setImage(str, t10, null, null, 0L);
                     } else {
@@ -87,9 +87,9 @@ public final class d0 {
             this.d.preparePlayer(Uri.fromFile(this.n.L), false, 1.0f);
             c0 c0Var3 = this.d;
             if (!e0Var.v0) {
-                o8 o8Var3 = this.n;
-                if (!o8Var3.Y && e0Var.n0) {
-                    f7 = o8Var3.P;
+                l8 l8Var3 = this.n;
+                if (!l8Var3.Y && e0Var.n0) {
+                    f7 = l8Var3.P;
                     c0Var3.setVolume(f7);
                     if (e0Var.n0 || e0Var.q0) {
                         this.d.play();
@@ -104,7 +104,7 @@ public final class d0 {
             }
             this.d.play();
         } else {
-            imageReceiver.setImage(o8Var2.L.getAbsolutePath(), t10, null, null, 0L);
+            imageReceiver.setImage(l8Var2.L.getAbsolutePath(), t10, null, null, 0L);
         }
         e0Var.invalidate();
     }
@@ -137,9 +137,9 @@ public final class d0 {
             this.l = 0.0f;
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
             this.o = ofFloat;
-            ofFloat.addUpdateListener(new ai.l6(this, 2));
+            ofFloat.addUpdateListener(new ai.k6(this, 2));
             this.o.addListener(new ai.b(this, 12));
-            this.o.setInterpolator(qr.h);
+            this.o.setInterpolator(rr.h);
             this.o.setDuration(360L);
             this.o.start();
         } else {

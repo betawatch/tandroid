@@ -17,7 +17,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public abstract class qf0 extends FrameLayout {
     public float E;
@@ -27,14 +27,14 @@ public abstract class qf0 extends FrameLayout {
     public int I;
     public float J;
     public boolean K;
-    public bc0 L;
+    public ac0 L;
     public int a;
     public PhotoViewer b;
     public LinearLayout c;
     public TextView d;
     public TextView e;
-    public pu f;
-    public ci.eb h;
+    public qu f;
+    public ci.bb h;
     public RadialProgressView n;
     public View r;
     public String s;
@@ -43,9 +43,9 @@ public abstract class qf0 extends FrameLayout {
     public boolean x;
     public TLRPC.WebPage y;
 
-    public static void a(org.telegram.ui.iu0 iu0Var, String str) {
-        int videoDuration = iu0Var.getVideoDuration() / MediaDataController.MAX_STYLE_RUNS_COUNT;
-        ArrayList arrayList = iu0Var.v;
+    public static void a(org.telegram.ui.bu0 bu0Var, String str) {
+        int videoDuration = bu0Var.getVideoDuration() / MediaDataController.MAX_STYLE_RUNS_COUNT;
+        ArrayList arrayList = bu0Var.v;
         arrayList.clear();
         if (videoDuration <= 15) {
             return;
@@ -62,14 +62,14 @@ public abstract class qf0 extends FrameLayout {
     }
 
     public final void b(boolean z10) {
-        bc0 bc0Var = this.L;
+        ac0 ac0Var = this.L;
         if (!z10 && this.G) {
-            AndroidUtilities.runOnUIThread(bc0Var, 500L);
+            AndroidUtilities.runOnUIThread(ac0Var, 500L);
         } else {
             if (!z10 || this.G) {
                 return;
             }
-            AndroidUtilities.cancelRunOnUIThread(bc0Var);
+            AndroidUtilities.cancelRunOnUIThread(ac0Var);
         }
     }
 
@@ -119,7 +119,7 @@ public abstract class qf0 extends FrameLayout {
     public final boolean e() {
         boolean z10 = this.x && "inapp".equals(MessagesController.getInstance(this.a).youtubePipType);
         if (!z10 && Build.VERSION.SDK_INT >= 23 && !Settings.canDrawOverlays(getContext())) {
-            c5.B((Activity) getContext(), null, false);
+            e5.B((Activity) getContext(), null, false);
             return false;
         }
         if (this.n.getVisibility() == 0) {
@@ -132,9 +132,9 @@ public abstract class qf0 extends FrameLayout {
         }
         this.h.setVisibility(0);
         Activity activity = (Activity) getContext();
-        pu puVar = this.f;
+        qu quVar = this.f;
         TLRPC.WebPage webPage = this.y;
-        if (eg0.x(z10, activity, this, puVar, webPage.embed_width, webPage.embed_height, false)) {
+        if (eg0.x(z10, activity, this, quVar, webPage.embed_width, webPage.embed_height, false)) {
             eg0.w(PhotoViewer.t1());
         }
         return true;
@@ -192,8 +192,8 @@ public abstract class qf0 extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        pu puVar = this.f;
-        if (puVar.getParent() == this) {
+        qu quVar = this.f;
+        if (quVar.getParent() == this) {
             TLRPC.WebPage webPage = this.y;
             int i12 = webPage.embed_width;
             if (i12 == 0) {
@@ -206,7 +206,7 @@ public abstract class qf0 extends FrameLayout {
             float f7 = i12;
             float f10 = i14;
             float min = Math.min(size / f7, size2 / f10);
-            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) puVar.getLayoutParams();
+            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) quVar.getLayoutParams();
             int i15 = (int) (f7 * min);
             layoutParams.width = i15;
             int i16 = (int) (f10 * min);

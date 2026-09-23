@@ -1,55 +1,41 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.tl.TL_stats;
+import android.view.View;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class wa1 {
-    public TL_stats.PostInteractionCounters a;
-    public MessageObject b;
+public final /* synthetic */ class wa1 implements Utilities.Callback5, Utilities.Callback5Return {
+    public final /* synthetic */ StickersActivity a;
 
-    public final int a() {
-        TL_stats.PostInteractionCounters postInteractionCounters = this.a;
-        if (postInteractionCounters instanceof TL_stats.TL_postInteractionCountersMessage) {
-            return ((TL_stats.TL_postInteractionCountersMessage) postInteractionCounters).forwards;
-        }
-        if (postInteractionCounters instanceof TL_stats.TL_postInteractionCountersStory) {
-            return ((TL_stats.TL_postInteractionCountersStory) postInteractionCounters).forwards;
-        }
-        return 0;
+    public /* synthetic */ wa1(StickersActivity stickersActivity) {
+        this.a = stickersActivity;
     }
 
-    public final int b() {
-        TL_stats.PostInteractionCounters postInteractionCounters = this.a;
-        if (postInteractionCounters instanceof TL_stats.TL_postInteractionCountersMessage) {
-            return ((TL_stats.TL_postInteractionCountersMessage) postInteractionCounters).msg_id;
-        }
-        if (postInteractionCounters instanceof TL_stats.TL_postInteractionCountersStory) {
-            return ((TL_stats.TL_postInteractionCountersStory) postInteractionCounters).story_id;
-        }
-        return 0;
+    @Override // org.telegram.messenger.Utilities.Callback5
+    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        StickersActivity.U(this.a, (org.telegram.ui.Components.h51) obj, (View) obj2);
     }
 
-    public final int c() {
-        TL_stats.PostInteractionCounters postInteractionCounters = this.a;
-        if (postInteractionCounters instanceof TL_stats.TL_postInteractionCountersMessage) {
-            return ((TL_stats.TL_postInteractionCountersMessage) postInteractionCounters).reactions;
+    @Override // org.telegram.messenger.Utilities.Callback5Return
+    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        boolean z10;
+        org.telegram.ui.Components.h51 h51Var = (org.telegram.ui.Components.h51) obj;
+        View view = (View) obj2;
+        ((Integer) obj3).intValue();
+        ((Float) obj4).floatValue();
+        ((Float) obj5).floatValue();
+        StickersActivity stickersActivity = this.a;
+        if (stickersActivity.x.isEmpty() && (h51Var.G instanceof TLRPC.TL_messages_stickerSet)) {
+            stickersActivity.n0((org.telegram.ui.Cells.n8) view);
+            z10 = true;
+        } else {
+            z10 = false;
         }
-        if (postInteractionCounters instanceof TL_stats.TL_postInteractionCountersStory) {
-            return ((TL_stats.TL_postInteractionCountersStory) postInteractionCounters).reactions;
-        }
-        return 0;
-    }
-
-    public final int d() {
-        TL_stats.PostInteractionCounters postInteractionCounters = this.a;
-        if (postInteractionCounters instanceof TL_stats.TL_postInteractionCountersMessage) {
-            return ((TL_stats.TL_postInteractionCountersMessage) postInteractionCounters).views;
-        }
-        if (postInteractionCounters instanceof TL_stats.TL_postInteractionCountersStory) {
-            return ((TL_stats.TL_postInteractionCountersStory) postInteractionCounters).views;
-        }
-        return 0;
+        return Boolean.valueOf(z10);
     }
 }

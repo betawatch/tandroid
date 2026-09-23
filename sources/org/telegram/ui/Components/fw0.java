@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fw0 implements Runnable {
     public final /* synthetic */ int a;
@@ -27,10 +27,10 @@ public final /* synthetic */ class fw0 implements Runnable {
                 hw0 hw0Var = iw0Var2.e;
                 if (hw0Var != null) {
                     iw0Var2.getVisibilityFactor();
-                    ProfileActivity profileActivity = ((org.telegram.ui.ky0) hw0Var).b;
-                    org.telegram.ui.ActionBar.j5[] j5VarArr = profileActivity.r;
-                    j5VarArr[1].setTranslationX(profileActivity.W3(profileActivity.Z5));
-                    j5VarArr[1].setTranslationY(profileActivity.X3(profileActivity.a6));
+                    ProfileActivity profileActivity = ((org.telegram.ui.dy0) hw0Var).b;
+                    org.telegram.ui.ActionBar.i5[] i5VarArr = profileActivity.r;
+                    i5VarArr[1].setTranslationX(profileActivity.W3(profileActivity.Z5));
+                    i5VarArr[1].setTranslationY(profileActivity.X3(profileActivity.a6));
                     break;
                 }
                 break;

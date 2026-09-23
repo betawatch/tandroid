@@ -13,12 +13,12 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public class v1 extends View {
     public u1 a;
     public int b;
-    public org.telegram.ui.web.b1 c;
+    public ii.q1 c;
     public boolean d;
     public Paint e;
     public LinearGradient f;
@@ -64,9 +64,9 @@ public class v1 extends View {
     @Override // android.view.View
     public void onAttachedToWindow() {
         super.onAttachedToWindow();
-        org.telegram.ui.web.b1 b1Var = new org.telegram.ui.web.b1(this, 9);
-        this.c = b1Var;
-        LiteMode.addOnPowerSaverAppliedListener(b1Var);
+        ii.q1 q1Var = new ii.q1(this, 12);
+        this.c = q1Var;
+        LiteMode.addOnPowerSaverAppliedListener(q1Var);
         boolean isEnabled = LiteMode.isEnabled(131072);
         if (this.d != isEnabled) {
             this.d = isEnabled;
@@ -77,9 +77,9 @@ public class v1 extends View {
     @Override // android.view.View
     public void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        org.telegram.ui.web.b1 b1Var = this.c;
-        if (b1Var != null) {
-            LiteMode.removeOnPowerSaverAppliedListener(b1Var);
+        ii.q1 q1Var = this.c;
+        if (q1Var != null) {
+            LiteMode.removeOnPowerSaverAppliedListener(q1Var);
         }
     }
 

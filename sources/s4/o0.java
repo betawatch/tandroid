@@ -16,7 +16,7 @@ import java.util.WeakHashMap;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public abstract class o0 {
     public lf.i a;
@@ -36,9 +36,9 @@ public abstract class o0 {
 
     public o0() {
         k2.u uVar = new k2.u(this, 24);
-        k2.c0 c0Var = new k2.c0(this, 26);
+        k2.b0 b0Var = new k2.b0(this, 26);
         this.c = new o0.a(uVar);
-        this.d = new o0.a(c0Var);
+        this.d = new o0.a(b0Var);
         this.f = false;
         this.g = true;
         this.h = true;
@@ -252,20 +252,20 @@ public abstract class o0 {
 
     public abstract View R(View view, int i10, of.e eVar, z0 z0Var);
 
-    public void S(of.e eVar, z0 z0Var, s0.c cVar) {
-        AccessibilityNodeInfo accessibilityNodeInfo = cVar.a;
+    public void S(of.e eVar, z0 z0Var, s0.d dVar) {
+        AccessibilityNodeInfo accessibilityNodeInfo = dVar.a;
         if (this.b.canScrollVertically(-1) || this.b.canScrollHorizontally(-1)) {
-            cVar.a(8192);
+            dVar.a(8192);
             accessibilityNodeInfo.setScrollable(true);
         }
         if (this.b.canScrollVertically(1) || this.b.canScrollHorizontally(1)) {
-            cVar.a(4096);
+            dVar.a(4096);
             accessibilityNodeInfo.setScrollable(true);
         }
         accessibilityNodeInfo.setCollectionInfo(AccessibilityNodeInfo.CollectionInfo.obtain(I(eVar, z0Var), u(eVar, z0Var), false, 0));
     }
 
-    public final void T(View view, s0.c cVar) {
+    public final void T(View view, s0.d dVar) {
         c1 U = RecyclerView.U(view);
         if (U == null || U.j()) {
             return;
@@ -275,11 +275,11 @@ public abstract class o0 {
             return;
         }
         RecyclerView recyclerView = this.b;
-        U(recyclerView.b, recyclerView.t0, view, cVar);
+        U(recyclerView.b, recyclerView.t0, view, dVar);
     }
 
-    public void U(of.e eVar, z0 z0Var, View view, s0.c cVar) {
-        cVar.a.setCollectionItemInfo(AccessibilityNodeInfo.CollectionItemInfo.obtain(e() ? H(view) : 0, 1, d() ? H(view) : 0, 1, false, false));
+    public void U(of.e eVar, z0 z0Var, View view, s0.d dVar) {
+        dVar.a.setCollectionItemInfo(AccessibilityNodeInfo.CollectionItemInfo.obtain(e() ? H(view) : 0, 1, d() ? H(view) : 0, 1, false, false));
     }
 
     public final void a(View view, int i10, boolean z10) {
@@ -306,7 +306,7 @@ public abstract class o0 {
         } else if (view.getParent() == this.b) {
             lf.i iVar = this.a;
             e6.n nVar = (e6.n) iVar.c;
-            int indexOfChild = ((RecyclerView) ((k2.c0) iVar.b).b).indexOfChild(view);
+            int indexOfChild = ((RecyclerView) ((k2.b0) iVar.b).b).indexOfChild(view);
             int w10 = (indexOfChild == -1 || nVar.z(indexOfChild)) ? -1 : indexOfChild - nVar.w(indexOfChild);
             if (i10 == -1) {
                 i10 = this.a.C();
@@ -448,15 +448,15 @@ public abstract class o0 {
         if (q(i10) != null) {
             lf.i iVar = this.a;
             int J = iVar.J(i10);
-            k2.c0 c0Var = (k2.c0) iVar.b;
-            View childAt = ((RecyclerView) c0Var.b).getChildAt(J);
+            k2.b0 b0Var = (k2.b0) iVar.b;
+            View childAt = ((RecyclerView) b0Var.b).getChildAt(J);
             if (childAt == null) {
                 return;
             }
             if (((e6.n) iVar.c).B(J)) {
                 iVar.Y(childAt);
             }
-            c0Var.r(J);
+            b0Var.r(J);
         }
     }
 

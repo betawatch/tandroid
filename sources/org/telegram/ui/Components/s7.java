@@ -1,53 +1,94 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import android.view.MotionEvent;
+import android.view.accessibility.AccessibilityNodeInfo;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class s7 extends ll0 {
-    public boolean X2;
-    public final /* synthetic */ h8 Y2;
+public final class s7 extends bj0 {
+    public float r;
+    public float s;
+    public boolean v;
+    public final org.telegram.ui.Cells.l7 w;
+    public final /* synthetic */ float x;
+    public final /* synthetic */ j8 y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s7(h8 h8Var, Context context) {
-        super(context, null);
-        this.Y2 = h8Var;
+    public s7(j8 j8Var, Context context, float f7) {
+        super(context);
+        this.y = j8Var;
+        this.x = f7;
+        this.w = new org.telegram.ui.Cells.l7(this, 3);
     }
 
-    @Override // org.telegram.ui.Components.ll0
-    public final boolean E0(float f7) {
-        h8 h8Var = this.Y2;
-        return f7 < h8Var.E.getY() - ((float) h8Var.n.getTop());
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.addAction(16);
     }
 
-    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        h8 h8Var = this.Y2;
-        int i14 = h8Var.s0;
-        if (i14 != -1 && !h8Var.c.n0) {
-            this.X2 = true;
-            h8Var.r.h1(i14, h8Var.t0 - h8Var.n.getPaddingTop());
-            super.onLayout(false, i10, i11, i12, i13);
-            this.X2 = false;
-            h8Var.s0 = -1;
-            return;
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x0029, code lost:
+    
+        if (r5 != 3) goto L20;
+     */
+    @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        j8 j8Var = this.y;
+        s7 s7Var = j8Var.L;
+        if (j8Var.T.v || j8Var.H0 == -1) {
+            return false;
         }
-        if (h8Var.r0) {
-            h8Var.r0 = false;
-            this.X2 = true;
-            if (h8Var.w0(true)) {
-                super.onLayout(false, i10, i11, i12, i13);
+        float rawX = motionEvent.getRawX();
+        float rawY = motionEvent.getRawY();
+        int action = motionEvent.getAction();
+        org.telegram.ui.Cells.l7 l7Var = this.w;
+        if (action == 0) {
+            this.v = false;
+            this.r = rawX;
+            this.s = rawY;
+            AndroidUtilities.runOnUIThread(l7Var, 300L);
+            if (getBackground() != null) {
+                getBackground().setHotspot(this.r, this.s);
             }
-            this.X2 = false;
+            setPressed(true);
+            return true;
         }
-    }
-
-    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.X2) {
-            return;
+        if (action != 1) {
+            if (action == 2) {
+                float f7 = rawX - this.r;
+                float f10 = rawY - this.s;
+                float f11 = (f10 * f10) + (f7 * f7);
+                float f12 = this.x;
+                if (f11 > f12 * f12 && !this.v) {
+                    AndroidUtilities.cancelRunOnUIThread(l7Var);
+                    setPressed(false);
+                }
+            }
+            return true;
         }
-        super.requestLayout();
+        if (!this.v && motionEvent.getAction() == 1 && isPressed()) {
+            MediaController.getInstance().playNextMessage();
+            s7Var.setProgress(0.0f);
+            s7Var.d();
+        }
+        AndroidUtilities.cancelRunOnUIThread(l7Var);
+        if (j8Var.J0 > 0) {
+            MediaController.getInstance().setPlaybackSpeed(true, 1.0f);
+            if (MediaController.getInstance().isMessagePaused()) {
+                j8Var.L0 = 0L;
+                j8Var.N0.run();
+            }
+        }
+        j8Var.H0 = 0;
+        setPressed(false);
+        j8Var.J0 = 0;
+        j8Var.I0 = -1.0f;
+        return true;
     }
 }

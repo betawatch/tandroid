@@ -1,40 +1,46 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
-import org.telegram.messenger.SharedConfig;
+import android.content.Context;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.Stories.ProfileStoriesView;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kz0 implements DialogInterface.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
+public final class kz0 extends ProfileStoriesView {
+    public final /* synthetic */ Context t0;
+    public final /* synthetic */ ProfileActivity u0;
 
-    public /* synthetic */ kz0(int i10, int i11) {
-        this.a = i11;
-        this.b = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public kz0(ProfileActivity profileActivity, Context context, int i10, long j3, boolean z10, k0 k0Var, hz0 hz0Var, org.telegram.ui.ActionBar.d6 d6Var, Context context2) {
+        super(context, i10, j3, z10, k0Var, hz0Var, d6Var);
+        this.u0 = profileActivity;
+        this.t0 = context2;
     }
 
-    @Override // android.content.DialogInterface.OnClickListener
-    public final void onClick(DialogInterface dialogInterface, int i10) {
-        switch (this.a) {
-            case 0:
-                int i11 = 2 - i10;
-                if (i11 != this.b) {
-                    SharedConfig.overrideDevicePerformanceClass(i11);
-                    break;
-                } else {
-                    SharedConfig.overrideDevicePerformanceClass(-1);
-                    break;
-                }
-            default:
-                int i12 = 2 - i10;
-                if (i12 != this.b) {
-                    SharedConfig.overrideDevicePerformanceClass(i12);
-                    break;
-                } else {
-                    SharedConfig.overrideDevicePerformanceClass(-1);
-                    break;
-                }
+    @Override // org.telegram.ui.Stories.ProfileStoriesView
+    public final void e(a6.i iVar) {
+        TL_stories.PeerStories peerStories;
+        TL_stories.PeerStories peerStories2;
+        ProfileActivity profileActivity = this.u0;
+        long a2 = profileActivity.a();
+        ai.l9 storiesController = profileActivity.getMessagesController().getStoriesController();
+        boolean I = storiesController.I(a2);
+        Context context = this.t0;
+        if (I || storiesController.K(a2) || storiesController.N(a2)) {
+            profileActivity.getOrCreateStoryViewer().D(context, a2, iVar);
+            return;
+        }
+        TLRPC.UserFull userFull = profileActivity.v2;
+        if (userFull != null && (peerStories2 = userFull.stories) != null && !peerStories2.stories.isEmpty() && profileActivity.e1 != profileActivity.getUserConfig().clientUserId) {
+            profileActivity.getOrCreateStoryViewer().E(context, profileActivity.v2.stories, iVar);
+            return;
+        }
+        TLRPC.ChatFull chatFull = profileActivity.u2;
+        if (chatFull == null || (peerStories = chatFull.stories) == null || peerStories.stories.isEmpty()) {
+            profileActivity.K3();
+        } else {
+            profileActivity.getOrCreateStoryViewer().E(context, profileActivity.u2.stories, iVar);
         }
     }
 }

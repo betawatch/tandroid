@@ -5,10 +5,10 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.bo;
 import org.telegram.ui.ke;
+import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z implements Utilities.Callback {
     public final /* synthetic */ b0 a;
@@ -35,7 +35,7 @@ public final /* synthetic */ class z implements Utilities.Callback {
         }
         n2 U = LaunchActivity.U();
         if (U != null) {
-            bo R9 = bo.R9(this.c);
+            xn R9 = xn.R9(this.c);
             R9.whenFullyVisible(new ke(R9, this.d, 6));
             U.presentFragment(R9);
         }

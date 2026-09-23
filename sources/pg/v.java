@@ -5,18 +5,18 @@ import android.graphics.Color;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import ii.v5;
+import ii.w5;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.qn;
 import org.telegram.ui.Components.r2;
+import org.telegram.ui.Components.rn;
 import w7.x5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class v extends FrameLayout {
     public final TextView a;
@@ -32,7 +32,7 @@ public final class v extends FrameLayout {
         this.f = xVar;
         TextView textView = new TextView(context);
         this.a = textView;
-        org.telegram.messenger.y0.q(textView, -1711276033, 1, 14.0f);
+        org.telegram.messenger.z0.q(textView, -1711276033, 1, 14.0f);
         addView(textView, x5.d(-2, -2.0f, 3, 8.0f, 0.0f, 8.0f, 0.0f));
         r rVar = new r(xVar, context);
         this.b = rVar;
@@ -40,7 +40,7 @@ public final class v extends FrameLayout {
         EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
         this.c = editTextBoldCursor;
         editTextBoldCursor.setTextSize(1, 16.0f);
-        editTextBoldCursor.setBackground(i6.b0(AndroidUtilities.dp(10.0f), 436207615));
+        editTextBoldCursor.setBackground(h6.b0(AndroidUtilities.dp(10.0f), 436207615));
         editTextBoldCursor.setPadding(0, 0, 0, 0);
         editTextBoldCursor.setTextColor(-1);
         editTextBoldCursor.setGravity(17);
@@ -49,8 +49,8 @@ public final class v extends FrameLayout {
         editTextBoldCursor.setImeActionLabel(LocaleController.getString(R.string.Done), 6);
         editTextBoldCursor.setInputType(2);
         editTextBoldCursor.setTypeface(AndroidUtilities.bold());
-        editTextBoldCursor.addTextChangedListener(new qn(this));
-        editTextBoldCursor.setOnFocusChangeListener(new v5(this, 1));
+        editTextBoldCursor.addTextChangedListener(new rn(this));
+        editTextBoldCursor.setOnFocusChangeListener(new w5(this, 1));
         editTextBoldCursor.setOnEditorActionListener(new r2(4));
         addView(editTextBoldCursor, x5.e(72, 36, 85));
     }

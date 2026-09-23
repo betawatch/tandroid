@@ -1,54 +1,53 @@
 package org.telegram.ui;
 
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
 import android.view.View;
-import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_fragment;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class l01 implements ci.fc {
-    public final /* synthetic */ ProfileActivity a;
+public final class l01 extends ClickableSpan {
+    public final /* synthetic */ TLRPC.TL_username a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ s01 c;
 
-    public l01(ProfileActivity profileActivity) {
-        this.a = profileActivity;
+    public l01(s01 s01Var, TLRPC.TL_username tL_username, String str) {
+        this.c = s01Var;
+        this.a = tL_username;
+        this.b = str;
     }
 
-    @Override // ci.fc
-    public final ci.jc a(long j3) {
-        ProfileActivity profileActivity = this.a;
-        if (j3 != profileActivity.a()) {
-            return null;
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        ProfileActivity profileActivity = this.c.e;
+        TLRPC.TL_username tL_username = this.a;
+        if (!tL_username.editable) {
+            if (profileActivity.i5 == this) {
+                return;
+            }
+            profileActivity.M4(this);
+            TL_fragment.TL_getCollectibleInfo tL_getCollectibleInfo = new TL_fragment.TL_getCollectibleInfo();
+            TL_fragment.TL_inputCollectibleUsername tL_inputCollectibleUsername = new TL_fragment.TL_inputCollectibleUsername();
+            tL_inputCollectibleUsername.username = tL_username.username;
+            tL_getCollectibleInfo.collectible = tL_inputCollectibleUsername;
+            profileActivity.getConnectionsManager().bindRequestToGuid(profileActivity.getConnectionsManager().sendRequest(tL_getCollectibleInfo, new wb0(18, this, tL_username)), profileActivity.getClassGuid());
+            return;
         }
-        profileActivity.e0.setRoundRadiusForExpand((int) AndroidUtilities.lerp(profileActivity.c4(), 0.0f, profileActivity.k2));
-        pz0 pz0Var = profileActivity.e0;
-        boolean isForum = ChatObject.isForum(profileActivity.E2);
-        if (pz0Var == null || pz0Var.getRootView() == null) {
-            return null;
+        profileActivity.M4(null);
+        String str = profileActivity.getMessagesController().linkPrefix + "/" + this.b;
+        TLRPC.Chat chat = profileActivity.E2;
+        if (chat == null || !chat.noforwards) {
+            AndroidUtilities.addToClipboard(str);
+            profileActivity.M.j(56, 0L, null);
         }
-        float scaleX = ((View) pz0Var.getParent()).getScaleX();
-        float imageWidth = pz0Var.getImageReceiver().getImageWidth() * scaleX;
-        float f7 = isForum ? 0.32f * imageWidth : imageWidth;
-        ci.hc hcVar = new ci.hc(pz0Var, 0);
-        float[] fArr = new float[2];
-        pz0Var.getRootView().getLocationOnScreen(new int[2]);
-        AndroidUtilities.getViewPositionInParent(pz0Var, (ViewGroup) pz0Var.getRootView(), fArr);
-        float imageX = (pz0Var.getImageReceiver().getImageX() * scaleX) + r4[0] + fArr[0];
-        float imageY = (pz0Var.getImageReceiver().getImageY() * scaleX) + r4[1] + fArr[1];
-        hcVar.c.set(imageX, imageY, imageX + imageWidth, imageWidth + imageY);
-        hcVar.e = pz0Var.getImageReceiver();
-        hcVar.b = f7;
-        return hcVar;
     }
 
-    @Override // ci.fc
-    public final void d(long j3, ai.j jVar) {
-        ProfileActivity profileActivity = this.a;
-        profileActivity.e0.setHasStories(profileActivity.j4());
-        if (j3 == profileActivity.a() && profileActivity.o2 && profileActivity.k2 > 0.0f) {
-            profileActivity.c.h1(0, profileActivity.T3() - profileActivity.a.getPaddingTop());
-            profileActivity.a.post(new yb0(profileActivity, 14));
-        }
-        AndroidUtilities.runOnUIThread(jVar, 30L);
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        textPaint.setUnderlineText(false);
+        textPaint.setColor(textPaint.linkColor);
     }
 }

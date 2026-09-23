@@ -11,18 +11,18 @@ import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class dd0 extends HorizontalScrollView {
     public int E;
     public int F;
     public int G;
-    public final org.telegram.ui.ActionBar.e6 H;
+    public final org.telegram.ui.ActionBar.d6 H;
     public int I;
-    public final c6 J;
-    public final c6 K;
+    public final e6 J;
+    public final e6 K;
     public final LinearLayout.LayoutParams a;
-    public final ai.m7 b;
+    public final ai.n7 b;
     public z4.e c;
     public final LinearLayout d;
     public z4.g e;
@@ -36,9 +36,9 @@ public final class dd0 extends HorizontalScrollView {
     public int x;
     public int y;
 
-    public dd0(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+    public dd0(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context);
-        this.b = new ai.m7(this, 2);
+        this.b = new ai.n7(this, 2);
         this.h = 0;
         this.n = 0.0f;
         this.s = -10066330;
@@ -50,10 +50,10 @@ public final class dd0 extends HorizontalScrollView {
         this.F = AndroidUtilities.dp(12.0f);
         this.G = AndroidUtilities.dp(24.0f);
         this.I = 0;
-        qr qrVar = qr.h;
-        this.J = new c6(this, 350L, qrVar);
-        this.K = new c6(this, 350L, qrVar);
-        this.H = e6Var;
+        rr rrVar = rr.h;
+        this.J = new e6(this, 350L, rrVar);
+        this.K = new e6(this, 350L, rrVar);
+        this.H = d6Var;
         setFillViewport(true);
         setWillNotDraw(false);
         LinearLayout linearLayout = new LinearLayout(context);
@@ -92,14 +92,14 @@ public final class dd0 extends HorizontalScrollView {
         cd0Var.setGravity(17);
         cd0Var.setText(charSequence);
         w7.z5.b(cd0Var, 0.025f, 1.2f);
-        cd0Var.setOnClickListener(new ci.o4(this, i10, 11));
+        cd0Var.setOnClickListener(new ci.n4(this, i10, 11));
         cd0Var.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
         this.d.addView(cd0Var, w7.x5.k(10.0f, 0.0f, 10.0f, 0.0f, -2, -2));
         cd0Var.setSelected(i10 == this.h);
     }
 
     public final int c(float f7) {
-        return i0.a.k(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.Wk, this.H), (int) (f7 * 255.0f));
+        return i0.a.k(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Wk, this.H), (int) (f7 * 255.0f));
     }
 
     public final void d() {
@@ -126,7 +126,7 @@ public final class dd0 extends HorizontalScrollView {
                 childAt.setPadding(0, 0, 0, 0);
                 childAt.setLayoutParams(new LinearLayout.LayoutParams(-1, -1, 1.0f));
             } else if (this.e.getAdapter() instanceof bd0) {
-                ((dy) ((bd0) this.e.getAdapter())).getClass();
+                ((ey) ((bd0) this.e.getAdapter())).getClass();
                 int dp = AndroidUtilities.dp(i10 == 1 ? 12.0f : 18.0f);
                 childAt.setPadding(dp, 0, dp, 0);
             } else {
@@ -194,11 +194,11 @@ public final class dd0 extends HorizontalScrollView {
             float paddingLeft = childAt.getPaddingLeft() + childAt.getLeft();
             float right = childAt.getRight() - childAt.getPaddingRight();
             float f10 = this.n;
-            c6 c6Var = this.K;
-            c6 c6Var2 = this.J;
+            e6 e6Var = this.K;
+            e6 e6Var2 = this.J;
             if (f10 <= 0.0f || (i10 = this.h) >= this.f - 1) {
-                d = c6Var2.d(paddingLeft, false);
-                d10 = c6Var.d(right, false);
+                d = e6Var2.d(paddingLeft, false);
+                d10 = e6Var.d(right, false);
             } else {
                 View childAt2 = linearLayout.getChildAt(i10 + 1);
                 float paddingLeft2 = childAt2.getPaddingLeft() + childAt2.getLeft();
@@ -207,8 +207,8 @@ public final class dd0 extends HorizontalScrollView {
                 float f12 = 1.0f - f11;
                 d = (paddingLeft * f12) + (paddingLeft2 * f11);
                 d10 = (f12 * right) + (f11 * right2);
-                c6Var2.d(d, true);
-                c6Var.d(d10, true);
+                e6Var2.d(d, true);
+                e6Var.d(d10, true);
                 if (childAt instanceof cd0) {
                     cd0 cd0Var = (cd0) childAt;
                     cd0Var.setTextColor(cd0Var.a.c(AndroidUtilities.lerp(0.6f, 0.8f, 1.0f - this.n)));
@@ -243,7 +243,7 @@ public final class dd0 extends HorizontalScrollView {
         if (this.w) {
             return;
         }
-        post(new bc0(this, 3));
+        post(new ac0(this, 3));
     }
 
     public void setDividerPadding(int i10) {

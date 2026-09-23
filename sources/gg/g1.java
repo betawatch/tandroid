@@ -2,9 +2,9 @@ package gg;
 
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.Components.kz;
+import org.telegram.ui.Components.lz;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class g1 {
     public final int a;
@@ -31,8 +31,8 @@ public final class g1 {
                 N = ((k1) this.h).N();
                 break;
             default:
-                kz kzVar = (kz) this.h;
-                if (kzVar.t1 == null || kzVar.getVisibility() != 0 || !kzVar.K0) {
+                lz lzVar = (lz) this.h;
+                if (lzVar.t1 == null || lzVar.getVisibility() != 0 || !lzVar.K0) {
                     N = false;
                     break;
                 } else {

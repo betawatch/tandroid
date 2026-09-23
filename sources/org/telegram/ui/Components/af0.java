@@ -9,14 +9,14 @@ import android.view.View;
 import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class af0 extends View {
     public int a;
     public boolean b;
     public boolean c;
     public float d;
-    public hk0 e;
+    public ik0 e;
     public Paint f;
     public Paint h;
     public Paint n;
@@ -32,8 +32,8 @@ public final class af0 extends View {
             if (this.a != 0) {
                 return;
             }
-            hk0 hk0Var = this.e;
-            this.a = (int) Math.floor(com.google.android.gms.internal.vision.e2.A(x10, hk0Var.a, hk0Var.c / 5.0f, 1.0f));
+            ik0 ik0Var = this.e;
+            this.a = (int) Math.floor(com.google.android.gms.internal.vision.e2.A(x10, ik0Var.a, ik0Var.c / 5.0f, 1.0f));
             return;
         }
         if (i10 != 2) {
@@ -64,9 +64,9 @@ public final class af0 extends View {
         if (ze0Var != null) {
             jf0 jf0Var = ((bf0) ze0Var).a;
             jf0Var.g();
-            vz vzVar = jf0Var.l0;
-            if (vzVar != null) {
-                vzVar.e(false, false, false);
+            wz wzVar = jf0Var.l0;
+            if (wzVar != null) {
+                wzVar.e(false, false, false);
             }
         }
         this.d = y3;
@@ -79,18 +79,18 @@ public final class af0 extends View {
         Path path = this.s;
         Paint paint = this.n;
         ff0 ff0Var = this.w;
-        hk0 hk0Var = this.e;
-        float f7 = hk0Var.c / 5.0f;
+        ik0 ik0Var = this.e;
+        float f7 = ik0Var.c / 5.0f;
         for (int i10 = 0; i10 < 4; i10++) {
-            float f10 = hk0Var.a;
+            float f10 = ik0Var.a;
             float f11 = i10 * f7;
             float f12 = f10 + f7 + f11;
-            float f13 = hk0Var.b;
-            canvas.drawLine(f12, f13, f11 + f10 + f7, f13 + hk0Var.d, this.f);
+            float f13 = ik0Var.b;
+            canvas.drawLine(f12, f13, f11 + f10 + f7, f13 + ik0Var.d, this.f);
         }
-        float f14 = hk0Var.a;
-        float f15 = hk0Var.b;
-        canvas.drawLine(f14, f15 + hk0Var.d, f14 + hk0Var.c, f15, this.h);
+        float f14 = ik0Var.a;
+        float f15 = ik0Var.b;
+        canvas.drawLine(f14, f15 + ik0Var.d, f14 + ik0Var.c, f15, this.h);
         int i11 = ff0Var.f;
         int i12 = 3;
         int i13 = 2;
@@ -112,7 +112,7 @@ public final class af0 extends View {
         int i14 = 0;
         while (i14 < 5) {
             String format = i14 != 0 ? i14 != 1 ? i14 != i13 ? i14 != i12 ? i14 != 4 ? "" : String.format(Locale.US, "%.2f", Float.valueOf(gf0Var.e / 100.0f)) : String.format(Locale.US, "%.2f", Float.valueOf(gf0Var.d / 100.0f)) : String.format(Locale.US, "%.2f", Float.valueOf(gf0Var.c / 100.0f)) : String.format(Locale.US, "%.2f", Float.valueOf(gf0Var.b / 100.0f)) : String.format(Locale.US, "%.2f", Float.valueOf(gf0Var.a / 100.0f));
-            canvas.drawText(format, (i14 * f7) + com.google.android.gms.internal.vision.e2.A(f7, textPaint.measureText(format), 2.0f, hk0Var.a), (hk0Var.b + hk0Var.d) - AndroidUtilities.dp(4.0f), textPaint);
+            canvas.drawText(format, (i14 * f7) + com.google.android.gms.internal.vision.e2.A(f7, textPaint.measureText(format), 2.0f, ik0Var.a), (ik0Var.b + ik0Var.d) - AndroidUtilities.dp(4.0f), textPaint);
             i14++;
             i12 = 3;
             i13 = 2;
@@ -123,10 +123,10 @@ public final class af0 extends View {
         for (int i15 = 0; i15 < a2.length / 2; i15++) {
             if (i15 == 0) {
                 int i16 = i15 * 2;
-                path.moveTo((a2[i16] * hk0Var.c) + hk0Var.a, ((1.0f - a2[i16 + 1]) * hk0Var.d) + hk0Var.b);
+                path.moveTo((a2[i16] * ik0Var.c) + ik0Var.a, ((1.0f - a2[i16 + 1]) * ik0Var.d) + ik0Var.b);
             } else {
                 int i17 = i15 * 2;
-                path.lineTo((a2[i17] * hk0Var.c) + hk0Var.a, ((1.0f - a2[i17 + 1]) * hk0Var.d) + hk0Var.b);
+                path.lineTo((a2[i17] * ik0Var.c) + ik0Var.a, ((1.0f - a2[i17 + 1]) * ik0Var.d) + ik0Var.b);
             }
         }
         canvas.drawPath(path, paint);
@@ -167,11 +167,11 @@ public final class af0 extends View {
                 float x10 = motionEvent.getX();
                 float y3 = motionEvent.getY();
                 this.d = y3;
-                hk0 hk0Var = this.e;
-                float f7 = hk0Var.a;
-                if (x10 >= f7 && x10 <= f7 + hk0Var.c) {
-                    float f10 = hk0Var.b;
-                    if (y3 >= f10 && y3 <= f10 + hk0Var.d) {
+                ik0 ik0Var = this.e;
+                float f7 = ik0Var.a;
+                if (x10 >= f7 && x10 <= f7 + ik0Var.c) {
+                    float f10 = ik0Var.b;
+                    if (y3 >= f10 && y3 <= f10 + ik0Var.d) {
                         this.b = true;
                     }
                 }

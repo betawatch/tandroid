@@ -24,21 +24,21 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.Components.f9;
-import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.t5;
-import org.telegram.ui.Components.x5;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.Components.h9;
+import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.v5;
+import org.telegram.ui.Components.z5;
 import v7.u7;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class k0 extends Drawable {
     public NinePatchDrawable a;
     public NinePatchDrawable b;
     public final TextPaint c;
     public final ImageReceiver d;
-    public final f9 e;
+    public final h9 e;
     public final int f;
     public final int g;
     public final float h;
@@ -50,7 +50,7 @@ public final class k0 extends Drawable {
     public StaticLayout n;
     public float o;
     public float p;
-    public t5 q;
+    public v5 q;
     public View r;
     public int s;
     public int t;
@@ -61,7 +61,7 @@ public final class k0 extends Drawable {
         this.c = textPaint;
         ImageReceiver imageReceiver = new ImageReceiver();
         this.d = imageReceiver;
-        this.e = new f9((e6) null);
+        this.e = new h9((d6) null);
         int dp = AndroidUtilities.dp(10.66f);
         this.f = dp * 2;
         this.g = AndroidUtilities.dp(4.0f);
@@ -69,7 +69,7 @@ public final class k0 extends Drawable {
         this.i = AndroidUtilities.dpf2(7.33f);
         this.j = AndroidUtilities.dp(8.0f);
         this.k = (int) AndroidUtilities.dpf2(22.66f);
-        qr qrVar = qr.f;
+        rr rrVar = rr.f;
         textPaint.setTextSize(AndroidUtilities.dp(12.0f));
         textPaint.setColor(-1);
         imageReceiver.setRoundRadius(dp);
@@ -158,16 +158,16 @@ public final class k0 extends Drawable {
         boolean z10 = tLObject != null;
         this.l = z10;
         if (z10) {
-            f9 f9Var = this.e;
-            f9Var.p(tLObject);
+            h9 h9Var = this.e;
+            h9Var.p(tLObject);
             boolean z11 = tLObject instanceof TLRPC.User;
             ImageReceiver imageReceiver = this.d;
             if (z11) {
-                imageReceiver.setImage(ImageLocation.getForUser((TLRPC.User) tLObject, 1), "48_48", f9Var, null, null, 0);
+                imageReceiver.setImage(ImageLocation.getForUser((TLRPC.User) tLObject, 1), "48_48", h9Var, null, null, 0);
             } else if (tLObject instanceof TLRPC.Chat) {
-                imageReceiver.setImage(ImageLocation.getForChat((TLRPC.Chat) tLObject, 1), "48_48", f9Var, null, null, 0);
+                imageReceiver.setImage(ImageLocation.getForChat((TLRPC.Chat) tLObject, 1), "48_48", h9Var, null, null, 0);
             } else {
-                imageReceiver.setImageBitmap(f9Var);
+                imageReceiver.setImageBitmap(h9Var);
             }
         }
         this.s = -1;
@@ -194,9 +194,9 @@ public final class k0 extends Drawable {
             this.n.draw(canvas);
             View view = this.r;
             if (view != null && (this.m instanceof Spanned)) {
-                t5 update = x5.update(0, view, false, this.q, this.n);
+                v5 update = z5.update(0, view, false, this.q, this.n);
                 this.q = update;
-                x5.drawAnimatedEmojis(canvas, this.n, update, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f, null);
+                z5.drawAnimatedEmojis(canvas, this.n, update, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f, null);
             }
             canvas.restore();
         }

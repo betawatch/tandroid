@@ -9,15 +9,15 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y2 implements org.telegram.ui.ActionBar.a2, jh.a {
     public final /* synthetic */ int a;
-    public final /* synthetic */ f6 b;
+    public final /* synthetic */ e6 b;
 
-    public /* synthetic */ y2(f6 f6Var, int i10) {
+    public /* synthetic */ y2(e6 e6Var, int i10) {
         this.a = i10;
-        this.b = f6Var;
+        this.b = e6Var;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -46,20 +46,20 @@ public final /* synthetic */ class y2 implements org.telegram.ui.ActionBar.a2, j
         boolean z11;
         TL_stories.StoryItem storyItem;
         int i11 = this.a;
-        f6 f6Var = this.b;
+        e6 e6Var = this.b;
         switch (i11) {
             case 0:
-                a4 a4Var = f6Var.b2;
+                a4 a4Var = e6Var.b2;
                 if (a4Var != null) {
                     a4Var.B();
                     break;
                 }
                 break;
             default:
-                d6 d6Var = f6Var.O1;
+                c6 c6Var = e6Var.O1;
                 boolean z12 = true;
                 TLRPC.ChatFull chatFull2 = null;
-                if (d6Var.f && (storyItem = d6Var.a) != null) {
+                if (c6Var.f && (storyItem = c6Var.a) != null) {
                     TLRPC.MessageMedia messageMedia = storyItem.media;
                     if (messageMedia instanceof TLRPC.TL_messageMediaVideoStream) {
                         TLRPC.InputGroupCall inputGroupCall = ((TLRPC.TL_messageMediaVideoStream) messageMedia).call;
@@ -68,21 +68,21 @@ public final /* synthetic */ class y2 implements org.telegram.ui.ActionBar.a2, j
                             d2.W.e();
                             if (d2.W != null) {
                                 d2.W = null;
-                                NotificationCenter.getInstance(f6Var.C2).lambda$postNotificationNameOnUIThread$1(NotificationCenter.liveStoryUpdated, Long.valueOf(d2.W.g()));
+                                NotificationCenter.getInstance(e6Var.C2).lambda$postNotificationNameOnUIThread$1(NotificationCenter.liveStoryUpdated, Long.valueOf(d2.W.g()));
                             }
                         }
                     }
                 }
-                TL_stories.StoryItem storyItem2 = d6Var.a;
-                if (storyItem2 instanceof s8) {
-                    t8 t8Var = ((s8) storyItem2).a;
+                TL_stories.StoryItem storyItem2 = c6Var.a;
+                if (storyItem2 instanceof t8) {
+                    u8 u8Var = ((t8) storyItem2).a;
                     TLRPC.MessageMedia messageMedia2 = storyItem2.media;
-                    t8Var.getClass();
-                    t8Var.F(new ArrayList(Arrays.asList(messageMedia2)));
+                    u8Var.getClass();
+                    u8Var.F(new ArrayList(Arrays.asList(messageMedia2)));
                 } else if (storyItem2 != null) {
-                    f6 f6Var2 = d6Var.k;
-                    l9 l9Var = f6Var2.S1;
-                    long j10 = f6Var2.B1;
+                    e6 e6Var2 = c6Var.k;
+                    l9 l9Var = e6Var2.S1;
+                    long j10 = e6Var2.B1;
                     a0.i iVar = l9Var.i;
                     int i12 = l9Var.a;
                     if (!(storyItem2 instanceof TL_stories.TL_storyItemDeleted)) {
@@ -168,40 +168,40 @@ public final /* synthetic */ class y2 implements org.telegram.ui.ActionBar.a2, j
                         TL_stories.TL_stories_deleteStories tL_stories_deleteStories = new TL_stories.TL_stories_deleteStories();
                         tL_stories_deleteStories.peer = MessagesController.getInstance(i12).getInputPeer(j10);
                         tL_stories_deleteStories.id.add(Integer.valueOf(storyItem2.id));
-                        ConnectionsManager.getInstance(i12).sendRequest(tL_stories_deleteStories, new x7(l9Var, 5));
+                        ConnectionsManager.getInstance(i12).sendRequest(tL_stories_deleteStories, new y7(l9Var, 5));
                         y9 y9Var = l9Var.k;
-                        y9Var.b.getStorageQueue().postRunnable(new w9(y9Var, j10, storyItem2.id, 0));
+                        y9Var.b.getStorageQueue().postRunnable(new v9(y9Var, j10, storyItem2.id, 1));
                         NotificationCenter.getInstance(i12).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesUpdated, new Object[0]);
                         MessagesController.getInstance(i12).checkArchiveFolder();
                         l9Var.k0(j10, Arrays.asList(storyItem2));
                     }
                 } else {
-                    k9 k9Var = d6Var.b;
+                    k9 k9Var = c6Var.b;
                     if (k9Var != null) {
                         k9Var.a();
                     }
                 }
-                f6Var.j1();
-                if (!f6Var.K1 || f6Var.A1 != 0) {
-                    int i15 = f6Var.J1;
-                    int i16 = f6Var.A1;
+                e6Var.j1();
+                if (!e6Var.K1 || e6Var.A1 != 0) {
+                    int i15 = e6Var.J1;
+                    int i16 = e6Var.A1;
                     if (i15 >= i16) {
-                        f6Var.J1 = i16 - 1;
+                        e6Var.J1 = i16 - 1;
                         z11 = false;
                     } else {
                         z11 = false;
                         if (i15 < 0) {
-                            f6Var.J1 = 0;
+                            e6Var.J1 = 0;
                         }
                     }
-                    f6Var.f1(z11);
-                    jc jcVar = f6Var.J0;
+                    e6Var.f1(z11);
+                    jc jcVar = e6Var.J0;
                     if (jcVar != null) {
                         jcVar.p();
                         break;
                     }
                 } else {
-                    ((ac) f6Var.Q1).j();
+                    ((ac) e6Var.Q1).j();
                     break;
                 }
                 break;

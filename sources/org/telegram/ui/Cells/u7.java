@@ -8,11 +8,11 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.vl;
+import org.telegram.messenger.ul;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.np;
+import org.telegram.ui.Components.op;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class u7 extends FrameLayout {
     public q7[] a;
@@ -36,11 +36,11 @@ public final class u7 extends FrameLayout {
     public final void b(int i10, boolean z10) {
         q7 q7Var = this.a[i10];
         FrameLayout frameLayout = q7Var.f;
-        np npVar = q7Var.e;
-        if (npVar.getVisibility() != 0) {
-            npVar.setVisibility(0);
+        op opVar = q7Var.e;
+        if (opVar.getVisibility() != 0) {
+            opVar.setVisibility(0);
         }
-        npVar.a(z10, true);
+        opVar.a(z10, true);
         AnimatorSet animatorSet = q7Var.h;
         if (animatorSet != null) {
             animatorSet.cancel();
@@ -50,7 +50,7 @@ public final class u7 extends FrameLayout {
         q7Var.h = animatorSet2;
         animatorSet2.playTogether(ObjectAnimator.ofFloat(frameLayout, (Property<FrameLayout, Float>) View.SCALE_X, z10 ? 0.81f : 1.0f), ObjectAnimator.ofFloat(frameLayout, (Property<FrameLayout, Float>) View.SCALE_Y, z10 ? 0.81f : 1.0f));
         q7Var.h.setDuration(200L);
-        q7Var.h.addListener(new org.telegram.ui.t4(q7Var, 11));
+        q7Var.h.addListener(new org.telegram.ui.u4(q7Var, 11));
         q7Var.h.start();
     }
 
@@ -94,7 +94,7 @@ public final class u7 extends FrameLayout {
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
         View[] viewArr = this.a;
-        int A = this.r == 1 ? vl.A(2.0f, this.e - 1, View.MeasureSpec.getSize(i10)) / this.e : a(this.e);
+        int A = this.r == 1 ? ul.A(2.0f, this.e - 1, View.MeasureSpec.getSize(i10)) / this.e : a(this.e);
         this.h = true;
         for (int i12 = 0; i12 < this.e; i12++) {
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) viewArr[i12].getLayoutParams();

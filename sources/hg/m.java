@@ -2,24 +2,24 @@ package hg;
 
 import android.content.Context;
 import android.text.Editable;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.Cells.i3;
-import org.telegram.ui.Components.y51;
+import org.telegram.ui.Components.x51;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class m extends i3 {
     public final /* synthetic */ int x;
     public final /* synthetic */ n y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m(n nVar, Context context, String str, int i10, e6 e6Var, int i11) {
-        super(context, str, false, false, i10, e6Var);
+    public m(n nVar, Context context, String str, int i10, d6 d6Var, int i11) {
+        super(context, str, false, false, i10, d6Var);
         this.x = i11;
         switch (i11) {
             case 1:
                 this.y = nVar;
-                super(context, str, true, false, i10, e6Var);
+                super(context, str, true, false, i10, d6Var);
                 break;
             default:
                 this.y = nVar;
@@ -29,18 +29,18 @@ public final class m extends i3 {
 
     @Override // org.telegram.ui.Cells.i3
     public final void a(boolean z10) {
-        y51 y51Var;
-        y51 y51Var2;
+        x51 x51Var;
+        x51 x51Var2;
         switch (this.x) {
             case 0:
-                if (z10 && (y51Var = this.y.a) != null) {
-                    y51Var.x0(2);
+                if (z10 && (x51Var = this.y.a) != null) {
+                    x51Var.x0(2);
                     break;
                 }
                 break;
             default:
-                if (z10 && (y51Var2 = this.y.a) != null) {
-                    y51Var2.x0(3);
+                if (z10 && (x51Var2 = this.y.a) != null) {
+                    x51Var2.x0(3);
                     break;
                 }
                 break;

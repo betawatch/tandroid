@@ -1,58 +1,128 @@
 package ii;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.view.ViewPropertyAnimator;
+import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class a2 extends Drawable {
-    public final Paint a;
-    public final org.telegram.ui.Components.c6 b;
+public final class a2 extends ImageView implements org.telegram.ui.ActionBar.y5 {
+    public final int a;
+    public int b;
     public boolean c;
-    public int d;
+    public boolean d;
+    public int e;
+    public int f;
+    public final org.telegram.ui.ActionBar.d6 h;
+    public boolean n;
+    public boolean r;
+    public boolean s;
 
-    public a2(int i10) {
-        Paint paint = new Paint(1);
-        this.a = paint;
-        this.b = new org.telegram.ui.Components.c6(new i2.g0(this, 5), 420L, qr.h, 0);
-        this.d = 255;
-        paint.setColor(i10);
+    public a2(Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context);
+        this.e = 20;
+        this.f = org.telegram.ui.ActionBar.h6.d6;
+        this.n = true;
+        this.s = true;
+        this.b = i10;
+        this.a = i10;
+        this.h = d6Var;
+        if (i10 != 0) {
+            setImageResource(i10);
+        }
+        setScaleType(ImageView.ScaleType.CENTER);
+        w7.z5.a(this);
+        e();
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        float e = this.b.e(this.c);
-        if (e <= 0.0f) {
+    public final void a() {
+        f(this.a);
+    }
+
+    public final void b() {
+        if (this.s) {
+            this.s = false;
+            e();
+        }
+    }
+
+    public final void c(int i10) {
+        if (this.f == i10) {
             return;
         }
-        Paint paint = this.a;
-        paint.setAlpha((int) (this.d * e));
-        paint.setShadowLayer(AndroidUtilities.dp(12.0f) * e, 0.0f, AndroidUtilities.dp(3.0f), i6.l1(e, 805306368));
-        Rect bounds = getBounds();
-        float dp = AndroidUtilities.dp(8.0f) * e;
-        float dp2 = AndroidUtilities.dp(0.0f) * e;
-        float dp3 = AndroidUtilities.dp(12.0f) * e;
-        canvas.drawRoundRect(bounds.left + dp, bounds.top + dp2, bounds.right - dp, (AndroidUtilities.dp(6.0f) * e) + (bounds.bottom - dp2), dp3, dp3, paint);
+        this.f = i10;
+        e();
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
+    public final void d() {
+        this.c = true;
+        c2 c2Var = new c2(getContext(), this.b);
+        c2Var.d = this.f;
+        c2Var.a(this.d);
+        setImageDrawable(c2Var);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.d = i10;
+    @Override // org.telegram.ui.ActionBar.y5
+    public final void e() {
+        boolean z10 = this.r;
+        org.telegram.ui.ActionBar.d6 d6Var = this.h;
+        if (!z10) {
+            setBackground(org.telegram.ui.ActionBar.h6.Z(org.telegram.ui.ActionBar.h6.v0(this.f, d6Var), org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.i6, d6Var), AndroidUtilities.dp(this.e), AndroidUtilities.dp(this.e)));
+            setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.G6, d6Var), PorterDuff.Mode.SRC_IN));
+        } else {
+            int w02 = org.telegram.ui.ActionBar.h6.w0(null, this.s ? org.telegram.ui.ActionBar.h6.Oh : org.telegram.ui.ActionBar.h6.G6, false);
+            setBackground(org.telegram.ui.ActionBar.h6.Z(org.telegram.ui.ActionBar.h6.v(org.telegram.ui.ActionBar.h6.v0(this.f, d6Var), org.telegram.ui.ActionBar.h6.l1(0.1f, w02)), org.telegram.ui.ActionBar.h6.l1(0.1f, w02), AndroidUtilities.dp(this.e), AndroidUtilities.dp(this.e)));
+            setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN));
+        }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.a.setColorFilter(colorFilter);
+    public final void f(int i10) {
+        if (this.b == i10) {
+            return;
+        }
+        this.b = i10;
+        if (!this.c) {
+            AndroidUtilities.updateImageViewImageAnimated(this, i10);
+            return;
+        }
+        c2 c2Var = new c2(getContext(), i10);
+        c2Var.d = this.f;
+        c2Var.a(this.d);
+        AndroidUtilities.updateImageViewImageAnimated(this, c2Var);
+    }
+
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
+    }
+
+    @Override // android.view.View
+    public void setEnabled(boolean z10) {
+        if (this.n == z10) {
+            return;
+        }
+        setClickable(z10);
+        ViewPropertyAnimator animate = animate();
+        this.n = z10;
+        animate.alpha(z10 ? 1.0f : 0.5f).setDuration(320L).setInterpolator(rr.h).start();
+    }
+
+    public void setPremiumLocked(boolean z10) {
+        this.d = z10;
+        if (getDrawable() instanceof c2) {
+            ((c2) getDrawable()).a(z10);
+        }
+    }
+
+    @Override // android.widget.ImageView, android.view.View
+    public void setSelected(boolean z10) {
+        if (this.r == z10) {
+            return;
+        }
+        this.r = z10;
+        e();
     }
 }

@@ -4,13 +4,13 @@ import android.content.Context;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
-import ci.a8;
+import ci.x7;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.h6;
 import rg.u1;
 import rg.v1;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class d extends v1 {
     public Paint[] n;
@@ -46,11 +46,11 @@ public final class d extends v1 {
             Paint[] paintArr = this.n;
             if (i10 >= paintArr.length) {
                 u1 u1Var2 = this.a;
-                u1Var2.l = new a8(this, 1);
+                u1Var2.l = new x7(this, 1);
                 u1Var2.r = 17;
                 u1Var2.s = 18;
                 u1Var2.t = 19;
-                u1Var2.P = i6.G6;
+                u1Var2.P = h6.G6;
                 u1Var2.c();
                 return;
             }

@@ -9,9 +9,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class d9 extends e70 {
+public final class d9 extends b70 {
     public final /* synthetic */ int v0;
     public final /* synthetic */ org.telegram.ui.ActionBar.n2 w0;
 
@@ -22,7 +22,7 @@ public final class d9 extends e70 {
         this.w0 = n2Var;
     }
 
-    @Override // org.telegram.ui.e70
+    @Override // org.telegram.ui.b70
     public final void n0(HashSet hashSet) {
         int size = hashSet.size();
         int i10 = this.v0;

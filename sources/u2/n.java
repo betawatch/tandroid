@@ -2,9 +2,9 @@ package u2;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final class n implements d1 {
+public final class n implements c1 {
     public final e9.a1 a;
     public long b;
 
@@ -12,13 +12,13 @@ public final class n implements d1 {
         e9.f0 u10 = e9.i0.u();
         e2.d.b(list.size() == list2.size());
         for (int i10 = 0; i10 < list.size(); i10++) {
-            u10.b(new m((d1) list.get(i10), (List) list2.get(i10)));
+            u10.b(new m((c1) list.get(i10), (List) list2.get(i10)));
         }
         this.a = u10.i();
         this.b = -9223372036854775807L;
     }
 
-    @Override // u2.d1
+    @Override // u2.c1
     public final boolean c() {
         int i10 = 0;
         while (true) {
@@ -33,7 +33,7 @@ public final class n implements d1 {
         }
     }
 
-    @Override // u2.d1
+    @Override // u2.c1
     public final long d() {
         int i10 = 0;
         long j3 = Long.MAX_VALUE;
@@ -54,8 +54,8 @@ public final class n implements d1 {
         return j3;
     }
 
-    @Override // u2.d1
-    public final boolean m(i2.r0 r0Var) {
+    @Override // u2.c1
+    public final boolean m(i2.s0 s0Var) {
         boolean z10;
         boolean z11 = false;
         do {
@@ -71,9 +71,9 @@ public final class n implements d1 {
                     break;
                 }
                 long d10 = ((m) a1Var.get(i10)).a.d();
-                boolean z12 = d10 != Long.MIN_VALUE && d10 <= r0Var.a;
+                boolean z12 = d10 != Long.MIN_VALUE && d10 <= s0Var.a;
                 if (d10 == d || z12) {
-                    z10 |= ((m) a1Var.get(i10)).a.m(r0Var);
+                    z10 |= ((m) a1Var.get(i10)).a.m(s0Var);
                 }
                 i10++;
             }
@@ -82,7 +82,7 @@ public final class n implements d1 {
         return z11;
     }
 
-    @Override // u2.d1
+    @Override // u2.c1
     public final long s() {
         int i10 = 0;
         long j3 = Long.MAX_VALUE;
@@ -114,7 +114,7 @@ public final class n implements d1 {
         return j11 != -9223372036854775807L ? j11 : j10;
     }
 
-    @Override // u2.d1
+    @Override // u2.c1
     public final void u(long j3) {
         int i10 = 0;
         while (true) {

@@ -28,30 +28,30 @@ import java.util.ArrayList;
 import nf.f;
 import org.telegram.messenger.BotInlineKeyboard;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.vl;
+import org.telegram.messenger.ul;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.Cells.k1;
-import org.telegram.ui.Cells.r9;
+import org.telegram.ui.Cells.s9;
 import org.telegram.ui.Cells.t1;
-import org.telegram.ui.Components.x5;
-import org.telegram.ui.pv0;
+import org.telegram.ui.Components.z5;
+import org.telegram.ui.iv0;
 import org.xml.sax.Attributes;
 import pb.b;
 import q9.d;
 import r2.k;
+import r2.l;
 import r2.o;
 import r2.x;
 import x3.g;
 import y6.c;
 import yf.j;
-import z3.l;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, k1, OnFailureListener, k, u5.a, Continuation, g, c, l {
+public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, k1, OnFailureListener, k, u5.a, Continuation, g, c, z3.k {
     public static volatile a b;
     public static a c;
     public final /* synthetic */ int a;
@@ -93,11 +93,11 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, k1, OnFailureLi
             if (z10) {
                 String a2 = j.a("data-document-id", attributes);
                 if (a2 != null) {
-                    editable.setSpan(new x5(Long.parseLong(a2), (Paint.FontMetricsInt) null), editable.length(), editable.length(), 17);
+                    editable.setSpan(new z5(Long.parseLong(a2), (Paint.FontMetricsInt) null), editable.length(), editable.length(), 17);
                     return true;
                 }
             } else {
-                Object[] spans = editable.getSpans(0, editable.length(), x5.class);
+                Object[] spans = editable.getSpans(0, editable.length(), z5.class);
                 if (spans.length != 0) {
                     int length = spans.length;
                     while (true) {
@@ -112,7 +112,7 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, k1, OnFailureLi
                         length--;
                     }
                 }
-                Object obj2 = (x5) obj;
+                Object obj2 = (z5) obj;
                 if (obj2 != null) {
                     int spanStart = editable.getSpanStart(obj2);
                     editable.removeSpan(obj2);
@@ -250,7 +250,7 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, k1, OnFailureLi
         int i10 = this.a;
     }
 
-    @Override // z3.l
+    @Override // z3.k
     public int D(s sVar) {
         return 1;
     }
@@ -485,7 +485,7 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, k1, OnFailureLi
         return false;
     }
 
-    @Override // z3.l
+    @Override // z3.k
     public boolean W(s sVar) {
         return false;
     }
@@ -510,7 +510,7 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, k1, OnFailureLi
     }
 
     @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ pv0 Y1() {
+    public /* synthetic */ iv0 Y1() {
         switch (this.a) {
         }
         return null;
@@ -649,7 +649,7 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, k1, OnFailureLi
     @Override // org.telegram.ui.Cells.k1
     public /* synthetic */ boolean h1(MessageObject messageObject) {
         int i10 = this.a;
-        return vl.a(messageObject);
+        return ul.a(messageObject);
     }
 
     @Override // org.telegram.ui.Cells.k1
@@ -727,7 +727,7 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, k1, OnFailureLi
     }
 
     @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ boolean o0(x5 x5Var) {
+    public /* synthetic */ boolean o0(z5 z5Var) {
         switch (this.a) {
         }
         return false;
@@ -818,7 +818,7 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, k1, OnFailureLi
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public r2.l v(com.google.firebase.messaging.n nVar) {
+    public l v(com.google.firebase.messaging.n nVar) {
         MediaCodec mediaCodec = null;
         try {
             mediaCodec = J(nVar);
@@ -870,8 +870,8 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, k1, OnFailureLi
         return true;
     }
 
-    @Override // z3.l
-    public z3.n x(s sVar) {
+    @Override // z3.k
+    public z3.m x(s sVar) {
         throw new IllegalStateException("This SubtitleParser.Factory doesn't support any formats.");
     }
 
@@ -932,7 +932,7 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, k1, OnFailureLi
     }
 
     @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ r9 z2() {
+    public /* synthetic */ s9 z2() {
         switch (this.a) {
         }
         return null;

@@ -23,7 +23,7 @@ import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public class FileLoadOperation {
     private static final int FINISH_CODE_DEFAULT = 0;
@@ -154,7 +154,7 @@ public class FileLoadOperation {
     public static volatile DispatchQueue filesQueue = new DispatchQueue("writeFileQueue");
     private static final Object lockObject = new Object();
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public interface FileLoadOperationDelegate {
         void didChangedLoadProgress(FileLoadOperation fileLoadOperation, long j3, long j10);
 
@@ -171,7 +171,7 @@ public class FileLoadOperation {
         void saveFilePath(FilePathDatabase.PathData pathData, File file);
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class PreloadRange {
         private long fileOffset;
         private long length;
@@ -182,7 +182,7 @@ public class FileLoadOperation {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class Range {
         private long end;
         private long start;
@@ -197,7 +197,7 @@ public class FileLoadOperation {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class RequestInfo {
         public boolean cancelled;
         public boolean cancelling;
@@ -371,9 +371,9 @@ public class FileLoadOperation {
                 this.writingToFilePartsStream = true;
             }
             DispatchQueue dispatchQueue = filesQueue;
-            b2 b2Var = new b2(4, this, arrayList2);
-            this.fileWriteRunnable = b2Var;
-            dispatchQueue.postRunnable(b2Var);
+            c2 c2Var = new c2(4, this, arrayList2);
+            this.fileWriteRunnable = c2Var;
+            dispatchQueue.postRunnable(c2Var);
             notifyStreamListeners();
         }
     }
@@ -456,10 +456,10 @@ public class FileLoadOperation {
                     requestInfo.cancelling = true;
                     if (runnable == null) {
                         requestInfo.cancelled = true;
-                        y0.n(requestInfo.requestToken, new StringBuilder("cancelRequests cancel "));
+                        z0.n(requestInfo.requestToken, new StringBuilder("cancelRequests cancel "));
                         ConnectionsManager.getInstance(this.currentAccount).cancelRequest(requestInfo.requestToken, true);
                     } else {
-                        requestInfo.whenCancelled = new f0(requestInfo, iArr, runnable, 21);
+                        requestInfo.whenCancelled = new f0(requestInfo, iArr, runnable, 22);
                         iArr[0] = iArr[0] + 1;
                         FileLog.d("cancelRequests cancel " + requestInfo.requestToken + " with callback");
                         ConnectionsManager.getInstance(this.currentAccount).cancelRequest(requestInfo.requestToken, true, new n2(requestInfo, 1));
@@ -1347,7 +1347,7 @@ public class FileLoadOperation {
             sb2.append(" conType=");
             sb2.append(i11);
             sb2.append(" reqId");
-            y0.n(requestInfo.requestToken, sb2);
+            z0.n(requestInfo.requestToken, sb2);
         }
         if (requestInfo == this.priorityRequestInfo) {
             if (BuildVars.DEBUG_VERSION) {
@@ -1479,7 +1479,7 @@ public class FileLoadOperation {
             notifyStreamListeners();
             cleanup();
             if (!this.isPreloadVideoOperation && !z11) {
-                filesQueue.postRunnable(new i2.b1(this, this.cacheIvTemp, this.cacheFileParts, this.cacheFilePreload, this.cacheFileTemp, z10, 2));
+                filesQueue.postRunnable(new i2.c1(this, this.cacheIvTemp, this.cacheFileParts, this.cacheFilePreload, this.cacheFileTemp, z10, 2));
                 this.cacheIvTemp = null;
                 this.cacheFileParts = null;
                 this.cacheFilePreload = null;
@@ -1498,7 +1498,7 @@ public class FileLoadOperation {
                     sb2.append(" of ");
                     sb2.append(this.totalBytesCount);
                     sb2.append(" prefSize=");
-                    y0.n(this.preloadPrefixSize, sb2);
+                    z0.n(this.preloadPrefixSize, sb2);
                 }
             }
             if (this.fileMetadata != null) {
@@ -1557,7 +1557,7 @@ public class FileLoadOperation {
         TLRPC.TL_upload_getCdnFileHashes tL_upload_getCdnFileHashes = new TLRPC.TL_upload_getCdnFileHashes();
         tL_upload_getCdnFileHashes.file_token = this.cdnToken;
         tL_upload_getCdnFileHashes.offset = j3;
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_upload_getCdnFileHashes, new g0(this, 3), null, null, 0, this.datacenterId, 1, true);
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_upload_getCdnFileHashes, new g0(this, 2), null, null, 0, this.datacenterId, 1, true);
     }
 
     private void requestReference(RequestInfo requestInfo) {
@@ -1631,7 +1631,7 @@ public class FileLoadOperation {
     public File getCurrentFile() {
         CountDownLatch countDownLatch = new CountDownLatch(1);
         File[] fileArr = new File[1];
-        Utilities.stageQueue.postRunnable(new f0(this, fileArr, countDownLatch, 20));
+        Utilities.stageQueue.postRunnable(new f0(this, fileArr, countDownLatch, 21));
         try {
             countDownLatch.await();
         } catch (Exception e) {
@@ -2526,7 +2526,7 @@ public class FileLoadOperation {
                                 sb2.append(" conType=");
                                 sb2.append(i13);
                                 sb2.append(" priority=");
-                                y0.n(fileLoadOperation.priority, sb2);
+                                z0.n(fileLoadOperation.priority, sb2);
                             }
                             AndroidUtilities.runOnUIThread(new m2(fileLoadOperation, sendRequestSync, 3));
                             fileLoadOperation.requestsCount++;
@@ -3080,7 +3080,7 @@ public class FileLoadOperation {
                         sb3.append(" final = ");
                         sb3.append(this.cacheFileFinal);
                         sb3.append(" priority");
-                        y0.n(this.priority, sb3);
+                        z0.n(this.priority, sb3);
                     }
                 }
                 if (str2 != null) {
@@ -3147,7 +3147,7 @@ public class FileLoadOperation {
                     return r72;
                 }
                 this.started = z11;
-                Utilities.stageQueue.postRunnable(new b2(3, this, zArr2));
+                Utilities.stageQueue.postRunnable(new c2(3, this, zArr2));
             } else {
                 z11 = true;
                 this.started = true;

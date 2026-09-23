@@ -24,7 +24,7 @@ import v7.v7;
 import w7.o6;
 import w7.q7;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public class z0 extends TextView implements u0.k {
     public final e2.c a;
@@ -32,7 +32,7 @@ public class z0 extends TextView implements u0.k {
     public final y c;
     public t d;
     public boolean e;
-    public k2.c0 f;
+    public k2.b0 f;
     public Future h;
 
     public z0(Context context, AttributeSet attributeSet) {
@@ -137,7 +137,7 @@ public class z0 extends TextView implements u0.k {
             if (i10 >= 28) {
                 this.f = new y0(this);
             } else if (i10 >= 26) {
-                this.f = new k2.c0(this, 4);
+                this.f = new k2.b0(this, 4);
             }
         }
         return this.f;

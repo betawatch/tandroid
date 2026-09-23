@@ -10,12 +10,12 @@ import android.view.WindowManager;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.Components.RadialProgressView;
-import org.telegram.ui.bo;
 import org.telegram.ui.id;
 import org.telegram.ui.ld;
-import org.telegram.ui.wo;
+import org.telegram.ui.so;
+import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class n extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -51,10 +51,10 @@ public final class n extends AnimatorListenerAdapter {
                 }
                 break;
             case 25:
-                org.telegram.ui.Cells.eb ebVar = (org.telegram.ui.Cells.eb) this.c;
-                AnimatorSet animatorSet3 = ebVar.f;
+                org.telegram.ui.Cells.fb fbVar = (org.telegram.ui.Cells.fb) this.c;
+                AnimatorSet animatorSet3 = fbVar.f;
                 if (animatorSet3 != null && animatorSet3.equals(animator)) {
-                    ebVar.f = null;
+                    fbVar.f = null;
                     break;
                 }
                 break;
@@ -62,15 +62,15 @@ public final class n extends AnimatorListenerAdapter {
                 ((ld) this.c).n = null;
                 break;
             case 28:
-                bo boVar = (bo) this.c;
-                AnimatorSet animatorSet4 = boVar.H0;
+                xn xnVar = (xn) this.c;
+                AnimatorSet animatorSet4 = xnVar.H0;
                 if (animatorSet4 != null && animatorSet4.equals(animator)) {
-                    boVar.H0 = null;
+                    xnVar.H0 = null;
                     break;
                 }
                 break;
             case 29:
-                ((wo) this.c).h = null;
+                ((so) this.c).h = null;
                 break;
             default:
                 super.onAnimationCancel(animator);
@@ -115,7 +115,7 @@ public final class n extends AnimatorListenerAdapter {
                 jc jcVar = (jc) this.c;
                 jcVar.J0.unlock();
                 jcVar.e0 = this.b ? jcVar.w.c : 0.0f;
-                f6 currentPeerView = jcVar.n0.getCurrentPeerView();
+                e6 currentPeerView = jcVar.n0.getCurrentPeerView();
                 if (currentPeerView != null) {
                     currentPeerView.invalidate();
                 }
@@ -192,37 +192,37 @@ public final class n extends AnimatorListenerAdapter {
                 break;
             case 9:
                 if (!this.b) {
-                    ((ci.x3) this.c).I.setVisibility(8);
+                    ((ci.w3) this.c).I.setVisibility(8);
                     break;
                 }
                 break;
             case 10:
                 if (!this.b) {
-                    ((ci.u4) this.c).b.setVisibility(8);
+                    ((ci.t4) this.c).b.setVisibility(8);
                     break;
                 }
                 break;
             case 11:
-                ci.r6 r6Var = (ci.r6) this.c;
+                ci.q6 q6Var = (ci.q6) this.c;
                 if (!this.b) {
-                    r6Var.Z1.setVisibility(8);
-                    r6Var.Z1.n();
+                    q6Var.Z1.setVisibility(8);
+                    q6Var.Z1.n();
                     break;
                 }
                 break;
             case 12:
-                ci.z9 z9Var = (ci.z9) this.c;
+                ci.w9 w9Var = (ci.w9) this.c;
                 if (this.b) {
-                    z9Var.setVisibility(8);
+                    w9Var.setVisibility(8);
                 }
-                z9Var.c = null;
+                w9Var.c = null;
                 break;
             case 13:
-                ci.oc ocVar = (ci.oc) this.c;
+                ci.lc lcVar = (ci.lc) this.c;
                 if (!this.b) {
-                    ocVar.V0.setVisibility(8);
+                    lcVar.V0.setVisibility(8);
                 }
-                ocVar.f2 = null;
+                lcVar.f2 = null;
                 break;
             case 14:
                 ei.k3 k3Var = (ei.k3) this.c;
@@ -269,35 +269,35 @@ public final class n extends AnimatorListenerAdapter {
                 f1Var.setIconColor(i0.a.d(f7, -1, -9194260));
                 break;
             case 19:
-                org.telegram.ui.h4 h4Var = (org.telegram.ui.h4) this.c;
+                org.telegram.ui.i4 i4Var = (org.telegram.ui.i4) this.c;
                 boolean z16 = this.b;
                 float f10 = z16 ? 1.0f : 0.0f;
-                h4Var.Y0 = f10;
-                h4Var.q0.setTranslationY(((1.0f - f10) * AndroidUtilities.dp(51.0f)) + h4Var.p0);
+                i4Var.Y0 = f10;
+                i4Var.q0.setTranslationY(((1.0f - f10) * AndroidUtilities.dp(51.0f)) + i4Var.p0);
                 if (!z16) {
-                    h4Var.q0.setVisibility(8);
+                    i4Var.q0.setVisibility(8);
                     break;
                 }
                 break;
             case 20:
-                org.telegram.ui.c5 c5Var = (org.telegram.ui.c5) this.c;
+                org.telegram.ui.d5 d5Var = (org.telegram.ui.d5) this.c;
                 if (!this.b) {
-                    c5Var.setVisibility(4);
-                    com.google.firebase.messaging.m mVar3 = ((org.telegram.ui.r4) c5Var).G;
+                    d5Var.setVisibility(4);
+                    com.google.firebase.messaging.m mVar3 = ((org.telegram.ui.s4) d5Var).G;
                     if (mVar3.a) {
                         mVar3.a = false;
-                        if (((org.telegram.ui.r4) mVar3.d).getParent() != null) {
-                            ((WindowManager) mVar3.c).removeView((org.telegram.ui.r4) mVar3.d);
+                        if (((org.telegram.ui.s4) mVar3.d).getParent() != null) {
+                            ((WindowManager) mVar3.c).removeView((org.telegram.ui.s4) mVar3.d);
                         }
-                        org.telegram.ui.r4 r4Var = (org.telegram.ui.r4) mVar3.d;
-                        r4Var.E = true;
-                        org.telegram.ui.z4 z4Var = r4Var.y;
-                        if (z4Var != null) {
-                            if (z4Var.g) {
-                                z4Var.g = false;
-                                z4Var.b.removeObserver(z4Var.a, z4Var.e);
+                        org.telegram.ui.s4 s4Var = (org.telegram.ui.s4) mVar3.d;
+                        s4Var.E = true;
+                        org.telegram.ui.a5 a5Var = s4Var.y;
+                        if (a5Var != null) {
+                            if (a5Var.g) {
+                                a5Var.g = false;
+                                a5Var.b.removeObserver(a5Var.a, a5Var.e);
                             }
-                            r4Var.y = null;
+                            s4Var.y = null;
                         }
                         mVar3.d = null;
                         ((ViewGroup) mVar3.b).requestDisallowInterceptTouchEvent(false);
@@ -352,12 +352,12 @@ public final class n extends AnimatorListenerAdapter {
                 }
                 break;
             case 25:
-                org.telegram.ui.Cells.eb ebVar = (org.telegram.ui.Cells.eb) this.c;
-                AnimatorSet animatorSet3 = ebVar.f;
+                org.telegram.ui.Cells.fb fbVar = (org.telegram.ui.Cells.fb) this.c;
+                AnimatorSet animatorSet3 = fbVar.f;
                 if (animatorSet3 != null && animatorSet3.equals(animator)) {
-                    ebVar.f = null;
+                    fbVar.f = null;
                     if (!this.b) {
-                        ebVar.setBackgroundColor(0);
+                        fbVar.setBackgroundColor(0);
                         break;
                     }
                 }
@@ -378,26 +378,26 @@ public final class n extends AnimatorListenerAdapter {
                 }
                 break;
             case 28:
-                bo boVar = (bo) this.c;
-                AnimatorSet animatorSet4 = boVar.H0;
+                xn xnVar = (xn) this.c;
+                AnimatorSet animatorSet4 = xnVar.H0;
                 if (animatorSet4 != null && animatorSet4.equals(animator)) {
                     if (!this.b) {
-                        boVar.G0.setVisibility(4);
+                        xnVar.G0.setVisibility(4);
                         break;
                     } else {
-                        (boVar.C0 ? boVar.D0 : boVar.B0).setVisibility(4);
+                        (xnVar.C0 ? xnVar.D0 : xnVar.B0).setVisibility(4);
                         break;
                     }
                 }
                 break;
             default:
-                wo woVar = (wo) this.c;
-                if (woVar.h != null && (radialProgressView2 = woVar.n) != null) {
+                so soVar = (so) this.c;
+                if (soVar.h != null && (radialProgressView2 = soVar.n) != null) {
                     if (!this.b) {
                         radialProgressView2.setVisibility(4);
-                        woVar.f.setVisibility(4);
+                        soVar.f.setVisibility(4);
                     }
-                    woVar.h = null;
+                    soVar.h = null;
                     break;
                 }
                 break;

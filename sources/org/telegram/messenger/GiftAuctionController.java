@@ -15,7 +15,7 @@ import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public class GiftAuctionController extends BaseController {
     private static volatile GiftAuctionController[] Instance = new GiftAuctionController[4];
@@ -26,7 +26,7 @@ public class GiftAuctionController extends BaseController {
     private final LongSparseArray<Boolean> upgrades;
     private boolean wasRequestedActiveAuctions;
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class Auction {
         private int approximatedMyPlace;
         public TL_stars.StarGiftAuctionState auctionState;
@@ -40,7 +40,7 @@ public class GiftAuctionController extends BaseController {
         public final long giftId;
         public ArrayList<TL_stars.StarGiftAttribute> previewAttributes;
 
-        /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+        /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
         public enum BidStatus {
             WINNING,
             OUTBID,
@@ -236,7 +236,7 @@ public class GiftAuctionController extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class AuctionInternal {
         private ArrayList<TL_stars.TL_StarGiftAuctionAcquiredGift> acquiredGifts;
         public final long giftId;
@@ -264,12 +264,12 @@ public class GiftAuctionController extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public interface OnActiveAuctionsUpdateListeners {
         void onActiveAuctionsUpdate(List<Auction> list);
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public interface OnAuctionUpdateListener {
         void onUpdate(Auction auction);
     }
@@ -386,7 +386,7 @@ public class GiftAuctionController extends BaseController {
     }
 
     public static boolean hasAllAttributes(ArrayList<TL_stars.StarGiftAttribute> arrayList) {
-        return (yh.u5.l(arrayList, TL_stars.starGiftAttributeModel.class) == null || yh.u5.l(arrayList, TL_stars.starGiftAttributePattern.class) == null || yh.u5.l(arrayList, TL_stars.starGiftAttributeBackdrop.class) == null) ? false : true;
+        return (yh.t5.l(arrayList, TL_stars.starGiftAttributeModel.class) == null || yh.t5.l(arrayList, TL_stars.starGiftAttributePattern.class) == null || yh.t5.l(arrayList, TL_stars.starGiftAttributeBackdrop.class) == null) ? false : true;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -470,7 +470,7 @@ public class GiftAuctionController extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void lambda$sendBid$6(Utilities.Callback2 callback2, long j3, xh.l lVar, long j10) {
-        if (yh.u5.y(this.currentAccount, false).e) {
+        if (yh.t5.y(this.currentAccount, false).e) {
             sendBid(j3, lVar, j10, callback2);
         } else if (callback2 != null) {
             callback2.run(Boolean.FALSE, "NO_BALANCE");
@@ -486,7 +486,7 @@ public class GiftAuctionController extends BaseController {
     public /* synthetic */ void lambda$sendBid$8(AuctionInternal auctionInternal, Utilities.Callback2 callback2, TLRPC.payments_PaymentResult payments_paymentresult, TLRPC.TL_error tL_error) {
         auctionInternal.pendingBid = false;
         if (payments_paymentresult instanceof TLRPC.TL_payments_paymentResult) {
-            Utilities.stageQueue.postRunnable(new b2(11, this, (TLRPC.TL_payments_paymentResult) payments_paymentresult));
+            Utilities.stageQueue.postRunnable(new c2(11, this, (TLRPC.TL_payments_paymentResult) payments_paymentresult));
             callback2.run(Boolean.TRUE, null);
         } else if (tL_error != null) {
             callback2.run(Boolean.FALSE, tL_error.text);
@@ -579,7 +579,7 @@ public class GiftAuctionController extends BaseController {
         TL_payments.TL_getStarGiftAuctionState tL_getStarGiftAuctionState = new TL_payments.TL_getStarGiftAuctionState();
         tL_getStarGiftAuctionState.auction = inputStarGiftAuction;
         tL_getStarGiftAuctionState.version = 0;
-        return getConnectionsManager().sendRequestTyped(tL_getStarGiftAuctionState, new a(), new d1(1, this, callback2));
+        return getConnectionsManager().sendRequestTyped(tL_getStarGiftAuctionState, new a(), new e1(1, this, callback2));
     }
 
     private void subscribeToGiftAuctionStateInternal(long j3) {
@@ -643,7 +643,7 @@ public class GiftAuctionController extends BaseController {
         if (auction != null) {
             callback2.run(auction, null);
         } else {
-            requestGiftAuctionById(j3, new ph(this, callback2, j3, 2));
+            requestGiftAuctionById(j3, new oh(this, callback2, j3, 2));
         }
     }
 
@@ -685,7 +685,7 @@ public class GiftAuctionController extends BaseController {
     public void requestUserAuctions() {
         TL_payments.TL_getStarGiftActiveAuctions tL_getStarGiftActiveAuctions = new TL_payments.TL_getStarGiftActiveAuctions();
         tL_getStarGiftActiveAuctions.hash = calculateUserAuctionsHash();
-        getConnectionsManager().sendRequestTyped(tL_getStarGiftActiveAuctions, new a(), new me(this, 3));
+        getConnectionsManager().sendRequestTyped(tL_getStarGiftActiveAuctions, new a(), new le(this, 3));
     }
 
     public void sendBid(long j3, xh.l lVar, long j10, Utilities.Callback2<Boolean, String> callback2) {
@@ -694,8 +694,8 @@ public class GiftAuctionController extends BaseController {
             callback2.run(Boolean.FALSE, null);
             return;
         }
-        if (!yh.u5.y(this.currentAccount, false).e) {
-            yh.u5.y(this.currentAccount, false).r(new t2(this, callback2, j3, lVar, j10));
+        if (!yh.t5.y(this.currentAccount, false).e) {
+            yh.t5.y(this.currentAccount, false).r(new t2(this, callback2, j3, lVar, j10));
             return;
         }
         boolean hasBid = auctionInternal.hasBid();

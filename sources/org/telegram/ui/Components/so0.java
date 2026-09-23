@@ -6,25 +6,25 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class so0 extends FrameLayout {
-    public final /* synthetic */ cf a;
+    public final /* synthetic */ ef a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public so0(cf cfVar, Context context) {
+    public so0(ef efVar, Context context) {
         super(context);
-        this.a = cfVar;
+        this.a = efVar;
     }
 
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        cf cfVar = this.a;
-        View contentView = cfVar.getContentView();
+        ef efVar = this.a;
+        View contentView = efVar.getContentView();
         int[] iArr = new int[2];
         contentView.getLocationInWindow(iArr);
-        iArr[0] = iArr[0] + cfVar.E;
-        iArr[1] = iArr[1] + cfVar.F;
+        iArr[0] = iArr[0] + efVar.E;
+        iArr[1] = iArr[1] + efVar.F;
         getLocationInWindow(new int[2]);
         if (motionEvent.getAction() != 0 || motionEvent.getX() > iArr[0]) {
             if (motionEvent.getX() < contentView.getWidth() + iArr[0] && motionEvent.getY() > iArr[1]) {
@@ -34,9 +34,9 @@ public final class so0 extends FrameLayout {
                 }
             }
         }
-        if (!cfVar.A && !cfVar.D) {
-            cfVar.D = true;
-            cfVar.l(new o1.k[0]);
+        if (!efVar.A && !efVar.D) {
+            efVar.D = true;
+            efVar.l(new o1.k[0]);
         }
         return true;
     }

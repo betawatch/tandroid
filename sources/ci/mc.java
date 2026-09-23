@@ -1,55 +1,44 @@
 package ci;
 
-import android.view.ScaleGestureDetector;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.e91;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class mc extends ScaleGestureDetector.SimpleOnScaleGestureListener {
-    public final /* synthetic */ nc a;
+public final /* synthetic */ class mc implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ wc b;
 
-    public mc(nc ncVar) {
-        this.a = ncVar;
+    public /* synthetic */ mc(wc wcVar, int i10) {
+        this.a = i10;
+        this.b = wcVar;
     }
 
-    @Override // android.view.ScaleGestureDetector.SimpleOnScaleGestureListener, android.view.ScaleGestureDetector.OnScaleGestureListener
-    public final boolean onScale(ScaleGestureDetector scaleGestureDetector) {
-        rb rbVar;
-        nc ncVar = this.a;
-        oc ocVar = ncVar.E0;
-        if (!ncVar.A0 || (rbVar = ocVar.B0) == null || ocVar.f0 != 0 || rbVar.s || ocVar.A0.getFilledProgress() >= 1.0f) {
-            return false;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                wc wcVar = this.b;
+                uc ucVar = wcVar.M;
+                if (ucVar != null) {
+                    long j3 = ucVar.a;
+                    if (j3 > 0) {
+                        wcVar.H = j3;
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                pc pcVar = this.b.a;
+                if (pcVar != null) {
+                    pcVar.f0();
+                    break;
+                }
+                break;
+            default:
+                pc pcVar2 = this.b.a;
+                if (pcVar2 != null) {
+                    pcVar2.s();
+                    break;
+                }
+                break;
         }
-        float scaleFactor = ocVar.T1 + ((scaleGestureDetector.getScaleFactor() - 1.0f) * 0.75f);
-        ocVar.T1 = scaleFactor;
-        ocVar.T1 = Utilities.clamp(scaleFactor, 1.0f, 0.0f);
-        ocVar.B0.setZoom(ocVar.T1);
-        e91 e91Var = ocVar.V0;
-        if (e91Var != null) {
-            e91Var.b(ocVar.T1, false);
-        }
-        ocVar.j0(true);
-        return true;
-    }
-
-    @Override // android.view.ScaleGestureDetector.SimpleOnScaleGestureListener, android.view.ScaleGestureDetector.OnScaleGestureListener
-    public final boolean onScaleBegin(ScaleGestureDetector scaleGestureDetector) {
-        nc ncVar = this.a;
-        oc ocVar = ncVar.E0;
-        if (ocVar.B0 == null || ocVar.f0 != 0 || ocVar.K0) {
-            return false;
-        }
-        ncVar.A0 = true;
-        return super.onScaleBegin(scaleGestureDetector);
-    }
-
-    @Override // android.view.ScaleGestureDetector.SimpleOnScaleGestureListener, android.view.ScaleGestureDetector.OnScaleGestureListener
-    public final void onScaleEnd(ScaleGestureDetector scaleGestureDetector) {
-        nc ncVar = this.a;
-        ncVar.A0 = false;
-        ncVar.E0.f(false);
-        oc.c(ncVar.E0);
-        super.onScaleEnd(scaleGestureDetector);
     }
 }

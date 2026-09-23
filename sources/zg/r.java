@@ -2,11 +2,11 @@ package zg;
 
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.ui.bo;
+import org.telegram.ui.xn;
 import w7.x5;
-import yh.f2;
+import yh.e2;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r implements Runnable {
     public final /* synthetic */ int a;
@@ -28,9 +28,9 @@ public final /* synthetic */ class r implements Runnable {
                 tVar.e = tVar.b();
                 int i10 = tVar.f;
                 int i11 = tVar.h;
-                bo boVar = tVar.a;
+                xn xnVar = tVar.a;
                 if (tVar.b == null) {
-                    s sVar = new s((boVar.getUserConfig().getClientUserId() > boVar.a() ? 1 : (boVar.getUserConfig().getClientUserId() == boVar.a() ? 0 : -1)) == 0 ? 3 : 0, boVar.getCurrentAccount(), tVar.getContext(), tVar.a, boVar.getResourceProvider());
+                    s sVar = new s((xnVar.getUserConfig().getClientUserId() > xnVar.a() ? 1 : (xnVar.getUserConfig().getClientUserId() == xnVar.a() ? 0 : -1)) == 0 ? 3 : 0, xnVar.getCurrentAccount(), tVar.getContext(), tVar.a, xnVar.getResourceProvider());
                     sVar.l1 = 1.0f;
                     sVar.setWillNotDraw(false);
                     tVar.b = sVar;
@@ -41,7 +41,7 @@ public final /* synthetic */ class r implements Runnable {
                         i11 = 0;
                     }
                     sVar.setPadding(dp, dp2, dp3 + i11, AndroidUtilities.dp(i10));
-                    tVar.b.setDelegate(new f2(tVar));
+                    tVar.b.setDelegate(new e2(tVar));
                     tVar.b.setClipChildren(false);
                     tVar.b.setClipToPadding(false);
                     tVar.addView(tVar.b, x5.e(-2, i10 + 70, 5));
@@ -53,7 +53,7 @@ public final /* synthetic */ class r implements Runnable {
                     break;
                 } else {
                     tVar.x = true;
-                    tVar.b.p(tVar.e, boVar.Z7, true);
+                    tVar.b.p(tVar.e, xnVar.Z7, true);
                     tVar.b.r(false);
                     break;
                 }

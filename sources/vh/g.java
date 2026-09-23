@@ -13,17 +13,17 @@ import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.RichMessageLayout;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.Components.j50;
-import org.telegram.ui.t51;
+import org.telegram.ui.Components.k50;
+import org.telegram.ui.l51;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class g {
     public static HashMap n;
     public final double a;
     public final double b;
     public final int c;
-    public final t51 d;
+    public final l51 d;
     public final e e;
     public f f;
     public final int g;
@@ -34,19 +34,19 @@ public final class g {
     public int l = 0;
     public final d m = new d(this, 0);
 
-    public g(int i10, t51 t51Var, int i11, int i12) {
+    public g(int i10, l51 l51Var, int i11, int i12) {
         double d = 1.0d / ((int) AndroidUtilities.screenRefreshRate);
         this.a = d;
         this.b = d * 4.0d;
         this.c = i10;
         this.g = i11;
         this.h = i12;
-        this.d = t51Var;
-        e eVar = new e(this, t51Var.getContext());
+        this.d = l51Var;
+        e eVar = new e(this, l51Var.getContext());
         this.e = eVar;
-        eVar.setSurfaceTextureListener(new j50(this, 4));
+        eVar.setSurfaceTextureListener(new k50(this, 4));
         eVar.setOpaque(false);
-        t51Var.addView(eVar);
+        l51Var.addView(eVar);
     }
 
     public static g d(int i10, View view, ViewGroup viewGroup) {
@@ -75,9 +75,9 @@ public final class g {
             }
             HashMap hashMap = n;
             Integer valueOf = Integer.valueOf(i10);
-            t51 t51Var = new t51(viewGroup.getContext(), 11);
-            viewGroup.addView(t51Var);
-            g gVar2 = new g(i10, t51Var, min, min);
+            l51 l51Var = new l51(viewGroup.getContext(), 11);
+            viewGroup.addView(l51Var);
+            g gVar2 = new g(i10, l51Var, min, min);
             hashMap.put(valueOf, gVar2);
             gVar = gVar2;
         }

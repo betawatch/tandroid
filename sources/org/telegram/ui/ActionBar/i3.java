@@ -9,34 +9,34 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowInsets;
 import android.view.WindowManager;
-import ci.eb;
+import ci.bb;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class i3 extends Dialog {
-    public final u3 a;
+    public final t3 a;
     public final h3 b;
-    public final eb c;
+    public final bb c;
     public final Paint d;
     public boolean e;
 
-    public i3(u3 u3Var) {
-        super(u3Var.getWindowView().getContext(), R.style.TransparentDialog);
+    public i3(t3 t3Var) {
+        super(t3Var.getWindowView().getContext(), R.style.TransparentDialog);
         Paint paint = new Paint(1);
         this.d = paint;
-        this.a = u3Var;
-        v3 windowView = u3Var.getWindowView();
-        eb ebVar = new eb(this, getContext(), 8);
-        this.c = ebVar;
-        paint.setColor(i6.w0(null, i6.a7, false));
+        this.a = t3Var;
+        u3 windowView = t3Var.getWindowView();
+        bb bbVar = new bb(this, getContext(), 8);
+        this.c = bbVar;
+        paint.setColor(h6.w0(null, h6.a7, false));
         h3 h3Var = new h3(windowView);
         this.b = h3Var;
         setContentView(h3Var, new ViewGroup.LayoutParams(-1, -1));
-        h3Var.addView(ebVar, w7.x5.e(-1, -2, 80));
+        h3Var.addView(bbVar, w7.x5.e(-1, -2, 80));
         h3Var.setClipToPadding(false);
     }
 
@@ -45,14 +45,14 @@ public final class i3 extends Dialog {
         return Build.VERSION.SDK_INT >= 30 ? WindowInsets.CONSUMED : windowInsets.consumeSystemWindowInsets();
     }
 
-    public static void b(u3 u3Var) {
+    public static void b(t3 t3Var) {
         n2 U = LaunchActivity.U();
         if (U == null) {
             return;
         }
-        if (AndroidUtilities.isTablet() || u3Var.b() || AndroidUtilities.hasDialogOnTop(U)) {
-            i3 i3Var = new i3(u3Var);
-            if (u3Var.c(i3Var)) {
+        if (AndroidUtilities.isTablet() || t3Var.b() || AndroidUtilities.hasDialogOnTop(U)) {
+            i3 i3Var = new i3(t3Var);
+            if (t3Var.c(i3Var)) {
                 h3 h3Var = i3Var.b;
                 View view = (View) h3Var.a;
                 AndroidUtilities.removeFromParent(view);

@@ -1,43 +1,53 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import android.text.SpannableStringBuilder;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class kr extends h51 {
-    public static final /* synthetic */ int a = 0;
+public final /* synthetic */ class kr implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    static {
-        h51.setup(new kr());
+    public /* synthetic */ kr(Object obj, Object obj2, Object obj3, long j3, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.d = obj2;
+        this.e = obj3;
+        this.b = j3;
     }
 
-    @Override // org.telegram.ui.Components.h51
-    public final void bindView(View view, i51 i51Var, boolean z10, w51 w51Var, e61 e61Var) {
-        org.telegram.ui.Cells.c9 c9Var = (org.telegram.ui.Cells.c9) view;
-        c9Var.c(i51Var.l, i51Var.n, !i51Var.j);
-        vh.o oVar = c9Var.a;
-        if (i51Var.l instanceof SpannableStringBuilder) {
-            oVar.setTextSize(1, 13.0f);
-            oVar.setTranslationY(AndroidUtilities.dp(2.0f));
-            oVar.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MONO));
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                nr.S((nr) this.c, (Context) this.d, (ci.d) this.e, this.b);
+                break;
+            case 1:
+                org.telegram.ui.ry ryVar = (org.telegram.ui.ry) this.c;
+                MessagesController.DialogFilter dialogFilter = (MessagesController.DialogFilter) this.d;
+                TLRPC.Dialog dialog = (TLRPC.Dialog) this.e;
+                ryVar.finishPreviewFragment();
+                AndroidUtilities.runOnUIThread(new i21(ryVar, dialogFilter, dialog, this.b, 1), 100L);
+                break;
+            default:
+                tg.b0.P((tg.b0) this.c, (TL_stories.PrepaidGiveaway) this.d, this.b, (org.telegram.ui.ActionBar.n2) this.e);
+                break;
         }
     }
 
-    @Override // org.telegram.ui.Components.h51
-    public final View createView(Context context, ll0 ll0Var, int i10, int i11, org.telegram.ui.ActionBar.e6 e6Var) {
-        org.telegram.ui.Cells.c9 c9Var = new org.telegram.ui.Cells.c9(context, e6Var, true);
-        c9Var.setBackgroundColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.d6, e6Var));
-        Drawable mutate = context.getDrawable(R.drawable.msg_copy).mutate();
-        mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.L6, e6Var), PorterDuff.Mode.MULTIPLY));
-        c9Var.setImage(mutate);
-        c9Var.setImageClickListener(new ai.d0(this, context, c9Var, 19));
-        return c9Var;
+    public /* synthetic */ kr(tg.b0 b0Var, TL_stories.PrepaidGiveaway prepaidGiveaway, long j3, org.telegram.ui.ActionBar.n2 n2Var) {
+        this.a = 2;
+        this.c = b0Var;
+        this.d = prepaidGiveaway;
+        this.b = j3;
+        this.e = n2Var;
     }
 }

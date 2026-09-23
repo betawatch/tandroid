@@ -5,10 +5,10 @@ import android.os.Handler;
 import android.os.SystemClock;
 import android.view.Choreographer;
 import java.util.ArrayList;
-import org.telegram.ui.Components.v01;
-import org.telegram.ui.Components.x01;
+import org.telegram.ui.Components.u01;
+import org.telegram.ui.Components.w01;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class a implements Choreographer.FrameCallback {
     public final /* synthetic */ int a;
@@ -114,13 +114,13 @@ public final class a implements Choreographer.FrameCallback {
                 }
                 break;
             default:
-                v01 v01Var = ((x01) this.b).a;
-                if (v01Var != null) {
-                    Handler handler = v01Var.getHandler();
-                    if (handler != null && v01Var.b.get()) {
+                u01 u01Var = ((w01) this.b).a;
+                if (u01Var != null) {
+                    Handler handler = u01Var.getHandler();
+                    if (handler != null && u01Var.b.get()) {
                         handler.sendMessage(handler.obtainMessage(0));
                     }
-                    if (((x01) this.b).a.S) {
+                    if (((w01) this.b).a.S) {
                         Choreographer.getInstance().postFrameCallback(this);
                         break;
                     }

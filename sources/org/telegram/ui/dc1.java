@@ -1,86 +1,190 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import java.util.ArrayList;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class dc1 extends org.telegram.ui.Cells.qa {
-    public final /* synthetic */ int j3 = 1;
-    public final /* synthetic */ Object k3;
+public final /* synthetic */ class dc1 implements ImageReceiver.ImageReceiverDelegate, org.telegram.ui.Components.bl0, org.telegram.ui.Components.j81, org.telegram.ui.ActionBar.a2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ od1 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dc1(Context context, org.telegram.ui.ActionBar.n2 n2Var, ArrayList arrayList, ArrayList arrayList2, org.telegram.ui.ActionBar.a3 a3Var) {
-        super(context, n2Var, 2, arrayList, arrayList2);
-        this.k3 = a3Var;
+    public /* synthetic */ dc1(od1 od1Var, int i10) {
+        this.a = i10;
+        this.b = od1Var;
     }
 
-    @Override // org.telegram.ui.Cells.qa
-    public final void A1() {
-        Runnable runnable;
-        switch (this.j3) {
-            case 0:
-                ((gc1) this.k3).e.A0(false);
-                break;
-            default:
-                runnable = ((org.telegram.ui.ActionBar.a3) this.k3).a.dismissRunnable;
-                runnable.run();
-                break;
+    @Override // org.telegram.ui.Components.bl0
+    public void c(float f7, float f10, int i10, View view) {
+        if (view instanceof org.telegram.ui.Cells.t1) {
+            org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) view;
+            boolean i32 = t1Var.i3(f7);
+            od1 od1Var = this.b;
+            if (!i32) {
+                od1Var.Y0(2, true);
+            } else if (t1Var.getMessageObject().isOutOwner()) {
+                od1Var.Y0(3, true);
+            } else {
+                od1Var.Y0(1, true);
+            }
         }
     }
 
-    @Override // org.telegram.ui.Cells.qa
-    public void z1(org.telegram.ui.ActionBar.h6 h6Var) {
-        CharSequence[] charSequenceArr;
-        boolean z10;
-        int[] iArr;
-        switch (this.j3) {
-            case 0:
-                gc1 gc1Var = ((gc1) this.k3).e.a;
-                ThemeActivity themeActivity = gc1Var.e;
-                if (themeActivity.getParentActivity() != null) {
-                    if ((h6Var.F == null || h6Var.U) && themeActivity.f != 1) {
-                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(themeActivity.getParentActivity());
-                        if (h6Var.b == null) {
-                            charSequenceArr = new CharSequence[]{null, LocaleController.getString("ExportTheme", R.string.ExportTheme)};
-                            iArr = new int[]{0, R.drawable.msg_shareout};
-                            z10 = false;
-                        } else {
-                            TLRPC.TL_theme tL_theme = h6Var.F;
-                            boolean z11 = tL_theme == null || !tL_theme.isDefault;
-                            String string = LocaleController.getString("ShareFile", R.string.ShareFile);
-                            String string2 = LocaleController.getString("ExportTheme", R.string.ExportTheme);
-                            TLRPC.TL_theme tL_theme2 = h6Var.F;
-                            String string3 = (tL_theme2 == null || (!tL_theme2.isDefault && tL_theme2.creator)) ? LocaleController.getString("Edit", R.string.Edit) : null;
-                            TLRPC.TL_theme tL_theme3 = h6Var.F;
-                            boolean z12 = z11;
-                            charSequenceArr = new CharSequence[]{string, string2, string3, (tL_theme3 == null || !tL_theme3.creator) ? null : LocaleController.getString("ThemeSetUrl", R.string.ThemeSetUrl), z11 ? LocaleController.getString("Delete", R.string.Delete) : null};
-                            z10 = z12;
-                            iArr = new int[]{R.drawable.msg_share, R.drawable.msg_shareout, R.drawable.msg_edit, R.drawable.msg_link, R.drawable.msg_delete};
+    @Override // org.telegram.ui.Components.bl0
+    public /* synthetic */ boolean d1(View view) {
+        return false;
+    }
+
+    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
+    public void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
+        od1 od1Var = this.b;
+        if (od1Var.B1 instanceof yi1) {
+            return;
+        }
+        Drawable drawable = imageReceiver.getDrawable();
+        if (!z10 || drawable == null) {
+            return;
+        }
+        oc1 oc1Var = od1Var.a;
+        AndroidUtilities.calcDrawableColor(drawable);
+        oc1Var.b(od1Var.P0(drawable), drawable, Float.valueOf(od1Var.l1));
+        if (!z11 && od1Var.F1 && od1Var.w1 == null) {
+            od1Var.x0.getImageReceiver().setCrossfadeWithOldImage(false);
+            od1Var.i1();
+            od1Var.x0.getImageReceiver().setCrossfadeWithOldImage(true);
+        }
+        od1Var.V0();
+    }
+
+    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
+    public /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
+        org.telegram.messenger.h5.a(this, i10, str, drawable);
+    }
+
+    @Override // org.telegram.ui.Components.j81
+    public void e(int i10, int i11) {
+        od1 od1Var = this.b;
+        if (od1Var.E1) {
+            od1Var.x0.getBackground();
+            float scaleX = od1Var.B0 != null ? (od1Var.x0.getScaleX() - 1.0f) / (od1Var.y1 - 1.0f) : 1.0f;
+            od1Var.x0.setTranslationX(i10 * scaleX);
+            od1Var.x0.setTranslationY(i11 * scaleX);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.a2
+    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        switch (this.a) {
+            case 3:
+                this.b.s0.getActionBarMenuOnItemClick().b(4);
+                break;
+            case 4:
+                this.b.O0(false);
+                break;
+            case 5:
+                od1 od1Var = this.b;
+                org.telegram.ui.ActionBar.f6 f6Var = od1Var.s;
+                if (f6Var.j == 4294967296L) {
+                    f6Var.j = 0L;
+                    f6Var.k = 0L;
+                    f6Var.l = 0L;
+                    f6Var.m = 0L;
+                    od1Var.m1(false);
+                    org.telegram.ui.ActionBar.h6.n1(false, false);
+                }
+                od1Var.v = true;
+                org.telegram.ui.ActionBar.h6.p1(true);
+                od1Var.Y0(2, false);
+                break;
+            case 6:
+                od1 od1Var2 = this.b;
+                org.telegram.ui.ActionBar.f6 f6Var2 = od1Var2.s;
+                if (org.telegram.ui.ActionBar.h6.Z0() && org.telegram.ui.ActionBar.h6.I.i0.d != 0) {
+                    org.telegram.ui.ActionBar.a6 a6Var = f6Var2.y;
+                    f6Var2.j = a6Var.d;
+                    f6Var2.k = a6Var.e;
+                    f6Var2.l = a6Var.f;
+                    f6Var2.m = a6Var.g;
+                    f6Var2.n = a6Var.h;
+                    String str = a6Var.c;
+                    f6Var2.o = str;
+                    float f7 = a6Var.k;
+                    f6Var2.p = f7;
+                    od1Var2.l1 = f7;
+                    if (str == null || "c".equals(str)) {
+                        od1Var2.W0 = null;
+                    } else {
+                        int size = od1Var2.U0.size();
+                        int i11 = 0;
+                        while (true) {
+                            if (i11 < size) {
+                                TLRPC.TL_wallPaper tL_wallPaper = (TLRPC.TL_wallPaper) od1Var2.U0.get(i11);
+                                if (tL_wallPaper.pattern && f6Var2.o.equals(tL_wallPaper.slug)) {
+                                    od1Var2.W0 = tL_wallPaper;
+                                } else {
+                                    i11++;
+                                }
+                            }
                         }
-                        lg.j jVar = new lg.j(12, gc1Var, h6Var);
-                        org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-                        b2Var.P = charSequenceArr;
-                        b2Var.Q = iArr;
-                        b2Var.M = jVar;
-                        themeActivity.showDialog(b2Var);
-                        if (z10) {
-                            b2Var.l(b2Var.N0.size() - 1, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.q7, false), org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.p7, false));
-                            break;
+                    }
+                    od1Var2.v = true;
+                    od1Var2.J0[1].a(od1Var2.W0 != null, true);
+                    od1Var2.m1(false);
+                    org.telegram.ui.ActionBar.h6.n1(false, false);
+                }
+                Drawable background = od1Var2.x0.getBackground();
+                if (background instanceof org.telegram.ui.Components.bc0) {
+                    org.telegram.ui.Components.bc0 bc0Var = (org.telegram.ui.Components.bc0) background;
+                    bc0Var.t(null, 100);
+                    if (org.telegram.ui.ActionBar.h6.I.q()) {
+                        if (od1Var2.l1 < 0.0f) {
+                            od1Var2.x0.getImageReceiver().setGradientBitmap(bc0Var.k);
+                        }
+                        org.telegram.ui.Cells.j0 j0Var = od1Var2.T0;
+                        if (j0Var != null) {
+                            j0Var.setTwoSided(true);
+                        }
+                    } else {
+                        float f10 = od1Var2.l1;
+                        if (f10 < 0.0f) {
+                            od1Var2.l1 = -f10;
                         }
                     }
                 }
+                org.telegram.ui.Cells.j0 j0Var2 = od1Var2.T0;
+                if (j0Var2 != null) {
+                    j0Var2.setProgress(od1Var2.l1);
+                }
+                org.telegram.ui.ActionBar.h6.p1(true);
+                od1Var2.Y0(2, false);
+                break;
+            default:
+                od1 od1Var3 = this.b;
+                org.telegram.ui.ActionBar.f6 f6Var3 = od1Var3.s;
+                if (f6Var3.j == 4294967296L) {
+                    f6Var3.j = 0L;
+                    f6Var3.k = 0L;
+                    f6Var3.l = 0L;
+                    f6Var3.m = 0L;
+                    od1Var3.m1(false);
+                    org.telegram.ui.ActionBar.h6.n1(false, false);
+                }
+                od1Var3.v = true;
+                org.telegram.ui.ActionBar.h6.p1(true);
+                od1Var3.Y0(2, false);
                 break;
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dc1(gc1 gc1Var, Context context, org.telegram.ui.ActionBar.n2 n2Var, int i10, ArrayList arrayList, ArrayList arrayList2) {
-        super(context, n2Var, i10, arrayList, arrayList2);
-        this.k3 = gc1Var;
+    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
+    public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
+        org.telegram.messenger.h5.b(this, imageReceiver);
+    }
+
+    @Override // org.telegram.ui.Components.bl0
+    public /* synthetic */ void r0(View view, float f7, float f10) {
     }
 }

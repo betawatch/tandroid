@@ -1,98 +1,52 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BillingController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.os.Build;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class q91 implements TextWatcher {
-    public boolean a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ EditTextBoldCursor c;
-    public final /* synthetic */ org.telegram.ui.Components.yc0 d;
-    public final /* synthetic */ int[] e;
-    public final /* synthetic */ TextView f;
+public final class q91 extends s4.s0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ra1 b;
 
-    public q91(int i10, EditTextBoldCursor editTextBoldCursor, org.telegram.ui.Components.yc0 yc0Var, int[] iArr, TextView textView) {
-        this.b = i10;
-        this.c = editTextBoldCursor;
-        this.d = yc0Var;
-        this.e = iArr;
-        this.f = textView;
+    public /* synthetic */ q91(ra1 ra1Var, int i10) {
+        this.a = i10;
+        this.b = ra1Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:16:0x00c9  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x00d9  */
-    @Override // android.text.TextWatcher
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void afterTextChanged(Editable editable) {
-        double d;
-        org.telegram.ui.Components.yc0 yc0Var = this.d;
-        int i10 = this.b;
-        EditTextBoldCursor editTextBoldCursor = this.c;
-        if (this.a) {
-            return;
-        }
-        try {
-            d = TextUtils.isEmpty(editable) ? 0.0d : Double.parseDouble(editable.toString());
-            try {
-                double d10 = MessagesController.getInstance(i10).tonStakeddiceStakeAmountMax / 1.0E9d;
-                int[] iArr = this.e;
-                if (d > d10) {
-                    this.a = true;
-                    d = MessagesController.getInstance(i10).tonStakeddiceStakeAmountMax / 1.0E9d;
-                    editTextBoldCursor.setText(Double.toString(d));
-                    editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
-                    int i11 = -iArr[0];
-                    iArr[0] = i11;
-                    AndroidUtilities.shakeViewSpring(yc0Var, i11);
-                } else if (d > 0.0d && d < MessagesController.getInstance(i10).tonStakeddiceStakeAmountMin / 1.0E9d) {
-                    this.a = true;
-                    d = MessagesController.getInstance(i10).tonStakeddiceStakeAmountMin / 1.0E9d;
-                    editTextBoldCursor.setText(Double.toString(d));
-                    editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
-                    int i12 = -iArr[0];
-                    iArr[0] = i12;
-                    AndroidUtilities.shakeViewSpring(yc0Var, i12);
+    @Override // s4.s0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        ah.h hVar;
+        ra1 ra1Var;
+        ah.h hVar2;
+        ra1 ra1Var2;
+        ah.h hVar3;
+        switch (this.a) {
+            case 0:
+                ra1 ra1Var3 = this.b;
+                if (ra1Var3.r0.size() != ra1Var3.s0.size() && !ra1Var3.w0 && ra1Var3.U.N0() > ra1Var3.X.c0 - 20) {
+                    ra1Var3.h0();
                 }
-            } catch (Exception unused) {
-                this.a = true;
-                editTextBoldCursor.setText(d <= 0.0d ? "" : Double.toString(d));
-                editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
-                this.a = false;
-                yc0Var.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(editTextBoldCursor.getText()));
-                TextView textView = this.f;
-                if (d != 0.0d) {
+                if (Build.VERSION.SDK_INT >= 31 && (hVar = ra1Var3.C0) != null) {
+                    hVar.f(i10, i11);
+                    ra1.W(ra1Var3);
+                    break;
                 }
-            }
-        } catch (Exception unused2) {
-            d = 0.0d;
+                break;
+            case 1:
+                if (Build.VERSION.SDK_INT >= 31 && (hVar2 = (ra1Var = this.b).C0) != null) {
+                    hVar2.f(i10, i11);
+                    ra1.W(ra1Var);
+                    break;
+                }
+                break;
+            default:
+                if (Build.VERSION.SDK_INT >= 31 && (hVar3 = (ra1Var2 = this.b).C0) != null) {
+                    hVar3.f(i10, i11);
+                    ra1.W(ra1Var2);
+                    break;
+                }
+                break;
         }
-        this.a = false;
-        yc0Var.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(editTextBoldCursor.getText()));
-        TextView textView2 = this.f;
-        if (d != 0.0d) {
-            textView2.animate().alpha(0.0f).start();
-            textView2.setText("");
-        } else {
-            textView2.animate().alpha(1.0f).start();
-            textView2.setText("≈" + BillingController.getInstance().formatCurrency((long) (MessagesController.getInstance(i10).config.tonUsdRate.get() * d * 100.0d), "USD", 2));
-        }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

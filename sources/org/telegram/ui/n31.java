@@ -1,57 +1,37 @@
 package org.telegram.ui;
 
+import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n31 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ Utilities.Callback c;
+public final class n31 implements q31 {
+    public final /* synthetic */ org.telegram.messenger.video.a a;
+    public final /* synthetic */ org.telegram.ui.Components.xc b;
+    public final /* synthetic */ Context c;
+    public final /* synthetic */ ai.a1 d;
+    public final /* synthetic */ org.telegram.messenger.video.d e;
 
-    public /* synthetic */ n31(yh.u5 u5Var, boolean[] zArr, Utilities.Callback callback) {
-        this.a = 2;
-        this.b = zArr;
-        this.c = callback;
+    public n31(org.telegram.messenger.video.a aVar, org.telegram.ui.Components.xc xcVar, Context context, ai.a1 a1Var, org.telegram.messenger.video.d dVar) {
+        this.a = aVar;
+        this.b = xcVar;
+        this.c = context;
+        this.d = a1Var;
+        this.e = dVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        Utilities.Callback callback;
-        Utilities.Callback callback2;
-        Utilities.Callback callback3;
-        switch (this.a) {
-            case 0:
-                boolean[] zArr = this.b;
-                if (!zArr[0] && (callback = this.c) != null) {
-                    zArr[0] = true;
-                    callback.run(Boolean.TRUE);
-                }
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.sh(29), 220L);
-                break;
-            case 1:
-                boolean[] zArr2 = this.b;
-                if (!zArr2[0] && (callback2 = this.c) != null) {
-                    zArr2[0] = true;
-                    callback2.run(Boolean.FALSE);
-                    break;
-                }
-                break;
-            default:
-                boolean[] zArr3 = this.b;
-                if (!zArr3[0] && (callback3 = this.c) != null) {
-                    callback3.run("cancelled");
-                    zArr3[0] = true;
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.q31
+    public final void a() {
+        AndroidUtilities.runOnUIThread(new j31(this.a, this.b, this.c, this.d, 2), 200L);
     }
 
-    public /* synthetic */ n31(boolean[] zArr, Utilities.Callback callback, int i10) {
-        this.a = i10;
-        this.b = zArr;
-        this.c = callback;
+    @Override // org.telegram.ui.q31
+    public final void b() {
+        AndroidUtilities.runOnUIThread(new by0(19, this.a, this.b), 200L);
+    }
+
+    @Override // org.telegram.ui.q31
+    public final void c() {
+        this.e.run();
     }
 }

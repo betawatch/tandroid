@@ -1,15 +1,15 @@
 package qg;
 
-import ai.k6;
+import ai.j6;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.view.View;
 import android.widget.ImageView;
 import java.util.Iterator;
-import org.telegram.ui.s00;
-import yh.l7;
+import org.telegram.ui.p00;
+import yh.k7;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class n0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -70,7 +70,7 @@ public final class n0 extends AnimatorListenerAdapter {
                 break;
             case 5:
                 super.onAnimationEnd(animator);
-                sg.e eVar = (sg.e) ((k6) this.b).b;
+                sg.e eVar = (sg.e) ((j6) this.b).b;
                 eVar.b.d = 0.0f;
                 eVar.T = null;
                 eVar.h(eVar.I);
@@ -102,20 +102,20 @@ public final class n0 extends AnimatorListenerAdapter {
                 ((xh.h0) this.b).b.w.setVisibility(8);
                 break;
             case 9:
-                yh.r2 r2Var = (yh.r2) this.b;
-                r2Var.E = 1.0f;
-                r2Var.F = -1;
-                yh.q2 q2Var = r2Var.H;
-                if (q2Var != null && (z10 = q2Var.l) && z10) {
-                    q2Var.l = false;
-                    q2Var.b();
+                yh.q2 q2Var = (yh.q2) this.b;
+                q2Var.E = 1.0f;
+                q2Var.F = -1;
+                yh.p2 p2Var = q2Var.H;
+                if (p2Var != null && (z10 = p2Var.l) && z10) {
+                    p2Var.l = false;
+                    p2Var.b();
                 }
-                r2Var.G = null;
+                q2Var.G = null;
                 break;
             case 10:
-                s00 s00Var = ((l7) this.b).c;
-                s00Var.setScaleX(1.0f);
-                s00Var.setScaleY(1.0f);
+                p00 p00Var = ((k7) this.b).c;
+                p00Var.setScaleX(1.0f);
+                p00Var.setScaleY(1.0f);
                 break;
             case 11:
                 ((zg.v) this.b).run();

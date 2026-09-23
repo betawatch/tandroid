@@ -9,8 +9,9 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.UUID;
+import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class s {
     public static final String A0;
@@ -237,7 +238,7 @@ public final class s {
         String str2;
         o oVar;
         if (sVar == null) {
-            return "null";
+            return BuildConfig.BETA_URL;
         }
         int i11 = sVar.e;
         e9.i0 i0Var = sVar.c;

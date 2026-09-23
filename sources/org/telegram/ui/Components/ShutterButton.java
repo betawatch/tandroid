@@ -16,7 +16,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.camera.CameraController;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public class ShutterButton extends View {
     public Drawable a;
@@ -154,7 +154,7 @@ public class ShutterButton extends View {
             setHighlighted(false);
             AndroidUtilities.cancelRunOnUIThread(l7Var);
             if (this.v) {
-                ((rl) this.e).b();
+                ((sl) this.e).b();
             }
         } else if (action == 2) {
             if (x10 >= 0.0f && x10 <= getMeasuredWidth()) {
@@ -163,40 +163,40 @@ public class ShutterButton extends View {
             if (y3 >= 0.0f && y3 <= getMeasuredHeight()) {
                 y3 = 0.0f;
             }
-            rl rlVar = (rl) this.e;
-            ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = rlVar.e;
-            e91 e91Var = chatAttachAlertPhotoLayout.l0;
-            org.telegram.ui.ActionBar.d3 d3Var = rlVar.d;
+            sl slVar = (sl) this.e;
+            ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = slVar.e;
+            d91 d91Var = chatAttachAlertPhotoLayout.l0;
+            org.telegram.ui.ActionBar.d3 d3Var = slVar.d;
             boolean z10 = d3Var.getWidth() < d3Var.getHeight();
             float f7 = z10 ? x10 : y3;
             float f10 = z10 ? y3 : x10;
-            if (rlVar.b || Math.abs(f7) <= Math.abs(f10)) {
+            if (slVar.b || Math.abs(f7) <= Math.abs(f10)) {
                 if (f10 < 0.0f) {
                     boolean z11 = ChatAttachAlertPhotoLayout.q1;
                     chatAttachAlertPhotoLayout.t0(true);
-                    e91Var.b((-f10) / AndroidUtilities.dp(200.0f), true);
-                    rlVar.b = true;
+                    d91Var.b((-f10) / AndroidUtilities.dp(200.0f), true);
+                    slVar.b = true;
                     return true;
                 }
-                if (rlVar.b) {
-                    e91Var.b(0.0f, true);
+                if (slVar.b) {
+                    d91Var.b(0.0f, true);
                 }
                 if (x10 == 0.0f && y3 == 0.0f) {
-                    rlVar.b = false;
+                    slVar.b = false;
                 }
-                if (!rlVar.b) {
+                if (!slVar.b) {
                     if (x10 == 0.0f) {
                     }
                     AndroidUtilities.cancelRunOnUIThread(l7Var);
                     if (this.f == ev0.b) {
                         this.v = false;
                         setHighlighted(false);
-                        rl rlVar2 = (rl) this.e;
-                        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout2 = rlVar2.e;
-                        File file = rlVar2.a;
+                        sl slVar2 = (sl) this.e;
+                        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout2 = slVar2.e;
+                        File file = slVar2.a;
                         if (file != null) {
                             file.delete();
-                            rlVar2.a = null;
+                            slVar2.a = null;
                         }
                         boolean z12 = ChatAttachAlertPhotoLayout.q1;
                         chatAttachAlertPhotoLayout2.l0();

@@ -1,7 +1,7 @@
 package ei;
 
 import ai.c9;
-import ai.n8;
+import ai.o8;
 import android.content.Context;
 import android.text.TextUtils;
 import java.util.ArrayList;
@@ -17,17 +17,17 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.j5;
-import org.telegram.ui.Components.vc;
+import org.telegram.ui.ActionBar.i5;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PasskeysActivity;
 import org.telegram.ui.PrivacySettingsActivity;
-import org.telegram.ui.es0;
+import org.telegram.ui.fu0;
 import org.telegram.ui.m6;
-import org.telegram.ui.mu0;
-import org.telegram.ui.r5;
+import org.telegram.ui.s5;
+import org.telegram.ui.yr0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h1 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -89,14 +89,14 @@ public final /* synthetic */ class h1 implements Utilities.Callback2 {
                     b2VarArr[0] = null;
                 }
                 if (tL_error != null) {
-                    vc.a0(n2Var).d0(tL_error, false);
+                    xc.a0(n2Var).d0(tL_error, false);
                     break;
                 } else if (arrayList != null) {
                     if (arrayList.isEmpty()) {
-                        org.telegram.messenger.y0.o(R.string.CommunityNoChatsToAdd, vc.a0(n2Var), R.raw.info, 36);
+                        org.telegram.messenger.z0.o(R.string.CommunityNoChatsToAdd, xc.a0(n2Var), R.raw.info, 36);
                         break;
                     } else if (arrayList.isEmpty()) {
-                        vc.a0(n2Var).Q(R.raw.info, 36, "").j();
+                        xc.a0(n2Var).Q(R.raw.info, 36, "").j();
                         break;
                     } else {
                         n2Var.showDialog(new fi.k0(n2Var, 0L, arrayList, new r4(n2Var, chat, this.b, 1)));
@@ -105,14 +105,14 @@ public final /* synthetic */ class h1 implements Utilities.Callback2 {
                 }
                 break;
             case 2:
-                org.telegram.ui.c1 c1Var = (org.telegram.ui.c1) this.c;
+                org.telegram.ui.d1 d1Var = (org.telegram.ui.d1) this.c;
                 TLRPC.TL_channels_joinChannel tL_channels_joinChannel = (TLRPC.TL_channels_joinChannel) this.d;
                 TLRPC.Chat chat2 = (TLRPC.Chat) this.e;
                 TLRPC.ChatInviteJoinResult chatInviteJoinResult = (TLRPC.ChatInviteJoinResult) obj;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
                 int i11 = this.b;
                 if (tL_error2 != null) {
-                    AndroidUtilities.runOnUIThread(new c9(c1Var, i11, tL_error2, tL_channels_joinChannel, 9));
+                    AndroidUtilities.runOnUIThread(new c9(d1Var, i11, tL_error2, tL_channels_joinChannel, 9));
                     break;
                 } else {
                     boolean z11 = false;
@@ -140,18 +140,18 @@ public final /* synthetic */ class h1 implements Utilities.Callback2 {
                     if (!z11) {
                         MessagesController.getInstance(i11).generateJoinMessage(chat2.id, true);
                     }
-                    AndroidUtilities.runOnUIThread(new mu0(c1Var, 5));
-                    AndroidUtilities.runOnUIThread(new n8(i11, chat2, 15), 1000L);
+                    AndroidUtilities.runOnUIThread(new fu0(d1Var, 5));
+                    AndroidUtilities.runOnUIThread(new o8(i11, chat2, 15), 1000L);
                     MessagesStorage messagesStorage = MessagesStorage.getInstance(i11);
                     long j10 = chat2.id;
                     messagesStorage.updateDialogsWithDeletedMessages(-j10, j10, new ArrayList<>(), null);
                     break;
                 }
             case 3:
-                org.telegram.ui.Components.e0.Z((org.telegram.ui.Components.e0) this.c, (j5) this.d, this.b, (TLRPC.TL_messages_composeMessageWithAI) this.e, (TLRPC.TL_composedMessageWithAI) obj, (TLRPC.TL_error) obj2);
+                org.telegram.ui.Components.e0.Z((org.telegram.ui.Components.e0) this.c, (i5) this.d, this.b, (TLRPC.TL_messages_composeMessageWithAI) this.e, (TLRPC.TL_composedMessageWithAI) obj, (TLRPC.TL_error) obj2);
                 break;
             case 4:
-                org.telegram.ui.Components.e0.V((org.telegram.ui.Components.e0) this.c, (j5) this.d, this.b, (TLRPC.TL_messages_composeRichMessageWithAI) this.e, (TLRPC.TL_composedRichMessageWithAI) obj, (TLRPC.TL_error) obj2);
+                org.telegram.ui.Components.e0.V((org.telegram.ui.Components.e0) this.c, (i5) this.d, this.b, (TLRPC.TL_messages_composeRichMessageWithAI) this.e, (TLRPC.TL_composedRichMessageWithAI) obj, (TLRPC.TL_error) obj2);
                 break;
             case 5:
                 boolean[] zArr = (boolean[]) this.c;
@@ -190,14 +190,14 @@ public final /* synthetic */ class h1 implements Utilities.Callback2 {
                         alertDialog$Builder.a.R = LocaleController.getString(R.string.PasskeyNoOptionsTitle);
                         alertDialog$Builder.a.T = LocaleController.getString(R.string.PasskeyNoOptionsText);
                         alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
-                        alertDialog$Builder.a.setOnDismissListener(new r5(f3Var, 10));
+                        alertDialog$Builder.a.setOnDismissListener(new s5(f3Var, 10));
                         alertDialog$Builder.o();
                         break;
                     } else {
                         org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
                         if (U != null) {
                             if (str2 != null) {
-                                new vc(f3Var.topBulletinContainer, f3Var.getResourcesProvider()).c0(str2, false);
+                                new xc(f3Var.topBulletinContainer, f3Var.getResourcesProvider()).c0(str2, false);
                                 break;
                             } else if (passkey != null) {
                                 int i14 = this.b;
@@ -235,7 +235,7 @@ public final /* synthetic */ class h1 implements Utilities.Callback2 {
                 if (updates2 != null && tL_error3 == null) {
                     MessagesController.getInstance(this.b).processUpdates(updates2, false);
                 }
-                AndroidUtilities.runOnUIThread(new es0(n2Var2, tL_error3, eVar, b2Var2, 27));
+                AndroidUtilities.runOnUIThread(new yr0(n2Var2, tL_error3, eVar, b2Var2, 27));
                 break;
         }
     }
@@ -256,9 +256,9 @@ public final /* synthetic */ class h1 implements Utilities.Callback2 {
         this.b = i10;
     }
 
-    public /* synthetic */ h1(org.telegram.ui.c1 c1Var, int i10, TLRPC.TL_channels_joinChannel tL_channels_joinChannel, TLRPC.Chat chat) {
+    public /* synthetic */ h1(org.telegram.ui.d1 d1Var, int i10, TLRPC.TL_channels_joinChannel tL_channels_joinChannel, TLRPC.Chat chat) {
         this.a = 2;
-        this.c = c1Var;
+        this.c = d1Var;
         this.b = i10;
         this.d = tL_channels_joinChannel;
         this.e = chat;

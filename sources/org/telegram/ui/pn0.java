@@ -1,70 +1,65 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.webkit.WebView;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class pn0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ wo0 b;
-    public final /* synthetic */ TLObject c;
+    public final /* synthetic */ qo0 b;
+    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ TLObject d;
 
-    public /* synthetic */ pn0(wo0 wo0Var, TLObject tLObject, int i10) {
+    public /* synthetic */ pn0(qo0 qo0Var, TLRPC.TL_error tL_error, TLObject tLObject, int i10) {
         this.a = i10;
-        this.b = wo0Var;
-        this.c = tLObject;
+        this.b = qo0Var;
+        this.c = tL_error;
+        this.d = tLObject;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                wo0.e0(this.b, this.c);
+                qo0 qo0Var = this.b;
+                qo0Var.e0 = false;
+                if (this.c == null) {
+                    TL_account.Password password = (TL_account.Password) this.d;
+                    qo0Var.a0 = password;
+                    if (!TwoStepVerificationActivity.i0(password, false)) {
+                        org.telegram.ui.Components.e5.x0(qo0Var.getParentActivity(), LocaleController.getString(R.string.UpdateAppAlert), true);
+                        break;
+                    } else {
+                        TLRPC.PaymentForm paymentForm = qo0Var.C0;
+                        if (paymentForm != null && qo0Var.a0.has_password) {
+                            paymentForm.password_missing = false;
+                            paymentForm.can_save_credentials = true;
+                            qo0Var.K0();
+                        }
+                        TwoStepVerificationActivity.m0(qo0Var.a0);
+                        qo0 qo0Var2 = qo0Var.f0;
+                        if (qo0Var2 != null) {
+                            qo0Var2.C0(qo0Var.a0);
+                        }
+                        if (!qo0Var.a0.has_password && qo0Var.d0 == null) {
+                            nn0 nn0Var = new nn0(qo0Var, 3);
+                            qo0Var.d0 = nn0Var;
+                            AndroidUtilities.runOnUIThread(nn0Var, 5000L);
+                            break;
+                        }
+                    }
+                }
                 break;
             case 1:
-                wo0 wo0Var = this.b;
-                Utilities.Callback callback = wo0Var.d1;
-                TLObject tLObject = this.c;
-                if (callback != null) {
-                    callback.run((TLRPC.TL_payments_paymentVerificationNeeded) tLObject);
-                }
-                wo0Var.D0(false);
-                wo0Var.z0 = true;
-                wo0Var.H0(true, true);
-                org.telegram.ui.Components.tq tqVar = wo0Var.r;
-                if (tqVar != null) {
-                    tqVar.setVisibility(0);
-                }
-                org.telegram.ui.ActionBar.v0 v0Var = wo0Var.n;
-                if (v0Var != null) {
-                    v0Var.setEnabled(false);
-                    wo0Var.n.getContentView().setVisibility(4);
-                }
-                org.telegram.ui.ActionBar.d5 parentLayout = wo0Var.getParentLayout();
-                Activity parentActivity = wo0Var.getParentActivity();
-                wo0Var.getMessagesController().newMessageCallback = new b7(wo0Var, parentLayout, parentActivity, 17);
-                WebView webView = wo0Var.w;
-                if (webView != null) {
-                    webView.setVisibility(0);
-                    WebView webView2 = wo0Var.w;
-                    String str = ((TLRPC.TL_payments_paymentVerificationNeeded) tLObject).url;
-                    wo0Var.x = str;
-                    webView2.loadUrl(str);
-                }
-                wo0Var.a1 = true;
-                wo0Var.f1 = 3;
-                vo0 vo0Var = wo0Var.Z0;
-                if (vo0Var != null) {
-                    vo0Var.a(3);
-                    break;
-                }
+                qo0.V(this.b, this.c, this.d);
                 break;
             default:
-                wo0.c0(this.b, this.c);
+                qo0.X(this.b, this.c, this.d);
                 break;
         }
     }

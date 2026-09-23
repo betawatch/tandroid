@@ -4,12 +4,12 @@ import android.content.res.Resources;
 import android.graphics.Rect;
 import android.view.View;
 import androidx.appcompat.widget.SearchView;
-import ci.uc;
+import ci.rc;
 import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.BotFullscreenButtons;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class u2 implements View.OnLayoutChangeListener {
     public final /* synthetic */ int a;
@@ -41,7 +41,7 @@ public final class u2 implements View.OnLayoutChangeListener {
                 final AnimationNotificationsLocker animationNotificationsLocker = new AnimationNotificationsLocker();
                 animationNotificationsLocker.lock();
                 if (k3Var.F0 || k3Var.m()) {
-                    a3Var.f(a3Var.getTopActionBarOffsetY() + (-a3Var.getOffsetY()), false, new uc(animationNotificationsLocker, 14));
+                    a3Var.f(a3Var.getTopActionBarOffsetY() + (-a3Var.getOffsetY()), false, new rc(animationNotificationsLocker, 14));
                 } else {
                     o1.k kVar = new o1.k(a3Var, p4.b0, 0.0f);
                     o1.l lVar = new o1.l(0.0f);

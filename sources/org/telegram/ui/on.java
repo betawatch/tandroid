@@ -1,61 +1,52 @@
 package org.telegram.ui;
 
+import android.animation.ValueAnimator;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class on extends w7.y5 {
-    public MessageObject a;
-    public int b = 0;
-    public boolean c = true;
-    public int d = 0;
-    public int e;
-    public boolean f;
-    public int g;
-    public final /* synthetic */ bo h;
+public final /* synthetic */ class on implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ pn b;
 
-    public on(bo boVar) {
-        this.h = boVar;
+    public /* synthetic */ on(pn pnVar, int i10) {
+        this.a = i10;
+        this.b = pnVar;
     }
 
-    @Override // w7.y5
-    public final void a() {
-        MessageObject messageObject = this.a;
-        bo boVar = this.h;
-        if (messageObject != null) {
-            boVar.A0.T();
-            int indexOf = boVar.u6.indexOf(this.a) + boVar.A0.J;
-            if (indexOf >= 0) {
-                boVar.z0.i1(indexOf, (int) ((this.e + this.g) - boVar.s9), this.f);
-            }
-        } else {
-            boVar.A0.T();
-            boVar.z0.i1(this.b, this.d, this.c);
-        }
-        this.a = null;
-        boVar.m3 = true;
-        boVar.Wc(false);
-        AndroidUtilities.runOnUIThread(new dj(this, 8));
-    }
-
-    @Override // w7.y5
-    public final void c() {
-        bo boVar = this.h;
-        boVar.I9 = boVar.getNotificationCenter().setAnimationInProgress(boVar.I9, bo.Mc);
-        vk vkVar = boVar.wa;
-        if (vkVar.n) {
-            vkVar.d();
-        }
-    }
-
-    @Override // w7.y5
-    public final void d(View view) {
-        if (view instanceof org.telegram.ui.Cells.t1) {
-            org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) view;
-            t1Var.setDelegate(null);
-            t1Var.setResourcesProvider(null);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                pn pnVar = this.b;
+                pnVar.f = floatValue;
+                View view = pnVar.h.fragmentView;
+                if (view != null) {
+                    view.invalidate();
+                    break;
+                }
+                break;
+            case 1:
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                pn pnVar2 = this.b;
+                pnVar2.f = floatValue2;
+                View view2 = pnVar2.h.fragmentView;
+                if (view2 != null) {
+                    view2.invalidate();
+                    break;
+                }
+                break;
+            default:
+                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                pn pnVar3 = this.b;
+                pnVar3.f = floatValue3;
+                View view3 = pnVar3.h.fragmentView;
+                if (view3 != null) {
+                    view3.invalidate();
+                    break;
+                }
+                break;
         }
     }
 }

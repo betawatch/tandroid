@@ -1,11 +1,24 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class ri1 extends org.telegram.ui.Components.voip.v2 {
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchSetPressed(boolean z10) {
-        super.dispatchSetPressed(z10);
-        setPressedBtn(z10);
+public final /* synthetic */ class ri1 implements org.telegram.ui.ActionBar.a2, nd1 {
+    public final /* synthetic */ WallpapersListActivity a;
+
+    public /* synthetic */ ri1(WallpapersListActivity wallpapersListActivity) {
+        this.a = wallpapersListActivity;
+    }
+
+    @Override // org.telegram.ui.nd1
+    public void a(TLRPC.TL_wallPaper tL_wallPaper) {
+        int[][] iArr = WallpapersListActivity.k0;
+        this.a.removeSelfFromStack();
+    }
+
+    @Override // org.telegram.ui.ActionBar.a2
+    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        WallpapersListActivity.U(this.a);
     }
 }

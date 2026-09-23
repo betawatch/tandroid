@@ -1,6 +1,8 @@
 package u2;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+import i2.q1;
+
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class x implements d0, c0 {
     public final f0 a;
@@ -38,13 +40,13 @@ public final class x implements d0, c0 {
         }
     }
 
-    @Override // u2.d1
+    @Override // u2.c1
     public final boolean c() {
         d0 d0Var = this.e;
         return d0Var != null && d0Var.c();
     }
 
-    @Override // u2.d1
+    @Override // u2.c1
     public final long d() {
         d0 d0Var = this.e;
         String str = e2.d0.a;
@@ -98,30 +100,30 @@ public final class x implements d0, c0 {
         return d0Var.l();
     }
 
-    @Override // u2.d1
-    public final boolean m(i2.r0 r0Var) {
+    @Override // u2.c1
+    public final boolean m(i2.s0 s0Var) {
         d0 d0Var = this.e;
-        return d0Var != null && d0Var.m(r0Var);
+        return d0Var != null && d0Var.m(s0Var);
     }
 
     @Override // u2.d0
-    public final long p(x2.r[] rVarArr, boolean[] zArr, b1[] b1VarArr, boolean[] zArr2, long j3) {
+    public final long p(x2.r[] rVarArr, boolean[] zArr, a1[] a1VarArr, boolean[] zArr2, long j3) {
         long j10 = this.h;
         long j11 = (j10 == -9223372036854775807L || j3 != this.b) ? j3 : j10;
         this.h = -9223372036854775807L;
         d0 d0Var = this.e;
         String str = e2.d0.a;
-        return d0Var.p(rVarArr, zArr, b1VarArr, zArr2, j11);
+        return d0Var.p(rVarArr, zArr, a1VarArr, zArr2, j11);
     }
 
     @Override // u2.d0
-    public final o1 r() {
+    public final n1 r() {
         d0 d0Var = this.e;
         String str = e2.d0.a;
         return d0Var.r();
     }
 
-    @Override // u2.d1
+    @Override // u2.c1
     public final long s() {
         d0 d0Var = this.e;
         String str = e2.d0.a;
@@ -129,21 +131,21 @@ public final class x implements d0, c0 {
     }
 
     @Override // u2.d0
-    public final long t(long j3, i2.p1 p1Var) {
+    public final long t(long j3, q1 q1Var) {
         d0 d0Var = this.e;
         String str = e2.d0.a;
-        return d0Var.t(j3, p1Var);
+        return d0Var.t(j3, q1Var);
     }
 
-    @Override // u2.d1
+    @Override // u2.c1
     public final void u(long j3) {
         d0 d0Var = this.e;
         String str = e2.d0.a;
         d0Var.u(j3);
     }
 
-    @Override // u2.c1
-    public final void v(d1 d1Var) {
+    @Override // u2.b1
+    public final void v(c1 c1Var) {
         c0 c0Var = this.f;
         String str = e2.d0.a;
         c0Var.v(this);

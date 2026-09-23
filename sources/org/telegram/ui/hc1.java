@@ -1,86 +1,88 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.os.Bundle;
-import android.text.TextPaint;
-import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.SharedConfig;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class hc1 extends FrameLayout {
-    public final org.telegram.ui.Cells.ja a;
-    public final org.telegram.ui.Components.fo0 b;
-    public final int c;
-    public final int d;
-    public final TextPaint e;
-    public int f;
-    public final /* synthetic */ ThemeActivity h;
+public final /* synthetic */ class hc1 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ od1 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hc1(ThemeActivity themeActivity, Context context) {
-        super(context);
-        org.telegram.ui.ActionBar.d5 d5Var;
-        this.h = themeActivity;
-        this.c = 12;
-        this.d = 30;
-        setWillNotDraw(false);
-        TextPaint textPaint = new TextPaint(1);
-        this.e = textPaint;
-        textPaint.setTextSize(AndroidUtilities.dp(16.0f));
-        org.telegram.ui.Components.fo0 fo0Var = new org.telegram.ui.Components.fo0(context);
-        this.b = fo0Var;
-        fo0Var.setReportChanges(true);
-        fo0Var.setSeparatorsCount(19);
-        fo0Var.setDelegate(new jw0(this, 4));
-        fo0Var.setImportantForAccessibility(2);
-        addView(fo0Var, w7.x5.d(-1, 38.0f, 51, 5.0f, 5.0f, 39.0f, 0.0f));
-        d5Var = ((org.telegram.ui.ActionBar.n2) themeActivity).parentLayout;
-        org.telegram.ui.Cells.ja jaVar = new org.telegram.ui.Cells.ja(context, d5Var, 0);
-        this.a = jaVar;
-        jaVar.setImportantForAccessibility(4);
-        addView(jaVar, w7.x5.d(-1, -2.0f, 51, 0.0f, 53.0f, 0.0f, 0.0f));
+    public /* synthetic */ hc1(od1 od1Var, int i10) {
+        this.a = i10;
+        this.b = od1Var;
     }
 
-    @Override // android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        this.a.invalidate();
-        this.b.invalidate();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        int w02 = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.I6, false);
-        TextPaint textPaint = this.e;
-        textPaint.setColor(w02);
-        canvas.drawText("" + SharedConfig.fontSize, getMeasuredWidth() - AndroidUtilities.dp(39.0f), AndroidUtilities.dp(28.0f), textPaint);
-    }
-
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        this.b.getSeekBarAccessibilityDelegate().e(this, accessibilityNodeInfo);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        int size = View.MeasureSpec.getSize(i10);
-        if (this.f != size) {
-            int i12 = SharedConfig.fontSize;
-            int i13 = this.c;
-            this.b.setProgress((i12 - i13) / (this.d - i13));
-            this.f = size;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                final int i10 = 1;
+                final od1 od1Var = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.gc1
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                od1.W(od1Var, tLObject);
+                                break;
+                            default:
+                                TLObject tLObject2 = tLObject;
+                                if (tLObject2 instanceof TLRPC.TL_wallPaper) {
+                                    TLRPC.TL_wallPaper tL_wallPaper = (TLRPC.TL_wallPaper) tLObject2;
+                                    if (tL_wallPaper.pattern) {
+                                        od1 od1Var2 = od1Var;
+                                        od1Var2.W0 = tL_wallPaper;
+                                        od1Var2.b1(false);
+                                        od1Var2.j1();
+                                        od1Var2.U0.add(0, od1Var2.W0);
+                                        md1 md1Var = od1Var2.Q0;
+                                        if (md1Var != null) {
+                                            md1Var.l();
+                                            break;
+                                        }
+                                    }
+                                }
+                                break;
+                        }
+                    }
+                });
+                break;
+            default:
+                final int i11 = 0;
+                final od1 od1Var2 = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.gc1
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i11) {
+                            case 0:
+                                od1.W(od1Var2, tLObject);
+                                break;
+                            default:
+                                TLObject tLObject2 = tLObject;
+                                if (tLObject2 instanceof TLRPC.TL_wallPaper) {
+                                    TLRPC.TL_wallPaper tL_wallPaper = (TLRPC.TL_wallPaper) tLObject2;
+                                    if (tL_wallPaper.pattern) {
+                                        od1 od1Var22 = od1Var2;
+                                        od1Var22.W0 = tL_wallPaper;
+                                        od1Var22.b1(false);
+                                        od1Var22.j1();
+                                        od1Var22.U0.add(0, od1Var22.W0);
+                                        md1 md1Var = od1Var22.Q0;
+                                        if (md1Var != null) {
+                                            md1Var.l();
+                                            break;
+                                        }
+                                    }
+                                }
+                                break;
+                        }
+                    }
+                });
+                break;
         }
-    }
-
-    @Override // android.view.View
-    public final boolean performAccessibilityAction(int i10, Bundle bundle) {
-        return super.performAccessibilityAction(i10, bundle) || this.b.getSeekBarAccessibilityDelegate().g(this, i10, bundle);
     }
 }

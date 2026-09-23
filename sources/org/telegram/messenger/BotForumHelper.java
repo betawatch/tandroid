@@ -18,11 +18,11 @@ import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_forum;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.Components.g51;
-import org.telegram.ui.Components.oq;
-import org.telegram.ui.uj0;
+import org.telegram.ui.Components.f51;
+import org.telegram.ui.Components.pq;
+import org.telegram.ui.oj0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public class BotForumHelper extends BaseController {
     private static volatile BotForumHelper[] Instance = new BotForumHelper[4];
@@ -31,16 +31,16 @@ public class BotForumHelper extends BaseController {
     private final LongSparseArray<List<MessagesStorage.IntCallback>> pendingBotTopics;
     private final SharedPreferences preferences;
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class BotDraftAnimationsPool {
-        private final DialogTopicIdKeyMap<uj0> animators = new DialogTopicIdKeyMap<>();
+        private final DialogTopicIdKeyMap<oj0> animators = new DialogTopicIdKeyMap<>();
         private final SparseIntArray ids = new SparseIntArray();
 
         public void bind(int i10, int i11) {
             this.ids.put(i11, i10);
         }
 
-        public uj0 getAnimator(long j3, int i10, boolean z10) {
+        public oj0 getAnimator(long j3, int i10, boolean z10) {
             if (i10 > 0) {
                 i10 = this.ids.get(i10, 0);
             }
@@ -48,13 +48,13 @@ public class BotForumHelper extends BaseController {
                 return null;
             }
             long j10 = i10;
-            uj0 uj0Var = this.animators.get(j3, 0L, j10);
-            if (uj0Var != null || !z10) {
-                return uj0Var;
+            oj0 oj0Var = this.animators.get(j3, 0L, j10);
+            if (oj0Var != null || !z10) {
+                return oj0Var;
             }
-            uj0 uj0Var2 = new uj0();
-            this.animators.put(j3, 0L, j10, uj0Var2);
-            return uj0Var2;
+            oj0 oj0Var2 = new oj0();
+            this.animators.put(j3, 0L, j10, oj0Var2);
+            return oj0Var2;
         }
 
         public void removeAnimator(long j3, int i10) {
@@ -68,7 +68,7 @@ public class BotForumHelper extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class BotDraftMessage {
         private boolean canStop;
         private boolean keepOnStop;
@@ -90,7 +90,7 @@ public class BotForumHelper extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class BotForumTextDraftDeleteNotification {
         public final long botTopicId;
         public final long botUserId;
@@ -103,7 +103,7 @@ public class BotForumHelper extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class BotForumTextDraftUpdateNotification {
         public final long botTopicId;
         public final long botUserId;
@@ -118,7 +118,7 @@ public class BotForumHelper extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class BotForumTopicCreateNotification {
         public final long dialogId;
         public final int topicId;
@@ -129,17 +129,17 @@ public class BotForumHelper extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public enum SteamingSendButtonState {
         NO_STREAMING,
         BLOCKING,
         STOP
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
-    public static class TypingBotSpan extends oq {
-        public TypingBotSpan(g51 g51Var, int i10) {
-            super(i10, g51Var);
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    public static class TypingBotSpan extends pq {
+        public TypingBotSpan(f51 f51Var, int i10) {
+            super(i10, f51Var);
         }
     }
 
@@ -157,11 +157,11 @@ public class BotForumHelper extends BaseController {
             return charSequence;
         }
         SpannableStringBuilder spannableStringBuilder = charSequence instanceof SpannableStringBuilder ? (SpannableStringBuilder) charSequence : new SpannableStringBuilder(charSequence);
-        g51 g51Var = new g51(true);
-        g51Var.b(-1);
-        g51Var.d();
-        TypingBotSpan typingBotSpan = new TypingBotSpan(g51Var, 1);
-        typingBotSpan.setColorKey(org.telegram.ui.ActionBar.i6.ec);
+        f51 f51Var = new f51(true);
+        f51Var.b(-1);
+        f51Var.d();
+        TypingBotSpan typingBotSpan = new TypingBotSpan(f51Var, 1);
+        typingBotSpan.setColorKey(org.telegram.ui.ActionBar.h6.ec);
         typingBotSpan.setTopOffset(-AndroidUtilities.dp(10.0f));
         spannableStringBuilder.append((CharSequence) " _");
         spannableStringBuilder.setSpan(typingBotSpan, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
@@ -268,7 +268,7 @@ public class BotForumHelper extends BaseController {
                 tL_messages_sendMultiMedia.flags |= 1;
             }
         }
-        getMessagesStorage().getStorageQueue().postRunnable(new ai.l8(this, jArr, j3, i10, runnable));
+        getMessagesStorage().getStorageQueue().postRunnable(new ai.m8(this, jArr, j3, i10, runnable));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -351,7 +351,7 @@ public class BotForumHelper extends BaseController {
         tL_messages_createForumTopic.title_missing = true;
         tL_messages_createForumTopic.peer = inputPeer;
         tL_messages_createForumTopic.random_id = j3;
-        getConnectionsManager().sendRequestTyped(tL_messages_createForumTopic, new a(), new ph(this, peerDialogId, str));
+        getConnectionsManager().sendRequestTyped(tL_messages_createForumTopic, new a(), new oh(this, peerDialogId, str));
     }
 
     private void performSendBotTopicCreateComplete(long j3, int i10) {
@@ -520,7 +520,7 @@ public class BotForumHelper extends BaseController {
         getConnectionsManager().sendRequestTyped(tL_messages_setTyping, new k0(i10));
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class DialogTopicIdKeyMap<T> {
         private final LongSparseArray<LongSparseArray<LongSparseArray<T>>> map = new LongSparseArray<>();
 

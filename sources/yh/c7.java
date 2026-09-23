@@ -1,41 +1,66 @@
 package yh;
 
-import android.graphics.drawable.Drawable;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RadialGradient;
+import android.graphics.RectF;
+import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.ui.Components.xi0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class c7 implements ImageReceiver.ImageReceiverDelegate {
-    public final /* synthetic */ boolean[] a;
+public final class c7 extends LinearLayout {
+    public final Path a;
+    public final /* synthetic */ Matrix b;
+    public final /* synthetic */ RadialGradient c;
+    public final /* synthetic */ Paint d;
+    public final /* synthetic */ org.telegram.ui.Components.o5 e;
 
-    public c7(boolean[] zArr) {
-        this.a = zArr;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c7(Context context, Matrix matrix, RadialGradient radialGradient, Paint paint, org.telegram.ui.Components.o5 o5Var) {
+        super(context);
+        this.b = matrix;
+        this.c = radialGradient;
+        this.d = paint;
+        this.e = o5Var;
+        this.a = new Path();
     }
 
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public final void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
-        xi0 lottieAnimation;
-        if (!z10 || (lottieAnimation = imageReceiver.getLottieAnimation()) == null) {
-            return;
-        }
-        boolean[] zArr = this.a;
-        if (zArr[0]) {
-            return;
-        }
-        lottieAnimation.N(0, false, false);
-        AndroidUtilities.runOnUIThread(new org.telegram.ui.Cells.q0(lottieAnimation, 0));
-        zArr[0] = true;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        float dp = AndroidUtilities.dp(10.0f);
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(0.0f, AndroidUtilities.dp(2.0f) + 1, getWidth(), getHeight() + dp);
+        Path path = this.a;
+        path.rewind();
+        path.addRoundRect(rectF, dp, dp, Path.Direction.CW);
+        canvas.save();
+        canvas.clipPath(path);
+        Matrix matrix = this.b;
+        matrix.reset();
+        matrix.postTranslate(getWidth() / 2.0f, AndroidUtilities.dp(100.0f));
+        this.c.setLocalMatrix(matrix);
+        canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), this.d);
+        canvas.save();
+        canvas.translate(getWidth() / 2.0f, AndroidUtilities.dp(100.0f));
+        j0.a(canvas, 0, this.e, getWidth(), AndroidUtilities.dp(180.0f), 1.0f, 1.0f);
+        canvas.restore();
+        super.dispatchDraw(canvas);
+        canvas.restore();
     }
 
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public final /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
-        org.telegram.messenger.h5.a(this, i10, str, drawable);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.e.a();
     }
 
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public final /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
-        org.telegram.messenger.h5.b(this, imageReceiver);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.e.b();
     }
 }

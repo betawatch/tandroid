@@ -1,36 +1,15 @@
 package ci;
 
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.v51;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class q8 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ x8 b;
-
-    public /* synthetic */ q8(x8 x8Var, int i10) {
-        this.a = i10;
-        this.b = x8Var;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                x8.Q(this.b);
-                break;
-            case 1:
-                this.b.X();
-                break;
-            default:
-                x8 x8Var = this.b;
-                org.telegram.ui.Cells.i3 i3Var = x8Var.Y;
-                if (x8Var.isShowing()) {
-                    i3Var.b.requestFocus();
-                    AndroidUtilities.showKeyboard(i3Var.b);
-                    break;
-                }
-                break;
+public final class q8 extends v51 {
+    @Override // org.telegram.ui.Components.v51
+    public final int I(int i10) {
+        if (i10 == org.telegram.ui.ActionBar.h6.i5) {
+            return -15921907;
         }
+        return org.telegram.ui.ActionBar.h6.v0(i10, this.v);
     }
 }

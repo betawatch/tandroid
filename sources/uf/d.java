@@ -1,6 +1,6 @@
 package uf;
 
-import ai.m8;
+import ai.n8;
 import java.io.File;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.NotificationCenter;
@@ -8,7 +8,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class d implements NotificationCenter.NotificationCenterDelegate {
     public final int a;
@@ -45,7 +45,7 @@ public final class d implements NotificationCenter.NotificationCenterDelegate {
                 } else {
                     uploadringtone.mime_type = "audio/mpeg";
                 }
-                ConnectionsManager.getInstance(this.a).sendRequest(uploadringtone, new m8(this, 23));
+                ConnectionsManager.getInstance(this.a).sendRequest(uploadringtone, new n8(this, 23));
             }
         }
     }

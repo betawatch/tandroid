@@ -1,65 +1,65 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
 import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class qp0 extends h71 {
-    public final /* synthetic */ tp0 d2;
-    public final /* synthetic */ y61[] e2;
-    public final /* synthetic */ up0 f2;
+public final class qp0 {
+    public boolean f;
+    public boolean g;
+    public boolean h;
+    public Path i;
+    public Paint j;
+    public Drawable k;
+    public final org.telegram.ui.Components.yc l;
+    public boolean m;
+    public final org.telegram.ui.Components.e6 n;
+    public int o;
+    public final /* synthetic */ rp0 r;
+    public final Paint a = new Paint(1);
+    public final Paint b = new Paint(1);
+    public final Paint c = new Paint(1);
+    public final Path d = new Path();
+    public final Path e = new Path();
+    public final RectF p = new RectF();
+    public final RectF q = new RectF();
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qp0(up0 up0Var, org.telegram.ui.ActionBar.n2 n2Var, Context context, Integer num, int i10, org.telegram.ui.ActionBar.e6 e6Var, int i11, int i12, tp0 tp0Var, y61[] y61VarArr) {
-        super(n2Var, context, true, num, i10, true, e6Var, i11, i12);
-        this.f2 = up0Var;
-        this.d2 = tp0Var;
-        this.e2 = y61VarArr;
+    public qp0(rp0 rp0Var) {
+        this.r = rp0Var;
+        this.l = new org.telegram.ui.Components.yc(rp0Var);
+        this.n = new org.telegram.ui.Components.e6(rp0Var, 0L, 320L, org.telegram.ui.Components.rr.h);
     }
 
-    @Override // org.telegram.ui.h71
-    public final float getScrimDrawableTranslationY() {
-        return 0.0f;
-    }
-
-    @Override // org.telegram.ui.h71
-    public final void p(View view, Long l4, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
-        up0 up0Var = this.f2;
-        if (tL_starGiftUnique != null) {
-            if (up0Var.m0 == 0) {
-                TLRPC.PeerColor peerColor = tL_starGiftUnique.peer_color;
-                if (!(peerColor instanceof TLRPC.TL_peerColorCollectible)) {
-                    return;
-                }
-                up0Var.s = (TLRPC.TL_peerColorCollectible) peerColor;
-                up0Var.r = null;
-            } else {
-                up0Var.s = null;
-                up0Var.r = MessagesController.emojiStatusCollectibleFromGift(tL_starGiftUnique);
-            }
-            up0Var.I = null;
-            up0Var.h = -1;
+    public final void a(MessagesController.PeerColor peerColor) {
+        rp0 rp0Var = this.r;
+        org.telegram.ui.ActionBar.d6 d6Var = rp0Var.a;
+        if (peerColor == null) {
+            return;
+        }
+        boolean q6 = d6Var == null ? org.telegram.ui.ActionBar.h6.I.q() : d6Var.a();
+        int i10 = rp0Var.c;
+        Paint paint = this.b;
+        Paint paint2 = this.a;
+        if (i10 != 1) {
+            paint2.setColor(peerColor.getColor(0, d6Var));
+            paint.setColor(peerColor.hasColor6(q6) ? peerColor.getColor(1, d6Var) : peerColor.getColor(0, d6Var));
+            this.f = peerColor.hasColor6(q6);
+            this.g = false;
+            return;
+        }
+        if (q6 && peerColor.hasColor2() && !peerColor.hasColor3()) {
+            paint2.setColor(peerColor.getColor(1, d6Var));
+            paint.setColor(peerColor.getColor(0, d6Var));
         } else {
-            up0Var.n = l4 == null ? 0L : l4.longValue();
-            up0Var.r = null;
-            up0Var.s = null;
-            up0Var.I = null;
+            paint2.setColor(peerColor.getColor(0, d6Var));
+            paint.setColor(peerColor.getColor(1, d6Var));
         }
-        tp0 tp0Var = this.d2;
-        if (tp0Var != null) {
-            tp0Var.b(true);
-        }
-        up0Var.j(true);
-        up0Var.i();
-        up0Var.f(true);
-        y61 y61Var = this.e2[0];
-        if (y61Var != null) {
-            up0Var.o0 = null;
-            y61Var.dismiss();
-        }
+        this.c.setColor(peerColor.getColor(2, d6Var));
+        this.f = peerColor.hasColor2(q6);
+        this.g = peerColor.hasColor3(q6);
     }
 }

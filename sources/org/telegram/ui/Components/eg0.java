@@ -25,11 +25,11 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.R;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class eg0 implements rf.a {
-    public static final iv0 n0 = new iv0(new o2(24), new o2(25));
-    public static final iv0 o0 = new iv0(new o2(26), new o2(27));
+    public static final iv0 n0 = new iv0(new xc0(8), new xc0(9));
+    public static final iv0 o0 = new iv0(new xc0(10), new xc0(11));
     public static final eg0 p0 = new eg0();
     public boolean E;
     public ValueAnimator F;
@@ -45,7 +45,7 @@ public final class eg0 implements rf.a {
     public ko0 R;
     public int S;
     public int T;
-    public vu U;
+    public wu U;
     public PhotoViewer V;
     public pf.e W;
     public ImageView X;
@@ -69,13 +69,13 @@ public final class eg0 implements rf.a {
     public boolean n;
     public qf0 r;
     public ScaleGestureDetector s;
-    public org.telegram.ui.Cells.ia v;
+    public org.telegram.ui.Cells.ja v;
     public boolean w;
     public boolean x;
     public View y;
     public float a = 1.4f;
     public float J = 1.0f;
-    public final w61 Q = new w61(false);
+    public final v61 Q = new v61(false);
     public final zf0 e0 = new zf0(this, 1);
     public float[] g0 = new float[2];
     public final zf0 h0 = new zf0(this, 2);
@@ -85,36 +85,36 @@ public final class eg0 implements rf.a {
         p0.k(z10, false);
     }
 
-    public static hk0 o(float f7, boolean z10) {
-        hk0 hk0Var = new hk0();
+    public static ik0 o(float f7, boolean z10) {
+        ik0 ik0Var = new ik0();
         float f10 = 1.0f / f7;
         eg0 eg0Var = p0;
         if (eg0Var.P && !z10) {
-            hk0Var.a = eg0Var.K;
-            hk0Var.b = eg0Var.L + AndroidUtilities.statusBarHeight;
-            hk0Var.c = eg0Var.H;
-            hk0Var.d = eg0Var.I;
-            return hk0Var;
+            ik0Var.a = eg0Var.K;
+            ik0Var.b = eg0Var.L + AndroidUtilities.statusBarHeight;
+            ik0Var.c = eg0Var.H;
+            ik0Var.d = eg0Var.I;
+            return ik0Var;
         }
         float f11 = eg0Var.n().a.getFloat("x", -1.0f);
         float f12 = eg0Var.n().a.getFloat("y", -1.0f);
         float f13 = eg0Var.n().a.getFloat("scale_factor", 1.0f);
-        hk0Var.c = s(f10) * f13;
-        hk0Var.d = ((int) (s(f10) * f10)) * f13;
+        ik0Var.c = s(f10) * f13;
+        ik0Var.d = ((int) (s(f10) * f10)) * f13;
         if (f11 != -1.0f) {
-            float f14 = hk0Var.c;
+            float f14 = ik0Var.c;
             float f15 = (f14 / 2.0f) + f11;
             float f16 = AndroidUtilities.displaySize.x;
-            hk0Var.a = f15 >= f16 / 2.0f ? (f16 - f14) - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f);
+            ik0Var.a = f15 >= f16 / 2.0f ? (f16 - f14) - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f);
         } else {
-            hk0Var.a = (AndroidUtilities.displaySize.x - hk0Var.c) - AndroidUtilities.dp(16.0f);
+            ik0Var.a = (AndroidUtilities.displaySize.x - ik0Var.c) - AndroidUtilities.dp(16.0f);
         }
         if (f12 != -1.0f) {
-            hk0Var.b = w7.p.a(f12, AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - AndroidUtilities.dp(16.0f)) - hk0Var.d) + AndroidUtilities.statusBarHeight;
-            return hk0Var;
+            ik0Var.b = w7.p.a(f12, AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - AndroidUtilities.dp(16.0f)) - ik0Var.d) + AndroidUtilities.statusBarHeight;
+            return ik0Var;
         }
-        hk0Var.b = AndroidUtilities.dp(16.0f) + AndroidUtilities.statusBarHeight;
-        return hk0Var;
+        ik0Var.b = AndroidUtilities.dp(16.0f) + AndroidUtilities.statusBarHeight;
+        return ik0Var;
     }
 
     public static pf.e p() {
@@ -142,10 +142,10 @@ public final class eg0 implements rf.a {
 
     public static void v(boolean z10) {
         eg0 eg0Var = p0;
-        w61 w61Var = eg0Var.Q;
-        w61Var.e(false);
-        w61Var.d(!z10);
-        w61Var.f(true);
+        v61 v61Var = eg0Var.Q;
+        v61Var.e(false);
+        v61Var.d(!z10);
+        v61Var.f(true);
         ai.n4 n4Var = eg0Var.b0;
         if (n4Var != null) {
             n4Var.invalidate();
@@ -159,15 +159,15 @@ public final class eg0 implements rf.a {
     public static void w(PhotoViewer photoViewer) {
         eg0 eg0Var = p0;
         eg0Var.V = photoViewer;
-        g71 g71Var = photoViewer.F2;
+        f71 f71Var = photoViewer.F2;
         pf.e eVar = eg0Var.W;
         if (eVar != null) {
             eVar.c();
             eg0Var.W = null;
         }
-        if (g71Var != null && sf.c.a(photoViewer.y) == 1) {
+        if (f71Var != null && sf.c.a(photoViewer.y) == 1) {
             pf.d dVar = new pf.d(photoViewer.y, eg0Var);
-            dVar.c = "photo-viewer-pip-" + g71Var.a;
+            dVar.c = "photo-viewer-pip-" + f71Var.a;
             dVar.e = 1;
             dVar.d = AndroidUtilities.dp(10.0f);
             dVar.j = eg0Var.d;
@@ -176,7 +176,7 @@ public final class eg0 implements rf.a {
             int i11 = eg0Var.T;
             dVar.h = i10;
             dVar.i = i11;
-            dVar.g = g71Var.d;
+            dVar.g = f71Var.d;
             dVar.f = true;
             eg0Var.W = dVar.a();
         }
@@ -274,7 +274,7 @@ public final class eg0 implements rf.a {
                 if (Build.VERSION.SDK_INT >= 23) {
                     eg0Var.s.setStylusScaleEnabled(false);
                 }
-                eg0Var.v = new org.telegram.ui.Cells.ia(context, new cg0(eg0Var, scaledTouchSlop));
+                eg0Var.v = new org.telegram.ui.Cells.ja(context, new cg0(eg0Var, scaledTouchSlop));
                 eg0Var.e = new dg0(eg0Var, context, i13);
                 org.telegram.ui.f fVar = new org.telegram.ui.f(eg0Var, context, i12);
                 eg0Var.d = fVar;
@@ -284,7 +284,7 @@ public final class eg0 implements rf.a {
                 ai.k2 k2Var = yf.i0.a;
                 dg0Var.setOutlineProvider(new yf.h0(0, dp));
                 eg0Var.e.setClipToOutline(true);
-                eg0Var.e.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.gg, false));
+                eg0Var.e.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.gg, false));
                 eg0Var.f = view;
                 if (view.getParent() != null) {
                     ((ViewGroup) eg0Var.f.getParent()).removeView(eg0Var.f);
@@ -293,11 +293,11 @@ public final class eg0 implements rf.a {
                 View view2 = new View(context);
                 eg0Var.k0 = view2;
                 eg0Var.e.addView(view2, w7.x5.c(-1.0f, -1));
-                eg0Var.Q.n = new k2.c0(eg0Var, 14);
+                eg0Var.Q.n = new k2.b0(eg0Var, 14);
                 eg0Var.h = new dg0(eg0Var, context, i12);
                 dg0 dg0Var2 = eg0Var.h;
                 Objects.requireNonNull(dg0Var2);
-                eg0Var.R = new ko0(new bc0(dg0Var2, 11), true);
+                eg0Var.R = new ko0(new ac0(dg0Var2, 11), true);
                 eg0Var.h.setWillNotDraw(false);
                 eg0Var.h.setAlpha(0.0f);
                 View view3 = new View(context);
@@ -306,12 +306,12 @@ public final class eg0 implements rf.a {
                 int dp2 = AndroidUtilities.dp(8.0f);
                 ImageView imageView = new ImageView(context);
                 imageView.setImageResource(R.drawable.pip_video_close);
-                int i14 = org.telegram.ui.ActionBar.i6.hg;
-                int w02 = org.telegram.ui.ActionBar.i6.w0(null, i14, false);
+                int i14 = org.telegram.ui.ActionBar.h6.hg;
+                int w02 = org.telegram.ui.ActionBar.h6.w0(null, i14, false);
                 PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
                 imageView.setColorFilter(w02, mode);
-                int i15 = org.telegram.ui.ActionBar.i6.i6;
-                imageView.setBackground(org.telegram.ui.ActionBar.i6.f0(org.telegram.ui.ActionBar.i6.w0(null, i15, false), 1, -1));
+                int i15 = org.telegram.ui.ActionBar.h6.i6;
+                imageView.setBackground(org.telegram.ui.ActionBar.h6.f0(org.telegram.ui.ActionBar.h6.w0(null, i15, false), 1, -1));
                 imageView.setPadding(dp2, dp2, dp2, dp2);
                 imageView.setOnClickListener(new ai.e2(12));
                 float f11 = 38;
@@ -319,17 +319,17 @@ public final class eg0 implements rf.a {
                 eg0Var.h.addView(imageView, w7.x5.d(38, f11, 5, 0.0f, f12, f12, 0.0f));
                 ImageView imageView2 = new ImageView(context);
                 imageView2.setImageResource(R.drawable.pip_video_expand);
-                imageView2.setColorFilter(org.telegram.ui.ActionBar.i6.w0(null, i14, false), mode);
-                imageView2.setBackground(org.telegram.ui.ActionBar.i6.f0(org.telegram.ui.ActionBar.i6.w0(null, i15, false), 1, -1));
+                imageView2.setColorFilter(org.telegram.ui.ActionBar.h6.w0(null, i14, false), mode);
+                imageView2.setBackground(org.telegram.ui.ActionBar.h6.f0(org.telegram.ui.ActionBar.h6.w0(null, i15, false), 1, -1));
                 imageView2.setPadding(dp2, dp2, dp2, dp2);
                 imageView2.setOnClickListener(new ai.j3(6, eg0Var, z12));
                 eg0Var.h.addView(imageView2, w7.x5.d(38, f11, 5, 0.0f, f12, 48, 0.0f));
                 ImageView imageView3 = new ImageView(context);
                 eg0Var.X = imageView3;
-                imageView3.setColorFilter(org.telegram.ui.ActionBar.i6.w0(null, i14, false), mode);
-                eg0Var.X.setBackground(org.telegram.ui.ActionBar.i6.f0(org.telegram.ui.ActionBar.i6.w0(null, i15, false), 1, -1));
+                imageView3.setColorFilter(org.telegram.ui.ActionBar.h6.w0(null, i14, false), mode);
+                eg0Var.X.setBackground(org.telegram.ui.ActionBar.h6.f0(org.telegram.ui.ActionBar.h6.w0(null, i15, false), 1, -1));
                 int i16 = 8;
-                eg0Var.X.setOnClickListener(new x70(eg0Var, i16));
+                eg0Var.X.setOnClickListener(new y70(eg0Var, i16));
                 View view4 = eg0Var.f;
                 boolean z13 = (view4 instanceof WebView) || (view4 instanceof qf0);
                 eg0Var.n = z13;
@@ -385,7 +385,7 @@ public final class eg0 implements rf.a {
                 eg0Var.b.addView(eg0Var.d, eg0Var.c);
                 AnimatorSet animatorSet = new AnimatorSet();
                 animatorSet.setDuration(250L);
-                animatorSet.setInterpolator(qr.f);
+                animatorSet.setInterpolator(rr.f);
                 animatorSet.playTogether(ObjectAnimator.ofFloat(eg0Var.d, (Property<org.telegram.ui.f, Float>) View.ALPHA, 1.0f), ObjectAnimator.ofFloat(eg0Var.d, (Property<org.telegram.ui.f, Float>) View.SCALE_X, 1.0f), ObjectAnimator.ofFloat(eg0Var.d, (Property<org.telegram.ui.f, Float>) View.SCALE_Y, 1.0f));
                 animatorSet.start();
                 return true;
@@ -461,17 +461,17 @@ public final class eg0 implements rf.a {
         this.l0 = textureView;
         textureView.setVisibility(4);
         this.l0.setOpaque(false);
-        this.l0.setSurfaceTextureListener(new j50(this, 1));
+        this.l0.setSurfaceTextureListener(new k50(this, 1));
         return this.l0;
     }
 
     public final void i() {
-        org.telegram.ui.kt0 kt0Var;
+        org.telegram.ui.dt0 dt0Var;
         PhotoViewer photoViewer = this.V;
-        if (photoViewer == null || (kt0Var = photoViewer.c4) == null) {
+        if (photoViewer == null || (dt0Var = photoViewer.c4) == null) {
             return;
         }
-        kt0Var.cancelRewind();
+        dt0Var.cancelRewind();
     }
 
     public final void k(boolean z10, boolean z11) {
@@ -504,7 +504,7 @@ public final class eg0 implements rf.a {
         }
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.setDuration(250L);
-        animatorSet.setInterpolator(qr.f);
+        animatorSet.setInterpolator(rr.f);
         animatorSet.playTogether(ObjectAnimator.ofFloat(this.d, (Property<org.telegram.ui.f, Float>) View.ALPHA, 0.0f), ObjectAnimator.ofFloat(this.d, (Property<org.telegram.ui.f, Float>) View.SCALE_X, 0.1f), ObjectAnimator.ofFloat(this.d, (Property<org.telegram.ui.f, Float>) View.SCALE_Y, 0.1f));
         animatorSet.addListener(new bg0(this, 1));
         animatorSet.start();
@@ -514,22 +514,22 @@ public final class eg0 implements rf.a {
         if (this.r != null) {
             return r0.getCurrentPosition();
         }
-        g71 g71Var = this.V.F2;
-        if (g71Var == null) {
+        f71 f71Var = this.V.F2;
+        if (f71Var == null) {
             return 0L;
         }
-        return g71Var.n();
+        return f71Var.n();
     }
 
     public final long m() {
         if (this.r != null) {
             return r0.getVideoDuration();
         }
-        g71 g71Var = this.V.F2;
-        if (g71Var == null) {
+        f71 f71Var = this.V.F2;
+        if (f71Var == null) {
             return 0L;
         }
-        return g71Var.p();
+        return f71Var.p();
     }
 
     public final com.google.firebase.messaging.v n() {
@@ -546,9 +546,9 @@ public final class eg0 implements rf.a {
             Point point = AndroidUtilities.displaySize;
             this.a = (Math.min(point.x, point.y) - AndroidUtilities.dp(32.0f)) / t();
             float f7 = this.O.floatValue() < 1.0f ? 0.6f : 0.45f;
-            w61 w61Var = this.Q;
-            w61Var.q = f7;
-            w61Var.a();
+            v61 v61Var = this.Q;
+            v61Var.q = f7;
+            v61Var.a();
         }
         return this.O.floatValue();
     }
@@ -591,8 +591,8 @@ public final class eg0 implements rf.a {
     public final void y(boolean z10) {
         ValueAnimator duration = ValueAnimator.ofFloat(z10 ? 0.0f : 1.0f, z10 ? 1.0f : 0.0f).setDuration(200L);
         this.F = duration;
-        duration.setInterpolator(qr.f);
-        this.F.addUpdateListener(new h70(this, 3));
+        duration.setInterpolator(rr.f);
+        this.F.addUpdateListener(new i70(this, 3));
         this.F.addListener(new bg0(this, 0));
         this.F.start();
     }
@@ -607,11 +607,11 @@ public final class eg0 implements rf.a {
         if (qf0Var != null) {
             y3 = qf0Var.G;
         } else {
-            g71 g71Var = photoViewer.F2;
-            if (g71Var == null) {
+            f71 f71Var = photoViewer.F2;
+            if (f71Var == null) {
                 return;
             } else {
-                y3 = g71Var.y();
+                y3 = f71Var.y();
             }
         }
         zf0 zf0Var = this.e0;

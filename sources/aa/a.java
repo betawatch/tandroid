@@ -1,5 +1,6 @@
 package aa;
 
+import a4.e;
 import ai.ba;
 import ai.u2;
 import android.app.ActivityManager;
@@ -37,12 +38,12 @@ import c3.q;
 import c6.e0;
 import c6.i;
 import ci.a7;
-import ci.b9;
-import ci.c7;
-import ci.d7;
-import ci.ka;
-import ci.n8;
-import ci.o8;
+import ci.b7;
+import ci.ha;
+import ci.k8;
+import ci.l8;
+import ci.y8;
+import ci.z6;
 import com.google.android.gms.cast.CastDevice;
 import com.google.android.gms.common.api.internal.s;
 import com.google.android.gms.internal.play_billing.k;
@@ -53,7 +54,6 @@ import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import e0.n;
 import e2.b0;
-import e2.d;
 import e2.d0;
 import e2.v;
 import g6.f;
@@ -90,7 +90,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import javax.crypto.Cipher;
 import javax.crypto.Mac;
 import javax.net.ssl.HttpsURLConnection;
-import k2.l0;
+import k2.k0;
 import k6.h;
 import l5.t;
 import m.p;
@@ -98,19 +98,19 @@ import m.p3;
 import n6.l;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.d71;
-import org.telegram.ui.Components.g71;
-import org.telegram.ui.Components.rz;
-import org.telegram.ui.Components.u61;
-import org.telegram.ui.Components.vz;
+import org.telegram.ui.Components.c71;
+import org.telegram.ui.Components.f71;
+import org.telegram.ui.Components.sz;
+import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.wz;
 import v7.m;
 import v7.o;
 import w.c;
-import z3.e;
+import z3.d;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final class a implements s, d71, e, a0, OnCompleteListener, n5.b {
+public final class a implements s, c71, d, a0, OnCompleteListener, n5.b {
     public static a e;
     public final /* synthetic */ int a;
     public Object b;
@@ -156,7 +156,7 @@ public final class a implements s, d71, e, a0, OnCompleteListener, n5.b {
         return c.g(str, sb3);
     }
 
-    @Override // z3.e
+    @Override // z3.d
     public int A() {
         return ((long[]) this.d).length;
     }
@@ -164,7 +164,7 @@ public final class a implements s, d71, e, a0, OnCompleteListener, n5.b {
     @Override // j4.a0
     public void a(v vVar) {
         long d;
-        d.h((b0) this.c);
+        e2.d.h((b0) this.c);
         String str = d0.a;
         b0 b0Var = (b0) this.c;
         synchronized (b0Var) {
@@ -226,7 +226,7 @@ public final class a implements s, d71, e, a0, OnCompleteListener, n5.b {
         Z1.b((b2.s) this.b);
     }
 
-    @Override // z3.e
+    @Override // z3.d
     public int d(long j3) {
         long[] jArr = (long[]) this.d;
         int a2 = d0.a(jArr, j3, false);
@@ -370,11 +370,11 @@ public final class a implements s, d71, e, a0, OnCompleteListener, n5.b {
         return 12;
     }
 
-    @Override // z3.e
+    @Override // z3.d
     public long g(int i10) {
         long[] jArr = (long[]) this.d;
-        d.b(i10 >= 0);
-        d.b(i10 < jArr.length);
+        e2.d.b(i10 >= 0);
+        e2.d.b(i10 < jArr.length);
         return jArr[i10];
     }
 
@@ -503,7 +503,7 @@ public final class a implements s, d71, e, a0, OnCompleteListener, n5.b {
         }
     }
 
-    @Override // z3.e
+    @Override // z3.d
     public List l(long j3) {
         List list = (List) this.b;
         ArrayList arrayList = new ArrayList();
@@ -521,7 +521,7 @@ public final class a implements s, d71, e, a0, OnCompleteListener, n5.b {
                 }
             }
         }
-        Collections.sort(arrayList2, new a4.e(18));
+        Collections.sort(arrayList2, new e(18));
         for (int i12 = 0; i12 < arrayList2.size(); i12++) {
             d2.b bVar2 = ((i4.c) arrayList2.get(i12)).a;
             arrayList.add(new d2.b(bVar2.a, bVar2.b, bVar2.c, bVar2.d, (-1) - i12, 1, bVar2.g, bVar2.h, bVar2.i, bVar2.n, bVar2.o, bVar2.j, bVar2.k, bVar2.l, bVar2.m, bVar2.p, bVar2.q, bVar2.r));
@@ -594,76 +594,76 @@ public final class a implements s, d71, e, a0, OnCompleteListener, n5.b {
         scheduledFuture.cancel(false);
     }
 
-    @Override // org.telegram.ui.Components.d71
-    public void onError(g71 g71Var, Exception exc) {
-        ka kaVar = ((d7) this.d).N;
-        if (kaVar != null) {
-            kaVar.run();
+    @Override // org.telegram.ui.Components.c71
+    public void onError(f71 f71Var, Exception exc) {
+        ha haVar = ((b7) this.d).N;
+        if (haVar != null) {
+            haVar.run();
         }
     }
 
-    @Override // org.telegram.ui.Components.d71
+    @Override // org.telegram.ui.Components.c71
     public /* synthetic */ void onRenderedFirstFrame(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.d71
+    @Override // org.telegram.ui.Components.c71
     public void onStateChanged(boolean z10, int i10) {
-        d7 d7Var = (d7) this.d;
-        a7 a7Var = d7Var.K;
-        g71 g71Var = d7Var.e;
-        if (g71Var == null) {
+        b7 b7Var = (b7) this.d;
+        z6 z6Var = b7Var.K;
+        f71 f71Var = b7Var.e;
+        if (f71Var == null) {
             return;
         }
-        if (g71Var.y()) {
-            AndroidUtilities.runOnUIThread(a7Var);
+        if (f71Var.y()) {
+            AndroidUtilities.runOnUIThread(z6Var);
         } else {
-            AndroidUtilities.cancelRunOnUIThread(a7Var);
+            AndroidUtilities.cancelRunOnUIThread(z6Var);
         }
     }
 
-    @Override // org.telegram.ui.Components.d71
+    @Override // org.telegram.ui.Components.c71
     public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.d71
+    @Override // org.telegram.ui.Components.c71
     public void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
-        ((d7) this.d).i();
+        ((b7) this.d).i();
     }
 
-    @Override // org.telegram.ui.Components.d71
+    @Override // org.telegram.ui.Components.c71
     public void onVideoSizeChanged(int i10, int i11, int i12, float f7) {
-        d7 d7Var = (d7) this.d;
-        o8 o8Var = (o8) this.b;
-        if (o8Var != null) {
-            n8 q6 = d7Var.e.q(o8Var.d1);
-            o8Var.d1 = q6;
-            u61 u61Var = d7Var.n;
-            if (u61Var != null) {
-                u61Var.setHDRInfo(q6);
+        b7 b7Var = (b7) this.d;
+        l8 l8Var = (l8) this.b;
+        if (l8Var != null) {
+            k8 q6 = b7Var.e.q(l8Var.d1);
+            l8Var.d1 = q6;
+            t61 t61Var = b7Var.n;
+            if (t61Var != null) {
+                t61Var.setHDRInfo(q6);
             }
         }
         int i13 = (int) (i10 * f7);
-        d7Var.f = i13;
+        b7Var.f = i13;
         int i14 = (int) (i11 * f7);
-        d7Var.h = i14;
-        if (o8Var != null && (o8Var.k0 != i13 || o8Var.l0 != i14)) {
-            o8Var.k0 = i13;
-            o8Var.l0 = i14;
-            o8Var.A();
+        b7Var.h = i14;
+        if (l8Var != null && (l8Var.k0 != i13 || l8Var.l0 != i14)) {
+            l8Var.k0 = i13;
+            l8Var.l0 = i14;
+            l8Var.A();
         }
-        d7Var.b();
-        u61 u61Var2 = d7Var.n;
-        if (u61Var2 != null) {
-            int i15 = d7Var.f;
-            int i16 = d7Var.h;
-            u61Var2.d = i15;
-            u61Var2.e = i16;
-            vz vzVar = u61Var2.b;
-            if (vzVar == null) {
+        b7Var.b();
+        t61 t61Var2 = b7Var.n;
+        if (t61Var2 != null) {
+            int i15 = b7Var.f;
+            int i16 = b7Var.h;
+            t61Var2.d = i15;
+            t61Var2.e = i16;
+            wz wzVar = t61Var2.b;
+            if (wzVar == null) {
                 return;
             }
-            vzVar.postRunnable(new rz(vzVar, i15, i16, 0));
+            wzVar.postRunnable(new sz(wzVar, i15, i16, 0));
         }
     }
 
@@ -753,7 +753,7 @@ public final class a implements s, d71, e, a0, OnCompleteListener, n5.b {
             if (oVar != null) {
                 ExecutorService executorService = (ExecutorService) this.b;
                 TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-                oVar.b = executorService.submit(new b9(6, oVar, taskCompletionSource));
+                oVar.b = executorService.submit(new y8(6, oVar, taskCompletionSource));
                 oVar.c = taskCompletionSource.getTask();
             }
             com.google.firebase.messaging.j a2 = com.google.firebase.messaging.e.a((FirebaseMessagingService) this.c, (com.google.firebase.messaging.q) this.d);
@@ -894,45 +894,45 @@ public final class a implements s, d71, e, a0, OnCompleteListener, n5.b {
         this.d = obj2;
     }
 
-    @Override // org.telegram.ui.Components.d71
+    @Override // org.telegram.ui.Components.c71
     public void onRenderedFirstFrame() {
-        o8 o8Var = (o8) this.b;
+        l8 l8Var = (l8) this.b;
         Runnable[] runnableArr = (Runnable[]) this.c;
-        d7 d7Var = (d7) this.d;
-        c7 c7Var = d7Var.H;
-        if (c7Var != null && c7Var.g) {
-            int i10 = d7Var.f;
-            int i11 = d7Var.h;
-            c7Var.d = true;
-            c7Var.e = i10;
-            c7Var.f = i11;
-            hi.a aVar = c7Var.c;
+        b7 b7Var = (b7) this.d;
+        a7 a7Var = b7Var.H;
+        if (a7Var != null && a7Var.g) {
+            int i10 = b7Var.f;
+            int i11 = b7Var.h;
+            a7Var.d = true;
+            a7Var.e = i10;
+            a7Var.f = i11;
+            hi.a aVar = a7Var.c;
             if (aVar != null) {
-                aVar.run(Integer.valueOf(i10), Integer.valueOf(c7Var.f));
+                aVar.run(Integer.valueOf(i10), Integer.valueOf(a7Var.f));
             }
         }
         Runnable runnable = runnableArr[0];
         if (runnable == null) {
-            u61 u61Var = d7Var.n;
-            if (u61Var != null) {
-                if (c7Var == null || !c7Var.g) {
-                    u61Var.animate().alpha(1.0f).setDuration(180L).withEndAction(new ba(21, this, o8Var)).start();
+            t61 t61Var = b7Var.n;
+            if (t61Var != null) {
+                if (a7Var == null || !a7Var.g) {
+                    t61Var.animate().alpha(1.0f).setDuration(180L).withEndAction(new ba(21, this, l8Var)).start();
                     return;
                 }
                 return;
             }
             return;
         }
-        d7Var.post(runnable);
+        b7Var.post(runnable);
         runnableArr[0] = null;
-        Bitmap bitmap = d7Var.a;
+        Bitmap bitmap = b7Var.a;
         if (bitmap != null) {
             bitmap.recycle();
-            if (o8Var.M0 == d7Var.a) {
-                o8Var.M0 = null;
+            if (l8Var.M0 == b7Var.a) {
+                l8Var.M0 = null;
             }
-            d7Var.a = null;
-            d7Var.invalidate();
+            b7Var.a = null;
+            b7Var.invalidate();
         }
     }
 
@@ -1001,11 +1001,11 @@ public final class a implements s, d71, e, a0, OnCompleteListener, n5.b {
         }
     }
 
-    @Override // org.telegram.ui.Components.d71
+    @Override // org.telegram.ui.Components.c71
     public /* synthetic */ void onSeekFinished(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.d71
+    @Override // org.telegram.ui.Components.c71
     public /* synthetic */ void onSeekStarted(j2.a aVar) {
     }
 
@@ -1092,7 +1092,7 @@ public final class a implements s, d71, e, a0, OnCompleteListener, n5.b {
 
     public a(c2.h[] hVarArr) {
         this.a = 26;
-        l0 l0Var = new l0();
+        k0 k0Var = new k0();
         c2.k kVar = new c2.k();
         kVar.c = 1.0f;
         kVar.d = 1.0f;
@@ -1109,9 +1109,9 @@ public final class a implements s, d71, e, a0, OnCompleteListener, n5.b {
         c2.h[] hVarArr2 = new c2.h[hVarArr.length + 2];
         this.b = hVarArr2;
         System.arraycopy(hVarArr, 0, hVarArr2, 0, hVarArr.length);
-        this.c = l0Var;
+        this.c = k0Var;
         this.d = kVar;
-        hVarArr2[hVarArr.length] = l0Var;
+        hVarArr2[hVarArr.length] = k0Var;
         hVarArr2[hVarArr.length + 1] = kVar;
     }
 
@@ -1234,10 +1234,10 @@ public final class a implements s, d71, e, a0, OnCompleteListener, n5.b {
         this.c = hc.f.c(i18);
     }
 
-    public a(d7 d7Var, o8 o8Var, Runnable[] runnableArr) {
+    public a(b7 b7Var, l8 l8Var, Runnable[] runnableArr) {
         this.a = 10;
-        this.d = d7Var;
-        this.b = o8Var;
+        this.d = b7Var;
+        this.b = l8Var;
         this.c = runnableArr;
     }
 }

@@ -8,29 +8,29 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.qr;
-import org.telegram.ui.lb0;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.rr;
+import org.telegram.ui.gb0;
 import w7.x5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class n0 extends FrameLayout implements l0 {
-    public final e6 a;
+    public final d6 a;
     public final ArrayList b;
     public final m0 c;
     public final m0 d;
     public final m0 e;
     public final boolean f;
 
-    public n0(Context context, e6 e6Var) {
+    public n0(Context context, d6 d6Var) {
         super(context);
         this.b = new ArrayList();
-        this.a = e6Var;
-        for (lb0 lb0Var : lb0.values()) {
-            if (lb0Var.e) {
-                this.b.add(lb0Var);
+        this.a = d6Var;
+        for (gb0 gb0Var : gb0.values()) {
+            if (gb0Var.e) {
+                this.b.add(gb0Var);
             }
             if (this.b.size() == 3) {
                 break;
@@ -48,7 +48,7 @@ public final class n0 extends FrameLayout implements l0 {
     }
 
     public final m0 a(Context context, int i10) {
-        lb0 lb0Var = (lb0) this.b.get(i10);
+        gb0 gb0Var = (gb0) this.b.get(i10);
         m0 m0Var = new m0(context);
         u1 u1Var = new u1(20);
         m0Var.e = u1Var;
@@ -64,12 +64,12 @@ public final class n0 extends FrameLayout implements l0 {
             u1Var.N = 1002;
         }
         u1Var.O = this.a;
-        u1Var.P = i6.Zj;
+        u1Var.P = h6.Zj;
         u1Var.c();
         paint.setColor(-1);
         m0Var.setLayoutParams(x5.d(-2, -2.0f, 17, 0.0f, 52.0f, 0.0f, 0.0f));
-        m0Var.setForeground(lb0Var.c);
-        m0Var.setBackgroundResource(lb0Var.b);
+        m0Var.setForeground(gb0Var.c);
+        m0Var.setBackgroundResource(gb0Var.b);
         m0Var.setPadding(AndroidUtilities.dp(8.0f));
         m0Var.setBackgroundOuterPadding(AndroidUtilities.dp(32.0f));
         addView(m0Var);
@@ -106,7 +106,7 @@ public final class n0 extends FrameLayout implements l0 {
             return;
         }
         float abs = Math.abs(f7 / getMeasuredWidth());
-        float interpolation = qr.i.getInterpolation(abs);
+        float interpolation = rr.i.getInterpolation(abs);
         int right = getRight();
         m0 m0Var = this.e;
         m0Var.setTranslationX(((m0Var.getWidth() * 1.5f) + (right - m0Var.getRight()) + AndroidUtilities.dp(32.0f)) * interpolation);
@@ -121,7 +121,7 @@ public final class n0 extends FrameLayout implements l0 {
         float clamp2 = Utilities.clamp(AndroidUtilities.lerp(1.0f, 1.8f, abs), 1.0f, 0.0f);
         m0Var2.setScaleX(clamp2);
         m0Var2.setScaleY(clamp2);
-        float interpolation2 = qr.g.getInterpolation(abs);
+        float interpolation2 = rr.g.getInterpolation(abs);
         int left = getLeft();
         m0 m0Var3 = this.d;
         m0Var3.setTranslationX((((left - m0Var3.getLeft()) - (m0Var3.getWidth() * 2.5f)) + AndroidUtilities.dp(32.0f)) * interpolation2);

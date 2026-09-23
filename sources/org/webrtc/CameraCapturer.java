@@ -10,7 +10,7 @@ import org.telegram.ui.Cells.q3;
 import org.webrtc.CameraSession;
 import org.webrtc.CameraVideoCapturer;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 abstract class CameraCapturer implements CameraVideoCapturer {
     private static final int MAX_OPEN_CAMERA_ATTEMPTS = 3;
@@ -202,7 +202,7 @@ abstract class CameraCapturer implements CameraVideoCapturer {
     private final Object stateLock = new Object();
     private SwitchState switchState = SwitchState.IDLE;
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public enum SwitchState {
         IDLE,
         PENDING,

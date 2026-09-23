@@ -1,28 +1,22 @@
 package ci;
 
-import org.telegram.messenger.MediaController;
+import android.content.Context;
+import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class k3 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ x3 a;
+public final class k3 extends org.telegram.ui.ActionBar.v0 {
+    public final /* synthetic */ w3 v0;
 
-    public k3(x3 x3Var) {
-        this.a = x3Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public k3(w3 w3Var, Context context, org.telegram.ui.ActionBar.z zVar, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, zVar, 0, 0, false, d6Var);
+        this.v0 = w3Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i10) {
-        x3 x3Var = this.a;
-        if (i10 != -1) {
-            if (i10 >= 10) {
-                x3Var.e((MediaController.AlbumEntry) x3Var.g0.get(i10 - 10), false);
-            }
-        } else {
-            Runnable runnable = x3Var.V;
-            if (runnable != null) {
-                runnable.run();
-            }
-        }
+    @Override // org.telegram.ui.ActionBar.v0, android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setText(this.v0.y.getText());
     }
 }

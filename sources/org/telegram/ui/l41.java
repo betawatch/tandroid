@@ -1,50 +1,52 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.NotificationCenter;
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class l41 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ m41 b;
+public final class l41 extends FrameLayout implements org.telegram.ui.ActionBar.y5 {
+    public final Path a;
+    public ch.d b;
 
-    public /* synthetic */ l41(m41 m41Var, int i10) {
-        this.a = i10;
-        this.b = m41Var;
+    public l41(Activity activity) {
+        super(activity);
+        this.a = new Path();
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                m41 m41Var = this.b;
-                if (m41Var.h != null) {
-                    m41Var.h = null;
-                    m41Var.e = 0.0f;
-                    m41Var.g();
-                    m41Var.n.unlock();
-                    vx vxVar = m41Var.a;
-                    if (vxVar != null) {
-                        vxVar.onPause();
-                        m41Var.a.onFragmentDestroy();
-                        m41Var.removeAllViews();
-                        m41Var.a = null;
-                        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needCheckSystemBarColors, new Object[0]);
-                    }
-                    m41Var.d(false);
-                    break;
-                }
-                break;
-            default:
-                m41 m41Var2 = this.b;
-                if (m41Var2.h != null) {
-                    m41Var2.h = null;
-                    m41Var2.d(true);
-                    break;
-                }
-                break;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        canvas.save();
+        canvas.clipPath(this.a);
+        super.dispatchDraw(canvas);
+        canvas.restore();
+    }
+
+    @Override // org.telegram.ui.ActionBar.y5
+    public final void e() {
+        ch.d dVar = this.b;
+        if (dVar != null) {
+            dVar.v();
         }
+    }
+
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
+    }
+
+    @Override // android.view.View
+    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
+        super.onSizeChanged(i10, i11, i12, i13);
+        Path path = this.a;
+        path.rewind();
+        path.addRoundRect(AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), i10 - AndroidUtilities.dp(9.0f), i11 - AndroidUtilities.dp(9.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), Path.Direction.CW);
+    }
+
+    public void setBlurredBackground(ch.d dVar) {
+        this.b = dVar;
+        setBackground(dVar);
     }
 }

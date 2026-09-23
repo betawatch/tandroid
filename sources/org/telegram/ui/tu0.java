@@ -1,264 +1,235 @@
 package org.telegram.ui;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
+import android.app.Activity;
+import android.graphics.Point;
+import android.text.TextUtils;
+import android.util.Property;
+import android.view.View;
+import android.widget.FrameLayout;
 import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public class tu0 implements bv0 {
-    @Override // org.telegram.ui.bv0
-    public /* synthetic */ boolean A() {
-        return false;
+public final class tu0 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
+    public final FrameLayout a;
+    public final ai.w5 b;
+    public final org.telegram.ui.ActionBar.i5[] c;
+    public final org.telegram.ui.Components.p6 d;
+    public AnimatorSet e;
+    public AnimatorSet f;
+    public boolean h;
+    public ValueAnimator n;
+    public float r;
+    public int s;
+
+    public tu0(Activity activity) {
+        super(activity);
+        FrameLayout frameLayout = new FrameLayout(activity);
+        this.a = frameLayout;
+        frameLayout.setPadding(AndroidUtilities.dp(56.0f), 0, 0, 0);
+        addView(frameLayout, w7.x5.e(-1, -1, 119));
+        ai.w5 w5Var = new ai.w5(activity, 25);
+        this.b = w5Var;
+        w5Var.setPivotX(AndroidUtilities.dp(16.0f));
+        w5Var.setPadding(AndroidUtilities.dp(16.0f), 0, 0, 0);
+        w5Var.setClipToPadding(false);
+        frameLayout.addView(w5Var, w7.x5.e(-1, -1, 119));
+        this.c = new org.telegram.ui.ActionBar.i5[2];
+        for (int i10 = 0; i10 < 2; i10++) {
+            this.c[i10] = new org.telegram.ui.ActionBar.i5(activity);
+            this.c[i10].setGravity(19);
+            this.c[i10].setTextColor(-1);
+            this.c[i10].setTextSize(20);
+            this.c[i10].setTypeface(AndroidUtilities.bold());
+            this.c[i10].setDrawablePadding(AndroidUtilities.dp(4.0f));
+            this.c[i10].setScrollNonFitText(true);
+            this.b.addView(this.c[i10], w7.x5.e(-1, -2, 19));
+        }
+        org.telegram.ui.Components.p6 p6Var = new org.telegram.ui.Components.p6(activity, true, false, false);
+        this.d = p6Var;
+        p6Var.b(0.4f, 320L, org.telegram.ui.Components.rr.h);
+        p6Var.setTextSize(AndroidUtilities.dp(14.0f));
+        p6Var.setGravity(19);
+        p6Var.setTextColor(-1);
+        p6Var.setEllipsizeByGradient(true);
+        p6Var.setImportantForAccessibility(1);
+        p6Var.setAccessibilityLiveRegion(1);
+        this.a.addView(p6Var, w7.x5.d(-1, 20.0f, 51, 16.0f, 0.0f, 0.0f, 0.0f));
     }
 
-    @Override // org.telegram.ui.bv0
-    public CharSequence C(int i10) {
-        return null;
+    public final void a(CharSequence charSequence, boolean z10) {
+        boolean isEmpty = TextUtils.isEmpty(charSequence);
+        boolean z11 = !isEmpty;
+        boolean z12 = this.h;
+        org.telegram.ui.Components.p6 p6Var = this.d;
+        if (z11 != z12) {
+            this.h = z11;
+            AnimatorSet animatorSet = this.f;
+            if (animatorSet != null) {
+                animatorSet.cancel();
+            }
+            Point point = AndroidUtilities.displaySize;
+            int dp = AndroidUtilities.dp((!isEmpty ? 30 : 33) - (point.x > point.y ? 6 : 0));
+            ai.w5 w5Var = this.b;
+            if (z10) {
+                ArrayList arrayList = new ArrayList();
+                arrayList.add(ObjectAnimator.ofFloat(p6Var, (Property<org.telegram.ui.Components.p6, Float>) View.ALPHA, !isEmpty ? 1.0f : 0.0f));
+                float[] fArr = {dp};
+                Property property = View.TRANSLATION_Y;
+                arrayList.add(ObjectAnimator.ofFloat(p6Var, (Property<org.telegram.ui.Components.p6, Float>) property, fArr));
+                arrayList.add(ObjectAnimator.ofFloat(w5Var, (Property<ai.w5, Float>) property, isEmpty ? 0.0f : AndroidUtilities.dp(-12.0f)));
+                arrayList.add(ObjectAnimator.ofFloat(w5Var, (Property<ai.w5, Float>) View.SCALE_X, !isEmpty ? 0.87f : 1.0f));
+                arrayList.add(ObjectAnimator.ofFloat(w5Var, (Property<ai.w5, Float>) View.SCALE_Y, isEmpty ? 1.0f : 0.87f));
+                AnimatorSet animatorSet2 = new AnimatorSet();
+                this.f = animatorSet2;
+                animatorSet2.playTogether(arrayList);
+                this.f.setInterpolator(org.telegram.ui.Components.rr.h);
+                this.f.start();
+            } else {
+                p6Var.setAlpha(!isEmpty ? 1.0f : 0.0f);
+                p6Var.setTranslationY(dp);
+                w5Var.setTranslationY(isEmpty ? 0.0f : AndroidUtilities.dp(-12.0f));
+                w5Var.setScaleX(!isEmpty ? 0.87f : 1.0f);
+                w5Var.setScaleY(isEmpty ? 1.0f : 0.87f);
+            }
+        }
+        p6Var.c(charSequence, z10, true);
+        if (TextUtils.isEmpty(charSequence)) {
+            charSequence = null;
+        }
+        p6Var.setContentDescription(charSequence);
     }
 
-    @Override // org.telegram.ui.bv0
-    public dv0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
-        return null;
+    public final void b(boolean z10) {
+        org.telegram.ui.ActionBar.i5[] i5VarArr = this.c;
+        i5VarArr[0].getPaint().setShadowLayer(AndroidUtilities.dpf2(0.66f), 0.0f, 1.0f, z10 ? 1912602624 : 0);
+        i5VarArr[1].getPaint().setShadowLayer(AndroidUtilities.dpf2(0.66f), 0.0f, 1.0f, z10 ? 1912602624 : 0);
+        this.d.getDrawable().p(AndroidUtilities.dpf2(0.66f), 1.0f, z10 ? 1912602624 : 0);
     }
 
-    @Override // org.telegram.ui.bv0
-    public int H() {
-        return 0;
+    public final void c(CharSequence charSequence) {
+        org.telegram.ui.ActionBar.i5[] i5VarArr = this.c;
+        i5VarArr[1].setAlpha(0.0f);
+        i5VarArr[1].setVisibility(8);
+        CharSequence text = i5VarArr[0].getText();
+        if (text != null || charSequence != null) {
+            r1 = (text == null) != (charSequence == null) ? false : TextUtils.equals(text.toString(), charSequence.toString());
+        }
+        if (!r1) {
+            org.telegram.ui.ActionBar.i5 i5Var = i5VarArr[0];
+            i5Var.R = 0.0f;
+            i5Var.b();
+        }
+        i5VarArr[0].k(charSequence);
+        i5VarArr[0].setAlpha(1.0f);
+        i5VarArr[0].setTranslationX(0.0f);
+        i5VarArr[0].setTranslationY(0.0f);
     }
 
-    @Override // org.telegram.ui.bv0
-    public boolean J() {
-        return false;
+    public final void d(CharSequence charSequence, boolean z10, boolean z11) {
+        org.telegram.ui.ActionBar.i5[] i5VarArr = this.c;
+        CharSequence text = i5VarArr[0].getText();
+        if (text == null ? false : TextUtils.equals(text.toString(), charSequence.toString())) {
+            return;
+        }
+        AnimatorSet animatorSet = this.e;
+        if (animatorSet != null) {
+            animatorSet.cancel();
+            this.e = null;
+        }
+        org.telegram.ui.ActionBar.i5 i5Var = i5VarArr[1];
+        org.telegram.ui.ActionBar.i5 i5Var2 = i5VarArr[0];
+        i5Var.getClass();
+        i5Var.R = i5Var2.R;
+        i5Var.b();
+        i5VarArr[1].k(i5VarArr[0].getText());
+        i5VarArr[1].setRightPadding((int) this.r);
+        org.telegram.ui.ActionBar.i5 i5Var3 = i5VarArr[0];
+        i5Var3.R = 0.0f;
+        i5Var3.b();
+        i5VarArr[0].k(charSequence);
+        float dp = AndroidUtilities.dp(8.0f) * (z11 ? 1 : -1);
+        i5VarArr[1].setTranslationX(0.0f);
+        i5VarArr[1].setTranslationY(0.0f);
+        if (z10) {
+            i5VarArr[0].setTranslationX(0.0f);
+            i5VarArr[0].setTranslationY(-dp);
+        } else {
+            i5VarArr[0].setTranslationX(-dp);
+            i5VarArr[0].setTranslationY(0.0f);
+        }
+        i5VarArr[0].setAlpha(0.0f);
+        i5VarArr[1].setAlpha(1.0f);
+        i5VarArr[0].setVisibility(0);
+        i5VarArr[1].setVisibility(0);
+        ArrayList arrayList = new ArrayList();
+        Property property = View.ALPHA;
+        arrayList.add(ObjectAnimator.ofFloat(i5VarArr[1], (Property<org.telegram.ui.ActionBar.i5, Float>) property, 0.0f));
+        arrayList.add(ObjectAnimator.ofFloat(i5VarArr[0], (Property<org.telegram.ui.ActionBar.i5, Float>) property, 1.0f));
+        org.telegram.ui.ActionBar.i5 i5Var4 = i5VarArr[1];
+        Property property2 = View.TRANSLATION_X;
+        Property property3 = View.TRANSLATION_Y;
+        arrayList.add(ObjectAnimator.ofFloat(i5Var4, (Property<org.telegram.ui.ActionBar.i5, Float>) (z10 ? property3 : property2), dp));
+        org.telegram.ui.ActionBar.i5 i5Var5 = i5VarArr[0];
+        if (z10) {
+            property2 = property3;
+        }
+        arrayList.add(ObjectAnimator.ofFloat(i5Var5, (Property<org.telegram.ui.ActionBar.i5, Float>) property2, 0.0f));
+        AnimatorSet animatorSet2 = new AnimatorSet();
+        this.e = animatorSet2;
+        animatorSet2.playTogether(arrayList);
+        this.e.addListener(new wq0(this, 9));
+        this.e.setDuration(320L);
+        this.e.setInterpolator(org.telegram.ui.Components.rr.h);
+        this.e.start();
     }
 
-    @Override // org.telegram.ui.bv0
-    public /* synthetic */ boolean K() {
-        return false;
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (i10 == NotificationCenter.emojiLoaded) {
+            org.telegram.ui.ActionBar.i5[] i5VarArr = this.c;
+            i5VarArr[0].invalidate();
+            i5VarArr[1].invalidate();
+            this.d.invalidate();
+        }
     }
 
-    @Override // org.telegram.ui.bv0
-    public /* synthetic */ boolean M() {
-        return true;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.emojiLoaded);
     }
 
-    @Override // org.telegram.ui.bv0
-    public /* synthetic */ boolean N() {
-        return false;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.emojiLoaded);
     }
 
-    @Override // org.telegram.ui.bv0
-    public boolean O() {
-        return false;
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        this.a.layout(0, AndroidUtilities.statusBarHeight, i12 - i10, i13 - i11);
     }
 
-    @Override // org.telegram.ui.bv0
-    public /* synthetic */ boolean P() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.bv0
-    public int Q(Object obj) {
-        return -1;
-    }
-
-    @Override // org.telegram.ui.bv0
-    public int R(int i10) {
-        return -1;
-    }
-
-    @Override // org.telegram.ui.bv0
-    public boolean S() {
-        return !(this instanceof ul);
-    }
-
-    @Override // org.telegram.ui.bv0
-    public boolean T() {
-        return !(this instanceof wl);
-    }
-
-    @Override // org.telegram.ui.bv0
-    public MessageObject U() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.bv0
-    public boolean Y() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.bv0
-    public /* synthetic */ long a() {
-        return 0L;
-    }
-
-    @Override // org.telegram.ui.bv0
-    public String a0() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.bv0
-    public /* synthetic */ boolean b() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.bv0
-    public CharSequence b0(int i10) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.bv0
-    public ArrayList c() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.bv0
-    public boolean g() {
-        return !(this instanceof ul);
-    }
-
-    @Override // org.telegram.ui.bv0
-    public /* synthetic */ boolean h() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.bv0
-    public ImageReceiver.BitmapHolder j(int i10) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.bv0
-    public int k(int i10, VideoEditedInfo videoEditedInfo) {
-        return -1;
-    }
-
-    @Override // org.telegram.ui.bv0
-    public /* synthetic */ boolean l() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.bv0
-    public boolean p() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.bv0
-    public /* synthetic */ boolean q() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.bv0
-    public boolean r() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.bv0
-    public /* synthetic */ boolean t() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.bv0
-    public boolean u() {
-        return !(this instanceof org.telegram.ui.Components.xl);
-    }
-
-    @Override // org.telegram.ui.bv0
-    public HashMap v() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.bv0
-    public /* synthetic */ boolean w() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.bv0
-    public boolean x(int i10) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.bv0
-    public int y() {
-        return -1;
-    }
-
-    @Override // org.telegram.ui.bv0
-    public boolean z() {
-        return !(this instanceof org.telegram.ui.Components.wh);
-    }
-
-    @Override // org.telegram.ui.bv0
-    public void B(int i10) {
-    }
-
-    @Override // org.telegram.ui.bv0
-    public void D() {
-    }
-
-    @Override // org.telegram.ui.bv0
-    public /* synthetic */ void F(boolean z10) {
-    }
-
-    @Override // org.telegram.ui.bv0
-    public void G() {
-    }
-
-    @Override // org.telegram.ui.bv0
-    public /* synthetic */ void I() {
-    }
-
-    @Override // org.telegram.ui.bv0
-    public void L(VideoEditedInfo videoEditedInfo) {
-    }
-
-    @Override // org.telegram.ui.bv0
-    public /* synthetic */ void V() {
-    }
-
-    @Override // org.telegram.ui.bv0
-    public void W(int i10) {
-    }
-
-    @Override // org.telegram.ui.bv0
-    public /* synthetic */ void X(int i10) {
-    }
-
-    @Override // org.telegram.ui.bv0
-    public void Z(int i10) {
-    }
-
-    @Override // org.telegram.ui.bv0
-    public void d() {
-    }
-
-    @Override // org.telegram.ui.bv0
-    public void e(CharSequence charSequence) {
-    }
-
-    @Override // org.telegram.ui.bv0
-    public /* synthetic */ void i() {
-    }
-
-    @Override // org.telegram.ui.bv0
-    public /* synthetic */ void m() {
-    }
-
-    @Override // org.telegram.ui.bv0
-    public void n() {
-    }
-
-    @Override // org.telegram.ui.bv0
-    public /* synthetic */ void s() {
-    }
-
-    @Override // org.telegram.ui.bv0
-    public void f(String str, String str2, boolean z10) {
-    }
-
-    @Override // org.telegram.ui.bv0
-    public void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int size = View.MeasureSpec.getSize(i10);
+        int size2 = View.MeasureSpec.getSize(i11);
+        int i12 = AndroidUtilities.statusBarHeight;
+        int i13 = this.s;
+        int i14 = AndroidUtilities.displaySize.y;
+        if (i13 != i14) {
+            this.s = i14;
+            this.h = !this.h;
+            a(this.d.getText(), false);
+        }
+        this.a.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2 - i12, TLObject.FLAG_30));
+        setMeasuredDimension(size, size2);
     }
 }

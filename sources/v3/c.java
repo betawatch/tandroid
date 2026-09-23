@@ -5,9 +5,9 @@ import c3.a0;
 import c3.c0;
 import e2.d0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final class c implements f {
+public final class c implements g {
     public final long[] a;
     public final long[] b;
     public final long c;
@@ -29,17 +29,17 @@ public final class c implements f {
         return Pair.create(Long.valueOf(j3), Long.valueOf(((long) ((jArr[i10] == j10 ? 0.0d : (j3 - j10) / (r6 - j10)) * (jArr2[i10] - j11))) + j11));
     }
 
-    @Override // v3.f
+    @Override // v3.g
     public final long b(long j3) {
         return d0.Q(((Long) a(j3, this.a, this.b).second).longValue());
     }
 
-    @Override // v3.f
+    @Override // v3.g
     public final long d() {
         return -1L;
     }
 
-    @Override // v3.f
+    @Override // v3.g
     public final long e() {
         return 0L;
     }
@@ -56,7 +56,7 @@ public final class c implements f {
         return new a0(c0Var, c0Var);
     }
 
-    @Override // v3.f
+    @Override // v3.g
     public final int k() {
         return -2147483647;
     }

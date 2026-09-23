@@ -1,48 +1,21 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
+import android.graphics.Rect;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class w30 extends org.telegram.ui.Components.ll0 {
-    public final /* synthetic */ i60 X2;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w30(i60 i60Var, LaunchActivity launchActivity) {
-        super(launchActivity, null);
-        this.X2 = i60Var;
-    }
-
-    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        org.telegram.ui.Components.r20 r20Var = (org.telegram.ui.Components.r20) view;
-        i60 i60Var = this.X2;
-        o50 o50Var = i60Var.Q;
-        a40 a40Var = i60Var.a2;
-        if (a40Var.r == null && !i60Var.N2.k()) {
-            r20Var.setAlpha(1.0f);
-            r20Var.setTranslationX(0.0f);
-            r20Var.setTranslationY(0.0f);
+public final class w30 extends s4.n0 {
+    @Override // s4.n0
+    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.z0 z0Var) {
+        recyclerView.getClass();
+        RecyclerView.R(view);
+        if (f60.F3) {
+            rect.set(0, AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f));
+        } else {
+            rect.set(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
         }
-        w30 w30Var = i60Var.m2;
-        r20Var.getClass();
-        w30Var.getClass();
-        if (RecyclerView.R(r20Var) == -1 && r20Var.getRenderer() != null) {
-            return true;
-        }
-        if (r20Var.getTranslationY() == 0.0f || r20Var.getRenderer() == null || r20Var.getRenderer().c == null) {
-            return super.drawChild(canvas, view, j3);
-        }
-        float top = o50Var.getTop() - getTop();
-        float measuredHeight = o50Var.getMeasuredHeight() + top;
-        float f7 = a40Var.c;
-        canvas.save();
-        float f10 = 1.0f - f7;
-        canvas.clipRect(0.0f, top * f10, getMeasuredWidth(), (getMeasuredHeight() * f7) + (measuredHeight * f10));
-        boolean drawChild = super.drawChild(canvas, view, j3);
-        canvas.restore();
-        return drawChild;
     }
 }

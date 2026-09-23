@@ -12,9 +12,9 @@ import android.text.TextUtils;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class v0 extends View {
     public final Paint a;
@@ -25,7 +25,7 @@ public final class v0 extends View {
     public final Path f;
     public androidx.fragment.app.a0 h;
     public boolean n;
-    public final org.telegram.ui.Components.c6 r;
+    public final org.telegram.ui.Components.e6 r;
 
     public v0(Context context) {
         super(context);
@@ -34,8 +34,8 @@ public final class v0 extends View {
         TextPaint textPaint = new TextPaint(1);
         this.b = textPaint;
         this.f = new Path();
-        org.telegram.ui.Components.c6 c6Var = new org.telegram.ui.Components.c6(this);
-        this.r = c6Var;
+        org.telegram.ui.Components.e6 e6Var = new org.telegram.ui.Components.e6(this);
+        this.r = e6Var;
         paint.setColor(-869783512);
         paint.setPathEffect(new CornerPathEffect(AndroidUtilities.dp(6.0f)));
         textPaint.setTextSize(AndroidUtilities.dp(14.0f));
@@ -44,7 +44,7 @@ public final class v0 extends View {
         this.c = staticLayout;
         this.d = staticLayout.getLineCount() > 0 ? staticLayout.getLineWidth(0) : 0.0f;
         this.e = staticLayout.getLineCount() > 0 ? staticLayout.getLineLeft(0) : 0.0f;
-        c6Var.d(0.0f, true);
+        e6Var.d(0.0f, true);
     }
 
     public final void a(boolean z10) {
@@ -64,8 +64,8 @@ public final class v0 extends View {
             return;
         }
         canvas.save();
-        canvas.translate(0.0f, (this.n ? qr.k.getInterpolation(e) : 1.0f) * AndroidUtilities.dp(12.0f));
-        float interpolation = qr.h.getInterpolation(e);
+        canvas.translate(0.0f, (this.n ? rr.k.getInterpolation(e) : 1.0f) * AndroidUtilities.dp(12.0f));
+        float interpolation = rr.h.getInterpolation(e);
         float measuredWidth = getMeasuredWidth();
         float measuredHeight = getMeasuredHeight();
         float dp = AndroidUtilities.dp(22.0f) + this.d;

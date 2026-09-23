@@ -1,77 +1,82 @@
 package org.telegram.messenger;
 
+import android.net.Uri;
 import android.os.Bundle;
-import android.os.CancellationSignal;
-import org.telegram.messenger.MessagesStorage;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.function.Consumer;
 import org.telegram.messenger.NotificationBadge;
-import org.telegram.messenger.PushListenerController;
-import org.telegram.messenger.RichMessageLayout;
 import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final /* synthetic */ class vg implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ vg(Object obj, int i10) {
+    public /* synthetic */ vg(int i10, Object obj, Object obj2) {
         this.a = i10;
         this.b = obj;
+        this.c = obj2;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((MusicPlayerService) this.b).stopSelf();
+                ((NotificationBadge.ZukHomeBadger) this.b).lambda$executeBadge$0((Bundle) this.c);
                 break;
             case 1:
-                NotificationBadge.HuaweiHomeBadger.lambda$executeBadge$0((Bundle) this.b);
+                NotificationsController.lambda$showExtraNotifications$45((Uri) this.b, (File) this.c);
                 break;
             case 2:
-                ((NotificationsSettingsFacade) this.b).lambda$applyDialogNotificationsSettings$0();
+                NotificationsController.lambda$loadTopicsNotificationsExceptions$53((Consumer) this.b, (HashSet) this.c);
                 break;
             case 3:
-                ((CancellationSignal) this.b).cancel();
+                ((NotificationsController) this.b).lambda$didReceivedNotification$38((String) this.c);
                 break;
             case 4:
-                ((ProxyRotationController) this.b).lambda$new$2();
+                ((NotificationsController) this.b).lambda$processEditedMessages$22((a0.i) this.c);
                 break;
             case 5:
-                ((PushListenerController.GooglePushListenerServiceProvider) this.b).lambda$onRequestPushToken$1();
+                PasskeysController.lambda$create$2((Utilities.Callback2) this.b, (Throwable) this.c);
                 break;
             case 6:
-                ((RichMessageLayout.PreviewView) this.b).lambda$onTouchEvent$0();
+                ((SavedMessagesController) this.b).lambda$deleteCache$13((MessagesStorage) this.c);
                 break;
             case 7:
-                ((RichMessageLayout.RichButtonRowBlock) this.b).invalidate();
+                ((SecretChatHelper) this.b).lambda$performSendEncryptedRequest$6((TLRPC.Message) this.c);
                 break;
             case 8:
-                ((RichMessageLayout.RichButtonSpan) this.b).invalidate();
+                ((SendMessagesHelper) this.b).lambda$performSendMessageRequest$90((TLRPC.TL_updateShortSentMessage) this.c);
                 break;
             case 9:
-                RichMessageLayout.RichUnsupportedBlock.lambda$new$0((RichMessageLayout) this.b);
+                ((SendMessagesHelper) this.b).lambda$sendMessage$16((ArrayList) this.c);
                 break;
             case 10:
-                ((RichMessageLayout.Text) this.b).lambda$scheduleLongPress$2();
+                ((SendMessagesHelper.ImportingStickers) this.b).lambda$onMediaImport$0((String) this.c);
                 break;
             case 11:
-                ((SecretChatHelper) this.b).lambda$startSecretChat$25();
+                ((TopicsController) this.b).lambda$processUpdate$22((List) this.c);
                 break;
             case 12:
-                ((SendMessagesHelper) this.b).lambda$new$0();
+                ((TopicsController) this.b).lambda$pinTopic$19((org.telegram.ui.ActionBar.n2) this.c);
                 break;
             case 13:
-                ((MessagesStorage.StringCallback) this.b).run(null);
+                ((TopicsController) this.b).lambda$onTopicsDeletedServerSide$23((ArrayList) this.c);
                 break;
             case 14:
-                ((SendMessagesHelper.LocationProvider) this.b).lambda$start$0();
-                break;
-            case 15:
-                ((TelegramMediaSession) this.b).onAccountSwitched();
+                ((TopicsController) this.b).lambda$updateReadOutbox$26((HashMap) this.c);
                 break;
             default:
-                ((TranslateController) this.b).loadTranslatingDialogsCached();
+                ((UserConfig) this.b).lambda$loadGlobalTTl$3((TLObject) this.c);
                 break;
         }
     }

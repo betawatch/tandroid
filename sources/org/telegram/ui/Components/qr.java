@@ -1,91 +1,93 @@
 package org.telegram.ui.Components;
 
-import android.graphics.PointF;
-import android.view.animation.Interpolator;
-import android.view.animation.PathInterpolator;
+import android.animation.ValueAnimator;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class qr implements Interpolator {
-    public static final qr f = new qr(0.25d, 0.1d, 0.25d, 1.0d);
-    public static final qr g = new qr(0.0d, 0.0d, 0.58d, 1.0d);
-    public static final qr h = new qr(0.23d, 1.0d, 0.32d, 1.0d);
-    public static final qr i = new qr(0.42d, 0.0d, 1.0d, 1.0d);
-    public static final qr j = new qr(0.42d, 0.0d, 0.58d, 1.0d);
-    public static final qr k = new qr(0.34d, 1.56d, 0.64d, 1.0d);
-    public static final PathInterpolator l;
-    public final PointF a;
-    public final PointF b;
-    public final PointF c;
-    public final PointF d;
-    public final PointF e;
+public final class qr extends Drawable {
+    public final Drawable a;
+    public final Drawable b;
+    public float c;
+    public float d = 255.0f;
+    public ValueAnimator e;
 
-    static {
-        new PathInterpolator(v7.g8.d("M 0,0 C 0.05, 0, 0.133333, 0.06, 0.166666, 0.4 C 0.208333, 0.82, 0.25, 1, 1, 1"));
-        new PathInterpolator(0.05f, 0.7f, 0.1f, 1.0f);
-        new PathInterpolator(0.3f, 0.0f, 0.8f, 0.15f);
-        l = new PathInterpolator(0.0f, 0.0f, 0.0f, 1.0f);
+    public qr(Drawable drawable, Drawable drawable2) {
+        this.a = drawable;
+        this.b = drawable2;
+        if (drawable != null) {
+            drawable.setCallback(new pr(this, 0));
+        }
+        if (drawable2 != null) {
+            drawable2.setCallback(new pr(this, 1));
+        }
     }
 
-    public qr(float f7, float f10, float f11, float f12) {
-        PointF pointF = new PointF(f7, f10);
-        PointF pointF2 = new PointF(f11, f12);
-        this.c = new PointF();
-        this.d = new PointF();
-        this.e = new PointF();
-        float f13 = pointF.x;
-        if (f13 < 0.0f || f13 > 1.0f) {
-            throw new IllegalArgumentException("startX value must be in the range [0, 1]");
+    public final void a(float f7) {
+        ValueAnimator valueAnimator = this.e;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
         }
-        float f14 = pointF2.x;
-        if (f14 < 0.0f || f14 > 1.0f) {
-            throw new IllegalArgumentException("endX value must be in the range [0, 1]");
-        }
-        this.a = pointF;
-        this.b = pointF2;
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.c, f7);
+        this.e = ofFloat;
+        ofFloat.addUpdateListener(new k6(this, 15));
+        this.e.setDuration((long) (Math.abs(this.c - f7) * 200.0f));
+        this.e.setInterpolator(rr.f);
+        this.e.start();
     }
 
-    @Override // android.animation.TimeInterpolator
-    public final float getInterpolation(float f7) {
-        PointF pointF;
-        PointF pointF2;
-        PointF pointF3;
-        PointF pointF4;
-        PointF pointF5;
-        int i10 = 1;
-        float f10 = f7;
-        while (true) {
-            pointF = this.b;
-            pointF2 = this.a;
-            pointF3 = this.c;
-            pointF4 = this.d;
-            pointF5 = this.e;
-            if (i10 >= 14) {
-                break;
-            }
-            float f11 = pointF2.x * 3.0f;
-            pointF5.x = f11;
-            float f12 = ((pointF.x - pointF2.x) * 3.0f) - f11;
-            pointF4.x = f12;
-            float f13 = (1.0f - pointF5.x) - f12;
-            pointF3.x = f13;
-            float f14 = (((((f13 * f10) + pointF4.x) * f10) + pointF5.x) * f10) - f7;
-            if (Math.abs(f14) < 0.001d) {
-                break;
-            }
-            f10 -= f14 / (((((pointF3.x * 3.0f) * f10) + (pointF4.x * 2.0f)) * f10) + pointF5.x);
-            i10++;
-        }
-        float f15 = pointF2.y * 3.0f;
-        pointF5.y = f15;
-        float f16 = ((pointF.y - pointF2.y) * 3.0f) - f15;
-        pointF4.y = f16;
-        float f17 = (1.0f - pointF5.y) - f16;
-        pointF3.y = f17;
-        return ((((f17 * f10) + pointF4.y) * f10) + pointF5.y) * f10;
+    public final void b(float f7) {
+        this.c = f7;
+        invalidateSelf();
     }
 
-    public qr(double d, double d10, double d11, double d12) {
-        this((float) d, (float) d10, (float) d11, (float) d12);
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int i10 = (int) ((1.0f - this.c) * this.d);
+        Drawable drawable = this.a;
+        drawable.setAlpha(i10);
+        int i11 = (int) (this.d * this.c);
+        Drawable drawable2 = this.b;
+        drawable2.setAlpha(i11);
+        if (i10 > 0) {
+            drawable.draw(canvas);
+        }
+        if (i11 > 0) {
+            drawable2.draw(canvas);
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return this.a.getIntrinsicHeight();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return this.a.getIntrinsicWidth();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -3;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void onBoundsChange(Rect rect) {
+        this.a.setBounds(rect);
+        this.b.setBounds(rect);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.d = i10;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.a.setColorFilter(colorFilter);
     }
 }

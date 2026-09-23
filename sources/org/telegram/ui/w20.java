@@ -1,30 +1,36 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class w20 implements View.OnClickListener {
+public final /* synthetic */ class w20 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.Cells.z1[] b;
+    public final /* synthetic */ f60 b;
 
-    public /* synthetic */ w20(org.telegram.ui.Cells.z1[] z1VarArr, int i10) {
+    public /* synthetic */ w20(f60 f60Var, int i10) {
         this.a = i10;
-        this.b = z1VarArr;
+        this.b = f60Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                int intValue = ((Integer) view.getTag()).intValue();
-                this.b[intValue].c(!r1[r3.intValue()].b(), true);
+                org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+                if (this.b.x0 && (U instanceof xn)) {
+                    ((xn) U).T9(true, true);
+                    break;
+                }
                 break;
             case 1:
-                this.b[0].c(!r3.b(), true);
+                this.b.dismiss();
+                break;
+            case 2:
+                this.b.E1 = null;
                 break;
             default:
-                this.b[0].c(!r3.b(), true);
+                this.b.r0 = null;
                 break;
         }
     }

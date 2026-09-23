@@ -19,7 +19,7 @@ import java.io.IOException;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class q4 implements Runnable {
     public final /* synthetic */ int a;
@@ -50,9 +50,9 @@ public final class q4 implements Runnable {
         int i10 = 0;
         switch (this.a) {
             case 0:
-                f6 f6Var = (f6) this.b;
-                if (f6Var.K1 && f6Var.b1) {
-                    jc jcVar = ((ac) f6Var.Q1).d;
+                e6 e6Var = (e6) this.b;
+                if (e6Var.K1 && e6Var.b1) {
+                    jc jcVar = ((ac) e6Var.Q1).d;
                     jcVar.l1 = false;
                     jcVar.P();
                     return;
@@ -139,7 +139,7 @@ public final class q4 implements Runnable {
                 yVar.c(hVar2);
                 return;
             case 12:
-                qg.j jVar = ((ci.qb) this.b).J0;
+                qg.j jVar = ((ci.nb) this.b).J0;
                 if (jVar instanceof qg.x2) {
                     ((qg.x2) jVar).getEditText();
                     return;
@@ -248,7 +248,7 @@ public final class q4 implements Runnable {
                 animatorSet.playTogether(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 0.0f), ObjectAnimator.ofFloat(v5Var.a, (Property<TextView, Float>) property, 1.0f));
                 v5Var.d.setDuration(250L);
                 v5Var.d.setInterpolator(new DecelerateInterpolator());
-                v5Var.d.addListener(new org.telegram.ui.t4(this, 9));
+                v5Var.d.addListener(new org.telegram.ui.u4(this, 9));
                 v5Var.d.start();
                 return;
             default:

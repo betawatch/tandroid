@@ -1,44 +1,281 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.accessibility.AccessibilityNodeInfo;
-import org.telegram.ui.wd1;
+import android.os.Build;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
+import android.view.View;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class yl extends org.telegram.ui.ActionBar.v0 {
-    public final /* synthetic */ int v0;
-    public final /* synthetic */ Object w0;
+public final class yl extends dm {
+    public final /* synthetic */ ChatAttachAlertPhotoLayout b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ yl(ni niVar, Context context, org.telegram.ui.ActionBar.z zVar, org.telegram.ui.ActionBar.e6 e6Var, int i10) {
-        super(context, zVar, 0, 0, false, e6Var);
-        this.v0 = i10;
-        this.w0 = niVar;
+    public yl(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout) {
+        super(chatAttachAlertPhotoLayout);
+        this.b = chatAttachAlertPhotoLayout;
     }
 
-    @Override // org.telegram.ui.ActionBar.v0, android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        switch (this.v0) {
-            case 0:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setText(((ChatAttachAlertPhotoLayout) this.w0).x.getText());
-                break;
-            case 1:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setText(((qm) this.w0).x.getText());
-                break;
-            default:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setText(((wd1) this.w0).h.getText());
-                break;
+    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
+    public final boolean A() {
+        wi wiVar = this.b.b;
+        return wiVar != null && wiVar.c0;
+    }
+
+    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
+    public final void D() {
+        boolean z10 = ChatAttachAlertPhotoLayout.q1;
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
+        chatAttachAlertPhotoLayout.m0();
+        AndroidUtilities.runOnUIThread(new og(this, 23), 150L);
+        chatAttachAlertPhotoLayout.A(ChatAttachAlertPhotoLayout.s1.size());
+    }
+
+    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
+    public final org.telegram.ui.wu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        rt rtVar;
+        org.telegram.ui.wu0 closeIntoObject;
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
+        wi wiVar = chatAttachAlertPhotoLayout.b;
+        if (z11 && (rtVar = wiVar.R0) != null && (closeIntoObject = ((u40) rtVar.b).getCloseIntoObject()) != null) {
+            return closeIntoObject;
+        }
+        org.telegram.ui.Cells.t5 L = ChatAttachAlertPhotoLayout.L(chatAttachAlertPhotoLayout, i10);
+        if (L == null) {
+            return null;
+        }
+        int[] iArr = new int[2];
+        L.getImageView().getLocationInWindow(iArr);
+        if (Build.VERSION.SDK_INT < 26) {
+            iArr[0] = iArr[0] - wiVar.getLeftInset();
+        }
+        org.telegram.ui.wu0 wu0Var = new org.telegram.ui.wu0();
+        wu0Var.b = iArr[0];
+        wu0Var.c = iArr[1];
+        wu0Var.d = chatAttachAlertPhotoLayout.E;
+        ImageReceiver imageReceiver = L.getImageView().getImageReceiver();
+        wu0Var.a = imageReceiver;
+        wu0Var.e = imageReceiver.getBitmapSafe();
+        wu0Var.k = L.getScale();
+        wu0Var.i = (int) wiVar.l1();
+        L.g(false);
+        return wu0Var;
+    }
+
+    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
+    public final void F(boolean z10) {
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
+        wi wiVar = chatAttachAlertPhotoLayout.b;
+        if (wiVar == null || wiVar.c0 == z10) {
+            return;
+        }
+        wiVar.H1(z10, true);
+        chatAttachAlertPhotoLayout.d1.a(!chatAttachAlertPhotoLayout.b.c0, true);
+    }
+
+    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
+    public final void G() {
+        ul ulVar = this.b.E;
+        int childCount = ulVar.getChildCount();
+        for (int i10 = 0; i10 < childCount; i10++) {
+            View childAt = ulVar.getChildAt(i10);
+            if (childAt instanceof org.telegram.ui.Cells.t5) {
+                ((org.telegram.ui.Cells.t5) childAt).g(true);
+            }
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yl(wd1 wd1Var, Context context, org.telegram.ui.ActionBar.z zVar) {
-        super(context, zVar, 0, 0);
-        this.v0 = 2;
-        this.w0 = wd1Var;
+    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
+    public final void W(int i10) {
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
+        org.telegram.ui.Cells.t5 L = ChatAttachAlertPhotoLayout.L(chatAttachAlertPhotoLayout, i10);
+        if (L != null) {
+            L.getImageView().q(0, true);
+            MediaController.PhotoEntry b02 = chatAttachAlertPhotoLayout.b0(i10);
+            if (b02 == null) {
+                return;
+            }
+            if (b02.coverPath != null) {
+                L.getImageView().f(b02.coverPath, null, org.telegram.ui.ActionBar.h6.R4);
+                return;
+            }
+            if (b02.thumbPath != null) {
+                L.getImageView().f(b02.thumbPath, null, org.telegram.ui.ActionBar.h6.R4);
+                return;
+            }
+            if (b02.path == null) {
+                L.getImageView().setImageDrawable(org.telegram.ui.ActionBar.h6.R4);
+                return;
+            }
+            L.getImageView().p(b02.orientation, b02.invert, true);
+            if (b02.isVideo) {
+                L.getImageView().f("vthumb://" + b02.imageId + ":" + b02.path, null, org.telegram.ui.ActionBar.h6.R4);
+                return;
+            }
+            L.getImageView().f("thumb://" + b02.imageId + ":" + b02.path, null, org.telegram.ui.ActionBar.h6.R4);
+        }
+    }
+
+    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
+    public final void Z(int i10) {
+        org.telegram.ui.Cells.t5 L = ChatAttachAlertPhotoLayout.L(this.b, i10);
+        if (L != null) {
+            L.g(true);
+        }
+    }
+
+    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
+    public final long a() {
+        org.telegram.ui.ActionBar.n2 n2Var = this.b.b.f0;
+        if (n2Var instanceof org.telegram.ui.xn) {
+            return ((org.telegram.ui.xn) n2Var).a();
+        }
+        return 0L;
+    }
+
+    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
+    public final void d() {
+        boolean z10 = ChatAttachAlertPhotoLayout.q1;
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
+        chatAttachAlertPhotoLayout.k0();
+        chatAttachAlertPhotoLayout.p0(-1, true);
+    }
+
+    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
+    public final void e(CharSequence charSequence) {
+        CharSequence charSequence2;
+        ArrayList<TLRPC.MessageEntity> arrayList;
+        HashMap hashMap = ChatAttachAlertPhotoLayout.s1;
+        if (hashMap.size() > 0) {
+            ArrayList arrayList2 = ChatAttachAlertPhotoLayout.t1;
+            if (arrayList2.size() > 0) {
+                Object obj = hashMap.get(arrayList2.get(0));
+                if (obj instanceof MediaController.PhotoEntry) {
+                    MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) obj;
+                    charSequence2 = photoEntry.caption;
+                    arrayList = photoEntry.entities;
+                } else {
+                    charSequence2 = null;
+                    arrayList = null;
+                }
+                if (obj instanceof MediaController.SearchImage) {
+                    MediaController.SearchImage searchImage = (MediaController.SearchImage) obj;
+                    charSequence2 = searchImage.caption;
+                    arrayList = searchImage.entities;
+                }
+                ArrayList<TLRPC.MessageEntity> arrayList3 = arrayList;
+                if (charSequence2 != null && arrayList3 != null) {
+                    CharSequence spannableStringBuilder = !(charSequence2 instanceof Spannable) ? new SpannableStringBuilder(charSequence2) : charSequence2;
+                    MessageObject.addEntitiesToText(spannableStringBuilder, arrayList3, false, false, false, false);
+                    charSequence2 = spannableStringBuilder;
+                }
+                this.b.b.m1().setText(z5.cloneSpans(charSequence2, 3));
+            }
+        }
+    }
+
+    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
+    public final void i() {
+        boolean z10 = ChatAttachAlertPhotoLayout.q1;
+    }
+
+    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
+    public final ImageReceiver.BitmapHolder j(int i10) {
+        org.telegram.ui.Cells.t5 L = ChatAttachAlertPhotoLayout.L(this.b, i10);
+        if (L != null) {
+            return L.getImageView().getImageReceiver().getBitmapSafe();
+        }
+        return null;
+    }
+
+    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
+    public final boolean l() {
+        wi wiVar = this.b.b;
+        return wiVar != null && (wiVar.f0 instanceof org.telegram.ui.xn);
+    }
+
+    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
+    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
+        wi wiVar = chatAttachAlertPhotoLayout.b;
+        wiVar.s2 = true;
+        boolean z12 = ChatAttachAlertPhotoLayout.q1;
+        MediaController.PhotoEntry b02 = chatAttachAlertPhotoLayout.b0(i10);
+        if (b02 != null) {
+            b02.editedInfo = videoEditedInfo;
+        }
+        HashMap hashMap = ChatAttachAlertPhotoLayout.s1;
+        if (hashMap.isEmpty() && b02 != null) {
+            chatAttachAlertPhotoLayout.Q(b02, -1);
+        }
+        if (wiVar.b1(wiVar.m1().getText())) {
+            return;
+        }
+        wiVar.Y0();
+        if (PhotoViewer.t1().p7) {
+            ArrayList arrayList = ChatAttachAlertPhotoLayout.t1;
+            if (!hashMap.isEmpty()) {
+                for (int i13 = 0; i13 < arrayList.size(); i13++) {
+                    Object obj = hashMap.get(arrayList.get(i13));
+                    if (obj instanceof MediaController.PhotoEntry) {
+                        MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) obj;
+                        if (i13 == 0) {
+                            CharSequence[] charSequenceArr = {PhotoViewer.t1().q7};
+                            photoEntry.entities = MediaDataController.getInstance(UserConfig.selectedAccount).getEntities(charSequenceArr, false);
+                            CharSequence charSequence = charSequenceArr[0];
+                            photoEntry.caption = charSequence;
+                            if (wiVar.b1(charSequence)) {
+                                return;
+                            }
+                        } else {
+                            photoEntry.caption = null;
+                        }
+                    }
+                }
+            }
+        }
+        if (wiVar != null) {
+            wiVar.I1 = false;
+        }
+        PhotoViewer.t1();
+        PhotoViewer.t1().O = false;
+        PhotoViewer.t1().u2 = false;
+        e5.a0(wiVar.J1, wiVar.j1() + ChatAttachAlertPhotoLayout.s1.size(), wiVar.n1(), new ql(this, z10, i11, z11));
+    }
+
+    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
+    public final boolean q() {
+        wi wiVar = this.b.b;
+        return (wiVar == null || wiVar.H1 == null) ? false : true;
+    }
+
+    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
+    public final void s() {
+        boolean z10 = ChatAttachAlertPhotoLayout.q1;
+        this.b.p0(-1, false);
+    }
+
+    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
+    public final boolean w() {
+        MessageObject messageObject;
+        wi wiVar = this.b.b;
+        return (wiVar == null || (messageObject = wiVar.H1) == null || !messageObject.needResendWhenEdit()) ? false : true;
+    }
+
+    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
+    public final boolean z() {
+        wi wiVar = this.b.b;
+        return (wiVar.F || wiVar.H) ? false : true;
     }
 }

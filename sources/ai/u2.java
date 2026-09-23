@@ -4,10 +4,10 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import java.util.ArrayList;
 import org.telegram.ui.Components.co0;
-import org.telegram.ui.Components.rq;
-import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.sq;
+import org.telegram.ui.Components.tl0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class u2 implements View.OnAttachStateChangeListener {
     public final /* synthetic */ int a;
@@ -47,13 +47,13 @@ public final class u2 implements View.OnAttachStateChangeListener {
             case 3:
                 break;
             case 4:
-                ((xh.l2) this.b).a(view);
+                ((xh.m2) this.b).a(view);
                 break;
             case 5:
-                org.telegram.ui.Components.ha haVar = (org.telegram.ui.Components.ha) this.b;
-                ArrayList arrayList = haVar.c;
+                org.telegram.ui.Components.ja jaVar = (org.telegram.ui.Components.ja) this.b;
+                ArrayList arrayList = jaVar.c;
                 arrayList.clear();
-                for (View view2 = haVar.b; view2 != null; view2 = (View) view2.getParent()) {
+                for (View view2 = jaVar.b; view2 != null; view2 = (View) view2.getParent()) {
                     arrayList.add(0, view2);
                     if (!(view2.getParent() instanceof View)) {
                         break;
@@ -63,24 +63,24 @@ public final class u2 implements View.OnAttachStateChangeListener {
             case 6:
                 break;
             case 7:
-                ((rq) this.b).a();
+                ((sq) this.b).a();
                 break;
             case 8:
-                sl0 sl0Var = (sl0) this.b;
-                org.telegram.ui.Components.m5 m5Var = sl0Var.t;
-                if (m5Var != null) {
-                    m5Var.a();
+                tl0 tl0Var = (tl0) this.b;
+                org.telegram.ui.Components.o5 o5Var = tl0Var.t;
+                if (o5Var != null) {
+                    o5Var.a();
                 }
-                org.telegram.ui.Components.m5 m5Var2 = sl0Var.u;
-                if (m5Var2 != null) {
-                    m5Var2.a();
+                org.telegram.ui.Components.o5 o5Var2 = tl0Var.u;
+                if (o5Var2 != null) {
+                    o5Var2.a();
                     break;
                 }
                 break;
             case 9:
                 break;
             case 10:
-                ((org.telegram.ui.Components.m5) this.b).a();
+                ((org.telegram.ui.Components.o5) this.b).a();
                 break;
             case 11:
                 ni.f fVar = (ni.f) this.b;
@@ -90,34 +90,34 @@ public final class u2 implements View.OnAttachStateChangeListener {
                 }
                 break;
             case 12:
-                ((xh.e1) this.b).l.a();
+                ((xh.f1) this.b).l.a();
                 break;
             case 13:
-                xh.p3 p3Var = (xh.p3) this.b;
-                xh.n3 n3Var = p3Var.N;
-                if (n3Var != null) {
-                    n3Var.a(p3Var.c);
+                xh.q3 q3Var = (xh.q3) this.b;
+                xh.o3 o3Var = q3Var.N;
+                if (o3Var != null) {
+                    o3Var.a(q3Var.c);
                     break;
                 }
                 break;
             case 14:
-                xh.s3 s3Var = (xh.s3) this.b;
-                xh.q3 q3Var = s3Var.N;
-                if (q3Var != null) {
-                    q3Var.a(s3Var.c);
+                xh.t3 t3Var = (xh.t3) this.b;
+                xh.r3 r3Var = t3Var.N;
+                if (r3Var != null) {
+                    r3Var.a(t3Var.c);
                     break;
                 }
                 break;
             default:
-                ArrayList arrayList2 = ((yh.l3) this.b).e;
+                ArrayList arrayList2 = ((yh.k3) this.b).e;
                 int size = arrayList2.size();
                 int i10 = 0;
                 while (i10 < size) {
                     Object obj = arrayList2.get(i10);
                     i10++;
-                    yh.j3 j3Var = (yh.j3) obj;
-                    if (j3Var.c) {
-                        j3Var.d.onAttachedToWindow();
+                    yh.i3 i3Var = (yh.i3) obj;
+                    if (i3Var.c) {
+                        i3Var.d.onAttachedToWindow();
                     }
                 }
                 break;
@@ -164,28 +164,28 @@ public final class u2 implements View.OnAttachStateChangeListener {
                 view.removeOnAttachStateChangeListener(this);
                 break;
             case 4:
-                ((xh.l2) this.b).o(view);
+                ((xh.m2) this.b).o(view);
                 break;
             case 5:
-                ((org.telegram.ui.Components.ha) this.b).c.clear();
+                ((org.telegram.ui.Components.ja) this.b).c.clear();
                 break;
             case 6:
-                org.telegram.ui.Components.oc ocVar = (org.telegram.ui.Components.oc) this.b;
-                ocVar.e.removeOnAttachStateChangeListener(this);
-                ocVar.c(0L, false);
+                org.telegram.ui.Components.qc qcVar = (org.telegram.ui.Components.qc) this.b;
+                qcVar.e.removeOnAttachStateChangeListener(this);
+                qcVar.c(0L, false);
                 break;
             case 7:
-                ((rq) this.b).b();
+                ((sq) this.b).b();
                 break;
             case 8:
-                sl0 sl0Var = (sl0) this.b;
-                org.telegram.ui.Components.m5 m5Var = sl0Var.t;
-                if (m5Var != null) {
-                    m5Var.b();
+                tl0 tl0Var = (tl0) this.b;
+                org.telegram.ui.Components.o5 o5Var = tl0Var.t;
+                if (o5Var != null) {
+                    o5Var.b();
                 }
-                org.telegram.ui.Components.m5 m5Var2 = sl0Var.u;
-                if (m5Var2 != null) {
-                    m5Var2.a();
+                org.telegram.ui.Components.o5 o5Var2 = tl0Var.u;
+                if (o5Var2 != null) {
+                    o5Var2.a();
                     break;
                 }
                 break;
@@ -194,7 +194,7 @@ public final class u2 implements View.OnAttachStateChangeListener {
                 view.removeOnAttachStateChangeListener(this);
                 break;
             case 10:
-                ((org.telegram.ui.Components.m5) this.b).b();
+                ((org.telegram.ui.Components.o5) this.b).b();
                 break;
             case 11:
                 ni.f fVar = (ni.f) this.b;
@@ -204,32 +204,32 @@ public final class u2 implements View.OnAttachStateChangeListener {
                 }
                 break;
             case 12:
-                ((xh.e1) this.b).l.b();
+                ((xh.f1) this.b).l.b();
                 break;
             case 13:
-                xh.p3 p3Var = (xh.p3) this.b;
-                xh.n3 n3Var = p3Var.N;
-                if (n3Var != null) {
-                    n3Var.o(p3Var.c);
+                xh.q3 q3Var = (xh.q3) this.b;
+                xh.o3 o3Var = q3Var.N;
+                if (o3Var != null) {
+                    o3Var.o(q3Var.c);
                     break;
                 }
                 break;
             case 14:
-                xh.s3 s3Var = (xh.s3) this.b;
-                xh.q3 q3Var = s3Var.N;
-                if (q3Var != null) {
-                    q3Var.o(s3Var.c);
+                xh.t3 t3Var = (xh.t3) this.b;
+                xh.r3 r3Var = t3Var.N;
+                if (r3Var != null) {
+                    r3Var.o(t3Var.c);
                     break;
                 }
                 break;
             default:
-                ArrayList arrayList = ((yh.l3) this.b).e;
+                ArrayList arrayList = ((yh.k3) this.b).e;
                 int size = arrayList.size();
                 int i10 = 0;
                 while (i10 < size) {
                     Object obj = arrayList.get(i10);
                     i10++;
-                    ((yh.j3) obj).a();
+                    ((yh.i3) obj).a();
                 }
                 break;
         }

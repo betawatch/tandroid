@@ -8,9 +8,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class yr0 extends org.telegram.ui.tu0 {
+public final class yr0 extends org.telegram.ui.mu0 {
     public final /* synthetic */ yu0 a;
 
     public yr0(yu0 yu0Var) {
@@ -18,11 +18,11 @@ public final class yr0 extends org.telegram.ui.tu0 {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:34:0x0124 A[SYNTHETIC] */
-    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
+    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final org.telegram.ui.dv0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+    public final org.telegram.ui.wu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
         ImageReceiver imageReceiver;
         char c10;
         char c11;
@@ -80,23 +80,23 @@ public final class yr0 extends org.telegram.ui.tu0 {
                                     iArr[0] = Math.round(linkImageView.getImageX()) + iArr[0];
                                     iArr[1] = Math.round(linkImageView.getImageY()) + iArr[1];
                                     if (linkImageView != null) {
-                                        org.telegram.ui.dv0 dv0Var = new org.telegram.ui.dv0();
-                                        dv0Var.b = iArr[c10];
-                                        dv0Var.c = iArr[c11];
-                                        dv0Var.d = xr0Var;
+                                        org.telegram.ui.wu0 wu0Var = new org.telegram.ui.wu0();
+                                        wu0Var.b = iArr[c10];
+                                        wu0Var.c = iArr[c11];
+                                        wu0Var.d = xr0Var;
                                         rt0 rt0Var2 = rt0VarArr[c10];
-                                        dv0Var.m = rt0Var2.y;
+                                        wu0Var.m = rt0Var2.y;
                                         rt0Var2.h.getLocationInWindow(iArr);
-                                        dv0Var.n = -iArr[c11];
-                                        dv0Var.a = linkImageView;
-                                        dv0Var.o = true;
-                                        dv0Var.h = linkImageView.getRoundRadius(true);
-                                        dv0Var.e = dv0Var.a.getBitmapSafe();
-                                        dv0Var.d.getLocationInWindow(iArr);
-                                        dv0Var.j = 0;
-                                        dv0Var.q = yu0Var.t1[0].m;
+                                        wu0Var.n = -iArr[c11];
+                                        wu0Var.a = linkImageView;
+                                        wu0Var.o = true;
+                                        wu0Var.h = linkImageView.getRoundRadius(true);
+                                        wu0Var.e = wu0Var.a.getBitmapSafe();
+                                        wu0Var.d.getLocationInWindow(iArr);
+                                        wu0Var.j = 0;
+                                        wu0Var.q = yu0Var.t1[0].m;
                                         if (ks0Var != null && ks0Var.getVisibility() == 0) {
-                                            dv0Var.j = AndroidUtilities.dp(36.0f) + dv0Var.j;
+                                            wu0Var.j = AndroidUtilities.dp(36.0f) + wu0Var.j;
                                         }
                                         if (PhotoViewer.M1(messageObject) && (pinnedHeader = xr0Var.getPinnedHeader()) != null) {
                                             int height = (ks0Var == null || ks0Var.getVisibility() != 0) ? 0 : ks0Var.getHeight() - AndroidUtilities.dp(2.5f);
@@ -104,12 +104,12 @@ public final class yr0 extends org.telegram.ui.tu0 {
                                             if (z12) {
                                                 height += AndroidUtilities.dp(8.0f);
                                             }
-                                            int i16 = height - dv0Var.c;
+                                            int i16 = height - wu0Var.c;
                                             if (i16 > childAt.getHeight()) {
                                                 xr0Var.scrollBy(0, -(pinnedHeader.getHeight() + i16));
-                                                return dv0Var;
+                                                return wu0Var;
                                             }
-                                            int height2 = dv0Var.c - xr0Var.getHeight();
+                                            int height2 = wu0Var.c - xr0Var.getHeight();
                                             if (z12) {
                                                 height2 -= AndroidUtilities.dp(8.0f);
                                             }
@@ -117,7 +117,7 @@ public final class yr0 extends org.telegram.ui.tu0 {
                                                 xr0Var.scrollBy(0, childAt.getHeight() + height2);
                                             }
                                         }
-                                        return dv0Var;
+                                        return wu0Var;
                                     }
                                 }
                                 linkImageView = imageReceiver;
@@ -130,7 +130,7 @@ public final class yr0 extends org.telegram.ui.tu0 {
                             if (childAt instanceof org.telegram.ui.Cells.j7) {
                                 org.telegram.ui.Cells.j7 j7Var = (org.telegram.ui.Cells.j7) childAt;
                                 if (j7Var.getMessage().getId() == messageObject.getId()) {
-                                    u9 imageView = j7Var.getImageView();
+                                    w9 imageView = j7Var.getImageView();
                                     photoImage = imageView.getImageReceiver();
                                     imageView.getLocationInWindow(iArr);
                                     linkImageView = photoImage;

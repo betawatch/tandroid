@@ -9,7 +9,7 @@ import android.os.Build;
 import android.os.Looper;
 import android.util.AttributeSet;
 import android.view.View;
-import i2.e0;
+import i2.f0;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.PriorityQueue;
@@ -18,7 +18,7 @@ import m.c3;
 import m.l1;
 import r0.i0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class c {
     public int a;
@@ -307,14 +307,14 @@ public final class c {
         if (obj2.equals(obj)) {
             return;
         }
-        e0 e0Var = ((i2.w) this.d).b;
+        f0 f0Var = ((i2.x) this.d).b;
         ((Integer) obj2).getClass();
         Integer num = (Integer) obj;
         int intValue = num.intValue();
-        e0Var.B1();
-        e0Var.p1(1, 10, num);
-        e0Var.p1(2, 10, num);
-        e0Var.m.e(21, new i2.v(intValue, 1));
+        f0Var.B1();
+        f0Var.p1(1, 10, num);
+        f0Var.p1(2, 10, num);
+        f0Var.m.e(21, new i2.w(intValue, 1));
     }
 
     public c(f2.s sVar) {
@@ -325,11 +325,11 @@ public final class c {
         this.a = -1;
     }
 
-    public c(Object obj, Looper looper, Looper looper2, x xVar, i2.w wVar) {
+    public c(Object obj, Looper looper, Looper looper2, x xVar, i2.x xVar2) {
         this.b = xVar.a(looper, null);
         this.c = xVar.a(looper2, null);
         this.e = obj;
         this.f = obj;
-        this.d = wVar;
+        this.d = xVar2;
     }
 }

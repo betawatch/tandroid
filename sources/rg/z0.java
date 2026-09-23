@@ -6,13 +6,13 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.Shader;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public class z0 {
-    public final e6 a;
+    public final d6 a;
     public LinearGradient d;
     public final int g;
     public final int h;
@@ -30,8 +30,8 @@ public class z0 {
     public float q = 0.0f;
     public final int k = -1;
 
-    public z0(int i10, int i11, int i12, int i13, e6 e6Var) {
-        this.a = e6Var;
+    public z0(int i10, int i11, int i12, int i13, d6 d6Var) {
+        this.a = d6Var;
         this.g = i10;
         this.h = i11;
         this.i = i12;
@@ -79,7 +79,7 @@ public class z0 {
     }
 
     public int c(int i10) {
-        return i6.v0(i10, this.a);
+        return h6.v0(i10, this.a);
     }
 
     public final void d(int i10, float f7, int i11, int i12, float f10, int i13) {

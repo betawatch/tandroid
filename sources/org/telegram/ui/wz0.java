@@ -1,19 +1,17 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import org.telegram.messenger.AndroidUtilities;
+
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class wz0 extends y61 {
-    public final /* synthetic */ ProfileActivity e;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wz0(ProfileActivity profileActivity, vz0 vz0Var) {
-        super(vz0Var);
-        this.e = profileActivity;
-    }
-
-    @Override // org.telegram.ui.y61, android.widget.PopupWindow
-    public final void dismiss() {
-        super.dismiss();
-        this.e.B5 = null;
+public final class wz0 extends a10 {
+    @Override // org.telegram.ui.a10, android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+        canvas.save();
+        canvas.translate(AndroidUtilities.dp(2.0f), 0.0f);
+        super.draw(canvas, charSequence, i10, i11, f7, i12, i13, i14, paint);
+        canvas.restore();
     }
 }

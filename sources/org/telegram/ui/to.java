@@ -1,264 +1,136 @@
 package org.telegram.ui;
 
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class to extends org.telegram.ui.ActionBar.j {
+public final /* synthetic */ class to implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ gp b;
 
-    public /* synthetic */ to(Object obj, int i10) {
+    public /* synthetic */ to(gp gpVar, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = gpVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i10) {
-        Runnable runnable;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                wo woVar = (wo) this.b;
-                if (i10 == -1) {
-                    if (woVar.e0(true)) {
-                        woVar.finishFragment();
-                        break;
-                    }
-                } else if (i10 == 1) {
-                    woVar.j0();
+                if (tLObject instanceof TLRPC.TL_boolTrue) {
+                    AndroidUtilities.runOnUIThread(new vo(this.b, 3));
                     break;
                 }
                 break;
             case 1:
-                kp kpVar = (kp) this.b;
-                if (i10 == -1) {
-                    kpVar.finishFragment();
-                    break;
-                } else if (i10 == 1) {
-                    org.telegram.ui.Components.pr prVar = kpVar.r;
-                    if (prVar == null || prVar.c <= 0.0f) {
-                        kpVar.Y();
-                        break;
+                final int i10 = 0;
+                final gp gpVar = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.wo
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                boolean z10 = tLObject instanceof TLRPC.TL_boolTrue;
+                                gp gpVar2 = gpVar;
+                                if (z10) {
+                                    for (int i11 = 0; i11 < gpVar2.X.usernames.size(); i11++) {
+                                        TLRPC.TL_username tL_username = gpVar2.X.usernames.get(i11);
+                                        if (tL_username != null && tL_username.active && !tL_username.editable) {
+                                            tL_username.active = false;
+                                        }
+                                    }
+                                }
+                                gpVar2.t0 = false;
+                                AndroidUtilities.runOnUIThread(new vo(gpVar2, 4));
+                                break;
+                            default:
+                                gp gpVar3 = gpVar;
+                                ArrayList arrayList = gpVar3.f0;
+                                gpVar3.d0 = false;
+                                TLObject tLObject2 = tLObject;
+                                if (tLObject2 != null && gpVar3.getParentActivity() != null) {
+                                    for (int i12 = 0; i12 < arrayList.size(); i12++) {
+                                        gpVar3.h.removeView((View) arrayList.get(i12));
+                                    }
+                                    arrayList.clear();
+                                    TLRPC.TL_messages_chats tL_messages_chats = (TLRPC.TL_messages_chats) tLObject2;
+                                    for (int i13 = 0; i13 < tL_messages_chats.chats.size(); i13++) {
+                                        org.telegram.ui.Cells.n nVar = new org.telegram.ui.Cells.n(gpVar3.getParentActivity(), new xo(gpVar3, 0), false, 0);
+                                        TLRPC.Chat chat = tL_messages_chats.chats.get(i13);
+                                        boolean z11 = true;
+                                        if (i13 != tL_messages_chats.chats.size() - 1) {
+                                            z11 = false;
+                                        }
+                                        nVar.a(chat, z11);
+                                        arrayList.add(nVar);
+                                        gpVar3.x.addView(nVar, w7.x5.n(-1, 72));
+                                    }
+                                    gpVar3.b0();
+                                    break;
+                                }
+                                break;
+                        }
                     }
-                }
+                });
                 break;
             case 2:
-                if (i10 == -1) {
-                    ((wp) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 3:
-                if (i10 == -1) {
-                    ((dq) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 4:
-                pq pqVar = (pq) this.b;
-                if (i10 == -1) {
-                    if (pqVar.m0(true)) {
-                        pqVar.finishFragment();
-                        break;
-                    }
-                } else if (i10 == 1) {
-                    pqVar.r0(true);
-                    break;
-                }
-                break;
-            case 5:
-                ur urVar = (ur) this.b;
-                if (i10 == -1) {
-                    if (urVar.g0(true)) {
-                        urVar.finishFragment();
-                        break;
-                    }
-                } else if (i10 == 1) {
-                    urVar.u0();
-                    break;
-                }
-                break;
-            case 6:
-                org.telegram.ui.Components.h8 h8Var = (org.telegram.ui.Components.h8) this.b;
-                if (i10 == -1) {
-                    h8Var.dismiss();
-                    break;
-                } else {
-                    h8Var.t0(i10);
-                    break;
-                }
-            case 7:
-                if (i10 == -1) {
-                    ((org.telegram.ui.Components.za) this.b).dismiss();
-                    break;
-                }
-                break;
-            case 8:
-                org.telegram.ui.Components.vi viVar = (org.telegram.ui.Components.vi) this.b;
-                if (i10 != -1) {
-                    viVar.y0.t(i10);
-                    break;
-                } else if (!viVar.y0.i()) {
-                    viVar.dismiss();
-                    break;
-                }
-                break;
-            case 9:
-                if (i10 == -1) {
-                    ((org.telegram.ui.Components.b40) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 10:
-                if (i10 == -1 && (runnable = ((org.telegram.ui.Components.kf0) this.b).r) != null) {
-                    AndroidUtilities.runOnUIThread(runnable);
-                    break;
-                }
-                break;
-            case 11:
-                if (i10 == -1) {
-                    ((org.telegram.ui.Components.pg0) this.b).dismiss();
-                    break;
-                }
-                break;
-            case 12:
-                ((org.telegram.ui.Components.hq0) this.b).onBackPressed();
-                break;
-            case 13:
-                if (i10 == -1) {
-                    ((org.telegram.ui.Components.z51) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 14:
-                if (i10 == -1) {
-                    ((org.telegram.ui.Components.voip.x0) this.b).b(false, false);
-                    break;
-                }
-                break;
-            case 15:
-                if (i10 == -1) {
-                    ((ni1) this.b).a(false, false);
-                    break;
-                }
-                break;
-            case 16:
-                if (i10 == -1) {
-                    ((au) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 17:
-                if (i10 == -1) {
-                    ((DataAutoDownloadActivity) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 18:
-                if (i10 == -1) {
-                    ((DataSettingsActivity) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 19:
-                if (i10 == -1) {
-                    ((zu) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 20:
-                if (i10 == -1) {
-                    ((nv) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 21:
-                if (i10 == -1) {
-                    ((mz) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 22:
-                c00 c00Var = (c00) this.b;
-                if (i10 == -1) {
-                    if (c00Var.W(true)) {
-                        c00Var.finishFragment();
-                        break;
-                    }
-                } else if (i10 == 1) {
-                    if (Math.abs(c00Var.T - 1.0f) < 0.1f) {
-                        c00Var.c0();
-                        break;
-                    } else if (Math.abs(c00Var.T - 0.5f) < 0.1f) {
-                        for (int i11 = 0; i11 < c00Var.a.getChildCount(); i11++) {
-                            View childAt = c00Var.a.getChildAt(i11);
-                            c00Var.a.getClass();
-                            if (RecyclerView.R(childAt) == c00Var.L && (childAt instanceof org.telegram.ui.Components.z00)) {
-                                int i12 = -c00Var.s;
-                                c00Var.s = i12;
-                                AndroidUtilities.shakeViewSpring(childAt, i12);
+                final int i11 = 1;
+                final gp gpVar2 = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.wo
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i11) {
+                            case 0:
+                                boolean z10 = tLObject instanceof TLRPC.TL_boolTrue;
+                                gp gpVar22 = gpVar2;
+                                if (z10) {
+                                    for (int i112 = 0; i112 < gpVar22.X.usernames.size(); i112++) {
+                                        TLRPC.TL_username tL_username = gpVar22.X.usernames.get(i112);
+                                        if (tL_username != null && tL_username.active && !tL_username.editable) {
+                                            tL_username.active = false;
+                                        }
+                                    }
+                                }
+                                gpVar22.t0 = false;
+                                AndroidUtilities.runOnUIThread(new vo(gpVar22, 4));
                                 break;
-                            }
+                            default:
+                                gp gpVar3 = gpVar2;
+                                ArrayList arrayList = gpVar3.f0;
+                                gpVar3.d0 = false;
+                                TLObject tLObject2 = tLObject;
+                                if (tLObject2 != null && gpVar3.getParentActivity() != null) {
+                                    for (int i12 = 0; i12 < arrayList.size(); i12++) {
+                                        gpVar3.h.removeView((View) arrayList.get(i12));
+                                    }
+                                    arrayList.clear();
+                                    TLRPC.TL_messages_chats tL_messages_chats = (TLRPC.TL_messages_chats) tLObject2;
+                                    for (int i13 = 0; i13 < tL_messages_chats.chats.size(); i13++) {
+                                        org.telegram.ui.Cells.n nVar = new org.telegram.ui.Cells.n(gpVar3.getParentActivity(), new xo(gpVar3, 0), false, 0);
+                                        TLRPC.Chat chat = tL_messages_chats.chats.get(i13);
+                                        boolean z11 = true;
+                                        if (i13 != tL_messages_chats.chats.size() - 1) {
+                                            z11 = false;
+                                        }
+                                        nVar.a(chat, z11);
+                                        arrayList.add(nVar);
+                                        gpVar3.x.addView(nVar, w7.x5.n(-1, 72));
+                                    }
+                                    gpVar3.b0();
+                                    break;
+                                }
+                                break;
                         }
-                        break;
                     }
-                }
-                break;
-            case 23:
-                f10 f10Var = (f10) this.b;
-                if (i10 == -1) {
-                    if (f10Var.h0(true)) {
-                        f10Var.finishFragment();
-                        break;
-                    }
-                } else if (i10 == 1) {
-                    f10Var.q0();
-                    break;
-                }
-                break;
-            case 24:
-                if (i10 == -1) {
-                    ((FiltersSetupActivity) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 25:
-                if (i10 == -1) {
-                    ((r20) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 26:
-                e70 e70Var = (e70) this.b;
-                if (i10 == -1) {
-                    if (e70Var.f0(true)) {
-                        e70Var.finishFragment();
-                        break;
-                    }
-                } else if (i10 == 1) {
-                    e70Var.o0();
-                    break;
-                }
-                break;
-            case 27:
-                if (i10 == -1) {
-                    ((l70) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 28:
-                if (i10 == -1) {
-                    ((n70) this.b).finishFragment();
-                    break;
-                }
+                });
                 break;
             default:
-                if (i10 == -1) {
-                    ((t70) this.b).finishFragment();
-                    break;
-                }
+                AndroidUtilities.runOnUIThread(new rh(10, this.b, tL_error));
                 break;
         }
     }

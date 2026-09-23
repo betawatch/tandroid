@@ -1,62 +1,67 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.widget.FrameLayout;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.Window;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class z91 extends org.telegram.ui.Components.a81 {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ FrameLayout d;
-    public final /* synthetic */ za1 e;
+public final class z91 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ba1 b;
 
-    public z91(za1 za1Var, boolean z10, boolean z11, boolean z12, FrameLayout frameLayout) {
-        this.e = za1Var;
-        this.a = z10;
-        this.b = z11;
-        this.c = z12;
-        this.d = frameLayout;
+    public /* synthetic */ z91(ba1 ba1Var, int i10) {
+        this.a = i10;
+        this.b = ba1Var;
     }
 
-    @Override // org.telegram.ui.Components.a81
-    public final View d(int i10) {
-        za1 za1Var = this.e;
-        if (za1Var.l0) {
-            return za1Var.j0;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                ba1 ba1Var = this.b;
+                ba1Var.b.setVisibility(4);
+                ig.g gVar = ba1Var.b;
+                gVar.J = false;
+                ig.g gVar2 = ba1Var.c;
+                gVar2.J = true;
+                gVar.y0 = 0;
+                gVar2.y0 = 0;
+                Window window = ba1Var.a;
+                if (window != null) {
+                    window.clearFlags(16);
+                    break;
+                }
+                break;
+            case 1:
+                ba1 ba1Var2 = this.b;
+                ig.g gVar3 = ba1Var2.c;
+                gVar3.setVisibility(4);
+                ig.g gVar4 = ba1Var2.b;
+                gVar4.y0 = 0;
+                gVar3.y0 = 0;
+                gVar4.J = true;
+                gVar3.J = false;
+                if (gVar4 instanceof ig.q) {
+                    gVar4.u0 = false;
+                    gVar4.d();
+                } else {
+                    gVar4.u0 = true;
+                    gVar4.x((gVar4.G0 * gVar4.g0.k) - ig.g.k1);
+                    gVar4.c(true);
+                    gVar4.invalidate();
+                }
+                Window window2 = ba1Var2.a;
+                if (window2 != null) {
+                    window2.clearFlags(16);
+                    break;
+                }
+                break;
+            default:
+                ba1 ba1Var3 = this.b;
+                ba1Var3.b.y0 = 0;
+                ba1Var3.e.setVisibility(8);
+                break;
         }
-        boolean z10 = this.a;
-        FrameLayout frameLayout = this.d;
-        if (z10) {
-            if (i10 == 0) {
-                return frameLayout;
-            }
-            i10--;
-        }
-        if (this.b) {
-            if (i10 == 0) {
-                return za1Var.j0;
-            }
-            i10--;
-        }
-        return (this.c && i10 == 0) ? za1Var.k0 : frameLayout;
-    }
-
-    @Override // org.telegram.ui.Components.a81
-    public final int e() {
-        if (this.e.l0) {
-            return 1;
-        }
-        return (this.a ? 1 : 0) + (this.b ? 1 : 0) + (this.c ? 1 : 0);
-    }
-
-    @Override // org.telegram.ui.Components.a81
-    public final int h(int i10) {
-        return i10;
-    }
-
-    @Override // org.telegram.ui.Components.a81
-    public final void b(View view, int i10, int i11) {
     }
 }

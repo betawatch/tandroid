@@ -6,14 +6,14 @@ import android.os.Bundle;
 import org.telegram.tgnet.TLObject;
 import v7.t7;
 import w7.q;
-import za.b0;
-import za.r;
+import za.d0;
+import za.t;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class h {
     public static final f c = new f();
-    public static final m1.c d = q.a(r.b);
+    public static final m1.c d = q.a(t.b);
     public final m a;
     public final d b;
 
@@ -21,8 +21,8 @@ public final class h {
         hVar.a();
         Context context = hVar.a;
         kotlin.jvm.internal.i.d(context, "firebaseApp.applicationContext");
-        b0 b0Var = b0.a;
-        za.b a2 = b0.a(hVar);
+        d0 d0Var = d0.a;
+        za.b a2 = d0.a(hVar);
         m mVar = new m(context);
         aa.a aVar = new aa.a(a2, hVar2);
         c.getClass();

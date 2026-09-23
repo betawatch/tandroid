@@ -9,7 +9,7 @@ import android.text.TextPaint;
 import android.text.style.CharacterStyle;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class bw0 extends CharacterStyle {
     public final Paint a;
@@ -55,7 +55,7 @@ public final class bw0 extends CharacterStyle {
                 Spanned spanned2 = spanned;
                 bw0[] bw0VarArr2 = bw0VarArr;
                 int i12 = i10;
-                paint.setColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Oh, false));
+                paint.setColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Oh, false));
                 paint.setStrokeWidth(dp);
                 Path path = bw0Var.b;
                 path.rewind();

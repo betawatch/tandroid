@@ -13,24 +13,24 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class qo0 extends kl0 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.e6 c;
+public final class qo0 extends ll0 {
+    public final /* synthetic */ org.telegram.ui.ActionBar.d6 c;
     public final /* synthetic */ List d;
     public final /* synthetic */ MessagesController e;
     public final /* synthetic */ int f;
     public final /* synthetic */ TLRPC.Peer h;
 
-    public qo0(org.telegram.ui.ActionBar.e6 e6Var, List list, MessagesController messagesController, int i10, TLRPC.Peer peer) {
-        this.c = e6Var;
+    public qo0(org.telegram.ui.ActionBar.d6 d6Var, List list, MessagesController messagesController, int i10, TLRPC.Peer peer) {
+        this.c = d6Var;
         this.d = list;
         this.e = messagesController;
         this.f = i10;
         this.h = peer;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.ll0
     public final boolean D(s4.c1 c1Var) {
         return true;
     }
@@ -79,11 +79,11 @@ public final class qo0 extends kl0 {
                 sb2.append((Object) TextUtils.ellipsize(str, textView.getPaint(), this.f - AndroidUtilities.dp(100.0f), TextUtils.TruncateAt.END));
                 sb2.append(" d");
                 SpannableString spannableString = new SpannableString(sb2.toString());
-                oq oqVar = new oq(R.drawable.msg_mini_premiumlock, 0);
-                oqVar.setTopOffset(1);
-                oqVar.setSize(AndroidUtilities.dp(14.0f));
-                oqVar.setColorKey(org.telegram.ui.ActionBar.i6.C6);
-                spannableString.setSpan(oqVar, spannableString.length() - 1, spannableString.length(), 33);
+                pq pqVar = new pq(R.drawable.msg_mini_premiumlock, 0);
+                pqVar.setTopOffset(1);
+                pqVar.setSize(AndroidUtilities.dp(14.0f));
+                pqVar.setColorKey(org.telegram.ui.ActionBar.h6.C6);
+                spannableString.setSpan(pqVar, spannableString.length() - 1, spannableString.length(), 33);
                 textView.setEllipsize(null);
                 textView.setText(spannableString);
             } else {
@@ -102,6 +102,6 @@ public final class qo0 extends kl0 {
 
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        return new vk0(new uo0(viewGroup.getContext(), this.c));
+        return new wk0(new uo0(viewGroup.getContext(), this.c));
     }
 }

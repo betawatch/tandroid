@@ -7,7 +7,7 @@ import android.os.Process;
 import android.os.SystemClock;
 import java.util.concurrent.CountDownLatch;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public class DispatchQueue extends Thread {
     private static final int THREAD_PRIORITY_DEFAULT = -1000;
@@ -90,7 +90,7 @@ public class DispatchQueue extends Thread {
     @Override // java.lang.Thread, java.lang.Runnable
     public void run() {
         Looper.prepare();
-        this.handler = new Handler(Looper.myLooper(), new x1(this, 0));
+        this.handler = new Handler(Looper.myLooper(), new y1(this, 0));
         this.syncLatch.countDown();
         int i10 = this.threadPriority;
         if (i10 != THREAD_PRIORITY_DEFAULT) {

@@ -4,12 +4,12 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.z5;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.y5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class f extends View implements z5 {
+public final class f extends View implements y5 {
     public ah.d a;
     public ah.d b;
     public int c;
@@ -39,14 +39,14 @@ public final class f extends View implements z5 {
         dVar2.b(AndroidUtilities.dp(30.0f), true);
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
+    @Override // org.telegram.ui.ActionBar.y5
     public final void e() {
         int i10;
         fh.c cVar = this.e;
         if (cVar == null || (i10 = this.f) == -1) {
             return;
         }
-        cVar.a(i6.w0(null, i10, false));
+        cVar.a(h6.w0(null, i10, false));
         invalidate();
     }
 
@@ -113,7 +113,7 @@ public final class f extends View implements z5 {
         if (this.e == null) {
             fh.c cVar = new fh.c();
             this.e = cVar;
-            cVar.a(i6.w0(null, i10, false));
+            cVar.a(h6.w0(null, i10, false));
             setup(new ah.c(this.e));
         }
     }

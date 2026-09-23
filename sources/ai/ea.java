@@ -6,54 +6,54 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
-import org.telegram.ui.Components.nu;
-import org.telegram.ui.Components.o20;
-import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.ou;
+import org.telegram.ui.Components.p20;
+import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class ea {
     public final int a;
-    public final nu b;
-    public final o20 c;
+    public final ou b;
+    public final p20 c;
     public int d;
     public int e;
-    public final org.telegram.ui.Components.f5 f;
-    public final org.telegram.ui.Components.f5 g;
+    public final org.telegram.ui.Components.h5 f;
+    public final org.telegram.ui.Components.h5 g;
 
     public ea(View view) {
-        nu nuVar = new nu(1, view);
+        ou ouVar = new ou(1, view);
         this.a = UserConfig.selectedAccount;
-        this.b = nuVar;
-        qr qrVar = qr.h;
-        this.f = new org.telegram.ui.Components.f5(nuVar, 350L, qrVar);
-        this.g = new org.telegram.ui.Components.f5(nuVar, 350L, qrVar);
-        o20 o20Var = new o20();
-        this.c = o20Var;
-        o20Var.a = true;
-        o20Var.b = true;
+        this.b = ouVar;
+        rr rrVar = rr.h;
+        this.f = new org.telegram.ui.Components.h5(ouVar, 350L, rrVar);
+        this.g = new org.telegram.ui.Components.h5(ouVar, 350L, rrVar);
+        p20 p20Var = new p20();
+        this.c = p20Var;
+        p20Var.a = true;
+        p20Var.b = true;
         b(false);
-        o20Var.c.setStrokeWidth(AndroidUtilities.dpf2(2.0f));
-        o20Var.c.setStyle(Paint.Style.STROKE);
-        o20Var.c.setStrokeCap(Paint.Cap.ROUND);
+        p20Var.c.setStrokeWidth(AndroidUtilities.dpf2(2.0f));
+        p20Var.c.setStyle(Paint.Style.STROKE);
+        p20Var.c.setStrokeCap(Paint.Cap.ROUND);
     }
 
     public final Paint a(RectF rectF) {
         int a2 = this.f.a(this.d, false);
         int a10 = this.g.a(this.e, false);
-        o20 o20Var = this.c;
-        o20Var.d(a2, a10, 0, 0);
-        o20Var.b(rectF.left, rectF.top, rectF.right, rectF.bottom);
-        return o20Var.c;
+        p20 p20Var = this.c;
+        p20Var.d(a2, a10, 0, 0);
+        p20Var.b(rectF.left, rectF.top, rectF.right, rectF.bottom);
+        return p20Var.c;
     }
 
     public final void b(boolean z10) {
-        d(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.hk, false), org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.ik, false), z10);
+        d(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.hk, false), org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.ik, false), z10);
     }
 
     public final void c(MessagesController.PeerColor peerColor, boolean z10) {
         if (peerColor != null) {
-            d(peerColor.getStoryColor1(org.telegram.ui.ActionBar.i6.I.q()), peerColor.getStoryColor2(org.telegram.ui.ActionBar.i6.I.q()), z10);
+            d(peerColor.getStoryColor1(org.telegram.ui.ActionBar.h6.I.q()), peerColor.getStoryColor2(org.telegram.ui.ActionBar.h6.I.q()), z10);
         } else {
             b(z10);
         }
@@ -66,9 +66,9 @@ public final class ea {
             this.f.a(i10, true);
             this.g.a(i11, true);
         }
-        nu nuVar = this.b;
-        if (nuVar != null) {
-            nuVar.run();
+        ou ouVar = this.b;
+        if (ouVar != null) {
+            ouVar.run();
         }
     }
 }

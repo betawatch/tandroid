@@ -1,106 +1,33 @@
 package org.telegram.ui;
 
-import android.view.TextureView;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
 import android.view.View;
-import android.view.ViewGroup;
-import java.util.HashMap;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class n1 implements org.telegram.ui.Components.z81 {
-    public final /* synthetic */ s1 a;
+public final class n1 extends View {
+    public final RectF a;
 
-    public n1(s1 s1Var) {
-        this.a = s1Var;
+    public n1(Context context) {
+        super(context);
+        this.a = new RectF();
+        setImportantForAccessibility(2);
     }
 
-    @Override // org.telegram.ui.Components.z81
-    public final TextureView a(View view, boolean z10, float f7, int i10, boolean z11) {
-        s1 s1Var = this.a;
-        h4 h4Var = s1Var.x;
-        if (z10) {
-            h4Var.R.addView(h4Var.Q, w7.x5.c(-1.0f, -1));
-            h4Var.R.setVisibility(0);
-            h4Var.R.a(f7, i10);
-            h4Var.E0 = s1Var.b;
-            h4Var.P.addView(view, w7.x5.c(-1.0f, -1));
-            h4Var.P.setVisibility(0);
-        } else {
-            h4Var.R.removeView(h4Var.Q);
-            h4Var.E0 = null;
-            h4Var.R.setVisibility(8);
-            h4Var.P.setVisibility(4);
-        }
-        return h4Var.Q;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        int measuredWidth = getMeasuredWidth() / 3;
+        float dp = AndroidUtilities.dp(10.0f);
+        RectF rectF = this.a;
+        rectF.set(measuredWidth, AndroidUtilities.dp(8.0f), measuredWidth * 2, dp);
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), i4.r1);
     }
 
-    @Override // org.telegram.ui.Components.z81
-    public final void c(float f7) {
-        this.a.x.R.a(f7, 0);
-    }
-
-    @Override // org.telegram.ui.Components.z81
-    public final void d() {
-        this.a.a.setVisibility(0);
-        this.a.b.setVisibility(4);
-        this.a.b.g(null, null, null, null, false);
-        HashMap hashMap = new HashMap();
-        hashMap.put("Referer", ApplicationLoader.applicationContext.getPackageName());
-        s1 s1Var = this.a;
-        s1Var.a.loadUrl(s1Var.v.url, hashMap);
-    }
-
-    @Override // org.telegram.ui.Components.z81
-    public final void e(org.telegram.ui.Components.c91 c91Var, boolean z10) {
-        h4 h4Var = this.a.x;
-        if (!z10) {
-            if (h4Var.D0 == c91Var) {
-                h4Var.D0 = null;
-            }
-            try {
-                h4Var.L.getWindow().clearFlags(128);
-                return;
-            } catch (Exception e) {
-                FileLog.e(e);
-                return;
-            }
-        }
-        org.telegram.ui.Components.c91 c91Var2 = h4Var.D0;
-        if (c91Var2 != null && c91Var2 != c91Var) {
-            c91Var2.a.B();
-            c91Var2.n();
-            c91Var2.f0.d(true, true);
-        }
-        h4Var.D0 = c91Var;
-        try {
-            h4Var.L.getWindow().addFlags(128);
-        } catch (Exception e7) {
-            FileLog.e(e7);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.z81
-    public final TextureView f(View view, boolean z10, int i10, int i11, boolean z11) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.z81
-    public final ViewGroup g() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.z81
-    public final boolean h() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.z81
-    public final void b() {
-    }
-
-    @Override // org.telegram.ui.Components.z81
-    public final void i(boolean z10, org.telegram.ui.Components.t81 t81Var, float f7, boolean z11) {
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(18.0f));
     }
 }

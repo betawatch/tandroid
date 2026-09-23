@@ -1,50 +1,28 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.app.Activity;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class nf1 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ eg1 c;
+public final class nf1 extends og.a {
+    public final TLRPC.TL_forumTopic c;
 
-    public /* synthetic */ nf1(eg1 eg1Var, boolean z10, int i10) {
-        this.a = i10;
-        this.c = eg1Var;
-        this.b = z10;
+    public nf1(int i10, TLRPC.TL_forumTopic tL_forumTopic) {
+        super(i10, true);
+        this.c = tL_forumTopic;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        int i10;
-        switch (this.a) {
-            case 0:
-                super.onAnimationEnd(animator);
-                boolean z10 = this.b;
-                float f7 = z10 ? 1.0f : 0.0f;
-                eg1 eg1Var = this.c;
-                eg1Var.S0(f7);
-                if (!z10) {
-                    Activity parentActivity = eg1Var.getParentActivity();
-                    i10 = ((org.telegram.ui.ActionBar.n2) eg1Var).classGuid;
-                    AndroidUtilities.setAdjustResizeToNothing(parentActivity, i10);
-                    eg1Var.r0.setVisibility(8);
-                    eg1Var.Q0(true);
-                    break;
-                } else {
-                    eg1Var.q0.setVisibility(8);
-                    break;
-                }
-            default:
-                if (!this.b) {
-                    this.c.o0.setVisibility(8);
-                    break;
-                }
-                break;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (obj != null && nf1.class == obj.getClass()) {
+            nf1 nf1Var = (nf1) obj;
+            int i10 = this.a;
+            if (i10 == nf1Var.a && i10 == 0 && this.c.id == nf1Var.c.id) {
+                return true;
+            }
+        }
+        return false;
     }
 }

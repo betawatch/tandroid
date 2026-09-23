@@ -1,59 +1,43 @@
 package org.telegram.ui.web;
 
-import ai.da;
-import org.json.JSONObject;
-import org.telegram.messenger.FileLog;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ String[] b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ z0 d;
-    public final /* synthetic */ da e;
+    public final /* synthetic */ b1 b;
+    public final /* synthetic */ String c;
 
-    public /* synthetic */ x(String[] strArr, int i10, z0 z0Var, da daVar, int i11) {
-        this.a = i11;
-        this.b = strArr;
-        this.c = i10;
-        this.d = z0Var;
-        this.e = daVar;
+    public /* synthetic */ x(b1 b1Var, String str, int i10) {
+        this.a = i10;
+        this.b = b1Var;
+        this.c = str;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                int i10 = this.c;
-                z0 z0Var = this.d;
-                da daVar = this.e;
-                String[] strArr = this.b;
-                if (strArr[0] != null) {
-                    try {
-                        JSONObject jSONObject = new JSONObject();
-                        jSONObject.put("status", strArr[0]);
-                        d1.x(i10, z0Var, daVar, "phone_requested", jSONObject);
-                        break;
-                    } catch (Exception e) {
-                        FileLog.e(e);
-                        return;
-                    }
+                y0 y0Var = this.b.a;
+                if (y0Var != null) {
+                    y0Var.d(this.c);
+                    break;
                 }
                 break;
             default:
-                String[] strArr2 = this.b;
-                int i11 = this.c;
-                z0 z0Var2 = this.d;
-                da daVar2 = this.e;
-                try {
-                    JSONObject jSONObject2 = new JSONObject();
-                    jSONObject2.put("status", strArr2[0]);
-                    d1.x(i11, z0Var2, daVar2, "write_access_requested", jSONObject2);
+                b1 b1Var = this.b;
+                b1Var.N = false;
+                b1Var.P = 0L;
+                b1Var.T = false;
+                String str = this.c;
+                b1Var.b = str;
+                b1Var.c();
+                y0 y0Var2 = b1Var.a;
+                if (y0Var2 != null) {
+                    y0Var2.onResume();
+                    b1Var.a.loadUrl(str);
                     break;
-                } catch (Exception e7) {
-                    FileLog.e(e7);
                 }
+                break;
         }
     }
 }

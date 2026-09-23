@@ -1,28 +1,30 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class y1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ DownloadController b;
+import android.os.Handler;
+import android.os.Message;
 
-    public /* synthetic */ y1(DownloadController downloadController, int i10) {
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* loaded from: classes.dex */
+public final /* synthetic */ class y1 implements Handler.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Thread b;
+
+    public /* synthetic */ y1(Thread thread, int i10) {
         this.a = i10;
-        this.b = downloadController;
+        this.b = thread;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.os.Handler.Callback
+    public final boolean handleMessage(Message message) {
+        boolean lambda$run$0;
+        boolean lambda$run$1;
         switch (this.a) {
             case 0:
-                this.b.lambda$clearRecentDownloadedFiles$12();
-                break;
-            case 1:
-                this.b.lambda$new$0();
-                break;
+                lambda$run$0 = ((DispatchQueue) this.b).lambda$run$0(message);
+                return lambda$run$0;
             default:
-                this.b.lambda$loadDownloadingFiles$11();
-                break;
+                lambda$run$1 = ((DispatchQueueMainThreadSync) this.b).lambda$run$1(message);
+                return lambda$run$1;
         }
     }
 }

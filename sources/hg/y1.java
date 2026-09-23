@@ -24,40 +24,40 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.f51;
-import org.telegram.ui.Components.f9;
-import org.telegram.ui.Components.g01;
-import org.telegram.ui.Components.np;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.e51;
+import org.telegram.ui.Components.f01;
+import org.telegram.ui.Components.h9;
+import org.telegram.ui.Components.op;
 import w7.x5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class y1 extends FrameLayout {
-    public final f9 a;
+    public final h9 a;
     public final ImageReceiver b;
     public final vh.o c;
-    public final np d;
+    public final op d;
     public final ImageView e;
-    public final e6 f;
+    public final d6 f;
     public boolean h;
     public final int[] n;
     public boolean r;
 
-    public y1(Context context, e6 e6Var, boolean z10) {
+    public y1(Context context, d6 d6Var, boolean z10) {
         super(context);
-        this.a = new f9((e6) null);
+        this.a = new h9((d6) null);
         this.b = new ImageReceiver(this);
         this.n = new int[1];
-        this.f = e6Var;
+        this.f = d6Var;
         setWillNotDraw(false);
         int i10 = z10 ? 42 : 16;
         vh.o oVar = new vh.o(context);
         this.c = oVar;
         oVar.setLines(2);
         oVar.setEllipsize(TextUtils.TruncateAt.END);
-        oVar.setTextColor(i6.v0(i6.z6, e6Var));
+        oVar.setTextColor(h6.v0(h6.z6, d6Var));
         oVar.setTextSize(1, 14.0f);
         boolean z11 = LocaleController.isRTL;
         addView(oVar, x5.d(-1, -2.0f, 7, z11 ? i10 : 64.0f, 7.0f, z11 ? 64.0f : i10, 0.0f));
@@ -66,18 +66,18 @@ public final class y1 extends FrameLayout {
             this.e = imageView;
             imageView.setScaleType(ImageView.ScaleType.CENTER);
             imageView.setImageResource(R.drawable.list_reorder);
-            imageView.setColorFilter(new PorterDuffColorFilter(i6.w0(null, i6.Uh, false), PorterDuff.Mode.MULTIPLY));
+            imageView.setColorFilter(new PorterDuffColorFilter(h6.w0(null, h6.Uh, false), PorterDuff.Mode.MULTIPLY));
             imageView.setAlpha(0.0f);
             addView(imageView, x5.e(50, 50, (LocaleController.isRTL ? 3 : 5) | 112));
         } else {
             this.e = null;
         }
-        np npVar = new np(getContext(), 21, e6Var);
-        this.d = npVar;
-        npVar.b(-1, i6.d6, i6.k7);
-        npVar.setDrawUnchecked(false);
-        npVar.setDrawBackgroundAsArc(3);
-        addView(npVar, x5.i(24.0f, 24.0f, 8388659, 33.0f, 25.0f, 0.0f, 0.0f));
+        op opVar = new op(getContext(), 21, d6Var);
+        this.d = opVar;
+        opVar.b(-1, h6.d6, h6.k7);
+        opVar.setDrawUnchecked(false);
+        opVar.setDrawBackgroundAsArc(3);
+        addView(opVar, x5.i(24.0f, 24.0f, 8388659, 33.0f, 25.0f, 0.0f, 0.0f));
     }
 
     public final void a(b2 b2Var, String str, boolean z10) {
@@ -94,12 +94,12 @@ public final class y1 extends FrameLayout {
             str3 = "/".concat(str3);
         }
         spannableStringBuilder.append((CharSequence) "/").append((CharSequence) b2Var.b);
-        spannableStringBuilder.setSpan(new f51(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
-        int i10 = i6.G6;
-        e6 e6Var = this.f;
-        spannableStringBuilder.setSpan(new ForegroundColorSpan(i6.v0(i10, e6Var)), 0, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.setSpan(new e51(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
+        int i10 = h6.G6;
+        d6 d6Var = this.f;
+        spannableStringBuilder.setSpan(new ForegroundColorSpan(h6.v0(i10, d6Var)), 0, spannableStringBuilder.length(), 33);
         if (str3 != null) {
-            spannableStringBuilder.setSpan(new ForegroundColorSpan(i6.v0(i6.o6, e6Var)), 0, Math.min(str3.length() <= 0 ? 1 : str3.length(), spannableStringBuilder.length()), 33);
+            spannableStringBuilder.setSpan(new ForegroundColorSpan(h6.v0(h6.o6, d6Var)), 0, Math.min(str3.length() <= 0 ? 1 : str3.length(), spannableStringBuilder.length()), 33);
         }
         MessageObject messageObject = b2Var.e;
         vh.o oVar = this.c;
@@ -123,7 +123,7 @@ public final class y1 extends FrameLayout {
             int i11 = x1.d;
             SpannableString spannableString = new SpannableString("+");
             x1 x1Var = new x1(a2);
-            int dp2 = (int) (((g01) x1Var.c).c + AndroidUtilities.dp(10.0f));
+            int dp2 = (int) (((f01) x1Var.c).c + AndroidUtilities.dp(10.0f));
             this.n[0] = dp2;
             spannableString.setSpan(x1Var, 0, spannableString.length(), 33);
             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(TextUtils.ellipsize(spannableStringBuilder, oVar.getPaint(), (dp * 1.5f) - r12[0], TextUtils.TruncateAt.END));
@@ -162,9 +162,9 @@ public final class y1 extends FrameLayout {
             imageReceiver.setRoundRadius(AndroidUtilities.dp(4.0f));
         } else if (media == null || (webPage = media.webpage) == null || (photo = webPage.photo) == null) {
             TLRPC.User currentUser = UserConfig.getInstance(i12).getCurrentUser();
-            f9 f9Var = this.a;
-            f9Var.r(currentUser);
-            imageReceiver.setForUserOrChat(UserConfig.getInstance(i12).getCurrentUser(), f9Var);
+            h9 h9Var = this.a;
+            h9Var.r(currentUser);
+            imageReceiver.setForUserOrChat(UserConfig.getInstance(i12).getCurrentUser(), h9Var);
             imageReceiver.setRoundRadius(AndroidUtilities.dp(36.0f));
         } else {
             TLRPC.PhotoSize closestPhotoSizeWithSize3 = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, AndroidUtilities.dp(36.0f), true, null, true);
@@ -186,9 +186,9 @@ public final class y1 extends FrameLayout {
         imageReceiver.draw(canvas);
         super.onDraw(canvas);
         if (this.r) {
-            Paint T0 = i6.T0("paintDivider", this.f);
+            Paint T0 = h6.T0("paintDivider", this.f);
             if (T0 == null) {
-                T0 = i6.k0;
+                T0 = h6.k0;
             }
             canvas.drawRect(AndroidUtilities.dp(LocaleController.isRTL ? 0.0f : 64.0f), getMeasuredHeight() - 1, getWidth() - AndroidUtilities.dp(LocaleController.isRTL ? 64.0f : 0.0f), getMeasuredHeight(), T0);
         }

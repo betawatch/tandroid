@@ -1,74 +1,49 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class af extends AnimatorListenerAdapter {
+public final class af implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ ChatActivityEnterView c;
+    public final /* synthetic */ ChatActivityEnterView b;
 
-    public /* synthetic */ af(ChatActivityEnterView chatActivityEnterView, boolean z10, int i10) {
+    public /* synthetic */ af(ChatActivityEnterView chatActivityEnterView, int i10) {
         this.a = i10;
-        this.c = chatActivityEnterView;
-        this.b = z10;
+        this.b = chatActivityEnterView;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 1:
-                ChatActivityEnterView chatActivityEnterView = this.c;
-                if (animator.equals(chatActivityEnterView.r2)) {
-                    chatActivityEnterView.r2 = null;
-                    break;
-                }
-                break;
-            default:
-                super.onAnimationCancel(animator);
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        xe xeVar;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ChatActivityEnterView chatActivityEnterView = this.c;
-                if (chatActivityEnterView.l5) {
-                    chatActivityEnterView.v1.setVisibility(this.b ? 0 : 8);
+                ChatActivityEnterView chatActivityEnterView = this.b;
+                af afVar = chatActivityEnterView.q3;
+                if ((!chatActivityEnterView.k0() || !chatActivityEnterView.w()) && !org.telegram.ui.ActionBar.n2.hasSheets(chatActivityEnterView.O2) && !chatActivityEnterView.X1 && chatActivityEnterView.E0 != null && chatActivityEnterView.j3 && !chatActivityEnterView.y2 && !AndroidUtilities.usingHardwareInput && !AndroidUtilities.isInMultiwindow) {
+                    ng ngVar = chatActivityEnterView.Y2;
+                    if (ngVar != null) {
+                        ngVar.r1();
+                    }
+                    chatActivityEnterView.E0.requestFocus();
+                    AndroidUtilities.showKeyboard(chatActivityEnterView.E0);
+                    AndroidUtilities.cancelRunOnUIThread(afVar);
+                    AndroidUtilities.runOnUIThread(afVar, 100L);
                     break;
                 }
                 break;
             case 1:
-                ChatActivityEnterView chatActivityEnterView2 = this.c;
-                if (animator.equals(chatActivityEnterView2.r2)) {
-                    chatActivityEnterView2.o1.setVisibility(8);
-                    if (this.b && (xeVar = chatActivityEnterView2.I1) != null) {
-                        xeVar.setVisibility(8);
-                    }
-                    chatActivityEnterView2.r2 = null;
-                    break;
-                }
-                break;
-            case 2:
-                ChatActivityEnterView chatActivityEnterView3 = this.c;
-                chatActivityEnterView3.L1 = null;
-                if (!this.b) {
-                    chatActivityEnterView3.I1.setVisibility(8);
+                ng ngVar2 = this.b.Y2;
+                if (ngVar2 != null) {
+                    ngVar2.k2(0, 0, 0, 0L, 0L, true);
                     break;
                 }
                 break;
             default:
-                float f7 = this.b ? 1.0f : 0.0f;
-                ChatActivityEnterView chatActivityEnterView4 = this.c;
-                chatActivityEnterView4.w0 = f7;
-                cg cgVar = chatActivityEnterView4.U0;
-                if (cgVar != null) {
-                    cgVar.Y();
+                ChatActivityEnterView chatActivityEnterView2 = this.b;
+                AnimatorSet animatorSet = chatActivityEnterView2.V0;
+                if (animatorSet != null && !animatorSet.isRunning()) {
+                    chatActivityEnterView2.V0.start();
                     break;
                 }
                 break;

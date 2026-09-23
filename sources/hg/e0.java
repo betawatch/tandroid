@@ -7,9 +7,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.ui.Components.mz;
+import org.telegram.ui.Components.nz;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class e0 implements TextWatcher {
     public final /* synthetic */ k0 a;
@@ -23,21 +23,21 @@ public final class e0 implements TextWatcher {
         int currentTop;
         k0 k0Var = this.a;
         ai.w0 w0Var = k0Var.s;
-        mz mzVar = k0Var.E;
+        nz nzVar = k0Var.E;
         h0 h0Var = k0Var.x;
         String obj = editable.toString();
         if (obj.isEmpty()) {
             if (w0Var.getAdapter() != h0Var) {
                 currentTop = k0Var.getCurrentTop();
-                mzVar.c();
+                nzVar.c();
                 w0Var.setAdapter(h0Var);
                 h0Var.l();
                 if (currentTop > 0) {
                     k0Var.v.h1(0, -currentTop);
                 }
             }
-        } else if (mzVar != null) {
-            mzVar.setText(LocaleController.getString(R.string.NoResult));
+        } else if (nzVar != null) {
+            nzVar.setText(LocaleController.getString(R.string.NoResult));
         }
         i0 i0Var = k0Var.y;
         if (i0Var != null) {
@@ -55,7 +55,7 @@ public final class e0 implements TextWatcher {
                 b2 b2Var = (b2) arrayList2.get(i10);
                 if (!c2.g(b2Var.b)) {
                     String translitSafe2 = AndroidUtilities.translitSafe(b2Var.b);
-                    if (translitSafe2.startsWith(translitSafe) || org.telegram.messenger.y0.w(" ", translitSafe, translitSafe2)) {
+                    if (translitSafe2.startsWith(translitSafe) || org.telegram.messenger.z0.w(" ", translitSafe, translitSafe2)) {
                         arrayList.add(b2Var);
                     }
                 }

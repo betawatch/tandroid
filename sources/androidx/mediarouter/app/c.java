@@ -15,14 +15,14 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
-import org.telegram.ui.Components.h20;
 import org.telegram.ui.Components.i20;
 import org.telegram.ui.Components.j20;
 import org.telegram.ui.Components.k20;
 import org.telegram.ui.Components.l20;
+import org.telegram.ui.Components.m20;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class c extends Handler {
     public final /* synthetic */ int a;
@@ -179,7 +179,7 @@ public final class c extends Handler {
                                 bVar.v = X;
                             }
                             bVar.o = 4;
-                            bVar.i(new ai.i(19));
+                            bVar.i(new m4.p0(20));
                             return;
                         } catch (Exception e) {
                             e = e;
@@ -264,59 +264,59 @@ public final class c extends Handler {
                 }
                 return;
             case 7:
-                j20 j20Var = (j20) this.b;
-                i20 i20Var = j20Var.g;
+                k20 k20Var = (k20) this.b;
+                j20 j20Var = k20Var.g;
                 int i15 = msg.what;
                 if (i15 == 1) {
-                    i20Var.getClass();
+                    j20Var.getClass();
                     return;
                 }
                 if (i15 == 2) {
-                    j20Var.f.removeMessages(3);
-                    j20Var.j = false;
-                    j20Var.k = true;
-                    i20Var.onLongPress(j20Var.n);
+                    k20Var.f.removeMessages(3);
+                    k20Var.j = false;
+                    k20Var.k = true;
+                    j20Var.onLongPress(k20Var.n);
                     return;
                 }
                 if (i15 != 3) {
                     throw new RuntimeException("Unknown message " + msg);
                 }
-                h20 h20Var = j20Var.h;
-                if (h20Var != null) {
-                    if (j20Var.i) {
-                        j20Var.j = true;
+                i20 i20Var = k20Var.h;
+                if (i20Var != null) {
+                    if (k20Var.i) {
+                        k20Var.j = true;
                         return;
                     } else {
-                        ((PhotoViewer) h20Var).Z1(j20Var.n);
+                        ((PhotoViewer) i20Var).Z1(k20Var.n);
                         return;
                     }
                 }
                 return;
             case 8:
-                k20 k20Var = (k20) this.b;
-                l20 l20Var = k20Var.f;
+                l20 l20Var = (l20) this.b;
+                m20 m20Var = l20Var.f;
                 int i16 = msg.what;
                 if (i16 == 1) {
-                    l20Var.onShowPress(k20Var.m);
+                    m20Var.onShowPress(l20Var.m);
                     return;
                 }
                 if (i16 == 2) {
-                    k20Var.e.removeMessages(3);
-                    k20Var.i = false;
-                    k20Var.j = true;
-                    l20Var.onLongPress(k20Var.m);
+                    l20Var.e.removeMessages(3);
+                    l20Var.i = false;
+                    l20Var.j = true;
+                    m20Var.onLongPress(l20Var.m);
                     return;
                 }
                 if (i16 != 3) {
                     throw new RuntimeException("Unknown message " + msg);
                 }
-                l20 l20Var2 = k20Var.g;
-                if (l20Var2 != null) {
-                    if (k20Var.h) {
-                        k20Var.i = true;
+                m20 m20Var2 = l20Var.g;
+                if (m20Var2 != null) {
+                    if (l20Var.h) {
+                        l20Var.i = true;
                         return;
                     } else {
-                        l20Var2.onSingleTapConfirmed(k20Var.m);
+                        m20Var2.onSingleTapConfirmed(l20Var.m);
                         return;
                     }
                 }
@@ -382,7 +382,7 @@ public final class c extends Handler {
                     str = "";
                 }
                 Log.d("SessionLifecycleClient", "Session update received: ".concat(str));
-                zd.e0.q(zd.e0.b((id.h) this.b), new za.t(str, objArr == true ? 1 : 0, i10));
+                zd.e0.q(zd.e0.b((id.h) this.b), new za.v(str, objArr == true ? 1 : 0, i10));
                 return;
         }
     }

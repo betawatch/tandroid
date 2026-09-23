@@ -5,12 +5,12 @@ import e2.d0;
 import java.util.ArrayList;
 import java.util.Iterator;
 import n4.y;
-import u2.b1;
+import u2.a1;
 import v7.y7;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final class m implements b1 {
+public final class m implements a1 {
     public final int a;
     public final q b;
     public int c = -1;
@@ -20,7 +20,7 @@ public final class m implements b1 {
         this.a = i10;
     }
 
-    @Override // u2.b1
+    @Override // u2.a1
     public final void a() {
         int i10 = this.c;
         q qVar = this.b;
@@ -64,7 +64,7 @@ public final class m implements b1 {
         return (i10 == -1 || i10 == -3 || i10 == -2) ? false : true;
     }
 
-    @Override // u2.b1
+    @Override // u2.a1
     public final boolean e() {
         if (this.c == -3) {
             return true;
@@ -77,7 +77,7 @@ public final class m implements b1 {
         return !qVar.A() && qVar.L[i10].x(qVar.j0);
     }
 
-    @Override // u2.b1
+    @Override // u2.a1
     public final int f(y yVar, h2.h hVar, int i10) {
         b2.s sVar;
         if (this.c == -3) {
@@ -137,7 +137,7 @@ public final class m implements b1 {
         return -3;
     }
 
-    @Override // u2.b1
+    @Override // u2.a1
     public final int j(long j3) {
         Object next;
         Object obj;

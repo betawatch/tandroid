@@ -6,7 +6,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class zq0 implements org.telegram.ui.ActionBar.a2, MessagesStorage.StringCallback {
     public final /* synthetic */ yu0 a;
@@ -24,12 +24,12 @@ public final /* synthetic */ class zq0 implements org.telegram.ui.ActionBar.a2, 
         yu0 yu0Var = this.a;
         org.telegram.ui.ActionBar.n2 n2Var = yu0Var.v1;
         n2Var.getMessagesController().getStoriesController().s(yu0Var.j1, arrayList);
-        vc.a0(n2Var).Q(R.raw.ic_delete, 36, LocaleController.formatPluralString("StoriesDeleted", 1, new Object[0])).j();
+        xc.a0(n2Var).Q(R.raw.ic_delete, 36, LocaleController.formatPluralString("StoriesDeleted", 1, new Object[0])).j();
         yu0Var.L(false);
     }
 
     @Override // org.telegram.messenger.MessagesStorage.StringCallback
     public void run(String str) {
-        r0.getStoriesController().r(r0.j1, str, new org.telegram.ui.nf(22, this.a, this.b));
+        r0.getStoriesController().r(r0.j1, str, new org.telegram.ui.oc(29, this.a, this.b));
     }
 }

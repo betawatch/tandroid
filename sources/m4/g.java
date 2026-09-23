@@ -3,10 +3,11 @@ package m4;
 import android.media.session.MediaSession;
 import android.os.Bundle;
 import android.os.Parcelable;
+import e9.o1;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class g {
     public static final String l;
@@ -24,12 +25,12 @@ public final class g {
     public static final String x;
     public static final String y;
     public final j a;
-    public final n1 b;
+    public final i1 b;
     public final b2.x0 c;
     public final b2.x0 d;
     public final Bundle e;
     public final Bundle f;
-    public final i1 g;
+    public final d1 g;
     public final e9.i0 h;
     public final e9.i0 i;
     public final MediaSession.Token j;
@@ -54,17 +55,17 @@ public final class g {
         y = Integer.toString(12, 36);
     }
 
-    public g(j jVar, e9.i0 i0Var, e9.i0 i0Var2, e9.i0 i0Var3, n1 n1Var, b2.x0 x0Var, b2.x0 x0Var2, Bundle bundle, Bundle bundle2, i1 i1Var, MediaSession.Token token) {
+    public g(j jVar, e9.i0 i0Var, e9.i0 i0Var2, e9.i0 i0Var3, i1 i1Var, b2.x0 x0Var, b2.x0 x0Var2, Bundle bundle, Bundle bundle2, d1 d1Var, MediaSession.Token token) {
         this.a = jVar;
         this.h = i0Var;
         this.i = i0Var2;
         this.k = i0Var3;
-        this.b = n1Var;
+        this.b = i1Var;
         this.c = x0Var;
         this.d = x0Var2;
         this.e = bundle;
         this.f = bundle2;
-        this.g = i1Var;
+        this.g = d1Var;
         this.j = token;
     }
 
@@ -116,21 +117,21 @@ public final class g {
             }
             bundle.putParcelableArrayList(q, arrayList4);
         }
-        n1 n1Var = this.b;
-        n1Var.getClass();
+        i1 i1Var = this.b;
+        i1Var.getClass();
         Bundle bundle2 = new Bundle();
         ArrayList<? extends Parcelable> arrayList5 = new ArrayList<>();
-        e9.o1 it4 = n1Var.a.iterator();
+        o1 it4 = i1Var.a.iterator();
         while (it4.hasNext()) {
-            m1 m1Var = (m1) it4.next();
-            m1Var.getClass();
+            h1 h1Var = (h1) it4.next();
+            h1Var.getClass();
             Bundle bundle3 = new Bundle();
-            bundle3.putInt(m1.f, m1Var.a);
-            bundle3.putString(m1.g, m1Var.b);
-            bundle3.putBundle(m1.h, m1Var.c);
+            bundle3.putInt(h1.f, h1Var.a);
+            bundle3.putString(h1.g, h1Var.b);
+            bundle3.putBundle(h1.h, h1Var.c);
             arrayList5.add(bundle3);
         }
-        bundle2.putParcelableArrayList(n1.b, arrayList5);
+        bundle2.putParcelableArrayList(i1.b, arrayList5);
         bundle.putBundle(r, bundle2);
         String str2 = s;
         b2.x0 x0Var = this.c;

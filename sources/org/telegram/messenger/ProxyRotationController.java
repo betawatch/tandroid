@@ -10,13 +10,13 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public class ProxyRotationController implements NotificationCenter.NotificationCenterDelegate {
     public static final int DEFAULT_TIMEOUT_INDEX = 1;
     private static final ProxyRotationController INSTANCE = new ProxyRotationController();
     public static final List<Integer> ROTATION_TIMEOUTS = Arrays.asList(5, 10, 15, 30, 60);
-    private Runnable checkProxyAndSwitchRunnable = new vg(this, 4);
+    private Runnable checkProxyAndSwitchRunnable = new ug(this, 4);
     private boolean isCurrentlyChecking;
 
     public static void init() {
@@ -47,7 +47,7 @@ public class ProxyRotationController implements NotificationCenter.NotificationC
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$new$1(SharedConfig.ProxyInfo proxyInfo, long j3) {
-        AndroidUtilities.runOnUIThread(new rh(proxyInfo, j3, 0));
+        AndroidUtilities.runOnUIThread(new qh(proxyInfo, j3, 0));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class dg0 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -45,7 +45,7 @@ public final class dg0 extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         PhotoViewer photoViewer;
-        org.telegram.ui.kt0 kt0Var;
+        org.telegram.ui.dt0 dt0Var;
         switch (this.a) {
             case 0:
                 int actionMasked = motionEvent.getActionMasked();
@@ -65,8 +65,8 @@ public final class dg0 extends FrameLayout {
                     eg0Var.f0 = false;
                     eg0Var.i();
                     AndroidUtilities.cancelRunOnUIThread(eg0Var.h0);
-                } else if (actionMasked == 2 && (photoViewer = eg0Var.V) != null && (kt0Var = photoViewer.c4) != null && kt0Var.rewinding) {
-                    kt0Var.setX(motionEvent.getX());
+                } else if (actionMasked == 2 && (photoViewer = eg0Var.V) != null && (dt0Var = photoViewer.c4) != null && dt0Var.rewinding) {
+                    dt0Var.setX(motionEvent.getX());
                 }
                 if (eg0Var.y != null) {
                     MotionEvent obtain = MotionEvent.obtain(motionEvent);
@@ -91,9 +91,9 @@ public final class dg0 extends FrameLayout {
                     if (eg0Var.d0) {
                         eg0Var.d0 = false;
                         eg0 eg0Var2 = eg0.p0;
-                        vu vuVar = eg0Var2.U;
-                        if (vuVar != null) {
-                            vuVar.H();
+                        wu wuVar = eg0Var2.U;
+                        if (wuVar != null) {
+                            wuVar.H();
                         } else {
                             PhotoViewer photoViewer2 = eg0Var2.V;
                             if (photoViewer2 != null) {
@@ -169,9 +169,9 @@ public final class dg0 extends FrameLayout {
         switch (this.a) {
             case 1:
                 eg0 eg0Var = this.b;
-                w61 w61Var = eg0Var.Q;
-                if (w61Var.j) {
-                    w61Var.setBounds(getLeft(), getTop(), getRight(), getBottom());
+                v61 v61Var = eg0Var.Q;
+                if (v61Var.j) {
+                    v61Var.setBounds(getLeft(), getTop(), getRight(), getBottom());
                     eg0Var.Q.draw(canvas);
                 }
                 PhotoViewer photoViewer = eg0Var.V;

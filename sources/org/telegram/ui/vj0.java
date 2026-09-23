@@ -1,27 +1,46 @@
 package org.telegram.ui;
 
+import android.text.TextUtils;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MrzRecognizer;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vj0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ck0 b;
+public final class vj0 implements t9 {
+    public final /* synthetic */ wj0 a;
 
-    public /* synthetic */ vj0(ck0 ck0Var, int i10) {
-        this.a = i10;
-        this.b = ck0Var;
+    public vj0(wj0 wj0Var) {
+        this.a = wj0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.hideKeyboard(this.b.b);
-                break;
-            default:
-                AndroidUtilities.showKeyboard(this.b.d.getEditText());
-                break;
+    @Override // org.telegram.ui.t9
+    public final /* synthetic */ String J0() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.t9
+    public final void K(String str) {
+        int i10;
+        String b10 = nf.f.b(str);
+        if (TextUtils.isEmpty(b10)) {
+            AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.th(24));
+        } else {
+            i10 = ((org.telegram.ui.ActionBar.f3) this.a).currentAccount;
+            MessagesController.getInstance(i10).getUserNameResolver().resolve(b10, new ai.i(18));
         }
+    }
+
+    @Override // org.telegram.ui.t9
+    public final /* synthetic */ boolean e1(String str, l9 l9Var) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.t9
+    public final /* synthetic */ void T0(MrzRecognizer.Result result) {
+    }
+
+    @Override // org.telegram.ui.t9
+    public final /* synthetic */ void onDismiss() {
     }
 }

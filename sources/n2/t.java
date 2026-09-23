@@ -16,16 +16,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
-import k2.c0;
-import m4.u0;
+import k2.b0;
+import m4.p0;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class t implements q {
-    public static final u0 d = new u0(8);
+    public static final p0 d = new p0(22);
     public final UUID a;
     public final MediaDrm b;
     public int c;
@@ -98,14 +98,14 @@ public final class t implements q {
     }
 
     @Override // n2.q
-    public final void a(final c0 c0Var) {
+    public final void a(final b0 b0Var) {
         this.b.setOnEventListener(new MediaDrm.OnEventListener() { // from class: n2.s
             @Override // android.media.MediaDrm.OnEventListener
             public final void onEvent(MediaDrm mediaDrm, byte[] bArr, int i10, int i11, byte[] bArr2) {
                 t tVar = t.this;
-                c0 c0Var2 = c0Var;
+                b0 b0Var2 = b0Var;
                 tVar.getClass();
-                androidx.mediarouter.app.c cVar = ((e) c0Var2.b).M;
+                androidx.mediarouter.app.c cVar = ((e) b0Var2.b).M;
                 cVar.getClass();
                 cVar.obtainMessage(i10, bArr).sendToTarget();
             }

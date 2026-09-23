@@ -1,82 +1,37 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class l31 extends FrameLayout {
-    public final org.telegram.ui.Components.m5 a;
-    public final /* synthetic */ m31 b;
+public final class l31 implements q31 {
+    public final /* synthetic */ boolean[] a;
+    public final /* synthetic */ Utilities.Callback b;
+    public final /* synthetic */ org.telegram.ui.Components.xc c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l31(m31 m31Var, Context context) {
-        super(context);
-        this.b = m31Var;
-        TextView g10 = org.telegram.messenger.y0.g(context, 1, 16.0f);
-        g10.setTextColor(m31Var.getThemedColor(org.telegram.ui.ActionBar.i6.G6));
-        g10.setText(LocaleController.getString(R.string.DoubleTapSetting));
-        addView(g10, w7.x5.d(-1, -2.0f, 23, 20.0f, 0.0f, 48.0f, 0.0f));
-        this.a = new org.telegram.ui.Components.m5(AndroidUtilities.dp(24.0f), this);
+    public l31(boolean[] zArr, Utilities.Callback callback, org.telegram.ui.Components.xc xcVar) {
+        this.a = zArr;
+        this.b = callback;
+        this.c = xcVar;
     }
 
-    public final void a(boolean z10) {
-        int i10;
-        int i11;
-        m31 m31Var = this.b;
-        i10 = ((org.telegram.ui.ActionBar.n2) m31Var).currentAccount;
-        String doubleTapReaction = MediaDataController.getInstance(i10).getDoubleTapReaction();
-        org.telegram.ui.Components.m5 m5Var = this.a;
-        if (doubleTapReaction != null && doubleTapReaction.startsWith("animated_")) {
-            try {
-                m5Var.j(Long.parseLong(doubleTapReaction.substring(9)), z10);
-                return;
-            } catch (Exception unused) {
-            }
+    @Override // org.telegram.ui.q31
+    public final void a() {
+        Utilities.Callback callback;
+        boolean[] zArr = this.a;
+        if (!zArr[0] && (callback = this.b) != null) {
+            zArr[0] = true;
+            callback.run(Boolean.TRUE);
         }
-        i11 = ((org.telegram.ui.ActionBar.n2) m31Var).currentAccount;
-        TLRPC.TL_availableReaction tL_availableReaction = MediaDataController.getInstance(i11).getReactionsMap().get(doubleTapReaction);
-        if (tL_availableReaction != null) {
-            m5Var.i(tL_availableReaction.static_icon, z10);
-        }
+        AndroidUtilities.runOnUIThread(new xz0(this.c, 7), 200L);
     }
 
-    public final void b() {
-        int width = getWidth();
-        org.telegram.ui.Components.m5 m5Var = this.a;
-        m5Var.setBounds((width - m5Var.s) - AndroidUtilities.dp(21.0f), (getHeight() - m5Var.s) / 2, getWidth() - AndroidUtilities.dp(21.0f), (getHeight() + m5Var.s) / 2);
+    @Override // org.telegram.ui.q31
+    public final /* synthetic */ void b() {
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        b();
-        this.a.draw(canvas);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.a.a();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.a.b();
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
+    @Override // org.telegram.ui.q31
+    public final /* synthetic */ void c() {
     }
 }

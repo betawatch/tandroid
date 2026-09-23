@@ -1,70 +1,43 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import java.util.regex.Pattern;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.messenger.AccountInstance;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ua0 implements e2.h {
+public final /* synthetic */ class ua0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+    public final /* synthetic */ va0 b;
+    public final /* synthetic */ AccountInstance c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 e;
 
-    public /* synthetic */ ua0(Object obj, Object obj2, Object obj3, int i10, int i11) {
-        this.a = i11;
-        this.c = obj;
-        this.d = obj2;
-        this.e = obj3;
-        this.b = i10;
+    public /* synthetic */ ua0(va0 va0Var, AccountInstance accountInstance, long j3, org.telegram.ui.ActionBar.n2 n2Var, int i10) {
+        this.a = i10;
+        this.b = va0Var;
+        this.c = accountInstance;
+        this.d = j3;
+        this.e = n2Var;
     }
 
-    @Override // e2.h
-    public final void accept(Object obj) {
-        int i10 = this.a;
-        Object obj2 = this.e;
-        Object obj3 = this.d;
-        Object obj4 = this.c;
-        switch (i10) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                LaunchActivity launchActivity = (LaunchActivity) obj4;
-                ma0 ma0Var = (ma0) obj3;
-                Long l4 = (Long) obj2;
-                TL_stories.TL_storyAlbum tL_storyAlbum = (TL_stories.TL_storyAlbum) obj;
-                Pattern pattern = LaunchActivity.B1;
-                try {
-                    ma0Var.run();
-                } catch (Exception e) {
-                    FileLog.e(e);
-                }
-                LaunchActivity.R();
-                if (tL_storyAlbum != null) {
-                    Bundle bundle = new Bundle();
-                    if (l4.longValue() > 0) {
-                        bundle.putLong("user_id", l4.longValue());
-                        bundle.putBoolean("my_profile", l4.longValue() == UserConfig.getInstance(launchActivity.O).getClientUserId());
-                    } else {
-                        bundle.putLong("chat_id", -l4.longValue());
-                    }
-                    bundle.putInt("open_story_album_id", this.b);
-                    launchActivity.p0(new ProfileActivity(bundle, null));
-                    break;
-                } else {
-                    org.telegram.ui.Components.vc X = org.telegram.ui.Components.vc.X();
-                    if (X != null) {
-                        org.telegram.messenger.y0.o(R.string.StoryAlbumNotFound, X, R.raw.story_bomb2, 36);
-                        break;
-                    }
-                }
+                AndroidUtilities.runOnUIThread(new ua0(this.b, this.c, this.d, this.e, 1));
                 break;
             default:
-                a5.a aVar = (a5.a) obj4;
-                ((u2.k0) obj).h(aVar.b, (u2.f0) aVar.c, (u2.t) obj3, (u2.b0) obj2, this.b);
+                AccountInstance accountInstance = this.c;
+                MessagesController messagesController = accountInstance.getMessagesController();
+                long j3 = this.d;
+                long j10 = -j3;
+                ChatObject.Call groupCall = messagesController.getGroupCall(j10, false);
+                TLRPC.Chat chat = accountInstance.getMessagesController().getChat(Long.valueOf(j10));
+                accountInstance.getMessagesController().getInputPeer(j3);
+                org.telegram.ui.Components.voip.f2.l(chat, null, false, Boolean.valueOf(groupCall == null || !groupCall.call.rtmp_stream), this.b.g, this.e, accountInstance);
                 break;
         }
     }

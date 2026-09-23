@@ -10,14 +10,14 @@ import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.m5;
 import org.telegram.ui.Components.o5;
-import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.q5;
+import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class o3 {
-    public final m5 a;
+    public final o5 a;
     public ValueAnimator b;
     public int c;
     public int d;
@@ -44,11 +44,11 @@ public final class o3 {
         if (!isEnabled || profileEmojiId == 0) {
             return;
         }
-        m5 m5Var = new m5(i10, 13, z2Var, false);
-        this.a = m5Var;
-        m5Var.j(profileEmojiId, false);
-        m5Var.k(-16777216);
-        m5Var.v = this.m;
+        o5 o5Var = new o5(i10, 13, z2Var, false);
+        this.a = o5Var;
+        o5Var.j(profileEmojiId, false);
+        o5Var.k(-16777216);
+        o5Var.v = this.m;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.b = ofFloat;
         ofFloat.addUpdateListener(new ai.x(20, this, z2Var));
@@ -62,8 +62,8 @@ public final class o3 {
     }
 
     public final void a(Canvas canvas) {
-        m5 m5Var = this.a;
-        if (m5Var == null) {
+        o5 o5Var = this.a;
+        if (o5Var == null) {
             return;
         }
         canvas.save();
@@ -73,16 +73,16 @@ public final class o3 {
         int i10 = this.g;
         int i11 = this.h;
         int i12 = this.l;
-        m5Var.setBounds(i10, i11, i10 + i12, i12 + i11);
-        m5Var.v = this.m;
-        m5Var.draw(canvas);
+        o5Var.setBounds(i10, i11, i10 + i12, i12 + i11);
+        o5Var.v = this.m;
+        o5Var.draw(canvas);
         canvas.restore();
     }
 
     public final void b(int i10, int i11) {
         l4 l4Var;
-        m5 m5Var = this.a;
-        if (m5Var == null) {
+        o5 o5Var = this.a;
+        if (o5Var == null) {
             return;
         }
         this.i = i10;
@@ -92,13 +92,13 @@ public final class o3 {
             return;
         }
         int i12 = 0;
-        Drawable drawable = m5Var.f[0];
-        if (!(drawable instanceof o5) || ((l4Var = ((o5) drawable).k) != null && l4Var.hasImageLoaded())) {
+        Drawable drawable = o5Var.f[0];
+        if (!(drawable instanceof q5) || ((l4Var = ((q5) drawable).k) != null && l4Var.hasImageLoaded())) {
             int i13 = 1;
             this.q = true;
             this.p = this.i > this.o / 2 ? AndroidUtilities.dp(12) : -AndroidUtilities.dp(12);
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-            ofFloat.setInterpolator(new qr(0.34d, 1.36d, 0.64d, 1.0d));
+            ofFloat.setInterpolator(new rr(0.34d, 1.36d, 0.64d, 1.0d));
             ofFloat.addUpdateListener(new m3(this, i12));
             long j3 = 350;
             ofFloat.setDuration(j3);
@@ -106,7 +106,7 @@ public final class o3 {
             ofFloat.setStartDelay(j10);
             ofFloat.start();
             ValueAnimator ofInt = ValueAnimator.ofInt(0, 255, 255);
-            ofInt.setInterpolator(qr.f);
+            ofInt.setInterpolator(rr.f);
             ofInt.addUpdateListener(new m3(this, i13));
             ofInt.setStartDelay(j10);
             ofInt.setDuration(j3);

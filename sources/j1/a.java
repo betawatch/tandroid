@@ -8,9 +8,9 @@ import java.util.WeakHashMap;
 import k2.u;
 import org.telegram.tgnet.TLObject;
 import r0.i0;
-import s0.c;
+import s0.d;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class a extends u {
     public final /* synthetic */ b c;
@@ -22,12 +22,12 @@ public final class a extends u {
     }
 
     @Override // k2.u
-    public final c Z(int i10) {
-        return new c(AccessibilityNodeInfo.obtain(this.c.j(i10).a));
+    public final d Z(int i10) {
+        return new d(AccessibilityNodeInfo.obtain(this.c.j(i10).a));
     }
 
     @Override // k2.u
-    public final c a0(int i10) {
+    public final d a0(int i10) {
         b bVar = this.c;
         int i11 = i10 == 2 ? bVar.k : bVar.l;
         if (i11 == Integer.MIN_VALUE) {

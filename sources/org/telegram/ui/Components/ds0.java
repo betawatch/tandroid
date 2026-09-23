@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class ds0 extends s4.s0 {
     public final /* synthetic */ ur0 a;
@@ -28,7 +28,7 @@ public final class ds0 extends s4.s0 {
         nu0[] nu0VarArr = yu0Var.t1;
         vr0 vr0Var = this.b;
         ur0 ur0Var = this.a;
-        yu0Var.G(ur0Var, (ll0) recyclerView, vr0Var);
+        yu0Var.G(ur0Var, (ml0) recyclerView, vr0Var);
         if (i11 != 0 && ((i13 = yu0Var.k0[0].F) == 0 || i13 == 5)) {
             nu0VarArr[0].a.isEmpty();
         }

@@ -27,23 +27,21 @@ import e9.a1;
 import e9.f1;
 import e9.g0;
 import e9.i0;
+import e9.k0;
 import ei.d5;
 import hg.r;
-import i2.a0;
-import i2.e0;
 import i2.s;
-import i2.y;
 import java.io.IOException;
 import java.util.List;
 import org.telegram.messenger.MediaDataController;
 import u2.b0;
 import u2.f0;
-import u2.k0;
+import u2.j0;
 import u2.t;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final class f implements z0, k0, n2.k {
+public final class f implements z0, j0, n2.k {
     public final x a;
     public final h1 b;
     public final j1 c;
@@ -84,25 +82,25 @@ public final class f implements z0, k0, n2.k {
         q(o9, 1024, new c(o9, exc, 14));
     }
 
-    @Override // u2.k0
+    @Override // u2.j0
     public final void c(int i10, f0 f0Var, b0 b0Var) {
         a o9 = o(i10, f0Var);
         q(o9, 1005, new c(o9, b0Var, 22));
     }
 
-    @Override // u2.k0
+    @Override // u2.j0
     public final void d(int i10, f0 f0Var, b0 b0Var) {
         a o9 = o(i10, f0Var);
         q(o9, 1004, new ah.b(21, o9, b0Var));
     }
 
-    @Override // u2.k0
+    @Override // u2.j0
     public final void e(int i10, f0 f0Var, t tVar, b0 b0Var) {
         a o9 = o(i10, f0Var);
         q(o9, 1001, new c(o9, (Object) tVar, (Object) b0Var, 15));
     }
 
-    @Override // u2.k0
+    @Override // u2.j0
     public final void f(int i10, f0 f0Var, t tVar, b0 b0Var, IOException iOException, boolean z10) {
         a o9 = o(i10, f0Var);
         q(o9, 1003, new d5(o9, tVar, b0Var, iOException, z10));
@@ -114,7 +112,7 @@ public final class f implements z0, k0, n2.k {
         q(o9, 1027, new c(o9, 23));
     }
 
-    @Override // u2.k0
+    @Override // u2.j0
     public final void h(int i10, f0 f0Var, t tVar, b0 b0Var, int i11) {
         a o9 = o(i10, f0Var);
         q(o9, MediaDataController.MAX_STYLE_RUNS_COUNT, new c(o9, tVar, b0Var, i11));
@@ -126,7 +124,7 @@ public final class f implements z0, k0, n2.k {
         q(o9, 1025, new c(o9, 28));
     }
 
-    @Override // u2.k0
+    @Override // u2.j0
     public final void j(int i10, f0 f0Var, t tVar, b0 b0Var) {
         a o9 = o(i10, f0Var);
         q(o9, 1002, new c(o9, (Object) tVar, (Object) b0Var, 11));
@@ -162,7 +160,7 @@ public final class f implements z0, k0, n2.k {
 
     public final a n(f0 f0Var) {
         this.h.getClass();
-        k1 k1Var = f0Var == null ? null : (k1) ((e9.k0) this.d.c).get(f0Var);
+        k1 k1Var = f0Var == null ? null : (k1) ((k0) this.d.c).get(f0Var);
         if (f0Var != null && k1Var != null) {
             return m(k1Var, k1Var.g(f0Var.a, this.b).c, f0Var);
         }
@@ -177,7 +175,7 @@ public final class f implements z0, k0, n2.k {
     public final a o(int i10, f0 f0Var) {
         this.h.getClass();
         if (f0Var != null) {
-            return ((k1) ((e9.k0) this.d.c).get(f0Var)) != null ? n(f0Var) : m(k1.a, i10, f0Var);
+            return ((k1) ((k0) this.d.c).get(f0Var)) != null ? n(f0Var) : m(k1.a, i10, f0Var);
         }
         k1 w02 = this.h.w0();
         if (i10 >= w02.o()) {
@@ -207,7 +205,7 @@ public final class f implements z0, k0, n2.k {
     @Override // b2.z0
     public final void onCues(List list) {
         a l4 = l();
-        q(l4, 27, new y(l4, list));
+        q(l4, 27, new i2.z(l4, list));
     }
 
     @Override // b2.z0
@@ -268,7 +266,7 @@ public final class f implements z0, k0, n2.k {
     public final void onPlayerError(u0 u0Var) {
         f0 f0Var;
         a l4 = (!(u0Var instanceof i2.n) || (f0Var = ((i2.n) u0Var).E) == null) ? l() : n(f0Var);
-        q(l4, 10, new d5(l4, u0Var, 23));
+        q(l4, 10, new d5(l4, u0Var, 22));
     }
 
     @Override // b2.z0
@@ -344,7 +342,7 @@ public final class f implements z0, k0, n2.k {
     @Override // b2.z0
     public final void onVideoSizeChanged(x1 x1Var) {
         a p5 = p();
-        q(p5, 25, new a0(p5, x1Var));
+        q(p5, 25, new i2.b0(p5, x1Var));
     }
 
     @Override // b2.z0
@@ -362,13 +360,13 @@ public final class f implements z0, k0, n2.k {
         this.f.e(i10, mVar);
     }
 
-    public final void r(e0 e0Var, Looper looper) {
+    public final void r(i2.f0 f0Var, Looper looper) {
         e2.d.g(this.h == null || ((i0) this.d.b).isEmpty());
-        e0Var.getClass();
-        this.h = e0Var;
+        f0Var.getClass();
+        this.h = f0Var;
         this.n = this.a.a(looper, null);
         p pVar = this.f;
-        this.f = new p(pVar.d, looper, pVar.a, new ah.b(20, this, e0Var), pVar.i);
+        this.f = new p(pVar.d, looper, pVar.a, new ah.b(20, this, f0Var), pVar.i);
     }
 
     @Override // b2.z0

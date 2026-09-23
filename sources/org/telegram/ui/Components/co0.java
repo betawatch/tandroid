@@ -7,7 +7,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import java.util.HashMap;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public abstract class co0 extends View.AccessibilityDelegate {
     public static final String c = "android.widget.SeekBar";
@@ -53,7 +53,7 @@ public abstract class co0 extends View.AccessibilityDelegate {
                 HashMap hashMap = this.a;
                 Runnable runnable = (Runnable) hashMap.get(view);
                 if (runnable == null) {
-                    runnable = new ny(26, this, view);
+                    runnable = new oy(26, this, view);
                     hashMap.put(view, runnable);
                     view.addOnAttachStateChangeListener(this.b);
                 } else {

@@ -15,7 +15,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public abstract class b {
     public static boolean a;
@@ -53,40 +53,40 @@ public abstract class b {
         }
     }
 
-    public static void c(Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
+    public static void c(Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
         if (a) {
             return;
         }
         int i11 = 1;
-        org.telegram.ui.ActionBar.f3 j3 = org.telegram.messenger.vl.j(1, context, e6Var, false);
+        org.telegram.ui.ActionBar.f3 j3 = org.telegram.messenger.ul.j(1, context, d6Var, false);
         ai.s1 s1Var = new ai.s1(i10, context, r5, 21);
-        LinearLayout f7 = org.telegram.messenger.vl.f(context, 1);
+        LinearLayout f7 = org.telegram.messenger.ul.f(context, 1);
         f7.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(20.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(8.0f));
         f7.setClipChildren(false);
         f7.setClipToPadding(false);
-        org.telegram.ui.Components.aj0 aj0Var = new org.telegram.ui.Components.aj0(context);
-        aj0Var.f(R.raw.media_forbidden, AndroidUtilities.dp(115.0f), AndroidUtilities.dp(115.0f), null);
-        aj0Var.d();
-        f7.addView(aj0Var, w7.x5.t(115, 115, 17, 0, 0, 0, 9));
+        org.telegram.ui.Components.bj0 bj0Var = new org.telegram.ui.Components.bj0(context);
+        bj0Var.f(R.raw.media_forbidden, AndroidUtilities.dp(115.0f), AndroidUtilities.dp(115.0f), null);
+        bj0Var.d();
+        f7.addView(bj0Var, w7.x5.t(115, 115, 17, 0, 0, 0, 9));
         TextView textView = new TextView(context);
-        org.telegram.messenger.vl.k(20.0f, 1, textView);
-        textView.setTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.G6, e6Var));
-        org.telegram.messenger.vl.l(R.string.AccountFrozenTitle, textView, 17);
+        org.telegram.messenger.ul.k(20.0f, 1, textView);
+        textView.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.G6, d6Var));
+        org.telegram.messenger.ul.l(R.string.AccountFrozenTitle, textView, 17);
         f7.addView(textView, w7.x5.t(-1, -2, 17, 0, 0, 0, 23));
-        yh.r rVar = new yh.r(context, 1, e6Var);
+        yh.r rVar = new yh.r(context, 1, d6Var);
         rVar.a(LocaleController.getString(R.string.AccountFrozen1Title), LocaleController.getString(R.string.AccountFrozen1Text), R.drawable.msg_block2);
         f7.addView(rVar, w7.x5.t(-1, -2, 17, 0, 0, 0, 0));
-        yh.r rVar2 = new yh.r(context, 1, e6Var);
+        yh.r rVar2 = new yh.r(context, 1, d6Var);
         rVar2.a(LocaleController.getString(R.string.AccountFrozen2Title), LocaleController.getString(R.string.AccountFrozen2Text), R.drawable.menu_privacy);
         f7.addView(rVar2, w7.x5.t(-1, -2, 17, 0, 0, 0, 0));
-        yh.r rVar3 = new yh.r(context, 1, e6Var);
-        rVar3.a(LocaleController.getString(R.string.AccountFrozen3Title), AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.AccountFrozen3Text, LocaleController.formatYearMonthDay(MessagesController.getInstance(i10).freezeUntilDate, true)), new mu0(s1Var, 2)), R.drawable.menu_feature_hourglass);
+        yh.r rVar3 = new yh.r(context, 1, d6Var);
+        rVar3.a(LocaleController.getString(R.string.AccountFrozen3Title), AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.AccountFrozen3Text, LocaleController.formatYearMonthDay(MessagesController.getInstance(i10).freezeUntilDate, true)), new fu0(s1Var, 2)), R.drawable.menu_feature_hourglass);
         f7.addView(rVar3, w7.x5.t(-1, -2, 17, 0, 0, 0, 0));
-        ci.d dVar = new ci.d(context, e6Var, true);
+        ci.d dVar = new ci.d(context, d6Var, true);
         dVar.g(LocaleController.getString(R.string.AccountFrozenButtonAppeal), false, true);
         dVar.setOnClickListener(new a(s1Var, 0));
         f7.addView(dVar, w7.x5.t(-1, 48, 7, 0, 13, 0, 4));
-        ci.d dVar2 = new ci.d(context, e6Var, false);
+        ci.d dVar2 = new ci.d(context, d6Var, false);
         dVar2.g(LocaleController.getString(R.string.AccountFrozenButtonUnderstood), false, true);
         dVar2.setOnClickListener(new a(r5, i11));
         f7.addView(dVar2, w7.x5.t(-1, 48, 7, 0, 0, 0, 0));

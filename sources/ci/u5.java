@@ -1,47 +1,38 @@
 package ci;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.gk0;
+
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class u5 implements qg.y1 {
+public final class u5 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ qg.x2 b;
-    public final /* synthetic */ float c;
+    public final /* synthetic */ gk0 b;
 
-    public /* synthetic */ u5(qg.x2 x2Var, float f7, int i10) {
+    public /* synthetic */ u5(gk0 gk0Var, int i10) {
         this.a = i10;
-        this.b = x2Var;
-        this.c = f7;
+        this.b = gk0Var;
     }
 
-    @Override // qg.y1
-    public final float get() {
-        float baseFontSize;
-        float f7;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                baseFontSize = this.b.getBaseFontSize();
-                f7 = this.c;
+                AndroidUtilities.removeFromParent(this.b);
+                break;
+            case 1:
+                super.onAnimationEnd(animator);
+                this.b.L0.unlock();
                 break;
             default:
-                baseFontSize = this.b.getBaseFontSize();
-                f7 = this.c;
-                break;
-        }
-        return baseFontSize / f7;
-    }
-
-    @Override // qg.y1
-    public final void l(float f7) {
-        switch (this.a) {
-            case 0:
-                qg.x2 x2Var = this.b;
-                x2Var.z0 = true;
-                x2Var.setBaseFontSize((int) (this.c * f7));
-                break;
-            default:
-                qg.x2 x2Var2 = this.b;
-                x2Var2.z0 = true;
-                x2Var2.setBaseFontSize((int) (this.c * f7));
+                super.onAnimationEnd(animator);
+                gk0 gk0Var = this.b;
+                gk0Var.Q = null;
+                gk0Var.n0 = 0.0f;
+                gk0Var.l0 = null;
+                gk0Var.invalidate();
                 break;
         }
     }

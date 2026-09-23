@@ -1,51 +1,101 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.PhotoViewer;
+import android.view.MotionEvent;
+import android.view.accessibility.AccessibilityNodeInfo;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class r7 extends kd {
-    public final /* synthetic */ int b;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate c;
+public final class r7 extends bj0 {
+    public final q7 E;
+    public long F;
+    public final /* synthetic */ float G;
+    public final /* synthetic */ j8 H;
+    public float r;
+    public float s;
+    public int v;
+    public long w;
+    public long x;
+    public final q7 y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ r7(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Context context, int i10) {
+    public r7(j8 j8Var, Context context, float f7) {
         super(context);
-        this.b = i10;
-        this.c = notificationCenterDelegate;
+        this.H = j8Var;
+        this.G = f7;
+        this.v = 0;
+        this.y = new q7(this, 0);
+        this.E = new q7(this, 1);
     }
 
-    @Override // org.telegram.ui.Components.kd
-    public final void c(boolean z10) {
-        switch (this.b) {
-            case 0:
-                h8 h8Var = (h8) this.c;
-                h8Var.D0();
-                org.telegram.ui.yr yrVar = h8Var.O;
-                if (yrVar != null) {
-                    yrVar.a(b5.d.u());
-                    break;
-                }
-                break;
-            default:
-                PhotoViewer photoViewer = (PhotoViewer) this.c;
-                org.telegram.ui.ActionBar.f1 f1Var = photoViewer.F0;
-                if (f1Var != null) {
-                    f1Var.d(z10);
-                    photoViewer.F0.setSelectorColor(z10 ? 259241196 : 268435455);
-                }
-                g71 g71Var = photoViewer.F2;
-                if (g71Var != null) {
-                    g71Var.O(b5.d.u() || photoViewer.r);
-                }
-                org.telegram.ui.yr yrVar2 = photoViewer.w0;
-                if (yrVar2 != null) {
-                    yrVar2.a(b5.d.u());
-                    break;
-                }
-                break;
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.addAction(16);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x002a, code lost:
+    
+        if (r6 != 3) goto L20;
+     */
+    @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        j8 j8Var = this.H;
+        r7 r7Var = j8Var.K;
+        if (j8Var.T.v || j8Var.H0 == 1) {
+            return false;
         }
+        float rawX = motionEvent.getRawX();
+        float rawY = motionEvent.getRawY();
+        int action = motionEvent.getAction();
+        q7 q7Var = this.y;
+        if (action == 0) {
+            this.r = rawX;
+            this.s = rawY;
+            this.F = System.currentTimeMillis();
+            j8Var.H0 = 0;
+            AndroidUtilities.runOnUIThread(q7Var, 300L);
+            if (getBackground() != null) {
+                getBackground().setHotspot(this.r, this.s);
+            }
+            setPressed(true);
+            return true;
+        }
+        if (action != 1) {
+            if (action == 2) {
+                float f7 = rawX - this.r;
+                float f10 = rawY - this.s;
+                float f11 = (f10 * f10) + (f7 * f7);
+                float f12 = this.G;
+                if (f11 > f12 * f12 && j8Var.H0 == 0) {
+                    AndroidUtilities.cancelRunOnUIThread(q7Var);
+                    setPressed(false);
+                }
+            }
+            return true;
+        }
+        AndroidUtilities.cancelRunOnUIThread(q7Var);
+        q7 q7Var2 = this.E;
+        AndroidUtilities.cancelRunOnUIThread(q7Var2);
+        if (j8Var.H0 == 0 && motionEvent.getAction() == 1 && System.currentTimeMillis() - this.F < 300) {
+            MediaController.getInstance().playPreviousMessage();
+            r7Var.setProgress(0.0f);
+            r7Var.d();
+        }
+        if (this.v > 0) {
+            this.x = 0L;
+            q7Var2.run();
+            MediaController.getInstance().resumeByRewind();
+        }
+        j8Var.I0 = -1.0f;
+        setPressed(false);
+        j8Var.H0 = 0;
+        this.v = 0;
+        return true;
     }
 }

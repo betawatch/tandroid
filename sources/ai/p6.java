@@ -1,32 +1,42 @@
 package ai;
 
-import android.content.Context;
-import android.view.View;
+import android.animation.ValueAnimator;
+import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ll0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class p6 extends ll0 implements s9 {
-    public final /* synthetic */ j7 X2;
-    public final /* synthetic */ j7 Y2;
+public final class p6 extends s4.s0 {
+    public final /* synthetic */ k7 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p6(j7 j7Var, Context context, d dVar) {
-        super(context, dVar);
-        this.Y2 = j7Var;
-        this.X2 = j7Var;
+    public p6(k7 k7Var) {
+        this.a = k7Var;
     }
 
-    @Override // ai.s9
-    public final void a(int[] iArr) {
-        iArr[0] = AndroidUtilities.dp(this.X2.e);
-        iArr[1] = getMeasuredHeight();
+    @Override // s4.s0
+    public final void a(RecyclerView recyclerView, int i10) {
+        k7 k7Var = this.a;
+        if (i10 == 0) {
+            k7Var.V = true;
+            k7Var.invalidate();
+        }
+        if (i10 == 1) {
+            k7Var.V = false;
+            a5.a aVar = k7Var.d;
+            ValueAnimator valueAnimator = (ValueAnimator) aVar.c;
+            if (valueAnimator != null) {
+                valueAnimator.removeAllListeners();
+                ((ValueAnimator) aVar.c).cancel();
+                aVar.c = null;
+            }
+            AndroidUtilities.hideKeyboard(k7Var);
+        }
     }
 
-    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        this.Y2.n = View.MeasureSpec.getSize(i11);
-        super.onMeasure(i10, i11);
+    @Override // s4.s0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        k7 k7Var = this.a;
+        k7Var.c();
+        k7Var.invalidate();
     }
 }

@@ -15,20 +15,20 @@ import org.telegram.messenger.BillingController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class he extends LinearLayout {
     public final LinearLayout a;
     public final LinearLayout[] b;
-    public final org.telegram.ui.Components.w5[] c;
+    public final org.telegram.ui.Components.y5[] c;
     public final TextView[] d;
     public final TextView e;
     public final DecimalFormat f;
 
-    public he(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+    public he(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context);
         this.b = new LinearLayout[2];
-        this.c = new org.telegram.ui.Components.w5[2];
+        this.c = new org.telegram.ui.Components.y5[2];
         this.d = new TextView[2];
         setOrientation(1);
         LinearLayout linearLayout = new LinearLayout(context);
@@ -39,20 +39,20 @@ public final class he extends LinearLayout {
             this.b[i10] = new LinearLayout(context);
             this.b[i10].setOrientation(0);
             this.a.addView(this.b[i10], w7.x5.o(-1, -2, 1.0f, 119));
-            this.c[i10] = new org.telegram.ui.Components.w5(context);
+            this.c[i10] = new org.telegram.ui.Components.y5(context);
             this.c[i10].setTypeface(AndroidUtilities.bold());
             this.c[i10].setTextSize(1, 16.0f);
-            this.c[i10].setTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.G6, e6Var));
+            this.c[i10].setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.G6, d6Var));
             this.b[i10].addView(this.c[i10], w7.x5.t(-2, -2, 80, 0, 0, 5, 0));
-            this.d[i10] = new org.telegram.ui.Components.w5(context);
+            this.d[i10] = new org.telegram.ui.Components.y5(context);
             this.d[i10].setTextSize(1, 11.5f);
-            this.d[i10].setTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.y6, e6Var));
+            this.d[i10].setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.y6, d6Var));
             this.b[i10].addView(this.d[i10], w7.x5.q(-2, -2, 80));
         }
         TextView textView = new TextView(context);
         this.e = textView;
         textView.setTextSize(1, 13.0f);
-        textView.setTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.y6, e6Var));
+        textView.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.y6, d6Var));
         addView(textView, w7.x5.t(-1, -2, 55, 22, 5, 22, 9));
         DecimalFormatSymbols decimalFormatSymbols = new DecimalFormatSymbols(Locale.US);
         decimalFormatSymbols.setDecimalSeparator('.');
@@ -104,9 +104,9 @@ public final class he extends LinearLayout {
                         if (i10 == 0) {
                             spannableStringBuilder2.append((CharSequence) LocaleController.formatNumber(geVar.d, ' '));
                         } else {
-                            spannableStringBuilder2.append((CharSequence) yh.x7.J0(geVar.i, 0.8f, ' '));
+                            spannableStringBuilder2.append((CharSequence) yh.w7.J0(geVar.i, 0.8f, ' '));
                         }
-                        spannableStringBuilder = yh.x7.X0(false, spannableStringBuilder2, 0.7f, null);
+                        spannableStringBuilder = yh.w7.X0(false, spannableStringBuilder2, 0.7f, null);
                     } else {
                         spannableStringBuilder2.append((CharSequence) Long.toString(geVar.d));
                         spannableStringBuilder = spannableStringBuilder2;

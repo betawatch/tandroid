@@ -10,11 +10,11 @@ import org.telegram.messenger.CacheByChatsController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public class b6 extends org.telegram.ui.ActionBar.n2 {
     public z5 a;
-    public org.telegram.ui.Components.ll0 b;
+    public org.telegram.ui.Components.ml0 b;
     public final ArrayList c;
     public ArrayList d;
     public int e;
@@ -69,19 +69,19 @@ public class b6 extends org.telegram.ui.ActionBar.n2 {
         hg.c.x(false, this.actionBar);
         this.actionBar.setActionBarMenuOnItemClick(new ei.t(this, 21));
         this.actionBar.setTitle(LocaleController.getString(R.string.NotificationsExceptions));
-        this.b = new org.telegram.ui.Components.ll0(context, null);
+        this.b = new org.telegram.ui.Components.ml0(context, null);
         s4.j jVar = new s4.j();
         jVar.C = false;
         jVar.m = false;
         this.b.setItemAnimator(jVar);
         this.b.setLayoutManager(new s4.c0());
-        org.telegram.ui.Components.ll0 ll0Var = this.b;
+        org.telegram.ui.Components.ml0 ml0Var = this.b;
         z5 z5Var = new z5(this);
         this.a = z5Var;
-        ll0Var.setAdapter(z5Var);
-        this.b.setOnItemClickListener(new y0(this, 7));
+        ml0Var.setAdapter(z5Var);
+        this.b.setOnItemClickListener(new z0(this, 7));
         frameLayout.addView(this.b);
-        frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.a7, false));
+        frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.a7, false));
         U();
         return this.fragmentView;
     }

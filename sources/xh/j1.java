@@ -2,71 +2,1262 @@ package xh;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.Shader;
-import android.graphics.drawable.Drawable;
-import android.view.View;
+import android.graphics.ColorFilter;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.Rect;
+import android.text.TextUtils;
+import android.view.ViewGroup;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.DocumentObject;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.UserObject;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.e6;
+import org.telegram.ui.Components.f01;
+import org.telegram.ui.Components.h9;
+import org.telegram.ui.Components.m70;
+import org.telegram.ui.Components.op;
+import org.telegram.ui.Components.pq;
+import org.telegram.ui.Components.qq;
+import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.s01;
+import org.telegram.ui.Components.w9;
+import org.telegram.ui.Components.yo0;
+import org.telegram.ui.p50;
+import w7.x5;
+import w7.z5;
+import yh.q7;
+import yh.t5;
+import yh.w7;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final class j1 extends View {
-    public final l1 a;
-    public CharSequence b;
+public class j1 extends FrameLayout {
+    public static final int[] l0 = {-2781403, -3635939};
+    public FrameLayout.LayoutParams E;
+    public final rg.b1 F;
+    public final rg.b1 G;
+    public final TextView H;
+    public final TextView I;
+    public final h1 J;
+    public final p50 K;
+    public final TextView L;
+    public final TextView M;
+    public s01 N;
+    public f01 O;
+    public f01 P;
+    public final Rect Q;
+    public boolean R;
+    public boolean S;
+    public boolean T;
+    public final e6 U;
+    public rg.k V;
+    public TL_stars.StarGift W;
+    public final int a;
+    public boolean a0;
+    public final d6 b;
+    public boolean b0;
+    public final yo0 c;
+    public TL_stars.SavedStarGift c0;
+    public final FrameLayout d;
+    public boolean d0;
+    public final f1 e;
+    public boolean e0;
+    public final k1 f;
+    public boolean f0;
+    public boolean g0;
+    public final h9 h;
+    public rg.k h0;
+    public TLRPC.Document i0;
+    public TL_stars.SavedStarGift j0;
+    public op k0;
+    public final w9 n;
+    public final FrameLayout.LayoutParams r;
+    public final FrameLayout.LayoutParams s;
+    public final FrameLayout v;
+    public final ImageView w;
+    public final TextView x;
+    public final w9 y;
 
-    public j1(Context context) {
+    public j1(Context context, int i10, d6 d6Var) {
         super(context);
-        l1 l1Var = new l1(this);
-        this.a = l1Var;
-        l1Var.setCallback(this);
+        this.Q = new Rect();
+        this.U = new e6(this, 0L, 320L, rr.h);
+        this.a = i10;
+        this.b = d6Var;
+        z5.b(this, 0.04f, 1.5f);
+        this.c = new yo0(this);
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.d = frameLayout;
+        f1 f1Var = new f1(frameLayout, d6Var, true);
+        this.e = f1Var;
+        frameLayout.setBackground(f1Var);
+        addView(frameLayout, x5.e(-1, -1, 119));
+        k1 k1Var = new k1(context);
+        this.f = k1Var;
+        addView(k1Var, x5.d(-2, -2.0f, 53, 0.0f, 2.0f, 1.0f, 0.0f));
+        w9 w9Var = new w9(context);
+        this.y = w9Var;
+        w9Var.getImageReceiver().setAutoRepeat(0);
+        FrameLayout.LayoutParams d = x5.d(80, 80.0f, 17, 0.0f, 12.0f, 0.0f, 12.0f);
+        this.E = d;
+        frameLayout.addView(w9Var, d);
+        rg.b1 b1Var = new rg.b1(context, 3, d6Var);
+        this.F = b1Var;
+        b1Var.setImageReceiver(w9Var.getImageReceiver());
+        frameLayout.addView(b1Var, x5.d(30, 30.0f, 49, 0.0f, 38.0f, 0.0f, 0.0f));
+        rg.b1 b1Var2 = new rg.b1(context, 4, d6Var);
+        this.G = b1Var2;
+        b1Var2.setImageReceiver(w9Var.getImageReceiver());
+        frameLayout.addView(b1Var2, x5.e(44, 44, 17));
+        b1Var2.setAlpha(0.0f);
+        b1Var2.setScaleX(0.3f);
+        b1Var2.setScaleY(0.3f);
+        b1Var2.setVisibility(8);
+        TextView textView = new TextView(context);
+        this.H = textView;
+        int i11 = h6.G6;
+        textView.setTextColor(h6.v0(i11, d6Var));
+        textView.setGravity(17);
+        com.google.android.gms.internal.vision.e2.l(14.0f, 1, textView);
+        TextView f7 = org.telegram.ui.Cells.q3.f(frameLayout, textView, x5.d(-1, -2.0f, 48, 0.0f, 89.0f, 0.0f, 0.0f), context);
+        this.I = f7;
+        f7.setTextColor(h6.v0(i11, d6Var));
+        f7.setGravity(17);
+        f7.setTextSize(1, 12.0f);
+        frameLayout.addView(f7, x5.d(-1, -2.0f, 48, 0.0f, 107.0f, 0.0f, 0.0f));
+        h1 h1Var = new h1(this, context, 0);
+        this.J = h1Var;
+        TextView textView2 = new TextView(context);
+        this.L = textView2;
+        textView2.setTextSize(1, 12.0f);
+        textView2.setTypeface(AndroidUtilities.bold());
+        textView2.setPadding(AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f), 0);
+        textView2.setGravity(17);
+        textView2.setTextColor(-13397548);
+        frameLayout.addView(h1Var, x5.d(-2, -2.0f, 81, 0.0f, 0.0f, 0.0f, 11.0f));
+        p50 p50Var = new p50(context);
+        this.K = p50Var;
+        p50Var.setBackgroundColor(-16776961);
+        h1Var.addView(p50Var, x5.c(0.0f, 0));
+        h1Var.addView(textView2, x5.e(-2, 26, 17));
+        p50Var.setBackground(new o1(h6.I.q() ? 518759725 : 1088989954));
+        TextView textView3 = new TextView(context);
+        this.M = textView3;
+        textView3.setTextSize(1, 10.66f);
+        textView3.setGravity(17);
+        textView3.setTextColor(h6.I.q() ? -1333971 : -2722014);
+        textView3.setVisibility(8);
+        frameLayout.addView(textView3, x5.d(-2, -2.0f, 49, 0.0f, 161.0f, 0.0f, 8.0f));
+        this.h = new h9((d6) null);
+        w9 w9Var2 = new w9(context);
+        this.n = w9Var2;
+        w9Var2.setRoundRadius(AndroidUtilities.dp(20.0f));
+        w9Var2.setVisibility(8);
+        FrameLayout.LayoutParams d10 = x5.d(20, 20.0f, 51, 2.0f, 2.0f, 2.0f, 2.0f);
+        this.r = d10;
+        frameLayout.addView(w9Var2, d10);
+        this.s = x5.d(20, 20.0f, 51, 5.0f, 5.0f, 2.0f, 2.0f);
+        FrameLayout frameLayout2 = new FrameLayout(context);
+        this.v = frameLayout2;
+        frameLayout2.setAlpha(0.0f);
+        frameLayout2.setScaleX(0.3f);
+        frameLayout2.setScaleY(0.3f);
+        frameLayout2.setVisibility(8);
+        ImageView imageView = new ImageView(context);
+        imageView.setImageResource(R.drawable.msg_limit_pin);
+        imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+        imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+        frameLayout2.addView(imageView, x5.a(12.66f, 12.66f, 17));
+        frameLayout.addView(frameLayout2, x5.d(20, 20.0f, 51, 2.0f, 2.0f, 2.0f, 2.0f));
+        ImageView imageView2 = new ImageView(context);
+        this.w = imageView2;
+        imageView2.setImageResource(R.drawable.mini_gram_14);
+        imageView2.setPadding(0, AndroidUtilities.dp(2.0f), 0, 0);
+        imageView2.setVisibility(8);
+        imageView2.setScaleType(ImageView.ScaleType.CENTER);
+        frameLayout.addView(imageView2, x5.d(20, 20.0f, 51, 3.0f, 3.0f, 3.0f, 3.0f));
+        TextView textView4 = new TextView(context);
+        this.x = textView4;
+        textView4.setTextSize(1, 10.0f);
+        textView4.setTypeface(AndroidUtilities.bold());
+        textView4.setPadding(AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(5.0f), 0);
+        textView4.setGravity(17);
+        textView4.setTextColor(-1);
+        frameLayout.addView(textView4, x5.d(-2, 17.0f, 51, 4.0f, 4.0f, 0.0f, 0.0f));
+        textView4.setVisibility(8);
+        setImportantForAccessibility(1);
+        frameLayout.setImportantForAccessibility(4);
+        k1Var.setImportantForAccessibility(2);
     }
 
-    public final void a(int i10, int i11) {
-        this.a.a.setShader(new LinearGradient(0.0f, 0.0f, AndroidUtilities.dp(48.0f), AndroidUtilities.dp(48.0f), new int[]{i10, i11}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
+    private TL_stars.TL_starGiftUnique getUniqueStarGift() {
+        TL_stars.SavedStarGift savedStarGift = this.c0;
+        if (savedStarGift == null) {
+            return null;
+        }
+        TL_stars.StarGift starGift = savedStarGift.gift;
+        if (starGift instanceof TL_stars.TL_starGiftUnique) {
+            return (TL_stars.TL_starGiftUnique) starGift;
+        }
+        return null;
     }
 
-    public final void b(String str, boolean z10) {
-        this.b = str;
-        this.a.e(z10 ? 10 : 11, str, z10);
+    public final void a(m70 m70Var, Canvas canvas, float f7, float f10, float f11) {
+        float f12;
+        float f13;
+        Canvas canvas2 = canvas;
+        canvas2.save();
+        canvas2.scale(getScaleX(), getScaleY(), f7 / 2.0f, f10 / 2.0f);
+        TL_stars.TL_starGiftUnique uniqueStarGift = getUniqueStarGift();
+        float dp = uniqueStarGift != null ? AndroidUtilities.dp(63.0f) * f11 : 0.0f;
+        f1 f1Var = this.e;
+        f1Var.setBounds(0, 0, (int) f7, (int) f10);
+        f1Var.b(canvas2, f11);
+        f1Var.getPadding(this.Q);
+        float lerp = AndroidUtilities.lerp(AndroidUtilities.dp(80.0f), AndroidUtilities.dp(120.0f), f11);
+        w9 w9Var = this.y;
+        float f14 = f10 - dp;
+        w9Var.getImageReceiver().setImageCoords((f7 - lerp) / 2.0f, (f14 - lerp) / 2.0f, lerp, lerp);
+        w9Var.getImageReceiver().draw(canvas2);
+        if (w9Var.getImageReceiver().isLottieRunning()) {
+            m70Var.invalidate();
+        }
+        rg.b1 b1Var = this.F;
+        if (b1Var.getVisibility() != 0 || b1Var.getAlpha() <= 0.0f) {
+            f12 = 1.0f;
+        } else {
+            canvas2.save();
+            canvas2.translate((f7 - b1Var.getMeasuredWidth()) / 2.0f, AndroidUtilities.lerp(b1Var.getY(), (f14 - b1Var.getMeasuredHeight()) / 2.0f, f11));
+            f12 = 1.0f;
+            canvas2.saveLayerAlpha(0.0f, 0.0f, b1Var.getWidth(), b1Var.getHeight(), (int) (b1Var.getAlpha() * (1.0f - f11) * 255.0f), 31);
+            b1Var.draw(canvas2);
+            canvas2.restore();
+            canvas2.restore();
+        }
+        FrameLayout frameLayout = this.v;
+        if (frameLayout.getVisibility() == 0 && frameLayout.getAlpha() > 0.0f) {
+            canvas2.save();
+            canvas2.translate(AndroidUtilities.dp(2.0f) + r14.left, AndroidUtilities.dp(2.0f) + r14.top);
+            canvas2.saveLayerAlpha(0.0f, 0.0f, frameLayout.getWidth(), frameLayout.getHeight(), (int) (frameLayout.getAlpha() * 255.0f), 31);
+            frameLayout.draw(canvas2);
+            canvas2.restore();
+            canvas2.restore();
+        }
+        w9 w9Var2 = this.n;
+        if (w9Var2.getVisibility() == 0 && w9Var2.getAlpha() > 0.0f) {
+            canvas2.save();
+            canvas2.translate(AndroidUtilities.dp(2.0f) + r14.left, AndroidUtilities.dp(2.0f) + r14.top);
+            w9Var2.draw(canvas2);
+            canvas2.restore();
+        }
+        k1 k1Var = this.f;
+        if (k1Var.getVisibility() != 0 || k1Var.getAlpha() <= 0.0f) {
+            f13 = 1.0f;
+        } else {
+            canvas2.save();
+            canvas2.translate(f7 - AndroidUtilities.dp(f12), AndroidUtilities.dp(2.0f));
+            f13 = 1.0f;
+            float lerp2 = AndroidUtilities.lerp(1.0f, 1.25f, f11);
+            canvas2.scale(lerp2, lerp2);
+            canvas2.translate(-k1Var.getWidth(), 0.0f);
+            k1Var.draw(canvas2);
+            canvas2.restore();
+        }
+        if (uniqueStarGift != null) {
+            if (this.O == null) {
+                this.O = new f01(uniqueStarGift.title, 20.0f, AndroidUtilities.bold());
+            }
+            if (this.P == null) {
+                this.P = new f01(LocaleController.formatPluralStringComma("Gift2CollectionNumber", uniqueStarGift.num), 13.0f, null);
+            }
+            f01 f01Var = this.O;
+            f01Var.p = f7 - AndroidUtilities.dp(8.0f);
+            float f15 = f13 - f11;
+            f01Var.c((f7 - this.O.l()) / 2.0f, ((f10 - AndroidUtilities.dp(40.0f)) - (this.O.j() / 2.0f)) + (AndroidUtilities.dp(50.0f) * f15), f11, -1, canvas);
+            f01 f01Var2 = this.P;
+            f01Var2.p = f7 - AndroidUtilities.dp(8.0f);
+            f01Var2.c((f7 - this.P.l()) / 2.0f, ((f10 - AndroidUtilities.dp(19.0f)) - (this.P.j() / 2.0f)) + (AndroidUtilities.dp(50.0f) * f15), 0.6f * f11, -1, canvas);
+            canvas2 = canvas;
+        }
+        h1 h1Var = this.J;
+        if (h1Var != null && h1Var.getVisibility() == 0) {
+            canvas2.save();
+            canvas2.translate(h1Var.getX(), h1Var.getY());
+            canvas2.saveLayerAlpha(0.0f, 0.0f, h1Var.getWidth(), h1Var.getHeight(), (int) (h1Var.getAlpha() * (f13 - f11) * 255.0f), 31);
+            h1Var.draw(canvas2);
+            canvas2.restore();
+            canvas2.restore();
+        }
+        ImageView imageView = this.w;
+        if (imageView != null && imageView.getVisibility() == 0) {
+            canvas2.save();
+            canvas2.translate(imageView.getX(), imageView.getY());
+            canvas2.saveLayerAlpha(0.0f, 0.0f, imageView.getWidth(), imageView.getHeight(), (int) (imageView.getAlpha() * (f13 - f11) * 255.0f), 31);
+            imageView.draw(canvas2);
+            canvas2.restore();
+            canvas2.restore();
+        }
+        canvas2.restore();
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        int width = getWidth();
-        int height = getHeight();
-        l1 l1Var = this.a;
-        l1Var.setBounds(0, 0, width, height);
-        l1Var.draw(canvas);
+    public final void b(boolean z10, boolean z11) {
+        if (this.k0 == null) {
+            op opVar = new op(getContext(), 21, null);
+            this.k0 = opVar;
+            opVar.b(-1, h6.d6, h6.k7);
+            this.k0.setDrawUnchecked(false);
+            this.d.addView(this.k0, x5.d(24, 24.0f, 51, 4.0f, 4.0f, 4.0f, 4.0f));
+        }
+        this.n.setVisibility(8);
+        this.k0.a(z10, z11);
     }
 
-    public CharSequence getText() {
-        return this.b;
+    public final void c(boolean z10, boolean z11) {
+        TL_stars.SavedStarGift savedStarGift;
+        if (this.R == z10) {
+            return;
+        }
+        this.R = z10;
+        boolean z12 = false;
+        FrameLayout frameLayout = this.v;
+        if (z11) {
+            frameLayout.setVisibility(0);
+            frameLayout.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.3f).scaleY(z10 ? 1.0f : 0.3f).withEndAction(new g1(this, z10, 1)).start();
+        } else {
+            frameLayout.setVisibility(z10 ? 0 : 8);
+            frameLayout.setAlpha(z10 ? 1.0f : 0.0f);
+            frameLayout.setScaleX(z10 ? 1.0f : 0.3f);
+            frameLayout.setScaleY(z10 ? 1.0f : 0.3f);
+        }
+        if (!this.R && this.T && !this.f0 && (savedStarGift = this.c0) != null && (savedStarGift.gift instanceof TL_stars.TL_starGiftUnique)) {
+            z12 = true;
+        }
+        f(z12, z11);
+        j();
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        setMeasuredDimension(AndroidUtilities.dp(50.0f), AndroidUtilities.dp(50.0f));
-    }
-
-    public void setBackdrop(TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop) {
-        this.a.d(stargiftattributebackdrop, false, false);
+    public final void d(boolean z10, boolean z11) {
+        TL_stars.SavedStarGift savedStarGift;
+        if (this.T == z10) {
+            return;
+        }
+        this.T = z10;
+        if (!z11) {
+            this.U.a(z10);
+        }
         invalidate();
+        f((this.R || !z10 || this.f0 || (savedStarGift = this.c0) == null || !(savedStarGift.gift instanceof TL_stars.TL_starGiftUnique)) ? false : true, z11);
     }
 
-    public void setColor(int i10) {
-        Paint paint = this.a.a;
-        paint.setShader(null);
-        paint.setColor(i10);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        canvas.save();
+        canvas.translate(getWidth() / 2.0f, getHeight() / 2.0f);
+        float e = this.U.e(this.T);
+        if (e > 0.0f) {
+            this.c.a(canvas, e);
+        }
+        canvas.translate((-getWidth()) / 2.0f, (-getHeight()) / 2.0f);
+        super.dispatchDraw(canvas);
+        canvas.restore();
     }
 
-    public void setStrokeColor(int i10) {
-        this.a.d.setColor(i10);
+    public final void e(boolean z10, boolean z11) {
+        this.e.f(z10, z11);
+        ImageView imageView = this.w;
+        if (z11) {
+            imageView.animate().translationX(z10 ? AndroidUtilities.dp(6.0f) : 0.0f).translationY(z10 ? AndroidUtilities.dp(6.0f) : 0.0f).setDuration(320L).setInterpolator(rr.h).start();
+            return;
+        }
+        imageView.animate().cancel();
+        imageView.setTranslationX(z10 ? AndroidUtilities.dp(6.0f) : 0.0f);
+        imageView.setTranslationY(z10 ? AndroidUtilities.dp(6.0f) : 0.0f);
     }
 
+    public final void f(boolean z10, boolean z11) {
+        if (this.S == z10) {
+            return;
+        }
+        this.S = z10;
+        rg.b1 b1Var = this.G;
+        if (z11) {
+            b1Var.setVisibility(0);
+            b1Var.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.3f).scaleY(z10 ? 1.0f : 0.3f).withEndAction(new g1(this, z10, 0)).start();
+        } else {
+            b1Var.setVisibility(z10 ? 0 : 8);
+            b1Var.setAlpha(z10 ? 1.0f : 0.0f);
+            b1Var.setScaleX(z10 ? 1.0f : 0.3f);
+            b1Var.setScaleY(z10 ? 1.0f : 0.3f);
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:105:0x02a7  */
+    /* JADX WARN: Removed duplicated region for block: B:107:0x02a9  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x0156  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x01bf  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x0280  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x02ca  */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x02f1  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x0303  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x030f  */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x0328  */
+    /* JADX WARN: Removed duplicated region for block: B:93:0x033c  */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x0313  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x02f5  */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x02ce  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void g(TL_stars.StarGift starGift, boolean z10, boolean z11, boolean z12, boolean z13, boolean z14) {
+        String str;
+        long j3;
+        long j10;
+        long j11;
+        boolean z15;
+        boolean z16;
+        long j12;
+        boolean z17;
+        s01 s01Var = this.N;
+        ColorFilter colorFilter = null;
+        if (s01Var != null) {
+            s01Var.run();
+            this.N = null;
+        }
+        i(starGift, starGift.getDocument());
+        TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) t5.l(starGift.attributes, TL_stars.starGiftAttributeBackdrop.class);
+        f1 f1Var = this.e;
+        f1Var.d(stargiftattributebackdrop);
+        f1Var.e((TL_stars.starGiftAttributePattern) t5.l(starGift.attributes, TL_stars.starGiftAttributePattern.class));
+        boolean z18 = starGift.auction;
+        int[] iArr = l0;
+        d6 d6Var = this.b;
+        if (!z18 || (((z17 = starGift.sold_out) && !this.a0) || (z12 && starGift.availability_resale > 0))) {
+            if (!starGift.require_premium || (z12 && starGift.availability_resale > 0)) {
+                iArr = null;
+            }
+            f1Var.g(iArr);
+        } else if (z17) {
+            int i10 = h6.Mi;
+            f1Var.g(new int[]{h6.v0(i10, d6Var), h6.v0(i10, d6Var)});
+        } else {
+            f1Var.g(iArr);
+        }
+        this.H.setVisibility(8);
+        this.I.setVisibility(8);
+        w9 w9Var = this.y;
+        w9Var.setTranslationY(0.0f);
+        this.F.setVisibility(8);
+        int i11 = starGift.resale_ton_only ? 0 : 8;
+        ImageView imageView = this.w;
+        imageView.setVisibility(i11);
+        int i12 = z14 ? 0 : 8;
+        TextView textView = this.x;
+        textView.setVisibility(i12);
+        textView.setTranslationX(starGift.resale_ton_only ? AndroidUtilities.dp(23.0f) : 0.0f);
+        textView.setTranslationY(starGift.resale_ton_only ? AndroidUtilities.dp(1.0f) : 0.0f);
+        if (z14) {
+            StringBuilder sb2 = new StringBuilder("+");
+            int i13 = starGift.craft_chance_permille;
+            sb2.append((Object) (i13 <= 0 ? "<0.1%" : ei.l.G0(i13)));
+            textView.setText(sb2.toString());
+        }
+        FrameLayout.LayoutParams layoutParams = this.E;
+        layoutParams.gravity = 49;
+        w9Var.setLayoutParams(layoutParams);
+        int i14 = this.a;
+        w9 w9Var2 = this.n;
+        if (!z13) {
+            if ((!z12 || starGift.availability_resale <= 0) && starGift.locked_until_date > ConnectionsManager.getInstance(i14).getCurrentTime()) {
+                w9Var2.setVisibility(0);
+                w9Var2.setLayoutParams(this.s);
+                w9Var2.setColorFilter(new PorterDuffColorFilter(h6.v0(h6.wj, d6Var), PorterDuff.Mode.SRC_IN));
+                w9Var2.setImageResource(R.drawable.mini_gift_lock);
+                int i15 = (z14 || z13) ? 0 : 8;
+                TextView textView2 = this.L;
+                textView2.setVisibility(i15);
+                textView2.setTextSize(1, 12.0f);
+                p50 p50Var = this.K;
+                if (!z10) {
+                    textView2.setPadding(AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f), 0);
+                    textView2.setText(LocaleController.getString(R.string.Gift2TransferMine));
+                    int v = stargiftattributebackdrop != null ? h6.v(stargiftattributebackdrop.center_color | (-16777216), h6.l1(0.55f, stargiftattributebackdrop.pattern_color | (-16777216))) : 1090519039;
+                    int dp = AndroidUtilities.dp(13.0f);
+                    int v9 = h6.v(v, 822083583);
+                    int i16 = v;
+                    p50Var.setBackground(h6.i0(dp, dp, dp, dp, i16, v9, v9));
+                    textView2.setTextColor(-1);
+                    imageView.setColorFilter(-1);
+                    int dp2 = AndroidUtilities.dp(10.0f);
+                    int v10 = h6.v(i16, 822083583);
+                    imageView.setBackground(h6.i0(dp2, dp2, dp2, dp2, i16, v10, v10));
+                } else if (z13) {
+                    textView2.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(10.0f), 0);
+                    long resellStars = starGift.getResellStars();
+                    int v11 = h6.v(stargiftattributebackdrop.center_color | (-16777216), h6.l1(0.55f, stargiftattributebackdrop.pattern_color | (-16777216)));
+                    textView2.setText(w7.Q0("XTR " + LocaleController.formatNumber(resellStars, ',')));
+                    p50Var.setBackground(new o1(1895825407, v11));
+                    textView2.setTextColor(-1);
+                    imageView.setColorFilter(-1);
+                    imageView.setBackground(h6.b0(AndroidUtilities.dp(10.0f), v11));
+                    textView.setBackground(h6.b0(AndroidUtilities.dp(9.0f), v11));
+                } else {
+                    textView2.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(10.0f), 0);
+                    if (z12) {
+                        long j13 = starGift.availability_resale;
+                        if (j13 > 0) {
+                            str = "+";
+                            long j14 = starGift.resell_min_stars;
+                            if (j13 > 1) {
+                                j12 = j14;
+                                if (j12 < MessagesController.getInstance(i14).config.starsStarGiftResaleAmountMax.get()) {
+                                    j11 = j12;
+                                    z15 = true;
+                                    if (starGift.auction || starGift.availability_resale != 0) {
+                                        StringBuilder sb3 = new StringBuilder("XTR ");
+                                        sb3.append(LocaleController.formatNumber(j11, ','));
+                                        sb3.append(z15 ? str : "");
+                                        textView2.setText(w7.X0(false, sb3.toString(), 0.71f, null));
+                                    } else {
+                                        textView2.setText(LocaleController.getString(starGift.sold_out ? R.string.Gift2AuctionPriceView : R.string.Gift2AuctionPriceJoin));
+                                    }
+                                    z16 = starGift instanceof TL_stars.TL_starGiftUnique;
+                                    int i17 = 518759725;
+                                    p50Var.setBackground(new o1(z16 ? 1090519039 : h6.I.q() ? 518759725 : 1088989954));
+                                    textView2.setTextColor(h6.I.q() ? -1333971 : -2722014);
+                                    imageView.setColorFilter(h6.I.q() ? -1333971 : -2722014);
+                                    int dp3 = AndroidUtilities.dp(10.0f);
+                                    if (z16) {
+                                        i17 = 1090519039;
+                                    } else if (!h6.I.q()) {
+                                        i17 = 1088989954;
+                                    }
+                                    imageView.setBackground(h6.b0(dp3, i17));
+                                    textView.setBackground(h6.b0(AndroidUtilities.dp(9.0f), stargiftattributebackdrop != null ? h6.v(stargiftattributebackdrop.center_color | (-16777216), h6.l1(0.55f, stargiftattributebackdrop.pattern_color | (-16777216))) : 0));
+                                }
+                            } else {
+                                j12 = j14;
+                            }
+                            j11 = j12;
+                            z15 = false;
+                            if (starGift.auction) {
+                            }
+                            StringBuilder sb32 = new StringBuilder("XTR ");
+                            sb32.append(LocaleController.formatNumber(j11, ','));
+                            sb32.append(z15 ? str : "");
+                            textView2.setText(w7.X0(false, sb32.toString(), 0.71f, null));
+                            z16 = starGift instanceof TL_stars.TL_starGiftUnique;
+                            int i172 = 518759725;
+                            p50Var.setBackground(new o1(z16 ? 1090519039 : h6.I.q() ? 518759725 : 1088989954));
+                            textView2.setTextColor(h6.I.q() ? -1333971 : -2722014);
+                            imageView.setColorFilter(h6.I.q() ? -1333971 : -2722014);
+                            int dp32 = AndroidUtilities.dp(10.0f);
+                            if (z16) {
+                            }
+                            imageView.setBackground(h6.b0(dp32, i172));
+                            textView.setBackground(h6.b0(AndroidUtilities.dp(9.0f), stargiftattributebackdrop != null ? h6.v(stargiftattributebackdrop.center_color | (-16777216), h6.l1(0.55f, stargiftattributebackdrop.pattern_color | (-16777216))) : 0));
+                        }
+                    }
+                    str = "+";
+                    long j15 = starGift.stars;
+                    if (z11 && starGift.can_upgrade) {
+                        j3 = j15;
+                        j10 = starGift.upgrade_stars;
+                    } else {
+                        j3 = j15;
+                        j10 = 0;
+                    }
+                    j11 = j3 + j10;
+                    z15 = false;
+                    if (starGift.auction) {
+                    }
+                    StringBuilder sb322 = new StringBuilder("XTR ");
+                    sb322.append(LocaleController.formatNumber(j11, ','));
+                    sb322.append(z15 ? str : "");
+                    textView2.setText(w7.X0(false, sb322.toString(), 0.71f, null));
+                    z16 = starGift instanceof TL_stars.TL_starGiftUnique;
+                    int i1722 = 518759725;
+                    p50Var.setBackground(new o1(z16 ? 1090519039 : h6.I.q() ? 518759725 : 1088989954));
+                    textView2.setTextColor(h6.I.q() ? -1333971 : -2722014);
+                    imageView.setColorFilter(h6.I.q() ? -1333971 : -2722014);
+                    int dp322 = AndroidUtilities.dp(10.0f);
+                    if (z16) {
+                    }
+                    imageView.setBackground(h6.b0(dp322, i1722));
+                    textView.setBackground(h6.b0(AndroidUtilities.dp(9.0f), stargiftattributebackdrop != null ? h6.v(stargiftattributebackdrop.center_color | (-16777216), h6.l1(0.55f, stargiftattributebackdrop.pattern_color | (-16777216))) : 0));
+                }
+                h1 h1Var = this.J;
+                ((ViewGroup.MarginLayoutParams) h1Var.getLayoutParams()).topMargin = AndroidUtilities.dp(103.0f);
+                ((FrameLayout.LayoutParams) h1Var.getLayoutParams()).gravity = 49;
+                this.M.setVisibility(8);
+                this.h0 = null;
+                this.V = null;
+                this.W = starGift;
+                this.b0 = z10;
+                this.c0 = null;
+                this.d0 = z12;
+                this.e0 = z13;
+                this.f0 = false;
+                this.g0 = z14;
+                this.O = null;
+                this.P = null;
+                c(false, false);
+                j();
+            }
+            colorFilter = null;
+        }
+        w9Var2.setColorFilter(colorFilter);
+        w9Var2.setVisibility(8);
+        if (z14) {
+        }
+        TextView textView22 = this.L;
+        textView22.setVisibility(i15);
+        textView22.setTextSize(1, 12.0f);
+        p50 p50Var2 = this.K;
+        if (!z10) {
+        }
+        h1 h1Var2 = this.J;
+        ((ViewGroup.MarginLayoutParams) h1Var2.getLayoutParams()).topMargin = AndroidUtilities.dp(103.0f);
+        ((FrameLayout.LayoutParams) h1Var2.getLayoutParams()).gravity = 49;
+        this.M.setVisibility(8);
+        this.h0 = null;
+        this.V = null;
+        this.W = starGift;
+        this.b0 = z10;
+        this.c0 = null;
+        this.d0 = z12;
+        this.e0 = z13;
+        this.f0 = false;
+        this.g0 = z14;
+        this.O = null;
+        this.P = null;
+        c(false, false);
+        j();
+    }
+
+    public TL_stars.StarGift getGift() {
+        return this.W;
+    }
+
+    public long getGiftId() {
+        TL_stars.StarGift starGift = this.W;
+        if (starGift != null) {
+            return starGift.id;
+        }
+        return 0L;
+    }
+
+    public rg.k getPremiumTier() {
+        return this.V;
+    }
+
+    public TL_stars.SavedStarGift getSavedGift() {
+        return this.c0;
+    }
+
+    public final boolean h(TL_stars.SavedStarGift savedStarGift, boolean z10, boolean z11) {
+        long j3;
+        boolean z12;
+        boolean z13;
+        s01 s01Var = this.N;
+        if (s01Var != null) {
+            s01Var.run();
+            this.N = null;
+        }
+        i(savedStarGift, savedStarGift.gift.getDocument());
+        TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) t5.l(savedStarGift.gift.attributes, TL_stars.starGiftAttributeBackdrop.class);
+        f1 f1Var = this.e;
+        f1Var.d(stargiftattributebackdrop);
+        f1Var.e((TL_stars.starGiftAttributePattern) t5.l(savedStarGift.gift.attributes, TL_stars.starGiftAttributePattern.class));
+        f1Var.g(null);
+        this.H.setVisibility(8);
+        this.I.setVisibility(8);
+        w9 w9Var = this.y;
+        w9Var.setTranslationY(0.0f);
+        rg.b1 b1Var = this.F;
+        b1Var.H = true;
+        b1Var.I = false;
+        b1Var.invalidate();
+        b1Var.setBlendWithColor(stargiftattributebackdrop != null ? Integer.valueOf(h6.l1(0.75f, stargiftattributebackdrop.center_color | (-16777216))) : null);
+        rg.b1 b1Var2 = this.G;
+        b1Var2.H = true;
+        b1Var2.I = false;
+        b1Var2.invalidate();
+        b1Var2.setBlendWithColor(stargiftattributebackdrop != null ? Integer.valueOf(h6.l1(0.75f, stargiftattributebackdrop.center_color | (-16777216))) : null);
+        int i10 = savedStarGift.gift.resale_ton_only ? 0 : 8;
+        ImageView imageView = this.w;
+        imageView.setVisibility(i10);
+        FrameLayout frameLayout = this.v;
+        if (stargiftattributebackdrop != null) {
+            frameLayout.setBackground(h6.K(AndroidUtilities.dp(20.0f), h6.b(0.1f, -0.2f, stargiftattributebackdrop.center_color | (-16777216))));
+        } else {
+            frameLayout.setBackground(h6.K(AndroidUtilities.dp(20.0f), h6.v0(h6.Oh, this.b)));
+        }
+        FrameLayout.LayoutParams layoutParams = this.E;
+        layoutParams.gravity = 17;
+        w9Var.setLayoutParams(layoutParams);
+        if (this.j0 == savedStarGift) {
+            b1Var.setVisibility(0);
+            b1Var.animate().alpha(savedStarGift.unsaved ? 1.0f : 0.0f).scaleX(savedStarGift.unsaved ? 1.0f : 0.4f).scaleY(savedStarGift.unsaved ? 1.0f : 0.4f).setDuration(350L).setInterpolator(rr.h).withEndAction(new uh.i(5, this, savedStarGift)).start();
+        } else {
+            b1Var.setAlpha(savedStarGift.unsaved ? 1.0f : 0.0f);
+            b1Var.setScaleX(savedStarGift.unsaved ? 1.0f : 0.4f);
+            b1Var.setScaleY(savedStarGift.unsaved ? 1.0f : 0.4f);
+            b1Var.setVisibility(savedStarGift.unsaved ? 0 : 8);
+        }
+        boolean z14 = savedStarGift.gift instanceof TL_stars.TL_starGiftUnique;
+        w9 w9Var2 = this.n;
+        w9Var2.setColorFilter(null);
+        w9Var2.setLayoutParams(this.r);
+        int i11 = this.a;
+        if (z14 && savedStarGift.name_hidden) {
+            w9Var2.setVisibility(8);
+            j3 = 0;
+        } else if (savedStarGift.name_hidden) {
+            w9Var2.setVisibility(0);
+            qq a2 = q7.a(44, "anonymous");
+            j3 = 0;
+            int dp = AndroidUtilities.dp(16.0f);
+            int dp2 = AndroidUtilities.dp(16.0f);
+            a2.e = dp;
+            a2.f = dp2;
+            w9Var2.setImageDrawable(a2);
+        } else {
+            j3 = 0;
+            long peerDialogId = DialogObject.getPeerDialogId(savedStarGift.from_id);
+            h9 h9Var = this.h;
+            if (peerDialogId > 0) {
+                TLRPC.User user = MessagesController.getInstance(i11).getUser(Long.valueOf(peerDialogId));
+                if (user != null) {
+                    w9Var2.setVisibility(0);
+                    h9Var.r(user);
+                    w9Var2.e(user, h9Var);
+                } else {
+                    w9Var2.setVisibility(8);
+                }
+            } else {
+                TLRPC.Chat chat = MessagesController.getInstance(i11).getChat(Long.valueOf(-peerDialogId));
+                if (chat != null) {
+                    w9Var2.setVisibility(0);
+                    h9Var.q(chat);
+                    w9Var2.e(chat, h9Var);
+                } else {
+                    w9Var2.setVisibility(8);
+                }
+            }
+        }
+        p50 p50Var = this.K;
+        h1 h1Var = this.J;
+        TextView textView = this.L;
+        if (stargiftattributebackdrop == null || savedStarGift.gift.resell_amount == null) {
+            z12 = true;
+            if (z10) {
+                textView.setVisibility(8);
+                this.E.topMargin = AndroidUtilities.dp(12.0f);
+                this.E.bottomMargin = AndroidUtilities.dp(12.0f);
+            } else {
+                textView.setVisibility(0);
+                FrameLayout.LayoutParams layoutParams2 = this.E;
+                layoutParams2.topMargin = 0;
+                layoutParams2.bottomMargin = 0;
+            }
+            if (z14) {
+                textView.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
+                textView.setTextSize(1, 12.0f);
+                textView.setText(LocaleController.getString(R.string.Gift2PriceUnique));
+                z13 = z14;
+            } else {
+                textView.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(10.0f), 0);
+                textView.setTextSize(1, 12.0f);
+                StringBuilder sb2 = new StringBuilder("XTR ");
+                TL_stars.StarGift starGift = savedStarGift.gift;
+                long j10 = starGift.stars;
+                z13 = z14;
+                long j11 = savedStarGift.convert_stars;
+                if (j11 <= j3) {
+                    j11 = starGift.convert_stars;
+                }
+                textView.setText(w7.X0(false, hg.c.k(Math.max(j10, j11), ',', sb2), 0.66f, null));
+            }
+            textView.setTextColor(z13 ? -1 : h6.I.q() ? -1333971 : -4229632);
+            int i12 = 1088989954;
+            p50Var.setBackground(new o1(z13 ? 1090519039 : h6.I.q() ? 518759725 : 1088989954));
+            int dp3 = AndroidUtilities.dp(10.0f);
+            if (z13) {
+                i12 = 1090519039;
+            } else if (h6.I.q()) {
+                i12 = 518759725;
+            }
+            imageView.setBackground(h6.b0(dp3, i12));
+            imageView.setColorFilter(z13 ? -1 : h6.I.q() ? -1333971 : -4229632);
+            ((FrameLayout.LayoutParams) h1Var.getLayoutParams()).gravity = 49;
+            ((ViewGroup.MarginLayoutParams) h1Var.getLayoutParams()).topMargin = AndroidUtilities.dp(103.0f);
+        } else {
+            textView.setVisibility(0);
+            FrameLayout.LayoutParams layoutParams3 = this.E;
+            layoutParams3.topMargin = 0;
+            layoutParams3.bottomMargin = 0;
+            textView.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(10.0f), 0);
+            textView.setTextSize(1, 12.0f);
+            pq[] pqVarArr = new pq[1];
+            TL_stars.StarGift starGift2 = savedStarGift.gift;
+            if (starGift2.resale_ton_only && DialogObject.getPeerDialogId(starGift2.owner_id) == UserConfig.getInstance(i11).getClientUserId()) {
+                z12 = true;
+                textView.setText(w7.U0(true, "XTR " + ((Object) w7.J0(savedStarGift.gift.getResellAmount(zf.b.b).o(), 1.0f, ',')), 0.95f, pqVarArr, 0.0f, 1.0f));
+            } else {
+                z12 = true;
+                textView.setText(w7.R0("XTR " + LocaleController.formatNumber(savedStarGift.gift.getResellStars(), ','), 0.95f, pqVarArr));
+            }
+            pq pqVar = pqVarArr[0];
+            if (pqVar != null) {
+                pqVar.translate(0.0f, AndroidUtilities.dp(0.5f));
+            }
+            int v = h6.v(stargiftattributebackdrop.center_color | (-16777216), h6.l1(0.55f, stargiftattributebackdrop.pattern_color | (-16777216)));
+            p50Var.setBackground(new o1(1895825407, v));
+            textView.setTextColor(-1);
+            imageView.setBackground(h6.b0(AndroidUtilities.dp(10.0f), v));
+            imageView.setColorFilter(-1);
+            ((FrameLayout.LayoutParams) h1Var.getLayoutParams()).gravity = 49;
+            ((ViewGroup.MarginLayoutParams) h1Var.getLayoutParams()).topMargin = AndroidUtilities.dp(79.0f);
+            z13 = z14;
+        }
+        this.M.setVisibility(8);
+        this.j0 = savedStarGift;
+        this.h0 = null;
+        TL_stars.SavedStarGift savedStarGift2 = this.c0;
+        this.V = null;
+        this.W = null;
+        this.b0 = false;
+        this.c0 = savedStarGift;
+        this.d0 = false;
+        this.e0 = false;
+        this.f0 = z11;
+        this.O = null;
+        this.P = null;
+        c(savedStarGift.pinned_to_top && (!z13 || savedStarGift.name_hidden), savedStarGift2 == savedStarGift);
+        j();
+        if (savedStarGift2 == savedStarGift) {
+            return z12;
+        }
+        return false;
+    }
+
+    public final void i(TLObject tLObject, TLRPC.Document document) {
+        w9 w9Var = this.y;
+        if (document == null) {
+            w9Var.b();
+            this.i0 = null;
+        } else {
+            if (this.i0 == document) {
+                return;
+            }
+            this.i0 = document;
+            TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, AndroidUtilities.dp(100.0f));
+            w9Var.l(ImageLocation.getForDocument(document), "80_80_nolimit_pcache", ImageLocation.getForDocument(closestPhotoSizeWithSize, document), "80_80_nolimit_pcache", DocumentObject.getSvgThumb(document, h6.a7, 0.3f), tLObject);
+        }
+    }
+
+    public final void j() {
+        TL_stars.SavedStarGift savedStarGift = this.c0;
+        d6 d6Var = this.b;
+        k1 k1Var = this.f;
+        if (savedStarGift != null) {
+            TL_stars.StarGift starGift = savedStarGift.gift;
+            if (!(starGift instanceof TL_stars.TL_starGiftUnique)) {
+                if (!starGift.limited) {
+                    k1Var.setBackdrop(null);
+                    k1Var.setVisibility(8);
+                    return;
+                }
+                k1Var.setVisibility(0);
+                k1Var.setColor(h6.v0(h6.Li, d6Var));
+                k1Var.setStrokeColor(0);
+                k1Var.setBackdrop(null);
+                k1Var.b(LocaleController.formatString(R.string.Gift2Limited1OfRibbon, AndroidUtilities.formatWholeNumber(this.c0.gift.availability_total, 0)), true);
+                return;
+            }
+            k1Var.setVisibility(0);
+            if (this.c0.gift.resell_amount == null) {
+                k1Var.setColor(h6.v0(h6.Li, d6Var));
+                k1Var.setStrokeColor(0);
+                k1Var.setBackdrop((TL_stars.starGiftAttributeBackdrop) t5.l(this.c0.gift.attributes, TL_stars.starGiftAttributeBackdrop.class));
+                k1Var.b(hg.c.k(this.c0.gift.num, ',', new StringBuilder("#")), true);
+                return;
+            }
+            int v = h6.v(h6.v0(h6.d6, d6Var), h6.l1(0.04f, h6.v0(h6.G6, d6Var)));
+            k1Var.setColor(h6.v0(h6.uj, d6Var));
+            k1Var.setStrokeColor(v);
+            k1Var.setBackdrop(null);
+            k1Var.b(LocaleController.getString(R.string.Gift2OnSale), false);
+            return;
+        }
+        TL_stars.StarGift starGift2 = this.W;
+        if (starGift2 == null) {
+            rg.k kVar = this.V;
+            if (kVar != null) {
+                if (kVar.b() <= 0) {
+                    k1Var.setVisibility(8);
+                    k1Var.setBackdrop(null);
+                    k1Var.setStrokeColor(0);
+                    return;
+                }
+                k1Var.setVisibility(0);
+                k1Var.setBackdrop(null);
+                k1Var.a(-2535425, -8229377);
+                k1Var.setStrokeColor(0);
+                String formatString = LocaleController.formatString(R.string.GiftPremiumOptionDiscount, Integer.valueOf(this.V.b()));
+                k1Var.b = formatString;
+                k1Var.a.e(12, formatString, true);
+                return;
+            }
+            return;
+        }
+        if (this.e0 || this.g0) {
+            k1Var.setVisibility(0);
+            k1Var.setColor(h6.v0(h6.Li, d6Var));
+            k1Var.setBackdrop((TL_stars.starGiftAttributeBackdrop) t5.l(this.W.attributes, TL_stars.starGiftAttributeBackdrop.class));
+            k1Var.setStrokeColor(0);
+            k1Var.b(hg.c.k(this.W.num, ',', new StringBuilder("#")), true);
+            return;
+        }
+        if (this.d0 && starGift2.availability_resale > 0) {
+            k1Var.setVisibility(0);
+            k1Var.setColor(h6.v0(h6.uj, d6Var));
+            k1Var.setStrokeColor(0);
+            k1Var.setBackdrop(null);
+            k1Var.b(LocaleController.getString(R.string.Gift2Resale), false);
+            return;
+        }
+        if (this.b0) {
+            k1Var.setVisibility(0);
+            k1Var.setColor(h6.v0(h6.Li, d6Var));
+            k1Var.setStrokeColor(0);
+            k1Var.setBackdrop((TL_stars.starGiftAttributeBackdrop) t5.l(this.W.attributes, TL_stars.starGiftAttributeBackdrop.class));
+            k1Var.b(LocaleController.formatString(R.string.Gift2Limited1OfRibbon, AndroidUtilities.formatWholeNumber(this.W.availability_issued, 0)), true);
+            return;
+        }
+        boolean z10 = starGift2.limited;
+        if (z10 && starGift2.availability_remains <= 0) {
+            k1Var.setVisibility(0);
+            k1Var.setColor(h6.v0(h6.Mi, d6Var));
+            k1Var.setStrokeColor(0);
+            k1Var.setBackdrop(null);
+            k1Var.b(LocaleController.getString(R.string.Gift2SoldOut), true);
+            return;
+        }
+        if (starGift2.auction) {
+            k1Var.setVisibility(0);
+            k1Var.setBackdrop(null);
+            k1Var.a(-2650077, -4227818);
+            k1Var.setStrokeColor(0);
+            if (this.W.auction_start_date > ConnectionsManager.getInstance(this.a).getCurrentTime()) {
+                k1Var.b(LocaleController.getString(R.string.Gift2LimitedAuctionSoon), true);
+                return;
+            } else {
+                k1Var.b(LocaleController.getString(R.string.Gift2LimitedAuction), true);
+                return;
+            }
+        }
+        if (starGift2.require_premium) {
+            k1Var.setVisibility(0);
+            k1Var.setBackdrop(null);
+            k1Var.a(-2650077, -4227818);
+            k1Var.setStrokeColor(0);
+            k1Var.b(LocaleController.getString(R.string.Gift2LimitedPremium), true);
+            return;
+        }
+        if (!z10) {
+            k1Var.setBackdrop(null);
+            k1Var.setStrokeColor(0);
+            k1Var.setVisibility(8);
+        } else {
+            k1Var.setVisibility(0);
+            k1Var.setColor(h6.v0(h6.Li, d6Var));
+            k1Var.setStrokeColor(0);
+            k1Var.setBackdrop(null);
+            k1Var.b(LocaleController.getString(R.string.Gift2LimitedRibbon), true);
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0071 A[Catch: Exception -> 0x0161, TryCatch #0 {Exception -> 0x0161, blocks: (B:5:0x0017, B:10:0x0025, B:12:0x002b, B:14:0x0035, B:15:0x006b, B:17:0x0071, B:18:0x0077, B:21:0x0080, B:23:0x0086, B:25:0x0090, B:28:0x009e, B:30:0x00a4, B:32:0x00ae, B:33:0x00b4, B:35:0x00b8, B:39:0x00c2, B:41:0x00c8, B:43:0x00d2, B:44:0x00dc, B:46:0x00e0, B:48:0x00e4, B:49:0x00f0, B:51:0x00f4, B:53:0x00fa, B:55:0x00fe, B:57:0x0102, B:59:0x0108, B:64:0x011a, B:66:0x0128, B:67:0x013e, B:69:0x0144, B:70:0x012d, B:72:0x013c, B:73:0x014a, B:75:0x014e, B:77:0x0154, B:78:0x015a, B:83:0x003a, B:85:0x003e, B:87:0x0042, B:89:0x0046, B:91:0x004e, B:92:0x0055, B:94:0x0059, B:96:0x005d, B:98:0x0065), top: B:4:0x0017 }] */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0080 A[Catch: Exception -> 0x0161, TRY_ENTER, TryCatch #0 {Exception -> 0x0161, blocks: (B:5:0x0017, B:10:0x0025, B:12:0x002b, B:14:0x0035, B:15:0x006b, B:17:0x0071, B:18:0x0077, B:21:0x0080, B:23:0x0086, B:25:0x0090, B:28:0x009e, B:30:0x00a4, B:32:0x00ae, B:33:0x00b4, B:35:0x00b8, B:39:0x00c2, B:41:0x00c8, B:43:0x00d2, B:44:0x00dc, B:46:0x00e0, B:48:0x00e4, B:49:0x00f0, B:51:0x00f4, B:53:0x00fa, B:55:0x00fe, B:57:0x0102, B:59:0x0108, B:64:0x011a, B:66:0x0128, B:67:0x013e, B:69:0x0144, B:70:0x012d, B:72:0x013c, B:73:0x014a, B:75:0x014e, B:77:0x0154, B:78:0x015a, B:83:0x003a, B:85:0x003e, B:87:0x0042, B:89:0x0046, B:91:0x004e, B:92:0x0055, B:94:0x0059, B:96:0x005d, B:98:0x0065), top: B:4:0x0017 }] */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x009e A[Catch: Exception -> 0x0161, TRY_ENTER, TryCatch #0 {Exception -> 0x0161, blocks: (B:5:0x0017, B:10:0x0025, B:12:0x002b, B:14:0x0035, B:15:0x006b, B:17:0x0071, B:18:0x0077, B:21:0x0080, B:23:0x0086, B:25:0x0090, B:28:0x009e, B:30:0x00a4, B:32:0x00ae, B:33:0x00b4, B:35:0x00b8, B:39:0x00c2, B:41:0x00c8, B:43:0x00d2, B:44:0x00dc, B:46:0x00e0, B:48:0x00e4, B:49:0x00f0, B:51:0x00f4, B:53:0x00fa, B:55:0x00fe, B:57:0x0102, B:59:0x0108, B:64:0x011a, B:66:0x0128, B:67:0x013e, B:69:0x0144, B:70:0x012d, B:72:0x013c, B:73:0x014a, B:75:0x014e, B:77:0x0154, B:78:0x015a, B:83:0x003a, B:85:0x003e, B:87:0x0042, B:89:0x0046, B:91:0x004e, B:92:0x0055, B:94:0x0059, B:96:0x005d, B:98:0x0065), top: B:4:0x0017 }] */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x00ae A[Catch: Exception -> 0x0161, TryCatch #0 {Exception -> 0x0161, blocks: (B:5:0x0017, B:10:0x0025, B:12:0x002b, B:14:0x0035, B:15:0x006b, B:17:0x0071, B:18:0x0077, B:21:0x0080, B:23:0x0086, B:25:0x0090, B:28:0x009e, B:30:0x00a4, B:32:0x00ae, B:33:0x00b4, B:35:0x00b8, B:39:0x00c2, B:41:0x00c8, B:43:0x00d2, B:44:0x00dc, B:46:0x00e0, B:48:0x00e4, B:49:0x00f0, B:51:0x00f4, B:53:0x00fa, B:55:0x00fe, B:57:0x0102, B:59:0x0108, B:64:0x011a, B:66:0x0128, B:67:0x013e, B:69:0x0144, B:70:0x012d, B:72:0x013c, B:73:0x014a, B:75:0x014e, B:77:0x0154, B:78:0x015a, B:83:0x003a, B:85:0x003e, B:87:0x0042, B:89:0x0046, B:91:0x004e, B:92:0x0055, B:94:0x0059, B:96:0x005d, B:98:0x0065), top: B:4:0x0017 }] */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x00b8 A[Catch: Exception -> 0x0161, TRY_LEAVE, TryCatch #0 {Exception -> 0x0161, blocks: (B:5:0x0017, B:10:0x0025, B:12:0x002b, B:14:0x0035, B:15:0x006b, B:17:0x0071, B:18:0x0077, B:21:0x0080, B:23:0x0086, B:25:0x0090, B:28:0x009e, B:30:0x00a4, B:32:0x00ae, B:33:0x00b4, B:35:0x00b8, B:39:0x00c2, B:41:0x00c8, B:43:0x00d2, B:44:0x00dc, B:46:0x00e0, B:48:0x00e4, B:49:0x00f0, B:51:0x00f4, B:53:0x00fa, B:55:0x00fe, B:57:0x0102, B:59:0x0108, B:64:0x011a, B:66:0x0128, B:67:0x013e, B:69:0x0144, B:70:0x012d, B:72:0x013c, B:73:0x014a, B:75:0x014e, B:77:0x0154, B:78:0x015a, B:83:0x003a, B:85:0x003e, B:87:0x0042, B:89:0x0046, B:91:0x004e, B:92:0x0055, B:94:0x0059, B:96:0x005d, B:98:0x0065), top: B:4:0x0017 }] */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x00e0 A[Catch: Exception -> 0x0161, TryCatch #0 {Exception -> 0x0161, blocks: (B:5:0x0017, B:10:0x0025, B:12:0x002b, B:14:0x0035, B:15:0x006b, B:17:0x0071, B:18:0x0077, B:21:0x0080, B:23:0x0086, B:25:0x0090, B:28:0x009e, B:30:0x00a4, B:32:0x00ae, B:33:0x00b4, B:35:0x00b8, B:39:0x00c2, B:41:0x00c8, B:43:0x00d2, B:44:0x00dc, B:46:0x00e0, B:48:0x00e4, B:49:0x00f0, B:51:0x00f4, B:53:0x00fa, B:55:0x00fe, B:57:0x0102, B:59:0x0108, B:64:0x011a, B:66:0x0128, B:67:0x013e, B:69:0x0144, B:70:0x012d, B:72:0x013c, B:73:0x014a, B:75:0x014e, B:77:0x0154, B:78:0x015a, B:83:0x003a, B:85:0x003e, B:87:0x0042, B:89:0x0046, B:91:0x004e, B:92:0x0055, B:94:0x0059, B:96:0x005d, B:98:0x0065), top: B:4:0x0017 }] */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x00f4 A[Catch: Exception -> 0x0161, TryCatch #0 {Exception -> 0x0161, blocks: (B:5:0x0017, B:10:0x0025, B:12:0x002b, B:14:0x0035, B:15:0x006b, B:17:0x0071, B:18:0x0077, B:21:0x0080, B:23:0x0086, B:25:0x0090, B:28:0x009e, B:30:0x00a4, B:32:0x00ae, B:33:0x00b4, B:35:0x00b8, B:39:0x00c2, B:41:0x00c8, B:43:0x00d2, B:44:0x00dc, B:46:0x00e0, B:48:0x00e4, B:49:0x00f0, B:51:0x00f4, B:53:0x00fa, B:55:0x00fe, B:57:0x0102, B:59:0x0108, B:64:0x011a, B:66:0x0128, B:67:0x013e, B:69:0x0144, B:70:0x012d, B:72:0x013c, B:73:0x014a, B:75:0x014e, B:77:0x0154, B:78:0x015a, B:83:0x003a, B:85:0x003e, B:87:0x0042, B:89:0x0046, B:91:0x004e, B:92:0x0055, B:94:0x0059, B:96:0x005d, B:98:0x0065), top: B:4:0x0017 }] */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x0116  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x014e A[Catch: Exception -> 0x0161, TryCatch #0 {Exception -> 0x0161, blocks: (B:5:0x0017, B:10:0x0025, B:12:0x002b, B:14:0x0035, B:15:0x006b, B:17:0x0071, B:18:0x0077, B:21:0x0080, B:23:0x0086, B:25:0x0090, B:28:0x009e, B:30:0x00a4, B:32:0x00ae, B:33:0x00b4, B:35:0x00b8, B:39:0x00c2, B:41:0x00c8, B:43:0x00d2, B:44:0x00dc, B:46:0x00e0, B:48:0x00e4, B:49:0x00f0, B:51:0x00f4, B:53:0x00fa, B:55:0x00fe, B:57:0x0102, B:59:0x0108, B:64:0x011a, B:66:0x0128, B:67:0x013e, B:69:0x0144, B:70:0x012d, B:72:0x013c, B:73:0x014a, B:75:0x014e, B:77:0x0154, B:78:0x015a, B:83:0x003a, B:85:0x003e, B:87:0x0042, B:89:0x0046, B:91:0x004e, B:92:0x0055, B:94:0x0059, B:96:0x005d, B:98:0x0065), top: B:4:0x0017 }] */
     @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return this.a == drawable || super.verifyDrawable(drawable);
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        CharSequence charSequence;
+        TL_stars.StarGift starGift;
+        TextView textView;
+        k1 k1Var;
+        h1 h1Var;
+        TL_stars.SavedStarGift savedStarGift;
+        TL_stars.SavedStarGift savedStarGift2;
+        op opVar;
+        w9 w9Var;
+        long peerDialogId;
+        TextView textView2;
+        CharSequence text;
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName("android.widget.Button");
+        accessibilityNodeInfo.setClickable(true);
+        if (isEnabled()) {
+            accessibilityNodeInfo.addAction(16);
+        }
+        try {
+            StringBuilder sb2 = new StringBuilder();
+            String str = null;
+            if (this.V == null) {
+                TL_stars.SavedStarGift savedStarGift3 = this.c0;
+                if (savedStarGift3 != null && (starGift = savedStarGift3.gift) != null) {
+                    if ((starGift instanceof TL_stars.TL_starGiftUnique) && !TextUtils.isEmpty(starGift.title)) {
+                        charSequence = this.c0.gift.title;
+                        if (TextUtils.isEmpty(charSequence)) {
+                        }
+                        sb2.append(charSequence);
+                        textView = this.I;
+                        if (textView != null) {
+                        }
+                        k1Var = this.f;
+                        if (k1Var != null) {
+                        }
+                        h1Var = this.J;
+                        if (h1Var != null) {
+                        }
+                        savedStarGift = this.c0;
+                        if (savedStarGift != null) {
+                        }
+                        savedStarGift2 = this.c0;
+                        if (savedStarGift2 != null) {
+                        }
+                        opVar = this.k0;
+                        if (opVar != null) {
+                        }
+                        accessibilityNodeInfo.setContentDescription(sb2.toString());
+                    }
+                    charSequence = null;
+                    if (TextUtils.isEmpty(charSequence)) {
+                    }
+                    sb2.append(charSequence);
+                    textView = this.I;
+                    if (textView != null) {
+                    }
+                    k1Var = this.f;
+                    if (k1Var != null) {
+                    }
+                    h1Var = this.J;
+                    if (h1Var != null) {
+                    }
+                    savedStarGift = this.c0;
+                    if (savedStarGift != null) {
+                    }
+                    savedStarGift2 = this.c0;
+                    if (savedStarGift2 != null) {
+                    }
+                    opVar = this.k0;
+                    if (opVar != null) {
+                    }
+                    accessibilityNodeInfo.setContentDescription(sb2.toString());
+                }
+                TL_stars.StarGift starGift2 = this.W;
+                if (starGift2 != null && (starGift2 instanceof TL_stars.TL_starGiftUnique) && !TextUtils.isEmpty(starGift2.title)) {
+                    charSequence = this.W.title;
+                    if (TextUtils.isEmpty(charSequence)) {
+                    }
+                    sb2.append(charSequence);
+                    textView = this.I;
+                    if (textView != null) {
+                    }
+                    k1Var = this.f;
+                    if (k1Var != null) {
+                    }
+                    h1Var = this.J;
+                    if (h1Var != null) {
+                    }
+                    savedStarGift = this.c0;
+                    if (savedStarGift != null) {
+                    }
+                    savedStarGift2 = this.c0;
+                    if (savedStarGift2 != null) {
+                    }
+                    opVar = this.k0;
+                    if (opVar != null) {
+                    }
+                    accessibilityNodeInfo.setContentDescription(sb2.toString());
+                }
+                charSequence = null;
+                if (TextUtils.isEmpty(charSequence)) {
+                }
+                sb2.append(charSequence);
+                textView = this.I;
+                if (textView != null) {
+                }
+                k1Var = this.f;
+                if (k1Var != null) {
+                }
+                h1Var = this.J;
+                if (h1Var != null) {
+                }
+                savedStarGift = this.c0;
+                if (savedStarGift != null) {
+                }
+                savedStarGift2 = this.c0;
+                if (savedStarGift2 != null) {
+                }
+                opVar = this.k0;
+                if (opVar != null) {
+                }
+                accessibilityNodeInfo.setContentDescription(sb2.toString());
+            }
+            TextView textView3 = this.H;
+            if (textView3 != null && textView3.getVisibility() == 0 && !TextUtils.isEmpty(textView3.getText())) {
+                charSequence = textView3.getText();
+                if (TextUtils.isEmpty(charSequence)) {
+                    charSequence = LocaleController.getString(R.string.Gift2Gift);
+                }
+                sb2.append(charSequence);
+                textView = this.I;
+                if (textView != null && textView.getVisibility() == 0 && !TextUtils.isEmpty(textView.getText())) {
+                    sb2.append(", ");
+                    sb2.append(textView.getText());
+                }
+                k1Var = this.f;
+                if (k1Var != null && k1Var.getVisibility() == 0) {
+                    text = k1Var.getText();
+                    if (!TextUtils.isEmpty(text)) {
+                        sb2.append(", ");
+                        sb2.append(text);
+                    }
+                }
+                h1Var = this.J;
+                if (h1Var != null && h1Var.getVisibility() == 0 && (textView2 = this.L) != null && textView2.getVisibility() == 0 && !TextUtils.isEmpty(textView2.getText())) {
+                    sb2.append(", ");
+                    sb2.append(textView2.getText());
+                }
+                savedStarGift = this.c0;
+                if (savedStarGift != null && savedStarGift.unsaved) {
+                    sb2.append(", ");
+                    sb2.append(LocaleController.getString(R.string.Gift2FilterHidden));
+                }
+                savedStarGift2 = this.c0;
+                if (savedStarGift2 != null && !(savedStarGift2.gift instanceof TL_stars.TL_starGiftUnique) && !savedStarGift2.name_hidden && (w9Var = this.n) != null && w9Var.getVisibility() == 0) {
+                    peerDialogId = DialogObject.getPeerDialogId(this.c0.from_id);
+                    if (peerDialogId != 0) {
+                        int i10 = this.a;
+                        if (peerDialogId > 0) {
+                            TLRPC.User user = MessagesController.getInstance(i10).getUser(Long.valueOf(peerDialogId));
+                            if (user != null) {
+                                str = UserObject.getUserName(user);
+                            }
+                        } else {
+                            TLRPC.Chat chat = MessagesController.getInstance(i10).getChat(Long.valueOf(-peerDialogId));
+                            if (chat != null) {
+                                str = chat.title;
+                            }
+                        }
+                        if (!TextUtils.isEmpty(str)) {
+                            sb2.append(", ");
+                            sb2.append((CharSequence) str);
+                        }
+                    }
+                }
+                opVar = this.k0;
+                if (opVar != null && opVar.a.q) {
+                    accessibilityNodeInfo.setCheckable(true);
+                    accessibilityNodeInfo.setChecked(true);
+                }
+                accessibilityNodeInfo.setContentDescription(sb2.toString());
+            }
+            charSequence = null;
+            if (TextUtils.isEmpty(charSequence)) {
+            }
+            sb2.append(charSequence);
+            textView = this.I;
+            if (textView != null) {
+                sb2.append(", ");
+                sb2.append(textView.getText());
+            }
+            k1Var = this.f;
+            if (k1Var != null) {
+                text = k1Var.getText();
+                if (!TextUtils.isEmpty(text)) {
+                }
+            }
+            h1Var = this.J;
+            if (h1Var != null) {
+                sb2.append(", ");
+                sb2.append(textView2.getText());
+            }
+            savedStarGift = this.c0;
+            if (savedStarGift != null) {
+                sb2.append(", ");
+                sb2.append(LocaleController.getString(R.string.Gift2FilterHidden));
+            }
+            savedStarGift2 = this.c0;
+            if (savedStarGift2 != null) {
+                peerDialogId = DialogObject.getPeerDialogId(this.c0.from_id);
+                if (peerDialogId != 0) {
+                }
+            }
+            opVar = this.k0;
+            if (opVar != null) {
+                accessibilityNodeInfo.setCheckable(true);
+                accessibilityNodeInfo.setChecked(true);
+            }
+            accessibilityNodeInfo.setContentDescription(sb2.toString());
+        } catch (Exception unused) {
+        }
+    }
+
+    public void setImageLayer(int i10) {
+        this.y.setLayerNum(i10);
+    }
+
+    public void setImageSize(int i10) {
+        FrameLayout.LayoutParams layoutParams = this.E;
+        layoutParams.width = i10;
+        layoutParams.height = i10;
+    }
+
+    public void setRibbonColor(int i10) {
+        k1 k1Var = this.f;
+        k1Var.setColor(i10);
+        k1Var.invalidate();
+    }
+
+    public void setRibbonText(String str) {
+        this.f.b(str, true);
+    }
+
+    public void setRibbonTextOneOf(int i10) {
+        k1 k1Var = this.f;
+        k1Var.setVisibility(0);
+        k1Var.setColor(h6.v0(h6.Li, this.b));
+        k1Var.setStrokeColor(0);
+        k1Var.setBackdrop((TL_stars.starGiftAttributeBackdrop) t5.l(this.W.attributes, TL_stars.starGiftAttributeBackdrop.class));
+        k1Var.b(LocaleController.formatString(R.string.Gift2Limited1OfRibbon, AndroidUtilities.formatWholeNumber(i10, 0)), true);
     }
 }

@@ -1,24 +1,49 @@
 package za;
 
-import org.telegram.tgnet.TLObject;
+import android.content.Context;
+import android.content.pm.PackageInfo;
+import android.os.Build;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final class d0 extends kd.c {
-    public /* synthetic */ Object a;
-    public final /* synthetic */ g0 b;
-    public int c;
+public final class d0 {
+    public static final d0 a = new d0();
+    public static final ka.c b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d0(g0 g0Var, kd.c cVar) {
-        super(cVar);
-        this.b = g0Var;
+    static {
+        ka.e eVar = new ka.e();
+        eVar.m(c0.class, g.a);
+        eVar.m(l0.class, h.a);
+        eVar.m(j.class, e.a);
+        eVar.m(b.class, d.a);
+        eVar.m(a.class, c.a);
+        eVar.m(r.class, f.a);
+        eVar.d = true;
+        b = new ka.c(eVar, 0);
     }
 
-    @Override // kd.a
-    public final Object invokeSuspend(Object obj) {
-        this.a = obj;
-        this.c |= TLObject.FLAG_31;
-        return g0.a(this.b, this);
+    public static b a(k9.h hVar) {
+        hVar.a();
+        Context context = hVar.a;
+        kotlin.jvm.internal.i.d(context, "firebaseApp.applicationContext");
+        String packageName = context.getPackageName();
+        PackageInfo packageInfo = context.getPackageManager().getPackageInfo(packageName, 0);
+        String valueOf = Build.VERSION.SDK_INT >= 28 ? String.valueOf(packageInfo.getLongVersionCode()) : String.valueOf(packageInfo.versionCode);
+        hVar.a();
+        String str = hVar.c.b;
+        kotlin.jvm.internal.i.d(str, "firebaseApp.options.applicationId");
+        String MODEL = Build.MODEL;
+        kotlin.jvm.internal.i.d(MODEL, "MODEL");
+        String RELEASE = Build.VERSION.RELEASE;
+        kotlin.jvm.internal.i.d(RELEASE, "RELEASE");
+        kotlin.jvm.internal.i.d(packageName, "packageName");
+        String str2 = packageInfo.versionName;
+        String str3 = str2 == null ? valueOf : str2;
+        String MANUFACTURER = Build.MANUFACTURER;
+        kotlin.jvm.internal.i.d(MANUFACTURER, "MANUFACTURER");
+        hVar.a();
+        r b10 = s.b(context);
+        hVar.a();
+        return new b(str, new a(packageName, str3, valueOf, b10, s.a(context)));
     }
 }

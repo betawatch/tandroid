@@ -1,38 +1,47 @@
 package org.telegram.ui;
 
-import android.content.Intent;
-import android.net.Uri;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
+import android.view.View;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class l81 implements org.telegram.ui.ActionBar.a2 {
+public final /* synthetic */ class l81 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ SessionsActivity b;
+    public final /* synthetic */ x81 b;
 
-    public /* synthetic */ l81(SessionsActivity sessionsActivity, int i10) {
+    public /* synthetic */ l81(x81 x81Var, int i10) {
         this.a = i10;
-        this.b = sessionsActivity;
+        this.b = x81Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                SessionsActivity sessionsActivity = this.b;
-                sessionsActivity.getClass();
-                try {
-                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-                    intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
-                    sessionsActivity.getParentActivity().startActivity(intent);
-                    break;
-                } catch (Exception e) {
-                    FileLog.e(e);
-                    return;
-                }
+                x81 x81Var = this.b;
+                nf.f.s(x81Var.getParentActivity(), x81Var.getMessagesController().premiumManageSubscriptionUrl);
+                x81Var.getMessagesController().removeSuggestion(0L, "PREMIUM_GRACE");
+                break;
+            case 1:
+                x81 x81Var2 = this.b;
+                x81Var2.getClass();
+                x81Var2.presentFragment(new h(3));
+                break;
+            case 2:
+                this.b.getMessagesController().removeSuggestion(0L, "VALIDATE_PHONE_NUMBER");
+                break;
+            case 3:
+                x81 x81Var3 = this.b;
+                x81Var3.getClass();
+                x81Var3.presentFragment(new zg1(8, null));
+                break;
+            case 4:
+                this.b.getMessagesController().removeSuggestion(0L, "VALIDATE_PASSWORD");
+                break;
+            case 5:
+                x81.V(this.b);
+                break;
             default:
-                SessionsActivity.W(this.b);
+                x81.Z(this.b);
                 break;
         }
     }

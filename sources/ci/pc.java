@@ -1,44 +1,47 @@
 package ci;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class pc implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ zc b;
+public interface pc {
+    void C(float f7, int i10);
 
-    public /* synthetic */ pc(zc zcVar, int i10) {
-        this.a = i10;
-        this.b = zcVar;
-    }
+    void F(float f7);
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                zc zcVar = this.b;
-                xc xcVar = zcVar.M;
-                if (xcVar != null) {
-                    long j3 = xcVar.a;
-                    if (j3 > 0) {
-                        zcVar.H = j3;
-                        break;
-                    }
-                }
-                break;
-            case 1:
-                sc scVar = this.b.a;
-                if (scVar != null) {
-                    scVar.f0();
-                    break;
-                }
-                break;
-            default:
-                sc scVar2 = this.b.a;
-                if (scVar2 != null) {
-                    scVar2.s();
-                    break;
-                }
-                break;
-        }
-    }
+    void H(float f7, boolean z10);
+
+    void O(long j3);
+
+    void Q(boolean z10);
+
+    void T(float f7, int i10);
+
+    void V(float f7);
+
+    void Z(float f7);
+
+    void b(int i10);
+
+    void d0(float f7, int i10);
+
+    void e0(float f7);
+
+    void f0();
+
+    void h(float f7);
+
+    void i0(float f7);
+
+    void j0(int i10, long j3);
+
+    void n(float f7);
+
+    void o(long j3, boolean z10);
+
+    void o0(long j3);
+
+    void s();
+
+    void u(float f7);
+
+    void w(boolean z10);
 }

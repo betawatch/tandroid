@@ -1,54 +1,142 @@
 package org.telegram.ui;
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.view.MotionEvent;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class sh1 extends LinearLayout {
-    public final org.telegram.ui.ActionBar.e6 a;
-    public final ImageView b;
-    public final LinearLayout c;
-    public final TextView d;
-    public final TextView e;
-    public final ImageView f;
-    public boolean h;
-    public boolean n;
+public final class sh1 extends org.telegram.ui.Components.h81 {
+    public boolean T;
+    public final Path U;
+    public final /* synthetic */ th1 V;
 
-    public sh1(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context);
-        setOrientation(0);
-        this.a = e6Var;
-        ImageView imageView = new ImageView(context);
-        this.b = imageView;
-        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
-        imageView.setScaleType(scaleType);
-        addView(imageView, w7.x5.t(40, 40, 19, 12, 0, 12, 0));
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.c = linearLayout;
-        linearLayout.setOrientation(1);
-        linearLayout.setPadding(0, AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f));
-        addView(linearLayout, w7.x5.p(0, -2, 1.0f, 23, 0, 0, 32, 0));
-        TextView textView = new TextView(context);
-        this.d = textView;
-        textView.setTextSize(1, 16.0f);
-        TextView h = com.google.android.gms.internal.vision.e2.h(linearLayout, textView, w7.x5.t(-1, -2, 7, 0, 0, 0, 0), context);
-        this.e = h;
-        h.setTextSize(1, 13.0f);
-        linearLayout.addView(h, w7.x5.r(-1, -2, 7, 0.0f, 4.33f, 0.0f, 0.0f));
-        ImageView imageView2 = new ImageView(context);
-        this.f = imageView2;
-        imageView2.setScaleType(scaleType);
-        addView(imageView2, w7.x5.t(40, 40, 21, 12, 0, 12, 0));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public sh1(th1 th1Var, Context context) {
+        super(context, null);
+        this.V = th1Var;
+        this.U = new Path();
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        if (this.T) {
+            Path path = this.U;
+            path.rewind();
+            float dpf2 = AndroidUtilities.dpf2(24.0f);
+            RectF rectF = AndroidUtilities.rectTmp;
+            rectF.set(0.0f, AndroidUtilities.statusBarHeight, getWidth(), getHeight());
+            path.addRoundRect(rectF, dpf2, dpf2, Path.Direction.CW);
+            canvas.save();
+            canvas.clipPath(path);
+        }
+        super.dispatchDraw(canvas);
+        if (this.T) {
+            canvas.restore();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.h81
+    public float getAvailableTranslationX() {
+        return getMeasuredWidth();
+    }
+
+    @Override // org.telegram.ui.Components.h81
+    public long getManualScrollDuration() {
+        return 320L;
+    }
+
+    @Override // org.telegram.ui.Components.h81
+    public final boolean j(MotionEvent motionEvent) {
+        Object X = ((zg0) this.V).X();
+        if (X instanceof yg0) {
+            return ((yg0) X).S(motionEvent, false);
+        }
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.h81
+    public final boolean k(MotionEvent motionEvent) {
+        Object X = ((zg0) this.V).X();
+        if (X instanceof yg0) {
+            return ((yg0) X).S(motionEvent, true);
+        }
+        return false;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+    }
+
+    @Override // android.view.View
+    public void setLayoutParams(ViewGroup.LayoutParams layoutParams) {
+        super.setLayoutParams(layoutParams);
+    }
+
+    public void setTabletLayout(boolean z10) {
+        if (this.T == z10) {
+            return;
+        }
+        this.T = z10;
+        invalidate();
+    }
+
+    @Override // org.telegram.ui.Components.h81
+    public final void t(View view, View view2, int i10, int i11) {
+        this.V.U();
+    }
+
+    @Override // org.telegram.ui.Components.h81
+    public final void u() {
+        ry ryVar;
+        th1 th1Var = this.V;
+        zg0 zg0Var = (zg0) th1Var;
+        if (zg0Var.F != null) {
+            zg0Var.m0(zg0Var.c.getCurrentPosition(), true);
+            zg0Var.n0(0.0f, false);
+        }
+        zg0Var.d0();
+        sh1 sh1Var = zg0Var.c;
+        if (sh1Var != null) {
+            int currentPosition = sh1Var.getCurrentPosition();
+            if (currentPosition != 2 && zg0Var.x) {
+                zg0Var.W(2);
+                zg0Var.x = false;
+            }
+            if (currentPosition != 3) {
+                zg0Var.W(3);
+            }
+            Integer num = zg0Var.I;
+            if (num != null && currentPosition == 0 && (ryVar = zg0Var.J) != null) {
+                ryVar.w4(num.intValue());
+                zg0Var.I = null;
+            }
+        }
+        th1Var.U();
+    }
+
+    @Override // org.telegram.ui.Components.h81
+    public final void w(boolean z10) {
+        th1 th1Var = this.V;
+        zg0 zg0Var = (zg0) th1Var;
+        boolean z11 = !z10;
+        if (zg0Var.F != null) {
+            float positionAnimated = zg0Var.c.getPositionAnimated();
+            zg0Var.n0(positionAnimated, z11);
+            if (!z10) {
+                zg0Var.m0(Math.round(positionAnimated), true);
+            }
+        }
+        zg0Var.h0();
+        zg0Var.d0();
+        zg0Var.b.invalidate();
+        th1Var.U();
+        th1Var.checkSystemBarColors();
     }
 }

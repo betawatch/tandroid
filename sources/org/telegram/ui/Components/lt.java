@@ -1,34 +1,11 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lt implements mt {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-
-    public /* synthetic */ lt(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
-    }
-
-    @Override // org.telegram.ui.Components.mt
-    public final void a(int i10, boolean z10) {
-        switch (this.a) {
-            case 0:
-                ArrayList arrayList = ((ot) this.b).b;
-                int size = arrayList.size();
-                int i11 = 0;
-                while (i11 < size) {
-                    Object obj = arrayList.get(i11);
-                    i11++;
-                    ((mt) obj).a(i10, z10);
-                }
-                break;
-            default:
-                ((Runnable) this.b).run();
-                break;
-        }
-    }
+public abstract class lt {
+    public static final rr a = new rr(0.39d, 0.575d, 0.565d, 1.0d);
+    public static final rr b = new rr(0.445d, 0.05d, 0.55d, 0.95d);
+    public static final rr c = new rr(0.55d, 0.085d, 0.68d, 0.53d);
+    public static final rr d = new rr(0.25d, 0.46d, 0.45d, 0.94d);
+    public static final rr e = new rr(0.455d, 0.03d, 0.515d, 0.955d);
 }

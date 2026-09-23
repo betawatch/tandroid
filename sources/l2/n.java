@@ -10,12 +10,12 @@ import e2.d0;
 import e2.v;
 import n4.y;
 import org.telegram.ui.Components.ho0;
-import u2.a1;
+import u2.z0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class n implements h0 {
-    public final a1 a;
+    public final z0 a;
     public final y b = new y(17);
     public final l3.a c = new l3.a();
     public long d = -9223372036854775807L;
@@ -23,7 +23,7 @@ public final class n implements h0 {
 
     public n(o oVar, y2.d dVar) {
         this.e = oVar;
-        this.a = new a1(dVar, null, null);
+        this.a = new z0(dVar, null, null);
     }
 
     @Override // c3.h0
@@ -71,11 +71,11 @@ public final class n implements h0 {
                 }
             }
         }
-        a1 a1Var = this.a;
-        ho0 ho0Var = a1Var.a;
-        synchronized (a1Var) {
-            int i14 = a1Var.s;
-            i13 = i14 == 0 ? -1L : a1Var.i(i14);
+        z0 z0Var = this.a;
+        ho0 ho0Var = z0Var.a;
+        synchronized (z0Var) {
+            int i14 = z0Var.s;
+            i13 = i14 == 0 ? -1L : z0Var.i(i14);
         }
         ho0Var.b(i13);
     }
@@ -87,15 +87,15 @@ public final class n implements h0 {
 
     @Override // c3.h0
     public final int e(b2.k kVar, int i10, boolean z10) {
-        a1 a1Var = this.a;
-        a1Var.getClass();
-        return a1Var.e(kVar, i10, z10);
+        z0 z0Var = this.a;
+        z0Var.getClass();
+        return z0Var.e(kVar, i10, z10);
     }
 
     @Override // c3.h0
     public final void f(v vVar, int i10, int i11) {
-        a1 a1Var = this.a;
-        a1Var.getClass();
-        a1Var.f(vVar, i10, 0);
+        z0 z0Var = this.a;
+        z0Var.getClass();
+        z0Var.f(vVar, i10, 0);
     }
 }

@@ -11,10 +11,10 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.m5;
-import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.o5;
+import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class z2 extends View {
     public boolean E;
@@ -64,7 +64,7 @@ public final class z2 extends View {
             ValueAnimator ofInt = ValueAnimator.ofInt(0, dp);
             this.c = ofInt;
             ofInt.addUpdateListener(new y2(this, 0));
-            this.c.setInterpolator(qr.g);
+            this.c.setInterpolator(rr.g);
             this.c.setDuration(200L);
             this.c.start();
         }
@@ -75,9 +75,9 @@ public final class z2 extends View {
         super.onAttachedToWindow();
         if (this.K) {
             for (o3 o3Var : this.a) {
-                m5 m5Var = o3Var.a;
-                if (m5Var != null) {
-                    m5Var.a();
+                o5 o5Var = o3Var.a;
+                if (o5Var != null) {
+                    o5Var.a();
                     ValueAnimator valueAnimator = o3Var.b;
                     if (valueAnimator != null) {
                         valueAnimator.start();
@@ -85,9 +85,9 @@ public final class z2 extends View {
                 }
             }
             for (o3 o3Var2 : this.b) {
-                m5 m5Var2 = o3Var2.a;
-                if (m5Var2 != null) {
-                    m5Var2.a();
+                o5 o5Var2 = o3Var2.a;
+                if (o5Var2 != null) {
+                    o5Var2.a();
                     ValueAnimator valueAnimator2 = o3Var2.b;
                     if (valueAnimator2 != null) {
                         valueAnimator2.start();
@@ -102,25 +102,25 @@ public final class z2 extends View {
         super.onDetachedFromWindow();
         if (this.K) {
             for (o3 o3Var : this.a) {
-                m5 m5Var = o3Var.a;
-                if (m5Var != null) {
+                o5 o5Var = o3Var.a;
+                if (o5Var != null) {
                     ValueAnimator valueAnimator = o3Var.b;
                     if (valueAnimator != null) {
                         valueAnimator.cancel();
                         o3Var.b = null;
                     }
-                    m5Var.b();
+                    o5Var.b();
                 }
             }
             for (o3 o3Var2 : this.b) {
-                m5 m5Var2 = o3Var2.a;
-                if (m5Var2 != null) {
+                o5 o5Var2 = o3Var2.a;
+                if (o5Var2 != null) {
                     ValueAnimator valueAnimator2 = o3Var2.b;
                     if (valueAnimator2 != null) {
                         valueAnimator2.cancel();
                         o3Var2.b = null;
                     }
-                    m5Var2.b();
+                    o5Var2.b();
                 }
             }
             ValueAnimator valueAnimator3 = this.c;

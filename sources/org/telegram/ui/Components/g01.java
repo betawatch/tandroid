@@ -1,259 +1,72 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Shader;
-import android.graphics.Typeface;
-import android.os.Build;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
+import android.text.style.ReplacementSpan;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class g01 {
-    public final TextPaint a;
-    public StaticLayout b;
-    public float c;
-    public float d;
-    public float e;
-    public int f;
-    public Layout.Alignment g;
-    public float h;
-    public boolean i;
-    public View j;
-    public t5 k;
-    public int l;
-    public PorterDuffColorFilter m;
-    public int n;
-    public boolean o;
-    public float p;
-    public LinearGradient q;
-    public Matrix r;
-    public Paint s;
-    public int t;
+public final class g01 extends ReplacementSpan {
+    public static final /* synthetic */ int f = 0;
+    public ImageReceiver a;
+    public int b;
+    public int c;
+    public final boolean d;
+    public final int e;
 
-    public g01(CharSequence charSequence, TextPaint textPaint) {
-        this.e = 9999.0f;
-        this.f = 1;
-        this.g = Layout.Alignment.ALIGN_NORMAL;
-        this.l = 0;
-        this.p = -1.0f;
-        this.a = textPaint;
-        r(charSequence);
+    public g01(View view, Bitmap bitmap, int i10, int i11, int i12, int i13) {
+        this.b = i10;
+        this.c = i11;
+        ImageReceiver imageReceiver = new ImageReceiver(view);
+        this.a = imageReceiver;
+        imageReceiver.setInvalidateAll(true);
+        imageReceiver.setImageBitmap(bitmap);
+        imageReceiver.setColorFilter(new PorterDuffColorFilter(i12, PorterDuff.Mode.SRC_IN));
+        this.e = i13;
+        this.d = true;
     }
 
-    public final void a() {
-        Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
-        if (this.g != alignment) {
-            this.g = alignment;
-            r(this.b.getText());
-        }
-    }
-
-    public final float b() {
-        float f7 = 0.0f;
-        for (int i10 = 0; i10 < this.b.getLineCount(); i10++) {
-            f7 = Math.max(f7, this.b.getLineWidth(i10));
-        }
-        return f7;
-    }
-
-    public final void c(float f7, float f10, float f11, int i10, Canvas canvas) {
-        if (this.b == null) {
-            return;
-        }
-        TextPaint textPaint = this.a;
-        textPaint.setColor(i10);
-        textPaint.linkColor = i10;
-        int alpha = textPaint.getAlpha();
-        if (f11 != 1.0f) {
-            textPaint.setAlpha((int) (alpha * f11));
-        }
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+        int i15 = this.b;
+        int i16 = this.c;
+        ImageReceiver imageReceiver = this.a;
         canvas.save();
-        canvas.translate(f7, f10 - (this.f > 1 ? 0.0f : this.b.getHeight() / 2.0f));
-        d(canvas);
-        canvas.restore();
-        textPaint.setAlpha(alpha);
-    }
-
-    public final void d(Canvas canvas) {
-        if (this.b == null) {
-            return;
-        }
-        float f7 = this.p;
-        if (f7 >= 0.0f && this.c > f7) {
-            canvas.saveLayerAlpha(0.0f, -this.t, f7 - 1.0f, r0.getHeight() + this.t, 255, 31);
-        }
-        canvas.save();
-        canvas.translate(-this.d, 0.0f);
-        boolean z10 = this.o;
-        TextPaint textPaint = this.a;
-        if (z10) {
-            canvas.drawText(this.b.getText().toString(), 0.0f, -textPaint.getFontMetricsInt().ascent, textPaint);
+        if (this.d) {
+            imageReceiver.setImageCoords((int) f7, i13 - (i16 - this.e), i15, i16);
         } else {
-            this.b.draw(canvas);
+            imageReceiver.setImageCoords((int) f7, hg.c.C(org.telegram.messenger.z0.B(4.0f, i14, i12), i16, 2, i12), i15, i16);
         }
-        if (this.i) {
-            if (this.m == null || textPaint.getColor() != this.n) {
-                int color = textPaint.getColor();
-                this.n = color;
-                this.m = new PorterDuffColorFilter(color, PorterDuff.Mode.SRC_IN);
-            }
-            x5.drawAnimatedEmojis(canvas, this.b, this.k, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f, this.m);
-        }
-        canvas.restore();
-        float f10 = this.p;
-        if (f10 < 0.0f || this.c <= f10) {
-            return;
-        }
-        if (this.q == null) {
-            this.q = new LinearGradient(0.0f, 0.0f, AndroidUtilities.dp(8.0f), 0.0f, new int[]{16777215, -1}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-            this.r = new Matrix();
-            Paint paint = new Paint(1);
-            this.s = paint;
-            paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
-            this.s.setShader(this.q);
-        }
-        canvas.save();
-        this.r.reset();
-        this.r.postTranslate(this.p - AndroidUtilities.dp(8.0f), 0.0f);
-        this.q.setLocalMatrix(this.r);
-        canvas.drawRect(this.p - AndroidUtilities.dp(8.0f), 0.0f, this.p, this.b.getHeight(), this.s);
-        canvas.restore();
+        imageReceiver.draw(canvas);
         canvas.restore();
     }
 
-    public final void e(Canvas canvas, float f7, float f10) {
-        f(canvas, f7, f10, 1.0f);
-    }
-
-    public final void f(Canvas canvas, float f7, float f10, float f11) {
-        if (this.b == null) {
-            return;
-        }
-        canvas.save();
-        canvas.translate(f7, f10 - (this.f > 1 ? 0.0f : this.b.getHeight() / 2.0f));
-        TextPaint textPaint = this.a;
-        int alpha = textPaint.getAlpha();
-        textPaint.setAlpha((int) (alpha * f11));
-        d(canvas);
-        textPaint.setAlpha(alpha);
-        canvas.restore();
-    }
-
-    public final void g(float f7) {
-        this.p = f7;
-    }
-
-    public final float h() {
-        return this.c;
-    }
-
-    public final Paint.FontMetricsInt i() {
-        return this.a.getFontMetricsInt();
-    }
-
-    public final float j() {
-        return this.b.getHeight();
-    }
-
-    public final CharSequence k() {
-        StaticLayout staticLayout = this.b;
-        return (staticLayout == null || staticLayout.getText() == null) ? "" : this.b.getText();
-    }
-
-    public final float l() {
-        float f7 = this.p;
-        return f7 >= 0.0f ? Math.min(f7, this.c) : this.c;
-    }
-
-    public final void m(float f7) {
-        if (this.h != f7) {
-            this.h = f7;
-            r(this.b.getText());
-        }
-    }
-
-    public final void n(int i10) {
-        this.f = i10;
-        r(this.b.getText());
-    }
-
-    public final void o(int i10) {
-        this.a.setColor(i10);
-    }
-
-    public final void p(int i10) {
-        if (this.l != i10) {
-            this.l = i10;
-            if (this.i) {
-                x5.release(this.j, this.k);
-                this.k = x5.update(this.l, this.j, this.k, this.b);
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
+        int i12 = this.c;
+        if (fontMetricsInt != null) {
+            if (this.d) {
+                int i13 = this.e;
+                int i14 = -(i12 - i13);
+                fontMetricsInt.ascent = i14;
+                fontMetricsInt.top = i14;
+                fontMetricsInt.descent = i13;
+                fontMetricsInt.bottom = i13;
+            } else {
+                int dp = ((-i12) / 2) - AndroidUtilities.dp(4.0f);
+                fontMetricsInt.ascent = dp;
+                fontMetricsInt.top = dp;
+                int dp2 = (i12 - (i12 / 2)) - AndroidUtilities.dp(4.0f);
+                fontMetricsInt.descent = dp2;
+                fontMetricsInt.bottom = dp2;
             }
         }
-    }
-
-    public final void q(float f7) {
-        this.e = f7;
-        r(this.b.getText());
-    }
-
-    public final void r(CharSequence charSequence) {
-        if (this.f <= 1 || Build.VERSION.SDK_INT < 23) {
-            this.b = new StaticLayout(AndroidUtilities.replaceNewLines(charSequence), this.a, (int) Math.max(this.e, 1.0f), this.g, 1.0f, this.h, false);
-        } else {
-            this.b = StaticLayout.Builder.obtain(charSequence, 0, charSequence.length(), this.a, (int) Math.max(this.e, 1.0f)).setAlignment(this.g).setMaxLines(this.f).setLineSpacing(this.h, 1.0f).build();
-        }
-        if (this.g == Layout.Alignment.ALIGN_CENTER) {
-            this.c = this.b.getWidth();
-            this.d = 0.0f;
-        } else {
-            this.c = 0.0f;
-            this.d = this.b.getWidth();
-            for (int i10 = 0; i10 < this.b.getLineCount(); i10++) {
-                this.c = Math.max(this.c, this.b.getLineWidth(i10));
-                this.d = Math.min(this.d, this.b.getLineLeft(i10));
-            }
-        }
-        View view = this.j;
-        if (view == null || !view.isAttachedToWindow()) {
-            return;
-        }
-        this.k = x5.update(this.l, this.j, this.k, this.b);
-    }
-
-    public final void s(View view) {
-        int i10 = 1;
-        this.i = true;
-        this.j = view;
-        if (view.isAttachedToWindow()) {
-            this.k = x5.update(this.l, view, this.k, this.b);
-        }
-        view.addOnAttachStateChangeListener(new ja(i10, this, view));
-    }
-
-    public g01(String str, float f7) {
-        this(str, f7, null);
-    }
-
-    public g01(CharSequence charSequence, float f7, Typeface typeface) {
-        this.e = 9999.0f;
-        this.f = 1;
-        this.g = Layout.Alignment.ALIGN_NORMAL;
-        this.l = 0;
-        this.p = -1.0f;
-        TextPaint textPaint = new TextPaint(1);
-        this.a = textPaint;
-        textPaint.setTextSize(AndroidUtilities.dp(f7));
-        textPaint.setTypeface(typeface);
-        r(charSequence);
+        return this.b;
     }
 }

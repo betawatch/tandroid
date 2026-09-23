@@ -1,33 +1,53 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+import android.view.KeyEvent;
+import android.view.View;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class dn0 extends s4.o {
-    public final /* synthetic */ hn0 b;
+public final class dn0 implements TextView.OnEditorActionListener {
+    public final /* synthetic */ cn0 a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ TLRPC.Reaction c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.b2[] d;
+    public final /* synthetic */ View e;
 
-    public dn0(hn0 hn0Var) {
-        this.b = hn0Var;
+    public dn0(cn0 cn0Var, int i10, TLRPC.Reaction reaction, org.telegram.ui.ActionBar.b2[] b2VarArr, View view) {
+        this.a = cn0Var;
+        this.b = i10;
+        this.c = reaction;
+        this.d = b2VarArr;
+        this.e = view;
     }
 
-    @Override // s4.o
-    public final boolean a(int i10, int i11) {
-        hn0 hn0Var = this.b;
-        return ((en0) hn0Var.n.get(i10)).equals(hn0Var.r.get(i11));
-    }
-
-    @Override // s4.o
-    public final boolean b(int i10, int i11) {
-        hn0 hn0Var = this.b;
-        return ((en0) hn0Var.n.get(i10)).a.h == ((en0) hn0Var.r.get(i11)).a.h;
-    }
-
-    @Override // s4.o
-    public final int d() {
-        return this.b.r.size();
-    }
-
-    @Override // s4.o
-    public final int e() {
-        return this.b.n.size();
+    @Override // android.widget.TextView.OnEditorActionListener
+    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
+        if (i10 != 6) {
+            return false;
+        }
+        cn0 cn0Var = this.a;
+        String obj = cn0Var.getText().toString();
+        if (obj.length() > 12) {
+            AndroidUtilities.shakeView(cn0Var);
+            return true;
+        }
+        MessagesController.getInstance(this.b).renameSavedReactionTag(zg.p0.d(this.c), obj);
+        org.telegram.ui.ActionBar.b2[] b2VarArr = this.d;
+        org.telegram.ui.ActionBar.b2 b2Var = b2VarArr[0];
+        if (b2Var != null) {
+            b2Var.dismiss();
+        }
+        if (b2VarArr[0] == in0.H) {
+            in0.H = null;
+        }
+        View view = this.e;
+        if (view != null) {
+            view.requestFocus();
+        }
+        return true;
     }
 }

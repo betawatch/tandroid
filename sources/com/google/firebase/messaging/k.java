@@ -8,13 +8,13 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
-import ci.uc;
+import ci.rc;
 import java.util.Collections;
 import java.util.Set;
 import java.util.WeakHashMap;
 import v7.n6;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class k implements Application.ActivityLifecycleCallbacks {
     public final Set a = Collections.newSetFromMap(new WeakHashMap());
@@ -54,7 +54,7 @@ public final class k implements Application.ActivityLifecycleCallbacks {
             return;
         }
         if (Build.VERSION.SDK_INT <= 25) {
-            new Handler(Looper.getMainLooper()).post(new uc(this, intent));
+            new Handler(Looper.getMainLooper()).post(new rc(this, intent));
         } else {
             a(intent);
         }

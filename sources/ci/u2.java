@@ -1,32 +1,50 @@
 package ci;
 
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class u2 implements Runnable {
+public final class u2 extends View {
     public final /* synthetic */ int a;
-    public final /* synthetic */ y2 b;
-    public final /* synthetic */ ai.y1 c;
+    public final /* synthetic */ x2 b;
 
-    public /* synthetic */ u2(y2 y2Var, ai.y1 y1Var, int i10) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ u2(x2 x2Var, Context context, int i10) {
+        super(context);
         this.a = i10;
-        this.b = y2Var;
-        this.c = y1Var;
+        this.b = x2Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
         switch (this.a) {
             case 0:
-                y2 y2Var = this.b;
-                y2Var.getClass();
-                AndroidUtilities.runOnUIThread(new u2(y2Var, this.c, 1), 320L);
+                x2 x2Var = this.b;
+                x2Var.q.reset();
+                x2Var.b(canvas, true);
                 break;
             default:
-                y2 y2Var2 = this.b;
-                y2Var2.getClass();
-                this.c.run(new ai.y1(y2Var2, 8));
+                x2 x2Var2 = this.b;
+                x2Var2.q.reset();
+                x2Var2.q.postTranslate(-getX(), (-getY()) + AndroidUtilities.statusBarHeight);
+                x2Var2.q.postScale(1.0f / getScaleX(), 1.0f / getScaleY(), getPivotX(), getPivotY());
+                x2Var2.b(canvas, false);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                super.onMeasure(i10, i11);
+                this.b.g();
+                break;
+            default:
+                super.onMeasure(i10, i11);
                 break;
         }
     }

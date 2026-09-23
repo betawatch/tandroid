@@ -1,23 +1,57 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class li1 extends AnimatorListenerAdapter {
-    public final /* synthetic */ ui1 a;
+public final class li1 extends View {
+    public final Paint a;
+    public final org.telegram.ui.Components.j9 b;
+    public org.telegram.ui.Components.f01 c;
 
-    public li1(ui1 ui1Var) {
-        this.a = ui1Var;
+    public li1(Activity activity) {
+        super(activity);
+        Paint paint = new Paint(1);
+        this.a = paint;
+        paint.setColor(-14538189);
+        org.telegram.ui.Components.j9 j9Var = new org.telegram.ui.Components.j9(this, false);
+        this.b = j9Var;
+        j9Var.p = AndroidUtilities.dp(100.0f);
+        j9Var.o = AndroidUtilities.dp(30.0f);
+        j9Var.x = false;
+        j9Var.s = AndroidUtilities.dp(24.0f);
+        j9Var.j(AndroidUtilities.dp(18.0f));
+        j9Var.t = 0.58f;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        ui1 ui1Var = this.a;
-        ui1Var.E.setText(LocaleController.getString(R.string.VoipCallEnded));
-        ui1Var.E.animate().alpha(1.0f).setDuration(70L).setListener(null).start();
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.c == null) {
+            return;
+        }
+        float dp = AndroidUtilities.dp(4.0f);
+        org.telegram.ui.Components.j9 j9Var = this.b;
+        float e = j9Var.e() + dp + AndroidUtilities.dp(7.0f) + this.c.c + AndroidUtilities.dp(13.0f);
+        float dp2 = AndroidUtilities.dp(30.0f);
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set((getWidth() - e) / 2.0f, 0.0f, (getWidth() + e) / 2.0f, getHeight());
+        float f7 = dp2 / 2.0f;
+        canvas.drawRoundRect(rectF, f7, f7, this.a);
+        canvas.save();
+        canvas.translate(rectF.left + AndroidUtilities.dp(4.0f), 0.0f);
+        j9Var.i(canvas);
+        canvas.translate(j9Var.A + AndroidUtilities.dp(7.0f), 0.0f);
+        this.c.c(0.0f, f7, 1.0f, -1, canvas);
+        canvas.restore();
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(30.0f));
     }
 }

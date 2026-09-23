@@ -1,6 +1,6 @@
 package yg;
 
-import ai.z5;
+import ai.y5;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.PorterDuff;
@@ -13,15 +13,15 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.j5;
-import org.telegram.ui.Cells.ab;
-import org.telegram.ui.Components.f9;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.i5;
+import org.telegram.ui.Cells.bb;
+import org.telegram.ui.Components.h9;
 import w7.x5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class b extends ab {
+public final class b extends bb {
     public final TextView a0;
     public final FrameLayout b0;
     public Drawable c0;
@@ -35,7 +35,7 @@ public final class b extends ab {
         this.b0 = new FrameLayout(getContext());
         TextView textView = new TextView(getContext());
         this.a0 = textView;
-        textView.setTextColor(i6.v0(i6.G6, this.y));
+        textView.setTextColor(h6.v0(h6.G6, this.y));
         this.a0.setTypeface(AndroidUtilities.bold());
         this.a0.setTextSize(12.0f);
         this.a0.setGravity(17);
@@ -47,13 +47,13 @@ public final class b extends ab {
     }
 
     private void setAvatarColorByMonths(int i10) {
-        f9 f9Var = this.E;
+        h9 h9Var = this.E;
         if (i10 == 12) {
-            f9Var.i(-31392, -2796986);
+            h9Var.i(-31392, -2796986);
         } else if (i10 == 6) {
-            f9Var.i(-10703110, -12481584);
+            h9Var.i(-10703110, -12481584);
         } else {
-            f9Var.i(-6631068, -11945404);
+            h9Var.i(-6631068, -11945404);
         }
     }
 
@@ -61,15 +61,15 @@ public final class b extends ab {
         return this.e0;
     }
 
-    @Override // org.telegram.ui.Cells.ab
+    @Override // org.telegram.ui.Cells.bb
     public /* bridge */ /* synthetic */ int[] getColorKeys() {
         return null;
     }
 
-    @Override // org.telegram.ui.Cells.ab, android.view.View
+    @Override // org.telegram.ui.Cells.bb, android.view.View
     public final void onDraw(Canvas canvas) {
         if (this.S) {
-            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(70.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(70.0f) : 0), getMeasuredHeight() - 1, i6.k0);
+            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(70.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(70.0f) : 0), getMeasuredHeight() - 1, h6.k0);
         }
     }
 
@@ -78,38 +78,38 @@ public final class b extends ab {
         boolean z10 = boost.gift;
         FrameLayout frameLayout = this.b0;
         TextView textView = this.a0;
-        j5 j5Var = this.b;
+        i5 i5Var = this.b;
         if (z10 || boost.giveaway) {
             frameLayout.setVisibility(0);
             int i10 = ((boost.expires - boost.date) / 30) / 86400;
             long j3 = boost.stars;
-            z5 z5Var = this.a;
-            f9 f9Var = this.E;
+            y5 y5Var = this.a;
+            h9 h9Var = this.E;
             if (j3 > 0) {
-                j5Var.l(LocaleController.formatPluralString("BoostingBoostStars", (int) j3, new Object[0]), false);
-                f9Var.g(26);
-                z5Var.e(null, f9Var);
-                j5Var.i(null);
+                i5Var.l(LocaleController.formatPluralString("BoostingBoostStars", (int) j3, new Object[0]), false);
+                h9Var.g(26);
+                y5Var.e(null, h9Var);
+                i5Var.i(null);
             } else if (boost.unclaimed) {
-                j5Var.l(LocaleController.getString(R.string.BoostingUnclaimed), false);
-                f9Var.g(18);
+                i5Var.l(LocaleController.getString(R.string.BoostingUnclaimed), false);
+                h9Var.g(18);
                 setAvatarColorByMonths(i10);
-                z5Var.e(null, f9Var);
-                j5Var.i(null);
+                y5Var.e(null, h9Var);
+                i5Var.i(null);
             } else if (boost.user_id == -1) {
-                j5Var.l(LocaleController.getString(R.string.BoostingToBeDistributed), false);
-                f9Var.g(19);
+                i5Var.l(LocaleController.getString(R.string.BoostingToBeDistributed), false);
+                h9Var.g(19);
                 setAvatarColorByMonths(i10);
-                z5Var.e(null, f9Var);
-                j5Var.i(null);
+                y5Var.e(null, h9Var);
+                i5Var.i(null);
             }
             String format = LocaleController.getInstance().getFormatterBoostExpired().format(new Date(boost.expires * 1000));
             long j10 = boost.stars;
-            j5 j5Var2 = this.c;
+            i5 i5Var2 = this.c;
             if (j10 > 0) {
-                j5Var2.l(LocaleController.formatString(R.string.BoostingStarsExpires, format), false);
+                i5Var2.l(LocaleController.formatString(R.string.BoostingStarsExpires, format), false);
             } else {
-                j5Var2.l(LocaleController.formatString(R.string.BoostingExpires, format), false);
+                i5Var2.l(LocaleController.formatString(R.string.BoostingExpires, format), false);
             }
             if (boost.gift) {
                 if (this.d0 == null) {
@@ -121,7 +121,7 @@ public final class b extends ab {
                 textView.setCompoundDrawablesWithIntrinsicBounds(this.d0, (Drawable) null, (Drawable) null, (Drawable) null);
                 textView.setCompoundDrawablePadding(AndroidUtilities.dp(4.0f));
                 textView.setText(LocaleController.getString(R.string.BoostingGift));
-                frameLayout.setBackground(i6.c0(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), i6.l1(0.2f, -3240417)));
+                frameLayout.setBackground(h6.c0(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), h6.l1(0.2f, -3240417)));
             }
             if (boost.giveaway) {
                 if (this.c0 == null) {
@@ -133,7 +133,7 @@ public final class b extends ab {
                 textView.setCompoundDrawablesWithIntrinsicBounds(this.c0, (Drawable) null, (Drawable) null, (Drawable) null);
                 textView.setCompoundDrawablePadding(AndroidUtilities.dp(4.0f));
                 textView.setText(LocaleController.getString(R.string.BoostingGiveaway));
-                frameLayout.setBackground(i6.c0(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), i6.l1(0.2f, -13397548)));
+                frameLayout.setBackground(h6.c0(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), h6.l1(0.2f, -13397548)));
             }
         } else {
             frameLayout.setVisibility(8);
@@ -145,15 +145,15 @@ public final class b extends ab {
             aVar.f = valueOf;
             aVar.e = aVar.a.measureText(valueOf);
             aVar.invalidateSelf();
-            j5Var.i(aVar);
+            i5Var.i(aVar);
         } else {
-            j5Var.i(null);
+            i5Var.i(null);
         }
         if (frameLayout.getVisibility() != 0) {
-            j5Var.setPadding(0, j5Var.getPaddingTop(), 0, j5Var.getPaddingBottom());
+            i5Var.setPadding(0, i5Var.getPaddingTop(), 0, i5Var.getPaddingBottom());
         } else {
             int dp = AndroidUtilities.dp(22.0f) + ((int) textView.getPaint().measureText(textView.getText().toString()));
-            j5Var.setPadding(LocaleController.isRTL ? dp : 0, j5Var.getPaddingTop(), LocaleController.isRTL ? 0 : dp, j5Var.getPaddingBottom());
+            i5Var.setPadding(LocaleController.isRTL ? dp : 0, i5Var.getPaddingTop(), LocaleController.isRTL ? 0 : dp, i5Var.getPaddingBottom());
         }
     }
 }

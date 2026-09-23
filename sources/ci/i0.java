@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 import org.telegram.ui.BubbleActivity;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class i0 extends View {
     public final Paint a;
@@ -84,8 +84,8 @@ public final class i0 extends View {
         boolean z11 = (j0Var.x.Q / 90) % 2 == 1;
         matrix.preTranslate(gVar.d, gVar.e);
         float f14 = (gVar.f / f11) * containerWidth;
-        o8 o8Var = j0Var.x;
-        if (o8Var != null && (cropState = o8Var.m0) != null) {
+        l8 l8Var = j0Var.x;
+        if (l8Var != null && (cropState = l8Var.m0) != null) {
             if (z10) {
                 f7 = cropState.cropScale;
             }
@@ -102,9 +102,9 @@ public final class i0 extends View {
             f16 = f18;
         }
         matrix.preTranslate(f15 * f12, f16 * f13);
-        o8 o8Var2 = j0Var.x;
-        float f19 = o8Var2.Q + gVar.g + i10;
-        MediaController.CropState cropState3 = o8Var2.m0;
+        l8 l8Var2 = j0Var.x;
+        float f19 = l8Var2.Q + gVar.g + i10;
+        MediaController.CropState cropState3 = l8Var2.m0;
         if (cropState3 != null) {
             if (z10) {
                 f10 = cropState3.cropRotate + cropState3.transformRotation;
@@ -132,7 +132,7 @@ public final class i0 extends View {
         j0 j0Var = this.s;
         int[] iArr = j0Var.s;
         int[] iArr2 = j0Var.v;
-        d7 d7Var = j0Var.a;
+        b7 b7Var = j0Var.a;
         if (!z10) {
             canvas2 = canvas;
             f7 = 2.0f;
@@ -144,7 +144,7 @@ public final class i0 extends View {
             canvas2 = canvas;
             f7 = 2.0f;
             f10 = 255.0f;
-            canvas2.saveLayerAlpha(0.0f, 0.0f, d7Var.getWidth(), d7Var.getHeight(), (int) (Math.min(1.0f, (1.0f - j0Var.r) * 2.0f) * 255.0f), 31);
+            canvas2.saveLayerAlpha(0.0f, 0.0f, b7Var.getWidth(), b7Var.getHeight(), (int) (Math.min(1.0f, (1.0f - j0Var.r) * 2.0f) * 255.0f), 31);
             canvas2.translate(iArr[0] - iArr2[0], iArr[1] - iArr2[1]);
         }
         canvas2.save();
@@ -155,8 +155,8 @@ public final class i0 extends View {
         if (j0Var.r < 1.0f && !z10) {
             Path path = this.b;
             path.rewind();
-            float width = d7Var.getWidth();
-            float height = d7Var.getHeight();
+            float width = b7Var.getWidth();
+            float height = b7Var.getHeight();
             RectF rectF = this.c;
             rectF.set(0.0f, 0.0f, width, height);
             rectF.offset(iArr2[0], iArr2[1]);
@@ -174,10 +174,10 @@ public final class i0 extends View {
         matrix2.reset();
         matrix.preTranslate(-iArr[0], -iArr[1]);
         matrix.preTranslate(iArr2[0], iArr2[1]);
-        matrix.preScale(d7Var.getWidth() / j0Var.x.i0, d7Var.getHeight() / j0Var.x.j0);
+        matrix.preScale(b7Var.getWidth() / j0Var.x.i0, b7Var.getHeight() / j0Var.x.j0);
         matrix.preConcat(j0Var.x.n0);
-        matrix.preTranslate(d7Var.getContentWidth() / f7, d7Var.getContentHeight() / f7);
-        matrix2.preTranslate((getContainerWidth() / f7) + AndroidUtilities.dp(16.0f), org.telegram.messenger.y0.a(getContainerHeight(), AndroidUtilities.dp(32.0f), f7, !(getContext() instanceof BubbleActivity) ? AndroidUtilities.statusBarHeight : 0.0f));
+        matrix.preTranslate(b7Var.getContentWidth() / f7, b7Var.getContentHeight() / f7);
+        matrix2.preTranslate((getContainerWidth() / f7) + AndroidUtilities.dp(16.0f), org.telegram.messenger.z0.a(getContainerHeight(), AndroidUtilities.dp(32.0f), f7, !(getContext() instanceof BubbleActivity) ? AndroidUtilities.statusBarHeight : 0.0f));
         if (z10) {
             Matrix matrix3 = this.d;
             float f13 = j0Var.r;
@@ -186,13 +186,13 @@ public final class i0 extends View {
             matrix4.preRotate(-j0Var.x.Q);
             Matrix matrix5 = this.r;
             if (matrix4.invert(matrix5)) {
-                o8 o8Var = j0Var.x;
+                l8 l8Var = j0Var.x;
                 f11 = 2.0f;
-                int i10 = o8Var.Q;
-                MediaController.CropState cropState = o8Var.m0;
+                int i10 = l8Var.Q;
+                MediaController.CropState cropState = l8Var.m0;
                 boolean z12 = ((i10 + (cropState != null ? cropState.transformRotation : 0)) / 90) % 2 == 1;
-                float contentWidth = d7Var.getContentWidth();
-                float contentHeight = d7Var.getContentHeight();
+                float contentWidth = b7Var.getContentWidth();
+                float contentHeight = b7Var.getContentHeight();
                 MediaController.CropState cropState2 = j0Var.x.m0;
                 float f14 = cropState2 != null ? cropState2.cropPw : 1.0f;
                 float f15 = cropState2 != null ? cropState2.cropPh : 1.0f;
@@ -207,7 +207,7 @@ public final class i0 extends View {
                 canvas2.concat(matrix5);
                 a(matrix, true);
                 a(matrix2, false);
-                org.telegram.ui.Components.c6 c6Var = j0Var.b;
+                org.telegram.ui.Components.e6 e6Var = j0Var.b;
                 if (j0Var.y) {
                     lg.n nVar = j0Var.f.L;
                     if (nVar != null) {
@@ -221,32 +221,32 @@ public final class i0 extends View {
                     }
                     z11 = false;
                 }
-                float e = c6Var.e(z11);
+                float e = e6Var.e(z11);
                 float f18 = 1.0f - (e * f11);
                 matrix2.preScale(f18, 1.0f);
                 matrix.preScale(f18, 1.0f);
-                float A = org.telegram.messenger.y0.A(1.0f, e, 4.0f * e, 0.25f);
+                float A = org.telegram.messenger.z0.A(1.0f, e, 4.0f * e, 0.25f);
                 matrix2.preSkew(0.0f, A);
                 matrix.preSkew(0.0f, A);
-                matrix2.preTranslate((-d7Var.getContentWidth()) / f11, (-d7Var.getContentHeight()) / f11);
-                matrix.preTranslate((-d7Var.getContentWidth()) / f11, (-d7Var.getContentHeight()) / f11);
+                matrix2.preTranslate((-b7Var.getContentWidth()) / f11, (-b7Var.getContentHeight()) / f11);
+                matrix.preTranslate((-b7Var.getContentWidth()) / f11, (-b7Var.getContentHeight()) / f11);
                 float f19 = j0Var.r;
                 Matrix matrix6 = this.e;
                 AndroidUtilities.lerp(matrix, matrix2, f19, matrix6);
                 canvas2.concat(matrix6);
-                Paint paint2 = d7Var.Q;
-                Matrix matrix7 = d7Var.W;
-                if (d7Var.n == null) {
+                Paint paint2 = b7Var.Q;
+                Matrix matrix7 = b7Var.W;
+                if (b7Var.n == null) {
                     canvas2.save();
-                    canvas2.scale(d7Var.getContentWidth() / d7Var.getWidth(), d7Var.getContentHeight() / d7Var.getHeight());
-                    canvas2.concat(d7Var.j0);
-                    d7Var.n.draw(canvas2);
+                    canvas2.scale(b7Var.getContentWidth() / b7Var.getWidth(), b7Var.getContentHeight() / b7Var.getHeight());
+                    canvas2.concat(b7Var.j0);
+                    b7Var.n.draw(canvas2);
                     canvas2.restore();
-                } else if (d7Var.a != null && d7Var.d != null) {
+                } else if (b7Var.a != null && b7Var.d != null) {
                     matrix7.reset();
-                    matrix7.preScale(d7Var.d.k0 / d7Var.a.getWidth(), d7Var.d.l0 / d7Var.a.getHeight());
+                    matrix7.preScale(b7Var.d.k0 / b7Var.a.getWidth(), b7Var.d.l0 / b7Var.a.getHeight());
                     paint2.setAlpha(255);
-                    canvas2.drawBitmap(d7Var.a, matrix7, paint2);
+                    canvas2.drawBitmap(b7Var.a, matrix7, paint2);
                 }
                 canvas2.restore();
                 if (z10) {
@@ -259,25 +259,25 @@ public final class i0 extends View {
         f11 = 2.0f;
         a(matrix, true);
         a(matrix2, false);
-        org.telegram.ui.Components.c6 c6Var2 = j0Var.b;
+        org.telegram.ui.Components.e6 e6Var2 = j0Var.b;
         if (j0Var.y) {
         }
-        float e7 = c6Var2.e(z11);
+        float e7 = e6Var2.e(z11);
         float f182 = 1.0f - (e7 * f11);
         matrix2.preScale(f182, 1.0f);
         matrix.preScale(f182, 1.0f);
-        float A2 = org.telegram.messenger.y0.A(1.0f, e7, 4.0f * e7, 0.25f);
+        float A2 = org.telegram.messenger.z0.A(1.0f, e7, 4.0f * e7, 0.25f);
         matrix2.preSkew(0.0f, A2);
         matrix.preSkew(0.0f, A2);
-        matrix2.preTranslate((-d7Var.getContentWidth()) / f11, (-d7Var.getContentHeight()) / f11);
-        matrix.preTranslate((-d7Var.getContentWidth()) / f11, (-d7Var.getContentHeight()) / f11);
+        matrix2.preTranslate((-b7Var.getContentWidth()) / f11, (-b7Var.getContentHeight()) / f11);
+        matrix.preTranslate((-b7Var.getContentWidth()) / f11, (-b7Var.getContentHeight()) / f11);
         float f192 = j0Var.r;
         Matrix matrix62 = this.e;
         AndroidUtilities.lerp(matrix, matrix2, f192, matrix62);
         canvas2.concat(matrix62);
-        Paint paint22 = d7Var.Q;
-        Matrix matrix72 = d7Var.W;
-        if (d7Var.n == null) {
+        Paint paint22 = b7Var.Q;
+        Matrix matrix72 = b7Var.W;
+        if (b7Var.n == null) {
         }
         canvas2.restore();
         if (z10) {

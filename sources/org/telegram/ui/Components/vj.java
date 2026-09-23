@@ -1,34 +1,104 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ContactsController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vj implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ xj b;
+public final class vj extends ll0 {
+    public final Context c;
+    public ArrayList d = new ArrayList();
+    public ArrayList e = new ArrayList();
+    public uj f;
+    public int h;
+    public final /* synthetic */ zj n;
 
-    public /* synthetic */ vj(xj xjVar, int i10) {
-        this.a = i10;
-        this.b = xjVar;
+    public vj(zj zjVar, Context context) {
+        this.n = zjVar;
+        this.c = context;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                xj xjVar = this.b;
-                if (xjVar.f != null) {
-                    xjVar.v = org.telegram.messenger.vl.h(new StringBuilder("+"), xjVar.f.phone, gf.b.c());
-                    xjVar.s = xjVar.f;
-                    AndroidUtilities.runOnUIThread(new vj(xjVar, 1));
-                    break;
-                }
-                break;
-            default:
-                xj xjVar2 = this.b;
-                xjVar2.c.l(xjVar2.v, false);
-                break;
+    @Override // org.telegram.ui.Components.ll0
+    public final boolean D(s4.c1 c1Var) {
+        return c1Var.f == 0;
+    }
+
+    public final Object E(int i10) {
+        int i11 = i10 - 1;
+        if (i11 < 0 || i11 >= this.d.size()) {
+            return null;
         }
+        return this.d.get(i11);
+    }
+
+    @Override // s4.h0
+    public final int h() {
+        return this.d.size() + 2;
+    }
+
+    @Override // s4.h0
+    public final int j(int i10) {
+        if (i10 == 0) {
+            return 1;
+        }
+        return i10 == h() - 1 ? 2 : 0;
+    }
+
+    @Override // s4.h0
+    public final void l() {
+        super.l();
+        this.n.N();
+    }
+
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
+        TLRPC.User user;
+        if (c1Var.f == 0) {
+            yj yjVar = (yj) c1Var.a;
+            boolean z10 = i10 != h() + (-2);
+            Object E = E(i10);
+            if (E instanceof ContactsController.Contact) {
+                ContactsController.Contact contact = (ContactsController.Contact) E;
+                user = contact.user;
+                if (user == null) {
+                    yjVar.setCurrentId(contact.contact_id);
+                    yjVar.a(null, (CharSequence) this.e.get(i10 - 1), new rj(contact, 1), z10);
+                    user = null;
+                }
+            } else {
+                user = (TLRPC.User) E;
+            }
+            if (user != null) {
+                yjVar.a(user, (CharSequence) this.e.get(i10 - 1), new sj(1, user), z10);
+            }
+            boolean containsKey = this.n.w.containsKey(pj.a(E));
+            op opVar = yjVar.d;
+            if (opVar.getVisibility() != 0) {
+                opVar.setVisibility(0);
+            }
+            opVar.a(containsKey, false);
+        }
+    }
+
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        View yjVar;
+        Context context = this.c;
+        if (i10 == 0) {
+            yjVar = new yj(context, this.n.a);
+        } else if (i10 != 1) {
+            yjVar = new View(context);
+            yjVar.setTag(-33024);
+        } else {
+            yjVar = new View(context);
+            yjVar.setLayoutParams(new s4.p0(-1, AndroidUtilities.dp(56.0f)));
+            yjVar.setTag(-33024);
+        }
+        return new wk0(yjVar);
     }
 }

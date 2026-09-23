@@ -1,46 +1,37 @@
 package ci;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class ib implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ jb b;
-    public final /* synthetic */ Runnable c;
-    public final /* synthetic */ boolean d;
+public final class ib extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ lc d;
 
-    public /* synthetic */ ib(jb jbVar, Runnable runnable, boolean z10) {
-        this.b = jbVar;
-        this.c = runnable;
-        this.d = z10;
+    public /* synthetic */ ib(lc lcVar, int i10, int i11, int i12) {
+        this.a = i12;
+        this.d = lcVar;
+        this.b = i10;
+        this.c = i11;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                this.b.f(this.c, this.d);
+                this.d.N(this.b, this.c);
                 break;
             default:
-                this.c.run();
-                oc ocVar = this.b.a;
-                c4 c4Var = ocVar.T0;
-                c4Var.a.q(LocaleController.getString(this.d ? R.string.StoryHintSwipeToZoom : R.string.StoryHintPinchToZoom), false, true);
-                c4Var.invalidate();
-                ocVar.h(true, true);
-                ocVar.d0(true);
-                ocVar.I0.a(false, true);
-                ocVar.J0.b(true, true);
-                ocVar.i0(true, true);
+                int i10 = this.b;
+                int i11 = this.c;
+                if (i10 != i11) {
+                    this.d.Q(i10, i11);
+                    break;
+                }
                 break;
         }
-    }
-
-    public /* synthetic */ ib(jb jbVar, boolean z10, Runnable runnable) {
-        this.b = jbVar;
-        this.d = z10;
-        this.c = runnable;
     }
 }

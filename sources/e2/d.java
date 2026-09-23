@@ -5,7 +5,7 @@ import android.os.Bundle;
 import e9.a1;
 import e9.f0;
 import e9.i0;
-import i2.t0;
+import i2.u0;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -13,7 +13,7 @@ import java.util.Iterator;
 import java.util.List;
 import org.xmlpull.v1.XmlPullParser;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public abstract class d {
     public static void a(String str, boolean z10) {
@@ -34,8 +34,8 @@ public abstract class d {
         }
     }
 
-    public static void d(t0 t0Var) {
-        t0Var.getClass();
+    public static void d(u0 u0Var) {
+        u0Var.getClass();
     }
 
     public static void e(Object obj, String str) {

@@ -1,16 +1,17 @@
 package j2;
 
-import ai.t7;
+import ai.u7;
 import android.content.SharedPreferences;
 import android.widget.EditText;
 import e2.m;
+import e2.v;
 import java.util.List;
 import m4.a0;
-import m4.d1;
+import m4.a1;
+import m4.b1;
 import m4.f1;
-import m4.g1;
-import m4.k1;
 import m4.r;
+import m4.y0;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
@@ -25,10 +26,11 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.Components.yu0;
+import z3.n;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class d implements m, d1, f1, RequestDelegateTimestamp, a2, MessagesStorage.StringCallback {
+public final /* synthetic */ class d implements m, y0, a1, RequestDelegateTimestamp, a2, MessagesStorage.StringCallback, e2.h {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ long c;
@@ -39,6 +41,27 @@ public final /* synthetic */ class d implements m, d1, f1, RequestDelegateTimest
         this.c = j3;
         this.b = i10;
         this.d = obj;
+    }
+
+    @Override // e2.h
+    public void accept(Object obj) {
+        n nVar = (n) this.d;
+        z3.a aVar = (z3.a) obj;
+        e2.d.h(nVar.h);
+        byte[] C2 = ob.a.C2(aVar.a, aVar.c);
+        v vVar = nVar.c;
+        vVar.getClass();
+        vVar.H(C2.length, C2);
+        nVar.a.d(C2.length, vVar);
+        long j3 = aVar.b;
+        long j10 = this.c;
+        if (j3 == -9223372036854775807L) {
+            e2.d.g(nVar.h.w == Long.MAX_VALUE);
+        } else {
+            long j11 = nVar.h.w;
+            j10 = j11 == Long.MAX_VALUE ? j10 + j3 : j3 + j11;
+        }
+        nVar.a.c(j10, this.b | 1, C2.length, 0, null);
     }
 
     @Override // org.telegram.ui.ActionBar.a2
@@ -68,7 +91,7 @@ public final /* synthetic */ class d implements m, d1, f1, RequestDelegateTimest
                     updateprofile.about = trim;
                     updateprofile.flags |= 4;
                     NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 2, Long.valueOf(j3));
-                    ConnectionsManager.getInstance(i12).sendRequest(updateprofile, new t7(12), 2);
+                    ConnectionsManager.getInstance(i12).sendRequest(updateprofile, new u7(12), 2);
                 } else {
                     long j10 = -j3;
                     TLRPC.ChatFull chatFull = MessagesController.getInstance(i12).getChatFull(j10);
@@ -117,13 +140,13 @@ public final /* synthetic */ class d implements m, d1, f1, RequestDelegateTimest
         }
     }
 
-    @Override // m4.d1
-    public void g(k1 k1Var, r rVar) {
-        g1 g1Var = (g1) this.d;
-        k1Var.s(g1Var.K0(rVar, k1Var, this.b), this.c);
+    @Override // m4.y0
+    public void g(f1 f1Var, r rVar) {
+        b1 b1Var = (b1) this.d;
+        f1Var.s(b1Var.K0(rVar, f1Var, this.b), this.c);
     }
 
-    @Override // m4.f1
+    @Override // m4.a1
     public Object h(a0 a0Var, r rVar, int i10) {
         List list = (List) this.d;
         int i11 = this.b;
@@ -159,9 +182,9 @@ public final /* synthetic */ class d implements m, d1, f1, RequestDelegateTimest
         this.c = j3;
     }
 
-    public /* synthetic */ d(yu0 yu0Var, long j3, int i10) {
-        this.a = 6;
-        this.d = yu0Var;
+    public /* synthetic */ d(Object obj, long j3, int i10, int i11) {
+        this.a = i11;
+        this.d = obj;
         this.c = j3;
         this.b = i10;
     }

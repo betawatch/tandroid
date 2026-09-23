@@ -1,199 +1,256 @@
 package ci;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public abstract class a9 extends FrameLayout implements x2 {
-    public final z8 a;
-    public final FrameLayout b;
-    public final TextView c;
-    public final FrameLayout d;
-    public final TextView e;
-    public final FrameLayout f;
-    public final TextView h;
-    public float n;
-    public float r;
-    public int s;
-    public ValueAnimator v;
-    public Utilities.Callback w;
-    public Utilities.Callback x;
+public final class a9 implements org.telegram.ui.Components.ob {
+    public final /* synthetic */ int a;
 
-    public a9(Context context) {
-        super(context);
-        z8 z8Var = new z8(this, context);
-        this.a = z8Var;
-        z8Var.setOrientation(0);
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.b = frameLayout;
-        TextView textView = new TextView(context);
-        this.c = textView;
-        textView.setTextSize(1, 14.0f);
-        textView.setTypeface(AndroidUtilities.bold());
-        textView.setTextColor(-1);
-        textView.setText(LocaleController.getString(R.string.StoryLive));
-        frameLayout.addView(textView, w7.x5.d(-2, -2.0f, 80, 16.0f, 0.0f, 16.0f, 7.0f));
-        z8Var.addView(frameLayout, w7.x5.r(-2, -1, 112, 0.0f, 0.0f, 6.66f, 0.0f));
-        final int i10 = 0;
-        frameLayout.setOnClickListener(new View.OnClickListener(this) { // from class: ci.y8
-            public final /* synthetic */ a9 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                switch (i10) {
-                    case 0:
-                        this.b.b(-1);
-                        break;
-                    case 1:
-                        this.b.b(0);
-                        break;
-                    default:
-                        this.b.b(1);
-                        break;
-                }
-            }
-        });
-        w7.z5.a(frameLayout);
-        FrameLayout frameLayout2 = new FrameLayout(context);
-        this.d = frameLayout2;
-        TextView textView2 = new TextView(context);
-        this.e = textView2;
-        textView2.setTextSize(1, 14.0f);
-        textView2.setTypeface(AndroidUtilities.bold());
-        textView2.setTextColor(-1);
-        textView2.setText(LocaleController.getString(R.string.StoryPhoto));
-        frameLayout2.addView(textView2, w7.x5.d(-2, -2.0f, 80, 16.0f, 0.0f, 16.0f, 7.0f));
-        z8Var.addView(frameLayout2, w7.x5.r(-2, -1, 112, 0.0f, 0.0f, 6.66f, 0.0f));
-        final int i11 = 1;
-        frameLayout2.setOnClickListener(new View.OnClickListener(this) { // from class: ci.y8
-            public final /* synthetic */ a9 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                switch (i11) {
-                    case 0:
-                        this.b.b(-1);
-                        break;
-                    case 1:
-                        this.b.b(0);
-                        break;
-                    default:
-                        this.b.b(1);
-                        break;
-                }
-            }
-        });
-        w7.z5.a(frameLayout2);
-        FrameLayout frameLayout3 = new FrameLayout(context);
-        this.f = frameLayout3;
-        TextView textView3 = new TextView(context);
-        this.h = textView3;
-        textView3.setTextSize(1, 14.0f);
-        textView3.setTypeface(AndroidUtilities.bold());
-        textView3.setTextColor(-1);
-        textView3.setText(LocaleController.getString(R.string.StoryVideo));
-        frameLayout3.addView(textView3, w7.x5.d(-2, -2.0f, 80, 16.0f, 0.0f, 16.0f, 7.0f));
-        z8Var.addView(frameLayout3, w7.x5.t(-2, -1, 112, 0, 0, 0, 0));
-        final int i12 = 2;
-        frameLayout3.setOnClickListener(new View.OnClickListener(this) { // from class: ci.y8
-            public final /* synthetic */ a9 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                switch (i12) {
-                    case 0:
-                        this.b.b(-1);
-                        break;
-                    case 1:
-                        this.b.b(0);
-                        break;
-                    default:
-                        this.b.b(1);
-                        break;
-                }
-            }
-        });
-        w7.z5.a(frameLayout3);
-        addView(z8Var, w7.x5.e(-2, -1, 113));
+    public /* synthetic */ a9(int i10) {
+        this.a = i10;
     }
 
-    public final void a(int i10) {
-        if (this.s == i10) {
-            return;
+    @Override // org.telegram.ui.Components.ob
+    public final /* synthetic */ boolean a() {
+        switch (this.a) {
         }
-        this.s = i10;
-        ValueAnimator valueAnimator = this.v;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.ob
+    public final /* synthetic */ void b(org.telegram.ui.Components.qc qcVar) {
+        int i10 = this.a;
+    }
+
+    @Override // org.telegram.ui.Components.ob
+    public final /* synthetic */ void c(float f7) {
+        int i10 = this.a;
+    }
+
+    @Override // org.telegram.ui.Components.ob
+    public final /* synthetic */ void d(org.telegram.ui.Components.qc qcVar) {
+        int i10 = this.a;
+    }
+
+    @Override // org.telegram.ui.Components.ob
+    public final /* synthetic */ boolean e() {
+        switch (this.a) {
         }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.r, i10);
-        this.v = ofFloat;
-        ofFloat.addUpdateListener(new ai.a(this, 24));
-        this.v.setDuration(320L);
-        this.v.setInterpolator(qr.h);
-        this.v.start();
+        return true;
     }
 
-    public final void b(int i10) {
-        if (this.s == i10) {
-            return;
+    @Override // org.telegram.ui.Components.ob
+    public final int f(int i10) {
+        int i11;
+        int dp;
+        switch (this.a) {
+            case 0:
+                return 0;
+            case 1:
+                return 0;
+            case 2:
+                return 0;
+            case 3:
+                return 0;
+            case 4:
+                i11 = AndroidUtilities.navigationBarHeight;
+                dp = AndroidUtilities.dp(64.0f);
+                break;
+            case 5:
+                return 0;
+            case 6:
+                return AndroidUtilities.dp(51.0f);
+            case 7:
+                return AndroidUtilities.dp(64.0f);
+            case 8:
+                return AndroidUtilities.dp(74.0f);
+            case 9:
+                return AndroidUtilities.dp(80.0f);
+            case 10:
+                i11 = AndroidUtilities.navigationBarHeight;
+                dp = AndroidUtilities.dp(16.0f);
+                break;
+            case 11:
+                return AndroidUtilities.dp(62.0f);
+            case 12:
+                return AndroidUtilities.dp(64.0f);
+            case 13:
+                return 0;
+            case 14:
+                return 0;
+            case 15:
+                return AndroidUtilities.dp(68.0f);
+            default:
+                return AndroidUtilities.dp(64.0f);
         }
-        a(i10);
-        Utilities.Callback callback = this.w;
-        if (callback != null) {
-            callback.run(Integer.valueOf(i10));
+        return dp + i11;
+    }
+
+    @Override // org.telegram.ui.Components.ob
+    public final boolean g(int i10) {
+        switch (this.a) {
         }
+        return false;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (((gb) this).y.I()) {
-            return false;
+    @Override // org.telegram.ui.Components.ob
+    public final int h(int i10) {
+        switch (this.a) {
         }
-        return super.dispatchTouchEvent(motionEvent);
+        return AndroidUtilities.statusBarHeight;
     }
 
-    @Override // android.view.View, ci.x2
-    public final void invalidate() {
-        super.invalidate();
-        this.a.invalidate();
+    private final /* synthetic */ void A(org.telegram.ui.Components.qc qcVar) {
     }
 
-    @Override // ci.x2
-    public void setInvert(float f7) {
-        this.n = f7;
-        this.c.setTextColor(i0.a.d(f7, -1, -16777216));
-        this.e.setTextColor(i0.a.d(f7, -1, -16777216));
-        this.h.setTextColor(i0.a.d(f7, -1, -16777216));
+    private final /* synthetic */ void B(org.telegram.ui.Components.qc qcVar) {
     }
 
-    public void setOnSwitchModeListener(Utilities.Callback<Integer> callback) {
-        this.w = callback;
+    private final /* synthetic */ void C(org.telegram.ui.Components.qc qcVar) {
     }
 
-    public void setOnSwitchingModeListener(Utilities.Callback<Float> callback) {
-        this.x = callback;
+    private final /* synthetic */ void D(org.telegram.ui.Components.qc qcVar) {
+    }
+
+    private final /* synthetic */ void E(org.telegram.ui.Components.qc qcVar) {
+    }
+
+    private final /* synthetic */ void F(org.telegram.ui.Components.qc qcVar) {
+    }
+
+    private final /* synthetic */ void G(org.telegram.ui.Components.qc qcVar) {
+    }
+
+    private final /* synthetic */ void H(org.telegram.ui.Components.qc qcVar) {
+    }
+
+    private final /* synthetic */ void I(org.telegram.ui.Components.qc qcVar) {
+    }
+
+    private final /* synthetic */ void J(org.telegram.ui.Components.qc qcVar) {
+    }
+
+    private final /* synthetic */ void K(org.telegram.ui.Components.qc qcVar) {
+    }
+
+    private final /* synthetic */ void L(org.telegram.ui.Components.qc qcVar) {
+    }
+
+    private final /* synthetic */ void M(org.telegram.ui.Components.qc qcVar) {
+    }
+
+    private final /* synthetic */ void N(org.telegram.ui.Components.qc qcVar) {
+    }
+
+    private final /* synthetic */ void O(org.telegram.ui.Components.qc qcVar) {
+    }
+
+    private final /* synthetic */ void P(org.telegram.ui.Components.qc qcVar) {
+    }
+
+    private final /* synthetic */ void Q(org.telegram.ui.Components.qc qcVar) {
+    }
+
+    private final /* synthetic */ void R(org.telegram.ui.Components.qc qcVar) {
+    }
+
+    private final /* synthetic */ void S(org.telegram.ui.Components.qc qcVar) {
+    }
+
+    private final /* synthetic */ void T(org.telegram.ui.Components.qc qcVar) {
+    }
+
+    private final /* synthetic */ void U(org.telegram.ui.Components.qc qcVar) {
+    }
+
+    private final /* synthetic */ void V(org.telegram.ui.Components.qc qcVar) {
+    }
+
+    private final /* synthetic */ void W(org.telegram.ui.Components.qc qcVar) {
+    }
+
+    private final /* synthetic */ void X(org.telegram.ui.Components.qc qcVar) {
+    }
+
+    private final /* synthetic */ void Y(org.telegram.ui.Components.qc qcVar) {
+    }
+
+    private final /* synthetic */ void Z(org.telegram.ui.Components.qc qcVar) {
+    }
+
+    private final /* synthetic */ void a0(org.telegram.ui.Components.qc qcVar) {
+    }
+
+    private final /* synthetic */ void b0(org.telegram.ui.Components.qc qcVar) {
+    }
+
+    private final /* synthetic */ void c0(org.telegram.ui.Components.qc qcVar) {
+    }
+
+    private final /* synthetic */ void d0(org.telegram.ui.Components.qc qcVar) {
+    }
+
+    private final /* synthetic */ void e0(org.telegram.ui.Components.qc qcVar) {
+    }
+
+    private final /* synthetic */ void f0(org.telegram.ui.Components.qc qcVar) {
+    }
+
+    private final /* synthetic */ void g0(org.telegram.ui.Components.qc qcVar) {
+    }
+
+    private final /* synthetic */ void i(float f7) {
+    }
+
+    private final /* synthetic */ void j(float f7) {
+    }
+
+    private final /* synthetic */ void k(float f7) {
+    }
+
+    private final /* synthetic */ void l(float f7) {
+    }
+
+    private final /* synthetic */ void m(float f7) {
+    }
+
+    private final /* synthetic */ void n(float f7) {
+    }
+
+    private final /* synthetic */ void o(float f7) {
+    }
+
+    private final /* synthetic */ void p(float f7) {
+    }
+
+    private final /* synthetic */ void q(float f7) {
+    }
+
+    private final /* synthetic */ void r(float f7) {
+    }
+
+    private final /* synthetic */ void s(float f7) {
+    }
+
+    private final /* synthetic */ void t(float f7) {
+    }
+
+    private final /* synthetic */ void u(float f7) {
+    }
+
+    private final /* synthetic */ void v(float f7) {
+    }
+
+    private final /* synthetic */ void w(float f7) {
+    }
+
+    private final /* synthetic */ void x(float f7) {
+    }
+
+    private final /* synthetic */ void y(float f7) {
+    }
+
+    private final /* synthetic */ void z(org.telegram.ui.Components.qc qcVar) {
     }
 }

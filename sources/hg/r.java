@@ -3,7 +3,7 @@ package hg;
 import android.graphics.Bitmap;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r implements org.telegram.ui.ActionBar.a2, gh.b, d9.e, e2.m, e2.n {
     public final /* synthetic */ int a;

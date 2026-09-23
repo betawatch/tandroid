@@ -37,13 +37,13 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.bu;
-import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.vc;
+import org.telegram.ui.Components.cu;
+import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class jc implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.ActionBar.j2, rf.a {
     public static boolean A1;
@@ -53,13 +53,13 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
     public d2 A0;
     public bc B0;
     public SurfaceView C0;
-    public ci.l4 D0;
+    public ci.k4 D0;
     public boolean E;
-    public ci.l4 E0;
+    public ci.k4 E0;
     public ValueAnimator F;
     public Uri F0;
     public ValueAnimator G;
-    public e6 G0;
+    public d6 G0;
     public ValueAnimator H;
     public boolean H0;
     public long I;
@@ -100,7 +100,7 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
     public boolean a0;
     public boolean a1;
     public float b0;
-    public final e5 b1;
+    public final d5 b1;
     public boolean c0;
     public boolean c1;
     public float d0;
@@ -128,7 +128,7 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
     public WindowManager n;
     public zb n0;
     public a3.d n1;
-    public e5 o1;
+    public d5 o1;
     public int p0;
     public boolean p1;
     public boolean q0;
@@ -146,12 +146,12 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
     public yb v;
     public org.telegram.ui.ActionBar.j2 v0;
     public ValueAnimator v1;
-    public r7 w;
+    public s7 w;
     public boolean w0;
     public boolean w1;
     public boolean x;
     public final ArrayList x0;
-    public org.telegram.ui.k4 y0;
+    public org.telegram.ui.l4 y0;
     public ic z0;
     public static final ArrayList y1 = new ArrayList();
     public static float B1 = 1.0f;
@@ -175,7 +175,7 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
         this.J0 = new AnimationNotificationsLocker();
         this.M0 = new ArrayList();
         this.Z0 = false;
-        this.b1 = new e5(this, 4);
+        this.b1 = new d5(this, 4);
         this.e1 = new LongSparseIntArray();
         new Paint(1);
         this.f = n2Var;
@@ -200,7 +200,7 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
         if (jcVar.w != null && jcVar.e0 != 0.0f) {
             return true;
         }
-        f6 currentPeerView = jcVar.n0.getCurrentPeerView();
+        e6 currentPeerView = jcVar.n0.getCurrentPeerView();
         if (currentPeerView != null) {
             if (currentPeerView.G0(currentPeerView, ((f7 - jcVar.v.getX()) - jcVar.n0.getX()) - currentPeerView.getX(), ((f10 - jcVar.v.getY()) - jcVar.n0.getY()) - currentPeerView.getY(), z10)) {
                 return true;
@@ -225,15 +225,15 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
 
     public static void j(jc jcVar) {
         p4 p4Var;
-        bu editField;
-        f6 currentPeerView = jcVar.n0.getCurrentPeerView();
+        cu editField;
+        e6 currentPeerView = jcVar.n0.getCurrentPeerView();
         if (currentPeerView == null || currentPeerView.b2 == null || (((p4Var = currentPeerView.b3) != null && p4Var.getVisibility() == 0) || (editField = currentPeerView.b2.getEditField()) == null)) {
             jcVar.m();
             return;
         }
         editField.requestFocus();
         AndroidUtilities.showKeyboard(editField);
-        AndroidUtilities.runOnUIThread(new e5(jcVar, 6), 200L);
+        AndroidUtilities.runOnUIThread(new d5(jcVar, 6), 200L);
     }
 
     public static void k(jc jcVar) {
@@ -241,7 +241,7 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
         if (jcVar.V != clamp01) {
             jcVar.V = clamp01;
             jcVar.o();
-            f6 currentPeerView = jcVar.n0.getCurrentPeerView();
+            e6 currentPeerView = jcVar.n0.getCurrentPeerView();
             if (currentPeerView != null && currentPeerView.x2) {
                 currentPeerView.invalidate();
             }
@@ -358,7 +358,7 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
             this.n0 = zbVar2;
             zbVar2.setDelegate(new ac(this, d9Var, arrayList, context));
             this.v.addView(this.n0, w7.x5.e(-1, -1, 1));
-            this.y0 = new org.telegram.ui.k4(context);
+            this.y0 = new org.telegram.ui.l4(context);
             if (this.a) {
                 SurfaceView surfaceView = new SurfaceView(context);
                 this.C0 = surfaceView;
@@ -370,23 +370,23 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
                 this.B0 = bcVar;
                 this.y0.addView(bcVar);
             }
-            ci.l4 l4Var = new ci.l4(context, this.h);
-            this.D0 = l4Var;
-            l4Var.setVisibility(8);
+            ci.k4 k4Var = new ci.k4(context, this.h);
+            this.D0 = k4Var;
+            k4Var.setVisibility(8);
             this.y0.addView(this.D0);
             oa oaVar = new oa(context);
             Paint paint = new Paint(1);
             oaVar.a = paint;
             oaVar.c = new q4(oaVar, i12);
-            oaVar.d = new org.telegram.ui.Components.c6(oaVar);
-            oaVar.e = new org.telegram.ui.Components.c6(oaVar);
+            oaVar.d = new org.telegram.ui.Components.e6(oaVar);
+            oaVar.e = new org.telegram.ui.Components.e6(oaVar);
             paint.setColor(-1);
             this.d1 = oaVar;
             this.v.addView(oaVar, w7.x5.d(-1, -1.0f, 0, 4.0f, 0.0f, 4.0f, 0.0f));
         }
-        ci.l4 l4Var2 = this.D0;
-        if (l4Var2 != null) {
-            l4Var2.setAccount(this.h);
+        ci.k4 k4Var2 = this.D0;
+        if (k4Var2 != null) {
+            k4Var2.setAccount(this.h);
         }
         AndroidUtilities.removeFromParent(this.y0);
         this.s.addView(this.y0);
@@ -535,9 +535,9 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
             icVar.release(null);
             this.z0 = null;
         }
-        ci.l4 l4Var = this.D0;
-        if (l4Var != null) {
-            l4Var.d(0L, null);
+        ci.k4 k4Var = this.D0;
+        if (k4Var != null) {
+            k4Var.d(0L, null);
         }
         d2 d2Var = this.A0;
         if (d2Var != null) {
@@ -589,20 +589,20 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
     }
 
     public final void L(boolean z10) {
-        f6 currentPeerView;
-        f6 currentPeerView2;
-        d6 d6Var;
+        e6 currentPeerView;
+        e6 currentPeerView2;
+        c6 c6Var;
         ic icVar;
-        e6 e6Var;
+        d6 d6Var;
         if (this.a1 != z10) {
             this.a1 = z10;
-            if (z10 && !this.f1 && (currentPeerView2 = this.n0.getCurrentPeerView()) != null && (d6Var = currentPeerView2.O1) != null && !d6Var.f && d6Var.b == null) {
-                if (!this.k0 && !this.j0 && (e6Var = this.G0) != null && ((ic) e6Var.c) != null) {
+            if (z10 && !this.f1 && (currentPeerView2 = this.n0.getCurrentPeerView()) != null && (c6Var = currentPeerView2.O1) != null && !c6Var.f && c6Var.b == null) {
+                if (!this.k0 && !this.j0 && (d6Var = this.G0) != null && ((ic) d6Var.c) != null) {
                     currentPeerView2.c1.invalidate();
                     BotWebViewVibrationEffect.IMPACT_LIGHT.vibrate();
                 }
-                e6 e6Var2 = this.G0;
-                if (e6Var2 != null && (icVar = (ic) e6Var2.c) != null && !this.k0) {
+                d6 d6Var2 = this.G0;
+                if (d6Var2 != null && (icVar = (ic) d6Var2.c) != null && !this.k0) {
                     icVar.setSeeking(true);
                 }
                 this.k0 = true;
@@ -657,7 +657,7 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
             ((ic) arrayList.get(i10)).setAudioEnabled(!D1, true);
             i10++;
         }
-        f6 currentPeerView = this.n0.getCurrentPeerView();
+        e6 currentPeerView = this.n0.getCurrentPeerView();
         if (currentPeerView != null) {
             currentPeerView.x1.a(D1, true);
         }
@@ -678,7 +678,7 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
                 w10 = true;
             }
         }
-        if (org.telegram.ui.h4.x().V) {
+        if (org.telegram.ui.i4.x().V) {
             w10 = true;
         }
         this.n0.setPaused(w10);
@@ -727,7 +727,7 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
             imageReceiver2.setAlpha(1.0f);
             gcVar.c.setVisible(true, true);
         }
-        f6 currentPeerView = this.n0.getCurrentPeerView();
+        e6 currentPeerView = this.n0.getCurrentPeerView();
         int selectedPosition = currentPeerView == null ? 0 : currentPeerView.getSelectedPosition();
         if (currentPeerView != null) {
             ArrayList arrayList = currentPeerView.v1;
@@ -908,9 +908,9 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
 
     @Override // rf.a
     public final void a(com.google.android.gms.internal.cast.p pVar) {
-        ci.l4 l4Var = this.E0;
-        if (l4Var != null) {
-            l4Var.setOnFirstFrameCallback(pVar);
+        ci.k4 k4Var = this.E0;
+        if (k4Var != null) {
+            k4Var.setOnFirstFrameCallback(pVar);
             this.A0.s(this.E0.getSink());
         }
         if (this.b) {
@@ -928,9 +928,9 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
 
     @Override // rf.a
     public final void b(com.google.android.gms.internal.cast.p pVar) {
-        ci.l4 l4Var = this.E0;
-        if (l4Var != null) {
-            l4Var.setOnFirstFrameCallback(pVar);
+        ci.k4 k4Var = this.E0;
+        if (k4Var != null) {
+            k4Var.setOnFirstFrameCallback(pVar);
         }
         if (this.b) {
             AndroidUtilities.removeFromParent(this.s);
@@ -938,9 +938,9 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
         } else {
             this.n.addView(this.s, this.r);
         }
-        ci.l4 l4Var2 = this.E0;
-        if (l4Var2 != null) {
-            l4Var2.b();
+        ci.k4 k4Var2 = this.E0;
+        if (k4Var2 != null) {
+            k4Var2.b();
             this.E0 = null;
         }
         this.s.invalidate();
@@ -949,8 +949,8 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
 
     @Override // rf.a
     public final Bitmap c() {
-        ci.l4 l4Var = this.E0;
-        if (l4Var == null || !l4Var.a()) {
+        ci.k4 k4Var = this.E0;
+        if (k4Var == null || !k4Var.a()) {
             return null;
         }
         return this.E0.getBitmap();
@@ -965,9 +965,9 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
                 zb zbVar = this.n0;
                 d9 d9Var = this.O0;
                 zbVar.D(this.h, d9Var.d, d9Var.h());
-                r7 r7Var = this.w;
-                if (r7Var != null) {
-                    TL_stories.StoryItem selectedStory = r7Var.getSelectedStory();
+                s7 s7Var = this.w;
+                if (s7Var != null) {
+                    TL_stories.StoryItem selectedStory = s7Var.getSelectedStory();
                     ArrayList arrayList = new ArrayList();
                     int i13 = 0;
                     while (i12 < this.O0.i.size()) {
@@ -1006,11 +1006,11 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
                     this.n0.getAdapter().g();
                 }
             }
-            r7 r7Var2 = this.w;
-            if (r7Var2 != null) {
-                ArrayList arrayList3 = r7Var2.h.G;
+            s7 s7Var2 = this.w;
+            if (s7Var2 != null) {
+                ArrayList arrayList3 = s7Var2.h.G;
                 while (i12 < arrayList3.size()) {
-                    ((m6) arrayList3.get(i12)).b();
+                    ((l6) arrayList3.get(i12)).b();
                     i12++;
                 }
                 return;
@@ -1056,8 +1056,8 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
 
     @Override // rf.a
     public final Bitmap e() {
-        ci.l4 l4Var = this.D0;
-        if (l4Var == null || !l4Var.a()) {
+        ci.k4 k4Var = this.D0;
+        if (k4Var == null || !k4Var.a()) {
             return null;
         }
         return this.D0.getBitmap();
@@ -1070,7 +1070,7 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
     }
 
     @Override // org.telegram.ui.ActionBar.j2
-    public final /* synthetic */ vc getBulletinFactory() {
+    public final /* synthetic */ xc getBulletinFactory() {
         return null;
     }
 
@@ -1086,9 +1086,9 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
 
     @Override // rf.a
     public final View h() {
-        ci.l4 l4Var = new ci.l4(this.D0.getContext(), this.h);
-        this.E0 = l4Var;
-        return l4Var;
+        ci.k4 k4Var = new ci.k4(this.D0.getContext(), this.h);
+        this.E0 = k4Var;
+        return k4Var;
     }
 
     @Override // org.telegram.ui.ActionBar.j2
@@ -1117,9 +1117,9 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
             if (surfaceView != null) {
                 surfaceView.setSecure(!z11);
             }
-            ci.l4 l4Var = this.D0;
-            if (l4Var != null) {
-                l4Var.setSecure(!z11);
+            ci.k4 k4Var = this.D0;
+            if (k4Var != null) {
+                k4Var.setSecure(!z11);
             }
             if (this.b) {
                 org.telegram.ui.ActionBar.n2 n2Var = this.f;
@@ -1177,12 +1177,12 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
             this.J0.lock();
             if (!z10) {
                 float f7 = this.e0;
-                r7 r7Var = this.w;
-                float f10 = r7Var.c;
+                s7 s7Var = this.w;
+                float f10 = s7Var.c;
                 if (f7 == f10) {
                     float f11 = f10 - 1.0f;
                     this.e0 = f11;
-                    r7Var.setOffset(f11);
+                    s7Var.setOffset(f11);
                 }
             }
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.e0, z10 ? this.w.c : 0.0f);
@@ -1192,10 +1192,10 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
             this.v1.addListener(new n(i10, this, z10));
             if (z10) {
                 this.v1.setDuration(350L);
-                this.v1.setInterpolator(qr.h);
+                this.v1.setInterpolator(rr.h);
             } else {
                 this.v1.setDuration(350L);
-                this.v1.setInterpolator(qr.f);
+                this.v1.setInterpolator(rr.f);
             }
             this.v1.start();
         }
@@ -1211,7 +1211,7 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
 
     @Override // org.telegram.ui.ActionBar.j2
     public final boolean onAttachedBackPressed() {
-        f6 currentPeerView;
+        e6 currentPeerView;
         boolean z10 = false;
         if (this.e0 == 0.0f) {
             zb zbVar = this.n0;
@@ -1224,22 +1224,22 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
             q(true);
             return true;
         }
-        r7 r7Var = this.w;
-        if (r7Var.x > 0) {
-            AndroidUtilities.hideKeyboard(r7Var);
+        s7 s7Var = this.w;
+        if (s7Var.x > 0) {
+            AndroidUtilities.hideKeyboard(s7Var);
             return true;
         }
-        j7 currentPage = r7Var.getCurrentPage();
+        k7 currentPage = s7Var.getCurrentPage();
         if (currentPage != null) {
-            p6 p6Var = currentPage.r;
+            o6 o6Var = currentPage.r;
             x6 x6Var = currentPage.f;
             if (x6Var != null && x6Var.b) {
                 x6Var.a();
                 return true;
             }
-            if (Math.abs(currentPage.c.getTranslationY() - p6Var.getPaddingTop()) > AndroidUtilities.dp(2.0f)) {
-                p6Var.dispatchTouchEvent(AndroidUtilities.emptyMotionEvent());
-                p6Var.x0(0);
+            if (Math.abs(currentPage.c.getTranslationY() - o6Var.getPaddingTop()) > AndroidUtilities.dp(2.0f)) {
+                o6Var.dispatchTouchEvent(AndroidUtilities.emptyMotionEvent());
+                o6Var.x0(0);
                 return true;
             }
         }
@@ -1249,11 +1249,11 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
 
     public final void p() {
         if (this.w == null) {
-            r7 r7Var = new r7(this, this.v.getContext());
-            this.w = r7Var;
-            this.v.addView(r7Var, 0);
+            s7 s7Var = new s7(this, this.v.getContext());
+            this.w = s7Var;
+            this.v.addView(s7Var, 0);
         }
-        f6 currentPeerView = this.n0.getCurrentPeerView();
+        e6 currentPeerView = this.n0.getCurrentPeerView();
         if (currentPeerView != null) {
             if (this.O0 == null) {
                 this.w.b(currentPeerView.getSelectedPosition(), currentPeerView.getCurrentPeer(), currentPeerView.getStoryItems());
@@ -1297,7 +1297,7 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
             gcVar.c = null;
             gcVar.b = null;
         }
-        AndroidUtilities.runOnUIThread(new e5(this, 2), 16L);
+        AndroidUtilities.runOnUIThread(new d5(this, 2), 16L);
         if (this.c1) {
             this.c1 = false;
         }
@@ -1308,10 +1308,10 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
             O();
             return;
         }
-        f6 currentPeerView = this.n0.getCurrentPeerView();
+        e6 currentPeerView = this.n0.getCurrentPeerView();
         if (currentPeerView != null) {
-            d6 d6Var = currentPeerView.O1;
-            if (!d6Var.j() && d6Var.e) {
+            c6 c6Var = currentPeerView.O1;
+            if (!c6Var.j() && c6Var.e) {
                 currentPeerView.c1(true);
                 return;
             }
@@ -1331,9 +1331,9 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
             this.p0 = i10;
             this.n0.setKeyboardHeight(i10);
             this.n0.requestLayout();
-            r7 r7Var = this.w;
-            if (r7Var != null) {
-                r7Var.setKeyboardHeight(i10);
+            s7 s7Var = this.w;
+            if (s7Var != null) {
+                s7Var.setKeyboardHeight(i10);
             }
         }
     }
@@ -1342,7 +1342,7 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
     public final boolean showDialog(Dialog dialog) {
         try {
             this.u0 = dialog;
-            dialog.setOnDismissListener(new g5(this, 1));
+            dialog.setOnDismissListener(new f5(this, 1));
             dialog.show();
             P();
             return true;
@@ -1353,7 +1353,7 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
         }
     }
 
-    public final f6 t() {
+    public final e6 t() {
         zb zbVar = this.n0;
         if (zbVar == null) {
             return null;
@@ -1387,9 +1387,9 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
                 ybVar.a(true);
             }
             this.J0.unlock();
-            e6 e6Var = this.G0;
-            if (e6Var != null) {
-                e6Var.b();
+            d6 d6Var = this.G0;
+            if (d6Var != null) {
+                d6Var.b();
             }
             I();
             if (this.b) {
@@ -1401,9 +1401,9 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
             this.m0 = false;
             this.d = false;
             o();
-            e5 e5Var = this.o1;
-            if (e5Var != null) {
-                e5Var.run();
+            d5 d5Var = this.o1;
+            if (d5Var != null) {
+                d5Var.run();
                 this.o1 = null;
             }
         }
@@ -1426,7 +1426,7 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
     */
     public final void y() {
         TL_stories.StoryItem storyItem;
-        f6 currentPeerView;
+        e6 currentPeerView;
         int selectedPosition;
         this.d = true;
         gc gcVar = this.s0;
@@ -1446,7 +1446,7 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
             long currentDialogId = this.n0.getCurrentDialogId();
             int i10 = this.U0;
             if (this.O0 instanceof g9) {
-                f6 currentPeerView2 = this.n0.getCurrentPeerView();
+                e6 currentPeerView2 = this.n0.getCurrentPeerView();
                 int selectedPosition2 = currentPeerView2 == null ? 0 : currentPeerView2.getSelectedPosition();
                 if (currentPeerView2 != null) {
                     ArrayList arrayList = currentPeerView2.v1;
@@ -1462,7 +1462,7 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
                 if (storyItem != null) {
                 }
             }
-            this.t0.Z(currentDialogId, i10, new e5(this, 5));
+            this.t0.Z(currentDialogId, i10, new d5(this, 5));
         }
     }
 

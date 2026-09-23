@@ -4,45 +4,45 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.view.View;
-import org.telegram.ui.Components.ek0;
+import org.telegram.ui.Components.fk0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class u4 implements ek0 {
-    public final /* synthetic */ f6 a;
+public final class u4 implements fk0 {
+    public final /* synthetic */ e6 a;
 
-    public u4(f6 f6Var) {
-        this.a = f6Var;
+    public u4(e6 e6Var) {
+        this.a = e6Var;
     }
 
-    @Override // org.telegram.ui.Components.ek0
+    @Override // org.telegram.ui.Components.fk0
     public final void h(View view, zg.p0 p0Var, boolean z10, boolean z11) {
-        f6 f6Var = this.a;
+        e6 e6Var = this.a;
         if (z10) {
-            org.telegram.ui.Components.c5.a0(f6Var.C2, 1, f6Var.B1, new t4(this, z10, p0Var, view));
+            org.telegram.ui.Components.e5.a0(e6Var.C2, 1, e6Var.B1, new t4(this, z10, p0Var, view));
         } else {
-            f6Var.n0(new s4(this, view, p0Var, z10, z11));
+            e6Var.n0(new s4(this, view, p0Var, z10, z11));
         }
     }
 
-    @Override // org.telegram.ui.Components.ek0
+    @Override // org.telegram.ui.Components.fk0
     public final /* synthetic */ boolean j() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.ek0
+    @Override // org.telegram.ui.Components.fk0
     public final boolean k() {
         return this.a.N0();
     }
 
-    @Override // org.telegram.ui.Components.ek0
+    @Override // org.telegram.ui.Components.fk0
     public final void n(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
-        f6 f6Var = this.a;
-        Paint paint = f6Var.n2;
-        com.google.firebase.messaging.n nVar = f6Var.P1;
+        e6 e6Var = this.a;
+        Paint paint = e6Var.n2;
+        com.google.firebase.messaging.n nVar = e6Var.P1;
         float f12 = -f10;
         float f13 = -f11;
-        nVar.z(f12, f13, f6Var.getMeasuredWidth() + f12, f6Var.getMeasuredHeight() + f13);
+        nVar.z(f12, f13, e6Var.getMeasuredWidth() + f12, e6Var.getMeasuredHeight() + f13);
         if (f7 > 0.0f) {
             canvas.drawRoundRect(rectF, f7, f7, (Paint) nVar.a);
             canvas.drawRoundRect(rectF, f7, f7, paint);
@@ -52,12 +52,12 @@ public final class u4 implements ek0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ek0
+    @Override // org.telegram.ui.Components.fk0
     public final void o() {
         ((ac) this.a.Q1).b(false);
     }
 
-    @Override // org.telegram.ui.Components.ek0
+    @Override // org.telegram.ui.Components.fk0
     public final /* synthetic */ boolean q() {
         return false;
     }

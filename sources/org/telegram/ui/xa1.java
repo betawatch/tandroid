@@ -1,35 +1,30 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class xa1 extends ja1 {
-    public final int v;
-    public final int w;
-    public int x;
-    public org.telegram.ui.Components.s51 y;
+public final class xa1 extends org.telegram.ui.Components.a51 {
+    public final /* synthetic */ StickersActivity b;
 
-    public xa1(Context context, int i10, int i11, ig.f fVar, int i12) {
-        super(context, i11, fVar, null);
-        this.v = i10;
-        this.w = i12;
+    public xa1(StickersActivity stickersActivity) {
+        this.b = stickersActivity;
     }
 
-    @Override // org.telegram.ui.ja1
-    public final void b(la1 la1Var) {
+    @Override // org.telegram.ui.Components.a51
+    public final void g(TLRPC.StickerSetCovered stickerSetCovered, boolean z10) {
         int i10;
-        if (la1Var == null || (i10 = this.x) < 0) {
-            return;
-        }
-        la1Var.a(this.v, this.w, i10, this.y);
+        StickersActivity stickersActivity = this.b;
+        i10 = ((org.telegram.ui.ActionBar.n2) stickersActivity).currentAccount;
+        MediaDataController.getInstance(i10).toggleStickerSet(stickersActivity.getParentActivity(), stickerSetCovered, 2, stickersActivity, false, false);
     }
 
-    @Override // org.telegram.ui.ja1
-    public final void c() {
-    }
-
-    @Override // org.telegram.ui.ja1
-    public final void f() {
+    @Override // org.telegram.ui.Components.a51
+    public final void h(TLRPC.StickerSetCovered stickerSetCovered) {
+        int i10;
+        StickersActivity stickersActivity = this.b;
+        i10 = ((org.telegram.ui.ActionBar.n2) stickersActivity).currentAccount;
+        MediaDataController.getInstance(i10).toggleStickerSet(stickersActivity.getParentActivity(), stickerSetCovered, 0, stickersActivity, false, false);
     }
 }

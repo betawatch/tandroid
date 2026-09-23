@@ -9,13 +9,13 @@ import ei.p4;
 import org.telegram.messenger.GenericProvider;
 import org.telegram.messenger.LiteMode;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.gv0;
 import org.telegram.ui.Components.hv0;
 import org.telegram.ui.Components.iv0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements d9.e, dh.d, gv0, hv0, GenericProvider, q9.d {
     public final /* synthetic */ int a;
@@ -24,7 +24,7 @@ public final /* synthetic */ class c implements d9.e, dh.d, gv0, hv0, GenericPro
         this.a = i10;
     }
 
-    public static /* bridge */ /* synthetic */ ShortcutManager a(Object obj) {
+    public static /* bridge */ /* synthetic */ ShortcutManager b(Object obj) {
         return (ShortcutManager) obj;
     }
 
@@ -43,13 +43,8 @@ public final /* synthetic */ class c implements d9.e, dh.d, gv0, hv0, GenericPro
         return lambda$getComponents$0;
     }
 
-    @Override // d9.e, i5.e
-    public Object apply(Object obj) {
-        return Integer.valueOf(((b) obj).r);
-    }
-
     @Override // org.telegram.ui.Components.hv0
-    public void b(Object obj, float f7) {
+    public void a(Object obj, float f7) {
         switch (this.a) {
             case 17:
                 k3 k3Var = (k3) obj;
@@ -69,43 +64,48 @@ public final /* synthetic */ class c implements d9.e, dh.d, gv0, hv0, GenericPro
         }
     }
 
+    @Override // d9.e, i5.e
+    public Object apply(Object obj) {
+        return Integer.valueOf(((b) obj).r);
+    }
+
     @Override // dh.d
-    public int g(e6 e6Var, boolean z10) {
+    public int g(d6 d6Var, boolean z10) {
         switch (this.a) {
             case 1:
-                return eh.b.m(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, i6.v0(i6.d6, e6Var), i6.v0(i6.Sd, e6Var));
+                return eh.b.m(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, h6.v0(h6.d6, d6Var), h6.v0(h6.Sd, d6Var));
             case 2:
                 if (!LiteMode.isEnabled(256)) {
-                    return i6.w0(null, i6.G8, false);
+                    return h6.w0(null, h6.G8, false);
                 }
-                return i6.l1(z10 ? 0.85f : 0.825f, i6.w0(null, i6.G8, false));
+                return h6.l1(z10 ? 0.85f : 0.825f, h6.w0(null, h6.G8, false));
             case 3:
-                return eh.b.m(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, i6.v0(i6.d6, e6Var), i6.v0(i6.Zk, e6Var));
+                return eh.b.m(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, h6.v0(h6.d6, d6Var), h6.v0(h6.Zk, d6Var));
             case 4:
-                return i6.l1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, i6.v0(i6.Fi, e6Var));
+                return h6.l1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, h6.v0(h6.Fi, d6Var));
             case 5:
                 return 855638016;
             case 6:
                 return TLObject.FLAG_30;
             case 7:
-                return i6.l1(0.075f, -16777216);
+                return h6.l1(0.075f, -16777216);
             case 8:
-                return i6.l1(0.88f, i6.v0(i6.d6, e6Var));
+                return h6.l1(0.88f, h6.v0(h6.d6, d6Var));
             case 9:
-                return i6.l1(z10 ? 0.85f : 0.825f, i6.w0(null, i6.G8, false));
+                return h6.l1(z10 ? 0.85f : 0.825f, h6.w0(null, h6.G8, false));
             case 10:
-                return eh.b.m(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, i6.v0(i6.d6, e6Var), i6.v0(i6.Yk, e6Var));
+                return eh.b.m(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, h6.v0(h6.d6, d6Var), h6.v0(h6.Yk, d6Var));
             case 11:
-                return i6.l1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, i6.v0(i6.d6, e6Var));
+                return h6.l1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, h6.v0(h6.d6, d6Var));
             case 12:
-                return i6.l1(0.78f, i6.v0(i6.h5, e6Var));
+                return h6.l1(0.78f, h6.v0(h6.h5, d6Var));
             case 13:
-                return i6.l1(0.7f, i6.v0(i6.d6, e6Var));
+                return h6.l1(0.7f, h6.v0(h6.d6, d6Var));
             case 14:
                 LiteMode.isEnabled(262144);
                 return 0;
             default:
-                return i6.l1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, i6.v0(i6.d6, e6Var));
+                return h6.l1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, h6.v0(h6.d6, d6Var));
         }
     }
 

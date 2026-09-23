@@ -17,24 +17,24 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class t implements c3.o {
     public static final Pattern i = Pattern.compile("LOCAL:([^,]+)");
     public static final Pattern j = Pattern.compile("MPEGTS:(-?\\d+)");
     public final String a;
     public final b0 b;
-    public final z3.l d;
+    public final z3.k d;
     public final boolean e;
     public c3.q f;
     public int h;
     public final v c = new v();
     public byte[] g = new byte[1024];
 
-    public t(String str, b0 b0Var, z3.l lVar, boolean z10) {
+    public t(String str, b0 b0Var, z3.k kVar, boolean z10) {
         this.a = str;
         this.b = b0Var;
-        this.d = lVar;
+        this.d = kVar;
         this.e = z10;
     }
 

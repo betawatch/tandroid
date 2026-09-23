@@ -1,6 +1,6 @@
 package hg;
 
-import ai.x5;
+import ai.w5;
 import android.content.Context;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import ci.i2;
-import ci.u8;
+import ci.r8;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
@@ -24,19 +24,20 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Cells.v8;
+import org.telegram.ui.Cells.w8;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.e61;
-import org.telegram.ui.Components.i51;
-import org.telegram.ui.Components.pr;
+import org.telegram.ui.Components.d61;
+import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.tp;
-import org.telegram.ui.Components.vc;
+import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.up;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
+import w7.x5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class v0 extends n2 {
     public static final int U = -1;
@@ -76,14 +77,14 @@ public final class v0 extends n2 {
     public boolean R;
     public boolean S;
     public boolean T;
-    public pr a;
+    public qr a;
     public org.telegram.ui.ActionBar.v0 b;
-    public e61 c;
+    public d61 c;
     public gg.c2 d;
     public FrameLayout e;
     public EditTextBoldCursor f;
     public View h;
-    public x5 n;
+    public w5 n;
     public TextView r;
     public ImageView s;
     public c0 v;
@@ -108,12 +109,12 @@ public final class v0 extends n2 {
         n2 U2;
         if (tL_error != null) {
             v0Var.a.a(0.0f);
-            vc.b0(tL_error);
+            xc.b0(tL_error);
             return;
         }
         if (tLObject instanceof TLRPC.TL_boolFalse) {
             v0Var.a.a(0.0f);
-            org.telegram.messenger.y0.p(R.string.UnknownError, vc.a0(v0Var), null);
+            org.telegram.messenger.z0.p(R.string.UnknownError, xc.a0(v0Var), null);
             return;
         }
         if (tLObject instanceof TLRPC.Updates) {
@@ -129,19 +130,19 @@ public final class v0 extends n2 {
                 if (user == null || (U2 = LaunchActivity.U()) == null) {
                     return;
                 }
-                c.s(R.string.BusinessBotUpdated, new Object[]{UserObject.getUserName(user)}, vc.a0(U2), R.raw.contact_check, 36);
+                c.s(R.string.BusinessBotUpdated, new Object[]{UserObject.getUserName(user)}, xc.a0(U2), R.raw.contact_check, 36);
                 return;
             }
             n2 U3 = LaunchActivity.U();
             if (U3 != null) {
-                c.s(R.string.BusinessBotDone, new Object[]{UserObject.getUserName(user)}, vc.a0(U3), R.raw.contact_check, 36);
+                c.s(R.string.BusinessBotDone, new Object[]{UserObject.getUserName(user)}, xc.a0(U3), R.raw.contact_check, 36);
             }
         }
     }
 
-    public static void W(final v0 v0Var, i51 i51Var, final View view) {
-        if (i51Var.g && !v0Var.v.h(i51Var)) {
-            int i10 = i51Var.d;
+    public static void W(final v0 v0Var, h51 h51Var, final View view) {
+        if (h51Var.g && !v0Var.v.h(h51Var)) {
+            int i10 = h51Var.d;
             if (i10 == U) {
                 c0 c0Var = v0Var.v;
                 v0Var.I = true;
@@ -164,8 +165,8 @@ public final class v0 extends n2 {
                 v0Var.Y(true);
                 return;
             }
-            if (i51Var.a == 13) {
-                TLRPC.User user = (TLRPC.User) v0Var.N.get(i51Var.x);
+            if (h51Var.a == 13) {
+                TLRPC.User user = (TLRPC.User) v0Var.N.get(h51Var.x);
                 if (user == null) {
                     return;
                 }
@@ -186,7 +187,7 @@ public final class v0 extends n2 {
             if (i10 == X) {
                 boolean z10 = !v0Var.P;
                 v0Var.P = z10;
-                ((v8) view).setChecked(z10);
+                ((w8) view).setChecked(z10);
                 v0Var.c.Y2.N(true);
                 return;
             }
@@ -235,7 +236,7 @@ public final class v0 extends n2 {
             if (i10 == d0) {
                 boolean z15 = !v0Var.Q;
                 v0Var.Q = z15;
-                ((v8) view).setChecked(z15);
+                ((w8) view).setChecked(z15);
                 v0Var.c.Y2.N(true);
                 return;
             }
@@ -352,7 +353,7 @@ public final class v0 extends n2 {
             if (i10 == i0) {
                 boolean z19 = !v0Var.R;
                 v0Var.R = z19;
-                ((v8) view).setChecked(z19);
+                ((w8) view).setChecked(z19);
                 v0Var.c.Y2.N(true);
                 return;
             }
@@ -931,9 +932,9 @@ public final class v0 extends n2 {
             }
             this.w = z11;
             ViewPropertyAnimator duration = this.r.animate().alpha(z11 ? 0.0f : 1.0f).translationY(z11 ? -AndroidUtilities.dp(8.0f) : 0.0f).setDuration(320L);
-            qr qrVar = qr.h;
-            duration.setInterpolator(qrVar).start();
-            this.s.animate().alpha(z11 ? 1.0f : 0.0f).translationY(z11 ? 0.0f : AndroidUtilities.dp(8.0f)).setDuration(320L).setInterpolator(qrVar).start();
+            rr rrVar = rr.h;
+            duration.setInterpolator(rrVar).start();
+            this.s.animate().alpha(z11 ? 1.0f : 0.0f).translationY(z11 ? 0.0f : AndroidUtilities.dp(8.0f)).setDuration(320L).setInterpolator(rrVar).start();
         }
     }
 
@@ -944,21 +945,21 @@ public final class v0 extends n2 {
         this.actionBar.setTitle(LocaleController.getString(R.string.BusinessBots2));
         this.actionBar.setActionBarMenuOnItemClick(new ei.t(this, 11));
         Drawable mutate = context.getResources().getDrawable(R.drawable.ic_ab_done).mutate();
-        int i10 = i6.v8;
-        mutate.setColorFilter(new PorterDuffColorFilter(i6.w0(null, i10, false), PorterDuff.Mode.MULTIPLY));
-        this.a = new pr(mutate, new tp(i6.w0(null, i10, false)));
+        int i10 = h6.v8;
+        mutate.setColorFilter(new PorterDuffColorFilter(h6.w0(null, i10, false), PorterDuff.Mode.MULTIPLY));
+        this.a = new qr(mutate, new up(h6.w0(null, i10, false)));
         this.b = this.actionBar.n().i(AndroidUtilities.dp(56.0f), LocaleController.getString(R.string.Done), this.a);
         Y(false);
         FrameLayout frameLayout = new FrameLayout(context);
-        frameLayout.setBackgroundColor(i6.w0(null, i6.a7, false));
+        frameLayout.setBackgroundColor(h6.w0(null, h6.a7, false));
         new LinearLayout(getParentActivity()).setOrientation(0);
         EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(getParentActivity());
         this.f = editTextBoldCursor;
         editTextBoldCursor.setTextSize(1, 17.0f);
-        this.f.setHintTextColor(i6.w0(null, i6.H6, false));
+        this.f.setHintTextColor(h6.w0(null, h6.H6, false));
         EditTextBoldCursor editTextBoldCursor2 = this.f;
-        int i11 = i6.G6;
-        editTextBoldCursor2.setTextColor(i6.w0(null, i11, false));
+        int i11 = h6.G6;
+        editTextBoldCursor2.setTextColor(h6.w0(null, i11, false));
         this.f.setBackgroundDrawable(null);
         this.f.setMaxLines(1);
         this.f.setLines(1);
@@ -968,41 +969,41 @@ public final class v0 extends n2 {
         this.f.setInputType(180224);
         this.f.setImeOptions(6);
         this.f.setHint(LocaleController.getString(R.string.BusinessBotLink));
-        this.f.setCursorColor(i6.w0(null, i11, false));
+        this.f.setCursorColor(h6.w0(null, i11, false));
         this.f.setCursorSize(AndroidUtilities.dp(19.0f));
         this.f.setCursorWidth(1.5f);
         this.f.setOnEditorActionListener(new u0(this, 0));
         this.f.addTextChangedListener(new i2(this, 2));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.e = frameLayout2;
-        frameLayout2.addView(this.f, w7.x5.d(-1, -1.0f, 48, 21.0f, 15.0f, 21.0f, 15.0f));
+        frameLayout2.addView(this.f, x5.d(-1, -1.0f, 48, 21.0f, 15.0f, 21.0f, 15.0f));
         FrameLayout frameLayout3 = this.e;
-        int i12 = i6.d6;
+        int i12 = h6.d6;
         frameLayout3.setBackgroundColor(getThemedColor(i12));
         View view = new View(context);
         this.h = view;
-        view.setBackgroundColor(getThemedColor(i6.d7));
+        view.setBackgroundColor(getThemedColor(h6.d7));
         FrameLayout frameLayout4 = this.e;
         View view2 = this.h;
         float f7 = 1.0f / AndroidUtilities.density;
         boolean z10 = LocaleController.isRTL;
-        frameLayout4.addView(view2, w7.x5.d(-1, f7, 87, z10 ? 0 : 21, 0.0f, z10 ? 21 : 0, 0.0f));
-        x5 x5Var = new x5(context, 3);
-        this.n = x5Var;
-        x5Var.setBackgroundColor(getThemedColor(i12));
+        frameLayout4.addView(view2, x5.d(-1, f7, 87, z10 ? 0 : 21, 0.0f, z10 ? 21 : 0, 0.0f));
+        w5 w5Var = new w5(context, 3);
+        this.n = w5Var;
+        w5Var.setBackgroundColor(getThemedColor(i12));
         TextView textView = new TextView(context);
         this.r = textView;
         textView.setText(LocaleController.getString(R.string.BusinessBotNotFound));
         this.r.setTextSize(1, 14.0f);
         TextView textView2 = this.r;
-        int i13 = i6.z6;
+        int i13 = h6.z6;
         textView2.setTextColor(getThemedColor(i13));
-        this.n.addView(this.r, w7.x5.e(-2, -2, 17));
+        this.n.addView(this.r, x5.e(-2, -2, 17));
         this.s = new ImageView(context);
-        u8 u8Var = new u8(getThemedColor(i13));
+        r8 r8Var = new r8(getThemedColor(i13));
         this.s.setScaleType(ImageView.ScaleType.CENTER);
-        this.s.setImageDrawable(u8Var);
-        this.n.addView(this.s, w7.x5.e(-2, -2, 17));
+        this.s.setImageDrawable(r8Var);
+        this.n.addView(this.s, x5.e(-2, -2, 17));
         this.s.setAlpha(0.0f);
         this.s.setTranslationY(AndroidUtilities.dp(8.0f));
         gg.c2 c2Var = new gg.c2(true);
@@ -1012,12 +1013,12 @@ public final class v0 extends n2 {
         this.v = c0Var;
         TL_account.TL_connectedBot tL_connectedBot = this.H;
         c0Var.i(tL_connectedBot == null ? null : tL_connectedBot.recipients);
-        e61 e61Var = new e61(this, new bi.v(this, 24), new r0(this, 3), null);
-        this.c = e61Var;
-        e61Var.p1();
-        e61 e61Var2 = this.c;
-        e61Var2.Y2.r = false;
-        frameLayout.addView(e61Var2, w7.x5.c(-1.0f, -1));
+        d61 d61Var = new d61(this, new bi.v(this, 24), new r0(this, 3), null);
+        this.c = d61Var;
+        d61Var.p1();
+        d61 d61Var2 = this.c;
+        d61Var2.Y2.r = false;
+        frameLayout.addView(d61Var2, x5.c(-1.0f, -1));
         this.actionBar.z(this.c, true);
         this.fragmentView = frameLayout;
         return frameLayout;
@@ -1060,7 +1061,7 @@ public final class v0 extends n2 {
     public final boolean onFragmentCreate() {
         if (!this.S && !this.T) {
             this.S = true;
-            g.a(this.currentAccount).c(new ai.y1(this, 21));
+            g.a(this.currentAccount).c(new ai.y1(this, 24));
         }
         return super.onFragmentCreate();
     }

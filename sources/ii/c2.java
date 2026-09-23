@@ -1,141 +1,100 @@
 package ii;
 
+import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
-import android.graphics.Outline;
-import android.graphics.Paint;
-import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.graphics.Rect;
-import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.messenger.R;
+import org.telegram.messenger.ul;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class c2 extends Drawable implements Drawable.Callback {
-    public final Drawable a;
-    public final Paint b;
-    public final Path c;
-    public final RectF d;
-    public final Outline e;
-    public boolean f;
+public final class c2 extends Drawable {
+    public final Context a;
+    public final Drawable b;
+    public Drawable c;
+    public int d;
+    public int e;
+    public Drawable f;
+    public boolean g;
 
-    public c2(Drawable drawable) {
-        Paint paint = new Paint(1);
-        this.b = paint;
-        this.c = new Path();
-        this.d = new RectF();
-        this.e = new Outline();
-        this.f = true;
-        this.a = drawable;
-        drawable.setCallback(this);
-        paint.setColor(0);
-        if (i6.I.q()) {
-            paint.setShadowLayer(AndroidUtilities.dp(12.0f), 0.0f, AndroidUtilities.dp(4.0f), i6.l1(0.3f, -16777216));
-        } else {
-            paint.setShadowLayer(AndroidUtilities.dp(12.0f), 0.0f, AndroidUtilities.dp(4.0f), i6.l1(0.1f, -16777216));
+    public c2(Context context, int i10) {
+        Drawable mutate = context.getResources().getDrawable(i10).mutate();
+        this.d = org.telegram.ui.ActionBar.h6.d6;
+        this.g = true;
+        this.a = context;
+        this.b = mutate;
+    }
+
+    public final void a(boolean z10) {
+        if (this.g == z10) {
+            return;
         }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0031  */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x002b  */
-    @Override // android.graphics.drawable.Drawable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void draw(Canvas canvas) {
-        float radius;
-        boolean z10 = this.f;
-        Drawable drawable = this.a;
-        Path path = this.c;
-        if (z10) {
-            Outline outline = this.e;
-            path.reset();
-            Rect bounds = getBounds();
-            RectF rectF = this.d;
-            rectF.set(bounds);
-            if (Build.VERSION.SDK_INT >= 24) {
-                try {
-                    drawable.getOutline(outline);
-                    radius = outline.getRadius();
-                } catch (Throwable unused) {
-                }
-                if (radius <= 0.0f) {
-                    path.addRoundRect(rectF, radius, radius, Path.Direction.CW);
-                } else {
-                    path.addRect(rectF, Path.Direction.CW);
-                }
-                this.f = false;
-            }
-            radius = -1.0f;
-            if (radius <= 0.0f) {
-            }
-            this.f = false;
-        }
-        canvas.drawPath(path, this.b);
-        drawable.draw(canvas);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -3;
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void invalidateDrawable(Drawable drawable) {
+        this.g = z10;
         invalidateSelf();
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final boolean isStateful() {
-        return this.a.isStateful();
+    public final void draw(Canvas canvas) {
+        Rect bounds = getBounds();
+        int centerX = bounds.centerX();
+        int centerY = bounds.centerY();
+        Drawable drawable = this.b;
+        drawable.setBounds(ul.x(2, centerX, drawable), ul.e(2, centerY, drawable), ul.B(2, centerX, drawable), ul.z(2, centerY, drawable));
+        drawable.draw(canvas);
+        if (this.g) {
+            int dp = AndroidUtilities.dp(9.0f) + centerX;
+            int dp2 = AndroidUtilities.dp(9.0f) + centerY;
+            int w02 = org.telegram.ui.ActionBar.h6.w0(null, this.d, false);
+            Drawable drawable2 = this.c;
+            Context context = this.a;
+            if (drawable2 == null) {
+                Drawable mutate = context.getResources().getDrawable(R.drawable.star_premium_cutout).mutate();
+                this.c = mutate;
+                this.e = w02;
+                mutate.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN));
+            }
+            if (w02 != this.e) {
+                Drawable drawable3 = this.c;
+                this.e = w02;
+                drawable3.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN));
+            }
+            if (this.f == null) {
+                this.f = context.getResources().getDrawable(R.drawable.star_premium).mutate();
+            }
+            this.c.setBounds(dp - AndroidUtilities.dp(9.0f), dp2 - AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f) + dp, AndroidUtilities.dp(9.0f) + dp2);
+            this.c.draw(canvas);
+            this.f.setBounds(dp - AndroidUtilities.dp(9.0f), dp2 - AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f) + dp, AndroidUtilities.dp(9.0f) + dp2);
+            this.f.draw(canvas);
+        }
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void jumpToCurrentState() {
-        this.a.jumpToCurrentState();
+    public final int getIntrinsicHeight() {
+        return Math.max(AndroidUtilities.dp(38.0f), this.b.getIntrinsicHeight());
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        this.a.setBounds(rect);
-        this.f = true;
+    public final int getIntrinsicWidth() {
+        return Math.max(AndroidUtilities.dp(38.0f), this.b.getIntrinsicWidth());
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final boolean onStateChange(int[] iArr) {
-        return this.a.setState(iArr);
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j3) {
-        scheduleSelf(runnable, j3);
+    public final int getOpacity() {
+        return this.b.getOpacity();
     }
 
     @Override // android.graphics.drawable.Drawable
     public final void setAlpha(int i10) {
-        this.a.setAlpha(i10);
+        this.b.setAlpha(i10);
     }
 
     @Override // android.graphics.drawable.Drawable
     public final void setColorFilter(ColorFilter colorFilter) {
-        this.a.setColorFilter(colorFilter);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setHotspot(float f7, float f10) {
-        this.a.setHotspot(f7, f10);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setHotspotBounds(int i10, int i11, int i12, int i13) {
-        this.a.setHotspotBounds(i10, i11, i12, i13);
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
-        unscheduleSelf(runnable);
+        this.b.setColorFilter(colorFilter);
     }
 }

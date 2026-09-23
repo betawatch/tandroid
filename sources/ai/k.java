@@ -12,18 +12,18 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.b80;
-import org.telegram.ui.Components.g80;
-import org.telegram.ui.bo;
-import org.telegram.ui.f10;
-import org.telegram.ui.i60;
-import org.telegram.ui.l50;
-import org.telegram.ui.mk;
-import org.telegram.ui.vh1;
+import org.telegram.ui.Components.c80;
+import org.telegram.ui.Components.h80;
+import org.telegram.ui.c10;
+import org.telegram.ui.f60;
+import org.telegram.ui.i50;
+import org.telegram.ui.jk;
+import org.telegram.ui.nh1;
+import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class k implements t9, vh1, m4.f1, org.telegram.ui.ActionBar.a2, yf.m, MessagesController.ErrorDelegate, vh.l {
+public final /* synthetic */ class k implements t9, nh1, m4.a1, e2.h, org.telegram.ui.ActionBar.a2, yf.m, MessagesController.ErrorDelegate, vh.l {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -34,7 +34,7 @@ public final /* synthetic */ class k implements t9, vh1, m4.f1, org.telegram.ui.
         this.b = z10;
     }
 
-    @Override // org.telegram.ui.vh1
+    @Override // org.telegram.ui.nh1
     public void a(int i10, ArrayList arrayList) {
         switch (this.a) {
             case 1:
@@ -62,21 +62,21 @@ public final /* synthetic */ class k implements t9, vh1, m4.f1, org.telegram.ui.
                 c0Var.e.run();
                 break;
             default:
-                f10 f10Var = (f10) this.c;
-                LongSparseIntArray longSparseIntArray = f10Var.H;
-                f10Var.y = i10;
+                c10 c10Var = (c10) this.c;
+                LongSparseIntArray longSparseIntArray = c10Var.H;
+                c10Var.y = i10;
                 if (this.b) {
-                    f10Var.o0(f10Var.F, arrayList, true);
-                    f10Var.F = arrayList;
-                    for (int i12 = 0; i12 < f10Var.F.size(); i12++) {
-                        f10Var.G.remove(f10Var.F.get(i12));
+                    c10Var.o0(c10Var.F, arrayList, true);
+                    c10Var.F = arrayList;
+                    for (int i12 = 0; i12 < c10Var.F.size(); i12++) {
+                        c10Var.G.remove(c10Var.F.get(i12));
                     }
                     ArrayList arrayList4 = new ArrayList();
                     int size = longSparseIntArray.size();
                     for (int i13 = 0; i13 < size; i13++) {
                         long keyAt = longSparseIntArray.keyAt(i13);
                         Long valueOf = Long.valueOf(keyAt);
-                        if (!DialogObject.isEncryptedDialog(keyAt) && !f10Var.F.contains(valueOf)) {
+                        if (!DialogObject.isEncryptedDialog(keyAt) && !c10Var.F.contains(valueOf)) {
                             arrayList4.add(valueOf);
                         }
                     }
@@ -85,19 +85,24 @@ public final /* synthetic */ class k implements t9, vh1, m4.f1, org.telegram.ui.
                         longSparseIntArray.delete(((Long) arrayList4.get(i14)).longValue());
                     }
                 } else {
-                    f10Var.o0(f10Var.G, arrayList, false);
-                    f10Var.G = arrayList;
-                    for (int i15 = 0; i15 < f10Var.G.size(); i15++) {
-                        Long l4 = (Long) f10Var.G.get(i15);
-                        f10Var.F.remove(l4);
+                    c10Var.o0(c10Var.G, arrayList, false);
+                    c10Var.G = arrayList;
+                    for (int i15 = 0; i15 < c10Var.G.size(); i15++) {
+                        Long l4 = (Long) c10Var.G.get(i15);
+                        c10Var.F.remove(l4);
                         longSparseIntArray.delete(l4.longValue());
                     }
                 }
-                f10Var.j0();
-                f10Var.i0(false);
-                f10Var.w0();
+                c10Var.j0();
+                c10Var.i0(false);
+                c10Var.w0();
                 break;
         }
+    }
+
+    @Override // e2.h
+    public void accept(Object obj) {
+        ((m4.f1) obj).K0((b2.e) this.c, this.b);
     }
 
     @Override // ai.t9
@@ -119,38 +124,38 @@ public final /* synthetic */ class k implements t9, vh1, m4.f1, org.telegram.ui.
 
     @Override // yf.m
     public void e(long j3) {
-        org.telegram.ui.Components.m6 m6Var = ((org.telegram.ui.Cells.t1) this.c).w4;
-        if (m6Var != null) {
-            m6Var.q(LocaleController.formatPollEndTime((int) j3, this.b), true, true);
+        org.telegram.ui.Components.o6 o6Var = ((org.telegram.ui.Cells.t1) this.c).w4;
+        if (o6Var != null) {
+            o6Var.q(LocaleController.formatPollEndTime((int) j3, this.b), true, true);
         }
     }
 
     @Override // org.telegram.ui.ActionBar.a2
     public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
-            case 4:
+            case 5:
                 org.telegram.ui.z6.V((org.telegram.ui.z6) this.c, this.b);
                 break;
-            case 5:
-            default:
-                i60 i60Var = ((l50) this.c).b;
-                i60Var.a1.toggleRecord(null, 0);
-                i60Var.k1().j(this.b ? 101 : 40, 0L, null);
-                break;
             case 6:
-                bo boVar = (bo) this.c;
-                mk mkVar = boVar.Y;
-                if (mkVar != null) {
+            default:
+                f60 f60Var = ((i50) this.c).b;
+                f60Var.a1.toggleRecord(null, 0);
+                f60Var.k1().j(this.b ? 101 : 40, 0L, null);
+                break;
+            case 7:
+                xn xnVar = (xn) this.c;
+                jk jkVar = xnVar.Y;
+                if (jkVar != null) {
                     if (!this.b) {
-                        mkVar.B();
+                        jkVar.B();
                         break;
                     } else {
-                        boVar.finishFragment();
+                        xnVar.finishFragment();
                         break;
                     }
                 }
                 break;
-            case 7:
+            case 8:
                 Activity activity = (Activity) this.c;
                 if (activity != null && Build.VERSION.SDK_INT >= 23) {
                     if (this.b && sf.c.a(activity) == -2) {
@@ -173,7 +178,7 @@ public final /* synthetic */ class k implements t9, vh1, m4.f1, org.telegram.ui.
         }
     }
 
-    @Override // m4.f1
+    @Override // m4.a1
     public Object h(m4.a0 a0Var, m4.r rVar, int i10) {
         switch (this.a) {
             case 2:
@@ -207,11 +212,11 @@ public final /* synthetic */ class k implements t9, vh1, m4.f1, org.telegram.ui.
 
     @Override // org.telegram.messenger.MessagesController.ErrorDelegate
     public boolean run(TLRPC.TL_error tL_error) {
-        g80 g80Var = (g80) this.c;
+        h80 h80Var = (h80) this.c;
         if (tL_error != null && "INVITE_REQUEST_SENT".equals(tL_error.text)) {
-            g80Var.setOnDismissListener(new b80(0, g80Var, this.b));
+            h80Var.setOnDismissListener(new c80(0, h80Var, this.b));
         }
-        g80Var.dismiss();
+        h80Var.dismiss();
         return false;
     }
 }

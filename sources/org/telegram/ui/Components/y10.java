@@ -1,214 +1,75 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.PorterDuff;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
+import android.graphics.Paint;
+import android.graphics.Path;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class y10 extends FrameLayout implements le.d {
-    public final le.b a;
-    public final le.b b;
-    public final aj0 c;
-    public final RadialProgressView d;
-    public final org.telegram.ui.ActionBar.e6 e;
-    public ArrayList f;
-    public final boolean h;
-    public final fh.c n;
-    public final ch.f r;
-    public final ci.f s;
-    public float v;
-    public float w;
-    public boolean x;
+public final class y10 {
+    public x10[] a;
+    public x10 b;
+    public x10 c;
+    public x10 d;
+    public float e;
+    public float f;
+    public float g;
+    public float h;
+    public float i;
+    public long j;
+    public float k;
+    public ArrayList l;
+    public Paint m;
+    public Path n;
 
-    public y10(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        this(context, e6Var, false);
+    public final void a(float f7) {
+        this.g = f7;
+        float f10 = this.e;
+        this.h = (f7 - f10) / 250.0f;
+        this.i = (f7 - f10) / 120.0f;
     }
 
-    public static FrameLayout.LayoutParams b() {
-        return w7.x5.d(48, 48.0f, (LocaleController.isRTL ? 3 : 5) | 80, 20.0f, 0.0f, 20.0f, 14.0f);
-    }
-
-    public static FrameLayout.LayoutParams c() {
-        return w7.x5.d(48, 48.0f, (LocaleController.isRTL ? 3 : 5) | 80, 20.0f, 0.0f, 20.0f, 14.0f);
-    }
-
-    public static void d(View view, float f7) {
-        if (view == null) {
-            return;
-        }
-        view.setAlpha(f7);
-        view.setScaleX(AndroidUtilities.lerp(0.4f, 1.0f, f7));
-        view.setScaleY(AndroidUtilities.lerp(0.4f, 1.0f, f7));
-        view.setVisibility(f7 > 0.0f ? 0 : 8);
-    }
-
-    private void setAdditionalTranslationY(float f7) {
-        if (this.v != f7) {
-            this.x = true;
-            super.setTranslationY(this.w + f7);
-            this.x = false;
-            this.v = f7;
-        }
-    }
-
-    @Override // le.d
-    public final void D(int i10, float f7, float f10, le.e eVar) {
-        int i11 = 0;
-        if (i10 == 0) {
-            d(this, f7);
-            setClickable(f7 >= 0.99f);
-            setAdditionalTranslationY((1.0f - f7) * AndroidUtilities.dp(this.h ? 64.0f : 40.0f));
-        } else if (i10 == 1) {
-            d(this.d, f7);
-            float f11 = 1.0f - f7;
-            d(this.c, f11);
-            ArrayList arrayList = this.f;
-            if (arrayList != null) {
-                int size = arrayList.size();
-                while (i11 < size) {
-                    Object obj = arrayList.get(i11);
-                    i11++;
-                    d((View) obj, f11);
-                }
+    public final void b(int i10, boolean z10) {
+        x10 x10Var = this.b;
+        if (x10Var == null || x10Var.i != i10) {
+            if (VoIPService.getSharedInstance() == null && this.b == null) {
+                this.b = this.d;
+                return;
+            }
+            x10 x10Var2 = z10 ? this.b : null;
+            this.c = x10Var2;
+            this.b = this.a[i10];
+            if (x10Var2 != null) {
+                this.k = 0.0f;
+            } else {
+                this.k = 1.0f;
             }
         }
     }
 
-    public final void a(View view) {
-        if (this.f == null) {
-            this.f = new ArrayList();
+    public final void c(boolean z10) {
+        VoIPService sharedInstance = VoIPService.getSharedInstance();
+        if (sharedInstance != null) {
+            int callState = sharedInstance.getCallState();
+            if (!sharedInstance.isSwitchingStream() && (callState == 1 || callState == 2 || callState == 6 || callState == 5)) {
+                b(2, z10);
+                return;
+            }
+            ChatObject.Call call = sharedInstance.groupCall;
+            if (call == null) {
+                b(sharedInstance.isMicMute() ? 1 : 0, z10);
+                return;
+            }
+            TLRPC.GroupCallParticipant groupCallParticipant = (TLRPC.GroupCallParticipant) call.participants.f(sharedInstance.getSelfId());
+            if ((groupCallParticipant == null || groupCallParticipant.can_self_unmute || !groupCallParticipant.muted || ChatObject.canManageCalls(sharedInstance.getChat())) && !sharedInstance.groupCall.call.rtmp_stream) {
+                b(sharedInstance.isMicMute() ? 1 : 0, z10);
+            } else {
+                sharedInstance.setMicMute(true, false, false);
+                b(3, z10);
+            }
         }
-        this.f.add(view);
-        d(view, 1.0f - this.b.e);
-    }
-
-    @Override // android.view.View
-    public final void draw(Canvas canvas) {
-        ch.f fVar = this.r;
-        if (fVar != null) {
-            fVar.draw(canvas);
-        }
-        super.draw(canvas);
-    }
-
-    public final void e(boolean z10, boolean z11) {
-        this.a.a(z10, z11);
-    }
-
-    public final void f(boolean z10, boolean z11) {
-        this.b.a(z10, z11);
-    }
-
-    public final void g() {
-        boolean z10 = this.h;
-        RadialProgressView radialProgressView = this.d;
-        aj0 aj0Var = this.c;
-        org.telegram.ui.ActionBar.e6 e6Var = this.e;
-        if (!z10) {
-            int i10 = org.telegram.ui.ActionBar.i6.O9;
-            aj0Var.setColorFilter(org.telegram.ui.ActionBar.i6.v0(i10, e6Var), PorterDuff.Mode.SRC_IN);
-            radialProgressView.setProgressColor(org.telegram.ui.ActionBar.i6.v0(i10, e6Var));
-            setBackground(org.telegram.ui.ActionBar.i6.h0(AndroidUtilities.dp(48.0f), org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.Oh, e6Var), org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.Qh, e6Var)));
-            return;
-        }
-        int i11 = org.telegram.ui.ActionBar.i6.v8;
-        aj0Var.setColorFilter(org.telegram.ui.ActionBar.i6.v0(i11, e6Var), PorterDuff.Mode.SRC_IN);
-        radialProgressView.setProgressColor(org.telegram.ui.ActionBar.i6.v0(i11, e6Var));
-        this.n.a(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.d6, false));
-        this.s.d();
-        this.r.v();
-        invalidate();
-        int dp = AndroidUtilities.dp(18.0f);
-        int v02 = org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.i6, e6Var);
-        int dp2 = AndroidUtilities.dp(6.0f);
-        setBackground(org.telegram.ui.ActionBar.i6.W(dp, v02, dp2, dp2, dp2, dp2));
-    }
-
-    public boolean getButtonVisible() {
-        return this.a.f;
-    }
-
-    public boolean getProgressVisible() {
-        return this.b.f;
-    }
-
-    @Override // android.view.View
-    public float getTranslationY() {
-        return this.x ? super.getTranslationY() : this.w;
-    }
-
-    @Override // android.view.View
-    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
-        super.onSizeChanged(i10, i11, i12, i13);
-        ch.f fVar = this.r;
-        if (fVar != null) {
-            fVar.setBounds(0, 0, i10, i11);
-        }
-    }
-
-    public void setImageResource(int i10) {
-        this.c.setImageResource(i10);
-    }
-
-    @Override // android.view.View
-    public void setTranslationY(float f7) {
-        if (this.w != f7) {
-            this.x = true;
-            super.setTranslationY(this.v + f7);
-            this.x = false;
-            this.w = f7;
-        }
-    }
-
-    public y10(Context context, org.telegram.ui.ActionBar.e6 e6Var, boolean z10) {
-        super(context);
-        qr qrVar = qr.h;
-        this.a = new le.b(0, this, qrVar, 380L, true);
-        this.b = new le.b(1, this, qrVar, 380L, false);
-        this.e = e6Var;
-        this.h = z10;
-        aj0 aj0Var = new aj0(context);
-        this.c = aj0Var;
-        aj0Var.setScaleType(ImageView.ScaleType.CENTER);
-        addView(aj0Var, w7.x5.c(-1.0f, -1));
-        RadialProgressView radialProgressView = new RadialProgressView(context, null);
-        this.d = radialProgressView;
-        radialProgressView.setSize(AndroidUtilities.dp(18.0f));
-        radialProgressView.setStrokeWidth(2.0f);
-        addView(radialProgressView, w7.x5.c(-1.0f, -1));
-        d(radialProgressView, 0.0f);
-        w7.z5.a(this);
-        if (!z10) {
-            setOutlineProvider(yf.i0.a);
-            setTranslationZ(AndroidUtilities.dpf2(0.5f));
-        }
-        if (z10) {
-            ci.f fVar = new ci.f(org.telegram.ui.ActionBar.i6.h5, null);
-            this.s = fVar;
-            fh.c cVar = new fh.c();
-            this.n = cVar;
-            ch.f fVar2 = new ch.f(cVar);
-            this.r = fVar2;
-            fVar2.o(fVar);
-            float dpf2 = AndroidUtilities.dpf2(0.4f);
-            float dpf22 = AndroidUtilities.dpf2(0.4f);
-            ch.c cVar2 = fVar2.j;
-            cVar2.i = dpf2;
-            cVar2.j = dpf22;
-            fVar2.q(AndroidUtilities.dp(18.0f));
-            fVar2.p(AndroidUtilities.dp(5.66f));
-        }
-        g();
-    }
-
-    @Override // le.d
-    public final /* synthetic */ void C(float f7, int i10) {
     }
 }

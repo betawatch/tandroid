@@ -20,12 +20,12 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public abstract class vo0 extends org.telegram.ui.ActionBar.n1 {
     public boolean A;
     public so0 B;
-    public ny C;
+    public oy C;
     public boolean D;
     public int E;
     public int F;
@@ -37,26 +37,26 @@ public abstract class vo0 extends org.telegram.ui.ActionBar.n1 {
     public TLRPC.TL_channels_sendAsPeers s;
     public ai.f0 t;
     public View u;
-    public ll0 v;
+    public ml0 v;
     public s4.c0 w;
     public Boolean x;
     public boolean y;
     public ArrayList z;
 
-    public static void k(cf cfVar, List list, Context context, org.telegram.ui.bo boVar, boolean z10, ai.r5 r5Var, View view, int i10) {
+    public static void k(ef efVar, List list, Context context, org.telegram.ui.xn xnVar, boolean z10, ai.q5 q5Var, View view, int i10) {
         TLRPC.User user;
         TLRPC.TL_sendAsPeer tL_sendAsPeer = (TLRPC.TL_sendAsPeer) list.get(i10);
-        if (cfVar.y) {
+        if (efVar.y) {
             return;
         }
         if (!tL_sendAsPeer.premium_required || UserConfig.getInstance(UserConfig.selectedAccount).isPremium()) {
-            cfVar.y = true;
-            ll0 ll0Var = cfVar.v;
+            efVar.y = true;
+            ml0 ml0Var = efVar.v;
             uo0 uo0Var = (uo0) view;
             TLRPC.Peer peer = tL_sendAsPeer.peer;
-            ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) r5Var.b;
-            TLRPC.ChatFull chatFull = (TLRPC.ChatFull) r5Var.c;
-            MessagesController messagesController = (MessagesController) r5Var.d;
+            ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) q5Var.b;
+            TLRPC.ChatFull chatFull = (TLRPC.ChatFull) q5Var.c;
+            MessagesController messagesController = (MessagesController) q5Var.d;
             if (chatActivityEnterView.q0 == null) {
                 return;
             }
@@ -64,8 +64,8 @@ public abstract class vo0 extends org.telegram.ui.ActionBar.n1 {
                 chatFull.default_send_as = peer;
             }
             chatActivityEnterView.Q1(true);
-            mg mgVar = chatActivityEnterView.Y2;
-            if (mgVar == null || !mgVar.f1(DialogObject.getPeerDialogId(peer))) {
+            ng ngVar = chatActivityEnterView.Y2;
+            if (ngVar == null || !ngVar.f1(DialogObject.getPeerDialogId(peer))) {
                 messagesController.setDefaultSendAs(chatActivityEnterView.P2, DialogObject.getPeerDialogId(peer));
             }
             int[] iArr = new int[2];
@@ -86,13 +86,13 @@ public abstract class vo0 extends org.telegram.ui.ActionBar.n1 {
                     fv0Var2.setAvatar(user);
                 }
             }
-            for (int i11 = 0; i11 < ll0Var.getChildCount(); i11++) {
-                View childAt = ll0Var.getChildAt(i11);
+            for (int i11 = 0; i11 < ml0Var.getChildCount(); i11++) {
+                View childAt = ml0Var.getChildAt(i11);
                 if ((childAt instanceof uo0) && childAt != uo0Var) {
                     ((uo0) childAt).a.a(false, true);
                 }
             }
-            AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.n5(chatActivityEnterView, fv0Var2, iArr, uo0Var, 18), isSelected ? 0L : 200L);
+            AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.m5(chatActivityEnterView, fv0Var2, iArr, uo0Var, 18), isSelected ? 0L : 200L);
             return;
         }
         try {
@@ -100,14 +100,14 @@ public abstract class vo0 extends org.telegram.ui.ActionBar.n1 {
         } catch (Exception unused) {
         }
         WindowManager windowManager = (WindowManager) context.getSystemService("window");
-        if (cfVar.B == null) {
-            cfVar.B = new so0(cfVar, context);
+        if (efVar.B == null) {
+            efVar.B = new so0(efVar, context);
         }
-        ny nyVar = cfVar.C;
-        if (nyVar != null) {
-            AndroidUtilities.cancelRunOnUIThread(nyVar);
+        oy oyVar = efVar.C;
+        if (oyVar != null) {
+            AndroidUtilities.cancelRunOnUIThread(oyVar);
         }
-        if (cfVar.B.getParent() == null) {
+        if (efVar.B.getParent() == null) {
             WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
             layoutParams.height = -1;
             layoutParams.width = -1;
@@ -118,30 +118,30 @@ public abstract class vo0 extends org.telegram.ui.ActionBar.n1 {
             if (i12 >= 28) {
                 layoutParams.layoutInDisplayCutoutMode = 1;
             }
-            AndroidUtilities.setPreferredMaxRefreshRate(windowManager, cfVar.B, layoutParams);
-            windowManager.addView(cfVar.B, layoutParams);
+            AndroidUtilities.setPreferredMaxRefreshRate(windowManager, efVar.B, layoutParams);
+            windowManager.addView(efVar.B, layoutParams);
         }
-        if (boVar != null) {
-            so0 so0Var = cfVar.B;
-            org.telegram.ui.zn znVar = boVar.ea;
-            ny nyVar2 = new ny(27, cfVar, boVar);
-            lo0 lo0Var = new lo0(context, znVar);
+        if (xnVar != null) {
+            so0 so0Var = efVar.B;
+            org.telegram.ui.vn vnVar = xnVar.ea;
+            oy oyVar2 = new oy(27, efVar, xnVar);
+            lo0 lo0Var = new lo0(context, vnVar);
             Drawable drawable = context.getDrawable(R.drawable.msg_premium_prolfilestar);
-            u9 u9Var = lo0Var.a;
-            u9Var.setImageDrawable(drawable);
-            u9Var.setColorFilter(new PorterDuffColorFilter(lo0Var.getThemedColor(org.telegram.ui.ActionBar.i6.Hi), PorterDuff.Mode.SRC_IN));
+            w9 w9Var = lo0Var.a;
+            w9Var.setImageDrawable(drawable);
+            w9Var.setColorFilter(new PorterDuffColorFilter(lo0Var.getThemedColor(org.telegram.ui.ActionBar.h6.Hi), PorterDuff.Mode.SRC_IN));
             lo0Var.b.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.SelectSendAsPeerPremiumHint)));
-            mc mcVar = new mc(context, znVar, true);
-            mcVar.e(LocaleController.getString(R.string.SelectSendAsPeerPremiumOpen));
-            mcVar.a = nyVar2;
-            lo0Var.setButton(mcVar);
-            oc f7 = oc.f(so0Var, lo0Var, 1500);
-            f7.e.addCallback(new to0(cfVar, f7));
+            oc ocVar = new oc(context, vnVar, true);
+            ocVar.e(LocaleController.getString(R.string.SelectSendAsPeerPremiumOpen));
+            ocVar.a = oyVar2;
+            lo0Var.setButton(ocVar);
+            qc f7 = qc.f(so0Var, lo0Var, 1500);
+            f7.e.addCallback(new to0(efVar, f7));
             f7.j();
         }
-        ny nyVar3 = new ny(28, cfVar, windowManager);
-        cfVar.C = nyVar3;
-        AndroidUtilities.runOnUIThread(nyVar3, 2500L);
+        oy oyVar3 = new oy(28, efVar, windowManager);
+        efVar.C = oyVar3;
+        AndroidUtilities.runOnUIThread(oyVar3, 2500L);
     }
 
     @Override // org.telegram.ui.ActionBar.n1, android.widget.PopupWindow
@@ -151,7 +151,7 @@ public abstract class vo0 extends org.telegram.ui.ActionBar.n1 {
         }
         so0 so0Var = this.B;
         if (so0Var != null && so0Var.getAlpha() == 1.0f) {
-            this.B.animate().alpha(0.0f).setDuration(150L).setListener(new pk0(1, this, (WindowManager) this.B.getContext().getSystemService("window")));
+            this.B.animate().alpha(0.0f).setDuration(150L).setListener(new qk0(1, this, (WindowManager) this.B.getContext().getSystemService("window")));
         }
         this.A = true;
         d(true);
@@ -197,7 +197,7 @@ public abstract class vo0 extends org.telegram.ui.ActionBar.n1 {
             }
         }
         this.q = kVarArr.length > 0;
-        ((o1.k) arrayList3.get(0)).a(new fb(this, i11));
+        ((o1.k) arrayList3.get(0)).a(new hb(this, i11));
         int size2 = arrayList3.size();
         int i12 = 0;
         while (i12 < size2) {

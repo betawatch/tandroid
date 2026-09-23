@@ -11,11 +11,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class fv0 extends View {
     public final ImageReceiver a;
-    public final f9 b;
+    public final h9 b;
     public final Paint c;
     public float d;
     public boolean e;
@@ -25,7 +25,7 @@ public final class fv0 extends View {
         super(context);
         ImageReceiver imageReceiver = new ImageReceiver(this);
         this.a = imageReceiver;
-        this.b = new f9((org.telegram.ui.ActionBar.e6) null);
+        this.b = new h9((org.telegram.ui.ActionBar.d6) null);
         Paint paint = new Paint(1);
         this.c = paint;
         imageReceiver.setRoundRadius(AndroidUtilities.dp(28.0f));
@@ -44,8 +44,8 @@ public final class fv0 extends View {
             return;
         }
         ValueAnimator duration = ValueAnimator.ofFloat(this.d, z10 ? 1.0f : 0.0f).setDuration(200L);
-        duration.setInterpolator(qr.f);
-        duration.addUpdateListener(new h70(this, 21));
+        duration.setInterpolator(rr.f);
+        duration.addUpdateListener(new i70(this, 21));
         duration.addListener(new jd0(this, 15));
         duration.start();
         this.f = duration;
@@ -74,7 +74,7 @@ public final class fv0 extends View {
         canvas.save();
         float f7 = (this.d * 0.1f) + 0.9f;
         canvas.scale(f7, f7);
-        int w02 = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.m5, false);
+        int w02 = org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.m5, false);
         Paint paint = this.c;
         paint.setColor(w02);
         paint.setAlpha((int) (Color.alpha(paint.getColor()) * this.d));
@@ -96,9 +96,9 @@ public final class fv0 extends View {
     }
 
     public void setAvatar(TLObject tLObject) {
-        f9 f9Var = this.b;
-        f9Var.p(tLObject);
-        this.a.setForUserOrChat(tLObject, f9Var);
+        h9 h9Var = this.b;
+        h9Var.p(tLObject);
+        this.a.setForUserOrChat(tLObject, h9Var);
     }
 
     public void setHideAvatar(boolean z10) {

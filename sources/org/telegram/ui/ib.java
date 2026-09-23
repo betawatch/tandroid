@@ -10,7 +10,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class ib extends rb {
     public final hh.l x0;
@@ -25,8 +25,8 @@ public final class ib extends rb {
 
     @Override // org.telegram.ui.Components.pv0
     public final void U(Drawable drawable) {
-        if (drawable instanceof org.telegram.ui.Components.cc0) {
-            ((org.telegram.ui.Components.cc0) drawable).p();
+        if (drawable instanceof org.telegram.ui.Components.bc0) {
+            ((org.telegram.ui.Components.bc0) drawable).p();
         }
         hh.l lVar = this.x0;
         fh.a c10 = lVar.c(drawable);
@@ -45,11 +45,11 @@ public final class ib extends rb {
         if (mVar == null || !mVar.a) {
             return super.dispatchTouchEvent(motionEvent);
         }
-        r4 r4Var = (r4) com.google.firebase.messaging.m.k().d;
-        if (r4Var == null) {
+        s4 s4Var = (s4) com.google.firebase.messaging.m.k().d;
+        if (s4Var == null) {
             return true;
         }
-        r4Var.onTouchEvent(motionEvent);
+        s4Var.onTouchEvent(motionEvent);
         return true;
     }
 

@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class yb extends i0 {
     public final /* synthetic */ jc d;
@@ -21,11 +21,11 @@ public final class yb extends i0 {
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         jc jcVar = this.d;
-        f6 currentPeerView = jcVar.n0.getCurrentPeerView();
-        r7 r7Var = jcVar.w;
-        if (r7Var != null && currentPeerView != null) {
+        e6 currentPeerView = jcVar.n0.getCurrentPeerView();
+        s7 s7Var = jcVar.w;
+        if (s7Var != null && currentPeerView != null) {
             a5 a5Var = currentPeerView.c1;
-            r7Var.setOffset(jcVar.e0);
+            s7Var.setOffset(jcVar.e0);
             if (jcVar.w.f == 1.0f) {
                 jcVar.n0.setVisibility(4);
             } else {

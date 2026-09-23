@@ -10,24 +10,24 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.y0;
+import org.telegram.messenger.z0;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Cells.t1;
 import org.telegram.ui.Cells.w0;
-import org.telegram.ui.Components.dk0;
-import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.xi0;
-import org.telegram.ui.bo;
-import org.telegram.ui.uj;
+import org.telegram.ui.Components.ek0;
+import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.yi0;
+import org.telegram.ui.rj;
+import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class i0 extends FrameLayout {
     public final /* synthetic */ n2 a;
     public final /* synthetic */ View b;
     public final /* synthetic */ boolean c;
     public final /* synthetic */ MessageObject d;
-    public final /* synthetic */ bo e;
+    public final /* synthetic */ xn e;
     public final /* synthetic */ int f;
     public final /* synthetic */ int h;
     public final /* synthetic */ boolean n;
@@ -38,14 +38,14 @@ public final class i0 extends FrameLayout {
     public final /* synthetic */ l0 x;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i0(l0 l0Var, Context context, n2 n2Var, View view, boolean z10, MessageObject messageObject, bo boVar, int i10, int i11, boolean z11, float f7, float f10, float f11, p0 p0Var) {
+    public i0(l0 l0Var, Context context, n2 n2Var, View view, boolean z10, MessageObject messageObject, xn xnVar, int i10, int i11, boolean z11, float f7, float f10, float f11, p0 p0Var) {
         super(context);
         this.x = l0Var;
         this.a = n2Var;
         this.b = view;
         this.c = z10;
         this.d = messageObject;
-        this.e = boVar;
+        this.e = xnVar;
         this.f = i10;
         this.h = i11;
         this.n = z11;
@@ -65,7 +65,7 @@ public final class i0 extends FrameLayout {
      */
     /* JADX WARN: Code restructure failed: missing block: B:191:0x0559, code lost:
     
-        if (((int) org.telegram.messenger.vl.c(r23.x.b.getImageReceiver().getLottieAnimation().a0, r23.x.b.getImageReceiver().getLottieAnimation().e[0], r8, r8)) < r6.b) goto L262;
+        if (((int) org.telegram.messenger.ul.c(r23.x.b.getImageReceiver().getLottieAnimation().a0, r23.x.b.getImageReceiver().getLottieAnimation().e[0], r8, r8)) < r6.b) goto L262;
      */
     /* JADX WARN: Code restructure failed: missing block: B:234:0x03d5, code lost:
     
@@ -105,7 +105,7 @@ public final class i0 extends FrameLayout {
         float f20;
         n0 n0Var;
         int paddingTop;
-        bo boVar;
+        xn xnVar;
         MessageObject messageObject;
         l0 l0Var = this.x;
         if (l0Var.l) {
@@ -149,20 +149,20 @@ public final class i0 extends FrameLayout {
             invalidate();
             return;
         }
-        dk0 dk0Var = l0Var.t;
-        if (dk0Var != null) {
-            dk0Var.a.setAlpha(0.0f);
+        ek0 ek0Var = l0Var.t;
+        if (ek0Var != null) {
+            ek0Var.a.setAlpha(0.0f);
             this.x.t.c.setAlpha(0.0f);
         }
         n2 n2Var = this.a;
-        if (n2Var instanceof bo) {
-            bo boVar2 = (bo) n2Var;
+        if (n2Var instanceof xn) {
+            xn xnVar2 = (xn) n2Var;
             int i12 = this.x.n;
-            uj ujVar = boVar2.x0;
-            if (ujVar != null) {
-                int childCount = ujVar.getChildCount();
+            rj rjVar = xnVar2.x0;
+            if (rjVar != null) {
+                int childCount = rjVar.getChildCount();
                 for (int i13 = 0; i13 < childCount; i13++) {
-                    view = boVar2.x0.getChildAt(i13);
+                    view = xnVar2.x0.getChildAt(i13);
                     if (view instanceof t1) {
                         messageObject = ((t1) view).getMessageObject();
                     } else if (view instanceof w0) {
@@ -216,9 +216,9 @@ public final class i0 extends FrameLayout {
                         f10 += rect.left;
                         f11 += rect.top;
                     }
-                    boVar = this.e;
-                    if (boVar != null) {
-                        f11 += boVar.ya;
+                    xnVar = this.e;
+                    if (xnVar != null) {
+                        f11 += xnVar.ya;
                     }
                     l0 l0Var3 = this.x;
                     l0Var3.q = f10;
@@ -228,8 +228,8 @@ public final class i0 extends FrameLayout {
             f11 += paddingTop;
             if (n0Var != null) {
             }
-            boVar = this.e;
-            if (boVar != null) {
+            xnVar = this.e;
+            if (xnVar != null) {
             }
             l0 l0Var32 = this.x;
             l0Var32.q = f10;
@@ -268,16 +268,16 @@ public final class i0 extends FrameLayout {
                 f27 = (getMeasuredWidth() + this.x.j[0]) - this.f;
             }
         }
-        qr qrVar = qr.f;
-        float interpolation = qrVar.getInterpolation(this.x.h);
+        rr rrVar = rr.f;
+        float interpolation = rrVar.getInterpolation(this.x.h);
         if (this.h == 2) {
-            f13 = qr.h.getInterpolation(interpolation);
-            f14 = qrVar.getInterpolation(interpolation);
+            f13 = rr.h.getInterpolation(interpolation);
+            f14 = rrVar.getInterpolation(interpolation);
             f12 = 2.0f;
         } else if (this.n) {
             f12 = 2.0f;
-            f13 = qr.h.getInterpolation(this.x.g);
-            f14 = qrVar.getInterpolation(this.x.g);
+            f13 = rr.h.getInterpolation(this.x.g);
+            f14 = rrVar.getInterpolation(this.x.g);
         } else {
             f12 = 2.0f;
             f13 = this.x.g;
@@ -363,7 +363,7 @@ public final class i0 extends FrameLayout {
                     if (!this.x.x.isEmpty()) {
                         j0 j0Var3 = this.x.b;
                         if (j0Var3.G) {
-                            xi0 lottieAnimation = j0Var3.getImageReceiver().getLottieAnimation();
+                            yi0 lottieAnimation = j0Var3.getImageReceiver().getLottieAnimation();
                             int i15 = 0;
                             while (i15 < this.x.x.size()) {
                                 k0 k0Var = (k0) this.x.x.get(i15);
@@ -387,7 +387,7 @@ public final class i0 extends FrameLayout {
                                     f19 = 1.0f;
                                 } else {
                                     f19 = 1.0f;
-                                    y3 = y0.y(f34, 0.5f, 0.5f, 1.0f);
+                                    y3 = z0.y(f34, 0.5f, 0.5f, 1.0f);
                                 }
                                 float f37 = (f19 - f34) * 0.5f;
                                 float f38 = (k0Var.f * f34) + f37;

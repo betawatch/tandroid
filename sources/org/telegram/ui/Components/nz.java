@@ -1,176 +1,168 @@
 package org.telegram.ui.Components;
 
-import android.util.SparseIntArray;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public class nz extends s4.s {
-    public final boolean Q;
-    public final SparseIntArray R;
-    public final SparseIntArray S;
-    public int T;
-    public int U;
-    public int V;
-    public int W;
+public final class nz extends FrameLayout {
+    public static final /* synthetic */ int h = 0;
+    public final org.telegram.ui.ActionBar.d6 a;
+    public final TextView b;
+    public final View c;
+    public final bj0 d;
+    public boolean e;
+    public int f;
 
-    public nz(int i10, boolean z10) {
-        super(i10);
-        this.R = new SparseIntArray();
-        this.S = new SparseIntArray();
-        this.Q = z10;
+    public nz(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context);
+        this.a = d6Var;
+        View radialProgressView = new RadialProgressView(context, null);
+        addView(radialProgressView, w7.x5.c(-2.0f, -2));
+        this.c = radialProgressView;
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), 0);
+        linearLayout.setGravity(1);
+        linearLayout.setClipChildren(false);
+        linearLayout.setClipToPadding(false);
+        linearLayout.setOrientation(1);
+        bj0 bj0Var = new bj0(context);
+        this.d = bj0Var;
+        bj0Var.setScaleType(ImageView.ScaleType.FIT_XY);
+        bj0Var.setImportantForAccessibility(2);
+        bj0Var.setVisibility(8);
+        linearLayout.addView(bj0Var, w7.x5.t(ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 17, 0, 0, 0, 20));
+        TextView textView = new TextView(context);
+        this.b = textView;
+        textView.setTextSize(1, 20.0f);
+        textView.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.c7, d6Var));
+        textView.setGravity(1);
+        textView.setText(LocaleController.getString(R.string.NoResult));
+        linearLayout.addView(textView, w7.x5.q(-2, -2, 17));
+        addView(linearLayout, w7.x5.c(-2.0f, -2));
+        AndroidUtilities.updateViewVisibilityAnimated(textView, false, 2.0f, false);
+        AndroidUtilities.updateViewVisibilityAnimated(radialProgressView, false, 1.0f, false);
+        setOnTouchListener(new bi.d(18));
     }
 
-    public static jv0 C1(jv0 jv0Var) {
-        if (jv0Var == null) {
-            return null;
+    public final void a(int i10, int i11, int i12) {
+        int i13 = i10 != 0 ? 0 : 8;
+        bj0 bj0Var = this.d;
+        bj0Var.setVisibility(i13);
+        if (i10 != 0) {
+            bj0Var.f(i10, i11, i12, null);
+            bj0Var.d();
         }
-        if (jv0Var.a == 0.0f) {
-            jv0Var.a = 100.0f;
-        }
-        if (jv0Var.b == 0.0f) {
-            jv0Var.b = 100.0f;
-        }
-        float f7 = jv0Var.a;
-        float f10 = jv0Var.b;
-        float f11 = f7 / f10;
-        if (f11 <= 4.0f && f11 >= 0.2f) {
-            return jv0Var;
-        }
-        float max = Math.max(f7, f10);
-        jv0Var.a = max;
-        jv0Var.b = max;
-        return jv0Var;
     }
 
-    public final void B1() {
-        int i10;
-        int min;
-        boolean z10;
-        float f7;
-        SparseIntArray sparseIntArray = this.R;
-        if (sparseIntArray.size() == A() && this.W == this.m && this.T == this.J) {
-            return;
-        }
-        int i11 = this.m;
-        this.W = i11;
-        float f10 = i11;
-        if (f10 == 0.0f) {
-            f10 = 100.0f;
-        }
-        sparseIntArray.clear();
-        SparseIntArray sparseIntArray2 = this.S;
-        sparseIntArray2.clear();
-        this.V = 0;
-        this.U = 0;
-        int A = A();
-        this.T = A;
-        if (A == 0) {
-            return;
-        }
-        int dp = AndroidUtilities.dp(100.0f);
-        int i12 = this.J;
-        boolean z11 = this.Q;
-        int i13 = A + (z11 ? 1 : 0);
-        int i14 = i12;
-        int i15 = 0;
-        int i16 = 0;
-        while (i15 < i13) {
-            jv0 C1 = i15 < A ? C1(D1(i15)) : null;
-            if (C1 == null) {
-                z10 = i16 != 0;
-                i10 = dp;
-                min = i12;
-            } else {
-                i10 = dp;
-                min = Math.min(i12, (int) Math.floor((((C1.a / C1.b) * dp) / f10) * i12));
-                boolean z12 = i14 < min || (min > 33 && i14 < min + (-15));
-                if (C1.c) {
-                    sparseIntArray.put(i15, i14);
-                    this.V++;
-                    f7 = f10;
-                    i14 = i12;
-                    i16 = 0;
-                    i15++;
-                    dp = i10;
-                    f10 = f7;
-                } else {
-                    z10 = z12;
-                }
-            }
-            if (z10) {
-                if (i14 == 0 || i16 == 0) {
-                    f7 = f10;
-                } else {
-                    int i17 = i14 / i16;
-                    int i18 = i15 - i16;
-                    f7 = f10;
-                    int i19 = i18;
-                    while (true) {
-                        int i20 = i18 + i16;
-                        if (i19 >= i20) {
-                            break;
-                        }
-                        if (i19 == i20 - 1) {
-                            sparseIntArray.put(i19, sparseIntArray.get(i19) + i14);
-                        } else {
-                            sparseIntArray.put(i19, sparseIntArray.get(i19) + i17);
-                        }
-                        i14 -= i17;
-                        i19++;
-                    }
-                    sparseIntArray2.put(i15 - 1, this.V);
-                }
-                if (i15 == A) {
-                    break;
-                }
-                this.V++;
-                i14 = i12;
-                i16 = 0;
-            } else {
-                f7 = f10;
-                if (i14 < min) {
-                    min = i14;
-                }
-            }
-            if (this.V == 0) {
-                this.U = Math.max(this.U, i15);
-            }
-            if (i15 == A - 1 && !z11) {
-                sparseIntArray2.put(i15, this.V);
-            }
-            i16++;
-            i14 -= min;
-            sparseIntArray.put(i15, min);
-            i15++;
-            dp = i10;
-            f10 = f7;
-        }
-        this.V++;
+    public final void b() {
+        AndroidUtilities.updateViewVisibilityAnimated(this.b, false, 0.9f, true);
+        AndroidUtilities.updateViewVisibilityAnimated(this.c, true, 1.0f, true);
     }
 
-    public jv0 D1(int i10) {
-        return new jv0(100.0f, 100.0f);
+    public final void c() {
+        AndroidUtilities.updateViewVisibilityAnimated(this.b, true, 0.9f, true);
+        AndroidUtilities.updateViewVisibilityAnimated(this.c, false, 1.0f, true);
     }
 
-    public final boolean E1(int i10) {
-        B1();
-        return this.S.get(i10, ConnectionsManager.DEFAULT_DATACENTER_ID) != Integer.MAX_VALUE;
-    }
-
-    @Override // s4.s, s4.o0
-    public final int I(of.e eVar, s4.z0 z0Var) {
-        return z0Var.b();
-    }
-
-    @Override // s4.s, s4.o0
-    public final int u(of.e eVar, s4.z0 z0Var) {
-        return 1;
-    }
-
-    @Override // s4.s, s4.c0, s4.o0
-    public boolean y0() {
+    @Override // android.view.View
+    public final boolean hasOverlappingRendering() {
         return false;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        int measuredHeight;
+        int paddingTop;
+        this.e = true;
+        int i14 = i12 - i10;
+        int i15 = i13 - i11;
+        int childCount = getChildCount();
+        for (int i16 = 0; i16 < childCount; i16++) {
+            View childAt = getChildAt(i16);
+            if (childAt.getVisibility() != 8) {
+                int measuredWidth = (i14 - childAt.getMeasuredWidth()) / 2;
+                View view = this.c;
+                if (childAt == view && (view instanceof u00)) {
+                    measuredHeight = (i15 - childAt.getMeasuredHeight()) / 2;
+                    paddingTop = getPaddingTop();
+                } else {
+                    int i17 = this.f;
+                    if (i17 == 2) {
+                        measuredHeight = (AndroidUtilities.dp(100.0f) - childAt.getMeasuredHeight()) / 2;
+                        paddingTop = getPaddingTop();
+                    } else if (i17 == 1) {
+                        measuredHeight = ((i15 / 2) - childAt.getMeasuredHeight()) / 2;
+                        paddingTop = getPaddingTop();
+                    } else {
+                        measuredHeight = (i15 - childAt.getMeasuredHeight()) / 2;
+                        paddingTop = getPaddingTop();
+                    }
+                }
+                int i18 = paddingTop + measuredHeight;
+                childAt.layout(measuredWidth, i18, childAt.getMeasuredWidth() + measuredWidth, childAt.getMeasuredHeight() + i18);
+            }
+        }
+        this.e = false;
+    }
+
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.e) {
+            return;
+        }
+        super.requestLayout();
+    }
+
+    public void setProgressBarColor(int i10) {
+        View view = this.c;
+        if (view instanceof RadialProgressView) {
+            ((RadialProgressView) view).setProgressColor(i10);
+        }
+    }
+
+    public void setShowAtCenter(boolean z10) {
+        this.f = z10 ? 1 : 0;
+    }
+
+    public void setShowAtTop(boolean z10) {
+        this.f = z10 ? 2 : 0;
+    }
+
+    public void setText(String str) {
+        this.b.setText(str);
+    }
+
+    public void setTextColor(int i10) {
+        this.b.setTextColor(i10);
+    }
+
+    public void setTextSize(int i10) {
+        this.b.setTextSize(1, i10);
+    }
+
+    public void setTopImage(int i10) {
+        TextView textView = this.b;
+        if (i10 == 0) {
+            textView.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, (Drawable) null, (Drawable) null);
+            return;
+        }
+        Drawable mutate = getContext().getResources().getDrawable(i10).mutate();
+        if (mutate != null) {
+            mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.c7, this.a), PorterDuff.Mode.MULTIPLY));
+        }
+        textView.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, mutate, (Drawable) null, (Drawable) null);
+        textView.setCompoundDrawablePadding(AndroidUtilities.dp(1.0f));
     }
 }

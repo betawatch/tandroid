@@ -1,10 +1,11 @@
 package org.telegram.ui;
 
 import android.view.View;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class uc implements e2.h {
+public final /* synthetic */ class uc implements Utilities.Callback {
     public final /* synthetic */ int a;
     public final /* synthetic */ yc b;
 
@@ -13,19 +14,19 @@ public final /* synthetic */ class uc implements e2.h {
         this.b = ycVar;
     }
 
-    @Override // e2.h
-    public final void accept(Object obj) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         View view = (View) obj;
         switch (this.a) {
             case 0:
                 yc ycVar = this.b;
                 ycVar.getClass();
-                ((org.telegram.ui.Components.u11) view).setBackgroundColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.i5, ycVar.b));
+                ((org.telegram.ui.Components.t11) view).setBackgroundColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.i5, ycVar.b));
                 break;
             default:
-                if (view instanceof org.telegram.ui.Components.u11) {
-                    org.telegram.ui.Components.u11 u11Var = (org.telegram.ui.Components.u11) view;
-                    u11Var.setFallbackWallpaper(u11Var.G.a.b ? null : this.b.v);
+                if (view instanceof org.telegram.ui.Components.t11) {
+                    org.telegram.ui.Components.t11 t11Var = (org.telegram.ui.Components.t11) view;
+                    t11Var.setFallbackWallpaper(t11Var.G.a.b ? null : this.b.v);
                     break;
                 }
                 break;

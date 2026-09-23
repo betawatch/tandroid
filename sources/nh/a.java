@@ -5,14 +5,14 @@ import android.content.Context;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.Components.e61;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.Components.d61;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public abstract class a extends e61 {
-    public a(Context context, int i10, Utilities.Callback2 callback2, Utilities.Callback5 callback5, e6 e6Var) {
-        super(context, i10, -1, false, callback2, callback5, null, e6Var, -1, 0);
+public abstract class a extends d61 {
+    public a(Context context, int i10, Utilities.Callback2 callback2, Utilities.Callback5 callback5, d6 d6Var) {
+        super(context, i10, -1, false, callback2, callback5, null, d6Var, -1, 0);
         this.z2 = true;
         setOverScrollMode(2);
     }

@@ -11,7 +11,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class j7 extends f7 {
     public final ArrayList f;
@@ -24,7 +24,7 @@ public final class j7 extends f7 {
         this.f = new ArrayList();
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.ll0
     public final boolean D(s4.c1 c1Var) {
         return true;
     }
@@ -72,25 +72,25 @@ public final class j7 extends f7 {
         y6Var.getImageView().setRoundRadius(AndroidUtilities.dp(((userOrChat instanceof TLRPC.Chat) && ((TLRPC.Chat) userOrChat).forum) ? 12.0f : 19.0f));
         String formatFileSize = AndroidUtilities.formatFileSize(s6Var.c);
         boolean z11 = i10 < arrayList.size() - 1;
-        org.telegram.ui.Components.n6 n6Var = y6Var.d;
+        org.telegram.ui.Components.p6 p6Var = y6Var.d;
         TextView textView = y6Var.c;
         textView.setText(Emoji.replaceEmoji(dialogPhotoTitle, textView.getPaint().getFontMetricsInt(), false));
         if (formatFileSize != null) {
-            n6Var.c(formatFileSize, false, true);
-            n6Var.setVisibility(0);
+            p6Var.c(formatFileSize, false, true);
+            p6Var.setVisibility(0);
         } else {
-            n6Var.setVisibility(4);
+            p6Var.setVisibility(4);
         }
         y6Var.f = z11;
         y6Var.setWillNotDraw(!z11);
         y6Var.requestLayout();
         boolean contains = s7Var.f.l.contains(Long.valueOf(s6Var.a));
-        org.telegram.ui.Components.np npVar = y6Var.n;
-        if (npVar != null || contains) {
-            if (npVar == null) {
-                org.telegram.ui.Components.np npVar2 = new org.telegram.ui.Components.np(y6Var.getContext(), 21, y6Var.b);
-                y6Var.n = npVar2;
-                npVar2.b(-1, org.telegram.ui.ActionBar.i6.d6, org.telegram.ui.ActionBar.i6.k7);
+        org.telegram.ui.Components.op opVar = y6Var.n;
+        if (opVar != null || contains) {
+            if (opVar == null) {
+                org.telegram.ui.Components.op opVar2 = new org.telegram.ui.Components.op(y6Var.getContext(), 21, y6Var.b);
+                y6Var.n = opVar2;
+                opVar2.b(-1, org.telegram.ui.ActionBar.h6.d6, org.telegram.ui.ActionBar.h6.k7);
                 y6Var.n.setDrawUnchecked(false);
                 y6Var.n.setDrawBackgroundAsArc(3);
                 y6Var.addView(y6Var.n, w7.x5.d(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 48, 38.0f, 25.0f, 38.0f, 0.0f));
@@ -104,9 +104,9 @@ public final class j7 extends f7 {
         y6 y6Var = null;
         if (i10 == 1) {
             y6 y6Var2 = new y6(this.h.getContext(), null);
-            y6Var2.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.d6, false));
+            y6Var2.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.d6, false));
             y6Var = y6Var2;
         }
-        return new org.telegram.ui.Components.vk0(y6Var);
+        return new org.telegram.ui.Components.wk0(y6Var);
     }
 }

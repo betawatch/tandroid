@@ -20,7 +20,7 @@ import androidx.fragment.app.s;
 import b2.p;
 import b2.u0;
 import b2.x0;
-import ci.h4;
+import ci.g4;
 import com.google.android.gms.common.api.internal.v;
 import com.google.android.gms.internal.vision.e2;
 import com.google.firebase.messaging.t;
@@ -47,22 +47,23 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import m4.a0;
+import m4.d1;
+import m4.h1;
 import m4.i1;
-import m4.n1;
 import m4.r;
 import n7.a1;
 import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
-import org.telegram.ui.Components.c91;
-import org.telegram.ui.Components.g10;
+import org.telegram.ui.Components.b91;
+import org.telegram.ui.Components.h10;
+import org.telegram.ui.web.k1;
 import org.telegram.ui.web.l1;
-import org.telegram.ui.web.m1;
 import y9.t0;
 import y9.z0;
 import zd.e0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class f implements n5.b {
     public static volatile f e;
@@ -82,11 +83,11 @@ public final class f implements n5.b {
         this.a = file;
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
         hashMap.putAll(J(bufferedReader));
-        m1 m1Var = (m1) hashMap.get("content-type");
-        String str = m1Var == null ? null : (String) m1Var.b.get("boundary");
+        l1 l1Var = (l1) hashMap.get("content-type");
+        String str = l1Var == null ? null : (String) l1Var.b.get("boundary");
         if (str != null) {
             int length = str.length() + 2;
-            l1 l1Var = null;
+            k1 k1Var = null;
             while (true) {
                 String readLine = bufferedReader.readLine();
                 if (readLine == null) {
@@ -94,22 +95,22 @@ public final class f implements n5.b {
                 }
                 jArr[0] = jArr[0] + readLine.getBytes().length + 2;
                 if (readLine.length() == length && readLine.substring(2).equals(str)) {
-                    if (l1Var != null) {
-                        l1Var.d = (jArr[0] - length) - 2;
-                        arrayList.add(l1Var);
-                        m1 m1Var2 = (m1) l1Var.a.get("content-location");
-                        hashMap2.put(m1Var2 == null ? null : m1Var2.a, l1Var);
+                    if (k1Var != null) {
+                        k1Var.d = (jArr[0] - length) - 2;
+                        arrayList.add(k1Var);
+                        l1 l1Var2 = (l1) k1Var.a.get("content-location");
+                        hashMap2.put(l1Var2 == null ? null : l1Var2.a, k1Var);
                     }
-                    l1Var = new l1();
-                    l1Var.b = (File) this.a;
-                    l1Var.a.putAll(J(bufferedReader));
-                    l1Var.c = jArr[0];
+                    k1Var = new k1();
+                    k1Var.b = (File) this.a;
+                    k1Var.a.putAll(J(bufferedReader));
+                    k1Var.c = jArr[0];
                 }
             }
-            if (l1Var != null && l1Var.c != 0 && l1Var.d != 0) {
-                arrayList.add(l1Var);
-                m1 m1Var3 = (m1) l1Var.a.get("content-location");
-                hashMap2.put(m1Var3 != null ? m1Var3.a : null, l1Var);
+            if (k1Var != null && k1Var.c != 0 && k1Var.d != 0) {
+                arrayList.add(k1Var);
+                l1 l1Var3 = (l1) k1Var.a.get("content-location");
+                hashMap2.put(l1Var3 != null ? l1Var3.a : null, k1Var);
             }
         }
         bufferedReader.close();
@@ -149,25 +150,25 @@ public final class f implements n5.b {
     }
 
     public static void e(String str, String str2, HashMap hashMap) {
-        m1 m1Var = new m1();
+        l1 l1Var = new l1();
         String[] split = str2.split(";(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
         for (int i10 = 0; i10 < split.length; i10++) {
             String trim = split[i10].trim();
             if (!trim.isEmpty()) {
                 int indexOf = trim.indexOf(61);
                 if (i10 == 0 || indexOf < 0) {
-                    m1Var.a = trim;
+                    l1Var.a = trim;
                 } else {
                     String trim2 = trim.substring(0, indexOf).trim();
                     String trim3 = trim.substring(indexOf + 1).trim();
                     if (trim3.length() >= 2 && trim3.charAt(0) == '\"' && trim3.charAt(trim3.length() - 1) == '\"') {
                         trim3 = e2.i(1, 1, trim3);
                     }
-                    m1Var.b.put(trim2, trim3);
+                    l1Var.b.put(trim2, trim3);
                 }
             }
         }
-        hashMap.put(str.trim().toLowerCase(), m1Var);
+        hashMap.put(str.trim().toLowerCase(), l1Var);
     }
 
     public boolean A(r rVar) {
@@ -193,12 +194,12 @@ public final class f implements n5.b {
             eVar = (m4.e) ((a0.f) this.c).get(rVar);
         }
         if (eVar != null) {
-            n1 n1Var = eVar.d;
-            n1Var.getClass();
+            i1 i1Var = eVar.d;
+            i1Var.getClass();
             e2.d.a("Use contains(Command) for custom command", i10 != 0);
-            Iterator<E> it = n1Var.a.iterator();
+            Iterator<E> it = i1Var.a.iterator();
             while (it.hasNext()) {
-                if (((m4.m1) it.next()).a == i10) {
+                if (((h1) it.next()).a == i10) {
                     return true;
                 }
             }
@@ -206,7 +207,7 @@ public final class f implements n5.b {
         return false;
     }
 
-    public boolean D(r rVar, m4.m1 m1Var) {
+    public boolean D(r rVar, h1 h1Var) {
         m4.e eVar;
         synchronized (this.a) {
             eVar = (m4.e) ((a0.f) this.c).get(rVar);
@@ -215,8 +216,8 @@ public final class f implements n5.b {
             return false;
         }
         m0 m0Var = eVar.d.a;
-        m1Var.getClass();
-        return m0Var.contains(m1Var);
+        h1Var.getClass();
+        return m0Var.contains(h1Var);
     }
 
     public void E(q0 q0Var) {
@@ -380,9 +381,9 @@ public final class f implements n5.b {
                     k kVar2 = new k(i10, str2, d);
                     k.x = kVar2;
                     kVar2.u = dVar;
-                    g10 g10Var = g10.getInstance();
-                    if (g10Var != null) {
-                        g10Var.addListener(kVar2);
+                    h10 h10Var = h10.getInstance();
+                    if (h10Var != null) {
+                        h10Var.addListener(kVar2);
                     }
                     kVar2.j.execute(new g(kVar2, 1));
                     AndroidUtilities.runOnUIThread(new g(kVar2, 2));
@@ -466,21 +467,21 @@ public final class f implements n5.b {
     }
 
     public void Q(ViewTreeObserver viewTreeObserver) {
-        h4 h4Var = (h4) this.a;
+        g4 g4Var = (g4) this.a;
         ViewTreeObserver viewTreeObserver2 = (ViewTreeObserver) this.c;
         if (viewTreeObserver2 == viewTreeObserver) {
             return;
         }
         if (viewTreeObserver2 != null && viewTreeObserver2.isAlive()) {
-            ((ViewTreeObserver) this.c).removeOnGlobalLayoutListener(h4Var);
+            ((ViewTreeObserver) this.c).removeOnGlobalLayoutListener(g4Var);
         }
         if (viewTreeObserver != null) {
-            viewTreeObserver.addOnGlobalLayoutListener(h4Var);
+            viewTreeObserver.addOnGlobalLayoutListener(g4Var);
         }
         this.c = viewTreeObserver;
     }
 
-    public void b(Object obj, r rVar, n1 n1Var, x0 x0Var) {
+    public void b(Object obj, r rVar, i1 i1Var, x0 x0Var) {
         synchronized (this.a) {
             try {
                 r t10 = t(obj);
@@ -490,11 +491,11 @@ public final class f implements n5.b {
                     v vVar = new v();
                     vVar.c = new Object();
                     vVar.d = new a0.f(0);
-                    fVar.put(rVar, new m4.e(obj, vVar, n1Var, x0Var));
+                    fVar.put(rVar, new m4.e(obj, vVar, i1Var, x0Var));
                 } else {
                     m4.e eVar = (m4.e) ((a0.f) this.c).get(t10);
                     e2.d.h(eVar);
-                    eVar.d = n1Var;
+                    eVar.d = i1Var;
                     eVar.e = x0Var;
                 }
             } catch (Throwable th2) {
@@ -798,7 +799,7 @@ public final class f implements n5.b {
         }
     }
 
-    public i1 w(r rVar) {
+    public d1 w(r rVar) {
         synchronized (this.a) {
             try {
                 return ((m4.e) ((a0.f) this.c).get(rVar)) != null ? null : null;
@@ -836,7 +837,7 @@ public final class f implements n5.b {
             return;
         }
         if (trim.charAt(0) == '(') {
-            Matcher matcher = c91.z0.matcher(trim);
+            Matcher matcher = b91.z0.matcher(trim);
             int i11 = 0;
             while (true) {
                 if (!matcher.find()) {
@@ -993,11 +994,11 @@ public final class f implements n5.b {
         }
         zArr[0] = false;
         String trim = str.trim();
-        Matcher matcher = c91.x0.matcher(trim);
+        Matcher matcher = b91.x0.matcher(trim);
         if (matcher.find()) {
             trim = trim.substring(matcher.group(0).length());
         } else {
-            Matcher matcher2 = c91.y0.matcher(trim);
+            Matcher matcher2 = b91.y0.matcher(trim);
             if (matcher2.find()) {
                 trim = trim.substring(matcher2.group(0).length());
                 zArr[0] = true;

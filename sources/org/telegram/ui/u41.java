@@ -1,126 +1,120 @@
 package org.telegram.ui;
 
-import android.graphics.Bitmap;
-import android.view.WindowManager;
-import java.util.ArrayList;
-import java.util.Arrays;
+import android.app.Activity;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
 import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u41 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ SecretMediaViewer b;
+public final class u41 extends FrameLayout {
+    public float a;
+    public final boolean b;
+    public final boolean c;
+    public boolean d;
+    public int e;
+    public final o1.j f;
+    public final o1.k h;
+    public final t0 n;
+    public final /* synthetic */ SecretMediaViewer r;
 
-    public /* synthetic */ u41(SecretMediaViewer secretMediaViewer, int i10) {
-        this.a = i10;
-        this.b = secretMediaViewer;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public u41(SecretMediaViewer secretMediaViewer, Activity activity) {
+        super(activity);
+        this.r = secretMediaViewer;
+        this.a = 1.0f;
+        this.b = true;
+        this.c = true;
+        o1.j jVar = new o1.j(0.0f);
+        this.f = jVar;
+        o1.k kVar = new o1.k(jVar);
+        kVar.u = org.telegram.ui.Cells.q3.l(0.0f, 750.0f, 1.0f);
+        kVar.b(new od0(this, 5));
+        this.h = kVar;
+        this.n = new t0("progress", 6);
+        setWillNotDraw(false);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        int i11 = 4;
-        SecretMediaViewer secretMediaViewer = this.b;
-        switch (i10) {
-            case 0:
-                secretMediaViewer.K0 = null;
-                secretMediaViewer.m0 = 0;
-                secretMediaViewer.e.setLayerType(0, null);
-                secretMediaViewer.e.setVisibility(4);
-                secretMediaViewer.s = false;
-                secretMediaViewer.N = null;
-                secretMediaViewer.M = false;
-                secretMediaViewer.i();
-                new ArrayList();
-                AndroidUtilities.runOnUIThread(new u41(secretMediaViewer, i11), 50L);
-                break;
-            case 1:
-                ci.n6 n6Var = secretMediaViewer.e;
-                if (n6Var != null) {
-                    n6Var.setLayerType(0, null);
-                    secretMediaViewer.e.setVisibility(4);
-                    secretMediaViewer.m0 = 0;
-                    secretMediaViewer.s = false;
-                    secretMediaViewer.N = null;
-                    secretMediaViewer.M = false;
-                    secretMediaViewer.i();
-                    new ArrayList();
-                    AndroidUtilities.runOnUIThread(new u41(secretMediaViewer, i11), 50L);
-                    secretMediaViewer.e.setScaleX(1.0f);
-                    secretMediaViewer.e.setScaleY(1.0f);
-                    break;
-                }
-                break;
-            case 2:
-                a51 a51Var = secretMediaViewer.y;
-                if (a51Var != null) {
-                    long n10 = a51Var.n();
-                    long p5 = secretMediaViewer.y.p();
-                    if (p5 == -9223372036854775807L) {
-                        n10 = 0;
-                        p5 = 0;
-                    }
-                    if (p5 > 0) {
-                        org.telegram.ui.Components.i71 i71Var = secretMediaViewer.Q;
-                        if (!i71Var.f) {
-                            i71Var.h(n10 / p5, false);
-                            secretMediaViewer.R.invalidate();
-                        }
-                    }
-                    int[] iArr = secretMediaViewer.j1;
-                    Arrays.fill(iArr, 0);
-                    int[] iArr2 = secretMediaViewer.k1;
-                    Arrays.fill(iArr2, 0);
-                    a51 a51Var2 = secretMediaViewer.y;
-                    if (a51Var2 != null) {
-                        long max = Math.max(0L, a51Var2.n()) / 1000;
-                        long max2 = Math.max(0L, secretMediaViewer.y.p()) / 1000;
-                        iArr[0] = (int) (max / 60);
-                        iArr[1] = (int) (max % 60);
-                        iArr2[0] = (int) (max2 / 60);
-                        iArr2[1] = (int) (max2 % 60);
-                    }
-                    int i12 = iArr[0];
-                    String format = i12 >= 60 ? String.format(Locale.ROOT, "%02d:%02d:%02d", Integer.valueOf(i12 / 60), Integer.valueOf(iArr[0] % 60), Integer.valueOf(iArr[1])) : String.format(Locale.ROOT, "%02d:%02d", Integer.valueOf(i12), Integer.valueOf(iArr[1]));
-                    int i13 = iArr2[0];
-                    String format2 = i13 >= 60 ? String.format(Locale.ROOT, "%02d:%02d:%02d", Integer.valueOf(i13 / 60), Integer.valueOf(iArr2[0] % 60), Integer.valueOf(iArr2[1])) : String.format(Locale.ROOT, "%02d:%02d", Integer.valueOf(i13), Integer.valueOf(iArr2[1]));
-                    org.telegram.ui.ActionBar.j5 j5Var = secretMediaViewer.S;
-                    Locale locale = Locale.ROOT;
-                    j5Var.l(format + " / " + format2, false);
-                    if (secretMediaViewer.y.y()) {
-                        AndroidUtilities.runOnUIThread(secretMediaViewer.i1, 17L);
-                        break;
-                    }
-                }
-                break;
-            case 3:
-                secretMediaViewer.m(false, true);
-                break;
-            default:
-                ImageReceiver.BitmapHolder bitmapHolder = secretMediaViewer.i0;
-                if (bitmapHolder != null) {
-                    bitmapHolder.release();
-                    secretMediaViewer.i0 = null;
-                }
-                secretMediaViewer.h.setImageBitmap((Bitmap) null);
-                try {
-                    if (secretMediaViewer.d.getParent() != null) {
-                        ((WindowManager) secretMediaViewer.b.getSystemService("window")).removeView(secretMediaViewer.d);
-                    }
-                } catch (Exception e) {
-                    FileLog.e(e);
-                }
-                secretMediaViewer.j0 = false;
-                break;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.f.a = 0.0f;
+        this.e = 0;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        SecretMediaViewer secretMediaViewer = this.r;
+        secretMediaViewer.Q.h(secretMediaViewer.y != null ? r3.n() / secretMediaViewer.y.p() : 0.0f, false);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:4:0x002a, code lost:
+    
+        if (r12 == (-9223372036854775807L)) goto L6;
+     */
+    @Override // android.widget.FrameLayout, android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onMeasure(int i10, int i11) {
+        long j3;
+        this.d = true;
+        SecretMediaViewer secretMediaViewer = this.r;
+        ((FrameLayout.LayoutParams) secretMediaViewer.S.getLayoutParams()).rightMargin = AndroidUtilities.dp(12.0f);
+        this.d = false;
+        super.onMeasure(i10, i11);
+        s41 s41Var = secretMediaViewer.y;
+        if (s41Var != null) {
+            j3 = s41Var.p();
         }
+        j3 = 0;
+        int ceil = (int) Math.ceil(secretMediaViewer.S.getPaint().measureText(String.format(Locale.ROOT, "%1$s / %1$s", (j3 / 1000) / 60 > 60 ? String.format(Locale.ROOT, "%02d:%02d:%02d", Long.valueOf(r5 / 60), Long.valueOf(r5 % 60), Long.valueOf(r12 % 60)) : String.format(Locale.ROOT, "%02d:%02d", Long.valueOf(r5), Long.valueOf(r12 % 60)))));
+        o1.k kVar = this.h;
+        kVar.c();
+        int i12 = this.e;
+        o1.j jVar = this.f;
+        if (i12 != 0) {
+            float f7 = ceil;
+            if (jVar.a != f7) {
+                kVar.u.i = f7;
+                kVar.f();
+                this.e = ceil;
+            }
+        }
+        org.telegram.ui.Components.h71 h71Var = secretMediaViewer.Q;
+        int B = org.telegram.messenger.z0.B(16.0f, getMeasuredWidth(), ceil);
+        int measuredHeight = getMeasuredHeight();
+        h71Var.h = B;
+        h71Var.i = measuredHeight;
+        View view = h71Var.v;
+        if (view != null) {
+            view.invalidate();
+        }
+        jVar.a = ceil;
+        this.e = ceil;
     }
 
-    public /* synthetic */ u41(SecretMediaViewer secretMediaViewer, dv0 dv0Var, int i10) {
-        this.a = i10;
-        this.b = secretMediaViewer;
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        if (this.a < 1.0f) {
+            return false;
+        }
+        SecretMediaViewer secretMediaViewer = this.r;
+        if (secretMediaViewer.Q.e(motionEvent.getX() - AndroidUtilities.dp(2.0f), motionEvent.getY(), motionEvent.getAction())) {
+            getParent().requestDisallowInterceptTouchEvent(true);
+            secretMediaViewer.R.invalidate();
+        }
+        return true;
+    }
+
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.d) {
+            return;
+        }
+        super.requestLayout();
     }
 }

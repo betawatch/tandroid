@@ -1,109 +1,36 @@
 package org.telegram.ui;
 
-import android.app.Activity;
+import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o31 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ bo b;
-    public final /* synthetic */ Activity c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e6 d;
-    public final /* synthetic */ MessageObject e;
+public final class o31 implements q31 {
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 a;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.d6 c;
+    public final /* synthetic */ org.telegram.ui.Components.oy d;
 
-    public /* synthetic */ o31(bo boVar, Activity activity, org.telegram.ui.ActionBar.e6 e6Var, MessageObject messageObject, int i10) {
-        this.a = i10;
-        this.b = boVar;
-        this.c = activity;
-        this.d = e6Var;
-        this.e = messageObject;
+    public o31(org.telegram.ui.ActionBar.n2 n2Var, Context context, org.telegram.ui.ActionBar.d6 d6Var, org.telegram.ui.Components.oy oyVar) {
+        this.a = n2Var;
+        this.b = context;
+        this.c = d6Var;
+        this.d = oyVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                bo boVar = this.b;
-                org.telegram.ui.Components.vc a02 = org.telegram.ui.Components.vc.a0(boVar);
-                String string = LocaleController.getString(R.string.AdReported);
-                final int i10 = 1;
-                final Activity activity = this.c;
-                a02.c(AndroidUtilities.replaceSingleTag(string, -1, 2, new Runnable() { // from class: org.telegram.ui.p31
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i10) {
-                            case 0:
-                                nf.f.s(activity, "https://promote.telegram.org/guidelines");
-                                break;
-                            case 1:
-                                nf.f.s(activity, "https://promote.telegram.org/guidelines");
-                                break;
-                            default:
-                                nf.f.s(activity, "https://promote.telegram.org/guidelines");
-                                break;
-                        }
-                    }
-                }, this.d)).j();
-                MessageObject messageObject = this.e;
-                boVar.Fa(messageObject);
-                boVar.Ha(messageObject);
-                break;
-            case 1:
-                bo boVar2 = this.b;
-                org.telegram.ui.Components.vc a03 = org.telegram.ui.Components.vc.a0(boVar2);
-                String string2 = LocaleController.getString(R.string.AdReported);
-                final int i11 = 0;
-                final Activity activity2 = this.c;
-                a03.c(AndroidUtilities.replaceSingleTag(string2, -1, 2, new Runnable() { // from class: org.telegram.ui.p31
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i11) {
-                            case 0:
-                                nf.f.s(activity2, "https://promote.telegram.org/guidelines");
-                                break;
-                            case 1:
-                                nf.f.s(activity2, "https://promote.telegram.org/guidelines");
-                                break;
-                            default:
-                                nf.f.s(activity2, "https://promote.telegram.org/guidelines");
-                                break;
-                        }
-                    }
-                }, this.d)).j();
-                MessageObject messageObject2 = this.e;
-                boVar2.Fa(messageObject2);
-                boVar2.Ha(messageObject2);
-                break;
-            default:
-                bo boVar3 = this.b;
-                org.telegram.ui.Components.vc a04 = org.telegram.ui.Components.vc.a0(boVar3);
-                String string3 = LocaleController.getString(R.string.AdReported);
-                final int i12 = 2;
-                final Activity activity3 = this.c;
-                a04.c(AndroidUtilities.replaceSingleTag(string3, -1, 2, new Runnable() { // from class: org.telegram.ui.p31
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i12) {
-                            case 0:
-                                nf.f.s(activity3, "https://promote.telegram.org/guidelines");
-                                break;
-                            case 1:
-                                nf.f.s(activity3, "https://promote.telegram.org/guidelines");
-                                break;
-                            default:
-                                nf.f.s(activity3, "https://promote.telegram.org/guidelines");
-                                break;
-                        }
-                    }
-                }, this.d)).j();
-                MessageObject messageObject3 = this.e;
-                boVar3.Fa(messageObject3);
-                boVar3.Ha(messageObject3);
-                break;
-        }
+    @Override // org.telegram.ui.q31
+    public final void a() {
+        AndroidUtilities.runOnUIThread(new i31(this.a, this.b, this.c, this.d, 2), 200L);
+    }
+
+    @Override // org.telegram.ui.q31
+    public final void b() {
+        AndroidUtilities.runOnUIThread(new by0(20, this.a, this.d), 200L);
+    }
+
+    @Override // org.telegram.ui.q31
+    public final void c() {
+        org.telegram.ui.ActionBar.n2 n2Var = this.a;
+        n2Var.showDialog(new rg.x0(n2Var, 3, true));
     }
 }

@@ -1,20 +1,24 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class yn extends AnimatorListenerAdapter {
-    public final /* synthetic */ org.telegram.ui.Components.cc0 a;
+public final class yn extends xn {
+    public final /* synthetic */ zn Pc;
 
-    public yn(org.telegram.ui.Components.cc0 cc0Var) {
-        this.a = cc0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public yn(zn znVar, Bundle bundle) {
+        super(bundle);
+        this.Pc = znVar;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        super.onAnimationEnd(animator);
-        this.a.s(1.0f);
+    @Override // org.telegram.ui.xn
+    public final void V9(boolean z10) {
+        this.Pc.b(z10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final void setNavigationBarColor(int i10) {
     }
 }

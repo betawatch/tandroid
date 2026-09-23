@@ -1,53 +1,40 @@
 package org.telegram.ui;
 
-import android.animation.AnimatorSet;
-import android.app.Activity;
-import android.text.TextUtils;
-import android.widget.TextView;
-import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class gu extends org.telegram.ui.Cells.d5 {
-    public final /* synthetic */ int e;
-    public final /* synthetic */ org.telegram.ui.Cells.e9 f;
-    public final /* synthetic */ org.telegram.ui.Cells.w8[] h;
-    public final /* synthetic */ AnimatorSet[] n;
-    public final /* synthetic */ DataAutoDownloadActivity r;
+public final /* synthetic */ class gu implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ DataSettingsActivity b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gu(DataAutoDownloadActivity dataAutoDownloadActivity, Activity activity, int i10, org.telegram.ui.Cells.e9 e9Var, org.telegram.ui.Cells.w8[] w8VarArr, AnimatorSet[] animatorSetArr) {
-        super(activity);
-        this.r = dataAutoDownloadActivity;
-        this.e = i10;
-        this.f = e9Var;
-        this.h = w8VarArr;
-        this.n = animatorSetArr;
-        setWillNotDraw(false);
-        TextView textView = new TextView(activity);
-        this.a = textView;
-        org.telegram.messenger.vl.s(textView, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.j5, false), 1, 16.0f, 1);
-        textView.setMaxLines(1);
-        textView.setSingleLine(true);
-        textView.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-        textView.setEllipsize(TextUtils.TruncateAt.END);
-        textView.setImportantForAccessibility(2);
-        addView(textView, w7.x5.d(-1, -1.0f, (LocaleController.isRTL ? 5 : 3) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
-        TextView textView2 = new TextView(activity);
-        this.b = textView2;
-        org.telegram.messenger.vl.s(textView2, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.n5, false), 1, 16.0f, 1);
-        textView2.setMaxLines(1);
-        textView2.setSingleLine(true);
-        textView2.setGravity((LocaleController.isRTL ? 3 : 5) | 48);
-        textView2.setImportantForAccessibility(2);
-        addView(textView2, w7.x5.d(-2, -1.0f, (LocaleController.isRTL ? 3 : 5) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
-        org.telegram.ui.Cells.j0 j0Var = new org.telegram.ui.Cells.j0(activity);
-        this.c = j0Var;
-        j0Var.setReportChanges(true);
-        j0Var.setDelegate(new org.telegram.ui.Cells.c5(this));
-        j0Var.setImportantForAccessibility(2);
-        addView(j0Var, w7.x5.d(-1, 38.0f, 51, 6.0f, 36.0f, 6.0f, 0.0f));
-        setImportantForAccessibility(1);
-        setAccessibilityDelegate(j0Var.getSeekBarAccessibilityDelegate());
+    public /* synthetic */ gu(DataSettingsActivity dataSettingsActivity, int i10) {
+        this.a = i10;
+        this.b = dataSettingsActivity;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10;
+        switch (this.a) {
+            case 0:
+                this.b.getMediaDataController().clearAllDrafts(true);
+                break;
+            case 1:
+                DataSettingsActivity dataSettingsActivity = this.b;
+                dataSettingsActivity.X = true;
+                if (dataSettingsActivity.a != null && (i10 = dataSettingsActivity.s) >= 0) {
+                    dataSettingsActivity.n0(i10);
+                    break;
+                }
+                break;
+            default:
+                z6.m0 = null;
+                DataSettingsActivity dataSettingsActivity2 = this.b;
+                gu guVar = new gu(dataSettingsActivity2, 1);
+                AndroidUtilities.runOnUIThread(guVar, 100L);
+                z6.j0(new hu(dataSettingsActivity2, guVar, System.currentTimeMillis(), 0));
+                break;
+        }
     }
 }

@@ -1,55 +1,61 @@
 package ci;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
+import org.telegram.ui.Components.z71;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class z8 extends LinearLayout {
-    public final RectF a;
-    public final RectF b;
-    public final RectF c;
-    public final Paint d;
-    public final /* synthetic */ a9 e;
+public final class z8 extends z71 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ fa c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z8(a9 a9Var, Context context) {
-        super(context);
-        this.e = a9Var;
-        this.a = new RectF();
-        this.b = new RectF();
-        this.c = new RectF();
-        this.d = new Paint(1);
+    public /* synthetic */ z8(fa faVar, Context context, int i10) {
+        this.a = i10;
+        this.c = faVar;
+        this.b = context;
     }
 
-    public final void a(RectF rectF, int i10) {
-        a9 a9Var = this.e;
-        FrameLayout frameLayout = i10 <= -1 ? a9Var.b : i10 >= 1 ? a9Var.f : a9Var.d;
-        rectF.set(frameLayout.getLeft(), frameLayout.getBottom() - AndroidUtilities.dp(30.0f), frameLayout.getRight(), frameLayout.getBottom());
+    @Override // org.telegram.ui.Components.z71
+    public final void b(View view, int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                ((y9) view).b(i11);
+                break;
+            default:
+                ((y9) view).b(i11);
+                break;
+        }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        a9 a9Var = this.e;
-        int floor = (int) Math.floor(a9Var.r);
-        RectF rectF = this.a;
-        a(rectF, floor);
-        int ceil = (int) Math.ceil(a9Var.r);
-        RectF rectF2 = this.b;
-        a(rectF2, ceil);
-        float f7 = a9Var.r;
-        float floor2 = f7 - ((float) Math.floor(f7));
-        RectF rectF3 = this.c;
-        AndroidUtilities.lerp(rectF, rectF2, floor2, rectF3);
-        int l1 = org.telegram.ui.ActionBar.i6.l1(0.15f, i0.a.d(a9Var.n, -1, -16777216));
-        Paint paint = this.d;
-        paint.setColor(l1);
-        canvas.drawRoundRect(rectF3, rectF3.height() / 2.0f, rectF3.height() / 2.0f, paint);
-        super.dispatchDraw(canvas);
+    @Override // org.telegram.ui.Components.z71
+    public final View d(int i10) {
+        switch (this.a) {
+        }
+        return new y9(this.c, this.b);
+    }
+
+    @Override // org.telegram.ui.Components.z71
+    public final int e() {
+        switch (this.a) {
+            case 0:
+                return 2;
+            default:
+                return 1;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.z71
+    public final int h(int i10) {
+        switch (this.a) {
+            case 0:
+                if (i10 == 0) {
+                    return 0;
+                }
+                return this.c.M;
+            default:
+                return 5;
+        }
     }
 }

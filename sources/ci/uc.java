@@ -1,284 +1,191 @@
 package ci;
 
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Bitmap;
-import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.SurfaceTexture;
 import android.media.MediaMetadataRetriever;
-import android.os.SystemClock;
-import android.telephony.TelephonyManager;
-import android.text.TextUtils;
-import android.util.Log;
-import java.util.ArrayDeque;
-import java.util.Iterator;
-import java.util.Locale;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.FileLog;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.w51;
-import org.telegram.ui.LaunchActivity;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class uc implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class uc {
+    public long a;
+    public volatile long b;
+    public int c;
+    public volatile int f;
+    public volatile int g;
+    public final boolean h;
+    public boolean i;
+    public long j;
+    public Path m;
+    public final /* synthetic */ wc n;
+    public final ArrayList d = new ArrayList();
+    public boolean k = false;
+    public final Paint l = new Paint(3);
+    public MediaMetadataRetriever e = new MediaMetadataRetriever();
 
-    public /* synthetic */ uc(com.google.firebase.messaging.k kVar, Intent intent) {
-        this.a = 1;
-        this.b = intent;
-    }
-
-    private final void a() {
-        String c10;
-        TelephonyManager telephonyManager;
-        e2.t tVar = (e2.t) this.b;
-        y2.e eVar = (y2.e) tVar.a.get();
-        if (eVar != null) {
-            int b10 = tVar.c.b();
-            y2.f fVar = eVar.a;
-            synchronized (fVar) {
-                synchronized (fVar) {
-                    int i10 = fVar.n;
-                    if (i10 == 0 || fVar.e) {
-                        if (i10 != b10 || fVar.o == null) {
-                            fVar.n = b10;
-                            if (b10 != 1 && b10 != 0 && b10 != 8) {
-                                if (fVar.o == null) {
-                                    Context context = fVar.a;
-                                    String str = e2.d0.a;
-                                    if (context != null && (telephonyManager = (TelephonyManager) context.getSystemService("phone")) != null) {
-                                        String networkCountryIso = telephonyManager.getNetworkCountryIso();
-                                        if (!TextUtils.isEmpty(networkCountryIso)) {
-                                            c10 = v7.r6.c(networkCountryIso);
-                                            fVar.o = c10;
-                                        }
-                                    }
-                                    c10 = v7.r6.c(Locale.getDefault().getCountry());
-                                    fVar.o = c10;
-                                }
-                                fVar.l = fVar.a(b10);
-                                fVar.d.getClass();
-                                long elapsedRealtime = SystemClock.elapsedRealtime();
-                                fVar.c(fVar.g > 0 ? (int) (elapsedRealtime - fVar.h) : 0, fVar.i, fVar.l);
-                                fVar.h = elapsedRealtime;
-                                fVar.i = 0L;
-                                fVar.k = 0L;
-                                fVar.j = 0L;
-                                y2.r rVar = fVar.f;
-                                rVar.a.clear();
-                                rVar.c = -1;
-                                rVar.d = 0;
-                                rVar.e = 0;
+    public uc(wc wcVar, boolean z10, final String str, final int i10, final int i11, final Long l4, final long j3, final long j10, final long j11, final Runnable runnable) {
+        this.n = wcVar;
+        this.h = z10;
+        Utilities.themeQueue.postRunnable(new Runnable() { // from class: ci.sc
+            /* JADX WARN: Removed duplicated region for block: B:27:0x0086  */
+            /* JADX WARN: Removed duplicated region for block: B:30:0x0092  */
+            /* JADX WARN: Removed duplicated region for block: B:34:0x009a A[ADDED_TO_REGION] */
+            /* JADX WARN: Removed duplicated region for block: B:38:0x00e4  */
+            /* JADX WARN: Removed duplicated region for block: B:41:0x00ee  */
+            /* JADX WARN: Removed duplicated region for block: B:44:? A[RETURN, SYNTHETIC] */
+            @Override // java.lang.Runnable
+            /*
+                Code decompiled incorrectly, please refer to instructions dump.
+            */
+            public final void run() {
+                int i12;
+                int i13;
+                uc ucVar = uc.this;
+                String str2 = str;
+                Long l10 = l4;
+                long j12 = j10;
+                long j13 = j11;
+                int i14 = i11;
+                long j14 = j3;
+                int i15 = i10;
+                Runnable runnable2 = runnable;
+                long maxScrollDuration = ucVar.n.getMaxScrollDuration();
+                try {
+                    ucVar.e.setDataSource(str2);
+                    String extractMetadata = ucVar.e.extractMetadata(9);
+                    if (extractMetadata != null) {
+                        maxScrollDuration = Long.parseLong(extractMetadata);
+                        ucVar.a = maxScrollDuration;
+                    }
+                    String extractMetadata2 = ucVar.e.extractMetadata(18);
+                    i12 = extractMetadata2 != null ? Integer.parseInt(extractMetadata2) : 0;
+                } catch (Exception e) {
+                    e = e;
+                    i12 = 0;
+                }
+                try {
+                    String extractMetadata3 = ucVar.e.extractMetadata(19);
+                    i13 = extractMetadata3 != null ? Integer.parseInt(extractMetadata3) : 0;
+                    try {
+                        String extractMetadata4 = ucVar.e.extractMetadata(24);
+                        if (extractMetadata4 != null) {
+                            int parseInt = Integer.parseInt(extractMetadata4);
+                            if (parseInt == 90 || parseInt == 270) {
+                                int i16 = i13;
+                                i13 = i12;
+                                i12 = i16;
                             }
                         }
+                    } catch (Exception e7) {
+                        e = e7;
+                        ucVar.e = null;
+                        FileLog.e(e);
+                        int i17 = i13;
+                        if (l10 != null) {
+                        }
+                        if (j12 != -1) {
+                            maxScrollDuration = j13 - j12;
+                        }
+                        float clamp = Utilities.clamp((i12 != 0 || i17 == 0) ? 1.0f : i12 / i17, 1.3333334f, 0.5625f);
+                        ucVar.g = Math.max(1, i14);
+                        ucVar.f = Math.max(1, (int) Math.ceil(i14 * clamp));
+                        int ceil = (int) Math.ceil(((Math.max(maxScrollDuration, j14) / j14) * i15) / ucVar.f);
+                        ucVar.c = ceil;
+                        ucVar.b = (long) (maxScrollDuration / ceil);
+                        ucVar.j = -ucVar.b;
+                        if (j12 != -1) {
+                        }
+                        ucVar.c();
+                        if (runnable2 != null) {
+                        }
+                    }
+                } catch (Exception e10) {
+                    e = e10;
+                    i13 = 0;
+                    ucVar.e = null;
+                    FileLog.e(e);
+                    int i172 = i13;
+                    if (l10 != null) {
+                    }
+                    if (j12 != -1) {
+                    }
+                    float clamp2 = Utilities.clamp((i12 != 0 || i172 == 0) ? 1.0f : i12 / i172, 1.3333334f, 0.5625f);
+                    ucVar.g = Math.max(1, i14);
+                    ucVar.f = Math.max(1, (int) Math.ceil(i14 * clamp2));
+                    int ceil2 = (int) Math.ceil(((Math.max(maxScrollDuration, j14) / j14) * i15) / ucVar.f);
+                    ucVar.c = ceil2;
+                    ucVar.b = (long) (maxScrollDuration / ceil2);
+                    ucVar.j = -ucVar.b;
+                    if (j12 != -1) {
+                    }
+                    ucVar.c();
+                    if (runnable2 != null) {
                     }
                 }
+                int i1722 = i13;
+                if (l10 != null) {
+                    maxScrollDuration = l10.longValue();
+                    ucVar.a = maxScrollDuration;
+                }
+                if (j12 != -1 && j13 != -1) {
+                    maxScrollDuration = j13 - j12;
+                }
+                float clamp22 = Utilities.clamp((i12 != 0 || i1722 == 0) ? 1.0f : i12 / i1722, 1.3333334f, 0.5625f);
+                ucVar.g = Math.max(1, i14);
+                ucVar.f = Math.max(1, (int) Math.ceil(i14 * clamp22));
+                int ceil22 = (int) Math.ceil(((Math.max(maxScrollDuration, j14) / j14) * i15) / ucVar.f);
+                ucVar.c = ceil22;
+                ucVar.b = (long) (maxScrollDuration / ceil22);
+                ucVar.j = -ucVar.b;
+                if (j12 != -1) {
+                    ucVar.j = j12 - ucVar.b;
+                }
+                ucVar.c();
+                if (runnable2 != null) {
+                    AndroidUtilities.runOnUIThread(runnable2);
+                }
+            }
+        });
+    }
+
+    public final void b() {
+        this.i = true;
+        int i10 = 0;
+        Utilities.themeQueue.cancelRunnable(new rc(this, i10));
+        ArrayList arrayList = this.d;
+        int size = arrayList.size();
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            Bitmap bitmap = ((tc) obj).a;
+            if (bitmap != null) {
+                bitmap.recycle();
+            }
+        }
+        this.d.clear();
+        MediaMetadataRetriever mediaMetadataRetriever = this.e;
+        if (mediaMetadataRetriever != null) {
+            try {
+                mediaMetadataRetriever.release();
+            } catch (Exception e) {
+                this.e = null;
+                FileLog.e(e);
             }
         }
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = 3;
-        Bitmap bitmap = null;
-        int i11 = 0;
-        switch (this.a) {
-            case 0:
-                xc xcVar = (xc) this.b;
-                MediaMetadataRetriever mediaMetadataRetriever = xcVar.e;
-                if (mediaMetadataRetriever == null) {
-                    return;
-                }
-                try {
-                    bitmap = mediaMetadataRetriever.getFrameAtTime(xcVar.j * 1000, 2);
-                    if (bitmap != null) {
-                        Bitmap createBitmap = Bitmap.createBitmap(xcVar.f, xcVar.g, Bitmap.Config.ARGB_8888);
-                        Canvas canvas = new Canvas(createBitmap);
-                        float max = Math.max(xcVar.f / bitmap.getWidth(), xcVar.g / bitmap.getHeight());
-                        Rect rect = new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight());
-                        Rect rect2 = new Rect((int) com.google.android.gms.internal.vision.e2.v(bitmap.getWidth(), max, createBitmap.getWidth(), 2.0f), (int) com.google.android.gms.internal.vision.e2.v(bitmap.getHeight(), max, createBitmap.getHeight(), 2.0f), (int) com.google.android.gms.internal.vision.e2.y(bitmap.getWidth(), max, createBitmap.getWidth(), 2.0f), (int) com.google.android.gms.internal.vision.e2.y(bitmap.getHeight(), max, createBitmap.getHeight(), 2.0f));
-                        if (xcVar.h) {
-                            if (xcVar.m == null) {
-                                xcVar.m = new Path();
-                            }
-                            xcVar.m.rewind();
-                            xcVar.m.addCircle(xcVar.f / 2.0f, xcVar.g / 2.0f, Math.min(xcVar.f, xcVar.g) / 2.0f, Path.Direction.CW);
-                            canvas.clipPath(xcVar.m);
-                        }
-                        canvas.drawBitmap(bitmap, rect, rect2, xcVar.l);
-                        bitmap.recycle();
-                        bitmap = createBitmap;
-                    }
-                } catch (Exception e) {
-                    FileLog.e(e);
-                }
-                AndroidUtilities.runOnUIThread(new b9(i10, xcVar, bitmap));
-                return;
-            case 1:
-                com.google.firebase.messaging.k.a((Intent) this.b);
-                return;
-            case 2:
-                cf.c cVar = (cf.c) this.b;
-                synchronized (((ArrayDeque) cVar.d)) {
-                    SharedPreferences.Editor edit = ((SharedPreferences) cVar.a).edit();
-                    String str = (String) cVar.b;
-                    StringBuilder sb2 = new StringBuilder();
-                    Iterator it = ((ArrayDeque) cVar.d).iterator();
-                    while (it.hasNext()) {
-                        sb2.append((String) it.next());
-                        sb2.append((String) cVar.c);
-                    }
-                    edit.putString(str, sb2.toString()).commit();
-                }
-                return;
-            case 3:
-                com.google.firebase.messaging.f0 f0Var = (com.google.firebase.messaging.f0) this.b;
-                Log.w("FirebaseMessaging", "Service took too long to process intent: " + f0Var.a.getAction() + " finishing.");
-                f0Var.b.trySetResult(null);
-                return;
-            case 4:
-                di.f fVar = (di.f) this.b;
-                fVar.getClass();
-                try {
-                    ll0 currentListView = ((di.i) fVar.M0).R.getCurrentListView();
-                    if (currentListView == null || currentListView.getAdapter() == null) {
-                        return;
-                    }
-                    currentListView.getAdapter().l();
-                    return;
-                } catch (Throwable unused) {
-                    return;
-                }
-            case 5:
-                a();
-                return;
-            case 6:
-                ((ei.h0) this.b).invalidateSelf();
-                return;
-            case 7:
-                ((ei.i0) this.b).invalidateSelf();
-                return;
-            case 8:
-                ((ei.k0) this.b).d();
-                return;
-            case 9:
-                ((ei.x0) this.b).c();
-                return;
-            case 10:
-                ((ei.x0) this.b).c();
-                return;
-            case 11:
-                ((ei.y0) this.b).a();
-                return;
-            case 12:
-                ((ei.z0) this.b).a();
-                return;
-            case 13:
-                ((ei.j3) this.b).invalidate();
-                return;
-            case 14:
-                ((AnimationNotificationsLocker) this.b).unlock();
-                return;
-            case 15:
-                ei.p4 p4Var = (ei.p4) this.b;
-                p4Var.Q = p4Var.r;
-                return;
-            case 16:
-                ai.v8 v8Var = ((gg.o1) this.b).y;
-                if (v8Var != null) {
-                    v8Var.p(3, true);
-                    return;
-                }
-                return;
-            case 17:
-                ((e2.a0) this.b).getClass();
-                return;
-            case 18:
-                hg.d dVar = (hg.d) this.b;
-                dVar.c.Y2.N(true);
-                dVar.V(true);
-                return;
-            case 19:
-                AndroidUtilities.addToClipboard(((TL_account.TL_businessChatLink) this.b).link);
-                org.telegram.ui.Components.vc.a0(LaunchActivity.R()).k(false).j();
-                return;
-            case 20:
-                hg.m0 m0Var = (hg.m0) this.b;
-                w51 w51Var = m0Var.d0;
-                if (w51Var != null) {
-                    w51Var.N(true);
-                }
-                m0Var.T(true);
-                return;
-            case 21:
-                hg.v0 v0Var = (hg.v0) ((a6.m) this.b).b;
-                v0Var.c.Y2.N(true);
-                v0Var.b0();
-                return;
-            case 22:
-                hg.x0 x0Var = (hg.x0) this.b;
-                x0Var.c.Y2.N(true);
-                x0Var.V(true);
-                return;
-            case 23:
-                hg.h1 h1Var = (hg.h1) this.b;
-                h1Var.a.Y2.N(true);
-                h1Var.Y(true);
-                return;
-            case 24:
-                ((ai.e4) this.b).run(Boolean.FALSE);
-                return;
-            case 25:
-                NotificationCenter.getInstance(((hg.c2) this.b).a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.quickRepliesUpdated, new Object[0]);
-                return;
-            case 26:
-                com.google.firebase.messaging.m mVar = (com.google.firebase.messaging.m) this.b;
-                ((Context) mVar.b).unregisterReceiver((i2.b) mVar.c);
-                return;
-            case 27:
-                i2.b bVar = (i2.b) this.b;
-                if (bVar.c.a) {
-                    bVar.a.a.y1(3, false);
-                    return;
-                }
-                return;
-            case 28:
-                i2.e0 e0Var = (i2.e0) this.b;
-                e2.c cVar2 = e0Var.E;
-                Context context = e0Var.e;
-                String str2 = e2.d0.a;
-                Integer valueOf = Integer.valueOf(c2.d.e(context).generateAudioSessionId());
-                cVar2.f = valueOf;
-                e2.b bVar2 = new e2.b(cVar2, valueOf, i11);
-                e2.z zVar = (e2.z) cVar2.c;
-                if (zVar.a.getLooper().getThread().isAlive()) {
-                    zVar.c(bVar2);
-                    return;
-                }
-                return;
-            default:
-                i2.e0 e0Var2 = ((i2.b0) this.b).a;
-                e0Var2.t1(null);
-                e0Var2.m1(0, 0);
-                return;
+    public final void c() {
+        if (this.k || this.e == null || this.d.size() >= this.c) {
+            return;
         }
-    }
-
-    public /* synthetic */ uc(i2.b0 b0Var, SurfaceTexture surfaceTexture) {
-        this.a = 29;
-        this.b = b0Var;
-    }
-
-    public /* synthetic */ uc(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+        this.k = true;
+        this.j += this.b;
+        int i10 = 0;
+        Utilities.themeQueue.cancelRunnable(new rc(this, i10));
+        Utilities.themeQueue.postRunnable(new rc(this, i10));
     }
 }

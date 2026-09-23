@@ -1,162 +1,45 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.ui.ActionBar.ActionBarLayout;
+import android.os.Bundle;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.play.core.integrity.IntegrityTokenResponse;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class gd0 extends org.telegram.ui.Components.pv0 implements r0.m {
-    public final b2.q0 w0;
-    public boolean x0;
-    public final /* synthetic */ id0 y0;
+public final /* synthetic */ class gd0 implements OnSuccessListener {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ rg0 b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ TLRPC.auth_SentCode d;
+    public final /* synthetic */ Bundle e;
+    public final /* synthetic */ boolean f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gd0(id0 id0Var, Context context) {
-        super(context, null);
-        this.y0 = id0Var;
-        this.x0 = true;
-        this.w0 = new b2.q0();
+    public /* synthetic */ gd0(rg0 rg0Var, Bundle bundle, TLRPC.auth_SentCode auth_sentcode, String str, boolean z10) {
+        this.b = rg0Var;
+        this.e = bundle;
+        this.d = auth_sentcode;
+        this.c = str;
+        this.f = z10;
     }
 
-    @Override // r0.l
-    public final void E(ViewGroup viewGroup, int i10, int i11, int[] iArr, int i12) {
-        yc0 yc0Var;
-        org.telegram.ui.ActionBar.k kVar;
-        int i13;
-        org.telegram.ui.Components.ll0 currentListView;
-        id0 id0Var = this.y0;
-        if (viewGroup == id0Var.U && (yc0Var = id0Var.K0) != null && yc0Var.isAttachedToWindow()) {
-            kVar = ((org.telegram.ui.ActionBar.n2) id0Var).actionBar;
-            boolean z10 = kVar.n0;
-            int top = id0Var.K0.getTop();
-            boolean z11 = false;
-            if (i11 >= 0) {
-                if (z10) {
-                    org.telegram.ui.Components.ll0 currentListView2 = id0Var.K0.getCurrentListView();
-                    iArr[1] = i11;
-                    if (top > 0) {
-                        iArr[1] = 0;
-                    }
-                    if (currentListView2 == null || (i13 = iArr[1]) <= 0) {
-                        return;
-                    }
-                    currentListView2.scrollBy(0, i13);
-                    return;
-                }
-                return;
-            }
-            if (top <= 0 && (currentListView = id0Var.K0.getCurrentListView()) != null) {
-                int L0 = ((s4.c0) currentListView.getLayoutManager()).L0();
-                if (L0 != -1) {
-                    s4.c1 K = currentListView.K(L0);
-                    int top2 = K != null ? K.a.getTop() : -1;
-                    int paddingTop = currentListView.getPaddingTop();
-                    if (top2 != paddingTop || L0 != 0) {
-                        iArr[1] = L0 != 0 ? i11 : Math.max(i11, top2 - paddingTop);
-                        currentListView.scrollBy(0, i11);
-                        z11 = true;
-                    }
-                }
-            }
-            if (z10) {
-                if (z11 || top >= 0) {
-                    iArr[1] = i11;
-                } else {
-                    iArr[1] = i11 - Math.max(top, i11);
-                }
-            }
+    @Override // com.google.android.gms.tasks.OnSuccessListener
+    public final void onSuccess(Object obj) {
+        switch (this.a) {
+            case 0:
+                rg0.X(this.b, this.e, this.d, this.c, this.f, (IntegrityTokenResponse) obj);
+                break;
+            default:
+                rg0.V(this.b, this.c, this.d, this.e, this.f, (m8.d) obj);
+                break;
         }
     }
 
-    @Override // org.telegram.ui.Components.pv0
-    public final void L(Canvas canvas, ArrayList arrayList) {
-        id0 id0Var = this.y0;
-        if (id0Var.K0 != null) {
-            canvas.save();
-            canvas.translate(0.0f, id0Var.U.getY());
-            id0Var.K0.Q(canvas, arrayList);
-            canvas.restore();
-        }
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        org.telegram.ui.ActionBar.k kVar;
-        org.telegram.ui.ActionBar.d5 d5Var;
-        org.telegram.ui.ActionBar.d5 d5Var2;
-        org.telegram.ui.ActionBar.k kVar2;
-        boolean drawChild = super.drawChild(canvas, view, j3);
-        id0 id0Var = this.y0;
-        kVar = ((org.telegram.ui.ActionBar.n2) id0Var).actionBar;
-        if (view == kVar) {
-            d5Var = ((org.telegram.ui.ActionBar.n2) id0Var).parentLayout;
-            if (d5Var != null) {
-                d5Var2 = ((org.telegram.ui.ActionBar.n2) id0Var).parentLayout;
-                kVar2 = ((org.telegram.ui.ActionBar.n2) id0Var).actionBar;
-                ((ActionBarLayout) d5Var2).q(canvas, kVar2.getMeasuredHeight());
-            }
-        }
-        return drawChild;
-    }
-
-    @Override // r0.m
-    public final void j(ViewGroup viewGroup, int i10, int i11, int i12, int i13, int i14, int[] iArr) {
-        yc0 yc0Var;
-        id0 id0Var = this.y0;
-        try {
-            if (viewGroup == id0Var.U && (yc0Var = id0Var.K0) != null && yc0Var.isAttachedToWindow()) {
-                org.telegram.ui.Components.ll0 currentListView = id0Var.K0.getCurrentListView();
-                int top = id0Var.K0.getTop();
-                if (currentListView == null || top != 0) {
-                    return;
-                }
-                iArr[1] = i13;
-                currentListView.scrollBy(0, i13);
-            }
-        } catch (Throwable th2) {
-            FileLog.e(th2);
-            AndroidUtilities.runOnUIThread(new g10(this, 17));
-        }
-    }
-
-    @Override // r0.l
-    public final void o(int i10, View view) {
-        this.w0.a = 0;
-    }
-
-    @Override // org.telegram.ui.Components.pv0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        id0 id0Var = this.y0;
-        if (!z10) {
-            id0Var.A0(true);
-        } else {
-            id0Var.k0(this.x0);
-            this.x0 = false;
-        }
-    }
-
-    @Override // r0.l
-    public final boolean p(View view, View view2, int i10, int i11) {
-        return this.y0.K0 != null && i10 == 2;
-    }
-
-    @Override // r0.l
-    public final void s(View view, View view2, int i10, int i11) {
-        this.w0.a = i10;
-    }
-
-    @Override // android.view.ViewGroup, android.view.ViewParent
-    public final void onStopNestedScroll(View view) {
-    }
-
-    @Override // r0.l
-    public final void c(ViewGroup viewGroup, int i10, int i11, int i12, int i13, int i14) {
+    public /* synthetic */ gd0(rg0 rg0Var, String str, TLRPC.auth_SentCode auth_sentcode, Bundle bundle, boolean z10) {
+        this.b = rg0Var;
+        this.c = str;
+        this.d = auth_sentcode;
+        this.e = bundle;
+        this.f = z10;
     }
 }

@@ -1,39 +1,54 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class kh1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ UserInfoActivity b;
+import android.content.Context;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-    public /* synthetic */ kh1(UserInfoActivity userInfoActivity, int i10) {
-        this.a = i10;
-        this.b = userInfoActivity;
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* loaded from: classes3.dex */
+public final class kh1 extends LinearLayout {
+    public final org.telegram.ui.ActionBar.d6 a;
+    public final ImageView b;
+    public final LinearLayout c;
+    public final TextView d;
+    public final TextView e;
+    public final ImageView f;
+    public boolean h;
+    public boolean n;
+
+    public kh1(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context);
+        setOrientation(0);
+        this.a = d6Var;
+        ImageView imageView = new ImageView(context);
+        this.b = imageView;
+        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
+        imageView.setScaleType(scaleType);
+        addView(imageView, w7.x5.t(40, 40, 19, 12, 0, 12, 0));
+        LinearLayout linearLayout = new LinearLayout(context);
+        this.c = linearLayout;
+        linearLayout.setOrientation(1);
+        linearLayout.setPadding(0, AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f));
+        addView(linearLayout, w7.x5.p(0, -2, 1.0f, 23, 0, 0, 32, 0));
+        TextView textView = new TextView(context);
+        this.d = textView;
+        textView.setTextSize(1, 16.0f);
+        TextView h = com.google.android.gms.internal.vision.e2.h(linearLayout, textView, w7.x5.t(-1, -2, 7, 0, 0, 0, 0), context);
+        this.e = h;
+        h.setTextSize(1, 13.0f);
+        linearLayout.addView(h, w7.x5.r(-1, -2, 7, 0.0f, 4.33f, 0.0f, 0.0f));
+        ImageView imageView2 = new ImageView(context);
+        this.f = imageView2;
+        imageView2.setScaleType(scaleType);
+        addView(imageView2, w7.x5.t(40, 40, 21, 12, 0, 12, 0));
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.presentFragment(new PrivacyControlActivity(9, true));
-                break;
-            case 1:
-                org.telegram.ui.Components.y51 y51Var = this.b.x;
-                if (y51Var != null) {
-                    y51Var.Y2.N(true);
-                    break;
-                }
-                break;
-            case 2:
-                UserInfoActivity userInfoActivity = this.b;
-                userInfoActivity.getClass();
-                userInfoActivity.presentFragment(new PrivacyControlActivity(11, false));
-                break;
-            default:
-                UserInfoActivity userInfoActivity2 = this.b;
-                userInfoActivity2.getClass();
-                userInfoActivity2.presentFragment(new PremiumPreviewFragment(0, "add_account"));
-                break;
-        }
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
     }
 }

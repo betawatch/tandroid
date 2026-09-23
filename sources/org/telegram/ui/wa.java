@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class wa implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -58,7 +58,7 @@ public final /* synthetic */ class wa implements RequestDelegate {
                 }
                 break;
             case 2:
-                AndroidUtilities.runOnUIThread(new l4(11, this.b, tLObject));
+                AndroidUtilities.runOnUIThread(new m4(11, this.b, tLObject));
                 break;
             case 3:
                 if (tLObject != null) {
@@ -82,7 +82,7 @@ public final /* synthetic */ class wa implements RequestDelegate {
                 }
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new q1(this.b, tL_error, tLObject, 9));
+                AndroidUtilities.runOnUIThread(new r1(this.b, tL_error, tLObject, 9));
                 break;
         }
     }

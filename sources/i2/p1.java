@@ -1,79 +1,29 @@
 package i2;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+import j$.util.Objects;
+
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class p1 {
-    public static final p1 c;
-    public static final p1 d;
-    public static final p1 e;
-    public final long a;
-    public final long b;
+    public static final p1 b;
+    public final e9.m0 a;
 
     static {
-        p1 p1Var = new p1(0L, 0L);
-        c = p1Var;
-        d = new p1(Long.MAX_VALUE, Long.MAX_VALUE);
-        new p1(Long.MAX_VALUE, 0L);
-        new p1(0L, Long.MAX_VALUE);
-        e = p1Var;
+        a4.m mVar = new a4.m(18, false);
+        mVar.b = e9.m0.u(2, 1, 5);
+        b = new p1(mVar);
     }
 
-    public p1(long j3, long j10) {
-        e2.d.b(j3 >= 0);
-        e2.d.b(j10 >= 0);
-        this.a = j3;
-        this.b = j10;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:27:0x005c A[RETURN] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final long a(long j3, long j10, long j11) {
-        long j12 = this.b;
-        long j13 = this.a;
-        if (j13 == 0 && j12 == 0) {
-            return j3;
-        }
-        String str = e2.d0.a;
-        long j14 = j3 - j13;
-        if (((j13 ^ j3) & (j3 ^ j14)) < 0) {
-            j14 = Long.MIN_VALUE;
-        }
-        long j15 = j3 + j12;
-        if (((j12 ^ j15) & (j3 ^ j15)) < 0) {
-            j15 = Long.MAX_VALUE;
-        }
-        boolean z10 = false;
-        boolean z11 = j14 <= j10 && j10 <= j15;
-        if (j14 <= j11 && j11 <= j15) {
-            z10 = true;
-        }
-        if (!z11 || !z10) {
-            if (!z11) {
-                return z10 ? j11 : j14;
-            }
-            return j10;
-        }
-        if (Math.abs(j10 - j3) <= Math.abs(j11 - j3)) {
-            return j10;
-        }
+    public p1(a4.m mVar) {
+        this.a = (e9.m0) mVar.b;
     }
 
     public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && p1.class == obj.getClass()) {
-            p1 p1Var = (p1) obj;
-            if (this.a == p1Var.a && this.b == p1Var.b) {
-                return true;
-            }
-        }
-        return false;
+        return (obj instanceof p1) && this.a.equals(((p1) obj).a);
     }
 
     public final int hashCode() {
-        return (((int) this.a) * 31) + ((int) this.b);
+        Boolean bool = Boolean.TRUE;
+        return Objects.hash(this.a, null, null, bool, bool, bool, bool);
     }
 }

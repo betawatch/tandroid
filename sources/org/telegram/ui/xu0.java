@@ -1,35 +1,58 @@
 package org.telegram.ui;
 
-import java.io.File;
-import java.util.List;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public interface xu0 {
-    boolean a(int i10);
+public final class xu0 extends org.telegram.ui.Components.y50 {
+    public final /* synthetic */ yu0 d;
 
-    File b(int i10);
+    public xu0(yu0 yu0Var) {
+        this.d = yu0Var;
+    }
 
-    String c(int i10);
+    @Override // org.telegram.ui.Components.co0
+    public final CharSequence d() {
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append(LocaleController.getString("AccDescrVideoQuality", R.string.AccDescrVideoQuality));
+        if (this.d.s.Z7 > 0) {
+            sb2.append(", ");
+            sb2.append(this.d.s.Y7 + 1);
+            sb2.append(" / ");
+            sb2.append(this.d.s.Z7);
+        }
+        sb2.append(", ");
+        sb2.append(this.d.h);
+        sb2.append(" – ");
+        sb2.append(this.d.n);
+        return sb2.toString();
+    }
 
-    TLObject d(int i10);
+    @Override // org.telegram.ui.Components.y50
+    public final int i() {
+        return Math.max(0, this.d.s.Z7 - 1);
+    }
 
-    boolean e(int i10);
+    @Override // org.telegram.ui.Components.y50
+    public final int j() {
+        return this.d.s.Y7;
+    }
 
-    TLRPC.PhotoSize f(TLObject tLObject, int[] iArr);
-
-    Object g();
-
-    TL_iv.PageBlock get(int i10);
-
-    List getAll();
-
-    void h(TL_iv.PageBlock pageBlock);
-
-    CharSequence i(int i10);
-
-    int j();
+    @Override // org.telegram.ui.Components.y50
+    public final void k(int i10) {
+        int max;
+        if (this.d.s.Z7 > 0 && (max = Math.max(0, Math.min(this.d.s.Z7 - 1, i10))) != this.d.s.Y7) {
+            yu0 yu0Var = this.d;
+            yu0Var.r = yu0Var.s.Y7;
+            this.d.s.Y7 = max;
+            this.d.s.R0();
+            this.d.invalidate();
+            int i11 = this.d.s.Y7;
+            yu0 yu0Var2 = this.d;
+            if (i11 != yu0Var2.r) {
+                yu0Var2.s.o2(1);
+            }
+        }
+    }
 }

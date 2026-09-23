@@ -1,41 +1,52 @@
 package org.telegram.ui;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class s51 extends g.p {
-    public final /* synthetic */ int c;
-    public final /* synthetic */ h71 d;
+public final class s51 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ z61 c;
 
-    public /* synthetic */ s51(h71 h71Var, int i10) {
-        this.c = i10;
-        this.d = h71Var;
+    public /* synthetic */ s51(z61 z61Var, boolean z10, int i10) {
+        this.a = i10;
+        this.c = z61Var;
+        this.b = z10;
     }
 
-    @Override // g.p
-    public final int i(int i10) {
-        int i11;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         ArrayList arrayList;
-        int i12;
-        switch (this.c) {
+        ArrayList arrayList2;
+        switch (this.a) {
             case 0:
-                h71 h71Var = this.d;
-                return (h71Var.w0.indexOfKey(i10) >= 0 || h71Var.z0.indexOfKey(i10) >= 0 || i10 == h71Var.f || i10 == h71Var.y || i10 == h71Var.n || i10 == h71Var.h || i10 == h71Var.v || i10 == h71Var.a || i10 == h71Var.x) ? h71Var.r0.J : ((i10 < h71Var.E || i10 >= h71Var.F) && !h71Var.Q) ? 5 : 8;
-            default:
-                h71 h71Var2 = this.d;
-                r61 r61Var = h71Var2.q0;
-                int j3 = r61Var.j(i10);
-                if (j3 == 6) {
-                    return h71Var2.r0.J;
-                }
-                if (j3 != 5) {
-                    h71 h71Var3 = r61Var.s;
-                    if (h71Var3.W != 14 ? i10 <= (i11 = r61Var.c) || (i10 - i11) - 1 >= h71Var3.C1.size() : (arrayList = h71Var3.B1) == null || i10 < (i12 = r61Var.c) || i10 - i12 >= arrayList.size()) {
-                        return 5;
+                z61 z61Var = this.c;
+                m51 m51Var = z61Var.i0;
+                boolean z10 = this.b;
+                m51Var.setVisibility(z10 ? 0 : 8);
+                z61Var.h0.setVisibility(z10 ? 8 : 0);
+                z61Var.E1 = null;
+                if (!z10 && (arrayList2 = z61Var.A1) != null) {
+                    arrayList2.clear();
+                    ArrayList arrayList3 = z61Var.D1;
+                    if (arrayList3 != null) {
+                        arrayList3.clear();
                     }
+                    z61Var.q0.E(false);
                 }
-                return 8;
+                if (!z10 && (arrayList = z61Var.B1) != null) {
+                    arrayList.clear();
+                    break;
+                }
+                break;
+            default:
+                z61 z61Var2 = this.c;
+                z61Var2.j0.setVisibility((this.b && z61Var2.i0.getVisibility() == 0) ? 0 : 8);
+                z61Var2.H1 = null;
+                break;
         }
     }
 }

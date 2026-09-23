@@ -6,17 +6,17 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.view.View;
 import android.widget.FrameLayout;
-import org.telegram.ui.au0;
+import org.telegram.ui.tt0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class w implements pg.u {
     public boolean a;
     public final /* synthetic */ Bitmap b;
-    public final /* synthetic */ au0 c;
+    public final /* synthetic */ tt0 c;
 
-    public w(au0 au0Var, Bitmap bitmap) {
-        this.c = au0Var;
+    public w(tt0 tt0Var, Bitmap bitmap) {
+        this.c = tt0Var;
         this.b = bitmap;
     }
 
@@ -66,14 +66,14 @@ public final class w implements pg.u {
 
     @Override // pg.u
     public final void h(int i10) {
-        au0 au0Var = this.c;
-        au0Var.x0(false);
-        pg.s0 s0Var = au0Var.V1;
-        s0Var.h(i10, true);
-        s0Var.g();
-        au0Var.setNewColor(i10);
-        l0 l0Var = au0Var.G1;
-        l0Var.setSelectedColorIndex(s0Var.d());
+        tt0 tt0Var = this.c;
+        tt0Var.x0(false);
+        pg.t0 t0Var = tt0Var.V1;
+        t0Var.h(i10, true);
+        t0Var.g();
+        tt0Var.setNewColor(i10);
+        l0 l0Var = tt0Var.G1;
+        l0Var.setSelectedColorIndex(t0Var.d());
         l0Var.getAdapter().l();
     }
 }

@@ -12,7 +12,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public abstract class k0 extends FrameLayout {
     public final int a;
@@ -42,11 +42,11 @@ public abstract class k0 extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        int i10 = org.telegram.ui.ActionBar.i6.m6;
-        int w02 = org.telegram.ui.ActionBar.i6.w0(null, i10, false);
+        int i10 = org.telegram.ui.ActionBar.h6.m6;
+        int w02 = org.telegram.ui.ActionBar.h6.w0(null, i10, false);
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
         this.b.setColorFilter(new PorterDuffColorFilter(w02, mode));
-        this.c.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.w0(null, i10, false), mode));
+        this.c.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(null, i10, false), mode));
     }
 
     @Override // android.view.View

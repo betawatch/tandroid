@@ -5,7 +5,7 @@ import android.view.View;
 import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -60,21 +60,21 @@ public final /* synthetic */ class w0 implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 4:
-                o3 o3Var = (o3) this.b;
-                o3Var.getClass();
-                o3Var.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                Iterator it = o3Var.I.iterator();
+                n3 n3Var = (n3) this.b;
+                n3Var.getClass();
+                n3Var.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                Iterator it = n3Var.I.iterator();
                 while (it.hasNext()) {
                     ((Runnable) it.next()).run();
                 }
-                o3Var.invalidate();
+                n3Var.invalidate();
                 break;
             default:
-                w3 w3Var = (w3) this.b;
-                w3Var.i = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                x3 x3Var = w3Var.b;
-                if (x3Var != null) {
-                    x3Var.invalidate();
+                v3 v3Var = (v3) this.b;
+                v3Var.i = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                w3 w3Var = v3Var.b;
+                if (w3Var != null) {
+                    w3Var.invalidate();
                     break;
                 }
                 break;

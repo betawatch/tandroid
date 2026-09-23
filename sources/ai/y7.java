@@ -1,103 +1,198 @@
 package ai;
 
-import java.util.Collections;
-import org.telegram.messenger.AccountInstance;
+import java.util.ArrayList;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BotForumHelper;
-import org.telegram.messenger.LocationController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.support.LongSparseIntArray;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.yu0;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.bo;
-import org.telegram.ui.z90;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class y7 implements Runnable {
+public final /* synthetic */ class y7 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ l9 b;
 
-    public /* synthetic */ y7(Object obj, int i10, long j3, int i11) {
-        this.a = i11;
-        this.d = obj;
-        this.b = i10;
-        this.c = j3;
+    public /* synthetic */ y7(l9 l9Var, int i10) {
+        this.a = i10;
+        this.b = l9Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                l9 l9Var = (l9) this.d;
-                LongSparseIntArray longSparseIntArray = l9Var.f;
-                long j3 = this.c;
-                int i10 = longSparseIntArray.get(j3, 0);
-                int i11 = this.b;
-                int max = Math.max(i10, i11);
-                l9Var.f.put(j3, max);
-                l9Var.k.i(max, j3);
-                TL_stories.PeerStories y3 = l9Var.y(j3);
-                if (y3 != null && i11 > y3.max_read_id) {
-                    y3.max_read_id = i11;
-                    Collections.sort(l9Var.g, l9Var.J);
-                    NotificationCenter.getInstance(l9Var.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesUpdated, new Object[0]);
+                TLRPC.Updates updates = (TLRPC.Updates) tLObject;
+                if (updates != null) {
+                    l9 l9Var = this.b;
+                    MessagesController.getInstance(l9Var.a).processUpdateArray(updates.updates, updates.users, updates.chats, false, updates.date);
+                    AndroidUtilities.runOnUIThread(new j8(l9Var, 1));
                     break;
                 }
                 break;
             case 1:
-                ((LocationController) this.d).lambda$setProximityLocation$12(this.b, this.c);
+                AndroidUtilities.runOnUIThread(new a3.k0(this.b, tLObject, tL_error, 4));
                 break;
             case 2:
-                ((MediaController) this.d).lambda$prepareResumedRecording$23(this.b, this.c);
+                final int i10 = 1;
+                final l9 l9Var2 = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: ai.h8
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                l9 l9Var3 = l9Var2;
+                                HashSet hashSet = l9Var3.L;
+                                int i11 = l9Var3.a;
+                                TLObject tLObject2 = tLObject;
+                                if (tLObject2 instanceof TLRPC.TL_contacts_blocked) {
+                                    TLRPC.TL_contacts_blocked tL_contacts_blocked = (TLRPC.TL_contacts_blocked) tLObject2;
+                                    MessagesController.getInstance(i11).putUsers(tL_contacts_blocked.users, false);
+                                    MessagesController.getInstance(i11).putChats(tL_contacts_blocked.chats, false);
+                                    hashSet.clear();
+                                    ArrayList<TLRPC.TL_peerBlocked> arrayList = tL_contacts_blocked.blocked;
+                                    int size = arrayList.size();
+                                    int i12 = 0;
+                                    while (i12 < size) {
+                                        TLRPC.TL_peerBlocked tL_peerBlocked = arrayList.get(i12);
+                                        i12++;
+                                        hashSet.add(Long.valueOf(DialogObject.getPeerDialogId(tL_peerBlocked.peer_id)));
+                                    }
+                                    l9Var3.N = Math.max(hashSet.size(), tL_contacts_blocked.count);
+                                    l9Var3.O = true;
+                                } else if (tLObject2 instanceof TLRPC.TL_contacts_blockedSlice) {
+                                    TLRPC.TL_contacts_blockedSlice tL_contacts_blockedSlice = (TLRPC.TL_contacts_blockedSlice) tLObject2;
+                                    MessagesController.getInstance(i11).putUsers(tL_contacts_blockedSlice.users, false);
+                                    MessagesController.getInstance(i11).putChats(tL_contacts_blockedSlice.chats, false);
+                                    ArrayList<TLRPC.TL_peerBlocked> arrayList2 = tL_contacts_blockedSlice.blocked;
+                                    int size2 = arrayList2.size();
+                                    int i13 = 0;
+                                    while (i13 < size2) {
+                                        TLRPC.TL_peerBlocked tL_peerBlocked2 = arrayList2.get(i13);
+                                        i13++;
+                                        hashSet.add(Long.valueOf(DialogObject.getPeerDialogId(tL_peerBlocked2.peer_id)));
+                                    }
+                                    l9Var3.N = tL_contacts_blockedSlice.count;
+                                    l9Var3.O = hashSet.size() >= l9Var3.N;
+                                }
+                                NotificationCenter.getInstance(i11).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesBlocklistUpdate, new Object[0]);
+                                l9Var3.P = false;
+                                l9Var3.Q = System.currentTimeMillis();
+                                break;
+                            default:
+                                l9 l9Var4 = l9Var2;
+                                int i14 = l9Var4.a;
+                                ArrayList arrayList3 = l9Var4.T;
+                                arrayList3.clear();
+                                arrayList3.add(new TLRPC.TL_inputPeerSelf());
+                                TLObject tLObject3 = tLObject;
+                                if (tLObject3 instanceof TLRPC.TL_messages_chats) {
+                                    ArrayList<TLRPC.Chat> arrayList4 = ((TLRPC.TL_messages_chats) tLObject3).chats;
+                                    MessagesController.getInstance(i14).putChats(arrayList4, false);
+                                    int size3 = arrayList4.size();
+                                    int i15 = 0;
+                                    while (i15 < size3) {
+                                        TLRPC.Chat chat = arrayList4.get(i15);
+                                        i15++;
+                                        arrayList3.add(MessagesController.getInputPeer(chat));
+                                    }
+                                }
+                                l9Var4.U = false;
+                                l9Var4.V = true;
+                                NotificationCenter.getInstance(i14).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesSendAsUpdate, new Object[0]);
+                                break;
+                        }
+                    }
+                });
                 break;
             case 3:
-                ((MediaDataController) this.d).lambda$deletePeer$159(this.c, this.b);
+                final int i11 = 0;
+                final l9 l9Var3 = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: ai.h8
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i11) {
+                            case 0:
+                                l9 l9Var32 = l9Var3;
+                                HashSet hashSet = l9Var32.L;
+                                int i112 = l9Var32.a;
+                                TLObject tLObject2 = tLObject;
+                                if (tLObject2 instanceof TLRPC.TL_contacts_blocked) {
+                                    TLRPC.TL_contacts_blocked tL_contacts_blocked = (TLRPC.TL_contacts_blocked) tLObject2;
+                                    MessagesController.getInstance(i112).putUsers(tL_contacts_blocked.users, false);
+                                    MessagesController.getInstance(i112).putChats(tL_contacts_blocked.chats, false);
+                                    hashSet.clear();
+                                    ArrayList<TLRPC.TL_peerBlocked> arrayList = tL_contacts_blocked.blocked;
+                                    int size = arrayList.size();
+                                    int i12 = 0;
+                                    while (i12 < size) {
+                                        TLRPC.TL_peerBlocked tL_peerBlocked = arrayList.get(i12);
+                                        i12++;
+                                        hashSet.add(Long.valueOf(DialogObject.getPeerDialogId(tL_peerBlocked.peer_id)));
+                                    }
+                                    l9Var32.N = Math.max(hashSet.size(), tL_contacts_blocked.count);
+                                    l9Var32.O = true;
+                                } else if (tLObject2 instanceof TLRPC.TL_contacts_blockedSlice) {
+                                    TLRPC.TL_contacts_blockedSlice tL_contacts_blockedSlice = (TLRPC.TL_contacts_blockedSlice) tLObject2;
+                                    MessagesController.getInstance(i112).putUsers(tL_contacts_blockedSlice.users, false);
+                                    MessagesController.getInstance(i112).putChats(tL_contacts_blockedSlice.chats, false);
+                                    ArrayList<TLRPC.TL_peerBlocked> arrayList2 = tL_contacts_blockedSlice.blocked;
+                                    int size2 = arrayList2.size();
+                                    int i13 = 0;
+                                    while (i13 < size2) {
+                                        TLRPC.TL_peerBlocked tL_peerBlocked2 = arrayList2.get(i13);
+                                        i13++;
+                                        hashSet.add(Long.valueOf(DialogObject.getPeerDialogId(tL_peerBlocked2.peer_id)));
+                                    }
+                                    l9Var32.N = tL_contacts_blockedSlice.count;
+                                    l9Var32.O = hashSet.size() >= l9Var32.N;
+                                }
+                                NotificationCenter.getInstance(i112).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesBlocklistUpdate, new Object[0]);
+                                l9Var32.P = false;
+                                l9Var32.Q = System.currentTimeMillis();
+                                break;
+                            default:
+                                l9 l9Var4 = l9Var3;
+                                int i14 = l9Var4.a;
+                                ArrayList arrayList3 = l9Var4.T;
+                                arrayList3.clear();
+                                arrayList3.add(new TLRPC.TL_inputPeerSelf());
+                                TLObject tLObject3 = tLObject;
+                                if (tLObject3 instanceof TLRPC.TL_messages_chats) {
+                                    ArrayList<TLRPC.Chat> arrayList4 = ((TLRPC.TL_messages_chats) tLObject3).chats;
+                                    MessagesController.getInstance(i14).putChats(arrayList4, false);
+                                    int size3 = arrayList4.size();
+                                    int i15 = 0;
+                                    while (i15 < size3) {
+                                        TLRPC.Chat chat = arrayList4.get(i15);
+                                        i15++;
+                                        arrayList3.add(MessagesController.getInputPeer(chat));
+                                    }
+                                }
+                                l9Var4.U = false;
+                                l9Var4.V = true;
+                                NotificationCenter.getInstance(i14).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesSendAsUpdate, new Object[0]);
+                                break;
+                        }
+                    }
+                });
                 break;
             case 4:
-                ((MessagesController) this.d).lambda$processUpdateArray$420(this.c, this.b);
+                l9 l9Var4 = this.b;
+                l9Var4.getClass();
+                AndroidUtilities.runOnUIThread(new j8(l9Var4, 0));
                 break;
-            case 5:
-                SendMessagesHelper.lambda$finishGroup$117((AccountInstance) this.d, this.c, this.b);
-                break;
-            case 6:
-                BotForumHelper.BotDraftAnimationsPool botDraftAnimationsPool = ((org.telegram.ui.Cells.t1) this.d).Pd;
-                if (botDraftAnimationsPool != null) {
-                    botDraftAnimationsPool.removeAnimator(this.c, this.b);
+            default:
+                l9 l9Var5 = this.b;
+                l9Var5.getClass();
+                if (tL_error == null) {
+                    AndroidUtilities.runOnUIThread(new j8(l9Var5, 0));
                     break;
                 }
                 break;
-            case 7:
-                yu0.n((yu0) this.d, this.c, this.b);
-                break;
-            default:
-                Long l4 = (Long) this.d;
-                org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
-                if (U != null) {
-                    bo R9 = bo.R9(l4.longValue());
-                    U.presentFragment(R9);
-                    TLRPC.Chat chat = MessagesController.getInstance(this.b).getChat(Long.valueOf(-l4.longValue()));
-                    if (chat != null) {
-                        AndroidUtilities.runOnUIThread(new z90(R9, this.c, chat, 1), 250L);
-                        break;
-                    }
-                }
-                break;
         }
-    }
-
-    public /* synthetic */ y7(Object obj, long j3, int i10, int i11) {
-        this.a = i11;
-        this.d = obj;
-        this.c = j3;
-        this.b = i10;
     }
 }

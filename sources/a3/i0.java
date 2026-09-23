@@ -1,6 +1,6 @@
 package a3;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i0 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -24,14 +24,14 @@ public final /* synthetic */ class i0 implements Runnable {
             case 0:
                 l0 l0Var = (l0) bVar.c;
                 String str = e2.d0.a;
-                j2.f fVar = ((i2.b0) l0Var).a.s;
+                j2.f fVar = ((i2.c0) l0Var).a.s;
                 j2.a n10 = fVar.n((u2.f0) fVar.d.e);
                 fVar.q(n10, 1018, new j2.c(n10, i11, j3));
                 break;
             default:
                 l0 l0Var2 = (l0) bVar.c;
                 String str2 = e2.d0.a;
-                j2.f fVar2 = ((i2.b0) l0Var2).a.s;
+                j2.f fVar2 = ((i2.c0) l0Var2).a.s;
                 j2.a n11 = fVar2.n((u2.f0) fVar2.d.e);
                 fVar2.q(n11, 1021, new j2.c(n11, j3, i11));
                 break;

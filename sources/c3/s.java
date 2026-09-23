@@ -1,29 +1,29 @@
 package c3;
 
 import android.animation.ObjectAnimator;
-import org.telegram.ui.Components.bb;
 import org.telegram.ui.Components.db;
-import org.telegram.ui.Components.eb;
-import org.telegram.ui.Components.kt;
-import org.telegram.ui.Components.ml;
-import org.telegram.ui.Components.ng;
-import org.telegram.ui.Components.rb;
-import org.telegram.ui.Components.sb;
+import org.telegram.ui.Components.fb;
+import org.telegram.ui.Components.gb;
+import org.telegram.ui.Components.lt;
+import org.telegram.ui.Components.nl;
+import org.telegram.ui.Components.og;
+import org.telegram.ui.Components.tb;
+import org.telegram.ui.Components.ub;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final class s implements rb {
+public final class s implements tb {
     public long a;
 
-    @Override // org.telegram.ui.Components.rb
-    public void U(sb sbVar, db dbVar, ng ngVar, ml mlVar) {
-        sbVar.setInOutOffset(sbVar.getMeasuredHeight());
-        mlVar.accept(Float.valueOf(sbVar.getTranslationY()));
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(sbVar, sb.IN_OUT_OFFSET_Y2, 0.0f);
+    @Override // org.telegram.ui.Components.tb
+    public void U(ub ubVar, fb fbVar, og ogVar, nl nlVar) {
+        ubVar.setInOutOffset(ubVar.getMeasuredHeight());
+        nlVar.accept(Float.valueOf(ubVar.getTranslationY()));
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(ubVar, ub.IN_OUT_OFFSET_Y2, 0.0f);
         ofFloat.setDuration(this.a);
-        ofFloat.setInterpolator(kt.d);
-        ofFloat.addListener(new ai.z(dbVar, ngVar, 16));
-        ofFloat.addUpdateListener(new ai.x(13, mlVar, sbVar));
+        ofFloat.setInterpolator(lt.d);
+        ofFloat.addListener(new ai.z(fbVar, ogVar, 16));
+        ofFloat.addUpdateListener(new ai.x(13, nlVar, ubVar));
         ofFloat.start();
     }
 
@@ -31,13 +31,13 @@ public final class s implements rb {
         return oVar.b == this.a && lf.a.c(oVar);
     }
 
-    @Override // org.telegram.ui.Components.rb
-    public void g(sb sbVar, db dbVar, bb bbVar, eb ebVar) {
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(sbVar, sb.IN_OUT_OFFSET_Y2, sbVar.getHeight());
+    @Override // org.telegram.ui.Components.tb
+    public void g(ub ubVar, fb fbVar, db dbVar, gb gbVar) {
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(ubVar, ub.IN_OUT_OFFSET_Y2, ubVar.getHeight());
         ofFloat.setDuration(175L);
-        ofFloat.setInterpolator(kt.c);
-        ofFloat.addListener(new ai.z(dbVar, bbVar, 17));
-        ofFloat.addUpdateListener(new ai.x(12, ebVar, sbVar));
+        ofFloat.setInterpolator(lt.c);
+        ofFloat.addListener(new ai.z(fbVar, dbVar, 17));
+        ofFloat.addUpdateListener(new ai.x(12, gbVar, ubVar));
         ofFloat.start();
     }
 }

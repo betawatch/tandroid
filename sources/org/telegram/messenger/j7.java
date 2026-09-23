@@ -5,9 +5,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.bo;
+import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final /* synthetic */ class j7 implements Runnable {
     public final /* synthetic */ int a;
@@ -58,30 +58,33 @@ public final /* synthetic */ class j7 implements Runnable {
                 ((SendMessagesHelper) this.b).lambda$sendNotificationCallback$30(this.c, this.d, (byte[]) this.e);
                 break;
             case 10:
-                ((TranslateController) this.b).lambda$checkLanguage$14((MessageObject) this.e, this.c, this.d);
+                ((TelegramMediaSession) this.b).lambda$loadMusicForDialog$7((MessagesStorage) this.e, this.c, this.d);
                 break;
             case 11:
-                org.telegram.ui.h4 h4Var = (org.telegram.ui.h4) this.b;
+                ((TranslateController) this.b).lambda$checkLanguage$14((MessageObject) this.e, this.c, this.d);
+                break;
+            case 12:
+                org.telegram.ui.i4 i4Var = (org.telegram.ui.i4) this.b;
                 TLObject tLObject = (TLObject) this.e;
-                if (h4Var.G0 != 0) {
-                    h4Var.G0 = 0;
-                    h4Var.b0(false);
+                if (i4Var.G0 != 0) {
+                    i4Var.G0 = 0;
+                    i4Var.b0(false);
                     if (tLObject != null) {
                         TLRPC.TL_contacts_resolvedPeer tL_contacts_resolvedPeer = (TLRPC.TL_contacts_resolvedPeer) tLObject;
                         int i10 = this.d;
                         MessagesController.getInstance(i10).putUsers(tL_contacts_resolvedPeer.users, false);
                         MessagesStorage.getInstance(i10).putUsersAndChats(tL_contacts_resolvedPeer.users, tL_contacts_resolvedPeer.chats, false, true);
                         if (!tL_contacts_resolvedPeer.users.isEmpty()) {
-                            h4Var.P(this.c, tL_contacts_resolvedPeer.users.get(0));
+                            i4Var.P(this.c, tL_contacts_resolvedPeer.users.get(0));
                             break;
                         }
                     }
                 }
                 break;
-            case 12:
+            case 13:
                 ((org.telegram.ui.m6) this.b).run(Float.valueOf(((int[]) this.e)[0] / this.d), Boolean.valueOf(System.currentTimeMillis() - this.c > 250));
                 break;
-            case 13:
+            case 14:
                 ((ProfileActivity) this.b).getMessagesController().getStoriesController().b(this.d, this.c, (ArrayList) this.e);
                 break;
             default:
@@ -92,10 +95,10 @@ public final /* synthetic */ class j7 implements Runnable {
                 if (f3Var != null) {
                     f3Var.dismiss();
                 }
-                yh.u5.y(this.d, false).S();
+                yh.t5.y(this.d, false).S();
                 org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
                 if (U != null) {
-                    U.presentFragment(bo.R9(this.c));
+                    U.presentFragment(xn.R9(this.c));
                     break;
                 }
                 break;
@@ -110,19 +113,19 @@ public final /* synthetic */ class j7 implements Runnable {
         this.c = j3;
     }
 
+    public /* synthetic */ j7(Object obj, Object obj2, long j3, int i10, int i11) {
+        this.a = i11;
+        this.b = obj;
+        this.e = obj2;
+        this.c = j3;
+        this.d = i10;
+    }
+
     public /* synthetic */ j7(BaseController baseController, long j3, TLObject tLObject, int i10, int i11) {
         this.a = i11;
         this.b = baseController;
         this.c = j3;
         this.e = tLObject;
-        this.d = i10;
-    }
-
-    public /* synthetic */ j7(BaseController baseController, Object obj, long j3, int i10, int i11) {
-        this.a = i11;
-        this.b = baseController;
-        this.e = obj;
-        this.c = j3;
         this.d = i10;
     }
 

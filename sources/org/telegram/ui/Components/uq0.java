@@ -4,7 +4,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.BirthdayController;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class uq0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public final /* synthetic */ class uq0 implements View.OnClickListener {
                 org.telegram.ui.ActionBar.n2 n2Var = yu0Var.v1;
                 if (!this.b) {
                     n2Var.getMessagesController().getMainSettings().edit().putBoolean("story_keep", true).apply();
-                    ci.oc.E(n2Var.getParentActivity(), n2Var.getCurrentAccount()).R(null);
+                    ci.lc.E(n2Var.getParentActivity(), n2Var.getCurrentAccount()).R(null);
                     break;
                 } else {
                     yu0Var.O0(n2Var, yu0Var.j1, this.c);
@@ -45,9 +45,9 @@ public final /* synthetic */ class uq0 implements View.OnClickListener {
                         tg.n1.e0(2, BirthdayController.getInstance(i10).getState());
                         break;
                     } else {
-                        xh.q1 q1Var = new xh.q1(nr0Var.getContext(), i10, nr0Var.c, null, null);
-                        q1Var.V(BirthdayController.getInstance(i10).isToday(nr0Var.c));
-                        q1Var.show();
+                        xh.r1 r1Var = new xh.r1(nr0Var.getContext(), i10, nr0Var.c, null, null);
+                        r1Var.V(BirthdayController.getInstance(i10).isToday(nr0Var.c));
+                        r1Var.show();
                         break;
                     }
                 }

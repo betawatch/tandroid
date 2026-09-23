@@ -1,74 +1,61 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Typeface;
 import android.text.TextPaint;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
+import android.text.style.MetricAffectingSpan;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class o01 {
-    public int a;
-    public int b;
-    public int c;
-    public TLRPC.MessageEntity d;
-    public boolean e;
+public final class o01 extends MetricAffectingSpan {
+    public final int a;
+    public final n01 b;
 
-    public o01() {
+    public o01(n01 n01Var, int i10) {
+        this.b = n01Var;
+        if (i10 > 0) {
+            this.a = i10;
+        }
     }
 
     public final void a(TextPaint textPaint) {
-        Typeface typeface;
-        if (this.e) {
-            typeface = (this.a & 2) != 0 ? AndroidUtilities.getTypeface("fonts/mw_bolditalic.ttf") : AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_MERRIWEATHER_BOLD);
-        } else {
-            int i10 = this.a;
-            if ((i10 & 4) == 0 && (i10 & 2048) == 0) {
-                int i11 = i10 & 1;
-                typeface = (i11 == 0 || (i10 & 2) == 0) ? i11 != 0 ? AndroidUtilities.bold() : (i10 & 2) != 0 ? AndroidUtilities.getTypeface("fonts/ritalic.ttf") : null : AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM_ITALIC);
-            } else {
-                typeface = Typeface.MONOSPACE;
+        n01 n01Var = this.b;
+        if (w7.c0.a(n01Var.a, 49152)) {
+            float textSize = textPaint.getTextSize();
+            textPaint.setTextSize(0.75f * textSize);
+            if (w7.c0.a(n01Var.a, 32768)) {
+                textPaint.baselineShift -= (int) (textSize * 0.35f);
+            } else if (w7.c0.a(n01Var.a, 16384)) {
+                textPaint.baselineShift += (int) (textSize * 0.12f);
             }
         }
-        if (typeface != null) {
-            textPaint.setTypeface(typeface);
-        }
-        if ((this.a & 16) != 0) {
-            textPaint.setFlags(textPaint.getFlags() | 8);
-        } else {
-            textPaint.setFlags(textPaint.getFlags() & (-9));
-        }
-        int i12 = this.a;
-        if ((i12 & 8) == 0 && (i12 & 8192) == 0) {
-            textPaint.setFlags(textPaint.getFlags() & (-17));
-        } else {
-            textPaint.setFlags(textPaint.getFlags() | 16);
-        }
-        if ((this.a & 512) != 0) {
-            textPaint.bgColor = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.R9, false);
-        }
-        int i13 = this.a;
-        if ((i13 & 8192) != 0) {
-            textPaint.setColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.q7, false));
-        } else if ((i13 & 4096) != 0) {
-            textPaint.setColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Oh, false));
-        }
     }
 
-    public final void b(o01 o01Var) {
-        TLRPC.MessageEntity messageEntity;
-        this.a |= o01Var.a;
-        if (this.d != null || (messageEntity = o01Var.d) == null) {
-            return;
-        }
-        this.d = messageEntity;
+    public final n01 b() {
+        return this.b;
     }
 
-    public o01(o01 o01Var) {
-        this.a = o01Var.a;
-        this.b = o01Var.b;
-        this.c = o01Var.c;
-        this.d = o01Var.d;
-        this.e = o01Var.e;
+    public final boolean c() {
+        return (this.b.a & 256) > 0;
+    }
+
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        int i10 = this.a;
+        if (i10 != 0) {
+            textPaint.setTextSize(i10);
+        }
+        a(textPaint);
+        textPaint.setFlags(textPaint.getFlags() | 128);
+        this.b.a(textPaint);
+    }
+
+    @Override // android.text.style.MetricAffectingSpan
+    public final void updateMeasureState(TextPaint textPaint) {
+        int i10 = this.a;
+        if (i10 != 0) {
+            textPaint.setTextSize(i10);
+        }
+        a(textPaint);
+        textPaint.setFlags(textPaint.getFlags() | 128);
+        this.b.a(textPaint);
     }
 }

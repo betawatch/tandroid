@@ -10,12 +10,12 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.voip.VoIPService;
-import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.v81;
-import org.telegram.ui.ui1;
+import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.u81;
+import org.telegram.ui.mi1;
 import org.webrtc.OrientationHelper;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public abstract class w2 extends FrameLayout {
     public Activity a;
@@ -50,25 +50,25 @@ public abstract class w2 extends FrameLayout {
             return;
         }
         this.f = true;
-        if (ui1.n1 != null) {
+        if (mi1.n1 != null) {
             if (VoIPService.getSharedInstance() != null) {
-                int measuredHeight = ui1.n1.u0.getMeasuredHeight();
-                if (ui1.n1.D0 && !VoIPService.getSharedInstance().isConverting()) {
-                    ui1 ui1Var = ui1.n1;
-                    m2.l(ui1Var.b, ui1Var.a, ui1Var.u0.getMeasuredWidth(), measuredHeight, 0);
-                    WindowInsets windowInsets = ui1.n1.r0;
+                int measuredHeight = mi1.n1.u0.getMeasuredHeight();
+                if (mi1.n1.D0 && !VoIPService.getSharedInstance().isConverting()) {
+                    mi1 mi1Var = mi1.n1;
+                    m2.l(mi1Var.b, mi1Var.a, mi1Var.u0.getMeasuredWidth(), measuredHeight, 0);
+                    WindowInsets windowInsets = mi1.n1.r0;
                     if (windowInsets != null) {
                         m2.W = windowInsets.getSystemWindowInsetTop();
-                        ui1.n1.r0.getSystemWindowInsetBottom();
+                        mi1.n1.r0.getSystemWindowInsetBottom();
                     }
                 }
             }
-            ui1.n1.c0.d.release();
-            ui1.n1.d0.d.release();
-            ui1.n1.b0.release();
-            ui1.n1.l();
+            mi1.n1.c0.d.release();
+            mi1.n1.d0.d.release();
+            mi1.n1.b0.release();
+            mi1.n1.l();
         }
-        ui1.n1 = null;
+        mi1.n1 = null;
         if (this.b) {
             try {
                 ((WindowManager) this.a.getSystemService("window")).removeView(this);
@@ -76,7 +76,7 @@ public abstract class w2 extends FrameLayout {
             }
         } else {
             this.c.lock();
-            animate().translationY(getMeasuredHeight()).alpha(0.0f).setListener(new v81(this, 10)).setDuration(j3).setInterpolator(qr.f).start();
+            animate().translationY(getMeasuredHeight()).alpha(0.0f).setListener(new u81(this, 10)).setDuration(j3).setInterpolator(rr.f).start();
         }
     }
 
@@ -107,7 +107,7 @@ public abstract class w2 extends FrameLayout {
         }
         setTranslationY(getMeasuredHeight());
         setAlpha(0.0f);
-        animate().translationY(0.0f).alpha(1.0f).setDuration(330L).setInterpolator(qr.f).start();
+        animate().translationY(0.0f).alpha(1.0f).setDuration(330L).setInterpolator(rr.f).start();
     }
 
     @Override // android.view.View

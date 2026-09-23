@@ -11,13 +11,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.messenger.vl;
+import org.telegram.messenger.ul;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
 import w7.x5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class i extends FrameLayout {
     public final ImageView a;
@@ -27,7 +27,7 @@ public final class i extends FrameLayout {
     public final TextView e;
     public final TextView f;
 
-    public i(Context context, e6 e6Var) {
+    public i(Context context, d6 d6Var) {
         super(context);
         ImageView imageView = new ImageView(context);
         this.a = imageView;
@@ -45,22 +45,22 @@ public final class i extends FrameLayout {
         addView(linearLayout, d10);
         TextView textView = new TextView(context);
         this.d = textView;
-        vl.k(15.0f, 1, textView);
-        textView.setTextColor(i6.v0(i6.G6, e6Var));
+        ul.k(15.0f, 1, textView);
+        textView.setTextColor(h6.v0(h6.G6, d6Var));
         TextView h = com.google.android.gms.internal.vision.e2.h(linearLayout, textView, x5.t(-1, -2, 55, 0, 0, 0, 0), context);
         this.e = h;
         h.setTextSize(1, 14.0f);
-        h.setTextColor(i6.v0(i6.z6, e6Var));
+        h.setTextColor(h6.v0(h6.z6, d6Var));
         linearLayout.addView(h, x5.t(-1, -2, 55, 0, 3, 0, 0));
         ImageView imageView2 = new ImageView(context);
-        imageView2.setColorFilter(new PorterDuffColorFilter(i6.v0(i6.M6, e6Var), mode));
+        imageView2.setColorFilter(new PorterDuffColorFilter(h6.v0(h6.M6, d6Var), mode));
         imageView2.setImageResource(R.drawable.msg_arrowright);
         imageView2.setScaleType(scaleType);
         addView(imageView2, x5.d(24, 24.0f, 21, 0.0f, 0.0f, 10.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.f = textView2;
         textView2.setTextColor(-1);
-        textView2.setBackground(i6.b0(AndroidUtilities.dp(4.0f), i6.v0(i6.uj, e6Var)));
+        textView2.setBackground(h6.b0(AndroidUtilities.dp(4.0f), h6.v0(h6.uj, d6Var)));
         textView2.setTextSize(1, 13.0f);
         textView2.setTypeface(AndroidUtilities.bold());
         textView2.setPadding(AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(4.0f), 0);
@@ -72,7 +72,7 @@ public final class i extends FrameLayout {
     public final void a(int i10, int i11, CharSequence charSequence, CharSequence charSequence2) {
         ImageView imageView = this.a;
         imageView.setImageResource(i11);
-        imageView.setBackground(i6.b0(AndroidUtilities.dp(9.0f), i10));
+        imageView.setBackground(h6.b0(AndroidUtilities.dp(9.0f), i10));
         TextView textView = this.d;
         textView.setText(charSequence);
         boolean isEmpty = TextUtils.isEmpty(charSequence2);

@@ -1,105 +1,87 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.webkit.CookieManager;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.UserConfig;
+import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class bu0 extends ou0 {
-    public final /* synthetic */ int p0;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate q0;
+public final class bu0 extends org.telegram.ui.Components.qf0 {
+    public final Rect M;
+    public final /* synthetic */ PhotoViewer N;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ bu0(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Context context, ru0 ru0Var, FrameLayout frameLayout, int i10) {
-        super(context, ru0Var, frameLayout);
-        this.p0 = i10;
-        this.q0 = notificationCenterDelegate;
+    public bu0(PhotoViewer photoViewer, PhotoViewer photoViewer2, Context context, org.telegram.ui.ActionBar.f1 f1Var) {
+        super(context);
+        this.N = photoViewer;
+        this.a = UserConfig.selectedAccount;
+        this.v = new ArrayList();
+        this.L = new org.telegram.ui.Components.ac0(this, 10);
+        this.b = photoViewer2;
+        this.r = f1Var;
+        int i10 = 1;
+        org.telegram.ui.Components.qu quVar = new org.telegram.ui.Components.qu(this, context, context, i10);
+        this.f = quVar;
+        quVar.getSettings().setJavaScriptEnabled(true);
+        quVar.getSettings().setDomStorageEnabled(true);
+        quVar.getSettings().setMediaPlaybackRequiresUserGesture(false);
+        quVar.getSettings().setMixedContentMode(0);
+        CookieManager.getInstance().setAcceptThirdPartyCookies(quVar, true);
+        quVar.setWebViewClient(new ni.i(this, i10));
+        addView(quVar, w7.x5.e(-1, -1, 51));
+        LinearLayout linearLayout = new LinearLayout(context);
+        this.c = linearLayout;
+        linearLayout.setOrientation(1);
+        linearLayout.setGravity(17);
+        linearLayout.setVisibility(8);
+        addView(linearLayout, w7.x5.e(-2, -2, 17));
+        TextView textView = new TextView(context);
+        this.d = textView;
+        textView.setTextSize(1, 16.0f);
+        com.google.android.gms.internal.vision.e2.p(org.telegram.ui.ActionBar.h6.y6, null, false, textView, 17);
+        linearLayout.addView(textView, w7.x5.q(-2, -2, 1));
+        TextView textView2 = new TextView(context);
+        this.e = textView2;
+        textView2.setTextSize(1, 16.0f);
+        int i11 = org.telegram.ui.ActionBar.h6.n6;
+        textView2.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, i11, false));
+        textView2.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(8.0f));
+        int i12 = org.telegram.ui.ActionBar.x5.a;
+        textView2.setBackground(org.telegram.ui.ActionBar.x5.d(new float[]{12.0f}, 0, org.telegram.ui.ActionBar.x5.b(org.telegram.ui.ActionBar.h6.w0(null, i11, false))));
+        textView2.setVisibility(8);
+        linearLayout.addView(textView2, w7.x5.t(-2, -2, 1, 0, 8, 0, 0));
+        ci.bb bbVar = new ci.bb(this, context, 20);
+        this.h = bbVar;
+        bbVar.setBackgroundColor(-16777216);
+        bbVar.setVisibility(4);
+        addView(bbVar, w7.x5.c(-1.0f, -1));
+        RadialProgressView radialProgressView = new RadialProgressView(context, null);
+        this.n = radialProgressView;
+        radialProgressView.setVisibility(4);
+        addView(radialProgressView, w7.x5.e(-2, -2, 17));
+        this.M = new Rect();
     }
 
-    @Override // org.telegram.ui.ou0
-    public boolean C() {
-        switch (this.p0) {
-            case 0:
-                return !((PhotoViewer) this.q0).s;
-            default:
-                return super.C();
-        }
-    }
-
-    @Override // org.telegram.ui.ou0
-    public void D() {
-        switch (this.p0) {
-            case 1:
-                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.q0;
-                if (secretMediaViewer.J && getScrollY() <= 0) {
-                    AndroidUtilities.runOnUIThread(secretMediaViewer.r1, 3000L);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.ou0
-    public void F() {
-        switch (this.p0) {
-            case 1:
-                AndroidUtilities.cancelRunOnUIThread(((SecretMediaViewer) this.q0).r1);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.ou0
-    public void G() {
-        switch (this.p0) {
-            case 1:
-                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.q0;
-                if (secretMediaViewer.K0 == null) {
-                    secretMediaViewer.k(((float) getScrollY()) < ((float) getMeasuredHeight()) / 3.0f && secretMediaViewer.k0, true);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void invalidate() {
-        switch (this.p0) {
-            case 0:
-                super.invalidate();
-                PhotoViewer photoViewer = (PhotoViewer) this.q0;
-                zu0[] zu0VarArr = photoViewer.W0;
-                ImageView[] imageViewArr = photoViewer.y3;
-                if (photoViewer.J) {
-                    int scrollY = getScrollY();
-                    float translationY = photoViewer.Q1.getTranslationY();
-                    boolean z10 = scrollY == 0 && translationY == 0.0f;
-                    boolean z11 = scrollY == 0 && translationY == 0.0f;
-                    if (!z10) {
-                        int b10 = zu0VarArr[0].b() + zu0VarArr[0].j;
-                        int top = (((photoViewer.Z1.getTop() + ((int) translationY)) - scrollY) + (org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + (C() ? AndroidUtilities.statusBarHeight : 0))) - AndroidUtilities.dp(12.0f);
-                        boolean z12 = top > AndroidUtilities.dp(32.0f) + ((int) imageViewArr[0].getY());
-                        z10 = top > b10;
-                        z11 = z12;
-                    }
-                    if (photoViewer.z3) {
-                        if (imageViewArr[0].getTag() != null && ((Integer) imageViewArr[0].getTag()).intValue() == 3 && z11) {
-                            imageViewArr[0].setTag(2);
-                            imageViewArr[0].animate().alpha(1.0f).setDuration(150L).setListener(new cr0(this, 4)).start();
-                        } else if (imageViewArr[0].getTag() == null && !z11) {
-                            imageViewArr[0].setTag(3);
-                            imageViewArr[0].animate().alpha(0.0f).setListener(null).setDuration(150L).start();
-                        }
-                    }
-                    zu0VarArr[0].e(2, z10 ? 1.0f : 0.0f, true);
-                    break;
-                }
-                break;
-            default:
-                super.invalidate();
-                break;
+    public final void j(Canvas canvas, int i10, int i11) {
+        Bitmap bitmap = this.N.C4.getBitmap();
+        if (bitmap != null) {
+            float min = Math.min(i10 / bitmap.getWidth(), i11 / bitmap.getHeight());
+            int width = (int) (bitmap.getWidth() * min);
+            int height = (int) (bitmap.getHeight() * min);
+            int i12 = (i11 - height) / 2;
+            int i13 = (i10 - width) / 2;
+            Rect rect = this.M;
+            rect.set(i13, i12, width + i13, height + i12);
+            canvas.drawBitmap(bitmap, (Rect) null, rect, (Paint) null);
         }
     }
 }

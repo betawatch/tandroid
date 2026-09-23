@@ -1,35 +1,34 @@
 package w2;
 
+import h2.f;
 import h2.h;
 import h2.l;
 import java.nio.ByteBuffer;
-import z3.f;
-import z3.g;
+import z3.i;
 import z3.j;
-import z3.k;
-import z3.n;
+import z3.m;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final class b extends l implements f {
+public final class b extends l implements z3.e {
     public final String o;
-    public final n p;
+    public final m p;
 
-    public b(String str, n nVar) {
-        super(new j[2], new k[2]);
+    public b(String str, m mVar) {
+        super(new i[2], new j[2]);
         this.o = str;
         o(1024);
-        this.p = nVar;
+        this.p = mVar;
     }
 
     @Override // h2.l
     public final h f() {
-        return new j();
+        return new i();
     }
 
     @Override // h2.l
     public final h2.j g() {
-        return new z3.d(this);
+        return new z3.c(this);
     }
 
     @Override // h2.e
@@ -38,40 +37,40 @@ public final class b extends l implements f {
     }
 
     @Override // h2.l
-    public final h2.f h(Throwable th2) {
-        return new g("Unexpected decode error", th2);
+    public final f h(Throwable th2) {
+        return new z3.f("Unexpected decode error", th2);
     }
 
     @Override // h2.l
-    public final h2.f i(h hVar, h2.j jVar, boolean z10) {
-        j jVar2 = (j) hVar;
-        k kVar = (k) jVar;
+    public final f i(h hVar, h2.j jVar, boolean z10) {
+        i iVar = (i) hVar;
+        j jVar2 = (j) jVar;
         try {
-            ByteBuffer byteBuffer = jVar2.c;
+            ByteBuffer byteBuffer = iVar.c;
             byteBuffer.getClass();
             byte[] array = byteBuffer.array();
             int limit = byteBuffer.limit();
-            n nVar = this.p;
+            m mVar = this.p;
             if (z10) {
-                nVar.reset();
+                mVar.reset();
             }
-            z3.e r10 = nVar.r(0, limit, array);
-            long j3 = jVar2.e;
-            long j10 = jVar2.r;
-            kVar.timeUs = j3;
-            kVar.a = r10;
+            z3.d r10 = mVar.r(0, limit, array);
+            long j3 = iVar.e;
+            long j10 = iVar.r;
+            jVar2.timeUs = j3;
+            jVar2.a = r10;
             if (j10 != Long.MAX_VALUE) {
                 j3 = j10;
             }
-            kVar.b = j3;
-            kVar.shouldBeSkipped = false;
+            jVar2.b = j3;
+            jVar2.shouldBeSkipped = false;
             return null;
-        } catch (g e) {
+        } catch (z3.f e) {
             return e;
         }
     }
 
-    @Override // z3.f
+    @Override // z3.e
     public final void b(long j3) {
     }
 }

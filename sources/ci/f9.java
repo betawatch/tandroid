@@ -1,71 +1,124 @@
 package ci;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.view.MotionEvent;
-import android.widget.FrameLayout;
+import android.view.View;
+import android.widget.TextView;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.qr;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.ul;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.al0;
+import org.telegram.ui.Components.ml0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class f9 extends FrameLayout {
-    public final Paint a;
-    public final org.telegram.ui.Components.c6 b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e6 c;
-    public final /* synthetic */ i9 d;
+public final class f9 extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate {
+    public final int b;
+    public ArrayList c;
+    public final TLRPC.InputPeer d;
+    public final Utilities.Callback e;
+    public final ml0 f;
+    public final e9 h;
+    public final TextView n;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f9(i9 i9Var, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context);
-        this.d = i9Var;
-        this.c = e6Var;
-        this.a = new Paint(1);
-        this.b = new org.telegram.ui.Components.c6(this, 0L, 350L, qr.h);
+    public f9(Context context, final int i10, boolean z10, TLRPC.InputPeer inputPeer, final Utilities.Callback callback, final org.telegram.ui.ActionBar.d6 d6Var) {
+        super(1, context, d6Var, false);
+        fixNavigationBar();
+        MessagesController.getInstance(i10).getStoriesController().R();
+        this.b = i10;
+        this.c = MessagesController.getInstance(i10).getStoriesController().T;
+        this.d = inputPeer;
+        this.e = callback;
+        this.containerView = new c9(this, context, d6Var);
+        ml0 ml0Var = new ml0(context, d6Var);
+        this.f = ml0Var;
+        int i11 = this.backgroundPaddingLeft;
+        ml0Var.setPadding(i11, 0, i11, 0);
+        e9 e9Var = new e9(this);
+        this.h = e9Var;
+        ml0Var.setAdapter(e9Var);
+        ml0Var.setLayoutManager(new s4.c0());
+        this.containerView.addView(ml0Var, w7.x5.e(-1, -1, 119));
+        ml0Var.setOnItemClickListener(new al0() { // from class: ci.b9
+            @Override // org.telegram.ui.Components.al0
+            public final void d(int i12, View view) {
+                if (i12 <= 1) {
+                    return;
+                }
+                f9 f9Var = f9.this;
+                TLRPC.InputPeer inputPeer2 = (TLRPC.InputPeer) f9Var.c.get(i12 - 2);
+                long j3 = inputPeer2.channel_id;
+                Utilities.Callback callback2 = callback;
+                if (j3 == 0 && inputPeer2.chat_id == 0) {
+                    callback2.run(inputPeer2);
+                    f9Var.dismiss();
+                    return;
+                }
+                Context context2 = f9Var.getContext();
+                org.telegram.ui.ActionBar.d6 d6Var2 = d6Var;
+                org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(context2, 3, d6Var2);
+                b2Var.q(200L);
+                MessagesController.getInstance(i10).getStoriesController().k(DialogObject.getPeerDialogId(inputPeer2), new ai.c5(b2Var, callback2, inputPeer2, 4), true, d6Var2);
+                f9Var.dismiss();
+            }
+        });
+        ml0Var.setOnScrollListener(new d9(this));
+        TextView textView = new TextView(getContext());
+        this.n = textView;
+        ul.o(org.telegram.ui.ActionBar.h6.G6, d6Var, textView, 1, 20.0f);
+        textView.setPadding(AndroidUtilities.dp(22.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(22.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(14.0f));
+        textView.setBackgroundColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.h5, d6Var));
+        textView.setTypeface(AndroidUtilities.bold());
+        textView.setText(LocaleController.getString(z10 ? R.string.StoryPrivacyPublishLiveAs : R.string.StoryPrivacyPublishAs));
+        this.containerView.addView(textView, w7.x5.c(-2.0f, -1));
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        int i10;
-        int i11;
-        int i12;
-        int i13;
-        int v02 = org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.h5, this.c);
-        Paint paint = this.a;
-        paint.setColor(v02);
-        i9 i9Var = this.d;
-        float max = Math.max(0.0f, i9Var.s());
-        boolean z10 = max < ((float) AndroidUtilities.statusBarHeight);
-        org.telegram.ui.Components.c6 c6Var = this.b;
-        float lerp = AndroidUtilities.lerp(max, 0.0f, c6Var.e(z10));
-        RectF rectF = AndroidUtilities.rectTmp;
-        i10 = ((org.telegram.ui.ActionBar.f3) i9Var).backgroundPaddingLeft;
-        int width = getWidth();
-        i11 = ((org.telegram.ui.ActionBar.f3) i9Var).backgroundPaddingLeft;
-        rectF.set(i10, lerp, width - i11, AndroidUtilities.dp(14.0f) + getHeight());
-        float dp = (1.0f - c6Var.c) * AndroidUtilities.dp(14.0f);
-        canvas.drawRoundRect(rectF, dp, dp, paint);
-        i9Var.n.setTranslationY(Math.max(AndroidUtilities.dp(8.0f) + AndroidUtilities.statusBarHeight, AndroidUtilities.dp(14.0f) + lerp));
-        canvas.save();
-        i12 = ((org.telegram.ui.ActionBar.f3) i9Var).backgroundPaddingLeft;
-        int dp2 = AndroidUtilities.dp(14.0f) + AndroidUtilities.statusBarHeight;
-        int width2 = getWidth();
-        i13 = ((org.telegram.ui.ActionBar.f3) i9Var).backgroundPaddingLeft;
-        canvas.clipRect(i12, dp2, width2 - i13, getHeight());
-        super.dispatchDraw(canvas);
-        canvas.restore();
+    @Override // org.telegram.ui.ActionBar.f3
+    public final boolean canDismissWithSwipe() {
+        return s() > ((float) ((int) (((float) AndroidUtilities.displaySize.y) * 0.5f)));
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        float y3 = motionEvent.getY();
-        i9 i9Var = this.d;
-        if (y3 >= i9Var.s()) {
-            return super.dispatchTouchEvent(motionEvent);
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (i10 == NotificationCenter.storiesSendAsUpdate) {
+            this.c = MessagesController.getInstance(this.b).getStoriesController().T;
+            this.h.l();
         }
-        i9Var.dismiss();
-        return true;
+    }
+
+    @Override // android.app.Dialog, android.view.Window.Callback
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        NotificationCenter.getInstance(this.b).addObserver(this, NotificationCenter.storiesSendAsUpdate);
+    }
+
+    @Override // android.app.Dialog, android.view.Window.Callback
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        NotificationCenter.getInstance(this.b).removeObserver(this, NotificationCenter.storiesSendAsUpdate);
+    }
+
+    public final float s() {
+        int R;
+        float measuredHeight = this.containerView.getMeasuredHeight();
+        int i10 = 0;
+        while (true) {
+            ml0 ml0Var = this.f;
+            if (i10 >= ml0Var.getChildCount()) {
+                return measuredHeight;
+            }
+            View childAt = ml0Var.getChildAt(i10);
+            if (childAt != null && (R = RecyclerView.R(childAt)) != -1 && R > 0) {
+                measuredHeight = Math.min(AndroidUtilities.lerp(measuredHeight, childAt.getY(), childAt.getAlpha()), measuredHeight);
+            }
+            i10++;
+        }
     }
 }

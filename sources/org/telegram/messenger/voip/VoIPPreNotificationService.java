@@ -45,10 +45,10 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.Components.de0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.VoIPPermissionActivity;
-import org.telegram.ui.ui1;
+import org.telegram.ui.mi1;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public class VoIPPreNotificationService {
     public static State currentState;
@@ -58,7 +58,7 @@ public class VoIPPreNotificationService {
     private static final Object sync = new Object();
     private static Vibrator vibrator;
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static final class State implements VoIPServiceState {
         private final TL_phone.PhoneCall call;
         private final int currentAccount;
@@ -86,9 +86,9 @@ public class VoIPPreNotificationService {
                 return;
             }
             this.destroyed = true;
-            ui1 ui1Var = ui1.n1;
-            if (ui1Var != null) {
-                ui1Var.onStateChanged(getCallState());
+            mi1 mi1Var = mi1.n1;
+            if (mi1Var != null) {
+                mi1Var.onStateChanged(getCallState());
             }
         }
 
@@ -325,9 +325,9 @@ public class VoIPPreNotificationService {
         LaunchActivity launchActivity = LaunchActivity.G1;
         if (launchActivity != null && launchActivity.h1 && VoIPService.getSharedInstance() == null) {
             launchActivity.h1 = false;
-            ui1 ui1Var = ui1.n1;
-            if (ui1Var != null) {
-                ui1Var.n();
+            mi1 mi1Var = mi1.n1;
+            if (mi1Var != null) {
+                mi1Var.n();
             }
             launchActivity.moveTaskToBack(true);
         }

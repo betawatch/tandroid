@@ -1,32 +1,26 @@
 package za;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+import android.content.Context;
+import java.util.concurrent.atomic.AtomicReference;
+
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final class a0 {
-    public final j0 a;
-    public final b b;
+public final class a0 implements u {
+    public static final w e = new w();
+    public static final m1.c f = w7.q.a(t.a);
+    public final Context a;
+    public final id.h b;
+    public final AtomicReference c;
+    public final o0.a d;
 
-    public a0(j0 j0Var, b bVar) {
-        this.a = j0Var;
-        this.b = bVar;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof a0)) {
-            return false;
-        }
-        a0 a0Var = (a0) obj;
-        return this.a.equals(a0Var.a) && this.b.equals(a0Var.b);
-    }
-
-    public final int hashCode() {
-        return this.b.hashCode() + ((this.a.hashCode() + (k.b.hashCode() * 31)) * 31);
-    }
-
-    public final String toString() {
-        return "SessionEvent(eventType=" + k.b + ", sessionData=" + this.a + ", applicationInfo=" + this.b + ')';
+    public a0(Context context, id.h hVar) {
+        kotlin.jvm.internal.i.e(context, "context");
+        this.a = context;
+        this.b = hVar;
+        this.c = new AtomicReference();
+        e.getClass();
+        int i10 = 9;
+        this.d = new o0.a(29, new n4.y(i10, ((k1.a0) f.a(context, w.a[0]).b).c, new y(3, null)), this);
+        zd.e0.q(zd.e0.b(hVar), new v(this, null, 0));
     }
 }

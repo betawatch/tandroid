@@ -1,10 +1,57 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class sw0 {
-    public String a;
-    public boolean b;
-    public long c;
-    public String d;
+public final /* synthetic */ class sw0 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Utilities.Callback4 b;
+
+    public /* synthetic */ sw0(Utilities.Callback4 callback4, int i10) {
+        this.a = i10;
+        this.b = callback4;
+    }
+
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                boolean z10 = tLObject instanceof TLRPC.TL_messages_emojiGroupsNotModified;
+                Utilities.Callback4 callback4 = this.b;
+                if (!z10) {
+                    if (!(tLObject instanceof TLRPC.TL_messages_emojiGroups)) {
+                        callback4.run(Boolean.FALSE, null, 0L, Boolean.TRUE);
+                        break;
+                    } else {
+                        callback4.run(Boolean.FALSE, (TLRPC.TL_messages_emojiGroups) tLObject, Long.valueOf(r5.hash), Boolean.TRUE);
+                        break;
+                    }
+                } else {
+                    Boolean bool = Boolean.TRUE;
+                    callback4.run(bool, null, 0L, bool);
+                    break;
+                }
+            default:
+                boolean z11 = tLObject instanceof TLRPC.TL_emojiListNotModified;
+                Utilities.Callback4 callback42 = this.b;
+                if (!z11) {
+                    if (!(tLObject instanceof TLRPC.TL_emojiList)) {
+                        callback42.run(Boolean.FALSE, null, 0L, Boolean.TRUE);
+                        break;
+                    } else {
+                        TLRPC.TL_emojiList tL_emojiList = (TLRPC.TL_emojiList) tLObject;
+                        callback42.run(Boolean.FALSE, tL_emojiList, Long.valueOf(tL_emojiList.hash), Boolean.TRUE);
+                        break;
+                    }
+                } else {
+                    Boolean bool2 = Boolean.TRUE;
+                    callback42.run(bool2, null, 0L, bool2);
+                    break;
+                }
+        }
+    }
 }

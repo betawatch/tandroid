@@ -9,16 +9,16 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.c6;
-import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.e6;
+import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class z1 extends View {
-    public pg.c1 E;
+    public pg.d1 E;
     public float F;
     public float G;
-    public pg.q1 H;
+    public pg.r1 H;
     public Runnable I;
     public boolean J;
     public y1 K;
@@ -33,9 +33,9 @@ public final class z1 extends View {
     public float r;
     public long s;
     public boolean v;
-    public final c6 w;
-    public final c6 x;
-    public final c6 y;
+    public final e6 w;
+    public final e6 x;
+    public final e6 y;
 
     public z1(Context context) {
         super(context);
@@ -46,10 +46,10 @@ public final class z1 extends View {
         this.c = new Path();
         this.e = new RectF();
         this.v = true;
-        this.w = new c6(this);
-        this.x = new c6(this);
-        this.y = new c6(this);
-        this.H = new pg.q1(1.0f, 0.016773745f, -1);
+        this.w = new e6(this);
+        this.x = new e6(this);
+        this.y = new e6(this);
+        this.H = new pg.r1(1.0f, 0.016773745f, -1);
         this.J = true;
         this.d = new k2.u(context, new x1(this));
         paint2.setColor(-1);
@@ -134,17 +134,17 @@ public final class z1 extends View {
                         }
                         canvas.save();
                         float dp4 = AndroidUtilities.dp(32.0f);
-                        qr qrVar = qr.f;
-                        canvas.translate(qrVar.getInterpolation(this.r) * dp4, rectF.top);
+                        rr rrVar = rr.f;
+                        canvas.translate(rrVar.getInterpolation(this.r) * dp4, rectF.top);
                         canvas.drawPath(path, this.a);
                         canvas.restore();
                         float f12 = (d - d10) / (d11 - d10);
                         float f13 = dp2 * 1.5f;
-                        a(qrVar.getInterpolation(this.r) * AndroidUtilities.dp(32.0f), w7.p.a(com.google.android.gms.internal.vision.e2.z(1.0f, f12, rectF.height(), rectF.top), rectF.top + f11, rectF.bottom - Math.min(f13, f11)), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.lerp(Math.min(f13, f11), f11, f12), this.r), canvas, false);
+                        a(rrVar.getInterpolation(this.r) * AndroidUtilities.dp(32.0f), w7.p.a(com.google.android.gms.internal.vision.e2.z(1.0f, f12, rectF.height(), rectF.top), rectF.top + f11, rectF.bottom - Math.min(f13, f11)), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.lerp(Math.min(f13, f11), f11, f12), this.r), canvas, false);
                         if (this.J && this.r != 0.0f && this.v && this.E != null) {
-                            pg.c1 c1Var = this.E;
-                            float f14 = c1Var.c.g.a;
-                            a(getWidth() / 2.0f, getHeight() / 2.0f, c1Var.getCurrentBrush().h() * com.google.android.gms.internal.vision.e2.x(f14, 0.043945312f, d, 0.00390625f * f14) * this.E.getCurrentBrush().g(), canvas, true);
+                            pg.d1 d1Var = this.E;
+                            float f14 = d1Var.c.g.a;
+                            a(getWidth() / 2.0f, getHeight() / 2.0f, d1Var.getCurrentBrush().h() * com.google.android.gms.internal.vision.e2.x(f14, 0.043945312f, d, 0.00390625f * f14) * this.E.getCurrentBrush().g(), canvas, true);
                         }
                         if (this.n != 0.0f) {
                             canvas.restore();
@@ -185,17 +185,17 @@ public final class z1 extends View {
                 }
                 canvas.save();
                 float dp42 = AndroidUtilities.dp(32.0f);
-                qr qrVar2 = qr.f;
-                canvas.translate(qrVar2.getInterpolation(this.r) * dp42, rectF3.top);
+                rr rrVar2 = rr.f;
+                canvas.translate(rrVar2.getInterpolation(this.r) * dp42, rectF3.top);
                 canvas.drawPath(path2, this.a);
                 canvas.restore();
                 float f122 = (d - d10) / (d11 - d10);
                 float f132 = dp22 * 1.5f;
-                a(qrVar2.getInterpolation(this.r) * AndroidUtilities.dp(32.0f), w7.p.a(com.google.android.gms.internal.vision.e2.z(1.0f, f122, rectF3.height(), rectF3.top), rectF3.top + f112, rectF3.bottom - Math.min(f132, f112)), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.lerp(Math.min(f132, f112), f112, f122), this.r), canvas, false);
+                a(rrVar2.getInterpolation(this.r) * AndroidUtilities.dp(32.0f), w7.p.a(com.google.android.gms.internal.vision.e2.z(1.0f, f122, rectF3.height(), rectF3.top), rectF3.top + f112, rectF3.bottom - Math.min(f132, f112)), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.lerp(Math.min(f132, f112), f112, f122), this.r), canvas, false);
                 if (this.J) {
-                    pg.c1 c1Var2 = this.E;
-                    float f142 = c1Var2.c.g.a;
-                    a(getWidth() / 2.0f, getHeight() / 2.0f, c1Var2.getCurrentBrush().h() * com.google.android.gms.internal.vision.e2.x(f142, 0.043945312f, d, 0.00390625f * f142) * this.E.getCurrentBrush().g(), canvas, true);
+                    pg.d1 d1Var2 = this.E;
+                    float f142 = d1Var2.c.g.a;
+                    a(getWidth() / 2.0f, getHeight() / 2.0f, d1Var2.getCurrentBrush().h() * com.google.android.gms.internal.vision.e2.x(f142, 0.043945312f, d, 0.00390625f * f142) * this.E.getCurrentBrush().g(), canvas, true);
                 }
                 if (this.n != 0.0f) {
                 }
@@ -238,13 +238,13 @@ public final class z1 extends View {
         }
         canvas.save();
         float dp422 = AndroidUtilities.dp(32.0f);
-        qr qrVar22 = qr.f;
-        canvas.translate(qrVar22.getInterpolation(this.r) * dp422, rectF32.top);
+        rr rrVar22 = rr.f;
+        canvas.translate(rrVar22.getInterpolation(this.r) * dp422, rectF32.top);
         canvas.drawPath(path22, this.a);
         canvas.restore();
         float f1222 = (d - d10) / (d11 - d10);
         float f1322 = dp222 * 1.5f;
-        a(qrVar22.getInterpolation(this.r) * AndroidUtilities.dp(32.0f), w7.p.a(com.google.android.gms.internal.vision.e2.z(1.0f, f1222, rectF32.height(), rectF32.top), rectF32.top + f1122, rectF32.bottom - Math.min(f1322, f1122)), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.lerp(Math.min(f1322, f1122), f1122, f1222), this.r), canvas, false);
+        a(rrVar22.getInterpolation(this.r) * AndroidUtilities.dp(32.0f), w7.p.a(com.google.android.gms.internal.vision.e2.z(1.0f, f1222, rectF32.height(), rectF32.top), rectF32.top + f1122, rectF32.bottom - Math.min(f1322, f1122)), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.lerp(Math.min(f1322, f1122), f1122, f1222), this.r), canvas, false);
         if (this.J) {
         }
         if (this.n != 0.0f) {
@@ -274,8 +274,8 @@ public final class z1 extends View {
         invalidate();
     }
 
-    public void setColorSwatch(pg.q1 q1Var) {
-        this.H = q1Var;
+    public void setColorSwatch(pg.r1 r1Var) {
+        this.H = r1Var;
         invalidate();
     }
 
@@ -288,8 +288,8 @@ public final class z1 extends View {
         this.I = runnable;
     }
 
-    public void setRenderView(pg.c1 c1Var) {
-        this.E = c1Var;
+    public void setRenderView(pg.d1 d1Var) {
+        this.E = d1Var;
     }
 
     public void setShowPreview(boolean z10) {

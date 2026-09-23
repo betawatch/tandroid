@@ -1,25 +1,45 @@
 package org.telegram.messenger;
 
-import android.app.NotificationChannel;
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class zg implements org.telegram.ui.ActionBar.a2, Vector.TLDeserializer {
-    public static /* bridge */ /* synthetic */ NotificationChannel a(Object obj) {
-        return (NotificationChannel) obj;
+public final /* synthetic */ class zg implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ NotificationsController b;
+    public final /* synthetic */ int c;
+
+    public /* synthetic */ zg(NotificationsController notificationsController, int i10, int i11) {
+        this.a = i11;
+        this.b = notificationsController;
+        this.c = i10;
     }
 
-    @Override // org.telegram.tgnet.Vector.TLDeserializer
-    public TLObject deserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
-        return TLRPC.PollAnswer.TLdeserialize(inputSerializedData, i10, z10);
-    }
-
-    @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        SharedConfig.lambda$checkSdCard$1(b2Var, i10);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.lambda$processDialogsUpdateRead$29(this.c);
+                break;
+            case 1:
+                this.b.lambda$removeDeletedHisoryFromNotifications$12(this.c);
+                break;
+            case 2:
+                this.b.lambda$processSeenStoryReactions$14(this.c);
+                break;
+            case 3:
+                this.b.lambda$processNewMessages$24(this.c);
+                break;
+            case 4:
+                this.b.lambda$processNewMessages$26(this.c);
+                break;
+            case 5:
+                this.b.lambda$setLastOnlineFromOtherDevice$5(this.c);
+                break;
+            case 6:
+                this.b.lambda$processLoadedUnreadMessages$32(this.c);
+                break;
+            default:
+                this.b.lambda$removeDeletedMessagesFromNotifications$9(this.c);
+                break;
+        }
     }
 }

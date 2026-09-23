@@ -16,10 +16,10 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
-import k2.c0;
+import k2.b0;
 import w7.z7;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public abstract class d {
     public static final a0.k a = new a0.k(2);
@@ -101,13 +101,13 @@ public abstract class d {
             ArrayList arrayList = new ArrayList();
             Uri build = new Uri.Builder().scheme("content").authority(str).build();
             Uri build2 = new Uri.Builder().scheme("content").authority(str).appendPath("file").build();
-            b c0Var = Build.VERSION.SDK_INT < 24 ? new c0(context, build) : new m(context, build);
+            b b0Var = Build.VERSION.SDK_INT < 24 ? new b0(context, build) : new m(context, build);
             Cursor cursor = null;
             try {
                 String[] strArr = {"_id", "file_id", "font_ttc_index", "font_variation_settings", "font_weight", "font_italic", "result_code"};
                 z7.a("ContentQueryWrapper.query");
                 try {
-                    cursor = c0Var.G(build, strArr, new String[]{eVar.c});
+                    cursor = b0Var.G(build, strArr, new String[]{eVar.c});
                     Trace.endSection();
                     if (cursor != null && cursor.getCount() > 0) {
                         int columnIndex = cursor.getColumnIndex("result_code");
@@ -126,7 +126,7 @@ public abstract class d {
                     if (cursor != null) {
                         cursor.close();
                     }
-                    c0Var.close();
+                    b0Var.close();
                     return (i[]) arrayList.toArray(new i[0]);
                 } finally {
                 }
@@ -134,7 +134,7 @@ public abstract class d {
                 if (cursor != null) {
                     cursor.close();
                 }
-                c0Var.close();
+                b0Var.close();
                 throw th2;
             }
         } finally {

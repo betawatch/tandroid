@@ -11,7 +11,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class q6 extends View {
     public final /* synthetic */ int a = 0;
@@ -45,7 +45,7 @@ public final class q6 extends View {
                 RectF rectF = AndroidUtilities.rectTmp;
                 rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
                 canvas.drawRoundRect(rectF, AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), this.c);
-                rectF.set(0.0f, 0.0f, ((org.telegram.ui.Components.c6) this.e).d(this.d, false) * getMeasuredWidth(), getMeasuredHeight());
+                rectF.set(0.0f, 0.0f, ((org.telegram.ui.Components.e6) this.e).d(this.d, false) * getMeasuredWidth(), getMeasuredHeight());
                 canvas.drawRoundRect(rectF, AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), this.b);
                 break;
             default:

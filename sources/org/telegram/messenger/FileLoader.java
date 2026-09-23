@@ -26,7 +26,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public class FileLoader extends BaseController {
     public static final long DEFAULT_MAX_FILE_SIZE = 2097152000;
@@ -75,7 +75,7 @@ public class FileLoader extends BaseController {
     private static SparseArray<File> mediaDirs = null;
     private static final FileLoader[] Instance = new FileLoader[4];
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public class 1 implements FileUploadOperation.FileUploadOperationDelegate {
         final /* synthetic */ boolean val$encrypted;
         final /* synthetic */ String val$location;
@@ -161,7 +161,7 @@ public class FileLoader extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public class 2 implements FileLoadOperation.FileLoadOperationDelegate {
         final /* synthetic */ TLRPC.Document val$document;
         final /* synthetic */ String val$fileName;
@@ -249,7 +249,7 @@ public class FileLoader extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public interface FileLoaderDelegate {
         void fileDidFailedLoad(String str, int i10);
 
@@ -264,12 +264,12 @@ public class FileLoader extends BaseController {
         void fileUploadProgressChanged(FileUploadOperation fileUploadOperation, String str, long j3, long j10, boolean z10);
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public interface FileResolver {
         File getFile();
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class LoadOperationUIObject {
         Runnable loadInternalRunnable;
 
@@ -813,7 +813,7 @@ public class FileLoader extends BaseController {
         sb2.append(" position in queue ");
         sb2.append(fileLoadOperation.getPositionInQueue());
         sb2.append(" account=");
-        y0.n(this.currentAccount, sb2);
+        z0.n(this.currentAccount, sb2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1484,7 +1484,7 @@ public class FileLoader extends BaseController {
         if (arrayList.isEmpty()) {
             return;
         }
-        AndroidUtilities.runOnUIThread(new b2(6, this, arrayList));
+        AndroidUtilities.runOnUIThread(new c2(6, this, arrayList));
     }
 
     public boolean checkLoadCaughtPremiumFloodWait(String str) {
@@ -1696,7 +1696,7 @@ public class FileLoader extends BaseController {
         if (fileLocation == null) {
             return;
         }
-        fileLoaderQueue.postRunnable(new f0(this, fileLocation, str, 22));
+        fileLoaderQueue.postRunnable(new f0(this, fileLocation, str, 23));
     }
 
     public void setLoadingVideo(TLRPC.Document document, boolean z10, boolean z11) {
@@ -1756,7 +1756,7 @@ public class FileLoader extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void checkDownloadQueue(FileLoadOperation fileLoadOperation, FileLoaderPriorityQueue fileLoaderPriorityQueue, long j3) {
-        fileLoaderQueue.postRunnable(new f0(this, fileLoaderPriorityQueue, fileLoadOperation, 23), j3);
+        fileLoaderQueue.postRunnable(new f0(this, fileLoaderPriorityQueue, fileLoadOperation, 24), j3);
     }
 
     public static boolean copyFile(InputStream inputStream, File file, int i10) {
@@ -1797,7 +1797,7 @@ public class FileLoader extends BaseController {
     }
 
     public void checkUploadNewDataAvailable(String str, boolean z10, long j3, long j10, Float f7) {
-        fileLoaderQueue.postRunnable(new ai.k8(this, z10, str, j3, j10, f7));
+        fileLoaderQueue.postRunnable(new ai.l8(this, z10, str, j3, j10, f7));
     }
 
     public File getPathToAttach(TLObject tLObject, boolean z10) {
@@ -2135,11 +2135,11 @@ public class FileLoader extends BaseController {
     }
 
     public void uploadFile(final String str, final Utilities.Callback<TLRPC.InputFile> callback) {
-        final b2 b2Var = new b2(5, this, r0);
+        final c2 c2Var = new c2(5, this, r0);
         NotificationCenter.NotificationCenterDelegate[] notificationCenterDelegateArr = {new NotificationCenter.NotificationCenterDelegate() { // from class: org.telegram.messenger.x2
             @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
             public final void didReceivedNotification(int i10, int i11, Object[] objArr) {
-                FileLoader.lambda$uploadFile$20(str, callback, b2Var, i10, i11, objArr);
+                FileLoader.lambda$uploadFile$20(str, callback, c2Var, i10, i11, objArr);
             }
         }};
         getNotificationCenter().addObserver(notificationCenterDelegateArr[0], NotificationCenter.fileUploaded);

@@ -16,9 +16,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class pt0 extends kl0 {
+public final class pt0 extends ll0 {
     public final Context c;
     public final gg.c2 e;
     public ot0 f;
@@ -45,7 +45,7 @@ public final class pt0 extends kl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.ll0
     public final boolean D(s4.c1 c1Var) {
         return true;
     }
@@ -137,7 +137,7 @@ public final class pt0 extends kl0 {
             spannableStringBuilder = new SpannableStringBuilder(userName);
             int indexOfIgnoreCase = AndroidUtilities.indexOfIgnoreCase(userName, str);
             if (indexOfIgnoreCase != -1) {
-                spannableStringBuilder.setSpan(new ForegroundColorSpan(yu0Var.h0(org.telegram.ui.ActionBar.i6.q6)), indexOfIgnoreCase, str.length() + indexOfIgnoreCase, 33);
+                spannableStringBuilder.setSpan(new ForegroundColorSpan(yu0Var.h0(org.telegram.ui.ActionBar.h6.q6)), indexOfIgnoreCase, str.length() + indexOfIgnoreCase, 33);
             }
         } else {
             spannableStringBuilder = null;
@@ -154,8 +154,8 @@ public final class pt0 extends kl0 {
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
         yu0 yu0Var = this.s;
         org.telegram.ui.Cells.b5 b5Var = new org.telegram.ui.Cells.b5(9, 5, this.c, yu0Var.F1, true);
-        b5Var.setBackgroundColor(yu0Var.h0(org.telegram.ui.ActionBar.i6.d6));
+        b5Var.setBackgroundColor(yu0Var.h0(org.telegram.ui.ActionBar.h6.d6));
         b5Var.setDelegate(new nt0(this));
-        return new vk0(b5Var);
+        return new wk0(b5Var);
     }
 }

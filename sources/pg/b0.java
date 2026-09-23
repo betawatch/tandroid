@@ -2,17 +2,17 @@ package pg;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b0 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ d0 b;
-    public final /* synthetic */ r0 c;
+    public final /* synthetic */ s0 c;
 
-    public /* synthetic */ b0(d0 d0Var, r0 r0Var, int i10) {
+    public /* synthetic */ b0(d0 d0Var, s0 s0Var, int i10) {
         this.a = i10;
         this.b = d0Var;
-        this.c = r0Var;
+        this.c = s0Var;
     }
 
     @Override // java.lang.Runnable

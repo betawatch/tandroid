@@ -1,57 +1,39 @@
 package org.telegram.ui;
 
-import android.widget.EditText;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class jk0 extends org.telegram.ui.ActionBar.g5 {
-    public final /* synthetic */ NotificationsCustomSettingsActivity f;
+public final /* synthetic */ class jk0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ kk0 b;
+    public final /* synthetic */ String c;
 
-    public jk0(NotificationsCustomSettingsActivity notificationsCustomSettingsActivity) {
-        this.f = notificationsCustomSettingsActivity;
+    public /* synthetic */ jk0(kk0 kk0Var, String str, int i10) {
+        this.a = i10;
+        this.b = kk0Var;
+        this.c = str;
     }
 
-    @Override // org.telegram.ui.ActionBar.g5
-    public final void m() {
-        NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.f;
-        notificationsCustomSettingsActivity.d.F(null);
-        notificationsCustomSettingsActivity.f = false;
-        notificationsCustomSettingsActivity.getClass();
-        notificationsCustomSettingsActivity.c.setText(LocaleController.getString("NoExceptions", R.string.NoExceptions));
-        notificationsCustomSettingsActivity.a.setAdapter(notificationsCustomSettingsActivity.b);
-        notificationsCustomSettingsActivity.b.l();
-        notificationsCustomSettingsActivity.a.setFastScrollVisible(true);
-        notificationsCustomSettingsActivity.a.setVerticalScrollBarEnabled(false);
-        notificationsCustomSettingsActivity.c.setShowAtCenter(false);
-    }
-
-    @Override // org.telegram.ui.ActionBar.g5
-    public final void n() {
-        NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.f;
-        notificationsCustomSettingsActivity.f = true;
-        notificationsCustomSettingsActivity.c.setShowAtCenter(true);
-    }
-
-    @Override // org.telegram.ui.ActionBar.g5
-    public final void q(EditText editText) {
-        NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.f;
-        if (notificationsCustomSettingsActivity.d == null) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                kk0 kk0Var = this.b;
+                String str = this.c;
+                kk0Var.getClass();
+                AndroidUtilities.runOnUIThread(new jk0(kk0Var, str, 1));
+                break;
+            default:
+                kk0 kk0Var2 = this.b;
+                String str2 = this.c;
+                gg.c2 c2Var = kk0Var2.h;
+                int i10 = kk0Var2.n.s;
+                c2Var.g(str2, true, (i10 == 1 || i10 == 3) ? false : true, true, false, 0L, false, 0, 0);
+                Utilities.searchQueue.postRunnable(new kf0(kk0Var2, str2, new ArrayList(kk0Var2.n.w), 8));
+                break;
         }
-        String obj = editText.getText().toString();
-        if (obj.length() != 0) {
-            notificationsCustomSettingsActivity.getClass();
-            if (notificationsCustomSettingsActivity.a != null) {
-                notificationsCustomSettingsActivity.c.setText(LocaleController.getString("NoResult", R.string.NoResult));
-                notificationsCustomSettingsActivity.c.b();
-                notificationsCustomSettingsActivity.a.setAdapter(notificationsCustomSettingsActivity.d);
-                notificationsCustomSettingsActivity.d.l();
-                notificationsCustomSettingsActivity.a.setFastScrollVisible(false);
-                notificationsCustomSettingsActivity.a.setVerticalScrollBarEnabled(true);
-            }
-        }
-        notificationsCustomSettingsActivity.d.F(obj);
     }
 }

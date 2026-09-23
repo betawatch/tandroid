@@ -9,13 +9,13 @@ import android.widget.ScrollView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.b70;
+import org.telegram.ui.Components.c70;
 import org.telegram.ui.UsersSelectActivity;
-import org.telegram.ui.l80;
-import org.telegram.ui.on0;
-import org.telegram.ui.wg0;
+import org.telegram.ui.i80;
+import org.telegram.ui.in0;
+import org.telegram.ui.rg0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class v1 extends ScrollView {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final class v1 extends ScrollView {
         switch (this.a) {
             case 3:
                 int action = motionEvent.getAction();
-                float f7 = ((l80) this.b).b.e;
+                float f7 = ((i80) this.b).b.e;
                 float y3 = motionEvent.getY();
                 if (action != 0 || y3 <= f7) {
                     return super.dispatchTouchEvent(motionEvent);
@@ -68,19 +68,19 @@ public final class v1 extends ScrollView {
     public void onMeasure(int i10, int i11) {
         switch (this.a) {
             case 1:
-                b70 b70Var = (b70) this.b;
+                c70 c70Var = (c70) this.b;
                 int size = View.MeasureSpec.getSize(i10);
                 int size2 = View.MeasureSpec.getSize(i11);
                 if (AndroidUtilities.isTablet() || size2 > size) {
-                    b70Var.s0 = AndroidUtilities.dp(144.0f);
+                    c70Var.s0 = AndroidUtilities.dp(144.0f);
                 } else {
-                    b70Var.s0 = AndroidUtilities.dp(56.0f);
+                    c70Var.s0 = AndroidUtilities.dp(56.0f);
                 }
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(b70Var.s0, TLObject.FLAG_31));
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(c70Var.s0, TLObject.FLAG_31));
                 break;
             case 2:
                 super.onMeasure(i10, i11);
-                setMeasuredDimension(((ci.x5) this.b).getMeasuredWidth(), getMeasuredHeight());
+                setMeasuredDimension(((ci.w5) this.b).getMeasuredWidth(), getMeasuredHeight());
                 break;
             case 3:
             case 4:
@@ -88,7 +88,7 @@ public final class v1 extends ScrollView {
                 super.onMeasure(i10, i11);
                 break;
             case 5:
-                ((on0) this.b).s0 = View.MeasureSpec.getSize(i11) - AndroidUtilities.dp(30.0f);
+                ((in0) this.b).s0 = View.MeasureSpec.getSize(i11) - AndroidUtilities.dp(30.0f);
                 super.onMeasure(i10, i11);
                 break;
         }
@@ -108,24 +108,24 @@ public final class v1 extends ScrollView {
     public boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z10) {
         switch (this.a) {
             case 3:
-                l80 l80Var = (l80) this.b;
-                if (!l80Var.v) {
+                i80 i80Var = (i80) this.b;
+                if (!i80Var.v) {
                     rect.offset(view.getLeft() - view.getScrollX(), view.getTop() - view.getScrollY());
-                    rect.top = org.telegram.messenger.y0.C(20.0f, l80Var.I, rect.top);
-                    rect.bottom = org.telegram.messenger.y0.C(50.0f, l80Var.I, rect.bottom);
+                    rect.top = org.telegram.messenger.z0.C(20.0f, i80Var.I, rect.top);
+                    rect.bottom = org.telegram.messenger.z0.C(50.0f, i80Var.I, rect.bottom);
                     break;
                 } else {
-                    l80Var.v = false;
+                    i80Var.v = false;
                     break;
                 }
             case 4:
-                int i10 = ((wg0) this.b).a;
+                int i10 = ((rg0) this.b).a;
                 if (i10 == 1 || i10 == 2 || i10 == 4) {
                     rect.bottom = AndroidUtilities.dp(40.0f) + rect.bottom;
                 }
                 break;
             case 5:
-                int i11 = ((on0) this.b).I1;
+                int i11 = ((in0) this.b).I1;
                 if (i11 == 1 || i11 == 2 || i11 == 4) {
                     rect.bottom = AndroidUtilities.dp(40.0f) + rect.bottom;
                 }
@@ -134,8 +134,8 @@ public final class v1 extends ScrollView {
                 UsersSelectActivity usersSelectActivity = (UsersSelectActivity) this.b;
                 if (!usersSelectActivity.v) {
                     rect.offset(view.getLeft() - view.getScrollX(), view.getTop() - view.getScrollY());
-                    rect.top = org.telegram.messenger.y0.C(20.0f, usersSelectActivity.Q, rect.top);
-                    rect.bottom = org.telegram.messenger.y0.C(50.0f, usersSelectActivity.Q, rect.bottom);
+                    rect.top = org.telegram.messenger.z0.C(20.0f, usersSelectActivity.Q, rect.top);
+                    rect.bottom = org.telegram.messenger.z0.C(50.0f, usersSelectActivity.Q, rect.bottom);
                     break;
                 } else {
                     usersSelectActivity.v = false;
@@ -146,9 +146,9 @@ public final class v1 extends ScrollView {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v1(Context context, int i10, ci.x5 x5Var) {
+    public v1(Context context, int i10, ci.w5 w5Var) {
         super(context, null, 0, i10);
         this.a = 2;
-        this.b = x5Var;
+        this.b = w5Var;
     }
 }

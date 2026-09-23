@@ -2,31 +2,48 @@ package org.telegram.messenger;
 
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_aicompose;
+import org.telegram.tgnet.tl.TL_payments;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class le implements Runnable {
+public final /* synthetic */ class le implements Utilities.Callback2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Utilities.Callback2 c;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ le(int i10, int i11, Utilities.Callback2 callback2) {
-        this.a = i11;
-        this.b = i10;
-        this.c = callback2;
+    public /* synthetic */ le(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                MessagesController.1.lambda$getLocal$1(this.b, this.c);
+                MessagesController.5.lambda$getRemote$0((Utilities.Callback4) this.b, (TL_account.WebBrowserSettings) obj, (TLRPC.TL_error) obj2);
                 break;
             case 1:
-                MessagesController.4.lambda$getLocal$1(this.b, this.c);
+                ((AiTonesController) this.b).lambda$request$0((TL_aicompose.Tones) obj, (TLRPC.TL_error) obj2);
+                break;
+            case 2:
+                ((ChatThemeController) this.b).lambda$setDialogTheme$4((TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
+                break;
+            case 3:
+                ((GiftAuctionController) this.b).lambda$requestUserAuctions$10((TL_payments.StarGiftActiveAuctions) obj, (TLRPC.TL_error) obj2);
+                break;
+            case 4:
+                ((MediaDataController) this.b).lambda$loadHints$148((TLRPC.contacts_TopPeers) obj, (TLRPC.TL_error) obj2);
+                break;
+            case 5:
+                MessagesController.lambda$getNextReactionMentionInternal$3((q0.a) this.b, (TLRPC.messages_Messages) obj, (TLRPC.TL_error) obj2);
+                break;
+            case 6:
+                MessagesController.lambda$createCommunity$255((Utilities.Callback2) this.b, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
                 break;
             default:
-                MessagesController.5.lambda$getLocal$2(this.b, this.c);
+                ((SendMessagesHelper) this.b).lambda$deletePollOption$27((TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
                 break;
         }
     }

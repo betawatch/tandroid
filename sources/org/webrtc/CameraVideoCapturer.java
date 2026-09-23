@@ -2,11 +2,11 @@ package org.webrtc;
 
 import android.media.MediaRecorder;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public interface CameraVideoCapturer extends VideoCapturer {
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public interface CameraEventsHandler {
         void onCameraClosed();
 
@@ -21,7 +21,7 @@ public interface CameraVideoCapturer extends VideoCapturer {
         void onFirstFrameAvailable();
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class CameraStatistics {
         private static final int CAMERA_FREEZE_REPORT_TIMOUT_MS = 4000;
         private static final int CAMERA_OBSERVER_PERIOD_MS = 2000;
@@ -89,14 +89,14 @@ public interface CameraVideoCapturer extends VideoCapturer {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public interface CameraSwitchHandler {
         void onCameraSwitchDone(boolean z10);
 
         void onCameraSwitchError(String str);
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     @Deprecated
     public interface MediaRecorderHandler {
         void onMediaRecorderError(String str);

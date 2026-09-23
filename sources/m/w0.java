@@ -21,7 +21,7 @@ import java.util.Arrays;
 import v7.v7;
 import w7.q7;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class w0 {
     public final TextView a;
@@ -64,12 +64,12 @@ public final class w0 {
         }
         CharSequence text = textView.getText();
         if (i10 >= 30) {
-            t0.b.a(editorInfo, text);
+            t0.a.a(editorInfo, text);
             return;
         }
         text.getClass();
         if (i10 >= 30) {
-            t0.b.a(editorInfo, text);
+            t0.a.a(editorInfo, text);
             return;
         }
         int i11 = editorInfo.initialSelStart;
@@ -80,16 +80,16 @@ public final class w0 {
         }
         int length = text.length();
         if (i13 < 0 || i11 > length) {
-            t0.c.c(editorInfo, null, 0, 0);
+            t0.b.c(editorInfo, null, 0, 0);
             return;
         }
         int i14 = editorInfo.inputType & 4095;
         if (i14 == 129 || i14 == 225 || i14 == 18) {
-            t0.c.c(editorInfo, null, 0, 0);
+            t0.b.c(editorInfo, null, 0, 0);
             return;
         }
         if (length <= 2048) {
-            t0.c.c(editorInfo, text, i13, i11);
+            t0.b.c(editorInfo, text, i13, i11);
             return;
         }
         int i15 = i11 - i13;
@@ -106,7 +106,7 @@ public final class w0 {
             min--;
         }
         int i19 = min2 + i16;
-        t0.c.c(editorInfo, i16 != i15 ? TextUtils.concat(text.subSequence(i18, i18 + min2), text.subSequence(i11, min + i11)) : text.subSequence(i18, i19 + min + i18), min2, i19);
+        t0.b.c(editorInfo, i16 != i15 ? TextUtils.concat(text.subSequence(i18, i18 + min2), text.subSequence(i11, min + i11)) : text.subSequence(i18, i19 + min + i18), min2, i19);
     }
 
     public final void a(Drawable drawable, c3 c3Var) {

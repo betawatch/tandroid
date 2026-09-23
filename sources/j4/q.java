@@ -3,12 +3,12 @@ package j4;
 import android.util.SparseArray;
 import b2.r0;
 import c3.h0;
-import i2.l0;
+import i2.m0;
 import java.util.ArrayList;
 import java.util.Arrays;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class q implements i {
     public final c0 a;
@@ -21,9 +21,9 @@ public final class q implements i {
     public boolean l;
     public boolean n;
     public final boolean[] h = new boolean[3];
-    public final l0 d = new l0(7);
-    public final l0 e = new l0(8);
-    public final l0 f = new l0(6);
+    public final m0 d = new m0(7);
+    public final m0 e = new m0(8);
+    public final m0 f = new m0(6);
     public long m = -9223372036854775807L;
     public final e2.v o = new e2.v();
 
@@ -101,7 +101,7 @@ public final class q implements i {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void b(long j3, int i10, int i11, long j10) {
-        l0 l0Var;
+        m0 m0Var;
         p pVar;
         boolean z10;
         long j11;
@@ -112,31 +112,31 @@ public final class q implements i {
         int i13;
         e2.c cVar = this.a.d;
         if (!this.l || this.k.c) {
-            l0 l0Var2 = this.d;
-            l0Var2.e(i11);
-            l0 l0Var3 = this.e;
-            l0Var3.e(i11);
+            m0 m0Var2 = this.d;
+            m0Var2.e(i11);
+            m0 m0Var3 = this.e;
+            m0Var3.e(i11);
             if (this.l) {
-                if (l0Var2.d) {
-                    f2.n j12 = f2.o.j(3, l0Var2.e, (byte[]) l0Var2.f);
+                if (m0Var2.d) {
+                    f2.n j12 = f2.o.j(3, m0Var2.e, (byte[]) m0Var2.f);
                     cVar.k(j12.s);
                     this.k.d.append(j12.d, j12);
-                    l0Var2.g();
-                } else if (l0Var3.d) {
-                    a4.h hVar = new a4.h((byte[]) l0Var3.f, 4, l0Var3.e);
+                    m0Var2.g();
+                } else if (m0Var3.d) {
+                    a4.h hVar = new a4.h((byte[]) m0Var3.f, 4, m0Var3.e);
                     int m10 = hVar.m();
                     int m11 = hVar.m();
                     hVar.s();
                     this.k.e.append(m10, new f2.m(m10, m11, hVar.h()));
-                    l0Var3.g();
+                    m0Var3.g();
                 }
-            } else if (l0Var2.d && l0Var3.d) {
+            } else if (m0Var2.d && m0Var3.d) {
                 ArrayList arrayList = new ArrayList();
-                arrayList.add(Arrays.copyOf((byte[]) l0Var2.f, l0Var2.e));
-                arrayList.add(Arrays.copyOf((byte[]) l0Var3.f, l0Var3.e));
-                f2.n j13 = f2.o.j(3, l0Var2.e, (byte[]) l0Var2.f);
+                arrayList.add(Arrays.copyOf((byte[]) m0Var2.f, m0Var2.e));
+                arrayList.add(Arrays.copyOf((byte[]) m0Var3.f, m0Var3.e));
+                f2.n j13 = f2.o.j(3, m0Var2.e, (byte[]) m0Var2.f);
                 int i14 = j13.s;
-                a4.h hVar2 = new a4.h((byte[]) l0Var3.f, 4, l0Var3.e);
+                a4.h hVar2 = new a4.h((byte[]) m0Var3.f, 4, m0Var3.e);
                 int m12 = hVar2.m();
                 int m13 = hVar2.m();
                 hVar2.s();
@@ -163,13 +163,13 @@ public final class q implements i {
                 cVar.k(i14);
                 this.k.d.append(j13.d, j13);
                 this.k.e.append(m12, mVar);
-                l0Var2.g();
-                l0Var3.g();
+                m0Var2.g();
+                m0Var3.g();
             }
-            l0Var = this.f;
-            if (l0Var.e(i11)) {
-                int m14 = f2.o.m(l0Var.e, (byte[]) l0Var.f);
-                byte[] bArr2 = (byte[]) l0Var.f;
+            m0Var = this.f;
+            if (m0Var.e(i11)) {
+                int m14 = f2.o.m(m0Var.e, (byte[]) m0Var.f);
+                byte[] bArr2 = (byte[]) m0Var.f;
                 e2.v vVar = this.o;
                 vVar.H(m14, bArr2);
                 vVar.J(4);
@@ -285,8 +285,8 @@ public final class q implements i {
             if (z13) {
             }
         }
-        l0Var = this.f;
-        if (l0Var.e(i11)) {
+        m0Var = this.f;
+        if (m0Var.e(i11)) {
         }
         pVar = this.k;
         z10 = this.l;

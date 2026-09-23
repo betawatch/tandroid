@@ -12,7 +12,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public class vu0 extends su0 {
     public boolean E;
@@ -30,12 +30,12 @@ public class vu0 extends su0 {
         this(yu0Var, context, 0, z10);
     }
 
-    @Override // org.telegram.ui.Components.su0, org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.su0, org.telegram.ui.Components.ll0
     public final boolean D(s4.c1 c1Var) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.su0, org.telegram.ui.Components.tk0
+    @Override // org.telegram.ui.Components.su0, org.telegram.ui.Components.uk0
     public final String F(int i10) {
         MessageObject messageObject;
         TL_stories.StoryItem storyItem;
@@ -46,7 +46,7 @@ public class vu0 extends su0 {
         return LocaleController.formatYearMont(storyItem.date, true);
     }
 
-    @Override // org.telegram.ui.Components.su0, org.telegram.ui.Components.tk0
+    @Override // org.telegram.ui.Components.su0, org.telegram.ui.Components.uk0
     public final void I() {
         this.F.c1(this.h ? 9 : 8, true);
     }
@@ -56,7 +56,7 @@ public class vu0 extends su0 {
         if (this.h || (d9Var = this.s) == null) {
             return false;
         }
-        if (d9Var instanceof ai.t8) {
+        if (d9Var instanceof ai.u8) {
             yu0 yu0Var = this.F;
             TLRPC.User user = MessagesController.getInstance(yu0Var.v1.getCurrentAccount()).getUser(Long.valueOf(yu0Var.j1));
             return user != null && user.bot && user.bot_has_main_app && user.bot_can_edit;

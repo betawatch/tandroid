@@ -1,43 +1,19 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kx {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ lx b;
-    public final /* synthetic */ View c;
+public final class kx extends s4.c0 {
+    public final /* synthetic */ qy I;
+    public final /* synthetic */ lx J;
 
-    public /* synthetic */ kx(lx lxVar, View view, int i10) {
-        this.a = i10;
-        this.b = lxVar;
-        this.c = view;
+    public kx(lx lxVar, qy qyVar) {
+        this.J = lxVar;
+        this.I = qyVar;
     }
 
-    public final void a(boolean z10) {
-        switch (this.a) {
-            case 0:
-                View view = this.c;
-                if (view instanceof ai.a0) {
-                    this.b.O0.E0.i((ai.a0) view, false);
-                    if (z10) {
-                        AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.sh(15), 500L);
-                        break;
-                    }
-                }
-                break;
-            default:
-                View view2 = this.c;
-                if (view2 instanceof ai.a0) {
-                    this.b.O0.E0.i((ai.a0) view2, false);
-                    if (z10) {
-                        AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.sh(15), 500L);
-                        break;
-                    }
-                }
-                break;
-        }
+    @Override // s4.c0
+    public final int R0() {
+        qy qyVar = this.I;
+        return (qyVar.s == 0 && this.J.W.Z3() && qyVar.v == 2) ? 1 : 0;
     }
 }

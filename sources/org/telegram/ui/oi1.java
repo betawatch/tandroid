@@ -1,27 +1,36 @@
 package org.telegram.ui;
 
-import org.webrtc.RendererCommon;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class oi1 implements RendererCommon.RendererEvents {
-    public final /* synthetic */ ui1 a;
+public final class oi1 extends AnimatorListenerAdapter {
+    public final /* synthetic */ org.telegram.ui.Cells.t1 a;
+    public final /* synthetic */ org.telegram.ui.Components.vi b;
+    public final /* synthetic */ pi1 c;
 
-    public oi1(ui1 ui1Var) {
-        this.a = ui1Var;
+    public oi1(pi1 pi1Var, org.telegram.ui.Cells.t1 t1Var, org.telegram.ui.Components.vi viVar) {
+        this.c = pi1Var;
+        this.a = t1Var;
+        this.b = viVar;
     }
 
-    @Override // org.webrtc.RendererCommon.RendererEvents
-    public final void onFirstFrameRendered() {
-        ui1 ui1Var = this.a;
-        com.google.android.gms.internal.cast.p pVar = ui1Var.l1;
-        if (pVar != null) {
-            pVar.run();
-            ui1Var.l1 = null;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        this.a.setEnterTransitionInProgress(false);
+        org.telegram.ui.Components.vi viVar = this.b;
+        ArrayList arrayList = (ArrayList) viVar.c;
+        pi1 pi1Var = this.c;
+        arrayList.remove(pi1Var);
+        viVar.a();
+        ((ViewGroup) viVar.d).invalidate();
+        ChatActivityEnterView.RecordCircle recordCircle = pi1Var.g;
+        if (recordCircle != null) {
+            recordCircle.N = false;
         }
-    }
-
-    @Override // org.webrtc.RendererCommon.RendererEvents
-    public final void onFrameResolutionChanged(int i10, int i11, int i12) {
     }
 }

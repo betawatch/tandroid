@@ -1,60 +1,30 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.text.TextPaint;
-import android.text.style.ReplacementSpan;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class ch0 extends ReplacementSpan {
-    public final String a;
-    public final boolean b;
-    public final TextPaint c;
-    public final Paint d;
-    public final float e;
-    public final /* synthetic */ eh0 f;
+public final /* synthetic */ class ch0 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ th0 b;
 
-    public ch0(eh0 eh0Var, int i10, boolean z10) {
-        this.f = eh0Var;
-        TextPaint textPaint = new TextPaint(1);
-        this.c = textPaint;
-        this.d = new Paint(1);
-        String valueOf = String.valueOf(i10);
-        this.a = valueOf;
-        this.b = z10;
-        textPaint.setTextSize(AndroidUtilities.dpf2(11.0f));
-        textPaint.setTypeface(AndroidUtilities.bold());
-        this.e = Math.max(AndroidUtilities.dp(7.333f), textPaint.measureText(valueOf)) + AndroidUtilities.dp(10.0f);
+    public /* synthetic */ ch0(th0 th0Var, int i10) {
+        this.a = i10;
+        this.b = th0Var;
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-        float dp = f7 + AndroidUtilities.dp(5.0f);
-        float dp2 = ((i12 + i14) / 2.0f) + AndroidUtilities.dp(1.0f);
-        float dp3 = AndroidUtilities.dp(17.333f) / 2.0f;
-        int i15 = this.b ? org.telegram.ui.ActionBar.i6.Oh : org.telegram.ui.ActionBar.i6.U9;
-        eh0 eh0Var = this.f;
-        int themedColor = eh0Var.getThemedColor(i15);
-        Paint paint2 = this.d;
-        paint2.setColor(themedColor);
-        int themedColor2 = eh0Var.getThemedColor(org.telegram.ui.ActionBar.i6.s8);
-        TextPaint textPaint = this.c;
-        textPaint.setColor(themedColor2);
-        RectF rectF = AndroidUtilities.rectTmp;
-        float f10 = this.e;
-        rectF.set(dp, dp2 - dp3, dp + f10, dp2 + dp3);
-        canvas.drawRoundRect(rectF, dp3, dp3, paint2);
-        Paint.FontMetrics fontMetrics = textPaint.getFontMetrics();
-        float f11 = dp2 - ((fontMetrics.ascent + fontMetrics.descent) / 2.0f);
-        String str = this.a;
-        canvas.drawText(str, ((f10 - textPaint.measureText(str)) / 2.0f) + dp, f11, textPaint);
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        return (int) Math.ceil(AndroidUtilities.dp(5.0f) + this.e);
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.runOnUIThread(new hh0(this.b, tL_error, tLObject, 0));
+                break;
+            default:
+                AndroidUtilities.runOnUIThread(new ia0(22, this.b, tL_error));
+                break;
+        }
     }
 }

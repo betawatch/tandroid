@@ -1,31 +1,20 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class h30 extends g.p {
-    public final /* synthetic */ i60 c;
+    public final /* synthetic */ f60 c;
 
-    public h30(i60 i60Var) {
-        this.c = i60Var;
+    public h30(f60 f60Var) {
+        this.c = f60Var;
     }
 
     @Override // g.p
     public final int i(int i10) {
-        c60 c60Var;
-        int i11;
-        int i12;
-        int i13 = i60.F3 ? 6 : 2;
-        if (i60.G3 || i10 < (i11 = (c60Var = this.c.P).G) || i10 >= (i12 = c60Var.H)) {
-            return i13;
+        int size = this.c.o2.e.size();
+        if (size > 1 && size != 2) {
+            return (size != 3 || i10 == 0 || i10 == 1) ? 3 : 6;
         }
-        int i14 = i12 - i11;
-        int i15 = (i10 != i12 - 1 || (!i60.F3 && i14 % 2 == 0)) ? 1 : 2;
-        if (!i60.F3) {
-            return i15;
-        }
-        if (i14 == 1) {
-            return 6;
-        }
-        return i14 == 2 ? 3 : 2;
+        return 6;
     }
 }

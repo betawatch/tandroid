@@ -6,7 +6,7 @@ import android.text.TextWatcher;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class up0 implements TextWatcher {
     public final /* synthetic */ hq0 a;
@@ -19,21 +19,21 @@ public final class up0 implements TextWatcher {
     public final void afterTextChanged(Editable editable) {
         hq0 hq0Var = this.a;
         zp0 zp0Var = hq0Var.K;
-        yw0 yw0Var = hq0Var.Q;
-        b20 b20Var = hq0Var.y0;
-        if (!TextUtils.isEmpty(b20Var.r.getText())) {
+        xw0 xw0Var = hq0Var.Q;
+        c20 c20Var = hq0Var.y0;
+        if (!TextUtils.isEmpty(c20Var.r.getText())) {
             hq0Var.K0(false);
         }
         if (hq0Var.A0) {
-            String obj = b20Var.r.getText().toString();
+            String obj = c20Var.r.getText().toString();
             if (obj.length() != 0) {
-                if (yw0Var != null) {
-                    yw0Var.d.setText(LocaleController.getString(R.string.NoResult));
+                if (xw0Var != null) {
+                    xw0Var.d.setText(LocaleController.getString(R.string.NoResult));
                 }
             } else if (hq0Var.F.getAdapter() != zp0Var) {
                 int F0 = hq0.F0(hq0Var);
-                yw0Var.d.setText(LocaleController.getString(R.string.NoResult));
-                yw0Var.e(false, true);
+                xw0Var.d.setText(LocaleController.getString(R.string.NoResult));
+                xw0Var.e(false, true);
                 hq0Var.K0(false);
                 zp0Var.l();
                 if (F0 > 0) {

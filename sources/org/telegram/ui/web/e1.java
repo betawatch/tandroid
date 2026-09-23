@@ -1,36 +1,35 @@
 package org.telegram.ui.web;
 
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.OutputSerializedData;
-import org.telegram.tgnet.TLObject;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.n2;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class e1 extends TLObject {
-    public long a;
-    public long b;
-    public String c;
-    public m2 d;
+public final class e1 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ g1 a;
 
-    @Override // org.telegram.tgnet.TLObject
-    public final void readParams(InputSerializedData inputSerializedData, boolean z10) {
-        this.a = inputSerializedData.readInt64(z10);
-        this.b = inputSerializedData.readInt64(z10);
-        this.c = inputSerializedData.readString(z10);
-        m2 m2Var = new m2();
-        this.d = m2Var;
-        m2Var.readParams(inputSerializedData, z10);
+    public e1(g1 g1Var) {
+        this.a = g1Var;
     }
 
-    @Override // org.telegram.tgnet.TLObject
-    public final void serializeToStream(OutputSerializedData outputSerializedData) {
-        outputSerializedData.writeInt64(this.a);
-        outputSerializedData.writeInt64(this.b);
-        String str = this.c;
-        if (str == null) {
-            str = "";
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i10) {
+        org.telegram.ui.ActionBar.k kVar;
+        org.telegram.ui.ActionBar.k kVar2;
+        if (i10 == -1) {
+            g1 g1Var = this.a;
+            kVar = ((n2) g1Var).actionBar;
+            if (!kVar.s()) {
+                g1Var.finishFragment();
+                return;
+            }
+            kVar2 = ((n2) g1Var).actionBar;
+            kVar2.r();
+            g1Var.s.clear();
+            AndroidUtilities.forEachViews((RecyclerView) g1Var.a, (Utilities.Callback<View>) new ai.i(23));
         }
-        outputSerializedData.writeString(str);
-        this.d.serializeToStream(outputSerializedData);
     }
 }

@@ -8,36 +8,36 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.np;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.op;
 import rg.w1;
 import w7.x5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class b extends vg.c {
-    public final np r;
+    public final op r;
     public TLRPC.TL_help_country s;
     public final TextPaint v;
     public final w1 w;
 
-    public b(Context context, e6 e6Var) {
-        super(context, e6Var);
+    public b(Context context, d6 d6Var) {
+        super(context, d6Var);
         TextPaint textPaint = new TextPaint();
         this.v = textPaint;
         this.w = new w1(this, 11);
         textPaint.setTextSize(AndroidUtilities.dp(20.0f));
         this.f.setVisibility(8);
         this.c.setVisibility(8);
-        np npVar = new np(context, 21, e6Var);
-        this.r = npVar;
-        npVar.b(i6.B5, i6.j7, i6.C5);
-        npVar.setDrawUnchecked(true);
-        npVar.setDrawBackgroundAsArc(10);
-        addView(npVar);
-        npVar.a(false, false);
-        npVar.setLayoutParams(x5.d(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 16, 13.0f, 0.0f, 14.0f, 0.0f));
+        op opVar = new op(context, 21, d6Var);
+        this.r = opVar;
+        opVar.b(h6.B5, h6.j7, h6.C5);
+        opVar.setDrawUnchecked(true);
+        opVar.setDrawBackgroundAsArc(10);
+        addView(opVar);
+        opVar.a(false, false);
+        opVar.setLayoutParams(x5.d(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 16, 13.0f, 0.0f, 14.0f, 0.0f));
     }
 
     @Override // vg.c
@@ -52,9 +52,9 @@ public final class b extends vg.c {
 
     @Override // vg.c
     public final void c(boolean z10, boolean z11) {
-        np npVar = this.r;
-        if (npVar.getVisibility() == 0) {
-            npVar.a(z10, z11);
+        op opVar = this.r;
+        if (opVar.getVisibility() == 0) {
+            opVar.a(z10, z11);
         }
     }
 

@@ -1,6 +1,6 @@
 package hg;
 
-import ai.z5;
+import ai.y5;
 import android.content.Context;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
@@ -23,31 +23,31 @@ import org.telegram.messenger.WebFile;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.e61;
-import org.telegram.ui.Components.eq;
-import org.telegram.ui.Components.pr;
-import org.telegram.ui.Components.tp;
-import org.telegram.ui.Components.w51;
+import org.telegram.ui.Components.d61;
+import org.telegram.ui.Components.fq;
+import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.up;
+import org.telegram.ui.Components.v51;
 import w7.x5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class f1 extends n2 implements NotificationCenter.NotificationCenterDelegate {
     public boolean E;
     public int F;
     public boolean G;
-    public e61 a;
-    public pr b;
+    public d61 a;
+    public qr b;
     public org.telegram.ui.ActionBar.v0 c;
     public boolean d;
     public FrameLayout e;
     public c1 f;
     public FrameLayout h;
     public e1 n;
-    public eq r;
-    public z5 s;
+    public fq r;
+    public y5 s;
     public boolean v;
     public TLRPC.TL_businessLocation w;
     public TLRPC.GeoPoint x;
@@ -71,8 +71,8 @@ public final class f1 extends n2 implements NotificationCenter.NotificationCente
             this.c.setScaleX(V ? 1.0f : 0.0f);
             this.c.setScaleY(V ? 1.0f : 0.0f);
         }
-        e61 e61Var = this.a;
-        if (e61Var == null || e61Var.Y2 == null) {
+        d61 d61Var = this.a;
+        if (d61Var == null || d61Var.Y2 == null) {
             return;
         }
         if (this.G != ((this.w == null || (this.x == null && TextUtils.isEmpty(this.y))) ? false : true)) {
@@ -160,7 +160,7 @@ public final class f1 extends n2 implements NotificationCenter.NotificationCente
     }
 
     public final void X() {
-        w51 w51Var;
+        v51 v51Var;
         if (this.v) {
             return;
         }
@@ -187,21 +187,21 @@ public final class f1 extends n2 implements NotificationCenter.NotificationCente
             this.d = false;
         }
         Y();
-        e61 e61Var = this.a;
-        if (e61Var != null && (w51Var = e61Var.Y2) != null) {
-            w51Var.N(true);
+        d61 d61Var = this.a;
+        if (d61Var != null && (v51Var = d61Var.Y2) != null) {
+            v51Var.N(true);
         }
         this.v = true;
     }
 
     public final void Y() {
-        z5 z5Var;
+        y5 y5Var;
         e1 e1Var = this.n;
-        if (e1Var == null || (z5Var = this.s) == null) {
+        if (e1Var == null || (y5Var = this.s) == null) {
             return;
         }
         if (this.x == null) {
-            z5Var.setImageBitmap(null);
+            y5Var.setImageBitmap(null);
             return;
         }
         e1Var.setAlpha(0.0f);
@@ -210,9 +210,9 @@ public final class f1 extends n2 implements NotificationCenter.NotificationCente
         float f7 = AndroidUtilities.density;
         int i10 = (int) (measuredWidth / f7);
         int min = Math.min(2, (int) Math.ceil(f7));
-        z5 z5Var2 = this.s;
+        y5 y5Var2 = this.s;
         TLRPC.GeoPoint geoPoint = this.x;
-        z5Var2.n(ImageLocation.getForWebFile(WebFile.createWithGeoPoint(geoPoint.lat, geoPoint._long, 0L, min * i10, min * 240, 15, min)), a4.a.n(i10, "_240"), this.r, null);
+        y5Var2.n(ImageLocation.getForWebFile(WebFile.createWithGeoPoint(geoPoint.lat, geoPoint._long, 0L, min * i10, min * 240, 15, min)), a4.a.n(i10, "_240"), this.r, null);
     }
 
     @Override // org.telegram.ui.ActionBar.n2
@@ -223,21 +223,21 @@ public final class f1 extends n2 implements NotificationCenter.NotificationCente
         this.actionBar.setTitle(LocaleController.getString(R.string.BusinessLocation));
         this.actionBar.setActionBarMenuOnItemClick(new ei.t(this, 13));
         Drawable mutate = context.getResources().getDrawable(R.drawable.ic_ab_done).mutate();
-        int i11 = i6.v8;
+        int i11 = h6.v8;
         int i12 = 0;
-        mutate.setColorFilter(new PorterDuffColorFilter(i6.w0(null, i11, false), PorterDuff.Mode.MULTIPLY));
-        this.b = new pr(mutate, new tp(i6.w0(null, i11, false)));
+        mutate.setColorFilter(new PorterDuffColorFilter(h6.w0(null, i11, false), PorterDuff.Mode.MULTIPLY));
+        this.b = new qr(mutate, new up(h6.w0(null, i11, false)));
         this.c = this.actionBar.n().i(AndroidUtilities.dp(56.0f), LocaleController.getString(R.string.Done), this.b);
         U(false);
         FrameLayout frameLayout = new FrameLayout(context);
-        frameLayout.setBackgroundColor(i6.w0(null, i6.a7, false));
+        frameLayout.setBackgroundColor(h6.w0(null, h6.a7, false));
         c1 c1Var = new c1(this, getParentActivity());
         this.f = c1Var;
         c1Var.setTextSize(1, 17.0f);
-        this.f.setHintTextColor(i6.w0(null, i6.H6, false));
+        this.f.setHintTextColor(h6.w0(null, h6.H6, false));
         c1 c1Var2 = this.f;
-        int i13 = i6.G6;
-        c1Var2.setTextColor(i6.w0(null, i13, false));
+        int i13 = h6.G6;
+        c1Var2.setTextColor(h6.w0(null, i13, false));
         this.f.setBackgroundDrawable(null);
         this.f.setMaxLines(5);
         this.f.setSingleLine(false);
@@ -246,7 +246,7 @@ public final class f1 extends n2 implements NotificationCenter.NotificationCente
         this.f.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
         this.f.setInputType(180225);
         this.f.setHint(LocaleController.getString(R.string.BusinessLocationAddress));
-        this.f.setCursorColor(i6.w0(null, i13, false));
+        this.f.setCursorColor(h6.w0(null, i13, false));
         this.f.setCursorSize(AndroidUtilities.dp(19.0f));
         this.f.setCursorWidth(1.5f);
         this.f.addTextChangedListener(new i2(this, i14));
@@ -255,7 +255,7 @@ public final class f1 extends n2 implements NotificationCenter.NotificationCente
         this.e = frameLayout2;
         frameLayout2.addView(this.f, x5.d(-1, -1.0f, 48, 21.0f, 15.0f, 21.0f, 15.0f));
         FrameLayout frameLayout3 = this.e;
-        int i15 = i6.d6;
+        int i15 = h6.d6;
         frameLayout3.setBackgroundColor(getThemedColor(i15));
         c1 c1Var3 = this.f;
         if (c1Var3 != null) {
@@ -265,14 +265,14 @@ public final class f1 extends n2 implements NotificationCenter.NotificationCente
             c1Var4.setSelection(c1Var4.getText().length());
             this.d = false;
         }
-        this.s = new z5(this, context, i10);
-        SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(R.raw.map_placeholder, i6.Pb, 0.2f);
+        this.s = new y5(this, context, i10);
+        SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(R.raw.map_placeholder, h6.Pb, 0.2f);
         svgThumb.setColorKey(i13, getResourceProvider());
         svgThumb.setAspectCenter(true);
         svgThumb.setParent(this.s.getImageReceiver());
-        eq eqVar = new eq(svgThumb);
-        this.r = eqVar;
-        eqVar.setCallback(this.s);
+        fq fqVar = new fq(svgThumb);
+        this.r = fqVar;
+        fqVar.setCallback(this.s);
         this.s.setBackgroundColor(getThemedColor(i15));
         this.n = new e1(this, context);
         FrameLayout frameLayout4 = new FrameLayout(context);
@@ -280,12 +280,12 @@ public final class f1 extends n2 implements NotificationCenter.NotificationCente
         frameLayout4.addView(this.s, x5.c(-1.0f, -1));
         this.h.addView(this.n, x5.d(-2, -2.0f, 17, 0.0f, -31.0f, 0.0f, 0.0f));
         Y();
-        e61 e61Var = new e61(this, new bi.v(this, 26), new a1(this, i12), null);
-        this.a = e61Var;
-        e61Var.p1();
-        e61 e61Var2 = this.a;
-        e61Var2.Y2.r = false;
-        frameLayout.addView(e61Var2, x5.c(-1.0f, -1));
+        d61 d61Var = new d61(this, new bi.v(this, 26), new a1(this, i12), null);
+        this.a = d61Var;
+        d61Var.p1();
+        d61 d61Var2 = this.a;
+        d61Var2.Y2.r = false;
+        frameLayout.addView(d61Var2, x5.c(-1.0f, -1));
         this.actionBar.z(this.a, true);
         X();
         this.fragmentView = frameLayout;

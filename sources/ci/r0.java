@@ -7,7 +7,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.VideoEncodingService;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class r0 implements NotificationCenter.NotificationCenterDelegate {
     public final int a;
@@ -17,7 +17,7 @@ public final class r0 implements NotificationCenter.NotificationCenterDelegate {
     public final q0 e;
     public final o0 f;
 
-    public r0(int i10, o8 o8Var, File file, p0 p0Var, q0 q0Var, o0 o0Var) {
+    public r0(int i10, l8 l8Var, File file, p0 p0Var, q0 q0Var, o0 o0Var) {
         this.a = i10;
         this.b = file;
         this.d = p0Var;
@@ -33,7 +33,7 @@ public final class r0 implements NotificationCenter.NotificationCenterDelegate {
         tL_message.id = 1;
         tL_message.attachPath = file.getAbsolutePath();
         this.c = new MessageObject(i10, (TLRPC.Message) tL_message, (MessageObject) null, false, false);
-        o8Var.s(new ai.y1(this, 7));
+        l8Var.s(new ai.y1(this, 7));
     }
 
     public final void a(boolean z10) {

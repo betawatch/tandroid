@@ -30,15 +30,15 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import java.util.zip.Inflater;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
-import u2.o1;
+import u2.n1;
 import y9.w0;
 import y9.x0;
 import zd.f1;
 import zd.i2;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final class t implements z3.n {
+public final class t implements z3.m {
     public static t f;
     public final /* synthetic */ int a;
     public Object b;
@@ -77,7 +77,7 @@ public final class t implements z3.n {
         }
     }
 
-    @Override // z3.n
+    @Override // z3.m
     public int A() {
         switch (this.a) {
         }
@@ -86,11 +86,11 @@ public final class t implements z3.n {
 
     /* JADX WARN: Removed duplicated region for block: B:74:0x01f7  */
     /* JADX WARN: Removed duplicated region for block: B:79:0x01fd  */
-    @Override // z3.n
+    @Override // z3.m
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void B(byte[] bArr, int i10, int i11, z3.m mVar, e2.h hVar) {
+    public void B(byte[] bArr, int i10, int i11, z3.l lVar, e2.h hVar) {
         int[] iArr;
         d2.b bVar;
         int i12;
@@ -251,7 +251,7 @@ public final class t implements z3.n {
                     i15 = 0;
                     i16 = 2;
                 }
-                hVar.accept(new z3.b(-9223372036854775807L, -9223372036854775807L, arrayList));
+                hVar.accept(new z3.a(-9223372036854775807L, -9223372036854775807L, arrayList));
                 break;
             default:
                 e2.v vVar4 = (e2.v) this.b;
@@ -342,14 +342,14 @@ public final class t implements z3.n {
                             e9.g0 g0Var = i0.b;
                             a1Var = a1.e;
                         }
-                        hVar.accept(new z3.b(-9223372036854775807L, 5000000L, a1Var));
+                        hVar.accept(new z3.a(-9223372036854775807L, 5000000L, a1Var));
                         break;
                     }
                 }
                 bVar3 = null;
                 if (bVar3 == null) {
                 }
-                hVar.accept(new z3.b(-9223372036854775807L, 5000000L, a1Var));
+                hVar.accept(new z3.a(-9223372036854775807L, 5000000L, a1Var));
                 break;
         }
     }
@@ -792,14 +792,14 @@ public final class t implements z3.n {
         return continueWithTask;
     }
 
-    @Override // z3.n
-    public /* synthetic */ z3.e r(int i10, int i11, byte[] bArr) {
+    @Override // z3.m
+    public /* synthetic */ z3.d r(int i10, int i11, byte[] bArr) {
         switch (this.a) {
         }
         return w.c.a(this, bArr, i11);
     }
 
-    @Override // z3.n
+    @Override // z3.m
     public /* synthetic */ void reset() {
         int i10 = this.a;
     }
@@ -807,7 +807,7 @@ public final class t implements z3.n {
     public String toString() {
         switch (this.a) {
             case 10:
-                return ((k2.c0) this.e).toString();
+                return ((k2.b0) this.e).toString();
             default:
                 return super.toString();
         }
@@ -941,9 +941,9 @@ public final class t implements z3.n {
         }
     }
 
-    public t(k2.c0 c0Var, Object obj, Object obj2, Object[] objArr) {
+    public t(k2.b0 b0Var, Object obj, Object obj2, Object[] objArr) {
         this.a = 10;
-        this.e = c0Var;
+        this.e = b0Var;
         this.b = obj;
         this.c = obj2;
         this.d = objArr;
@@ -973,11 +973,11 @@ public final class t implements z3.n {
         }
     }
 
-    public t(o1 o1Var, boolean[] zArr) {
+    public t(n1 n1Var, boolean[] zArr) {
         this.a = 11;
-        this.b = o1Var;
+        this.b = n1Var;
         this.c = zArr;
-        int i10 = o1Var.a;
+        int i10 = n1Var.a;
         this.d = new boolean[i10];
         this.e = new boolean[i10];
     }

@@ -4,7 +4,7 @@ import android.animation.ValueAnimator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class qb implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -58,7 +58,7 @@ public final /* synthetic */ class qb implements ValueAnimator.AnimatorUpdateLis
                 jcVar3.Z = floatValue3;
                 jcVar3.d0 = Utilities.clamp(jcVar3.Z / AndroidUtilities.dp(200.0f), 1.0f, 0.0f);
                 zb zbVar = jcVar3.n0;
-                f6 currentPeerView = zbVar == null ? null : zbVar.getCurrentPeerView();
+                e6 currentPeerView = zbVar == null ? null : zbVar.getCurrentPeerView();
                 if (currentPeerView != null) {
                     currentPeerView.invalidate();
                     break;

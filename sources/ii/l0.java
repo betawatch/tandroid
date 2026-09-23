@@ -11,21 +11,20 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Cells.q9;
+import org.telegram.ui.Cells.r9;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class l0 {
     public final i1 a;
-    public final org.telegram.ui.ActionBar.e6 b;
+    public final org.telegram.ui.ActionBar.d6 b;
     public final k0 c;
     public boolean d;
 
-    public l0(Context context, org.telegram.ui.ActionBar.e6 e6Var, k0 k0Var) {
-        this.b = e6Var;
+    public l0(Context context, org.telegram.ui.ActionBar.d6 d6Var, k0 k0Var) {
+        this.b = d6Var;
         this.c = k0Var;
-        i1 i1Var = new i1(context, e6Var);
+        i1 i1Var = new i1(context, d6Var);
         this.a = i1Var;
         i1Var.setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f));
         i1Var.setAllowNewlines(false);
@@ -58,9 +57,9 @@ public final class l0 {
     public final void a() {
         i1 i1Var = this.a;
         i1Var.t();
-        int v02 = i6.v0(i6.G6, this.b);
-        i1Var.setTextColor(i6.l1(0.5f, v02));
-        i1Var.setHintTextColor(i6.l1(0.35f, v02));
+        int v02 = org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.G6, this.b);
+        i1Var.setTextColor(org.telegram.ui.ActionBar.h6.l1(0.5f, v02));
+        i1Var.setHintTextColor(org.telegram.ui.ActionBar.h6.l1(0.35f, v02));
     }
 
     public final void b() {
@@ -71,18 +70,18 @@ public final class l0 {
         }
         d(pageBlock);
         TL_iv.RichText richText = N.b.caption.text;
-        String l4 = f6.l(richText);
+        String l4 = g6.l(richText);
         i1 i1Var = this.a;
         if (String.valueOf(i1Var.getText()).equals(l4)) {
             return;
         }
-        i1Var.setTextSilently(f6.r(richText, null, true));
+        i1Var.setTextSilently(g6.r(richText, null, true));
         i1Var.invalidateEffects();
     }
 
     public final void c(Canvas canvas) {
         k0 k0Var = this.c;
-        q9 E = k0Var.E();
+        r9 E = k0Var.E();
         if (E != null) {
             if (this.a.getLayout() == null) {
                 return;
@@ -143,6 +142,6 @@ public final class l0 {
             return;
         }
         d(pageBlock);
-        N.b.caption.text = f6.f(this.a.getText());
+        N.b.caption.text = g6.f(this.a.getText());
     }
 }

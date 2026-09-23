@@ -1,33 +1,23 @@
 package ci;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import org.telegram.ui.Components.ll0;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class f3 extends ll0 {
-    public final /* synthetic */ x3 X2;
+public final class f3 extends s4.s {
+    public final /* synthetic */ w3 Q;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f3(x3 x3Var, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, e6Var);
-        this.X2 = x3Var;
+    public f3(w3 w3Var) {
+        super(3);
+        this.Q = w3Var;
     }
 
-    @Override // org.telegram.ui.Components.ll0, android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (this.X2.K) {
-            return false;
+    @Override // s4.s, s4.c0, s4.o0
+    public final void b0(of.e eVar, s4.z0 z0Var) {
+        super.b0(eVar, z0Var);
+        w3 w3Var = this.Q;
+        if (w3Var.U) {
+            w3Var.U = false;
+            w3Var.a();
         }
-        return super.dispatchTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (this.X2.K) {
-            return false;
-        }
-        return super.onInterceptTouchEvent(motionEvent);
     }
 }

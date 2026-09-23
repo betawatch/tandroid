@@ -10,12 +10,12 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class iw0 extends View {
-    public final v9 a;
+    public final x9 a;
     public final gw0 b;
-    public final c6 c;
+    public final e6 c;
     public boolean d;
     public hw0 e;
     public boolean f;
@@ -27,13 +27,13 @@ public final class iw0 extends View {
         gw0Var.c = -16777216;
         gw0Var.d = -1;
         this.b = gw0Var;
-        c6 c6Var = new c6(new fw0(this, 0), 380L, qr.h);
-        this.c = c6Var;
-        v9 v9Var = new v9(context);
-        this.a = v9Var;
-        v9Var.setCallback(this);
+        e6 e6Var = new e6(new fw0(this, 0), 380L, rr.h);
+        this.c = e6Var;
+        x9 x9Var = new x9(context);
+        this.a = x9Var;
+        x9Var.setCallback(this);
         this.d = false;
-        c6Var.d(0.0f, false);
+        e6Var.d(0.0f, false);
         a();
     }
 
@@ -70,40 +70,40 @@ public final class iw0 extends View {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         float e = this.c.e(this.d);
-        int y3 = org.telegram.messenger.vl.y(24.0f, getMeasuredWidth(), 2);
+        int y3 = org.telegram.messenger.ul.y(24.0f, getMeasuredWidth(), 2);
         int measuredHeight = (getMeasuredHeight() - AndroidUtilities.dp(24.0f)) / 2;
         canvas.save();
         canvas.translate(y3, measuredHeight);
         canvas.scale(e, e, 0.0f, AndroidUtilities.dp(12.0f));
         int dp = AndroidUtilities.dp(24.0f);
         int dp2 = AndroidUtilities.dp(24.0f);
-        v9 v9Var = this.a;
-        v9Var.setBounds(0, 0, dp, dp2);
+        x9 x9Var = this.a;
+        x9Var.setBounds(0, 0, dp, dp2);
         gw0 gw0Var = this.b;
         int i10 = gw0Var.c;
-        if (v9Var.f != i10) {
-            v9Var.f = i10;
-            if (v9Var.c != null) {
-                v9Var.d.setColorFilter(i10, PorterDuff.Mode.MULTIPLY);
-                v9Var.invalidateSelf();
+        if (x9Var.f != i10) {
+            x9Var.f = i10;
+            if (x9Var.c != null) {
+                x9Var.d.setColorFilter(i10, PorterDuff.Mode.MULTIPLY);
+                x9Var.invalidateSelf();
             }
         }
         int i11 = gw0Var.d;
-        if (v9Var.e != i11) {
-            v9Var.e = i11;
-            Drawable drawable = v9Var.c;
+        if (x9Var.e != i11) {
+            x9Var.e = i11;
+            Drawable drawable = x9Var.c;
             if (drawable != null) {
                 drawable.setColorFilter(i11, PorterDuff.Mode.MULTIPLY);
-                v9Var.invalidateSelf();
+                x9Var.invalidateSelf();
             }
         }
         int i12 = gw0Var.c | (-16777216);
-        if (v9Var.h != i12) {
-            v9Var.h = i12;
-            v9Var.b.s(i12, false);
-            v9Var.invalidateSelf();
+        if (x9Var.h != i12) {
+            x9Var.h = i12;
+            x9Var.b.s(i12, false);
+            x9Var.invalidateSelf();
         }
-        v9Var.draw(canvas);
+        x9Var.draw(canvas);
         canvas.restore();
     }
 
@@ -115,40 +115,40 @@ public final class iw0 extends View {
             return;
         }
         int i10 = tl_starsRating.level;
-        v9 v9Var = this.a;
-        if (v9Var.r != i10 || v9Var.c == null || v9Var.d == null) {
-            v9Var.b.q(i10 >= 0 ? Integer.toString(i10) : "!", true, true);
-            v9Var.r = i10;
+        x9 x9Var = this.a;
+        if (x9Var.r != i10 || x9Var.c == null || x9Var.d == null) {
+            x9Var.b.q(i10 >= 0 ? Integer.toString(i10) : "!", true, true);
+            x9Var.r = i10;
             if (i10 < 0) {
                 b10 = 18;
             } else {
                 b10 = w7.p.b(i10 <= 10 ? i10 - 1 : (i10 / 10) + 8, 0, 17);
             }
-            Context context = v9Var.a;
-            if (v9Var.n != b10 || v9Var.c == null || v9Var.d == null) {
+            Context context = x9Var.a;
+            if (x9Var.n != b10 || x9Var.c == null || x9Var.d == null) {
                 int i11 = b10 * 2;
-                Drawable mutate = context.getResources().getDrawable(v9.s[i11]).mutate();
-                v9Var.c = mutate;
-                int i12 = v9Var.e;
+                Drawable mutate = context.getResources().getDrawable(x9.s[i11]).mutate();
+                x9Var.c = mutate;
+                int i12 = x9Var.e;
                 PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
                 mutate.setColorFilter(i12, mode);
-                Drawable mutate2 = context.getResources().getDrawable(v9.s[i11 + 1]).mutate();
-                v9Var.d = mutate2;
-                mutate2.setColorFilter(v9Var.f, mode);
-                v9Var.n = b10;
-                Drawable drawable = v9Var.c;
+                Drawable mutate2 = context.getResources().getDrawable(x9.s[i11 + 1]).mutate();
+                x9Var.d = mutate2;
+                mutate2.setColorFilter(x9Var.f, mode);
+                x9Var.n = b10;
+                Drawable drawable = x9Var.c;
                 if (drawable != null) {
-                    drawable.setBounds(v9Var.getBounds());
+                    drawable.setBounds(x9Var.getBounds());
                 }
-                Drawable drawable2 = v9Var.d;
+                Drawable drawable2 = x9Var.d;
                 if (drawable2 != null) {
-                    drawable2.setBounds(v9Var.getBounds());
+                    drawable2.setBounds(x9Var.getBounds());
                 }
             }
-            v9Var.invalidateSelf();
+            x9Var.invalidateSelf();
         }
         StringBuilder sb2 = new StringBuilder();
-        org.telegram.messenger.vl.m(R.string.AccDescrProfileRatingLevel, " ", sb2);
+        org.telegram.messenger.ul.m(R.string.AccDescrProfileRatingLevel, " ", sb2);
         sb2.append(tl_starsRating.level);
         setContentDescription(sb2.toString());
         invalidate();
@@ -165,8 +165,8 @@ public final class iw0 extends View {
         invalidate();
     }
 
-    public void setResourcesProvider(org.telegram.ui.ActionBar.e6 e6Var) {
-        this.b.b = e6Var;
+    public void setResourcesProvider(org.telegram.ui.ActionBar.d6 d6Var) {
+        this.b.b = d6Var;
     }
 
     public void setVisibility(boolean z10) {

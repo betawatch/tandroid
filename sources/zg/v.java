@@ -4,9 +4,9 @@ import android.view.ViewParent;
 import com.google.android.gms.internal.vision.e2;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Cells.o4;
-import org.telegram.ui.Components.fk0;
+import org.telegram.ui.Components.gk0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v implements Runnable {
     public final /* synthetic */ int a;
@@ -24,11 +24,11 @@ public final /* synthetic */ class v implements Runnable {
         switch (this.a) {
             case 0:
                 c0 c0Var = (c0) this.b;
-                fk0 fk0Var = (fk0) this.c;
+                gk0 gk0Var = (gk0) this.c;
                 c0Var.l = true;
                 c0Var.a.invalidate();
-                fk0Var.b1 = false;
-                fk0Var.invalidate();
+                gk0Var.b1 = false;
+                gk0Var.invalidate();
                 c0Var.c(true);
                 break;
             case 1:

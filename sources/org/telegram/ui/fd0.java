@@ -1,39 +1,42 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Point;
-import android.view.View;
-import android.widget.FrameLayout;
-import java.util.HashMap;
-import java.util.Map;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.IMapsProvider;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class fd0 extends FrameLayout {
-    public final HashMap a;
-    public final /* synthetic */ id0 b;
+public final /* synthetic */ class fd0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ rg0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fd0(id0 id0Var, Context context) {
-        super(context);
-        this.b = id0Var;
-        this.a = new HashMap();
+    public /* synthetic */ fd0(rg0 rg0Var, int i10) {
+        this.a = i10;
+        this.b = rg0Var;
     }
 
-    public final void a() {
-        IMapsProvider.IMap iMap = this.b.I;
-        if (iMap == null) {
-            return;
-        }
-        IMapsProvider.IProjection projection = iMap.getProjection();
-        for (Map.Entry entry : this.a.entrySet()) {
-            IMapsProvider.IMarker iMarker = (IMapsProvider.IMarker) entry.getKey();
-            View view = (View) entry.getValue();
-            Point screenLocation = projection.toScreenLocation(iMarker.getPosition());
-            view.setTranslationX(screenLocation.x - (view.getMeasuredWidth() / 2));
-            view.setTranslationY(AndroidUtilities.dp(22.0f) + (screenLocation.y - view.getMeasuredHeight()));
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                rg0 rg0Var = this.b;
+                rg0Var.r0 = false;
+                rg0Var.x1(true, true);
+                break;
+            case 1:
+                this.b.c0 = false;
+                break;
+            default:
+                rg0 rg0Var2 = this.b;
+                if (rg0Var2.getParentActivity() != null && !rg0Var2.getParentActivity().isFinishing() && rg0Var2.getParentActivity() != null) {
+                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(rg0Var2.getParentActivity());
+                    alertDialog$Builder.a.R = LocaleController.getString(R.string.RestorePasswordNoEmailTitle);
+                    alertDialog$Builder.a.T = LocaleController.getString(R.string.SafetyNetErrorOccurred);
+                    alertDialog$Builder.k(LocaleController.getString(R.string.OK), new kd0(rg0Var2, 1));
+                    alertDialog$Builder.o();
+                    break;
+                }
+                break;
         }
     }
 }

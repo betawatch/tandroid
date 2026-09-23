@@ -1,19 +1,92 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Canvas;
+import android.os.Build;
 import android.widget.EdgeEffect;
 import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class ot extends s4.l0 {
-    public final nt[] a = new nt[4];
-    public final ArrayList b = new ArrayList();
+public final class ot extends EdgeEffect {
+    public final int a;
+    public final mt b;
+    public final RecyclerView c;
+    public final yp d;
+    public boolean e;
 
-    @Override // s4.l0
-    public final EdgeEffect a(RecyclerView recyclerView, int i10) {
-        nt ntVar = new nt(recyclerView, i10, new lt(this, 0));
-        this.a[i10] = ntVar;
-        return ntVar;
+    public ot(RecyclerView recyclerView, int i10, mt mtVar) {
+        super(recyclerView.getContext());
+        this.d = new yp(this, 7);
+        this.c = recyclerView;
+        this.a = i10;
+        this.b = mtVar;
+    }
+
+    public final void a() {
+        boolean b10 = b();
+        if (this.e != b10) {
+            this.e = b10;
+            mt mtVar = this.b;
+            if (mtVar != null) {
+                mtVar.a(this.a, b10);
+            }
+        }
+    }
+
+    public final boolean b() {
+        if (isFinished()) {
+            return false;
+        }
+        return Build.VERSION.SDK_INT < 31 || getDistance() != 0.0f;
+    }
+
+    @Override // android.widget.EdgeEffect
+    public final boolean draw(Canvas canvas) {
+        boolean draw = super.draw(canvas);
+        this.c.postOnAnimation(this.d);
+        return draw;
+    }
+
+    @Override // android.widget.EdgeEffect
+    public final void finish() {
+        super.finish();
+        a();
+    }
+
+    @Override // android.widget.EdgeEffect
+    public final void onAbsorb(int i10) {
+        super.onAbsorb(i10);
+        a();
+    }
+
+    @Override // android.widget.EdgeEffect
+    public final void onPull(float f7) {
+        super.onPull(f7);
+        a();
+    }
+
+    @Override // android.widget.EdgeEffect
+    public final float onPullDistance(float f7, float f10) {
+        float onPullDistance = super.onPullDistance(f7, f10);
+        a();
+        return onPullDistance;
+    }
+
+    @Override // android.widget.EdgeEffect
+    public final void onRelease() {
+        super.onRelease();
+        a();
+    }
+
+    @Override // android.widget.EdgeEffect
+    public final void setSize(int i10, int i11) {
+        super.setSize(i10, i11);
+        a();
+    }
+
+    @Override // android.widget.EdgeEffect
+    public final void onPull(float f7, float f10) {
+        super.onPull(f7, f10);
+        a();
     }
 }

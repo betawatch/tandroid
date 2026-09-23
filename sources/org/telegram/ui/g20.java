@@ -1,41 +1,78 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class g20 extends FrameLayout {
-    public org.telegram.ui.ActionBar.j5 a;
-    public ImageView b;
+public final class g20 implements org.telegram.ui.Components.eo0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ sg.a b;
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        int dp;
-        ImageView imageView = this.b;
-        int i14 = i12 - i10;
-        org.telegram.ui.ActionBar.j5 j5Var = this.a;
-        int textHeight = ((i13 - i11) - j5Var.getTextHeight()) / 2;
-        if (LocaleController.isRTL) {
-            dp = (getMeasuredWidth() - j5Var.getMeasuredWidth()) - AndroidUtilities.dp(imageView.getVisibility() == 0 ? 64.0f : 23.0f);
-        } else {
-            dp = AndroidUtilities.dp(imageView.getVisibility() == 0 ? 64.0f : 23.0f);
-        }
-        j5Var.layout(dp, textHeight, j5Var.getMeasuredWidth() + dp, j5Var.getMeasuredHeight() + textHeight);
-        int dp2 = !LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : (i14 - imageView.getMeasuredWidth()) - AndroidUtilities.dp(20.0f);
-        imageView.layout(dp2, 0, imageView.getMeasuredWidth() + dp2, imageView.getMeasuredHeight());
+    public /* synthetic */ g20(sg.a aVar, int i10) {
+        this.a = i10;
+        this.b = aVar;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int size = View.MeasureSpec.getSize(i10);
-        AndroidUtilities.dp(48.0f);
-        this.a.measure(org.telegram.messenger.vl.d(94.0f, size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLObject.FLAG_30));
-        this.b.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
-        setMeasuredDimension(size, AndroidUtilities.dp(50.0f));
+    @Override // org.telegram.ui.Components.eo0
+    public final void B() {
+        int i10 = this.a;
+    }
+
+    @Override // org.telegram.ui.Components.eo0
+    public final void X(float f7, boolean z10) {
+        switch (this.a) {
+            case 0:
+                sg.f fVar = this.b.c;
+                if (fVar != null) {
+                    fVar.v = f7 * 2.0f;
+                    break;
+                }
+                break;
+            case 1:
+                sg.f fVar2 = this.b.c;
+                if (fVar2 != null) {
+                    fVar2.w = f7 * 2.0f;
+                    break;
+                }
+                break;
+            case 2:
+                sg.f fVar3 = this.b.c;
+                if (fVar3 != null) {
+                    fVar3.x = f7;
+                    break;
+                }
+                break;
+            default:
+                sg.f fVar4 = this.b.c;
+                if (fVar4 != null) {
+                    fVar4.A = f7 * 2.0f;
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.eo0
+    public final /* synthetic */ CharSequence getContentDescription() {
+        switch (this.a) {
+        }
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.eo0
+    public final /* synthetic */ int m0() {
+        switch (this.a) {
+        }
+        return 0;
+    }
+
+    private final void a() {
+    }
+
+    private final void b() {
+    }
+
+    private final void c() {
+    }
+
+    private final void d() {
     }
 }

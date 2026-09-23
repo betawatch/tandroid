@@ -13,18 +13,18 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.y0;
+import org.telegram.messenger.z0;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.oo;
-import org.telegram.ui.Components.vc;
+import org.telegram.ui.Components.po;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.kg1;
-import org.telegram.ui.x11;
+import org.telegram.ui.cg1;
+import org.telegram.ui.p11;
 import v7.z8;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class n implements OnFailureListener, c3.p, c3.q, l2.h, oo {
+public final /* synthetic */ class n implements OnFailureListener, c3.p, c3.q, l2.h, po {
     public final /* synthetic */ int a;
     public long b;
     public Object c;
@@ -195,16 +195,16 @@ public final /* synthetic */ class n implements OnFailureListener, c3.p, c3.q, l
         ((c3.p) this.c).k(i10);
     }
 
-    @Override // org.telegram.ui.Components.oo
+    @Override // org.telegram.ui.Components.po
     public void l() {
         Bundle bundle = new Bundle();
         bundle.putLong("dialog_id", this.b);
-        kg1 kg1Var = new kg1(bundle);
-        kg1Var.d = new ArrayList();
-        kg1Var.e = new HashSet();
+        cg1 cg1Var = new cg1(bundle);
+        cg1Var.d = new ArrayList();
+        cg1Var.e = new HashSet();
         ProfileActivity profileActivity = (ProfileActivity) this.c;
-        kg1Var.e = profileActivity.h5;
-        profileActivity.presentFragment(kg1Var);
+        cg1Var.e = profileActivity.h5;
+        profileActivity.presentFragment(cg1Var);
     }
 
     @Override // l2.h
@@ -212,19 +212,19 @@ public final /* synthetic */ class n implements OnFailureListener, c3.p, c3.q, l
         return new m2.j(((c3.j) this.c).c[(int) j3], r1.b[r8], null);
     }
 
-    @Override // org.telegram.ui.Components.oo
+    @Override // org.telegram.ui.Components.po
     public void n() {
         ProfileActivity profileActivity = (ProfileActivity) this.c;
         boolean z10 = !profileActivity.getMessagesController().isDialogMuted(this.b, profileActivity.g1);
         profileActivity.getNotificationsController().muteDialog(this.b, profileActivity.g1, z10);
         if (profileActivity.fragmentView != null) {
-            vc.A(profileActivity, z10, null).j();
+            xc.A(profileActivity, z10, null).j();
         }
         profileActivity.a5();
         profileActivity.g5(true);
     }
 
-    @Override // org.telegram.ui.Components.oo
+    @Override // org.telegram.ui.Components.po
     public void o() {
         ProfileActivity profileActivity = (ProfileActivity) this.c;
         long j3 = this.b;
@@ -232,7 +232,7 @@ public final /* synthetic */ class n implements OnFailureListener, c3.p, c3.q, l
             Bundle bundle = new Bundle();
             bundle.putLong("dialog_id", j3);
             bundle.putLong("topic_id", profileActivity.g1);
-            profileActivity.presentFragment(new x11(bundle, profileActivity.z0));
+            profileActivity.presentFragment(new p11(bundle, profileActivity.z0));
         }
     }
 
@@ -269,7 +269,7 @@ public final /* synthetic */ class n implements OnFailureListener, c3.p, c3.q, l
         ((c3.p) this.c).q(i10);
     }
 
-    @Override // org.telegram.ui.Components.oo
+    @Override // org.telegram.ui.Components.po
     public void r() {
         int i10;
         ProfileActivity profileActivity = (ProfileActivity) this.c;
@@ -277,11 +277,11 @@ public final /* synthetic */ class n implements OnFailureListener, c3.p, c3.q, l
         SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(i10);
         StringBuilder sb2 = new StringBuilder("sound_enabled_");
         long j3 = this.b;
-        boolean z10 = notificationsSettings.getBoolean(y0.i(j3, profileActivity.g1, sb2), true);
+        boolean z10 = notificationsSettings.getBoolean(z0.i(j3, profileActivity.g1, sb2), true);
         boolean z11 = !z10;
-        notificationsSettings.edit().putBoolean(y0.i(j3, profileActivity.g1, new StringBuilder("sound_enabled_")), z11).apply();
-        if (vc.a(profileActivity)) {
-            vc.S(z10 ? 1 : 0, profileActivity, profileActivity.z0).j();
+        notificationsSettings.edit().putBoolean(z0.i(j3, profileActivity.g1, new StringBuilder("sound_enabled_")), z11).apply();
+        if (xc.a(profileActivity)) {
+            xc.S(z10 ? 1 : 0, profileActivity, profileActivity.z0).j();
         }
     }
 
@@ -305,22 +305,22 @@ public final /* synthetic */ class n implements OnFailureListener, c3.p, c3.q, l
         return ((c3.p) this.c).skip(i10);
     }
 
-    @Override // org.telegram.ui.Components.oo
+    @Override // org.telegram.ui.Components.po
     public void t(int i10) {
         ProfileActivity profileActivity = (ProfileActivity) this.c;
         if (i10 == 0) {
             if (profileActivity.getMessagesController().isDialogMuted(this.b, profileActivity.g1)) {
                 n();
             }
-            if (vc.a(profileActivity)) {
-                vc.z(profileActivity, 4, i10, profileActivity.z0).j();
+            if (xc.a(profileActivity)) {
+                xc.z(profileActivity, 4, i10, profileActivity.z0).j();
                 return;
             }
             return;
         }
         profileActivity.getNotificationsController().muteUntil(this.b, profileActivity.g1, i10);
-        if (vc.a(profileActivity)) {
-            vc.z(profileActivity, 5, i10, profileActivity.z0).j();
+        if (xc.a(profileActivity)) {
+            xc.z(profileActivity, 5, i10, profileActivity.z0).j();
         }
         profileActivity.a5();
         profileActivity.g5(true);
@@ -414,7 +414,7 @@ public final /* synthetic */ class n implements OnFailureListener, c3.p, c3.q, l
         }
     }
 
-    @Override // org.telegram.ui.Components.oo
+    @Override // org.telegram.ui.Components.po
     public /* synthetic */ void dismiss() {
     }
 }

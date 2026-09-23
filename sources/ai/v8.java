@@ -3,14 +3,13 @@ package ai;
 import android.text.TextUtils;
 import java.util.ArrayList;
 import java.util.List;
-import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class v8 extends d9 {
     public final String C;
@@ -69,7 +68,7 @@ public final class v8 extends d9 {
     }
 
     @Override // ai.d9
-    public final boolean q(final int i10, final List list, final boolean z10) {
+    public final boolean q(int i10, List list, boolean z10) {
         TLObject tLObject;
         if (this.G || this.H == null) {
             return false;
@@ -96,23 +95,7 @@ public final class v8 extends d9 {
         } else {
             tLObject = MessagesController.getInstance(i11).getUserOrChat(str2);
             if (tLObject == null) {
-                MessagesController.getInstance(i11).getUserNameResolver().resolve(str2, new e2.h() { // from class: ai.u8
-                    @Override // e2.h
-                    public final void accept(Object obj) {
-                        v8 v8Var = v8.this;
-                        y8 y8Var = v8Var.q;
-                        TLObject userOrChat = MessagesController.getInstance(v8Var.c).getUserOrChat(v8Var.D);
-                        v8Var.G = false;
-                        if (userOrChat != null) {
-                            v8Var.q(i10, list, z10);
-                            return;
-                        }
-                        v8Var.J = 0;
-                        v8Var.H = "";
-                        AndroidUtilities.cancelRunOnUIThread(y8Var);
-                        AndroidUtilities.runOnUIThread(y8Var);
-                    }
-                });
+                MessagesController.getInstance(i11).getUserNameResolver().resolve(str2, new d4(this, z10, i10, list));
                 return true;
             }
         }
@@ -120,7 +103,7 @@ public final class v8 extends d9 {
             tL_stories_searchPosts.flags |= 4;
             tL_stories_searchPosts.peer = MessagesController.getInputPeer(tLObject);
         }
-        this.I = ConnectionsManager.getInstance(i11).sendRequest(tL_stories_searchPosts, new m8(this, 1));
+        this.I = ConnectionsManager.getInstance(i11).sendRequest(tL_stories_searchPosts, new n8(this, 1));
         return true;
     }
 

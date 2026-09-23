@@ -18,12 +18,12 @@ import android.os.Build;
 import java.lang.ref.WeakReference;
 import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.h6;
 import v7.u7;
 import w7.p;
 import yf.e0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public abstract class d extends Drawable {
     public static final float[] E = new float[8];
@@ -304,7 +304,7 @@ public abstract class d extends Drawable {
                 paint.setAlpha(this.l);
                 cVar.b(canvas, paint);
             }
-            int l1 = i6.l1(this.l / 255.0f, this.e);
+            int l1 = h6.l1(this.l / 255.0f, this.e);
             if (Color.alpha(l1) > 0) {
                 Paint paint2 = this.t;
                 paint2.setColor(l1);
@@ -328,13 +328,13 @@ public abstract class d extends Drawable {
         if (aVar == null || (i10 = this.l) == 0) {
             return;
         }
-        int l12 = i6.l1(i10 / 255.0f, this.e);
+        int l12 = h6.l1(i10 / 255.0f, this.e);
         if (Color.alpha(this.d) > 0 && this.l == 255) {
             float f7 = this.p;
             if (f7 > 0.0f) {
                 float f10 = this.n;
                 float f11 = this.o;
-                int l13 = i6.l1(f7, this.d);
+                int l13 = h6.l1(f7, this.d);
                 Paint paint3 = this.u;
                 paint3.setShadowLayer(f10, 0.0f, f11, l13);
                 cVar.c(canvas, paint3, this.m);
@@ -387,8 +387,8 @@ public abstract class d extends Drawable {
     }
 
     public final void g(Canvas canvas) {
-        int l1 = i6.l1(this.l / 255.0f, this.f);
-        int l12 = i6.l1(this.l / 255.0f, this.g);
+        int l1 = h6.l1(this.l / 255.0f, this.f);
+        int l12 = h6.l1(this.l / 255.0f, this.g);
         int alpha = Color.alpha(l1);
         c cVar = this.j;
         Paint paint = this.r;

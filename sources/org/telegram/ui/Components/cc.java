@@ -1,12 +1,33 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+import android.content.Context;
+import android.graphics.Typeface;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cc implements o1.g {
-    @Override // o1.g
-    public final void a(o1.h hVar, float f7, float f10) {
-        if (f7 <= 0.0f) {
-            hVar.c();
-        }
+public class cc extends nb {
+    public final w9 a;
+    public final TextView b;
+
+    public cc(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, d6Var);
+        w9 w9Var = new w9(getContext());
+        this.a = w9Var;
+        TextView textView = new TextView(getContext());
+        this.b = textView;
+        addView(w9Var, w7.x5.i(30.0f, 30.0f, 8388627, 12.0f, 8.0f, 12.0f, 8.0f));
+        textView.setGravity(8388611);
+        textView.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
+        textView.setTextColor(getThemedColor(org.telegram.ui.ActionBar.h6.Hi));
+        textView.setTextSize(1, 15.0f);
+        textView.setTypeface(Typeface.SANS_SERIF);
+        addView(textView, w7.x5.i(-1.0f, -2.0f, 8388627, 56.0f, 0.0f, 16.0f, 0.0f));
+    }
+
+    @Override // org.telegram.ui.Components.ub
+    public CharSequence getAccessibilityText() {
+        return this.b.getText();
     }
 }

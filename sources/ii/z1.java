@@ -1,129 +1,111 @@
 package ii;
 
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.view.ViewPropertyAnimator;
-import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.qr;
+import android.graphics.drawable.Drawable;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.Button;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.ui.Components.hq0;
+import org.telegram.ui.Components.ug;
+import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.ry;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class z1 extends ImageView implements org.telegram.ui.ActionBar.z5 {
-    public final int a;
-    public int b;
-    public boolean c;
-    public boolean d;
-    public int e;
-    public int f;
-    public final org.telegram.ui.ActionBar.e6 h;
-    public boolean n;
-    public boolean r;
-    public boolean s;
+public final class z1 extends ug {
+    public final /* synthetic */ int l0;
+    public final /* synthetic */ Object m0;
 
-    public z1(Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context);
-        this.e = 20;
-        this.f = i6.d6;
-        this.n = true;
-        this.s = true;
-        this.b = i10;
-        this.a = i10;
-        this.h = e6Var;
-        if (i10 != 0) {
-            setImageResource(i10);
-        }
-        setScaleType(ImageView.ScaleType.CENTER);
-        w7.z5.a(this);
-        e();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ z1(Object obj, Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var, int i11) {
+        super(i10, context, d6Var, true);
+        this.l0 = i11;
+        this.m0 = obj;
     }
 
-    public final void a() {
-        f(this.a);
-    }
-
-    public final void b() {
-        if (this.s) {
-            this.s = false;
-            e();
+    @Override // org.telegram.ui.Components.ug
+    public boolean d() {
+        switch (this.l0) {
+            case 0:
+                return ((e2) this.m0).l0();
+            case 1:
+            case 2:
+            default:
+                return super.d();
+            case 3:
+                return false;
+            case 4:
+                return false;
         }
     }
 
-    public final void c(int i10) {
-        if (this.f == i10) {
-            return;
+    @Override // org.telegram.ui.Components.ug
+    public final boolean f() {
+        switch (this.l0) {
+            case 0:
+                if (((e2) this.m0).L0 || this.r > 0) {
+                }
+                break;
+            case 1:
+                if (((c4) this.m0).W || this.r > 0) {
+                }
+                break;
         }
-        this.f = i10;
-        e();
+        return true;
     }
 
-    public final void d() {
-        this.c = true;
-        b2 b2Var = new b2(getContext(), this.b);
-        b2Var.d = this.f;
-        b2Var.a(this.d);
-        setImageDrawable(b2Var);
-    }
-
-    @Override // org.telegram.ui.ActionBar.z5
-    public final void e() {
-        boolean z10 = this.r;
-        org.telegram.ui.ActionBar.e6 e6Var = this.h;
-        if (!z10) {
-            setBackground(i6.Z(i6.v0(this.f, e6Var), i6.v0(i6.i6, e6Var), AndroidUtilities.dp(this.e), AndroidUtilities.dp(this.e)));
-            setColorFilter(new PorterDuffColorFilter(i6.v0(i6.G6, e6Var), PorterDuff.Mode.SRC_IN));
-        } else {
-            int w02 = i6.w0(null, this.s ? i6.Oh : i6.G6, false);
-            setBackground(i6.Z(i6.v(i6.v0(this.f, e6Var), i6.l1(0.1f, w02)), i6.l1(0.1f, w02), AndroidUtilities.dp(this.e), AndroidUtilities.dp(this.e)));
-            setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN));
+    @Override // org.telegram.ui.Components.ug
+    public int getFillColor() {
+        int i10 = this.l0;
+        Object obj = this.m0;
+        switch (i10) {
+            case 2:
+                return ((hq0) obj).getThemedColor(org.telegram.ui.ActionBar.h6.S5);
+            case 3:
+            default:
+                return super.getFillColor();
+            case 4:
+                int i11 = org.telegram.ui.ActionBar.h6.zf;
+                Drawable[] drawableArr = PhotoViewer.U8;
+                return ((PhotoViewer) obj).z1(i11);
         }
     }
 
-    public final void f(int i10) {
-        if (this.b == i10) {
-            return;
+    @Override // org.telegram.ui.Components.ug
+    public boolean j() {
+        switch (this.l0) {
+            case 2:
+                return true;
+            case 3:
+                return true;
+            case 4:
+                return true;
+            default:
+                return super.j();
         }
-        this.b = i10;
-        if (!this.c) {
-            AndroidUtilities.updateImageViewImageAnimated(this, i10);
-            return;
-        }
-        b2 b2Var = new b2(getContext(), i10);
-        b2Var.d = this.f;
-        b2Var.a(this.d);
-        AndroidUtilities.updateImageViewImageAnimated(this, b2Var);
-    }
-
-    public /* bridge */ /* synthetic */ int[] getColorKeys() {
-        return null;
     }
 
     @Override // android.view.View
-    public void setEnabled(boolean z10) {
-        if (this.n == z10) {
-            return;
-        }
-        setClickable(z10);
-        ViewPropertyAnimator animate = animate();
-        this.n = z10;
-        animate.alpha(z10 ? 1.0f : 0.5f).setDuration(320L).setInterpolator(qr.h).start();
-    }
-
-    public void setPremiumLocked(boolean z10) {
-        this.d = z10;
-        if (getDrawable() instanceof b2) {
-            ((b2) getDrawable()).a(z10);
+    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        switch (this.l0) {
+            case 3:
+                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+                accessibilityNodeInfo.setText(LocaleController.formatPluralString("AccDescrShareInChats", ((ry) this.m0).I2.size(), new Object[0]));
+                accessibilityNodeInfo.setClassName(Button.class.getName());
+                accessibilityNodeInfo.setLongClickable(true);
+                accessibilityNodeInfo.setClickable(true);
+                break;
+            default:
+                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+                break;
         }
     }
 
-    @Override // android.widget.ImageView, android.view.View
-    public void setSelected(boolean z10) {
-        if (this.r == z10) {
-            return;
-        }
-        this.r = z10;
-        e();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ z1(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var, int i11) {
+        super(i10, context, d6Var, false);
+        this.l0 = i11;
+        this.m0 = notificationCenterDelegate;
     }
 }

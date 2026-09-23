@@ -1,36 +1,44 @@
 package org.telegram.messenger;
 
-import java.util.concurrent.CountDownLatch;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final /* synthetic */ class vf implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ boolean[] d;
-    public final /* synthetic */ CountDownLatch e;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ int d;
 
-    public /* synthetic */ vf(int i10, long j3, CountDownLatch countDownLatch, MessagesStorage messagesStorage, boolean[] zArr) {
-        this.a = i10;
+    public /* synthetic */ vf(int i10, ArrayList arrayList, MessagesStorage messagesStorage) {
+        this.a = 1;
         this.b = messagesStorage;
-        this.c = j3;
-        this.d = zArr;
-        this.e = countDownLatch;
+        this.c = arrayList;
+        this.d = i10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$checkMessageByRandomId$153(this.c, this.d, this.e);
+                this.b.lambda$putWallpapers$78(this.d, this.c);
                 break;
             case 1:
-                this.b.lambda$isMigratedChat$141(this.c, this.d, this.e);
+                this.b.lambda$unpinAllDialogsExceptNew$247(this.c, this.d);
+                break;
+            case 2:
+                this.b.lambda$getDownloadQueue$185(this.d, this.c);
                 break;
             default:
-                this.b.lambda$hasInviteMeMessage$143(this.c, this.d, this.e);
+                this.b.lambda$putWidgetDialogs$166(this.d, this.c);
                 break;
         }
+    }
+
+    public /* synthetic */ vf(MessagesStorage messagesStorage, int i10, ArrayList arrayList, int i11) {
+        this.a = i11;
+        this.b = messagesStorage;
+        this.d = i10;
+        this.c = arrayList;
     }
 }

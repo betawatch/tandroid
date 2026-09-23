@@ -1,49 +1,15 @@
 package ai;
 
 import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class o7 extends z4.a {
-    public final /* synthetic */ jc c;
-    public final /* synthetic */ Context d;
-    public final /* synthetic */ r7 e;
+public final class o7 extends k7 {
+    public final /* synthetic */ p7 a0;
 
-    public o7(r7 r7Var, jc jcVar, Context context) {
-        this.e = r7Var;
-        this.c = jcVar;
-        this.d = context;
-    }
-
-    @Override // z4.a
-    public final void a(z4.g gVar, Object obj) {
-        gVar.removeView((View) obj);
-        this.e.G.remove(obj);
-    }
-
-    @Override // z4.a
-    public final int b() {
-        return this.e.F.size();
-    }
-
-    @Override // z4.a
-    public final Object e(z4.g gVar, int i10) {
-        r7 r7Var = this.e;
-        n7 n7Var = new n7(this, this.c, this.d, r7Var.H, new f3(this, 1));
-        n7Var.setTag(Integer.valueOf(i10));
-        n7Var.setShadowDrawable(r7Var.s);
-        n7Var.setPadding(0, AndroidUtilities.dp(16.0f), 0, 0);
-        n7Var.g(r7Var.y, (q7) r7Var.F.get(i10));
-        n7Var.setListBottomPadding(r7Var.d);
-        gVar.addView(n7Var);
-        r7Var.G.add(n7Var);
-        return n7Var;
-    }
-
-    @Override // z4.a
-    public final boolean f(View view, Object obj) {
-        return view == obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public o7(p7 p7Var, jc jcVar, Context context, u6 u6Var, y1 y1Var) {
+        super(jcVar, context, u6Var, y1Var);
+        this.a0 = p7Var;
     }
 }

@@ -33,7 +33,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class r {
     public static final WeakHashMap k = new WeakHashMap();
@@ -336,7 +336,7 @@ public final class r {
         edit.apply();
     }
 
-    public final void l(String str, final String str2, final ai.d5 d5Var) {
+    public final void l(String str, final String str2, final ai.c5 c5Var) {
         j(str, false, str2, new Utilities.Callback3() { // from class: ei.o
             @Override // org.telegram.messenger.Utilities.Callback3
             public final void run(Object obj, Object obj2, Object obj3) {
@@ -374,7 +374,7 @@ public final class r {
                         bool = Boolean.FALSE;
                     }
                 }
-                d5Var.run(bool);
+                c5Var.run(bool);
             }
         });
     }

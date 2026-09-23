@@ -1,78 +1,62 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.tgnet.TLObject;
+import java.util.Collections;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ContactsController;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ew implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ TLObject b;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ry b;
     public final /* synthetic */ long c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object n;
-    public final /* synthetic */ Object r;
+    public final /* synthetic */ boolean d;
 
-    public /* synthetic */ ew(TLObject tLObject, Context context, ai.a1 a1Var, long j3, byte[] bArr, org.telegram.messenger.video.a aVar, org.telegram.ui.Components.vc vcVar, org.telegram.messenger.video.d dVar) {
-        this.b = tLObject;
-        this.d = context;
-        this.e = a1Var;
+    public /* synthetic */ ew(ry ryVar, long j3, boolean z10, int i10) {
+        this.a = i10;
+        this.b = ryVar;
         this.c = j3;
-        this.f = bArr;
-        this.h = aVar;
-        this.n = vcVar;
-        this.r = dVar;
+        this.d = z10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
+        String str;
+        TLRPC.Chat chat;
+        int i10 = this.a;
+        boolean z10 = this.d;
+        long j3 = this.c;
+        ry ryVar = this.b;
+        switch (i10) {
             case 0:
-                uy.n0((uy) this.d, (org.telegram.ui.ActionBar.b2) this.e, this.b, (TLRPC.User) this.f, (TLRPC.Chat) this.h, this.c, (TLRPC.TL_error) this.n, (TLRPC.TL_messages_checkHistoryImportPeer) this.r);
+                ry ryVar2 = this.b;
+                ai.l9 storiesController = ryVar2.getMessagesController().getStoriesController();
+                long j10 = this.c;
+                boolean z11 = this.d;
+                storiesController.i0(j10, z11, false);
+                o0.a aVar = new o0.a(3, (byte) 0);
+                aVar.b = new ew(ryVar2, j10, z11, 1);
+                aVar.c = new ew(ryVar2, j10, z11, 2);
+                if (j10 >= 0) {
+                    TLRPC.User user = ryVar2.getMessagesController().getUser(Long.valueOf(j10));
+                    str = ContactsController.formatName(user.first_name, null, 15);
+                    chat = user;
+                } else {
+                    TLRPC.Chat chat2 = ryVar2.getMessagesController().getChat(Long.valueOf(-j10));
+                    str = chat2.title;
+                    chat = chat2;
+                }
+                ryVar2.S = org.telegram.ui.Components.xc.X().V(Collections.singletonList(chat), ryVar2.e4() ? AndroidUtilities.replaceTags(LocaleController.formatString("StoriesMovedToDialogs", R.string.StoriesMovedToDialogs, str)) : AndroidUtilities.replaceTags(LocaleController.formatString("StoriesMovedToContacts", R.string.StoriesMovedToContacts, ContactsController.formatName(str, null, 15))), null, aVar).j();
                 break;
             case 1:
-                Context context = (Context) this.d;
-                ai.a1 a1Var = (ai.a1) this.e;
-                byte[] bArr = (byte[]) this.f;
-                org.telegram.messenger.video.a aVar = (org.telegram.messenger.video.a) this.h;
-                org.telegram.ui.Components.vc vcVar = (org.telegram.ui.Components.vc) this.n;
-                org.telegram.messenger.video.d dVar = (org.telegram.messenger.video.d) this.r;
-                TLRPC.TL_channels_sponsoredMessageReportResultChooseOption tL_channels_sponsoredMessageReportResultChooseOption = (TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) this.b;
-                c41 c41Var = new c41(context, a1Var, this.c, bArr);
-                c41Var.O(tL_channels_sponsoredMessageReportResultChooseOption);
-                c41Var.s = new v31(aVar, vcVar, context, a1Var, dVar);
-                c41Var.show();
+                ryVar.getMessagesController().getStoriesController().i0(j3, !z10, false);
                 break;
             default:
-                yh.z3.C0((yh.z3) this.d, (nf.e) this.f, (org.telegram.ui.ActionBar.b2) this.e, this.b, (TL_stars.TL_starGiftUnique) this.h, (TLRPC.TL_error) this.n, this.c, (CharSequence) this.r);
+                ryVar.getMessagesController().getStoriesController().i0(j3, z10, true);
                 break;
         }
-    }
-
-    public /* synthetic */ ew(uy uyVar, org.telegram.ui.ActionBar.b2 b2Var, TLObject tLObject, TLRPC.User user, TLRPC.Chat chat, long j3, TLRPC.TL_error tL_error, TLRPC.TL_messages_checkHistoryImportPeer tL_messages_checkHistoryImportPeer) {
-        this.d = uyVar;
-        this.e = b2Var;
-        this.b = tLObject;
-        this.f = user;
-        this.h = chat;
-        this.c = j3;
-        this.n = tL_error;
-        this.r = tL_messages_checkHistoryImportPeer;
-    }
-
-    public /* synthetic */ ew(yh.z3 z3Var, nf.e eVar, org.telegram.ui.ActionBar.b2 b2Var, TLObject tLObject, TL_stars.TL_starGiftUnique tL_starGiftUnique, TLRPC.TL_error tL_error, long j3, CharSequence charSequence) {
-        this.d = z3Var;
-        this.f = eVar;
-        this.e = b2Var;
-        this.b = tLObject;
-        this.h = tL_starGiftUnique;
-        this.n = tL_error;
-        this.c = j3;
-        this.r = charSequence;
     }
 }

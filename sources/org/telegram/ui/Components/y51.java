@@ -1,19 +1,41 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
-/* loaded from: classes3.dex */
-public final class y51 extends e61 {
-    public final /* synthetic */ z51 f3;
+import android.content.Context;
+import android.view.View;
+import java.util.ArrayList;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y51(z51 z51Var, z51 z51Var2, d dVar, x51 x51Var, x51 x51Var2) {
-        super(z51Var2, dVar, x51Var, x51Var2);
-        this.f3 = z51Var;
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* loaded from: classes3.dex */
+public abstract class y51 extends org.telegram.ui.ActionBar.n2 {
+    public x51 a;
+    public int b;
+    public int c;
+
+    public y51() {
+        super(null);
+        this.b = -1;
     }
 
-    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        this.f3.b = -1;
+    public abstract void U(ArrayList arrayList, v51 v51Var);
+
+    public abstract CharSequence V();
+
+    public abstract void W(h51 h51Var, View view);
+
+    public abstract boolean X(h51 h51Var, View view);
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public View createView(Context context) {
+        hg.c.x(false, this.actionBar);
+        this.actionBar.setAllowOverlayTitle(true);
+        this.actionBar.setTitle(V());
+        this.actionBar.setActionBarMenuOnItemClick(new org.telegram.ui.po(this, 13));
+        hg.r1 r1Var = new hg.r1(context, null, 1);
+        r1Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.a7, false));
+        x51 x51Var = new x51(this, this, new d(this, 22), new w51(this), new w51(this));
+        this.a = x51Var;
+        r1Var.addView(x51Var, w7.x5.c(-1.0f, -1));
+        this.fragmentView = r1Var;
+        return r1Var;
     }
 }

@@ -15,19 +15,19 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.ac;
-import org.telegram.ui.Components.c5;
-import org.telegram.ui.Components.f51;
-import org.telegram.ui.Components.f9;
-import org.telegram.ui.Components.lx0;
-import org.telegram.ui.Components.oc;
-import org.telegram.ui.Components.u9;
+import org.telegram.ui.Components.cc;
+import org.telegram.ui.Components.e5;
+import org.telegram.ui.Components.e51;
+import org.telegram.ui.Components.h9;
+import org.telegram.ui.Components.kx0;
+import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.w9;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.bo;
-import org.telegram.ui.hh1;
-import org.telegram.ui.st;
+import org.telegram.ui.pt;
+import org.telegram.ui.xn;
+import org.telegram.ui.zg1;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s0 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -75,16 +75,16 @@ public final /* synthetic */ class s0 implements Runnable {
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject;
                 arrayList2.add(new MediaController.PhotoEntry(0, 0, 0L, ((File) obj5).getAbsolutePath(), 0, false, 0, 0, 0L));
                 PhotoViewer.t1().J2(n2Var.getParentActivity(), null, n2Var.getResourceProvider());
-                PhotoViewer.t1().f2(arrayList2, 0, 11, false, new lx0(), (bo) obj3);
+                PhotoViewer.t1().f2(arrayList2, 0, 11, false, new kx0(), (xn) obj3);
                 PhotoViewer.t1().X0(document, z10 ? document : null, false, null);
-                st q6 = st.q();
+                pt q6 = pt.q();
                 if (!z10) {
                     tL_messages_stickerSet = null;
                 }
                 q6.T = tL_messages_stickerSet;
                 break;
             case 3:
-                hh1.d0((hh1) obj5, (TLRPC.TL_error) obj4, this.d, (TLObject) obj3, (byte[]) obj2, (String) obj, (TL_account.passwordInputSettings) tLObject);
+                zg1.d0((zg1) obj5, (TLRPC.TL_error) obj4, this.d, (TLObject) obj3, (byte[]) obj2, (String) obj, (TL_account.passwordInputSettings) tLObject);
                 break;
             default:
                 wh.n nVar = (wh.n) obj5;
@@ -98,7 +98,7 @@ public final /* synthetic */ class s0 implements Runnable {
                 n2 n2Var2 = nVar.g;
                 if (n2Var2 != null && n2Var2.getParentActivity() != null) {
                     if (tL_error != null) {
-                        c5.f0(i11, tL_error, n2Var2, tL_messages_hideChatJoinRequest, new Object[0]);
+                        e5.f0(i11, tL_error, n2Var2, tL_messages_hideChatJoinRequest, new Object[0]);
                         break;
                     } else {
                         TLRPC.TL_updates tL_updates = (TLRPC.TL_updates) tLObject2;
@@ -140,22 +140,22 @@ public final /* synthetic */ class s0 implements Runnable {
                         }
                         nVar.f(nVar.t, false, true);
                         if (z10) {
-                            ac acVar = new ac(n2Var2.getParentActivity(), n2Var2.getResourceProvider());
+                            cc ccVar = new cc(n2Var2.getParentActivity(), n2Var2.getResourceProvider());
                             int dp = AndroidUtilities.dp(15.0f);
-                            u9 u9Var = acVar.a;
-                            u9Var.setRoundRadius(dp);
+                            w9 w9Var = ccVar.a;
+                            w9Var.setRoundRadius(dp);
                             TLRPC.User user3 = user;
-                            u9Var.e(user3, new f9(0, user3));
+                            w9Var.e(user3, new h9(0, user3));
                             String firstName = UserObject.getFirstName(user3);
                             String formatString = nVar.a ? LocaleController.formatString("HasBeenAddedToChannel", R.string.HasBeenAddedToChannel, firstName) : LocaleController.formatString("HasBeenAddedToGroup", R.string.HasBeenAddedToGroup, firstName);
                             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(formatString);
                             int indexOf = formatString.indexOf(firstName);
-                            spannableStringBuilder.setSpan(new f51(AndroidUtilities.bold()), indexOf, firstName.length() + indexOf, 18);
-                            acVar.b.setText(spannableStringBuilder);
+                            spannableStringBuilder.setSpan(new e51(AndroidUtilities.bold()), indexOf, firstName.length() + indexOf, 18);
+                            ccVar.b.setText(spannableStringBuilder);
                             if (arrayList3.isEmpty()) {
-                                oc.g(n2Var2, acVar, 2750).j();
+                                qc.g(n2Var2, ccVar, 2750).j();
                             } else {
-                                oc.f(nVar.h, acVar, 2750).j();
+                                qc.f(nVar.h, ccVar, 2750).j();
                             }
                         }
                         org.telegram.ui.ActionBar.z n10 = n2Var2.getActionBar().n();
@@ -169,11 +169,11 @@ public final /* synthetic */ class s0 implements Runnable {
         }
     }
 
-    public /* synthetic */ s0(File file, ArrayList arrayList, n2 n2Var, bo boVar, TLRPC.Document document, boolean z10, TLRPC.TL_messages_stickerSet tL_messages_stickerSet) {
+    public /* synthetic */ s0(File file, ArrayList arrayList, n2 n2Var, xn xnVar, TLRPC.Document document, boolean z10, TLRPC.TL_messages_stickerSet tL_messages_stickerSet) {
         this.f = file;
         this.e = arrayList;
         this.b = n2Var;
-        this.c = boVar;
+        this.c = xnVar;
         this.h = document;
         this.d = z10;
         this.n = tL_messages_stickerSet;
@@ -189,8 +189,8 @@ public final /* synthetic */ class s0 implements Runnable {
         this.n = tLObject2;
     }
 
-    public /* synthetic */ s0(hh1 hh1Var, TLRPC.TL_error tL_error, boolean z10, TLObject tLObject, byte[] bArr, String str, TL_account.passwordInputSettings passwordinputsettings) {
-        this.f = hh1Var;
+    public /* synthetic */ s0(zg1 zg1Var, TLRPC.TL_error tL_error, boolean z10, TLObject tLObject, byte[] bArr, String str, TL_account.passwordInputSettings passwordinputsettings) {
+        this.f = zg1Var;
         this.b = tL_error;
         this.d = z10;
         this.c = tLObject;

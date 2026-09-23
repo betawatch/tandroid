@@ -6,12 +6,13 @@ import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.NotificationBadge;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public class HashtagSearchController {
     public static final int HISTORY_LIMIT = 100;
@@ -24,7 +25,7 @@ public class HashtagSearchController {
     private final SearchResult localPostsSearch;
     private final SearchResult myMessagesSearch;
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static final class MessageCompositeID {
         final long dialog_id;
         final int id;
@@ -56,7 +57,7 @@ public class HashtagSearchController {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class SearchResult {
         public Runnable cancel;
         public int count;
@@ -351,9 +352,9 @@ public class HashtagSearchController {
             }
             searchResult.loading = true;
             if (!TextUtils.isEmpty(str2) && (tLObject = MessagesController.getInstance(this.currentAccount).getUserOrChat(str2)) == null) {
-                Runnable resolve = MessagesController.getInstance(this.currentAccount).getUserNameResolver().resolve(str2, new e2.h() { // from class: org.telegram.messenger.k4
-                    @Override // e2.h
-                    public final void accept(Object obj) {
+                Runnable resolve = MessagesController.getInstance(this.currentAccount).getUserNameResolver().resolve(str2, new Utilities.Callback() { // from class: org.telegram.messenger.k4
+                    @Override // org.telegram.messenger.Utilities.Callback
+                    public final void run(Object obj) {
                         HashtagSearchController.this.lambda$searchHashtag$0(searchResult, str4, str2, r5, i10, i11, i12, (Long) obj);
                     }
                 });

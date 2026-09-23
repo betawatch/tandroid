@@ -1,43 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
-import android.widget.FrameLayout;
-import android.widget.PopupWindow;
+import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class r80 implements PopupWindow.OnDismissListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ FrameLayout b;
-    public final /* synthetic */ View c;
-    public final /* synthetic */ ViewTreeObserver.OnPreDrawListener d;
-    public final /* synthetic */ ViewGroup e;
+public final class r80 extends hq0 {
+    public final /* synthetic */ w80 b1;
 
-    public /* synthetic */ r80(ViewGroup viewGroup, View view, FrameLayout frameLayout, ViewTreeObserver.OnPreDrawListener onPreDrawListener, int i10) {
-        this.a = i10;
-        this.e = viewGroup;
-        this.c = view;
-        this.b = frameLayout;
-        this.d = onPreDrawListener;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public r80(w80 w80Var, Context context, String str, String str2, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, null, str, false, str2, false, d6Var);
+        this.b1 = w80Var;
     }
 
-    @Override // android.widget.PopupWindow.OnDismissListener
-    public final void onDismiss() {
-        switch (this.a) {
-            case 0:
-                ((v80) this.e).s = null;
-                ci.s6 s6Var = (ci.s6) this.c;
-                s6Var.animate().cancel();
-                s6Var.animate().alpha(0.0f).setDuration(150L).setListener(new p8(this, 27));
-                break;
-            default:
-                ((org.telegram.ui.a00) this.e).x = null;
-                ci.s6 s6Var2 = (ci.s6) this.c;
-                s6Var2.animate().cancel();
-                s6Var2.animate().alpha(0.0f).setDuration(150L).setListener(new v81(this, 20));
-                break;
+    @Override // org.telegram.ui.Components.hq0
+    public final void R0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        String formatString;
+        if (z10) {
+            if (iVar == null || iVar.m() != 1) {
+                formatString = LocaleController.formatString(R.string.InvLinkToChats, LocaleController.formatPluralString("Chats", i10, new Object[0]));
+            } else {
+                long j3 = ((TLRPC.Dialog) iVar.n(0)).id;
+                formatString = (j3 == 0 || j3 == UserConfig.getInstance(this.currentAccount).getClientUserId()) ? LocaleController.getString(R.string.InvLinkToSavedMessages) : LocaleController.formatString(R.string.InvLinkToUser, MessagesController.getInstance(this.currentAccount).getPeerName(j3, true));
+            }
+            this.b1.e(R.raw.forward, AndroidUtilities.replaceTags(formatString));
         }
     }
 }

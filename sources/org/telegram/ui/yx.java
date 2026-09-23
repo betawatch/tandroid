@@ -1,77 +1,30 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.UndoView;
+import java.util.ArrayList;
+import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class yx extends UndoView {
-    public final /* synthetic */ uy f0;
+public final class yx implements org.telegram.ui.Components.d5 {
+    public final /* synthetic */ ry a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yx(uy uyVar, Activity activity) {
-        super(activity);
-        this.f0 = uyVar;
+    public yx(ry ryVar) {
+        this.a = ryVar;
     }
 
-    @Override // org.telegram.ui.Components.UndoView
-    public final boolean a() {
-        int i10 = 0;
-        while (true) {
-            ty[] tyVarArr = this.f0.e0;
-            if (i10 >= tyVarArr.length) {
-                return true;
-            }
-            if (tyVarArr[i10].x.k()) {
-                return false;
-            }
-            i10++;
+    @Override // org.telegram.ui.Components.d5
+    public final void J(int i10, int i11, boolean z10) {
+        ry ryVar = this.a;
+        ArrayList arrayList = ryVar.I2;
+        ryVar.K2 = i10;
+        ryVar.L2 = i11;
+        if (ryVar.C2 == null || arrayList.isEmpty()) {
+            return;
         }
-    }
-
-    @Override // org.telegram.ui.Components.UndoView
-    public final void h(int i10, long j3) {
-        if (i10 == 1 || i10 == 27) {
-            uy uyVar = this.f0;
-            uyVar.y3 = 1;
-            uyVar.A4(true, true);
-            if (uyVar.R1 != null) {
-                int i11 = 0;
-                while (true) {
-                    if (i11 >= uyVar.R1.size()) {
-                        i11 = -1;
-                        break;
-                    } else if (((TLRPC.Dialog) uyVar.R1.get(i11)).id == j3) {
-                        break;
-                    } else {
-                        i11++;
-                    }
-                }
-                if (i11 >= 0) {
-                    TLRPC.Dialog dialog = (TLRPC.Dialog) uyVar.R1.remove(i11);
-                    uyVar.e0[0].d.l();
-                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.wm(this, i11, dialog, 25));
-                } else {
-                    uyVar.A4(false, true);
-                }
-            }
-            uyVar.o3();
+        ArrayList arrayList2 = new ArrayList();
+        for (int i12 = 0; i12 < arrayList.size(); i12++) {
+            arrayList2.add(MessagesStorage.TopicKey.of(((Long) arrayList.get(i12)).longValue(), 0L));
         }
-    }
-
-    @Override // android.view.View
-    public final void setTranslationY(float f7) {
-        super.setTranslationY(f7);
-        uy uyVar = this.f0;
-        UndoView[] undoViewArr = uyVar.y0;
-        if (this == undoViewArr[0]) {
-            UndoView undoView = undoViewArr[1];
-            if (undoView == null || undoView.getVisibility() != 0) {
-                uyVar.u1 = Math.max(0.0f, (AndroidUtilities.dp(8.0f) + getMeasuredHeight()) - f7);
-                uyVar.X4();
-            }
-        }
+        ryVar.C2.u(ryVar, arrayList2, ryVar.B1.getFieldText(), false, z10, i10, i11, null);
     }
 }

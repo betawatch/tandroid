@@ -1,6 +1,6 @@
 package org.telegram.ui.Components.voip;
 
-import ai.l6;
+import ai.k6;
 import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.graphics.Canvas;
@@ -17,12 +17,12 @@ import android.view.WindowInsets;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.messenger.vl;
+import org.telegram.messenger.ul;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.qr;
-import org.telegram.ui.ci1;
+import org.telegram.ui.Components.rr;
+import org.telegram.ui.uh1;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class u1 extends FrameLayout {
     public float E;
@@ -53,7 +53,7 @@ public final class u1 extends FrameLayout {
     public float d;
     public ValueAnimator d0;
     public boolean e;
-    public final l6 e0;
+    public final k6 e0;
     public int f;
     public ValueAnimator f0;
     public final r0 g0;
@@ -82,7 +82,7 @@ public final class u1 extends FrameLayout {
         this.K = 0.0f;
         this.Q = -1.0f;
         this.R = true;
-        this.e0 = new l6(this, 10);
+        this.e0 = new k6(this, 10);
         this.g0 = new r0(this, 3);
         this.r = ViewConfiguration.get(activity).getScaledTouchSlop();
         setOutlineProvider(new ch.b(this, 4));
@@ -188,8 +188,8 @@ public final class u1 extends FrameLayout {
         u1Var.d0.start();
         animate().setListener(null).cancel();
         ViewPropertyAnimator duration = animate().scaleX(0.23f).scaleY(0.23f).translationX(translationX2 - ((getMeasuredWidth() - (getMeasuredWidth() * 0.23f)) / 2.0f)).translationY(translationY2 - ((getMeasuredHeight() - (getMeasuredHeight() * 0.23f)) / 2.0f)).alpha(1.0f).setStartDelay(0L).setDuration(300L);
-        qr qrVar = qr.f;
-        duration.setInterpolator(qrVar).setListener(new le.c(this, translationX2, translationY2, 1)).setInterpolator(qrVar).start();
+        rr rrVar = rr.f;
+        duration.setInterpolator(rrVar).setListener(new le.d(this, translationX2, translationY2, 1)).setInterpolator(rrVar).start();
     }
 
     public final void d(float f7, float f10) {
@@ -243,7 +243,7 @@ public final class u1 extends FrameLayout {
         canvas.scale((1.0f / getScaleX()) * u1Var.J * u1Var.K, (1.0f / getScaleY()) * u1Var.J * u1Var.K, f7, f10);
         canvas.drawCircle(f7, f10, AndroidUtilities.dp(14.0f), u1Var.w);
         Drawable drawable = u1Var.x;
-        drawable.setBounds(vl.x(2, measuredWidth, drawable), vl.e(2, measuredHeight, drawable), vl.B(2, measuredWidth, drawable), vl.z(2, measuredHeight, drawable));
+        drawable.setBounds(ul.x(2, measuredWidth, drawable), ul.e(2, measuredHeight, drawable), ul.B(2, measuredWidth, drawable), ul.z(2, measuredHeight, drawable));
         drawable.draw(canvas);
         canvas.restore();
         if (u1Var.O) {
@@ -263,7 +263,7 @@ public final class u1 extends FrameLayout {
         float z12 = com.google.android.gms.internal.vision.e2.z((view.getMeasuredHeight() - systemWindowInsetBottom) - systemWindowInsetTop, i11, f10, systemWindowInsetTop);
         if (z10) {
             animate().setListener(null).cancel();
-            animate().scaleX(1.0f).scaleY(1.0f).translationX(z11).translationY(z12).alpha(1.0f).setStartDelay(this.L ? 0L : 150L).setDuration(150L).setInterpolator(qr.f).start();
+            animate().scaleX(1.0f).scaleY(1.0f).translationX(z11).translationY(z12).alpha(1.0f).setStartDelay(this.L ? 0L : 150L).setDuration(150L).setInterpolator(rr.f).start();
             return;
         }
         if (!this.S) {
@@ -303,7 +303,7 @@ public final class u1 extends FrameLayout {
         }
         t1 t1Var = this.i0;
         if (t1Var != null) {
-            ((ci1) t1Var).b.d0.d(this.J, this.P);
+            ((uh1) t1Var).b.d0.d(this.J, this.P);
         }
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
         if (getMeasuredHeight() != this.f && getMeasuredWidth() != this.h) {
@@ -390,7 +390,7 @@ public final class u1 extends FrameLayout {
                 } else if (getY() + getMeasuredHeight() > measuredHeight - f12) {
                     startDelay.translationY((measuredHeight - getMeasuredHeight()) - f12);
                 }
-                startDelay.setDuration(150L).setInterpolator(qr.f).start();
+                startDelay.setDuration(150L).setInterpolator(rr.f).start();
             }
             this.e = false;
             return true;

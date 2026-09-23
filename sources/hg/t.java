@@ -5,7 +5,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Cells.c6;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t implements DialogInterface.OnShowListener {
     public final /* synthetic */ int a;
@@ -36,9 +36,9 @@ public final /* synthetic */ class t implements DialogInterface.OnShowListener {
                 AndroidUtilities.showKeyboard(c6Var);
                 break;
             default:
-                xh.z1 z1Var = (xh.z1) this.b;
-                z1Var.requestFocus();
-                AndroidUtilities.showKeyboard(z1Var);
+                xh.a2 a2Var = (xh.a2) this.b;
+                a2Var.requestFocus();
+                AndroidUtilities.showKeyboard(a2Var);
                 break;
         }
     }

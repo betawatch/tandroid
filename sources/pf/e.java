@@ -5,16 +5,16 @@ import android.app.PictureInPictureParams;
 import android.graphics.Rect;
 import android.os.Build;
 import android.view.View;
-import ci.h4;
+import ci.g4;
 import com.google.firebase.messaging.n;
-import i2.e0;
+import i2.f0;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.TextureViewRenderer;
 import w7.p;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class e {
     public static int n;
@@ -30,7 +30,7 @@ public final class e {
     public final ni.f i;
     public View j;
     public View k;
-    public e0 l;
+    public f0 l;
     public boolean m;
 
     public e(n nVar, d dVar) {
@@ -38,10 +38,10 @@ public final class e {
         n = i10 + 1;
         sf.b bVar = new sf.b();
         this.h = bVar;
-        h4 h4Var = new h4(this, 1);
+        g4 g4Var = new g4(this, 1);
         ni.f fVar = new ni.f();
         fVar.d = new u2(fVar, 11);
-        fVar.a = h4Var;
+        fVar.a = g4Var;
         this.i = fVar;
         StringBuilder sb2 = new StringBuilder();
         String str = dVar.c;

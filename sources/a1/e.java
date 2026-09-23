@@ -2,20 +2,21 @@ package a1;
 
 import a3.l0;
 import ai.aa;
+import ai.ac;
 import ai.b1;
 import ai.c3;
 import ai.d2;
 import ai.d9;
 import ai.da;
-import ai.f6;
+import ai.e6;
+import ai.e9;
 import ai.fb;
 import ai.h1;
-import ai.h8;
 import ai.i9;
 import ai.ic;
-import ai.j7;
 import ai.jc;
 import ai.k3;
+import ai.k7;
 import ai.k9;
 import ai.l9;
 import ai.m1;
@@ -23,11 +24,12 @@ import ai.q0;
 import ai.r3;
 import ai.s0;
 import ai.t6;
+import ai.v5;
 import ai.v8;
-import ai.w5;
 import ai.x8;
 import ai.y8;
 import ai.y9;
+import ai.z7;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.RectF;
@@ -39,19 +41,20 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
 import b2.x1;
-import ci.ac;
-import ci.f4;
-import ci.hc;
-import ci.ja;
-import ci.ka;
-import ci.nc;
-import ci.o8;
-import ci.oc;
+import ci.e4;
+import ci.ec;
+import ci.ga;
+import ci.gc;
+import ci.ha;
+import ci.kc;
+import ci.l8;
+import ci.lc;
+import ci.xb;
 import e2.d0;
 import hg.r;
-import i2.a0;
 import i2.b0;
-import i2.e0;
+import i2.c0;
+import i2.f0;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -72,8 +75,8 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.support.LongSparseIntArray;
-import org.telegram.messenger.vl;
-import org.telegram.messenger.y0;
+import org.telegram.messenger.ul;
+import org.telegram.messenger.z0;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
@@ -81,19 +84,19 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.f3;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Cells.e9;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Cells.f9;
 import org.telegram.ui.Cells.m4;
 import org.telegram.ui.Cells.z1;
-import org.telegram.ui.Components.np;
+import org.telegram.ui.Components.op;
 import org.telegram.ui.ProfileActivity;
 import rg.x0;
 import v0.i;
 import w7.x5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements Runnable {
     public final /* synthetic */ int a;
@@ -106,14 +109,14 @@ public final /* synthetic */ class e implements Runnable {
         this.c = obj2;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0166 A[Catch: all -> 0x00f2, TryCatch #0 {all -> 0x00f2, blocks: (B:32:0x00a8, B:35:0x00b8, B:37:0x00d8, B:39:0x00e3, B:41:0x00f7, B:43:0x00fd, B:46:0x014e, B:48:0x0166, B:49:0x016b, B:54:0x0121, B:56:0x0125), top: B:31:0x00a8 }] */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x017e A[Catch: all -> 0x010a, TryCatch #1 {all -> 0x010a, blocks: (B:36:0x00c0, B:39:0x00d0, B:41:0x00f0, B:43:0x00fb, B:45:0x010f, B:47:0x0115, B:50:0x0166, B:52:0x017e, B:53:0x0183, B:58:0x0139, B:60:0x013d), top: B:35:0x00c0 }] */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
         d2 d2Var;
-        nc ncVar;
+        kc kcVar;
         ic icVar;
         int i10;
         boolean z10;
@@ -132,16 +135,16 @@ public final /* synthetic */ class e implements Runnable {
                 x1 x1Var = (x1) this.c;
                 l0 l0Var = (l0) bVar.c;
                 String str2 = d0.a;
-                e0 e0Var = ((b0) l0Var).a;
-                e0Var.h0 = x1Var;
-                e0Var.m.e(25, new a0(x1Var));
+                f0 f0Var = ((c0) l0Var).a;
+                f0Var.h0 = x1Var;
+                f0Var.m.e(25, new b0(x1Var));
                 break;
             case 3:
                 of.b bVar2 = (of.b) this.b;
                 Exception exc = (Exception) this.c;
                 l0 l0Var2 = (l0) bVar2.c;
                 String str3 = d0.a;
-                j2.f fVar = ((b0) l0Var2).a.s;
+                j2.f fVar = ((c0) l0Var2).a.s;
                 j2.a p5 = fVar.p();
                 fVar.q(p5, 1030, new r(p5, exc, i12));
                 break;
@@ -150,7 +153,7 @@ public final /* synthetic */ class e implements Runnable {
                 String str4 = (String) this.c;
                 l0 l0Var3 = (l0) bVar3.c;
                 String str5 = d0.a;
-                j2.f fVar2 = ((b0) l0Var3).a.s;
+                j2.f fVar2 = ((c0) l0Var3).a.s;
                 j2.a p10 = fVar2.p();
                 fVar2.q(p10, 1019, new r(p10, str4, 21));
                 break;
@@ -169,11 +172,11 @@ public final /* synthetic */ class e implements Runnable {
                 r3 r3Var2 = (r3) this.b;
                 m1 m1Var = (m1) this.c;
                 long j3 = m1Var.c;
-                f6 f6Var = r3Var2.i0;
-                if (j3 != UserConfig.getInstance(f6Var.C2).getClientUserId() && ((d2Var = r3Var2.h0.A0) == null || j3 != DialogObject.getPeerDialogId(d2Var.i()))) {
-                    if (f6Var.O3 != null) {
-                        for (int i13 = 0; i13 < f6Var.O3.peers.size(); i13++) {
-                            if (j3 != DialogObject.getPeerDialogId(f6Var.O3.peers.get(i13).peer)) {
+                e6 e6Var = r3Var2.i0;
+                if (j3 != UserConfig.getInstance(e6Var.C2).getClientUserId() && ((d2Var = r3Var2.h0.A0) == null || j3 != DialogObject.getPeerDialogId(d2Var.i()))) {
+                    if (e6Var.O3 != null) {
+                        for (int i13 = 0; i13 < e6Var.O3.peers.size(); i13++) {
+                            if (j3 != DialogObject.getPeerDialogId(e6Var.O3.peers.get(i13).peer)) {
                             }
                         }
                     }
@@ -181,11 +184,11 @@ public final /* synthetic */ class e implements Runnable {
                     long j10 = m1Var.c;
                     q0 q0Var = new q0(r8, r3Var2, m1Var);
                     b1 b1Var = new b1();
-                    f3 f3Var = new f3(1, context, (e6) b1Var, false);
+                    f3 f3Var = new f3(1, context, (d6) b1Var, false);
                     f3Var.fixNavigationBar();
-                    LinearLayout f7 = vl.f(context, 1);
-                    TextView g10 = y0.g(context, 1, 20.0f);
-                    g10.setTextColor(b1Var.G0(i6.j5));
+                    LinearLayout f7 = ul.f(context, 1);
+                    TextView g10 = z0.g(context, 1, 20.0f);
+                    g10.setTextColor(b1Var.G0(h6.j5));
                     g10.setTypeface(AndroidUtilities.bold());
                     g10.setText(LocaleController.getString(R.string.DeleteSingleMessagesTitle));
                     f7.addView(g10, x5.k(22.0f, 12.0f, 22.0f, 0.0f, -1, -2));
@@ -193,10 +196,10 @@ public final /* synthetic */ class e implements Runnable {
                     m4Var.setText(LocaleController.getString(R.string.DeleteAdditionalActions));
                     f7.addView(m4Var, x5.k(0.0f, 0.0f, 0.0f, 4.0f, -1, -2));
                     final z1 z1Var = new z1(4, 21, context, b1Var, true);
-                    np checkBoxRound = z1Var.getCheckBoxRound();
-                    int i14 = i6.V6;
-                    int i15 = i6.g7;
-                    int i16 = i6.k7;
+                    op checkBoxRound = z1Var.getCheckBoxRound();
+                    int i14 = h6.V6;
+                    int i15 = h6.g7;
+                    int i16 = h6.k7;
                     checkBoxRound.b(i14, i15, i16);
                     z1Var.e(LocaleController.getString(R.string.DeleteReportSpam), null, false, true, false);
                     z1Var.setOnClickListener(new View.OnClickListener() { // from class: ai.r0
@@ -215,8 +218,8 @@ public final /* synthetic */ class e implements Runnable {
                             }
                         }
                     });
-                    int i17 = i6.i6;
-                    z1Var.setBackground(i6.f0(b1Var.G0(i17), 2, -1));
+                    int i17 = h6.i6;
+                    z1Var.setBackground(h6.f0(b1Var.G0(i17), 2, -1));
                     f7.addView(z1Var, x5.n(-1, -2));
                     final z1 z1Var2 = new z1(4, 21, context, b1Var, true);
                     z1Var2.getCheckBoxRound().b(i14, i15, i16);
@@ -238,7 +241,7 @@ public final /* synthetic */ class e implements Runnable {
                             }
                         }
                     });
-                    z1Var2.setBackground(i6.f0(b1Var.G0(i17), 2, -1));
+                    z1Var2.setBackground(h6.f0(b1Var.G0(i17), 2, -1));
                     f7.addView(z1Var2, x5.n(-1, -2));
                     final z1 z1Var3 = new z1(4, 21, context, b1Var, true);
                     z1Var3.getCheckBoxRound().b(i14, i15, i16);
@@ -260,12 +263,12 @@ public final /* synthetic */ class e implements Runnable {
                             }
                         }
                     });
-                    z1Var3.setBackground(i6.f0(b1Var.G0(i17), 2, -1));
+                    z1Var3.setBackground(h6.f0(b1Var.G0(i17), 2, -1));
                     f7.addView(z1Var3, x5.n(-1, -2));
-                    e9 e9Var = new e9(context, b1Var);
-                    e9Var.setBackgroundColor(-16777216);
-                    e9Var.setFixedSize(12);
-                    f7.addView(e9Var, x5.n(-1, -2));
+                    f9 f9Var = new f9(context, b1Var);
+                    f9Var.setBackgroundColor(-16777216);
+                    f9Var.setFixedSize(12);
+                    f7.addView(f9Var, x5.n(-1, -2));
                     FrameLayout frameLayout = new FrameLayout(context);
                     ci.d dVar = new ci.d(context, b1Var, true);
                     dVar.g(LocaleController.getString(R.string.DeleteProceedBtn), false, true);
@@ -299,40 +302,40 @@ public final /* synthetic */ class e implements Runnable {
                 ((d2) this.b).F.remove((String) this.c);
                 break;
             case 10:
-                f6 f6Var2 = (f6) this.b;
-                f4 f4Var = (f4) this.c;
-                f6Var2.removeView(f4Var);
-                if (f6Var2.d2 == f4Var) {
-                    f6Var2.d2 = null;
+                e6 e6Var2 = (e6) this.b;
+                e4 e4Var = (e4) this.c;
+                e6Var2.removeView(e4Var);
+                if (e6Var2.d2 == e4Var) {
+                    e6Var2.d2 = null;
                     break;
                 }
                 break;
             case 11:
-                f6 f6Var3 = (f6) this.b;
-                oc E = oc.E((Activity) this.c, f6Var3.C2);
-                ai.e6 e6Var = f6Var3.M2;
-                long j11 = (e6Var == null || (icVar = (ic) e6Var.c) == null) ? 0L : icVar.currentPosition;
-                File h = f6Var3.O1.h();
-                TL_stories.StoryItem storyItem = f6Var3.O1.a;
-                o8 o8Var = new o8();
-                o8Var.n = true;
-                o8Var.t = storyItem.media;
-                int i21 = o8Var.a;
-                o8Var.q = MessagesController.getInstance(i21).getPeer(storyItem.dialogId);
-                o8Var.r = storyItem.id;
-                o8Var.s = storyItem.caption;
-                o8Var.L = h;
-                o8Var.M = false;
-                o8Var.k0 = 720;
-                o8Var.l0 = 1280;
+                e6 e6Var3 = (e6) this.b;
+                lc E = lc.E((Activity) this.c, e6Var3.C2);
+                ai.d6 d6Var = e6Var3.M2;
+                long j11 = (d6Var == null || (icVar = (ic) d6Var.c) == null) ? 0L : icVar.currentPosition;
+                File h = e6Var3.O1.h();
+                TL_stories.StoryItem storyItem = e6Var3.O1.a;
+                l8 l8Var = new l8();
+                l8Var.n = true;
+                l8Var.t = storyItem.media;
+                int i21 = l8Var.a;
+                l8Var.q = MessagesController.getInstance(i21).getPeer(storyItem.dialogId);
+                l8Var.r = storyItem.id;
+                l8Var.s = storyItem.caption;
+                l8Var.L = h;
+                l8Var.M = false;
+                l8Var.k0 = 720;
+                l8Var.l0 = 1280;
                 TLRPC.MessageMedia messageMedia = storyItem.media;
                 if (messageMedia instanceof TLRPC.TL_messageMediaPhoto) {
-                    o8Var.K = false;
+                    l8Var.K = false;
                     if (h != null) {
-                        o8Var.h(h.getAbsolutePath());
+                        l8Var.h(h.getAbsolutePath());
                     }
                 } else if (messageMedia instanceof TLRPC.TL_messageMediaDocument) {
-                    o8Var.K = true;
+                    l8Var.K = true;
                     TLRPC.Document document = messageMedia.document;
                     if (document != null && document.attributes != null) {
                         int i22 = 0;
@@ -340,9 +343,9 @@ public final /* synthetic */ class e implements Runnable {
                             if (i22 < storyItem.media.document.attributes.size()) {
                                 TLRPC.DocumentAttribute documentAttribute = storyItem.media.document.attributes.get(i22);
                                 if (documentAttribute instanceof TLRPC.TL_documentAttributeVideo) {
-                                    o8Var.k0 = documentAttribute.w;
-                                    o8Var.l0 = documentAttribute.h;
-                                    o8Var.i = documentAttribute.duration;
+                                    l8Var.k0 = documentAttribute.w;
+                                    l8Var.l0 = documentAttribute.h;
+                                    l8Var.i = documentAttribute.duration;
                                 } else {
                                     i22++;
                                 }
@@ -353,25 +356,25 @@ public final /* synthetic */ class e implements Runnable {
                     if (document2 != null) {
                         String str6 = storyItem.firstFramePath;
                         if (str6 != null) {
-                            o8Var.N = str6;
+                            l8Var.N = str6;
                         } else if (document2.thumbs != null) {
                             for (int i23 = 0; i23 < storyItem.media.document.thumbs.size(); i23++) {
                                 TLRPC.PhotoSize photoSize = storyItem.media.document.thumbs.get(i23);
                                 if (photoSize instanceof TLRPC.TL_photoStrippedSize) {
-                                    o8Var.O = ImageLoader.getStrippedPhotoBitmap(photoSize.bytes, null);
+                                    l8Var.O = ImageLoader.getStrippedPhotoBitmap(photoSize.bytes, null);
                                 } else {
                                     File pathToAttach = FileLoader.getInstance(i21).getPathToAttach(photoSize, true);
                                     if (pathToAttach != null && pathToAttach.exists()) {
-                                        o8Var.N = pathToAttach.getAbsolutePath();
+                                        l8Var.N = pathToAttach.getAbsolutePath();
                                     }
                                 }
                             }
                         }
                     }
                 }
-                o8Var.A();
-                o8Var.e(storyItem);
-                hc d = ci.jc.d(f6Var3.J0);
+                l8Var.A();
+                l8Var.e(storyItem);
+                ec d = gc.d(e6Var3.J0);
                 RectF rectF = E.H;
                 WindowManager.LayoutParams layoutParams = E.h;
                 WindowManager windowManager = E.f;
@@ -383,15 +386,15 @@ public final /* synthetic */ class e implements Runnable {
                         E.u0 = false;
                         E.e = false;
                         E.B2 = false;
-                        if (windowManager != null && (ncVar = E.n) != null && ncVar.getParent() == null) {
+                        if (windowManager != null && (kcVar = E.n) != null && kcVar.getParent() == null) {
                             AndroidUtilities.setPreferredMaxRefreshRate(windowManager, E.n, layoutParams);
                             windowManager.addView(E.n, layoutParams);
                             E.g0();
                         }
-                        E.K1 = o8Var;
-                        ja.a(i24, o8Var);
-                        o8 o8Var2 = E.K1;
-                        E.O1 = (o8Var2 == null || !o8Var2.K) ? 0 : 1;
+                        E.K1 = l8Var;
+                        ga.a(i24, l8Var);
+                        l8 l8Var2 = E.K1;
+                        E.O1 = (l8Var2 == null || !l8Var2.K) ? 0 : 1;
                         E.s0.g = false;
                         if (d != null) {
                             E.F = d;
@@ -405,9 +408,9 @@ public final /* synthetic */ class e implements Runnable {
                             E.G = AndroidUtilities.dp(8.0f);
                         }
                         E.r.c();
-                        ac acVar = E.h0;
+                        xb xbVar = E.h0;
                         int i25 = E.J;
-                        acVar.setBackgroundColor((i25 == 1 || i25 == 0) ? 0 : -14737633);
+                        xbVar.setBackgroundColor((i25 == 1 || i25 == 0) ? 0 : -14737633);
                         E.r.setTranslationX(0.0f);
                         E.r.setTranslationY(0.0f);
                         E.r.b(0.0f);
@@ -415,11 +418,11 @@ public final /* synthetic */ class e implements Runnable {
                         E.r.setScaleY(1.0f);
                         E.K = 0.0f;
                         AndroidUtilities.lockOrientation(E.b, 1);
-                        o8 o8Var3 = E.K1;
-                        if (o8Var3 != null) {
-                            E.c1.setText(o8Var3.C0);
+                        l8 l8Var3 = E.K1;
+                        if (l8Var3 != null) {
+                            E.c1.setText(l8Var3.C0);
                         }
-                        E.L(new ka(E, 7), j11);
+                        E.L(new ha(E, 7), j11);
                         E.b1.b(true, false);
                         E.K(1, false);
                         E.l0(-1, false, false);
@@ -428,23 +431,23 @@ public final /* synthetic */ class e implements Runnable {
                         E.w0 = "";
                     }
                 }
-                E.Q = new c3(f6Var3, i11);
-                E.R = new k3(r8, f6Var3, E);
+                E.Q = new c3(e6Var3, i11);
+                E.R = new k3(r8, e6Var3, E);
                 break;
             case 12:
-                w5 w5Var = (w5) this.b;
+                v5 v5Var = (v5) this.b;
                 jc jcVar = (jc) this.c;
-                w5Var.getClass();
-                ((ai.ac) w5Var.l.Q1).h(new x0(jcVar.f, 14, false));
+                v5Var.getClass();
+                ((ac) v5Var.l.Q1).h(new x0(jcVar.f, 14, false));
                 break;
             case 13:
                 t6 t6Var = (t6) this.b;
                 String str7 = (String) this.c;
                 t6Var.h = null;
-                j7 j7Var = t6Var.n;
-                j7Var.Q = false;
-                j7Var.O.c = str7.toLowerCase();
-                j7.b(j7Var);
+                k7 k7Var = t6Var.n;
+                k7Var.Q = false;
+                k7Var.O.c = str7.toLowerCase();
+                k7.b(k7Var);
                 break;
             case 14:
                 Utilities.Callback callback = (Utilities.Callback) this.b;
@@ -520,7 +523,7 @@ public final /* synthetic */ class e implements Runnable {
                     while (i28 < size3) {
                         TL_stories.TL_storyAlbum tL_storyAlbum = arrayList9.get(i28);
                         i28++;
-                        arrayList8.add(ai.e9.a(tL_storyAlbum));
+                        arrayList8.add(e9.a(tL_storyAlbum));
                     }
                     arrayList7.clear();
                     arrayList7.addAll(arrayList8);
@@ -551,18 +554,18 @@ public final /* synthetic */ class e implements Runnable {
             case 20:
                 k9 k9Var = (k9) this.b;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) this.c;
-                o8 o8Var4 = k9Var.c;
-                o8Var4.w = true;
+                l8 l8Var4 = k9Var.c;
+                l8Var4.w = true;
                 l9 l9Var = k9Var.M;
                 if (l9Var.n(tL_error2)) {
-                    o8Var4.x = null;
+                    l8Var4.x = null;
                 } else {
-                    o8Var4.x = tL_error2;
+                    l8Var4.x = tL_error2;
                 }
                 k9Var.d = true;
                 k9Var.I = true;
                 k9Var.H = true;
-                l9Var.w.d(o8Var4);
+                l9Var.w.d(l8Var4);
                 break;
             case 21:
                 k9 k9Var2 = (k9) this.b;
@@ -570,12 +573,6 @@ public final /* synthetic */ class e implements Runnable {
                 AndroidUtilities.runOnUIThread(new i9(k9Var2, r8));
                 break;
             case 22:
-                y9.a((y9) this.b, (h8) this.c);
-                break;
-            case 23:
-                ((h8) this.b).accept((TL_stories.TL_stories_allStories) this.c);
-                break;
-            case 24:
                 y9 y9Var = (y9) this.b;
                 TL_stories.TL_updateStory tL_updateStory = (TL_stories.TL_updateStory) this.c;
                 MessagesStorage messagesStorage = y9Var.b;
@@ -648,9 +645,12 @@ public final /* synthetic */ class e implements Runnable {
                     messagesStorage.checkSQLException(th2);
                     return;
                 }
-            case 25:
+            case 23:
+                y9.a((y9) this.b, (z7) this.c);
+                break;
+            case 24:
                 y9 y9Var2 = (y9) this.b;
-                h8 h8Var = (h8) this.c;
+                z7 z7Var = (z7) this.c;
                 MessagesStorage messagesStorage2 = y9Var2.b;
                 SQLiteDatabase database2 = messagesStorage2.getDatabase();
                 LongSparseIntArray longSparseIntArray = new LongSparseIntArray();
@@ -662,13 +662,16 @@ public final /* synthetic */ class e implements Runnable {
                 } catch (Exception e) {
                     messagesStorage2.checkSQLException(e);
                 }
-                AndroidUtilities.runOnUIThread(new e(27, h8Var, longSparseIntArray));
+                AndroidUtilities.runOnUIThread(new e(27, z7Var, longSparseIntArray));
+                break;
+            case 25:
+                ((z7) this.b).run((TL_stories.TL_stories_allStories) this.c);
                 break;
             case 26:
                 ((y9) this.b).j((ArrayList) this.c);
                 break;
             case 27:
-                ((h8) this.b).b.f = (LongSparseIntArray) this.c;
+                ((z7) this.b).b.f = (LongSparseIntArray) this.c;
                 break;
             case 28:
                 da daVar = (da) this.b;

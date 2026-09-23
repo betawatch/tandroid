@@ -5,38 +5,38 @@ import java.util.ArrayList;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.fk;
-import org.telegram.ui.Components.vi;
+import org.telegram.ui.Components.gk;
+import org.telegram.ui.Components.wi;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class o implements fk {
-    public final /* synthetic */ vi a;
+public final class o implements gk {
+    public final /* synthetic */ wi a;
     public final /* synthetic */ r b;
 
-    public o(r rVar, vi viVar) {
+    public o(r rVar, wi wiVar) {
         this.b = rVar;
-        this.a = viVar;
+        this.a = wiVar;
     }
 
-    @Override // org.telegram.ui.Components.fk
+    @Override // org.telegram.ui.Components.gk
     public final void k(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z10, int i10, long j3, boolean z11, long j10) {
-        w3 w3Var = this.b.r;
+        x3 x3Var = this.b.r;
         if (!arrayList.isEmpty()) {
-            w3Var.c2((String) arrayList.get(0));
+            x3Var.c2((String) arrayList.get(0));
         } else if (!arrayList3.isEmpty()) {
             MessageObject messageObject = (MessageObject) arrayList3.get(0);
-            w3Var.getClass();
+            x3Var.getClass();
             if (messageObject != null && messageObject.getDocument() != null) {
                 TLRPC.Document document = messageObject.getDocument();
                 TLRPC.Message message = messageObject.messageOwner;
-                w3Var.d2(document, message != null ? message.attachPath : null);
+                x3Var.d2(document, message != null ? message.attachPath : null);
             }
         }
         this.a.dismiss(true);
     }
 
-    @Override // org.telegram.ui.Components.fk
+    @Override // org.telegram.ui.Components.gk
     public final void w() {
         try {
             Intent intent = new Intent("android.intent.action.GET_CONTENT");
@@ -47,11 +47,11 @@ public final class o implements fk {
         }
     }
 
-    @Override // org.telegram.ui.Components.fk
+    @Override // org.telegram.ui.Components.gk
     public final /* synthetic */ void O() {
     }
 
-    @Override // org.telegram.ui.Components.fk
+    @Override // org.telegram.ui.Components.gk
     public final /* synthetic */ void l(long j3, ArrayList arrayList, boolean z10, int i10) {
     }
 }

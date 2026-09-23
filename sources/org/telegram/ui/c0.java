@@ -1,38 +1,61 @@
 package org.telegram.ui;
 
-import android.view.View;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.ui.web.HttpGetFileTask;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c0 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ a3 b;
-    public final /* synthetic */ View c;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ c0(View view, a3 a3Var) {
-        this.c = view;
-        this.b = a3Var;
+    public /* synthetic */ c0(Object obj, float f7, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.b = f7;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                a3 a3Var = this.b;
-                View view = this.c;
-                view.post(new c0(a3Var, view));
+                i4 i4Var = (i4) this.c;
+                i4Var.h0.M.c(this.b, true);
+                break;
+            case 1:
+                org.telegram.ui.Components.ib ibVar = (org.telegram.ui.Components.ib) this.c;
+                if (ibVar.a.getTranslationX() == this.b) {
+                    ibVar.y.b();
+                    break;
+                }
+                break;
+            case 2:
+                org.telegram.ui.Components.voip.a1 a1Var = (org.telegram.ui.Components.voip.a1) this.c;
+                float f7 = this.b;
+                fi1 fi1Var = a1Var.c;
+                if (f7 > 0.0f) {
+                    int i10 = fi1Var.w;
+                    if (i10 < 2) {
+                        fi1Var.c(i10 + 1, true);
+                    }
+                } else {
+                    int i11 = fi1Var.w;
+                    if (i11 > 0) {
+                        fi1Var.c(i11 - 1, true);
+                    }
+                }
+                a1Var.b = false;
+                break;
+            case 3:
+                ((g80) this.c).f.e.smoothScrollTo(0, (int) this.b);
+                break;
+            case 4:
+                ApplicationLoader.applicationContext.getSharedPreferences("media_saved_pos", 0).edit().putFloat((String) this.c, this.b).commit();
                 break;
             default:
-                a3 a3Var2 = this.b;
-                a3Var2.I.clear();
-                a3Var2.K.set(null);
-                this.c.invalidate();
+                ((HttpGetFileTask) this.c).lambda$doInBackground$0(this.b);
                 break;
         }
-    }
-
-    public /* synthetic */ c0(a3 a3Var, View view) {
-        this.b = a3Var;
-        this.c = view;
     }
 }

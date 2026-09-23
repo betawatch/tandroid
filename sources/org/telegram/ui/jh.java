@@ -1,45 +1,30 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.graphics.drawable.Drawable;
+import android.view.View;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class jh implements Runnable {
+public final /* synthetic */ class jh implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ EditTextBoldCursor b;
+    public final /* synthetic */ org.telegram.ui.Components.o70 b;
 
-    public /* synthetic */ jh(int i10, EditTextBoldCursor editTextBoldCursor) {
+    public /* synthetic */ jh(org.telegram.ui.Components.o70 o70Var, int i10) {
         this.a = i10;
-        this.b = editTextBoldCursor;
+        this.b = o70Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        int i10 = this.a;
+        org.telegram.ui.Components.o70 o70Var = this.b;
+        switch (i10) {
             case 0:
-                AndroidUtilities.showKeyboard(this.b);
-                break;
-            case 1:
-                EditTextBoldCursor editTextBoldCursor = this.b;
-                editTextBoldCursor.requestFocus();
-                AndroidUtilities.showKeyboard(editTextBoldCursor);
-                break;
-            case 2:
-                EditTextBoldCursor editTextBoldCursor2 = this.b;
-                editTextBoldCursor2.requestFocus();
-                AndroidUtilities.showKeyboard(editTextBoldCursor2);
-                break;
-            case 3:
-                AndroidUtilities.showKeyboard(this.b);
-                break;
-            case 4:
-                AndroidUtilities.showKeyboard(this.b);
+                o70Var.s();
                 break;
             default:
-                EditTextBoldCursor editTextBoldCursor3 = this.b;
-                editTextBoldCursor3.requestFocus();
-                AndroidUtilities.showKeyboard(editTextBoldCursor3);
+                Drawable[] drawableArr = PhotoViewer.U8;
+                o70Var.s();
                 break;
         }
     }

@@ -12,22 +12,22 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.i51;
-import org.telegram.ui.Components.kl0;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.bb;
+import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.w51;
-import org.telegram.ui.Components.za;
+import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.v51;
 import w7.x5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final class e extends za implements GiftAuctionController.OnActiveAuctionsUpdateListeners {
-    public final i51 X;
+public final class e extends bb implements GiftAuctionController.OnActiveAuctionsUpdateListeners {
+    public final h51 X;
     public final LongSparseArray Y;
     public ArrayList Z;
     public boolean a0;
-    public w51 b0;
+    public v51 b0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public e(Context context) {
@@ -35,7 +35,7 @@ public final class e extends za implements GiftAuctionController.OnActiveAuction
         int i10 = 0;
         this.Y = new LongSparseArray();
         this.Z = new ArrayList();
-        setBackgroundColor(i6.w0(null, i6.a7, false));
+        setBackgroundColor(h6.w0(null, h6.a7, false));
         GiftAuctionController.getInstance(this.currentAccount).subscribeToActiveAuctionsUpdates(this);
         this.L = false;
         this.K = AndroidUtilities.dp(12.0f);
@@ -45,7 +45,7 @@ public final class e extends za implements GiftAuctionController.OnActiveAuction
         linearLayout.setClipChildren(false);
         linearLayout.setClipToPadding(false);
         linearLayout.setClickable(true);
-        this.X = i51.j(-1, linearLayout);
+        this.X = h51.j(-1, linearLayout);
         this.d.setPadding(this.backgroundPaddingLeft, AndroidUtilities.dp(9.0f), this.backgroundPaddingLeft, AndroidUtilities.dp(9.0f));
         this.d.setOverScrollMode(2);
         this.b0.N(false);
@@ -94,15 +94,15 @@ public final class e extends za implements GiftAuctionController.OnActiveAuction
         this.a0 = true;
     }
 
-    @Override // org.telegram.ui.Components.za
-    public final kl0 v(ll0 ll0Var) {
-        w51 w51Var = new w51(this.d, getContext(), this.currentAccount, 0, true, new hi.a(this, 12), this.resourcesProvider);
-        this.b0 = w51Var;
-        w51Var.r = false;
-        return w51Var;
+    @Override // org.telegram.ui.Components.bb
+    public final ll0 v(ml0 ml0Var) {
+        v51 v51Var = new v51(this.d, getContext(), this.currentAccount, 0, true, new hi.a(this, 12), this.resourcesProvider);
+        this.b0 = v51Var;
+        v51Var.r = false;
+        return v51Var;
     }
 
-    @Override // org.telegram.ui.Components.za
+    @Override // org.telegram.ui.Components.bb
     public final CharSequence y() {
         ArrayList arrayList = this.Z;
         if (arrayList == null) {

@@ -1,36 +1,46 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.ui.Components.ChatActivityEnterView;
+import android.widget.EditText;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class wi1 extends AnimatorListenerAdapter {
-    public final /* synthetic */ org.telegram.ui.Cells.t1 a;
-    public final /* synthetic */ org.telegram.ui.Components.ui b;
-    public final /* synthetic */ xi1 c;
+public final class wi1 extends org.telegram.ui.ActionBar.f5 {
+    public final /* synthetic */ WallpapersListActivity f;
 
-    public wi1(xi1 xi1Var, org.telegram.ui.Cells.t1 t1Var, org.telegram.ui.Components.ui uiVar) {
-        this.c = xi1Var;
-        this.a = t1Var;
-        this.b = uiVar;
+    public wi1(WallpapersListActivity wallpapersListActivity) {
+        this.f = wallpapersListActivity;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        this.a.setEnterTransitionInProgress(false);
-        org.telegram.ui.Components.ui uiVar = this.b;
-        ArrayList arrayList = (ArrayList) uiVar.c;
-        xi1 xi1Var = this.c;
-        arrayList.remove(xi1Var);
-        uiVar.a();
-        ((ViewGroup) uiVar.d).invalidate();
-        ChatActivityEnterView.RecordCircle recordCircle = xi1Var.g;
-        if (recordCircle != null) {
-            recordCircle.N = false;
-        }
+    @Override // org.telegram.ui.ActionBar.f5
+    public final void k() {
+        WallpapersListActivity wallpapersListActivity = this.f;
+        bj1 bj1Var = wallpapersListActivity.J;
+        bj1Var.n = null;
+        bj1Var.E(null, true);
+        wallpapersListActivity.L.setSearchFieldHint(LocaleController.getString(R.string.SearchBackgrounds));
+    }
+
+    @Override // org.telegram.ui.ActionBar.f5
+    public final void m() {
+        WallpapersListActivity wallpapersListActivity = this.f;
+        wallpapersListActivity.H.setAdapter(wallpapersListActivity.I);
+        wallpapersListActivity.H.invalidate();
+        wallpapersListActivity.J.E(null, true);
+        wallpapersListActivity.L.setSearchFieldCaption(null);
+        k();
+    }
+
+    @Override // org.telegram.ui.ActionBar.f5
+    public final void n() {
+        WallpapersListActivity wallpapersListActivity = this.f;
+        wallpapersListActivity.H.setAdapter(wallpapersListActivity.J);
+        wallpapersListActivity.H.invalidate();
+    }
+
+    @Override // org.telegram.ui.ActionBar.f5
+    public final void q(EditText editText) {
+        this.f.J.E(editText.getText().toString(), false);
     }
 }

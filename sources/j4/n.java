@@ -2,12 +2,11 @@ package j4;
 
 import b2.r0;
 import c3.h0;
-import i2.l0;
+import i2.m0;
 import java.util.Arrays;
 import java.util.Collections;
-import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class n implements i {
     public static final float[] l = {1.0f, 1.0f, 1.0909091f, 0.90909094f, 1.4545455f, 1.2121212f, 1.0f};
@@ -15,7 +14,7 @@ public final class n implements i {
     public final e2.v b;
     public final boolean[] c = new boolean[4];
     public final l d;
-    public final l0 e;
+    public final m0 e;
     public m f;
     public long g;
     public String h;
@@ -29,7 +28,7 @@ public final class n implements i {
         lVar.e = new byte[128];
         this.d = lVar;
         this.k = -9223372036854775807L;
-        this.e = new l0(MessagesStorage.LAST_DB_VERSION);
+        this.e = new m0(178);
         this.b = new e2.v();
     }
 
@@ -58,14 +57,14 @@ public final class n implements i {
         while (true) {
             int b10 = f2.o.b(bArr, i14, i15, this.c);
             l lVar = this.d;
-            l0 l0Var = this.e;
+            m0 m0Var = this.e;
             if (b10 == i15) {
                 if (!this.j) {
                     lVar.a(i14, i15, bArr);
                 }
                 this.f.a(i14, i15, bArr);
-                if (l0Var != null) {
-                    l0Var.a(i14, i15, bArr);
+                if (m0Var != null) {
+                    m0Var.a(i14, i15, bArr);
                     return;
                 }
                 return;
@@ -298,24 +297,24 @@ public final class n implements i {
                 lVar.a(i13, 3, l.f);
             }
             this.f.a(i14, b10, bArr);
-            if (l0Var != null) {
+            if (m0Var != null) {
                 if (i18 > 0) {
-                    l0Var.a(i14, b10, bArr);
+                    m0Var.a(i14, b10, bArr);
                     i12 = 0;
                 } else {
                     i12 = -i18;
                 }
-                if (l0Var.e(i12)) {
-                    int m10 = f2.o.m(l0Var.e, (byte[]) l0Var.f);
+                if (m0Var.e(i12)) {
+                    int m10 = f2.o.m(m0Var.e, (byte[]) m0Var.f);
                     String str2 = e2.d0.a;
-                    byte[] bArr2 = (byte[]) l0Var.f;
+                    byte[] bArr2 = (byte[]) m0Var.f;
                     e2.v vVar2 = this.b;
                     vVar2.H(m10, bArr2);
                     this.a.a(this.k, vVar2);
                 }
                 if (i17 == 178) {
                     if (vVar.a[b10 + 2] == 1) {
-                        l0Var.h(i17);
+                        m0Var.h(i17);
                     }
                     int i30 = i10 - b10;
                     this.f.b(i30, this.g - i30, this.j);
@@ -360,9 +359,9 @@ public final class n implements i {
             mVar.d = false;
             mVar.e = -1;
         }
-        l0 l0Var = this.e;
-        if (l0Var != null) {
-            l0Var.g();
+        m0 m0Var = this.e;
+        if (m0Var != null) {
+            m0Var.g();
         }
         this.g = 0L;
         this.k = -9223372036854775807L;

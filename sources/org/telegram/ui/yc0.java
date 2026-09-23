@@ -1,36 +1,9 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class yc0 extends org.telegram.ui.Components.yu0 {
-    public final /* synthetic */ id0 f2;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yc0(id0 id0Var, Context context, org.telegram.ui.Components.qu0 qu0Var, id0 id0Var2, xc0 xc0Var, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, 0L, qu0Var, 0, null, null, null, 8, 0, id0Var2, xc0Var, 0, e6Var, null);
-        this.f2 = id0Var;
-    }
-
-    @Override // org.telegram.ui.Components.yu0
-    public final int B0() {
-        return 32;
-    }
-
-    @Override // org.telegram.ui.Components.yu0
-    public final boolean N() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.yu0
-    public final int S0() {
-        return 3;
-    }
-
-    @Override // org.telegram.ui.Components.yu0
-    public final TL_stories.MediaArea getStoriesArea() {
-        return this.f2.M0;
-    }
+public interface yc0 {
+    void b(TLRPC.MessageMedia messageMedia, int i10, boolean z10, int i11, long j3);
 }

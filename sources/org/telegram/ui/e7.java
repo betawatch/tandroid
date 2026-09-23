@@ -4,9 +4,9 @@ import android.content.Context;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class e7 extends org.telegram.ui.Components.a81 {
+public final class e7 extends org.telegram.ui.Components.z71 {
     public org.telegram.ui.ActionBar.n1 a;
     public final /* synthetic */ Context b;
     public final /* synthetic */ org.telegram.ui.ActionBar.n2 c;
@@ -18,45 +18,45 @@ public final class e7 extends org.telegram.ui.Components.a81 {
         this.c = n2Var;
     }
 
-    @Override // org.telegram.ui.Components.a81
+    @Override // org.telegram.ui.Components.z71
     public final void b(View view, int i10, int i11) {
-        org.telegram.ui.Components.ll0 ll0Var = (org.telegram.ui.Components.ll0) view;
+        org.telegram.ui.Components.ml0 ml0Var = (org.telegram.ui.Components.ml0) view;
         ArrayList arrayList = this.d.e;
-        ll0Var.setAdapter(((r7) arrayList.get(i10)).c);
+        ml0Var.setAdapter(((r7) arrayList.get(i10)).c);
         if (((r7) arrayList.get(i10)).b == 1 || ((r7) arrayList.get(i10)).b == 4) {
             view.getContext();
-            ll0Var.setLayoutManager(new s4.s(3));
+            ml0Var.setLayoutManager(new s4.s(3));
         } else {
             view.getContext();
-            ll0Var.setLayoutManager(new s4.c0());
+            ml0Var.setLayoutManager(new s4.c0());
         }
-        ll0Var.setTag(Integer.valueOf(((r7) arrayList.get(i10)).b));
+        ml0Var.setTag(Integer.valueOf(((r7) arrayList.get(i10)).b));
     }
 
-    @Override // org.telegram.ui.Components.a81
+    @Override // org.telegram.ui.Components.z71
     public final View d(int i10) {
-        org.telegram.ui.Components.ll0 ll0Var = new org.telegram.ui.Components.ll0(this.b, null);
-        s4.j jVar = (s4.j) ll0Var.getItemAnimator();
+        org.telegram.ui.Components.ml0 ml0Var = new org.telegram.ui.Components.ml0(this.b, null);
+        s4.j jVar = (s4.j) ml0Var.getItemAnimator();
         jVar.C = false;
         jVar.m = false;
-        ll0Var.setClipToPadding(false);
-        ll0Var.setPadding(0, 0, 0, this.d.s);
-        ll0Var.setOnItemClickListener(new d7(this, ll0Var));
-        ll0Var.setOnItemLongClickListener(new b7(this, ll0Var, this.c, 0));
-        return ll0Var;
+        ml0Var.setClipToPadding(false);
+        ml0Var.setPadding(0, 0, 0, this.d.s);
+        ml0Var.setOnItemClickListener(new d7(this, ml0Var));
+        ml0Var.setOnItemLongClickListener(new b7(this, ml0Var, this.c, 0));
+        return ml0Var;
     }
 
-    @Override // org.telegram.ui.Components.a81
+    @Override // org.telegram.ui.Components.z71
     public final int e() {
         return this.d.e.size();
     }
 
-    @Override // org.telegram.ui.Components.a81
+    @Override // org.telegram.ui.Components.z71
     public final int f(int i10) {
         return ((r7) this.d.e.get(i10)).b;
     }
 
-    @Override // org.telegram.ui.Components.a81
+    @Override // org.telegram.ui.Components.z71
     public final CharSequence g(int i10) {
         return ((r7) this.d.e.get(i10)).a;
     }

@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.graphics.Canvas;
 import android.graphics.RectF;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class va implements bh.a {
     public final /* synthetic */ int a;
@@ -29,17 +29,17 @@ public final /* synthetic */ class va implements bh.a {
                 ((rb) this.b).Z(canvas, rectF);
                 break;
             case 1:
-                aq0 aq0Var = (aq0) this.b;
-                j0 j0Var = aq0Var.d;
-                lp0 lp0Var = aq0Var.h.b;
-                gh.d.a(lp0Var, canvas, rectF, lp0Var, j0Var);
-                lp0 lp0Var2 = aq0Var.n.b;
-                gh.d.a(lp0Var2, canvas, rectF, lp0Var2, j0Var);
+                up0 up0Var = (up0) this.b;
+                k0 k0Var = up0Var.d;
+                fp0 fp0Var = up0Var.h.b;
+                gh.d.a(fp0Var, canvas, rectF, fp0Var, k0Var);
+                fp0 fp0Var2 = up0Var.n.b;
+                gh.d.a(fp0Var2, canvas, rectF, fp0Var2, k0Var);
                 break;
             default:
                 PremiumPreviewFragment premiumPreviewFragment = (PremiumPreviewFragment) this.b;
-                org.telegram.ui.Components.ll0 ll0Var = premiumPreviewFragment.a;
-                gh.d.a(ll0Var, canvas, rectF, ll0Var, premiumPreviewFragment.d0);
+                org.telegram.ui.Components.ml0 ml0Var = premiumPreviewFragment.a;
+                gh.d.a(ml0Var, canvas, rectF, ml0Var, premiumPreviewFragment.d0);
                 break;
         }
     }

@@ -1,153 +1,50 @@
 package org.telegram.ui;
 
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class w81 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class w81 extends LinearLayout implements org.telegram.ui.ActionBar.y5 {
+    public final org.telegram.ui.ActionBar.d6 a;
+    public final org.telegram.ui.Components.d90 b;
+    public final org.telegram.ui.Components.d90 c;
+    public final ci.d d;
+    public final ci.d e;
 
-    public /* synthetic */ w81(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public w81(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context);
+        this.a = d6Var;
+        setOrientation(1);
+        int i10 = org.telegram.ui.ActionBar.h6.G6;
+        org.telegram.ui.Components.d90 a2 = w7.b6.a(context, 15.0f, i10, true, d6Var);
+        this.b = a2;
+        a2.setGravity(17);
+        addView(a2, w7.x5.t(-1, -2, 55, 32, 20, 32, 0));
+        org.telegram.ui.Components.d90 a10 = w7.b6.a(context, 13.0f, i10, false, d6Var);
+        this.c = a10;
+        a10.setGravity(17);
+        addView(a10, w7.x5.r(-1, -2, 55, 32.0f, 9.33f, 32.0f, 0.0f));
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(0);
+        ci.d g10 = org.telegram.messenger.ul.g(24, context, d6Var, true);
+        this.d = g10;
+        ci.d g11 = org.telegram.messenger.ul.g(24, context, d6Var, true);
+        this.e = g11;
+        linearLayout.addView(g10, w7.x5.p(0, 42, 1.0f, 112, 0, 0, 12, 0));
+        linearLayout.addView(g11, w7.x5.p(0, 42, 1.0f, 112, 0, 0, 0, 0));
+        addView(linearLayout, w7.x5.t(-1, -2, 55, 24, 18, 24, 16));
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i10) {
-        org.telegram.ui.ActionBar.k kVar;
-        org.telegram.ui.ActionBar.k kVar2;
-        switch (this.a) {
-            case 0:
-                f91 f91Var = (f91) this.b;
-                if (i10 != -1) {
-                    if (i10 == 2) {
-                        f91Var.l0(new yg0(null));
-                        break;
-                    }
-                } else {
-                    f91Var.finishFragment();
-                    break;
-                }
-                break;
-            case 1:
-                if (i10 == -1) {
-                    ((za1) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 2:
-                StickersActivity stickersActivity = (StickersActivity) this.b;
-                if (i10 != -1) {
-                    StickersActivity.d0(stickersActivity, i10);
-                    break;
-                } else if (stickersActivity.onBackPressed(true)) {
-                    stickersActivity.finishFragment();
-                    break;
-                }
-                break;
-            case 3:
-                be1 be1Var = (be1) this.b;
-                if (i10 != -1) {
-                    if (i10 == 1) {
-                        be1.Y(be1Var);
-                        break;
-                    }
-                } else {
-                    be1Var.finishFragment();
-                    break;
-                }
-                break;
-            case 4:
-                if (i10 == -1) {
-                    ((te1) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 5:
-                if (i10 == -1) {
-                    ((kg1) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 6:
-                if (i10 == -1) {
-                    TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.b;
-                    if (twoStepVerificationActivity.X < 0) {
-                        twoStepVerificationActivity.finishFragment();
-                        break;
-                    } else {
-                        twoStepVerificationActivity.x0();
-                        break;
-                    }
-                }
-                break;
-            case 7:
-                UserInfoActivity userInfoActivity = (UserInfoActivity) this.b;
-                if (i10 != -1) {
-                    if (i10 == 1) {
-                        userInfoActivity.c0(true);
-                        break;
-                    }
-                } else if (userInfoActivity.onBackPressed(true)) {
-                    userInfoActivity.finishFragment();
-                    break;
-                }
-                break;
-            case 8:
-                UsersSelectActivity usersSelectActivity = (UsersSelectActivity) this.b;
-                if (i10 != -1) {
-                    if (i10 == 1) {
-                        usersSelectActivity.X();
-                        break;
-                    }
-                } else {
-                    usersSelectActivity.finishFragment();
-                    break;
-                }
-                break;
-            case 9:
-                org.telegram.ui.web.h1 h1Var = (org.telegram.ui.web.h1) this.b;
-                if (i10 == -1) {
-                    kVar = ((org.telegram.ui.ActionBar.n2) h1Var).actionBar;
-                    if (!kVar.s()) {
-                        h1Var.finishFragment();
-                        break;
-                    } else {
-                        kVar2 = ((org.telegram.ui.ActionBar.n2) h1Var).actionBar;
-                        kVar2.r();
-                        h1Var.s.clear();
-                        AndroidUtilities.forEachViews((RecyclerView) h1Var.a, (e2.h) new org.telegram.ui.web.m(1));
-                        break;
-                    }
-                }
-                break;
-            case 10:
-                if (i10 == -1) {
-                    ((rg.x0) this.b).dismiss();
-                    break;
-                }
-                break;
-            case 11:
-                if (i10 == -1) {
-                    ((xh.h4) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 12:
-                if (i10 == -1) {
-                    ((yh.g) this.b).finishFragment();
-                    break;
-                }
-                break;
-            default:
-                zg.q qVar = (zg.q) this.b;
-                if (i10 == -1 && !qVar.X(true)) {
-                    qVar.finishFragment();
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.ActionBar.y5
+    public final void e() {
+        int i10 = org.telegram.ui.ActionBar.h6.G6;
+        org.telegram.ui.ActionBar.d6 d6Var = this.a;
+        this.b.setTextColor(org.telegram.ui.ActionBar.h6.v0(i10, d6Var));
+        this.c.setTextColor(org.telegram.ui.ActionBar.h6.v0(i10, d6Var));
+    }
+
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
     }
 }

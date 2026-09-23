@@ -7,13 +7,13 @@ import c3.u;
 import e2.v;
 import java.util.Arrays;
 import n7.a1;
-import u2.x0;
+import u2.w0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class c extends i {
     public u n;
-    public x0 o;
+    public w0 o;
 
     @Override // x3.i
     public final long b(v vVar) {
@@ -48,10 +48,10 @@ public final class c extends i {
             if (b10 != -1) {
                 return true;
             }
-            x0 x0Var = this.o;
-            if (x0Var != null) {
-                x0Var.a = j3;
-                a1Var.c = x0Var;
+            w0 w0Var = this.o;
+            if (w0Var != null) {
+                w0Var.a = j3;
+                a1Var.c = w0Var;
             }
             ((s) a1Var.b).getClass();
             return false;
@@ -59,12 +59,12 @@ public final class c extends i {
         of.b u10 = c3.b.u(vVar);
         u uVar3 = new u(uVar.a, uVar.b, uVar.c, uVar.d, uVar.e, uVar.g, uVar.h, uVar.j, u10, uVar.l);
         this.n = uVar3;
-        x0 x0Var2 = new x0();
-        x0Var2.c = uVar3;
-        x0Var2.d = u10;
-        x0Var2.a = -1L;
-        x0Var2.b = -1L;
-        this.o = x0Var2;
+        w0 w0Var2 = new w0();
+        w0Var2.c = uVar3;
+        w0Var2.d = u10;
+        w0Var2.a = -1L;
+        w0Var2.b = -1L;
+        this.o = w0Var2;
         return true;
     }
 

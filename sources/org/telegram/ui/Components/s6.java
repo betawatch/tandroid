@@ -1,34 +1,26 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
+import android.view.animation.OvershootInterpolator;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class s6 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Runnable b;
+public abstract class s6 {
+    public static final OvershootInterpolator a = new OvershootInterpolator(1.9f);
+    public static final q6 b = new q6("alpha", 0);
+    public static final org.telegram.ui.Cells.u8 c;
+    public static final q6 d;
+    public static final q6 e;
+    public static final org.telegram.ui.Cells.u8 f;
+    public static final org.telegram.ui.Cells.u8 g;
+    public static final org.telegram.ui.Cells.u8 h;
 
-    public /* synthetic */ s6(int i10, Runnable runnable) {
-        this.a = i10;
-        this.b = runnable;
-    }
-
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                this.b.run();
-                break;
-            case 1:
-                Runnable runnable = this.b;
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
-                break;
-            default:
-                this.b.run();
-                break;
-        }
+    static {
+        new q6("color", 1);
+        c = new org.telegram.ui.Cells.u8("currentAlpha", 4);
+        d = new q6("alpha", 2);
+        e = new q6("alpha", 3);
+        f = new org.telegram.ui.Cells.u8("animationProgress", 5);
+        g = new org.telegram.ui.Cells.u8("animationValue", 6);
+        h = new org.telegram.ui.Cells.u8("clipProgress", 7);
     }
 }

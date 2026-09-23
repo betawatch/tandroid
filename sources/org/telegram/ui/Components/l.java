@@ -9,14 +9,14 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class l extends hq0 {
     public final /* synthetic */ e0 b1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l(e0 e0Var, Context context, String str, String str2, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, null, str, false, str2, false, e6Var);
+    public l(e0 e0Var, Context context, String str, String str2, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, null, str, false, str2, false, d6Var);
         this.b1 = e0Var;
     }
 
@@ -24,24 +24,24 @@ public final class l extends hq0 {
     public final void R0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
         FrameLayout frameLayout = this.b1.G0;
         if (z10) {
-            vc vcVar = new vc(frameLayout, this.resourcesProvider);
+            xc xcVar = new xc(frameLayout, this.resourcesProvider);
             if (iVar.m() == 1) {
                 long j3 = iVar.j(0);
                 if (j3 == UserConfig.getInstance(this.currentAccount).clientUserId) {
-                    oc G = vcVar.G(R.raw.saved_messages, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.AIEditorStyleSharedToSavedMessages, new Object[0])));
+                    qc G = xcVar.G(R.raw.saved_messages, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.AIEditorStyleSharedToSavedMessages, new Object[0])));
                     G.r = false;
                     G.j();
                 } else if (j3 < 0) {
-                    oc G2 = vcVar.G(R.raw.forward, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.AIEditorStyleSharedTo, tL_forumTopic != null ? tL_forumTopic.title : MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-j3)).title)));
+                    qc G2 = xcVar.G(R.raw.forward, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.AIEditorStyleSharedTo, tL_forumTopic != null ? tL_forumTopic.title : MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-j3)).title)));
                     G2.r = false;
                     G2.j();
                 } else {
-                    oc G3 = vcVar.G(R.raw.forward, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.AIEditorStyleSharedTo, MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(j3)).first_name)));
+                    qc G3 = xcVar.G(R.raw.forward, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.AIEditorStyleSharedTo, MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(j3)).first_name)));
                     G3.r = false;
                     G3.j();
                 }
             } else {
-                oc Q = vcVar.Q(R.raw.forward, 36, AndroidUtilities.replaceTags(LocaleController.formatPluralString("AIEditorStyleSharedToManyChats", iVar.m(), Integer.valueOf(iVar.m()))));
+                qc Q = xcVar.Q(R.raw.forward, 36, AndroidUtilities.replaceTags(LocaleController.formatPluralString("AIEditorStyleSharedToManyChats", iVar.m(), Integer.valueOf(iVar.m()))));
                 Q.r = false;
                 Q.j();
             }

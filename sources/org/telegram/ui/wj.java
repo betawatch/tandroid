@@ -1,71 +1,52 @@
 package org.telegram.ui;
 
+import android.graphics.Point;
+import android.graphics.Rect;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class wj extends ji.n {
-    public Runnable W;
-    public final /* synthetic */ bo X;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wj(bo boVar, bo boVar2, uj ujVar, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(boVar2, ujVar, e6Var);
-        this.X = boVar;
-    }
-
-    @Override // s4.j
-    public final void F() {
-        bo boVar = this.X;
-        if (boVar.H9 == -1) {
-            boVar.H9 = boVar.getNotificationCenter().setAnimationInProgress(boVar.H9, bo.Mc, false);
+public final class wj extends s4.n0 {
+    @Override // s4.n0
+    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.z0 z0Var) {
+        org.telegram.ui.Cells.t1 t1Var;
+        MessageObject.GroupedMessages currentMessagesGroup;
+        MessageObject.GroupedMessagePosition currentPosition;
+        int i10 = 0;
+        rect.bottom = 0;
+        if (!(view instanceof org.telegram.ui.Cells.t1) || (currentMessagesGroup = (t1Var = (org.telegram.ui.Cells.t1) view).getCurrentMessagesGroup()) == null || (currentPosition = t1Var.getCurrentPosition()) == null || currentPosition.siblingHeights == null) {
+            return;
         }
-    }
-
-    @Override // ji.n, s4.j
-    public final void N() {
-        super.N();
-        Runnable runnable = this.W;
-        if (runnable != null) {
-            AndroidUtilities.cancelRunOnUIThread(runnable);
-            this.W = null;
+        Point point = AndroidUtilities.displaySize;
+        float max = Math.max(point.x, point.y) * 0.5f;
+        int extraInsetHeight = t1Var.getExtraInsetHeight();
+        int i11 = 0;
+        while (true) {
+            if (i11 >= currentPosition.siblingHeights.length) {
+                break;
+            }
+            extraInsetHeight += (int) Math.ceil(r3[i11] * max);
+            i11++;
         }
-        vj vjVar = new vj(this, 1);
-        this.W = vjVar;
-        AndroidUtilities.runOnUIThread(vjVar);
-    }
-
-    @Override // ji.n
-    public final void W() {
-        bo boVar = this.X;
-        boVar.H9 = boVar.getNotificationCenter().setAnimationInProgress(boVar.H9, bo.Mc, false);
-        Runnable runnable = this.W;
-        if (runnable != null) {
-            AndroidUtilities.cancelRunOnUIThread(runnable);
-            this.W = null;
+        int round = (Math.round(AndroidUtilities.density * 7.0f) * (currentPosition.maxY - currentPosition.minY)) + extraInsetHeight;
+        int size = currentMessagesGroup.posArray.size();
+        while (true) {
+            if (i10 < size) {
+                MessageObject.GroupedMessagePosition groupedMessagePosition = currentMessagesGroup.posArray.get(i10);
+                byte b10 = groupedMessagePosition.minY;
+                byte b11 = currentPosition.minY;
+                if (b10 == b11 && ((groupedMessagePosition.minX != currentPosition.minX || groupedMessagePosition.maxX != currentPosition.maxX || b10 != b11 || groupedMessagePosition.maxY != currentPosition.maxY) && b10 == b11)) {
+                    round = org.telegram.messenger.z0.z(4.0f, (int) Math.ceil(max * groupedMessagePosition.ph), round);
+                    break;
+                }
+                i10++;
+            } else {
+                break;
+            }
         }
-        if (BuildVars.LOGS_ENABLED) {
-            FileLog.d("chatItemAnimator disable notifications");
-        }
-        org.telegram.ui.ActionBar.v2 v2Var = boVar.Y.getAdjustPanLayoutHelper().h;
-        AndroidUtilities.cancelRunOnUIThread(v2Var);
-        v2Var.run();
-        org.telegram.ui.Components.ye yeVar = boVar.Y.X3;
-        AndroidUtilities.cancelRunOnUIThread(yeVar);
-        yeVar.run();
-    }
-
-    @Override // ji.n, s4.j, s4.m0
-    public final void g() {
-        super.g();
-        Runnable runnable = this.W;
-        if (runnable != null) {
-            AndroidUtilities.cancelRunOnUIThread(runnable);
-        }
-        vj vjVar = new vj(this, 0);
-        this.W = vjVar;
-        AndroidUtilities.runOnUIThread(vjVar);
+        rect.bottom = -round;
     }
 }

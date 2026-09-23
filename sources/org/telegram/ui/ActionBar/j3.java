@@ -1,62 +1,43 @@
 package org.telegram.ui.ActionBar;
 
-import android.content.SharedPreferences;
-import android.text.TextUtils;
-import java.util.HashMap;
-import java.util.HashSet;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
+import android.content.DialogInterface;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Cells.xa;
-import org.telegram.ui.f41;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class j3 implements Utilities.Callback {
-    public final /* synthetic */ int a;
+public final /* synthetic */ class j3 implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ Utilities.Callback b;
+    public final /* synthetic */ boolean[] c;
 
-    public /* synthetic */ j3(int i10) {
-        this.a = i10;
+    public /* synthetic */ j3(Utilities.Callback callback, boolean[] zArr) {
+        this.b = callback;
+        this.c = zArr;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                HashMap hashMap = o3.K;
-                break;
-            case 1:
-                int i10 = m3.r;
-                break;
-            case 2:
-                int i11 = xa.f;
-                break;
-            case 3:
-                ((Boolean) obj).getClass();
-                break;
-            case 4:
-                break;
-            case 5:
-                HashSet hashSet = (HashSet) obj;
-                String str = LocaleController.getInstance().getCurrentLocaleInfo().pluralLangCode;
-                hashSet.addAll(f41.Y());
-                SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
-                if (hashSet.size() == 1 && TextUtils.equals((CharSequence) hashSet.iterator().next(), str)) {
-                    edit.remove("translate_button_restricted_languages");
-                } else {
-                    edit.putStringSet("translate_button_restricted_languages", hashSet);
-                }
-                edit.putInt("translate_button_restricted_languages_version", 2).apply();
-                f41.s = false;
-                for (int i12 = 0; i12 < 4; i12++) {
-                    try {
-                        MessagesController.getInstance(i12).getTranslateController().checkRestrictedLanguagesUpdate();
-                    } catch (Exception unused) {
-                    }
+                boolean[] zArr = this.c;
+                if (!zArr[0]) {
+                    this.b.run(Boolean.FALSE);
+                    zArr[0] = true;
+                    break;
                 }
                 break;
             default:
+                Utilities.Callback callback = this.b;
+                if (callback != null && !this.c[0]) {
+                    callback.run(Boolean.FALSE);
+                    break;
+                }
                 break;
         }
+    }
+
+    public /* synthetic */ j3(boolean[] zArr, Utilities.Callback callback) {
+        this.c = zArr;
+        this.b = callback;
     }
 }

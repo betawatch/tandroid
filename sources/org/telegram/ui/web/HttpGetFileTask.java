@@ -3,7 +3,7 @@ package org.telegram.ui.web;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.webkit.MimeTypeMap;
-import ci.o8;
+import ci.l8;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -18,7 +18,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public class HttpGetFileTask extends AsyncTask<String, Void, File> {
     private Utilities.Callback<File> doneCallback;
@@ -144,7 +144,7 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                                         j3 = j10;
                                         if (read == -1) {
                                             if (this.progressCallback != null) {
-                                                AndroidUtilities.runOnUIThread(new u0(this, 2));
+                                                AndroidUtilities.runOnUIThread(new t0(this, 2));
                                             }
                                             if (channel != null) {
                                                 channel.close();
@@ -169,7 +169,7 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                                                 if (contentLengthLong > j3) {
                                                     float clamp01 = Utilities.clamp01(j11 / contentLengthLong);
                                                     if (this.progressCallback != null) {
-                                                        AndroidUtilities.runOnUIThread(new org.telegram.ui.b0(this, clamp01, 5));
+                                                        AndroidUtilities.runOnUIThread(new org.telegram.ui.c0(this, clamp01, 5));
                                                     }
                                                 }
                                                 j10 = j3;
@@ -242,7 +242,7 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                     if (str2 == null) {
                         str2 = MimeTypeMap.getSingleton().getExtensionFromMimeType(httpURLConnection.getContentType());
                     }
-                    this.file = o8.w(UserConfig.selectedAccount, str2);
+                    this.file = l8.w(UserConfig.selectedAccount, str2);
                 }
                 bufferedInputStream = new BufferedInputStream(errorStream, 16384);
             } catch (Exception e11) {

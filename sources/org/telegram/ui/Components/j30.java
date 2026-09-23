@@ -2,68 +2,87 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.view.accessibility.AccessibilityEvent;
-import android.widget.ImageView;
+import android.graphics.LinearGradient;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class j30 extends ImageView {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
+public final class j30 extends TextView {
+    public final Paint[] a;
+    public final /* synthetic */ m30 b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ j30(Object obj, Context context, int i10, int i11) {
+    public j30(m30 m30Var, Context context) {
         super(context);
-        this.a = i11;
-        this.c = obj;
-        this.b = i10;
-    }
-
-    @Override // android.widget.ImageView, android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.a) {
-            case 1:
-                super.onDraw(canvas);
-                org.telegram.ui.z10 z10Var = (org.telegram.ui.z10) this.c;
-                g90 g90Var = z10Var.s;
-                if (z10Var.r) {
-                    int i10 = this.b / 2;
-                    g90Var.setBounds(i10, i10, getWidth() - i10, getHeight() - i10);
-                    g90Var.draw(canvas);
-                    break;
-                }
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
+        this.b = m30Var;
+        this.a = new Paint[m30Var.e.length];
+        int i10 = 0;
+        while (true) {
+            Paint[] paintArr = this.a;
+            if (i10 >= paintArr.length) {
+                return;
+            }
+            paintArr[i10] = new Paint(1);
+            i10++;
         }
     }
 
+    @Override // android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+        m30 m30Var = this.b;
+        int i10 = m30Var.h;
+        Paint[] paintArr = this.a;
+        paintArr[i10].setAlpha(255);
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), paintArr[m30Var.h]);
+        float f7 = m30Var.f;
+        if (f7 > 0.0f) {
+            int i11 = m30Var.h;
+            if (i11 + 1 < paintArr.length) {
+                paintArr[i11 + 1].setAlpha((int) (f7 * 255.0f));
+                canvas.drawRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), paintArr[m30Var.h + 1]);
+            }
+        }
+        super.onDraw(canvas);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:12:0x0041  */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x002c  */
     @Override // android.view.View
-    public void onInitializeAccessibilityEvent(AccessibilityEvent accessibilityEvent) {
-        switch (this.a) {
-            case 0:
-                super.onInitializeAccessibilityEvent(accessibilityEvent);
-                if (accessibilityEvent.getEventType() == 32768) {
-                    ((k30) this.c).c.b.x(this.b, true);
-                    break;
-                }
-                break;
-            default:
-                super.onInitializeAccessibilityEvent(accessibilityEvent);
-                break;
-        }
-    }
-
-    @Override // android.widget.ImageView, android.view.View
-    public boolean verifyDrawable(Drawable drawable) {
-        switch (this.a) {
-            case 1:
-                return drawable == ((org.telegram.ui.z10) this.c).s || super.verifyDrawable(drawable);
-            default:
-                return super.verifyDrawable(drawable);
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
+        int i14;
+        int i15;
+        super.onSizeChanged(i10, i11, i12, i13);
+        int i16 = 0;
+        while (true) {
+            Paint[] paintArr = this.a;
+            if (i16 >= paintArr.length) {
+                return;
+            }
+            int i17 = -9015575;
+            if (i16 == 0) {
+                i17 = -11033346;
+                i14 = -9015575;
+            } else if (i16 == 1) {
+                i17 = -8919716;
+                i14 = -11089922;
+            } else {
+                i14 = -1026983;
+                i15 = -1792170;
+                paintArr[i16].setShader(i15 == 0 ? new LinearGradient(0.0f, 0.0f, getMeasuredWidth(), 0.0f, new int[]{i17, i14, i15}, (float[]) null, Shader.TileMode.CLAMP) : new LinearGradient(0.0f, 0.0f, getMeasuredWidth(), 0.0f, new int[]{i17, i14}, (float[]) null, Shader.TileMode.CLAMP));
+                i16++;
+            }
+            i15 = 0;
+            paintArr[i16].setShader(i15 == 0 ? new LinearGradient(0.0f, 0.0f, getMeasuredWidth(), 0.0f, new int[]{i17, i14, i15}, (float[]) null, Shader.TileMode.CLAMP) : new LinearGradient(0.0f, 0.0f, getMeasuredWidth(), 0.0f, new int[]{i17, i14}, (float[]) null, Shader.TileMode.CLAMP));
+            i16++;
         }
     }
 }

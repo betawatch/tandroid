@@ -1,38 +1,55 @@
 package org.telegram.ui;
 
-import java.util.Comparator;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.ConnectionsManager;
+import android.animation.ValueAnimator;
+import android.view.View;
+import android.view.ViewGroup;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xw0 implements Comparator {
+public final /* synthetic */ class xw0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController b;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ View c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ xw0(MessagesController messagesController, int i10) {
+    public /* synthetic */ xw0(Object obj, ViewGroup viewGroup, Object obj2, int i10) {
         this.a = i10;
-        this.b = messagesController;
+        this.b = obj;
+        this.c = viewGroup;
+        this.d = obj2;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int i10;
-        int i11;
-        kx0 kx0Var = (kx0) obj;
-        kx0 kx0Var2 = (kx0) obj2;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                MessagesController messagesController = this.b;
-                i10 = messagesController.businessFeaturesTypesToPosition.get(kx0Var.a, ConnectionsManager.DEFAULT_DATACENTER_ID);
-                i11 = messagesController.businessFeaturesTypesToPosition.get(kx0Var2.a, ConnectionsManager.DEFAULT_DATACENTER_ID);
+                cx0 cx0Var = (cx0) this.b;
+                ValueAnimator valueAnimator2 = (ValueAnimator) this.d;
+                PremiumPreviewFragment premiumPreviewFragment = cx0Var.n;
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                View view = this.c;
+                view.setAlpha(floatValue);
+                view.setScaleX(floatValue);
+                view.setScaleY(floatValue);
+                float animatedFraction = valueAnimator2.getAnimatedFraction();
+                for (int i10 = 0; i10 < premiumPreviewFragment.U.getChildCount(); i10++) {
+                    View childAt = premiumPreviewFragment.U.getChildAt(i10);
+                    if (childAt != cx0Var.e) {
+                        childAt.setTranslationY((view.getMeasuredHeight() * animatedFraction) + (childAt == cx0Var.c ? 0.0f - (AndroidUtilities.dp(15.0f) * animatedFraction) : 0.0f + (AndroidUtilities.dp(8.0f) * animatedFraction)));
+                    }
+                }
                 break;
             default:
-                MessagesController messagesController2 = this.b;
-                i10 = messagesController2.premiumFeaturesTypesToPosition.get(kx0Var.a, ConnectionsManager.DEFAULT_DATACENTER_ID);
-                i11 = messagesController2.premiumFeaturesTypesToPosition.get(kx0Var2.a, ConnectionsManager.DEFAULT_DATACENTER_ID);
+                bb1 bb1Var = (bb1) this.b;
+                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
+                org.telegram.ui.Components.vi viVar = (org.telegram.ui.Components.vi) this.d;
+                bb1Var.getClass();
+                bb1Var.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                chatActivityEnterView.getEditField().setAlpha(bb1Var.a);
+                viVar.invalidate();
                 break;
         }
-        return i10 - i11;
     }
 }

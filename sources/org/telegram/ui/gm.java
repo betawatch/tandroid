@@ -1,22 +1,30 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class gm extends org.telegram.ui.Cells.b0 {
-    public final /* synthetic */ nm f;
+public final class gm extends org.telegram.ui.Components.r6 {
+    public final /* synthetic */ jm b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gm(nm nmVar, Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, i10, e6Var);
-        this.f = nmVar;
+    public gm(jm jmVar) {
+        super("p2", 0);
+        this.b = jmVar;
     }
 
-    @Override // org.telegram.ui.Cells.b0
-    public final int getSideMenuWidth() {
-        bo boVar = this.f.Q;
-        int i10 = bo.Gc;
-        return boVar.R8();
+    @Override // org.telegram.ui.Components.r6
+    public final void b(Object obj, float f7) {
+        ((MessageObject.SendAnimationData) obj).currentX = f7;
+        View view = this.b.b.Q.fragmentView;
+        if (view != null) {
+            view.invalidate();
+        }
+    }
+
+    @Override // android.util.Property
+    public final Object get(Object obj) {
+        return Float.valueOf(((MessageObject.SendAnimationData) obj).currentX);
     }
 }

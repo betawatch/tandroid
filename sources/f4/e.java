@@ -26,12 +26,12 @@ import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 import v7.r6;
 import w7.c9;
+import z3.l;
 import z3.m;
-import z3.n;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final class e implements n {
+public final class e implements m {
     public static final Pattern b = Pattern.compile("^([0-9][0-9]+):([0-9][0-9]):([0-9][0-9])(?:(\\.[0-9]+)|:([0-9][0-9])(?:\\.([0-9]+))?)?$");
     public static final Pattern c = Pattern.compile("^([0-9]+(?:\\.[0-9]+)?)(h|m|s|ms|f|t)$");
     public static final Pattern d = Pattern.compile("^(([0-9]*.)?[0-9]+)(px|em|%)$");
@@ -100,13 +100,13 @@ public final class e implements n {
             matcher = pattern.matcher(str);
         } else {
             if (split.length != 2) {
-                throw new z3.g(a4.a.o(split.length, ".", new StringBuilder("Invalid number of entries for fontSize: ")));
+                throw new z3.f(a4.a.o(split.length, ".", new StringBuilder("Invalid number of entries for fontSize: ")));
             }
             matcher = pattern.matcher(split[1]);
             e2.a.n("TtmlParser", "Multiple values in fontSize attribute. Picking the second value for vertical font size and ignoring the first.");
         }
         if (!matcher.matches()) {
-            throw new z3.g(a4.a.q("Invalid expression for fontSize: '", str, "'."));
+            throw new z3.f(a4.a.q("Invalid expression for fontSize: '", str, "'."));
         }
         group = matcher.group(3);
         group.getClass();
@@ -121,7 +121,7 @@ public final class e implements n {
                 gVar.j = 1;
                 break;
             default:
-                throw new z3.g(a4.a.q("Invalid unit for fontSize: '", group, "'."));
+                throw new z3.f(a4.a.q("Invalid unit for fontSize: '", group, "'."));
         }
         String group2 = matcher.group(1);
         group2.getClass();
@@ -913,7 +913,7 @@ public final class e implements n {
                         gVar2 = a(gVar2);
                         d(attributeValue, gVar2);
                         break;
-                    } catch (z3.g unused2) {
+                    } catch (z3.f unused2) {
                         e2.s("Failed parsing fontSize value: ", attributeValue, "TtmlParser");
                         break;
                     }
@@ -1117,7 +1117,7 @@ public final class e implements n {
         }
         Matcher matcher2 = c.matcher(str);
         if (!matcher2.matches()) {
-            throw new z3.g(q3.i("Malformed time expression: ", str));
+            throw new z3.f(q3.i("Malformed time expression: ", str));
         }
         String group3 = matcher2.group(1);
         group3.getClass();
@@ -1206,18 +1206,18 @@ public final class e implements n {
         }
     }
 
-    @Override // z3.n
+    @Override // z3.m
     public final int A() {
         return 1;
     }
 
-    @Override // z3.n
-    public final void B(byte[] bArr, int i10, int i11, m mVar, h hVar) {
-        c9.b(r(i10, i11, bArr), mVar, hVar);
+    @Override // z3.m
+    public final void B(byte[] bArr, int i10, int i11, l lVar, h hVar) {
+        c9.b(r(i10, i11, bArr), lVar, hVar);
     }
 
-    @Override // z3.n
-    public final z3.e r(int i10, int i11, byte[] bArr) {
+    @Override // z3.m
+    public final z3.d r(int i10, int i11, byte[] bArr) {
         try {
             XmlPullParser newPullParser = this.a.newPullParser();
             HashMap hashMap = new HashMap();
@@ -1257,7 +1257,7 @@ public final class e implements n {
                                         }
                                         cVar2.m.add(g10);
                                     }
-                                } catch (z3.g e7) {
+                                } catch (z3.f e7) {
                                     e2.a.o("TtmlParser", "Suppressing parser error", e7);
                                 }
                             }
@@ -1302,7 +1302,7 @@ public final class e implements n {
         }
     }
 
-    @Override // z3.n
+    @Override // z3.m
     public final /* synthetic */ void reset() {
     }
 }

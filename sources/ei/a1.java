@@ -3,10 +3,10 @@ package ei;
 import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
-import ci.uc;
+import ci.rc;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class a1 {
     public final SensorManager a;
@@ -19,12 +19,12 @@ public final class a1 {
     public long h;
     public Sensor i;
     public long j;
-    public org.telegram.ui.web.z0 k;
+    public org.telegram.ui.web.y0 k;
     public boolean l;
-    public uc m;
-    public uc o;
-    public uc q;
-    public uc s;
+    public rc m;
+    public rc o;
+    public rc q;
+    public rc s;
     public final x0 n = new x0(this, 0);
     public final x0 p = new x0(this, 1);
     public final y0 r = new y0(this);
@@ -52,18 +52,18 @@ public final class a1 {
             if (sensor != null) {
                 sensorManager.unregisterListener(this.n, sensor);
             }
-            uc ucVar = this.m;
-            if (ucVar != null) {
-                AndroidUtilities.cancelRunOnUIThread(ucVar);
+            rc rcVar = this.m;
+            if (rcVar != null) {
+                AndroidUtilities.cancelRunOnUIThread(rcVar);
                 this.m = null;
             }
             Sensor sensor2 = this.d;
             if (sensor2 != null) {
                 sensorManager.unregisterListener(this.p, sensor2);
             }
-            uc ucVar2 = this.o;
-            if (ucVar2 != null) {
-                AndroidUtilities.cancelRunOnUIThread(ucVar2);
+            rc rcVar2 = this.o;
+            if (rcVar2 != null) {
+                AndroidUtilities.cancelRunOnUIThread(rcVar2);
                 this.o = null;
             }
             Sensor sensor3 = this.g;
@@ -75,18 +75,18 @@ public final class a1 {
             if (sensor4 != null) {
                 sensorManager.unregisterListener(y0Var, sensor4);
             }
-            uc ucVar3 = this.q;
-            if (ucVar3 != null) {
-                AndroidUtilities.cancelRunOnUIThread(ucVar3);
+            rc rcVar3 = this.q;
+            if (rcVar3 != null) {
+                AndroidUtilities.cancelRunOnUIThread(rcVar3);
                 this.q = null;
             }
             Sensor sensor5 = this.i;
             if (sensor5 != null) {
                 sensorManager.unregisterListener(this.t, sensor5);
             }
-            uc ucVar4 = this.s;
-            if (ucVar4 != null) {
-                AndroidUtilities.cancelRunOnUIThread(ucVar4);
+            rc rcVar4 = this.s;
+            if (rcVar4 != null) {
+                AndroidUtilities.cancelRunOnUIThread(rcVar4);
                 this.s = null;
             }
         }
@@ -140,9 +140,9 @@ public final class a1 {
         y0 y0Var = this.r;
         if (z10) {
             if (this.i != null) {
-                uc ucVar = this.s;
-                if (ucVar != null) {
-                    AndroidUtilities.cancelRunOnUIThread(ucVar);
+                rc rcVar = this.s;
+                if (rcVar != null) {
+                    AndroidUtilities.cancelRunOnUIThread(rcVar);
                     this.s = null;
                 }
                 if (!this.l && (sensor = this.i) != null) {
@@ -167,9 +167,9 @@ public final class a1 {
             }
         } else {
             if (this.f != null || this.g != null) {
-                uc ucVar2 = this.q;
-                if (ucVar2 != null) {
-                    AndroidUtilities.cancelRunOnUIThread(ucVar2);
+                rc rcVar2 = this.q;
+                if (rcVar2 != null) {
+                    AndroidUtilities.cancelRunOnUIThread(rcVar2);
                     this.q = null;
                 }
                 if (!this.l) {
@@ -212,9 +212,9 @@ public final class a1 {
         if (!this.l) {
             sensorManager.unregisterListener(this.n, sensor);
         }
-        uc ucVar = this.m;
-        if (ucVar != null) {
-            AndroidUtilities.cancelRunOnUIThread(ucVar);
+        rc rcVar = this.m;
+        if (rcVar != null) {
+            AndroidUtilities.cancelRunOnUIThread(rcVar);
             this.m = null;
         }
         this.b = null;
@@ -233,9 +233,9 @@ public final class a1 {
         if (!this.l) {
             sensorManager.unregisterListener(this.p, sensor);
         }
-        uc ucVar = this.o;
-        if (ucVar != null) {
-            AndroidUtilities.cancelRunOnUIThread(ucVar);
+        rc rcVar = this.o;
+        if (rcVar != null) {
+            AndroidUtilities.cancelRunOnUIThread(rcVar);
             this.o = null;
         }
         this.d = null;
@@ -265,14 +265,14 @@ public final class a1 {
                 sensorManager.unregisterListener(this.t, sensor3);
             }
         }
-        uc ucVar = this.q;
-        if (ucVar != null) {
-            AndroidUtilities.cancelRunOnUIThread(ucVar);
+        rc rcVar = this.q;
+        if (rcVar != null) {
+            AndroidUtilities.cancelRunOnUIThread(rcVar);
             this.q = null;
         }
-        uc ucVar2 = this.s;
-        if (ucVar2 != null) {
-            AndroidUtilities.cancelRunOnUIThread(ucVar2);
+        rc rcVar2 = this.s;
+        if (rcVar2 != null) {
+            AndroidUtilities.cancelRunOnUIThread(rcVar2);
             this.s = null;
         }
         this.g = null;

@@ -1,9 +1,9 @@
 package org.telegram.ui.Components.voip;
 
 import android.animation.ValueAnimator;
-import org.telegram.ui.ui1;
+import org.telegram.ui.mi1;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -33,12 +33,12 @@ public final /* synthetic */ class x implements ValueAnimator.AnimatorUpdateList
                 m0Var.invalidate();
                 break;
             case 1:
-                ui1 ui1Var = (ui1) this.e;
+                mi1 mi1Var = (mi1) this.e;
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ui1Var.f1 = com.google.android.gms.internal.vision.e2.z(1.0f, floatValue2, 1.0f, this.b * floatValue2);
-                ui1Var.Y0 = this.c * floatValue2;
-                ui1Var.Z0 = this.d * floatValue2;
-                ui1Var.s.invalidate();
+                mi1Var.f1 = com.google.android.gms.internal.vision.e2.z(1.0f, floatValue2, 1.0f, this.b * floatValue2);
+                mi1Var.Y0 = this.c * floatValue2;
+                mi1Var.Z0 = this.d * floatValue2;
+                mi1Var.s.invalidate();
                 break;
             default:
                 sg.e eVar = (sg.e) this.e;

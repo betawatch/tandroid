@@ -1,30 +1,47 @@
 package org.telegram.ui.ActionBar;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+import android.graphics.Point;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageLoader;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class a4 {
-    public static final a4 a;
-    public static final a4 b;
-    public static final a4 c;
-    public static final /* synthetic */ a4[] d;
+public final /* synthetic */ class a4 implements Utilities.Callback {
+    public final /* synthetic */ Utilities.Callback a;
+    public final /* synthetic */ TLRPC.WallPaper b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ long e;
 
-    static {
-        a4 a4Var = new a4("NONE", 0);
-        a = a4Var;
-        a4 a4Var2 = new a4("VERTICAL", 1);
-        b = a4Var2;
-        a4 a4Var3 = new a4("FULL", 2);
-        c = a4Var3;
-        d = new a4[]{a4Var, a4Var2, a4Var3};
+    public /* synthetic */ a4(Utilities.Callback callback, TLRPC.WallPaper wallPaper, int i10, int i11, long j3) {
+        this.a = callback;
+        this.b = wallPaper;
+        this.c = i10;
+        this.d = i11;
+        this.e = j3;
     }
 
-    public static a4 valueOf(String str) {
-        return (a4) Enum.valueOf(a4.class, str);
-    }
-
-    public static a4[] values() {
-        return (a4[]) d.clone();
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        dg.a aVar = (dg.a) obj;
+        Utilities.Callback callback = this.a;
+        if (aVar != null) {
+            callback.run(aVar);
+            return;
+        }
+        TLRPC.WallPaper wallPaper = this.b;
+        ImageLocation forDocument = ImageLocation.getForDocument(wallPaper.document);
+        ImageReceiver imageReceiver = new ImageReceiver();
+        imageReceiver.setAllowLoadingOnAttachedOnly(false);
+        Point point = AndroidUtilities.displaySize;
+        int min = Math.min(point.x, point.y);
+        Point point2 = AndroidUtilities.displaySize;
+        imageReceiver.setImage(forDocument, (min / AndroidUtilities.density) + "_" + (Math.max(point2.x, point2.y) / AndroidUtilities.density) + "_f", null, ".jpg", wallPaper, 1);
+        imageReceiver.setDelegate(new org.telegram.tgnet.g(this.c, this.d, this.e, callback));
+        ImageLoader.getInstance().loadImageForImageReceiver(imageReceiver);
     }
 }

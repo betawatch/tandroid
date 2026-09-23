@@ -1,25 +1,37 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.messenger.ChatObject;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Canvas;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class mf1 extends org.telegram.ui.Components.b70 {
-    public final /* synthetic */ long A0;
-    public final /* synthetic */ of1 B0;
+public final class mf1 extends FrameLayout {
+    public TextView a;
+    public float b;
+    public boolean c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mf1(of1 of1Var, Context context, int i10, a0.i iVar, long j3, org.telegram.ui.ActionBar.n2 n2Var, long j10) {
-        super(context, i10, iVar, j3, n2Var, null);
-        this.B0 = of1Var;
-        this.A0 = j10;
-    }
-
-    @Override // org.telegram.ui.Components.b70
-    public final boolean X() {
-        TLRPC.Chat chat = this.B0.b.getMessagesController().getChat(Long.valueOf(this.A0));
-        return chat != null && ChatObject.canUserDoAdminAction(chat, 3);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        if (this.c) {
+            float f7 = this.b + 0.013333334f;
+            this.b = f7;
+            if (f7 > 1.0f) {
+                this.c = false;
+                this.b = 1.0f;
+            }
+        } else {
+            float f10 = this.b - 0.013333334f;
+            this.b = f10;
+            if (f10 < 0.0f) {
+                this.c = true;
+                this.b = 0.0f;
+            }
+        }
+        this.a.setTranslationX(org.telegram.ui.Components.rr.f.getInterpolation(this.b) * AndroidUtilities.dp(8.0f) * (LocaleController.isRTL ? -1 : 1));
+        invalidate();
     }
 }

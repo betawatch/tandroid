@@ -17,7 +17,7 @@ import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ba;
 import org.telegram.ui.je;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class o {
     public static volatile o[] m = new o[4];
@@ -139,7 +139,7 @@ public final class o {
             return tL_payments_starsRevenueStats;
         }
         TLRPC.TL_payments_getStarsRevenueStats tL_payments_getStarsRevenueStats = new TLRPC.TL_payments_getStarsRevenueStats();
-        tL_payments_getStarsRevenueStats.dark = org.telegram.ui.ActionBar.i6.I.q();
+        tL_payments_getStarsRevenueStats.dark = org.telegram.ui.ActionBar.h6.I.q();
         int i10 = this.a;
         tL_payments_getStarsRevenueStats.peer = MessagesController.getInstance(i10).getInputPeer(j3);
         ConnectionsManager.getInstance(i10).sendRequest(tL_payments_getStarsRevenueStats, new h(this, j3, 0));
@@ -164,7 +164,7 @@ public final class o {
         }
         TLRPC.TL_payments_getStarsRevenueStats tL_payments_getStarsRevenueStats = new TLRPC.TL_payments_getStarsRevenueStats();
         tL_payments_getStarsRevenueStats.ton = true;
-        tL_payments_getStarsRevenueStats.dark = org.telegram.ui.ActionBar.i6.I.q();
+        tL_payments_getStarsRevenueStats.dark = org.telegram.ui.ActionBar.h6.I.q();
         int i10 = this.a;
         tL_payments_getStarsRevenueStats.peer = MessagesController.getInstance(i10).getInputPeer(j3);
         TLRPC.ChatFull chatFull = MessagesController.getInstance(i10).getChatFull(-j3);
@@ -236,7 +236,7 @@ public final class o {
         if (str == null) {
             tL_payments_getStarsTransactions.offset = "";
         }
-        ConnectionsManager.getInstance(i11).sendRequest(tL_payments_getStarsTransactions, new ai.j8(this, k10, i10, j3, 6));
+        ConnectionsManager.getInstance(i11).sendRequest(tL_payments_getStarsTransactions, new ai.k8(this, k10, i10, j3, 6));
     }
 
     public final void q(TL_update.TL_updateStarsRevenueStatus tL_updateStarsRevenueStatus) {

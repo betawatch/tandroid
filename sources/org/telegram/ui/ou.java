@@ -1,92 +1,69 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.StatsController;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class ou extends FrameLayout {
-    public final ImageView a;
-    public final TextView b;
-    public final ImageView c;
-    public final TextView d;
-    public boolean e;
+public final /* synthetic */ class ou implements org.telegram.ui.Components.xk0, org.telegram.ui.ActionBar.a2 {
+    public final /* synthetic */ su a;
 
-    public ou(zu zuVar, Context context) {
-        super(context);
-        setBackgroundColor(zuVar.getThemedColor(org.telegram.ui.ActionBar.i6.d6));
-        ImageView imageView = new ImageView(context);
-        this.a = imageView;
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        addView(imageView, w7.x5.d(28, 28.0f, (LocaleController.isRTL ? 5 : 3) | 16, 18.0f, 0.0f, 18.0f, 0.0f));
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(0);
-        linearLayout.setWeightSum(2.0f);
-        addView(linearLayout, w7.x5.i(-1.0f, -2.0f, (LocaleController.isRTL ? 5 : 3) | 16, 64.0f, 0.0f, 20.0f, 0.0f));
-        LinearLayout linearLayout2 = new LinearLayout(context);
-        linearLayout2.setOrientation(0);
-        if (LocaleController.isRTL) {
-            linearLayout2.setGravity(5);
-        }
-        linearLayout2.setWeightSum(2.0f);
-        TextView textView = new TextView(context);
-        this.b = textView;
-        textView.setTextSize(1, 16.0f);
-        int i10 = org.telegram.ui.ActionBar.i6.G6;
-        textView.setTextColor(zuVar.getThemedColor(i10));
-        textView.setEllipsize(TextUtils.TruncateAt.END);
-        textView.setSingleLine();
-        textView.setLines(1);
-        ImageView imageView2 = new ImageView(context);
-        this.c = imageView2;
-        imageView2.setScaleType(ImageView.ScaleType.FIT_CENTER);
-        imageView2.setImageResource(R.drawable.arrow_more);
-        imageView2.setColorFilter(new PorterDuffColorFilter(zuVar.getThemedColor(i10), PorterDuff.Mode.MULTIPLY));
-        imageView2.setTranslationY(AndroidUtilities.dp(1.0f));
-        imageView2.setVisibility(8);
-        if (LocaleController.isRTL) {
-            linearLayout2.addView(imageView2, w7.x5.t(16, 16, 21, 3, 0, 0, 0));
-            linearLayout2.addView(textView, w7.x5.q(-2, -2, 21));
-        } else {
-            linearLayout2.addView(textView, w7.x5.q(-2, -2, 16));
-            linearLayout2.addView(imageView2, w7.x5.t(16, 16, 16, 3, 0, 0, 0));
-        }
-        TextView textView2 = new TextView(context);
-        this.d = textView2;
-        textView2.setTextSize(1, 16.0f);
-        textView2.setTextColor(zuVar.getThemedColor(org.telegram.ui.ActionBar.i6.o6));
-        textView2.setGravity(LocaleController.isRTL ? 3 : 5);
-        if (LocaleController.isRTL) {
-            linearLayout.addView(textView2, w7.x5.q(-2, -2, 19));
-            linearLayout.addView(linearLayout2, w7.x5.o(0, -2, 2.0f, 21));
-        } else {
-            linearLayout.addView(linearLayout2, w7.x5.o(0, -2, 2.0f, 16));
-            linearLayout.addView(textView2, w7.x5.q(-2, -2, 21));
+    public /* synthetic */ ou(su suVar) {
+        this.a = suVar;
+    }
+
+    @Override // org.telegram.ui.ActionBar.a2
+    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        int i11;
+        int i12;
+        int i13;
+        su suVar = this.a;
+        wu wuVar = suVar.o3;
+        ArrayList arrayList = suVar.f3;
+        arrayList.clear();
+        int i14 = 0;
+        while (true) {
+            ru[] ruVarArr = suVar.g3;
+            if (i14 >= ruVarArr.length) {
+                i11 = ((org.telegram.ui.ActionBar.n2) wuVar).currentAccount;
+                StatsController.getInstance(i11).resetStats(0);
+                i12 = ((org.telegram.ui.ActionBar.n2) wuVar).currentAccount;
+                StatsController.getInstance(i12).resetStats(1);
+                i13 = ((org.telegram.ui.ActionBar.n2) wuVar).currentAccount;
+                StatsController.getInstance(i13).resetStats(2);
+                suVar.X2 = true;
+                suVar.z1();
+                suVar.A1(true);
+                return;
+            }
+            ru ruVar = ruVarArr[i14];
+            if (ruVar.c > 0) {
+                arrayList.add(Integer.valueOf(ruVar.d));
+            }
+            i14++;
         }
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        if (this.e) {
-            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(64.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(64.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.i6.k0);
+    @Override // org.telegram.ui.Components.xk0
+    public int run() {
+        su suVar = this.a;
+        ArrayList arrayList = suVar.c3;
+        int i10 = 0;
+        while (true) {
+            if (i10 >= arrayList.size()) {
+                i10 = -1;
+                break;
+            }
+            if (((nu) arrayList.get(i10)).a == 5) {
+                break;
+            }
+            i10++;
         }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
+        if (i10 < 0) {
+            return -1;
+        }
+        suVar.Z2.h1(i10, AndroidUtilities.dp(60.0f));
+        return i10;
     }
 }

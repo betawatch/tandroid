@@ -17,9 +17,9 @@ import java.util.List;
 import java.util.Map;
 import k2.u;
 import u2.d0;
-import u2.h1;
+import u2.g1;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class l extends u2.a {
     public final c h;
@@ -196,7 +196,7 @@ public final class l extends u2.a {
 
     public final void v(p2.m mVar) {
         long j3;
-        h1 h1Var;
+        g1 g1Var;
         long j10;
         long j11;
         long j12;
@@ -262,7 +262,7 @@ public final class l extends u2.a {
                 }
                 j17 = j12;
             }
-            h1Var = new h1(j16, e02, j19, mVar.u, j18, j17, true, !z12, i10 == 2 && mVar.f, dVar2, i(), this.q);
+            g1Var = new g1(j16, e02, j19, mVar.u, j18, j17, true, !z12, i10 == 2 && mVar.f, dVar2, i(), this.q);
         } else {
             if (j14 == -9223372036854775807L || i0Var.isEmpty()) {
                 j3 = 0;
@@ -273,8 +273,8 @@ public final class l extends u2.a {
                 j3 = j14;
             }
             long j22 = mVar.u;
-            h1Var = new h1(j16, e02, j22, j22, 0L, j3, true, false, true, dVar2, i(), null);
+            g1Var = new g1(j16, e02, j22, j22, 0L, j3, true, false, true, dVar2, i(), null);
         }
-        n(h1Var);
+        n(g1Var);
     }
 }

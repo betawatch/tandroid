@@ -5,14 +5,14 @@ import android.graphics.Canvas;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Cells.ab;
-import org.telegram.ui.Components.f9;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Cells.bb;
+import org.telegram.ui.Components.h9;
 import tg.t;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class c extends ab {
+public final class c extends bb {
     public final a a0;
     public TL_stories.PrepaidGiveaway b0;
 
@@ -21,7 +21,7 @@ public final class c extends ab {
         this.a0 = new a(context);
     }
 
-    @Override // org.telegram.ui.Cells.ab
+    @Override // org.telegram.ui.Cells.bb
     public /* bridge */ /* synthetic */ int[] getColorKeys() {
         return null;
     }
@@ -30,33 +30,33 @@ public final class c extends ab {
         return this.b0;
     }
 
-    @Override // org.telegram.ui.Cells.ab, android.view.View
+    @Override // org.telegram.ui.Cells.bb, android.view.View
     public final void onDraw(Canvas canvas) {
         if (this.S) {
-            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(70.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(70.0f) : 0), getMeasuredHeight() - 1, i6.k0);
+            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(70.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(70.0f) : 0), getMeasuredHeight() - 1, h6.k0);
         }
     }
 
     public void setImage(TL_stories.PrepaidGiveaway prepaidGiveaway) {
         this.b0 = prepaidGiveaway;
         boolean z10 = prepaidGiveaway instanceof TL_stories.TL_prepaidStarsGiveaway;
-        f9 f9Var = this.E;
+        h9 h9Var = this.E;
         if (z10) {
-            f9Var.g(26);
+            h9Var.g(26);
             String valueOf = String.valueOf(((TL_stories.TL_prepaidStarsGiveaway) prepaidGiveaway).stars / 500);
             a aVar = this.a0;
             aVar.f = valueOf;
             aVar.e = aVar.a.measureText(valueOf);
             aVar.invalidateSelf();
         } else if (prepaidGiveaway instanceof TL_stories.TL_prepaidGiveaway) {
-            f9Var.g(16);
+            h9Var.g(16);
             int i10 = ((TL_stories.TL_prepaidGiveaway) prepaidGiveaway).months;
             if (i10 == 12) {
-                f9Var.i(-31392, -2796986);
+                h9Var.i(-31392, -2796986);
             } else if (i10 == 6) {
-                f9Var.i(-10703110, -12481584);
+                h9Var.i(-10703110, -12481584);
             } else {
-                f9Var.i(-6631068, -11945404);
+                h9Var.i(-6631068, -11945404);
             }
             String valueOf2 = String.valueOf(t.g() * prepaidGiveaway.quantity);
             a aVar2 = this.a0;

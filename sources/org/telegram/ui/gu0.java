@@ -1,33 +1,60 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class gu0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ hu0 a;
+public final class gu0 extends qg.f2 {
+    public final Path o0;
+    public boolean p0;
+    public final org.telegram.ui.Components.e6 q0;
+    public final /* synthetic */ PhotoViewer r0;
 
-    public gu0(hu0 hu0Var) {
-        this.a = hu0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public gu0(PhotoViewer photoViewer) {
+        super(photoViewer.p5, photoViewer.E, photoViewer.v2, photoViewer.b0);
+        this.r0 = photoViewer;
+        this.o0 = new Path();
+        this.q0 = new org.telegram.ui.Components.e6(this, 0L, 420L, org.telegram.ui.Components.rr.h);
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        super.onAnimationEnd(animator);
-        hu0 hu0Var = this.a;
-        PhotoViewer photoViewer = hu0Var.c;
-        photoViewer.n4 = 0;
-        photoViewer.F1();
-        photoViewer.L0.setAlpha(255);
-        photoViewer.e0.invalidate();
-        photoViewer.P0.setTranslationY(0.0f);
-        if (photoViewer.t4) {
-            PhotoViewer.a0(photoViewer, hu0Var.b.intValue());
+    public final void m(boolean z10, boolean z11) {
+        this.p0 = z10;
+        if (!z11) {
+            this.q0.f(z10, true);
         }
-        bv0 bv0Var = hu0Var.a;
-        if (bv0Var != null) {
-            bv0Var.d();
+        invalidate();
+    }
+
+    @Override // qg.f2, ci.d, android.view.View
+    public final void onDraw(Canvas canvas) {
+        canvas.save();
+        Path path = this.o0;
+        path.rewind();
+        path.addRoundRect(this.i0, AndroidUtilities.dp(this.m0), AndroidUtilities.dp(this.m0), Path.Direction.CW);
+        canvas.clipPath(path);
+        canvas.translate(-getX(), -getY());
+        PhotoViewer photoViewer = this.r0;
+        if (this == photoViewer.v5 || this == photoViewer.w5) {
+            canvas.translate(-photoViewer.u5.getX(), -photoViewer.u5.getY());
         }
+        photoViewer.T0(canvas, this.h0, -13948117, 855638016, false, true, false);
+        float e = this.q0.e(this.p0);
+        if (e > 0.0f) {
+            canvas.drawColor(org.telegram.ui.ActionBar.h6.l1(e, -1));
+        }
+        setTextColor(i0.a.d(e, -1, -16777216));
+        canvas.restore();
+        super.onDraw(canvas);
+    }
+
+    @Override // android.view.View
+    public final void onDrawForeground(Canvas canvas) {
+        canvas.save();
+        canvas.clipPath(this.o0);
+        super.onDrawForeground(canvas);
+        canvas.restore();
     }
 }

@@ -20,9 +20,8 @@ import k2.u;
 import n4.y;
 import n6.l;
 import q9.n;
-import r9.k;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class h {
     public static final Object k = new Object();
@@ -55,7 +54,7 @@ public final class h {
         ArrayList g10 = new o0.a(12, context, new u(ComponentDiscoveryService.class, 19)).g();
         Trace.endSection();
         Trace.beginSection("Runtime");
-        k kVar = k.a;
+        r9.j jVar2 = r9.j.a;
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
         arrayList.addAll(g10);
@@ -69,7 +68,7 @@ public final class h {
         if ((Build.VERSION.SDK_INT >= 24 ? v.g(context) : true) && FirebaseInitProvider.b.get()) {
             arrayList2.add(q9.a.c(aVar, a.class, new Class[0]));
         }
-        q9.g gVar = new q9.g(kVar, arrayList, arrayList2, dVar);
+        q9.g gVar = new q9.g(jVar2, arrayList, arrayList2, dVar);
         this.d = gVar;
         Trace.endSection();
         this.g = new n(new d(0, this, context));

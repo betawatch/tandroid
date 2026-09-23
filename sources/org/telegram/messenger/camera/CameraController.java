@@ -1,8 +1,8 @@
 package org.telegram.messenger.camera;
 
-import ai.i5;
+import ai.h5;
 import ai.m3;
-import ai.p8;
+import ai.q8;
 import ai.s4;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -20,7 +20,7 @@ import android.text.TextUtils;
 import android.util.Base64;
 import ci.u1;
 import ci.y0;
-import i2.b1;
+import i2.c1;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
@@ -46,7 +46,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.SerializedData;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public class CameraController implements MediaRecorder.OnInfoListener {
     private static final int CORE_POOL_SIZE = 1;
@@ -65,7 +65,7 @@ public class CameraController implements MediaRecorder.OnInfoListener {
     private ArrayList<Runnable> onFinishCameraInitRunnables = new ArrayList<>();
     protected ThreadPoolExecutor threadPool = new ThreadPoolExecutor(1, 1, 60, TimeUnit.SECONDS, new LinkedBlockingQueue());
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class CompareSizesByArea implements Comparator<Size> {
         @Override // java.util.Comparator
         public int compare(Size size, Size size2) {
@@ -73,19 +73,19 @@ public class CameraController implements MediaRecorder.OnInfoListener {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public interface ErrorCallback {
         void onError(int i10, Camera camera, CameraSessionWrapper cameraSessionWrapper);
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public interface ICameraView {
         boolean startRecording(File file, Runnable runnable);
 
         void stopRecording();
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public interface VideoTakeCallback {
         void onFinishVideoRecording(String str, long j3);
     }
@@ -199,7 +199,7 @@ public class CameraController implements MediaRecorder.OnInfoListener {
                         bitmap = createVideoThumbnail;
                         file = file2;
                         SharedConfig.saveConfig();
-                        AndroidUtilities.runOnUIThread(new p8(this, file, bitmap, j10, 27));
+                        AndroidUtilities.runOnUIThread(new q8(this, file, bitmap, j10, 27));
                     } finally {
                     }
                 }
@@ -213,7 +213,7 @@ public class CameraController implements MediaRecorder.OnInfoListener {
             bitmap = null;
         }
         SharedConfig.saveConfig();
-        AndroidUtilities.runOnUIThread(new p8(this, file, bitmap, j10, 27));
+        AndroidUtilities.runOnUIThread(new q8(this, file, bitmap, j10, 27));
     }
 
     public static CameraController getInstance() {
@@ -1016,7 +1016,7 @@ public class CameraController implements MediaRecorder.OnInfoListener {
 
     public void openRound(CameraSession cameraSession, SurfaceTexture surfaceTexture, Runnable runnable, Runnable runnable2) {
         if (cameraSession != null && surfaceTexture != null) {
-            this.threadPool.execute(new i5(cameraSession, runnable2, surfaceTexture, runnable, 26));
+            this.threadPool.execute(new h5(cameraSession, runnable2, surfaceTexture, runnable, 26));
             return;
         }
         if (BuildVars.LOGS_ENABLED) {
@@ -1095,7 +1095,7 @@ public class CameraController implements MediaRecorder.OnInfoListener {
 
     public void close(CameraSession cameraSession, CountDownLatch countDownLatch, Runnable runnable, Runnable runnable2) {
         cameraSession.destroy();
-        this.threadPool.execute(new i5(runnable, cameraSession, countDownLatch, runnable2, 27));
+        this.threadPool.execute(new h5(runnable, cameraSession, countDownLatch, runnable2, 27));
         if (countDownLatch != null) {
             try {
                 countDownLatch.await();
@@ -1113,7 +1113,7 @@ public class CameraController implements MediaRecorder.OnInfoListener {
             this.recordingCurrentCameraView = iCameraView;
             this.onVideoTakeCallback = videoTakeCallback;
             this.recordedFile = file.getAbsolutePath();
-            this.threadPool.execute(new b1(this, obj, iCameraView, file, z11, runnable, 5));
+            this.threadPool.execute(new c1(this, obj, iCameraView, file, z11, runnable, 5));
             return;
         }
         if (obj instanceof CameraSession) {

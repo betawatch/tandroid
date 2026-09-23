@@ -1,6 +1,6 @@
 package m4;
 
-import ai.r5;
+import ai.q5;
 import android.app.PendingIntent;
 import android.content.ComponentName;
 import android.content.Context;
@@ -32,7 +32,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class l0 extends n4.p {
     public static final int w;
@@ -51,7 +51,7 @@ public final class l0 extends n4.p {
     public final Bundle r;
     public e9.i0 s;
     public e9.i0 t;
-    public n1 u;
+    public i1 u;
     public b2.x0 v;
 
     static {
@@ -65,7 +65,7 @@ public final class l0 extends n4.p {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public l0(a0 a0Var, Uri uri, Handler handler, Bundle bundle, e9.i0 i0Var, e9.i0 i0Var2, n1 n1Var, b2.x0 x0Var, Bundle bundle2) {
+    public l0(a0 a0Var, Uri uri, Handler handler, Bundle bundle, e9.i0 i0Var, e9.i0 i0Var2, i1 i1Var, b2.x0 x0Var, Bundle bundle2) {
         ComponentName componentName;
         ComponentName J;
         PendingIntent foregroundService;
@@ -75,7 +75,7 @@ public final class l0 extends n4.p {
         boolean z10 = true;
         this.s = i0Var;
         this.t = i0Var2;
-        this.u = n1Var;
+        this.u = i1Var;
         this.v = x0Var;
         this.r = new Bundle(bundle2);
         Context context = a0Var.f;
@@ -271,25 +271,25 @@ public final class l0 extends n4.p {
         H(3, new b0(this, 6), ((n4.r) this.k.b).c(), true);
     }
 
-    public final n4.h0 G(k1 k1Var) {
+    public final n4.h0 G(f1 f1Var) {
         int i10;
         int i11;
         long j3;
         String str;
         int i12;
         long j10;
-        b2.u0 W = k1Var.W();
+        b2.u0 W = f1Var.W();
         int i13 = 1;
-        boolean z10 = k1Var.m0(16) && !k1Var.M0();
-        boolean z11 = W != null || e2.d0.a0(k1Var, this.n);
+        boolean z10 = f1Var.m0(16) && !f1Var.M0();
+        boolean z11 = W != null || e2.d0.a0(f1Var, this.n);
         if (W != null) {
             i11 = 7;
         } else {
             int i14 = k.a;
-            if (k1Var.W() != null) {
+            if (f1Var.W() != null) {
                 i10 = 7;
             } else {
-                int d = k1Var.d();
+                int d = f1Var.d();
                 if (d == 1) {
                     i10 = 0;
                 } else if (d == 2) {
@@ -311,7 +311,7 @@ public final class l0 extends n4.p {
             }
             i11 = i10;
         }
-        b2.x0 a2 = w7.t.a(this.v, k1Var.t());
+        b2.x0 a2 = w7.t.a(this.v, f1Var.t());
         long j11 = 128;
         for (int i15 = 0; i15 < a2.a.a.size(); i15++) {
             int a10 = a2.a.a(i15);
@@ -373,27 +373,27 @@ public final class l0 extends n4.p {
             j11 &= -257;
         }
         long j12 = j11;
-        if (k1Var.m0(17)) {
-            int l02 = k1Var.l0();
+        if (f1Var.m0(17)) {
+            int l02 = f1Var.l0();
             int i16 = k.a;
             j3 = l02 == -1 ? -1L : l02;
         } else {
             j3 = -1;
         }
-        float f7 = k1Var.h().a;
-        float f10 = (k1Var.i0() && z10) ? f7 : 0.0f;
+        float f7 = f1Var.h().a;
+        float f10 = (f1Var.i0() && z10) ? f7 : 0.0f;
         Bundle bundle2 = W != null ? new Bundle(W.c) : new Bundle();
         bundle2.putAll(bundle);
         bundle2.putFloat("EXO_SPEED", f7);
-        b2.k0 P0 = k1Var.P0();
+        b2.k0 P0 = f1Var.P0();
         if (P0 != null) {
             String str2 = P0.a;
             if (!"".equals(str2)) {
                 bundle2.putString("androidx.media.PlaybackStateCompat.Extras.KEY_MEDIA_ID", str2);
             }
         }
-        long J0 = z10 ? k1Var.J0() : -1L;
-        long c02 = z10 ? k1Var.c0() : -1L;
+        long J0 = z10 ? f1Var.J0() : -1L;
+        long c02 = z10 ? f1Var.c0() : -1L;
         ArrayList arrayList = new ArrayList();
         long elapsedRealtime = SystemClock.elapsedRealtime();
         if (this.s.size() > 0) {
@@ -459,14 +459,14 @@ public final class l0 extends n4.p {
         e2.a.d("MediaSessionLegacyStub", "RemoteUserInfo is null, ignoring command=" + i10);
     }
 
-    public final void I(m1 m1Var, int i10, k0 k0Var, n4.a0 a0Var) {
+    public final void I(h1 h1Var, int i10, k0 k0Var, n4.a0 a0Var) {
         if (a0Var != null) {
-            e2.d0.U(this.g.l, new l3(this, m1Var, i10, a0Var, k0Var, 5));
+            e2.d0.U(this.g.l, new l3(this, h1Var, i10, a0Var, k0Var, 5));
             return;
         }
         StringBuilder sb2 = new StringBuilder("RemoteUserInfo is null, ignoring command=");
-        Object obj = m1Var;
-        if (m1Var == null) {
+        Object obj = h1Var;
+        if (h1Var == null) {
             obj = Integer.valueOf(i10);
         }
         sb2.append(obj);
@@ -522,8 +522,8 @@ public final class l0 extends n4.p {
         }
     }
 
-    public final void N(k1 k1Var) {
-        e2.d0.U(this.g.l, new f0(this, k1Var, 1));
+    public final void N(f1 f1Var) {
+        e2.d0.U(this.g.l, new f0(this, f1Var, 1));
     }
 
     @Override // n4.p
@@ -548,35 +548,35 @@ public final class l0 extends n4.p {
             return;
         }
         if (!str.equals("androidx.media3.session.SESSION_COMMAND_REQUEST_SESSION3_TOKEN") || resultReceiver == null) {
-            m1 m1Var = new m1(str, Bundle.EMPTY);
-            I(m1Var, 0, new r5(this, m1Var, bundle, resultReceiver), ((n4.r) this.k.b).c());
+            h1 h1Var = new h1(str, Bundle.EMPTY);
+            I(h1Var, 0, new q5(this, h1Var, bundle, resultReceiver), ((n4.r) this.k.b).c());
             return;
         }
-        r1 r1Var = this.g.j;
-        r1Var.getClass();
-        String str2 = r1.b;
+        m1 m1Var = this.g.j;
+        m1Var.getClass();
+        String str2 = m1.b;
         Bundle bundle2 = new Bundle();
-        s1 s1Var = r1Var.a;
-        if (s1Var != null) {
+        n1 n1Var = m1Var.a;
+        if (n1Var != null) {
             bundle2.putInt(str2, 0);
         } else {
             bundle2.putInt(str2, 1);
         }
-        String str3 = r1.c;
-        s1Var.getClass();
+        String str3 = m1.c;
+        n1Var.getClass();
         Bundle bundle3 = new Bundle();
-        bundle3.putInt(s1.i, s1Var.a);
-        bundle3.putInt(s1.j, 0);
-        bundle3.putInt(s1.k, s1Var.b);
-        bundle3.putString(s1.l, s1Var.d);
-        bundle3.putString(s1.m, s1Var.e);
-        bundle3.putBinder(s1.o, s1Var.f);
-        bundle3.putParcelable(s1.n, null);
-        bundle3.putBundle(s1.p, s1Var.g);
-        bundle3.putInt(s1.q, s1Var.c);
-        MediaSession.Token token = s1Var.h;
+        bundle3.putInt(n1.i, n1Var.a);
+        bundle3.putInt(n1.j, 0);
+        bundle3.putInt(n1.k, n1Var.b);
+        bundle3.putString(n1.l, n1Var.d);
+        bundle3.putString(n1.m, n1Var.e);
+        bundle3.putBinder(n1.o, n1Var.f);
+        bundle3.putParcelable(n1.n, null);
+        bundle3.putBundle(n1.p, n1Var.g);
+        bundle3.putInt(n1.q, n1Var.c);
+        MediaSession.Token token = n1Var.h;
         if (token != null) {
-            bundle3.putParcelable(s1.r, token);
+            bundle3.putParcelable(n1.r, token);
         }
         bundle2.putBundle(str3, bundle3);
         resultReceiver.send(0, bundle2);
@@ -587,8 +587,8 @@ public final class l0 extends n4.p {
         if (str.equals("androidx.media3.session.SESSION_COMMAND_MEDIA3_PLAY_REQUEST")) {
             return;
         }
-        m1 m1Var = new m1(str, Bundle.EMPTY);
-        I(m1Var, 0, new ah.b(this, m1Var, bundle), ((n4.r) this.k.b).c());
+        h1 h1Var = new h1(str, Bundle.EMPTY);
+        I(h1Var, 0, new ah.b(this, h1Var, bundle), ((n4.r) this.k.b).c());
     }
 
     @Override // n4.p

@@ -6,7 +6,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 final class PredefinedCommands {
     static {
@@ -188,8 +188,8 @@ final class PredefinedCommands {
         MacroInfo.Commands.put("doublebox", new PredefMacroInfo(175, 1));
         MacroInfo.Commands.put("phantom", new PredefMacroInfo(176, 1));
         MacroInfo.Commands.put("hphantom", new PredefMacroInfo(177, 1));
-        MacroInfo.Commands.put("vphantom", new PredefMacroInfo(MessagesStorage.LAST_DB_VERSION, 1));
-        MacroInfo.Commands.put("sp@breve", new PredefMacroInfo(179, 0));
+        MacroInfo.Commands.put("vphantom", new PredefMacroInfo(178, 1));
+        MacroInfo.Commands.put("sp@breve", new PredefMacroInfo(MessagesStorage.LAST_DB_VERSION, 0));
         MacroInfo.Commands.put("sp@hat", new PredefMacroInfo(180, 0));
         MacroInfo.Commands.put("definecolor", new PredefMacroInfo(181, 3));
         MacroInfo.Commands.put("textcolor", new PredefMacroInfo(182, 2));

@@ -4,10 +4,10 @@ import b2.s;
 import c3.h0;
 import g2.b0;
 import org.telegram.tgnet.ConnectionsManager;
-import u2.a1;
+import u2.z0;
 import v7.m7;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class m extends a {
     public final int E;
@@ -26,10 +26,10 @@ public final class m extends a {
         b0 b0Var = this.r;
         o0.a aVar = this.x;
         e2.d.h(aVar);
-        for (a1 a1Var : (a1[]) aVar.c) {
-            if (a1Var.F != 0) {
-                a1Var.F = 0L;
-                a1Var.z = true;
+        for (z0 z0Var : (z0[]) aVar.c) {
+            if (z0Var.F != 0) {
+                z0Var.F = 0L;
+                z0Var.z = true;
             }
         }
         h0 U = aVar.U(this.E);

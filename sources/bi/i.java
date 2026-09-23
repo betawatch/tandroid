@@ -3,14 +3,14 @@ package bi;
 import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 import org.telegram.ui.Cells.u7;
-import org.telegram.ui.Components.e61;
+import org.telegram.ui.Components.d61;
 import org.telegram.ui.Components.jv0;
-import org.telegram.ui.Components.nz;
+import org.telegram.ui.Components.oz;
 import s4.z0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class i extends nz {
+public final class i extends oz {
     public final /* synthetic */ int X = 0;
     public final Object Y;
 
@@ -29,7 +29,7 @@ public final class i extends nz {
         }
     }
 
-    @Override // org.telegram.ui.Components.nz
+    @Override // org.telegram.ui.Components.oz
     public jv0 D1(int i10) {
         switch (this.X) {
             case 0:
@@ -43,11 +43,11 @@ public final class i extends nz {
     }
 
     @Override // s4.s, s4.o0
-    public void U(of.e eVar, z0 z0Var, View view, s0.c cVar) {
+    public void U(of.e eVar, z0 z0Var, View view, s0.d dVar) {
         switch (this.X) {
             case 0:
-                super.U(eVar, z0Var, view, cVar);
-                AccessibilityNodeInfo accessibilityNodeInfo = cVar.a;
+                super.U(eVar, z0Var, view, dVar);
+                AccessibilityNodeInfo accessibilityNodeInfo = dVar.a;
                 AccessibilityNodeInfo.CollectionItemInfo collectionItemInfo = accessibilityNodeInfo.getCollectionItemInfo();
                 n7.b bVar = collectionItemInfo != null ? new n7.b(collectionItemInfo) : null;
                 if (bVar != null) {
@@ -59,7 +59,7 @@ public final class i extends nz {
                 }
                 break;
             default:
-                super.U(eVar, z0Var, view, cVar);
+                super.U(eVar, z0Var, view, dVar);
                 break;
         }
     }
@@ -68,7 +68,7 @@ public final class i extends nz {
     public int W0(z0 z0Var) {
         switch (this.X) {
             case 1:
-                if (!((e61) this.Y).a3) {
+                if (!((d61) this.Y).a3) {
                     break;
                 } else {
                     break;
@@ -91,8 +91,8 @@ public final class i extends nz {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i(e61 e61Var, int i10) {
+    public i(d61 d61Var, int i10) {
         super(i10, false);
-        this.Y = e61Var;
+        this.Y = d61Var;
     }
 }

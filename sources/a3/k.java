@@ -3,7 +3,7 @@ package a3;
 import android.content.Context;
 import android.os.Handler;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class k {
     public final Context a;
@@ -11,11 +11,11 @@ public final class k {
     public r2.k c;
     public long d;
     public Handler e;
-    public i2.b0 f;
+    public i2.c0 f;
     public int g;
 
     public k(Context context) {
         this.a = context;
-        this.c = new k2.c0(context, 21);
+        this.c = new k2.b0(context, 21);
     }
 }

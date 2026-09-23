@@ -9,7 +9,7 @@ import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class s7 {
     public final TextPaint a;
@@ -20,7 +20,7 @@ public final class s7 {
     public final SparseArray f;
     public final HashMap g;
 
-    public s7(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+    public s7(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
         TextPaint textPaint = new TextPaint(1);
         this.a = textPaint;
         Paint paint = new Paint();
@@ -37,6 +37,6 @@ public final class s7 {
         Drawable mutate2 = context.getDrawable(R.drawable.filled_views).mutate();
         this.d = mutate2;
         mutate2.setBounds(0, 0, (int) (mutate2.getIntrinsicWidth() * 0.7f), (int) (mutate2.getIntrinsicHeight() * 0.7f));
-        paint.setColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.Lh, e6Var));
+        paint.setColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Lh, d6Var));
     }
 }

@@ -1,26 +1,47 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class ti extends org.telegram.ui.Components.jo {
-    public final /* synthetic */ bo M;
+public final class ti implements Runnable {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ org.telegram.ui.Components.gk0 e;
+    public final /* synthetic */ float f;
+    public final /* synthetic */ float h;
+    public final /* synthetic */ zg.p0 n;
+    public final /* synthetic */ MessageObject r;
+    public final /* synthetic */ xn s;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ti(bo boVar, Activity activity, int i10, TLRPC.Document document, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(activity, i10, document, e6Var);
-        this.M = boVar;
+    public ti(xn xnVar, boolean z10, boolean z11, int i10, boolean z12, org.telegram.ui.Components.gk0 gk0Var, float f7, float f10, zg.p0 p0Var, MessageObject messageObject) {
+        this.s = xnVar;
+        this.a = z10;
+        this.b = z11;
+        this.c = i10;
+        this.d = z12;
+        this.e = gk0Var;
+        this.f = f7;
+        this.h = f10;
+        this.n = p0Var;
+        this.r = messageObject;
     }
 
-    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        float y3 = getY();
-        bo boVar = this.M;
-        float y10 = boVar.R0.getY() + y3;
-        this.J = boVar.X0.getBackgroundSizeY();
-        this.I = y10;
+    @Override // java.lang.Runnable
+    public final void run() {
+        if (!this.a) {
+            xn xnVar = this.s;
+            if (xnVar.bc != null) {
+                xnVar.bc = null;
+                if (this.b) {
+                    xnVar.h8(new si(this, this.c, this.d, this.e, this.f, this.h, this.n, 0));
+                } else {
+                    xnVar.h8(new rh(4, this, this.r));
+                }
+                xnVar.A7(true);
+            }
+        }
     }
 }

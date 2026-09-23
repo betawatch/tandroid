@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class ms0 extends g.p {
     public final /* synthetic */ int c;
@@ -37,11 +37,11 @@ public final class ms0 extends g.p {
                 return 1;
             default:
                 bi.i iVar = (bi.i) this.d;
-                w51 w51Var = ((e61) this.e).Y2;
-                if (w51Var == null) {
+                v51 v51Var = ((d61) this.e).Y2;
+                if (v51Var == null) {
                     return iVar.J;
                 }
-                i51 G = w51Var.G(i10);
+                h51 G = v51Var.G(i10);
                 return (G == null || (i11 = G.u) == -1) ? iVar.J : i11;
         }
     }

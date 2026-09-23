@@ -2,9 +2,10 @@ package e6;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.telegram.messenger.BuildConfig;
 import org.telegram.ui.Cells.q3;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public abstract class e {
     public static String a(String str, Object... objArr) {
@@ -21,7 +22,7 @@ public abstract class e {
             }
             Object obj = objArr[i11];
             if (obj == null) {
-                j3 = "null";
+                j3 = BuildConfig.BETA_URL;
             } else {
                 try {
                     j3 = obj.toString();

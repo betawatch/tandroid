@@ -1,32 +1,33 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class m81 extends UndoView {
-    public final /* synthetic */ SessionsActivity f0;
+public final /* synthetic */ class m81 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ x81 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m81(SessionsActivity sessionsActivity, Context context) {
-        super(context);
-        this.f0 = sessionsActivity;
+    public /* synthetic */ m81(x81 x81Var, int i10) {
+        this.a = i10;
+        this.b = x81Var;
     }
 
-    @Override // org.telegram.ui.Components.UndoView
-    public final void e(int i10, boolean z10) {
-        int i11;
-        if (!z10 && getCurrentInfoObject() != null) {
-            TLRPC.TL_authorization tL_authorization = (TLRPC.TL_authorization) getCurrentInfoObject();
-            TL_account.resetAuthorization resetauthorization = new TL_account.resetAuthorization();
-            resetauthorization.hash = tL_authorization.hash;
-            i11 = ((org.telegram.ui.ActionBar.n2) this.f0).currentAccount;
-            ConnectionsManager.getInstance(i11).sendRequest(resetauthorization, new bc0(19, this, tL_authorization));
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                TLRPC.TL_help_dismissSuggestion tL_help_dismissSuggestion = new TLRPC.TL_help_dismissSuggestion();
+                tL_help_dismissSuggestion.suggestion = "VALIDATE_PASSWORD";
+                tL_help_dismissSuggestion.peer = new TLRPC.TL_inputPeerEmpty();
+                x81 x81Var = this.b;
+                x81Var.getConnectionsManager().sendRequest(tL_help_dismissSuggestion, new m81(x81Var, 1));
+                break;
+            default:
+                this.b.getMessagesController().loadAppConfig();
+                break;
         }
-        super.e(i10, z10);
     }
 }

@@ -1,41 +1,30 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AnimationNotificationsLocker;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class hr extends s4.j {
-    public final AnimationNotificationsLocker F = new AnimationNotificationsLocker();
-    public final /* synthetic */ ur G;
+public final class hr implements w60 {
+    public final /* synthetic */ b70 a;
+    public final /* synthetic */ qr b;
 
-    public hr(ur urVar) {
-        this.G = urVar;
+    public hr(qr qrVar, b70 b70Var) {
+        this.b = qrVar;
+        this.a = b70Var;
     }
 
-    @Override // s4.j
-    public final void N() {
-        this.F.unlock();
+    @Override // org.telegram.ui.w60
+    public final void i(TLRPC.User user) {
+        this.b.t0(user.id, null, null, null, "", true, 0, false);
     }
 
-    @Override // s4.j
-    public final void O() {
-        this.G.c.invalidate();
-    }
-
-    @Override // s4.j
-    public final void P(s4.c1 c1Var) {
-        this.G.c.invalidate();
-    }
-
-    @Override // s4.j, s4.m0
-    public final void m() {
-        boolean isEmpty = this.p.isEmpty();
-        boolean isEmpty2 = this.r.isEmpty();
-        boolean isEmpty3 = this.s.isEmpty();
-        boolean isEmpty4 = this.q.isEmpty();
-        if (!isEmpty || !isEmpty2 || !isEmpty4 || !isEmpty3) {
-            this.F.lock();
+    @Override // org.telegram.ui.w60
+    public final void j(int i10, ArrayList arrayList) {
+        if (this.a.getParentActivity() == null) {
+            return;
         }
-        super.m();
+        qr qrVar = this.b;
+        qrVar.getMessagesController().addUsersToChat(qrVar.r, qrVar, arrayList, i10, new h3(this, 2), new gr(0), null);
     }
 }

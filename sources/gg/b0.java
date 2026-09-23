@@ -2,10 +2,10 @@ package gg;
 
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.dt0;
 import org.telegram.ui.ub;
+import org.telegram.ui.ws0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class b0 extends s4.c0 {
     public final /* synthetic */ int I;
@@ -45,9 +45,9 @@ public final class b0 extends s4.c0 {
                 w0(oVar);
                 break;
             case 15:
-                dt0 dt0Var = new dt0(recyclerView.getContext());
-                dt0Var.a = i10;
-                w0(dt0Var);
+                ws0 ws0Var = new ws0(recyclerView.getContext());
+                ws0Var.a = i10;
+                w0(ws0Var);
                 break;
             default:
                 super.v0(recyclerView, z0Var, i10);

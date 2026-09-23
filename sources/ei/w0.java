@@ -1,6 +1,6 @@
 package ei;
 
-import ai.r5;
+import ai.q5;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -10,7 +10,7 @@ import android.location.LocationManager;
 import android.os.Build;
 import android.text.SpannableStringBuilder;
 import android.util.Pair;
-import ci.ld;
+import ci.id;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -27,12 +27,12 @@ import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.de0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.iy0;
+import org.telegram.ui.by0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class w0 {
     public static final HashMap g = new HashMap();
@@ -167,18 +167,18 @@ public final class w0 {
         return false;
     }
 
-    public final void j(final org.telegram.ui.web.r rVar) {
+    public final void j(final org.telegram.ui.web.q qVar) {
         Activity f7 = f();
         if (f7 == null) {
             return;
         }
         if (!d()) {
             Boolean bool = Boolean.FALSE;
-            rVar.run(bool, bool);
+            qVar.run(bool, bool);
             return;
         }
         if (a() && (this.d || this.e)) {
-            rVar.run(Boolean.FALSE, Boolean.TRUE);
+            qVar.run(Boolean.FALSE, Boolean.TRUE);
             return;
         }
         final int i10 = 1;
@@ -191,7 +191,7 @@ public final class w0 {
         org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
         b2Var.T = replaceTags;
         v0 v0Var = new v0(this.a, UserConfig.getInstance(i11).getCurrentUser(), user);
-        int w02 = i6.w0(null, i6.L5, false);
+        int w02 = h6.w0(null, h6.L5, false);
         b2Var.b0 = v0Var;
         b2Var.c0 = w02;
         if (a() || !i()) {
@@ -210,9 +210,9 @@ public final class w0 {
                             w0Var.getClass();
                             zArr[0] = true;
                             boolean a2 = w0Var.a();
-                            org.telegram.ui.web.r rVar2 = rVar;
+                            org.telegram.ui.web.q qVar2 = qVar;
                             if (!a2) {
-                                de0.g(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ci.m2(8, w0Var, rVar2));
+                                de0.g(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ai.g3(9, w0Var, qVar2));
                                 break;
                             } else {
                                 w0Var.d = true;
@@ -223,7 +223,7 @@ public final class w0 {
                                     ((Runnable) it.next()).run();
                                 }
                                 Boolean bool2 = Boolean.TRUE;
-                                rVar2.run(bool2, bool2);
+                                qVar2.run(bool2, bool2);
                                 break;
                             }
                         default:
@@ -239,7 +239,7 @@ public final class w0 {
                                 while (it2.hasNext()) {
                                     ((Runnable) it2.next()).run();
                                 }
-                                rVar.run(Boolean.TRUE, Boolean.FALSE);
+                                qVar.run(Boolean.TRUE, Boolean.FALSE);
                                 break;
                             }
                             break;
@@ -247,7 +247,7 @@ public final class w0 {
                 }
             });
         } else {
-            alertDialog$Builder.k(LocaleController.getString(R.string.BotLocationPermissionSettings), new r5(f7, zArr, rVar, 7));
+            alertDialog$Builder.k(LocaleController.getString(R.string.BotLocationPermissionSettings), new q5(f7, zArr, qVar, 7));
         }
         alertDialog$Builder.h(LocaleController.getString(R.string.BotLocationPermissionDecline), new org.telegram.ui.ActionBar.a2(this) { // from class: ei.s0
             public final /* synthetic */ w0 b;
@@ -264,9 +264,9 @@ public final class w0 {
                         w0Var.getClass();
                         zArr[0] = true;
                         boolean a2 = w0Var.a();
-                        org.telegram.ui.web.r rVar2 = rVar;
+                        org.telegram.ui.web.q qVar2 = qVar;
                         if (!a2) {
-                            de0.g(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ci.m2(8, w0Var, rVar2));
+                            de0.g(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ai.g3(9, w0Var, qVar2));
                             break;
                         } else {
                             w0Var.d = true;
@@ -277,7 +277,7 @@ public final class w0 {
                                 ((Runnable) it.next()).run();
                             }
                             Boolean bool2 = Boolean.TRUE;
-                            rVar2.run(bool2, bool2);
+                            qVar2.run(bool2, bool2);
                             break;
                         }
                     default:
@@ -293,14 +293,14 @@ public final class w0 {
                             while (it2.hasNext()) {
                                 ((Runnable) it2.next()).run();
                             }
-                            rVar.run(Boolean.TRUE, Boolean.FALSE);
+                            qVar.run(Boolean.TRUE, Boolean.FALSE);
                             break;
                         }
                         break;
                 }
             }
         });
-        alertDialog$Builder.j(new t0(this, zArr, rVar, i12));
+        alertDialog$Builder.j(new t0(this, zArr, qVar, i12));
         alertDialog$Builder.o();
     }
 
@@ -346,9 +346,9 @@ public final class w0 {
         if (context != null) {
             try {
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context);
-                alertDialog$Builder.m(R.raw.permission_request_location, 72, i6.w0(null, i6.L5, false), null);
+                alertDialog$Builder.m(R.raw.permission_request_location, 72, h6.w0(null, h6.L5, false), null);
                 alertDialog$Builder.a.T = LocaleController.getString(R.string.GpsDisabledAlertText);
-                alertDialog$Builder.k(LocaleController.getString(R.string.Enable), new ld(context, 1));
+                alertDialog$Builder.k(LocaleController.getString(R.string.Enable), new id(context, 1));
                 alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
                 alertDialog$Builder.o();
             } catch (Exception e10) {
@@ -367,7 +367,7 @@ public final class w0 {
         edit.apply();
     }
 
-    public final void m(boolean z10, final iy0 iy0Var) {
+    public final void m(boolean z10, final by0 by0Var) {
         final int i10 = 1;
         this.d = true;
         if (!z10 || a()) {
@@ -376,8 +376,8 @@ public final class w0 {
             while (it.hasNext()) {
                 ((Runnable) it.next()).run();
             }
-            if (iy0Var != null) {
-                iy0Var.run();
+            if (by0Var != null) {
+                by0Var.run();
             }
         } else {
             Activity f7 = f();
@@ -392,7 +392,7 @@ public final class w0 {
             org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
             b2Var.T = replaceTags;
             v0 v0Var = new v0(this.a, UserConfig.getInstance(i11).getCurrentUser(), user);
-            int w02 = i6.w0(null, i6.L5, false);
+            int w02 = h6.w0(null, h6.L5, false);
             b2Var.b0 = v0Var;
             b2Var.c0 = w02;
             if (i()) {
@@ -411,7 +411,7 @@ public final class w0 {
                             case 0:
                                 w0 w0Var = this.b;
                                 if (!w0Var.a()) {
-                                    de0.g(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ci.m2(9, w0Var, iy0Var));
+                                    de0.g(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ai.g3(10, w0Var, by0Var));
                                     break;
                                 } else {
                                     w0Var.d = true;
@@ -432,7 +432,7 @@ public final class w0 {
                                 while (it3.hasNext()) {
                                     ((Runnable) it3.next()).run();
                                 }
-                                Runnable runnable = iy0Var;
+                                Runnable runnable = by0Var;
                                 if (runnable != null) {
                                     runnable.run();
                                     break;
@@ -455,7 +455,7 @@ public final class w0 {
                         case 0:
                             w0 w0Var = this.b;
                             if (!w0Var.a()) {
-                                de0.g(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ci.m2(9, w0Var, iy0Var));
+                                de0.g(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ai.g3(10, w0Var, by0Var));
                                 break;
                             } else {
                                 w0Var.d = true;
@@ -476,7 +476,7 @@ public final class w0 {
                             while (it3.hasNext()) {
                                 ((Runnable) it3.next()).run();
                             }
-                            Runnable runnable = iy0Var;
+                            Runnable runnable = by0Var;
                             if (runnable != null) {
                                 runnable.run();
                                 break;

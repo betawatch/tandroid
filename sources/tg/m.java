@@ -7,29 +7,29 @@ import android.graphics.Path;
 import android.graphics.RectF;
 import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.i81;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.h81;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class m extends i81 {
+public final class m extends h81 {
     public final Path T;
     public final Paint U;
     public boolean V;
     public boolean W;
     public final boolean a0;
     public final /* synthetic */ a1 b0;
-    public final /* synthetic */ e6 c0;
+    public final /* synthetic */ d6 c0;
     public final /* synthetic */ b0 d0;
     public final /* synthetic */ o e0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m(o oVar, Context context, a1 a1Var, e6 e6Var, b0 b0Var) {
+    public m(o oVar, Context context, a1 a1Var, d6 d6Var, b0 b0Var) {
         super(context, null);
         this.e0 = oVar;
         this.b0 = a1Var;
-        this.c0 = e6Var;
+        this.c0 = d6Var;
         this.d0 = b0Var;
         this.T = new Path();
         this.U = new Paint(1);
@@ -41,7 +41,7 @@ public final class m extends i81 {
         float f7;
         o oVar = this.e0;
         m mVar = oVar.b;
-        int v02 = i6.v0(i6.h5, this.c0);
+        int v02 = h6.v0(h6.h5, this.c0);
         Paint paint = this.U;
         paint.setColor(v02);
         if (!this.V) {
@@ -78,12 +78,12 @@ public final class m extends i81 {
         canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.i81
+    @Override // org.telegram.ui.Components.h81
     public final float getAvailableTranslationX() {
         return (this.a0 || this.e0.d) ? getMeasuredWidth() : super.getAvailableTranslationX();
     }
 
-    @Override // org.telegram.ui.Components.i81
+    @Override // org.telegram.ui.Components.h81
     public final boolean i(MotionEvent motionEvent) {
         return this.e0.b.getCurrentPosition() == 1;
     }
@@ -102,13 +102,13 @@ public final class m extends i81 {
         }
     }
 
-    @Override // org.telegram.ui.Components.i81
+    @Override // org.telegram.ui.Components.h81
     public final void u() {
         this.V = false;
         this.e0.b.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.i81
+    @Override // org.telegram.ui.Components.h81
     public final void w(boolean z10) {
         o oVar = this.e0;
         m mVar = oVar.b;

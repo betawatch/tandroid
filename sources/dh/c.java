@@ -1,12 +1,14 @@
 package dh;
 
 import b2.z0;
+import e2.h;
 import e2.m;
-import org.telegram.ui.ActionBar.e6;
+import m4.f1;
+import org.telegram.ui.ActionBar.d6;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c implements d, m {
+public final /* synthetic */ class c implements d, m, h {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ int c;
@@ -17,8 +19,20 @@ public final /* synthetic */ class c implements d, m {
         this.c = i11;
     }
 
+    @Override // e2.h
+    public void accept(Object obj) {
+        switch (this.a) {
+            case 3:
+                ((f1) obj).M(this.b, this.c);
+                break;
+            default:
+                ((f1) obj).q0(this.b, this.c);
+                break;
+        }
+    }
+
     @Override // dh.d
-    public int g(e6 e6Var, boolean z10) {
+    public int g(d6 d6Var, boolean z10) {
         return z10 ? this.b : this.c;
     }
 

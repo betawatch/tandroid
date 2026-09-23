@@ -1,36 +1,82 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
+import android.widget.FrameLayout;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class uh0 extends org.telegram.ui.Components.hq0 {
-    public final /* synthetic */ vh0 b1;
+public final class uh0 extends org.telegram.ui.ActionBar.n2 {
+    public final org.telegram.ui.Components.da0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public uh0(vh0 vh0Var, Context context, String str, String str2, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, null, str, false, str2, false, e6Var);
-        this.b1 = vh0Var;
+    public uh0(long j3) {
+        super(null);
+        this.a = new org.telegram.ui.Components.da0(this, this, getLayoutContainer(), j3);
     }
 
-    @Override // org.telegram.ui.Components.hq0
-    public final void R0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        String formatString;
-        yh0 yh0Var = this.b1.K;
-        if (z10) {
-            if (iVar == null || iVar.m() != 1) {
-                formatString = LocaleController.formatString(R.string.InvLinkToChats, LocaleController.formatPluralString("Chats", i10, new Object[0]));
-            } else {
-                long j3 = ((TLRPC.Dialog) iVar.n(0)).id;
-                formatString = (j3 == 0 || j3 == yh0Var.getUserConfig().getClientUserId()) ? LocaleController.getString(R.string.InvLinkToSavedMessages) : LocaleController.formatString(R.string.InvLinkToUser, yh0Var.getMessagesController().getPeerName(j3, true));
-            }
-            org.telegram.ui.Components.oc Q = org.telegram.ui.Components.vc.a0(yh0Var).Q(R.raw.forward, 36, AndroidUtilities.replaceTags(formatString));
-            Q.r = false;
-            Q.k(true);
+    @Override // org.telegram.ui.ActionBar.n2
+    public final View createView(Context context) {
+        this.actionBar.setAllowOverlayTitle(true);
+        this.actionBar.setActionBarMenuOnItemClick(new s70(this, 8));
+        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
+        org.telegram.ui.ActionBar.k kVar = this.actionBar;
+        org.telegram.ui.Components.da0 da0Var = this.a;
+        kVar.setTitle(LocaleController.getString(da0Var.a ? R.string.SubscribeRequests : R.string.MemberRequests));
+        org.telegram.ui.ActionBar.v0 a2 = this.actionBar.n().a(0, R.drawable.outline_header_search);
+        a2.F();
+        a2.H = new hg.e2(this, 13);
+        a2.setSearchFieldHint(LocaleController.getString(R.string.Search));
+        a2.setVisibility(8);
+        org.telegram.ui.ActionBar.n2 n2Var = da0Var.g;
+        if (da0Var.m == null) {
+            FrameLayout frameLayout = new FrameLayout(n2Var.getParentActivity());
+            da0Var.m = frameLayout;
+            frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.a7, n2Var.getResourceProvider()));
+            org.telegram.ui.Components.u00 b10 = da0Var.b();
+            da0Var.q = b10;
+            da0Var.m.addView(b10, -1, -1);
+            org.telegram.ui.Components.xw0 c10 = da0Var.c();
+            da0Var.o = c10;
+            da0Var.m.addView(c10, -1, -1);
+            org.telegram.ui.Components.xw0 a10 = da0Var.a();
+            da0Var.n = a10;
+            da0Var.m.addView(a10, w7.x5.c(-1.0f, -1));
+            n2Var.getParentActivity();
+            s4.c0 c0Var = new s4.c0();
+            org.telegram.ui.Components.ml0 ml0Var = new org.telegram.ui.Components.ml0(n2Var.getParentActivity(), null);
+            da0Var.p = ml0Var;
+            ml0Var.setAdapter(da0Var.f);
+            da0Var.p.p1();
+            da0Var.p.setLayoutManager(c0Var);
+            da0Var.p.setOnItemClickListener(new ai.g(da0Var, 19));
+            da0Var.p.setOnScrollListener(da0Var.D);
+            da0Var.p.setSelectorDrawableColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.i6, n2Var.getResourceProvider()));
+            da0Var.m.addView(da0Var.p, -1, -1);
+            s4.j jVar = new s4.j();
+            jVar.n(350L);
+            jVar.o(org.telegram.ui.Components.rr.h);
+            jVar.C = false;
+            jVar.m = false;
+            da0Var.p.setItemAnimator(jVar);
         }
+        FrameLayout frameLayout2 = da0Var.m;
+        this.actionBar.z(da0Var.p, false);
+        da0Var.e();
+        this.fragmentView = frameLayout2;
+        return frameLayout2;
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final boolean onBackPressed(boolean z10) {
+        wh.m mVar = this.a.s;
+        if (mVar == null) {
+            return true;
+        }
+        if (z10) {
+            mVar.e(false);
+        }
+        return false;
     }
 }

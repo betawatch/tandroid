@@ -2,37 +2,36 @@ package ci;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.fk0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class v5 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ fk0 b;
+    public final /* synthetic */ q6 b;
 
-    public /* synthetic */ v5(fk0 fk0Var, int i10) {
+    public /* synthetic */ v5(q6 q6Var, int i10) {
         this.a = i10;
-        this.b = fk0Var;
+        this.b = q6Var;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.removeFromParent(this.b);
+                q6 q6Var = this.b;
+                q6Var.b2 = 0.0f;
+                q6Var.Z1.setAlpha(1.0f);
+                q6Var.Z1.setVisibility(8);
+                q6Var.Z1.n();
                 break;
             case 1:
-                super.onAnimationEnd(animator);
-                this.b.L0.unlock();
+                this.b.p2.setTranslationY(0.0f);
                 break;
             default:
-                super.onAnimationEnd(animator);
-                fk0 fk0Var = this.b;
-                fk0Var.Q = null;
-                fk0Var.n0 = 0.0f;
-                fk0Var.l0 = null;
-                fk0Var.invalidate();
+                q6 q6Var2 = this.b;
+                q6Var2.s2 = false;
+                q6Var2.p2.setTranslationY(0.0f);
+                q6Var2.w0();
                 break;
         }
     }

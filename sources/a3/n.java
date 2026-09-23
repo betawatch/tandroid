@@ -1,6 +1,6 @@
 package a3;
 
-import ai.c8;
+import ai.e8;
 import android.content.Context;
 import android.graphics.Point;
 import android.media.MediaCodecInfo;
@@ -20,8 +20,8 @@ import b2.r0;
 import b2.v1;
 import b2.x1;
 import e9.a1;
-import i2.m1;
-import i2.o1;
+import i2.n1;
+import i2.p1;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -30,9 +30,8 @@ import java.util.List;
 import java.util.PriorityQueue;
 import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.TLObject;
-import u2.b1;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class n extends r2.r {
     public static final int[] N1 = {1920, 1600, 1440, 1280, 960, 854, 640, 540, 480};
@@ -77,7 +76,7 @@ public final class n extends r2.r {
     public int u1;
     public int v1;
     public int w1;
-    public o1 x1;
+    public p1 x1;
     public boolean y1;
     public long z1;
 
@@ -1689,9 +1688,9 @@ public final class n extends r2.r {
             j10 -= -this.J1;
         }
         if (j3 < -500000 && !z10) {
-            b1 b1Var = this.r;
-            b1Var.getClass();
-            int j11 = b1Var.j(j10 - this.v);
+            u2.a1 a1Var = this.r;
+            a1Var.getClass();
+            int j11 = a1Var.j(j10 - this.v);
             if (j11 != 0) {
                 PriorityQueue priorityQueue = this.f1;
                 if (z11) {
@@ -1813,7 +1812,7 @@ public final class n extends r2.r {
         List B0 = B0(this.X0, iVar, sVar, z10, this.F1);
         HashMap hashMap = r2.w.a;
         ArrayList arrayList = new ArrayList(B0);
-        Collections.sort(arrayList, new c8(new k2.v(sVar, 27), 3));
+        Collections.sort(arrayList, new e8(new le.b(sVar, 28), 3));
         return arrayList;
     }
 
@@ -2167,7 +2166,7 @@ public final class n extends r2.r {
         this.L1 = false;
     }
 
-    @Override // i2.f, i2.i1
+    @Override // i2.f, i2.j1
     public final void c(int i10, Object obj) {
         if (i10 == 1) {
             J0(obj);
@@ -2280,18 +2279,18 @@ public final class n extends r2.r {
                 break;
             case 18:
                 boolean z10 = this.x1 != null;
-                o1 o1Var = (o1) obj;
-                this.x1 = o1Var;
-                if (z10 != (o1Var != null)) {
+                p1 p1Var = (p1) obj;
+                this.x1 = p1Var;
+                if (z10 != (p1Var != null)) {
                     w0(this.c0);
                     break;
                 }
                 break;
             default:
                 if (i10 == 11) {
-                    i2.i0 i0Var = (i2.i0) obj;
-                    i0Var.getClass();
-                    this.W = i0Var;
+                    i2.j0 j0Var = (i2.j0) obj;
+                    j0Var.getClass();
+                    this.W = j0Var;
                     break;
                 }
                 break;
@@ -2516,9 +2515,9 @@ public final class n extends r2.r {
     public final void p(boolean z10, boolean z11) {
         o0 o0Var;
         this.O0 = new i2.g();
-        m1 m1Var = this.d;
-        m1Var.getClass();
-        boolean z12 = m1Var.b;
+        n1 n1Var = this.d;
+        n1Var.getClass();
+        boolean z12 = n1Var.b;
         e2.d.g((z12 && this.G1 == 0) ? false : true);
         if (this.F1 != z12) {
             this.F1 = z12;
@@ -2794,7 +2793,7 @@ public final class n extends r2.r {
             if (!B02.isEmpty()) {
                 HashMap hashMap = r2.w.a;
                 ArrayList arrayList = new ArrayList(B02);
-                Collections.sort(arrayList, new c8(new k2.v(sVar, 27), i13));
+                Collections.sort(arrayList, new e8(new le.b(sVar, 28), i13));
                 r2.o oVar3 = (r2.o) arrayList.get(0);
                 if (oVar3.e(sVar) && oVar3.f(sVar)) {
                     i10 = 32;

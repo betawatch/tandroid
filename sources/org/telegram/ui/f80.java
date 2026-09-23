@@ -1,82 +1,60 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ContactsController;
+import android.text.Editable;
+import android.text.TextWatcher;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f80 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ g80 b;
-    public final /* synthetic */ String c;
+public final class f80 implements TextWatcher {
+    public final /* synthetic */ g80 a;
 
-    public /* synthetic */ f80(g80 g80Var, String str, int i10) {
-        this.a = i10;
-        this.b = g80Var;
-        this.c = str;
+    public f80(g80 g80Var) {
+        this.a = g80Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                Utilities.searchQueue.postRunnable(new f80(this.b, this.c, 1));
-                break;
-            default:
-                g80 g80Var = this.b;
-                String str = this.c;
-                h80 h80Var = g80Var.b;
-                String lowerCase = str.trim().toLowerCase();
-                if (lowerCase.isEmpty()) {
-                    ArrayList arrayList = new ArrayList();
-                    ArrayList arrayList2 = new ArrayList();
-                    h80Var.getClass();
-                    AndroidUtilities.runOnUIThread(new xq(h80Var, arrayList, arrayList2, 12));
-                    break;
-                } else {
-                    String translitString = LocaleController.getInstance().getTranslitString(lowerCase);
-                    if (lowerCase.equals(translitString) || translitString.isEmpty()) {
-                        translitString = null;
-                    }
-                    int i10 = (translitString != null ? 1 : 0) + 1;
-                    String[] strArr = new String[i10];
-                    strArr[0] = lowerCase;
-                    if (translitString != null) {
-                        strArr[1] = translitString;
-                    }
-                    ArrayList arrayList3 = new ArrayList();
-                    ArrayList arrayList4 = new ArrayList();
-                    for (int i11 = 0; i11 < h80Var.n.w.size(); i11++) {
-                        ContactsController.Contact contact = (ContactsController.Contact) h80Var.n.w.get(i11);
-                        String lowerCase2 = ContactsController.formatName(contact.first_name, contact.last_name).toLowerCase();
-                        String translitString2 = LocaleController.getInstance().getTranslitString(lowerCase2);
-                        if (lowerCase2.equals(translitString2)) {
-                            translitString2 = null;
-                        }
-                        int i12 = 0;
-                        boolean z10 = false;
-                        while (true) {
-                            if (i12 < i10) {
-                                String str2 = strArr[i12];
-                                if (lowerCase2.startsWith(str2) || org.telegram.messenger.y0.w(" ", str2, lowerCase2) || (translitString2 != null && (translitString2.startsWith(str2) || org.telegram.messenger.y0.w(" ", str2, translitString2)))) {
-                                    z10 = true;
-                                }
-                                if (z10) {
-                                    arrayList4.add(AndroidUtilities.generateSearchName(contact.first_name, contact.last_name, str2));
-                                    arrayList3.add(contact);
-                                } else {
-                                    i12++;
-                                }
-                            }
-                        }
-                    }
-                    AndroidUtilities.runOnUIThread(new xq(h80Var, arrayList3, arrayList4, 12));
-                    break;
-                }
-                break;
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        i80 i80Var = this.a.f;
+        if (i80Var.d.d.length() != 0) {
+            i80Var.E = true;
+            i80Var.y = true;
+            e80 e80Var = i80Var.s;
+            if (!e80Var.h) {
+                e80Var.h = true;
+                e80Var.l();
+            }
+            i80Var.s.E(i80Var.d.d.toString());
+            i80Var.h.setFastScrollVisible(false);
+            i80Var.h.setVerticalScrollBarEnabled(true);
+            i80Var.r.e(true, true);
+            i80Var.r.setStickerType(1);
+            i80Var.r.d.setText(LocaleController.getString(R.string.NoResult));
+            i80Var.r.e.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
+            return;
         }
+        i80Var.E = false;
+        i80Var.y = false;
+        e80 e80Var2 = i80Var.s;
+        if (e80Var2.h) {
+            e80Var2.h = false;
+            e80Var2.l();
+        }
+        i80Var.s.E(null);
+        i80Var.h.setFastScrollVisible(true);
+        i80Var.h.setVerticalScrollBarEnabled(false);
+        i80Var.r.e(false, true);
+        i80Var.r.setStickerType(0);
+        i80Var.r.d.setText(LocaleController.getString(R.string.NoContacts));
+        i80Var.r.e.setText("");
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

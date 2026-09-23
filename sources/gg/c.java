@@ -1,6 +1,6 @@
 package gg;
 
-import ai.m8;
+import ai.n8;
 import ai.z8;
 import android.location.Location;
 import android.text.TextUtils;
@@ -17,7 +17,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public abstract class c extends og.b {
     public a E;
@@ -146,7 +146,7 @@ public abstract class c extends og.b {
                     this.I = true;
                     TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
                     tL_contacts_resolveUsername.username = this.d ? MessagesController.getInstance(i10).storyVenueSearchBot : MessagesController.getInstance(i10).venueSearchBot;
-                    ConnectionsManager.getInstance(i10).sendRequest(tL_contacts_resolveUsername, new m8(this, 8));
+                    ConnectionsManager.getInstance(i10).sendRequest(tL_contacts_resolveUsername, new n8(this, 8));
                 }
             }
         }

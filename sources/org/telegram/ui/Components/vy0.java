@@ -1,6 +1,52 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public interface vy0 {
+public final class vy0 {
+    public final /* synthetic */ int a;
+
+    public /* synthetic */ vy0(int i10) {
+        this.a = i10;
+    }
+
+    public final int a(cz0 cz0Var, int i10) {
+        switch (this.a) {
+            case 0:
+                return TLObject.FLAG_31;
+            case 1:
+                return 0;
+            case 2:
+                return i10;
+            case 3:
+                return TLObject.FLAG_31;
+            default:
+                return TLObject.FLAG_31;
+        }
+    }
+
+    public final int b(cz0 cz0Var, int i10) {
+        switch (this.a) {
+            case 0:
+                return TLObject.FLAG_31;
+            case 1:
+                return 0;
+            case 2:
+                return i10;
+            case 3:
+                return 0;
+            default:
+                return 0;
+        }
+    }
+
+    public int c(int i10, int i11) {
+        switch (this.a) {
+            case 4:
+                return i11;
+            default:
+                return i10;
+        }
+    }
 }

@@ -1,66 +1,37 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.TranslateController;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class zk implements RequestDelegate {
+public final /* synthetic */ class zk implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ BaseController b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ TranslateController b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ MessageObject d;
+    public final /* synthetic */ long e;
+    public final /* synthetic */ int f;
 
-    public /* synthetic */ zk(BaseController baseController, long j3, Object obj, int i10) {
-        this.a = i10;
-        this.b = baseController;
-        this.c = j3;
-        this.d = obj;
+    public /* synthetic */ zk(TranslateController translateController, String str, MessageObject messageObject, long j3, int i10, int i11) {
+        this.a = i11;
+        this.b = translateController;
+        this.c = str;
+        this.d = messageObject;
+        this.e = j3;
+        this.f = i10;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((TranslateController) this.b).lambda$pushPollToTranslate$26((TranslateController.PendingPollTranslation) this.d, this.c, tLObject, tL_error);
-                break;
-            case 1:
-                ((TranslateController) this.b).lambda$pushRichMessageToTranslate$29((TranslateController.PendingRichTranslation) this.d, this.c, tLObject, tL_error);
-                break;
-            case 2:
-                ((MediaDataController) this.b).lambda$loadPinnedMessageInternal$165(this.c, (TLRPC.TL_messages_getMessages) this.d, tLObject, tL_error);
-                break;
-            case 3:
-                ((MessagesController) this.b).lambda$updateTimerProc$155(this.c, (TLRPC.TL_messages_getMessagesViews) this.d, tLObject, tL_error);
-                break;
-            case 4:
-                ((MessagesController) this.b).lambda$reloadMentionsCountForChannel$221((TLRPC.InputPeer) this.d, this.c, tLObject, tL_error);
-                break;
-            case 5:
-                ((MessagesController) this.b).lambda$getGroupCall$63(this.c, (Runnable) this.d, tLObject, tL_error);
-                break;
-            case 6:
-                ((MessagesController) this.b).lambda$getSponsoredMessages$440(this.c, (MessagesController.SponsoredMessagesInfo) this.d, tLObject, tL_error);
-                break;
-            case 7:
-                ((MessagesController) this.b).lambda$loadUnknownChannel$330(this.c, (TLRPC.TL_channel) this.d, tLObject, tL_error);
-                break;
-            case 8:
-                ((MessagesController) this.b).lambda$setChatReactions$471(this.c, (TLRPC.TL_messages_setChatAvailableReactions) this.d, tLObject, tL_error);
+                long j3 = this.e;
+                int i10 = this.f;
+                this.b.lambda$checkLanguage$16(this.c, this.d, j3, i10);
                 break;
             default:
-                ((MessagesController) this.b).lambda$checkLastDialogMessage$227((TLRPC.Dialog) this.d, this.c, tLObject, tL_error);
+                long j10 = this.e;
+                int i11 = this.f;
+                this.b.lambda$checkLanguage$12(this.c, this.d, j10, i11);
                 break;
         }
-    }
-
-    public /* synthetic */ zk(BaseController baseController, Object obj, long j3, int i10) {
-        this.a = i10;
-        this.b = baseController;
-        this.d = obj;
-        this.c = j3;
     }
 }

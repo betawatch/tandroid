@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ve0;
 import org.telegram.ui.Components.we0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class v5 extends FrameLayout {
     public TextView a;
@@ -48,7 +48,7 @@ public final class v5 extends FrameLayout {
     }
 
     public void setSeekBarDelegate(ve0 ve0Var) {
-        this.c.setDelegate(new m9(this, ve0Var));
+        this.c.setDelegate(new n9(this, ve0Var));
     }
 
     @Override // android.view.View

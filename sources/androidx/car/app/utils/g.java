@@ -1,8 +1,8 @@
 package androidx.car.app.utils;
 
 import a3.k0;
-import ai.i5;
-import ai.r5;
+import ai.h5;
+import ai.q5;
 import android.os.RemoteException;
 import android.util.Log;
 import androidx.car.app.IOnDoneCallback;
@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public abstract class g {
     public static IOnDoneCallback a() {
@@ -39,7 +39,7 @@ public abstract class g {
     }
 
     public static void c(o oVar, IOnDoneCallback iOnDoneCallback, String str, a aVar) {
-        h.a(new i5(oVar, iOnDoneCallback, str, aVar, 4));
+        h.a(new h5(oVar, iOnDoneCallback, str, aVar, 4));
     }
 
     public static void d(String str, b bVar) {
@@ -64,7 +64,7 @@ public abstract class g {
     }
 
     public static void f(IOnDoneCallback iOnDoneCallback, String str, Exception exc) {
-        d(str.concat(" onFailure"), new r5(iOnDoneCallback, exc, str, 3));
+        d(str.concat(" onFailure"), new q5(iOnDoneCallback, exc, str, 3));
     }
 
     public static List g(List list) {

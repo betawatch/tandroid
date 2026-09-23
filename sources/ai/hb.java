@@ -6,13 +6,13 @@ import android.text.TextPaint;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class hb {
-    public final c6 a;
-    public final org.telegram.ui.Components.c6 b;
+    public final b6 a;
+    public final org.telegram.ui.Components.e6 b;
     public final TextPaint c;
     public final StaticLayout d;
     public final float e;
@@ -21,9 +21,9 @@ public final class hb {
     public boolean h;
     public int i;
 
-    public hb(f6 f6Var, c6 c6Var) {
-        this.a = c6Var;
-        this.b = new org.telegram.ui.Components.c6(f6Var, 0L, 360L, qr.h);
+    public hb(e6 e6Var, b6 b6Var) {
+        this.a = b6Var;
+        this.b = new org.telegram.ui.Components.e6(e6Var, 0L, 360L, rr.h);
         TextPaint textPaint = new TextPaint(1);
         this.c = textPaint;
         textPaint.setTextSize(AndroidUtilities.dp(14.0f));

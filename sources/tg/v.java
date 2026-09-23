@@ -4,20 +4,20 @@ import android.view.View;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.b5;
-import org.telegram.ui.Components.n6;
+import org.telegram.ui.Components.d5;
+import org.telegram.ui.Components.p6;
 import org.telegram.ui.Components.sv0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v implements b5, sv0, vg.f, vg.k {
+public final /* synthetic */ class v implements d5, sv0, vg.f, vg.k {
     public final /* synthetic */ b0 a;
 
     public /* synthetic */ v(b0 b0Var) {
         this.a = b0Var;
     }
 
-    @Override // org.telegram.ui.Components.b5
+    @Override // org.telegram.ui.Components.d5
     public void J(int i10, int i11, boolean z10) {
         b0 b0Var = this.a;
         b0Var.m0 = i10 * 1000;
@@ -45,10 +45,10 @@ public final /* synthetic */ class v implements b5, sv0, vg.f, vg.k {
         for (int i13 = 0; i13 < bVar.f.getChildCount(); i13++) {
             View childAt = bVar.f.getChildAt(i13);
             if (childAt instanceof vg.x) {
-                n6 n6Var = ((vg.x) childAt).r;
+                p6 p6Var = ((vg.x) childAt).r;
                 String formatPluralString = V <= 0 ? "" : LocaleController.formatPluralString("BoostingBoostsCountTitle", V, Integer.valueOf(V));
-                n6Var.a();
-                n6Var.c(formatPluralString, true, true);
+                p6Var.a();
+                p6Var.c(formatPluralString, true, true);
             }
             if (childAt instanceof vg.g) {
                 vg.g gVar = (vg.g) childAt;

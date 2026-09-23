@@ -1,24 +1,30 @@
 package za;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+import com.google.firebase.sessions.FirebaseSessionsRegistrar;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public enum o implements ka.g {
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(0),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF3(2),
-    b(3);
-
-    public final int a;
-
-    o(int i10) {
-        this.a = i10;
+public final /* synthetic */ class o implements q9.d, i5.e {
+    @Override // q9.d
+    public Object G(cf.c cVar) {
+        o0 o0Var;
+        o0Var = FirebaseSessionsRegistrar.getComponents$lambda-5(cVar);
+        return o0Var;
     }
 
-    @Override // ka.g
-    public final int a() {
-        return this.a;
+    @Override // i5.e
+    public Object apply(Object obj) {
+        wa.e eVar = (wa.e) obj;
+        eVar.getClass();
+        aa.a aVar = com.google.firebase.messaging.r.a;
+        aVar.getClass();
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        try {
+            aVar.j(eVar, byteArrayOutputStream);
+        } catch (IOException unused) {
+        }
+        return byteArrayOutputStream.toByteArray();
     }
 }

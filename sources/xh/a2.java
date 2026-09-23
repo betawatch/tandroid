@@ -1,46 +1,64 @@
 package xh;
 
-import android.view.KeyEvent;
-import android.view.View;
-import android.widget.TextView;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.cu;
+import org.telegram.ui.Components.h5;
+import org.telegram.ui.Components.o6;
+import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final class a2 implements TextView.OnEditorActionListener {
-    public final /* synthetic */ z1 a;
-    public final /* synthetic */ Utilities.Callback b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.b2[] c;
-    public final /* synthetic */ View d;
+public final class a2 extends cu {
+    public final h5 c;
+    public int d;
+    public final o6 e;
+    public final /* synthetic */ s2 f;
 
-    public a2(z1 z1Var, Utilities.Callback callback, org.telegram.ui.ActionBar.b2[] b2VarArr, View view) {
-        this.a = z1Var;
-        this.b = callback;
-        this.c = b2VarArr;
-        this.d = view;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a2(s2 s2Var, Context context, d6 d6Var) {
+        super(context, d6Var);
+        this.f = s2Var;
+        this.c = new h5(this);
+        o6 o6Var = new o6(false, true, true, false);
+        this.e = o6Var;
+        o6Var.k(0.2f, 160L, rr.h);
+        o6Var.t(AndroidUtilities.dp(15.33f));
+        o6Var.setCallback(this);
+        o6Var.b = 5;
     }
 
-    @Override // android.widget.TextView.OnEditorActionListener
-    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
-        if (i10 != 6) {
-            return false;
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        int a2 = this.c.a(h6.v0(this.d < 0 ? h6.p7 : h6.P5, this.f.f), false);
+        o6 o6Var = this.e;
+        o6Var.r(a2);
+        o6Var.setBounds(getScrollX(), 0, getWidth() + getScrollX(), getHeight());
+        o6Var.draw(canvas);
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.eu, android.widget.TextView
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        super.onTextChanged(charSequence, i10, i11, i12);
+        o6 o6Var = this.e;
+        if (o6Var != null) {
+            this.d = 12 - charSequence.length();
+            o6Var.b();
+            String str = "";
+            if (this.d <= 4) {
+                str = "" + this.d;
+            }
+            o6Var.q(str, true, true);
         }
-        z1 z1Var = this.a;
-        String obj = z1Var.getText().toString();
-        if (obj.length() <= 0 || obj.length() > 12) {
-            AndroidUtilities.shakeView(z1Var);
-            return true;
-        }
-        this.b.run(obj);
-        org.telegram.ui.ActionBar.b2 b2Var = this.c[0];
-        if (b2Var != null) {
-            b2Var.dismiss();
-        }
-        View view = this.d;
-        if (view != null) {
-            view.requestFocus();
-        }
-        return true;
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return drawable == this.e || super.verifyDrawable(drawable);
     }
 }

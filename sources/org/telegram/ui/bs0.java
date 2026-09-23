@@ -1,19 +1,21 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.graphics.drawable.Drawable;
+import android.util.FloatProperty;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bs0 implements ValueAnimator.AnimatorUpdateListener {
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        org.telegram.ui.Components.sb sbVar;
-        Drawable[] drawableArr = PhotoViewer.U8;
-        org.telegram.ui.Components.oc ocVar = org.telegram.ui.Components.oc.w;
-        if (ocVar == null || (sbVar = ocVar.e) == null) {
-            return;
-        }
-        sbVar.updatePosition();
+public final class bs0 extends FloatProperty {
+    public bs0() {
+        super("progress");
+    }
+
+    @Override // android.util.Property
+    public final Float get(Object obj) {
+        return Float.valueOf(((dv0) obj).a);
+    }
+
+    @Override // android.util.FloatProperty
+    public final void setValue(Object obj, float f7) {
+        ((dv0) obj).b(f7);
     }
 }

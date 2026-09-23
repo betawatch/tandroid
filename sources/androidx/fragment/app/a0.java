@@ -1,41 +1,41 @@
 package androidx.fragment.app;
 
-import ai.r5;
+import ai.q5;
 import ai.s1;
-import ai.t8;
+import ai.u8;
 import ai.v1;
 import ai.y3;
 import android.media.MediaCodec;
 import android.media.MediaCrypto;
 import android.view.Surface;
 import android.view.ViewGroup;
+import ci.ba;
+import ci.ca;
+import ci.cb;
 import ci.d2;
 import ci.e2;
-import ci.ea;
+import ci.e4;
 import ci.f1;
-import ci.f4;
-import ci.fa;
-import ci.fb;
+import ci.gb;
 import ci.i2;
-import ci.jb;
-import ci.k7;
+import ci.i7;
+import ci.j7;
+import ci.kb;
+import ci.kc;
 import ci.l2;
-import ci.l7;
+import ci.lc;
 import ci.nb;
-import ci.nc;
+import ci.o2;
+import ci.ob;
+import ci.oc;
 import ci.p1;
 import ci.p2;
-import ci.q2;
-import ci.qb;
-import ci.rb;
-import ci.rc;
-import ci.s3;
-import ci.t2;
-import ci.tc;
+import ci.r3;
+import ci.s2;
+import ci.uc;
+import ci.v3;
 import ci.w1;
-import ci.w3;
-import ci.xc;
-import ci.z5;
+import ci.y5;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -52,12 +52,12 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.mr0;
-import org.telegram.ui.Components.oc;
-import org.telegram.ui.Components.u9;
-import org.telegram.ui.Components.vi;
+import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.w9;
+import org.telegram.ui.Components.wi;
 import org.telegram.ui.Stories.recorder.FfmpegAudioWaveformLoader;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a0 implements Runnable {
     public final /* synthetic */ int a;
@@ -102,13 +102,13 @@ public final /* synthetic */ class a0 implements Runnable {
                 }
                 return;
             case 2:
-                ((vi) this.b).hide();
+                ((wi) this.b).hide();
                 return;
             case 3:
                 bi.u uVar = (bi.u) this.b;
                 mr0 mr0Var = uVar.W;
-                t8 t8Var = uVar.a;
-                mr0Var.a(t8Var == null ? "" : t8Var.E);
+                u8 u8Var = uVar.a;
+                mr0Var.a(u8Var == null ? "" : u8Var.E);
                 return;
             case 4:
                 ((c1.e) this.b).e().onError(new w0.h("Failed to launch the selector UI. Hint: ensure the `context` parameter is an Activity-based context.", 2));
@@ -134,9 +134,9 @@ public final /* synthetic */ class a0 implements Runnable {
                 ((ci.v0) this.b).a(false);
                 return;
             case 10:
-                z5 z5Var = (z5) this.b;
-                oc.e();
-                rg.x0 x0Var = new rg.x0((n2) new y3(z5Var), 14, false);
+                y5 y5Var = (y5) this.b;
+                qc.e();
+                rg.x0 x0Var = new rg.x0((n2) new y3(y5Var), 14, false);
                 x0Var.setOnDismissListener(new f1(0));
                 x0Var.show();
                 return;
@@ -148,8 +148,8 @@ public final /* synthetic */ class a0 implements Runnable {
                 ArrayList arrayList = d2Var.v;
                 ArrayList arrayList2 = d2Var.s;
                 e2 e2Var = d2Var.N;
-                t2 t2Var = e2Var.s;
-                i10 = ((f3) t2Var).currentAccount;
+                s2 s2Var = e2Var.s;
+                i10 = ((f3) s2Var).currentAccount;
                 MediaDataController mediaDataController = MediaDataController.getInstance(i10);
                 String str = d2Var.H;
                 if ("premium".equalsIgnoreCase(str)) {
@@ -175,18 +175,18 @@ public final /* synthetic */ class a0 implements Runnable {
                     TLRPC.TL_messages_getStickers tL_messages_getStickers = new TLRPC.TL_messages_getStickers();
                     tL_messages_getStickers.emoticon = d2Var.H;
                     tL_messages_getStickers.hash = 0L;
-                    i12 = ((f3) t2Var).currentAccount;
+                    i12 = ((f3) s2Var).currentAccount;
                     ConnectionsManager.getInstance(i12).sendRequest(tL_messages_getStickers, new v1(5, d2Var, str));
                     return;
                 }
                 String[] currentKeyboardLanguage = AndroidUtilities.getCurrentKeyboardLanguage();
                 String[] strArr = d2Var.J;
                 if (strArr == null || !Arrays.equals(currentKeyboardLanguage, strArr)) {
-                    i11 = ((f3) t2Var).currentAccount;
+                    i11 = ((f3) s2Var).currentAccount;
                     MediaDataController.getInstance(i11).fetchNewEmojiKeywords(currentKeyboardLanguage);
                 }
                 d2Var.J = currentKeyboardLanguage;
-                mediaDataController.getEmojiSuggestions(currentKeyboardLanguage, d2Var.H, false, new r5(d2Var, str, mediaDataController, 4), null, false, false, false, true, 50, false);
+                mediaDataController.getEmojiSuggestions(currentKeyboardLanguage, d2Var.H, false, new q5(d2Var, str, mediaDataController, 4), null, false, false, false, true, 50, false);
                 return;
             case 13:
                 l2 l2Var = (l2) ((i2) this.b).b;
@@ -196,47 +196,47 @@ public final /* synthetic */ class a0 implements Runnable {
                 l2Var.n.setVisibility(8);
                 return;
             case 14:
-                q2 q2Var = (q2) ((p2) this.b).b;
-                ArrayList arrayList3 = q2Var.o;
+                p2 p2Var = (p2) ((o2) this.b).b;
+                ArrayList arrayList3 = p2Var.o;
                 if (arrayList3.isEmpty()) {
                     return;
                 }
-                q2Var.l.d(0.0f, true);
-                int i13 = q2Var.k + 1;
-                q2Var.k = i13;
+                p2Var.l.d(0.0f, true);
+                int i13 = p2Var.k + 1;
+                p2Var.k = i13;
                 if (i13 > arrayList3.size() - 1) {
-                    q2Var.k = 0;
+                    p2Var.k = 0;
                 }
-                zg.g0 g0Var = q2Var.j;
-                g0Var.e((zg.p0) arrayList3.get(q2Var.k));
-                q2Var.j = q2Var.i;
-                q2Var.i = g0Var;
-                q2Var.p.invalidate();
+                zg.g0 g0Var = p2Var.j;
+                g0Var.e((zg.p0) arrayList3.get(p2Var.k));
+                p2Var.j = p2Var.i;
+                p2Var.i = g0Var;
+                p2Var.p.invalidate();
                 return;
             case 15:
                 ((FfmpegAudioWaveformLoader) this.b).lambda$destroy$2();
                 return;
             case 16:
-                ((s3) this.b).b(null);
+                ((r3) this.b).b(null);
                 return;
             case 17:
-                ((w3) this.b).E();
+                ((v3) this.b).E();
                 return;
             case 18:
-                fb fbVar = (fb) this.b;
-                if (fbVar.I) {
-                    fbVar.I = false;
-                    fbVar.invalidate();
+                cb cbVar = (cb) this.b;
+                if (cbVar.I) {
+                    cbVar.I = false;
+                    cbVar.invalidate();
                     return;
                 }
                 return;
             case 19:
-                l7 l7Var = ((k7) this.b).p;
-                l7Var.Q = System.currentTimeMillis();
-                l7Var.R = 0L;
-                l7Var.r0 = true;
-                ((jb) l7Var.a).a.J0.a(0L, true);
-                l7Var.invalidate();
+                j7 j7Var = ((i7) this.b).p;
+                j7Var.Q = System.currentTimeMillis();
+                j7Var.R = 0L;
+                j7Var.r0 = true;
+                ((gb) j7Var.a).a.J0.a(0L, true);
+                j7Var.invalidate();
                 return;
             case 20:
                 ci.p pVar = (ci.p) this.b;
@@ -253,46 +253,46 @@ public final /* synthetic */ class a0 implements Runnable {
                 }
                 return;
             case 22:
-                ((fa) ((ea) this.b).n).fullScroll(130);
+                ((ca) ((ba) this.b).n).fullScroll(130);
                 return;
             case 23:
-                nc ncVar = (nc) this.b;
-                ncVar.x0.onTouchEvent(AndroidUtilities.emptyMotionEvent());
-                ncVar.w0.y(AndroidUtilities.emptyMotionEvent());
+                kc kcVar = (kc) this.b;
+                kcVar.x0.onTouchEvent(AndroidUtilities.emptyMotionEvent());
+                kcVar.w0.y(AndroidUtilities.emptyMotionEvent());
                 return;
             case 24:
-                ci.oc ocVar = ((nb) this.b).k0;
-                ocVar.v(true);
-                ocVar.A0.setCameraThumb(ocVar.A());
+                lc lcVar = ((kb) this.b).k0;
+                lcVar.v(true);
+                lcVar.A0.setCameraThumb(lcVar.A());
                 return;
             case 25:
-                ((qb) this.b).A2.p1.setVisibility(8);
+                ((nb) this.b).A2.p1.setVisibility(8);
                 return;
             case 26:
-                rb rbVar = (rb) this.b;
-                ci.oc ocVar2 = rbVar.b0;
-                if (ocVar2.Q1 || ocVar2.P1 || ocVar2.B0 == null || ocVar2.f0 != 0 || ocVar2.m1 == null) {
+                ob obVar = (ob) this.b;
+                lc lcVar2 = obVar.b0;
+                if (lcVar2.Q1 || lcVar2.P1 || lcVar2.B0 == null || lcVar2.f0 != 0 || lcVar2.m1 == null) {
                     return;
                 }
-                String string = LocaleController.getString(rbVar.isFrontface() ? R.string.StoryCameraSavedDualBackHint : R.string.StoryCameraSavedDualFrontHint);
-                f4 f4Var = ocVar2.m1;
-                f4Var.h = f4.a(string, f4Var.getTextPaint());
-                ocVar2.m1.s(string);
-                ocVar2.m1.u();
+                String string = LocaleController.getString(obVar.isFrontface() ? R.string.StoryCameraSavedDualBackHint : R.string.StoryCameraSavedDualFrontHint);
+                e4 e4Var = lcVar2.m1;
+                e4Var.h = e4.a(string, e4Var.getTextPaint());
+                lcVar2.m1.s(string);
+                lcVar2.m1.u();
                 MessagesController.getGlobalMainSettings().edit().putInt("storysvddualhint", MessagesController.getGlobalMainSettings().getInt("storysvddualhint", 0) + 1).apply();
                 return;
             case 27:
-                ((u9) this.b).setVisibility(8);
+                ((w9) this.b).setVisibility(8);
                 return;
             case 28:
-                rc rcVar = (rc) this.b;
+                oc ocVar = (oc) this.b;
                 try {
-                    int round = Math.round(((rcVar.h * rcVar.g.getInteger("sample-rate")) / rcVar.b) / 5.0f);
-                    MediaCodec createDecoderByType = MediaCodec.createDecoderByType(rcVar.g.getString("mime"));
+                    int round = Math.round(((ocVar.h * ocVar.g.getInteger("sample-rate")) / ocVar.b) / 5.0f);
+                    MediaCodec createDecoderByType = MediaCodec.createDecoderByType(ocVar.g.getString("mime"));
                     if (createDecoderByType == null) {
                         return;
                     }
-                    createDecoderByType.configure(rcVar.g, (Surface) null, (MediaCrypto) null, 0);
+                    createDecoderByType.configure(ocVar.g, (Surface) null, (MediaCrypto) null, 0);
                     createDecoderByType.start();
                     createDecoderByType.getInputBuffers();
                     createDecoderByType.getOutputBuffers();
@@ -307,7 +307,7 @@ public final /* synthetic */ class a0 implements Runnable {
                         MediaCodec.BufferInfo bufferInfo2 = new MediaCodec.BufferInfo();
                         int dequeueInputBuffer = createDecoderByType.dequeueInputBuffer(2500L);
                         if (dequeueInputBuffer >= 0) {
-                            int readSampleData = rcVar.f.readSampleData(createDecoderByType.getInputBuffer(dequeueInputBuffer), 0);
+                            int readSampleData = ocVar.f.readSampleData(createDecoderByType.getInputBuffer(dequeueInputBuffer), 0);
                             if (readSampleData < 0) {
                                 j3 = 2500;
                                 createDecoderByType.queueInputBuffer(dequeueInputBuffer, 0, 0, 0L, 4);
@@ -317,8 +317,8 @@ public final /* synthetic */ class a0 implements Runnable {
                                 z10 = z11;
                                 j3 = 2500;
                                 bufferInfo = bufferInfo2;
-                                createDecoderByType.queueInputBuffer(dequeueInputBuffer, 0, readSampleData, rcVar.f.getSampleTime(), 0);
-                                rcVar.f.advance();
+                                createDecoderByType.queueInputBuffer(dequeueInputBuffer, 0, readSampleData, ocVar.f.getSampleTime(), 0);
+                                ocVar.f.advance();
                             }
                         } else {
                             bufferInfo = bufferInfo2;
@@ -341,13 +341,13 @@ public final /* synthetic */ class a0 implements Runnable {
                                             sArr[i15 - i16] = s11;
                                             i15++;
                                             int i19 = i15 - i16;
-                                            if (i19 >= sArr.length || i15 >= rcVar.b) {
+                                            if (i19 >= sArr.length || i15 >= ocVar.b) {
                                                 short[] sArr2 = new short[sArr.length];
-                                                AndroidUtilities.runOnUIThread(new s1(rcVar, sArr, i19, 7));
+                                                AndroidUtilities.runOnUIThread(new s1(ocVar, sArr, i19, 7));
                                                 sArr = sArr2;
                                                 i16 = i15;
                                             }
-                                            if (i15 >= rcVar.d.length) {
+                                            if (i15 >= ocVar.d.length) {
                                                 i17 = 0;
                                                 s11 = 0;
                                             } else {
@@ -370,10 +370,10 @@ public final /* synthetic */ class a0 implements Runnable {
                                 createDecoderByType.releaseOutputBuffer(i14, false);
                                 if ((bufferInfo3.flags & 4) != 0) {
                                     z11 = true;
-                                    synchronized (rcVar.i) {
+                                    synchronized (ocVar.i) {
                                         try {
-                                            if (!rcVar.j) {
-                                                if (!z11 && i15 < rcVar.b) {
+                                            if (!ocVar.j) {
+                                                if (!z11 && i15 < ocVar.b) {
                                                 }
                                             }
                                         } finally {
@@ -386,25 +386,25 @@ public final /* synthetic */ class a0 implements Runnable {
                             i14 = createDecoderByType.dequeueOutputBuffer(bufferInfo3, 2500L);
                         }
                         z11 = z10;
-                        synchronized (rcVar.i) {
+                        synchronized (ocVar.i) {
                         }
                     }
                     createDecoderByType.stop();
                     createDecoderByType.release();
-                    rcVar.f.release();
+                    ocVar.f.release();
                     return;
                 } catch (Exception e) {
                     FileLog.e(e);
                     return;
                 }
             default:
-                tc tcVar = (tc) this.b;
-                xc xcVar = tcVar.c;
-                if (xcVar != null) {
-                    long j10 = xcVar.a;
+                ci.qc qcVar = (ci.qc) this.b;
+                uc ucVar = qcVar.c;
+                if (ucVar != null) {
+                    long j10 = ucVar.a;
                     if (j10 > 0) {
-                        tcVar.e = j10;
-                        tcVar.l.q();
+                        qcVar.e = j10;
+                        qcVar.l.q();
                         return;
                     }
                     return;

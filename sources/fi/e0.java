@@ -5,13 +5,13 @@ import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.f3;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.e61;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.d61;
 import w7.x5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class e0 extends h0 {
     public final /* synthetic */ k0 h;
@@ -20,35 +20,35 @@ public final class e0 extends h0 {
     public e0(k0 k0Var, Context context) {
         super(k0Var, context);
         int i10;
-        e6 e6Var;
-        e6 e6Var2;
-        e6 e6Var3;
+        d6 d6Var;
+        d6 d6Var2;
+        d6 d6Var3;
         this.h = k0Var;
         AndroidUtilities.removeFromParent(this.b);
         i10 = ((f3) k0Var).currentAccount;
         t tVar = new t(k0Var, 3);
         u uVar = new u(k0Var, 2);
-        e6Var = ((f3) k0Var).resourcesProvider;
-        e61 e61Var = new e61(context, i10, 0, false, tVar, uVar, null, e6Var);
-        this.d = e61Var;
-        e61Var.p1();
-        e61 e61Var2 = this.d;
-        e61Var2.Y2.r = false;
-        e61Var2.setClipToPadding(false);
+        d6Var = ((f3) k0Var).resourcesProvider;
+        d61 d61Var = new d61(context, i10, 0, false, tVar, uVar, null, d6Var);
+        this.d = d61Var;
+        d61Var.p1();
+        d61 d61Var2 = this.d;
+        d61Var2.Y2.r = false;
+        d61Var2.setClipToPadding(false);
         this.d.setPadding(0, 0, 0, AndroidUtilities.dp(60.0f) + AndroidUtilities.navigationBarHeight);
         this.c.addView(k0Var.G, x5.g());
         this.c.addView(this.d, 0, x5.c(-1.0f, -1));
         this.c.addView(k0Var.I, x5.g());
-        e6Var2 = ((f3) k0Var).resourcesProvider;
-        org.telegram.ui.ActionBar.k kVar = new org.telegram.ui.ActionBar.k(context, e6Var2);
+        d6Var2 = ((f3) k0Var).resourcesProvider;
+        org.telegram.ui.ActionBar.k kVar = new org.telegram.ui.ActionBar.k(context, d6Var2);
         this.a = kVar;
         kVar.setOccupyStatusBar(false);
-        this.a.setTitleColor(k0Var.getThemedColor(i6.G6));
-        this.a.A(k0Var.getThemedColor(i6.z8), false);
+        this.a.setTitleColor(k0Var.getThemedColor(h6.G6));
+        this.a.A(k0Var.getThemedColor(h6.z8), false);
         org.telegram.ui.ActionBar.k kVar2 = this.a;
         boolean z10 = k0Var.N;
         kVar2.setBackButtonImage(z10 ? R.drawable.ic_ab_close : R.drawable.ic_ab_back);
-        this.a.B(k0Var.getThemedColor(i6.y8), false);
+        this.a.B(k0Var.getThemedColor(h6.y8), false);
         this.a.setTitle(LocaleController.getString(R.string.CommunityAddAChatToCommunity));
         this.a.getTitleTextView().setTranslationX(-AndroidUtilities.dp(18.0f));
         this.a.setActionBarMenuOnItemClick(new ei.t(this, 6));
@@ -59,8 +59,8 @@ public final class e0 extends h0 {
         n10.setTranslationX(-AndroidUtilities.dp(7.0f));
         n10.a(3, R.drawable.outline_header_search);
         Context context2 = getContext();
-        e6Var3 = ((f3) k0Var).resourcesProvider;
-        ci.d dVar = new ci.d(context2, e6Var3, true);
+        d6Var3 = ((f3) k0Var).resourcesProvider;
+        ci.d dVar = new ci.d(context2, d6Var3, true);
         k0Var.r = dVar;
         dVar.e();
         k0Var.r.setText(LocaleController.getString(R.string.OK));

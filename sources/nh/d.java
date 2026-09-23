@@ -11,21 +11,21 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.z5;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.y5;
 import w7.x5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class d extends FrameLayout implements z5 {
-    public final e6 a;
+public final class d extends FrameLayout implements y5 {
+    public final d6 a;
     public final ImageView b;
     public final TextView c;
 
-    public d(Context context, e6 e6Var) {
+    public d(Context context, d6 d6Var) {
         super(context);
-        this.a = e6Var;
+        this.a = d6Var;
         ImageView imageView = new ImageView(context);
         this.b = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
@@ -42,16 +42,16 @@ public final class d extends FrameLayout implements z5 {
         e();
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
+    @Override // org.telegram.ui.ActionBar.y5
     public final void e() {
-        int i10 = i6.Wk;
-        e6 e6Var = this.a;
+        int i10 = h6.Wk;
+        d6 d6Var = this.a;
         int i11 = (int) 153.0f;
-        this.c.setTextColor(i0.a.k(i6.v0(i10, e6Var), i11));
-        PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(i0.a.k(i6.v0(i10, e6Var), i11), PorterDuff.Mode.MULTIPLY);
+        this.c.setTextColor(i0.a.k(h6.v0(i10, d6Var), i11));
+        PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(i0.a.k(h6.v0(i10, d6Var), i11), PorterDuff.Mode.MULTIPLY);
         ImageView imageView = this.b;
         imageView.setColorFilter(porterDuffColorFilter);
-        imageView.setBackground(i6.f0(i0.a.k(i6.v0(i10, e6Var), (int) 25.5f), 1, -1));
+        imageView.setBackground(h6.f0(i0.a.k(h6.v0(i10, d6Var), (int) 25.5f), 1, -1));
     }
 
     public /* bridge */ /* synthetic */ int[] getColorKeys() {

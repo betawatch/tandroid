@@ -1,190 +1,138 @@
 package ii;
 
-import android.graphics.Bitmap;
-import android.graphics.ColorMatrix;
-import android.graphics.ColorMatrixColorFilter;
-import android.graphics.drawable.Drawable;
+import android.view.View;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.RadialProgress2;
+import java.util.IdentityHashMap;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.VideoEditedInfo;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class x4 {
-    public static ColorMatrixColorFilter f;
-    public final ImageReceiver a;
-    public final ImageReceiver b;
-    public Bitmap c;
-    public final RadialProgress2 d;
-    public u e;
+public final class x4 implements NotificationCenter.NotificationCenterDelegate {
+    public final int a;
+    public final i3 b;
+    public MessageObject c;
+    public VideoEditedInfo d;
+    public String e;
+    public boolean f;
+    public boolean h;
+    public boolean n;
 
-    public x4(u4 u4Var, org.telegram.ui.ActionBar.e6 e6Var) {
-        this.a = new ImageReceiver(u4Var);
-        this.b = new ImageReceiver(u4Var);
-        RadialProgress2 radialProgress2 = new RadialProgress2(u4Var, e6Var);
-        this.d = radialProgress2;
-        radialProgress2.d = -1;
-        radialProgress2.setColors(1711276032, 2130706432, -1, -2500135);
-        radialProgress2.setIcon(3, false, false);
+    public x4(int i10, MediaController.PhotoEntry photoEntry, i3 i3Var) {
+        this.a = i10;
+        this.b = i3Var;
     }
 
-    public final void a() {
-        String sb2;
-        TLRPC.Photo photo;
-        TLRPC.Document document;
-        TLRPC.PhotoSize photoSize;
-        int abs;
-        u uVar = this.e;
-        TLRPC.PhotoSize photoSize2 = null;
-        ImageReceiver imageReceiver = this.a;
-        if (uVar == null) {
-            imageReceiver.setImageBitmap((Drawable) null);
-            return;
-        }
-        int i10 = AndroidUtilities.displaySize.x;
-        String l4 = a4.a.l(i10, i10, "_");
-        StringBuilder sb3 = new StringBuilder();
-        u uVar2 = this.e;
-        if (uVar2 == null) {
-            sb2 = "null";
-        } else {
-            String str = uVar2.b ? "v" : uVar2.c ? "a" : "p";
-            if (uVar2.e != null) {
-                StringBuilder h = w.c.h(str, ":local:");
-                h.append(this.e.e);
-                sb2 = h.toString();
-            } else {
-                long j3 = 0;
-                if (uVar2.b()) {
-                    u uVar3 = this.e;
-                    TLRPC.Document document2 = uVar3.h;
-                    if (document2 != null) {
-                        j3 = document2.id;
-                    } else {
-                        TLRPC.Photo photo2 = uVar3.g;
-                        if (photo2 != null) {
-                            j3 = photo2.id;
+    public static boolean c(MediaController.PhotoEntry photoEntry) {
+        if (!photoEntry.isVideo) {
+            ArrayList<VideoEditedInfo.MediaEntity> arrayList = photoEntry.croppedMediaEntities;
+            ArrayList<VideoEditedInfo.MediaEntity> arrayList2 = (arrayList == null || arrayList.isEmpty()) ? photoEntry.mediaEntities : photoEntry.croppedMediaEntities;
+            if (arrayList2 != null) {
+                int size = arrayList2.size();
+                for (int i10 = 0; i10 < size; i10++) {
+                    VideoEditedInfo.MediaEntity mediaEntity = arrayList2.get(i10);
+                    if (mediaEntity != null) {
+                        if (mediaEntity.type == 0) {
+                            byte b10 = mediaEntity.subType;
+                            if ((b10 & 1) != 0 || (b10 & 4) != 0) {
+                                return true;
+                            }
+                        }
+                        ArrayList<VideoEditedInfo.EmojiEntity> arrayList3 = mediaEntity.entities;
+                        if (arrayList3 != null && !arrayList3.isEmpty()) {
+                            return true;
                         }
                     }
                 }
-                StringBuilder h10 = w.c.h(str, ":");
-                h10.append(this.e.a);
-                h10.append(":");
-                h10.append(j3);
-                sb2 = h10.toString();
-            }
-        }
-        sb3.append(sb2);
-        sb3.append("@");
-        sb3.append(l4);
-        if (sb3.toString().equals(null)) {
-            return;
-        }
-        this.e.getClass();
-        u uVar4 = this.e;
-        if (!uVar4.b) {
-            if (uVar4.e != null) {
-                imageReceiver.setOrientation(uVar4.l, uVar4.m, true);
-                imageReceiver.setImage(ImageLocation.getForPath(this.e.e), l4, null, null, null, 0);
-                return;
-            } else {
-                if (!uVar4.b() || (photo = this.e.g) == null) {
-                    imageReceiver.setImageBitmap((Drawable) null);
-                    return;
-                }
-                TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, AndroidUtilities.getPhotoSize());
-                TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(this.e.g.sizes, 100);
-                imageReceiver.setOrientation(0, 0, false);
-                imageReceiver.setImage(ImageLocation.getForPhoto(closestPhotoSizeWithSize, this.e.g), l4, ImageLocation.getForPhoto(closestPhotoSizeWithSize2, this.e.g), l4, null, 0L, null, this.e.g, 0);
-                return;
-            }
-        }
-        if (uVar4.e != null) {
-            imageReceiver.setOrientation(0, 0, false);
-            imageReceiver.setImage(ImageLocation.getForVideoPath(this.e.e), ImageLoader.AUTOPLAY_FILTER, null, l4, null, l4, null, 0L, null, null, 0);
-            return;
-        }
-        if (!uVar4.b() || (document = this.e.h) == null) {
-            imageReceiver.setImageBitmap((Drawable) null);
-            return;
-        }
-        ArrayList<TLRPC.PhotoSize> arrayList = document.thumbs;
-        int photoSize3 = AndroidUtilities.getPhotoSize();
-        if (arrayList == null) {
-            photoSize = null;
-        } else {
-            int i11 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-            photoSize = null;
-            for (int i12 = 0; i12 < arrayList.size(); i12++) {
-                TLRPC.PhotoSize photoSize4 = arrayList.get(i12);
-                if (!(photoSize4 instanceof TLRPC.TL_photoStrippedSize) && !(photoSize4 instanceof TLRPC.TL_photoPathSize) && (abs = Math.abs(Math.max(photoSize4.w, photoSize4.h) - photoSize3)) < i11) {
-                    photoSize = photoSize4;
-                    i11 = abs;
-                }
-            }
-        }
-        ArrayList<TLRPC.PhotoSize> arrayList2 = this.e.h.thumbs;
-        if (arrayList2 != null) {
-            int i13 = 0;
-            while (true) {
-                if (i13 >= arrayList2.size()) {
-                    break;
-                }
-                if (arrayList2.get(i13) instanceof TLRPC.TL_photoStrippedSize) {
-                    photoSize2 = arrayList2.get(i13);
-                    break;
-                }
-                i13++;
-            }
-        }
-        imageReceiver.setOrientation(0, 0, false);
-        imageReceiver.setImage(ImageLocation.getForDocument(this.e.h), ImageLoader.AUTOPLAY_FILTER, ImageLocation.getForDocument(photoSize, this.e.h), l4, ImageLocation.getForDocument(photoSize2, this.e.h), l4, null, 0L, null, this.e.h, 0);
-    }
-
-    public final boolean b() {
-        ImageReceiver imageReceiver;
-        Bitmap bitmap;
-        if (c() && (bitmap = (imageReceiver = this.a).getBitmap()) != null && !bitmap.isRecycled()) {
-            ImageReceiver imageReceiver2 = this.b;
-            if ((imageReceiver2.getBitmap() == null || imageReceiver.getAnimation() == null) && (bitmap != this.c || imageReceiver2.getBitmap() == null)) {
-                this.c = bitmap;
-                imageReceiver2.setImageBitmap(Utilities.stackBlurBitmapMax(bitmap, false));
-                if (f == null) {
-                    ColorMatrix colorMatrix = new ColorMatrix();
-                    AndroidUtilities.multiplyBrightnessColorMatrix(colorMatrix, 0.9f);
-                    AndroidUtilities.adjustSaturationColorMatrix(colorMatrix, 0.6f);
-                    f = new ColorMatrixColorFilter(colorMatrix);
-                }
-                imageReceiver2.setColorFilter(f);
-            }
-            if (imageReceiver2.getBitmap() != null) {
-                return true;
             }
         }
         return false;
     }
 
-    public final boolean c() {
-        u uVar = this.e;
-        if (uVar != null) {
-            return uVar.e != null || uVar.b();
+    public final void a() {
+        if (this.n || this.h) {
+            return;
         }
-        return false;
+        this.h = true;
+        if (this.c != null && this.d != null) {
+            try {
+                MediaController.getInstance().cancelVideoConvert(this.c);
+            } catch (Throwable unused) {
+            }
+        }
+        d();
     }
 
-    public final boolean d() {
-        u uVar = this.e;
-        if (uVar == null || uVar.b || uVar.b()) {
-            return false;
+    public final void b() {
+        if (this.n) {
+            return;
         }
-        int i10 = this.e.l;
-        return i10 == 90 || i10 == 270;
+        this.n = true;
+        d();
+        i3 i3Var = this.b;
+        x3 x3Var = i3Var.c;
+        IdentityHashMap identityHashMap = x3Var.a4;
+        u uVar = i3Var.a;
+        identityHashMap.remove(uVar);
+        uVar.a = 3;
+        x3Var.q4(i3Var.b, uVar);
+        x3Var.h3.onContentChanged();
+    }
+
+    public final void d() {
+        NotificationCenter notificationCenter = NotificationCenter.getInstance(this.a);
+        notificationCenter.removeObserver(this, NotificationCenter.filePreparingStarted);
+        notificationCenter.removeObserver(this, NotificationCenter.fileNewChunkAvailable);
+        notificationCenter.removeObserver(this, NotificationCenter.filePreparingFailed);
+    }
+
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        i3 i3Var = this.b;
+        a aVar = i3Var.b;
+        u uVar = i3Var.a;
+        x3 x3Var = i3Var.c;
+        if (this.h || this.n || i11 != this.a || objArr.length == 0 || objArr[0] != this.c) {
+            return;
+        }
+        if (i10 != NotificationCenter.fileNewChunkAvailable) {
+            if (i10 == NotificationCenter.filePreparingFailed) {
+                b();
+                return;
+            }
+            return;
+        }
+        long longValue = ((Long) objArr[3]).longValue();
+        uVar.f = ((Float) objArr[4]).floatValue();
+        View z12 = x3Var.z1(aVar);
+        if (z12 instanceof v4) {
+            z12.requestLayout();
+            z12.invalidate();
+        }
+        if (longValue > 0) {
+            this.n = true;
+            d();
+            String str = this.e;
+            VideoEditedInfo videoEditedInfo = this.d;
+            int i12 = videoEditedInfo.resultWidth;
+            int i13 = videoEditedInfo.resultHeight;
+            int ceil = (int) Math.ceil(videoEditedInfo.estimatedDuration / 1000.0d);
+            x3Var.a4.remove(uVar);
+            uVar.b = true;
+            uVar.e = str;
+            if (i12 > 0) {
+                uVar.j = i12;
+            }
+            if (i13 > 0) {
+                uVar.k = i13;
+            }
+            uVar.l = 0;
+            uVar.m = 0;
+            uVar.f = 0.0f;
+            x3Var.n4(aVar);
+            x3Var.L4(i3Var.b, uVar, str, true, uVar.j, uVar.k, ceil);
+        }
     }
 }

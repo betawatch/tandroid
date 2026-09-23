@@ -1,34 +1,26 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final /* synthetic */ class sk implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ TopicsController b;
     public final /* synthetic */ long c;
-    public final /* synthetic */ ArrayList d;
-    public final /* synthetic */ boolean e;
-    public final /* synthetic */ long f;
 
-    public /* synthetic */ sk(TopicsController topicsController, long j3, ArrayList arrayList, boolean z10, long j10, int i10) {
+    public /* synthetic */ sk(TopicsController topicsController, long j3, int i10) {
         this.a = i10;
         this.b = topicsController;
         this.c = j3;
-        this.d = arrayList;
-        this.e = z10;
-        this.f = j10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$updateTopicsWithDeletedMessages$11(this.c, this.d, this.e, this.f);
+                this.b.lambda$loadTopics$6(this.c);
                 break;
             default:
-                this.b.lambda$updateTopicsWithDeletedMessages$12(this.c, this.d, this.e, this.f);
+                this.b.lambda$processTopics$8(this.c);
                 break;
         }
     }

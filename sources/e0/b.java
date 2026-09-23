@@ -27,7 +27,7 @@ import android.widget.CompoundButton;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 import androidx.core.graphics.drawable.IconCompat;
-import ci.g7;
+import ci.e7;
 import java.io.InputStream;
 import java.math.RoundingMode;
 import java.security.Signature;
@@ -36,7 +36,7 @@ import javax.crypto.Mac;
 import m.z0;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public abstract class b {
     public static void A(TextView textView, PorterDuff.Mode mode) {
@@ -192,12 +192,12 @@ public abstract class b {
         return new Notification.Action.Builder(icon, charSequence, pendingIntent);
     }
 
-    public static long c(AudioTrack audioTrack, k2.x xVar) {
-        if (xVar.c == 0) {
-            return e2.d0.W(xVar.e, audioTrack.getBufferSizeInFrames());
+    public static long c(AudioTrack audioTrack, k2.w wVar) {
+        if (wVar.c == 0) {
+            return e2.d0.W(wVar.e, audioTrack.getBufferSizeInFrames());
         }
         long bufferSizeInFrames = audioTrack.getBufferSizeInFrames();
-        int i10 = c3.b.i(xVar.g);
+        int i10 = c3.b.i(wVar.g);
         e2.d.g(i10 != -2147483647);
         return e2.d0.Y(bufferSizeInFrames, 1000000L, i10, RoundingMode.DOWN);
     }
@@ -243,7 +243,7 @@ public abstract class b {
 
     public static boolean l(Context context) {
         try {
-            FingerprintManager a2 = t0.a.a(context.getSystemService("fingerprint"));
+            FingerprintManager a2 = v3.d.a(context.getSystemService("fingerprint"));
             if (a2 == null) {
                 return false;
             }
@@ -298,7 +298,7 @@ public abstract class b {
 
     public static boolean p(Context context) {
         try {
-            FingerprintManager a2 = t0.a.a(context.getSystemService("fingerprint"));
+            FingerprintManager a2 = v3.d.a(context.getSystemService("fingerprint"));
             if (a2 == null) {
                 return false;
             }
@@ -314,7 +314,7 @@ public abstract class b {
     }
 
     public static boolean r(Throwable th2) {
-        return j2.e.f(th2);
+        return j2.e.e(th2);
     }
 
     public static int s(AppOpsManager appOpsManager, String str, String str2) {
@@ -336,42 +336,42 @@ public abstract class b {
     public static void w(k2.p pVar, Object obj) {
         a6.m mVar;
         AudioDeviceInfo b10 = j2.e.b(obj);
-        k2.g0 g0Var = (k2.g0) pVar;
+        k2.f0 f0Var = (k2.f0) pVar;
         if (b10 == null) {
             mVar = null;
         } else {
-            g0Var.getClass();
+            f0Var.getClass();
             mVar = new a6.m(b10, 29);
         }
-        g0Var.c0 = mVar;
-        g7 g7Var = g0Var.z;
-        if (g7Var != null) {
-            g7Var.c(b10);
+        f0Var.c0 = mVar;
+        e7 e7Var = f0Var.z;
+        if (e7Var != null) {
+            e7Var.c(b10);
         }
-        AudioTrack audioTrack = g0Var.x;
+        AudioTrack audioTrack = f0Var.x;
         if (audioTrack != null) {
-            G(audioTrack, g0Var.c0);
+            G(audioTrack, f0Var.c0);
         }
     }
 
     public static void x(k2.p pVar, Object obj) {
         a6.m mVar;
         AudioDeviceInfo b10 = j2.e.b(obj);
-        k2.g0 g0Var = (k2.g0) pVar;
+        k2.f0 f0Var = (k2.f0) pVar;
         if (b10 == null) {
             mVar = null;
         } else {
-            g0Var.getClass();
+            f0Var.getClass();
             mVar = new a6.m(b10, 29);
         }
-        g0Var.c0 = mVar;
-        g7 g7Var = g0Var.z;
-        if (g7Var != null) {
-            g7Var.c(b10);
+        f0Var.c0 = mVar;
+        e7 e7Var = f0Var.z;
+        if (e7Var != null) {
+            e7Var.c(b10);
         }
-        AudioTrack audioTrack = g0Var.x;
+        AudioTrack audioTrack = f0Var.x;
         if (audioTrack != null) {
-            G(audioTrack, g0Var.c0);
+            G(audioTrack, f0Var.c0);
         }
     }
 

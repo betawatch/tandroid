@@ -1,32 +1,9 @@
 package i2;
 
-import j$.util.Objects;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class r0 {
-    public final long a;
-    public final float b;
-    public final long c;
-
-    public r0(q0 q0Var) {
-        this.a = q0Var.a;
-        this.b = q0Var.b;
-        this.c = q0Var.c;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof r0)) {
-            return false;
-        }
-        r0 r0Var = (r0) obj;
-        return this.a == r0Var.a && this.b == r0Var.b && this.c == r0Var.c;
-    }
-
-    public final int hashCode() {
-        return Objects.hash(Long.valueOf(this.a), Float.valueOf(this.b), Long.valueOf(this.c));
-    }
+    public long a = -9223372036854775807L;
+    public float b = -3.4028235E38f;
+    public long c = -9223372036854775807L;
 }

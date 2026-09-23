@@ -1,171 +1,106 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.view.View;
-import java.util.HashSet;
+import android.animation.ValueAnimator;
+import android.app.Dialog;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.os.Build;
+import android.os.Bundle;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.support.LongSparseIntArray;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class o50 extends org.telegram.ui.Components.ll0 {
-    public final LongSparseIntArray X2;
-    public final /* synthetic */ i60 Y2;
+public final class o50 extends Dialog {
+    public final ai.n4 a;
+    public final p50 b;
+    public Bitmap c;
+    public Paint d;
+    public BitmapShader e;
+    public final Matrix f;
+    public float h;
+    public ValueAnimator n;
+    public boolean r;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o50(i60 i60Var, LaunchActivity launchActivity) {
-        super(launchActivity, null);
-        this.Y2 = i60Var;
-        this.X2 = new LongSparseIntArray();
+    public o50(Context context, p50 p50Var) {
+        super(context, R.style.TransparentDialog);
+        this.f = new Matrix();
+        this.b = p50Var;
+        p50Var.setVisibility(4);
+        AndroidUtilities.makeGlobalBlurBitmap(new dt(4, this, p50Var), 14.0f);
+        ai.n4 n4Var = new ai.n4(this, context, p50Var);
+        this.a = n4Var;
+        n4Var.setOnClickListener(new a(this, 29));
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:30:0x0099  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x00bb  */
-    @Override // org.telegram.ui.Components.ll0, android.view.ViewGroup, android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void dispatchDraw(Canvas canvas) {
-        float f7;
-        int i10;
-        boolean z10;
-        boolean z11;
-        i60 i60Var = this.Y2;
-        boolean z12 = i60Var.X.K != Float.MAX_VALUE;
-        LongSparseIntArray longSparseIntArray = this.X2;
-        longSparseIntArray.clear();
-        for (int i11 = 0; i11 < i60Var.B2.size(); i11++) {
-            longSparseIntArray.put(i60Var.B2.keyAt(i11), 1);
+    public final void b(float f7, n50 n50Var) {
+        ValueAnimator valueAnimator = this.n;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+            this.n = null;
         }
-        i60Var.B2.clear();
-        int childCount = getChildCount();
-        int i12 = 0;
-        boolean z13 = false;
-        float f10 = Float.MAX_VALUE;
-        float f11 = 0.0f;
-        while (i12 < childCount) {
-            View childAt = getChildAt(i12);
-            s4.c1 G = G(childAt);
-            if (G != null) {
-                int i13 = G.f;
-                if (i13 == 3 || i13 == 4 || i13 == 5 || i13 == 6 || i13 == 7) {
-                    i10 = i12;
-                    z10 = z13;
-                } else {
-                    if (i13 == 1) {
-                        View view = G.a;
-                        if (view instanceof org.telegram.ui.Cells.e4) {
-                            org.telegram.ui.Cells.e4 e4Var = (org.telegram.ui.Cells.e4) view;
-                            i10 = i12;
-                            z11 = z13;
-                            i60Var.B2.append(e4Var.getPeerId(), 1);
-                            if (longSparseIntArray.get(e4Var.getPeerId(), 0) == 0) {
-                                z13 = true;
-                                if (!z12) {
-                                    f11 = Math.max(f11, childAt.getY() + childAt.getMeasuredHeight());
-                                    f10 = Math.min(f10, Math.max(0.0f, childAt.getY()));
-                                } else if (!i60Var.X.I.contains(G)) {
-                                    f10 = Math.min(f10, Math.max(0, childAt.getTop()));
-                                    f11 = Math.max(f11, childAt.getBottom());
-                                }
-                                i12 = i10 + 1;
-                            } else {
-                                longSparseIntArray.delete(e4Var.getPeerId());
-                                z13 = z11;
-                                if (!z12) {
-                                }
-                                i12 = i10 + 1;
-                            }
-                        }
-                    }
-                    i10 = i12;
-                    z11 = z13;
-                    z13 = z11;
-                    if (!z12) {
-                    }
-                    i12 = i10 + 1;
-                }
-            } else {
-                i10 = i12;
-                z10 = z13;
-            }
-            z13 = z10;
-            i12 = i10 + 1;
-        }
-        if (longSparseIntArray.size() > 0 ? true : z13) {
-            i60Var.O1();
-        }
-        if (z12) {
-            w50 w50Var = i60Var.X;
-            float f12 = w50Var.K;
-            float f13 = w50Var.F;
-            f7 = (f10 * f13) + ((1.0f - f13) * f12);
-            f11 = (f11 * f13) + ((1.0f - f13) * w50Var.J);
-        } else {
-            f7 = f10;
-        }
-        if (f10 != Float.MAX_VALUE) {
-            i60Var.v0.set((getMeasuredWidth() - (AndroidUtilities.isTablet() ? Math.min(AndroidUtilities.dp(420.0f), getMeasuredWidth()) : getMeasuredWidth())) >> 1, f7, getMeasuredWidth() - r3, Math.min(getMeasuredHeight() - getTranslationY(), f11));
-            canvas.drawRoundRect(i60Var.v0, AndroidUtilities.dp(13.0f), AndroidUtilities.dp(13.0f), i60Var.C0);
-        }
-        canvas.save();
-        canvas.clipRect(0, 0, getMeasuredWidth(), getMeasuredHeight());
-        super.dispatchDraw(canvas);
-        canvas.restore();
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.h, f7);
+        this.n = ofFloat;
+        ofFloat.addUpdateListener(new c3(this, 16));
+        this.n.addListener(new ai.t2(this, f7, n50Var, 3));
+        this.n.setDuration(420L);
+        this.n.setInterpolator(org.telegram.ui.Components.rr.h);
+        this.n.start();
     }
 
-    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        if (view == this.Y2.X2) {
-            return false;
-        }
-        return super.drawChild(canvas, view, j3);
-    }
-
-    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        int i14;
-        super.onLayout(z10, i10, i11, i12, i13);
-        w50 w50Var = this.Y2.X;
-        HashSet hashSet = w50Var.I;
-        i60 i60Var = w50Var.L;
-        HashSet hashSet2 = w50Var.H;
-        if (w50Var.G != null) {
+    @Override // android.app.Dialog, android.content.DialogInterface
+    public final void dismiss() {
+        if (this.r) {
             return;
         }
-        hashSet2.clear();
-        hashSet2.addAll(w50Var.q);
-        hashSet.clear();
-        hashSet.addAll(w50Var.p);
-        w50Var.J = 0.0f;
-        w50Var.K = Float.MAX_VALUE;
-        if (hashSet2.isEmpty() && hashSet.isEmpty()) {
-            return;
+        this.r = true;
+        b(0.0f, new n50(this, 0));
+        try {
+            WindowManager.LayoutParams attributes = getWindow().getAttributes();
+            attributes.flags |= 16;
+            getWindow().setAttributes(attributes);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
-        o50 o50Var = i60Var.Q;
-        int childCount = o50Var.getChildCount();
-        for (int i15 = 0; i15 < childCount; i15++) {
-            View childAt = o50Var.getChildAt(i15);
-            s4.c1 G = o50Var.G(childAt);
-            if (G != null && (i14 = G.f) != 3 && i14 != 4 && i14 != 5 && i14 != 7 && !hashSet2.contains(G)) {
-                w50Var.J = Math.max(w50Var.J, childAt.getY() + childAt.getMeasuredHeight());
-                w50Var.K = Math.min(w50Var.K, Math.max(0.0f, childAt.getY()));
-            }
-        }
-        w50Var.F = 0.0f;
-        o50Var.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.ll0, android.view.View
-    public final void setVisibility(int i10) {
-        if (getVisibility() != i10) {
-            for (int i11 = 0; i11 < getChildCount(); i11++) {
-                View childAt = getChildAt(i11);
-                if (childAt instanceof org.telegram.ui.Components.voip.l) {
-                    i60.N(this.Y2, (org.telegram.ui.Components.voip.l) childAt, childAt.isAttachedToWindow() && i10 == 0);
-                }
-            }
+    @Override // android.app.Dialog
+    public final void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
+        Window window = getWindow();
+        window.setWindowAnimations(R.style.DialogNoAnimation);
+        setContentView(this.a, new ViewGroup.LayoutParams(-1, -1));
+        WindowManager.LayoutParams attributes = window.getAttributes();
+        attributes.width = -1;
+        attributes.height = -1;
+        attributes.gravity = 119;
+        attributes.dimAmount = 0.0f;
+        int i10 = attributes.flags & (-3);
+        attributes.softInputMode = 48;
+        attributes.flags = (-2013069056) | i10;
+        if (!BuildVars.DEBUG_PRIVATE_VERSION) {
+            attributes.flags = i10 | (-2013060864);
+            AndroidUtilities.logFlagSecure();
         }
-        super.setVisibility(i10);
+        attributes.flags |= 1152;
+        if (Build.VERSION.SDK_INT >= 28) {
+            attributes.layoutInDisplayCutoutMode = 1;
+        }
+        window.setAttributes(attributes);
+    }
+
+    @Override // android.app.Dialog
+    public final void show() {
+        super.show();
+        b(1.0f, null);
+        AndroidUtilities.runOnUIThread(new n50(this, 1), 16L);
     }
 }

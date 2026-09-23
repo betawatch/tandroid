@@ -1,34 +1,42 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.TLRPC;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class w20 implements Runnable {
-    public final /* synthetic */ x20 a;
+public final class w20 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ a30 b;
 
-    public w20(x20 x20Var) {
-        this.a = x20Var;
+    public /* synthetic */ w20(a30 a30Var, int i10) {
+        this.a = i10;
+        this.b = a30Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        VoIPService sharedInstance = VoIPService.getSharedInstance();
-        if (sharedInstance == null || !sharedInstance.isMicMute()) {
-            return;
-        }
-        TLRPC.GroupCallParticipant groupCallParticipant = (TLRPC.GroupCallParticipant) sharedInstance.groupCall.participants.f(sharedInstance.getSelfId());
-        if (groupCallParticipant == null || groupCallParticipant.can_self_unmute || !groupCallParticipant.muted || ChatObject.canManageCalls(sharedInstance.getChat())) {
-            x20 x20Var = this.a;
-            AndroidUtilities.runOnUIThread(x20Var.f, 90L);
-            try {
-                x20Var.performHapticFeedback(3, 2);
-            } catch (Exception unused) {
-            }
-            x20Var.c = true;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                a30 a30Var = this.b;
+                a30Var.r.x = (int) floatValue;
+                a30Var.h();
+                y20 y20Var = a30Var.a;
+                if (y20Var.getParent() != null) {
+                    a30Var.n.updateViewLayout(y20Var, a30Var.r);
+                    break;
+                }
+                break;
+            default:
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                a30 a30Var2 = this.b;
+                a30Var2.r.y = (int) floatValue2;
+                y20 y20Var2 = a30Var2.a;
+                if (y20Var2.getParent() != null) {
+                    a30Var2.n.updateViewLayout(y20Var2, a30Var2.r);
+                    break;
+                }
+                break;
         }
     }
 }

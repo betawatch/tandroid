@@ -14,13 +14,14 @@ import java.util.ConcurrentModificationException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.Callable;
-import org.telegram.ui.f71;
+import org.telegram.messenger.BuildConfig;
+import org.telegram.ui.x61;
 import v7.g5;
 import y8.w0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class s implements com.google.android.gms.common.api.internal.s, w2.d, Continuation, y2.h, f71 {
+public final /* synthetic */ class s implements com.google.android.gms.common.api.internal.s, w2.d, Continuation, y2.h, x61 {
     public Object a;
 
     public /* synthetic */ s(Object obj) {
@@ -44,7 +45,7 @@ public final /* synthetic */ class s implements com.google.android.gms.common.ap
                 try {
                     throw null;
                 } catch (RemoteException unused) {
-                    Log.w("WearableClient", "onPostInitHandler: Didn't add: " + String.valueOf(entry.getKey()) + "/null");
+                    Log.w("WearableClient", "onPostInitHandler: Didn't add: " + String.valueOf(entry.getKey()) + "/" + BuildConfig.BETA_URL);
                 }
             }
         }

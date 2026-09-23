@@ -1,58 +1,62 @@
 package org.telegram.ui;
 
-import android.app.Activity;
 import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gt implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ st b;
+public final class gt implements View.OnClickListener {
+    public final /* synthetic */ ArrayList a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ lt c;
 
-    public /* synthetic */ gt(st stVar, int i10) {
-        this.a = i10;
-        this.b = stVar;
+    public gt(lt ltVar, ArrayList arrayList, boolean z10) {
+        this.c = ltVar;
+        this.a = arrayList;
+        this.b = z10;
     }
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                st stVar = this.b;
-                stVar.K = false;
-                stVar.z.invalidate();
-                stVar.n();
-                break;
-            case 1:
-                st stVar2 = this.b;
-                Activity activity = stVar2.w;
-                if (activity instanceof LaunchActivity) {
-                    LaunchActivity launchActivity = (LaunchActivity) activity;
-                    if (launchActivity.O() != null && launchActivity.O().getLastFragment() != null) {
-                        launchActivity.O().getLastFragment().dismissCurrentDialog();
-                    }
-                    launchActivity.p0(new PremiumPreviewFragment(0, PremiumPreviewFragment.l0(5)));
-                }
-                stVar2.K = false;
-                stVar2.z.invalidate();
-                stVar2.n();
-                break;
-            case 2:
-                st stVar3 = this.b;
-                qt qtVar = stVar3.l;
-                if (qtVar != null) {
-                    qtVar.K();
-                }
-                stVar3.p();
-                break;
-            default:
-                st stVar4 = this.b;
-                qt qtVar2 = stVar4.l;
-                if (qtVar2 != null) {
-                    qtVar2.r();
-                }
-                stVar4.p();
-                break;
+        pt ptVar = this.c.a;
+        if (ptVar.w == null) {
+            return;
         }
+        int intValue = ((Integer) view.getTag()).intValue();
+        ArrayList arrayList = this.a;
+        if (((Integer) arrayList.get(intValue)).intValue() == 0 || ((Integer) arrayList.get(intValue)).intValue() == 6) {
+            nt ntVar = ptVar.l;
+            if (ntVar != null) {
+                ntVar.n(ptVar.W, ptVar.Y, ptVar.b0, ((Integer) arrayList.get(intValue)).intValue() == 0, 0, 0);
+            }
+        } else if (((Integer) arrayList.get(intValue)).intValue() == 1) {
+            nt ntVar2 = ptVar.l;
+            if (ntVar2 != null) {
+                ntVar2.M(ptVar.a0, ptVar.i);
+            }
+        } else if (((Integer) arrayList.get(intValue)).intValue() == 2) {
+            MediaDataController.getInstance(ptVar.r).addRecentSticker(2, ptVar.b0, ptVar.W, (int) (System.currentTimeMillis() / 1000), this.b);
+        } else if (((Integer) arrayList.get(intValue)).intValue() == 3) {
+            TLRPC.Document document = ptVar.W;
+            Object obj = ptVar.b0;
+            String str = ptVar.Y;
+            nt ntVar3 = ptVar.l;
+            if (ntVar3 == null) {
+                return;
+            } else {
+                org.telegram.ui.Components.e5.L(ptVar.w, ntVar3.a(), new a1.d(ntVar3, document, str, obj, 10));
+            }
+        } else if (((Integer) arrayList.get(intValue)).intValue() == 4) {
+            MediaDataController.getInstance(ptVar.r).addRecentSticker(0, ptVar.b0, ptVar.W, (int) (System.currentTimeMillis() / 1000), true);
+        } else if (((Integer) arrayList.get(intValue)).intValue() == 5) {
+            ptVar.l.k(ptVar.X);
+        } else if (((Integer) arrayList.get(intValue)).intValue() == 7) {
+            ptVar.l.p(ptVar.W);
+        } else if (((Integer) arrayList.get(intValue)).intValue() == 8) {
+            ptVar.l.F(ptVar.W);
+        }
+        ptVar.p();
     }
 }

@@ -1,45 +1,36 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class ia0 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 a;
-    public final /* synthetic */ na0 b;
+public final class ia0 extends g.p {
+    public final /* synthetic */ oa0 c;
 
-    public ia0(na0 na0Var, org.telegram.ui.ActionBar.n2 n2Var) {
-        this.b = na0Var;
-        this.a = n2Var;
+    public ia0(oa0 oa0Var) {
+        this.c = oa0Var;
     }
 
-    public final void a(boolean z10) {
-        na0 na0Var = this.b;
-        if (na0Var.getNeededLayoutManager() != na0Var.getCurrentLayoutManager() && na0Var.a()) {
-            if (na0Var.f.M0 > 0) {
-                na0Var.N = true;
-                na0Var.o(false);
-                return;
-            }
-            na0Var.b.setLayoutManager(na0Var.getNeededLayoutManager());
+    @Override // g.p
+    public final int i(int i10) {
+        oa0 oa0Var = this.c;
+        gg.k1 k1Var = oa0Var.f;
+        if (i10 == 0) {
+            return 100;
         }
-        if (z10 && !na0Var.a()) {
-            z10 = false;
+        int i11 = i10 - 1;
+        Object J = k1Var.J(i11);
+        if (J instanceof TLRPC.TL_inlineBotSwitchPM) {
+            return 100;
         }
-        na0Var.o((!z10 || na0Var.f.K() > 0) ? z10 : false);
-    }
-
-    public final void b(boolean z10) {
-        this.b.l(z10);
-    }
-
-    public final void c() {
-        na0 na0Var = this.b;
-        xp xpVar = na0Var.J;
-        if (na0Var.b.getLayoutManager() == na0Var.d || !na0Var.I) {
-            return;
+        if (J instanceof TLRPC.Document) {
+            return 20;
         }
-        AndroidUtilities.cancelRunOnUIThread(xpVar);
-        AndroidUtilities.runOnUIThread(xpVar, this.a.getFragmentBeginToShow() ? 0L : 100L);
+        if (k1Var.I() != null || k1Var.U != null) {
+            i10 = i11;
+        }
+        ha0 ha0Var = oa0Var.d;
+        ha0Var.B1();
+        return ha0Var.R.get(i10);
     }
 }

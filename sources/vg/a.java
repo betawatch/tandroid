@@ -7,27 +7,27 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
 import w7.x5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class a extends FrameLayout {
     public final ci.d a;
     public final View b;
-    public final e6 c;
+    public final d6 c;
     public final Paint d;
     public boolean e;
 
-    public a(Context context, e6 e6Var) {
+    public a(Context context, d6 d6Var) {
         super(context);
         this.d = new Paint(1);
-        this.c = e6Var;
+        this.c = d6Var;
         View view = new View(context);
         this.b = view;
         addView(view, x5.n(-1, -1));
-        ci.d dVar = new ci.d(context, e6Var, true);
+        ci.d dVar = new ci.d(context, d6Var, true);
         this.a = dVar;
         addView(dVar, x5.d(-1, 48.0f, 17, 14.0f, 0.0f, 14.0f, 0.0f));
     }
@@ -40,7 +40,7 @@ public final class a extends FrameLayout {
         dVar.setEnabled(true);
         dVar.b(i10, z10);
         dVar.g(LocaleController.getString(R.string.BoostingStartGiveaway), z10, true);
-        this.b.setBackgroundColor(i6.v0(i6.h5, this.c));
+        this.b.setBackgroundColor(h6.v0(h6.h5, this.c));
     }
 
     public final void b(boolean z10) {
@@ -51,7 +51,7 @@ public final class a extends FrameLayout {
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         if (this.e) {
-            int v02 = i6.v0(i6.a7, this.c);
+            int v02 = h6.v0(h6.a7, this.c);
             Paint paint = this.d;
             paint.setColor(v02);
             paint.setAlpha(255);

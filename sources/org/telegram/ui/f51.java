@@ -1,47 +1,46 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.animation.ValueAnimator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f51 implements r0.n, org.telegram.ui.ActionBar.a2 {
+public final /* synthetic */ class f51 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ i51 b;
+    public final /* synthetic */ z61 b;
+    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ f51(i51 i51Var, int i10) {
+    public /* synthetic */ f51(z61 z61Var, boolean z10, int i10) {
         this.a = i10;
-        this.b = i51Var;
+        this.b = z61Var;
+        this.c = z10;
     }
 
-    @Override // r0.n
-    public r0.l1 Q0(View view, r0.l1 l1Var) {
-        i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(l1Var, false);
-        i51 i51Var = this.b;
-        i51Var.e = defaultWindowInsets;
-        i51Var.c.setPadding(defaultWindowInsets.a, defaultWindowInsets.b, defaultWindowInsets.c, defaultWindowInsets.d);
-        i51Var.b.requestLayout();
-        return r0.l1.b;
-    }
-
-    @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
-            case 1:
-                org.telegram.ui.ActionBar.b2 b2Var2 = this.b.c0;
-                if (b2Var2 != null) {
-                    b2Var2.dismiss();
-                    break;
+            case 0:
+                z61 z61Var = this.b;
+                w51 w51Var = z61Var.h0;
+                m51 m51Var = z61Var.i0;
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                if (!this.c) {
+                    floatValue = 1.0f - floatValue;
                 }
+                float f7 = 1.0f - floatValue;
+                w51Var.setAlpha(f7);
+                w51Var.setTranslationY(AndroidUtilities.dp(8.0f) * floatValue);
+                m51Var.setAlpha(floatValue);
+                m51Var.setTranslationY(AndroidUtilities.dp(8.0f) * f7);
+                z61Var.j0.setAlpha(m51Var.getAlpha() * floatValue);
                 break;
             default:
-                i51 i51Var = this.b;
-                org.telegram.ui.ActionBar.b2 b2Var3 = i51Var.c0;
-                if (b2Var3 != null) {
-                    b2Var3.dismiss();
-                    i51Var.c0 = null;
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                if (!this.c) {
+                    floatValue2 = 1.0f - floatValue2;
                 }
-                i51Var.dismiss();
+                z61 z61Var2 = this.b;
+                z61Var2.j0.setAlpha(z61Var2.i0.getAlpha() * floatValue2);
                 break;
         }
     }

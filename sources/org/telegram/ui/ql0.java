@@ -1,195 +1,121 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
+import android.view.KeyEvent;
+import android.view.MotionEvent;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class ql0 extends org.telegram.ui.Components.kl0 {
-    public final Context c;
-    public final /* synthetic */ PasscodeActivity d;
+public final /* synthetic */ class ql0 implements TextView.OnEditorActionListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ in0 b;
 
-    public ql0(PasscodeActivity passcodeActivity, Context context) {
-        this.d = passcodeActivity;
-        this.c = context;
+    public /* synthetic */ ql0(in0 in0Var, int i10) {
+        this.a = i10;
+        this.b = in0Var;
     }
 
-    @Override // org.telegram.ui.Components.kl0
-    public final boolean D(s4.c1 c1Var) {
-        int i10;
-        int i11;
-        int i12;
-        int i13;
-        int b10 = c1Var.b();
-        PasscodeActivity passcodeActivity = this.d;
-        i10 = passcodeActivity.fingerprintRow;
-        if (b10 == i10) {
-            return true;
-        }
-        i11 = passcodeActivity.autoLockRow;
-        if (b10 == i11 || b10 == passcodeActivity.J) {
-            return true;
-        }
-        i12 = passcodeActivity.changePasscodeRow;
-        if (b10 == i12) {
-            return true;
-        }
-        i13 = passcodeActivity.disablePasscodeRow;
-        return b10 == i13;
-    }
-
-    @Override // s4.h0
-    public final int h() {
-        return this.d.L;
-    }
-
-    @Override // s4.h0
-    public final int j(int i10) {
-        int i11;
-        int i12;
-        int i13;
-        int i14;
-        PasscodeActivity passcodeActivity = this.d;
-        i11 = passcodeActivity.fingerprintRow;
-        if (i10 == i11 || i10 == passcodeActivity.J) {
-            return 0;
-        }
-        i12 = passcodeActivity.changePasscodeRow;
-        if (i10 == i12) {
-            return 1;
-        }
-        i13 = passcodeActivity.autoLockRow;
-        if (i10 == i13) {
-            return 1;
-        }
-        i14 = passcodeActivity.disablePasscodeRow;
-        if (i10 == i14) {
-            return 1;
-        }
-        if (i10 == passcodeActivity.H || i10 == passcodeActivity.K || i10 == passcodeActivity.G) {
-            return 2;
-        }
-        if (i10 == passcodeActivity.I) {
-            return 3;
-        }
-        return i10 == 0 ? 4 : 0;
-    }
-
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        int i11;
-        int i12;
-        int i13;
-        int i14;
-        int i15 = c1Var.f;
-        View view = c1Var.a;
-        PasscodeActivity passcodeActivity = this.d;
-        if (i15 == 0) {
-            org.telegram.ui.Cells.w8 w8Var = (org.telegram.ui.Cells.w8) view;
-            i11 = passcodeActivity.fingerprintRow;
-            if (i10 == i11) {
-                w8Var.f(LocaleController.getString(R.string.UnlockFingerprint), SharedConfig.useFingerprintLock, false);
-                return;
-            } else {
-                if (i10 == passcodeActivity.J) {
-                    w8Var.f(LocaleController.getString(R.string.ScreenCaptureShowContent), SharedConfig.allowScreenCapture, false);
-                    return;
-                }
-                return;
-            }
-        }
-        if (i15 != 1) {
-            if (i15 != 2) {
-                if (i15 != 3) {
-                    if (i15 != 4) {
-                        return;
+    @Override // android.widget.TextView.OnEditorActionListener
+    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
+        switch (this.a) {
+            case 0:
+                in0 in0Var = this.b;
+                if (i10 != 5) {
+                    if (i10 != 6) {
+                        in0Var.getClass();
+                        break;
+                    } else {
+                        in0Var.L.callOnClick();
+                        break;
                     }
-                    rl0 rl0Var = (rl0) view;
-                    rl0Var.a.f(R.raw.utyan_passcode, 100, 100, null);
-                    rl0Var.a.d();
-                    return;
+                } else {
+                    in0Var.Y[2].requestFocus();
+                    break;
                 }
-                org.telegram.ui.Cells.m4 m4Var = (org.telegram.ui.Cells.m4) view;
-                m4Var.setHeight(46);
-                if (i10 == passcodeActivity.I) {
-                    m4Var.setText(LocaleController.getString(R.string.ScreenCaptureHeader));
-                    return;
+            case 1:
+                in0 in0Var2 = this.b;
+                in0Var2.getClass();
+                if (i10 == 5) {
+                    int intValue = ((Integer) textView.getTag()).intValue() + 1;
+                    EditTextBoldCursor[] editTextBoldCursorArr = in0Var2.Y;
+                    if (intValue < editTextBoldCursorArr.length) {
+                        if (!editTextBoldCursorArr[intValue].isFocusable()) {
+                            in0Var2.Y[intValue].dispatchTouchEvent(MotionEvent.obtain(0L, 0L, 1, 0.0f, 0.0f, 0));
+                            textView.clearFocus();
+                            AndroidUtilities.hideKeyboard(textView);
+                            break;
+                        } else {
+                            in0Var2.Y[intValue].requestFocus();
+                            break;
+                        }
+                    }
                 }
-                return;
-            }
-            org.telegram.ui.Cells.e9 e9Var = (org.telegram.ui.Cells.e9) view;
-            if (i10 == passcodeActivity.G) {
-                e9Var.setText(LocaleController.getString(R.string.PasscodeScreenHint));
-                e9Var.setBackground(null);
-                e9Var.getTextView().setGravity(1);
-                return;
-            } else if (i10 == passcodeActivity.H) {
-                e9Var.setText(LocaleController.getString(R.string.AutoLockInfo));
-                e9Var.getTextView().setGravity(LocaleController.isRTL ? 5 : 3);
-                return;
-            } else {
-                if (i10 == passcodeActivity.K) {
-                    e9Var.setText(LocaleController.getString(R.string.ScreenCaptureInfo));
-                    e9Var.getTextView().setGravity(LocaleController.isRTL ? 5 : 3);
-                    return;
+                break;
+            case 2:
+                in0 in0Var3 = this.b;
+                in0Var3.getClass();
+                if (i10 == 5) {
+                    int intValue2 = ((Integer) textView.getTag()).intValue() + 1;
+                    EditTextBoldCursor[] editTextBoldCursorArr2 = in0Var3.a0;
+                    if (intValue2 < editTextBoldCursorArr2.length) {
+                        if (!editTextBoldCursorArr2[intValue2].isFocusable()) {
+                            in0Var3.a0[intValue2].dispatchTouchEvent(MotionEvent.obtain(0L, 0L, 1, 0.0f, 0.0f, 0));
+                            textView.clearFocus();
+                            AndroidUtilities.hideKeyboard(textView);
+                            break;
+                        } else {
+                            in0Var3.a0[intValue2].requestFocus();
+                            break;
+                        }
+                    }
                 }
-                return;
-            }
+                break;
+            case 3:
+                in0 in0Var4 = this.b;
+                in0Var4.getClass();
+                if (i10 == 6 || i10 == 5) {
+                    in0Var4.L.callOnClick();
+                    break;
+                }
+                break;
+            case 4:
+                in0 in0Var5 = this.b;
+                in0Var5.getClass();
+                if (i10 == 5) {
+                    int intValue3 = ((Integer) textView.getTag()).intValue() + 1;
+                    EditTextBoldCursor[] editTextBoldCursorArr3 = in0Var5.Y;
+                    if (intValue3 < editTextBoldCursorArr3.length) {
+                        if (!editTextBoldCursorArr3[intValue3].isFocusable()) {
+                            in0Var5.Y[intValue3].dispatchTouchEvent(MotionEvent.obtain(0L, 0L, 1, 0.0f, 0.0f, 0));
+                            textView.clearFocus();
+                            AndroidUtilities.hideKeyboard(textView);
+                            break;
+                        } else {
+                            in0Var5.Y[intValue3].requestFocus();
+                            break;
+                        }
+                    }
+                }
+                break;
+            case 5:
+                in0 in0Var6 = this.b;
+                in0Var6.getClass();
+                if (i10 == 5 || i10 == 6) {
+                    in0Var6.L.callOnClick();
+                    break;
+                }
+                break;
+            default:
+                in0 in0Var7 = this.b;
+                in0Var7.getClass();
+                if (i10 == 6 || i10 == 5) {
+                    in0Var7.L.callOnClick();
+                    break;
+                }
+                break;
         }
-        org.telegram.ui.Cells.ea eaVar = (org.telegram.ui.Cells.ea) view;
-        i12 = passcodeActivity.changePasscodeRow;
-        if (i10 == i12) {
-            eaVar.b(LocaleController.getString(R.string.ChangePasscode), true);
-            if (SharedConfig.passcodeHash.isEmpty()) {
-                int i16 = org.telegram.ui.ActionBar.i6.E6;
-                eaVar.setTag(Integer.valueOf(i16));
-                eaVar.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, i16, false));
-                return;
-            } else {
-                int i17 = org.telegram.ui.ActionBar.i6.G6;
-                eaVar.setTag(Integer.valueOf(i17));
-                eaVar.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, i17, false));
-                return;
-            }
-        }
-        i13 = passcodeActivity.autoLockRow;
-        if (i10 == i13) {
-            int i18 = SharedConfig.autoLockIn;
-            eaVar.c(LocaleController.getString(R.string.AutoLock), i18 == 0 ? LocaleController.formatString("AutoLockDisabled", R.string.AutoLockDisabled, new Object[0]) : i18 < 3600 ? LocaleController.formatString("AutoLockInTime", R.string.AutoLockInTime, LocaleController.formatPluralString("Minutes", i18 / 60, new Object[0])) : i18 < 86400 ? LocaleController.formatString("AutoLockInTime", R.string.AutoLockInTime, LocaleController.formatPluralString("Hours", (int) Math.ceil((i18 / 60.0f) / 60.0f), new Object[0])) : LocaleController.formatString("AutoLockInTime", R.string.AutoLockInTime, LocaleController.formatPluralString("Days", (int) Math.ceil(((i18 / 60.0f) / 60.0f) / 24.0f), new Object[0])), false, true);
-            int i19 = org.telegram.ui.ActionBar.i6.G6;
-            eaVar.setTag(Integer.valueOf(i19));
-            eaVar.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, i19, false));
-            return;
-        }
-        i14 = passcodeActivity.disablePasscodeRow;
-        if (i10 == i14) {
-            eaVar.b(LocaleController.getString(R.string.DisablePasscode), false);
-            int i20 = org.telegram.ui.ActionBar.i6.q7;
-            eaVar.setTag(Integer.valueOf(i20));
-            eaVar.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, i20, false));
-        }
-    }
-
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        View w8Var;
-        Context context = this.c;
-        if (i10 == 0) {
-            w8Var = new org.telegram.ui.Cells.w8(context);
-        } else if (i10 == 1) {
-            w8Var = new org.telegram.ui.Cells.ea(context);
-        } else if (i10 == 3) {
-            w8Var = new org.telegram.ui.Cells.m4(context);
-        } else if (i10 != 4) {
-            w8Var = new org.telegram.ui.Cells.e9(context);
-        } else {
-            w8Var = new rl0(context);
-            w8Var.setTag(-33024);
-        }
-        return new org.telegram.ui.Components.vk0(w8Var);
+        return true;
     }
 }

@@ -1,232 +1,136 @@
 package ci;
 
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.Bundle;
-import android.provider.MediaStore;
-import java.util.ArrayList;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.TimeUnit;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.am0;
-import org.telegram.ui.Components.t40;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.bo;
-import org.telegram.ui.dv0;
-import org.telegram.ui.i01;
-import org.telegram.ui.i60;
-import org.telegram.ui.uy;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.f71;
+import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.tz;
+import org.telegram.ui.Components.wz;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class z6 implements m8, org.telegram.ui.Components.b5, org.telegram.ui.ActionBar.a2, t5.b, r9.g, t40 {
+public final /* synthetic */ class z6 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+    public final /* synthetic */ b7 b;
 
-    public /* synthetic */ z6(Object obj, Object obj2, long j3, Object obj3, int i10) {
+    public /* synthetic */ z6(b7 b7Var, int i10) {
         this.a = i10;
-        this.c = obj;
-        this.d = obj2;
-        this.b = j3;
-        this.e = obj3;
+        this.b = b7Var;
     }
 
-    @Override // org.telegram.ui.Components.b5
-    public void J(int i10, int i11, boolean z10) {
-        bo.r0((bo) this.c, (ArrayList) this.d, this.b, (am0) this.e, z10, i10);
-    }
-
-    @Override // org.telegram.ui.Components.t40
-    public void Q(TLRPC.InputFile inputFile, TLRPC.InputFile inputFile2, double d, String str, TLRPC.PhotoSize photoSize, TLRPC.PhotoSize photoSize2, boolean z10, TLRPC.VideoSize videoSize) {
-        bo boVar = (bo) this.c;
-        TLRPC.FileLocation[] fileLocationArr = (TLRPC.FileLocation[]) this.d;
-        TLRPC.FileLocation[] fileLocationArr2 = (TLRPC.FileLocation[]) this.e;
-        if (inputFile == null && inputFile2 == null && videoSize == null) {
-            fileLocationArr[0] = photoSize2.location;
-            fileLocationArr2[0] = photoSize.location;
-            return;
-        }
-        TLRPC.TL_photos_uploadProfilePhoto tL_photos_uploadProfilePhoto = new TLRPC.TL_photos_uploadProfilePhoto();
-        if (inputFile != null) {
-            tL_photos_uploadProfilePhoto.file = inputFile;
-            tL_photos_uploadProfilePhoto.flags |= 1;
-        }
-        if (inputFile2 != null) {
-            tL_photos_uploadProfilePhoto.video = inputFile2;
-            int i10 = tL_photos_uploadProfilePhoto.flags;
-            tL_photos_uploadProfilePhoto.video_start_ts = d;
-            tL_photos_uploadProfilePhoto.flags = i10 | 6;
-        }
-        if (videoSize != null) {
-            tL_photos_uploadProfilePhoto.video_emoji_markup = videoSize;
-            tL_photos_uploadProfilePhoto.flags |= 16;
-        }
-        boVar.getConnectionsManager().sendRequest(tL_photos_uploadProfilePhoto, new ai.fa(boVar, fileLocationArr, str, fileLocationArr2, this.b));
-    }
-
-    @Override // r9.g
-    public ScheduledFuture a(final k2.u uVar) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
-            case 5:
-                r9.f fVar = (r9.f) this.c;
-                Runnable runnable = (Runnable) this.d;
-                return fVar.b.schedule(new r9.d(fVar, runnable, uVar, 1), this.b, (TimeUnit) this.e);
-            default:
-                final r9.f fVar2 = (r9.f) this.c;
-                final Callable callable = (Callable) this.d;
-                return fVar2.b.schedule(new Callable() { // from class: r9.e
-                    @Override // java.util.concurrent.Callable
-                    public final Object call() {
-                        return f.this.a.submit(new p2.b(11, callable, uVar));
-                    }
-                }, this.b, (TimeUnit) this.e);
-        }
-    }
-
-    @Override // ci.m8
-    public Bitmap c(BitmapFactory.Options options) {
-        d7 d7Var = (d7) this.c;
-        o8 o8Var = (o8) this.d;
-        long j3 = this.b;
-        String str = (String) this.e;
-        if (!o8Var.K) {
-            return BitmapFactory.decodeFile(str, options);
-        }
-        String str2 = o8Var.N;
-        if (str2 != null) {
-            return BitmapFactory.decodeFile(str2, options);
-        }
-        try {
-            return MediaStore.Video.Thumbnails.getThumbnail(d7Var.getContext().getContentResolver(), j3, 1, options);
-        } catch (Throwable unused) {
-            d7Var.invalidate();
-            return null;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.t40
-    public /* synthetic */ boolean e() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        switch (this.a) {
+            case 0:
+                this.b.r();
+                break;
+            case 1:
+                this.b.r();
+                break;
             case 2:
-                ChatObject.Call call = (ChatObject.Call) this.c;
-                org.telegram.ui.Cells.z1[] z1VarArr = (org.telegram.ui.Cells.z1[]) this.d;
-                Runnable runnable = (Runnable) this.e;
-                boolean z10 = false;
-                org.telegram.ui.Cells.z1 z1Var = z1VarArr[0];
-                if (z1Var != null && z1Var.b()) {
-                    z10 = true;
+                this.b.m(0L);
+                break;
+            case 3:
+                b7 b7Var = this.b;
+                z6 z6Var = b7Var.K;
+                f71 f71Var = b7Var.e;
+                if (f71Var != null && b7Var.F != null) {
+                    long n10 = f71Var.n();
+                    if (b7Var.getDuration() > 1) {
+                        float duration = n10 / b7Var.getDuration();
+                        if (!b7Var.F.m1) {
+                            l8 l8Var = b7Var.d;
+                            if ((duration < l8Var.Z || duration > l8Var.a0) && System.currentTimeMillis() - b7Var.J > 500) {
+                                b7Var.J = System.currentTimeMillis();
+                                f71 f71Var2 = b7Var.e;
+                                long duration2 = (long) (b7Var.d.Z * b7Var.getDuration());
+                                f71Var2.L(duration2, false);
+                                b7Var.w(true);
+                                b7Var.y(true);
+                                n10 = duration2;
+                                b7Var.F.setProgress(b7Var.e.n());
+                            }
+                        }
+                        b7Var.w(n10 < b7Var.I);
+                        b7Var.y(n10 < b7Var.I);
+                        b7Var.F.setProgress(b7Var.e.n());
+                    } else {
+                        b7Var.F.setProgress(b7Var.e.n());
+                    }
+                    if (b7Var.e.y()) {
+                        AndroidUtilities.cancelRunOnUIThread(z6Var);
+                        AndroidUtilities.runOnUIThread(z6Var, (long) (1000.0f / AndroidUtilities.screenRefreshRate));
+                    }
+                    b7Var.I = n10;
+                    break;
                 }
-                i60.w1(call, z10, this.b, runnable);
+                break;
+            case 4:
+                b7 b7Var2 = this.b;
+                z6 z6Var2 = b7Var2.L;
+                if (b7Var2.y != null && b7Var2.e == null && b7Var2.x == null && b7Var2.F != null && !b7Var2.j()) {
+                    long n11 = b7Var2.y.n();
+                    l8 l8Var2 = b7Var2.d;
+                    if (l8Var2 != null) {
+                        float f7 = n11;
+                        float f10 = l8Var2.E;
+                        float f11 = l8Var2.C;
+                        if ((f7 < f10 * f11 || f7 > l8Var2.F * f11) && System.currentTimeMillis() - b7Var2.J > 500) {
+                            b7Var2.J = System.currentTimeMillis();
+                            f71 f71Var3 = b7Var2.y;
+                            long j3 = (long) (b7Var2.d.E * r3.C);
+                            f71Var3.L(j3, false);
+                            n11 = j3;
+                        }
+                    }
+                    b7Var2.F.setProgress(n11);
+                    if (b7Var2.y.y()) {
+                        AndroidUtilities.cancelRunOnUIThread(z6Var2);
+                        AndroidUtilities.runOnUIThread(z6Var2, (long) (1000.0f / AndroidUtilities.screenRefreshRate));
+                        break;
+                    }
+                }
+                break;
+            case 5:
+                b7 b7Var3 = this.b;
+                z6 z6Var3 = b7Var3.M;
+                if (b7Var3.x != null && b7Var3.e == null && !b7Var3.j() && b7Var3.F != null) {
+                    long n12 = b7Var3.x.n();
+                    l8 l8Var3 = b7Var3.d;
+                    if (l8Var3 != null) {
+                        float f12 = n12;
+                        float f13 = l8Var3.s0;
+                        float f14 = l8Var3.q0;
+                        if ((f12 < f13 * f14 || f12 > l8Var3.t0 * f14) && System.currentTimeMillis() - b7Var3.J > 500) {
+                            b7Var3.J = System.currentTimeMillis();
+                            f71 f71Var4 = b7Var3.x;
+                            long j10 = (long) (b7Var3.d.s0 * r3.q0);
+                            f71Var4.L(j10, false);
+                            b7Var3.w(true);
+                            n12 = j10;
+                        }
+                    }
+                    b7Var3.F.setProgress(n12);
+                    if (b7Var3.x.y()) {
+                        AndroidUtilities.cancelRunOnUIThread(z6Var3);
+                        AndroidUtilities.runOnUIThread(z6Var3, (long) (1000.0f / AndroidUtilities.screenRefreshRate));
+                        break;
+                    }
+                }
                 break;
             default:
-                i01 i01Var = (i01) this.c;
-                uy uyVar = (uy) this.d;
-                TLRPC.User user = (TLRPC.User) this.e;
-                ProfileActivity profileActivity = i01Var.b;
-                profileActivity.N1 = true;
-                Bundle i11 = a4.a.i("scrollToTopOnResume", true);
-                long j3 = -this.b;
-                i11.putLong("chat_id", j3);
-                if (profileActivity.getMessagesController().checkCanOpenChat(i11, uyVar)) {
-                    bo boVar = new bo(i11);
-                    NotificationCenter notificationCenter = profileActivity.getNotificationCenter();
-                    int i12 = NotificationCenter.closeChats;
-                    notificationCenter.removeObserver(profileActivity, i12);
-                    profileActivity.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(i12, new Object[0]);
-                    profileActivity.getMessagesController().addUserToChat(j3, user, 0, null, boVar, true, null, null);
-                    profileActivity.presentFragment(boVar, true);
+                b7 b7Var4 = this.b;
+                t61 t61Var = b7Var4.n;
+                if (t61Var != null) {
+                    wz wzVar = t61Var.b;
+                    if (wzVar != null) {
+                        wzVar.postRunnable(new tz(wzVar, 0));
+                    }
+                    t61Var.a = null;
+                    b7Var4.removeView(b7Var4.n);
+                    b7Var4.n = null;
                     break;
                 }
                 break;
         }
-    }
-
-    @Override // org.telegram.ui.Components.t40
-    public /* synthetic */ dv0 getCloseIntoObject() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.t40
-    public /* synthetic */ String getInitialSearchString() {
-        return null;
-    }
-
-    @Override // t5.b
-    public Object i() {
-        da.b bVar = (da.b) this.c;
-        Iterable iterable = (Iterable) this.d;
-        l5.i iVar = (l5.i) this.e;
-        s5.g gVar = (s5.g) ((s5.d) bVar.c);
-        gVar.getClass();
-        if (iterable.iterator().hasNext()) {
-            String str = "UPDATE events SET num_attempts = num_attempts + 1 WHERE _id in " + s5.g.g(iterable);
-            SQLiteDatabase a2 = gVar.a();
-            a2.beginTransaction();
-            try {
-                a2.compileStatement(str).execute();
-                Cursor rawQuery = a2.rawQuery("SELECT COUNT(*), transport_name FROM events WHERE num_attempts >= 16 GROUP BY transport_name", null);
-                while (rawQuery.moveToNext()) {
-                    try {
-                        gVar.e(rawQuery.getInt(0), o5.c.f, rawQuery.getString(1));
-                    } catch (Throwable th2) {
-                        rawQuery.close();
-                        throw th2;
-                    }
-                }
-                rawQuery.close();
-                a2.compileStatement("DELETE FROM events WHERE num_attempts >= 16").execute();
-                a2.setTransactionSuccessful();
-            } finally {
-                a2.endTransaction();
-            }
-        }
-        gVar.c(new ai.z1(((u5.a) bVar.g).q() + this.b, iVar));
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.t40
-    public /* synthetic */ boolean t() {
-        return false;
-    }
-
-    public /* synthetic */ z6(Object obj, Object obj2, Object obj3, long j3, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.d = obj2;
-        this.e = obj3;
-        this.b = j3;
-    }
-
-    public /* synthetic */ z6(i01 i01Var, long j3, uy uyVar, TLRPC.User user) {
-        this.a = 3;
-        this.c = i01Var;
-        this.b = j3;
-        this.d = uyVar;
-        this.e = user;
-    }
-
-    @Override // org.telegram.ui.Components.t40
-    public /* synthetic */ void B(float f7) {
-    }
-
-    @Override // org.telegram.ui.Components.t40
-    public /* synthetic */ void P() {
-    }
-
-    @Override // org.telegram.ui.Components.t40
-    public /* synthetic */ void L(boolean z10, boolean z11) {
     }
 }

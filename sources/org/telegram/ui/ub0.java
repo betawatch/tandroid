@@ -1,15 +1,32 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class ub0 extends org.telegram.ui.Cells.w8 {
-    @Override // org.telegram.ui.Cells.w8, android.view.View
-    public final void onDraw(Canvas canvas) {
-        canvas.save();
-        canvas.clipRect(0, 0, getWidth(), getHeight());
-        super.onDraw(canvas);
-        canvas.restore();
+public final /* synthetic */ class ub0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ac0 b;
+
+    public /* synthetic */ ub0(ac0 ac0Var, int i10) {
+        this.a = i10;
+        this.b = ac0Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ac0 ac0Var = this.b;
+                if (ac0Var.h >= 0) {
+                    ConnectionsManager.getInstance(ac0Var.b).cancelRequest(ac0Var.h, true);
+                    ac0Var.h = -1;
+                    break;
+                }
+                break;
+            default:
+                this.b.a();
+                break;
+        }
     }
 }

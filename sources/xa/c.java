@@ -2,7 +2,7 @@ package xa;
 
 import a0.i;
 import a8.e;
-import ai.f6;
+import ai.e6;
 import ai.q4;
 import android.content.Context;
 import android.content.Intent;
@@ -22,7 +22,7 @@ import androidx.biometric.c0;
 import androidx.biometric.e0;
 import androidx.lifecycle.a0;
 import c3.j;
-import ci.qb;
+import ci.nb;
 import com.android.billingclient.api.ProxyBillingActivityV2;
 import com.google.android.gms.common.api.internal.p;
 import com.google.android.gms.common.api.internal.s;
@@ -45,14 +45,14 @@ import g6.r;
 import gg.b2;
 import gg.k1;
 import i7.f;
-import ii.d2;
-import ii.h2;
+import ii.e2;
 import ii.i1;
+import ii.i2;
 import ii.k0;
-import ii.m4;
-import ii.o4;
-import ii.s3;
-import ii.w3;
+import ii.n4;
+import ii.p4;
+import ii.t3;
+import ii.x3;
 import ii.z;
 import j$.util.DesugarCollections;
 import j$.util.Objects;
@@ -81,22 +81,22 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Cells.p9;
 import org.telegram.ui.Cells.q9;
+import org.telegram.ui.Cells.r9;
 import org.telegram.ui.Components.ao0;
-import org.telegram.ui.Components.b5;
+import org.telegram.ui.Components.d5;
 import org.telegram.ui.Components.wp0;
-import org.telegram.ui.bj0;
-import org.telegram.ui.bo;
-import pg.q1;
+import org.telegram.ui.wi0;
+import org.telegram.ui.xn;
+import pg.r1;
 import qg.y1;
 import v7.i5;
 import v7.t7;
 import w9.h;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final class c implements s, wp0, a0, androidx.activity.result.b, ce.b, y1, v0, OnSuccessListener, SuccessContinuation, f6.a, n, s0, w, b2, he.a, ao0, b5, k0 {
+public final class c implements s, wp0, a0, androidx.activity.result.b, ce.b, y1, v0, OnSuccessListener, SuccessContinuation, f6.a, n, s0, w, b2, he.a, ao0, d5, k0 {
     public static volatile c c;
     public final /* synthetic */ int a;
     public Object b;
@@ -113,10 +113,10 @@ public final class c implements s, wp0, a0, androidx.activity.result.b, ce.b, y1
     }
 
     @Override // ii.k0
-    public q9 E() {
-        m4 m4Var = ((o4) this.b).G;
-        if (m4Var != null) {
-            return ((s3) m4Var).a.getTextSelectionHelper();
+    public r9 E() {
+        n4 n4Var = ((p4) this.b).G;
+        if (n4Var != null) {
+            return ((t3) n4Var).a.getTextSelectionHelper();
         }
         return null;
     }
@@ -196,36 +196,36 @@ public final class c implements s, wp0, a0, androidx.activity.result.b, ce.b, y1
 
     @Override // ii.k0
     public void I(CharSequence charSequence) {
-        m4 m4Var = ((o4) this.b).G;
-        if (m4Var != null) {
-            s3 s3Var = (s3) m4Var;
-            s3Var.getClass();
+        n4 n4Var = ((p4) this.b).G;
+        if (n4Var != null) {
+            t3 t3Var = (t3) n4Var;
+            t3Var.getClass();
             if (charSequence == null || charSequence.length() <= 0) {
                 return;
             }
-            s3Var.a.t4(charSequence.toString());
+            t3Var.a.t4(charSequence.toString());
         }
     }
 
-    @Override // org.telegram.ui.Components.b5
+    @Override // org.telegram.ui.Components.d5
     public void J(int i10, int i11, boolean z10) {
-        d2 d2Var = (d2) this.b;
-        d2Var.s0(i10, i11, z10);
-        bj0 bj0Var = d2Var.O0;
-        if (bj0Var != null) {
-            bj0Var.i();
-            d2Var.O0 = null;
+        e2 e2Var = (e2) this.b;
+        e2Var.s0(i10, i11, z10);
+        wi0 wi0Var = e2Var.O0;
+        if (wi0Var != null) {
+            wi0Var.i();
+            e2Var.O0 = null;
         }
     }
 
     @Override // ii.k0
-    public p9 K() {
-        return (o4) this.b;
+    public q9 K() {
+        return (p4) this.b;
     }
 
     @Override // ii.k0
     public ii.a N() {
-        return ((o4) this.b).a;
+        return ((p4) this.b).a;
     }
 
     @Override // gg.b2
@@ -235,13 +235,13 @@ public final class c implements s, wp0, a0, androidx.activity.result.b, ce.b, y1
 
     @Override // ii.k0
     public boolean P() {
-        o4 o4Var = (o4) this.b;
-        m4 m4Var = o4Var.G;
-        if (m4Var == null) {
+        p4 p4Var = (p4) this.b;
+        n4 n4Var = p4Var.G;
+        if (n4Var == null) {
             return false;
         }
-        ii.a aVar = o4Var.a;
-        return ((s3) m4Var).a.S4();
+        ii.a aVar = p4Var.a;
+        return ((t3) n4Var).a.S4();
     }
 
     @Override // gg.b2
@@ -255,34 +255,34 @@ public final class c implements s, wp0, a0, androidx.activity.result.b, ce.b, y1
 
     @Override // ii.k0
     public void S(int i10, int i11) {
-        o4 o4Var = (o4) this.b;
-        m4 m4Var = o4Var.G;
-        if (m4Var != null) {
-            ii.a aVar = o4Var.a;
-            h2 h2Var = ((s3) m4Var).a.J3;
-            if (h2Var != null) {
-                h2Var.f(i10, i11);
+        p4 p4Var = (p4) this.b;
+        n4 n4Var = p4Var.G;
+        if (n4Var != null) {
+            ii.a aVar = p4Var.a;
+            i2 i2Var = ((t3) n4Var).a.J3;
+            if (i2Var != null) {
+                i2Var.f(i10, i11);
             }
         }
     }
 
     @Override // fi.s0
     public void a(long j3) {
-        ((fi.s) this.b).presentFragment(bo.R9(j3));
+        ((fi.s) this.b).presentFragment(xn.R9(j3));
     }
 
     @Override // ii.k0
     public void a0() {
-        o4 o4Var = (o4) this.b;
-        m4 m4Var = o4Var.G;
-        if (m4Var != null) {
-            ii.a aVar = o4Var.a;
-            w3 w3Var = ((s3) m4Var).a;
-            h2 h2Var = w3Var.J3;
-            if (h2Var != null) {
-                h2Var.g();
+        p4 p4Var = (p4) this.b;
+        n4 n4Var = p4Var.G;
+        if (n4Var != null) {
+            ii.a aVar = p4Var.a;
+            x3 x3Var = ((t3) n4Var).a;
+            i2 i2Var = x3Var.J3;
+            if (i2Var != null) {
+                i2Var.g();
             }
-            w3Var.h3.onContentChanged();
+            x3Var.h3.onContentChanged();
         }
     }
 
@@ -337,11 +337,11 @@ public final class c implements s, wp0, a0, androidx.activity.result.b, ce.b, y1
 
     @Override // ii.k0, ii.h1
     public void c(i1 i1Var) {
-        m4 m4Var = ((o4) this.b).G;
-        if (m4Var != null) {
-            w3 w3Var = ((s3) m4Var).a;
-            w3.M1(w3Var, i1Var);
-            w3Var.h3.t(i1Var, true);
+        n4 n4Var = ((p4) this.b).G;
+        if (n4Var != null) {
+            x3 x3Var = ((t3) n4Var).a;
+            x3.M1(x3Var, i1Var);
+            x3Var.h3.t(i1Var, true);
         }
     }
 
@@ -362,9 +362,9 @@ public final class c implements s, wp0, a0, androidx.activity.result.b, ce.b, y1
     @Override // fi.s0
     public void e() {
         fi.s sVar = (fi.s) this.b;
-        le.b bVar = sVar.a;
+        le.c cVar = sVar.a;
         t0 t0Var = sVar.v;
-        bVar.a(t0Var.n && t0Var.l == 0, true);
+        cVar.a(t0Var.n && t0Var.l == 0, true);
         sVar.d.Y2.N(true);
     }
 
@@ -414,10 +414,10 @@ public final class c implements s, wp0, a0, androidx.activity.result.b, ce.b, y1
 
     @Override // qg.y1
     public float get() {
-        qb qbVar = (qb) this.b;
-        int i10 = qbVar.F1;
-        pg.m currentBrush = qbVar.O0.getCurrentBrush();
-        return currentBrush == null ? pg.s0.e(i10).i : pg.s0.e(i10).f(String.valueOf(pg.m.a.indexOf(currentBrush)), currentBrush.d());
+        nb nbVar = (nb) this.b;
+        int i10 = nbVar.F1;
+        pg.m currentBrush = nbVar.O0.getCurrentBrush();
+        return currentBrush == null ? pg.t0.e(i10).i : pg.t0.e(i10).f(String.valueOf(pg.m.a.indexOf(currentBrush)), currentBrush.d());
     }
 
     @Override // gg.b2
@@ -427,10 +427,10 @@ public final class c implements s, wp0, a0, androidx.activity.result.b, ce.b, y1
 
     @Override // ii.k0
     public void i() {
-        o4 o4Var = (o4) this.b;
-        m4 m4Var = o4Var.G;
-        if (m4Var != null) {
-            w3.P1(((s3) m4Var).a, o4Var.a);
+        p4 p4Var = (p4) this.b;
+        n4 n4Var = p4Var.G;
+        if (n4Var != null) {
+            x3.P1(((t3) n4Var).a, p4Var.a);
         }
     }
 
@@ -472,11 +472,11 @@ public final class c implements s, wp0, a0, androidx.activity.result.b, ce.b, y1
 
     @Override // qg.y1
     public void l(float f7) {
-        qb qbVar = (qb) this.b;
-        pg.s0.e(qbVar.F1).k(String.valueOf(pg.m.a.indexOf(qbVar.O0.getCurrentBrush())), f7);
-        q1 q1Var = qbVar.A1;
-        q1Var.c = f7;
-        qbVar.E0(q1Var, null, false);
+        nb nbVar = (nb) this.b;
+        pg.t0.e(nbVar.F1).k(String.valueOf(pg.m.a.indexOf(nbVar.O0.getCurrentBrush())), f7);
+        r1 r1Var = nbVar.A1;
+        r1Var.c = f7;
+        nbVar.E0(r1Var, null, false);
     }
 
     @Override // com.google.android.gms.common.api.internal.v0
@@ -498,11 +498,11 @@ public final class c implements s, wp0, a0, androidx.activity.result.b, ce.b, y1
 
     @Override // ii.k0
     public void n0() {
-        o4 o4Var = (o4) this.b;
-        m4 m4Var = o4Var.G;
-        if (m4Var != null) {
-            ii.a aVar = o4Var.a;
-            w3.O1(((s3) m4Var).a);
+        p4 p4Var = (p4) this.b;
+        n4 n4Var = p4Var.G;
+        if (n4Var != null) {
+            ii.a aVar = p4Var.a;
+            x3.O1(((t3) n4Var).a);
         }
     }
 
@@ -715,7 +715,7 @@ public final class c implements s, wp0, a0, androidx.activity.result.b, ce.b, y1
 
     @Override // org.telegram.ui.Components.wp0
     public void u0() {
-        f6.j0((f6) this.b);
+        e6.j0((e6) this.b);
     }
 
     @Override // l.w

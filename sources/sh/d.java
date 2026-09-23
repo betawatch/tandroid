@@ -3,39 +3,39 @@ package sh;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.t1;
-import org.telegram.ui.Components.bj0;
-import org.telegram.ui.Components.m6;
-import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.cj0;
+import org.telegram.ui.Components.o6;
+import org.telegram.ui.Components.rr;
 import yf.p;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class d extends c {
-    public final m6 d;
-    public final bj0 e;
-    public final le.b f;
+    public final o6 d;
+    public final cj0 e;
+    public final le.c f;
     public float h;
 
-    public d(t1 t1Var, e6 e6Var) {
-        super(e6Var);
-        bj0 bj0Var = new bj0(t1Var);
-        this.e = bj0Var;
-        bj0Var.d(null, true, false);
-        bj0Var.v = 650.0f;
-        bj0Var.e(0.69f, false);
-        bj0Var.p.setStrokeWidth(AndroidUtilities.dp(1.5f));
-        this.f = new le.b(t1Var, qr.h, 260L);
-        m6 m6Var = new m6(true, false, false, false);
-        this.d = m6Var;
-        m6Var.u(AndroidUtilities.bold());
-        m6Var.t(AndroidUtilities.dp(13.0f));
-        m6Var.b = 17;
-        int v02 = i6.v0(i6.i6, e6Var);
+    public d(t1 t1Var, d6 d6Var) {
+        super(d6Var);
+        cj0 cj0Var = new cj0(t1Var);
+        this.e = cj0Var;
+        cj0Var.d(null, true, false);
+        cj0Var.v = 650.0f;
+        cj0Var.e(0.69f, false);
+        cj0Var.p.setStrokeWidth(AndroidUtilities.dp(1.5f));
+        this.f = new le.c(t1Var, rr.h, 260L);
+        o6 o6Var = new o6(true, false, false, false);
+        this.d = o6Var;
+        o6Var.u(AndroidUtilities.bold());
+        o6Var.t(AndroidUtilities.dp(13.0f));
+        o6Var.b = 17;
+        int v02 = h6.v0(h6.i6, d6Var);
         if (this.b != v02) {
-            i6.B1(this.a, v02, false);
+            h6.B1(this.a, v02, false);
             this.b = v02;
         }
     }

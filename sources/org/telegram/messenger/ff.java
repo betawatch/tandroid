@@ -1,38 +1,36 @@
 package org.telegram.messenger;
 
-import org.telegram.ui.bo;
-import org.webrtc.TextureViewRenderer;
+import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ff implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ Object f;
+    public final /* synthetic */ MessagesStorage b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ MessagesStorage.IntCallback d;
 
-    public /* synthetic */ ff(Object obj, int i10, int i11, int i12, int i13, int i14) {
-        this.a = i14;
-        this.f = obj;
-        this.b = i10;
-        this.c = i11;
-        this.d = i12;
-        this.e = i13;
+    public /* synthetic */ ff(MessagesStorage messagesStorage, long j3, MessagesStorage.IntCallback intCallback, int i10) {
+        this.a = i10;
+        this.b = messagesStorage;
+        this.c = j3;
+        this.d = intCallback;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((MessagesStorage) this.f).lambda$saveDiffParams$35(this.b, this.c, this.d, this.e);
+                this.b.lambda$getDialogMaxMessageId$255(this.c, this.d);
                 break;
             case 1:
-                bo.r1((bo) this.f, this.b, this.c, this.d, this.e);
+                this.b.lambda$getDialogFolderId$243(this.c, this.d);
+                break;
+            case 2:
+                this.b.lambda$getMessagesCount$158(this.c, this.d);
                 break;
             default:
-                ((TextureViewRenderer) this.f).lambda$onFrameResolutionChanged$0(this.b, this.c, this.d, this.e);
+                this.b.lambda$getSavedDialogMaxMessageId$53(this.c, this.d);
                 break;
         }
     }

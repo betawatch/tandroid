@@ -12,14 +12,14 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public abstract class w3 extends FrameLayout {
-    public org.telegram.ui.Components.u9 a;
-    public org.telegram.ui.ActionBar.j5 b;
-    public org.telegram.ui.ActionBar.j5 c;
+    public org.telegram.ui.Components.w9 a;
+    public org.telegram.ui.ActionBar.i5 b;
+    public org.telegram.ui.ActionBar.i5 c;
     public ImageView d;
-    public org.telegram.ui.Components.f9 e;
+    public org.telegram.ui.Components.h9 e;
     public TLRPC.User f;
     public Paint h;
     public int n;
@@ -30,7 +30,7 @@ public abstract class w3 extends FrameLayout {
         ImageView imageView = this.d;
         imageView.setColorFilter(new PorterDuffColorFilter(i11, PorterDuff.Mode.MULTIPLY));
         this.c.setTextColor(i11);
-        org.telegram.ui.ActionBar.i6.B1(imageView.getDrawable(), i11 & 620756991, true);
+        org.telegram.ui.ActionBar.h6.B1(imageView.getDrawable(), i11 & 620756991, true);
     }
 
     @Override // android.view.ViewGroup, android.view.View

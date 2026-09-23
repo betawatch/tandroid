@@ -1,33 +1,26 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.EditTextBoldCursor;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class jf0 implements Runnable {
+public final /* synthetic */ class jf0 implements org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ lf0 b;
+    public final /* synthetic */ uf0 b;
 
-    public /* synthetic */ jf0(lf0 lf0Var, int i10) {
+    public /* synthetic */ jf0(uf0 uf0Var, int i10) {
         this.a = i10;
-        this.b = lf0Var;
+        this.b = uf0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.ui.ActionBar.a2
+    public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
             case 0:
-                lf0 lf0Var = this.b;
-                org.telegram.ui.Components.aj0 aj0Var = lf0Var.h;
-                aj0Var.getAnimatedDrawable().N(0, false, false);
-                aj0Var.d();
-                EditTextBoldCursor editTextBoldCursor = lf0Var.b;
-                editTextBoldCursor.requestFocus();
-                AndroidUtilities.showKeyboard(editTextBoldCursor);
+                uf0 uf0Var = this.b;
+                uf0Var.c(true);
+                uf0Var.s0.u1(0, true, null, true);
                 break;
             default:
-                this.b.b.requestFocus();
+                this.b.s0.u1(0, true, null, true);
                 break;
         }
     }

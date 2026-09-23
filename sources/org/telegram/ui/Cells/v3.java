@@ -10,28 +10,28 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class v3 extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
-    public final org.telegram.ui.Components.w5 a;
+public final class v3 extends FrameLayout implements org.telegram.ui.ActionBar.y5 {
+    public final org.telegram.ui.Components.y5 a;
     public final u3 b;
     public final FrameLayout.LayoutParams c;
-    public final org.telegram.ui.ActionBar.e6 d;
+    public final org.telegram.ui.ActionBar.d6 d;
     public int e;
     public boolean f;
 
-    public v3(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        this(context, 16, e6Var);
+    public v3(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+        this(context, 16, d6Var);
     }
 
-    public static void a(ArrayList arrayList, ll0 ll0Var) {
-        int i10 = org.telegram.ui.ActionBar.i6.f7;
-        arrayList.add(new org.telegram.ui.ActionBar.k6(ll0Var, 0, new Class[]{v3.class}, new String[]{"textView"}, null, null, -1, null, i10));
-        arrayList.add(new org.telegram.ui.ActionBar.k6(ll0Var, 0, new Class[]{v3.class}, new String[]{"rightTextView"}, null, null, -1, null, i10));
-        arrayList.add(new org.telegram.ui.ActionBar.k6(ll0Var, 16, new Class[]{v3.class}, null, null, null, org.telegram.ui.ActionBar.i6.e7));
+    public static void a(ArrayList arrayList, ml0 ml0Var) {
+        int i10 = org.telegram.ui.ActionBar.h6.f7;
+        arrayList.add(new org.telegram.ui.ActionBar.j6(ml0Var, 0, new Class[]{v3.class}, new String[]{"textView"}, null, null, -1, null, i10));
+        arrayList.add(new org.telegram.ui.ActionBar.j6(ml0Var, 0, new Class[]{v3.class}, new String[]{"rightTextView"}, null, null, -1, null, i10));
+        arrayList.add(new org.telegram.ui.ActionBar.j6(ml0Var, 16, new Class[]{v3.class}, null, null, null, org.telegram.ui.ActionBar.h6.e7));
     }
 
     public final void b(CharSequence charSequence, View.OnClickListener onClickListener) {
@@ -49,14 +49,14 @@ public final class v3 extends FrameLayout implements org.telegram.ui.ActionBar.z
         u3Var.setVisibility(0);
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
+    @Override // org.telegram.ui.ActionBar.y5
     public final void e() {
         boolean z10 = this.f;
-        org.telegram.ui.ActionBar.e6 e6Var = this.d;
-        setBackgroundColor(z10 ? 0 : org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.e7, e6Var));
-        int i10 = org.telegram.ui.ActionBar.i6.f7;
-        this.a.setTextColor(org.telegram.ui.ActionBar.i6.v0(i10, e6Var));
-        this.b.setTextColor(org.telegram.ui.ActionBar.i6.v0(i10, e6Var));
+        org.telegram.ui.ActionBar.d6 d6Var = this.d;
+        setBackgroundColor(z10 ? 0 : org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.e7, d6Var));
+        int i10 = org.telegram.ui.ActionBar.h6.f7;
+        this.a.setTextColor(org.telegram.ui.ActionBar.h6.v0(i10, d6Var));
+        this.b.setTextColor(org.telegram.ui.ActionBar.h6.v0(i10, d6Var));
     }
 
     public /* bridge */ /* synthetic */ int[] getColorKeys() {
@@ -109,32 +109,32 @@ public final class v3 extends FrameLayout implements org.telegram.ui.ActionBar.z
     }
 
     public void setTextColor(int i10) {
-        int v02 = org.telegram.ui.ActionBar.i6.v0(i10, this.d);
+        int v02 = org.telegram.ui.ActionBar.h6.v0(i10, this.d);
         this.a.setTextColor(v02);
         this.b.setTextColor(v02);
     }
 
-    public v3(Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
+    public v3(Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context);
         this.e = 32;
-        this.d = e6Var;
-        setBackgroundColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.e7, e6Var));
-        org.telegram.ui.Components.w5 w5Var = new org.telegram.ui.Components.w5(getContext());
-        this.a = w5Var;
+        this.d = d6Var;
+        setBackgroundColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.e7, d6Var));
+        org.telegram.ui.Components.y5 y5Var = new org.telegram.ui.Components.y5(getContext());
+        this.a = y5Var;
         boolean z10 = true;
-        w5Var.setTextSize(1, 14.0f);
-        w5Var.setTypeface(AndroidUtilities.bold());
-        int i11 = org.telegram.ui.ActionBar.i6.f7;
-        w5Var.setTextColor(org.telegram.ui.ActionBar.i6.v0(i11, e6Var));
-        w5Var.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
+        y5Var.setTextSize(1, 14.0f);
+        y5Var.setTypeface(AndroidUtilities.bold());
+        int i11 = org.telegram.ui.ActionBar.h6.f7;
+        y5Var.setTextColor(org.telegram.ui.ActionBar.h6.v0(i11, d6Var));
+        y5Var.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
         float f7 = i10;
-        addView(w5Var, w7.x5.d(-1, -1.0f, (LocaleController.isRTL ? 5 : 3) | 48, f7, 0.0f, f7, 0.0f));
+        addView(y5Var, w7.x5.d(-1, -1.0f, (LocaleController.isRTL ? 5 : 3) | 48, f7, 0.0f, f7, 0.0f));
         u3 u3Var = new u3(getContext(), z10, z10, z10, 0);
         this.b = u3Var;
         u3Var.setPadding(AndroidUtilities.dp(2.0f), 0, AndroidUtilities.dp(2.0f), 0);
-        u3Var.b(0.9f, 420L, qr.h);
+        u3Var.b(0.9f, 420L, rr.h);
         u3Var.setTextSize(AndroidUtilities.dp(14.0f));
-        u3Var.setTextColor(org.telegram.ui.ActionBar.i6.v0(i11, e6Var));
+        u3Var.setTextColor(org.telegram.ui.ActionBar.h6.v0(i11, d6Var));
         u3Var.setGravity(LocaleController.isRTL ? 3 : 5);
         FrameLayout.LayoutParams d = w7.x5.d(-2, -1.0f, (LocaleController.isRTL ? 3 : 5) | 48, f7, 0.0f, f7, 0.0f);
         this.c = d;

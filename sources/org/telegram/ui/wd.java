@@ -4,7 +4,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class wd implements org.telegram.ui.ActionBar.a2, Utilities.Callback5, Utilities.Callback5Return {
     public final /* synthetic */ je a;
@@ -15,7 +15,7 @@ public final /* synthetic */ class wd implements org.telegram.ui.ActionBar.a2, U
 
     @Override // org.telegram.ui.ActionBar.a2
     public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        this.a.w0.presentFragment(new hh1(6, null));
+        this.a.w0.presentFragment(new zg1(6, null));
     }
 
     @Override // org.telegram.messenger.Utilities.Callback5Return
@@ -36,7 +36,7 @@ public final /* synthetic */ class wd implements org.telegram.ui.ActionBar.a2, U
         nd ndVar = jeVar.v1;
         int i10 = jeVar.y0;
         long j3 = jeVar.z0;
-        int i11 = ((org.telegram.ui.Components.i51) obj).d;
+        int i11 = ((org.telegram.ui.Components.h51) obj).d;
         if (i11 != 1) {
             if (i11 == 4) {
                 jeVar.w0.presentFragment(new ei.e4(j3));
@@ -55,7 +55,7 @@ public final /* synthetic */ class wd implements org.telegram.ui.ActionBar.a2, U
             rg.j0 j0Var = new rg.j0(30, jeVar.y0, jeVar.getContext(), jeVar.w0, jeVar.x0);
             j0Var.H1(j3);
             j0Var.F1(jeVar.A0, true);
-            MessagesController.getInstance(i10).getBoostsController().userCanBoostChannel(j3, jeVar.A0, new ai.g3(5, jeVar, j0Var));
+            MessagesController.getInstance(i10).getBoostsController().userCanBoostChannel(j3, jeVar.A0, new oc(1, jeVar, j0Var));
         }
     }
 }

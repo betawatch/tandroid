@@ -1,18 +1,46 @@
 package ii;
 
-import j$.util.function.BiFunction$-CC;
-import java.util.function.BiFunction;
-import java.util.function.Function;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class w2 implements BiFunction {
-    public /* synthetic */ BiFunction andThen(Function function) {
-        return BiFunction$-CC.$default$andThen(this, function);
+public final /* synthetic */ class w2 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ i1 b;
+    public final /* synthetic */ int c;
+
+    public /* synthetic */ w2(i1 i1Var, int i10, int i11) {
+        this.a = i11;
+        this.b = i1Var;
+        this.c = i10;
     }
 
-    @Override // java.util.function.BiFunction
-    public final Object apply(Object obj, Object obj2) {
-        return Integer.valueOf(((Integer) obj2).intValue() + ((Integer) obj).intValue());
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                i1 i1Var = this.b;
+                i1Var.r();
+                i1Var.setSelection(Math.max(0, Math.min(this.c, i1Var.length())));
+                break;
+            case 1:
+                i1 i1Var2 = this.b;
+                i1Var2.r();
+                i1Var2.setSelection(Math.max(0, Math.min(this.c, i1Var2.length())));
+                break;
+            case 2:
+                i1 i1Var3 = this.b;
+                i1Var3.r();
+                i1Var3.setSelection(Math.max(0, Math.min(this.c, i1Var3.length())));
+                break;
+            case 3:
+                i1 i1Var4 = this.b;
+                i1Var4.r();
+                i1Var4.setSelection(Math.min(this.c, i1Var4.length()));
+                break;
+            default:
+                i1 i1Var5 = this.b;
+                i1Var5.r();
+                i1Var5.setSelection(Math.max(0, Math.min(this.c, i1Var5.length())));
+                break;
+        }
     }
 }

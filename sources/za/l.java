@@ -1,26 +1,20 @@
 package za;
 
-import android.app.Application;
-import android.content.Context;
-import android.util.Log;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final class l {
-    public final k9.h a;
-    public final bb.h b;
+public enum l implements ka.g {
+    /* JADX INFO: Fake field, exist only in values array */
+    EF0(0),
+    b(1);
 
-    public l(k9.h hVar, bb.h hVar2, id.h hVar3) {
-        this.a = hVar;
-        this.b = hVar2;
-        Log.d("FirebaseSessions", "Initializing Firebase Sessions SDK.");
-        hVar.a();
-        Context applicationContext = hVar.a.getApplicationContext();
-        if (applicationContext instanceof Application) {
-            ((Application) applicationContext).registerActivityLifecycleCallbacks(o0.a);
-            zd.e0.q(zd.e0.b(hVar3), new bb.i(this, hVar3, null, 4));
-        } else {
-            Log.e("FirebaseSessions", "Failed to register lifecycle callbacks, unexpected context " + applicationContext.getClass() + '.');
-        }
+    public final int a;
+
+    l(int i10) {
+        this.a = i10;
+    }
+
+    @Override // ka.g
+    public final int a() {
+        return this.a;
     }
 }

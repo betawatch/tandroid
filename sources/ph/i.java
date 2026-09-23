@@ -1,40 +1,40 @@
 package ph;
 
 import android.view.View;
-import le.m;
+import ii.q1;
 import le.n;
+import le.o;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.ui.ActionBar.p1;
-import org.telegram.ui.web.b1;
 import r0.i1;
 import r0.l1;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class i implements g, f, d {
     public View E;
     public int F;
     public int G;
-    public final le.e a;
+    public final le.f a;
     public final Runnable h;
     public boolean n;
     public l1 r;
     public int v;
     public int w;
     public e y;
-    public final m b = new m(0.0f);
-    public final n c = new n();
-    public final n d = new n();
+    public final n b = new n(0.0f);
+    public final o c = new o();
+    public final o d = new o();
     public final AnimationNotificationsLocker e = new AnimationNotificationsLocker();
-    public final c f = new c(new b1(this, 4));
+    public final c f = new c(new q1(this, 7));
     public int s = 1;
     public final h x = new h(this, 0);
 
     /* JADX WARN: Multi-variable type inference failed */
     public i(Runnable runnable) {
         this.h = runnable;
-        this.a = new le.e(0, new o0.a(this, runnable, 0 == true ? 1 : 0, 11), p1.w, 250L);
+        this.a = new le.f(0, new o0.a(this, runnable, 0 == true ? 1 : 0, 11), p1.w, 250L);
     }
 
     @Override // ph.d
@@ -67,14 +67,14 @@ public final class i implements g, f, d {
 
     public final float b() {
         e eVar = this.y;
-        n nVar = this.d;
-        return (eVar == null || this.G <= 0) ? nVar.d.a : Math.max(this.F, nVar.d.a);
+        o oVar = this.d;
+        return (eVar == null || this.G <= 0) ? oVar.d.a : Math.max(this.F, oVar.d.a);
     }
 
     public final float c() {
         e eVar = this.y;
-        n nVar = this.c;
-        return (eVar == null || this.G <= 0) ? nVar.d.a : Math.max(this.F, nVar.d.a);
+        o oVar = this.c;
+        return (eVar == null || this.G <= 0) ? oVar.d.a : Math.max(this.F, oVar.d.a);
     }
 
     public final int d() {
@@ -131,7 +131,7 @@ public final class i implements g, f, d {
     public final void k(l1 l1Var, boolean z10) {
         i0.b bVar;
         int i10;
-        le.e eVar;
+        le.f fVar;
         this.r = l1Var;
         i0.b bVar2 = i0.b.e;
         if (l1Var != null) {
@@ -168,38 +168,38 @@ public final class i implements g, f, d {
         int i18 = a10.b;
         int i19 = a10.a;
         Runnable runnable = this.h;
-        le.e eVar2 = this.a;
-        n nVar = this.d;
-        n nVar2 = this.c;
-        m mVar = this.b;
+        le.f fVar2 = this.a;
+        o oVar = this.d;
+        o oVar2 = this.c;
+        n nVar = this.b;
         if (z10) {
-            if (mVar.b(i15 > 0 ? 1.0f : 0.0f)) {
+            if (nVar.b(i15 > 0 ? 1.0f : 0.0f)) {
                 i10 = i17;
-                eVar = eVar2;
+                fVar = fVar2;
             } else {
-                eVar = eVar2;
+                fVar = fVar2;
                 i10 = i17;
-                if (!nVar2.b(i19, i18, i17, i16) && !nVar.b(i14, i13, i12, i15)) {
+                if (!oVar2.b(i19, i18, i17, i16) && !oVar.b(i14, i13, i12, i15)) {
                     if (bVar3 != bVar4) {
                         runnable.run();
                     }
                 }
             }
-            eVar.b();
-            mVar.c(false);
-            nVar2.c(false);
+            fVar.b();
             nVar.c(false);
-            mVar.c = i15 > 0 ? 1.0f : 0.0f;
-            nVar2.e(i19, i18, i10, i16);
-            nVar.e(i14, i13, i12, i15);
-            le.e eVar3 = eVar;
-            eVar3.c(0.0f);
-            eVar3.a(1.0f);
+            oVar2.c(false);
+            oVar.c(false);
+            nVar.c = i15 > 0 ? 1.0f : 0.0f;
+            oVar2.e(i19, i18, i10, i16);
+            oVar.e(i14, i13, i12, i15);
+            le.f fVar3 = fVar;
+            fVar3.c(0.0f);
+            fVar3.a(1.0f);
         } else {
-            eVar2.b();
-            mVar.d(i15 > 0 ? 1.0f : 0.0f);
-            nVar2.d(i19, i18, i17, i16);
-            nVar.d(i14, i13, i12, i15);
+            fVar2.b();
+            nVar.d(i15 > 0 ? 1.0f : 0.0f);
+            oVar2.d(i19, i18, i17, i16);
+            oVar.d(i14, i13, i12, i15);
             runnable.run();
         }
         a();

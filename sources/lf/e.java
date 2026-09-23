@@ -3,21 +3,21 @@ package lf;
 import com.google.android.gms.common.api.internal.n1;
 import java.io.EOFException;
 import java.io.InputStream;
-import k2.c0;
+import k2.b0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class e {
     public static final n1 e = new n1(1);
     public final mf.a a;
     public final j b;
     public final f c;
-    public final c0 d;
+    public final b0 d;
 
     public e(InputStream inputStream, long j3, int i10, j jVar, f fVar) {
         mf.a aVar = new mf.a(inputStream, j3, i10);
         this.a = aVar;
-        this.d = new c0(aVar, 3);
+        this.d = new b0(aVar, 3);
         this.b = jVar;
         this.c = fVar;
     }
@@ -79,12 +79,12 @@ public final class e {
         byte[] bArr2 = dVar.a;
         int i11 = 0;
         while (true) {
-            c0 c0Var = this.d;
+            b0 b0Var = this.d;
             if (i11 >= i10) {
-                c0Var.getClass();
+                b0Var.getClass();
                 return a(bArr2, i10, bVar, true);
             }
-            int read = ((com.google.firebase.messaging.d) c0Var.b).read(bArr2, i11, i10 - i11);
+            int read = ((com.google.firebase.messaging.d) b0Var.b).read(bArr2, i11, i10 - i11);
             if (read <= 0) {
                 throw new EOFException();
             }

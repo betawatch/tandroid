@@ -3,12 +3,12 @@ package yf;
 import android.graphics.RectF;
 import java.util.ArrayList;
 import java.util.Collections;
-import org.telegram.ui.kb1;
+import org.telegram.ui.cb1;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public abstract class e0 {
-    public static final kb1 a = new kb1(20);
+    public static final cb1 a = new cb1(20);
 
     public static int a(ArrayList arrayList, int i10, ArrayList arrayList2) {
         boolean z10;

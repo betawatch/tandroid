@@ -1,116 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.os.Build;
-import android.text.TextUtils;
-import j$.util.stream.IntStream;
-import java.util.Arrays;
-import java.util.stream.IntStream;
+import android.graphics.Canvas;
+import android.text.StaticLayout;
+import android.view.View;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class l6 implements CharSequence {
-    public final CharSequence[] a;
-    public final int b;
+public final class l6 {
+    public final v5 a;
+    public final StaticLayout b;
+    public final float c;
+    public final int d;
+    public final float e;
+    public final float f;
+    public final /* synthetic */ o6 g;
 
-    public l6(CharSequence charSequence) {
-        if (charSequence == null) {
-            this.a = new CharSequence[0];
-            this.b = 0;
-            return;
+    public l6(o6 o6Var, StaticLayout staticLayout, float f7, int i10) {
+        this.g = o6Var;
+        this.b = staticLayout;
+        this.d = i10;
+        this.c = f7;
+        float f10 = 0.0f;
+        this.e = (staticLayout == null || staticLayout.getLineCount() <= 0) ? 0.0f : staticLayout.getLineLeft(0);
+        if (staticLayout != null && staticLayout.getLineCount() > 0) {
+            f10 = staticLayout.getLineWidth(0);
         }
-        this.b = charSequence.length();
-        int i10 = 0;
-        for (int i11 = 0; i11 < this.b; i11++) {
-            if (charSequence.charAt(i11) == ' ') {
-                i10++;
-            }
-        }
-        this.a = new CharSequence[i10 + 1];
-        int i12 = 0;
-        int i13 = 0;
-        int i14 = 0;
-        while (true) {
-            int i15 = this.b;
-            if (i12 > i15) {
-                return;
-            }
-            if (i12 == i15 || charSequence.charAt(i12) == ' ') {
-                int i16 = i13 + 1;
-                this.a[i13] = charSequence.subSequence(i14, (i12 < this.b ? 1 : 0) + i12);
-                i14 = i12 + 1;
-                i13 = i16;
-            }
-            i12++;
+        this.f = f10;
+        if (o6Var.getCallback() instanceof View) {
+            this.a = z5.update(o6Var.l, (View) o6Var.getCallback(), this.a, staticLayout);
         }
     }
 
-    @Override // java.lang.CharSequence
-    public final char charAt(int i10) {
-        int i11 = 0;
-        while (true) {
-            CharSequence[] charSequenceArr = this.a;
-            if (i11 >= charSequenceArr.length) {
-                return (char) 0;
-            }
-            if (i10 < charSequenceArr[i11].length()) {
-                return charSequenceArr[i11].charAt(i10);
-            }
-            i10 -= charSequenceArr[i11].length();
-            i11++;
-        }
-    }
-
-    @Override // java.lang.CharSequence
-    public /* synthetic */ IntStream chars() {
-        return IntStream.Wrapper.convert(chars());
-    }
-
-    @Override // java.lang.CharSequence
-    public /* synthetic */ java.util.stream.IntStream codePoints() {
-        return IntStream.Wrapper.convert(codePoints());
-    }
-
-    @Override // java.lang.CharSequence
-    public final int length() {
-        return this.a.length;
-    }
-
-    @Override // java.lang.CharSequence
-    public final CharSequence subSequence(int i10, int i11) {
-        return TextUtils.concat((CharSequence[]) Arrays.copyOfRange(this.a, i10, i11));
-    }
-
-    @Override // java.lang.CharSequence
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder();
-        int i10 = 0;
-        while (true) {
-            CharSequence[] charSequenceArr = this.a;
-            if (i10 >= charSequenceArr.length) {
-                return sb2.toString();
-            }
-            sb2.append(charSequenceArr[i10]);
-            i10++;
-        }
-    }
-
-    @Override // java.lang.CharSequence
-    public final j$.util.stream.IntStream chars() {
-        j$.util.stream.IntStream convert;
-        if (Build.VERSION.SDK_INT < 24) {
-            return null;
-        }
-        convert = IntStream.VivifiedWrapper.convert(TextUtils.concat(this.a).chars());
-        return convert;
-    }
-
-    @Override // java.lang.CharSequence
-    public final j$.util.stream.IntStream codePoints() {
-        j$.util.stream.IntStream convert;
-        if (Build.VERSION.SDK_INT < 24) {
-            return null;
-        }
-        convert = IntStream.VivifiedWrapper.convert(TextUtils.concat(this.a).codePoints());
-        return convert;
+    public final void a(Canvas canvas, float f7) {
+        this.b.draw(canvas);
+        z5.drawAnimatedEmojis(canvas, this.b, this.a, 0.0f, null, 0.0f, 0.0f, 0.0f, f7, this.g.U);
     }
 }

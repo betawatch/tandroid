@@ -14,7 +14,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class ge0 extends FrameLayout {
     public final RectF a;
@@ -69,7 +69,7 @@ public final class ge0 extends FrameLayout {
         drawable2 = ((org.telegram.ui.ActionBar.f3) pe0Var).shadowDrawable;
         drawable2.draw(canvas);
         if (f7 != 1.0f) {
-            paint.setColor(pe0Var.getThemedColor(org.telegram.ui.ActionBar.i6.h5));
+            paint.setColor(pe0Var.getThemedColor(org.telegram.ui.ActionBar.h6.h5));
             i15 = ((org.telegram.ui.ActionBar.f3) pe0Var).backgroundPaddingLeft;
             i16 = ((org.telegram.ui.ActionBar.f3) pe0Var).backgroundPaddingTop;
             float f10 = i16 + i24;
@@ -83,7 +83,7 @@ public final class ge0 extends FrameLayout {
             float f12 = dp2 * f7;
             canvas.drawRoundRect(rectF, f12, f12, paint);
         }
-        int themedColor = pe0Var.getThemedColor(org.telegram.ui.ActionBar.i6.h5);
+        int themedColor = pe0Var.getThemedColor(org.telegram.ui.ActionBar.h6.h5);
         paint.setColor(Color.argb((int) (pe0Var.e.getAlpha() * 255.0f), (int) (Color.red(themedColor) * 0.8f), (int) (Color.green(themedColor) * 0.8f), (int) (Color.blue(themedColor) * 0.8f)));
         i13 = ((org.telegram.ui.ActionBar.f3) pe0Var).backgroundPaddingLeft;
         float f13 = i13;

@@ -1,75 +1,70 @@
 package org.telegram.ui.Components;
 
+import android.app.Dialog;
 import android.content.Context;
-import android.view.View;
+import android.os.Build;
 import android.view.ViewGroup;
-import org.telegram.tgnet.TLObject;
+import android.view.Window;
+import android.view.WindowManager;
+import java.util.WeakHashMap;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public abstract class lb extends sb {
-    private kb button;
-    private int childrenMeasuredWidth;
-    org.telegram.ui.ActionBar.e6 resourcesProvider;
-    public hc timerView;
-    private boolean wrapWidth;
+public final class lb extends Dialog {
+    public final kb a;
+    public final WindowManager.LayoutParams b;
 
-    public lb(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, e6Var);
-        this.resourcesProvider = e6Var;
-    }
-
-    public kb getButton() {
-        return this.button;
-    }
-
-    @Override // android.view.ViewGroup
-    public void measureChildWithMargins(View view, int i10, int i11, int i12, int i13) {
-        kb kbVar = this.button;
-        if (kbVar != null && view != kbVar) {
-            i11 = org.telegram.messenger.vl.D(12.0f, kbVar.getMeasuredWidth(), i11);
+    public lb(Context context, ci.a9 a9Var) {
+        super(context);
+        AndroidUtilities.enableEdgeToEdge(getWindow());
+        kb kbVar = new kb(this, context);
+        this.a = kbVar;
+        setContentView(kbVar, new ViewGroup.LayoutParams(-1, -1));
+        s sVar = new s(this, 15);
+        WeakHashMap weakHashMap = r0.i0.a;
+        r0.a0.j(kbVar, sVar);
+        int i10 = Build.VERSION.SDK_INT;
+        if (i10 >= 30) {
+            kbVar.setSystemUiVisibility(1792);
+        } else {
+            kbVar.setSystemUiVisibility(1280);
         }
-        super.measureChildWithMargins(view, i10, i11, i12, i13);
-        if (view != this.button) {
-            ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
-            this.childrenMeasuredWidth = Math.max(this.childrenMeasuredWidth, view.getMeasuredWidth() + marginLayoutParams.leftMargin + marginLayoutParams.rightMargin);
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i10, int i11) {
-        this.childrenMeasuredWidth = 0;
-        if (this.wrapWidth) {
-            i10 = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_31);
-        }
-        super.onMeasure(i10, i11);
-        if (this.button == null || View.MeasureSpec.getMode(i10) != Integer.MIN_VALUE) {
-            return;
-        }
-        setMeasuredDimension(this.button.getMeasuredWidth() + this.childrenMeasuredWidth, getMeasuredHeight());
-    }
-
-    public void setButton(kb kbVar) {
-        kb kbVar2 = this.button;
-        if (kbVar2 != null) {
-            removeCallback(kbVar2);
-            removeView(this.button);
-        }
-        this.button = kbVar;
-        if (kbVar != null) {
-            addCallback(kbVar);
-            addView(kbVar, 0, w7.x5.h(-2.0f, -2.0f, 8388629));
+        qc.a(kbVar, new ai.w4(a9Var, 6));
+        try {
+            Window window = getWindow();
+            window.setWindowAnimations(R.style.DialogNoAnimation);
+            window.setBackgroundDrawable(null);
+            WindowManager.LayoutParams attributes = window.getAttributes();
+            this.b = attributes;
+            attributes.width = -1;
+            attributes.height = -1;
+            attributes.gravity = 51;
+            attributes.dimAmount = 0.0f;
+            attributes.format = -3;
+            attributes.flags = (((-3) & attributes.flags) | (-1946091240)) & (-1025);
+            boolean z10 = true;
+            if (i10 >= 28) {
+                attributes.layoutInDisplayCutoutMode = 1;
+            }
+            window.setAttributes(attributes);
+            if (AndroidUtilities.computePerceivedBrightness(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.a7, false)) <= 0.721f) {
+                z10 = false;
+            }
+            AndroidUtilities.setLightNavigationBar(this, z10);
+        } catch (Exception unused) {
         }
     }
 
-    public void setTimer() {
-        hc hcVar = new hc(getContext(), this.resourcesProvider);
-        this.timerView = hcVar;
-        hcVar.b = 5000L;
-        addView(hcVar, w7.x5.i(20.0f, 20.0f, 8388627, 21.0f, 0.0f, 21.0f, 0.0f));
+    public static kb a(Context context) {
+        return new lb(context, null).a;
     }
 
-    public void setWrapWidth() {
-        this.wrapWidth = true;
+    @Override // android.app.Dialog
+    public final void show() {
+        if (AndroidUtilities.isSafeToShow(getContext())) {
+            super.show();
+        }
     }
 }

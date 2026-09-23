@@ -1,33 +1,40 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import android.content.DialogInterface;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cz0 implements Utilities.Callback {
+public final /* synthetic */ class cz0 implements DialogInterface.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ProfileActivity b;
+    public final /* synthetic */ int b;
 
-    public /* synthetic */ cz0(ProfileActivity profileActivity, int i10) {
-        this.a = i10;
-        this.b = profileActivity;
+    public /* synthetic */ cz0(int i10, int i11) {
+        this.a = i11;
+        this.b = i10;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // android.content.DialogInterface.OnClickListener
+    public final void onClick(DialogInterface dialogInterface, int i10) {
         switch (this.a) {
             case 0:
-                ProfileActivity profileActivity = this.b;
-                profileActivity.getClass();
-                ArrayList arrayList = new ArrayList(1);
-                arrayList.add((TLRPC.InputStickerSet) obj);
-                profileActivity.showDialog(new org.telegram.ui.Components.sv(profileActivity, profileActivity.getParentActivity(), profileActivity.z0, arrayList));
-                break;
+                int i11 = 2 - i10;
+                if (i11 != this.b) {
+                    SharedConfig.overrideDevicePerformanceClass(i11);
+                    break;
+                } else {
+                    SharedConfig.overrideDevicePerformanceClass(-1);
+                    break;
+                }
             default:
-                ProfileActivity.e0(this.b, (Boolean) obj);
-                break;
+                int i12 = 2 - i10;
+                if (i12 != this.b) {
+                    SharedConfig.overrideDevicePerformanceClass(i12);
+                    break;
+                } else {
+                    SharedConfig.overrideDevicePerformanceClass(-1);
+                    break;
+                }
         }
     }
 }

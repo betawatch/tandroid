@@ -6,9 +6,9 @@ import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class h extends qh.e {
     public final TLRPC.Document b;
@@ -21,7 +21,7 @@ public final class h extends qh.e {
         ImageReceiver imageReceiver = this.a;
         boolean z10 = MessageObject.isStickerDocument(document) || MessageObject.isVideoSticker(document);
         MessageObject.isAnimatedStickerDocument(document, true);
-        imageReceiver.setImage(ImageLocation.getForDocument(document), "38_38", DocumentObject.getSvgThumb(document, i6.lc, 1.0f), document.size, z10 ? "webp" : null, obj, 0);
+        imageReceiver.setImage(ImageLocation.getForDocument(document), "38_38", DocumentObject.getSvgThumb(document, h6.lc, 1.0f), document.size, z10 ? "webp" : null, obj, 0);
     }
 
     @Override // qh.e

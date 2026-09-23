@@ -7,15 +7,15 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
 import w7.p;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public abstract class b {
-    public static e a(e6 e6Var) {
-        e eVar = new e(e6Var);
+    public static e a(d6 d6Var) {
+        e eVar = new e(d6Var);
         eVar.e = new c(11);
         eVar.f(385875968, 402653183);
         eVar.e(385875968, 402653183);
@@ -31,9 +31,9 @@ public abstract class b {
         return eVar;
     }
 
-    public static e b(e6 e6Var) {
-        e eVar = new e(e6Var);
-        eVar.e = new a(0, e6Var);
+    public static e b(d6 d6Var) {
+        e eVar = new e(d6Var);
+        eVar.e = new a(0, d6Var);
         eVar.f(-1, 687865855);
         eVar.e(-1, 352321535);
         eVar.d(TLObject.FLAG_29, 0);
@@ -44,8 +44,8 @@ public abstract class b {
         return eVar;
     }
 
-    public static boolean c(int i10, e6 e6Var) {
-        boolean a2 = e6Var != null ? e6Var.a() : i6.I.q();
+    public static boolean c(int i10, d6 d6Var) {
+        boolean a2 = d6Var != null ? d6Var.a() : h6.I.q();
         boolean chatBlurEnabled = SharedConfig.chatBlurEnabled();
         if (chatBlurEnabled && !a2 && MessagesController.getInstance(i10).config.disableBlurInLightTheme.get()) {
             chatBlurEnabled = false;
@@ -56,8 +56,8 @@ public abstract class b {
         return chatBlurEnabled;
     }
 
-    public static e d(e6 e6Var) {
-        e eVar = new e(e6Var);
+    public static e d(d6 d6Var) {
+        e eVar = new e(d6Var);
         eVar.e = new c(15);
         eVar.f(-1, 687865855);
         eVar.e(-1, 352321535);
@@ -73,8 +73,8 @@ public abstract class b {
         return eVar;
     }
 
-    public static e e(e6 e6Var) {
-        e eVar = new e(e6Var);
+    public static e e(d6 d6Var) {
+        e eVar = new e(d6Var);
         eVar.e = new c(1);
         eVar.f(687865855, 687865855);
         eVar.e(352321535, 352321535);
@@ -90,8 +90,8 @@ public abstract class b {
         return eVar;
     }
 
-    public static e f(e6 e6Var) {
-        e eVar = new e(e6Var);
+    public static e f(d6 d6Var) {
+        e eVar = new e(d6Var);
         eVar.e = new c(10);
         eVar.f(285212672, 117440511);
         eVar.e(TLObject.FLAG_29, 301989887);
@@ -107,8 +107,8 @@ public abstract class b {
         return eVar;
     }
 
-    public static e g(e6 e6Var) {
-        e eVar = new e(e6Var);
+    public static e g(d6 d6Var) {
+        e eVar = new e(d6Var);
         eVar.e = new c(2);
         eVar.f(1157627903, 0);
         eVar.e(587202559, 0);
@@ -122,12 +122,12 @@ public abstract class b {
         return eVar;
     }
 
-    public static e h(e6 e6Var) {
-        return g(e6Var);
+    public static e h(d6 d6Var) {
+        return g(d6Var);
     }
 
-    public static e i(e6 e6Var) {
-        e eVar = new e(e6Var);
+    public static e i(d6 d6Var) {
+        e eVar = new e(d6Var);
         eVar.e = new c(14);
         eVar.f(687865855, 687865855);
         eVar.e(352321535, 352321535);
@@ -138,8 +138,8 @@ public abstract class b {
         return eVar;
     }
 
-    public static e j(e6 e6Var) {
-        e eVar = new e(e6Var);
+    public static e j(d6 d6Var) {
+        e eVar = new e(d6Var);
         eVar.e = new c(12);
         eVar.f(-1, 553648127);
         eVar.e(0, 553648127);
@@ -153,8 +153,8 @@ public abstract class b {
         return eVar;
     }
 
-    public static e k(e6 e6Var) {
-        e eVar = new e(e6Var);
+    public static e k(d6 d6Var) {
+        e eVar = new e(d6Var);
         eVar.e = new c(9);
         eVar.f(1157627903, 0);
         eVar.e(587202559, 0);
@@ -168,8 +168,8 @@ public abstract class b {
         return eVar;
     }
 
-    public static e l(e6 e6Var) {
-        e eVar = new e(e6Var);
+    public static e l(d6 d6Var) {
+        e eVar = new e(d6Var);
         eVar.f(0, 687865855);
         eVar.e(0, 352321535);
         eVar.d(805306368, 83886079);
@@ -199,8 +199,8 @@ public abstract class b {
         return Color.argb(p.b(Math.round(a2 * 255.0f), 0, 255), p.b(Math.round((Color.red(i11) - (red * f10)) / a2), 0, 255), p.b(Math.round((Color.green(i11) - (green * f10)) / a2), 0, 255), p.b(Math.round((Color.blue(i11) - (blue * f10)) / a2), 0, 255));
     }
 
-    public static e n(e6 e6Var) {
-        e eVar = new e(e6Var);
+    public static e n(d6 d6Var) {
+        e eVar = new e(d6Var);
         eVar.e = new c(3);
         eVar.f(285212672, 117440511);
         eVar.e(TLObject.FLAG_29, 301989887);
@@ -216,9 +216,9 @@ public abstract class b {
         return eVar;
     }
 
-    public static e o(e6 e6Var) {
-        e eVar = new e(e6Var);
-        eVar.e = new a(2, e6Var);
+    public static e o(d6 d6Var) {
+        e eVar = new e(d6Var);
+        eVar.e = new a(2, d6Var);
         eVar.f(-1, 553648127);
         eVar.e(-1, 352321535);
         eVar.d(TLObject.FLAG_29, 0);
@@ -229,8 +229,8 @@ public abstract class b {
         return eVar;
     }
 
-    public static e p(e6 e6Var) {
-        e eVar = new e(e6Var);
+    public static e p(d6 d6Var) {
+        e eVar = new e(d6Var);
         eVar.e = new c(13);
         eVar.f(0, 0);
         eVar.e(0, 0);
@@ -242,9 +242,9 @@ public abstract class b {
         return eVar;
     }
 
-    public static e q(e6 e6Var) {
-        e eVar = new e(e6Var);
-        eVar.e = new a(1, e6Var);
+    public static e q(d6 d6Var) {
+        e eVar = new e(d6Var);
+        eVar.e = new a(1, d6Var);
         eVar.f(0, 0);
         eVar.e(0, 0);
         eVar.d(0, 0);

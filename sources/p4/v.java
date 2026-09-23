@@ -14,9 +14,9 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.ListIterator;
-import org.telegram.ui.Cells.ia;
+import org.telegram.ui.Cells.ja;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class v {
     public final u a;
@@ -59,7 +59,7 @@ public final class v {
         return null;
     }
 
-    public final ia b(v vVar) {
+    public final ja b(v vVar) {
         if (vVar == null) {
             throw new NullPointerException("route must not be null");
         }
@@ -68,7 +68,7 @@ public final class v {
         if (fVar == null || !fVar.containsKey(str)) {
             return null;
         }
-        return new ia((o) this.w.get(str), 6);
+        return new ja((o) this.w.get(str), 6);
     }
 
     public final h3 c() {

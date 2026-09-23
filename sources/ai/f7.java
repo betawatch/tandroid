@@ -1,69 +1,36 @@
 package ai;
 
-import java.util.function.ToIntFunction;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.tgnet.tl.TL_stories;
+import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.ui.Components.ml0;
+import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class f7 implements ToIntFunction {
-    public final /* synthetic */ int a;
+public abstract class f7 extends ml0 implements s9 {
+    public final /* synthetic */ int X2;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate Y2;
 
-    public /* synthetic */ f7(int i10) {
-        this.a = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ f7(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Context context, org.telegram.ui.ActionBar.d6 d6Var, int i10) {
+        super(context, d6Var);
+        this.X2 = i10;
+        this.Y2 = notificationCenterDelegate;
     }
 
-    @Override // java.util.function.ToIntFunction
-    public final int applyAsInt(Object obj) {
-        switch (this.a) {
+    @Override // ai.s9
+    public final void a(int[] iArr) {
+        switch (this.X2) {
             case 0:
-                return -((TL_stories.StoryView) obj).date;
-            case 1:
-                return ((TL_stories.StoryItem) obj).date;
-            case 2:
-                return -((TL_stories.StoryItem) hg.c.h(1, ((TL_stories.PeerStories) obj).stories)).date;
-            case 3:
-                return ((Integer) ((Object[]) obj)[1]).intValue();
-            case 4:
-                return ((MessageObject) obj).getId();
-            case 5:
-                return -((TLRPC.TL_forumTopic) obj).top_message;
-            case 6:
-                return ((TLRPC.Message) obj).id;
-            case 7:
-                return ((TLRPC.Message) obj).id;
-            case 8:
-                return ((org.telegram.ui.Components.d6) obj).d;
-            case 9:
-                return ((org.telegram.ui.Components.d6) obj).e;
-            case 10:
-                ad.c cVar = (ad.c) obj;
-                return cVar.d - cVar.b;
-            case 11:
-                TLRPC.MessagePeerReaction messagePeerReaction = (TLRPC.MessagePeerReaction) obj;
-                int i10 = messagePeerReaction.date;
-                return (i10 <= 0 || messagePeerReaction.reaction != null) ? TLObject.FLAG_31 : -i10;
-            case 12:
-                TLRPC.MessagePeerReaction messagePeerReaction2 = (TLRPC.MessagePeerReaction) obj;
-                int i11 = messagePeerReaction2.date;
-                return (i11 <= 0 || messagePeerReaction2.reaction != null) ? TLObject.FLAG_31 : -i11;
-            case 13:
-                return ((yf.d) obj).a;
-            case 14:
-                return ((TL_stars.StarGift) obj).sold_out ? 1 : 0;
-            case 15:
-                return ((TL_stars.StarGift) obj).birthday ? -1 : 0;
-            case 16:
-                return ((TL_stars.StarGift) obj).sold_out ? 1 : 0;
-            case 17:
-                return ((TL_stars.StarGift) obj).sold_out ? 1 : 0;
-            case 18:
-                return ((TL_stars.StarGift) obj).birthday ? -1 : 0;
+                iArr[0] = AndroidUtilities.dp(((k7) this.Y2).e);
+                iArr[1] = getMeasuredHeight();
+                break;
             default:
-                return ((TL_stars.StarGift) obj).sold_out ? 1 : 0;
+                xn xnVar = (xn) this.Y2;
+                iArr[0] = ((int) xnVar.s9) - AndroidUtilities.dp(4.0f);
+                iArr[1] = org.telegram.messenger.z0.z(3.0f, xnVar.x0.getPaddingBottom(), xnVar.x0.getMeasuredHeight());
+                break;
         }
     }
 }

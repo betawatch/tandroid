@@ -4,15 +4,15 @@ import android.content.SharedPreferences;
 import android.util.Pair;
 import android.view.KeyEvent;
 import android.view.View;
-import ii.a6;
-import ii.c6;
+import ii.b6;
 import ii.d6;
-import ii.e3;
-import ii.f6;
-import ii.j3;
-import ii.o5;
-import ii.w3;
-import ii.x5;
+import ii.e6;
+import ii.f3;
+import ii.g6;
+import ii.k3;
+import ii.p5;
+import ii.x3;
+import ii.y5;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.FileLog;
@@ -27,12 +27,12 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.n70;
-import org.telegram.ui.Components.oc;
-import org.telegram.ui.Components.s41;
-import org.telegram.ui.Components.vc;
+import org.telegram.ui.Components.o70;
+import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.r41;
+import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t implements Runnable {
     public final /* synthetic */ int a;
@@ -101,12 +101,12 @@ public final /* synthetic */ class t implements Runnable {
                 String str2 = ((TLRPC.TL_messages_searchStickerSets) r62).q;
                 g2 g2Var = e2Var.a;
                 String str3 = g2Var.R;
-                s41 s41Var = g2Var.e;
+                r41 r41Var = g2Var.e;
                 if (str2.equals(str3)) {
                     e2Var.a();
-                    s41Var.b.h.getProgressDrawable().e = false;
+                    r41Var.b.h.getProgressDrawable().e = false;
                     g2Var.N = 0;
-                    s41Var.b(true);
+                    r41Var.b(true);
                     g2Var.E.addAll(tL_messages_foundStickerSets.sets);
                     g2Var.l();
                     break;
@@ -118,11 +118,11 @@ public final /* synthetic */ class t implements Runnable {
                 TLObject tLObject2 = (TLObject) obj;
                 if (tL_error != null) {
                     dVar.a.a(0.0f);
-                    vc.b0(tL_error);
+                    xc.b0(tL_error);
                     break;
                 } else if (tLObject2 instanceof TLRPC.TL_boolFalse) {
                     dVar.a.a(0.0f);
-                    org.telegram.messenger.y0.p(R.string.UnknownError, vc.a0(dVar), null);
+                    org.telegram.messenger.z0.p(R.string.UnknownError, xc.a0(dVar), null);
                     break;
                 } else {
                     dVar.finishFragment();
@@ -134,11 +134,11 @@ public final /* synthetic */ class t implements Runnable {
                 TLObject tLObject3 = (TLObject) obj;
                 if (tL_error2 != null) {
                     nVar.e.a(0.0f);
-                    vc.b0(tL_error2);
+                    xc.b0(tL_error2);
                     break;
                 } else if (tLObject3 instanceof TLRPC.TL_boolFalse) {
                     nVar.e.a(0.0f);
-                    org.telegram.messenger.y0.p(R.string.UnknownError, vc.a0(nVar), null);
+                    org.telegram.messenger.z0.p(R.string.UnknownError, xc.a0(nVar), null);
                     break;
                 } else {
                     if (nVar.E != null) {
@@ -177,11 +177,11 @@ public final /* synthetic */ class t implements Runnable {
                 TLObject tLObject4 = (TLObject) obj;
                 if (tL_error3 != null) {
                     x0Var.a.a(0.0f);
-                    vc.b0(tL_error3);
+                    xc.b0(tL_error3);
                     break;
                 } else if (tLObject4 instanceof TLRPC.TL_boolFalse) {
                     x0Var.a.a(0.0f);
-                    org.telegram.messenger.y0.p(R.string.UnknownError, vc.a0(x0Var), null);
+                    org.telegram.messenger.z0.p(R.string.UnknownError, xc.a0(x0Var), null);
                     break;
                 } else {
                     x0Var.finishFragment();
@@ -208,7 +208,7 @@ public final /* synthetic */ class t implements Runnable {
                 break;
             case 13:
                 u2.f0 f0Var = (u2.f0) obj;
-                j2.f fVar = ((i2.v0) obj2).c;
+                j2.f fVar = ((i2.w0) obj2).c;
                 e9.a1 i11 = ((e9.f0) r62).i();
                 com.google.firebase.messaging.n nVar2 = fVar.d;
                 b2.b1 b1Var = fVar.h;
@@ -227,26 +227,26 @@ public final /* synthetic */ class t implements Runnable {
                 break;
             case 14:
                 Pair pair = (Pair) r62;
-                ((i2.c1) obj2).b.h.b(((Integer) pair.first).intValue(), (u2.f0) pair.second, (Exception) obj);
+                ((i2.d1) obj2).b.h.b(((Integer) pair.first).intValue(), (u2.f0) pair.second, (Exception) obj);
                 break;
             case 15:
-                w3 w3Var = (w3) obj2;
-                o5 o5Var = (o5) obj;
-                if (w3Var.j4 == ((n70) r62)) {
-                    w3Var.j4 = null;
-                    if (w3Var.C3 && w3Var.i4 == o5Var && !o5Var.H.isEmpty()) {
-                        w3Var.M2();
+                x3 x3Var = (x3) obj2;
+                p5 p5Var = (p5) obj;
+                if (x3Var.j4 == ((o70) r62)) {
+                    x3Var.j4 = null;
+                    if (x3Var.C3 && x3Var.i4 == p5Var && !p5Var.H.isEmpty()) {
+                        x3Var.M2();
                         break;
                     }
                 }
                 break;
             case 16:
-                w3 w3Var2 = (w3) obj2;
+                x3 x3Var2 = (x3) obj2;
                 ii.a aVar = (ii.a) r62;
                 ii.a aVar2 = (ii.a) obj;
-                ArrayList arrayList7 = w3Var2.p4;
-                j3 j3Var = w3Var2.n3;
-                if (j3Var != null && aVar != null && aVar2 != null) {
+                ArrayList arrayList7 = x3Var2.p4;
+                k3 k3Var = x3Var2.n3;
+                if (k3Var != null && aVar != null && aVar2 != null) {
                     int indexOf = arrayList7.indexOf(aVar);
                     int indexOf2 = arrayList7.indexOf(aVar2);
                     if (indexOf >= 0 && indexOf2 >= 0) {
@@ -254,25 +254,25 @@ public final /* synthetic */ class t implements Runnable {
                             ii.a aVar3 = (ii.a) arrayList7.get(i12);
                             long j3 = aVar3.t;
                             if (j3 != 0) {
-                                j3Var.Y(i12, f6.l((TL_iv.RichText) w3Var2.m3.get(Long.valueOf(j3))));
+                                k3Var.Y(i12, g6.l((TL_iv.RichText) x3Var2.m3.get(Long.valueOf(j3))));
                             } else {
-                                j3Var.Y(i12, d6.z(aVar3.b));
+                                k3Var.Y(i12, e6.z(aVar3.b));
                             }
                         }
-                        j3Var.j0(Math.min(indexOf, indexOf2), Math.max(indexOf, indexOf2));
+                        k3Var.j0(Math.min(indexOf, indexOf2), Math.max(indexOf, indexOf2));
                         break;
                     }
                 }
                 break;
             case 17:
-                ((w3) obj2).Z4((ii.a) r62, (String) obj);
+                ((x3) obj2).Z4((ii.a) r62, (String) obj);
                 break;
             case 18:
                 ii.a aVar4 = (ii.a) r62;
-                c6 c6Var = (c6) obj;
-                a6 a6Var = ((x5) obj2).a.y;
-                if (a6Var != null) {
-                    ((e3) a6Var).d(aVar4, c6Var.a, c6Var.b, c6Var.c, c6Var.d, c6Var.e);
+                d6 d6Var = (d6) obj;
+                b6 b6Var = ((y5) obj2).a.y;
+                if (b6Var != null) {
+                    ((f3) b6Var).d(aVar4, d6Var.a, d6Var.b, d6Var.c, d6Var.d, d6Var.e);
                     break;
                 }
                 break;
@@ -307,7 +307,7 @@ public final /* synthetic */ class t implements Runnable {
             case 21:
                 k2.j jVar = (k2.j) ((n4.y) obj2).c;
                 String str4 = e2.d0.a;
-                j2.f fVar2 = ((i2.b0) jVar).a.s;
+                j2.f fVar2 = ((i2.c0) jVar).a.s;
                 j2.a p5 = fVar2.p();
                 fVar2.q(p5, 1009, new j2.c(p5, (b2.s) r62, (i2.h) obj, 20));
                 break;
@@ -329,12 +329,12 @@ public final /* synthetic */ class t implements Runnable {
                 break;
             case 23:
                 m4.a0 a0Var5 = (m4.a0) obj2;
-                m4.u0 u0Var = (m4.u0) r62;
+                m4.p0 p0Var = (m4.p0) r62;
                 m4.s sVar = (m4.s) obj;
                 if (!a0Var5.j()) {
-                    m4.k1 k1Var3 = a0Var5.t;
-                    u0Var.getClass();
-                    w7.t.b(k1Var3, sVar);
+                    m4.f1 f1Var = a0Var5.t;
+                    p0Var.getClass();
+                    w7.t.b(f1Var, sVar);
                     break;
                 }
                 break;
@@ -343,10 +343,10 @@ public final /* synthetic */ class t implements Runnable {
                 r62.b(jVar2.a, jVar2.b, (Exception) obj);
                 break;
             case 25:
-                ((VideoAds) obj2).lambda$show$3((oc) r62, (TLRPC.TL_sponsoredMessage) obj);
+                ((VideoAds) obj2).lambda$show$3((qc) r62, (TLRPC.TL_sponsoredMessage) obj);
                 break;
             case 26:
-                ((VideoAds) obj2).lambda$show$5((oc) r62, (boolean[]) obj);
+                ((VideoAds) obj2).lambda$show$5((qc) r62, (boolean[]) obj);
                 break;
             case 27:
                 ((VideoPlayerHolderBase) obj2).lambda$release$3((TLRPC.Document) r62, (Runnable) obj);

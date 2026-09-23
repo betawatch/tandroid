@@ -1,118 +1,91 @@
 package org.telegram.ui.Components;
 
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
+import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.os.SystemClock;
-import org.telegram.messenger.AndroidUtilities;
+import android.graphics.Path;
+import java.util.Random;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public class tp extends Drawable {
-    public static final u1.a h = new u1.a();
-    public float a;
-    public final float b;
-    public long c;
-    public final float[] d;
-    public final Paint e;
-    public float f;
-    public final RectF g;
+public final class tp {
+    public float g;
+    public float k;
+    public final Path a = new Path();
+    public final float[] b = new float[4];
+    public final float[] c = new float[4];
+    public final Matrix d = new Matrix();
+    public final float h = 1.0f;
+    public final Random i = new Random();
+    public final int f = 6;
+    public final float e = (float) (Math.tan(3.141592653589793d / 12) * 1.3333333333333333d);
+    public final float[] j = new float[6];
 
-    public tp(int i10) {
-        this.a = AndroidUtilities.dp(18.0f);
-        this.b = AndroidUtilities.dp(2.25f);
-        this.c = -1L;
-        this.d = new float[2];
-        Paint paint = new Paint();
-        this.e = paint;
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        paint.setStrokeJoin(Paint.Join.ROUND);
-        this.g = new RectF();
-        b(i10);
-    }
-
-    public static void a(float[] fArr, float f7) {
-        float f10 = (1520.0f * f7) / 5400.0f;
-        fArr[0] = Math.max(0.0f, f10 - 20.0f);
-        fArr[1] = f10;
-        for (int i10 = 0; i10 < 4; i10++) {
-            u1.a aVar = h;
-            fArr[1] = (aVar.getInterpolation((f7 - (i10 * 1350)) / 667.0f) * 250.0f) + fArr[1];
-            fArr[0] = (aVar.getInterpolation((f7 - (r4 + 667)) / 667.0f) * 250.0f) + fArr[0];
+    public tp() {
+        for (int i10 = 0; i10 < this.f; i10++) {
+            this.j[i10] = (this.i.nextInt() % 100) / 100.0f;
         }
     }
 
-    public final void b(int i10) {
-        this.e.setColor(i10);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        if (this.c < 0) {
-            this.c = SystemClock.elapsedRealtime();
+    public final void a(float f7, float f10, Canvas canvas, Paint paint) {
+        tp tpVar = this;
+        float f11 = tpVar.g;
+        float f12 = (f11 - 0.0f) - 0.0f;
+        float f13 = f11 + 0.0f + 0.0f;
+        float max = Math.max(f12, f13);
+        float f14 = tpVar.e;
+        float f15 = max * f14 * tpVar.h;
+        Path path = tpVar.a;
+        path.reset();
+        int i10 = 0;
+        while (true) {
+            int i11 = tpVar.f;
+            if (i10 >= i11) {
+                canvas.save();
+                canvas.rotate(0.0f, f7, f10);
+                canvas.drawPath(path, paint);
+                canvas.restore();
+                return;
+            }
+            Matrix matrix = tpVar.d;
+            matrix.reset();
+            float f16 = 360.0f / i11;
+            matrix.setRotate(i10 * f16, f7, f10);
+            float f17 = i10 % 2 == 0 ? f12 : f13;
+            float f18 = tpVar.k;
+            float[] fArr = tpVar.j;
+            float f19 = (fArr[i10] * f18) + f17;
+            float[] fArr2 = tpVar.b;
+            fArr2[0] = f7;
+            float f20 = f10 - f19;
+            fArr2[1] = f20;
+            float f21 = f13;
+            fArr2[2] = com.google.android.gms.internal.vision.e2.x(f18, fArr[i10], f14, f7 + f15);
+            fArr2[3] = f20;
+            matrix.mapPoints(fArr2);
+            int i12 = i10 + 1;
+            int i13 = i12 >= i11 ? 0 : i12;
+            float f22 = i13 % 2 == 0 ? f12 : f21;
+            float f23 = tpVar.k;
+            float f24 = (fArr[i13] * f23) + f22;
+            float[] fArr3 = tpVar.c;
+            fArr3[0] = f7;
+            float f25 = f10 - f24;
+            fArr3[1] = f25;
+            float f26 = f12;
+            fArr3[2] = com.google.android.gms.internal.vision.e2.x(f23, fArr[i13], f14, f7 - f15);
+            fArr3[3] = f25;
+            matrix.reset();
+            matrix.setRotate(f16 * i13, f7, f10);
+            matrix.mapPoints(fArr3);
+            if (i10 == 0) {
+                path.moveTo(fArr2[0], fArr2[1]);
+            }
+            path.cubicTo(fArr2[2], fArr2[3], fArr3[2], fArr3[3], fArr3[0], fArr3[1]);
+            i10 = i12;
+            f13 = f21;
+            f12 = f26;
+            tpVar = this;
         }
-        float elapsedRealtime = (SystemClock.elapsedRealtime() - this.c) % 5400;
-        float[] fArr = this.d;
-        a(fArr, elapsedRealtime);
-        float f7 = this.f;
-        float f10 = fArr[0];
-        canvas.drawArc(this.g, f7 + f10, fArr[1] - f10, false, this.e);
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public int getIntrinsicHeight() {
-        return (int) (this.a + this.b);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public int getIntrinsicWidth() {
-        return (int) (this.a + this.b);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.e.setAlpha(i10);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setBounds(int i10, int i11, int i12, int i13) {
-        float f7 = i10;
-        float f10 = i12 - i10;
-        float f11 = this.b;
-        float f12 = this.a;
-        float f13 = i11;
-        float f14 = i13 - i11;
-        this.g.set(com.google.android.gms.internal.vision.e2.A(f10 - (f11 / 2.0f), f12, 2.0f, f7), (((f14 - (f11 / 2.0f)) - f12) / 2.0f) + f13, ((((f11 / 2.0f) + f10) + f12) / 2.0f) + f7, ((((f11 / 2.0f) + f14) + f12) / 2.0f) + f13);
-        super.setBounds(i10, i11, i12, i13);
-        this.e.setStrokeWidth(f11);
-    }
-
-    public tp(float f7, float f10, int i10) {
-        this.a = AndroidUtilities.dp(18.0f);
-        this.b = AndroidUtilities.dp(2.25f);
-        this.c = -1L;
-        this.d = new float[2];
-        Paint paint = new Paint();
-        this.e = paint;
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        paint.setStrokeJoin(Paint.Join.ROUND);
-        this.g = new RectF();
-        this.a = f7;
-        this.b = f10;
-        b(i10);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

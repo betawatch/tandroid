@@ -1,46 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.view.KeyEvent;
-import android.view.View;
+import android.text.Editable;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vt implements au, al0 {
-    public final /* synthetic */ int a;
+public final /* synthetic */ class vt implements Utilities.Callback {
+    public final /* synthetic */ cu a;
     public final /* synthetic */ int b;
-    public final /* synthetic */ KeyEvent.Callback c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ vt(bu buVar, int i10, int i11, Runnable runnable) {
-        this.c = buVar;
-        this.a = i10;
-        this.b = i11;
-        this.d = runnable;
+    public /* synthetic */ vt(cu cuVar, int i10, int i11) {
+        this.a = cuVar;
+        this.b = i10;
+        this.c = i11;
     }
 
-    @Override // org.telegram.ui.Components.al0
-    public void c(float f7, float f10, int i10, View view) {
-        tg.n1.Q((tg.n1) this.c, this.a, (org.telegram.ui.ActionBar.e6) this.d, this.b, view);
-    }
-
-    @Override // org.telegram.ui.Components.al0
-    public /* synthetic */ boolean d1(View view) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.au
-    public void run(String str) {
-        bu.k((bu) this.c, this.a, this.b, (Runnable) this.d, str);
-    }
-
-    public /* synthetic */ vt(tg.n1 n1Var, int i10, org.telegram.ui.ActionBar.e6 e6Var, int i11) {
-        this.c = n1Var;
-        this.a = i10;
-        this.d = e6Var;
-        this.b = i11;
-    }
-
-    @Override // org.telegram.ui.Components.al0
-    public /* synthetic */ void r0(View view, float f7, float f10) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        CharSequence charSequence = (CharSequence) obj;
+        cu cuVar = this.a;
+        Editable text = cuVar.getText();
+        int i10 = this.b;
+        text.replace(i10, this.c, charSequence);
+        cuVar.setSelection(i10, charSequence.length() + i10);
     }
 }

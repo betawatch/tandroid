@@ -14,7 +14,7 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.WeakHashMap;
-import k2.c0;
+import k2.b0;
 import lf.i;
 import r0.i0;
 import s4.c1;
@@ -26,7 +26,7 @@ import s4.t0;
 import s4.u0;
 import s4.z0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class e {
     public int a;
@@ -383,7 +383,7 @@ public final class e {
                 c1 U2 = RecyclerView.U(view);
                 i iVar = recyclerView.e;
                 n nVar = (n) iVar.c;
-                int indexOfChild = ((RecyclerView) ((c0) iVar.b).b).indexOfChild(view);
+                int indexOfChild = ((RecyclerView) ((b0) iVar.b).b).indexOfChild(view);
                 if (indexOfChild < 0) {
                     throw new IllegalArgumentException("view is not a child, cannot hide " + view);
                 }
@@ -394,7 +394,7 @@ public final class e {
                 iVar.Y(view);
                 i iVar2 = recyclerView.e;
                 n nVar2 = (n) iVar2.c;
-                int indexOfChild2 = ((RecyclerView) ((c0) iVar2.b).b).indexOfChild(view);
+                int indexOfChild2 = ((RecyclerView) ((b0) iVar2.b).b).indexOfChild(view);
                 int w10 = (indexOfChild2 == -1 || nVar2.z(indexOfChild2)) ? -1 : indexOfChild2 - nVar2.w(indexOfChild2);
                 if (w10 == -1) {
                     throw new IllegalStateException("layout index should not be -1 after unhiding a view:" + U2 + recyclerView.C());

@@ -1,39 +1,39 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
+import android.app.Activity;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class j41 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ m41 b;
+public final class j41 extends org.telegram.ui.Components.p6 {
+    public boolean s;
+    public final org.telegram.ui.Components.e6 v;
+    public final /* synthetic */ SaveToGallerySettingsActivity w;
 
-    public /* synthetic */ j41(m41 m41Var, int i10) {
-        this.a = i10;
-        this.b = m41Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public j41(SaveToGallerySettingsActivity saveToGallerySettingsActivity, Activity activity) {
+        super(activity, true, true, false);
+        this.w = saveToGallerySettingsActivity;
+        this.v = new org.telegram.ui.Components.e6(this);
+        getDrawable().D = true;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                m41 m41Var = this.b;
-                m41Var.getClass();
-                m41Var.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                m41Var.g();
-                break;
-            case 1:
-                m41 m41Var2 = this.b;
-                m41Var2.getClass();
-                m41Var2.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                m41Var2.g();
-                break;
-            default:
-                m41 m41Var3 = this.b;
-                m41Var3.getClass();
-                m41Var3.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                m41Var3.g();
-                break;
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        float f7 = this.s ? 1.0f : 0.0f;
+        org.telegram.ui.Components.e6 e6Var = this.v;
+        e6Var.d(f7, false);
+        int i10 = org.telegram.ui.ActionBar.h6.y6;
+        SaveToGallerySettingsActivity saveToGallerySettingsActivity = this.w;
+        setTextColor(i0.a.d(e6Var.c, saveToGallerySettingsActivity.getThemedColor(i10), saveToGallerySettingsActivity.getThemedColor(org.telegram.ui.ActionBar.h6.n6)));
+        super.dispatchDraw(canvas);
+    }
+
+    public final void e(boolean z10, boolean z11) {
+        if (this.s != z10) {
+            this.s = z10;
+            this.v.d(z10 ? 1.0f : 0.0f, z11);
+            invalidate();
         }
     }
 }

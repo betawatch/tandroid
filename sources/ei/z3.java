@@ -1,11 +1,11 @@
 package ei;
 
 import android.os.Bundle;
-import org.telegram.ui.bo;
+import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class z3 extends bo {
+public final class z3 extends xn {
     public final /* synthetic */ org.telegram.ui.ActionBar.f3 Pc;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -14,7 +14,7 @@ public final class z3 extends bo {
         this.Pc = f3Var;
     }
 
-    @Override // org.telegram.ui.bo, org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.xn, org.telegram.ui.ActionBar.n2
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
         org.telegram.ui.ActionBar.f3 f3Var = this.Pc;

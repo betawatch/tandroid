@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class qu0 implements NotificationCenter.NotificationCenterDelegate {
     public final NotificationCenter.ObserversGroup E;
@@ -37,12 +37,12 @@ public final class qu0 implements NotificationCenter.NotificationCenterDelegate 
         this.w = n2Var;
         final int i10 = 1;
         final int i11 = 0;
-        if (n2Var instanceof ah) {
-            ah ahVar = (ah) n2Var;
-            long a2 = ahVar.a();
+        if (n2Var instanceof bh) {
+            bh bhVar = (bh) n2Var;
+            long a2 = bhVar.a();
             this.r = a2;
-            this.v = ahVar.I();
-            this.s = ahVar.d();
+            this.v = bhVar.I();
+            this.s = bhVar.d();
             if (a2 != n2Var.getUserConfig().getClientUserId()) {
                 n2Var.getMessagesController().getSavedMessagesController().hasSavedMessages(a2, new Utilities.Callback(this) { // from class: org.telegram.ui.Components.pu0
                     public final /* synthetic */ qu0 b;
@@ -145,9 +145,9 @@ public final class qu0 implements NotificationCenter.NotificationCenterDelegate 
                     });
                 }
             }
-        } else if (n2Var instanceof ba0) {
-            this.r = ((ba0) n2Var).e;
-        } else if (n2Var instanceof org.telegram.ui.uy) {
+        } else if (n2Var instanceof ca0) {
+            this.r = ((ca0) n2Var).e;
+        } else if (n2Var instanceof org.telegram.ui.ry) {
             this.r = n2Var.getUserConfig().getClientUserId();
         }
         if (this.v == 0 && DialogObject.isChatDialog(this.r) && (chatFull = n2Var.getMessagesController().getChatFull(-this.r)) != null) {

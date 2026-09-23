@@ -1,68 +1,78 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dw0 implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ mw0 b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ TLRPC.PollAnswer d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 e;
-    public final /* synthetic */ ArrayList f;
+public final class dw0 extends org.telegram.ui.Cells.t1 {
+    public final Path Ge;
+    public final Paint He;
+    public final /* synthetic */ byte[] Ie;
+    public final /* synthetic */ int Je;
+    public final /* synthetic */ int Ke;
+    public final /* synthetic */ fw0 Le;
 
-    public /* synthetic */ dw0(mw0 mw0Var, boolean z10, TLRPC.PollAnswer pollAnswer, org.telegram.ui.ActionBar.n2 n2Var, ArrayList arrayList) {
-        this.b = mw0Var;
-        this.c = z10;
-        this.d = pollAnswer;
-        this.e = n2Var;
-        this.f = arrayList;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public dw0(fw0 fw0Var, Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var, byte[] bArr, int i11, int i12) {
+        super(context, i10, false, null, d6Var);
+        this.Le = fw0Var;
+        this.Ie = bArr;
+        this.Je = i11;
+        this.Ke = i12;
+        this.Ge = new Path();
+        this.He = new Paint(1);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                mw0 mw0Var = this.b;
-                mw0Var.getClass();
-                boolean z10 = this.c;
-                org.telegram.ui.ActionBar.n2 n2Var = this.e;
-                if (z10) {
-                    ArrayList<TLRPC.PollAnswer> arrayList = this.f;
-                    arrayList.remove(this.d);
-                    n2Var.getSendMessagesHelper().sendVote(mw0Var.H, arrayList, null);
-                } else {
-                    n2Var.getSendMessagesHelper().sendVote(mw0Var.H, null, null);
-                }
-                mw0Var.c(true);
-                break;
-            default:
-                mw0 mw0Var2 = this.b;
-                mw0Var2.getClass();
-                boolean z11 = this.c;
-                TLRPC.PollAnswer pollAnswer = this.d;
-                org.telegram.ui.ActionBar.n2 n2Var2 = this.e;
-                if (z11) {
-                    ArrayList<TLRPC.PollAnswer> arrayList2 = this.f;
-                    arrayList2.add(pollAnswer);
-                    n2Var2.getSendMessagesHelper().sendVote(mw0Var2.H, arrayList2, null);
-                } else {
-                    ArrayList<TLRPC.PollAnswer> arrayList3 = new ArrayList<>(1);
-                    arrayList3.add(pollAnswer);
-                    n2Var2.getSendMessagesHelper().sendVote(mw0Var2.H, arrayList3, null);
-                }
-                mw0Var2.c(true);
-                break;
+    @Override // org.telegram.ui.Cells.t1
+    public final void Y1(Canvas canvas) {
+        this.i6 = 0;
+        this.j6 = this.Y5.size() - 1;
+        this.k6 = (-AndroidUtilities.dp(7.0f)) * this.Le.y;
+        super.Y1(canvas);
+    }
+
+    @Override // org.telegram.ui.Cells.t1, android.view.View
+    public final void onDraw(Canvas canvas) {
+        canvas.save();
+        int I2 = I2(this.Ie);
+        float H2 = H2(I2);
+        float G2 = G2(I2);
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(getPollButtonsLeft(), H2, getPollButtonsRight(), G2);
+        float f7 = rectF.top;
+        float dp = AndroidUtilities.dp(3.0f);
+        fw0 fw0Var = this.Le;
+        rectF.top = AndroidUtilities.lerp(dp, fw0Var.V ? -AndroidUtilities.dp(3.0f) : 0.0f, fw0Var.y) + f7;
+        float f10 = rectF.bottom;
+        boolean z10 = fw0Var.V;
+        float dp2 = AndroidUtilities.dp(3.0f);
+        if (!z10) {
+            dp2 = AndroidUtilities.lerp(dp2, 0.0f, fw0Var.y);
         }
+        rectF.bottom = f10 + dp2;
+        Path path = this.Ge;
+        path.rewind();
+        path.addRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), Path.Direction.CW);
+        Paint paint = this.He;
+        paint.setColor(0);
+        paint.setShadowLayer(AndroidUtilities.dp(2.0f), 0.0f, AndroidUtilities.dp(0.66f), org.telegram.ui.ActionBar.h6.l1(fw0Var.y * 0.2f, -16777216));
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), paint);
+        canvas.clipPath(path);
+        S1(canvas);
+        canvas.restore();
     }
 
-    public /* synthetic */ dw0(mw0 mw0Var, boolean z10, org.telegram.ui.ActionBar.n2 n2Var, ArrayList arrayList, TLRPC.PollAnswer pollAnswer) {
-        this.b = mw0Var;
-        this.c = z10;
-        this.e = n2Var;
-        this.f = arrayList;
-        this.d = pollAnswer;
+    @Override // org.telegram.ui.Cells.t1, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setMeasuredDimension(this.Je, this.Ke);
+    }
+
+    @Override // org.telegram.ui.Cells.t1, android.view.View
+    public final void setPressed(boolean z10) {
     }
 }

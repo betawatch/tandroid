@@ -3,15 +3,15 @@ package ai;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class v3 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ f6 b;
+    public final /* synthetic */ e6 b;
 
-    public /* synthetic */ v3(f6 f6Var, int i10) {
+    public /* synthetic */ v3(e6 e6Var, int i10) {
         this.a = i10;
-        this.b = f6Var;
+        this.b = e6Var;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -20,34 +20,34 @@ public final class v3 extends AnimatorListenerAdapter {
         Runnable runnable;
         switch (this.a) {
             case 0:
-                f6 f6Var = this.b;
-                f6Var.t3 = 0.0f;
-                f6Var.r3.setAlpha(1.0f);
-                f6Var.r3.setVisibility(8);
-                f6Var.r3.n();
+                e6 e6Var = this.b;
+                e6Var.t3 = 0.0f;
+                e6Var.r3.setAlpha(1.0f);
+                e6Var.r3.setVisibility(8);
+                e6Var.r3.n();
                 break;
             default:
                 super.onAnimationEnd(animator);
-                f6 f6Var2 = this.b;
-                f6Var2.N2.unlock();
-                f6Var2.H2 = f6Var2.o2;
-                a4 a4Var = f6Var2.b2;
+                e6 e6Var2 = this.b;
+                e6Var2.N2.unlock();
+                e6Var2.H2 = e6Var2.o2;
+                a4 a4Var = e6Var2.b2;
                 if (a4Var != null && (runnable = a4Var.w) != null) {
                     runnable.run();
                     a4Var.w = null;
                 }
-                if (f6Var2.K1 && !f6Var2.v2) {
-                    jc jcVar = ((ac) f6Var2.Q1).d;
+                if (e6Var2.K1 && !e6Var2.v2) {
+                    jc jcVar = ((ac) e6Var2.Q1).d;
                     if (jcVar.x) {
                         jcVar.x = false;
                         jcVar.P();
                     }
                 }
-                if (!f6Var2.v2 && (c4Var = f6Var2.d3) != null) {
+                if (!e6Var2.v2 && (c4Var = e6Var2.d3) != null) {
                     c4Var.setVisibility(8);
                 }
-                f6Var2.V2 = true;
-                f6Var2.invalidate();
+                e6Var2.V2 = true;
+                e6Var2.invalidate();
                 break;
         }
     }

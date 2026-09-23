@@ -1,33 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.view.ViewTreeObserver;
+import android.text.Editable;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rt implements ViewTreeObserver.OnPreDrawListener {
+public final /* synthetic */ class rt implements Utilities.Callback0Return {
     public final /* synthetic */ int a;
-    public final /* synthetic */ View b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ rt(int i10, View view) {
+    public /* synthetic */ rt(Object obj, int i10) {
         this.a = i10;
-        this.b = view;
+        this.b = obj;
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        switch (this.a) {
+    @Override // org.telegram.messenger.Utilities.Callback0Return
+    public final Object run() {
+        Editable text;
+        si0[] si0VarArr;
+        int i10 = this.a;
+        Object obj = this.b;
+        switch (i10) {
             case 0:
-                org.telegram.ui.ActionBar.i4 i4Var = ((EditTextBoldCursor) this.b).floatingActionMode;
-                if (i4Var != null) {
-                    i4Var.e();
-                    break;
-                }
-                break;
+                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) obj;
+                int i11 = EditTextBoldCursor.a;
+                return Boolean.valueOf(editTextBoldCursor.hasSelection() && editTextBoldCursor.getSelectionStart() >= 0 && editTextBoldCursor.getSelectionEnd() >= 0 && editTextBoldCursor.getSelectionStart() != editTextBoldCursor.getSelectionEnd() && (text = editTextBoldCursor.getText()) != null && ((si0VarArr = (si0[]) text.getSpans(editTextBoldCursor.getSelectionStart(), editTextBoldCursor.getSelectionEnd(), si0.class)) == null || si0VarArr.length == 0));
             default:
-                ((l70) this.b).invalidate();
-                break;
+                return ((u40) obj).getCloseIntoObject();
         }
-        return true;
     }
 }

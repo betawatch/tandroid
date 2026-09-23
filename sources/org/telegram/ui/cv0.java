@@ -1,240 +1,66 @@
 package org.telegram.ui;
 
-import android.app.Activity;
+import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.view.KeyEvent;
-import android.view.MotionEvent;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.CheckBox;
-import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class cv0 extends FrameLayout {
-    public final /* synthetic */ PhotoViewer a;
+public final class cv0 extends org.telegram.ui.Components.ml0 {
+    public final Drawable X2;
+    public final Paint Y2;
+    public final RectF Z2;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cv0(PhotoViewer photoViewer, Activity activity) {
-        super(activity);
-        this.a = photoViewer;
+    public cv0(Context context) {
+        super(context, null);
+        Paint paint = new Paint(1);
+        this.Y2 = paint;
+        this.Z2 = new RectF();
+        setWillNotDraw(false);
+        setClipToPadding(false);
+        setTranslationY(-AndroidUtilities.dp(10.0f));
+        bv0 bv0Var = new bv0(this);
+        setItemAnimator(bv0Var);
+        bv0Var.C = false;
+        bv0Var.m = false;
+        setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(6.0f));
+        paint.setColor(2130706432);
+        this.X2 = context.getResources().getDrawable(R.drawable.photo_tooltip2).mutate();
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        bo boVar = this.a.l4;
-        if (boVar != null) {
-            boVar.Q7();
-            UndoView undoView = boVar.y3;
-            if (undoView == null || undoView.getVisibility() != 0) {
-                return;
-            }
-            canvas.save();
-            View view = (View) undoView.getParent();
-            canvas.clipRect(view.getX(), view.getY(), view.getX() + view.getWidth(), view.getY() + view.getHeight());
-            canvas.translate(undoView.getX(), undoView.getY());
-            undoView.draw(canvas);
-            canvas.restore();
-            invalidate();
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
-        keyEvent.getKeyCode();
-        PhotoViewer photoViewer = this.a;
-        if (!photoViewer.r && photoViewer.c2 != 1 && photoViewer.r1 && photoViewer.F2 != null && keyEvent.getRepeatCount() == 0 && keyEvent.getAction() == 0 && (keyEvent.getKeyCode() == 24 || keyEvent.getKeyCode() == 25)) {
-            photoViewer.F2.W(1.0f);
-        }
-        return super.dispatchKeyEvent(keyEvent);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchKeyEventPreIme(KeyEvent keyEvent) {
-        if (keyEvent == null || keyEvent.getKeyCode() != 4 || keyEvent.getAction() != 1) {
-            return super.dispatchKeyEventPreIme(keyEvent);
-        }
-        PhotoViewer photoViewer = this.a;
-        if (photoViewer.Q.y()) {
-            photoViewer.Q.f(false);
-        }
-        if (photoViewer.H1()) {
-            photoViewer.E0(true);
-            return false;
-        }
-        if (st.q().E) {
-            st.q().o();
-            return false;
-        }
-        PhotoViewer.t1().G0(true, false);
-        return true;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x001a, code lost:
-    
-        if (r1 != 6) goto L23;
-     */
-    @Override // android.view.ViewGroup, android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        PhotoViewer photoViewer = this.a;
-        if (photoViewer.l3 && photoViewer.P3) {
-            int actionMasked = motionEvent.getActionMasked();
-            if (actionMasked != 0) {
-                if (actionMasked != 1 && actionMasked != 3) {
-                    if (actionMasked != 5) {
-                    }
-                }
-                MessageObject messageObject = photoViewer.T4;
-                if (messageObject == null || !messageObject.isSponsored()) {
-                    photoViewer.r2();
-                }
-            }
-            AndroidUtilities.cancelRunOnUIThread(photoViewer.x2);
-        }
-        return super.dispatchTouchEvent(motionEvent);
-    }
-
-    @Override // android.view.View
-    public final void draw(Canvas canvas) {
-        if (this.a.S8) {
-            return;
-        }
-        super.draw(canvas);
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        try {
-            return super.drawChild(canvas, view, j3);
-        } catch (Throwable unused) {
-            return false;
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        PhotoViewer photoViewer = this.a;
-        photoViewer.C4.onAttachedToWindow();
-        photoViewer.B4.onAttachedToWindow();
-        photoViewer.D4.onAttachedToWindow();
-        photoViewer.S5 = true;
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        PhotoViewer photoViewer = this.a;
-        photoViewer.C4.onDetachedFromWindow();
-        photoViewer.B4.onDetachedFromWindow();
-        photoViewer.D4.onDetachedFromWindow();
-        photoViewer.S5 = false;
-        photoViewer.T5 = false;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0054  */
-    /* JADX WARN: Removed duplicated region for block: B:16:? A[RETURN, SYNTHETIC] */
-    @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
+    @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
     public final void onDraw(Canvas canvas) {
-        Canvas canvas2;
-        PhotoViewer photoViewer = this.a;
-        Paint paint = photoViewer.M0;
-        ai.n4 n4Var = photoViewer.s5;
-        if (n4Var != null && n4Var.getVisibility() == 0) {
-            View view = (View) photoViewer.s5.getParent();
-            float min = Math.min(photoViewer.s5.getAlpha(), view != null ? view.getAlpha() : 1.0f);
-            if (min > 0.0f) {
-                canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (min * 255.0f), 31);
-                canvas2 = canvas;
-                photoViewer.s5.draw(canvas2);
-                canvas2.restore();
-                if (photoViewer.e) {
-                    return;
-                }
-                paint.setAlpha(photoViewer.L0.getAlpha());
-                canvas2.drawRect(0.0f, getMeasuredHeight(), getMeasuredWidth(), getMeasuredHeight() + photoViewer.s2.bottom, paint);
+        super.onDraw(canvas);
+        int childCount = getChildCount();
+        if (childCount > 0) {
+            int measuredWidth = getMeasuredWidth() - AndroidUtilities.dp(87.0f);
+            Drawable drawable = this.X2;
+            drawable.setBounds(measuredWidth, 0, drawable.getIntrinsicWidth() + measuredWidth, AndroidUtilities.dp(6.0f));
+            drawable.draw(canvas);
+            int i10 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+            int i11 = TLObject.FLAG_31;
+            for (int i12 = 0; i12 < childCount; i12++) {
+                View childAt = getChildAt(i12);
+                i10 = (int) Math.min(i10, Math.floor(childAt.getX()));
+                i11 = (int) Math.max(i11, Math.ceil(childAt.getX() + childAt.getMeasuredWidth()));
+            }
+            if (i10 == Integer.MAX_VALUE || i11 == Integer.MIN_VALUE) {
                 return;
             }
+            float dp = i10 - AndroidUtilities.dp(6.0f);
+            float dp2 = AndroidUtilities.dp(6.0f);
+            float dp3 = AndroidUtilities.dp(6.0f) + i11;
+            float dp4 = AndroidUtilities.dp(103.0f);
+            RectF rectF = this.Z2;
+            rectF.set(dp, dp2, dp3, dp4);
+            canvas.drawRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), this.Y2);
         }
-        canvas2 = canvas;
-        if (photoViewer.e) {
-        }
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        return this.a.e && super.onInterceptTouchEvent(motionEvent);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        PhotoViewer photoViewer = this.a;
-        photoViewer.h0.layout(getPaddingLeft(), 0, photoViewer.h0.getMeasuredWidth() + getPaddingLeft(), photoViewer.h0.getMeasuredHeight());
-        photoViewer.e0.layout(getPaddingLeft(), 0, photoViewer.e0.getMeasuredWidth() + getPaddingLeft(), photoViewer.e0.getMeasuredHeight());
-        photoViewer.j0.layout(getPaddingLeft(), photoViewer.e0.getMeasuredHeight(), photoViewer.j0.getMeasuredWidth(), photoViewer.j0.getMeasuredHeight() + photoViewer.e0.getMeasuredHeight());
-        photoViewer.T5 = true;
-        if (z10) {
-            if (!photoViewer.U5) {
-                float q22 = photoViewer.q2(true);
-                photoViewer.a6 = q22;
-                photoViewer.X5 = 0.0f;
-                photoViewer.Y5 = 0.0f;
-                photoViewer.v3(q22);
-            }
-            CheckBox checkBox = photoViewer.N0;
-            if (checkBox != null) {
-                checkBox.post(new mu0(this, 1));
-            }
-        }
-        if (photoViewer.U5) {
-            photoViewer.M2();
-            photoViewer.U5 = false;
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int size = View.MeasureSpec.getSize(i10);
-        int size2 = View.MeasureSpec.getSize(i11);
-        PhotoViewer photoViewer = this.a;
-        if (!photoViewer.s && AndroidUtilities.incorrectDisplaySizeFix) {
-            int i12 = AndroidUtilities.displaySize.y;
-            if (size2 > i12) {
-                size2 = i12;
-            }
-            size2 += AndroidUtilities.statusBarHeight;
-        }
-        setMeasuredDimension(size, size2);
-        int i13 = size2 - photoViewer.s2.bottom;
-        int paddingRight = size - (getPaddingRight() + getPaddingLeft());
-        int paddingBottom = i13 - getPaddingBottom();
-        ViewGroup.LayoutParams layoutParams = photoViewer.h0.getLayoutParams();
-        photoViewer.h0.measure(View.MeasureSpec.makeMeasureSpec(layoutParams.width, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(layoutParams.height, TLObject.FLAG_31));
-        photoViewer.e0.measure(View.MeasureSpec.makeMeasureSpec(paddingRight, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(paddingBottom, TLObject.FLAG_30));
-        photoViewer.j0.measure(View.MeasureSpec.makeMeasureSpec(paddingRight, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(photoViewer.k0, TLObject.FLAG_30));
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        PhotoViewer photoViewer = this.a;
-        return photoViewer.e && PhotoViewer.k(photoViewer, motionEvent);
-    }
-
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        super.requestLayout();
-        AndroidUtilities.printStackTrace("requestLayout");
     }
 }

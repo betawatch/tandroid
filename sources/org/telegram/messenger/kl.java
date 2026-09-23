@@ -1,64 +1,29 @@
 package org.telegram.messenger;
 
+import org.telegram.messenger.LanguageDetector;
 import org.telegram.messenger.TranslateController;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class kl implements RequestDelegate {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ Runnable d;
-    public final /* synthetic */ BaseController e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object g;
-    public final /* synthetic */ Object h;
+public final /* synthetic */ class kl implements LanguageDetector.StringCallback, LanguageDetector.ExceptionCallback {
+    public final /* synthetic */ TranslateController a;
+    public final /* synthetic */ TL_stories.StoryItem b;
+    public final /* synthetic */ TranslateController.StoryKey c;
 
-    public /* synthetic */ kl(MessagesController messagesController, long j3, String str, Runnable runnable, org.telegram.ui.ActionBar.n2 n2Var, TLRPC.TL_channels_updateUsername tL_channels_updateUsername, Runnable runnable2) {
-        this.e = messagesController;
-        this.b = j3;
-        this.c = str;
-        this.d = runnable;
-        this.f = n2Var;
-        this.g = tL_channels_updateUsername;
-        this.h = runnable2;
+    public /* synthetic */ kl(TranslateController translateController, TL_stories.StoryItem storyItem, TranslateController.StoryKey storyKey) {
+        this.a = translateController;
+        this.b = storyItem;
+        this.c = storyKey;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                ((TranslateController) this.e).lambda$translatePhoto$46((MessageObject) this.f, this.c, (TranslateController.MessageKey) this.g, this.d, this.b, (TLRPC.TL_textWithEntities) this.h, tLObject, tL_error);
-                break;
-            case 1:
-                ((MessagesController) this.e).lambda$updateChannelUserName$292(this.b, this.c, this.d, (org.telegram.ui.ActionBar.n2) this.f, (TLRPC.TL_channels_updateUsername) this.g, (Runnable) this.h, tLObject, tL_error);
-                break;
-            default:
-                ((MessagesController) this.e).lambda$changeChatAvatar$319((TLRPC.TL_inputChatPhoto) this.f, (TLRPC.FileLocation) this.g, (TLRPC.FileLocation) this.h, this.c, this.b, this.d, tLObject, tL_error);
-                break;
-        }
+    @Override // org.telegram.messenger.LanguageDetector.ExceptionCallback
+    public void run(Exception exc) {
+        this.a.lambda$detectStoryLanguage$34(this.b, this.c, exc);
     }
 
-    public /* synthetic */ kl(MessagesController messagesController, TLRPC.TL_inputChatPhoto tL_inputChatPhoto, TLRPC.FileLocation fileLocation, TLRPC.FileLocation fileLocation2, String str, long j3, Runnable runnable) {
-        this.e = messagesController;
-        this.f = tL_inputChatPhoto;
-        this.g = fileLocation;
-        this.h = fileLocation2;
-        this.c = str;
-        this.b = j3;
-        this.d = runnable;
-    }
-
-    public /* synthetic */ kl(TranslateController translateController, MessageObject messageObject, String str, TranslateController.MessageKey messageKey, Runnable runnable, long j3, TLRPC.TL_textWithEntities tL_textWithEntities) {
-        this.e = translateController;
-        this.f = messageObject;
-        this.c = str;
-        this.g = messageKey;
-        this.d = runnable;
-        this.b = j3;
-        this.h = tL_textWithEntities;
+    @Override // org.telegram.messenger.LanguageDetector.StringCallback
+    public void run(String str) {
+        this.a.lambda$detectStoryLanguage$32(this.b, this.c, str);
     }
 }

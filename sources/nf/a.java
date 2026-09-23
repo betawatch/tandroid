@@ -8,9 +8,9 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.h4;
+import org.telegram.ui.i4;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -37,13 +37,13 @@ public final /* synthetic */ class a implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new c((e) this.d, (b2[]) this.e, tLObject, this.b, (Uri) this.f, (Context) this.g, this.c));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new c((h4) this.d, tLObject, this.b, (TLRPC.WebPage) this.e, (MessageObject) this.f, this.c, (String) this.g));
+                AndroidUtilities.runOnUIThread(new c((i4) this.d, tLObject, this.b, (TLRPC.WebPage) this.e, (MessageObject) this.f, this.c, (String) this.g));
                 break;
         }
     }
 
-    public /* synthetic */ a(h4 h4Var, int i10, TLRPC.WebPage webPage, MessageObject messageObject, boolean z10, String str) {
-        this.d = h4Var;
+    public /* synthetic */ a(i4 i4Var, int i10, TLRPC.WebPage webPage, MessageObject messageObject, boolean z10, String str) {
+        this.d = i4Var;
         this.b = i10;
         this.e = webPage;
         this.f = messageObject;

@@ -5,20 +5,20 @@ import android.graphics.Canvas;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class z4 extends org.telegram.ui.Components.u9 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.e6 G;
+public final class z4 extends org.telegram.ui.Components.w9 {
+    public final /* synthetic */ org.telegram.ui.ActionBar.d6 G;
     public final /* synthetic */ b5 H;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z4(b5 b5Var, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+    public z4(b5 b5Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context);
         this.H = b5Var;
-        this.G = e6Var;
+        this.G = d6Var;
     }
 
-    @Override // org.telegram.ui.Components.u9, android.view.View
+    @Override // org.telegram.ui.Components.w9, android.view.View
     public final void onDraw(Canvas canvas) {
         b5 b5Var = this.H;
         if (b5Var.r == null) {

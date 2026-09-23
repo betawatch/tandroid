@@ -14,62 +14,63 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.vl;
+import org.telegram.messenger.ul;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.c6;
-import org.telegram.ui.Components.m6;
-import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.tp;
-import org.telegram.ui.Components.x5;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.e6;
+import org.telegram.ui.Components.h5;
+import org.telegram.ui.Components.o6;
+import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.up;
+import org.telegram.ui.Components.z5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public abstract class x extends FrameLayout {
     public final Paint a;
     public final Paint b;
-    public final c6 c;
-    public final org.telegram.ui.Components.f5 d;
+    public final e6 c;
+    public final h5 d;
     public a5.a e;
     public final v[] f;
     public v h;
     public Utilities.Callback n;
     public Runnable r;
 
-    public x(Context context, e6 e6Var) {
+    public x(Context context, d6 d6Var) {
         super(context);
         Paint paint = new Paint(1);
         this.a = paint;
         Paint paint2 = new Paint(1);
         this.b = paint2;
-        qr qrVar = qr.h;
-        this.c = new c6(this, 0L, 320L, qrVar);
-        this.d = new org.telegram.ui.Components.f5(this, 320L, qrVar, 0);
+        rr rrVar = rr.h;
+        this.c = new e6(this, 0L, 320L, rrVar);
+        this.d = new h5(this, 320L, rrVar, 0);
         a5.a aVar = new a5.a((char) 0, 6);
         aVar.c = new w();
         aVar.d = new w();
         this.e = aVar;
         this.f = new v[]{new v(this), new v(this)};
         setWillNotDraw(false);
-        paint2.setColor(i6.l1(0.1f, -16777216));
+        paint2.setColor(h6.l1(0.1f, -16777216));
         a5.a aVar2 = this.e;
-        int v02 = i6.v0(i6.d6, e6Var);
+        int v02 = h6.v0(h6.d6, d6Var);
         aVar2.b = v02;
         paint.setColor(v02);
     }
 
-    public static void b(m6 m6Var, w wVar, boolean z10) {
-        m6Var.b();
+    public static void b(o6 o6Var, w wVar, boolean z10) {
+        o6Var.b();
         if (wVar.f == 0) {
-            m6Var.q(wVar.e, z10, true);
+            o6Var.q(wVar.e, z10, true);
             return;
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         spannableStringBuilder.append((CharSequence) "* ");
         spannableStringBuilder.append((CharSequence) wVar.e);
-        spannableStringBuilder.setSpan(new x5(wVar.f, 1.4f, m6Var.a.getFontMetricsInt()), 0, 1, 33);
-        m6Var.q(spannableStringBuilder, z10, true);
+        spannableStringBuilder.setSpan(new z5(wVar.f, 1.4f, o6Var.a.getFontMetricsInt()), 0, 1, 33);
+        o6Var.q(spannableStringBuilder, z10, true);
     }
 
     public final v a(float f7, float f10) {
@@ -90,7 +91,7 @@ public abstract class x extends FrameLayout {
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        m6 m6Var;
+        o6 o6Var;
         float f7;
         float d;
         float f10;
@@ -121,34 +122,34 @@ public abstract class x extends FrameLayout {
             v vVar = vVarArr[i12];
             a5.a aVar = this.e;
             w wVar = (w) (i12 == 0 ? aVar.c : aVar.d);
-            c6 c6Var = vVar.b;
+            e6 e6Var = vVar.b;
             org.telegram.ui.Components.voip.h hVar = vVar.p;
             Paint paint2 = vVar.k;
-            c6 c6Var2 = vVar.e;
-            c6 c6Var3 = vVar.d;
-            c6 c6Var4 = vVar.c;
+            e6 e6Var2 = vVar.e;
+            e6 e6Var3 = vVar.d;
+            e6 e6Var4 = vVar.c;
             org.telegram.ui.Cells.z zVar2 = vVar.n;
             v[] vVarArr2 = vVarArr;
-            tp tpVar = vVar.o;
+            up upVar = vVar.o;
             float f12 = f11;
-            org.telegram.ui.Components.f5 f5Var = vVar.g;
+            h5 h5Var = vVar.g;
             int i13 = i11;
-            m6 m6Var2 = vVar.l;
+            o6 o6Var2 = vVar.l;
             int i14 = i12;
             RectF rectF = vVar.a;
-            float e = c6Var.e(wVar.a);
+            float e = e6Var.e(wVar.a);
             if (wVar.a) {
                 a5.a aVar2 = this.e;
-                m6Var = m6Var2;
+                o6Var = o6Var2;
                 if (((w) aVar2.d).a && ((w) aVar2.c).a) {
                     f7 = (!"left".equalsIgnoreCase(str2) ? !(!"right".equalsIgnoreCase(str2) || i14 == 0) : i14 == 0) ? 0 : 1;
                 } else {
                     f7 = 0.0f;
                 }
-                d = c6Var4.d(f7, false);
+                d = e6Var4.d(f7, false);
             } else {
-                d = c6Var4.c;
-                m6Var = m6Var2;
+                d = e6Var4.c;
+                o6Var = o6Var2;
             }
             if (wVar.a) {
                 a5.a aVar3 = this.e;
@@ -157,15 +158,15 @@ public abstract class x extends FrameLayout {
                 } else {
                     f10 = 0.0f;
                 }
-                d10 = c6Var3.d(f10, false);
+                d10 = e6Var3.d(f10, false);
             } else {
-                d10 = c6Var3.c;
+                d10 = e6Var3.c;
             }
             if (wVar.a) {
                 a5.a aVar4 = this.e;
-                d11 = c6Var2.d((((w) aVar4.d).a && ((w) aVar4.c).a && ("left".equalsIgnoreCase(str2) || "right".equalsIgnoreCase(str2))) ? 0.0f : 1.0f, false);
+                d11 = e6Var2.d((((w) aVar4.d).a && ((w) aVar4.c).a && ("left".equalsIgnoreCase(str2) || "right".equalsIgnoreCase(str2))) ? 0.0f : 1.0f, false);
             } else {
-                d11 = c6Var2.c;
+                d11 = e6Var2.c;
             }
             float lerp = AndroidUtilities.lerp((getWidth() - AndroidUtilities.dp(26.0f)) / 2.0f, getWidth() - AndroidUtilities.dp(16.0f), d11);
             float dp = AndroidUtilities.dp(44.0f);
@@ -179,7 +180,7 @@ public abstract class x extends FrameLayout {
             canvas.save();
             float lerp4 = AndroidUtilities.lerp(0.7f, 1.0f, e) * vVar.j.a(0.02f);
             canvas.scale(lerp4, lerp4, lerp2, lerp3);
-            paint2.setColor(i6.l1(e, vVar.f.a(wVar.g, false)));
+            paint2.setColor(h6.l1(e, vVar.f.a(wVar.g, false)));
             canvas.drawRoundRect(rectF, AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), paint2);
             if (e7 < 1.0f) {
                 canvas.save();
@@ -188,18 +189,18 @@ public abstract class x extends FrameLayout {
                 canvas.scale(lerp5, lerp5, lerp2, lerp3);
                 canvas.translate(0.0f, AndroidUtilities.dp(-10.0f) * e7);
                 float f16 = f15 * e;
-                int l1 = i6.l1(f16, f5Var.a(wVar.h, false));
-                m6 m6Var3 = m6Var;
-                if (m6Var3.T != l1) {
-                    m6Var3.T = l1;
+                int l1 = h6.l1(f16, h5Var.a(wVar.h, false));
+                o6 o6Var3 = o6Var;
+                if (o6Var3.T != l1) {
+                    o6Var3.T = l1;
                     str = str2;
-                    m6Var3.U = new PorterDuffColorFilter(l1, PorterDuff.Mode.SRC_IN);
+                    o6Var3.U = new PorterDuffColorFilter(l1, PorterDuff.Mode.SRC_IN);
                 } else {
                     str = str2;
                 }
-                m6Var3.r(i6.l1(f16, f5Var.a(wVar.h, false)));
-                m6Var3.m(rectF);
-                m6Var3.draw(canvas);
+                o6Var3.r(h6.l1(f16, h5Var.a(wVar.h, false)));
+                o6Var3.m(rectF);
+                o6Var3.draw(canvas);
                 canvas.restore();
             } else {
                 str = str2;
@@ -209,21 +210,21 @@ public abstract class x extends FrameLayout {
                 float lerp6 = AndroidUtilities.lerp(0.75f, 1.0f, e7);
                 canvas.scale(lerp6, lerp6, lerp2, lerp3);
                 canvas.translate(0.0f, (1.0f - e7) * AndroidUtilities.dp(10.0f));
-                tpVar.b(i6.l1(e7 * e, f5Var.a(wVar.h, false)));
-                tpVar.setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
-                tpVar.draw(canvas);
+                upVar.b(h6.l1(e7 * e, h5Var.a(wVar.h, false)));
+                upVar.setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
+                upVar.draw(canvas);
                 canvas.restore();
             }
             if (e10 > 0.0f) {
-                hVar.b(i6.l1(e * e10, f5Var.a(wVar.h, false)), 64);
+                hVar.b(h6.l1(e * e10, h5Var.a(wVar.h, false)), 64);
                 hVar.a(AndroidUtilities.dp(8.0f), canvas, rectF, this);
             }
-            if (vVar.m != i6.l1(0.15f, wVar.h)) {
-                int l12 = i6.l1(0.15f, wVar.h);
+            if (vVar.m != h6.l1(0.15f, wVar.h)) {
+                int l12 = h6.l1(0.15f, wVar.h);
                 vVar.m = l12;
                 zVar = zVar2;
                 i10 = 1;
-                i6.B1(zVar, l12, true);
+                h6.B1(zVar, l12, true);
             } else {
                 zVar = zVar2;
                 i10 = 1;
@@ -261,7 +262,7 @@ public abstract class x extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     public void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), vl.C(109.0f, 1, TLObject.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), ul.C(109.0f, 1, TLObject.FLAG_30));
     }
 
     @Override // android.view.View

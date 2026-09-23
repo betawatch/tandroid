@@ -1,47 +1,43 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import org.telegram.messenger.AndroidUtilities;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n51 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ h71 b;
-    public final /* synthetic */ boolean c;
+public final class n51 extends s4.s {
+    public final /* synthetic */ int Q;
+    public final /* synthetic */ z61 R;
 
-    public /* synthetic */ n51(h71 h71Var, boolean z10, int i10) {
-        this.a = i10;
-        this.b = h71Var;
-        this.c = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ n51(z61 z61Var, int i10) {
+        super(40);
+        this.Q = i10;
+        this.R = z61Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
+    @Override // s4.c0, s4.o0
+    public final void v0(RecyclerView recyclerView, s4.z0 z0Var, int i10) {
+        switch (this.Q) {
             case 0:
-                h71 h71Var = this.b;
-                e61 e61Var = h71Var.h0;
-                u51 u51Var = h71Var.i0;
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                if (!this.c) {
-                    floatValue = 1.0f - floatValue;
+                try {
+                    ci.m1 m1Var = new ci.m1(this, recyclerView.getContext(), 3);
+                    m1Var.a = i10;
+                    w0(m1Var);
+                    break;
+                } catch (Exception e) {
+                    FileLog.e(e);
                 }
-                float f7 = 1.0f - floatValue;
-                e61Var.setAlpha(f7);
-                e61Var.setTranslationY(AndroidUtilities.dp(8.0f) * floatValue);
-                u51Var.setAlpha(floatValue);
-                u51Var.setTranslationY(AndroidUtilities.dp(8.0f) * f7);
-                h71Var.j0.setAlpha(u51Var.getAlpha() * floatValue);
-                break;
             default:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                if (!this.c) {
-                    floatValue2 = 1.0f - floatValue2;
+                try {
+                    ci.m1 m1Var2 = new ci.m1(this, recyclerView.getContext(), 5);
+                    m1Var2.a = i10;
+                    w0(m1Var2);
+                    break;
+                } catch (Exception e7) {
+                    FileLog.e(e7);
+                    return;
                 }
-                h71 h71Var2 = this.b;
-                h71Var2.j0.setAlpha(h71Var2.i0.getAlpha() * floatValue2);
-                break;
         }
     }
 }

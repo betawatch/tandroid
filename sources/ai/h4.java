@@ -8,29 +8,29 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.fh;
-import org.telegram.ui.Components.ti;
+import org.telegram.ui.Components.gh;
+import org.telegram.ui.Components.ui;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class h4 implements ti {
-    public final /* synthetic */ f6 a;
+public final class h4 implements ui {
+    public final /* synthetic */ e6 a;
 
-    public h4(f6 f6Var) {
-        this.a = f6Var;
+    public h4(e6 e6Var) {
+        this.a = e6Var;
     }
 
-    @Override // org.telegram.ui.Components.ti
+    @Override // org.telegram.ui.Components.ui
     public final void B1(int i10, boolean z10, boolean z11, int i11, int i12, long j3, boolean z12, boolean z13, long j10) {
         TL_stories.StoryItem storyItem;
         AccountInstance accountInstance;
         String str;
-        f6 f6Var = this.a;
-        if (!f6Var.J0.m0 || (storyItem = f6Var.O1.a) == null || (storyItem instanceof TL_stories.TL_storyItemSkipped)) {
+        e6 e6Var = this.a;
+        if (!e6Var.J0.m0 || (storyItem = e6Var.O1.a) == null || (storyItem instanceof TL_stories.TL_storyItemSkipped)) {
             return;
         }
-        if (i10 != 8 && i10 != 7 && (i10 != 4 || f6Var.I2.j0.getSelectedPhotos().isEmpty())) {
-            g4 g4Var = f6Var.I2;
+        if (i10 != 8 && i10 != 7 && (i10 != 4 || e6Var.I2.j0.getSelectedPhotos().isEmpty())) {
+            g4 g4Var = e6Var.I2;
             if (g4Var != null) {
                 g4Var.dismissWithButtonClick(i10);
                 return;
@@ -38,10 +38,10 @@ public final class h4 implements ti {
             return;
         }
         if (i10 != 8) {
-            f6Var.I2.dismiss(true);
+            e6Var.I2.dismiss(true);
         }
-        HashMap<Object, Object> selectedPhotos = f6Var.I2.j0.getSelectedPhotos();
-        ArrayList<Object> selectedPhotosOrder = f6Var.I2.j0.getSelectedPhotosOrder();
+        HashMap<Object, Object> selectedPhotos = e6Var.I2.j0.getSelectedPhotos();
+        ArrayList<Object> selectedPhotosOrder = e6Var.I2.j0.getSelectedPhotosOrder();
         if (selectedPhotos.isEmpty()) {
             return;
         }
@@ -83,60 +83,60 @@ public final class h4 implements ti {
             }
             boolean z15 = i14 == 0 ? ((SendMessagesHelper.SendingMediaInfo) arrayList.get(i13)).updateStickersOrder : false;
             HashMap<Object, Object> hashMap = selectedPhotos;
-            accountInstance = f6Var.getAccountInstance();
+            accountInstance = e6Var.getAccountInstance();
             ArrayList<Object> arrayList2 = selectedPhotosOrder;
-            SendMessagesHelper.prepareSendingMedia(accountInstance, arrayList, f6Var.B1, null, null, storyItem, null, i10 == 4 || z13, z10, null, z11, i11, i12, 0, z15, null, null, 0L, false, 0L, f6Var.b2.getSendMonoForumPeerId(), f6Var.b2.getSendMessageSuggestionParams());
+            SendMessagesHelper.prepareSendingMedia(accountInstance, arrayList, e6Var.B1, null, null, storyItem, null, i10 == 4 || z13, z10, null, z11, i11, i12, 0, z15, null, null, 0L, false, 0L, e6Var.b2.getSendMonoForumPeerId(), e6Var.b2.getSendMessageSuggestionParams());
             i14++;
             selectedPhotos = hashMap;
             selectedPhotosOrder = arrayList2;
             i13 = 0;
         }
-        f6Var.b2.setFieldText("");
-        f6Var.k0(j10 <= 0);
+        e6Var.b2.setFieldText("");
+        e6Var.k0(j10 <= 0);
     }
 
-    @Override // org.telegram.ui.Components.ti
+    @Override // org.telegram.ui.Components.ui
     public final void K0() {
         this.a.b2.Q();
     }
 
-    @Override // org.telegram.ui.Components.ti
+    @Override // org.telegram.ui.Components.ui
     public final /* synthetic */ boolean S1() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ti
+    @Override // org.telegram.ui.Components.ui
     public final void W1(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j3, boolean z11, long j10) {
         AccountInstance accountInstance;
-        f6 f6Var = this.a;
-        TL_stories.StoryItem storyItem = f6Var.O1.a;
+        e6 e6Var = this.a;
+        TL_stories.StoryItem storyItem = e6Var.O1.a;
         if (storyItem == null || (storyItem instanceof TL_stories.TL_storyItemSkipped)) {
             return;
         }
-        accountInstance = f6Var.getAccountInstance();
-        SendMessagesHelper.prepareSendingAudioDocuments(accountInstance, arrayList, charSequence != null ? charSequence : null, f6Var.B1, null, null, storyItem, z10, i10, i11, null, null, j3, z11, j10);
-        f6Var.k0(j10 <= 0);
+        accountInstance = e6Var.getAccountInstance();
+        SendMessagesHelper.prepareSendingAudioDocuments(accountInstance, arrayList, charSequence != null ? charSequence : null, e6Var.B1, null, null, storyItem, z10, i10, i11, null, null, j3, z11, j10);
+        e6Var.k0(j10 <= 0);
     }
 
-    @Override // org.telegram.ui.Components.ti
+    @Override // org.telegram.ui.Components.ui
     public final boolean c0() {
         return this.a.N0();
     }
 
-    @Override // org.telegram.ui.Components.ti
-    public final void x0(fh fhVar) {
-        NotificationCenter.getInstance(this.a.C2).doOnIdle(fhVar);
+    @Override // org.telegram.ui.Components.ui
+    public final void x0(gh ghVar) {
+        NotificationCenter.getInstance(this.a.C2).doOnIdle(ghVar);
     }
 
-    @Override // org.telegram.ui.Components.ti
+    @Override // org.telegram.ui.Components.ui
     public final /* synthetic */ void U0(Object obj) {
     }
 
-    @Override // org.telegram.ui.Components.ti
+    @Override // org.telegram.ui.Components.ui
     public final /* synthetic */ void j1(TLRPC.User user) {
     }
 
-    @Override // org.telegram.ui.Components.ti
+    @Override // org.telegram.ui.Components.ui
     public final /* synthetic */ void u0() {
     }
 }

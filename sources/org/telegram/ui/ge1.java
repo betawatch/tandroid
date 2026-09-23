@@ -1,74 +1,77 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import android.view.View;
-import android.widget.LinearLayout;
-import java.util.ArrayList;
+import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class ge1 implements View.OnClickListener {
-    public final /* synthetic */ fi0 a;
-    public final /* synthetic */ bo b;
-    public final /* synthetic */ org.telegram.ui.Components.ll0 c;
-    public final /* synthetic */ LinearLayout d;
-    public final /* synthetic */ org.telegram.ui.Components.n70 e;
-    public final /* synthetic */ org.telegram.ui.Components.n70 f;
-    public final /* synthetic */ le1 h;
+public final class ge1 extends s4.s0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public ge1(le1 le1Var, fi0 fi0Var, bo boVar, org.telegram.ui.Components.ll0 ll0Var, LinearLayout linearLayout, org.telegram.ui.Components.n70 n70Var, org.telegram.ui.Components.n70 n70Var2) {
-        this.h = le1Var;
-        this.a = fi0Var;
-        this.b = boVar;
-        this.c = ll0Var;
-        this.d = linearLayout;
-        this.e = n70Var;
-        this.f = n70Var2;
+    public /* synthetic */ ge1(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        fi0 fi0Var = this.a;
-        ArrayList arrayList = fi0Var.b;
-        ArrayList arrayList2 = fi0Var.c;
-        if (arrayList2.isEmpty()) {
-            return;
+    @Override // s4.s0
+    public void a(RecyclerView recyclerView, int i10) {
+        switch (this.a) {
+            case 0:
+                if (i10 == 1) {
+                    AndroidUtilities.hideKeyboard(((le1) this.b).getParentActivity().getCurrentFocus());
+                    break;
+                }
+                break;
+            case 2:
+                if (i10 == 1) {
+                    AndroidUtilities.hideKeyboard(((UsersSelectActivity) this.b).c);
+                    break;
+                }
+                break;
+            case 3:
+                WallpapersListActivity wallpapersListActivity = (WallpapersListActivity) this.b;
+                if (i10 == 1) {
+                    AndroidUtilities.hideKeyboard(wallpapersListActivity.getParentActivity().getCurrentFocus());
+                }
+                wallpapersListActivity.j0 = i10 != 0;
+                break;
         }
-        int size = arrayList2.size();
-        le1 le1Var = this.h;
-        bo boVar = this.b;
-        if (size == 1 && (arrayList.size() <= 0 || ((Integer) arrayList.get(0)).intValue() <= 0)) {
-            TLObject tLObject = (TLObject) arrayList2.get(0);
-            if (tLObject == null) {
-                return;
-            }
-            Bundle bundle = new Bundle();
-            if (tLObject instanceof TLRPC.User) {
-                bundle.putLong("user_id", ((TLRPC.User) tLObject).id);
-            } else if (tLObject instanceof TLRPC.Chat) {
-                bundle.putLong("chat_id", ((TLRPC.Chat) tLObject).id);
-            }
-            boVar.presentFragment(new ProfileActivity(bundle, null));
-            le1Var.c(false);
-            return;
+    }
+
+    @Override // s4.s0
+    public void b(RecyclerView recyclerView, int i10, int i11) {
+        switch (this.a) {
+            case 1:
+                sf1 sf1Var = (sf1) this.b;
+                if (sf1Var.m0 && sf1Var.V.N0() + 5 >= sf1Var.k0) {
+                    sf1Var.J(sf1Var.b0);
+                }
+                wf1 wf1Var = sf1Var.t0;
+                if (wf1Var.s0) {
+                    if (i10 != 0 || i11 != 0) {
+                        AndroidUtilities.hideKeyboard(wf1Var.p0.getSearchField());
+                        break;
+                    }
+                }
+                break;
+            case 3:
+                WallpapersListActivity wallpapersListActivity = (WallpapersListActivity) this.b;
+                if (wallpapersListActivity.H.getAdapter() == wallpapersListActivity.J) {
+                    int L0 = wallpapersListActivity.K.L0();
+                    int abs = L0 == -1 ? 0 : Math.abs(wallpapersListActivity.K.N0() - L0) + 1;
+                    if (abs > 0) {
+                        int B = wallpapersListActivity.K.B();
+                        if (abs != 0 && L0 + abs > B - 2) {
+                            bj1 bj1Var = wallpapersListActivity.J;
+                            if (!bj1Var.f && bj1Var.s == 0) {
+                                bj1Var.F(bj1Var.h, bj1Var.r, true);
+                                break;
+                            }
+                        }
+                    }
+                }
+                break;
         }
-        if (SharedConfig.messageSeenHintCount > 0 && boVar.X0.getKeyboardHeight() < AndroidUtilities.dp(20.0f)) {
-            org.telegram.ui.Components.oc t10 = new org.telegram.ui.Components.vc(org.telegram.ui.Components.jb.a(le1Var.getContext()), le1Var.a).t(AndroidUtilities.replaceTags(LocaleController.getString(R.string.MessageSeenTooltipMessage)), null);
-            boVar.n1 = t10;
-            t10.j = 4000;
-            t10.j();
-            SharedConfig.updateMessageSeenHintCount(SharedConfig.messageSeenHintCount - 1);
-        }
-        org.telegram.ui.Components.ll0 ll0Var = this.c;
-        ll0Var.requestLayout();
-        this.d.requestLayout();
-        ll0Var.getAdapter().l();
-        this.e.K(this.f);
     }
 }

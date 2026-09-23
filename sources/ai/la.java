@@ -3,7 +3,7 @@ package ai;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class la implements z4.e {
     public final /* synthetic */ jc a;
@@ -17,7 +17,7 @@ public final class la implements z4.e {
     @Override // z4.e
     public final void a(int i10) {
         zb zbVar = this.b;
-        f6 currentPeerView = zbVar.getCurrentPeerView();
+        e6 currentPeerView = zbVar.getCurrentPeerView();
         if (currentPeerView == null) {
             return;
         }

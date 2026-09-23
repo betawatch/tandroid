@@ -1,6 +1,6 @@
 package yf;
 
-import ai.f7;
+import ai.g7;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
@@ -27,11 +27,11 @@ import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.qf;
-import org.telegram.ui.Components.xi0;
-import org.telegram.ui.o91;
+import org.telegram.messenger.pf;
+import org.telegram.ui.Components.yi0;
+import org.telegram.ui.g91;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class e {
     public static int A;
@@ -154,7 +154,7 @@ public final class e {
         A = i10;
         if (i10 <= 0) {
             A = 0;
-            xi0.T0.postRunnable(new o91(16));
+            yi0.T0.postRunnable(new g91(16));
         }
     }
 
@@ -327,7 +327,7 @@ public final class e {
                     }
                 }
                 int length = (int) randomAccessFile22.length();
-                Collections.sort(arrayList2, Comparator$-CC.comparingInt(new f7(13)));
+                Collections.sort(arrayList2, Comparator$-CC.comparingInt(new g7(13)));
                 zVarArr2[0].b();
                 int size = arrayList2.size();
                 zVarArr2[0].c(size);
@@ -350,7 +350,7 @@ public final class e {
                 this.k = true;
             } else {
                 countDownLatchArr[i11] = new CountDownLatch(1);
-                z.execute(new qf(this, atomicBoolean2, bitmapArr, i11, zVarArr2, i12, randomAccessFile22, arrayList2, countDownLatchArr));
+                z.execute(new pf(this, atomicBoolean2, bitmapArr, i11, zVarArr2, i12, randomAccessFile22, arrayList2, countDownLatchArr));
                 i11++;
                 i12++;
                 if (i11 >= y) {

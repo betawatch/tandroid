@@ -26,7 +26,7 @@ import java.util.List;
 import java.util.Locale;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class k implements c3.o, b0 {
     public j[] A;
@@ -35,7 +35,7 @@ public final class k implements c3.o, b0 {
     public long D;
     public int E;
     public r3.a F;
-    public final z3.l a;
+    public final z3.k a;
     public final int b;
     public final v c;
     public final v d;
@@ -62,8 +62,8 @@ public final class k implements c3.o, b0 {
     public long y;
     public c3.q z;
 
-    public k(z3.l lVar, int i10) {
-        this.a = lVar;
+    public k(z3.k kVar, int i10) {
+        this.a = kVar;
         this.b = i10;
         g0 g0Var = i0.b;
         this.j = a1.e;
@@ -824,7 +824,7 @@ public final class k implements c3.o, b0 {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:148:0x02f0 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:148:0x02ed A[SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:151:0x0002 A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -836,22 +836,22 @@ public final class k implements c3.o, b0 {
         p0 p0Var3;
         boolean z10;
         ArrayDeque arrayDeque2;
-        int i10;
         ArrayList arrayList;
         String str;
-        p0 p0Var4;
+        ArrayList arrayList2;
+        int i10;
         int i11;
-        int i12;
         f2.a b10;
         while (true) {
             ArrayDeque arrayDeque3 = this.g;
+            int i12 = 0;
             if (arrayDeque3.isEmpty() || ((f2.c) arrayDeque3.peek()).c != j3) {
                 break;
             }
             f2.c cVar = (f2.c) arrayDeque3.pop();
             if (cVar.b == 1836019574) {
                 f2.c d = cVar.d(1835365473);
-                ArrayList arrayList2 = new ArrayList();
+                ArrayList arrayList3 = new ArrayList();
                 int i13 = this.b;
                 if (d != null) {
                     p0Var = c.f(d);
@@ -864,13 +864,13 @@ public final class k implements c3.o, b0 {
                         f2.a b12 = n.b(p0Var, "auxiliary.tracks.map");
                         e2.d.h(b12);
                         ArrayList d10 = b12.d();
-                        ArrayList arrayList3 = new ArrayList(d10.size());
+                        ArrayList arrayList4 = new ArrayList(d10.size());
                         int i14 = 0;
                         while (i14 < d10.size()) {
                             int intValue = ((Integer) d10.get(i14)).intValue();
-                            i14 = e2.e(intValue != 0 ? intValue != 1 ? intValue != 2 ? intValue != 3 ? 0 : 4 : 3 : 2 : 1, i14, 1, arrayList3);
+                            i14 = e2.e(intValue != 0 ? intValue != 1 ? intValue != 2 ? intValue != 3 ? 0 : 4 : 3 : 2 : 1, i14, 1, arrayList4);
                         }
-                        arrayList2 = arrayList3;
+                        arrayList3 = arrayList4;
                     } else if (p0Var != null && (i13 & 64) != 0 && (b10 = n.b(p0Var, "auxiliary.tracks.offset")) != null) {
                         long C = new v(b10.b).C();
                         if (C > 0) {
@@ -886,9 +886,9 @@ public final class k implements c3.o, b0 {
                 } else {
                     p0Var = null;
                 }
-                ArrayList arrayList4 = new ArrayList();
+                ArrayList arrayList5 = new ArrayList();
                 boolean z11 = this.E == 1;
-                ArrayList arrayList5 = arrayList2;
+                ArrayList arrayList6 = arrayList3;
                 w wVar = new w();
                 f2.d e = cVar.e(1969517665);
                 if (e != null) {
@@ -900,93 +900,92 @@ public final class k implements c3.o, b0 {
                 }
                 f2.d e7 = cVar.e(1836476516);
                 e7.getClass();
-                p0 p0Var5 = new p0(c.g(e7.c));
+                p0 p0Var4 = new p0(c.g(e7.c));
                 if ((i13 & 1) != 0) {
-                    p0Var3 = p0Var5;
+                    p0Var3 = p0Var4;
                     z10 = true;
                 } else {
-                    p0Var3 = p0Var5;
+                    p0Var3 = p0Var4;
                     z10 = false;
                 }
-                p0 p0Var6 = p0Var3;
-                ArrayList j10 = c.j(cVar, wVar, -9223372036854775807L, null, z10, z11, new t0.a(18));
+                ArrayList arrayList7 = arrayList5;
+                p0 p0Var5 = p0Var3;
+                ArrayList j10 = c.j(cVar, wVar, -9223372036854775807L, null, z10, z11, new v3.d(3));
                 if (this.x) {
-                    boolean z12 = arrayList5.size() == j10.size();
+                    boolean z12 = arrayList6.size() == j10.size();
                     Locale locale = Locale.US;
-                    e2.d.f("The number of auxiliary track types from metadata (" + arrayList5.size() + ") is not same as the number of auxiliary tracks (" + j10.size() + ")", z12);
+                    e2.d.f("The number of auxiliary track types from metadata (" + arrayList6.size() + ") is not same as the number of auxiliary tracks (" + j10.size() + ")", z12);
                 }
                 String c10 = n.c(j10);
-                int i15 = -1;
-                int i16 = 0;
-                int i17 = 0;
                 long j11 = -9223372036854775807L;
-                while (i16 < j10.size()) {
-                    r rVar = (r) j10.get(i16);
-                    int i18 = rVar.b;
-                    int i19 = rVar.e;
-                    if (i18 == 0) {
+                int i15 = 0;
+                int i16 = -1;
+                while (i15 < j10.size()) {
+                    r rVar = (r) j10.get(i15);
+                    int i17 = rVar.b;
+                    int i18 = rVar.e;
+                    if (i17 == 0) {
                         arrayDeque2 = arrayDeque3;
                         arrayList = j10;
                         str = c10;
-                        i10 = i17;
-                        p0Var4 = p0Var;
+                        arrayList2 = arrayList7;
                     } else {
                         o oVar = rVar.a;
                         arrayDeque2 = arrayDeque3;
                         c3.q qVar = this.z;
-                        i10 = i17 + 1;
+                        int i19 = i12 + 1;
                         arrayList = j10;
                         int i20 = oVar.b;
                         str = c10;
                         b2.s sVar = oVar.g;
-                        h0 Z1 = qVar.Z1(i17, i20);
+                        h0 Z1 = qVar.Z1(i12, i20);
                         j jVar = new j(oVar, rVar, Z1);
-                        p0Var4 = p0Var;
                         long j12 = oVar.e;
                         if (j12 == -9223372036854775807L) {
                             j12 = rVar.h;
                         }
                         Z1.getClass();
                         j11 = Math.max(j11, j12);
-                        int i21 = "audio/true-hd".equals(sVar.r) ? i19 * 16 : i19 + 30;
+                        int i21 = "audio/true-hd".equals(sVar.r) ? i18 * 16 : i18 + 30;
                         b2.r a2 = sVar.a();
                         a2.r = i21;
                         if (i20 == 2) {
                             int i22 = sVar.f;
                             if ((i13 & 8) != 0) {
-                                i22 |= i15 == -1 ? 1 : 2;
+                                i22 |= i16 == -1 ? 1 : 2;
                             }
                             if (this.x) {
                                 i22 |= 32768;
-                                a2.g = ((Integer) arrayList5.get(i16)).intValue();
+                                a2.g = ((Integer) arrayList6.get(i15)).intValue();
                             }
                             a2.f = i22;
                         }
-                        if (i20 == 1 && (i11 = wVar.a) != -1 && (i12 = wVar.b) != -1) {
-                            a2.L = i11;
-                            a2.M = i12;
+                        if (i20 == 1 && (i10 = wVar.a) != -1 && (i11 = wVar.b) != -1) {
+                            a2.L = i10;
+                            a2.M = i11;
                         }
-                        p0 p0Var7 = sVar.l;
-                        ArrayList arrayList6 = this.i;
-                        n.m(i20, p0Var4, a2, p0Var7, arrayList6.isEmpty() ? null : new p0(arrayList6), p0Var2, p0Var6);
+                        p0 p0Var6 = sVar.l;
+                        ArrayList arrayList8 = this.i;
+                        n.m(i20, p0Var, a2, p0Var6, arrayList8.isEmpty() ? null : new p0(arrayList8), p0Var2, p0Var5);
                         a2.p = r0.n(str);
                         hg.c.u(a2, Z1);
-                        if (i20 == 2 && i15 == -1) {
-                            i15 = arrayList4.size();
+                        if (i20 == 2 && i16 == -1) {
+                            i16 = arrayList7.size();
                         }
-                        arrayList4.add(jVar);
+                        arrayList2 = arrayList7;
+                        arrayList2.add(jVar);
+                        i12 = i19;
                     }
-                    i16++;
-                    p0Var = p0Var4;
+                    i15++;
+                    arrayList7 = arrayList2;
                     arrayDeque3 = arrayDeque2;
-                    i17 = i10;
                     j10 = arrayList;
                     c10 = str;
                 }
                 arrayDeque = arrayDeque3;
-                this.C = i15;
+                this.C = i16;
                 this.D = j11;
-                j[] jVarArr = (j[]) arrayList4.toArray(new j[0]);
+                j[] jVarArr = (j[]) arrayList7.toArray(new j[0]);
                 this.A = jVarArr;
                 long[][] jArr = new long[jVarArr.length][];
                 int[] iArr = new int[jVarArr.length];

@@ -1,16 +1,42 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
-/* loaded from: classes3.dex */
-public final class tx0 extends s4.j {
-    public final /* synthetic */ PrivacyControlActivity F;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-    public tx0(PrivacyControlActivity privacyControlActivity) {
-        this.F = privacyControlActivity;
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class tx0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ PrivacySettingsActivity b;
+
+    public /* synthetic */ tx0(PrivacySettingsActivity privacySettingsActivity, int i10) {
+        this.a = i10;
+        this.b = privacySettingsActivity;
     }
 
-    @Override // s4.j
-    public final void P(s4.c1 c1Var) {
-        this.F.d.invalidate();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                PrivacySettingsActivity privacySettingsActivity = this.b;
+                privacySettingsActivity.a.l();
+                privacySettingsActivity.R = true;
+                break;
+            case 1:
+                this.b.c.dismiss();
+                break;
+            default:
+                PrivacySettingsActivity privacySettingsActivity2 = this.b;
+                org.telegram.ui.Components.yb ybVar = new org.telegram.ui.Components.yb(privacySettingsActivity2.getParentActivity(), null);
+                ybVar.d(R.raw.email_check_inbox, new String[0]);
+                ybVar.b.setText(LocaleController.getString(R.string.YourLoginEmailChangedSuccess));
+                org.telegram.ui.Components.qc.g(privacySettingsActivity2, ybVar, 1500).j();
+                try {
+                    privacySettingsActivity2.fragmentView.performHapticFeedback(3, 2);
+                } catch (Exception unused) {
+                }
+                privacySettingsActivity2.z0();
+                break;
+        }
     }
 }

@@ -1,38 +1,98 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.tl.TL_account;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lg1 implements org.telegram.ui.ActionBar.a2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ TwoStepVerificationActivity b;
+public final class lg1 extends org.telegram.ui.Components.ll0 {
+    public final Context c;
+    public final /* synthetic */ TwoStepVerificationActivity d;
 
-    public /* synthetic */ lg1(TwoStepVerificationActivity twoStepVerificationActivity, int i10) {
-        this.a = i10;
-        this.b = twoStepVerificationActivity;
+    public lg1(TwoStepVerificationActivity twoStepVerificationActivity, Context context) {
+        this.d = twoStepVerificationActivity;
+        this.c = context;
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        switch (this.a) {
-            case 0:
-                this.b.finishFragment();
-                break;
-            case 1:
-                TL_account.declinePasswordReset declinepasswordreset = new TL_account.declinePasswordReset();
-                TwoStepVerificationActivity twoStepVerificationActivity = this.b;
-                twoStepVerificationActivity.getConnectionsManager().sendRequest(declinepasswordreset, new mg1(twoStepVerificationActivity, 2));
-                break;
-            case 2:
-                this.b.k0();
-                break;
-            case 3:
-                this.b.u0();
-                break;
-            default:
-                this.b.u0();
-                break;
+    @Override // org.telegram.ui.Components.ll0
+    public final boolean D(s4.c1 c1Var) {
+        return c1Var.f == 0;
+    }
+
+    @Override // s4.h0
+    public final int h() {
+        TwoStepVerificationActivity twoStepVerificationActivity = this.d;
+        if (twoStepVerificationActivity.G || twoStepVerificationActivity.I == null) {
+            return 0;
         }
+        return twoStepVerificationActivity.T;
+    }
+
+    @Override // s4.h0
+    public final int j(int i10) {
+        TwoStepVerificationActivity twoStepVerificationActivity = this.d;
+        return (i10 == twoStepVerificationActivity.P || i10 == twoStepVerificationActivity.S) ? 1 : 0;
+    }
+
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
+        int i11;
+        int i12;
+        int i13 = c1Var.f;
+        View view = c1Var.a;
+        TwoStepVerificationActivity twoStepVerificationActivity = this.d;
+        if (i13 != 0) {
+            if (i13 != 1) {
+                return;
+            }
+            org.telegram.ui.Cells.f9 f9Var = (org.telegram.ui.Cells.f9) view;
+            if (i10 == twoStepVerificationActivity.P) {
+                f9Var.setText(LocaleController.getString(R.string.SetAdditionalPasswordInfo));
+                return;
+            } else {
+                if (i10 == twoStepVerificationActivity.S) {
+                    f9Var.setText(LocaleController.getString(R.string.EnabledPasswordText));
+                    return;
+                }
+                return;
+            }
+        }
+        org.telegram.ui.Cells.fa faVar = (org.telegram.ui.Cells.fa) view;
+        int i14 = org.telegram.ui.ActionBar.h6.G6;
+        faVar.setTag(Integer.valueOf(i14));
+        faVar.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, i14, false));
+        i11 = twoStepVerificationActivity.changePasswordRow;
+        if (i10 == i11) {
+            faVar.b(LocaleController.getString(R.string.ChangePassword), true);
+            return;
+        }
+        if (i10 == twoStepVerificationActivity.O) {
+            faVar.b(LocaleController.getString(R.string.SetAdditionalPassword), true);
+            return;
+        }
+        i12 = twoStepVerificationActivity.turnPasswordOffRow;
+        if (i10 == i12) {
+            faVar.b(LocaleController.getString(R.string.TurnPasswordOff), true);
+        } else if (i10 == twoStepVerificationActivity.R) {
+            faVar.b(LocaleController.getString(R.string.ChangeRecoveryEmail), false);
+        } else if (i10 == twoStepVerificationActivity.Q) {
+            faVar.b(LocaleController.getString(R.string.SetRecoveryEmail), false);
+        }
+    }
+
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        View faVar;
+        Context context = this.c;
+        if (i10 != 0) {
+            faVar = new org.telegram.ui.Cells.f9(context);
+        } else {
+            faVar = new org.telegram.ui.Cells.fa(context);
+            faVar.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.d6, false));
+        }
+        return new org.telegram.ui.Components.wk0(faVar);
     }
 }

@@ -1,25 +1,25 @@
 package x2;
 
 import b2.s1;
-import i2.m1;
+import i2.n1;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class v {
     public final int a;
-    public final m1[] b;
+    public final n1[] b;
     public final r[] c;
     public final s1 d;
     public final Object e;
 
-    public v(m1[] m1VarArr, r[] rVarArr, s1 s1Var, Object obj) {
-        e2.d.b(m1VarArr.length == rVarArr.length);
-        this.b = m1VarArr;
+    public v(n1[] n1VarArr, r[] rVarArr, s1 s1Var, Object obj) {
+        e2.d.b(n1VarArr.length == rVarArr.length);
+        this.b = n1VarArr;
         this.c = (r[]) rVarArr.clone();
         this.d = s1Var;
         this.e = obj;
-        this.a = m1VarArr.length;
+        this.a = n1VarArr.length;
     }
 
     public final boolean a(v vVar, int i10) {

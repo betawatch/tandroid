@@ -24,7 +24,7 @@ import android.widget.EditText;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import w7.n6;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public class y {
     public static final int[] d = {R.attr.indeterminateDrawable, R.attr.progressDrawable};
@@ -39,7 +39,7 @@ public class y {
         if (keyListener instanceof NumberKeyListener) {
             return keyListener;
         }
-        ((n7.a1) ((k2.c0) this.c).b).getClass();
+        ((n7.a1) ((k2.b0) this.c).b).getClass();
         if (keyListener instanceof q1.e) {
             return keyListener;
         }
@@ -92,12 +92,12 @@ public class y {
     }
 
     public q1.b c(InputConnection inputConnection, EditorInfo editorInfo) {
-        k2.c0 c0Var = (k2.c0) this.c;
+        k2.b0 b0Var = (k2.b0) this.c;
         if (inputConnection == null) {
-            c0Var.getClass();
+            b0Var.getClass();
             inputConnection = null;
         } else {
-            n7.a1 a1Var = (n7.a1) c0Var.b;
+            n7.a1 a1Var = (n7.a1) b0Var.b;
             a1Var.getClass();
             if (!(inputConnection instanceof q1.b)) {
                 inputConnection = new q1.b((EditText) a1Var.b, inputConnection, editorInfo);
@@ -107,7 +107,7 @@ public class y {
     }
 
     public void d(boolean z10) {
-        q1.i iVar = (q1.i) ((n7.a1) ((k2.c0) this.c).b).c;
+        q1.i iVar = (q1.i) ((n7.a1) ((k2.b0) this.c).b).c;
         if (iVar.c != z10) {
             if (iVar.b != null) {
                 androidx.emoji2.text.l a2 = androidx.emoji2.text.l.a();
@@ -177,6 +177,6 @@ public class y {
 
     public y(EditText editText) {
         this.b = editText;
-        this.c = new k2.c0(editText);
+        this.c = new k2.b0(editText);
     }
 }

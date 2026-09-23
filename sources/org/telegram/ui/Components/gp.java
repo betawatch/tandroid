@@ -1,10 +1,28 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+import android.content.Context;
+import android.view.accessibility.AccessibilityNodeInfo;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class gp extends s4.d0 {
-    @Override // s4.d0
-    public final int n(int i10) {
-        return super.n(i10) * 6;
+public final class gp extends bj0 {
+    public final /* synthetic */ np r;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public gp(np npVar, Context context) {
+        super(context);
+        this.r = npVar;
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        if (this.r.N) {
+            accessibilityNodeInfo.setText(LocaleController.getString(R.string.AccDescrSwitchToDayTheme));
+        } else {
+            accessibilityNodeInfo.setText(LocaleController.getString(R.string.AccDescrSwitchToNightTheme));
+        }
     }
 }

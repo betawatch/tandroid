@@ -11,43 +11,43 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.vl;
+import org.telegram.messenger.ul;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.f9;
-import org.telegram.ui.Components.np;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.h9;
+import org.telegram.ui.Components.op;
 import w7.x5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class w1 extends FrameLayout {
-    public final f9 a;
+    public final h9 a;
     public final ImageReceiver b;
     public final TextView c;
     public final TextView d;
-    public final np e;
+    public final op e;
     public final Path f;
     public final Paint h;
-    public final e6 n;
+    public final d6 n;
     public final int[] r;
     public boolean s;
 
-    public w1(Context context, e6 e6Var) {
+    public w1(Context context, d6 d6Var) {
         super(context);
-        this.a = new f9((e6) null);
+        this.a = new h9((d6) null);
         this.b = new ImageReceiver(this);
         this.f = new Path();
         this.h = new Paint(1);
         this.r = new int[1];
-        this.n = e6Var;
+        this.n = d6Var;
         setWillNotDraw(false);
         TextView textView = new TextView(context);
         this.c = textView;
         textView.setSingleLine();
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         textView.setEllipsize(truncateAt);
-        textView.setTextColor(i6.v0(i6.G6, e6Var));
+        textView.setTextColor(h6.v0(h6.G6, d6Var));
         textView.setTypeface(AndroidUtilities.bold());
         textView.setTextSize(1, 16.0f);
         boolean z10 = LocaleController.isRTL;
@@ -56,15 +56,15 @@ public final class w1 extends FrameLayout {
         this.d = textView2;
         textView2.setLines(2);
         textView2.setEllipsize(truncateAt);
-        vl.o(i6.z6, e6Var, textView2, 1, 15.0f);
+        ul.o(h6.z6, d6Var, textView2, 1, 15.0f);
         boolean z11 = LocaleController.isRTL;
         addView(textView2, x5.d(-1, -2.0f, 7, z11 ? 40.0f : 78.0f, 32.0f, z11 ? 78.0f : 40.0f, 0.0f));
-        np npVar = new np(getContext(), 21, e6Var);
-        this.e = npVar;
-        npVar.b(-1, i6.d6, i6.k7);
-        npVar.setDrawUnchecked(false);
-        npVar.setDrawBackgroundAsArc(3);
-        addView(npVar, x5.i(24.0f, 24.0f, 8388659, 33.0f, 25.0f, 0.0f, 0.0f));
+        op opVar = new op(getContext(), 21, d6Var);
+        this.e = opVar;
+        opVar.b(-1, h6.d6, h6.k7);
+        opVar.setDrawUnchecked(false);
+        opVar.setDrawBackgroundAsArc(3);
+        addView(opVar, x5.i(24.0f, 24.0f, 8388659, 33.0f, 25.0f, 0.0f, 0.0f));
     }
 
     @Override // android.view.View
@@ -79,9 +79,9 @@ public final class w1 extends FrameLayout {
         super.onDraw(canvas);
         canvas.drawPath(this.f, this.h);
         if (this.s) {
-            Paint T0 = i6.T0("paintDivider", this.n);
+            Paint T0 = h6.T0("paintDivider", this.n);
             if (T0 == null) {
-                T0 = i6.k0;
+                T0 = h6.k0;
             }
             canvas.drawRect(AndroidUtilities.dp(LocaleController.isRTL ? 0.0f : 78.0f), getMeasuredHeight() - 1, getWidth() - AndroidUtilities.dp(LocaleController.isRTL ? 78.0f : 0.0f), getMeasuredHeight(), T0);
         }
@@ -96,7 +96,7 @@ public final class w1 extends FrameLayout {
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStrokeJoin(Paint.Join.ROUND);
         paint.setStrokeWidth(AndroidUtilities.dpf2(1.66f));
-        paint.setColor(i6.l1(0.85f, i6.v0(i6.z6, this.n)));
+        paint.setColor(h6.l1(0.85f, h6.v0(h6.z6, this.n)));
         Path path = this.f;
         path.rewind();
         float measuredHeight = getMeasuredHeight() / 2.0f;

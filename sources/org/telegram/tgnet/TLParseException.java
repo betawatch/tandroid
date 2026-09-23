@@ -1,11 +1,11 @@
 package org.telegram.tgnet;
 
-import i2.g0;
+import i2.h0;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public class TLParseException extends RuntimeException {
     private TLParseException(String str) {
@@ -16,7 +16,7 @@ public class TLParseException extends RuntimeException {
         TLParseException tLParseException = new TLParseException(String.format("can't parse magic %x in %s. Source: %s", Integer.valueOf(i10), str, inputSerializedData != null ? inputSerializedData.getDataSourceType() : null));
         FileLog.e(tLParseException, i10 != -847714938);
         if (i10 != -847714938 && i10 != -779361553) {
-            AndroidUtilities.runOnUIThread(new g0(tLParseException, 17));
+            AndroidUtilities.runOnUIThread(new h0(tLParseException, 17));
         }
         if (z10) {
             throw tLParseException;

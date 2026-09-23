@@ -4,26 +4,26 @@ import android.content.Context;
 import android.graphics.Rect;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class r0 extends oh.c implements le.d {
+public final class r0 extends oh.c implements le.e {
     public static final /* synthetic */ int s = 0;
-    public final le.e f;
-    public final org.telegram.ui.web.b1 h;
+    public final le.f f;
+    public final ii.q1 h;
     public final oh.b[] n;
     public int r;
 
-    public r0(Context context, org.telegram.ui.ActionBar.e6 e6Var, org.telegram.ui.web.b1 b1Var) {
+    public r0(Context context, org.telegram.ui.ActionBar.d6 d6Var, ii.q1 q1Var) {
         super(context);
-        this.f = new le.e(0, this, qr.h, 1600L);
-        this.h = b1Var;
-        int i10 = org.telegram.ui.ActionBar.i6.Wk;
-        int l1 = org.telegram.ui.ActionBar.i6.l1(0.09411765f, org.telegram.ui.ActionBar.i6.v0(i10, e6Var));
-        org.telegram.ui.ActionBar.i6.l1(0.1254902f, org.telegram.ui.ActionBar.i6.v0(i10, e6Var));
+        this.f = new le.f(0, this, rr.h, 1600L);
+        this.h = q1Var;
+        int i10 = org.telegram.ui.ActionBar.h6.Wk;
+        int l1 = org.telegram.ui.ActionBar.h6.l1(0.09411765f, org.telegram.ui.ActionBar.h6.v0(i10, d6Var));
+        org.telegram.ui.ActionBar.h6.l1(0.1254902f, org.telegram.ui.ActionBar.h6.v0(i10, d6Var));
         this.e.setColor(l1);
-        this.n = new oh.b[]{oh.b.b(context, e6Var, oh.a.G, R.string.GiftPreviewModels), oh.b.b(context, e6Var, oh.a.v, R.string.GiftPreviewBackdrops), oh.b.b(context, e6Var, oh.a.J, R.string.GiftPreviewSymbols)};
+        this.n = new oh.b[]{oh.b.b(context, d6Var, oh.a.G, R.string.GiftPreviewModels), oh.b.b(context, d6Var, oh.a.v, R.string.GiftPreviewBackdrops), oh.b.b(context, d6Var, oh.a.J, R.string.GiftPreviewSymbols)};
         int i11 = 0;
         while (true) {
             oh.b[] bVarArr = this.n;
@@ -32,14 +32,14 @@ public final class r0 extends oh.c implements le.d {
                 return;
             } else {
                 this.a.addView(bVarArr[i11], w7.x5.l(1.0f, 0, -1));
-                this.n[i11].setOnClickListener(new ci.o4(this, i11, 27));
+                this.n[i11].setOnClickListener(new ci.n4(this, i11, 27));
                 i11++;
             }
         }
     }
 
-    @Override // le.d
-    public final void D(int i10, float f7, float f10, le.e eVar) {
+    @Override // le.e
+    public final void D(int i10, float f7, float f10, le.f fVar) {
         b();
         invalidate();
     }
@@ -77,7 +77,7 @@ public final class r0 extends oh.c implements le.d {
         b();
     }
 
-    @Override // le.d
+    @Override // le.e
     public final /* synthetic */ void C(float f7, int i10) {
     }
 }

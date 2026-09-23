@@ -5,20 +5,20 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.Components.hq0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class u extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ TL_stars.StarGift a;
     public final /* synthetic */ Context b;
-    public final /* synthetic */ e6 c;
+    public final /* synthetic */ d6 c;
 
-    public u(Context context, TL_stars.StarGift starGift, e6 e6Var) {
+    public u(Context context, TL_stars.StarGift starGift, d6 d6Var) {
         this.a = starGift;
         this.b = context;
-        this.c = e6Var;
+        this.c = d6Var;
     }
 
     @Override // org.telegram.ui.ActionBar.j

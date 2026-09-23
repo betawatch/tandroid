@@ -10,10 +10,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class w5 extends FrameLayout {
-    public final org.telegram.ui.Components.u9 a;
+    public final org.telegram.ui.Components.w9 a;
     public final TextView b;
     public final TextView c;
     public final View d;
@@ -23,9 +23,9 @@ public final class w5 extends FrameLayout {
     public w5(y5 y5Var, Context context) {
         super(context);
         this.e = y5Var;
-        org.telegram.ui.Components.u9 u9Var = new org.telegram.ui.Components.u9(context);
-        this.a = u9Var;
-        addView(u9Var, w7.x5.c(-1.0f, -1));
+        org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
+        this.a = w9Var;
+        addView(w9Var, w7.x5.c(-1.0f, -1));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(0);
         linearLayout.setBackgroundResource(R.drawable.album_shadow);
@@ -50,19 +50,19 @@ public final class w5 extends FrameLayout {
         linearLayout.addView(h, w7.x5.k(4.0f, 0.0f, 7.0f, 5.0f, -2, -1));
         View view = new View(context);
         this.d = view;
-        view.setBackgroundDrawable(org.telegram.ui.ActionBar.i6.K0(false));
+        view.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.K0(false));
         addView(view, w7.x5.c(-1.0f, -1));
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        org.telegram.ui.Components.u9 u9Var = this.a;
-        if (u9Var.getImageReceiver().hasNotThumb() && u9Var.getImageReceiver().getCurrentAlpha() == 1.0f) {
+        org.telegram.ui.Components.w9 w9Var = this.a;
+        if (w9Var.getImageReceiver().hasNotThumb() && w9Var.getImageReceiver().getCurrentAlpha() == 1.0f) {
             return;
         }
         y5 y5Var = this.e;
-        y5Var.e.setColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.X9, false));
-        canvas.drawRect(0.0f, 0.0f, u9Var.getMeasuredWidth(), u9Var.getMeasuredHeight(), y5Var.e);
+        y5Var.e.setColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.X9, false));
+        canvas.drawRect(0.0f, 0.0f, w9Var.getMeasuredWidth(), w9Var.getMeasuredHeight(), y5Var.e);
     }
 
     @Override // android.view.View

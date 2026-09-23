@@ -17,26 +17,26 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class d0 extends FrameLayout {
     public final int a;
-    public final org.telegram.ui.ActionBar.e6 b;
+    public final org.telegram.ui.ActionBar.d6 b;
     public final b0 c;
     public int d;
     public boolean e;
     public int f;
-    public final c6 h;
-    public ci.p5 n;
+    public final e6 h;
+    public ci.o5 n;
 
-    public d0(int i10, Context context, org.telegram.ui.ActionBar.e6 e6Var, boolean z10) {
+    public d0(int i10, Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10) {
         super(context);
         this.a = i10;
-        this.b = e6Var;
-        b0 b0Var = new b0(this, context, e6Var);
+        this.b = d6Var;
+        b0 b0Var = new b0(this, context, d6Var);
         this.c = b0Var;
         b0Var.setOrientation(0);
-        this.h = new c6(b0Var, 0L, 320L, qr.h);
+        this.h = new e6(b0Var, 0L, 320L, rr.h);
         if (!z10) {
             addView(b0Var, w7.x5.e(-1, -1, 119));
             return;
@@ -66,14 +66,14 @@ public final class d0 extends FrameLayout {
         c0Var.c = this.d;
         c0Var.e();
         TextView textView = c0Var.n;
-        u9 u9Var = c0Var.h;
+        w9 w9Var = c0Var.h;
         if (aiComposeTone == null) {
             c0Var.d = false;
             c0Var.e();
             int i10 = R.drawable.tone_create;
             String string = LocaleController.getString(R.string.AIEditorStyleNewCreate);
             c0Var.f = false;
-            u9Var.setImageResource(i10);
+            w9Var.setImageResource(i10);
             textView.setText(string);
         } else if (aiComposeTone instanceof z) {
             c0Var.d = false;
@@ -81,23 +81,23 @@ public final class d0 extends FrameLayout {
             int i11 = R.drawable.iv_prompt;
             String string2 = LocaleController.getString(R.string.AIEditorStylePrompt);
             c0Var.f = false;
-            u9Var.setImageResource(i11);
+            w9Var.setImageResource(i11);
             textView.setText(string2);
         } else {
             String str = aiComposeTone.title;
             long j3 = aiComposeTone.emoji_id;
             c0Var.f = true;
-            u9Var.setColorFilter(null);
-            u9Var.setImageDrawable(Emoji.getEmojiDrawable(null));
+            w9Var.setColorFilter(null);
+            w9Var.setImageDrawable(Emoji.getEmojiDrawable(null));
             textView.setText(str);
             int i12 = c0Var.a;
             if (ConnectionsManager.getInstance(i12).isTestBackend()) {
                 for (int i13 = 0; i13 < 4 && (!UserConfig.getInstance(i13).isClientActivated() || ConnectionsManager.getInstance(i13).isTestBackend()); i13++) {
                 }
             }
-            u9Var.setAnimatedEmojiDrawable(new o5(9, i12, j3));
+            w9Var.setAnimatedEmojiDrawable(new q5(9, i12, j3));
         }
-        c0Var.setOnClickListener(new org.telegram.ui.rf(10, callback, aiComposeTone));
+        c0Var.setOnClickListener(new org.telegram.ui.qf(10, callback, aiComposeTone));
         c0Var.setOnLongClickListener(new ai.q3(1, this, c0Var));
         b0 b0Var = this.c;
         b0Var.addView(c0Var, w7.x5.o(b0Var.getOrientation() == 0 ? 0 : -1, b0Var.getOrientation() != 1 ? -1 : 0, 1.0f, 119));
@@ -112,14 +112,14 @@ public final class d0 extends FrameLayout {
         if (i10 >= 0 && i10 < b0Var.getChildCount()) {
             View childAt = b0Var.getChildAt(i10);
             if (childAt instanceof c0) {
-                u9 u9Var = ((c0) childAt).h;
-                if (u9Var.getAnimatedEmojiDrawable() != null) {
-                    ai.l4 l4Var = u9Var.getAnimatedEmojiDrawable().k;
+                w9 w9Var = ((c0) childAt).h;
+                if (w9Var.getAnimatedEmojiDrawable() != null) {
+                    ai.l4 l4Var = w9Var.getAnimatedEmojiDrawable().k;
                     if (l4Var != null) {
                         l4Var.startAnimation();
                     }
                 } else {
-                    u9Var.getImageReceiver().startAnimation();
+                    w9Var.getImageReceiver().startAnimation();
                 }
             }
         }
@@ -147,9 +147,9 @@ public final class d0 extends FrameLayout {
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         if (this.e) {
-            Paint T0 = org.telegram.ui.ActionBar.i6.T0("paintDivider", this.b);
+            Paint T0 = org.telegram.ui.ActionBar.h6.T0("paintDivider", this.b);
             if (T0 == null) {
-                T0 = org.telegram.ui.ActionBar.i6.k0;
+                T0 = org.telegram.ui.ActionBar.h6.k0;
             }
             canvas.drawRect(AndroidUtilities.dp(10.0f), getHeight() - 1, getWidth() - AndroidUtilities.dp(10.0f), getHeight(), T0);
         }

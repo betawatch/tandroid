@@ -1,37 +1,34 @@
 package org.telegram.messenger;
 
-import android.view.View;
-import org.telegram.messenger.RichMessageLayout;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final /* synthetic */ class yh implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ RichMessageLayout.Text b;
-    public final /* synthetic */ RichMessageLayout c;
-    public final /* synthetic */ View d;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ SavedMessagesController b;
 
-    public /* synthetic */ yh(RichMessageLayout.Text text, View view, RichMessageLayout richMessageLayout) {
-        this.b = text;
-        this.d = view;
-        this.c = richMessageLayout;
+    public /* synthetic */ yh(SavedMessagesController savedMessagesController, int i10) {
+        this.a = i10;
+        this.b = savedMessagesController;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$revealSpoilers$4(this.d, this.c);
+                this.b.update();
+                break;
+            case 1:
+                this.b.saveCache();
+                break;
+            case 2:
+                this.b.lambda$deleteCache$12();
+                break;
+            case 3:
+                this.b.lambda$saveCache$10();
                 break;
             default:
-                this.b.lambda$revealSpoilers$3(this.c, this.d);
+                this.b.lambda$loadDialogs$1();
                 break;
         }
-    }
-
-    public /* synthetic */ yh(RichMessageLayout.Text text, RichMessageLayout richMessageLayout, View view) {
-        this.b = text;
-        this.c = richMessageLayout;
-        this.d = view;
     }
 }

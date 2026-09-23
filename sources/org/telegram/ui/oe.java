@@ -12,15 +12,15 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class oe implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ bo b;
+    public final /* synthetic */ xn b;
 
-    public /* synthetic */ oe(bo boVar, int i10) {
+    public /* synthetic */ oe(xn xnVar, int i10) {
         this.a = i10;
-        this.b = boVar;
+        this.b = xnVar;
     }
 
     @Override // org.telegram.tgnet.RequestDelegate
@@ -28,26 +28,26 @@ public final /* synthetic */ class oe implements RequestDelegate {
         switch (this.a) {
             case 0:
                 final int i10 = 0;
-                final bo boVar = this.b;
+                final xn xnVar = this.b;
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.cf
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i10) {
                             case 0:
-                                bo.G0(boVar, tLObject);
+                                xn.G0(xnVar, tLObject);
                                 break;
                             case 1:
-                                bo.K0(boVar, tLObject);
+                                xn.K0(xnVar, tLObject);
                                 break;
                             case 2:
-                                bo boVar2 = boVar;
+                                xn xnVar2 = xnVar;
                                 TLObject tLObject2 = tLObject;
                                 if (tLObject2 != null) {
                                     TLRPC.TL_exportedMessageLink tL_exportedMessageLink = (TLRPC.TL_exportedMessageLink) tLObject2;
                                     try {
                                         ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", tL_exportedMessageLink.link));
-                                        if (org.telegram.ui.Components.vc.a(boVar2)) {
-                                            org.telegram.ui.Components.vc.a0(boVar2).k(!boVar2.F9() && tL_exportedMessageLink.link.contains("/c/")).j();
+                                        if (org.telegram.ui.Components.xc.a(xnVar2)) {
+                                            org.telegram.ui.Components.xc.a0(xnVar2).k(!xnVar2.F9() && tL_exportedMessageLink.link.contains("/c/")).j();
                                             break;
                                         }
                                     } catch (Exception e) {
@@ -57,19 +57,19 @@ public final /* synthetic */ class oe implements RequestDelegate {
                                 }
                                 break;
                             default:
-                                bo boVar3 = boVar;
+                                xn xnVar3 = xnVar;
                                 TLObject tLObject3 = tLObject;
-                                boVar3.o5 = 0;
-                                if (tLObject3 == null && boVar3.getParentActivity() != null) {
-                                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(boVar3.getParentActivity(), 0, boVar3.ea);
+                                xnVar3.o5 = 0;
+                                if (tLObject3 == null && xnVar3.getParentActivity() != null) {
+                                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(xnVar3.getParentActivity(), 0, xnVar3.ea);
                                     alertDialog$Builder.a.R = LocaleController.getString(R.string.AppName);
                                     alertDialog$Builder.a.T = LocaleController.getString(R.string.EditMessageError);
                                     alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
-                                    boVar3.showDialog(alertDialog$Builder.a);
-                                    mk mkVar = boVar3.Y;
-                                    if (mkVar != null) {
-                                        mkVar.d1(null, null, false);
-                                        boVar3.e9(true);
+                                    xnVar3.showDialog(alertDialog$Builder.a);
+                                    jk jkVar = xnVar3.Y;
+                                    if (jkVar != null) {
+                                        jkVar.d1(null, null, false);
+                                        xnVar3.e9(true);
                                         break;
                                     }
                                 }
@@ -80,26 +80,26 @@ public final /* synthetic */ class oe implements RequestDelegate {
                 break;
             case 1:
                 final int i11 = 1;
-                final bo boVar2 = this.b;
+                final xn xnVar2 = this.b;
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.cf
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i11) {
                             case 0:
-                                bo.G0(boVar2, tLObject);
+                                xn.G0(xnVar2, tLObject);
                                 break;
                             case 1:
-                                bo.K0(boVar2, tLObject);
+                                xn.K0(xnVar2, tLObject);
                                 break;
                             case 2:
-                                bo boVar22 = boVar2;
+                                xn xnVar22 = xnVar2;
                                 TLObject tLObject2 = tLObject;
                                 if (tLObject2 != null) {
                                     TLRPC.TL_exportedMessageLink tL_exportedMessageLink = (TLRPC.TL_exportedMessageLink) tLObject2;
                                     try {
                                         ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", tL_exportedMessageLink.link));
-                                        if (org.telegram.ui.Components.vc.a(boVar22)) {
-                                            org.telegram.ui.Components.vc.a0(boVar22).k(!boVar22.F9() && tL_exportedMessageLink.link.contains("/c/")).j();
+                                        if (org.telegram.ui.Components.xc.a(xnVar22)) {
+                                            org.telegram.ui.Components.xc.a0(xnVar22).k(!xnVar22.F9() && tL_exportedMessageLink.link.contains("/c/")).j();
                                             break;
                                         }
                                     } catch (Exception e) {
@@ -109,19 +109,19 @@ public final /* synthetic */ class oe implements RequestDelegate {
                                 }
                                 break;
                             default:
-                                bo boVar3 = boVar2;
+                                xn xnVar3 = xnVar2;
                                 TLObject tLObject3 = tLObject;
-                                boVar3.o5 = 0;
-                                if (tLObject3 == null && boVar3.getParentActivity() != null) {
-                                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(boVar3.getParentActivity(), 0, boVar3.ea);
+                                xnVar3.o5 = 0;
+                                if (tLObject3 == null && xnVar3.getParentActivity() != null) {
+                                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(xnVar3.getParentActivity(), 0, xnVar3.ea);
                                     alertDialog$Builder.a.R = LocaleController.getString(R.string.AppName);
                                     alertDialog$Builder.a.T = LocaleController.getString(R.string.EditMessageError);
                                     alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
-                                    boVar3.showDialog(alertDialog$Builder.a);
-                                    mk mkVar = boVar3.Y;
-                                    if (mkVar != null) {
-                                        mkVar.d1(null, null, false);
-                                        boVar3.e9(true);
+                                    xnVar3.showDialog(alertDialog$Builder.a);
+                                    jk jkVar = xnVar3.Y;
+                                    if (jkVar != null) {
+                                        jkVar.d1(null, null, false);
+                                        xnVar3.e9(true);
                                         break;
                                     }
                                 }
@@ -132,26 +132,26 @@ public final /* synthetic */ class oe implements RequestDelegate {
                 break;
             case 2:
                 final int i12 = 2;
-                final bo boVar3 = this.b;
+                final xn xnVar3 = this.b;
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.cf
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i12) {
                             case 0:
-                                bo.G0(boVar3, tLObject);
+                                xn.G0(xnVar3, tLObject);
                                 break;
                             case 1:
-                                bo.K0(boVar3, tLObject);
+                                xn.K0(xnVar3, tLObject);
                                 break;
                             case 2:
-                                bo boVar22 = boVar3;
+                                xn xnVar22 = xnVar3;
                                 TLObject tLObject2 = tLObject;
                                 if (tLObject2 != null) {
                                     TLRPC.TL_exportedMessageLink tL_exportedMessageLink = (TLRPC.TL_exportedMessageLink) tLObject2;
                                     try {
                                         ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", tL_exportedMessageLink.link));
-                                        if (org.telegram.ui.Components.vc.a(boVar22)) {
-                                            org.telegram.ui.Components.vc.a0(boVar22).k(!boVar22.F9() && tL_exportedMessageLink.link.contains("/c/")).j();
+                                        if (org.telegram.ui.Components.xc.a(xnVar22)) {
+                                            org.telegram.ui.Components.xc.a0(xnVar22).k(!xnVar22.F9() && tL_exportedMessageLink.link.contains("/c/")).j();
                                             break;
                                         }
                                     } catch (Exception e) {
@@ -161,19 +161,19 @@ public final /* synthetic */ class oe implements RequestDelegate {
                                 }
                                 break;
                             default:
-                                bo boVar32 = boVar3;
+                                xn xnVar32 = xnVar3;
                                 TLObject tLObject3 = tLObject;
-                                boVar32.o5 = 0;
-                                if (tLObject3 == null && boVar32.getParentActivity() != null) {
-                                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(boVar32.getParentActivity(), 0, boVar32.ea);
+                                xnVar32.o5 = 0;
+                                if (tLObject3 == null && xnVar32.getParentActivity() != null) {
+                                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(xnVar32.getParentActivity(), 0, xnVar32.ea);
                                     alertDialog$Builder.a.R = LocaleController.getString(R.string.AppName);
                                     alertDialog$Builder.a.T = LocaleController.getString(R.string.EditMessageError);
                                     alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
-                                    boVar32.showDialog(alertDialog$Builder.a);
-                                    mk mkVar = boVar32.Y;
-                                    if (mkVar != null) {
-                                        mkVar.d1(null, null, false);
-                                        boVar32.e9(true);
+                                    xnVar32.showDialog(alertDialog$Builder.a);
+                                    jk jkVar = xnVar32.Y;
+                                    if (jkVar != null) {
+                                        jkVar.d1(null, null, false);
+                                        xnVar32.e9(true);
                                         break;
                                     }
                                 }
@@ -184,26 +184,26 @@ public final /* synthetic */ class oe implements RequestDelegate {
                 break;
             case 3:
                 final int i13 = 3;
-                final bo boVar4 = this.b;
+                final xn xnVar4 = this.b;
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.cf
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i13) {
                             case 0:
-                                bo.G0(boVar4, tLObject);
+                                xn.G0(xnVar4, tLObject);
                                 break;
                             case 1:
-                                bo.K0(boVar4, tLObject);
+                                xn.K0(xnVar4, tLObject);
                                 break;
                             case 2:
-                                bo boVar22 = boVar4;
+                                xn xnVar22 = xnVar4;
                                 TLObject tLObject2 = tLObject;
                                 if (tLObject2 != null) {
                                     TLRPC.TL_exportedMessageLink tL_exportedMessageLink = (TLRPC.TL_exportedMessageLink) tLObject2;
                                     try {
                                         ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", tL_exportedMessageLink.link));
-                                        if (org.telegram.ui.Components.vc.a(boVar22)) {
-                                            org.telegram.ui.Components.vc.a0(boVar22).k(!boVar22.F9() && tL_exportedMessageLink.link.contains("/c/")).j();
+                                        if (org.telegram.ui.Components.xc.a(xnVar22)) {
+                                            org.telegram.ui.Components.xc.a0(xnVar22).k(!xnVar22.F9() && tL_exportedMessageLink.link.contains("/c/")).j();
                                             break;
                                         }
                                     } catch (Exception e) {
@@ -213,19 +213,19 @@ public final /* synthetic */ class oe implements RequestDelegate {
                                 }
                                 break;
                             default:
-                                bo boVar32 = boVar4;
+                                xn xnVar32 = xnVar4;
                                 TLObject tLObject3 = tLObject;
-                                boVar32.o5 = 0;
-                                if (tLObject3 == null && boVar32.getParentActivity() != null) {
-                                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(boVar32.getParentActivity(), 0, boVar32.ea);
+                                xnVar32.o5 = 0;
+                                if (tLObject3 == null && xnVar32.getParentActivity() != null) {
+                                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(xnVar32.getParentActivity(), 0, xnVar32.ea);
                                     alertDialog$Builder.a.R = LocaleController.getString(R.string.AppName);
                                     alertDialog$Builder.a.T = LocaleController.getString(R.string.EditMessageError);
                                     alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
-                                    boVar32.showDialog(alertDialog$Builder.a);
-                                    mk mkVar = boVar32.Y;
-                                    if (mkVar != null) {
-                                        mkVar.d1(null, null, false);
-                                        boVar32.e9(true);
+                                    xnVar32.showDialog(alertDialog$Builder.a);
+                                    jk jkVar = xnVar32.Y;
+                                    if (jkVar != null) {
+                                        jkVar.d1(null, null, false);
+                                        xnVar32.e9(true);
                                         break;
                                     }
                                 }
@@ -235,16 +235,16 @@ public final /* synthetic */ class oe implements RequestDelegate {
                 });
                 break;
             case 4:
-                bo boVar5 = this.b;
+                xn xnVar5 = this.b;
                 if (tL_error == null) {
-                    boVar5.getMessagesController().processUpdates((TLRPC.Updates) tLObject, false);
+                    xnVar5.getMessagesController().processUpdates((TLRPC.Updates) tLObject, false);
                     break;
                 } else {
-                    boVar5.getClass();
+                    xnVar5.getClass();
                     break;
                 }
             default:
-                bo.Z0(this.b, tLObject);
+                xn.Z0(this.b, tLObject);
                 break;
         }
     }

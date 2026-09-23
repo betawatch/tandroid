@@ -8,10 +8,10 @@ import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.Date;
 import org.telegram.messenger.BuildVars;
-import org.telegram.ui.Cells.ia;
+import org.telegram.ui.Cells.ja;
 import s4.c1;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class a {
     public static boolean i = true;
@@ -74,14 +74,14 @@ public final class a {
         ArrayList arrayList = (ArrayList) this.e;
         int size = arrayList.size();
         for (int i10 = 0; i10 < size; i10++) {
-            ((ia) this.f).d((s4.a) arrayList.get(i10));
+            ((ja) this.f).d((s4.a) arrayList.get(i10));
         }
         m(arrayList);
         this.b = 0;
     }
 
     public void d() {
-        ia iaVar = (ia) this.f;
+        ja jaVar = (ja) this.f;
         c();
         ArrayList arrayList = (ArrayList) this.d;
         int size = arrayList.size();
@@ -89,22 +89,22 @@ public final class a {
             s4.a aVar = (s4.a) arrayList.get(i10);
             int i11 = aVar.a;
             if (i11 == 1) {
-                iaVar.d(aVar);
-                iaVar.v(aVar.b, aVar.d);
+                jaVar.d(aVar);
+                jaVar.v(aVar.b, aVar.d);
             } else if (i11 == 2) {
-                iaVar.d(aVar);
+                jaVar.d(aVar);
                 int i12 = aVar.b;
                 int i13 = aVar.d;
-                RecyclerView recyclerView = (RecyclerView) iaVar.b;
+                RecyclerView recyclerView = (RecyclerView) jaVar.b;
                 recyclerView.e0(i12, i13, true);
                 recyclerView.w0 = true;
                 recyclerView.t0.c += i13;
             } else if (i11 == 4) {
-                iaVar.d(aVar);
-                iaVar.q(aVar.b, aVar.d, aVar.c);
+                jaVar.d(aVar);
+                jaVar.q(aVar.b, aVar.d, aVar.c);
             } else if (i11 == 8) {
-                iaVar.d(aVar);
-                iaVar.x(aVar.b, aVar.d);
+                jaVar.d(aVar);
+                jaVar.x(aVar.b, aVar.d);
             }
         }
         m(arrayList);
@@ -159,17 +159,17 @@ public final class a {
     }
 
     public void f(s4.a aVar, int i10) {
-        ia iaVar = (ia) this.f;
-        iaVar.d(aVar);
+        ja jaVar = (ja) this.f;
+        jaVar.d(aVar);
         int i11 = aVar.a;
         if (i11 != 2) {
             if (i11 != 4) {
                 throw new IllegalArgumentException("only remove and update ops can be dispatched in first pass");
             }
-            iaVar.q(i10, aVar.d, aVar.c);
+            jaVar.q(i10, aVar.d, aVar.c);
         } else {
             int i12 = aVar.d;
-            RecyclerView recyclerView = (RecyclerView) iaVar.b;
+            RecyclerView recyclerView = (RecyclerView) jaVar.b;
             recyclerView.e0(i10, i12, true);
             recyclerView.w0 = true;
             recyclerView.t0.c += i12;
@@ -267,25 +267,25 @@ public final class a {
     }
 
     public void k(s4.a aVar) {
-        ia iaVar = (ia) this.f;
+        ja jaVar = (ja) this.f;
         ((ArrayList) this.e).add(aVar);
         int i10 = aVar.a;
         if (i10 == 1) {
-            iaVar.v(aVar.b, aVar.d);
+            jaVar.v(aVar.b, aVar.d);
             return;
         }
         if (i10 == 2) {
             int i11 = aVar.b;
             int i12 = aVar.d;
-            RecyclerView recyclerView = (RecyclerView) iaVar.b;
+            RecyclerView recyclerView = (RecyclerView) jaVar.b;
             recyclerView.e0(i11, i12, false);
             recyclerView.w0 = true;
             return;
         }
         if (i10 == 4) {
-            iaVar.q(aVar.b, aVar.d, aVar.c);
+            jaVar.q(aVar.b, aVar.d, aVar.c);
         } else if (i10 == 8) {
-            iaVar.x(aVar.b, aVar.d);
+            jaVar.x(aVar.b, aVar.d);
         } else {
             throw new IllegalArgumentException("Unknown update op type for " + aVar);
         }
@@ -325,7 +325,7 @@ public final class a {
         Object obj;
         s4.a aVar;
         b0 b0Var = (b0) this.c;
-        ia iaVar = (ia) this.f;
+        ja jaVar = (ja) this.f;
         ka.c cVar = (ka.c) this.g;
         ArrayList arrayList = (ArrayList) this.d;
         cVar.getClass();
@@ -554,7 +554,7 @@ public final class a {
                 int i46 = 0;
                 char c11 = 65535;
                 while (i45 < i44) {
-                    RecyclerView recyclerView = (RecyclerView) iaVar.b;
+                    RecyclerView recyclerView = (RecyclerView) jaVar.b;
                     c1 L = recyclerView.L(i45, true);
                     if (L != null) {
                     }
@@ -603,7 +603,7 @@ public final class a {
                 int i50 = 0;
                 char c12 = 65535;
                 while (i47 < i48) {
-                    RecyclerView recyclerView2 = (RecyclerView) iaVar.b;
+                    RecyclerView recyclerView2 = (RecyclerView) jaVar.b;
                     c1 L2 = recyclerView2.L(i47, true);
                     if (L2 != null) {
                     }
@@ -666,17 +666,17 @@ public final class a {
         String str;
         re.b bVar = re.b.e;
         if (i) {
-            ia iaVar = (ia) this.f;
-            if (iaVar == null) {
+            ja jaVar = (ja) this.f;
+            if (jaVar == null) {
                 try {
-                    ia iaVar2 = new ia(11);
-                    iaVar2.b = new SoftReference(new String[3]);
-                    this.f = iaVar2;
+                    ja jaVar2 = new ja(11);
+                    jaVar2.b = new SoftReference(new String[3]);
+                    this.f = jaVar2;
                 } catch (Throwable unused) {
                     i = false;
                 }
             } else {
-                String[] strArr = (String[]) ((SoftReference) iaVar.b).get();
+                String[] strArr = (String[]) ((SoftReference) jaVar.b).get();
                 if (strArr != null) {
                     str = strArr[0];
                     if (str == null) {
@@ -730,11 +730,11 @@ public final class a {
                         str = stringBuffer.toString();
                     }
                     if (i) {
-                        ia iaVar3 = (ia) this.f;
-                        String[] strArr2 = (String[]) ((SoftReference) iaVar3.b).get();
+                        ja jaVar3 = (ja) this.f;
+                        String[] strArr2 = (String[]) ((SoftReference) jaVar3.b).get();
                         if (strArr2 == null) {
                             strArr2 = new String[3];
-                            iaVar3.b = new SoftReference(strArr2);
+                            jaVar3.b = new SoftReference(strArr2);
                         }
                         strArr2[0] = str;
                     }
@@ -836,14 +836,14 @@ public final class a {
         }
     }
 
-    public a(ia iaVar) {
+    public a(ja jaVar) {
         this.a = 3;
         this.c = new b0(30, 6);
         this.d = new ArrayList();
         this.e = new ArrayList();
         this.b = 0;
         this.h = BuildVars.DEBUG_VERSION ? new ArrayList() : null;
-        this.f = iaVar;
+        this.f = jaVar;
         this.g = new ka.c(this, 16);
     }
 }

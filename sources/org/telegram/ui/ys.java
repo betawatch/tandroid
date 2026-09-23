@@ -1,63 +1,54 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.text.Editable;
+import android.text.TextWatcher;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class ys extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ ContactsActivity a;
+public final class ys implements TextWatcher {
+    public final /* synthetic */ EditTextBoldCursor a;
 
-    public ys(ContactsActivity contactsActivity) {
-        this.a = contactsActivity;
+    public ys(EditTextBoldCursor editTextBoldCursor) {
+        this.a = editTextBoldCursor;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i10) {
-        org.telegram.ui.ActionBar.k kVar;
-        ContactsActivity contactsActivity = this.a;
-        if (i10 == -1) {
-            kVar = ((org.telegram.ui.ActionBar.n2) contactsActivity).actionBar;
-            if (kVar.s()) {
-                contactsActivity.o0();
-                return;
-            } else {
-                contactsActivity.finishFragment();
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        try {
+            String obj = editable.toString();
+            if (obj.isEmpty()) {
                 return;
             }
-        }
-        if (i10 != 100) {
-            if (i10 != 1) {
-                if (i10 == 0) {
-                    contactsActivity.f.x0(0);
-                    AndroidUtilities.doOnPreDraw(contactsActivity.Z.r, new dj(this, 14));
-                    return;
-                }
+            int intValue = Utilities.parseInt((CharSequence) obj).intValue();
+            EditTextBoldCursor editTextBoldCursor = this.a;
+            if (intValue < 0) {
+                editTextBoldCursor.setText("0");
+                editTextBoldCursor.setSelection(editTextBoldCursor.length());
                 return;
             }
-            SharedConfig.toggleSortContactsByName();
-            boolean z10 = SharedConfig.sortContactsByName;
-            contactsActivity.v = z10;
-            contactsActivity.d.Y(z10 ? 1 : 2, false);
-            contactsActivity.s.setIcon(contactsActivity.v ? R.drawable.msg_contacts_time : R.drawable.msg_contacts_name);
-            return;
+            if (intValue > 300) {
+                editTextBoldCursor.setText("300");
+                editTextBoldCursor.setSelection(editTextBoldCursor.length());
+                return;
+            }
+            if (obj.equals("" + intValue)) {
+                return;
+            }
+            editTextBoldCursor.setText("" + intValue);
+            editTextBoldCursor.setSelection(editTextBoldCursor.length());
+        } catch (Exception e) {
+            FileLog.e(e);
         }
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(contactsActivity.getParentActivity(), 0, contactsActivity.getResourceProvider());
-        a0.i iVar = contactsActivity.d0;
-        if (iVar.m() == 1) {
-            alertDialog$Builder.a.R = LocaleController.getString(R.string.DeleteContactTitle);
-            alertDialog$Builder.a.T = LocaleController.getString(R.string.DeleteContactSubtitle);
-        } else {
-            alertDialog$Builder.a.R = LocaleController.formatPluralString("DeleteContactsTitle", iVar.m(), new Object[0]);
-            alertDialog$Builder.a.T = LocaleController.getString(R.string.DeleteContactsSubtitle);
-        }
-        alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new vs(contactsActivity));
-        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new org.telegram.ui.Components.in0(16));
-        org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-        b2Var.show();
-        b2Var.h();
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

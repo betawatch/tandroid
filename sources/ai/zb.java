@@ -3,7 +3,7 @@ package ai;
 import android.content.Context;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class zb extends j0 {
     public final /* synthetic */ jc Q0;
@@ -17,7 +17,7 @@ public final class zb extends j0 {
         this.M0 = new q4(this, 1);
         this.O0 = -1;
         this.y0 = i10;
-        this.H0 = new c6(context);
+        this.H0 = new b6(context);
         this.N0 = jcVar2;
         ka kaVar = new ka(this, context, jcVar2, dVar);
         this.z0 = kaVar;

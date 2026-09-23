@@ -4,7 +4,7 @@ import android.graphics.Canvas;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public class GroupCreateCheckBox extends View {
     public static final /* synthetic */ int b = 0;
@@ -17,7 +17,7 @@ public class GroupCreateCheckBox extends View {
     @Override // android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        org.telegram.ui.ActionBar.i6.u0(0);
+        org.telegram.ui.ActionBar.h6.u0(0);
         throw null;
     }
 

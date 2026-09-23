@@ -53,7 +53,7 @@ import r2.p;
 import u2.b0;
 import u2.f0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class i implements b {
     public u0 E;
@@ -387,7 +387,7 @@ public final class i implements b {
                                 }
                                 q0Var = new q0(i12, y3);
                             } else {
-                                q0Var = e.f(cause3) ? new q0(27, 0) : cause3 instanceof NotProvisionedException ? new q0(24, 0) : cause3 instanceof DeniedByServerException ? new q0(29, 0) : cause3 instanceof n2.w ? new q0(23, 0) : cause3 instanceof n2.c ? new q0(28, 0) : new q0(30, 0);
+                                q0Var = e.e(cause3) ? new q0(27, 0) : cause3 instanceof NotProvisionedException ? new q0(24, 0) : cause3 instanceof DeniedByServerException ? new q0(29, 0) : cause3 instanceof n2.w ? new q0(23, 0) : cause3 instanceof n2.c ? new q0(28, 0) : new q0(30, 0);
                             }
                         } else if ((cause instanceof g2.s) && (cause.getCause() instanceof FileNotFoundException)) {
                             Throwable cause4 = cause.getCause();

@@ -1,46 +1,38 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class zo implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ kp b;
+import android.content.Context;
+import org.telegram.messenger.ChatObject;
 
-    public /* synthetic */ zo(kp kpVar, int i10) {
-        this.a = i10;
-        this.b = kpVar;
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* loaded from: classes3.dex */
+public final class zo implements org.telegram.ui.Components.v80 {
+    public final /* synthetic */ Context a;
+    public final /* synthetic */ gp b;
+
+    public zo(gp gpVar, Context context) {
+        this.b = gpVar;
+        this.a = context;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                kp kpVar = this.b;
-                kpVar.c0 = true;
-                kpVar.b0();
-                break;
-            case 1:
-                kp kpVar2 = this.b;
-                kpVar2.X = kpVar2.getMessagesController().getChat(Long.valueOf(kpVar2.Z));
-                kpVar2.Y();
-                break;
-            case 2:
-                this.b.a0(false);
-                break;
-            case 3:
-                kp kpVar3 = this.b;
-                kpVar3.c0 = true;
-                if (kpVar3.a.length() > 0) {
-                    kpVar3.W(kpVar3.a.getText().toString());
-                }
-                kpVar3.b0();
-                break;
-            case 4:
-                this.b.Y();
-                break;
-            default:
-                this.b.a0(true);
-                break;
-        }
+    @Override // org.telegram.ui.Components.v80
+    public final void c() {
+        this.b.X(true);
+    }
+
+    @Override // org.telegram.ui.Components.v80
+    public final void i() {
+        gp gpVar = this.b;
+        org.telegram.ui.Components.s60 s60Var = new org.telegram.ui.Components.s60(this.a, gpVar.l0, gpVar.Y, gpVar.o0, gpVar, gpVar.Z, true, ChatObject.isChannel(gpVar.X));
+        gp gpVar2 = this.b;
+        gpVar2.p0 = s60Var;
+        gpVar2.p0.show();
+    }
+
+    @Override // org.telegram.ui.Components.v80
+    public final /* synthetic */ void a() {
+    }
+
+    @Override // org.telegram.ui.Components.v80
+    public final /* synthetic */ void j() {
     }
 }

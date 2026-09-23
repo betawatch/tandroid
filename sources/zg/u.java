@@ -1,10 +1,10 @@
 package zg;
 
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.bc0;
-import yh.v3;
+import org.telegram.ui.Components.ac0;
+import yh.u3;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u implements Runnable {
     public final /* synthetic */ int a;
@@ -23,19 +23,19 @@ public final /* synthetic */ class u implements Runnable {
                 break;
             default:
                 c0 c0Var = this.b;
-                v3 v3Var = c0Var.c;
-                if (v3Var.getParent() != null) {
+                u3 u3Var = c0Var.c;
+                if (u3Var.getParent() != null) {
                     if (c0Var.d) {
-                        AndroidUtilities.removeFromParent(v3Var);
+                        AndroidUtilities.removeFromParent(u3Var);
                     } else {
                         try {
-                            c0Var.b.removeView(v3Var);
+                            c0Var.b.removeView(u3Var);
                         } catch (Exception unused) {
                         }
                     }
-                    bc0 bc0Var = c0Var.p;
-                    if (bc0Var != null) {
-                        bc0Var.run();
+                    ac0 ac0Var = c0Var.p;
+                    if (ac0Var != null) {
+                        ac0Var.run();
                         break;
                     }
                 }

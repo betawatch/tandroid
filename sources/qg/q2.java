@@ -10,21 +10,21 @@ import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.c6;
-import org.telegram.ui.Components.hk0;
+import org.telegram.ui.Components.e6;
+import org.telegram.ui.Components.ik0;
 import org.telegram.ui.Components.jv0;
-import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.xi0;
+import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.yi0;
 import w7.x5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public class q2 extends j {
     public final TLRPC.Document q0;
     public final Object r0;
     public final int s0;
     public boolean t0;
-    public final c6 u0;
+    public final e6 u0;
     public final jv0 v0;
     public final ai.f0 w0;
     public final ImageReceiver x0;
@@ -57,12 +57,12 @@ public class q2 extends j {
         ai.f0 f0Var = new ai.f0(this, context);
         this.w0 = f0Var;
         addView(f0Var, x5.c(-1.0f, -1));
-        this.u0 = new c6(f0Var, 0L, 500L, qr.h);
+        this.u0 = new e6(f0Var, 0L, 500L, rr.h);
         this.x0.setAspectFit(true);
         this.x0.setInvalidateAll(true);
         this.x0.setParentView(f0Var);
         this.x0.setImage(ImageLocation.getForDocument(document), (String) null, ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 90), document), (String) null, "webp", obj, 1);
-        this.x0.setDelegate(new k2.v(this, 25));
+        this.x0.setDelegate(new le.b(this, 26));
         k();
     }
 
@@ -83,7 +83,7 @@ public class q2 extends j {
 
     public long getDuration() {
         ImageReceiver imageReceiver = this.x0;
-        xi0 lottieAnimation = imageReceiver.getLottieAnimation();
+        yi0 lottieAnimation = imageReceiver.getLottieAnimation();
         if (lottieAnimation != null) {
             return lottieAnimation.r();
         }
@@ -98,16 +98,16 @@ public class q2 extends j {
     }
 
     @Override // qg.j
-    public hk0 getSelectionBounds() {
+    public ik0 getSelectionBounds() {
         ViewGroup viewGroup = (ViewGroup) getParent();
         if (viewGroup == null) {
-            return new hk0();
+            return new ik0();
         }
         float scaleX = viewGroup.getScaleX();
         float scale = (getScale() + 0.5f) * getMeasuredWidth();
         float f7 = scale / 2.0f;
         float f10 = scale * scaleX;
-        return new hk0((getPositionX() - f7) * scaleX, (getPositionY() - f7) * scaleX, f10, f10);
+        return new ik0((getPositionX() - f7) * scaleX, (getPositionY() - f7) * scaleX, f10, f10);
     }
 
     public TLRPC.Document getSticker() {
@@ -158,6 +158,6 @@ public class q2 extends j {
         }
     }
 
-    public void q(xi0 xi0Var) {
+    public void q(yi0 yi0Var) {
     }
 }

@@ -1,198 +1,202 @@
 package ai;
 
-import java.util.ArrayList;
-import java.util.HashSet;
+import android.content.Context;
+import android.text.Layout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.Components.xc;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.hx;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class x7 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ l9 b;
+public final class x7 extends org.telegram.ui.ActionBar.f3 {
+    public static final /* synthetic */ int h = 0;
+    public final rg.p0 b;
+    public boolean c;
+    public final int d;
+    public hx e;
+    public final a3.d f;
 
-    public /* synthetic */ x7(l9 l9Var, int i10) {
-        this.a = i10;
-        this.b = l9Var;
+    public x7(Context context, float f7, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(1, context, d6Var, false);
+        this.f = new a3.d(this, 11);
+        this.d = i10;
+        v7 v7Var = new v7(this, getContext(), f7);
+        ImageView imageView = new ImageView(getContext());
+        imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+        imageView.setBackground(org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(80.0f), org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Oh, false)));
+        imageView.setImageResource(R.drawable.large_stealth);
+        v7Var.addView(imageView, w7.x5.d(80, 80.0f, 1, 0.0f, 18.0f, 0.0f, 0.0f));
+        LinearLayout linearLayout = new LinearLayout(getContext());
+        linearLayout.setOrientation(1);
+        v7Var.addView(linearLayout, w7.x5.d(-1, -2.0f, 0, 0.0f, 116.0f, 0.0f, 0.0f));
+        TextView textView = new TextView(getContext());
+        com.google.android.gms.internal.vision.e2.l(20.0f, 1, textView);
+        textView.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.G6, d6Var));
+        textView.setText(LocaleController.getString(R.string.StealthModeTitle));
+        linearLayout.addView(textView, w7.x5.q(-2, -2, 1));
+        org.telegram.ui.ActionBar.i5 i5Var = new org.telegram.ui.ActionBar.i5(getContext());
+        i5Var.setTextSize(14);
+        i5Var.setAlignment(Layout.Alignment.ALIGN_CENTER);
+        i5Var.setMaxLines(100);
+        i5Var.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.y6, d6Var));
+        if (UserConfig.getInstance(this.currentAccount).isPremium()) {
+            i5Var.l(LocaleController.getString(R.string.StealthModeHint), false);
+        } else {
+            i5Var.l(LocaleController.getString(R.string.StealthModePremiumHint), false);
+        }
+        linearLayout.addView(i5Var, w7.x5.t(-2, -2, 1, 36, 10, 36, 0));
+        w7 w7Var = new w7(this, getContext());
+        ((ImageView) w7Var.d).setImageResource(R.drawable.msg_stealth_5min);
+        ((TextView) w7Var.b).setText(LocaleController.getString(R.string.HideRecentViews));
+        ((TextView) w7Var.c).setText(LocaleController.getString(R.string.HideRecentViewsDescription));
+        linearLayout.addView(w7Var, w7.x5.t(-1, -2, 0, 0, 20, 0, 0));
+        w7 w7Var2 = new w7(this, getContext());
+        ((ImageView) w7Var2.d).setImageResource(R.drawable.msg_stealth_25min);
+        ((TextView) w7Var2.b).setText(LocaleController.getString(R.string.HideNextViews));
+        ((TextView) w7Var2.c).setText(LocaleController.getString(R.string.HideNextViewsDescription));
+        linearLayout.addView(w7Var2, w7.x5.t(-1, -2, 0, 0, 10, 0, 0));
+        rg.p0 p0Var = new rg.p0(AndroidUtilities.dp(8.0f), context, d6Var, true);
+        this.b = p0Var;
+        p0Var.H = false;
+        p0Var.e.getDrawable().y = false;
+        p0Var.setIcon(R.raw.unlock_icon);
+        w7.z5.a(p0Var);
+        TLRPC.User currentUser = UserConfig.getInstance(this.currentAccount).getCurrentUser();
+        if (currentUser.premium) {
+            q(false);
+        } else {
+            p0Var.setIcon(R.raw.unlock_icon);
+            p0Var.a(LocaleController.getString(R.string.UnlockStealthMode), new v0(this, 2), false);
+        }
+        linearLayout.addView(p0Var, w7.x5.t(-1, 48, 80, 14, 24, 14, 16));
+        setCustomView(v7Var);
+        p0Var.setOnClickListener(new t7(this, currentUser, i10, d6Var, 0));
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                TLRPC.Updates updates = (TLRPC.Updates) tLObject;
-                if (updates != null) {
-                    l9 l9Var = this.b;
-                    MessagesController.getInstance(l9Var.a).processUpdateArray(updates.updates, updates.users, updates.chats, false, updates.date);
-                    AndroidUtilities.runOnUIThread(new i8(l9Var, 1));
-                    break;
-                }
-                break;
-            case 1:
-                AndroidUtilities.runOnUIThread(new a3.k0(this.b, tLObject, tL_error, 4));
-                break;
-            case 2:
-                final int i10 = 1;
-                final l9 l9Var2 = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: ai.f8
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i10) {
-                            case 0:
-                                l9 l9Var3 = l9Var2;
-                                HashSet hashSet = l9Var3.L;
-                                int i11 = l9Var3.a;
-                                TLObject tLObject2 = tLObject;
-                                if (tLObject2 instanceof TLRPC.TL_contacts_blocked) {
-                                    TLRPC.TL_contacts_blocked tL_contacts_blocked = (TLRPC.TL_contacts_blocked) tLObject2;
-                                    MessagesController.getInstance(i11).putUsers(tL_contacts_blocked.users, false);
-                                    MessagesController.getInstance(i11).putChats(tL_contacts_blocked.chats, false);
-                                    hashSet.clear();
-                                    ArrayList<TLRPC.TL_peerBlocked> arrayList = tL_contacts_blocked.blocked;
-                                    int size = arrayList.size();
-                                    int i12 = 0;
-                                    while (i12 < size) {
-                                        TLRPC.TL_peerBlocked tL_peerBlocked = arrayList.get(i12);
-                                        i12++;
-                                        hashSet.add(Long.valueOf(DialogObject.getPeerDialogId(tL_peerBlocked.peer_id)));
-                                    }
-                                    l9Var3.N = Math.max(hashSet.size(), tL_contacts_blocked.count);
-                                    l9Var3.O = true;
-                                } else if (tLObject2 instanceof TLRPC.TL_contacts_blockedSlice) {
-                                    TLRPC.TL_contacts_blockedSlice tL_contacts_blockedSlice = (TLRPC.TL_contacts_blockedSlice) tLObject2;
-                                    MessagesController.getInstance(i11).putUsers(tL_contacts_blockedSlice.users, false);
-                                    MessagesController.getInstance(i11).putChats(tL_contacts_blockedSlice.chats, false);
-                                    ArrayList<TLRPC.TL_peerBlocked> arrayList2 = tL_contacts_blockedSlice.blocked;
-                                    int size2 = arrayList2.size();
-                                    int i13 = 0;
-                                    while (i13 < size2) {
-                                        TLRPC.TL_peerBlocked tL_peerBlocked2 = arrayList2.get(i13);
-                                        i13++;
-                                        hashSet.add(Long.valueOf(DialogObject.getPeerDialogId(tL_peerBlocked2.peer_id)));
-                                    }
-                                    l9Var3.N = tL_contacts_blockedSlice.count;
-                                    l9Var3.O = hashSet.size() >= l9Var3.N;
-                                }
-                                NotificationCenter.getInstance(i11).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesBlocklistUpdate, new Object[0]);
-                                l9Var3.P = false;
-                                l9Var3.Q = System.currentTimeMillis();
-                                break;
-                            default:
-                                l9 l9Var4 = l9Var2;
-                                int i14 = l9Var4.a;
-                                ArrayList arrayList3 = l9Var4.T;
-                                arrayList3.clear();
-                                arrayList3.add(new TLRPC.TL_inputPeerSelf());
-                                TLObject tLObject3 = tLObject;
-                                if (tLObject3 instanceof TLRPC.TL_messages_chats) {
-                                    ArrayList<TLRPC.Chat> arrayList4 = ((TLRPC.TL_messages_chats) tLObject3).chats;
-                                    MessagesController.getInstance(i14).putChats(arrayList4, false);
-                                    int size3 = arrayList4.size();
-                                    int i15 = 0;
-                                    while (i15 < size3) {
-                                        TLRPC.Chat chat = arrayList4.get(i15);
-                                        i15++;
-                                        arrayList3.add(MessagesController.getInputPeer(chat));
-                                    }
-                                }
-                                l9Var4.U = false;
-                                l9Var4.V = true;
-                                NotificationCenter.getInstance(i14).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesSendAsUpdate, new Object[0]);
-                                break;
-                        }
-                    }
-                });
-                break;
-            case 3:
-                final int i11 = 0;
-                final l9 l9Var3 = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: ai.f8
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i11) {
-                            case 0:
-                                l9 l9Var32 = l9Var3;
-                                HashSet hashSet = l9Var32.L;
-                                int i112 = l9Var32.a;
-                                TLObject tLObject2 = tLObject;
-                                if (tLObject2 instanceof TLRPC.TL_contacts_blocked) {
-                                    TLRPC.TL_contacts_blocked tL_contacts_blocked = (TLRPC.TL_contacts_blocked) tLObject2;
-                                    MessagesController.getInstance(i112).putUsers(tL_contacts_blocked.users, false);
-                                    MessagesController.getInstance(i112).putChats(tL_contacts_blocked.chats, false);
-                                    hashSet.clear();
-                                    ArrayList<TLRPC.TL_peerBlocked> arrayList = tL_contacts_blocked.blocked;
-                                    int size = arrayList.size();
-                                    int i12 = 0;
-                                    while (i12 < size) {
-                                        TLRPC.TL_peerBlocked tL_peerBlocked = arrayList.get(i12);
-                                        i12++;
-                                        hashSet.add(Long.valueOf(DialogObject.getPeerDialogId(tL_peerBlocked.peer_id)));
-                                    }
-                                    l9Var32.N = Math.max(hashSet.size(), tL_contacts_blocked.count);
-                                    l9Var32.O = true;
-                                } else if (tLObject2 instanceof TLRPC.TL_contacts_blockedSlice) {
-                                    TLRPC.TL_contacts_blockedSlice tL_contacts_blockedSlice = (TLRPC.TL_contacts_blockedSlice) tLObject2;
-                                    MessagesController.getInstance(i112).putUsers(tL_contacts_blockedSlice.users, false);
-                                    MessagesController.getInstance(i112).putChats(tL_contacts_blockedSlice.chats, false);
-                                    ArrayList<TLRPC.TL_peerBlocked> arrayList2 = tL_contacts_blockedSlice.blocked;
-                                    int size2 = arrayList2.size();
-                                    int i13 = 0;
-                                    while (i13 < size2) {
-                                        TLRPC.TL_peerBlocked tL_peerBlocked2 = arrayList2.get(i13);
-                                        i13++;
-                                        hashSet.add(Long.valueOf(DialogObject.getPeerDialogId(tL_peerBlocked2.peer_id)));
-                                    }
-                                    l9Var32.N = tL_contacts_blockedSlice.count;
-                                    l9Var32.O = hashSet.size() >= l9Var32.N;
-                                }
-                                NotificationCenter.getInstance(i112).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesBlocklistUpdate, new Object[0]);
-                                l9Var32.P = false;
-                                l9Var32.Q = System.currentTimeMillis();
-                                break;
-                            default:
-                                l9 l9Var4 = l9Var3;
-                                int i14 = l9Var4.a;
-                                ArrayList arrayList3 = l9Var4.T;
-                                arrayList3.clear();
-                                arrayList3.add(new TLRPC.TL_inputPeerSelf());
-                                TLObject tLObject3 = tLObject;
-                                if (tLObject3 instanceof TLRPC.TL_messages_chats) {
-                                    ArrayList<TLRPC.Chat> arrayList4 = ((TLRPC.TL_messages_chats) tLObject3).chats;
-                                    MessagesController.getInstance(i14).putChats(arrayList4, false);
-                                    int size3 = arrayList4.size();
-                                    int i15 = 0;
-                                    while (i15 < size3) {
-                                        TLRPC.Chat chat = arrayList4.get(i15);
-                                        i15++;
-                                        arrayList3.add(MessagesController.getInputPeer(chat));
-                                    }
-                                }
-                                l9Var4.U = false;
-                                l9Var4.V = true;
-                                NotificationCenter.getInstance(i14).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesSendAsUpdate, new Object[0]);
-                                break;
-                        }
-                    }
-                });
-                break;
-            case 4:
-                l9 l9Var4 = this.b;
-                l9Var4.getClass();
-                AndroidUtilities.runOnUIThread(new i8(l9Var4, 0));
-                break;
-            default:
-                l9 l9Var5 = this.b;
-                l9Var5.getClass();
-                if (tL_error == null) {
-                    AndroidUtilities.runOnUIThread(new i8(l9Var5, 0));
-                    break;
-                }
-                break;
+    public static void m(x7 x7Var, TLRPC.User user, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
+        if (!user.premium) {
+            x7Var.dismiss();
+            org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
+            if (R != null) {
+                R.showDialog(new rg.x0(R, 14, false));
+                return;
+            }
+            return;
         }
+        if (x7Var.c) {
+            x7Var.dismiss();
+            hx hxVar = x7Var.e;
+            if (hxVar != null) {
+                hxVar.a(false);
+                return;
+            }
+            return;
+        }
+        l9 storiesController = MessagesController.getInstance(x7Var.currentAccount).getStoriesController();
+        TL_stories.TL_storiesStealthMode tL_storiesStealthMode = storiesController.B;
+        if (tL_storiesStealthMode != null && ConnectionsManager.getInstance(x7Var.currentAccount).getCurrentTime() <= tL_storiesStealthMode.cooldown_until_date) {
+            if (!x7Var.c) {
+                new xc(x7Var.container, d6Var).t(AndroidUtilities.replaceTags(LocaleController.getString(R.string.StealthModeCooldownHint)), null).k(true);
+                return;
+            }
+            x7Var.dismiss();
+            hx hxVar2 = x7Var.e;
+            if (hxVar2 != null) {
+                hxVar2.a(false);
+                return;
+            }
+            return;
+        }
+        TL_stories.TL_stories_activateStealthMode tL_stories_activateStealthMode = new TL_stories.TL_stories_activateStealthMode();
+        tL_stories_activateStealthMode.future = true;
+        tL_stories_activateStealthMode.past = true;
+        TL_stories.TL_storiesStealthMode tL_storiesStealthMode2 = new TL_stories.TL_storiesStealthMode();
+        tL_storiesStealthMode2.flags |= 3;
+        tL_storiesStealthMode2.cooldown_until_date = ConnectionsManager.getInstance(x7Var.currentAccount).getCurrentTime() + MessagesController.getInstance(x7Var.currentAccount).stealthModeCooldown;
+        tL_storiesStealthMode2.active_until_date = ConnectionsManager.getInstance(x7Var.currentAccount).getCurrentTime() + MessagesController.getInstance(x7Var.currentAccount).stealthModeFuture;
+        storiesController.f0(tL_storiesStealthMode2);
+        ConnectionsManager.getInstance(x7Var.currentAccount).sendRequest(tL_stories_activateStealthMode, new u7(0));
+        try {
+            x7Var.containerView.performHapticFeedback(3);
+        } catch (Exception unused) {
+        }
+        x7Var.dismiss();
+        if (i10 == 0) {
+            p();
+        }
+        hx hxVar3 = x7Var.e;
+        if (hxVar3 != null) {
+            hxVar3.a(true);
+        }
+    }
+
+    public static void p() {
+        org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
+        xc xcVar = R.getLastStoryViewer() != null ? new xc(R.getLastStoryViewer().s, R.getLastStoryViewer().y) : xc.X();
+        if (xcVar != null) {
+            int i10 = R.drawable.msg_stories_stealth2;
+            String string = LocaleController.getString(R.string.StealthModeOn);
+            String string2 = LocaleController.getString(R.string.StealthModeOnHint);
+            org.telegram.ui.Components.mc mcVar = new org.telegram.ui.Components.mc(xcVar.W(), xcVar.c);
+            mcVar.a.setImageResource(i10);
+            mcVar.b.setText(string);
+            TextView textView = mcVar.c;
+            textView.setText(string2);
+            textView.setSingleLine(false);
+            textView.setMaxLines(5);
+            xcVar.b(mcVar, 5000).j();
+        }
+    }
+
+    public final void q(boolean z10) {
+        TL_stories.TL_storiesStealthMode tL_storiesStealthMode = MessagesController.getInstance(this.currentAccount).getStoriesController().B;
+        rg.p0 p0Var = this.b;
+        if (tL_storiesStealthMode != null && ConnectionsManager.getInstance(this.currentAccount).getCurrentTime() < tL_storiesStealthMode.active_until_date) {
+            this.c = true;
+            p0Var.b(LocaleController.getString(R.string.StealthModeIsActive), true, z10);
+            p0Var.e.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Sh, false));
+            return;
+        }
+        if (tL_storiesStealthMode != null) {
+            int currentTime = ConnectionsManager.getInstance(this.currentAccount).getCurrentTime();
+            int i10 = tL_storiesStealthMode.cooldown_until_date;
+            if (currentTime <= i10) {
+                long currentTime2 = i10 - ConnectionsManager.getInstance(this.currentAccount).getCurrentTime();
+                int i11 = (int) (currentTime2 % 60);
+                long j3 = currentTime2 / 60;
+                int i12 = (int) (j3 % 60);
+                int i13 = (int) (j3 / 60);
+                StringBuilder sb2 = new StringBuilder();
+                Locale locale = Locale.ENGLISH;
+                sb2.append(String.format(locale, "%02d", Integer.valueOf(i13)));
+                sb2.append(String.format(locale, ":%02d", Integer.valueOf(i12)));
+                sb2.append(String.format(locale, ":%02d", Integer.valueOf(i11)));
+                p0Var.b(LocaleController.formatString("AvailableIn", R.string.AvailableIn, sb2.toString()), true, z10);
+                p0Var.e.setTextColor(i0.a.k(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Sh, false), 125));
+                a3.d dVar = this.f;
+                AndroidUtilities.cancelRunOnUIThread(dVar);
+                AndroidUtilities.runOnUIThread(dVar, 1000L);
+                return;
+            }
+        }
+        int i14 = this.d;
+        if (i14 == 0) {
+            p0Var.b(LocaleController.getString(R.string.EnableStealthMode), true, z10);
+        } else if (i14 == 1) {
+            p0Var.b(LocaleController.getString(R.string.EnableStealthModeAndOpenStory), true, z10);
+        }
+        p0Var.e.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Sh, false));
     }
 }

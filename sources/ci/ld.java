@@ -1,36 +1,22 @@
 package ci;
 
-import android.content.Context;
-import android.content.Intent;
+import java.util.TimeZone;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.de0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class ld implements org.telegram.ui.ActionBar.a2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Context b;
+public abstract class ld {
+    public static String a;
+    public static kd b;
 
-    public /* synthetic */ ld(Context context, int i10) {
-        this.a = i10;
-        this.b = context;
+    public static void a(boolean z10, Utilities.Callback callback) {
+        de0.e(R.raw.permission_request_location, R.string.PermissionNoLocationStory, new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new String[]{"android.permission.ACCESS_COARSE_LOCATION"}, new ai.i3(2, new ai.i3(1, callback, z10), z10));
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        switch (this.a) {
-            case 0:
-                try {
-                    this.b.startActivity(new Intent("android.settings.LOCATION_SOURCE_SETTINGS"));
-                    break;
-                } catch (Exception unused) {
-                    return;
-                }
-            default:
-                try {
-                    this.b.startActivity(new Intent("android.settings.LOCATION_SOURCE_SETTINGS"));
-                    break;
-                } catch (Exception unused2) {
-                    return;
-                }
-        }
+    public static boolean b() {
+        String id2 = TimeZone.getDefault().getID();
+        return (id2.startsWith("US/") || "America/Nassau".equals(id2) || "America/Belize".equals(id2) || "America/Cayman".equals(id2) || "Pacific/Palau".equals(id2)) ? false : true;
     }
 }

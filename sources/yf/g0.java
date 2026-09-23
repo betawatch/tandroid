@@ -5,19 +5,19 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.widget.EditText;
 import ci.h2;
-import org.telegram.ui.ActionBar.g5;
+import org.telegram.ui.ActionBar.f5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class g0 implements TextWatcher {
-    public final g5 a;
+    public final f5 a;
     public final EditText b;
     public String c;
     public boolean d;
     public boolean e;
 
-    public g0(h2 h2Var, g5 g5Var) {
-        this.a = g5Var;
+    public g0(h2 h2Var, f5 f5Var) {
+        this.a = f5Var;
         this.b = h2Var;
     }
 
@@ -45,12 +45,12 @@ public final class g0 implements TextWatcher {
         if (this.d == z10) {
             return;
         }
-        g5 g5Var = this.a;
-        if (g5Var.c()) {
+        f5 f5Var = this.a;
+        if (f5Var.c()) {
             if (z10) {
-                g5Var.n();
+                f5Var.n();
             } else {
-                g5Var.m();
+                f5Var.m();
             }
             this.d = z10;
         }

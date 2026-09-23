@@ -1,72 +1,53 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.graphics.LinearGradient;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.Shader;
-import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q20 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ View f;
+public final class q20 extends s4.o {
+    public final /* synthetic */ ArrayList b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ t20 d;
 
-    public /* synthetic */ q20(View view, int i10, int i11, int i12, int i13, int i14) {
-        this.a = i14;
-        this.f = view;
-        this.b = i10;
-        this.c = i11;
-        this.d = i12;
-        this.e = i13;
+    public q20(t20 t20Var, ArrayList arrayList, ArrayList arrayList2) {
+        this.d = t20Var;
+        this.b = arrayList;
+        this.c = arrayList2;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        int i10 = this.a;
-        int i11 = this.e;
-        int i12 = this.d;
-        int i13 = this.c;
-        int i14 = this.b;
-        View view = this.f;
-        switch (i10) {
-            case 0:
-                r20 r20Var = (r20) view;
-                r20Var.L = i0.a.d(((Float) valueAnimator.getAnimatedValue()).floatValue(), i14, i13);
-                r20Var.M = i0.a.d(((Float) valueAnimator.getAnimatedValue()).floatValue(), i12, i11);
-                r20Var.F.setColorFilter(new PorterDuffColorFilter(r20Var.L, PorterDuff.Mode.MULTIPLY));
-                r20Var.E.setColor(r20Var.L);
-                r20Var.r.setColor(r20Var.M);
-                r20Var.J.d(i0.a.k(r20Var.M, 38));
-                r20Var.invalidate();
-                break;
-            case 1:
-                org.telegram.ui.Components.voip.u uVar = (org.telegram.ui.Components.voip.u) view;
-                uVar.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                uVar.D0 = i0.a.d(floatValue, i14, i13);
-                int d = i0.a.d(floatValue, i12, i11);
-                uVar.F0 = d;
-                uVar.T.setColor(d);
-                if (uVar.S > 0.0f) {
-                    uVar.invalidate();
-                    break;
-                }
-                break;
-            default:
-                yh.m8 m8Var = (yh.m8) view;
-                m8Var.getClass();
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                m8Var.r = i0.a.d(floatValue2, i14, i13);
-                m8Var.s = i0.a.d(floatValue2, i12, i11);
-                m8Var.y = new LinearGradient(0.0f, 0.0f, 255.0f, 0.0f, new int[]{m8Var.r, m8Var.s}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-                m8Var.invalidate();
-                break;
+    @Override // s4.o
+    public final boolean a(int i10, int i11) {
+        return true;
+    }
+
+    @Override // s4.o
+    public final boolean b(int i10, int i11) {
+        ArrayList arrayList = this.b;
+        int size = arrayList.size();
+        t20 t20Var = this.d;
+        if (i10 < size && i11 < t20Var.e.size()) {
+            return ((ChatObject.VideoParticipant) arrayList.get(i10)).equals(t20Var.e.get(i11));
         }
+        int size2 = i10 - arrayList.size();
+        int size3 = i11 - t20Var.e.size();
+        ArrayList arrayList2 = this.c;
+        if (size3 < 0 || size3 >= t20Var.f.size() || size2 < 0 || size2 >= arrayList2.size()) {
+            return MessageObject.getPeerId((i10 < arrayList.size() ? ((ChatObject.VideoParticipant) arrayList.get(i10)).participant : (TLRPC.GroupCallParticipant) arrayList2.get(size2)).peer) == MessageObject.getPeerId((i11 < t20Var.e.size() ? ((ChatObject.VideoParticipant) t20Var.e.get(i11)).participant : (TLRPC.GroupCallParticipant) t20Var.f.get(size3)).peer);
+        }
+        return MessageObject.getPeerId(((TLRPC.GroupCallParticipant) arrayList2.get(size2)).peer) == MessageObject.getPeerId(((TLRPC.GroupCallParticipant) t20Var.f.get(size3)).peer);
+    }
+
+    @Override // s4.o
+    public final int d() {
+        t20 t20Var = this.d;
+        return t20Var.f.size() + t20Var.e.size();
+    }
+
+    @Override // s4.o
+    public final int e() {
+        return this.c.size() + this.b.size();
     }
 }

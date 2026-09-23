@@ -1,25 +1,66 @@
 package ci;
 
-import android.graphics.PointF;
+import android.content.Context;
+import android.graphics.Bitmap;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicReference;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.camera.CameraView;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class f7 {
-    public final String a;
-    public final PointF[] b;
-    public final float c;
-    public final float d;
+    public final ia c;
+    public d7 d;
+    public CameraView f;
+    public Bitmap g;
+    public final AtomicReference a = new AtomicReference();
+    public final AtomicBoolean b = new AtomicBoolean(false);
+    public final c7 h = new c7(this, 0);
+    public final String e = MessagesController.getInstance(UserConfig.selectedAccount).linkPrefix;
 
-    public f7(String str, PointF[] pointFArr) {
-        this.a = str;
-        this.b = pointFArr;
-        float f7 = 0.0f;
-        float f10 = 0.0f;
-        for (PointF pointF : pointFArr) {
-            f7 += pointF.x;
-            f10 += pointF.y;
+    public f7(Context context, ia iaVar) {
+        this.c = iaVar;
+        Utilities.globalQueue.postRunnable(new ai.ba(22, this, context));
+    }
+
+    public final void a(CameraView cameraView) {
+        this.f = cameraView;
+        if (this.a.get() == null || this.b.get()) {
+            return;
         }
-        this.c = f7 / pointFArr.length;
-        this.d = f10 / pointFArr.length;
+        Utilities.globalQueue.cancelRunnable(this.h);
+        Utilities.globalQueue.postRunnable(this.h, b());
+    }
+
+    public final long b() {
+        if (this.d == null) {
+            return 750L;
+        }
+        int devicePerformanceClass = SharedConfig.getDevicePerformanceClass();
+        if (devicePerformanceClass != 1) {
+            return devicePerformanceClass != 2 ? 800L : 80L;
+        }
+        return 400L;
+    }
+
+    public final void c(boolean z10) {
+        if (this.b.getAndSet(z10) == z10) {
+            return;
+        }
+        if (!z10) {
+            Utilities.globalQueue.cancelRunnable(this.h);
+            Utilities.globalQueue.postRunnable(this.h, b());
+            return;
+        }
+        Utilities.globalQueue.cancelRunnable(this.h);
+        if (this.d != null) {
+            this.d = null;
+            AndroidUtilities.runOnUIThread(new c7(this, 1));
+        }
     }
 }

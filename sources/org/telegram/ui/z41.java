@@ -1,56 +1,69 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
+import android.graphics.SurfaceTexture;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class z41 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ SecretMediaViewer b;
+public final class z41 implements org.telegram.ui.Components.c71, org.telegram.ui.Components.y61 {
+    public final /* synthetic */ a51 a;
 
-    public /* synthetic */ z41(SecretMediaViewer secretMediaViewer, int i10) {
-        this.a = i10;
-        this.b = secretMediaViewer;
+    public /* synthetic */ z41(a51 a51Var) {
+        this.a = a51Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                SecretMediaViewer secretMediaViewer = this.b;
-                Runnable runnable = secretMediaViewer.o0;
-                if (runnable != null) {
-                    runnable.run();
-                    secretMediaViewer.o0 = null;
-                    break;
-                }
-                break;
-            case 1:
-                SecretMediaViewer secretMediaViewer2 = this.b;
-                AnimatorSet animatorSet = secretMediaViewer2.G;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    secretMediaViewer2.F.setVisibility(8);
-                    secretMediaViewer2.G = null;
-                    secretMediaViewer2.a0.scrollTo(0, 0);
-                    break;
-                }
-                break;
-            case 2:
-                SecretMediaViewer secretMediaViewer3 = this.b;
-                Runnable runnable2 = secretMediaViewer3.o0;
-                if (runnable2 != null) {
-                    runnable2.run();
-                    secretMediaViewer3.o0 = null;
-                    break;
-                }
-                break;
-            default:
-                SecretMediaViewer secretMediaViewer4 = this.b;
-                secretMediaViewer4.K0 = null;
-                secretMediaViewer4.e.invalidate();
-                break;
+    @Override // org.telegram.ui.Components.y61
+    public boolean needUpdate() {
+        return this.a.V.i != null;
+    }
+
+    @Override // org.telegram.ui.Components.c71
+    public /* synthetic */ void onRenderedFirstFrame(j2.a aVar) {
+    }
+
+    @Override // org.telegram.ui.Components.c71
+    public void onStateChanged(boolean z10, int i10) {
+        a51 a51Var = this.a;
+        if (i10 == 4) {
+            a51Var.dismiss();
+        } else {
+            AndroidUtilities.cancelRunOnUIThread(a51Var.Z);
+            AndroidUtilities.runOnUIThread(a51Var.Z, 16L);
         }
+    }
+
+    @Override // org.telegram.ui.Components.c71
+    public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.y61
+    public void onVisualizerUpdate(boolean z10, boolean z11, float[] fArr) {
+        this.a.V.e(z10, true, fArr);
+    }
+
+    @Override // org.telegram.ui.Components.c71
+    public void onRenderedFirstFrame() {
+        AndroidUtilities.runOnUIThread(new xz0(this, 12));
+    }
+
+    @Override // org.telegram.ui.Components.c71
+    public /* synthetic */ void onSeekFinished(j2.a aVar) {
+    }
+
+    @Override // org.telegram.ui.Components.c71
+    public /* synthetic */ void onSeekStarted(j2.a aVar) {
+    }
+
+    @Override // org.telegram.ui.Components.c71
+    public /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
+    }
+
+    @Override // org.telegram.ui.Components.c71
+    public void onError(org.telegram.ui.Components.f71 f71Var, Exception exc) {
+    }
+
+    @Override // org.telegram.ui.Components.c71
+    public void onVideoSizeChanged(int i10, int i11, int i12, float f7) {
     }
 }

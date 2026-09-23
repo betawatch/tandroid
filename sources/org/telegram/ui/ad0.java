@@ -1,21 +1,39 @@
 package org.telegram.ui;
 
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import android.content.Context;
+import android.graphics.Point;
+import android.view.View;
+import android.widget.FrameLayout;
+import java.util.HashMap;
+import java.util.Map;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.IMapsProvider;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class ad0 extends org.telegram.ui.ActionBar.n1 {
-    public final /* synthetic */ id0 o;
+public final class ad0 extends FrameLayout {
+    public final HashMap a;
+    public final /* synthetic */ dd0 b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ad0(id0 id0Var, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
-        super(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
-        this.o = id0Var;
+    public ad0(dd0 dd0Var, Context context) {
+        super(context);
+        this.b = dd0Var;
+        this.a = new HashMap();
     }
 
-    @Override // org.telegram.ui.ActionBar.n1, android.widget.PopupWindow
-    public final void dismiss() {
-        d(true);
-        this.o.I0 = null;
+    public final void a() {
+        IMapsProvider.IMap iMap = this.b.I;
+        if (iMap == null) {
+            return;
+        }
+        IMapsProvider.IProjection projection = iMap.getProjection();
+        for (Map.Entry entry : this.a.entrySet()) {
+            IMapsProvider.IMarker iMarker = (IMapsProvider.IMarker) entry.getKey();
+            View view = (View) entry.getValue();
+            Point screenLocation = projection.toScreenLocation(iMarker.getPosition());
+            view.setTranslationX(screenLocation.x - (view.getMeasuredWidth() / 2));
+            view.setTranslationY(AndroidUtilities.dp(22.0f) + (screenLocation.y - view.getMeasuredHeight()));
+        }
     }
 }

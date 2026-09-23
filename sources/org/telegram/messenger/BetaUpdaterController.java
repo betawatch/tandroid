@@ -9,7 +9,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.web.HttpGetFileTask;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public class BetaUpdaterController {
     private static final long CHECK_INTERVAL = 1200000;
@@ -179,13 +179,13 @@ public class BetaUpdaterController {
             if (runnable != null) {
             }
         } catch (Exception e10) {
-            FileLog.e("Failed to check for beta update at https://telegram.org/dl/android/apk-public-beta.json received: " + str, e10);
+            FileLog.e("Failed to check for beta update at null received: " + str, e10);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkForUpdate$2(Runnable runnable, String str) {
-        AndroidUtilities.runOnUIThread(new f0(this, str, runnable, 7));
+        AndroidUtilities.runOnUIThread(new f0(this, str, runnable, 8));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -308,7 +308,7 @@ public class BetaUpdaterController {
         }
         this.checkingForUpdate = true;
         this.firstCheck = false;
-        new org.telegram.ui.web.j1(new v(0, this, runnable)).execute(BuildConfig.BETA_URL);
+        new org.telegram.ui.web.i1(new v(0, this, runnable)).execute(BuildConfig.BETA_URL);
     }
 
     public void downloadUpdate() {

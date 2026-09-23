@@ -1,32 +1,25 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
 import android.view.View;
-import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class lw extends FrameLayout {
-    public final /* synthetic */ kz a;
+public final class lw implements View.OnFocusChangeListener {
+    public final /* synthetic */ lz a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lw(kz kzVar, Context context) {
-        super(context);
-        this.a = kzVar;
+    public lw(lz lzVar) {
+        this.a = lzVar;
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        kz kzVar = this.a;
-        pw pwVar = kzVar.o0;
-        if (view != kzVar.h0) {
-            return super.drawChild(canvas, view, j3);
+    @Override // android.view.View.OnFocusChangeListener
+    public final void onFocusChange(View view, boolean z10) {
+        if (z10) {
+            String[] currentKeyboardLanguage = AndroidUtilities.getCurrentKeyboardLanguage();
+            lz lzVar = this.a;
+            lzVar.W0 = currentKeyboardLanguage;
+            MediaDataController.getInstance(lzVar.c1).fetchNewEmojiKeywords(lzVar.W0);
         }
-        canvas.save();
-        canvas.clipRect(0.0f, pwVar.getY() + pwVar.getMeasuredHeight(), getMeasuredWidth(), getMeasuredHeight());
-        boolean drawChild = super.drawChild(canvas, view, j3);
-        canvas.restore();
-        return drawChild;
     }
 }

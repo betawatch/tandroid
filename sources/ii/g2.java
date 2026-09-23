@@ -1,13 +1,31 @@
 package ii;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class g2 {
-    public final f2[] a;
-    public final e2 b;
+    public final long a;
+    public final byte[] b;
+    public final int c;
+    public final int d;
+    public final boolean e;
+    public final boolean f;
+    public final boolean g;
+    public final u h;
+    public final ArrayList i;
+    public final ArrayList j;
 
-    public g2(f2[] f2VarArr, e2 e2Var) {
-        this.a = f2VarArr;
-        this.b = e2Var;
+    public g2(long j3, byte[] bArr, int i10, int i11, boolean z10, boolean z11, boolean z12, u uVar, ArrayList arrayList, ArrayList arrayList2) {
+        this.a = j3;
+        this.b = bArr;
+        this.c = i10;
+        this.d = i11;
+        this.e = z10;
+        this.f = z11;
+        this.g = z12;
+        this.h = uVar;
+        this.i = arrayList;
+        this.j = arrayList2;
     }
 }

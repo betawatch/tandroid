@@ -1,6 +1,6 @@
 package com.google.firebase.messaging;
 
-import ai.r5;
+import ai.q5;
 import android.app.Application;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
@@ -23,7 +23,7 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public class FirebaseMessaging {
     public static final long k = TimeUnit.HOURS.toSeconds(8);
@@ -292,7 +292,7 @@ public class FirebaseMessaging {
                     Log.d("FirebaseMessaging", "Making new request for: " + c10);
                 }
                 n nVar = this.c;
-                task = nVar.o(nVar.D(p.c((k9.h) nVar.a), "*", new Bundle())).onSuccessTask(this.h, new r5(this, c10, d, 6)).continueWithTask((Executor) jVar.a, new ah.b(8, jVar, c10));
+                task = nVar.o(nVar.D(p.c((k9.h) nVar.a), "*", new Bundle())).onSuccessTask(this.h, new q5(this, c10, d, 6)).continueWithTask((Executor) jVar.a, new ah.b(8, jVar, c10));
                 ((a0.f) jVar.b).put(c10, task);
             } else if (Log.isLoggable("FirebaseMessaging", 3)) {
                 Log.d("FirebaseMessaging", "Joining ongoing request for: " + c10);

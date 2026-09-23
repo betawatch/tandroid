@@ -1,9 +1,9 @@
 package org.telegram.ui.Cells;
 
 import android.view.animation.Interpolator;
-import org.telegram.messenger.vl;
+import org.telegram.messenger.ul;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class l2 implements Interpolator {
     public final /* synthetic */ int a;
@@ -20,7 +20,7 @@ public final class l2 implements Interpolator {
                     return (f7 / 0.33f) * 0.1f;
                 }
                 float f10 = f7 - 0.33f;
-                return f10 < 0.33f ? vl.c(f10, 0.34f, 0.15f, 0.1f) : (((f10 - 0.34f) / 0.33f) * 0.05f) - 0.05f;
+                return f10 < 0.33f ? ul.c(f10, 0.34f, 0.15f, 0.1f) : (((f10 - 0.34f) / 0.33f) * 0.05f) - 0.05f;
             case 1:
                 return f7 * f7 * f7 * f7 * f7;
             case 2:

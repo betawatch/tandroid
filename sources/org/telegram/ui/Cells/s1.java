@@ -15,10 +15,10 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.RichMessageLayout;
-import org.telegram.ui.Components.lz;
-import org.telegram.ui.uj0;
+import org.telegram.ui.Components.mz;
+import org.telegram.ui.oj0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class s1 {
     public boolean A;
@@ -74,7 +74,7 @@ public final class s1 {
     public boolean N1;
     public boolean N2;
     public int O;
-    public org.telegram.ui.Components.t5 O0;
+    public org.telegram.ui.Components.v5 O0;
     public int O1;
     public boolean O2;
     public int P;
@@ -88,7 +88,7 @@ public final class s1 {
     public StaticLayout R0;
     public boolean R2;
     public boolean S;
-    public org.telegram.ui.Components.t5 S0;
+    public org.telegram.ui.Components.v5 S0;
     public float S1;
     public int S2;
     public StaticLayout T;
@@ -177,7 +177,7 @@ public final class s1 {
     public float l0;
     public boolean l1;
     public boolean l2;
-    public org.telegram.ui.Components.t5 l3;
+    public org.telegram.ui.Components.v5 l3;
     public StaticLayout m;
     public float m0;
     public boolean m1;
@@ -297,7 +297,7 @@ public final class s1 {
         StaticLayout staticLayout;
         o0 o0Var;
         RichMessageLayout richMessageLayout;
-        org.telegram.ui.Components.v5 v5Var;
+        org.telegram.ui.Components.x5 x5Var;
         t1 t1Var = this.m3;
         zg.q0 q0Var = t1Var.N;
         ArrayList arrayList = t1Var.o7;
@@ -326,18 +326,18 @@ public final class s1 {
                     String charSequence = t1Var.y7.textLayoutBlocks.get(i14).textLayout == null ? null : t1Var.y7.textLayoutBlocks.get(i14).textLayout.getText().toString();
                     String charSequence2 = ((MessageObject.TextLayoutBlock) this.I0.get(i14)).textLayout == null ? null : ((MessageObject.TextLayoutBlock) this.I0.get(i14)).textLayout.getText().toString();
                     if ((charSequence != null || charSequence2 == null) && ((charSequence == null || charSequence2 != null) && charSequence.equals(charSequence2))) {
-                        org.telegram.ui.Components.t5 t5Var = t1Var.pc;
-                        if (t5Var != null) {
+                        org.telegram.ui.Components.v5 v5Var = t1Var.pc;
+                        if (v5Var != null) {
                             StaticLayout staticLayout2 = t1Var.y7.textLayoutBlocks.get(i14).textLayout;
                             StaticLayout staticLayout3 = ((MessageObject.TextLayoutBlock) this.I0.get(i14)).textLayout;
-                            HashMap hashMap = t5Var.b;
-                            if (staticLayout3 != null && (v5Var = (org.telegram.ui.Components.v5) hashMap.remove(staticLayout3)) != null) {
-                                ArrayList arrayList4 = v5Var.b;
-                                v5Var.a = staticLayout2;
+                            HashMap hashMap = v5Var.b;
+                            if (staticLayout3 != null && (x5Var = (org.telegram.ui.Components.x5) hashMap.remove(staticLayout3)) != null) {
+                                ArrayList arrayList4 = x5Var.b;
+                                x5Var.a = staticLayout2;
                                 for (int i15 = 0; i15 < arrayList4.size(); i15++) {
-                                    ((org.telegram.ui.Components.s5) arrayList4.get(i15)).c = staticLayout2;
+                                    ((org.telegram.ui.Components.u5) arrayList4.get(i15)).c = staticLayout2;
                                 }
-                                hashMap.put(staticLayout2, v5Var);
+                                hashMap.put(staticLayout2, x5Var);
                             }
                         }
                     }
@@ -347,11 +347,11 @@ public final class s1 {
                     ArrayList arrayList5 = this.I0;
                     this.H0 = arrayList5;
                     this.N0 = this.o2;
-                    this.O0 = org.telegram.ui.Components.x5.update(0, (View) t1Var, this.O0, (ArrayList<MessageObject.TextLayoutBlock>) arrayList5, true);
-                    t1Var.pc = org.telegram.ui.Components.x5.update(0, t1Var, t1Var.pc, t1Var.y7.textLayoutBlocks);
+                    this.O0 = org.telegram.ui.Components.z5.update(0, (View) t1Var, this.O0, (ArrayList<MessageObject.TextLayoutBlock>) arrayList5, true);
+                    t1Var.pc = org.telegram.ui.Components.z5.update(0, t1Var, t1Var.pc, t1Var.y7.textLayoutBlocks);
                     z10 = true;
                 } else {
-                    t1Var.pc = org.telegram.ui.Components.x5.update(0, t1Var, t1Var.pc, t1Var.y7.textLayoutBlocks);
+                    t1Var.pc = org.telegram.ui.Components.z5.update(0, t1Var, t1Var.pc, t1Var.y7.textLayoutBlocks);
                 }
             }
             z16 = false;
@@ -365,8 +365,8 @@ public final class s1 {
         }
         this.K0 = false;
         if (richMessageLayout2 != this.M0) {
-            uj0 uj0Var = t1Var.ie;
-            boolean z17 = uj0Var != null && uj0Var.h;
+            oj0 oj0Var = t1Var.ie;
+            boolean z17 = oj0Var != null && oj0Var.h;
             RichMessageLayout richMessageLayout3 = this.L0;
             if (richMessageLayout3 != null) {
                 richMessageLayout3.detach(t1Var);
@@ -405,7 +405,7 @@ public final class s1 {
                 StaticLayout staticLayout6 = this.E2;
                 this.R0 = staticLayout6;
                 this.J2 = this.I2;
-                this.S0 = org.telegram.ui.Components.x5.update(0, (View) t1Var, false, this.S0, true, staticLayout6);
+                this.S0 = org.telegram.ui.Components.z5.update(0, (View) t1Var, false, this.S0, true, staticLayout6);
                 z10 = true;
             }
         }
@@ -416,15 +416,15 @@ public final class s1 {
             int indexOf = text2.toString().indexOf(string);
             if (indexOf >= 0) {
                 if (indexOf == 0) {
-                    TextPaint textPaint = org.telegram.ui.ActionBar.i6.T2;
+                    TextPaint textPaint = org.telegram.ui.ActionBar.h6.T2;
                     int dp = AndroidUtilities.dp(100.0f) + t1Var.qb;
                     Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
                     this.U0 = new StaticLayout(string, textPaint, dp, alignment, 1.0f, 0.0f, false);
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                     spannableStringBuilder.append((CharSequence) string);
                     spannableStringBuilder.append(text2.subSequence(string.length(), text2.length()));
-                    spannableStringBuilder.setSpan(new lz(z13), 0, string.length(), 0);
-                    this.V0 = new StaticLayout(spannableStringBuilder, org.telegram.ui.ActionBar.i6.T2, AndroidUtilities.dp(100.0f) + t1Var.qb, alignment, 1.0f, 0.0f, false);
+                    spannableStringBuilder.setSpan(new mz(z13), 0, string.length(), 0);
+                    this.V0 = new StaticLayout(spannableStringBuilder, org.telegram.ui.ActionBar.h6.T2, AndroidUtilities.dp(100.0f) + t1Var.qb, alignment, 1.0f, 0.0f, false);
                     this.Y0 = t1Var.pb - this.X0;
                 } else {
                     this.Y0 = 0;
@@ -556,10 +556,10 @@ public final class s1 {
             this.a1 = true;
             MessageObject.TextLayoutBlocks textLayoutBlocks6 = this.c1;
             this.b1 = textLayoutBlocks6;
-            this.O0 = org.telegram.ui.Components.x5.update(0, t1Var, (org.telegram.ui.Components.t5) null, textLayoutBlocks6 == null ? null : textLayoutBlocks6.textLayoutBlocks);
-            org.telegram.ui.Components.t5 t5Var2 = t1Var.pc;
+            this.O0 = org.telegram.ui.Components.z5.update(0, t1Var, (org.telegram.ui.Components.v5) null, textLayoutBlocks6 == null ? null : textLayoutBlocks6.textLayoutBlocks);
+            org.telegram.ui.Components.v5 v5Var2 = t1Var.pc;
             MessageObject.TextLayoutBlocks textLayoutBlocks7 = t1Var.c4;
-            t1Var.pc = org.telegram.ui.Components.x5.update(0, t1Var, t5Var2, textLayoutBlocks7 == null ? null : textLayoutBlocks7.textLayoutBlocks);
+            t1Var.pc = org.telegram.ui.Components.z5.update(0, t1Var, v5Var2, textLayoutBlocks7 == null ? null : textLayoutBlocks7.textLayoutBlocks);
             if (this.E0 != t1Var.G8 || this.d1 != z19) {
                 this.s0 = true;
                 this.q0 = this.e;
@@ -768,7 +768,7 @@ public final class s1 {
                         return z10;
                     }
                     this.k3 = staticLayout;
-                    this.l3 = org.telegram.ui.Components.x5.update(0, (View) t1Var, false, this.l3, staticLayout);
+                    this.l3 = org.telegram.ui.Components.z5.update(0, (View) t1Var, false, this.l3, staticLayout);
                     return true;
                 }
                 this.t2 = true;
@@ -918,9 +918,9 @@ public final class s1 {
         this.c = l4Var.getImageWidth();
         this.d = l4Var.getImageHeight();
         System.arraycopy(l4Var.getRoundRadius(), 0, this.t0, 0, 4);
-        org.telegram.ui.ActionBar.f5 f5Var = t1Var.t8;
-        if (f5Var != null) {
-            this.D0.set(f5Var.getBounds());
+        org.telegram.ui.ActionBar.e5 e5Var = t1Var.t8;
+        if (e5Var != null) {
+            this.D0.set(e5Var.getBounds());
         }
         this.E0 = t1Var.G8;
         MessageObject messageObject = t1Var.y7;
@@ -994,9 +994,9 @@ public final class s1 {
         this.H2 = i10;
         this.C2 = t1Var.gb;
         this.i1 = t1Var.getCurrentBackgroundLeft();
-        org.telegram.ui.ActionBar.f5 f5Var2 = t1Var.t8;
-        if (f5Var2 != null) {
-            this.j1 = f5Var2.getBounds().right;
+        org.telegram.ui.ActionBar.e5 e5Var2 = t1Var.t8;
+        if (e5Var2 != null) {
+            this.j1 = e5Var2.getBounds().right;
         }
         MessageObject messageObject4 = t1Var.y7;
         this.o2 = messageObject4 != null ? messageObject4.textXOffset : 0.0f;
@@ -1090,7 +1090,7 @@ public final class s1 {
         this.a1 = false;
         this.C0 = false;
         this.b1 = null;
-        org.telegram.ui.Components.x5.release(t1Var, this.O0);
+        org.telegram.ui.Components.z5.release(t1Var, this.O0);
         this.O0 = null;
         this.s0 = false;
         this.J1 = false;
@@ -1151,6 +1151,6 @@ public final class s1 {
             ((zg.n0) arrayList.get(i11)).c = 0;
         }
         this.k3 = null;
-        org.telegram.ui.Components.x5.release(t1Var, this.l3);
+        org.telegram.ui.Components.z5.release(t1Var, this.l3);
     }
 }

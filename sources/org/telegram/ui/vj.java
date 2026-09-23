@@ -1,48 +1,25 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vj implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ wj b;
+public final class vj extends g.p {
+    public final /* synthetic */ xn c;
 
-    public /* synthetic */ vj(wj wjVar, int i10) {
-        this.a = i10;
-        this.b = wjVar;
+    public vj(xn xnVar) {
+        this.c = xnVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                wj wjVar = this.b;
-                wjVar.W = null;
-                bo boVar = wjVar.X;
-                if (boVar.H9 != -1) {
-                    boVar.getNotificationCenter().onAnimationFinish(boVar.H9);
-                    boVar.H9 = -1;
-                }
-                if (BuildVars.LOGS_ENABLED) {
-                    FileLog.d("chatItemAnimator enable notifications");
-                    break;
-                }
-                break;
-            default:
-                wj wjVar2 = this.b;
-                wjVar2.W = null;
-                bo boVar2 = wjVar2.X;
-                if (boVar2.H9 != -1) {
-                    boVar2.getNotificationCenter().onAnimationFinish(boVar2.H9);
-                    boVar2.H9 = -1;
-                }
-                if (BuildVars.LOGS_ENABLED) {
-                    FileLog.d("chatItemAnimator enable notifications");
-                    break;
-                }
-                break;
-        }
+    @Override // g.p
+    public final int i(int i10) {
+        int i11;
+        MessageObject messageObject;
+        MessageObject.GroupedMessages X8;
+        xn xnVar = this.c;
+        km kmVar = xnVar.A0;
+        int i12 = kmVar.J;
+        return (i10 < i12 || i10 >= kmVar.K || (i11 = i10 - i12) < 0 || i11 >= kmVar.L().size() || (X8 = xnVar.X8((messageObject = (MessageObject) xnVar.A0.L().get(i11)))) == null) ? MediaDataController.MAX_STYLE_RUNS_COUNT : X8.getPosition(messageObject).spanSize;
     }
 }

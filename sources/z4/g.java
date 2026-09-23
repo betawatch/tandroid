@@ -1,6 +1,6 @@
 package z4;
 
-import ai.f6;
+import ai.e6;
 import ai.ma;
 import ai.zb;
 import android.R;
@@ -38,7 +38,7 @@ import r0.a0;
 import r0.i0;
 import s4.d1;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public class g extends ViewGroup {
     public static final int[] s0 = {R.attr.layout_gravity};
@@ -834,12 +834,12 @@ public class g extends ViewGroup {
                         if (!maVar.d) {
                             maVar.a(true);
                             if (zbVar.x0 != null) {
-                                f6 f6Var = maVar.a;
+                                e6 e6Var = maVar.a;
                                 long j3 = maVar.b;
                                 ArrayList arrayList2 = maVar.c;
-                                f6Var.B1 = j3;
-                                f6Var.z1 = arrayList2;
-                                f6Var.o0(-1);
+                                e6Var.B1 = j3;
+                                e6Var.z1 = arrayList2;
+                                e6Var.o0(-1);
                             } else {
                                 maVar.a.U0(-1, maVar.b);
                             }

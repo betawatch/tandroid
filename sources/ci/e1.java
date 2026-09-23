@@ -3,41 +3,41 @@ package ci;
 import android.animation.ValueAnimator;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e1 implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ t2 b;
+    public final /* synthetic */ s2 b;
 
-    public /* synthetic */ e1(t2 t2Var, int i10) {
+    public /* synthetic */ e1(s2 s2Var, int i10) {
         this.a = i10;
-        this.b = t2Var;
+        this.b = s2Var;
     }
 
     @Override // org.telegram.messenger.Utilities.Callback
     public final void run(Object obj) {
         int i10 = this.a;
-        t2 t2Var = this.b;
+        s2 s2Var = this.b;
         Integer num = (Integer) obj;
         switch (i10) {
             case 0:
-                t2.m(t2Var);
+                s2.m(s2Var);
                 break;
             case 1:
-                i1 i1Var = t2Var.f;
+                i1 i1Var = s2Var.f;
                 ValueAnimator valueAnimator = i1Var.Q;
                 if ((valueAnimator == null || !valueAnimator.isRunning()) && i1Var.getCurrentPosition() != num.intValue()) {
                     i1Var.D(num.intValue());
-                    s2 s2Var = t2Var.h;
-                    s2Var.F = num.intValue();
-                    s2Var.invalidate();
+                    r2 r2Var = s2Var.h;
+                    r2Var.F = num.intValue();
+                    r2Var.invalidate();
                     break;
                 }
                 break;
             default:
                 int intValue = num.intValue();
-                int i11 = t2.G;
-                t2Var.p0(intValue);
+                int i11 = s2.G;
+                s2Var.p0(intValue);
                 break;
         }
     }

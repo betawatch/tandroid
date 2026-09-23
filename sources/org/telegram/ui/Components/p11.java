@@ -1,64 +1,25 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.ThemeEditorView;
+import android.util.SparseIntArray;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class p11 extends FrameLayout {
-    public final ImageView a;
-    public final n11 b;
-    public final /* synthetic */ ThemeEditorView.EditorAlert c;
+public final class p11 extends org.telegram.ui.ActionBar.e5 {
+    public final /* synthetic */ SparseIntArray R;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p11(ThemeEditorView.EditorAlert editorAlert, Context context) {
-        super(context);
-        this.c = editorAlert;
-        View view = new View(context);
-        view.setBackgroundDrawable(org.telegram.ui.ActionBar.i6.b0(AndroidUtilities.dp(18.0f), -854795));
-        addView(view, w7.x5.d(-1, 36.0f, 51, 14.0f, 11.0f, 14.0f, 0.0f));
-        ImageView imageView = new ImageView(context);
-        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
-        imageView.setScaleType(scaleType);
-        imageView.setImageResource(R.drawable.smiles_inputsearch);
-        imageView.setColorFilter(new PorterDuffColorFilter(-6182737, PorterDuff.Mode.MULTIPLY));
-        addView(imageView, w7.x5.d(36, 36.0f, 51, 16.0f, 11.0f, 0.0f, 0.0f));
-        ImageView imageView2 = new ImageView(context);
-        this.a = imageView2;
-        imageView2.setScaleType(scaleType);
-        m11 m11Var = new m11();
-        imageView2.setImageDrawable(m11Var);
-        m11Var.f = AndroidUtilities.dp(7.0f);
-        imageView2.setScaleX(0.1f);
-        imageView2.setScaleY(0.1f);
-        imageView2.setAlpha(0.0f);
-        addView(imageView2, w7.x5.d(36, 36.0f, 53, 14.0f, 11.0f, 14.0f, 0.0f));
-        imageView2.setOnClickListener(new x70(this, 21));
-        n11 n11Var = new n11(this, context);
-        this.b = n11Var;
-        n11Var.setTextSize(1, 16.0f);
-        n11Var.setHintTextColor(-6774617);
-        n11Var.setTextColor(-14540254);
-        n11Var.setBackgroundDrawable(null);
-        n11Var.setPadding(0, 0, 0, 0);
-        n11Var.setMaxLines(1);
-        n11Var.setLines(1);
-        n11Var.setSingleLine(true);
-        n11Var.setImeOptions(268435459);
-        n11Var.setHint(LocaleController.getString(R.string.Search));
-        n11Var.setCursorColor(-11491093);
-        n11Var.setCursorSize(AndroidUtilities.dp(20.0f));
-        n11Var.setCursorWidth(1.5f);
-        addView(n11Var, w7.x5.d(-1, 40.0f, 51, 54.0f, 9.0f, 46.0f, 0.0f));
-        n11Var.addTextChangedListener(new o11(this));
-        n11Var.setOnEditorActionListener(new e1(this, 9));
+    public p11(boolean z10, SparseIntArray sparseIntArray) {
+        super(2, z10, false, null);
+        this.R = sparseIntArray;
+    }
+
+    @Override // org.telegram.ui.ActionBar.e5
+    public final int g(int i10) {
+        return this.R.get(i10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.e5
+    public final int h(int i10) {
+        return this.R.get(i10);
     }
 }

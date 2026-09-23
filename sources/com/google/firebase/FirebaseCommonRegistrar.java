@@ -8,19 +8,18 @@ import com.google.firebase.components.ComponentRegistrar;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executor;
-import k2.v;
 import k9.h;
 import na.c;
-import na.d;
 import na.e;
 import na.f;
 import q9.a;
 import q9.j;
 import q9.r;
+import v3.d;
 import w7.o8;
 import xa.b;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public class FirebaseCommonRegistrar implements ComponentRegistrar {
     public static /* synthetic */ String a(Context context) {
@@ -38,16 +37,17 @@ public class FirebaseCommonRegistrar implements ComponentRegistrar {
         ArrayList arrayList = new ArrayList();
         i0 a2 = a.a(b.class);
         a2.a(new j(2, 0, xa.a.class));
-        a2.f = new t0.a(22);
+        int i10 = 7;
+        a2.f = new d(i10);
         arrayList.add(a2.b());
         r rVar = new r(m9.a.class, Executor.class);
         i0 i0Var = new i0(c.class, new Class[]{e.class, f.class});
         i0Var.a(j.a(Context.class));
         i0Var.a(j.a(h.class));
-        i0Var.a(new j(2, 0, d.class));
+        i0Var.a(new j(2, 0, na.d.class));
         i0Var.a(new j(1, 1, b.class));
         i0Var.a(new j(rVar, 1, 0));
-        i0Var.f = new v(rVar, 6);
+        i0Var.f = new le.b(rVar, i10);
         arrayList.add(i0Var.b());
         arrayList.add(o8.a("fire-android", String.valueOf(Build.VERSION.SDK_INT)));
         arrayList.add(o8.a("fire-core", "20.4.2"));

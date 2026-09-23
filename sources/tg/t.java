@@ -1,9 +1,9 @@
 package tg;
 
-import ai.t5;
+import ai.s5;
 import android.text.TextUtils;
 import android.util.Pair;
-import ci.kd;
+import ci.hd;
 import ei.k3;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.n2;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public abstract class t {
     public static HashMap a;
@@ -37,7 +37,7 @@ public abstract class t {
         tL_premium_applyBoost.peer = messagesController.getInputPeer(-j3);
         tL_premium_applyBoost.flags |= 1;
         tL_premium_applyBoost.slots.addAll(list);
-        connectionsManager.sendRequest(tL_premium_applyBoost, new t5(callback2, messagesController, callback), 66);
+        connectionsManager.sendRequest(tL_premium_applyBoost, new s5(callback2, messagesController, callback), 66);
     }
 
     public static ArrayList b(int i10, List list) {
@@ -218,7 +218,7 @@ public abstract class t {
             tL_payments_getPaymentForm.flags |= 1;
         }
         tL_payments_getPaymentForm.invoice = tL_inputInvoicePremiumGiftCode;
-        connectionsManager2.sendRequest(tL_payments_getPaymentForm, new kd(callback2, messagesController2, tL_inputInvoicePremiumGiftCode, n2Var, callback, 13));
+        connectionsManager2.sendRequest(tL_payments_getPaymentForm, new hd(callback2, messagesController2, tL_inputInvoicePremiumGiftCode, n2Var, callback, 13));
     }
 
     public static int l(long j3) {

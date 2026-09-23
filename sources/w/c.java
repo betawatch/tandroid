@@ -1,6 +1,5 @@
 package w;
 
-import ai.f3;
 import android.os.Bundle;
 import android.os.Parcel;
 import e9.f0;
@@ -12,18 +11,18 @@ import java.util.HashMap;
 import n4.y;
 import org.telegram.messenger.AndroidUtilities;
 import x7.z;
+import z3.l;
 import z3.m;
-import z3.n;
 import z7.s;
 import z7.w;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class c {
-    public static z3.c a(n nVar, byte[] bArr, int i10) {
+    public static z3.b a(m mVar, byte[] bArr, int i10) {
         f0 u10 = i0.u();
-        nVar.B(bArr, 0, i10, m.c, new f3(u10, 10));
-        return new z3.c(u10.i());
+        mVar.B(bArr, 0, i10, l.c, new r5.d(u10, 29));
+        return new z3.b(u10.i());
     }
 
     public static int b(String str) {

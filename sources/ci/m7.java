@@ -1,35 +1,55 @@
 package ci;
 
+import android.animation.ValueAnimator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class m7 implements Runnable {
+public final /* synthetic */ class m7 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ q7 b;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ float d;
+    public final /* synthetic */ float e;
+    public final /* synthetic */ Object f;
 
-    public /* synthetic */ m7(q7 q7Var, int i10) {
+    public /* synthetic */ m7(Object obj, float f7, float f10, float f11, float f12, int i10) {
         this.a = i10;
-        this.b = q7Var;
+        this.f = obj;
+        this.b = f7;
+        this.c = f10;
+        this.d = f11;
+        this.e = f12;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                this.b.c();
+                p pVar = (p) this.f;
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                n7 n7Var = pVar.a;
+                float f7 = this.b;
+                float f10 = this.c;
+                n7Var.setScaleX(AndroidUtilities.lerp(f7, f10, floatValue));
+                n7Var.setScaleY(AndroidUtilities.lerp(f7, f10, floatValue));
+                n7Var.setTranslationX(this.d * floatValue);
+                n7Var.setTranslationY(this.e * floatValue);
+                float f11 = 1.0f - floatValue;
+                n7Var.setAlpha(f11);
+                pVar.s = f11;
+                pVar.invalidate();
                 break;
             default:
-                q7 q7Var = this.b;
-                q7Var.a.animate().scaleX(1.0f).scaleY(1.0f).setInterpolator(qr.h).setDuration(280L).start();
-                q7Var.c = System.currentTimeMillis();
-                q7Var.invalidate();
-                try {
-                    q7Var.performHapticFeedback(3);
-                } catch (Exception unused) {
-                }
-                AndroidUtilities.runOnUIThread(q7Var.h, 59500L);
+                ig.j jVar = (ig.j) this.f;
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                float f12 = this.c;
+                float f13 = this.b;
+                jVar.k = com.google.android.gms.internal.vision.e2.z(f12, f13, floatValue2, f13);
+                float f14 = this.e;
+                float f15 = this.d;
+                jVar.l = com.google.android.gms.internal.vision.e2.z(f14, f15, floatValue2, f15);
+                jVar.a.a(f12, f14, false);
                 break;
         }
     }

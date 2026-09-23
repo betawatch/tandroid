@@ -7,48 +7,48 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.Components.f20;
-import org.telegram.ui.Components.m30;
-import org.telegram.ui.Components.vc;
-import org.telegram.ui.Components.zk0;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.Components.al0;
+import org.telegram.ui.Components.g20;
+import org.telegram.ui.Components.n30;
+import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class c implements zk0 {
-    public final /* synthetic */ e6 a;
+public final class c implements al0 {
+    public final /* synthetic */ d6 a;
     public final /* synthetic */ Context b;
     public final /* synthetic */ f c;
 
-    public c(Context context, e6 e6Var, f fVar) {
+    public c(Context context, d6 d6Var, f fVar) {
         this.c = fVar;
-        this.a = e6Var;
+        this.a = d6Var;
         this.b = context;
     }
 
-    @Override // org.telegram.ui.Components.zk0
+    @Override // org.telegram.ui.Components.al0
     public final void d(int i10, View view) {
         TLRPC.TL_help_country tL_help_country;
         f fVar = this.c;
-        f20 f20Var = fVar.h0;
+        g20 g20Var = fVar.h0;
         HashMap hashMap = fVar.j0;
         if (i10 == 0 || (tL_help_country = (TLRPC.TL_help_country) fVar.d0.G(i10 - 1).G) == null) {
             return;
         }
         boolean z10 = false;
         if (hashMap.containsKey(tL_help_country.iso2)) {
-            f20Var.c((m30) hashMap.remove(tL_help_country.iso2));
+            g20Var.c((n30) hashMap.remove(tL_help_country.iso2));
         } else {
             int size = hashMap.size();
             int i11 = fVar.m0;
             if (size >= i11) {
-                new vc(fVar.n0, this.a).Q(R.raw.info, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.PollV2YouCanAddXCountriesOnly, Integer.valueOf(i11)))).j();
+                new xc(fVar.n0, this.a).Q(R.raw.info, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.PollV2YouCanAddXCountriesOnly, Integer.valueOf(i11)))).j();
                 return;
             }
-            m30 m30Var = new m30(this.b, tL_help_country);
-            m30Var.setOnClickListener(new a(fVar, 4));
-            f20Var.a(m30Var);
-            hashMap.put(tL_help_country.iso2, m30Var);
+            n30 n30Var = new n30(this.b, tL_help_country);
+            n30Var.setOnClickListener(new a(fVar, 4));
+            g20Var.a(n30Var);
+            hashMap.put(tL_help_country.iso2, n30Var);
             z10 = true;
         }
         if (view instanceof xg.b) {

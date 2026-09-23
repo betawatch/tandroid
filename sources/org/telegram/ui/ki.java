@@ -1,82 +1,88 @@
 package org.telegram.ui;
 
+import android.graphics.Rect;
+import android.view.MotionEvent;
 import android.view.View;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class ki implements org.telegram.ui.Components.cl0 {
-    public final /* synthetic */ bo a;
+public final class ki implements View.OnTouchListener {
+    public final /* synthetic */ int a;
+    public final int[] b;
+    public final /* synthetic */ Rect c;
+    public final /* synthetic */ Object d;
 
-    public ki(bo boVar) {
-        this.a = boVar;
+    public ki(f60 f60Var, Rect rect) {
+        this.a = 1;
+        this.d = f60Var;
+        this.c = rect;
+        this.b = new int[2];
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0094  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x0083  */
-    @Override // org.telegram.ui.Components.cl0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean c(float f7, float f10, int i10, View view) {
-        boolean z10;
-        boolean z11;
-        org.telegram.ui.ActionBar.k kVar;
-        View view2;
-        boolean z12;
-        bo boVar = this.a;
-        um umVar = boVar.c9;
-        if ((umVar == null || !umVar.z) && !boVar.b9()) {
-            z10 = ((org.telegram.ui.ActionBar.n2) boVar).inPreviewMode;
-            if (!z10 && !boVar.Oa) {
-                boVar.D4 = true;
-                if (view instanceof org.telegram.ui.Cells.w0) {
-                    org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) view;
-                    MessageObject messageObject = w0Var.getMessageObject();
-                    if (messageObject != null) {
-                        if (!(messageObject.messageOwner.action instanceof TLRPC.TL_messageActionSetMessagesTTL) && w0Var.getMessageObject().type != 21 && !w0Var.getMessageObject().isWallpaperAction() && w0Var.getMessageObject().type != 30) {
-                            z11 = false;
-                            kVar = ((org.telegram.ui.ActionBar.n2) boVar).actionBar;
-                            if (!kVar.s() || (boVar.A9() && !z11)) {
-                                view2 = view;
-                                bo.b2(boVar, view2, view2 instanceof org.telegram.ui.Cells.t1 ? !((org.telegram.ui.Cells.t1) view2).i3(f7) : false, f7, f10);
-                                z12 = true;
-                            } else {
-                                view2 = view;
-                                z12 = boVar.I7(view2, false, true, f7, f10, true, true, false);
-                            }
-                            if (view2 instanceof org.telegram.ui.Cells.t1) {
-                                org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) view2;
-                                if (t1Var.getMessageObject() != null && t1Var.getMessageObject().type != 27) {
-                                    bo.c2(boVar, i10);
-                                    return true;
-                                }
-                            }
-                            return z12;
+    @Override // android.view.View.OnTouchListener
+    public final boolean onTouch(View view, MotionEvent motionEvent) {
+        f50 f50Var;
+        switch (this.a) {
+            case 0:
+                xn xnVar = (xn) this.d;
+                if (motionEvent.getActionMasked() != 0) {
+                    if (motionEvent.getActionMasked() == 4) {
+                        xnVar.A7(true);
+                        break;
+                    }
+                } else {
+                    org.telegram.ui.ActionBar.n1 n1Var = xnVar.Q8;
+                    if (n1Var != null && n1Var.isShowing()) {
+                        View contentView = xnVar.Q8.getContentView();
+                        int[] iArr = this.b;
+                        contentView.getLocationInWindow(iArr);
+                        int i10 = iArr[0];
+                        int i11 = iArr[1];
+                        int measuredWidth = contentView.getMeasuredWidth() + i10;
+                        int measuredHeight = contentView.getMeasuredHeight() + iArr[1];
+                        Rect rect = this.c;
+                        rect.set(i10, i11, measuredWidth, measuredHeight);
+                        if (!rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                            xnVar.A7(true);
+                            break;
                         }
                     }
                 }
-                z11 = true;
-                kVar = ((org.telegram.ui.ActionBar.n2) boVar).actionBar;
-                if (kVar.s()) {
+                break;
+            default:
+                f60 f60Var = (f60) this.d;
+                if (motionEvent.getActionMasked() != 0) {
+                    if (motionEvent.getActionMasked() == 4 && (f50Var = f60Var.f3) != null && f50Var.isShowing()) {
+                        f60Var.f3.dismiss();
+                        break;
+                    }
+                } else {
+                    f50 f50Var2 = f60Var.f3;
+                    if (f50Var2 != null && f50Var2.isShowing()) {
+                        View contentView2 = f60Var.f3.getContentView();
+                        int[] iArr2 = this.b;
+                        contentView2.getLocationInWindow(iArr2);
+                        int i12 = iArr2[0];
+                        int i13 = iArr2[1];
+                        int measuredWidth2 = contentView2.getMeasuredWidth() + i12;
+                        int measuredHeight2 = contentView2.getMeasuredHeight() + iArr2[1];
+                        Rect rect2 = this.c;
+                        rect2.set(i12, i13, measuredWidth2, measuredHeight2);
+                        if (!rect2.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                            f60Var.f3.dismiss();
+                            break;
+                        }
+                    }
                 }
-                view2 = view;
-                bo.b2(boVar, view2, view2 instanceof org.telegram.ui.Cells.t1 ? !((org.telegram.ui.Cells.t1) view2).i3(f7) : false, f7, f10);
-                z12 = true;
-                if (view2 instanceof org.telegram.ui.Cells.t1) {
-                }
-                return z12;
-            }
+                break;
         }
         return false;
     }
 
-    @Override // org.telegram.ui.Components.cl0
-    public final /* synthetic */ void g() {
-    }
-
-    @Override // org.telegram.ui.Components.cl0
-    public final /* synthetic */ void q(float f7) {
+    public ki(xn xnVar, Rect rect) {
+        this.a = 0;
+        this.d = xnVar;
+        this.c = rect;
+        this.b = new int[2];
     }
 }

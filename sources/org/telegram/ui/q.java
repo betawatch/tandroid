@@ -3,30 +3,30 @@ package org.telegram.ui;
 import android.animation.ValueAnimator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ h4 b;
+    public final /* synthetic */ i4 b;
 
-    public /* synthetic */ q(h4 h4Var, int i10) {
+    public /* synthetic */ q(i4 i4Var, int i10) {
         this.a = i10;
-        this.b = h4Var;
+        this.b = i4Var;
     }
 
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                h4 h4Var = this.b;
-                h4Var.getClass();
-                h4Var.X(((Integer) valueAnimator.getAnimatedValue()).intValue());
+                i4 i4Var = this.b;
+                i4Var.getClass();
+                i4Var.X(((Integer) valueAnimator.getAnimatedValue()).intValue());
                 break;
             default:
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                h4 h4Var2 = this.b;
-                h4Var2.Y0 = floatValue;
-                h4Var2.q0.setTranslationY(((1.0f - floatValue) * AndroidUtilities.dp(51.0f)) + h4Var2.p0);
+                i4 i4Var2 = this.b;
+                i4Var2.Y0 = floatValue;
+                i4Var2.q0.setTranslationY(((1.0f - floatValue) * AndroidUtilities.dp(51.0f)) + i4Var2.p0);
                 break;
         }
     }

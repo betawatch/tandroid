@@ -1,75 +1,81 @@
 package org.telegram.ui;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
-import android.util.SparseIntArray;
-import java.util.ArrayList;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class e61 extends j61 {
-    public final /* synthetic */ int f3;
-    public final /* synthetic */ h71 g3;
+public final class e61 extends FrameLayout {
+    public final TextView a;
+    public final org.telegram.ui.Components.bj0 b;
+    public final ImageView c;
+    public float d;
+    public ValueAnimator e;
+    public final /* synthetic */ z61 f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e61(h71 h71Var, Context context, int i10) {
-        super(h71Var, context);
-        this.g3 = h71Var;
-        this.f3 = i10;
+    public e61(z61 z61Var, Context context, boolean z10) {
+        super(context);
+        this.f = z61Var;
+        LinearLayout f7 = org.telegram.messenger.ul.f(context, 0);
+        addView(f7, w7.x5.e(-2, -2, z10 ? 3 : 17));
+        org.telegram.ui.Components.bj0 bj0Var = new org.telegram.ui.Components.bj0(context);
+        this.b = bj0Var;
+        bj0Var.f(R.raw.unlock_icon, 20, 20, null);
+        int i10 = org.telegram.ui.ActionBar.h6.Te;
+        org.telegram.ui.ActionBar.d6 d6Var = z61Var.Z0;
+        bj0Var.setColorFilter(org.telegram.ui.ActionBar.h6.v0(i10, d6Var));
+        f7.addView(bj0Var, w7.x5.n(20, 20));
+        TextView textView = new TextView(context);
+        this.a = textView;
+        textView.setTextColor(org.telegram.ui.ActionBar.h6.v0(i10, d6Var));
+        textView.setTypeface(AndroidUtilities.bold());
+        textView.setTextSize(1, 14.0f);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        textView.setLines(1);
+        textView.setMaxLines(1);
+        textView.setSingleLine(true);
+        f7.addView(textView, w7.x5.q(-2, -2, 17));
+        ImageView imageView = new ImageView(context);
+        this.c = imageView;
+        imageView.setImageResource(R.drawable.msg_close);
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Ve, d6Var), PorterDuff.Mode.MULTIPLY));
+        addView(imageView, w7.x5.e(24, 24, 21));
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView
-    public final void j0(int i10) {
-        h71 h71Var = this.g3;
-        y51 y51Var = h71Var.f0;
-        if (i10 == 0) {
-            h71Var.w1 = false;
-            if (h71Var.a == -1 || y51Var.getVisibility() != 0 || y51Var.getTranslationY() <= (-AndroidUtilities.dp(51.0f))) {
-                return;
-            }
-            h71.a(h71Var, y51Var.getTranslationY() > ((float) (-AndroidUtilities.dp(16.0f))) ? 0 : 1, 0);
-        }
+    public final void a(String str, boolean z10) {
+        this.a.setText(str);
+        b(z10);
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView
-    public final void k0(int i10, int i11) {
-        int i12;
-        h71 h71Var = this.g3;
-        h71Var.h();
-        if (!h71Var.w1) {
-            int I0 = h71Var.r0.I0();
-            ArrayList arrayList = h71Var.D0;
-            SparseIntArray sparseIntArray = h71Var.w0;
-            if (I0 != -1) {
-                if (I0 > ((arrayList.size() <= 40 || h71Var.C0) ? arrayList.size() + (h71Var.N0 ? 1 : 0) : 40) && I0 > h71Var.I0.size()) {
-                    int i13 = 0;
-                    while (true) {
-                        if (i13 >= sparseIntArray.size()) {
-                            break;
-                        }
-                        int keyAt = sparseIntArray.keyAt(i13);
-                        int valueAt = sparseIntArray.valueAt(i13);
-                        org.telegram.ui.Components.wx wxVar = valueAt >= 0 ? (org.telegram.ui.Components.wx) h71Var.M0.get(valueAt) : null;
-                        if (wxVar != null) {
-                            boolean z10 = wxVar.h;
-                            int size = wxVar.c.size();
-                            if (!z10) {
-                                size = Math.min(24, size);
-                            }
-                            if (I0 > keyAt && I0 <= keyAt + 1 + size) {
-                                org.telegram.ui.Components.cw cwVar = h71Var.d0;
-                                cwVar.j(((cwVar.E == null || !cwVar.b0) ? 0 : 1) + (cwVar.y != null ? 1 : 0) + valueAt, true);
-                            }
-                        }
-                        i13++;
-                    }
-                } else {
-                    h71Var.d0.j(0, true);
-                }
-            }
+    public final void b(boolean z10) {
+        ValueAnimator valueAnimator = this.e;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+            this.e = null;
         }
-        h71Var.C();
-        AndroidUtilities.updateViewVisibilityAnimated(h71Var.e0, h71Var.h0.computeVerticalScrollOffset() != 0 || (i12 = this.f3) == 0 || i12 == 12 || i12 == 10 || i12 == 1 || i12 == 11 || i12 == 6, 1.0f, true);
-        h71Var.m();
+        this.d = z10 ? 1.0f : 0.0f;
+        float dp = (1.0f - this.d) * AndroidUtilities.dp(-8.0f);
+        org.telegram.ui.Components.bj0 bj0Var = this.b;
+        bj0Var.setTranslationX(dp);
+        this.a.setTranslationX((1.0f - this.d) * AndroidUtilities.dp(-8.0f));
+        bj0Var.setAlpha(this.d);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLObject.FLAG_30));
     }
 }

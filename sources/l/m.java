@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import v7.r8;
 import v7.v7;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class m implements l0.a {
     public n A;
@@ -74,7 +74,7 @@ public final class m implements l0.a {
         this.n.p(true);
         n nVar2 = this.A;
         if (nVar2 != null) {
-            nVar2.b = new k2.c0(this, 1);
+            nVar2.b = new k2.b0(this, 1);
             nVar2.a.setVisibilityListener(nVar2);
         }
         return this;

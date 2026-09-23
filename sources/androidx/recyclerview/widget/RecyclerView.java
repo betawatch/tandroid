@@ -36,6 +36,7 @@ import java.lang.ref.WeakReference;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.WeakHashMap;
+import k2.b0;
 import ka.c;
 import lf.i;
 import n0.g;
@@ -45,14 +46,13 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Cells.ia;
+import org.telegram.ui.Cells.ja;
 import org.telegram.ui.Cells.l2;
 import r0.a0;
 import r0.i0;
 import r0.j0;
 import r0.k;
 import ra.a;
-import s4.b0;
 import s4.b1;
 import s4.c0;
 import s4.c1;
@@ -80,7 +80,7 @@ import s4.y0;
 import s4.z0;
 import u0.b;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public class RecyclerView extends ViewGroup {
     public static final int[] P0 = {R.attr.clipToPadding};
@@ -1222,7 +1222,7 @@ public class RecyclerView extends ViewGroup {
             return;
         }
         i iVar = this.e;
-        int indexOfChild = ((RecyclerView) ((k2.c0) iVar.b).b).indexOfChild(view);
+        int indexOfChild = ((RecyclerView) ((b0) iVar.b).b).indexOfChild(view);
         if (indexOfChild >= 0) {
             ((n) iVar.c).D(indexOfChild);
             iVar.N(view);
@@ -1758,8 +1758,8 @@ public class RecyclerView extends ViewGroup {
             return;
         }
         c0 c0Var = (c0) o0Var;
-        if (parcelable2 instanceof b0) {
-            c0Var.B = (b0) parcelable2;
+        if (parcelable2 instanceof s4.b0) {
+            c0Var.B = (s4.b0) parcelable2;
             c0Var.l0();
         }
     }
@@ -3363,8 +3363,8 @@ public class RecyclerView extends ViewGroup {
         this.m0 = viewConfiguration.getScaledMaximumFlingVelocity();
         setWillNotDraw(getOverScrollMode() == 2);
         this.c0.a = cVar;
-        this.d = new a(new ia(this, 13));
-        this.e = new i(new k2.c0(this, 25));
+        this.d = new a(new ja(this, 13));
+        this.e = new i(new b0(this, 25));
         WeakHashMap weakHashMap = i0.a;
         if ((i12 >= 26 ? r0.c0.a(this) : 0) == 0 && i12 >= 26) {
             r0.c0.b(this, 8);

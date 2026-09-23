@@ -1,84 +1,36 @@
 package org.telegram.ui;
 
-import android.util.SparseIntArray;
-import java.util.ArrayList;
+import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class ph0 extends s4.o {
-    public int b;
-    public int c;
-    public int d;
-    public int e;
-    public int f;
-    public int g;
-    public int h;
-    public final SparseIntArray i = new SparseIntArray();
-    public final SparseIntArray j = new SparseIntArray();
-    public final ArrayList k = new ArrayList();
-    public final ArrayList l = new ArrayList();
-    public final /* synthetic */ yh0 m;
+public final class ph0 extends org.telegram.ui.Components.hq0 {
+    public final /* synthetic */ qh0 b1;
 
-    public ph0(yh0 yh0Var) {
-        this.m = yh0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ph0(qh0 qh0Var, Context context, String str, String str2, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, null, str, false, str2, false, d6Var);
+        this.b1 = qh0Var;
     }
 
-    public static void g(int i10, int i11, SparseIntArray sparseIntArray) {
-        if (i11 >= 0) {
-            sparseIntArray.put(i11, i10);
+    @Override // org.telegram.ui.Components.hq0
+    public final void R0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        String formatString;
+        th0 th0Var = this.b1.K;
+        if (z10) {
+            if (iVar == null || iVar.m() != 1) {
+                formatString = LocaleController.formatString(R.string.InvLinkToChats, LocaleController.formatPluralString("Chats", i10, new Object[0]));
+            } else {
+                long j3 = ((TLRPC.Dialog) iVar.n(0)).id;
+                formatString = (j3 == 0 || j3 == th0Var.getUserConfig().getClientUserId()) ? LocaleController.getString(R.string.InvLinkToSavedMessages) : LocaleController.formatString(R.string.InvLinkToUser, th0Var.getMessagesController().getPeerName(j3, true));
+            }
+            org.telegram.ui.Components.qc Q = org.telegram.ui.Components.xc.a0(th0Var).Q(R.raw.forward, 36, AndroidUtilities.replaceTags(formatString));
+            Q.r = false;
+            Q.k(true);
         }
-    }
-
-    @Override // s4.o
-    public final boolean a(int i10, int i11) {
-        return b(i10, i11);
-    }
-
-    @Override // s4.o
-    public final boolean b(int i10, int i11) {
-        int i12;
-        int i13;
-        int i14 = this.c;
-        yh0 yh0Var = this.m;
-        if (((i10 >= i14 && i10 < this.d) || (i10 >= this.e && i10 < this.f)) && ((i11 >= (i13 = yh0Var.y) && i11 < yh0Var.E) || (i11 >= yh0Var.H && i11 < yh0Var.I))) {
-            TLRPC.TL_chatInviteExported tL_chatInviteExported = (i11 < i13 || i11 >= yh0Var.E) ? (TLRPC.TL_chatInviteExported) yh0Var.j0.get(i11 - yh0Var.H) : (TLRPC.TL_chatInviteExported) yh0Var.i0.get(i11 - i13);
-            int i15 = this.c;
-            return ((i10 < i15 || i10 >= this.d) ? (TLRPC.TL_chatInviteExported) this.l.get(i10 - this.e) : (TLRPC.TL_chatInviteExported) this.k.get(i10 - i15)).link.equals(tL_chatInviteExported.link);
-        }
-        int i16 = this.g;
-        if (i10 >= i16 && i10 < this.h && i11 >= (i12 = yh0Var.U) && i11 < yh0Var.V) {
-            return i10 - i16 == i11 - i12;
-        }
-        int i17 = this.i.get(i10, -1);
-        return i17 >= 0 && i17 == this.j.get(i11, -1);
-    }
-
-    @Override // s4.o
-    public final int d() {
-        return this.m.X;
-    }
-
-    @Override // s4.o
-    public final int e() {
-        return this.b;
-    }
-
-    public final void f(SparseIntArray sparseIntArray) {
-        sparseIntArray.clear();
-        yh0 yh0Var = this.m;
-        g(1, yh0Var.r, sparseIntArray);
-        g(2, yh0Var.s, sparseIntArray);
-        g(3, yh0Var.v, sparseIntArray);
-        g(4, yh0Var.w, sparseIntArray);
-        g(5, yh0Var.x, sparseIntArray);
-        g(6, yh0Var.L, sparseIntArray);
-        g(7, yh0Var.N, sparseIntArray);
-        g(8, yh0Var.O, sparseIntArray);
-        g(9, yh0Var.Q, sparseIntArray);
-        g(10, yh0Var.R, sparseIntArray);
-        g(11, yh0Var.S, sparseIntArray);
-        g(12, yh0Var.P, sparseIntArray);
-        g(13, yh0Var.F, sparseIntArray);
     }
 }

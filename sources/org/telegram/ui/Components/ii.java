@@ -1,90 +1,37 @@
 package org.telegram.ui.Components;
 
-import android.content.Intent;
 import java.util.ArrayList;
-import org.telegram.messenger.FileLog;
+import java.util.HashMap;
 import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class ii implements fk {
-    public final /* synthetic */ vi a;
+public final class ii implements qj {
+    public final /* synthetic */ wi a;
 
-    public ii(vi viVar) {
-        this.a = viVar;
+    public ii(wi wiVar) {
+        this.a = wiVar;
     }
 
-    @Override // org.telegram.ui.Components.fk
-    public final void O() {
-        this.a.B1(true);
-    }
-
-    @Override // org.telegram.ui.Components.fk
-    public final void k(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z10, int i10, long j3, boolean z11, long j10) {
-        vi viVar = this.a;
-        fk fkVar = viVar.X;
-        if (fkVar != null) {
-            fkVar.k(arrayList, str, arrayList2, arrayList3, z10, i10, j3, z11, j10);
-            return;
-        }
-        Object obj = viVar.f0;
-        if (obj instanceof fk) {
-            ((fk) obj).k(arrayList, str, arrayList2, arrayList3, z10, i10, j3, z11, j10);
-            return;
-        }
-        if (obj instanceof org.telegram.ui.on0) {
-            org.telegram.ui.on0 on0Var = (org.telegram.ui.on0) obj;
-            ArrayList arrayList4 = new ArrayList();
-            int size = arrayList.size();
-            for (int i11 = 0; i11 < size; i11++) {
-                SendMessagesHelper.SendingMediaInfo sendingMediaInfo = new SendMessagesHelper.SendingMediaInfo();
-                sendingMediaInfo.path = (String) arrayList.get(i11);
-                arrayList4.add(sendingMediaInfo);
-            }
-            on0Var.G1(arrayList4);
+    @Override // org.telegram.ui.Components.qj
+    public final void a(TLRPC.User user, boolean z10, int i10, long j3) {
+        org.telegram.ui.xn xnVar = (org.telegram.ui.xn) this.a.f0;
+        if (xnVar.f7()) {
+            SendMessagesHelper.SendMessageParams of2 = SendMessagesHelper.SendMessageParams.of(user, xnVar.T5, xnVar.n5, xnVar.X3, (TLRPC.ReplyMarkup) null, (HashMap<String, String>) null, z10, i10, 0);
+            of2.sendMessageChatArguments = xnVar.C8();
+            of2.effect_id = 0L;
+            of2.invert_media = false;
+            of2.payStars = j3;
+            of2.monoForumPeer = xnVar.N8();
+            of2.suggestionParams = xnVar.g5;
+            xnVar.getSendMessagesHelper().sendMessage(of2);
+            xnVar.y6();
         }
     }
 
-    @Override // org.telegram.ui.Components.fk
-    public final void l(long j3, ArrayList arrayList, boolean z10, int i10) {
-        vi viVar = this.a;
-        fk fkVar = viVar.X;
-        if (fkVar != null) {
-            fkVar.l(j3, arrayList, z10, i10);
-            return;
-        }
-        org.telegram.ui.ActionBar.n2 n2Var = viVar.f0;
-        if (n2Var instanceof org.telegram.ui.bo) {
-            ((org.telegram.ui.bo) n2Var).l(j3, arrayList, z10, i10);
-        } else if (n2Var instanceof org.telegram.ui.on0) {
-            ((org.telegram.ui.on0) n2Var).G1(arrayList);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.fk
-    public final void w() {
-        vi viVar = this.a;
-        fk fkVar = viVar.X;
-        if (fkVar != null) {
-            fkVar.w();
-            return;
-        }
-        Object obj = viVar.f0;
-        if (obj instanceof fk) {
-            ((fk) obj).w();
-            return;
-        }
-        if (obj instanceof org.telegram.ui.on0) {
-            org.telegram.ui.on0 on0Var = (org.telegram.ui.on0) obj;
-            on0Var.getClass();
-            try {
-                Intent intent = new Intent("android.intent.action.GET_CONTENT");
-                intent.putExtra("android.intent.extra.ALLOW_MULTIPLE", true);
-                intent.setType("*/*");
-                on0Var.startActivityForResult(intent, 21);
-            } catch (Exception e) {
-                FileLog.e(e);
-            }
-        }
+    @Override // org.telegram.ui.Components.qj
+    public final void b(ArrayList arrayList, String str, boolean z10, int i10, long j3, boolean z11) {
+        ((org.telegram.ui.xn) this.a.f0).db(arrayList, str, z10, i10, j3, z11);
     }
 }

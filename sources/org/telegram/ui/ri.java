@@ -1,53 +1,23 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+import android.app.Activity;
+
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class ri extends org.telegram.ui.ActionBar.n1 {
-    public final /* synthetic */ org.telegram.ui.Components.fk0 o;
-    public final /* synthetic */ bo p;
+public final class ri extends org.telegram.ui.Cells.w0 {
+    public final /* synthetic */ xn l2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ri(bo boVar, db dbVar, org.telegram.ui.Components.fk0 fk0Var) {
-        super(dbVar, -2, -2);
-        this.p = boVar;
-        this.o = fk0Var;
+    public ri(Activity activity, org.telegram.ui.ActionBar.d6 d6Var, xn xnVar) {
+        super(activity, d6Var, false);
+        this.l2 = xnVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.n1
-    public final void d(boolean z10) {
-        super.d(true);
-        org.telegram.ui.Components.fk0 fk0Var = this.o;
-        if (fk0Var != null) {
-            fk0Var.d();
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.n1, android.widget.PopupWindow
-    public final void dismiss() {
-        d(true);
-        bo boVar = this.p;
-        if (boVar.Q8 != this) {
-            return;
-        }
-        org.telegram.ui.Components.oc ocVar = org.telegram.ui.Components.oc.w;
-        org.telegram.ui.Components.oc ocVar2 = boVar.n1;
-        if (ocVar == ocVar2 && ocVar2 != null) {
-            ocVar2.b();
-            boVar.n1 = null;
-        }
-        boVar.Q8 = null;
-        boVar.T8 = null;
-        boVar.S8 = null;
-        boVar.z0.R = true;
-        if (boVar.R8) {
-            boVar.g8(false, true, 0.0f);
-        } else {
-            boVar.R8 = true;
-        }
-        mk mkVar = boVar.Y;
-        if (mkVar == null || mkVar.getEditField() == null) {
-            return;
-        }
-        boVar.Y.getEditField().setAllowDrawCursor(true);
+    @Override // org.telegram.ui.Cells.w0, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        float y3 = getY();
+        xn xnVar = this.l2;
+        W(xnVar.R0.getY() + y3, xnVar.X0.getBackgroundSizeY());
     }
 }

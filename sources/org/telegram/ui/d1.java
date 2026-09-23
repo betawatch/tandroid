@@ -1,58 +1,267 @@
 package org.telegram.ui;
 
-import android.graphics.Point;
-import android.graphics.Rect;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.text.Layout;
+import android.util.Property;
+import android.view.MotionEvent;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class d1 extends s4.n0 {
-    public final /* synthetic */ j1 a;
+public final class d1 extends FrameLayout implements org.telegram.ui.Cells.q9 {
+    public TL_iv.pageBlockChannel E;
+    public final r70 a;
+    public final g4 b;
+    public final org.telegram.ui.Components.uq c;
+    public final TextView d;
+    public final ImageView e;
+    public int f;
+    public b3 h;
+    public int n;
+    public final int r;
+    public final int s;
+    public int v;
+    public final Paint w;
+    public AnimatorSet x;
+    public final int y;
 
-    public d1(j1 j1Var) {
-        this.a = j1Var;
+    public d1(Context context, r70 r70Var, g4 g4Var, int i10) {
+        super(context);
+        this.r = AndroidUtilities.dp(18.0f);
+        this.s = AndroidUtilities.dp(11.0f);
+        this.a = r70Var;
+        this.b = g4Var;
+        setWillNotDraw(false);
+        this.w = new Paint();
+        this.y = i10;
+        TextView textView = new TextView(context);
+        this.d = textView;
+        com.google.android.gms.internal.vision.e2.l(14.0f, 1, textView);
+        org.telegram.messenger.ul.l(R.string.ChannelJoin, textView, 19);
+        addView(textView, w7.x5.e(-2, 39, 53));
+        textView.setOnClickListener(new ai.f2(23, this, r70Var));
+        ImageView imageView = new ImageView(context);
+        this.e = imageView;
+        imageView.setImageResource(R.drawable.list_check);
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        addView(imageView, w7.x5.e(39, 39, 53));
+        org.telegram.ui.Components.uq uqVar = new org.telegram.ui.Components.uq(context, 0);
+        this.c = uqVar;
+        addView(uqVar, w7.x5.e(39, 39, 53));
     }
 
-    @Override // s4.n0
-    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.z0 z0Var) {
-        int i10 = 0;
-        rect.bottom = 0;
-        boolean z10 = view instanceof c2;
-        j1 j1Var = this.a;
-        MessageObject.GroupedMessagePosition groupedMessagePosition = z10 ? (MessageObject.GroupedMessagePosition) j1Var.v.b.get(((c2) view).N) : view instanceof w2 ? (MessageObject.GroupedMessagePosition) j1Var.v.b.get(((w2) view).L) : null;
-        if (groupedMessagePosition == null || groupedMessagePosition.siblingHeights == null) {
+    public final void a(int i10, boolean z10) {
+        AnimatorSet animatorSet = this.x;
+        if (animatorSet != null) {
+            animatorSet.cancel();
+        }
+        this.f = i10;
+        ImageView imageView = this.e;
+        org.telegram.ui.Components.uq uqVar = this.c;
+        TextView textView = this.d;
+        if (!z10) {
+            textView.setAlpha(i10 == 0 ? 1.0f : 0.0f);
+            textView.setScaleX(i10 == 0 ? 1.0f : 0.1f);
+            textView.setScaleY(i10 == 0 ? 1.0f : 0.1f);
+            uqVar.setAlpha(i10 == 1 ? 1.0f : 0.0f);
+            uqVar.setScaleX(i10 == 1 ? 1.0f : 0.1f);
+            uqVar.setScaleY(i10 == 1 ? 1.0f : 0.1f);
+            imageView.setAlpha(i10 == 2 ? 1.0f : 0.0f);
+            imageView.setScaleX(i10 == 2 ? 1.0f : 0.1f);
+            imageView.setScaleY(i10 == 2 ? 1.0f : 0.1f);
             return;
         }
-        Point point = AndroidUtilities.displaySize;
-        float max = Math.max(point.x, point.y) * 0.5f;
-        int i11 = 0;
-        int i12 = 0;
-        while (true) {
-            if (i11 >= groupedMessagePosition.siblingHeights.length) {
-                break;
-            }
-            i12 += (int) Math.ceil(r3[i11] * max);
-            i11++;
+        AnimatorSet animatorSet2 = new AnimatorSet();
+        this.x = animatorSet2;
+        float[] fArr = {i10 == 0 ? 1.0f : 0.0f};
+        Property property = View.ALPHA;
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, fArr);
+        float[] fArr2 = {i10 == 0 ? 1.0f : 0.1f};
+        Property property2 = View.SCALE_X;
+        ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property2, fArr2);
+        float f7 = i10 == 0 ? 1.0f : 0.1f;
+        Property property3 = View.SCALE_Y;
+        animatorSet2.playTogether(ofFloat, ofFloat2, ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property3, f7), ObjectAnimator.ofFloat(uqVar, (Property<org.telegram.ui.Components.uq, Float>) property, i10 == 1 ? 1.0f : 0.0f), ObjectAnimator.ofFloat(uqVar, (Property<org.telegram.ui.Components.uq, Float>) property2, i10 == 1 ? 1.0f : 0.1f), ObjectAnimator.ofFloat(uqVar, (Property<org.telegram.ui.Components.uq, Float>) property3, i10 == 1 ? 1.0f : 0.1f), ObjectAnimator.ofFloat(imageView, (Property<ImageView, Float>) property, i10 == 2 ? 1.0f : 0.0f), ObjectAnimator.ofFloat(imageView, (Property<ImageView, Float>) property2, i10 == 2 ? 1.0f : 0.1f), ObjectAnimator.ofFloat(imageView, (Property<ImageView, Float>) property3, i10 == 2 ? 1.0f : 0.1f));
+        this.x.setDuration(150L);
+        this.x.start();
+    }
+
+    @Override // org.telegram.ui.Cells.q9
+    public final void fillTextLayoutBlocks(ArrayList arrayList) {
+        b3 b3Var = this.h;
+        if (b3Var != null) {
+            arrayList.add(b3Var);
         }
-        int dp2 = (AndroidUtilities.dp2(11.0f) * (groupedMessagePosition.maxY - groupedMessagePosition.minY)) + i12;
-        int size = j1Var.v.a.size();
-        while (true) {
-            if (i10 < size) {
-                MessageObject.GroupedMessagePosition groupedMessagePosition2 = (MessageObject.GroupedMessagePosition) j1Var.v.a.get(i10);
-                byte b10 = groupedMessagePosition2.minY;
-                byte b11 = groupedMessagePosition.minY;
-                if (b10 == b11 && ((groupedMessagePosition2.minX != groupedMessagePosition.minX || groupedMessagePosition2.maxX != groupedMessagePosition.maxX || b10 != b11 || groupedMessagePosition2.maxY != groupedMessagePosition.maxY) && b10 == b11)) {
-                    dp2 = org.telegram.messenger.y0.z(4.0f, (int) Math.ceil(max * groupedMessagePosition2.ph), dp2);
-                    break;
-                }
-                i10++;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        b3 b3Var = this.h;
+        if (b3Var != null) {
+            b3Var.attach(this);
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        b3 b3Var = this.h;
+        if (b3Var != null) {
+            b3Var.detach(this);
+        }
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.E == null) {
+            return;
+        }
+        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), AndroidUtilities.dp(39.0f), this.w);
+        b3 b3Var = this.h;
+        if (b3Var == null || b3Var.d.getLineCount() <= 0) {
+            return;
+        }
+        canvas.save();
+        int i10 = this.s;
+        int i11 = this.r;
+        g4 g4Var = this.b;
+        if (g4Var == null || !g4Var.G) {
+            canvas.translate(i11, i10);
+        } else {
+            canvas.translate((getMeasuredWidth() - this.h.d.getLineWidth(0)) - i11, i10);
+        }
+        if (this.y == 0) {
+            i4.v(this.a, canvas, this, 0);
+        }
+        this.h.draw(canvas, this);
+        canvas.restore();
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setEnabled(true);
+        b3 b3Var = this.h;
+        if (b3Var == null) {
+            return;
+        }
+        accessibilityNodeInfo.setText(i4.i(R.string.AccDescrChannel, i4.j(this.a, this.b, b3Var)));
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        this.e.layout(((this.n / 2) + this.v) - AndroidUtilities.dp(19.0f), 0, AndroidUtilities.dp(20.0f) + (this.n / 2) + this.v, AndroidUtilities.dp(39.0f));
+        this.c.layout(((this.n / 2) + this.v) - AndroidUtilities.dp(19.0f), 0, AndroidUtilities.dp(20.0f) + (this.n / 2) + this.v, AndroidUtilities.dp(39.0f));
+        int i14 = this.v;
+        TextView textView = this.d;
+        textView.layout(i14, 0, textView.getMeasuredWidth() + i14, textView.getMeasuredHeight());
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int size = View.MeasureSpec.getSize(i10);
+        setMeasuredDimension(size, AndroidUtilities.dp(48.0f));
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_31);
+        int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(39.0f), TLObject.FLAG_30);
+        TextView textView = this.d;
+        textView.measure(makeMeasureSpec, makeMeasureSpec2);
+        this.n = textView.getMeasuredWidth();
+        this.c.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(39.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(39.0f), TLObject.FLAG_30));
+        this.e.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(39.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(39.0f), TLObject.FLAG_30));
+        TL_iv.pageBlockChannel pageblockchannel = this.E;
+        if (pageblockchannel != null) {
+            String str = pageblockchannel.channel.title;
+            int dp = (size - AndroidUtilities.dp(52.0f)) - this.n;
+            TL_iv.pageBlockChannel pageblockchannel2 = this.E;
+            Layout.Alignment[] alignmentArr = org.telegram.ui.Components.jw0.a;
+            this.h = i4.p(this.a, this, str, null, dp, this.s, pageblockchannel2, alignmentArr.length >= 5 ? alignmentArr[3] : Layout.Alignment.ALIGN_NORMAL, 1, this.b);
+            int i12 = this.r;
+            g4 g4Var = this.b;
+            if (g4Var == null || !g4Var.G) {
+                this.v = (getMeasuredWidth() - i12) - this.n;
             } else {
-                break;
+                this.v = i12;
+            }
+            b3 b3Var = this.h;
+            if (b3Var != null) {
+                b3Var.s = i12;
+                b3Var.v = this.s;
             }
         }
-        rect.bottom = -dp2;
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        if (this.y != 0) {
+            return super.onTouchEvent(motionEvent);
+        }
+        return i4.l(this.a, this.b, motionEvent, this, this.h, this.r, this.s) || super.onTouchEvent(motionEvent);
+    }
+
+    public void setBlock(TL_iv.pageBlockChannel pageblockchannel) {
+        this.E = pageblockchannel;
+        int i10 = this.y;
+        ImageView imageView = this.e;
+        Paint paint = this.w;
+        TextView textView = this.d;
+        r70 r70Var = this.a;
+        if (i10 == 0) {
+            int i11 = org.telegram.ui.ActionBar.h6.M6;
+            i4 i4Var = (i4) r70Var;
+            i4Var.getClass();
+            int w02 = org.telegram.ui.ActionBar.h6.w0(null, i11, false);
+            int red = Color.red(w02);
+            int green = Color.green(w02);
+            int blue = Color.blue(w02);
+            i4Var.getClass();
+            textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.J6, false));
+            paint.setColor(Color.argb(34, red, green, blue));
+            imageView.setColorFilter(new PorterDuffColorFilter(r70Var.a(), PorterDuff.Mode.MULTIPLY));
+        } else {
+            textView.setTextColor(-1);
+            paint.setColor(2130706432);
+            imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.MULTIPLY));
+        }
+        TLRPC.Chat chat = MessagesController.getInstance(((i4) r70Var).X).getChat(Long.valueOf(pageblockchannel.channel.id));
+        if (chat == null || chat.min) {
+            TLRPC.Chat chat2 = pageblockchannel.channel;
+            if (!r70Var.r && ChatObject.isPublic(chat2)) {
+                r70Var.r = true;
+                int i12 = ((i4) r70Var).X;
+                TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
+                tL_contacts_resolveUsername.username = chat2.username;
+                ConnectionsManager.getInstance(i12).sendRequest(tL_contacts_resolveUsername, new ai.za(r70Var, this.b, i12, this, 2));
+            }
+            a(1, false);
+        } else {
+            r70Var.n = chat;
+            if (!chat.left || chat.kicked) {
+                a(4, false);
+            } else {
+                a(0, false);
+            }
+        }
+        requestLayout();
     }
 }

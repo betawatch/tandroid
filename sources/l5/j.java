@@ -4,12 +4,12 @@ import android.content.Context;
 import android.os.CancellationSignal;
 import b2.r0;
 import e2.d0;
-import k2.c0;
+import k2.b0;
 import m.p3;
 import n4.y;
-import org.telegram.ui.Cells.ia;
+import org.telegram.ui.Cells.ja;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class j implements v0.h {
     public Context a;
@@ -65,10 +65,10 @@ public final class j implements v0.h {
         kVar.a = n5.a.a(n.a);
         a9.r rVar = new a9.r(context);
         kVar.b = rVar;
-        kVar.c = n5.a.a(new y(26, rVar, new c0(rVar, 5)));
+        kVar.c = n5.a.a(new y(26, rVar, new b0(rVar, 5)));
         a9.r rVar2 = kVar.b;
         kVar.d = new ka.c(rVar2, 18);
-        fd.a a2 = n5.a.a(new o0.a(16, kVar.d, n5.a.a(new ia(rVar2, 14))));
+        fd.a a2 = n5.a.a(new o0.a(16, kVar.d, n5.a.a(new ja(rVar2, 14))));
         kVar.e = a2;
         qb.b bVar = new qb.b(19);
         a9.r rVar3 = kVar.b;
@@ -103,16 +103,16 @@ public final class j implements v0.h {
         mVar.s();
         CancellationSignal cancellationSignal = new CancellationSignal();
         mVar.u(new v0.g(cancellationSignal));
-        ia iaVar = new ia(mVar, 16);
+        ja jaVar = new ja(mVar, 16);
         a3.b bVar = new a3.b(2);
         kotlin.jvm.internal.i.e(context, "context");
         v0.j a2 = v0.k.a(new v0.k(this.a, 0), eVar);
         if (a2 == null) {
-            iaVar.onError(new w0.c("createCredentialAsync no provider dependencies found - please ensure the desired provider dependencies are added", 1));
+            jaVar.onError(new w0.c("createCredentialAsync no provider dependencies found - please ensure the desired provider dependencies are added", 1));
         } else if (context.getPackageManager().hasSystemFeature("android.hardware.type.watch")) {
-            iaVar.onError(new w0.c("createCredential is not supported on this device", 3));
+            jaVar.onError(new w0.c("createCredential is not supported on this device", 3));
         } else {
-            a2.onCreateCredential(context, eVar, cancellationSignal, bVar, iaVar);
+            a2.onCreateCredential(context, eVar, cancellationSignal, bVar, jaVar);
         }
         Object r10 = mVar.r();
         jd.a aVar = jd.a.a;

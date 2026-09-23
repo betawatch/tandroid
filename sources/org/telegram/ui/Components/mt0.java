@@ -7,9 +7,9 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class mt0 extends kl0 {
+public final class mt0 extends ll0 {
     public final Context c;
     public final /* synthetic */ yu0 d;
 
@@ -18,7 +18,7 @@ public final class mt0 extends kl0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.ll0
     public final boolean D(s4.c1 c1Var) {
         nu0[] nu0VarArr = this.d.t1;
         return nu0VarArr[5].a.size() != 0 || nu0VarArr[5].g;
@@ -68,16 +68,16 @@ public final class mt0 extends kl0 {
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
         yu0 yu0Var = this.d;
-        org.telegram.ui.ActionBar.e6 e6Var = yu0Var.F1;
+        org.telegram.ui.ActionBar.d6 d6Var = yu0Var.F1;
         Context context = this.c;
         if (i10 == 11) {
-            lt0 M = yu0.M(5, yu0Var.j1, context, e6Var);
+            lt0 M = yu0.M(5, yu0Var.j1, context, d6Var);
             M.setLayoutParams(new s4.p0(-1, -1));
-            return new vk0(M);
+            return new wk0(M);
         }
-        org.telegram.ui.Cells.e2 e2Var = new org.telegram.ui.Cells.e2(context, e6Var, true);
+        org.telegram.ui.Cells.e2 e2Var = new org.telegram.ui.Cells.e2(context, d6Var, true);
         e2Var.setCanPreviewGif(true);
-        return new vk0(e2Var);
+        return new wk0(e2Var);
     }
 
     @Override // s4.h0

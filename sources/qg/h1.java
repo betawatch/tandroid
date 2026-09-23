@@ -10,9 +10,9 @@ import android.util.SparseIntArray;
 import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
-import ci.c6;
-import ci.c7;
-import ci.o8;
+import ci.a7;
+import ci.b6;
+import ci.l8;
 import java.io.File;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
@@ -21,31 +21,31 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f5;
+import org.telegram.ui.ActionBar.e5;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.ha;
-import org.telegram.ui.Components.hk0;
-import org.telegram.ui.t5;
+import org.telegram.ui.Components.ik0;
+import org.telegram.ui.Components.ja;
+import org.telegram.ui.u5;
 import w7.x5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public abstract class h1 extends j {
     public boolean A0;
     public boolean B0;
     public final SparseIntArray C0;
     public final com.google.firebase.messaging.n D0;
-    public f5 E0;
-    public f5 F0;
-    public f5 G0;
-    public f5 H0;
-    public f5 I0;
-    public f5 J0;
-    public f5 K0;
-    public f5 L0;
-    public final t5 q0;
+    public e5 E0;
+    public e5 F0;
+    public e5 G0;
+    public e5 H0;
+    public e5 I0;
+    public e5 J0;
+    public e5 K0;
+    public e5 L0;
+    public final u5 q0;
     public final a1 r0;
     public final ArrayList s0;
     public final MessageObject.GroupedMessages t0;
@@ -56,7 +56,7 @@ public abstract class h1 extends j {
     public int y0;
     public int z0;
 
-    public h1(Context context, PointF pointF, ArrayList arrayList, ha haVar, boolean z10, c7 c7Var) {
+    public h1(Context context, PointF pointF, ArrayList arrayList, ja jaVar, boolean z10, a7 a7Var) {
         super(context, pointF);
         hi.a aVar;
         TLRPC.Message message;
@@ -68,11 +68,11 @@ public abstract class h1 extends j {
         this.y0 = 1;
         this.z0 = 1;
         this.A0 = true;
-        this.B0 = i6.I.q();
+        this.B0 = h6.I.q();
         this.C0 = new SparseIntArray();
-        c6 c6Var = (c6) this;
+        b6 b6Var = (b6) this;
         com.google.firebase.messaging.n nVar = new com.google.firebase.messaging.n();
-        nVar.f = c6Var;
+        nVar.f = b6Var;
         TextPaint textPaint = new TextPaint();
         nVar.a = textPaint;
         TextPaint textPaint2 = new TextPaint();
@@ -101,7 +101,7 @@ public abstract class h1 extends j {
                 tL_messageService = new TLRPC.TL_messageService();
             } else {
                 message = message2;
-                D = o8.D(messageObject);
+                D = l8.D(messageObject);
                 if (D != null && D.booleanValue() && (messageFwdHeader = message.fwd_from) != null && (peer = messageFwdHeader.from_id) != null) {
                     message.from_id = peer;
                     message.peer_id = peer;
@@ -181,7 +181,7 @@ public abstract class h1 extends j {
             tL_messageService.translatedText = message2.translatedText;
             tL_messageService.replyStory = message2.replyStory;
             message = tL_messageService;
-            D = o8.D(messageObject);
+            D = l8.D(messageObject);
             if (D != null) {
                 message.from_id = peer;
                 message.peer_id = peer;
@@ -202,28 +202,28 @@ public abstract class h1 extends j {
             groupedMessages.groupId = ((MessageObject) this.s0.get(0)).getGroupId();
             groupedMessages.calculate();
         }
-        t5 t5Var = new t5(c6Var, context);
-        this.q0 = t5Var;
-        addView(t5Var, x5.c(-1.0f, -1));
-        a1 a1Var = new a1(c6Var, context, this.D0);
+        u5 u5Var = new u5(b6Var, context);
+        this.q0 = u5Var;
+        addView(u5Var, x5.c(-1.0f, -1));
+        a1 a1Var = new a1(b6Var, context, this.D0);
         this.r0 = a1Var;
-        a1Var.setAdapter(new d1(c6Var, context, haVar, c7Var, z10));
-        e1 e1Var = new e1(c6Var);
-        e1Var.O = new f1(c6Var);
+        a1Var.setAdapter(new d1(b6Var, context, jaVar, a7Var, z10));
+        e1 e1Var = new e1(b6Var);
+        e1Var.O = new f1(b6Var);
         a1Var.setLayoutManager(e1Var);
         a1Var.i(new g1());
-        t5Var.addView(a1Var, x5.c(-1.0f, -1));
-        if (c7Var != null && c7Var.g) {
-            org.telegram.ui.web.b1 b1Var = new org.telegram.ui.web.b1(c6Var, 5);
-            hi.a aVar2 = new hi.a(c6Var, 7);
-            c7Var.b = b1Var;
-            c7Var.c = aVar2;
-            TextureView textureView = c7Var.a;
+        u5Var.addView(a1Var, x5.c(-1.0f, -1));
+        if (a7Var != null && a7Var.g) {
+            ii.q1 q1Var = new ii.q1(b6Var, 8);
+            hi.a aVar2 = new hi.a(b6Var, 7);
+            a7Var.b = q1Var;
+            a7Var.c = aVar2;
+            TextureView textureView = a7Var.a;
             if (textureView != null) {
-                b1Var.run(textureView);
+                q1Var.run(textureView);
             }
-            if (c7Var.d && (aVar = c7Var.c) != null) {
-                aVar.run(Integer.valueOf(c7Var.e), Integer.valueOf(c7Var.f));
+            if (a7Var.d && (aVar = a7Var.c) != null) {
+                aVar.run(Integer.valueOf(a7Var.e), Integer.valueOf(a7Var.f));
             }
         }
         k();
@@ -254,13 +254,13 @@ public abstract class h1 extends j {
     }
 
     @Override // qg.j
-    public hk0 getSelectionBounds() {
+    public ik0 getSelectionBounds() {
         ViewGroup viewGroup = (ViewGroup) getParent();
         if (viewGroup == null) {
-            return new hk0();
+            return new ik0();
         }
         float scaleX = viewGroup.getScaleX();
-        return new hk0(((getPositionX() * scaleX) - (((getScale() * getMeasuredWidth()) / 2.0f) * scaleX)) - AndroidUtilities.dp(35.5f), ((getPositionY() * scaleX) - (((getScale() * getMeasuredHeight()) / 2.0f) * scaleX)) - AndroidUtilities.dp(35.5f), (getScale() * getMeasuredWidth() * scaleX) + AndroidUtilities.dp(71.0f), (getScale() * getMeasuredHeight() * scaleX) + AndroidUtilities.dp(71.0f));
+        return new ik0(((getPositionX() * scaleX) - (((getScale() * getMeasuredWidth()) / 2.0f) * scaleX)) - AndroidUtilities.dp(35.5f), ((getPositionY() * scaleX) - (((getScale() * getMeasuredHeight()) / 2.0f) * scaleX)) - AndroidUtilities.dp(35.5f), (getScale() * getMeasuredWidth() * scaleX) + AndroidUtilities.dp(71.0f), (getScale() * getMeasuredHeight() * scaleX) + AndroidUtilities.dp(71.0f));
     }
 
     @Override // qg.j
@@ -283,9 +283,9 @@ public abstract class h1 extends j {
     */
     public final void onMeasure(int i10, int i11) {
         boolean z10;
-        t5 t5Var = this.q0;
-        t5Var.measure(i10, i11);
-        setMeasuredDimension(t5Var.getMeasuredWidth(), t5Var.getMeasuredHeight());
+        u5 u5Var = this.q0;
+        u5Var.measure(i10, i11);
+        setMeasuredDimension(u5Var.getMeasuredWidth(), u5Var.getMeasuredHeight());
         k();
         if (this.A0) {
             ArrayList arrayList = this.s0;
@@ -326,25 +326,25 @@ public abstract class h1 extends j {
             }
             View childAt = a1Var.getChildAt(i10);
             boolean z10 = childAt instanceof org.telegram.ui.Cells.t1;
-            t5 t5Var = this.q0;
+            u5 u5Var = this.q0;
             if (z10) {
                 org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) childAt;
                 if (t1Var.getMessageObject() == null || !t1Var.getMessageObject().isRoundVideo() || t1Var.getPhotoImage() == null) {
-                    float x10 = childAt.getX() + t5Var.getX() + t1Var.getBackgroundDrawableLeft() + AndroidUtilities.dp(1.0f);
+                    float x10 = childAt.getX() + u5Var.getX() + t1Var.getBackgroundDrawableLeft() + AndroidUtilities.dp(1.0f);
                     if (this.t0 == null) {
                         x10 += AndroidUtilities.dp(8.0f);
                     }
-                    float x11 = ((childAt.getX() + t5Var.getX()) + t1Var.getBackgroundDrawableRight()) - AndroidUtilities.dp(1.66f);
-                    float dp = AndroidUtilities.dp(2.0f) + childAt.getY() + t5Var.getY() + t1Var.getBackgroundDrawableTop();
-                    y3 = ((childAt.getY() + t5Var.getY()) + t1Var.getBackgroundDrawableBottom()) - AndroidUtilities.dp(1.0f);
+                    float x11 = ((childAt.getX() + u5Var.getX()) + t1Var.getBackgroundDrawableRight()) - AndroidUtilities.dp(1.66f);
+                    float dp = AndroidUtilities.dp(2.0f) + childAt.getY() + u5Var.getY() + t1Var.getBackgroundDrawableTop();
+                    y3 = ((childAt.getY() + u5Var.getY()) + t1Var.getBackgroundDrawableBottom()) - AndroidUtilities.dp(1.0f);
                     f7 = x10;
                     f10 = x11;
                     f11 = dp;
                 } else {
-                    f7 = t1Var.getPhotoImage().getImageX() + t1Var.getX() + t5Var.getX();
-                    f10 = t1Var.getPhotoImage().getImageX2() + t1Var.getX() + t5Var.getX();
-                    f11 = t1Var.getPhotoImage().getImageY() + t1Var.getY() + t5Var.getY();
-                    y3 = t1Var.getPhotoImage().getImageY2() + t1Var.getY() + t5Var.getY();
+                    f7 = t1Var.getPhotoImage().getImageX() + t1Var.getX() + u5Var.getX();
+                    f10 = t1Var.getPhotoImage().getImageX2() + t1Var.getX() + u5Var.getX();
+                    f11 = t1Var.getPhotoImage().getImageY() + t1Var.getY() + u5Var.getY();
+                    y3 = t1Var.getPhotoImage().getImageY2() + t1Var.getY() + u5Var.getY();
                 }
                 f12 = Math.min(Math.min(f12, f7), f10);
                 f14 = Math.max(Math.max(f14, f7), f10);
@@ -353,10 +353,10 @@ public abstract class h1 extends j {
             } else if (childAt instanceof org.telegram.ui.Cells.w0) {
                 org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) childAt;
                 if (w0Var.F0.d()) {
-                    float x12 = w0Var.getX() + t5Var.getX() + w0Var.getBoundsLeft();
-                    float x13 = w0Var.getX() + t5Var.getX() + w0Var.getBoundsRight();
-                    float y10 = w0Var.getY() + t5Var.getY();
-                    float y11 = w0Var.getY() + t5Var.getY() + w0Var.getMeasuredHeight();
+                    float x12 = w0Var.getX() + u5Var.getX() + w0Var.getBoundsLeft();
+                    float x13 = w0Var.getX() + u5Var.getX() + w0Var.getBoundsRight();
+                    float y10 = w0Var.getY() + u5Var.getY();
+                    float y11 = w0Var.getY() + u5Var.getY() + w0Var.getMeasuredHeight();
                     f12 = Math.min(Math.min(f12, x12), x13);
                     f14 = Math.max(Math.max(f14, x12), x13);
                     f13 = Math.min(Math.min(f13, y10), y11);
@@ -385,39 +385,39 @@ public abstract class h1 extends j {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void setupTheme(o8 o8Var) {
+    public void setupTheme(l8 l8Var) {
         SparseIntArray Q0;
         int[] iArr;
         int i10;
-        g6 k10;
-        if (o8Var == null) {
+        f6 k10;
+        if (l8Var == null) {
             this.C0.clear();
             return;
         }
         SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("themeconfig", 0);
         String str = "Blue";
         String string = sharedPreferences.getString("lastDayTheme", "Blue");
-        if (i6.N0(string) == null || i6.N0(string).q()) {
+        if (h6.N0(string) == null || h6.N0(string).q()) {
             string = "Blue";
         }
         String str2 = "Dark Blue";
         String string2 = sharedPreferences.getString("lastDarkTheme", "Dark Blue");
-        if (i6.N0(string2) == null || !i6.N0(string2).q()) {
+        if (h6.N0(string2) == null || !h6.N0(string2).q()) {
             string2 = "Dark Blue";
         }
-        h6 h6Var = i6.I;
+        g6 g6Var = h6.I;
         if (!string.equals(string2)) {
             str2 = string2;
-        } else if (h6Var.q() || string.equals("Dark Blue") || string.equals("Night")) {
+        } else if (g6Var.q() || string.equals("Dark Blue") || string.equals("Night")) {
             str2 = string2;
-            boolean z10 = o8Var.y0;
+            boolean z10 = l8Var.y0;
             this.B0 = z10;
-            h6 N0 = !z10 ? i6.N0(str2) : i6.N0(str);
+            g6 N0 = !z10 ? h6.N0(str2) : h6.N0(str);
             String[] strArr = new String[1];
             String str3 = N0.d;
-            Q0 = str3 == null ? i6.Q0(null, str3, strArr) : i6.Q0(new File(N0.b), null, strArr);
+            Q0 = str3 == null ? h6.Q0(null, str3, strArr) : h6.Q0(new File(N0.b), null, strArr);
             this.C0.clear();
-            iArr = i6.nl;
+            iArr = h6.nl;
             if (iArr != null) {
                 for (int i11 = 0; i11 < iArr.length; i11++) {
                     this.C0.put(i11, iArr[i11]);
@@ -433,7 +433,7 @@ public abstract class h1 extends j {
             s();
         }
         str = string;
-        boolean z102 = o8Var.y0;
+        boolean z102 = l8Var.y0;
         this.B0 = z102;
         if (!z102) {
         }
@@ -442,7 +442,7 @@ public abstract class h1 extends j {
         if (str32 == null) {
         }
         this.C0.clear();
-        iArr = i6.nl;
+        iArr = h6.nl;
         if (iArr != null) {
         }
         while (i10 < Q0.size()) {

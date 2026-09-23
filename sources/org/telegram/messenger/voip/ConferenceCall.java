@@ -13,20 +13,21 @@ import java.util.Iterator;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BuildConfig;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.y0;
+import org.telegram.messenger.z0;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public class ConferenceCall {
     public static final int PERMISSION_ADD = 1;
@@ -53,7 +54,7 @@ public class ConferenceCall {
     private final Runnable pollRunnable = new b(this, 2);
     private final int[] pollRequestId = new int[2];
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static final class CallParticipant {
         int permissions;
         long public_key_id;
@@ -67,7 +68,7 @@ public class ConferenceCall {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static final class CallState {
         int height;
         CallParticipant[] participants;
@@ -95,7 +96,7 @@ public class ConferenceCall {
                 }
                 CallParticipant callParticipant = this.participants[i10];
                 if (callParticipant == null) {
-                    sb2.append("null");
+                    sb2.append(BuildConfig.BETA_URL);
                 } else {
                     sb2.append(callParticipant.toString());
                 }
@@ -105,7 +106,7 @@ public class ConferenceCall {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static final class CallVerificationState {
         byte[] emoji_hash;
         int height;
@@ -124,7 +125,7 @@ public class ConferenceCall {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static final class CallVerificationWords {
         int height;
         String[] words;
@@ -566,7 +567,7 @@ public class ConferenceCall {
             if (bArr == null) {
                 StringBuilder m10 = hg.c.m("[tde2e] {subchain: ", i10, "} got into hole (might be the end) in ", i10, " subchain at #");
                 hg.c.v(m10, max, ", when our last_offset[", i10, "] = ");
-                y0.n(this.last_offset[i10], m10);
+                z0.n(this.last_offset[i10], m10);
                 this.last_offset[i10] = max;
                 return;
             }

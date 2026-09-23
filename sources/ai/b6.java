@@ -1,181 +1,94 @@
 package ai;
 
-import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.graphics.RectF;
-import android.text.TextUtils;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.bj0;
-import org.telegram.ui.Components.qr;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.yi0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class b6 extends FrameLayout {
-    public final z5 a;
-    public final a6 b;
-    public final TextView[] c;
-    public bj0 d;
-    public final d6 e;
-    public Paint f;
-    public float h;
-    public boolean n;
-    public boolean r;
-    public ValueAnimator s;
+public final class b6 {
+    public final Paint a;
+    public final Paint b;
+    public final Paint c;
+    public final Drawable d;
+    public final Drawable e;
+    public final ColorDrawable f;
+    public final com.google.firebase.messaging.n g = new com.google.firebase.messaging.n(5);
+    public final RectF h = new RectF();
+    public final RectF i = new RectF();
+    public final RectF j = new RectF();
+    public final RectF k;
+    public final Paint l;
+    public final Drawable m;
+    public final Drawable n;
+    public final Drawable o;
+    public final Drawable p;
+    public final Drawable q;
+    public final Drawable r;
+    public final Drawable s;
+    public final yi0 t;
+    public final yi0 u;
 
-    public b6(Context context, d6 d6Var) {
-        super(context);
-        this.c = new TextView[2];
-        this.e = d6Var;
-        z5 z5Var = new z5(this, context, 0);
-        this.a = z5Var;
-        z5Var.setRoundRadius(AndroidUtilities.dp(16.0f));
-        addView(z5Var, w7.x5.d(32, 32.0f, 0, 12.0f, 2.0f, 0.0f, 0.0f));
-        setClipChildren(false);
-        a6 a6Var = new a6(context, 0);
-        this.b = a6Var;
-        a6Var.setTextSize(14);
-        a6Var.setTypeface(AndroidUtilities.bold());
-        a6Var.setMaxLines(1);
-        a6Var.setEllipsizeByGradient(AndroidUtilities.dp(4.0f));
-        a6Var.setPivotX(0.0f);
-        NotificationCenter.listenEmojiLoading(a6Var);
-        addView(a6Var, w7.x5.d(-2, -2.0f, 0, 54.0f, 0.0f, 86.0f, 0.0f));
-        for (int i10 = 0; i10 < 2; i10++) {
-            this.c[i10] = new TextView(context);
-            this.c[i10].setTextSize(1, 12.0f);
-            this.c[i10].setMaxLines(1);
-            this.c[i10].setSingleLine(true);
-            this.c[i10].setEllipsize(TextUtils.TruncateAt.MIDDLE);
-            this.c[i10].setTextColor(-1);
-            this.c[i10].setPadding(AndroidUtilities.dp(3.0f), 0, AndroidUtilities.dp(3.0f), AndroidUtilities.dp(1.0f));
-            addView(this.c[i10], w7.x5.d(-2, -2.0f, 0, 51.0f, 18.0f, 83.0f, 0.0f));
-        }
-        this.b.setTextColor(-1);
+    public b6(Context context) {
+        new RectF();
+        this.k = new RectF();
+        this.l = new Paint();
+        this.m = context.getDrawable(R.drawable.media_share);
+        this.o = context.getDrawable(R.drawable.media_like);
+        this.n = context.getDrawable(R.drawable.media_repost);
+        Drawable drawable = context.getDrawable(R.drawable.media_like_active);
+        this.p = drawable;
+        drawable.setColorFilter(new PorterDuffColorFilter(-53704, PorterDuff.Mode.MULTIPLY));
+        this.q = context.getDrawable(R.drawable.media_more);
+        this.r = context.getDrawable(R.drawable.menu_stream_pip);
+        this.s = context.getDrawable(R.drawable.msg_delete);
+        this.u = new yi0(R.raw.media_mute_unmute, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), true, null);
+        yi0 yi0Var = new yi0(R.raw.media_mute_unmute, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), true, null);
+        this.t = yi0Var;
+        yi0Var.N(20, false, true);
+        yi0Var.stop();
+        Paint paint = new Paint(1);
+        this.a = paint;
+        paint.setColor(1442840575);
+        Paint paint2 = new Paint(1);
+        this.b = paint2;
+        paint2.setColor(-1);
+        int k10 = i0.a.k(-16777216, 102);
+        this.d = context.getDrawable(R.drawable.shadow_story_top);
+        this.e = context.getDrawable(R.drawable.shadow_story_bottom);
+        Paint paint3 = new Paint();
+        this.c = paint3;
+        paint3.setColor(k10);
+        this.f = new ColorDrawable(i0.a.d(0.1f, -16777216, -1));
     }
 
-    public final void b(float f7, Canvas canvas, RectF rectF, boolean z10) {
-        float f10;
-        boolean z11;
-        k9 k9Var;
-        d6 d6Var = this.e;
-        if ((d6Var == null || d6Var.b == null) && this.h == 0.0f) {
+    public final void a(boolean z10, boolean z11) {
+        yi0 yi0Var = this.u;
+        if (!z11) {
+            yi0Var.N(z10 ? 20 : 0, false, false);
+            yi0Var.P(z10 ? 20 : 0);
             return;
-        }
-        if (d6Var == null || (k9Var = d6Var.b) == null || k9Var.I) {
-            if (this.n) {
-                this.n = false;
-                this.r = this.d.f < 0.2f;
-            }
-            if (!this.r) {
-                this.h = Utilities.clamp(this.h - ((1000.0f / AndroidUtilities.screenRefreshRate) / 300.0f), 1.0f, 0.0f);
-            }
-            f10 = 1.0f;
-            z11 = true;
-        } else {
-            this.h = 1.0f;
-            f10 = k9Var.h;
-            if (!this.n) {
-                this.n = true;
-            }
-            z11 = false;
-        }
-        bj0 bj0Var = this.d;
-        z5 z5Var = this.a;
-        if (bj0Var == null) {
-            bj0 bj0Var2 = new bj0(z5Var);
-            this.d = bj0Var2;
-            bj0Var2.d(null, true, false);
-        }
-        this.d.q = 0;
-        ImageReceiver imageReceiver = z5Var.getImageReceiver();
-        float b10 = com.google.android.gms.internal.vision.e2.b(1.0f, this.h, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(3.0f));
-        this.d.f((int) (rectF.left - b10), (int) (rectF.top - b10), (int) (rectF.right + b10), (int) (rectF.bottom + b10));
-        this.d.e(z11 ? 1.0f : Utilities.clamp(f10, 1.0f, 0.0f), true);
-        if (this.r && z11 && this.d.f >= 0.9f) {
-            this.h = Utilities.clamp(this.h - ((1000.0f / AndroidUtilities.screenRefreshRate) / 300.0f), 1.0f, 0.0f);
         }
         if (z10) {
-            if (f7 != 1.0f) {
-                Paint t10 = ia.t(imageReceiver, false);
-                t10.setAlpha((int) (this.h * 255.0f));
-                bj0 bj0Var3 = this.d;
-                bj0Var3.t = t10;
-                bj0Var3.a(canvas);
+            if (yi0Var.a0 > 20) {
+                yi0Var.N(0, false, false);
             }
-            if (this.f == null) {
-                Paint paint = new Paint(1);
-                this.f = paint;
-                paint.setColor(-1);
-                this.f.setStrokeWidth(AndroidUtilities.dp(2.0f));
-                this.f.setStyle(Paint.Style.STROKE);
-                this.f.setStrokeCap(Paint.Cap.ROUND);
-            }
-            this.f.setAlpha((int) (255.0f * f7 * this.h));
-            bj0 bj0Var4 = this.d;
-            bj0Var4.t = this.f;
-            bj0Var4.a(canvas);
-        }
-    }
-
-    public final void c(CharSequence charSequence, boolean z10) {
-        ValueAnimator valueAnimator = this.s;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-            this.s = null;
-        }
-        int i10 = 8;
-        TextView[] textViewArr = this.c;
-        if (!z10) {
-            textViewArr[0].setVisibility(0);
-            textViewArr[0].setAlpha(1.0f);
-            textViewArr[0].setText(charSequence);
-            textViewArr[1].setVisibility(8);
-            textViewArr[1].setAlpha(0.0f);
+            yi0Var.P(20);
+            yi0Var.start();
             return;
         }
-        textViewArr[1].setOnClickListener(null);
-        textViewArr[1].setText(textViewArr[0].getText());
-        textViewArr[1].setVisibility(0);
-        textViewArr[1].setAlpha(1.0f);
-        textViewArr[1].setTranslationY(0.0f);
-        textViewArr[0].setText(charSequence);
-        textViewArr[0].setVisibility(0);
-        textViewArr[0].setAlpha(0.0f);
-        textViewArr[0].setTranslationY(-AndroidUtilities.dp(4.0f));
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        this.s = ofFloat;
-        ofFloat.addUpdateListener(new a(this, i10));
-        this.s.addListener(new b(this, 5));
-        this.s.setInterpolator(qr.h);
-        this.s.setDuration(340L);
-        this.s.start();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (isEnabled()) {
-            return super.dispatchTouchEvent(motionEvent);
+        int i10 = yi0Var.a0;
+        if (i10 == 0 || i10 >= 43) {
+            return;
         }
-        return false;
-    }
-
-    public void setOnSubtitleClick(View.OnClickListener onClickListener) {
-        TextView[] textViewArr = this.c;
-        textViewArr[0].setOnClickListener(onClickListener);
-        textViewArr[0].setClickable(onClickListener != null);
-        textViewArr[0].setBackground(onClickListener == null ? null : org.telegram.ui.ActionBar.i6.f0(822083583, 7, -1));
-    }
-
-    public void setSubtitle(CharSequence charSequence) {
-        c(charSequence, false);
+        yi0Var.P(43);
+        yi0Var.start();
     }
 }

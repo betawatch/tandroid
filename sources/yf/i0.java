@@ -8,10 +8,10 @@ import android.graphics.Rect;
 import android.os.Build;
 import android.os.Looper;
 import android.view.ViewOutlineProvider;
-import org.telegram.ui.pp0;
-import org.telegram.ui.s3;
+import org.telegram.ui.jp0;
+import org.telegram.ui.t3;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public abstract class i0 {
     public static final k2 a = new k2(21);
@@ -20,13 +20,13 @@ public abstract class i0 {
     public static Outline d;
     public static Rect e;
 
-    public static void a(Canvas canvas, pp0 pp0Var, s3 s3Var) {
+    public static void a(Canvas canvas, jp0 jp0Var, t3 t3Var) {
         Path path;
         Outline outline;
         Rect rect;
-        ViewOutlineProvider outlineProvider = pp0Var.getOutlineProvider();
-        if (canvas.isHardwareAccelerated() || Build.VERSION.SDK_INT < 24 || !pp0Var.getClipToOutline() || outlineProvider == null) {
-            s3Var.run(canvas);
+        ViewOutlineProvider outlineProvider = jp0Var.getOutlineProvider();
+        if (canvas.isHardwareAccelerated() || Build.VERSION.SDK_INT < 24 || !jp0Var.getClipToOutline() || outlineProvider == null) {
+            t3Var.run(canvas);
             return;
         }
         if (Looper.myLooper() == Looper.getMainLooper()) {
@@ -46,10 +46,10 @@ public abstract class i0 {
             rect = new Rect();
         }
         Path path2 = path;
-        outlineProvider.getOutline(pp0Var, outline);
+        outlineProvider.getOutline(jp0Var, outline);
         path2.rewind();
         if (outline.isEmpty() || !outline.getRect(rect)) {
-            s3Var.run(canvas);
+            t3Var.run(canvas);
             return;
         }
         float radius = outline.getRadius();
@@ -60,7 +60,7 @@ public abstract class i0 {
         }
         int save = canvas.save();
         canvas.clipPath(path2);
-        s3Var.run(canvas);
+        t3Var.run(canvas);
         canvas.restoreToCount(save);
     }
 }

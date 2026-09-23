@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.concurrent.Executors;
 import qg.b0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class m implements n {
     public static final k4.d d = new k4.d(0, -9223372036854775807L, false);
@@ -22,7 +22,7 @@ public final class m implements n {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public m(String str) {
-        this(new z2.a(Executors.newSingleThreadExecutor(new androidx.emoji2.text.a(r3, 1)), new org.telegram.ui.web.m(3)));
+        this(new z2.a(Executors.newSingleThreadExecutor(new androidx.emoji2.text.a(r3, 1)), new v3.d(12)));
         String concat = "ExoPlayer:Loader:".concat(str);
         String str2 = d0.a;
     }

@@ -12,26 +12,26 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.Components.k7;
-import org.telegram.ui.Components.kl0;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.Components.bb;
 import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.w51;
-import org.telegram.ui.Components.za;
+import org.telegram.ui.Components.m7;
+import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.v51;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import w7.x5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final class c extends za {
+public final class c extends bb {
     public static final /* synthetic */ int a0 = 0;
     public final List X;
     public final GiftAuctionController.Auction Y;
-    public w51 Z;
+    public v51 Z;
 
-    public c(Context context, e6 e6Var, GiftAuctionController.Auction auction, List list) {
-        super(context, null, false, false, 2, e6Var);
+    public c(Context context, d6 d6Var, GiftAuctionController.Auction auction, List list) {
+        super(context, null, false, false, 2, d6Var);
         this.Y = auction;
         this.X = list;
         this.v = 0.2f;
@@ -40,9 +40,9 @@ public final class c extends za {
         this.e.setTitle(y());
         fixNavigationBar();
         this.d.setPadding(this.backgroundPaddingLeft, AndroidUtilities.dp(9.0f), this.backgroundPaddingLeft, AndroidUtilities.dp(64.0f));
-        this.d.setOnItemClickListener(new k7(3));
+        this.d.setOnItemClickListener(new m7(3));
         this.d.setOverScrollMode(2);
-        ci.d dVar = new ci.d(context, e6Var, true);
+        ci.d dVar = new ci.d(context, d6Var, true);
         dVar.setOnClickListener(new org.telegram.ui.Components.voip.o(this, 15));
         dVar.g(LocaleController.getString(R.string.OK), false, true);
         FrameLayout.LayoutParams d = x5.d(-1, 48.0f, 80, 16.0f, 16.0f, 16.0f, 16.0f);
@@ -74,15 +74,15 @@ public final class c extends za {
         U.presentFragment(new ProfileActivity(bundle, null));
     }
 
-    @Override // org.telegram.ui.Components.za
-    public final kl0 v(ll0 ll0Var) {
-        w51 w51Var = new w51(this.d, getContext(), this.currentAccount, 0, true, new hi.a(this, 11), this.resourcesProvider);
-        this.Z = w51Var;
-        w51Var.r = false;
-        return w51Var;
+    @Override // org.telegram.ui.Components.bb
+    public final ll0 v(ml0 ml0Var) {
+        v51 v51Var = new v51(this.d, getContext(), this.currentAccount, 0, true, new hi.a(this, 11), this.resourcesProvider);
+        this.Z = v51Var;
+        v51Var.r = false;
+        return v51Var;
     }
 
-    @Override // org.telegram.ui.Components.za
+    @Override // org.telegram.ui.Components.bb
     public final CharSequence y() {
         List list = this.X;
         if (list == null) {

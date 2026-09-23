@@ -1,20 +1,25 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class tk extends org.telegram.ui.Components.g61 {
-    public final /* synthetic */ bo N;
+public final class tk implements NotificationCenter.PostponeNotificationCallback {
+    public final /* synthetic */ xn a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tk(bo boVar, Context context) {
-        super(context);
-        this.N = boVar;
+    public tk(xn xnVar) {
+        this.a = xnVar;
     }
 
-    @Override // org.telegram.ui.Components.g61
-    public final org.telegram.ui.ActionBar.e6 getResourceProvider() {
-        return this.N.ea;
+    @Override // org.telegram.messenger.NotificationCenter.PostponeNotificationCallback
+    public final boolean needPostpone(int i10, int i11, Object[] objArr) {
+        if (i10 == NotificationCenter.didReceiveNewMessages) {
+            long longValue = ((Long) objArr[0]).longValue();
+            xn xnVar = this.a;
+            if (xnVar.H6 && longValue == xnVar.T5) {
+                return true;
+            }
+        }
+        return false;
     }
 }

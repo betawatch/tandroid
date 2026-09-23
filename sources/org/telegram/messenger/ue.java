@@ -1,30 +1,37 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ue implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ TLRPC.Message c;
+    public final /* synthetic */ long c;
     public final /* synthetic */ long d;
 
-    public /* synthetic */ ue(int i10, long j3, MessagesStorage messagesStorage, TLRPC.Message message) {
+    public /* synthetic */ ue(int i10, long j3, long j10, MessagesStorage messagesStorage) {
         this.a = i10;
         this.b = messagesStorage;
-        this.c = message;
-        this.d = j3;
+        this.c = j3;
+        this.d = j10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$updateMessageCustomParams$110(this.c, this.d);
+                this.b.lambda$clearUserPhoto$93(this.c, this.d);
+                break;
+            case 1:
+                this.b.lambda$saveChatInviter$132(this.c, this.d);
+                break;
+            case 2:
+                this.b.lambda$setDialogFlags$37(this.c, this.d);
+                break;
+            case 3:
+                this.b.lambda$removeTopic$57(this.c, this.d);
                 break;
             default:
-                this.b.lambda$markMessageAsSendErrorWithParams$210(this.c, this.d);
+                this.b.lambda$deleteUserChatHistory$87(this.c, this.d);
                 break;
         }
     }

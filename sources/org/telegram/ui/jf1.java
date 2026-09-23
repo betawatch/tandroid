@@ -1,26 +1,71 @@
 package org.telegram.ui;
 
 import android.view.View;
-import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class jf1 implements View.OnClickListener {
-    public final /* synthetic */ eg1 a;
+public final class jf1 extends s4.j {
+    public Runnable F;
+    public int G;
+    public final /* synthetic */ wf1 H;
 
-    public jf1(eg1 eg1Var) {
-        this.a = eg1Var;
+    public jf1(wf1 wf1Var) {
+        this.H = wf1Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        eg1 eg1Var = this.a;
-        if (eg1Var.M == 1) {
-            org.telegram.ui.Components.c5.j0(eg1Var, -eg1Var.a, null, eg1Var.g(), null, false, eg1Var.J, new ua(this, 5), eg1Var.getResourceProvider());
-            return;
+    @Override // s4.j
+    public final void F() {
+        if (this.G == -1) {
+            this.G = this.H.getNotificationCenter().setAnimationInProgress(this.G, null, false);
+            Runnable runnable = this.F;
+            if (runnable != null) {
+                AndroidUtilities.cancelRunOnUIThread(runnable);
+                this.F = null;
+            }
         }
-        eg1Var.getMessagesController().addUserToChat(eg1Var.a, eg1Var.getUserConfig().getCurrentUser(), 0, null, eg1Var, false, new cf1(eg1Var, 2), new df1(eg1Var));
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeSearchByActiveAction, new Object[0]);
-        eg1Var.O0(false);
+    }
+
+    @Override // s4.j
+    public final void N() {
+        Runnable runnable = this.F;
+        if (runnable != null) {
+            AndroidUtilities.cancelRunOnUIThread(runnable);
+            this.F = null;
+        }
+        if1 if1Var = new if1(this, 0);
+        this.F = if1Var;
+        AndroidUtilities.runOnUIThread(if1Var);
+    }
+
+    @Override // s4.j, s4.m0
+    public final void g() {
+        super.g();
+        Runnable runnable = this.F;
+        if (runnable != null) {
+            AndroidUtilities.cancelRunOnUIThread(runnable);
+        }
+        if1 if1Var = new if1(this, 1);
+        this.F = if1Var;
+        AndroidUtilities.runOnUIThread(if1Var);
+    }
+
+    @Override // s4.j
+    public final void z(s4.c1 c1Var) {
+        wf1 wf1Var = this.H;
+        View view = wf1Var.b1;
+        if (view == c1Var.a) {
+            view.setTranslationX(0.0f);
+            af1 af1Var = wf1Var.O;
+            if (af1Var != null) {
+                af1Var.F.clear();
+            }
+            View view2 = wf1Var.b1;
+            if (view2 instanceof tf1) {
+                tf1 tf1Var = (tf1) view2;
+                tf1Var.setTopicIcon(tf1Var.Y4);
+            }
+            wf1Var.b1 = null;
+        }
     }
 }

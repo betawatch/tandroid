@@ -7,30 +7,30 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.z5;
-import org.telegram.ui.Components.u9;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.y5;
+import org.telegram.ui.Components.w9;
 import w7.x5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class n extends FrameLayout implements z5 {
-    public final u9 a;
+public final class n extends FrameLayout implements y5 {
+    public final w9 a;
 
     public n(Context context) {
         super(context);
-        u9 u9Var = new u9(context);
-        this.a = u9Var;
-        u9Var.setRoundRadius(AndroidUtilities.dp(20.0f));
-        addView(u9Var, x5.d(72, 72.0f, 81, 0.0f, 0.0f, 0.0f, 28.0f));
+        w9 w9Var = new w9(context);
+        this.a = w9Var;
+        w9Var.setRoundRadius(AndroidUtilities.dp(20.0f));
+        addView(w9Var, x5.d(72, 72.0f, 81, 0.0f, 0.0f, 0.0f, 28.0f));
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
-        Drawable drawable = i6.S0;
-        u9 u9Var = this.a;
-        yf.p.a(canvas, drawable, (u9Var.getWidth() / 2.0f) + u9Var.getLeft(), (u9Var.getHeight() / 2.0f) + u9Var.getTop(), u9Var.getHeight());
+        Drawable drawable = h6.S0;
+        w9 w9Var = this.a;
+        yf.p.a(canvas, drawable, (w9Var.getWidth() / 2.0f) + w9Var.getLeft(), (w9Var.getHeight() / 2.0f) + w9Var.getTop(), w9Var.getHeight());
     }
 
     @Override // android.widget.FrameLayout, android.view.View
@@ -38,7 +38,7 @@ public final class n extends FrameLayout implements z5 {
         super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(136.0f), TLObject.FLAG_30));
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
+    @Override // org.telegram.ui.ActionBar.y5
     public final void e() {
     }
 }

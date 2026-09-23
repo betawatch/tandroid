@@ -1,96 +1,58 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.RelativeLayout;
-import java.util.WeakHashMap;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import android.os.Bundle;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class wa0 extends RelativeLayout {
-    public i0.b a;
-    public boolean b;
-    public final /* synthetic */ LaunchActivity c;
+public final class wa0 implements MessagesController.MessagesLoadedCallback {
+    public final /* synthetic */ ia0 a;
+    public final /* synthetic */ boolean[] b;
+    public final /* synthetic */ Bundle c;
+    public final /* synthetic */ TLRPC.ChatInvite d;
+    public final /* synthetic */ LaunchActivity e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wa0(LaunchActivity launchActivity, LaunchActivity launchActivity2) {
-        super(launchActivity2);
-        this.c = launchActivity;
-        this.a = i0.b.e;
-        hu huVar = new hu(this, 15);
-        WeakHashMap weakHashMap = r0.i0.a;
-        r0.a0.j(this, huVar);
+    public wa0(LaunchActivity launchActivity, ia0 ia0Var, boolean[] zArr, Bundle bundle, TLRPC.ChatInvite chatInvite) {
+        this.e = launchActivity;
+        this.a = ia0Var;
+        this.b = zArr;
+        this.c = bundle;
+        this.d = chatInvite;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        ActionBarLayout actionBarLayout = this.c.r0;
-        if (actionBarLayout != null) {
-            actionBarLayout.N(canvas, this);
+    @Override // org.telegram.messenger.MessagesController.MessagesLoadedCallback
+    public final void onError() {
+        LaunchActivity launchActivity = this.e;
+        if (!launchActivity.isFinishing()) {
+            org.telegram.ui.Components.e5.u0((org.telegram.ui.ActionBar.n2) hg.c.h(1, launchActivity.d0), null, LocaleController.getString(R.string.JoinToGroupErrorNotExist), null);
         }
-        super.dispatchDraw(canvas);
-    }
-
-    @Override // android.widget.RelativeLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        int measuredWidth = getMeasuredWidth();
-        getMeasuredHeight();
-        boolean z11 = AndroidUtilities.isInMultiwindow;
-        LaunchActivity launchActivity = this.c;
-        if (z11 || (AndroidUtilities.isSmallTablet() && getResources().getConfiguration().orientation != 2)) {
-            launchActivity.q0.getView().layout(0, 0, launchActivity.q0.getView().getMeasuredWidth(), launchActivity.q0.getView().getMeasuredHeight());
-        } else {
-            i0.b bVar = this.a;
-            int tabletLeftFragmentSize = AndroidUtilities.getTabletLeftFragmentSize(measuredWidth, bVar.a, bVar.c);
-            launchActivity.q0.getView().layout(0, 0, launchActivity.q0.getView().getMeasuredWidth(), launchActivity.q0.getView().getMeasuredHeight());
-            launchActivity.s0.getView().layout(tabletLeftFragmentSize, 0, launchActivity.s0.getView().getMeasuredWidth() + tabletLeftFragmentSize, launchActivity.s0.getView().getMeasuredHeight());
+        try {
+            this.a.run();
+        } catch (Exception e) {
+            FileLog.e(e);
         }
-        int measuredWidth2 = (measuredWidth - launchActivity.r0.getView().getMeasuredWidth()) / 2;
-        int dp = AndroidUtilities.dp(8.0f) + this.a.b;
-        launchActivity.r0.getView().layout(measuredWidth2, dp, launchActivity.r0.getView().getMeasuredWidth() + measuredWidth2, launchActivity.r0.getView().getMeasuredHeight() + dp);
-        hg.r1 r1Var = launchActivity.v0;
-        r1Var.layout(0, 0, r1Var.getMeasuredWidth(), launchActivity.v0.getMeasuredHeight());
-        FrameLayout frameLayout = launchActivity.u0;
-        frameLayout.layout(0, 0, frameLayout.getMeasuredWidth(), launchActivity.u0.getMeasuredHeight());
     }
 
-    @Override // android.widget.RelativeLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        this.b = true;
-        int size = View.MeasureSpec.getSize(i10);
-        int size2 = View.MeasureSpec.getSize(i11);
-        setMeasuredDimension(size, size2);
-        boolean z10 = AndroidUtilities.isInMultiwindow;
-        LaunchActivity launchActivity = this.c;
-        if (z10 || (AndroidUtilities.isSmallTablet() && getResources().getConfiguration().orientation != 2)) {
-            launchActivity.O0 = true;
-            launchActivity.q0.getView().measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
-        } else {
-            launchActivity.O0 = false;
-            i0.b bVar = this.a;
-            int tabletLeftFragmentSize = AndroidUtilities.getTabletLeftFragmentSize(size, bVar.a, bVar.c);
-            launchActivity.q0.getView().measure(View.MeasureSpec.makeMeasureSpec(tabletLeftFragmentSize, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
-            launchActivity.s0.getView().measure(View.MeasureSpec.makeMeasureSpec(size - tabletLeftFragmentSize, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
+    @Override // org.telegram.messenger.MessagesController.MessagesLoadedCallback
+    public final void onMessagesLoaded(boolean z10) {
+        try {
+            this.a.run();
+        } catch (Exception e) {
+            FileLog.e(e);
         }
-        launchActivity.v0.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
-        launchActivity.u0.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
-        ViewGroup view = launchActivity.r0.getView();
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(500.0f), size - AndroidUtilities.dp(16.0f)), TLObject.FLAG_30);
-        i0.b bVar2 = this.a;
-        view.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(((size2 - bVar2.b) - bVar2.d) - AndroidUtilities.dp(16.0f), TLObject.FLAG_30));
-        this.b = false;
-    }
-
-    @Override // android.widget.RelativeLayout, android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.b) {
+        if (this.b[0]) {
             return;
         }
-        super.requestLayout();
+        xn xnVar = new xn(this.c);
+        TLRPC.ChatInvite chatInvite = this.d;
+        if (chatInvite instanceof TLRPC.TL_chatInvitePeek) {
+            xnVar.K5 = chatInvite;
+        }
+        ((ActionBarLayout) this.e.O()).P(xnVar);
     }
 }

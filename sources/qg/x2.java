@@ -14,31 +14,32 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.messenger.vl;
+import org.telegram.messenger.ul;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.hk0;
-import org.telegram.ui.le0;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.ik0;
+import org.telegram.ui.Components.z5;
+import org.telegram.ui.ge0;
 import w7.x5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class x2 extends j {
     public String A0;
     public final w2 q0;
-    public pg.q1 r0;
+    public pg.r1 r0;
     public int s0;
     public int t0;
     public int u0;
-    public pg.j0 v0;
+    public pg.k0 v0;
     public int w0;
     public int x0;
     public Runnable y0;
     public boolean z0;
 
-    public x2(Context context, PointF pointF, int i10, CharSequence charSequence, pg.q1 q1Var, int i11) {
+    public x2(Context context, PointF pointF, int i10, CharSequence charSequence, pg.r1 r1Var, int i11) {
         super(context, pointF);
-        this.v0 = pg.j0.e;
+        this.v0 = pg.k0.e;
         this.t0 = i10;
         w2 w2Var = new w2(this, context);
         this.q0 = w2Var;
@@ -53,7 +54,7 @@ public final class x2 extends j {
         w2Var.setCursorSize(AndroidUtilities.dp(this.t0 * 0.4f));
         w2Var.setText(charSequence);
         s();
-        w2Var.setTextColor(q1Var.a);
+        w2Var.setTextColor(r1Var.a);
         w2Var.setTypeface(null, 1);
         w2Var.setHorizontallyScrolling(false);
         int i12 = Build.VERSION.SDK_INT;
@@ -71,10 +72,10 @@ public final class x2 extends j {
         } else if (i12 >= 23) {
             w2Var.setBreakStrategy(0);
         }
-        setSwatch(q1Var);
+        setSwatch(r1Var);
         setType(i11);
         k();
-        w2Var.addTextChangedListener(new le0(this));
+        w2Var.addTextChangedListener(new ge0(this));
     }
 
     @Override // qg.j
@@ -107,18 +108,18 @@ public final class x2 extends j {
     }
 
     @Override // qg.j
-    public hk0 getSelectionBounds() {
+    public ik0 getSelectionBounds() {
         ViewGroup viewGroup = (ViewGroup) getParent();
         if (viewGroup == null) {
-            return new hk0();
+            return new ik0();
         }
         float scaleX = viewGroup.getScaleX();
         float dp = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
         float dp2 = (AndroidUtilities.dp(52.0f) / scaleX) + (getScale() * getMeasuredHeight());
-        float v = vl.v(dp, 2.0f, getPositionX(), scaleX);
+        float v = ul.v(dp, 2.0f, getPositionX(), scaleX);
         float positionY = getPositionY();
         w2 w2Var = this.q0;
-        return new hk0(v, (positionY - (((dp2 - w2Var.getExtendedPaddingTop()) - AndroidUtilities.dpf2(4.0f)) / 2.0f)) * scaleX, ((dp * scaleX) + v) - v, (dp2 - w2Var.getExtendedPaddingBottom()) * scaleX);
+        return new ik0(v, (positionY - (((dp2 - w2Var.getExtendedPaddingTop()) - AndroidUtilities.dpf2(4.0f)) / 2.0f)) * scaleX, ((dp * scaleX) + v) - v, (dp2 - w2Var.getExtendedPaddingBottom()) * scaleX);
     }
 
     @Override // qg.j
@@ -157,7 +158,7 @@ public final class x2 extends j {
         return rectF.top;
     }
 
-    public pg.q1 getSwatch() {
+    public pg.r1 getSwatch() {
         return this.r0;
     }
 
@@ -173,7 +174,7 @@ public final class x2 extends j {
         return this.s0;
     }
 
-    public pg.j0 getTypeface() {
+    public pg.k0 getTypeface() {
         return this.v0;
     }
 
@@ -195,7 +196,7 @@ public final class x2 extends j {
         w2Var.setClickable(true);
         w2Var.requestFocus();
         w2Var.setSelection(w2Var.getText().length());
-        AndroidUtilities.runOnUIThread(new org.telegram.ui.web.u0(this, 17), 300L);
+        AndroidUtilities.runOnUIThread(new org.telegram.ui.web.t0(this, 17), 300L);
     }
 
     public final void r() {
@@ -216,7 +217,7 @@ public final class x2 extends j {
         w2Var.setTextColor(i10);
         w2Var.setCursorColor(i10);
         w2Var.setHandlesColor(i10);
-        w2Var.setHighlightColor(i6.l1(0.4f, i10));
+        w2Var.setHighlightColor(h6.l1(0.4f, i10));
     }
 
     public final void s() {
@@ -246,8 +247,8 @@ public final class x2 extends j {
                 emojiSpanArr[i11].replaceFontMetrics(getFontMetricsInt());
                 emojiSpanArr[i11].scale = 0.85f;
             }
-            for (org.telegram.ui.Components.x5 x5Var : (org.telegram.ui.Components.x5[]) text.getSpans(0, text.length(), org.telegram.ui.Components.x5.class)) {
-                x5Var.replaceFontMetrics(getFontMetricsInt());
+            for (z5 z5Var : (z5[]) text.getSpans(0, text.length(), z5.class)) {
+                z5Var.replaceFontMetrics(getFontMetricsInt());
             }
             w2Var.invalidateForce();
         }
@@ -257,8 +258,8 @@ public final class x2 extends j {
         this.q0.setMaxWidth(i10);
     }
 
-    public void setSwatch(pg.q1 q1Var) {
-        this.r0 = new pg.q1(q1Var.b, q1Var.c, q1Var.a);
+    public void setSwatch(pg.r1 r1Var) {
+        this.r0 = new pg.r1(r1Var.b, r1Var.c, r1Var.a);
         r();
     }
 
@@ -272,23 +273,23 @@ public final class x2 extends j {
         r();
     }
 
-    public void setTypeface(pg.j0 j0Var) {
-        this.v0 = j0Var;
-        if (j0Var != null) {
-            this.q0.setTypeface(j0Var.d());
+    public void setTypeface(pg.k0 k0Var) {
+        this.v0 = k0Var;
+        if (k0Var != null) {
+            this.q0.setTypeface(k0Var.d());
         }
         m();
     }
 
     public void setTypeface(String str) {
-        Iterator it = pg.j0.c().iterator();
+        Iterator it = pg.k0.c().iterator();
         while (true) {
             if (!it.hasNext()) {
                 break;
             }
-            pg.j0 j0Var = (pg.j0) it.next();
-            if (j0Var.a.equals(str)) {
-                setTypeface(j0Var);
+            pg.k0 k0Var = (pg.k0) it.next();
+            if (k0Var.a.equals(str)) {
+                setTypeface(k0Var);
                 str = null;
                 break;
             }

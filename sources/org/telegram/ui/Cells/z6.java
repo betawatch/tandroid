@@ -9,17 +9,17 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.vl;
+import org.telegram.messenger.ul;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.c90;
-import org.telegram.ui.Components.m51;
-import org.telegram.ui.Components.o01;
+import org.telegram.ui.Components.d90;
+import org.telegram.ui.Components.l51;
+import org.telegram.ui.Components.n01;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public abstract class z6 extends LinearLayout {
     public TextView a;
-    public c90 b;
+    public d90 b;
     public TextView c;
     public TextView d;
     public int e;
@@ -33,14 +33,14 @@ public abstract class z6 extends LinearLayout {
     public void setType(int i10) {
         int i11 = this.f;
         TextView textView = this.c;
-        c90 c90Var = this.b;
+        d90 d90Var = this.b;
         TextView textView2 = this.a;
         TextView textView3 = this.d;
         this.e = i10;
         if (i10 != 0) {
             if (i10 == 1) {
                 textView2.setText(LocaleController.getString(R.string.YourPasswordHeader));
-                c90Var.setText(LocaleController.getString(R.string.YourPasswordRemember));
+                d90Var.setText(LocaleController.getString(R.string.YourPasswordRemember));
                 textView.setText(LocaleController.getString(R.string.YourPasswordRememberYes));
                 textView3.setVisibility(0);
                 textView3.setText(LocaleController.getString(R.string.YourPasswordRememberNo));
@@ -48,14 +48,14 @@ public abstract class z6 extends LinearLayout {
             }
             if (i10 == 2) {
                 textView2.setText(LocaleController.getString(R.string.GraceSuggestionTitle));
-                c90Var.setText(LocaleController.getString(R.string.GraceSuggestionMessage));
+                d90Var.setText(LocaleController.getString(R.string.GraceSuggestionMessage));
                 textView.setText(LocaleController.getString(R.string.GraceSuggestionButton));
                 textView3.setVisibility(8);
                 return;
             }
             return;
         }
-        textView2.setText(LocaleController.formatString(R.string.CheckPhoneNumber, vl.h(new StringBuilder("+"), MessagesController.getInstance(i11).getUser(Long.valueOf(UserConfig.getInstance(i11).clientUserId)).phone, gf.b.c())));
+        textView2.setText(LocaleController.formatString(R.string.CheckPhoneNumber, ul.h(new StringBuilder("+"), MessagesController.getInstance(i11).getUser(Long.valueOf(UserConfig.getInstance(i11).clientUserId)).phone, gf.b.c())));
         String string = LocaleController.getString(R.string.CheckPhoneNumberInfo);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(string);
         int indexOf = string.indexOf("**");
@@ -64,12 +64,12 @@ public abstract class z6 extends LinearLayout {
             spannableStringBuilder.replace(lastIndexOf, lastIndexOf + 2, (CharSequence) "");
             spannableStringBuilder.replace(indexOf, indexOf + 2, (CharSequence) "");
             try {
-                spannableStringBuilder.setSpan(new m51(LocaleController.getString(R.string.CheckPhoneNumberLearnMoreUrl), (o01) null), indexOf, lastIndexOf - 2, 33);
+                spannableStringBuilder.setSpan(new l51(LocaleController.getString(R.string.CheckPhoneNumberLearnMoreUrl), (n01) null), indexOf, lastIndexOf - 2, 33);
             } catch (Exception e) {
                 FileLog.e(e);
             }
         }
-        c90Var.setText(spannableStringBuilder);
+        d90Var.setText(spannableStringBuilder);
         textView.setText(LocaleController.getString(R.string.CheckPhoneNumberYes));
         textView3.setVisibility(0);
         textView3.setText(LocaleController.getString(R.string.CheckPhoneNumberNo));

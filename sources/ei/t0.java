@@ -11,7 +11,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.Cells.c6;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t0 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -32,7 +32,7 @@ public final /* synthetic */ class t0 implements DialogInterface.OnDismissListen
             case 0:
                 w0 w0Var = (w0) this.c;
                 boolean[] zArr = (boolean[]) this.b;
-                org.telegram.ui.web.r rVar = (org.telegram.ui.web.r) this.d;
+                org.telegram.ui.web.q qVar = (org.telegram.ui.web.q) this.d;
                 w0Var.getClass();
                 if (!zArr[0]) {
                     w0Var.d = true;
@@ -43,7 +43,7 @@ public final /* synthetic */ class t0 implements DialogInterface.OnDismissListen
                         ((Runnable) it.next()).run();
                     }
                     zArr[0] = true;
-                    rVar.run(Boolean.TRUE, Boolean.FALSE);
+                    qVar.run(Boolean.TRUE, Boolean.FALSE);
                     break;
                 }
                 break;
@@ -69,20 +69,20 @@ public final /* synthetic */ class t0 implements DialogInterface.OnDismissListen
                 break;
             case 3:
                 Utilities.Callback callback2 = (Utilities.Callback) this.c;
-                org.telegram.ui.Components.o3 o3Var = (org.telegram.ui.Components.o3) this.b;
-                org.telegram.ui.Components.q3 q3Var = (org.telegram.ui.Components.q3) this.d;
-                callback2.run(Integer.valueOf(q3Var.getValue() + (o3Var.getValue() * 60)));
+                org.telegram.ui.Components.q3 q3Var = (org.telegram.ui.Components.q3) this.b;
+                org.telegram.ui.Components.s3 s3Var = (org.telegram.ui.Components.s3) this.d;
+                callback2.run(Integer.valueOf(s3Var.getValue() + (q3Var.getValue() * 60)));
                 break;
             case 4:
-                org.telegram.ui.web.d1 d1Var = (org.telegram.ui.web.d1) this.c;
+                org.telegram.ui.web.b1 b1Var = (org.telegram.ui.web.b1) this.c;
                 AtomicBoolean atomicBoolean = (AtomicBoolean) this.b;
                 da daVar = (da) this.d;
-                d1Var.getClass();
+                b1Var.getClass();
                 if (!atomicBoolean.get()) {
-                    d1Var.y(daVar, "popup_closed", new JSONObject());
+                    b1Var.y(daVar, "popup_closed", new JSONObject());
                 }
-                d1Var.c0 = null;
-                d1Var.e0 = System.currentTimeMillis();
+                b1Var.c0 = null;
+                b1Var.e0 = System.currentTimeMillis();
                 break;
             case 5:
                 c6 c6Var = (c6) this.c;
@@ -95,11 +95,11 @@ public final /* synthetic */ class t0 implements DialogInterface.OnDismissListen
                 }
                 break;
             default:
-                xh.r2 r2Var = (xh.r2) this.c;
-                xh.z1 z1Var = (xh.z1) this.b;
+                xh.s2 s2Var = (xh.s2) this.c;
+                xh.a2 a2Var = (xh.a2) this.b;
                 Activity activity3 = (Activity) this.d;
-                AndroidUtilities.hideKeyboard(z1Var);
-                AndroidUtilities.requestAdjustResize(activity3, r2Var.a.getClassGuid());
+                AndroidUtilities.hideKeyboard(a2Var);
+                AndroidUtilities.requestAdjustResize(activity3, s2Var.a.getClassGuid());
                 break;
         }
     }

@@ -4,7 +4,7 @@ import android.animation.ValueAnimator;
 import android.graphics.Paint;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l2 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -28,9 +28,9 @@ public final /* synthetic */ class l2 implements ValueAnimator.AnimatorUpdateLis
                 paint.setColor(i0.a.d(((Float) valueAnimator.getAnimatedValue()).floatValue(), this.c, this.d));
                 k3Var.A();
                 k3Var.e.invalidate();
-                org.telegram.ui.c3 c3Var = k3Var.U0;
-                if (c3Var != null) {
-                    c3Var.b(AndroidUtilities.computePerceivedBrightness(paint.getColor()) <= 0.721f, false);
+                org.telegram.ui.d3 d3Var = k3Var.U0;
+                if (d3Var != null) {
+                    d3Var.b(AndroidUtilities.computePerceivedBrightness(paint.getColor()) <= 0.721f, false);
                     k3Var.U0.setBackgroundColor(paint.getColor());
                 }
                 k3Var.F();

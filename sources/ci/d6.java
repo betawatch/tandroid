@@ -1,24 +1,120 @@
 package ci;
 
-import android.content.Context;
-import android.graphics.PointF;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.jv0;
-import org.telegram.ui.Components.xi0;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class d6 extends qg.q2 {
-    public final /* synthetic */ r6 y0;
+public final class d6 implements org.telegram.ui.ActionBar.d6 {
+    public PorterDuffColorFilter a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.d6 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d6(r6 r6Var, Context context, PointF pointF, float f7, float f10, jv0 jv0Var, TLRPC.Document document, Object obj) {
-        super(context, pointF, f7, f10, jv0Var, document, obj);
-        this.y0 = r6Var;
+    public d6(org.telegram.ui.ActionBar.d6 d6Var) {
+        this.b = d6Var;
     }
 
-    @Override // qg.q2
-    public final void q(xi0 xi0Var) {
-        this.y0.getClass();
+    @Override // org.telegram.ui.ActionBar.d6
+    public final Paint G(String str) {
+        return this.b.G(str);
+    }
+
+    @Override // org.telegram.ui.ActionBar.d6
+    public final int G0(int i10) {
+        if (i10 == org.telegram.ui.ActionBar.h6.G8) {
+            return -14145495;
+        }
+        if (i10 == org.telegram.ui.ActionBar.h6.E8) {
+            return -1;
+        }
+        if (i10 == org.telegram.ui.ActionBar.h6.h5) {
+            return -14737633;
+        }
+        if (i10 == org.telegram.ui.ActionBar.h6.j5) {
+            return -592138;
+        }
+        if (i10 == org.telegram.ui.ActionBar.h6.r5) {
+            return -8553091;
+        }
+        if (i10 == org.telegram.ui.ActionBar.h6.He) {
+            return -16777216;
+        }
+        if (i10 == org.telegram.ui.ActionBar.h6.Ke) {
+            return -1610612736;
+        }
+        if (i10 == org.telegram.ui.ActionBar.h6.Ne || i10 == org.telegram.ui.ActionBar.h6.Re || i10 == org.telegram.ui.ActionBar.h6.Me) {
+            return -9539985;
+        }
+        if (i10 == org.telegram.ui.ActionBar.h6.G6) {
+            return -1;
+        }
+        int i11 = org.telegram.ui.ActionBar.h6.Mh;
+        if (i10 == i11) {
+            return -11754001;
+        }
+        if (i10 == org.telegram.ui.ActionBar.h6.i6) {
+            return 536870911;
+        }
+        if (i10 == org.telegram.ui.ActionBar.h6.Fh || i10 == org.telegram.ui.ActionBar.h6.Eh || i10 == org.telegram.ui.ActionBar.h6.Gh) {
+            return -1;
+        }
+        if (i10 == org.telegram.ui.ActionBar.h6.Hh) {
+            return 352321535;
+        }
+        if (i10 == org.telegram.ui.ActionBar.h6.Je || i10 == i11) {
+            return -7895161;
+        }
+        if (i10 == org.telegram.ui.ActionBar.h6.Ie) {
+            return 780633991;
+        }
+        if (i10 == org.telegram.ui.ActionBar.h6.a7) {
+            return -15921907;
+        }
+        org.telegram.ui.ActionBar.d6 d6Var = this.b;
+        return d6Var != null ? d6Var.G0(i10) : org.telegram.ui.ActionBar.h6.w0(null, i10, false);
+    }
+
+    @Override // org.telegram.ui.ActionBar.d6
+    public final boolean a() {
+        return org.telegram.ui.ActionBar.h6.I.q();
+    }
+
+    @Override // org.telegram.ui.ActionBar.d6
+    public final int g0(int i10) {
+        return G0(i10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.d6
+    public final int g1(int i10) {
+        return G0(i10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.d6
+    public final /* synthetic */ Drawable getDrawable(String str) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.ActionBar.d6
+    public final void m(float f7, float f10, int i10, int i11) {
+        org.telegram.ui.ActionBar.h6.q(f7, f10, i10, i11);
+    }
+
+    @Override // org.telegram.ui.ActionBar.d6
+    public final /* synthetic */ boolean p0() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.d6
+    public final ColorFilter x() {
+        if (this.a == null) {
+            this.a = new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN);
+        }
+        return this.a;
+    }
+
+    @Override // org.telegram.ui.ActionBar.d6
+    public final /* synthetic */ void L0(int i10, int i11) {
     }
 }

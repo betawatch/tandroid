@@ -3,7 +3,7 @@ package qg;
 import android.content.Context;
 import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class w2 extends b {
     public final /* synthetic */ x2 E;
@@ -14,7 +14,7 @@ public final class w2 extends b {
         this.E = x2Var;
     }
 
-    @Override // org.telegram.ui.Components.du, android.view.View
+    @Override // org.telegram.ui.Components.eu, android.view.View
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         i iVar = this.E.H;
         if (iVar == null || iVar.getVisibility() != 0) {
@@ -23,7 +23,7 @@ public final class w2 extends b {
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.du, android.widget.TextView, android.view.View
+    @Override // org.telegram.ui.Components.eu, android.widget.TextView, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
         this.E.m();

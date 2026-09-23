@@ -1,20 +1,20 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.view.MotionEvent;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class tc1 extends ci.i8 {
-    public tc1(Activity activity) {
-        super(activity, 3);
+public final class tc1 extends AnimatorListenerAdapter {
+    public final /* synthetic */ od1 a;
+
+    public tc1(od1 od1Var) {
+        this.a = od1Var;
     }
 
-    @Override // ci.i8, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (getParent() != null) {
-            getParent().requestDisallowInterceptTouchEvent(true);
-        }
-        return super.dispatchTouchEvent(motionEvent);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        od1 od1Var = this.a;
+        od1Var.J0[od1Var.W0 != null ? (char) 0 : (char) 2].setVisibility(4);
     }
 }

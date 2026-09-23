@@ -1,94 +1,82 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.view.accessibility.AccessibilityNodeInfo;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class q7 extends aj0 {
-    public float r;
-    public float s;
-    public boolean v;
-    public final org.telegram.ui.Cells.l7 w;
-    public final /* synthetic */ float x;
-    public final /* synthetic */ h8 y;
+public final class q7 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ r7 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q7(h8 h8Var, Context context, float f7) {
-        super(context);
-        this.y = h8Var;
-        this.x = f7;
-        this.w = new org.telegram.ui.Cells.l7(this, 3);
+    public /* synthetic */ q7(r7 r7Var, int i10) {
+        this.a = i10;
+        this.b = r7Var;
     }
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.addAction(16);
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x0029, code lost:
-    
-        if (r5 != 3) goto L20;
-     */
-    @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        h8 h8Var = this.y;
-        q7 q7Var = h8Var.L;
-        if (h8Var.T.v || h8Var.H0 == -1) {
-            return false;
-        }
-        float rawX = motionEvent.getRawX();
-        float rawY = motionEvent.getRawY();
-        int action = motionEvent.getAction();
-        org.telegram.ui.Cells.l7 l7Var = this.w;
-        if (action == 0) {
-            this.v = false;
-            this.r = rawX;
-            this.s = rawY;
-            AndroidUtilities.runOnUIThread(l7Var, 300L);
-            if (getBackground() != null) {
-                getBackground().setHotspot(this.r, this.s);
-            }
-            setPressed(true);
-            return true;
-        }
-        if (action != 1) {
-            if (action == 2) {
-                float f7 = rawX - this.r;
-                float f10 = rawY - this.s;
-                float f11 = (f10 * f10) + (f7 * f7);
-                float f12 = this.x;
-                if (f11 > f12 * f12 && !this.v) {
-                    AndroidUtilities.cancelRunOnUIThread(l7Var);
-                    setPressed(false);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                r7 r7Var = this.b;
+                int i10 = r7Var.v + 1;
+                r7Var.v = i10;
+                if (i10 != 1) {
+                    if (i10 == 2) {
+                        AndroidUtilities.runOnUIThread(this, 2000L);
+                        break;
+                    }
+                } else {
+                    j8 j8Var = r7Var.H;
+                    j8Var.H0 = -1;
+                    j8Var.I0 = MediaController.getInstance().getPlayingMessageObject().audioProgress;
+                    r7Var.w = System.currentTimeMillis();
+                    AndroidUtilities.runOnUIThread(this, 2000L);
+                    AndroidUtilities.runOnUIThread(r7Var.E);
+                    break;
                 }
-            }
-            return true;
+                break;
+            default:
+                r7 r7Var2 = this.b;
+                j8 j8Var2 = r7Var2.H;
+                long duration = MediaController.getInstance().getDuration();
+                if (duration != 0 && duration != -9223372036854775807L) {
+                    float f7 = j8Var2.I0;
+                    long currentTimeMillis = System.currentTimeMillis();
+                    long j3 = currentTimeMillis - r7Var2.w;
+                    r7Var2.w = currentTimeMillis;
+                    long j10 = currentTimeMillis - r7Var2.x;
+                    int i11 = r7Var2.v;
+                    float f10 = ((long) ((f7 * r2) - (j3 * (i11 == 1 ? 3L : i11 == 2 ? 6L : 12L)))) / duration;
+                    if (f10 < 0.0f) {
+                        f10 = 0.0f;
+                    }
+                    j8Var2.I0 = f10;
+                    MessageObject playingMessageObject = MediaController.getInstance().getPlayingMessageObject();
+                    if (playingMessageObject != null && playingMessageObject.isMusic()) {
+                        j8Var2.G0(playingMessageObject, false);
+                    }
+                    if (j8Var2.H0 == -1 && r7Var2.v > 0) {
+                        if (j10 > 200 || j8Var2.I0 == 0.0f) {
+                            r7Var2.x = currentTimeMillis;
+                            if (j8Var2.I0 == 0.0f) {
+                                MediaController.getInstance().seekToProgress(MediaController.getInstance().getPlayingMessageObject(), 0.0f);
+                                MediaController.getInstance().pauseByRewind();
+                            } else {
+                                MediaController.getInstance().seekToProgress(MediaController.getInstance().getPlayingMessageObject(), f10);
+                            }
+                        }
+                        if (r7Var2.v > 0 && j8Var2.I0 > 0.0f) {
+                            AndroidUtilities.runOnUIThread(r7Var2.E, 16L);
+                            break;
+                        }
+                    }
+                } else {
+                    r7Var2.w = System.currentTimeMillis();
+                    break;
+                }
+                break;
         }
-        if (!this.v && motionEvent.getAction() == 1 && isPressed()) {
-            MediaController.getInstance().playNextMessage();
-            q7Var.setProgress(0.0f);
-            q7Var.d();
-        }
-        AndroidUtilities.cancelRunOnUIThread(l7Var);
-        if (h8Var.J0 > 0) {
-            MediaController.getInstance().setPlaybackSpeed(true, 1.0f);
-            if (MediaController.getInstance().isMessagePaused()) {
-                h8Var.L0 = 0L;
-                h8Var.N0.run();
-            }
-        }
-        h8Var.H0 = 0;
-        setPressed(false);
-        h8Var.J0 = 0;
-        h8Var.I0 = -1.0f;
-        return true;
     }
 }

@@ -13,10 +13,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.vl;
-import org.telegram.ui.Components.i8;
+import org.telegram.messenger.ul;
+import org.telegram.ui.Components.k8;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q implements Runnable {
     public final /* synthetic */ int a;
@@ -59,11 +59,11 @@ public final /* synthetic */ class q implements Runnable {
                 break;
             case 5:
                 View view = (View) obj;
-                if (view instanceof k5) {
-                    k5 k5Var = (k5) view;
-                    if (!k5Var.a) {
-                        k5Var.a = true;
-                        k5Var.invalidate();
+                if (view instanceof j5) {
+                    j5 j5Var = (j5) view;
+                    if (!j5Var.a) {
+                        j5Var.a = true;
+                        j5Var.invalidate();
                         break;
                     }
                 }
@@ -119,35 +119,35 @@ public final /* synthetic */ class q implements Runnable {
                     return;
                 }
             case 10:
-                u3 u3Var = (u3) obj;
-                if (u3Var.getWindowView() != null) {
-                    u3Var.getWindowView().setDrawingFromOverlay(true);
+                t3 t3Var = (t3) obj;
+                if (t3Var.getWindowView() != null) {
+                    t3Var.getWindowView().setDrawingFromOverlay(true);
                     break;
                 }
                 break;
             case 11:
-                ((x3) obj).f();
+                ((w3) obj).f();
                 break;
             case 12:
-                v4 v4Var = (v4) ((d2) obj).b;
-                v4Var.k();
-                v4Var.j();
+                u4 u4Var = (u4) ((d2) obj).b;
+                u4Var.k();
+                u4Var.j();
                 break;
             case 13:
-                v4 v4Var2 = ((s4) obj).b;
-                v4Var2.c.dismiss();
-                v4Var2.f.removeAllViews();
+                u4 u4Var2 = ((r4) obj).b;
+                u4Var2.c.dismiss();
+                u4Var2.f.removeAllViews();
                 break;
             case 14:
-                ((s4) obj).b.c.dismiss();
+                ((r4) obj).b.c.dismiss();
                 break;
             case 15:
                 Drawable drawable2 = (Drawable) obj;
-                i6.d = null;
-                i6.N();
-                if (!i6.b) {
-                    i6.i(drawable2);
-                    i6.h(drawable2);
+                h6.d = null;
+                h6.N();
+                if (!h6.b) {
+                    h6.i(drawable2);
+                    h6.h(drawable2);
                 }
                 NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didSetNewWallpapper, new Object[0]);
                 break;
@@ -155,17 +155,17 @@ public final /* synthetic */ class q implements Runnable {
                 ((CountDownLatch) obj).countDown();
                 break;
             case 17:
-                vl.n(1, (n2) obj);
+                ul.n(1, (n2) obj);
                 break;
             case 18:
-                i8 i8Var = (i8) i6.e5.remove((MessageObject) obj);
-                if (i8Var != null) {
-                    i8Var.i = null;
+                k8 k8Var = (k8) h6.e5.remove((MessageObject) obj);
+                if (k8Var != null) {
+                    k8Var.i = null;
                     break;
                 }
                 break;
             default:
-                ((h6) obj).s();
+                ((g6) obj).s();
                 break;
         }
     }

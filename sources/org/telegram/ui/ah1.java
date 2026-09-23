@@ -1,67 +1,36 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.text.SpannableStringBuilder;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ah1 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ hh1 b;
+public final class ah1 extends FrameLayout {
+    public final rg.p0 a;
 
-    public /* synthetic */ ah1(hh1 hh1Var, int i10) {
-        this.a = i10;
-        this.b = hh1Var;
-    }
-
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                final int i10 = 0;
-                final hh1 hh1Var = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ch1
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i10) {
-                            case 0:
-                                hh1.b0(hh1Var, tL_error, tLObject);
-                                break;
-                            default:
-                                hh1.h0(hh1Var, tL_error, tLObject);
-                                break;
-                        }
-                    }
-                });
-                break;
-            case 1:
-                AndroidUtilities.runOnUIThread(new dh1(this.b, tL_error, 0));
-                break;
-            case 2:
-                AndroidUtilities.runOnUIThread(new dh1(this.b, tL_error, 1));
-                break;
-            case 3:
-                AndroidUtilities.runOnUIThread(new dh1(this.b, tL_error, 2));
-                break;
-            default:
-                final int i11 = 1;
-                final hh1 hh1Var2 = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ch1
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i11) {
-                            case 0:
-                                hh1.b0(hh1Var2, tL_error, tLObject);
-                                break;
-                            default:
-                                hh1.h0(hh1Var2, tL_error, tLObject);
-                                break;
-                        }
-                    }
-                });
-                break;
-        }
+    public ah1(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context);
+        LinearLayout linearLayout = new LinearLayout(context);
+        addView(linearLayout, w7.x5.e(-1, -2, 80));
+        linearLayout.setOrientation(1);
+        TextView textView = new TextView(context);
+        textView.setTextColor(i0.a.k(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.G6, d6Var), 100));
+        textView.setTextSize(1, 13.0f);
+        textView.setGravity(17);
+        textView.setText(LocaleController.getString(R.string.UnlockPremiumStickersDescription));
+        linearLayout.addView(textView, w7.x5.t(-1, -2, 0, 16, 17, 17, 16));
+        rg.p0 p0Var = new rg.p0(context, d6Var, false);
+        this.a = p0Var;
+        String string = LocaleController.getString(R.string.UnlockPremiumStickers);
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+        spannableStringBuilder.append((CharSequence) "d ").setSpan(new org.telegram.ui.Components.pq(0, context.getDrawable(R.drawable.msg_premium_normal)), 0, 1, 0);
+        spannableStringBuilder.append((CharSequence) string);
+        p0Var.d.setText(spannableStringBuilder);
+        linearLayout.addView(p0Var, w7.x5.t(-1, 48, 0, 16, 0, 16, 16));
     }
 }

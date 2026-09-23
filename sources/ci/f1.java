@@ -3,10 +3,10 @@ package ci;
 import android.content.DialogInterface;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.Components.y01;
-import org.telegram.ui.i60;
+import org.telegram.ui.Components.x01;
+import org.telegram.ui.f60;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f1 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -19,7 +19,7 @@ public final /* synthetic */ class f1 implements DialogInterface.OnDismissListen
     public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                int i10 = t2.G;
+                int i10 = s2.G;
                 break;
             case 1:
                 org.telegram.ui.b.a = false;
@@ -30,10 +30,10 @@ public final /* synthetic */ class f1 implements DialogInterface.OnDismissListen
                 SharedConfig.BackgroundActivityPrefs.increaseDismissedCount();
                 break;
             case 4:
-                int i11 = y01.e;
+                int i11 = x01.e;
                 break;
             case 5:
-                i60 i60Var = i60.D3;
+                f60 f60Var = f60.D3;
                 break;
             case 6:
                 break;

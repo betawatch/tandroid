@@ -10,14 +10,14 @@ import android.view.View;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.ff;
+import org.telegram.messenger.ef;
 import org.telegram.messenger.voip.VoIPService;
 import org.webrtc.EglBase;
 import org.webrtc.EglRenderer;
 import org.webrtc.GlGenericDrawer;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public class TextureViewRenderer extends TextureView implements TextureView.SurfaceTextureListener, VideoSink, RendererCommon.RendererEvents {
     private static final String TAG = "TextureViewRenderer";
@@ -315,9 +315,9 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
                             throw th2;
                         }
                     }
-                    ff ffVar = new ff(this, i10, i11, i19, i18, 2);
-                    this.updateScreenRunnable = ffVar;
-                    postOrRun(ffVar);
+                    ef efVar = new ef(this, i10, i11, i19, i18, 2);
+                    this.updateScreenRunnable = efVar;
+                    postOrRun(efVar);
                 } catch (Throwable th4) {
                     th = th4;
                     th2 = th;
@@ -568,7 +568,7 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
         requestLayout();
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class TextureEglRenderer extends EglRenderer implements TextureView.SurfaceTextureListener {
         private static final String TAG = "TextureEglRenderer";
         private int frameRotation;

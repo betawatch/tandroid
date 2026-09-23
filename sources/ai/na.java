@@ -6,17 +6,17 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public abstract class na extends z4.g {
     public ArrayList A0;
-    public y5 B0;
+    public x5 B0;
     public boolean C0;
     public boolean D0;
     public int E0;
     public int F0;
     public Runnable G0;
-    public c6 H0;
+    public b6 H0;
     public int I0;
     public int J0;
     public float K0;
@@ -72,12 +72,12 @@ public abstract class na extends z4.g {
                         this.O0 = -1;
                         maVar.a(true);
                         if (this.x0 != null) {
-                            f6 f6Var = maVar.a;
+                            e6 e6Var = maVar.a;
                             long j3 = maVar.b;
                             ArrayList arrayList = maVar.c;
-                            f6Var.B1 = j3;
-                            f6Var.z1 = arrayList;
-                            f6Var.o0(0);
+                            e6Var.B1 = j3;
+                            e6Var.z1 = arrayList;
+                            e6Var.o0(0);
                         } else {
                             maVar.a.U0(0, maVar.b);
                         }
@@ -185,8 +185,8 @@ public abstract class na extends z4.g {
 
     public final void F() {
         for (int i10 = 0; i10 < getChildCount(); i10++) {
-            f6 f6Var = (f6) ((FrameLayout) getChildAt(i10)).getChildAt(0);
-            f6Var.setActive(((Integer) getChildAt(i10).getTag()).intValue() == getCurrentItem() && !f6Var.U3);
+            e6 e6Var = (e6) ((FrameLayout) getChildAt(i10)).getChildAt(0);
+            e6Var.setActive(((Integer) getChildAt(i10).getTag()).intValue() == getCurrentItem() && !e6Var.U3);
         }
     }
 
@@ -200,10 +200,10 @@ public abstract class na extends z4.g {
         return 0L;
     }
 
-    public f6 getCurrentPeerView() {
+    public e6 getCurrentPeerView() {
         for (int i10 = 0; i10 < getChildCount(); i10++) {
             if (((Integer) getChildAt(i10).getTag()).intValue() == getCurrentItem()) {
-                return (f6) ((FrameLayout) getChildAt(i10)).getChildAt(0);
+                return (e6) ((FrameLayout) getChildAt(i10)).getChildAt(0);
             }
         }
         return null;
@@ -230,10 +230,10 @@ public abstract class na extends z4.g {
         super.onLayout(z10, i10, i11, i12, i13);
         if (this.C0) {
             this.C0 = false;
-            f6 currentPeerView = getCurrentPeerView();
+            e6 currentPeerView = getCurrentPeerView();
             if (currentPeerView != null) {
-                y5 y5Var = this.B0;
-                ac acVar = (ac) y5Var;
+                x5 x5Var = this.B0;
+                ac acVar = (ac) x5Var;
                 acVar.a(currentPeerView.getSelectedPosition(), currentPeerView.getCurrentPeer());
             }
         }
@@ -252,8 +252,8 @@ public abstract class na extends z4.g {
         return false;
     }
 
-    public void setDelegate(y5 y5Var) {
-        this.B0 = y5Var;
+    public void setDelegate(x5 x5Var) {
+        this.B0 = x5Var;
     }
 
     public void setHorizontalProgressToDismiss(float f7) {
@@ -270,7 +270,7 @@ public abstract class na extends z4.g {
     public void setKeyboardHeight(int i10) {
         if (this.E0 != i10) {
             this.E0 = i10;
-            f6 currentPeerView = getCurrentPeerView();
+            e6 currentPeerView = getCurrentPeerView();
             if (currentPeerView != null) {
                 currentPeerView.requestLayout();
             }
@@ -279,7 +279,7 @@ public abstract class na extends z4.g {
 
     public void setPaused(boolean z10) {
         for (int i10 = 0; i10 < getChildCount(); i10++) {
-            ((f6) ((FrameLayout) getChildAt(i10)).getChildAt(0)).setPaused(z10);
+            ((e6) ((FrameLayout) getChildAt(i10)).getChildAt(0)).setPaused(z10);
         }
     }
 }

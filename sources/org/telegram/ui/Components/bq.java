@@ -1,45 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class bq extends FrameLayout {
-    public final View a;
-    public final TextView b;
+public final class bq implements sv0 {
+    public final /* synthetic */ zp a;
+    public final /* synthetic */ dq b;
 
-    public bq(Context context) {
-        super(context);
-        View view = new View(context);
-        this.a = view;
-        int dp = AndroidUtilities.dp(4.0f);
-        int w02 = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Oh, false);
-        int w03 = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Qh, false);
-        view.setBackground(org.telegram.ui.ActionBar.i6.i0(dp, dp, dp, dp, w02, w03, w03));
-        addView(view, w7.x5.d(-1, -1.0f, 0, 16.0f, 16.0f, 16.0f, 16.0f));
-        TextView textView = new TextView(context);
-        this.b = textView;
-        textView.setLines(1);
-        textView.setSingleLine(true);
-        textView.setGravity(1);
-        textView.setEllipsize(TextUtils.TruncateAt.END);
-        textView.setGravity(17);
-        org.telegram.messenger.y0.q(textView, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Sh, false), 1, 14.0f);
-        addView(textView, w7.x5.e(-2, -2, 17));
+    public bq(dq dqVar, zp zpVar) {
+        this.b = dqVar;
+        this.a = zpVar;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(80.0f), TLObject.FLAG_30));
+    @Override // org.telegram.ui.Components.sv0
+    public final void g(int i10) {
+        dq dqVar = this.b;
+        dqVar.r = i10;
+        dqVar.p(true);
     }
 
-    public void setText(CharSequence charSequence) {
-        this.b.setText(charSequence);
+    @Override // org.telegram.ui.Components.sv0
+    public final void l() {
+        int measuredHeight = this.b.c.getMeasuredHeight();
+        zp zpVar = this.a;
+        zpVar.y(0 - zpVar.getScrollX(), measuredHeight - zpVar.getScrollY(), false);
     }
 }

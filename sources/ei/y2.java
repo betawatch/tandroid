@@ -6,11 +6,11 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.view.KeyEvent;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.r20;
 import org.telegram.ui.Components.rt0;
+import org.telegram.ui.Components.s20;
 import org.telegram.ui.Components.yu0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class y2 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -36,13 +36,13 @@ public final class y2 extends AnimatorListenerAdapter {
                 k3Var.h();
                 break;
             case 1:
-                r20 r20Var = (r20) this.d;
-                r20Var.L = this.b;
-                r20Var.M = this.c;
-                r20Var.F.setColorFilter(new PorterDuffColorFilter(r20Var.L, PorterDuff.Mode.MULTIPLY));
-                r20Var.E.setColor(r20Var.L);
-                r20Var.r.setColor(r20Var.M);
-                r20Var.J.d(i0.a.k(r20Var.M, 38));
+                s20 s20Var = (s20) this.d;
+                s20Var.L = this.b;
+                s20Var.M = this.c;
+                s20Var.F.setColorFilter(new PorterDuffColorFilter(s20Var.L, PorterDuff.Mode.MULTIPLY));
+                s20Var.E.setColor(s20Var.L);
+                s20Var.r.setColor(s20Var.M);
+                s20Var.J.d(i0.a.k(s20Var.M, 38));
                 break;
             case 2:
                 yu0 yu0Var = (yu0) this.d;

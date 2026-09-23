@@ -11,7 +11,7 @@ import java.util.Collections;
 import java.util.Map;
 import org.telegram.messenger.FileLoader;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class EncryptedFileDataSource extends c {
     private int bytesRemaining;
@@ -19,7 +19,7 @@ public final class EncryptedFileDataSource extends c {
     private boolean opened;
     private Uri uri;
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class EncryptedFileDataSourceException extends IOException {
         public EncryptedFileDataSourceException(Throwable th2) {
             super(th2);

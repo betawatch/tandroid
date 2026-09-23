@@ -13,7 +13,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.jw0;
 import w7.x5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class h2 extends LinearLayout {
     public HashMap a;
@@ -76,7 +76,7 @@ public final class h2 extends LinearLayout {
 
     public int getChildsHight() {
         int childCount = getChildCount();
-        return org.telegram.messenger.y0.D(32.0f, childCount, childCount > 0 ? AndroidUtilities.dp(16.0f) : 0);
+        return org.telegram.messenger.z0.D(32.0f, childCount, childCount > 0 ? AndroidUtilities.dp(16.0f) : 0);
     }
 
     public void setOnViewsUpdated(Runnable runnable) {

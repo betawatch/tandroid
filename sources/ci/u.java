@@ -11,10 +11,10 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.bc0;
-import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.ac0;
+import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class u extends Drawable {
     public final /* synthetic */ int a = 1;
@@ -34,7 +34,7 @@ public final class u extends Drawable {
         this.d = paint2;
         Paint paint3 = new Paint(1);
         this.e = paint3;
-        this.g = new org.telegram.ui.Components.c6(new bc0(this, 1), 320L, qr.h, 0);
+        this.g = new org.telegram.ui.Components.e6(new ac0(this, 1), 320L, rr.h, 0);
         Paint.Style style = Paint.Style.STROKE;
         paint.setStyle(style);
         paint.setColor(-1);
@@ -73,7 +73,7 @@ public final class u extends Drawable {
                 float dpf22 = AndroidUtilities.dpf2(3.32f);
                 Paint paint2 = this.e;
                 paint2.setStrokeWidth(dpf22);
-                float e = ((org.telegram.ui.Components.c6) this.g).e(this.f);
+                float e = ((org.telegram.ui.Components.e6) this.g).e(this.f);
                 float centerX = getBounds().centerX();
                 float centerY = getBounds().centerY();
                 float dpf23 = AndroidUtilities.dpf2(10.66f);

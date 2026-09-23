@@ -10,9 +10,9 @@ import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BillingController;
 import org.telegram.ui.je;
-import yh.x7;
+import yh.w7;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class d {
     public final long[] a;
@@ -226,7 +226,7 @@ public final class d {
                 return AndroidUtilities.formatWholeNumber((int) j3, 0);
             }
             if (i10 != 1) {
-                return x7.X0(false, hg.c.k(j3, ' ', new StringBuilder("XTR ")), 0.65f, null);
+                return w7.X0(false, hg.c.k(j3, ' ', new StringBuilder("XTR ")), 0.65f, null);
             }
             return "≈" + BillingController.getInstance().formatCurrency(j3, "USD");
         }

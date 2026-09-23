@@ -10,19 +10,18 @@ import android.widget.Space;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.i6;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class n0 extends LinearLayout implements org.telegram.ui.ActionBar.z5 {
-    public final org.telegram.ui.ActionBar.e6 a;
+public final class n0 extends LinearLayout implements org.telegram.ui.ActionBar.y5 {
+    public final org.telegram.ui.ActionBar.d6 a;
     public final ImageView b;
     public final TextView c;
     public final TextView d;
 
-    public n0(Context context, o0 o0Var, org.telegram.ui.ActionBar.e6 e6Var) {
+    public n0(Context context, o0 o0Var, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context);
-        this.a = e6Var;
+        this.a = d6Var;
         setOrientation(0);
         ImageView imageView = new ImageView(context);
         this.b = imageView;
@@ -44,13 +43,13 @@ public final class n0 extends LinearLayout implements org.telegram.ui.ActionBar.
         e();
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
+    @Override // org.telegram.ui.ActionBar.y5
     public final void e() {
-        int i10 = i6.G6;
-        org.telegram.ui.ActionBar.e6 e6Var = this.a;
-        this.b.setColorFilter(new PorterDuffColorFilter(i6.v0(i10, e6Var), PorterDuff.Mode.SRC_IN));
-        this.c.setTextColor(i6.v0(i10, e6Var));
-        this.d.setTextColor(i6.l1(0.75f, i6.v0(i10, e6Var)));
+        int i10 = org.telegram.ui.ActionBar.h6.G6;
+        org.telegram.ui.ActionBar.d6 d6Var = this.a;
+        this.b.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(i10, d6Var), PorterDuff.Mode.SRC_IN));
+        this.c.setTextColor(org.telegram.ui.ActionBar.h6.v0(i10, d6Var));
+        this.d.setTextColor(org.telegram.ui.ActionBar.h6.l1(0.75f, org.telegram.ui.ActionBar.h6.v0(i10, d6Var)));
     }
 
     public /* bridge */ /* synthetic */ int[] getColorKeys() {

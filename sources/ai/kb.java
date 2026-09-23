@@ -15,17 +15,17 @@ import android.view.animation.LinearInterpolator;
 import j$.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.nu;
-import org.telegram.ui.Components.wc;
+import org.telegram.ui.Components.ou;
+import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public class kb extends View {
     public boolean E;
     public long F;
     public final Path G;
     public final a3.d H;
-    public final org.telegram.ui.Components.c6 a;
+    public final org.telegram.ui.Components.e6 a;
     public final TL_stories.MediaArea b;
     public final Paint c;
     public final Paint d;
@@ -33,7 +33,7 @@ public class kb extends View {
     public LinearGradient f;
     public final Matrix h;
     public final org.telegram.ui.Cells.z n;
-    public final wc r;
+    public final yc r;
     public final boolean s;
     public final boolean v;
     public final boolean w;
@@ -47,9 +47,9 @@ public class kb extends View {
         Paint paint = new Paint(1);
         this.d = paint;
         this.h = new Matrix();
-        org.telegram.ui.Cells.z f02 = org.telegram.ui.ActionBar.i6.f0(1174405119, 2, -1);
+        org.telegram.ui.Cells.z f02 = org.telegram.ui.ActionBar.h6.f0(1174405119, 2, -1);
         this.n = f02;
-        this.r = new wc(this);
+        this.r = new yc(this);
         this.s = false;
         this.v = false;
         this.E = false;
@@ -65,7 +65,7 @@ public class kb extends View {
         this.w = z10;
         this.y = z10;
         this.x = z10;
-        this.a = new org.telegram.ui.Components.c6(view, 0L, 120L, new LinearInterpolator());
+        this.a = new org.telegram.ui.Components.e6(view, 0L, 120L, new LinearInterpolator());
         paint.setStyle(Paint.Style.STROKE);
         f02.setCallback(this);
     }
@@ -93,18 +93,18 @@ public class kb extends View {
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         int action = motionEvent.getAction();
         org.telegram.ui.Cells.z zVar = this.n;
-        wc wcVar = this.r;
+        yc ycVar = this.r;
         if (action == 0) {
             if (getParent() instanceof View) {
                 View view = (View) getParent();
                 Objects.requireNonNull(view);
-                wcVar.f = new nu(1, view);
+                ycVar.f = new ou(1, view);
             }
-            wcVar.c(true);
+            ycVar.c(true);
             zVar.setHotspot(motionEvent.getX(), motionEvent.getY());
             zVar.setState(new int[]{R.attr.state_pressed, R.attr.state_enabled});
         } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-            wcVar.c(false);
+            ycVar.c(false);
             zVar.setState(new int[0]);
         }
         super.dispatchTouchEvent(motionEvent);

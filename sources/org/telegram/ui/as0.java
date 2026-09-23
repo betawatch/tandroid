@@ -1,37 +1,51 @@
 package org.telegram.ui;
 
-import android.graphics.drawable.Drawable;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.SurfaceView;
+import android.view.View;
+import android.widget.ImageView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class as0 implements Runnable {
+public final class as0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ PhotoViewer b;
+    public final /* synthetic */ View b;
+    public final /* synthetic */ PhotoViewer c;
 
-    public /* synthetic */ as0(PhotoViewer photoViewer, int i10) {
+    public /* synthetic */ as0(PhotoViewer photoViewer, View view, int i10) {
         this.a = i10;
-        this.b = photoViewer;
+        this.c = photoViewer;
+        this.b = view;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        PhotoViewer photoViewer = this.b;
-        switch (i10) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
             case 0:
-                Drawable[] drawableArr = PhotoViewer.U8;
-                photoViewer.G0(true, false);
-                break;
-            case 1:
-                Drawable[] drawableArr2 = PhotoViewer.U8;
-                photoViewer.e3(1, false);
-                break;
-            case 2:
-                Drawable[] drawableArr3 = PhotoViewer.U8;
-                photoViewer.e3(-1, false);
+                PhotoViewer photoViewer = this.c;
+                photoViewer.B3 = false;
+                this.b.setOutlineProvider(null);
+                ImageView imageView = photoViewer.x3;
+                if (imageView != null) {
+                    imageView.setOutlineProvider(null);
+                }
+                nu0 nu0Var = photoViewer.E2;
+                if (nu0Var != null) {
+                    nu0Var.setOutlineProvider(null);
+                }
+                SurfaceView surfaceView = photoViewer.C2;
+                if (surfaceView != null) {
+                    surfaceView.setVisibility(0);
+                    break;
+                }
                 break;
             default:
-                PhotoViewer.S(photoViewer);
+                PhotoViewer photoViewer2 = this.c;
+                photoViewer2.B3 = false;
+                photoViewer2.i4.run();
+                AndroidUtilities.runOnUIThread(new gl0(15, this, this.b), 100L);
                 break;
         }
     }

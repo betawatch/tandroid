@@ -4,10 +4,10 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.view.View;
-import org.telegram.ui.Components.cc0;
+import org.telegram.ui.Components.bc0;
 import org.telegram.ui.Components.pv0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class f0 extends pv0 {
     public final /* synthetic */ j0 w0;
@@ -30,8 +30,8 @@ public final class f0 extends pv0 {
 
     @Override // org.telegram.ui.Components.pv0
     public final void U(Drawable drawable) {
-        if (drawable instanceof cc0) {
-            ((cc0) drawable).p();
+        if (drawable instanceof bc0) {
+            ((bc0) drawable).p();
         }
         j0 j0Var = this.w0;
         j0Var.d.a = j0Var.c.c(drawable);

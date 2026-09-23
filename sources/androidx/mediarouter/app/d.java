@@ -2,9 +2,9 @@ package androidx.mediarouter.app;
 
 import android.widget.SeekBar;
 import j$.util.DesugarCollections;
-import org.telegram.ui.Cells.ia;
+import org.telegram.ui.Cells.ja;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class d extends p4.s {
     public final /* synthetic */ int a;
@@ -32,7 +32,7 @@ public final class d extends p4.s {
 
     @Override // p4.s
     public final void e(p4.v vVar) {
-        ia b10;
+        ja b10;
         p4.o oVar;
         switch (this.a) {
             case 0:

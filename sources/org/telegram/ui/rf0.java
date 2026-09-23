@@ -1,41 +1,28 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rf0 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ zf0 b;
-    public final /* synthetic */ Bundle c;
+public final class rf0 extends zr {
+    public final /* synthetic */ int h;
+    public final /* synthetic */ uf0 n;
 
-    public /* synthetic */ rf0(zf0 zf0Var, Bundle bundle, int i10) {
-        this.a = i10;
-        this.b = zf0Var;
-        this.c = bundle;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ rf0(uf0 uf0Var, Context context, int i10) {
+        super(context);
+        this.h = i10;
+        this.n = uf0Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
+    @Override // org.telegram.ui.zr
+    public final void a() {
+        switch (this.h) {
             case 0:
-                zf0 zf0Var = this.b;
-                if (tLObject == null) {
-                    if (tL_error != null && tL_error.text != null) {
-                        AndroidUtilities.runOnUIThread(new ma0(18, zf0Var, tL_error));
-                        break;
-                    }
-                } else {
-                    AndroidUtilities.runOnUIThread(new pf0(zf0Var, this.c, tLObject, 1));
-                    break;
-                }
+                this.n.h(null);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.jn0(this.b, tL_error, this.c, tLObject, 20));
+                this.n.h(null);
                 break;
         }
     }

@@ -1,55 +1,91 @@
 package org.telegram.ui.Components;
 
-import android.view.KeyEvent;
-import android.view.View;
-import android.widget.EditText;
+import android.graphics.PointF;
+import android.view.animation.Interpolator;
+import android.view.animation.PathInterpolator;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rr implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ur b;
+public final class rr implements Interpolator {
+    public static final rr f = new rr(0.25d, 0.1d, 0.25d, 1.0d);
+    public static final rr g = new rr(0.0d, 0.0d, 0.58d, 1.0d);
+    public static final rr h = new rr(0.23d, 1.0d, 0.32d, 1.0d);
+    public static final rr i = new rr(0.42d, 0.0d, 1.0d, 1.0d);
+    public static final rr j = new rr(0.42d, 0.0d, 0.58d, 1.0d);
+    public static final rr k = new rr(0.34d, 1.56d, 0.64d, 1.0d);
+    public static final PathInterpolator l;
+    public final PointF a;
+    public final PointF b;
+    public final PointF c;
+    public final PointF d;
+    public final PointF e;
 
-    public /* synthetic */ rr(ur urVar, int i10) {
-        this.a = i10;
-        this.b = urVar;
+    static {
+        new PathInterpolator(v7.g8.d("M 0,0 C 0.05, 0, 0.133333, 0.06, 0.166666, 0.4 C 0.208333, 0.82, 0.25, 1, 1, 1"));
+        new PathInterpolator(0.05f, 0.7f, 0.1f, 1.0f);
+        new PathInterpolator(0.3f, 0.0f, 0.8f, 0.15f);
+        l = new PathInterpolator(0.0f, 0.0f, 0.0f, 1.0f);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        View view;
-        switch (this.a) {
-            case 0:
-                ur urVar = this.b;
-                if (urVar.b == null && (view = urVar.d) != null) {
-                    View findFocus = view.findFocus();
-                    if (findFocus instanceof EditText) {
-                        urVar.b = (EditText) findFocus;
-                    }
-                }
-                EditText editText = urVar.b;
-                if (editText != null) {
-                    if (editText.length() != 0 || urVar.e) {
-                        try {
-                            urVar.performHapticFeedback(3, 2);
-                            urVar.playSoundEffect(0);
-                        } catch (Exception unused) {
-                        }
-                        urVar.b.dispatchKeyEvent(new KeyEvent(0, 67));
-                        urVar.b.dispatchKeyEvent(new KeyEvent(1, 67));
-                        if (urVar.f) {
-                            urVar.postDelayed(urVar.h, 50L);
-                            break;
-                        }
-                    }
-                }
-                break;
-            default:
-                ur urVar2 = this.b;
-                urVar2.n = false;
-                urVar2.f = true;
-                urVar2.h.run();
-                break;
+    public rr(float f7, float f10, float f11, float f12) {
+        PointF pointF = new PointF(f7, f10);
+        PointF pointF2 = new PointF(f11, f12);
+        this.c = new PointF();
+        this.d = new PointF();
+        this.e = new PointF();
+        float f13 = pointF.x;
+        if (f13 < 0.0f || f13 > 1.0f) {
+            throw new IllegalArgumentException("startX value must be in the range [0, 1]");
         }
+        float f14 = pointF2.x;
+        if (f14 < 0.0f || f14 > 1.0f) {
+            throw new IllegalArgumentException("endX value must be in the range [0, 1]");
+        }
+        this.a = pointF;
+        this.b = pointF2;
+    }
+
+    @Override // android.animation.TimeInterpolator
+    public final float getInterpolation(float f7) {
+        PointF pointF;
+        PointF pointF2;
+        PointF pointF3;
+        PointF pointF4;
+        PointF pointF5;
+        int i10 = 1;
+        float f10 = f7;
+        while (true) {
+            pointF = this.b;
+            pointF2 = this.a;
+            pointF3 = this.c;
+            pointF4 = this.d;
+            pointF5 = this.e;
+            if (i10 >= 14) {
+                break;
+            }
+            float f11 = pointF2.x * 3.0f;
+            pointF5.x = f11;
+            float f12 = ((pointF.x - pointF2.x) * 3.0f) - f11;
+            pointF4.x = f12;
+            float f13 = (1.0f - pointF5.x) - f12;
+            pointF3.x = f13;
+            float f14 = (((((f13 * f10) + pointF4.x) * f10) + pointF5.x) * f10) - f7;
+            if (Math.abs(f14) < 0.001d) {
+                break;
+            }
+            f10 -= f14 / (((((pointF3.x * 3.0f) * f10) + (pointF4.x * 2.0f)) * f10) + pointF5.x);
+            i10++;
+        }
+        float f15 = pointF2.y * 3.0f;
+        pointF5.y = f15;
+        float f16 = ((pointF.y - pointF2.y) * 3.0f) - f15;
+        pointF4.y = f16;
+        float f17 = (1.0f - pointF5.y) - f16;
+        pointF3.y = f17;
+        return ((((f17 * f10) + pointF4.y) * f10) + pointF5.y) * f10;
+    }
+
+    public rr(double d, double d10, double d11, double d12) {
+        this((float) d, (float) d10, (float) d11, (float) d12);
     }
 }

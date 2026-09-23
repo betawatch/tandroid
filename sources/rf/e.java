@@ -8,7 +8,7 @@ import android.graphics.RectF;
 import android.util.Log;
 import android.view.View;
 import com.google.android.gms.internal.cast.p;
-import i2.e0;
+import i2.f0;
 import j$.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
@@ -16,7 +16,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class e implements qf.c, qf.b {
     public f d;
@@ -41,12 +41,12 @@ public final class e implements qf.c, qf.b {
 
     @Override // qf.c
     public final void a() {
-        e0 e0Var;
+        f0 f0Var;
         pf.e eVar = this.j;
-        if (eVar == null || (e0Var = eVar.l) == null) {
+        if (eVar == null || (f0Var = eVar.l) == null) {
             return;
         }
-        e0Var.e();
+        f0Var.e();
     }
 
     @Override // qf.c
@@ -57,12 +57,12 @@ public final class e implements qf.c, qf.b {
 
     @Override // qf.c
     public final void c() {
-        e0 e0Var;
+        f0 f0Var;
         pf.e eVar = this.j;
-        if (eVar == null || (e0Var = eVar.l) == null) {
+        if (eVar == null || (f0Var = eVar.l) == null) {
             return;
         }
-        e0Var.i();
+        f0Var.i();
     }
 
     @Override // qf.c

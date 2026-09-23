@@ -26,7 +26,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class h8 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public boolean E;
@@ -37,9 +37,9 @@ public final class h8 extends org.telegram.ui.ActionBar.n2 implements Notificati
     public int J;
     public int K;
     public w7 L;
-    public k2.c0 M;
-    public bo N;
-    public org.telegram.ui.Components.i40 O;
+    public k2.b0 M;
+    public xn N;
+    public org.telegram.ui.Components.j40 O;
     public int P;
     public int Q;
     public ValueAnimator R;
@@ -54,7 +54,7 @@ public final class h8 extends org.telegram.ui.ActionBar.n2 implements Notificati
     public u7 a;
     public final int a0;
     public ai.w0 b;
-    public ai.x5 b0;
+    public ai.w5 b0;
     public s4.c0 c;
     public int c0;
     public final TextPaint d;
@@ -66,7 +66,7 @@ public final class h8 extends org.telegram.ui.ActionBar.n2 implements Notificati
     public g g0;
     public TextView h;
     public int h0;
-    public y0 i0;
+    public z0 i0;
     public final Path j0;
     public final vh.h k0;
     public int l0;
@@ -74,7 +74,7 @@ public final class h8 extends org.telegram.ui.ActionBar.n2 implements Notificati
     public TextView n;
     public final Paint r;
     public final Paint s;
-    public ci.eb v;
+    public ci.bb v;
     public final Paint w;
     public long x;
     public long y;
@@ -231,7 +231,7 @@ public final class h8 extends org.telegram.ui.ActionBar.n2 implements Notificati
         w7 w7Var = new w7(this, 0);
         this.L = w7Var;
         w0Var2.setAdapter(w7Var);
-        this.b.j(new h3(this, 3));
+        this.b.j(new i3(this, 3));
         boolean z10 = this.e0 == 0 && this.d0;
         this.a.addView(this.b, w7.x5.d(-1, -1.0f, 0, 0.0f, 36.0f, 0.0f, z10 ? 48.0f : 0.0f));
         this.a.addView(new ai.n4(this, context, new String[]{LocaleController.getString(R.string.CalendarWeekNameShortMonday), LocaleController.getString(R.string.CalendarWeekNameShortTuesday), LocaleController.getString(R.string.CalendarWeekNameShortWednesday), LocaleController.getString(R.string.CalendarWeekNameShortThursday), LocaleController.getString(R.string.CalendarWeekNameShortFriday), LocaleController.getString(R.string.CalendarWeekNameShortSaturday), LocaleController.getString(R.string.CalendarWeekNameShortSunday)}, context.getDrawable(R.drawable.header_shadow).mutate()), w7.x5.d(-1, 38.0f, 0, 0.0f, 0.0f, 0.0f, 0.0f));
@@ -255,20 +255,20 @@ public final class h8 extends org.telegram.ui.ActionBar.n2 implements Notificati
         this.actionBar.setBackButtonDrawable(g2Var);
         this.H.c(0.0f, false);
         q0();
-        this.actionBar.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.d6, false));
+        this.actionBar.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.d6, false));
         this.e.setColor(-1);
-        int i12 = org.telegram.ui.ActionBar.i6.G6;
-        this.d.setColor(org.telegram.ui.ActionBar.i6.w0(null, i12, false));
-        this.f.setColor(org.telegram.ui.ActionBar.i6.w0(null, i12, false));
-        this.actionBar.setTitleColor(org.telegram.ui.ActionBar.i6.w0(null, i12, false));
-        this.H.a(org.telegram.ui.ActionBar.i6.w0(null, i12, false));
-        this.actionBar.B(org.telegram.ui.ActionBar.i6.w0(null, i12, false), false);
-        this.actionBar.A(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.i6, false), false);
+        int i12 = org.telegram.ui.ActionBar.h6.G6;
+        this.d.setColor(org.telegram.ui.ActionBar.h6.w0(null, i12, false));
+        this.f.setColor(org.telegram.ui.ActionBar.h6.w0(null, i12, false));
+        this.actionBar.setTitleColor(org.telegram.ui.ActionBar.h6.w0(null, i12, false));
+        this.H.a(org.telegram.ui.ActionBar.h6.w0(null, i12, false));
+        this.actionBar.B(org.telegram.ui.ActionBar.h6.w0(null, i12, false), false);
+        this.actionBar.A(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.i6, false), false);
         textPaint3.setColor(-1);
         if (z10) {
-            ai.x5 x5Var = new ai.x5(context, 8);
-            this.b0 = x5Var;
-            x5Var.setWillNotDraw(false);
+            ai.w5 w5Var = new ai.w5(context, 8);
+            this.b0 = w5Var;
+            w5Var.setWillNotDraw(false);
             this.b0.setPadding(0, AndroidUtilities.getShadowHeight(), 0, 0);
             this.b0.setClipChildren(false);
             TextView textView = new TextView(context);
@@ -296,13 +296,13 @@ public final class h8 extends org.telegram.ui.ActionBar.n2 implements Notificati
                             h8 h8Var2 = this.b;
                             int i14 = h8Var2.l0;
                             if (i14 != 0) {
-                                org.telegram.ui.Components.c5.r(h8Var2, i14, h8Var2.getMessagesController().getUser(Long.valueOf(h8Var2.x)), null, false, new v7(h8Var2), null);
+                                org.telegram.ui.Components.e5.r(h8Var2, i14, h8Var2.getMessagesController().getUser(Long.valueOf(h8Var2.x)), null, false, new v7(h8Var2), null);
                                 break;
                             } else {
                                 if (h8Var2.O == null) {
-                                    org.telegram.ui.Components.i40 i40Var = new org.telegram.ui.Components.i40(h8Var2.a.getContext(), 8);
-                                    h8Var2.O = i40Var;
-                                    i40Var.setExtraTranslationY(AndroidUtilities.dp(24.0f));
+                                    org.telegram.ui.Components.j40 j40Var = new org.telegram.ui.Components.j40(h8Var2.a.getContext(), 8);
+                                    h8Var2.O = j40Var;
+                                    j40Var.setExtraTranslationY(AndroidUtilities.dp(24.0f));
                                     h8Var2.a.addView(h8Var2.O, w7.x5.d(-2, -2.0f, 51, 19.0f, 0.0f, 19.0f, 0.0f));
                                     h8Var2.O.setText(LocaleController.getString(R.string.SelectDaysTooltip));
                                 }
@@ -340,13 +340,13 @@ public final class h8 extends org.telegram.ui.ActionBar.n2 implements Notificati
                             h8 h8Var2 = this.b;
                             int i142 = h8Var2.l0;
                             if (i142 != 0) {
-                                org.telegram.ui.Components.c5.r(h8Var2, i142, h8Var2.getMessagesController().getUser(Long.valueOf(h8Var2.x)), null, false, new v7(h8Var2), null);
+                                org.telegram.ui.Components.e5.r(h8Var2, i142, h8Var2.getMessagesController().getUser(Long.valueOf(h8Var2.x)), null, false, new v7(h8Var2), null);
                                 break;
                             } else {
                                 if (h8Var2.O == null) {
-                                    org.telegram.ui.Components.i40 i40Var = new org.telegram.ui.Components.i40(h8Var2.a.getContext(), 8);
-                                    h8Var2.O = i40Var;
-                                    i40Var.setExtraTranslationY(AndroidUtilities.dp(24.0f));
+                                    org.telegram.ui.Components.j40 j40Var = new org.telegram.ui.Components.j40(h8Var2.a.getContext(), 8);
+                                    h8Var2.O = j40Var;
+                                    j40Var.setExtraTranslationY(AndroidUtilities.dp(24.0f));
                                     h8Var2.a.addView(h8Var2.O, w7.x5.d(-2, -2.0f, 51, 19.0f, 0.0f, 19.0f, 0.0f));
                                     h8Var2.O.setText(LocaleController.getString(R.string.SelectDaysTooltip));
                                 }
@@ -361,13 +361,13 @@ public final class h8 extends org.telegram.ui.ActionBar.n2 implements Notificati
             this.b0.addView(this.n, w7.x5.d(-1, -1.0f, 0, 0.0f, 0.0f, 0.0f, 0.0f));
             this.a.addView(this.b0, w7.x5.d(-1, 48.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
             TextView textView3 = this.h;
-            int i15 = org.telegram.ui.ActionBar.i6.Ae;
-            textView3.setBackground(org.telegram.ui.ActionBar.i6.f0(i0.a.k(org.telegram.ui.ActionBar.i6.w0(null, i15, false), 51), 2, -1));
+            int i15 = org.telegram.ui.ActionBar.h6.Ae;
+            textView3.setBackground(org.telegram.ui.ActionBar.h6.f0(i0.a.k(org.telegram.ui.ActionBar.h6.w0(null, i15, false), 51), 2, -1));
             TextView textView4 = this.n;
-            int i16 = org.telegram.ui.ActionBar.i6.q7;
-            textView4.setBackground(org.telegram.ui.ActionBar.i6.f0(i0.a.k(org.telegram.ui.ActionBar.i6.w0(null, i16, false), 51), 2, -1));
-            this.h.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, i15, false));
-            this.n.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, i16, false));
+            int i16 = org.telegram.ui.ActionBar.h6.q7;
+            textView4.setBackground(org.telegram.ui.ActionBar.h6.f0(i0.a.k(org.telegram.ui.ActionBar.h6.w0(null, i16, false), 51), 2, -1));
+            this.h.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, i15, false));
+            this.n.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, i16, false));
         }
         return this.fragmentView;
     }
@@ -382,15 +382,15 @@ public final class h8 extends org.telegram.ui.ActionBar.n2 implements Notificati
     @Override // org.telegram.ui.ActionBar.n2
     public final ArrayList getThemeDescriptions() {
         new ArrayList();
-        int i10 = org.telegram.ui.ActionBar.i6.a;
-        int i11 = org.telegram.ui.ActionBar.i6.a;
-        int i12 = org.telegram.ui.ActionBar.i6.a;
+        int i10 = org.telegram.ui.ActionBar.h6.a;
+        int i11 = org.telegram.ui.ActionBar.h6.a;
+        int i12 = org.telegram.ui.ActionBar.h6.a;
         return super.getThemeDescriptions();
     }
 
     @Override // org.telegram.ui.ActionBar.n2
     public final boolean isLightStatusBar() {
-        return i0.a.f(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.d6, true)) > 0.699999988079071d;
+        return i0.a.f(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.d6, true)) > 0.699999988079071d;
     }
 
     @Override // org.telegram.ui.ActionBar.n2
@@ -400,9 +400,9 @@ public final class h8 extends org.telegram.ui.ActionBar.n2 implements Notificati
 
     public final void o0() {
         ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(300L);
-        duration.setInterpolator(org.telegram.ui.Components.qr.f);
-        duration.addUpdateListener(new b3(this, 3));
-        duration.addListener(new t4(this, 2));
+        duration.setInterpolator(org.telegram.ui.Components.rr.f);
+        duration.addUpdateListener(new c3(this, 3));
+        duration.addListener(new u4(this, 2));
         duration.start();
         this.R = duration;
         for (int i10 = 0; i10 < this.b.getChildCount(); i10++) {
@@ -479,8 +479,8 @@ public final class h8 extends org.telegram.ui.ActionBar.n2 implements Notificati
 
     @Override // org.telegram.ui.ActionBar.n2
     public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
-        ci.eb ebVar;
-        if (z10 && (ebVar = this.v) != null && ebVar.getVisibility() == 0) {
+        ci.bb bbVar;
+        if (z10 && (bbVar = this.v) != null && bbVar.getVisibility() == 0) {
             this.v.setVisibility(8);
             this.v.setBackground(null);
         }
@@ -489,8 +489,8 @@ public final class h8 extends org.telegram.ui.ActionBar.n2 implements Notificati
     @Override // org.telegram.ui.ActionBar.n2
     public final void onTransitionAnimationProgress(boolean z10, float f7) {
         super.onTransitionAnimationProgress(z10, f7);
-        ci.eb ebVar = this.v;
-        if (ebVar == null || ebVar.getVisibility() != 0) {
+        ci.bb bbVar = this.v;
+        if (bbVar == null || bbVar.getVisibility() != 0) {
             return;
         }
         if (z10) {
@@ -687,7 +687,7 @@ public final class h8 extends org.telegram.ui.ActionBar.n2 implements Notificati
 
     public final void t0() {
         String string;
-        org.telegram.ui.Components.i40 i40Var;
+        org.telegram.ui.Components.j40 j40Var;
         if (!this.d0) {
             this.actionBar.setTitle(LocaleController.getString(R.string.Calendar));
             this.H.c(0.0f, true);
@@ -722,8 +722,8 @@ public final class h8 extends org.telegram.ui.ActionBar.n2 implements Notificati
             this.n.setText(LocaleController.formatString("ClearHistoryForThisDay", R.string.ClearHistoryForThisDay, new Object[0]));
         }
         this.actionBar.J(str, z11, 150L, null);
-        if ((!this.G || abs > 0) && (i40Var = this.O) != null) {
-            i40Var.b(true);
+        if ((!this.G || abs > 0) && (j40Var = this.O) != null) {
+            j40Var.b(true);
         }
         if (abs > 0 || this.G) {
             if (this.n.getVisibility() == 8) {
@@ -733,7 +733,7 @@ public final class h8 extends org.telegram.ui.ActionBar.n2 implements Notificati
             this.n.setVisibility(0);
             this.h.animate().setListener(null).cancel();
             this.n.animate().setListener(null).cancel();
-            this.h.animate().alpha(0.0f).translationY(AndroidUtilities.dp(20.0f)).setDuration(150L).setListener(new org.telegram.ui.Components.aa(this.h)).start();
+            this.h.animate().alpha(0.0f).translationY(AndroidUtilities.dp(20.0f)).setDuration(150L).setListener(new org.telegram.ui.Components.ca(this.h)).start();
             this.n.animate().alpha(abs == 0 ? 0.5f : 1.0f).translationY(0.0f).start();
             this.h.setEnabled(false);
             this.n.setEnabled(true);
@@ -747,7 +747,7 @@ public final class h8 extends org.telegram.ui.ActionBar.n2 implements Notificati
         this.h.animate().setListener(null).cancel();
         this.n.animate().setListener(null).cancel();
         this.h.animate().alpha(1.0f).translationY(0.0f).start();
-        this.n.animate().alpha(0.0f).translationY(-AndroidUtilities.dp(20.0f)).setDuration(150L).setListener(new org.telegram.ui.Components.aa(this.n)).start();
+        this.n.animate().alpha(0.0f).translationY(-AndroidUtilities.dp(20.0f)).setDuration(150L).setListener(new org.telegram.ui.Components.ca(this.n)).start();
         this.h.setEnabled(true);
         this.n.setEnabled(false);
     }

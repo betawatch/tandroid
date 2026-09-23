@@ -1,30 +1,87 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import android.os.SystemClock;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class b60 extends org.telegram.ui.Components.voip.l {
-    public final /* synthetic */ c60 h;
+public final class b60 extends Drawable {
+    public long b;
+    public int d;
+    public final View e;
+    public final Paint a = new Paint(1);
+    public float c = 1.0f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b60(c60 c60Var, Context context) {
-        super(context, false);
-        this.h = c60Var;
+    public b60(View view) {
+        this.e = view;
     }
 
-    @Override // org.telegram.ui.Components.voip.l, android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        i60 i60Var = this.h.M;
-        if (i60Var.Q.getVisibility() == 0 && i60Var.P2) {
-            i60.N(i60Var, this, true);
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int dp;
+        int centerX = getBounds().centerX();
+        int centerY = getBounds().centerY();
+        View view = this.e;
+        if (view instanceof org.telegram.ui.ActionBar.i5) {
+            dp = AndroidUtilities.dp(1.0f) + centerY;
+            centerX -= AndroidUtilities.dp(3.0f);
+        } else {
+            dp = AndroidUtilities.dp(2.0f) + centerY;
         }
+        Paint paint = this.a;
+        paint.setColor(-1147527);
+        paint.setAlpha((int) (this.c * 255.0f));
+        canvas.drawCircle(centerX, dp, AndroidUtilities.dp(4.0f), paint);
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        long j3 = elapsedRealtime - this.b;
+        if (j3 > 17) {
+            j3 = 17;
+        }
+        this.b = elapsedRealtime;
+        int i10 = this.d;
+        if (i10 == 0) {
+            float f7 = (j3 / 2000.0f) + this.c;
+            this.c = f7;
+            if (f7 >= 1.0f) {
+                this.c = 1.0f;
+                this.d = 1;
+            }
+        } else if (i10 == 1) {
+            float f10 = this.c - (j3 / 2000.0f);
+            this.c = f10;
+            if (f10 < 0.5f) {
+                this.c = 0.5f;
+                this.d = 0;
+            }
+        }
+        view.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.voip.l, android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        i60.N(this.h.M, this, false);
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return AndroidUtilities.dp(24.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return AndroidUtilities.dp(24.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

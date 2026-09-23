@@ -1,47 +1,57 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.widget.FrameLayout;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gg0 implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class gg0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ kg0 b;
+    public final /* synthetic */ qg0 b;
 
-    public /* synthetic */ gg0(kg0 kg0Var, int i10) {
+    public /* synthetic */ gg0(qg0 qg0Var, int i10) {
         this.a = i10;
-        this.b = kg0Var;
+        this.b = qg0Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                kg0 kg0Var = this.b;
-                kg0Var.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                kg0Var.d.setAlpha(floatValue);
-                kg0Var.e.setAlpha(floatValue);
-                kg0Var.f.setProgress(floatValue);
-                FrameLayout frameLayout = kg0Var.w;
-                frameLayout.setAlpha(floatValue);
-                float f7 = (floatValue * 0.5f) + 0.5f;
-                frameLayout.setScaleX(f7);
-                frameLayout.setScaleY(f7);
+                qg0 qg0Var = this.b;
+                uj0 uj0Var = qg0Var.a;
+                rg0 rg0Var = qg0Var.V;
+                ng0 ng0Var = qg0Var.b;
+                if (ng0Var != null) {
+                    if (rg0Var.c0) {
+                        uj0Var.clearFocus();
+                        ng0Var.clearFocus();
+                    } else if (uj0Var.length() != 0) {
+                        ng0Var.requestFocus();
+                        if (!qg0Var.R) {
+                            ng0Var.setSelection(ng0Var.length());
+                        }
+                        rg0.T0(rg0Var, ng0Var);
+                    } else {
+                        uj0Var.requestFocus();
+                        rg0.T0(rg0Var, uj0Var);
+                    }
+                }
+                if (rg0Var.F == 0) {
+                    qg0Var.u(false);
+                    break;
+                }
+                break;
+            case 1:
+                qg0 qg0Var2 = this.b;
+                qg0Var2.postDelayed(new gg0(qg0Var2, 2), 200L);
+                break;
+            case 2:
+                this.b.h(null);
+                break;
+            case 3:
+                this.b.u(true);
                 break;
             default:
-                kg0 kg0Var2 = this.b;
-                kg0Var2.getClass();
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                kg0Var2.f.setProgress(floatValue2);
-                kg0Var2.d.setAlpha(floatValue2);
-                kg0Var2.e.setAlpha(floatValue2);
-                FrameLayout frameLayout2 = kg0Var2.w;
-                frameLayout2.setAlpha(floatValue2);
-                float f10 = (floatValue2 * 0.5f) + 0.5f;
-                frameLayout2.setScaleX(f10);
-                frameLayout2.setScaleY(f10);
+                qg0 qg0Var3 = this.b;
+                rg0.T0(qg0Var3.V, qg0Var3.b);
                 break;
         }
     }

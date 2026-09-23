@@ -1,22 +1,29 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class u00 extends org.telegram.ui.Cells.m4 {
-    public final org.telegram.ui.Cells.u3 r;
+public final /* synthetic */ class u00 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ v00 b;
 
-    public u00(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context);
-        org.telegram.ui.Cells.u3 u3Var = new org.telegram.ui.Cells.u3(context, true, true, true, 3);
-        this.r = u3Var;
-        u3Var.setGravity(LocaleController.isRTL ? 3 : 5);
-        u3Var.setTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.L6, e6Var));
-        u3Var.setTextSize(AndroidUtilities.dpf2(15.0f));
-        addView(u3Var, w7.x5.d(-1, 18.0f, (LocaleController.isRTL ? 3 : 5) | 48, 22.0f, 17.0f, 22.0f, 0.0f));
-        w7.z5.b(u3Var, 0.04f, 1.2f);
+    public /* synthetic */ u00(v00 v00Var, int i10) {
+        this.a = i10;
+        this.b = v00Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.d();
+                break;
+            case 1:
+                this.b.a();
+                break;
+            default:
+                v00 v00Var = this.b;
+                v00Var.b(v00Var.y);
+                break;
+        }
     }
 }

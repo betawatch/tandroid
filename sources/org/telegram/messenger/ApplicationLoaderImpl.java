@@ -12,11 +12,11 @@ import androidx.core.content.FileProvider;
 import java.io.File;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.j61;
 import org.telegram.ui.Components.k61;
-import org.telegram.ui.Components.l61;
 import org.telegram.ui.IUpdateLayout;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public class ApplicationLoaderImpl extends ApplicationLoader {
     private static long lastUpdateCheckTime;
@@ -50,7 +50,7 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
         if (Build.VERSION.SDK_INT < 26 || ApplicationLoader.applicationContext.getPackageManager().canRequestPackageInstalls()) {
             return true;
         }
-        org.telegram.ui.Components.c5.j(context, null).show();
+        org.telegram.ui.Components.e5.j(context, null).show();
         return false;
     }
 
@@ -156,7 +156,7 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
     @Override // org.telegram.messenger.ApplicationLoader
     public boolean showCustomUpdateAppPopup(Context context, BetaUpdate betaUpdate, int i10) {
         try {
-            new k61(context, betaUpdate).show();
+            new j61(context, betaUpdate).show();
             return true;
         } catch (Exception e) {
             FileLog.e(e);
@@ -206,7 +206,7 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
     @Override // org.telegram.messenger.ApplicationLoader
     public IUpdateLayout takeUpdateLayout(Activity activity, ViewGroup viewGroup) {
         if (isCustomUpdate()) {
-            return new l61(activity, viewGroup);
+            return new k61(activity, viewGroup);
         }
         return null;
     }

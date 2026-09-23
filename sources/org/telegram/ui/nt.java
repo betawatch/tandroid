@@ -1,26 +1,96 @@
 package org.telegram.ui;
 
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class nt extends org.telegram.ui.ActionBar.n1 {
-    public final /* synthetic */ ot o;
+public interface nt {
+    MessageObject A();
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nt(ot otVar, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
-        super(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
-        this.o = otVar;
-    }
+    boolean B();
 
-    @Override // org.telegram.ui.ActionBar.n1, android.widget.PopupWindow
-    public final void dismiss() {
-        d(true);
-        st stVar = this.o.a;
-        stVar.k = null;
-        stVar.K = false;
-        if (stVar.R) {
-            stVar.n();
-        }
-    }
+    void C(TLRPC.Document document);
+
+    boolean D();
+
+    boolean E(TLRPC.Document document);
+
+    void F(TLRPC.Document document);
+
+    String G(boolean z10);
+
+    void H(TLRPC.Document document);
+
+    boolean I();
+
+    boolean J();
+
+    void K();
+
+    void L();
+
+    void M(TLRPC.InputStickerSet inputStickerSet, boolean z10);
+
+    boolean N(TLRPC.Document document);
+
+    void O(String str);
+
+    Boolean P(TLRPC.Document document);
+
+    boolean Q();
+
+    long a();
+
+    boolean b();
+
+    boolean c();
+
+    TLRPC.TL_messageMediaPoll d();
+
+    boolean e(TLRPC.Document document);
+
+    void f(CharSequence charSequence, String str, dt dtVar);
+
+    boolean g();
+
+    TLRPC.PollAnswer h();
+
+    boolean i();
+
+    org.telegram.ui.Components.o70 j(ci.m6 m6Var);
+
+    void k(SendMessagesHelper.ImportingSticker importingSticker);
+
+    boolean l();
+
+    boolean m(int i10);
+
+    void n(TLRPC.Document document, String str, Object obj, boolean z10, int i10, int i11);
+
+    void o(String str);
+
+    void p(TLRPC.Document document);
+
+    boolean q();
+
+    void r(TLRPC.Document document);
+
+    void s();
+
+    void t(int i10, int i11, Object obj, TLObject tLObject, boolean z10);
+
+    void u();
+
+    void v(TLRPC.Document document);
+
+    void w(TLRPC.StickerSet stickerSet, String str);
+
+    void x(TLObject tLObject, Object obj);
+
+    boolean y();
+
+    void z(String str);
 }

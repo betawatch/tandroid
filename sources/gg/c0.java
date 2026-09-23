@@ -8,30 +8,30 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.Cells.i2;
 import org.telegram.ui.Cells.n4;
-import org.telegram.ui.Components.kl0;
-import org.telegram.ui.Components.vk0;
+import org.telegram.ui.Components.ll0;
+import org.telegram.ui.Components.wk0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public class c0 extends kl0 {
+public class c0 extends ll0 {
     public final Context c;
     public final int d;
     public final boolean e;
     public final boolean f;
-    public final e6 h;
+    public final d6 h;
 
-    public c0(int i10, Context context, e6 e6Var, boolean z10, boolean z11) {
+    public c0(int i10, Context context, d6 d6Var, boolean z10, boolean z11) {
         this.e = z10;
         this.c = context;
         this.d = i10;
         this.f = z11;
-        this.h = e6Var;
+        this.h = d6Var;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.ll0
     public final boolean D(s4.c1 c1Var) {
         return true;
     }
@@ -83,6 +83,6 @@ public class c0 extends kl0 {
             NotificationCenter.getInstance(n4Var.h).listen(n4Var, NotificationCenter.userIsPremiumBlockedUpadted, new i2(n4Var, 1));
         }
         n4Var.setLayoutParams(new s4.p0(AndroidUtilities.dp(80.0f), AndroidUtilities.dp(86.0f)));
-        return new vk0(n4Var);
+        return new wk0(n4Var);
     }
 }

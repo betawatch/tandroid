@@ -9,9 +9,9 @@ import c6.e0;
 import com.google.android.gms.cast.CastDevice;
 import java.util.HashSet;
 import java.util.Iterator;
-import m4.u0;
+import m4.p0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class j extends b8.b {
     public final /* synthetic */ int b = 2;
@@ -34,16 +34,16 @@ public final class j extends b8.b {
         Object[] objArr = 0;
         switch (i11) {
             case 0:
-                u0 u0Var = (u0) obj;
+                p0 p0Var = (p0) obj;
                 if (i10 == 1) {
-                    x6.b bVar = new x6.b(u0Var);
+                    x6.b bVar = new x6.b(p0Var);
                     parcel2.writeNoException();
                     com.google.android.gms.internal.cast.v.d(parcel2, bVar);
                     break;
                 } else if (i10 == 2) {
                     int readInt = parcel.readInt();
                     com.google.android.gms.internal.cast.v.b(parcel);
-                    u0Var.getClass();
+                    p0Var.getClass();
                     Log.d("CAST_STATE", "onCastStateChanged " + readInt);
                     parcel2.writeNoException();
                     break;
@@ -261,8 +261,8 @@ public final class j extends b8.b {
         this.c = bVar;
     }
 
-    public j(u0 u0Var) {
+    public j(p0 p0Var) {
         super("com.google.android.gms.cast.framework.ICastStateListener", 1);
-        this.c = u0Var;
+        this.c = p0Var;
     }
 }

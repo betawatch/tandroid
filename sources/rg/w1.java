@@ -1,6 +1,6 @@
 package rg;
 
-import ai.c8;
+import ai.e8;
 import android.graphics.Bitmap;
 import android.opengl.Matrix;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,25 +11,24 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.ew0;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.vc;
-import org.telegram.ui.Components.w51;
-import org.telegram.ui.mj0;
-import org.telegram.ui.o91;
-import xh.r2;
-import yh.j8;
-import yh.n7;
+import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.v51;
+import org.telegram.ui.Components.xc;
+import org.telegram.ui.dt;
+import org.telegram.ui.g91;
+import xh.s2;
+import yh.i8;
+import yh.m7;
 import yh.o2;
 import yh.p2;
 import yh.q2;
-import yh.t2;
-import yh.z2;
+import yh.y2;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w1 implements Runnable {
     public final /* synthetic */ int a;
@@ -51,7 +50,7 @@ public final /* synthetic */ class w1 implements Runnable {
     */
     public final void run() {
         int i10;
-        e6 e6Var;
+        d6 d6Var;
         char c10;
         boolean z10;
         int i11;
@@ -73,7 +72,7 @@ public final /* synthetic */ class w1 implements Runnable {
                 break;
             case 3:
                 CharSequence charSequence = (CharSequence) obj;
-                vc X = vc.X();
+                xc X = xc.X();
                 if (X != null) {
                     X.Q(R.raw.forward, 30, charSequence).j();
                     break;
@@ -83,7 +82,7 @@ public final /* synthetic */ class w1 implements Runnable {
                 ((tg.z) obj).run(null);
                 break;
             case 5:
-                ((mj0) obj).run(Collections.EMPTY_LIST);
+                ((dt) obj).run(Collections.EMPTY_LIST);
                 break;
             case 6:
                 ((tg.w) obj).run(null);
@@ -92,8 +91,8 @@ public final /* synthetic */ class w1 implements Runnable {
                 tg.d0 d0Var = ((tg.c0) obj).r;
                 n2 n2Var = d0Var.n;
                 i10 = ((f3) d0Var).currentAccount;
-                e6Var = ((f3) d0Var).resourcesProvider;
-                k1 k1Var = new k1(n2Var, i10, null, null, null, e6Var);
+                d6Var = ((f3) d0Var).resourcesProvider;
+                k1 k1Var = new k1(n2Var, i10, null, null, null, d6Var);
                 k1Var.J0 = true;
                 k1Var.c0 = true;
                 d0Var.n.showDialog(k1Var);
@@ -101,7 +100,7 @@ public final /* synthetic */ class w1 implements Runnable {
             case 8:
                 ((f3) obj).dismiss();
                 NotificationCenter.getInstance(UserConfig.selectedAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.didStartedMultiGiftsSelector, new Object[0]);
-                AndroidUtilities.runOnUIThread(new o91(14), 220L);
+                AndroidUtilities.runOnUIThread(new g91(14), 220L);
                 break;
             case 9:
                 ((th.f) obj).d0.N(true);
@@ -122,26 +121,26 @@ public final /* synthetic */ class w1 implements Runnable {
                 ((xh.c0) obj).onBackPressed();
                 break;
             case 14:
-                w51 w51Var = ((xh.q1) obj).Y;
-                if (w51Var != null) {
-                    w51Var.N(false);
+                v51 v51Var = ((xh.r1) obj).Y;
+                if (v51Var != null) {
+                    v51Var.N(false);
                     break;
                 }
                 break;
             case 15:
-                ((xh.e1) obj).c();
+                ((xh.f1) obj).c();
                 break;
             case 16:
-                xh.n1 n1Var = (xh.n1) obj;
-                j8 j8Var = n1Var.e;
-                if (j8Var != null) {
-                    j8Var.d();
-                    n1Var.invalidateSelf();
+                xh.o1 o1Var = (xh.o1) obj;
+                i8 i8Var = o1Var.e;
+                if (i8Var != null) {
+                    i8Var.d();
+                    o1Var.invalidateSelf();
                     break;
                 }
                 break;
             case 17:
-                ((r2) obj).o();
+                ((s2) obj).o();
                 break;
             case 18:
                 try {
@@ -169,13 +168,13 @@ public final /* synthetic */ class w1 implements Runnable {
             case 20:
                 yh.a aVar = (yh.a) obj;
                 aVar.getClass();
-                new n7(aVar.getContext(), aVar.b).show();
+                new m7(aVar.getContext(), aVar.b).show();
                 break;
             case 21:
                 yh.f fVar = (yh.f) obj;
                 fVar.getClass();
                 try {
-                    ll0 currentListView = fVar.x0.F.getCurrentListView();
+                    ml0 currentListView = fVar.x0.F.getCurrentListView();
                     if (currentListView != null && currentListView.getAdapter() != null) {
                         currentListView.getAdapter().l();
                         break;
@@ -197,71 +196,71 @@ public final /* synthetic */ class w1 implements Runnable {
                 AndroidUtilities.showKeyboard(((yh.i0) obj).c);
                 break;
             case 26:
-                z2 z2Var = (z2) obj;
-                z2Var.h0 = false;
-                z2Var.j0 = false;
-                z2Var.a(z2Var.W, z2Var.a0, z2Var.b0, z2Var.c0);
+                y2 y2Var = (y2) obj;
+                y2Var.h0 = false;
+                y2Var.j0 = false;
+                y2Var.a(y2Var.W, y2Var.a0, y2Var.b0, y2Var.c0);
                 break;
             case 27:
-                ((o2) obj).invalidateSelf();
+                ((yh.n2) obj).invalidateSelf();
                 break;
             case 28:
-                yh.r2 r2Var = (yh.r2) obj;
-                q2 q2Var = r2Var.H;
+                q2 q2Var = (q2) obj;
+                p2 p2Var = q2Var.H;
                 int i13 = 6;
-                if (q2Var == null) {
+                if (p2Var == null) {
                     c10 = 2;
-                    if (Math.abs(r2Var.d) <= 1.0E-4f && Math.abs(r2Var.e) <= 1.0E-4f) {
+                    if (Math.abs(q2Var.d) <= 1.0E-4f && Math.abs(q2Var.e) <= 1.0E-4f) {
                         z10 = false;
-                        if (r2Var.G == null ? true : z10) {
+                        if (q2Var.G == null ? true : z10) {
                             for (int i14 = 0; i14 < 6; i14++) {
-                                Matrix.multiplyMV(r2Var.n, 0, r2Var.c, 0, r2Var.h[i14], 0);
-                                r2Var.r[i14] = r2Var.n[c10];
+                                Matrix.multiplyMV(q2Var.n, 0, q2Var.c, 0, q2Var.h[i14], 0);
+                                q2Var.r[i14] = q2Var.n[c10];
                             }
-                            Arrays.sort(r2Var.s, new c8(r2Var, i13));
-                            r2Var.invalidate();
+                            Arrays.sort(q2Var.s, new e8(q2Var, i13));
+                            q2Var.invalidate();
                         }
-                        if (!r2Var.isAttachedToWindow()) {
-                            AndroidUtilities.runOnUIThread(r2Var.I, 16L);
+                        if (!q2Var.isAttachedToWindow()) {
+                            AndroidUtilities.runOnUIThread(q2Var.I, 16L);
                             break;
                         }
                     } else {
-                        r2Var.a();
+                        q2Var.a();
                     }
                 } else {
-                    yh.r2 r2Var2 = q2Var.a;
-                    float[] fArr = q2Var.h;
-                    if (!q2Var.e && (i11 = q2Var.c) != 0) {
-                        if (q2Var.l) {
-                            r2Var2.a();
+                    q2 q2Var2 = p2Var.a;
+                    float[] fArr = p2Var.h;
+                    if (!p2Var.e && (i11 = p2Var.c) != 0) {
+                        if (p2Var.l) {
+                            q2Var2.a();
                         } else {
-                            int c11 = m1.j.c(((p2) q2Var.b.get(i11 - 1)).a);
+                            int c11 = m1.j.c(((o2) p2Var.b.get(i11 - 1)).a);
                             if (c11 == 1 || c11 == 2) {
                                 c10 = 2;
-                                r2Var2.a();
-                                int i15 = q2Var.f - 1;
-                                q2Var.f = i15;
+                                q2Var2.a();
+                                int i15 = p2Var.f - 1;
+                                p2Var.f = i15;
                                 if (i15 <= 0) {
-                                    q2Var.b();
+                                    p2Var.b();
                                 }
                             } else if (c11 == 3) {
-                                float pow = 1.0f - ((float) Math.pow(1.0f - (1.0f - (q2Var.f / q2Var.g)), 3.0d));
+                                float pow = 1.0f - ((float) Math.pow(1.0f - (1.0f - (p2Var.f / p2Var.g)), 3.0d));
                                 float f7 = 1.0f - pow;
                                 c10 = 2;
-                                if (Math.abs(q2Var.j * f7) > 1.0E-4f || Math.abs(q2Var.k * f7) > 1.0E-4f) {
+                                if (Math.abs(p2Var.j * f7) > 1.0E-4f || Math.abs(p2Var.k * f7) > 1.0E-4f) {
                                     float[] fArr2 = new float[16];
-                                    float f10 = q2Var.j * f7 * 0.96f;
-                                    r2Var2.getClass();
-                                    yh.r2.b(1.0f, 0.0f, f10, fArr2);
-                                    r2Var2.getClass();
-                                    yh.r2.d(fArr2, fArr, fArr);
-                                    float f11 = q2Var.k * f7 * 0.96f;
-                                    r2Var2.getClass();
-                                    yh.r2.b(0.0f, 1.0f, f11, fArr2);
-                                    yh.r2.d(fArr2, fArr, fArr);
+                                    float f10 = p2Var.j * f7 * 0.96f;
+                                    q2Var2.getClass();
+                                    q2.b(1.0f, 0.0f, f10, fArr2);
+                                    q2Var2.getClass();
+                                    q2.d(fArr2, fArr, fArr);
+                                    float f11 = p2Var.k * f7 * 0.96f;
+                                    q2Var2.getClass();
+                                    q2.b(0.0f, 1.0f, f11, fArr2);
+                                    q2.d(fArr2, fArr, fArr);
                                 }
-                                float[] fArr3 = q2Var.i;
-                                float[] fArr4 = r2Var2.c;
+                                float[] fArr3 = p2Var.i;
+                                float[] fArr4 = q2Var2.c;
                                 for (int i16 = 0; i16 < 16; i16++) {
                                     float f12 = fArr[i16];
                                     fArr4[i16] = e2.z(fArr3[i16], f12, pow, f12);
@@ -269,10 +268,10 @@ public final /* synthetic */ class w1 implements Runnable {
                                 float[] fArr5 = {fArr4[0], fArr4[1], fArr4[2]};
                                 float[] fArr6 = {fArr4[4], fArr4[5], fArr4[6]};
                                 float[] fArr7 = new float[3];
-                                yh.r2.e(fArr5);
-                                yh.r2.c(fArr5, fArr6, fArr7);
-                                yh.r2.e(fArr7);
-                                yh.r2.c(fArr7, fArr5, fArr6);
+                                q2.e(fArr5);
+                                q2.c(fArr5, fArr6, fArr7);
+                                q2.e(fArr7);
+                                q2.c(fArr7, fArr5, fArr6);
                                 fArr4[0] = fArr5[0];
                                 fArr4[1] = fArr5[1];
                                 fArr4[2] = fArr5[2];
@@ -282,13 +281,13 @@ public final /* synthetic */ class w1 implements Runnable {
                                 fArr4[8] = fArr7[0];
                                 fArr4[9] = fArr7[1];
                                 fArr4[10] = fArr7[2];
-                                int i17 = q2Var.f - 1;
-                                q2Var.f = i17;
+                                int i17 = p2Var.f - 1;
+                                p2Var.f = i17;
                                 if (i17 <= 0) {
-                                    System.arraycopy(q2Var.i, 0, r2Var2.c, 0, 16);
-                                    r2Var2.d = 0.0f;
-                                    r2Var2.e = 0.0f;
-                                    q2Var.b();
+                                    System.arraycopy(p2Var.i, 0, q2Var2.c, 0, 16);
+                                    q2Var2.d = 0.0f;
+                                    q2Var2.e = 0.0f;
+                                    p2Var.b();
                                 }
                             }
                         }
@@ -296,13 +295,13 @@ public final /* synthetic */ class w1 implements Runnable {
                     c10 = 2;
                 }
                 z10 = true;
-                if (r2Var.G == null ? true : z10) {
+                if (q2Var.G == null ? true : z10) {
                 }
-                if (!r2Var.isAttachedToWindow()) {
+                if (!q2Var.isAttachedToWindow()) {
                 }
                 break;
             default:
-                ((t2) obj).invalidate();
+                ((yh.s2) obj).invalidate();
                 break;
         }
     }

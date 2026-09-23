@@ -34,26 +34,26 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.g01;
-import org.telegram.ui.Components.o20;
-import org.telegram.ui.Components.oq;
-import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.wc;
+import org.telegram.ui.Components.f01;
+import org.telegram.ui.Components.p20;
+import org.telegram.ui.Components.pq;
+import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public abstract class ia {
-    public static o20 b;
-    public static o20 c;
-    public static o20 d;
+    public static p20 b;
+    public static p20 c;
+    public static p20 d;
     public static Paint e;
     public static RectF f;
     public static Paint g;
     public static Paint h;
-    public static g01 i;
+    public static f01 i;
     public static int j;
     public static BitmapDrawable m;
-    public static final o20[] a = new o20[2];
+    public static final p20[] a = new p20[2];
     public static final Paint[] k = new Paint[2];
     public static final int[] l = new int[2];
     public static final RectF n = new RectF();
@@ -64,18 +64,18 @@ public abstract class ia {
     public static final PathMeasure s = new PathMeasure();
     public static final Path t = new Path();
 
-    public static void a(org.telegram.ui.ActionBar.j5 j5Var) {
+    public static void a(org.telegram.ui.ActionBar.i5 i5Var) {
         String string = LocaleController.getString(R.string.UploadingStory);
         if (string.indexOf("…") <= 0) {
-            j5Var.l(string, false);
+            i5Var.l(string, false);
             return;
         }
         SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(string);
         pc pcVar = new pc();
         valueOf.setSpan(pcVar, valueOf.length() - 1, valueOf.length(), 0);
-        pcVar.a = j5Var;
+        pcVar.a = i5Var;
         pcVar.n = true;
-        j5Var.l(valueOf, false);
+        i5Var.l(valueOf, false);
     }
 
     public static void b(TL_stories.StoryItem storyItem, TLRPC.User user) {
@@ -92,7 +92,7 @@ public abstract class ia {
         }
     }
 
-    public static void c(org.telegram.ui.ActionBar.e6 e6Var) {
+    public static void c(org.telegram.ui.ActionBar.d6 d6Var) {
         if (e == null) {
             Paint paint = new Paint(1);
             e = paint;
@@ -100,7 +100,7 @@ public abstract class ia {
             e.setStrokeWidth(AndroidUtilities.dpf2(1.3f));
             e.setStrokeCap(Paint.Cap.ROUND);
         }
-        int v02 = org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.d6, e6Var);
+        int v02 = org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.d6, d6Var);
         if (j != v02) {
             j = v02;
             float computePerceivedBrightness = AndroidUtilities.computePerceivedBrightness(v02);
@@ -114,7 +114,7 @@ public abstract class ia {
         }
     }
 
-    public static void d(org.telegram.ui.ActionBar.e6 e6Var, boolean z10) {
+    public static void d(org.telegram.ui.ActionBar.d6 d6Var, boolean z10) {
         Paint[] paintArr = k;
         if (paintArr[z10 ? 1 : 0] == null) {
             Paint paint = new Paint(1);
@@ -123,7 +123,7 @@ public abstract class ia {
             paintArr[z10 ? 1 : 0].setStrokeWidth(AndroidUtilities.dpf2(1.3f));
             paintArr[z10 ? 1 : 0].setStrokeCap(Paint.Cap.ROUND);
         }
-        int v02 = org.telegram.ui.ActionBar.i6.v0(!z10 ? org.telegram.ui.ActionBar.i6.s8 : org.telegram.ui.ActionBar.i6.M8, e6Var);
+        int v02 = org.telegram.ui.ActionBar.h6.v0(!z10 ? org.telegram.ui.ActionBar.h6.s8 : org.telegram.ui.ActionBar.h6.M8, d6Var);
         int[] iArr = l;
         if (iArr[z10 ? 1 : 0] != v02) {
             iArr[z10 ? 1 : 0] = v02;
@@ -141,20 +141,20 @@ public abstract class ia {
     public static SpannableStringBuilder e(int i10, boolean z10, Object... objArr) {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         spannableStringBuilder.append((CharSequence) "d ").append((CharSequence) LocaleController.formatString(i10, objArr));
-        oq oqVar = new oq(R.drawable.msg_mini_bomb, 0);
+        pq pqVar = new pq(R.drawable.msg_mini_bomb, 0);
         if (z10) {
-            oqVar.setScale(0.8f, 0.8f);
+            pqVar.setScale(0.8f, 0.8f);
         } else {
-            oqVar.setTopOffset(-1);
+            pqVar.setTopOffset(-1);
         }
-        spannableStringBuilder.setSpan(oqVar, 0, 1, 0);
+        spannableStringBuilder.setSpan(pqVar, 0, 1, 0);
         return spannableStringBuilder;
     }
 
     public static SpannableStringBuilder f() {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         spannableStringBuilder.append((CharSequence) "d ").append((CharSequence) LocaleController.getString(R.string.Story));
-        spannableStringBuilder.setSpan(new oq(R.drawable.msg_mini_replystory2, 0), 0, 1, 0);
+        spannableStringBuilder.setSpan(new pq(R.drawable.msg_mini_replystory2, 0), 0, 1, 0);
         return spannableStringBuilder;
     }
 
@@ -250,7 +250,7 @@ public abstract class ia {
         float dpf22;
         float f18;
         float z13;
-        o20 o20Var;
+        p20 p20Var;
         float z14;
         l9 storiesController = MessagesController.getInstance(UserConfig.selectedAccount).getStoriesController();
         boolean z15 = caVar.b;
@@ -311,8 +311,8 @@ public abstract class ia {
                 caVar.B = 1.0f;
             }
         }
-        wc wcVar = caVar.H;
-        float a2 = wcVar != null ? wcVar.a(0.08f) : 1.0f;
+        yc ycVar = caVar.H;
+        float a2 = ycVar != null ? ycVar.a(0.08f) : 1.0f;
         if (caVar.C != z17 && z17) {
             caVar.K = 1.0f;
             caVar.L = false;
@@ -333,7 +333,7 @@ public abstract class ia {
         float f19 = storiesController.F(caVar.x) ? caVar.e : 0.0f;
         float f20 = caVar.B;
         if (f20 != 1.0f) {
-            f20 = qr.f.getInterpolation(f20);
+            f20 = rr.f.getInterpolation(f20);
         }
         float f21 = f20;
         if (!z16 || caVar.v) {
@@ -385,32 +385,32 @@ public abstract class ia {
             rectF = rectF4;
         }
         int i21 = caVar.A;
-        o20[] o20VarArr = a;
+        p20[] p20VarArr = a;
         if ((i21 == 1 && caVar.B != f12) || caVar.y == 1) {
             if (i11 == 2) {
                 o(imageReceiver);
-                o20Var = b;
+                p20Var = b;
             } else if (i11 == i13) {
                 q(imageReceiver);
-                o20Var = c;
+                p20Var = c;
             } else {
                 t(imageReceiver, z16);
-                o20Var = o20VarArr[z16 ? 1 : 0];
+                p20Var = p20VarArr[z16 ? 1 : 0];
             }
             boolean z20 = caVar.A == 1 && caVar.B != f12;
             float f22 = (!z16 || caVar.v) ? 0.0f : -AndroidUtilities.dp(4.0f);
             if (z20) {
                 z14 = (AndroidUtilities.dp(5.0f) * f21) + f22;
-                o20Var.c.setAlpha((int) ((f12 - f21) * caVar.u * 255.0f));
+                p20Var.c.setAlpha((int) ((f12 - f21) * caVar.u * 255.0f));
             } else {
-                o20Var.c.setAlpha((int) (caVar.u * 255.0f * f21));
+                p20Var.c.setAlpha((int) (caVar.u * 255.0f * f21));
                 z14 = com.google.android.gms.internal.vision.e2.z(1.0f, f21, AndroidUtilities.dp(5.0f), f22);
             }
             float f23 = z14 + caVar.G;
             rectF.set(rectF3);
             rectF.inset(f23, f23);
             imageReceiver.getParentView();
-            j(canvas2, caVar, o20Var.c, z18);
+            j(canvas2, caVar, p20Var.c, z18);
         }
         int i22 = caVar.A;
         Paint[] paintArr = k;
@@ -431,7 +431,7 @@ public abstract class ia {
             } else {
                 if (caVar2.q == 1) {
                     t(imageReceiver2, z16);
-                    paint = o20VarArr[z16 ? 1 : 0].c;
+                    paint = p20VarArr[z16 ? 1 : 0].c;
                 } else if (z16) {
                     d(caVar2.J, caVar2.o);
                     paint = paintArr[caVar2.o ? 1 : 0];
@@ -716,7 +716,7 @@ public abstract class ia {
     public static void k(Canvas canvas, RectF rectF, float f7, boolean z10, float f10) {
         Canvas canvas2;
         if (i == null) {
-            i = new g01(LocaleController.getString(R.string.LiveStoryBadge), 9.66f, AndroidUtilities.bold());
+            i = new f01(LocaleController.getString(R.string.LiveStoryBadge), 9.66f, AndroidUtilities.bold());
         }
         if (g == null) {
             Paint paint = new Paint(1);
@@ -729,7 +729,7 @@ public abstract class ia {
         if (f == null) {
             f = new RectF();
         }
-        h.setColor(org.telegram.ui.ActionBar.i6.l1(f7, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.ok, false)));
+        h.setColor(org.telegram.ui.ActionBar.h6.l1(f7, org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.ok, false)));
         float lerp = AndroidUtilities.lerp(AndroidUtilities.dp(4.66f), AndroidUtilities.dp(7.0f), f10);
         float l4 = i.l() + lerp + lerp;
         float lerp2 = AndroidUtilities.lerp(AndroidUtilities.dp(15.0f), AndroidUtilities.dp(18.0f), f10);
@@ -748,10 +748,10 @@ public abstract class ia {
             f.set(rectF.centerX() - f11, rectF.bottom - f12, rectF.centerX() + f11, rectF.bottom + f13);
             RectF rectF3 = f;
             canvas.drawRoundRect(rectF3, rectF3.height() / 2.0f, f.height() / 2.0f, h);
-            g01 g01Var = i;
+            f01 f01Var = i;
             RectF rectF4 = f;
             canvas2 = canvas;
-            g01Var.c(rectF4.left + lerp, rectF4.centerY(), f7, -1, canvas2);
+            f01Var.c(rectF4.left + lerp, rectF4.centerY(), f7, -1, canvas2);
         } else {
             canvas2 = canvas;
         }
@@ -829,9 +829,9 @@ public abstract class ia {
         int max;
         Paint paint6;
         ca caVar2 = caVar;
-        org.telegram.ui.ActionBar.e6 e6Var = caVar2.J;
+        org.telegram.ui.ActionBar.d6 d6Var = caVar2.J;
         boolean z11 = caVar2.E;
-        c(e6Var);
+        c(d6Var);
         d(caVar2.J, caVar2.o);
         long j3 = caVar2.s;
         int i10 = 0;
@@ -1057,11 +1057,11 @@ public abstract class ia {
 
     public static Paint o(ImageReceiver imageReceiver) {
         if (b == null) {
-            o20 o20Var = new o20();
-            b = o20Var;
-            o20Var.a = true;
-            o20Var.b = true;
-            o20Var.d(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.lk, false), org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.mk, false), 0, 0);
+            p20 p20Var = new p20();
+            b = p20Var;
+            p20Var.a = true;
+            p20Var.b = true;
+            p20Var.d(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.lk, false), org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.mk, false), 0, 0);
             b.c.setStrokeWidth(AndroidUtilities.dpf2(2.0f));
             b.c.setStyle(Paint.Style.STROKE);
             b.c.setStrokeCap(Paint.Cap.ROUND);
@@ -1088,11 +1088,11 @@ public abstract class ia {
 
     public static Paint q(ImageReceiver imageReceiver) {
         if (c == null) {
-            o20 o20Var = new o20();
-            c = o20Var;
-            o20Var.a = true;
-            o20Var.b = true;
-            o20Var.d(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.nk, false), org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.ok, false), 0, 0);
+            p20 p20Var = new p20();
+            c = p20Var;
+            p20Var.a = true;
+            p20Var.b = true;
+            p20Var.d(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.nk, false), org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.ok, false), 0, 0);
             c.c.setStrokeWidth(AndroidUtilities.dpf2(2.0f));
             c.c.setStyle(Paint.Style.STROKE);
             c.c.setStrokeCap(Paint.Cap.ROUND);
@@ -1137,23 +1137,23 @@ public abstract class ia {
     }
 
     public static Paint t(ImageReceiver imageReceiver, boolean z10) {
-        o20[] o20VarArr = a;
-        if (o20VarArr[z10 ? 1 : 0] == null) {
-            o20 o20Var = new o20();
-            o20VarArr[z10 ? 1 : 0] = o20Var;
-            o20Var.a = true;
-            o20Var.b = true;
+        p20[] p20VarArr = a;
+        if (p20VarArr[z10 ? 1 : 0] == null) {
+            p20 p20Var = new p20();
+            p20VarArr[z10 ? 1 : 0] = p20Var;
+            p20Var.a = true;
+            p20Var.b = true;
             if (z10) {
-                o20Var.d(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.jk, false), org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.kk, false), 0, 0);
+                p20Var.d(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.jk, false), org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.kk, false), 0, 0);
             } else {
-                o20Var.d(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.hk, false), org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.ik, false), 0, 0);
+                p20Var.d(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.hk, false), org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.ik, false), 0, 0);
             }
-            o20VarArr[z10 ? 1 : 0].c.setStrokeWidth(AndroidUtilities.dpf2(2.0f));
-            o20VarArr[z10 ? 1 : 0].c.setStyle(Paint.Style.STROKE);
-            o20VarArr[z10 ? 1 : 0].c.setStrokeCap(Paint.Cap.ROUND);
+            p20VarArr[z10 ? 1 : 0].c.setStrokeWidth(AndroidUtilities.dpf2(2.0f));
+            p20VarArr[z10 ? 1 : 0].c.setStyle(Paint.Style.STROKE);
+            p20VarArr[z10 ? 1 : 0].c.setStrokeCap(Paint.Cap.ROUND);
         }
-        o20VarArr[z10 ? 1 : 0].b(imageReceiver.getImageX(), imageReceiver.getImageY(), imageReceiver.getImageX2(), imageReceiver.getImageY2());
-        return o20VarArr[z10 ? 1 : 0].c;
+        p20VarArr[z10 ? 1 : 0].b(imageReceiver.getImageX(), imageReceiver.getImageY(), imageReceiver.getImageX2(), imageReceiver.getImageY2());
+        return p20VarArr[z10 ? 1 : 0].c;
     }
 
     public static CharSequence u(TextView textView, boolean z10) {

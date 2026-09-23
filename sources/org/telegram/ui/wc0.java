@@ -1,51 +1,33 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import java.util.ArrayList;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.UserObject;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class wc0 extends gg.t0 {
-    public boolean m0;
-    public final /* synthetic */ id0 n0;
+public final class wc0 extends gg.u0 {
+    public final /* synthetic */ dd0 N;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wc0(id0 id0Var, Context context, int i10, long j3, org.telegram.ui.ActionBar.e6 e6Var, boolean z10, boolean z11) {
-        super(context, i10, j3, false, e6Var, false, z10, z11);
-        this.n0 = id0Var;
-        this.m0 = true;
+    public wc0(dd0 dd0Var, Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10) {
+        super(context, d6Var, false, z10);
+        this.N = dd0Var;
     }
 
-    @Override // gg.t0
-    public final void K() {
-        this.n0.r0(null);
-    }
-
-    @Override // gg.t0
-    public final void N(ArrayList arrayList) {
-        int i10;
-        id0 id0Var = this.n0;
-        MessageObject messageObject = id0Var.B0;
-        if (messageObject != null && messageObject.isLiveLocation()) {
-            if (arrayList != null) {
-                i10 = 0;
-                for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                    cd0 cd0Var = (cd0) arrayList.get(i11);
-                    if (cd0Var != null && !UserObject.isUserSelf(cd0Var.c)) {
-                        i10++;
-                    }
-                }
-            } else {
-                i10 = 0;
-            }
-            if (this.m0 && i10 == 1) {
-                id0Var.i0 = ((cd0) arrayList.get(0)).a;
-            }
-            this.m0 = false;
-            id0Var.Z.setVisibility(i10 != 1 ? 8 : 0);
+    @Override // s4.h0
+    public final void l() {
+        dd0 dd0Var = this.N;
+        org.telegram.ui.ActionBar.v0 v0Var = dd0Var.w;
+        if (v0Var != null) {
+            v0Var.setShowSearchProgress(dd0Var.W.J);
         }
-        super.N(arrayList);
+        TextView textView = dd0Var.r;
+        if (textView != null) {
+            textView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("NoPlacesFoundInfo", R.string.NoPlacesFoundInfo, dd0Var.W.x)));
+        }
+        super.l();
     }
 }

@@ -8,14 +8,14 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public abstract class x {
     public static final ExecutorService a = h.a("awaitEvenIfOnMainThread task continuation executor");
 
     public static Object a(Task task) {
         CountDownLatch countDownLatch = new CountDownLatch(1);
-        task.continueWith(a, new r5.e(countDownLatch, 11));
+        task.continueWith(a, new r5.d(countDownLatch, 12));
         if (Looper.getMainLooper() == Looper.myLooper()) {
             countDownLatch.await(3L, TimeUnit.SECONDS);
         } else {

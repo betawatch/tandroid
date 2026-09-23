@@ -1,80 +1,79 @@
 package ci;
 
 import android.animation.ValueAnimator;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
-import org.telegram.ui.Components.aj0;
-import org.telegram.ui.Components.em0;
-import org.telegram.ui.Components.vx0;
+import org.telegram.messenger.BillingController;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.rr;
+import org.telegram.ui.vl0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class d5 implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class d5 implements q0.a {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ d5(Object obj, int i10, int i11, int i12) {
-        this.a = i12;
-        this.d = obj;
-        this.b = i10;
-        this.c = i11;
+    public /* synthetic */ d5(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // q0.a
+    public final void accept(Object obj) {
         int i10 = this.a;
-        int i11 = this.c;
-        int i12 = this.b;
-        Object obj = this.d;
+        Object obj2 = this.b;
         switch (i10) {
             case 0:
-                r6 r6Var = (r6) obj;
-                r6Var.A1.a = i0.a.d(((Float) valueAnimator.getAnimatedValue()).floatValue(), i12, i11);
-                r6Var.T0.invalidate();
+                q6.a0((nb) obj2, (Integer) obj);
                 break;
             case 1:
-                org.telegram.ui.Cells.e4 e4Var = (org.telegram.ui.Cells.e4) obj;
-                e4Var.getClass();
-                int offsetColor = AndroidUtilities.getOffsetColor(i12, i11, valueAnimator.getAnimatedFraction(), 1.0f);
-                aj0 aj0Var = e4Var.f;
-                aj0Var.setColorFilter(new PorterDuffColorFilter(offsetColor, PorterDuff.Mode.SRC_IN));
-                org.telegram.ui.ActionBar.i6.B1(aj0Var.getDrawable(), offsetColor & 620756991, true);
+                ei.k3 k3Var = (ei.k3) obj2;
+                Float f7 = (Float) obj;
+                k3Var.y.setLoadProgressAnimated(f7.floatValue());
+                if (f7.floatValue() == 1.0f) {
+                    ValueAnimator duration = ValueAnimator.ofFloat(1.0f, 0.0f).setDuration(200L);
+                    duration.setInterpolator(rr.f);
+                    duration.addUpdateListener(new ei.d2(k3Var, 1));
+                    duration.addListener(new ai.b(k3Var, 21));
+                    duration.start();
+                    break;
+                }
                 break;
             case 2:
-                org.telegram.ui.Components.m6 m6Var = (org.telegram.ui.Components.m6) obj;
-                m6Var.getClass();
-                m6Var.r(i0.a.d(((Float) valueAnimator.getAnimatedValue()).floatValue(), i12, i11));
-                m6Var.invalidateSelf();
+                ei.q4 q4Var = (ei.q4) obj2;
+                Float f10 = (Float) obj;
+                q4Var.I.setLoadProgressAnimated(f10.floatValue());
+                if (f10.floatValue() == 1.0f) {
+                    ValueAnimator duration2 = ValueAnimator.ofFloat(1.0f, 0.0f).setDuration(200L);
+                    duration2.setInterpolator(rr.f);
+                    duration2.addUpdateListener(new ei.h4(q4Var, 0));
+                    duration2.addListener(new ai.b(q4Var, 22));
+                    duration2.start();
+                    q4Var.L();
+                    break;
+                }
                 break;
             case 3:
-                ScrollSlidingTextTabStrip scrollSlidingTextTabStrip = (ScrollSlidingTextTabStrip) obj;
-                int i13 = ScrollSlidingTextTabStrip.o0;
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                scrollSlidingTextTabStrip.W = i12 * floatValue;
-                scrollSlidingTextTabStrip.a0 = i11 * floatValue;
-                scrollSlidingTextTabStrip.a.invalidate();
-                scrollSlidingTextTabStrip.invalidate();
+                ((gg.m) obj2).R.z4(((Float) obj).floatValue());
                 break;
             case 4:
-                float animatedFraction = valueAnimator.getAnimatedFraction();
-                vx0 vx0Var = (vx0) ((em0) obj).b;
-                vx0Var.c.setAlpha(animatedFraction);
-                vx0Var.h.setAlpha(animatedFraction);
-                if (i12 != 0) {
-                    int i14 = (int) ((1.0f - animatedFraction) * i12);
-                    vx0Var.y0(i11 + i14);
-                    vx0Var.c.setTranslationY(i14);
+                ((pg.u) obj2).h(((Integer) obj).intValue());
+                break;
+            case 5:
+                xh.z4 z4Var = (xh.z4) obj2;
+                if (((c5.h) obj).a == 0) {
+                    AndroidUtilities.runOnUIThread(new xh.p4(z4Var, 1));
                     break;
                 }
                 break;
             default:
-                qg.p0 p0Var = (qg.p0) obj;
-                p0Var.K1.a = i0.a.d(((Float) valueAnimator.getAnimatedValue()).floatValue(), i12, i11);
-                p0Var.c1.invalidate();
+                Utilities.Callback2 callback2 = (Utilities.Callback2) obj2;
+                int i11 = ((c5.h) obj).a;
+                boolean z10 = i11 == 0;
+                String responseCodeString = z10 ? null : BillingController.getResponseCodeString(i11);
+                FileLog.d("StarsController.buy onResult " + z10 + " " + responseCodeString);
+                AndroidUtilities.runOnUIThread(new vl0(callback2, z10, responseCodeString, 12));
                 break;
         }
     }

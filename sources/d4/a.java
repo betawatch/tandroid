@@ -25,13 +25,12 @@ import java.util.regex.Pattern;
 import org.telegram.tgnet.TLObject;
 import v7.r6;
 import v7.y7;
-import z3.e;
+import z3.l;
 import z3.m;
-import z3.n;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final class a implements n {
+public final class a implements m {
     public static final Pattern h = Pattern.compile("(?:(\\d+):)?(\\d+):(\\d+)[:.](\\d+)");
     public final boolean a;
     public final b4.b b;
@@ -87,18 +86,18 @@ public final class a implements n {
         return (Long.parseLong(matcher.group(4)) * 10000) + (Long.parseLong(matcher.group(3)) * 1000000) + (Long.parseLong(matcher.group(2)) * 60000000) + (Long.parseLong(group) * 3600000000L);
     }
 
-    @Override // z3.n
+    @Override // z3.m
     public final int A() {
         return 1;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:28:0x00c2  */
     /* JADX WARN: Removed duplicated region for block: B:29:0x00ca  */
-    @Override // z3.n
+    @Override // z3.m
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void B(byte[] bArr, int i10, int i11, m mVar, h hVar) {
+    public final void B(byte[] bArr, int i10, int i11, l lVar, h hVar) {
         Charset charset;
         long j3;
         b4.b bVar;
@@ -130,7 +129,7 @@ public final class a implements n {
         int i23;
         int i24;
         a aVar = this;
-        long j10 = mVar.a;
+        long j10 = lVar.a;
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
         v vVar2 = aVar.c;
@@ -149,7 +148,7 @@ public final class a implements n {
             String k10 = vVar2.k(F);
             if (k10 == null) {
                 long j11 = j10;
-                ArrayList arrayList3 = (j11 == -9223372036854775807L || !mVar.b) ? null : new ArrayList();
+                ArrayList arrayList3 = (j11 == -9223372036854775807L || !lVar.b) ? null : new ArrayList();
                 for (int i25 = 0; i25 < arrayList.size(); i25++) {
                     List list = (List) arrayList.get(i25);
                     if (!list.isEmpty() || i25 == 0) {
@@ -158,11 +157,11 @@ public final class a implements n {
                         }
                         long longValue = ((Long) arrayList2.get(i25)).longValue();
                         long longValue2 = ((Long) arrayList2.get(i25 + 1)).longValue();
-                        z3.b bVar3 = new z3.b(longValue, longValue2 - longValue, list);
+                        z3.a aVar2 = new z3.a(longValue, longValue2 - longValue, list);
                         if (j11 == -9223372036854775807L || longValue2 >= j11) {
-                            hVar.accept(bVar3);
+                            hVar.accept(aVar2);
                         } else if (arrayList3 != null) {
-                            arrayList3.add(bVar3);
+                            arrayList3.add(aVar2);
                         }
                     }
                 }
@@ -172,7 +171,7 @@ public final class a implements n {
                     while (i26 < size) {
                         Object obj = arrayList3.get(i26);
                         i26++;
-                        hVar.accept((z3.b) obj);
+                        hVar.accept((z3.a) obj);
                     }
                     return;
                 }
@@ -418,10 +417,10 @@ public final class a implements n {
                                             f14 = pointF.x / f7;
                                             f13 = pointF.y / f10;
                                         }
-                                        d2.b bVar4 = new d2.b(spannableString, alignment2, null, null, f13, 0, i30, f14, i14, i13, f11, -3.4028235E38f, -3.4028235E38f, false, -16777216, TLObject.FLAG_31, 0.0f, parseInt);
+                                        d2.b bVar3 = new d2.b(spannableString, alignment2, null, null, f13, 0, i30, f14, i14, i13, f11, -3.4028235E38f, -3.4028235E38f, false, -16777216, TLObject.FLAG_31, 0.0f, parseInt);
                                         int a10 = a(c11, arrayList2, arrayList);
                                         for (int a11 = a(c10, arrayList2, arrayList); a11 < a10; a11++) {
-                                            ((List) arrayList.get(a11)).add(bVar4);
+                                            ((List) arrayList.get(a11)).add(bVar3);
                                         }
                                     }
                                     aVar = this;
@@ -717,12 +716,12 @@ public final class a implements n {
         }
     }
 
-    @Override // z3.n
-    public final /* synthetic */ e r(int i10, int i11, byte[] bArr) {
+    @Override // z3.m
+    public final /* synthetic */ z3.d r(int i10, int i11, byte[] bArr) {
         return w.c.a(this, bArr, i11);
     }
 
-    @Override // z3.n
+    @Override // z3.m
     public final /* synthetic */ void reset() {
     }
 }

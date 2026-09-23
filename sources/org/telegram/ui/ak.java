@@ -1,59 +1,77 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class ak implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ bo b;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.MotionEvent;
+import org.telegram.messenger.AndroidUtilities;
 
-    public /* synthetic */ ak(bo boVar, int i10) {
-        this.a = i10;
-        this.b = boVar;
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* loaded from: classes3.dex */
+public final class ak extends org.telegram.ui.Cells.w0 {
+    public final /* synthetic */ xn l2;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ak(Context context, org.telegram.ui.ActionBar.d6 d6Var, xn xnVar) {
+        super(context, d6Var, false);
+        this.l2 = xnVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        bo boVar = this.b;
-        switch (i10) {
-            case 0:
-                bo.i2(boVar);
-                break;
-            case 1:
-                bo.i2(boVar);
-                break;
-            case 2:
-                int i11 = bo.Gc;
-                boVar.Ma();
-                break;
-            case 3:
-                int i12 = bo.Gc;
-                boVar.Ma();
-                break;
-            case 4:
-                int i13 = bo.Gc;
-                boVar.Ma();
-                break;
-            case 5:
-                int i14 = bo.Gc;
-                boVar.Ma();
-                break;
-            case 6:
-                int i15 = bo.Gc;
-                boVar.Ma();
-                break;
-            case 7:
-                int i16 = bo.Gc;
-                boVar.Ma();
-                break;
-            case 8:
-                int i17 = bo.Gc;
-                boVar.Ma();
-                break;
-            default:
-                int i18 = bo.Gc;
-                boVar.Ma();
-                break;
+    @Override // org.telegram.ui.Cells.w0, android.view.View
+    public final void onDraw(Canvas canvas) {
+        xn xnVar = this.l2;
+        if (xnVar.B8 != null) {
+            return;
         }
+        float y3 = ((xnVar.x0.getY() + xnVar.s9) - getY()) - AndroidUtilities.dp(4.0f);
+        if (y3 <= 0.0f) {
+            super.onDraw(canvas);
+        } else if (y3 < getMeasuredHeight()) {
+            canvas.save();
+            canvas.clipRect(0.0f, y3, getMeasuredWidth(), getMeasuredHeight());
+            super.onDraw(canvas);
+            canvas.restore();
+        }
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        org.telegram.ui.ActionBar.k kVar;
+        if (getAlpha() == 0.0f) {
+            return false;
+        }
+        xn xnVar = this.l2;
+        kVar = ((org.telegram.ui.ActionBar.n2) xnVar).actionBar;
+        if (kVar.s() || xnVar.A9()) {
+            return false;
+        }
+        return super.onInterceptTouchEvent(motionEvent);
+    }
+
+    @Override // org.telegram.ui.Cells.w0, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        org.telegram.ui.ActionBar.k kVar;
+        if (getAlpha() == 0.0f) {
+            return false;
+        }
+        xn xnVar = this.l2;
+        kVar = ((org.telegram.ui.ActionBar.n2) xnVar).actionBar;
+        if (kVar.s() || xnVar.A9()) {
+            return false;
+        }
+        return super.onTouchEvent(motionEvent);
+    }
+
+    @Override // android.view.View
+    public final void setAlpha(float f7) {
+        super.setAlpha(f7);
+        setVisibility(f7 > 0.0f ? 0 : 4);
+    }
+
+    @Override // android.view.View
+    public final void setTranslationY(float f7) {
+        if (getTranslationY() != f7) {
+            invalidate();
+        }
+        super.setTranslationY(f7);
     }
 }

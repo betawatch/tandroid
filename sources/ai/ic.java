@@ -4,7 +4,7 @@ import android.view.SurfaceView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.video.VideoPlayerHolderBase;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class ic extends VideoPlayerHolderBase {
     public boolean a;
@@ -27,13 +27,13 @@ public final class ic extends VideoPlayerHolderBase {
     @Override // org.telegram.messenger.video.VideoPlayerHolderBase
     public final void onRenderedFirstFrame() {
         jc jcVar = this.b;
-        e6 e6Var = jcVar.G0;
-        if (e6Var == null) {
+        d6 d6Var = jcVar.G0;
+        if (d6Var == null) {
             return;
         }
-        e6Var.a = true;
+        d6Var.a = true;
         this.firstFrameRendered = true;
-        e6Var.b();
+        d6Var.b();
         if (!this.paused || jcVar.C0 == null) {
             return;
         }
@@ -57,27 +57,27 @@ public final class ic extends VideoPlayerHolderBase {
                     public final void run() {
                         switch (i11) {
                             case 0:
-                                f6 t10 = this.b.b.t();
+                                e6 t10 = this.b.b.t();
                                 if (t10 != null) {
-                                    d6 d6Var = t10.O1;
-                                    if (d6Var.a != null) {
+                                    c6 c6Var = t10.O1;
+                                    if (c6Var.a != null) {
                                         StringBuilder sb2 = new StringBuilder("StoryViewer displayed story buffering dialogId=");
                                         sb2.append(t10.getCurrentPeer());
                                         sb2.append(" storyId=");
-                                        org.telegram.messenger.y0.n(d6Var.a.id, sb2);
+                                        org.telegram.messenger.z0.n(c6Var.a.id, sb2);
                                         break;
                                     }
                                 }
                                 break;
                             default:
-                                f6 t11 = this.b.b.t();
+                                e6 t11 = this.b.b.t();
                                 if (t11 != null) {
-                                    d6 d6Var2 = t11.O1;
-                                    if (d6Var2.a != null) {
+                                    c6 c6Var2 = t11.O1;
+                                    if (c6Var2.a != null) {
                                         StringBuilder sb3 = new StringBuilder("StoryViewer displayed story playing dialogId=");
                                         sb3.append(t11.getCurrentPeer());
                                         sb3.append(" storyId=");
-                                        org.telegram.messenger.y0.n(d6Var2.a.id, sb3);
+                                        org.telegram.messenger.z0.n(c6Var2.a.id, sb3);
                                         break;
                                     }
                                 }
@@ -100,27 +100,27 @@ public final class ic extends VideoPlayerHolderBase {
                     public final void run() {
                         switch (i12) {
                             case 0:
-                                f6 t10 = this.b.b.t();
+                                e6 t10 = this.b.b.t();
                                 if (t10 != null) {
-                                    d6 d6Var = t10.O1;
-                                    if (d6Var.a != null) {
+                                    c6 c6Var = t10.O1;
+                                    if (c6Var.a != null) {
                                         StringBuilder sb2 = new StringBuilder("StoryViewer displayed story buffering dialogId=");
                                         sb2.append(t10.getCurrentPeer());
                                         sb2.append(" storyId=");
-                                        org.telegram.messenger.y0.n(d6Var.a.id, sb2);
+                                        org.telegram.messenger.z0.n(c6Var.a.id, sb2);
                                         break;
                                     }
                                 }
                                 break;
                             default:
-                                f6 t11 = this.b.b.t();
+                                e6 t11 = this.b.b.t();
                                 if (t11 != null) {
-                                    d6 d6Var2 = t11.O1;
-                                    if (d6Var2.a != null) {
+                                    c6 c6Var2 = t11.O1;
+                                    if (c6Var2.a != null) {
                                         StringBuilder sb3 = new StringBuilder("StoryViewer displayed story playing dialogId=");
                                         sb3.append(t11.getCurrentPeer());
                                         sb3.append(" storyId=");
-                                        org.telegram.messenger.y0.n(d6Var2.a.id, sb3);
+                                        org.telegram.messenger.z0.n(c6Var2.a.id, sb3);
                                         break;
                                     }
                                 }

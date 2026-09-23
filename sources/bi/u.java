@@ -1,7 +1,7 @@
 package bi;
 
-import ai.l6;
-import ai.t8;
+import ai.k6;
+import ai.u8;
 import ai.v0;
 import android.animation.ValueAnimator;
 import android.content.Context;
@@ -19,16 +19,16 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.mr0;
-import org.telegram.ui.Components.qr;
 import org.telegram.ui.Components.qt0;
-import org.telegram.ui.Components.v31;
-import org.telegram.ui.Components.yw0;
+import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.u31;
+import org.telegram.ui.Components.xw0;
 import w7.x5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class u extends FrameLayout {
     public static final /* synthetic */ int a0 = 0;
@@ -51,7 +51,7 @@ public final class u extends FrameLayout {
     public int U;
     public final Rect V;
     public final /* synthetic */ mr0 W;
-    public t8 a;
+    public u8 a;
     public boolean b;
     public float c;
     public int d;
@@ -64,7 +64,7 @@ public final class u extends FrameLayout {
     public final m v;
     public final t w;
     public final n x;
-    public final yw0 y;
+    public final xw0 y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public u(mr0 mr0Var, Context context) {
@@ -82,7 +82,7 @@ public final class u extends FrameLayout {
         s4.j jVar = new s4.j();
         this.n = jVar;
         jVar.n(280L);
-        jVar.o(qr.h);
+        jVar.o(rr.h);
         jVar.m = false;
         j jVar2 = new j(this, context);
         this.f = jVar2;
@@ -116,38 +116,38 @@ public final class u extends FrameLayout {
         n nVar = new n(this, context);
         this.x = nVar;
         nVar.w = false;
-        yw0 yw0Var = new yw0(context, nVar, 1, null);
-        this.y = yw0Var;
-        yw0Var.setVisibility(8);
-        yw0Var.setAnimateLayoutChange(true);
-        addView(yw0Var, x5.c(-1.0f, -1));
-        yw0Var.setOnTouchListener(new d(0));
-        yw0Var.e(true, false);
-        yw0Var.b.setVisibility(8);
-        yw0Var.d.setText(LocaleController.getString(R.string.ProfileBotPreviewEmptyTitle));
-        yw0Var.e.setText(LocaleController.formatPluralString("ProfileBotPreviewEmptyText", MessagesController.getInstance(mr0Var.b).botPreviewMediasMax, new Object[0]));
+        xw0 xw0Var = new xw0(context, nVar, 1, null);
+        this.y = xw0Var;
+        xw0Var.setVisibility(8);
+        xw0Var.setAnimateLayoutChange(true);
+        addView(xw0Var, x5.c(-1.0f, -1));
+        xw0Var.setOnTouchListener(new d(0));
+        xw0Var.e(true, false);
+        xw0Var.b.setVisibility(8);
+        xw0Var.d.setText(LocaleController.getString(R.string.ProfileBotPreviewEmptyTitle));
+        xw0Var.e.setText(LocaleController.formatPluralString("ProfileBotPreviewEmptyText", MessagesController.getInstance(mr0Var.b).botPreviewMediasMax, new Object[0]));
         String string = LocaleController.getString(R.string.ProfileBotPreviewEmptyButton);
-        ci.d dVar = yw0Var.f;
+        ci.d dVar = xw0Var.f;
         dVar.g(string, false, true);
         dVar.setVisibility(0);
         dVar.setOnClickListener(new e(this, 0));
         o oVar = new o(this, context);
         this.E = oVar;
-        int i10 = i6.y6;
-        e6 e6Var = mr0Var.c;
-        oVar.setTextColor(i6.v0(i10, e6Var));
+        int i10 = h6.y6;
+        d6 d6Var = mr0Var.c;
+        oVar.setTextColor(h6.v0(i10, d6Var));
         oVar.setText(LocaleController.getString(R.string.ProfileBotOr));
         oVar.setTextSize(1, 14.0f);
         oVar.setTextAlignment(4);
         oVar.setGravity(17);
         oVar.setTypeface(AndroidUtilities.bold());
-        yw0Var.a.addView(oVar, x5.t(165, -2, 17, 0, 17, 0, 12));
-        ci.d dVar2 = new ci.d(context, e6Var, false);
+        xw0Var.a.addView(oVar, x5.t(165, -2, 17, 0, 17, 0, 12));
+        ci.d dVar2 = new ci.d(context, d6Var, false);
         this.F = dVar2;
         dVar2.setMinWidth(AndroidUtilities.dp(200.0f));
-        yw0Var.a.addView(dVar2, x5.q(-2, 44, 17));
-        yw0Var.addView(nVar, 0, x5.c(-1.0f, -1));
-        jVar2.setEmptyView(yw0Var);
+        xw0Var.a.addView(dVar2, x5.q(-2, 44, 17));
+        xw0Var.addView(nVar, 0, x5.c(-1.0f, -1));
+        jVar2.setEmptyView(xw0Var);
         jVar2.Y1 = true;
         jVar2.Z1 = 0;
         new SparseArray();
@@ -155,7 +155,7 @@ public final class u extends FrameLayout {
         s4.y yVar = new s4.y(new g(this, 0));
         this.G = yVar;
         yVar.e(jVar2);
-        r rVar = new r(context, e6Var);
+        r rVar = new r(context, d6Var);
         this.J = rVar;
         addView(rVar, x5.e(-1, -2, 48));
     }
@@ -175,9 +175,9 @@ public final class u extends FrameLayout {
                 int i10 = 1;
                 boolean z10 = f7 > 0.2f;
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(f7, z10 ? 1.0f : 0.0f);
-                ofFloat.addUpdateListener(new l6(this, i10));
+                ofFloat.addUpdateListener(new k6(this, i10));
                 ofFloat.addListener(new ai.n(5, this, z10));
-                ofFloat.setInterpolator(qr.f);
+                ofFloat.setInterpolator(rr.f);
                 ofFloat.setDuration(200L);
                 ofFloat.start();
                 return;
@@ -244,15 +244,15 @@ public final class u extends FrameLayout {
     public final void c() {
         String string;
         int i10 = this.W.b;
-        t8 t8Var = this.a;
-        int size = t8Var == null ? 0 : t8Var.i.size();
-        t8 t8Var2 = this.a;
+        u8 u8Var = this.a;
+        int size = u8Var == null ? 0 : u8Var.i.size();
+        u8 u8Var2 = this.a;
         int i11 = 1;
-        boolean z10 = t8Var2 == null || TextUtils.isEmpty(t8Var2.E);
+        boolean z10 = u8Var2 == null || TextUtils.isEmpty(u8Var2.E);
         int i12 = size > 0 ? 0 : 8;
         r rVar = this.J;
         rVar.setVisibility(i12);
-        String string2 = z10 ? LocaleController.getString(R.string.ProfileBotPreviewFooterGeneral) : LocaleController.formatString(R.string.ProfileBotPreviewFooterLanguage, v31.E(this.a.E, null, null));
+        String string2 = z10 ? LocaleController.getString(R.string.ProfileBotPreviewFooterGeneral) : LocaleController.formatString(R.string.ProfileBotPreviewFooterLanguage, u31.E(this.a.E, null, null));
         String string3 = LocaleController.getString(R.string.ProfileBotAddPreview);
         a0 a0Var = new a0(this, 3);
         if (z10 || size <= 0) {
@@ -278,24 +278,24 @@ public final class u extends FrameLayout {
         }
         o oVar2 = this.E;
         ci.d dVar2 = this.F;
-        yw0 yw0Var = this.y;
+        xw0 xw0Var = this.y;
         if (z10) {
-            yw0Var.d.setVisibility(0);
-            yw0Var.d.setText(LocaleController.getString(R.string.ProfileBotPreviewEmptyTitle));
-            yw0Var.e.setText(LocaleController.formatPluralString("ProfileBotPreviewEmptyText", MessagesController.getInstance(i10).botPreviewMediasMax, new Object[0]));
-            yw0Var.f.g(LocaleController.getString(R.string.ProfileBotPreviewEmptyButton), false, true);
+            xw0Var.d.setVisibility(0);
+            xw0Var.d.setText(LocaleController.getString(R.string.ProfileBotPreviewEmptyTitle));
+            xw0Var.e.setText(LocaleController.formatPluralString("ProfileBotPreviewEmptyText", MessagesController.getInstance(i10).botPreviewMediasMax, new Object[0]));
+            xw0Var.f.g(LocaleController.getString(R.string.ProfileBotPreviewEmptyButton), false, true);
             oVar2.setVisibility(8);
             dVar2.setVisibility(8);
         } else {
-            yw0Var.d.setVisibility(8);
-            yw0Var.e.setText(LocaleController.formatString(R.string.ProfileBotPreviewFooterLanguage, v31.E(this.a.E, null, null)));
-            yw0Var.f.g(LocaleController.getString(R.string.ProfileBotPreviewEmptyButton), false, true);
+            xw0Var.d.setVisibility(8);
+            xw0Var.e.setText(LocaleController.formatString(R.string.ProfileBotPreviewFooterLanguage, u31.E(this.a.E, null, null)));
+            xw0Var.f.g(LocaleController.getString(R.string.ProfileBotPreviewEmptyButton), false, true);
             oVar2.setVisibility(0);
             dVar2.setVisibility(0);
             dVar2.g(LocaleController.getString(R.string.ProfileBotPreviewFooterDeleteTranslation), false, true);
             dVar2.setOnClickListener(new e(this, i11));
         }
-        yw0Var.f.setVisibility(this.v.h() >= MessagesController.getInstance(i10).botPreviewMediasMax ? 8 : 0);
+        xw0Var.f.setVisibility(this.v.h() >= MessagesController.getInstance(i10).botPreviewMediasMax ? 8 : 0);
     }
 
     @Override // android.view.ViewGroup
@@ -313,21 +313,21 @@ public final class u extends FrameLayout {
         jVar.setPadding(jVar.getPaddingLeft(), jVar.Y2, jVar.getPaddingRight(), this.J.getMeasuredHeight() + AndroidUtilities.dp(42.0f));
     }
 
-    public void setList(t8 t8Var) {
-        if (this.a != t8Var) {
+    public void setList(u8 u8Var) {
+        if (this.a != u8Var) {
             this.H = false;
             this.I = false;
             this.d = this.W.y;
         }
-        this.a = t8Var;
+        this.a = u8Var;
         m mVar = this.v;
-        mVar.e = t8Var;
+        mVar.e = u8Var;
         if (mVar != mVar.s.w) {
             mVar.M();
         }
         mVar.l();
         t tVar = this.w;
-        tVar.e = t8Var;
+        tVar.e = u8Var;
         if (tVar != tVar.s.w) {
             tVar.M();
         }

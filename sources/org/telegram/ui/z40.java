@@ -1,31 +1,37 @@
 package org.telegram.ui;
 
-import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class z40 implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ ChatObject.VideoParticipant a;
-    public final /* synthetic */ i60 b;
+public final class z40 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ f60 b;
 
-    public z40(i60 i60Var, ChatObject.VideoParticipant videoParticipant) {
-        this.b = i60Var;
-        this.a = videoParticipant;
+    public /* synthetic */ z40(f60 f60Var, int i10) {
+        this.a = i10;
+        this.b = f60Var;
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        ViewGroup viewGroup;
-        i60 i60Var = this.b;
-        i60Var.Q.getViewTreeObserver().removeOnPreDrawListener(this);
-        i60Var.q2 = null;
-        i60Var.a2.j(this.a);
-        AndroidUtilities.updateVisibleRows(i60Var.m2);
-        viewGroup = ((org.telegram.ui.ActionBar.f3) i60Var).containerView;
-        viewGroup.requestLayout();
-        return false;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                f60 f60Var = this.b;
+                f60Var.V.setVisibility(4);
+                f60Var.W.setVisibility(4);
+                f60Var.U.setVisibility(4);
+                break;
+            case 1:
+                this.b.h0 = null;
+                break;
+            default:
+                f60 f60Var2 = this.b;
+                f60Var2.h1 = null;
+                f60Var2.g1.setColor(f60Var2.T1 == 3 ? -1163700 : -12761513);
+                f60Var2.f1.invalidate();
+                break;
+        }
     }
 }

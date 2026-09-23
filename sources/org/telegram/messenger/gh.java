@@ -1,32 +1,15 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import org.telegram.messenger.support.LongSparseIntArray;
+import android.graphics.Canvas;
+import android.graphics.PostProcessor;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class gh implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ NotificationsController b;
-    public final /* synthetic */ LongSparseIntArray c;
-    public final /* synthetic */ ArrayList d;
-
-    public /* synthetic */ gh(NotificationsController notificationsController, LongSparseIntArray longSparseIntArray, ArrayList arrayList, int i10) {
-        this.a = i10;
-        this.b = notificationsController;
-        this.c = longSparseIntArray;
-        this.d = arrayList;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.lambda$processDialogsUpdateRead$30(this.c, this.d);
-                break;
-            default:
-                this.b.lambda$removeDeletedHisoryFromNotifications$13(this.c, this.d);
-                break;
-        }
+public final /* synthetic */ class gh implements PostProcessor {
+    @Override // android.graphics.PostProcessor
+    public final int onPostProcess(Canvas canvas) {
+        int lambda$loadRoundAvatar$46;
+        lambda$loadRoundAvatar$46 = NotificationsController.lambda$loadRoundAvatar$46(canvas);
+        return lambda$loadRoundAvatar$46;
     }
 }

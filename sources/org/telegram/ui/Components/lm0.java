@@ -1,15 +1,44 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.accessibility.AccessibilityNodeInfo;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public interface lm0 {
-    void C();
+public final class lm0 extends y5 {
+    public final e6 d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ ScrollSlidingTextTabStrip f;
 
-    void C0(float f7);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public lm0(ScrollSlidingTextTabStrip scrollSlidingTextTabStrip, Context context, int i10) {
+        super(context);
+        this.f = scrollSlidingTextTabStrip;
+        this.e = i10;
+        this.d = new e6(this, 360L, rr.h);
+    }
 
-    void d(int i10, boolean z10);
+    @Override // org.telegram.ui.Components.y5, android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        Canvas canvas2;
+        float e = this.d.e(this.f.n0);
+        if (e > 0.0f) {
+            canvas2 = canvas;
+            canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (AndroidUtilities.lerp(1.0f, 0.5f, e) * 255.0f));
+        } else {
+            canvas2 = canvas;
+        }
+        super.onDraw(canvas2);
+        if (e > 0.0f) {
+            canvas2.restore();
+        }
+    }
 
-    boolean n1(int i10, View view);
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setSelected(this.f.r == this.e);
+    }
 }

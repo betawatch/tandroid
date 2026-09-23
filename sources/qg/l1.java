@@ -7,12 +7,12 @@ import android.graphics.Path;
 import android.graphics.RectF;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public abstract class l1 extends ll0 {
+public abstract class l1 extends ml0 {
     public static final Paint c3;
     public static final Paint d3;
     public static final Path e3;
@@ -20,7 +20,7 @@ public abstract class l1 extends ll0 {
     public final Paint X2;
     public final Paint Y2;
     public int Z2;
-    public pg.s0 a3;
+    public pg.t0 a3;
     public q0.a b3;
 
     static {
@@ -110,8 +110,8 @@ public abstract class l1 extends ll0 {
         this.b3 = aVar;
     }
 
-    public void setColorPalette(pg.s0 s0Var) {
-        this.a3 = s0Var;
+    public void setColorPalette(pg.t0 t0Var) {
+        this.a3 = t0Var;
         getAdapter().l();
     }
 
@@ -121,7 +121,7 @@ public abstract class l1 extends ll0 {
     }
 
     public final void y1(float f7, boolean z10) {
-        float interpolation = z10 ? qr.g.getInterpolation(f7) : qr.i.getInterpolation(f7);
+        float interpolation = z10 ? rr.g.getInterpolation(f7) : rr.i.getInterpolation(f7);
         float childCount = 1.0f / (getChildCount() - 1);
         for (int i10 = 0; i10 < getChildCount(); i10++) {
             View childAt = getChildAt(i10);

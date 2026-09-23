@@ -6,46 +6,46 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.eo0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class x7 implements eo0 {
-    public final /* synthetic */ z7 a;
+    public final /* synthetic */ a8 a;
 
-    public x7(z7 z7Var) {
-        this.a = z7Var;
+    public x7(a8 a8Var) {
+        this.a = a8Var;
     }
 
     @Override // org.telegram.ui.Components.eo0
     public final void X(float f7, boolean z10) {
         int round;
-        z7 z7Var = this.a;
-        y7 y7Var = z7Var.r;
-        if (y7Var == null || z7Var.n == null) {
+        a8 a8Var = this.a;
+        z7 z7Var = a8Var.r;
+        if (z7Var == null || a8Var.n == null) {
             return;
         }
-        if (y7Var.c != null) {
+        if (z7Var.c != null) {
             double length = f7 * (r1.length - 1);
-            int clamp = Utilities.clamp((int) Math.floor(length), z7Var.r.c.length - 1, 0);
-            int clamp2 = Utilities.clamp((int) Math.ceil(length), z7Var.r.c.length - 1, 0);
-            int[] iArr = z7Var.r.c;
-            round = Math.round(AndroidUtilities.lerp(iArr[clamp], iArr[clamp2], Math.round(((float) (length - Math.floor(length))) * z7Var.r.d) / z7Var.r.d));
+            int clamp = Utilities.clamp((int) Math.floor(length), a8Var.r.c.length - 1, 0);
+            int clamp2 = Utilities.clamp((int) Math.ceil(length), a8Var.r.c.length - 1, 0);
+            int[] iArr = a8Var.r.c;
+            round = Math.round(AndroidUtilities.lerp(iArr[clamp], iArr[clamp2], Math.round(((float) (length - Math.floor(length))) * a8Var.r.d) / a8Var.r.d));
         } else {
-            round = Math.round(((z7Var.r.a() - z7Var.r.b()) * f7) + y7Var.b());
+            round = Math.round(((a8Var.r.a() - a8Var.r.b()) * f7) + z7Var.b());
         }
-        int i10 = z7Var.h;
+        int i10 = a8Var.h;
         if (i10 != Integer.MIN_VALUE) {
             round = Math.max(round, i10);
         }
-        int i11 = z7Var.f;
+        int i11 = a8Var.f;
         if (i11 != round) {
-            if (z7Var.c(i11) != z7Var.c(round)) {
-                AndroidUtilities.vibrateCursor(z7Var.e);
+            if (a8Var.c(i11) != a8Var.c(round)) {
+                AndroidUtilities.vibrateCursor(a8Var.e);
             }
-            z7Var.f = round;
-            z7Var.e(round, true);
-            Utilities.Callback callback = z7Var.n;
+            a8Var.f = round;
+            a8Var.e(round, true);
+            Utilities.Callback callback = a8Var.n;
             if (callback != null) {
-                callback.run(Integer.valueOf(z7Var.f));
+                callback.run(Integer.valueOf(a8Var.f));
             }
         }
     }
@@ -53,23 +53,23 @@ public final class x7 implements eo0 {
     @Override // org.telegram.ui.Components.eo0
     public final CharSequence getContentDescription() {
         Utilities.Callback2Return callback2Return;
-        z7 z7Var = this.a;
+        a8 a8Var = this.a;
         try {
             StringBuilder sb2 = new StringBuilder();
-            if (!TextUtils.isEmpty(z7Var.s)) {
-                sb2.append(z7Var.s);
+            if (!TextUtils.isEmpty(a8Var.s)) {
+                sb2.append(a8Var.s);
             }
-            y7 y7Var = z7Var.r;
-            if (y7Var != null && (callback2Return = y7Var.e) != null) {
-                CharSequence charSequence = (CharSequence) callback2Return.run(0, Integer.valueOf(z7Var.f));
+            z7 z7Var = a8Var.r;
+            if (z7Var != null && (callback2Return = z7Var.e) != null) {
+                CharSequence charSequence = (CharSequence) callback2Return.run(0, Integer.valueOf(a8Var.f));
                 if (!TextUtils.isEmpty(charSequence)) {
                     if (sb2.length() > 0) {
                         sb2.append(", ");
                     }
                     sb2.append(charSequence);
                 }
-                CharSequence charSequence2 = (CharSequence) z7Var.r.e.run(-1, Integer.valueOf(z7Var.r.b()));
-                CharSequence charSequence3 = (CharSequence) z7Var.r.e.run(1, Integer.valueOf(z7Var.r.a()));
+                CharSequence charSequence2 = (CharSequence) a8Var.r.e.run(-1, Integer.valueOf(a8Var.r.b()));
+                CharSequence charSequence3 = (CharSequence) a8Var.r.e.run(1, Integer.valueOf(a8Var.r.a()));
                 if (!TextUtils.isEmpty(charSequence2) && !TextUtils.isEmpty(charSequence3)) {
                     if (sb2.length() > 0) {
                         sb2.append(", ");
@@ -85,17 +85,17 @@ public final class x7 implements eo0 {
             return null;
         } catch (Throwable th2) {
             FileLog.e(th2);
-            return z7Var.s;
+            return a8Var.s;
         }
     }
 
     @Override // org.telegram.ui.Components.eo0
     public final int m0() {
-        y7 y7Var = this.a.r;
-        if (y7Var == null) {
+        z7 z7Var = this.a.r;
+        if (z7Var == null) {
             return 0;
         }
-        return y7Var.c != null ? (r1.length - 1) * y7Var.d : y7Var.a() - y7Var.b();
+        return z7Var.c != null ? (r1.length - 1) * z7Var.d : z7Var.a() - z7Var.b();
     }
 
     @Override // org.telegram.ui.Components.eo0

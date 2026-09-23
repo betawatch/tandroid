@@ -8,18 +8,18 @@ import android.content.IntentSender;
 import android.os.Build;
 import android.util.Log;
 import android.view.KeyEvent;
-import ci.b9;
-import ci.g7;
+import ci.e7;
+import ci.y8;
 import com.google.firebase.messaging.FirebaseMessaging;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.concurrent.Executor;
-import org.telegram.ui.Components.ng;
-import org.telegram.ui.Components.ok;
+import org.telegram.ui.Components.og;
+import org.telegram.ui.Components.pk;
 import p4.s0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class g extends BroadcastReceiver {
     public final /* synthetic */ int a;
@@ -61,7 +61,7 @@ public final class g extends BroadcastReceiver {
                 }
                 return;
             case 2:
-                ((Executor) ((e2.u) this.b).c).execute(new b9(13, this, context));
+                ((Executor) ((e2.u) this.b).c).execute(new y8(13, this, context));
                 return;
             case 3:
                 ((g.p) this.b).k();
@@ -77,8 +77,8 @@ public final class g extends BroadcastReceiver {
                 if (isInitialStickyBroadcast()) {
                     return;
                 }
-                g7 g7Var = (g7) this.b;
-                g7Var.a(k2.b.b(context, intent, (b2.e) g7Var.j, (a6.m) g7Var.i));
+                e7 e7Var = (e7) this.b;
+                e7Var.a(k2.b.b(context, intent, (b2.e) e7Var.j, (a6.m) e7Var.i));
                 return;
             case 6:
                 if (Objects.equals(intent.getAction(), "android.intent.action.MEDIA_BUTTON") && (keyEvent = (KeyEvent) intent.getParcelableExtra("android.intent.extra.KEY_EVENT")) != null) {
@@ -87,12 +87,12 @@ public final class g extends BroadcastReceiver {
                 }
                 return;
             case 7:
-                ng ngVar = new ng(this, 22);
+                og ogVar = new og(this, 22);
                 if ("android.intent.action.MEDIA_UNMOUNTED".equals(intent.getAction())) {
-                    ((ok) this.b).r.postDelayed(ngVar, 1000L);
+                    ((pk) this.b).r.postDelayed(ogVar, 1000L);
                     return;
                 } else {
-                    ngVar.run();
+                    ogVar.run();
                     return;
                 }
             case 8:

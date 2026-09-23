@@ -2,17 +2,22 @@ package org.telegram.ui;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class n71 implements View.OnLayoutChangeListener {
-    public final /* synthetic */ r71 a;
+public final class n71 implements View.OnClickListener {
+    public final /* synthetic */ w71 a;
 
-    public n71(r71 r71Var) {
-        this.a = r71Var;
+    public n71(w71 w71Var) {
+        this.a = w71Var;
     }
 
-    @Override // android.view.View.OnLayoutChangeListener
-    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
-        r71.S(this.a);
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        org.telegram.ui.Components.bj0 bj0Var = this.a.d;
+        if (bj0Var.b() || bj0Var.getAnimatedDrawable() == null) {
+            return;
+        }
+        bj0Var.getAnimatedDrawable().M(40);
+        bj0Var.d();
     }
 }

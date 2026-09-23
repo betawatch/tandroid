@@ -5,7 +5,7 @@ import android.graphics.Rect;
 import android.view.View;
 import androidx.core.widget.NestedScrollView;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class he0 extends NestedScrollView {
     public View W;
@@ -24,7 +24,7 @@ public final class he0 extends NestedScrollView {
         }
         int f7 = super.f(rect);
         int currentActionBarHeight = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() - (((this.W.getTop() - getScrollY()) + rect.top) + f7);
-        return currentActionBarHeight > 0 ? org.telegram.messenger.vl.w(10.0f, currentActionBarHeight, f7) : f7;
+        return currentActionBarHeight > 0 ? org.telegram.messenger.ul.w(10.0f, currentActionBarHeight, f7) : f7;
     }
 
     @Override // androidx.core.widget.NestedScrollView, android.view.ViewGroup, android.view.ViewParent

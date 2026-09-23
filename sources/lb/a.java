@@ -5,8 +5,9 @@ import java.io.Closeable;
 import java.io.EOFException;
 import java.io.Reader;
 import java.util.Arrays;
+import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public class a implements Closeable {
     public final Reader a;
@@ -449,7 +450,7 @@ public class a implements Closeable {
                     i10 = 6;
                 } else {
                     if (c11 == 'n' || c11 == 'N') {
-                        str = "null";
+                        str = BuildConfig.BETA_URL;
                         str2 = "NULL";
                         i10 = 7;
                     }
@@ -963,7 +964,7 @@ public class a implements Closeable {
             i10 = d();
         }
         if (i10 != 7) {
-            throw E("null");
+            throw E(BuildConfig.BETA_URL);
         }
         this.h = 0;
         int[] iArr = this.y;

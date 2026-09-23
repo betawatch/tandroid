@@ -1,61 +1,58 @@
 package org.telegram.ui.Components;
 
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.Space;
-import android.widget.TextView;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import androidx.mediarouter.app.MediaRouteButton;
+import java.lang.reflect.Field;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public abstract class md extends LinearLayout {
-    public ImageView a;
-    public TextView b;
-    public Space c;
-    public boolean d;
+public abstract class md extends MediaRouteButton {
+    public boolean a;
 
-    public final void a(ImageView imageView, LinearLayout.LayoutParams layoutParams) {
-        if (this.a == null) {
-            this.a = imageView;
-            addView(imageView, layoutParams);
+    public final void a() {
+        boolean b10 = b();
+        if (this.a != b10) {
+            this.a = b10;
+            c(b10);
         }
     }
 
-    public final void b(Space space, LinearLayout.LayoutParams layoutParams) {
-        if (this.c == null) {
-            this.c = space;
-            addView(space, layoutParams);
+    public final boolean b() {
+        Field declaredField;
+        try {
+            declaredField = MediaRouteButton.class.getDeclaredField("mConnectionState");
+            declaredField.setAccessible(true);
+        } catch (Exception unused) {
         }
+        return ((Integer) declaredField.get(this)).intValue() > 0;
     }
 
-    public final void c(TextView textView, LinearLayout.LayoutParams layoutParams) {
-        if (this.b == null) {
-            this.b = textView;
-            addView(textView, layoutParams);
-        }
+    public abstract void c(boolean z10);
+
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        a();
     }
 
-    public abstract void d();
-
-    public ImageView getImageView() {
-        return this.a;
+    @Override // android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        a();
     }
 
-    public TextView getTextView() {
-        return this.b;
+    @Override // androidx.mediarouter.app.MediaRouteButton, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        a();
     }
 
-    public void setEditButton(boolean z10) {
-        this.d = z10;
+    @Override // androidx.mediarouter.app.MediaRouteButton, android.view.View
+    public final void onDraw(Canvas canvas) {
+        a();
     }
 
-    public void setOnlyIconMode(boolean z10) {
-        TextView textView = this.b;
-        if (textView != null) {
-            textView.setVisibility(z10 ? 8 : 0);
-        }
-        Space space = this.c;
-        if (space != null) {
-            space.setVisibility(z10 ? 8 : 0);
-        }
+    @Override // android.view.View
+    public void setBackground(Drawable drawable) {
     }
 }

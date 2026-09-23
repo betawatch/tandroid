@@ -2,9 +2,9 @@ package org.telegram.ui.Components;
 
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class cs0 extends org.telegram.ui.bo {
+public final class cs0 extends org.telegram.ui.xn {
     public boolean Pc;
     public final /* synthetic */ int Qc;
     public final /* synthetic */ yu0 Rc;
@@ -17,7 +17,7 @@ public final class cs0 extends org.telegram.ui.bo {
         this.Pc = true;
     }
 
-    @Override // org.telegram.ui.bo, org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.xn, org.telegram.ui.ActionBar.n2
     public final void onTransitionAnimationStart(boolean z10, boolean z11) {
         yu0 yu0Var = this.Rc;
         ju0 ju0Var = yu0Var.S;
@@ -26,9 +26,9 @@ public final class cs0 extends org.telegram.ui.bo {
                 la("");
                 this.j0.H(ju0Var.w, false);
             }
-            org.telegram.ui.yk ykVar = this.o1;
-            if (ykVar != null) {
-                ykVar.e(ju0Var.x, false);
+            org.telegram.ui.vk vkVar = this.o1;
+            if (vkVar != null) {
+                vkVar.e(ju0Var.x, false);
             }
             yu0Var.v1.getMediaDataController().portSavedSearchResults(getClassGuid(), ju0Var.x, ju0Var.w, ju0Var.n, ju0Var.h, this.Qc, ju0Var.v, ju0Var.s);
             this.Pc = false;

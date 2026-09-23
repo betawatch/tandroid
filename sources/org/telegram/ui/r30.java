@@ -1,43 +1,31 @@
 package org.telegram.ui;
 
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class r30 implements Runnable {
-    public final /* synthetic */ i60 a;
+public final class r30 extends TextView {
+    public final RectF a;
+    public final /* synthetic */ f60 b;
 
-    public r30(i60 i60Var) {
-        this.a = i60Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public r30(f60 f60Var, Context context) {
+        super(context);
+        this.b = f60Var;
+        this.a = new RectF();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        i60 i60Var = this.a;
-        org.telegram.ui.ActionBar.j5 j5Var = i60Var.U;
-        n50 n50Var = i60Var.V;
-        if (n50Var == null || i60Var.isDismissed()) {
-            return;
-        }
-        ChatObject.Call call = i60Var.a1;
-        int i10 = call != null ? call.call.schedule_date : i60Var.k2;
-        if (i10 == 0) {
-            return;
-        }
-        int currentTime = i10 - i60Var.d.getConnectionsManager().getCurrentTime();
-        if (currentTime >= 86400) {
-            n50Var.l(LocaleController.formatPluralString("Days", Math.round(currentTime / 86400.0f), new Object[0]), false);
-        } else {
-            n50Var.l(AndroidUtilities.formatFullDuration(Math.abs(currentTime)), false);
-            if (currentTime < 0 && j5Var.getTag() == null) {
-                j5Var.setTag(1);
-                j5Var.l(LocaleController.getString(R.string.VoipChatLateBy), false);
-            }
-        }
-        i60Var.W.l(LocaleController.formatStartsTime(i10, 3), false);
-        AndroidUtilities.runOnUIThread(i60Var.w2, 1000L);
+    @Override // android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        float width = getWidth();
+        float height = getHeight();
+        RectF rectF = this.a;
+        rectF.set(0.0f, 0.0f, width, height);
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), this.b.g1);
+        super.onDraw(canvas);
     }
 }

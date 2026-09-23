@@ -1,31 +1,11 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+import android.content.DialogInterface;
+
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fq implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ pq b;
-    public final /* synthetic */ long c;
-
-    public /* synthetic */ fq(pq pqVar, long j3, int i10) {
-        this.a = i10;
-        this.b = pqVar;
-        this.c = j3;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                long j3 = this.c;
-                pq pqVar = this.b;
-                pqVar.n = j3;
-                pqVar.r = true;
-                pqVar.n0();
-                break;
-            default:
-                pq.Z(this.b, this.c);
-                break;
-        }
+public final /* synthetic */ class fq implements DialogInterface.OnClickListener {
+    @Override // android.content.DialogInterface.OnClickListener
+    public final void onClick(DialogInterface dialogInterface, int i10) {
     }
 }

@@ -1,45 +1,15 @@
 package org.telegram.ui;
 
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MessageObject;
+import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class ez implements ImageReceiver.ImageReceiverDelegate {
-    public final /* synthetic */ fz a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ MessageObject c;
-    public final /* synthetic */ gz d;
-
-    public ez(gz gzVar, fz fzVar, boolean z10, MessageObject messageObject) {
-        this.d = gzVar;
-        this.a = fzVar;
-        this.b = z10;
-        this.c = messageObject;
-    }
-
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public final void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
-        fz fzVar = this.a;
-        if (fzVar.r.getLottieAnimation() != null) {
-            fzVar.r.getLottieAnimation().N(0, false, true);
-        }
-    }
-
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public final /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
-        org.telegram.messenger.h5.a(this, i10, str, drawable);
-    }
-
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public final void onAnimationReady(ImageReceiver imageReceiver) {
-        MessageObject messageObject;
-        if (this.b && (messageObject = this.c) != null && messageObject.isAnimatedAnimatedEmoji() && imageReceiver.getLottieAnimation() != null && imageReceiver.getLottieAnimation().x == null) {
-            try {
-                this.d.G.performHapticFeedback(3, 1);
-            } catch (Exception unused) {
-            }
-        }
+public abstract class ez extends org.telegram.ui.ActionBar.n2 {
+    @Override // org.telegram.ui.ActionBar.n2
+    public final View createView(Context context) {
+        org.telegram.ui.Components.pv0 pv0Var = new org.telegram.ui.Components.pv0(context, null);
+        this.fragmentView = pv0Var;
+        return pv0Var;
     }
 }

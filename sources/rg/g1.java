@@ -3,21 +3,21 @@ package rg;
 import ai.y3;
 import android.content.Context;
 import java.util.ArrayList;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.Components.sv;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.Components.tv;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class g1 extends sv {
+public final class g1 extends tv {
     public final /* synthetic */ k1 W;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g1(k1 k1Var, y3 y3Var, Context context, e6 e6Var, ArrayList arrayList) {
-        super(y3Var, context, e6Var, arrayList);
+    public g1(k1 k1Var, y3 y3Var, Context context, d6 d6Var, ArrayList arrayList) {
+        super(y3Var, context, d6Var, arrayList);
         this.W = k1Var;
     }
 
-    @Override // org.telegram.ui.Components.sv
+    @Override // org.telegram.ui.Components.tv
     public final void Y() {
         this.W.dismiss();
     }

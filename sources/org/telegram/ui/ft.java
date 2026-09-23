@@ -1,74 +1,26 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ft implements r0.n, org.telegram.ui.Components.ek0 {
-    public final /* synthetic */ st a;
+public final class ft extends org.telegram.ui.ActionBar.n1 {
+    public final /* synthetic */ lt o;
 
-    public /* synthetic */ ft(st stVar) {
-        this.a = stVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ft(lt ltVar, ViewGroup viewGroup) {
+        super(viewGroup, -2, -2);
+        this.o = ltVar;
     }
 
-    @Override // r0.n
-    public r0.l1 Q0(View view, r0.l1 l1Var) {
-        this.a.q = AndroidUtilities.getDefaultWindowInsets(l1Var, false);
-        return l1Var;
-    }
-
-    @Override // org.telegram.ui.Components.ek0
-    public void h(View view, zg.p0 p0Var, boolean z10, boolean z11) {
-        if (p0Var == null) {
-            return;
+    @Override // org.telegram.ui.ActionBar.n1, android.widget.PopupWindow
+    public final void dismiss() {
+        d(true);
+        pt ptVar = this.o.a;
+        ptVar.k = null;
+        ptVar.K = false;
+        if (ptVar.R) {
+            ptVar.n();
         }
-        st stVar = this.a;
-        zg.c0 reactionsWindow = stVar.P.getReactionsWindow();
-        if (!stVar.o.contains(p0Var.f)) {
-            stVar.o.add(p0Var.f);
-            if (stVar.o.size() > 7) {
-                stVar.o.remove(0);
-            }
-        } else if (stVar.o.size() <= 1) {
-            return;
-        } else {
-            stVar.o.remove(p0Var.f);
-        }
-        stVar.P.setSelectedEmojis(stVar.o);
-        if (reactionsWindow != null) {
-            zg.y yVar = reactionsWindow.m;
-            stVar.P.p(null, null, false);
-            if (yVar != null) {
-                yVar.setSelectedReactions(stVar.o);
-                yVar.setRecentReactions(stVar.P.V);
-            }
-            reactionsWindow.d();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.ek0
-    public /* synthetic */ boolean j() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.ek0
-    public /* synthetic */ boolean k() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ek0
-    public /* synthetic */ boolean q() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ek0
-    public /* synthetic */ void o() {
-    }
-
-    @Override // org.telegram.ui.Components.ek0
-    public /* synthetic */ void n(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
     }
 }

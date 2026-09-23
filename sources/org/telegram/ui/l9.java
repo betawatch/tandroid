@@ -7,7 +7,7 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.camera.CameraController;
 import org.telegram.messenger.camera.CameraView;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l9 implements Runnable {
     public final /* synthetic */ int a;
@@ -68,7 +68,7 @@ public final /* synthetic */ class l9 implements Runnable {
                 u9 u9Var5 = this.b;
                 if (u9Var5.f.getTag() != null) {
                     u9Var5.f.setTag(null);
-                    u9Var5.f.animate().setDuration(200L).alpha(0.0f).setInterpolator(org.telegram.ui.Components.qr.f).start();
+                    u9Var5.f.animate().setDuration(200L).alpha(0.0f).setInterpolator(org.telegram.ui.Components.rr.f).start();
                     break;
                 }
                 break;
@@ -95,7 +95,7 @@ public final /* synthetic */ class l9 implements Runnable {
                     u9Var7.W = ofFloat;
                     ofFloat.addUpdateListener(new o9(u9Var7, i10));
                     u9Var7.W.setDuration((long) (Math.abs(u9Var7.X - u9Var7.Y) * 300.0f));
-                    u9Var7.W.setInterpolator(org.telegram.ui.Components.qr.f);
+                    u9Var7.W.setInterpolator(org.telegram.ui.Components.rr.f);
                     u9Var7.W.start();
                     o1.k kVar = u9Var7.Z;
                     if (kVar != null) {

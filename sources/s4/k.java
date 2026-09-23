@@ -2,9 +2,9 @@ package s4;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import org.telegram.ui.Cells.ia;
+import org.telegram.ui.Cells.ja;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class k {
     public final ArrayList a;
@@ -209,7 +209,7 @@ public final class k {
     }
 
     public final void b(h0 h0Var) {
-        a(new ia(h0Var, 12));
+        a(new ja(h0Var, 12));
     }
 
     public final void c(int i10, int i11, int i12, boolean z10) {

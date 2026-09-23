@@ -1,71 +1,30 @@
 package i2;
 
-import j$.time.LocalDate;
-import j$.time.ZoneOffset;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.a2;
-import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.Components.qc0;
-import org.telegram.ui.Components.wk0;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class v implements e2.m, d9.e, wk0, qc0, a2 {
+public final /* synthetic */ class v implements e2.m, e2.h {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
+    public final /* synthetic */ float b;
 
-    public /* synthetic */ v(int i10, int i11) {
-        this.a = i11;
-        this.b = i10;
+    public /* synthetic */ v(float f7, int i10) {
+        this.a = i10;
+        this.b = f7;
     }
 
-    @Override // d9.e, i5.e
-    public Object apply(Object obj) {
-        return Integer.valueOf(this.b);
-    }
-
-    @Override // org.telegram.ui.Components.qc0
-    public String e(int i10) {
-        int i11 = this.a;
-        int i12 = this.b;
-        switch (i11) {
-            case 4:
-                if (i10 == 0) {
-                    return LocaleController.getString(R.string.MessageScheduleToday);
-                }
-                LocalDate plusDays = LocalDate.now().plusDays(i10);
-                int year = plusDays.getYear();
-                long epochMilli = plusDays.atStartOfDay().toInstant(ZoneOffset.UTC).toEpochMilli();
-                if (year != i12) {
-                    return LocaleController.getInstance().getFormatterScheduleYear().format(epochMilli);
-                }
-                return LocaleController.getInstance().getFormatterWeek().format(epochMilli) + ", " + LocaleController.getInstance().getFormatterScheduleDay().format(epochMilli);
+    @Override // e2.h
+    public void accept(Object obj) {
+        switch (this.a) {
+            case 1:
+                ((m4.f1) obj).a(this.b);
+                break;
             default:
-                return i10 == i12 ? "—" : String.format("%02d", Integer.valueOf(i10));
+                ((m4.f1) obj).U(this.b);
+                break;
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.a2
-    public void f(b2 b2Var, int i10) {
-        MessagesController.getInstance(this.b).performLogout(1);
     }
 
     @Override // e2.m
     public void invoke(Object obj) {
-        switch (this.a) {
-            case 0:
-                ((b2.z0) obj).onRepeatModeChanged(this.b);
-                break;
-            default:
-                ((b2.z0) obj).onAudioSessionIdChanged(this.b);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.wk0
-    public int run() {
-        return this.b;
+        ((b2.z0) obj).onVolumeChanged(this.b);
     }
 }

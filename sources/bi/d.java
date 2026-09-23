@@ -10,30 +10,30 @@ import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.Cells.x2;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.UndoView;
-import org.telegram.ui.Components.c5;
-import org.telegram.ui.Components.ei0;
-import org.telegram.ui.Components.gl;
-import org.telegram.ui.Components.h8;
+import org.telegram.ui.Components.e5;
+import org.telegram.ui.Components.fi0;
+import org.telegram.ui.Components.hl;
 import org.telegram.ui.Components.hq0;
-import org.telegram.ui.Components.mp;
-import org.telegram.ui.Components.mz;
-import org.telegram.ui.Components.ok;
+import org.telegram.ui.Components.j8;
+import org.telegram.ui.Components.np;
+import org.telegram.ui.Components.nz;
+import org.telegram.ui.Components.pk;
 import org.telegram.ui.Components.sd0;
-import org.telegram.ui.Components.vi;
-import org.telegram.ui.Components.vu;
-import org.telegram.ui.Components.vx0;
+import org.telegram.ui.Components.ux0;
+import org.telegram.ui.Components.wi;
+import org.telegram.ui.Components.wu;
 import org.telegram.ui.Components.yn0;
 import org.telegram.ui.Components.yu0;
 import org.telegram.ui.PopupNotificationActivity;
-import org.telegram.ui.bo;
-import org.telegram.ui.ck0;
-import org.telegram.ui.h4;
 import org.telegram.ui.h9;
+import org.telegram.ui.i4;
 import org.telegram.ui.qa;
+import org.telegram.ui.qo0;
 import org.telegram.ui.ub;
-import org.telegram.ui.wo0;
+import org.telegram.ui.wj0;
+import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d implements View.OnTouchListener {
     public final /* synthetic */ int a;
@@ -52,7 +52,7 @@ public final /* synthetic */ class d implements View.OnTouchListener {
                 int i11 = f3.a;
                 break;
             case 3:
-                HashSet hashSet = h4.b1;
+                HashSet hashSet = i4.b1;
             case 2:
                 return true;
             case 4:
@@ -68,41 +68,41 @@ public final /* synthetic */ class d implements View.OnTouchListener {
                 int i14 = ub.Q0;
                 break;
             case 8:
-                int i15 = bo.Gc;
+                int i15 = xn.Gc;
                 break;
             case 10:
-                Pattern pattern = c5.a;
+                Pattern pattern = e5.a;
             case 9:
                 return true;
             case 11:
-                h8 h8Var = h8.T0;
+                j8 j8Var = j8.T0;
                 break;
             case 12:
                 int i16 = ChatActivityEnterView.n5;
                 break;
             case 13:
-                int i17 = vi.O2;
+                int i17 = wi.O2;
                 break;
             case 14:
-                int i18 = ok.g0;
+                int i18 = pk.g0;
                 break;
             case 15:
-                int i19 = gl.E0;
+                int i19 = hl.E0;
                 break;
             case 16:
-                int i20 = mp.i0;
+                int i20 = np.i0;
                 break;
             case 17:
-                vu vuVar = vu.S;
+                wu wuVar = wu.S;
                 break;
             case 18:
-                int i21 = mz.h;
+                int i21 = nz.h;
                 break;
             case 19:
                 int[] iArr = sd0.a0;
                 break;
             case 20:
-                int i22 = ei0.R;
+                int i22 = fi0.R;
                 break;
             case 21:
                 int i23 = yn0.Y0;
@@ -114,7 +114,7 @@ public final /* synthetic */ class d implements View.OnTouchListener {
                 int[] iArr2 = yu0.d2;
                 break;
             case 24:
-                int i25 = vx0.u0;
+                int i25 = ux0.u0;
                 break;
             case 25:
                 int i26 = UndoView.e0;
@@ -123,10 +123,10 @@ public final /* synthetic */ class d implements View.OnTouchListener {
                 int i27 = UndoView.e0;
                 break;
             case 27:
-                int i28 = ck0.d0;
+                int i28 = wj0.d0;
                 break;
             case 28:
-                List list = wo0.g1;
+                List list = qo0.g1;
                 break;
             default:
                 int i29 = PopupNotificationActivity.b0;

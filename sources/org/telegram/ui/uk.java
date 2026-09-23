@@ -1,24 +1,20 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+import android.widget.FrameLayout;
+
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class uk extends org.telegram.ui.Components.ok0 {
-    public final /* synthetic */ bo l;
+public final class uk extends dz {
+    public final /* synthetic */ xn N;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public uk(bo boVar, uj ujVar, xj xjVar) {
-        super(ujVar, xjVar);
-        this.l = boVar;
+    public uk(xn xnVar, xn xnVar2, FrameLayout frameLayout, rj rjVar, int i10, long j3, long j10) {
+        super(xnVar2, frameLayout, rjVar, i10, j3, j10);
+        this.N = xnVar;
     }
 
-    public final void e(int i10) {
-        if (this.l.Pa) {
-            if (i10 == 0) {
-                i10 = 1;
-            } else if (i10 == 1) {
-                i10 = 0;
-            }
-        }
-        this.b = i10;
+    @Override // org.telegram.ui.dz
+    public final void i() {
+        this.N.uc();
     }
 }

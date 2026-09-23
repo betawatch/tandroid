@@ -1,53 +1,40 @@
 package ci;
 
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.view.View;
+import android.text.style.ClickableSpan;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.e90;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class c4 extends View implements x2 {
-    public final org.telegram.ui.Components.m6 a;
+public final /* synthetic */ class c4 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ e4 b;
 
-    public c4(Activity activity) {
-        super(activity);
-        org.telegram.ui.Components.m6 m6Var = new org.telegram.ui.Components.m6(true, true, true, false);
-        this.a = m6Var;
-        m6Var.k(0.35f, 300L, qr.h);
-        m6Var.r(-1);
-        m6Var.t(AndroidUtilities.dp(14.0f));
-        m6Var.p(AndroidUtilities.dp(1.4f), AndroidUtilities.dp(0.4f), 1275068416);
-        m6Var.b = 1;
-        m6Var.setCallback(this);
-        m6Var.G = AndroidUtilities.displaySize.x;
+    public /* synthetic */ c4(e4 e4Var, int i10) {
+        this.a = i10;
+        this.b = e4Var;
     }
 
-    @Override // android.view.View
-    public final void draw(Canvas canvas) {
-        super.draw(canvas);
-        int width = getWidth();
-        int height = getHeight();
-        org.telegram.ui.Components.m6 m6Var = this.a;
-        m6Var.setBounds(0, 0, width, height);
-        m6Var.draw(canvas);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.getClass();
+                break;
+            case 1:
+                AndroidUtilities.removeFromParent(this.b);
+                break;
+            case 2:
+                AndroidUtilities.removeFromParent(this.b);
+                break;
+            default:
+                AndroidUtilities.removeFromParent(this.b);
+                break;
+        }
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        this.a.G = getMeasuredWidth();
-    }
-
-    @Override // ci.x2
-    public void setInvert(float f7) {
-        this.a.r(i0.a.d(f7, -1, -16777216));
-    }
-
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.a || super.verifyDrawable(drawable);
+    public /* synthetic */ c4(e4 e4Var, e90 e90Var, ClickableSpan clickableSpan) {
+        this.a = 0;
+        this.b = e4Var;
     }
 }

@@ -1,9 +1,9 @@
 package org.telegram.ui.ActionBar;
 
 import android.view.ViewTreeObserver;
-import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class p0 implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ float a;
@@ -24,7 +24,7 @@ public final class p0 implements ViewTreeObserver.OnPreDrawListener {
             ci.h2 h2Var = v0Var.e;
             h2Var.setTranslationX(f7 - h2Var.getX());
         }
-        v0Var.e.animate().translationX(0.0f).setDuration(250L).setStartDelay(0L).setInterpolator(qr.f).start();
+        v0Var.e.animate().translationX(0.0f).setDuration(250L).setStartDelay(0L).setInterpolator(rr.f).start();
         return true;
     }
 }

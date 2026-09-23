@@ -16,10 +16,10 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.n5;
+import org.telegram.ui.ActionBar.m5;
 import org.telegram.ui.Components.vp0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public class c2 {
     public b2 a;
@@ -167,7 +167,7 @@ public class c2 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void h(final String str, boolean z10, final boolean z11, final boolean z12, boolean z13, final boolean z14, long j3, boolean z15, int i10, final int i11, final long j10, final n5 n5Var) {
+    public final void h(final String str, boolean z10, final boolean z11, final boolean z12, boolean z13, final boolean z14, long j3, boolean z15, int i10, final int i11, final long j10, final m5 m5Var) {
         int i12;
         boolean z16;
         boolean z17;
@@ -288,7 +288,7 @@ public class c2 {
                             final AtomicInteger atomicInteger5 = atomicInteger3;
                             final ArrayList arrayList12 = arrayList10;
                             final int i18 = i11;
-                            final Runnable runnable = n5Var;
+                            final Runnable runnable = m5Var;
                             AndroidUtilities.runOnUIThread(new Runnable() { // from class: gg.y1
                                 @Override // java.lang.Runnable
                                 public final void run() {

@@ -19,7 +19,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.Components.Crop.CropAreaView;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class ue0 extends FrameLayout {
     public final re0 E;
@@ -37,9 +37,9 @@ public final class ue0 extends FrameLayout {
     public AnimatorSet v;
     public float w;
     public final Paint x;
-    public final org.telegram.ui.ActionBar.e6 y;
+    public final org.telegram.ui.ActionBar.d6 y;
 
-    public ue0(ContextThemeWrapper contextThemeWrapper, org.telegram.ui.ActionBar.e6 e6Var) {
+    public ue0(ContextThemeWrapper contextThemeWrapper, org.telegram.ui.ActionBar.d6 d6Var) {
         super(contextThemeWrapper);
         this.h = true;
         this.r = 1.0f;
@@ -47,7 +47,7 @@ public final class ue0 extends FrameLayout {
         this.x = new Paint(1);
         this.E = new re0(this, 0);
         this.F = new re0(this, 1);
-        this.y = e6Var;
+        this.y = d6Var;
         this.d = contextThemeWrapper instanceof BubbleActivity;
         lg.p pVar = new lg.p(contextThemeWrapper);
         this.b = pVar;
@@ -70,20 +70,20 @@ public final class ue0 extends FrameLayout {
         cropAreaView.invalidate();
     }
 
-    public final void b(Bitmap bitmap, int i10, boolean z10, boolean z11, lg.g gVar, u61 u61Var, MediaController.CropState cropState) {
+    public final void b(Bitmap bitmap, int i10, boolean z10, boolean z11, lg.g gVar, t61 t61Var, MediaController.CropState cropState) {
         requestLayout();
         this.f = false;
         this.e.setImageBitmap((Drawable) null);
         lg.p pVar = this.b;
         ImageView imageView = pVar.b;
         pVar.x = z10;
-        pVar.d = u61Var;
+        pVar.d = t61Var;
         pVar.e = gVar;
         pVar.K = i10;
         pVar.w = bitmap;
         CropAreaView cropAreaView = pVar.a;
-        cropAreaView.setIsVideo(u61Var != null);
-        if (bitmap == null && u61Var == null) {
+        cropAreaView.setIsVideo(t61Var != null);
+        if (bitmap == null && t61Var == null) {
             pVar.L = null;
             imageView.setImageDrawable(null);
         } else {
@@ -109,7 +109,7 @@ public final class ue0 extends FrameLayout {
                 matrix.postTranslate(fArr[2], fArr[5]);
                 pVar2.r(false);
             }
-            imageView.setImageBitmap(u61Var == null ? pVar.w : null);
+            imageView.setImageBitmap(t61Var == null ? pVar.w : null);
         }
         lg.f fVar = this.c;
         fVar.setFreeform(z10);
@@ -134,9 +134,9 @@ public final class ue0 extends FrameLayout {
         if (this.f && view == (pVar = this.b)) {
             RectF actualRect = pVar.getActualRect();
             int dp = AndroidUtilities.dp(32.0f);
-            org.telegram.ui.ts0 ts0Var = (org.telegram.ui.ts0) this.a;
-            ts0Var.getClass();
-            int dp2 = AndroidUtilities.dp(2.0f) + (((int) (((r1.S7.getMeasuredWidth() - AndroidUtilities.dp(32.0f)) * ts0Var.a.w8) + AndroidUtilities.dp(16.0f))) - (dp / 2));
+            org.telegram.ui.ms0 ms0Var = (org.telegram.ui.ms0) this.a;
+            ms0Var.getClass();
+            int dp2 = AndroidUtilities.dp(2.0f) + (((int) (((r1.S7.getMeasuredWidth() - AndroidUtilities.dp(32.0f)) * ms0Var.a.w8) + AndroidUtilities.dp(16.0f))) - (dp / 2));
             int measuredHeight = getMeasuredHeight() - AndroidUtilities.dp(156.0f);
             float f7 = actualRect.left;
             float f10 = this.r;
@@ -156,7 +156,7 @@ public final class ue0 extends FrameLayout {
                 paint.setAlpha((int) (this.w * 255.0f));
                 canvas.drawCircle(actualRect.centerX(), actualRect.centerY(), actualRect.width() / 2.0f, paint);
             }
-            paint.setColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.zf, this.y));
+            paint.setColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.zf, this.y));
             paint.setAlpha(Math.min(255, (int) (this.r * 255.0f * this.n)));
             canvas.drawCircle(dp2 + r1, AndroidUtilities.dp(8.0f) + measuredHeight + dp, AndroidUtilities.dp(3.0f), paint);
         }
@@ -197,7 +197,7 @@ public final class ue0 extends FrameLayout {
         if (this.h && this.f) {
             if (this.e.isInsideImage(motionEvent.getX(), motionEvent.getY())) {
                 if (motionEvent.getAction() == 1) {
-                    ((org.telegram.ui.ts0) this.a).f();
+                    ((org.telegram.ui.ms0) this.a).f();
                 }
                 return true;
             }
@@ -227,7 +227,7 @@ public final class ue0 extends FrameLayout {
         if (this.h && this.f) {
             if (this.e.isInsideImage(motionEvent.getX(), motionEvent.getY())) {
                 if (motionEvent.getAction() == 1) {
-                    ((org.telegram.ui.ts0) this.a).f();
+                    ((org.telegram.ui.ms0) this.a).f();
                 }
                 return true;
             }

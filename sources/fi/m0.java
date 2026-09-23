@@ -1,35 +1,45 @@
 package fi;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.text.Editable;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
-import ii.d6;
+import ii.e6;
 import java.util.ArrayList;
+import java.util.regex.Pattern;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.CodeHighlighting;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.TranslateController;
+import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.z0;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.ax0;
-import org.telegram.ui.Components.oc;
-import org.telegram.ui.Components.s11;
-import org.telegram.ui.Components.sv;
+import org.telegram.ui.Components.ad;
+import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.r11;
+import org.telegram.ui.Components.tv;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.zc;
+import org.telegram.ui.Components.zw0;
+import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.ia0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m0 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -48,70 +58,108 @@ public final /* synthetic */ class m0 implements Utilities.Callback {
 
     @Override // org.telegram.messenger.Utilities.Callback
     public final void run(Object obj) {
-        switch (this.a) {
+        int i10 = this.a;
+        int i11 = 0;
+        int i12 = this.b;
+        Object obj2 = this.e;
+        Object obj3 = this.d;
+        Object obj4 = this.c;
+        switch (i10) {
             case 0:
-                n2 n2Var = (n2) this.c;
-                TLRPC.Chat chat = (TLRPC.Chat) this.d;
-                long j3 = ((TLRPC.Chat) this.e).id;
+                n2 n2Var = (n2) obj4;
+                TLRPC.Chat chat = (TLRPC.Chat) obj3;
+                long j3 = ((TLRPC.Chat) obj2).id;
                 boolean booleanValue = ((Boolean) obj).booleanValue();
                 boolean isChannel = ChatObject.isChannel(chat);
-                int i10 = this.b;
+                int i13 = this.b;
                 if (isChannel) {
                     long j10 = chat.id;
-                    MessagesController.getInstance(i10).linkCommunity(-j10, j3, booleanValue, new o0(n2Var, j10, 0));
+                    MessagesController.getInstance(i13).linkCommunity(-j10, j3, booleanValue, new o0(n2Var, j10, i11));
                     break;
                 } else {
                     b2 b2Var = new b2(n2Var.getContext(), 3, null);
                     b2Var.q(250L);
-                    MessagesController.getInstance(i10).convertToMegaGroup(n2Var.getParentActivity(), chat.id, n2Var, new n0(b2Var, n2Var, i10, j3, booleanValue));
+                    MessagesController.getInstance(i13).convertToMegaGroup(n2Var.getParentActivity(), chat.id, n2Var, new n0(b2Var, n2Var, i13, j3, booleanValue));
                     break;
                 }
             case 1:
-                d6 d6Var = (d6) this.c;
-                ii.a aVar = (ii.a) this.d;
-                String str = (String) this.e;
+                e6 e6Var = (e6) obj4;
+                ii.a aVar = (ii.a) obj3;
+                String str = (String) obj2;
                 SpannableString spannableString = (SpannableString) obj;
-                if (this.b == d6Var.I && d6Var.x == aVar) {
-                    Editable text = d6Var.f.getText();
+                if (i12 == e6Var.I && e6Var.x == aVar) {
+                    Editable text = e6Var.f.getText();
                     if (TextUtils.equals(str, text)) {
                         for (CodeHighlighting.ColorSpan colorSpan : (CodeHighlighting.ColorSpan[]) text.getSpans(0, text.length(), CodeHighlighting.ColorSpan.class)) {
                             text.removeSpan(colorSpan);
                         }
                         CodeHighlighting.ColorSpan[] colorSpanArr = (CodeHighlighting.ColorSpan[]) spannableString.getSpans(0, spannableString.length(), CodeHighlighting.ColorSpan.class);
                         int length = text.length();
-                        for (int i11 = 0; i11 < colorSpanArr.length; i11++) {
+                        while (i11 < colorSpanArr.length) {
                             int spanStart = spannableString.getSpanStart(colorSpanArr[i11]);
                             int spanEnd = spannableString.getSpanEnd(colorSpanArr[i11]);
                             if (spanStart >= 0 && spanEnd <= length && spanStart < spanEnd) {
                                 text.setSpan(colorSpanArr[i11], spanStart, spanEnd, 33);
                             }
+                            i11++;
                         }
-                        d6Var.H = str;
+                        e6Var.H = str;
                         break;
                     }
                 }
                 break;
             case 2:
-                sv svVar = (sv) this.c;
-                int[] iArr = (int[]) this.d;
-                ArrayList arrayList = (ArrayList) this.e;
-                n2 n2Var2 = svVar.c;
+                tv tvVar = (tv) obj4;
+                int[] iArr = (int[]) obj3;
+                ArrayList arrayList = (ArrayList) obj2;
+                n2 n2Var2 = tvVar.c;
                 iArr[0] = iArr[0] + 1;
                 if (((Boolean) obj).booleanValue()) {
                     iArr[1] = iArr[1] + 1;
                 }
-                if (iArr[0] == this.b && iArr[1] > 0) {
-                    svVar.dismiss();
-                    oc.g(n2Var2, new ax0(n2Var2.getFragmentView().getContext(), (TLObject) arrayList.get(0), iArr[1], 2, null, n2Var2.getResourceProvider()), 1500).j();
+                if (iArr[0] == i12 && iArr[1] > 0) {
+                    tvVar.dismiss();
+                    qc.g(n2Var2, new zw0(n2Var2.getFragmentView().getContext(), (TLObject) arrayList.get(0), iArr[1], 2, null, n2Var2.getResourceProvider()), 1500).j();
                     break;
                 }
                 break;
             case 3:
-                PhotoViewer photoViewer = (PhotoViewer) this.c;
-                TranslateController translateController = (TranslateController) this.d;
-                MessageObject messageObject = (MessageObject) this.e;
+                LaunchActivity launchActivity = (LaunchActivity) obj4;
+                ia0 ia0Var = (ia0) obj3;
+                Long l4 = (Long) obj2;
+                TL_stories.TL_storyAlbum tL_storyAlbum = (TL_stories.TL_storyAlbum) obj;
+                Pattern pattern = LaunchActivity.B1;
+                try {
+                    ia0Var.run();
+                } catch (Exception e) {
+                    FileLog.e(e);
+                }
+                LaunchActivity.R();
+                if (tL_storyAlbum == null) {
+                    xc X = xc.X();
+                    if (X != null) {
+                        z0.o(R.string.StoryAlbumNotFound, X, R.raw.story_bomb2, 36);
+                        break;
+                    }
+                } else {
+                    Bundle bundle = new Bundle();
+                    if (l4.longValue() > 0) {
+                        bundle.putLong("user_id", l4.longValue());
+                        bundle.putBoolean("my_profile", l4.longValue() == UserConfig.getInstance(launchActivity.O).getClientUserId());
+                    } else {
+                        bundle.putLong("chat_id", -l4.longValue());
+                    }
+                    bundle.putInt("open_story_album_id", i12);
+                    launchActivity.p0(new ProfileActivity(bundle, null));
+                    break;
+                }
+                break;
+            case 4:
+                PhotoViewer photoViewer = (PhotoViewer) obj4;
+                TranslateController translateController = (TranslateController) obj3;
+                MessageObject messageObject = (MessageObject) obj2;
                 String str2 = (String) obj;
-                if (this.b == photoViewer.Q4) {
+                if (i12 == photoViewer.Q4) {
                     photoViewer.o5 = str2;
                     if (!translateController.isContextTranslateEnabled() || !translateController.canTranslatePhoto(messageObject, photoViewer.o5)) {
                         photoViewer.o0.r(19);
@@ -129,25 +177,33 @@ public final /* synthetic */ class m0 implements Utilities.Callback {
                 }
                 break;
             default:
-                xc xcVar = (xc) this.c;
-                Context context = (Context) this.d;
-                e6 e6Var = (e6) this.e;
+                zc zcVar = (zc) obj4;
+                Context context = (Context) obj3;
+                d6 d6Var = (d6) obj2;
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj;
                 if (savedStarGift != null) {
-                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(xcVar.getText());
-                    spannableStringBuilder.append((CharSequence) " ").append((CharSequence) yc.b(LocaleController.getString(R.string.StarGiftReasonUpgradeView), new s11(this.b, context, e6Var, savedStarGift, 18), e6Var, null));
-                    xcVar.setText(spannableStringBuilder);
+                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(zcVar.getText());
+                    spannableStringBuilder.append((CharSequence) " ").append((CharSequence) ad.b(LocaleController.getString(R.string.StarGiftReasonUpgradeView), new r11(this.b, context, d6Var, savedStarGift, 18), d6Var, null));
+                    zcVar.setText(spannableStringBuilder);
                     break;
                 }
                 break;
         }
     }
 
-    public /* synthetic */ m0(sv svVar, int[] iArr, int i10, ArrayList arrayList) {
+    public /* synthetic */ m0(tv tvVar, int[] iArr, int i10, ArrayList arrayList) {
         this.a = 2;
-        this.c = svVar;
+        this.c = tvVar;
         this.d = iArr;
         this.b = i10;
         this.e = arrayList;
+    }
+
+    public /* synthetic */ m0(LaunchActivity launchActivity, ia0 ia0Var, Long l4, int i10) {
+        this.a = 3;
+        this.c = launchActivity;
+        this.d = ia0Var;
+        this.e = l4;
+        this.b = i10;
     }
 }

@@ -1,15 +1,16 @@
 package ei;
 
-import ai.t7;
+import ai.u7;
 import android.app.Activity;
 import android.util.Log;
 import android.view.View;
-import ci.uc;
+import ci.rc;
 import com.google.android.gms.tasks.OnSuccessListener;
-import ii.d6;
-import ii.g5;
-import ii.o5;
+import ii.e6;
+import ii.g6;
+import ii.h5;
 import ii.p5;
+import ii.q5;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -36,21 +37,21 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.j5;
-import org.telegram.ui.Cells.r8;
-import org.telegram.ui.Cells.w8;
-import org.telegram.ui.Components.i51;
-import org.telegram.ui.Components.n70;
-import org.telegram.ui.Components.zt;
-import org.telegram.ui.eg1;
-import org.telegram.ui.oy;
-import org.telegram.ui.uy;
+import org.telegram.ui.Cells.s8;
+import org.telegram.ui.Cells.x8;
+import org.telegram.ui.Components.au;
+import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.o70;
+import org.telegram.ui.ly;
+import org.telegram.ui.ry;
+import org.telegram.ui.wf1;
 import w7.f6;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessListener, c3.g, org.telegram.ui.ActionBar.a2, e2.m, zt, ii.p0, oy, p5, f2.s {
+public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessListener, c3.g, org.telegram.ui.ActionBar.a2, e2.m, au, ii.p0, ly, q5, f2.s {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -59,25 +60,25 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
         this.b = obj;
     }
 
-    @Override // org.telegram.ui.oy
+    @Override // org.telegram.ui.ly
     public /* synthetic */ boolean A() {
         return false;
     }
 
-    @Override // org.telegram.ui.oy
-    public /* synthetic */ boolean K(uy uyVar) {
+    @Override // org.telegram.ui.ly
+    public /* synthetic */ boolean K(ry ryVar) {
         return false;
     }
 
     @Override // ii.p0
-    public n70 a(ii.i1 i1Var) {
-        return n70.H((ii.d2) ((a6.i) this.b).b, i1Var);
+    public o70 a(ii.i1 i1Var) {
+        return o70.H((ii.e2) ((a6.i) this.b).b, i1Var);
     }
 
     @Override // f2.s
     public void b(long j3, e2.v vVar) {
         switch (this.a) {
-            case 27:
+            case 26:
                 c3.b.d(j3, vVar, ((j4.c0) this.b).c);
                 break;
             default:
@@ -208,7 +209,7 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
                         f7.a(c10.b);
                         TLRPC.TL_messages_deleteQuickReplyShortcut tL_messages_deleteQuickReplyShortcut = new TLRPC.TL_messages_deleteQuickReplyShortcut();
                         tL_messages_deleteQuickReplyShortcut.shortcut_id = c10.a;
-                        ConnectionsManager.getInstance(i12).sendRequest(tL_messages_deleteQuickReplyShortcut, new t7(6));
+                        ConnectionsManager.getInstance(i12).sendRequest(tL_messages_deleteQuickReplyShortcut, new u7(6));
                         if ("hello".equals(c10.b)) {
                             ConnectionsManager.getInstance(i12).sendRequest(new TL_account.updateBusinessGreetingMessage(), null);
                             TLRPC.UserFull userFull = MessagesController.getInstance(i12).getUserFull(UserConfig.getInstance(i12).getClientUserId());
@@ -240,10 +241,10 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
         }
     }
 
-    @Override // org.telegram.ui.Components.zt
+    @Override // org.telegram.ui.Components.au
     public void i() {
         switch (this.a) {
-            case 15:
+            case 14:
                 ii.u0 u0Var = (ii.u0) this.b;
                 ii.i1 i1Var = u0Var.d;
                 ii.a aVar = u0Var.f;
@@ -254,29 +255,29 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
                 if (aVar != null) {
                     TL_iv.PageBlock pageBlock = aVar.b;
                     if (pageBlock instanceof TL_iv.pageBlockDetails) {
-                        ((TL_iv.pageBlockDetails) pageBlock).title = ii.f6.f(i1Var.getText());
+                        ((TL_iv.pageBlockDetails) pageBlock).title = g6.f(i1Var.getText());
                     }
                 }
-                ii.d3 d3Var = u0Var.h;
-                if (d3Var != null && u0Var.f != null) {
-                    ii.w3.O1(d3Var.a);
+                ii.e3 e3Var = u0Var.h;
+                if (e3Var != null && u0Var.f != null) {
+                    ii.x3.O1(e3Var.a);
                     break;
                 }
                 break;
-            case 20:
-                ((g5) this.b).h();
+            case 19:
+                ((h5) this.b).h();
                 break;
             default:
-                o5 o5Var = (o5) this.b;
-                ii.a aVar2 = o5Var.a;
+                p5 p5Var = (p5) this.b;
+                ii.a aVar2 = p5Var.a;
                 if (aVar2 != null) {
                     aVar2.s = true;
-                    aVar2.r = o5Var.r.E;
+                    aVar2.r = p5Var.r.E;
                 }
-                o5Var.u();
-                ii.c3 c3Var = o5Var.E;
-                if (c3Var != null && o5Var.a != null) {
-                    ii.w3.O1(c3Var.a);
+                p5Var.u();
+                ii.d3 d3Var = p5Var.E;
+                if (d3Var != null && p5Var.a != null) {
+                    ii.x3.O1(d3Var.a);
                     break;
                 }
                 break;
@@ -287,30 +288,27 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
     public void invoke(Object obj) {
         switch (this.a) {
             case 7:
-                ((b2.z0) obj).onMediaMetadataChanged((b2.n0) this.b);
-                break;
-            case 8:
                 ((b2.z0) obj).onAudioAttributesChanged((b2.e) this.b);
                 break;
-            case 9:
+            case 8:
                 ((b2.z0) obj).onTrackSelectionParametersChanged((b2.q1) this.b);
                 break;
-            case 10:
+            case 9:
                 ((b2.z0) obj).onCues((d2.d) this.b);
                 break;
-            case 11:
-                ((b2.z0) obj).onMediaMetadataChanged(((i2.b0) this.b).a.O);
+            case 10:
+                ((b2.z0) obj).onMediaMetadataChanged(((i2.c0) this.b).a.O);
                 break;
-            case 12:
+            case 11:
                 ((b2.z0) obj).onMetadata((b2.p0) this.b);
                 break;
-            case 23:
+            case 22:
                 ((j2.b) obj).h((b2.u0) this.b);
                 break;
-            case 24:
+            case 23:
                 ((j2.b) obj).onSeekStarted((j2.a) this.b);
                 break;
-            case 25:
+            case 24:
                 ((j2.b) obj).a((i2.g) this.b);
                 break;
             default:
@@ -337,7 +335,7 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
                 ((Integer) obj3).getClass();
                 ((Float) obj4).getClass();
                 ((Float) obj5).getClass();
-                ((e5) this.b).V((i51) obj);
+                ((e5) this.b).V((h51) obj);
                 break;
             case 1:
             case 2:
@@ -347,40 +345,40 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
                 Integer num = (Integer) obj3;
                 Float f7 = (Float) obj4;
                 Float f10 = (Float) obj5;
-                if (((ii.w3[]) this.b)[0] != null) {
+                if (((ii.x3[]) this.b)[0] != null) {
                     num.intValue();
                     f7.floatValue();
                     f10.floatValue();
-                    if (view instanceof d6) {
-                        ((d6) view).B();
+                    if (view instanceof e6) {
+                        ((e6) view).B();
                         break;
                     }
                 }
                 break;
             case 3:
                 hg.h1 h1Var = (hg.h1) this.b;
-                i51 i51Var = (i51) obj;
+                h51 h51Var = (h51) obj;
                 View view2 = (View) obj2;
                 ((Integer) obj3).getClass();
                 float floatValue = ((Float) obj4).floatValue();
                 ((Float) obj5).getClass();
-                int i11 = i51Var.d;
+                int i11 = h51Var.d;
                 if (i11 == -1) {
                     boolean z10 = !h1Var.e;
                     h1Var.e = z10;
-                    ((w8) view2).setChecked(z10);
+                    ((x8) view2).setChecked(z10);
                     h1Var.a.Y2.N(true);
                     h1Var.Y(true);
                     break;
                 } else if (i11 == -2) {
                     hg.f2 f2Var = new hg.f2(null);
                     f2Var.n = h1Var.r;
-                    f2Var.c = new ci.m2(17, h1Var, view2);
+                    f2Var.c = new ai.g3(18, h1Var, view2);
                     h1Var.presentFragment(f2Var);
                     break;
-                } else if (i51Var.a == 5 && i11 >= 0 && i11 < h1Var.h.length) {
+                } else if (h51Var.a == 5 && i11 >= 0 && i11 < h1Var.h.length) {
                     if (!LocaleController.isRTL ? floatValue < view2.getMeasuredWidth() - AndroidUtilities.dp(76.0f) : floatValue > AndroidUtilities.dp(76.0f)) {
-                        int i12 = (i51Var.d + 6) % 7;
+                        int i12 = (h51Var.d + 6) % 7;
                         int i13 = 0;
                         for (int i14 = 0; i14 < h1Var.h[i12].size(); i14++) {
                             if (((hg.g1) h1Var.h[i12].get(i14)).b > i13) {
@@ -388,7 +386,7 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
                             }
                         }
                         int max = Math.max(0, i13 - 1439);
-                        int i15 = (i51Var.d + 1) % 7;
+                        int i15 = (h51Var.d + 1) % 7;
                         int i16 = 1440;
                         for (int i17 = 0; i17 < h1Var.h[i15].size(); i17++) {
                             if (((hg.g1) h1Var.h[i15].get(i17)).a < i16) {
@@ -396,8 +394,8 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
                             }
                         }
                         int i18 = i16 + 1439;
-                        CharSequence charSequence = i51Var.l;
-                        ArrayList arrayList = h1Var.h[i51Var.d];
+                        CharSequence charSequence = h51Var.l;
+                        ArrayList arrayList = h1Var.h[h51Var.d];
                         int i19 = 0;
                         for (int i20 = 0; i20 < 7; i20++) {
                             ArrayList arrayList2 = h1Var.h[i20];
@@ -406,20 +404,20 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
                             }
                         }
                         hg.j1 j1Var = new hg.j1(charSequence, arrayList, max, i18, 28 - i19);
-                        j1Var.f = new uc(h1Var, 23);
-                        j1Var.h = new gg.x1(5, h1Var, i51Var);
+                        j1Var.f = new rc(h1Var, 23);
+                        j1Var.h = new gg.x1(5, h1Var, h51Var);
                         h1Var.presentFragment(j1Var);
                         break;
                     } else {
-                        if (h1Var.h[i51Var.d].isEmpty()) {
+                        if (h1Var.h[h51Var.d].isEmpty()) {
                             ((j5) view2).setChecked(true);
-                            h1Var.h[i51Var.d].add(new hg.g1(0, 1439));
-                            h1Var.X(i51Var.d);
+                            h1Var.h[h51Var.d].add(new hg.g1(0, 1439));
+                            h1Var.X(h51Var.d);
                         } else {
-                            h1Var.h[i51Var.d].clear();
+                            h1Var.h[h51Var.d].clear();
                             ((j5) view2).setChecked(false);
                         }
-                        ((j5) view2).setValue(hg.h1.a0(h1Var.h[i51Var.d]));
+                        ((j5) view2).setValue(hg.h1.a0(h1Var.h[h51Var.d]));
                         h1Var.Y(true);
                         break;
                     }
@@ -427,7 +425,7 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
                 break;
             case 4:
                 final hg.j1 j1Var2 = (hg.j1) this.b;
-                i51 i51Var2 = (i51) obj;
+                h51 h51Var2 = (h51) obj;
                 final View view3 = (View) obj2;
                 ((Integer) obj3).getClass();
                 ((Float) obj4).getClass();
@@ -435,23 +433,23 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
                 int i21 = j1Var2.c;
                 int i22 = j1Var2.d;
                 ArrayList arrayList3 = j1Var2.b;
-                int i23 = i51Var2.d;
+                int i23 = h51Var2.d;
                 if (i23 == -1) {
                     j1Var2.r = !j1Var2.r;
                     arrayList3.clear();
                     if (j1Var2.r) {
                         arrayList3.add(new hg.g1(0, 1439));
                     }
-                    w8 w8Var = (w8) view3;
+                    x8 x8Var = (x8) view3;
                     boolean z11 = j1Var2.r;
-                    i51Var2.e = z11;
-                    w8Var.setChecked(z11);
+                    h51Var2.e = z11;
+                    x8Var.setChecked(z11);
                     boolean z12 = j1Var2.r;
-                    w8Var.b(i6.w0(null, z12 ? i6.f6 : i6.e6, false), z12);
+                    x8Var.b(h6.w0(null, z12 ? h6.f6 : h6.e6, false), z12);
                     j1Var2.n.Y2.N(true);
-                    uc ucVar = j1Var2.f;
-                    if (ucVar != null) {
-                        ucVar.run();
+                    rc rcVar = j1Var2.f;
+                    if (rcVar != null) {
+                        rcVar.run();
                         break;
                     }
                 } else if (i23 == -2) {
@@ -466,19 +464,19 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
                         int clamp2 = Utilities.clamp(i24 + 30, i22 - 1, i21);
                         arrayList3.add(new hg.g1(clamp2, Utilities.clamp((i24 + 1560) / 2, i22, clamp2 + 1)));
                     }
-                    uc ucVar2 = j1Var2.f;
-                    if (ucVar2 != null) {
-                        ucVar2.run();
+                    rc rcVar2 = j1Var2.f;
+                    if (rcVar2 != null) {
+                        rcVar2.run();
                     }
                     j1Var2.n.Y2.N(true);
                     break;
-                } else if (i51Var2.a == 3 && (i10 = i23 / 3) >= 0 && i10 < arrayList3.size()) {
+                } else if (h51Var2.a == 3 && (i10 = i23 / 3) >= 0 && i10 < arrayList3.size()) {
                     int i25 = i10 - 1;
                     hg.g1 g1Var = i25 >= 0 ? (hg.g1) arrayList3.get(i25) : null;
                     final hg.g1 g1Var2 = (hg.g1) arrayList3.get(i10);
                     int i26 = i10 + 1;
                     hg.g1 g1Var3 = i26 < arrayList3.size() ? (hg.g1) arrayList3.get(i26) : null;
-                    int i27 = i51Var2.d % 3;
+                    int i27 = h51Var2.d % 3;
                     if (i27 == 0) {
                         Activity parentActivity = j1Var2.getParentActivity();
                         String string = LocaleController.getString(R.string.BusinessHoursDayOpenHourPicker);
@@ -487,7 +485,7 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
                             i21 = g1Var.b + 1;
                         }
                         final int i29 = 0;
-                        org.telegram.ui.Components.c5.X(parentActivity, string, i28, i21, g1Var2.b - 1, new Utilities.Callback() { // from class: hg.i1
+                        org.telegram.ui.Components.e5.X(parentActivity, string, i28, i21, g1Var2.b - 1, new Utilities.Callback() { // from class: hg.i1
                             @Override // org.telegram.messenger.Utilities.Callback
                             public final void run(Object obj6) {
                                 Integer num2 = (Integer) obj6;
@@ -495,32 +493,32 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
                                     case 0:
                                         j1 j1Var3 = j1Var2;
                                         boolean V = j1Var3.V();
-                                        r8 r8Var = (r8) view3;
+                                        s8 s8Var = (s8) view3;
                                         int intValue = num2.intValue();
                                         g1Var2.a = intValue;
-                                        r8Var.u(g1.a(intValue), true);
+                                        s8Var.u(g1.a(intValue), true);
                                         if (V != j1Var3.V()) {
                                             j1Var3.n.Y2.N(true);
                                         }
-                                        uc ucVar3 = j1Var3.f;
-                                        if (ucVar3 != null) {
-                                            ucVar3.run();
+                                        rc rcVar3 = j1Var3.f;
+                                        if (rcVar3 != null) {
+                                            rcVar3.run();
                                             break;
                                         }
                                         break;
                                     default:
                                         j1 j1Var4 = j1Var2;
                                         boolean V2 = j1Var4.V();
-                                        r8 r8Var2 = (r8) view3;
+                                        s8 s8Var2 = (s8) view3;
                                         int intValue2 = num2.intValue();
                                         g1Var2.b = intValue2;
-                                        r8Var2.u(g1.a(intValue2), true);
+                                        s8Var2.u(g1.a(intValue2), true);
                                         if (V2 != j1Var4.V()) {
                                             j1Var4.n.Y2.N(true);
                                         }
-                                        uc ucVar4 = j1Var4.f;
-                                        if (ucVar4 != null) {
-                                            ucVar4.run();
+                                        rc rcVar4 = j1Var4.f;
+                                        if (rcVar4 != null) {
+                                            rcVar4.run();
                                             break;
                                         }
                                         break;
@@ -537,7 +535,7 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
                             i22 = g1Var3.a - 1;
                         }
                         final int i32 = 1;
-                        org.telegram.ui.Components.c5.X(parentActivity2, string2, i30, i31, i22, new Utilities.Callback() { // from class: hg.i1
+                        org.telegram.ui.Components.e5.X(parentActivity2, string2, i30, i31, i22, new Utilities.Callback() { // from class: hg.i1
                             @Override // org.telegram.messenger.Utilities.Callback
                             public final void run(Object obj6) {
                                 Integer num2 = (Integer) obj6;
@@ -545,32 +543,32 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
                                     case 0:
                                         j1 j1Var3 = j1Var2;
                                         boolean V = j1Var3.V();
-                                        r8 r8Var = (r8) view3;
+                                        s8 s8Var = (s8) view3;
                                         int intValue = num2.intValue();
                                         g1Var2.a = intValue;
-                                        r8Var.u(g1.a(intValue), true);
+                                        s8Var.u(g1.a(intValue), true);
                                         if (V != j1Var3.V()) {
                                             j1Var3.n.Y2.N(true);
                                         }
-                                        uc ucVar3 = j1Var3.f;
-                                        if (ucVar3 != null) {
-                                            ucVar3.run();
+                                        rc rcVar3 = j1Var3.f;
+                                        if (rcVar3 != null) {
+                                            rcVar3.run();
                                             break;
                                         }
                                         break;
                                     default:
                                         j1 j1Var4 = j1Var2;
                                         boolean V2 = j1Var4.V();
-                                        r8 r8Var2 = (r8) view3;
+                                        s8 s8Var2 = (s8) view3;
                                         int intValue2 = num2.intValue();
                                         g1Var2.b = intValue2;
-                                        r8Var2.u(g1.a(intValue2), true);
+                                        s8Var2.u(g1.a(intValue2), true);
                                         if (V2 != j1Var4.V()) {
                                             j1Var4.n.Y2.N(true);
                                         }
-                                        uc ucVar4 = j1Var4.f;
-                                        if (ucVar4 != null) {
-                                            ucVar4.run();
+                                        rc rcVar4 = j1Var4.f;
+                                        if (rcVar4 != null) {
+                                            rcVar4.run();
                                             break;
                                         }
                                         break;
@@ -584,9 +582,9 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
                             arrayList3.add(new hg.g1(0, 1439));
                         }
                         j1Var2.n.Y2.N(true);
-                        uc ucVar3 = j1Var2.f;
-                        if (ucVar3 != null) {
-                            ucVar3.run();
+                        rc rcVar3 = j1Var2.f;
+                        if (rcVar3 != null) {
+                            rcVar3.run();
                             break;
                         }
                     }
@@ -596,24 +594,24 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
                 ((Integer) obj3).getClass();
                 ((Float) obj4).getClass();
                 ((Float) obj5).getClass();
-                hg.f2.U((hg.f2) this.b, (i51) obj, (View) obj2);
+                hg.f2.U((hg.f2) this.b, (h51) obj, (View) obj2);
                 break;
         }
     }
 
-    @Override // org.telegram.ui.oy
-    public boolean u(uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, eg1 eg1Var) {
-        ii.i4 i4Var = (ii.i4) this.b;
+    @Override // org.telegram.ui.ly
+    public boolean u(ry ryVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, wf1 wf1Var) {
+        ii.j4 j4Var = (ii.j4) this.b;
         if (arrayList.isEmpty() || ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId <= 0) {
             return false;
         }
-        i4Var.run(((MessagesStorage.TopicKey) arrayList.get(0)).dialogId);
-        uyVar.finishFragment();
+        j4Var.run(((MessagesStorage.TopicKey) arrayList.get(0)).dialogId);
+        ryVar.finishFragment();
         return true;
     }
 
     public /* synthetic */ d5(j2.a aVar, u2.t tVar, u2.b0 b0Var, IOException iOException, boolean z10) {
-        this.a = 26;
+        this.a = 25;
         this.b = b0Var;
     }
 

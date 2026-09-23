@@ -1,112 +1,74 @@
 package ii;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.Button;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.hq0;
-import org.telegram.ui.Components.tg;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.uy;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.view.View;
+import android.widget.HorizontalScrollView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.rr;
+import org.telegram.ui.i20;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class y1 extends tg {
-    public final /* synthetic */ int l0;
-    public final /* synthetic */ Object m0;
+public final class y1 extends HorizontalScrollView {
+    public final i20 a;
+    public final org.telegram.ui.Components.e6 b;
+    public final org.telegram.ui.Components.e6 c;
+    public final /* synthetic */ e2 d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ y1(Object obj, Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var, int i11) {
-        super(i10, context, e6Var, true);
-        this.l0 = i11;
-        this.m0 = obj;
+    public y1(e2 e2Var, Context context) {
+        super(context);
+        this.d = e2Var;
+        this.a = new i20();
+        rr rrVar = rr.h;
+        this.b = new org.telegram.ui.Components.e6(this, 300L, rrVar);
+        this.c = new org.telegram.ui.Components.e6(this, 300L, rrVar);
     }
 
-    @Override // org.telegram.ui.Components.tg
-    public boolean d() {
-        switch (this.l0) {
-            case 0:
-                return ((d2) this.m0).l0();
-            case 1:
-            case 2:
-            default:
-                return super.d();
-            case 3:
-                return false;
-            case 4:
-                return false;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        Canvas canvas2;
+        float e = this.b.e(canScrollHorizontally(-1));
+        float e7 = this.c.e(canScrollHorizontally(1));
+        if (e > 0.0f || e7 > 0.0f) {
+            canvas2 = canvas;
+            canvas2.saveLayerAlpha(getScrollX(), 0.0f, getWidth() + getScrollX(), getHeight(), 255, 31);
+        } else {
+            canvas2 = canvas;
+        }
+        super.dispatchDraw(canvas2);
+        if (e > 0.0f || e7 > 0.0f) {
+            canvas2.save();
+            i20 i20Var = this.a;
+            if (e > 0.0f) {
+                RectF rectF = AndroidUtilities.rectTmp;
+                rectF.set(getScrollX(), 0.0f, AndroidUtilities.dp(48.0f) + getScrollX(), getHeight());
+                i20Var.b(canvas2, rectF, 0, e);
+            }
+            if (e7 > 0.0f) {
+                RectF rectF2 = AndroidUtilities.rectTmp;
+                rectF2.set((getWidth() + getScrollX()) - AndroidUtilities.dp(48.0f), 0.0f, getWidth() + getScrollX(), getHeight());
+                i20Var.b(canvas2, rectF2, 2, e7);
+            }
+            canvas2.restore();
         }
     }
 
-    @Override // org.telegram.ui.Components.tg
-    public final boolean f() {
-        switch (this.l0) {
-            case 0:
-                if (((d2) this.m0).L0 || this.r > 0) {
-                }
-                break;
-            case 1:
-                if (((b4) this.m0).W || this.r > 0) {
-                }
-                break;
+    @Override // android.widget.HorizontalScrollView, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int mode = View.MeasureSpec.getMode(i10);
+        if (mode == 1073741824) {
+            super.onMeasure(i10, i11);
+            return;
         }
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.tg
-    public int getFillColor() {
-        int i10 = this.l0;
-        Object obj = this.m0;
-        switch (i10) {
-            case 2:
-                return ((hq0) obj).getThemedColor(i6.S5);
-            case 3:
-            default:
-                return super.getFillColor();
-            case 4:
-                int i11 = i6.zf;
-                Drawable[] drawableArr = PhotoViewer.U8;
-                return ((PhotoViewer) obj).z1(i11);
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), 0), i11);
+        int measuredWidth = getMeasuredWidth();
+        int i12 = this.d.k0;
+        if (mode == Integer.MIN_VALUE) {
+            i12 = Math.min(i12, View.MeasureSpec.getSize(i10));
         }
-    }
-
-    @Override // org.telegram.ui.Components.tg
-    public boolean j() {
-        switch (this.l0) {
-            case 2:
-                return true;
-            case 3:
-                return true;
-            case 4:
-                return true;
-            default:
-                return super.j();
-        }
-    }
-
-    @Override // android.view.View
-    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        switch (this.l0) {
-            case 3:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setText(LocaleController.formatPluralString("AccDescrShareInChats", ((uy) this.m0).I2.size(), new Object[0]));
-                accessibilityNodeInfo.setClassName(Button.class.getName());
-                accessibilityNodeInfo.setLongClickable(true);
-                accessibilityNodeInfo.setClickable(true);
-                break;
-            default:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                break;
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ y1(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var, int i11) {
-        super(i10, context, e6Var, false);
-        this.l0 = i11;
-        this.m0 = notificationCenterDelegate;
+        setMeasuredDimension(Math.min(measuredWidth, i12), getMeasuredHeight());
     }
 }

@@ -7,10 +7,10 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import hg.r;
-import org.telegram.ui.Components.cc0;
-import org.telegram.ui.fo;
+import org.telegram.ui.Components.bc0;
+import org.telegram.ui.ao;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class l {
     public static final Rect f = new Rect();
@@ -53,15 +53,15 @@ public final class l {
             cVar.a(((ColorDrawable) drawable).getColor());
             return cVar;
         }
-        boolean z11 = drawable instanceof cc0;
+        boolean z11 = drawable instanceof bc0;
         fh.b bVar = this.b;
         if (z11) {
-            cc0 cc0Var = (cc0) drawable;
-            if (cc0Var.q < 0) {
+            bc0 bc0Var = (bc0) drawable;
+            if (bc0Var.q < 0) {
                 cVar.a(-16777216);
                 return cVar;
             }
-            bVar.a(cc0Var.k);
+            bVar.a(bc0Var.k);
             return bVar;
         }
         boolean z12 = drawable instanceof BitmapDrawable;
@@ -70,8 +70,8 @@ public final class l {
             bVar.a((Bitmap) aVar.o(((BitmapDrawable) drawable).getBitmap()));
             return bVar;
         }
-        if (drawable instanceof fo) {
-            return c(((fo) drawable).c(false));
+        if (drawable instanceof ao) {
+            return c(((ao) drawable).c(false));
         }
         if (drawable != null) {
             bVar.getClass();

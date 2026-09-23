@@ -1,44 +1,60 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ah implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ NotificationsController b;
-    public final /* synthetic */ int c;
 
-    public /* synthetic */ ah(NotificationsController notificationsController, int i10, int i11) {
-        this.a = i11;
+    public /* synthetic */ ah(NotificationsController notificationsController, int i10) {
+        this.a = i10;
         this.b = notificationsController;
-        this.c = i10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$processDialogsUpdateRead$29(this.c);
+                this.b.lambda$cleanup$2();
                 break;
             case 1:
-                this.b.lambda$removeDeletedHisoryFromNotifications$12(this.c);
+                this.b.lambda$hideNotifications$36();
                 break;
             case 2:
-                this.b.lambda$processSeenStoryReactions$14(this.c);
+                this.b.lambda$repeatNotificationMaybe$41();
                 break;
             case 3:
-                this.b.lambda$processNewMessages$24(this.c);
+                this.b.lambda$processIgnoreStories$17();
                 break;
             case 4:
-                this.b.lambda$processNewMessages$26(this.c);
+                this.b.lambda$updateBadge$34();
                 break;
             case 5:
-                this.b.lambda$setLastOnlineFromOtherDevice$5(this.c);
+                this.b.lambda$deleteAllNotificationChannels$44();
                 break;
             case 6:
-                this.b.lambda$processLoadedUnreadMessages$32(this.c);
+                this.b.lambda$playOutChatSound$49();
+                break;
+            case 7:
+                this.b.checkStoryPushes();
+                break;
+            case 8:
+                this.b.lambda$new$0();
+                break;
+            case 9:
+                this.b.lambda$new$1();
+                break;
+            case 10:
+                this.b.lambda$showNotifications$35();
+                break;
+            case 11:
+                this.b.lambda$forceShowPopupForReply$7();
+                break;
+            case 12:
+                this.b.lambda$processIgnoreStoryReactions$18();
                 break;
             default:
-                this.b.lambda$removeDeletedMessagesFromNotifications$9(this.c);
+                this.b.lambda$playInChatSound$40();
                 break;
         }
     }

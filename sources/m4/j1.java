@@ -1,59 +1,63 @@
 package m4;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+import android.os.Bundle;
+import j$.util.Objects;
+
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final class j1 extends b2.k1 {
-    public static final Object k = new Object();
-    public final b2.k0 e;
-    public final boolean f;
-    public final boolean g;
-    public final boolean h;
-    public final b2.e0 i;
-    public final long j;
+public final class j1 {
+    public static final String d;
+    public static final String e;
+    public static final String f;
+    public final int a;
+    public final String b;
+    public final Bundle c;
 
-    public j1(k1 k1Var) {
-        this.e = k1Var.w();
-        this.f = k1Var.d0();
-        this.g = k1Var.t0();
-        this.h = !k1Var.w0().p() && k1Var.w0().m(k1Var.l0(), new b2.j1(), 0L).k;
-        this.i = k1Var.M0() ? b2.e0.f : null;
-        this.j = e2.d0.Q(k1Var.A());
+    static {
+        String str = e2.d0.a;
+        d = Integer.toString(0, 36);
+        e = Integer.toString(1, 36);
+        f = Integer.toString(2, 36);
     }
 
-    @Override // b2.k1
-    public final int b(Object obj) {
-        return k.equals(obj) ? 0 : -1;
+    public j1(int i10) {
+        this("no error message provided", i10, Bundle.EMPTY);
     }
 
-    @Override // b2.k1
-    public final b2.h1 f(int i10, b2.h1 h1Var, boolean z10) {
-        h1Var.getClass();
-        b2.b bVar = b2.b.c;
-        Object obj = k;
-        h1Var.h(obj, obj, 0, this.j, 0L, bVar, false);
-        h1Var.f = this.h;
-        return h1Var;
+    public final Bundle a() {
+        Bundle bundle = new Bundle();
+        bundle.putInt(d, this.a);
+        bundle.putString(e, this.b);
+        Bundle bundle2 = this.c;
+        if (!bundle2.isEmpty()) {
+            bundle.putBundle(f, bundle2);
+        }
+        return bundle;
     }
 
-    @Override // b2.k1
-    public final int h() {
-        return 1;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof j1)) {
+            return false;
+        }
+        j1 j1Var = (j1) obj;
+        return this.a == j1Var.a && Objects.equals(this.b, j1Var.b);
     }
 
-    @Override // b2.k1
-    public final Object l(int i10) {
-        return k;
+    public final int hashCode() {
+        return Objects.hash(Integer.valueOf(this.a), this.b);
     }
 
-    @Override // b2.k1
-    public final b2.j1 m(int i10, b2.j1 j1Var, long j3) {
-        j1Var.b(k, this.e, null, -9223372036854775807L, -9223372036854775807L, -9223372036854775807L, this.f, this.g, this.i, 0L, this.j, 0, 0, 0L);
-        j1Var.k = this.h;
-        return j1Var;
-    }
-
-    @Override // b2.k1
-    public final int o() {
-        return 1;
+    public j1(String str, int i10, Bundle bundle) {
+        boolean z10 = true;
+        if (i10 >= 0 && i10 != 1) {
+            z10 = false;
+        }
+        e2.d.b(z10);
+        this.a = i10;
+        this.b = str;
+        this.c = bundle;
     }
 }

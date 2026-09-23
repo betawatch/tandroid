@@ -6,7 +6,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class vs0 implements org.telegram.ui.Cells.m7 {
     public final /* synthetic */ yu0 a;
@@ -23,7 +23,7 @@ public final class vs0 implements org.telegram.ui.Cells.m7 {
             yu0Var.R0(str);
             return;
         }
-        org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(1, (Context) n2Var.getParentActivity(), (org.telegram.ui.ActionBar.e6) null, false);
+        org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(1, (Context) n2Var.getParentActivity(), (org.telegram.ui.ActionBar.d6) null, false);
         f3Var.fixNavigationBar();
         f3Var.title = str;
         f3Var.bigTitle = false;
@@ -37,7 +37,7 @@ public final class vs0 implements org.telegram.ui.Cells.m7 {
     @Override // org.telegram.ui.Cells.m7
     public final void b(TLRPC.WebPage webPage, MessageObject messageObject) {
         yu0 yu0Var = this.a;
-        vu.J(yu0Var.v1, messageObject, yu0Var.r1, webPage.site_name, webPage.description, webPage.url, webPage.embed_url, webPage.embed_width, webPage.embed_height, -1, false);
+        wu.J(yu0Var.v1, messageObject, yu0Var.r1, webPage.site_name, webPage.description, webPage.url, webPage.embed_url, webPage.embed_width, webPage.embed_height, -1, false);
     }
 
     @Override // org.telegram.ui.Cells.m7

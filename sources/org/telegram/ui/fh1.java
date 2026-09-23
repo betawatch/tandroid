@@ -1,52 +1,42 @@
 package org.telegram.ui;
 
-import android.widget.TextView;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.content.Context;
+import android.text.Editable;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class fh1 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ hh1 a;
+public final class fh1 extends org.telegram.ui.Cells.i3 {
+    public final /* synthetic */ int x;
+    public final /* synthetic */ UserInfoActivity y;
 
-    public fh1(hh1 hh1Var) {
-        this.a = hh1Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ fh1(UserInfoActivity userInfoActivity, Context context, String str, org.telegram.ui.ActionBar.d6 d6Var, int i10) {
+        super(context, str, false, false, -1, d6Var);
+        this.x = i10;
+        this.y = userInfoActivity;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i10) {
-        org.telegram.ui.ActionBar.d5 d5Var;
-        hh1 hh1Var = this.a;
-        if (i10 == -1) {
-            if (hh1Var.G >= 0) {
-                d5Var = ((org.telegram.ui.ActionBar.n2) hh1Var).parentLayout;
-                if (d5Var.getFragmentStack().size() == 1) {
-                    hh1Var.I0();
-                    return;
-                }
-            }
-            hh1Var.finishFragment();
-            return;
+    @Override // org.telegram.ui.Cells.i3
+    public final void b(Editable editable) {
+        switch (this.x) {
+            case 0:
+                this.y.b0(true);
+                break;
+            case 1:
+                this.y.b0(true);
+                break;
+            default:
+                UserInfoActivity userInfoActivity = this.y;
+                userInfoActivity.b0(true);
+                userInfoActivity.e0();
+                break;
         }
-        if (i10 == 1) {
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(hh1Var.getParentActivity());
-            TL_account.Password password = hh1Var.U;
-            String string = (password == null || !password.has_password) ? LocaleController.getString(R.string.CancelPasswordQuestion) : LocaleController.getString(R.string.CancelEmailQuestion);
-            String string2 = LocaleController.getString(R.string.CancelEmailQuestionTitle);
-            String string3 = LocaleController.getString(R.string.Abort);
-            org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-            b2Var.T = string;
-            b2Var.R = string2;
-            alertDialog$Builder.k(string3, new tl0(this, 24));
-            alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-            org.telegram.ui.ActionBar.b2 b2Var2 = alertDialog$Builder.a;
-            hh1Var.showDialog(b2Var2);
-            TextView textView = (TextView) b2Var2.d(-1);
-            if (textView != null) {
-                textView.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.q7, false));
-            }
-        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public fh1(UserInfoActivity userInfoActivity, Context context, String str, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, str, true, false, i10, d6Var);
+        this.x = 2;
+        this.y = userInfoActivity;
     }
 }

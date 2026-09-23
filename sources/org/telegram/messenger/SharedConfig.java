@@ -31,7 +31,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public class SharedConfig {
     private static final int[] LOW_SOC;
@@ -185,7 +185,7 @@ public class SharedConfig {
     public static boolean useSystemEmoji;
     public static boolean useThreeLinesLayout;
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class BackgroundActivityPrefs {
         private static SharedPreferences prefs;
 
@@ -206,17 +206,17 @@ public class SharedConfig {
         }
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     @Retention(RetentionPolicy.SOURCE)
     public @interface PasscodeType {
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     @Retention(RetentionPolicy.SOURCE)
     public @interface PerformanceClass {
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class ProxyInfo {
         public boolean available;
         public long availableCheckTime;
@@ -466,14 +466,14 @@ public class SharedConfig {
     }
 
     public static void checkSaveToGalleryFiles() {
-        Utilities.globalQueue.postRunnable(new v1(23));
+        Utilities.globalQueue.postRunnable(new w1(23));
     }
 
     public static void checkSdCard(File file) {
         if (file == null || storageCacheDir == null || readOnlyStorageDirAlertShowed || !file.getPath().startsWith(storageCacheDir)) {
             return;
         }
-        AndroidUtilities.runOnUIThread(new v1(22));
+        AndroidUtilities.runOnUIThread(new w1(22));
     }
 
     public static void clearConfig() {
@@ -841,12 +841,12 @@ public class SharedConfig {
         }
         storageCacheDir = null;
         saveConfig();
-        ImageLoader.getInstance().checkMediaPaths(new v1(21));
+        ImageLoader.getInstance().checkMediaPaths(new w1(21));
         readOnlyStorageDirAlertShowed = true;
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(R.getParentActivity());
         alertDialog$Builder.a.R = LocaleController.getString(R.string.SdCardError);
         alertDialog$Builder.a.S = LocaleController.getString(R.string.SdCardErrorDescription);
-        alertDialog$Builder.k(LocaleController.getString(R.string.DoNotUseSDCard), new zg());
+        alertDialog$Builder.k(LocaleController.getString(R.string.DoNotUseSDCard), new yg());
         org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
         b2Var.setCanceledOnTouchOutside(false);
         b2Var.show();
@@ -952,7 +952,7 @@ public class SharedConfig {
                             if (pendingAppUpdateBuildVersion == i10) {
                             }
                             pendingAppUpdate = null;
-                            AndroidUtilities.runOnUIThread(new v1(20));
+                            AndroidUtilities.runOnUIThread(new w1(20));
                             sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
                             SaveToGallerySettingsHelper.load(sharedPreferences);
                             mapPreviewType = sharedPreferences.getInt("mapPreviewType", 2);
@@ -1063,7 +1063,7 @@ public class SharedConfig {
                     }
                     if (pendingAppUpdateBuildVersion == i10 || (str2 = pendingAppUpdate.version) == null || str.compareTo(str2) >= 0 || BuildVars.DEBUG_PRIVATE_VERSION) {
                         pendingAppUpdate = null;
-                        AndroidUtilities.runOnUIThread(new v1(20));
+                        AndroidUtilities.runOnUIThread(new w1(20));
                     }
                 }
                 sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
@@ -1410,7 +1410,7 @@ public class SharedConfig {
 
     public static void saveProxyList() {
         ArrayList arrayList = new ArrayList(proxyList);
-        Collections.sort(arrayList, new bi(3));
+        Collections.sort(arrayList, new ai(3));
         SerializedData serializedData = new SerializedData();
         serializedData.writeInt32(-1);
         serializedData.writeByte(3);

@@ -1,32 +1,95 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.widget.FrameLayout;
+import android.view.WindowManager;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.MediaController;
+import org.telegram.ui.Components.ClippingImageView;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class er0 extends FrameLayout {
-    public org.telegram.ui.ActionBar.n2 a;
-    public FrameLayout b;
-    public org.telegram.ui.ActionBar.k c;
-    public org.telegram.ui.Components.ll0 d;
-    public int e;
-    public final /* synthetic */ gr0 f;
+public final /* synthetic */ class er0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ PhotoViewer b;
+    public final /* synthetic */ wu0 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public er0(gr0 gr0Var, Context context) {
-        super(context);
-        this.f = gr0Var;
+    public /* synthetic */ er0(PhotoViewer photoViewer, wu0 wu0Var, int i10) {
+        this.a = i10;
+        this.b = photoViewer;
+        this.c = wu0Var;
     }
 
-    @Override // android.view.View
-    public final void setTranslationX(float f7) {
-        er0 er0Var;
-        super.setTranslationX(f7);
-        gr0 gr0Var = this.f;
-        er0[] er0VarArr = gr0Var.n;
-        if (gr0Var.s && (er0Var = er0VarArr[0]) == this) {
-            gr0Var.h.j(Math.abs(er0Var.getTranslationX()) / er0VarArr[0].getMeasuredWidth(), er0VarArr[1].e);
+    @Override // java.lang.Runnable
+    public final void run() {
+        ClippingImageView clippingImageView;
+        ArrayList arrayList;
+        ArrayList arrayList2;
+        switch (this.a) {
+            case 0:
+                PhotoViewer photoViewer = this.b;
+                photoViewer.h0.setImageBitmap(null);
+                wu0 wu0Var = this.c;
+                if (wu0Var != null && !AndroidUtilities.isTablet() && (clippingImageView = wu0Var.m) != null) {
+                    clippingImageView.setImageBitmap(null);
+                }
+                try {
+                    if (photoViewer.g0.getParent() != null) {
+                        ((WindowManager) photoViewer.y.getSystemService("window")).removeView(photoViewer.g0);
+                        photoViewer.V1();
+                        break;
+                    }
+                } catch (Exception e) {
+                    FileLog.e(e);
+                    return;
+                }
+                break;
+            case 1:
+                PhotoViewer photoViewer2 = this.b;
+                photoViewer2.p4 = null;
+                int i10 = 0;
+                photoViewer2.e0.setLayerType(0, null);
+                photoViewer2.n4 = 0;
+                photoViewer2.F1();
+                photoViewer2.X1(this.c);
+                MediaController.getInstance().tryResumePausedAudio();
+                if (photoViewer2.v7 && !photoViewer2.w7 && (arrayList = photoViewer2.g7) != null) {
+                    int size = arrayList.size();
+                    while (i10 < size) {
+                        Object obj = arrayList.get(i10);
+                        i10++;
+                        if (obj instanceof MediaController.PhotoEntry) {
+                            ((MediaController.PhotoEntry) obj).deleteAll();
+                        }
+                    }
+                    break;
+                }
+                break;
+            default:
+                PhotoViewer photoViewer3 = this.b;
+                photoViewer3.p4 = null;
+                ou0 ou0Var = photoViewer3.e0;
+                if (ou0Var != null) {
+                    int i11 = 0;
+                    ou0Var.setLayerType(0, null);
+                    photoViewer3.n4 = 0;
+                    photoViewer3.X1(this.c);
+                    photoViewer3.e0.setScaleX(1.0f);
+                    photoViewer3.e0.setScaleY(1.0f);
+                    MediaController.getInstance().tryResumePausedAudio();
+                    if (photoViewer3.v7 && !photoViewer3.w7 && (arrayList2 = photoViewer3.g7) != null) {
+                        int size2 = arrayList2.size();
+                        while (i11 < size2) {
+                            Object obj2 = arrayList2.get(i11);
+                            i11++;
+                            if (obj2 instanceof MediaController.PhotoEntry) {
+                                ((MediaController.PhotoEntry) obj2).deleteAll();
+                            }
+                        }
+                        break;
+                    }
+                }
+                break;
         }
     }
 }

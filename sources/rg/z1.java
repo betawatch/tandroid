@@ -31,13 +31,13 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.q3;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.o91;
+import org.telegram.ui.g91;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class z1 extends FrameLayout implements l0, NotificationCenter.NotificationCenterDelegate {
     public static final float[] U = {0.02f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 0.02f};
@@ -79,7 +79,7 @@ public final class z1 extends FrameLayout implements l0, NotificationCenter.Noti
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public z1(Context context, SvgHelper.SvgDrawable svgDrawable, int i10, int i11, e6 e6Var) {
+    public z1(Context context, SvgHelper.SvgDrawable svgDrawable, int i10, int i11, d6 d6Var) {
         super(context);
         boolean[] zArr;
         Paint paint = new Paint(1);
@@ -93,7 +93,7 @@ public final class z1 extends FrameLayout implements l0, NotificationCenter.Noti
         this.v = i11;
         this.a = svgDrawable;
         paint.setColor(-16777216);
-        paint2.setColor(i0.a.d(0.5f, i6.v0(i6.Mj, e6Var), -16777216));
+        paint2.setColor(i0.a.d(0.5f, h6.v0(h6.Mj, d6Var), -16777216));
         imageReceiver.setLayerNum(ConnectionsManager.DEFAULT_DATACENTER_ID);
         TLRPC.TL_help_premiumPromo premiumPromo = MediaDataController.getInstance(i10).getPremiumPromo();
         String l02 = PremiumPreviewFragment.l0(i11);
@@ -144,7 +144,7 @@ public final class z1 extends FrameLayout implements l0, NotificationCenter.Noti
                     TextPaint textPaint = new TextPaint(65);
                     textPaint.setTypeface(AndroidUtilities.getTypeface("fonts/rcondensedbold.ttf"));
                     textPaint.setTextSize(aVar.b);
-                    textPaint.setColor(i0.a.k(i6.w0(zArr, i6.Zj, false), 30));
+                    textPaint.setColor(i0.a.k(h6.w0(zArr, h6.Zj, false), 30));
                     textPaint.setTextAlign(Paint.Align.CENTER);
                     int i14 = 0;
                     while (i14 < 16) {
@@ -175,8 +175,8 @@ public final class z1 extends FrameLayout implements l0, NotificationCenter.Noti
                     u1Var.v = 0.98f;
                     u1Var.u = 0.98f;
                     u1Var.o = 4.0f;
-                    u1Var.O = e6Var;
-                    u1Var.P = i6.Zj;
+                    u1Var.O = d6Var;
+                    u1Var.P = h6.Zj;
                     u1Var.c();
                 } else if (i11 == 2) {
                     s1 s1Var = new s1();
@@ -187,7 +187,7 @@ public final class z1 extends FrameLayout implements l0, NotificationCenter.Noti
                             arrayList.add(new r1(s1Var));
                         }
                     }
-                    int k10 = i0.a.k(i6.w0(zArr, i6.Zj, false), 80);
+                    int k10 = i0.a.k(h6.w0(zArr, h6.Zj, false), 80);
                     if (s1Var.i != k10) {
                         s1Var.i = k10;
                         s1Var.c.setColor(k10);
@@ -204,8 +204,8 @@ public final class z1 extends FrameLayout implements l0, NotificationCenter.Noti
                 } else {
                     u1 u1Var2 = new u1(SharedConfig.getDevicePerformanceClass() == 2 ? 800 : SharedConfig.getDevicePerformanceClass() == 1 ? 400 : 100);
                     this.N = u1Var2;
-                    u1Var2.O = e6Var;
-                    u1Var2.P = i6.Zj;
+                    u1Var2.O = d6Var;
+                    u1Var2.P = h6.Zj;
                     u1Var2.r = 4;
                     u1Var2.w = 0.98f;
                     u1Var2.v = 0.98f;
@@ -522,7 +522,7 @@ public final class z1 extends FrameLayout implements l0, NotificationCenter.Noti
                                             Paint paint = (Paint) aVar4.h;
                                             Bitmap[] bitmapArr = (Bitmap[]) aVar4.d;
                                             i13 = width;
-                                            paint.setAlpha((int) org.telegram.messenger.y0.A(1.0f, clamp2, clamp, 255.0f));
+                                            paint.setAlpha((int) org.telegram.messenger.z0.A(1.0f, clamp2, clamp, 255.0f));
                                             canvas.drawBitmap(bitmapArr[h1Var3.a], f14, f15, paint);
                                             paint.setAlpha((int) (clamp * clamp2 * 255.0f));
                                             canvas.drawBitmap(bitmapArr[h1Var3.b], f14, f15, paint);
@@ -781,7 +781,7 @@ public final class z1 extends FrameLayout implements l0, NotificationCenter.Noti
         ci.c0 c0Var = this.H;
         if (c0Var != null) {
             this.T = c0Var.getCurrentPosition();
-            this.H.release(new o91(13));
+            this.H.release(new g91(13));
             this.H = null;
         }
     }
@@ -924,7 +924,7 @@ public final class z1 extends FrameLayout implements l0, NotificationCenter.Noti
             ci.c0 c0Var = this.H;
             if (c0Var != null) {
                 this.T = c0Var.getCurrentPosition();
-                this.H.release(new o91(13));
+                this.H.release(new g91(13));
                 this.H = null;
             }
             imageReceiver.stopAnimation();

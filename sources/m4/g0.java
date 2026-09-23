@@ -32,18 +32,18 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.ActionBar.b6;
 import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.rr;
 import org.telegram.ui.Components.zn0;
-import org.telegram.ui.h4;
-import org.telegram.ui.i41;
-import org.telegram.ui.u3;
+import org.telegram.ui.a41;
+import org.telegram.ui.i4;
+import org.telegram.ui.v3;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ int a;
@@ -168,7 +168,7 @@ public final /* synthetic */ class g0 implements Runnable {
                             ni.d dVar = kVar.u;
                             kVar.a.notifyAll();
                             if (dVar != null) {
-                                AndroidUtilities.runOnUIThread(new i2.g0(dVar, 15));
+                                AndroidUtilities.runOnUIThread(new i2.h0(dVar, 15));
                             }
                         }
                     } finally {
@@ -202,7 +202,7 @@ public final /* synthetic */ class g0 implements Runnable {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
-        q1 q1Var;
+        l1 l1Var;
         int i10 = 4;
         long j3 = 0;
         ArrayList arrayList = null;
@@ -215,26 +215,26 @@ public final /* synthetic */ class g0 implements Runnable {
                 i9.u uVar = (i9.u) this.b;
                 ResultReceiver resultReceiver = (ResultReceiver) this.c;
                 try {
-                    q1Var = (q1) uVar.a;
-                    e2.d.e(q1Var, "SessionResult must not be null");
+                    l1Var = (l1) uVar.a;
+                    e2.d.e(l1Var, "SessionResult must not be null");
                 } catch (InterruptedException e) {
                     e = e;
                     e2.a.o("MediaSessionLegacyStub", "Custom command failed", e);
-                    q1Var = new q1(-1);
+                    l1Var = new l1(-1);
                 } catch (CancellationException e7) {
                     e2.a.o("MediaSessionLegacyStub", "Custom command cancelled", e7);
-                    q1Var = new q1(1);
+                    l1Var = new l1(1);
                 } catch (ExecutionException e10) {
                     e = e10;
                     e2.a.o("MediaSessionLegacyStub", "Custom command failed", e);
-                    q1Var = new q1(-1);
+                    l1Var = new l1(-1);
                 }
-                resultReceiver.send(q1Var.a, q1Var.b);
+                resultReceiver.send(l1Var.a, l1Var.b);
                 return;
             case 1:
-                g1 g1Var = (g1) this.b;
+                b1 b1Var = (b1) this.b;
                 i iVar = (i) this.c;
-                ni.f fVar = g1Var.b;
+                ni.f fVar = b1Var.b;
                 r t10 = fVar.t(iVar.asBinder());
                 if (t10 != null) {
                     fVar.M(t10);
@@ -242,7 +242,7 @@ public final /* synthetic */ class g0 implements Runnable {
                 }
                 return;
             case 2:
-                ((g1) this.b).b.n((r) this.c);
+                ((b1) this.b).b.n((r) this.c);
                 return;
             case 3:
                 me.b bVar = (me.b) this.b;
@@ -342,7 +342,7 @@ public final /* synthetic */ class g0 implements Runnable {
                 ((VideoAds) this.b).lambda$show$16((Utilities.Callback) this.c);
                 return;
             case 11:
-                i41.T((Context) this.b, null, false, (ai.a1) this.c, null);
+                a41.T((Context) this.b, null, false, (ai.a1) this.c, null);
                 return;
             case 12:
                 ((ConferenceCall) this.b).lambda$processUpdates$4((TLRPC.Updates) this.c);
@@ -386,7 +386,7 @@ public final /* synthetic */ class g0 implements Runnable {
                 ofFloat.addUpdateListener(new org.telegram.ui.ActionBar.a(kVar2, i10));
                 kVar2.s1.addListener(new org.telegram.ui.ActionBar.c(kVar2, z10, i11));
                 kVar2.s1.setDuration(320L);
-                kVar2.s1.setInterpolator(qr.h);
+                kVar2.s1.setInterpolator(rr.h);
                 kVar2.s1.start();
                 return;
             case 21:
@@ -407,7 +407,7 @@ public final /* synthetic */ class g0 implements Runnable {
                 ofFloat2.addUpdateListener(new org.telegram.ui.ActionBar.a(kVar3, 3));
                 kVar3.s1.addListener(new org.telegram.ui.ActionBar.c(kVar3, z11, objArr == true ? 1 : 0));
                 kVar3.s1.setDuration(320L);
-                kVar3.s1.setInterpolator(qr.h);
+                kVar3.s1.setInterpolator(rr.h);
                 kVar3.s1.start();
                 return;
             case 22:
@@ -433,19 +433,19 @@ public final /* synthetic */ class g0 implements Runnable {
                 n2Var3.onBecomeFullyVisible();
                 return;
             case 24:
-                d6 d6Var = (d6) this.b;
+                c6 c6Var = (c6) this.b;
                 ArrayList arrayList2 = (ArrayList) this.c;
                 int size = arrayList2.size();
                 int i12 = 0;
                 while (i12 < size) {
-                    g6 g6Var = (g6) arrayList2.get(i12);
-                    File d = g6Var.d();
+                    f6 f6Var = (f6) arrayList2.get(i12);
+                    File d = f6Var.d();
                     if (d == null || d.length() <= 0) {
                         if (arrayList == null) {
                             arrayList = new ArrayList();
                         }
-                        if (!arrayList.contains(g6Var.o)) {
-                            arrayList.add(g6Var.o);
+                        if (!arrayList.contains(f6Var.o)) {
+                            arrayList.add(f6Var.o);
                         }
                     } else {
                         arrayList2.remove(i12);
@@ -464,23 +464,23 @@ public final /* synthetic */ class g0 implements Runnable {
                     tL_inputWallPaperSlug.slug = (String) arrayList.get(i13);
                     getmultiwallpapers.wallpapers.add(tL_inputWallPaperSlug);
                 }
-                ConnectionsManager.getInstance(d6Var.a).sendRequest(getmultiwallpapers, new v1(20, d6Var, arrayList2));
+                ConnectionsManager.getInstance(c6Var.a).sendRequest(getmultiwallpapers, new v1(20, c6Var, arrayList2));
                 return;
             case 25:
-                d6 d6Var2 = (d6) this.b;
-                c6 c6Var = (c6) this.c;
-                TLRPC.TL_wallPaper tL_wallPaper = c6Var.a;
+                c6 c6Var2 = (c6) this.b;
+                b6 b6Var = (b6) this.c;
+                TLRPC.TL_wallPaper tL_wallPaper = b6Var.a;
                 File pathToAttach = FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(tL_wallPaper.document, true);
-                ArrayList arrayList3 = c6Var.b;
+                ArrayList arrayList3 = b6Var.b;
                 int size3 = arrayList3.size();
                 ArrayList arrayList4 = null;
                 for (int i14 = 0; i14 < size3; i14++) {
-                    g6 g6Var2 = (g6) arrayList3.get(i14);
-                    if (g6Var2.o.equals(tL_wallPaper.slug)) {
-                        Bitmap b10 = d6.b(bitmap, "application/x-tgwallpattern".equals(tL_wallPaper.document.mime_type), pathToAttach, g6Var2);
+                    f6 f6Var2 = (f6) arrayList3.get(i14);
+                    if (f6Var2.o.equals(tL_wallPaper.slug)) {
+                        Bitmap b10 = c6.b(bitmap, "application/x-tgwallpattern".equals(tL_wallPaper.document.mime_type), pathToAttach, f6Var2);
                         if (arrayList4 == null) {
                             arrayList4 = new ArrayList();
-                            arrayList4.add(g6Var2);
+                            arrayList4.add(f6Var2);
                         }
                         bitmap = b10;
                     }
@@ -488,32 +488,32 @@ public final /* synthetic */ class g0 implements Runnable {
                 if (bitmap != null) {
                     bitmap.recycle();
                 }
-                AndroidUtilities.runOnUIThread(new ci.y0((Object) d6Var2, (Object) arrayList4, (boolean) (objArr2 == true ? 1 : 0), 10));
+                AndroidUtilities.runOnUIThread(new ci.y0((Object) c6Var2, (Object) arrayList4, (boolean) (objArr2 == true ? 1 : 0), 10));
                 return;
             case 26:
-                h6 h6Var = (h6) this.b;
-                h6Var.d((File) this.c, h6Var.h0);
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.q(h6Var, 19));
+                g6 g6Var = (g6) this.b;
+                g6Var.d((File) this.c, g6Var.h0);
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.q(g6Var, 19));
                 return;
             case 27:
                 ((org.telegram.ui.p) this.b).X((TLRPC.TL_messages_archivedStickers) this.c);
                 return;
             case 28:
-                h4 h4Var = (h4) this.b;
+                i4 i4Var = (i4) this.b;
                 nf.e eVar2 = (nf.e) this.c;
-                u3 u3Var = h4Var.K;
-                if (u3Var != null) {
-                    u3Var.dismiss(true);
+                v3 v3Var = i4Var.K;
+                if (v3Var != null) {
+                    v3Var.dismiss(true);
                 }
-                if (h4Var.M0 == eVar2) {
-                    h4Var.M0 = null;
+                if (i4Var.M0 == eVar2) {
+                    i4Var.M0 = null;
                     return;
                 }
                 return;
             default:
-                h4 h4Var2 = (h4) this.b;
+                i4 i4Var2 = (i4) this.b;
                 AnimatorSet animatorSet = (AnimatorSet) this.c;
-                h4Var2.R0.lock();
+                i4Var2.R0.lock();
                 animatorSet.start();
                 return;
         }

@@ -4,21 +4,21 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.au0;
+import org.telegram.ui.tt0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class i0 extends d {
     public final Paint h;
     public long n;
     public float r;
     public float s;
-    public final /* synthetic */ au0 v;
+    public final /* synthetic */ tt0 v;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i0(au0 au0Var, Context context, h0 h0Var) {
+    public i0(tt0 tt0Var, Context context, h0 h0Var) {
         super(context, h0Var);
-        this.v = au0Var;
+        this.v = tt0Var;
         Paint paint = new Paint();
         this.h = paint;
         setWillNotDraw(false);
@@ -46,14 +46,14 @@ public final class i0 extends d {
         super.onDraw(canvas);
         long min = Math.min(16L, System.currentTimeMillis() - this.n);
         this.n = System.currentTimeMillis();
-        au0 au0Var = this.v;
-        j jVar = au0Var.S0;
+        tt0 tt0Var = this.v;
+        j jVar = tt0Var.S0;
         if (jVar == null || jVar.r || !jVar.n) {
             i10 = 0;
             i11 = 0;
         } else {
             i10 = jVar.getStickyX();
-            i11 = au0Var.S0.getStickyY();
+            i11 = tt0Var.S0.getStickyY();
         }
         if (i10 != 0) {
             float f11 = this.r;

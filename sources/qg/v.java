@@ -8,23 +8,23 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.ActionBar.d5;
-import org.telegram.ui.Components.c90;
+import org.telegram.ui.ActionBar.c5;
+import org.telegram.ui.Components.d90;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.au0;
-import yh.u5;
+import org.telegram.ui.tt0;
+import yh.t5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
 
-    public /* synthetic */ v(int i10, d5 d5Var) {
+    public /* synthetic */ v(int i10, c5 c5Var) {
         this.a = 3;
         this.b = i10;
-        this.c = d5Var;
+        this.c = c5Var;
     }
 
     @Override // java.lang.Runnable
@@ -34,10 +34,10 @@ public final /* synthetic */ class v implements Runnable {
         Object obj = this.c;
         switch (i10) {
             case 0:
-                au0 au0Var = (au0) obj;
-                pg.q1 q1Var = au0Var.K1;
-                au0Var.t0(q1Var, null);
-                pg.s0.e(i11).j(q1Var.c);
+                tt0 tt0Var = (tt0) obj;
+                pg.r1 r1Var = tt0Var.K1;
+                tt0Var.t0(r1Var, null);
+                pg.t0.e(i11).j(r1Var.c);
                 break;
             case 1:
                 p2 p2Var = (p2) obj;
@@ -46,10 +46,10 @@ public final /* synthetic */ class v implements Runnable {
                 p2Var.h();
                 break;
             case 2:
-                c90 c90Var = ((tg.s0) obj).e;
+                d90 d90Var = ((tg.s0) obj).e;
                 try {
-                    if (c90Var.getLayout().getLineForOffset(i11) == 0) {
-                        c90Var.getEditableText().insert(i11, "\n");
+                    if (d90Var.getLayout().getLineForOffset(i11) == 0) {
+                        d90Var.getEditableText().insert(i11, "\n");
                         break;
                     }
                 } catch (Exception e) {
@@ -60,13 +60,13 @@ public final /* synthetic */ class v implements Runnable {
             case 3:
                 Bundle bundle = new Bundle();
                 bundle.putLong("user_id", UserConfig.getInstance(i11).clientUserId);
-                ((d5) obj).getLastFragment().presentFragment(new ProfileActivity(bundle, null));
+                ((c5) obj).getLastFragment().presentFragment(new ProfileActivity(bundle, null));
                 break;
             case 4:
                 nf.f.s(((yh.g) obj).getParentActivity(), LocaleController.getString(i11));
                 break;
             case 5:
-                ConnectionsManager.getInstance(((u5) obj).a).cancelRequest(i11, true);
+                ConnectionsManager.getInstance(((t5) obj).a).cancelRequest(i11, true);
                 break;
             default:
                 zg.f fVar = (zg.f) obj;

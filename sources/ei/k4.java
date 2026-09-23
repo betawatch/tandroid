@@ -5,11 +5,11 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.iv0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public class k4 extends View {
     public final iv0 a;
@@ -17,14 +17,14 @@ public class k4 extends View {
     public float c;
     public o1.k d;
 
-    public k4(Context context, e6 e6Var) {
+    public k4(Context context, d6 d6Var) {
         super(context);
         iv0 iv0Var = new iv0(new d2.c(18), new d2.c(19));
         iv0Var.c = 100.0f;
         this.a = iv0Var;
         Paint paint = new Paint(1);
         this.b = paint;
-        paint.setColor(i6.v0(i6.Oh, e6Var));
+        paint.setColor(h6.v0(h6.Oh, d6Var));
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
         paint.setStrokeCap(Paint.Cap.ROUND);

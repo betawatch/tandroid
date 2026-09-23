@@ -1,56 +1,24 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
+import android.view.ViewTreeObserver;
+import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class mz extends org.telegram.ui.ActionBar.n2 {
-    public long a;
-    public TLRPC.Chat b;
-    public boolean c;
-    public boolean d;
-    public jz e;
-    public ai.m0 f;
+public final class mz implements ViewTreeObserver.OnGlobalLayoutListener {
+    public final /* synthetic */ ExternalActionActivity a;
 
-    public final void U() {
-        if (!this.d || getParentLayout() == null) {
-            return;
-        }
-        for (org.telegram.ui.ActionBar.n2 n2Var : getParentLayout().getFragmentStack()) {
-            if (n2Var instanceof uy) {
-                ox oxVar = ((uy) n2Var).F3;
-                if (oxVar.c()) {
-                    oxVar.a();
-                }
-            }
-        }
+    public mz(ExternalActionActivity externalActionActivity) {
+        this.a = externalActionActivity;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
-    public final View createView(Context context) {
-        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setActionBarMenuOnItemClick(new to(this, 21));
-        this.actionBar.setTitle(LocaleController.getString(R.string.TopicsTitle));
-        FrameLayout frameLayout = new FrameLayout(context);
-        jz jzVar = new jz(this, new b5(this, 13), new hu(this, 6), null);
-        this.e = jzVar;
-        jzVar.p1();
-        this.e.setBackgroundColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.a7, this.resourceProvider));
-        frameLayout.addView(this.e, w7.x5.e(-1, -1, 119));
-        this.actionBar.setAdaptiveBackground(this.e);
-        this.fragmentView = frameLayout;
-        return frameLayout;
-    }
-
-    @Override // org.telegram.ui.ActionBar.n2
-    public final boolean onFragmentCreate() {
-        this.b = getMessagesController().getChat(Long.valueOf(-this.a));
-        return super.onFragmentCreate();
+    @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
+    public final void onGlobalLayout() {
+        ExternalActionActivity externalActionActivity = this.a;
+        externalActionActivity.f();
+        ActionBarLayout actionBarLayout = externalActionActivity.c;
+        if (actionBarLayout != null) {
+            actionBarLayout.getView().getViewTreeObserver().removeOnGlobalLayoutListener(this);
+        }
     }
 }

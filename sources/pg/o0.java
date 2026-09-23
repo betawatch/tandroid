@@ -1,27 +1,30 @@
 package pg;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ q0 b;
-    public final /* synthetic */ a5.a c;
+    public final /* synthetic */ r0 b;
 
-    public /* synthetic */ o0(q0 q0Var, a5.a aVar, int i10) {
+    public /* synthetic */ o0(r0 r0Var, int i10) {
         this.a = i10;
-        this.b = q0Var;
-        this.c = aVar;
+        this.b = r0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.p(this.c, true);
+                r0 r0Var = this.b;
+                r0Var.c = null;
+                k2.u uVar = r0Var.a;
+                if (uVar != null) {
+                    uVar.W();
+                    break;
+                }
                 break;
             default:
-                q0 q0Var = this.b;
-                q0Var.f.f(new o0(q0Var, this.c, 0));
+                this.b.b();
                 break;
         }
     }

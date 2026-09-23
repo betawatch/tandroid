@@ -1,108 +1,57 @@
 package ai;
 
-import android.util.SparseIntArray;
-import java.text.Collator;
-import java.util.ArrayList;
-import java.util.Comparator;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ContactsController;
+import org.telegram.messenger.LocationController;
+import org.telegram.messenger.SavedMessagesController;
+import org.telegram.messenger.SecretChatHelper;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.dd0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class c8 implements Comparator {
+public final /* synthetic */ class c8 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ c8(Object obj, int i10) {
+    public /* synthetic */ c8(Object obj, long j3, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.c = obj;
+        this.b = j3;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r0v11, types: [int] */
-    /* JADX WARN: Type inference failed for: r0v18 */
-    /* JADX WARN: Type inference failed for: r0v35 */
-    /* JADX WARN: Type inference failed for: r1v10 */
-    /* JADX WARN: Type inference failed for: r1v4, types: [int] */
-    /* JADX WARN: Type inference failed for: r1v6 */
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int indexOf;
-        int indexOf2;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                l9 l9Var = (l9) this.b;
-                int i10 = l9Var.a;
-                TL_stories.PeerStories peerStories = (TL_stories.PeerStories) obj;
-                TL_stories.PeerStories peerStories2 = (TL_stories.PeerStories) obj2;
-                long peerDialogId = DialogObject.getPeerDialogId(peerStories.peer);
-                long peerDialogId2 = DialogObject.getPeerDialogId(peerStories2.peer);
-                boolean K = l9Var.K(peerDialogId);
-                boolean K2 = l9Var.K(peerDialogId2);
-                boolean J = l9Var.J(peerDialogId);
-                boolean J2 = l9Var.J(peerDialogId2);
-                boolean F = l9Var.F(peerDialogId);
-                boolean F2 = l9Var.F(peerDialogId2);
-                if (F != F2) {
-                    return (F2 ? 1 : 0) - (F ? 1 : 0);
-                }
-                if (K != K2) {
-                    return (K2 ? 1 : 0) - (K ? 1 : 0);
-                }
-                if (J != J2) {
-                    return (J2 ? 1 : 0) - (J ? 1 : 0);
-                }
-                boolean isService = UserObject.isService(peerDialogId);
-                boolean isService2 = UserObject.isService(peerDialogId2);
-                if (isService != isService2) {
-                    return (isService2 ? 1 : 0) - (isService ? 1 : 0);
-                }
-                TLRPC.User user = MessagesController.getInstance(i10).getUser(Long.valueOf(peerDialogId));
-                ?? r02 = user == null ? 0 : user.premium;
-                TLRPC.User user2 = MessagesController.getInstance(i10).getUser(Long.valueOf(peerDialogId2));
-                ?? r12 = user2 == null ? 0 : user2.premium;
-                if (r02 == r12) {
-                    return (peerStories2.stories.isEmpty() ? 0 : ((TL_stories.StoryItem) hg.c.h(1, peerStories2.stories)).date) - (peerStories.stories.isEmpty() ? 0 : ((TL_stories.StoryItem) hg.c.h(1, peerStories.stories)).date);
-                }
-                return r12 - r02;
+                AndroidUtilities.runOnUIThread(new a3.h0((l9) this.c, this.b, tLObject, 2));
+                break;
             case 1:
-                ArrayList arrayList = (ArrayList) this.b;
-                MediaController.AlbumEntry albumEntry = (MediaController.AlbumEntry) obj;
-                MediaController.AlbumEntry albumEntry2 = (MediaController.AlbumEntry) obj2;
-                int i11 = albumEntry.bucketId;
-                if (i11 != 0 || albumEntry2.bucketId == 0) {
-                    if ((i11 != 0 && albumEntry2.bucketId == 0) || (indexOf = arrayList.indexOf(albumEntry)) > (indexOf2 = arrayList.indexOf(albumEntry2))) {
-                        return 1;
-                    }
-                    if (indexOf >= indexOf2) {
-                        return 0;
-                    }
-                }
-                return -1;
+                ((ContactsController) this.c).lambda$loadContacts$28(this.b, tLObject, tL_error);
+                break;
             case 2:
-                ii.h6 h6Var = (ii.h6) this.b;
-                TL_iv.pageTableCell pagetablecell = (TL_iv.pageTableCell) obj;
-                TL_iv.pageTableCell pagetablecell2 = (TL_iv.pageTableCell) obj2;
-                int b10 = h6Var.b(pagetablecell);
-                int b11 = h6Var.b(pagetablecell2);
-                return b10 != b11 ? Integer.compare(b10, b11) : Integer.compare(h6Var.a(pagetablecell), h6Var.a(pagetablecell2));
+                ((LocationController) this.c).lambda$loadLiveLocations$26(this.b, tLObject, tL_error);
+                break;
             case 3:
-                r2.v vVar = (r2.v) this.b;
-                return vVar.b(obj2) - vVar.b(obj);
+                ((SavedMessagesController) this.c).lambda$hasSavedMessages$15(this.b, tLObject, tL_error);
+                break;
             case 4:
-                SparseIntArray sparseIntArray = (SparseIntArray) this.b;
-                return sparseIntArray.get(((rg.h) obj).e, ConnectionsManager.DEFAULT_DATACENTER_ID) - sparseIntArray.get(((rg.h) obj2).e, ConnectionsManager.DEFAULT_DATACENTER_ID);
+                ((SecretChatHelper) this.c).lambda$declineSecretChat$20(this.b, tLObject, tL_error);
+                break;
             case 5:
-                return ((Collator) this.b).compare((String) obj, (String) obj2);
+                ((SendMessagesHelper) this.c).lambda$sendGame$47(this.b, tLObject, tL_error);
+                break;
             default:
-                float[] fArr = ((yh.r2) this.b).r;
-                return Float.compare(fArr[((Integer) obj).intValue()], fArr[((Integer) obj2).intValue()]);
+                dd0 dd0Var = (dd0) this.c;
+                if (tLObject != null) {
+                    AndroidUtilities.runOnUIThread(new a3.h0(dd0Var, tLObject, this.b, 28));
+                    break;
+                }
+                break;
         }
     }
 }

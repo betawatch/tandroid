@@ -12,7 +12,7 @@ import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d6 implements Runnable {
     public final /* synthetic */ int a;
@@ -62,11 +62,11 @@ public final /* synthetic */ class d6 implements Runnable {
                         }
                     }
                 }
-                Collections.sort(bVar.d, new kb1(26));
-                Collections.sort(bVar.e, new kb1(26));
-                Collections.sort(bVar.f, new kb1(26));
-                Collections.sort(bVar.g, new kb1(26));
-                Collections.sort(bVar.h, new kb1(26));
+                Collections.sort(bVar.d, new cb1(26));
+                Collections.sort(bVar.e, new cb1(26));
+                Collections.sort(bVar.f, new cb1(26));
+                Collections.sort(bVar.g, new cb1(26));
+                Collections.sort(bVar.h, new cb1(26));
                 z6Var2.getMessagesStorage().getStorageQueue().postRunnable(new e6(z6Var2, arrayList2, arrayList3, arrayList, bVar, 0));
                 break;
             default:

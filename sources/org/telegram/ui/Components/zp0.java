@@ -11,9 +11,9 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class zp0 extends kl0 {
+public final class zp0 extends ll0 {
     public final Context c;
     public final ArrayList d = new ArrayList();
     public final a0.i e = new a0.i();
@@ -25,7 +25,7 @@ public final class zp0 extends kl0 {
         E();
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.ll0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f != 1;
     }
@@ -88,9 +88,9 @@ public final class zp0 extends kl0 {
             }
         }
         arrayList.addAll(arrayList2);
-        org.telegram.ui.bo boVar = hq0Var.f0;
-        if (boVar != null) {
-            int i16 = boVar.a;
+        org.telegram.ui.xn xnVar = hq0Var.f0;
+        if (xnVar != null) {
+            int i16 = xnVar.a;
             if (i16 == 1) {
                 ArrayList arrayList3 = new ArrayList(arrayList.subList(0, Math.min(4, arrayList.size())));
                 arrayList.clear();
@@ -153,17 +153,17 @@ public final class zp0 extends kl0 {
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
         View xp0Var;
-        org.telegram.ui.ActionBar.e6 e6Var;
+        org.telegram.ui.ActionBar.d6 d6Var;
         hq0 hq0Var = this.f;
         Context context = this.c;
         if (i10 != 0) {
             xp0Var = new View(context);
             xp0Var.setLayoutParams(new s4.p0(-1, AndroidUtilities.dp((!hq0Var.h0 || hq0Var.o0[1] == null) ? 56.0f : 109.0f)));
         } else {
-            e6Var = ((org.telegram.ui.ActionBar.f3) hq0Var).resourcesProvider;
-            xp0Var = new xp0(this, context, e6Var);
+            d6Var = ((org.telegram.ui.ActionBar.f3) hq0Var).resourcesProvider;
+            xp0Var = new xp0(this, context, d6Var);
             xp0Var.setLayoutParams(new s4.p0(-1, AndroidUtilities.dp(100.0f)));
         }
-        return new vk0(xp0Var);
+        return new wk0(xp0Var);
     }
 }

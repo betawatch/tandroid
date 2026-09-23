@@ -18,21 +18,21 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.y0;
+import org.telegram.messenger.z0;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.ck0;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.dk0;
 import org.telegram.ui.Components.ek0;
 import org.telegram.ui.Components.fk0;
-import org.telegram.ui.Components.o5;
-import org.telegram.ui.e61;
-import org.telegram.ui.f71;
-import org.telegram.ui.q61;
+import org.telegram.ui.Components.gk0;
+import org.telegram.ui.Components.q5;
+import org.telegram.ui.i61;
+import org.telegram.ui.w51;
+import org.telegram.ui.x61;
 import rg.b1;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class b0 extends FrameLayout {
     public final Drawable a;
@@ -71,13 +71,13 @@ public final class b0 extends FrameLayout {
         rect.right = dp;
         rect.top = dp;
         rect.left = dp;
-        int i10 = i6.Td;
-        e6 e6Var = c0Var.s;
-        mutate.setColorFilter(new PorterDuffColorFilter(i6.v0(i10, e6Var), PorterDuff.Mode.MULTIPLY));
+        int i10 = h6.Td;
+        d6 d6Var = c0Var.s;
+        mutate.setColorFilter(new PorterDuffColorFilter(h6.v0(i10, d6Var), PorterDuff.Mode.MULTIPLY));
         if (c0Var.y == 2) {
             paint.setColor(i0.a.d(0.13f, -16777216, -1));
         } else {
-            paint.setColor(i6.v0(i6.G8, e6Var));
+            paint.setColor(h6.v0(h6.G8, d6Var));
         }
     }
 
@@ -97,14 +97,14 @@ public final class b0 extends FrameLayout {
         float f11;
         RectF rectF2;
         int i11;
-        fk0 fk0Var;
-        fk0 fk0Var2;
+        gk0 gk0Var;
+        gk0 gk0Var2;
         int i12;
         float f12;
         l4 l4Var;
         int i13;
         RectF rectF3;
-        fk0 fk0Var3;
+        gk0 gk0Var3;
         int i14;
         int i15;
         HashMap hashMap2;
@@ -116,7 +116,7 @@ public final class b0 extends FrameLayout {
         float f15;
         float f16;
         float f17;
-        fk0 fk0Var4;
+        gk0 gk0Var4;
         RectF rectF7;
         l4 l4Var2;
         int[] iArr;
@@ -140,22 +140,22 @@ public final class b0 extends FrameLayout {
         int i17 = c0Var.y;
         RectF rectF9 = c0Var.i;
         y yVar = c0Var.m;
-        fk0 fk0Var5 = c0Var.n;
+        gk0 gk0Var5 = c0Var.n;
         if (c0Var.l) {
             float clamp = Utilities.clamp(c0Var.j, 1.0f, 0.0f);
             RectF rectF10 = AndroidUtilities.rectTmp;
             rectF10.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
             if (i17 == 4) {
-                rectF8.set(fk0Var5.w);
+                rectF8.set(gk0Var5.w);
                 rectF8.offset(c0Var.g, c0Var.h);
             }
             AndroidUtilities.lerp(rectF8, rectF10, c0Var.j, rectF9);
             float lerp = AndroidUtilities.lerp(c0Var.e, AndroidUtilities.dp(i17 == 5 ? 20.0f : 8.0f), c0Var.j);
             HashMap hashMap3 = this.e;
             hashMap3.clear();
-            if (i17 == 1 || (fk0Var5.getDelegate() != null && fk0Var5.getDelegate().q())) {
+            if (i17 == 1 || (gk0Var5.getDelegate() != null && gk0Var5.getDelegate().q())) {
                 f7 = 1.0f;
-                ek0 delegate = fk0Var5.getDelegate();
+                fk0 delegate = gk0Var5.getDelegate();
                 float x10 = getX();
                 b0 b0Var = c0Var.a;
                 hashMap = hashMap3;
@@ -192,10 +192,10 @@ public final class b0 extends FrameLayout {
                 i10 = 4;
                 f10 = 255.0f;
             }
-            if (fk0Var5.R0 != null) {
+            if (gk0Var5.R0 != null) {
                 canvas2.save();
                 float f29 = rectF.left;
-                float y3 = fk0Var5.R0.getY() + rectF.top;
+                float y3 = gk0Var5.R0.getY() + rectF.top;
                 if (i17 != 3 && i17 != i10) {
                     if (i17 != 5) {
                         f28 = 0.0f;
@@ -203,19 +203,19 @@ public final class b0 extends FrameLayout {
                         rectF2 = rectF8;
                         f11 = lerp;
                         i11 = 5;
-                        canvas2.saveLayerAlpha(0.0f, 0.0f, fk0Var5.R0.getMeasuredWidth(), fk0Var5.R0.getMeasuredHeight(), (int) ((f7 - c0Var.j) * fk0Var5.R0.getAlpha() * f10), 31);
-                        fk0Var5.R0.draw(canvas2);
+                        canvas2.saveLayerAlpha(0.0f, 0.0f, gk0Var5.R0.getMeasuredWidth(), gk0Var5.R0.getMeasuredHeight(), (int) ((f7 - c0Var.j) * gk0Var5.R0.getAlpha() * f10), 31);
+                        gk0Var5.R0.draw(canvas2);
                         canvas2.restore();
                         canvas2.restore();
                     }
                 }
-                f28 = fk0Var5.w.top;
+                f28 = gk0Var5.w.top;
                 canvas2.translate(f29, y3 - f28);
                 rectF2 = rectF8;
                 f11 = lerp;
                 i11 = 5;
-                canvas2.saveLayerAlpha(0.0f, 0.0f, fk0Var5.R0.getMeasuredWidth(), fk0Var5.R0.getMeasuredHeight(), (int) ((f7 - c0Var.j) * fk0Var5.R0.getAlpha() * f10), 31);
-                fk0Var5.R0.draw(canvas2);
+                canvas2.saveLayerAlpha(0.0f, 0.0f, gk0Var5.R0.getMeasuredWidth(), gk0Var5.R0.getMeasuredHeight(), (int) ((f7 - c0Var.j) * gk0Var5.R0.getAlpha() * f10), 31);
+                gk0Var5.R0.draw(canvas2);
                 canvas2.restore();
                 canvas2.restore();
             } else {
@@ -223,18 +223,18 @@ public final class b0 extends FrameLayout {
                 rectF2 = rectF8;
                 i11 = 5;
             }
-            float width = (rectF.width() - fk0Var5.w.width()) + (rectF.left - fk0Var5.w.left);
+            float width = (rectF.width() - gk0Var5.w.width()) + (rectF.left - gk0Var5.w.left);
             if (c0Var.j > 0.05f || i17 == i11) {
                 canvas2.save();
-                canvas2.translate(width, (rectF.height() - fk0Var5.w.height()) + (rectF.top - fk0Var5.w.top));
-                float max = (Math.max(0.25f, Math.min(fk0Var5.v, 1.0f)) - 0.25f) / 0.75f;
+                canvas2.translate(width, (rectF.height() - gk0Var5.w.height()) + (rectF.top - gk0Var5.w.top));
+                float max = (Math.max(0.25f, Math.min(gk0Var5.v, 1.0f)) - 0.25f) / 0.75f;
                 Canvas canvas3 = canvas2;
-                fk0Var5.f(fk0Var5.E * max, max, fk0Var5.F * max, fk0Var5.M0 == i11 ? 255 : (int) y0.A(1.0f, fk0Var5.w0, Utilities.clamp(fk0Var5.w0 / 0.2f, 1.0f, 0.0f), 255.0f), canvas3);
-                fk0Var = fk0Var5;
+                gk0Var5.f(gk0Var5.E * max, max, gk0Var5.F * max, gk0Var5.M0 == i11 ? 255 : (int) z0.A(1.0f, gk0Var5.w0, Utilities.clamp(gk0Var5.w0 / 0.2f, 1.0f, 0.0f), 255.0f), canvas3);
+                gk0Var = gk0Var5;
                 canvas2 = canvas3;
                 canvas2.restore();
             } else {
-                fk0Var = fk0Var5;
+                gk0Var = gk0Var5;
             }
             if (i17 == 5) {
                 Path path = this.v;
@@ -248,17 +248,17 @@ public final class b0 extends FrameLayout {
             this.n = 1.0f;
             this.r = 0.0f;
             this.s = 0.0f;
-            if (fk0Var != null) {
+            if (gk0Var != null) {
                 for (int childCount = yVar.h0.getChildCount() - 1; childCount >= 0; childCount--) {
-                    if (yVar.h0.getChildAt(childCount) instanceof q61) {
-                        q61 q61Var = (q61) yVar.h0.getChildAt(childCount);
-                        if (q61Var.y && (p0Var = q61Var.x) != null) {
-                            hashMap.put(p0Var, q61Var);
+                    if (yVar.h0.getChildAt(childCount) instanceof i61) {
+                        i61 i61Var = (i61) yVar.h0.getChildAt(childCount);
+                        if (i61Var.y && (p0Var = i61Var.x) != null) {
+                            hashMap.put(p0Var, i61Var);
                         }
                     }
                 }
                 int save = canvas2.save();
-                canvas2.translate(rectF.left, e2.z(1.0f, c0Var.j, fk0Var.g() + fk0Var.getTopOffset(), rectF.top));
+                canvas2.translate(rectF.left, e2.z(1.0f, c0Var.j, gk0Var.g() + gk0Var.getTopOffset(), rectF.top));
                 float max2 = Math.max(1.0f - (yVar.i0.getVisibility() == 0 ? yVar.i0.getAlpha() : 0.0f), 1.0f - c0Var.j);
                 if (max2 != 1.0f) {
                     canvas2.saveLayerAlpha(0.0f, 0.0f, rectF.width(), rectF.height(), (int) (max2 * 255.0f), 31);
@@ -281,41 +281,41 @@ public final class b0 extends FrameLayout {
                 }
                 int i19 = -1;
                 int i20 = -1;
-                while (i20 < fk0Var.b.getChildCount()) {
-                    View childAt = i20 == i19 ? fk0Var.z0 : fk0Var.b.getChildAt(i20);
+                while (i20 < gk0Var.b.getChildCount()) {
+                    View childAt = i20 == i19 ? gk0Var.z0 : gk0Var.b.getChildAt(i20);
                     if (childAt.getLeft() < 0 || childAt.getVisibility() == 8) {
                         i13 = i20;
                         rectF3 = rectF;
-                        fk0Var3 = fk0Var;
+                        gk0Var3 = gk0Var;
                         i14 = i17;
                         i15 = save;
                         hashMap2 = hashMap;
                         rectF4 = rectF2;
                     } else {
                         canvas2.save();
-                        if (childAt instanceof dk0) {
-                            dk0 dk0Var = (dk0) childAt;
-                            ck0 ck0Var = dk0Var.a;
-                            ck0 ck0Var2 = dk0Var.b;
-                            b1 b1Var = dk0Var.f;
+                        if (childAt instanceof ek0) {
+                            ek0 ek0Var = (ek0) childAt;
+                            dk0 dk0Var = ek0Var.a;
+                            dk0 dk0Var2 = ek0Var.b;
+                            b1 b1Var = ek0Var.f;
                             if (b1Var != null) {
                                 b1Var.setAlpha(1.0f - c0Var.j);
                             }
-                            q61 q61Var2 = (q61) hashMap.get(dk0Var.e);
-                            if (q61Var2 != null) {
+                            i61 i61Var2 = (i61) hashMap.get(ek0Var.e);
+                            if (i61Var2 != null) {
                                 float x12 = childAt.getX();
                                 float y11 = childAt.getY();
                                 if (i20 == -1) {
-                                    x12 -= fk0Var.b.getX();
-                                    f18 = y11 - fk0Var.b.getY();
+                                    x12 -= gk0Var.b.getX();
+                                    f18 = y11 - gk0Var.b.getY();
                                 } else {
                                     f18 = y11;
                                 }
                                 i13 = i20;
-                                float x13 = ((yVar.h0.getX() + (yVar.getX() + q61Var2.getX())) - ck0Var2.getX()) - AndroidUtilities.dp(1.0f);
-                                float y12 = (yVar.h0.getY() + (yVar.g0.getY() + (yVar.getY() + q61Var2.getY()))) - ck0Var2.getY();
-                                float measuredWidth = q61Var2.getMeasuredWidth();
-                                if (q61Var2.L) {
+                                float x13 = ((yVar.h0.getX() + (yVar.getX() + i61Var2.getX())) - dk0Var2.getX()) - AndroidUtilities.dp(1.0f);
+                                float y12 = (yVar.h0.getY() + (yVar.g0.getY() + (yVar.getY() + i61Var2.getY()))) - dk0Var2.getY();
+                                float measuredWidth = i61Var2.getMeasuredWidth();
+                                if (i61Var2.L) {
                                     i16 = 4;
                                 } else {
                                     i16 = 4;
@@ -328,15 +328,15 @@ public final class b0 extends FrameLayout {
                                         float f32 = x12;
                                         float lerp3 = AndroidUtilities.lerp(f18, f31, c0Var.j);
                                         float f33 = f18;
-                                        float measuredWidth2 = measuredWidth / ck0Var2.getMeasuredWidth();
+                                        float measuredWidth2 = measuredWidth / dk0Var2.getMeasuredWidth();
                                         i15 = save;
                                         rectF5 = rectF;
                                         f17 = AndroidUtilities.lerp(1.0f, measuredWidth2, c0Var.j);
-                                        if (dk0Var.y != 0) {
+                                        if (ek0Var.y != 0) {
                                             f22 = AndroidUtilities.dp(6.0f);
                                             f24 = f22;
                                             f23 = 0.0f;
-                                        } else if (dk0Var.w) {
+                                        } else if (ek0Var.w) {
                                             f22 = AndroidUtilities.dp(6.0f);
                                             f23 = f22;
                                             f24 = f23;
@@ -385,7 +385,7 @@ public final class b0 extends FrameLayout {
                                     f19 = x13;
                                     f20 = measuredWidth;
                                 }
-                                float f34 = q61Var2.L ? 0.95f * f20 : f20;
+                                float f34 = i61Var2.L ? 0.95f * f20 : f20;
                                 float f35 = (measuredWidth - f34) / f12;
                                 measuredWidth = f34;
                                 f21 = f19 + f35;
@@ -397,11 +397,11 @@ public final class b0 extends FrameLayout {
                                 float f322 = x12;
                                 float lerp32 = AndroidUtilities.lerp(f18, f312, c0Var.j);
                                 float f332 = f18;
-                                float measuredWidth22 = measuredWidth / ck0Var2.getMeasuredWidth();
+                                float measuredWidth22 = measuredWidth / dk0Var2.getMeasuredWidth();
                                 i15 = save;
                                 rectF5 = rectF;
                                 f17 = AndroidUtilities.lerp(1.0f, measuredWidth22, c0Var.j);
-                                if (dk0Var.y != 0) {
+                                if (ek0Var.y != 0) {
                                 }
                                 f25 = 0.0f;
                                 canvas2.translate(lerp22, lerp32);
@@ -421,38 +421,38 @@ public final class b0 extends FrameLayout {
                                 i15 = save;
                                 hashMap2 = hashMap;
                                 rectF6 = rectF2;
-                                canvas2.translate(ck0Var2.getX() + childAt.getX(), ck0Var2.getY() + childAt.getY());
+                                canvas2.translate(dk0Var2.getX() + childAt.getX(), dk0Var2.getY() + childAt.getY());
                                 f13 = 0.0f;
                                 f14 = 0.0f;
                                 f15 = 0.0f;
                                 f16 = 0.0f;
                                 f17 = 1.0f;
                             }
-                            if (q61Var2 != null) {
-                                if (q61Var2.L) {
-                                    float measuredWidth3 = dk0Var.getMeasuredWidth() / f12;
-                                    float measuredHeight = dk0Var.getMeasuredHeight() / f12;
-                                    float measuredWidth4 = dk0Var.getMeasuredWidth() - AndroidUtilities.dp(f12);
-                                    float lerp4 = AndroidUtilities.lerp(measuredWidth4, (q61Var2.getMeasuredWidth() - AndroidUtilities.dp(f12)) / f17, c0Var.j);
+                            if (i61Var2 != null) {
+                                if (i61Var2.L) {
+                                    float measuredWidth3 = ek0Var.getMeasuredWidth() / f12;
+                                    float measuredHeight = ek0Var.getMeasuredHeight() / f12;
+                                    float measuredWidth4 = ek0Var.getMeasuredWidth() - AndroidUtilities.dp(f12);
+                                    float lerp4 = AndroidUtilities.lerp(measuredWidth4, (i61Var2.getMeasuredWidth() - AndroidUtilities.dp(f12)) / f17, c0Var.j);
                                     RectF rectF11 = AndroidUtilities.rectTmp;
                                     float f36 = lerp4 / f12;
                                     rectF7 = rectF6;
-                                    fk0Var4 = fk0Var;
+                                    gk0Var4 = gk0Var;
                                     rectF11.set(measuredWidth3 - f36, measuredHeight - f36, measuredWidth3 + f36, measuredHeight + f36);
                                     float lerp5 = AndroidUtilities.lerp(measuredWidth4 / f12, AndroidUtilities.dp(4.0f), c0Var.j);
                                     canvas2.drawRoundRect(rectF11, lerp5, lerp5, yVar.L);
                                 } else {
-                                    fk0Var4 = fk0Var;
+                                    gk0Var4 = gk0Var;
                                     rectF7 = rectF6;
                                 }
-                                dk0Var.x = false;
+                                ek0Var.x = false;
                                 if (f13 == 0.0f) {
-                                    dk0Var.draw(canvas2);
+                                    ek0Var.draw(canvas2);
                                 } else {
-                                    ImageReceiver imageReceiver = ck0Var2.getImageReceiver();
-                                    dk0Var.b();
-                                    o5 o5Var = ck0Var2.e;
-                                    if (o5Var != null && (l4Var3 = o5Var.k) != null) {
+                                    ImageReceiver imageReceiver = dk0Var2.getImageReceiver();
+                                    ek0Var.b();
+                                    q5 q5Var = dk0Var2.e;
+                                    if (q5Var != null && (l4Var3 = q5Var.k) != null) {
                                         imageReceiver = l4Var3;
                                     }
                                     int[] roundRadius = imageReceiver.getRoundRadius();
@@ -466,39 +466,39 @@ public final class b0 extends FrameLayout {
                                         i21++;
                                     }
                                     imageReceiver.setRoundRadius((int) AndroidUtilities.lerp(f14, 0.0f, c0Var.j), (int) AndroidUtilities.lerp(f15, 0.0f, c0Var.j), (int) AndroidUtilities.lerp(f16, 0.0f, c0Var.j), (int) AndroidUtilities.lerp(f13, 0.0f, c0Var.j));
-                                    dk0Var.draw(canvas2);
+                                    ek0Var.draw(canvas2);
                                     imageReceiver.setRoundRadius(iArr);
                                 }
-                                dk0Var.x = true;
-                                if (!q61Var2.b) {
-                                    q61Var2.b = true;
-                                    q61Var2.invalidate();
+                                ek0Var.x = true;
+                                if (!i61Var2.b) {
+                                    i61Var2.b = true;
+                                    i61Var2.invalidate();
                                 }
                             } else {
-                                fk0Var4 = fk0Var;
+                                gk0Var4 = gk0Var;
                                 rectF7 = rectF6;
-                                if (dk0Var.r && ck0Var2.getImageReceiver().getLottieAnimation() == null) {
-                                    float alpha = ck0Var.getImageReceiver().getAlpha();
-                                    ck0Var.getImageReceiver().setAlpha((1.0f - clamp) * alpha);
-                                    ck0Var.draw(canvas2);
-                                    ck0Var.getImageReceiver().setAlpha(alpha);
+                                if (ek0Var.r && dk0Var2.getImageReceiver().getLottieAnimation() == null) {
+                                    float alpha = dk0Var.getImageReceiver().getAlpha();
+                                    dk0Var.getImageReceiver().setAlpha((1.0f - clamp) * alpha);
+                                    dk0Var.draw(canvas2);
+                                    dk0Var.getImageReceiver().setAlpha(alpha);
                                 } else {
-                                    dk0Var.b();
-                                    ImageReceiver imageReceiver2 = ck0Var2.getImageReceiver();
-                                    o5 o5Var2 = ck0Var2.e;
-                                    if (o5Var2 != null && (l4Var2 = o5Var2.k) != null) {
+                                    ek0Var.b();
+                                    ImageReceiver imageReceiver2 = dk0Var2.getImageReceiver();
+                                    q5 q5Var2 = dk0Var2.e;
+                                    if (q5Var2 != null && (l4Var2 = q5Var2.k) != null) {
                                         imageReceiver2 = l4Var2;
                                     }
                                     float alpha2 = imageReceiver2.getAlpha();
                                     imageReceiver2.setAlpha((1.0f - clamp) * alpha2);
-                                    ck0Var2.draw(canvas2);
+                                    dk0Var2.draw(canvas2);
                                     imageReceiver2.setAlpha(alpha2);
                                 }
                             }
-                            if (ck0Var2.getVisibility() != 0) {
+                            if (dk0Var2.getVisibility() != 0) {
                                 invalidate();
                             }
-                            fk0Var3 = fk0Var4;
+                            gk0Var3 = gk0Var4;
                             rectF3 = rectF5;
                             rectF4 = rectF7;
                         } else {
@@ -507,10 +507,10 @@ public final class b0 extends FrameLayout {
                             i14 = i17;
                             i15 = save;
                             hashMap2 = hashMap;
-                            fk0Var3 = fk0Var;
+                            gk0Var3 = gk0Var;
                             rectF4 = rectF2;
                             rectF3 = rectF12;
-                            canvas2.translate((rectF12.width() + childAt.getX()) - fk0Var3.w.width(), (childAt.getY() + rectF4.top) - rectF3.top);
+                            canvas2.translate((rectF12.width() + childAt.getX()) - gk0Var3.w.width(), (childAt.getY() + rectF4.top) - rectF3.top);
                             canvas2.saveLayerAlpha(0.0f, 0.0f, childAt.getMeasuredWidth(), childAt.getMeasuredHeight(), (int) ((1.0f - clamp) * 255.0f), 31);
                             float f37 = 1.0f - c0Var.j;
                             canvas2.scale(f37, f37, r14.getMeasuredWidth() >> 1, r14.getMeasuredHeight() >> 1);
@@ -520,7 +520,7 @@ public final class b0 extends FrameLayout {
                         canvas2.restore();
                     }
                     i20 = i13 + 1;
-                    fk0Var = fk0Var3;
+                    gk0Var = gk0Var3;
                     rectF2 = rectF4;
                     rectF = rectF3;
                     hashMap = hashMap2;
@@ -528,11 +528,11 @@ public final class b0 extends FrameLayout {
                     save = i15;
                     i19 = -1;
                 }
-                fk0Var2 = fk0Var;
+                gk0Var2 = gk0Var;
                 i12 = i17;
                 canvas2.restoreToCount(save);
             } else {
-                fk0Var2 = fk0Var;
+                gk0Var2 = gk0Var;
                 i12 = i17;
                 f12 = 2.0f;
             }
@@ -540,34 +540,34 @@ public final class b0 extends FrameLayout {
             int i22 = c0Var.F;
             if (i22 < 5) {
                 if (i22 == 3) {
-                    fk0Var2.setSkipDraw(true);
+                    gk0Var2.setSkipDraw(true);
                 }
                 c0Var.F++;
             }
             Paint paint2 = yVar.X1;
-            e61 e61Var = yVar.h0;
+            w51 w51Var = yVar.h0;
             ImageReceiver imageReceiver3 = yVar.V0;
             if (yVar.S0 != null) {
                 imageReceiver3.setParentView(this);
-                q61 q61Var3 = yVar.S0;
-                if (q61Var3 != null) {
+                i61 i61Var3 = yVar.S0;
+                if (i61Var3 != null) {
                     float f38 = yVar.U0;
                     if (f38 != 1.0f && !yVar.T0 && yVar.h1) {
                         float f39 = f38 + 0.010666667f;
                         yVar.U0 = f39;
                         if (f39 >= 1.0f) {
                             yVar.U0 = 1.0f;
-                            f71 f71Var = yVar.H;
-                            if (f71Var != null) {
-                                fk0 fk0Var6 = (fk0) ((v8.s) f71Var).a;
-                                if (q61Var3.s) {
-                                    fk0Var6.l(q61Var3, q61Var3.x, true);
+                            x61 x61Var = yVar.H;
+                            if (x61Var != null) {
+                                gk0 gk0Var6 = (gk0) ((v8.s) x61Var).a;
+                                if (i61Var3.s) {
+                                    gk0Var6.l(i61Var3, i61Var3.x, true);
                                 } else {
-                                    long j3 = q61Var3.e.documentId;
+                                    long j3 = i61Var3.e.documentId;
                                     p0 p0Var2 = new p0();
                                     p0Var2.g = j3;
                                     p0Var2.h = j3;
-                                    fk0Var6.l(q61Var3, p0Var2, true);
+                                    gk0Var6.l(i61Var3, p0Var2, true);
                                 }
                             }
                         }
@@ -575,16 +575,16 @@ public final class b0 extends FrameLayout {
                     }
                     float f40 = (yVar.U0 * f12) + 1.0f;
                     canvas2.save();
-                    canvas2.translate(yVar.S0.getX() + e61Var.getX(), yVar.S0.getY() + e61Var.getY() + yVar.g0.getY());
-                    paint2.setColor(i6.v0(i6.G8, yVar.Z0));
+                    canvas2.translate(yVar.S0.getX() + w51Var.getX(), yVar.S0.getY() + w51Var.getY() + yVar.g0.getY());
+                    paint2.setColor(h6.v0(h6.G8, yVar.Z0));
                     canvas2.drawRect(0.0f, 0.0f, yVar.S0.getMeasuredWidth(), yVar.S0.getMeasuredHeight(), paint2);
                     canvas2.scale(f40, f40, yVar.S0.getMeasuredWidth() / f12, yVar.S0.getMeasuredHeight());
-                    q61 q61Var4 = yVar.S0;
-                    if (!q61Var4.s) {
-                        imageReceiver3 = q61Var4.r;
+                    i61 i61Var4 = yVar.S0;
+                    if (!i61Var4.s) {
+                        imageReceiver3 = i61Var4.r;
                     }
-                    o5 o5Var3 = yVar.W0;
-                    if (o5Var3 != null && (l4Var = o5Var3.k) != null && l4Var.hasBitmapImage()) {
+                    q5 q5Var3 = yVar.W0;
+                    if (q5Var3 != null && (l4Var = q5Var3.k) != null && l4Var.hasBitmapImage()) {
                         imageReceiver3 = yVar.W0.k;
                     }
                     if (imageReceiver3 != null) {
@@ -613,8 +613,8 @@ public final class b0 extends FrameLayout {
     public final void invalidate() {
         super.invalidate();
         c0 c0Var = this.w;
-        fk0 fk0Var = c0Var.n;
-        if (c0Var.y == 1 || !(fk0Var == null || fk0Var.getDelegate() == null || !fk0Var.getDelegate().q())) {
+        gk0 gk0Var = c0Var.n;
+        if (c0Var.y == 1 || !(gk0Var == null || gk0Var.getDelegate() == null || !gk0Var.getDelegate().q())) {
             c0Var.m.f0.invalidate();
         }
     }

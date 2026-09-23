@@ -23,7 +23,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public abstract class d1 extends CameraView {
     public static final int[] a0 = {1893745684, -215458996, -862041025, -1258375037, -1320049076, -215749424, 1901578030, -215451421, 1908491424, -1321491332, -1155551678, 1908524435, 976847578, -1489198134, 1910814392, -713271737, -2010722764, 1407170066, -821405251, -1394190955, -1394190055, 1407170066, 1407159934, 1407172057, 1231389747, -2076538925, 41497626, 846150482, -1198092731, -251277614, -2073158771, 1273004781};
@@ -150,7 +150,7 @@ public abstract class d1 extends CameraView {
                 tL_inputAppEvent.data = tL_jsonObject;
                 tL_inputAppEvent.peer = (z10 ? 1 : 0) | (p5 ? 2 : 0);
                 tL_help_saveAppLog.events.add(tL_inputAppEvent);
-                ConnectionsManager.getInstance(UserConfig.selectedAccount).sendRequest(tL_help_saveAppLog, new ai.t7(4));
+                ConnectionsManager.getInstance(UserConfig.selectedAccount).sendRequest(tL_help_saveAppLog, new ai.u7(4));
             } catch (Exception unused) {
             }
         }
@@ -167,13 +167,13 @@ public abstract class d1 extends CameraView {
     public final void onDualCameraSuccess() {
         v();
         if (this.H) {
-            rb rbVar = (rb) this;
+            ob obVar = (ob) this;
             if (MessagesController.getGlobalMainSettings().getInt("storysvddualhint", 0) < 2) {
-                AndroidUtilities.runOnUIThread(new androidx.fragment.app.a0(rbVar, 26), 340L);
+                AndroidUtilities.runOnUIThread(new androidx.fragment.app.a0(obVar, 26), 340L);
             }
-            oc ocVar = rbVar.b0;
-            ocVar.F0.setValue(rbVar.isDual());
-            ocVar.F0.setContentDescription(LocaleController.getString(rbVar.isDual() ? R.string.AccDescrDualCameraOn : R.string.AccDescrDualCameraOff));
+            lc lcVar = obVar.b0;
+            lcVar.F0.setValue(obVar.isDual());
+            lcVar.F0.setContentDescription(LocaleController.getString(obVar.isDual() ? R.string.AccDescrDualCameraOn : R.string.AccDescrDualCameraOff));
         }
         t(true);
     }
@@ -610,8 +610,8 @@ public abstract class d1 extends CameraView {
                     boolean z16 = Math.max(f44, (this.T / 2.0f) + f44) > ((float) (getHeight() - AndroidUtilities.dp(66.0f)));
                     if (this.F != z15) {
                         this.F = z15;
-                        oc ocVar = ((rb) this).b0;
-                        ocVar.o1.a(true, z15, ocVar.i0);
+                        lc lcVar = ((ob) this).b0;
+                        lcVar.o1.a(true, z15, lcVar.i0);
                     }
                     if (this.G != z16) {
                         this.G = z16;
@@ -626,8 +626,8 @@ public abstract class d1 extends CameraView {
                     this.s = false;
                     if (this.F) {
                         this.F = false;
-                        oc ocVar2 = ((rb) this).b0;
-                        ocVar2.o1.a(true, false, ocVar2.i0);
+                        lc lcVar2 = ((ob) this).b0;
+                        lcVar2.o1.a(true, false, lcVar2.i0);
                     }
                     if (this.G) {
                         this.G = false;
@@ -637,8 +637,8 @@ public abstract class d1 extends CameraView {
                     this.s = false;
                     if (this.F) {
                         this.F = false;
-                        oc ocVar3 = ((rb) this).b0;
-                        ocVar3.o1.a(true, false, ocVar3.i0);
+                        lc lcVar3 = ((ob) this).b0;
+                        lcVar3.o1.a(true, false, lcVar3.i0);
                     }
                     if (this.G) {
                         this.G = false;

@@ -1,50 +1,20 @@
 package ci;
 
-import android.view.KeyEvent;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class z3 implements o1.f {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ Runnable b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ KeyEvent.Callback d;
+public final class z3 extends w3 {
+    public final /* synthetic */ String k0;
 
-    public /* synthetic */ z3(View view, float f7, Runnable runnable) {
-        this.b = runnable;
-        this.d = view;
-        this.c = f7;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public z3(int i10, Context context, ai.d dVar, float f7, String str) {
+        super(i10, context, dVar, null, true, f7, false, false);
+        this.k0 = str;
     }
 
-    @Override // o1.f
-    public final void a(o1.h hVar, boolean z10, float f7, float f10) {
-        switch (this.a) {
-            case 0:
-                b4 b4Var = (b4) this.d;
-                a4 a4Var = b4Var.b;
-                if (!z10) {
-                    a4Var.setTranslationY(this.c);
-                    a4Var.K = false;
-                    b4Var.d = null;
-                    b4Var.e = null;
-                    Runnable runnable = this.b;
-                    if (runnable != null) {
-                        runnable.run();
-                        break;
-                    }
-                }
-                break;
-            default:
-                AndroidUtilities.lambda$shakeViewSpring$14(this.b, (View) this.d, this.c, hVar, z10, f7, f10);
-                break;
-        }
-    }
-
-    public /* synthetic */ z3(b4 b4Var, float f7, Runnable runnable) {
-        this.d = b4Var;
-        this.c = f7;
-        this.b = runnable;
+    @Override // ci.w3
+    public final String getTitle() {
+        return this.k0;
     }
 }

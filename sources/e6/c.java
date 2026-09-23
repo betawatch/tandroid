@@ -2,7 +2,7 @@ package e6;
 
 import android.os.Looper;
 import android.util.SparseIntArray;
-import ci.p2;
+import ci.o2;
 import com.google.android.gms.cast.MediaInfo;
 import com.google.android.gms.common.api.internal.BasePendingResult;
 import com.google.android.gms.internal.cast.c0;
@@ -13,7 +13,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class c {
     public long b;
@@ -24,7 +24,7 @@ public final class c {
     public final ArrayList g;
     public final ArrayDeque h;
     public final c0 i;
-    public final p2 j;
+    public final o2 j;
     public BasePendingResult k;
     public BasePendingResult l;
     public final Set m = DesugarCollections.synchronizedSet(new HashSet());
@@ -39,7 +39,7 @@ public final class c {
         this.h = new ArrayDeque(20);
         this.i = new c0(Looper.getMainLooper(), 0);
         int i10 = 1;
-        this.j = new p2(this, i10);
+        this.j = new o2(this, i10);
         hVar.p(new d6.c0(this, i10));
         this.f = new s(this);
         this.b = e();

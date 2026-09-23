@@ -1,39 +1,29 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kd0 implements Runnable {
+public final /* synthetic */ class kd0 implements org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ wg0 b;
+    public final /* synthetic */ rg0 b;
 
-    public /* synthetic */ kd0(wg0 wg0Var, int i10) {
+    public /* synthetic */ kd0(rg0 rg0Var, int i10) {
         this.a = i10;
-        this.b = wg0Var;
+        this.b = rg0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.ui.ActionBar.a2
+    public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
             case 0:
-                wg0 wg0Var = this.b;
-                wg0Var.r0 = false;
-                wg0Var.x1(true, true);
-                break;
-            case 1:
-                this.b.c0 = false;
+                rg0 rg0Var = this.b;
+                rg0Var.b[rg0Var.a].d();
+                rg0Var.k1(true, true);
                 break;
             default:
-                wg0 wg0Var2 = this.b;
-                if (wg0Var2.getParentActivity() != null && !wg0Var2.getParentActivity().isFinishing() && wg0Var2.getParentActivity() != null) {
-                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(wg0Var2.getParentActivity());
-                    alertDialog$Builder.a.R = LocaleController.getString(R.string.RestorePasswordNoEmailTitle);
-                    alertDialog$Builder.a.T = LocaleController.getString(R.string.SafetyNetErrorOccurred);
-                    alertDialog$Builder.k(LocaleController.getString(R.string.OK), new pd0(wg0Var2, 1));
-                    alertDialog$Builder.o();
+                rg0 rg0Var2 = this.b;
+                rg0Var2.l0 = true;
+                if (rg0Var2.a != 0) {
+                    rg0Var2.u1(0, true, null, true);
                     break;
                 }
                 break;

@@ -1,40 +1,40 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.NotificationCenter;
+import android.net.Uri;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class g0 extends org.telegram.ui.ActionBar.g5 {
-    public final /* synthetic */ int f;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate h;
+public final /* synthetic */ class g0 implements Utilities.Callback0Return {
+    public final /* synthetic */ i4 a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ boolean[] c;
+    public final /* synthetic */ nf.e d;
 
-    public /* synthetic */ g0(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10) {
-        this.f = i10;
-        this.h = notificationCenterDelegate;
+    public /* synthetic */ g0(i4 i4Var, String str, boolean[] zArr, nf.e eVar) {
+        this.a = i4Var;
+        this.b = str;
+        this.c = zArr;
+        this.d = eVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.g5, org.telegram.ui.ActionBar.z2
-    public boolean g() {
-        switch (this.f) {
-            case 0:
-                h4 h4Var = (h4) this.h;
-                org.telegram.ui.Cells.q9 q9Var = h4Var.P0;
-                if (q9Var == null || !q9Var.y()) {
-                    return true;
-                }
-                h4Var.P0.f(false);
-                return false;
-            default:
-                return super.g();
+    @Override // org.telegram.messenger.Utilities.Callback0Return
+    public final Object run() {
+        String str = this.b;
+        if (!nf.f.f(Uri.parse(str), false, this.c)) {
+            return Boolean.FALSE;
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.g5, org.telegram.ui.ActionBar.z2
-    public void onOpenAnimationEnd() {
-        switch (this.f) {
-            case 1:
-                ((org.telegram.ui.Components.hq0) this.h).Y = true;
-                break;
+        i4 i4Var = this.a;
+        nf.e eVar = this.d;
+        if (eVar != null) {
+            eVar.c = new m4.g0(28, i4Var, eVar);
+        } else {
+            v3 v3Var = i4Var.K;
+            if (v3Var != null) {
+                v3Var.dismiss(true);
+            }
         }
+        nf.f.r(i4Var.L, Uri.parse(str), true, true, false, eVar, null, true, true, false);
+        return Boolean.TRUE;
     }
 }

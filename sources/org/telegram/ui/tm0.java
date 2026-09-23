@@ -1,90 +1,87 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.Vector;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class tm0 implements org.telegram.ui.Components.ti {
-    public final /* synthetic */ on0 a;
+public final /* synthetic */ class tm0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ um0 b;
+    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ TLObject d;
 
-    public tm0(on0 on0Var) {
-        this.a = on0Var;
+    public /* synthetic */ tm0(um0 um0Var, TLObject tLObject, TLRPC.TL_error tL_error) {
+        this.a = 0;
+        this.b = um0Var;
+        this.d = tLObject;
+        this.c = tL_error;
     }
 
-    @Override // org.telegram.ui.Components.ti
-    public final void B1(int i10, boolean z10, boolean z11, int i11, int i12, long j3, boolean z12, boolean z13, long j10) {
-        org.telegram.ui.Components.vi viVar;
-        on0 on0Var = this.a;
-        if (on0Var.getParentActivity() == null || (viVar = on0Var.R0) == null) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                um0 um0Var = this.b;
+                TLObject tLObject = this.d;
+                TLRPC.TL_error tL_error = this.c;
+                in0 in0Var = um0Var.e;
+                if (tLObject instanceof Vector) {
+                    in0Var.y = new TL_account.authorizationForm();
+                    Vector vector = (Vector) tLObject;
+                    int size = vector.objects.size();
+                    for (int i10 = 0; i10 < size; i10++) {
+                        in0Var.y.values.add((TLRPC.TL_secureValue) vector.objects.get(i10));
+                    }
+                    um0Var.a();
+                    break;
+                } else {
+                    if ("APP_VERSION_OUTDATED".equals(tL_error.text)) {
+                        org.telegram.ui.Components.e5.x0(in0Var.getParentActivity(), LocaleController.getString(R.string.UpdateAppAlert), true);
+                    } else {
+                        in0Var.M1(LocaleController.getString(R.string.AppName), tL_error.text);
+                    }
+                    in0Var.N1(true, false);
+                    break;
+                }
+            case 1:
+                um0 um0Var2 = this.b;
+                TLRPC.TL_error tL_error2 = this.c;
+                TLObject tLObject2 = this.d;
+                if (tL_error2 == null) {
+                    TL_account.Password password = (TL_account.Password) tLObject2;
+                    um0Var2.e.J = password;
+                    TwoStepVerificationActivity.m0(password);
+                    um0Var2.b();
+                    break;
+                } else {
+                    um0Var2.getClass();
+                    break;
+                }
+            default:
+                um0 um0Var3 = this.b;
+                TLRPC.TL_error tL_error3 = this.c;
+                TLObject tLObject3 = this.d;
+                if (tL_error3 == null) {
+                    TL_account.Password password2 = (TL_account.Password) tLObject3;
+                    um0Var3.e.J = password2;
+                    TwoStepVerificationActivity.m0(password2);
+                    Utilities.globalQueue.postRunnable(new kf0(um0Var3, um0Var3.b, um0Var3.d, 12));
+                    break;
+                }
+                break;
         }
-        if (i10 != 8 && i10 != 7) {
-            viVar.dismissWithButtonClick(i10);
-            on0Var.F1(i10);
-            return;
-        }
-        if (i10 != 8) {
-            viVar.dismiss(true);
-        }
-        HashMap<Object, Object> selectedPhotos = on0Var.R0.j0.getSelectedPhotos();
-        ArrayList<Object> selectedPhotosOrder = on0Var.R0.j0.getSelectedPhotosOrder();
-        if (selectedPhotos.isEmpty()) {
-            return;
-        }
-        ArrayList arrayList = new ArrayList();
-        for (int i13 = 0; i13 < selectedPhotosOrder.size(); i13++) {
-            MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) selectedPhotos.get(selectedPhotosOrder.get(i13));
-            SendMessagesHelper.SendingMediaInfo sendingMediaInfo = new SendMessagesHelper.SendingMediaInfo();
-            String str = photoEntry.imagePath;
-            if (str != null) {
-                sendingMediaInfo.path = str;
-            } else {
-                sendingMediaInfo.path = photoEntry.path;
-            }
-            arrayList.add(sendingMediaInfo);
-            photoEntry.reset();
-        }
-        on0Var.G1(arrayList);
     }
 
-    @Override // org.telegram.ui.Components.ti
-    public final void K0() {
-        AndroidUtilities.hideKeyboard(this.a.fragmentView.findFocus());
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ boolean S1() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ boolean c0() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final void x0(org.telegram.ui.Components.fh fhVar) {
-        fhVar.run();
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ void U0(Object obj) {
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ void j1(TLRPC.User user) {
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ void u0() {
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ void W1(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j3, boolean z11, long j10) {
+    public /* synthetic */ tm0(um0 um0Var, TLRPC.TL_error tL_error, TLObject tLObject, int i10) {
+        this.a = i10;
+        this.b = um0Var;
+        this.c = tL_error;
+        this.d = tLObject;
     }
 }

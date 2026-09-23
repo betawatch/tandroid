@@ -9,14 +9,14 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.c10;
-import org.telegram.ui.Components.oc;
-import org.telegram.ui.Components.vc;
+import org.telegram.ui.Components.d10;
+import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.xc;
+import org.telegram.ui.ir0;
 import org.telegram.ui.m6;
-import org.telegram.ui.or0;
-import yh.l5;
+import yh.k5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r4 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -35,7 +35,7 @@ public final /* synthetic */ class r4 implements Utilities.Callback {
     public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new c9((TLRPC.UserFull) obj, (org.telegram.ui.web.r) this.c, this.b, (TLRPC.User) this.d, 2));
+                AndroidUtilities.runOnUIThread(new c9((TLRPC.UserFull) obj, (org.telegram.ui.web.q) this.c, this.b, (TLRPC.User) this.d, 2));
                 break;
             case 1:
                 org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) this.c;
@@ -52,40 +52,40 @@ public final /* synthetic */ class r4 implements Utilities.Callback {
                 m6Var.run(Float.valueOf((w7.p.a(((Float) obj).floatValue(), 0.0f, 1.0f) * (1.0f / f10)) + (f7 / f10)), Boolean.FALSE);
                 break;
             case 3:
-                c10 c10Var = (c10) this.c;
+                d10 d10Var = (d10) this.c;
                 Utilities.Callback callback = (Utilities.Callback) this.d;
                 int i11 = this.b;
-                c10Var.getClass();
-                c10Var.A0 = ((Boolean) obj).booleanValue();
-                c10Var.dismiss();
+                d10Var.getClass();
+                d10Var.A0 = ((Boolean) obj).booleanValue();
+                d10Var.dismiss();
                 callback.run(Integer.valueOf(i11));
                 break;
             case 4:
-                Utilities.themeQueue.postRunnable(new l3((qg.p2) this.c, this.b, (List) obj, new ArrayList(), (or0) this.d, 28));
+                Utilities.themeQueue.postRunnable(new l3((qg.p2) this.c, this.b, (List) obj, new ArrayList(), (ir0) this.d, 29));
                 break;
             default:
-                xh.r2 r2Var = (xh.r2) this.c;
+                xh.s2 s2Var = (xh.s2) this.c;
                 int i12 = this.b;
-                xh.n2 n2Var2 = (xh.n2) this.d;
+                xh.o2 o2Var = (xh.o2) this.d;
                 ArrayList arrayList = (ArrayList) obj;
-                org.telegram.ui.ActionBar.n2 n2Var3 = r2Var.a;
-                l5 l5Var = r2Var.e;
-                l5Var.a(i12, arrayList);
-                n2Var2.f(true);
-                r2Var.f(true);
-                r2Var.n();
-                TL_stars.TL_starGiftCollection c10 = l5Var.c(i12);
+                org.telegram.ui.ActionBar.n2 n2Var2 = s2Var.a;
+                k5 k5Var = s2Var.e;
+                k5Var.a(i12, arrayList);
+                o2Var.f(true);
+                s2Var.f(true);
+                s2Var.n();
+                TL_stars.TL_starGiftCollection c10 = k5Var.c(i12);
                 if (c10 != null) {
                     if (arrayList.size() <= 1) {
                         if (arrayList.size() == 1) {
                             TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) arrayList.get(0);
-                            oc R = vc.a0(n2Var3).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2AddedToCollection, yh.z3.D1(savedStarGift.gift), c10.title)));
+                            qc R = xc.a0(n2Var2).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2AddedToCollection, yh.y3.D1(savedStarGift.gift), c10.title)));
                             R.r = false;
                             R.j();
                             break;
                         }
                     } else {
-                        oc R2 = vc.a0(n2Var3).R(((TL_stars.SavedStarGift) arrayList.get(0)).gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("Gift2AddedToCollectionMany", arrayList.size(), c10.title)));
+                        qc R2 = xc.a0(n2Var2).R(((TL_stars.SavedStarGift) arrayList.get(0)).gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("Gift2AddedToCollectionMany", arrayList.size(), c10.title)));
                         R2.r = false;
                         R2.j();
                         break;

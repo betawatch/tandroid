@@ -24,10 +24,10 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.iv0;
-import org.telegram.ui.Components.kn;
-import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.ln;
+import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class m2 implements NotificationCenter.NotificationCenterDelegate, rf.a {
     public static final iv0 X = new iv0(new w1(1), new w1(2));
@@ -50,17 +50,17 @@ public final class m2 implements NotificationCenter.NotificationCenterDelegate, 
     public boolean S;
     public boolean T;
     public a3.d U;
-    public ci.l4 V;
+    public ci.k4 V;
     public boolean W;
     public float a;
     public WindowManager b;
     public WindowManager.LayoutParams c;
     public j2 d;
     public f0 e;
-    public ci.l4 f;
+    public ci.k4 f;
     public FrameLayout h;
-    public org.telegram.ui.Components.u9 n;
-    public kn r;
+    public org.telegram.ui.Components.w9 n;
+    public ln r;
     public boolean s;
     public d2 v;
     public int w;
@@ -125,17 +125,17 @@ public final class m2 implements NotificationCenter.NotificationCenterDelegate, 
         j2Var.addView(m2Var.e, w7.x5.c(-1.0f, -1));
         m2Var.e.setOutlineProvider(new k2(i11));
         m2Var.e.setClipToOutline(true);
-        m2Var.e.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.gg, false));
-        org.telegram.ui.Components.u9 u9Var = new org.telegram.ui.Components.u9(context);
-        m2Var.n = u9Var;
-        m2Var.e.addView(u9Var, w7.x5.c(-1.0f, -1));
-        ci.l4 l4Var = new ci.l4(context, m2Var.w);
-        m2Var.f = l4Var;
-        l4Var.setAlpha(0.0f);
+        m2Var.e.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.gg, false));
+        org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
+        m2Var.n = w9Var;
+        m2Var.e.addView(w9Var, w7.x5.c(-1.0f, -1));
+        ci.k4 k4Var = new ci.k4(context, m2Var.w);
+        m2Var.f = k4Var;
+        k4Var.setAlpha(0.0f);
         m2Var.e.addView(m2Var.f, w7.x5.c(-1.0f, -1));
-        kn knVar = new kn(context, 1);
-        m2Var.r = knVar;
-        m2Var.e.addView(knVar, w7.x5.c(-1.0f, -1));
+        ln lnVar = new ln(context, 1);
+        m2Var.r = lnVar;
+        m2Var.e.addView(lnVar, w7.x5.c(-1.0f, -1));
         FrameLayout frameLayout = new FrameLayout(context);
         m2Var.h = frameLayout;
         frameLayout.setAlpha(0.0f);
@@ -148,10 +148,10 @@ public final class m2 implements NotificationCenter.NotificationCenterDelegate, 
         int dp = AndroidUtilities.dp(8.0f);
         ImageView imageView = new ImageView(context);
         imageView.setImageResource(R.drawable.pip_video_close);
-        int i13 = org.telegram.ui.ActionBar.i6.hg;
-        imageView.setColorFilter(org.telegram.ui.ActionBar.i6.w0(null, i13, false));
-        int i14 = org.telegram.ui.ActionBar.i6.i6;
-        imageView.setBackground(org.telegram.ui.ActionBar.i6.f0(org.telegram.ui.ActionBar.i6.w0(null, i14, false), 1, -1));
+        int i13 = org.telegram.ui.ActionBar.h6.hg;
+        imageView.setColorFilter(org.telegram.ui.ActionBar.h6.w0(null, i13, false));
+        int i14 = org.telegram.ui.ActionBar.h6.i6;
+        imageView.setBackground(org.telegram.ui.ActionBar.h6.f0(org.telegram.ui.ActionBar.h6.w0(null, i14, false), 1, -1));
         imageView.setPadding(dp, dp, dp, dp);
         imageView.setOnClickListener(new e2(i11));
         float f7 = 38;
@@ -159,8 +159,8 @@ public final class m2 implements NotificationCenter.NotificationCenterDelegate, 
         m2Var.h.addView(imageView, w7.x5.d(38, f7, 5, 0.0f, f10, f10, 0.0f));
         ImageView imageView2 = new ImageView(context);
         imageView2.setImageResource(R.drawable.pip_video_expand);
-        imageView2.setColorFilter(org.telegram.ui.ActionBar.i6.w0(null, i13, false));
-        imageView2.setBackground(org.telegram.ui.ActionBar.i6.f0(org.telegram.ui.ActionBar.i6.w0(null, i14, false), 1, -1));
+        imageView2.setColorFilter(org.telegram.ui.ActionBar.h6.w0(null, i13, false));
+        imageView2.setBackground(org.telegram.ui.ActionBar.h6.f0(org.telegram.ui.ActionBar.h6.w0(null, i14, false), 1, -1));
         imageView2.setPadding(dp, dp, dp, dp);
         imageView2.setOnClickListener(new f2(i11, d2Var, context));
         m2Var.h.addView(imageView2, w7.x5.d(38, f7, 5, 0.0f, f10, 48, 0.0f));
@@ -188,7 +188,7 @@ public final class m2 implements NotificationCenter.NotificationCenterDelegate, 
         m2Var.b.addView(m2Var.d, m2Var.c);
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.setDuration(250L);
-        animatorSet.setInterpolator(qr.f);
+        animatorSet.setInterpolator(rr.f);
         animatorSet.playTogether(ObjectAnimator.ofFloat(m2Var.d, (Property<j2, Float>) View.ALPHA, 1.0f), ObjectAnimator.ofFloat(m2Var.d, (Property<j2, Float>) View.SCALE_X, 1.0f), ObjectAnimator.ofFloat(m2Var.d, (Property<j2, Float>) View.SCALE_Y, 1.0f));
         animatorSet.addListener(new l2(0));
         animatorSet.start();
@@ -235,9 +235,9 @@ public final class m2 implements NotificationCenter.NotificationCenterDelegate, 
         this.W = false;
         this.b.addView(this.d, this.c);
         this.d.invalidate();
-        ci.l4 l4Var = this.V;
-        if (l4Var != null) {
-            l4Var.b();
+        ci.k4 k4Var = this.V;
+        if (k4Var != null) {
+            k4Var.b();
             this.V = null;
         }
         i();
@@ -245,8 +245,8 @@ public final class m2 implements NotificationCenter.NotificationCenterDelegate, 
 
     @Override // rf.a
     public final Bitmap c() {
-        ci.l4 l4Var = this.V;
-        if (l4Var == null || !l4Var.a()) {
+        ci.k4 k4Var = this.V;
+        if (k4Var == null || !k4Var.a()) {
             return null;
         }
         return this.V.getBitmap();
@@ -263,8 +263,8 @@ public final class m2 implements NotificationCenter.NotificationCenterDelegate, 
 
     @Override // rf.a
     public final Bitmap e() {
-        ci.l4 l4Var = this.f;
-        if (l4Var == null || !l4Var.a()) {
+        ci.k4 k4Var = this.f;
+        if (k4Var == null || !k4Var.a()) {
             return null;
         }
         return this.f.getBitmap();
@@ -277,18 +277,18 @@ public final class m2 implements NotificationCenter.NotificationCenterDelegate, 
 
     @Override // rf.a
     public final View h() {
-        ci.l4 l4Var = new ci.l4(this.f.getContext(), this.w);
-        this.V = l4Var;
-        return l4Var;
+        ci.k4 k4Var = new ci.k4(this.f.getContext(), this.w);
+        this.V = k4Var;
+        return k4Var;
     }
 
     public final void i() {
         d2 d2Var = this.v;
         if (d2Var != null) {
             d2Var.v(1.0f);
-            ci.l4 l4Var = this.V;
-            if (l4Var != null) {
-                this.v.s(l4Var.getSink());
+            ci.k4 k4Var = this.V;
+            if (k4Var != null) {
+                this.v.s(k4Var.getSink());
             } else {
                 this.v.s(this.f.getSink());
             }
@@ -296,12 +296,12 @@ public final class m2 implements NotificationCenter.NotificationCenterDelegate, 
         if (this.s) {
             this.r.animate().cancel();
             ViewPropertyAnimator duration = this.r.animate().alpha(0.0f).setDuration(150L);
-            qr qrVar = qr.f;
-            duration.setInterpolator(qrVar).start();
+            rr rrVar = rr.f;
+            duration.setInterpolator(rrVar).start();
             this.n.animate().cancel();
-            this.n.animate().alpha(0.0f).setDuration(150L).setInterpolator(qrVar).start();
+            this.n.animate().alpha(0.0f).setDuration(150L).setInterpolator(rrVar).start();
             this.f.animate().cancel();
-            this.f.animate().alpha(1.0f).setDuration(150L).setInterpolator(qrVar).start();
+            this.f.animate().alpha(1.0f).setDuration(150L).setInterpolator(rrVar).start();
             this.s = false;
         }
         if (this.J == n() * this.M && this.K == m() * this.M) {
@@ -344,7 +344,7 @@ public final class m2 implements NotificationCenter.NotificationCenterDelegate, 
             }
             AnimatorSet animatorSet = new AnimatorSet();
             animatorSet.setDuration(250L);
-            animatorSet.setInterpolator(qr.f);
+            animatorSet.setInterpolator(rr.f);
             animatorSet.playTogether(ObjectAnimator.ofFloat(this.d, (Property<j2, Float>) View.ALPHA, 0.0f), ObjectAnimator.ofFloat(this.d, (Property<j2, Float>) View.SCALE_X, 0.1f), ObjectAnimator.ofFloat(this.d, (Property<j2, Float>) View.SCALE_Y, 0.1f));
             animatorSet.addListener(new n(2, this, z10));
             animatorSet.start();
@@ -387,7 +387,7 @@ public final class m2 implements NotificationCenter.NotificationCenterDelegate, 
     public final void p(boolean z10) {
         ValueAnimator duration = ValueAnimator.ofFloat(z10 ? 0.0f : 1.0f, z10 ? 1.0f : 0.0f).setDuration(200L);
         this.I = duration;
-        duration.setInterpolator(qr.f);
+        duration.setInterpolator(rr.f);
         this.I.addUpdateListener(new a(this, 6));
         this.I.addListener(new b(this, 3));
         this.I.start();

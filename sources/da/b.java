@@ -5,8 +5,8 @@ import a6.i;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
-import ci.t9;
-import ci.z6;
+import ci.q9;
+import ci.y6;
 import com.google.firebase.messaging.n;
 import ei.d5;
 import j$.util.Objects;
@@ -20,7 +20,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
-import k2.v;
 import k5.k;
 import k5.l;
 import k5.t;
@@ -32,13 +31,13 @@ import m.p3;
 import m1.j;
 import m5.e;
 import org.json.JSONObject;
-import org.telegram.ui.rv0;
+import org.telegram.ui.kv0;
 import s5.g;
 import w7.f6;
 import y9.b0;
 import y9.k0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class b {
     public Object a;
@@ -159,8 +158,8 @@ public final class b {
         return (a) ((AtomicReference) this.h).get();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:12:0x0407  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x03eb A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x0406  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x03ea A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -185,7 +184,7 @@ public final class b {
         while (true) {
             final int i13 = 0;
             g gVar = (g) cVar;
-            if (!((Boolean) gVar.f(new t5.b(bVar) { // from class: r5.d
+            if (!((Boolean) gVar.f(new t5.b(bVar) { // from class: r5.e
                 public final /* synthetic */ da.b b;
 
                 {
@@ -224,15 +223,15 @@ public final class b {
                         default:
                             g gVar3 = (g) ((s5.d) this.b.c);
                             gVar3.getClass();
-                            return (Iterable) gVar3.c(new rv0(29, gVar3, iVar2));
+                            return (Iterable) gVar3.c(new kv0(29, gVar3, iVar2));
                     }
                 }
             })).booleanValue()) {
-                gVar.f(new t9(bVar, iVar2, j10, 7));
+                gVar.f(new q9(bVar, iVar2, j10, 7));
                 return;
             }
             final int i14 = 1;
-            Iterable iterable = (Iterable) gVar.f(new t5.b(bVar) { // from class: r5.d
+            Iterable iterable = (Iterable) gVar.f(new t5.b(bVar) { // from class: r5.e
                 public final /* synthetic */ da.b b;
 
                 {
@@ -271,7 +270,7 @@ public final class b {
                         default:
                             g gVar3 = (g) ((s5.d) this.b.c);
                             gVar3.getClass();
-                            return (Iterable) gVar3.c(new rv0(29, gVar3, iVar2));
+                            return (Iterable) gVar3.c(new kv0(29, gVar3, iVar2));
                     }
                 }
             });
@@ -292,7 +291,7 @@ public final class b {
                 if (bArr2 != null) {
                     s5.c cVar2 = (s5.c) bVar.i;
                     Objects.requireNonNull(cVar2);
-                    o5.a aVar3 = (o5.a) gVar.f(new v(cVar2, 28));
+                    o5.a aVar3 = (o5.a) gVar.f(new le.b(cVar2, 29));
                     n nVar = new n();
                     nVar.f = new HashMap();
                     nVar.d = Long.valueOf(((u5.a) bVar.g).q());
@@ -419,7 +418,7 @@ public final class b {
                 try {
                     int i16 = 21;
                     aa.a aVar5 = new aa.a(url, iVar3, str, i16);
-                    d5 d5Var = new d5(bVar2, 29);
+                    d5 d5Var = new d5(bVar2, 28);
                     int i17 = 5;
                     do {
                         c10 = d5Var.c(aVar5);
@@ -466,18 +465,19 @@ public final class b {
             i11 = 2;
             i12 = aVar2.a;
             if (i12 != i11) {
-                gVar.f(new z6(this, iterable, iVar, j3, 4));
+                gVar.f(new y6(this, iterable, iVar, j3, 4));
                 ((lf.i) this.d).V(iVar, i10 + 1, true);
                 return;
             }
             bVar = this;
             iVar2 = iVar;
             j10 = j3;
-            gVar.f(new rv0(26, bVar, iterable));
+            int i19 = 1;
+            gVar.f(new kv0(26, bVar, iterable));
             if (i12 == 1) {
                 j10 = Math.max(j10, aVar2.b);
                 if (bArr != null) {
-                    gVar.f(new r5.e(bVar, 0));
+                    gVar.f(new r5.d(bVar, i19));
                 }
             } else if (i12 == 4) {
                 HashMap hashMap2 = new HashMap();
@@ -490,7 +490,7 @@ public final class b {
                         hashMap2.put(str8, 1);
                     }
                 }
-                gVar.f(new rv0(27, bVar, hashMap2));
+                gVar.f(new kv0(27, bVar, hashMap2));
             }
             bArr2 = bArr;
         }

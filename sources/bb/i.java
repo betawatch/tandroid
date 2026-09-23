@@ -24,19 +24,20 @@ import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLongFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
-import k1.m;
 import k1.n;
 import rd.p;
 import v7.t7;
-import za.k0;
+import za.a0;
+import za.m;
 import za.m0;
-import za.n0;
 import za.o0;
-import za.y;
+import za.p0;
+import za.q0;
+import za.w;
 import zd.c0;
 import zd.e0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class i extends kd.j implements p {
     public final /* synthetic */ int a;
@@ -65,9 +66,9 @@ public final class i extends kd.j implements p {
             case 3:
                 return new i((p) this.c, this.d, cVar, 3);
             case 4:
-                return new i((za.l) this.c, (id.h) this.d, cVar, 4);
+                return new i((m) this.c, (id.h) this.d, cVar, 4);
             case 5:
-                return new i((y) this.c, (String) this.d, cVar, 5);
+                return new i((a0) this.c, (String) this.d, cVar, 5);
             default:
                 return new i((ni.f) this.c, (ArrayList) this.d, cVar, 6);
         }
@@ -120,7 +121,7 @@ public final class i extends kd.j implements p {
         jd.a aVar;
         gd.i iVar;
         AtomicInteger atomicInteger;
-        m mVar;
+        k1.m mVar;
         Object obj2;
         Object obj3;
         ?? r10;
@@ -191,7 +192,7 @@ public final class i extends kd.j implements p {
                         throw new IllegalStateException("Check failed.");
                     }
                     e0.h(((c0) tVar2.b).c());
-                    mVar = (m) tVar2.c;
+                    mVar = (k1.m) tVar2.c;
                     r10 = (be.b) tVar2.d;
                     this.c = mVar;
                     this.b = r82;
@@ -224,7 +225,7 @@ public final class i extends kd.j implements p {
                     iVar2 = iVar;
                     r82 = 1;
                     e0.h(((c0) tVar2.b).c());
-                    mVar = (m) tVar2.c;
+                    mVar = (k1.m) tVar2.c;
                     r10 = (be.b) tVar2.d;
                     this.c = mVar;
                     this.b = r82;
@@ -365,7 +366,7 @@ public final class i extends kd.j implements p {
                     int i142 = u.a;
                     throw th2;
                 }
-                mVar = (m) this.c;
+                mVar = (k1.m) this.c;
                 t7.b(obj);
                 obj2 = null;
                 aVar = aVar4;
@@ -390,8 +391,8 @@ public final class i extends kd.j implements p {
                 Object invoke = pVar.invoke(obj4, this);
                 return invoke == aVar7 ? aVar7 : invoke;
             case 4:
-                za.l lVar3 = (za.l) this.c;
-                h hVar6 = lVar3.b;
+                m mVar2 = (m) this.c;
+                h hVar6 = mVar2.b;
                 jd.a aVar8 = jd.a.a;
                 int i18 = this.b;
                 if (i18 == 0) {
@@ -422,12 +423,12 @@ public final class i extends kd.j implements p {
                         fVar.a = hVar7;
                         fVar.c = new LinkedBlockingDeque(20);
                         fVar.d = new a9.d(fVar, 3);
-                        Object b13 = k9.h.c().b(m0.class);
+                        Object b13 = k9.h.c().b(o0.class);
                         kotlin.jvm.internal.i.d(b13, "Firebase.app[SessionLife…erviceBinder::class.java]");
                         Messenger messenger = new Messenger(new androidx.mediarouter.app.c(hVar7));
                         a9.d serviceConnection = (a9.d) fVar.d;
                         kotlin.jvm.internal.i.e(serviceConnection, "serviceConnection");
-                        k9.h hVar8 = ((n0) ((m0) b13)).a;
+                        k9.h hVar8 = ((p0) ((o0) b13)).a;
                         hVar8.a();
                         Context applicationContext = hVar8.a.getApplicationContext();
                         Intent intent = new Intent(applicationContext, (Class<?>) SessionLifecycleService.class);
@@ -435,15 +436,15 @@ public final class i extends kd.j implements p {
                         intent.setAction(String.valueOf(Process.myPid()));
                         intent.putExtra("ClientCallbackMessenger", messenger);
                         applicationContext.bindService(intent, serviceConnection, 65);
-                        o0.c = fVar;
-                        if (o0.b) {
-                            o0.b = false;
+                        q0.c = fVar;
+                        if (q0.b) {
+                            q0.b = false;
                             fVar.N(1);
                         }
-                        k9.h hVar9 = lVar3.a;
-                        z3.a aVar9 = new z3.a(8);
+                        k9.h hVar9 = mVar2.a;
+                        v3.d dVar = new v3.d(24);
                         hVar9.a();
-                        hVar9.j.add(aVar9);
+                        hVar9.j.add(dVar);
                         return iVar2;
                     }
                     t7.b(obj);
@@ -462,7 +463,7 @@ public final class i extends kd.j implements p {
                 Log.d("FirebaseSessions", "No Sessions subscribers. Not listening to lifecycle events.");
                 return iVar2;
             case 5:
-                jd.a aVar10 = jd.a.a;
+                jd.a aVar9 = jd.a.a;
                 int i19 = this.b;
                 if (i19 != 0) {
                     if (i19 != 1) {
@@ -472,25 +473,25 @@ public final class i extends kd.j implements p {
                     return iVar2;
                 }
                 t7.b(obj);
-                za.u uVar = y.e;
-                Context context = ((y) this.c).a;
-                uVar.getClass();
-                k2.u a10 = y.f.a(context, za.u.a[0]);
+                w wVar = a0.e;
+                Context context = ((a0) this.c).a;
+                wVar.getClass();
+                k2.u a10 = a0.f.a(context, w.a[0]);
                 n nVar = new n((String) obj4, cVar, r83 == true ? 1 : 0);
                 this.b = 1;
-                return a10.T(new n1.c(nVar, null, 1), this) == aVar10 ? aVar10 : iVar2;
+                return a10.T(new n1.c(nVar, null, 1), this) == aVar9 ? aVar9 : iVar2;
             default:
                 ArrayList arrayList = (ArrayList) obj4;
                 ni.f fVar2 = (ni.f) this.c;
-                jd.a aVar11 = jd.a.a;
+                jd.a aVar10 = jd.a.a;
                 int i20 = this.b;
                 if (i20 == 0) {
                     t7.b(obj);
                     ab.c cVar3 = ab.c.a;
                     this.b = 1;
                     b12 = cVar3.b(this);
-                    if (b12 == aVar11) {
-                        return aVar11;
+                    if (b12 == aVar10) {
+                        return aVar10;
                     }
                 } else {
                     if (i20 != 1) {
@@ -510,14 +511,14 @@ public final class i extends kd.j implements p {
                     while (it2.hasNext()) {
                         if (((w9.j) it2.next()).a.a()) {
                             ArrayList f7 = hd.g.f(new ArrayList(new hd.d(new Message[]{ni.f.a(fVar2, arrayList, 2), ni.f.a(fVar2, arrayList, 1)}, true)));
-                            k0 k0Var = new k0();
+                            m0 m0Var = new m0();
                             if (f7.size() <= 1) {
                                 asList = hd.g.m(f7);
                             } else {
                                 Object[] array = f7.toArray(new Object[0]);
                                 kotlin.jvm.internal.i.e(array, "<this>");
                                 if (array.length > 1) {
-                                    Arrays.sort(array, k0Var);
+                                    Arrays.sort(array, m0Var);
                                 }
                                 asList = Arrays.asList(array);
                                 kotlin.jvm.internal.i.d(asList, "asList(...)");

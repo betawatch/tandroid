@@ -13,10 +13,10 @@ import j$.util.Objects;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public class zn0 extends ScrollView {
-    public final org.telegram.ui.ActionBar.e6 a;
+    public final org.telegram.ui.ActionBar.d6 a;
     public final LinearLayout b;
     public final float c;
     public final float[] d;
@@ -25,13 +25,13 @@ public class zn0 extends ScrollView {
     public final ArrayList h;
     public final Path n;
 
-    public zn0(Context context, LinearLayout linearLayout, org.telegram.ui.ActionBar.e6 e6Var, boolean z10) {
+    public zn0(Context context, LinearLayout linearLayout, org.telegram.ui.ActionBar.d6 d6Var, boolean z10) {
         super(context);
         this.c = AndroidUtilities.dp(16.0f);
         this.f = new ArrayList();
         this.h = new ArrayList();
         this.n = new Path();
-        this.a = e6Var;
+        this.a = d6Var;
         this.b = linearLayout;
         setWillNotDraw(false);
         linearLayout.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(z10 ? 12.0f : 4.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f));
@@ -40,7 +40,7 @@ public class zn0 extends ScrollView {
     }
 
     public static boolean e(View view) {
-        return (Objects.equals(view.getTag(), -33024) || (view instanceof org.telegram.ui.Cells.e9) || (view instanceof org.telegram.ui.Cells.a7) || (view instanceof org.telegram.ui.a20)) ? false : true;
+        return (Objects.equals(view.getTag(), -33024) || (view instanceof org.telegram.ui.Cells.f9) || (view instanceof org.telegram.ui.Cells.a7) || (view instanceof org.telegram.ui.y10)) ? false : true;
     }
 
     public final void a(Canvas canvas, View view, View view2) {
@@ -61,7 +61,7 @@ public class zn0 extends ScrollView {
         if (rectF.bottom < rectF.top) {
             return;
         }
-        ll0.O0(canvas, rectF, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), view.getAlpha(), this.a);
+        ml0.O0(canvas, rectF, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), view.getAlpha(), this.a);
     }
 
     public final void b(ViewGroup viewGroup, float f7, float f10) {

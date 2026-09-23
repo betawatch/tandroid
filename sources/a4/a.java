@@ -17,7 +17,7 @@ import java.util.Iterator;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class a {
     public static void A(StringBuilder sb2, String str, String str2, String str3, String str4) {

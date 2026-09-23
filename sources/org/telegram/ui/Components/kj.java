@@ -1,45 +1,133 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Point;
 import android.view.View;
+import android.widget.FrameLayout;
 import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kj implements bl0, pj {
-    public final /* synthetic */ yj a;
+public final class kj extends oi {
+    public ai.w0 n;
+    public int r;
+    public bi.l s;
+    public za v;
+    public int w;
+    public q0.a x;
 
-    public /* synthetic */ kj(yj yjVar) {
-        this.a = yjVar;
+    @Override // org.telegram.ui.Components.oi
+    public final void E(oi oiVar) {
+        wi wiVar = this.b;
+        try {
+            wiVar.X0.getTitleTextView().setBuildFullLayout(true);
+        } catch (Exception unused) {
+        }
+        wiVar.X0.setTitle(LocaleController.getString(R.string.SelectColor));
+        this.s.h1(0, 0);
     }
 
-    @Override // org.telegram.ui.Components.pj
-    public void a(TLRPC.User user, boolean z10, int i10, long j3) {
-        yj yjVar = this.a;
-        yjVar.b.dismiss(true);
-        yjVar.J.a(user, z10, i10, j3);
+    @Override // org.telegram.ui.Components.oi
+    public final void G() {
+        this.n.x0(0);
     }
 
-    @Override // org.telegram.ui.Components.bl0
-    public boolean d(int i10, View view) {
-        Object O;
-        yj yjVar = this.a;
-        s4.h0 adapter = yjVar.s.getAdapter();
-        uj ujVar = yjVar.F;
-        if (adapter == ujVar) {
-            O = ujVar.E(i10);
+    @Override // org.telegram.ui.Components.oi
+    public int getCurrentItemTop() {
+        ai.w0 w0Var = this.n;
+        if (w0Var.getChildCount() <= 0) {
+            w0Var.setTopGlowOffset(w0Var.getPaddingTop());
+            return ConnectionsManager.DEFAULT_DATACENTER_ID;
+        }
+        View childAt = w0Var.getChildAt(0);
+        wk0 wk0Var = (wk0) w0Var.G(childAt);
+        int top = childAt.getTop();
+        int dp = AndroidUtilities.dp(7.0f);
+        if (top < AndroidUtilities.dp(7.0f) || wk0Var == null || wk0Var.b() != 0) {
+            top = dp;
+        }
+        w0Var.setTopGlowOffset(top);
+        return top;
+    }
+
+    @Override // org.telegram.ui.Components.oi
+    public int getFirstOffset() {
+        return AndroidUtilities.dp(56.0f) + getListTopPadding();
+    }
+
+    @Override // org.telegram.ui.Components.oi
+    public int getListTopPadding() {
+        return this.n.getPaddingTop();
+    }
+
+    @Override // org.telegram.ui.Components.oi
+    public final int h() {
+        return 1;
+    }
+
+    public void setDelegate(q0.a aVar) {
+        this.x = aVar;
+    }
+
+    @Override // android.view.View
+    public void setTranslationY(float f7) {
+        super.setTranslationY(f7);
+        this.b.getSheetContainer().invalidate();
+        invalidate();
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:14:0x00ae  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x00b5  */
+    /* JADX WARN: Removed duplicated region for block: B:20:? A[RETURN, SYNTHETIC] */
+    @Override // org.telegram.ui.Components.oi
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void y(int i10, int i11) {
+        int i12;
+        int i13;
+        ai.w0 w0Var = this.n;
+        za zaVar = this.v;
+        if (AndroidUtilities.isTablet()) {
+            this.w = 4;
         } else {
-            sj sjVar = yjVar.E;
-            O = sjVar.O(sjVar.S(i10), sjVar.Q(i10));
+            Point point = AndroidUtilities.displaySize;
+            if (point.x > point.y) {
+                this.w = 4;
+            } else {
+                this.w = 3;
+            }
         }
-        if (O == null) {
-            return false;
+        ((FrameLayout.LayoutParams) getLayoutParams()).topMargin = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
+        int dp = ((i10 - AndroidUtilities.dp(12.0f)) - AndroidUtilities.dp(10.0f)) / this.w;
+        if (this.r != dp) {
+            this.r = dp;
+            zaVar.l();
         }
-        yjVar.L((xj) view, O);
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.pj
-    public /* synthetic */ void b(ArrayList arrayList, String str, boolean z10, int i10, long j3, boolean z11) {
+        this.s.y1(Math.max(1, ((this.w - 1) * AndroidUtilities.dp(5.0f)) + (this.w * dp)));
+        int ceil = (int) Math.ceil((((ArrayList) zaVar.e).size() - 1) / this.w);
+        Math.max(0, ((i11 - ((AndroidUtilities.dp(5.0f) * (ceil - 1)) + (dp * ceil))) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - AndroidUtilities.dp(60.0f));
+        if (!AndroidUtilities.isTablet()) {
+            Point point2 = AndroidUtilities.displaySize;
+            if (point2.x > point2.y) {
+                i12 = (int) (i11 / 3.5f);
+                int dp2 = i12 - AndroidUtilities.dp(52.0f);
+                i13 = dp2 >= 0 ? dp2 : 0;
+                if (w0Var.getPaddingTop() == i13) {
+                    w0Var.setPadding(AndroidUtilities.dp(6.0f), i13, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(48.0f));
+                    return;
+                }
+                return;
+            }
+        }
+        i12 = (i11 / 5) * 2;
+        int dp22 = i12 - AndroidUtilities.dp(52.0f);
+        if (dp22 >= 0) {
+        }
+        if (w0Var.getPaddingTop() == i13) {
+        }
     }
 }

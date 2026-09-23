@@ -3,40 +3,15 @@ package org.telegram.ui.Components;
 import android.opengl.GLES20;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public class a50 {
-    public final int a;
-    public final int b;
-    public final int c;
-    public final int d;
-    public final int e;
-    public final int f;
+public final class a50 extends b50 {
+    public final int g;
+    public final int h;
 
-    public a50(int i10) {
-        int a2 = b50.a(35633, R.raw.round_blur_vert);
-        this.b = a2;
-        int a10 = b50.a(35632, i10);
-        this.c = a10;
-        int glCreateProgram = GLES20.glCreateProgram();
-        GLES20.glAttachShader(glCreateProgram, a2);
-        GLES20.glAttachShader(glCreateProgram, a10);
-        GLES20.glLinkProgram(glCreateProgram);
-        int[] iArr = new int[1];
-        GLES20.glGetProgramiv(glCreateProgram, 35714, iArr, 0);
-        if (iArr[0] == 0) {
-            GLES20.glDeleteProgram(glCreateProgram);
-            glCreateProgram = 0;
-        }
-        this.a = glCreateProgram;
-        this.d = GLES20.glGetAttribLocation(glCreateProgram, "aPosition");
-        this.e = GLES20.glGetAttribLocation(glCreateProgram, "aTextureCoord");
-        this.f = GLES20.glGetUniformLocation(glCreateProgram, "sTexture");
-    }
-
-    public final void a() {
-        GLES20.glDeleteProgram(this.a);
-        GLES20.glDeleteShader(this.b);
-        GLES20.glDeleteShader(this.c);
+    public a50() {
+        super(R.raw.round_blur_stage_2_frag);
+        this.g = GLES20.glGetUniformLocation(this.a, "bTexture");
+        this.h = GLES20.glGetUniformLocation(this.a, "center");
     }
 }

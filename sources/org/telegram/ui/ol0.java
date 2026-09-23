@@ -1,62 +1,72 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class ol0 implements TextWatcher {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ PasscodeActivity b;
+public final class ol0 extends org.telegram.ui.Components.g51 {
+    public static final /* synthetic */ int a = 0;
 
-    public /* synthetic */ ol0(PasscodeActivity passcodeActivity, int i10) {
-        this.a = i10;
-        this.b = passcodeActivity;
+    static {
+        org.telegram.ui.Components.g51.setup(new ol0());
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        int i10 = this.a;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        switch (this.a) {
-            case 0:
-                PasscodeActivity passcodeActivity = this.b;
-                jl0 jl0Var = passcodeActivity.O;
-                if (passcodeActivity.N) {
-                    passcodeActivity.n.removeCallbacks(jl0Var);
-                    jl0Var.run();
-                    break;
-                }
-                break;
-            default:
-                PasscodeActivity passcodeActivity2 = this.b;
-                jl0 jl0Var2 = passcodeActivity2.O;
-                if (passcodeActivity2.N) {
-                    passcodeActivity2.n.removeCallbacks(jl0Var2);
-                    jl0Var2.run();
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Components.g51
+    public final void bindView(View view, org.telegram.ui.Components.h51 h51Var, boolean z10, org.telegram.ui.Components.v51 v51Var, org.telegram.ui.Components.d61 d61Var) {
+        pl0 pl0Var = (pl0) view;
+        TL_account.Passkey passkey = (TL_account.Passkey) h51Var.G;
+        View.OnClickListener onClickListener = h51Var.D;
+        TextView textView = pl0Var.f;
+        TextView textView2 = pl0Var.e;
+        org.telegram.ui.ActionBar.d6 d6Var = pl0Var.b;
+        FrameLayout frameLayout = pl0Var.c;
+        org.telegram.ui.Components.w9 w9Var = pl0Var.d;
+        pl0Var.r = passkey.id;
+        long j3 = passkey.software_emoji_id;
+        if (j3 != 0) {
+            w9Var.setAnimatedEmojiDrawable(org.telegram.ui.Components.q5.n(pl0Var.a, j3, null, 3));
+            frameLayout.setBackground(null);
+            w9Var.setColorFilter(null);
+            w9Var.setScaleX(1.0f);
+            w9Var.setScaleY(1.0f);
+        } else {
+            int dp = AndroidUtilities.dp(4.0f);
+            int i10 = org.telegram.ui.ActionBar.h6.G6;
+            frameLayout.setBackground(org.telegram.ui.ActionBar.h6.b0(dp, org.telegram.ui.ActionBar.h6.l1(0.04f, org.telegram.ui.ActionBar.h6.v0(i10, d6Var))));
+            w9Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.l1(0.3f, org.telegram.ui.ActionBar.h6.v0(i10, d6Var)), PorterDuff.Mode.SRC_IN));
+            w9Var.setImageResource(R.drawable.msg2_permissions);
+            w9Var.setScaleX(0.666f);
+            w9Var.setScaleY(0.666f);
+            w9Var.setAnimatedEmojiDrawable(null);
         }
+        if (TextUtils.isEmpty(passkey.name)) {
+            textView2.setText(LocaleController.getString(R.string.PasskeyUnknown));
+        } else {
+            textView2.setText(passkey.name);
+        }
+        int i11 = passkey.last_usage_date;
+        if (i11 != 0) {
+            textView.setText(LocaleController.formatString(R.string.PasskeyLastUsedOn, LocaleController.formatDateTime(i11, false)));
+        } else {
+            textView.setText(LocaleController.formatString(R.string.PasskeyCreatedOn, LocaleController.formatDateTime(passkey.date, false)));
+        }
+        pl0Var.h.setOnClickListener(onClickListener);
+        pl0Var.n = z10;
+        pl0Var.setWillNotDraw(!z10);
     }
 
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        int i13 = this.a;
-    }
-
-    private final void a(Editable editable) {
-    }
-
-    private final void b(Editable editable) {
-    }
-
-    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
+    @Override // org.telegram.ui.Components.g51
+    public final View createView(Context context, org.telegram.ui.Components.ml0 ml0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
+        return new pl0(context, i10, d6Var);
     }
 }

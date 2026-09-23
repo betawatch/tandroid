@@ -34,7 +34,7 @@ import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public class TelegramMediaSession {
     private static final String CONTENT_STYLE_BROWSABLE_HINT = "android.media.browse.CONTENT_STYLE_BROWSABLE_HINT";
@@ -62,10 +62,23 @@ public class TelegramMediaSession {
     private final a0.i chats = new a0.i();
     private final a0.i musicObjects = new a0.i();
     private final a0.i musicQueues = new a0.i();
+    private final a0.i pendingMusicLoads = new a0.i();
+    private final ArrayList<PendingBrowseRequest> pendingBrowseRequests = new ArrayList<>();
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public interface BrowseChildrenCallback {
         void onResult(List<MediaBrowser.MediaItem> list);
+    }
+
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    public static final class PendingBrowseRequest {
+        final BrowseChildrenCallback callback;
+        final String parentMediaId;
+
+        public PendingBrowseRequest(String str, BrowseChildrenCallback browseChildrenCallback) {
+            this.parentMediaId = str;
+            this.callback = browseChildrenCallback;
+        }
     }
 
     private TelegramMediaSession(Context context) {
@@ -89,7 +102,7 @@ public class TelegramMediaSession {
         b0Var.f(new PlaybackStateCompat(0, 0L, 0L, 1.0f, getAvailableActions(), 0, null, SystemClock.elapsedRealtime(), arrayList, -1L, null));
         updateRepeatMode();
         updateShuffleMode();
-        NotificationCenter.getGlobalInstance().addObserver(new w1(this, 1), NotificationCenter.activeAccountChanged);
+        NotificationCenter.getGlobalInstance().addObserver(new x1(this, 1), NotificationCenter.activeAccountChanged);
     }
 
     private void applyQueueFor(long j3) {
@@ -144,6 +157,17 @@ public class TelegramMediaSession {
         }
     }
 
+    private long getDialogIdFromMediaId(String str) {
+        if (str != null && str.startsWith(MEDIA_ID_CHAT_PREFIX)) {
+            try {
+                return Long.parseLong(str.substring(7));
+            } catch (Exception e) {
+                FileLog.e(e);
+            }
+        }
+        return 0L;
+    }
+
     public static TelegramMediaSession getInstance(Context context) {
         if (instance == null) {
             synchronized (TelegramMediaSession.class) {
@@ -183,106 +207,166 @@ public class TelegramMediaSession {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$loadBrowseChildren$3(BrowseChildrenCallback browseChildrenCallback, String str) {
+        browseChildrenCallback.onResult(loadChildrenSync(str));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$loadChats$4(int i10, ArrayList arrayList, a0.i iVar, a0.i iVar2) {
+        if (i10 != this.currentAccount) {
+            return;
+        }
+        this.dialogs.clear();
+        this.dialogs.addAll(arrayList);
+        this.users.b();
+        for (int i11 = 0; i11 < iVar.m(); i11++) {
+            this.users.k((TLRPC.User) iVar.n(i11), iVar.j(i11));
+        }
+        this.chats.b();
+        for (int i12 = 0; i12 < iVar2.m(); i12++) {
+            this.chats.k((TLRPC.Chat) iVar2.n(i12), iVar2.j(i12));
+        }
         this.chatsLoaded = true;
         this.loadingChats = false;
         if (this.lastSelectedDialog == 0 && !this.dialogs.isEmpty()) {
             this.lastSelectedDialog = this.dialogs.get(0).longValue();
         }
-        applyQueueFor(this.lastSelectedDialog);
-        browseChildrenCallback.onResult(loadChildrenSync(str));
+        ArrayList arrayList2 = new ArrayList(this.pendingBrowseRequests);
+        this.pendingBrowseRequests.clear();
+        for (int i13 = 0; i13 < arrayList2.size(); i13++) {
+            PendingBrowseRequest pendingBrowseRequest = (PendingBrowseRequest) arrayList2.get(i13);
+            loadBrowseChildren(pendingBrowseRequest.parentMediaId, pendingBrowseRequest.callback);
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void lambda$loadBrowseChildren$4(MessagesStorage messagesStorage, BrowseChildrenCallback browseChildrenCallback, String str) {
-        NativeByteBuffer byteBufferValue;
+    public /* synthetic */ void lambda$loadChats$5(MessagesStorage messagesStorage, int i10) {
+        ArrayList arrayList = new ArrayList();
+        a0.i iVar = new a0.i();
+        a0.i iVar2 = new a0.i();
         try {
-            ArrayList<Long> arrayList = new ArrayList<>();
-            ArrayList arrayList2 = new ArrayList();
+            ArrayList<Long> arrayList2 = new ArrayList<>();
+            ArrayList arrayList3 = new ArrayList();
             SQLiteDatabase database = messagesStorage.getDatabase();
             Locale locale = Locale.US;
-            int i10 = 0;
+            int i11 = 0;
             SQLiteCursor queryFinalized = database.queryFinalized("SELECT DISTINCT uid FROM media_v4 WHERE uid != 0 AND mid > 0 AND type = 4", new Object[0]);
             while (queryFinalized.next()) {
                 long longValue = queryFinalized.longValue(0);
                 if (!DialogObject.isEncryptedDialog(longValue)) {
-                    this.dialogs.add(Long.valueOf(longValue));
+                    arrayList.add(Long.valueOf(longValue));
                     if (DialogObject.isUserDialog(longValue)) {
-                        arrayList.add(Long.valueOf(longValue));
+                        arrayList2.add(Long.valueOf(longValue));
                     } else {
-                        arrayList2.add(Long.valueOf(-longValue));
+                        arrayList3.add(Long.valueOf(-longValue));
                     }
                 }
             }
             queryFinalized.dispose();
-            if (!this.dialogs.isEmpty()) {
-                SQLiteDatabase database2 = messagesStorage.getDatabase();
-                Locale locale2 = Locale.US;
-                SQLiteCursor queryFinalized2 = database2.queryFinalized("SELECT uid, data, mid FROM media_v4 WHERE uid != 0 AND mid > 0 AND type = 4 ORDER BY uid, date DESC, mid DESC", new Object[0]);
-                while (queryFinalized2.next()) {
-                    long longValue2 = queryFinalized2.longValue(0);
-                    if (!DialogObject.isEncryptedDialog(longValue2) && (byteBufferValue = queryFinalized2.byteBufferValue(1)) != null) {
-                        TLRPC.Message TLdeserialize = TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
-                        TLdeserialize.readAttachPath(byteBufferValue, UserConfig.getInstance(this.currentAccount).clientUserId);
-                        byteBufferValue.reuse();
-                        if (MessageObject.isMusicMessage(TLdeserialize)) {
-                            TLdeserialize.id = queryFinalized2.intValue(2);
-                            TLdeserialize.dialog_id = longValue2;
-                            ArrayList arrayList3 = (ArrayList) this.musicObjects.f(longValue2);
-                            ArrayList arrayList4 = (ArrayList) this.musicQueues.f(longValue2);
-                            if (arrayList3 == null) {
-                                arrayList3 = new ArrayList();
-                                this.musicObjects.k(arrayList3, longValue2);
-                                arrayList4 = new ArrayList();
-                                this.musicQueues.k(arrayList4, longValue2);
-                            }
-                            MessageObject messageObject = new MessageObject(this.currentAccount, TLdeserialize, false, true);
-                            arrayList3.add(messageObject);
-                            arrayList4.add(new MediaSessionCompat$QueueItem(null, new MediaDescriptionCompat(longValue2 + "_" + arrayList3.size(), messageObject.getMusicTitle(), messageObject.getMusicAuthor(), null, null, null, null, null), arrayList4.size()));
-                        }
-                    }
+            if (!arrayList2.isEmpty()) {
+                ArrayList<TLRPC.User> arrayList4 = new ArrayList<>();
+                messagesStorage.getUsersInternal(arrayList2, arrayList4);
+                int size = arrayList4.size();
+                int i12 = 0;
+                while (i12 < size) {
+                    TLRPC.User user = arrayList4.get(i12);
+                    i12++;
+                    TLRPC.User user2 = user;
+                    iVar.k(user2, user2.id);
                 }
-                queryFinalized2.dispose();
-                for (int i11 = 0; i11 < this.musicObjects.m(); i11++) {
-                    Collections.reverse((List) this.musicObjects.n(i11));
-                }
-                for (int i12 = 0; i12 < this.musicQueues.m(); i12++) {
-                    Collections.reverse((List) this.musicQueues.n(i12));
-                }
-                if (!arrayList.isEmpty()) {
-                    ArrayList<TLRPC.User> arrayList5 = new ArrayList<>();
-                    messagesStorage.getUsersInternal(arrayList, arrayList5);
-                    int size = arrayList5.size();
-                    int i13 = 0;
-                    while (i13 < size) {
-                        TLRPC.User user = arrayList5.get(i13);
-                        i13++;
-                        TLRPC.User user2 = user;
-                        this.users.k(user2, user2.id);
-                    }
-                }
-                if (!arrayList2.isEmpty()) {
-                    ArrayList<TLRPC.Chat> arrayList6 = new ArrayList<>();
-                    messagesStorage.getChatsInternal(TextUtils.join(",", arrayList2), arrayList6);
-                    int size2 = arrayList6.size();
-                    while (i10 < size2) {
-                        TLRPC.Chat chat = arrayList6.get(i10);
-                        i10++;
-                        TLRPC.Chat chat2 = chat;
-                        this.chats.k(chat2, chat2.id);
-                    }
+            }
+            if (!arrayList3.isEmpty()) {
+                ArrayList<TLRPC.Chat> arrayList5 = new ArrayList<>();
+                messagesStorage.getChatsInternal(TextUtils.join(",", arrayList3), arrayList5);
+                int size2 = arrayList5.size();
+                while (i11 < size2) {
+                    TLRPC.Chat chat = arrayList5.get(i11);
+                    i11++;
+                    TLRPC.Chat chat2 = chat;
+                    iVar2.k(chat2, chat2.id);
                 }
             }
         } catch (Exception e) {
             FileLog.e(e);
         }
-        AndroidUtilities.runOnUIThread(new z8(this, browseChildrenCallback, str, 26));
+        AndroidUtilities.runOnUIThread(new ei.l3(this, i10, arrayList, iVar, iVar2, 12));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$loadMusicForDialog$6(int i10, long j3, ArrayList arrayList, ArrayList arrayList2) {
+        if (i10 != this.currentAccount) {
+            return;
+        }
+        this.musicObjects.k(arrayList, j3);
+        this.musicQueues.k(arrayList2, j3);
+        ArrayList arrayList3 = (ArrayList) this.pendingMusicLoads.f(j3);
+        this.pendingMusicLoads.l(j3);
+        if (j3 == this.lastSelectedDialog) {
+            applyQueueFor(j3);
+        }
+        if (arrayList3 != null) {
+            for (int i11 = 0; i11 < arrayList3.size(); i11++) {
+                ((Runnable) arrayList3.get(i11)).run();
+            }
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void lambda$loadMusicForDialog$7(MessagesStorage messagesStorage, long j3, int i10) {
+        int i11;
+        ArrayList arrayList = new ArrayList();
+        ArrayList arrayList2 = new ArrayList();
+        try {
+            SQLiteDatabase database = messagesStorage.getDatabase();
+            Locale locale = Locale.US;
+            SQLiteCursor queryFinalized = database.queryFinalized("SELECT data, mid FROM media_v4 WHERE uid = " + j3 + " AND mid > 0 AND type = 4 ORDER BY date DESC, mid DESC", new Object[0]);
+            while (queryFinalized.next()) {
+                NativeByteBuffer byteBufferValue = queryFinalized.byteBufferValue(0);
+                if (byteBufferValue != null) {
+                    TLRPC.Message TLdeserialize = TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
+                    TLdeserialize.readAttachPath(byteBufferValue, UserConfig.getInstance(i10).clientUserId);
+                    byteBufferValue.reuse();
+                    if (MessageObject.isMusicMessage(TLdeserialize)) {
+                        TLdeserialize.id = queryFinalized.intValue(1);
+                        TLdeserialize.dialog_id = j3;
+                        i11 = i10;
+                        try {
+                            MessageObject messageObject = new MessageObject(i11, TLdeserialize, false, true);
+                            arrayList.add(messageObject);
+                            arrayList2.add(new MediaSessionCompat$QueueItem(null, new MediaDescriptionCompat(j3 + "_" + arrayList.size(), messageObject.getMusicTitle(), messageObject.getMusicAuthor(), null, null, null, null, null), arrayList2.size()));
+                        } catch (Exception e) {
+                            e = e;
+                            FileLog.e(e);
+                            AndroidUtilities.runOnUIThread(new ai.m8(this, i11, j3, arrayList, arrayList2, 7));
+                        }
+                    }
+                }
+            }
+            i11 = i10;
+            queryFinalized.dispose();
+            Collections.reverse(arrayList);
+            Collections.reverse(arrayList2);
+        } catch (Exception e7) {
+            e = e7;
+            i11 = i10;
+        }
+        AndroidUtilities.runOnUIThread(new ai.m8(this, i11, j3, arrayList, arrayList2, 7));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$0(int i10, int i11, Object[] objArr) {
         if (i10 == NotificationCenter.activeAccountChanged) {
-            AndroidUtilities.runOnUIThread(new vg(this, 15));
+            AndroidUtilities.runOnUIThread(new ug(this, 15));
         }
+    }
+
+    private void loadChats() {
+        if (this.loadingChats) {
+            return;
+        }
+        this.loadingChats = true;
+        int i10 = this.currentAccount;
+        MessagesStorage messagesStorage = MessagesStorage.getInstance(i10);
+        messagesStorage.getStorageQueue().postRunnable(new q4(this, messagesStorage, i10, 22));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:12:0x005d, code lost:
@@ -363,6 +447,26 @@ public class TelegramMediaSession {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    public void loadMusicForDialog(long j3, Runnable runnable) {
+        ArrayList arrayList = (ArrayList) this.pendingMusicLoads.f(j3);
+        if (arrayList != null) {
+            if (runnable != null) {
+                arrayList.add(runnable);
+                return;
+            }
+            return;
+        }
+        ArrayList arrayList2 = new ArrayList();
+        if (runnable != null) {
+            arrayList2.add(runnable);
+        }
+        this.pendingMusicLoads.k(arrayList2, j3);
+        int i10 = this.currentAccount;
+        MessagesStorage messagesStorage = MessagesStorage.getInstance(i10);
+        messagesStorage.getStorageQueue().postRunnable(new j7(this, messagesStorage, j3, i10, 10));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
     public void onAccountSwitched() {
         int i10 = UserConfig.selectedAccount;
         this.currentAccount = i10;
@@ -374,6 +478,7 @@ public class TelegramMediaSession {
         this.chats.b();
         this.musicObjects.b();
         this.musicQueues.b();
+        this.pendingMusicLoads.b();
         try {
             this.session.g(null);
             this.session.a.a.setQueueTitle(null);
@@ -386,7 +491,7 @@ public class TelegramMediaSession {
     }
 
     public Bundle buildRootHints() {
-        Bundle e = y0.e(2, CONTENT_STYLE_SUPPORTED, CONTENT_STYLE_BROWSABLE_HINT, true);
+        Bundle e = z0.e(2, CONTENT_STYLE_SUPPORTED, CONTENT_STYLE_BROWSABLE_HINT, true);
         e.putInt(CONTENT_STYLE_PLAYABLE_HINT, 1);
         return e;
     }
@@ -434,7 +539,7 @@ public class TelegramMediaSession {
                 hashMap.put(Long.valueOf(dialog.id), Integer.valueOf(i10));
             }
         }
-        Collections.sort(arrayList, new rk(hashMap, 0));
+        Collections.sort(arrayList, new qk(hashMap, 0));
         return arrayList;
     }
 
@@ -475,13 +580,17 @@ public class TelegramMediaSession {
     }
 
     public void loadBrowseChildren(String str, BrowseChildrenCallback browseChildrenCallback) {
-        if (this.chatsLoaded) {
-            browseChildrenCallback.onResult(loadChildrenSync(str));
+        if (!this.chatsLoaded) {
+            this.pendingBrowseRequests.add(new PendingBrowseRequest(str, browseChildrenCallback));
+            loadChats();
             return;
         }
-        this.loadingChats = true;
-        MessagesStorage messagesStorage = MessagesStorage.getInstance(this.currentAccount);
-        messagesStorage.getStorageQueue().postRunnable(new ai(this, messagesStorage, browseChildrenCallback, str, 4));
+        long dialogIdFromMediaId = getDialogIdFromMediaId(str);
+        if (dialogIdFromMediaId == 0 || this.musicObjects.f(dialogIdFromMediaId) != null) {
+            browseChildrenCallback.onResult(loadChildrenSync(str));
+        } else {
+            loadMusicForDialog(dialogIdFromMediaId, new n8(this, browseChildrenCallback, str, 27));
+        }
     }
 
     public void publishMetadata(MessageObject messageObject, jf.a aVar, Bitmap bitmap) {
@@ -520,7 +629,7 @@ public class TelegramMediaSession {
         this.session.i(SharedConfig.shuffleMusic ? 1 : 0);
     }
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public final class SessionCallback extends android.support.v4.media.session.s {
         private SessionCallback() {
         }
@@ -531,7 +640,7 @@ public class TelegramMediaSession {
         }
 
         private void notifyPlayStateForNotificationRefresh() {
-            AndroidUtilities.runOnUIThread(new e1(this, 10));
+            AndroidUtilities.runOnUIThread(new f1(this, 10));
         }
 
         @Override // android.support.v4.media.session.s
@@ -556,12 +665,13 @@ public class TelegramMediaSession {
             if (playingMessageObject != null) {
                 MediaController.getInstance().playMessage(playingMessageObject);
             } else if (TelegramMediaSession.this.lastSelectedDialog != 0) {
-                onPlayFromMediaId(TelegramMediaSession.this.lastSelectedDialog + "_0", null);
+                lambda$onPlayFromMediaId$1(TelegramMediaSession.this.lastSelectedDialog + "_0", null);
             }
         }
 
         @Override // android.support.v4.media.session.s
-        public void onPlayFromMediaId(String str, Bundle bundle) {
+        /* renamed from: onPlayFromMediaId, reason: merged with bridge method [inline-methods] */
+        public void lambda$onPlayFromMediaId$1(String str, Bundle bundle) {
             if (TextUtils.isEmpty(str)) {
                 return;
             }
@@ -573,8 +683,12 @@ public class TelegramMediaSession {
                 long parseLong = Long.parseLong(split[0]);
                 int parseInt = Integer.parseInt(split[1]);
                 ArrayList<MessageObject> arrayList = (ArrayList) TelegramMediaSession.this.musicObjects.f(parseLong);
+                if (arrayList == null) {
+                    TelegramMediaSession.this.loadMusicForDialog(parseLong, new f0(this, str, bundle, 5));
+                    return;
+                }
                 ArrayList arrayList2 = (ArrayList) TelegramMediaSession.this.musicQueues.f(parseLong);
-                if (arrayList != null && parseInt >= 0 && parseInt < arrayList.size()) {
+                if (parseInt >= 0 && parseInt < arrayList.size()) {
                     TelegramMediaSession.this.lastSelectedDialog = parseLong;
                     MessagesController.getNotificationsSettings(TelegramMediaSession.this.currentAccount).edit().putLong("auto_lastSelectedDialog", parseLong).apply();
                     MediaController.getInstance().setPlaylist(arrayList, arrayList.get(parseInt), 0L, false, null);
@@ -609,7 +723,7 @@ public class TelegramMediaSession {
                         String str4 = user.last_name;
                         String lowerCase3 = str4 != null ? str4.toLowerCase() : null;
                         if ((lowerCase2 != null && lowerCase2.contains(lowerCase)) || (lowerCase3 != null && lowerCase3.contains(lowerCase))) {
-                            onPlayFromMediaId(longValue + "_0", null);
+                            lambda$onPlayFromMediaId$1(longValue + "_0", null);
                             return;
                         }
                     } else {
@@ -618,7 +732,7 @@ public class TelegramMediaSession {
                 } else {
                     TLRPC.Chat chat = (TLRPC.Chat) TelegramMediaSession.this.chats.f(-longValue);
                     if (chat != null && (str2 = chat.title) != null && str2.toLowerCase().contains(lowerCase)) {
-                        onPlayFromMediaId(longValue + "_0", null);
+                        lambda$onPlayFromMediaId$1(longValue + "_0", null);
                         return;
                     }
                 }
@@ -627,7 +741,7 @@ public class TelegramMediaSession {
 
         @Override // android.support.v4.media.session.s
         public void onPrepareFromMediaId(String str, Bundle bundle) {
-            onPlayFromMediaId(str, bundle);
+            lambda$onPlayFromMediaId$1(str, bundle);
         }
 
         @Override // android.support.v4.media.session.s

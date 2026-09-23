@@ -1,30 +1,26 @@
 package za;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+import android.app.Application;
+import android.content.Context;
+import android.util.Log;
+
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class m {
-    public final String a;
+    public final k9.h a;
+    public final bb.h b;
 
-    public m(String str) {
-        this.a = str;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public m(k9.h hVar, bb.h hVar2, id.h hVar3) {
+        this.a = hVar;
+        this.b = hVar2;
+        Log.d("FirebaseSessions", "Initializing Firebase Sessions SDK.");
+        hVar.a();
+        Context applicationContext = hVar.a.getApplicationContext();
+        if (applicationContext instanceof Application) {
+            ((Application) applicationContext).registerActivityLifecycleCallbacks(q0.a);
+            zd.e0.q(zd.e0.b(hVar3), new bb.i(this, hVar3, null, 4));
+        } else {
+            Log.e("FirebaseSessions", "Failed to register lifecycle callbacks, unexpected context " + applicationContext.getClass() + '.');
         }
-        return (obj instanceof m) && kotlin.jvm.internal.i.a(this.a, ((m) obj).a);
-    }
-
-    public final int hashCode() {
-        String str = this.a;
-        if (str == null) {
-            return 0;
-        }
-        return str.hashCode();
-    }
-
-    public final String toString() {
-        return "FirebaseSessionsData(sessionId=" + this.a + ')';
     }
 }

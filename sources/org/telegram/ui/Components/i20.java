@@ -1,19 +1,6 @@
 package org.telegram.ui.Components;
 
-import android.view.MotionEvent;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public interface i20 {
-    void b1();
-
-    boolean onDown(MotionEvent motionEvent);
-
-    boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10);
-
-    void onLongPress(MotionEvent motionEvent);
-
-    boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10);
-
-    boolean onSingleTapUp(MotionEvent motionEvent);
 }

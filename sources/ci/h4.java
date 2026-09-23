@@ -3,31 +3,37 @@ package ci;
 import android.view.View;
 import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class h4 implements ViewTreeObserver.OnGlobalLayoutListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class h4 implements View.OnAttachStateChangeListener {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ View b;
+    public final /* synthetic */ i4 c;
 
-    public /* synthetic */ h4(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public h4(i4 i4Var, boolean z10, View view) {
+        this.c = i4Var;
+        this.a = z10;
+        this.b = view;
     }
 
-    @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
-    public final void onGlobalLayout() {
-        switch (this.a) {
-            case 0:
-                ((j4) this.b).d();
-                break;
-            default:
-                pf.e eVar = (pf.e) this.b;
-                View view = eVar.j;
-                if (view != null) {
-                    eVar.e(view);
-                    break;
-                }
-                break;
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewAttachedToWindow(View view) {
+        boolean z10 = this.a;
+        i4 i4Var = this.c;
+        if (z10) {
+            i4Var.b = view.getRootView();
         }
+        View view2 = this.b;
+        view2.getViewTreeObserver().addOnGlobalLayoutListener(i4Var.j);
+        view2.addOnLayoutChangeListener(i4Var.i);
+    }
+
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewDetachedFromWindow(View view) {
+        View view2 = this.b;
+        ViewTreeObserver viewTreeObserver = view2.getViewTreeObserver();
+        i4 i4Var = this.c;
+        viewTreeObserver.removeOnGlobalLayoutListener(i4Var.j);
+        view2.removeOnLayoutChangeListener(i4Var.i);
     }
 }

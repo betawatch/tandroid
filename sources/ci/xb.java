@@ -1,64 +1,122 @@
 package ci;
 
 import android.animation.ValueAnimator;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.aq0;
-import org.telegram.ui.wd1;
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.graphics.RenderNode;
+import android.os.Build;
+import android.view.MotionEvent;
+import android.widget.FrameLayout;
+import java.util.Arrays;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.af0;
+import org.telegram.ui.Components.ik0;
+import org.telegram.ui.Components.jv0;
+import org.telegram.ui.Components.ye0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class xb implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public boolean b = false;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate c;
+public final class xb extends FrameLayout {
+    public final Rect a;
+    public final Rect b;
+    public RenderNode c;
+    public final /* synthetic */ lc d;
 
-    public /* synthetic */ xb(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10) {
-        this.a = i10;
-        this.c = notificationCenterDelegate;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public xb(lc lcVar, Activity activity) {
+        super(activity);
+        this.d = lcVar;
+        this.a = new Rect();
+        this.b = new Rect();
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                oc ocVar = (oc) this.c;
-                ocVar.D2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                wb wbVar = ocVar.C2;
-                if (wbVar != null) {
-                    wbVar.invalidate();
-                }
-                if (!this.b && ocVar.D2 > 0.5f) {
-                    this.b = true;
-                    break;
-                }
-                break;
-            case 1:
-                org.telegram.ui.ad adVar = (org.telegram.ui.ad) this.c;
-                adVar.n0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                adVar.m0.invalidate();
-                if (!this.b && adVar.n0 > 0.5f) {
-                    this.b = true;
-                    break;
-                }
-                break;
-            case 2:
-                aq0 aq0Var = (aq0) this.c;
-                aq0Var.Y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                aq0Var.X.invalidate();
-                if (!this.b && aq0Var.Y > 0.5f) {
-                    this.b = true;
-                    break;
-                }
-                break;
-            default:
-                wd1 wd1Var = (wd1) this.c;
-                wd1Var.i2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                wd1Var.h2.invalidate();
-                if (!this.b && wd1Var.i2 > 0.5f) {
-                    this.b = true;
-                    break;
-                }
-                break;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        Canvas canvas2;
+        boolean z10;
+        int i10 = Build.VERSION.SDK_INT;
+        if (i10 < 31 || !canvas.isHardwareAccelerated() || AndroidUtilities.makingGlobalBlurBitmap) {
+            canvas2 = canvas;
+            z10 = false;
+        } else {
+            if (this.c == null) {
+                this.c = new RenderNode("StoryRecorder.PreviewView");
+            }
+            this.c.setPosition(0, 0, getWidth(), getHeight());
+            canvas2 = this.c.beginRecording();
+            z10 = true;
         }
+        super.dispatchDraw(canvas2);
+        if (!z10 || i10 < 31) {
+            return;
+        }
+        this.c.endRecording();
+        org.telegram.ui.Components.ja jaVar = this.d.r0;
+        if (jaVar != null) {
+            jaVar.g(this, this.c);
+        }
+        canvas.drawRenderNode(this.c);
+    }
+
+    @Override // android.view.View
+    public final void invalidate() {
+        ValueAnimator valueAnimator = this.d.E;
+        if (valueAnimator == null || !valueAnimator.isRunning()) {
+            super.invalidate();
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        if (Build.VERSION.SDK_INT >= 29) {
+            int i14 = i12 - i10;
+            int i15 = i13 - i11;
+            int dp = i15 - AndroidUtilities.dp(120.0f);
+            int dp2 = AndroidUtilities.dp(40.0f);
+            Rect rect = this.a;
+            rect.set(0, dp, dp2, i15);
+            int dp3 = i14 - AndroidUtilities.dp(40.0f);
+            int dp4 = i15 - AndroidUtilities.dp(120.0f);
+            Rect rect2 = this.b;
+            rect2.set(dp3, dp4, i14, i15);
+            setSystemGestureExclusionRects(Arrays.asList(rect, rect2));
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        lc lcVar = this.d;
+        af0 af0Var = lcVar.F1;
+        if (af0Var != null) {
+            float measuredWidth = af0Var.getMeasuredWidth();
+            float measuredHeight = lcVar.F1.getMeasuredHeight();
+            ik0 ik0Var = af0Var.e;
+            ik0Var.a = 0.0f;
+            ik0Var.b = 0.0f;
+            ik0Var.c = measuredWidth;
+            ik0Var.d = measuredHeight;
+        }
+        ye0 ye0Var = lcVar.E1;
+        if (ye0Var != null) {
+            float measuredWidth2 = ye0Var.getMeasuredWidth();
+            float measuredHeight2 = lcVar.E1.getMeasuredHeight();
+            jv0 jv0Var = ye0Var.d;
+            jv0Var.a = measuredWidth2;
+            jv0Var.b = measuredHeight2;
+        }
+    }
+
+    /* JADX WARN: Type inference failed for: r0v1, types: [android.widget.FrameLayout, ci.hc] */
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        ?? r02 = this.d.v2;
+        if (r02 == 0) {
+            return super.onTouchEvent(motionEvent);
+        }
+        r02.m(motionEvent);
+        return true;
     }
 }

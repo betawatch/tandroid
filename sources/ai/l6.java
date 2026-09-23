@@ -1,128 +1,88 @@
 package ai;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import android.widget.TextView;
+import android.text.Layout;
+import android.text.SpannableStringBuilder;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.a70;
-import org.telegram.ui.Components.i81;
-import org.telegram.ui.Components.y71;
-import org.telegram.ui.ci1;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.Components.jw0;
+import org.telegram.ui.Components.p20;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class l6 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class l6 {
+    public final ImageReceiver a;
+    public int b;
+    public StaticLayout c;
+    public final TextPaint d;
+    public r7 e;
+    public final /* synthetic */ m6 f;
 
-    public /* synthetic */ l6(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public l6(m6 m6Var) {
+        this.f = m6Var;
+        ImageReceiver imageReceiver = new ImageReceiver(m6Var);
+        this.a = imageReceiver;
+        TextPaint textPaint = new TextPaint(1);
+        this.d = textPaint;
+        imageReceiver.setAllowLoadingOnAttachedOnly(true);
+        imageReceiver.setRoundRadius(AndroidUtilities.dp(6.0f));
+        textPaint.setColor(-1);
+        textPaint.setTextSize(AndroidUtilities.dp(13.0f));
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        View view;
-        switch (this.a) {
-            case 0:
-                n6 n6Var = (n6) this.b;
-                n6Var.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                n6Var.invalidate();
-                break;
-            case 1:
-                bi.u uVar = (bi.u) this.b;
-                uVar.c = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                uVar.f.invalidate();
-                break;
-            case 2:
-                ci.d0 d0Var = (ci.d0) this.b;
-                d0Var.l = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                d0Var.p.invalidate();
-                break;
-            case 3:
-                gg.n1 n1Var = (gg.n1) this.b;
-                n1Var.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                n1Var.invalidate();
-                int i10 = 0;
-                while (i10 < 2) {
-                    n1Var.c[i10].setTranslationX(AndroidUtilities.lerp(0, -AndroidUtilities.dp(62.0f), n1Var.e));
-                    n1Var.c[i10].setVisibility(0);
-                    float f7 = 0.0f;
-                    n1Var.c[i10].setAlpha(AndroidUtilities.lerp(i10 == 0 ? 1.0f : 0.0f, i10 == 1 ? 1.0f : 0.0f, n1Var.e));
-                    n1Var.d[i10].setTranslationX(AndroidUtilities.lerp(0, -AndroidUtilities.dp(62.0f), n1Var.e));
-                    n1Var.d[i10].setVisibility(0);
-                    TextView textView = n1Var.d[i10];
-                    float f10 = i10 == 0 ? 1.0f : 0.0f;
-                    if (i10 == 1) {
-                        f7 = 1.0f;
-                    }
-                    textView.setAlpha(AndroidUtilities.lerp(f10, f7, n1Var.e));
-                    i10++;
-                }
-                break;
-            case 4:
-                ig.k kVar = (ig.k) this.b;
-                kVar.j0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                kVar.H = true;
-                kVar.invalidate();
-                break;
-            case 5:
-                ig.p pVar = (ig.p) this.b;
-                pVar.j0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                pVar.H = true;
-                pVar.invalidate();
-                break;
-            case 6:
-                org.telegram.ui.Cells.t7 t7Var = (org.telegram.ui.Cells.t7) this.b;
-                t7Var.B0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                t7Var.invalidate();
-                break;
-            case 7:
-                ((org.telegram.ui.Components.u9) this.b).setRoundRadius(((Integer) valueAnimator.getAnimatedValue()).intValue());
-                break;
-            case 8:
-                w0 w0Var = ((a70) this.b).e.d;
-                int i11 = w0Var.E1;
-                if (i11 != -1 && (view = w0Var.F1) != null) {
-                    w0Var.i1(i11, view);
-                    w0Var.invalidate();
-                    break;
-                }
-                break;
-            case 9:
-                i81 i81Var = (i81) this.b;
-                View[] viewArr = i81Var.e;
-                if (i81Var.x) {
-                    float abs = 1.0f - (Math.abs(viewArr[0].getTranslationX()) / viewArr[0].getMeasuredWidth());
-                    i81Var.c = abs;
-                    y71 y71Var = i81Var.M;
-                    if (y71Var != null) {
-                        y71Var.e(abs, i81Var.d, i81Var.b);
-                    }
-                }
-                i81Var.w(false);
-                break;
-            case 10:
-                org.telegram.ui.Components.voip.u1 u1Var = (org.telegram.ui.Components.voip.u1) this.b;
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                u1Var.J = floatValue;
-                org.telegram.ui.Components.voip.t1 t1Var = u1Var.i0;
-                if (t1Var != null) {
-                    ((ci1) t1Var).b.d0.d(floatValue, u1Var.P);
-                }
-                u1Var.invalidate();
-                break;
-            case 11:
-                rg.p0 p0Var = (rg.p0) this.b;
-                p0Var.n = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                p0Var.e();
-                break;
-            case 12:
-                ((rg.n0) this.b).setOffset(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            default:
-                ((s4.u) this.b).x = valueAnimator.getAnimatedFraction();
-                break;
+    public final void a(int i10) {
+        m6 m6Var = this.f;
+        ArrayList arrayList = m6Var.E;
+        if (i10 < 0 || i10 >= arrayList.size()) {
+            return;
+        }
+        this.e = (r7) arrayList.get(i10);
+        boolean z10 = m6Var.v;
+        ImageReceiver imageReceiver = this.a;
+        if (z10) {
+            imageReceiver.onAttachedToWindow();
+        }
+        r7 r7Var = this.e;
+        TL_stories.StoryItem storyItem = r7Var.a;
+        if (storyItem != null) {
+            ia.x(imageReceiver, storyItem);
+        } else {
+            k9 k9Var = r7Var.b;
+            p20[] p20VarArr = ia.a;
+            if (k9Var.c.K) {
+                imageReceiver.setImage(ImageLocation.getForPath(k9Var.f), "320_180", null, null, null, 0L, null, null, 0);
+            } else {
+                imageReceiver.setImage(ImageLocation.getForPath(k9Var.e), "320_180", null, null, null, 0L, null, null, 0);
+            }
+        }
+        b();
+    }
+
+    public final void b() {
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+        TL_stories.StoryItem storyItem = this.e.a;
+        m6 m6Var = this.f;
+        if (storyItem != null) {
+            m6.a(m6Var, spannableStringBuilder, storyItem.views, false);
+        }
+        if (spannableStringBuilder.length() == 0) {
+            this.c = null;
+            return;
+        }
+        int i10 = (int) (m6Var.J + 1.0f);
+        Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
+        TextPaint textPaint = this.d;
+        StaticLayout c10 = jw0.c(spannableStringBuilder, textPaint, i10, alignment, 0.0f, false, null, ConnectionsManager.DEFAULT_DATACENTER_ID, 1, true);
+        this.c = c10;
+        if (c10.getLineCount() > 1) {
+            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("");
+            m6.a(m6Var, spannableStringBuilder2, this.e.a.views, true);
+            this.c = jw0.c(spannableStringBuilder2, textPaint, (int) (m6Var.J + 1.0f), alignment, 0.0f, false, null, ConnectionsManager.DEFAULT_DATACENTER_ID, 2, true);
         }
     }
 }

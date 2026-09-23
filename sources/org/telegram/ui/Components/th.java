@@ -1,76 +1,159 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.SharedPreferences;
+import android.graphics.drawable.Drawable;
+import java.util.regex.Pattern;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.CallReceiver;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SavedMessagesController;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class th extends AnimatorListenerAdapter {
+public final /* synthetic */ class th implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ bi c;
 
-    public /* synthetic */ th(bi biVar, boolean z10, int i10) {
+    public /* synthetic */ th(int i10) {
         this.a = i10;
-        this.c = biVar;
-        this.b = z10;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        xc a02;
         switch (this.a) {
             case 0:
-                bi biVar = this.c;
-                vi viVar = biVar.e;
-                boolean z10 = this.b;
-                if (z10) {
-                    viVar.x1.setVisibility(8);
-                } else {
-                    viVar.E1.setVisibility(8);
-                }
-                int dp = z10 ? AndroidUtilities.dp(36.0f) : 0;
-                for (int i10 = 0; i10 < viVar.x0.size(); i10++) {
-                    ((ei.q4) viVar.x0.valueAt(i10)).setMeasureOffsetY(dp);
-                }
-                if (biVar.a == animator) {
-                    biVar.a = null;
+                break;
+            case 1:
+                int i10 = vn.m1;
+                break;
+            case 2:
+                PhotoViewer.t1().G0(false, false);
+                break;
+            case 3:
+                PhotoViewer.t1().G0(false, false);
+                break;
+            case 4:
+                int i11 = cu.b;
+                break;
+            case 5:
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallVisibilityChanged, new Object[0]);
+                break;
+            case 6:
+                if (VoIPService.getSharedInstance() != null && VoIPService.getSharedInstance().isMicMute()) {
+                    VoIPService.getSharedInstance().setMicMute(false, true, false);
                     break;
                 }
                 break;
+            case 7:
+                org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
+                if (R != null) {
+                    org.telegram.ui.ActionBar.l2 l2Var = new org.telegram.ui.ActionBar.l2();
+                    l2Var.a = true;
+                    R.showAsSheet(new PremiumPreviewFragment(0, "noncontacts"), l2Var);
+                    break;
+                }
+                break;
+            case 8:
+                int i12 = g01.f;
+                break;
+            case 9:
+                SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
+                w01.f = Boolean.TRUE;
+                edit.putBoolean("nothanos", true).apply();
+                break;
+            case 10:
+                SharedPreferences.Editor edit2 = MessagesController.getGlobalMainSettings().edit();
+                w01.f = Boolean.TRUE;
+                edit2.putBoolean("nothanos", true).apply();
+                break;
+            case 11:
+                int i13 = w21.f0;
+                break;
+            case 12:
+                SavedMessagesController.openSavedMessages();
+                break;
+            case 13:
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallVisibilityChanged, new Object[0]);
+                break;
+            case 14:
+                org.telegram.ui.Components.voip.m2.i();
+                break;
+            case 15:
+                ai.x7.p();
+                break;
+            case 16:
+                org.telegram.ui.f60 f60Var = org.telegram.ui.f60.D3;
+                if (f60Var != null) {
+                    f60Var.show();
+                    break;
+                }
+                break;
+            case 17:
+                if (VoIPService.getSharedInstance() != null) {
+                    VoIPService.getSharedInstance().setMicMute(false, true, false);
+                    break;
+                }
+                break;
+            case 18:
+                Pattern pattern = LaunchActivity.B1;
+                break;
+            case 19:
+                Pattern pattern2 = LaunchActivity.B1;
+                break;
+            case 20:
+                Pattern pattern3 = LaunchActivity.B1;
+                ApplicationLoader.mainInterfacePausedStageQueue = false;
+                ApplicationLoader.mainInterfacePausedStageQueueTime = System.currentTimeMillis();
+                break;
+            case 21:
+                break;
+            case 22:
+                CallReceiver.checkLastReceivedCall();
+                break;
+            case 23:
+                CallReceiver.checkLastReceivedCall();
+                break;
+            case 24:
+                xc.X().N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
+                break;
+            case 25:
+                xc.X().N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
+                break;
+            case 26:
+                Drawable[] drawableArr = PhotoViewer.U8;
+                break;
+            case 27:
+                xc.X().N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
+                break;
+            case 28:
+                xc.X().N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
+                break;
             default:
-                vi viVar2 = this.c.e;
-                boolean z11 = this.b;
-                viVar2.B1 = z11;
-                if (!z11) {
-                    viVar2.C1.setVisibility(8);
+                org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+                if (U != null && (a02 = xc.a0(U)) != null) {
+                    qc M = a02.M(LocaleController.getString(R.string.ReportChatSent), LocaleController.getString(R.string.Reported2), R.raw.msg_antispam);
+                    M.j = 5000;
+                    M.j();
                     break;
                 }
                 break;
         }
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 0:
-                vi viVar = this.c.e;
-                if (this.b) {
-                    viVar.E1.setAlpha(0.0f);
-                    viVar.E1.setVisibility(0);
-                    int dp = AndroidUtilities.dp(36.0f);
-                    for (int i10 = 0; i10 < viVar.x0.size(); i10++) {
-                        ((ei.q4) viVar.x0.valueAt(i10)).setMeasureOffsetY(dp);
-                    }
-                    break;
-                } else {
-                    viVar.x1.setAlpha(0.0f);
-                    viVar.x1.setVisibility(0);
-                    break;
-                }
-            default:
-                super.onAnimationStart(animator);
-                break;
-        }
+    public /* synthetic */ th(Object obj, int i10) {
+        this.a = i10;
+    }
+
+    private final void a() {
+    }
+
+    private final void b() {
     }
 }

@@ -5,17 +5,17 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class gb extends tu0 {
+public final class gb extends mu0 {
     public final /* synthetic */ ub a;
 
     public gb(ub ubVar) {
         this.a = ubVar;
     }
 
-    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
-    public final dv0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
+    public final wu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
         org.telegram.ui.Cells.w0 w0Var;
         MessageObject messageObject2;
         org.telegram.ui.Cells.t1 t1Var;
@@ -56,15 +56,15 @@ public final class gb extends tu0 {
             if (imageReceiver != null) {
                 int[] iArr = new int[2];
                 childAt.getLocationInWindow(iArr);
-                dv0 dv0Var = new dv0();
-                dv0Var.b = iArr[0];
-                dv0Var.c = iArr[1];
-                dv0Var.d = ubVar.v;
-                dv0Var.a = imageReceiver;
-                dv0Var.e = imageReceiver.getBitmapSafe();
-                dv0Var.h = imageReceiver.getRoundRadius(true);
-                dv0Var.l = true;
-                return dv0Var;
+                wu0 wu0Var = new wu0();
+                wu0Var.b = iArr[0];
+                wu0Var.c = iArr[1];
+                wu0Var.d = ubVar.v;
+                wu0Var.a = imageReceiver;
+                wu0Var.e = imageReceiver.getBitmapSafe();
+                wu0Var.h = imageReceiver.getRoundRadius(true);
+                wu0Var.l = true;
+                return wu0Var;
             }
             i11++;
         }

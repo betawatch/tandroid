@@ -1,48 +1,21 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
+import android.view.accessibility.AccessibilityNodeInfo;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class x90 implements kt0 {
-    public final /* synthetic */ ba0 a;
-
-    public x90(ba0 ba0Var) {
-        this.a = ba0Var;
-    }
-
-    @Override // org.telegram.ui.Components.kt0
-    public final void R() {
-        this.a.a0();
-    }
-
-    @Override // org.telegram.ui.Components.kt0
-    public final boolean T() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.kt0
-    public final ll0 f() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.kt0
-    public final TLRPC.Chat g() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.kt0
-    public final boolean h(TLRPC.ChatParticipant chatParticipant, boolean z10, boolean z11, View view) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.kt0
-    public final boolean p() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.kt0
-    public final void E() {
+public final class x90 extends org.telegram.ui.f01 {
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        if (!getImageReceiver().hasNotThumb()) {
+            accessibilityNodeInfo.setVisibleToUser(false);
+            return;
+        }
+        accessibilityNodeInfo.setText(LocaleController.getString(R.string.AccDescrProfilePicture));
+        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, LocaleController.getString(R.string.Open)));
+        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, LocaleController.getString(R.string.AccDescrOpenInPhotoViewer)));
     }
 }

@@ -1,0 +1,53 @@
+package org.telegram.ui.Components;
+
+import java.util.concurrent.atomic.AtomicReference;
+
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class xn implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ fo b;
+
+    public /* synthetic */ xn(fo foVar, int i10) {
+        this.a = i10;
+        this.b = foVar;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                fo foVar = this.b;
+                AtomicReference atomicReference = foVar.n;
+                org.telegram.ui.ActionBar.i5 i5Var = (org.telegram.ui.ActionBar.i5) atomicReference.get();
+                if (i5Var != null) {
+                    foVar.removeView(i5Var);
+                    atomicReference.set(null);
+                    break;
+                }
+                break;
+            case 1:
+                fo foVar2 = this.b;
+                AtomicReference atomicReference2 = foVar2.v;
+                org.telegram.ui.ActionBar.i5 i5Var2 = (org.telegram.ui.ActionBar.i5) atomicReference2.get();
+                if (i5Var2 != null) {
+                    foVar2.removeView(i5Var2);
+                    atomicReference2.set(null);
+                    if (!foVar2.b) {
+                        foVar2.setClipChildren(true);
+                        break;
+                    }
+                }
+                break;
+            default:
+                fo foVar3 = this.b;
+                foVar3.j0 = false;
+                foVar3.h0.c(false);
+                if (foVar3.a()) {
+                    foVar3.f();
+                    break;
+                }
+                break;
+        }
+    }
+}

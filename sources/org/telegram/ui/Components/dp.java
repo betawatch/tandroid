@@ -1,100 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.graphics.Point;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.hj1;
+import org.telegram.ui.nd1;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class dp implements ti {
-    public final /* synthetic */ mp a;
+public final /* synthetic */ class dp implements nd1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ep b;
 
-    public dp(mp mpVar) {
-        this.a = mpVar;
+    public /* synthetic */ dp(ep epVar, int i10) {
+        this.a = i10;
+        this.b = epVar;
     }
 
-    @Override // org.telegram.ui.Components.ti
-    public final void B1(int i10, boolean z10, boolean z11, int i11, int i12, long j3, boolean z12, boolean z13, long j10) {
-        mp mpVar = this.a;
-        try {
-            HashMap<Object, Object> selectedPhotos = mpVar.Y.j0.getSelectedPhotos();
-            if (selectedPhotos.isEmpty()) {
-                return;
-            }
-            MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) selectedPhotos.values().iterator().next();
-            String str = photoEntry.imagePath;
-            if (str == null) {
-                str = photoEntry.path;
-            }
-            if (str != null) {
-                File file = new File(FileLoader.getDirectory(4), Utilities.random.nextInt() + ".jpg");
-                Point realScreenSize = AndroidUtilities.getRealScreenSize();
-                Bitmap loadBitmap = ImageLoader.loadBitmap(str, null, (float) realScreenSize.x, (float) realScreenSize.y, true);
-                loadBitmap.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(file));
-                ap apVar = new ap(new hj1(file, file, ""), loadBitmap, false, 2);
-                apVar.V1 = mpVar.f0;
-                apVar.F1 = false;
-                apVar.E1 = false;
-                apVar.n1 = 0.2f;
-                apVar.c1(mpVar.v.a());
-                apVar.I1 = new cp(this, 0);
-                mp.q(mpVar, apVar);
-            }
-        } catch (Throwable th2) {
-            FileLog.e(th2);
+    @Override // org.telegram.ui.nd1
+    public final void a(TLRPC.TL_wallPaper tL_wallPaper) {
+        switch (this.a) {
+            case 0:
+                np npVar = this.b.a;
+                npVar.Y.dismissInternal();
+                npVar.dismiss();
+                break;
+            default:
+                np npVar2 = this.b.a;
+                npVar2.Y.dismissInternal();
+                npVar2.dismiss();
+                break;
         }
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final boolean S1() {
-        System.currentTimeMillis();
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final void U0(Object obj) {
-        ap apVar = new ap(obj, null, true, 3);
-        mp mpVar = this.a;
-        apVar.V1 = mpVar.f0;
-        apVar.c1(mpVar.v.a());
-        apVar.I1 = new cp(this, 1);
-        mp.q(mpVar, apVar);
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ boolean c0() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final void x0(fh fhVar) {
-        fhVar.run();
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ void K0() {
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ void j1(TLRPC.User user) {
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ void u0() {
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ void W1(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j3, boolean z11, long j10) {
     }
 }

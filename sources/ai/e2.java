@@ -11,16 +11,16 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.ui.Components.FragmentContextView;
 import org.telegram.ui.Components.eg0;
-import org.telegram.ui.Components.mq;
-import org.telegram.ui.Components.ur;
-import org.telegram.ui.Components.vu;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.nq;
+import org.telegram.ui.Components.vr;
+import org.telegram.ui.Components.wu;
+import org.telegram.ui.Components.zc;
 import org.telegram.ui.ExternalActionActivity;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e2 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -36,7 +36,7 @@ public final /* synthetic */ class e2 implements View.OnClickListener {
                 m2.j();
                 break;
             case 1:
-                int i10 = ci.k4.d;
+                int i10 = ci.j4.d;
                 break;
             case 2:
                 PhotoViewer.t1().j0(1.0f, 0.0f, 0.0f, false);
@@ -71,10 +71,10 @@ public final /* synthetic */ class e2 implements View.OnClickListener {
                 }
                 break;
             case 9:
-                int i14 = mq.e0;
+                int i14 = nq.e0;
                 break;
             case 10:
-                int i15 = ur.s;
+                int i15 = vr.s;
                 break;
             case 11:
                 float[] fArr = FragmentContextView.O0;
@@ -82,9 +82,9 @@ public final /* synthetic */ class e2 implements View.OnClickListener {
                 break;
             case 12:
                 eg0 eg0Var = eg0.p0;
-                vu vuVar = eg0Var.U;
-                if (vuVar != null) {
-                    vuVar.H();
+                wu wuVar = eg0Var.U;
+                if (wuVar != null) {
+                    wuVar.H();
                 } else {
                     PhotoViewer photoViewer = eg0Var.V;
                     if (photoViewer != null) {
@@ -145,7 +145,7 @@ public final /* synthetic */ class e2 implements View.OnClickListener {
                 int i16 = xh.m.A0;
                 break;
             case 25:
-                xc[] xcVarArr = xh.v.p0;
+                zc[] zcVarArr = xh.v.p0;
                 break;
             case 26:
                 int i17 = xh.c0.f0;

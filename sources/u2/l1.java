@@ -1,92 +1,37 @@
 package u2;
 
-import android.net.Uri;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final class l1 extends a {
-    public final g2.m h;
-    public final g2.g i;
-    public final b2.s j;
-    public final qb.b l;
-    public final h1 n;
-    public final b2.k0 o;
-    public g2.c0 p;
-    public final long k = -9223372036854775807L;
-    public final boolean m = true;
+public final class l1 implements a1 {
+    public final a1 a;
+    public final long b;
 
-    public l1(b2.j0 j0Var, of.b bVar, qb.b bVar2) {
-        b2.f0 f0Var;
-        this.i = bVar;
-        this.l = bVar2;
-        boolean z10 = true;
-        b2.y yVar = new b2.y();
-        b2.b0 b0Var = new b2.b0();
-        List list = Collections.EMPTY_LIST;
-        e9.a1 a1Var = e9.a1.e;
-        b2.d0 d0Var = new b2.d0();
-        b2.g0 g0Var = b2.g0.d;
-        Uri uri = Uri.EMPTY;
-        String uri2 = j0Var.a.toString();
-        uri2.getClass();
-        e9.i0 v = e9.i0.v(e9.i0.z(j0Var));
-        if (b0Var.b != null && b0Var.a == null) {
-            z10 = false;
+    public l1(a1 a1Var, long j3) {
+        this.a = a1Var;
+        this.b = j3;
+    }
+
+    @Override // u2.a1
+    public final void a() {
+        this.a.a();
+    }
+
+    @Override // u2.a1
+    public final boolean e() {
+        return this.a.e();
+    }
+
+    @Override // u2.a1
+    public final int f(n4.y yVar, h2.h hVar, int i10) {
+        int f7 = this.a.f(yVar, hVar, i10);
+        if (f7 == -4) {
+            hVar.e += this.b;
         }
-        e2.d.g(z10);
-        if (uri != null) {
-            f0Var = new b2.f0(uri, null, b0Var.a != null ? new b2.c0(b0Var) : null, null, list, null, v, -9223372036854775807L);
-        } else {
-            f0Var = null;
-        }
-        b2.k0 k0Var = new b2.k0(uri2, new b2.a0(yVar), f0Var, new b2.e0(d0Var), b2.n0.K, g0Var);
-        this.o = k0Var;
-        b2.r rVar = new b2.r();
-        String str = j0Var.b;
-        rVar.q = b2.r0.n(str == null ? "text/x-unknown" : str);
-        rVar.d = j0Var.c;
-        rVar.e = j0Var.d;
-        rVar.f = j0Var.e;
-        rVar.b = j0Var.f;
-        String str2 = j0Var.g;
-        rVar.a = str2 != null ? str2 : null;
-        this.j = new b2.s(rVar);
-        Map map = Collections.EMPTY_MAP;
-        Uri uri3 = j0Var.a;
-        e2.d.i(uri3, "The uri must be set.");
-        this.h = new g2.m(uri3, 1, null, map, 0L, -1L, null, 1);
-        this.n = new h1(-9223372036854775807L, -9223372036854775807L, -9223372036854775807L, -9223372036854775807L, 0L, 0L, true, false, false, null, k0Var, null);
+        return f7;
     }
 
-    @Override // u2.a
-    public final d0 c(f0 f0Var, y2.d dVar, long j3) {
-        return new k1(this.h, this.i, this.p, this.j, this.k, this.l, b(f0Var), this.m, null);
-    }
-
-    @Override // u2.a
-    public final b2.k0 i() {
-        return this.o;
-    }
-
-    @Override // u2.a
-    public final void m(g2.c0 c0Var) {
-        this.p = c0Var;
-        n(this.n);
-    }
-
-    @Override // u2.a
-    public final void o(d0 d0Var) {
-        ((k1) d0Var).r.e(null);
-    }
-
-    @Override // u2.a
-    public final void k() {
-    }
-
-    @Override // u2.a
-    public final void q() {
+    @Override // u2.a1
+    public final int j(long j3) {
+        return this.a.j(j3 - this.b);
     }
 }

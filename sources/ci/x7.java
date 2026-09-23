@@ -1,82 +1,59 @@
 package ci;
 
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
+import android.graphics.Paint;
+import android.view.KeyEvent;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ej;
-import org.telegram.ui.Components.i51;
-import org.telegram.ui.Components.w51;
+import org.telegram.ui.Components.wi;
+import org.telegram.ui.hb1;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class x7 implements Utilities.Callback2 {
+public final /* synthetic */ class x7 implements Utilities.CallbackReturn {
     public final /* synthetic */ int a;
-    public final /* synthetic */ g8 b;
+    public final /* synthetic */ KeyEvent.Callback b;
 
-    public /* synthetic */ x7(g8 g8Var, int i10) {
+    public /* synthetic */ x7(KeyEvent.Callback callback, int i10) {
         this.a = i10;
-        this.b = g8Var;
+        this.b = callback;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
+    @Override // org.telegram.messenger.Utilities.CallbackReturn
+    public final Object run(Object obj) {
         switch (this.a) {
             case 0:
-                ArrayList arrayList = (ArrayList) obj;
-                w51 w51Var = (w51) obj2;
-                g8 g8Var = this.b;
-                MessagesController.SavedMusicList savedMusicList = g8Var.e0;
-                w51Var.E = 1;
-                int dp = AndroidUtilities.dp(64.0f);
-                arrayList.add(i51.C(AndroidUtilities.dp(64.0f)));
-                if (g8Var.Z || g8Var.h0) {
-                    dp += g8Var.W(true, arrayList, LocaleController.getString(R.string.AudioSearchLocal), g8Var.b0, false, false, -1);
+                MessageObject messageObject = (MessageObject) obj;
+                ((d8) this.b).r0 = messageObject;
+                return Boolean.valueOf(MediaController.getInstance().setPlaylist(org.telegram.messenger.z0.k(messageObject), messageObject, 0L));
+            case 1:
+                di.d dVar = (di.d) this.b;
+                return dVar.n[((Integer) obj).intValue() % dVar.n.length];
+            case 2:
+                return new hb1(26, (org.telegram.ui.l0) this.b, (Integer) obj);
+            case 3:
+                qg.p0 p0Var = (qg.p0) this.b;
+                if (((Integer) obj).intValue() == 2) {
+                    wi wiVar = new wi(p0Var.getContext(), new qg.y(p0Var), false, false, false, p0Var.Q1);
+                    wiVar.drawNavigationBar = true;
+                    wiVar.L1(LocaleController.getString(R.string.AddImage));
+                    wiVar.Z1 = new qg.z(p0Var, wiVar);
+                    wiVar.setOnDismissListener(new f1(7));
+                    wiVar.J1(1, false);
+                    wiVar.r1();
+                    MediaController.forceBroadcastNewPhotos = true;
+                    wiVar.j0.f0();
+                    wiVar.show();
                 }
-                if (!g8Var.Z) {
-                    if (TextUtils.isEmpty(g8Var.s0) && !g8Var.h0) {
-                        w51Var.U();
-                        i51 c10 = i51.c(1, R.drawable.msg2_folder, LocaleController.getString(R.string.StoryMusicSelectFromFiles));
-                        c10.q = true;
-                        arrayList.add(c10);
-                        w51Var.T();
-                        dp += AndroidUtilities.dp(50.0f);
-                    }
-                    if (!g8Var.h0 && savedMusicList != null) {
-                        dp += g8Var.W(true, arrayList, LocaleController.getString(R.string.AudioSearchProfile), savedMusicList.list, savedMusicList.loading, !savedMusicList.endReached, 2);
-                    }
-                    dp = dp + g8Var.W(false, arrayList, LocaleController.getString(R.string.AudioSearchChats), g8Var.c0, g8Var.w0 || g8Var.v0, g8Var.u0, 3) + g8Var.W(false, arrayList, LocaleController.getString(R.string.AudioSearchGlobal), g8Var.d0, g8Var.D0 || g8Var.C0, g8Var.B0, 4);
-                }
-                if (arrayList.size() <= ((g8Var.Z || !TextUtils.isEmpty(g8Var.s0) || g8Var.h0) ? 1 : 2)) {
-                    if (TextUtils.isEmpty(g8Var.s0)) {
-                        String string = LocaleController.getString(R.string.NoAudioFound);
-                        String string2 = LocaleController.getString(R.string.NoAudioFilesInfo);
-                        int i10 = ej.a;
-                        i51 J = i51.J(ej.class);
-                        J.l = string;
-                        J.m = string2;
-                        arrayList.add(J);
-                    } else {
-                        String string3 = LocaleController.getString(R.string.NoAudioFound);
-                        SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString(g8Var.s0.length() >= 3 ? R.string.NoAudioFoundInfo2 : R.string.NoAudioFoundInfo, g8Var.s0));
-                        int i11 = ej.a;
-                        i51 J2 = i51.J(ej.class);
-                        J2.l = string3;
-                        J2.m = replaceTags;
-                        arrayList.add(J2);
-                    }
-                }
-                arrayList.add(i51.B(null));
-                arrayList.add(i51.C(Math.max(0, AndroidUtilities.dp(24.0f) + (((AndroidUtilities.displaySize.y - (AndroidUtilities.dp(12.0f) + dp)) - AndroidUtilities.statusBarHeight) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()))));
-                break;
+                return Boolean.TRUE;
+            case 4:
+                Paint[] paintArr = ((vg.r) this.b).h;
+                return paintArr[((Integer) obj).intValue() % paintArr.length];
             default:
-                g8.Q(this.b, (TLRPC.messages_BotResults) obj);
-                break;
+                yh.y6 y6Var = (yh.y6) this.b;
+                return y6Var.n[((Integer) obj).intValue() % y6Var.n.length];
         }
     }
 }

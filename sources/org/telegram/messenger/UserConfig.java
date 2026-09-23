@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public class UserConfig extends BaseController {
     private static volatile UserConfig[] Instance = new UserConfig[4];
@@ -101,7 +101,7 @@ public class UserConfig extends BaseController {
     private void checkPremiumSelf(TLRPC.User user, final TLRPC.User user2) {
         if (user != null && user2 != null && user.premium != user2.premium) {
             final int i10 = 0;
-            AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.ul
+            AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.tl
                 public final /* synthetic */ UserConfig b;
 
                 {
@@ -122,7 +122,7 @@ public class UserConfig extends BaseController {
             });
         } else if (user == null) {
             final int i11 = 1;
-            AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.ul
+            AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.tl
                 public final /* synthetic */ UserConfig b;
 
                 {
@@ -236,7 +236,7 @@ public class UserConfig extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$loadGlobalTTl$4(TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new wg(15, this, tLObject));
+        AndroidUtilities.runOnUIThread(new vg(15, this, tLObject));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -675,7 +675,7 @@ public class UserConfig extends BaseController {
             return;
         }
         this.ttlIsLoading = true;
-        getConnectionsManager().sendRequest(new TLRPC.TL_messages_getDefaultHistoryTTL(), new g0(this, 10));
+        getConnectionsManager().sendRequest(new TLRPC.TL_messages_getDefaultHistoryTTL(), new g0(this, 8));
     }
 
     public void resetSavedPassword() {

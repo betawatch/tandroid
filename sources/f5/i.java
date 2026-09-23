@@ -4,13 +4,13 @@ import com.google.android.gms.internal.vision.e2;
 import java.nio.ByteBuffer;
 import java.util.Iterator;
 import java.util.LinkedList;
-import k2.c0;
+import k2.b0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class i extends com.googlecode.mp4parser.a {
-    public static final /* synthetic */ c0 d;
-    public static final /* synthetic */ c0 e;
+    public static final /* synthetic */ b0 d;
+    public static final /* synthetic */ b0 e;
     public String a;
     public long b;
     public LinkedList c;

@@ -1,33 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
+import android.text.InputFilter;
+import android.text.Spanned;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vd implements View.OnLongClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ChatActivityEnterView b;
-
-    public /* synthetic */ vd(ChatActivityEnterView chatActivityEnterView, int i10) {
-        this.a = i10;
-        this.b = chatActivityEnterView;
-    }
-
-    @Override // android.view.View.OnLongClickListener
-    public final boolean onLongClick(View view) {
-        int i10 = this.a;
-        ChatActivityEnterView chatActivityEnterView = this.b;
-        switch (i10) {
-            case 0:
-                int i11 = ChatActivityEnterView.n5;
-                break;
-            default:
-                of ofVar = chatActivityEnterView.E0;
-                if (ofVar != null && ofVar.length() > 0) {
-                    break;
+public final /* synthetic */ class vd implements InputFilter {
+    @Override // android.text.InputFilter
+    public final CharSequence filter(CharSequence charSequence, int i10, int i11, Spanned spanned, int i12, int i13) {
+        int i14 = ChatActivityEnterView.n5;
+        for (int i15 = i10; i15 < i11; i15++) {
+            char charAt = charSequence.charAt(i15);
+            if (charAt == '\n' || charAt == '\r') {
+                StringBuilder sb2 = new StringBuilder(i11 - i10);
+                while (i10 < i11) {
+                    char charAt2 = charSequence.charAt(i10);
+                    if (charAt2 != '\n' && charAt2 != '\r') {
+                        sb2.append(charAt2);
+                    }
+                    i10++;
                 }
-                break;
+                return sb2;
+            }
         }
-        return chatActivityEnterView.G0(view);
+        return null;
     }
 }

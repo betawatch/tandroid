@@ -1,44 +1,32 @@
 package ii;
 
-import android.text.TextUtils;
-import org.telegram.messenger.CodeHighlighting;
-import org.telegram.tgnet.tl.TL_iv;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k2 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ d6 b;
+    public final /* synthetic */ x3 b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ k2(d6 d6Var, int i10) {
-        this.a = i10;
-        this.b = d6Var;
+    public /* synthetic */ k2(x3 x3Var, int i10, int i11) {
+        this.a = i11;
+        this.b = x3Var;
+        this.c = i10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.x();
+                this.b.d4(this.c);
+                break;
+            case 1:
+                this.b.f4(this.c);
+                break;
+            case 2:
+                this.b.scrollBy(0, this.c);
                 break;
             default:
-                d6 d6Var = this.b;
-                d6Var.G = null;
-                a aVar = d6Var.x;
-                if (aVar != null) {
-                    TL_iv.PageBlock pageBlock = aVar.b;
-                    if ((pageBlock instanceof TL_iv.pageBlockPreformatted) && !TextUtils.isEmpty(((TL_iv.pageBlockPreformatted) pageBlock).language)) {
-                        String obj = d6Var.f.getText().toString();
-                        if (!obj.equals(d6Var.H)) {
-                            a aVar2 = d6Var.x;
-                            String str = ((TL_iv.pageBlockPreformatted) aVar2.b).language;
-                            int i10 = d6Var.I + 1;
-                            d6Var.I = i10;
-                            CodeHighlighting.highlightEditable(obj, str, new fi.m0(d6Var, i10, aVar2, obj, 1));
-                            break;
-                        }
-                    }
-                }
+                this.b.e4(this.c);
                 break;
         }
     }

@@ -31,7 +31,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import v7.t6;
 import v7.z7;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class h implements c3.o {
     public static final byte[] O = {-94, 57, 79, 82, 90, -101, 79, 20, -94, 68, 108, 66, 124, 100, -115, -12};
@@ -50,7 +50,7 @@ public final class h implements c3.o {
     public boolean L;
     public boolean M;
     public long N;
-    public final z3.l a;
+    public final z3.k a;
     public final int b;
     public final List c;
     public final byte[] h;
@@ -83,8 +83,8 @@ public final class h implements c3.o {
         P = new s(rVar);
     }
 
-    public h(z3.l lVar, int i10, b0 b0Var, List list, l2.n nVar) {
-        this.a = lVar;
+    public h(z3.k kVar, int i10, b0 b0Var, List list, l2.n nVar) {
+        this.a = kVar;
         this.b = i10;
         this.j = b0Var;
         this.c = DesugarCollections.unmodifiableList(list);

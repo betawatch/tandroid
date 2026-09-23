@@ -1,406 +1,68 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Shader;
-import android.text.Layout;
-import android.view.Choreographer;
-import android.view.View;
-import java.util.ArrayList;
-import java.util.List;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.graphics.Rect;
+import android.view.KeyEvent;
+import org.telegram.ui.Components.AnimatedPhoneNumberEditText;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class uj0 implements Choreographer.FrameCallback {
-    public static final Matrix E = new Matrix();
-    public static final Paint x;
-    public static final LinearGradient y;
-    public final Choreographer a = Choreographer.getInstance();
-    public List b = new ArrayList();
-    public final ArrayList c = new ArrayList();
-    public int d = 0;
-    public int e = 0;
-    public float f = 0.0f;
-    public boolean h = false;
-    public boolean n = true;
-    public long r = 0;
-    public float s = AndroidUtilities.dp(40.0f);
-    public View v;
-    public ai.y7 w;
+public final class uj0 extends AnimatedPhoneNumberEditText {
+    public final /* synthetic */ int G;
+    public final /* synthetic */ Object H;
 
-    static {
-        Paint paint = new Paint(1);
-        x = paint;
-        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
-        LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 1.0f, 0.0f, -1, 16777215, Shader.TileMode.CLAMP);
-        y = linearGradient;
-        paint.setShader(linearGradient);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ uj0(Object obj, Context context, int i10) {
+        super(context);
+        this.G = i10;
+        this.H = obj;
     }
 
-    public static void b(Canvas canvas, Layout layout, int i10, float f7, tj0 tj0Var) {
-        if (layout == null) {
-            return;
-        }
-        int lineCount = layout.getLineCount();
-        if (i10 < 0 || i10 >= lineCount) {
-            return;
-        }
-        tj0 huVar = tj0Var != null ? tj0Var : new hu(layout, 24);
-        int width = layout.getWidth();
-        layout.getHeight();
-        int lineTop = layout.getLineTop(i10);
-        int lineBottom = layout.getLineBottom(i10);
-        if (lineTop > 0) {
-            canvas.save();
-            canvas.clipRect(0.0f, 0.0f, width, lineTop);
-            huVar.a(canvas);
-            canvas.restore();
-        }
-        float lineLeft = layout.getLineLeft(i10);
-        float lineRight = layout.getLineRight(i10);
-        float min = Math.min(lineLeft, lineRight);
-        float max = Math.max(lineLeft, lineRight);
-        if (max <= min) {
-            return;
-        }
-        int paragraphDirection = layout.getParagraphDirection(i10);
-        float f10 = max - min;
-        float a2 = w7.p.a(f7, 0.0f, f10);
-        float f11 = a2 / f10;
-        if (a2 <= 0.0f) {
-            return;
-        }
-        if (a2 >= f10) {
-            canvas.save();
-            canvas.clipRect(0.0f, lineTop, width, lineBottom);
-            huVar.a(canvas);
-            canvas.restore();
-            return;
-        }
-        float lerp = AndroidUtilities.lerp(-AndroidUtilities.dp(50.0f), f10, f11);
-        AndroidUtilities.dp(50.0f);
-        float f12 = lineTop;
-        float f13 = lineBottom;
-        int saveLayer = canvas.saveLayer(min, f12, max, f13, null);
-        canvas.save();
-        canvas.clipRect(min, f12, max, f13);
-        huVar.a(canvas);
-        canvas.restore();
-        Matrix matrix = E;
-        matrix.reset();
-        if (paragraphDirection >= 0) {
-            matrix.setScale(AndroidUtilities.dp(50.0f), 1.0f);
-            matrix.postTranslate(lerp, 0.0f);
-        } else {
-            matrix.setScale(-AndroidUtilities.dp(50.0f), 1.0f);
-            matrix.postTranslate(f10 - lerp, 0.0f);
-        }
-        y.setLocalMatrix(matrix);
-        canvas.drawRect(min, f12, max, f13, x);
-        canvas.restoreToCount(saveLayer);
-    }
-
-    public static float i(Layout layout, int i10) {
-        float lineRight = layout.getLineRight(i10) - layout.getLineLeft(i10);
-        return lineRight >= 0.0f ? lineRight : -lineRight;
-    }
-
-    public final void a(float f7) {
-        int size = this.b.size();
-        View view = null;
-        int i10 = 0;
-        while (i10 < size) {
-            sj0 sj0Var = (sj0) this.b.get(i10);
-            float f10 = (this.n || i10 <= this.d) ? 1.0f : 0.0f;
-            ArrayList arrayList = this.c;
-            float floatValue = i10 < arrayList.size() ? ((Float) arrayList.get(i10)).floatValue() : f10;
-            if (floatValue == f10) {
-                f10 = floatValue;
-            } else if (f7 > 0.0f) {
-                float f11 = f7 / 0.2f;
-                f10 = f10 > floatValue ? Math.min(f10, f11 + floatValue) : Math.max(f10, floatValue - f11);
-            }
-            if (i10 < arrayList.size() && f10 != floatValue) {
-                arrayList.set(i10, Float.valueOf(f10));
-            }
-            View parentView = sj0Var.getParentView();
-            if (parentView != null && parentView != view) {
-                if (parentView.getAlpha() != f10) {
-                    parentView.setAlpha(f10);
-                }
-                view = parentView;
-            }
-            i10++;
-        }
-    }
-
-    public final float c(sj0 sj0Var) {
-        int d = d(sj0Var);
-        if (d < 0) {
-            return 1.0f;
-        }
-        ArrayList arrayList = this.c;
-        if (d >= arrayList.size()) {
-            return 1.0f;
-        }
-        return ((Float) arrayList.get(d)).floatValue();
-    }
-
-    public final int d(sj0 sj0Var) {
-        int size = this.b.size();
-        for (int i10 = 0; i10 < size; i10++) {
-            if (this.b.get(i10) == sj0Var) {
-                return i10;
-            }
-        }
-        return -1;
-    }
-
-    @Override // android.view.Choreographer.FrameCallback
-    public final void doFrame(long j3) {
-        if (this.h) {
-            float f7 = 0.0f;
-            if (this.r != 0) {
-                float f10 = (j3 - r0) * 1.0E-9f;
-                if (this.b.isEmpty() || f10 <= 0.0f) {
-                    this.n = this.b.isEmpty();
-                } else {
-                    float f11 = this.s * f10;
-                    while (true) {
-                        if (f11 <= 0.0f) {
-                            break;
-                        }
-                        if (this.d >= this.b.size()) {
-                            this.n = true;
-                            break;
-                        }
-                        Layout layout = ((sj0) this.b.get(this.d)).getLayout();
-                        if (layout != null && layout.getLineCount() != 0) {
-                            if (this.e >= layout.getLineCount()) {
-                                int lineCount = layout.getLineCount() - 1;
-                                this.e = lineCount;
-                                this.f = i(layout, lineCount);
-                            }
-                            float i10 = i(layout, this.e);
-                            if (i10 <= 0.001f) {
-                                if (k(layout)) {
-                                    break;
-                                }
-                            } else {
-                                float f12 = this.f;
-                                float f13 = i10 - f12;
-                                if (f13 <= 0.001f) {
-                                    if (k(layout)) {
-                                        break;
-                                    }
-                                } else {
-                                    if (f11 < f13) {
-                                        f13 = f11;
-                                    }
-                                    float f14 = f12 + f13;
-                                    this.f = f14;
-                                    f11 -= f13;
-                                    if (i10 - f14 <= 0.001f && !k(layout)) {
-                                        f11 = 0.0f;
-                                    }
-                                }
-                            }
-                        } else {
-                            this.d++;
-                            this.e = 0;
-                            this.f = 0.0f;
-                        }
-                    }
-                    this.n = f();
-                }
-                f7 = f10;
-            }
-            this.r = j3;
-            a(f7);
-            e();
-            if (!this.n) {
-                this.a.postFrameCallback(this);
-                return;
-            }
-            this.h = false;
-            ArrayList arrayList = this.c;
-            int size = arrayList.size();
-            for (int i11 = 0; i11 < size; i11++) {
-                arrayList.set(i11, Float.valueOf(1.0f));
-            }
-            int size2 = this.b.size();
-            View view = null;
-            for (int i12 = 0; i12 < size2; i12++) {
-                View parentView = ((sj0) this.b.get(i12)).getParentView();
-                if (parentView != null && parentView != view) {
-                    if (parentView.getAlpha() != 1.0f) {
-                        parentView.setAlpha(1.0f);
-                    }
-                    view = parentView;
-                }
-            }
-            ai.y7 y7Var = this.w;
-            if (y7Var != null) {
-                y7Var.run();
-                this.w = null;
-            }
-        }
-    }
-
-    public final void e() {
-        sj0 sj0Var;
-        int i10 = this.d;
-        View parentView = (i10 < 0 || i10 >= this.b.size() || (sj0Var = (sj0) this.b.get(this.d)) == null) ? null : sj0Var.getParentView();
-        if (parentView != null) {
-            parentView.invalidate();
-            View view = this.v;
-            if (view != null && view != parentView) {
-                view.invalidate();
-            }
-            this.v = parentView;
-        }
-    }
-
-    public final boolean f() {
-        if (!this.b.isEmpty()) {
-            int size = this.b.size() - 1;
-            Layout layout = null;
-            while (size >= 0) {
-                layout = ((sj0) this.b.get(size)).getLayout();
-                if (layout != null && layout.getLineCount() > 0) {
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final void onFocusChanged(boolean z10, int i10, Rect rect) {
+        switch (this.G) {
+            case 0:
+                super.onFocusChanged(z10, i10, rect);
+                wj0 wj0Var = (wj0) this.H;
+                org.telegram.ui.Components.yc0 yc0Var = wj0Var.s;
+                float f7 = (z10 || wj0Var.Q.isFocused()) ? 1.0f : 0.0f;
+                yc0Var.b(f7, f7, true);
+                break;
+            case 1:
+                super.onFocusChanged(z10, i10, rect);
+                wj0 wj0Var2 = (wj0) this.H;
+                org.telegram.ui.Components.yc0 yc0Var2 = wj0Var2.s;
+                float f10 = (z10 || wj0Var2.O.isFocused()) ? 1.0f : 0.0f;
+                yc0Var2.b(f10, f10, true);
+                break;
+            default:
+                super.onFocusChanged(z10, i10, rect);
+                qg0 qg0Var = (qg0) this.H;
+                org.telegram.ui.Components.yc0 yc0Var3 = qg0Var.f;
+                float f11 = (z10 || qg0Var.b.isFocused()) ? 1.0f : 0.0f;
+                yc0Var3.b(f11, f11, true);
+                if (z10) {
+                    qg0Var.V.c.setEditText(this);
                     break;
                 }
-                size--;
-            }
-            if (size >= 0 && layout != null) {
-                int i10 = this.d;
-                if (i10 < size) {
-                    return false;
-                }
-                if (i10 <= size) {
-                    int lineCount = layout.getLineCount() - 1;
-                    float i11 = i(layout, lineCount);
-                    if (this.e < lineCount || this.f < i11 - 0.001f) {
-                        return false;
-                    }
-                }
-            }
-        }
-        return true;
-    }
-
-    public final boolean g(sj0 sj0Var) {
-        Layout layout;
-        return d(sj0Var) == this.d && (layout = sj0Var.getLayout()) != null && this.e < layout.getLineCount();
-    }
-
-    public final boolean h() {
-        return this.h;
-    }
-
-    public final boolean j(sj0 sj0Var) {
-        int d = d(sj0Var);
-        if (d < 0 || this.b.isEmpty()) {
-            return false;
-        }
-        int i10 = this.d;
-        return d < i10 || d <= i10;
-    }
-
-    public final boolean k(Layout layout) {
-        int i10 = this.e + 1;
-        this.e = i10;
-        this.f = 0.0f;
-        if (i10 >= layout.getLineCount()) {
-            int i11 = this.d + 1;
-            this.d = i11;
-            this.e = 0;
-            this.f = 0.0f;
-            if (i11 >= this.b.size()) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final void l(List list) {
-        float f7;
-        ArrayList arrayList;
-        boolean z10;
-        if (!this.b.isEmpty() && this.d >= this.b.size()) {
-            int size = this.b.size() - 1;
-            this.d = size;
-            Layout layout = ((sj0) this.b.get(size)).getLayout();
-            int max = Math.max(0, layout == null ? 0 : layout.getLineCount() - 1);
-            this.e = max;
-            this.f = layout == null ? 0.0f : layout.getLineWidth(max);
-        }
-        if (list == null) {
-            list = new ArrayList();
-        }
-        this.b = list;
-        if (list.isEmpty()) {
-            f7 = 0.0f;
-        } else {
-            int i10 = this.d;
-            f7 = 0.0f;
-            while (i10 < this.b.size()) {
-                Layout layout2 = ((sj0) this.b.get(i10)).getLayout();
-                if (layout2 != null) {
-                    int min = i10 == this.d ? Math.min(Math.max(this.e, 0), Math.max(0, layout2.getLineCount() - 1)) : 0;
-                    for (int i11 = min; i11 < layout2.getLineCount(); i11++) {
-                        float i12 = i(layout2, i11);
-                        if (i12 > 0.001f) {
-                            if (i10 == this.d && i11 == min) {
-                                i12 -= this.f;
-                                if (i12 <= 0.001f) {
-                                }
-                            }
-                            f7 += i12;
-                        }
-                    }
-                }
-                i10++;
-            }
-        }
-        float dp = AndroidUtilities.dp(40.0f);
-        if (f7 <= 0.001f) {
-            this.s = dp;
-        } else {
-            this.s = Math.max(dp, f7 / 1.05f);
-        }
-        this.n = f();
-        while (true) {
-            arrayList = this.c;
-            if (arrayList.size() <= this.b.size()) {
                 break;
-            } else {
-                a4.a.y(1, arrayList);
-            }
         }
-        int size2 = arrayList.size();
-        while (size2 < this.b.size()) {
-            arrayList.add(Float.valueOf((this.n || size2 <= this.d) ? 1.0f : 0.0f));
-            size2++;
-        }
-        if (!this.n && !(z10 = this.h) && !z10) {
-            this.h = true;
-            if (f()) {
-                this.n = true;
-            }
-            this.r = 0L;
-            this.a.postFrameCallback(this);
-        }
-        a(0.0f);
-        e();
     }
 
-    public final void m(ai.y7 y7Var) {
-        this.w = y7Var;
+    @Override // android.widget.TextView, android.view.View, android.view.KeyEvent.Callback
+    public boolean onKeyDown(int i10, KeyEvent keyEvent) {
+        switch (this.G) {
+            case 1:
+                wj0 wj0Var = (wj0) this.H;
+                if (i10 == 67 && wj0Var.Q.length() == 0) {
+                    wj0Var.O.requestFocus();
+                    uj0 uj0Var = wj0Var.O;
+                    uj0Var.setSelection(uj0Var.length());
+                    wj0Var.O.dispatchKeyEvent(keyEvent);
+                }
+                return super.onKeyDown(i10, keyEvent);
+            default:
+                return super.onKeyDown(i10, keyEvent);
+        }
     }
 }

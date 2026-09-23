@@ -9,14 +9,14 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.Crop.CropAreaView;
-import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public abstract class j0 extends FrameLayout {
-    public final d7 a;
-    public final org.telegram.ui.Components.c6 b;
-    public final org.telegram.ui.Components.c6 c;
+    public final b7 a;
+    public final org.telegram.ui.Components.e6 b;
+    public final org.telegram.ui.Components.e6 c;
     public final i0 d;
     public final FrameLayout e;
     public final g0 f;
@@ -26,21 +26,21 @@ public abstract class j0 extends FrameLayout {
     public final int[] s;
     public final int[] v;
     public final lg.g w;
-    public o8 x;
+    public l8 x;
     public boolean y;
 
-    public j0(Context context, d7 d7Var) {
+    public j0(Context context, b7 b7Var) {
         super(context);
         this.r = 0.0f;
         this.s = new int[2];
         this.v = new int[2];
         this.w = new lg.g();
-        this.a = d7Var;
+        this.a = b7Var;
         i0 i0Var = new i0(this, context);
         this.d = i0Var;
-        qr qrVar = qr.h;
-        this.b = new org.telegram.ui.Components.c6(i0Var, 0L, 320L, qrVar);
-        this.c = new org.telegram.ui.Components.c6(this, 0L, 360L, qrVar);
+        rr rrVar = rr.h;
+        this.b = new org.telegram.ui.Components.e6(i0Var, 0L, 320L, rrVar);
+        this.c = new org.telegram.ui.Components.e6(this, 0L, 360L, rrVar);
         g0 g0Var = new g0(this, context, 0);
         this.f = g0Var;
         g0Var.setListener(new a4.m(this, 8));
@@ -57,7 +57,7 @@ public abstract class j0 extends FrameLayout {
         frameLayout.addView(frameLayout2, w7.x5.d(-1, 52.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
         TextView textView = new TextView(context);
         com.google.android.gms.internal.vision.e2.l(14.0f, 1, textView);
-        textView.setBackground(org.telegram.ui.ActionBar.i6.f0(-12763843, 0, -1));
+        textView.setBackground(org.telegram.ui.ActionBar.h6.f0(-12763843, 0, -1));
         textView.setTextColor(-1);
         textView.setPadding(org.telegram.ui.Cells.q3.b(12.0f, R.string.Cancel, textView), 0, AndroidUtilities.dp(12.0f), 0);
         frameLayout2.addView(textView, w7.x5.e(-2, -1, 115));
@@ -73,7 +73,7 @@ public abstract class j0 extends FrameLayout {
             public final void onClick(View view) {
                 switch (i10) {
                     case 0:
-                        ((yb) this.b).E.l0(-1, false, true);
+                        ((vb) this.b).E.l0(-1, false, true);
                         break;
                     case 1:
                         j0 j0Var = this.b;
@@ -86,14 +86,14 @@ public abstract class j0 extends FrameLayout {
                         break;
                     default:
                         j0 j0Var2 = this.b;
-                        o8 o8Var = j0Var2.x;
-                        if (o8Var != null) {
-                            o8Var.m0 = new MediaController.CropState();
+                        l8 l8Var = j0Var2.x;
+                        if (l8Var != null) {
+                            l8Var.m0 = new MediaController.CropState();
                             j0Var2.f.b(j0Var2.x.m0);
-                            o8 o8Var2 = j0Var2.x;
-                            o8Var2.m0.orientation = o8Var2.Q;
+                            l8 l8Var2 = j0Var2.x;
+                            l8Var2.m0.orientation = l8Var2.Q;
                         }
-                        ((yb) j0Var2).E.l0(-1, false, true);
+                        ((vb) j0Var2).E.l0(-1, false, true);
                         break;
                 }
             }
@@ -101,7 +101,7 @@ public abstract class j0 extends FrameLayout {
         TextView textView2 = new TextView(context);
         textView2.setTextSize(1, 14.0f);
         textView2.setTypeface(AndroidUtilities.bold());
-        textView2.setBackground(org.telegram.ui.ActionBar.i6.f0(-12763843, 0, -1));
+        textView2.setBackground(org.telegram.ui.ActionBar.h6.f0(-12763843, 0, -1));
         textView2.setTextColor(-1);
         textView2.setPadding(org.telegram.ui.Cells.q3.b(12.0f, R.string.CropReset, textView2), 0, AndroidUtilities.dp(12.0f), 0);
         frameLayout2.addView(textView2, w7.x5.e(-2, -1, 113));
@@ -117,7 +117,7 @@ public abstract class j0 extends FrameLayout {
             public final void onClick(View view) {
                 switch (i11) {
                     case 0:
-                        ((yb) this.b).E.l0(-1, false, true);
+                        ((vb) this.b).E.l0(-1, false, true);
                         break;
                     case 1:
                         j0 j0Var = this.b;
@@ -130,14 +130,14 @@ public abstract class j0 extends FrameLayout {
                         break;
                     default:
                         j0 j0Var2 = this.b;
-                        o8 o8Var = j0Var2.x;
-                        if (o8Var != null) {
-                            o8Var.m0 = new MediaController.CropState();
+                        l8 l8Var = j0Var2.x;
+                        if (l8Var != null) {
+                            l8Var.m0 = new MediaController.CropState();
                             j0Var2.f.b(j0Var2.x.m0);
-                            o8 o8Var2 = j0Var2.x;
-                            o8Var2.m0.orientation = o8Var2.Q;
+                            l8 l8Var2 = j0Var2.x;
+                            l8Var2.m0.orientation = l8Var2.Q;
                         }
-                        ((yb) j0Var2).E.l0(-1, false, true);
+                        ((vb) j0Var2).E.l0(-1, false, true);
                         break;
                 }
             }
@@ -145,7 +145,7 @@ public abstract class j0 extends FrameLayout {
         TextView textView3 = new TextView(context);
         textView3.setTextSize(1, 14.0f);
         textView3.setTypeface(AndroidUtilities.bold());
-        textView3.setBackground(org.telegram.ui.ActionBar.i6.f0(-12763843, 0, -1));
+        textView3.setBackground(org.telegram.ui.ActionBar.h6.f0(-12763843, 0, -1));
         textView3.setTextColor(-15098625);
         textView3.setPadding(org.telegram.ui.Cells.q3.b(12.0f, R.string.StoryCrop, textView3), 0, AndroidUtilities.dp(12.0f), 0);
         frameLayout2.addView(textView3, w7.x5.e(-2, -1, 117));
@@ -161,7 +161,7 @@ public abstract class j0 extends FrameLayout {
             public final void onClick(View view) {
                 switch (i12) {
                     case 0:
-                        ((yb) this.b).E.l0(-1, false, true);
+                        ((vb) this.b).E.l0(-1, false, true);
                         break;
                     case 1:
                         j0 j0Var = this.b;
@@ -174,14 +174,14 @@ public abstract class j0 extends FrameLayout {
                         break;
                     default:
                         j0 j0Var2 = this.b;
-                        o8 o8Var = j0Var2.x;
-                        if (o8Var != null) {
-                            o8Var.m0 = new MediaController.CropState();
+                        l8 l8Var = j0Var2.x;
+                        if (l8Var != null) {
+                            l8Var.m0 = new MediaController.CropState();
                             j0Var2.f.b(j0Var2.x.m0);
-                            o8 o8Var2 = j0Var2.x;
-                            o8Var2.m0.orientation = o8Var2.Q;
+                            l8 l8Var2 = j0Var2.x;
+                            l8Var2.m0.orientation = l8Var2.Q;
                         }
-                        ((yb) j0Var2).E.l0(-1, false, true);
+                        ((vb) j0Var2).E.l0(-1, false, true);
                         break;
                 }
             }
@@ -190,24 +190,24 @@ public abstract class j0 extends FrameLayout {
 
     /* JADX INFO: Access modifiers changed from: private */
     public int getCurrentHeight() {
-        o8 o8Var = this.x;
-        if (o8Var == null) {
+        l8 l8Var = this.x;
+        if (l8Var == null) {
             return 1;
         }
-        int i10 = o8Var.Q;
-        d7 d7Var = this.a;
-        return (i10 == 90 || i10 == 270) ? d7Var.getContentWidth() : d7Var.getContentHeight();
+        int i10 = l8Var.Q;
+        b7 b7Var = this.a;
+        return (i10 == 90 || i10 == 270) ? b7Var.getContentWidth() : b7Var.getContentHeight();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public int getCurrentWidth() {
-        o8 o8Var = this.x;
-        if (o8Var == null) {
+        l8 l8Var = this.x;
+        if (l8Var == null) {
             return 1;
         }
-        int i10 = o8Var.Q;
-        d7 d7Var = this.a;
-        return (i10 == 90 || i10 == 270) ? d7Var.getContentHeight() : d7Var.getContentWidth();
+        int i10 = l8Var.Q;
+        b7 b7Var = this.a;
+        return (i10 == 90 || i10 == 270) ? b7Var.getContentHeight() : b7Var.getContentWidth();
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -242,44 +242,44 @@ public abstract class j0 extends FrameLayout {
         this.a.invalidate();
     }
 
-    public void setEntry(o8 o8Var) {
-        if (o8Var == null) {
+    public void setEntry(l8 l8Var) {
+        if (l8Var == null) {
             return;
         }
-        this.x = o8Var;
+        this.x = l8Var;
         this.y = false;
         g0 g0Var = this.f;
         g0Var.J = true;
         getLocationOnScreen(this.s);
         int[] iArr = this.v;
-        d7 d7Var = this.a;
-        d7Var.getLocationOnScreen(iArr);
-        MediaController.CropState cropState = o8Var.m0;
+        b7 b7Var = this.a;
+        b7Var.getLocationOnScreen(iArr);
+        MediaController.CropState cropState = l8Var.m0;
         if (cropState == null) {
             cropState = null;
         }
-        g0Var.p(o8Var.Q, this.w, cropState);
+        g0Var.p(l8Var.Q, this.w, cropState);
         float rotation = g0Var.getRotation();
         lg.f fVar = this.h;
         fVar.setRotation(rotation);
-        org.telegram.ui.Components.c6 c6Var = this.b;
+        org.telegram.ui.Components.e6 e6Var = this.b;
         if (cropState != null) {
             fVar.b(cropState.cropRotate);
             fVar.setRotated(cropState.transformRotation != 0);
             fVar.setMirrored(cropState.mirrored);
-            c6Var.f(cropState.mirrored, false);
+            e6Var.f(cropState.mirrored, false);
         } else {
             fVar.b(0.0f);
             fVar.setRotated(false);
             fVar.setMirrored(false);
-            c6Var.getClass();
-            c6Var.d(0.0f, false);
+            e6Var.getClass();
+            e6Var.d(0.0f, false);
         }
         g0Var.r(false);
         this.c.d(r5.i, true);
         i0 i0Var = this.d;
         i0Var.setVisibility(0);
         i0Var.invalidate();
-        d7Var.setCropEditorDrawing(this);
+        b7Var.setCropEditorDrawing(this);
     }
 }

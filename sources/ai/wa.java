@@ -25,13 +25,13 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.a90;
 import org.telegram.ui.Components.jw0;
-import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.z80;
+import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class wa extends View implements org.telegram.ui.Cells.z9 {
+public final class wa extends View implements org.telegram.ui.Cells.aa {
     public int E;
     public int F;
     public float G;
@@ -150,7 +150,7 @@ public final class wa extends View implements org.telegram.ui.Cells.z9 {
         ofFloat.addUpdateListener(new a(this, 13));
         this.I.addListener(new b(this, 10));
         this.I.setDuration(180L);
-        this.I.setInterpolator(qr.g);
+        this.I.setInterpolator(rr.g);
         this.I.start();
     }
 
@@ -192,7 +192,7 @@ public final class wa extends View implements org.telegram.ui.Cells.z9 {
         sa saVar;
         boolean z14;
         xa xaVar = this.J;
-        org.telegram.ui.Cells.aa aaVar = xaVar.W;
+        org.telegram.ui.Cells.ba baVar = xaVar.W;
         if (motionEvent.getAction() == 0) {
             xaVar.g0 = motionEvent.getX();
             xaVar.h0 = motionEvent.getY();
@@ -284,32 +284,32 @@ public final class wa extends View implements org.telegram.ui.Cells.z9 {
                 if (z10 && (xaVar.v0 || (vaVar2 = vaVarArr[0]) == null || vaVar2.g == null)) {
                     float f11 = this.E;
                     float f12 = this.F + i10;
-                    Rect rect = aaVar.B;
-                    org.telegram.ui.Cells.z9 z9Var = aaVar.u0;
-                    staticTextLayout = z9Var.getStaticTextLayout();
+                    Rect rect = baVar.B;
+                    org.telegram.ui.Cells.aa aaVar = baVar.u0;
+                    staticTextLayout = aaVar.getStaticTextLayout();
                     if (staticTextLayout != null) {
                         rect.setEmpty();
-                        aaVar.X = null;
+                        baVar.X = null;
                     } else {
-                        aaVar.X = z9Var;
+                        baVar.X = aaVar;
                         int i14 = (int) f11;
-                        aaVar.c = i14;
+                        baVar.c = i14;
                         int i15 = (int) f12;
-                        aaVar.d = i15;
-                        org.telegram.ui.Cells.t9 t9Var = aaVar.a0;
-                        t9Var.b = staticTextLayout;
-                        t9Var.d = f11;
-                        t9Var.c = f12;
-                        t9Var.a = 0;
+                        baVar.d = i15;
+                        org.telegram.ui.Cells.u9 u9Var = baVar.a0;
+                        u9Var.b = staticTextLayout;
+                        u9Var.d = f11;
+                        u9Var.c = f12;
+                        u9Var.a = 0;
                         rect.set(i14, i15, (int) (f11 + staticTextLayout.getWidth()), (int) (f12 + staticTextLayout.getHeight()));
                     }
-                    aaVar.N(motionEvent);
+                    baVar.N(motionEvent);
                 }
-                if (aaVar.y() && z10 && this.y) {
+                if (baVar.y() && z10 && this.y) {
                     z13 = false;
                     if (((GestureDetector) vaVarArr[0].k.a.b).onTouchEvent(motionEvent)) {
                         getParent().requestDisallowInterceptTouchEvent(true);
-                        aaVar.f(false);
+                        baVar.f(false);
                         return true;
                     }
                     z12 = true;
@@ -348,14 +348,14 @@ public final class wa extends View implements org.telegram.ui.Cells.z9 {
         if (z10) {
             float f112 = this.E;
             float f122 = this.F + i10;
-            Rect rect2 = aaVar.B;
-            org.telegram.ui.Cells.z9 z9Var2 = aaVar.u0;
-            staticTextLayout = z9Var2.getStaticTextLayout();
+            Rect rect2 = baVar.B;
+            org.telegram.ui.Cells.aa aaVar2 = baVar.u0;
+            staticTextLayout = aaVar2.getStaticTextLayout();
             if (staticTextLayout != null) {
             }
-            aaVar.N(motionEvent);
+            baVar.N(motionEvent);
         }
-        if (aaVar.y()) {
+        if (baVar.y()) {
         }
         z12 = true;
         z13 = false;
@@ -375,12 +375,12 @@ public final class wa extends View implements org.telegram.ui.Cells.z9 {
         return this.c;
     }
 
-    @Override // org.telegram.ui.Cells.z9
+    @Override // org.telegram.ui.Cells.aa
     public Layout getStaticTextLayout() {
         return this.r[0].e;
     }
 
-    @Override // org.telegram.ui.Cells.z9
+    @Override // org.telegram.ui.Cells.aa
     public CharSequence getText() {
         return this.r[0].n;
     }
@@ -391,8 +391,8 @@ public final class wa extends View implements org.telegram.ui.Cells.z9 {
         int i10 = 0;
         va vaVar = this.r[0];
         wa waVar = vaVar.v;
-        org.telegram.ui.Components.x5.release(waVar, vaVar.d);
-        org.telegram.ui.Components.x5.release(waVar, vaVar.f);
+        org.telegram.ui.Components.z5.release(waVar, vaVar.d);
+        org.telegram.ui.Components.z5.release(waVar, vaVar.f);
         if (vaVar.h == null) {
             return;
         }
@@ -403,7 +403,7 @@ public final class wa extends View implements org.telegram.ui.Cells.z9 {
             }
             ta taVar = taVarArr[i10];
             if (taVar != null) {
-                org.telegram.ui.Components.x5.release(waVar, taVar.a);
+                org.telegram.ui.Components.z5.release(waVar, taVar.a);
             }
             i10++;
         }
@@ -598,9 +598,9 @@ public final class wa extends View implements org.telegram.ui.Cells.z9 {
     
         r3.d(true);
         r1.b = null;
-        r13 = new org.telegram.ui.Components.d90(r9[0], null, r20.getX(), r20.getY(), 0);
+        r13 = new org.telegram.ui.Components.e90(r9[0], null, r20.getX(), r20.getY(), 0);
         r1.a = r13;
-        r13.d(org.telegram.ui.ActionBar.i6.l1(0.2f, -1));
+        r13.d(org.telegram.ui.ActionBar.h6.l1(0.2f, -1));
         r3.a(r1.a, null);
         r9 = r5.getSpanStart(r1.a.i);
         r12 = r5.getSpanEnd(r1.a.i);
@@ -622,7 +622,7 @@ public final class wa extends View implements org.telegram.ui.Cells.z9 {
      */
     /* JADX WARN: Code restructure failed: missing block: B:53:0x0178, code lost:
     
-        r5 = (org.telegram.ui.Components.x5[]) r5.getSpans(r11, r11, org.telegram.ui.Components.x5.class);
+        r5 = (org.telegram.ui.Components.z5[]) r5.getSpans(r11, r11, org.telegram.ui.Components.z5.class);
      */
     /* JADX WARN: Code restructure failed: missing block: B:54:0x0180, code lost:
     
@@ -706,7 +706,7 @@ public final class wa extends View implements org.telegram.ui.Cells.z9 {
      */
     /* JADX WARN: Code restructure failed: missing block: B:75:0x00f4, code lost:
     
-        r9 = (android.text.style.CharacterStyle[]) r5.getSpans(r11, r11, org.telegram.ui.Components.l51.class);
+        r9 = (android.text.style.CharacterStyle[]) r5.getSpans(r11, r11, org.telegram.ui.Components.k51.class);
      */
     /* JADX WARN: Code restructure failed: missing block: B:76:0x0197, code lost:
     
@@ -735,7 +735,7 @@ public final class wa extends View implements org.telegram.ui.Cells.z9 {
         if (!this.J.s0 && (vaVarArr = this.r) != null) {
             va vaVar = vaVarArr[0];
             if (vaVar.e != null) {
-                z80 z80Var = vaVar.c;
+                a90 a90Var = vaVar.c;
                 wa waVar = vaVar.v;
                 StaticLayout staticLayout = waVar.v;
                 xa xaVar = waVar.J;

@@ -7,7 +7,7 @@ import android.view.View;
 import java.util.Random;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class nq0 extends View {
     public Random a;
@@ -29,12 +29,12 @@ public final class nq0 extends View {
         int measuredWidth = (getMeasuredWidth() / 2) - AndroidUtilities.dp(3.0f);
         int i10 = 7;
         int dp = AndroidUtilities.dp(1.0f) + ((AndroidUtilities.dp(1.0f) + measuredWidth) * 7);
-        qr qrVar = qr.g;
+        rr rrVar = rr.g;
         float f10 = this.f;
-        float interpolation = qrVar.getInterpolation(f10 > 0.4f ? (f10 - 0.4f) / 0.6f : 0.0f);
+        float interpolation = rrVar.getInterpolation(f10 > 0.4f ? (f10 - 0.4f) / 0.6f : 0.0f);
         float f11 = (this.n * interpolation) + ((1.0f - interpolation) * this.h);
         canvas.save();
-        canvas.translate(0.0f, (-org.telegram.messenger.y0.z(4.0f, getMeasuredHeight(), dp)) * f11);
+        canvas.translate(0.0f, (-org.telegram.messenger.z0.z(4.0f, getMeasuredHeight(), dp)) * f11);
         int i11 = 0;
         while (i11 < i10) {
             int dp2 = ((AndroidUtilities.dp(1.0f) + measuredWidth) * i11) + AndroidUtilities.dp(f7);
@@ -43,7 +43,7 @@ public final class nq0 extends View {
             float f13 = dp2 + measuredWidth;
             rectF.set(0.0f, f12, measuredWidth, f13);
             canvas.drawRoundRect(rectF, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), paint2);
-            rectF.set(AndroidUtilities.dp(1.0f) + measuredWidth, f12, org.telegram.messenger.y0.C(1.0f, measuredWidth, measuredWidth), f13);
+            rectF.set(AndroidUtilities.dp(1.0f) + measuredWidth, f12, org.telegram.messenger.z0.C(1.0f, measuredWidth, measuredWidth), f13);
             canvas.drawRoundRect(rectF, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), paint2);
             i11++;
             i10 = 7;

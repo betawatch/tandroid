@@ -1,60 +1,6 @@
 package org.telegram.ui.web;
 
-import org.json.JSONObject;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.i6;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class a1 {
-    public final String a;
-    public final String b;
-    public final int c;
-
-    /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue
-    java.lang.NullPointerException: Cannot invoke "java.util.List.iterator()" because the return value of "jadx.core.dex.visitors.regions.SwitchOverStringVisitor$SwitchData.getNewCases()" is null
-    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.restoreSwitchOverString(SwitchOverStringVisitor.java:109)
-    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.visitRegion(SwitchOverStringVisitor.java:66)
-    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:77)
-    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:82)
-    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterative(DepthRegionTraversal.java:31)
-    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.visit(SwitchOverStringVisitor.java:60)
-     */
-    public a1(JSONObject jSONObject) {
-        this.c = -1;
-        this.a = jSONObject.getString("id");
-        String string = jSONObject.getString(TeXSymbolParser.TYPE_ATTR);
-        switch (string.hashCode()) {
-            case -1829997182:
-                if (string.equals("destructive")) {
-                    this.c = i6.q7;
-                    break;
-                }
-                break;
-            case -1367724422:
-                if (string.equals("cancel")) {
-                    this.b = LocaleController.getString(R.string.Cancel);
-                    return;
-                }
-                break;
-            case 3548:
-                if (string.equals("ok")) {
-                    this.b = LocaleController.getString(R.string.OK);
-                    return;
-                }
-                break;
-            case 94756344:
-                if (string.equals("close")) {
-                    this.b = LocaleController.getString(R.string.Close);
-                    return;
-                }
-                break;
-            case 1544803905:
-                string.equals("default");
-                break;
-        }
-        this.b = jSONObject.getString("text");
-    }
+public interface a1 {
 }

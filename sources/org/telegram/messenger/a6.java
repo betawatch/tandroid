@@ -1,9 +1,9 @@
 package org.telegram.messenger;
 
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.Components.n70;
+import org.telegram.ui.Components.o70;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a6 implements Runnable {
     public final /* synthetic */ int a;
@@ -25,11 +25,11 @@ public final /* synthetic */ class a6 implements Runnable {
                 ((MediaController) this.c).lambda$setPlaybackSpeed$16((MessageObject) this.d, this.b);
                 break;
             default:
-                org.telegram.ui.h4 h4Var = (org.telegram.ui.h4) this.c;
-                n70 n70Var = (n70) this.d;
-                h4Var.h0.M.c(0.0f, true);
-                n70Var.p = new org.telegram.ui.b0(h4Var, this.b, 0);
-                n70Var.Z();
+                org.telegram.ui.i4 i4Var = (org.telegram.ui.i4) this.c;
+                o70 o70Var = (o70) this.d;
+                i4Var.h0.M.c(0.0f, true);
+                o70Var.p = new org.telegram.ui.c0(i4Var, this.b, 0);
+                o70Var.Z();
                 break;
         }
     }

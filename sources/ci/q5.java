@@ -2,55 +2,36 @@ package ci;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
+import android.graphics.Path;
 import android.graphics.RectF;
-import android.view.MotionEvent;
-import android.widget.FrameLayout;
+import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class q5 extends FrameLayout {
-    public final /* synthetic */ qb a;
+public final class q5 extends qg.l1 {
+    public final Path g3;
+    public final /* synthetic */ nb h3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q5(qb qbVar, Context context) {
+    public q5(nb nbVar, Context context) {
         super(context);
-        this.a = qbVar;
-        setWillNotDraw(false);
+        this.h3 = nbVar;
+        this.g3 = new Path();
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        qb qbVar = this.a;
-        Paint paint = qbVar.r1;
-        qg.r1 r1Var = qbVar.l1;
-        paint.setAlpha((int) ((1.0f - qbVar.t1) * r1Var.getAlpha() * 20.0f));
+    @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void draw(Canvas canvas) {
+        ViewGroup barView;
+        barView = this.h3.getBarView();
         RectF rectF = AndroidUtilities.rectTmp;
-        r1Var.b(rectF);
-        float translationY = r1Var.getTranslationY() + qbVar.T0.getTranslationY() + r1Var.getTop() + r4.getTop();
-        float f7 = rectF.left;
-        qg.w1 w1Var = qbVar.m1;
-        rectF.set(AndroidUtilities.lerp(f7, w1Var.getLeft(), qbVar.t1), AndroidUtilities.lerp(rectF.top + translationY, w1Var.getTop() - w1Var.getTranslationY(), qbVar.t1), AndroidUtilities.lerp(rectF.right, w1Var.getRight(), qbVar.t1), AndroidUtilities.lerp(translationY + rectF.bottom, w1Var.getBottom() - w1Var.getTranslationY(), qbVar.t1));
-        float dp = AndroidUtilities.dp(AndroidUtilities.lerp(32, 16, qbVar.t1));
-        Paint paint2 = qbVar.s1;
-        int alpha = paint2.getAlpha();
-        paint2.setAlpha((int) (alpha * qbVar.t1));
-        canvas.drawRoundRect(rectF, dp, dp, paint2);
-        paint2.setAlpha(alpha);
-        canvas.drawRoundRect(rectF, dp, dp, paint);
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getActionMasked() == 0) {
-            qb qbVar = this.a;
-            if (qbVar.u1) {
-                qbVar.P0(false);
-                return true;
-            }
-        }
-        return super.onTouchEvent(motionEvent);
+        rectF.set(AndroidUtilities.lerp(barView.getLeft() - getLeft(), 0, r0.D1), AndroidUtilities.lerp(barView.getTop() - getTop(), 0, r0.D1), AndroidUtilities.lerp(barView.getRight() - getLeft(), getWidth(), r0.D1), AndroidUtilities.lerp(barView.getBottom() - getTop(), getHeight(), r0.D1));
+        Path path = this.g3;
+        path.rewind();
+        path.addRoundRect(rectF, AndroidUtilities.dp(32.0f), AndroidUtilities.dp(32.0f), Path.Direction.CW);
+        canvas.save();
+        canvas.clipPath(path);
+        super.draw(canvas);
+        canvas.restore();
     }
 }

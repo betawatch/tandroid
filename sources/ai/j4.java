@@ -9,46 +9,46 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.hq0;
-import org.telegram.ui.Components.vc;
+import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class j4 extends hq0 {
-    public final /* synthetic */ f6 b1;
+    public final /* synthetic */ e6 b1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j4(f6 f6Var, Context context, String str, String str2, boolean z10, x3 x3Var) {
+    public j4(e6 e6Var, Context context, String str, String str2, boolean z10, x3 x3Var) {
         super(context, null, null, str, null, false, str2, null, false, false, z10, null, x3Var);
-        this.b1 = f6Var;
+        this.b1 = e6Var;
     }
 
     @Override // org.telegram.ui.Components.hq0
     public final void R0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
         if (z10) {
-            f6 f6Var = this.b1;
-            vc vcVar = new vc(f6Var.c1, this.resourcesProvider);
+            e6 e6Var = this.b1;
+            xc xcVar = new xc(e6Var.c1, this.resourcesProvider);
             if (iVar.m() == 1) {
                 long j3 = iVar.j(0);
                 if (j3 == UserConfig.getInstance(this.currentAccount).clientUserId) {
-                    org.telegram.ui.Components.oc G = vcVar.G(R.raw.saved_messages, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StorySharedToSavedMessages, new Object[0])));
+                    org.telegram.ui.Components.qc G = xcVar.G(R.raw.saved_messages, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StorySharedToSavedMessages, new Object[0])));
                     G.r = false;
                     G.j();
                 } else if (j3 < 0) {
-                    org.telegram.ui.Components.oc G2 = vcVar.G(R.raw.forward, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StorySharedTo, tL_forumTopic != null ? tL_forumTopic.title : MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-j3)).title)));
+                    org.telegram.ui.Components.qc G2 = xcVar.G(R.raw.forward, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StorySharedTo, tL_forumTopic != null ? tL_forumTopic.title : MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-j3)).title)));
                     G2.r = false;
                     G2.j();
                 } else {
-                    org.telegram.ui.Components.oc G3 = vcVar.G(R.raw.forward, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StorySharedTo, MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(j3)).first_name)));
+                    org.telegram.ui.Components.qc G3 = xcVar.G(R.raw.forward, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StorySharedTo, MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(j3)).first_name)));
                     G3.r = false;
                     G3.j();
                 }
             } else {
-                org.telegram.ui.Components.oc Q = vcVar.Q(R.raw.forward, 36, AndroidUtilities.replaceTags(LocaleController.formatPluralString("StorySharedToManyChats", iVar.m(), Integer.valueOf(iVar.m()))));
+                org.telegram.ui.Components.qc Q = xcVar.Q(R.raw.forward, 36, AndroidUtilities.replaceTags(LocaleController.formatPluralString("StorySharedToManyChats", iVar.m(), Integer.valueOf(iVar.m()))));
                 Q.r = false;
                 Q.j();
             }
             try {
-                f6Var.performHapticFeedback(3);
+                e6Var.performHapticFeedback(3);
             } catch (Exception unused) {
             }
         }

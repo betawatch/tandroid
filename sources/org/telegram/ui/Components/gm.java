@@ -1,23 +1,42 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.graphics.Outline;
 import android.view.View;
-import org.telegram.tgnet.TLObject;
+import android.view.ViewOutlineProvider;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class gm extends e9 {
-    public final /* synthetic */ hm E;
+public final class gm extends ViewOutlineProvider {
+    public final /* synthetic */ im a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gm(hm hmVar, Context context) {
-        super(context);
-        this.E = hmVar;
+    public gm(im imVar) {
+        this.a = imVar;
     }
 
-    @Override // org.telegram.ui.Components.e9, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        hm hmVar = this.E;
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(hmVar.v.K0, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(hmVar.v.K0, TLObject.FLAG_30));
+    @Override // android.view.ViewOutlineProvider
+    public final void getOutline(View view, Outline outline) {
+        org.telegram.ui.Cells.t5 t5Var = (org.telegram.ui.Cells.t5) view;
+        if (t5Var.getTag() == null) {
+            return;
+        }
+        int intValue = ((Integer) t5Var.getTag()).intValue();
+        im imVar = this.a;
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = imVar.v;
+        if (imVar.d && chatAttachAlertPhotoLayout.T0 == chatAttachAlertPhotoLayout.U0 && !chatAttachAlertPhotoLayout.O0) {
+            intValue++;
+        }
+        if (chatAttachAlertPhotoLayout.g1) {
+            intValue++;
+        }
+        if (intValue == 0) {
+            int dp = AndroidUtilities.dp(16.0f);
+            outline.setRoundRect(0, 0, view.getMeasuredWidth() + dp, view.getMeasuredHeight() + dp, dp);
+        } else if (intValue != chatAttachAlertPhotoLayout.M0 - 1) {
+            outline.setRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
+        } else {
+            int dp2 = AndroidUtilities.dp(16.0f);
+            outline.setRoundRect(-dp2, 0, view.getMeasuredWidth(), view.getMeasuredHeight() + dp2, dp2);
+        }
     }
 }

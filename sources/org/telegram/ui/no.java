@@ -1,87 +1,39 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class no implements org.telegram.ui.ActionBar.a2, MessagesStorage.LongCallback, dd0, MessagesStorage.BooleanCallback {
+public final /* synthetic */ class no implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ wo b;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 d;
 
-    public /* synthetic */ no(wo woVar, int i10) {
+    public /* synthetic */ no(org.telegram.ui.ActionBar.n2 n2Var, long j3, long j10, int i10) {
         this.a = i10;
-        this.b = woVar;
+        this.d = n2Var;
+        this.b = j3;
+        this.c = j10;
     }
 
-    @Override // org.telegram.ui.dd0
-    public void b(TLRPC.MessageMedia messageMedia, int i10, boolean z10, int i11, long j3) {
-        TLRPC.TL_channelLocation tL_channelLocation = new TLRPC.TL_channelLocation();
-        tL_channelLocation.address = messageMedia.address;
-        tL_channelLocation.geo_point = messageMedia.geo;
-        wo woVar = this.b;
-        TLRPC.ChatFull chatFull = woVar.y0;
-        chatFull.location = tL_channelLocation;
-        chatFull.flags |= 32768;
-        woVar.p0(false, true);
-        woVar.getMessagesController().loadFullChat(woVar.w0, 0, true);
-    }
-
-    @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        org.telegram.ui.Components.v51 v51Var;
         switch (this.a) {
             case 0:
-                this.b.j0();
-                break;
-            case 1:
-                this.b.finishFragment();
-                break;
-            case 2:
-                this.b.j0();
+                MessagesController.getInstance(r0.currentAccount).unlinkCommunity(this.b, this.c, new c5((so) this.d, 4));
                 break;
             default:
-                this.b.finishFragment();
-                break;
-        }
-    }
-
-    @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
-    public void run(boolean z10) {
-        wo woVar = this.b;
-        woVar.getClass();
-        if (AndroidUtilities.isTablet()) {
-            woVar.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, Long.valueOf(-woVar.w0));
-        } else {
-            woVar.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
-        }
-        woVar.finishFragment();
-        woVar.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needDeleteDialog, Long.valueOf(-woVar.x0.id), null, woVar.x0, Boolean.valueOf(z10));
-    }
-
-    @Override // org.telegram.messenger.MessagesStorage.LongCallback
-    public void run(long j3) {
-        switch (this.a) {
-            case 4:
-                this.b.t0(Long.valueOf(j3));
-                break;
-            default:
-                wo woVar = this.b;
-                if (j3 == 0) {
-                    woVar.N0 = false;
-                    break;
-                } else {
-                    woVar.w0 = j3;
-                    woVar.x0 = woVar.getMessagesController().getChat(Long.valueOf(j3));
-                    woVar.N0 = false;
-                    TLRPC.ChatFull chatFull = woVar.y0;
-                    if (chatFull != null) {
-                        chatFull.hidden_prehistory = true;
-                    }
-                    woVar.j0();
+                org.telegram.ui.web.y1 y1Var = (org.telegram.ui.web.y1) this.d;
+                y1Var.f = this.b;
+                y1Var.h = this.c;
+                org.telegram.ui.Components.x51 x51Var = y1Var.a;
+                if (x51Var != null && (v51Var = x51Var.Y2) != null && x51Var.G) {
+                    v51Var.N(true);
                     break;
                 }
+                break;
         }
     }
 }

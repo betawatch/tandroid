@@ -12,9 +12,9 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.LocationController;
-import org.telegram.ui.Components.gl;
+import org.telegram.ui.Components.hl;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v7 implements Runnable {
     public final /* synthetic */ int a;
@@ -82,13 +82,13 @@ public final /* synthetic */ class v7 implements Runnable {
                 w7Var2.G = d12;
                 w7Var2.E = false;
                 CharSequence charSequence = w7Var2.I;
-                org.telegram.ui.ActionBar.j5 j5Var = w7Var2.b;
-                CharSequence replaceEmoji = Emoji.replaceEmoji(charSequence, j5Var.getPaint().getFontMetricsInt(), false);
+                org.telegram.ui.ActionBar.i5 i5Var = w7Var2.b;
+                CharSequence replaceEmoji = Emoji.replaceEmoji(charSequence, i5Var.getPaint().getFontMetricsInt(), false);
                 w7Var2.I = replaceEmoji;
-                j5Var.l(replaceEmoji, false);
+                i5Var.l(replaceEmoji, false);
                 break;
             default:
-                ((gl) this.b).b0(this.c, this.d);
+                ((hl) this.b).b0(this.c, this.d);
                 break;
         }
     }

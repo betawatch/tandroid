@@ -1,42 +1,24 @@
 package ci;
 
-import android.content.Context;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class rb extends d1 {
-    public final /* synthetic */ oc b0;
+public final class rb implements w2 {
+    public final /* synthetic */ lc a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rb(oc ocVar, Context context, boolean z10) {
-        super(context, z10);
-        this.b0 = ocVar;
+    public rb(lc lcVar) {
+        this.a = lcVar;
     }
 
-    @Override // org.telegram.messenger.camera.CameraView
-    public final void receivedAmplitude(double d) {
-        l7 l7Var = this.b0.O0;
-        if (l7Var != null) {
-            l7Var.g0 = Utilities.clamp((float) (d / 1800.0d), 1.0f, 0.0f);
-        }
+    @Override // ci.w2
+    public final void setInvert(float f7) {
+        lc lcVar = this.a;
+        AndroidUtilities.setLightNavigationBar(lcVar.n, f7 > 0.5f);
+        AndroidUtilities.setLightStatusBar(lcVar.n, f7 > 0.5f);
     }
 
-    @Override // ci.d1, org.telegram.messenger.camera.CameraView
-    public final void toggleDual() {
-        super.toggleDual();
-        oc ocVar = this.b0;
-        ocVar.F0.setValue(isDual());
-        ocVar.F0.setContentDescription(LocaleController.getString(isDual() ? R.string.AccDescrDualCameraOn : R.string.AccDescrDualCameraOff));
-        ocVar.e0(ocVar.C());
-    }
-
-    @Override // ci.d1
-    public final void u(boolean z10) {
-        oc ocVar = this.b0;
-        ocVar.o1.b(ocVar.c1.getText());
-        ocVar.o1.a(false, z10, ocVar.k0);
+    @Override // ci.w2
+    public final void invalidate() {
     }
 }

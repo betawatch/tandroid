@@ -5,20 +5,20 @@ import android.graphics.Paint;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserObject;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.d6;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class b3 extends org.telegram.ui.web.d1 {
+public final class b3 extends org.telegram.ui.web.b1 {
     public final /* synthetic */ k3 S0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b3(k3 k3Var, Context context, e6 e6Var, int i10) {
-        super(i10, context, e6Var, true);
+    public b3(k3 k3Var, Context context, d6 d6Var, int i10) {
+        super(i10, context, d6Var, true);
         this.S0 = k3Var;
     }
 
-    @Override // org.telegram.ui.web.d1
+    @Override // org.telegram.ui.web.b1
     public final void E(String str, boolean z10) {
         k3 k3Var = this.S0;
         Paint paint = k3Var.P;
@@ -29,29 +29,29 @@ public final class b3 extends org.telegram.ui.web.d1 {
             k3Var.U0.setBackgroundColor(paint.getColor());
             k3Var.T0 = str;
         }
-        org.telegram.ui.c3 c3Var = k3Var.U0;
+        org.telegram.ui.d3 d3Var = k3Var.U0;
         k3Var.S0 = z10;
-        AndroidUtilities.updateViewVisibilityAnimated(c3Var, z10, 1.0f, false);
+        AndroidUtilities.updateViewVisibilityAnimated(d3Var, z10, 1.0f, false);
         invalidate();
     }
 
-    @Override // org.telegram.ui.web.d1
-    public final void K(org.telegram.ui.web.z0 z0Var) {
+    @Override // org.telegram.ui.web.b1
+    public final void K(org.telegram.ui.web.y0 y0Var) {
         k3 k3Var = this.S0;
-        k3Var.v.setWebView(z0Var);
+        k3Var.v.setWebView(y0Var);
         a1 a1Var = k3Var.B0;
         if (a1Var != null) {
-            a1Var.k = z0Var;
+            a1Var.k = y0Var;
         }
-        k3Var.m0.setWebView(z0Var);
+        k3Var.m0.setWebView(y0Var);
         k3Var.F();
     }
 
-    @Override // org.telegram.ui.web.d1
-    public final void L(org.telegram.ui.web.z0 z0Var) {
+    @Override // org.telegram.ui.web.b1
+    public final void L(org.telegram.ui.web.y0 y0Var) {
         k3 k3Var = this.S0;
         a1 a1Var = k3Var.B0;
-        if (a1Var != null && a1Var.k == z0Var) {
+        if (a1Var != null && a1Var.k == y0Var) {
             a1Var.k = null;
             a1Var.b();
         }

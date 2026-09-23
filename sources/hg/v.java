@@ -15,52 +15,52 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.j5;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.i5;
 import w7.x5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class v extends FrameLayout {
-    public final j5 a;
+    public final i5 a;
     public final vh.o b;
-    public final j5 c;
-    public final e6 d;
+    public final i5 c;
+    public final d6 d;
     public boolean e;
     public TL_account.TL_businessChatLink f;
 
-    public v(Context context, e6 e6Var) {
+    public v(Context context, d6 d6Var) {
         super(context);
-        this.d = e6Var;
+        this.d = d6Var;
         setWillNotDraw(false);
         ImageView imageView = new ImageView(context);
         imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
         imageView.setImageResource(R.drawable.msg_limit_links);
         imageView.setPadding(AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f));
         imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-        imageView.setBackground(i6.K(AndroidUtilities.dp(36.0f), i6.w0(null, i6.Oh, false)));
+        imageView.setBackground(h6.K(AndroidUtilities.dp(36.0f), h6.w0(null, h6.Oh, false)));
         imageView.setOnClickListener(new ai.v0(this, 25));
         addView(imageView, x5.i(36.0f, 36.0f, 8388627, 14.0f, 0.0f, 14.0f, 0.0f));
-        j5 j5Var = new j5(context);
-        this.a = j5Var;
-        j5Var.setTextSize(15);
-        j5Var.setTextColor(i6.w0(null, i6.G6, false));
-        j5Var.setGravity(LocaleController.isRTL ? 5 : 3);
-        addView(j5Var, x5.i(-1.0f, 20.0f, 55, 64.0f, 10.0f, 14.0f, 0.0f));
-        j5 j5Var2 = new j5(context);
-        this.c = j5Var2;
-        j5Var2.setTextSize(14);
-        int i10 = i6.z6;
-        j5Var2.setTextColor(i6.w0(null, i10, false));
-        j5Var2.setGravity(LocaleController.isRTL ? 3 : 5);
-        addView(j5Var2, x5.i(-1.0f, 18.0f, 55, 64.0f, 10.66f, 14.0f, 0.0f));
+        i5 i5Var = new i5(context);
+        this.a = i5Var;
+        i5Var.setTextSize(15);
+        i5Var.setTextColor(h6.w0(null, h6.G6, false));
+        i5Var.setGravity(LocaleController.isRTL ? 5 : 3);
+        addView(i5Var, x5.i(-1.0f, 20.0f, 55, 64.0f, 10.0f, 14.0f, 0.0f));
+        i5 i5Var2 = new i5(context);
+        this.c = i5Var2;
+        i5Var2.setTextSize(14);
+        int i10 = h6.z6;
+        i5Var2.setTextColor(h6.w0(null, i10, false));
+        i5Var2.setGravity(LocaleController.isRTL ? 3 : 5);
+        addView(i5Var2, x5.i(-1.0f, 18.0f, 55, 64.0f, 10.66f, 14.0f, 0.0f));
         vh.o oVar = new vh.o(context);
         this.b = oVar;
         oVar.setTextSize(1, 13.0f);
         oVar.setMaxLines(1);
         oVar.setEllipsize(TextUtils.TruncateAt.END);
-        oVar.setTextColor(i6.v0(i10, e6Var));
+        oVar.setTextColor(h6.v0(i10, d6Var));
         oVar.setGravity(LocaleController.isRTL ? 5 : 3);
         oVar.f = false;
         oVar.setUseAlphaForEmoji(false);
@@ -72,9 +72,9 @@ public final class v extends FrameLayout {
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (this.e) {
-            Paint T0 = i6.T0("paintDivider", this.d);
+            Paint T0 = h6.T0("paintDivider", this.d);
             if (T0 == null) {
-                T0 = i6.k0;
+                T0 = h6.k0;
             }
             canvas.drawRect(AndroidUtilities.dp(LocaleController.isRTL ? 0.0f : 64.0f), getMeasuredHeight() - 1, getWidth() - AndroidUtilities.dp(LocaleController.isRTL ? 64.0f : 0.0f), getMeasuredHeight(), T0);
         }
@@ -84,12 +84,12 @@ public final class v extends FrameLayout {
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
         boolean z11 = LocaleController.isRTL;
-        j5 j5Var = this.c;
-        j5 j5Var2 = this.a;
+        i5 i5Var = this.c;
+        i5 i5Var2 = this.a;
         if (z11) {
-            j5Var2.setPadding(j5Var.getTextWidth(), 0, 0, 0);
+            i5Var2.setPadding(i5Var.getTextWidth(), 0, 0, 0);
         } else {
-            j5Var2.setPadding(0, 0, j5Var.getTextWidth(), 0);
+            i5Var2.setPadding(0, 0, i5Var.getTextWidth(), 0);
         }
     }
 

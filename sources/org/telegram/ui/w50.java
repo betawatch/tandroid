@@ -1,55 +1,34 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import java.util.HashSet;
+import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class w50 extends s4.j {
-    public float F;
-    public ValueAnimator G;
-    public final HashSet H = new HashSet();
-    public final HashSet I = new HashSet();
-    public float J;
-    public float K;
-    public final /* synthetic */ i60 L;
+public final class w50 extends org.telegram.ui.Cells.e4 {
+    public final /* synthetic */ z50 f0;
 
-    public w50(i60 i60Var) {
-        this.L = i60Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public w50(z50 z50Var, Context context) {
+        super(context);
+        this.f0 = z50Var;
     }
 
-    @Override // s4.j, s4.m0
-    public final void g() {
-        super.g();
-        this.I.clear();
-        this.H.clear();
-        this.K = Float.MAX_VALUE;
-        this.L.Q.invalidate();
+    @Override // org.telegram.ui.Cells.e4
+    public final void d(org.telegram.ui.Cells.e4 e4Var) {
+        f60 f60Var = this.f0.M;
+        f60 f60Var2 = f60.D3;
+        f60Var.F1(e4Var);
     }
 
-    @Override // s4.j, s4.m0
-    public final void m() {
-        boolean isEmpty = this.p.isEmpty();
-        boolean isEmpty2 = this.r.isEmpty();
-        boolean isEmpty3 = this.q.isEmpty();
-        ValueAnimator valueAnimator = this.G;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-            this.G = null;
+    @Override // org.telegram.ui.Cells.e4, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        if (AndroidUtilities.isTablet()) {
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(420.0f), View.MeasureSpec.getSize(i10)), TLObject.FLAG_30), i11);
+        } else {
+            super.onMeasure(i10, i11);
         }
-        if (!isEmpty || !isEmpty2 || !isEmpty3) {
-            this.F = 0.0f;
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-            this.G = ofFloat;
-            ofFloat.addUpdateListener(new b3(this, 17));
-            this.G.addListener(new org.telegram.ui.Components.v81(this, 22));
-            this.G.setDuration(350L);
-            this.G.setInterpolator(org.telegram.ui.Components.qr.f);
-            this.G.start();
-            i60 i60Var = this.L;
-            i60Var.Q.invalidate();
-            i60Var.a2.invalidate();
-        }
-        super.m();
     }
 }

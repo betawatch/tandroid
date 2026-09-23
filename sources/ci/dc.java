@@ -1,126 +1,175 @@
 package ci;
 
-import android.text.TextPaint;
-import android.text.style.ClickableSpan;
+import android.animation.ValueAnimator;
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.LinearGradient;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.Shader;
 import android.view.View;
-import org.telegram.messenger.voip.GroupCallMessage;
-import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.h40;
-import org.telegram.ui.hf0;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.jf0;
+import org.telegram.ui.Components.m70;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class dc extends ClickableSpan {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class dc extends FrameLayout {
+    public float a;
+    public float b;
+    public final Paint c;
+    public LinearGradient d;
+    public final /* synthetic */ lc e;
 
-    public /* synthetic */ dc(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public dc(lc lcVar, Activity activity) {
+        super(activity);
+        this.e = lcVar;
+        this.c = new Paint(1);
     }
 
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        GroupCallMessage groupCallMessage;
-        org.telegram.ui.ActionBar.e6 e6Var;
-        switch (this.a) {
-            case 0:
-                ((ec) this.b).S1.T();
-                break;
-            case 1:
-                lh.c cVar = (lh.c) this.b;
-                lh.a aVar = cVar.I;
-                if (aVar != null && (groupCallMessage = cVar.H) != null) {
-                    ((h40) aVar).a(groupCallMessage);
-                    break;
-                }
-                break;
-            case 2:
-                org.telegram.ui.Cells.x1 x1Var = (org.telegram.ui.Cells.x1) this.b;
-                nf.f.s(x1Var.getContext(), "https://fragment.com/username/" + ((org.telegram.ui.pa) x1Var.M).e.r);
-                break;
-            case 3:
-                ((org.telegram.ui.ub) this.b).finishFragment();
-                break;
-            case 4:
-                ((org.telegram.ui.q1) this.b).run();
-                break;
-            case 5:
-                ((org.telegram.ui.Components.vc) this.b).a.presentFragment(new PremiumPreviewFragment(0, "settings"));
-                break;
-            case 6:
-                ((ActionBarLayout) ((LaunchActivity) this.b).O()).P(new PremiumPreviewFragment(0, "gift"));
-                break;
-            case 7:
-                ((hf0) this.b).q(false);
-                break;
-            case 8:
-                rg.j0 j0Var = ((rg.c0) this.b).c;
-                org.telegram.ui.ActionBar.n2 n2Var = j0Var.n;
-                long j3 = j0Var.a0;
-                e6Var = ((org.telegram.ui.ActionBar.f3) j0Var).resourcesProvider;
-                tg.o.m(n2Var, e6Var, j3, null);
-                break;
+    public static void a(View view, int i10, int i11) {
+        view.measure(View.MeasureSpec.makeMeasureSpec(i10, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_30));
+    }
+
+    public final void b(float f7) {
+        float f10 = this.a;
+        this.b = f7;
+        super.setTranslationY(f10 + f7);
+    }
+
+    public final void c() {
+        if (this.e.J == 0) {
+            setBackground(org.telegram.ui.ActionBar.h6.b0(AndroidUtilities.dp(12.0f), -16777216));
+        } else {
+            setBackground(null);
         }
     }
 
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        org.telegram.ui.ActionBar.e6 e6Var;
-        switch (this.a) {
-            case 0:
-                textPaint.setUnderlineText(false);
-                break;
-            case 1:
-                break;
-            case 2:
-                super.updateDrawState(textPaint);
-                textPaint.setUnderlineText(false);
-                break;
-            case 3:
-                super.updateDrawState(textPaint);
-                textPaint.setUnderlineText(false);
-                break;
-            case 4:
-                super.updateDrawState(textPaint);
-                textPaint.setUnderlineText(false);
-                break;
-            case 5:
-                super.updateDrawState(textPaint);
-                textPaint.setUnderlineText(false);
-                break;
-            case 6:
-                super.updateDrawState(textPaint);
-                textPaint.setUnderlineText(false);
-                break;
-            case 7:
-                super.updateDrawState(textPaint);
-                textPaint.setUnderlineText(false);
-                break;
-            case 8:
-                super.updateDrawState(textPaint);
-                textPaint.setUnderlineText(false);
-                int i10 = org.telegram.ui.ActionBar.i6.gc;
-                e6Var = ((org.telegram.ui.ActionBar.f3) ((rg.c0) this.b).c).resourcesProvider;
-                textPaint.setColor(org.telegram.ui.ActionBar.i6.v0(i10, e6Var));
-                break;
-            default:
-                super.updateDrawState(textPaint);
-                textPaint.setUnderlineText(false);
-                Integer num = ((rg.k1) this.b).u0;
-                if (num != null) {
-                    textPaint.setColor(num.intValue());
-                    break;
-                }
-                break;
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j3) {
+        boolean drawChild = super.drawChild(canvas, view, j3);
+        lc lcVar = this.e;
+        if (view == lcVar.h0) {
+            float f7 = lcVar.V ? AndroidUtilities.statusBarHeight : 0.0f;
+            LinearGradient linearGradient = this.d;
+            Paint paint = this.c;
+            if (linearGradient == null) {
+                LinearGradient linearGradient2 = new LinearGradient(0.0f, f7, 0.0f, f7 + AndroidUtilities.dp(72.0f), new int[]{TLObject.FLAG_30, 0}, new float[]{f7 / (AndroidUtilities.dp(72.0f) + f7), 1.0f}, Shader.TileMode.CLAMP);
+                this.d = linearGradient2;
+                paint.setShader(linearGradient2);
+            }
+            paint.setAlpha(255);
+            RectF rectF = AndroidUtilities.rectTmp;
+            rectF.set(0.0f, 0.0f, getWidth(), AndroidUtilities.dp(84.0f) + f7);
+            canvas.drawRoundRect(rectF, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), paint);
+        }
+        return drawChild;
+    }
+
+    @Override // android.view.View
+    public final void invalidate() {
+        ValueAnimator valueAnimator = this.e.E;
+        if (valueAnimator == null || !valueAnimator.isRunning()) {
+            super.invalidate();
         }
     }
 
-    private final void a(View view) {
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        lc lcVar = this.e;
+        int i14 = lcVar.V ? lcVar.Z : 0;
+        int measuredWidth = getMeasuredWidth();
+        int measuredHeight = getMeasuredHeight();
+        lcVar.h0.layout(0, 0, lcVar.S, lcVar.T);
+        lcVar.h0.setPivotX(lcVar.S * 0.5f);
+        FrameLayout frameLayout = lcVar.i0;
+        frameLayout.layout(0, i14, lcVar.S, frameLayout.getMeasuredHeight() + i14);
+        FrameLayout frameLayout2 = lcVar.k0;
+        frameLayout2.layout(0, lcVar.T - frameLayout2.getMeasuredHeight(), lcVar.S, lcVar.T);
+        FrameLayout frameLayout3 = lcVar.m0;
+        int i15 = lcVar.T;
+        frameLayout3.layout(0, i15, lcVar.S, frameLayout3.getMeasuredHeight() + i15);
+        lcVar.l0.layout(0, 0, lcVar.S, lcVar.T);
+        bb bbVar = lcVar.t0;
+        if (bbVar != null) {
+            bbVar.layout(0, 0, measuredWidth, measuredHeight);
+        }
+        lcVar.s.c.layout(0, 0, measuredWidth, measuredHeight);
+        i iVar = lcVar.c1.M;
+        if (iVar != null) {
+            iVar.layout(0, 0, lcVar.S, lcVar.T);
+            lcVar.c1.y();
+        }
+        jf0 jf0Var = lcVar.B1;
+        if (jf0Var != null) {
+            jf0Var.layout(0, 0, jf0Var.getMeasuredWidth(), lcVar.B1.getMeasuredHeight());
+        }
+        nb nbVar = lcVar.v1;
+        if (nbVar != null) {
+            nbVar.layout(0, 0, nbVar.getMeasuredWidth(), lcVar.v1.getMeasuredHeight());
+        }
+        for (int i16 = 0; i16 < getChildCount(); i16++) {
+            View childAt = getChildAt(i16);
+            if (childAt instanceof m70) {
+                childAt.layout(0, 0, measuredWidth, measuredHeight);
+            }
+        }
+        setPivotX(measuredWidth / 2.0f);
+        setPivotY((-measuredHeight) * 0.2f);
     }
 
-    private final void b(TextPaint textPaint) {
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int size = View.MeasureSpec.getSize(i10);
+        int size2 = View.MeasureSpec.getSize(i11);
+        lc lcVar = this.e;
+        a(lcVar.h0, lcVar.S, lcVar.T);
+        lcVar.j();
+        a(lcVar.i0, lcVar.S, AndroidUtilities.dp(150.0f));
+        a(lcVar.k0, lcVar.S, AndroidUtilities.dp(220.0f));
+        a(lcVar.m0, lcVar.S, lcVar.U);
+        a(lcVar.l0, lcVar.S, lcVar.T);
+        a(lcVar.s.c, size, size2);
+        bb bbVar = lcVar.t0;
+        if (bbVar != null) {
+            a(bbVar, size, size2);
+        }
+        i iVar = lcVar.c1.M;
+        if (iVar != null) {
+            a(iVar, lcVar.S, lcVar.T);
+        }
+        jf0 jf0Var = lcVar.B1;
+        if (jf0Var != null) {
+            a(jf0Var, size, size2);
+        }
+        nb nbVar = lcVar.v1;
+        if (nbVar != null) {
+            a(nbVar, size, size2);
+        }
+        for (int i12 = 0; i12 < getChildCount(); i12++) {
+            View childAt = getChildAt(i12);
+            if (childAt instanceof m70) {
+                a(childAt, size, size2);
+            }
+        }
+        setMeasuredDimension(size, size2);
+    }
+
+    @Override // android.view.View
+    public final void setTranslationY(float f7) {
+        this.a = f7;
+        super.setTranslationY(this.b + f7);
+        float clamp = Utilities.clamp((f7 / getMeasuredHeight()) * 4.0f, 1.0f, 0.0f);
+        lc lcVar = this.e;
+        lcVar.K = clamp;
+        lcVar.o();
+        lcVar.n.invalidate();
+        float clamp2 = 1.0f - (Utilities.clamp(getTranslationY() / AndroidUtilities.dp(320.0f), 1.0f, 0.0f) * 0.1f);
+        setScaleX(clamp2);
+        setScaleY(clamp2);
     }
 }

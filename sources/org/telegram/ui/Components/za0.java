@@ -3,16 +3,16 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class za0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ pb0 b;
+    public final /* synthetic */ ob0 b;
     public final /* synthetic */ Context c;
 
-    public /* synthetic */ za0(pb0 pb0Var, Context context, int i10) {
+    public /* synthetic */ za0(ob0 ob0Var, Context context, int i10) {
         this.a = i10;
-        this.b = pb0Var;
+        this.b = ob0Var;
         this.c = context;
     }
 
@@ -20,9 +20,9 @@ public final /* synthetic */ class za0 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                pb0 pb0Var = this.b;
-                pb0Var.c0.a(false);
-                AndroidUtilities.runOnUIThread(new za0(pb0Var, this.c, 1));
+                ob0 ob0Var = this.b;
+                ob0Var.c0.a(false);
+                AndroidUtilities.runOnUIThread(new za0(ob0Var, this.c, 1));
                 break;
             default:
                 Context context = this.c;

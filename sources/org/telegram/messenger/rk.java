@@ -1,37 +1,35 @@
 package org.telegram.messenger;
 
-import android.icu.text.Collator;
-import java.util.Comparator;
-import java.util.HashMap;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.TranslateController;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class rk implements Comparator {
+public final /* synthetic */ class rk implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ TopicsController b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ boolean e;
+    public final /* synthetic */ long f;
 
-    public /* synthetic */ rk(Object obj, int i10) {
+    public /* synthetic */ rk(TopicsController topicsController, long j3, ArrayList arrayList, boolean z10, long j10, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = topicsController;
+        this.c = j3;
+        this.d = arrayList;
+        this.e = z10;
+        this.f = j10;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int lambda$getMusicDialogsSortedByVisibleOrder$1;
-        int lambda$getLocales$3;
-        int lambda$getLanguages$1;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                lambda$getMusicDialogsSortedByVisibleOrder$1 = TelegramMediaSession.lambda$getMusicDialogsSortedByVisibleOrder$1((HashMap) this.b, (Long) obj, (Long) obj2);
-                return lambda$getMusicDialogsSortedByVisibleOrder$1;
-            case 1:
-                lambda$getLocales$3 = TranslateController.lambda$getLocales$3((LocaleController.LocaleInfo) this.b, (LocaleController.LocaleInfo) obj, (LocaleController.LocaleInfo) obj2);
-                return lambda$getLocales$3;
+                this.b.lambda$updateTopicsWithDeletedMessages$11(this.c, this.d, this.e, this.f);
+                break;
             default:
-                lambda$getLanguages$1 = TranslateController.lambda$getLanguages$1((Collator) this.b, (TranslateController.Language) obj, (TranslateController.Language) obj2);
-                return lambda$getLanguages$1;
+                this.b.lambda$updateTopicsWithDeletedMessages$12(this.c, this.d, this.e, this.f);
+                break;
         }
     }
 }

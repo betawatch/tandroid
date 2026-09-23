@@ -34,7 +34,7 @@ import z7.hb;
 import z7.we;
 import z7.wf;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a;
@@ -324,10 +324,10 @@ public final /* synthetic */ class p implements Runnable {
                 }
                 return;
             case 2:
-                ((k2.c0) this.b).n((p4.p) this.e, (p4.m) this.c, (Collection) this.d);
+                ((k2.b0) this.b).n((p4.p) this.e, (p4.m) this.c, (Collection) this.d);
                 return;
             case 3:
-                ((k2.c0) this.b).n((p4.p) this.e, (p4.m) this.c, (ArrayList) this.d);
+                ((k2.b0) this.b).n((p4.p) this.e, (p4.m) this.c, (ArrayList) this.d);
                 return;
             case 4:
                 r0.q0.h((View) this.b, (r0.v0) this.c, (o0.a) this.d);

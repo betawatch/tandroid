@@ -9,10 +9,10 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.ar0;
-import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.rr;
 import w7.x5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class k extends FrameLayout {
     public final j a;
@@ -31,7 +31,7 @@ public final class k extends FrameLayout {
         transitionSet.setOrdering(0);
         transitionSet.addTransition(new org.telegram.ui.ActionBar.i(1));
         transitionSet.setDuration(500L);
-        transitionSet.setInterpolator((TimeInterpolator) qr.f);
+        transitionSet.setInterpolator((TimeInterpolator) rr.f);
     }
 
     public final void a(View.OnClickListener onClickListener, boolean z10) {

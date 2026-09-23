@@ -12,15 +12,14 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import ci.xb;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.kt;
+import org.telegram.ui.Components.lt;
 import org.telegram.ui.ad;
 import org.telegram.ui.b6;
 import org.telegram.ui.fc;
 import org.telegram.ui.h8;
 import org.telegram.ui.k9;
-import org.telegram.ui.lc;
+import org.telegram.ui.kc;
 import org.telegram.ui.qa;
 import org.telegram.ui.u9;
 import org.telegram.ui.ub;
@@ -28,7 +27,7 @@ import org.telegram.ui.w6;
 import org.telegram.ui.z6;
 import org.telegram.ui.z9;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final class t extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ int a;
@@ -238,7 +237,7 @@ public final class t extends org.telegram.ui.ActionBar.j {
                 break;
             case 20:
                 if (i10 == -1) {
-                    ((org.telegram.ui.p4) obj).finishFragment();
+                    ((org.telegram.ui.q4) obj).finishFragment();
                     break;
                 }
                 break;
@@ -378,16 +377,16 @@ public final class t extends org.telegram.ui.ActionBar.j {
                         float max = Math.max(createBitmap.getHeight(), createBitmap.getWidth()) + AndroidUtilities.navigationBarHeight;
                         Shader.TileMode tileMode = Shader.TileMode.CLAMP;
                         paint2.setShader(new BitmapShader(createBitmap, tileMode, tileMode));
-                        lc lcVar = new lc(adVar, adVar.getParentActivity(), canvas, (adVar.L.getMeasuredWidth() / 2.0f) + f7, (adVar.L.getMeasuredHeight() / 2.0f) + f10, max, paint, createBitmap, paint2, f7, f10, 0);
-                        adVar.m0 = lcVar;
-                        lcVar.setOnTouchListener(new bi.d(2));
+                        kc kcVar = new kc(adVar, adVar.getParentActivity(), canvas, (adVar.L.getMeasuredWidth() / 2.0f) + f7, (adVar.L.getMeasuredHeight() / 2.0f) + f10, max, paint, createBitmap, paint2, f7, f10, 0);
+                        adVar.m0 = kcVar;
+                        kcVar.setOnTouchListener(new bi.d(2));
                         adVar.n0 = 0.0f;
                         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                         adVar.o0 = ofFloat;
-                        ofFloat.addUpdateListener(new xb(adVar, 1));
-                        adVar.o0.addListener(new org.telegram.ui.t4(adVar, 17));
+                        ofFloat.addUpdateListener(new ci.ub(adVar, 1));
+                        adVar.o0.addListener(new org.telegram.ui.u4(adVar, 17));
                         adVar.o0.setDuration(400L);
-                        adVar.o0.setInterpolator(kt.e);
+                        adVar.o0.setInterpolator(lt.e);
                         adVar.o0.start();
                         frameLayout.addView(adVar.m0, new ViewGroup.LayoutParams(-1, -1));
                         AndroidUtilities.runOnUIThread(new fc(adVar, 0));

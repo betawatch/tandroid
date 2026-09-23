@@ -2,35 +2,37 @@ package org.telegram.ui;
 
 import android.app.Activity;
 import android.view.MotionEvent;
+import android.view.View;
 import android.view.ViewParent;
 import android.widget.FrameLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class rc extends FrameLayout {
-    public final org.telegram.ui.ActionBar.e6 a;
-    public final ec1 b;
+    public final org.telegram.ui.ActionBar.d6 a;
+    public final wb1 b;
     public final s4.c0 c;
     public final int d;
     public int e;
 
-    public rc(int i10, Activity activity, org.telegram.ui.ActionBar.e6 e6Var) {
+    public rc(int i10, Activity activity, org.telegram.ui.ActionBar.d6 d6Var) {
         super(activity);
         this.d = i10;
-        this.a = e6Var;
-        ec1 ec1Var = new ec1(activity, 3, e6Var);
-        this.b = ec1Var;
-        ec1Var.setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(6.0f), 0);
-        ec1Var.setClipToPadding(false);
-        ec1Var.setAdapter(new pc(this, activity, e6Var, i10));
+        this.a = d6Var;
+        wb1 wb1Var = new wb1(activity, 3, d6Var);
+        this.b = wb1Var;
+        wb1Var.setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(6.0f), 0);
+        wb1Var.setClipToPadding(false);
+        wb1Var.setAdapter(new pc(this, activity, d6Var, i10));
         s4.c0 c0Var = new s4.c0();
         this.c = c0Var;
         c0Var.j1(0);
-        ec1Var.setLayoutManager(c0Var);
-        addView(ec1Var, w7.x5.c(-1.0f, -1));
+        wb1Var.setLayoutManager(c0Var);
+        addView(wb1Var, w7.x5.c(-1.0f, -1));
     }
 
     public final void a(int i10, boolean z10) {
@@ -54,7 +56,7 @@ public final class rc extends FrameLayout {
             if (!z10) {
                 this.c.h1(i11, (AndroidUtilities.displaySize.x - AndroidUtilities.dp(56.0f)) / 2);
             }
-            AndroidUtilities.forEachViews((RecyclerView) this.b, (e2.h) new m4.t0(1, this, z10));
+            AndroidUtilities.forEachViews((RecyclerView) this.b, (Utilities.Callback<View>) new ai.i3(3, this, z10));
         }
     }
 

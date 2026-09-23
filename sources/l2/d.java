@@ -5,10 +5,14 @@ import java.io.IOException;
 import u2.t;
 import y2.p;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class d implements y2.h {
     public final /* synthetic */ g a;
+
+    public /* synthetic */ d(g gVar) {
+        this.a = gVar;
+    }
 
     @Override // y2.h
     public void V(y2.j jVar, long j3, long j10, boolean z10) {

@@ -13,9 +13,9 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class ut0 extends kl0 {
+public final class ut0 extends ll0 {
     public final Context c;
     public ar0 e;
     public int n;
@@ -32,7 +32,7 @@ public final class ut0 extends kl0 {
         this.r = i10;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.ll0
     public final boolean D(s4.c1 c1Var) {
         return this.f.size() + this.d.size() != 0;
     }
@@ -219,19 +219,19 @@ public final class ut0 extends kl0 {
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
         View view;
         yu0 yu0Var = this.v;
-        org.telegram.ui.ActionBar.e6 e6Var = yu0Var.F1;
+        org.telegram.ui.ActionBar.d6 d6Var = yu0Var.F1;
         Context context = this.c;
         int i11 = this.r;
         if (i11 == 1) {
-            view = new org.telegram.ui.Cells.j7(context, 0, e6Var);
+            view = new org.telegram.ui.Cells.j7(context, 0, d6Var);
         } else if (i11 == 4) {
-            view = new tt0(this, context, e6Var, 0);
+            view = new tt0(this, context, d6Var, 0);
         } else {
-            org.telegram.ui.Cells.n7 n7Var = new org.telegram.ui.Cells.n7(context, 0, e6Var);
+            org.telegram.ui.Cells.n7 n7Var = new org.telegram.ui.Cells.n7(context, 0, d6Var);
             n7Var.setDelegate(yu0Var.S1);
             view = n7Var;
         }
         view.setLayoutParams(new s4.p0(-1, -2));
-        return new vk0(view);
+        return new wk0(view);
     }
 }

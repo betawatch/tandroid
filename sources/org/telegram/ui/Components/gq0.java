@@ -9,12 +9,12 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public abstract class gq0 extends FrameLayout {
-    public org.telegram.ui.ActionBar.j5 a;
-    public org.telegram.ui.ActionBar.j5 b;
-    public ci.eb c;
+    public org.telegram.ui.ActionBar.i5 a;
+    public org.telegram.ui.ActionBar.i5 b;
+    public ci.bb c;
     public int d;
     public AnimatorSet e;
     public Paint f;
@@ -31,9 +31,9 @@ public abstract class gq0 extends FrameLayout {
         }
         AnimatorSet animatorSet2 = new AnimatorSet();
         this.e = animatorSet2;
-        animatorSet2.playTogether(ObjectAnimator.ofFloat(this.c, (Property<ci.eb, Float>) View.TRANSLATION_X, this.d == 0 ? 0.0f : r0.getMeasuredWidth()));
+        animatorSet2.playTogether(ObjectAnimator.ofFloat(this.c, (Property<ci.bb, Float>) View.TRANSLATION_X, this.d == 0 ? 0.0f : r0.getMeasuredWidth()));
         this.e.setDuration(180L);
-        this.e.setInterpolator(qr.g);
+        this.e.setInterpolator(rr.g);
         this.e.addListener(new jd0(this, 12));
         this.e.start();
         ((tp0) this).n.Z0();
@@ -46,13 +46,13 @@ public abstract class gq0 extends FrameLayout {
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.a.getLayoutParams();
         layoutParams.width = size;
         layoutParams.leftMargin = AndroidUtilities.dp(14.0f) + size;
-        ci.eb ebVar = this.c;
-        ((FrameLayout.LayoutParams) ebVar.getLayoutParams()).width = size;
+        ci.bb bbVar = this.c;
+        ((FrameLayout.LayoutParams) bbVar.getLayoutParams()).width = size;
         AnimatorSet animatorSet = this.e;
         if (animatorSet != null) {
             animatorSet.cancel();
         }
-        ebVar.setTranslationX(this.d == 0 ? 0.0f : r2.width);
+        bbVar.setTranslationX(this.d == 0 ? 0.0f : r2.width);
         super.onMeasure(i10, i11);
     }
 }

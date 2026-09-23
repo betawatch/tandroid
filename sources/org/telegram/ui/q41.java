@@ -1,47 +1,62 @@
 package org.telegram.ui;
 
-import j$.util.Objects;
-import org.telegram.messenger.SaveToGallerySettingsHelper;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.ViewGroup;
+import java.lang.reflect.Method;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class q41 extends og.a {
-    public final SaveToGallerySettingsHelper.DialogException c;
-    public final String d;
+public final class q41 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.Components.fm0 b;
 
-    public q41(int i10) {
-        super(i10, false);
-        this.c = null;
+    public /* synthetic */ q41(org.telegram.ui.Components.fm0 fm0Var, int i10) {
+        this.a = i10;
+        this.b = fm0Var;
     }
 
-    public final boolean equals(Object obj) {
-        SaveToGallerySettingsHelper.DialogException dialogException;
-        if (this == obj) {
-            return true;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.b.b;
+                secretMediaViewer.Z.getNextView().setText((CharSequence) null);
+                ut0 ut0Var = secretMediaViewer.a0;
+                ut0Var.l0 = false;
+                if (ut0Var.m0 >= 0) {
+                    ((ViewGroup.MarginLayoutParams) ut0Var.o0.getLayoutParams()).topMargin = ut0Var.m0;
+                    ut0Var.m0 = -1;
+                    ut0Var.requestLayout();
+                    break;
+                }
+                break;
+            default:
+                ((SecretMediaViewer) this.b.b).Z.setTranslationY(0.0f);
+                break;
         }
-        if (obj == null || q41.class != obj.getClass()) {
-            return false;
-        }
-        q41 q41Var = (q41) obj;
-        if (this.a != q41Var.a) {
-            return false;
-        }
-        String str = this.d;
-        if (str != null) {
-            return Objects.equals(str, q41Var.d);
-        }
-        SaveToGallerySettingsHelper.DialogException dialogException2 = this.c;
-        return dialogException2 == null || (dialogException = q41Var.c) == null || dialogException2.dialogId == dialogException.dialogId;
     }
 
-    public q41(SaveToGallerySettingsHelper.DialogException dialogException) {
-        super(2, false);
-        this.c = dialogException;
-    }
-
-    public q41(int i10, String str) {
-        super(i10, false);
-        this.d = str;
-        this.c = null;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 0:
+                ut0 ut0Var = ((SecretMediaViewer) this.b.b).a0;
+                Method method = ut0Var.f0;
+                if (method != null) {
+                    try {
+                        method.invoke(ut0Var, null);
+                        break;
+                    } catch (Exception e) {
+                        FileLog.e(e);
+                        return;
+                    }
+                }
+                break;
+            default:
+                super.onAnimationStart(animator);
+                break;
+        }
     }
 }

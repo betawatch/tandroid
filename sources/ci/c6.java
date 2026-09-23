@@ -2,16 +2,23 @@ package ci;
 
 import android.content.Context;
 import android.graphics.PointF;
-import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.jv0;
+import org.telegram.ui.Components.yi0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final class c6 extends qg.h1 {
-    public final /* synthetic */ r6 M0;
+public final class c6 extends qg.q2 {
+    public final /* synthetic */ q6 y0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c6(r6 r6Var, Context context, PointF pointF, ArrayList arrayList, org.telegram.ui.Components.ha haVar, boolean z10, c7 c7Var) {
-        super(context, pointF, arrayList, haVar, z10, c7Var);
-        this.M0 = r6Var;
+    public c6(q6 q6Var, Context context, PointF pointF, float f7, float f10, jv0 jv0Var, TLRPC.Document document, Object obj) {
+        super(context, pointF, f7, f10, jv0Var, document, obj);
+        this.y0 = q6Var;
+    }
+
+    @Override // qg.q2
+    public final void q(yi0 yi0Var) {
+        this.y0.getClass();
     }
 }

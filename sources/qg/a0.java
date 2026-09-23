@@ -3,13 +3,13 @@ package qg;
 import android.content.Context;
 import android.graphics.PointF;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.g71;
+import org.telegram.ui.Components.f71;
 import org.telegram.ui.Components.jv0;
-import org.telegram.ui.Components.xi0;
+import org.telegram.ui.Components.yi0;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.au0;
+import org.telegram.ui.tt0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class a0 extends q2 {
     public final /* synthetic */ p0 y0;
@@ -21,14 +21,14 @@ public final class a0 extends q2 {
     }
 
     @Override // qg.q2
-    public final void q(xi0 xi0Var) {
-        PhotoViewer photoViewer = ((au0) this.y0).o2;
-        g71 g71Var = photoViewer.F2;
-        if (g71Var == null) {
+    public final void q(yi0 yi0Var) {
+        PhotoViewer photoViewer = ((tt0) this.y0).o2;
+        f71 f71Var = photoViewer.F2;
+        if (f71Var == null) {
             return;
         }
-        long n10 = g71Var.n();
+        long n10 = f71Var.n();
         long j3 = photoViewer.m8;
-        xi0Var.U(n10 - (j3 > 0 ? j3 / 1000 : 0L));
+        yi0Var.U(n10 - (j3 > 0 ? j3 / 1000 : 0L));
     }
 }

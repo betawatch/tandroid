@@ -12,15 +12,15 @@ import android.widget.LinearLayout;
 import com.google.android.gms.internal.vision.e2;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.f3;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.py0;
 import org.telegram.ui.q6;
-import org.telegram.ui.wy0;
 import w7.x5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class x extends f3 {
     public static final /* synthetic */ int s = 0;
@@ -33,8 +33,8 @@ public final class x extends f3 {
     public u n;
     public boolean r;
 
-    public x(Context context, e6 e6Var) {
-        super(1, context, e6Var, true);
+    public x(Context context, d6 d6Var) {
+        super(1, context, d6Var, true);
         this.e = new Path();
         fixNavigationBar(-14342875);
         Drawable mutate = context.getResources().getDrawable(R.drawable.sheet_shadow_round).mutate();
@@ -48,12 +48,12 @@ public final class x extends f3 {
         imageView.setImageResource(R.drawable.picker);
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
         imageView.setColorFilter(new PorterDuffColorFilter(-1, mode));
-        imageView.setBackground(i6.f0(1090519039, 1, -1));
-        imageView.setOnClickListener(new wy0(13, this, context));
+        imageView.setBackground(h6.f0(1090519039, 1, -1));
+        imageView.setOnClickListener(new py0(13, this, context));
         ImageView imageView2 = new ImageView(context);
         imageView2.setImageResource(R.drawable.ic_ab_done);
         imageView2.setColorFilter(new PorterDuffColorFilter(-1, mode));
-        imageView2.setBackground(i6.f0(1090519039, 1, -1));
+        imageView2.setBackground(h6.f0(1090519039, 1, -1));
         imageView2.setOnClickListener(new org.telegram.ui.Components.voip.o(this, 5));
         q6 q6Var = new q6(this, context);
         this.d = q6Var;

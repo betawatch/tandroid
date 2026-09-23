@@ -1,44 +1,100 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.graphics.Rect;
+import android.os.Build;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.ImageView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lj implements MessagesStorage.IntCallback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ Object c;
+public final class lj implements View.OnTouchListener {
+    public View a;
+    public org.telegram.ui.ActionBar.n1 b;
+    public final Rect c = new Rect();
+    public boolean d;
+    public boolean e;
+    public final org.telegram.ui.Components.k20 f;
+    public final int[] h;
+    public View n;
+    public float r;
+    public float s;
+    public final /* synthetic */ View v;
+    public final /* synthetic */ xn w;
 
-    public /* synthetic */ lj(int i10, Object obj, boolean z10) {
-        this.a = i10;
-        this.c = obj;
-        this.b = z10;
+    public lj(xn xnVar, ImageView imageView) {
+        this.w = xnVar;
+        this.v = imageView;
+        org.telegram.ui.Components.k20 k20Var = new org.telegram.ui.Components.k20((Context) null, new g(this, 24));
+        this.f = k20Var;
+        this.h = new int[2];
+        k20Var.v = true;
     }
 
-    @Override // org.telegram.messenger.MessagesStorage.IntCallback
-    public final void run(int i10) {
-        switch (this.a) {
-            case 0:
-                bo boVar = ((nj) this.c).b;
-                if (i10 > 0 && boVar.getParentActivity() != null) {
-                    org.telegram.ui.Components.vc.a0(boVar).m(this.b ? org.telegram.ui.Components.uc.G : org.telegram.ui.Components.uc.I, i10, 0, 0, boVar.ea).j();
-                    break;
-                }
-                break;
-            default:
-                mj mjVar = (mj) this.c;
-                bo boVar2 = mjVar.b.b;
-                if (i10 < 50) {
-                    boVar2.qa(boVar2.d4, true);
-                    break;
-                } else {
-                    TLRPC.Chat chat = boVar2.e;
-                    TLRPC.User user = boVar2.f;
-                    boolean z10 = this.b;
-                    org.telegram.ui.Components.c5.s(boVar2, true, chat, user, false, false, false, z10, new y0(mjVar, z10));
-                    break;
-                }
+    @Override // android.view.View.OnTouchListener
+    public final boolean onTouch(View view, MotionEvent motionEvent) {
+        View view2;
+        this.a = view;
+        if (motionEvent.getAction() == 0) {
+            this.r = motionEvent.getX();
+            this.s = motionEvent.getY();
+            this.e = false;
         }
+        this.f.a(motionEvent);
+        if (this.b != null && !this.d && motionEvent.getAction() == 2) {
+            View view3 = this.a;
+            int[] iArr = this.h;
+            view3.getLocationOnScreen(iArr);
+            float x10 = motionEvent.getX() + iArr[0];
+            float y3 = motionEvent.getY() + iArr[1];
+            this.b.getContentView().getLocationOnScreen(iArr);
+            float f7 = x10 - iArr[0];
+            float f10 = y3 - iArr[1];
+            this.n = null;
+            ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) this.b.getContentView();
+            for (int i10 = 0; i10 < actionBarPopupWindow$ActionBarPopupWindowLayout.getItemsCount(); i10++) {
+                View childAt = actionBarPopupWindow$ActionBarPopupWindowLayout.L.getChildAt(i10);
+                Rect rect = this.c;
+                childAt.getHitRect(rect);
+                childAt.getTag();
+                if (childAt.getVisibility() == 0 && childAt.isClickable()) {
+                    if (rect.contains((int) f7, (int) f10)) {
+                        childAt.setPressed(true);
+                        childAt.setSelected(true);
+                        if (Build.VERSION.SDK_INT == 21 && childAt.getBackground() != null) {
+                            childAt.getBackground().setVisible(true, false);
+                        }
+                        childAt.drawableHotspotChanged(f7, f10 - childAt.getTop());
+                        this.n = childAt;
+                    } else {
+                        childAt.setPressed(false);
+                        childAt.setSelected(false);
+                        if (Build.VERSION.SDK_INT == 21 && childAt.getBackground() != null) {
+                            childAt.getBackground().setVisible(false, false);
+                        }
+                    }
+                }
+            }
+        }
+        if ((motionEvent.getAction() == 2 && Math.abs(motionEvent.getX() - this.r) > AndroidUtilities.touchSlop * 2.0f) || Math.abs(motionEvent.getY() - this.s) > AndroidUtilities.touchSlop * 2.0f) {
+            this.e = true;
+            this.a.setPressed(false);
+            this.a.setSelected(false);
+        }
+        if (motionEvent.getAction() == 1 && !this.d && !this.e) {
+            View view4 = this.n;
+            if (view4 != null) {
+                view4.callOnClick();
+                this.d = true;
+                return true;
+            }
+            if (this.b == null && (view2 = this.a) != null) {
+                view2.callOnClick();
+            }
+        }
+        return true;
     }
 }

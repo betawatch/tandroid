@@ -1,52 +1,38 @@
 package org.telegram.ui;
 
-import android.graphics.Point;
-import android.graphics.Rect;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
+import android.content.Context;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class zj extends s4.n0 {
-    @Override // s4.n0
-    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.z0 z0Var) {
-        org.telegram.ui.Cells.t1 t1Var;
-        MessageObject.GroupedMessages currentMessagesGroup;
-        MessageObject.GroupedMessagePosition currentPosition;
-        int i10 = 0;
-        rect.bottom = 0;
-        if (!(view instanceof org.telegram.ui.Cells.t1) || (currentMessagesGroup = (t1Var = (org.telegram.ui.Cells.t1) view).getCurrentMessagesGroup()) == null || (currentPosition = t1Var.getCurrentPosition()) == null || currentPosition.siblingHeights == null) {
-            return;
+public final class zj extends org.telegram.ui.Components.z11 {
+    public final /* synthetic */ xn e;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zj(xn xnVar, Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, i10, d6Var);
+        this.e = xnVar;
+    }
+
+    @Override // org.telegram.ui.Components.z11, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        org.telegram.ui.ActionBar.k kVar;
+        if (getAlpha() == 0.0f) {
+            return false;
         }
-        Point point = AndroidUtilities.displaySize;
-        float max = Math.max(point.x, point.y) * 0.5f;
-        int extraInsetHeight = t1Var.getExtraInsetHeight();
-        int i11 = 0;
-        while (true) {
-            if (i11 >= currentPosition.siblingHeights.length) {
-                break;
-            }
-            extraInsetHeight += (int) Math.ceil(r3[i11] * max);
-            i11++;
+        xn xnVar = this.e;
+        kVar = ((org.telegram.ui.ActionBar.n2) xnVar).actionBar;
+        if (kVar.s() || xnVar.A9()) {
+            return false;
         }
-        int round = (Math.round(AndroidUtilities.density * 7.0f) * (currentPosition.maxY - currentPosition.minY)) + extraInsetHeight;
-        int size = currentMessagesGroup.posArray.size();
-        while (true) {
-            if (i10 < size) {
-                MessageObject.GroupedMessagePosition groupedMessagePosition = currentMessagesGroup.posArray.get(i10);
-                byte b10 = groupedMessagePosition.minY;
-                byte b11 = currentPosition.minY;
-                if (b10 == b11 && ((groupedMessagePosition.minX != currentPosition.minX || groupedMessagePosition.maxX != currentPosition.maxX || b10 != b11 || groupedMessagePosition.maxY != currentPosition.maxY) && b10 == b11)) {
-                    round = org.telegram.messenger.y0.z(4.0f, (int) Math.ceil(max * groupedMessagePosition.ph), round);
-                    break;
-                }
-                i10++;
-            } else {
-                break;
-            }
+        return super.onTouchEvent(motionEvent);
+    }
+
+    @Override // android.view.View
+    public final void setTranslationY(float f7) {
+        if (getTranslationY() != f7) {
+            invalidate();
         }
-        rect.bottom = -round;
+        super.setTranslationY(f7);
     }
 }

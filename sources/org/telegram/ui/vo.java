@@ -1,41 +1,46 @@
 package org.telegram.ui;
 
-import android.text.TextPaint;
-import android.text.style.ClickableSpan;
-import android.view.View;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class vo extends ClickableSpan {
+public final /* synthetic */ class vo implements Runnable {
     public final /* synthetic */ int a;
+    public final /* synthetic */ gp b;
 
-    public /* synthetic */ vo(int i10) {
+    public /* synthetic */ vo(gp gpVar, int i10) {
         this.a = i10;
+        this.b = gpVar;
     }
 
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                nf.f.s(view.getContext(), "https://t.me/BotFather");
+                gp gpVar = this.b;
+                gpVar.c0 = true;
+                gpVar.b0();
                 break;
-        }
-    }
-
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        switch (this.a) {
-            case 0:
-                super.updateDrawState(textPaint);
-                textPaint.setUnderlineText(false);
+            case 1:
+                gp gpVar2 = this.b;
+                gpVar2.X = gpVar2.getMessagesController().getChat(Long.valueOf(gpVar2.Z));
+                gpVar2.Y();
+                break;
+            case 2:
+                this.b.a0(false);
+                break;
+            case 3:
+                gp gpVar3 = this.b;
+                gpVar3.c0 = true;
+                if (gpVar3.a.length() > 0) {
+                    gpVar3.W(gpVar3.a.getText().toString());
+                }
+                gpVar3.b0();
+                break;
+            case 4:
+                this.b.Y();
                 break;
             default:
-                textPaint.setUnderlineText(false);
-                textPaint.setColor(-1);
+                this.b.a0(true);
                 break;
         }
-    }
-
-    private final void a(View view) {
     }
 }

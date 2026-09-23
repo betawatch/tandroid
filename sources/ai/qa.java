@@ -3,7 +3,7 @@ package ai;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class qa implements o1.g {
     public final /* synthetic */ int a;
@@ -23,24 +23,24 @@ public final /* synthetic */ class qa implements o1.g {
                 xaVar.f0 = f10;
                 break;
             case 1:
-                ci.r6 r6Var = (ci.r6) this.b;
+                ci.q6 q6Var = (ci.q6) this.b;
                 float f11 = f7 / 1000.0f;
-                r6Var.t1 = f11;
-                qg.w1 w1Var = r6Var.m1;
+                q6Var.t1 = f11;
+                qg.w1 w1Var = q6Var.m1;
                 w1Var.setAlpha(f11);
                 w1Var.invalidate();
-                r6Var.U0.invalidate();
-                r6Var.l1.getTypefaceCell().setAlpha(1.0f - r6Var.t1);
+                q6Var.U0.invalidate();
+                q6Var.l1.getTypefaceCell().setAlpha(1.0f - q6Var.t1);
                 break;
             case 2:
                 mg.i iVar = (mg.i) this.b;
                 float f12 = f7 / 1000.0f;
-                ci.n6 n6Var = iVar.a;
-                n6Var.setPivotX(AndroidUtilities.dp(28.0f));
-                n6Var.setPivotY(AndroidUtilities.dp(28.0f));
-                n6Var.setScaleX(f12);
-                n6Var.setScaleY(f12);
-                n6Var.setAlpha(w7.p.a(f12, 0.0f, 1.0f));
+                ci.m6 m6Var = iVar.a;
+                m6Var.setPivotX(AndroidUtilities.dp(28.0f));
+                m6Var.setPivotY(AndroidUtilities.dp(28.0f));
+                m6Var.setScaleX(f12);
+                m6Var.setScaleY(f12);
+                m6Var.setAlpha(w7.p.a(f12, 0.0f, 1.0f));
                 iVar.invalidate();
                 break;
             default:

@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.view.View;
 import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q0 implements View.OnClickListener {
     public final /* synthetic */ int a = 1;
@@ -36,7 +36,7 @@ public final /* synthetic */ class q0 implements View.OnClickListener {
                     org.telegram.ui.Cells.l6 l6Var = (org.telegram.ui.Cells.l6) linearLayout2.getChildAt(i11);
                     l6Var.c.a(l6Var == view, true);
                 }
-                this.c[0] = org.telegram.ui.Cells.y8.f[((Integer) view.getTag()).intValue()];
+                this.c[0] = org.telegram.ui.Cells.z8.f[((Integer) view.getTag()).intValue()];
                 break;
         }
     }

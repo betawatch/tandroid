@@ -7,11 +7,11 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PrivacyControlActivity;
-import org.telegram.ui.bo;
-import org.telegram.ui.tw0;
-import org.telegram.ui.ur;
+import org.telegram.ui.mw0;
+import org.telegram.ui.qr;
+import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b2 implements Runnable {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final /* synthetic */ class b2 implements Runnable {
             case 1:
                 org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
                 if (U != null) {
-                    U.presentFragment(bo.Q9(this.c, this.b));
+                    U.presentFragment(xn.Q9(this.c, this.b));
                     break;
                 }
                 break;
@@ -48,12 +48,12 @@ public final /* synthetic */ class b2 implements Runnable {
                             Bundle bundle = new Bundle();
                             bundle.putLong("chat_id", j10);
                             bundle.putInt(TeXSymbolParser.TYPE_ATTR, 3);
-                            ur urVar = new ur(bundle);
-                            urVar.x0(MessagesController.getInstance(i10).getChatFull(j10));
-                            U2.presentFragment(urVar);
+                            qr qrVar = new qr(bundle);
+                            qrVar.x0(MessagesController.getInstance(i10).getChatFull(j10));
+                            U2.presentFragment(qrVar);
                             break;
                         } else {
-                            U2.presentFragment(new tw0(j10));
+                            U2.presentFragment(new mw0(j10));
                             break;
                         }
                     } else {

@@ -1,37 +1,28 @@
 package ci;
 
-import android.view.KeyEvent;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import android.widget.PopupWindow;
+import org.telegram.ui.Components.qv0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class i5 implements org.telegram.ui.ActionBar.l1, Utilities.Callback3Return {
-    public final /* synthetic */ r6 a;
+public final /* synthetic */ class i5 implements PopupWindow.OnDismissListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ qv0 b;
 
-    public /* synthetic */ i5(r6 r6Var) {
-        this.a = r6Var;
+    public /* synthetic */ i5(qv0 qv0Var, int i10) {
+        this.a = i10;
+        this.b = qv0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.l1
-    public void o(KeyEvent keyEvent) {
-        org.telegram.ui.ActionBar.n1 n1Var;
-        r6 r6Var = this.a;
-        r6Var.getClass();
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (n1Var = r6Var.H1) != null && n1Var.isShowing()) {
-            r6Var.H1.d(true);
+    @Override // android.widget.PopupWindow.OnDismissListener
+    public final void onDismiss() {
+        switch (this.a) {
+            case 0:
+                ((q6) this.b).I1.d();
+                break;
+            default:
+                ((qg.p0) this.b).S1.d();
+                break;
         }
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback3Return
-    public Object run(Object obj, Object obj2, Object obj3) {
-        r6 r6Var = this.a;
-        r6Var.l2 = true;
-        d6 n02 = r6Var.n0(obj, (TLRPC.Document) obj2);
-        if (((Boolean) obj3).booleanValue()) {
-            n02.setScale(1.5f);
-        }
-        r6Var.d0(n02);
-        return Boolean.TRUE;
     }
 }

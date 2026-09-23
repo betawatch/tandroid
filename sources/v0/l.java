@@ -8,12 +8,12 @@ import android.credentials.GetCredentialResponse;
 import android.os.Bundle;
 import android.os.OutcomeReceiver;
 import android.util.Log;
-import org.telegram.ui.Cells.ia;
+import org.telegram.ui.Cells.ja;
 import w7.b9;
 import w7.u7;
 import w7.v7;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final class l implements OutcomeReceiver {
     public final /* synthetic */ int a = 0;
@@ -30,10 +30,10 @@ public final class l implements OutcomeReceiver {
                 CreateCredentialException error = (CreateCredentialException) th2;
                 kotlin.jvm.internal.i.e(error, "error");
                 Log.i("CredManProvService", "CreateCredentialResponse error returned from framework");
-                ia iaVar = (ia) this.b;
+                ja jaVar = (ja) this.b;
                 String type = error.getType();
                 kotlin.jvm.internal.i.d(type, "getType(...)");
-                iaVar.onError(b9.a(error.getMessage(), type));
+                jaVar.onError(b9.a(error.getMessage(), type));
                 break;
             default:
                 GetCredentialException error2 = (GetCredentialException) th2;
@@ -54,10 +54,10 @@ public final class l implements OutcomeReceiver {
                 CreateCredentialResponse response = (CreateCredentialResponse) obj;
                 kotlin.jvm.internal.i.e(response, "response");
                 Log.i("CredManProvService", "Create Result returned from framework: ");
-                ia iaVar = (ia) this.b;
+                ja jaVar = (ja) this.b;
                 Bundle data = response.getData();
                 kotlin.jvm.internal.i.d(data, "getData(...)");
-                iaVar.onResult(u7.a("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", data));
+                jaVar.onResult(u7.a("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", data));
                 break;
             default:
                 GetCredentialResponse response2 = (GetCredentialResponse) obj;
@@ -75,7 +75,7 @@ public final class l implements OutcomeReceiver {
         }
     }
 
-    public l(ia iaVar, e eVar, m mVar) {
-        this.b = iaVar;
+    public l(ja jaVar, e eVar, m mVar) {
+        this.b = jaVar;
     }
 }

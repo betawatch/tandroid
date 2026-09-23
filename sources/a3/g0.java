@@ -16,14 +16,14 @@ import org.telegram.messenger.voip.GroupCallMessagesController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.Components.po;
+import org.telegram.ui.Components.qo;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.bo;
-import org.telegram.ui.eg1;
-import org.telegram.ui.uy;
-import yh.z3;
+import org.telegram.ui.ry;
+import org.telegram.ui.wf1;
+import org.telegram.ui.xn;
+import yh.y3;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ int a;
@@ -51,7 +51,7 @@ public final /* synthetic */ class g0 implements Runnable {
             case 0:
                 l0 l0Var = (l0) ((of.b) obj2).c;
                 String str = e2.d0.a;
-                j2.f fVar = ((i2.b0) l0Var).a.s;
+                j2.f fVar = ((i2.c0) l0Var).a.s;
                 j2.a p5 = fVar.p();
                 fVar.q(p5, 1016, new j2.c(p5, (String) obj, this.c, this.b));
                 break;
@@ -62,7 +62,7 @@ public final /* synthetic */ class g0 implements Runnable {
             case 2:
                 k2.j jVar = (k2.j) ((n4.y) obj2).c;
                 String str2 = e2.d0.a;
-                j2.f fVar2 = ((i2.b0) jVar).a.s;
+                j2.f fVar2 = ((i2.c0) jVar).a.s;
                 j2.a p10 = fVar2.p();
                 fVar2.q(p10, 1008, new hg.r(p10, (String) obj, this.c, this.b));
                 break;
@@ -96,27 +96,27 @@ public final /* synthetic */ class g0 implements Runnable {
                 ((GroupCallMessagesController) obj2).lambda$processUpdate$3(this.b, this.c, (byte[]) obj);
                 break;
             case 12:
-                ((po) obj2).d(this.b, this.c, (HashSet) obj);
+                ((qo) obj2).d(this.b, this.c, (HashSet) obj);
                 break;
             case 13:
-                uy uyVar = (uy) obj2;
-                eg1 eg1Var = (eg1) obj;
-                if (uyVar.C2 == null) {
-                    uyVar.finishFragment();
+                ry ryVar = (ry) obj2;
+                wf1 wf1Var = (wf1) obj;
+                if (ryVar.C2 == null) {
+                    ryVar.finishFragment();
                     break;
                 } else {
                     ArrayList arrayList = new ArrayList();
                     arrayList.add(MessagesStorage.TopicKey.of(j10, j3));
-                    uyVar.C2.u(uyVar, arrayList, null, false, uyVar.J2, uyVar.K2, uyVar.L2, eg1Var);
-                    if (uyVar.i2) {
-                        uyVar.C2 = null;
+                    ryVar.C2.u(ryVar, arrayList, null, false, ryVar.J2, ryVar.K2, ryVar.L2, wf1Var);
+                    if (ryVar.i2) {
+                        ryVar.C2 = null;
                         break;
                     }
                 }
                 break;
             case 14:
                 LaunchActivity launchActivity = (LaunchActivity) obj2;
-                bo boVar = (bo) obj;
+                xn xnVar = (xn) obj;
                 Pattern pattern = LaunchActivity.B1;
                 TLRPC.TL_forumTopic findTopic = MessagesController.getInstance(launchActivity.O).getTopicsController().findTopic(j10, j3);
                 StringBuilder u10 = a4.a.u(j10, "LaunchActivity openForum after load ", " ");
@@ -125,13 +125,13 @@ public final /* synthetic */ class g0 implements Runnable {
                 u10.append(findTopic);
                 FileLog.d(u10.toString());
                 if (launchActivity.q0 != null) {
-                    ng.d.a(boVar, MessagesStorage.TopicKey.of(-j10, j3));
-                    ((ActionBarLayout) launchActivity.O()).P(boVar);
+                    ng.d.a(xnVar, MessagesStorage.TopicKey.of(-j10, j3));
+                    ((ActionBarLayout) launchActivity.O()).P(xnVar);
                     break;
                 }
                 break;
             default:
-                z3.f0((z3) obj2, this.b, this.c, (Utilities.Callback) obj);
+                y3.e0((y3) obj2, this.b, this.c, (Utilities.Callback) obj);
                 break;
         }
     }

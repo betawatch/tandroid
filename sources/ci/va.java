@@ -1,55 +1,99 @@
 package ci;
 
+import android.graphics.Point;
+import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.cg0;
-import org.telegram.ui.Components.eg0;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.ry;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class va implements o1.f {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ Object c;
+public final /* synthetic */ class va implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate e;
+    public final /* synthetic */ TLObject f;
+    public final /* synthetic */ TLObject h;
 
-    public /* synthetic */ va(Object obj, float f7, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.b = f7;
+    public /* synthetic */ va(lc lcVar, boolean z10, TL_stories.StoryItem storyItem, long j3, TLRPC.InputGroupCall inputGroupCall, boolean z11) {
+        this.e = lcVar;
+        this.c = z10;
+        this.f = storyItem;
+        this.b = j3;
+        this.h = inputGroupCall;
+        this.d = z11;
     }
 
-    @Override // o1.f
-    public final void a(o1.h hVar, boolean z10, float f7, float f10) {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        TLObject tLObject = this.h;
+        TLObject tLObject2 = this.f;
+        NotificationCenter.NotificationCenterDelegate notificationCenterDelegate = this.e;
+        switch (i10) {
             case 0:
-                oc ocVar = (oc) this.c;
+                lc lcVar = (lc) notificationCenterDelegate;
+                TL_stories.StoryItem storyItem = (TL_stories.StoryItem) tLObject2;
+                TLRPC.InputGroupCall inputGroupCall = (TLRPC.InputGroupCall) tLObject;
+                boolean z10 = this.c;
+                long j3 = this.b;
                 if (!z10) {
-                    ocVar.M0.setTranslationY(this.b);
-                    ocVar.M0.K = false;
-                    ocVar.o2 = null;
-                    ocVar.p2 = null;
-                    break;
+                    ai.d2.W = new ai.d2(lcVar.b, lcVar.c, storyItem, j3, storyItem.id, z10, inputGroupCall, true, this.d);
                 }
+                gc gcVar = lcVar.F;
+                if (gcVar != null) {
+                    gcVar.f(false);
+                }
+                lcVar.F = null;
+                lcVar.J = 0;
+                RectF rectF = lcVar.H;
+                Point point = AndroidUtilities.displaySize;
+                rectF.set(0.0f, 0.0f, point.x, point.y);
+                lcVar.G = AndroidUtilities.dp(8.0f);
+                lcVar.q(true);
+                org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+                storyItem.dialogId = j3;
+                storyItem.justUploaded = true;
+                U.getOrCreateStoryViewer().F(lcVar.b, storyItem, null);
+                NotificationCenter.getInstance(lcVar.c).lambda$postNotificationNameOnUIThread$1(NotificationCenter.liveStoryUpdated, Long.valueOf(inputGroupCall.id));
                 break;
-            case 1:
-                ei.p4 p4Var = (ei.p4) this.c;
-                p4Var.v = null;
-                float f11 = this.b;
-                if (!z10) {
-                    p4Var.f = f11;
-                    p4Var.c();
-                    break;
-                } else {
-                    p4Var.h = f11;
-                    break;
-                }
             default:
-                cg0 cg0Var = (cg0) this.c;
-                if (!z10) {
-                    eg0 eg0Var = cg0Var.d;
-                    eg0Var.M.u.i = (eg0Var.H / 2.0f) + this.b >= ((float) AndroidUtilities.displaySize.x) / 2.0f ? (r0 - r3) - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f);
-                    break;
+                ry ryVar = (ry) notificationCenterDelegate;
+                TLRPC.Chat chat = (TLRPC.Chat) tLObject2;
+                TLRPC.User user = (TLRPC.User) tLObject;
+                long j10 = this.b;
+                boolean z11 = this.c;
+                if (chat != null) {
+                    ryVar.getClass();
+                    if (ChatObject.isNotInChat(chat)) {
+                        ryVar.getMessagesController().deleteDialog(j10, 0, z11);
+                    } else {
+                        ryVar.getMessagesController().deleteParticipantFromChat(-j10, ryVar.getMessagesController().getUser(Long.valueOf(ryVar.getUserConfig().getClientUserId())), (TLRPC.Chat) null, z11, z11);
+                    }
+                } else {
+                    ryVar.getMessagesController().deleteDialog(j10, 0, z11);
+                    if (user != null && user.bot && this.d) {
+                        ryVar.getMessagesController().blockPeer(user.id);
+                    }
                 }
+                ryVar.getMessagesController().checkIfFolderEmpty(ryVar.V2);
                 break;
         }
+    }
+
+    public /* synthetic */ va(ry ryVar, TLRPC.Chat chat, long j3, boolean z10, TLRPC.User user, boolean z11) {
+        this.e = ryVar;
+        this.f = chat;
+        this.b = j3;
+        this.c = z10;
+        this.h = user;
+        this.d = z11;
     }
 }

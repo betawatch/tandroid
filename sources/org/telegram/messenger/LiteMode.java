@@ -11,7 +11,7 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes.dex */
 public class LiteMode {
     private static int BATTERY_HIGH = 10;
@@ -54,7 +54,7 @@ public class LiteMode {
     private static int powerSaverLevel;
     private static int value;
 
-    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
     public static class BatteryReceiver extends BroadcastReceiver {
         @Override // android.content.BroadcastReceiver
         public void onReceive(Context context, Intent intent) {
@@ -216,14 +216,14 @@ public class LiteMode {
     private static void onFlagsUpdate(int i10, int i11) {
         int i12 = (~i10) & i11;
         if ((i12 & FLAGS_ANIMATED_EMOJI) > 0) {
-            org.telegram.ui.Components.o5.u();
+            org.telegram.ui.Components.q5.u();
         }
         int i13 = i12 & 32;
         if (i13 > 0) {
             SvgHelper.SvgDrawable.updateLiteValues();
         }
         if (i13 > 0) {
-            org.telegram.ui.ActionBar.i6.o1(true);
+            org.telegram.ui.ActionBar.h6.o1(true);
         }
     }
 

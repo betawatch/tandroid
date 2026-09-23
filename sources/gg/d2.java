@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import java.util.concurrent.CancellationException;
+import java.util.concurrent.ExecutionException;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.MediaDataController;
@@ -27,24 +29,24 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.bn0;
-import org.telegram.ui.Components.oc;
-import org.telegram.ui.Components.sb;
-import org.telegram.ui.Components.uc0;
-import org.telegram.ui.Components.vc;
+import org.telegram.ui.Components.cn0;
+import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.tc0;
+import org.telegram.ui.Components.ub;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PasscodeActivity;
 import org.telegram.ui.SessionsActivity;
 import org.telegram.ui.StickersActivity;
-import org.telegram.ui.bo;
-import org.telegram.ui.h50;
-import org.telegram.ui.id0;
-import org.telegram.ui.ih;
-import org.telegram.ui.l50;
+import org.telegram.ui.dd0;
+import org.telegram.ui.e50;
+import org.telegram.ui.gh;
+import org.telegram.ui.i50;
+import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d2 implements MediaDataController.KeywordResultCallback, org.telegram.ui.ActionBar.a2, e2.m, m4.k0, NativeInstance.PayloadCallback, Utilities.Callback3Return, t5.b {
+public final /* synthetic */ class d2 implements MediaDataController.KeywordResultCallback, org.telegram.ui.ActionBar.a2, e2.m, m4.k0, e2.h, NativeInstance.PayloadCallback, Utilities.Callback3Return, t5.b {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
@@ -55,6 +57,34 @@ public final /* synthetic */ class d2 implements MediaDataController.KeywordResu
         this.b = i10;
         this.c = obj;
         this.d = obj2;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:11:0x002d  */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x002f  */
+    @Override // e2.h
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public void accept(Object obj) {
+        m4.l1 l1Var;
+        m4.a0 a0Var = (m4.a0) this.c;
+        m4.r rVar = (m4.r) this.d;
+        try {
+            l1Var = (m4.l1) ((i9.w) obj).get();
+            e2.d.e(l1Var, "SessionResult must not be null");
+        } catch (InterruptedException e) {
+            e = e;
+            e2.a.o("MediaSessionStub", "Session operation failed", e);
+            l1Var = new m4.l1(!(e.getCause() instanceof UnsupportedOperationException) ? -6 : -1);
+        } catch (CancellationException e7) {
+            e2.a.o("MediaSessionStub", "Session operation cancelled", e7);
+            l1Var = new m4.l1(1);
+        } catch (ExecutionException e10) {
+            e = e10;
+            e2.a.o("MediaSessionStub", "Session operation failed", e);
+            l1Var = new m4.l1(!(e.getCause() instanceof UnsupportedOperationException) ? -6 : -1);
+        }
+        m4.b1.O0(a0Var, rVar, this.b, l1Var);
     }
 
     @Override // org.telegram.ui.ActionBar.a2
@@ -83,23 +113,24 @@ public final /* synthetic */ class d2 implements MediaDataController.KeywordResu
             case 2:
             case 3:
             case 4:
-            case 9:
-            case 14:
+            case 5:
+            case 10:
+            case 15:
             default:
                 StickersActivity.a0((StickersActivity) this.c, (ArrayList) this.d, this.b);
                 break;
-            case 5:
-                bo boVar = (bo) this.c;
-                boVar.getMessagesController().pinMessage(boVar.e, boVar.f, this.b, false, !r10[1], ((boolean[]) this.d)[0]);
-                oc B = vc.B(boVar, true, null, null, boVar.ea);
-                B.j();
-                sb sbVar = B.e;
-                sbVar.postDelayed(new ih(0, sbVar), 550L);
-                break;
             case 6:
-                bo.Q0((bo) this.c, this.b, (MessageObject) this.d);
+                xn xnVar = (xn) this.c;
+                xnVar.getMessagesController().pinMessage(xnVar.e, xnVar.f, this.b, false, !r10[1], ((boolean[]) this.d)[0]);
+                qc B = xc.B(xnVar, true, null, null, xnVar.ea);
+                B.j();
+                ub ubVar = B.e;
+                ubVar.postDelayed(new gh(0, ubVar), 550L);
                 break;
             case 7:
+                xn.Q0((xn) this.c, this.b, (MessageObject) this.d);
+                break;
+            case 8:
                 EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.c;
                 MessagesStorage.StringCallback stringCallback = (MessagesStorage.StringCallback) this.d;
                 String trim = editTextBoldCursor.getText().toString().trim();
@@ -112,51 +143,51 @@ public final /* synthetic */ class d2 implements MediaDataController.KeywordResu
                     break;
                 }
                 break;
-            case 8:
-                bn0 bn0Var = (bn0) this.c;
+            case 9:
+                cn0 cn0Var = (cn0) this.c;
                 TLRPC.Reaction reaction = (TLRPC.Reaction) this.d;
-                String obj2 = bn0Var.getText().toString();
+                String obj2 = cn0Var.getText().toString();
                 if (obj2.length() <= 12) {
                     MessagesController.getInstance(this.b).renameSavedReactionTag(zg.p0.d(reaction), obj2);
                     b2Var.dismiss();
                     break;
                 } else {
-                    AndroidUtilities.shakeView(bn0Var);
+                    AndroidUtilities.shakeView(cn0Var);
                     break;
                 }
-            case 10:
-                h50 h50Var = (h50) this.c;
+            case 11:
+                e50 e50Var = (e50) this.c;
                 EditTextBoldCursor editTextBoldCursor2 = (EditTextBoldCursor) this.d;
-                l50 l50Var = h50Var.n;
-                ChatObject.Call call = l50Var.b.a1;
+                i50 i50Var = e50Var.n;
+                ChatObject.Call call = i50Var.b.a1;
                 String obj3 = editTextBoldCursor2.getText().toString();
                 int i11 = this.b;
                 call.toggleRecord(obj3, i11);
                 AndroidUtilities.hideKeyboard(editTextBoldCursor2);
-                l50Var.b.k1().j(i11 == 0 ? 39 : 100, 0L, null);
+                i50Var.b.k1().j(i11 == 0 ? 39 : 100, 0L, null);
                 if (VoIPService.getSharedInstance() != null) {
                     VoIPService.getSharedInstance().playStartRecordSound();
                     break;
                 }
                 break;
-            case 11:
+            case 12:
                 LaunchActivity launchActivity = (LaunchActivity) this.c;
                 HashMap hashMap = (HashMap) this.d;
                 ArrayList arrayList = launchActivity.d0;
                 if (!arrayList.isEmpty() && AndroidUtilities.isMapsInstalled((n2) hg.c.h(1, arrayList))) {
-                    id0 id0Var = new id0(0);
-                    id0Var.F0 = new i2.s(hashMap, this.b, 11);
-                    launchActivity.p0(id0Var);
+                    dd0 dd0Var = new dd0(0);
+                    dd0Var.F0 = new i2.s(hashMap, this.b, 12);
+                    launchActivity.p0(dd0Var);
                     break;
                 }
                 break;
-            case 12:
-                ((id0) this.c).w0(RichMessageLayout.PART_MAX_HEIGHT_DP, (TLRPC.User) this.d, this.b);
-                break;
             case 13:
-                PasscodeActivity.U((PasscodeActivity) this.c, (uc0) this.d, this.b);
+                ((dd0) this.c).w0(RichMessageLayout.PART_MAX_HEIGHT_DP, (TLRPC.User) this.d, this.b);
                 break;
-            case 15:
+            case 14:
+                PasscodeActivity.U((PasscodeActivity) this.c, (tc0) this.d, this.b);
+                break;
+            case 16:
                 SessionsActivity.X((SessionsActivity) this.c, this.b, (boolean[]) this.d);
                 break;
         }

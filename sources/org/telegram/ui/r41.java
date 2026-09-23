@@ -1,39 +1,56 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.graphics.Canvas;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class r41 extends org.telegram.ui.Components.n6 {
-    public boolean s;
-    public final org.telegram.ui.Components.c6 v;
-    public final /* synthetic */ SaveToGallerySettingsActivity w;
+public final class r41 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ SecretMediaViewer b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r41(SaveToGallerySettingsActivity saveToGallerySettingsActivity, Activity activity) {
-        super(activity, true, true, false);
-        this.w = saveToGallerySettingsActivity;
-        this.v = new org.telegram.ui.Components.c6(this);
-        getDrawable().D = true;
+    public /* synthetic */ r41(SecretMediaViewer secretMediaViewer, int i10) {
+        this.a = i10;
+        this.b = secretMediaViewer;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        float f7 = this.s ? 1.0f : 0.0f;
-        org.telegram.ui.Components.c6 c6Var = this.v;
-        c6Var.d(f7, false);
-        int i10 = org.telegram.ui.ActionBar.i6.y6;
-        SaveToGallerySettingsActivity saveToGallerySettingsActivity = this.w;
-        setTextColor(i0.a.d(c6Var.c, saveToGallerySettingsActivity.getThemedColor(i10), saveToGallerySettingsActivity.getThemedColor(org.telegram.ui.ActionBar.i6.n6)));
-        super.dispatchDraw(canvas);
-    }
-
-    public final void e(boolean z10, boolean z11) {
-        if (this.s != z10) {
-            this.s = z10;
-            this.v.d(z10 ? 1.0f : 0.0f, z11);
-            invalidate();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                SecretMediaViewer secretMediaViewer = this.b;
+                Runnable runnable = secretMediaViewer.o0;
+                if (runnable != null) {
+                    runnable.run();
+                    secretMediaViewer.o0 = null;
+                    break;
+                }
+                break;
+            case 1:
+                SecretMediaViewer secretMediaViewer2 = this.b;
+                AnimatorSet animatorSet = secretMediaViewer2.G;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    secretMediaViewer2.F.setVisibility(8);
+                    secretMediaViewer2.G = null;
+                    secretMediaViewer2.a0.scrollTo(0, 0);
+                    break;
+                }
+                break;
+            case 2:
+                SecretMediaViewer secretMediaViewer3 = this.b;
+                Runnable runnable2 = secretMediaViewer3.o0;
+                if (runnable2 != null) {
+                    runnable2.run();
+                    secretMediaViewer3.o0 = null;
+                    break;
+                }
+                break;
+            default:
+                SecretMediaViewer secretMediaViewer4 = this.b;
+                secretMediaViewer4.K0 = null;
+                secretMediaViewer4.e.invalidate();
+                break;
         }
     }
 }

@@ -3,33 +3,33 @@ package qg;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
-import ci.c6;
-import ci.c7;
+import ci.a7;
+import ci.b6;
 import java.util.ArrayList;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserConfig;
-import org.telegram.ui.Components.ha;
-import org.telegram.ui.Components.kl0;
-import org.telegram.ui.Components.vk0;
+import org.telegram.ui.Components.ja;
+import org.telegram.ui.Components.ll0;
+import org.telegram.ui.Components.wk0;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class d1 extends kl0 {
+public final class d1 extends ll0 {
     public final /* synthetic */ Context c;
-    public final /* synthetic */ ha d;
-    public final /* synthetic */ c7 e;
+    public final /* synthetic */ ja d;
+    public final /* synthetic */ a7 e;
     public final /* synthetic */ boolean f;
-    public final /* synthetic */ c6 h;
+    public final /* synthetic */ b6 h;
 
-    public d1(c6 c6Var, Context context, ha haVar, c7 c7Var, boolean z10) {
-        this.h = c6Var;
+    public d1(b6 b6Var, Context context, ja jaVar, a7 a7Var, boolean z10) {
+        this.h = b6Var;
         this.c = context;
-        this.d = haVar;
-        this.e = c7Var;
+        this.d = jaVar;
+        this.e = a7Var;
         this.f = z10;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.ll0
     public final boolean D(s4.c1 c1Var) {
         return true;
     }
@@ -48,8 +48,8 @@ public final class d1 extends kl0 {
     public final void v(s4.c1 c1Var, int i10) {
         boolean z10;
         MessageObject.GroupedMessagePosition position;
-        c6 c6Var = this.h;
-        ArrayList arrayList = c6Var.s0;
+        b6 b6Var = this.h;
+        ArrayList arrayList = b6Var.s0;
         MessageObject messageObject = (MessageObject) arrayList.get((arrayList.size() - 1) - i10);
         View view = c1Var.a;
         if (!(view instanceof org.telegram.ui.Cells.t1)) {
@@ -60,13 +60,13 @@ public final class d1 extends kl0 {
             return;
         }
         org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) view;
-        MessageObject.GroupedMessages groupedMessages = c6Var.t0;
+        MessageObject.GroupedMessages groupedMessages = b6Var.t0;
         if (groupedMessages == null || (position = groupedMessages.getPosition(messageObject)) == null) {
             z10 = false;
         } else {
             z10 = position.minY != 0;
         }
-        MessageObject.GroupedMessages groupedMessages2 = c6Var.t0;
+        MessageObject.GroupedMessages groupedMessages2 = b6Var.t0;
         t1Var.X3(messageObject, groupedMessages2, groupedMessages2 != null, z10, false, false);
     }
 
@@ -75,10 +75,10 @@ public final class d1 extends kl0 {
         com.google.firebase.messaging.n nVar = this.h.D0;
         Context context = this.c;
         if (i10 == 1) {
-            return new vk0(new b1(this, context, nVar));
+            return new wk0(new b1(this, context, nVar));
         }
         c1 c1Var = new c1(this, context, UserConfig.selectedAccount, nVar);
         c1Var.N7 = true;
-        return new vk0(c1Var);
+        return new wk0(c1Var);
     }
 }

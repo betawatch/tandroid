@@ -1,41 +1,30 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class v20 implements ValueAnimator.AnimatorUpdateListener {
+public final class v20 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ z20 b;
+    public final /* synthetic */ a30 b;
 
-    public /* synthetic */ v20(z20 z20Var, int i10) {
+    public /* synthetic */ v20(a30 a30Var, int i10) {
         this.a = i10;
-        this.b = z20Var;
+        this.b = a30Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                z20 z20Var = this.b;
-                z20Var.r.x = (int) floatValue;
-                z20Var.h();
-                x20 x20Var = z20Var.a;
-                if (x20Var.getParent() != null) {
-                    z20Var.n.updateViewLayout(x20Var, z20Var.r);
-                    break;
-                }
+                a30 a30Var = this.b;
+                a30Var.b.setVisibility(8);
+                a30Var.y = false;
+                a30Var.E = 0.0f;
                 break;
             default:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                z20 z20Var2 = this.b;
-                z20Var2.r.y = (int) floatValue2;
-                x20 x20Var2 = z20Var2.a;
-                if (x20Var2.getParent() != null) {
-                    z20Var2.n.updateViewLayout(x20Var2, z20Var2.r);
-                    break;
-                }
+                this.b.e.setVisibility(8);
                 break;
         }
     }

@@ -2,7 +2,7 @@ package ai;
 
 import android.os.Build;
 import android.text.TextUtils;
-import ci.zc;
+import ci.wc;
 import java.io.File;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -14,7 +14,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q0 implements Utilities.Callback3 {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final /* synthetic */ class q0 implements Utilities.Callback3 {
 
     @Override // org.telegram.messenger.Utilities.Callback3
     public final void run(Object obj, Object obj2, Object obj3) {
-        ci.qb qbVar;
+        ci.nb nbVar;
         switch (this.a) {
             case 0:
                 r3 r3Var = (r3) this.b;
@@ -97,41 +97,41 @@ public final /* synthetic */ class q0 implements Utilities.Callback3 {
                 }
                 return;
             case 1:
-                ci.ec ecVar = (ci.ec) this.b;
+                ci.bc bcVar = (ci.bc) this.b;
                 ci.p pVar = (ci.p) this.c;
                 File file = (File) obj;
                 String str = (String) obj2;
                 Long l4 = (Long) obj3;
-                ci.oc ocVar = ecVar.S1;
-                ci.cc ccVar = ocVar.X0;
-                if (ccVar != null) {
-                    ccVar.O = false;
-                    ccVar.c();
-                    ci.cc ccVar2 = ocVar.X0;
-                    ccVar2.m(0L);
-                    zc zcVar = ccVar2.F;
-                    if (zcVar != null) {
-                        zcVar.setProgress(0L);
+                ci.lc lcVar = bcVar.S1;
+                ci.zb zbVar = lcVar.X0;
+                if (zbVar != null) {
+                    zbVar.O = false;
+                    zbVar.c();
+                    ci.zb zbVar2 = lcVar.X0;
+                    zbVar2.m(0L);
+                    wc wcVar = zbVar2.F;
+                    if (wcVar != null) {
+                        wcVar.setProgress(0L);
                     }
                 }
-                ci.o8 o8Var = ocVar.K1;
-                if (o8Var != null) {
-                    o8Var.o0 = file;
-                    o8Var.p0 = str;
-                    o8Var.q0 = l4.longValue();
-                    ci.o8 o8Var2 = ocVar.K1;
-                    o8Var2.s0 = 0.0f;
-                    o8Var2.t0 = 1.0f;
-                    o8Var2.r0 = 0L;
-                    o8Var2.u0 = 1.0f;
-                    ocVar.u();
-                    if (ocVar.X0 == null || (qbVar = ocVar.v1) == null) {
+                ci.l8 l8Var = lcVar.K1;
+                if (l8Var != null) {
+                    l8Var.o0 = file;
+                    l8Var.p0 = str;
+                    l8Var.q0 = l4.longValue();
+                    ci.l8 l8Var2 = lcVar.K1;
+                    l8Var2.s0 = 0.0f;
+                    l8Var2.t0 = 1.0f;
+                    l8Var2.r0 = 0L;
+                    l8Var2.u0 = 1.0f;
+                    lcVar.u();
+                    if (lcVar.X0 == null || (nbVar = lcVar.v1) == null) {
                         pVar.a(false);
                         return;
                     }
-                    qg.e2 m0 = qbVar.m0(ocVar.K1.p0, true);
-                    ecVar.setHasRoundVideo(true);
-                    ocVar.X0.s(ocVar.K1, m0, true);
+                    qg.e2 m0 = nbVar.m0(lcVar.K1.p0, true);
+                    bcVar.setHasRoundVideo(true);
+                    lcVar.X0.s(lcVar.K1, m0, true);
                     AndroidUtilities.cancelRunOnUIThread(pVar.h);
                     pVar.a.destroy(true, null);
                     m0.setDraw(false);

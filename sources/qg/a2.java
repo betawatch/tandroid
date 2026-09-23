@@ -10,23 +10,23 @@ import android.graphics.RectF;
 import android.os.Build;
 import android.view.View;
 import android.view.ViewGroup;
-import ci.o8;
+import ci.l8;
 import com.google.mlkit.vision.segmentation.subject.internal.zzd;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.vl;
+import org.telegram.messenger.ul;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.c6;
-import org.telegram.ui.Components.hk0;
+import org.telegram.ui.Components.e6;
+import org.telegram.ui.Components.ik0;
 import org.telegram.ui.Components.jv0;
-import org.telegram.ui.Components.qr;
-import org.telegram.ui.rv0;
+import org.telegram.ui.Components.rr;
+import org.telegram.ui.kv0;
 import w7.x5;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class a2 extends j {
     public final Bitmap A0;
@@ -40,11 +40,11 @@ public final class a2 extends j {
     public final String r0;
     public final int s0;
     public boolean t0;
-    public final c6 u0;
+    public final e6 u0;
     public final jv0 v0;
     public final int w0;
     public boolean x0;
-    public final c6 y0;
+    public final e6 y0;
     public final ai.f0 z0;
 
     public a2(Context context, PointF pointF, jv0 jv0Var, String str, int i10) {
@@ -65,11 +65,11 @@ public final class a2 extends j {
         ai.f0 f0Var = new ai.f0(this, context);
         this.z0 = f0Var;
         addView(f0Var, x5.c(-1.0f, -1));
-        qr qrVar = qr.h;
-        this.u0 = new c6(f0Var, 0L, 500L, qrVar);
-        this.y0 = new c6(f0Var, 0L, 350L, qrVar);
+        rr rrVar = rr.h;
+        this.u0 = new e6(f0Var, 0L, 500L, rrVar);
+        this.y0 = new e6(f0Var, 0L, 350L, rrVar);
         this.w0 = i10;
-        Bitmap q6 = o8.q(new k2.v(str, 21), 1920, 1920, 0, false);
+        Bitmap q6 = l8.q(new le.b(str, 22), 1920, 1920, 0, false);
         this.A0 = q6;
         if (q6 != null) {
             s(q6);
@@ -121,10 +121,10 @@ public final class a2 extends j {
     }
 
     @Override // qg.j
-    public hk0 getSelectionBounds() {
+    public ik0 getSelectionBounds() {
         ViewGroup viewGroup = (ViewGroup) getParent();
         if (viewGroup == null) {
-            return new hk0();
+            return new ik0();
         }
         float scaleX = viewGroup.getScaleX();
         float dp = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
@@ -133,8 +133,8 @@ public final class a2 extends j {
         getMeasuredHeight();
         getScale();
         AndroidUtilities.dp(64.0f);
-        float v = vl.v(dp, 2.0f, getPositionX(), scaleX);
-        return new hk0(v, vl.v(dp2, 2.0f, getPositionY(), scaleX), ((dp3 * scaleX) + v) - v, dp2 * scaleX);
+        float v = ul.v(dp, 2.0f, getPositionX(), scaleX);
+        return new ik0(v, ul.v(dp2, 2.0f, getPositionY(), scaleX), ((dp3 * scaleX) + v) - v, dp2 * scaleX);
     }
 
     @Override // qg.j
@@ -206,7 +206,7 @@ public final class a2 extends j {
         dVar.a = true;
         zzd a2 = i8.d.a(new ac.e(dVar));
         this.B0 = true;
-        a2.g(vb.a.a(bitmap, this.w0)).addOnSuccessListener(new k2.v(this, 22)).addOnFailureListener(new rv0(25, this, bitmap));
+        a2.g(vb.a.a(bitmap, this.w0)).addOnSuccessListener(new le.b(this, 23)).addOnFailureListener(new kv0(25, this, bitmap));
     }
 
     public final void t(boolean z10) {
@@ -239,9 +239,9 @@ public final class a2 extends j {
         ai.f0 f0Var = new ai.f0(this, context);
         this.z0 = f0Var;
         addView(f0Var, x5.c(-1.0f, -1));
-        qr qrVar = qr.h;
-        this.u0 = new c6(f0Var, 0L, 500L, qrVar);
-        this.y0 = new c6(f0Var, 0L, 350L, qrVar);
+        rr rrVar = rr.h;
+        this.u0 = new e6(f0Var, 0L, 500L, rrVar);
+        this.y0 = new e6(f0Var, 0L, 350L, rrVar);
         k();
     }
 }

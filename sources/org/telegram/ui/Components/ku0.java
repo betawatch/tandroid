@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public abstract class ku0 extends ScrollSlidingTextTabStrip {
     public Paint p0;
@@ -15,8 +15,8 @@ public abstract class ku0 extends ScrollSlidingTextTabStrip {
     public final /* synthetic */ yu0 s0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ku0(yu0 yu0Var, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, e6Var);
+    public ku0(yu0 yu0Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, d6Var);
         this.s0 = yu0Var;
         this.q0 = 0;
         this.r0 = new Rect();

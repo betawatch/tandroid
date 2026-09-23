@@ -1,35 +1,22 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.widget.FrameLayout;
-
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class xc1 extends FrameLayout {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Rect b;
-    public final /* synthetic */ wd1 c;
+public final class xc1 extends od1 {
+    public final /* synthetic */ xn k2;
+    public final /* synthetic */ boolean l2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xc1(wd1 wd1Var, Context context, int i10, Rect rect) {
-        super(context);
-        this.c = wd1Var;
-        this.a = i10;
-        this.b = rect;
+    public xc1(Object obj, xn xnVar, boolean z10) {
+        super(obj, null, true);
+        this.k2 = xnVar;
+        this.l2 = z10;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        int i10 = this.a;
-        Rect rect = this.b;
-        wd1 wd1Var = this.c;
-        if (i10 == 0) {
-            wd1Var.r.setBounds(wd1Var.V.getLeft() - rect.left, 0, wd1Var.V.getRight() + rect.right, getMeasuredHeight());
-        } else {
-            wd1Var.r.setBounds(-rect.left, 0, getMeasuredWidth() + rect.right, getMeasuredHeight());
-        }
-        wd1Var.r.draw(canvas);
+    @Override // org.telegram.ui.ActionBar.n2
+    public final void onFragmentClosed() {
+        super.onFragmentClosed();
+        vn vnVar = this.k2.ea;
+        vnVar.i(vnVar.f, vnVar.h, false, Boolean.valueOf(this.l2), false);
     }
 }

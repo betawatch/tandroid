@@ -1,27 +1,33 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
-/* loaded from: classes3.dex */
-public final class st extends m6 {
-    public final /* synthetic */ int W;
-    public final /* synthetic */ EditTextBoldCursor X;
+import android.view.View;
+import android.view.ViewTreeObserver;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ st(int i10, EditTextBoldCursor editTextBoldCursor) {
-        super(false, false, false, false);
-        this.W = i10;
-        this.X = editTextBoldCursor;
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class st implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ View b;
+
+    public /* synthetic */ st(int i10, View view) {
+        this.a = i10;
+        this.b = view;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void invalidateSelf() {
-        switch (this.W) {
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        switch (this.a) {
             case 0:
-                this.X.invalidate();
+                org.telegram.ui.ActionBar.h4 h4Var = ((EditTextBoldCursor) this.b).floatingActionMode;
+                if (h4Var != null) {
+                    h4Var.e();
+                    break;
+                }
                 break;
             default:
-                this.X.invalidate();
+                ((m70) this.b).invalidate();
                 break;
         }
+        return true;
     }
 }

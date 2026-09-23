@@ -1,37 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.content.DialogInterface;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_payments;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xt implements DialogInterface.OnShowListener {
+public final /* synthetic */ class xt implements org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ EditTextBoldCursor b;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ xt(int i10, EditTextBoldCursor editTextBoldCursor) {
+    public /* synthetic */ xt(int i10, int i11, org.telegram.ui.ActionBar.n2 n2Var) {
         this.a = i10;
-        this.b = editTextBoldCursor;
+        this.b = i11;
+        this.c = n2Var;
     }
 
-    @Override // android.content.DialogInterface.OnShowListener
-    public final void onShow(DialogInterface dialogInterface) {
-        switch (this.a) {
-            case 0:
-                fi.o oVar = (fi.o) this.b;
-                oVar.requestFocus();
-                AndroidUtilities.showKeyboard(oVar);
-                break;
-            case 1:
-                fi.o oVar2 = (fi.o) this.b;
-                oVar2.requestFocus();
-                AndroidUtilities.showKeyboard(oVar2);
-                break;
-            default:
-                d4 d4Var = (d4) this.b;
-                d4Var.requestFocus();
-                AndroidUtilities.showKeyboard(d4Var);
-                break;
-        }
+    @Override // org.telegram.ui.ActionBar.a2
+    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) this.c;
+        nf.e g10 = b2Var.g(-1, true, true);
+        g10.d();
+        TL_payments.TL_resolveStarGiftOffer tL_resolveStarGiftOffer = new TL_payments.TL_resolveStarGiftOffer();
+        tL_resolveStarGiftOffer.offer_msg_id = this.a;
+        int i11 = this.b;
+        ConnectionsManager.getInstance(i11).sendRequestTyped(tL_resolveStarGiftOffer, new ei.h1(i11, n2Var, g10, b2Var));
+    }
+
+    public /* synthetic */ xt(cu cuVar, int i10, int i11) {
+        this.c = cuVar;
+        this.a = i10;
+        this.b = i11;
     }
 }

@@ -20,9 +20,9 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class ju0 extends kl0 {
+public final class ju0 extends ll0 {
     public int E;
     public final /* synthetic */ yu0 G;
     public final Context c;
@@ -46,7 +46,7 @@ public final class ju0 extends kl0 {
         C(true);
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.ll0
     public final boolean D(s4.c1 c1Var) {
         return true;
     }
@@ -123,11 +123,11 @@ public final class ju0 extends kl0 {
         this.s = false;
         int i11 = this.E + 1;
         this.E = i11;
-        wm wmVar = new wm(this, i11, tL_messages_search, 15);
+        xm xmVar = new xm(this, i11, tL_messages_search, 15);
         if (this.x != null) {
-            MessagesStorage.getInstance(i10).searchSavedByTag(this.x.g(), 0L, this.w, 100, this.n.size(), new ai.k3(1, this, wmVar), false);
+            MessagesStorage.getInstance(i10).searchSavedByTag(this.x.g(), 0L, this.w, 100, this.n.size(), new ai.k3(1, this, xmVar), false);
         } else {
-            wmVar.run();
+            xmVar.run();
         }
     }
 
@@ -177,7 +177,7 @@ public final class ju0 extends kl0 {
                         Paint.FontMetricsInt fontMetricsInt = rt0VarArr[i12].w.d.getPaint().getFontMetricsInt();
                         if (TextUtils.isEmpty(p0Var.f)) {
                             SpannableString spannableString = new SpannableString("😀");
-                            spannableString.setSpan(new x5(p0Var.g, fontMetricsInt), 0, spannableString.length(), 17);
+                            spannableString.setSpan(new z5(p0Var.g, fontMetricsInt), 0, spannableString.length(), 17);
                             charSequence = spannableString;
                         } else {
                             charSequence = p0Var.f;
@@ -253,7 +253,7 @@ public final class ju0 extends kl0 {
         yu0 yu0Var = this.G;
         a0Var.setDialogCellDelegate(yu0Var);
         a0Var.r0 = true;
-        a0Var.setBackgroundColor(yu0Var.h0(org.telegram.ui.ActionBar.i6.d6));
-        return new vk0(a0Var);
+        a0Var.setBackgroundColor(yu0Var.h0(org.telegram.ui.ActionBar.h6.d6));
+        return new wk0(a0Var);
     }
 }

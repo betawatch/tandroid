@@ -1,16 +1,59 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+import android.content.ComponentName;
+import android.content.Context;
+import org.telegram.messenger.R;
+
+/* JADX WARN: Enum visitor error
+jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'h' uses external variables
+	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:451)
+	at jadx.core.dex.visitors.EnumVisitor.processEnumFieldByRegister(EnumVisitor.java:395)
+	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromFilledArray(EnumVisitor.java:324)
+	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromInsn(EnumVisitor.java:262)
+	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:151)
+	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
+ */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class gb0 extends org.telegram.ui.Components.r00 {
-    @Override // org.telegram.ui.Components.r00
-    public final void b() {
-        setVisibility(8);
+public final class gb0 {
+    public static final gb0 h;
+    public static final /* synthetic */ gb0[] n;
+    public final String a;
+    public final int b;
+    public final int c;
+    public final int d;
+    public final boolean e;
+    public ComponentName f;
+
+    static {
+        int i10 = R.drawable.icon_background_sa;
+        int i11 = R.mipmap.icon_foreground_sa;
+        gb0 gb0Var = new gb0("DEFAULT", 0, "DefaultIcon", i10, i11, R.string.AppIconDefault, false);
+        h = gb0Var;
+        n = new gb0[]{gb0Var, new gb0("VINTAGE", 1, "VintageIcon", R.drawable.icon_6_background_sa, R.mipmap.icon_6_foreground_sa, R.string.AppIconVintage, false), new gb0("AQUA", 2, "AquaIcon", R.drawable.icon_4_background_sa, i11, R.string.AppIconAqua, false), new gb0("PREMIUM", 3, "PremiumIcon", R.drawable.icon_3_background_sa, R.mipmap.icon_3_foreground_sa, R.string.AppIconPremium, true), new gb0("TURBO", 4, "TurboIcon", R.drawable.icon_5_background_sa, R.mipmap.icon_5_foreground_sa, R.string.AppIconTurbo, true), new gb0("NOX", 5, "NoxIcon", R.mipmap.icon_2_background_sa, i11, R.string.AppIconNox, true)};
     }
 
-    @Override // org.telegram.ui.Components.r00
-    public final void c(boolean z10) {
-        setVisibility(0);
-        super.c(z10);
+    public gb0(String str, int i10, String str2, int i11, int i12, int i13, boolean z10) {
+        this.a = str2;
+        this.b = i11;
+        this.c = i12;
+        this.d = i13;
+        this.e = z10;
+    }
+
+    public static gb0 valueOf(String str) {
+        return (gb0) Enum.valueOf(gb0.class, str);
+    }
+
+    public static gb0[] values() {
+        return (gb0[]) n.clone();
+    }
+
+    public final ComponentName a(Context context) {
+        if (this.f == null) {
+            this.f = new ComponentName(context.getPackageName(), "org.telegram.messenger." + this.a);
+        }
+        return this.f;
     }
 }

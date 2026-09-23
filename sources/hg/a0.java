@@ -1,6 +1,6 @@
 package hg;
 
-import ai.t5;
+import ai.s5;
 import android.text.TextUtils;
 import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
@@ -9,10 +9,10 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.qd;
-import org.telegram.ui.Components.vc;
+import org.telegram.ui.Components.sd;
+import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class a0 {
     public static volatile a0[] e = new a0[4];
@@ -61,11 +61,11 @@ public final class a0 {
             int indexOf = arrayList.indexOf(c10);
             arrayList.remove(c10);
             NotificationCenter.getInstance(this.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.businessLinksUpdated, new Object[0]);
-            vc.a0(xVar).U(LocaleController.getString(R.string.BusinessLinkDeleted), true, new ai.s1(this, indexOf, c10, 12), new gg.t(this, str, c10, 8)).j();
+            xc.a0(xVar).U(LocaleController.getString(R.string.BusinessLinkDeleted), true, new ai.s1(this, indexOf, c10, 12), new gg.t(this, str, c10, 8)).j();
         }
     }
 
-    public final void b(TL_account.TL_businessChatLink tL_businessChatLink, TL_account.TL_inputBusinessChatLink tL_inputBusinessChatLink, qd qdVar) {
+    public final void b(TL_account.TL_businessChatLink tL_businessChatLink, TL_account.TL_inputBusinessChatLink tL_inputBusinessChatLink, sd sdVar) {
         TL_account.editBusinessChatLink editbusinesschatlink = new TL_account.editBusinessChatLink();
         editbusinesschatlink.slug = tL_businessChatLink.link;
         if (!tL_inputBusinessChatLink.entities.isEmpty()) {
@@ -75,7 +75,7 @@ public final class a0 {
             tL_inputBusinessChatLink.flags |= 2;
         }
         editbusinesschatlink.link = tL_inputBusinessChatLink;
-        ConnectionsManager.getInstance(this.a).sendRequest(editbusinesschatlink, new t5(this, tL_businessChatLink, qdVar, 4));
+        ConnectionsManager.getInstance(this.a).sendRequest(editbusinesschatlink, new s5(this, tL_businessChatLink, sdVar, 4));
     }
 
     public final TL_account.TL_businessChatLink c(String str) {

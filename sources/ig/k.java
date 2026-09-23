@@ -1,6 +1,6 @@
 package ig;
 
-import ai.l6;
+import ai.k6;
 import android.animation.Animator;
 import android.animation.ValueAnimator;
 import android.graphics.Canvas;
@@ -9,9 +9,9 @@ import android.graphics.Path;
 import android.text.TextPaint;
 import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
 public final class k extends g {
     @Override // ig.g
@@ -47,7 +47,7 @@ public final class k extends g {
                     if (animator != null) {
                         animator.cancel();
                     }
-                    ValueAnimator e = g.e(this.j0, this.l0, new l6(this, 4));
+                    ValueAnimator e = g.e(this.j0, this.l0, new k6(this, 4));
                     this.d0 = e;
                     e.start();
                 }
@@ -431,7 +431,7 @@ public final class k extends g {
                             } else {
                                 if (charSequenceArr == null || arrayList.size() < 2) {
                                     i14 = i20;
-                                    textPaint2.setColor(i6.v0(i6.Yi, this.W0));
+                                    textPaint2.setColor(h6.v0(h6.Yi, this.W0));
                                     textPaint2.setAlpha((int) e2.C(dVar2.f, this.f, f10, f7));
                                 } else {
                                     i14 = i20;

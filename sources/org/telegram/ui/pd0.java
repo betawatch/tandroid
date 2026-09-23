@@ -1,29 +1,46 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class pd0 implements org.telegram.ui.ActionBar.a2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ wg0 b;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-    public /* synthetic */ pd0(wg0 wg0Var, int i10) {
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class pd0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ cf0 b;
+
+    public /* synthetic */ pd0(cf0 cf0Var, int i10) {
         this.a = i10;
-        this.b = wg0Var;
+        this.b = cf0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                wg0 wg0Var = this.b;
-                wg0Var.b[wg0Var.a].d();
-                wg0Var.k1(true, true);
+                this.b.L.n();
+                break;
+            case 1:
+                cf0 cf0Var = this.b;
+                cf0Var.M = null;
+                cf0Var.N = null;
+                cf0Var.p(true);
+                cf0Var.e.h(null, null, cf0Var.f, null);
+                id idVar = cf0Var.n;
+                org.telegram.ui.Components.yi0 yi0Var = cf0Var.I;
+                idVar.setAnimation(yi0Var);
+                yi0Var.M(0);
+                cf0Var.K = true;
+                break;
+            case 2:
+                this.b.K = true;
                 break;
             default:
-                wg0 wg0Var2 = this.b;
-                wg0Var2.l0 = true;
-                if (wg0Var2.a != 0) {
-                    wg0Var2.u1(0, true, null, true);
+                EditTextBoldCursor editTextBoldCursor = this.b.c;
+                if (editTextBoldCursor != null) {
+                    editTextBoldCursor.requestFocus();
+                    editTextBoldCursor.setSelection(editTextBoldCursor.length());
+                    AndroidUtilities.showKeyboard(editTextBoldCursor);
                     break;
                 }
                 break;

@@ -1,34 +1,39 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.animation.AnimatorSet;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class kk extends org.telegram.ui.Components.to {
-    public final /* synthetic */ bo f;
+public final class kk implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ xn b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kk(bo boVar, Context context) {
-        super(context);
-        this.f = boVar;
+    public /* synthetic */ kk(xn xnVar, int i10) {
+        this.a = i10;
+        this.b = xnVar;
     }
 
-    @Override // org.telegram.ui.Components.to
-    public final void a(boolean z10) {
-        bo boVar = this.f;
-        boVar.t7();
-        boVar.r7();
-        boVar.u7();
-        boVar.v7();
-        dl dlVar = boVar.ab;
-        if (dlVar != null) {
-            dlVar.setTranslationY(boVar.w9 + getCurrentHeight());
-        }
-        if (!z10) {
-            boVar.o9();
-        } else {
-            boVar.D9 = true;
-            boVar.jc();
+    @Override // java.lang.Runnable
+    public final void run() {
+        org.telegram.ui.Components.ch chVar;
+        FrameLayout frameLayout;
+        switch (this.a) {
+            case 0:
+                xn xnVar = this.b;
+                AnimatorSet animatorSet = xnVar.V9;
+                if (animatorSet != null && !animatorSet.isRunning()) {
+                    xnVar.V9.start();
+                    break;
+                }
+                break;
+            default:
+                xn xnVar2 = this.b;
+                if (xnVar2.O2 == this && (chVar = xnVar2.M0) != null && (frameLayout = xnVar2.N2) != null) {
+                    chVar.i(frameLayout, false, true);
+                    break;
+                }
+                break;
         }
     }
 }

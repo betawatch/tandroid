@@ -1,45 +1,37 @@
 package org.telegram.ui.ActionBar;
 
-import android.view.animation.Animation;
-import android.view.animation.Transformation;
+import android.content.Context;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 
-/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
 /* loaded from: classes3.dex */
-public final class o4 extends Animation {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ v4 e;
+public final class o4 extends ArrayAdapter {
+    public final /* synthetic */ u4 a;
 
-    public /* synthetic */ o4(v4 v4Var, float f7, float f10, int i10, int i11) {
-        this.a = i11;
-        this.e = v4Var;
-        this.b = f7;
-        this.c = f10;
-        this.d = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public o4(u4 u4Var, Context context) {
+        super(context, 0);
+        this.a = u4Var;
     }
 
-    @Override // android.view.animation.Animation
-    public final void applyTransformation(float f7, Transformation transformation) {
-        switch (this.a) {
-            case 0:
-                float f10 = this.b;
-                float z10 = com.google.android.gms.internal.vision.e2.z(this.c, f10, f7, f10);
-                v4 v4Var = this.e;
-                v4Var.i.setX(z10 + (v4Var.f.getWidth() - this.d));
-                float f11 = 1.0f - f7;
-                v4Var.l.setAlpha(f11);
-                v4Var.j.setAlpha(f11);
-                break;
-            default:
-                float f12 = this.b;
-                float z11 = com.google.android.gms.internal.vision.e2.z(this.c, f12, f7, f12);
-                v4 v4Var2 = this.e;
-                v4Var2.i.setX(z11 + (v4Var2.f.getWidth() - this.d));
-                v4Var2.l.setAlpha(f7);
-                v4Var2.j.setAlpha(f7);
-                break;
+    @Override // android.widget.ArrayAdapter, android.widget.Adapter
+    public final View getView(int i10, View view, ViewGroup viewGroup) {
+        u4 u4Var = this.a;
+        com.google.firebase.messaging.p pVar = u4Var.q;
+        MenuItem menuItem = (MenuItem) getItem(i10);
+        int width = u4Var.I.getWidth();
+        if (view != null) {
+            int i11 = pVar.a;
+            w4.e(view, menuItem, ((u4) pVar.e).Q.j != null);
+        } else {
+            view = w4.b(((u4) pVar.e).Q, (Context) pVar.c, menuItem, true, false, false);
+            int i12 = pVar.b;
+            view.setPadding(i12, 0, i12, 0);
         }
+        view.setMinimumWidth(width);
+        return view;
     }
 }
