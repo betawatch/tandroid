@@ -2,33 +2,33 @@ package org.telegram.ui;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class hk extends org.telegram.ui.Components.uo {
-    public final /* synthetic */ xn f;
+    public final /* synthetic */ wn f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hk(xn xnVar, Context context) {
+    public hk(wn wnVar, Context context) {
         super(context);
-        this.f = xnVar;
+        this.f = wnVar;
     }
 
     @Override // org.telegram.ui.Components.uo
     public final void a(boolean z10) {
-        xn xnVar = this.f;
-        xnVar.t7();
-        xnVar.r7();
-        xnVar.u7();
-        xnVar.v7();
-        al alVar = xnVar.ab;
+        wn wnVar = this.f;
+        wnVar.t7();
+        wnVar.r7();
+        wnVar.u7();
+        wnVar.v7();
+        al alVar = wnVar.ab;
         if (alVar != null) {
-            alVar.setTranslationY(xnVar.w9 + getCurrentHeight());
+            alVar.setTranslationY(wnVar.w9 + getCurrentHeight());
         }
         if (!z10) {
-            xnVar.o9();
+            wnVar.o9();
         } else {
-            xnVar.D9 = true;
-            xnVar.jc();
+            wnVar.D9 = true;
+            wnVar.jc();
         }
     }
 }

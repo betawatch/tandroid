@@ -7,22 +7,22 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.support.SparseLongArray;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class bc extends yb implements NotificationCenter.NotificationCenterDelegate {
     public final zb d;
     public SparseLongArray e;
-    public final org.telegram.ui.ActionBar.n2 f;
+    public final org.telegram.ui.ActionBar.m2 f;
     public final int h;
     public qc n;
 
-    public bc(int i10, org.telegram.ui.ActionBar.n2 n2Var) {
-        super(n2Var.getContext(), n2Var.getResourceProvider());
-        this.f = n2Var;
+    public bc(int i10, org.telegram.ui.ActionBar.m2 m2Var) {
+        super(m2Var.getContext(), m2Var.getResourceProvider());
+        this.f = m2Var;
         this.h = i10;
-        this.b.setLayoutParams(w7.x5.i(-2.0f, -2.0f, 8388659, 56.0f, 6.0f, 8.0f, 0.0f));
-        this.a.setLayoutParams(w7.x5.h(56.0f, 48.0f, 8388659));
-        zb zbVar = new zb(this, n2Var, getContext(), n2Var.getCurrentAccount(), n2Var.getResourceProvider());
+        this.b.setLayoutParams(w7.y5.i(-2.0f, -2.0f, 8388659, 56.0f, 6.0f, 8.0f, 0.0f));
+        this.a.setLayoutParams(w7.y5.h(56.0f, 48.0f, 8388659));
+        zb zbVar = new zb(this, m2Var, getContext(), m2Var.getCurrentAccount(), m2Var.getResourceProvider());
         this.d = zbVar;
         zbVar.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(0.0f));
         this.d.setDelegate(new ac(this));
@@ -32,7 +32,7 @@ public final class bc extends yb implements NotificationCenter.NotificationCente
         this.d.setVisibility(0);
         this.d.setBubbleOffset(-AndroidUtilities.dp(80.0f));
         this.d.setHint(LocaleController.getString(R.string.SavedTagReactionsHint));
-        addView(this.d, w7.x5.d(-2, 92.5f, 1, 0.0f, 36.0f, 0.0f, 0.0f));
+        addView(this.d, w7.y5.d(-2, 92.5f, 1, 0.0f, 36.0f, 0.0f, 0.0f));
         this.d.p(null, null, true);
     }
 

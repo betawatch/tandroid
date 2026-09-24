@@ -7,9 +7,9 @@ import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.zc;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class f0 {
     public final long a;
@@ -24,12 +24,12 @@ public final class f0 {
     public org.telegram.ui.Components.q5 j;
     public org.telegram.ui.Components.e6 k;
     public final RectF l;
-    public final yc m;
+    public final zc m;
 
     public f0(g0 g0Var, TL_stars.TL_starGiftUnique tL_starGiftUnique) {
         new Matrix();
         this.l = new RectF();
-        this.m = new yc(g0Var);
+        this.m = new zc(g0Var);
         this.a = tL_starGiftUnique.id;
         TLRPC.Document document = tL_starGiftUnique.getDocument();
         this.b = document;

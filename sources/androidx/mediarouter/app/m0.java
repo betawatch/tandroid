@@ -19,10 +19,9 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Cells.ja;
 import s4.c1;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class m0 extends s4.h0 {
     public final ArrayList c = new ArrayList();
@@ -40,10 +39,10 @@ public final class m0 extends s4.h0 {
         this.w = o0Var;
         Context context = o0Var.y;
         this.d = LayoutInflater.from(context);
-        this.e = v7.d0.d(context, R.attr.mediaRouteDefaultIconDrawable);
-        this.f = v7.d0.d(context, R.attr.mediaRouteTvIconDrawable);
-        this.h = v7.d0.d(context, R.attr.mediaRouteSpeakerIconDrawable);
-        this.n = v7.d0.d(context, R.attr.mediaRouteSpeakerGroupIconDrawable);
+        this.e = v7.f0.d(context, R.attr.mediaRouteDefaultIconDrawable);
+        this.f = v7.f0.d(context, R.attr.mediaRouteTvIconDrawable);
+        this.h = v7.f0.d(context, R.attr.mediaRouteSpeakerIconDrawable);
+        this.n = v7.f0.d(context, R.attr.mediaRouteSpeakerGroupIconDrawable);
         this.s = context.getResources().getInteger(R.integer.mr_cast_volume_slider_layout_animation_duration_ms);
         this.v = new AccelerateDecelerateInterpolator();
         G();
@@ -89,7 +88,7 @@ public final class m0 extends s4.h0 {
         uVar.getClass();
         p4.x.b();
         for (p4.v vVar : DesugarCollections.unmodifiableList(uVar.b)) {
-            ja b10 = o0Var.r.b(vVar);
+            k2.u b10 = o0Var.r.b(vVar);
             if (b10 != null && (oVar = (p4.o) b10.b) != null && oVar.d) {
                 arrayList3.add(vVar);
             }
@@ -188,7 +187,7 @@ public final class m0 extends s4.h0 {
 
     @Override // s4.h0
     public final void v(c1 c1Var, int i10) {
-        ja b10;
+        k2.u b10;
         p4.o oVar;
         ArrayList arrayList = this.c;
         int i11 = (i10 == 0 ? this.r : (k0) arrayList.get(i10 - 1)).b;

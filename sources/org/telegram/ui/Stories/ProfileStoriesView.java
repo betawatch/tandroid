@@ -39,22 +39,22 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.z0;
+import org.telegram.messenger.f0;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.cj0;
 import org.telegram.ui.Components.e6;
+import org.telegram.ui.Components.mj0;
 import org.telegram.ui.Components.o6;
 import org.telegram.ui.Components.p20;
 import org.telegram.ui.Components.rr;
 import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.f01;
-import org.telegram.ui.kz0;
-import v7.z6;
+import org.telegram.ui.d01;
+import org.telegram.ui.iz0;
+import v7.a7;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public class ProfileStoriesView extends View implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int s0 = 0;
@@ -90,7 +90,7 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
     public final View f;
     public float f0;
     public float g0;
-    public final f01 h;
+    public final d01 h;
     public float h0;
     public float i0;
     public float j0;
@@ -108,10 +108,10 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
     public h6 v;
     public final ArrayList w;
     public boolean x;
-    public cj0 y;
+    public mj0 y;
 
     /* JADX WARN: Type inference failed for: r0v12, types: [ai.f6] */
-    public ProfileStoriesView(Context context, int i10, long j3, boolean z10, View view, f01 f01Var, d6 d6Var) {
+    public ProfileStoriesView(Context context, int i10, long j3, boolean z10, View view, d01 d01Var, d6 d6Var) {
         super(context);
         Paint paint = new Paint(1);
         this.a = paint;
@@ -141,21 +141,21 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
         this.e0 = new Path();
         this.l0 = new e6(this, 0L, 350L, rrVar);
         this.m0 = new e6(this, 0L, 350L, rrVar);
-        final kz0 kz0Var = (kz0) this;
-        this.n0 = new i(kz0Var, 3);
+        final iz0 iz0Var = (iz0) this;
+        this.n0 = new i(iz0Var, 3);
         final int i11 = 0;
         this.o0 = new Runnable() { // from class: ai.f6
             @Override // java.lang.Runnable
             public final void run() {
                 int i12 = i11;
-                kz0 kz0Var2 = kz0Var;
+                iz0 iz0Var2 = iz0Var;
                 switch (i12) {
                     case 0:
                         int i13 = ProfileStoriesView.s0;
-                        kz0Var2.u0.w4(false);
+                        iz0Var2.u0.w4(false);
                         break;
                     default:
-                        kz0Var2.invalidate();
+                        iz0Var2.invalidate();
                         break;
                 }
             }
@@ -164,20 +164,20 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
         this.d = j3;
         this.e = z10;
         this.f = view;
-        this.h = f01Var;
+        this.h = d01Var;
         final int i12 = 1;
-        f01Var.getImageReceiver().setVisibleInvalidate(new Runnable() { // from class: ai.f6
+        d01Var.getImageReceiver().setVisibleInvalidate(new Runnable() { // from class: ai.f6
             @Override // java.lang.Runnable
             public final void run() {
                 int i122 = i12;
-                kz0 kz0Var2 = kz0Var;
+                iz0 iz0Var2 = iz0Var;
                 switch (i122) {
                     case 0:
                         int i13 = ProfileStoriesView.s0;
-                        kz0Var2.u0.w4(false);
+                        iz0Var2.u0.w4(false);
                         break;
                     default:
-                        kz0Var2.invalidate();
+                        iz0Var2.invalidate();
                         break;
                 }
             }
@@ -476,7 +476,7 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
         profileStoriesView5.K = null;
         e6 e6Var2 = profileStoriesView5.U;
         e6 e6Var3 = profileStoriesView5.T;
-        f01 f01Var = profileStoriesView5.h;
+        d01 d01Var = profileStoriesView5.h;
         ea eaVar5 = profileStoriesView5.L;
         RectF rectF7 = profileStoriesView5.Q;
         if (lerp2 > 0.0f) {
@@ -486,12 +486,12 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
             rectF7.inset(-AndroidUtilities.dpf2(3.775f), -AndroidUtilities.dpf2(3.775f));
             paint = eaVar5.a(rectF7);
             if (profileStoriesView5.y == null) {
-                cj0 cj0Var = new cj0(profileStoriesView5);
-                profileStoriesView5.y = cj0Var;
+                mj0 mj0Var = new mj0(profileStoriesView5);
+                profileStoriesView5.y = mj0Var;
                 f11 = d;
                 arrayList2 = arrayList;
                 eaVar = eaVar5;
-                cj0Var.d(null, true, false);
+                mj0Var.d(null, true, false);
                 profileStoriesView5.y.u = ChatObject.isForum(UserConfig.selectedAccount, j10);
             } else {
                 f11 = d;
@@ -519,13 +519,13 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
             int alpha = paint.getAlpha();
             paint.setAlpha((int) (alpha * clamp2 * f12));
             paint.setStrokeWidth(AndroidUtilities.dpf2(2.33f));
-            cj0 cj0Var2 = profileStoriesView5.y;
-            cj0Var2.t = paint;
+            mj0 mj0Var2 = profileStoriesView5.y;
+            mj0Var2.t = paint;
             f10 = clamp;
             j3 = j10;
-            cj0Var2.f((int) rectF7.left, (int) rectF7.top, (int) rectF7.right, (int) rectF7.bottom);
+            mj0Var2.f((int) rectF7.left, (int) rectF7.top, (int) rectF7.right, (int) rectF7.bottom);
             profileStoriesView5.y.e(Utilities.clamp(f24, 1.0f, 0.0f), true);
-            if (f01Var.Q) {
+            if (d01Var.Q) {
                 profileStoriesView5.y.a(canvas2);
             }
             paint.setAlpha(alpha);
@@ -706,7 +706,7 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
                                     int alpha3 = a2.getAlpha();
                                     ea eaVar6 = eaVar4;
                                     Paint paint13 = a2;
-                                    paint13.setAlpha((int) z0.A(1.0f, clamp3, alpha3, f17));
+                                    paint13.setAlpha((int) f0.z(1.0f, clamp3, alpha3, f17));
                                     paint13.setStrokeWidth(AndroidUtilities.dpf2(z14 ? 3.0f : 2.33f));
                                     float f35 = f32;
                                     f21 = clamp3;
@@ -774,7 +774,7 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
                     eaVar2 = eaVar;
                     rectF8 = rectF2;
                     if (z13) {
-                        ia.k(canvas2, rectF8, f17, f01Var.getImageReceiver().getVisible(), profileStoriesView5.I);
+                        ia.k(canvas2, rectF8, f17, d01Var.getImageReceiver().getVisible(), profileStoriesView5.I);
                         canvas2.restore();
                     }
                 }
@@ -1314,7 +1314,7 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
         }
         if (motionEvent.getAction() == 1) {
             AndroidUtilities.cancelRunOnUIThread(f6Var);
-            if (contains && System.currentTimeMillis() - this.p0 <= ViewConfiguration.getTapTimeout() && z6.a(this.q0, this.r0, motionEvent.getX(), motionEvent.getY()) <= AndroidUtilities.dp(12.0f)) {
+            if (contains && System.currentTimeMillis() - this.p0 <= ViewConfiguration.getTapTimeout() && a7.a(this.q0, this.r0, motionEvent.getX(), motionEvent.getY()) <= AndroidUtilities.dp(12.0f)) {
                 l9 l9Var = this.M;
                 long j3 = this.d;
                 if (l9Var.K(j3) || l9Var.I(j3) || !this.w.isEmpty()) {

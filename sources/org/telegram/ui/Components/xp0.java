@@ -1,22 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class xp0 extends org.telegram.ui.Cells.f7 {
-    public final /* synthetic */ zp0 N;
+public final class xp0 extends g.p {
+    public final /* synthetic */ int c;
+    public final /* synthetic */ uq0 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xp0(zp0 zp0Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, 0, d6Var);
-        this.N = zp0Var;
+    public /* synthetic */ xp0(uq0 uq0Var, int i10) {
+        this.c = i10;
+        this.d = uq0Var;
     }
 
-    @Override // org.telegram.ui.Cells.f7
-    public final String a() {
-        return this.N.f.a0 ? LocaleController.getString(R.string.RepostToStory) : LocaleController.getString(R.string.FwdMyStory);
+    @Override // g.p
+    public final int i(int i10) {
+        switch (this.c) {
+            case 0:
+                if (i10 == 0) {
+                    return this.d.H.J;
+                }
+                return 1;
+            case 1:
+                qq0 qq0Var = this.d.M;
+                return (i10 == qq0Var.w || i10 == qq0Var.x || i10 == qq0Var.y || i10 == qq0Var.F || qq0Var.j(i10) == 0) ? 4 : 1;
+            default:
+                if (i10 == 0) {
+                    return this.d.I.J;
+                }
+                return 1;
+        }
     }
 }

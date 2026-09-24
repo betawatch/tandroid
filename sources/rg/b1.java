@@ -19,7 +19,7 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.q5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public class b1 extends ImageView {
     public static final /* synthetic */ int L = 0;
@@ -32,7 +32,7 @@ public class b1 extends ImageView {
     public Integer K;
     public final int a;
     public final float[] b;
-    public final u1 c;
+    public final v1 c;
     public final d6 d;
     public boolean e;
     public final float f;
@@ -59,15 +59,15 @@ public class b1 extends ImageView {
         this.d = d6Var;
         setImageResource(i10 == 0 ? R.drawable.msg_premium_lock2 : R.drawable.msg_mini_premiumlock);
         if (i10 == 0) {
-            u1 u1Var = new u1(5);
-            this.c = u1Var;
-            u1Var.g();
-            u1Var.M = false;
-            u1Var.s = 4;
-            u1Var.t = 4;
-            u1Var.r = 2;
-            u1Var.o = 0.1f;
-            u1Var.c();
+            v1 v1Var = new v1(5);
+            this.c = v1Var;
+            v1Var.g();
+            v1Var.M = false;
+            v1Var.s = 4;
+            v1Var.t = 4;
+            v1Var.r = 2;
+            v1Var.o = 0.1f;
+            v1Var.c();
             return;
         }
         if (i10 == 2) {
@@ -279,9 +279,9 @@ public class b1 extends ImageView {
         rectF.set((getMeasuredWidth() / 2.0f) + AndroidUtilities.dp(2.5f), AndroidUtilities.dpf2(5.7f) + (getMeasuredHeight() / 2.0f), getMeasuredWidth() - AndroidUtilities.dpf2(0.2f), getMeasuredHeight());
         path.addRoundRect(rectF, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), direction);
         path.close();
-        u1 u1Var = this.c;
-        u1Var.a.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-        u1Var.a.inset(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f));
+        v1 v1Var = this.c;
+        v1Var.a.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+        v1Var.a.inset(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f));
     }
 
     public void setAnimatedEmojiDrawable(q5 q5Var) {

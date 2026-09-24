@@ -9,9 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class sh1 extends org.telegram.ui.Components.h81 {
+public final class sh1 extends org.telegram.ui.Components.w81 {
     public boolean T;
     public final Path U;
     public final /* synthetic */ th1 V;
@@ -41,30 +41,30 @@ public final class sh1 extends org.telegram.ui.Components.h81 {
         }
     }
 
-    @Override // org.telegram.ui.Components.h81
+    @Override // org.telegram.ui.Components.w81
     public float getAvailableTranslationX() {
         return getMeasuredWidth();
     }
 
-    @Override // org.telegram.ui.Components.h81
+    @Override // org.telegram.ui.Components.w81
     public long getManualScrollDuration() {
         return 320L;
     }
 
-    @Override // org.telegram.ui.Components.h81
+    @Override // org.telegram.ui.Components.w81
     public final boolean j(MotionEvent motionEvent) {
-        Object X = ((zg0) this.V).X();
-        if (X instanceof yg0) {
-            return ((yg0) X).S(motionEvent, false);
+        Object X = ((yg0) this.V).X();
+        if (X instanceof xg0) {
+            return ((xg0) X).S(motionEvent, false);
         }
         return false;
     }
 
-    @Override // org.telegram.ui.Components.h81
+    @Override // org.telegram.ui.Components.w81
     public final boolean k(MotionEvent motionEvent) {
-        Object X = ((zg0) this.V).X();
-        if (X instanceof yg0) {
-            return ((yg0) X).S(motionEvent, true);
+        Object X = ((yg0) this.V).X();
+        if (X instanceof xg0) {
+            return ((xg0) X).S(motionEvent, true);
         }
         return false;
     }
@@ -87,55 +87,55 @@ public final class sh1 extends org.telegram.ui.Components.h81 {
         invalidate();
     }
 
-    @Override // org.telegram.ui.Components.h81
+    @Override // org.telegram.ui.Components.w81
     public final void t(View view, View view2, int i10, int i11) {
         this.V.U();
     }
 
-    @Override // org.telegram.ui.Components.h81
+    @Override // org.telegram.ui.Components.w81
     public final void u() {
-        ry ryVar;
+        qy qyVar;
         th1 th1Var = this.V;
-        zg0 zg0Var = (zg0) th1Var;
-        if (zg0Var.F != null) {
-            zg0Var.m0(zg0Var.c.getCurrentPosition(), true);
-            zg0Var.n0(0.0f, false);
+        yg0 yg0Var = (yg0) th1Var;
+        if (yg0Var.F != null) {
+            yg0Var.m0(yg0Var.c.getCurrentPosition(), true);
+            yg0Var.n0(0.0f, false);
         }
-        zg0Var.d0();
-        sh1 sh1Var = zg0Var.c;
+        yg0Var.d0();
+        sh1 sh1Var = yg0Var.c;
         if (sh1Var != null) {
             int currentPosition = sh1Var.getCurrentPosition();
-            if (currentPosition != 2 && zg0Var.x) {
-                zg0Var.W(2);
-                zg0Var.x = false;
+            if (currentPosition != 2 && yg0Var.x) {
+                yg0Var.W(2);
+                yg0Var.x = false;
             }
             if (currentPosition != 3) {
-                zg0Var.W(3);
+                yg0Var.W(3);
             }
-            Integer num = zg0Var.I;
-            if (num != null && currentPosition == 0 && (ryVar = zg0Var.J) != null) {
-                ryVar.w4(num.intValue());
-                zg0Var.I = null;
+            Integer num = yg0Var.I;
+            if (num != null && currentPosition == 0 && (qyVar = yg0Var.J) != null) {
+                qyVar.w4(num.intValue());
+                yg0Var.I = null;
             }
         }
         th1Var.U();
     }
 
-    @Override // org.telegram.ui.Components.h81
+    @Override // org.telegram.ui.Components.w81
     public final void w(boolean z10) {
         th1 th1Var = this.V;
-        zg0 zg0Var = (zg0) th1Var;
+        yg0 yg0Var = (yg0) th1Var;
         boolean z11 = !z10;
-        if (zg0Var.F != null) {
-            float positionAnimated = zg0Var.c.getPositionAnimated();
-            zg0Var.n0(positionAnimated, z11);
+        if (yg0Var.F != null) {
+            float positionAnimated = yg0Var.c.getPositionAnimated();
+            yg0Var.n0(positionAnimated, z11);
             if (!z10) {
-                zg0Var.m0(Math.round(positionAnimated), true);
+                yg0Var.m0(Math.round(positionAnimated), true);
             }
         }
-        zg0Var.h0();
-        zg0Var.d0();
-        zg0Var.b.invalidate();
+        yg0Var.h0();
+        yg0Var.d0();
+        yg0Var.b.invalidate();
         th1Var.U();
         th1Var.checkSystemBarColors();
     }

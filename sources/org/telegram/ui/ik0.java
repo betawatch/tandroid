@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class ik0 extends og.b {
     public final Context d;
@@ -21,7 +21,7 @@ public final class ik0 extends og.b {
         this.d = context;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.vl0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         return (i10 == 0 || i10 == 4) ? false : true;
@@ -60,27 +60,27 @@ public final class ik0 extends og.b {
                 ((org.telegram.ui.Cells.m4) view).setText(hk0Var.e);
                 break;
             case 1:
-                ((org.telegram.ui.Cells.x8) view).f("" + ((Object) hk0Var.e), hk0Var.i, z10);
+                ((org.telegram.ui.Cells.w8) view).f("" + ((Object) hk0Var.e), hk0Var.i, z10);
                 break;
             case 2:
-                ((org.telegram.ui.Cells.bb) view).g(hk0Var.g, null, z10);
+                ((org.telegram.ui.Cells.za) view).g(hk0Var.g, null, z10);
                 break;
             case 3:
-                ((org.telegram.ui.Cells.z8) view).b(hk0Var.h, "" + ((Object) hk0Var.e), z10);
+                ((org.telegram.ui.Cells.y8) view).b(hk0Var.h, "" + ((Object) hk0Var.e), z10);
                 break;
             case 4:
-                org.telegram.ui.Cells.f9 f9Var = (org.telegram.ui.Cells.f9) view;
+                org.telegram.ui.Cells.e9 e9Var = (org.telegram.ui.Cells.e9) view;
                 if (hk0Var.e != null) {
-                    f9Var.setFixedSize(0);
-                    f9Var.setText(hk0Var.e);
+                    e9Var.setFixedSize(0);
+                    e9Var.setText(hk0Var.e);
                     break;
                 } else {
-                    f9Var.setFixedSize(12);
-                    f9Var.setText(null);
+                    e9Var.setFixedSize(12);
+                    e9Var.setText(null);
                     break;
                 }
             case 5:
-                ((org.telegram.ui.Cells.fa) view).c(hk0Var.e, hk0Var.f, false, z10);
+                ((org.telegram.ui.Cells.ea) view).c(hk0Var.e, hk0Var.f, false, z10);
                 break;
             case 6:
                 org.telegram.ui.Cells.j5 j5Var = (org.telegram.ui.Cells.j5) view;
@@ -89,21 +89,21 @@ public final class ik0 extends og.b {
                 j5Var.b(hk0Var.e, hk0Var.f, hk0Var.d, hk0Var.i, 0, false, z10, true);
                 break;
             case 7:
-                org.telegram.ui.Cells.s8 s8Var = (org.telegram.ui.Cells.s8) view;
+                org.telegram.ui.Cells.r8 r8Var = (org.telegram.ui.Cells.r8) view;
                 if (hk0Var.d != 0) {
-                    s8Var.e(org.telegram.ui.ActionBar.h6.v6, org.telegram.ui.ActionBar.h6.u6);
-                    s8Var.m(hk0Var.d, "" + ((Object) hk0Var.e), z10);
+                    r8Var.e(org.telegram.ui.ActionBar.h6.v6, org.telegram.ui.ActionBar.h6.u6);
+                    r8Var.m(hk0Var.d, "" + ((Object) hk0Var.e), z10);
                     break;
                 } else {
-                    s8Var.e(-1, org.telegram.ui.ActionBar.h6.p7);
-                    s8Var.i("" + ((Object) hk0Var.e), z10);
+                    r8Var.e(-1, org.telegram.ui.ActionBar.h6.p7);
+                    r8Var.i("" + ((Object) hk0Var.e), z10);
                     break;
                 }
             case 8:
                 gk0 gk0Var = (gk0) view;
                 gk0Var.e(org.telegram.ui.ActionBar.h6.v6, org.telegram.ui.ActionBar.h6.u6);
                 CharSequence charSequence = hk0Var.e;
-                org.telegram.messenger.ul.r(gk0Var.Q.animate().rotation(hk0Var.d == 1 ? 0.0f : 180.0f), org.telegram.ui.Components.rr.h, 340L);
+                org.telegram.messenger.ok.s(gk0Var.Q.animate().rotation(hk0Var.d == 1 ? 0.0f : 180.0f), org.telegram.ui.Components.rr.h, 340L);
                 gk0Var.i(charSequence, z10);
                 break;
         }
@@ -120,27 +120,27 @@ public final class ik0 extends og.b {
                 m4Var = new org.telegram.ui.Cells.m4(context);
                 break;
             case 1:
-                m4Var = new org.telegram.ui.Cells.x8(context);
+                m4Var = new org.telegram.ui.Cells.w8(context);
                 break;
             case 2:
-                m4Var = new org.telegram.ui.Cells.bb(context, 6, 0, false);
+                m4Var = new org.telegram.ui.Cells.za(context, 6, 0, false);
                 break;
             case 3:
-                m4Var = new org.telegram.ui.Cells.z8(context, null);
+                m4Var = new org.telegram.ui.Cells.y8(context, null);
                 break;
             case 4:
-                m4Var = new org.telegram.ui.Cells.f9(context);
+                m4Var = new org.telegram.ui.Cells.e9(context);
                 break;
             case 5:
-                m4Var = new org.telegram.ui.Cells.fa(context);
+                m4Var = new org.telegram.ui.Cells.ea(context);
                 break;
             case 6:
-                d6Var = ((org.telegram.ui.ActionBar.n2) notificationsCustomSettingsActivity).resourceProvider;
+                d6Var = ((org.telegram.ui.ActionBar.m2) notificationsCustomSettingsActivity).resourceProvider;
                 m4Var = new org.telegram.ui.Cells.j5(21, 64, this.d, d6Var, true);
                 break;
             case 7:
             default:
-                m4Var = new org.telegram.ui.Cells.s8(context);
+                m4Var = new org.telegram.ui.Cells.r8(context);
                 break;
             case 8:
                 gk0 gk0Var = new gk0(context);
@@ -149,11 +149,11 @@ public final class ik0 extends og.b {
                 imageView.setScaleType(ImageView.ScaleType.CENTER);
                 imageView.setColorFilter(new PorterDuffColorFilter(notificationsCustomSettingsActivity.getThemedColor(org.telegram.ui.ActionBar.h6.v6), PorterDuff.Mode.SRC_IN));
                 imageView.setImageResource(R.drawable.msg_expand);
-                gk0Var.addView(imageView, w7.x5.d(24, 24.0f, (LocaleController.isRTL ? 3 : 5) | 16, 17.0f, 0.0f, 17.0f, 0.0f));
+                gk0Var.addView(imageView, w7.y5.d(24, 24.0f, (LocaleController.isRTL ? 3 : 5) | 16, 17.0f, 0.0f, 17.0f, 0.0f));
                 m4Var = gk0Var;
                 break;
         }
-        return new org.telegram.ui.Components.wk0(m4Var);
+        return new org.telegram.ui.Components.gl0(m4Var);
     }
 
     @Override // s4.h0
@@ -181,14 +181,14 @@ public final class ik0 extends og.b {
                     return;
                 }
                 if (i11 == 1) {
-                    ((org.telegram.ui.Cells.x8) view).e(null, isGlobalNotificationsEnabled);
+                    ((org.telegram.ui.Cells.w8) view).e(null, isGlobalNotificationsEnabled);
                 } else if (i11 == 3) {
-                    ((org.telegram.ui.Cells.z8) view).a(null, isGlobalNotificationsEnabled);
+                    ((org.telegram.ui.Cells.y8) view).a(null, isGlobalNotificationsEnabled);
                 } else {
                     if (i11 != 5) {
                         return;
                     }
-                    ((org.telegram.ui.Cells.fa) view).a(null, isGlobalNotificationsEnabled);
+                    ((org.telegram.ui.Cells.ea) view).a(null, isGlobalNotificationsEnabled);
                 }
             }
         }

@@ -28,9 +28,8 @@ import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CopyOnWriteArraySet;
-import org.telegram.ui.Cells.q3;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class f0 extends b2.g implements r {
     public final com.google.firebase.messaging.m A;
@@ -45,7 +44,7 @@ public final class f0 extends b2.g implements r {
     public boolean J;
     public final p1 K;
     public q1 L;
-    public u2.f1 M;
+    public u2.g1 M;
     public b2.x0 N;
     public b2.n0 O;
     public b2.n0 P;
@@ -159,7 +158,7 @@ public final class f0 extends b2.g implements r {
             CopyOnWriteArraySet copyOnWriteArraySet = new CopyOnWriteArraySet();
             this.n = copyOnWriteArraySet;
             this.p = new ArrayList();
-            this.M = new u2.d1();
+            this.M = new u2.e1();
             f[] fVarArr2 = this.g;
             x2.v vVar = new x2.v(new n1[fVarArr2.length], new x2.r[fVarArr2.length], s1.b, null);
             this.b = vVar;
@@ -215,9 +214,9 @@ public final class f0 extends b2.g implements r {
             j2.f fVar = this.s;
             b11.getClass();
             fVar.getClass();
-            k2.u uVar2 = b11.c;
-            uVar2.getClass();
-            CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) uVar2.b;
+            n2.e eVar = b11.c;
+            eVar.getClass();
+            CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) eVar.b;
             Iterator it = copyOnWriteArrayList.iterator();
             while (it.hasNext()) {
                 y2.b bVar = (y2.b) it.next();
@@ -275,9 +274,9 @@ public final class f0 extends b2.g implements r {
                 f0Var.h0 = x1.d;
                 f0Var.X = e2.w.c;
                 zVar.a(38, f0Var.K).b();
-                b2.e eVar = f0Var.Y;
+                b2.e eVar2 = f0Var.Y;
                 e2.y b12 = e2.z.b();
-                b12.a = zVar.a.obtainMessage(31, 0, 0, eVar);
+                b12.a = zVar.a.obtainMessage(31, 0, 0, eVar2);
                 b12.b();
                 f0Var.p1(1, 3, f0Var.Y);
                 f0Var.p1(2, 4, Integer.valueOf(f0Var.W));
@@ -365,11 +364,11 @@ public final class f0 extends b2.g implements r {
             String name2 = looper.getThread().getName();
             String str = e2.d0.a;
             Locale locale = Locale.US;
-            String j3 = q3.j("Player is accessed on the wrong thread.\nCurrent thread: '", name, "'\nExpected thread: '", name2, "'\nSee https://developer.android.com/guide/topics/media/issues/player-accessed-on-wrong-thread");
+            String k10 = org.telegram.ui.Cells.c1.k("Player is accessed on the wrong thread.\nCurrent thread: '", name, "'\nExpected thread: '", name2, "'\nSee https://developer.android.com/guide/topics/media/issues/player-accessed-on-wrong-thread");
             if (this.c0) {
-                throw new IllegalStateException(j3);
+                throw new IllegalStateException(k10);
             }
-            e2.a.o("ExoPlayerImpl", j3, this.d0 ? null : new IllegalStateException());
+            e2.a.o("ExoPlayerImpl", k10, this.d0 ? null : new IllegalStateException());
             this.d0 = true;
         }
     }
@@ -413,6 +412,7 @@ public final class f0 extends b2.g implements r {
     @Override // b2.b1
     public final void D(b2.z0 z0Var) {
         B1();
+        z0Var.getClass();
         e2.p pVar = this.m;
         pVar.f();
         CopyOnWriteArraySet copyOnWriteArraySet = pVar.d;
@@ -744,9 +744,9 @@ public final class f0 extends b2.g implements r {
         ArrayList Z0 = Z0(i10, arrayList);
         m1 m1Var = new m1(this.p, this.M);
         h1 k12 = k1(h1Var, m1Var, h1(k1Var, m1Var, g1(h1Var), e1(h1Var)));
-        u2.f1 f1Var = this.M;
+        u2.g1 g1Var = this.M;
         e2.z zVar = this.l.n;
-        k0 k0Var = new k0(Z0, f1Var, -1, -9223372036854775807L);
+        k0 k0Var = new k0(Z0, g1Var, -1, -9223372036854775807L);
         zVar.getClass();
         e2.y b10 = e2.z.b();
         b10.a = zVar.a.obtainMessage(18, i10, 0, k0Var);
@@ -1127,7 +1127,7 @@ public final class f0 extends b2.g implements r {
         if (k1Var.p()) {
             u2.f0 f0Var = h1.u;
             long Q = e2.d0.Q(this.l0);
-            h1 c10 = j3.d(f0Var, Q, Q, Q, 0L, u2.n1.d, this.b, e9.a1.e).c(f0Var);
+            h1 c10 = j3.d(f0Var, Q, Q, Q, 0L, u2.p1.d, this.b, e9.a1.e).c(f0Var);
             c10.q = c10.s;
             return c10;
         }
@@ -1143,7 +1143,7 @@ public final class f0 extends b2.g implements r {
         if (!equals || longValue < Q2) {
             u2.f0 f0Var3 = f0Var2;
             e2.d.g(!f0Var3.b());
-            u2.n1 n1Var = !equals ? u2.n1.d : j3.h;
+            u2.p1 p1Var = !equals ? u2.p1.d : j3.h;
             x2.v vVar = !equals ? this.b : j3.i;
             if (equals) {
                 list = j3.j;
@@ -1151,7 +1151,7 @@ public final class f0 extends b2.g implements r {
                 e9.g0 g0Var = e9.i0.b;
                 list = e9.a1.e;
             }
-            h1 c11 = j3.d(f0Var3, longValue, longValue, longValue, 0L, n1Var, vVar, list).c(f0Var3);
+            h1 c11 = j3.d(f0Var3, longValue, longValue, longValue, 0L, p1Var, vVar, list).c(f0Var3);
             c11.q = longValue;
             return c11;
         }
@@ -1264,11 +1264,11 @@ public final class f0 extends b2.g implements r {
         if (i13 != 1 && i13 != 4 && i10 < i11 && i11 == size && g12 >= k12.a.o()) {
             k12 = j1(k12, 4);
         }
-        u2.f1 f1Var = this.M;
+        u2.g1 g1Var = this.M;
         e2.z zVar = this.l.n;
         zVar.getClass();
         e2.y b10 = e2.z.b();
-        b10.a = zVar.a.obtainMessage(20, i10, i11, f1Var);
+        b10.a = zVar.a.obtainMessage(20, i10, i11, g1Var);
         b10.b();
         return k12;
     }
@@ -1371,10 +1371,10 @@ public final class f0 extends b2.g implements r {
         m1 m1Var = new m1(arrayList, this.M);
         h1 h1Var = this.j0;
         h1 k12 = k1(h1Var, m1Var, h1(w02, m1Var, g1(h1Var), e1(this.j0)));
-        u2.f1 f1Var = this.M;
+        u2.g1 g1Var = this.M;
         p0 p0Var = this.l;
         p0Var.getClass();
-        p0Var.n.a(19, new l0(i10, min, min2, f1Var)).b();
+        p0Var.n.a(19, new l0(i10, min, min2, g1Var)).b();
         z1(k12, 0, false, 5, -9223372036854775807L, -1, false);
     }
 

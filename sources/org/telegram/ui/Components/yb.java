@@ -9,19 +9,19 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public class yb extends nb {
-    public final bj0 a;
+    public final lj0 a;
     public TextView b;
     public int c;
 
     public yb(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context, d6Var);
-        bj0 bj0Var = new bj0(context);
-        this.a = bj0Var;
-        bj0Var.setScaleType(ImageView.ScaleType.CENTER);
-        addView(bj0Var, w7.x5.h(56.0f, 48.0f, 8388627));
+        lj0 lj0Var = new lj0(context);
+        this.a = lj0Var;
+        lj0Var.setScaleType(ImageView.ScaleType.CENTER);
+        addView(lj0Var, w7.y5.h(56.0f, 48.0f, 8388627));
         xb xbVar = new xb(context, 0, null);
         xbVar.setDisablePaddingsOffset(true);
         this.b = xbVar;
@@ -31,17 +31,17 @@ public class yb extends nb {
         this.b.setTextSize(1, 15.0f);
         this.b.setEllipsize(TextUtils.TruncateAt.END);
         this.b.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
-        addView(this.b, w7.x5.i(-2.0f, -2.0f, 8388627, 56.0f, 0.0f, 16.0f, 0.0f));
+        addView(this.b, w7.y5.i(-2.0f, -2.0f, 8388627, 56.0f, 0.0f, 16.0f, 0.0f));
         this.b.setLinkTextColor(getThemedColor(org.telegram.ui.ActionBar.h6.Gi));
         setTextColor(getThemedColor(org.telegram.ui.ActionBar.h6.Hi));
         setBackground(getThemedColor(org.telegram.ui.ActionBar.h6.Fi));
     }
 
     public final void c(int i10, int i11, int i12, String... strArr) {
-        bj0 bj0Var = this.a;
-        bj0Var.f(i10, i11, i12, null);
+        lj0 lj0Var = this.a;
+        lj0Var.f(i10, i11, i12, null);
         for (String str : strArr) {
-            bj0Var.h(this.c, str);
+            lj0Var.h(this.c, str);
         }
     }
 
@@ -50,11 +50,11 @@ public class yb extends nb {
     }
 
     public final void e(TLRPC.Document document, String... strArr) {
-        bj0 bj0Var = this.a;
-        bj0Var.setAutoRepeat(true);
-        bj0Var.g(36, 36, document);
+        lj0 lj0Var = this.a;
+        lj0Var.setAutoRepeat(true);
+        lj0Var.g(36, 36, document);
         for (String str : strArr) {
-            bj0Var.h(this.c, str);
+            lj0Var.h(this.c, str);
         }
     }
 
@@ -70,7 +70,7 @@ public class yb extends nb {
     }
 
     public void setIconPaddingBottom(int i10) {
-        this.a.setLayoutParams(w7.x5.i(56.0f, 48 - i10, 8388627, 0.0f, 0.0f, 0.0f, i10));
+        this.a.setLayoutParams(w7.y5.i(56.0f, 48 - i10, 8388627, 0.0f, 0.0f, 0.0f, i10));
     }
 
     public void setTextColor(int i10) {

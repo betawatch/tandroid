@@ -15,7 +15,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class m9 extends Drawable {
     public final ViewGroup a;
@@ -24,7 +24,7 @@ public final class m9 extends Drawable {
     public final int e;
     public final int f;
     public final float g;
-    public final le.k c = new le.k(new k2.u(this, 11), rr.h, 380);
+    public final le.k c = new le.k(new l.d(this), rr.h, 380);
     public final ArrayList h = new ArrayList();
     public int i = 255;
 

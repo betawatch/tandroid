@@ -3,9 +3,9 @@ package hg;
 import android.graphics.Bitmap;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class r implements org.telegram.ui.ActionBar.a2, gh.b, d9.e, e2.m, e2.n {
+public final /* synthetic */ class r implements org.telegram.ui.ActionBar.z1, gh.b, d9.e, e2.m, e2.n {
     public final /* synthetic */ int a;
 
     public /* synthetic */ r(int i10) {
@@ -47,14 +47,14 @@ public final /* synthetic */ class r implements org.telegram.ui.ActionBar.a2, gh
     public void e(Object obj, b2.q qVar) {
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.z1
+    public void f(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
         switch (this.a) {
             case 0:
-                b2Var.dismiss();
+                a2Var.dismiss();
                 break;
             default:
-                b2Var.dismiss();
+                a2Var.dismiss();
                 break;
         }
     }

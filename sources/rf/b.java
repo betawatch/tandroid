@@ -8,10 +8,10 @@ import j$.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
-import org.telegram.ui.Components.ed;
-import org.telegram.ui.web.t0;
+import org.telegram.ui.Components.fd;
+import org.telegram.ui.web.q0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b {
     public final /* synthetic */ int a;
@@ -51,11 +51,11 @@ public final /* synthetic */ class b {
                                         eVar2.d = null;
                                     }
                                     cf.c cVar = eVar2.h;
-                                    if (((ed) cVar.e) != null) {
+                                    if (((fd) cVar.e) != null) {
                                         ((View) cVar.a).setBackground(null);
                                         cVar.e = null;
                                     }
-                                    if (((ed) cVar.d) == null && ((ed) cVar.e) == null && (bitmap2 = (Bitmap) cVar.c) != null) {
+                                    if (((fd) cVar.d) == null && ((fd) cVar.e) == null && (bitmap2 = (Bitmap) cVar.c) != null) {
                                         bitmap2.recycle();
                                         cVar.c = null;
                                     }
@@ -74,7 +74,7 @@ public final /* synthetic */ class b {
                                 e eVar3 = eVar;
                                 if (eVar3.a == 1) {
                                     Log.i("PIP_DEBUG", "[HANDLER] attach");
-                                    eVar3.h.y();
+                                    eVar3.h.z();
                                     eVar3.j.g.a(new p(ApplicationLoader.applicationHandler, new b(eVar3, 2), 400L));
                                     eVar3.a = 2;
                                     if (!eVar3.n) {
@@ -130,11 +130,11 @@ public final /* synthetic */ class b {
                                         eVar22.d = null;
                                     }
                                     cf.c cVar = eVar22.h;
-                                    if (((ed) cVar.e) != null) {
+                                    if (((fd) cVar.e) != null) {
                                         ((View) cVar.a).setBackground(null);
                                         cVar.e = null;
                                     }
-                                    if (((ed) cVar.d) == null && ((ed) cVar.e) == null && (bitmap2 = (Bitmap) cVar.c) != null) {
+                                    if (((fd) cVar.d) == null && ((fd) cVar.e) == null && (bitmap2 = (Bitmap) cVar.c) != null) {
                                         bitmap2.recycle();
                                         cVar.c = null;
                                     }
@@ -153,7 +153,7 @@ public final /* synthetic */ class b {
                                 e eVar3 = eVar2;
                                 if (eVar3.a == 1) {
                                     Log.i("PIP_DEBUG", "[HANDLER] attach");
-                                    eVar3.h.y();
+                                    eVar3.h.z();
                                     eVar3.j.g.a(new p(ApplicationLoader.applicationHandler, new b(eVar3, 2), 400L));
                                     eVar3.a = 2;
                                     if (!eVar3.n) {
@@ -185,11 +185,11 @@ public final /* synthetic */ class b {
                 break;
             case 2:
                 cf.c cVar = this.b.h;
-                if (((ed) cVar.e) != null) {
+                if (((fd) cVar.e) != null) {
                     ((View) cVar.a).setBackground(null);
                     cVar.e = null;
                 }
-                if (((ed) cVar.d) == null && ((ed) cVar.e) == null && (bitmap = (Bitmap) cVar.c) != null) {
+                if (((fd) cVar.d) == null && ((fd) cVar.e) == null && (bitmap = (Bitmap) cVar.c) != null) {
                     bitmap.recycle();
                     cVar.c = null;
                 }
@@ -199,7 +199,7 @@ public final /* synthetic */ class b {
                 Log.i("PIP_DEBUG", "[HANDLER] on old source render first frame " + z10);
                 cf.c cVar2 = this.b.h;
                 Objects.requireNonNull(cVar2);
-                AndroidUtilities.runOnUIThread(new t0(cVar2, 24));
+                AndroidUtilities.runOnUIThread(new q0(cVar2, 25));
                 break;
             default:
                 final int i12 = 0;
@@ -227,11 +227,11 @@ public final /* synthetic */ class b {
                                         eVar22.d = null;
                                     }
                                     cf.c cVar3 = eVar22.h;
-                                    if (((ed) cVar3.e) != null) {
+                                    if (((fd) cVar3.e) != null) {
                                         ((View) cVar3.a).setBackground(null);
                                         cVar3.e = null;
                                     }
-                                    if (((ed) cVar3.d) == null && ((ed) cVar3.e) == null && (bitmap2 = (Bitmap) cVar3.c) != null) {
+                                    if (((fd) cVar3.d) == null && ((fd) cVar3.e) == null && (bitmap2 = (Bitmap) cVar3.c) != null) {
                                         bitmap2.recycle();
                                         cVar3.c = null;
                                     }
@@ -250,7 +250,7 @@ public final /* synthetic */ class b {
                                 e eVar32 = eVar3;
                                 if (eVar32.a == 1) {
                                     Log.i("PIP_DEBUG", "[HANDLER] attach");
-                                    eVar32.h.y();
+                                    eVar32.h.z();
                                     eVar32.j.g.a(new p(ApplicationLoader.applicationHandler, new b(eVar32, 2), 400L));
                                     eVar32.a = 2;
                                     if (!eVar32.n) {

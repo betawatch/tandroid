@@ -5,14 +5,14 @@ import android.view.View;
 import org.telegram.messenger.GiftAuctionController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.ui.Components.RadioButton;
-import org.telegram.ui.Components.bj0;
-import org.telegram.ui.bq0;
-import org.telegram.ui.dq0;
-import org.telegram.ui.nl0;
-import org.telegram.ui.s10;
-import org.telegram.ui.u10;
+import org.telegram.ui.Components.lj0;
+import org.telegram.ui.aq0;
+import org.telegram.ui.cq0;
+import org.telegram.ui.ml0;
+import org.telegram.ui.r10;
+import org.telegram.ui.t10;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -44,15 +44,15 @@ public final /* synthetic */ class a implements View.OnClickListener {
                 ((w) obj).toggle();
                 break;
             case 3:
-                bj0 bj0Var = ((x2) obj).f;
-                if (!bj0Var.b()) {
-                    bj0Var.setProgress(0.0f);
-                    bj0Var.d();
+                lj0 lj0Var = ((y2) obj).f;
+                if (!lj0Var.b()) {
+                    lj0Var.setProgress(0.0f);
+                    lj0Var.d();
                     break;
                 }
                 break;
             case 4:
-                ((o3) obj).getClass();
+                ((p3) obj).getClass();
                 break;
             case 5:
                 e4 e4Var = (e4) obj;
@@ -63,7 +63,7 @@ public final /* synthetic */ class a implements View.OnClickListener {
                 break;
             case 7:
                 b5 b5Var = (b5) obj;
-                b5Var.L.c(b5Var, true);
+                b5Var.L.e(b5Var, true);
                 break;
             case 8:
                 u5 u5Var = (u5) obj;
@@ -75,7 +75,7 @@ public final /* synthetic */ class a implements View.OnClickListener {
                 y5 y5Var = (y5) obj;
                 x5 x5Var = y5Var.d;
                 if (x5Var != null) {
-                    dq0.U(((bq0) ((nl0) x5Var).b).d, y5Var.b[((Integer) view.getTag()).intValue()]);
+                    cq0.U(((aq0) ((ml0) x5Var).b).d, y5Var.b[((Integer) view.getTag()).intValue()]);
                     break;
                 }
                 break;
@@ -86,9 +86,9 @@ public final /* synthetic */ class a implements View.OnClickListener {
                     r7 r7Var = u7Var.d;
                     int i11 = u7Var.c[intValue];
                     MessageObject messageObject = u7Var.b[intValue];
-                    u10 u10Var = ((s10) ((org.telegram.ui.g) r7Var).b).d;
-                    SpannableStringBuilder[] spannableStringBuilderArr = u10.s0;
-                    u10Var.f(i11, u7Var, messageObject, intValue);
+                    t10 t10Var = ((r10) ((org.telegram.ui.g) r7Var).b).d;
+                    SpannableStringBuilder[] spannableStringBuilderArr = t10.s0;
+                    t10Var.f(i11, u7Var, messageObject, intValue);
                     break;
                 }
                 break;

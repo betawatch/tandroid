@@ -1,10 +1,56 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class w00 extends org.telegram.ui.Cells.f3 {
-    @Override // org.telegram.ui.Cells.f3
-    public final int a() {
-        return 25;
+public final class w00 implements TextWatcher {
+    public final /* synthetic */ y00 a;
+
+    public w00(y00 y00Var) {
+        this.a = y00Var;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        org.telegram.ui.ActionBar.k kVar;
+        org.telegram.ui.ActionBar.k kVar2;
+        String str;
+        b10 b10Var = this.a.e;
+        if (!TextUtils.equals(editable, b10Var.w)) {
+            b10Var.n = !TextUtils.isEmpty(editable);
+            b10Var.w = org.telegram.ui.Components.z5.onlyEmojiSpans(editable);
+            p00 p00Var = b10Var.I;
+            if (p00Var != null) {
+                p00Var.e(org.telegram.ui.Components.z5.cloneSpans(b10Var.w, -1, p00Var.s.getPaint().getFontMetricsInt(), 0.5f), true);
+            }
+            q00 q00Var = b10Var.J;
+            if (q00Var != null) {
+                org.telegram.ui.Cells.u3 u3Var = q00Var.r;
+                if (b10.k0(b10Var.w)) {
+                    str = LocaleController.getString(b10Var.x ? R.string.FilterNameAnimationsDisable : R.string.FilterNameAnimationsEnable);
+                } else {
+                    str = null;
+                }
+                u3Var.setText(str);
+            }
+            kVar = ((org.telegram.ui.ActionBar.m2) b10Var).actionBar;
+            CharSequence charSequence = b10Var.w;
+            kVar2 = ((org.telegram.ui.ActionBar.m2) b10Var).actionBar;
+            kVar.setTitle(org.telegram.ui.Components.z5.cloneSpans(charSequence, -1, kVar2.getTitleFontMetricsInt()));
+        }
+        b10Var.i0(true);
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

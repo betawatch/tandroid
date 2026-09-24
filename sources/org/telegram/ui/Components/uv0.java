@@ -1,54 +1,14 @@
 package org.telegram.ui.Components;
 
-import android.os.Bundle;
-import android.widget.LinearLayout;
-
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public abstract class uv0 extends LinearLayout {
-    public boolean a() {
-        return this instanceof org.telegram.ui.be0;
-    }
+public final class uv0 {
+    public float a;
+    public float b;
+    public boolean c;
 
-    public boolean b() {
-        return this instanceof org.telegram.ui.be0;
-    }
-
-    public boolean c(boolean z10) {
-        return true;
-    }
-
-    public String getHeaderName() {
-        return "";
-    }
-
-    public void d() {
-    }
-
-    public void f() {
-    }
-
-    public void g() {
-    }
-
-    public void h(String str) {
-    }
-
-    public void i() {
-    }
-
-    public void j() {
-    }
-
-    public void k(Bundle bundle) {
-    }
-
-    public void l(Bundle bundle) {
-    }
-
-    public void n() {
-    }
-
-    public void m(Bundle bundle, boolean z10) {
+    public uv0(float f7, float f10) {
+        this.a = f7;
+        this.b = f10;
     }
 }

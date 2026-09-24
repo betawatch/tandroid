@@ -1,100 +1,195 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.widget.FrameLayout;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.text.TextPaint;
+import android.view.MotionEvent;
+import android.view.View;
+import java.util.Locale;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class kf0 extends FrameLayout {
-    public final ci.wc a;
-    public final ci.d b;
-    public final qt c;
-    public f71 d;
-    public long e;
-    public float f;
-    public ci.a4 h;
-    public Utilities.Callback n;
-    public Runnable r;
+public final class kf0 extends View {
+    public int a;
+    public boolean b;
+    public boolean c;
+    public float d;
+    public sk0 e;
+    public Paint f;
+    public Paint h;
+    public Paint n;
+    public TextPaint r;
+    public Path s;
+    public jf0 v;
+    public pf0 w;
 
-    public kf0(Context context, org.telegram.ui.ActionBar.d6 d6Var, ja jaVar) {
-        super(context);
-        this.e = -1L;
-        this.f = 1.39f;
-        org.telegram.ui.ActionBar.k kVar = new org.telegram.ui.ActionBar.k(context, d6Var);
-        kVar.setBackButtonImage(R.drawable.ic_ab_back);
-        kVar.setTitle(LocaleController.getString(R.string.EditorSetCoverTitle));
-        kVar.B(-1, false);
-        kVar.A(587202559, false);
-        kVar.setActionBarMenuOnItemClick(new org.telegram.ui.po(this, 10));
-        addView(kVar, w7.x5.e(-1, -2, 55));
-        ci.wc wcVar = new ci.wc(context, null, null, d6Var, jaVar);
-        this.a = wcVar;
-        wcVar.X0 = true;
-        addView(wcVar, w7.x5.d(-1, 388, 87, 0.0f, 0.0f, 0.0f, 74.0f));
-        ci.d dVar = new ci.d(context, d6Var, true);
-        this.b = dVar;
-        dVar.g(LocaleController.getString(R.string.EditorSetCoverSave), false, true);
-        dVar.e();
-        addView(dVar, w7.x5.d(-1, 48.0f, 87, 16.0f, 10.0f, 16.0f, 16.0f));
-        qt qtVar = new qt(context, LocaleController.getString(R.string.EditorSetCoverGallery));
-        this.c = qtVar;
-        qtVar.setOnClickListener(new ai.d0(this, context, d6Var, 26));
-        addView(qtVar, w7.x5.d(-1, 32.0f, 87, 60.0f, 0.0f, 60.0f, 134.0f));
-        wcVar.setDelegate(new n7.a1(this));
+    public final void a(int i10, MotionEvent motionEvent) {
+        float x10 = motionEvent.getX();
+        float y3 = motionEvent.getY();
+        if (i10 == 1) {
+            if (this.a != 0) {
+                return;
+            }
+            sk0 sk0Var = this.e;
+            this.a = (int) Math.floor(com.google.android.gms.internal.vision.e2.A(x10, sk0Var.a, sk0Var.c / 5.0f, 1.0f));
+            return;
+        }
+        if (i10 != 2) {
+            if ((i10 == 3 || i10 == 4 || i10 == 5) && this.a != 0) {
+                this.a = 0;
+                return;
+            }
+            return;
+        }
+        float min = Math.min(2.0f, (this.d - y3) / 8.0f);
+        pf0 pf0Var = this.w;
+        int i11 = pf0Var.f;
+        qf0 qf0Var = i11 != 0 ? i11 != 1 ? i11 != 2 ? i11 != 3 ? null : pf0Var.d : pf0Var.c : pf0Var.b : pf0Var.a;
+        int i12 = this.a;
+        if (i12 == 1) {
+            qf0Var.a = Math.max(0.0f, Math.min(100.0f, qf0Var.a + min));
+        } else if (i12 == 2) {
+            qf0Var.b = Math.max(0.0f, Math.min(100.0f, qf0Var.b + min));
+        } else if (i12 == 3) {
+            qf0Var.c = Math.max(0.0f, Math.min(100.0f, qf0Var.c + min));
+        } else if (i12 == 4) {
+            qf0Var.d = Math.max(0.0f, Math.min(100.0f, qf0Var.d + min));
+        } else if (i12 == 5) {
+            qf0Var.e = Math.max(0.0f, Math.min(100.0f, qf0Var.e + min));
+        }
+        invalidate();
+        jf0 jf0Var = this.v;
+        if (jf0Var != null) {
+            tf0 tf0Var = ((lf0) jf0Var).a;
+            tf0Var.g();
+            wz wzVar = tf0Var.l0;
+            if (wzVar != null) {
+                wzVar.e(false, false, false);
+            }
+        }
+        this.d = y3;
     }
 
-    public final void a(MediaController.PhotoEntry photoEntry, f71 f71Var, org.telegram.ui.ActionBar.d6 d6Var) {
-        int i10;
-        ci.d dVar = this.b;
-        dVar.a = d6Var;
-        dVar.j();
-        int i11 = photoEntry.width;
-        if (i11 <= 0 || (i10 = photoEntry.height) <= 0) {
-            this.f = 1.39f;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        qf0 qf0Var;
+        TextPaint textPaint = this.r;
+        Path path = this.s;
+        Paint paint = this.n;
+        pf0 pf0Var = this.w;
+        sk0 sk0Var = this.e;
+        float f7 = sk0Var.c / 5.0f;
+        for (int i10 = 0; i10 < 4; i10++) {
+            float f10 = sk0Var.a;
+            float f11 = i10 * f7;
+            float f12 = f10 + f7 + f11;
+            float f13 = sk0Var.b;
+            canvas.drawLine(f12, f13, f11 + f10 + f7, f13 + sk0Var.d, this.f);
+        }
+        float f14 = sk0Var.a;
+        float f15 = sk0Var.b;
+        canvas.drawLine(f14, f15 + sk0Var.d, f14 + sk0Var.c, f15, this.h);
+        int i11 = pf0Var.f;
+        int i12 = 3;
+        int i13 = 2;
+        if (i11 == 0) {
+            paint.setColor(-1);
+            qf0Var = pf0Var.a;
+        } else if (i11 == 1) {
+            paint.setColor(-1229492);
+            qf0Var = pf0Var.b;
+        } else if (i11 == 2) {
+            paint.setColor(-15667555);
+            qf0Var = pf0Var.c;
+        } else if (i11 != 3) {
+            qf0Var = null;
         } else {
-            this.f = Utilities.clamp(i10 / i11, 1.39f, 0.85f);
+            paint.setColor(-13404165);
+            qf0Var = pf0Var.d;
         }
-        this.d = f71Var;
-        long j3 = photoEntry.coverSavedPosition;
-        if (j3 >= 0) {
-            this.e = j3;
-            f71Var.L(j3, false);
-        } else {
-            this.e = f71Var.n();
+        int i14 = 0;
+        while (i14 < 5) {
+            String format = i14 != 0 ? i14 != 1 ? i14 != i13 ? i14 != i12 ? i14 != 4 ? "" : String.format(Locale.US, "%.2f", Float.valueOf(qf0Var.e / 100.0f)) : String.format(Locale.US, "%.2f", Float.valueOf(qf0Var.d / 100.0f)) : String.format(Locale.US, "%.2f", Float.valueOf(qf0Var.c / 100.0f)) : String.format(Locale.US, "%.2f", Float.valueOf(qf0Var.b / 100.0f)) : String.format(Locale.US, "%.2f", Float.valueOf(qf0Var.a / 100.0f));
+            canvas.drawText(format, (i14 * f7) + com.google.android.gms.internal.vision.e2.A(f7, textPaint.measureText(format), 2.0f, sk0Var.a), (sk0Var.b + sk0Var.d) - AndroidUtilities.dp(4.0f), textPaint);
+            i14++;
+            i12 = 3;
+            i13 = 2;
         }
-        String path = f71Var.F.getPath();
-        long p5 = f71Var.p();
-        i2.f0 f0Var = f71Var.d;
-        f0Var.B1();
-        this.a.o(false, path, p5, f0Var.Z);
-        long p10 = f71Var.p();
-        float max = 2.8f / Math.max(60L, p10);
-        float max2 = (1.0f - max) * (this.e / Math.max(1L, f71Var.p()));
-        ci.wc wcVar = this.a;
-        wcVar.setVideoLeft(max2);
-        wcVar.setVideoRight(max2 + max);
-        wcVar.Z0 = 0L;
-        wcVar.a1 = p10;
-        ci.qc qcVar = wcVar.h;
-        if (qcVar != null) {
-            ci.qc.a(qcVar, true);
+        float[] a2 = qf0Var.a();
+        invalidate();
+        path.reset();
+        for (int i15 = 0; i15 < a2.length / 2; i15++) {
+            if (i15 == 0) {
+                int i16 = i15 * 2;
+                path.moveTo((a2[i16] * sk0Var.c) + sk0Var.a, ((1.0f - a2[i16 + 1]) * sk0Var.d) + sk0Var.b);
+            } else {
+                int i17 = i15 * 2;
+                path.lineTo((a2[i17] * sk0Var.c) + sk0Var.a, ((1.0f - a2[i17 + 1]) * sk0Var.d) + sk0Var.b);
+            }
         }
-        wcVar.k();
+        canvas.drawPath(path, paint);
     }
 
-    public long getTime() {
-        return this.e;
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x0014, code lost:
+    
+        if (r0 != 6) goto L44;
+     */
+    @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        int actionMasked = motionEvent.getActionMasked();
+        if (actionMasked != 0) {
+            if (actionMasked != 1) {
+                if (actionMasked != 2) {
+                    if (actionMasked != 3) {
+                        if (actionMasked != 5) {
+                        }
+                    }
+                } else if (this.b) {
+                    a(2, motionEvent);
+                    return true;
+                }
+                return true;
+            }
+            if (this.b) {
+                a(3, motionEvent);
+                this.b = false;
+            }
+            this.c = true;
+            return true;
+        }
+        if (motionEvent.getPointerCount() == 1) {
+            if (this.c && !this.b) {
+                float x10 = motionEvent.getX();
+                float y3 = motionEvent.getY();
+                this.d = y3;
+                sk0 sk0Var = this.e;
+                float f7 = sk0Var.a;
+                if (x10 >= f7 && x10 <= f7 + sk0Var.c) {
+                    float f10 = sk0Var.b;
+                    if (y3 >= f10 && y3 <= f10 + sk0Var.d) {
+                        this.b = true;
+                    }
+                }
+                this.c = false;
+                if (this.b) {
+                    a(1, motionEvent);
+                    return true;
+                }
+            }
+        } else if (this.b) {
+            a(3, motionEvent);
+            this.c = true;
+            this.b = false;
+        }
+        return true;
     }
 
-    public void setOnClose(Runnable runnable) {
-        this.r = runnable;
-    }
-
-    public void setOnGalleryImage(Utilities.Callback<MediaController.PhotoEntry> callback) {
-        this.n = callback;
+    public void setDelegate(jf0 jf0Var) {
+        this.v = jf0Var;
     }
 }

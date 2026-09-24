@@ -18,7 +18,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class rm extends oi {
     public static final HashMap U = new HashMap();
@@ -69,8 +69,8 @@ public final class rm extends oi {
             qmVar.c();
             qmVar.requestLayout();
             this.s.h1(0, 0);
-            this.r.post(new ph(13, this, oiVar));
-            postDelayed(new og(this, 25), 250L);
+            this.r.post(new uc(19, this, oiVar));
+            postDelayed(new pg(this, 25), 250L);
             qmVar.i(this.P, false);
         } else {
             G();
@@ -133,9 +133,9 @@ public final class rm extends oi {
     public final void dispatchDraw(Canvas canvas) {
         Drawable d;
         int i10;
-        org.telegram.ui.vn vnVar = this.b.r;
+        org.telegram.ui.un unVar = this.b.r;
         boolean z10 = false;
-        if (vnVar != null && (d = vnVar.d()) != null) {
+        if (unVar != null && (d = unVar.d()) != null) {
             int currentItemTop = getCurrentItemTop();
             if (AndroidUtilities.isTablet()) {
                 i10 = 16;
@@ -167,10 +167,10 @@ public final class rm extends oi {
             return ConnectionsManager.DEFAULT_DATACENTER_ID;
         }
         View childAt = w0Var.getChildAt(0);
-        wk0 wk0Var = (wk0) w0Var.G(childAt);
+        gl0 gl0Var = (gl0) w0Var.G(childAt);
         int top = childAt.getTop();
         int dp = AndroidUtilities.dp(8.0f);
-        if (top < AndroidUtilities.dp(8.0f) || wk0Var == null || wk0Var.b() != 0) {
+        if (top < AndroidUtilities.dp(8.0f) || gl0Var == null || gl0Var.b() != 0) {
             top = dp;
         }
         w0Var.setTopGlowOffset(top);

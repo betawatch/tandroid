@@ -9,7 +9,7 @@ import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.yr;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class x6 extends yr {
     public final /* synthetic */ y6 c;
@@ -27,7 +27,7 @@ public final class x6 extends yr {
         k7 k7Var = y6Var.x;
         j7 j7Var = k7Var.E;
         boolean z10 = j7Var != null && j7Var.f;
-        org.telegram.ui.ActionBar.f1 c10 = org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, z10 ? R.drawable.menu_views_reposts : k7Var.O.a ? R.drawable.menu_views_reactions2 : R.drawable.menu_views_reactions, LocaleController.getString(z10 ? R.string.SortByReposts : R.string.SortByReactions), false, k7Var.s);
+        org.telegram.ui.ActionBar.e1 c10 = org.telegram.ui.ActionBar.u0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, z10 ? R.drawable.menu_views_reposts : k7Var.O.a ? R.drawable.menu_views_reactions2 : R.drawable.menu_views_reactions, LocaleController.getString(z10 ? R.string.SortByReposts : R.string.SortByReactions), false, k7Var.s);
         if (!k7Var.O.a) {
             c10.setAlpha(0.5f);
         }
@@ -87,7 +87,7 @@ public final class x6 extends yr {
                 }
             }
         });
-        org.telegram.ui.ActionBar.f1 c11 = org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, !k7Var.O.a ? R.drawable.menu_views_recent2 : R.drawable.menu_views_recent, LocaleController.getString(R.string.SortByTime), false, k7Var.s);
+        org.telegram.ui.ActionBar.e1 c11 = org.telegram.ui.ActionBar.u0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, !k7Var.O.a ? R.drawable.menu_views_recent2 : R.drawable.menu_views_recent, LocaleController.getString(R.string.SortByTime), false, k7Var.s);
         if (k7Var.O.a) {
             c11.setAlpha(0.5f);
         }
@@ -147,9 +147,9 @@ public final class x6 extends yr {
                 }
             }
         });
-        View k1Var = new org.telegram.ui.ActionBar.k1(y6Var.getContext(), org.telegram.ui.ActionBar.h6.H8, k7Var.s);
-        k1Var.setTag(R.id.fit_width_tag, 1);
-        actionBarPopupWindow$ActionBarPopupWindowLayout.a(k1Var, w7.x5.n(-1, 8));
+        View j1Var = new org.telegram.ui.ActionBar.j1(y6Var.getContext(), org.telegram.ui.ActionBar.h6.H8, k7Var.s);
+        j1Var.setTag(R.id.fit_width_tag, 1);
+        actionBarPopupWindow$ActionBarPopupWindowLayout.a(j1Var, w7.y5.n(-1, 8));
         String string = LocaleController.getString(z10 ? R.string.StoryReactionsSortDescription : R.string.StoryViewsSortDescription);
         d dVar = k7Var.s;
         TextView textView = new TextView(actionBarPopupWindow$ActionBarPopupWindowLayout.getContext());
@@ -159,7 +159,7 @@ public final class x6 extends yr {
         textView.setText(string);
         textView.setTag(R.id.fit_width_tag, 1);
         textView.setMaxWidth(AndroidUtilities.dp(200.0f));
-        actionBarPopupWindow$ActionBarPopupWindowLayout.a(textView, w7.x5.n(-1, -2));
+        actionBarPopupWindow$ActionBarPopupWindowLayout.a(textView, w7.y5.n(-1, -2));
     }
 
     @Override // org.telegram.ui.Components.yr

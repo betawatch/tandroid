@@ -7,9 +7,9 @@ import android.graphics.Paint;
 import android.view.View;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.Components.np;
-import org.telegram.ui.w21;
+import org.telegram.ui.v21;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class tb extends View {
     public final /* synthetic */ int a;
@@ -90,7 +90,7 @@ public final class tb extends View {
                 canvas.restore();
                 break;
             default:
-                w21 w21Var = (w21) this.w;
+                v21 v21Var = (v21) this.w;
                 super.onDraw(canvas);
                 boolean z12 = this.b;
                 Paint paint3 = this.r;
@@ -98,17 +98,17 @@ public final class tb extends View {
                 float f18 = this.e;
                 float f19 = this.d;
                 if (z12) {
-                    float f20 = w21Var.P;
+                    float f20 = v21Var.P;
                     if (f20 > 0.0f) {
                         this.c.drawCircle(f19, f18, f17 * f20, this.h);
                     }
                     canvas.drawBitmap(this.n, 0.0f, 0.0f, paint3);
                 } else {
-                    canvas.drawCircle(f19, f18, (1.0f - w21Var.P) * f17, paint3);
+                    canvas.drawCircle(f19, f18, (1.0f - v21Var.P) * f17, paint3);
                 }
                 canvas.save();
                 canvas.translate(this.s, this.v);
-                w21Var.F.draw(canvas);
+                v21Var.F.draw(canvas);
                 canvas.restore();
                 break;
         }

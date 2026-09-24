@@ -1,141 +1,72 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import android.text.SpannableStringBuilder;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class xy extends org.telegram.ui.Components.ll0 {
-    public final Context c;
-    public final /* synthetic */ az d;
+public final class xy extends s4.v {
+    public boolean d;
+    public final /* synthetic */ zy e;
 
-    public xy(az azVar, Context context) {
-        this.d = azVar;
-        this.c = context;
+    public xy(zy zyVar) {
+        this.e = zyVar;
     }
 
-    @Override // org.telegram.ui.Components.ll0
-    public final boolean D(s4.c1 c1Var) {
-        int i10 = c1Var.f;
-        return i10 == 1 || i10 == 3;
+    @Override // s4.v
+    public final void a(RecyclerView recyclerView, s4.c1 c1Var) {
+        super.a(recyclerView, c1Var);
+        c1Var.a.setPressed(false);
     }
 
-    @Override // s4.h0
-    public final int h() {
-        return this.d.v;
+    @Override // s4.v
+    public final int e(RecyclerView recyclerView, s4.c1 c1Var) {
+        return c1Var.f != 3 ? s4.v.l(0, 0) : s4.v.l(3, 0);
     }
 
-    @Override // s4.h0
-    public final int j(int i10) {
-        if (i10 == 0) {
-            return 2;
+    @Override // s4.v
+    public final boolean n(RecyclerView recyclerView, s4.c1 c1Var, s4.c1 c1Var2) {
+        if (c1Var.f != c1Var2.f) {
+            return false;
         }
-        az azVar = this.d;
-        if (i10 == azVar.h) {
-            return 1;
+        int b10 = c1Var.b();
+        int b11 = c1Var2.b();
+        zy zyVar = this.e;
+        wy wyVar = zyVar.a;
+        zy zyVar2 = wyVar.d;
+        int i10 = zyVar2.n;
+        ArrayList arrayList = zyVar2.e;
+        int i11 = b10 - i10;
+        int i12 = b11 - i10;
+        int i13 = zyVar2.r - i10;
+        if (i11 >= 0 && i12 >= 0 && i11 < i13 && i12 < i13) {
+            Long l4 = (Long) arrayList.get(i11);
+            arrayList.set(i11, (Long) arrayList.get(i12));
+            arrayList.set(i12, l4);
+            wyVar.p(b10, b11);
+            ((org.telegram.ui.Cells.g4) c1Var.a).setDrawDivider(b11 != zyVar.r - 1);
+            ((org.telegram.ui.Cells.g4) c1Var2.a).setDrawDivider(b10 != zyVar.r - 1);
+            this.d = true;
         }
-        return i10 == azVar.s ? 0 : 3;
+        return true;
     }
 
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        int i11 = c1Var.f;
-        View view = c1Var.a;
-        az azVar = this.d;
-        if (i11 == 0) {
-            org.telegram.ui.Cells.f9 f9Var = (org.telegram.ui.Cells.f9) view;
-            if (i10 == azVar.s) {
-                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                int i12 = azVar.w;
-                if (i12 == 0) {
-                    spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.EditWidgetChatsInfo));
-                } else if (i12 == 1) {
-                    spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.EditWidgetContactsInfo));
-                }
-                if (SharedConfig.passcodeHash.length() > 0) {
-                    spannableStringBuilder.append((CharSequence) "\n\n").append((CharSequence) AndroidUtilities.replaceTags(LocaleController.getString(R.string.WidgetPasscode2)));
-                }
-                f9Var.setText(spannableStringBuilder);
-                return;
+    @Override // s4.v
+    public final void p(s4.c1 c1Var, int i10) {
+        zy zyVar = this.e;
+        if (i10 != 0) {
+            zyVar.b.I0(false);
+            c1Var.a.setPressed(true);
+        } else if (this.d) {
+            yy yyVar = zyVar.f;
+            if (yyVar != null) {
+                yyVar.a();
             }
-            return;
+            this.d = false;
         }
-        if (i11 != 1) {
-            if (i11 != 3) {
-                return;
-            }
-            org.telegram.ui.Cells.g4 g4Var = (org.telegram.ui.Cells.g4) view;
-            Long l4 = (Long) azVar.e.get(i10 - azVar.n);
-            long longValue = l4.longValue();
-            if (DialogObject.isUserDialog(longValue)) {
-                g4Var.e(azVar.getMessagesController().getUser(l4), null, null, i10 != azVar.r - 1);
-                return;
-            } else {
-                g4Var.e(azVar.getMessagesController().getChat(Long.valueOf(-longValue)), null, null, i10 != azVar.r - 1);
-                return;
-            }
-        }
-        org.telegram.ui.Cells.s8 s8Var = (org.telegram.ui.Cells.s8) view;
-        s8Var.e(-1, org.telegram.ui.ActionBar.h6.q6);
-        Context context = this.c;
-        Drawable drawable = context.getResources().getDrawable(R.drawable.poll_add_circle);
-        Drawable drawable2 = context.getResources().getDrawable(R.drawable.poll_add_plus);
-        int w02 = org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.N6, false);
-        PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
-        drawable.setColorFilter(new PorterDuffColorFilter(w02, mode));
-        drawable2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.k7, false), mode));
-        s8Var.n(LocaleController.getString(R.string.SelectChats), new org.telegram.ui.Components.qq(drawable, drawable2), azVar.n != -1);
-        s8Var.getImageView().setPadding(0, AndroidUtilities.dp(7.0f), 0, 0);
     }
 
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        FrameLayout frameLayout;
-        Context context = this.c;
-        if (i10 == 0) {
-            FrameLayout f9Var = new org.telegram.ui.Cells.f9(context);
-            f9Var.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.V0(context, R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.h6.b7));
-            frameLayout = f9Var;
-        } else if (i10 == 1) {
-            FrameLayout s8Var = new org.telegram.ui.Cells.s8(context);
-            s8Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.d6, false));
-            frameLayout = s8Var;
-        } else if (i10 != 2) {
-            FrameLayout g4Var = new org.telegram.ui.Cells.g4(context, 0, 0, false);
-            ImageView imageView = new ImageView(context);
-            imageView.setImageResource(R.drawable.list_reorder);
-            imageView.setScaleType(ImageView.ScaleType.CENTER);
-            g4Var.setTag(R.id.object_tag, imageView);
-            g4Var.addView(imageView, w7.x5.d(40, -1.0f, (LocaleController.isRTL ? 3 : 5) | 16, 10.0f, 0.0f, 10.0f, 0.0f));
-            imageView.setOnTouchListener(new ci.q1(5, this, g4Var));
-            imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.b9, false), PorterDuff.Mode.MULTIPLY));
-            frameLayout = g4Var;
-        } else {
-            az azVar = this.d;
-            zy zyVar = new zy(azVar, context);
-            azVar.f = zyVar;
-            frameLayout = zyVar;
-        }
-        return new org.telegram.ui.Components.wk0(frameLayout);
-    }
-
-    @Override // s4.h0
-    public final void y(s4.c1 c1Var) {
-        int i10 = c1Var.f;
-        if (i10 == 3 || i10 == 1) {
-            c1Var.a.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.d6, false));
-        }
+    @Override // s4.v
+    public final void q(s4.c1 c1Var) {
     }
 }

@@ -20,11 +20,10 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Cells.q3;
 import org.telegram.ui.Components.j9;
-import w7.x5;
+import w7.y5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class n1 extends FrameLayout {
     public final d6 a;
@@ -55,7 +54,7 @@ public final class n1 extends FrameLayout {
             this.c[i10].setTextSize(1, 14.0f);
             int i11 = 8;
             this.c[i10].setVisibility(i10 == 0 ? 0 : 8);
-            addView(this.c[i10], x5.d(-1, -2.0f, 48, 76.0f, 7.0f, 40.0f, 0.0f));
+            addView(this.c[i10], y5.d(-1, -2.0f, 48, 76.0f, 7.0f, 40.0f, 0.0f));
             this.d[i10] = new TextView(context);
             this.d[i10].setTextColor(h6.v0(h6.z6, d6Var));
             this.d[i10].setTextSize(1, 12.0f);
@@ -64,13 +63,13 @@ public final class n1 extends FrameLayout {
                 i11 = 0;
             }
             textView.setVisibility(i11);
-            addView(this.d[i10], x5.d(-1, -2.0f, 48, 76.0f, 26.33f, 40.0f, 0.0f));
+            addView(this.d[i10], y5.d(-1, -2.0f, 48, 76.0f, 26.33f, 40.0f, 0.0f));
             i10++;
         }
         ImageView imageView = new ImageView(context);
         imageView.setImageResource(R.drawable.msg_arrowright);
         imageView.setColorFilter(new PorterDuffColorFilter(h6.v0(h6.P5, d6Var), PorterDuff.Mode.SRC_IN));
-        addView(imageView, x5.d(24, 24.0f, 21, 0.0f, 0.0f, 8.66f, 0.0f));
+        addView(imageView, y5.d(24, 24.0f, 21, 0.0f, 0.0f, 8.66f, 0.0f));
     }
 
     public final boolean a(v8 v8Var) {
@@ -112,7 +111,7 @@ public final class n1 extends FrameLayout {
         if (isEmpty) {
             textViewArr[1].setText(LocaleController.formatPluralStringSpaced("HashtagMessagesFound", i10));
         } else {
-            textViewArr[1].setText(AndroidUtilities.replaceSingleLink(LocaleController.formatPluralStringSpaced("HashtagMessagesFoundChannel", i10, q3.i("@", str2)), h6.v0(h6.Oh, this.a), null));
+            textViewArr[1].setText(AndroidUtilities.replaceSingleLink(LocaleController.formatPluralStringSpaced("HashtagMessagesFoundChannel", i10, v7.j.g("@", str2)), h6.v0(h6.Oh, this.a), null));
         }
         this.d[1].setText(LocaleController.formatString(R.string.HashtagMessagesFoundSubtitle, str));
     }

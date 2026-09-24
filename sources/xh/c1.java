@@ -2,11 +2,11 @@ package xh;
 
 import android.content.Context;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
-public final class c1 extends yh.y3 {
+public final class c1 extends yh.x3 {
     public final /* synthetic */ r1 r1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -15,12 +15,12 @@ public final class c1 extends yh.y3 {
         this.r1 = r1Var;
     }
 
-    @Override // yh.y3, org.telegram.ui.ActionBar.f3, org.telegram.ui.ActionBar.j2
-    public final xc getBulletinFactory() {
+    @Override // yh.x3, org.telegram.ui.ActionBar.e3, org.telegram.ui.ActionBar.i2
+    public final yc getBulletinFactory() {
         d6 d6Var;
         r1 r1Var = this.r1;
-        org.telegram.ui.ActionBar.d3 d3Var = r1Var.container;
+        org.telegram.ui.ActionBar.c3 c3Var = r1Var.container;
         d6Var = r1Var.resourcesProvider;
-        return new xc(d3Var, d6Var);
+        return new yc(c3Var, d6Var);
     }
 }

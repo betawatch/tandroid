@@ -1,175 +1,140 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewConfiguration;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class ql0 extends Drawable {
-    public final cw e;
-    public final cw f;
-    public float h;
-    public float i;
-    public final Rect a = new Rect();
-    public final rr b = lt.b;
-    public final int c = AndroidUtilities.dp(24.0f);
-    public final int d = AndroidUtilities.dp(24.0f);
-    public long g = -1;
+public final class ql0 extends m20 {
+    public View a;
+    public final /* synthetic */ rl0 b;
 
-    public ql0() {
-        cw cwVar = new cw();
-        this.e = cwVar;
-        cwVar.c.setColor(-2130706433);
-        cw cwVar2 = new cw();
-        this.f = cwVar2;
-        cwVar2.c.setColor(-2130706433);
+    public ql0(rl0 rl0Var) {
+        this.b = rl0Var;
     }
 
-    public final void a(Canvas canvas, float f7) {
-        Rect bounds = getBounds();
-        float interpolation = this.b.getInterpolation(f7);
-        int dp = (int) (AndroidUtilities.dp(2.0f) * this.h);
-        Rect rect = this.a;
-        rect.left = dp;
-        int dp2 = bounds.bottom - ((int) (AndroidUtilities.dp(6.0f) * this.i));
-        rect.bottom = dp2;
-        rect.right = bounds.right - rect.left;
-        rect.top = dp2 - ((int) (AndroidUtilities.dp(4.0f) * this.i));
-        cw cwVar = this.f;
-        cwVar.setBounds(rect);
-        cwVar.draw(canvas);
-        int dp3 = AndroidUtilities.dp(12.0f);
-        rect.right = dp3;
-        rect.left = dp3;
-        int dp4 = AndroidUtilities.dp(8.0f);
-        rect.bottom = dp4;
-        rect.top = dp4;
-        rect.inset(-AndroidUtilities.dp(AndroidUtilities.lerp(10, 11, interpolation)), -AndroidUtilities.dp(AndroidUtilities.lerp(2, 3, interpolation)));
-        cw cwVar2 = this.e;
-        cwVar2.setBounds(rect);
-        cwVar2.setAlpha(AndroidUtilities.lerp(128, 255, interpolation));
-        cwVar2.draw(canvas);
+    @Override // org.telegram.ui.Components.m20
+    public final boolean a() {
+        return ((wl0) this.b.b).Y0 != null;
     }
 
-    public final void b(Canvas canvas, float f7) {
-        Rect bounds = getBounds();
-        float interpolation = this.b.getInterpolation(f7);
-        int dp = (int) (AndroidUtilities.dp(2.0f) * this.h);
-        Rect rect = this.a;
-        rect.left = dp;
-        int dp2 = bounds.bottom - ((int) (AndroidUtilities.dp(6.0f) * this.i));
-        rect.bottom = dp2;
-        rect.right = bounds.right - rect.left;
-        rect.top = dp2 - ((int) (AndroidUtilities.dp(4.0f) * this.i));
-        rect.offset(0, AndroidUtilities.dp(AndroidUtilities.lerp(0, -8, interpolation)));
-        cw cwVar = this.f;
-        cwVar.setBounds(rect);
-        cwVar.draw(canvas);
-        rect.left = (int) (AndroidUtilities.dpf2(AndroidUtilities.lerp(1, 2, interpolation)) * this.h);
-        int dpf2 = (int) (AndroidUtilities.dpf2(AndroidUtilities.lerp(5, 6, interpolation)) * this.i);
-        rect.top = dpf2;
-        rect.right = bounds.right - rect.left;
-        rect.bottom = dpf2 + ((int) (AndroidUtilities.dpf2(AndroidUtilities.lerp(6, 4, interpolation)) * this.i));
-        rect.offset(0, AndroidUtilities.dp(AndroidUtilities.lerp(0, 8, interpolation)));
-        cw cwVar2 = this.e;
-        cwVar2.setBounds(rect);
-        cwVar2.setAlpha(255);
-        cwVar2.draw(canvas);
-    }
-
-    public final void c(Canvas canvas, float f7) {
-        Rect bounds = getBounds();
-        float interpolation = this.b.getInterpolation(f7);
-        int dp = (int) (AndroidUtilities.dp(2.0f) * this.h);
-        Rect rect = this.a;
-        rect.left = dp;
-        int dp2 = bounds.bottom - ((int) (AndroidUtilities.dp(6.0f) * this.i));
-        rect.bottom = dp2;
-        rect.right = bounds.right - rect.left;
-        rect.top = dp2 - ((int) (AndroidUtilities.dp(4.0f) * this.i));
-        rect.offset(0, AndroidUtilities.dp(-8.0f));
-        cw cwVar = this.f;
-        cwVar.setBounds(rect);
-        cwVar.draw(canvas);
-        rect.left = (int) (AndroidUtilities.dpf2(2.0f) * this.h);
-        int dpf2 = (int) (AndroidUtilities.dpf2(6.0f) * this.i);
-        rect.top = dpf2;
-        rect.right = bounds.right - rect.left;
-        rect.bottom = dpf2 + ((int) (AndroidUtilities.dpf2(4.0f) * this.i));
-        rect.offset(0, AndroidUtilities.dp(8.0f));
-        cw cwVar2 = this.e;
-        cwVar2.setBounds(rect);
-        cwVar2.setAlpha(AndroidUtilities.lerp(255, 128, interpolation));
-        cwVar2.draw(canvas);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        if (this.g <= 0) {
-            a(canvas, 0.0f);
-            return;
-        }
-        int currentTimeMillis = (int) (System.currentTimeMillis() - this.g);
-        int i10 = currentTimeMillis - 300;
-        if (i10 < 0) {
-            a(canvas, 0.0f);
-        } else if (i10 < 150) {
-            a(canvas, i10 / 150.0f);
-        } else {
-            int i11 = currentTimeMillis - 750;
-            if (i11 < 0) {
-                a(canvas, 1.0f);
-            } else if (i11 < 200) {
-                b(canvas, i11 / 200.0f);
-            } else {
-                int i12 = currentTimeMillis - 1250;
-                if (i12 < 0) {
-                    b(canvas, 1.0f);
-                } else if (i12 < 150) {
-                    c(canvas, i12 / 150.0f);
+    public final void b(MotionEvent motionEvent, View view) {
+        wl0 wl0Var = (wl0) this.b.b;
+        if (view != null) {
+            if (wl0Var.V0 == null && wl0Var.W0 == null) {
+                return;
+            }
+            float x10 = motionEvent.getX();
+            float y3 = motionEvent.getY();
+            wl0Var.h1(view, x10, y3, true);
+            int i10 = wl0Var.O1;
+            if (wl0Var.R1 && i10 != -1) {
+                try {
+                    view.playSoundEffect(0);
+                } catch (Exception unused) {
+                }
+                view.sendAccessibilityEvent(1);
+                kl0 kl0Var = wl0Var.V0;
+                if (kl0Var != null) {
+                    kl0Var.d(i10, view);
                 } else {
-                    c(canvas, 1.0f);
-                    if (currentTimeMillis - 1400 >= 100) {
-                        this.g = System.currentTimeMillis();
+                    ll0 ll0Var = wl0Var.W0;
+                    if (ll0Var != null) {
+                        ll0Var.c(x10 - view.getX(), y3 - view.getY(), i10, view);
                     }
                 }
             }
+            pl0 pl0Var = new pl0(this, view, i10, x10, y3);
+            wl0Var.S1 = pl0Var;
+            AndroidUtilities.runOnUIThread(pl0Var, ViewConfiguration.getPressedStateDuration());
+            ol0 ol0Var = wl0Var.e1;
+            if (ol0Var != null) {
+                AndroidUtilities.cancelRunOnUIThread(ol0Var);
+                wl0Var.e1 = null;
+                wl0Var.N1 = null;
+                wl0Var.P1 = false;
+                wl0Var.k1(motionEvent, view);
+            }
         }
-        invalidateSelf();
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return this.d;
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
+    public final boolean onDoubleTap(MotionEvent motionEvent) {
+        ll0 ll0Var;
+        wl0 wl0Var = (wl0) this.b.b;
+        View view = this.a;
+        if (view == null || (ll0Var = wl0Var.W0) == null || !ll0Var.d1(view)) {
+            return false;
+        }
+        wl0Var.W0.r0(this.a, motionEvent.getX(), motionEvent.getY());
+        this.a = null;
+        return true;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return this.c;
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onDown(MotionEvent motionEvent) {
+        return false;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -3;
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final void onLongPress(MotionEvent motionEvent) {
+        int i10;
+        wl0 wl0Var = (wl0) this.b.b;
+        View view = wl0Var.N1;
+        if (view == null || (i10 = wl0Var.O1) == -1) {
+            return;
+        }
+        ml0 ml0Var = wl0Var.X0;
+        if (ml0Var == null && wl0Var.Y0 == null) {
+            return;
+        }
+        if (ml0Var != null) {
+            if (ml0Var.d(i10, view)) {
+                try {
+                    view.performHapticFeedback(0);
+                } catch (Exception unused) {
+                }
+                view.sendAccessibilityEvent(2);
+                return;
+            }
+            return;
+        }
+        if (wl0Var.Y0.c(motionEvent.getX() - wl0Var.N1.getX(), motionEvent.getY() - wl0Var.N1.getY(), i10, view)) {
+            try {
+                view.performHapticFeedback(0);
+            } catch (Exception unused2) {
+            }
+            view.sendAccessibilityEvent(2);
+            wl0Var.Z0 = true;
+        }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        this.h = rect.width() / this.c;
-        this.i = rect.height() / this.d;
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
+    public final boolean onSingleTapConfirmed(MotionEvent motionEvent) {
+        ll0 ll0Var;
+        View view = this.a;
+        if (view == null || (ll0Var = ((wl0) this.b.b).W0) == null || !ll0Var.d1(view)) {
+            return false;
+        }
+        b(motionEvent, this.a);
+        this.a = null;
+        return true;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.e.setColorFilter(colorFilter);
-        this.f.setColorFilter(colorFilter);
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onSingleTapUp(MotionEvent motionEvent) {
+        wl0 wl0Var = (wl0) this.b.b;
+        View view = wl0Var.N1;
+        if (view != null) {
+            ll0 ll0Var = wl0Var.W0;
+            if (ll0Var != null && ll0Var.d1(view)) {
+                this.a = wl0Var.N1;
+                return false;
+            }
+            b(motionEvent, wl0Var.N1);
+        }
+        return false;
     }
 }

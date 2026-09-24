@@ -9,7 +9,7 @@ import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public class xd extends LinearLayout {
     public static float b = 1.0f;
@@ -25,23 +25,23 @@ public class xd extends LinearLayout {
     public boolean drawChild(Canvas canvas, View view, long j3) {
         switch (this.a) {
             case 4:
-                if (!(getParent() instanceof org.telegram.ui.Components.zn0)) {
+                if (!(getParent() instanceof org.telegram.ui.Components.mo0)) {
                     return super.drawChild(canvas, view, j3);
                 }
-                org.telegram.ui.Components.zn0 zn0Var = (org.telegram.ui.Components.zn0) getParent();
+                org.telegram.ui.Components.mo0 mo0Var = (org.telegram.ui.Components.mo0) getParent();
                 canvas.save();
-                LinearLayout linearLayout = zn0Var.b;
-                Path path = zn0Var.n;
-                if (view != null && org.telegram.ui.Components.zn0.e(view)) {
+                LinearLayout linearLayout = mo0Var.b;
+                Path path = mo0Var.n;
+                if (view != null && org.telegram.ui.Components.mo0.e(view)) {
                     int indexOfChild = linearLayout.indexOfChild(view);
                     int i10 = indexOfChild - 1;
                     View childAt = i10 < 0 ? null : linearLayout.getChildAt(i10);
                     int i11 = indexOfChild + 1;
                     View childAt2 = i11 < linearLayout.getChildCount() ? linearLayout.getChildAt(i11) : null;
-                    boolean z10 = childAt != null && org.telegram.ui.Components.zn0.e(childAt);
-                    boolean z11 = childAt2 != null && org.telegram.ui.Components.zn0.e(childAt2);
+                    boolean z10 = childAt != null && org.telegram.ui.Components.mo0.e(childAt);
+                    boolean z11 = childAt2 != null && org.telegram.ui.Components.mo0.e(childAt2);
                     RectF rectF = AndroidUtilities.rectTmp;
-                    rectF.set(view.getX(), Math.max(zn0Var.getScrollY() - AndroidUtilities.dp(16.0f), view.getY() + linearLayout.getY()), view.getX() + view.getWidth(), Math.min(AndroidUtilities.dp(16.0f) + zn0Var.getScrollY() + zn0Var.getHeight(), view.getY() + linearLayout.getY() + view.getHeight()));
+                    rectF.set(view.getX(), Math.max(mo0Var.getScrollY() - AndroidUtilities.dp(16.0f), view.getY() + linearLayout.getY()), view.getX() + view.getWidth(), Math.min(AndroidUtilities.dp(16.0f) + mo0Var.getScrollY() + mo0Var.getHeight(), view.getY() + linearLayout.getY() + view.getHeight()));
                     if (z10 && z11) {
                         z10 = view.getY() >= rectF.top;
                         boolean z12 = view.getY() + ((float) view.getHeight()) <= rectF.bottom;
@@ -51,16 +51,16 @@ public class xd extends LinearLayout {
                     }
                     if (!z10 && !z11) {
                         path.rewind();
-                        float f7 = zn0Var.c;
+                        float f7 = mo0Var.c;
                         path.addRoundRect(rectF, f7, f7, Path.Direction.CW);
                         canvas.clipPath(path);
                     } else if (!z10) {
                         path.rewind();
-                        path.addRoundRect(rectF, zn0Var.d, Path.Direction.CW);
+                        path.addRoundRect(rectF, mo0Var.d, Path.Direction.CW);
                         canvas.clipPath(path);
                     } else if (!z11) {
                         path.rewind();
-                        path.addRoundRect(rectF, zn0Var.e, Path.Direction.CW);
+                        path.addRoundRect(rectF, mo0Var.e, Path.Direction.CW);
                         canvas.clipPath(path);
                     }
                 }
@@ -85,8 +85,8 @@ public class xd extends LinearLayout {
                 break;
             case 4:
                 super.onLayout(z10, i10, i11, i12, i13);
-                if (getParent() instanceof org.telegram.ui.Components.zn0) {
-                    ((org.telegram.ui.Components.zn0) getParent()).invalidate();
+                if (getParent() instanceof org.telegram.ui.Components.mo0) {
+                    ((org.telegram.ui.Components.mo0) getParent()).invalidate();
                     break;
                 }
                 break;

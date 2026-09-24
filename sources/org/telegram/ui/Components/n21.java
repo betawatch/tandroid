@@ -1,41 +1,77 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.MotionEvent;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class n21 extends AnimatorListenerAdapter {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ w21 b;
+public abstract class n21 extends View {
+    public final o21 a;
+    public Utilities.Callback b;
+    public final org.telegram.ui.ActionBar.d6 c;
+    public int d;
 
-    public n21(w21 w21Var, boolean z10) {
-        this.b = w21Var;
-        this.a = z10;
+    public n21(Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context);
+        this.c = d6Var;
+        o21 o21Var = new o21(i10, this, d6Var, false);
+        this.a = o21Var;
+        o21Var.r = new wq0(this, 19);
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        w21 w21Var = this.b;
-        long j3 = w21Var.c;
-        if (w21Var.U == animator) {
-            boolean z10 = this.a;
-            w21Var.R = z10 ? 1.0f : 0.0f;
-            w21Var.n();
-            w21Var.S = false;
-            w21Var.E.setImageResource(w21Var.P ? R.drawable.menu_sidebar_top : R.drawable.menu_sidebar_bottom);
-            w21Var.U = null;
-            MessagesController.getInstance(w21Var.b).getMainSettings().edit().putBoolean(a4.a.p(j3, "topicssidetabs"), w21Var.Q).putBoolean(a4.a.p(j3, "topicssidetabsb"), w21Var.P).apply();
-            Boolean bool = w21Var.T;
-            if (bool != null && z10 != bool.booleanValue()) {
-                boolean booleanValue = w21Var.T.booleanValue();
-                w21Var.T = null;
-                w21Var.d(booleanValue);
-            }
-            AndroidUtilities.runOnUIThread(new jq0(this, 19));
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        org.telegram.ui.ActionBar.d6 d6Var = this.c;
+        if (d6Var != null) {
+            d6Var.m(0.0f, 0.0f, getMeasuredWidth(), this.d);
+        } else {
+            org.telegram.ui.ActionBar.h6.q(0.0f, 0.0f, getMeasuredWidth(), this.d);
         }
+        this.a.c(canvas, getWidth(), 0.0f, 0.0f, 0.75f, 1.0f, true);
+    }
+
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.a.a();
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.a.b();
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(33.0f), TLObject.FLAG_30));
+    }
+
+    @Override // android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        return this.a.d(motionEvent, false) || super.onTouchEvent(motionEvent);
+    }
+
+    public void set(MessageObject messageObject) {
+        o21 o21Var = this.a;
+        o21Var.f(messageObject);
+        if (isAttachedToWindow()) {
+            o21Var.a();
+        }
+    }
+
+    public void setBackgroundHeight(int i10) {
+        this.d = i10;
+    }
+
+    public void setOnTopicClickListener(Utilities.Callback<Long> callback) {
+        this.b = callback;
     }
 }

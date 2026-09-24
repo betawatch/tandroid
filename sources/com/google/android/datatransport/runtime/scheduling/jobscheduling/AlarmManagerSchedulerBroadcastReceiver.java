@@ -8,11 +8,11 @@ import android.util.Base64;
 import da.b;
 import java.util.concurrent.Executor;
 import l5.i;
-import l5.t;
-import org.telegram.ui.Components.r11;
-import org.telegram.ui.g91;
+import l5.s;
+import org.telegram.ui.Components.f21;
+import org.telegram.ui.l21;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class AlarmManagerSchedulerBroadcastReceiver extends BroadcastReceiver {
     public static final /* synthetic */ int a = 0;
@@ -23,14 +23,14 @@ public class AlarmManagerSchedulerBroadcastReceiver extends BroadcastReceiver {
         String queryParameter2 = intent.getData().getQueryParameter("extras");
         int intValue = Integer.valueOf(intent.getData().getQueryParameter("priority")).intValue();
         int i10 = intent.getExtras().getInt("attemptNumber");
-        t.b(context);
+        s.b(context);
         a a2 = i.a();
-        a2.u(queryParameter);
+        a2.t(queryParameter);
         a2.d = v5.a.b(intValue);
         if (queryParameter2 != null) {
             a2.c = Base64.decode(queryParameter2, 0);
         }
-        b bVar = t.a().d;
-        ((Executor) bVar.e).execute(new r11(bVar, a2.e(), i10, new g91(12), 16));
+        b bVar = s.a().d;
+        ((Executor) bVar.e).execute(new f21(bVar, a2.e(), i10, new l21(14), 16));
     }
 }

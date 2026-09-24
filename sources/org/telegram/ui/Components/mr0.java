@@ -1,155 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.content.Context;
-import android.util.Property;
-import android.util.SparseArray;
-import android.view.View;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class mr0 extends bi.z {
-    public final /* synthetic */ yu0 G;
+public final /* synthetic */ class mr0 implements org.telegram.ui.ActionBar.z1, MessagesStorage.StringCallback {
+    public final /* synthetic */ jv0 a;
+    public final /* synthetic */ TL_stories.StoryItem b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mr0(yu0 yu0Var, Context context, org.telegram.ui.ActionBar.n2 n2Var, long j3) {
-        super(context, n2Var, j3);
-        this.G = yu0Var;
+    public /* synthetic */ mr0(jv0 jv0Var, TL_stories.StoryItem storyItem) {
+        this.a = jv0Var;
+        this.b = storyItem;
     }
 
-    @Override // bi.z
-    public final boolean c(MessageObject messageObject) {
-        yu0 yu0Var = this.G;
-        return yu0Var.Z0[(messageObject.getDialogId() > yu0Var.j1 ? 1 : (messageObject.getDialogId() == yu0Var.j1 ? 0 : -1)) == 0 ? (char) 0 : (char) 1].indexOfKey(messageObject.getId()) >= 0;
+    @Override // org.telegram.ui.ActionBar.z1
+    public void f(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
+        ArrayList arrayList = new ArrayList(1);
+        arrayList.add(this.b);
+        jv0 jv0Var = this.a;
+        org.telegram.ui.ActionBar.m2 m2Var = jv0Var.v1;
+        m2Var.getMessagesController().getStoriesController().s(jv0Var.j1, arrayList);
+        yc.a0(m2Var).Q(R.raw.ic_delete, 36, LocaleController.formatPluralString("StoriesDeleted", 1, new Object[0])).j();
+        jv0Var.L(false);
     }
 
-    @Override // bi.z
-    public final boolean e(MessageObject messageObject) {
-        yu0 yu0Var = this.G;
-        ArrayList arrayList = yu0Var.N0;
-        NumberTextView numberTextView = yu0Var.A0;
-        SparseArray[] sparseArrayArr = yu0Var.Z0;
-        if (messageObject != null) {
-            char c10 = messageObject.getDialogId() == yu0Var.j1 ? (char) 0 : (char) 1;
-            if (sparseArrayArr[c10].indexOfKey(messageObject.getId()) < 0) {
-                if (sparseArrayArr[1].size() + sparseArrayArr[0].size() < 100) {
-                    sparseArrayArr[c10].put(messageObject.getId(), messageObject);
-                    if (!messageObject.canDeleteMessage(false, null)) {
-                        yu0Var.a1++;
-                    }
-                    if (yu0Var.C1) {
-                        numberTextView.a(sparseArrayArr[1].size() + sparseArrayArr[0].size(), true);
-                    } else {
-                        AndroidUtilities.hideKeyboard(yu0Var.v1.getParentActivity().getCurrentFocus());
-                        int i10 = 8;
-                        yu0Var.l0.setVisibility(yu0Var.a1 == 0 ? 0 : 8);
-                        org.telegram.ui.ActionBar.v0 v0Var = yu0Var.u0;
-                        if (v0Var != null) {
-                            v0Var.setVisibility((yu0Var.getClosestTab() == 8 || yu0Var.getClosestTab() == 13) ? 8 : 0);
-                        }
-                        org.telegram.ui.ActionBar.v0 v0Var2 = yu0Var.v0;
-                        if (v0Var2 != null) {
-                            v0Var2.setVisibility(8);
-                        }
-                        org.telegram.ui.ActionBar.v0 v0Var3 = yu0Var.w0;
-                        if (v0Var3 != null) {
-                            v0Var3.setVisibility(8);
-                        }
-                        org.telegram.ui.ActionBar.v0 v0Var4 = yu0Var.t0;
-                        if (v0Var4 != null) {
-                            if (yu0Var.getClosestTab() != 8 && yu0Var.getClosestTab() != 13) {
-                                i10 = 0;
-                            }
-                            v0Var4.setVisibility(i10);
-                        }
-                        numberTextView.a(sparseArrayArr[1].size() + sparseArrayArr[0].size(), false);
-                        AnimatorSet animatorSet = new AnimatorSet();
-                        ArrayList arrayList2 = new ArrayList();
-                        for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                            View view = (View) arrayList.get(i11);
-                            AndroidUtilities.clearDrawableAnimation(view);
-                            arrayList2.add(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_Y, 0.1f, 1.0f));
-                        }
-                        animatorSet.playTogether(arrayList2);
-                        animatorSet.setDuration(250L);
-                        animatorSet.start();
-                        yu0Var.b1 = false;
-                        yu0Var.b1(true);
-                    }
-                    j();
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    @Override // bi.z
-    public final boolean g(MessageObject messageObject) {
-        yu0 yu0Var = this.G;
-        ArrayList arrayList = yu0Var.N0;
-        SparseArray[] sparseArrayArr = yu0Var.Z0;
-        if (messageObject != null) {
-            int i10 = 1;
-            char c10 = messageObject.getDialogId() == yu0Var.j1 ? (char) 0 : (char) 1;
-            if (sparseArrayArr[c10].indexOfKey(messageObject.getId()) >= 0) {
-                sparseArrayArr[c10].remove(messageObject.getId());
-                if (!messageObject.canDeleteMessage(false, null)) {
-                    yu0Var.a1--;
-                }
-                if (sparseArrayArr[0].size() == 0 && sparseArrayArr[1].size() == 0) {
-                    AndroidUtilities.hideKeyboard(yu0Var.v1.getParentActivity().getCurrentFocus());
-                    sparseArrayArr[0].clear();
-                    sparseArrayArr[1].clear();
-                    int i11 = 8;
-                    yu0Var.l0.setVisibility(yu0Var.a1 == 0 ? 0 : 8);
-                    org.telegram.ui.ActionBar.v0 v0Var = yu0Var.u0;
-                    if (v0Var != null) {
-                        v0Var.setVisibility((yu0Var.getClosestTab() == 8 || yu0Var.getClosestTab() == 13) ? 8 : 0);
-                    }
-                    org.telegram.ui.ActionBar.v0 v0Var2 = yu0Var.v0;
-                    if (v0Var2 != null) {
-                        v0Var2.setVisibility(8);
-                    }
-                    org.telegram.ui.ActionBar.v0 v0Var3 = yu0Var.w0;
-                    if (v0Var3 != null) {
-                        v0Var3.setVisibility(8);
-                    }
-                    org.telegram.ui.ActionBar.v0 v0Var4 = yu0Var.t0;
-                    if (v0Var4 != null) {
-                        if (yu0Var.getClosestTab() != 8 && yu0Var.getClosestTab() != 13) {
-                            i11 = 0;
-                        }
-                        v0Var4.setVisibility(i11);
-                    }
-                    AnimatorSet animatorSet = new AnimatorSet();
-                    ArrayList arrayList2 = new ArrayList();
-                    for (int i12 = 0; i12 < arrayList.size(); i12++) {
-                        View view = (View) arrayList.get(i12);
-                        AndroidUtilities.clearDrawableAnimation(view);
-                        arrayList2.add(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_Y, 1.0f, 0.1f));
-                    }
-                    animatorSet.playTogether(arrayList2);
-                    animatorSet.setDuration(250L);
-                    animatorSet.start();
-                    yu0Var.b1 = false;
-                    AndroidUtilities.runOnUIThread(new jq0(this, i10), 20L);
-                } else {
-                    yu0Var.A0.a(sparseArrayArr[1].size() + sparseArrayArr[0].size(), true);
-                }
-                j();
-                return true;
-            }
-        }
-        return false;
-    }
-
-    @Override // bi.z
-    public final int getStartedTrackingX() {
-        return this.G.z1;
+    @Override // org.telegram.messenger.MessagesStorage.StringCallback
+    public void run(String str) {
+        r0.getStoriesController().r(r0.j1, str, new org.telegram.ui.oc(29, this.a, this.b));
     }
 }

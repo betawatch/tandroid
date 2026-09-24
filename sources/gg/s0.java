@@ -21,11 +21,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.wl0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class s0 extends ml0 {
+public final class s0 extends wl0 {
     public static final q0[] c3 = {new q0(R.drawable.search_media_filled, R.string.SharedMediaTab2, new TLRPC.TL_inputMessagesFilterPhotoVideo(), 0), new q0(R.drawable.search_links_filled, R.string.SharedLinksTab2, new TLRPC.TL_inputMessagesFilterUrl(), 2), new q0(R.drawable.search_files_filled, R.string.SharedFilesTab2, new TLRPC.TL_inputMessagesFilterDocument(), 1), new q0(R.drawable.search_music_filled, R.string.SharedMusicTab2, new TLRPC.TL_inputMessagesFilterMusic(), 3), new q0(R.drawable.search_voice_filled, R.string.SharedVoiceTab2, new TLRPC.TL_inputMessagesFilterRoundVoice(), 5)};
     public static final Pattern d3 = Pattern.compile("20[0-9]{1,2}");
     public static final Pattern e3 = Pattern.compile("(\\w{3,}) ([0-9]{0,4})");
@@ -320,7 +320,7 @@ public final class s0 extends ml0 {
                     TLRPC.Chat chat = (TLRPC.Chat) obj;
                     String str = chat.title;
                     if (str.length() > 12) {
-                        str = w.c.g(str.substring(0, 10), "...");
+                        str = v7.j.t(str.substring(0, 10), "...");
                     }
                     q0 q0Var2 = new q0(R.drawable.search_users_filled, 4, str);
                     q0Var2.f = chat;
@@ -390,7 +390,7 @@ public final class s0 extends ml0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ml0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         if (isEnabled()) {
             return super.onInterceptTouchEvent(motionEvent);
@@ -398,7 +398,7 @@ public final class s0 extends ml0 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ml0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         if (isEnabled()) {
             return super.onTouchEvent(motionEvent);

@@ -13,28 +13,28 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.d61;
-import org.telegram.ui.Components.e51;
-import org.telegram.ui.Components.g51;
-import org.telegram.ui.Components.h51;
-import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.g11;
+import org.telegram.ui.Components.j61;
 import org.telegram.ui.Components.pq;
-import org.telegram.ui.Components.s01;
+import org.telegram.ui.Components.r61;
+import org.telegram.ui.Components.s51;
+import org.telegram.ui.Components.u51;
 import org.telegram.ui.Components.v51;
 import org.telegram.ui.Components.w9;
+import org.telegram.ui.Components.wl0;
 import yh.w7;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
-public final class i1 extends g51 {
+public final class i1 extends u51 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        g51.setup(new i1());
+        u51.setup(new i1());
     }
 
-    public static h51 a(int i10, TL_stars.StarGift starGift, boolean z10, boolean z11, boolean z12, boolean z13, boolean z14) {
-        h51 J = h51.J(i1.class);
+    public static v51 a(int i10, TL_stars.StarGift starGift, boolean z10, boolean z11, boolean z12, boolean z13, boolean z14) {
+        v51 J = v51.J(i1.class);
         J.u = 1;
         J.z = i10;
         J.G = starGift;
@@ -46,15 +46,15 @@ public final class i1 extends g51 {
         return J;
     }
 
-    @Override // org.telegram.ui.Components.g51
-    public final void attachedView(ml0 ml0Var, View view, h51 h51Var) {
-        ((j1) view).d(h51Var.h, false);
+    @Override // org.telegram.ui.Components.u51
+    public final void attachedView(wl0 wl0Var, View view, v51 v51Var) {
+        ((j1) view).d(v51Var.h, false);
     }
 
-    @Override // org.telegram.ui.Components.g51
-    public final void bindView(View view, h51 h51Var, boolean z10, v51 v51Var, d61 d61Var) {
+    @Override // org.telegram.ui.Components.u51
+    public final void bindView(View view, v51 v51Var, boolean z10, j61 j61Var, r61 r61Var) {
         j1 j1Var = (j1) view;
-        Object obj = h51Var.G;
+        Object obj = v51Var.G;
         boolean z11 = false;
         if (obj instanceof rg.k) {
             rg.k kVar = (rg.k) obj;
@@ -67,7 +67,7 @@ public final class i1 extends g51 {
             TextView textView4 = j1Var.M;
             int d = kVar.d();
             if (j1Var.h0 != kVar) {
-                s01 c12 = w7.c1(w9Var, w9Var.getImageReceiver(), d);
+                g11 c12 = w7.c1(w9Var, w9Var.getImageReceiver(), d);
                 j1Var.N = c12;
                 c12.run();
                 j1Var.N = null;
@@ -88,7 +88,7 @@ public final class i1 extends g51 {
                 textView4.setTextColor(h6.I.q() ? -1333971 : -2722014);
                 textView4.setVisibility(0);
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("" + LocaleController.formatNumber(kVar.g(), ','));
-                spannableStringBuilder.setSpan(new e51(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
+                spannableStringBuilder.setSpan(new s51(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
                 pq[] pqVarArr = new pq[1];
                 textView4.setText(w7.X0(false, LocaleController.formatSpannable(R.string.PremiumOrStarsPrice, spannableStringBuilder), 0.48f, pqVarArr));
                 pqVarArr[0].spaceScaleX = 0.8f;
@@ -118,43 +118,43 @@ public final class i1 extends g51 {
             j1Var.j();
         } else if (obj instanceof TL_stars.StarGift) {
             TL_stars.StarGift starGift = (TL_stars.StarGift) obj;
-            boolean z12 = h51Var.e;
-            Object obj2 = h51Var.H;
-            j1Var.g(starGift, z12, obj2 instanceof Boolean ? ((Boolean) obj2).booleanValue() : false, h51Var.q, h51Var.r, h51Var.t);
+            boolean z12 = v51Var.e;
+            Object obj2 = v51Var.H;
+            j1Var.g(starGift, z12, obj2 instanceof Boolean ? ((Boolean) obj2).booleanValue() : false, v51Var.q, v51Var.r, v51Var.t);
         } else if (obj instanceof TL_stars.SavedStarGift) {
-            z11 = j1Var.h((TL_stars.SavedStarGift) obj, h51Var.q, h51Var.r);
+            z11 = j1Var.h((TL_stars.SavedStarGift) obj, v51Var.q, v51Var.r);
         }
-        if (h51Var.f) {
-            j1Var.b(h51Var.e, z11);
+        if (v51Var.f) {
+            j1Var.b(v51Var.e, z11);
         }
-        j1Var.d(h51Var.h, z11);
-        j1Var.d.setAlpha(h51Var.g ? 1.0f : 0.65f);
-        j1Var.f.setAlpha(h51Var.g ? 1.0f : 0.5f);
+        j1Var.d(v51Var.h, z11);
+        j1Var.d.setAlpha(v51Var.g ? 1.0f : 0.65f);
+        j1Var.f.setAlpha(v51Var.g ? 1.0f : 0.5f);
     }
 
-    @Override // org.telegram.ui.Components.g51
-    public final View createView(Context context, ml0 ml0Var, int i10, int i11, d6 d6Var) {
+    @Override // org.telegram.ui.Components.u51
+    public final View createView(Context context, wl0 wl0Var, int i10, int i11, d6 d6Var) {
         return new j1(context, i10, d6Var);
     }
 
-    @Override // org.telegram.ui.Components.g51
-    public final boolean equals(h51 h51Var, h51 h51Var2) {
-        if (h51Var.q != h51Var2.q) {
+    @Override // org.telegram.ui.Components.u51
+    public final boolean equals(v51 v51Var, v51 v51Var2) {
+        if (v51Var.q != v51Var2.q) {
             return false;
         }
-        Object obj = h51Var.G;
-        if (obj != null || h51Var2.G != null) {
+        Object obj = v51Var.G;
+        if (obj != null || v51Var2.G != null) {
             if (obj instanceof rg.k) {
-                return obj == h51Var2.G;
+                return obj == v51Var2.G;
             }
             if (obj instanceof TL_stars.StarGift) {
-                Object obj2 = h51Var2.G;
+                Object obj2 = v51Var2.G;
                 if (obj2 instanceof TL_stars.StarGift) {
                     return ((TL_stars.StarGift) obj).id == ((TL_stars.StarGift) obj2).id;
                 }
             }
             if (obj instanceof TL_stars.SavedStarGift) {
-                Object obj3 = h51Var2.G;
+                Object obj3 = v51Var2.G;
                 if (obj3 instanceof TL_stars.SavedStarGift) {
                     TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj;
                     TL_stars.SavedStarGift savedStarGift2 = (TL_stars.SavedStarGift) obj3;
@@ -162,6 +162,6 @@ public final class i1 extends g51 {
                 }
             }
         }
-        return h51Var.z == h51Var2.z && h51Var.e == h51Var2.e && h51Var.B == h51Var2.B && TextUtils.equals(h51Var.l, h51Var2.l);
+        return v51Var.z == v51Var2.z && v51Var.e == v51Var2.e && v51Var.B == v51Var2.B && TextUtils.equals(v51Var.l, v51Var2.l);
     }
 }

@@ -1,27 +1,77 @@
 package org.telegram.ui.ActionBar;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+import android.content.SharedPreferences;
+import java.io.File;
+import java.util.ArrayList;
+import org.json.JSONObject;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public enum z5 {
-    h(h6.Af, h6.Bf, h6.Cf, h6.Pf, h6.Qf, h6.Rf),
-    n(h6.Df, h6.Ef, h6.Ff, h6.Sf, h6.Tf, h6.Uf),
-    r(h6.Gf, h6.Hf, h6.If, h6.Vf, h6.Wf, h6.Xf),
-    s(h6.Jf, h6.Kf, h6.Lf, h6.Yf, h6.Zf, h6.ag),
-    v(h6.Mf, h6.Nf, h6.Of, h6.bg, h6.cg, h6.dg);
+public final class z5 {
+    public String a = "";
+    public String b = "";
+    public String c = "";
+    public int d;
+    public int e;
+    public int f;
+    public int g;
+    public int h;
+    public boolean i;
+    public boolean j;
+    public float k;
+    public long l;
+    public long m;
+    public long n;
+    public boolean o;
+    public g6 p;
+    public f6 q;
+    public float r;
+    public ArrayList s;
+    public TLRPC.WallPaper t;
 
-    public final int a;
-    public final int b;
-    public final int c;
-    public final int d;
-    public final int e;
-    public final int f;
+    public static void a(z5 z5Var) {
+        ApplicationLoader.applicationContext.getSharedPreferences("themeconfig", 0).edit().remove(z5Var.b()).commit();
+        new File(ApplicationLoader.getFilesDirFixed(), z5Var.a).delete();
+        new File(ApplicationLoader.getFilesDirFixed(), z5Var.b).delete();
+    }
 
-    z5(int i10, int i11, int i12, int i13, int i14, int i15) {
-        this.a = i10;
-        this.b = i11;
-        this.c = i12;
-        this.d = i13;
-        this.e = i14;
-        this.f = i15;
+    public final String b() {
+        if (this.q == null) {
+            return a4.a.t(new StringBuilder(), this.p.a, "_owp");
+        }
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append(this.p.a);
+        sb2.append("_");
+        return a4.a.o(this.q.a, "_owp", sb2);
+    }
+
+    public final void c() {
+        try {
+            String b10 = b();
+            SharedPreferences.Editor edit = ApplicationLoader.applicationContext.getSharedPreferences("themeconfig", 0).edit();
+            JSONObject jSONObject = new JSONObject();
+            jSONObject.put("wall", this.a);
+            jSONObject.put("owall", this.b);
+            jSONObject.put("pColor", this.d);
+            jSONObject.put("pGrColor", this.e);
+            jSONObject.put("pGrColor2", this.f);
+            jSONObject.put("pGrColor3", this.g);
+            jSONObject.put("pGrAngle", this.h);
+            String str = this.c;
+            if (str == null) {
+                str = "";
+            }
+            jSONObject.put("wallSlug", str);
+            jSONObject.put("wBlur", this.i);
+            jSONObject.put("wMotion", this.j);
+            jSONObject.put("pIntensity", this.k);
+            edit.putString(b10, jSONObject.toString());
+            edit.commit();
+        } catch (Throwable th2) {
+            FileLog.e(th2);
+        }
     }
 }

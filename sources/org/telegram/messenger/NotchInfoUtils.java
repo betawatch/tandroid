@@ -7,7 +7,7 @@ import android.graphics.RectF;
 import android.os.Build;
 import android.util.DisplayMetrics;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class NotchInfoUtils {
     private static final String BOTTOM_MARKER = "@bottom";
@@ -15,7 +15,7 @@ public class NotchInfoUtils {
     private static final String LEFT_MARKER = "@left";
     private static final String RIGHT_MARKER = "@right";
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static final class NotchInfo {
         public RectF bounds;
         public int gravity;
@@ -62,7 +62,7 @@ public class NotchInfoUtils {
                 trim = trim.split(BOTTOM_MARKER, 2)[0].trim();
             }
             try {
-                i0.d[] c10 = v7.g8.c(trim);
+                i0.d[] c10 = v7.h8.c(trim);
                 Path path = new Path();
                 i0.d.b(c10, path);
                 Matrix matrix = new Matrix();

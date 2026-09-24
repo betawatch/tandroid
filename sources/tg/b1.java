@@ -1,79 +1,51 @@
 package tg;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.l2;
-import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.PrivacyControlActivity;
+import java.util.ArrayList;
+import java.util.List;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b1 implements Runnable {
+public final /* synthetic */ class b1 implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ n1 b;
+    public final /* synthetic */ m1 b;
 
-    public /* synthetic */ b1(n1 n1Var, int i10) {
+    public /* synthetic */ b1(m1 m1Var, int i10) {
         this.a = i10;
-        this.b = n1Var;
+        this.b = m1Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                this.b.b0(true);
-                break;
-            case 1:
-                this.b.d0.setVisibility(8);
-                break;
-            case 2:
-                n1 n1Var = this.b;
-                n1Var.W();
-                n1Var.i0(true, false);
-                break;
-            case 3:
-                i1 i1Var = this.b.Z;
-                i1Var.b.setHintText(LocaleController.getString(R.string.Search), true);
-                break;
-            case 4:
-                i1 i1Var2 = this.b.Z;
-                i1Var2.b.setHintText(LocaleController.getString(R.string.GiftPremiumUsersSearchHint), true);
-                break;
-            case 5:
-                n1 n1Var2 = this.b;
-                n1Var2.W();
-                n1Var2.i0(true, false);
-                break;
-            case 6:
-                this.b.c0(true);
-                break;
-            case 7:
-                this.b.d0.setVisibility(8);
-                break;
-            case 8:
-                n1 n1Var3 = this.b;
-                n1Var3.W();
-                n1Var3.i0(true, false);
-                break;
-            case 9:
-                n2 n2Var = this.b.n;
-                if (n2Var != null) {
-                    l2 l2Var = new l2();
-                    l2Var.a = true;
-                    n2Var.showAsSheet(new PrivacyControlActivity(11, false), l2Var);
-                    break;
+                m1 m1Var = this.b;
+                ArrayList arrayList = m1Var.r0;
+                arrayList.clear();
+                arrayList.addAll((List) obj);
+                j1 j1Var = m1Var.Y;
+                if (j1Var.N) {
+                    j1Var.setLoading(false);
+                    if (m1Var.d.G) {
+                        m1Var.d0();
+                        break;
+                    }
                 }
                 break;
-            case 10:
-                this.b.h0(true, true);
+            case 1:
+                this.b.dismiss(((Boolean) obj).booleanValue());
                 break;
-            case 11:
-                this.b.dismiss();
+            case 2:
+                m1.T(this.b, (TL_account.TL_birthday) obj);
                 break;
             default:
-                n1 n1Var4 = this.b;
-                n1Var4.W();
-                n1Var4.i0(true, false);
+                m1 m1Var2 = this.b;
+                m1Var2.o0 = (String) obj;
+                pg.c1 c1Var = m1Var2.w0;
+                AndroidUtilities.cancelRunOnUIThread(c1Var);
+                AndroidUtilities.runOnUIThread(c1Var, 350L);
                 break;
         }
     }

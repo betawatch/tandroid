@@ -3,11 +3,11 @@ package xh;
 import android.content.Context;
 import android.view.View;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
-public final class n2 extends yh.y3 {
+public final class n2 extends yh.x3 {
     public final /* synthetic */ int r1;
     public final /* synthetic */ Object s1;
 
@@ -18,34 +18,34 @@ public final class n2 extends yh.y3 {
         this.s1 = o2Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.f3
+    @Override // org.telegram.ui.ActionBar.e3
     public int getBottomInset() {
         switch (this.r1) {
             case 3:
-                return ((yh.y3) this.s1).getBottomInset();
+                return ((yh.x3) this.s1).getBottomInset();
             default:
                 return super.getBottomInset();
         }
     }
 
-    @Override // yh.y3, org.telegram.ui.ActionBar.f3, org.telegram.ui.ActionBar.j2
-    public xc getBulletinFactory() {
+    @Override // yh.x3, org.telegram.ui.ActionBar.e3, org.telegram.ui.ActionBar.i2
+    public yc getBulletinFactory() {
         switch (this.r1) {
             case 0:
-                return xc.a0(((o2) this.s1).a.a);
+                return yc.a0(((o2) this.s1).a.a);
             case 1:
-                return xc.a0(((o2) this.s1).a.a);
+                return yc.a0(((o2) this.s1).a.a);
             case 2:
-                return xc.a0(((o2) this.s1).a.a);
+                return yc.a0(((o2) this.s1).a.a);
             default:
                 return super.getBulletinFactory();
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n2(yh.y3 y3Var, Context context, int i10, long j3, d6 d6Var, View view) {
+    public n2(yh.x3 x3Var, Context context, int i10, long j3, d6 d6Var, View view) {
         super(context, i10, j3, d6Var, view);
         this.r1 = 3;
-        this.s1 = y3Var;
+        this.s1 = x3Var;
     }
 }

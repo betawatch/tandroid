@@ -5,7 +5,7 @@ import android.view.animation.LinearInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class wh1 implements Runnable {
     public final /* synthetic */ int a;
@@ -32,9 +32,9 @@ public final /* synthetic */ class wh1 implements Runnable {
                 this.b.u0.b();
                 break;
             case 4:
-                org.telegram.ui.Components.voip.u1 u1Var = this.b.Z;
-                u1Var.c0 = false;
-                u1Var.invalidate();
+                org.telegram.ui.Components.voip.v1 v1Var = this.b.Z;
+                v1Var.c0 = false;
+                v1Var.invalidate();
                 break;
             case 5:
                 mi1 mi1Var = this.b;
@@ -102,13 +102,13 @@ public final /* synthetic */ class wh1 implements Runnable {
                 mi1Var4.K.setAlpha(0.0f);
                 mi1Var4.M0.setAlpha(0.0f);
                 mi1Var4.Y.b0 = true;
-                AndroidUtilities.runOnUIThread(new hb1(16, mi1Var4, k10), 32L);
+                AndroidUtilities.runOnUIThread(new n81(22, mi1Var4, k10), 32L);
                 break;
             case 12:
                 mi1 mi1Var5 = this.b;
                 mi1Var5.R0 = false;
-                org.telegram.ui.Components.voip.d3 d3Var = mi1Var5.N0;
-                boolean z10 = d3Var != null && d3Var.V;
+                org.telegram.ui.Components.voip.e3 e3Var = mi1Var5.N0;
+                boolean z10 = e3Var != null && e3Var.V;
                 if (mi1Var5.z0 && mi1Var5.x0 && !mi1Var5.C0 && !z10) {
                     mi1Var5.K0 = System.currentTimeMillis();
                     mi1Var5.A(false);
@@ -121,9 +121,9 @@ public final /* synthetic */ class wh1 implements Runnable {
                 mi1 mi1Var6 = this.b;
                 if (mi1Var6.p0 == 3) {
                     mi1Var6.y.b(true, false);
-                    org.telegram.ui.Components.voip.c3 c3Var = mi1Var6.v;
-                    if (!c3Var.R) {
-                        c3Var.R = true;
+                    org.telegram.ui.Components.voip.d3 d3Var = mi1Var6.v;
+                    if (!d3Var.R) {
+                        d3Var.R = true;
                         break;
                     }
                 }

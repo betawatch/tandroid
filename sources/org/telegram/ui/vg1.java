@@ -7,7 +7,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vg1 implements Runnable {
     public final /* synthetic */ int a;
@@ -42,10 +42,10 @@ public final /* synthetic */ class vg1 implements Runnable {
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(zg1Var.getParentActivity());
                     alertDialog$Builder.k(LocaleController.getString(R.string.OK), new qg1(zg1Var, 3));
                     String string = LocaleController.getString(R.string.PasswordReset);
-                    org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-                    b2Var.T = string;
-                    b2Var.R = LocaleController.getString(R.string.TwoStepVerificationTitle);
-                    Dialog showDialog = zg1Var.showDialog(b2Var);
+                    org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
+                    a2Var.T = string;
+                    a2Var.R = LocaleController.getString(R.string.TwoStepVerificationTitle);
+                    Dialog showDialog = zg1Var.showDialog(a2Var);
                     if (showDialog != null) {
                         showDialog.setCanceledOnTouchOutside(false);
                         showDialog.setCancelable(false);

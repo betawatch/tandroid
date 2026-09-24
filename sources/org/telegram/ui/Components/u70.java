@@ -1,18 +1,40 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.PopupWindow;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class u70 extends s4.s0 {
-    public final /* synthetic */ x70 a;
+public final class u70 implements PopupWindow.OnDismissListener {
+    public final /* synthetic */ ViewGroup a;
+    public final /* synthetic */ y70 b;
 
-    public u70(x70 x70Var) {
-        this.a = x70Var;
+    public u70(y70 y70Var, ViewGroup viewGroup) {
+        this.b = y70Var;
+        this.a = viewGroup;
     }
 
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        x70.o(this.a);
+    @Override // android.widget.PopupWindow.OnDismissListener
+    public final void onDismiss() {
+        View view;
+        y70 y70Var = this.b;
+        y70Var.m = null;
+        y70.a(y70Var, this.a);
+        View view2 = y70Var.p0;
+        if (view2 != null) {
+            view2.setPressed(false);
+            y70Var.p0 = null;
+        }
+        if (y70Var.o0 != null && (view = y70Var.f) != null) {
+            view.setOnTouchListener(null);
+        }
+        y70Var.o0 = null;
+        y70Var.N();
+        Runnable runnable = y70Var.p;
+        if (runnable != null) {
+            runnable.run();
+            y70Var.p = null;
+        }
     }
 }

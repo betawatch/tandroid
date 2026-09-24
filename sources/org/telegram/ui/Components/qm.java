@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class qm extends ViewGroup {
     public pm E;
@@ -36,7 +36,7 @@ public final class qm extends ViewGroup {
     public float J;
     public final PointF K;
     public boolean L;
-    public final org.telegram.ui.Cells.l7 M;
+    public final org.telegram.ui.Cells.t6 M;
     public final mm N;
     public int O;
     public final /* synthetic */ rm P;
@@ -71,7 +71,7 @@ public final class qm extends ViewGroup {
         this.G = 0.0f;
         this.K = new PointF();
         this.L = false;
-        this.M = new org.telegram.ui.Cells.l7(this, 7);
+        this.M = new org.telegram.ui.Cells.t6(this, 8);
         this.N = new mm(this);
         this.O = 0;
         new HashMap();
@@ -171,9 +171,9 @@ public final class qm extends ViewGroup {
             ArrayList arrayList2 = ((pm) arrayList.get(i10)).h;
             for (int i11 = 0; i11 < arrayList2.size(); i11++) {
                 om omVar = (om) arrayList2.get(i11);
-                vh.g gVar = omVar.s;
-                if (gVar != null) {
-                    gVar.b(omVar.O.z);
+                vh.f fVar = omVar.s;
+                if (fVar != null) {
+                    fVar.b(omVar.O.z);
                     omVar.s = null;
                 }
             }
@@ -332,7 +332,7 @@ public final class qm extends ViewGroup {
                     MediaController.PhotoEntry b02 = chatAttachAlertPhotoLayout.b0(R);
                     if (b02 != null) {
                         t5Var.d(b02, hashMap2.size() > 1, z12 && chatAttachAlertPhotoLayout.T0 == chatAttachAlertPhotoLayout.U0, R == imVar.h() - 1, wiVar.i0);
-                        if ((wiVar.f0 instanceof org.telegram.ui.xn) && wiVar.T1) {
+                        if ((wiVar.f0 instanceof org.telegram.ui.wn) && wiVar.T1) {
                             t5Var.b(arrayList2.indexOf(Integer.valueOf(b02.imageId)), hashMap2.containsKey(Integer.valueOf(b02.imageId)), false);
                         } else {
                             t5Var.b(-1, hashMap2.containsKey(Integer.valueOf(b02.imageId)), false);
@@ -348,9 +348,9 @@ public final class qm extends ViewGroup {
 
     @Override // android.view.View
     public final void invalidate() {
-        int f7 = hg.c.f(45.0f, AndroidUtilities.displaySize.y - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), e());
-        if (this.s != f7) {
-            this.s = f7;
+        int b10 = org.telegram.messenger.f0.b(45.0f, AndroidUtilities.displaySize.y - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), e());
+        if (this.s != b10) {
+            this.s = b10;
             requestLayout();
         }
         super.invalidate();
@@ -420,7 +420,7 @@ public final class qm extends ViewGroup {
             }
             ArrayList arrayList3 = pmVar.h;
             int i15 = pmVar.l;
-            org.telegram.ui.ActionBar.e5 e5Var = pmVar.x;
+            org.telegram.ui.ActionBar.d5 d5Var = pmVar.x;
             qm qmVar = pmVar.z;
             arrayList = arrayList2;
             float interpolation = pmVar.j.getInterpolation(Math.min(1.0f, (SystemClock.elapsedRealtime() - pmVar.c) / 200.0f));
@@ -433,7 +433,7 @@ public final class qm extends ViewGroup {
             float previewScale = width * lerp * rmVar2.getPreviewScale();
             boolean z11 = z10;
             float previewScale2 = rmVar2.getPreviewScale() * AndroidUtilities.lerp(pmVar.g, pmVar.e, interpolation) * max;
-            if (e5Var != null) {
+            if (d5Var != null) {
                 pmVar.p = 0.0f;
                 float width2 = qmVar.getWidth();
                 float f14 = i15;
@@ -441,9 +441,9 @@ public final class qm extends ViewGroup {
                 pmVar.o = (Math.max(f14, previewScale) + qmVar.getWidth()) / 2.0f;
                 pmVar.q = Math.max(i15 * 2, previewScale2);
                 pmVar.x.o(0, (int) previewScale, (int) previewScale2, 0, 0, 0, false, false);
-                e5Var.setBounds((int) pmVar.n, (int) pmVar.p, (int) pmVar.o, (int) pmVar.q);
-                e5Var.setAlpha((int) ((pmVar.d <= 0.0f ? 1.0f - interpolation : pmVar.f <= 0.0f ? interpolation : 1.0f) * 255.0f));
-                e5Var.d(canvas, pmVar.y, null);
+                d5Var.setBounds((int) pmVar.n, (int) pmVar.p, (int) pmVar.o, (int) pmVar.q);
+                d5Var.setAlpha((int) ((pmVar.d <= 0.0f ? 1.0f - interpolation : pmVar.f <= 0.0f ? interpolation : 1.0f) * 255.0f));
+                d5Var.d(canvas, pmVar.y, null);
                 pmVar.p += f14;
                 pmVar.n += f14;
                 pmVar.q -= f14;
@@ -469,7 +469,7 @@ public final class qm extends ViewGroup {
             } else {
                 if (pmVar.u == null || pmVar.v != j3) {
                     pmVar.v = j3;
-                    pmVar.u = new f01(yh.w7.X0(false, LocaleController.formatPluralStringComma("UnlockPaidContent", (int) j3), 0.7f, null), 14.0f, AndroidUtilities.bold());
+                    pmVar.u = new t01(yh.w7.X0(false, LocaleController.formatPluralStringComma("UnlockPaidContent", (int) j3), 0.7f, null), 14.0f, AndroidUtilities.bold());
                 }
                 float dp = AndroidUtilities.dp(28.0f) + pmVar.u.c;
                 float dp2 = AndroidUtilities.dp(32.0f);
@@ -481,7 +481,7 @@ public final class qm extends ViewGroup {
                 i11 = i13;
                 float f18 = pmVar.s;
                 i12 = i14;
-                rectF.set(A, com.google.android.gms.internal.vision.e2.A(f18, dp2, 2.0f, f17), org.telegram.messenger.z0.a(f16, dp, 2.0f, f15), org.telegram.messenger.z0.a(f18, dp2, 2.0f, f17));
+                rectF.set(A, com.google.android.gms.internal.vision.e2.A(f18, dp2, 2.0f, f17), org.telegram.messenger.f0.a(f16, dp, 2.0f, f15), org.telegram.messenger.f0.a(f18, dp2, 2.0f, f17));
                 paint.setColor(1610612736);
                 float f19 = dp2 / 2.0f;
                 canvas.drawRoundRect(rectF, f19, f19, paint);
@@ -528,7 +528,7 @@ public final class qm extends ViewGroup {
     public final void onMeasure(int i10, int i11) {
         this.a.measure(i10, View.MeasureSpec.makeMeasureSpec(9999, TLObject.FLAG_31));
         if (this.s <= 0) {
-            this.s = hg.c.f(45.0f, AndroidUtilities.displaySize.y - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), e());
+            this.s = org.telegram.messenger.f0.b(45.0f, AndroidUtilities.displaySize.y - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), e());
         }
         super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.max(View.MeasureSpec.getSize(i11), this.s), TLObject.FLAG_30));
     }
@@ -552,7 +552,7 @@ public final class qm extends ViewGroup {
         boolean z10;
         om omVar3;
         int i10;
-        org.telegram.ui.xn xnVar;
+        org.telegram.ui.wn wnVar;
         om omVar4;
         km kmVar;
         ArrayList arrayList;
@@ -679,7 +679,7 @@ public final class qm extends ViewGroup {
                     size3 = i11;
                 }
                 action = motionEvent.getAction();
-                org.telegram.ui.Cells.l7 l7Var = this.M;
+                org.telegram.ui.Cells.t6 t6Var = this.M;
                 if (action != 0 && rmVar.J == null && !rmVar.r.K1 && (((valueAnimator = rmVar.L) == null || !valueAnimator.isRunning()) && pmVar != null && omVar != null && (kmVar2 = pmVar.k) != null && kmVar2.g.contains(omVar.b))) {
                     this.E = pmVar;
                     this.F = omVar;
@@ -695,7 +695,7 @@ public final class qm extends ViewGroup {
                     rmVar.E = y3;
                     if (!this.L) {
                         this.L = true;
-                        postDelayed(l7Var, 16L);
+                        postDelayed(t6Var, 16L);
                     }
                     invalidate();
                 } else if (action == 1 || (omVar5 = rmVar.J) == null) {
@@ -703,7 +703,7 @@ public final class qm extends ViewGroup {
                         z10 = false;
                         if (action != 1 || action == 3) {
                             this.y = 0L;
-                            removeCallbacks(l7Var);
+                            removeCallbacks(t6Var);
                             this.L = false;
                             if (!z10) {
                                 h();
@@ -719,7 +719,7 @@ public final class qm extends ViewGroup {
                         omVar3.n = y10;
                         RectF d10 = omVar3.d();
                         omVar3.o = (float) Math.sqrt(Math.pow(d10.height(), 2.0d) + Math.pow(d10.width(), 2.0d));
-                        ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration((long) w7.p.a(omVar3.o * 0.3f, 250.0f, 550.0f));
+                        ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration((long) w7.q.a(omVar3.o * 0.3f, 250.0f, 550.0f));
                         duration.setInterpolator(rr.j);
                         duration.addUpdateListener(new k6(omVar3, 11));
                         duration.addListener(new nm(omVar3));
@@ -742,20 +742,20 @@ public final class qm extends ViewGroup {
                             }
                             int indexOf = arrayList6.indexOf(this.F.b);
                             int i21 = wiVar.Q0;
-                            org.telegram.ui.ActionBar.n2 n2Var = wiVar.f0;
+                            org.telegram.ui.ActionBar.m2 m2Var = wiVar.f0;
                             if (i21 != 0) {
                                 i10 = 1;
-                            } else if (n2Var instanceof org.telegram.ui.xn) {
-                                xnVar = (org.telegram.ui.xn) n2Var;
+                            } else if (m2Var instanceof org.telegram.ui.wn) {
+                                wnVar = (org.telegram.ui.wn) m2Var;
                                 i10 = 0;
-                                if (n2Var == null) {
-                                    n2Var = LaunchActivity.R();
+                                if (m2Var == null) {
+                                    m2Var = LaunchActivity.R();
                                 }
                                 if (!wiVar.Z1.c0()) {
-                                    AndroidUtilities.hideKeyboard(n2Var.getFragmentView().findFocus());
+                                    AndroidUtilities.hideKeyboard(m2Var.getFragmentView().findFocus());
                                     AndroidUtilities.hideKeyboard(wiVar.getContainer().findFocus());
                                 }
-                                PhotoViewer.t1().J2(null, n2Var, rmVar.a);
+                                PhotoViewer.t1().J2(null, m2Var, rmVar.a);
                                 PhotoViewer.t1().K2(wiVar);
                                 PhotoViewer t12 = PhotoViewer.t1();
                                 int i22 = wiVar.S1;
@@ -763,7 +763,7 @@ public final class qm extends ViewGroup {
                                 t12.h = i22;
                                 t12.n = z11;
                                 this.N.a = arrayList6;
-                                PhotoViewer.t1().f2(new ArrayList(arrayList6), indexOf, i10, false, this.N, xnVar);
+                                PhotoViewer.t1().f2(new ArrayList(arrayList6), indexOf, i10, false, this.N, wnVar);
                                 rmVar.P.getClass();
                                 if (ChatAttachAlertPhotoLayout.T()) {
                                     PhotoViewer t13 = PhotoViewer.t1();
@@ -781,12 +781,12 @@ public final class qm extends ViewGroup {
                             } else {
                                 i10 = 4;
                             }
-                            xnVar = null;
-                            if (n2Var == null) {
+                            wnVar = null;
+                            if (m2Var == null) {
                             }
                             if (!wiVar.Z1.c0()) {
                             }
-                            PhotoViewer.t1().J2(null, n2Var, rmVar.a);
+                            PhotoViewer.t1().J2(null, m2Var, rmVar.a);
                             PhotoViewer.t1().K2(wiVar);
                             PhotoViewer t122 = PhotoViewer.t1();
                             int i222 = wiVar.S1;
@@ -794,7 +794,7 @@ public final class qm extends ViewGroup {
                             t122.h = i222;
                             t122.n = z112;
                             this.N.a = arrayList6;
-                            PhotoViewer.t1().f2(new ArrayList(arrayList6), indexOf, i10, false, this.N, xnVar);
+                            PhotoViewer.t1().f2(new ArrayList(arrayList6), indexOf, i10, false, this.N, wnVar);
                             rmVar.P.getClass();
                             if (ChatAttachAlertPhotoLayout.T()) {
                             }
@@ -826,7 +826,7 @@ public final class qm extends ViewGroup {
                                 int i24 = this.O + 1;
                                 this.O = i24;
                                 rmVar.w.k(0L, 82, photoEntry, null, null, new ai.c9(this, pmVar5, photoEntry, indexOf2, 16));
-                                postDelayed(new kd(this, i24, 2), 4000L);
+                                postDelayed(new ld(this, i24, 2), 4000L);
                             }
                             ValueAnimator valueAnimator2 = rmVar.L;
                             if (valueAnimator2 != null) {
@@ -927,7 +927,7 @@ public final class qm extends ViewGroup {
                 if (action != 1) {
                 }
                 this.y = 0L;
-                removeCallbacks(l7Var);
+                removeCallbacks(t6Var);
                 this.L = false;
                 if (!z10) {
                 }
@@ -939,7 +939,7 @@ public final class qm extends ViewGroup {
         }
         omVar2 = null;
         action = motionEvent.getAction();
-        org.telegram.ui.Cells.l7 l7Var2 = this.M;
+        org.telegram.ui.Cells.t6 t6Var2 = this.M;
         if (action != 0) {
         }
         if (action != 2) {
@@ -952,7 +952,7 @@ public final class qm extends ViewGroup {
         if (action != 1) {
         }
         this.y = 0L;
-        removeCallbacks(l7Var2);
+        removeCallbacks(t6Var2);
         this.L = false;
         if (!z10) {
         }

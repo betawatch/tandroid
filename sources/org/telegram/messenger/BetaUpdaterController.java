@@ -9,7 +9,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.web.HttpGetFileTask;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class BetaUpdaterController {
     private static final long CHECK_INTERVAL = 1200000;
@@ -185,7 +185,7 @@ public class BetaUpdaterController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkForUpdate$2(Runnable runnable, String str) {
-        AndroidUtilities.runOnUIThread(new f0(this, str, runnable, 8));
+        AndroidUtilities.runOnUIThread(new g0(this, str, runnable, 8));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -308,7 +308,7 @@ public class BetaUpdaterController {
         }
         this.checkingForUpdate = true;
         this.firstCheck = false;
-        new org.telegram.ui.web.i1(new v(0, this, runnable)).execute(BuildConfig.BETA_URL);
+        new org.telegram.ui.web.j1(new v(0, this, runnable)).execute(BuildConfig.BETA_URL);
     }
 
     public void downloadUpdate() {

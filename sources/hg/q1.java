@@ -8,9 +8,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.ActionBar.m2;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class q1 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ z1 a;
@@ -51,14 +51,14 @@ public final class q1 extends org.telegram.ui.ActionBar.j {
             return;
         }
         int intValue = ((Integer) arrayList.get(0)).intValue();
-        i11 = ((n2) z1Var).currentAccount;
+        i11 = ((m2) z1Var).currentAccount;
         b2 c10 = c2.f(i11).c(intValue);
         if (c10 == null) {
             return;
         }
         Activity parentActivity = z1Var.getParentActivity();
-        i12 = ((n2) z1Var).currentAccount;
-        d6Var = ((n2) z1Var).resourceProvider;
+        i12 = ((m2) z1Var).currentAccount;
+        d6Var = ((m2) z1Var).resourceProvider;
         z1.d0(parentActivity, i12, null, c10, d6Var, new l4(this, intValue, 2));
     }
 }

@@ -1,6 +1,6 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class p9 extends u9 {
     public final /* synthetic */ q9 f0;
@@ -11,13 +11,13 @@ public final class p9 extends u9 {
         this.f0 = q9Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final void finishFragment() {
         setFinishing(true);
         this.f0.dismiss();
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final void removeSelfFromStack() {
         this.f0.dismiss();
     }

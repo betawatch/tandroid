@@ -10,10 +10,10 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.xc;
-import org.telegram.ui.u31;
+import org.telegram.ui.Components.yc;
+import org.telegram.ui.t31;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k5 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -54,10 +54,10 @@ public final /* synthetic */ class k5 implements View.OnClickListener {
                 TL_stories.StoryItem storyItem = e6Var.O1.a;
                 a5 a5Var = e6Var.c1;
                 org.telegram.ui.ActionBar.d6 d6Var2 = this.c;
-                xc xcVar = new xc(a5Var, d6Var2);
+                yc ycVar = new yc(a5Var, d6Var2);
                 y1 y1Var = new y1(jcVar, 1);
-                int i12 = u31.v;
-                u31.K(i11, context, storyItem.dialogId, true, false, new ArrayList(Collections.singleton(Integer.valueOf(storyItem.id))), xcVar, d6Var2, new byte[0], null, y1Var);
+                int i12 = t31.v;
+                t31.K(i11, context, storyItem.dialogId, true, false, new ArrayList(Collections.singleton(Integer.valueOf(storyItem.id))), ycVar, d6Var2, new byte[0], null, y1Var);
                 v5 v5Var2 = e6Var.t1;
                 if (v5Var2 != null) {
                     v5Var2.a();
@@ -148,9 +148,9 @@ public final /* synthetic */ class k5 implements View.OnClickListener {
                 }
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(e6Var3.getContext(), 0, d6Var);
                 String string = LocaleController.getString(R.string.LiveStoryEndAlertTitle);
-                org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-                b2Var.R = string;
-                b2Var.T = LocaleController.getString(R.string.LiveStoryEndAlertText);
+                org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
+                a2Var.R = string;
+                a2Var.T = LocaleController.getString(R.string.LiveStoryEndAlertText);
                 alertDialog$Builder.k(LocaleController.getString(R.string.LiveStoryEndAlertButton), new ah.b(3, v5Var, jcVar));
                 alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
                 alertDialog$Builder.d(-1);

@@ -13,7 +13,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ua implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -69,17 +69,17 @@ public final /* synthetic */ class ua implements Runnable {
                         if (!tL_error.text.startsWith("STORY_LIVE_ALREADY_")) {
                             fa faVar = lcVar.q0;
                             if (faVar != null) {
-                                new org.telegram.ui.Components.xc(faVar.container, dVar).d0(tL_error, true);
+                                new org.telegram.ui.Components.yc(faVar.container, dVar).d0(tL_error, true);
                                 a0Var.run();
                                 break;
                             }
                         } else {
                             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(lcVar.b, 0, dVar);
                             String string = LocaleController.getString(R.string.LiveStoryAlreadyStreamingTitle);
-                            org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-                            b2Var.R = string;
-                            b2Var.T = LocaleController.getString(R.string.LiveStoryAlreadyStreaming);
-                            hg.c.A(R.string.OK, alertDialog$Builder, null);
+                            org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
+                            a2Var.R = string;
+                            a2Var.T = LocaleController.getString(R.string.LiveStoryAlreadyStreaming);
+                            org.telegram.messenger.f0.o(R.string.OK, alertDialog$Builder, null);
                             break;
                         }
                     }

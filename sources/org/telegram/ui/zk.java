@@ -5,17 +5,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class zk implements LayoutTransition.TransitionListener {
     public yk a;
     public int b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.z c;
-    public final /* synthetic */ xn d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.y c;
+    public final /* synthetic */ wn d;
 
-    public zk(xn xnVar, org.telegram.ui.ActionBar.z zVar) {
-        this.d = xnVar;
-        this.c = zVar;
+    public zk(wn wnVar, org.telegram.ui.ActionBar.y yVar) {
+        this.d = wnVar;
+        this.c = yVar;
     }
 
     @Override // android.animation.LayoutTransition.TransitionListener
@@ -37,7 +37,7 @@ public final class zk implements LayoutTransition.TransitionListener {
                 @Override // android.view.ViewTreeObserver.OnPreDrawListener
                 public final boolean onPreDraw() {
                     org.telegram.ui.ActionBar.k kVar;
-                    kVar = ((org.telegram.ui.ActionBar.n2) zk.this.d).actionBar;
+                    kVar = ((org.telegram.ui.ActionBar.m2) zk.this.d).actionBar;
                     kVar.invalidate();
                     return true;
                 }

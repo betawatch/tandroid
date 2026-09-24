@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public abstract class j0 {
     public static final float[][] a;
@@ -184,7 +184,7 @@ public abstract class j0 {
                 f45 = 1.0f;
                 f14 = 1.0f;
             }
-            float clamp013 = (f45 - Utilities.clamp01(v7.z6.a(f21, f23, f46, b10) / (max2 * 2.0f))) * f11 * 0.5f * f14;
+            float clamp013 = (f45 - Utilities.clamp01(v7.a7.a(f21, f23, f46, b10) / (max2 * 2.0f))) * f11 * 0.5f * f14;
             if (f13 < 1.0f) {
                 clamp013 = AndroidUtilities.lerp(0.0f, clamp013, f13);
             }

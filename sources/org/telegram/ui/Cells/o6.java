@@ -28,29 +28,29 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ct;
-import org.telegram.ui.Components.kw0;
+import org.telegram.ui.Components.lc0;
 import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.zb0;
+import org.telegram.ui.Components.vw0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public class o6 extends FrameLayout {
-    public static final zb0 G;
-    public static final zb0 H;
-    public static final zb0 I;
-    public static final zb0 J;
+    public static final lc0 G;
+    public static final lc0 H;
+    public static final lc0 I;
+    public static final lc0 J;
     public float E;
     public ValueAnimator F;
     public boolean a;
     public final int b;
     public final n6 c;
     public final ai.z5 d;
-    public final org.telegram.ui.ActionBar.i5 e;
+    public final org.telegram.ui.ActionBar.h5 e;
     public final org.telegram.ui.Components.w9 f;
     public final org.telegram.ui.Components.w9 h;
     public int n;
     public final org.telegram.ui.Components.h9 r;
-    public final kw0 s;
+    public final vw0 s;
     public final org.telegram.ui.ActionBar.d6 v;
     public final int w;
     public long x;
@@ -59,16 +59,16 @@ public class o6 extends FrameLayout {
     static {
         int i10 = R.drawable.msg_mini_checks;
         int i11 = org.telegram.ui.ActionBar.h6.y6;
-        G = new zb0(i10, i11);
-        zb0 zb0Var = new zb0(R.drawable.msg_reactions, i11);
-        zb0Var.g = 16;
-        zb0Var.h = 16;
-        zb0Var.i = 5.66f;
-        H = zb0Var;
+        G = new lc0(i10, i11);
+        lc0 lc0Var = new lc0(R.drawable.msg_reactions, i11);
+        lc0Var.g = 16;
+        lc0Var.h = 16;
+        lc0Var.i = 5.66f;
+        H = lc0Var;
         int i12 = R.drawable.mini_repost_story;
         int i13 = org.telegram.ui.ActionBar.h6.hk;
-        I = new zb0(i12, i13);
-        J = new zb0(R.drawable.mini_forward_story, i13);
+        I = new lc0(i12, i13);
+        J = new lc0(R.drawable.mini_forward_story, i13);
     }
 
     public o6(int i10, int i11, Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10, boolean z11) {
@@ -85,7 +85,7 @@ public class o6 extends FrameLayout {
         this.c = n6Var;
         float f7 = i12;
         n6Var.setRoundRadius(AndroidUtilities.dp(f7));
-        addView(n6Var, w7.x5.i(f7, f7, 8388627, 10.0f, 0.0f, 0.0f, 0.0f));
+        addView(n6Var, w7.y5.i(f7, f7, 8388627, 10.0f, 0.0f, 0.0f, 0.0f));
         if (i10 == 1) {
             setClipChildren(false);
         }
@@ -101,31 +101,31 @@ public class o6 extends FrameLayout {
         z5Var.setRightDrawableOutside(true);
         float f10 = i10 == 1 ? 7.66f : 5.33f;
         float f11 = i10 == 1 ? 73.0f : 55.0f;
-        addView(z5Var, w7.x5.i(-1.0f, -2.0f, 55, f11, f10, 12.0f, 0.0f));
-        kw0 kw0Var = new kw0(this);
-        this.s = kw0Var;
+        addView(z5Var, w7.y5.i(-1.0f, -2.0f, 55, f11, f10, 12.0f, 0.0f));
+        vw0 vw0Var = new vw0(this);
+        this.s = vw0Var;
         z5Var.setDrawablePadding(AndroidUtilities.dp(3.0f));
-        z5Var.i(kw0Var.a);
-        org.telegram.ui.ActionBar.i5 i5Var = new org.telegram.ui.ActionBar.i5(context);
-        this.e = i5Var;
-        i5Var.setTextSize(13);
-        i5Var.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.y6, d6Var));
-        i5Var.setEllipsizeByGradient(true);
-        i5Var.setImportantForAccessibility(2);
-        i5Var.setTranslationX(LocaleController.isRTL ? AndroidUtilities.dp(30.0f) : 0.0f);
-        addView(i5Var, w7.x5.i(-1.0f, -2.0f, 55, f11, i10 == 1 ? 24.0f : 19.0f, 20.0f, 0.0f));
+        z5Var.i(vw0Var.a);
+        org.telegram.ui.ActionBar.h5 h5Var = new org.telegram.ui.ActionBar.h5(context);
+        this.e = h5Var;
+        h5Var.setTextSize(13);
+        h5Var.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.y6, d6Var));
+        h5Var.setEllipsizeByGradient(true);
+        h5Var.setImportantForAccessibility(2);
+        h5Var.setTranslationX(LocaleController.isRTL ? AndroidUtilities.dp(30.0f) : 0.0f);
+        addView(h5Var, w7.y5.i(-1.0f, -2.0f, 55, f11, i10 == 1 ? 24.0f : 19.0f, 20.0f, 0.0f));
         if (z11) {
             org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
             this.f = w9Var;
-            addView(w9Var, w7.x5.i(24.0f, 24.0f, 8388629, 0.0f, 0.0f, 12.0f, 0.0f));
+            addView(w9Var, w7.y5.i(24.0f, 24.0f, 8388629, 0.0f, 0.0f, 12.0f, 0.0f));
             org.telegram.ui.Components.w9 w9Var2 = new org.telegram.ui.Components.w9(context);
             this.h = w9Var2;
-            addView(w9Var2, w7.x5.i(22.0f, 35.0f, 8388629, 0.0f, 0.0f, 12.0f, 0.0f));
+            addView(w9Var2, w7.y5.i(22.0f, 35.0f, 8388629, 0.0f, 0.0f, 12.0f, 0.0f));
         }
         if (z10) {
             View view = new View(context);
             view.setBackground(org.telegram.ui.ActionBar.h6.K0(false));
-            addView(view, w7.x5.c(-1.0f, -1));
+            addView(view, w7.y5.c(-1.0f, -1));
         }
     }
 
@@ -143,7 +143,7 @@ public class o6 extends FrameLayout {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.E, f7);
         this.F = ofFloat;
         ofFloat.addUpdateListener(new r(this, 4));
-        this.F.addListener(new org.telegram.ui.ActionBar.z0(this, f7, 2));
+        this.F.addListener(new org.telegram.ui.ActionBar.y0(this, f7, 2));
         this.F.setInterpolator(rr.h);
         this.F.setDuration(420L);
         this.F.start();
@@ -181,7 +181,7 @@ public class o6 extends FrameLayout {
     /* JADX WARN: Type inference failed for: r1v39, types: [android.graphics.drawable.BitmapDrawable] */
     /* JADX WARN: Type inference failed for: r20v0, types: [android.view.View, org.telegram.ui.Cells.o6] */
     /* JADX WARN: Type inference failed for: r22v0, types: [org.telegram.tgnet.TLRPC$Chat] */
-    /* JADX WARN: Type inference failed for: r6v4, types: [android.view.View, org.telegram.ui.ActionBar.i5] */
+    /* JADX WARN: Type inference failed for: r6v4, types: [android.view.View, org.telegram.ui.ActionBar.h5] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -260,7 +260,7 @@ public class o6 extends FrameLayout {
             formatString = LocaleController.formatString("AccDescrLike", R.string.AccDescrLike, new Object[0]);
             z14 = true;
         } else if (reaction != null) {
-            zg.p0 d = zg.p0.d(reaction);
+            zg.o0 d = zg.o0.d(reaction);
             if (d.f != null) {
                 if (w9Var22 != null) {
                     w9Var22.setAnimatedEmojiDrawable(null);
@@ -323,7 +323,7 @@ public class o6 extends FrameLayout {
             if (j3 <= 0) {
                 j10 = storyItem.date;
                 if (j10 != 0) {
-                    StringBuilder h = w.c.h(formatString, " ");
+                    StringBuilder h = v7.j.h(formatString, " ");
                     h.append(LocaleController.formatSeenDate(j10));
                     formatString = h.toString();
                 }
@@ -332,9 +332,9 @@ public class o6 extends FrameLayout {
                 ?? r622 = this.e;
                 if (j10 != 0) {
                     r622.setVisibility(0);
-                    zb0 zb0Var = storyItem != null ? z11 ? J : I : z12 ? G : H;
+                    lc0 lc0Var = storyItem != null ? z11 ? J : I : z12 ? G : H;
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                    spannableStringBuilder.append(zb0Var.a(getContext(), d6Var));
+                    spannableStringBuilder.append(lc0Var.a(getContext(), d6Var));
                     spannableStringBuilder.append((CharSequence) LocaleController.formatSeenDate(j10));
                     if (z11 || storyItem == null) {
                         f10 = 9.0f;

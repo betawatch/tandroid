@@ -4,16 +4,16 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.ui.Components.qc;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ y3 b;
+    public final /* synthetic */ x3 b;
     public final /* synthetic */ String c;
 
-    public /* synthetic */ v1(y3 y3Var, String str, int i10) {
+    public /* synthetic */ v1(x3 x3Var, String str, int i10) {
         this.a = i10;
-        this.b = y3Var;
+        this.b = x3Var;
         this.c = str;
     }
 
@@ -21,7 +21,7 @@ public final /* synthetic */ class v1 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                y3.i1(this.b, this.c);
+                x3.i1(this.b, this.c);
                 break;
             case 1:
                 nf.f.u(r0.getContext(), MessagesController.getInstance(this.b.currentAccount).tonBlockchainExplorerUrl + this.c);
@@ -48,7 +48,7 @@ public final /* synthetic */ class v1 implements Runnable {
                 k10.j();
                 break;
             default:
-                y3.o0(this.b, this.c);
+                x3.o0(this.b, this.c);
                 break;
         }
     }

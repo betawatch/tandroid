@@ -12,7 +12,7 @@ import java.util.Map;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, BuilderType extends zzsh<MessageType, BuilderType>> extends zzpw<MessageType, BuilderType> {
     private static final Map zzb = new ConcurrentHashMap();
@@ -251,7 +251,7 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
             if (zza >= 0) {
                 return zza;
             }
-            throw new IllegalStateException(c.i(zza, "serialized size must be non-negative, was "));
+            throw new IllegalStateException(c.h(zza, "serialized size must be non-negative, was "));
         }
         int i10 = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
         if (i10 != Integer.MAX_VALUE) {
@@ -259,7 +259,7 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
         }
         int zza2 = zzugVar.zza(this);
         if (zza2 < 0) {
-            throw new IllegalStateException(c.i(zza2, "serialized size must be non-negative, was "));
+            throw new IllegalStateException(c.h(zza2, "serialized size must be non-negative, was "));
         }
         this.zzd = (this.zzd & TLObject.FLAG_31) | zza2;
         return zza2;
@@ -300,7 +300,7 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
             if (zzf >= 0) {
                 return zzf;
             }
-            throw new IllegalStateException(c.i(zzf, "serialized size must be non-negative, was "));
+            throw new IllegalStateException(c.h(zzf, "serialized size must be non-negative, was "));
         }
         int i10 = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
         if (i10 != Integer.MAX_VALUE) {
@@ -308,7 +308,7 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
         }
         int zzf2 = zzf(null);
         if (zzf2 < 0) {
-            throw new IllegalStateException(c.i(zzf2, "serialized size must be non-negative, was "));
+            throw new IllegalStateException(c.h(zzf2, "serialized size must be non-negative, was "));
         }
         this.zzd = (this.zzd & TLObject.FLAG_31) | zzf2;
         return zzf2;

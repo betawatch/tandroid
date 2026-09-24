@@ -1,67 +1,22 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class jj0 extends s4.h0 {
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Context d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.d6 e;
-    public final /* synthetic */ boolean f;
-    public final /* synthetic */ qj0 h;
+public final class jj0 extends ImageReceiver {
+    public final /* synthetic */ lj0 a;
 
-    public jj0(qj0 qj0Var, int i10, Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10) {
-        this.h = qj0Var;
-        this.c = i10;
-        this.d = context;
-        this.e = d6Var;
-        this.f = z10;
+    public jj0(lj0 lj0Var) {
+        this.a = lj0Var;
     }
 
-    @Override // s4.h0
-    public final int h() {
-        qj0 qj0Var = this.h;
-        return qj0Var.n.size() + ((qj0Var.H.isEmpty() || MessagesController.getInstance(this.c).premiumFeaturesBlocked()) ? 0 : 1);
-    }
-
-    @Override // s4.h0
-    public final int j(int i10) {
-        return i10 < this.h.n.size() ? 0 : 1;
-    }
-
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        if (c1Var.f == 0) {
-            ((org.telegram.ui.Cells.o6) c1Var.a).setUserReaction((TLRPC.MessagePeerReaction) this.h.n.get(i10));
+    @Override // org.telegram.messenger.ImageReceiver
+    public final boolean setImageBitmapByKey(Drawable drawable, String str, int i10, boolean z10, int i11) {
+        if (drawable != null) {
+            this.a.c();
         }
-    }
-
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        FrameLayout o6Var;
-        if (i10 != 0) {
-            qj0 qj0Var = this.h;
-            ua0 ua0Var = qj0Var.J;
-            if (ua0Var == null) {
-                qj0Var.i();
-            } else if (ua0Var.getParent() != null) {
-                ((ViewGroup) qj0Var.J.getParent()).removeView(qj0Var.J);
-            }
-            Context context = this.d;
-            o6Var = new FrameLayout(context);
-            View view = new View(context);
-            view.setBackgroundColor(org.telegram.ui.ActionBar.h6.l1(0.06f, org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.E8, this.e)));
-            o6Var.addView(view, w7.x5.c(8.0f, -1));
-            o6Var.addView(qj0Var.J, w7.x5.d(-1, -1.0f, 0, 0.0f, 8.0f, 0.0f, 0.0f));
-        } else {
-            o6Var = new org.telegram.ui.Cells.o6(0, this.c, this.d, this.e, true, this.f);
-        }
-        return new wk0(o6Var);
+        return super.setImageBitmapByKey(drawable, str, i10, z10, i11);
     }
 }

@@ -1,84 +1,23 @@
 package qg;
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import ci.a7;
 import ci.b6;
-import java.util.ArrayList;
+import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.UserConfig;
-import org.telegram.ui.Components.ja;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.wk0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class d1 extends ll0 {
-    public final /* synthetic */ Context c;
-    public final /* synthetic */ ja d;
-    public final /* synthetic */ a7 e;
-    public final /* synthetic */ boolean f;
-    public final /* synthetic */ b6 h;
+public final class d1 extends g.p {
+    public final /* synthetic */ b6 c;
 
-    public d1(b6 b6Var, Context context, ja jaVar, a7 a7Var, boolean z10) {
-        this.h = b6Var;
-        this.c = context;
-        this.d = jaVar;
-        this.e = a7Var;
-        this.f = z10;
+    public d1(b6 b6Var) {
+        this.c = b6Var;
     }
 
-    @Override // org.telegram.ui.Components.ll0
-    public final boolean D(s4.c1 c1Var) {
-        return true;
-    }
-
-    @Override // s4.h0
-    public final int h() {
-        return this.h.s0.size();
-    }
-
-    @Override // s4.h0
-    public final int j(int i10) {
-        return ((MessageObject) this.h.s0.get((r0.size() - 1) - i10)).contentType;
-    }
-
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        boolean z10;
+    @Override // g.p
+    public final int i(int i10) {
         MessageObject.GroupedMessagePosition position;
-        b6 b6Var = this.h;
-        ArrayList arrayList = b6Var.s0;
-        MessageObject messageObject = (MessageObject) arrayList.get((arrayList.size() - 1) - i10);
-        View view = c1Var.a;
-        if (!(view instanceof org.telegram.ui.Cells.t1)) {
-            if (view instanceof org.telegram.ui.Cells.w0) {
-                ((org.telegram.ui.Cells.w0) view).setMessageObject(messageObject);
-                return;
-            }
-            return;
-        }
-        org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) view;
-        MessageObject.GroupedMessages groupedMessages = b6Var.t0;
-        if (groupedMessages == null || (position = groupedMessages.getPosition(messageObject)) == null) {
-            z10 = false;
-        } else {
-            z10 = position.minY != 0;
-        }
-        MessageObject.GroupedMessages groupedMessages2 = b6Var.t0;
-        t1Var.X3(messageObject, groupedMessages2, groupedMessages2 != null, z10, false, false);
-    }
-
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        com.google.firebase.messaging.n nVar = this.h.D0;
-        Context context = this.c;
-        if (i10 == 1) {
-            return new wk0(new b1(this, context, nVar));
-        }
-        c1 c1Var = new c1(this, context, UserConfig.selectedAccount, nVar);
-        c1Var.N7 = true;
-        return new wk0(c1Var);
+        int size = (r0.s0.size() - 1) - i10;
+        MessageObject.GroupedMessages groupedMessages = this.c.t0;
+        return (groupedMessages == null || size < 0 || size >= groupedMessages.messages.size() || (position = groupedMessages.getPosition(groupedMessages.messages.get(size))) == null) ? MediaDataController.MAX_STYLE_RUNS_COUNT : position.spanSize;
     }
 }

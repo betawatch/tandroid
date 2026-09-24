@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class q30 implements gg.b2 {
     public final /* synthetic */ r30 a;
@@ -12,17 +12,7 @@ public final class q30 implements gg.b2 {
     }
 
     @Override // gg.b2
-    public final /* synthetic */ a0.i F() {
-        return null;
-    }
-
-    @Override // gg.b2
-    public final /* synthetic */ boolean O(int i10) {
-        return true;
-    }
-
-    @Override // gg.b2
-    public final void h(int i10) {
+    public final void a(int i10) {
         r30 r30Var = this.a;
         s30 s30Var = r30Var.w;
         if (i10 < 0 || i10 != r30Var.n || r30Var.h) {
@@ -41,11 +31,21 @@ public final class q30 implements gg.b2 {
     }
 
     @Override // gg.b2
-    public final a0.i w() {
+    public final a0.i i() {
         return this.a.w.e0;
     }
 
     @Override // gg.b2
-    public final /* synthetic */ void Q(ArrayList arrayList) {
+    public final /* synthetic */ a0.i o() {
+        return null;
+    }
+
+    @Override // gg.b2
+    public final /* synthetic */ boolean s(int i10) {
+        return true;
+    }
+
+    @Override // gg.b2
+    public final /* synthetic */ void F(ArrayList arrayList) {
     }
 }

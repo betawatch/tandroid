@@ -1,44 +1,99 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.view.accessibility.AccessibilityNodeInfo;
+import android.graphics.ColorFilter;
+import android.graphics.CornerPathEffect;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.text.StaticLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class lm0 extends y5 {
-    public final e6 d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ ScrollSlidingTextTabStrip f;
+public final class lm0 extends Drawable {
+    public int a = 255;
+    public final /* synthetic */ h90 b;
+    public final /* synthetic */ int[] c;
+    public final /* synthetic */ org.telegram.ui.Cells.u1 d;
+    public final /* synthetic */ int[] e;
+    public final /* synthetic */ Bitmap f;
+    public final /* synthetic */ RectF g;
+    public final /* synthetic */ Paint h;
+    public final /* synthetic */ Paint i;
+    public final /* synthetic */ StaticLayout j;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lm0(ScrollSlidingTextTabStrip scrollSlidingTextTabStrip, Context context, int i10) {
-        super(context);
-        this.f = scrollSlidingTextTabStrip;
-        this.e = i10;
-        this.d = new e6(this, 360L, rr.h);
+    public lm0(h90 h90Var, int[] iArr, org.telegram.ui.Cells.u1 u1Var, int[] iArr2, Bitmap bitmap, RectF rectF, Paint paint, Paint paint2, StaticLayout staticLayout) {
+        this.b = h90Var;
+        this.c = iArr;
+        this.d = u1Var;
+        this.e = iArr2;
+        this.f = bitmap;
+        this.g = rectF;
+        this.h = paint;
+        this.i = paint2;
+        this.j = staticLayout;
     }
 
-    @Override // org.telegram.ui.Components.y5, android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        Canvas canvas2;
-        float e = this.d.e(this.f.n0);
-        if (e > 0.0f) {
-            canvas2 = canvas;
-            canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (AndroidUtilities.lerp(1.0f, 0.5f, e) * 255.0f));
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        if (this.a <= 0) {
+            return;
+        }
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(getBounds());
+        float f7 = rectF.left;
+        CornerPathEffect cornerPathEffect = h90.w;
+        rectF.left = f7 - (AndroidUtilities.dp(5.0f) / 2.0f);
+        canvas.save();
+        canvas.saveLayerAlpha(rectF, this.a, 31);
+        int[] iArr = this.c;
+        canvas.translate(iArr[0], iArr[1]);
+        h90 h90Var = this.b;
+        org.telegram.ui.Cells.u1 u1Var = this.d;
+        if (u1Var == null || !u1Var.C1()) {
+            canvas.drawPath(h90Var, this.i);
         } else {
-            canvas2 = canvas;
+            org.telegram.ui.ActionBar.d5 d5Var = u1Var.t8;
+            if (d5Var == null || d5Var.c == null) {
+                canvas.translate(-iArr[0], -iArr[1]);
+                int[] iArr2 = this.e;
+                canvas.translate(iArr2[0], u1Var.getPaddingTop() + iArr2[1]);
+                u1Var.D1(canvas, true, false);
+                canvas.translate(-iArr2[0], (-iArr2[1]) - u1Var.getPaddingTop());
+                canvas.translate(iArr[0], iArr[1]);
+            } else {
+                canvas.save();
+                u1Var.setBackgroundTopY(true);
+                canvas.translate(0.0f, -u1Var.t8.r);
+                canvas.drawPaint(u1Var.t8.c);
+                canvas.restore();
+            }
+            Bitmap bitmap = this.f;
+            if (bitmap != null) {
+                canvas.save();
+                RectF rectF2 = this.g;
+                canvas.drawBitmap(bitmap, rectF2.left, rectF2.top, this.h);
+                canvas.restore();
+            }
         }
-        super.onDraw(canvas2);
-        if (e > 0.0f) {
-            canvas2.restore();
-        }
+        canvas.clipPath(h90Var);
+        this.j.draw(canvas);
+        canvas.restore();
     }
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setSelected(this.f.r == this.e);
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.a = i10;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

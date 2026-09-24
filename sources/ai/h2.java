@@ -5,7 +5,7 @@ import android.view.WindowManager;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class h2 implements ScaleGestureDetector.OnScaleGestureListener {
     public final void a() {
@@ -24,7 +24,7 @@ public final class h2 implements ScaleGestureDetector.OnScaleGestureListener {
     @Override // android.view.ScaleGestureDetector.OnScaleGestureListener
     public final boolean onScale(ScaleGestureDetector scaleGestureDetector) {
         m2 m2Var = m2.Z;
-        m2Var.M = w7.p.a(scaleGestureDetector.getScaleFactor() * m2Var.M, 0.6f, m2Var.a);
+        m2Var.M = w7.q.a(scaleGestureDetector.getScaleFactor() * m2Var.M, 0.6f, m2Var.a);
         m2Var.J = (int) (m2Var.n() * m2Var.M);
         m2Var.K = (int) (m2Var.m() * m2Var.M);
         AndroidUtilities.runOnUIThread(new f(this, 3));
@@ -39,7 +39,7 @@ public final class h2 implements ScaleGestureDetector.OnScaleGestureListener {
         o1.k kVar3 = m2Var.Q;
         kVar3.b = m2Var.O;
         kVar3.c = true;
-        kVar3.u.i = w7.p.a(scaleGestureDetector.getFocusY() - (m2Var.K / 2.0f), AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - m2Var.K) - AndroidUtilities.dp(16.0f));
+        kVar3.u.i = w7.q.a(scaleGestureDetector.getFocusY() - (m2Var.K / 2.0f), AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - m2Var.K) - AndroidUtilities.dp(16.0f));
         o1.k kVar4 = m2Var.Q;
         if (!kVar4.f) {
             kVar4.f();

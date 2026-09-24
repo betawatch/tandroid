@@ -5,8 +5,8 @@ import java.util.Iterator;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import org.telegram.tgnet.ConnectionsManager;
-import v7.r7;
-import v7.t7;
+import v7.s7;
+import v7.u7;
 import zd.a0;
 import zd.b0;
 import zd.b2;
@@ -16,7 +16,7 @@ import zd.f1;
 import zd.g2;
 import zd.w0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public abstract class a {
     public static final v a = new v("NO_DECISION", 0);
@@ -71,14 +71,14 @@ public abstract class a {
                     runtimeException = th2;
                 } else {
                     runtimeException = new RuntimeException("Exception while trying to handle coroutine exception", th3);
-                    r7.a(runtimeException, th2);
+                    s7.a(runtimeException, th2);
                 }
                 Thread currentThread = Thread.currentThread();
                 currentThread.getUncaughtExceptionHandler().uncaughtException(currentThread, runtimeException);
             }
         }
         try {
-            r7.a(th2, new g(hVar));
+            s7.a(th2, new g(hVar));
         } catch (Throwable unused) {
         }
         Thread currentThread2 = Thread.currentThread();
@@ -172,7 +172,7 @@ public abstract class a {
             } else {
                 CancellationException cancellationException = f1Var.getCancellationException();
                 hVar.c(vVar, cancellationException);
-                hVar.resumeWith(t7.a(cancellationException));
+                hVar.resumeWith(u7.a(cancellationException));
             }
             while (a10.j()) {
             }

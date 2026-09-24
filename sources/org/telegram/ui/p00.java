@@ -1,57 +1,95 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.view.ViewGroup;
+import android.view.ViewPropertyAnimator;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Emoji;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class p00 extends org.telegram.ui.Components.p6 {
-    public final /* synthetic */ int s = 0;
-    public final Object v;
-    public final /* synthetic */ ViewGroup w;
+public final class p00 extends org.telegram.ui.Cells.m4 {
+    public final TextView r;
+    public final o00 s;
+    public int v;
+    public final org.telegram.ui.Components.h5 w;
+    public boolean x;
+    public final /* synthetic */ b10 y;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p00(yh.k7 k7Var, Context context, Drawable drawable) {
-        super(context, false, false, false);
-        this.w = k7Var;
-        this.v = drawable;
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public p00(b10 b10Var, Context context) {
+        super(context, r2, 22, 15, false, r6);
+        org.telegram.ui.ActionBar.d6 d6Var;
+        this.y = b10Var;
+        int i10 = org.telegram.ui.ActionBar.h6.L6;
+        d6Var = ((org.telegram.ui.ActionBar.m2) b10Var).resourceProvider;
+        TextView textView = new TextView(getContext());
+        this.r = textView;
+        textView.setTextSize(1, 14.0f);
+        textView.setTextColor(b10Var.getThemedColor(org.telegram.ui.ActionBar.h6.z6));
+        org.telegram.messenger.ok.l(b10Var.getUserConfig().isPremium() ? R.string.FolderTagNoColor : R.string.FolderTagNoColorPremium, textView, 5);
+        int i11 = (LocaleController.isRTL ? 3 : 5) | 48;
+        float f7 = this.b;
+        addView(textView, w7.y5.d(-1, -1.0f, i11, f7, 16.66f, f7, this.c));
+        textView.setAlpha(0.0f);
+        o00 o00Var = new o00(this, getContext());
+        this.s = o00Var;
+        this.w = new org.telegram.ui.Components.h5(o00Var, 320L, org.telegram.ui.Components.rr.h, 0);
+        o00Var.setTextSize(AndroidUtilities.dp(10.0f));
+        o00Var.setTypeface(AndroidUtilities.bold());
+        o00Var.setGravity(5);
+        o00Var.setPadding(AndroidUtilities.dp(4.66f), 0, AndroidUtilities.dp(4.66f), 0);
+        int i12 = LocaleController.isRTL ? 3 : 5;
+        float f10 = this.b;
+        addView(o00Var, w7.y5.d(-1, -1.0f, i12 | 48, f10, 16.66f, f10, this.c));
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        switch (this.s) {
-            case 0:
-                q00 q00Var = (q00) this.w;
-                int a2 = q00Var.w.a(q00Var.v, false);
-                setTextColor(a2);
-                Paint paint = (Paint) this.v;
-                paint.setColor(org.telegram.ui.ActionBar.h6.l1(org.telegram.ui.ActionBar.h6.I.q() ? 0.2f : 0.1f, a2));
-                RectF rectF = AndroidUtilities.rectTmp;
-                rectF.set((getWidth() - getDrawable().d()) - AndroidUtilities.dpf2(9.32f), (getHeight() - AndroidUtilities.dpf2(14.66f)) / 2.0f, getWidth(), (AndroidUtilities.dpf2(14.66f) + getHeight()) / 2.0f);
-                canvas.drawRoundRect(rectF, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), paint);
-                super.dispatchDraw(canvas);
-                break;
-            default:
-                Drawable drawable = (Drawable) this.v;
-                if (!((yh.k7) this.w).d) {
-                    int measuredWidth = (int) ((getMeasuredWidth() - getDrawable().d()) - AndroidUtilities.dp(20.0f));
-                    drawable.setBounds(measuredWidth, org.telegram.messenger.ul.y(17.0f, getMeasuredHeight(), 2), AndroidUtilities.dp(17.0f) + measuredWidth, (AndroidUtilities.dp(17.0f) + getMeasuredHeight()) / 2);
-                    drawable.draw(canvas);
-                }
-                super.dispatchDraw(canvas);
-                break;
+    public final void d(int i10, boolean z10) {
+        b10 b10Var = this.y;
+        String string = LocaleController.getString(b10Var.getUserConfig().isPremium() ? R.string.FolderTagNoColor : R.string.FolderTagNoColorPremium);
+        TextView textView = this.r;
+        textView.setText(string);
+        int i11 = 0;
+        boolean z11 = i10 < 0;
+        if (!z11) {
+            int[] iArr = org.telegram.ui.ActionBar.h6.r8;
+            i11 = b10Var.getThemedColor(iArr[i10 % iArr.length]);
+        }
+        this.v = i11;
+        o00 o00Var = this.s;
+        if (!z11) {
+            o00Var.setEmojiColor(i11);
+        }
+        if (!z10) {
+            this.w.a(this.v, true);
+        }
+        if (z11 != this.x) {
+            this.x = z11;
+            ViewPropertyAnimator duration = textView.animate().alpha(z11 ? 1.0f : 0.0f).setDuration(320L);
+            org.telegram.ui.Components.rr rrVar = org.telegram.ui.Components.rr.h;
+            duration.setInterpolator(rrVar).start();
+            o00Var.animate().alpha(z11 ? 0.0f : 1.0f).setDuration(320L).setInterpolator(rrVar).start();
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p00(q00 q00Var, Context context) {
-        super(context, false, true, true);
-        this.w = q00Var;
-        this.v = new Paint(1);
+    public final void e(CharSequence charSequence, boolean z10) {
+        if (charSequence == null) {
+            charSequence = "";
+        }
+        boolean z11 = false;
+        if (charSequence.length() > 12) {
+            charSequence = charSequence.subSequence(0, 12);
+        }
+        o00 o00Var = this.s;
+        CharSequence replaceEmoji = Emoji.replaceEmoji(charSequence, o00Var.getPaint().getFontMetricsInt(), false);
+        if (z10 && !LocaleController.isRTL) {
+            z11 = true;
+        }
+        o00Var.c(replaceEmoji, z11, true);
     }
 }

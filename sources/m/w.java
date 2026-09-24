@@ -12,9 +12,9 @@ import android.util.AttributeSet;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.widget.MultiAutoCompleteTextView;
-import v7.v7;
+import v7.w7;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class w extends MultiAutoCompleteTextView implements u0.k {
     public static final int[] d = {R.attr.popupBackground};
@@ -27,7 +27,7 @@ public final class w extends MultiAutoCompleteTextView implements u0.k {
         super(context, attributeSet, org.telegram.messenger.beta.R.attr.autoCompleteTextViewStyle);
         b3.a(context);
         a3.a(this, getContext());
-        lf.i Q = lf.i.Q(getContext(), attributeSet, d, org.telegram.messenger.beta.R.attr.autoCompleteTextViewStyle);
+        la.h Q = la.h.Q(getContext(), attributeSet, d, org.telegram.messenger.beta.R.attr.autoCompleteTextViewStyle);
         if (((TypedArray) Q.c).hasValue(0)) {
             setDropDownBackgroundDrawable(Q.F(0));
         }
@@ -101,7 +101,7 @@ public final class w extends MultiAutoCompleteTextView implements u0.k {
     @Override // android.widget.TextView, android.view.View
     public final InputConnection onCreateInputConnection(EditorInfo editorInfo) {
         InputConnection onCreateInputConnection = super.onCreateInputConnection(editorInfo);
-        w7.n.a(editorInfo, onCreateInputConnection, this);
+        w7.o.a(editorInfo, onCreateInputConnection, this);
         return this.c.c(onCreateInputConnection, editorInfo);
     }
 
@@ -143,7 +143,7 @@ public final class w extends MultiAutoCompleteTextView implements u0.k {
 
     @Override // android.widget.AutoCompleteTextView
     public void setDropDownBackgroundResource(int i10) {
-        setDropDownBackgroundDrawable(v7.b(getContext(), i10));
+        setDropDownBackgroundDrawable(w7.b(getContext(), i10));
     }
 
     public void setEmojiCompatEnabled(boolean z10) {

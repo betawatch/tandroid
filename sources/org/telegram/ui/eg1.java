@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class eg1 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -51,10 +51,10 @@ public final /* synthetic */ class eg1 implements RequestDelegate {
                                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(twoStepVerificationActivity2.getParentActivity());
                                     alertDialog$Builder.h(LocaleController.getString(R.string.OK), null);
                                     String string = LocaleController.getString(R.string.ResetPassword);
-                                    org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-                                    b2Var.R = string;
-                                    b2Var.T = LocaleController.getString(R.string.RestorePasswordResetPasswordOk);
-                                    twoStepVerificationActivity2.showDialog(b2Var, new s5(twoStepVerificationActivity2, 18));
+                                    org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
+                                    a2Var.R = string;
+                                    a2Var.T = LocaleController.getString(R.string.RestorePasswordResetPasswordOk);
+                                    twoStepVerificationActivity2.showDialog(a2Var, new r5(twoStepVerificationActivity2, 18));
                                     break;
                                 }
                                 break;
@@ -125,10 +125,10 @@ public final /* synthetic */ class eg1 implements RequestDelegate {
                                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(twoStepVerificationActivity22.getParentActivity());
                                     alertDialog$Builder.h(LocaleController.getString(R.string.OK), null);
                                     String string = LocaleController.getString(R.string.ResetPassword);
-                                    org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-                                    b2Var.R = string;
-                                    b2Var.T = LocaleController.getString(R.string.RestorePasswordResetPasswordOk);
-                                    twoStepVerificationActivity22.showDialog(b2Var, new s5(twoStepVerificationActivity22, 18));
+                                    org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
+                                    a2Var.R = string;
+                                    a2Var.T = LocaleController.getString(R.string.RestorePasswordResetPasswordOk);
+                                    twoStepVerificationActivity22.showDialog(a2Var, new r5(twoStepVerificationActivity22, 18));
                                     break;
                                 }
                                 break;

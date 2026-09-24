@@ -16,10 +16,10 @@ import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.p6;
 import org.telegram.ui.Components.pq;
 import org.telegram.ui.Components.w9;
-import w7.x5;
+import w7.y5;
 import yh.w7;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class k extends LinearLayout implements NotificationCenter.NotificationCenterDelegate {
     public final w9 a;
@@ -53,14 +53,14 @@ public final class k extends LinearLayout implements NotificationCenter.Notifica
         p6Var3.setTextColor(h6.v0(i10, d6Var));
         p6Var3.setTypeface(AndroidUtilities.bold());
         p6Var3.setGravity(17);
-        addView(p6Var3, x5.o(66, -2, 0.0f, 16));
-        addView(w9Var, x5.o(32, 32, 0.0f, 16));
-        addView(p6Var, x5.o(0, -2, 1.0f, 16));
-        addView(p6Var2, x5.p(-2, -2, 0.0f, 16, 0, 0, 20, 0));
+        addView(p6Var3, y5.o(66, -2, 0.0f, 16));
+        addView(w9Var, y5.o(32, 32, 0.0f, 16));
+        addView(p6Var, y5.o(0, -2, 1.0f, 16));
+        addView(p6Var2, y5.p(-2, -2, 0.0f, 16, 0, 0, 20, 0));
     }
 
     public final void a(long j3, boolean z10) {
-        this.d.c(w7.X0(false, hg.c.k((int) j3, ',', new StringBuilder("⭐️")), 0.78f, this.e), z10, true);
+        this.d.c(w7.X0(false, org.telegram.messenger.f0.h((int) j3, ',', new StringBuilder("⭐️")), 0.78f, this.e), z10, true);
     }
 
     public final void b(int i10, boolean z10, boolean z11) {

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class m implements r {
     public static final int[] e = {5, 4, 12, 8, 3, 10, 9, 11, 6, 2, 0, 1, 7, 16, 15, 14, 17, 18, 19, 20, 21};
@@ -48,14 +48,14 @@ public final class m implements r {
                 arrayList.add(new u3.d(this.c, this.b ? 0 : 2));
                 break;
             case 7:
-                arrayList.add(new v3.e(1));
+                arrayList.add(new v3.d(1));
                 break;
             case 8:
                 qb.b bVar = this.c;
                 int i11 = this.b ? 0 : 32;
                 e9.g0 g0Var = e9.i0.b;
-                arrayList.add(new w3.h(bVar, i11, null, a1.e, null));
-                arrayList.add(new w3.k(this.c, this.b ? 0 : 16));
+                arrayList.add(new w3.i(bVar, i11, null, a1.e, null));
+                arrayList.add(new w3.l(this.c, this.b ? 0 : 16));
                 break;
             case 9:
                 arrayList.add(new x3.d());
@@ -127,11 +127,11 @@ public final class m implements r {
             List list = (List) map.get("Content-Type");
             if (list != null && !list.isEmpty()) {
                 str = (String) list.get(0);
-                a2 = v7.g0.a(str);
+                a2 = v7.i0.a(str);
                 if (a2 != -1) {
                     a(a2, arrayList);
                 }
-                b10 = v7.g0.b(uri);
+                b10 = v7.i0.b(uri);
                 if (b10 != -1 && b10 != a2) {
                     a(b10, arrayList);
                 }
@@ -143,10 +143,10 @@ public final class m implements r {
                 }
             }
             str = null;
-            a2 = v7.g0.a(str);
+            a2 = v7.i0.a(str);
             if (a2 != -1) {
             }
-            b10 = v7.g0.b(uri);
+            b10 = v7.i0.b(uri);
             if (b10 != -1) {
                 a(b10, arrayList);
             }

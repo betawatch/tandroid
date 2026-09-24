@@ -21,7 +21,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class j00 extends View {
     public float E;
@@ -520,7 +520,7 @@ public final class j00 extends View {
             f28 = (f28 * f30) + ((f14 - f30) * f29);
         }
         float dp3 = (z16 && this.R == null) ? (f13 - this.a0) + f15 + f28 + AndroidUtilities.dp(5.0f) : AndroidUtilities.dp(5.0f) + f13 + f28;
-        int y3 = org.telegram.messenger.ul.y(17.333f, getMeasuredHeight(), 2);
+        int A = org.telegram.messenger.ok.A(17.333f, getMeasuredHeight(), 2);
         if (z10 || ((!l00Var.n && l00Var.w == f16) || str2 != null)) {
             paint2.setAlpha(255);
         } else {
@@ -539,8 +539,8 @@ public final class j00 extends View {
                     float f35 = this.x;
                     f11 = (f11 * f35) + ((f14 - f35) * f34);
                 }
-                float f36 = y3;
-                float dp4 = AndroidUtilities.dp(f17) + y3;
+                float f36 = A;
+                float dp4 = AndroidUtilities.dp(f17) + A;
                 rectF = this.f;
                 rectF.set(dp3, f36, f18 + dp3, dp4);
                 if (!z13 || z14) {
@@ -605,7 +605,7 @@ public final class j00 extends View {
                     if (!z10) {
                         textPaint5.setAlpha((int) ((f14 - l00Var.w) * 255.0f));
                     }
-                    canvas2.drawText(str2, ((rectF.width() - f11) / 2.0f) + rectF.left, AndroidUtilities.dp(12.5f) + y3, textPaint5);
+                    canvas2.drawText(str2, ((rectF.width() - f11) / 2.0f) + rectF.left, AndroidUtilities.dp(12.5f) + A, textPaint5);
                 }
                 if (!z13 || z14) {
                     canvas2.restore();
@@ -661,8 +661,8 @@ public final class j00 extends View {
         f18 = i22;
         if (z15) {
         }
-        float f362 = y3;
-        float dp42 = AndroidUtilities.dp(f17) + y3;
+        float f362 = A;
+        float dp42 = AndroidUtilities.dp(f17) + A;
         rectF = this.f;
         rectF.set(dp3, f362, f18 + dp3, dp42);
         if (!z13) {

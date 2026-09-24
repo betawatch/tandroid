@@ -19,19 +19,18 @@ import android.util.Log;
 import android.util.SparseBooleanArray;
 import android.view.KeyEvent;
 import b2.s1;
-import gg.x1;
 import j$.util.Objects;
 import java.lang.reflect.Field;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
-import v7.l8;
+import v7.m8;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class a0 {
-    public static final l1 B = new l1(1);
+    public static final k1 B = new k1(1);
     public final Bundle A;
     public final Object a = new Object();
     public final Uri b;
@@ -39,10 +38,10 @@ public class a0 {
     public final w d;
     public final na.d e;
     public final Context f;
-    public final b1 g;
-    public final l0 h;
+    public final a1 g;
+    public final k0 h;
     public final String i;
-    public final m1 j;
+    public final l1 j;
     public final t k;
     public final Handler l;
     public final n4.y m;
@@ -51,8 +50,8 @@ public class a0 {
     public final boolean p;
     public final boolean q;
     public final e9.i0 r;
-    public d1 s;
-    public f1 t;
+    public c1 s;
+    public e1 t;
     public y u;
     public boolean v;
     public final long w;
@@ -73,23 +72,23 @@ public class a0 {
         this.m = yVar;
         this.p = true;
         this.q = true;
-        b1 b1Var2 = new b1(this);
-        this.g = b1Var2;
+        a1 a1Var = new a1(this);
+        this.g = a1Var;
         this.o = new Handler(Looper.getMainLooper());
         Looper y02 = b1Var.y0();
         Handler handler = new Handler(y02);
         this.l = handler;
-        this.s = d1.F;
+        this.s = c1.F;
         this.c = new x(this, y02);
         this.d = new w(this, y02);
         Uri build = new Uri.Builder().scheme(a0.class.getName()).appendPath("pip-media-session").appendPath(String.valueOf(SystemClock.elapsedRealtime())).build();
         this.b = build;
-        l0 l0Var = new l0(this, build, handler, bundle, i0Var, i0Var2, p.e, p.f, bundle2);
-        this.h = l0Var;
-        this.j = new m1(Process.myUid(), context.getPackageName(), b1Var2, bundle, ((n4.r) l0Var.k.b).c.b);
-        f1 f1Var = new f1(b1Var);
-        this.t = f1Var;
-        e2.d0.U(handler, new x1(29, this, f1Var));
+        k0 k0Var = new k0(this, build, handler, bundle, i0Var, i0Var2, p.e, p.f, bundle2);
+        this.h = k0Var;
+        this.j = new l1(Process.myUid(), context.getPackageName(), a1Var, bundle, ((n4.r) k0Var.k.b).c.b);
+        e1 e1Var = new e1(b1Var);
+        this.t = e1Var;
+        e2.d0.U(handler, new ki.n(5, this, e1Var));
         this.w = 3000L;
         this.n = new u(this, 2);
         e2.d0.U(handler, new u(this, 3));
@@ -101,14 +100,14 @@ public class a0 {
                 if (a0Var.v) {
                     return;
                 }
-                final k1 O0 = a0Var.t.O0();
+                final j1 O0 = a0Var.t.O0();
                 if (!a0Var.c.hasMessages(1)) {
-                    k1 k1Var = a0Var.s.c;
+                    j1 j1Var = a0Var.s.c;
                     b2.a1 a1Var = O0.a;
                     int i10 = a1Var.b;
-                    b2.a1 a1Var2 = k1Var.a;
+                    b2.a1 a1Var2 = j1Var.a;
                     if (i10 == a1Var2.b && a1Var.e == a1Var2.e && a1Var.h == a1Var2.h && a1Var.i == a1Var2.i) {
-                        ni.f fVar = a0Var.g.b;
+                        oi.f fVar = a0Var.g.b;
                         e9.i0 s10 = fVar.s();
                         for (int i11 = 0; i11 < s10.size(); i11++) {
                             final r rVar = (r) s10.get(i11);
@@ -117,8 +116,8 @@ public class a0 {
                             final boolean B3 = fVar.B(rVar, 17);
                             a0Var.c(rVar, new z() { // from class: m4.v
                                 @Override // m4.z
-                                public final void d(q qVar, int i12) {
-                                    qVar.e(i12, k1.this, B2, B3, rVar.c);
+                                public final void c(q qVar, int i12) {
+                                    qVar.e(i12, j1.this, B2, B3, rVar.c);
                                 }
                             });
                         }
@@ -185,15 +184,15 @@ public class a0 {
         } else {
             bVar = new b(this, e, 8);
         }
-        e2.d0.U(this.l, new s4(this, z11, e, bVar, 6));
+        e2.d0.U(this.l, new s4(this, z11, e, bVar, 7));
         return true;
     }
 
     public final void c(r rVar, z zVar) {
         int i10;
-        b1 b1Var = this.g;
+        a1 a1Var = this.g;
         try {
-            com.google.android.gms.common.api.internal.v x10 = b1Var.b.x(rVar);
+            com.google.android.gms.common.api.internal.v x10 = a1Var.b.x(rVar);
             if (x10 != null) {
                 i10 = x10.e();
             } else if (!h(rVar)) {
@@ -203,10 +202,10 @@ public class a0 {
             }
             q qVar = rVar.d;
             if (qVar != null) {
-                zVar.d(qVar, i10);
+                zVar.c(qVar, i10);
             }
         } catch (DeadObjectException unused) {
-            b1Var.b.M(rVar);
+            a1Var.b.M(rVar);
         } catch (RemoteException e) {
             e2.a.o("MediaSessionImpl", "Exception in " + rVar, e);
         }
@@ -218,7 +217,7 @@ public class a0 {
             c((r) s10.get(i10), zVar);
         }
         try {
-            zVar.d(this.h.i, 0);
+            zVar.c(this.h.i, 0);
         } catch (RemoteException e) {
             e2.a.f("MediaSessionImpl", "Exception in using media1 API", e);
         }
@@ -239,9 +238,9 @@ public class a0 {
         this.c.a(false, false);
         d(new le.b(x0Var, 1));
         try {
-            j0 j0Var = this.h.i;
+            i0 i0Var = this.h.i;
             b2.l lVar = this.s.q;
-            j0Var.k();
+            i0Var.k();
         } catch (RemoteException e) {
             e2.a.f("MediaSessionImpl", "Exception in using media1 API", e);
         }
@@ -272,7 +271,7 @@ public class a0 {
             UnsupportedOperationException unsupportedOperationException = new UnsupportedOperationException();
             i9.t tVar = new i9.t();
             tVar.n(unsupportedOperationException);
-            tVar.a(new i9.s(0, tVar, new androidx.activity.n(this, s10, z10, x0Var)), new k2.c0(this, 1));
+            tVar.a(new i9.s(0, tVar, new androidx.activity.n(this, s10, z10, x0Var)), new k2.b0(this, 1));
         }
     }
 
@@ -300,58 +299,58 @@ public class a0 {
 
     public final p m(r rVar) {
         boolean z10 = this.x;
-        l0 l0Var = this.h;
+        k0 k0Var = this.h;
         if (z10 && k(rVar)) {
-            l0Var.getClass();
-            i1 i1Var = p.e;
-            i1 i1Var2 = l0Var.u;
-            i1Var2.getClass();
-            b2.x0 x0Var = l0Var.v;
+            k0Var.getClass();
+            h1 h1Var = p.e;
+            h1 h1Var2 = k0Var.u;
+            h1Var2.getClass();
+            b2.x0 x0Var = k0Var.v;
             x0Var.getClass();
-            e9.i0 i0Var = l0Var.s;
+            e9.i0 i0Var = k0Var.s;
             e9.i0 v = i0Var == null ? null : e9.i0.v(i0Var);
-            e9.i0 i0Var2 = l0Var.t;
-            return new p(i1Var2, x0Var, v, i0Var2 != null ? e9.i0.v(i0Var2) : null);
+            e9.i0 i0Var2 = k0Var.t;
+            return new p(h1Var2, x0Var, v, i0Var2 != null ? e9.i0.v(i0Var2) : null);
         }
         this.e.getClass();
         b2.x0 x0Var2 = p.f;
-        i1 i1Var3 = p.e;
-        p pVar = new p(i1Var3, x0Var2, null, null);
+        h1 h1Var3 = p.e;
+        p pVar = new p(h1Var3, x0Var2, null, null);
         if (i(rVar)) {
             this.x = true;
             t tVar = this.k;
             e9.i0 i0Var3 = tVar.a.z;
             int i10 = 0;
             if (i0Var3.isEmpty()) {
-                l0Var.s = tVar.a.y;
+                k0Var.s = tVar.a.y;
             } else {
-                l0Var.t = i0Var3;
-                Bundle bundle = l0Var.r;
+                k0Var.t = i0Var3;
+                Bundle bundle = k0Var.r;
                 boolean z11 = bundle.getBoolean("android.media.playback.ALWAYS_RESERVE_SPACE_FOR.ACTION_SKIP_TO_PREVIOUS", false);
                 boolean z12 = bundle.getBoolean("android.media.playback.ALWAYS_RESERVE_SPACE_FOR.ACTION_SKIP_TO_NEXT", false);
-                l0Var.M();
+                k0Var.M();
                 if (bundle.getBoolean("android.media.playback.ALWAYS_RESERVE_SPACE_FOR.ACTION_SKIP_TO_PREVIOUS", false) != z11 || bundle.getBoolean("android.media.playback.ALWAYS_RESERVE_SPACE_FOR.ACTION_SKIP_TO_NEXT", false) != z12) {
-                    ((n4.r) l0Var.k.b).a.setExtras(bundle);
+                    ((n4.r) k0Var.k.b).a.setExtras(bundle);
                 }
             }
-            a0 a0Var = l0Var.g;
-            Bundle bundle2 = l0Var.r;
-            boolean z13 = l0Var.v.a(17) != x0Var2.a(17);
-            l0Var.u = i1Var3;
-            l0Var.v = x0Var2;
-            if (!l0Var.t.isEmpty()) {
+            a0 a0Var = k0Var.g;
+            Bundle bundle2 = k0Var.r;
+            boolean z13 = k0Var.v.a(17) != x0Var2.a(17);
+            k0Var.u = h1Var3;
+            k0Var.v = x0Var2;
+            if (!k0Var.t.isEmpty()) {
                 boolean z14 = bundle2.getBoolean("android.media.playback.ALWAYS_RESERVE_SPACE_FOR.ACTION_SKIP_TO_PREVIOUS", false);
                 boolean z15 = bundle2.getBoolean("android.media.playback.ALWAYS_RESERVE_SPACE_FOR.ACTION_SKIP_TO_NEXT", false);
-                l0Var.M();
+                k0Var.M();
                 if (bundle2.getBoolean("android.media.playback.ALWAYS_RESERVE_SPACE_FOR.ACTION_SKIP_TO_PREVIOUS", false) != z14 || bundle2.getBoolean("android.media.playback.ALWAYS_RESERVE_SPACE_FOR.ACTION_SKIP_TO_NEXT", false) != z15) {
-                    ((n4.r) l0Var.k.b).a.setExtras(bundle2);
+                    ((n4.r) k0Var.k.b).a.setExtras(bundle2);
                 }
             }
             if (z13) {
-                e2.d0.U(a0Var.l, new f0(l0Var, a0Var.t, i10));
+                e2.d0.U(a0Var.l, new f0(k0Var, a0Var.t, i10));
                 return pVar;
             }
-            l0Var.N(a0Var.t);
+            k0Var.N(a0Var.t);
         }
         return pVar;
     }
@@ -359,7 +358,7 @@ public class a0 {
     public final i9.u n(r rVar) {
         s(rVar);
         this.e.getClass();
-        return l8.b(new l1(-6));
+        return m8.b(new k1(-6));
     }
 
     public final boolean o() {
@@ -367,7 +366,7 @@ public class a0 {
             return true;
         }
         i9.c0 c0Var = new i9.c0();
-        this.o.post(new x1(27, this, c0Var));
+        this.o.post(new ki.n(3, this, c0Var));
         try {
             return ((Boolean) c0Var.get()).booleanValue();
         } catch (InterruptedException | ExecutionException e) {
@@ -386,7 +385,7 @@ public class a0 {
         return e2.d0.d0(na.d.z3(list), new i9.p() { // from class: m4.o
             @Override // i9.p
             public final i9.w apply(Object obj) {
-                return l8.b(new s(j3, i10, (List) obj));
+                return m8.b(new s(j3, i10, (List) obj));
             }
         });
     }
@@ -411,10 +410,10 @@ public class a0 {
                 } catch (Exception e) {
                     e2.a.o("MediaSessionImpl", "Exception thrown while closing", e);
                 }
-                l0 l0Var = this.h;
-                ComponentName componentName = l0Var.m;
-                a0 a0Var = l0Var.g;
-                n4.y yVar = l0Var.k;
+                k0 k0Var = this.h;
+                ComponentName componentName = k0Var.m;
+                a0 a0Var = k0Var.g;
+                n4.y yVar = k0Var.k;
                 int i10 = Build.VERSION.SDK_INT;
                 int i11 = 0;
                 if (i10 < 31) {
@@ -423,10 +422,10 @@ public class a0 {
                     } else {
                         Intent intent = new Intent("android.intent.action.MEDIA_BUTTON", a0Var.b);
                         intent.setComponent(componentName);
-                        ((n4.r) yVar.b).a.setMediaButtonReceiver(PendingIntent.getBroadcast(a0Var.f, 0, intent, l0.w));
+                        ((n4.r) yVar.b).a.setMediaButtonReceiver(PendingIntent.getBroadcast(a0Var.f, 0, intent, k0.w));
                     }
                 }
-                androidx.mediarouter.app.g gVar = l0Var.l;
+                androidx.mediarouter.app.g gVar = k0Var.l;
                 if (gVar != null) {
                     a0Var.f.unregisterReceiver(gVar);
                 }
@@ -448,9 +447,9 @@ public class a0 {
                 mediaSession.setCallback(null);
                 rVar.b.a.clear();
                 mediaSession.release();
-                b1 b1Var = this.g;
-                Set set = b1Var.c;
-                ni.f fVar = b1Var.b;
+                a1 a1Var = this.g;
+                Set set = a1Var.c;
+                oi.f fVar = a1Var.b;
                 e9.i0 s10 = fVar.s();
                 int size = s10.size();
                 while (i11 < size) {
@@ -471,7 +470,7 @@ public class a0 {
                     }
                 }
                 set.clear();
-                b1Var.a.clear();
+                a1Var.a.clear();
             } catch (Throwable th2) {
                 throw th2;
             }
@@ -501,27 +500,27 @@ public class a0 {
         }
     }
 
-    public final void u(f1 f1Var, f1 f1Var2) {
-        l0 l0Var = this.h;
-        this.t = f1Var2;
-        if (f1Var != null) {
+    public final void u(e1 e1Var, e1 e1Var2) {
+        k0 k0Var = this.h;
+        this.t = e1Var2;
+        if (e1Var != null) {
             y yVar = this.u;
             e2.d.h(yVar);
-            f1Var.D(yVar);
+            e1Var.D(yVar);
         }
-        y yVar2 = new y(this, f1Var2);
-        f1Var2.n0(yVar2);
+        y yVar2 = new y(this, e1Var2);
+        e1Var2.n0(yVar2);
         this.u = yVar2;
         try {
-            l0Var.i.m(0, f1Var, f1Var2);
+            k0Var.i.m(0, e1Var, e1Var2);
         } catch (RemoteException e) {
             e2.a.f("MediaSessionImpl", "Exception in using media1 API", e);
         }
-        if (f1Var == null) {
-            ((n4.r) l0Var.k.b).a.setActive(true);
+        if (e1Var == null) {
+            ((n4.r) k0Var.k.b).a.setActive(true);
         }
-        this.s = new d1(f1Var2.W(), 0, f1Var2.O0(), f1Var2.N0(), f1Var2.N0(), 0, f1Var2.h(), f1Var2.l(), f1Var2.A0(), f1Var2.E(), f1Var2.Q0(), 0, f1Var2.m0(18) ? f1Var2.h0() : b2.n0.K, f1Var2.m0(22) ? f1Var2.G() : 1.0f, f1Var2.m0(21) ? f1Var2.I() : b2.e.h, f1Var2.m0(28) ? f1Var2.j0() : d2.d.d, f1Var2.K(), f1Var2.m0(23) ? f1Var2.m() : 0, f1Var2.m0(23) && f1Var2.x0(), f1Var2.u(), 1, f1Var2.u0(), f1Var2.d(), f1Var2.i0(), f1Var2.c(), f1Var2.R0(), f1Var2.L0(), f1Var2.Z(), f1Var2.z(), f1Var2.m0(30) ? f1Var2.g0() : s1.b, f1Var2.B0());
-        f(f1Var2.t());
+        this.s = new c1(e1Var2.W(), 0, e1Var2.O0(), e1Var2.N0(), e1Var2.N0(), 0, e1Var2.h(), e1Var2.l(), e1Var2.A0(), e1Var2.E(), e1Var2.Q0(), 0, e1Var2.m0(18) ? e1Var2.h0() : b2.n0.K, e1Var2.m0(22) ? e1Var2.G() : 1.0f, e1Var2.m0(21) ? e1Var2.I() : b2.e.h, e1Var2.m0(28) ? e1Var2.j0() : d2.d.d, e1Var2.K(), e1Var2.m0(23) ? e1Var2.m() : 0, e1Var2.m0(23) && e1Var2.x0(), e1Var2.u(), 1, e1Var2.u0(), e1Var2.d(), e1Var2.i0(), e1Var2.c(), e1Var2.R0(), e1Var2.L0(), e1Var2.Z(), e1Var2.z(), e1Var2.m0(30) ? e1Var2.g0() : s1.b, e1Var2.B0());
+        f(e1Var2.t());
     }
 
     public final void v() {

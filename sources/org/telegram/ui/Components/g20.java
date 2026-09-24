@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ScrollView;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public class g20 extends ScrollView {
     public final int a;
@@ -31,7 +31,7 @@ public class g20 extends ScrollView {
         f20 f20Var = new f20(this, context);
         this.d = f20Var;
         setVerticalScrollBarEnabled(false);
-        addView(f20Var, w7.x5.c(-2.0f, -1));
+        addView(f20Var, w7.y5.c(-2.0f, -1));
     }
 
     public void a(n30 n30Var) {
@@ -145,8 +145,8 @@ public class g20 extends ScrollView {
             return false;
         }
         rect.offset(view.getLeft() - view.getScrollX(), view.getTop() - view.getScrollY());
-        rect.top = org.telegram.messenger.z0.C(20.0f, this.n, rect.top);
-        rect.bottom = org.telegram.messenger.z0.C(50.0f, this.n, rect.bottom);
+        rect.top = org.telegram.messenger.f0.C(20.0f, this.n, rect.top);
+        rect.bottom = org.telegram.messenger.f0.C(50.0f, this.n, rect.bottom);
         return super.requestChildRectangleOnScreen(view, rect, z10);
     }
 

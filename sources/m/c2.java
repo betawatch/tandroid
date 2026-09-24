@@ -4,10 +4,10 @@ import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.ui.Components.gz;
-import org.telegram.ui.Components.ky;
+import org.telegram.ui.Components.ly;
 import org.telegram.ui.Components.yy;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class c2 implements View.OnTouchListener {
     public final /* synthetic */ int a;
@@ -38,14 +38,14 @@ public final class c2 implements View.OnTouchListener {
                 }
                 break;
             case 1:
-                ky kyVar = (ky) this.b;
+                ly lyVar = (ly) this.b;
                 if (motionEvent.getAction() != 0) {
                     if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                        kyVar.F.f = false;
+                        lyVar.F.f = false;
                         break;
                     }
                 } else {
-                    kyVar.F.f = true;
+                    lyVar.F.f = true;
                     break;
                 }
                 break;

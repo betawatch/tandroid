@@ -6,10 +6,10 @@ import android.text.TextUtils;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import org.telegram.ui.Cells.q3;
-import v7.f5;
+import org.telegram.ui.Cells.c1;
+import v7.g5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public abstract class l {
     public static final Object a = new Object();
@@ -37,7 +37,7 @@ public abstract class l {
     public static void d(Handler handler) {
         Looper myLooper = Looper.myLooper();
         if (myLooper != handler.getLooper()) {
-            throw new IllegalStateException(q3.j("Must be called on ", handler.getLooper().getThread().getName(), " thread, but got ", myLooper != null ? myLooper.getThread().getName() : "null current looper", "."));
+            throw new IllegalStateException(c1.k("Must be called on ", handler.getLooper().getThread().getName(), " thread, but got ", myLooper != null ? myLooper.getThread().getName() : "null current looper", "."));
         }
     }
 
@@ -94,9 +94,9 @@ public abstract class l {
         return status.c != null ? new com.google.android.gms.common.api.p(status) : new com.google.android.gms.common.api.f(status);
     }
 
-    public static Task n(f5 f5Var, k kVar) {
+    public static Task n(g5 g5Var, k kVar) {
         TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-        f5Var.b(new t(f5Var, taskCompletionSource, kVar));
+        g5Var.b(new t(g5Var, taskCompletionSource, kVar));
         return taskCompletionSource.getTask();
     }
 }

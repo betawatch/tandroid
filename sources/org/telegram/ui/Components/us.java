@@ -9,9 +9,9 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public abstract class us extends v51 {
+public abstract class us extends j61 {
     public final int N;
     public final int O;
     public final ArrayList P;
@@ -29,16 +29,16 @@ public abstract class us extends v51 {
     public String b0;
     public final yp c0;
 
-    public us(ml0 ml0Var, Context context, int i10, int i11) {
-        super(ml0Var, context, i10, 0, false, null, null);
+    public us(wl0 wl0Var, Context context, int i10, int i11) {
+        super(wl0Var, context, i10, 0, false, null, null);
         this.P = new ArrayList();
         this.Q = new ArrayList();
         this.R = new ArrayList();
         this.S = new ArrayList();
         this.V = new ArrayList();
-        tn0 tn0Var = (tn0) this;
-        this.c0 = new yp(tn0Var, 6);
-        this.s = new d(tn0Var, 9);
+        go0 go0Var = (go0) this;
+        this.c0 = new yp(go0Var, 6);
+        this.s = new d(go0Var, 9);
         this.N = i10;
         this.O = i11;
         N(false);
@@ -69,7 +69,7 @@ public abstract class us extends v51 {
         if (z10) {
             ArrayList arrayList = this.P;
             if (!arrayList.isEmpty()) {
-                MessageObject messageObject = (MessageObject) hg.c.h(1, arrayList);
+                MessageObject messageObject = (MessageObject) hg.c.g(1, arrayList);
                 tL_messages_searchGlobal.offset_rate = this.Z;
                 tL_messages_searchGlobal.offset_id = messageObject.getId();
                 if (messageObject.messageOwner.peer_id == null) {

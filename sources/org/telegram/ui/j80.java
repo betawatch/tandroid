@@ -1,24 +1,13 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class j80 extends b6 {
-    public final /* synthetic */ ry f;
+public final class j80 {
+    public final org.telegram.ui.ActionBar.e1 a;
+    public final int b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j80(Bundle bundle, ry ryVar) {
-        super(bundle);
-        this.f = ryVar;
-    }
-
-    @Override // org.telegram.ui.ActionBar.n2
-    public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
-        super.onTransitionAnimationEnd(z10, z11);
-        if (!z10 || z11) {
-            return;
-        }
-        this.f.removeSelfFromStack();
+    public j80(org.telegram.ui.ActionBar.e1 e1Var, int i10) {
+        this.a = e1Var;
+        this.b = i10;
     }
 }

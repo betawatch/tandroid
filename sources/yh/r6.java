@@ -7,15 +7,15 @@ import android.view.View;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class r6 extends ClickableSpan {
-    public final /* synthetic */ org.telegram.ui.ActionBar.f3[] a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e3[] a;
     public final /* synthetic */ Context b;
     public final /* synthetic */ boolean c;
 
-    public r6(org.telegram.ui.ActionBar.f3[] f3VarArr, Context context, boolean z10) {
-        this.a = f3VarArr;
+    public r6(org.telegram.ui.ActionBar.e3[] e3VarArr, Context context, boolean z10) {
+        this.a = e3VarArr;
         this.b = context;
         this.c = z10;
     }

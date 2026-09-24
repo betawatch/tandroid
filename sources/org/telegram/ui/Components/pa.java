@@ -10,7 +10,7 @@ import java.nio.FloatBuffer;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class pa {
     public FloatBuffer e;
@@ -33,7 +33,7 @@ public final class pa {
     public final Object n = new Object();
     public final int[] r = new int[3];
     public final int[] s = new int[3];
-    public final og u = new og(this, 13);
+    public final pg u = new pg(this, 13);
     public final Matrix v = new Matrix();
 
     public final void a(float[] fArr, int i10, int i11, int i12) {
@@ -67,8 +67,8 @@ public final class pa {
             GLES20.glUniformMatrix4fv(kaVar.l, 1, false, fArr, 0);
         }
         GLES20.glUniform1f(kaVar.m, c10 == 0 ? 0.0f : 1.0f);
-        pg.e1.a(kaVar.h, this.l);
-        pg.e1.a(kaVar.i, this.m);
+        pg.g1.a(kaVar.h, this.l);
+        pg.g1.a(kaVar.i, this.m);
         synchronized (this.k) {
             GLES20.glUniformMatrix4fv(kaVar.d, 1, false, this.j, 0);
         }
@@ -86,8 +86,8 @@ public final class pa {
             GLES20.glUniform2f(kaVar.f, this.a, this.b);
             GLES20.glUniform2f(kaVar.g, f7, f10);
             GLES20.glUniform1i(kaVar.j, 0);
-            pg.e1.a(kaVar.h, this.l);
-            pg.e1.a(kaVar.i, this.m);
+            pg.g1.a(kaVar.h, this.l);
+            pg.g1.a(kaVar.i, this.m);
             GLES20.glUniform1f(kaVar.k, 0.0f);
             synchronized (this.k) {
                 GLES20.glUniformMatrix4fv(kaVar.d, 1, false, this.j, 0);

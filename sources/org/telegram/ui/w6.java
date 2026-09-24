@@ -5,15 +5,15 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class w6 extends s7 {
     public final /* synthetic */ int w;
     public final /* synthetic */ Object x;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ w6(Object obj, Context context, org.telegram.ui.ActionBar.n2 n2Var, int i10) {
-        super(context, n2Var);
+    public /* synthetic */ w6(Object obj, Context context, org.telegram.ui.ActionBar.m2 m2Var, int i10) {
+        super(context, m2Var);
         this.w = i10;
         this.x = obj;
     }
@@ -23,11 +23,11 @@ public final class w6 extends s7 {
         org.telegram.ui.ActionBar.k kVar2;
         z6 z6Var = ((x6) this.x).e;
         if (!z10) {
-            kVar = ((org.telegram.ui.ActionBar.n2) z6Var).actionBar;
+            kVar = ((org.telegram.ui.ActionBar.m2) z6Var).actionBar;
             kVar.r();
         } else {
             z6.b0(z6Var, true);
-            kVar2 = ((org.telegram.ui.ActionBar.n2) z6Var).actionBar;
+            kVar2 = ((org.telegram.ui.ActionBar.m2) z6Var).actionBar;
             kVar2.O(null, null);
         }
     }
@@ -36,10 +36,10 @@ public final class w6 extends s7 {
     public final void onMeasure(int i10, int i11) {
         switch (this.w) {
             case 0:
-                super.onMeasure(i10, org.telegram.messenger.ul.d(12.0f, View.MeasureSpec.getSize(i11) - (org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() / 2), TLObject.FLAG_30));
+                super.onMeasure(i10, org.telegram.messenger.ok.c(12.0f, View.MeasureSpec.getSize(i11) - (org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() / 2), TLObject.FLAG_30));
                 break;
             default:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec((((gv) this.x).h - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - AndroidUtilities.statusBarHeight, TLObject.FLAG_30));
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec((((fv) this.x).h - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - AndroidUtilities.statusBarHeight, TLObject.FLAG_30));
                 break;
         }
     }

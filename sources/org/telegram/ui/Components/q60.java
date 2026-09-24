@@ -1,28 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.LocaleController;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class q60 extends org.telegram.ui.Cells.bb {
-    public final TextView a0;
-    public final TextView b0;
+public final class q60 extends s4.s0 {
+    public final /* synthetic */ s4.c0 a;
+    public final /* synthetic */ c70 b;
 
-    public q60(Context context) {
-        super(context, 6, 0, true);
-        LinearLayout f7 = org.telegram.messenger.ul.f(context, 1);
-        TextView textView = new TextView(context);
-        this.a0 = textView;
-        org.telegram.messenger.z0.q(textView, org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.G6, false), 1, 16.0f);
-        f7.addView(textView, w7.x5.q(-2, -2, 5));
-        TextView textView2 = new TextView(context);
-        this.b0 = textView2;
-        textView2.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.z6, false));
-        textView2.setTextSize(1, 13.0f);
-        f7.addView(textView2, w7.x5.t(-2, -2, 5, 0, 1, 0, 0));
-        addView(f7, w7.x5.d(-2, -2.0f, (LocaleController.isRTL ? 3 : 5) | 16, 18.0f, 0.0f, 18.0f, 0.0f));
+    public q60(c70 c70Var, s4.c0 c0Var) {
+        this.b = c70Var;
+        this.a = c0Var;
+    }
+
+    @Override // s4.s0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        c70 c70Var = this.b;
+        c70.O(c70Var);
+        if (!c70Var.R || c70Var.Q) {
+            return;
+        }
+        if (c70Var.S - this.a.N0() < 10) {
+            c70Var.X();
+        }
     }
 }

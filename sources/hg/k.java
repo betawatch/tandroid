@@ -13,9 +13,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.e6;
 import org.telegram.ui.Components.rr;
 import org.telegram.ui.Components.wi;
-import org.telegram.ui.i20;
+import org.telegram.ui.g20;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class k extends FrameLayout {
     public final /* synthetic */ int a = 0;
@@ -37,7 +37,7 @@ public final class k extends FrameLayout {
     public void dispatchDraw(Canvas canvas) {
         switch (this.a) {
             case 1:
-                i20 i20Var = (i20) this.d;
+                g20 g20Var = (g20) this.d;
                 Path path = (Path) this.c;
                 wi wiVar = (wi) this.e;
                 ch.d dVar = wiVar.B0;
@@ -58,9 +58,9 @@ public final class k extends FrameLayout {
                 canvas.saveLayerAlpha(rectF, 255, 31);
                 super.dispatchDraw(canvas);
                 rectF.set(getPaddingLeft(), f7, getWidth() - getPaddingRight(), AndroidUtilities.dp(6.0f) + dp2);
-                i20Var.b(canvas, rectF, 1, 1.0f);
+                g20Var.b(canvas, rectF, 1, 1.0f);
                 rectF.set(getPaddingLeft(), (getHeight() - dp3) - AndroidUtilities.dp(6.0f), getWidth() - getPaddingRight(), getHeight() - dp3);
-                i20Var.b(canvas, rectF, 3, 1.0f);
+                g20Var.b(canvas, rectF, 3, 1.0f);
                 canvas.restore();
                 canvas.restore();
                 break;
@@ -134,6 +134,6 @@ public final class k extends FrameLayout {
         super(context);
         this.e = wiVar;
         this.c = new Path();
-        this.d = new i20();
+        this.d = new g20();
     }
 }

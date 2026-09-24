@@ -1,22 +1,45 @@
 package org.telegram.ui.Components;
 
-import java.nio.ByteBuffer;
-import org.telegram.messenger.FourierTransform;
+import android.graphics.Point;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class e71 {
-    public final ByteBuffer c;
-    public long e;
-    public final /* synthetic */ f71 f;
-    public final FourierTransform.FFT a = new FourierTransform.FFT(1024, 48000.0f);
-    public final float[] b = new float[1024];
-    public int d = 0;
+public final class e71 implements View.OnLayoutChangeListener {
+    public Boolean a;
+    public boolean b;
+    public final /* synthetic */ n7.z0 c;
 
-    public e71(f71 f71Var) {
-        this.f = f71Var;
-        ByteBuffer allocateDirect = ByteBuffer.allocateDirect(8192);
-        this.c = allocateDirect;
-        allocateDirect.position(0);
+    public e71(n7.z0 z0Var, View view) {
+        this.c = z0Var;
+        o1.k kVar = new o1.k(view, o1.h.n, 0.0f);
+        z0Var.c = kVar;
+        kVar.u.a(1.0f);
+        ((o1.k) z0Var.c).u.b(350.0f);
+    }
+
+    @Override // android.view.View.OnLayoutChangeListener
+    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
+        Point point = AndroidUtilities.displaySize;
+        boolean z10 = point.x > point.y;
+        Boolean bool = this.a;
+        if (bool == null || bool.booleanValue() != z10) {
+            this.a = Boolean.valueOf(z10);
+            this.b = true;
+        }
+        if (i15 == 0 || i15 == i11 || this.b) {
+            this.b = false;
+            return;
+        }
+        n7.z0 z0Var = this.c;
+        ((o1.k) z0Var.c).c();
+        if (view.getVisibility() != 0) {
+            view.setTranslationY(0.0f);
+            return;
+        }
+        ((o1.k) z0Var.c).u.i = 0.0f;
+        view.setTranslationY((i15 - i11) + 0.0f);
+        ((o1.k) z0Var.c).f();
     }
 }

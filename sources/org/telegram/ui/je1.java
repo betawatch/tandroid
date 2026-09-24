@@ -7,7 +7,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class je1 implements Runnable {
     public final /* synthetic */ int a;
@@ -75,7 +75,7 @@ public final /* synthetic */ class je1 implements Runnable {
                                     String str4 = strArr[i13];
                                     if (!lowerCase2.startsWith(str4)) {
                                         int i16 = i13;
-                                        if (!org.telegram.messenger.z0.w(" ", str4, lowerCase2)) {
+                                        if (!org.telegram.messenger.f0.w(" ", str4, lowerCase2)) {
                                             i13 = i16 + 1;
                                         }
                                     }
@@ -94,10 +94,10 @@ public final /* synthetic */ class je1 implements Runnable {
                         i14++;
                         i13 = 0;
                     }
-                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.r11(ke1Var2, i11, arrayList2, arrayList3, 12));
+                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.f21(ke1Var2, i11, arrayList2, arrayList3, 12));
                     break;
                 } else {
-                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.r11(ke1Var2, i11, str3, str3, 12));
+                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.f21(ke1Var2, i11, str3, str3, 12));
                     break;
                 }
                 break;

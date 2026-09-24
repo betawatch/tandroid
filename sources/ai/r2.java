@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class r2 extends FrameLayout {
     public final FrameLayout a;
@@ -26,7 +26,7 @@ public final class r2 extends FrameLayout {
 
     public r2(Context context, dh.b bVar) {
         super(context);
-        w7.z5.a(this);
+        w7.a6.a(this);
         FrameLayout frameLayout = new FrameLayout(context);
         this.a = frameLayout;
         ah.l lVar = new ah.l();
@@ -35,24 +35,24 @@ public final class r2 extends FrameLayout {
         lVar.invalidateSelf();
         lVar.f = AndroidUtilities.dp(1.0f);
         frameLayout.setBackground(lVar);
-        addView(frameLayout, w7.x5.e(40, 40, 17));
+        addView(frameLayout, w7.y5.e(40, 40, 17));
         View view = new View(context);
         this.b = view;
         view.setBackground(org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(40.0f), -13522392));
-        frameLayout.addView(view, w7.x5.e(38, 38, 17));
+        frameLayout.addView(view, w7.y5.e(38, 38, 17));
         view.setAlpha(0.0f);
         view.setScaleX(0.0f);
         view.setScaleY(0.0f);
         q2 q2Var = new q2(context);
         this.d = q2Var;
-        addView(q2Var, w7.x5.e(42, 42, 17));
+        addView(q2Var, w7.y5.e(42, 42, 17));
         ImageView imageView = new ImageView(context);
         this.c = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setScaleX(0.75f);
         imageView.setScaleY(0.75f);
         imageView.setColorFilter(new PorterDuffColorFilter(-2960428, PorterDuff.Mode.SRC_IN));
-        frameLayout.addView(imageView, w7.x5.e(40, 40, 17));
+        frameLayout.addView(imageView, w7.y5.e(40, 40, 17));
         b(false, false);
     }
 

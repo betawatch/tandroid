@@ -14,11 +14,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ul;
+import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class j7 extends FrameLayout {
     public final org.telegram.ui.ActionBar.d6 a;
@@ -42,15 +42,15 @@ public final class j7 extends FrameLayout {
         setWillNotDraw(false);
         TextView textView = new TextView(context);
         this.d = textView;
-        ul.k(15.0f, 1, textView);
+        ok.k(15.0f, 1, textView);
         textView.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.G6, d6Var));
-        addView(textView, w7.x5.i(-2.0f, -2.0f, 8388627, 48.0f, 0.0f, 0.0f, 0.0f));
+        addView(textView, w7.y5.i(-2.0f, -2.0f, 8388627, 48.0f, 0.0f, 0.0f, 0.0f));
         org.telegram.ui.Components.p6 p6Var = new org.telegram.ui.Components.p6(context, false, false, false);
         this.e = p6Var;
         p6Var.setTextSize(AndroidUtilities.dp(15.0f));
         p6Var.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.z6, d6Var));
         p6Var.setGravity(LocaleController.isRTL ? 3 : 5);
-        addView(p6Var, w7.x5.i(-2.0f, 21.0f, 8388629, 0.0f, 0.0f, 19.0f, 0.0f));
+        addView(p6Var, w7.y5.i(-2.0f, 21.0f, 8388629, 0.0f, 0.0f, 19.0f, 0.0f));
     }
 
     @Override // android.view.View

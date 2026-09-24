@@ -6,7 +6,7 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public interface ICarHost extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$ICarHost".replace('$', '.');
@@ -17,7 +17,7 @@ public interface ICarHost extends IInterface {
 
     void startCarApp(Intent intent);
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class Default implements ICarHost {
         @Override // android.os.IInterface
         public IBinder asBinder() {
@@ -38,13 +38,13 @@ public interface ICarHost extends IInterface {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static abstract class Stub extends Binder implements ICarHost {
         static final int TRANSACTION_finish = 4;
         static final int TRANSACTION_getHost = 3;
         static final int TRANSACTION_startCarApp = 2;
 
-        /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+        /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
         public static class Proxy implements ICarHost {
             private IBinder mRemote;
 

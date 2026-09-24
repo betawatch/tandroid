@@ -1,88 +1,201 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
+import android.content.Context;
+import android.util.SparseArray;
 import android.view.View;
-import org.telegram.messenger.MessageObject;
+import android.widget.FrameLayout;
+import java.util.WeakHashMap;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class zv0 implements org.telegram.ui.Components.fk0 {
-    public final /* synthetic */ xn a;
-    public final /* synthetic */ MessageObject b;
-    public final /* synthetic */ org.telegram.ui.Components.gk0 c;
-    public final /* synthetic */ fw0 d;
+public final class zv0 extends org.telegram.ui.Components.n81 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    public zv0(fw0 fw0Var, xn xnVar, MessageObject messageObject, org.telegram.ui.Components.gk0 gk0Var) {
-        this.d = fw0Var;
-        this.a = xnVar;
-        this.b = messageObject;
-        this.c = gk0Var;
+    public /* synthetic */ zv0(Object obj, Context context, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.b = context;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:9:0x005f  */
-    @Override // org.telegram.ui.Components.fk0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void h(View view, zg.p0 p0Var, boolean z10, boolean z11) {
-        float f7;
-        zg.q0 q0Var;
-        zg.n0 m10;
-        float f10;
-        int i10;
-        float f11;
-        int id2 = this.b.getId();
-        xn xnVar = this.a;
-        org.telegram.ui.Cells.a0 q82 = xnVar.q8(id2, true);
-        float f12 = 0.0f;
-        if (q82 instanceof org.telegram.ui.Cells.t1) {
-            zg.q0 q0Var2 = ((org.telegram.ui.Cells.t1) q82).N;
-            zg.n0 m11 = q0Var2.m(p0Var);
-            if (m11 == null) {
-                f11 = 0.0f;
-                f7 = f11;
-                xnVar.ab(q82, this.b, this.c, view, f12, f7, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
-                this.d.c(false);
-            }
-            f12 = q0Var2.c + m11.x + (m11.A / 2.0f);
-            f10 = q0Var2.d + m11.y;
-            i10 = m11.B;
-        } else if (!(q82 instanceof org.telegram.ui.Cells.w0) || (m10 = (q0Var = ((org.telegram.ui.Cells.w0) q82).C0).m(p0Var)) == null) {
-            f7 = 0.0f;
-            xnVar.ab(q82, this.b, this.c, view, f12, f7, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
-            this.d.c(false);
-        } else {
-            f12 = q0Var.c + m10.x + (m10.A / 2.0f);
-            f10 = q0Var.d + m10.y;
-            i10 = m10.B;
+    @Override // org.telegram.ui.Components.n81
+    public final void b(View view, int i10, int i11) {
+        org.telegram.ui.ActionBar.m2 m2Var;
+        t5 t5Var;
+        int i12 = this.a;
+        Object obj = this.c;
+        switch (i12) {
+            case 0:
+                break;
+            case 1:
+                ((s31) view).a(i11);
+                break;
+            case 2:
+                break;
+            case 3:
+                th1 th1Var = (th1) obj;
+                SparseArray sparseArray = th1Var.a;
+                rh1 rh1Var = (rh1) sparseArray.get(i10);
+                if (rh1Var != null) {
+                    m2Var = rh1Var.a;
+                } else {
+                    org.telegram.ui.ActionBar.m2 V = th1Var.V(i10);
+                    rh1 rh1Var2 = new rh1(V);
+                    sparseArray.put(i10, rh1Var2);
+                    m2Var = V;
+                    rh1Var = rh1Var2;
+                }
+                if (!rh1Var.b) {
+                    m2Var.onFragmentCreate();
+                    rh1Var.b = true;
+                }
+                m2Var.setParentLayout(th1Var.getParentLayout());
+                if (m2Var.getFragmentView() == null) {
+                    m2Var.performCreateView((Context) this.b);
+                    m2Var.setTitleOverlayText(th1Var.n, th1Var.r, th1Var.s);
+                }
+                FrameLayout frameLayout = (FrameLayout) view;
+                frameLayout.removeAllViews();
+                View fragmentView = m2Var.getFragmentView();
+                AndroidUtilities.removeFromParent(fragmentView);
+                if (!m2Var.hasOwnBackground() && fragmentView.getBackground() == null) {
+                    fragmentView.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.d6, false));
+                }
+                frameLayout.addView(fragmentView, w7.y5.c(-1.0f, -1));
+                if (m2Var.getActionBar() != null && m2Var.getActionBar().K) {
+                    AndroidUtilities.removeFromParent(m2Var.getActionBar());
+                    frameLayout.addView(m2Var.getActionBar());
+                }
+                WeakHashMap weakHashMap = r0.i0.a;
+                r0.y.c(frameLayout);
+                th1Var.checkSystemBarColors();
+                th1Var.U();
+                break;
+            case 4:
+                break;
+            default:
+                yh.x3 x3Var = (yh.x3) obj;
+                if (i11 == 0) {
+                    yh.x3.j1(x3Var, false);
+                    xh.n2 n2Var = x3Var.b0;
+                    if (n2Var != null) {
+                        t5Var = n2Var.Y;
+                    }
+                } else if (i11 == 2) {
+                    yh.x3.j1(x3Var, true);
+                    xh.n2 n2Var2 = x3Var.c0;
+                    if (n2Var2 != null) {
+                        t5Var = n2Var2.Y;
+                    }
+                }
+                FrameLayout frameLayout2 = (FrameLayout) view;
+                frameLayout2.removeAllViews();
+                AndroidUtilities.removeFromParent(t5Var);
+                frameLayout2.addView(t5Var);
+                break;
         }
-        f11 = f10 + (i10 / 2.0f);
-        f7 = f11;
-        xnVar.ab(q82, this.b, this.c, view, f12, f7, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
-        this.d.c(false);
     }
 
-    @Override // org.telegram.ui.Components.fk0
-    public final /* synthetic */ boolean j() {
-        return true;
+    @Override // org.telegram.ui.Components.n81
+    public final View d(int i10) {
+        t5 t5Var;
+        switch (this.a) {
+            case 0:
+                FrameLayout frameLayout = new FrameLayout((Context) this.b);
+                frameLayout.setOnClickListener(new f60(this, 23));
+                return frameLayout;
+            case 1:
+                return new s31((t31) this.c, (Context) this.b);
+            case 2:
+                FrameLayout frameLayout2 = new FrameLayout((Context) this.b);
+                frameLayout2.setOnClickListener(new y31(this, 7));
+                return frameLayout2;
+            case 3:
+                return new m51((Context) this.b, 7);
+            case 4:
+                return i10 == 0 ? ((tg.a0) this.b).getContainerView() : ((tg.z0) this.c).getContainerView();
+            default:
+                yh.x3 x3Var = (yh.x3) this.c;
+                if (i10 == 0) {
+                    yh.x3.j1(x3Var, false);
+                    xh.n2 n2Var = x3Var.b0;
+                    if (n2Var != null) {
+                        t5Var = n2Var.Y;
+                        AndroidUtilities.removeFromParent(t5Var);
+                        FrameLayout frameLayout3 = new FrameLayout((Context) this.b);
+                        frameLayout3.addView(t5Var, w7.y5.e(-1, -1, 119));
+                        return frameLayout3;
+                    }
+                    return null;
+                }
+                if (i10 != 1) {
+                    if (i10 == 2) {
+                        yh.x3.j1(x3Var, true);
+                        xh.n2 n2Var2 = x3Var.c0;
+                        if (n2Var2 != null) {
+                            t5Var = n2Var2.Y;
+                        }
+                    }
+                    return null;
+                }
+                t5Var = x3Var.Y;
+                AndroidUtilities.removeFromParent(t5Var);
+                FrameLayout frameLayout32 = new FrameLayout((Context) this.b);
+                frameLayout32.addView(t5Var, w7.y5.e(-1, -1, 119));
+                return frameLayout32;
+        }
     }
 
-    @Override // org.telegram.ui.Components.fk0
-    public final /* synthetic */ boolean k() {
-        return false;
+    @Override // org.telegram.ui.Components.n81
+    public final int e() {
+        switch (this.a) {
+            case 0:
+                return 2;
+            case 1:
+                return 5;
+            case 2:
+                return 2;
+            case 3:
+                ((th1) this.c).getClass();
+                return 4;
+            case 4:
+                return 2;
+            default:
+                yh.x3 x3Var = (yh.x3) this.c;
+                return (x3Var.L1(true) ? 1 : 0) + (x3Var.L1(false) ? 1 : 0) + 1;
+        }
     }
 
-    @Override // org.telegram.ui.Components.fk0
-    public final /* synthetic */ boolean q() {
-        return false;
+    @Override // org.telegram.ui.Components.n81
+    public int h(int i10) {
+        switch (this.a) {
+            case 1:
+                return i10 == 0 ? 0 : 1;
+            case 2:
+            case 3:
+            default:
+                return super.h(i10);
+            case 4:
+                return i10;
+            case 5:
+                return (i10 - (((yh.x3) this.c).L1(false) ? 1 : 0)) + 1;
+        }
     }
 
-    @Override // org.telegram.ui.Components.fk0
-    public final /* synthetic */ void o() {
+    public zv0(tg.a0 a0Var, tg.z0 z0Var) {
+        this.a = 4;
+        this.b = a0Var;
+        this.c = z0Var;
     }
 
-    @Override // org.telegram.ui.Components.fk0
-    public final /* synthetic */ void n(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
+    private final void i(View view, int i10, int i11) {
+    }
+
+    private final void j(View view, int i10, int i11) {
+    }
+
+    private final void k(View view, int i10, int i11) {
     }
 }

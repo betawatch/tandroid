@@ -79,45 +79,45 @@ import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.Components.AnimatedArrowDrawable;
 import org.telegram.ui.Components.CheckBoxBase;
 import org.telegram.ui.Components.RadialProgress2;
-import org.telegram.ui.Components.a90;
-import org.telegram.ui.Components.bo0;
-import org.telegram.ui.Components.bw0;
-import org.telegram.ui.Components.bz0;
-import org.telegram.ui.Components.cz0;
-import org.telegram.ui.Components.d61;
-import org.telegram.ui.Components.d90;
-import org.telegram.ui.Components.e51;
-import org.telegram.ui.Components.e90;
-import org.telegram.ui.Components.f01;
+import org.telegram.ui.Components.b11;
+import org.telegram.ui.Components.b61;
+import org.telegram.ui.Components.c11;
+import org.telegram.ui.Components.c61;
+import org.telegram.ui.Components.dm0;
 import org.telegram.ui.Components.f10;
-import org.telegram.ui.Components.g01;
-import org.telegram.ui.Components.g51;
-import org.telegram.ui.Components.g61;
-import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.h90;
 import org.telegram.ui.Components.i10;
-import org.telegram.ui.Components.i51;
-import org.telegram.ui.Components.iz0;
-import org.telegram.ui.Components.jz0;
-import org.telegram.ui.Components.k51;
-import org.telegram.ui.Components.l51;
-import org.telegram.ui.Components.ml0;
-import org.telegram.ui.Components.n01;
-import org.telegram.ui.Components.n51;
-import org.telegram.ui.Components.o01;
-import org.telegram.ui.Components.o51;
+import org.telegram.ui.Components.j61;
+import org.telegram.ui.Components.k90;
+import org.telegram.ui.Components.l31;
+import org.telegram.ui.Components.mw0;
+import org.telegram.ui.Components.mz0;
+import org.telegram.ui.Components.n90;
+import org.telegram.ui.Components.nz0;
+import org.telegram.ui.Components.o90;
+import org.telegram.ui.Components.oo0;
+import org.telegram.ui.Components.r61;
+import org.telegram.ui.Components.r90;
 import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Components.s51;
+import org.telegram.ui.Components.t01;
+import org.telegram.ui.Components.tz0;
+import org.telegram.ui.Components.u01;
+import org.telegram.ui.Components.u51;
+import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.uz0;
 import org.telegram.ui.Components.v51;
-import org.telegram.ui.Components.x21;
-import org.telegram.ui.Components.x80;
-import org.telegram.ui.ac0;
-import org.telegram.ui.i20;
+import org.telegram.ui.Components.w51;
+import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.y51;
+import org.telegram.ui.Components.z51;
+import org.telegram.ui.g20;
 import org.telegram.ui.mj0;
 import org.telegram.ui.nj0;
 import org.telegram.ui.oj0;
+import org.telegram.ui.zb0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class RichMessageLayout {
     private static final int ORDERED_LIST_MARKER_START_DP = 6;
@@ -155,10 +155,10 @@ public class RichMessageLayout {
     public final ArrayList<MessageObject> audioMessages;
     public boolean blockquoteAnimating;
     public final ArrayList<RichBlock> blocks;
-    private org.telegram.ui.Cells.t1 cell;
-    public final i20 clip;
+    private org.telegram.ui.Cells.u1 cell;
+    public final g20 clip;
     public final int currentAccount;
-    private org.telegram.ui.Cells.k1 delegate;
+    private org.telegram.ui.Cells.l1 delegate;
     private float density;
     public boolean detailsAnimating;
     private float detailsAnimationProgress;
@@ -178,21 +178,21 @@ public class RichMessageLayout {
     private int pressedBlockY;
     private RichMessageLayout prev;
     private Drawable pullquoteIcon;
-    public final tl0 quoteLine;
+    public final dm0 quoteLine;
     public final ArrayList<QuoteBackground> quotes;
     protected org.telegram.ui.ActionBar.d6 resourcesProvider;
     public TL_iv.RichMessage richMessage;
-    private org.telegram.ui.Components.yc showMoreBounce;
-    private h90 showMoreLoading;
+    private org.telegram.ui.Components.zc showMoreBounce;
+    private r90 showMoreLoading;
     private Paint showMorePaint;
     private boolean showMorePressed;
     private final RectF showMoreRect;
-    private f01 showMoreText;
-    private vh.g spoilerEffect2;
+    private t01 showMoreText;
+    private vh.f spoilerEffect2;
     public final HashMap<String, TL_iv.textAnchor> textAnchors;
     public final ArrayList<Integer> textBlockBlockIndex;
     public final ArrayList<Integer> textBlockCharOffsets;
-    public final ArrayList<org.telegram.ui.Cells.ca> textBlocks;
+    public final ArrayList<org.telegram.ui.Cells.ba> textBlocks;
     public final TextPaint textPaint;
     private org.telegram.ui.Components.e6 translationLoadingFloat;
     public float translationLoadingValue;
@@ -201,7 +201,7 @@ public class RichMessageLayout {
     public final ArrayList<RichUnsupportedBlock> unsupportedBlocksRoot;
     public View view;
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class FoundLink {
         public int end;
         public StaticLayout layout;
@@ -211,8 +211,8 @@ public class RichMessageLayout {
         public float y;
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
-    public static class PreviewView extends View implements org.telegram.ui.Cells.q9 {
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    public static class PreviewView extends View implements org.telegram.ui.Cells.p9 {
         private boolean allowActions;
         private final int currentAccount;
         private int insetBottom;
@@ -225,95 +225,95 @@ public class RichMessageLayout {
         private int minHeight;
         private org.telegram.ui.ActionBar.d6 resourcesProvider;
         private TL_iv.RichMessage richMessage;
-        private org.telegram.ui.Cells.r9 textSelectionHelper;
+        private org.telegram.ui.Cells.q9 textSelectionHelper;
         private Runnable textSelectionLongPressRunnable;
         private boolean translationLoading;
 
-        /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
-        public static final class Factory extends g51 {
+        /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+        public static final class Factory extends u51 {
             static {
-                g51.setup(new Factory());
+                u51.setup(new Factory());
             }
 
-            public static h51 of(TL_iv.RichMessage richMessage) {
-                h51 J = h51.J(Factory.class);
+            public static v51 of(TL_iv.RichMessage richMessage) {
+                v51 J = v51.J(Factory.class);
                 J.G = richMessage;
                 return J;
             }
 
-            @Override // org.telegram.ui.Components.g51
-            public void bindView(View view, h51 h51Var, boolean z10, v51 v51Var, d61 d61Var) {
+            @Override // org.telegram.ui.Components.u51
+            public void bindView(View view, v51 v51Var, boolean z10, j61 j61Var, r61 r61Var) {
                 PreviewView previewView = (PreviewView) view;
-                previewView.set((TL_iv.RichMessage) h51Var.G);
-                previewView.setTranslationLoading(h51Var.e);
+                previewView.set((TL_iv.RichMessage) v51Var.G);
+                previewView.setTranslationLoading(v51Var.e);
             }
 
-            @Override // org.telegram.ui.Components.g51
-            public boolean contentsEquals(h51 h51Var, h51 h51Var2) {
-                return h51Var.d == h51Var2.d && h51Var.G == h51Var2.G && h51Var.e == h51Var2.e;
+            @Override // org.telegram.ui.Components.u51
+            public boolean contentsEquals(v51 v51Var, v51 v51Var2) {
+                return v51Var.d == v51Var2.d && v51Var.G == v51Var2.G && v51Var.e == v51Var2.e;
             }
 
-            @Override // org.telegram.ui.Components.g51
-            public boolean equals(h51 h51Var, h51 h51Var2) {
-                return h51Var.d == h51Var2.d;
+            @Override // org.telegram.ui.Components.u51
+            public boolean equals(v51 v51Var, v51 v51Var2) {
+                return v51Var.d == v51Var2.d;
             }
 
-            @Override // org.telegram.ui.Components.g51
+            @Override // org.telegram.ui.Components.u51
             public boolean isClickable() {
                 return false;
             }
 
-            @Override // org.telegram.ui.Components.g51
-            public PreviewView createView(Context context, ml0 ml0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
+            @Override // org.telegram.ui.Components.u51
+            public PreviewView createView(Context context, wl0 wl0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
                 PreviewView previewView = new PreviewView(context, i10, d6Var);
                 previewView.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), AndroidUtilities.dp(16.0f));
                 return previewView;
             }
         }
 
-        /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
-        public static class PaddedTextLayoutBlock implements org.telegram.ui.Cells.ca {
-            private final org.telegram.ui.Cells.ca inner;
+        /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+        public static class PaddedTextLayoutBlock implements org.telegram.ui.Cells.ba {
+            private final org.telegram.ui.Cells.ba inner;
             private final int px;
             private final int py;
 
-            public PaddedTextLayoutBlock(org.telegram.ui.Cells.ca caVar, int i10, int i11) {
-                this.inner = caVar;
+            public PaddedTextLayoutBlock(org.telegram.ui.Cells.ba baVar, int i10, int i11) {
+                this.inner = baVar;
                 this.px = i10;
                 this.py = i11;
             }
 
-            @Override // org.telegram.ui.Cells.ca
+            @Override // org.telegram.ui.Cells.ba
             public Layout getLayout() {
                 return this.inner.getLayout();
             }
 
-            @Override // org.telegram.ui.Cells.ca
+            @Override // org.telegram.ui.Cells.ba
             public CharSequence getPrefix() {
                 return this.inner.getPrefix();
             }
 
-            @Override // org.telegram.ui.Cells.ca
+            @Override // org.telegram.ui.Cells.ba
             public int getRow() {
                 return this.inner.getRow();
             }
 
-            @Override // org.telegram.ui.Cells.ca
+            @Override // org.telegram.ui.Cells.ba
             public /* bridge */ /* synthetic */ Rect getSelectionBounds() {
                 return null;
             }
 
-            @Override // org.telegram.ui.Cells.ca
+            @Override // org.telegram.ui.Cells.ba
             public CharSequence getText() {
                 return this.inner.getText();
             }
 
-            @Override // org.telegram.ui.Cells.ca
+            @Override // org.telegram.ui.Cells.ba
             public int getX() {
                 return this.inner.getX() + this.px;
             }
 
-            @Override // org.telegram.ui.Cells.ca
+            @Override // org.telegram.ui.Cells.ba
             public int getY() {
                 return this.inner.getY() + this.py;
             }
@@ -357,8 +357,8 @@ public class RichMessageLayout {
             }
         }
 
-        @Override // org.telegram.ui.Cells.q9
-        public void fillTextLayoutBlocks(ArrayList<org.telegram.ui.Cells.ca> arrayList) {
+        @Override // org.telegram.ui.Cells.p9
+        public void fillTextLayoutBlocks(ArrayList<org.telegram.ui.Cells.ba> arrayList) {
             if (this.layout != null) {
                 int i10 = this.insetLeft;
                 int i11 = this.insetTop;
@@ -413,16 +413,16 @@ public class RichMessageLayout {
                 canvas.restore();
             }
             canvas.restore();
-            org.telegram.ui.Cells.r9 r9Var = this.textSelectionHelper;
-            if (r9Var == null || !r9Var.y()) {
+            org.telegram.ui.Cells.q9 q9Var = this.textSelectionHelper;
+            if (q9Var == null || !q9Var.y()) {
                 return;
             }
             int i10 = this.insetLeft;
             int i11 = this.insetTop;
             for (int i12 = 0; i12 < this.layout.textBlocks.size(); i12++) {
-                org.telegram.ui.Cells.ca caVar = this.layout.textBlocks.get(i12);
+                org.telegram.ui.Cells.ba baVar = this.layout.textBlocks.get(i12);
                 canvas.save();
-                canvas.translate(caVar.getX() + i10, caVar.getY() + i11);
+                canvas.translate(baVar.getX() + i10, baVar.getY() + i11);
                 this.textSelectionHelper.a0(canvas, this, i12);
                 canvas.restore();
             }
@@ -534,8 +534,8 @@ public class RichMessageLayout {
             }
         }
 
-        public void setTextSelectionHelper(org.telegram.ui.Cells.r9 r9Var) {
-            this.textSelectionHelper = r9Var;
+        public void setTextSelectionHelper(org.telegram.ui.Cells.q9 q9Var) {
+            this.textSelectionHelper = q9Var;
         }
 
         public void setTranslationLoading(boolean z10) {
@@ -558,7 +558,7 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class QuoteBackground {
         int endBlockIndex;
         int level;
@@ -585,12 +585,12 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static abstract class RichBlock implements mj0 {
         public int accessibilityLabelResId;
         public int accessibilityParentLabelResId;
         private CheckBoxBase checkbox;
-        private org.telegram.ui.Components.yc checkboxBounce;
+        private org.telegram.ui.Components.zc checkboxBounce;
         private TLObject checkboxItem;
         private boolean checkboxPressed;
         private float checkboxY;
@@ -684,8 +684,8 @@ public class RichMessageLayout {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ int lambda$withReplacements$0(Spanned spanned, org.telegram.ui.Cells.x9 x9Var, org.telegram.ui.Cells.x9 x9Var2) {
-            return spanned.getSpanStart(x9Var2) - spanned.getSpanStart(x9Var);
+        public static /* synthetic */ int lambda$withReplacements$0(Spanned spanned, org.telegram.ui.Cells.w9 w9Var, org.telegram.ui.Cells.w9 w9Var2) {
+            return spanned.getSpanStart(w9Var2) - spanned.getSpanStart(w9Var);
         }
 
         private void setCheckboxChecked(boolean z10) {
@@ -715,7 +715,7 @@ public class RichMessageLayout {
                 if (view2 != null) {
                     view2.performHapticFeedback(3, 2);
                 }
-                this.root.getDelegate().i(this.root.getCell(), new bi.f(11, this, z10));
+                this.root.getDelegate().i(this.root.getCell(), new bi.f(12, this, z10));
             }
         }
 
@@ -724,17 +724,17 @@ public class RichMessageLayout {
                 return charSequence;
             }
             Spanned spanned = (Spanned) charSequence;
-            org.telegram.ui.Cells.x9[] x9VarArr = (org.telegram.ui.Cells.x9[]) spanned.getSpans(0, spanned.length(), org.telegram.ui.Cells.x9.class);
-            if (x9VarArr == null || x9VarArr.length == 0) {
+            org.telegram.ui.Cells.w9[] w9VarArr = (org.telegram.ui.Cells.w9[]) spanned.getSpans(0, spanned.length(), org.telegram.ui.Cells.w9.class);
+            if (w9VarArr == null || w9VarArr.length == 0) {
                 return charSequence;
             }
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence);
-            Arrays.sort(x9VarArr, new uh(spanned, 0));
-            for (org.telegram.ui.Cells.x9 x9Var : x9VarArr) {
-                int spanStart = spanned.getSpanStart(x9Var);
-                int spanEnd = spanned.getSpanEnd(x9Var);
+            Arrays.sort(w9VarArr, new uh(spanned, 0));
+            for (org.telegram.ui.Cells.w9 w9Var : w9VarArr) {
+                int spanStart = spanned.getSpanStart(w9Var);
+                int spanEnd = spanned.getSpanEnd(w9Var);
                 if (spanStart >= 0 && spanEnd >= 0 && spanStart <= spanEnd && spanEnd <= spannableStringBuilder.length()) {
-                    CharSequence charSequence2 = x9Var.a;
+                    CharSequence charSequence2 = w9Var.a;
                     if (charSequence2 == null) {
                         charSequence2 = "";
                     }
@@ -816,13 +816,13 @@ public class RichMessageLayout {
         }
 
         public boolean findLink(CharacterStyle characterStyle, int i10, FoundLink foundLink) {
-            org.telegram.ui.Cells.ca[] text = getText();
+            org.telegram.ui.Cells.ba[] text = getText();
             if (text == null) {
                 return false;
             }
-            for (org.telegram.ui.Cells.ca caVar : text) {
-                if (caVar instanceof Text) {
-                    if (((Text) caVar).fillFoundLink(characterStyle, foundLink)) {
+            for (org.telegram.ui.Cells.ba baVar : text) {
+                if (baVar instanceof Text) {
+                    if (((Text) baVar).fillFoundLink(characterStyle, foundLink)) {
                         Rect rect = this.padding;
                         foundLink.x = rect.left - r4.left;
                         foundLink.y = i10 + rect.top;
@@ -946,7 +946,7 @@ public class RichMessageLayout {
             return null;
         }
 
-        public org.telegram.ui.Cells.ca[] getText() {
+        public org.telegram.ui.Cells.ba[] getText() {
             return null;
         }
 
@@ -993,12 +993,12 @@ public class RichMessageLayout {
         }
 
         public boolean isPressingLink() {
-            org.telegram.ui.Cells.ca[] text = getText();
+            org.telegram.ui.Cells.ba[] text = getText();
             if (text == null) {
                 return false;
             }
-            for (org.telegram.ui.Cells.ca caVar : text) {
-                if ((caVar instanceof Text) && ((Text) caVar).isPressingLink()) {
+            for (org.telegram.ui.Cells.ba baVar : text) {
+                if ((baVar instanceof Text) && ((Text) baVar).isPressingLink()) {
                     return true;
                 }
             }
@@ -1043,13 +1043,13 @@ public class RichMessageLayout {
             this.layoutX = i10;
             this.layoutY = i11;
             this.layoutRow = i12;
-            org.telegram.ui.Cells.ca[] text = getText();
+            org.telegram.ui.Cells.ba[] text = getText();
             if (text == null) {
                 return;
             }
-            for (org.telegram.ui.Cells.ca caVar : text) {
-                if (caVar instanceof Text) {
-                    Text text2 = (Text) caVar;
+            for (org.telegram.ui.Cells.ba baVar : text) {
+                if (baVar instanceof Text) {
+                    Text text2 = (Text) baVar;
                     text2.setX(i10 - text2.left);
                     text2.setY(i11);
                     text2.setRow(i12);
@@ -1126,11 +1126,11 @@ public class RichMessageLayout {
                         if (contains && canToggleCheckbox()) {
                             this.checkboxPressed = true;
                             if (this.checkboxBounce == null && (view = this.root.view) != null) {
-                                this.checkboxBounce = new org.telegram.ui.Components.yc(view);
+                                this.checkboxBounce = new org.telegram.ui.Components.zc(view);
                             }
-                            org.telegram.ui.Components.yc ycVar = this.checkboxBounce;
-                            if (ycVar != null) {
-                                ycVar.c(true);
+                            org.telegram.ui.Components.zc zcVar = this.checkboxBounce;
+                            if (zcVar != null) {
+                                zcVar.c(true);
                             }
                             invalidateCell();
                             Rect rect2 = this.padding;
@@ -1141,17 +1141,17 @@ public class RichMessageLayout {
                         if (actionMasked == 2) {
                             if (!contains) {
                                 this.checkboxPressed = false;
-                                org.telegram.ui.Components.yc ycVar2 = this.checkboxBounce;
-                                if (ycVar2 != null) {
-                                    ycVar2.c(false);
+                                org.telegram.ui.Components.zc zcVar2 = this.checkboxBounce;
+                                if (zcVar2 != null) {
+                                    zcVar2.c(false);
                                 }
                             }
                         } else if (actionMasked == 1 || actionMasked == 3) {
                             boolean z10 = actionMasked == 1 && contains;
                             this.checkboxPressed = false;
-                            org.telegram.ui.Components.yc ycVar3 = this.checkboxBounce;
-                            if (ycVar3 != null) {
-                                ycVar3.c(false);
+                            org.telegram.ui.Components.zc zcVar3 = this.checkboxBounce;
+                            if (zcVar3 != null) {
+                                zcVar3.c(false);
                             }
                             if (z10) {
                                 toggleCheckbox();
@@ -1232,8 +1232,8 @@ public class RichMessageLayout {
                         checkBoxBase.a = view;
                     }
                 }
-                org.telegram.ui.Components.yc ycVar = this.checkboxBounce;
-                float a2 = ycVar != null ? ycVar.a(0.1f) : 1.0f;
+                org.telegram.ui.Components.zc zcVar = this.checkboxBounce;
+                float a2 = zcVar != null ? zcVar.a(0.1f) : 1.0f;
                 canvas.save();
                 canvas.scale(a2, a2, AndroidUtilities.dp(10.0f) + dp, this.checkboxY + AndroidUtilities.dp(10.0f));
                 this.checkbox.e(dp, (int) this.checkboxY, AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f));
@@ -1251,13 +1251,13 @@ public class RichMessageLayout {
         public boolean drawOverlay(Canvas canvas, ColorFilter colorFilter) {
             Text text;
             org.telegram.ui.Components.v5 v5Var;
-            org.telegram.ui.Cells.ca[] text2 = getText();
+            org.telegram.ui.Cells.ba[] text2 = getText();
             if (text2 == null) {
                 return false;
             }
             boolean z10 = false;
-            for (org.telegram.ui.Cells.ca caVar : text2) {
-                if ((caVar instanceof Text) && (v5Var = (text = (Text) caVar).animatedEmojiStack) != null && !v5Var.a.isEmpty()) {
+            for (org.telegram.ui.Cells.ba baVar : text2) {
+                if ((baVar instanceof Text) && (v5Var = (text = (Text) baVar).animatedEmojiStack) != null && !v5Var.a.isEmpty()) {
                     canvas.save();
                     canvas.translate(text.x, text.y - this.currY);
                     org.telegram.ui.Components.z5.drawAnimatedEmojis(canvas, text.layout, text.animatedEmojiStack, 0.0f, text.spoilers, 0.0f, 0.0f, 0.0f, 1.0f, colorFilter);
@@ -1295,7 +1295,7 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class RichButton {
         private static final float ICON_OFFSET_X = 12.33f;
         private static final float ICON_OFFSET_Y = 11.66f;
@@ -1323,7 +1323,7 @@ public class RichMessageLayout {
         private final boolean link;
         private ColorFilter linkColorFilter;
         private boolean loading;
-        public h90 loadingDrawable;
+        public r90 loadingDrawable;
         private final RectF loadingRect;
         private final int maxWidth;
         private boolean needSaveLayer;
@@ -1333,7 +1333,7 @@ public class RichMessageLayout {
         public float pressT;
         public boolean pressed;
         public final TL_keyboard.RichButtonStyle style;
-        private final org.telegram.ui.ActionBar.z5 styleKeys;
+        private final org.telegram.ui.ActionBar.y5 styleKeys;
         public final Text text;
         public int textColor;
         private ColorFilter textColorFilter;
@@ -1358,9 +1358,9 @@ public class RichMessageLayout {
         private void drawLoading(Canvas canvas) {
             boolean z10 = (this.pageButton == null || this.layout.cell == null || !this.layout.cell.H1(this.pageButton)) ? false : true;
             setLoading(z10);
-            h90 h90Var = this.loadingDrawable;
-            if (h90Var != null) {
-                if (z10 || h90Var.c()) {
+            r90 r90Var = this.loadingDrawable;
+            if (r90Var != null) {
+                if (z10 || r90Var.c()) {
                     float strokeWidth = this.loadingDrawable.w.getStrokeWidth();
                     this.loadingRect.set(0.0f, 0.0f, this.width, getHeight());
                     float f7 = strokeWidth / 2.0f;
@@ -1383,7 +1383,7 @@ public class RichMessageLayout {
                 return R.drawable.mini_inline_arrow_16;
             }
             if (inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeUrl) {
-                return ac0.l(((TL_keyboard.TL_inlineButtonTypeUrl) inlineButtonType).url) ? R.drawable.bot_webview : R.drawable.mini_inline_arrow_16;
+                return zb0.l(((TL_keyboard.TL_inlineButtonTypeUrl) inlineButtonType).url) ? R.drawable.bot_webview : R.drawable.mini_inline_arrow_16;
             }
             if (inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeWebView) {
                 return R.drawable.bot_webview;
@@ -1614,20 +1614,20 @@ public class RichMessageLayout {
             }
             this.loading = z10;
             if (z10) {
-                h90 h90Var = this.loadingDrawable;
-                if (h90Var == null) {
-                    h90 h90Var2 = new h90();
-                    this.loadingDrawable = h90Var2;
-                    h90Var2.C = true;
-                    h90Var2.w.setStrokeWidth(AndroidUtilities.dpf2(1.25f));
+                r90 r90Var = this.loadingDrawable;
+                if (r90Var == null) {
+                    r90 r90Var2 = new r90();
+                    this.loadingDrawable = r90Var2;
+                    r90Var2.C = true;
+                    r90Var2.w.setStrokeWidth(AndroidUtilities.dpf2(1.25f));
                 } else {
-                    h90Var.b = -1L;
-                    h90Var.c = -1L;
+                    r90Var.b = -1L;
+                    r90Var.c = -1L;
                 }
             } else {
-                h90 h90Var3 = this.loadingDrawable;
-                if (h90Var3 != null) {
-                    h90Var3.a();
+                r90 r90Var3 = this.loadingDrawable;
+                if (r90Var3 != null) {
+                    r90Var3.a();
                 }
             }
             this.invalidateRunnable.run();
@@ -1698,7 +1698,7 @@ public class RichMessageLayout {
         */
         public void updateColors() {
             boolean z10;
-            org.telegram.ui.ActionBar.z5 z5Var;
+            org.telegram.ui.ActionBar.y5 y5Var;
             int i10;
             int i11;
             org.telegram.ui.ActionBar.d6 d6Var = this.layout.resourcesProvider;
@@ -1709,18 +1709,18 @@ public class RichMessageLayout {
                 int themedColor3 = this.layout.getThemedColor(org.telegram.ui.ActionBar.h6.Fa);
                 if (themedColor != 0 || themedColor2 != 0 || themedColor3 != 0) {
                     z10 = true;
-                    z5Var = this.styleKeys;
-                    if (z10 && z5Var != org.telegram.ui.ActionBar.z5.n) {
-                        z5Var = org.telegram.ui.ActionBar.z5.h;
+                    y5Var = this.styleKeys;
+                    if (z10 && y5Var != org.telegram.ui.ActionBar.y5.n) {
+                        y5Var = org.telegram.ui.ActionBar.y5.h;
                     }
                     boolean z11 = this.out;
-                    i10 = !z11 ? z5Var.d : z5Var.a;
-                    i11 = !z11 ? z5Var.e : z5Var.b;
-                    int i12 = !z11 ? z5Var.f : z5Var.c;
+                    i10 = !z11 ? y5Var.d : y5Var.a;
+                    i11 = !z11 ? y5Var.e : y5Var.b;
+                    int i12 = !z11 ? y5Var.f : y5Var.c;
                     int themedColor4 = this.layout.getThemedColor(i12);
                     this.needSaveLayer = false;
-                    if (z10 || z5Var != org.telegram.ui.ActionBar.z5.n) {
-                        if (!org.telegram.ui.ActionBar.h6.c1(i10) || z5Var == org.telegram.ui.ActionBar.z5.n) {
+                    if (z10 || y5Var != org.telegram.ui.ActionBar.y5.n) {
+                        if (!org.telegram.ui.ActionBar.h6.c1(i10) || y5Var == org.telegram.ui.ActionBar.y5.n) {
                             this.backgroundColor = this.layout.getThemedColor(i10);
                             if (org.telegram.ui.ActionBar.h6.c1(i11)) {
                                 this.backgroundPressedColor = i0.a.d(0.1f, this.backgroundColor, themedColor4);
@@ -1728,7 +1728,7 @@ public class RichMessageLayout {
                                 this.backgroundPressedColor = this.layout.getThemedColor(i11);
                             }
                         } else {
-                            this.backgroundColor = org.telegram.ui.ActionBar.h6.l1(z5Var == org.telegram.ui.ActionBar.z5.h ? 0.08f : 0.1f, this.layout.getThemedColor(i12));
+                            this.backgroundColor = org.telegram.ui.ActionBar.h6.l1(y5Var == org.telegram.ui.ActionBar.y5.h ? 0.08f : 0.1f, this.layout.getThemedColor(i12));
                             this.backgroundPressedColor = org.telegram.ui.ActionBar.h6.l1(0.16f, this.layout.getThemedColor(i12));
                         }
                     } else {
@@ -1741,9 +1741,9 @@ public class RichMessageLayout {
                 }
             }
             z10 = false;
-            z5Var = this.styleKeys;
+            y5Var = this.styleKeys;
             if (z10) {
-                z5Var = org.telegram.ui.ActionBar.z5.h;
+                y5Var = org.telegram.ui.ActionBar.y5.h;
             }
             boolean z112 = this.out;
             if (!z112) {
@@ -1776,7 +1776,7 @@ public class RichMessageLayout {
             Code decompiled incorrectly, please refer to instructions dump.
         */
         public RichButton(RichMessageLayout richMessageLayout, int i10, CharSequence charSequence, TL_keyboard.PageButton pageButton, TL_keyboard.InlineButtonType inlineButtonType, TL_keyboard.RichButtonStyle richButtonStyle, boolean z10, boolean z11, boolean z12, boolean z13, boolean z14, boolean z15, Boolean bool, Runnable runnable) {
-            org.telegram.ui.ActionBar.z5 z5Var;
+            org.telegram.ui.ActionBar.y5 y5Var;
             int buttonIcon;
             this.backgroundPaint = new Paint(1);
             this.loadingRect = new RectF();
@@ -1795,26 +1795,26 @@ public class RichMessageLayout {
             boolean booleanValue = bool != null ? bool.booleanValue() : richMessageLayout.isOut();
             this.out = booleanValue;
             if (richButtonStyle != null) {
-                org.telegram.ui.ActionBar.z5 z5Var2 = org.telegram.ui.ActionBar.z5.h;
+                org.telegram.ui.ActionBar.y5 y5Var2 = org.telegram.ui.ActionBar.y5.h;
                 if (richButtonStyle.bg_primary) {
-                    z5Var = org.telegram.ui.ActionBar.z5.n;
+                    y5Var = org.telegram.ui.ActionBar.y5.n;
                 } else if (richButtonStyle.bg_danger) {
-                    z5Var = org.telegram.ui.ActionBar.z5.r;
+                    y5Var = org.telegram.ui.ActionBar.y5.r;
                 } else if (richButtonStyle.bg_success) {
-                    z5Var = org.telegram.ui.ActionBar.z5.s;
+                    y5Var = org.telegram.ui.ActionBar.y5.s;
                 }
-                if (z5Var == org.telegram.ui.ActionBar.z5.h && z15) {
-                    z5Var = org.telegram.ui.ActionBar.z5.v;
+                if (y5Var == org.telegram.ui.ActionBar.y5.h && z15) {
+                    y5Var = org.telegram.ui.ActionBar.y5.v;
                 }
-                this.styleKeys = z5Var;
-                f10 f10Var = new f10(!booleanValue ? z5Var.f : z5Var.c, null);
+                this.styleKeys = y5Var;
+                f10 f10Var = new f10(!booleanValue ? y5Var.f : y5Var.c, null);
                 this.colorSpan = f10Var;
                 f10Var.c = !z10 ? 0.5f : 1.0f;
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence);
                 if (z14) {
                     spannableStringBuilder.setSpan(f10Var, 0, spannableStringBuilder.length(), 33);
                 } else {
-                    spannableStringBuilder.setSpan(new l51("", (n01) null), 0, spannableStringBuilder.length(), 33);
+                    spannableStringBuilder.setSpan(new z51("", (b11) null), 0, spannableStringBuilder.length(), 33);
                 }
                 AndroidUtilities.replaceNewLines(spannableStringBuilder);
                 Math.max(1, AndroidUtilities.dp(2.0f) + ((int) Math.ceil(Layout.getDesiredWidth(spannableStringBuilder, richMessageLayout.textPaint))));
@@ -1829,12 +1829,12 @@ public class RichMessageLayout {
                 this.width = getPreferredWidth();
                 updateColors();
             }
-            z5Var = org.telegram.ui.ActionBar.z5.h;
-            if (z5Var == org.telegram.ui.ActionBar.z5.h) {
-                z5Var = org.telegram.ui.ActionBar.z5.v;
+            y5Var = org.telegram.ui.ActionBar.y5.h;
+            if (y5Var == org.telegram.ui.ActionBar.y5.h) {
+                y5Var = org.telegram.ui.ActionBar.y5.v;
             }
-            this.styleKeys = z5Var;
-            f10 f10Var2 = new f10(!booleanValue ? z5Var.f : z5Var.c, null);
+            this.styleKeys = y5Var;
+            f10 f10Var2 = new f10(!booleanValue ? y5Var.f : y5Var.c, null);
             this.colorSpan = f10Var2;
             f10Var2.c = !z10 ? 0.5f : 1.0f;
             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(charSequence);
@@ -1855,7 +1855,7 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class RichButtonRowBlock extends RichBlock {
         private static final int GAP = 7;
         private final Align align;
@@ -1865,7 +1865,7 @@ public class RichMessageLayout {
         private RichButton pressedButton;
         private RichButton touchButton;
 
-        /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+        /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
         public enum Align {
             LEFT,
             RIGHT,
@@ -2218,7 +2218,7 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class RichButtonSpan extends ReplacementSpan {
         private static final int MARGIN_HORIZONTAL = 1;
         private final RectF bounds;
@@ -2267,14 +2267,14 @@ public class RichMessageLayout {
             this.button.detach(view);
         }
 
-        public void didPress(org.telegram.ui.Cells.t1 t1Var, org.telegram.ui.Cells.k1 k1Var, boolean z10) {
-            if (t1Var == null || k1Var == null) {
+        public void didPress(org.telegram.ui.Cells.u1 u1Var, org.telegram.ui.Cells.l1 l1Var, boolean z10) {
+            if (u1Var == null || l1Var == null) {
                 return;
             }
             if (z10) {
-                k1Var.H1(t1Var, this.textButton);
+                l1Var.H1(u1Var, this.textButton);
             } else {
-                k1Var.m1(t1Var, this.textButton);
+                l1Var.m1(u1Var, this.textButton);
             }
         }
 
@@ -2386,7 +2386,7 @@ public class RichMessageLayout {
                 TL_iv.textConcat textconcat = (TL_iv.textConcat) richText;
                 if (!textconcat.texts.isEmpty()) {
                     boolean z13 = textconcat.texts.get(0) instanceof TL_iv.textCustomEmoji;
-                    z11 = hg.c.h(1, textconcat.texts) instanceof TL_iv.textCustomEmoji;
+                    z11 = hg.c.g(1, textconcat.texts) instanceof TL_iv.textCustomEmoji;
                     z10 = z13;
                     TL_keyboard.RichButtonStyle richButtonStyle = textbutton.style;
                     z12 = richButtonStyle == null && richButtonStyle.link;
@@ -2417,12 +2417,12 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class RichCaptionBlock extends RichBlock {
         public final Text caption;
         public final Text credit;
         public final boolean rtl;
-        private final org.telegram.ui.Cells.ca[] texts;
+        private final org.telegram.ui.Cells.ba[] texts;
 
         public RichCaptionBlock(RichMessageLayout richMessageLayout, Rect rect, int i10, CharSequence charSequence, CharSequence charSequence2) {
             super(richMessageLayout, rect, i10);
@@ -2438,7 +2438,7 @@ public class RichMessageLayout {
             if (text2 != null) {
                 arrayList.add(text2);
             }
-            this.texts = (org.telegram.ui.Cells.ca[]) arrayList.toArray(new org.telegram.ui.Cells.ca[0]);
+            this.texts = (org.telegram.ui.Cells.ba[]) arrayList.toArray(new org.telegram.ui.Cells.ba[0]);
         }
 
         private int captionHeight() {
@@ -2530,7 +2530,7 @@ public class RichMessageLayout {
         }
 
         @Override // org.telegram.messenger.RichMessageLayout.RichBlock
-        public org.telegram.ui.Cells.ca[] getText() {
+        public org.telegram.ui.Cells.ba[] getText() {
             return this.texts;
         }
 
@@ -2616,7 +2616,7 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class RichCollageBlock extends RichBlock {
         private static Paint mediaBgPaint;
         public final TL_iv.pageBlockCollage block;
@@ -2921,7 +2921,7 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class RichDetailsBlock extends RichBlock {
         private static final float ARROW_HEIGHT_DP = 6.16f;
         private static final float ARROW_LEFT_DP = 22.6f;
@@ -2936,7 +2936,7 @@ public class RichMessageLayout {
         public float animClipTop;
         public final AnimatedArrowDrawable arrow;
         public final TL_iv.pageBlockDetails block;
-        private org.telegram.ui.Components.yc bounce;
+        private org.telegram.ui.Components.zc bounce;
         private final Paint linePaint;
         private boolean pressed;
         public final Text[] texts;
@@ -2946,7 +2946,7 @@ public class RichMessageLayout {
             super(richMessageLayout, rect, i10);
             this.linePaint = new Paint(1);
             this.block = pageblockdetails;
-            Text text = new Text(richMessageLayout, charSequence, hg.c.f(TEXT_RIGHT_DP, this.maxWidth - AndroidUtilities.dp(TEXT_LEFT_DP), 0));
+            Text text = new Text(richMessageLayout, charSequence, f0.b(TEXT_RIGHT_DP, this.maxWidth - AndroidUtilities.dp(TEXT_LEFT_DP), 0));
             this.title = text;
             this.texts = new Text[]{text};
             AnimatedArrowDrawable animatedArrowDrawable = new AnimatedArrowDrawable(richMessageLayout.getThemedColor(richMessageLayout.isOut() ? org.telegram.ui.ActionBar.h6.Ek : org.telegram.ui.ActionBar.h6.Dk));
@@ -2959,11 +2959,11 @@ public class RichMessageLayout {
             if (this.bounce != null || (view = this.root.view) == null) {
                 return;
             }
-            this.bounce = new org.telegram.ui.Components.yc(view);
+            this.bounce = new org.telegram.ui.Components.zc(view);
         }
 
         private int getContentHeight() {
-            return z0.b(12.66f, this.title.getHeight() + AndroidUtilities.dp(TEXT_TOP_DP), AndroidUtilities.dp(27.82f));
+            return f0.y(12.66f, this.title.getHeight() + AndroidUtilities.dp(TEXT_TOP_DP), AndroidUtilities.dp(27.82f));
         }
 
         private void toggle() {
@@ -2979,8 +2979,8 @@ public class RichMessageLayout {
             if (view != null) {
                 view.invalidate();
             }
-            org.telegram.ui.Cells.t1 cell = this.root.getCell();
-            org.telegram.ui.Cells.k1 delegate = this.root.getDelegate();
+            org.telegram.ui.Cells.u1 cell = this.root.getCell();
+            org.telegram.ui.Cells.l1 delegate = this.root.getDelegate();
             if (cell == null || delegate == null) {
                 return;
             }
@@ -3051,7 +3051,7 @@ public class RichMessageLayout {
         }
 
         @Override // org.telegram.messenger.RichMessageLayout.RichBlock
-        public org.telegram.ui.Cells.ca[] getText() {
+        public org.telegram.ui.Cells.ba[] getText() {
             return this.texts;
         }
 
@@ -3082,8 +3082,8 @@ public class RichMessageLayout {
 
         @Override // org.telegram.messenger.RichMessageLayout.RichBlock
         public void onDraw(Canvas canvas) {
-            org.telegram.ui.Components.yc ycVar = this.bounce;
-            float a2 = ycVar != null ? ycVar.a(0.02f) : 1.0f;
+            org.telegram.ui.Components.zc zcVar = this.bounce;
+            float a2 = zcVar != null ? zcVar.a(0.02f) : 1.0f;
             RichMessageLayout richMessageLayout = this.root;
             float f7 = -richMessageLayout.padLeft;
             int minWidth = richMessageLayout.getMinWidth() + this.root.padRight;
@@ -3126,18 +3126,18 @@ public class RichMessageLayout {
             if (actionMasked == 0) {
                 this.pressed = true;
                 ensureBounce();
-                org.telegram.ui.Components.yc ycVar = this.bounce;
-                if (ycVar != null) {
-                    ycVar.c(true);
+                org.telegram.ui.Components.zc zcVar = this.bounce;
+                if (zcVar != null) {
+                    zcVar.c(true);
                 }
                 return true;
             }
             if (actionMasked != 1) {
                 if (actionMasked == 3) {
                     this.pressed = false;
-                    org.telegram.ui.Components.yc ycVar2 = this.bounce;
-                    if (ycVar2 != null) {
-                        ycVar2.c(false);
+                    org.telegram.ui.Components.zc zcVar2 = this.bounce;
+                    if (zcVar2 != null) {
+                        zcVar2.c(false);
                     }
                 }
                 return this.pressed;
@@ -3146,9 +3146,9 @@ public class RichMessageLayout {
                 return false;
             }
             this.pressed = false;
-            org.telegram.ui.Components.yc ycVar3 = this.bounce;
-            if (ycVar3 != null) {
-                ycVar3.c(false);
+            org.telegram.ui.Components.zc zcVar3 = this.bounce;
+            if (zcVar3 != null) {
+                zcVar3.c(false);
             }
             View view = this.root.view;
             if (view != null) {
@@ -3169,7 +3169,7 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class RichDetailsEndBlock extends RichBlock {
         private final Paint paint;
 
@@ -3180,7 +3180,7 @@ public class RichMessageLayout {
 
         @Override // org.telegram.messenger.RichMessageLayout.RichBlock
         public int getHeight() {
-            return z0.C(6.0f, this.padding.top, 1) + this.padding.bottom;
+            return f0.C(6.0f, this.padding.top, 1) + this.padding.bottom;
         }
 
         @Override // org.telegram.messenger.RichMessageLayout.RichBlock
@@ -3210,7 +3210,7 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class RichDividerBlock extends RichBlock {
         public final Paint paint;
 
@@ -3249,7 +3249,7 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class RichMapBlock extends RichBlock {
         private static Paint mapBgPaint;
         public final TL_iv.pageBlockMap block;
@@ -3419,7 +3419,7 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class RichMathBlock extends RichBlock {
         private static final int HPAD = 0;
         private static final int VPAD = 8;
@@ -3479,7 +3479,7 @@ public class RichMessageLayout {
                 this.contentW = a2.b;
                 this.contentH = a2.c;
             }
-            int D = z0.D(0.0f, 2, this.contentW);
+            int D = f0.D(0.0f, 2, this.contentW);
             this.contentWidth = D;
             this.maxScrollX = Math.max(0, D - i11);
         }
@@ -3509,7 +3509,7 @@ public class RichMessageLayout {
 
         @Override // org.telegram.messenger.RichMessageLayout.RichBlock
         public int getHeight() {
-            return z0.D(8.0f, 2, this.padding.top + this.contentH) + this.padding.bottom;
+            return f0.D(8.0f, 2, this.padding.top + this.contentH) + this.padding.bottom;
         }
 
         @Override // org.telegram.messenger.RichMessageLayout.RichBlock
@@ -3540,7 +3540,7 @@ public class RichMessageLayout {
             Paint paint = this.paint;
             RichMessageLayout richMessageLayout = this.root;
             paint.setColor(richMessageLayout.getThemedColor(richMessageLayout.isOut() ? org.telegram.ui.ActionBar.h6.fc : org.telegram.ui.ActionBar.h6.ec));
-            int D = z0.D(8.0f, 2, this.contentH);
+            int D = f0.D(8.0f, 2, this.contentH);
             if (this.maxScrollX > 0) {
                 RichMessageLayout richMessageLayout2 = this.root;
                 float f7 = -richMessageLayout2.padLeft;
@@ -3650,7 +3650,7 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class RichPhotoBlock extends RichMediaBlock {
         public final TL_iv.pageBlockPhoto block;
         public final TLRPC.Photo photo;
@@ -3727,7 +3727,7 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class RichPreformattedBlock extends RichBlock {
         private static final int BACKGROUND_OUTER_VPAD = 7;
         private static final int HPAD = 0;
@@ -3829,7 +3829,7 @@ public class RichMessageLayout {
             Text text = new Text(richMessageLayout, this.content, AndroidUtilities.dp(5000.0f), Layout.Alignment.ALIGN_NORMAL, 1.3f);
             this.text = text;
             this.texts = new Text[]{text};
-            int D = z0.D(0.0f, 2, Math.max(0, text.right - text.left));
+            int D = f0.D(0.0f, 2, Math.max(0, text.right - text.left));
             this.contentWidth = D;
             int max = Math.max(0, D - this.viewportWidth);
             this.maxScrollX = max;
@@ -3891,7 +3891,7 @@ public class RichMessageLayout {
 
         private void drawTextContent(Canvas canvas, boolean z10, int i10, float f7) {
             int min = Math.min(this.viewportWidth, this.contentWidth);
-            int D = z0.D(8.0f, 2, this.text.getHeight());
+            int D = f0.D(8.0f, 2, this.text.getHeight());
             if (this.padding.left > 0) {
                 canvas.save();
                 canvas.clipRect(0, 0, min, D);
@@ -3975,7 +3975,7 @@ public class RichMessageLayout {
 
         @Override // org.telegram.messenger.RichMessageLayout.RichBlock
         public int getHeight() {
-            return z0.D(7.0f, 2, this.padding.top) + getBackgroundHeight() + this.padding.bottom;
+            return f0.D(7.0f, 2, this.padding.top) + getBackgroundHeight() + this.padding.bottom;
         }
 
         @Override // org.telegram.messenger.RichMessageLayout.RichBlock
@@ -3994,7 +3994,7 @@ public class RichMessageLayout {
         }
 
         @Override // org.telegram.messenger.RichMessageLayout.RichBlock
-        public org.telegram.ui.Cells.ca[] getText() {
+        public org.telegram.ui.Cells.ba[] getText() {
             return this.texts;
         }
 
@@ -4148,21 +4148,21 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class RichPullquoteBlock extends RichTextWithAuthorBlock {
         public RichPullquoteBlock(RichMessageLayout richMessageLayout, Rect rect, int i10, CharSequence charSequence, CharSequence charSequence2) {
             super(richMessageLayout, rect, i10, charSequence, charSequence2, Layout.Alignment.ALIGN_CENTER);
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class RichQuoteBlock extends RichTextWithAuthorBlock {
         public RichQuoteBlock(RichMessageLayout richMessageLayout, Rect rect, int i10, CharSequence charSequence, CharSequence charSequence2) {
             super(richMessageLayout, rect, i10, charSequence, charSequence2, Layout.Alignment.ALIGN_NORMAL);
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class RichSlideshowBlock extends RichBlock {
         private static Paint mediaBgPaint;
         private static Paint slideDotPaint;
@@ -4508,7 +4508,7 @@ public class RichMessageLayout {
                     slideDotPaint.setShadowLayer(AndroidUtilities.dpf2(f10), 0.0f, AndroidUtilities.dpf2(1.0f), TLObject.FLAG_31);
                 }
                 float dp4 = AndroidUtilities.dp(5.0f) + (this.slideHeight - AndroidUtilities.dp(23.0f));
-                int dp5 = AndroidUtilities.dp(4.0f) + z0.D(6.0f, size - 1, AndroidUtilities.dp(7.0f) * size);
+                int dp5 = AndroidUtilities.dp(4.0f) + f0.D(6.0f, size - 1, AndroidUtilities.dp(7.0f) * size);
                 float f21 = this.currentPage + this.pageOffset;
                 if (dp5 < i17) {
                     clamp = (i17 - dp5) / f7;
@@ -4689,8 +4689,8 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
-    public static class RichTableBlock extends RichBlock implements iz0 {
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    public static class RichTableBlock extends RichBlock implements tz0 {
         private static final int VERTICAL_PADDING_DP = 10;
         private final ArrayList<CellBlock> cellBlocks;
         private float cellDx;
@@ -4717,30 +4717,30 @@ public class RichMessageLayout {
         private int scrollX;
         private OverScroller scroller;
         private Paint stripPaint;
-        public final jz0 tableLayout;
+        public final uz0 tableLayout;
         private boolean textHandlingTouch;
-        private final org.telegram.ui.Cells.ca[] textsArr;
+        private final org.telegram.ui.Cells.ba[] textsArr;
         private final Text title;
         private final int titleHeight;
         private int touchSlop;
         private VelocityTracker velocityTracker;
         private final int viewportWidth;
 
-        /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+        /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
         public static final class CellBlock implements mj0 {
-            final cz0 child;
+            final nz0 child;
 
-            public CellBlock(cz0 cz0Var) {
-                this.child = cz0Var;
+            public CellBlock(nz0 nz0Var) {
+                this.child = nz0Var;
             }
 
             @Override // org.telegram.ui.mj0
             public Layout getLayout() {
-                bz0 bz0Var = this.child.b;
-                if (bz0Var == null) {
+                mz0 mz0Var = this.child.b;
+                if (mz0Var == null) {
                     return null;
                 }
-                return bz0Var.getLayout();
+                return mz0Var.getLayout();
             }
 
             @Override // org.telegram.ui.mj0
@@ -4785,26 +4785,26 @@ public class RichMessageLayout {
             rect2.top = AndroidUtilities.dp(10.0f) + rect2.top;
             this.pageBlock = pageblocktable;
             this.viewportWidth = this.maxWidth;
-            jz0 jz0Var = new jz0(ApplicationLoader.applicationContext, this, null);
-            this.tableLayout = jz0Var;
-            jz0Var.setOrientation(0);
-            jz0Var.setRowOrderPreserved(true);
-            jz0Var.setDrawLines(pageblocktable.bordered);
-            jz0Var.setStriped(pageblocktable.striped);
-            jz0Var.setRtl(richMessageLayout.isRtl());
-            jz0Var.setFillWidth(false);
+            uz0 uz0Var = new uz0(ApplicationLoader.applicationContext, this, null);
+            this.tableLayout = uz0Var;
+            uz0Var.setOrientation(0);
+            uz0Var.setRowOrderPreserved(true);
+            uz0Var.setDrawLines(pageblocktable.bordered);
+            uz0Var.setStriped(pageblocktable.striped);
+            uz0Var.setRtl(richMessageLayout.isRtl());
+            uz0Var.setFillWidth(false);
             if (pageblocktable.compact) {
                 int dp = AndroidUtilities.dp(5.0f);
                 int dp2 = AndroidUtilities.dp(5.0f);
                 int dp3 = AndroidUtilities.dp(5.0f);
-                if (jz0Var.v != dp || jz0Var.r != dp2 || jz0Var.s != dp3) {
-                    jz0Var.v = dp;
-                    jz0Var.r = dp2;
-                    jz0Var.s = dp3;
-                    jz0Var.requestLayout();
+                if (uz0Var.v != dp || uz0Var.r != dp2 || uz0Var.s != dp3) {
+                    uz0Var.v = dp;
+                    uz0Var.r = dp2;
+                    uz0Var.s = dp3;
+                    uz0Var.requestLayout();
                 }
             }
-            jz0Var.setMinimumCellHeight(AndroidUtilities.dp(pageblocktable.compact ? 18.0f : 36.0f));
+            uz0Var.setMinimumCellHeight(AndroidUtilities.dp(pageblocktable.compact ? 18.0f : 36.0f));
             if (pageblocktable.rows.isEmpty()) {
                 i11 = 0;
             } else {
@@ -4857,10 +4857,10 @@ public class RichMessageLayout {
             this.intrinsicTableWidth = max;
             this.resolvedTableWidth = max;
             for (int i19 = 0; i19 < this.tableLayout.getChildCount(); i19++) {
-                cz0 d = this.tableLayout.d(i19);
-                bz0 bz0Var = d.b;
-                if (bz0Var instanceof Text) {
-                    this.cellTexts.add((Text) bz0Var);
+                nz0 d = this.tableLayout.d(i19);
+                mz0 mz0Var = d.b;
+                if (mz0Var instanceof Text) {
+                    this.cellTexts.add((Text) mz0Var);
                     this.cellBlocks.add(new CellBlock(d));
                 }
             }
@@ -4870,7 +4870,7 @@ public class RichMessageLayout {
                 arrayList.add(text3);
             }
             arrayList.addAll(this.cellTexts);
-            this.textsArr = (org.telegram.ui.Cells.ca[]) arrayList.toArray(new org.telegram.ui.Cells.ca[0]);
+            this.textsArr = (org.telegram.ui.Cells.ba[]) arrayList.toArray(new org.telegram.ui.Cells.ba[0]);
         }
 
         private void drawCellsWithTyping(Canvas canvas, oj0 oj0Var, float f7) {
@@ -4886,7 +4886,7 @@ public class RichMessageLayout {
             int i10 = 0;
             int i11 = 0;
             while (i11 < childCount) {
-                cz0 d = this.tableLayout.d(i11);
+                nz0 d = this.tableLayout.d(i11);
                 if (i10 >= this.cellBlocks.size() || this.cellBlocks.get(i10).child != d) {
                     cellBlock = null;
                 } else {
@@ -4984,12 +4984,12 @@ public class RichMessageLayout {
             this.scroller = new OverScroller(this.view.getContext());
         }
 
-        private cz0 findCellChildAt(float f7, float f10) {
+        private nz0 findCellChildAt(float f7, float f10) {
             float f11 = f7 + this.scrollX;
             float f12 = f10 - this.titleHeight;
             int childCount = this.tableLayout.getChildCount();
             for (int i10 = 0; i10 < childCount; i10++) {
-                cz0 d = this.tableLayout.d(i10);
+                nz0 d = this.tableLayout.d(i10);
                 if (d.b instanceof Text) {
                     if (f11 >= d.p && f11 < r3 + d.k) {
                         if (f12 >= d.q && f12 < r3 + d.l) {
@@ -5090,8 +5090,8 @@ public class RichMessageLayout {
                     int childCount = this.tableLayout.getChildCount();
                     int i12 = 0;
                     while (i12 < childCount) {
-                        bz0 bz0Var = this.tableLayout.d(i12).b;
-                        if (!(bz0Var instanceof Text) || (v5Var = (text = (Text) bz0Var).animatedEmojiStack) == null || v5Var.a.isEmpty()) {
+                        mz0 mz0Var = this.tableLayout.d(i12).b;
+                        if (!(mz0Var instanceof Text) || (v5Var = (text = (Text) mz0Var).animatedEmojiStack) == null || v5Var.a.isEmpty()) {
                             i10 = i12;
                         } else {
                             canvas.save();
@@ -5148,9 +5148,9 @@ public class RichMessageLayout {
             }
             int childCount = this.tableLayout.getChildCount();
             for (int i11 = 0; i11 < childCount; i11++) {
-                bz0 bz0Var = this.tableLayout.d(i11).b;
-                if (bz0Var instanceof Text) {
-                    if (((Text) bz0Var).fillFoundLink(characterStyle, foundLink)) {
+                mz0 mz0Var = this.tableLayout.d(i11).b;
+                if (mz0Var instanceof Text) {
+                    if (((Text) mz0Var).fillFoundLink(characterStyle, foundLink)) {
                         foundLink.x = ((r4.b() + this.padding.left) - this.scrollX) - r5.drawLeft();
                         foundLink.y = r4.c() + i10 + this.padding.top + this.titleHeight;
                         return true;
@@ -5165,7 +5165,7 @@ public class RichMessageLayout {
             return this.halfLinePaint;
         }
 
-        @Override // org.telegram.ui.Components.iz0
+        @Override // org.telegram.ui.Components.tz0
         public Paint getHeaderPaint() {
             ensurePaints();
             return this.headerPaint;
@@ -5181,7 +5181,7 @@ public class RichMessageLayout {
             return getMinWidth();
         }
 
-        @Override // org.telegram.ui.Components.iz0
+        @Override // org.telegram.ui.Components.tz0
         public Paint getLinePaint() {
             ensurePaints();
             return this.linePaint;
@@ -5193,14 +5193,14 @@ public class RichMessageLayout {
             return rect.left + this.intrinsicTableWidth + rect.right;
         }
 
-        @Override // org.telegram.ui.Components.iz0
+        @Override // org.telegram.ui.Components.tz0
         public Paint getStripPaint() {
             ensurePaints();
             return this.stripPaint;
         }
 
         @Override // org.telegram.messenger.RichMessageLayout.RichBlock
-        public org.telegram.ui.Cells.ca[] getText() {
+        public org.telegram.ui.Cells.ba[] getText() {
             return this.textsArr;
         }
 
@@ -5277,7 +5277,7 @@ public class RichMessageLayout {
         @Override // org.telegram.messenger.RichMessageLayout.RichBlock
         public boolean onTouchEvent(MotionEvent motionEvent) {
             VelocityTracker velocityTracker;
-            cz0 findCellChildAt;
+            nz0 findCellChildAt;
             int actionMasked = motionEvent.getActionMasked();
             if (actionMasked == 0) {
                 ensureTouchConfig();
@@ -5404,10 +5404,10 @@ public class RichMessageLayout {
             }
             int childCount = this.tableLayout.getChildCount();
             for (int i13 = 0; i13 < childCount; i13++) {
-                cz0 d = this.tableLayout.d(i13);
-                bz0 bz0Var = d.b;
-                if (bz0Var instanceof Text) {
-                    Text text2 = (Text) bz0Var;
+                nz0 d = this.tableLayout.d(i13);
+                mz0 mz0Var = d.b;
+                if (mz0Var instanceof Text) {
+                    Text text2 = (Text) mz0Var;
                     text2.setX(((d.b() + i10) - this.scrollX) - text2.drawLeft());
                     text2.setY(d.c() + this.titleHeight + i11);
                     text2.setRow(i12);
@@ -5415,7 +5415,7 @@ public class RichMessageLayout {
             }
         }
 
-        @Override // org.telegram.ui.Components.iz0
+        @Override // org.telegram.ui.Components.tz0
         public Text createTextLayout(TL_iv.pageTableCell pagetablecell, int i10) {
             if (pagetablecell == null) {
                 return null;
@@ -5425,12 +5425,12 @@ public class RichMessageLayout {
             return text;
         }
 
-        @Override // org.telegram.ui.Components.iz0
-        public /* bridge */ /* synthetic */ void onLayoutChild(bz0 bz0Var, int i10, int i11) {
+        @Override // org.telegram.ui.Components.tz0
+        public /* bridge */ /* synthetic */ void onLayoutChild(mz0 mz0Var, int i10, int i11) {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class RichTextBlock extends RichBlock {
         private final boolean centered;
         protected int contentPaddingBottom;
@@ -5509,7 +5509,7 @@ public class RichMessageLayout {
         }
 
         @Override // org.telegram.messenger.RichMessageLayout.RichBlock
-        public org.telegram.ui.Cells.ca[] getText() {
+        public org.telegram.ui.Cells.ba[] getText() {
             return this.texts;
         }
 
@@ -5594,12 +5594,12 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class RichTextBlockQuote extends RichTextBlock {
         public final TL_iv.pageBlockBlockquote block;
-        private org.telegram.ui.Components.yc bounce;
+        private org.telegram.ui.Components.zc bounce;
         private boolean capturedByParent;
-        private i20 clip;
+        private g20 clip;
         public int collapsedHeightToDraw;
         public float collapsedProgress;
         private boolean currentCollapsed;
@@ -5622,7 +5622,7 @@ public class RichMessageLayout {
             if (this.bounce != null || (view = this.root.view) == null) {
                 return;
             }
-            this.bounce = new org.telegram.ui.Components.yc(view);
+            this.bounce = new org.telegram.ui.Components.zc(view);
         }
 
         private void toggle() {
@@ -5635,8 +5635,8 @@ public class RichMessageLayout {
             if (view != null) {
                 view.invalidate();
             }
-            org.telegram.ui.Cells.t1 cell = this.root.getCell();
-            org.telegram.ui.Cells.k1 delegate = this.root.getDelegate();
+            org.telegram.ui.Cells.u1 cell = this.root.getCell();
+            org.telegram.ui.Cells.l1 delegate = this.root.getDelegate();
             if (cell == null || delegate == null) {
                 return;
             }
@@ -5645,9 +5645,9 @@ public class RichMessageLayout {
 
         @Override // org.telegram.messenger.RichMessageLayout.RichBlock
         public float getBackgroundScale() {
-            org.telegram.ui.Components.yc ycVar = this.bounce;
-            if (ycVar != null) {
-                return ycVar.a(0.01f);
+            org.telegram.ui.Components.zc zcVar = this.bounce;
+            if (zcVar != null) {
+                return zcVar.a(0.01f);
             }
             return 1.0f;
         }
@@ -5664,8 +5664,8 @@ public class RichMessageLayout {
         @Override // org.telegram.messenger.RichMessageLayout.RichTextBlock, org.telegram.messenger.RichMessageLayout.RichBlock
         public void onDraw(Canvas canvas) {
             Canvas canvas2;
-            org.telegram.ui.Components.yc ycVar = this.bounce;
-            float a2 = ycVar != null ? ycVar.a(0.01f) : 1.0f;
+            org.telegram.ui.Components.zc zcVar = this.bounce;
+            float a2 = zcVar != null ? zcVar.a(0.01f) : 1.0f;
             if (a2 != 1.0f) {
                 canvas.save();
                 canvas.scale(a2, a2, this.maxWidth / 2.0f, getHeight() / 2.0f);
@@ -5683,7 +5683,7 @@ public class RichMessageLayout {
             super.onDraw(canvas2);
             if (z10) {
                 if (this.clip == null) {
-                    this.clip = new i20();
+                    this.clip = new g20();
                 }
                 RectF rectF = AndroidUtilities.rectTmp;
                 rectF.set(0.0f, i10 - AndroidUtilities.dp(24.0f), this.maxWidth, i10 + 1);
@@ -5724,18 +5724,18 @@ public class RichMessageLayout {
                 }
                 this.pressed = true;
                 ensureBounce();
-                org.telegram.ui.Components.yc ycVar = this.bounce;
-                if (ycVar != null) {
-                    ycVar.c(true);
+                org.telegram.ui.Components.zc zcVar = this.bounce;
+                if (zcVar != null) {
+                    zcVar.c(true);
                 }
                 return true;
             }
             if (actionMasked != 1) {
                 if (actionMasked == 3) {
                     this.pressed = false;
-                    org.telegram.ui.Components.yc ycVar2 = this.bounce;
-                    if (ycVar2 != null) {
-                        ycVar2.c(false);
+                    org.telegram.ui.Components.zc zcVar2 = this.bounce;
+                    if (zcVar2 != null) {
+                        zcVar2.c(false);
                     }
                 }
                 return this.pressed;
@@ -5744,9 +5744,9 @@ public class RichMessageLayout {
                 return false;
             }
             this.pressed = false;
-            org.telegram.ui.Components.yc ycVar3 = this.bounce;
-            if (ycVar3 != null) {
-                ycVar3.c(false);
+            org.telegram.ui.Components.zc zcVar3 = this.bounce;
+            if (zcVar3 != null) {
+                zcVar3.c(false);
             }
             View view = this.root.view;
             if (view != null) {
@@ -5763,7 +5763,7 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class RichTextWithAuthorBlock extends RichBlock {
         public final Text author;
         private final boolean centered;
@@ -5860,7 +5860,7 @@ public class RichMessageLayout {
         }
 
         @Override // org.telegram.messenger.RichMessageLayout.RichBlock
-        public org.telegram.ui.Cells.ca[] getText() {
+        public org.telegram.ui.Cells.ba[] getText() {
             return this.texts;
         }
 
@@ -5943,7 +5943,7 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class RichThinkingBlock extends RichBlock {
         public LinearGradient gradient;
         public int gradientColor;
@@ -5964,7 +5964,7 @@ public class RichMessageLayout {
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onDrawFaded$0(View view, Canvas canvas) {
             Text text = this.text;
-            vh.h.g(view, false, -1, 0, text.spoilersPatchedTextLayout, 0, text.layout, text.spoilers, canvas, false);
+            vh.g.g(view, false, -1, 0, text.spoilersPatchedTextLayout, 0, text.layout, text.spoilers, canvas, false);
             Text text2 = this.text;
             org.telegram.ui.Components.z5.drawAnimatedEmojis(canvas, text2.layout, text2.animatedEmojiStack, 0.0f, text2.spoilers, 0.0f, 0.0f, 0.0f, 1.0f);
         }
@@ -6031,7 +6031,7 @@ public class RichMessageLayout {
         }
 
         @Override // org.telegram.messenger.RichMessageLayout.RichBlock
-        public org.telegram.ui.Cells.ca[] getText() {
+        public org.telegram.ui.Cells.ba[] getText() {
             return this.texts;
         }
 
@@ -6130,7 +6130,7 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class RichVideoBlock extends RichMediaBlock {
         public final TL_iv.pageBlockVideo block;
         public final TLRPC.Document document;
@@ -6266,7 +6266,7 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static final class SpoilerReveal {
         private ValueAnimator animator;
         private float cx;
@@ -6328,7 +6328,7 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class StyleSpan extends MetricAffectingSpan {
         public final int flags;
         private boolean fullSizeTableEmoji;
@@ -6436,8 +6436,8 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
-    public static class Text implements org.telegram.ui.Cells.ca, bz0 {
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    public static class Text implements org.telegram.ui.Cells.ba, mz0 {
         private static final int EMOJI_LINE_HEIGHT_MIN_PERCENT = 70;
         private static Paint markPaint;
         public org.telegram.ui.Components.v5 animatedEmojiStack;
@@ -6449,31 +6449,31 @@ public class RichMessageLayout {
         public int lastLineRight;
         public final StaticLayout layout;
         public int left;
-        public a90 linkCollector;
+        public k90 linkCollector;
         private boolean longPressFired;
         private Runnable longPressRunnable;
-        public x80 markPath;
+        public h90 markPath;
         private RichButtonSpan pressedButtonSpan;
         private org.telegram.ui.Components.z5 pressedEmoji;
         private CharacterStyle pressedLink;
-        private e90 pressedLinkDrawable;
+        private o90 pressedLinkDrawable;
         private int pressedLinkEnd;
         private int pressedLinkStart;
-        private vh.h pressedSpoiler;
+        private vh.g pressedSpoiler;
         public int right;
         public final RichMessageLayout root;
         public int row;
         private final RectF soleButtonHitBounds;
-        public final List<vh.h> spoilers;
+        public final List<vh.g> spoilers;
         public final AtomicReference<Layout> spoilersPatchedTextLayout;
-        public final Stack<vh.h> spoilersPool;
-        private h90 translationLoadingDrawable;
-        private x80 translationLoadingPath;
+        public final Stack<vh.g> spoilersPool;
+        private r90 translationLoadingDrawable;
+        private h90 translationLoadingPath;
         public View view;
         public int x;
         public int y;
 
-        /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+        /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
         public static class EmojiLineMetrics {
             private int contentCount;
             private int emojiCount;
@@ -6602,15 +6602,15 @@ public class RichMessageLayout {
                 }
                 return;
             }
-            CharacterStyle k51Var = ((characterStyle instanceof StyleSpan) && TLObject.hasFlag(((StyleSpan) characterStyle).flags, 256)) ? new k51(this.layout.getText(), this.pressedLinkStart, this.pressedLinkEnd, this.root.isOut() ? (byte) 1 : (byte) 0, null) : characterStyle;
-            org.telegram.ui.Cells.k1 delegate = this.root.getDelegate();
-            org.telegram.ui.Cells.t1 cell = this.root.getCell();
+            CharacterStyle y51Var = ((characterStyle instanceof StyleSpan) && TLObject.hasFlag(((StyleSpan) characterStyle).flags, 256)) ? new y51(this.layout.getText(), this.pressedLinkStart, this.pressedLinkEnd, this.root.isOut() ? (byte) 1 : (byte) 0, null) : characterStyle;
+            org.telegram.ui.Cells.l1 delegate = this.root.getDelegate();
+            org.telegram.ui.Cells.u1 cell = this.root.getCell();
             if (delegate != null && cell != null) {
                 View view3 = this.view;
                 if (view3 != null && !z10) {
                     view3.playSoundEffect(0);
                 }
-                delegate.V0(cell, k51Var, z10);
+                delegate.V0(cell, y51Var, z10);
                 return;
             }
             if (z10 || (view = this.view) == null || !(characterStyle instanceof ClickableSpan)) {
@@ -6628,30 +6628,30 @@ public class RichMessageLayout {
             }
             boolean isTranslating = richMessageLayout.isTranslating();
             if (this.translationLoadingDrawable == null) {
-                h90 h90Var = new h90();
-                this.translationLoadingDrawable = h90Var;
-                h90Var.C = true;
-                x80 x80Var = new x80(0);
-                this.translationLoadingPath = x80Var;
-                x80Var.c = true;
-                h90 h90Var2 = this.translationLoadingDrawable;
-                h90Var2.x = x80Var;
-                h90Var2.j(5.0f);
+                r90 r90Var = new r90();
+                this.translationLoadingDrawable = r90Var;
+                r90Var.C = true;
+                h90 h90Var = new h90(0);
+                this.translationLoadingPath = h90Var;
+                h90Var.c = true;
+                r90 r90Var2 = this.translationLoadingDrawable;
+                r90Var2.x = h90Var;
+                r90Var2.j(5.0f);
                 this.translationLoadingDrawable.b = -1L;
                 this.translationLoadingPath.reset();
                 this.translationLoadingPath.d(this.layout, 0, 0.0f);
                 this.translationLoadingPath.n = false;
                 StaticLayout staticLayout = this.layout;
                 staticLayout.getSelectionPath(0, staticLayout.getText().length(), this.translationLoadingPath);
-                x80 x80Var2 = this.translationLoadingPath;
-                x80Var2.n = true;
-                x80Var2.a();
+                h90 h90Var2 = this.translationLoadingPath;
+                h90Var2.n = true;
+                h90Var2.a();
                 this.translationLoadingDrawable.k();
             }
             if (isTranslating && (this.translationLoadingDrawable.c() || this.translationLoadingDrawable.b())) {
-                h90 h90Var3 = this.translationLoadingDrawable;
-                h90Var3.b = -1L;
-                h90Var3.c = -1L;
+                r90 r90Var3 = this.translationLoadingDrawable;
+                r90Var3.b = -1L;
+                r90Var3.c = -1L;
             } else if (!isTranslating && !this.translationLoadingDrawable.c() && !this.translationLoadingDrawable.b()) {
                 this.translationLoadingDrawable.a();
             }
@@ -6691,8 +6691,8 @@ public class RichMessageLayout {
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$drawFade$1(View view, int i10, Canvas canvas) {
-            vh.h.g(view, false, i10, 0, this.spoilersPatchedTextLayout, 0, this.layout, this.spoilers, canvas, false);
-            bw0.a(canvas, this.layout);
+            vh.g.g(view, false, i10, 0, this.spoilersPatchedTextLayout, 0, this.layout, this.spoilers, canvas, false);
+            mw0.a(canvas, this.layout);
             org.telegram.ui.Components.z5.drawAnimatedEmojis(canvas, this.layout, this.animatedEmojiStack, 0.0f, this.spoilers, 0.0f, 0.0f, 0.0f, 1.0f);
         }
 
@@ -6708,15 +6708,15 @@ public class RichMessageLayout {
                 if (messageObject != null) {
                     messageObject.isSpoilersRevealed = true;
                 }
-                ArrayList<org.telegram.ui.Cells.ca> arrayList = richMessageLayout.textBlocks;
+                ArrayList<org.telegram.ui.Cells.ba> arrayList = richMessageLayout.textBlocks;
                 int size = arrayList.size();
                 int i10 = 0;
                 while (i10 < size) {
-                    org.telegram.ui.Cells.ca caVar = arrayList.get(i10);
+                    org.telegram.ui.Cells.ba baVar = arrayList.get(i10);
                     i10++;
-                    org.telegram.ui.Cells.ca caVar2 = caVar;
-                    if (caVar2 instanceof Text) {
-                        ((Text) caVar2).spoilers.clear();
+                    org.telegram.ui.Cells.ba baVar2 = baVar;
+                    if (baVar2 instanceof Text) {
+                        ((Text) baVar2).spoilers.clear();
                     }
                 }
             } else {
@@ -6760,9 +6760,9 @@ public class RichMessageLayout {
                 }
             }
             dispatchLinkClick(this.pressedLink, true);
-            a90 a90Var = this.linkCollector;
-            if (a90Var != null) {
-                a90Var.d(true);
+            k90 k90Var = this.linkCollector;
+            if (k90Var != null) {
+                k90Var.d(true);
             }
             this.pressedLinkDrawable = null;
         }
@@ -6858,7 +6858,7 @@ public class RichMessageLayout {
             float sqrt = (float) Math.sqrt((height * height) + (width * width));
             View view = this.view;
             this.pressedSpoiler.q = new xh(this, view, this.root);
-            Iterator<vh.h> it = this.spoilers.iterator();
+            Iterator<vh.g> it = this.spoilers.iterator();
             while (it.hasNext()) {
                 it.next().j(i10, i11, sqrt, false);
             }
@@ -6879,7 +6879,7 @@ public class RichMessageLayout {
             this.soleButtonHitBounds.set(f7, f10, f11, f12);
         }
 
-        @Override // org.telegram.ui.Components.bz0
+        @Override // org.telegram.ui.Components.mz0
         public void attach(View view) {
             View view2 = this.view;
             if (view == view2) {
@@ -6892,7 +6892,7 @@ public class RichMessageLayout {
             onAttachedToWindow();
         }
 
-        @Override // org.telegram.ui.Components.bz0
+        @Override // org.telegram.ui.Components.mz0
         public void detach(View view) {
             View view2 = this.view;
             if (view2 == view && view2 != null) {
@@ -6916,7 +6916,7 @@ public class RichMessageLayout {
             final View view = this.view;
             oj0.b(canvas, this.layout, i10, f7, new nj0() { // from class: org.telegram.messenger.wh
                 @Override // org.telegram.ui.nj0
-                public final void a(Canvas canvas2) {
+                public final void b(Canvas canvas2) {
                     RichMessageLayout.Text.this.lambda$drawFade$1(view, themedColor, canvas2);
                 }
             });
@@ -6956,7 +6956,7 @@ public class RichMessageLayout {
             return this.layout.getLineBaseline(0);
         }
 
-        @Override // org.telegram.ui.Components.bz0
+        @Override // org.telegram.ui.Components.mz0
         public int getEmojiOnlyCount() {
             return this.emojiOnlyCount;
         }
@@ -6969,7 +6969,7 @@ public class RichMessageLayout {
             return Math.max(0, this.lastLineRight - this.left);
         }
 
-        @Override // org.telegram.ui.Cells.ca
+        @Override // org.telegram.ui.Cells.ba
         public Layout getLayout() {
             return this.layout;
         }
@@ -6978,22 +6978,22 @@ public class RichMessageLayout {
             return Math.max(0, this.right - this.left);
         }
 
-        @Override // org.telegram.ui.Cells.ca
+        @Override // org.telegram.ui.Cells.ba
         public /* bridge */ /* synthetic */ CharSequence getPrefix() {
             return null;
         }
 
-        @Override // org.telegram.ui.Cells.ca
+        @Override // org.telegram.ui.Cells.ba
         public int getRow() {
             return this.row;
         }
 
-        @Override // org.telegram.ui.Cells.ca
+        @Override // org.telegram.ui.Cells.ba
         public /* bridge */ /* synthetic */ Rect getSelectionBounds() {
             return null;
         }
 
-        @Override // org.telegram.ui.Cells.ca
+        @Override // org.telegram.ui.Cells.ba
         public CharSequence getText() {
             if (getLayout() == null) {
                 return null;
@@ -7001,12 +7001,12 @@ public class RichMessageLayout {
             return getLayout().getText();
         }
 
-        @Override // org.telegram.ui.Cells.ca
+        @Override // org.telegram.ui.Cells.ba
         public int getX() {
             return this.blockX + this.x;
         }
 
-        @Override // org.telegram.ui.Cells.ca
+        @Override // org.telegram.ui.Cells.ba
         public int getY() {
             return this.blockY + this.y;
         }
@@ -7027,9 +7027,9 @@ public class RichMessageLayout {
 
         public void onAttachedToWindow() {
             this.animatedEmojiStack = org.telegram.ui.Components.z5.update(0, this.view, this.root.invalidateAnimatedEmojiInParent && !this.doNotInvalidateEmojiInParent, this.animatedEmojiStack, this.layout);
-            a90 a90Var = this.linkCollector;
-            if (a90Var != null) {
-                a90Var.a = this.view;
+            k90 k90Var = this.linkCollector;
+            if (k90Var != null) {
+                k90Var.a = this.view;
             }
             RichButtonSpan[] buttonSpans = getButtonSpans();
             if (buttonSpans != null) {
@@ -7042,9 +7042,9 @@ public class RichMessageLayout {
         public void onDetachedFromWindow() {
             org.telegram.ui.Components.z5.release(this.view, this.animatedEmojiStack);
             this.animatedEmojiStack = null;
-            a90 a90Var = this.linkCollector;
-            if (a90Var != null) {
-                a90Var.a = null;
+            k90 k90Var = this.linkCollector;
+            if (k90Var != null) {
+                k90Var.a = null;
             }
             RichButtonSpan[] buttonSpans = getButtonSpans();
             if (buttonSpans != null) {
@@ -7105,9 +7105,9 @@ public class RichMessageLayout {
                         if (!this.longPressFired) {
                             dispatchLinkClick(this.pressedLink, false);
                         }
-                        a90 a90Var = this.linkCollector;
-                        if (a90Var != null) {
-                            a90Var.d(true);
+                        k90 k90Var = this.linkCollector;
+                        if (k90Var != null) {
+                            k90Var.d(true);
                         }
                         this.pressedLink = null;
                         this.pressedLinkDrawable = null;
@@ -7117,8 +7117,8 @@ public class RichMessageLayout {
                     org.telegram.ui.Components.z5 z5Var = this.pressedEmoji;
                     if (z5Var != null) {
                         this.pressedEmoji = null;
-                        org.telegram.ui.Cells.t1 cell = this.root.getCell();
-                        org.telegram.ui.Cells.k1 delegate = this.root.getDelegate();
+                        org.telegram.ui.Cells.u1 cell = this.root.getCell();
+                        org.telegram.ui.Cells.l1 delegate = this.root.getDelegate();
                         if (cell != null && delegate != null) {
                             View view2 = this.view;
                             if (view2 != null) {
@@ -7140,9 +7140,9 @@ public class RichMessageLayout {
                     }
                     if (this.pressedLink != null) {
                         cancelLongPress();
-                        a90 a90Var2 = this.linkCollector;
-                        if (a90Var2 != null) {
-                            a90Var2.d(true);
+                        k90 k90Var2 = this.linkCollector;
+                        if (k90Var2 != null) {
+                            k90Var2.d(true);
                         }
                         this.pressedLink = null;
                         this.pressedLinkDrawable = null;
@@ -7155,9 +7155,9 @@ public class RichMessageLayout {
             this.pressedLink = null;
             this.pressedEmoji = null;
             this.pressedButtonSpan = null;
-            for (vh.h hVar : this.spoilers) {
-                if (hVar.getBounds().contains(drawLeft, y3)) {
-                    this.pressedSpoiler = hVar;
+            for (vh.g gVar : this.spoilers) {
+                if (gVar.getBounds().contains(drawLeft, y3)) {
+                    this.pressedSpoiler = gVar;
                     return true;
                 }
             }
@@ -7195,15 +7195,15 @@ public class RichMessageLayout {
                         this.pressedLinkStart = spannable.getSpanStart(clickableSpan);
                         this.pressedLinkEnd = spannable.getSpanEnd(this.pressedLink);
                         this.longPressFired = false;
-                        e90 e90Var = new e90(this.pressedLink, this.root.resourcesProvider, f7, y3, 0);
-                        x80 b10 = e90Var.b();
+                        o90 o90Var = new o90(this.pressedLink, this.root.resourcesProvider, f7, y3, 0);
+                        h90 b10 = o90Var.b();
                         b10.d(this.layout, this.pressedLinkStart, 0.0f);
                         this.layout.getSelectionPath(this.pressedLinkStart, this.pressedLinkEnd, b10);
-                        this.pressedLinkDrawable = e90Var;
+                        this.pressedLinkDrawable = o90Var;
                         if (this.linkCollector == null) {
-                            this.linkCollector = new a90(this.view);
+                            this.linkCollector = new k90(this.view);
                         }
-                        this.linkCollector.a(e90Var, null);
+                        this.linkCollector.a(o90Var, null);
                         View view4 = this.view;
                         if (view4 != null) {
                             view4.invalidate();
@@ -7279,15 +7279,15 @@ public class RichMessageLayout {
                         this.pressedLinkStart = spanStart2;
                         this.pressedLinkEnd = i10;
                         this.longPressFired = false;
-                        e90 e90Var2 = new e90(styleSpan, this.root.resourcesProvider, f7, y3, 0);
-                        x80 b11 = e90Var2.b();
+                        o90 o90Var2 = new o90(styleSpan, this.root.resourcesProvider, f7, y3, 0);
+                        h90 b11 = o90Var2.b();
                         b11.d(this.layout, spanStart2, 0.0f);
                         this.layout.getSelectionPath(spanStart2, i10, b11);
-                        this.pressedLinkDrawable = e90Var2;
+                        this.pressedLinkDrawable = o90Var2;
                         if (this.linkCollector == null) {
-                            this.linkCollector = new a90(this.view);
+                            this.linkCollector = new k90(this.view);
                         }
-                        this.linkCollector.a(e90Var2, null);
+                        this.linkCollector.a(o90Var2, null);
                         View view5 = this.view;
                         if (view5 != null) {
                             view5.invalidate();
@@ -7327,17 +7327,17 @@ public class RichMessageLayout {
             this.drawAtOrigin = z10;
         }
 
-        @Override // org.telegram.ui.Components.bz0
+        @Override // org.telegram.ui.Components.mz0
         public void setRow(int i10) {
             this.row = i10;
         }
 
-        @Override // org.telegram.ui.Components.bz0
+        @Override // org.telegram.ui.Components.mz0
         public void setX(int i10) {
             this.x = i10;
         }
 
-        @Override // org.telegram.ui.Components.bz0
+        @Override // org.telegram.ui.Components.mz0
         public void setY(int i10) {
             this.y = i10;
         }
@@ -7346,7 +7346,7 @@ public class RichMessageLayout {
             this(richMessageLayout, charSequence, i10, alignment, 1.0f);
         }
 
-        @Override // org.telegram.ui.Components.bz0
+        @Override // org.telegram.ui.Components.mz0
         public void draw(Canvas canvas, View view) {
             canvas.save();
             canvas.translate(-drawLeft(), 0.0f);
@@ -7359,18 +7359,18 @@ public class RichMessageLayout {
                 if (markPaint == null) {
                     Paint paint = new Paint(1);
                     markPaint = paint;
-                    paint.setPathEffect(x80.c());
+                    paint.setPathEffect(h90.c());
                 }
                 markPaint.setColor((this.root.quoteLine.h() & 16777215) | 855638016);
                 canvas.drawPath(this.markPath, markPaint);
             }
             View view2 = view != null ? view : this.view;
-            a90 a90Var = this.linkCollector;
-            if (a90Var != null && a90Var.f(canvas) && view2 != null) {
+            k90 k90Var = this.linkCollector;
+            if (k90Var != null && k90Var.f(canvas) && view2 != null) {
                 view2.invalidate();
             }
-            vh.h.g(view2, false, themedColor, 0, this.spoilersPatchedTextLayout, 0, this.layout, this.spoilers, canvas, false);
-            bw0.a(canvas, this.layout);
+            vh.g.g(view2, false, themedColor, 0, this.spoilersPatchedTextLayout, 0, this.layout, this.spoilers, canvas, false);
+            mw0.a(canvas, this.layout);
             if (!this.root.isOverlayActive()) {
                 org.telegram.ui.Components.z5.drawAnimatedEmojis(canvas, this.layout, this.animatedEmojiStack, 0.0f, this.spoilers, 0.0f, 0.0f, 0.0f, 1.0f);
             }
@@ -7454,8 +7454,8 @@ public class RichMessageLayout {
                 StaticLayout staticLayout = this.layout;
                 this.lastLineRight = (int) Math.ceil(staticLayout.getLineRight(staticLayout.getLineCount() - 1));
             }
-            x80 x80Var = null;
-            vh.h.c(null, this.layout, this.spoilersPool, this.spoilers);
+            h90 h90Var = null;
+            vh.g.c(null, this.layout, this.spoilersPool, this.spoilers);
             if (this.layout.getText() instanceof Spanned) {
                 Spanned spanned2 = (Spanned) this.layout.getText();
                 for (StyleSpan styleSpan3 : (StyleSpan[]) spanned2.getSpans(0, spanned2.length(), StyleSpan.class)) {
@@ -7463,11 +7463,11 @@ public class RichMessageLayout {
                         int spanStart2 = spanned2.getSpanStart(styleSpan3);
                         int spanEnd2 = spanned2.getSpanEnd(styleSpan3);
                         if (spanStart2 >= 0 && spanEnd2 > spanStart2) {
-                            if (x80Var == null) {
-                                x80Var = new x80(0);
-                                x80Var.n = false;
+                            if (h90Var == null) {
+                                h90Var = new h90(0);
+                                h90Var.n = false;
                             }
-                            x80Var.d(this.layout, spanStart2, 0.0f);
+                            h90Var.d(this.layout, spanStart2, 0.0f);
                             if (TLObject.hasFlag(styleSpan3.flags, 4096)) {
                                 dp = -AndroidUtilities.dp(6.0f);
                             } else {
@@ -7478,14 +7478,14 @@ public class RichMessageLayout {
                             } else {
                                 i11 = 0;
                             }
-                            x80Var.o = i11;
-                            this.layout.getSelectionPath(spanStart2, spanEnd2, x80Var);
+                            h90Var.o = i11;
+                            this.layout.getSelectionPath(spanStart2, spanEnd2, h90Var);
                         }
                     }
                 }
-                if (x80Var != null) {
-                    x80Var.n = true;
-                    this.markPath = x80Var;
+                if (h90Var != null) {
+                    h90Var.n = true;
+                    this.markPath = h90Var;
                 }
             }
         }
@@ -7507,8 +7507,8 @@ public class RichMessageLayout {
         this.detailsAnimationProgress = 1.0f;
         this.textPaint = new TextPaint(1);
         this.numTextPaint = new TextPaint(1);
-        this.quoteLine = new tl0(null);
-        this.clip = new i20();
+        this.quoteLine = new dm0(null);
+        this.clip = new g20();
         this.showMoreRect = new RectF();
         this.messageObject = messageObject;
         this.maxWidth = i10;
@@ -7546,7 +7546,7 @@ public class RichMessageLayout {
 
     private void closeLists(StringBuilder sb2, ArrayList<Boolean> arrayList) {
         while (!arrayList.isEmpty()) {
-            sb2.append(((Boolean) hg.c.z(1, arrayList)).booleanValue() ? "</ol>" : "</ul>");
+            sb2.append(((Boolean) hg.c.x(1, arrayList)).booleanValue() ? "</ol>" : "</ul>");
         }
     }
 
@@ -7897,7 +7897,7 @@ public class RichMessageLayout {
         return new RichButton(richMessageLayout, i11, formatText, pageButton, inlineButtonType, pageButton.style, inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeDisabled, true, false, false, false, false, Boolean.FALSE, runnable);
     }
 
-    private void drawBackground(Canvas canvas, org.telegram.ui.Cells.s1 s1Var) {
+    private void drawBackground(Canvas canvas, org.telegram.ui.Cells.t1 t1Var) {
         if (!this.quotes.isEmpty()) {
             ArrayList<QuoteBackground> arrayList = this.quotes;
             int size = arrayList.size();
@@ -7905,8 +7905,8 @@ public class RichMessageLayout {
             while (i10 < size) {
                 int i11 = i10 + 1;
                 QuoteBackground quoteBackground = arrayList.get(i10);
-                int blockTop = getBlockTop(quoteBackground.startBlockIndex, s1Var);
-                int blockBottom = getBlockBottom(quoteBackground.endBlockIndex, s1Var);
+                int blockTop = getBlockTop(quoteBackground.startBlockIndex, t1Var);
+                int blockBottom = getBlockBottom(quoteBackground.endBlockIndex, t1Var);
                 float blockBackgroundScale = getBlockBackgroundScale(quoteBackground.startBlockIndex, quoteBackground.endBlockIndex);
                 int dp = AndroidUtilities.dp(3.0f) * quoteBackground.level;
                 int i12 = quoteBackground.outerTopVpad + dp;
@@ -7929,35 +7929,35 @@ public class RichMessageLayout {
         for (int i14 = 0; i14 < this.blocks.size(); i14++) {
             RichBlock richBlock = this.blocks.get(i14);
             if ((richBlock instanceof RichPullquoteBlock) && (richBlock.currVisible || richBlock.prevVisible)) {
-                drawPullquoteBackground(canvas, (RichPullquoteBlock) richBlock, s1Var);
+                drawPullquoteBackground(canvas, (RichPullquoteBlock) richBlock, t1Var);
             }
         }
     }
 
-    private void drawInternal(Canvas canvas, org.telegram.ui.Cells.s1 s1Var) {
+    private void drawInternal(Canvas canvas, org.telegram.ui.Cells.t1 t1Var) {
         float f7;
         float f10;
-        org.telegram.ui.Cells.t1 t1Var = this.cell;
-        boolean z10 = t1Var != null && t1Var.ae > 0;
+        org.telegram.ui.Cells.u1 u1Var = this.cell;
+        boolean z10 = u1Var != null && u1Var.ae > 0;
         if (z10) {
-            float f11 = t1Var.Yd - t1Var.r0;
-            f10 = t1Var.ae + f11;
+            float f11 = u1Var.Yd - u1Var.r0;
+            f10 = u1Var.ae + f11;
             f7 = f11;
         } else {
             f7 = 0.0f;
             f10 = 0.0f;
         }
-        drawInternal(canvas, s1Var, z10, f7, f10);
+        drawInternal(canvas, t1Var, z10, f7, f10);
     }
 
-    private void drawPullquoteBackground(Canvas canvas, RichPullquoteBlock richPullquoteBlock, org.telegram.ui.Cells.s1 s1Var) {
+    private void drawPullquoteBackground(Canvas canvas, RichPullquoteBlock richPullquoteBlock, org.telegram.ui.Cells.t1 t1Var) {
         float f7;
         int textWidth = richPullquoteBlock.getTextWidth();
         if (textWidth <= 0) {
             return;
         }
-        boolean z10 = s1Var != null && (this.detailsAnimating || this.blockquoteAnimating);
-        float max = z10 ? Math.max(0.0f, Math.min(1.0f, s1Var.K1)) : 1.0f;
+        boolean z10 = t1Var != null && (this.detailsAnimating || this.blockquoteAnimating);
+        float max = z10 ? Math.max(0.0f, Math.min(1.0f, t1Var.K1)) : 1.0f;
         if (z10) {
             f7 = AndroidUtilities.lerp(richPullquoteBlock.prevVisible ? 1.0f : 0.0f, richPullquoteBlock.currVisible ? 1.0f : 0.0f, max);
         } else {
@@ -7991,7 +7991,7 @@ public class RichMessageLayout {
         canvas.clipRect(dp, dp3, dp2, lerp2);
         int i10 = (int) dp;
         int i11 = (int) dp3;
-        this.pullquoteIcon.setBounds(AndroidUtilities.dp(8.0f) + i10, AndroidUtilities.dp(7.0f) + i11, z0.C(8.0f, i10, intrinsicWidth), z0.C(7.0f, i11, intrinsicHeight));
+        this.pullquoteIcon.setBounds(AndroidUtilities.dp(8.0f) + i10, AndroidUtilities.dp(7.0f) + i11, f0.C(8.0f, i10, intrinsicWidth), f0.C(7.0f, i11, intrinsicHeight));
         canvas.scale(-1.0f, -1.0f, this.pullquoteIcon.getBounds().centerX(), this.pullquoteIcon.getBounds().centerY());
         this.pullquoteIcon.draw(canvas);
         canvas.restore();
@@ -7999,7 +7999,7 @@ public class RichMessageLayout {
         canvas.clipRect(dp, dp3, dp2, lerp2);
         int i12 = (int) dp2;
         int i13 = (int) lerp2;
-        this.pullquoteIcon.setBounds(z0.B(8.0f, i12, intrinsicWidth), z0.B(7.0f, i13, intrinsicHeight), i12 - AndroidUtilities.dp(8.0f), i13 - AndroidUtilities.dp(7.0f));
+        this.pullquoteIcon.setBounds(f0.B(8.0f, i12, intrinsicWidth), f0.B(7.0f, i13, intrinsicHeight), i12 - AndroidUtilities.dp(8.0f), i13 - AndroidUtilities.dp(7.0f));
         canvas.scale(1.0f, -1.0f, this.pullquoteIcon.getBounds().centerX(), this.pullquoteIcon.getBounds().centerY());
         this.pullquoteIcon.draw(canvas);
         canvas.restore();
@@ -8007,19 +8007,19 @@ public class RichMessageLayout {
     }
 
     private void drawShowMoreButton(Canvas canvas, int i10) {
-        org.telegram.ui.Cells.k1 k1Var;
+        org.telegram.ui.Cells.l1 l1Var;
         int themedColor = getThemedColor(isOut() ? org.telegram.ui.ActionBar.h6.Xa : org.telegram.ui.ActionBar.h6.Kc);
         if (this.showMoreText == null) {
-            this.showMoreText = new f01(LocaleController.getString(R.string.ShowMore), 16.0f, AndroidUtilities.bold());
+            this.showMoreText = new t01(LocaleController.getString(R.string.ShowMore), 16.0f, AndroidUtilities.bold());
         }
-        org.telegram.ui.Components.yc ycVar = this.showMoreBounce;
-        if (ycVar == null) {
-            this.showMoreBounce = new org.telegram.ui.Components.yc(this.view, 1.5f, 2.0f);
+        org.telegram.ui.Components.zc zcVar = this.showMoreBounce;
+        if (zcVar == null) {
+            this.showMoreBounce = new org.telegram.ui.Components.zc(this.view, 1.5f, 2.0f);
         } else {
-            View view = ycVar.a;
+            View view = zcVar.a;
             View view2 = this.view;
             if (view != view2) {
-                ycVar.a = view2;
+                zcVar.a = view2;
             }
         }
         if (this.showMorePaint == null) {
@@ -8034,26 +8034,26 @@ public class RichMessageLayout {
         float dp2 = AndroidUtilities.dp(4.0f) + i10;
         float f11 = minWidth / 2.0f;
         this.showMoreRect.set(f10 - f11, dp2, f10 + f11, dp + dp2);
-        org.telegram.ui.Cells.t1 t1Var = this.cell;
-        boolean z10 = (t1Var == null || (k1Var = this.delegate) == null || !k1Var.c1(7, t1Var)) ? false : true;
-        h90 h90Var = this.showMoreLoading;
-        if (h90Var != null && !z10 && !h90Var.b() && !this.showMoreLoading.c()) {
+        org.telegram.ui.Cells.u1 u1Var = this.cell;
+        boolean z10 = (u1Var == null || (l1Var = this.delegate) == null || !l1Var.c1(7, u1Var)) ? false : true;
+        r90 r90Var = this.showMoreLoading;
+        if (r90Var != null && !z10 && !r90Var.b() && !this.showMoreLoading.c()) {
             this.showMoreLoading.a();
         }
-        h90 h90Var2 = this.showMoreLoading;
-        if (h90Var2 == null && z10) {
-            h90 h90Var3 = new h90();
-            this.showMoreLoading = h90Var3;
-            h90Var3.w.setStrokeWidth(AndroidUtilities.dp(1.25f));
+        r90 r90Var2 = this.showMoreLoading;
+        if (r90Var2 == null && z10) {
+            r90 r90Var3 = new r90();
+            this.showMoreLoading = r90Var3;
+            r90Var3.w.setStrokeWidth(AndroidUtilities.dp(1.25f));
             this.showMoreLoading.C = true;
-        } else if (h90Var2 != null && z10 && (h90Var2.b() || this.showMoreLoading.c())) {
-            h90 h90Var4 = this.showMoreLoading;
-            h90Var4.b = -1L;
-            h90Var4.c = -1L;
+        } else if (r90Var2 != null && z10 && (r90Var2.b() || this.showMoreLoading.c())) {
+            r90 r90Var4 = this.showMoreLoading;
+            r90Var4.b = -1L;
+            r90Var4.c = -1L;
         }
-        h90 h90Var5 = this.showMoreLoading;
-        if (h90Var5 != null) {
-            h90Var5.f(org.telegram.ui.ActionBar.h6.l1(0.1f, themedColor), org.telegram.ui.ActionBar.h6.l1(0.3f, themedColor), org.telegram.ui.ActionBar.h6.l1(0.3f, themedColor), org.telegram.ui.ActionBar.h6.l1(1.2f, themedColor));
+        r90 r90Var5 = this.showMoreLoading;
+        if (r90Var5 != null) {
+            r90Var5.f(org.telegram.ui.ActionBar.h6.l1(0.1f, themedColor), org.telegram.ui.ActionBar.h6.l1(0.3f, themedColor), org.telegram.ui.ActionBar.h6.l1(0.3f, themedColor), org.telegram.ui.ActionBar.h6.l1(1.2f, themedColor));
         }
         float a2 = this.showMoreBounce.a(0.075f);
         boolean z11 = a2 != 1.0f;
@@ -8062,8 +8062,8 @@ public class RichMessageLayout {
             canvas.scale(a2, a2, this.showMoreRect.centerX(), this.showMoreRect.centerY());
         }
         canvas.drawRoundRect(this.showMoreRect, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), this.showMorePaint);
-        h90 h90Var6 = this.showMoreLoading;
-        if (h90Var6 != null && !h90Var6.b()) {
+        r90 r90Var6 = this.showMoreLoading;
+        if (r90Var6 != null && !r90Var6.b()) {
             this.showMoreLoading.d(this.showMoreRect);
             this.showMoreLoading.j(8.0f);
             this.showMoreLoading.draw(canvas);
@@ -8437,7 +8437,7 @@ public class RichMessageLayout {
             return null;
         }
         if (pageBlock instanceof TL_iv.pageBlockUnsupported) {
-            int dp4 = w7.c0.a(i27, 9) ? AndroidUtilities.dp(6.0f) : i10 > 0 ? AndroidUtilities.dp(4.0f) : 0;
+            int dp4 = w7.d0.a(i27, 9) ? AndroidUtilities.dp(6.0f) : i10 > 0 ? AndroidUtilities.dp(4.0f) : 0;
             RichUnsupportedBlock richUnsupportedBlock = new RichUnsupportedBlock(this, new Rect((rect.left + dp4) - AndroidUtilities.dp(7.0f), Math.max(AndroidUtilities.dp(14.0f), rect.top), (rect.right + dp4) - AndroidUtilities.dp(7.0f), Math.max(AndroidUtilities.dp(14.0f), rect.bottom)), this.maxWidth, this.blocks.size(), i10);
             this.unsupportedBlocks.add(richUnsupportedBlock);
             if (i10 == 0) {
@@ -8556,12 +8556,12 @@ public class RichMessageLayout {
         return f7;
     }
 
-    private int getBlockBottom(int i10, org.telegram.ui.Cells.s1 s1Var) {
-        if (i10 >= 0 && i10 < this.blocks.size() && s1Var != null && (this.detailsAnimating || this.blockquoteAnimating)) {
-            float max = Math.max(0.0f, Math.min(1.0f, s1Var.K1));
+    private int getBlockBottom(int i10, org.telegram.ui.Cells.t1 t1Var) {
+        if (i10 >= 0 && i10 < this.blocks.size() && t1Var != null && (this.detailsAnimating || this.blockquoteAnimating)) {
+            float max = Math.max(0.0f, Math.min(1.0f, t1Var.K1));
             RichBlock richBlock = this.blocks.get(i10);
-            int f7 = hg.c.f(4.0f, richBlock.padding.bottom, 0);
-            return Math.round(AndroidUtilities.lerp((richBlock.prevY + richBlock.prevH) - (richBlock.prevVisible ? f7 : 0), (richBlock.currY + richBlock.currH) - (richBlock.currVisible ? f7 : 0), max));
+            int b10 = f0.b(4.0f, richBlock.padding.bottom, 0);
+            return Math.round(AndroidUtilities.lerp((richBlock.prevY + richBlock.prevH) - (richBlock.prevVisible ? b10 : 0), (richBlock.currY + richBlock.currH) - (richBlock.currVisible ? b10 : 0), max));
         }
         boolean z10 = false;
         int i11 = 0;
@@ -8572,8 +8572,8 @@ public class RichMessageLayout {
                 i11 += getGap();
             }
             if (isVisible) {
-                int height = ((s1Var == null || !(this.detailsAnimating || this.blockquoteAnimating)) ? richBlock2.getHeight() : AndroidUtilities.lerp(richBlock2.prevH, richBlock2.currH, Math.max(0.0f, Math.min(1.0f, s1Var.K1)))) + i11;
-                i11 = (r3 != i10 || richBlock2.padding.bottom <= AndroidUtilities.dp(4.0f)) ? height : z0.z(4.0f, richBlock2.padding.bottom, height);
+                int height = ((t1Var == null || !(this.detailsAnimating || this.blockquoteAnimating)) ? richBlock2.getHeight() : AndroidUtilities.lerp(richBlock2.prevH, richBlock2.currH, Math.max(0.0f, Math.min(1.0f, t1Var.K1)))) + i11;
+                i11 = (r3 != i10 || richBlock2.padding.bottom <= AndroidUtilities.dp(4.0f)) ? height : f0.A(4.0f, richBlock2.padding.bottom, height);
             }
             if (r3 == i10) {
                 return i11;
@@ -8614,9 +8614,9 @@ public class RichMessageLayout {
         return pageBlock instanceof TL_iv.pageBlockFooter ? 7 : 0;
     }
 
-    private int getBlockTop(int i10, org.telegram.ui.Cells.s1 s1Var) {
-        if (i10 >= 0 && i10 < this.blocks.size() && s1Var != null && (this.detailsAnimating || this.blockquoteAnimating)) {
-            float max = Math.max(0.0f, Math.min(1.0f, s1Var.K1));
+    private int getBlockTop(int i10, org.telegram.ui.Cells.t1 t1Var) {
+        if (i10 >= 0 && i10 < this.blocks.size() && t1Var != null && (this.detailsAnimating || this.blockquoteAnimating)) {
+            float max = Math.max(0.0f, Math.min(1.0f, t1Var.K1));
             RichBlock richBlock = this.blocks.get(i10);
             return Math.round(AndroidUtilities.lerp(richBlock.prevY, richBlock.currY, max));
         }
@@ -8632,7 +8632,7 @@ public class RichMessageLayout {
                 return i11;
             }
             if (isVisible) {
-                i11 = ((s1Var == null || !(this.detailsAnimating || this.blockquoteAnimating)) ? richBlock2.getHeight() : AndroidUtilities.lerp(richBlock2.prevH, richBlock2.currH, Math.max(0.0f, Math.min(1.0f, s1Var.K1)))) + i11;
+                i11 = ((t1Var == null || !(this.detailsAnimating || this.blockquoteAnimating)) ? richBlock2.getHeight() : AndroidUtilities.lerp(richBlock2.prevH, richBlock2.currH, Math.max(0.0f, Math.min(1.0f, t1Var.K1)))) + i11;
                 z10 = true;
             }
         }
@@ -8645,10 +8645,10 @@ public class RichMessageLayout {
         return sb2.toString();
     }
 
-    private static n01 getTextStyleRun(int i10) {
-        n01 n01Var = new n01();
-        n01Var.a = i10;
-        return n01Var;
+    private static b11 getTextStyleRun(int i10) {
+        b11 b11Var = new b11();
+        b11Var.a = i10;
+        return b11Var;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -8928,33 +8928,33 @@ public class RichMessageLayout {
             return false;
         }
         String str = textanchor.name;
-        CharSequence formatText = formatText(org.telegram.ui.web.h2.d(textanchor.text, "", str == null ? "" : str.toLowerCase()));
-        org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(context, this.resourcesProvider, true, false);
-        f3Var.fixNavigationBar();
-        f3Var.applyTopPadding = false;
-        f3Var.applyBottomPadding = false;
+        CharSequence formatText = formatText(org.telegram.ui.web.i2.d(textanchor.text, "", str == null ? "" : str.toLowerCase()));
+        org.telegram.ui.ActionBar.e3 e3Var = new org.telegram.ui.ActionBar.e3(context, this.resourcesProvider, true, false);
+        e3Var.fixNavigationBar();
+        e3Var.applyTopPadding = false;
+        e3Var.applyBottomPadding = false;
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        TextView g10 = z0.g(context, 1, 16.0f);
-        g10.setTypeface(AndroidUtilities.bold());
-        g10.setText(LocaleController.getString(R.string.InstantViewReference));
-        g10.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
+        TextView f7 = f0.f(context, 1, 16.0f);
+        f7.setTypeface(AndroidUtilities.bold());
+        f7.setText(LocaleController.getString(R.string.InstantViewReference));
+        f7.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
         int i10 = org.telegram.ui.ActionBar.h6.j5;
-        g10.setTextColor(getThemedColor(i10));
-        g10.setPadding(AndroidUtilities.dp(22.0f), 0, AndroidUtilities.dp(22.0f), 0);
-        linearLayout.addView(g10, new LinearLayout.LayoutParams(-1, AndroidUtilities.dp(48.0f)));
-        d90 d90Var = new d90(context, this.resourcesProvider);
-        d90Var.setTextSize(1, SharedConfig.fontSize);
-        d90Var.setTextColor(getThemedColor(i10));
-        d90Var.setLinkTextColor(getThemedColor(org.telegram.ui.ActionBar.h6.k5));
-        d90Var.setMovementMethod(LinkMovementMethod.getInstance());
-        d90Var.setPadding(AndroidUtilities.dp(22.0f), 0, AndroidUtilities.dp(22.0f), AndroidUtilities.dp(16.0f));
-        d90Var.setText(formatText);
-        linearLayout.addView(d90Var, new LinearLayout.LayoutParams(-1, -2));
+        f7.setTextColor(getThemedColor(i10));
+        f7.setPadding(AndroidUtilities.dp(22.0f), 0, AndroidUtilities.dp(22.0f), 0);
+        linearLayout.addView(f7, new LinearLayout.LayoutParams(-1, AndroidUtilities.dp(48.0f)));
+        n90 n90Var = new n90(context, this.resourcesProvider);
+        n90Var.setTextSize(1, SharedConfig.fontSize);
+        n90Var.setTextColor(getThemedColor(i10));
+        n90Var.setLinkTextColor(getThemedColor(org.telegram.ui.ActionBar.h6.k5));
+        n90Var.setMovementMethod(LinkMovementMethod.getInstance());
+        n90Var.setPadding(AndroidUtilities.dp(22.0f), 0, AndroidUtilities.dp(22.0f), AndroidUtilities.dp(16.0f));
+        n90Var.setText(formatText);
+        linearLayout.addView(n90Var, new LinearLayout.LayoutParams(-1, -2));
         FrameLayout frameLayout = new FrameLayout(context);
-        frameLayout.addView(linearLayout, w7.x5.c(-2.0f, -1));
-        f3Var.customView = frameLayout;
-        f3Var.show();
+        frameLayout.addView(linearLayout, w7.y5.c(-2.0f, -1));
+        e3Var.customView = frameLayout;
+        e3Var.show();
         return true;
     }
 
@@ -8966,7 +8966,7 @@ public class RichMessageLayout {
             if (arrayList.size() <= i10) {
                 break;
             }
-            if (((Boolean) hg.c.z(1, arrayList)).booleanValue()) {
+            if (((Boolean) hg.c.x(1, arrayList)).booleanValue()) {
                 str = "</ol>";
             }
             sb2.append(str);
@@ -8982,10 +8982,10 @@ public class RichMessageLayout {
             sb2.append(str2);
             arrayList.add(Boolean.valueOf(z10));
         }
-        if (arrayList.isEmpty() || ((Boolean) hg.c.h(1, arrayList)).booleanValue() == z10) {
+        if (arrayList.isEmpty() || ((Boolean) hg.c.g(1, arrayList)).booleanValue() == z10) {
             return;
         }
-        sb2.append(((Boolean) hg.c.z(1, arrayList)).booleanValue() ? "</ol>" : "</ul>");
+        sb2.append(((Boolean) hg.c.x(1, arrayList)).booleanValue() ? "</ol>" : "</ul>");
         sb2.append(z10 ? "<ol>" : "<ul>");
         arrayList.add(Boolean.valueOf(z10));
     }
@@ -9012,9 +9012,9 @@ public class RichMessageLayout {
             int spanStart = spannableStringBuilder.getSpanStart(styleSpan);
             int spanEnd = spannableStringBuilder.getSpanEnd(styleSpan);
             if (spanEnd > spanStart && (textStyleFlags = toTextStyleFlags(styleSpan.flags)) != 0) {
-                n01 n01Var = new n01();
-                n01Var.a = textStyleFlags;
-                spannableStringBuilder.setSpan(new o01(n01Var, 0), spanStart, spanEnd, 33);
+                b11 b11Var = new b11();
+                b11Var.a = textStyleFlags;
+                spannableStringBuilder.setSpan(new c11(b11Var, 0), spanStart, spanEnd, 33);
             }
         }
         return spannableStringBuilder;
@@ -9117,9 +9117,9 @@ public class RichMessageLayout {
     public void detach(View view) {
         View view2 = this.view;
         if (view2 == view && view2 != null) {
-            vh.g gVar = this.spoilerEffect2;
-            if (gVar != null) {
-                gVar.b(view);
+            vh.f fVar = this.spoilerEffect2;
+            if (fVar != null) {
+                fVar.b(view);
                 this.spoilerEffect2 = null;
             }
             this.view = null;
@@ -9133,7 +9133,7 @@ public class RichMessageLayout {
         }
     }
 
-    public void draw(Canvas canvas, int i10, int i11, org.telegram.ui.Cells.s1 s1Var) {
+    public void draw(Canvas canvas, int i10, int i11, org.telegram.ui.Cells.t1 t1Var) {
         Canvas canvas2;
         setBubblePaddings(i10, i11);
         this.textPaint.linkColor = getThemedColor(isOut() ? org.telegram.ui.ActionBar.h6.hc : org.telegram.ui.ActionBar.h6.gc);
@@ -9145,7 +9145,7 @@ public class RichMessageLayout {
         } else {
             canvas2 = canvas;
         }
-        drawInternal(canvas2, s1Var);
+        drawInternal(canvas2, t1Var);
         if (z10) {
             RectF rectF = AndroidUtilities.rectTmp;
             rectF.set(-i10, min - AndroidUtilities.dp(32.0f), getMinWidth() + i11, min);
@@ -9275,7 +9275,7 @@ public class RichMessageLayout {
                 }
             }
         }
-        return ((RichBlock) hg.c.h(1, this.blocks)).forcesTimeToNewLine();
+        return ((RichBlock) hg.c.g(1, this.blocks)).forcesTimeToNewLine();
     }
 
     public CharSequence formatText(TL_iv.RichText richText) {
@@ -9293,11 +9293,11 @@ public class RichMessageLayout {
         return arrayList;
     }
 
-    public org.telegram.ui.Cells.t1 getCell() {
+    public org.telegram.ui.Cells.u1 getCell() {
         return this.cell;
     }
 
-    public org.telegram.ui.Cells.k1 getDelegate() {
+    public org.telegram.ui.Cells.l1 getDelegate() {
         return this.delegate;
     }
 
@@ -9347,21 +9347,21 @@ public class RichMessageLayout {
                 }
             }
         }
-        RichBlock richBlock = (RichBlock) hg.c.h(1, this.blocks);
+        RichBlock richBlock = (RichBlock) hg.c.g(1, this.blocks);
         return richBlock.forcesTimeToNewLine() ? getMinWidth() : richBlock.getLastLineWidth();
     }
 
-    public vh.g getMediaSpoilerEffect() {
+    public vh.f getMediaSpoilerEffect() {
         View view = this.view;
         if (view == null) {
             return null;
         }
-        vh.g gVar = this.spoilerEffect2;
-        if (gVar != null && gVar.i) {
+        vh.f fVar = this.spoilerEffect2;
+        if (fVar != null && fVar.i) {
             this.spoilerEffect2 = null;
         }
         if (this.spoilerEffect2 == null) {
-            this.spoilerEffect2 = vh.g.e(view);
+            this.spoilerEffect2 = vh.f.e(view);
         }
         return this.spoilerEffect2;
     }
@@ -9508,8 +9508,8 @@ public class RichMessageLayout {
     }
 
     public boolean hasNameOffset() {
-        org.telegram.ui.Cells.t1 t1Var = this.cell;
-        return t1Var != null && t1Var.Lc > 0;
+        org.telegram.ui.Cells.u1 u1Var = this.cell;
+        return u1Var != null && u1Var.Lc > 0;
     }
 
     public boolean hasOverlay() {
@@ -9518,8 +9518,8 @@ public class RichMessageLayout {
             return false;
         }
         for (int i10 = 0; i10 < this.textBlocks.size(); i10++) {
-            org.telegram.ui.Cells.ca caVar = this.textBlocks.get(i10);
-            if ((caVar instanceof Text) && (v5Var = ((Text) caVar).animatedEmojiStack) != null && !v5Var.a.isEmpty()) {
+            org.telegram.ui.Cells.ba baVar = this.textBlocks.get(i10);
+            if ((baVar instanceof Text) && (v5Var = ((Text) baVar).animatedEmojiStack) != null && !v5Var.a.isEmpty()) {
                 return true;
             }
         }
@@ -9554,8 +9554,8 @@ public class RichMessageLayout {
     }
 
     public boolean isPinnedTop() {
-        org.telegram.ui.Cells.t1 t1Var = this.cell;
-        return t1Var != null && t1Var.n3();
+        org.telegram.ui.Cells.u1 u1Var = this.cell;
+        return u1Var != null && u1Var.n3();
     }
 
     public boolean isPressingLink() {
@@ -9651,9 +9651,9 @@ public class RichMessageLayout {
                 if (actionMasked == 0) {
                     if (this.showMoreRect.contains(x10, y3)) {
                         this.showMorePressed = true;
-                        org.telegram.ui.Components.yc ycVar = this.showMoreBounce;
-                        if (ycVar != null) {
-                            ycVar.c(true);
+                        org.telegram.ui.Components.zc zcVar = this.showMoreBounce;
+                        if (zcVar != null) {
+                            zcVar.c(true);
                             return true;
                         }
                         return true;
@@ -9661,17 +9661,17 @@ public class RichMessageLayout {
                 } else if (this.showMorePressed) {
                     if (actionMasked == 2) {
                         if (!this.showMoreRect.contains(x10, y3)) {
-                            org.telegram.ui.Components.yc ycVar2 = this.showMoreBounce;
-                            if (ycVar2 != null) {
-                                ycVar2.c(false);
+                            org.telegram.ui.Components.zc zcVar2 = this.showMoreBounce;
+                            if (zcVar2 != null) {
+                                zcVar2.c(false);
                             }
                             this.showMorePressed = false;
                             return true;
                         }
                     } else if (actionMasked == 1 || actionMasked == 3) {
-                        org.telegram.ui.Components.yc ycVar3 = this.showMoreBounce;
-                        if (ycVar3 != null) {
-                            ycVar3.c(false);
+                        org.telegram.ui.Components.zc zcVar3 = this.showMoreBounce;
+                        if (zcVar3 != null) {
+                            zcVar3.c(false);
                         }
                         boolean z10 = actionMasked == 1 && this.showMoreRect.contains(x10, y3);
                         this.showMorePressed = false;
@@ -9763,17 +9763,17 @@ public class RichMessageLayout {
             Rect rect = richBlock2.padding;
             richBlock2.placeTexts(rect.left, rect.top + i12, i13);
             if (isVisible) {
-                org.telegram.ui.Cells.ca[] text = richBlock2.getText();
+                org.telegram.ui.Cells.ba[] text = richBlock2.getText();
                 if (text != null) {
-                    for (org.telegram.ui.Cells.ca caVar : text) {
-                        if (caVar != null && caVar.getLayout() != null) {
+                    for (org.telegram.ui.Cells.ba baVar : text) {
+                        if (baVar != null && baVar.getLayout() != null) {
                             if (sb2.length() > 0) {
                                 sb2.append('\n');
                             }
                             this.textBlockCharOffsets.add(Integer.valueOf(sb2.length()));
                             this.textBlockBlockIndex.add(Integer.valueOf(i13));
-                            this.textBlocks.add(caVar);
-                            CharSequence text2 = caVar.getLayout().getText();
+                            this.textBlocks.add(baVar);
+                            CharSequence text2 = baVar.getLayout().getText();
                             if (text2 != null) {
                                 sb2.append(text2);
                             }
@@ -9790,9 +9790,9 @@ public class RichMessageLayout {
         this.joinedText = sb2;
     }
 
-    public void setChatMessageCellDelegate(org.telegram.ui.Cells.t1 t1Var, org.telegram.ui.Cells.k1 k1Var) {
-        this.cell = t1Var;
-        this.delegate = k1Var;
+    public void setChatMessageCellDelegate(org.telegram.ui.Cells.u1 u1Var, org.telegram.ui.Cells.l1 l1Var) {
+        this.cell = u1Var;
+        this.delegate = l1Var;
     }
 
     public void setResourcesProvider(org.telegram.ui.ActionBar.d6 d6Var) {
@@ -9847,9 +9847,9 @@ public class RichMessageLayout {
 
     public void updateAnimatedEmojis(int i10) {
         for (int i11 = 0; i11 < this.textBlocks.size(); i11++) {
-            org.telegram.ui.Cells.ca caVar = this.textBlocks.get(i11);
-            if (caVar instanceof Text) {
-                ((Text) caVar).refreshAnimatedEmoji(i10);
+            org.telegram.ui.Cells.ba baVar = this.textBlocks.get(i11);
+            if (baVar instanceof Text) {
+                ((Text) baVar).refreshAnimatedEmoji(i10);
             }
         }
     }
@@ -9877,13 +9877,13 @@ public class RichMessageLayout {
         return i10 == 0 ? formatText(richText, new SpannableStringBuilder(), 0) : formatTextAndSetSpan(richText, new SpannableStringBuilder(), i10, new StyleSpan(this, i10));
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class RichUnsupportedBlock extends RichBlock implements Drawable.Callback {
         public final int index;
         public final int level;
         public Bitmap tornBitmap;
-        public x21 tornParams;
-        public final g61 unsupportedBlockDrawable;
+        public l31 tornParams;
+        public final u61 unsupportedBlockDrawable;
         public final int unsupportedBlockHeight;
         public final int unsupportedBlockWidth;
 
@@ -9892,16 +9892,16 @@ public class RichMessageLayout {
             this.index = i11;
             this.level = i12;
             org.telegram.ui.ActionBar.d6 d6Var = richMessageLayout.resourcesProvider;
-            g61 g61Var = new g61();
-            this.unsupportedBlockDrawable = g61Var;
-            g61Var.setCallback(this);
-            g61Var.n = LocaleController.getString(R.string.UnsupportedBlockTitle);
-            g61Var.o = LocaleController.getString(R.string.UnsupportedBlockMessage);
-            g61Var.p = LocaleController.getString(R.string.UnsupportedUpdate);
-            g61Var.j = new ug(richMessageLayout, 9);
+            u61 u61Var = new u61();
+            this.unsupportedBlockDrawable = u61Var;
+            u61Var.setCallback(this);
+            u61Var.n = LocaleController.getString(R.string.UnsupportedBlockTitle);
+            u61Var.o = LocaleController.getString(R.string.UnsupportedBlockMessage);
+            u61Var.p = LocaleController.getString(R.string.UnsupportedUpdate);
+            u61Var.j = new ug(richMessageLayout, 9);
             int i13 = this.maxWidth;
             this.unsupportedBlockWidth = i13;
-            this.unsupportedBlockHeight = g61Var.a(i13);
+            this.unsupportedBlockHeight = u61Var.a(i13);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -9913,20 +9913,20 @@ public class RichMessageLayout {
 
         @Override // org.telegram.messenger.RichMessageLayout.RichBlock
         public void draw(Canvas canvas) {
-            g61 g61Var = this.unsupportedBlockDrawable;
+            u61 u61Var = this.unsupportedBlockDrawable;
             Rect rect = this.padding;
             int i10 = rect.left;
             int i11 = rect.top;
-            g61Var.setBounds(i10, i11, this.unsupportedBlockWidth + i10, this.unsupportedBlockHeight + i11);
+            u61Var.setBounds(i10, i11, this.unsupportedBlockWidth + i10, this.unsupportedBlockHeight + i11);
             this.unsupportedBlockDrawable.draw(canvas);
         }
 
-        public float getHeight(org.telegram.ui.Cells.s1 s1Var) {
+        public float getHeight(org.telegram.ui.Cells.t1 t1Var) {
             int i10;
-            if (s1Var != null) {
+            if (t1Var != null) {
                 RichMessageLayout richMessageLayout = this.root;
                 if (richMessageLayout.detailsAnimating || richMessageLayout.blockquoteAnimating) {
-                    i10 = AndroidUtilities.lerp(this.prevH, this.currH, Math.max(0.0f, Math.min(1.0f, s1Var.K1)));
+                    i10 = AndroidUtilities.lerp(this.prevH, this.currH, Math.max(0.0f, Math.min(1.0f, t1Var.K1)));
                     return i10;
                 }
             }
@@ -9934,11 +9934,11 @@ public class RichMessageLayout {
             return i10;
         }
 
-        public float getY(org.telegram.ui.Cells.s1 s1Var) {
-            if (s1Var != null) {
+        public float getY(org.telegram.ui.Cells.t1 t1Var) {
+            if (t1Var != null) {
                 RichMessageLayout richMessageLayout = this.root;
                 if (richMessageLayout.detailsAnimating || richMessageLayout.blockquoteAnimating) {
-                    return AndroidUtilities.lerp(this.prevY, this.currY, Math.max(0.0f, Math.min(1.0f, s1Var.K1)));
+                    return AndroidUtilities.lerp(this.prevY, this.currY, Math.max(0.0f, Math.min(1.0f, t1Var.K1)));
                 }
             }
             return this.currY;
@@ -10017,15 +10017,15 @@ public class RichMessageLayout {
             boolean j3 = ii.g6.j(textdiff.text);
             boolean j10 = ii.g6.j(textdiff.old_text);
             if (j3 && !j10) {
-                formatTextAndSetSpan(textdiff.old_text, spannableStringBuilder, i10, new o01(getTextStyleRun(8192), 0));
+                formatTextAndSetSpan(textdiff.old_text, spannableStringBuilder, i10, new c11(getTextStyleRun(8192), 0));
                 return spannableStringBuilder;
             }
             if (!j3 && j10) {
-                formatTextAndSetSpan(textdiff.text, spannableStringBuilder, i10, new o01(getTextStyleRun(4096), 0));
+                formatTextAndSetSpan(textdiff.text, spannableStringBuilder, i10, new c11(getTextStyleRun(4096), 0));
                 return spannableStringBuilder;
             }
             if (!j3) {
-                formatTextAndSetSpan(textdiff.text, spannableStringBuilder, i10, new bw0());
+                formatTextAndSetSpan(textdiff.text, spannableStringBuilder, i10, new mw0());
                 return spannableStringBuilder;
             }
         } else {
@@ -10055,11 +10055,11 @@ public class RichMessageLayout {
                 return spannableStringBuilder;
             }
             if (richText instanceof TL_iv.textUrl) {
-                formatTextAndSetSpan(richText.text, spannableStringBuilder, i10, new n51(((TL_iv.textUrl) richText).url, getTextStyleRun(1024)));
+                formatTextAndSetSpan(richText.text, spannableStringBuilder, i10, new b61(((TL_iv.textUrl) richText).url, getTextStyleRun(1024)));
                 return spannableStringBuilder;
             }
             if (richText instanceof TL_iv.textEmail) {
-                formatTextAndSetSpan(richText.text, spannableStringBuilder, i10, new n51("mailto:" + ((TL_iv.textEmail) richText).email, getTextStyleRun(1024)));
+                formatTextAndSetSpan(richText.text, spannableStringBuilder, i10, new b61("mailto:" + ((TL_iv.textEmail) richText).email, getTextStyleRun(1024)));
                 return spannableStringBuilder;
             }
             if (richText instanceof TL_iv.textConcat) {
@@ -10086,9 +10086,9 @@ public class RichMessageLayout {
                     TL_iv.textPhone textphone = (TL_iv.textPhone) richText;
                     String d = gf.b.d(textphone.phone, false);
                     if (textphone.phone.startsWith("+")) {
-                        d = org.telegram.ui.Cells.q3.i("+", d);
+                        d = v7.j.g("+", d);
                     }
-                    formatTextAndSetSpan(richText.text, spannableStringBuilder, i10, new n51(org.telegram.ui.Cells.q3.i("tel:", d), getTextStyleRun(1024)));
+                    formatTextAndSetSpan(richText.text, spannableStringBuilder, i10, new b61(v7.j.g("tel:", d), getTextStyleRun(1024)));
                     return spannableStringBuilder;
                 }
                 if (richText instanceof TL_iv.textAnchor) {
@@ -10126,10 +10126,10 @@ public class RichMessageLayout {
                     int length = spannableStringBuilder.length();
                     spannableStringBuilder.append(" ");
                     int length2 = spannableStringBuilder.length();
-                    spannableStringBuilder.setSpan(new g01(null, textmath.bitmap, textmath.w, textmath.h, org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.G6, this.resourcesProvider), textmath.depth), length, length2, 33);
+                    spannableStringBuilder.setSpan(new u01(null, textmath.bitmap, textmath.w, textmath.h, org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.G6, this.resourcesProvider), textmath.depth), length, length2, 33);
                     String str4 = textmath.source;
                     if (str4 != null && !str4.isEmpty()) {
-                        spannableStringBuilder.setSpan(new org.telegram.ui.Cells.x9(textmath.source), length, length2, 33);
+                        spannableStringBuilder.setSpan(new org.telegram.ui.Cells.w9(textmath.source), length, length2, 33);
                         return spannableStringBuilder;
                     }
                 } else {
@@ -10139,7 +10139,7 @@ public class RichMessageLayout {
                         int length3 = spannableStringBuilder.length();
                         spannableStringBuilder.append(charSequence);
                         int length4 = spannableStringBuilder.length();
-                        boolean a10 = w7.c0.a(i10, 13);
+                        boolean a10 = w7.d0.a(i10, 13);
                         int i20 = i10 & 15;
                         if (i20 >= 1 && i20 <= 6) {
                             TextPaint textPaint = new TextPaint(this.textPaint);
@@ -10152,57 +10152,57 @@ public class RichMessageLayout {
                         return spannableStringBuilder;
                     }
                     if (richText instanceof TL_iv.textSpoiler) {
-                        formatTextAndSetSpan(richText.text, spannableStringBuilder, i10, new o01(getTextStyleRun(256), 0));
+                        formatTextAndSetSpan(richText.text, spannableStringBuilder, i10, new c11(getTextStyleRun(256), 0));
                         return spannableStringBuilder;
                     }
                     if (richText instanceof TL_iv.textMention) {
                         TLRPC.TL_messageEntityMention tL_messageEntityMention = new TLRPC.TL_messageEntityMention();
-                        n01 n01Var = new n01();
-                        n01Var.d = tL_messageEntityMention;
-                        formatTextAndSetSpan(richText.text, spannableStringBuilder, i10, new l51(getString(richText), n01Var));
+                        b11 b11Var = new b11();
+                        b11Var.d = tL_messageEntityMention;
+                        formatTextAndSetSpan(richText.text, spannableStringBuilder, i10, new z51(getString(richText), b11Var));
                         return spannableStringBuilder;
                     }
                     if (richText instanceof TL_iv.textHashtag) {
                         TLRPC.TL_messageEntityHashtag tL_messageEntityHashtag = new TLRPC.TL_messageEntityHashtag();
-                        n01 n01Var2 = new n01();
-                        n01Var2.d = tL_messageEntityHashtag;
-                        formatTextAndSetSpan(richText.text, spannableStringBuilder, i10, new l51(getString(richText), n01Var2));
+                        b11 b11Var2 = new b11();
+                        b11Var2.d = tL_messageEntityHashtag;
+                        formatTextAndSetSpan(richText.text, spannableStringBuilder, i10, new z51(getString(richText), b11Var2));
                         return spannableStringBuilder;
                     }
                     if (richText instanceof TL_iv.textBotCommand) {
-                        formatTextAndSetSpan(richText.text, spannableStringBuilder, i10, new i51(getString(richText), isOut() ? 1 : 0, null));
+                        formatTextAndSetSpan(richText.text, spannableStringBuilder, i10, new w51(getString(richText), isOut() ? 1 : 0, null));
                         return spannableStringBuilder;
                     }
                     if (richText instanceof TL_iv.textCashtag) {
                         TLRPC.TL_messageEntityCashtag tL_messageEntityCashtag = new TLRPC.TL_messageEntityCashtag();
-                        n01 n01Var3 = new n01();
-                        n01Var3.d = tL_messageEntityCashtag;
-                        formatTextAndSetSpan(richText.text, spannableStringBuilder, i10, new l51(getString(richText), n01Var3));
+                        b11 b11Var3 = new b11();
+                        b11Var3.d = tL_messageEntityCashtag;
+                        formatTextAndSetSpan(richText.text, spannableStringBuilder, i10, new z51(getString(richText), b11Var3));
                         return spannableStringBuilder;
                     }
                     if (richText instanceof TL_iv.textAutoUrl) {
-                        formatTextAndSetSpan(richText.text, spannableStringBuilder, i10, new n51(getString(richText), getTextStyleRun(1024)));
+                        formatTextAndSetSpan(richText.text, spannableStringBuilder, i10, new b61(getString(richText), getTextStyleRun(1024)));
                         return spannableStringBuilder;
                     }
                     if (richText instanceof TL_iv.textAutoEmail) {
-                        formatTextAndSetSpan(richText.text, spannableStringBuilder, i10, new n51(org.telegram.ui.Cells.q3.i("mailto:", getString(richText)), getTextStyleRun(1024)));
+                        formatTextAndSetSpan(richText.text, spannableStringBuilder, i10, new b61(v7.j.g("mailto:", getString(richText)), getTextStyleRun(1024)));
                         return spannableStringBuilder;
                     }
                     if (richText instanceof TL_iv.textAutoPhone) {
                         String string = getString(richText);
                         String d10 = gf.b.d(string, false);
                         if (string.startsWith("+")) {
-                            d10 = org.telegram.ui.Cells.q3.i("+", d10);
+                            d10 = v7.j.g("+", d10);
                         }
-                        formatTextAndSetSpan(richText.text, spannableStringBuilder, i10, new n51(org.telegram.ui.Cells.q3.i("tel:", d10), getTextStyleRun(1024)));
+                        formatTextAndSetSpan(richText.text, spannableStringBuilder, i10, new b61(v7.j.g("tel:", d10), getTextStyleRun(1024)));
                         return spannableStringBuilder;
                     }
                     if (richText instanceof TL_iv.textBankCard) {
-                        formatTextAndSetSpan(richText.text, spannableStringBuilder, i10, new l51(org.telegram.ui.Cells.q3.i("card:", getString(richText)), (n01) null));
+                        formatTextAndSetSpan(richText.text, spannableStringBuilder, i10, new z51(v7.j.g("card:", getString(richText)), (b11) null));
                         return spannableStringBuilder;
                     }
                     if (richText instanceof TL_iv.textMentionName) {
-                        formatTextAndSetSpan(richText.text, spannableStringBuilder, i10, new o51("" + ((TL_iv.textMentionName) richText).user_id, isOut() ? 1 : 0, null));
+                        formatTextAndSetSpan(richText.text, spannableStringBuilder, i10, new c61("" + ((TL_iv.textMentionName) richText).user_id, isOut() ? 1 : 0, null));
                         return spannableStringBuilder;
                     }
                     if (richText instanceof TL_iv.textDate) {
@@ -10232,14 +10232,14 @@ public class RichMessageLayout {
         return spannableStringBuilder;
     }
 
-    private void drawInternal(Canvas canvas, org.telegram.ui.Cells.s1 s1Var, boolean z10, float f7, float f10) {
+    private void drawInternal(Canvas canvas, org.telegram.ui.Cells.t1 t1Var, boolean z10, float f7, float f10) {
         float lerp;
         float f11;
         RichDetailsBlock richDetailsBlock;
-        drawBackground(canvas, s1Var);
+        drawBackground(canvas, t1Var);
         updateTranslationLoading();
         float f12 = 0.0f;
-        float max = (s1Var == null || !(this.detailsAnimating || this.blockquoteAnimating)) ? 1.0f : Math.max(0.0f, Math.min(1.0f, s1Var.K1));
+        float max = (t1Var == null || !(this.detailsAnimating || this.blockquoteAnimating)) ? 1.0f : Math.max(0.0f, Math.min(1.0f, t1Var.K1));
         this.detailsAnimationProgress = max;
         if (max >= 1.0f) {
             this.detailsAnimating = false;
@@ -10311,13 +10311,13 @@ public class RichMessageLayout {
         return spannableStringBuilder;
     }
 
-    public void draw(Canvas canvas, int i10, int i11, org.telegram.ui.Cells.s1 s1Var, float f7, float f10) {
+    public void draw(Canvas canvas, int i10, int i11, org.telegram.ui.Cells.t1 t1Var, float f7, float f10) {
         setBubblePaddings(i10, i11);
         this.textPaint.linkColor = getThemedColor(isOut() ? org.telegram.ui.ActionBar.h6.hc : org.telegram.ui.ActionBar.h6.gc);
-        drawInternal(canvas, s1Var, f10 > f7, f7, f10);
+        drawInternal(canvas, t1Var, f10 > f7, f7, f10);
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class MediaCell implements DownloadController.FileDownloadProgressListener {
         private static ColorMatrixColorFilter fancyBlurFilter;
         public final float aspectRatio;
@@ -10499,7 +10499,7 @@ public class RichMessageLayout {
                 this.blurImageReceiver.setAlpha(this.imageReceiver.getCurrentAlpha());
                 this.blurImageReceiver.draw(canvas);
             }
-            vh.g mediaSpoilerEffect = this.root.getMediaSpoilerEffect();
+            vh.f mediaSpoilerEffect = this.root.getMediaSpoilerEffect();
             if (mediaSpoilerEffect != null) {
                 canvas.translate(imageX, imageY);
                 canvas2 = canvas;
@@ -10773,13 +10773,13 @@ public class RichMessageLayout {
             this.h = i13;
             this.imageReceiver.setImageCoords(i10, i11, i12, i13);
             int i14 = this.buttonSize;
-            int C = hg.c.C(i12, i14, 2, i10);
-            this.buttonX = C;
-            int C2 = hg.c.C(i13, i14, 2, i11);
-            this.buttonY = C2;
+            int z10 = hg.c.z(i12, i14, 2, i10);
+            this.buttonX = z10;
+            int z11 = hg.c.z(i13, i14, 2, i11);
+            this.buttonY = z11;
             RadialProgress2 radialProgress2 = this.radialProgress;
             if (radialProgress2 != null) {
-                radialProgress2.q(C, C2, C + i14, i14 + C2);
+                radialProgress2.q(z10, z11, z10 + i14, i14 + z11);
             }
             boolean computeAutoDownload = computeAutoDownload();
             this.autoDownload = computeAutoDownload;
@@ -10937,8 +10937,8 @@ public class RichMessageLayout {
         this.textPaint = textPaint;
         TextPaint textPaint2 = new TextPaint(1);
         this.numTextPaint = textPaint2;
-        this.quoteLine = new tl0(null);
-        this.clip = new i20();
+        this.quoteLine = new dm0(null);
+        this.clip = new g20();
         this.showMoreRect = new RectF();
         this.messageObject = null;
         this.currentAccount = i10;
@@ -10950,7 +10950,7 @@ public class RichMessageLayout {
         textPaint2.setTextSize(AndroidUtilities.dp(this.fontSize));
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class AnchorSpan extends CharacterStyle {
         public final String name;
 
@@ -10963,7 +10963,7 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class RichAudioBlock extends RichBlock implements DownloadController.FileDownloadProgressListener, NotificationCenter.NotificationCenterDelegate {
         private final TextPaint audioTimePaint;
         public final TL_iv.pageBlockAudio block;
@@ -10978,7 +10978,7 @@ public class RichMessageLayout {
         private int layoutWidth;
         private final int observerTag;
         private final RadialProgress2 radialProgress;
-        private final bo0 seekBar;
+        private final oo0 seekBar;
         private int seekBarWidth;
         private int seekBarX;
         private int seekBarY;
@@ -11004,9 +11004,9 @@ public class RichMessageLayout {
             this.radialProgress = radialProgress2;
             radialProgress2.setCircleRadius(AndroidUtilities.dp(24.0f));
             radialProgress2.q(dp, dp2, dp + dp3, dp3 + dp2);
-            bo0 bo0Var = new bo0(null);
-            this.seekBar = bo0Var;
-            bo0Var.h = new c0(this, 12);
+            oo0 oo0Var = new oo0(null);
+            this.seekBar = oo0Var;
+            oo0Var.h = new c0(this, 12);
             layoutInner();
             updateButtonState(false);
         }
@@ -11095,7 +11095,7 @@ public class RichMessageLayout {
             this.layoutWidth = i10 + richMessageLayout.padLeft + richMessageLayout.padRight;
             int dp = AndroidUtilities.dp(50.0f) + this.buttonX + this.size;
             this.seekBarX = dp;
-            this.seekBarWidth = hg.c.f(18.0f, this.layoutWidth - dp, 0);
+            this.seekBarWidth = f0.b(18.0f, this.layoutWidth - dp, 0);
             MessageObject messageObject = this.currentMessageObject;
             String musicAuthor = messageObject != null ? messageObject.getMusicAuthor(false) : null;
             MessageObject messageObject2 = this.currentMessageObject;
@@ -11106,7 +11106,7 @@ public class RichMessageLayout {
             } else {
                 SpannableStringBuilder spannableStringBuilder = (TextUtils.isEmpty(musicTitle) || TextUtils.isEmpty(musicAuthor)) ? !TextUtils.isEmpty(musicTitle) ? new SpannableStringBuilder(musicTitle) : new SpannableStringBuilder(musicAuthor) : new SpannableStringBuilder(a4.a.D(musicAuthor, " - ", musicTitle));
                 if (!TextUtils.isEmpty(musicAuthor)) {
-                    spannableStringBuilder.setSpan(new e51(AndroidUtilities.bold()), 0, musicAuthor.length(), 18);
+                    spannableStringBuilder.setSpan(new s51(AndroidUtilities.bold()), 0, musicAuthor.length(), 18);
                 }
                 this.audioTimePaint.setTextSize(AndroidUtilities.dp(16.0f));
                 int dp2 = AndroidUtilities.dp(50.0f) + this.seekBarWidth;
@@ -11204,7 +11204,7 @@ public class RichMessageLayout {
             RichMessageLayout richMessageLayout2 = this.root;
             radialProgress2.d = richMessageLayout2.getThemedColor(richMessageLayout2.isOut() ? org.telegram.ui.ActionBar.h6.Db : org.telegram.ui.ActionBar.h6.Bd);
             this.radialProgress.draw(canvas);
-            bo0 bo0Var = this.seekBar;
+            oo0 oo0Var = this.seekBar;
             RichMessageLayout richMessageLayout3 = this.root;
             int themedColor = richMessageLayout3.getThemedColor(richMessageLayout3.isOut() ? org.telegram.ui.ActionBar.h6.wb : org.telegram.ui.ActionBar.h6.ud);
             RichMessageLayout richMessageLayout4 = this.root;
@@ -11214,7 +11214,7 @@ public class RichMessageLayout {
             RichMessageLayout richMessageLayout6 = this.root;
             int themedColor4 = richMessageLayout6.getThemedColor(richMessageLayout6.isOut() ? org.telegram.ui.ActionBar.h6.zb : org.telegram.ui.ActionBar.h6.xd);
             RichMessageLayout richMessageLayout7 = this.root;
-            bo0Var.h(themedColor, themedColor2, themedColor3, themedColor4, richMessageLayout7.getThemedColor(richMessageLayout7.isOut() ? org.telegram.ui.ActionBar.h6.yb : org.telegram.ui.ActionBar.h6.wd));
+            oo0Var.h(themedColor, themedColor2, themedColor3, themedColor4, richMessageLayout7.getThemedColor(richMessageLayout7.isOut() ? org.telegram.ui.ActionBar.h6.yb : org.telegram.ui.ActionBar.h6.wd));
             canvas.save();
             canvas.translate(this.seekBarX, this.seekBarY);
             this.seekBar.b(canvas);
@@ -11348,9 +11348,9 @@ public class RichMessageLayout {
             if (this.currentDocument == null || (messageObject = this.currentMessageObject) == null) {
                 return;
             }
-            bo0 bo0Var = this.seekBar;
-            if (!bo0Var.e) {
-                bo0Var.i(messageObject.audioProgress);
+            oo0 oo0Var = this.seekBar;
+            if (!oo0Var.e) {
+                oo0Var.i(messageObject.audioProgress);
             }
             if (!MediaController.getInstance().isPlayingMessage(this.currentMessageObject)) {
                 i10 = 0;
@@ -11390,7 +11390,7 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class RichDocumentBlock extends RichBlock implements DownloadController.FileDownloadProgressListener {
         private static final int MIN_WIDTH_DP = 220;
         public final TL_iv.pageBlockDocument block;
@@ -11525,17 +11525,17 @@ public class RichMessageLayout {
 
         private void rebuildLayouts() {
             this.layoutWidth = getLayoutWidth();
-            int f7 = hg.c.f(48.0f, this.layoutWidth - (this.hasPreview ? AndroidUtilities.dp(97.0f) + this.previewX : this.buttonTextSpacing + (this.buttonX + this.buttonSize)), AndroidUtilities.dp(40.0f));
+            int b10 = f0.b(48.0f, this.layoutWidth - (this.hasPreview ? AndroidUtilities.dp(97.0f) + this.previewX : this.buttonTextSpacing + (this.buttonX + this.buttonSize)), AndroidUtilities.dp(40.0f));
             this.titlePaint.setTextSize(AndroidUtilities.dp(this.root.fontSize - 1));
             this.titlePaint.setTypeface(AndroidUtilities.bold());
             this.sizePaint.setTextSize(AndroidUtilities.dp(this.root.fontSize - 3));
             TLRPC.Document document = this.document;
-            CharSequence ellipsize = TextUtils.ellipsize(document == null ? "" : FileLoader.getDocumentFileName(document), this.titlePaint, f7, TextUtils.TruncateAt.END);
+            CharSequence ellipsize = TextUtils.ellipsize(document == null ? "" : FileLoader.getDocumentFileName(document), this.titlePaint, b10, TextUtils.TruncateAt.END);
             TextPaint textPaint = this.titlePaint;
             Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
-            this.titleLayout = new StaticLayout(ellipsize, textPaint, f7, alignment, 1.0f, 0.0f, false);
+            this.titleLayout = new StaticLayout(ellipsize, textPaint, b10, alignment, 1.0f, 0.0f, false);
             TLRPC.Document document2 = this.document;
-            this.sizeLayout = new StaticLayout(document2 != null ? AndroidUtilities.formatFileSize(document2.size) : "", this.sizePaint, f7, alignment, 1.0f, 0.0f, false);
+            this.sizeLayout = new StaticLayout(document2 != null ? AndroidUtilities.formatFileSize(document2.size) : "", this.sizePaint, b10, alignment, 1.0f, 0.0f, false);
         }
 
         @Override // org.telegram.messenger.RichMessageLayout.RichBlock
@@ -11783,7 +11783,7 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static abstract class RichMediaBlock extends RichBlock implements DownloadController.FileDownloadProgressListener {
         private static ColorMatrixColorFilter fancyBlurFilter;
         private static Paint mediaBgPaint;
@@ -11923,7 +11923,7 @@ public class RichMessageLayout {
                 this.blurImageReceiver.setAlpha(this.imageReceiver.getCurrentAlpha());
                 this.blurImageReceiver.draw(canvas);
             }
-            vh.g mediaSpoilerEffect = this.root.getMediaSpoilerEffect();
+            vh.f mediaSpoilerEffect = this.root.getMediaSpoilerEffect();
             if (mediaSpoilerEffect != null) {
                 canvas.translate(imageX, imageY);
                 canvas2 = canvas;

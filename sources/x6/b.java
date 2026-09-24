@@ -5,7 +5,7 @@ import android.os.IInterface;
 import java.lang.reflect.Field;
 import n6.l;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class b extends b8.b implements a {
     public final Object b;
@@ -38,7 +38,7 @@ public final class b extends b8.b implements a {
             }
         }
         if (i10 != 1) {
-            throw new IllegalArgumentException(hg.c.i(declaredFields.length, "Unexpected number of IObjectWrapper declared fields: "));
+            throw new IllegalArgumentException(hg.c.h(declaredFields.length, "Unexpected number of IObjectWrapper declared fields: "));
         }
         l.h(field);
         if (field.isAccessible()) {

@@ -12,10 +12,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.f01;
 import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.t01;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class x1 extends ReplacementSpan {
     public static final /* synthetic */ int d = 0;
@@ -37,22 +37,22 @@ public final class x1 extends ReplacementSpan {
                 float f10 = (i12 + i14) / 2.0f;
                 RectF rectF = AndroidUtilities.rectTmp;
                 float f11 = dpf2 / 2.0f;
-                rectF.set(f7, f10 - f11, ((int) (((f01) this.c).c + AndroidUtilities.dp(10.0f))) + f7, f11 + f10);
+                rectF.set(f7, f10 - f11, ((int) (((t01) this.c).c + AndroidUtilities.dp(10.0f))) + f7, f11 + f10);
                 Paint paint2 = (Paint) this.b;
                 int i15 = h6.z6;
                 paint2.setColor(h6.l1(0.15f, h6.w0(null, i15, false)));
                 canvas.drawRoundRect(rectF, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), paint2);
-                ((f01) this.c).c(f7 + AndroidUtilities.dp(5.0f), f10, Utilities.clamp((paint.getAlpha() * 2) / 255.0f, 1.0f, 0.0f), h6.w0(null, i15, false), canvas);
+                ((t01) this.c).c(f7 + AndroidUtilities.dp(5.0f), f10, Utilities.clamp((paint.getAlpha() * 2) / 255.0f, 1.0f, 0.0f), h6.w0(null, i15, false), canvas);
                 break;
             case 1:
                 float f12 = (i12 + i14) / 2.0f;
                 RectF rectF2 = AndroidUtilities.rectTmp;
-                rectF2.set(f7, f12 - AndroidUtilities.dp(7.66f), ((f01) this.c).c + f7 + AndroidUtilities.dp(6.66f), AndroidUtilities.dp(7.66f) + f12);
+                rectF2.set(f7, f12 - AndroidUtilities.dp(7.66f), ((t01) this.c).c + f7 + AndroidUtilities.dp(6.66f), AndroidUtilities.dp(7.66f) + f12);
                 canvas.saveLayerAlpha(rectF2, 255, 31);
                 Paint paint3 = (Paint) this.b;
                 paint3.setColor(paint.getColor());
                 canvas.drawRoundRect(rectF2, AndroidUtilities.dp(5.0f), AndroidUtilities.dp(5.0f), paint3);
-                ((f01) this.c).c(f7 + AndroidUtilities.dp(3.33f), f12, 1.0f, -1, canvas);
+                ((t01) this.c).c(f7 + AndroidUtilities.dp(3.33f), f12, 1.0f, -1, canvas);
                 canvas.restore();
                 break;
             default:
@@ -76,9 +76,9 @@ public final class x1 extends ReplacementSpan {
     public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
         switch (this.a) {
             case 0:
-                return (int) (((f01) this.c).c + AndroidUtilities.dp(10.0f));
+                return (int) (((t01) this.c).c + AndroidUtilities.dp(10.0f));
             case 1:
-                return (int) (((f01) this.c).c + AndroidUtilities.dp(6.66f));
+                return (int) (((t01) this.c).c + AndroidUtilities.dp(6.66f));
             default:
                 return AndroidUtilities.dp(20.0f);
         }
@@ -87,14 +87,14 @@ public final class x1 extends ReplacementSpan {
     public x1(int i10) {
         this.a = 0;
         this.b = new Paint(1);
-        this.c = new f01(LocaleController.formatPluralString("BusinessRepliesMore", i10, new Object[0]), 9.33f, AndroidUtilities.bold());
+        this.c = new t01(LocaleController.formatPluralString("BusinessRepliesMore", i10, new Object[0]), 9.33f, AndroidUtilities.bold());
     }
 
     public x1() {
         this.a = 1;
         this.b = new Paint(1);
-        f01 f01Var = new f01("x50", 13.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
-        this.c = f01Var;
-        f01Var.a.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+        t01 t01Var = new t01("x50", 13.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
+        this.c = t01Var;
+        t01Var.a.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
     }
 }

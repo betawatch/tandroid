@@ -16,11 +16,11 @@ import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.f01;
 import org.telegram.ui.Components.pq;
 import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.t01;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class n8 extends View {
     public final boolean a;
@@ -242,7 +242,7 @@ public final class n8 extends View {
             r92.a = (arrayList3.size() - r82) - i12;
             long j3 = j8Var3.d;
             Paint paint = r92.h;
-            r92.o = new f01(w7.R0(hg.c.k(j3, ',', new StringBuilder("⭐️")), 0.85f, pqVarArr), 12.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
+            r92.o = new t01(w7.R0(org.telegram.messenger.f0.h(j3, ',', new StringBuilder("⭐️")), 0.85f, pqVarArr), 12.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
             boolean z13 = n8Var.a;
             int i15 = o8Var.c;
             if (z13) {
@@ -262,7 +262,7 @@ public final class n8 extends View {
             if (this.a) {
                 int i17 = i12 + 1;
                 r92.v = i17;
-                r92.u = new f01(hg.c.i(i17, ""), 10.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
+                r92.u = new t01(hg.c.h(i17, ""), 10.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
                 if (i17 > 0 && r92.s == null) {
                     Drawable mutate = n8Var.getContext().getResources().getDrawable(R.drawable.filled_stream_crown).mutate();
                     r92.s = mutate;
@@ -281,7 +281,7 @@ public final class n8 extends View {
                 if (!r92.i && r92.p != z14) {
                     r92.p = z14;
                     pqVarArr = null;
-                    r92.n = new f01(z14 ? LocaleController.getString(R.string.StarsReactionAnonymous) : DialogObject.getShortName(r92.j), 12.0f, null);
+                    r92.n = new t01(z14 ? LocaleController.getString(R.string.StarsReactionAnonymous) : DialogObject.getShortName(r92.j), 12.0f, null);
                     n8Var.invalidate();
                     i12++;
                     arrayList3 = arrayList;

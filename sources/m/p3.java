@@ -14,10 +14,10 @@ import java.util.concurrent.atomic.AtomicMarkableReference;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.o70;
-import w7.x5;
+import org.telegram.ui.Components.y70;
+import w7.y5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class p3 implements n5.b {
     public Object a;
@@ -48,9 +48,9 @@ public final class p3 implements n5.b {
 
     public void a() {
         c(null);
-        o70 o70Var = (o70) this.c;
-        if (o70Var != null) {
-            o70Var.u();
+        y70 y70Var = (y70) this.c;
+        if (y70Var != null) {
+            y70Var.u();
             this.c = null;
         }
         this.d = null;
@@ -75,7 +75,7 @@ public final class p3 implements n5.b {
             n0Var.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(12.0f), 0);
             n0Var.setBackground(h6.Y(h6.v0(h6.i6, d6Var), 0, 0));
             n0Var.setOnClickListener(new ai.d0(this, e6Var, o0Var, 10));
-            ((LinearLayout) this.d).addView(n0Var, x5.n(-1, 48));
+            ((LinearLayout) this.d).addView(n0Var, y5.n(-1, 48));
         }
     }
 
@@ -94,8 +94,8 @@ public final class p3 implements n5.b {
     }
 
     public void d(e6 e6Var, String str) {
-        o70 o70Var;
-        o70 o70Var2;
+        y70 y70Var;
+        y70 y70Var2;
         if (str == null) {
             a();
             return;
@@ -106,13 +106,13 @@ public final class p3 implements n5.b {
             return;
         }
         c(e6Var);
-        if (((e6) this.f) == e6Var && a2.equals((ArrayList) this.e) && (o70Var2 = (o70) this.c) != null && o70Var2.D()) {
+        if (((e6) this.f) == e6Var && a2.equals((ArrayList) this.e) && (y70Var2 = (y70) this.c) != null && y70Var2.D()) {
             return;
         }
-        if (((e6) this.f) == e6Var && (o70Var = (o70) this.c) != null && o70Var.D() && ((LinearLayout) this.d) != null) {
+        if (((e6) this.f) == e6Var && (y70Var = (y70) this.c) != null && y70Var.D() && ((LinearLayout) this.d) != null) {
             this.e = a2;
             b(e6Var, a2);
-            ((o70) this.c).O();
+            ((y70) this.c).O();
             return;
         }
         a();
@@ -123,11 +123,11 @@ public final class p3 implements n5.b {
         this.d = linearLayout;
         linearLayout.setOrientation(1);
         b(e6Var, a2);
-        o70 a10 = ((ii.p0) this.a).a(e6Var.getEditText());
+        y70 a10 = ((ii.p0) this.a).a(e6Var.getEditText());
         a10.Q = true;
         a10.s = 0;
         a10.t = false;
-        a10.r((LinearLayout) this.d, x5.n(220, -2));
+        a10.r((LinearLayout) this.d, y5.n(220, -2));
         a10.X = AndroidUtilities.dp(240.0f);
         a10.i = 3;
         a10.a0(-AndroidUtilities.dp(12.0f), 0.0f);
@@ -145,7 +145,7 @@ public final class p3 implements n5.b {
         Context context = (Context) ((fd.a) this.a).get();
         m5.d dVar = (m5.d) ((fd.a) this.b).get();
         s5.d dVar2 = (s5.d) ((fd.a) this.c).get();
-        lf.i iVar = (lf.i) ((lf.i) this.d).get();
+        la.h hVar = (la.h) ((la.h) this.d).get();
         Executor executor = (Executor) ((fd.a) this.e).get();
         t5.c cVar = (t5.c) ((fd.a) this.f).get();
         rb.a aVar = new rb.a(23);
@@ -155,7 +155,7 @@ public final class p3 implements n5.b {
         bVar2.a = context;
         bVar2.b = dVar;
         bVar2.c = dVar2;
-        bVar2.d = iVar;
+        bVar2.d = hVar;
         bVar2.e = executor;
         bVar2.f = cVar;
         bVar2.g = aVar;

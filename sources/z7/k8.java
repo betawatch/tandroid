@@ -1,12 +1,12 @@
 package z7;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class k8 implements ia.d {
     public static final k8 a = new k8();
 
     static {
-        org.telegram.ui.Cells.q3.t(w.c.l(w.class, w.c.o(7, w.c.l(w.class, w.c.o(6, w.c.l(w.class, w.c.o(5, w.c.l(w.class, w.c.o(4, w.c.l(w.class, w.c.o(3, w.c.l(w.class, w.c.o(2, w.c.l(w.class, new s(1)))))))))))))));
+        v7.j.r(v7.j.m(w.class, v7.j.q(7, v7.j.m(w.class, v7.j.q(6, v7.j.m(w.class, v7.j.q(5, v7.j.m(w.class, v7.j.q(4, v7.j.m(w.class, v7.j.q(3, v7.j.m(w.class, v7.j.q(2, v7.j.m(w.class, new s(1)))))))))))))));
     }
 
     @Override // ia.a

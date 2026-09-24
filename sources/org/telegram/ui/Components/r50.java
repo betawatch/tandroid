@@ -1,19 +1,69 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
-/* loaded from: classes3.dex */
-public final class r50 {
-    public final boolean a;
-    public final int b;
-    public final int c;
-    public final long d;
-    public final long e;
+import android.view.animation.DecelerateInterpolator;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.VideoEditedInfo;
 
-    public r50(long j3, int i10, int i11, boolean z10, long j10) {
-        this.a = z10;
-        this.b = i10;
-        this.c = i11;
-        this.d = j3;
-        this.e = j10;
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class r50 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ v50 b;
+
+    public /* synthetic */ r50(v50 v50Var, int i10) {
+        this.a = i10;
+        this.b = v50Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        VideoEditedInfo videoEditedInfo;
+        int i10 = this.a;
+        v50 v50Var = this.b;
+        switch (i10) {
+            case 0:
+                v50Var.H0.q(false, false);
+                break;
+            case 1:
+                c60 c60Var = v50Var.H0;
+                VideoEditedInfo videoEditedInfo2 = new VideoEditedInfo();
+                c60Var.S = videoEditedInfo2;
+                videoEditedInfo2.roundVideo = true;
+                videoEditedInfo2.startTime = -1L;
+                videoEditedInfo2.endTime = -1L;
+                videoEditedInfo2.file = c60Var.M;
+                videoEditedInfo2.encryptedFile = c60Var.N;
+                videoEditedInfo2.key = c60Var.O;
+                videoEditedInfo2.iv = c60Var.P;
+                videoEditedInfo2.estimatedSize = Math.max(1L, c60Var.Q);
+                VideoEditedInfo videoEditedInfo3 = c60Var.S;
+                videoEditedInfo3.framerate = 25;
+                videoEditedInfo3.originalWidth = 360;
+                videoEditedInfo3.resultWidth = 360;
+                videoEditedInfo3.originalHeight = 360;
+                videoEditedInfo3.resultHeight = 360;
+                videoEditedInfo3.originalPath = c60Var.g0.getAbsolutePath();
+                v50Var.h(c60Var.g0);
+                c60Var.S.estimatedDuration = c60Var.k0;
+                NotificationCenter.getInstance(c60Var.f).lambda$postNotificationNameOnUIThread$1(NotificationCenter.audioDidSent, Integer.valueOf(c60Var.V), c60Var.S, c60Var.g0.getAbsolutePath(), v50Var.A0);
+                break;
+            case 2:
+                if (v50Var.G0 && (videoEditedInfo = v50Var.H0.S) != null) {
+                    videoEditedInfo.notReadyYet = false;
+                }
+                v50Var.c(v50Var.a, 0L, true);
+                MediaController.getInstance().requestRecordAudioFocus(false);
+                break;
+            case 3:
+                v50Var.H0.d1 = null;
+                break;
+            case 4:
+                v50Var.H0.r0.animate().setDuration(120L).alpha(0.0f).setInterpolator(new DecelerateInterpolator()).start();
+                break;
+            default:
+                v50Var.H0.r0.animate().setDuration(120L).alpha(0.0f).setInterpolator(new DecelerateInterpolator()).start();
+                break;
+        }
     }
 }

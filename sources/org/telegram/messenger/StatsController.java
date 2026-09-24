@@ -5,7 +5,7 @@ import java.io.File;
 import java.io.RandomAccessFile;
 import java.lang.reflect.Array;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class StatsController extends BaseController {
     private static final int OLD_TYPES_COUNT = 7;
@@ -100,7 +100,7 @@ public class StatsController extends BaseController {
         };
         File filesDirFixed = ApplicationLoader.getFilesDirFixed();
         if (i10 != 0) {
-            filesDirFixed = new File(ApplicationLoader.getFilesDirFixed(), hg.c.j(i10, "account", "/"));
+            filesDirFixed = new File(ApplicationLoader.getFilesDirFixed(), hg.c.i(i10, "account", "/"));
             filesDirFixed.mkdirs();
         }
         try {

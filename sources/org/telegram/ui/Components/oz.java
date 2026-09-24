@@ -4,7 +4,7 @@ import android.util.SparseIntArray;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public class oz extends s4.s {
     public final boolean Q;
@@ -22,26 +22,26 @@ public class oz extends s4.s {
         this.Q = z10;
     }
 
-    public static jv0 C1(jv0 jv0Var) {
-        if (jv0Var == null) {
+    public static uv0 C1(uv0 uv0Var) {
+        if (uv0Var == null) {
             return null;
         }
-        if (jv0Var.a == 0.0f) {
-            jv0Var.a = 100.0f;
+        if (uv0Var.a == 0.0f) {
+            uv0Var.a = 100.0f;
         }
-        if (jv0Var.b == 0.0f) {
-            jv0Var.b = 100.0f;
+        if (uv0Var.b == 0.0f) {
+            uv0Var.b = 100.0f;
         }
-        float f7 = jv0Var.a;
-        float f10 = jv0Var.b;
+        float f7 = uv0Var.a;
+        float f10 = uv0Var.b;
         float f11 = f7 / f10;
         if (f11 <= 4.0f && f11 >= 0.2f) {
-            return jv0Var;
+            return uv0Var;
         }
         float max = Math.max(f7, f10);
-        jv0Var.a = max;
-        jv0Var.b = max;
-        return jv0Var;
+        uv0Var.a = max;
+        uv0Var.b = max;
+        return uv0Var;
     }
 
     public final void B1() {
@@ -77,7 +77,7 @@ public class oz extends s4.s {
         int i15 = 0;
         int i16 = 0;
         while (i15 < i13) {
-            jv0 C1 = i15 < A ? C1(D1(i15)) : null;
+            uv0 C1 = i15 < A ? C1(D1(i15)) : null;
             if (C1 == null) {
                 z10 = i16 != 0;
                 i10 = dp;
@@ -150,8 +150,8 @@ public class oz extends s4.s {
         this.V++;
     }
 
-    public jv0 D1(int i10) {
-        return new jv0(100.0f, 100.0f);
+    public uv0 D1(int i10) {
+        return new uv0(100.0f, 100.0f);
     }
 
     public final boolean E1(int i10) {

@@ -17,10 +17,10 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.a01;
+import org.telegram.ui.Components.l01;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v3 implements View.OnClickListener {
     public final /* synthetic */ int a = 1;
@@ -28,22 +28,22 @@ public final /* synthetic */ class v3 implements View.OnClickListener {
     public final /* synthetic */ long c;
     public final /* synthetic */ TLRPC.User d;
     public final /* synthetic */ int e;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f3 f;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e3 f;
     public final /* synthetic */ boolean h;
     public final /* synthetic */ d6 n;
     public final /* synthetic */ Object r;
     public final /* synthetic */ Object s;
     public final /* synthetic */ Object v;
 
-    public /* synthetic */ v3(ci.d dVar, a01 a01Var, MessagesController messagesController, long j3, TLRPC.User user, String[] strArr, int i10, org.telegram.ui.ActionBar.f3 f3Var, boolean z10, d6 d6Var) {
+    public /* synthetic */ v3(ci.d dVar, l01 l01Var, MessagesController messagesController, long j3, TLRPC.User user, String[] strArr, int i10, org.telegram.ui.ActionBar.e3 e3Var, boolean z10, d6 d6Var) {
         this.b = dVar;
-        this.r = a01Var;
+        this.r = l01Var;
         this.s = messagesController;
         this.c = j3;
         this.d = user;
         this.v = strArr;
         this.e = i10;
-        this.f = f3Var;
+        this.f = e3Var;
         this.h = z10;
         this.n = d6Var;
     }
@@ -64,7 +64,7 @@ public final /* synthetic */ class v3 implements View.OnClickListener {
                     connectstarrefbot.bot = MessagesController.getInstance(i10).getInputUser(starrefprogram.bot_id);
                     connectstarrefbot.peer = MessagesController.getInstance(i10).getInputPeer(j3);
                     ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i10);
-                    final org.telegram.ui.ActionBar.f3 f3Var = this.f;
+                    final org.telegram.ui.ActionBar.e3 e3Var = this.f;
                     final long j10 = this.c;
                     final boolean z10 = this.h;
                     final d6 d6Var = this.n;
@@ -72,23 +72,23 @@ public final /* synthetic */ class v3 implements View.OnClickListener {
                     connectionsManager.sendRequest(connectstarrefbot, new RequestDelegate() { // from class: ei.o3
                         @Override // org.telegram.tgnet.RequestDelegate
                         public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                            AndroidUtilities.runOnUIThread(new t3(ci.d.this, tLObject, i10, j3, f3Var, starrefprogram, j10, z10, context, d6Var, user, tL_error));
+                            AndroidUtilities.runOnUIThread(new t3(ci.d.this, tLObject, i10, j3, e3Var, starrefprogram, j10, z10, context, d6Var, user, tL_error));
                         }
                     });
                     break;
                 }
                 break;
             default:
-                a01 a01Var = (a01) this.r;
-                org.telegram.ui.Cells.d6 d6Var2 = a01Var.h;
+                l01 l01Var = (l01) this.r;
+                org.telegram.ui.Cells.d6 d6Var2 = l01Var.h;
                 final MessagesController messagesController = (MessagesController) this.s;
                 String[] strArr = (String[]) this.v;
                 final ci.d dVar2 = this.b;
                 if (!dVar2.N) {
                     EditTextBoldCursor textView = d6Var2.getTextView();
                     if (textView.getText().toString().trim().length() > 16) {
-                        float f7 = -a01Var.y;
-                        a01Var.y = f7;
+                        float f7 = -l01Var.y;
+                        l01Var.y = f7;
                         AndroidUtilities.shakeViewSpring(textView, f7);
                         BotWebViewVibrationEffect.APP_ERROR.vibrate();
                         break;
@@ -103,18 +103,18 @@ public final /* synthetic */ class v3 implements View.OnClickListener {
                         tL_messages_editChatParticipantRank.rank = strArr[0];
                         ConnectionsManager connectionsManager2 = ConnectionsManager.getInstance(this.e);
                         org.telegram.messenger.a aVar = new org.telegram.messenger.a();
-                        final org.telegram.ui.ActionBar.f3 f3Var2 = this.f;
+                        final org.telegram.ui.ActionBar.e3 e3Var2 = this.f;
                         final boolean z11 = this.h;
                         final d6 d6Var3 = this.n;
-                        connectionsManager2.sendRequestTyped(tL_messages_editChatParticipantRank, aVar, new Utilities.Callback2() { // from class: org.telegram.ui.Components.qz0
+                        connectionsManager2.sendRequestTyped(tL_messages_editChatParticipantRank, aVar, new Utilities.Callback2() { // from class: org.telegram.ui.Components.b01
                             @Override // org.telegram.messenger.Utilities.Callback2
                             public final void run(Object obj, Object obj2) {
                                 TLRPC.Updates updates = (TLRPC.Updates) obj;
                                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                                org.telegram.ui.ActionBar.f3 f3Var3 = f3Var2;
+                                org.telegram.ui.ActionBar.e3 e3Var3 = e3Var2;
                                 if (updates == null) {
                                     if (tL_error != null) {
-                                        org.telegram.ui.Cells.q3.r(f3Var3.topBulletinContainer, d6Var3, tL_error, false);
+                                        org.telegram.ui.Cells.c1.r(e3Var3.topBulletinContainer, d6Var3, tL_error, false);
                                         dVar2.setLoading(false);
                                         return;
                                     }
@@ -127,12 +127,12 @@ public final /* synthetic */ class v3 implements View.OnClickListener {
                                 MessagesController messagesController2 = MessagesController.this;
                                 messagesController2.updateRank(j12, j13, str);
                                 messagesController2.processUpdates(updates, false);
-                                f3Var3.dismiss();
-                                org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+                                e3Var3.dismiss();
+                                org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
                                 if (TextUtils.isEmpty(tL_messages_editChatParticipantRank2.rank) || U == null) {
                                     return;
                                 }
-                                qc M = xc.a0(U).M(LocaleController.getString(z11 ? R.string.TagAdded : R.string.TagEdited), tL_messages_editChatParticipantRank2.rank, R.raw.contact_check);
+                                qc M = yc.a0(U).M(LocaleController.getString(z11 ? R.string.TagAdded : R.string.TagEdited), tL_messages_editChatParticipantRank2.rank, R.raw.contact_check);
                                 ub ubVar = M.e;
                                 if (ubVar.getLayoutParams() instanceof FrameLayout.LayoutParams) {
                                     ((FrameLayout.LayoutParams) ubVar.getLayoutParams()).width = -2;
@@ -148,12 +148,12 @@ public final /* synthetic */ class v3 implements View.OnClickListener {
         }
     }
 
-    public /* synthetic */ v3(ci.d dVar, long[] jArr, int i10, TL_payments.starRefProgram starrefprogram, org.telegram.ui.ActionBar.f3 f3Var, long j3, boolean z10, Context context, d6 d6Var, TLRPC.User user) {
+    public /* synthetic */ v3(ci.d dVar, long[] jArr, int i10, TL_payments.starRefProgram starrefprogram, org.telegram.ui.ActionBar.e3 e3Var, long j3, boolean z10, Context context, d6 d6Var, TLRPC.User user) {
         this.b = dVar;
         this.r = jArr;
         this.e = i10;
         this.s = starrefprogram;
-        this.f = f3Var;
+        this.f = e3Var;
         this.c = j3;
         this.h = z10;
         this.v = context;

@@ -4,18 +4,18 @@ import gd.c;
 import gd.g;
 import jd.a;
 import org.telegram.tgnet.TLObject;
-import v7.s7;
 import v7.t7;
+import v7.u7;
 import zd.e0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class zzif {
     private final c zza;
 
     public zzif() {
         int i10 = zzby.zza;
-        this.zza = s7.a(zzie.zza);
+        this.zza = t7.a(zzie.zza);
     }
 
     public static final /* synthetic */ zzhm zza(zzif zzifVar) {
@@ -42,10 +42,10 @@ public final class zzif {
                     if (i10 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    t7.b(obj);
+                    u7.b(obj);
                     return obj;
                 }
-                t7.b(obj);
+                u7.b(obj);
                 zzid zzidVar = new zzid(zzifVar, zzcyVar, zzyeVar, null);
                 zzicVar.zzc = 1;
                 Object f7 = e0.f(zzidVar, zzicVar);

@@ -19,7 +19,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class e0 extends androidx.fragment.app.p {
     public final Handler A0 = new Handler(Looper.getMainLooper());
@@ -77,7 +77,7 @@ public class e0 extends androidx.fragment.app.p {
         }
         this.F0 = (ImageView) inflate.findViewById(R.id.fingerprint_icon);
         this.G0 = (TextView) inflate.findViewById(R.id.fingerprint_error);
-        if (v7.m.a(this.C0.c())) {
+        if (v7.o.a(this.C0.c())) {
             charSequence = q(R.string.confirm_device_credential_password);
         } else {
             x xVar = this.C0;
@@ -129,7 +129,7 @@ public class e0 extends androidx.fragment.app.p {
         super.z(bundle);
         androidx.fragment.app.v k10 = k();
         if (k10 != null) {
-            x xVar = (x) new aa.a(k10).m(x.class);
+            x xVar = (x) new aa.a(k10).k(x.class);
             this.C0 = xVar;
             if (xVar.z == null) {
                 xVar.z = new androidx.lifecycle.z();

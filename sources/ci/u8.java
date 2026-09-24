@@ -16,18 +16,18 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.h51;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.ec0;
 import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.tb0;
+import org.telegram.ui.Components.v51;
+import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.wl0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class u8 extends org.telegram.ui.Components.bb implements NotificationCenter.NotificationCenterDelegate {
     public q8 X;
-    public final org.telegram.ui.Cells.i3 Y;
-    public final org.telegram.ui.Cells.i3 Z;
+    public final org.telegram.ui.Cells.j3 Y;
+    public final org.telegram.ui.Cells.j3 Z;
     public final FrameLayout a0;
     public final d b0;
     public boolean c0;
@@ -52,19 +52,19 @@ public final class u8 extends org.telegram.ui.Components.bb implements Notificat
         K();
         this.I = AndroidUtilities.dp(4.0f);
         this.J = AndroidUtilities.dp(-15.0f);
-        org.telegram.ui.Cells.i3 i3Var = new org.telegram.ui.Cells.i3(context, LocaleController.getString(R.string.StoryLinkURLPlaceholder), true, false, -1, d6Var);
-        this.Y = i3Var;
+        org.telegram.ui.Cells.j3 j3Var = new org.telegram.ui.Cells.j3(context, LocaleController.getString(R.string.StoryLinkURLPlaceholder), true, false, -1, d6Var);
+        this.Y = j3Var;
         n8 n8Var = new n8(this, 1);
-        org.telegram.ui.Cells.g3 g3Var2 = i3Var.b;
-        g3Var2.setImeOptions(6);
-        g3Var2.setOnEditorActionListener(new m.s2(n8Var, 2));
-        g3Var2.setHandlesColor(-12476440);
-        g3Var2.setCursorColor(-11230757);
-        g3Var2.setText("https://");
-        g3Var2.setSelection(8);
+        org.telegram.ui.Cells.h3 h3Var = j3Var.b;
+        h3Var.setImeOptions(6);
+        h3Var.setOnEditorActionListener(new m.s2(n8Var, 2));
+        h3Var.setHandlesColor(-12476440);
+        h3Var.setCursorColor(-11230757);
+        h3Var.setText("https://");
+        h3Var.setSelection(8);
         TextView textView = new TextView(getContext());
         com.google.android.gms.internal.vision.e2.l(12.0f, 1, textView);
-        textView.setPadding(org.telegram.ui.Cells.q3.b(10.0f, R.string.Paste, textView), 0, AndroidUtilities.dp(10.0f), 0);
+        textView.setPadding(org.telegram.ui.Cells.c1.c(10.0f, R.string.Paste, textView), 0, AndroidUtilities.dp(10.0f), 0);
         textView.setGravity(17);
         int themedColor = getThemedColor(org.telegram.ui.ActionBar.h6.o6);
         textView.setTextColor(themedColor);
@@ -72,26 +72,26 @@ public final class u8 extends org.telegram.ui.Components.bb implements Notificat
         int l1 = org.telegram.ui.ActionBar.h6.l1(0.12f, themedColor);
         int l12 = org.telegram.ui.ActionBar.h6.l1(0.15f, themedColor);
         textView.setBackground(org.telegram.ui.ActionBar.h6.i0(dp, dp, dp, dp, l1, l12, l12));
-        w7.z5.b(textView, 0.1f, 1.5f);
-        i3Var.addView(textView, w7.x5.d(-2, 26.0f, 21, 0.0f, 4.0f, 24.0f, 3.0f));
+        w7.a6.b(textView, 0.1f, 1.5f);
+        j3Var.addView(textView, w7.y5.d(-2, 26.0f, 21, 0.0f, 4.0f, 24.0f, 3.0f));
         ai.ba baVar = new ai.ba(29, this, textView);
         textView.setOnClickListener(new ai.f2(5, this, baVar));
         baVar.run();
-        g3Var2.addTextChangedListener(new o8(this, baVar));
-        org.telegram.ui.Cells.i3 i3Var2 = new org.telegram.ui.Cells.i3(context, LocaleController.getString(R.string.StoryLinkNamePlaceholder), true, false, -1, d6Var);
-        this.Z = i3Var2;
+        h3Var.addTextChangedListener(new o8(this, baVar));
+        org.telegram.ui.Cells.j3 j3Var2 = new org.telegram.ui.Cells.j3(context, LocaleController.getString(R.string.StoryLinkNamePlaceholder), true, false, -1, d6Var);
+        this.Z = j3Var2;
         n8 n8Var2 = new n8(this, 1);
-        org.telegram.ui.Cells.g3 g3Var3 = i3Var2.b;
-        g3Var3.setImeOptions(6);
-        g3Var3.setOnEditorActionListener(new m.s2(n8Var2, 2));
+        org.telegram.ui.Cells.h3 h3Var2 = j3Var2.b;
+        h3Var2.setImeOptions(6);
+        h3Var2.setOnEditorActionListener(new m.s2(n8Var2, 2));
         FrameLayout frameLayout = new FrameLayout(context);
         this.a0 = frameLayout;
         d dVar = new d(context, d6Var, true);
         this.b0 = dVar;
         dVar.g(LocaleController.getString(R.string.StoryLinkAdd), false, true);
         dVar.setOnClickListener(new m8(this, 1));
-        dVar.setEnabled(V(i3Var.getText().toString()));
-        frameLayout.addView(dVar, w7.x5.d(-1, 48.0f, 119, 10.0f, 10.0f, 10.0f, 10.0f));
+        dVar.setEnabled(V(j3Var.getText().toString()));
+        frameLayout.addView(dVar, w7.y5.d(-1, 48.0f, 119, 10.0f, 10.0f, 10.0f, 10.0f));
         this.v = 0.2f;
         this.O = true;
         this.smoothKeyboardAnimationEnabled = true;
@@ -102,9 +102,9 @@ public final class u8 extends org.telegram.ui.Components.bb implements Notificat
         p8Var.o(rr.h);
         p8Var.n(350L);
         this.d.setItemAnimator(p8Var);
-        ml0 ml0Var = this.d;
+        wl0 wl0Var = this.d;
         int i10 = this.backgroundPaddingLeft;
-        ml0Var.setPadding(i10, 0, i10, 0);
+        wl0Var.setPadding(i10, 0, i10, 0);
         this.d.setOnItemClickListener(new ai.u0(this, context, b7Var, 2));
         q8 q8Var = this.X;
         if (q8Var != null) {
@@ -114,47 +114,47 @@ public final class u8 extends org.telegram.ui.Components.bb implements Notificat
 
     public static void P(u8 u8Var, Context context, b7 b7Var, View view, int i10) {
         TLRPC.WebPage webPage;
-        org.telegram.ui.Cells.i3 i3Var = u8Var.Z;
-        org.telegram.ui.Cells.i3 i3Var2 = u8Var.Y;
-        h51 G = u8Var.X.G(i10 - 1);
+        org.telegram.ui.Cells.j3 j3Var = u8Var.Z;
+        org.telegram.ui.Cells.j3 j3Var2 = u8Var.Y;
+        v51 G = u8Var.X.G(i10 - 1);
         if (G == null) {
             return;
         }
         if (!G.G(s8.class) || (webPage = u8Var.g0) == null || W(webPage)) {
-            if (G.d == 2 && (view instanceof org.telegram.ui.Cells.x8)) {
+            if (G.d == 2 && (view instanceof org.telegram.ui.Cells.w8)) {
                 boolean z10 = !u8Var.m0;
                 u8Var.m0 = z10;
-                ((org.telegram.ui.Cells.x8) view).setChecked(z10);
+                ((org.telegram.ui.Cells.w8) view).setChecked(z10);
                 u8Var.X.N(true);
                 if (u8Var.m0) {
-                    i3Var.requestFocus();
+                    j3Var.requestFocus();
                     return;
                 } else {
-                    i3Var2.requestFocus();
+                    j3Var2.requestFocus();
                     return;
                 }
             }
             return;
         }
-        qg.v2 v2Var = new qg.v2(context, u8Var.currentAccount);
-        qg.q0 q0Var = new qg.q0();
-        q0Var.c = i3Var2.b.getText().toString();
-        q0Var.b = u8Var.m0 ? i3Var.b.getText().toString() : null;
+        qg.t2 t2Var = new qg.t2(context, u8Var.currentAccount);
+        qg.o0 o0Var = new qg.o0();
+        o0Var.c = j3Var2.b.getText().toString();
+        o0Var.b = u8Var.m0 ? j3Var.b.getText().toString() : null;
         TLRPC.WebPage webPage2 = u8Var.g0;
-        q0Var.d = webPage2;
-        q0Var.e = u8Var.o0;
-        q0Var.f = u8Var.n0;
+        o0Var.d = webPage2;
+        o0Var.e = u8Var.o0;
+        o0Var.f = u8Var.n0;
         ai.y1 y1Var = new ai.y1(u8Var, 15);
-        v2Var.G = q0Var;
+        t2Var.G = o0Var;
         int i11 = (webPage2 == null || (webPage2.photo == null && !MessageObject.isVideoDocument(webPage2.document))) ? 8 : 0;
-        tb0 tb0Var = v2Var.x;
-        tb0Var.setVisibility(i11);
-        v2Var.f.b(v2Var.a, q0Var, false);
-        v2Var.w.a(!q0Var.f, false);
-        tb0Var.a(!q0Var.e, false);
-        v2Var.H = y1Var;
-        v2Var.e.setImageDrawable(new d4(b7Var, 8));
-        v2Var.show();
+        ec0 ec0Var = t2Var.x;
+        ec0Var.setVisibility(i11);
+        t2Var.f.b(t2Var.a, o0Var, false);
+        t2Var.w.a(!o0Var.f, false);
+        ec0Var.a(!o0Var.e, false);
+        t2Var.H = y1Var;
+        t2Var.e.setImageDrawable(new d4(b7Var, 8));
+        t2Var.show();
     }
 
     public static /* synthetic */ void Q(u8 u8Var) {
@@ -279,13 +279,13 @@ public final class u8 extends org.telegram.ui.Components.bb implements Notificat
     public final void X() {
         if (this.b0.W) {
             if (this.e0 != null) {
-                qg.q0 q0Var = new qg.q0();
-                q0Var.c = this.Y.b.getText().toString();
-                q0Var.b = this.m0 ? this.Z.b.getText().toString() : null;
-                q0Var.d = this.g0;
-                q0Var.e = this.o0;
-                q0Var.f = this.n0;
-                this.e0.run(q0Var);
+                qg.o0 o0Var = new qg.o0();
+                o0Var.c = this.Y.b.getText().toString();
+                o0Var.b = this.m0 ? this.Z.b.getText().toString() : null;
+                o0Var.d = this.g0;
+                o0Var.e = this.o0;
+                o0Var.f = this.n0;
+                this.e0.run(o0Var);
                 this.e0 = null;
             }
             dismiss();
@@ -317,7 +317,7 @@ public final class u8 extends org.telegram.ui.Components.bb implements Notificat
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
+    @Override // org.telegram.ui.ActionBar.e3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.i2
     public final void dismiss() {
         AndroidUtilities.hideKeyboard(this.Y.b);
         AndroidUtilities.hideKeyboard(this.Z.b);
@@ -325,7 +325,7 @@ public final class u8 extends org.telegram.ui.Components.bb implements Notificat
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.didReceivedWebpagesInUpdates);
     }
 
-    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog
+    @Override // org.telegram.ui.ActionBar.e3, android.app.Dialog
     public final void show() {
         super.show();
         NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.didReceivedWebpagesInUpdates);
@@ -333,7 +333,7 @@ public final class u8 extends org.telegram.ui.Components.bb implements Notificat
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final ll0 v(ml0 ml0Var) {
+    public final vl0 v(wl0 wl0Var) {
         q8 q8Var = new q8(this.d, getContext(), this.currentAccount, 0, true, new bi.v(this, 7), this.resourcesProvider);
         this.X = q8Var;
         return q8Var;

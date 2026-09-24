@@ -20,11 +20,11 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.f01;
 import org.telegram.ui.Components.pq;
 import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.t01;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class t7 extends View {
     public s7 E;
@@ -43,11 +43,11 @@ public final class t7 extends View {
     public final RectF f;
     public final ImageReceiver h;
     public boolean n;
-    public f01 r;
-    public f01 s;
+    public t01 r;
+    public t01 s;
     public final Path v;
     public final Paint w;
-    public final org.telegram.ui.Components.yc x;
+    public final org.telegram.ui.Components.zc x;
     public boolean y;
 
     public t7(Activity activity, int i10, ha haVar) {
@@ -58,7 +58,7 @@ public final class t7 extends View {
         this.h = new ImageReceiver(this);
         this.v = new Path();
         this.w = new Paint(1);
-        this.x = new org.telegram.ui.Components.yc(this);
+        this.x = new org.telegram.ui.Components.zc(this);
         this.J = new int[2];
         this.K = new int[2];
         this.a = i10;
@@ -70,7 +70,7 @@ public final class t7 extends View {
         if (s7Var == null) {
             return;
         }
-        this.r = new f01(s7Var.b(), 16.0f, AndroidUtilities.bold());
+        this.r = new t01(s7Var.b(), 16.0f, AndroidUtilities.bold());
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(this.E.a());
         if (spannableStringBuilder.toString().contains(">")) {
             spannableStringBuilder.clear();
@@ -82,7 +82,7 @@ public final class t7 extends View {
             pqVar.setScale(1.25f, 1.25f);
             spannableStringBuilder.setSpan(pqVar, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
         }
-        this.s = new f01(spannableStringBuilder, 14.0f, null);
+        this.s = new t01(spannableStringBuilder, 14.0f, null);
         this.E.d(this.h);
         this.n = true;
     }
@@ -93,11 +93,11 @@ public final class t7 extends View {
         float f10;
         Object obj;
         float e = this.d.e(this.y);
-        f01 f01Var = this.r;
-        if (f01Var == null || this.s == null || e <= 0.0f) {
+        t01 t01Var = this.r;
+        if (t01Var == null || this.s == null || e <= 0.0f) {
             return;
         }
-        f01Var.p = getWidth() * 0.7f;
+        t01Var.p = getWidth() * 0.7f;
         this.s.p = getWidth() * 0.7f;
         float dp = AndroidUtilities.dp(5.0f);
         float dp2 = AndroidUtilities.dp(10.0f);
@@ -156,8 +156,8 @@ public final class t7 extends View {
             imageReceiver.draw(canvas);
         }
         float centerY = rectF.centerY() - ((this.s.j() + (this.r.j() + dp4)) / f10);
-        f01 f01Var2 = this.r;
-        f01Var2.c(rectF.left + (this.n ? dp5 + dp3 + dp5 : 0.0f) + f7, (f01Var2.j() / f10) + centerY, e, -1, canvas);
+        t01 t01Var2 = this.r;
+        t01Var2.c(rectF.left + (this.n ? dp5 + dp3 + dp5 : 0.0f) + f7, (t01Var2.j() / f10) + centerY, e, -1, canvas);
         this.s.c(rectF.left + (this.n ? dp3 + dp5 + dp5 : 0.0f) + f7, this.r.j() + centerY + dp4 + (this.s.j() / f10), e, org.telegram.ui.ActionBar.h6.v(-16777216, -1610612737), canvas);
         canvas.restore();
     }
@@ -166,10 +166,10 @@ public final class t7 extends View {
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         ia iaVar;
         boolean z10 = this.y;
-        org.telegram.ui.Components.yc ycVar = this.x;
+        org.telegram.ui.Components.zc zcVar = this.x;
         if (!z10 || this.E == null) {
             this.L = false;
-            ycVar.c(false);
+            zcVar.c(false);
             return false;
         }
         int action = motionEvent.getAction();
@@ -177,23 +177,23 @@ public final class t7 extends View {
         if (action == 0) {
             if (rectF.contains(motionEvent.getX(), motionEvent.getY())) {
                 this.L = true;
-                ycVar.c(true);
+                zcVar.c(true);
             }
         } else if (motionEvent.getAction() == 2) {
-            if (ycVar.h && !rectF.contains(motionEvent.getX(), motionEvent.getY())) {
-                ycVar.c(false);
+            if (zcVar.h && !rectF.contains(motionEvent.getX(), motionEvent.getY())) {
+                zcVar.c(false);
             }
         } else if (motionEvent.getAction() == 1) {
-            if (ycVar.h && (iaVar = this.c) != null && this.E != null) {
+            if (zcVar.h && (iaVar = this.c) != null && this.E != null) {
                 iaVar.run(new p7(this, 1));
             }
-            ycVar.c(false);
+            zcVar.c(false);
             this.L = false;
         } else if (motionEvent.getAction() == 3) {
-            ycVar.c(false);
+            zcVar.c(false);
             this.L = false;
         }
-        return this.L || ycVar.h;
+        return this.L || zcVar.h;
     }
 
     @Override // android.view.View

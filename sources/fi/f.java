@@ -14,37 +14,37 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_communities;
-import org.telegram.ui.ActionBar.b2;
+import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Cells.i6;
-import org.telegram.ui.Components.d61;
 import org.telegram.ui.Components.e5;
-import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.h9;
-import w7.x5;
+import org.telegram.ui.Components.r61;
+import org.telegram.ui.Components.v51;
+import w7.y5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public final class f extends n2 implements NotificationCenter.NotificationCenterDelegate {
+public final class f extends m2 implements NotificationCenter.NotificationCenterDelegate {
     public long a;
     public TLRPC.Chat b;
     public TLRPC.User c;
     public FrameLayout d;
-    public d61 e;
+    public r61 e;
     public e f;
     public ArrayList h;
     public NotificationCenter.ObserversGroup n;
 
-    public static void U(f fVar, h51 h51Var) {
+    public static void U(f fVar, v51 v51Var) {
         f fVar2;
-        if (h51Var.d == 1) {
+        if (v51Var.d == 1) {
             fVar2 = fVar;
             e5.R(fVar.getParentActivity(), fVar2, LocaleController.getString(R.string.CommunityNewCommunityTitle), null, LocaleController.getString(R.string.CommunityNewCommunityNameHint), null, ConnectionsManager.DEFAULT_DATACENTER_ID, LocaleController.getString(R.string.Create), fVar.resourceProvider, new c(fVar));
         } else {
             fVar2 = fVar;
         }
-        Object obj = h51Var.G;
+        Object obj = v51Var.G;
         if (obj instanceof TLRPC.Chat) {
             TLRPC.Chat chat = (TLRPC.Chat) obj;
             fVar2.getMessagesController().getChat(Long.valueOf(-fVar2.a));
@@ -57,9 +57,9 @@ public final class f extends n2 implements NotificationCenter.NotificationCenter
             getMessagesController().createCommunity(str, this.a, z10, new b(this, 1));
             return;
         }
-        b2 b2Var = new b2(getParentActivity(), 3, null);
-        b2Var.q(250L);
-        getMessagesController().convertToMegaGroup(getParentActivity(), -this.a, this, new ca.b(this, b2Var, str, z10, 1));
+        a2 a2Var = new a2(getParentActivity(), 3, null);
+        a2Var.q(250L);
+        getMessagesController().convertToMegaGroup(getParentActivity(), -this.a, this, new ca.b(this, a2Var, str, z10, 1));
     }
 
     public final void W(long j3, boolean z10) {
@@ -68,18 +68,18 @@ public final class f extends n2 implements NotificationCenter.NotificationCenter
             long j10 = -this.a;
             MessagesController.getInstance(i10).linkCommunity(-j10, j3, z10, new o0(this, j10, 0));
         } else {
-            b2 b2Var = new b2(getParentActivity(), 3, null);
-            b2Var.q(250L);
-            getMessagesController().convertToMegaGroup(getParentActivity(), -this.a, this, new d(this, b2Var, j3, z10, 0));
+            a2 a2Var = new a2(getParentActivity(), 3, null);
+            a2Var.q(250L);
+            getMessagesController().convertToMegaGroup(getParentActivity(), -this.a, this, new d(this, a2Var, j3, z10, 0));
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final View createView(Context context) {
         setHasOwnBackground(true);
         this.actionBar.setAddToContainer(false);
         this.actionBar.setAllowOverlayTitle(false);
-        hg.c.x(false, this.actionBar);
+        hg.c.v(false, this.actionBar);
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setActionBarMenuOnItemClick(new ei.t(this, 3));
         fh.c cVar = new fh.c();
@@ -105,14 +105,14 @@ public final class f extends n2 implements NotificationCenter.NotificationCenter
                 this.f.a.e(chat, new h9(this.b));
             }
         }
-        d61 d61Var = new d61(this, new b(this, 0), new c(this), new c(this));
-        this.e = d61Var;
-        d61Var.setClipToPadding(false);
-        d61 d61Var2 = this.e;
-        d61Var2.Y2.r = false;
-        d61Var2.p1();
-        this.d.addView(this.e, x5.c(-1.0f, -1));
-        this.d.addView(this.actionBar, x5.e(-1, -2, 48));
+        r61 r61Var = new r61(this, new b(this, 0), new c(this), new c(this));
+        this.e = r61Var;
+        r61Var.setClipToPadding(false);
+        r61 r61Var2 = this.e;
+        r61Var2.Y2.r = false;
+        r61Var2.p1();
+        this.d.addView(this.e, y5.c(-1.0f, -1));
+        this.d.addView(this.actionBar, y5.e(-1, -2, 48));
         FrameLayout frameLayout2 = this.d;
         this.fragmentView = frameLayout2;
         return frameLayout2;
@@ -134,12 +134,12 @@ public final class f extends n2 implements NotificationCenter.NotificationCenter
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final boolean isSupportEdgeToEdge() {
         return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final boolean onFragmentCreate() {
         this.a = this.arguments.getLong("dialog_id", 0L);
         this.b = getMessagesController().getChat(Long.valueOf(-this.a));
@@ -150,7 +150,7 @@ public final class f extends n2 implements NotificationCenter.NotificationCenter
         return super.onFragmentCreate();
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final void onFragmentDestroy() {
         NotificationCenter.ObserversGroup observersGroup = this.n;
         if (observersGroup != null) {
@@ -160,7 +160,7 @@ public final class f extends n2 implements NotificationCenter.NotificationCenter
         super.onFragmentDestroy();
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final void onInsets(int i10, int i11, int i12, int i13) {
         super.onInsets(i10, i11, i12, i13);
         this.e.setPadding(0, i11, 0, i13);

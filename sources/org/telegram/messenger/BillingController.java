@@ -30,9 +30,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.rg0;
+import org.telegram.ui.qg0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class BillingController implements c5.q, c5.d {
     public static final r PREMIUM_PRODUCT;
@@ -53,7 +53,7 @@ public class BillingController implements c5.q, c5.d {
     private ArrayList<Runnable> setupListeners = new ArrayList<>();
     private int triesLeft = 0;
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public interface ProductDetailsResponseListenerLegacy {
         void onProductDetailsResponse(c5.h hVar, List<c5.o> list);
     }
@@ -235,7 +235,7 @@ public class BillingController implements c5.q, c5.d {
                 atomicInteger.incrementAndGet();
                 c3.a a2 = c5.h.a();
                 a2.b = 0;
-                onPurchasesUpdatedInternal(a2.a(), Collections.singletonList(purchase), new f0(arrayList, (Object) atomicInteger, (Object) a0Var, 9));
+                onPurchasesUpdatedInternal(a2.a(), Collections.singletonList(purchase), new g0(arrayList, (Object) atomicInteger, (Object) a0Var, 9));
             }
         }
         if (atomicInteger.get() == 0) {
@@ -244,8 +244,8 @@ public class BillingController implements c5.q, c5.d {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void lambda$onPurchasesUpdatedInternal$10(org.telegram.ui.ActionBar.b2[] b2VarArr, Purchase purchase, TLRPC.TL_payments_assignPlayMarketTransaction tL_payments_assignPlayMarketTransaction, AccountInstance accountInstance, c5.h hVar, AtomicInteger atomicInteger, AtomicInteger atomicInteger2, Runnable runnable, TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new e0(b2VarArr, 0));
+    public void lambda$onPurchasesUpdatedInternal$10(org.telegram.ui.ActionBar.a2[] a2VarArr, Purchase purchase, TLRPC.TL_payments_assignPlayMarketTransaction tL_payments_assignPlayMarketTransaction, AccountInstance accountInstance, c5.h hVar, AtomicInteger atomicInteger, AtomicInteger atomicInteger2, Runnable runnable, TLObject tLObject, TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new e0(a2VarArr, 0));
         this.requestingTokens.remove(purchase.c());
         int i10 = 1;
         if (!(tLObject instanceof TLRPC.Updates)) {
@@ -273,7 +273,7 @@ public class BillingController implements c5.q, c5.d {
             while (i12 < size) {
                 Object obj = findUpdatesAndRemove.get(i12);
                 i12++;
-                AndroidUtilities.runOnUIThread(new f0(accountInstance, tL_payments_assignPlayMarketTransaction, (TL_update.TL_updateSentPhoneCode) obj, 10));
+                AndroidUtilities.runOnUIThread(new g0(accountInstance, tL_payments_assignPlayMarketTransaction, (TL_update.TL_updateSentPhoneCode) obj, 10));
             }
         }
         accountInstance.getMessagesController().processUpdates((TLRPC.Updates) tLObject, false);
@@ -317,31 +317,31 @@ public class BillingController implements c5.q, c5.d {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static void lambda$onPurchasesUpdatedInternal$5(org.telegram.ui.ActionBar.b2[] b2VarArr) {
-        org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(ApplicationLoader.applicationContext, 3, null);
-        b2VarArr[0] = b2Var;
-        b2Var.q(500L);
+    public static void lambda$onPurchasesUpdatedInternal$5(org.telegram.ui.ActionBar.a2[] a2VarArr) {
+        org.telegram.ui.ActionBar.a2 a2Var = new org.telegram.ui.ActionBar.a2(ApplicationLoader.applicationContext, 3, null);
+        a2VarArr[0] = a2Var;
+        a2Var.q(500L);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onPurchasesUpdatedInternal$6(org.telegram.ui.ActionBar.b2[] b2VarArr) {
-        org.telegram.ui.ActionBar.b2 b2Var = b2VarArr[0];
-        if (b2Var != null) {
-            b2Var.dismiss();
+    public static /* synthetic */ void lambda$onPurchasesUpdatedInternal$6(org.telegram.ui.ActionBar.a2[] a2VarArr) {
+        org.telegram.ui.ActionBar.a2 a2Var = a2VarArr[0];
+        if (a2Var != null) {
+            a2Var.dismiss();
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$onPurchasesUpdatedInternal$7(AccountInstance accountInstance, TLRPC.TL_payments_assignPlayMarketTransaction tL_payments_assignPlayMarketTransaction, TL_update.TL_updateSentPhoneCode tL_updateSentPhoneCode) {
-        rg0 rg0Var = (rg0) LaunchActivity.N();
-        if (rg0Var == null) {
-            rg0Var = new rg0(accountInstance.getCurrentAccount());
-            org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+        qg0 qg0Var = (qg0) LaunchActivity.N();
+        if (qg0Var == null) {
+            qg0Var = new qg0(accountInstance.getCurrentAccount());
+            org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
             if (U != null) {
-                U.presentFragment(rg0Var);
+                U.presentFragment(qg0Var);
             }
         }
-        rg0Var.q1(((TLRPC.TL_inputStorePaymentAuthCode) tL_payments_assignPlayMarketTransaction.purpose).phone_number, tL_updateSentPhoneCode.sent_code);
+        qg0Var.q1(((TLRPC.TL_inputStorePaymentAuthCode) tL_payments_assignPlayMarketTransaction.purpose).phone_number, tL_updateSentPhoneCode.sent_code);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -624,13 +624,13 @@ public class BillingController implements c5.q, c5.d {
                                     tL_payments_assignPlayMarketTransaction.receipt = tL_dataJSON;
                                     tL_dataJSON.data = purchase.a;
                                     tL_payments_assignPlayMarketTransaction.purpose = (TLRPC.InputStorePaymentPurpose) obj2;
-                                    final org.telegram.ui.ActionBar.b2[] b2VarArr = new org.telegram.ui.ActionBar.b2[1];
-                                    AndroidUtilities.runOnUIThread(new e0(b2VarArr, 1));
+                                    final org.telegram.ui.ActionBar.a2[] a2VarArr = new org.telegram.ui.ActionBar.a2[1];
+                                    AndroidUtilities.runOnUIThread(new e0(a2VarArr, 1));
                                     atomicInteger.incrementAndGet();
                                     accountInstance3.getConnectionsManager().sendRequest(tL_payments_assignPlayMarketTransaction, new RequestDelegate() { // from class: org.telegram.messenger.w
                                         @Override // org.telegram.tgnet.RequestDelegate
                                         public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                                            BillingController.this.lambda$onPurchasesUpdatedInternal$10(b2VarArr, purchase, tL_payments_assignPlayMarketTransaction, accountInstance3, hVar2, atomicInteger2, atomicInteger, runnable, tLObject, tL_error);
+                                            BillingController.this.lambda$onPurchasesUpdatedInternal$10(a2VarArr, purchase, tL_payments_assignPlayMarketTransaction, accountInstance3, hVar2, atomicInteger2, atomicInteger, runnable, tLObject, tL_error);
                                         }
                                     }, tL_payments_assignPlayMarketTransaction.purpose instanceof TLRPC.TL_inputStorePaymentAuthCode ? 65608 : 65600);
                                 }
@@ -860,7 +860,7 @@ public class BillingController implements c5.q, c5.d {
                 return "TON " + (j3 / 1.0E9d);
             }
             if ("XTR".equalsIgnoreCase(str)) {
-                return hg.c.k(j3, ',', new StringBuilder("XTR "));
+                return f0.h(j3, ',', new StringBuilder("XTR "));
             }
             Currency currency = Currency.getInstance(str);
             if (currency != null) {

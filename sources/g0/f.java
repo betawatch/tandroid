@@ -37,7 +37,7 @@ import p4.l;
 import p4.m;
 import p4.w;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public abstract class f {
     public static volatile e a;
@@ -121,7 +121,7 @@ public abstract class f {
                 return new ArrayList();
             }
         }
-        List<ShortcutInfo> dynamicShortcuts = d2.c.b(context.getSystemService(d2.c.d())).getDynamicShortcuts();
+        List<ShortcutInfo> dynamicShortcuts = d2.c.a(context.getSystemService(d2.c.d())).getDynamicShortcuts();
         ArrayList arrayList = new ArrayList(dynamicShortcuts.size());
         Iterator<ShortcutInfo> it = dynamicShortcuts.iterator();
         while (it.hasNext()) {
@@ -137,7 +137,7 @@ public abstract class f {
     public static int g(Context context) {
         context.getClass();
         if (Build.VERSION.SDK_INT >= 25) {
-            return d2.c.b(context.getSystemService(d2.c.d())).getMaxShortcutCountPerActivity();
+            return d2.c.a(context.getSystemService(d2.c.d())).getMaxShortcutCountPerActivity();
         }
         return 5;
     }
@@ -300,7 +300,7 @@ public abstract class f {
 
     public static void n(Context context) {
         if (Build.VERSION.SDK_INT >= 25) {
-            d2.c.b(context.getSystemService(d2.c.d())).removeAllDynamicShortcuts();
+            d2.c.a(context.getSystemService(d2.c.d())).removeAllDynamicShortcuts();
         }
         j(context).c();
         Iterator it = ((ArrayList) i(context)).iterator();
@@ -339,7 +339,7 @@ public abstract class f {
         context.getClass();
         str.getClass();
         if (Build.VERSION.SDK_INT >= 25) {
-            d2.c.b(context.getSystemService(d2.c.d())).reportShortcutUsed(str);
+            d2.c.a(context.getSystemService(d2.c.d())).reportShortcutUsed(str);
         }
         Iterator it = ((ArrayList) i(context)).iterator();
         if (it.hasNext()) {

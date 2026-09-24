@@ -20,19 +20,19 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildConfig;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Cells.w8;
+import org.telegram.ui.Cells.v8;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.dz;
-import org.telegram.ui.kr;
-import org.telegram.ui.mr;
-import org.telegram.ui.om;
-import org.telegram.ui.qr;
-import org.telegram.ui.xn;
+import org.telegram.ui.cz;
+import org.telegram.ui.jr;
+import org.telegram.ui.lr;
+import org.telegram.ui.nm;
+import org.telegram.ui.pr;
+import org.telegram.ui.wn;
 import s4.c1;
 import s4.m0;
-import v7.l8;
+import v7.m8;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class s implements Runnable {
     public final /* synthetic */ int a;
@@ -173,7 +173,7 @@ public final class s implements Runnable {
                     }
                 }
                 try {
-                    rVar.onSuccess(l8.a(wVar));
+                    rVar.onSuccess(m8.a(wVar));
                     return;
                 } catch (ExecutionException e) {
                     rVar.h(e.getCause());
@@ -477,19 +477,19 @@ public final class s implements Runnable {
                 ((c5.z) this.b).accept(this.c);
                 return;
             case 21:
-                xn xnVar = ((om) this.c).c;
-                if (this == xnVar.J5) {
-                    xnVar.Ya((CharSequence) this.b, false);
-                    xnVar.J5 = null;
+                wn wnVar = ((nm) this.c).c;
+                if (this == wnVar.J5) {
+                    wnVar.Ya((CharSequence) this.b, false);
+                    wnVar.J5 = null;
                     return;
                 }
                 return;
             case 22:
-                w8 w8Var = (w8) this.b;
-                boolean z20 = w8Var.d.h;
-                w8Var.setChecked(!z20);
-                qr qrVar = ((mr) this.c).d;
-                TLRPC.TL_chatBannedRights tL_chatBannedRights = qrVar.E;
+                v8 v8Var = (v8) this.b;
+                boolean z20 = v8Var.d.h;
+                v8Var.setChecked(!z20);
+                pr prVar = ((lr) this.c).d;
+                TLRPC.TL_chatBannedRights tL_chatBannedRights = prVar.E;
                 tL_chatBannedRights.send_media = z20;
                 tL_chatBannedRights.send_gifs = z20;
                 tL_chatBannedRights.send_inline = z20;
@@ -504,14 +504,14 @@ public final class s implements Runnable {
                 tL_chatBannedRights.embed_links = z20;
                 tL_chatBannedRights.send_polls = z20;
                 tL_chatBannedRights.send_reactions = z20;
-                AndroidUtilities.updateVisibleRows(qrVar.c);
-                kr w02 = qrVar.w0();
-                qrVar.B0();
-                qrVar.A0(w02);
+                AndroidUtilities.updateVisibleRows(prVar.c);
+                jr w02 = prVar.w0();
+                prVar.B0();
+                prVar.A0(w02);
                 return;
             case 23:
                 ((qc) this.b).j();
-                ((dz) this.c).E = null;
+                ((cz) this.c).E = null;
                 return;
             case 24:
                 ReferenceQueue referenceQueue = (ReferenceQueue) this.b;

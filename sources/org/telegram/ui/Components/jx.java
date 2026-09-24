@@ -1,39 +1,16 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class jx extends FrameLayout {
-    public final /* synthetic */ lz a;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jx(lz lzVar, Context context) {
-        super(context);
-        this.a = lzVar;
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        lz lzVar = this.a;
-        ox oxVar = lzVar.I;
-        kw kwVar = lzVar.V;
-        wx wxVar = lzVar.P;
-        if (view != wxVar && view != kwVar) {
-            return super.drawChild(canvas, view, j3);
+public final class jx extends org.telegram.ui.wn {
+    @Override // org.telegram.ui.wn, org.telegram.ui.ActionBar.m2
+    public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
+        org.telegram.ui.jk jkVar;
+        super.onTransitionAnimationEnd(z10, z11);
+        if (!z10 || (jkVar = this.Y) == null) {
+            return;
         }
-        canvas.save();
-        float y3 = oxVar.getY() + oxVar.getMeasuredHeight() + 1.0f;
-        if (view == wxVar && kwVar != null) {
-            y3 = Math.max(y3, kwVar.getY() + kwVar.getMeasuredHeight() + 1.0f);
-        }
-        canvas.clipRect(0.0f, y3 - (AndroidUtilities.dp(16.0f) * lzVar.b.e), getMeasuredWidth(), getMeasuredHeight());
-        boolean drawChild = super.drawChild(canvas, view, j3);
-        canvas.restore();
-        return drawChild;
+        jkVar.s1();
+        this.Y.postDelayed(new yp(this, 13), 100L);
     }
 }

@@ -11,8 +11,8 @@ import android.util.Log;
 import java.util.ArrayList;
 import n6.l;
 import qb.j;
-import w7.c8;
-import w7.e0;
+import w7.d8;
+import w7.f0;
 import x7.ja;
 import x7.ka;
 import x7.la;
@@ -21,7 +21,7 @@ import x7.na;
 import x7.oa;
 import x7.y;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class a implements b {
     public final Context a;
@@ -54,7 +54,7 @@ public final class a implements b {
         int i10 = aVar.e;
         int i11 = aVar.b;
         int i12 = aVar.c;
-        int a2 = c8.a(aVar.d);
+        int a2 = d8.a(aVar.d);
         long elapsedRealtime = SystemClock.elapsedRealtime();
         int i13 = aVar.e;
         if (i13 != -1) {
@@ -62,7 +62,7 @@ public final class a implements b {
                 if (i13 == 35) {
                     bVar = new x6.b(null);
                 } else if (i13 != 842094169) {
-                    throw new mb.a(hg.c.i(aVar.e, "Unsupported image format: "), 3);
+                    throw new mb.a(hg.c.h(aVar.e, "Unsupported image format: "), 3);
                 }
             }
             l.h(null);
@@ -76,18 +76,18 @@ public final class a implements b {
             int i14 = y.a;
             O0.writeStrongBinder(bVar);
             O0.writeInt(1);
-            int q6 = e0.q(O0, 20293);
-            e0.s(O0, 1, 4);
+            int q6 = f0.q(O0, 20293);
+            f0.s(O0, 1, 4);
             O0.writeInt(i10);
-            e0.s(O0, 2, 4);
+            f0.s(O0, 2, 4);
             O0.writeInt(i11);
-            e0.s(O0, 3, 4);
+            f0.s(O0, 3, 4);
             O0.writeInt(i12);
-            e0.s(O0, 4, 4);
+            f0.s(O0, 4, 4);
             O0.writeInt(a2);
-            e0.s(O0, 5, 8);
+            f0.s(O0, 5, 8);
             O0.writeLong(elapsedRealtime);
-            e0.r(O0, q6);
+            f0.r(O0, q6);
             Parcel Q0 = jaVar.Q0(O0, 3);
             ArrayList createTypedArrayList = Q0.createTypedArrayList(na.CREATOR);
             Q0.recycle();

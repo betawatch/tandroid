@@ -26,18 +26,18 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.e51;
-import org.telegram.ui.Components.f01;
 import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.op;
-import w7.x5;
+import org.telegram.ui.Components.s51;
+import org.telegram.ui.Components.t01;
+import w7.y5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class y1 extends FrameLayout {
     public final h9 a;
     public final ImageReceiver b;
-    public final vh.o c;
+    public final vh.n c;
     public final op d;
     public final ImageView e;
     public final d6 f;
@@ -53,14 +53,14 @@ public final class y1 extends FrameLayout {
         this.f = d6Var;
         setWillNotDraw(false);
         int i10 = z10 ? 42 : 16;
-        vh.o oVar = new vh.o(context);
-        this.c = oVar;
-        oVar.setLines(2);
-        oVar.setEllipsize(TextUtils.TruncateAt.END);
-        oVar.setTextColor(h6.v0(h6.z6, d6Var));
-        oVar.setTextSize(1, 14.0f);
+        vh.n nVar = new vh.n(context);
+        this.c = nVar;
+        nVar.setLines(2);
+        nVar.setEllipsize(TextUtils.TruncateAt.END);
+        nVar.setTextColor(h6.v0(h6.z6, d6Var));
+        nVar.setTextSize(1, 14.0f);
         boolean z11 = LocaleController.isRTL;
-        addView(oVar, x5.d(-1, -2.0f, 7, z11 ? i10 : 64.0f, 7.0f, z11 ? 64.0f : i10, 0.0f));
+        addView(nVar, y5.d(-1, -2.0f, 7, z11 ? i10 : 64.0f, 7.0f, z11 ? 64.0f : i10, 0.0f));
         if (z10) {
             ImageView imageView = new ImageView(context);
             this.e = imageView;
@@ -68,7 +68,7 @@ public final class y1 extends FrameLayout {
             imageView.setImageResource(R.drawable.list_reorder);
             imageView.setColorFilter(new PorterDuffColorFilter(h6.w0(null, h6.Uh, false), PorterDuff.Mode.MULTIPLY));
             imageView.setAlpha(0.0f);
-            addView(imageView, x5.e(50, 50, (LocaleController.isRTL ? 3 : 5) | 112));
+            addView(imageView, y5.e(50, 50, (LocaleController.isRTL ? 3 : 5) | 112));
         } else {
             this.e = null;
         }
@@ -77,7 +77,7 @@ public final class y1 extends FrameLayout {
         opVar.b(-1, h6.d6, h6.k7);
         opVar.setDrawUnchecked(false);
         opVar.setDrawBackgroundAsArc(3);
-        addView(opVar, x5.i(24.0f, 24.0f, 8388659, 33.0f, 25.0f, 0.0f, 0.0f));
+        addView(opVar, y5.i(24.0f, 24.0f, 8388659, 33.0f, 25.0f, 0.0f, 0.0f));
     }
 
     public final void a(b2 b2Var, String str, boolean z10) {
@@ -94,7 +94,7 @@ public final class y1 extends FrameLayout {
             str3 = "/".concat(str3);
         }
         spannableStringBuilder.append((CharSequence) "/").append((CharSequence) b2Var.b);
-        spannableStringBuilder.setSpan(new e51(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.setSpan(new s51(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
         int i10 = h6.G6;
         d6 d6Var = this.f;
         spannableStringBuilder.setSpan(new ForegroundColorSpan(h6.v0(i10, d6Var)), 0, spannableStringBuilder.length(), 33);
@@ -102,17 +102,17 @@ public final class y1 extends FrameLayout {
             spannableStringBuilder.setSpan(new ForegroundColorSpan(h6.v0(h6.o6, d6Var)), 0, Math.min(str3.length() <= 0 ? 1 : str3.length(), spannableStringBuilder.length()), 33);
         }
         MessageObject messageObject = b2Var.e;
-        vh.o oVar = this.c;
+        vh.n nVar = this.c;
         if (messageObject != null) {
             spannableStringBuilder.append((CharSequence) " ");
             CharSequence charSequence = b2Var.e.caption;
             if (TextUtils.isEmpty(charSequence)) {
                 charSequence = b2Var.e.messageText;
             }
-            CharSequence replaceEmoji = Emoji.replaceEmoji(new SpannableStringBuilder(charSequence), oVar.getPaint().getFontMetricsInt(), false);
+            CharSequence replaceEmoji = Emoji.replaceEmoji(new SpannableStringBuilder(charSequence), nVar.getPaint().getFontMetricsInt(), false);
             TLRPC.Message message = b2Var.e.messageOwner;
             if (message != null) {
-                MessageObject.replaceAnimatedEmoji(replaceEmoji, message.entities, oVar.getPaint().getFontMetricsInt());
+                MessageObject.replaceAnimatedEmoji(replaceEmoji, message.entities, nVar.getPaint().getFontMetricsInt());
             }
             spannableStringBuilder.append(replaceEmoji);
         }
@@ -123,17 +123,17 @@ public final class y1 extends FrameLayout {
             int i11 = x1.d;
             SpannableString spannableString = new SpannableString("+");
             x1 x1Var = new x1(a2);
-            int dp2 = (int) (((f01) x1Var.c).c + AndroidUtilities.dp(10.0f));
+            int dp2 = (int) (((t01) x1Var.c).c + AndroidUtilities.dp(10.0f));
             this.n[0] = dp2;
             spannableString.setSpan(x1Var, 0, spannableString.length(), 33);
-            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(TextUtils.ellipsize(spannableStringBuilder, oVar.getPaint(), (dp * 1.5f) - r12[0], TextUtils.TruncateAt.END));
+            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(TextUtils.ellipsize(spannableStringBuilder, nVar.getPaint(), (dp * 1.5f) - r12[0], TextUtils.TruncateAt.END));
             if (spannableStringBuilder2.length() > 0 && spannableStringBuilder2.charAt(spannableStringBuilder2.length() - 1) == 8230) {
                 spannableStringBuilder2.append((CharSequence) "  ");
             }
             spannableStringBuilder2.append((CharSequence) spannableString);
             spannableStringBuilder = spannableStringBuilder2;
         }
-        oVar.setText(spannableStringBuilder);
+        nVar.setText(spannableStringBuilder);
         int i12 = UserConfig.selectedAccount;
         TLRPC.MessageMedia media = MessageObject.getMedia(b2Var.e);
         ImageReceiver imageReceiver = this.b;

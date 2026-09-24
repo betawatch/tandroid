@@ -10,9 +10,9 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ia;
-import org.telegram.ui.ny;
+import org.telegram.ui.my;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class l extends FrameLayout {
     public boolean a;
@@ -91,7 +91,7 @@ public final class l extends FrameLayout {
                 int i20 = (size - 1) + i18;
                 ArrayList arrayList = mVar.d;
                 if (arrayList != null) {
-                    i20 = org.telegram.messenger.z0.C(52.0f, (mVar.d.size() - 1) + (AndroidUtilities.dp(58.0f) * arrayList.size()), i20);
+                    i20 = org.telegram.messenger.f0.C(52.0f, (mVar.d.size() - 1) + (AndroidUtilities.dp(58.0f) * arrayList.size()), i20);
                 }
                 int i21 = z10 ? dp + 1 : 0;
                 if (i20 < i17) {
@@ -100,8 +100,8 @@ public final class l extends FrameLayout {
                         i12 -= AndroidUtilities.statusBarHeight;
                         if (!z11 && !mVar.S) {
                             i12 -= org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
-                            if (getParent() instanceof ny) {
-                                i13 = ((ny) getParent()).t3;
+                            if (getParent() instanceof my) {
+                                i13 = ((my) getParent()).t3;
                                 i12 -= i13;
                             }
                         }
@@ -114,8 +114,8 @@ public final class l extends FrameLayout {
                             i12 -= AndroidUtilities.statusBarHeight;
                             if (!z11 && !mVar.S) {
                                 i12 -= org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
-                                if (getParent() instanceof ny) {
-                                    i13 = ((ny) getParent()).t3;
+                                if (getParent() instanceof my) {
+                                    i13 = ((my) getParent()).t3;
                                     i12 -= i13;
                                 }
                             }

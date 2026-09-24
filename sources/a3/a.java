@@ -6,9 +6,9 @@ import android.os.Trace;
 import android.view.Surface;
 import androidx.media3.decoder.VideoDecoderOutputBuffer;
 import b2.x1;
-import u2.a1;
+import u2.b1;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public abstract class a extends i2.f {
     public final long I;
@@ -25,8 +25,8 @@ public abstract class a extends i2.f {
     public Surface T;
     public Surface U;
     public y V;
-    public n2.g W;
-    public n2.g X;
+    public n2.h W;
+    public n2.h X;
     public int Y;
     public boolean Z;
     public int a0;
@@ -137,9 +137,9 @@ public abstract class a extends i2.f {
             } else {
                 if ((this.n == 2) && j3 != this.b0) {
                     if (j12 < -500000) {
-                        a1 a1Var = this.r;
-                        a1Var.getClass();
-                        int j14 = a1Var.j(j3 - this.v);
+                        b1 b1Var = this.r;
+                        b1Var.getClass();
+                        int j14 = b1Var.j(j3 - this.v);
                         if (j14 == 0) {
                             z11 = false;
                         } else {
@@ -203,7 +203,7 @@ public abstract class a extends i2.f {
                 return false;
             }
             n4.y yVar = this.c;
-            yVar.h();
+            yVar.n();
             int w10 = w(yVar, hVar2, 0);
             if (w10 == -5) {
                 H(yVar);
@@ -269,10 +269,10 @@ public abstract class a extends i2.f {
         if (this.P != null) {
             return;
         }
-        n2.g gVar = this.X;
-        hg.c.D(this.W, gVar);
-        this.W = gVar;
-        if (gVar != null && gVar.h() == null && this.W.g() == null) {
+        n2.h hVar = this.X;
+        hg.c.A(this.W, hVar);
+        this.W = hVar;
+        if (hVar != null && hVar.h() == null && this.W.g() == null) {
             return;
         }
         try {
@@ -310,9 +310,9 @@ public abstract class a extends i2.f {
         this.d0 = true;
         b2.s sVar = (b2.s) yVar.c;
         sVar.getClass();
-        n2.g gVar = (n2.g) yVar.b;
-        hg.c.D(this.X, gVar);
-        this.X = gVar;
+        n2.h hVar2 = (n2.h) yVar.b;
+        hg.c.A(this.X, hVar2);
+        this.X = hVar2;
         b2.s sVar2 = this.N;
         this.N = sVar;
         h2.e eVar = this.P;
@@ -328,7 +328,7 @@ public abstract class a extends i2.f {
             }
             return;
         }
-        if (gVar != this.W) {
+        if (hVar2 != this.W) {
             String name = eVar.getName();
             sVar2.getClass();
             hVar = new i2.h(name, sVar2, sVar, 0, 128);
@@ -371,7 +371,7 @@ public abstract class a extends i2.f {
             }
             this.P = null;
         }
-        hg.c.D(this.W, null);
+        hg.c.A(this.W, null);
         this.W = null;
     }
 
@@ -379,7 +379,7 @@ public abstract class a extends i2.f {
         y yVar = this.V;
         if (yVar != null) {
             this.h.getClass();
-            yVar.b(j3, System.nanoTime(), sVar, null);
+            yVar.a(j3, System.nanoTime(), sVar, null);
         }
         this.l0 = e2.d0.Q(SystemClock.elapsedRealtime());
         if (videoDecoderOutputBuffer.mode != 1 || this.U == null) {
@@ -529,11 +529,11 @@ public abstract class a extends i2.f {
         this.g0 = null;
         this.a0 = Math.min(this.a0, 0);
         try {
-            hg.c.D(this.X, null);
+            hg.c.A(this.X, null);
             this.X = null;
             I();
         } finally {
-            bVar.I(this.m0);
+            bVar.H(this.m0);
         }
     }
 
@@ -603,7 +603,7 @@ public abstract class a extends i2.f {
         }
         if (this.N == null) {
             n4.y yVar = this.c;
-            yVar.h();
+            yVar.n();
             this.M.clear();
             int w10 = w(yVar, this.M, 2);
             if (w10 != -5) {

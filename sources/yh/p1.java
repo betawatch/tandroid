@@ -4,11 +4,11 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p1 implements Runnable {
     public final /* synthetic */ int a = 1;
-    public final /* synthetic */ y3 b;
+    public final /* synthetic */ x3 b;
     public final /* synthetic */ TLObject c;
     public final /* synthetic */ long d;
     public final /* synthetic */ long e;
@@ -16,8 +16,8 @@ public final /* synthetic */ class p1 implements Runnable {
     public final /* synthetic */ long h;
     public final /* synthetic */ Object n;
 
-    public /* synthetic */ p1(y3 y3Var, TLObject tLObject, long j3, long j10, Utilities.Callback callback, TLRPC.TL_error tL_error, long j11) {
-        this.b = y3Var;
+    public /* synthetic */ p1(x3 x3Var, TLObject tLObject, long j3, long j10, Utilities.Callback callback, TLRPC.TL_error tL_error, long j11) {
+        this.b = x3Var;
         this.c = tLObject;
         this.d = j3;
         this.e = j10;
@@ -30,17 +30,17 @@ public final /* synthetic */ class p1 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                y3.H0(this.b, (org.telegram.ui.ActionBar.b2) this.n, this.c, this.d, this.e, this.h, this.f);
+                x3.H0(this.b, (org.telegram.ui.ActionBar.a2) this.n, this.c, this.d, this.e, this.h, this.f);
                 break;
             default:
-                y3.f0(this.b, this.c, this.d, this.e, (Utilities.Callback) this.n, this.f, this.h);
+                x3.f0(this.b, this.c, this.d, this.e, (Utilities.Callback) this.n, this.f, this.h);
                 break;
         }
     }
 
-    public /* synthetic */ p1(y3 y3Var, org.telegram.ui.ActionBar.b2 b2Var, TLObject tLObject, long j3, long j10, long j11, TLRPC.TL_error tL_error) {
-        this.b = y3Var;
-        this.n = b2Var;
+    public /* synthetic */ p1(x3 x3Var, org.telegram.ui.ActionBar.a2 a2Var, TLObject tLObject, long j3, long j10, long j11, TLRPC.TL_error tL_error) {
+        this.b = x3Var;
+        this.n = a2Var;
         this.c = tLObject;
         this.d = j3;
         this.e = j10;

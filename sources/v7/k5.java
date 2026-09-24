@@ -1,42 +1,26 @@
 package v7;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public abstract class k5 {
-    public static void a(int i10, int i11) {
-        String a2;
-        if (i10 < 0 || i10 >= i11) {
-            if (i10 < 0) {
-                a2 = l5.a("%s (%s) must not be negative", "index", Integer.valueOf(i10));
-            } else {
-                if (i11 < 0) {
-                    throw new IllegalArgumentException(hg.c.i(i11, "negative size: "));
+    public static String a(String str) {
+        int length = str.length();
+        int i10 = 0;
+        while (i10 < length) {
+            char charAt = str.charAt(i10);
+            if (charAt >= 'a' && charAt <= 'z') {
+                char[] charArray = str.toCharArray();
+                while (i10 < length) {
+                    char c10 = charArray[i10];
+                    if (c10 >= 'a' && c10 <= 'z') {
+                        charArray[i10] = (char) (c10 ^ ' ');
+                    }
+                    i10++;
                 }
-                a2 = l5.a("%s (%s) must be less than size (%s)", "index", Integer.valueOf(i10), Integer.valueOf(i11));
+                return String.valueOf(charArray);
             }
-            throw new IndexOutOfBoundsException(a2);
+            i10++;
         }
-    }
-
-    public static void b(int i10, int i11) {
-        if (i10 < 0 || i10 > i11) {
-            throw new IndexOutOfBoundsException(d(i10, i11, "index"));
-        }
-    }
-
-    public static void c(int i10, int i11, int i12) {
-        if (i10 < 0 || i11 < i10 || i11 > i12) {
-            throw new IndexOutOfBoundsException((i10 < 0 || i10 > i12) ? d(i10, i12, "start index") : (i11 < 0 || i11 > i12) ? d(i11, i12, "end index") : l5.a("end index (%s) must not be less than start index (%s)", Integer.valueOf(i11), Integer.valueOf(i10)));
-        }
-    }
-
-    public static String d(int i10, int i11, String str) {
-        if (i10 < 0) {
-            return l5.a("%s (%s) must not be negative", str, Integer.valueOf(i10));
-        }
-        if (i11 >= 0) {
-            return l5.a("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i10), Integer.valueOf(i11));
-        }
-        throw new IllegalArgumentException(hg.c.i(i11, "negative size: "));
+        return str;
     }
 }

@@ -1,26 +1,40 @@
 package org.telegram.ui.Cells;
 
-import android.graphics.Canvas;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class q8 extends FrameLayout {
-    public TextView a;
+public final class q8 implements View.OnAttachStateChangeListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ImageReceiver b;
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+    public /* synthetic */ q8(ImageReceiver imageReceiver, int i10) {
+        this.a = i10;
+        this.b = imageReceiver;
     }
 
-    public void setTextColor(int i10) {
-        this.a.setTextColor(i10);
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewAttachedToWindow(View view) {
+        switch (this.a) {
+            case 0:
+                this.b.onAttachedToWindow();
+                break;
+            default:
+                this.b.onAttachedToWindow();
+                break;
+        }
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewDetachedFromWindow(View view) {
+        switch (this.a) {
+            case 0:
+                this.b.onDetachedFromWindow();
+                break;
+            default:
+                this.b.onDetachedFromWindow();
+                break;
+        }
     }
 }

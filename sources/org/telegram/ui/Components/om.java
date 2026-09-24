@@ -18,7 +18,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class om {
     public TextPaint B;
@@ -33,7 +33,7 @@ public final class om {
     public float m;
     public float n;
     public float o;
-    public vh.g s;
+    public vh.f s;
     public Bitmap v;
     public RectF f = null;
     public final RectF g = new RectF();
@@ -79,7 +79,7 @@ public final class om {
         if (omVar.c == null) {
             omVar.c = new ImageReceiver(pmVar.z);
             omVar.d = new ImageReceiver(pmVar.z);
-            omVar.c.setDelegate(new b3(6, omVar, photoEntry));
+            omVar.c.setDelegate(new w2(7, omVar, photoEntry));
         }
         String str = photoEntry.thumbPath;
         if (str != null) {
@@ -267,15 +267,15 @@ public final class om {
                 this.d.setAlpha(lerp);
                 this.d.draw(canvas);
                 if (this.s == null) {
-                    this.s = vh.g.e(qmVar2);
+                    this.s = vh.f.e(qmVar2);
                 }
-                vh.g gVar = this.s;
+                vh.f fVar = this.s;
                 int width = qmVar2.getWidth();
                 int height = qmVar2.getHeight();
                 qmVar = qmVar2;
                 c10 = 3;
                 c11 = 2;
-                gVar.c(canvas, qmVar, width, height, 1.0f, false);
+                fVar.c(canvas, qmVar, width, height, 1.0f, false);
                 canvas.restore();
                 qmVar.invalidate();
                 qmVar.invalidate();
@@ -302,13 +302,13 @@ public final class om {
             this.d.draw(canvas);
             if (this.s == null) {
             }
-            vh.g gVar2 = this.s;
+            vh.f fVar2 = this.s;
             int width2 = qmVar2.getWidth();
             int height2 = qmVar2.getHeight();
             qmVar = qmVar2;
             c10 = 3;
             c11 = 2;
-            gVar2.c(canvas, qmVar, width2, height2, 1.0f, false);
+            fVar2.c(canvas, qmVar, width2, height2, 1.0f, false);
             canvas.restore();
             qmVar.invalidate();
             qmVar.invalidate();

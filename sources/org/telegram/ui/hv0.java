@@ -1,209 +1,505 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.animation.ValueAnimator;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Path;
-import android.graphics.RectF;
-import android.view.TextureView;
+import android.graphics.drawable.Drawable;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.AnimatedFileDrawableStream;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.WebFile;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class hv0 extends FrameLayout {
-    public final FrameLayout a;
-    public final TextureView b;
-    public final l4 c;
-    public final org.telegram.ui.Components.w9 d;
-    public final /* synthetic */ iv0 e;
+public class hv0 {
+    public float A;
+    public float B;
+    public ValueAnimator C;
+    public MessageObject D;
+    public dv0 E;
+    public ev0 F;
+    public float G;
+    public float H;
+    public float I;
+    public float J;
+    public float K;
+    public boolean L;
+    public int M;
+    public int N;
+    public float O;
+    public float P;
+    public final float[] Q;
+    public boolean R;
+    public ColorMatrixColorFilter S;
+    public final ViewGroup a;
+    public final ViewGroup b;
+    public final boolean c;
+    public gv0 d;
+    public View e;
+    public ImageReceiver f;
+    public ImageReceiver g;
+    public ImageReceiver h;
+    public boolean i;
+    public final vh.g j;
+    public vh.f k;
+    public final Path l;
+    public final float[] m;
+    public boolean n;
+    public float o;
+    public float p;
+    public float q;
+    public float r;
+    public float s;
+    public float t;
+    public float u;
+    public float v;
+    public float w;
+    public float x;
+    public float y;
+    public float z;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hv0(iv0 iv0Var, Context context) {
-        super(context);
-        this.e = iv0Var;
-        new Path();
-        new Paint(1);
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.a = frameLayout;
-        frameLayout.setOutlineProvider(new gv0());
-        frameLayout.setClipToOutline(true);
-        org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
-        this.d = w9Var;
-        frameLayout.addView(w9Var);
-        frameLayout.setWillNotDraw(false);
-        l4 l4Var = new l4(context);
-        this.c = l4Var;
-        l4Var.setBackgroundColor(0);
-        frameLayout.addView(l4Var, w7.x5.e(-1, -1, 17));
-        TextureView textureView = new TextureView(context);
-        this.b = textureView;
-        textureView.setOpaque(false);
-        l4Var.addView(textureView, w7.x5.c(-1.0f, -1));
-        addView(frameLayout, w7.x5.c(-2.0f, -2));
-        setWillNotDraw(false);
+    public hv0(ViewGroup viewGroup, ViewGroup viewGroup2) {
+        this.g = new ImageReceiver();
+        this.h = new ImageReceiver();
+        this.j = new vh.g();
+        this.l = new Path();
+        this.m = new float[8];
+        this.Q = new float[2];
+        this.a = viewGroup;
+        this.b = viewGroup2;
+        this.c = false;
     }
 
-    public final void a(Canvas canvas) {
-        float f7;
-        iv0 iv0Var = this.e;
-        float[] fArr = iv0Var.m;
-        vh.h hVar = iv0Var.j;
-        Path path = iv0Var.l;
-        if (!iv0Var.n || iv0Var.e == null || iv0Var.a == null) {
-            return;
+    public final boolean a(MotionEvent motionEvent, ViewGroup viewGroup, ImageReceiver imageReceiver, MessageObject messageObject, int i10) {
+        int i11;
+        int i12;
+        int i13;
+        int i14;
+        if (!j(viewGroup, imageReceiver)) {
+            return false;
         }
-        iv0Var.i();
-        float left = iv0Var.o - getLeft();
-        float top = iv0Var.p - getTop();
-        canvas.save();
-        float f10 = iv0Var.O;
-        float f11 = iv0Var.A;
-        float f12 = ((f10 * f11) + 1.0f) - f11;
-        canvas.scale(f12, f12, iv0Var.s + left, iv0Var.t + top);
-        float f13 = iv0Var.J;
-        float f14 = iv0Var.A;
-        canvas.translate((f13 * f14) + left, (iv0Var.K * f14) + top);
-        ImageReceiver imageReceiver = iv0Var.g;
-        if (imageReceiver != null && imageReceiver.hasNotThumb()) {
-            float f15 = iv0Var.B;
-            if (f15 != 1.0f) {
-                float f16 = f15 + 0.10666667f;
-                iv0Var.B = f16;
-                if (f16 > 1.0f) {
-                    iv0Var.B = 1.0f;
-                } else {
-                    iv0Var.e();
+        if (motionEvent.getActionMasked() == 0 || motionEvent.getActionMasked() == 5) {
+            if (!this.L && motionEvent.getPointerCount() == 2) {
+                this.I = (float) Math.hypot(motionEvent.getX(1) - motionEvent.getX(0), motionEvent.getY(1) - motionEvent.getY(0));
+                float x10 = (motionEvent.getX(1) + motionEvent.getX(0)) / 2.0f;
+                this.s = x10;
+                this.G = x10;
+                float y3 = (motionEvent.getY(1) + motionEvent.getY(0)) / 2.0f;
+                this.t = y3;
+                this.H = y3;
+                this.O = 1.0f;
+                this.M = motionEvent.getPointerId(0);
+                this.N = motionEvent.getPointerId(1);
+                this.L = true;
+            }
+        } else if (motionEvent.getActionMasked() == 2 && this.L) {
+            int i15 = -1;
+            int i16 = -1;
+            for (int i17 = 0; i17 < motionEvent.getPointerCount(); i17++) {
+                if (this.M == motionEvent.getPointerId(i17)) {
+                    i15 = i17;
+                }
+                if (this.N == motionEvent.getPointerId(i17)) {
+                    i16 = i17;
                 }
             }
-            iv0Var.g.setAlpha(iv0Var.B);
-        }
-        float f17 = iv0Var.u;
-        float f18 = iv0Var.v;
-        float f19 = iv0Var.w;
-        float f20 = iv0Var.y;
-        if (f19 == f20 && iv0Var.x == iv0Var.z) {
-            f7 = 1.0f;
-        } else {
-            float f21 = f12 < 1.0f ? 0.0f : f12 < 1.4f ? (f12 - 1.0f) / 0.4f : 1.0f;
-            f7 = 1.0f;
-            float f22 = iv0Var.z;
-            float f23 = iv0Var.x;
-            float f24 = ((f22 - f23) / 2.0f) * f21;
-            f17 -= f24;
-            float f25 = ((f20 - f19) / 2.0f) * f21;
-            f18 -= f25;
-            ImageReceiver imageReceiver2 = iv0Var.f;
-            if (imageReceiver2 != null) {
-                imageReceiver2.setImageCoords(f17, f18, (f24 * 2.0f) + f23, (f25 * 2.0f) + f19);
+            if (i15 == -1 || i16 == -1) {
+                this.L = false;
+                viewGroup.getParent().requestDisallowInterceptTouchEvent(false);
+                d();
+                return false;
             }
-        }
-        if (iv0Var.R) {
-            float f26 = iv0Var.s - iv0Var.u;
-            FrameLayout frameLayout = this.a;
-            frameLayout.setPivotX(f26);
-            frameLayout.setPivotY(iv0Var.t - iv0Var.v);
-            frameLayout.setScaleY(f12);
-            frameLayout.setScaleX(f12);
-            frameLayout.setTranslationX((iv0Var.J * f12 * iv0Var.A) + f17 + left);
-            frameLayout.setTranslationY((iv0Var.K * f12 * iv0Var.A) + f18 + top);
-        } else {
-            ImageReceiver imageReceiver3 = iv0Var.f;
-            if (imageReceiver3 != null) {
-                if (iv0Var.B != f7) {
-                    if (imageReceiver3.getLottieAnimation() != null || iv0Var.f.getAnimation() != null || iv0Var.g.getLottieAnimation() != null || iv0Var.g.getAnimation() != null) {
-                        invalidate();
-                    }
-                    iv0Var.f.draw(canvas);
-                    iv0Var.g.setImageCoords(iv0Var.f.getImageX(), iv0Var.f.getImageY(), iv0Var.f.getImageWidth(), iv0Var.f.getImageHeight());
-                    iv0Var.g.draw(canvas);
-                } else {
-                    iv0Var.g.setImageCoords(imageReceiver3.getImageX(), iv0Var.f.getImageY(), iv0Var.f.getImageWidth(), iv0Var.f.getImageHeight());
-                    iv0Var.g.draw(canvas);
-                    if (iv0Var.g.getLottieAnimation() != null || iv0Var.g.getAnimation() != null) {
-                        invalidate();
-                    }
-                }
-            }
-        }
-        if (iv0Var.i) {
-            iv0Var.h.setAlpha(iv0Var.f.getAlpha());
-            iv0Var.h.setRoundRadius(iv0Var.f.getRoundRadius(true));
-            iv0Var.h.setImageCoords(iv0Var.f.getImageX(), iv0Var.f.getImageY(), iv0Var.f.getImageWidth(), iv0Var.f.getImageHeight());
-            iv0Var.h.draw(canvas);
-            int[] roundRadius = iv0Var.f.getRoundRadius(true);
-            float f27 = roundRadius[0];
-            fArr[1] = f27;
-            fArr[0] = f27;
-            float f28 = roundRadius[1];
-            fArr[3] = f28;
-            fArr[2] = f28;
-            float f29 = roundRadius[2];
-            fArr[5] = f29;
-            fArr[4] = f29;
-            float f30 = roundRadius[3];
-            fArr[7] = f30;
-            fArr[6] = f30;
-            RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(iv0Var.f.getImageX(), iv0Var.f.getImageY(), iv0Var.f.getImageX2(), iv0Var.f.getImageY2());
-            path.rewind();
-            path.addRoundRect(rectF, fArr, Path.Direction.CW);
-            canvas.save();
-            canvas.clipPath(path);
-            if (iv0Var.k != null) {
-                canvas.translate(iv0Var.f.getImageX(), iv0Var.f.getImageY());
-                iv0Var.k.c(canvas, iv0Var.d, (int) iv0Var.f.getImageWidth(), (int) iv0Var.f.getImageHeight(), 1.0f, false);
+            float hypot = ((float) Math.hypot(motionEvent.getX(i16) - motionEvent.getX(i15), motionEvent.getY(i16) - motionEvent.getY(i15))) / this.I;
+            this.O = hypot;
+            if (hypot <= 1.005f || this.n) {
+                i11 = i16;
+                i12 = i15;
             } else {
-                hVar.h(i0.a.k(-1, (int) (iv0Var.f.getAlpha() * Color.alpha(-1) * 0.325f)));
-                hVar.setBounds((int) iv0Var.f.getImageX(), (int) iv0Var.f.getImageY(), (int) iv0Var.f.getImageX2(), (int) iv0Var.f.getImageY2());
-                hVar.draw(canvas);
+                this.I = (float) Math.hypot(motionEvent.getX(i16) - motionEvent.getX(i15), motionEvent.getY(i16) - motionEvent.getY(i15));
+                float x11 = (motionEvent.getX(i16) + motionEvent.getX(i15)) / 2.0f;
+                this.s = x11;
+                this.G = x11;
+                float y10 = (motionEvent.getY(i16) + motionEvent.getY(i15)) / 2.0f;
+                this.t = y10;
+                this.H = y10;
+                this.O = 1.0f;
+                this.J = 0.0f;
+                this.K = 0.0f;
+                viewGroup.getParent().requestDisallowInterceptTouchEvent(true);
+                this.e = viewGroup;
+                this.D = messageObject;
+                gv0 gv0Var = this.d;
+                ViewGroup viewGroup2 = this.a;
+                boolean z10 = this.c;
+                if (gv0Var != null || z10) {
+                    i13 = -1;
+                } else {
+                    i13 = -1;
+                    gv0 gv0Var2 = new gv0(this, viewGroup2.getContext());
+                    this.d = gv0Var2;
+                    gv0Var2.setFocusable(false);
+                    this.d.setFocusableInTouchMode(false);
+                    this.d.setEnabled(false);
+                }
+                if (this.g == null) {
+                    ImageReceiver imageReceiver2 = new ImageReceiver();
+                    this.g = imageReceiver2;
+                    imageReceiver2.setCrossfadeAlpha((byte) 2);
+                    this.g.setCrossfadeWithOldImage(false);
+                    this.g.onAttachedToWindow();
+                    ImageReceiver imageReceiver3 = new ImageReceiver();
+                    this.h = imageReceiver3;
+                    imageReceiver3.setCrossfadeAlpha((byte) 2);
+                    this.h.setCrossfadeWithOldImage(false);
+                    this.h.onAttachedToWindow();
+                }
+                this.n = true;
+                this.A = 1.0f;
+                this.B = 0.0f;
+                if (z10) {
+                    i14 = i15;
+                    i11 = i16;
+                } else {
+                    viewGroup2.addView(this.d);
+                    boolean z11 = (messageObject == null || !messageObject.hasMediaSpoilers() || messageObject.isMediaSpoilersRevealed) ? false : true;
+                    this.i = z11;
+                    if (z11 && this.k == null) {
+                        vh.f e = vh.f.e(this.d);
+                        this.k = e;
+                        if (e != null) {
+                            e.k.put(this.d, Integer.valueOf(i10));
+                        }
+                    }
+                    ImageLocation imageLocation = null;
+                    if (this.h.getBitmap() != null) {
+                        this.h.getBitmap().recycle();
+                        this.h.setImageBitmap((Bitmap) null);
+                    }
+                    if (imageReceiver.getBitmap() == null || imageReceiver.getBitmap().isRecycled() || !this.i) {
+                        this.h.setColorFilter(null);
+                    } else {
+                        this.h.setImageBitmap(Utilities.stackBlurBitmapMax(imageReceiver.getBitmap()));
+                        ImageReceiver imageReceiver4 = this.h;
+                        if (this.S == null) {
+                            ColorMatrix colorMatrix = new ColorMatrix();
+                            AndroidUtilities.multiplyBrightnessColorMatrix(colorMatrix, 0.9f);
+                            AndroidUtilities.adjustSaturationColorMatrix(colorMatrix, 0.6f);
+                            this.S = new ColorMatrixColorFilter(colorMatrix);
+                        }
+                        imageReceiver4.setColorFilter(this.S);
+                    }
+                    if (messageObject != null && messageObject.isPhoto()) {
+                        int[] iArr = new int[1];
+                        TLRPC.Message message = messageObject.messageOwner;
+                        if (!(message instanceof TLRPC.TL_messageService)) {
+                            TLRPC.MessageMedia messageMedia = message.media;
+                            if ((!(messageMedia instanceof TLRPC.TL_messageMediaPhoto) || messageMedia.photo == null) && (!(messageMedia instanceof TLRPC.TL_messageMediaWebPage) || messageMedia.webpage == null)) {
+                                if (messageMedia instanceof TLRPC.TL_messageMediaInvoice) {
+                                    imageLocation = ImageLocation.getForWebFile(WebFile.createWithWebDocument(((TLRPC.TL_messageMediaInvoice) messageMedia).webPhoto));
+                                } else if (messageObject.getDocument() != null) {
+                                    TLRPC.Document document = messageObject.getDocument();
+                                    if (MessageObject.isDocumentHasThumb(messageObject.getDocument())) {
+                                        TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 90);
+                                        int i18 = closestPhotoSizeWithSize.size;
+                                        iArr[0] = i18;
+                                        if (i18 == 0) {
+                                            iArr[0] = i13;
+                                        }
+                                        imageLocation = ImageLocation.getForDocument(closestPhotoSizeWithSize, document);
+                                    }
+                                }
+                            } else if (messageObject.isGif()) {
+                                imageLocation = ImageLocation.getForDocument(messageObject.getDocument());
+                            } else {
+                                TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(messageObject.photoThumbs, AndroidUtilities.getPhotoSize(), false, null, true);
+                                if (closestPhotoSizeWithSize2 != null) {
+                                    int i19 = closestPhotoSizeWithSize2.size;
+                                    iArr[0] = i19;
+                                    if (i19 == 0) {
+                                        iArr[0] = i13;
+                                    }
+                                    imageLocation = ImageLocation.getForObject(closestPhotoSizeWithSize2, messageObject.photoThumbsObject);
+                                } else {
+                                    iArr[0] = i13;
+                                }
+                            }
+                        } else if (!(message.action instanceof TLRPC.TL_messageActionUserUpdatedPhoto)) {
+                            TLRPC.PhotoSize closestPhotoSizeWithSize3 = FileLoader.getClosestPhotoSizeWithSize(messageObject.photoThumbs, AndroidUtilities.getPhotoSize());
+                            if (closestPhotoSizeWithSize3 != null) {
+                                int i20 = closestPhotoSizeWithSize3.size;
+                                iArr[0] = i20;
+                                if (i20 == 0) {
+                                    iArr[0] = i13;
+                                }
+                                imageLocation = ImageLocation.getForObject(closestPhotoSizeWithSize3, messageObject.photoThumbsObject);
+                            } else {
+                                iArr[0] = i13;
+                            }
+                        }
+                        if (imageLocation != null) {
+                            i11 = i16;
+                            i14 = i15;
+                            this.g.setImage(imageLocation, null, null, null, null, iArr[0], null, messageObject, messageObject.isWebpage() ? 1 : 0);
+                            this.g.setCrossfadeAlpha((byte) 2);
+                        } else {
+                            i14 = i15;
+                            i11 = i16;
+                        }
+                        i();
+                    } else {
+                        i14 = i15;
+                        i11 = i16;
+                    }
+                    this.u = imageReceiver.getImageX();
+                    this.v = imageReceiver.getImageY() + viewGroup.getPaddingTop();
+                    this.w = imageReceiver.getImageHeight();
+                    this.x = imageReceiver.getImageWidth();
+                    this.y = imageReceiver.getBitmapHeight();
+                    float bitmapWidth = imageReceiver.getBitmapWidth();
+                    this.z = bitmapWidth;
+                    float f7 = this.y;
+                    float f10 = f7 / bitmapWidth;
+                    float f11 = this.w;
+                    float f12 = this.x;
+                    float f13 = f11 / f12;
+                    if (f10 == f13) {
+                        this.y = f11;
+                        this.z = f12;
+                    } else if (f10 < f13) {
+                        this.z = (bitmapWidth / f7) * f11;
+                        this.y = f11;
+                    } else {
+                        this.y = f10 * f12;
+                        this.z = f12;
+                    }
+                    if (messageObject != null && messageObject.isVideo() && MediaController.getInstance().isPlayingMessage(messageObject)) {
+                        this.R = true;
+                        MediaController mediaController = MediaController.getInstance();
+                        gv0 gv0Var3 = this.d;
+                        mediaController.setTextureView(gv0Var3.b, gv0Var3.c, gv0Var3.a, true);
+                        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.d.a.getLayoutParams();
+                        this.d.a.setTag(R.id.parent_tag, imageReceiver);
+                        if (layoutParams.width != imageReceiver.getImageWidth() || layoutParams.height != imageReceiver.getImageHeight()) {
+                            this.d.c.setResizeMode(3);
+                            layoutParams.width = (int) imageReceiver.getImageWidth();
+                            layoutParams.height = (int) imageReceiver.getImageHeight();
+                            this.d.a.setLayoutParams(layoutParams);
+                        }
+                        this.d.b.setScaleX(1.0f);
+                        this.d.b.setScaleY(1.0f);
+                        dv0 dv0Var = this.E;
+                        if (dv0Var != null) {
+                            this.d.d.setImageBitmap(dv0Var.j0().getBitmap((int) this.z, (int) this.y));
+                            this.d.d.s((int) this.z, (int) this.y);
+                            this.d.d.getImageReceiver().setRoundRadius(imageReceiver.getRoundRadius(true));
+                        }
+                        this.d.a.setVisibility(0);
+                    } else {
+                        this.R = false;
+                        ImageReceiver imageReceiver5 = new ImageReceiver();
+                        this.f = imageReceiver5;
+                        imageReceiver5.onAttachedToWindow();
+                        Drawable drawable = imageReceiver.getDrawable();
+                        this.f.setImageBitmap(drawable);
+                        if (drawable instanceof org.telegram.ui.Components.d6) {
+                            org.telegram.ui.Components.d6 d6Var = (org.telegram.ui.Components.d6) drawable;
+                            d6Var.f(this.d);
+                            d6Var.R = true;
+                        }
+                        this.f.setImageCoords(this.u, this.v, this.x, this.w);
+                        this.f.setAspectFit(imageReceiver.isAspectFit());
+                        this.f.setRoundRadius(imageReceiver.getRoundRadius(true));
+                        this.g.setRoundRadius(imageReceiver.getRoundRadius(true));
+                        this.g.setAspectFit(imageReceiver.isAspectFit());
+                        this.d.a.setVisibility(8);
+                    }
+                }
+                dv0 dv0Var2 = this.E;
+                if (dv0Var2 != null) {
+                    dv0Var2.E0(messageObject);
+                }
+                this.P = 0.0f;
+                i12 = i14;
             }
-            canvas.restore();
-            invalidate();
+            int i21 = i11;
+            float x12 = (motionEvent.getX(i21) + motionEvent.getX(i12)) / 2.0f;
+            float y11 = (motionEvent.getY(i21) + motionEvent.getY(i12)) / 2.0f;
+            float f14 = this.G - x12;
+            float f15 = this.H - y11;
+            float f16 = -f14;
+            float f17 = this.O;
+            this.J = f16 / f17;
+            this.K = (-f15) / f17;
+            e();
+        } else if ((motionEvent.getActionMasked() == 1 || ((motionEvent.getActionMasked() == 6 && motionEvent.getPointerCount() >= 2 && ((this.M == motionEvent.getPointerId(0) && this.N == motionEvent.getPointerId(1)) || (this.M == motionEvent.getPointerId(1) && this.N == motionEvent.getPointerId(0)))) || motionEvent.getActionMasked() == 3)) && this.L) {
+            this.L = false;
+            if (viewGroup != null && viewGroup.getParent() != null) {
+                viewGroup.getParent().requestDisallowInterceptTouchEvent(false);
+            }
+            d();
         }
-        canvas.restore();
+        return f(viewGroup);
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        float f7;
-        fv0 fv0Var;
-        iv0 iv0Var = this.e;
-        float[] fArr = iv0Var.Q;
-        if (iv0Var.C == null) {
-            float f10 = iv0Var.P;
-            if (f10 != 1.0f) {
-                float f11 = f10 + 0.07272727f;
-                iv0Var.P = f11;
-                if (f11 > 1.0f) {
-                    iv0Var.P = 1.0f;
-                } else {
-                    iv0Var.e();
+    public final void b() {
+        if (this.n) {
+            dv0 dv0Var = this.E;
+            if (dv0Var != null) {
+                dv0Var.H(this.D);
+            }
+            this.n = false;
+        }
+        gv0 gv0Var = this.d;
+        if (gv0Var != null && gv0Var.getParent() != null) {
+            this.a.removeView(this.d);
+            this.d.d.getImageReceiver().clearImage();
+            vh.f fVar = this.k;
+            if (fVar != null) {
+                fVar.b(this.d);
+                this.k = null;
+            }
+            ImageReceiver imageReceiver = this.f;
+            if (imageReceiver != null) {
+                Drawable drawable = imageReceiver.getDrawable();
+                if (drawable instanceof org.telegram.ui.Components.d6) {
+                    ((org.telegram.ui.Components.d6) drawable).w(this.d);
                 }
             }
         }
-        float interpolation = org.telegram.ui.Components.rr.f.getInterpolation(iv0Var.P) * iv0Var.A;
-        float measuredHeight = getMeasuredHeight();
-        float f12 = 0.0f;
-        if (interpolation == 1.0f || (fv0Var = iv0Var.F) == null) {
-            a(canvas);
-            super.dispatchDraw(canvas);
-            f7 = measuredHeight;
-        } else {
-            fv0Var.g(fArr);
-            canvas.save();
-            float f13 = 1.0f - interpolation;
-            float f14 = fArr[0] * f13;
-            float measuredHeight2 = (fArr[1] * f13) + (getMeasuredHeight() * interpolation);
-            canvas.clipRect(0.0f, f14, getMeasuredWidth(), measuredHeight2);
-            a(canvas);
-            super.dispatchDraw(canvas);
-            canvas.restore();
-            f7 = measuredHeight2;
-            f12 = f14;
+        View view = this.e;
+        if (view != null) {
+            view.invalidate();
+            this.e = null;
         }
-        iv0Var.c(canvas, 1.0f - interpolation, iv0Var.o - getLeft(), iv0Var.p - getTop(), f12, f7);
+        ImageReceiver imageReceiver2 = this.f;
+        if (imageReceiver2 != null) {
+            imageReceiver2.onDetachedFromWindow();
+            this.f.clearImage();
+            this.f = null;
+        }
+        ImageReceiver imageReceiver3 = this.g;
+        if (imageReceiver3 != null) {
+            imageReceiver3.onDetachedFromWindow();
+            this.g.clearImage();
+            this.g = null;
+        }
+        ImageReceiver imageReceiver4 = this.h;
+        if (imageReceiver4 != null) {
+            imageReceiver4.onDetachedFromWindow();
+            this.h.clearImage();
+            this.h = null;
+        }
+        this.D = null;
+    }
+
+    public final void d() {
+        if (this.C == null && this.n) {
+            if (!this.c && !i()) {
+                b();
+            }
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(1.0f, 0.0f);
+            this.C = ofFloat;
+            ofFloat.addUpdateListener(new c3(this, 25));
+            this.C.addListener(new xo0(this, 11));
+            this.C.setDuration(220L);
+            this.C.setInterpolator(org.telegram.ui.Components.rr.f);
+            this.C.start();
+        }
+    }
+
+    public void e() {
+        View view;
+        if (this.c && (view = this.e) != null) {
+            view.invalidate();
+        }
+        gv0 gv0Var = this.d;
+        if (gv0Var != null) {
+            gv0Var.invalidate();
+        }
+    }
+
+    public final boolean f(View view) {
+        return this.n && view == this.e;
+    }
+
+    public final boolean g(MotionEvent motionEvent) {
+        if (!i() || this.e == null) {
+            return false;
+        }
+        motionEvent.offsetLocation(-this.q, -this.r);
+        return this.e.onTouchEvent(motionEvent);
+    }
+
+    public final void h(vh vhVar) {
+        this.F = vhVar;
+    }
+
+    public final boolean i() {
+        float f7 = 0.0f;
+        float f10 = 0.0f;
+        float f11 = 0.0f;
+        for (View view = this.e; view != this.a; view = (View) view.getParent()) {
+            if (view == null) {
+                return false;
+            }
+            f10 += view.getLeft();
+            f11 += view.getTop();
+            if (!(view.getParent() instanceof View)) {
+                break;
+            }
+        }
+        float f12 = 0.0f;
+        for (View view2 = this.e; view2 != this.b; view2 = (View) view2.getParent()) {
+            if (view2 == null) {
+                return false;
+            }
+            f7 += view2.getLeft();
+            f12 += view2.getTop();
+        }
+        this.q = f7;
+        this.r = f12;
+        this.o = f10;
+        this.p = f11;
+        return true;
+    }
+
+    public boolean j(View view, ImageReceiver imageReceiver) {
+        if (this.c) {
+            return true;
+        }
+        if (!(imageReceiver.getDrawable() instanceof org.telegram.ui.Components.d6)) {
+            return imageReceiver.hasNotThumbOrOnlyStaticThumb();
+        }
+        AnimatedFileDrawableStream animatedFileDrawableStream = ((org.telegram.ui.Components.d6) imageReceiver.getDrawable()).u0;
+        return animatedFileDrawableStream == null || !animatedFileDrawableStream.isWaitingForLoad();
+    }
+
+    public hv0() {
+        this.g = new ImageReceiver();
+        this.h = new ImageReceiver();
+        this.j = new vh.g();
+        this.l = new Path();
+        this.m = new float[8];
+        this.Q = new float[2];
+        this.a = null;
+        this.b = null;
+        this.c = true;
+    }
+
+    public void c(Canvas canvas, float f7, float f10, float f11, float f12, float f13) {
     }
 }

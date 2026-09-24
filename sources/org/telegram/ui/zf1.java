@@ -9,16 +9,16 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class zf1 implements org.telegram.ui.Components.al0 {
+public final class zf1 implements org.telegram.ui.Components.kl0 {
     public final /* synthetic */ cg1 a;
 
     public zf1(cg1 cg1Var) {
         this.a = cg1Var;
     }
 
-    @Override // org.telegram.ui.Components.al0
+    @Override // org.telegram.ui.Components.kl0
     public final void d(int i10, View view) {
         cg1 cg1Var = this.a;
         ArrayList arrayList = cg1Var.d;
@@ -37,9 +37,9 @@ public final class zf1 implements org.telegram.ui.Components.al0 {
             bundle2.putLong("dialog_id", cg1Var.c);
             bundle2.putLong("topic_id", tL_forumTopic.id);
             bundle2.putBoolean("exception", false);
-            p11 p11Var = new p11(bundle2, null);
-            p11Var.r = new yf1(this, tL_forumTopic);
-            cg1Var.presentFragment(p11Var);
+            n11 n11Var = new n11(bundle2, null);
+            n11Var.r = new yf1(this, tL_forumTopic);
+            cg1Var.presentFragment(n11Var);
         }
         if (((bg1) arrayList.get(i10)).a == 4) {
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(cg1Var.getParentActivity());
@@ -47,9 +47,9 @@ public final class zf1 implements org.telegram.ui.Components.al0 {
             alertDialog$Builder.a.T = LocaleController.getString(R.string.NotificationsDeleteAllExceptionAlert);
             alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new xf1(this));
             alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-            org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-            cg1Var.showDialog(b2Var);
-            TextView textView = (TextView) b2Var.d(-1);
+            org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
+            cg1Var.showDialog(a2Var);
+            TextView textView = (TextView) a2Var.d(-1);
             if (textView != null) {
                 textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.q7, false));
             }

@@ -1,33 +1,254 @@
 package org.telegram.ui;
 
+import android.animation.AnimatorSet;
 import android.content.Context;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewConfiguration;
 import android.widget.FrameLayout;
+import android.widget.TextView;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ContactsController;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class jv extends FrameLayout {
-    public org.telegram.ui.ActionBar.n2 a;
-    public FrameLayout b;
-    public org.telegram.ui.ActionBar.k c;
-    public org.telegram.ui.Components.ml0 d;
-    public ai.w0 e;
-    public int f;
-    public final /* synthetic */ kv h;
+public final class jv extends org.telegram.ui.ActionBar.m2 {
+    public static final org.telegram.ui.Components.ur0 x = new org.telegram.ui.Components.ur0(2);
+    public qy a;
+    public ContactsActivity b;
+    public org.telegram.ui.ActionBar.u0 c;
+    public Paint d;
+    public ScrollSlidingTextTabStrip e;
+    public iv[] f;
+    public AnimatorSet h;
+    public boolean n;
+    public boolean r;
+    public boolean s;
+    public int v;
+    public boolean w;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jv(kv kvVar, Context context) {
-        super(context);
-        this.h = kvVar;
+    public static /* synthetic */ void U(jv jvVar, TLRPC.User user) {
+        if (MessagesController.isSupportUser(user)) {
+            org.telegram.ui.Components.e5.w0(jvVar, LocaleController.getString(R.string.ErrorOccurred));
+        } else {
+            MessagesController.getInstance(jvVar.currentAccount).blockPeer(user.id);
+            org.telegram.ui.Components.e5.w0(jvVar, LocaleController.getString(R.string.UserBlocked));
+        }
+        jvVar.finishFragment();
     }
 
-    @Override // android.view.View
-    public final void setTranslationX(float f7) {
-        jv jvVar;
-        super.setTranslationX(f7);
-        kv kvVar = this.h;
-        jv[] jvVarArr = kvVar.f;
-        if (kvVar.n && (jvVar = jvVarArr[0]) == this) {
-            kvVar.e.j(Math.abs(jvVar.getTranslationX()) / jvVarArr[0].getMeasuredWidth(), jvVarArr[1].f);
+    public static void j0(jv jvVar, float f7) {
+        iv[] ivVarArr = jvVar.f;
+        jvVar.actionBar.setTranslationY(f7);
+        for (int i10 = 0; i10 < ivVarArr.length; i10++) {
+            int i11 = (int) f7;
+            ivVarArr[i10].d.setPinnedSectionOffsetY(i11);
+            ai.w0 w0Var = ivVarArr[i10].e;
+            if (w0Var != null) {
+                w0Var.setPinnedSectionOffsetY(i11);
+            }
+        }
+        jvVar.fragmentView.invalidate();
+    }
+
+    @Override // org.telegram.ui.ActionBar.m2
+    public final View createView(Context context) {
+        ContactsActivity contactsActivity = this.b;
+        qy qyVar = this.a;
+        iv[] ivVarArr = this.f;
+        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
+        this.actionBar.setTitle(LocaleController.getString(R.string.BlockUserMultiTitle));
+        org.telegram.ui.ActionBar.b5 b5Var = this.parentLayout;
+        if (b5Var != null && ((ActionBarLayout) b5Var).M0) {
+            this.actionBar.setOccupyStatusBar(false);
+        }
+        this.actionBar.setExtraHeight(AndroidUtilities.dp(44.0f));
+        this.actionBar.setAllowOverlayTitle(false);
+        this.actionBar.setAddToContainer(false);
+        this.actionBar.setClipContent(true);
+        this.actionBar.setActionBarMenuOnItemClick(new oo(this, 20));
+        this.hasOwnBackground = true;
+        org.telegram.ui.ActionBar.u0 a2 = this.actionBar.n().a(0, R.drawable.outline_header_search);
+        a2.F();
+        a2.H = new hg.e2(this, 9);
+        this.c = a2;
+        a2.setSearchFieldHint(LocaleController.getString(R.string.Search));
+        ScrollSlidingTextTabStrip scrollSlidingTextTabStrip = new ScrollSlidingTextTabStrip(context, null);
+        this.e = scrollSlidingTextTabStrip;
+        scrollSlidingTextTabStrip.setUseSameWidth(true);
+        this.actionBar.addView(this.e, w7.y5.e(-1, 44, 83));
+        this.e.setDelegate(new g(this, 14));
+        this.v = ViewConfiguration.get(context).getScaledMaximumFlingVelocity();
+        hv hvVar = new hv(this, context);
+        this.fragmentView = hvVar;
+        hvVar.setWillNotDraw(false);
+        qyVar.setParentFragment(this);
+        contactsActivity.setParentFragment(this);
+        for (int i10 = 0; i10 < ivVarArr.length; i10++) {
+            iv ivVar = new iv(this, context);
+            ivVarArr[i10] = ivVar;
+            hvVar.addView(ivVar, w7.y5.c(-1.0f, -1));
+            if (i10 == 0) {
+                iv ivVar2 = ivVarArr[i10];
+                ivVar2.a = qyVar;
+                ivVar2.d = qyVar.e0[0].a;
+                qyVar.M3();
+                zx zxVar = qyVar.C0;
+                ivVar2.e = zxVar != null ? zxVar.V : null;
+            } else if (i10 == 1) {
+                iv ivVar3 = ivVarArr[i10];
+                ivVar3.a = contactsActivity;
+                ivVar3.d = contactsActivity.f;
+                ivVar3.setVisibility(8);
+            }
+            ivVarArr[i10].d.setScrollingTouchSlop(1);
+            iv ivVar4 = ivVarArr[i10];
+            ivVar4.b = (FrameLayout) ivVar4.a.getFragmentView();
+            iv ivVar5 = ivVarArr[i10];
+            ivVar5.c = ivVar5.a.getActionBar();
+            iv ivVar6 = ivVarArr[i10];
+            ivVar6.addView(ivVar6.b, w7.y5.c(-1.0f, -1));
+            AndroidUtilities.removeFromParent(ivVarArr[i10].c);
+            iv ivVar7 = ivVarArr[i10];
+            ivVar7.addView(ivVar7.c, w7.y5.c(-2.0f, -1));
+            ivVarArr[i10].c.setVisibility(8);
+            int i11 = 0;
+            while (i11 < 2) {
+                org.telegram.ui.Components.wl0 wl0Var = i11 == 0 ? ivVarArr[i10].d : ivVarArr[i10].e;
+                if (wl0Var != null) {
+                    wl0Var.setClipToPadding(false);
+                    wl0Var.setOnScrollListener(new ii.n3(5, this, wl0Var.getOnScrollListener()));
+                }
+                i11++;
+            }
+        }
+        hvVar.addView(this.actionBar, w7.y5.c(-2.0f, -1));
+        ScrollSlidingTextTabStrip scrollSlidingTextTabStrip2 = this.e;
+        if (scrollSlidingTextTabStrip2 != null) {
+            scrollSlidingTextTabStrip2.a(0, LocaleController.getString(R.string.BlockUserChatsTitle), null);
+            this.e.a(1, LocaleController.getString(R.string.BlockUserContactsTitle), null);
+            this.e.setVisibility(0);
+            this.actionBar.setExtraHeight(AndroidUtilities.dp(44.0f));
+            int currentTabId = this.e.getCurrentTabId();
+            if (currentTabId >= 0) {
+                ivVarArr[0].f = currentTabId;
+            }
+            this.e.c();
+        }
+        m0(false);
+        this.w = this.e.getCurrentTabId() == this.e.getFirstTabId();
+        return this.fragmentView;
+    }
+
+    @Override // org.telegram.ui.ActionBar.m2
+    public final ArrayList getThemeDescriptions() {
+        ArrayList arrayList = new ArrayList();
+        arrayList.add(new org.telegram.ui.ActionBar.j6(this.fragmentView, 0, null, null, null, null, org.telegram.ui.ActionBar.h6.d6));
+        arrayList.add(new org.telegram.ui.ActionBar.j6(this.actionBar, 1, null, null, null, null, org.telegram.ui.ActionBar.h6.s8));
+        arrayList.add(new org.telegram.ui.ActionBar.j6(this.actionBar, 64, null, null, null, null, org.telegram.ui.ActionBar.h6.v8));
+        arrayList.add(new org.telegram.ui.ActionBar.j6(this.actionBar, 128, null, null, null, null, org.telegram.ui.ActionBar.h6.A8));
+        arrayList.add(new org.telegram.ui.ActionBar.j6(this.actionBar, 256, null, null, null, null, org.telegram.ui.ActionBar.h6.t8));
+        arrayList.add(new org.telegram.ui.ActionBar.j6(this.e.getTabsContainer(), 262148, new Class[]{TextView.class}, null, null, null, org.telegram.ui.ActionBar.h6.I8));
+        arrayList.add(new org.telegram.ui.ActionBar.j6(this.e.getTabsContainer(), 262148, new Class[]{TextView.class}, null, null, null, org.telegram.ui.ActionBar.h6.J8));
+        arrayList.add(new org.telegram.ui.ActionBar.j6(this.e.getTabsContainer(), 65568, new Class[]{TextView.class}, null, null, null, org.telegram.ui.ActionBar.h6.K8));
+        arrayList.add(new org.telegram.ui.ActionBar.j6(null, 0, null, null, new Drawable[]{this.e.getSelectorDrawable()}, null, org.telegram.ui.ActionBar.h6.L8));
+        arrayList.addAll(this.a.getThemeDescriptions());
+        arrayList.addAll(this.b.getThemeDescriptions());
+        return arrayList;
+    }
+
+    @Override // org.telegram.ui.ActionBar.m2
+    public final boolean isSwipeBackEnabled(MotionEvent motionEvent) {
+        return this.w;
+    }
+
+    public final void l0(TLRPC.User user) {
+        if (user == null) {
+            return;
+        }
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
+        String string = LocaleController.getString(R.string.BlockUser);
+        org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
+        a2Var.R = string;
+        a2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString("AreYouSureBlockContact2", R.string.AreYouSureBlockContact2, ContactsController.formatName(user.first_name, user.last_name)));
+        alertDialog$Builder.k(LocaleController.getString(R.string.BlockContact), new org.telegram.ui.Components.w2(26, this, user));
+        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
+        showDialog(a2Var);
+        TextView textView = (TextView) a2Var.d(-1);
+        if (textView != null) {
+            textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.q7, false));
+        }
+    }
+
+    public final void m0(boolean z10) {
+        iv[] ivVarArr = this.f;
+        for (int i10 = 0; i10 < ivVarArr.length; i10++) {
+            ivVarArr[i10].d.B0();
+            ai.w0 w0Var = ivVarArr[i10].e;
+            if (w0Var != null) {
+                w0Var.B0();
+            }
+        }
+        int i11 = 0;
+        while (i11 < 2) {
+            org.telegram.ui.Components.wl0 wl0Var = i11 == 0 ? ivVarArr[z10 ? 1 : 0].d : ivVarArr[z10 ? 1 : 0].e;
+            if (wl0Var != null) {
+                wl0Var.getAdapter();
+                wl0Var.setPinnedHeaderShadowDrawable(null);
+                if (this.actionBar.getTranslationY() != 0.0f) {
+                    ((s4.c0) wl0Var.getLayoutManager()).h1(0, (int) this.actionBar.getTranslationY());
+                }
+            }
+            i11++;
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.m2
+    public final void onFragmentDestroy() {
+        qy qyVar = this.a;
+        if (qyVar != null) {
+            qyVar.onFragmentDestroy();
+        }
+        ContactsActivity contactsActivity = this.b;
+        if (contactsActivity != null) {
+            contactsActivity.onFragmentDestroy();
+        }
+        super.onFragmentDestroy();
+    }
+
+    @Override // org.telegram.ui.ActionBar.m2
+    public final void onPause() {
+        super.onPause();
+        qy qyVar = this.a;
+        if (qyVar != null) {
+            qyVar.onPause();
+        }
+        ContactsActivity contactsActivity = this.b;
+        if (contactsActivity != null) {
+            contactsActivity.onPause();
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.m2
+    public final void onResume() {
+        super.onResume();
+        qy qyVar = this.a;
+        if (qyVar != null) {
+            qyVar.onResume();
+        }
+        ContactsActivity contactsActivity = this.b;
+        if (contactsActivity != null) {
+            contactsActivity.onResume();
         }
     }
 }

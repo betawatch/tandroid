@@ -14,13 +14,13 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.SubMenu;
 import java.io.IOException;
-import l.n;
+import l.o;
 import m.l1;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
-import v7.v7;
+import v7.w7;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class h extends MenuInflater {
     public static final Class[] e;
@@ -94,8 +94,8 @@ public final class h extends MenuInflater {
                         gVar.g = true;
                     } else if (name2.equals("item")) {
                         if (!gVar.h) {
-                            n nVar = gVar.z;
-                            if (nVar == null || !nVar.a.hasSubMenu()) {
+                            o oVar = gVar.z;
+                            if (oVar == null || !oVar.a.hasSubMenu()) {
                                 gVar.h = true;
                                 gVar.b(menu2.add(gVar.b, gVar.i, gVar.j, gVar.k));
                             } else {
@@ -156,7 +156,7 @@ public final class h extends MenuInflater {
                             String string3 = obtainStyledAttributes2.getString(14);
                             boolean z12 = string3 != null;
                             if (z12 && gVar.w == 0 && gVar.x == null) {
-                                gVar.z = (n) gVar.a(string3, f, this.b);
+                                gVar.z = (o) gVar.a(string3, f, this.b);
                             } else {
                                 if (z12) {
                                     Log.w("SupportMenuInflater", "Ignoring attribute 'actionProviderClass'. Action view already specified.");
@@ -171,7 +171,7 @@ public final class h extends MenuInflater {
                                 gVar.D = null;
                             }
                             if (obtainStyledAttributes2.hasValue(18)) {
-                                if (!obtainStyledAttributes2.hasValue(18) || (resourceId = obtainStyledAttributes2.getResourceId(18, 0)) == 0 || (colorStateList = v7.a(context, resourceId)) == null) {
+                                if (!obtainStyledAttributes2.hasValue(18) || (resourceId = obtainStyledAttributes2.getResourceId(18, 0)) == 0 || (colorStateList = w7.a(context, resourceId)) == null) {
                                     colorStateList = obtainStyledAttributes2.getColorStateList(18);
                                 }
                                 gVar.C = colorStateList;
@@ -205,7 +205,7 @@ public final class h extends MenuInflater {
 
     @Override // android.view.MenuInflater
     public final void inflate(int i10, Menu menu) {
-        if (!(menu instanceof l.k)) {
+        if (!(menu instanceof l.l)) {
             super.inflate(i10, menu);
             return;
         }

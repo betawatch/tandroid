@@ -17,7 +17,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class NotificationCenter {
     private static final long EXPIRE_NOTIFICATIONS_TIME = 5017;
@@ -389,7 +389,7 @@ public class NotificationCenter {
     private final SparseArray<AllowedNotifications> allowedNotifications = new SparseArray<>();
     SparseArray<Runnable> alreadyPostedRunnubles = new SparseArray<>();
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class AllowedNotifications {
         int[] allowedIds;
         final long time;
@@ -399,7 +399,7 @@ public class NotificationCenter {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class DelayedPost {
         private Object[] args;
         private int id;
@@ -410,12 +410,12 @@ public class NotificationCenter {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public interface NotificationCenterDelegate {
         void didReceivedNotification(int i10, int i11, Object... objArr);
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public interface ObserversGroup {
         ObserversGroup add(int i10);
 
@@ -424,7 +424,7 @@ public class NotificationCenter {
         void removeAllObservers();
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static final class ObserversGroupImpl implements ObserversGroup {
         private NotificationCenterDelegate delegate;
         private ObserversGroupImpl globalGroup;
@@ -484,9 +484,9 @@ public class NotificationCenter {
                 } else if (i11 < lVar.b) {
                     notificationCenter.removeObserver(notificationCenterDelegate, lVar.a[i11]);
                 }
-                StringBuilder l4 = hg.c.l(i11, "Index ", " must be in 0..");
-                l4.append(lVar.b - 1);
-                throw new IndexOutOfBoundsException(l4.toString());
+                StringBuilder j3 = hg.c.j(i11, "Index ", " must be in 0..");
+                j3.append(lVar.b - 1);
+                throw new IndexOutOfBoundsException(j3.toString());
             }
             this.ids.b = 0;
             this.notificationCenter = null;
@@ -502,12 +502,12 @@ public class NotificationCenter {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public interface PostponeNotificationCallback {
         boolean needPostpone(int i10, int i11, Object[] objArr);
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static final class WeakObserversGroupImpl implements ObserversGroup, NotificationCenterDelegate {
         private final ObserversGroupImpl observersGroup;
         private final WeakReference<NotificationCenterDelegate> reference;
@@ -933,7 +933,7 @@ public class NotificationCenter {
             return;
         }
         alreadyLogged = true;
-        FileLog.e((Throwable) new RuntimeException(hg.c.i(i10, "Total observers more than 1000, need check for memory leak. ")), true);
+        FileLog.e((Throwable) new RuntimeException(hg.c.h(i10, "Total observers more than 1000, need check for memory leak. ")), true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -978,18 +978,18 @@ public class NotificationCenter {
             if (intValue2 == -1) {
                 Log.i("ObserverDiff", "key=" + keyAt + " REMOVED (was " + intValue + ")");
             } else if (intValue != intValue2) {
-                StringBuilder m10 = hg.c.m("key=", keyAt, " CHANGED: ", intValue, " -> ");
-                m10.append(intValue2);
-                Log.i("ObserverDiff", m10.toString());
+                StringBuilder k10 = hg.c.k("key=", keyAt, " CHANGED: ", intValue, " -> ");
+                k10.append(intValue2);
+                Log.i("ObserverDiff", k10.toString());
             }
         }
         for (int i11 = 0; i11 < sparseArray2.size(); i11++) {
             int keyAt2 = sparseArray2.keyAt(i11);
             if (sparseArray.get(keyAt2, -1).intValue() == -1) {
-                StringBuilder l4 = hg.c.l(keyAt2, "key=", " ADDED (size=");
-                l4.append(sparseArray2.valueAt(i11));
-                l4.append(")");
-                Log.i("ObserverDiff", l4.toString());
+                StringBuilder j3 = hg.c.j(keyAt2, "key=", " ADDED (size=");
+                j3.append(sparseArray2.valueAt(i11));
+                j3.append(")");
+                Log.i("ObserverDiff", j3.toString());
             }
         }
     }
@@ -1114,12 +1114,12 @@ public class NotificationCenter {
                             FileLog.e("MEMORY_LEAK observer " + keyAt + " with View with destroyed Context");
                             valueAt.remove(size);
                         }
-                    } else if (obj instanceof org.telegram.ui.ActionBar.n2) {
-                        if (((org.telegram.ui.ActionBar.n2) obj).isFinished) {
+                    } else if (obj instanceof org.telegram.ui.ActionBar.m2) {
+                        if (((org.telegram.ui.ActionBar.m2) obj).isFinished) {
                             FileLog.e("MEMORY_LEAK observer " + keyAt + " with destroyed BaseFragment");
                             valueAt.remove(size);
                         }
-                    } else if ((obj instanceof org.telegram.ui.ActionBar.f3) && ((org.telegram.ui.ActionBar.f3) obj).isDismissed()) {
+                    } else if ((obj instanceof org.telegram.ui.ActionBar.e3) && ((org.telegram.ui.ActionBar.e3) obj).isDismissed()) {
                         FileLog.e("MEMORY_LEAK observer " + keyAt + " with destroyed BottomSheet");
                         valueAt.remove(size);
                     }
@@ -1426,7 +1426,7 @@ public class NotificationCenter {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public class UniqArrayList<T> extends ArrayList<T> {
         HashSet<T> set;
 

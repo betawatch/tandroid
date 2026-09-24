@@ -7,19 +7,19 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class vb1 extends org.telegram.ui.Cells.ra {
+public final class vb1 extends org.telegram.ui.Cells.pa {
     public final /* synthetic */ int j3 = 1;
     public final /* synthetic */ Object k3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vb1(Context context, org.telegram.ui.ActionBar.n2 n2Var, ArrayList arrayList, ArrayList arrayList2, org.telegram.ui.ActionBar.a3 a3Var) {
-        super(context, n2Var, 2, arrayList, arrayList2);
-        this.k3 = a3Var;
+    public vb1(Context context, org.telegram.ui.ActionBar.m2 m2Var, ArrayList arrayList, ArrayList arrayList2, org.telegram.ui.ActionBar.z2 z2Var) {
+        super(context, m2Var, 2, arrayList, arrayList2);
+        this.k3 = z2Var;
     }
 
-    @Override // org.telegram.ui.Cells.ra
+    @Override // org.telegram.ui.Cells.pa
     public final void A1() {
         Runnable runnable;
         switch (this.j3) {
@@ -27,13 +27,13 @@ public final class vb1 extends org.telegram.ui.Cells.ra {
                 ((yb1) this.k3).e.A0(false);
                 break;
             default:
-                runnable = ((org.telegram.ui.ActionBar.a3) this.k3).a.dismissRunnable;
+                runnable = ((org.telegram.ui.ActionBar.z2) this.k3).a.dismissRunnable;
                 runnable.run();
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Cells.ra
+    @Override // org.telegram.ui.Cells.pa
     public void z1(org.telegram.ui.ActionBar.g6 g6Var) {
         CharSequence[] charSequenceArr;
         boolean z10;
@@ -62,14 +62,14 @@ public final class vb1 extends org.telegram.ui.Cells.ra {
                             z10 = z12;
                             iArr = new int[]{R.drawable.msg_share, R.drawable.msg_shareout, R.drawable.msg_edit, R.drawable.msg_link, R.drawable.msg_delete};
                         }
-                        lg.j jVar = new lg.j(12, yb1Var, g6Var);
-                        org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-                        b2Var.P = charSequenceArr;
-                        b2Var.Q = iArr;
-                        b2Var.M = jVar;
-                        themeActivity.showDialog(b2Var);
+                        lg.j jVar = new lg.j(13, yb1Var, g6Var);
+                        org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
+                        a2Var.P = charSequenceArr;
+                        a2Var.Q = iArr;
+                        a2Var.M = jVar;
+                        themeActivity.showDialog(a2Var);
                         if (z10) {
-                            b2Var.l(b2Var.N0.size() - 1, org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.q7, false), org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.p7, false));
+                            a2Var.l(a2Var.N0.size() - 1, org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.q7, false), org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.p7, false));
                             break;
                         }
                     }
@@ -79,8 +79,8 @@ public final class vb1 extends org.telegram.ui.Cells.ra {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vb1(yb1 yb1Var, Context context, org.telegram.ui.ActionBar.n2 n2Var, int i10, ArrayList arrayList, ArrayList arrayList2) {
-        super(context, n2Var, i10, arrayList, arrayList2);
+    public vb1(yb1 yb1Var, Context context, org.telegram.ui.ActionBar.m2 m2Var, int i10, ArrayList arrayList, ArrayList arrayList2) {
+        super(context, m2Var, i10, arrayList, arrayList2);
         this.k3 = yb1Var;
     }
 }

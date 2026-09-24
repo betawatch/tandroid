@@ -1,37 +1,147 @@
 package yh;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.graphics.Rect;
+import android.view.KeyEvent;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public final class t3 extends AnimatorListenerAdapter {
-    public final /* synthetic */ v3 a;
+public final class t3 extends FrameLayout {
+    public final /* synthetic */ int a = 0;
+    public Object b;
+    public Object c;
 
-    public t3(v3 v3Var) {
-        this.a = v3Var;
+    public /* synthetic */ t3(Context context) {
+        super(context);
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        v3 v3Var = this.a;
-        w2 w2Var = v3Var.i0;
-        v3Var.s0 = v3Var.r0;
-        v3Var.d(v3Var.U);
-        TL_stars.starGiftAttributeModel[] stargiftattributemodelArr = v3Var.e;
-        int i10 = 2 - v3Var.r0;
-        stargiftattributemodelArr[i10] = (TL_stars.starGiftAttributeModel) v3Var.W.f;
-        w7.Z0(v3Var.d[i10].getImageReceiver(), stargiftattributemodelArr[2 - v3Var.r0].document, 160);
-        TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) v3Var.a0.f;
-        if (stargiftattributepattern != null) {
-            org.telegram.ui.Components.q5 m10 = org.telegram.ui.Components.q5.m(UserConfig.selectedAccount, 7, stargiftattributepattern.document);
-            m10.m = true;
-            m10.v();
+    public void b(int i10, CharSequence charSequence, boolean z10) {
+        ImageView imageView = (ImageView) this.b;
+        if (z10) {
+            AndroidUtilities.updateImageViewImageAnimated(imageView, i10);
+        } else {
+            imageView.setImageResource(i10);
         }
-        AndroidUtilities.cancelRunOnUIThread(w2Var);
-        AndroidUtilities.runOnUIThread(w2Var, 2500L);
+        ((TextView) this.c).setText(charSequence);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public boolean dispatchKeyEvent(KeyEvent keyEvent) {
+        switch (this.a) {
+            case 2:
+                if (keyEvent.getAction() != 1 || keyEvent.getKeyCode() != 4) {
+                    return super.dispatchKeyEvent(keyEvent);
+                }
+                zg.b0 b0Var = (zg.b0) this.c;
+                if (!b0Var.k) {
+                    return true;
+                }
+                b0Var.d();
+                return true;
+            default:
+                return super.dispatchKeyEvent(keyEvent);
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public void dispatchSetPressed(boolean z10) {
+        switch (this.a) {
+            case 2:
+                break;
+            default:
+                super.dispatchSetPressed(z10);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public boolean fitSystemWindows(Rect rect) {
+        switch (this.a) {
+            case 2:
+                zg.b0 b0Var = (zg.b0) this.c;
+                float f7 = b0Var.u;
+                float f10 = rect.bottom;
+                if (f7 != f10 && b0Var.v) {
+                    b0Var.u = f10;
+                    t3 t3Var = b0Var.c;
+                    zg.a0 a0Var = b0Var.a;
+                    if (!b0Var.q) {
+                        float f11 = b0Var.t;
+                        int dp = AndroidUtilities.dp(32.0f);
+                        int i10 = b0Var.y;
+                        if (i10 == 1 || i10 == 2) {
+                            dp = AndroidUtilities.dp(24.0f);
+                        }
+                        float f12 = dp;
+                        if (a0Var.getMeasuredHeight() + f11 > (t3Var.getMeasuredHeight() - b0Var.u) - f12) {
+                            f11 = ((t3Var.getMeasuredHeight() - b0Var.u) - a0Var.getMeasuredHeight()) - f12;
+                        }
+                        if (f11 < 0.0f) {
+                            f11 = 0.0f;
+                        }
+                        a0Var.animate().translationY(f11).setDuration(250L).setUpdateListener(new zg.v(b0Var, 1)).setInterpolator(rr.f).start();
+                    }
+                }
+                return super.fitSystemWindows(rect);
+            default:
+                return super.fitSystemWindows(rect);
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public void onAttachedToWindow() {
+        switch (this.a) {
+            case 1:
+                super.onAttachedToWindow();
+                ((zg.n) this.b).c();
+                break;
+            case 2:
+                super.onAttachedToWindow();
+                qc.a(this, (ai.w4) this.b);
+                break;
+            default:
+                super.onAttachedToWindow();
+                break;
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public void onDetachedFromWindow() {
+        switch (this.a) {
+            case 1:
+                super.onDetachedFromWindow();
+                ((zg.n) this.b).d();
+                break;
+            case 2:
+                super.onDetachedFromWindow();
+                qc.h(this);
+                break;
+            default:
+                super.onDetachedFromWindow();
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public t3(zg.b0 b0Var, Context context) {
+        super(context);
+        this.c = b0Var;
+        this.b = new ai.w4(this, 11);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public t3(zg.q qVar, Context context) {
+        super(context);
+        this.c = qVar;
+        this.b = new zg.n(this, this);
+    }
+
+    private final void a(boolean z10) {
     }
 }

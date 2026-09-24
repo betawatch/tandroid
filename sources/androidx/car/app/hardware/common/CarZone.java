@@ -1,10 +1,10 @@
 package androidx.car.app.hardware.common;
 
 import j$.util.Objects;
-import org.telegram.ui.Cells.q3;
+import org.telegram.ui.Cells.c1;
 import r.b;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class CarZone {
     public static final int CAR_ZONE_COLUMN_ALL = 16;
@@ -69,7 +69,7 @@ public final class CarZone {
         } else if (i11 == 96) {
             str = "CAR_ZONE_COLUMN_PASSENGER";
         }
-        return q3.j("[CarZone row value: ", str2, ", column value: ", str, "]");
+        return c1.k("[CarZone row value: ", str2, ", column value: ", str, "]");
     }
 
     private CarZone() {

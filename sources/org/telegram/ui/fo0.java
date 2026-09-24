@@ -1,28 +1,73 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class fo0 {
-    public final /* synthetic */ qo0 a;
+public final class fo0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ oo0 c;
 
-    public fo0(qo0 qo0Var) {
-        this.a = qo0Var;
+    public /* synthetic */ fo0(oo0 oo0Var, boolean z10, int i10) {
+        this.a = i10;
+        this.c = oo0Var;
+        this.b = z10;
     }
 
-    public final void a(Exception exc) {
-        qo0 qo0Var = this.a;
-        if (qo0Var.Q0) {
-            return;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 0:
+                oo0 oo0Var = this.c;
+                AnimatorSet animatorSet = oo0Var.v;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    oo0Var.v = null;
+                    break;
+                }
+                break;
+            default:
+                oo0 oo0Var2 = this.c;
+                AnimatorSet animatorSet2 = oo0Var2.v;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    oo0Var2.v = null;
+                    break;
+                }
+                break;
         }
-        qo0Var.H0(true, false);
-        qo0Var.D0(false);
-        if ((exc instanceof tc.a) || (exc instanceof tc.b)) {
-            org.telegram.ui.Components.e5.w0(qo0Var, LocaleController.getString(R.string.PaymentConnectionFailed));
-        } else {
-            org.telegram.ui.Components.e5.w0(qo0Var, exc.getMessage());
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                oo0 oo0Var = this.c;
+                AnimatorSet animatorSet = oo0Var.v;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    if (!this.b) {
+                        oo0Var.r.setVisibility(4);
+                        break;
+                    } else {
+                        oo0Var.n.getContentView().setVisibility(4);
+                        break;
+                    }
+                }
+                break;
+            default:
+                oo0 oo0Var2 = this.c;
+                AnimatorSet animatorSet2 = oo0Var2.v;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    if (!this.b) {
+                        oo0Var2.s.setVisibility(4);
+                        break;
+                    } else {
+                        oo0Var2.U.setVisibility(4);
+                        break;
+                    }
+                }
+                break;
         }
     }
 }

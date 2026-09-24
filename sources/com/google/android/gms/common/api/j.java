@@ -17,7 +17,7 @@ import com.google.android.gms.tasks.TaskCompletionSource;
 import java.util.Collections;
 import java.util.Set;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public abstract class j {
     public final Context a;
@@ -35,17 +35,17 @@ public abstract class j {
         this(context, eVar, aVar, new i(tVar, Looper.getMainLooper()));
     }
 
-    public final lf.i a() {
-        lf.i iVar = new lf.i(6, false);
+    public final la.h a() {
+        la.h hVar = new la.h(7, false);
         Set set = Collections.EMPTY_SET;
-        if (((a0.g) iVar.b) == null) {
-            iVar.b = new a0.g(0);
+        if (((a0.g) hVar.b) == null) {
+            hVar.b = new a0.g(0);
         }
-        ((a0.g) iVar.b).addAll(set);
+        ((a0.g) hVar.b).addAll(set);
         Context context = this.a;
-        iVar.d = context.getClass().getName();
-        iVar.c = context.getPackageName();
-        return iVar;
+        hVar.d = context.getClass().getName();
+        hVar.c = context.getPackageName();
+        return hVar;
     }
 
     public final Task b(g1 g1Var) {

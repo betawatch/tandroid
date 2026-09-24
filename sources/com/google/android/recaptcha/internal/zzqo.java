@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 final class zzqo extends zzqq {
     private final InputStream zzf;
@@ -78,7 +78,7 @@ final class zzqo extends zzqq {
         int i12 = i11 + i10;
         int i13 = this.zzh;
         if (i12 <= i13) {
-            throw new IllegalStateException(c.j(i10, "refillBuffer() called when ", " bytes were already available in buffer"));
+            throw new IllegalStateException(c.i(i10, "refillBuffer() called when ", " bytes were already available in buffer"));
         }
         int i14 = this.zzl;
         if (i10 > (ConnectionsManager.DEFAULT_DATACENTER_ID - i14) - i11 || i14 + i11 + i10 > this.zzm) {

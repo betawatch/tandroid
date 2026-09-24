@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.SendMessagesHelper;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class ji implements gk {
     public final /* synthetic */ wi a;
@@ -32,8 +32,8 @@ public final class ji implements gk {
             ((gk) obj).k(arrayList, str, arrayList2, arrayList3, z10, i10, j3, z11, j10);
             return;
         }
-        if (obj instanceof org.telegram.ui.in0) {
-            org.telegram.ui.in0 in0Var = (org.telegram.ui.in0) obj;
+        if (obj instanceof org.telegram.ui.gn0) {
+            org.telegram.ui.gn0 gn0Var = (org.telegram.ui.gn0) obj;
             ArrayList arrayList4 = new ArrayList();
             int size = arrayList.size();
             for (int i11 = 0; i11 < size; i11++) {
@@ -41,7 +41,7 @@ public final class ji implements gk {
                 sendingMediaInfo.path = (String) arrayList.get(i11);
                 arrayList4.add(sendingMediaInfo);
             }
-            in0Var.G1(arrayList4);
+            gn0Var.G1(arrayList4);
         }
     }
 
@@ -53,11 +53,11 @@ public final class ji implements gk {
             gkVar.l(j3, arrayList, z10, i10);
             return;
         }
-        org.telegram.ui.ActionBar.n2 n2Var = wiVar.f0;
-        if (n2Var instanceof org.telegram.ui.xn) {
-            ((org.telegram.ui.xn) n2Var).l(j3, arrayList, z10, i10);
-        } else if (n2Var instanceof org.telegram.ui.in0) {
-            ((org.telegram.ui.in0) n2Var).G1(arrayList);
+        org.telegram.ui.ActionBar.m2 m2Var = wiVar.f0;
+        if (m2Var instanceof org.telegram.ui.wn) {
+            ((org.telegram.ui.wn) m2Var).l(j3, arrayList, z10, i10);
+        } else if (m2Var instanceof org.telegram.ui.gn0) {
+            ((org.telegram.ui.gn0) m2Var).G1(arrayList);
         }
     }
 
@@ -74,14 +74,14 @@ public final class ji implements gk {
             ((gk) obj).w();
             return;
         }
-        if (obj instanceof org.telegram.ui.in0) {
-            org.telegram.ui.in0 in0Var = (org.telegram.ui.in0) obj;
-            in0Var.getClass();
+        if (obj instanceof org.telegram.ui.gn0) {
+            org.telegram.ui.gn0 gn0Var = (org.telegram.ui.gn0) obj;
+            gn0Var.getClass();
             try {
                 Intent intent = new Intent("android.intent.action.GET_CONTENT");
                 intent.putExtra("android.intent.extra.ALLOW_MULTIPLE", true);
                 intent.setType("*/*");
-                in0Var.startActivityForResult(intent, 21);
+                gn0Var.startActivityForResult(intent, 21);
             } catch (Exception e) {
                 FileLog.e(e);
             }

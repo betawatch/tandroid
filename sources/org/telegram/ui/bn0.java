@@ -1,52 +1,26 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
+import java.util.TimerTask;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class bn0 extends TextView {
-    public final /* synthetic */ int a;
+public final class bn0 extends TimerTask {
+    public final /* synthetic */ cn0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ bn0(Context context, int i10) {
-        super(context);
-        this.a = i10;
+    public bn0(cn0 cn0Var) {
+        this.a = cn0Var;
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public CharSequence getAccessibilityClassName() {
-        switch (this.a) {
-            case 3:
-                return Button.class.getName();
-            default:
-                return super.getAccessibilityClassName();
+    @Override // java.util.TimerTask, java.lang.Runnable
+    public final void run() {
+        cn0 cn0Var = this.a;
+        if (cn0Var.v == null) {
+            return;
         }
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.a) {
-            case 0:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31));
-                break;
-            case 1:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31));
-                break;
-            case 2:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(AndroidUtilities.dp(26.0f)), TLObject.FLAG_30));
-                break;
-            case 3:
-            default:
-                super.onMeasure(i10, i11);
-                break;
-            case 4:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), TLObject.FLAG_30));
-                break;
-        }
+        double currentTimeMillis = System.currentTimeMillis();
+        cn0Var.y = (int) (cn0Var.y - (currentTimeMillis - cn0Var.F));
+        cn0Var.F = currentTimeMillis;
+        AndroidUtilities.runOnUIThread(new il0(this, 6));
     }
 }

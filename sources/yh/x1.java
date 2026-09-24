@@ -5,15 +5,15 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x1 implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ y3 b;
+    public final /* synthetic */ x3 b;
 
-    public /* synthetic */ x1(y3 y3Var, int i10) {
+    public /* synthetic */ x1(x3 x3Var, int i10) {
         this.a = i10;
-        this.b = y3Var;
+        this.b = x3Var;
     }
 
     @Override // org.telegram.messenger.Utilities.Callback
@@ -21,22 +21,22 @@ public final /* synthetic */ class x1 implements Utilities.Callback {
         TLRPC.Message message;
         switch (this.a) {
             case 0:
-                y3 y3Var = this.b;
-                y3Var.getClass();
+                x3 x3Var = this.b;
+                x3Var.getClass();
                 if (((Boolean) obj).booleanValue()) {
-                    y3Var.skipDismissAnimation();
+                    x3Var.skipDismissAnimation();
                 }
-                y3Var.dismiss();
+                x3Var.dismiss();
                 break;
             case 1:
                 TL_stars.starGiftUpgradePreview stargiftupgradepreview = (TL_stars.starGiftUpgradePreview) obj;
-                y3 y3Var2 = this.b;
-                y3Var2.getClass();
+                x3 x3Var2 = this.b;
+                x3Var2.getClass();
                 if (stargiftupgradepreview != null) {
-                    y3Var2.h1 = stargiftupgradepreview.sample_attributes;
-                    y3Var2.i1 = stargiftupgradepreview.prices;
-                    y3Var2.j1 = stargiftupgradepreview.next_prices;
-                    y3Var2.b2();
+                    x3Var2.h1 = stargiftupgradepreview.sample_attributes;
+                    x3Var2.i1 = stargiftupgradepreview.prices;
+                    x3Var2.j1 = stargiftupgradepreview.next_prices;
+                    x3Var2.b2();
                     break;
                 }
                 break;
@@ -45,12 +45,12 @@ public final /* synthetic */ class x1 implements Utilities.Callback {
                 break;
             default:
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj;
-                y3 y3Var3 = this.b;
-                y3Var3.K0 = false;
-                y3Var3.L0 = true;
+                x3 x3Var3 = this.b;
+                x3Var3.K0 = false;
+                x3Var3.L0 = true;
                 if (savedStarGift != null) {
-                    y3Var3.f1 = Boolean.valueOf(savedStarGift.unsaved);
-                    MessageObject messageObject = y3Var3.E0;
+                    x3Var3.f1 = Boolean.valueOf(savedStarGift.unsaved);
+                    MessageObject messageObject = x3Var3.E0;
                     if (messageObject != null && (message = messageObject.messageOwner) != null) {
                         TLRPC.MessageAction messageAction = message.action;
                         if (messageAction instanceof TLRPC.TL_messageActionStarGiftUnique) {
@@ -68,7 +68,7 @@ public final /* synthetic */ class x1 implements Utilities.Callback {
                                 tL_messageActionStarGift.saved = z13;
                             }
                         }
-                        y3Var3.i2(messageObject, null);
+                        x3Var3.i2(messageObject, null);
                         break;
                     }
                 }

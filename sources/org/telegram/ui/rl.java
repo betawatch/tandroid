@@ -1,31 +1,50 @@
 package org.telegram.ui;
 
-import android.graphics.Bitmap;
 import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MediaController;
 import org.telegram.messenger.VideoEditedInfo;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class rl extends mu0 {
-    public final /* synthetic */ Bitmap a;
-    public final /* synthetic */ ArrayList b;
-    public final /* synthetic */ xn c;
+public final class rl extends lu0 {
+    public final /* synthetic */ ArrayList a;
+    public final /* synthetic */ boolean[] b;
+    public final /* synthetic */ wn c;
 
-    public rl(xn xnVar, Bitmap bitmap, ArrayList arrayList) {
-        this.c = xnVar;
-        this.a = bitmap;
-        this.b = arrayList;
+    public rl(wn wnVar, ArrayList arrayList, boolean[] zArr) {
+        this.c = wnVar;
+        this.a = arrayList;
+        this.b = zArr;
     }
 
-    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
+    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
+    public final boolean S() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
     public final ImageReceiver.BitmapHolder j(int i10) {
-        return new ImageReceiver.BitmapHolder(this.a, (String) null, 0);
+        return null;
     }
 
-    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
+    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
     public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
-        this.c.q((MediaController.PhotoEntry) this.b.get(0), videoEditedInfo, z10, i11, 0, z11, 0L);
+        ArrayList arrayList = this.a;
+        for (int size = arrayList.size() - 1; size >= 0; size--) {
+            if (!this.b[size]) {
+                arrayList.remove(size);
+            }
+        }
+        this.c.eb(arrayList, i11, z10, z11);
+    }
+
+    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
+    public final boolean x(int i10) {
+        return this.b[i10];
+    }
+
+    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
+    public final int k(int i10, VideoEditedInfo videoEditedInfo) {
+        return i10;
     }
 }

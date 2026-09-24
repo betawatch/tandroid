@@ -1,90 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.app.Dialog;
-import android.os.Bundle;
-import android.view.KeyEvent;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.FrameLayout;
-import java.util.WeakHashMap;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.R;
-import org.telegram.ui.LaunchActivity;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class ud0 extends Dialog {
-    public final FrameLayout a;
-    public final td0 b;
+public final class ud0 extends v7.p {
+    public final /* synthetic */ ce0 a;
 
-    public ud0(LaunchActivity launchActivity) {
-        super(launchActivity, R.style.TransparentDialog);
-        AndroidUtilities.enableEdgeToEdge(getWindow());
-        FrameLayout frameLayout = new FrameLayout(launchActivity);
-        this.a = frameLayout;
-        xc0 xc0Var = new xc0(7);
-        WeakHashMap weakHashMap = r0.i0.a;
-        r0.a0.j(frameLayout, xc0Var);
-        td0 td0Var = new td0(this, launchActivity);
-        this.b = td0Var;
-        frameLayout.addView(td0Var, w7.x5.e(-1, -1, 119));
+    public ud0(ce0 ce0Var) {
+        this.a = ce0Var;
     }
 
-    @Override // android.app.Dialog, android.content.DialogInterface
-    public final void dismiss() {
-        LaunchActivity launchActivity;
-        if (!this.b.g() || (launchActivity = LaunchActivity.G1) == null) {
-            return;
-        }
-        launchActivity.moveTaskToBack(true);
+    @Override // v7.p
+    public final void a(int i10, CharSequence charSequence) {
+        FileLog.d("PasscodeView onAuthenticationError " + i10 + " \"" + ((Object) charSequence) + "\"");
+        this.a.m(true);
     }
 
-    @Override // android.app.Dialog, android.view.Window.Callback
-    public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
-        LaunchActivity launchActivity;
-        if (keyEvent.getKeyCode() != 4 || keyEvent.getRepeatCount() != 0) {
-            return super.dispatchKeyEvent(keyEvent);
-        }
-        if (this.b.g() && (launchActivity = LaunchActivity.G1) != null) {
-            launchActivity.moveTaskToBack(true);
-        }
-        return true;
+    @Override // v7.p
+    public final void b() {
+        FileLog.d("PasscodeView onAuthenticationFailed");
+        this.a.m(true);
     }
 
-    @Override // android.app.Dialog
-    public final void onBackPressed() {
-        LaunchActivity launchActivity;
-        if (!this.b.g() || (launchActivity = LaunchActivity.G1) == null) {
-            return;
-        }
-        launchActivity.moveTaskToBack(true);
-    }
-
-    @Override // android.app.Dialog
-    public final void onCreate(Bundle bundle) {
-        super.onCreate(bundle);
-        Window window = getWindow();
-        window.setWindowAnimations(R.style.DialogNoAnimation);
-        ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(-1, -1);
-        FrameLayout frameLayout = this.a;
-        setContentView(frameLayout, layoutParams);
-        WindowManager.LayoutParams attributes = window.getAttributes();
-        attributes.width = -1;
-        attributes.height = -1;
-        attributes.gravity = 119;
-        attributes.dimAmount = 0.0f;
-        int i10 = attributes.flags & (-3);
-        attributes.flags = i10;
-        attributes.softInputMode = 16;
-        if (!BuildVars.DEBUG_PRIVATE_VERSION) {
-            attributes.flags = i10 | 8192;
-            AndroidUtilities.logFlagSecure();
-        }
-        attributes.flags |= -2013198976;
-        window.setAttributes(attributes);
-        frameLayout.setSystemUiVisibility(256);
-        AndroidUtilities.setLightNavigationBar((Dialog) this, false);
+    @Override // v7.p
+    public final void c(androidx.biometric.s sVar) {
+        FileLog.d("PasscodeView onAuthenticationSucceeded");
+        this.a.k(true);
     }
 }

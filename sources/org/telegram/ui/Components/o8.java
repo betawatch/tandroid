@@ -9,25 +9,25 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class o8 {
     public final ActionBarPopupWindow$ActionBarPopupWindowLayout a;
-    public final org.telegram.ui.ActionBar.f1 b;
+    public final org.telegram.ui.ActionBar.e1 b;
     public final n8 c;
     public long d;
-    public final d90 e;
+    public final n90 e;
 
-    public o8(Context context, vg0 vg0Var, final n8 n8Var, boolean z10, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
+    public o8(Context context, fh0 fh0Var, final n8 n8Var, boolean z10, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(z10 ? R.drawable.popup_fixed_alert : 0, 0, context, d6Var);
         this.a = actionBarPopupWindow$ActionBarPopupWindowLayout;
         actionBarPopupWindow$ActionBarPopupWindowLayout.setFitItems(true);
         this.c = n8Var;
-        if (vg0Var != null) {
-            org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_arrow_back, LocaleController.getString(R.string.Back), false, d6Var).setOnClickListener(new l8(vg0Var, 0));
+        if (fh0Var != null) {
+            org.telegram.ui.ActionBar.u0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_arrow_back, LocaleController.getString(R.string.Back), false, d6Var).setOnClickListener(new l8(fh0Var, 0));
         }
         final int i11 = 0;
-        org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_autodelete_1d, LocaleController.getString(R.string.AutoDelete1Day), false, d6Var).setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.m8
+        org.telegram.ui.ActionBar.u0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_autodelete_1d, LocaleController.getString(R.string.AutoDelete1Day), false, d6Var).setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.m8
             public final /* synthetic */ o8 b;
 
             {
@@ -57,7 +57,7 @@ public final class o8 {
             }
         });
         final int i12 = 1;
-        org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_autodelete_1w, LocaleController.getString(R.string.AutoDelete7Days), false, d6Var).setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.m8
+        org.telegram.ui.ActionBar.u0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_autodelete_1w, LocaleController.getString(R.string.AutoDelete7Days), false, d6Var).setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.m8
             public final /* synthetic */ o8 b;
 
             {
@@ -87,7 +87,7 @@ public final class o8 {
             }
         });
         final int i13 = 2;
-        org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_autodelete_1m, LocaleController.getString(R.string.AutoDelete1Month), false, d6Var).setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.m8
+        org.telegram.ui.ActionBar.u0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_autodelete_1m, LocaleController.getString(R.string.AutoDelete1Month), false, d6Var).setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.m8
             public final /* synthetic */ o8 b;
 
             {
@@ -116,8 +116,8 @@ public final class o8 {
                 }
             }
         });
-        org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_customize, i10 == 1 ? LocaleController.getString(R.string.AutoDeleteCustom2) : LocaleController.getString(R.string.AutoDeleteCustom), false, d6Var).setOnClickListener(new ai.o5(this, context, i10, d6Var, n8Var));
-        org.telegram.ui.ActionBar.f1 c10 = org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_disable, LocaleController.getString(R.string.AutoDeleteDisable), false, d6Var);
+        org.telegram.ui.ActionBar.u0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_customize, i10 == 1 ? LocaleController.getString(R.string.AutoDeleteCustom2) : LocaleController.getString(R.string.AutoDeleteCustom), false, d6Var).setOnClickListener(new ai.o5(this, context, i10, d6Var, n8Var));
+        org.telegram.ui.ActionBar.e1 c10 = org.telegram.ui.ActionBar.u0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_disable, LocaleController.getString(R.string.AutoDeleteDisable), false, d6Var);
         this.b = c10;
         final int i14 = 3;
         c10.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.m8
@@ -158,19 +158,19 @@ public final class o8 {
             frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.H8, d6Var));
             View view = new View(context);
             view.setBackground(org.telegram.ui.ActionBar.h6.U0(context, R.drawable.greydivider, org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.b7, d6Var)));
-            frameLayout.addView(view, w7.x5.c(-1.0f, -1));
+            frameLayout.addView(view, w7.y5.c(-1.0f, -1));
             frameLayout.setTag(R.id.fit_width_tag, 1);
-            actionBarPopupWindow$ActionBarPopupWindowLayout.a(frameLayout, w7.x5.n(-1, 8));
-            d90 d90Var = new d90(context, null);
-            this.e = d90Var;
-            d90Var.setTag(R.id.fit_width_tag, 1);
-            d90Var.setPadding(AndroidUtilities.dp(13.0f), 0, AndroidUtilities.dp(13.0f), AndroidUtilities.dp(8.0f));
-            d90Var.setTextSize(1, 13.0f);
-            d90Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.E8, false));
-            d90Var.setMovementMethod(LinkMovementMethod.getInstance());
-            d90Var.setLinkTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.J6, false));
-            d90Var.setText(LocaleController.getString(R.string.AutoDeletePopupDescription));
-            actionBarPopupWindow$ActionBarPopupWindowLayout.a(d90Var, w7.x5.p(-1, -2, 0.0f, 0, 0, 8, 0, 0));
+            actionBarPopupWindow$ActionBarPopupWindowLayout.a(frameLayout, w7.y5.n(-1, 8));
+            n90 n90Var = new n90(context, null);
+            this.e = n90Var;
+            n90Var.setTag(R.id.fit_width_tag, 1);
+            n90Var.setPadding(AndroidUtilities.dp(13.0f), 0, AndroidUtilities.dp(13.0f), AndroidUtilities.dp(8.0f));
+            n90Var.setTextSize(1, 13.0f);
+            n90Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.E8, false));
+            n90Var.setMovementMethod(LinkMovementMethod.getInstance());
+            n90Var.setLinkTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.J6, false));
+            n90Var.setText(LocaleController.getString(R.string.AutoDeletePopupDescription));
+            actionBarPopupWindow$ActionBarPopupWindowLayout.a(n90Var, w7.y5.p(-1, -2, 0.0f, 0, 0, 8, 0, 0));
         }
     }
 
@@ -184,11 +184,11 @@ public final class o8 {
             AndroidUtilities.runOnUIThread(new ai.o8(this, i10, 29));
             return;
         }
-        org.telegram.ui.ActionBar.f1 f1Var = this.b;
+        org.telegram.ui.ActionBar.e1 e1Var = this.b;
         if (i10 == 0) {
-            f1Var.setVisibility(8);
+            e1Var.setVisibility(8);
         } else {
-            f1Var.setVisibility(0);
+            e1Var.setVisibility(0);
         }
     }
 }

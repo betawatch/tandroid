@@ -1,58 +1,58 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xj implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ xn b;
+    public final /* synthetic */ wn b;
 
-    public /* synthetic */ xj(xn xnVar, int i10) {
+    public /* synthetic */ xj(wn wnVar, int i10) {
         this.a = i10;
-        this.b = xnVar;
+        this.b = wnVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         int i10 = this.a;
-        xn xnVar = this.b;
+        wn wnVar = this.b;
         switch (i10) {
             case 0:
-                xn.i2(xnVar);
+                wn.i2(wnVar);
                 break;
             case 1:
-                xn.i2(xnVar);
+                wn.i2(wnVar);
                 break;
             case 2:
-                int i11 = xn.Gc;
-                xnVar.Ma();
+                int i11 = wn.Gc;
+                wnVar.Ma();
                 break;
             case 3:
-                int i12 = xn.Gc;
-                xnVar.Ma();
+                int i12 = wn.Gc;
+                wnVar.Ma();
                 break;
             case 4:
-                int i13 = xn.Gc;
-                xnVar.Ma();
+                int i13 = wn.Gc;
+                wnVar.Ma();
                 break;
             case 5:
-                int i14 = xn.Gc;
-                xnVar.Ma();
+                int i14 = wn.Gc;
+                wnVar.Ma();
                 break;
             case 6:
-                int i15 = xn.Gc;
-                xnVar.Ma();
+                int i15 = wn.Gc;
+                wnVar.Ma();
                 break;
             case 7:
-                int i16 = xn.Gc;
-                xnVar.Ma();
+                int i16 = wn.Gc;
+                wnVar.Ma();
                 break;
             case 8:
-                int i17 = xn.Gc;
-                xnVar.Ma();
+                int i17 = wn.Gc;
+                wnVar.Ma();
                 break;
             default:
-                int i18 = xn.Gc;
-                xnVar.Ma();
+                int i18 = wn.Gc;
+                wnVar.Ma();
                 break;
         }
     }

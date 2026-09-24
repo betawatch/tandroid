@@ -1,58 +1,98 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.SerializedData;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class b11 {
-    public final String a;
-    public final Runnable b;
-    public final String c;
-    public final String[] d;
-    public final int e;
-    public final int f;
-    public int g;
-    public String h;
+public final class b11 extends Drawable implements org.telegram.ui.ActionBar.g5 {
+    public final org.telegram.ui.Components.o6 a;
+    public final Paint b;
+    public int c;
+    public float d;
+    public float e;
+    public final org.telegram.ui.Cells.l0 f;
+    public org.telegram.ui.Cells.w0 h;
 
-    public b11(String str, int i10, int i11, Runnable runnable) {
-        this(i10, str, null, null, null, i11, runnable);
+    public b11(String str) {
+        Paint paint = new Paint(1);
+        this.b = paint;
+        this.d = 1.0f;
+        this.e = 1.0f;
+        this.f = new org.telegram.ui.Cells.l0(this);
+        org.telegram.ui.Components.o6 o6Var = new org.telegram.ui.Components.o6(false, false, false, false);
+        this.a = o6Var;
+        o6Var.setCallback(new sr(1, this));
+        o6Var.q(str, true, true);
+        o6Var.t(AndroidUtilities.dp(11.0f));
+        o6Var.b = 17;
+        paint.setColor(520093696);
     }
 
-    public final void a(String str) {
-        this.h = str;
-    }
-
-    public final boolean equals(Object obj) {
-        return (obj instanceof b11) && this.f == ((b11) obj).f;
-    }
-
-    public final String toString() {
-        SerializedData serializedData = new SerializedData();
-        serializedData.writeInt32(this.g);
-        serializedData.writeInt32(1);
-        serializedData.writeInt32(this.f);
-        return Utilities.bytesToHex(serializedData.toByteArray());
-    }
-
-    public b11(int i10, String str, String str2, int i11, Runnable runnable) {
-        this(i10, str, null, str2, null, i11, runnable);
-    }
-
-    public b11(int i10, String str, String str2, String str3, int i11, Runnable runnable) {
-        this(i10, str, str2, str3, null, i11, runnable);
-    }
-
-    public b11(int i10, String str, String str2, String str3, String str4, int i11, Runnable runnable) {
-        this.f = i10;
-        this.a = str;
-        this.c = str2;
-        this.b = runnable;
-        this.e = i11;
-        if (str3 != null && str4 != null) {
-            this.d = new String[]{str3, str4};
-        } else if (str3 != null) {
-            this.d = new String[]{str3};
+    public final void a(int i10) {
+        Paint paint = this.b;
+        if (paint.getColor() != i10) {
+            paint.setColor(i10);
+            invalidateSelf();
         }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        float f7 = this.d * this.e;
+        if (f7 <= 0.0f) {
+            return;
+        }
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(getBounds());
+        canvas.save();
+        float a2 = this.f.a(0.1f);
+        canvas.scale(a2, a2, rectF.centerX(), rectF.centerY());
+        Paint paint = this.b;
+        int alpha = paint.getAlpha();
+        paint.setAlpha((int) (alpha * f7));
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f), paint);
+        paint.setAlpha(alpha);
+        int i10 = this.c;
+        org.telegram.ui.Components.o6 o6Var = this.a;
+        o6Var.r(i10);
+        o6Var.w = (int) (f7 * 255.0f);
+        o6Var.setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
+        o6Var.draw(canvas);
+        canvas.restore();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getAlpha() {
+        return (int) (this.d * 255.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return AndroidUtilities.dp(17.33f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return (int) (this.a.d + AndroidUtilities.dp(11.0f));
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.d = i10 / 255.0f;
+        invalidateSelf();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

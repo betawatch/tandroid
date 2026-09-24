@@ -7,7 +7,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class y5 extends s2 {
     public final /* synthetic */ int H;
@@ -26,7 +26,7 @@ public final class y5 extends s2 {
         if (num.intValue() == 3) {
             int i10 = 0;
             for (int i11 = 0; i11 < j6Var.getChildCount(); i11++) {
-                if (j6Var.getChildAt(i11) instanceof qg.d2) {
+                if (j6Var.getChildAt(i11) instanceof qg.b2) {
                     i10++;
                 }
             }
@@ -36,7 +36,7 @@ public final class y5 extends s2 {
                     this.container.performHapticFeedback(3);
                 } catch (Exception unused) {
                 }
-                new org.telegram.ui.Components.xc(this.container, this.resourcesProvider).M(LocaleController.getString(R.string.IncreaseLimit), AndroidUtilities.replaceSingleTag(formatPluralString, org.telegram.ui.ActionBar.h6.gc, 0, new androidx.fragment.app.a0(this, 10), this.resourcesProvider), R.raw.star_premium_2).k(true);
+                new org.telegram.ui.Components.yc(this.container, this.resourcesProvider).M(LocaleController.getString(R.string.IncreaseLimit), AndroidUtilities.replaceSingleTag(formatPluralString, org.telegram.ui.ActionBar.h6.gc, 0, new androidx.fragment.app.a0(this, 10), this.resourcesProvider), R.raw.star_premium_2).k(true);
                 return false;
             }
             if (i10 >= MessagesController.getInstance(this.currentAccount).storiesSuggestedReactionsLimitPremium) {
@@ -44,7 +44,7 @@ public final class y5 extends s2 {
                     this.container.performHapticFeedback(3);
                 } catch (Exception unused2) {
                 }
-                new org.telegram.ui.Components.xc(this.container, this.resourcesProvider).M(LocaleController.getString("LimitReached", R.string.LimitReached), LocaleController.formatPluralString("StoryReactionsWidgetLimit2", MessagesController.getInstance(this.currentAccount).storiesSuggestedReactionsLimitPremium, new Object[0]), R.raw.chats_infotip).k(true);
+                new org.telegram.ui.Components.yc(this.container, this.resourcesProvider).M(LocaleController.getString("LimitReached", R.string.LimitReached), LocaleController.formatPluralString("StoryReactionsWidgetLimit2", MessagesController.getInstance(this.currentAccount).storiesSuggestedReactionsLimitPremium, new Object[0]), R.raw.chats_infotip).k(true);
                 return false;
             }
         }
@@ -66,7 +66,7 @@ public final class y5 extends s2 {
                 if (i10 >= j6Var.getChildCount()) {
                     break;
                 }
-                if (j6Var.getChildAt(i10) instanceof qg.y2) {
+                if (j6Var.getChildAt(i10) instanceof qg.w2) {
                     z10 = true;
                     break;
                 }
@@ -82,7 +82,7 @@ public final class y5 extends s2 {
         return this.I.f0(o8Var);
     }
 
-    @Override // org.telegram.ui.ActionBar.f3
+    @Override // org.telegram.ui.ActionBar.e3
     public final void onDismissAnimationStart() {
         super.onDismissAnimationStart();
         this.I.R0(this.H);

@@ -13,7 +13,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class u0 extends WebViewClient {
     public final /* synthetic */ WebView a;
@@ -44,7 +44,7 @@ public final class u0 extends WebViewClient {
             b1 b1Var = y0Var.Q;
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, b1Var == null ? null : b1Var.e);
             alertDialog$Builder.a.R = LocaleController.getString(R.string.ChromeCrashTitle);
-            alertDialog$Builder.a.T = AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ChromeCrashMessage), new t0(this, 0));
+            alertDialog$Builder.a.T = AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ChromeCrashMessage), new q0(this, 1));
             alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
             alertDialog$Builder.a.setOnDismissListener(new f5(this, 8));
             alertDialog$Builder.o();

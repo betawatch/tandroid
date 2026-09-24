@@ -1,63 +1,41 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class co0 implements oo0 {
-    public final /* synthetic */ Runnable a;
-    public final /* synthetic */ qo0 b;
+public final class co0 implements mo0 {
+    public final /* synthetic */ oo0 a;
 
-    public co0(qo0 qo0Var, Runnable runnable) {
-        this.b = qo0Var;
-        this.a = runnable;
+    public co0(oo0 oo0Var) {
+        this.a = oo0Var;
     }
 
-    @Override // org.telegram.ui.oo0
+    @Override // org.telegram.ui.mo0
+    public final void a(TL_account.Password password) {
+        this.a.a0 = password;
+    }
+
+    @Override // org.telegram.ui.mo0
+    public final void b() {
+        this.a.f0 = null;
+    }
+
+    @Override // org.telegram.ui.mo0
     public final boolean c(String str, String str2, boolean z10, TLRPC.TL_inputPaymentCredentialsGooglePay tL_inputPaymentCredentialsGooglePay, TLRPC.TL_paymentSavedCredentialsCard tL_paymentSavedCredentialsCard) {
-        String str3;
-        qo0 qo0Var = this.b;
-        qo0Var.y0 = tL_paymentSavedCredentialsCard;
-        qo0Var.w0 = str;
-        qo0Var.U0 = z10;
-        qo0Var.x0 = str2;
-        qo0Var.J0 = tL_inputPaymentCredentialsGooglePay;
-        org.telegram.ui.Cells.e9[] e9VarArr = qo0Var.Y;
-        org.telegram.ui.Cells.e9 e9Var = e9VarArr[0];
-        if (e9Var != null) {
-            e9Var.setVisibility(0);
-            org.telegram.ui.Cells.e9 e9Var2 = e9VarArr[0];
-            String str4 = qo0Var.x0;
-            if (str4 == null || str4.length() <= 1) {
-                str3 = qo0Var.x0;
-            } else {
-                str3 = qo0Var.x0.substring(0, 1).toUpperCase() + qo0Var.x0.substring(1);
-            }
-            e9Var2.b(R.drawable.msg_payment_card, str3, LocaleController.getString(R.string.PaymentCheckoutMethod), true);
-            org.telegram.ui.Cells.e9 e9Var3 = e9VarArr[1];
-            if (e9Var3 != null) {
-                e9Var3.setVisibility(0);
-            }
+        oo0 oo0Var = this.a;
+        mo0 mo0Var = oo0Var.T;
+        if (mo0Var != null) {
+            mo0Var.c(str, str2, z10, tL_inputPaymentCredentialsGooglePay, tL_paymentSavedCredentialsCard);
         }
-        Runnable runnable = this.a;
-        if (runnable != null) {
-            runnable.run();
+        if (oo0Var.S0) {
+            oo0Var.removeSelfFromStack();
         }
-        return false;
+        return oo0Var.T != null;
     }
 
-    @Override // org.telegram.ui.oo0
-    public final /* synthetic */ void a(TL_account.Password password) {
-    }
-
-    @Override // org.telegram.ui.oo0
-    public final /* synthetic */ void b() {
-    }
-
-    @Override // org.telegram.ui.oo0
+    @Override // org.telegram.ui.mo0
     public final /* synthetic */ void d(TLRPC.TL_payments_validateRequestedInfo tL_payments_validateRequestedInfo) {
     }
 }

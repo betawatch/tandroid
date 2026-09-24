@@ -10,9 +10,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import w7.c0;
+import w7.d0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public abstract class i {
     public static int a(MessageObject messageObject) {
@@ -59,12 +59,12 @@ public abstract class i {
         if (tL_messageMediaPoll == null) {
             return null;
         }
-        if (!c0.a(i10, 4)) {
-            if (c0.a(i10, 1)) {
+        if (!d0.a(i10, 4)) {
+            if (d0.a(i10, 1)) {
                 TLRPC.MessageFwdHeader messageFwdHeader = message.fwd_from;
                 return AndroidUtilities.replaceTags(LocaleController.formatString(R.string.PollV2ToastOnlySubscribersCanVote, DialogObject.getShortName(MessagesController.getInstance(i11).getChat(Long.valueOf(-(messageFwdHeader != null ? DialogObject.getPeerDialogId(messageFwdHeader.from_id) : messageObject.getDialogId()))))));
             }
-            if (c0.a(i10, 2)) {
+            if (d0.a(i10, 2)) {
                 return AndroidUtilities.replaceTags(LocaleController.getString(R.string.PollV2ToastOnlySubscribersJoined24hCanVote));
             }
             return null;
@@ -94,6 +94,6 @@ public abstract class i {
             }
             stringBuffer.append((String) arrayList.get(i13));
         }
-        return AndroidUtilities.replaceTags(LocaleController.formatString(z10 ? R.string.PollV2ToastOnlySubscribersFromCountriesCanVoteOther : R.string.PollV2ToastOnlyUsersFromCountriesCanVoteOther, stringBuffer, hg.c.h(1, arrayList)));
+        return AndroidUtilities.replaceTags(LocaleController.formatString(z10 ? R.string.PollV2ToastOnlySubscribersFromCountriesCanVoteOther : R.string.PollV2ToastOnlyUsersFromCountriesCanVoteOther, stringBuffer, hg.c.g(1, arrayList)));
     }
 }

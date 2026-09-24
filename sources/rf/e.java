@@ -16,7 +16,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class e implements qf.c, qf.b {
     public f d;
@@ -127,7 +127,7 @@ public final class e implements qf.c, qf.b {
         cVar.a = view;
         cVar.b = view2;
         this.h = cVar;
-        cVar.x(e);
+        cVar.y(e);
         eVar.a.q().addView(this.f);
         this.a = 1;
         this.f.invalidate();
@@ -140,7 +140,7 @@ public final class e implements qf.c, qf.b {
             FileLog.e("[PIP_DEBUG] wrong pip state STATE_ATTACHED: " + this.a);
             return;
         }
-        this.h.x(this.j.g.c());
+        this.h.y(this.j.g.c());
         this.a = 3;
         this.f.removeView(this.i);
         this.f.invalidate();

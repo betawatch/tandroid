@@ -6,14 +6,14 @@ import b2.s;
 import c3.u;
 import e2.v;
 import java.util.Arrays;
-import n7.a1;
-import u2.w0;
+import n7.z0;
+import u2.x0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class c extends i {
     public u n;
-    public w0 o;
+    public x0 o;
 
     @Override // x3.i
     public final long b(v vVar) {
@@ -32,7 +32,7 @@ public final class c extends i {
     }
 
     @Override // x3.i
-    public final boolean c(v vVar, long j3, a1 a1Var) {
+    public final boolean c(v vVar, long j3, z0 z0Var) {
         byte[] bArr = vVar.a;
         u uVar = this.n;
         if (uVar == null) {
@@ -40,7 +40,7 @@ public final class c extends i {
             this.n = uVar2;
             r a2 = uVar2.c(Arrays.copyOfRange(bArr, 9, vVar.c), null).a();
             a2.p = r0.n("audio/ogg");
-            a1Var.b = new s(a2);
+            z0Var.b = new s(a2);
             return true;
         }
         byte b10 = bArr[0];
@@ -48,23 +48,23 @@ public final class c extends i {
             if (b10 != -1) {
                 return true;
             }
-            w0 w0Var = this.o;
-            if (w0Var != null) {
-                w0Var.a = j3;
-                a1Var.c = w0Var;
+            x0 x0Var = this.o;
+            if (x0Var != null) {
+                x0Var.a = j3;
+                z0Var.c = x0Var;
             }
-            ((s) a1Var.b).getClass();
+            ((s) z0Var.b).getClass();
             return false;
         }
         of.b u10 = c3.b.u(vVar);
         u uVar3 = new u(uVar.a, uVar.b, uVar.c, uVar.d, uVar.e, uVar.g, uVar.h, uVar.j, u10, uVar.l);
         this.n = uVar3;
-        w0 w0Var2 = new w0();
-        w0Var2.c = uVar3;
-        w0Var2.d = u10;
-        w0Var2.a = -1L;
-        w0Var2.b = -1L;
-        this.o = w0Var2;
+        x0 x0Var2 = new x0();
+        x0Var2.c = uVar3;
+        x0Var2.d = u10;
+        x0Var2.a = -1L;
+        x0Var2.b = -1L;
+        this.o = x0Var2;
         return true;
     }
 

@@ -8,11 +8,11 @@ import android.view.View;
 import android.view.animation.OvershootInterpolator;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ml0;
-import org.telegram.ui.Components.nf;
+import org.telegram.ui.Components.of;
 import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.wl0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public abstract class y extends FrameLayout {
     public ObjectAnimator a;
@@ -57,7 +57,7 @@ public abstract class y extends FrameLayout {
         this.a.setDuration(150L);
         this.a.setInterpolator(rr.f);
         this.a.start();
-        c0 c0Var = ((nf) this).v.l0;
+        c0 c0Var = ((of) this).v.l0;
         if (c0Var != null) {
             c0Var.setOpened(false);
         }
@@ -88,7 +88,7 @@ public abstract class y extends FrameLayout {
         return false;
     }
 
-    public ml0 getListView() {
+    public wl0 getListView() {
         return this.c;
     }
 

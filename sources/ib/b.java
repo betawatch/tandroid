@@ -3,11 +3,11 @@ package ib;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import v7.m8;
+import v7.n8;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
-public final class b extends m8 {
+public final class b extends n8 {
     public final Method a = Class.class.getMethod("isRecord", null);
     public final Method b = Class.class.getMethod("getRecordComponents", null);
     public final Method c;
@@ -19,7 +19,7 @@ public final class b extends m8 {
         this.d = cls.getMethod("getType", null);
     }
 
-    @Override // v7.m8
+    @Override // v7.n8
     public final Method a(Class cls, Field field) {
         try {
             return cls.getMethod(field.getName(), null);
@@ -28,7 +28,7 @@ public final class b extends m8 {
         }
     }
 
-    @Override // v7.m8
+    @Override // v7.n8
     public final Constructor b(Class cls) {
         try {
             Object[] objArr = (Object[]) this.b.invoke(cls, null);
@@ -42,7 +42,7 @@ public final class b extends m8 {
         }
     }
 
-    @Override // v7.m8
+    @Override // v7.n8
     public final String[] c(Class cls) {
         try {
             Object[] objArr = (Object[]) this.b.invoke(cls, null);
@@ -56,7 +56,7 @@ public final class b extends m8 {
         }
     }
 
-    @Override // v7.m8
+    @Override // v7.n8
     public final boolean d(Class cls) {
         try {
             return ((Boolean) this.a.invoke(cls, null)).booleanValue();

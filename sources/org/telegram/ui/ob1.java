@@ -11,10 +11,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class ob1 extends FrameLayout {
-    public final org.telegram.ui.Components.fo0 a;
+    public final org.telegram.ui.Components.so0 a;
     public final int b;
     public final TextPaint c;
     public final /* synthetic */ ThemeActivity d;
@@ -28,13 +28,13 @@ public final class ob1 extends FrameLayout {
         TextPaint textPaint = new TextPaint(1);
         this.c = textPaint;
         textPaint.setTextSize(AndroidUtilities.dp(16.0f));
-        org.telegram.ui.Components.fo0 fo0Var = new org.telegram.ui.Components.fo0(context);
-        this.a = fo0Var;
-        fo0Var.setReportChanges(true);
-        fo0Var.setSeparatorsCount(18);
-        fo0Var.setDelegate(new cw0(this, 3));
-        fo0Var.setImportantForAccessibility(2);
-        addView(fo0Var, w7.x5.d(-1, 38.0f, 51, 5.0f, 5.0f, 39.0f, 0.0f));
+        org.telegram.ui.Components.so0 so0Var = new org.telegram.ui.Components.so0(context);
+        this.a = so0Var;
+        so0Var.setReportChanges(true);
+        so0Var.setSeparatorsCount(18);
+        so0Var.setDelegate(new aw0(this, 3));
+        so0Var.setImportantForAccessibility(2);
+        addView(so0Var, w7.y5.d(-1, 38.0f, 51, 5.0f, 5.0f, 39.0f, 0.0f));
     }
 
     @Override // android.view.View

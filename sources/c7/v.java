@@ -15,7 +15,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class v extends o6.a {
     public static final Parcelable.Creator<v> CREATOR = new w.a(24);
@@ -117,7 +117,7 @@ public final class v extends o6.a {
         ArrayList arrayList2;
         JSONArray jSONArray2;
         String str2;
-        n7.e eVar2;
+        n7.d dVar;
         JSONObject jSONObject2 = jSONObject.getJSONObject("rp");
         String str3 = "id";
         y yVar = new y(jSONObject2.getString("id"), jSONObject2.getString("name"), jSONObject2.has("icon") ? jSONObject2.optString("icon") : null);
@@ -130,12 +130,12 @@ public final class v extends o6.a {
         for (int i11 = 0; i11 < jSONArray3.length(); i11++) {
             JSONObject jSONObject4 = jSONArray3.getJSONObject(i11);
             try {
-                eVar2 = new n7.f(new x(jSONObject4.getString(TeXSymbolParser.TYPE_ATTR), jSONObject4.getInt("alg")));
+                dVar = new n7.e(new x(jSONObject4.getString(TeXSymbolParser.TYPE_ATTR), jSONObject4.getInt("alg")));
             } catch (IllegalArgumentException unused) {
-                eVar2 = n7.c.a;
+                dVar = n7.b.a;
             }
-            if (eVar2.b()) {
-                arrayList3.add(eVar2.a());
+            if (dVar.b()) {
+                arrayList3.add(dVar.a());
             }
         }
         Double valueOf = jSONObject.has("timeout") ? Double.valueOf(jSONObject.getDouble("timeout") / 1000.0d) : null;
@@ -317,26 +317,26 @@ public final class v extends o6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.e0.q(parcel, 20293);
-        w7.e0.k(parcel, 2, this.a, i10);
-        w7.e0.k(parcel, 3, this.b, i10);
-        w7.e0.c(parcel, 4, this.c);
-        w7.e0.p(parcel, 5, this.d);
+        int q6 = w7.f0.q(parcel, 20293);
+        w7.f0.k(parcel, 2, this.a, i10);
+        w7.f0.k(parcel, 3, this.b, i10);
+        w7.f0.c(parcel, 4, this.c);
+        w7.f0.p(parcel, 5, this.d);
         Double d = this.e;
         if (d != null) {
-            w7.e0.s(parcel, 6, 8);
+            w7.f0.s(parcel, 6, 8);
             parcel.writeDouble(d.doubleValue());
         }
-        w7.e0.p(parcel, 7, this.f);
-        w7.e0.k(parcel, 8, this.h, i10);
-        w7.e0.i(parcel, 9, this.n);
-        w7.e0.k(parcel, 10, this.r, i10);
+        w7.f0.p(parcel, 7, this.f);
+        w7.f0.k(parcel, 8, this.h, i10);
+        w7.f0.i(parcel, 9, this.n);
+        w7.f0.k(parcel, 10, this.r, i10);
         e eVar = this.s;
-        w7.e0.l(parcel, 11, eVar == null ? null : eVar.a);
-        w7.e0.k(parcel, 12, this.v, i10);
-        w7.e0.l(parcel, 13, this.w);
-        w7.e0.k(parcel, 14, this.x, i10);
-        w7.e0.r(parcel, q6);
+        w7.f0.l(parcel, 11, eVar == null ? null : eVar.a);
+        w7.f0.k(parcel, 12, this.v, i10);
+        w7.f0.l(parcel, 13, this.w);
+        w7.f0.k(parcel, 14, this.x, i10);
+        w7.f0.r(parcel, q6);
     }
 
     public v(String str) {

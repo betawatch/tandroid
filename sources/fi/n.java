@@ -8,13 +8,13 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.y5;
+import org.telegram.ui.ActionBar.x5;
 import org.telegram.ui.Components.w9;
-import w7.x5;
+import w7.y5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public final class n extends FrameLayout implements y5 {
+public final class n extends FrameLayout implements x5 {
     public final w9 a;
 
     public n(Context context) {
@@ -22,7 +22,7 @@ public final class n extends FrameLayout implements y5 {
         w9 w9Var = new w9(context);
         this.a = w9Var;
         w9Var.setRoundRadius(AndroidUtilities.dp(20.0f));
-        addView(w9Var, x5.d(72, 72.0f, 81, 0.0f, 0.0f, 0.0f, 28.0f));
+        addView(w9Var, y5.d(72, 72.0f, 81, 0.0f, 0.0f, 0.0f, 28.0f));
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -38,7 +38,7 @@ public final class n extends FrameLayout implements y5 {
         super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(136.0f), TLObject.FLAG_30));
     }
 
-    @Override // org.telegram.ui.ActionBar.y5
+    @Override // org.telegram.ui.ActionBar.x5
     public final void e() {
     }
 }

@@ -11,18 +11,18 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.ul;
+import org.telegram.messenger.ok;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.t3;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.l51;
-import w7.x5;
+import org.telegram.ui.Components.vl0;
+import org.telegram.ui.m51;
+import w7.y5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class d extends ll0 {
+public final class d extends vl0 {
     public final d6 c;
     public final int d;
     public final int e;
@@ -59,7 +59,7 @@ public final class d extends ll0 {
         this.d = arrayList.size() + 1;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.vl0
     public final boolean D(s4.c1 c1Var) {
         return false;
     }
@@ -91,7 +91,7 @@ public final class d extends ll0 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r1v3, types: [android.view.ViewGroup, org.telegram.ui.l51] */
+    /* JADX WARN: Type inference failed for: r1v3, types: [android.view.ViewGroup, org.telegram.ui.m51] */
     /* JADX WARN: Type inference failed for: r1v7, types: [rg.f] */
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
@@ -108,20 +108,20 @@ public final class d extends ll0 {
                 t3Var = new t3(context, 16);
             }
         } else if (this.s) {
-            ?? l51Var = new l51(context, 10);
-            LinearLayout f7 = ul.f(context, 0);
+            ?? m51Var = new m51(context, 10);
+            LinearLayout f7 = ok.f(context, 0);
             ImageView imageView = new ImageView(context);
             imageView.setImageDrawable(a1.c(context.getDrawable(R.drawable.other_2x_large), a1.d().a));
-            f7.addView(imageView, x5.d(40, 28.0f, 16, 0.0f, 0.0f, 8.0f, 0.0f));
+            f7.addView(imageView, y5.d(40, 28.0f, 16, 0.0f, 0.0f, 8.0f, 0.0f));
             TextView textView = new TextView(context);
             textView.setText(LocaleController.getString(R.string.DoubledLimits));
             textView.setGravity(17);
             textView.setTextSize(1, 20.0f);
             textView.setTextColor(h6.v0(h6.G6, d6Var));
             textView.setTypeface(AndroidUtilities.bold());
-            f7.addView(textView, x5.e(-2, -2, 16));
-            l51Var.addView(f7, x5.e(-2, -2, 17));
-            t3Var = l51Var;
+            f7.addView(textView, y5.e(-2, -2, 16));
+            m51Var.addView(f7, y5.e(-2, -2, 17));
+            t3Var = m51Var;
         } else {
             t3Var = new t3(context, 64);
         }

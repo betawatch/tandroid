@@ -1,105 +1,66 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
+import android.animation.Animator;
+import android.animation.ObjectAnimator;
+import android.transition.Fade;
+import android.transition.TransitionValues;
+import android.view.View;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class ut0 extends hu0 {
-    public final /* synthetic */ int p0;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate q0;
+public final class ut0 extends Fade {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ PhotoViewer d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ut0(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Context context, ku0 ku0Var, FrameLayout frameLayout, int i10) {
-        super(context, ku0Var, frameLayout);
-        this.p0 = i10;
-        this.q0 = notificationCenterDelegate;
-    }
-
-    @Override // org.telegram.ui.hu0
-    public boolean C() {
-        switch (this.p0) {
-            case 0:
-                return !((PhotoViewer) this.q0).s;
-            default:
-                return super.C();
-        }
-    }
-
-    @Override // org.telegram.ui.hu0
-    public void D() {
-        switch (this.p0) {
+    public ut0(PhotoViewer photoViewer, boolean z10, boolean z11, int i10) {
+        super(1);
+        this.a = i10;
+        switch (i10) {
             case 1:
-                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.q0;
-                if (secretMediaViewer.J && getScrollY() <= 0) {
-                    AndroidUtilities.runOnUIThread(secretMediaViewer.r1, 3000L);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.hu0
-    public void F() {
-        switch (this.p0) {
-            case 1:
-                AndroidUtilities.cancelRunOnUIThread(((SecretMediaViewer) this.q0).r1);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.hu0
-    public void G() {
-        switch (this.p0) {
-            case 1:
-                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.q0;
-                if (secretMediaViewer.K0 == null) {
-                    secretMediaViewer.k(((float) getScrollY()) < ((float) getMeasuredHeight()) / 3.0f && secretMediaViewer.k0, true);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void invalidate() {
-        switch (this.p0) {
-            case 0:
-                super.invalidate();
-                PhotoViewer photoViewer = (PhotoViewer) this.q0;
-                su0[] su0VarArr = photoViewer.W0;
-                ImageView[] imageViewArr = photoViewer.y3;
-                if (photoViewer.J) {
-                    int scrollY = getScrollY();
-                    float translationY = photoViewer.Q1.getTranslationY();
-                    boolean z10 = scrollY == 0 && translationY == 0.0f;
-                    boolean z11 = scrollY == 0 && translationY == 0.0f;
-                    if (!z10) {
-                        int b10 = su0VarArr[0].b() + su0VarArr[0].j;
-                        int top = (((photoViewer.Z1.getTop() + ((int) translationY)) - scrollY) + (org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + (C() ? AndroidUtilities.statusBarHeight : 0))) - AndroidUtilities.dp(12.0f);
-                        boolean z12 = top > AndroidUtilities.dp(32.0f) + ((int) imageViewArr[0].getY());
-                        z10 = top > b10;
-                        z11 = z12;
-                    }
-                    if (photoViewer.z3) {
-                        if (imageViewArr[0].getTag() != null && ((Integer) imageViewArr[0].getTag()).intValue() == 3 && z11) {
-                            imageViewArr[0].setTag(2);
-                            imageViewArr[0].animate().alpha(1.0f).setDuration(150L).setListener(new wq0(this, 4)).start();
-                        } else if (imageViewArr[0].getTag() == null && !z11) {
-                            imageViewArr[0].setTag(3);
-                            imageViewArr[0].animate().alpha(0.0f).setListener(null).setDuration(150L).start();
-                        }
-                    }
-                    su0VarArr[0].e(2, z10 ? 1.0f : 0.0f, true);
-                    break;
-                }
+                this.d = photoViewer;
+                this.b = z10;
+                this.c = z11;
+                super(2);
                 break;
             default:
-                super.invalidate();
+                this.d = photoViewer;
+                this.b = z10;
+                this.c = z11;
                 break;
+        }
+    }
+
+    @Override // android.transition.Fade, android.transition.Visibility
+    public Animator onAppear(ViewGroup viewGroup, View view, TransitionValues transitionValues, TransitionValues transitionValues2) {
+        switch (this.a) {
+            case 0:
+                Animator onAppear = super.onAppear(viewGroup, view, transitionValues, transitionValues2);
+                if (this.b && !this.c && view == this.d.Q1) {
+                    onAppear.addListener(new xo0(this, 6));
+                    ((ObjectAnimator) onAppear).addUpdateListener(new c3(this, 20));
+                }
+                return onAppear;
+            default:
+                return super.onAppear(viewGroup, view, transitionValues, transitionValues2);
+        }
+    }
+
+    @Override // android.transition.Fade, android.transition.Visibility
+    public Animator onDisappear(ViewGroup viewGroup, View view, TransitionValues transitionValues, TransitionValues transitionValues2) {
+        switch (this.a) {
+            case 1:
+                Animator onDisappear = super.onDisappear(viewGroup, view, transitionValues, transitionValues2);
+                if (!this.b && this.c && view == this.d.Q1) {
+                    onDisappear.addListener(new xo0(this, 7));
+                    ((ObjectAnimator) onDisappear).addUpdateListener(new c3(this, 21));
+                }
+                return onDisappear;
+            default:
+                return super.onDisappear(viewGroup, view, transitionValues, transitionValues2);
         }
     }
 }

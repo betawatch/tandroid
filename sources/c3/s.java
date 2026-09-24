@@ -6,29 +6,29 @@ import org.telegram.ui.Components.fb;
 import org.telegram.ui.Components.gb;
 import org.telegram.ui.Components.lt;
 import org.telegram.ui.Components.nl;
-import org.telegram.ui.Components.og;
+import org.telegram.ui.Components.pg;
 import org.telegram.ui.Components.tb;
 import org.telegram.ui.Components.ub;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class s implements tb {
     public long a;
 
     @Override // org.telegram.ui.Components.tb
-    public void U(ub ubVar, fb fbVar, og ogVar, nl nlVar) {
+    public void U(ub ubVar, fb fbVar, pg pgVar, nl nlVar) {
         ubVar.setInOutOffset(ubVar.getMeasuredHeight());
         nlVar.accept(Float.valueOf(ubVar.getTranslationY()));
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(ubVar, ub.IN_OUT_OFFSET_Y2, 0.0f);
         ofFloat.setDuration(this.a);
         ofFloat.setInterpolator(lt.d);
-        ofFloat.addListener(new ai.z(fbVar, ogVar, 16));
+        ofFloat.addListener(new ai.z(fbVar, pgVar, 16));
         ofFloat.addUpdateListener(new ai.x(13, nlVar, ubVar));
         ofFloat.start();
     }
 
-    public boolean a(lf.o oVar) {
-        return oVar.b == this.a && lf.a.c(oVar);
+    public boolean a(lf.n nVar) {
+        return nVar.b == this.a && lf.a.c(nVar);
     }
 
     @Override // org.telegram.ui.Components.tb

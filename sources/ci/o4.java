@@ -5,11 +5,11 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.d61;
+import org.telegram.ui.Components.r61;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public final class o4 extends d61 {
+public final class o4 extends r61 {
     public final /* synthetic */ cb f3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -18,12 +18,12 @@ public final class o4 extends d61 {
         this.f3 = cbVar;
     }
 
-    @Override // org.telegram.ui.Components.d61
+    @Override // org.telegram.ui.Components.r61
     public final void H1() {
         AndroidUtilities.forEachViews((RecyclerView) this.f3.b, (Utilities.Callback<View>) new ai.y1(this, 11));
     }
 
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.wl0
     public final Integer W0(int i10) {
         return 0;
     }

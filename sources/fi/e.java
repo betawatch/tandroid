@@ -10,13 +10,13 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.y5;
+import org.telegram.ui.ActionBar.x5;
 import org.telegram.ui.Components.w9;
-import w7.x5;
+import w7.y5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public final class e extends FrameLayout implements y5 {
+public final class e extends FrameLayout implements x5 {
     public final w9 a;
     public final d6 b;
     public final TextView c;
@@ -28,19 +28,19 @@ public final class e extends FrameLayout implements y5 {
         w9 w9Var = new w9(context);
         this.a = w9Var;
         w9Var.setRoundRadius(AndroidUtilities.dp(20.0f));
-        addView(w9Var, x5.d(72, 72.0f, 49, 0.0f, 36.0f, 0.0f, 0.0f));
+        addView(w9Var, y5.d(72, 72.0f, 49, 0.0f, 36.0f, 0.0f, 0.0f));
         TextView textView = new TextView(context);
         this.c = textView;
         textView.setTypeface(AndroidUtilities.bold());
         textView.setTextSize(1, 20.0f);
         textView.setGravity(17);
-        addView(textView, x5.d(-1, -2.0f, 49, 24.0f, 123.0f, 24.0f, 0.0f));
+        addView(textView, y5.d(-1, -2.0f, 49, 24.0f, 123.0f, 24.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.d = textView2;
         textView2.setTextSize(1, 14.0f);
         textView2.setGravity(17);
         textView2.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-        addView(textView2, x5.d(-1, -2.0f, 49, 32.0f, 157.0f, 32.0f, 0.0f));
+        addView(textView2, y5.d(-1, -2.0f, 49, 32.0f, 157.0f, 32.0f, 0.0f));
         e();
     }
 
@@ -52,7 +52,7 @@ public final class e extends FrameLayout implements y5 {
         yf.p.a(canvas, drawable, (w9Var.getWidth() / 2.0f) + w9Var.getLeft(), (w9Var.getHeight() / 2.0f) + w9Var.getTop(), w9Var.getHeight());
     }
 
-    @Override // org.telegram.ui.ActionBar.y5
+    @Override // org.telegram.ui.ActionBar.x5
     public final void e() {
         int i10 = h6.G6;
         d6 d6Var = this.b;

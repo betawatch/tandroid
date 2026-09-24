@@ -3,13 +3,13 @@ package bi;
 import android.content.Context;
 import android.graphics.Canvas;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ou0;
-import org.telegram.ui.Components.qt0;
-import org.telegram.ui.Components.uk0;
+import org.telegram.ui.Components.bu0;
+import org.telegram.ui.Components.el0;
+import org.telegram.ui.Components.zu0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public final class j extends ou0 {
+public final class j extends zu0 {
     public final /* synthetic */ u q3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -18,12 +18,12 @@ public final class j extends ou0 {
         this.q3 = uVar;
     }
 
-    @Override // org.telegram.ui.Components.ou0
+    @Override // org.telegram.ui.Components.zu0
     public final boolean A1() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.ou0, org.telegram.ui.Components.ia, org.telegram.ui.Components.ml0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.zu0, org.telegram.ui.Components.ia, org.telegram.ui.Components.wl0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         int i10 = 0;
@@ -37,10 +37,10 @@ public final class j extends ou0 {
         u uVar = this.q3;
         r rVar = uVar.J;
         if (uVar.b) {
-            qt0 qt0Var = uVar.r;
+            bu0 bu0Var = uVar.r;
             int i12 = 0;
-            for (int i13 = 0; i13 < qt0Var.getChildCount(); i13++) {
-                int bottom2 = qt0Var.getChildAt(i13).getBottom() - qt0Var.getPaddingTop();
+            for (int i13 = 0; i13 < bu0Var.getChildCount(); i13++) {
+                int bottom2 = bu0Var.getChildAt(i13).getBottom() - bu0Var.getPaddingTop();
                 if (bottom2 > i12) {
                     i12 = bottom2;
                 }
@@ -51,23 +51,23 @@ public final class j extends ou0 {
         rVar.setTranslationY(f7);
     }
 
-    @Override // org.telegram.ui.Components.ou0
+    @Override // org.telegram.ui.Components.zu0
     public final int getAnimateToColumnsCount() {
         return this.q3.e;
     }
 
-    @Override // org.telegram.ui.Components.ou0
+    @Override // org.telegram.ui.Components.zu0
     public final float getChangeColumnsProgress() {
         return this.q3.c;
     }
 
-    @Override // org.telegram.ui.Components.ou0
+    @Override // org.telegram.ui.Components.zu0
     public final int getColumnsCount() {
         return this.q3.d;
     }
 
-    @Override // org.telegram.ui.Components.ou0
-    public final uk0 getMovingAdapter() {
+    @Override // org.telegram.ui.Components.zu0
+    public final el0 getMovingAdapter() {
         u uVar = this.q3;
         if (uVar.G.y != 0 || uVar.W.G.C1) {
             return null;
@@ -75,17 +75,17 @@ public final class j extends ou0 {
         return uVar.v;
     }
 
-    @Override // org.telegram.ui.Components.ou0
-    public final uk0 getSupportingAdapter() {
+    @Override // org.telegram.ui.Components.zu0
+    public final el0 getSupportingAdapter() {
         return this.q3.w;
     }
 
-    @Override // org.telegram.ui.Components.ou0
-    public final qt0 getSupportingListView() {
+    @Override // org.telegram.ui.Components.zu0
+    public final bu0 getSupportingListView() {
         return this.q3.r;
     }
 
-    @Override // org.telegram.ui.Components.ou0
+    @Override // org.telegram.ui.Components.zu0
     public final boolean z1() {
         return this.q3.b;
     }

@@ -42,36 +42,36 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.bg;
-import org.telegram.ui.Components.dh;
+import org.telegram.ui.Components.cg;
 import org.telegram.ui.Components.e5;
-import org.telegram.ui.Components.g80;
+import org.telegram.ui.Components.eh;
+import org.telegram.ui.Components.gx0;
+import org.telegram.ui.Components.jv0;
 import org.telegram.ui.Components.lm;
 import org.telegram.ui.Components.om;
+import org.telegram.ui.Components.q80;
 import org.telegram.ui.Components.qm;
 import org.telegram.ui.Components.rm;
-import org.telegram.ui.Components.vw0;
 import org.telegram.ui.Components.wi;
-import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.yu0;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.ba0;
-import org.telegram.ui.dd0;
-import org.telegram.ui.eu;
-import org.telegram.ui.f60;
-import org.telegram.ui.fw0;
-import org.telegram.ui.jn;
-import org.telegram.ui.nc0;
-import org.telegram.ui.qr;
-import org.telegram.ui.ry;
-import org.telegram.ui.tq;
-import org.telegram.ui.w90;
-import org.telegram.ui.xn;
+import org.telegram.ui.aa0;
+import org.telegram.ui.cd0;
+import org.telegram.ui.d60;
+import org.telegram.ui.du;
+import org.telegram.ui.dw0;
+import org.telegram.ui.in;
+import org.telegram.ui.mc0;
+import org.telegram.ui.pr;
+import org.telegram.ui.qy;
+import org.telegram.ui.sq;
+import org.telegram.ui.v90;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h0 implements Runnable {
     public final /* synthetic */ int a;
@@ -126,8 +126,8 @@ public final /* synthetic */ class h0 implements Runnable {
                 long j10 = this.b;
                 l9 l9Var = b0Var.s;
                 ArrayList arrayList = b0Var.x;
-                ry ryVar = b0Var.e0;
-                if (ryVar == null || ryVar.getParentActivity() == null) {
+                qy qyVar = b0Var.e0;
+                if (qyVar == null || qyVar.getParentActivity() == null) {
                     return;
                 }
                 int i14 = a0Var.b;
@@ -164,7 +164,7 @@ public final /* synthetic */ class h0 implements Runnable {
                         i10 = i16;
                         z11 = false;
                         z12 = true;
-                        jc orCreateStoryViewer = ryVar.getOrCreateStoryViewer();
+                        jc orCreateStoryViewer = qyVar.getOrCreateStoryViewer();
                         orCreateStoryViewer.s(new ai.j(b0Var, j10, 0 == true ? 1 : 0));
                         Context context = b0Var.getContext();
                         u9 a2 = u9.a(b0Var.h);
@@ -187,7 +187,7 @@ public final /* synthetic */ class h0 implements Runnable {
                     z11 = false;
                 }
                 z12 = false;
-                jc orCreateStoryViewer2 = ryVar.getOrCreateStoryViewer();
+                jc orCreateStoryViewer2 = qyVar.getOrCreateStoryViewer();
                 orCreateStoryViewer2.s(new ai.j(b0Var, j10, 0 == true ? 1 : 0));
                 Context context2 = b0Var.getContext();
                 u9 a22 = u9.a(b0Var.h);
@@ -334,23 +334,23 @@ public final /* synthetic */ class h0 implements Runnable {
                 l3Var.run();
                 return;
             case 9:
-                ni.f fVar2 = (ni.f) this.c;
-                ni.e eVar = (ni.e) this.d;
+                oi.f fVar2 = (oi.f) this.c;
+                oi.e eVar = (oi.e) this.d;
                 long j22 = this.b;
-                if (((ni.e) fVar2.b) != eVar) {
+                if (((oi.e) fVar2.b) != eVar) {
                     return;
                 }
-                ni.c cVar = (ni.c) fVar2.d;
+                oi.c cVar = (oi.c) fVar2.d;
                 if (cVar != null) {
                     AndroidUtilities.cancelRunOnUIThread(cVar);
                     fVar2.d = null;
                 }
-                synchronized (ni.k.v) {
+                synchronized (oi.k.v) {
                     try {
-                        ni.k kVar = ni.k.x;
+                        oi.k kVar = oi.k.x;
                         if (kVar != null) {
                             kVar.n();
-                            ni.k.x = null;
+                            oi.k.x = null;
                         }
                     } catch (Throwable th3) {
                         throw th3;
@@ -373,51 +373,51 @@ public final /* synthetic */ class h0 implements Runnable {
                 ((VideoCapturerDevice) this.c).lambda$init$2(this.b, (Point) this.d);
                 return;
             case 14:
-                xn xnVar = (xn) this.c;
-                xnVar.getMessagesController().lambda$checkDeletingTask$84(this.b, xnVar.T5, ((MessageObject) this.d).getId());
+                wn wnVar = (wn) this.c;
+                wnVar.getMessagesController().lambda$checkDeletingTask$84(this.b, wnVar.T5, ((MessageObject) this.d).getId());
                 return;
             case 15:
-                jn jnVar = (jn) this.c;
+                in inVar = (in) this.c;
                 ArrayList<MessageObject> arrayList6 = (ArrayList) this.d;
                 long j23 = this.b;
-                xn xnVar2 = jnVar.a;
-                i11 = ((n2) xnVar2).currentAccount;
-                e5.t0(SendMessagesHelper.getInstance(i11).sendMessage(arrayList6, j23, false, false, true, 0, 0, null, -1, 0L, xnVar2.N8(), xnVar2.g5), xnVar2, null);
+                wn wnVar2 = inVar.a;
+                i11 = ((m2) wnVar2).currentAccount;
+                e5.t0(SendMessagesHelper.getInstance(i11).sendMessage(arrayList6, j23, false, false, true, 0, 0, null, -1, 0L, wnVar2.N8(), wnVar2.g5), wnVar2, null);
                 return;
             case 16:
-                qr qrVar = (qr) this.c;
+                pr prVar = (pr) this.c;
                 TLRPC.User user2 = (TLRPC.User) this.d;
                 long j24 = this.b;
-                qrVar.getMessagesController().deleteParticipantFromChat(qrVar.N, user2);
-                qrVar.v0(j24);
-                if (qrVar.r == null || user2 == null || !xc.a(qrVar)) {
+                prVar.getMessagesController().deleteParticipantFromChat(prVar.N, user2);
+                prVar.v0(j24);
+                if (prVar.r == null || user2 == null || !yc.a(prVar)) {
                     return;
                 }
-                xc.D(qrVar, user2, qrVar.r.title).j();
+                yc.D(prVar, user2, prVar.r.title).j();
                 return;
             case 17:
                 Runnable runnable = (Runnable) this.c;
-                n2 n2Var = (n2) this.d;
+                m2 m2Var = (m2) this.d;
                 long j25 = this.b;
                 if (runnable != null) {
                     runnable.run();
                 }
-                if (n2Var != null) {
-                    n2Var.presentFragment(xn.R9(j25));
+                if (m2Var != null) {
+                    m2Var.presentFragment(wn.R9(j25));
                     return;
                 }
                 return;
             case 18:
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
-                bg bgVar = (bg) this.d;
+                cg cgVar = (cg) this.d;
                 long j26 = this.b;
                 int i22 = ChatActivityEnterView.n5;
-                bgVar.run();
+                cgVar.run();
                 SharedPrefsHelper.setWebViewConfirmShown(chatActivityEnterView.Q, j26, true);
                 return;
             case 19:
                 wi wiVar = (wi) this.c;
-                e5.M(wiVar.getContext(), this.b, new dh(wiVar, 14), (d6) this.d);
+                e5.M(wiVar.getContext(), this.b, new eh(wiVar, 14), (d6) this.d);
                 return;
             case 20:
                 qm qmVar = (qm) this.c;
@@ -455,30 +455,30 @@ public final /* synthetic */ class h0 implements Runnable {
                 }
                 return;
             case 21:
-                g80.Xc((g80) this.c, this.b, (TLRPC.Chat) this.d);
+                q80.Xc((q80) this.c, this.b, (TLRPC.Chat) this.d);
                 return;
             case 22:
-                ((yu0) this.c).v1.presentFragment(xn.Q9(((MessageObject) this.d).getId(), this.b));
+                ((jv0) this.c).v1.presentFragment(wn.Q9(((MessageObject) this.d).getId(), this.b));
                 return;
             case 23:
-                vw0.x1((vw0) this.c, (TLRPC.TL_messages_emojiGroups) this.d, this.b);
+                gx0.x1((gx0) this.c, (TLRPC.TL_messages_emojiGroups) this.d, this.b);
                 return;
             case 24:
-                ry ryVar2 = (ry) this.c;
+                qy qyVar2 = (qy) this.c;
                 long j28 = this.b;
                 g0 g0Var = (g0) this.d;
-                if (ryVar2.G.bot_admin_rights != null) {
-                    ryVar2.getMessagesController().setUserAdminRole(-j28, ryVar2.getMessagesController().getUser(Long.valueOf(ryVar2.H)), ryVar2.G.bot_admin_rights, null, false, ryVar2, true, true, null, g0Var, new eu(g0Var, i12));
+                if (qyVar2.G.bot_admin_rights != null) {
+                    qyVar2.getMessagesController().setUserAdminRole(-j28, qyVar2.getMessagesController().getUser(Long.valueOf(qyVar2.H)), qyVar2.G.bot_admin_rights, null, false, qyVar2, true, true, null, g0Var, new du(g0Var, i12));
                     return;
                 } else {
                     g0Var.run();
                     return;
                 }
             case 25:
-                f60 f60Var = (f60) this.c;
+                d60 d60Var = (d60) this.c;
                 TLRPC.Updates updates = (TLRPC.Updates) this.d;
                 long j29 = this.b;
-                f60Var.getClass();
+                d60Var.getClass();
                 TLRPC.Update update = updates.update;
                 if (update instanceof TL_update.TL_updateNewMessage) {
                     TLRPC.Message message = ((TL_update.TL_updateNewMessage) update).message;
@@ -506,41 +506,41 @@ public final /* synthetic */ class h0 implements Runnable {
                         }
                     }
                 }
-                ChatObject.Call call = f60Var.a1;
+                ChatObject.Call call = d60Var.a1;
                 if (call == null || i13 == 0) {
                     return;
                 }
                 call.invitedUsersMessageIds.put(Long.valueOf(j29), ChatObject.Call.InvitedUser.make(i13));
-                f60Var.O0(true);
+                d60Var.O0(true);
                 return;
             case 26:
                 LaunchActivity launchActivity = (LaunchActivity) this.c;
                 Long l4 = (Long) this.d;
                 long j30 = this.b;
-                n2 U = LaunchActivity.U();
+                m2 U = LaunchActivity.U();
                 if (U == null) {
                     return;
                 }
-                xn R9 = xn.R9(l4.longValue());
+                wn R9 = wn.R9(l4.longValue());
                 U.presentFragment(R9);
                 TLRPC.Chat chat = MessagesController.getInstance(launchActivity.O).getChat(Long.valueOf(-l4.longValue()));
                 if (chat != null) {
-                    AndroidUtilities.runOnUIThread(new w90(R9, j30, chat, 0), 250L);
+                    AndroidUtilities.runOnUIThread(new v90(R9, j30, chat, 0), 250L);
                     return;
                 }
                 return;
             case 27:
                 LaunchActivity launchActivity2 = (LaunchActivity) this.c;
                 long j31 = this.b;
-                ba0 ba0Var = (ba0) this.d;
+                aa0 aa0Var = (aa0) this.d;
                 Pattern pattern = LaunchActivity.B1;
-                AndroidUtilities.runOnUIThread(new tq(launchActivity2, MessagesStorage.getInstance(launchActivity2.O).getUser(j31), ba0Var, 13));
+                AndroidUtilities.runOnUIThread(new sq(launchActivity2, MessagesStorage.getInstance(launchActivity2.O).getUser(j31), aa0Var, 13));
                 return;
             case 28:
-                dd0 dd0Var = (dd0) this.c;
+                cd0 cd0Var = (cd0) this.c;
                 TLObject tLObject2 = (TLObject) this.d;
                 long j32 = this.b;
-                if (dd0Var.I == null) {
+                if (cd0Var.I == null) {
                     return;
                 }
                 TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject2;
@@ -552,33 +552,33 @@ public final /* synthetic */ class h0 implements Runnable {
                     }
                     i24++;
                 }
-                dd0Var.getMessagesStorage().putUsersAndChats(messages_messages.users, messages_messages.chats, true, true);
-                dd0Var.getMessagesController().putUsers(messages_messages.users, false);
-                dd0Var.getMessagesController().putChats(messages_messages.chats, false);
-                dd0Var.getLocationController().locationsCache.k(messages_messages.messages, j32);
-                dd0Var.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.liveLocationsCacheChanged, Long.valueOf(j32));
-                dd0Var.i0(messages_messages.messages);
-                dd0Var.getLocationController().markLiveLoactionsAsRead(dd0Var.e0);
-                if (dd0Var.J0 == null) {
-                    nc0 nc0Var = new nc0(dd0Var, 4);
-                    dd0Var.J0 = nc0Var;
-                    AndroidUtilities.runOnUIThread(nc0Var, 5000L);
+                cd0Var.getMessagesStorage().putUsersAndChats(messages_messages.users, messages_messages.chats, true, true);
+                cd0Var.getMessagesController().putUsers(messages_messages.users, false);
+                cd0Var.getMessagesController().putChats(messages_messages.chats, false);
+                cd0Var.getLocationController().locationsCache.k(messages_messages.messages, j32);
+                cd0Var.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.liveLocationsCacheChanged, Long.valueOf(j32));
+                cd0Var.i0(messages_messages.messages);
+                cd0Var.getLocationController().markLiveLoactionsAsRead(cd0Var.e0);
+                if (cd0Var.J0 == null) {
+                    mc0 mc0Var = new mc0(cd0Var, 4);
+                    cd0Var.J0 = mc0Var;
+                    AndroidUtilities.runOnUIThread(mc0Var, 5000L);
                     return;
                 }
                 return;
             default:
-                fw0 fw0Var = (fw0) this.c;
+                dw0 dw0Var = (dw0) this.c;
                 long j33 = this.b;
-                n2 n2Var2 = (n2) this.d;
-                fw0Var.getClass();
+                m2 m2Var2 = (m2) this.d;
+                dw0Var.getClass();
                 Bundle bundle = new Bundle();
                 if (j33 > 0) {
                     bundle.putLong("user_id", j33);
                 } else {
                     bundle.putLong("chat_id", -j33);
                 }
-                n2Var2.presentFragment(new ProfileActivity(bundle, null));
-                fw0Var.c(false);
+                m2Var2.presentFragment(new ProfileActivity(bundle, null));
+                dw0Var.c(false);
                 return;
         }
     }

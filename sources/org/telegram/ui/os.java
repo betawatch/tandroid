@@ -1,10 +1,8 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MessagesStorage;
-
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class os implements MessagesStorage.IntCallback {
+public final /* synthetic */ class os implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ ContactsActivity b;
 
@@ -13,20 +11,15 @@ public final /* synthetic */ class os implements MessagesStorage.IntCallback {
         this.b = contactsActivity;
     }
 
-    @Override // org.telegram.messenger.MessagesStorage.IntCallback
-    public final void run(int i10) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ContactsActivity contactsActivity = this.b;
-                contactsActivity.getClass();
-                contactsActivity.b0 = i10 != 0;
-                if (i10 != 0) {
-                    contactsActivity.f0(false);
-                    break;
-                }
+                this.b.g0();
                 break;
             default:
-                ContactsActivity.W(this.b, i10);
+                ContactsActivity contactsActivity = this.b;
+                contactsActivity.f.postOnAnimation(new os(contactsActivity, 0));
                 break;
         }
     }

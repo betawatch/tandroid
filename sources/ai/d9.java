@@ -25,7 +25,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public class d9 {
     public static HashMap B;
@@ -236,7 +236,7 @@ public class d9 {
                 HashMap hashMap = this.j;
                 if (z12 != z13) {
                     if (!z13) {
-                        org.telegram.messenger.z0.n(storyItem2.id, new StringBuilder("StoriesList remove story "));
+                        org.telegram.messenger.f0.n(storyItem2.id, new StringBuilder("StoriesList remove story "));
                         u(storyItem2.id, true);
                         int i13 = this.s;
                         if (i13 != -1) {
@@ -267,7 +267,7 @@ public class d9 {
                         p(Utilities.clamp(size2, 50, 10), true);
                     }
                 } else if (z12 && z13 && ((messageObject = (MessageObject) hashMap.get(Integer.valueOf(storyItem2.id))) == null || z10 || (storyItem = messageObject.storyItem) == null || (storyItem != storyItem2 && (storyItem.id != storyItem2.id || storyItem.media != storyItem2.media || !TextUtils.equals(storyItem.caption, storyItem2.caption))))) {
-                    org.telegram.messenger.z0.n(storyItem2.id, new StringBuilder("StoriesList update story "));
+                    org.telegram.messenger.f0.n(storyItem2.id, new StringBuilder("StoriesList update story "));
                     hashMap.put(Integer.valueOf(storyItem2.id), y(storyItem2));
                 }
                 z11 = true;

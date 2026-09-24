@@ -15,20 +15,20 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.d90;
+import org.telegram.ui.Components.n90;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.fi1;
-import org.telegram.ui.l20;
-import org.telegram.ui.sg;
-import org.telegram.ui.yl0;
+import org.telegram.ui.j20;
+import org.telegram.ui.rg;
+import org.telegram.ui.wl0;
 import yh.k7;
 import yh.m7;
+import yh.w3;
 import yh.w5;
 import yh.w7;
-import yh.x3;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -41,8 +41,8 @@ public final /* synthetic */ class o implements View.OnClickListener {
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        org.telegram.ui.ActionBar.n2 R;
-        org.telegram.ui.ActionBar.n2 R2;
+        org.telegram.ui.ActionBar.m2 R;
+        org.telegram.ui.ActionBar.m2 R2;
         switch (this.a) {
             case 0:
                 u uVar = (u) this.b;
@@ -84,7 +84,7 @@ public final /* synthetic */ class o implements View.OnClickListener {
                         action.addFlags(TLObject.FLAG_28);
                     }
                     context.startActivity(action);
-                    j1.j();
+                    k1.j();
                     break;
                 }
                 break;
@@ -94,22 +94,22 @@ public final /* synthetic */ class o implements View.OnClickListener {
                 alertDialog$Builder.a.R = LocaleController.getString(R.string.WebRecentClearTitle);
                 alertDialog$Builder.a.T = LocaleController.getString(R.string.WebRecentClearText);
                 alertDialog$Builder.k(LocaleController.getString(R.string.OK), new org.telegram.ui.web.a(kVar));
-                hg.c.r(R.string.Cancel, alertDialog$Builder, null);
+                hg.c.p(R.string.Cancel, alertDialog$Builder, null);
                 break;
             case 5:
                 ((pg.x) this.b).dismiss();
                 break;
             case 6:
-                ((yl0) this.b).run();
+                ((wl0) this.b).run();
                 break;
             case 7:
-                ((qg.v2) this.b).onBackPressed();
+                ((qg.t2) this.b).onBackPressed();
                 break;
             case 8:
-                ((sg) this.b).run();
+                ((rg) this.b).run();
                 break;
             case 9:
-                ((d90) this.b).performClick();
+                ((n90) this.b).performClick();
                 break;
             case 10:
                 rg.k1 k1Var = (rg.k1) this.b;
@@ -117,41 +117,41 @@ public final /* synthetic */ class o implements View.OnClickListener {
                 PremiumPreviewFragment.k0(k1Var.t0, null, "profile", null);
                 break;
             case 11:
-                final tg.h0 h0Var = (tg.h0) this.b;
-                vg.a aVar = h0Var.Q0;
+                final tg.g0 g0Var = (tg.g0) this.b;
+                vg.a aVar = g0Var.Q0;
                 if (!aVar.a.N) {
                     aVar.b(true);
-                    String str = h0Var.R0;
+                    String str = g0Var.R0;
                     final int i10 = 0;
-                    Utilities.Callback callback = new Utilities.Callback() { // from class: tg.g0
+                    Utilities.Callback callback = new Utilities.Callback() { // from class: tg.f0
                         @Override // org.telegram.messenger.Utilities.Callback
                         public final void run(Object obj) {
                             switch (i10) {
                                 case 0:
-                                    h0 h0Var2 = h0Var;
-                                    h0Var2.Q0.b(false);
-                                    h0Var2.dismiss();
-                                    AndroidUtilities.runOnUIThread(new f0(h0Var2, 1), 200L);
+                                    g0 g0Var2 = g0Var;
+                                    g0Var2.Q0.b(false);
+                                    g0Var2.dismiss();
+                                    AndroidUtilities.runOnUIThread(new e0(g0Var2, 1), 200L);
                                     break;
                                 default:
-                                    h0.c0(h0Var, (TLRPC.TL_error) obj);
+                                    g0.c0(g0Var, (TLRPC.TL_error) obj);
                                     break;
                             }
                         }
                     };
                     final int i11 = 1;
-                    Utilities.Callback callback2 = new Utilities.Callback() { // from class: tg.g0
+                    Utilities.Callback callback2 = new Utilities.Callback() { // from class: tg.f0
                         @Override // org.telegram.messenger.Utilities.Callback
                         public final void run(Object obj) {
                             switch (i11) {
                                 case 0:
-                                    h0 h0Var2 = h0Var;
-                                    h0Var2.Q0.b(false);
-                                    h0Var2.dismiss();
-                                    AndroidUtilities.runOnUIThread(new f0(h0Var2, 1), 200L);
+                                    g0 g0Var2 = g0Var;
+                                    g0Var2.Q0.b(false);
+                                    g0Var2.dismiss();
+                                    AndroidUtilities.runOnUIThread(new e0(g0Var2, 1), 200L);
                                     break;
                                 default:
-                                    h0.c0(h0Var, (TLRPC.TL_error) obj);
+                                    g0.c0(g0Var, (TLRPC.TL_error) obj);
                                     break;
                             }
                         }
@@ -159,15 +159,15 @@ public final /* synthetic */ class o implements View.OnClickListener {
                     ConnectionsManager connectionsManager = ConnectionsManager.getInstance(UserConfig.selectedAccount);
                     TLRPC.TL_payments_applyGiftCode tL_payments_applyGiftCode = new TLRPC.TL_payments_applyGiftCode();
                     tL_payments_applyGiftCode.slug = str;
-                    connectionsManager.sendRequest(tL_payments_applyGiftCode, new tg.q(callback2, callback, 0), 2);
+                    connectionsManager.sendRequest(tL_payments_applyGiftCode, new tg.o(callback2, callback, 0), 2);
                     break;
                 }
                 break;
             case 12:
-                ((tg.k0) this.b).dismiss();
+                ((tg.j0) this.b).dismiss();
                 break;
             case 13:
-                ((tg.c0) ((ug.e) this.b)).r.dismiss();
+                ((tg.b0) ((ug.e) this.b)).r.dismiss();
                 break;
             case 14:
                 Runnable runnable = ((xg.c) this.b).d;
@@ -184,9 +184,9 @@ public final /* synthetic */ class o implements View.OnClickListener {
                 break;
             case 17:
                 if (((xh.r1) this.b).f0.f > 0 && (R = LaunchActivity.R()) != null) {
-                    org.telegram.ui.ActionBar.l2 l2Var = new org.telegram.ui.ActionBar.l2();
-                    l2Var.a = true;
-                    R.showAsSheet(new w7(), l2Var);
+                    org.telegram.ui.ActionBar.k2 k2Var = new org.telegram.ui.ActionBar.k2();
+                    k2Var.a = true;
+                    R.showAsSheet(new w7(), k2Var);
                     break;
                 }
                 break;
@@ -216,28 +216,28 @@ public final /* synthetic */ class o implements View.OnClickListener {
                 ((yh.r1) this.b).run();
                 break;
             case 24:
-                yh.d3 d3Var = (yh.d3) this.b;
-                d3Var.getClass();
-                new m7(d3Var.b, d3Var.g).show();
+                yh.c3 c3Var = (yh.c3) this.b;
+                c3Var.getClass();
+                new m7(c3Var.b, c3Var.g).show();
                 break;
             case 25:
-                ((x3) this.b).dismiss();
+                ((w3) this.b).dismiss();
                 break;
             case 26:
                 ((w5) this.b).run();
                 break;
             case 27:
-                if (((k7) ((l20) this.b).d).f > 0 && (R2 = LaunchActivity.R()) != null) {
-                    org.telegram.ui.ActionBar.l2 l2Var2 = new org.telegram.ui.ActionBar.l2();
-                    l2Var2.a = true;
-                    R2.showAsSheet(new w7(), l2Var2);
+                if (((k7) ((j20) this.b).d).f > 0 && (R2 = LaunchActivity.R()) != null) {
+                    org.telegram.ui.ActionBar.k2 k2Var2 = new org.telegram.ui.ActionBar.k2();
+                    k2Var2.a = true;
+                    R2.showAsSheet(new w7(), k2Var2);
                     break;
                 }
                 break;
             default:
-                zg.c0 c0Var = (zg.c0) this.b;
-                if (c0Var.k) {
-                    c0Var.d();
+                zg.b0 b0Var = (zg.b0) this.b;
+                if (b0Var.k) {
+                    b0Var.d();
                     break;
                 }
                 break;

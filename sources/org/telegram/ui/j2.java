@@ -11,24 +11,24 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class j2 extends View implements org.telegram.ui.Cells.q9, e3 {
-    public final r70 a;
+public final class j2 extends View implements org.telegram.ui.Cells.p9, e3 {
+    public final p70 a;
     public final g4 b;
     public b3 c;
     public final int d;
     public int e;
     public TL_iv.pageBlockRelatedArticles f;
 
-    public j2(Context context, r70 r70Var, g4 g4Var) {
+    public j2(Context context, p70 p70Var, g4 g4Var) {
         super(context);
         this.d = AndroidUtilities.dp(18.0f);
-        this.a = r70Var;
+        this.a = p70Var;
         this.b = g4Var;
     }
 
-    @Override // org.telegram.ui.Cells.q9
+    @Override // org.telegram.ui.Cells.p9
     public final void fillTextLayoutBlocks(ArrayList arrayList) {
         b3 b3Var = this.c;
         if (b3Var != null) {
@@ -70,7 +70,7 @@ public final class j2 extends View implements org.telegram.ui.Cells.q9, e3 {
     }
 
     public /* bridge */ /* synthetic */ int getMinWidth() {
-        return org.telegram.messenger.ul.b(this);
+        return org.telegram.messenger.ok.a(this);
     }
 
     @Override // android.view.View

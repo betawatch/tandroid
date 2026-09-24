@@ -5,14 +5,14 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public interface ICarAudioCallback extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$media$ICarAudioCallback".replace('$', '.');
 
     void onStopRecording();
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class Default implements ICarAudioCallback {
         @Override // android.os.IInterface
         public IBinder asBinder() {
@@ -24,11 +24,11 @@ public interface ICarAudioCallback extends IInterface {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static abstract class Stub extends Binder implements ICarAudioCallback {
         static final int TRANSACTION_onStopRecording = 1;
 
-        /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+        /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
         public static class Proxy implements ICarAudioCallback {
             private IBinder mRemote;
 

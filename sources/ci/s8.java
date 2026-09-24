@@ -5,27 +5,27 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.d61;
-import org.telegram.ui.Components.g51;
-import org.telegram.ui.Components.h51;
-import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.j61;
+import org.telegram.ui.Components.r61;
+import org.telegram.ui.Components.u51;
 import org.telegram.ui.Components.v51;
+import org.telegram.ui.Components.wl0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public final class s8 extends g51 {
+public final class s8 extends u51 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        g51.setup(new s8());
+        u51.setup(new s8());
     }
 
-    @Override // org.telegram.ui.Components.g51
-    public final void bindView(View view, h51 h51Var, boolean z10, v51 v51Var, d61 d61Var) {
+    @Override // org.telegram.ui.Components.u51
+    public final void bindView(View view, v51 v51Var, boolean z10, j61 j61Var, r61 r61Var) {
         t8 t8Var = (t8) view;
-        Object obj = h51Var.G;
+        Object obj = v51Var.G;
         TLRPC.WebPage webPage = obj instanceof TLRPC.WebPage ? (TLRPC.WebPage) obj : null;
-        View.OnClickListener onClickListener = h51Var.D;
+        View.OnClickListener onClickListener = v51Var.D;
         org.telegram.ui.Components.p6 p6Var = t8Var.e;
         org.telegram.ui.Components.p6 p6Var2 = t8Var.d;
         ImageView imageView = t8Var.c;
@@ -47,8 +47,8 @@ public final class s8 extends g51 {
         t8Var.f.setOnClickListener(onClickListener);
     }
 
-    @Override // org.telegram.ui.Components.g51
-    public final View createView(Context context, ml0 ml0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
+    @Override // org.telegram.ui.Components.u51
+    public final View createView(Context context, wl0 wl0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
         return new t8(context);
     }
 }

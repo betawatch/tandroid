@@ -34,80 +34,80 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class lb implements org.telegram.ui.Cells.k1 {
+public final class lb implements org.telegram.ui.Cells.l1 {
     public final /* synthetic */ qb a;
 
     public lb(qb qbVar) {
         this.a = qbVar;
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public final /* synthetic */ boolean A1() {
         return false;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final void B0(org.telegram.ui.Cells.t1 t1Var, float f7, float f10) {
+    @Override // org.telegram.ui.Cells.l1
+    public final void B0(org.telegram.ui.Cells.u1 u1Var, float f7, float f10) {
         ub ubVar = this.a.n;
         int i10 = ub.Q0;
-        ubVar.P0(t1Var, 0.0f, 0.0f);
+        ubVar.P0(u1Var, 0.0f, 0.0f);
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ boolean G1(org.telegram.ui.Cells.t1 t1Var, TLRPC.Chat chat) {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ boolean G1(org.telegram.ui.Cells.u1 u1Var, TLRPC.Chat chat) {
         return false;
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public final /* synthetic */ boolean I1() {
         return false;
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public final /* synthetic */ boolean M0(long j3) {
         return false;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final void N1(org.telegram.ui.Cells.t1 t1Var, TLRPC.WebPage webPage, String str, boolean z10) {
-        nf.f.s(t1Var.getContext(), str);
+    @Override // org.telegram.ui.Cells.l1
+    public final void N1(org.telegram.ui.Cells.u1 u1Var, TLRPC.WebPage webPage, String str, boolean z10) {
+        nf.f.s(u1Var.getContext(), str);
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ boolean O(org.telegram.ui.Cells.t1 t1Var, TLRPC.TodoItem todoItem, boolean z10) {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ boolean O(org.telegram.ui.Cells.u1 u1Var, TLRPC.TodoItem todoItem, boolean z10) {
         return false;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ CharacterStyle O1(org.telegram.ui.Cells.t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ CharacterStyle O1(org.telegram.ui.Cells.u1 u1Var) {
         return null;
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public final /* synthetic */ boolean P() {
         return false;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final void P0(int i10, org.telegram.ui.Cells.t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public final void P0(int i10, org.telegram.ui.Cells.u1 u1Var) {
         TLRPC.WebPage webPage;
         int i11;
         ub ubVar = this.a.n;
-        MessageObject messageObject = t1Var.getMessageObject();
+        MessageObject messageObject = u1Var.getMessageObject();
         TLRPC.TL_channelAdminLogEvent tL_channelAdminLogEvent = messageObject.currentEvent;
         if (tL_channelAdminLogEvent != null && (tL_channelAdminLogEvent.action instanceof TLRPC.TL_channelAdminLogEventActionEditMessage)) {
             Bundle bundle = new Bundle();
             bundle.putLong("chat_id", -messageObject.getDialogId());
             bundle.putInt("message_id", messageObject.getRealId());
-            xn xnVar = new xn(bundle);
+            wn wnVar = new wn(bundle);
             if (ChatObject.isForum(ubVar.f)) {
                 long dialogId = messageObject.getDialogId();
-                i11 = ((org.telegram.ui.ActionBar.n2) ubVar).currentAccount;
-                ng.d.a(xnVar, MessagesStorage.TopicKey.of(dialogId, MessageObject.getTopicId(i11, messageObject.messageOwner, true)));
+                i11 = ((org.telegram.ui.ActionBar.m2) ubVar).currentAccount;
+                ng.d.a(wnVar, MessagesStorage.TopicKey.of(dialogId, MessageObject.getTopicId(i11, messageObject.messageOwner, true)));
             }
-            ubVar.presentFragment(xnVar);
+            ubVar.presentFragment(wnVar);
             return;
         }
         if (i10 == 0) {
@@ -142,25 +142,25 @@ public final class lb implements org.telegram.ui.Cells.k1 {
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));
             bufferedWriter.write(str);
             bufferedWriter.close();
-            ubVar.showDialog(new org.telegram.ui.Components.pe0(ubVar, null, user, null, file, null, str2, str3, null));
+            ubVar.showDialog(new org.telegram.ui.Components.ze0(ubVar, null, user, null, file, null, str2, str3, null));
         } catch (Exception e) {
             FileLog.e(e);
         }
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public final void P1(MessageObject messageObject, String str, String str2, String str3, String str4, int i10, int i11) {
         ub ubVar = this.a.n;
         org.telegram.ui.Components.wu.J(ubVar, messageObject, ubVar.B0, str2, str3, str4, str, i10, i11, -1, false);
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ boolean Q(org.telegram.ui.Cells.t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ boolean Q(org.telegram.ui.Cells.u1 u1Var) {
         return false;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final boolean Q1(org.telegram.ui.Cells.t1 t1Var, MessageObject messageObject) {
+    @Override // org.telegram.ui.Cells.l1
+    public final boolean Q1(org.telegram.ui.Cells.u1 u1Var, MessageObject messageObject) {
         if (messageObject.isVoice() || messageObject.isRoundVideo()) {
             boolean playMessage = MediaController.getInstance().playMessage(messageObject, false);
             MediaController.getInstance().setVoiceMessagesPlaylist(null, false);
@@ -172,13 +172,13 @@ public final class lb implements org.telegram.ui.Cells.k1 {
         return false;
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public final /* synthetic */ boolean R() {
         return false;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final void S(org.telegram.ui.Cells.t1 t1Var, TLRPC.Chat chat, int i10, float f7, float f10, boolean z10) {
+    @Override // org.telegram.ui.Cells.l1
+    public final void S(org.telegram.ui.Cells.u1 u1Var, TLRPC.Chat chat, int i10, float f7, float f10, boolean z10) {
         int i11;
         ub ubVar = this.a.n;
         if (chat == null || chat == ubVar.f) {
@@ -189,19 +189,19 @@ public final class lb implements org.telegram.ui.Cells.k1 {
         if (i10 != 0) {
             bundle.putInt("message_id", i10);
         }
-        i11 = ((org.telegram.ui.ActionBar.n2) ubVar).currentAccount;
+        i11 = ((org.telegram.ui.ActionBar.m2) ubVar).currentAccount;
         if (MessagesController.getInstance(i11).checkCanOpenChat(bundle, ubVar)) {
-            ubVar.presentFragment(new xn(bundle), true);
+            ubVar.presentFragment(new wn(bundle), true);
         }
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public final /* synthetic */ int V() {
         return 0;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final void V0(org.telegram.ui.Cells.t1 t1Var, CharacterStyle characterStyle, boolean z10) {
+    @Override // org.telegram.ui.Cells.l1
+    public final void V0(org.telegram.ui.Cells.u1 u1Var, CharacterStyle characterStyle, boolean z10) {
         TLRPC.WebPage webPage;
         int i10;
         int i11;
@@ -212,49 +212,49 @@ public final class lb implements org.telegram.ui.Cells.k1 {
         if (characterStyle == null) {
             return;
         }
-        MessageObject messageObject = t1Var.getMessageObject();
-        if (characterStyle instanceof org.telegram.ui.Components.k51) {
-            org.telegram.ui.Components.k51 k51Var = (org.telegram.ui.Components.k51) characterStyle;
-            AndroidUtilities.addToClipboard(k51Var.a.subSequence(k51Var.b, k51Var.c).toString());
+        MessageObject messageObject = u1Var.getMessageObject();
+        if (characterStyle instanceof org.telegram.ui.Components.y51) {
+            org.telegram.ui.Components.y51 y51Var = (org.telegram.ui.Components.y51) characterStyle;
+            AndroidUtilities.addToClipboard(y51Var.a.subSequence(y51Var.b, y51Var.c).toString());
             if (AndroidUtilities.shouldShowClipboardToast()) {
                 Toast.makeText(ubVar.getParentActivity(), LocaleController.getString(R.string.TextCopied), 0).show();
                 return;
             }
             return;
         }
-        if (characterStyle instanceof org.telegram.ui.Components.o51) {
-            Long parseLong = Utilities.parseLong(((org.telegram.ui.Components.o51) characterStyle).getURL());
+        if (characterStyle instanceof org.telegram.ui.Components.c61) {
+            Long parseLong = Utilities.parseLong(((org.telegram.ui.Components.c61) characterStyle).getURL());
             long longValue = parseLong.longValue();
             if (longValue > 0) {
-                i13 = ((org.telegram.ui.ActionBar.n2) ubVar).currentAccount;
+                i13 = ((org.telegram.ui.ActionBar.m2) ubVar).currentAccount;
                 TLRPC.User user = MessagesController.getInstance(i13).getUser(parseLong);
                 if (user != null) {
-                    i14 = ((org.telegram.ui.ActionBar.n2) ubVar).currentAccount;
+                    i14 = ((org.telegram.ui.ActionBar.m2) ubVar).currentAccount;
                     MessagesController.getInstance(i14).openChatOrProfileWith(user, null, ubVar, 0, false);
                     return;
                 }
                 return;
             }
-            i11 = ((org.telegram.ui.ActionBar.n2) ubVar).currentAccount;
+            i11 = ((org.telegram.ui.ActionBar.m2) ubVar).currentAccount;
             TLRPC.Chat chat = MessagesController.getInstance(i11).getChat(Long.valueOf(-longValue));
             if (chat != null) {
-                i12 = ((org.telegram.ui.ActionBar.n2) ubVar).currentAccount;
+                i12 = ((org.telegram.ui.ActionBar.m2) ubVar).currentAccount;
                 MessagesController.getInstance(i12).openChatOrProfileWith(null, chat, ubVar, 0, false);
                 return;
             }
             return;
         }
-        if (characterStyle instanceof org.telegram.ui.Components.l51) {
-            String url = ((org.telegram.ui.Components.l51) characterStyle).getURL();
+        if (characterStyle instanceof org.telegram.ui.Components.z51) {
+            String url = ((org.telegram.ui.Components.z51) characterStyle).getURL();
             if (url.startsWith("@")) {
-                i10 = ((org.telegram.ui.ActionBar.n2) ubVar).currentAccount;
+                i10 = ((org.telegram.ui.ActionBar.m2) ubVar).currentAccount;
                 MessagesController.getInstance(i10).openByUserName(url.substring(1), ubVar, 0);
                 return;
             } else {
                 if (url.startsWith("#")) {
-                    ry ryVar = new ry(null);
-                    ryVar.n2 = url;
-                    ubVar.presentFragment(ryVar);
+                    qy qyVar = new qy(null);
+                    qyVar.n2 = url;
+                    ubVar.presentFragment(qyVar);
                     return;
                 }
                 return;
@@ -262,31 +262,31 @@ public final class lb implements org.telegram.ui.Cells.k1 {
         }
         String url2 = ((URLSpan) characterStyle).getURL();
         if (z10) {
-            org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(1, (Context) ubVar.getParentActivity(), (org.telegram.ui.ActionBar.d6) null, false);
-            f3Var.fixNavigationBar();
-            f3Var.title = url2;
-            f3Var.bigTitle = false;
+            org.telegram.ui.ActionBar.e3 e3Var = new org.telegram.ui.ActionBar.e3(1, (Context) ubVar.getParentActivity(), (org.telegram.ui.ActionBar.d6) null, false);
+            e3Var.fixNavigationBar();
+            e3Var.title = url2;
+            e3Var.bigTitle = false;
             CharSequence[] charSequenceArr = {LocaleController.getString(R.string.Open), LocaleController.getString(R.string.Copy)};
             lg.j jVar = new lg.j(2, this, url2);
-            f3Var.items = charSequenceArr;
-            f3Var.onClickListener = jVar;
-            ubVar.showDialog(f3Var);
+            e3Var.items = charSequenceArr;
+            e3Var.onClickListener = jVar;
+            ubVar.showDialog(e3Var);
             return;
         }
-        if (characterStyle instanceof org.telegram.ui.Components.n51) {
-            String url3 = ((org.telegram.ui.Components.n51) characterStyle).getURL();
+        if (characterStyle instanceof org.telegram.ui.Components.b61) {
+            String url3 = ((org.telegram.ui.Components.b61) characterStyle).getURL();
             if (nf.f.f(Uri.parse(url3), false, null)) {
                 nf.f.o(ubVar.getParentActivity(), url3, true);
                 return;
             }
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ubVar.getParentActivity());
             String string = LocaleController.getString(R.string.OpenUrlTitle);
-            org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-            b2Var.R = string;
-            b2Var.T = LocaleController.formatString(R.string.OpenUrlAlert2, url3);
-            alertDialog$Builder.k(LocaleController.getString(R.string.Open), new u(3, ubVar, url3));
+            org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
+            a2Var.R = string;
+            a2Var.T = LocaleController.formatString(R.string.OpenUrlAlert2, url3);
+            alertDialog$Builder.k(LocaleController.getString(R.string.Open), new o(4, ubVar, url3));
             alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-            ubVar.showDialog(b2Var);
+            ubVar.showDialog(a2Var);
             return;
         }
         TLRPC.MessageMedia messageMedia = messageObject.messageOwner.media;
@@ -305,23 +305,23 @@ public final class lb implements org.telegram.ui.Cells.k1 {
         nf.f.o(ubVar.getParentActivity(), url2, true);
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ boolean V1(org.telegram.ui.Cells.t1 t1Var, TLRPC.PollAnswer pollAnswer) {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ boolean V1(org.telegram.ui.Cells.u1 u1Var, TLRPC.PollAnswer pollAnswer) {
         return false;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ boolean W0(org.telegram.ui.Cells.t1 t1Var, boolean z10) {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ boolean W0(org.telegram.ui.Cells.u1 u1Var, boolean z10) {
         return false;
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public final /* synthetic */ hh.a Y() {
         return null;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ iv0 Y1() {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ hv0 Y1() {
         return null;
     }
 
@@ -335,36 +335,36 @@ public final class lb implements org.telegram.ui.Cells.k1 {
         qbVar.n.presentFragment(profileActivity);
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ boolean a0(org.telegram.ui.Cells.t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ boolean a0(org.telegram.ui.Cells.u1 u1Var) {
         return false;
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public final /* synthetic */ boolean a2(long j3) {
         return false;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final boolean b0(org.telegram.ui.Cells.t1 t1Var, TLRPC.User user) {
+    @Override // org.telegram.ui.Cells.l1
+    public final boolean b0(org.telegram.ui.Cells.u1 u1Var, TLRPC.User user) {
         int i10;
         int i11;
-        y4 b10;
+        x4 b10;
         ub ubVar = this.a.n;
         if (user != null) {
             long j3 = user.id;
-            i10 = ((org.telegram.ui.ActionBar.n2) ubVar).currentAccount;
+            i10 = ((org.telegram.ui.ActionBar.m2) ubVar).currentAccount;
             if (j3 != UserConfig.getInstance(i10).getClientUserId()) {
-                e5[] e5VarArr = {e5.d, e5.h};
+                d5[] d5VarArr = {d5.d, d5.h};
                 TLRPC.UserFull userFull = ubVar.getMessagesController().getUserFull(user.id);
                 if (userFull != null) {
-                    b10 = y4.c(user, userFull, e5VarArr);
+                    b10 = x4.c(user, userFull, d5VarArr);
                 } else {
-                    i11 = ((org.telegram.ui.ActionBar.n2) ubVar).classGuid;
-                    b10 = y4.b(user, i11, e5VarArr);
+                    i11 = ((org.telegram.ui.ActionBar.m2) ubVar).classGuid;
+                    b10 = x4.b(user, i11, d5VarArr);
                 }
                 if (com.google.firebase.messaging.m.e(b10)) {
-                    com.google.firebase.messaging.m.k().v((ViewGroup) ubVar.fragmentView, ubVar.getResourceProvider(), b10, new u(this, t1Var, user));
+                    com.google.firebase.messaging.m.k().v((ViewGroup) ubVar.fragmentView, ubVar.getResourceProvider(), b10, new o(this, u1Var, user));
                     return true;
                 }
             }
@@ -372,9 +372,9 @@ public final class lb implements org.telegram.ui.Cells.k1 {
         return false;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final void b2(org.telegram.ui.Cells.t1 t1Var, int i10, float f7, float f10, boolean z10) {
-        MessageObject messageObject = t1Var.getMessageObject().replyMessageObject;
+    @Override // org.telegram.ui.Cells.l1
+    public final void b2(org.telegram.ui.Cells.u1 u1Var, int i10, float f7, float f10, boolean z10) {
+        MessageObject messageObject = u1Var.getMessageObject().replyMessageObject;
         long dialogId = messageObject.getDialogId();
         ub ubVar = this.a.n;
         if (dialogId == (-ubVar.f.id)) {
@@ -389,50 +389,50 @@ public final class lb implements org.telegram.ui.Cells.k1 {
         Bundle bundle = new Bundle();
         bundle.putLong("chat_id", ubVar.f.id);
         bundle.putInt("message_id", messageObject.getRealId());
-        ubVar.presentFragment(new xn(bundle));
+        ubVar.presentFragment(new wn(bundle));
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ boolean c1(int i10, org.telegram.ui.Cells.t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ boolean c1(int i10, org.telegram.ui.Cells.u1 u1Var) {
         return false;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ boolean c2(org.telegram.ui.Cells.t1 t1Var, TLRPC.TodoItem todoItem) {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ boolean c2(org.telegram.ui.Cells.u1 u1Var, TLRPC.TodoItem todoItem) {
         return false;
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public final boolean e() {
         return true;
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public final /* synthetic */ boolean e0() {
         return false;
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public final boolean f() {
         return true;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ String h(org.telegram.ui.Cells.t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ String h(org.telegram.ui.Cells.u1 u1Var) {
         return null;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ int h0(org.telegram.ui.Cells.t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ int h0(org.telegram.ui.Cells.u1 u1Var) {
         return 0;
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public final /* synthetic */ boolean h1(MessageObject messageObject) {
-        return org.telegram.messenger.ul.a(messageObject);
+        return org.telegram.ui.Cells.c1.a(messageObject);
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public final void k() {
         ub ubVar = this.a.n;
         if (ApplicationLoader.isStandaloneBuild()) {
@@ -450,19 +450,19 @@ public final class lb implements org.telegram.ui.Cells.k1 {
         }
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public final boolean l0() {
         return true;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ boolean l2(org.telegram.ui.Cells.t1 t1Var, TL_iv.PageBlock pageBlock) {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ boolean l2(org.telegram.ui.Cells.u1 u1Var, TL_iv.PageBlock pageBlock) {
         return false;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final void m1(org.telegram.ui.Cells.t1 t1Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
-        MessageObject messageObject = t1Var.getMessageObject();
+    @Override // org.telegram.ui.Cells.l1
+    public final void m1(org.telegram.ui.Cells.u1 u1Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
+        MessageObject messageObject = u1Var.getMessageObject();
         qb qbVar = this.a;
         if (qbVar.n.p0.contains(Long.valueOf(messageObject.eventId))) {
             qbVar.n.p0.remove(Long.valueOf(messageObject.eventId));
@@ -474,34 +474,34 @@ public final class lb implements org.telegram.ui.Cells.k1 {
         qbVar.n.E.l();
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public final /* synthetic */ boolean o0(org.telegram.ui.Components.z5 z5Var) {
         return false;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final void q0(org.telegram.ui.Cells.t1 t1Var, float f7, float f10) {
+    @Override // org.telegram.ui.Cells.l1
+    public final void q0(org.telegram.ui.Cells.u1 u1Var, float f7, float f10) {
         ub ubVar = this.a.n;
         int i10 = ub.Q0;
-        ubVar.P0(t1Var, 0.0f, 0.0f);
+        ubVar.P0(u1Var, 0.0f, 0.0f);
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final void r(org.telegram.ui.Cells.t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public final void r(org.telegram.ui.Cells.u1 u1Var) {
         qb qbVar = this.a;
         ub ubVar = qbVar.n;
         if (ubVar.getParentActivity() == null) {
             return;
         }
-        ubVar.showDialog(org.telegram.ui.Components.hq0.N0(qbVar.c, t1Var.getMessageObject(), null, ChatObject.isChannel(ubVar.f) && !ubVar.f.megagroup, null));
+        ubVar.showDialog(org.telegram.ui.Components.uq0.N0(qbVar.c, u1Var.getMessageObject(), null, ChatObject.isChannel(ubVar.f) && !ubVar.f.megagroup, null));
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final void t0(org.telegram.ui.Cells.t1 t1Var, TLRPC.User user, float f7, float f10) {
+    @Override // org.telegram.ui.Cells.l1
+    public final void t0(org.telegram.ui.Cells.u1 u1Var, TLRPC.User user, float f7, float f10) {
         int i10;
         if (user != null) {
             long j3 = user.id;
-            i10 = ((org.telegram.ui.ActionBar.n2) this.a.n).currentAccount;
+            i10 = ((org.telegram.ui.ActionBar.m2) this.a.n).currentAccount;
             if (j3 != UserConfig.getInstance(i10).getClientUserId()) {
                 a(user);
             }
@@ -512,17 +512,17 @@ public final class lb implements org.telegram.ui.Cells.k1 {
     
         if (r15.exists() != false) goto L55;
      */
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void v0(org.telegram.ui.Cells.t1 t1Var, float f7, float f10, boolean z10) {
+    public final void v0(org.telegram.ui.Cells.u1 u1Var, float f7, float f10, boolean z10) {
         int i10;
         File file;
         ub ubVar = this.a.n;
-        MessageObject messageObject = t1Var.getMessageObject();
+        MessageObject messageObject = u1Var.getMessageObject();
         if (messageObject.getInputStickerSet() != null) {
-            ubVar.showDialog(new org.telegram.ui.Components.ux0(ubVar.getParentActivity(), ubVar, messageObject.getInputStickerSet(), null, null, null));
+            ubVar.showDialog(new org.telegram.ui.Components.fy0(ubVar.getParentActivity(), ubVar, messageObject.getInputStickerSet(), null, null, null));
             return;
         }
         File file2 = null;
@@ -557,9 +557,9 @@ public final class lb implements org.telegram.ui.Cells.k1 {
         }
         if (i11 == 4) {
             if (AndroidUtilities.isMapsInstalled(ubVar)) {
-                dd0 dd0Var = new dd0(0);
-                dd0Var.u0(messageObject);
-                ubVar.presentFragment(dd0Var);
+                cd0 cd0Var = new cd0(0);
+                cd0Var.u0(messageObject);
+                ubVar.presentFragment(cd0Var);
                 return;
             }
             return;
@@ -581,9 +581,9 @@ public final class lb implements org.telegram.ui.Cells.k1 {
                 if (b0Var != null) {
                     if (b0Var.N0() < ubVar.x.B() - 1) {
                         ubVar.g0 = ubVar.x.L0();
-                        org.telegram.ui.Components.wk0 wk0Var = (org.telegram.ui.Components.wk0) ubVar.v.K(ubVar.g0);
-                        if (wk0Var != null) {
-                            ubVar.h0 = wk0Var.a.getTop();
+                        org.telegram.ui.Components.gl0 gl0Var = (org.telegram.ui.Components.gl0) ubVar.v.K(ubVar.g0);
+                        if (gl0Var != null) {
+                            ubVar.h0 = gl0Var.a.getTop();
                         } else {
                             ubVar.g0 = -1;
                         }
@@ -606,219 +606,219 @@ public final class lb implements org.telegram.ui.Cells.k1 {
         }
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public final /* synthetic */ boolean v2(int i10) {
         return false;
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public final /* synthetic */ String w(long j3) {
         return null;
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public final /* synthetic */ boolean w0(MessageObject messageObject) {
         return true;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ org.telegram.ui.Cells.s9 z2() {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ org.telegram.ui.Cells.r9 z2() {
         return null;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ void A(org.telegram.ui.Cells.t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ void A(org.telegram.ui.Cells.u1 u1Var) {
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ void C1(org.telegram.ui.Cells.t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ void C1(org.telegram.ui.Cells.u1 u1Var) {
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final void D0(org.telegram.ui.Cells.t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public final void D0(org.telegram.ui.Cells.u1 u1Var) {
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ void F(org.telegram.ui.Cells.t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ void F(org.telegram.ui.Cells.u1 u1Var) {
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ void F0(org.telegram.ui.Cells.t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ void F0(org.telegram.ui.Cells.u1 u1Var) {
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public final /* synthetic */ void I(MessageObject.TextLayoutBlock textLayoutBlock) {
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ void I0(org.telegram.ui.Cells.t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ void I0(org.telegram.ui.Cells.u1 u1Var) {
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ void K1(org.telegram.ui.Cells.t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ void K1(org.telegram.ui.Cells.u1 u1Var) {
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final void L(org.telegram.ui.Cells.t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public final void L(org.telegram.ui.Cells.u1 u1Var) {
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public final /* synthetic */ void M1(MessageObject messageObject) {
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public final /* synthetic */ void N(MessageObject messageObject) {
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ void N0(org.telegram.ui.Cells.t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ void N0(org.telegram.ui.Cells.u1 u1Var) {
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public final /* synthetic */ void R1() {
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ void T(org.telegram.ui.Cells.t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ void T(org.telegram.ui.Cells.u1 u1Var) {
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ void X0(org.telegram.ui.Cells.t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ void X0(org.telegram.ui.Cells.u1 u1Var) {
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ void Z0(org.telegram.ui.Cells.t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ void Z0(org.telegram.ui.Cells.u1 u1Var) {
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public final /* synthetic */ void d0(int i10) {
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ void e2(org.telegram.ui.Cells.t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ void e2(org.telegram.ui.Cells.u1 u1Var) {
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ void i0(org.telegram.ui.Cells.t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ void i0(org.telegram.ui.Cells.u1 u1Var) {
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public final /* synthetic */ void k1() {
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ void m2(org.telegram.ui.Cells.t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ void m2(org.telegram.ui.Cells.u1 u1Var) {
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public final void n0(String str) {
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ void o(org.telegram.ui.Cells.t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ void o(org.telegram.ui.Cells.u1 u1Var) {
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public final /* synthetic */ void p() {
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public final /* synthetic */ void q2() {
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public final /* synthetic */ void s() {
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ void t(org.telegram.ui.Cells.t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ void t(org.telegram.ui.Cells.u1 u1Var) {
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ void u(org.telegram.ui.Cells.t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ void u(org.telegram.ui.Cells.u1 u1Var) {
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public final /* synthetic */ void x2() {
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ void y0(org.telegram.ui.Cells.t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ void y0(org.telegram.ui.Cells.u1 u1Var) {
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ void z(org.telegram.ui.Cells.t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ void z(org.telegram.ui.Cells.u1 u1Var) {
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public final /* synthetic */ void z0() {
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ void D1(org.telegram.ui.Cells.t1 t1Var, boolean z10) {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ void D1(org.telegram.ui.Cells.u1 u1Var, boolean z10) {
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ void E(org.telegram.ui.Cells.t1 t1Var, BotInlineKeyboard.ButtonCustom buttonCustom) {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ void E(org.telegram.ui.Cells.u1 u1Var, BotInlineKeyboard.ButtonCustom buttonCustom) {
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ void H1(org.telegram.ui.Cells.t1 t1Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ void H1(org.telegram.ui.Cells.u1 u1Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ void M(int i10, org.telegram.ui.Cells.t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ void M(int i10, org.telegram.ui.Cells.u1 u1Var) {
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ void R0(org.telegram.ui.Cells.t1 t1Var, TL_keyboard.KeyboardInlineButton keyboardInlineButton) {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ void R0(org.telegram.ui.Cells.u1 u1Var, TL_keyboard.KeyboardInlineButton keyboardInlineButton) {
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ void T1(org.telegram.ui.Cells.t1 t1Var, TLRPC.MessageExtendedMedia messageExtendedMedia) {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ void T1(org.telegram.ui.Cells.u1 u1Var, TLRPC.MessageExtendedMedia messageExtendedMedia) {
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ void g2(org.telegram.ui.Cells.t1 t1Var, long j3) {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ void g2(org.telegram.ui.Cells.u1 u1Var, long j3) {
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ void i(org.telegram.ui.Cells.t1 t1Var, bi.f fVar) {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ void i(org.telegram.ui.Cells.u1 u1Var, bi.f fVar) {
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ void p1(org.telegram.ui.Cells.t1 t1Var, TLRPC.Document document) {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ void p1(org.telegram.ui.Cells.u1 u1Var, TLRPC.Document document) {
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ void A0(org.telegram.ui.Cells.t1 t1Var, TLObject tLObject, boolean z10) {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ void A0(org.telegram.ui.Cells.u1 u1Var, TLObject tLObject, boolean z10) {
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ void f0(org.telegram.ui.Cells.t1 t1Var, float f7, float f10) {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ void f0(org.telegram.ui.Cells.u1 u1Var, float f7, float f10) {
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ void u1(org.telegram.ui.Cells.t1 t1Var, float f7, float f10) {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ void u1(org.telegram.ui.Cells.u1 u1Var, float f7, float f10) {
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ void y2(org.telegram.ui.Cells.t1 t1Var, int i10, int i11) {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ void y2(org.telegram.ui.Cells.u1 u1Var, int i10, int i11) {
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ void U1(org.telegram.ui.Cells.t1 t1Var, TLRPC.User user, TLRPC.Document document, String str) {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ void U1(org.telegram.ui.Cells.u1 u1Var, TLRPC.User user, TLRPC.Document document, String str) {
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ void n(org.telegram.ui.Cells.t1 t1Var, TLRPC.PollAnswer pollAnswer, TLRPC.MessageMedia messageMedia, int i10) {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ void n(org.telegram.ui.Cells.u1 u1Var, TLRPC.PollAnswer pollAnswer, TLRPC.MessageMedia messageMedia, int i10) {
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ void j(org.telegram.ui.Cells.t1 t1Var, ArrayList arrayList, int i10, int i11, int i12) {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ void j(org.telegram.ui.Cells.u1 u1Var, ArrayList arrayList, int i10, int i11, int i12) {
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public final /* synthetic */ void t2(org.telegram.ui.Cells.t1 t1Var, TLRPC.ReactionCount reactionCount, boolean z10, float f7, float f10) {
+    @Override // org.telegram.ui.Cells.l1
+    public final /* synthetic */ void t2(org.telegram.ui.Cells.u1 u1Var, TLRPC.ReactionCount reactionCount, boolean z10, float f7, float f10) {
     }
 }

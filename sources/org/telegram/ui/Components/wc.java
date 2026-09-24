@@ -2,99 +2,21 @@ package org.telegram.ui.Components;
 
 import org.telegram.messenger.R;
 
-/* JADX WARN: Enum visitor error
-jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'e' uses external variables
-	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:451)
-	at jadx.core.dex.visitors.EnumVisitor.processEnumFieldByRegister(EnumVisitor.java:395)
-	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromFilledArray(EnumVisitor.java:324)
-	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromInsn(EnumVisitor.java:262)
-	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:151)
-	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
- */
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class wc {
-    public static final wc E;
-    public static final wc F;
-    public static final wc G;
-    public static final wc H;
-    public static final wc I;
-    public static final /* synthetic */ wc[] J;
-    public static final wc e;
-    public static final wc f;
-    public static final wc h;
-    public static final wc n;
-    public static final wc r;
-    public static final wc s;
-    public static final wc v;
-    public static final wc w;
-    public static final wc x;
-    public static final wc y;
-    public final String a;
-    public final int b;
-    public final boolean c;
-    public final vc d;
+public enum wc {
+    d(R.raw.ic_download, 2, "Box", "Arrow"),
+    e(R.raw.ic_save_to_gallery, 0, "Box", "Arrow", "Mask", "Arrow 2", "Splash"),
+    f(R.raw.ic_save_to_music, 2, "Box", "Arrow"),
+    h(R.raw.ic_save_to_gifs, 0, "gif");
 
-    static {
-        int i10 = R.string.PhotoSavedHint;
-        vc vcVar = vc.e;
-        wc wcVar = new wc("PHOTO", 0, "PhotoSavedHint", i10, vcVar);
-        e = wcVar;
-        wc wcVar2 = new wc("PHOTOS", 1, "PhotosSavedHint", vcVar);
-        f = wcVar2;
-        wc wcVar3 = new wc("VIDEO", 2, "VideoSavedHint", R.string.VideoSavedHint, vcVar);
-        h = wcVar3;
-        wc wcVar4 = new wc("VIDEOS", 3, "VideosSavedHint", vcVar);
-        n = wcVar4;
-        wc wcVar5 = new wc("LIVEPHOTO", 4, "LivePhotoSavedHint", R.string.LivePhotoSavedHint, vcVar);
-        r = wcVar5;
-        wc wcVar6 = new wc("LIVEPHOTOS", 5, "LivePhotosSavedHint", vcVar);
-        s = wcVar6;
-        wc wcVar7 = new wc("MEDIA", 6, "MediaSavedHint", vcVar);
-        v = wcVar7;
-        int i11 = R.string.PhotoSavedToDownloadsHintLinked;
-        vc vcVar2 = vc.d;
-        wc wcVar8 = new wc("PHOTO_TO_DOWNLOADS", 7, "PhotoSavedToDownloadsHintLinked", i11, vcVar2);
-        w = wcVar8;
-        wc wcVar9 = new wc("VIDEO_TO_DOWNLOADS", 8, "VideoSavedToDownloadsHintLinked", R.string.VideoSavedToDownloadsHintLinked, vcVar2);
-        x = wcVar9;
-        wc wcVar10 = new wc("GIF", 9, "GifSavedHint", R.string.GifSavedHint, vc.h);
-        y = wcVar10;
-        wc wcVar11 = new wc("GIF_TO_DOWNLOADS", 10, "GifSavedToDownloadsHintLinked", R.string.GifSavedToDownloadsHintLinked, vcVar2);
-        E = wcVar11;
-        int i12 = R.string.AudioSavedHint;
-        vc vcVar3 = vc.f;
-        wc wcVar12 = new wc("AUDIO", 11, "AudioSavedHint", i12, vcVar3);
-        F = wcVar12;
-        wc wcVar13 = new wc("AUDIOS", 12, "AudiosSavedHint", vcVar3);
-        G = wcVar13;
-        wc wcVar14 = new wc("UNKNOWN", 13, "FileSavedHintLinked", R.string.FileSavedHintLinked, vcVar2);
-        H = wcVar14;
-        wc wcVar15 = new wc("UNKNOWNS", 14, "FilesSavedHintLinked", vcVar2);
-        I = wcVar15;
-        J = new wc[]{wcVar, wcVar2, wcVar3, wcVar4, wcVar5, wcVar6, wcVar7, wcVar8, wcVar9, wcVar10, wcVar11, wcVar12, wcVar13, wcVar14, wcVar15};
-    }
+    public final int a;
+    public final String[] b;
+    public final int c;
 
-    public wc(String str, int i10, String str2, int i11, vc vcVar) {
-        this.a = str2;
-        this.b = i11;
-        this.d = vcVar;
-        this.c = false;
-    }
-
-    public static wc valueOf(String str) {
-        return (wc) Enum.valueOf(wc.class, str);
-    }
-
-    public static wc[] values() {
-        return (wc[]) J.clone();
-    }
-
-    public wc(String str, int i10, String str2, vc vcVar) {
-        this.a = str2;
-        this.d = vcVar;
-        this.b = 0;
-        this.c = true;
+    wc(int i10, int i11, String... strArr) {
+        this.a = i10;
+        this.c = i11;
+        this.b = strArr;
     }
 }

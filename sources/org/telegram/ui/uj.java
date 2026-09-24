@@ -14,16 +14,16 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class uj extends s4.t {
     public boolean S;
-    public final /* synthetic */ xn T;
+    public final /* synthetic */ wn T;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public uj(xn xnVar, boolean z10) {
+    public uj(wn wnVar, boolean z10) {
         super(z10);
-        this.T = xnVar;
+        this.T = wnVar;
     }
 
     @Override // s4.t
@@ -32,10 +32,10 @@ public final class uj extends s4.t {
         MessageObject messageObject;
         MessageObject.GroupedMessages X8;
         byte b10;
-        xn xnVar = this.T;
-        km kmVar = xnVar.A0;
-        int i12 = kmVar.J;
-        if (i10 >= i12 && i10 < kmVar.K && (i11 = i10 - i12) >= 0 && i11 < kmVar.L().size() && (X8 = xnVar.X8((messageObject = (MessageObject) xnVar.A0.L().get(i11)))) != null) {
+        wn wnVar = this.T;
+        jm jmVar = wnVar.A0;
+        int i12 = jmVar.J;
+        if (i10 >= i12 && i10 < jmVar.K && (i11 = i10 - i12) >= 0 && i11 < jmVar.L().size() && (X8 = wnVar.X8((messageObject = (MessageObject) wnVar.A0.L().get(i11)))) != null) {
             MessageObject.GroupedMessagePosition position = X8.getPosition(messageObject);
             if (position.minX != position.maxX && (b10 = position.minY) == position.maxY && b10 != 0) {
                 int size = X8.posArray.size();
@@ -56,8 +56,8 @@ public final class uj extends s4.t {
 
     @Override // s4.t
     public final boolean C1(View view) {
-        if (view instanceof org.telegram.ui.Cells.t1) {
-            return !((org.telegram.ui.Cells.t1) view).getMessageObject().isOutOwner();
+        if (view instanceof org.telegram.ui.Cells.u1) {
+            return !((org.telegram.ui.Cells.u1) view).getMessageObject().isOutOwner();
         }
         return false;
     }
@@ -144,25 +144,25 @@ public final class uj extends s4.t {
         float f10;
         float f11;
         float f12;
-        zg.l0 l0Var;
+        zg.k0 k0Var;
         ah.h hVar;
         boolean z11 = false;
-        xn xnVar = this.T;
+        wn wnVar = this.T;
         if (i10 < 0) {
-            float f13 = xnVar.N9;
+            float f13 = wnVar.N9;
             if (f13 != 0.0f) {
                 float f14 = f13 + i10;
-                xnVar.N9 = f14;
+                wnVar.N9 = f14;
                 if (f14 < 0.0f) {
                     i10 = (int) f14;
-                    xnVar.N9 = 0.0f;
-                    xnVar.x0.invalidate();
+                    wnVar.N9 = 0.0f;
+                    wnVar.x0.invalidate();
                 } else {
                     i10 = 0;
                 }
             }
         }
-        int childCount = xnVar.x0.getChildCount();
+        int childCount = wnVar.x0.getChildCount();
         int i13 = 0;
         while (true) {
             if (i13 >= childCount) {
@@ -170,10 +170,10 @@ public final class uj extends s4.t {
                 z10 = false;
                 break;
             }
-            View childAt = xnVar.x0.getChildAt(i13);
-            float f15 = xnVar.s9;
-            xnVar.x0.getClass();
-            if (RecyclerView.R(childAt) == (xnVar.Pa ? 0 : xnVar.A0.h() - 1)) {
+            View childAt = wnVar.x0.getChildAt(i13);
+            float f15 = wnVar.s9;
+            wnVar.x0.getClass();
+            if (RecyclerView.R(childAt) == (wnVar.Pa ? 0 : wnVar.A0.h() - 1)) {
                 i11 = super.o0(((float) (childAt.getTop() - i10)) > f15 ? (int) (childAt.getTop() - f15) : i10, eVar, z0Var);
                 z10 = true;
             } else {
@@ -183,73 +183,73 @@ public final class uj extends s4.t {
         if (!z10) {
             i11 = super.o0(i10, eVar, z0Var);
         }
-        if (!xnVar.vc.f) {
-            SparseArray[] sparseArrayArr = xnVar.W5;
-            if (sparseArrayArr[0].size() <= 0 && sparseArrayArr[1].size() <= 0 && i10 > 0 && i11 == 0 && (((ChatObject.isChannel(xnVar.e) && !xnVar.e.megagroup) || (xnVar.h4 && !UserObject.isBotForum(xnVar.f))) && (i12 = xnVar.R3) != 3 && i12 != 9 && i12 != 1 && xnVar.x0.getScrollState() == 1)) {
-                rj rjVar = xnVar.x0;
-                if (!rjVar.X1 && !rjVar.d2 && !xnVar.A9()) {
-                    if (xnVar.N9 == 0.0f && xnVar.P9 != null) {
-                        ArrayList arrayList = xnVar.eb;
+        if (!wnVar.vc.f) {
+            SparseArray[] sparseArrayArr = wnVar.W5;
+            if (sparseArrayArr[0].size() <= 0 && sparseArrayArr[1].size() <= 0 && i10 > 0 && i11 == 0 && (((ChatObject.isChannel(wnVar.e) && !wnVar.e.megagroup) || (wnVar.h4 && !UserObject.isBotForum(wnVar.f))) && (i12 = wnVar.R3) != 3 && i12 != 9 && i12 != 1 && wnVar.x0.getScrollState() == 1)) {
+                rj rjVar = wnVar.x0;
+                if (!rjVar.X1 && !rjVar.d2 && !wnVar.A9()) {
+                    if (wnVar.N9 == 0.0f && wnVar.P9 != null) {
+                        ArrayList arrayList = wnVar.eb;
                         if (arrayList != null && !arrayList.isEmpty()) {
-                            xnVar.P9.i((TLRPC.Chat) xnVar.eb.get(0));
-                        } else if (xnVar.h4) {
-                            xnVar.P9.j();
+                            wnVar.P9.i((TLRPC.Chat) wnVar.eb.get(0));
+                        } else if (wnVar.h4) {
+                            wnVar.P9.j();
                         } else {
-                            xnVar.P9.h();
+                            wnVar.P9.h();
                         }
                     }
-                    Animator animator = xnVar.Q9;
+                    Animator animator = wnVar.Q9;
                     if (animator != null) {
                         animator.removeAllListeners();
-                        xnVar.Q9.cancel();
+                        wnVar.Q9.cancel();
                     }
-                    if (xnVar.N9 < AndroidUtilities.dp(110.0f)) {
-                        float dp = xnVar.N9 / AndroidUtilities.dp(110.0f);
+                    if (wnVar.N9 < AndroidUtilities.dp(110.0f)) {
+                        float dp = wnVar.N9 / AndroidUtilities.dp(110.0f);
                         f10 = (1.0f - dp) * 0.65f;
                         f11 = dp * 0.45f;
-                    } else if (xnVar.N9 < AndroidUtilities.dp(160.0f)) {
-                        float dp2 = (xnVar.N9 - AndroidUtilities.dp(110.0f)) / AndroidUtilities.dp(50.0f);
+                    } else if (wnVar.N9 < AndroidUtilities.dp(160.0f)) {
+                        float dp2 = (wnVar.N9 - AndroidUtilities.dp(110.0f)) / AndroidUtilities.dp(50.0f);
                         f10 = (1.0f - dp2) * 0.45f;
                         f11 = dp2 * 0.05f;
                     } else {
                         f7 = 0.05f;
                         f12 = i10 * f7;
-                        xnVar.N9 += f12;
+                        wnVar.N9 += f12;
                         int i14 = (int) f12;
-                        l0Var = zg.l0.B;
-                        if (l0Var != null) {
-                            l0Var.r -= i14;
+                        k0Var = zg.k0.B;
+                        if (k0Var != null) {
+                            k0Var.r -= i14;
                             if (i14 != 0) {
-                                l0Var.u = true;
+                                k0Var.u = true;
                             }
                         }
-                        if (Build.VERSION.SDK_INT >= 31 && (hVar = xnVar.F) != null) {
+                        if (Build.VERSION.SDK_INT >= 31 && (hVar = wnVar.F) != null) {
                             hVar.f(0.0f, f12);
                         }
-                        xnVar.x0.invalidate();
+                        wnVar.x0.invalidate();
                     }
                     f7 = f11 + f10;
                     f12 = i10 * f7;
-                    xnVar.N9 += f12;
+                    wnVar.N9 += f12;
                     int i142 = (int) f12;
-                    l0Var = zg.l0.B;
-                    if (l0Var != null) {
+                    k0Var = zg.k0.B;
+                    if (k0Var != null) {
                     }
                     if (Build.VERSION.SDK_INT >= 31) {
                         hVar.f(0.0f, f12);
                     }
-                    xnVar.x0.invalidate();
+                    wnVar.x0.invalidate();
                 }
             }
         }
-        if (xnVar.N9 == 0.0f) {
-            xnVar.x0.setOverScrollMode(0);
+        if (wnVar.N9 == 0.0f) {
+            wnVar.x0.setOverScrollMode(0);
         } else {
-            xnVar.x0.setOverScrollMode(2);
+            wnVar.x0.setOverScrollMode(2);
         }
-        if (xnVar.P9 != null) {
-            le.c cVar = xnVar.tc;
-            if (xnVar.N9 > 0.0f && xnVar.x0.getScrollState() == 1) {
+        if (wnVar.P9 != null) {
+            le.c cVar = wnVar.tc;
+            if (wnVar.N9 > 0.0f && wnVar.x0.getScrollState() == 1) {
                 z11 = true;
             }
             cVar.a(z11, true);

@@ -24,10 +24,10 @@ import android.util.SparseArray;
 import android.view.ContextThemeWrapper;
 import android.view.View;
 import java.util.Iterator;
-import v7.r8;
-import v7.v7;
+import v7.s8;
+import v7.w7;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class MediaRouteButton extends View {
     private static final String CHOOSER_FRAGMENT_TAG = "android.support.v7.mediarouter:MediaRouteChooserDialogFragment";
@@ -62,8 +62,8 @@ public class MediaRouteButton extends View {
     public MediaRouteButton(Context context, AttributeSet attributeSet, int i10) {
         super(r7 != 0 ? new ContextThemeWrapper(r0, r7) : r0, attributeSet, i10);
         Drawable.ConstantState constantState;
-        ContextThemeWrapper contextThemeWrapper = new ContextThemeWrapper(context, v7.d0.e(context));
-        int g10 = v7.d0.g(contextThemeWrapper, org.telegram.messenger.beta.R.attr.mediaRouteTheme);
+        ContextThemeWrapper contextThemeWrapper = new ContextThemeWrapper(context, v7.f0.e(context));
+        int g10 = v7.f0.g(contextThemeWrapper, org.telegram.messenger.beta.R.attr.mediaRouteTheme);
         this.mSelector = p4.r.c;
         this.mDialogFactory = w.a;
         Context context2 = getContext();
@@ -73,7 +73,7 @@ public class MediaRouteButton extends View {
         if (isInEditMode()) {
             this.mRouter = null;
             this.mCallback = null;
-            this.mRemoteIndicator = v7.b(context2, obtainStyledAttributes.getResourceId(3, 0));
+            this.mRemoteIndicator = w7.b(context2, obtainStyledAttributes.getResourceId(3, 0));
             return;
         }
         this.mRouter = p4.x.d(context2);
@@ -237,7 +237,7 @@ public class MediaRouteButton extends View {
         if (!this.mCheatSheetEnabled || TextUtils.isEmpty(string)) {
             string = null;
         }
-        w7.o.a(this, string);
+        w7.p.a(this, string);
     }
 
     @Override // android.view.View
@@ -451,7 +451,7 @@ public class MediaRouteButton extends View {
         }
         if (drawable != null) {
             if (this.mButtonTint != null) {
-                drawable = r8.d(drawable.mutate());
+                drawable = s8.d(drawable.mutate());
                 drawable.setTintList(this.mButtonTint);
             }
             drawable.setCallback(this);
@@ -496,7 +496,7 @@ public class MediaRouteButton extends View {
      */
     /* JADX WARN: Code restructure failed: missing block: B:68:0x0093, code lost:
     
-        if (v7.e0.a(r3) != false) goto L35;
+        if (v7.g0.a(r3) != false) goto L35;
      */
     /* JADX WARN: Removed duplicated region for block: B:22:0x00fb A[RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:23:0x00a3  */
@@ -579,7 +579,7 @@ public class MediaRouteButton extends View {
                     }
                 } else {
                     if (i10 == 30) {
-                        a2 = v7.e0.a(context);
+                        a2 = v7.g0.a(context);
                         if (!a2) {
                         }
                         z11 = true;

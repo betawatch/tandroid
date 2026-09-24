@@ -4,7 +4,7 @@ import android.view.WindowManager;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b0 implements Runnable {
     public final /* synthetic */ int a;
@@ -49,8 +49,8 @@ public final /* synthetic */ class b0 implements Runnable {
                 float currentProgress = 0.7f - i4Var3.h0.d0.getCurrentProgress();
                 if (currentProgress > 0.0f) {
                     float f7 = currentProgress < 0.25f ? 0.01f : 0.02f;
-                    org.telegram.ui.Components.n80 n80Var = i4Var3.h0.d0;
-                    n80Var.a(n80Var.getCurrentProgress() + f7, true);
+                    org.telegram.ui.Components.x80 x80Var = i4Var3.h0.d0;
+                    x80Var.a(x80Var.getCurrentProgress() + f7, true);
                     AndroidUtilities.runOnUIThread(i4Var3.j0, 100L);
                     break;
                 }
@@ -81,11 +81,11 @@ public final /* synthetic */ class b0 implements Runnable {
                 this.b.h0();
                 break;
             case 10:
-                org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+                org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
                 if (U != null) {
-                    org.telegram.ui.ActionBar.l2 l2Var = new org.telegram.ui.ActionBar.l2();
-                    l2Var.a = true;
-                    U.showAsSheet(new org.telegram.ui.web.y1(new r(this.b, 3)), l2Var);
+                    org.telegram.ui.ActionBar.k2 k2Var = new org.telegram.ui.ActionBar.k2();
+                    k2Var.a = true;
+                    U.showAsSheet(new org.telegram.ui.web.z1(new s(this.b, 3)), k2Var);
                     break;
                 }
                 break;

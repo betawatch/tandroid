@@ -15,9 +15,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import w7.x5;
+import w7.y5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class f extends FrameLayout {
     public static final /* synthetic */ int e = 0;
@@ -38,7 +38,7 @@ public final class f extends FrameLayout {
         eVar.setContentDescription(LocaleController.getString(R.string.AccDescrBackspace));
         eVar.setFocusable(true);
         eVar.setOnClickListener(new e2(28));
-        addView(eVar, x5.e(36, 36, 17));
+        addView(eVar, y5.e(36, 36, 17));
         int w02 = h6.w0(null, h6.i6, false);
         int dp = AndroidUtilities.dp(36.0f);
         int i11 = h6.d6;

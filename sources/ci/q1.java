@@ -14,19 +14,19 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.my0;
-import org.telegram.ui.Components.tv;
+import org.telegram.ui.Components.uv;
 import org.telegram.ui.Components.wm;
+import org.telegram.ui.Components.xy0;
 import org.telegram.ui.FiltersSetupActivity;
-import org.telegram.ui.az;
-import org.telegram.ui.b20;
-import org.telegram.ui.in0;
-import org.telegram.ui.pt;
-import org.telegram.ui.w10;
-import org.telegram.ui.x10;
-import org.telegram.ui.xy;
+import org.telegram.ui.gn0;
+import org.telegram.ui.nt;
+import org.telegram.ui.ow;
+import org.telegram.ui.v10;
+import org.telegram.ui.wy;
+import org.telegram.ui.z10;
+import org.telegram.ui.zy;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q1 implements View.OnTouchListener {
     public final /* synthetic */ int a;
@@ -54,13 +54,13 @@ public final /* synthetic */ class q1 implements View.OnTouchListener {
             case 0:
                 z1 z1Var = (z1) this.b;
                 ai.g gVar = (ai.g) this.c;
-                pt q6 = pt.q();
+                nt q6 = nt.q();
                 ai.w0 w0Var = z1Var.b;
                 s1 s1Var = z1Var.f;
-                d6Var = ((org.telegram.ui.ActionBar.f3) z1Var.r).resourcesProvider;
+                d6Var = ((org.telegram.ui.ActionBar.e3) z1Var.r).resourcesProvider;
                 break;
             case 1:
-                org.telegram.ui.ActionBar.n1 n1Var = (org.telegram.ui.ActionBar.n1) this.b;
+                org.telegram.ui.ActionBar.m1 m1Var = (org.telegram.ui.ActionBar.m1) this.b;
                 ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) this.c;
                 if (motionEvent.getAction() == 0) {
                     Drawable backgroundDrawable = actionBarPopupWindow$ActionBarPopupWindowLayout.getBackgroundDrawable();
@@ -68,7 +68,7 @@ public final /* synthetic */ class q1 implements View.OnTouchListener {
                     rectF.set(backgroundDrawable.getBounds());
                     rectF.offset(actionBarPopupWindow$ActionBarPopupWindowLayout.getX(), actionBarPopupWindow$ActionBarPopupWindowLayout.getY());
                     if (!rectF.contains(motionEvent.getX(), motionEvent.getY())) {
-                        n1Var.dismiss();
+                        m1Var.dismiss();
                         break;
                     }
                 }
@@ -83,35 +83,35 @@ public final /* synthetic */ class q1 implements View.OnTouchListener {
                 }
                 break;
             case 3:
-                s10 = pt.q().s(motionEvent, r0.h, (wm) this.c, r0.N, ((tv) this.b).resourcesProvider);
+                s10 = nt.q().s(motionEvent, r0.h, (wm) this.c, r0.N, ((uv) this.b).resourcesProvider);
                 break;
             case 4:
-                s11 = pt.q().s(motionEvent, r0.e, (org.telegram.ui.Components.j) this.c, r0.getPreviewDelegate(), ((my0) this.b).b);
+                s11 = nt.q().s(motionEvent, r0.e, (org.telegram.ui.Components.j) this.c, r0.getPreviewDelegate(), ((xy0) this.b).b);
                 break;
             case 5:
-                xy xyVar = (xy) this.b;
+                wy wyVar = (wy) this.b;
                 org.telegram.ui.Cells.g4 g4Var = (org.telegram.ui.Cells.g4) this.c;
-                xyVar.getClass();
+                wyVar.getClass();
                 if (motionEvent.getAction() == 0) {
-                    az azVar = xyVar.d;
-                    azVar.c.r(azVar.b.T(g4Var));
+                    zy zyVar = wyVar.d;
+                    zyVar.c.r(zyVar.b.T(g4Var));
                     break;
                 }
                 break;
             case 6:
-                b20 b20Var = (b20) this.b;
-                x10 x10Var = (x10) this.c;
+                z10 z10Var = (z10) this.b;
+                v10 v10Var = (v10) this.c;
                 if (motionEvent.getAction() == 0) {
-                    FiltersSetupActivity filtersSetupActivity = b20Var.e;
-                    filtersSetupActivity.c.r(filtersSetupActivity.a.T(x10Var));
+                    FiltersSetupActivity filtersSetupActivity = z10Var.e;
+                    filtersSetupActivity.c.r(filtersSetupActivity.a.T(v10Var));
                     break;
                 }
                 break;
             default:
-                in0 in0Var = (in0) this.b;
+                gn0 gn0Var = (gn0) this.b;
                 Context context = (Context) this.c;
                 int i15 = 0;
-                if (in0Var.getParentActivity() != null) {
+                if (gn0Var.getParentActivity() != null) {
                     if (motionEvent.getAction() == 1) {
                         Calendar calendar = Calendar.getInstance();
                         calendar.get(1);
@@ -140,11 +140,11 @@ public final /* synthetic */ class q1 implements View.OnTouchListener {
                                 i13 = -1;
                                 i14 = -1;
                             }
-                            AlertDialog$Builder x10 = org.telegram.ui.Components.e5.x(context, i10, i15, i11, i12, i14, i13, string, intValue == 8, new gg.d2(in0Var, intValue, editTextBoldCursor, 15));
+                            AlertDialog$Builder x10 = org.telegram.ui.Components.e5.x(context, i10, i15, i11, i12, i14, i13, string, intValue == 8, new gg.d2(gn0Var, intValue, editTextBoldCursor, 15));
                             if (intValue == 8) {
-                                x10.h(LocaleController.getString(R.string.PassportSelectNotExpire), new w10(22, in0Var, editTextBoldCursor));
+                                x10.h(LocaleController.getString(R.string.PassportSelectNotExpire), new ow(23, gn0Var, editTextBoldCursor));
                             }
-                            in0Var.showDialog(x10.a);
+                            gn0Var.showDialog(x10.a);
                             break;
                         } catch (Exception e) {
                             FileLog.e(e);

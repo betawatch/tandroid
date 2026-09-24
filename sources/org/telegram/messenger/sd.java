@@ -10,7 +10,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class sd implements Runnable {
     public final /* synthetic */ int a;
@@ -21,11 +21,11 @@ public final /* synthetic */ class sd implements Runnable {
     public final /* synthetic */ Object f;
     public final /* synthetic */ Object h;
 
-    public /* synthetic */ sd(MessagesController messagesController, TLRPC.TL_error tL_error, org.telegram.ui.ActionBar.n2 n2Var, TLRPC.TL_channels_editAdmin tL_channels_editAdmin, boolean z10, boolean z11) {
+    public /* synthetic */ sd(MessagesController messagesController, TLRPC.TL_error tL_error, org.telegram.ui.ActionBar.m2 m2Var, TLRPC.TL_channels_editAdmin tL_channels_editAdmin, boolean z10, boolean z11) {
         this.a = 0;
         this.d = messagesController;
         this.e = tL_error;
-        this.f = n2Var;
+        this.f = m2Var;
         this.h = tL_channels_editAdmin;
         this.b = z10;
         this.c = z11;
@@ -40,7 +40,7 @@ public final /* synthetic */ class sd implements Runnable {
         Object obj4 = this.d;
         switch (i10) {
             case 0:
-                ((MessagesController) obj4).lambda$setUserAdminRole$101((TLRPC.TL_error) obj3, (org.telegram.ui.ActionBar.n2) obj2, (TLRPC.TL_channels_editAdmin) obj, this.b, this.c);
+                ((MessagesController) obj4).lambda$setUserAdminRole$101((TLRPC.TL_error) obj3, (org.telegram.ui.ActionBar.m2) obj2, (TLRPC.TL_channels_editAdmin) obj, this.b, this.c);
                 break;
             case 1:
                 ((NotificationsController) obj4).lambda$processNewMessages$27((ArrayList) obj3, (ArrayList) obj2, this.b, this.c, (CountDownLatch) obj);
@@ -48,8 +48,8 @@ public final /* synthetic */ class sd implements Runnable {
             case 2:
                 ActionBarLayout actionBarLayout = (ActionBarLayout) obj4;
                 ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) obj3;
-                org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) obj2;
-                org.telegram.ui.ActionBar.n2 n2Var2 = (org.telegram.ui.ActionBar.n2) obj;
+                org.telegram.ui.ActionBar.m2 m2Var = (org.telegram.ui.ActionBar.m2) obj2;
+                org.telegram.ui.ActionBar.m2 m2Var2 = (org.telegram.ui.ActionBar.m2) obj;
                 if (this.b) {
                     actionBarLayout.h = true;
                     actionBarLayout.J = actionBarPopupWindow$ActionBarPopupWindowLayout;
@@ -58,14 +58,14 @@ public final /* synthetic */ class sd implements Runnable {
                     actionBarLayout.s.setScaleY(1.0f);
                 } else {
                     Drawable drawable = ActionBarLayout.p1;
-                    actionBarLayout.T(n2Var, this.c);
+                    actionBarLayout.T(m2Var, this.c);
                     actionBarLayout.s.setTranslationX(0.0f);
                 }
-                if (n2Var != null) {
-                    n2Var.onTransitionAnimationEnd(false, false);
+                if (m2Var != null) {
+                    m2Var.onTransitionAnimationEnd(false, false);
                 }
-                n2Var2.onTransitionAnimationEnd(true, false);
-                n2Var2.onBecomeFullyVisible();
+                m2Var2.onTransitionAnimationEnd(true, false);
+                m2Var2.onBecomeFullyVisible();
                 break;
             default:
                 TwoStepVerificationActivity.a0((TwoStepVerificationActivity) obj4, (TLRPC.TL_error) obj3, (TLObject) obj2, this.b, this.c, (Runnable) obj);
@@ -83,13 +83,13 @@ public final /* synthetic */ class sd implements Runnable {
         this.h = obj3;
     }
 
-    public /* synthetic */ sd(ActionBarLayout actionBarLayout, boolean z10, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, boolean z11, org.telegram.ui.ActionBar.n2 n2Var, org.telegram.ui.ActionBar.n2 n2Var2) {
+    public /* synthetic */ sd(ActionBarLayout actionBarLayout, boolean z10, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, boolean z11, org.telegram.ui.ActionBar.m2 m2Var, org.telegram.ui.ActionBar.m2 m2Var2) {
         this.a = 2;
         this.d = actionBarLayout;
         this.b = z10;
         this.e = actionBarPopupWindow$ActionBarPopupWindowLayout;
         this.c = z11;
-        this.f = n2Var;
-        this.h = n2Var2;
+        this.f = m2Var;
+        this.h = m2Var2;
     }
 }

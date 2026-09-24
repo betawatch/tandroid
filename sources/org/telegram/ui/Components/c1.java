@@ -2,15 +2,15 @@ package org.telegram.ui.Components;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c1 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.Cells.z1[] b;
+    public final /* synthetic */ org.telegram.ui.Cells.a2[] b;
 
-    public /* synthetic */ c1(org.telegram.ui.Cells.z1[] z1VarArr, int i10) {
+    public /* synthetic */ c1(org.telegram.ui.Cells.a2[] a2VarArr, int i10) {
         this.a = i10;
-        this.b = z1VarArr;
+        this.b = a2VarArr;
     }
 
     @Override // android.view.View.OnClickListener

@@ -42,13 +42,14 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.Components.mu;
 import org.telegram.ui.Components.rr;
-import org.telegram.ui.d5;
-import org.telegram.ui.s4;
-import org.telegram.ui.w4;
+import org.telegram.ui.c5;
+import org.telegram.ui.r4;
+import org.telegram.ui.v4;
+import org.telegram.ui.x4;
 import org.telegram.ui.z0;
 import r0.i0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class m implements c3.q {
     public static m e;
@@ -109,8 +110,8 @@ public final class m implements c3.q {
         return true;
     }
 
-    public static boolean e(org.telegram.ui.y4 y4Var) {
-        return (y4Var.a == null && y4Var.b == null) ? false : true;
+    public static boolean e(x4 x4Var) {
+        return (x4Var.a == null && x4Var.b == null) ? false : true;
     }
 
     public static m k() {
@@ -303,8 +304,8 @@ public final class m implements c3.q {
         throw new cc.k(a4.a.q("Internal error: failed to encode \"", str, "\""));
     }
 
-    public byte[] i(UUID uuid, n2.o oVar) {
-        String str = oVar.b;
+    public byte[] i(UUID uuid, n2.p pVar) {
+        String str = pVar.b;
         if (this.a || TextUtils.isEmpty(str)) {
             str = (String) this.c;
         }
@@ -312,7 +313,7 @@ public final class m implements c3.q {
             Map map = Collections.EMPTY_MAP;
             Uri uri = Uri.EMPTY;
             e2.d.i(uri, "The uri must be set.");
-            throw new n2.v(new g2.m(uri, 1, null, map, 0L, -1L, null, 0), uri, f1.h, 0L, new IllegalStateException("No license URL"));
+            throw new n2.w(new g2.m(uri, 1, null, map, 0L, -1L, null, 0), uri, f1.h, 0L, new IllegalStateException("No license URL"));
         }
         HashMap hashMap = new HashMap();
         UUID uuid2 = b2.i.e;
@@ -323,11 +324,11 @@ public final class m implements c3.q {
         synchronized (((HashMap) this.d)) {
             hashMap.putAll((HashMap) this.d);
         }
-        return w7.a0.a(((g2.o) this.b).createDataSource(), str, oVar.a, hashMap);
+        return w7.b0.a(((g2.o) this.b).createDataSource(), str, pVar.a, hashMap);
     }
 
-    public byte[] j(n2.p pVar) {
-        return w7.a0.a(((g2.o) this.b).createDataSource(), pVar.b + "&signedRequest=" + e2.d0.p(pVar.a), null, Collections.EMPTY_MAP);
+    public byte[] j(n2.q qVar) {
+        return w7.b0.a(((g2.o) this.b).createDataSource(), qVar.b + "&signedRequest=" + e2.d0.p(qVar.a), null, Collections.EMPTY_MAP);
     }
 
     public synchronized void m() {
@@ -502,36 +503,36 @@ public final class m implements c3.q {
         }
     }
 
-    public void v(ViewGroup viewGroup, d6 d6Var, org.telegram.ui.y4 y4Var, w4 w4Var) {
+    public void v(ViewGroup viewGroup, d6 d6Var, x4 x4Var, v4 v4Var) {
         Objects.requireNonNull(viewGroup);
         Context context = viewGroup.getContext();
         if (((ViewGroup) this.b) != viewGroup) {
             if (this.a) {
-                s4 s4Var = (s4) this.d;
-                int i10 = d5.F;
-                s4Var.b(false);
+                r4 r4Var = (r4) this.d;
+                int i10 = c5.F;
+                r4Var.b(false);
             }
             this.b = viewGroup;
             this.c = (WindowManager) f0.e.f(context, WindowManager.class);
-            s4 s4Var2 = new s4(this, context, d6Var, w4Var);
-            this.d = s4Var2;
+            r4 r4Var2 = new r4(this, context, d6Var, v4Var);
+            this.d = r4Var2;
             z0 z0Var = new z0(this, 3);
             WeakHashMap weakHashMap = i0.a;
-            r0.a0.j(s4Var2, z0Var);
+            r0.a0.j(r4Var2, z0Var);
         }
-        ((s4) this.d).a(y4Var);
+        ((r4) this.d).a(x4Var);
         if (this.a) {
             return;
         }
-        if (((s4) this.d).getParent() != null) {
-            ((WindowManager) this.c).removeView((s4) this.d);
+        if (((r4) this.d).getParent() != null) {
+            ((WindowManager) this.c).removeView((r4) this.d);
         }
         WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams(-1, -1, MediaDataController.MAX_STYLE_RUNS_COUNT, 0, -3);
         layoutParams.softInputMode = 16;
         layoutParams.flags |= -1945959040;
         AndroidUtilities.applyEdgeToEdgeLayoutParams(layoutParams);
-        AndroidUtilities.setPreferredMaxRefreshRate((WindowManager) this.c, (s4) this.d, layoutParams);
-        ((WindowManager) this.c).addView((s4) this.d, layoutParams);
+        AndroidUtilities.setPreferredMaxRefreshRate((WindowManager) this.c, (r4) this.d, layoutParams);
+        ((WindowManager) this.c).addView((r4) this.d, layoutParams);
         viewGroup.requestDisallowInterceptTouchEvent(true);
         this.a = true;
     }

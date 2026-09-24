@@ -12,7 +12,7 @@ import e9.g0;
 import e9.i0;
 import java.util.List;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class a implements o {
     public final /* synthetic */ int a;
@@ -42,7 +42,7 @@ public final class a implements o {
         switch (this.a) {
             case 0:
                 l lVar = (l) pVar;
-                lVar.s(4, false);
+                lVar.t(4, false);
                 v vVar = this.b;
                 vVar.G(4);
                 lVar.h(vVar.a, 0, 4, false);
@@ -55,7 +55,7 @@ public final class a implements o {
                 break;
             case 1:
                 l lVar2 = (l) pVar;
-                lVar2.s(4, false);
+                lVar2.t(4, false);
                 v vVar2 = this.b;
                 vVar2.G(4);
                 lVar2.h(vVar2.a, 0, 4, false);
@@ -72,7 +72,7 @@ public final class a implements o {
                 l lVar3 = (l) pVar;
                 lVar3.h(vVar3.a, 0, 4, false);
                 if (vVar3.z() == 1380533830) {
-                    lVar3.s(4, false);
+                    lVar3.t(4, false);
                     vVar3.G(4);
                     lVar3.h(vVar3.a, 0, 4, false);
                     if (vVar3.z() == 1464156752) {

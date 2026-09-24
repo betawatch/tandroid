@@ -9,7 +9,7 @@ import org.telegram.messenger.voip.VoIPPreNotificationService;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public class VoIPPermissionActivity extends Activity {
     @Override // android.app.Activity
@@ -74,7 +74,7 @@ public class VoIPPermissionActivity extends Activity {
             } else {
                 VoIPPreNotificationService.decline(this, 1);
             }
-            org.telegram.ui.Components.voip.f2.h(this, new xz0(this, 25), i10);
+            org.telegram.ui.Components.voip.g2.h(this, new vz0(this, 25), i10);
         }
     }
 }

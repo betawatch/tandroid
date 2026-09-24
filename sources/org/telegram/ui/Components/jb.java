@@ -7,7 +7,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.ui.th1;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class jb implements View.OnLayoutChangeListener {
     public final /* synthetic */ boolean a;
@@ -26,13 +26,13 @@ public final class jb implements View.OnLayoutChangeListener {
         ubVar.removeOnLayoutChangeListener(this);
         if (qcVar.l) {
             ubVar.onShow();
-            org.telegram.ui.ActionBar.n2 n2Var = qcVar.g;
+            org.telegram.ui.ActionBar.m2 m2Var = qcVar.g;
             boolean z10 = this.a;
-            if (z10 && (n2Var instanceof th1)) {
-                n2Var = ((th1) n2Var).X();
+            if (z10 && (m2Var instanceof th1)) {
+                m2Var = ((th1) m2Var).X();
             }
             FrameLayout frameLayout = qcVar.h;
-            if (n2Var == null || (obVar = n2Var.getBulletinDelegate()) == null) {
+            if (m2Var == null || (obVar = m2Var.getBulletinDelegate()) == null) {
                 if (frameLayout != null) {
                     Object tag = frameLayout.getTag(R.id.bulletin_delegate_tag);
                     if (tag instanceof ob) {
@@ -42,8 +42,8 @@ public final class jb implements View.OnLayoutChangeListener {
                 obVar = null;
             }
             qcVar.p = obVar;
-            if (obVar == null && n2Var != null) {
-                qcVar.p = new ai.w4(n2Var, 5);
+            if (obVar == null && m2Var != null) {
+                qcVar.p = new ai.w4(m2Var, 5);
             }
             o1.k kVar = qcVar.d;
             if (kVar == null || !kVar.f) {
@@ -63,7 +63,7 @@ public final class jb implements View.OnLayoutChangeListener {
                 ubVar.invalidate();
                 tb tbVar = qcVar.q;
                 Objects.requireNonNull(ubVar);
-                tbVar.U(ubVar, new fb(ubVar, 1), new og(this, 15), new nl(2, this, z10));
+                tbVar.U(ubVar, new fb(ubVar, 1), new pg(this, 15), new nl(2, this, z10));
                 return;
             }
             ob obVar4 = qcVar.p;

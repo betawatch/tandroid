@@ -10,16 +10,16 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class x00 extends ll0 {
+public final class x00 extends vl0 {
     public final /* synthetic */ d10 c;
 
     public x00(d10 d10Var) {
         this.c = d10Var;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.vl0
     public final boolean D(s4.c1 c1Var) {
         if (c1Var.f != 2) {
             return false;
@@ -66,7 +66,7 @@ public final class x00 extends ll0 {
         TLRPC.Chat chat;
         d10 d10Var = this.c;
         ArrayList arrayList2 = d10Var.g0;
-        org.telegram.ui.ActionBar.n2 n2Var = d10Var.n;
+        org.telegram.ui.ActionBar.m2 m2Var = d10Var.n;
         int i11 = c1Var.f;
         View view = c1Var.a;
         TLRPC.User user = null;
@@ -91,19 +91,19 @@ public final class x00 extends ll0 {
                 }
                 return;
             }
-            org.telegram.ui.Cells.f9 f9Var = (org.telegram.ui.Cells.f9) view;
-            f9Var.setForeground(org.telegram.ui.ActionBar.h6.V0(d10Var.getContext(), R.drawable.greydivider, org.telegram.ui.ActionBar.h6.b7));
+            org.telegram.ui.Cells.e9 e9Var = (org.telegram.ui.Cells.e9) view;
+            e9Var.setForeground(org.telegram.ui.ActionBar.h6.V0(d10Var.getContext(), R.drawable.greydivider, org.telegram.ui.ActionBar.h6.b7));
             if (i10 == d10Var.x0 || i10 == d10Var.p0 || arrayList2 == null || arrayList2.isEmpty()) {
-                f9Var.setFixedSize(12);
-                f9Var.setText("");
+                e9Var.setFixedSize(12);
+                e9Var.setText("");
                 return;
             }
-            f9Var.setFixedSize(0);
+            e9Var.setFixedSize(0);
             if (d10Var.b0) {
-                f9Var.setText(LocaleController.getString(R.string.FolderLinkHintRemove));
+                e9Var.setText(LocaleController.getString(R.string.FolderLinkHintRemove));
                 return;
             } else {
-                f9Var.setText(LocaleController.getString(R.string.FolderLinkHint));
+                e9Var.setText(LocaleController.getString(R.string.FolderLinkHint));
                 return;
             }
         }
@@ -124,16 +124,16 @@ public final class x00 extends ll0 {
         if (peer != null) {
             if (peer instanceof TLRPC.TL_peerUser) {
                 j3 = peer.user_id;
-                user = n2Var.getMessagesController().getUser(Long.valueOf(peer.user_id));
+                user = m2Var.getMessagesController().getUser(Long.valueOf(peer.user_id));
                 str = UserObject.getUserName(user);
                 str2 = (user == null || !user.bot) ? LocaleController.getString(R.string.FilterInviteUser) : LocaleController.getString(R.string.FilterInviteBot);
             } else {
                 if (peer instanceof TLRPC.TL_peerChat) {
                     j3 = -peer.chat_id;
-                    chat = n2Var.getMessagesController().getChat(Long.valueOf(peer.chat_id));
+                    chat = m2Var.getMessagesController().getChat(Long.valueOf(peer.chat_id));
                 } else if (peer instanceof TLRPC.TL_peerChannel) {
                     j3 = -peer.channel_id;
-                    chat = n2Var.getMessagesController().getChat(Long.valueOf(peer.channel_id));
+                    chat = m2Var.getMessagesController().getChat(Long.valueOf(peer.channel_id));
                 }
                 str2 = null;
                 user = chat;
@@ -172,7 +172,7 @@ public final class x00 extends ll0 {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r8v3, types: [android.view.View, org.telegram.ui.Components.a10] */
-    /* JADX WARN: Type inference failed for: r8v7, types: [android.view.View, org.telegram.ui.Cells.f9] */
+    /* JADX WARN: Type inference failed for: r8v7, types: [android.view.View, org.telegram.ui.Cells.e9] */
     /* JADX WARN: Type inference failed for: r9v4, types: [android.view.View, org.telegram.ui.Cells.g4] */
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
@@ -185,9 +185,9 @@ public final class x00 extends ll0 {
         } else {
             c10Var = null;
             if (i10 == 1) {
-                ?? f9Var = new org.telegram.ui.Cells.f9(d10Var.getContext());
-                f9Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.a7, false));
-                c10Var2 = f9Var;
+                ?? e9Var = new org.telegram.ui.Cells.e9(d10Var.getContext());
+                e9Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.a7, false));
+                c10Var2 = e9Var;
             } else if (i10 == 2) {
                 ?? g4Var = new org.telegram.ui.Cells.g4(d10Var.getContext(), 1, 0, false);
                 g4Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.d6, false));
@@ -199,6 +199,6 @@ public final class x00 extends ll0 {
             }
             c10Var = c10Var2;
         }
-        return new wk0(c10Var);
+        return new gl0(c10Var);
     }
 }

@@ -20,15 +20,15 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.aa;
-import org.telegram.ui.ag0;
-import org.telegram.ui.ly;
-import org.telegram.ui.ry;
+import org.telegram.ui.ky;
+import org.telegram.ui.qy;
 import org.telegram.ui.wf1;
-import org.telegram.ui.xn;
+import org.telegram.ui.wn;
+import org.telegram.ui.zf0;
 import yh.l7;
 import yh.t5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c1 implements View.OnClickListener {
     public final /* synthetic */ int a = 0;
@@ -57,7 +57,7 @@ public final /* synthetic */ class c1 implements View.OnClickListener {
                 TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage2 = (TLRPC.TL_messages_preparedInlineMessage) this.e;
                 final org.telegram.tgnet.e eVar = (org.telegram.tgnet.e) this.f;
                 org.telegram.ui.web.s sVar = (org.telegram.ui.web.s) this.h;
-                final org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+                final org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
                 if (U != null) {
                     p1Var.b0 = true;
                     Bundle bundle = new Bundle();
@@ -103,19 +103,19 @@ public final /* synthetic */ class c1 implements View.OnClickListener {
                     n1 n1Var = new n1(p1Var, bundle, eVar);
                     final int i11 = this.c;
                     final long j3 = this.b;
-                    n1Var.C2 = new ly() { // from class: ei.d1
-                        @Override // org.telegram.ui.ly
+                    n1Var.C2 = new ky() { // from class: ei.d1
+                        @Override // org.telegram.ui.ky
                         public final /* synthetic */ boolean A() {
                             return false;
                         }
 
-                        @Override // org.telegram.ui.ly
-                        public final /* synthetic */ boolean K(ry ryVar) {
+                        @Override // org.telegram.ui.ky
+                        public final /* synthetic */ boolean K(qy qyVar) {
                             return false;
                         }
 
-                        @Override // org.telegram.ui.ly
-                        public final boolean u(ry ryVar, ArrayList arrayList2, CharSequence charSequence, boolean z10, boolean z11, int i12, int i13, wf1 wf1Var) {
+                        @Override // org.telegram.ui.ky
+                        public final boolean u(qy qyVar, ArrayList arrayList2, CharSequence charSequence, boolean z10, boolean z11, int i12, int i13, wf1 wf1Var) {
                             MessageObject messageObject;
                             TLRPC.TL_forumTopic findTopic;
                             TLRPC.Message message;
@@ -165,11 +165,11 @@ public final /* synthetic */ class c1 implements View.OnClickListener {
                                 eVar.run(arrayList3.size() > 0 ? null : "USER_DECLINED", arrayList3);
                             }
                             if (wf1Var == null) {
-                                ryVar.finishFragment();
+                                qyVar.finishFragment();
                                 return true;
                             }
                             wf1Var.finishFragment();
-                            ryVar.removeSelfFromStack();
+                            qyVar.removeSelfFromStack();
                             return true;
                         }
                     };
@@ -180,11 +180,11 @@ public final /* synthetic */ class c1 implements View.OnClickListener {
                 }
                 break;
             case 1:
-                ag0 ag0Var = (ag0) this.d;
+                zf0 zf0Var = (zf0) this.d;
                 String str = (String) this.e;
                 String str2 = (String) this.f;
                 String str3 = (String) this.h;
-                ci.d dVar = ag0Var.b;
+                ci.d dVar = zf0Var.b;
                 if (!dVar.N) {
                     dVar.setLoading(true);
                     TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode = new TLRPC.TL_inputStorePaymentAuthCode();
@@ -207,7 +207,7 @@ public final /* synthetic */ class c1 implements View.OnClickListener {
                         tL_dataJSON.data = p5.toString();
                         tL_payments_getPaymentForm.flags |= 1;
                     }
-                    ag0Var.v.getConnectionsManager().sendRequest(tL_payments_getPaymentForm, new aa(ag0Var, tL_inputInvoicePremiumAuthCode, tL_inputStorePaymentAuthCode, 23), 74);
+                    zf0Var.v.getConnectionsManager().sendRequest(tL_payments_getPaymentForm, new aa(zf0Var, tL_inputInvoicePremiumAuthCode, tL_inputStorePaymentAuthCode, 23), 74);
                     break;
                 }
                 break;
@@ -249,8 +249,8 @@ public final /* synthetic */ class c1 implements View.OnClickListener {
         }
     }
 
-    public /* synthetic */ c1(ag0 ag0Var, String str, long j3, String str2, String str3, int i10) {
-        this.d = ag0Var;
+    public /* synthetic */ c1(zf0 zf0Var, String str, long j3, String str2, String str3, int i10) {
+        this.d = zf0Var;
         this.e = str;
         this.b = j3;
         this.f = str2;
@@ -258,7 +258,7 @@ public final /* synthetic */ class c1 implements View.OnClickListener {
         this.c = i10;
     }
 
-    public /* synthetic */ c1(yh.e0 e0Var, xn xnVar, int i10, Context context, d6 d6Var, long j3, Utilities.Callback callback) {
+    public /* synthetic */ c1(yh.e0 e0Var, wn wnVar, int i10, Context context, d6 d6Var, long j3, Utilities.Callback callback) {
         this.d = e0Var;
         this.c = i10;
         this.e = context;

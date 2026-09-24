@@ -9,7 +9,7 @@ import java.util.Set;
 import org.scilab.forge.jlatexmath.TeXFormula;
 import ru.noties.jlatexmath.awt.Color;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class TeXParser {
     private static final char BACKPRIME = 8245;
@@ -758,7 +758,7 @@ public class TeXParser {
         TeXFormula.FontInfos externalFont = (!(equals && TeXFormula.isRegisteredBlock(unicodeBlock)) && equals) ? null : TeXFormula.getExternalFont(of2);
         if (externalFont == null) {
             if (this.isPartial) {
-                return new ColorAtom(new RomanAtom(new TeXFormula(c.j(convertToRomanNumber, "\\text{(Unknown char ", ")}")).root), (Color) null, Color.RED);
+                return new ColorAtom(new RomanAtom(new TeXFormula(c.i(convertToRomanNumber, "\\text{(Unknown char ", ")}")).root), (Color) null, Color.RED);
             }
             throw new ParseException("Unknown character : '" + Character.toString(convertToRomanNumber) + "' (or " + ((int) convertToRomanNumber) + ")");
         }

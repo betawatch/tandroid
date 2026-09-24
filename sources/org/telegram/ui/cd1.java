@@ -10,7 +10,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class cd1 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ od1 a;
@@ -88,13 +88,13 @@ public final class cd1 extends org.telegram.ui.ActionBar.j {
             Object obj = od1Var.B1;
             if (obj instanceof TLRPC.TL_wallPaper) {
                 StringBuilder sb3 = new StringBuilder("https://");
-                i11 = ((org.telegram.ui.ActionBar.n2) od1Var).currentAccount;
+                i11 = ((org.telegram.ui.ActionBar.m2) od1Var).currentAccount;
                 sb3.append(MessagesController.getInstance(i11).linkPrefix);
                 sb3.append("/bg/");
                 sb3.append(((TLRPC.TL_wallPaper) obj).slug);
                 b10 = sb3.toString();
                 if (sb2.length() > 0) {
-                    StringBuilder h = w.c.h(b10, "?mode=");
+                    StringBuilder h = v7.j.h(b10, "?mode=");
                     h.append(sb2.toString());
                     b10 = h.toString();
                 }
@@ -154,12 +154,12 @@ public final class cd1 extends org.telegram.ui.ActionBar.j {
                 return;
             }
             od1Var.p1.o1(true);
-            org.telegram.ui.Components.yi0 yi0Var = od1Var.N1;
-            yi0Var.h = true;
+            org.telegram.ui.Components.ij0 ij0Var = od1Var.N1;
+            ij0Var.h = true;
             if (a2) {
-                yi0Var.P(0);
+                ij0Var.P(0);
             } else {
-                yi0Var.P(36);
+                ij0Var.P(36);
             }
             od1Var.N1.start();
             if (od1Var.M1) {
@@ -177,8 +177,8 @@ public final class cd1 extends org.telegram.ui.ActionBar.j {
                 }
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(od1Var.o1, od1Var.p1.a() ? 1.0f : 0.0f);
                 od1Var.P1 = ofFloat;
-                ofFloat.addUpdateListener(new s11(this, 14));
-                od1Var.P1.addListener(new wq0(this, 22));
+                ofFloat.addUpdateListener(new q11(this, 14));
+                od1Var.P1.addListener(new xo0(this, 23));
                 od1Var.P1.setDuration(250L);
                 od1Var.P1.setInterpolator(org.telegram.ui.Components.rr.f);
                 od1Var.P1.start();

@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sj implements Runnable {
     public final /* synthetic */ int a;
@@ -20,10 +20,10 @@ public final /* synthetic */ class sj implements Runnable {
             case 0:
                 tj tjVar = this.b;
                 tjVar.W = null;
-                xn xnVar = tjVar.X;
-                if (xnVar.H9 != -1) {
-                    xnVar.getNotificationCenter().onAnimationFinish(xnVar.H9);
-                    xnVar.H9 = -1;
+                wn wnVar = tjVar.X;
+                if (wnVar.H9 != -1) {
+                    wnVar.getNotificationCenter().onAnimationFinish(wnVar.H9);
+                    wnVar.H9 = -1;
                 }
                 if (BuildVars.LOGS_ENABLED) {
                     FileLog.d("chatItemAnimator enable notifications");
@@ -33,10 +33,10 @@ public final /* synthetic */ class sj implements Runnable {
             default:
                 tj tjVar2 = this.b;
                 tjVar2.W = null;
-                xn xnVar2 = tjVar2.X;
-                if (xnVar2.H9 != -1) {
-                    xnVar2.getNotificationCenter().onAnimationFinish(xnVar2.H9);
-                    xnVar2.H9 = -1;
+                wn wnVar2 = tjVar2.X;
+                if (wnVar2.H9 != -1) {
+                    wnVar2.getNotificationCenter().onAnimationFinish(wnVar2.H9);
+                    wnVar2.H9 = -1;
                 }
                 if (BuildVars.LOGS_ENABLED) {
                     FileLog.d("chatItemAnimator enable notifications");

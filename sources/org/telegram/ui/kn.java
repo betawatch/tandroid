@@ -1,61 +1,100 @@
 package org.telegram.ui;
 
+import android.content.Context;
+import android.view.MotionEvent;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
+import java.util.ArrayList;
+import java.util.Collections;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class kn extends w7.y5 {
-    public MessageObject a;
-    public int b = 0;
-    public boolean c = true;
-    public int d = 0;
-    public int e;
-    public boolean f;
-    public int g;
-    public final /* synthetic */ xn h;
+public final class kn extends View {
+    public final ArrayList a;
+    public final ArrayList b;
+    public final /* synthetic */ wn c;
 
-    public kn(xn xnVar) {
-        this.h = xnVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public kn(wn wnVar, Context context) {
+        super(context);
+        this.c = wnVar;
+        this.a = new ArrayList();
+        this.b = new ArrayList();
     }
 
-    @Override // w7.y5
     public final void a() {
-        MessageObject messageObject = this.a;
-        xn xnVar = this.h;
-        if (messageObject != null) {
-            xnVar.A0.T();
-            int indexOf = xnVar.u6.indexOf(this.a) + xnVar.A0.J;
-            if (indexOf >= 0) {
-                xnVar.z0.i1(indexOf, (int) ((this.e + this.g) - xnVar.s9), this.f);
+        ArrayList arrayList = this.a;
+        arrayList.clear();
+        wn wnVar = this.c;
+        arrayList.add(wnVar.K1);
+        arrayList.add(wnVar.x0);
+        arrayList.add(wnVar.X);
+        arrayList.add(wnVar.K3);
+        arrayList.add(wnVar.I1);
+        arrayList.add(wnVar.X2);
+        arrayList.add(wnVar.Y);
+        arrayList.add(wnVar.j1);
+        arrayList.add(wnVar.S);
+        arrayList.add(wnVar.R1);
+        arrayList.removeAll(Collections.singleton(null));
+    }
+
+    @Override // android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        wn wnVar = this.c;
+        wnVar.qc = true;
+        ArrayList arrayList = this.b;
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            ((View) obj).setVisibility(0);
+        }
+        arrayList.clear();
+        wnVar.qc = false;
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        a();
+        wn wnVar = this.c;
+        wnVar.qc = true;
+        ArrayList arrayList = this.a;
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            View view = (View) obj;
+            if (view.getVisibility() == 0) {
+                view.setVisibility(8);
+                this.b.add(view);
             }
-        } else {
-            xnVar.A0.T();
-            xnVar.z0.i1(this.b, this.d, this.c);
         }
-        this.a = null;
-        xnVar.m3 = true;
-        xnVar.Wc(false);
-        AndroidUtilities.runOnUIThread(new aj(this, 8));
+        wnVar.qc = false;
     }
 
-    @Override // w7.y5
-    public final void c() {
-        xn xnVar = this.h;
-        xnVar.I9 = xnVar.getNotificationCenter().setAnimationInProgress(xnVar.I9, xn.Mc);
-        sk skVar = xnVar.wa;
-        if (skVar.n) {
-            skVar.d();
-        }
-    }
-
-    @Override // w7.y5
-    public final void d(View view) {
-        if (view instanceof org.telegram.ui.Cells.t1) {
-            org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) view;
-            t1Var.setDelegate(null);
-            t1Var.setResourcesProvider(null);
+    @Override // android.view.View
+    public void setTranslationX(float f7) {
+        super.setTranslationX(f7);
+        a();
+        ArrayList arrayList = this.a;
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            View view = (View) obj;
+            if (view != null) {
+                view.setTranslationX(f7);
+            }
         }
     }
 }

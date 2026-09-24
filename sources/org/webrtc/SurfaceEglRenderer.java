@@ -5,7 +5,7 @@ import java.util.concurrent.CountDownLatch;
 import org.webrtc.EglBase;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public class SurfaceEglRenderer extends EglRenderer implements SurfaceHolder.Callback {
     private static final String TAG = "SurfaceEglRenderer";
@@ -114,7 +114,7 @@ public class SurfaceEglRenderer extends EglRenderer implements SurfaceHolder.Cal
     public void surfaceDestroyed(SurfaceHolder surfaceHolder) {
         ThreadUtils.checkIsOnMainThread();
         CountDownLatch countDownLatch = new CountDownLatch(1);
-        releaseEglSurface(new org.telegram.ui.ActionBar.q(countDownLatch, 16), false);
+        releaseEglSurface(new org.telegram.ui.ActionBar.p(countDownLatch, 16), false);
         ThreadUtils.awaitUninterruptibly(countDownLatch);
     }
 

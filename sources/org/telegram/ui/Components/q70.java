@@ -1,29 +1,84 @@
 package org.telegram.ui.Components;
 
-import android.content.DialogInterface;
-import org.telegram.messenger.AccountInstance;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BotWebViewVibrationEffect;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q70 implements DialogInterface.OnCancelListener {
+public final /* synthetic */ class q70 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ AccountInstance b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ y70 b;
+    public final /* synthetic */ Runnable c;
 
-    public /* synthetic */ q70(AccountInstance accountInstance, int i10, int i11) {
-        this.a = i11;
-        this.b = accountInstance;
-        this.c = i10;
+    public /* synthetic */ q70(y70 y70Var, Runnable runnable, int i10) {
+        this.a = i10;
+        this.b = y70Var;
+        this.c = runnable;
     }
 
-    @Override // android.content.DialogInterface.OnCancelListener
-    public final void onCancel(DialogInterface dialogInterface) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                this.b.getConnectionsManager().cancelRequest(this.c, true);
+                this.b.u();
+                Runnable runnable = this.c;
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
+                break;
+            case 1:
+                this.c.run();
+                y70 y70Var = this.b;
+                if (y70Var.J) {
+                    y70Var.u();
+                    break;
+                }
+                break;
+            case 2:
+                y70 y70Var2 = this.b;
+                Runnable runnable2 = this.c;
+                if (runnable2 == null) {
+                    y70Var2.getClass();
+                    break;
+                } else {
+                    int i10 = -y70Var2.K;
+                    y70Var2.K = i10;
+                    AndroidUtilities.shakeViewSpring(view, i10);
+                    BotWebViewVibrationEffect.APP_ERROR.vibrate();
+                    runnable2.run();
+                    break;
+                }
+            case 3:
+                Runnable runnable3 = this.c;
+                if (runnable3 != null) {
+                    runnable3.run();
+                }
+                y70 y70Var3 = this.b;
+                if (y70Var3.J) {
+                    y70Var3.u();
+                    break;
+                }
+                break;
+            case 4:
+                this.c.run();
+                y70 y70Var4 = this.b;
+                if (y70Var4.J) {
+                    y70Var4.u();
+                    break;
+                }
                 break;
             default:
-                this.b.getConnectionsManager().cancelRequest(this.c, true);
+                Runnable runnable4 = this.c;
+                if (runnable4 != null) {
+                    runnable4.run();
+                }
+                y70 y70Var5 = this.b;
+                if (y70Var5.J) {
+                    y70Var5.u();
+                    break;
+                }
                 break;
         }
     }

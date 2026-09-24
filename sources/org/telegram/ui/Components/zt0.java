@@ -1,13 +1,49 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
+import java.io.Serializable;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class zt0 extends MessageObject {
-    @Override // org.telegram.messenger.MessageObject
-    public final boolean canDeleteMessage(boolean z10, TLRPC.Chat chat) {
-        return false;
+public final /* synthetic */ class zt0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ au0 b;
+    public final /* synthetic */ String c;
+
+    public /* synthetic */ zt0(au0 au0Var, String str, int i10) {
+        this.a = i10;
+        this.b = au0Var;
+        this.c = str;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                au0 au0Var = this.b;
+                String str = this.c;
+                au0Var.getClass();
+                AndroidUtilities.runOnUIThread(new zt0(au0Var, str, 1));
+                break;
+            default:
+                au0 au0Var2 = this.b;
+                String str2 = this.c;
+                ArrayList arrayList = null;
+                au0Var2.f = null;
+                if (!ChatObject.isChannel(au0Var2.n) && au0Var2.s.d1 != null) {
+                    arrayList = new ArrayList(au0Var2.s.d1.participants.participants);
+                }
+                au0Var2.r = 2;
+                if (arrayList != null) {
+                    Utilities.searchQueue.postRunnable(new cn0((Object) au0Var2, (Serializable) str2, arrayList, 6));
+                } else {
+                    au0Var2.r = 1;
+                }
+                au0Var2.e.g(str2, false, false, true, false, ChatObject.isChannel(au0Var2.n) ? au0Var2.n.id : 0L, false, 2, 1);
+                break;
+        }
     }
 }

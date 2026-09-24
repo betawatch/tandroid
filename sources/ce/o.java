@@ -5,12 +5,12 @@ import java.io.Serializable;
 import java.util.NoSuchElementException;
 import java.util.concurrent.CancellationException;
 import org.telegram.tgnet.TLObject;
-import v7.r7;
-import v7.t7;
+import v7.s7;
+import v7.u7;
 import zd.b0;
 import zd.f1;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public abstract class o {
     public static final v a = new v("NONE", 0);
@@ -39,13 +39,13 @@ public abstract class o {
                 jd.a aVar = jd.a.a;
                 i10 = eVar.c;
                 if (i10 != 0) {
-                    t7.b(obj);
+                    u7.b(obj);
                     kotlin.jvm.internal.p pVar2 = new kotlin.jvm.internal.p();
                     try {
                         c gVar = new g(cVar, pVar2);
                         eVar.a = pVar2;
                         eVar.c = 1;
-                        if (bVar.H(gVar, eVar) == aVar) {
+                        if (bVar.l(gVar, eVar) == aVar) {
                             return aVar;
                         }
                         return null;
@@ -59,7 +59,7 @@ public abstract class o {
                     }
                     pVar = eVar.a;
                     try {
-                        t7.b(obj);
+                        u7.b(obj);
                         return null;
                     } catch (Throwable th4) {
                         th = th4;
@@ -73,10 +73,10 @@ public abstract class o {
                     return th;
                 }
                 if (th instanceof CancellationException) {
-                    r7.a(th2, th);
+                    s7.a(th2, th);
                     throw th2;
                 }
-                r7.a(th, th2);
+                s7.a(th, th2);
                 throw th;
             }
         }
@@ -119,7 +119,7 @@ public abstract class o {
                 i10 = kVar.d;
                 vVar = de.e.a;
                 if (i10 != 0) {
-                    t7.b(obj2);
+                    u7.b(obj2);
                     kotlin.jvm.internal.p pVar2 = new kotlin.jvm.internal.p();
                     pVar2.a = vVar;
                     j jVar2 = new j(pVar2, 0);
@@ -127,7 +127,7 @@ public abstract class o {
                         kVar.a = pVar2;
                         kVar.b = jVar2;
                         kVar.d = 1;
-                        if (bVar.H(jVar2, kVar) == obj3) {
+                        if (bVar.l(jVar2, kVar) == obj3) {
                             return obj3;
                         }
                         pVar = pVar2;
@@ -148,7 +148,7 @@ public abstract class o {
                     jVar = kVar.b;
                     pVar = kVar.a;
                     try {
-                        t7.b(obj2);
+                        u7.b(obj2);
                     } catch (de.a e10) {
                         e = e10;
                         if (e.a != jVar) {

@@ -10,9 +10,9 @@ import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import v7.u;
+import v7.w;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class ConversationItem implements q {
     private final List<Action> mActions;
@@ -62,7 +62,7 @@ public class ConversationItem implements q {
             return false;
         }
         ConversationItem conversationItem = (ConversationItem) obj;
-        return Objects.equals(this.mId, conversationItem.mId) && Objects.equals(this.mTitle, conversationItem.mTitle) && Objects.equals(this.mIcon, conversationItem.mIcon) && u.a(getSelf(), conversationItem.getSelf()) && this.mIsGroupConversation == conversationItem.mIsGroupConversation && Objects.equals(this.mMessages, conversationItem.mMessages) && Objects.equals(this.mActions, conversationItem.mActions);
+        return Objects.equals(this.mId, conversationItem.mId) && Objects.equals(this.mTitle, conversationItem.mTitle) && Objects.equals(this.mIcon, conversationItem.mIcon) && w.a(getSelf(), conversationItem.getSelf()) && this.mIsGroupConversation == conversationItem.mIsGroupConversation && Objects.equals(this.mMessages, conversationItem.mMessages) && Objects.equals(this.mActions, conversationItem.mActions);
     }
 
     public List<Action> getActions() {
@@ -94,7 +94,7 @@ public class ConversationItem implements q {
     }
 
     public int hashCode() {
-        return Objects.hash(Integer.valueOf(u.b(getSelf())), this.mId, this.mTitle, this.mIcon, Boolean.valueOf(this.mIsGroupConversation), this.mMessages, this.mActions);
+        return Objects.hash(Integer.valueOf(w.b(getSelf())), this.mId, this.mTitle, this.mIcon, Boolean.valueOf(this.mIsGroupConversation), this.mMessages, this.mActions);
     }
 
     public boolean isGroupConversation() {

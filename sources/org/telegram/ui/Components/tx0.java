@@ -1,60 +1,83 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import java.util.ArrayList;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.widget.TextView;
+import java.io.Serializable;
+import java.util.HashMap;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tx0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ com.google.firebase.messaging.n b;
-    public final /* synthetic */ int c;
+public final class tx0 implements TextWatcher {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ EditTextBoldCursor b;
+    public final /* synthetic */ Serializable c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate e;
 
-    public /* synthetic */ tx0(com.google.firebase.messaging.n nVar, int i10, int i11) {
-        this.a = i11;
-        this.b = nVar;
-        this.c = i10;
+    /* JADX WARN: Multi-variable type inference failed */
+    public tx0(fy0 fy0Var, int[] iArr, TextView textView, EditTextBoldCursor editTextBoldCursor) {
+        this.e = fy0Var;
+        this.c = iArr;
+        this.d = textView;
+        this.b = editTextBoldCursor;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
         switch (this.a) {
             case 0:
-                ArrayList arrayList = (ArrayList) this.b.d;
-                Float f7 = (Float) valueAnimator.getAnimatedValue();
-                f7.getClass();
-                arrayList.set(this.c, f7);
-                break;
-            case 1:
-                ArrayList arrayList2 = (ArrayList) this.b.e;
-                Float f10 = (Float) valueAnimator.getAnimatedValue();
-                f10.getClass();
-                arrayList2.set(this.c, f10);
-                break;
-            case 2:
-                ArrayList arrayList3 = (ArrayList) this.b.f;
-                Float f11 = (Float) valueAnimator.getAnimatedValue();
-                f11.getClass();
-                arrayList3.set(this.c, f11);
-                break;
-            case 3:
-                ArrayList arrayList4 = (ArrayList) this.b.d;
-                Float f12 = (Float) valueAnimator.getAnimatedValue();
-                f12.getClass();
-                arrayList4.set(this.c, f12);
-                break;
-            case 4:
-                ArrayList arrayList5 = (ArrayList) this.b.e;
-                Float f13 = (Float) valueAnimator.getAnimatedValue();
-                f13.getClass();
-                arrayList5.set(this.c, f13);
                 break;
             default:
-                ArrayList arrayList6 = (ArrayList) this.b.f;
-                Float f14 = (Float) valueAnimator.getAnimatedValue();
-                f14.getClass();
-                arrayList6.set(this.c, f14);
+                org.telegram.ui.gn0 gn0Var = (org.telegram.ui.gn0) this.e;
+                String str = (String) this.c;
+                boolean z10 = ((HashMap) this.d) == gn0Var.t1;
+                EditTextBoldCursor editTextBoldCursor = this.b;
+                org.telegram.ui.gn0.J0(gn0Var, editTextBoldCursor, str, editable, z10);
+                int intValue = ((Integer) editTextBoldCursor.getTag()).intValue();
+                EditTextBoldCursor editTextBoldCursor2 = gn0Var.Y[intValue];
+                if (intValue == 6) {
+                    gn0Var.Y0(true);
+                    break;
+                }
                 break;
         }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        int i13 = this.a;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        switch (this.a) {
+            case 0:
+                if (((int[]) this.c)[0] == 2) {
+                    ((fy0) this.e).m0((TextView) this.d, this.b.getText().toString(), false);
+                    break;
+                }
+                break;
+        }
+    }
+
+    public tx0(org.telegram.ui.gn0 gn0Var, EditTextBoldCursor editTextBoldCursor, String str, HashMap hashMap) {
+        this.e = gn0Var;
+        this.b = editTextBoldCursor;
+        this.c = str;
+        this.d = hashMap;
+    }
+
+    private final void a(Editable editable) {
+    }
+
+    private final void b(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
     }
 }

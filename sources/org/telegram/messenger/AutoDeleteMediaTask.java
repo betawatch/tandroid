@@ -9,12 +9,12 @@ import java.util.Set;
 import org.telegram.messenger.CacheByChatsController;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class AutoDeleteMediaTask {
     public static Set<String> usingFilePaths = Collections.newSetFromMap(new ConcurrentHashMap());
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class FileInfoInternal extends CacheByChatsController.KeepMediaFile {
         final long lastUsageDate;
 
@@ -96,7 +96,7 @@ public class AutoDeleteMediaTask {
         long j14 = Long.MAX_VALUE;
         boolean z11 = true;
         for (int i18 = 0; i18 < 4; i18++) {
-            int i19 = SharedConfig.getPreferences().getInt(hg.c.i(i18, "keep_media_type_"), CacheByChatsController.getDefault(i18));
+            int i19 = SharedConfig.getPreferences().getInt(hg.c.h(i18, "keep_media_type_"), CacheByChatsController.getDefault(i18));
             iArr[i18] = i19;
             if (i19 != CacheByChatsController.KEEP_MEDIA_FOREVER) {
                 z11 = false;

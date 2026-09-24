@@ -31,13 +31,13 @@ import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.o70;
-import org.telegram.ui.Components.w21;
+import org.telegram.ui.Components.k31;
 import org.telegram.ui.Components.wi;
-import org.telegram.ui.pa0;
-import org.telegram.ui.xn;
+import org.telegram.ui.Components.y70;
+import org.telegram.ui.oa0;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q8 implements Runnable {
     public final /* synthetic */ int a;
@@ -116,7 +116,7 @@ public final /* synthetic */ class q8 implements Runnable {
                             i16++;
                         } else if (storyItem3 instanceof TL_stories.TL_storyItemDeleted) {
                             peerStories.stories.remove(i16);
-                            org.telegram.messenger.z0.n(storyItem3.id, new StringBuilder("StoriesController remove story id="));
+                            org.telegram.messenger.f0.n(storyItem3.id, new StringBuilder("StoriesController remove story id="));
                             z11 = true;
                             z12 = true;
                         } else {
@@ -130,7 +130,7 @@ public final /* synthetic */ class q8 implements Runnable {
                             if (storyItem3.firstFramePath == null) {
                                 storyItem3.firstFramePath = storyItem4.firstFramePath;
                             }
-                            org.telegram.messenger.z0.n(storyItem3.id, new StringBuilder("StoriesController update story id="));
+                            org.telegram.messenger.f0.n(storyItem3.id, new StringBuilder("StoriesController update story id="));
                             z11 = true;
                         }
                     }
@@ -187,7 +187,7 @@ public final /* synthetic */ class q8 implements Runnable {
                     TL_stories.TL_peerStories tL_peerStories = new TL_stories.TL_peerStories();
                     tL_peerStories.peer = tL_updateStory.peer;
                     tL_peerStories.stories.add(tL_updateStory.story);
-                    org.telegram.messenger.z0.n(tL_updateStory.story.id, new StringBuilder("StoriesController add new user with story id="));
+                    org.telegram.messenger.f0.n(tL_updateStory.story.id, new StringBuilder("StoriesController add new user with story id="));
                     long peerDialogId = DialogObject.getPeerDialogId(tL_peerStories.peer);
                     l9Var.b0(peerDialogId, tL_peerStories);
                     if (peerDialogId != UserConfig.getInstance(UserConfig.selectedAccount).clientUserId) {
@@ -221,7 +221,7 @@ public final /* synthetic */ class q8 implements Runnable {
                 return;
             case 1:
                 TLObject tLObject = (TLObject) obj2;
-                pa0 pa0Var = (pa0) obj;
+                oa0 oa0Var = (oa0) obj;
                 l9 l9Var2 = ((r8) obj3).c;
                 int i17 = l9Var2.a;
                 if (tLObject != null) {
@@ -235,14 +235,14 @@ public final /* synthetic */ class q8 implements Runnable {
                                 a0.i iVar2 = l9Var2.E;
                                 storyItem = peerStories2.stories.get(i18);
                                 iVar2.k(storyItem, j3);
-                                pa0Var.run(storyItem);
+                                oa0Var.run(storyItem);
                                 return;
                             }
                         }
                     }
                 }
                 storyItem = null;
-                pa0Var.run(storyItem);
+                oa0Var.run(storyItem);
                 return;
             case 2:
                 TLObject tLObject2 = (TLObject) obj2;
@@ -623,24 +623,24 @@ public final /* synthetic */ class q8 implements Runnable {
                 return;
             case 28:
                 wi wiVar = (wi) obj3;
-                xn xnVar = (xn) obj2;
+                wn wnVar = (wn) obj2;
                 org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) obj;
                 Context context = wiVar.getContext();
                 int i20 = wiVar.J1;
-                MessageSuggestionParams messageSuggestionParams = xnVar.g5;
+                MessageSuggestionParams messageSuggestionParams = wnVar.g5;
                 if (messageSuggestionParams == null) {
                     messageSuggestionParams = MessageSuggestionParams.empty();
                 }
-                new yh.e0(context, i20, this.b, messageSuggestionParams, xnVar, d6Var, 0, new org.telegram.ui.oc(17, wiVar, xnVar)).show();
+                new yh.e0(context, i20, this.b, messageSuggestionParams, wnVar, d6Var, 0, new org.telegram.ui.oc(17, wiVar, wnVar)).show();
                 return;
             default:
-                w21 w21Var = (w21) obj3;
+                k31 k31Var = (k31) obj3;
                 TLRPC.Chat chat = (TLRPC.Chat) obj;
-                ((o70) obj2).u();
-                TLRPC.User user3 = MessagesController.getInstance(w21Var.b).getUser(Long.valueOf(j3));
+                ((y70) obj2).u();
+                TLRPC.User user3 = MessagesController.getInstance(k31Var.b).getUser(Long.valueOf(j3));
                 if (user3 != null) {
-                    xn xnVar2 = w21Var.h;
-                    org.telegram.ui.Components.e5.r(xnVar2, -1, user3, chat, true, new z1(w21Var, j3, 6), xnVar2.getResourceProvider());
+                    wn wnVar2 = k31Var.h;
+                    org.telegram.ui.Components.e5.r(wnVar2, -1, user3, chat, true, new z1(k31Var, j3, 6), wnVar2.getResourceProvider());
                     return;
                 }
                 return;

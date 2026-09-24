@@ -19,11 +19,11 @@ import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public abstract class ub extends FrameLayout {
     public static final o1.i IN_OUT_OFFSET_Y = new qb(0);
-    public static final Property<ub, Float> IN_OUT_OFFSET_Y2 = new org.telegram.ui.Cells.u8("offsetY", 8);
+    public static final Property<ub, Float> IN_OUT_OFFSET_Y2 = new org.telegram.ui.Cells.t8("offsetY", 8);
     Drawable background;
     private uh.b blurVisibilityDrawable;
     protected qc bulletin;
@@ -53,7 +53,7 @@ public abstract class ub extends FrameLayout {
         b();
         setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(8.0f));
         setWillNotDraw(false);
-        w7.z5.b(this, 0.02f, 1.5f);
+        w7.a6.b(this, 0.02f, 1.5f);
     }
 
     public static boolean a() {
@@ -124,7 +124,7 @@ public abstract class ub extends FrameLayout {
         } else if (this.top) {
             r2 = 48;
         }
-        setLayoutParams(w7.x5.e(i10, -2, r2));
+        setLayoutParams(w7.y5.e(i10, -2, r2));
     }
 
     public tb createTransition() {
@@ -145,7 +145,7 @@ public abstract class ub extends FrameLayout {
         if (bVar.c == null) {
             bVar.a(getMeasuredWidth(), getMeasuredHeight(), 6.0f, AndroidUtilities.dp(10.0f));
         }
-        this.blurVisibilityDrawable.i = w7.p.b((int) org.telegram.messenger.ul.v(this.inOutOffset, getMeasuredHeight(), 1.0f, 255.0f), 0, 255);
+        this.blurVisibilityDrawable.i = w7.q.b((int) org.telegram.messenger.ok.x(this.inOutOffset, getMeasuredHeight(), 1.0f, 255.0f), 0, 255);
         this.blurVisibilityDrawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
         this.blurVisibilityDrawable.draw(canvas);
     }

@@ -7,9 +7,9 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
-import org.telegram.ui.bb1;
+import org.telegram.ui.cb1;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class u20 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a = 0;
@@ -19,12 +19,12 @@ public final class u20 extends AnimatorListenerAdapter {
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
 
-    public u20(bb1 bb1Var, vi viVar, org.telegram.ui.Cells.t1 t1Var, org.telegram.ui.jk jkVar, org.telegram.ui.xn xnVar) {
-        this.f = bb1Var;
+    public u20(cb1 cb1Var, vi viVar, org.telegram.ui.Cells.u1 u1Var, org.telegram.ui.jk jkVar, org.telegram.ui.wn wnVar) {
+        this.f = cb1Var;
         this.b = viVar;
-        this.c = t1Var;
+        this.c = u1Var;
         this.d = jkVar;
-        this.e = xnVar;
+        this.e = wnVar;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -47,22 +47,22 @@ public final class u20 extends AnimatorListenerAdapter {
                 }
                 break;
             default:
-                bb1 bb1Var = (bb1) this.f;
-                bb1Var.D.unlock();
+                cb1 cb1Var = (cb1) this.f;
+                cb1Var.D.unlock();
                 vi viVar = (vi) this.b;
-                ((ArrayList) viVar.c).remove(bb1Var);
+                ((ArrayList) viVar.c).remove(cb1Var);
                 viVar.a();
                 ((ViewGroup) viVar.d).invalidate();
-                org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) this.c;
-                t1Var.setEnterTransitionInProgress(false);
-                t1Var.getTransitionParams().D0.set(t1Var.getBackgroundDrawableLeft(), t1Var.getBackgroundDrawableTop(), t1Var.getBackgroundDrawableRight(), t1Var.getBackgroundDrawableBottom());
+                org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) this.c;
+                u1Var.setEnterTransitionInProgress(false);
+                u1Var.getTransitionParams().D0.set(u1Var.getBackgroundDrawableLeft(), u1Var.getBackgroundDrawableTop(), u1Var.getBackgroundDrawableRight(), u1Var.getBackgroundDrawableBottom());
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.d;
                 chatActivityEnterView.setTextTransitionIsRunning(false);
                 chatActivityEnterView.getEditField().setAlpha(1.0f);
-                org.telegram.ui.xn xnVar = (org.telegram.ui.xn) this.e;
-                ((ro[]) xnVar.a0.b)[0].c.setAlpha(1.0f);
-                ((ro[]) xnVar.a0.b)[0].d.setAlpha(1.0f);
-                z5.release((View) null, bb1Var.H);
+                org.telegram.ui.wn wnVar = (org.telegram.ui.wn) this.e;
+                ((ro[]) wnVar.a0.b)[0].c.setAlpha(1.0f);
+                ((ro[]) wnVar.a0.b)[0].d.setAlpha(1.0f);
+                z5.release((View) null, cb1Var.H);
                 break;
         }
     }

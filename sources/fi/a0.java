@@ -2,46 +2,46 @@ package fi;
 
 import android.view.View;
 import org.telegram.messenger.MessageObject;
-import org.telegram.ui.ActionBar.f3;
-import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.yn0;
-import org.telegram.ui.m10;
-import org.telegram.ui.t10;
+import org.telegram.ui.ActionBar.e3;
+import org.telegram.ui.ActionBar.m2;
+import org.telegram.ui.Components.lo0;
+import org.telegram.ui.l10;
+import org.telegram.ui.s10;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public final class a0 implements t10 {
+public final class a0 implements s10 {
     public final /* synthetic */ k0 a;
 
     public a0(k0 k0Var) {
         this.a = k0Var;
     }
 
-    @Override // org.telegram.ui.t10
-    public final boolean c(m10 m10Var) {
+    @Override // org.telegram.ui.s10
+    public final boolean c(l10 l10Var) {
         return false;
     }
 
-    @Override // org.telegram.ui.t10
+    @Override // org.telegram.ui.s10
     public final void d(MessageObject messageObject) {
         int i10;
         k0 k0Var = this.a;
-        n2 n2Var = k0Var.s;
-        i10 = ((f3) k0Var).currentAccount;
-        n2Var.presentFragment(yn0.K(messageObject, i10));
+        m2 m2Var = k0Var.s;
+        i10 = ((e3) k0Var).currentAccount;
+        m2Var.presentFragment(lo0.K(messageObject, i10));
         k0Var.dismiss();
     }
 
-    @Override // org.telegram.ui.t10
+    @Override // org.telegram.ui.s10
     public final boolean g() {
         return false;
     }
 
-    @Override // org.telegram.ui.t10
+    @Override // org.telegram.ui.s10
     public final void a() {
     }
 
-    @Override // org.telegram.ui.t10
+    @Override // org.telegram.ui.s10
     public final void e(MessageObject messageObject, View view, int i10) {
     }
 }

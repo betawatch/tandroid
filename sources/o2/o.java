@@ -8,7 +8,7 @@ import j$.util.Objects;
 import java.io.EOFException;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class o implements h0 {
     public static final b2.s f;
@@ -34,7 +34,7 @@ public final class o implements h0 {
             this.b = f;
         } else {
             if (i10 != 3) {
-                throw new IllegalArgumentException(hg.c.i(i10, "Unknown metadataType: "));
+                throw new IllegalArgumentException(hg.c.h(i10, "Unknown metadataType: "));
             }
             this.b = g;
         }

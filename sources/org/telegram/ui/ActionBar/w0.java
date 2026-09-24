@@ -1,13 +1,18 @@
 package org.telegram.ui.ActionBar;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import java.util.Iterator;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Shader;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class w0 implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class w0 implements Utilities.Callback {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -16,68 +21,60 @@ public final /* synthetic */ class w0 implements ValueAnimator.AnimatorUpdateLis
         this.b = obj;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                c1 c1Var = (c1) this.b;
-                c1Var.getClass();
-                c1Var.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                c1Var.invalidate();
-                break;
-            case 1:
-                f1 f1Var = (f1) this.b;
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                f1Var.setTextColor(i0.a.d(floatValue, -1, -9194260));
-                f1Var.setIconColor(i0.a.d(floatValue, -1, -9194260));
-                break;
-            case 2:
-                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) this.b;
-                int itemsCount = actionBarPopupWindow$ActionBarPopupWindowLayout.getItemsCount();
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                for (int i10 = 0; i10 < itemsCount; i10++) {
-                    View childAt = actionBarPopupWindow$ActionBarPopupWindowLayout.L.getChildAt(i10);
-                    if (!(childAt instanceof k1)) {
-                        float cascade = AndroidUtilities.cascade(floatValue2, actionBarPopupWindow$ActionBarPopupWindowLayout.v ? (itemsCount - 1) - i10 : i10, itemsCount, 4.0f);
-                        childAt.setTranslationY((1.0f - cascade) * AndroidUtilities.dp(-6.0f));
-                        childAt.setAlpha(cascade * (childAt.isEnabled() ? 1.0f : 0.5f));
-                    }
+                b1 b1Var = (b1) this.b;
+                Bitmap bitmap = (Bitmap) obj;
+                Paint paint = b1Var.F;
+                b1Var.U = false;
+                b1Var.f = bitmap;
+                Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+                b1Var.h = new BitmapShader(bitmap, tileMode, tileMode);
+                Matrix matrix = b1Var.n;
+                if (matrix == null) {
+                    b1Var.n = new Matrix();
+                } else {
+                    matrix.reset();
                 }
-                break;
-            case 3:
-                p1 p1Var = (p1) this.b;
-                if (!p1Var.e) {
-                    float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                    if (p1Var.r) {
-                        floatValue3 = 1.0f - floatValue3;
-                    }
-                    float z10 = (int) com.google.android.gms.internal.vision.e2.z(1.0f, floatValue3, p1Var.q, p1Var.p * floatValue3);
-                    if (!(p1Var instanceof zg.n)) {
-                        p1Var.a.setTranslationY(z10);
-                    }
-                    p1Var.e(-z10, floatValue3, p1Var.s);
-                    break;
-                }
-                break;
-            case 4:
-                n3 n3Var = (n3) this.b;
-                n3Var.getClass();
-                n3Var.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                Iterator it = n3Var.I.iterator();
-                while (it.hasNext()) {
-                    ((Runnable) it.next()).run();
-                }
-                n3Var.invalidate();
+                b1Var.n.postScale(8.0f, 8.0f);
+                Matrix matrix2 = b1Var.n;
+                int[] iArr = b1Var.r;
+                matrix2.postTranslate(-iArr[0], -iArr[1]);
+                b1Var.h.setLocalMatrix(b1Var.n);
+                paint.setShader(b1Var.h);
+                ColorMatrix colorMatrix = new ColorMatrix();
+                AndroidUtilities.adjustSaturationColorMatrix(colorMatrix, -0.2f);
+                paint.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
+                b1Var.invalidate();
                 break;
             default:
-                v3 v3Var = (v3) this.b;
-                v3Var.i = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                w3 w3Var = v3Var.b;
-                if (w3Var != null) {
-                    w3Var.invalidate();
+                a2 a2Var = (a2) this.b;
+                Bitmap bitmap2 = (Bitmap) obj;
+                if (bitmap2 != null) {
+                    if (a2Var.F0 == null) {
+                        a2Var.F0 = new Paint(1);
+                    }
+                    a2Var.C0 = bitmap2;
+                    Bitmap bitmap3 = a2Var.C0;
+                    Shader.TileMode tileMode2 = Shader.TileMode.CLAMP;
+                    BitmapShader bitmapShader = new BitmapShader(bitmap3, tileMode2, tileMode2);
+                    a2Var.E0 = bitmapShader;
+                    a2Var.F0.setShader(bitmapShader);
+                    Matrix matrix3 = new Matrix();
+                    a2Var.D0 = matrix3;
+                    matrix3.postScale(8.0f, 8.0f);
+                    Matrix matrix4 = a2Var.D0;
+                    int[] iArr2 = a2Var.x0;
+                    matrix4.postTranslate(-iArr2[0], -iArr2[1]);
+                    a2Var.E0.setLocalMatrix(a2Var.D0);
+                    a2Var.a1.invalidate();
+                    break;
+                } else {
+                    a2Var.getClass();
                     break;
                 }
-                break;
         }
     }
 }

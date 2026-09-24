@@ -21,7 +21,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class s20 extends FrameLayout implements org.telegram.ui.Components.voip.o0 {
     public final TextPaint E;
@@ -69,7 +69,7 @@ public final class s20 extends FrameLayout implements org.telegram.ui.Components
         w9 w9Var = new w9(context);
         this.d = w9Var;
         w9Var.setRoundRadius(AndroidUtilities.dp(20.0f));
-        addView(w9Var, w7.x5.d(40, 40.0f, 1, 0.0f, 9.0f, 0.0f, 9.0f));
+        addView(w9Var, w7.y5.d(40, 40.0f, 1, 0.0f, 9.0f, 0.0f, 9.0f));
         setWillNotDraw(false);
         paint.setColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.tg, false));
         paint2.setColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.qg, false));
@@ -79,7 +79,7 @@ public final class s20 extends FrameLayout implements org.telegram.ui.Components
         org.telegram.ui.id idVar = new org.telegram.ui.id(this, context, 1);
         this.F = idVar;
         idVar.setScaleType(ImageView.ScaleType.CENTER);
-        addView(idVar, w7.x5.c(24.0f, 24));
+        addView(idVar, w7.y5.c(24.0f, 24));
     }
 
     private void setSelectedProgress(float f7) {
@@ -117,14 +117,14 @@ public final class s20 extends FrameLayout implements org.telegram.ui.Components
     public final void c(Canvas canvas) {
         if (this.w != null) {
             canvas.save();
-            int y3 = org.telegram.messenger.ul.y(24.0f, getMeasuredWidth() - this.y, 2);
+            int A = org.telegram.messenger.ok.A(24.0f, getMeasuredWidth() - this.y, 2);
             int alpha = (int) (getAlpha() * this.s * 255.0f);
             TextPaint textPaint = this.E;
             textPaint.setAlpha(alpha);
-            canvas.drawText(this.w, AndroidUtilities.dp(22.0f) + y3, AndroidUtilities.dp(69.0f), textPaint);
+            canvas.drawText(this.w, AndroidUtilities.dp(22.0f) + A, AndroidUtilities.dp(69.0f), textPaint);
             canvas.restore();
             canvas.save();
-            canvas.translate(y3, AndroidUtilities.dp(53.0f));
+            canvas.translate(A, AndroidUtilities.dp(53.0f));
             org.telegram.ui.id idVar = this.F;
             if (idVar.getDrawable() != null) {
                 idVar.getDrawable().setAlpha((int) (getAlpha() * this.s * 255.0f));
@@ -364,13 +364,13 @@ public final class s20 extends FrameLayout implements org.telegram.ui.Components
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         t20 t20Var = this.P;
-        org.telegram.ui.f60 f60Var = t20Var.r;
+        org.telegram.ui.d60 d60Var = t20Var.r;
         if (t20Var.s && this.f != null) {
             b(true);
         }
         this.K = true;
-        if (f60Var.t2.size() > 0) {
-            this.I = (org.telegram.ui.Components.voip.p0) hg.c.z(1, f60Var.t2);
+        if (d60Var.t2.size() > 0) {
+            this.I = (org.telegram.ui.Components.voip.p0) hg.c.x(1, d60Var.t2);
         } else {
             this.I = new org.telegram.ui.Components.voip.p0();
         }

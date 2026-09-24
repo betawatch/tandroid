@@ -1,52 +1,63 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.TextView;
-import android.widget.ViewSwitcher;
-import org.telegram.messenger.AndroidUtilities;
+import android.graphics.Rect;
+import android.view.KeyEvent;
+import android.view.MotionEvent;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.AnimatedPhoneNumberEditText;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mg0 implements ViewSwitcher.ViewFactory {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class mg0 extends AnimatedPhoneNumberEditText {
+    public final /* synthetic */ pg0 G;
 
-    public /* synthetic */ mg0(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public mg0(pg0 pg0Var, Context context) {
+        super(context);
+        this.G = pg0Var;
     }
 
-    @Override // android.widget.ViewSwitcher.ViewFactory
-    public final View makeView() {
-        int i10 = this.a;
-        int i11 = 1;
-        Object obj = this.b;
-        switch (i10) {
-            case 0:
-                TextView textView = new TextView((Context) obj);
-                textView.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(12.0f));
-                textView.setTextSize(1, 16.0f);
-                textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.G6, false));
-                textView.setHintTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.H6, false));
-                textView.setMaxLines(1);
-                textView.setSingleLine(true);
-                textView.setEllipsize(TextUtils.TruncateAt.END);
-                textView.setGravity((LocaleController.isRTL ? 5 : 3) | 1);
-                return textView;
-            case 1:
-                TextView textView2 = new TextView((Context) obj);
-                com.google.android.gms.internal.vision.e2.p(org.telegram.ui.ActionBar.h6.D6, null, false, textView2, 1);
-                textView2.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-                textView2.setTextSize(1, 15.0f);
-                return textView2;
-            default:
-                PhotoViewer photoViewer = (PhotoViewer) obj;
-                Drawable[] drawableArr = PhotoViewer.U8;
-                return new ju0(photoViewer.E, photoViewer.T1, photoViewer.Q, new jr0(photoViewer, 0), new jg0(photoViewer, i11));
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final void onFocusChanged(boolean z10, int i10, Rect rect) {
+        super.onFocusChanged(z10, i10, rect);
+        pg0 pg0Var = this.G;
+        qg0 qg0Var = pg0Var.V;
+        org.telegram.ui.Components.jd0 jd0Var = pg0Var.f;
+        float f7 = (z10 || pg0Var.a.isFocused()) ? 1.0f : 0.0f;
+        jd0Var.b(f7, f7, true);
+        if (!z10) {
+            if (pg0Var.x == 2) {
+                pg0Var.setCountryButtonText(null);
+            }
+        } else {
+            qg0Var.c.setEditText(this);
+            qg0Var.c.setDispatchBackWhenEmpty(true);
+            if (pg0Var.x == 2) {
+                pg0Var.setCountryButtonText(LocaleController.getString(R.string.WrongCountry));
+            }
         }
+    }
+
+    @Override // android.widget.TextView, android.view.View, android.view.KeyEvent.Callback
+    public final boolean onKeyDown(int i10, KeyEvent keyEvent) {
+        pg0 pg0Var = this.G;
+        uj0 uj0Var = pg0Var.a;
+        if (i10 == 67 && pg0Var.b.length() == 0) {
+            uj0Var.requestFocus();
+            uj0Var.setSelection(uj0Var.length());
+            uj0Var.dispatchKeyEvent(keyEvent);
+        }
+        return super.onKeyDown(i10, keyEvent);
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() == 0 && !qg0.T0(this.G.V, this)) {
+            clearFocus();
+            requestFocus();
+        }
+        return super.onTouchEvent(motionEvent);
     }
 }

@@ -1,21 +1,37 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class dl extends org.telegram.ui.Components.x50 {
-    public final /* synthetic */ xn d1;
+public final /* synthetic */ class dl implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ el b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dl(xn xnVar, Activity activity, org.telegram.ui.Components.p50 p50Var, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(activity, p50Var, d6Var, true);
-        this.d1 = xnVar;
+    public /* synthetic */ dl(el elVar, int i10) {
+        this.a = i10;
+        this.b = elVar;
     }
 
-    @Override // org.telegram.ui.Components.x50
-    public final void m(boolean z10, boolean z11) {
-        super.m(z10, z11);
-        this.d1.uc.a(z10, true);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                jk jkVar = this.b.H.Y;
+                if (jkVar != null) {
+                    jkVar.T0 = false;
+                    org.telegram.ui.Components.eg egVar = jkVar.U0;
+                    if (egVar != null) {
+                        egVar.u(false);
+                        break;
+                    }
+                }
+                break;
+            default:
+                jk jkVar2 = this.b.H.Y;
+                if (jkVar2 != null) {
+                    jkVar2.H0();
+                    break;
+                }
+                break;
+        }
     }
 }

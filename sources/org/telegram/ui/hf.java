@@ -1,28 +1,41 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class hf implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ xn b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ long d;
+import android.animation.ValueAnimator;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-    public /* synthetic */ hf(xn xnVar, long j3, long j10, int i10) {
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class hf implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ wn b;
+    public final /* synthetic */ View c;
+
+    public /* synthetic */ hf(wn wnVar, org.telegram.ui.Cells.w0 w0Var, int i10) {
         this.a = i10;
-        this.b = xnVar;
-        this.c = j3;
-        this.d = j10;
+        this.b = wnVar;
+        this.c = w0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                xn.p0(this.b, this.c, this.d);
+                wn wnVar = this.b;
+                wnVar.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                wnVar.A9 = AndroidUtilities.dp(30.0f) * floatValue;
+                wnVar.o9();
+                this.c.setAlpha(floatValue);
                 break;
             default:
-                xn.k1(this.b, this.c, this.d);
+                wn wnVar2 = this.b;
+                wnVar2.getClass();
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                wnVar2.A9 = AndroidUtilities.dp(30.0f) * floatValue2;
+                wnVar2.o9();
+                wnVar2.r9();
+                this.c.setAlpha(floatValue2);
                 break;
         }
     }

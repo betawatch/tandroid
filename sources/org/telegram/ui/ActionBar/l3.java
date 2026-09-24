@@ -1,123 +1,76 @@
 package org.telegram.ui.ActionBar;
 
-import android.graphics.Rect;
-import android.graphics.RectF;
+import android.graphics.Bitmap;
 import android.text.TextUtils;
-import java.util.ArrayList;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
+import org.telegram.messenger.UserObject;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class l3 extends j1.b {
-    public static final /* synthetic */ int r = 0;
-    public final RectF o;
-    public final Rect p;
-    public final /* synthetic */ n3 q;
+public class l3 {
+    public boolean A;
+    public boolean B;
+    public boolean C;
+    public boolean D;
+    public String E;
+    public Bitmap F;
+    public boolean G;
+    public String H;
+    public float I;
+    public org.telegram.ui.i4 J;
+    public ei.a1 K;
+    public boolean L;
+    public ei.f5 a;
+    public org.telegram.ui.web.y0 b;
+    public org.telegram.ui.m3 c;
+    public Object d;
+    public boolean e;
+    public String f;
+    public int g;
+    public int h;
+    public int i;
+    public boolean j;
+    public float k = Float.MAX_VALUE;
+    public boolean l = true;
+    public Bitmap m;
+    public boolean n;
+    public boolean o;
+    public int p;
+    public int q;
+    public int r;
+    public int s;
+    public boolean t;
+    public boolean u;
+    public boolean v;
+    public a5.a w;
+    public String x;
+    public boolean y;
+    public boolean z;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l3(n3 n3Var, n3 n3Var2) {
-        super(n3Var2);
-        this.q = n3Var;
-        this.o = new RectF();
-        this.p = new Rect();
-    }
-
-    @Override // j1.b
-    public final int g(float f7, float f10) {
-        k3 c10;
-        n3 n3Var = this.q;
-        if (!n3Var.b) {
-            return -1;
-        }
-        ArrayList<m3> tabs = n3Var.getTabs();
-        if (tabs.isEmpty() || (c10 = n3Var.c(tabs.get(0))) == null) {
-            return -1;
-        }
-        float c11 = c10.c();
-        RectF rectF = this.o;
-        n3Var.d(rectF, c11);
-        Rect bounds = c10.k.getBounds();
-        if (bounds.isEmpty() || !bounds.contains((int) (f7 - rectF.left), (int) (f10 - rectF.centerY()))) {
-            return rectF.contains(f7, f10) ? 1 : -1;
-        }
-        return 2;
-    }
-
-    @Override // j1.b
-    public final void h(ArrayList arrayList) {
-        n3 n3Var = this.q;
-        if (n3Var.b) {
-            ArrayList<m3> tabs = n3Var.getTabs();
-            if (tabs.isEmpty() || n3Var.c(tabs.get(0)) == null) {
-                return;
+    public final void a() {
+        try {
+            org.telegram.ui.web.y0 y0Var = this.b;
+            if (y0Var != null) {
+                y0Var.destroy();
+                this.b = null;
             }
-            arrayList.add(1);
-            arrayList.add(2);
+            org.telegram.ui.i4 i4Var = this.J;
+            if (i4Var != null) {
+                i4Var.s();
+            }
+        } catch (Exception e) {
+            FileLog.e(e);
         }
     }
 
-    @Override // j1.b
-    public final boolean k(int i10, int i11) {
-        if (i11 == 16) {
-            n3 n3Var = this.q;
-            ArrayList<m3> tabs = n3Var.getTabs();
-            if (!tabs.isEmpty()) {
-                m3 m3Var = tabs.get(0);
-                if (i10 == 1) {
-                    n3Var.b();
-                    return true;
-                }
-                if (i10 == 2) {
-                    n3Var.g(m3Var, new ai.i(7));
-                    return true;
-                }
-            }
+    public String b() {
+        if (this.J != null) {
+            return TextUtils.isEmpty(this.E) ? LocaleController.getString(R.string.WebEmpty) : this.E;
         }
-        return false;
-    }
-
-    @Override // j1.b
-    public final void l(int i10, s0.d dVar) {
-        String str;
-        String str2;
-        n3 n3Var = this.q;
-        ArrayList<m3> tabs = n3Var.getTabs();
-        m3 m3Var = tabs.isEmpty() ? null : tabs.get(0);
-        k3 c10 = m3Var != null ? n3Var.c(m3Var) : null;
-        dVar.i("android.widget.Button");
-        dVar.b(s0.c.c);
-        Rect rect = this.p;
-        if (c10 == null) {
-            rect.set(0, 0, 1, 1);
-            dVar.h(rect);
-            dVar.j("");
-            dVar.p(false);
-            return;
-        }
-        float c11 = c10.c();
-        RectF rectF = this.o;
-        n3Var.d(rectF, c11);
-        String b10 = m3Var.b() != null ? m3Var.b() : "";
-        if (i10 != 2) {
-            rect.set((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
-            dVar.h(rect);
-            if (TextUtils.isEmpty(b10)) {
-                str = LocaleController.getString(R.string.Open);
-            } else {
-                str = LocaleController.getString(R.string.Open) + ", " + b10;
-            }
-            dVar.j(str);
-            return;
-        }
-        Rect bounds = c10.k.getBounds();
-        rect.set((int) (rectF.left + bounds.left), (int) (rectF.centerY() + bounds.top), (int) (rectF.left + bounds.right), (int) (rectF.centerY() + bounds.bottom));
-        dVar.h(rect);
-        if (TextUtils.isEmpty(b10)) {
-            str2 = LocaleController.getString(R.string.Close);
-        } else {
-            str2 = LocaleController.getString(R.string.Close) + ", " + b10;
-        }
-        dVar.j(str2);
+        ei.f5 f5Var = this.a;
+        return f5Var == null ? "" : UserObject.getUserName(MessagesController.getInstance(f5Var.a).getUser(Long.valueOf(this.a.c)));
     }
 }

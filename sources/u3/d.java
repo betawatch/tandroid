@@ -46,7 +46,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.tgnet.TLObject;
 import z3.k;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class d implements o {
     public static final byte[] f0 = {49, 10, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 48, 48, 32, 45, 45, 62, 32, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 48, 48, 10};
@@ -135,7 +135,7 @@ public final class d implements o {
         this.D = -1L;
         this.E = -9223372036854775807L;
         this.a = bVar;
-        bVar.d = new k2.b0(this, 28);
+        bVar.d = new ka.c(this, 24);
         this.f = kVar;
         this.d = (i10 & 1) == 0;
         this.e = (i10 & 2) == 0;
@@ -204,7 +204,7 @@ public final class d implements o {
                                 }
                                 if (h10 != 0) {
                                     int i12 = (int) h10;
-                                    lVar.s(i12, false);
+                                    lVar.t(i12, false);
                                     b0Var.b += i12;
                                 }
                             } else {
@@ -565,9 +565,9 @@ public final class d implements o {
                             bVar.g = eVar.b(pVar2, false, z10, 8);
                             bVar.e = 2;
                         }
-                        k2.b0 b0Var = bVar.d;
+                        ka.c cVar = bVar.d;
                         int i24 = bVar.f;
-                        Object obj2 = b0Var.b;
+                        Object obj2 = cVar.b;
                         switch (i24) {
                             case 131:
                             case 136:
@@ -683,51 +683,51 @@ public final class d implements o {
                         } else if (i10 == 1) {
                             long position = pVar2.getPosition();
                             arrayDeque.push(new a(bVar.f, bVar.g + position));
-                            k2.b0 b0Var2 = bVar.d;
+                            ka.c cVar2 = bVar.d;
                             int i25 = bVar.f;
                             long j10 = bVar.g;
-                            d dVar4 = (d) b0Var2.b;
+                            d dVar4 = (d) cVar2.b;
                             e2.d.h(dVar4.e0);
                             if (i25 != 160) {
                                 if (i25 == 174) {
-                                    c cVar = new c();
-                                    cVar.n = -1;
-                                    cVar.o = -1;
-                                    cVar.p = -1;
-                                    cVar.q = -1;
-                                    cVar.r = -1;
-                                    cVar.s = 0;
-                                    cVar.t = -1;
-                                    cVar.u = 0.0f;
-                                    cVar.v = 0.0f;
-                                    cVar.w = 0.0f;
-                                    cVar.x = null;
-                                    cVar.y = -1;
-                                    cVar.z = false;
-                                    cVar.A = -1;
-                                    cVar.B = -1;
-                                    cVar.C = -1;
-                                    cVar.D = MediaDataController.MAX_STYLE_RUNS_COUNT;
-                                    cVar.E = 200;
-                                    cVar.F = -1.0f;
-                                    cVar.G = -1.0f;
-                                    cVar.H = -1.0f;
-                                    cVar.I = -1.0f;
-                                    cVar.J = -1.0f;
-                                    cVar.K = -1.0f;
-                                    cVar.L = -1.0f;
-                                    cVar.M = -1.0f;
-                                    cVar.N = -1.0f;
-                                    cVar.O = -1.0f;
-                                    cVar.Q = 1;
-                                    cVar.R = -1;
-                                    cVar.S = 8000;
-                                    cVar.T = 0L;
-                                    cVar.U = 0L;
-                                    cVar.X = true;
-                                    cVar.Y = "eng";
-                                    dVar4.x = cVar;
-                                    cVar.a = dVar4.w;
+                                    c cVar3 = new c();
+                                    cVar3.n = -1;
+                                    cVar3.o = -1;
+                                    cVar3.p = -1;
+                                    cVar3.q = -1;
+                                    cVar3.r = -1;
+                                    cVar3.s = 0;
+                                    cVar3.t = -1;
+                                    cVar3.u = 0.0f;
+                                    cVar3.v = 0.0f;
+                                    cVar3.w = 0.0f;
+                                    cVar3.x = null;
+                                    cVar3.y = -1;
+                                    cVar3.z = false;
+                                    cVar3.A = -1;
+                                    cVar3.B = -1;
+                                    cVar3.C = -1;
+                                    cVar3.D = MediaDataController.MAX_STYLE_RUNS_COUNT;
+                                    cVar3.E = 200;
+                                    cVar3.F = -1.0f;
+                                    cVar3.G = -1.0f;
+                                    cVar3.H = -1.0f;
+                                    cVar3.I = -1.0f;
+                                    cVar3.J = -1.0f;
+                                    cVar3.K = -1.0f;
+                                    cVar3.L = -1.0f;
+                                    cVar3.M = -1.0f;
+                                    cVar3.N = -1.0f;
+                                    cVar3.O = -1.0f;
+                                    cVar3.Q = 1;
+                                    cVar3.R = -1;
+                                    cVar3.S = 8000;
+                                    cVar3.T = 0L;
+                                    cVar3.U = 0L;
+                                    cVar3.X = true;
+                                    cVar3.Y = "eng";
+                                    dVar4.x = cVar3;
+                                    cVar3.a = dVar4.w;
                                 } else if (i25 == 187) {
                                     dVar4.H = false;
                                 } else if (i25 == 19899) {
@@ -769,7 +769,7 @@ public final class d implements o {
                             if (j12 > 8) {
                                 throw s0.a(null, "Invalid integer size: " + bVar.g);
                             }
-                            b0Var.k(i24, bVar.a(pVar2, (int) j12));
+                            cVar.W(i24, bVar.a(pVar2, (int) j12));
                             z11 = false;
                             bVar.e = 0;
                         } else if (i10 == 3) {
@@ -788,7 +788,7 @@ public final class d implements o {
                                 }
                                 str = new String(bArr3, 0, i26);
                             }
-                            d dVar5 = (d) b0Var.b;
+                            d dVar5 = (d) cVar.b;
                             if (i24 == 134) {
                                 dVar5.d(i24);
                                 dVar5.x.c = str;
@@ -807,7 +807,7 @@ public final class d implements o {
                             z11 = false;
                             bVar.e = 0;
                         } else if (i10 == 4) {
-                            b0Var.h(i24, (int) bVar.g, pVar2);
+                            cVar.D(i24, (int) bVar.g, pVar2);
                             z11 = false;
                             bVar.e = 0;
                         } else {
@@ -820,7 +820,7 @@ public final class d implements o {
                             }
                             int i27 = (int) j14;
                             double intBitsToFloat = i27 == 4 ? Float.intBitsToFloat((int) r5) : Double.longBitsToDouble(bVar.a(pVar2, i27));
-                            d dVar6 = (d) b0Var.b;
+                            d dVar6 = (d) cVar.b;
                             if (i24 == 181) {
                                 dVar6.d(i24);
                                 dVar6.x.S = (int) intBitsToFloat;
@@ -889,9 +889,9 @@ public final class d implements o {
                             bVar.e = 0;
                         }
                     } else {
-                        k2.b0 b0Var3 = bVar.d;
+                        ka.c cVar4 = bVar.d;
                         int i28 = ((a) arrayDeque.pop()).a;
-                        d dVar7 = (d) b0Var3.b;
+                        d dVar7 = (d) cVar4.b;
                         SparseArray sparseArray = dVar7.c;
                         e2.d.h(dVar7.e0);
                         if (i28 != 160) {
@@ -2707,18 +2707,18 @@ public final class d implements o {
                                 }
                             } else if (i28 == 25152) {
                                 dVar7.d(i28);
-                                c cVar2 = dVar7.x;
-                                if (cVar2.i) {
-                                    c3.g0 g0Var = cVar2.k;
+                                c cVar5 = dVar7.x;
+                                if (cVar5.i) {
+                                    c3.g0 g0Var = cVar5.k;
                                     if (g0Var == null) {
                                         throw s0.a(null, "Encrypted Track found but ContentEncKeyID was not found");
                                     }
-                                    cVar2.m = new b2.o(null, true, new n(i.a, null, "video/webm", g0Var.b));
+                                    cVar5.m = new b2.o(null, true, new n(i.a, null, "video/webm", g0Var.b));
                                 }
                             } else if (i28 == 28032) {
                                 dVar7.d(i28);
-                                c cVar3 = dVar7.x;
-                                if (cVar3.i && cVar3.j != null) {
+                                c cVar6 = dVar7.x;
+                                if (cVar6.i && cVar6.j != null) {
                                     throw s0.a(null, "Combining encryption and compression is not supported");
                                 }
                             } else if (i28 == 357149030) {
@@ -2737,9 +2737,9 @@ public final class d implements o {
                             } else if (i28 == 475249515) {
                                 if (!dVar7.y) {
                                     q qVar2 = dVar7.e0;
-                                    b0 b0Var4 = dVar7.F;
-                                    b0 b0Var5 = dVar7.G;
-                                    if (dVar7.s == -1 || dVar7.v == -9223372036854775807L || b0Var4 == null || (i19 = b0Var4.b) == 0 || b0Var5 == null || b0Var5.b != i19) {
+                                    b0 b0Var = dVar7.F;
+                                    b0 b0Var2 = dVar7.G;
+                                    if (dVar7.s == -1 || dVar7.v == -9223372036854775807L || b0Var == null || (i19 = b0Var.b) == 0 || b0Var2 == null || b0Var2.b != i19) {
                                         tVar = new t(dVar7.v);
                                     } else {
                                         int[] iArr = new int[i19];
@@ -2748,8 +2748,8 @@ public final class d implements o {
                                         long[] jArr4 = new long[i19];
                                         int i54 = 0;
                                         while (i54 < i19) {
-                                            jArr4[i54] = b0Var4.f(i54);
-                                            jArr2[i54] = b0Var5.f(i54) + dVar7.s;
+                                            jArr4[i54] = b0Var.f(i54);
+                                            jArr2[i54] = b0Var2.f(i54) + dVar7.s;
                                             i54++;
                                             jArr4 = jArr4;
                                         }
@@ -2790,9 +2790,9 @@ public final class d implements o {
                                 dVar7.G = null;
                             }
                         } else if (dVar7.J == 2) {
-                            c cVar4 = (c) sparseArray.get(dVar7.P);
-                            cVar4.Z.getClass();
-                            if (dVar7.U > 0 && "A_OPUS".equals(cVar4.c)) {
+                            c cVar7 = (c) sparseArray.get(dVar7.P);
+                            cVar7.Z.getClass();
+                            if (dVar7.U > 0 && "A_OPUS".equals(cVar7.c)) {
                                 v vVar3 = dVar7.p;
                                 byte[] array = ByteBuffer.allocate(8).order(ByteOrder.LITTLE_ENDIAN).putLong(dVar7.U).array();
                                 vVar3.getClass();
@@ -2804,14 +2804,14 @@ public final class d implements o {
                             }
                             int i62 = 0;
                             while (i62 < dVar7.N) {
-                                long j17 = dVar7.K + ((cVar4.f * i62) / MediaDataController.MAX_STYLE_RUNS_COUNT);
+                                long j17 = dVar7.K + ((cVar7.f * i62) / MediaDataController.MAX_STYLE_RUNS_COUNT);
                                 int i63 = dVar7.R;
                                 if (i62 == 0 && !dVar7.T) {
                                     i63 |= 1;
                                 }
                                 int i64 = dVar7.O[i62];
                                 int i65 = i60 - i64;
-                                dVar7.e(cVar4, j17, i63, i64, i65);
+                                dVar7.e(cVar7, j17, i63, i64, i65);
                                 i62++;
                                 i60 = i65;
                             }

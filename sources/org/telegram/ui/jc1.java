@@ -7,9 +7,9 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class jc1 extends org.telegram.ui.Components.ml0 {
+public final class jc1 extends org.telegram.ui.Components.wl0 {
     public boolean X2;
     public float Y2;
     public final /* synthetic */ od1 Z2;
@@ -20,7 +20,7 @@ public final class jc1 extends org.telegram.ui.Components.ml0 {
         this.Z2 = od1Var;
     }
 
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.wl0
     public final boolean F0(View view) {
         jc1 jc1Var = this.Z2.u0;
         View F = jc1Var.F(view);
@@ -28,17 +28,17 @@ public final class jc1 extends org.telegram.ui.Components.ml0 {
         return T == null || T.f != 2;
     }
 
-    @Override // org.telegram.ui.Components.ml0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean drawChild(Canvas canvas, View view, long j3) {
         s4.c1 T;
         boolean drawChild = super.drawChild(canvas, view, j3);
-        if (view instanceof org.telegram.ui.Cells.t1) {
-            org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) view;
-            t1Var.getMessageObject();
-            ImageReceiver avatarImage = t1Var.getAvatarImage();
+        if (view instanceof org.telegram.ui.Cells.u1) {
+            org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) view;
+            u1Var.getMessageObject();
+            ImageReceiver avatarImage = u1Var.getAvatarImage();
             if (avatarImage != null) {
                 int top = view.getTop();
-                boolean m32 = t1Var.m3();
+                boolean m32 = u1Var.m3();
                 od1 od1Var = this.Z2;
                 if (m32 && (T = od1Var.u0.T(view)) != null) {
                     if (od1Var.u0.K(T.b() - 1) != null) {
@@ -47,13 +47,13 @@ public final class jc1 extends org.telegram.ui.Components.ml0 {
                         return drawChild;
                     }
                 }
-                float translationX = t1Var.getTranslationX();
-                int layoutHeight = t1Var.getLayoutHeight() + view.getTop();
+                float translationX = u1Var.getTranslationX();
+                int layoutHeight = u1Var.getLayoutHeight() + view.getTop();
                 int measuredHeight = od1Var.u0.getMeasuredHeight() - od1Var.u0.getPaddingBottom();
                 if (layoutHeight > measuredHeight) {
                     layoutHeight = measuredHeight;
                 }
-                if (t1Var.n3() && (r11 = od1Var.u0.T(view)) != null) {
+                if (u1Var.n3() && (r11 = od1Var.u0.T(view)) != null) {
                     int i10 = 0;
                     while (i10 < 20) {
                         i10++;
@@ -66,7 +66,7 @@ public final class jc1 extends org.telegram.ui.Components.ml0 {
                         if (layoutHeight - AndroidUtilities.dp(48.0f) < view2.getBottom()) {
                             translationX = Math.min(view2.getTranslationX(), translationX);
                         }
-                        if (!(view2 instanceof org.telegram.ui.Cells.t1) || !((org.telegram.ui.Cells.t1) view2).n3()) {
+                        if (!(view2 instanceof org.telegram.ui.Cells.u1) || !((org.telegram.ui.Cells.u1) view2).n3()) {
                             top = top2;
                             break;
                         }
@@ -90,21 +90,21 @@ public final class jc1 extends org.telegram.ui.Components.ml0 {
         return drawChild;
     }
 
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.wl0
     public final void h1(View view, float f7, float f10, boolean z10) {
-        if (z10 && (view instanceof org.telegram.ui.Cells.t1) && !((org.telegram.ui.Cells.t1) view).i3(f7)) {
+        if (z10 && (view instanceof org.telegram.ui.Cells.u1) && !((org.telegram.ui.Cells.u1) view).i3(f7)) {
             return;
         }
         super.h1(view, f7, f10, z10);
     }
 
-    @Override // org.telegram.ui.Components.ml0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
         this.Z2.V0();
     }
 
-    @Override // org.telegram.ui.Components.ml0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         int action = motionEvent.getAction();
         od1 od1Var = this.Z2;
@@ -140,7 +140,7 @@ public final class jc1 extends org.telegram.ui.Components.ml0 {
         return this.X2 || super.onTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.ml0, android.view.View
+    @Override // org.telegram.ui.Components.wl0, android.view.View
     public final void setTranslationY(float f7) {
         super.setTranslationY(f7);
         od1 od1Var = this.Z2;
@@ -148,21 +148,21 @@ public final class jc1 extends org.telegram.ui.Components.ml0 {
         if (od1Var.J0 != null) {
             int i11 = 0;
             while (true) {
-                org.telegram.ui.Components.i81[] i81VarArr = od1Var.J0;
-                if (i11 >= i81VarArr.length) {
+                org.telegram.ui.Components.x81[] x81VarArr = od1Var.J0;
+                if (i11 >= x81VarArr.length) {
                     break;
                 }
-                i81VarArr[i11].invalidate();
+                x81VarArr[i11].invalidate();
                 i11++;
             }
         }
         if (od1Var.K0 != null) {
             while (true) {
-                org.telegram.ui.Components.i81[] i81VarArr2 = od1Var.K0;
-                if (i10 >= i81VarArr2.length) {
+                org.telegram.ui.Components.x81[] x81VarArr2 = od1Var.K0;
+                if (i10 >= x81VarArr2.length) {
                     break;
                 }
-                i81VarArr2[i10].invalidate();
+                x81VarArr2[i10].invalidate();
                 i10++;
             }
         }

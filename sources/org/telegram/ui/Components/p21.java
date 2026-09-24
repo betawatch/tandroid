@@ -1,33 +1,39 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.view.View;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p21 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ r21 b;
+public final /* synthetic */ class p21 implements le.e, Utilities.Callback5, Utilities.Callback5Return {
+    public final /* synthetic */ k31 a;
 
-    public /* synthetic */ p21(r21 r21Var, int i10) {
-        this.a = i10;
-        this.b = r21Var;
+    public /* synthetic */ p21(k31 k31Var) {
+        this.a = k31Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                ai.n4 n4Var = this.b.f;
-                n4Var.setScaleX(Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
-                n4Var.setScaleY(Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
-                n4Var.invalidate();
-                break;
-            default:
-                r21 r21Var = this.b;
-                r21Var.getClass();
-                r21Var.F = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                r21Var.h();
-                break;
-        }
+    @Override // le.e
+    public void D(int i10, float f7, float f10, le.f fVar) {
+        this.a.g();
+    }
+
+    @Override // org.telegram.messenger.Utilities.Callback5Return
+    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        return Boolean.valueOf(k31.c(this.a, (v51) obj, (View) obj2));
+    }
+
+    @Override // org.telegram.messenger.Utilities.Callback5
+    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        k31.a(this.a, (v51) obj);
+    }
+
+    @Override // le.e
+    public /* synthetic */ void C(float f7, int i10) {
     }
 }

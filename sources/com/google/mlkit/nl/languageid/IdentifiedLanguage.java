@@ -1,10 +1,10 @@
 package com.google.mlkit.nl.languageid;
 
 import java.util.Arrays;
-import v7.q0;
-import v7.r1;
+import v7.l;
+import v7.s0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class IdentifiedLanguage {
     public final String a;
@@ -39,18 +39,18 @@ public final class IdentifiedLanguage {
     }
 
     public final String toString() {
-        r1 r1Var = new r1("IdentifiedLanguage", 1);
-        r1 r1Var2 = new r1(0, false);
-        ((r1) r1Var.d).c = r1Var2;
-        r1Var.d = r1Var2;
-        r1Var2.d = this.a;
-        r1Var2.b = "languageTag";
+        l lVar = new l("IdentifiedLanguage", 2);
+        l lVar2 = new l(1, false);
+        ((l) lVar.d).d = lVar2;
+        lVar.d = lVar2;
+        lVar2.c = this.a;
+        lVar2.b = "languageTag";
         String valueOf = String.valueOf(this.b);
-        q0 q0Var = new q0(0, false);
-        ((r1) r1Var.d).c = q0Var;
-        r1Var.d = q0Var;
-        q0Var.d = valueOf;
-        q0Var.b = "confidence";
-        return r1Var.toString();
+        s0 s0Var = new s0(1, false);
+        ((l) lVar.d).d = s0Var;
+        lVar.d = s0Var;
+        s0Var.c = valueOf;
+        s0Var.b = "confidence";
+        return lVar.toString();
     }
 }

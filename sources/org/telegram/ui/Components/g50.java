@@ -1,20 +1,19 @@
 package org.telegram.ui.Components;
 
 import android.graphics.Paint;
-import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class g50 extends Paint {
     public final /* synthetic */ int a;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
+    public final /* synthetic */ Object b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ g50(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10) {
+    public /* synthetic */ g50(Object obj, int i10) {
         super(1);
         this.a = i10;
-        this.b = notificationCenterDelegate;
+        this.b = obj;
     }
 
     @Override // android.graphics.Paint
@@ -22,7 +21,13 @@ public final class g50 extends Paint {
         switch (this.a) {
             case 0:
                 super.setAlpha(i10);
-                ((x50) this.b).invalidate();
+                ((c60) this.b).invalidate();
+                break;
+            case 1:
+                super.setAlpha(i10);
+                im0 im0Var = (im0) this.b;
+                im0Var.a.setAlpha(Math.round(i10 * 0.2f));
+                im0Var.invalidate();
                 break;
             default:
                 super.setAlpha(i10);

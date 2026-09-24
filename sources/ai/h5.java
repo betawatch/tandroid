@@ -53,11 +53,11 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.o70;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.y70;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h5 implements Runnable {
     public final /* synthetic */ int a;
@@ -85,13 +85,13 @@ public final /* synthetic */ class h5 implements Runnable {
             if (nVar != null && handler.getLooper().getThread().isAlive()) {
                 handler.post(new gg.x1(26, nVar, kVar));
             }
-            synchronized (k2.f0.o0) {
+            synchronized (k2.e0.o0) {
                 try {
-                    int i10 = k2.f0.q0 - 1;
-                    k2.f0.q0 = i10;
+                    int i10 = k2.e0.q0 - 1;
+                    k2.e0.q0 = i10;
                     if (i10 == 0) {
-                        k2.f0.p0.shutdown();
-                        k2.f0.p0 = null;
+                        k2.e0.p0.shutdown();
+                        k2.e0.p0 = null;
                     }
                 } finally {
                 }
@@ -100,13 +100,13 @@ public final /* synthetic */ class h5 implements Runnable {
             if (nVar != null && handler.getLooper().getThread().isAlive()) {
                 handler.post(new gg.x1(26, nVar, kVar));
             }
-            synchronized (k2.f0.o0) {
+            synchronized (k2.e0.o0) {
                 try {
-                    int i11 = k2.f0.q0 - 1;
-                    k2.f0.q0 = i11;
+                    int i11 = k2.e0.q0 - 1;
+                    k2.e0.q0 = i11;
                     if (i11 == 0) {
-                        k2.f0.p0.shutdown();
-                        k2.f0.p0 = null;
+                        k2.e0.p0.shutdown();
+                        k2.e0.p0 = null;
                     }
                     throw th2;
                 } finally {
@@ -152,7 +152,7 @@ public final /* synthetic */ class h5 implements Runnable {
         CharSequence charSequence;
         CharSequence charSequence2;
         CharSequence charSequence3;
-        m4.j0 j0Var = (m4.j0) this.b;
+        m4.i0 i0Var2 = (m4.i0) this.b;
         AtomicInteger atomicInteger = (AtomicInteger) this.c;
         ArrayList arrayList3 = (ArrayList) this.d;
         if (atomicInteger.incrementAndGet() == arrayList3.size()) {
@@ -162,7 +162,7 @@ public final /* synthetic */ class h5 implements Runnable {
                 i9.w wVar = (i9.w) arrayList5.get(i10);
                 if (wVar != null) {
                     try {
-                        bitmap = (Bitmap) v7.l8.a(wVar);
+                        bitmap = (Bitmap) v7.m8.a(wVar);
                     } catch (CancellationException | ExecutionException e) {
                         synchronized (e2.a.b) {
                             Log.d("MediaSessionLegacyStub", e2.a.a("Failed to get bitmap", e));
@@ -367,7 +367,7 @@ public final /* synthetic */ class h5 implements Runnable {
                 i10++;
                 arrayList3 = arrayList;
             }
-            m4.l0.D(((m4.l0) j0Var.e).k, arrayList4);
+            m4.k0.D(((m4.k0) i0Var2.e).k, arrayList4);
         }
     }
 
@@ -379,22 +379,22 @@ public final /* synthetic */ class h5 implements Runnable {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private final void c() {
-        m4.b1 b1Var = (m4.b1) this.b;
+        m4.a1 a1Var = (m4.a1) this.b;
         m4.r rVar = (m4.r) this.c;
         m4.a0 a0Var = (m4.a0) this.d;
         m4.i iVar = (m4.i) this.e;
-        b1Var.getClass();
-        ni.f fVar = b1Var.b;
+        a1Var.getClass();
+        oi.f fVar = a1Var.b;
         boolean z10 = false;
         try {
-            b1Var.c.remove(rVar);
+            a1Var.c.remove(rVar);
             if (a0Var.j()) {
-                w7.u.a(iVar);
+                w7.v.a(iVar);
                 return;
             }
-            m4.x0 x0Var = (m4.x0) rVar.d;
-            e2.d.h(x0Var);
-            IBinder asBinder = x0Var.a.asBinder();
+            m4.w0 w0Var = (m4.w0) rVar.d;
+            e2.d.h(w0Var);
+            IBinder asBinder = w0Var.a.asBinder();
             m4.p m10 = a0Var.m(rVar);
             if (fVar.A(rVar)) {
                 e2.a.n("MediaSessionStub", "Controller " + rVar + " has sent connection request multiple times");
@@ -403,13 +403,13 @@ public final /* synthetic */ class h5 implements Runnable {
             com.google.android.gms.common.api.internal.v x10 = fVar.x(rVar);
             if (x10 == null) {
                 e2.a.n("MediaSessionStub", "Ignoring connection request from unknown controller info");
-                w7.u.a(iVar);
+                w7.v.a(iVar);
                 return;
             }
-            m4.f1 f1Var = a0Var.t;
-            m4.d1 d1Var = a0Var.s;
-            b2.x0 x0Var2 = m10.b;
-            m4.d1 H0 = b1Var.H0(d1Var);
+            m4.e1 e1Var = a0Var.t;
+            m4.c1 c1Var = a0Var.s;
+            b2.x0 x0Var = m10.b;
+            m4.c1 H0 = a1Var.H0(c1Var);
             MediaSession.Token token = ((n4.r) a0Var.h.k.b).c.b;
             e9.i0 i0Var = m10.c;
             if (i0Var == null) {
@@ -420,13 +420,13 @@ public final /* synthetic */ class h5 implements Runnable {
                 i0Var2 = a0Var.z;
             }
             e9.i0 i0Var3 = a0Var.r;
-            m4.i1 i1Var = m10.a;
-            b2.x0 t10 = f1Var.t();
-            m4.n1 n1Var = a0Var.j.a;
-            n1Var.getClass();
-            m4.g gVar = new m4.g(b1Var, i0Var, i0Var2, i0Var3, i1Var, x0Var2, t10, new Bundle(n1Var.g), a0Var.A, H0, token);
+            m4.h1 h1Var = m10.a;
+            b2.x0 t10 = e1Var.t();
+            m4.m1 m1Var = a0Var.j.a;
+            m1Var.getClass();
+            m4.g gVar = new m4.g(a1Var, i0Var, i0Var2, i0Var3, h1Var, x0Var, t10, new Bundle(m1Var.g), a0Var.A, H0, token);
             if (a0Var.j()) {
-                w7.u.a(iVar);
+                w7.v.a(iVar);
                 return;
             }
             try {
@@ -439,14 +439,14 @@ public final /* synthetic */ class h5 implements Runnable {
             }
         } finally {
             if (0 == 0) {
-                w7.u.a(iVar);
+                w7.v.a(iVar);
             }
         }
     }
 
     private final void e() {
-        ni.f fVar = (ni.f) this.b;
-        ((ArrayDeque) fVar.a).addLast(new ni.e((le.b) this.c, (ni.b) this.d, (RequestTimeDelegate) this.e));
+        oi.f fVar = (oi.f) this.b;
+        ((ArrayDeque) fVar.a).addLast(new oi.e((le.b) this.c, (oi.b) this.d, (RequestTimeDelegate) this.e));
         fVar.K();
     }
 
@@ -459,7 +459,7 @@ public final /* synthetic */ class h5 implements Runnable {
     }
 
     private final void h() {
-        ((VideoAds) this.b).lambda$show$14((Context) this.c, (TLRPC.TL_sponsoredMessage) this.d, (o70) this.e);
+        ((VideoAds) this.b).lambda$show$14((Context) this.c, (TLRPC.TL_sponsoredMessage) this.d, (y70) this.e);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:346:0x08d2, code lost:
@@ -499,7 +499,7 @@ public final /* synthetic */ class h5 implements Runnable {
         long j3;
         ic icVar;
         char c10;
-        org.telegram.ui.ActionBar.n2 U;
+        org.telegram.ui.ActionBar.m2 U;
         SQLitePreparedStatement sQLitePreparedStatement;
         SQLitePreparedStatement sQLitePreparedStatement2;
         float f7;
@@ -634,7 +634,7 @@ public final /* synthetic */ class h5 implements Runnable {
                     c10 = 0;
                 } else {
                     c10 = 0;
-                    xc.a0(U).d0(tL_error, false);
+                    yc.a0(U).d0(tL_error, false);
                 }
                 NotificationCenter notificationCenter = NotificationCenter.getInstance(x8Var.a);
                 int i14 = NotificationCenter.storyAlbumsCollectionsUpdate;
@@ -921,7 +921,7 @@ public final /* synthetic */ class h5 implements Runnable {
                     StringBuilder sb3 = new StringBuilder("story bitrate, original = ");
                     sb3.append(videoEditedInfo.originalBitrate);
                     sb3.append(" => ");
-                    org.telegram.messenger.z0.n(videoEditedInfo.bitrate, sb3);
+                    org.telegram.messenger.f0.n(videoEditedInfo.bitrate, sb3);
                     int i22 = iArr2[0][4];
                     long j23 = i22;
                     l8Var4.h0 = j23;
@@ -1032,22 +1032,22 @@ public final /* synthetic */ class h5 implements Runnable {
             case 7:
                 ci.d dVar = (ci.d) this.b;
                 TLObject tLObject3 = (TLObject) this.c;
-                org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) this.d;
+                org.telegram.ui.ActionBar.e3 e3Var = (org.telegram.ui.ActionBar.e3) this.d;
                 ei.v1 v1Var = (ei.v1) this.e;
                 dVar.setLoading(false);
                 if (tLObject3 instanceof TLRPC.TL_boolTrue) {
-                    f3Var.dismiss();
+                    e3Var.dismiss();
                     v1Var.run(Boolean.FALSE);
                     return;
                 }
                 return;
             case 8:
                 TL_payments.connectedBotStarRef connectedbotstarref = (TL_payments.connectedBotStarRef) this.b;
-                org.telegram.ui.ActionBar.f3 f3Var2 = (org.telegram.ui.ActionBar.f3) this.c;
+                org.telegram.ui.ActionBar.e3 e3Var2 = (org.telegram.ui.ActionBar.e3) this.c;
                 org.telegram.ui.ActionBar.d6 d6Var2 = (org.telegram.ui.ActionBar.d6) this.d;
                 TLRPC.User user = (TLRPC.User) this.e;
                 AndroidUtilities.addToClipboard(connectedbotstarref.url);
-                new xc(f3Var2.topBulletinContainer, d6Var2).M(LocaleController.getString(R.string.AffiliateProgramLinkCopiedTitle), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.AffiliateProgramLinkCopiedText, ei.l.G0(connectedbotstarref.commission_permille), UserObject.getUserName(user))), R.raw.copy).j();
+                new yc(e3Var2.topBulletinContainer, d6Var2).M(LocaleController.getString(R.string.AffiliateProgramLinkCopiedTitle), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.AffiliateProgramLinkCopiedText, ei.l.G0(connectedbotstarref.commission_permille), UserObject.getUserName(user))), R.raw.copy).j();
                 return;
             case 9:
                 ei.e4.x0((ei.e4) this.b, (Context) this.c, (TLRPC.User) this.d, (TL_payments.connectedBotStarRef) this.e);
@@ -1225,15 +1225,15 @@ public final /* synthetic */ class h5 implements Runnable {
                 ii.r rVar = (ii.r) this.b;
                 ii.a aVar2 = (ii.a) this.c;
                 TL_iv.PageBlock pageBlock = (TL_iv.PageBlock) this.d;
-                o70 o70Var = (o70) this.e;
+                y70 y70Var = (y70) this.e;
                 rVar.r.V4(aVar2, pageBlock);
-                o70Var.u();
+                y70Var.u();
                 return;
             case 19:
                 a();
                 return;
             case 20:
-                ni.f fVar = (ni.f) this.b;
+                oi.f fVar = (oi.f) this.b;
                 AtomicBoolean atomicBoolean = (AtomicBoolean) this.c;
                 m4.e eVar = (m4.e) this.d;
                 AtomicBoolean atomicBoolean2 = (AtomicBoolean) this.e;
@@ -1273,13 +1273,13 @@ public final /* synthetic */ class h5 implements Runnable {
                 }
             case 24:
                 m4.a0 a0Var3 = (m4.a0) this.b;
-                m4.z0 z0Var = (m4.z0) this.c;
+                m4.y0 y0Var = (m4.y0) this.c;
                 m4.r rVar2 = (m4.r) this.d;
                 List list = (List) this.e;
                 if (a0Var3.j()) {
                     return;
                 }
-                z0Var.a(a0Var3.t, rVar2, list);
+                y0Var.a(a0Var3.t, rVar2, list);
                 return;
             case 25:
                 e();

@@ -1,34 +1,88 @@
 package org.telegram.ui;
 
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fe0 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ he0 b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ String d;
+public final class fe0 implements TextWatcher {
+    public final /* synthetic */ int a = 0;
+    public boolean b;
+    public final /* synthetic */ ViewGroup c;
 
-    public /* synthetic */ fe0(he0 he0Var, String str, String str2, int i10) {
-        this.a = i10;
-        this.b = he0Var;
-        this.c = str;
-        this.d = str2;
+    public fe0(qg.v2 v2Var) {
+        this.c = v2Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        int clamp;
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new ce0(this.b, tL_error, this.c, this.d, tLObject));
+                ge0 ge0Var = (ge0) this.c;
+                if (this.b) {
+                    if (ge0Var.f.getVisibility() != 0 && !TextUtils.isEmpty(editable)) {
+                        if (ge0Var.y) {
+                            ge0Var.f.callOnClick();
+                        }
+                        AndroidUtilities.updateViewVisibilityAnimated(ge0Var.f, true, 0.1f, true);
+                        break;
+                    } else if (ge0Var.f.getVisibility() != 8 && TextUtils.isEmpty(editable)) {
+                        AndroidUtilities.updateViewVisibilityAnimated(ge0Var.f, false, 0.1f, true);
+                        break;
+                    }
+                }
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new ce0(this.b, tL_error, tLObject, this.c, this.d));
+                qg.v2 v2Var = (qg.v2) this.c;
+                qg.u2 u2Var = v2Var.q0;
+                if (this.b && v2Var.w0 > 0 && v2Var.x0 > 0 && !v2Var.z0 && u2Var.getLayout() != null) {
+                    float f7 = AndroidUtilities.displaySize.y / 3.0f;
+                    float height = u2Var.getLayout().getHeight();
+                    if (height > f7 && (clamp = Utilities.clamp((int) ((f7 / height) * v2Var.getBaseFontSize()), v2Var.x0, v2Var.w0)) != v2Var.getBaseFontSize()) {
+                        v2Var.setBaseFontSize(clamp);
+                        Runnable runnable = v2Var.y0;
+                        if (runnable != null) {
+                            runnable.run();
+                        }
+                    }
+                }
+                v2Var.s();
                 break;
         }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        switch (this.a) {
+            case 0:
+                break;
+            default:
+                this.b = i12 > 3;
+                break;
+        }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        int i13 = this.a;
+    }
+
+    public fe0(ge0 ge0Var, boolean z10) {
+        this.c = ge0Var;
+        this.b = z10;
+    }
+
+    private final void a(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void b(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
     }
 }

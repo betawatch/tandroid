@@ -1,16 +1,16 @@
 package ai;
 
 import android.content.Context;
-import org.telegram.messenger.ul;
+import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.ix0;
 import org.telegram.ui.Components.pk;
 import org.telegram.ui.Components.u00;
-import org.telegram.ui.Components.xw0;
 import org.telegram.ui.wf1;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public final class d7 extends xw0 {
+public final class d7 extends ix0 {
     public final /* synthetic */ int K = 0;
     public final /* synthetic */ Object L;
 
@@ -20,7 +20,7 @@ public final class d7 extends xw0 {
         this.L = pkVar;
     }
 
-    @Override // org.telegram.ui.Components.xw0
+    @Override // org.telegram.ui.Components.ix0
     public void e(boolean z10, boolean z11) {
         switch (this.K) {
             case 2:
@@ -55,7 +55,7 @@ public final class d7 extends xw0 {
         switch (this.K) {
             case 0:
                 k7 k7Var = ((e7) this.L).d;
-                super.onMeasure(i10, ul.d(k7Var.e, k7Var.n - k7Var.r.getPaddingTop(), TLObject.FLAG_30));
+                super.onMeasure(i10, ok.c(k7Var.e, k7Var.n - k7Var.r.getPaddingTop(), TLObject.FLAG_30));
                 break;
             default:
                 super.onMeasure(i10, i11);

@@ -1,35 +1,66 @@
 package org.telegram.ui.Components;
 
-import java.util.Arrays;
-import java.util.Comparator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class hg0 implements Comparator {
-    public final /* synthetic */ qg0 a;
+public final class hg0 extends org.telegram.ui.l4 {
+    public final /* synthetic */ int h;
+    public final /* synthetic */ Object n;
 
-    public hg0(qg0 qg0Var) {
-        this.a = qg0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ hg0(Object obj, Context context, int i10) {
+        super(context);
+        this.h = i10;
+        this.n = obj;
     }
 
-    public final int a(pg0 pg0Var) {
-        qg0 qg0Var = this.a;
-        int size = qg0Var.r.answers.size();
-        for (int i10 = 0; i10 < size; i10++) {
-            if (Arrays.equals(qg0Var.r.answers.get(i10).option, pg0Var.d)) {
-                return i10;
-            }
+    @Override // android.view.ViewGroup
+    public boolean drawChild(Canvas canvas, View view, long j3) {
+        MessageObject playingMessageObject;
+        switch (this.h) {
+            case 0:
+                boolean drawChild = super.drawChild(canvas, view, j3);
+                PipRoundVideoView pipRoundVideoView = (PipRoundVideoView) this.n;
+                if (view == pipRoundVideoView.c && (playingMessageObject = MediaController.getInstance().getPlayingMessageObject()) != null) {
+                    pipRoundVideoView.E.set(AndroidUtilities.dpf2(1.5f), AndroidUtilities.dpf2(1.5f), getMeasuredWidth() - AndroidUtilities.dpf2(1.5f), getMeasuredHeight() - AndroidUtilities.dpf2(1.5f));
+                    canvas.drawArc(pipRoundVideoView.E, -90.0f, playingMessageObject.audioProgress * 360.0f, false, org.telegram.ui.ActionBar.h6.k2);
+                }
+                return drawChild;
+            default:
+                return super.drawChild(canvas, view, j3);
         }
-        return 0;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int a2 = a((pg0) obj);
-        int a10 = a((pg0) obj2);
-        if (a2 > a10) {
-            return 1;
+    @Override // org.telegram.ui.l4, android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.h) {
+            case 1:
+                super.onMeasure(i10, i11);
+                o91 o91Var = (o91) this.n;
+                if (o91Var.f != null) {
+                    ViewGroup.LayoutParams layoutParams = o91Var.d.getLayoutParams();
+                    layoutParams.width = getMeasuredWidth();
+                    layoutParams.height = getMeasuredHeight();
+                    ImageView imageView = o91Var.e;
+                    if (imageView != null) {
+                        ViewGroup.LayoutParams layoutParams2 = imageView.getLayoutParams();
+                        layoutParams2.width = getMeasuredWidth();
+                        layoutParams2.height = getMeasuredHeight();
+                        break;
+                    }
+                }
+                break;
+            default:
+                super.onMeasure(i10, i11);
+                break;
         }
-        return a2 < a10 ? -1 : 0;
     }
 }

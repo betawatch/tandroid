@@ -5,12 +5,12 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
-import org.telegram.ui.Components.kk0;
+import org.telegram.ui.Components.uk0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public abstract class m0 {
-    public ka.c a;
+    public l.d a;
     public ArrayList b;
     public long c;
     public long d;
@@ -44,9 +44,9 @@ public abstract class m0 {
     public abstract boolean c(c1 c1Var, List list);
 
     public final void d(c1 c1Var) {
-        ka.c cVar = this.a;
-        if (cVar != null) {
-            RecyclerView recyclerView = (RecyclerView) cVar.b;
+        l.d dVar = this.a;
+        if (dVar != null) {
+            RecyclerView recyclerView = (RecyclerView) dVar.a;
             boolean z10 = true;
             c1Var.q(true);
             View view = c1Var.a;
@@ -59,16 +59,16 @@ public abstract class m0 {
             }
             of.e eVar = recyclerView.b;
             recyclerView.y0();
-            lf.i iVar = recyclerView.e;
-            e6.n nVar = (e6.n) iVar.c;
-            k2.b0 b0Var = (k2.b0) iVar.b;
-            int indexOfChild = ((RecyclerView) b0Var.b).indexOfChild(view);
+            la.h hVar = recyclerView.e;
+            e6.n nVar = (e6.n) hVar.c;
+            ka.c cVar = (ka.c) hVar.b;
+            int indexOfChild = ((RecyclerView) cVar.b).indexOfChild(view);
             if (indexOfChild == -1) {
-                iVar.Y(view);
-            } else if (nVar.z(indexOfChild)) {
-                nVar.B(indexOfChild);
-                iVar.Y(view);
-                b0Var.r(indexOfChild);
+                hVar.Y(view);
+            } else if (nVar.D(indexOfChild)) {
+                nVar.F(indexOfChild);
+                hVar.Y(view);
+                cVar.j0(indexOfChild);
             } else {
                 z10 = false;
             }
@@ -89,8 +89,8 @@ public abstract class m0 {
         ArrayList arrayList = this.b;
         int size = arrayList.size();
         for (int i10 = 0; i10 < size; i10++) {
-            kk0 kk0Var = (kk0) arrayList.get(i10);
-            kk0Var.a.c(kk0Var.b, kk0Var.c, kk0Var.d, false);
+            uk0 uk0Var = (uk0) arrayList.get(i10);
+            uk0Var.a.c(uk0Var.b, uk0Var.c, uk0Var.d, false);
         }
         arrayList.clear();
     }

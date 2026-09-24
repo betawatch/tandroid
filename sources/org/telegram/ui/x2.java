@@ -28,9 +28,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class x2 extends FrameLayout implements DownloadController.FileDownloadProgressListener, org.telegram.ui.Cells.q9 {
+public final class x2 extends FrameLayout implements DownloadController.FileDownloadProgressListener, org.telegram.ui.Cells.p9 {
     public static final /* synthetic */ int V = 0;
     public int E;
     public int F;
@@ -49,7 +49,7 @@ public final class x2 extends FrameLayout implements DownloadController.FileDown
     public boolean S;
     public MessageObject.GroupedMessagePosition T;
     public boolean U;
-    public final r70 a;
+    public final p70 a;
     public final g4 b;
     public b3 c;
     public b3 d;
@@ -64,9 +64,9 @@ public final class x2 extends FrameLayout implements DownloadController.FileDown
     public int x;
     public int y;
 
-    public x2(Context context, r70 r70Var, g4 g4Var, int i10) {
+    public x2(Context context, p70 p70Var, g4 g4Var, int i10) {
         super(context);
-        this.a = r70Var;
+        this.a = p70Var;
         this.b = g4Var;
         setWillNotDraw(false);
         ImageReceiver imageReceiver = new ImageReceiver(this);
@@ -78,8 +78,8 @@ public final class x2 extends FrameLayout implements DownloadController.FileDown
         this.r = radialProgress2;
         radialProgress2.d = -1;
         radialProgress2.setColors(1711276032, 2130706432, -1, -2500135);
-        this.K = DownloadController.getInstance(((i4) r70Var).X).generateObserverTag();
-        d1 d1Var = new d1(context, r70Var, g4Var, 1);
+        this.K = DownloadController.getInstance(((i4) p70Var).X).generateObserverTag();
+        d1 d1Var = new d1(context, p70Var, g4Var, 1);
         this.s = d1Var;
         l4 l4Var = new l4(context);
         this.h = l4Var;
@@ -89,10 +89,10 @@ public final class x2 extends FrameLayout implements DownloadController.FileDown
         textureView.setOpaque(false);
         FrameLayout frameLayout = new FrameLayout(getContext());
         this.f = frameLayout;
-        l4Var.addView(textureView, w7.x5.e(-1, -2, 1));
-        frameLayout.addView(l4Var, w7.x5.e(-1, -1, 17));
-        addView(frameLayout, w7.x5.c(-2.0f, -1));
-        addView(d1Var, w7.x5.c(-2.0f, -1));
+        l4Var.addView(textureView, w7.y5.e(-1, -2, 1));
+        frameLayout.addView(l4Var, w7.y5.e(-1, -1, 17));
+        addView(frameLayout, w7.y5.c(-2.0f, -1));
+        addView(d1Var, w7.y5.c(-2.0f, -1));
     }
 
     private int getIconForCurrentState() {
@@ -151,11 +151,11 @@ public final class x2 extends FrameLayout implements DownloadController.FileDown
     }
 
     public final void b(TL_iv.pageBlockVideo pageblockvideo, y2 y2Var, boolean z10, boolean z11) {
-        r70 r70Var;
+        p70 p70Var;
         VideoPlayerHolderBase videoPlayerHolderBase;
         TL_iv.pageBlockVideo pageblockvideo2 = this.L;
-        if (pageblockvideo2 != null && (videoPlayerHolderBase = (r70Var = this.a).w) != null && r70Var.x == this) {
-            a0.i iVar = r70Var.y;
+        if (pageblockvideo2 != null && (videoPlayerHolderBase = (p70Var = this.a).w) != null && p70Var.x == this) {
+            a0.i iVar = p70Var.y;
             long j3 = pageblockvideo2.video_id;
             y2 a2 = y2.a(videoPlayerHolderBase, this);
             this.M = a2;
@@ -211,16 +211,16 @@ public final class x2 extends FrameLayout implements DownloadController.FileDown
         if (this.U) {
             this.U = false;
             TL_iv.pageBlockVideo pageblockvideo = this.L;
-            r70 r70Var = this.a;
-            if (pageblockvideo != null && (videoPlayerHolderBase = r70Var.w) != null && r70Var.x == this) {
-                a0.i iVar = r70Var.y;
+            p70 p70Var = this.a;
+            if (pageblockvideo != null && (videoPlayerHolderBase = p70Var.w) != null && p70Var.x == this) {
+                a0.i iVar = p70Var.y;
                 long j3 = pageblockvideo.video_id;
                 y2 a2 = y2.a(videoPlayerHolderBase, this);
                 c(a2);
                 iVar.k(a2, j3);
             }
             imageReceiver.onDetachedFromWindow();
-            DownloadController.getInstance(((i4) r70Var).X).removeLoadingFileObserver(this);
+            DownloadController.getInstance(((i4) p70Var).X).removeLoadingFileObserver(this);
         }
     }
 
@@ -276,7 +276,7 @@ public final class x2 extends FrameLayout implements DownloadController.FileDown
         invalidate();
     }
 
-    @Override // org.telegram.ui.Cells.q9
+    @Override // org.telegram.ui.Cells.p9
     public final void fillTextLayoutBlocks(ArrayList arrayList) {
         b3 b3Var = this.c;
         if (b3Var != null) {
@@ -348,12 +348,12 @@ public final class x2 extends FrameLayout implements DownloadController.FileDown
         }
         imageReceiver.draw(canvas);
         b3 b3Var = this.c;
-        r70 r70Var = this.a;
+        p70 p70Var = this.a;
         int i10 = 0;
         if (b3Var != null) {
             canvas.save();
             canvas.translate(this.x, this.y);
-            i4.v(r70Var, canvas, this, 0);
+            i4.v(p70Var, canvas, this, 0);
             this.c.draw(canvas, this);
             canvas.restore();
             i10 = 1;
@@ -361,11 +361,11 @@ public final class x2 extends FrameLayout implements DownloadController.FileDown
         if (this.d != null) {
             canvas.save();
             canvas.translate(this.x, this.y + this.E);
-            i4.v(r70Var, canvas, this, i10);
+            i4.v(p70Var, canvas, this, i10);
             this.d.draw(canvas, this);
             canvas.restore();
         }
-        i4.u(canvas, r70Var, this.L, getMeasuredHeight());
+        i4.u(canvas, p70Var, this.L, getMeasuredHeight());
         super.onDraw(canvas);
         if (imageReceiver.getVisible()) {
             this.r.draw(canvas);
@@ -434,7 +434,7 @@ public final class x2 extends FrameLayout implements DownloadController.FileDown
                     } else {
                         i16 = AndroidUtilities.dp(18.0f) + AndroidUtilities.dp(i21 * 14);
                         this.x = i16;
-                        i15 = org.telegram.messenger.ul.w(18.0f, i16, i12);
+                        i15 = org.telegram.messenger.ok.y(18.0f, i16, i12);
                         dp = i15;
                     }
                     TLRPC.Document document = this.O;
@@ -552,7 +552,7 @@ public final class x2 extends FrameLayout implements DownloadController.FileDown
                         if (q6 != null) {
                             int height = this.c.d.getHeight() + AndroidUtilities.dp(4.0f);
                             this.E = height;
-                            i17 = org.telegram.messenger.z0.C(4.0f, height, i17);
+                            i17 = org.telegram.messenger.f0.C(4.0f, height, i17);
                             b3 b3Var = this.c;
                             b3Var.s = this.x;
                             b3Var.v = this.y;
@@ -560,7 +560,7 @@ public final class x2 extends FrameLayout implements DownloadController.FileDown
                         int i27 = i17;
                         TL_iv.pageBlockVideo pageblockvideo3 = this.L;
                         g4Var = g4Var2;
-                        b3 p5 = i4.p(this.a, this, null, pageblockvideo3.caption.credit, dp, 0, pageblockvideo3, (g4Var2 == null || !g4Var2.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.jw0.a(), 0, this.b);
+                        b3 p5 = i4.p(this.a, this, null, pageblockvideo3.caption.credit, dp, 0, pageblockvideo3, (g4Var2 == null || !g4Var2.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.uw0.a(), 0, this.b);
                         this.d = p5;
                         if (p5 != null) {
                             i17 = this.d.d.getHeight() + AndroidUtilities.dp(4.0f) + i27;

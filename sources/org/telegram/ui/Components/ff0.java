@@ -1,57 +1,7 @@
 package org.telegram.ui.Components;
 
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class ff0 {
-    public final gf0 a = new gf0();
-    public final gf0 b = new gf0();
-    public final gf0 c = new gf0();
-    public final gf0 d = new gf0();
-    public final ByteBuffer e;
-    public int f;
-
-    public ff0() {
-        ByteBuffer allocateDirect = ByteBuffer.allocateDirect(800);
-        this.e = allocateDirect;
-        allocateDirect.order(ByteOrder.LITTLE_ENDIAN);
-    }
-
-    public final void a() {
-        ByteBuffer byteBuffer = this.e;
-        byteBuffer.position(0);
-        gf0 gf0Var = this.a;
-        if (gf0Var.f == null) {
-            gf0Var.a();
-        }
-        float[] fArr = gf0Var.f;
-        gf0 gf0Var2 = this.b;
-        if (gf0Var2.f == null) {
-            gf0Var2.a();
-        }
-        float[] fArr2 = gf0Var2.f;
-        gf0 gf0Var3 = this.c;
-        if (gf0Var3.f == null) {
-            gf0Var3.a();
-        }
-        float[] fArr3 = gf0Var3.f;
-        gf0 gf0Var4 = this.d;
-        if (gf0Var4.f == null) {
-            gf0Var4.a();
-        }
-        float[] fArr4 = gf0Var4.f;
-        for (int i10 = 0; i10 < 200; i10++) {
-            byteBuffer.put((byte) (fArr2[i10] * 255.0f));
-            byteBuffer.put((byte) (fArr3[i10] * 255.0f));
-            byteBuffer.put((byte) (fArr4[i10] * 255.0f));
-            byteBuffer.put((byte) (fArr[i10] * 255.0f));
-        }
-        byteBuffer.position(0);
-    }
-
-    public final boolean b() {
-        return this.a.b() && this.b.b() && this.c.b() && this.d.b();
-    }
+public interface ff0 {
+    void l(int i10, int i11);
 }

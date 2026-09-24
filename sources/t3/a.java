@@ -3,17 +3,17 @@ package t3;
 import b2.m0;
 import b2.o0;
 import b2.s;
-import v7.r6;
-import v7.y7;
+import v7.s6;
+import v7.z7;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class a implements o0 {
     public final String a;
     public final String b;
 
     public a(String str, String str2) {
-        this.a = r6.c(str);
+        this.a = s6.c(str);
         this.b = str2;
     }
 
@@ -93,21 +93,21 @@ public final class a implements o0 {
         String str2 = this.b;
         switch (c10) {
             case 0:
-                Integer g10 = y7.g(str2);
+                Integer g10 = z7.g(str2);
                 if (g10 != null) {
                     m0Var.o = g10;
                     break;
                 }
                 break;
             case 1:
-                Integer g11 = y7.g(str2);
+                Integer g11 = z7.g(str2);
                 if (g11 != null) {
                     m0Var.C = g11;
                     break;
                 }
                 break;
             case 2:
-                Integer g12 = y7.g(str2);
+                Integer g12 = z7.g(str2);
                 if (g12 != null) {
                     m0Var.n = g12;
                     break;
@@ -126,7 +126,7 @@ public final class a implements o0 {
                 m0Var.g = str2;
                 break;
             case 7:
-                Integer g13 = y7.g(str2);
+                Integer g13 = z7.g(str2);
                 if (g13 != null) {
                     m0Var.B = g13;
                     break;

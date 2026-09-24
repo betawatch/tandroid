@@ -2,7 +2,7 @@ package org.webrtc;
 
 import android.opengl.GLES20;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public class GlTextureFrameBuffer {
     private int frameBufferId;
@@ -21,7 +21,7 @@ public class GlTextureFrameBuffer {
                 this.height = 0;
                 return;
             default:
-                throw new IllegalArgumentException(hg.c.i(i10, "Invalid pixel format: "));
+                throw new IllegalArgumentException(hg.c.h(i10, "Invalid pixel format: "));
         }
     }
 
@@ -77,7 +77,7 @@ public class GlTextureFrameBuffer {
         GLES20.glFramebufferTexture2D(36160, 36064, 3553, this.textureId, 0);
         int glCheckFramebufferStatus = GLES20.glCheckFramebufferStatus(36160);
         if (glCheckFramebufferStatus != 36053) {
-            throw new IllegalStateException(hg.c.i(glCheckFramebufferStatus, "Framebuffer not complete, status: "));
+            throw new IllegalStateException(hg.c.h(glCheckFramebufferStatus, "Framebuffer not complete, status: "));
         }
         GLES20.glBindFramebuffer(36160, 0);
     }

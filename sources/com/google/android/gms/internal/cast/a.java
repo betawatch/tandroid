@@ -3,11 +3,11 @@ package com.google.android.gms.internal.cast;
 import android.content.Context;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.MediaController;
-import org.telegram.ui.Components.f71;
+import org.telegram.ui.Components.s71;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.w9;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class a implements d6.h, y6.c {
     public int a;
@@ -30,7 +30,7 @@ public final class a implements d6.h, y6.c {
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void i(d6.f fVar, boolean z10) {
+    public /* bridge */ /* synthetic */ void h(d6.f fVar, boolean z10) {
     }
 
     @Override // d6.h
@@ -59,7 +59,7 @@ public final class a implements d6.h, y6.c {
     }
 
     @Override // d6.h
-    public void w(d6.f fVar, String str) {
+    public void x(d6.f fVar, String str) {
         d6.c cVar = (d6.c) fVar;
         if (cVar == null) {
             return;
@@ -83,9 +83,9 @@ public final class a implements d6.h, y6.c {
         int i10 = this.a;
         long j3 = -1;
         if (i10 == 0) {
-            f71 f71Var = PhotoViewer.t1().F2;
-            if (f71Var != null) {
-                j3 = f71Var.n();
+            s71 s71Var = PhotoViewer.t1().F2;
+            if (s71Var != null) {
+                j3 = s71Var.n();
             }
         } else if (i10 == 1) {
             j3 = MediaController.getInstance().getCurrentPosition();
@@ -97,7 +97,7 @@ public final class a implements d6.h, y6.c {
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void x(d6.f fVar, int i10) {
+    public /* bridge */ /* synthetic */ void y(d6.f fVar, int i10) {
     }
 
     public /* synthetic */ a(int i10) {

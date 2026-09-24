@@ -9,9 +9,9 @@ import e6.i;
 import java.util.ArrayList;
 import java.util.List;
 import o6.a;
-import w7.e0;
+import w7.f0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class GetCredentialRequest extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<GetCredentialRequest> CREATOR = new i(22);
@@ -33,11 +33,11 @@ public final class GetCredentialRequest extends a implements ReflectedParcelable
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel dest, int i10) {
         kotlin.jvm.internal.i.e(dest, "dest");
-        int q6 = e0.q(dest, 20293);
-        e0.p(dest, 1, this.a);
-        e0.b(dest, 2, this.b);
-        e0.l(dest, 3, this.c);
-        e0.k(dest, 4, this.d, i10);
-        e0.r(dest, q6);
+        int q6 = f0.q(dest, 20293);
+        f0.p(dest, 1, this.a);
+        f0.b(dest, 2, this.b);
+        f0.l(dest, 3, this.c);
+        f0.k(dest, 4, this.d, i10);
+        f0.r(dest, q6);
     }
 }

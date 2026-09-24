@@ -4,7 +4,7 @@ import android.graphics.PointF;
 import android.view.animation.Interpolator;
 import android.view.animation.PathInterpolator;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class rr implements Interpolator {
     public static final rr f = new rr(0.25d, 0.1d, 0.25d, 1.0d);
@@ -21,7 +21,7 @@ public final class rr implements Interpolator {
     public final PointF e;
 
     static {
-        new PathInterpolator(v7.g8.d("M 0,0 C 0.05, 0, 0.133333, 0.06, 0.166666, 0.4 C 0.208333, 0.82, 0.25, 1, 1, 1"));
+        new PathInterpolator(v7.h8.d("M 0,0 C 0.05, 0, 0.133333, 0.06, 0.166666, 0.4 C 0.208333, 0.82, 0.25, 1, 1, 1"));
         new PathInterpolator(0.05f, 0.7f, 0.1f, 1.0f);
         new PathInterpolator(0.3f, 0.0f, 0.8f, 0.15f);
         l = new PathInterpolator(0.0f, 0.0f, 0.0f, 1.0f);

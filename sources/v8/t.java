@@ -1,34 +1,22 @@
 package v8;
 
+import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
-import w7.e0;
+import w7.f0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class t extends o6.a {
-    public static final Parcelable.Creator<t> CREATOR = new r(2);
-    public final String a;
-    public final String b;
-    public final int c;
-    public final int d;
-
-    public t(int i10, int i11, String str, String str2) {
-        this.a = str;
-        this.b = str2;
-        this.c = i10;
-        this.d = i11;
-    }
+    public static final Parcelable.Creator<t> CREATOR = new r(5);
+    public String a;
+    public Bundle b;
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = e0.q(parcel, 20293);
-        e0.l(parcel, 2, this.a);
-        e0.l(parcel, 3, this.b);
-        e0.s(parcel, 4, 4);
-        parcel.writeInt(this.c);
-        e0.s(parcel, 5, 4);
-        parcel.writeInt(this.d);
-        e0.r(parcel, q6);
+        int q6 = f0.q(parcel, 20293);
+        f0.l(parcel, 2, this.a);
+        f0.b(parcel, 3, this.b);
+        f0.r(parcel, q6);
     }
 }

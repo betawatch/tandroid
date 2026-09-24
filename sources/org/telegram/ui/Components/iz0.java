@@ -1,18 +1,14 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Paint;
-import org.telegram.tgnet.tl.TL_iv;
-
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public interface iz0 {
-    bz0 createTextLayout(TL_iv.pageTableCell pagetablecell, int i10);
+public final class iz0 {
+    public final oz0 a;
+    public final qz0 b;
+    public boolean c = true;
 
-    Paint getHeaderPaint();
-
-    Paint getLinePaint();
-
-    Paint getStripPaint();
-
-    void onLayoutChild(bz0 bz0Var, int i10, int i11);
+    public iz0(oz0 oz0Var, qz0 qz0Var) {
+        this.a = oz0Var;
+        this.b = qz0Var;
+    }
 }

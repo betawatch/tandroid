@@ -31,7 +31,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class SharedConfig {
     private static final int[] LOW_SOC;
@@ -185,7 +185,7 @@ public class SharedConfig {
     public static boolean useSystemEmoji;
     public static boolean useThreeLinesLayout;
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class BackgroundActivityPrefs {
         private static SharedPreferences prefs;
 
@@ -206,25 +206,25 @@ public class SharedConfig {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     @Retention(RetentionPolicy.SOURCE)
     public @interface PasscodeType {
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     @Retention(RetentionPolicy.SOURCE)
     public @interface PerformanceClass {
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class ProxyInfo {
         public boolean available;
         public long availableCheckTime;
         public boolean checking;
         public long ping;
-        public ni.b settings;
+        public oi.b settings;
 
-        public ProxyInfo(ni.b bVar) {
+        public ProxyInfo(oi.b bVar) {
             this.settings = bVar;
         }
 
@@ -232,7 +232,7 @@ public class SharedConfig {
         public static ProxyInfo fromSerializedData(int i10, InputSerializedData inputSerializedData) {
             long j3;
             long j10;
-            ni.a a2 = ni.b.a();
+            oi.a a2 = oi.b.a();
             String readString = inputSerializedData.readString(false);
             if (readString == null) {
                 readString = "";
@@ -259,7 +259,7 @@ public class SharedConfig {
                 j10 = 0;
             }
             if (i10 >= 3) {
-                int e = ni.b.e(inputSerializedData.readInt32(false));
+                int e = oi.b.e(inputSerializedData.readInt32(false));
                 if (e == 0) {
                     e = 1;
                 }
@@ -835,7 +835,7 @@ public class SharedConfig {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static void lambda$checkSdCard$2() {
-        org.telegram.ui.ActionBar.n2 R;
+        org.telegram.ui.ActionBar.m2 R;
         if (readOnlyStorageDirAlertShowed || (R = LaunchActivity.R()) == null || R.getParentActivity() == null) {
             return;
         }
@@ -847,9 +847,9 @@ public class SharedConfig {
         alertDialog$Builder.a.R = LocaleController.getString(R.string.SdCardError);
         alertDialog$Builder.a.S = LocaleController.getString(R.string.SdCardErrorDescription);
         alertDialog$Builder.k(LocaleController.getString(R.string.DoNotUseSDCard), new yg());
-        org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-        b2Var.setCanceledOnTouchOutside(false);
-        b2Var.show();
+        org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
+        a2Var.setCanceledOnTouchOutside(false);
+        a2Var.show();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -866,13 +866,13 @@ public class SharedConfig {
         return Long.compare(proxyInfo.ping + j3, proxyInfo2.ping + j10);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:41:0x02ae A[Catch: all -> 0x00f3, TryCatch #1 {all -> 0x00f3, Exception -> 0x0164, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00ec, B:12:0x00f6, B:14:0x00fe, B:16:0x0102, B:17:0x010f, B:19:0x011e, B:20:0x0129, B:22:0x0135, B:24:0x013d, B:26:0x014f, B:27:0x0166, B:57:0x016a, B:59:0x017c, B:61:0x0189, B:63:0x018f, B:64:0x0191, B:66:0x0195, B:68:0x019b, B:70:0x01a1, B:72:0x01a5, B:76:0x0183, B:29:0x01b5, B:31:0x0219, B:34:0x0225, B:36:0x024a, B:39:0x0255, B:41:0x02ae, B:42:0x02b0, B:45:0x047d, B:48:0x048b, B:49:0x04f3, B:53:0x0472, B:82:0x01b2, B:83:0x0125, B:84:0x04f5), top: B:3:0x0003 }] */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x0471  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0488  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x048a  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x0472 A[Catch: all -> 0x00f3, TryCatch #1 {all -> 0x00f3, Exception -> 0x0164, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00ec, B:12:0x00f6, B:14:0x00fe, B:16:0x0102, B:17:0x010f, B:19:0x011e, B:20:0x0129, B:22:0x0135, B:24:0x013d, B:26:0x014f, B:27:0x0166, B:57:0x016a, B:59:0x017c, B:61:0x0189, B:63:0x018f, B:64:0x0191, B:66:0x0195, B:68:0x019b, B:70:0x01a1, B:72:0x01a5, B:76:0x0183, B:29:0x01b5, B:31:0x0219, B:34:0x0225, B:36:0x024a, B:39:0x0255, B:41:0x02ae, B:42:0x02b0, B:45:0x047d, B:48:0x048b, B:49:0x04f3, B:53:0x0472, B:82:0x01b2, B:83:0x0125, B:84:0x04f5), top: B:3:0x0003 }] */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x0189 A[Catch: all -> 0x00f3, Exception -> 0x0164, Merged into TryCatch #1 {all -> 0x00f3, Exception -> 0x0164, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00ec, B:12:0x00f6, B:14:0x00fe, B:16:0x0102, B:17:0x010f, B:19:0x011e, B:20:0x0129, B:22:0x0135, B:24:0x013d, B:26:0x014f, B:27:0x0166, B:57:0x016a, B:59:0x017c, B:61:0x0189, B:63:0x018f, B:64:0x0191, B:66:0x0195, B:68:0x019b, B:70:0x01a1, B:72:0x01a5, B:76:0x0183, B:29:0x01b5, B:31:0x0219, B:34:0x0225, B:36:0x024a, B:39:0x0255, B:41:0x02ae, B:42:0x02b0, B:45:0x047d, B:48:0x048b, B:49:0x04f3, B:53:0x0472, B:82:0x01b2, B:83:0x0125, B:84:0x04f5), top: B:3:0x0003 }] */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x018f A[Catch: all -> 0x00f3, Exception -> 0x0164, Merged into TryCatch #1 {all -> 0x00f3, Exception -> 0x0164, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00ec, B:12:0x00f6, B:14:0x00fe, B:16:0x0102, B:17:0x010f, B:19:0x011e, B:20:0x0129, B:22:0x0135, B:24:0x013d, B:26:0x014f, B:27:0x0166, B:57:0x016a, B:59:0x017c, B:61:0x0189, B:63:0x018f, B:64:0x0191, B:66:0x0195, B:68:0x019b, B:70:0x01a1, B:72:0x01a5, B:76:0x0183, B:29:0x01b5, B:31:0x0219, B:34:0x0225, B:36:0x024a, B:39:0x0255, B:41:0x02ae, B:42:0x02b0, B:45:0x047d, B:48:0x048b, B:49:0x04f3, B:53:0x0472, B:82:0x01b2, B:83:0x0125, B:84:0x04f5), top: B:3:0x0003 }] */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x02af A[Catch: all -> 0x00f3, TryCatch #1 {all -> 0x00f3, Exception -> 0x0164, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00ec, B:12:0x00f6, B:14:0x00fe, B:16:0x0102, B:17:0x010f, B:19:0x011e, B:20:0x0129, B:22:0x0135, B:24:0x013d, B:26:0x014f, B:27:0x0166, B:57:0x016a, B:59:0x017c, B:61:0x0189, B:63:0x018f, B:64:0x0191, B:66:0x0195, B:68:0x019b, B:70:0x01a1, B:72:0x01a5, B:76:0x0183, B:29:0x01b5, B:31:0x021a, B:34:0x0226, B:36:0x024b, B:39:0x0256, B:41:0x02af, B:42:0x02b1, B:45:0x047e, B:48:0x048c, B:49:0x04f4, B:53:0x0473, B:82:0x01b2, B:83:0x0125, B:84:0x04f6), top: B:3:0x0003 }] */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x0472  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0489  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x048b  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x0473 A[Catch: all -> 0x00f3, TryCatch #1 {all -> 0x00f3, Exception -> 0x0164, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00ec, B:12:0x00f6, B:14:0x00fe, B:16:0x0102, B:17:0x010f, B:19:0x011e, B:20:0x0129, B:22:0x0135, B:24:0x013d, B:26:0x014f, B:27:0x0166, B:57:0x016a, B:59:0x017c, B:61:0x0189, B:63:0x018f, B:64:0x0191, B:66:0x0195, B:68:0x019b, B:70:0x01a1, B:72:0x01a5, B:76:0x0183, B:29:0x01b5, B:31:0x021a, B:34:0x0226, B:36:0x024b, B:39:0x0256, B:41:0x02af, B:42:0x02b1, B:45:0x047e, B:48:0x048c, B:49:0x04f4, B:53:0x0473, B:82:0x01b2, B:83:0x0125, B:84:0x04f6), top: B:3:0x0003 }] */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x0189 A[Catch: all -> 0x00f3, Exception -> 0x0164, Merged into TryCatch #1 {all -> 0x00f3, Exception -> 0x0164, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00ec, B:12:0x00f6, B:14:0x00fe, B:16:0x0102, B:17:0x010f, B:19:0x011e, B:20:0x0129, B:22:0x0135, B:24:0x013d, B:26:0x014f, B:27:0x0166, B:57:0x016a, B:59:0x017c, B:61:0x0189, B:63:0x018f, B:64:0x0191, B:66:0x0195, B:68:0x019b, B:70:0x01a1, B:72:0x01a5, B:76:0x0183, B:29:0x01b5, B:31:0x021a, B:34:0x0226, B:36:0x024b, B:39:0x0256, B:41:0x02af, B:42:0x02b1, B:45:0x047e, B:48:0x048c, B:49:0x04f4, B:53:0x0473, B:82:0x01b2, B:83:0x0125, B:84:0x04f6), top: B:3:0x0003 }] */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x018f A[Catch: all -> 0x00f3, Exception -> 0x0164, Merged into TryCatch #1 {all -> 0x00f3, Exception -> 0x0164, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00ec, B:12:0x00f6, B:14:0x00fe, B:16:0x0102, B:17:0x010f, B:19:0x011e, B:20:0x0129, B:22:0x0135, B:24:0x013d, B:26:0x014f, B:27:0x0166, B:57:0x016a, B:59:0x017c, B:61:0x0189, B:63:0x018f, B:64:0x0191, B:66:0x0195, B:68:0x019b, B:70:0x01a1, B:72:0x01a5, B:76:0x0183, B:29:0x01b5, B:31:0x021a, B:34:0x0226, B:36:0x024b, B:39:0x0256, B:41:0x02af, B:42:0x02b1, B:45:0x047e, B:48:0x048c, B:49:0x04f4, B:53:0x0473, B:82:0x01b2, B:83:0x0125, B:84:0x04f6), top: B:3:0x0003 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1178,7 +1178,7 @@ public class SharedConfig {
             return;
         }
         SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
-        ni.b c10 = ni.b.c(sharedPreferences);
+        oi.b c10 = oi.b.c(sharedPreferences);
         proxyListLoaded = true;
         proxyList.clear();
         currentProxy = null;
@@ -1277,17 +1277,17 @@ public class SharedConfig {
             i12 = (i11 < 8 || memoryClass <= 160 || (ceil != -1 && ceil <= 2055) || (ceil == -1 && i11 == 8 && i10 <= 23)) ? 1 : 2;
         }
         if (BuildVars.LOGS_ENABLED) {
-            StringBuilder m10 = hg.c.m("device performance info selected_class = ", i12, " (cpu_count = ", i11, ", freq = ");
-            hg.c.v(m10, ceil, ", memoryClass = ", memoryClass, ", android version ");
-            m10.append(i10);
-            m10.append(", manufacture ");
-            m10.append(Build.MANUFACTURER);
-            m10.append(", screenRefreshRate=");
-            m10.append(AndroidUtilities.screenRefreshRate);
-            m10.append(", screenMaxRefreshRate=");
-            m10.append(AndroidUtilities.screenMaxRefreshRate);
-            m10.append(")");
-            FileLog.d(m10.toString());
+            StringBuilder k10 = hg.c.k("device performance info selected_class = ", i12, " (cpu_count = ", i11, ", freq = ");
+            hg.c.t(k10, ceil, ", memoryClass = ", memoryClass, ", android version ");
+            k10.append(i10);
+            k10.append(", manufacture ");
+            k10.append(Build.MANUFACTURER);
+            k10.append(", screenRefreshRate=");
+            k10.append(AndroidUtilities.screenRefreshRate);
+            k10.append(", screenMaxRefreshRate=");
+            k10.append(AndroidUtilities.screenMaxRefreshRate);
+            k10.append(")");
+            FileLog.d(k10.toString());
         }
         return i12;
     }
@@ -1937,6 +1937,6 @@ public class SharedConfig {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$checkSdCard$1(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    public static /* synthetic */ void lambda$checkSdCard$1(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
     }
 }

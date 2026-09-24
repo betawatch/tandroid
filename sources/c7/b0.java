@@ -4,18 +4,18 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class b0 extends o6.a {
     public static final Parcelable.Creator<b0> CREATOR = new r0(0);
-    public final n7.t0 a;
+    public final n7.s0 a;
     public final String b;
     public final String c;
     public final String d;
 
     public b0(String str, byte[] bArr, String str2, String str3) {
         n6.l.h(bArr);
-        this.a = n7.t0.t(bArr.length, bArr);
+        this.a = n7.s0.t(bArr.length, bArr);
         n6.l.h(str);
         this.b = str;
         this.c = str2;
@@ -46,11 +46,11 @@ public final class b0 extends o6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.e0.q(parcel, 20293);
-        w7.e0.c(parcel, 2, this.a.u());
-        w7.e0.l(parcel, 3, this.b);
-        w7.e0.l(parcel, 4, this.c);
-        w7.e0.l(parcel, 5, this.d);
-        w7.e0.r(parcel, q6);
+        int q6 = w7.f0.q(parcel, 20293);
+        w7.f0.c(parcel, 2, this.a.u());
+        w7.f0.l(parcel, 3, this.b);
+        w7.f0.l(parcel, 4, this.c);
+        w7.f0.l(parcel, 5, this.d);
+        w7.f0.r(parcel, q6);
     }
 }

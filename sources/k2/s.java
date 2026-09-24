@@ -7,7 +7,7 @@ import android.os.SystemClock;
 import java.lang.reflect.Method;
 import java.math.RoundingMode;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class s {
     public long A;
@@ -19,7 +19,7 @@ public final class s {
     public boolean G;
     public long H;
     public e2.x I;
-    public final b0 a;
+    public final a6.i a;
     public final long[] b;
     public AudioTrack c;
     public int d;
@@ -46,8 +46,8 @@ public final class s {
     public int y;
     public long z;
 
-    public s(b0 b0Var) {
-        this.a = b0Var;
+    public s(a6.i iVar) {
+        this.a = iVar;
         try {
             this.o = AudioTrack.class.getMethod("getLatency", null);
         } catch (NoSuchMethodException unused) {
@@ -180,13 +180,13 @@ public final class s {
                         i11 = i18;
                     }
                     if (timestamp) {
-                        b0 b0Var = rVar.c;
+                        a6.i iVar = rVar.c;
                         long j15 = audioTimestamp2.nanoTime / j3;
                         i12 = i11;
                         long z11 = e2.d0.z(nanoTime - (qVar.b.nanoTime / j3), f10) + e2.d0.W(i12, qVar.e);
                         if (Math.abs(j15 - nanoTime) > j11) {
                             long j16 = qVar.e;
-                            b0Var.getClass();
+                            iVar.getClass();
                             audioTimestamp = audioTimestamp2;
                             f7 = f10;
                             StringBuilder sb2 = new StringBuilder("Spurious audio timestamp (system clock mismatch): ");
@@ -198,10 +198,10 @@ public final class s {
                             sb2.append(", ");
                             sb2.append(c11);
                             sb2.append(", ");
-                            f0 f0Var = (f0) b0Var.b;
-                            sb2.append(f0Var.l());
+                            e0 e0Var = (e0) iVar.b;
+                            sb2.append(e0Var.l());
                             sb2.append(", ");
-                            sb2.append(f0Var.m());
+                            sb2.append(e0Var.m());
                             e2.a.n("DefaultAudioSink", sb2.toString());
                             i13 = 4;
                             rVar.a(4);
@@ -210,7 +210,7 @@ public final class s {
                             f7 = f10;
                             if (Math.abs(z11 - c11) > j11) {
                                 long j17 = qVar.e;
-                                b0Var.getClass();
+                                iVar.getClass();
                                 StringBuilder sb3 = new StringBuilder("Spurious audio timestamp (frame position mismatch): ");
                                 sb3.append(j17);
                                 sb3.append(", ");
@@ -220,10 +220,10 @@ public final class s {
                                 sb3.append(", ");
                                 sb3.append(c11);
                                 sb3.append(", ");
-                                f0 f0Var2 = (f0) b0Var.b;
-                                sb3.append(f0Var2.l());
+                                e0 e0Var2 = (e0) iVar.b;
+                                sb3.append(e0Var2.l());
                                 sb3.append(", ");
-                                sb3.append(f0Var2.m());
+                                sb3.append(e0Var2.m());
                                 e2.a.n("DefaultAudioSink", sb3.toString());
                                 i13 = 4;
                                 rVar.a(4);
@@ -319,9 +319,9 @@ public final class s {
                                 long D2 = e2.d0.D(e2.d0.e0(j21 - j26), this.i);
                                 this.I.getClass();
                                 long currentTimeMillis = System.currentTimeMillis() - e2.d0.e0(D2);
-                                n nVar = ((f0) this.a.b).t;
+                                n nVar = ((e0) this.a.b).t;
                                 if (nVar != null) {
-                                    nVar.e(currentTimeMillis);
+                                    nVar.b(currentTimeMillis);
                                 }
                             }
                         }
@@ -446,9 +446,9 @@ public final class s {
             this.I.getClass();
             long currentTimeMillis = System.currentTimeMillis() - e2.d0.e0(D);
             this.k = -9223372036854775807L;
-            n nVar = ((f0) this.a.b).t;
+            n nVar = ((e0) this.a.b).t;
             if (nVar != null) {
-                nVar.e(currentTimeMillis);
+                nVar.b(currentTimeMillis);
             }
         }
     }

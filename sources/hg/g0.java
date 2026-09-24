@@ -6,21 +6,21 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.ui.Components.fk;
 import org.telegram.ui.Components.hl;
 import org.telegram.ui.Components.jn;
-import org.telegram.ui.Components.ml0;
 import org.telegram.ui.Components.oi;
 import org.telegram.ui.Components.oj;
 import org.telegram.ui.Components.qz;
+import org.telegram.ui.Components.wl0;
 import org.telegram.ui.Components.zk;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class g0 extends qz {
     public final /* synthetic */ int U;
     public final /* synthetic */ oi V;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ g0(oi oiVar, int i10, ml0 ml0Var, int i11) {
-        super(i10, 0, ml0Var);
+    public /* synthetic */ g0(oi oiVar, int i10, wl0 wl0Var, int i11) {
+        super(i10, 0, wl0Var);
         this.U = i11;
         this.V = oiVar;
     }

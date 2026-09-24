@@ -9,7 +9,7 @@ import android.text.TextUtils;
 import java.lang.ref.WeakReference;
 import java.util.List;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class g extends Binder implements b {
     public final WeakReference a;
@@ -86,7 +86,7 @@ public final class g extends Binder implements b {
         switch (i10) {
             case 1:
                 String readString = parcel.readString();
-                Bundle bundle = (Bundle) v7.k.a(parcel, Bundle.CREATOR);
+                Bundle bundle = (Bundle) v7.m.a(parcel, Bundle.CREATOR);
                 androidx.mediarouter.app.r rVar = (androidx.mediarouter.app.r) weakReference.get();
                 if (rVar != null) {
                     rVar.e(1, readString, bundle);
@@ -96,22 +96,22 @@ public final class g extends Binder implements b {
                 e0();
                 return true;
             case 3:
-                D0((PlaybackStateCompat) v7.k.a(parcel, PlaybackStateCompat.CREATOR));
+                D0((PlaybackStateCompat) v7.m.a(parcel, PlaybackStateCompat.CREATOR));
                 return true;
             case 4:
-                g0((MediaMetadataCompat) v7.k.a(parcel, MediaMetadataCompat.CREATOR));
+                g0((MediaMetadataCompat) v7.m.a(parcel, MediaMetadataCompat.CREATOR));
                 return true;
             case 5:
                 F(parcel.createTypedArrayList(MediaSessionCompat$QueueItem.CREATOR));
                 return true;
             case 6:
-                c0((CharSequence) v7.k.a(parcel, TextUtils.CHAR_SEQUENCE_CREATOR));
+                c0((CharSequence) v7.m.a(parcel, TextUtils.CHAR_SEQUENCE_CREATOR));
                 return true;
             case 7:
-                C((Bundle) v7.k.a(parcel, Bundle.CREATOR));
+                C((Bundle) v7.m.a(parcel, Bundle.CREATOR));
                 return true;
             case 8:
-                F0((ParcelableVolumeInfo) v7.k.a(parcel, ParcelableVolumeInfo.CREATOR));
+                F0((ParcelableVolumeInfo) v7.m.a(parcel, ParcelableVolumeInfo.CREATOR));
                 return true;
             case 9:
                 onRepeatModeChanged(parcel.readInt());

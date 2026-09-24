@@ -1,73 +1,96 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.UserConfig;
-import org.telegram.ui.PremiumPreviewFragment;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class an0 implements al0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 c;
-    public final /* synthetic */ Object d;
+public final /* synthetic */ class an0 implements Runnable {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ in0 b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ ArrayList e;
 
-    public /* synthetic */ an0(Object obj, int i10, org.telegram.ui.ActionBar.n2 n2Var, int i11) {
-        this.a = i11;
-        this.d = obj;
-        this.b = i10;
-        this.c = n2Var;
+    public /* synthetic */ an0(in0 in0Var, String str, ArrayList arrayList, ArrayList arrayList2) {
+        this.b = in0Var;
+        this.c = str;
+        this.d = arrayList;
+        this.e = arrayList2;
     }
 
-    @Override // org.telegram.ui.Components.al0
-    public final void d(int i10, View view) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                in0 in0Var = (in0) this.d;
-                ArrayList arrayList = in0Var.r;
-                ai.w0 w0Var = in0Var.d;
-                if (i10 >= 0 && i10 < arrayList.size()) {
-                    if (!UserConfig.getInstance(this.b).isPremium()) {
-                        new rg.x0(this.c, 24, true).show();
-                        break;
-                    } else {
-                        long j3 = ((fn0) arrayList.get(i10)).a.h;
-                        if (in0Var.f(in0Var.h == j3 ? null : ((fn0) arrayList.get(i10)).a)) {
-                            int i11 = 0;
-                            while (i11 < w0Var.getChildCount()) {
-                                if (w0Var.getChildAt(i11) == view) {
-                                    if (i11 <= 1) {
-                                        w0Var.v0(-AndroidUtilities.dp(i11 == 0 ? 90.0f : 50.0f), 0, null);
-                                    } else if (i11 >= w0Var.getChildCount() - 2) {
-                                        w0Var.v0(AndroidUtilities.dp(i11 == w0Var.getChildCount() - 1 ? 80.0f : 50.0f), 0, null);
-                                    }
-                                }
-                                i11++;
-                            }
-                            w0Var.M(new org.telegram.ui.gr(3));
-                            if (in0Var.h != j3) {
-                                in0Var.h = j3;
-                                ((hn0) view).a(true, true);
+                in0 in0Var = this.b;
+                int i10 = in0Var.d;
+                ArrayList arrayList = new ArrayList();
+                ArrayList arrayList2 = new ArrayList();
+                int i11 = 0;
+                while (true) {
+                    ArrayList arrayList3 = this.d;
+                    int size = arrayList3.size();
+                    String str = this.c;
+                    if (i11 >= size) {
+                        int i12 = 0;
+                        while (true) {
+                            ArrayList arrayList4 = this.e;
+                            if (i12 >= arrayList4.size()) {
+                                AndroidUtilities.runOnUIThread(new an0(in0Var, str, arrayList, arrayList2));
                                 break;
                             } else {
-                                in0Var.h = 0L;
-                                break;
+                                String documentFileName = FileLoader.getDocumentFileName(((MessageObject) arrayList4.get(i12)).getDocument());
+                                if (documentFileName != null && documentFileName.toLowerCase().contains(str)) {
+                                    MessageObject messageObject = new MessageObject(i10, ((MessageObject) arrayList4.get(i12)).messageOwner, false, false);
+                                    messageObject.mediaExists = ((MessageObject) arrayList4.get(i12)).mediaExists;
+                                    messageObject.setQuery(in0Var.K);
+                                    arrayList2.add(messageObject);
+                                }
+                                i12++;
                             }
                         }
+                    } else {
+                        String documentFileName2 = FileLoader.getDocumentFileName(((MessageObject) arrayList3.get(i11)).getDocument());
+                        if (documentFileName2 != null && documentFileName2.toLowerCase().contains(str)) {
+                            MessageObject messageObject2 = new MessageObject(i10, ((MessageObject) arrayList3.get(i11)).messageOwner, false, false);
+                            messageObject2.mediaExists = ((MessageObject) arrayList3.get(i11)).mediaExists;
+                            messageObject2.setQuery(in0Var.K);
+                            arrayList.add(messageObject2);
+                        }
+                        i11++;
                     }
                 }
                 break;
             default:
-                rg.k1 k1Var = (rg.k1) this.d;
-                if (view instanceof org.telegram.ui.nw0) {
-                    org.telegram.ui.nw0 nw0Var = (org.telegram.ui.nw0) view;
-                    PremiumPreviewFragment.q0(this.b, nw0Var.f.a);
-                    k1Var.showDialog(new rg.x0(this.c, nw0Var.f.a, false));
-                    break;
+                in0 in0Var2 = this.b;
+                ix0 ix0Var = in0Var2.a;
+                if (this.c.equals(in0Var2.L)) {
+                    if (in0Var2.r == 0) {
+                        in0Var2.N.b(0);
+                    }
+                    in0Var2.e(this.d, this.e, true);
+                    if (in0Var2.r == 0) {
+                        ix0Var.e(false, true);
+                        n90 n90Var = ix0Var.e;
+                        ix0Var.d.setText(LocaleController.getString(R.string.SearchEmptyViewTitle2));
+                        n90Var.setVisibility(0);
+                        n90Var.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
+                        break;
+                    }
                 }
                 break;
         }
+    }
+
+    public /* synthetic */ an0(in0 in0Var, ArrayList arrayList, String str, ArrayList arrayList2) {
+        this.b = in0Var;
+        this.d = arrayList;
+        this.c = str;
+        this.e = arrayList2;
     }
 }

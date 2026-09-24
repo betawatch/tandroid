@@ -5,7 +5,7 @@ import android.os.Looper;
 import java.util.HashMap;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class t {
     public static final Object b = new Object();
@@ -30,10 +30,10 @@ public class t {
         a0 a0Var = this.a;
         e2.d.b(y02 == a0Var.t.a.y0());
         e2.d.g(b1Var.y0() == Looper.myLooper());
-        f1 f1Var = a0Var.t;
-        if (b1Var == f1Var.a) {
+        e1 e1Var = a0Var.t;
+        if (b1Var == e1Var.a) {
             return;
         }
-        a0Var.u(f1Var, new f1(b1Var));
+        a0Var.u(e1Var, new e1(b1Var));
     }
 }

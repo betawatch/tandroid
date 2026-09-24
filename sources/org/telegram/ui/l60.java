@@ -1,128 +1,140 @@
 package org.telegram.ui;
 
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
 import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class l60 extends org.telegram.ui.Components.ll0 {
-    public ChatObject.Call c;
-    public final int d;
-    public ArrayList f;
-    public x30 h;
-    public final f60 n;
-    public final ArrayList e = new ArrayList();
-    public boolean r = false;
+public final class l60 extends org.telegram.ui.Components.wl0 {
+    public final /* synthetic */ int X2;
+    public final /* synthetic */ Object Y2;
 
-    public l60(ChatObject.Call call, int i10, f60 f60Var) {
-        this.c = call;
-        this.d = i10;
-        this.n = f60Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ l60(Object obj, Context context, org.telegram.ui.ActionBar.d6 d6Var, int i10) {
+        super(context, d6Var);
+        this.X2 = i10;
+        this.Y2 = obj;
     }
 
-    @Override // org.telegram.ui.Components.ll0
-    public final boolean D(s4.c1 c1Var) {
-        return false;
-    }
-
-    public final void E(org.telegram.ui.Components.voip.l lVar, boolean z10) {
-        if (z10 && lVar.getRenderer() == null) {
-            lVar.setRenderer(org.telegram.ui.Components.voip.u.c(this.f, this.h, null, null, lVar, lVar.getParticipant(), this.c, this.n));
-        } else {
-            if (z10 || lVar.getRenderer() == null) {
-                return;
-            }
-            lVar.getRenderer().setTabletGridView(null);
-            lVar.setRenderer(null);
+    @Override // org.telegram.ui.Components.wl0
+    public boolean H0(View view, float f7, float f10) {
+        switch (this.X2) {
+            case 3:
+                ((yh.s0) this.Y2).getClass();
+                return true;
+            default:
+                return super.H0(view, f7, f10);
         }
     }
 
-    public final int F() {
-        org.telegram.ui.Components.ml0 ml0Var = this.n.n2;
-        int size = this.e.size();
-        return size <= 1 ? ml0Var.getMeasuredHeight() : size <= 4 ? ml0Var.getMeasuredHeight() / 2 : (int) (ml0Var.getMeasuredHeight() / 2.5f);
+    @Override // org.telegram.ui.Components.wl0
+    public Integer W0(int i10) {
+        int i11;
+        switch (this.X2) {
+            case 2:
+                i11 = ((SessionsActivity) this.Y2).terminateAllSessionsRow;
+                org.telegram.ui.ActionBar.d6 d6Var = this.p2;
+                return i10 == i11 ? Integer.valueOf(org.telegram.ui.ActionBar.h6.l1(0.1f, org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.p7, d6Var))) : Integer.valueOf(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.i6, d6Var));
+            default:
+                return super.W0(i10);
+        }
     }
 
-    public final void G(ArrayList arrayList, x30 x30Var) {
-        this.f = arrayList;
-        this.h = x30Var;
-    }
-
-    public final void H(org.telegram.ui.Components.ml0 ml0Var, boolean z10, boolean z11) {
-        this.r = z10;
-        if (z11) {
-            for (int i10 = 0; i10 < ml0Var.getChildCount(); i10++) {
-                View childAt = ml0Var.getChildAt(i10);
-                if (childAt instanceof org.telegram.ui.Components.voip.l) {
-                    org.telegram.ui.Components.voip.l lVar = (org.telegram.ui.Components.voip.l) childAt;
-                    if (lVar.getParticipant() != null) {
-                        E(lVar, z10);
+    @Override // org.telegram.ui.Components.wl0, android.view.ViewGroup, android.view.View
+    public void dispatchDraw(Canvas canvas) {
+        org.telegram.ui.ActionBar.k kVar;
+        switch (this.X2) {
+            case 0:
+                super.dispatchDraw(canvas);
+                n60 n60Var = (n60) this.Y2;
+                if (n60Var.z0 != null && n60Var.A0 >= 1.0f) {
+                    canvas.save();
+                    int measuredHeight = n60Var.z0.getMeasuredHeight();
+                    kVar = ((org.telegram.ui.ActionBar.m2) n60Var).actionBar;
+                    canvas.translate(0.0f, -(measuredHeight - kVar.getMeasuredHeight()));
+                    n60Var.z0.draw(canvas);
+                    canvas.restore();
+                    break;
+                }
+                break;
+            case 1:
+                sp0 sp0Var = (sp0) this.Y2;
+                Paint paint = sp0Var.w;
+                RectF rectF = sp0Var.s;
+                RectF rectF2 = sp0Var.r;
+                RectF rectF3 = sp0Var.n;
+                s4.c0 c0Var = sp0Var.b;
+                if (!sp0Var.f.isEmpty()) {
+                    float d = sp0Var.e.d(sp0Var.d, false);
+                    double d10 = d;
+                    int clamp = Utilities.clamp((int) Math.floor(d10), r6.size() - 1, 0);
+                    int clamp2 = Utilities.clamp((int) Math.ceil(d10), r6.size() - 1, 0);
+                    View m10 = c0Var.m(clamp);
+                    View m11 = c0Var.m(clamp2);
+                    if (m10 != null || m11 != null) {
+                        View view = m10 != null ? m10 : m11;
+                        rectF3.set(view.getLeft(), view.getTop(), view.getRight(), view.getBottom());
+                        if (m11 != null) {
+                            m10 = m11;
+                        }
+                        rectF2.set(m10.getLeft(), m10.getTop(), m10.getRight(), m10.getBottom());
+                        AndroidUtilities.lerp(rectF3, rectF2, d - clamp, rectF);
+                        paint.setColor(sp0Var.x);
+                        float height = rectF.height() / 2.0f;
+                        canvas.drawRoundRect(rectF, height, height, paint);
+                        super.dispatchDraw(canvas);
+                        break;
                     }
                 }
-            }
+                super.dispatchDraw(canvas);
+                break;
+            default:
+                super.dispatchDraw(canvas);
+                break;
         }
     }
 
-    public final void I(org.telegram.ui.Components.ml0 ml0Var, boolean z10) {
-        if (this.c == null) {
-            return;
-        }
-        ArrayList arrayList = this.e;
-        if (!z10) {
-            arrayList.clear();
-            arrayList.addAll(this.c.visibleVideoParticipants);
-            l();
-        } else {
-            ArrayList arrayList2 = new ArrayList();
-            arrayList2.addAll(arrayList);
-            arrayList.clear();
-            arrayList.addAll(this.c.visibleVideoParticipants);
-            s4.o.c(new k60(this, arrayList2), true).b(this);
-            AndroidUtilities.updateVisibleRows(ml0Var);
+    @Override // android.view.View
+    public void invalidate() {
+        switch (this.X2) {
+            case 1:
+                super.invalidate();
+                dp0 dp0Var = ((sp0) this.Y2).F;
+                if (dp0Var != null) {
+                    dp0Var.run();
+                    break;
+                }
+                break;
+            default:
+                super.invalidate();
+                break;
         }
     }
 
-    @Override // s4.h0
-    public final int h() {
-        return this.e.size();
-    }
-
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        org.telegram.ui.Components.voip.l lVar = (org.telegram.ui.Components.voip.l) c1Var.a;
-        ChatObject.VideoParticipant participant = lVar.getParticipant();
-        ArrayList arrayList = this.e;
-        ChatObject.VideoParticipant videoParticipant = (ChatObject.VideoParticipant) arrayList.get(i10);
-        TLRPC.GroupCallParticipant groupCallParticipant = ((ChatObject.VideoParticipant) arrayList.get(i10)).participant;
-        int size = arrayList.size();
-        int i11 = 6;
-        if (size > 1 && size != 2 && (size != 3 || i10 == 0 || i10 == 1)) {
-            i11 = 3;
-        }
-        lVar.a = i11;
-        lVar.b = this;
-        if (lVar.getMeasuredHeight() != F()) {
-            lVar.requestLayout();
-        }
-        AccountInstance.getInstance(this.d);
-        MessageObject.getPeerId(this.c.selfPeer);
-        lVar.d = videoParticipant;
-        if (participant != null && !participant.equals(videoParticipant) && lVar.e && lVar.getRenderer() != null) {
-            E(lVar, false);
-            E(lVar, true);
-        } else if (lVar.getRenderer() != null) {
-            lVar.getRenderer().j(true);
+    @Override // org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        switch (this.X2) {
+            case 3:
+                yh.s0 s0Var = (yh.s0) this.Y2;
+                s0Var.s();
+                super.onLayout(z10, i10, i11, i12, i13);
+                s0Var.Q(2);
+                break;
+            default:
+                super.onLayout(z10, i10, i11, i12, i13);
+                break;
         }
     }
 
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        return new org.telegram.ui.Components.wk0(new j60(this, viewGroup.getContext()));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l60(SessionsActivity sessionsActivity, Context context) {
+        super(context, null);
+        this.X2 = 2;
+        this.Y2 = sessionsActivity;
     }
 }

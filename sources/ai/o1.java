@@ -32,23 +32,23 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.ij0;
+import org.telegram.ui.Components.j61;
 import org.telegram.ui.Components.rr;
 import org.telegram.ui.Components.v51;
-import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.yi0;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.i20;
+import org.telegram.ui.g20;
 import org.telegram.ui.wb1;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public abstract class o1 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public n0 E;
     public int F;
     public boolean G;
     public long H;
-    public final i20 I;
+    public final g20 I;
     public boolean J;
     public float K;
     public float L;
@@ -77,7 +77,7 @@ public abstract class o1 extends FrameLayout implements NotificationCenter.Notif
     public boolean f0;
     public final o0 g0;
     public final s4.c0 h;
-    public final v51 n;
+    public final j61 n;
     public final ArrayList r;
     public final ArrayList s;
     public final HashMap v;
@@ -93,7 +93,7 @@ public abstract class o1 extends FrameLayout implements NotificationCenter.Notif
         this.v = new HashMap();
         this.F = -1;
         this.G = true;
-        this.I = new i20();
+        this.I = new g20();
         int i10 = UserConfig.selectedAccount;
         this.N = i10;
         this.T = new ArrayList();
@@ -129,7 +129,7 @@ public abstract class o1 extends FrameLayout implements NotificationCenter.Notif
                             m1 m1Var = (m1) arrayList2.get(i13);
                             if (m1Var.b || !m1Var.e || m1Var.g >= j3) {
                                 int i14 = g1.a;
-                                h51 J = h51.J(g1.class);
+                                v51 J = v51.J(g1.class);
                                 J.G = m1Var;
                                 arrayList.add(J);
                             }
@@ -141,7 +141,7 @@ public abstract class o1 extends FrameLayout implements NotificationCenter.Notif
                         while (i13 < arrayList3.size()) {
                             n1 n1Var = (n1) arrayList3.get(i13);
                             int i15 = k1.a;
-                            h51 J2 = h51.J(k1.class);
+                            v51 J2 = v51.J(k1.class);
                             J2.G = n1Var;
                             arrayList.add(J2);
                             i13++;
@@ -155,7 +155,7 @@ public abstract class o1 extends FrameLayout implements NotificationCenter.Notif
         x0Var.r = false;
         w0Var.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(7.5f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(7.5f));
         w0Var.setClipToPadding(false);
-        addView(w0Var, w7.x5.d(-1, -1.0f, 87, 0.0f, 0.0f, 0.0f, 34.0f));
+        addView(w0Var, w7.y5.d(-1, -1.0f, 87, 0.0f, 0.0f, 0.0f, 34.0f));
         w0Var.setOnItemClickListener(new u0(r3Var, viewGroup, jcVar, 0));
         y0 y0Var = new y0(r3Var);
         y0Var.m = false;
@@ -178,7 +178,7 @@ public abstract class o1 extends FrameLayout implements NotificationCenter.Notif
         s4.c0 c0Var2 = new s4.c0(0, false);
         this.h = c0Var2;
         wb1Var.setLayoutManager(c0Var2);
-        v51 v51Var = new v51(wb1Var, context, i10, 0, false, new Utilities.Callback2() { // from class: ai.t0
+        j61 j61Var = new j61(wb1Var, context, i10, 0, false, new Utilities.Callback2() { // from class: ai.t0
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
                 int i122 = i12;
@@ -195,7 +195,7 @@ public abstract class o1 extends FrameLayout implements NotificationCenter.Notif
                             m1 m1Var = (m1) arrayList2.get(i13);
                             if (m1Var.b || !m1Var.e || m1Var.g >= j3) {
                                 int i14 = g1.a;
-                                h51 J = h51.J(g1.class);
+                                v51 J = v51.J(g1.class);
                                 J.G = m1Var;
                                 arrayList.add(J);
                             }
@@ -207,7 +207,7 @@ public abstract class o1 extends FrameLayout implements NotificationCenter.Notif
                         while (i13 < arrayList3.size()) {
                             n1 n1Var = (n1) arrayList3.get(i13);
                             int i15 = k1.a;
-                            h51 J2 = h51.J(k1.class);
+                            v51 J2 = v51.J(k1.class);
                             J2.G = n1Var;
                             arrayList.add(J2);
                             i13++;
@@ -216,12 +216,12 @@ public abstract class o1 extends FrameLayout implements NotificationCenter.Notif
                 }
             }
         }, null);
-        this.n = v51Var;
-        wb1Var.setAdapter(v51Var);
-        v51Var.r = false;
+        this.n = j61Var;
+        wb1Var.setAdapter(j61Var);
+        j61Var.r = false;
         wb1Var.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
         wb1Var.setClipToPadding(false);
-        addView(wb1Var, w7.x5.d(-1, 26.0f, 87, 0.0f, 0.0f, 0.0f, 9.66f));
+        addView(wb1Var, w7.y5.d(-1, 26.0f, 87, 0.0f, 0.0f, 0.0f, 9.66f));
         wb1Var.setOnItemClickListener(new a1.c(r3Var, 4));
         z0 z0Var = new z0();
         z0Var.m = false;
@@ -235,7 +235,7 @@ public abstract class o1 extends FrameLayout implements NotificationCenter.Notif
     public static Integer a(o1 o1Var, Long l4) {
         o1Var.d0.run();
         o1Var.R = l4.longValue();
-        org.telegram.ui.Components.qc M = new xc(o1Var.b, new d()).M(o1Var.getStarsToastTitle(), o1Var.getStarsToastSubtitle(), R.raw.stars_topup);
+        org.telegram.ui.Components.qc M = new yc(o1Var.b, new d()).M(o1Var.getStarsToastTitle(), o1Var.getStarsToastSubtitle(), R.raw.stars_topup);
         boolean z10 = false;
         M.r = false;
         M.k(true);
@@ -443,10 +443,10 @@ public abstract class o1 extends FrameLayout implements NotificationCenter.Notif
         canvas.restore();
         RectF rectF = AndroidUtilities.rectTmp;
         rectF.set(0.0f, max, getWidth(), AndroidUtilities.dp(12.0f) + max);
-        i20 i20Var = this.I;
-        i20Var.b(canvas, rectF, 1, 1.0f);
+        g20 g20Var = this.I;
+        g20Var.b(canvas, rectF, 1, 1.0f);
         rectF.set(0.0f, (w0Var.getY() + w0Var.getHeight()) - AndroidUtilities.dp(12.0f), getWidth(), w0Var.getHeight() + w0Var.getBottom());
-        i20Var.b(canvas, rectF, 3, 1.0f);
+        g20Var.b(canvas, rectF, 3, 1.0f);
         canvas.restore();
         return drawChild;
     }
@@ -906,7 +906,7 @@ public abstract class o1 extends FrameLayout implements NotificationCenter.Notif
             this.c0 = jcVar;
             jcVar.b = 5000L;
             jcVar.setColor(dVar.G0(org.telegram.ui.ActionBar.h6.Gi));
-            this.b0.addView(this.c0, w7.x5.d(20, 20.0f, 21, 0.0f, 0.0f, 12.0f, 0.0f));
+            this.b0.addView(this.c0, w7.y5.d(20, 20.0f, 21, 0.0f, 0.0f, 12.0f, 0.0f));
             this.b0.d.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(30.0f), AndroidUtilities.dp(8.0f));
             this.a0.setButton(this.b0);
             org.telegram.ui.Components.qc f7 = org.telegram.ui.Components.qc.f(this.b, this.a0, -1);
@@ -933,19 +933,19 @@ public abstract class o1 extends FrameLayout implements NotificationCenter.Notif
         }
         ArrayList arrayList = w2Var.e;
         while (arrayList.size() > 4) {
-            ((yi0) arrayList.remove(0)).C(true);
+            ((ij0) arrayList.remove(0)).C(true);
         }
         int[] iArr = w2Var.f;
-        yi0 yi0Var = new yi0(iArr[Utilities.fastRandom.nextInt(iArr.length)], AndroidUtilities.dp(70.0f), AndroidUtilities.dp(70.0f));
-        yi0Var.R(w2Var);
-        yi0Var.J(true);
-        yi0Var.K(0);
-        yi0Var.start();
-        arrayList.add(yi0Var);
+        ij0 ij0Var = new ij0(iArr[Utilities.fastRandom.nextInt(iArr.length)], AndroidUtilities.dp(70.0f), AndroidUtilities.dp(70.0f));
+        ij0Var.R(w2Var);
+        ij0Var.J(true);
+        ij0Var.K(0);
+        ij0Var.start();
+        arrayList.add(ij0Var);
         w2Var.invalidate();
         org.telegram.ui.Components.o6 o6Var = w2Var.c;
         o6Var.b();
-        o6Var.q(hg.c.k(j3, ',', new StringBuilder("+")), true, true);
+        o6Var.q(org.telegram.messenger.f0.h(j3, ',', new StringBuilder("+")), true, true);
         s2 s2Var = w2Var.d;
         AndroidUtilities.cancelRunOnUIThread(s2Var);
         AndroidUtilities.runOnUIThread(s2Var, 1500L);

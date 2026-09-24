@@ -13,7 +13,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class gb extends FrameLayout {
     public final Paint a;
@@ -36,14 +36,14 @@ public final class gb extends FrameLayout {
         textView.setTextSize(1, 14.0f);
         textView.setText(LocaleController.getString(R.string.StoryError));
         textView.setTextColor(-1);
-        addView(textView, w7.x5.d(-2, -2.0f, 19, 44.0f, 0.0f, 0.0f, 0.0f));
+        addView(textView, w7.y5.d(-2, -2.0f, 19, 44.0f, 0.0f, 0.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.d = textView2;
         textView2.setTextSize(1, 8.0f);
         textView2.setTextColor(org.telegram.ui.ActionBar.h6.l1(0.5f, -1));
         textView2.setVisibility(8);
         textView2.setTranslationY(AndroidUtilities.dp(9.0f));
-        addView(textView2, w7.x5.d(-2, -2.0f, 19, 44.0f, 0.0f, 0.0f, 0.0f));
+        addView(textView2, w7.y5.d(-2, -2.0f, 19, 44.0f, 0.0f, 0.0f, 0.0f));
         TextView textView3 = new TextView(context);
         this.e = textView3;
         textView3.setPadding(AndroidUtilities.dp(13.0f), 0, AndroidUtilities.dp(13.0f), 0);
@@ -54,7 +54,7 @@ public final class gb extends FrameLayout {
         textView3.setTextSize(1, 14.0f);
         textView3.setTextColor(-1);
         textView3.setGravity(17);
-        addView(textView3, w7.x5.d(-2, 32.0f, 21, 0.0f, 0.0f, 12.0f, 0.0f));
+        addView(textView3, w7.y5.d(-2, 32.0f, 21, 0.0f, 0.0f, 12.0f, 0.0f));
     }
 
     @Override // android.view.View

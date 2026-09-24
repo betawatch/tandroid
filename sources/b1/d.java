@@ -11,9 +11,9 @@ import java.util.concurrent.Executor;
 import kotlin.jvm.internal.i;
 import rd.l;
 import rd.p;
-import v7.f0;
+import v7.h0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public abstract class d {
     public static final a a = new a();
@@ -51,7 +51,7 @@ public abstract class d {
         if (!bundle.getBoolean("FAILURE_RESPONSE")) {
             return false;
         }
-        f0.a(cancellationSignal, new b(executor, callback, pVar.invoke(bundle.getString("EXCEPTION_TYPE"), bundle.getString("EXCEPTION_MESSAGE")), 0));
+        h0.a(cancellationSignal, new b(executor, callback, pVar.invoke(bundle.getString("EXCEPTION_TYPE"), bundle.getString("EXCEPTION_MESSAGE")), 0));
         return true;
     }
 
@@ -60,7 +60,7 @@ public abstract class d {
             return false;
         }
         kotlin.jvm.internal.p pVar2 = new kotlin.jvm.internal.p();
-        pVar2.a = new w0.c(hg.c.j(i10, "activity with result code: ", " indicating not RESULT_OK"), 2);
+        pVar2.a = new w0.c(hg.c.i(i10, "activity with result code: ", " indicating not RESULT_OK"), 2);
         if (i10 == 0) {
             pVar2.a = new w0.b("activity is cancelled by the user.");
         }

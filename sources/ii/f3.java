@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class f3 implements b6 {
     public final /* synthetic */ x3 a;
@@ -52,17 +52,17 @@ public final class f3 implements b6 {
         }
         switch (i10) {
             case 1:
-                v3Var.h(3);
+                v3Var.i(3);
                 break;
             case 2:
-                v3Var.h(6);
+                v3Var.i(6);
                 break;
             case 3:
                 r.U(x3Var.getContext(), "", new q1(x3Var, 1), x3Var.g3);
                 break;
             case 4:
             case 5:
-                v3Var.h(1);
+                v3Var.i(1);
                 break;
             case 6:
                 x3Var.t3();

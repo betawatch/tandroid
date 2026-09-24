@@ -3,40 +3,40 @@ package org.telegram.ui.Components;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class f50 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ x50 b;
+    public final /* synthetic */ c60 b;
 
-    public /* synthetic */ f50(x50 x50Var, int i10) {
+    public /* synthetic */ f50(c60 c60Var, int i10) {
         this.a = i10;
-        this.b = x50Var;
+        this.b = c60Var;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                x50 x50Var = this.b;
-                if (animator.equals(x50Var.G)) {
-                    x50Var.G = null;
+                c60 c60Var = this.b;
+                if (animator.equals(c60Var.L)) {
+                    c60Var.L = null;
                     break;
                 }
                 break;
             case 1:
-                x50 x50Var2 = this.b;
-                if (x50Var2.b1 != null) {
-                    x50Var2.b1 = null;
+                c60 c60Var2 = this.b;
+                if (c60Var2.g1 != null) {
+                    c60Var2.g1 = null;
                     break;
                 }
                 break;
             default:
-                x50 x50Var3 = this.b;
-                if (animator.equals(x50Var3.W)) {
-                    x50Var3.h(true);
-                    x50Var3.W0 = false;
-                    x50Var3.setVisibility(4);
+                c60 c60Var3 = this.b;
+                if (animator.equals(c60Var3.e0)) {
+                    c60Var3.c(true);
+                    c60Var3.b1 = false;
+                    c60Var3.setVisibility(4);
                     break;
                 }
                 break;

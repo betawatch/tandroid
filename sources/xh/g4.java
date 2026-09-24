@@ -2,22 +2,22 @@ package xh;
 
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.ConnectionsManager;
-import yh.l5;
+import yh.k5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class g4 implements NotificationCenter.NotificationCenterDelegate {
     public final int a;
-    public final l5 b;
+    public final k5 b;
     public final v3 c;
     public z3 d;
     public boolean e;
 
     public g4(int i10, long j3) {
         this.a = i10;
-        l5 l5Var = new l5(i10, 0L, false);
-        this.b = l5Var;
-        l5Var.p = j3;
+        k5 k5Var = new k5(i10, 0L, false);
+        this.b = k5Var;
+        k5Var.p = j3;
         v3 v3Var = new v3(j3, i10, new ii.q1(this, 22));
         v3Var.s = true;
         this.c = v3Var;
@@ -36,12 +36,12 @@ public final class g4 implements NotificationCenter.NotificationCenterDelegate {
     public final void b() {
         if (this.e) {
             NotificationCenter.getInstance(this.a).removeObserver(this, NotificationCenter.starUserGiftsLoaded);
-            l5 l5Var = this.b;
-            if (l5Var.m != -1) {
-                ConnectionsManager.getInstance(l5Var.a).cancelRequest(l5Var.m, true);
-                l5Var.m = -1;
+            k5 k5Var = this.b;
+            if (k5Var.m != -1) {
+                ConnectionsManager.getInstance(k5Var.a).cancelRequest(k5Var.m, true);
+                k5Var.m = -1;
             }
-            l5Var.i = false;
+            k5Var.i = false;
             this.c.f();
             this.e = false;
         }

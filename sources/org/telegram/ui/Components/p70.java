@@ -1,80 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p70 implements RequestDelegate {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object g;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object i;
+public final /* synthetic */ class p70 implements View.OnLayoutChangeListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ p70(Context context, ai.a1 a1Var, long j3, byte[] bArr, org.telegram.messenger.video.a aVar, xc xcVar, org.telegram.messenger.video.d dVar, int i10) {
-        this.b = context;
-        this.e = a1Var;
-        this.c = j3;
-        this.f = bArr;
-        this.g = aVar;
-        this.h = xcVar;
-        this.i = dVar;
-        this.d = i10;
+    public /* synthetic */ p70(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // android.view.View.OnLayoutChangeListener
+    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new ei.g1((org.telegram.ui.ActionBar.b2) this.e, tLObject, (AccountInstance) this.f, (v70) this.g, this.c, this.b, (org.telegram.ui.ActionBar.n2) this.h, this.d, (TLRPC.Peer) this.i));
+                y70 y70Var = (y70) this.b;
+                if (y70Var.D()) {
+                    y70Var.O();
+                    break;
+                }
                 break;
             default:
-                ai.a1 a1Var = (ai.a1) this.e;
-                byte[] bArr = (byte[]) this.f;
-                org.telegram.messenger.video.a aVar = (org.telegram.messenger.video.a) this.g;
-                xc xcVar = (xc) this.h;
-                org.telegram.messenger.video.d dVar = (org.telegram.messenger.video.d) this.i;
-                Context context = this.b;
-                if (tLObject == null) {
-                    if (tL_error != null && "AD_EXPIRED".equalsIgnoreCase(tL_error.text)) {
-                        AndroidUtilities.runOnUIThread(new org.telegram.ui.j31(aVar, xcVar, context, a1Var, 1), 200L);
-                        break;
-                    }
-                } else if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultChooseOption)) {
-                    if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultReported)) {
-                        if (tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultAdsHidden) {
-                            AndroidUtilities.runOnUIThread(new org.telegram.ui.yl0(aVar, xcVar, this.d, 8), 200L);
-                            break;
-                        }
-                    } else {
-                        AndroidUtilities.runOnUIThread(new org.telegram.ui.j31(aVar, xcVar, context, a1Var, 0), 200L);
-                        break;
-                    }
-                } else {
-                    AndroidUtilities.runOnUIThread(new org.telegram.ui.bw(tLObject, context, a1Var, this.c, bArr, aVar, xcVar, dVar));
+                nx0 nx0Var = (nx0) this.b;
+                ai.p4 p4Var = nx0Var.h;
+                if (p4Var != null && p4Var.getLayout() != null) {
+                    nx0Var.F = p4Var.getLayout().getLineWidth(0);
                     break;
                 }
                 break;
         }
-    }
-
-    public /* synthetic */ p70(org.telegram.ui.ActionBar.b2 b2Var, AccountInstance accountInstance, v70 v70Var, long j3, Context context, org.telegram.ui.ActionBar.n2 n2Var, int i10, TLRPC.Peer peer) {
-        this.e = b2Var;
-        this.f = accountInstance;
-        this.g = v70Var;
-        this.c = j3;
-        this.b = context;
-        this.h = n2Var;
-        this.d = i10;
-        this.i = peer;
     }
 }

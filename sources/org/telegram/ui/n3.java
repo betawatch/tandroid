@@ -4,7 +4,7 @@ import android.text.style.URLSpan;
 import android.view.View;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class n3 extends URLSpan {
     public final /* synthetic */ int a;
@@ -25,10 +25,10 @@ public final class n3 extends URLSpan {
             case 0:
                 i4 i4Var = o3Var.c;
                 String url = getURL();
-                org.telegram.ui.Components.e90 e90Var = i4Var.b;
+                org.telegram.ui.Components.o90 o90Var = i4Var.b;
                 b3 b3Var = i4Var.d;
                 HashSet hashSet = i4.b1;
-                i4Var.Q(url, null, e90Var == null ? null : new j0(i4Var, b3Var, e90Var));
+                i4Var.Q(url, null, o90Var == null ? null : new j0(i4Var, b3Var, o90Var));
                 break;
             default:
                 o3Var.c.Q(getURL(), null, null);

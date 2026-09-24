@@ -3,20 +3,20 @@ package ci;
 import java.util.ArrayList;
 import org.telegram.messenger.FileLoader;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.jv0;
 import org.telegram.ui.Components.oz;
+import org.telegram.ui.Components.uv0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class y1 extends oz {
-    public final jv0 X;
+    public final uv0 X;
     public final /* synthetic */ z1 Y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public y1(z1 z1Var) {
         super(100, true);
         this.Y = z1Var;
-        this.X = new jv0();
+        this.X = new uv0();
         this.O = new x1(this, 0);
     }
 
@@ -26,14 +26,14 @@ public final class y1 extends oz {
     }
 
     @Override // org.telegram.ui.Components.oz
-    public final jv0 D1(int i10) {
+    public final uv0 D1(int i10) {
         TLRPC.Document document;
         ArrayList<TLRPC.DocumentAttribute> arrayList;
         TLRPC.PhotoSize closestPhotoSizeWithSize;
         int i11;
         int i12;
-        jv0 jv0Var = this.X;
-        jv0Var.c = false;
+        uv0 uv0Var = this.X;
+        uv0Var.c = false;
         Object F = this.Y.c.F(i10);
         if (F instanceof TLRPC.BotInlineResult) {
             TLRPC.BotInlineResult botInlineResult = (TLRPC.BotInlineResult) F;
@@ -51,29 +51,29 @@ public final class y1 extends oz {
             }
         } else {
             if (!(F instanceof TLRPC.Document)) {
-                jv0Var.c = true;
-                return jv0Var;
+                uv0Var.c = true;
+                return uv0Var;
             }
             document = (TLRPC.Document) F;
             arrayList = document.attributes;
         }
-        jv0Var.b = 100.0f;
-        jv0Var.a = 100.0f;
-        jv0Var.c = false;
+        uv0Var.b = 100.0f;
+        uv0Var.a = 100.0f;
+        uv0Var.c = false;
         if (document != null && (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 90)) != null && (i11 = closestPhotoSizeWithSize.w) != 0 && (i12 = closestPhotoSizeWithSize.h) != 0) {
-            jv0Var.a = i11;
-            jv0Var.b = i12;
+            uv0Var.a = i11;
+            uv0Var.b = i12;
         }
         if (arrayList != null) {
             for (int i13 = 0; i13 < arrayList.size(); i13++) {
                 TLRPC.DocumentAttribute documentAttribute = arrayList.get(i13);
                 if ((documentAttribute instanceof TLRPC.TL_documentAttributeImageSize) || (documentAttribute instanceof TLRPC.TL_documentAttributeVideo)) {
-                    jv0Var.a = documentAttribute.w;
-                    jv0Var.b = documentAttribute.h;
+                    uv0Var.a = documentAttribute.w;
+                    uv0Var.b = documentAttribute.h;
                     break;
                 }
             }
         }
-        return jv0Var;
+        return uv0Var;
     }
 }

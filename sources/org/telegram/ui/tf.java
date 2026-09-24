@@ -1,49 +1,32 @@
 package org.telegram.ui;
 
+import android.text.style.URLSpan;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tf implements View.OnLongClickListener {
+public final /* synthetic */ class tf implements Utilities.CallbackReturn {
     public final /* synthetic */ int a;
-    public final /* synthetic */ xn b;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ tf(xn xnVar, int i10) {
+    public /* synthetic */ tf(int i10, Object obj, Object obj2) {
         this.a = i10;
-        this.b = xnVar;
+        this.b = obj;
+        this.c = obj2;
     }
 
-    @Override // android.view.View.OnLongClickListener
-    public final boolean onLongClick(View view) {
-        MessageObject messageObject;
-        MessageObject messageObject2;
+    @Override // org.telegram.messenger.Utilities.CallbackReturn
+    public final Object run(Object obj) {
         switch (this.a) {
             case 0:
-                xn xnVar = this.b;
-                MessageObject messageObject3 = xnVar.d5;
-                if (messageObject3 == null) {
-                    return false;
-                }
-                if (AndroidUtilities.addToClipboard(messageObject3.sponsoredUrl)) {
-                    new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(xnVar.getParentActivity()), xnVar.ea).k(false).j();
-                }
-                return true;
-            case 1:
-                return xn.R0(this.b);
+                wn wnVar = (wn) this.b;
+                View view = (View) this.c;
+                wnVar.U7((URLSpan) obj, false, wnVar.d5, view instanceof org.telegram.ui.Cells.u1 ? (org.telegram.ui.Cells.u1) view : null);
+                return Boolean.TRUE;
             default:
-                xn xnVar2 = this.b;
-                int i10 = xnVar2.nb;
-                if (i10 == 1 && (messageObject2 = xnVar2.p5) != null) {
-                    xnVar2.F(messageObject2.getId(), 0, 0, 0, true, true);
-                    return true;
-                }
-                if (xnVar2.f5 == null || i10 != 2 || (messageObject = xnVar2.n5) == null) {
-                    return false;
-                }
-                xnVar2.F(messageObject.getId(), 0, 0, 0, true, true);
-                return true;
+                return rh.c.d((View) obj, (String) this.b, (String) this.c, null, null);
         }
     }
 }

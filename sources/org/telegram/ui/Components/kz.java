@@ -10,7 +10,7 @@ import android.widget.HorizontalScrollView;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public class kz extends s4.s0 {
     public final int a;
@@ -45,7 +45,7 @@ public class kz extends s4.s0 {
                     yyVar = lzVar.V;
                 } else {
                     if (i11 != 2) {
-                        throw new IllegalArgumentException(hg.c.i(i11, "Unexpected argument: "));
+                        throw new IllegalArgumentException(hg.c.h(i11, "Unexpected argument: "));
                     }
                     yyVar = lzVar.o0;
                 }
@@ -70,12 +70,12 @@ public class kz extends s4.s0 {
         }
         if (!this.b) {
             int[] iArr = lzVar.Q0;
-            ly lyVar = lzVar.t1;
-            if ((lyVar == null || !lyVar.z()) && i11 != 0) {
+            my myVar = lzVar.t1;
+            if ((myVar == null || !myVar.z()) && i11 != 0) {
                 float dpf2 = AndroidUtilities.dpf2(i11 == 1 ? 36.0f : 48.0f);
                 float f7 = iArr[i11] / (-dpf2);
                 if (f7 <= 0.0f || f7 >= 1.0f) {
-                    ml0 x10 = lzVar.x(i11);
+                    wl0 x10 = lzVar.x(i11);
                     int dp = AndroidUtilities.dp(i11 == 1 ? 38.0f : 48.0f);
                     s4.c1 K = x10.K(0);
                     if (K != null) {
@@ -99,7 +99,7 @@ public class kz extends s4.s0 {
                     if (objectAnimator2 == null) {
                         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(y3, (Property<HorizontalScrollView, Float>) View.TRANSLATION_Y, y3.getTranslationY(), i13);
                         objectAnimatorArr[i11] = ofFloat;
-                        ofFloat.addUpdateListener(new org.telegram.ui.ActionBar.q2(lzVar, i11, 3));
+                        ofFloat.addUpdateListener(new org.telegram.ui.ActionBar.p2(lzVar, i11, 3));
                         objectAnimatorArr[i11].setDuration(200L);
                     } else {
                         objectAnimator2.setFloatValues(y3.getTranslationY(), i13);

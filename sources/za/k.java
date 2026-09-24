@@ -3,12 +3,11 @@ package za;
 import android.util.Log;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.ActionBar.a2;
-import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.Cells.ja;
+import org.telegram.ui.ActionBar.z1;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class k implements i5.e, a2 {
+public final /* synthetic */ class k implements i5.e, z1 {
     public final /* synthetic */ Object a;
 
     public /* synthetic */ k(Object obj) {
@@ -17,23 +16,23 @@ public final /* synthetic */ class k implements i5.e, a2 {
 
     @Override // i5.e
     public Object apply(Object obj) {
-        ((ja) this.a).getClass();
-        String e = d0.b.e((c0) obj);
-        kotlin.jvm.internal.i.d(e, "SessionEvents.SESSION_EVENT_ENCODER.encode(value)");
-        Log.d("EventGDTLogger", "Session Event: ".concat(e));
-        byte[] bytes = e.getBytes(xd.a.a);
+        ((w3.b) this.a).getClass();
+        String J = d0.b.J((c0) obj);
+        kotlin.jvm.internal.i.d(J, "SessionEvents.SESSION_EVENT_ENCODER.encode(value)");
+        Log.d("EventGDTLogger", "Session Event: ".concat(J));
+        byte[] bytes = J.getBytes(xd.a.a);
         kotlin.jvm.internal.i.d(bytes, "this as java.lang.String).getBytes(charset)");
         return bytes;
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void f(b2 b2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.z1
+    public void f(a2 a2Var, int i10) {
         ei.l lVar = (ei.l) this.a;
         TL_bots.updateStarRefProgram updatestarrefprogram = new TL_bots.updateStarRefProgram();
         updatestarrefprogram.bot = lVar.getMessagesController().getInputUser(lVar.P);
         updatestarrefprogram.commission_permille = 0;
-        b2 b2Var2 = new b2(lVar.getParentActivity(), 3, null);
-        b2Var2.q(150L);
-        lVar.getConnectionsManager().sendRequest(updatestarrefprogram, new ei.b(lVar, b2Var2, 0));
+        a2 a2Var2 = new a2(lVar.getParentActivity(), 3, null);
+        a2Var2.q(150L);
+        lVar.getConnectionsManager().sendRequest(updatestarrefprogram, new ei.b(lVar, a2Var2, 0));
     }
 }

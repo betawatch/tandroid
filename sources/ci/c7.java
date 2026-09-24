@@ -9,7 +9,7 @@ import android.view.TextureView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c7 implements Runnable {
     public final /* synthetic */ int a;
@@ -52,14 +52,14 @@ public final /* synthetic */ class c7 implements Runnable {
                         if (bitmap2 != null && (nVar = (r8.n) f7Var.a.get()) != null && nVar.b.k()) {
                             int width2 = bitmap2.getWidth();
                             int height2 = bitmap2.getHeight();
-                            lf.i iVar = new lf.i(22);
+                            la.h hVar = new la.h(23);
                             int width3 = bitmap2.getWidth();
                             int height3 = bitmap2.getHeight();
-                            iVar.d = bitmap2;
-                            a3.l lVar = (a3.l) iVar.b;
+                            hVar.d = bitmap2;
+                            a3.l lVar = (a3.l) hVar.b;
                             lVar.a = width3;
                             lVar.b = height3;
-                            SparseArray Z0 = nVar.Z0(iVar);
+                            SparseArray Z0 = nVar.Z0(hVar);
                             for (int i11 = 0; i11 < Z0.size(); i11++) {
                                 r8.m mVar = (r8.m) Z0.valueAt(i11);
                                 String str2 = mVar.b;

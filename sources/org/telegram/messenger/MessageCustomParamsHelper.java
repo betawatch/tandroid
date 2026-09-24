@@ -8,11 +8,11 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class MessageCustomParamsHelper {
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class Params_v1 extends TLObject {
         private static final int VERSION = 1;
         int flags;
@@ -184,7 +184,7 @@ public class MessageCustomParamsHelper {
         }
         int readInt32 = nativeByteBuffer.readInt32(true);
         if (readInt32 != 1) {
-            throw new RuntimeException(hg.c.i(readInt32, "can't read params version = "));
+            throw new RuntimeException(hg.c.h(readInt32, "can't read params version = "));
         }
         new Params_v1(message).readParams(nativeByteBuffer, true);
     }

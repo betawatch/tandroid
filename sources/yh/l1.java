@@ -2,18 +2,18 @@ package yh;
 
 import android.os.Bundle;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.ra1;
+import org.telegram.ui.sa1;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l1 implements Runnable {
     public final /* synthetic */ int a = 0;
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.m2 b;
     public final /* synthetic */ long c;
 
-    public /* synthetic */ l1(long j3, org.telegram.ui.ActionBar.n2 n2Var) {
+    public /* synthetic */ l1(long j3, org.telegram.ui.ActionBar.m2 m2Var) {
         this.c = j3;
-        this.b = n2Var;
+        this.b = m2Var;
     }
 
     @Override // java.lang.Runnable
@@ -32,14 +32,14 @@ public final /* synthetic */ class l1 implements Runnable {
                 this.b.presentFragment(new ProfileActivity(bundle, null));
                 break;
             default:
-                org.telegram.ui.ActionBar.n2 n2Var = this.b;
-                n2Var.presentFragment(ra1.d0(n2Var.getMessagesController().getChat(Long.valueOf(-this.c)), true));
+                org.telegram.ui.ActionBar.m2 m2Var = this.b;
+                m2Var.presentFragment(sa1.d0(m2Var.getMessagesController().getChat(Long.valueOf(-this.c)), true));
                 break;
         }
     }
 
-    public /* synthetic */ l1(org.telegram.ui.ActionBar.n2 n2Var, long j3) {
-        this.b = n2Var;
+    public /* synthetic */ l1(org.telegram.ui.ActionBar.m2 m2Var, long j3) {
+        this.b = m2Var;
         this.c = j3;
     }
 }

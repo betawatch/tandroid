@@ -1,33 +1,25 @@
 package l5;
 
-import android.os.Looper;
-import com.google.android.gms.internal.cast.c0;
-import java.util.concurrent.Executor;
-import java.util.concurrent.ExecutorService;
+import java.util.Set;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
-public final class q implements Executor {
-    public final /* synthetic */ int a = 1;
-    public final Object b;
+public final class q implements i5.f {
+    public final Set a;
+    public final i b;
+    public final s c;
 
-    public q(Looper looper) {
-        this.b = new c0(looper, 4);
+    public q(Set set, i iVar, s sVar) {
+        this.a = set;
+        this.b = iVar;
+        this.c = sVar;
     }
 
-    @Override // java.util.concurrent.Executor
-    public final void execute(Runnable runnable) {
-        switch (this.a) {
-            case 0:
-                ((Executor) this.b).execute(new p(0, runnable));
-                break;
-            default:
-                ((c0) this.b).post(runnable);
-                break;
+    public final r a(String str, i5.c cVar, i5.e eVar) {
+        Set set = this.a;
+        if (set.contains(cVar)) {
+            return new r(this.b, str, cVar, eVar, this.c);
         }
-    }
-
-    public q(ExecutorService executorService) {
-        this.b = executorService;
+        throw new IllegalArgumentException(String.format("%s is not supported byt this factory. Supported encodings are: %s.", cVar, set));
     }
 }

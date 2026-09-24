@@ -1,112 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.View;
+import java.util.function.ToDoubleFunction;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class w71 extends AnimatorListenerAdapter {
+public final /* synthetic */ class w71 implements ToDoubleFunction {
     public final /* synthetic */ int a;
-    public final /* synthetic */ h81 b;
 
-    public /* synthetic */ w71(h81 h81Var, int i10) {
+    public /* synthetic */ w71(int i10) {
         this.a = i10;
-        this.b = h81Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // java.util.function.ToDoubleFunction
+    public final double applyAsDouble(Object obj) {
         switch (this.a) {
             case 0:
-                h81 h81Var = this.b;
-                View[] viewArr = h81Var.e;
-                View[] viewArr2 = h81Var.e;
-                if (viewArr[1] != null) {
-                    h81Var.F();
-                    h81Var.h.put(h81Var.f[1], viewArr2[1]);
-                    h81Var.removeView(viewArr2[1]);
-                    h81Var.E(viewArr2[0], 0.0f);
-                    viewArr2[1] = null;
-                }
-                h81Var.Q = null;
-                h81Var.w(true);
-                x71 x71Var = h81Var.M;
-                if (x71Var != null) {
-                    x71Var.v.invalidate();
-                    h81Var.M.v.f1();
-                    h81Var.M.invalidate();
-                }
-                h81Var.u();
-                h81Var.J.unlock();
-                break;
+                return ((z71) obj).a;
             case 1:
-                h81 h81Var2 = this.b;
-                h81Var2.w = null;
-                View[] viewArr3 = h81Var2.e;
-                if (viewArr3[1] != null) {
-                    if (!h81Var2.F) {
-                        h81Var2.F();
-                    }
-                    h81Var2.h.put(h81Var2.f[1], viewArr3[1]);
-                    h81Var2.removeView(viewArr3[1]);
-                    viewArr3[1].setVisibility(8);
-                    viewArr3[1] = null;
-                }
-                h81Var2.x = false;
-                h81Var2.I = false;
-                x71 x71Var2 = h81Var2.M;
-                if (x71Var2 != null) {
-                    x71Var2.setEnabled(true);
-                }
-                h81Var2.w(false);
-                h81Var2.u();
-                h81Var2.J.unlock();
-                break;
+                return ((TLRPC.TL_topPeer) obj).rating;
             case 2:
-                h81 h81Var3 = this.b;
-                h81Var3.w = null;
-                View[] viewArr4 = h81Var3.e;
-                View view = viewArr4[1];
-                if (view != null) {
-                    h81Var3.removeView(view);
-                    viewArr4[1] = null;
-                }
-                h81Var3.x = false;
-                x71 x71Var3 = h81Var3.M;
-                if (x71Var3 != null) {
-                    x71Var3.setEnabled(true);
-                    x71 x71Var4 = h81Var3.M;
-                    x71Var4.J = false;
-                    x71Var4.a = 1.0f;
-                    x71Var4.v.f1();
-                    h81Var3.M.invalidate();
-                    break;
-                }
-                break;
+                return ((TLRPC.TL_topPeer) obj).rating;
+            case 3:
+                return ((TLRPC.TL_topPeer) obj).rating;
+            case 4:
+                return yh.s0.P((TL_stars.starGiftAttributeBackdrop) obj);
+            case 5:
+                return yh.s0.P((TL_stars.starGiftAttributePattern) obj);
             default:
-                h81 h81Var4 = this.b;
-                h81Var4.w = null;
-                View[] viewArr5 = h81Var4.e;
-                if (viewArr5[1] != null) {
-                    if (!h81Var4.F) {
-                        h81Var4.F();
-                    }
-                    h81Var4.h.put(h81Var4.f[1], viewArr5[1]);
-                    h81Var4.removeView(viewArr5[1]);
-                    viewArr5[1].setVisibility(8);
-                    viewArr5[1] = null;
-                }
-                h81Var4.x = false;
-                h81Var4.I = false;
-                x71 x71Var5 = h81Var4.M;
-                if (x71Var5 != null) {
-                    x71Var5.setEnabled(true);
-                }
-                h81Var4.w(false);
-                h81Var4.u();
-                h81Var4.J.unlock();
-                break;
+                return yh.s0.P((TL_stars.starGiftAttributeModel) obj);
         }
     }
 }

@@ -6,18 +6,18 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f1 implements RequestDelegate {
     public final /* synthetic */ int a = 1;
-    public final /* synthetic */ y3 b;
+    public final /* synthetic */ x3 b;
     public final /* synthetic */ long c;
     public final /* synthetic */ long d;
     public final /* synthetic */ long e;
     public final /* synthetic */ Object f;
 
-    public /* synthetic */ f1(y3 y3Var, long j3, long j10, Utilities.Callback callback, long j11) {
-        this.b = y3Var;
+    public /* synthetic */ f1(x3 x3Var, long j3, long j10, Utilities.Callback callback, long j11) {
+        this.b = x3Var;
         this.c = j3;
         this.d = j10;
         this.f = callback;
@@ -28,7 +28,7 @@ public final /* synthetic */ class f1 implements RequestDelegate {
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new p1(this.b, (org.telegram.ui.ActionBar.b2) this.f, tLObject, this.c, this.d, this.e, tL_error));
+                AndroidUtilities.runOnUIThread(new p1(this.b, (org.telegram.ui.ActionBar.a2) this.f, tLObject, this.c, this.d, this.e, tL_error));
                 break;
             default:
                 AndroidUtilities.runOnUIThread(new p1(this.b, tLObject, this.c, this.d, (Utilities.Callback) this.f, tL_error, this.e));
@@ -36,9 +36,9 @@ public final /* synthetic */ class f1 implements RequestDelegate {
         }
     }
 
-    public /* synthetic */ f1(y3 y3Var, org.telegram.ui.ActionBar.b2 b2Var, long j3, long j10, long j11) {
-        this.b = y3Var;
-        this.f = b2Var;
+    public /* synthetic */ f1(x3 x3Var, org.telegram.ui.ActionBar.a2 a2Var, long j3, long j10, long j11) {
+        this.b = x3Var;
+        this.f = a2Var;
         this.c = j3;
         this.d = j10;
         this.e = j11;

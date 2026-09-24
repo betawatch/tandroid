@@ -1,66 +1,141 @@
 package u2;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
-public final class n1 {
-    public static final n1 d = new n1(new b2.l1[0]);
-    public static final String e;
-    public final int a;
-    public final e9.a1 b;
-    public int c;
+public final class n1 implements d0, c0 {
+    public final d0 a;
+    public final long b;
+    public c0 c;
 
-    static {
-        String str = e2.d0.a;
-        e = Integer.toString(0, 36);
+    public n1(d0 d0Var, long j3) {
+        this.a = d0Var;
+        this.b = j3;
     }
 
-    public n1(b2.l1... l1VarArr) {
-        e9.a1 w10 = e9.i0.w(l1VarArr);
-        this.b = w10;
-        this.a = l1VarArr.length;
+    @Override // u2.c0
+    public final void b(d0 d0Var) {
+        c0 c0Var = this.c;
+        c0Var.getClass();
+        c0Var.b(this);
+    }
+
+    @Override // u2.d1
+    public final boolean c() {
+        return this.a.c();
+    }
+
+    @Override // u2.d1
+    public final long d() {
+        long d = this.a.d();
+        if (d == Long.MIN_VALUE) {
+            return Long.MIN_VALUE;
+        }
+        return d + this.b;
+    }
+
+    @Override // u2.d0
+    public final void g() {
+        this.a.g();
+    }
+
+    @Override // u2.d0
+    public final long h(long j3) {
+        long j10 = this.b;
+        return this.a.h(j3 - j10) + j10;
+    }
+
+    @Override // u2.d0
+    public final void i(long j3) {
+        this.a.i(j3 - this.b);
+    }
+
+    @Override // u2.d0
+    public final void k(c0 c0Var, long j3) {
+        this.c = c0Var;
+        this.a.k(this, j3 - this.b);
+    }
+
+    @Override // u2.d0
+    public final long l() {
+        long l4 = this.a.l();
+        if (l4 == -9223372036854775807L) {
+            return -9223372036854775807L;
+        }
+        return l4 + this.b;
+    }
+
+    @Override // u2.c1
+    public final void m(d1 d1Var) {
+        c0 c0Var = this.c;
+        c0Var.getClass();
+        c0Var.m(this);
+    }
+
+    @Override // u2.d1
+    public final boolean p(i2.s0 s0Var) {
+        i2.r0 r0Var = new i2.r0();
+        long j3 = s0Var.a;
+        r0Var.b = s0Var.b;
+        r0Var.c = s0Var.c;
+        r0Var.a = j3 - this.b;
+        return this.a.p(new i2.s0(r0Var));
+    }
+
+    @Override // u2.d0
+    public final long q(x2.r[] rVarArr, boolean[] zArr, b1[] b1VarArr, boolean[] zArr2, long j3) {
+        b1[] b1VarArr2 = new b1[b1VarArr.length];
         int i10 = 0;
-        while (i10 < w10.d) {
-            int i11 = i10 + 1;
-            for (int i12 = i11; i12 < w10.d; i12++) {
-                if (((b2.l1) w10.get(i10)).equals(w10.get(i12))) {
-                    e2.a.f("TrackGroupArray", "", new IllegalArgumentException("Multiple identical TrackGroups added to one TrackGroupArray."));
+        while (true) {
+            b1 b1Var = null;
+            if (i10 >= b1VarArr.length) {
+                break;
+            }
+            m1 m1Var = (m1) b1VarArr[i10];
+            if (m1Var != null) {
+                b1Var = m1Var.a;
+            }
+            b1VarArr2[i10] = b1Var;
+            i10++;
+        }
+        d0 d0Var = this.a;
+        long j10 = this.b;
+        long q6 = d0Var.q(rVarArr, zArr, b1VarArr2, zArr2, j3 - j10);
+        for (int i11 = 0; i11 < b1VarArr.length; i11++) {
+            b1 b1Var2 = b1VarArr2[i11];
+            if (b1Var2 == null) {
+                b1VarArr[i11] = null;
+            } else {
+                b1 b1Var3 = b1VarArr[i11];
+                if (b1Var3 == null || ((m1) b1Var3).a != b1Var2) {
+                    b1VarArr[i11] = new m1(b1Var2, j10);
                 }
             }
-            i10 = i11;
         }
+        return q6 + j10;
     }
 
-    public final b2.l1 a(int i10) {
-        return (b2.l1) this.b.get(i10);
+    @Override // u2.d0
+    public final p1 r() {
+        return this.a.r();
     }
 
-    public final int b(b2.l1 l1Var) {
-        int indexOf = this.b.indexOf(l1Var);
-        if (indexOf >= 0) {
-            return indexOf;
+    @Override // u2.d1
+    public final long s() {
+        long s10 = this.a.s();
+        if (s10 == Long.MIN_VALUE) {
+            return Long.MIN_VALUE;
         }
-        return -1;
+        return s10 + this.b;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || n1.class != obj.getClass()) {
-            return false;
-        }
-        n1 n1Var = (n1) obj;
-        return this.a == n1Var.a && this.b.equals(n1Var.b);
+    @Override // u2.d0
+    public final long t(long j3, i2.q1 q1Var) {
+        long j10 = this.b;
+        return this.a.t(j3 - j10, q1Var) + j10;
     }
 
-    public final int hashCode() {
-        if (this.c == 0) {
-            this.c = this.b.hashCode();
-        }
-        return this.c;
-    }
-
-    public final String toString() {
-        return this.b.toString();
+    @Override // u2.d1
+    public final void u(long j3) {
+        this.a.u(j3 - this.b);
     }
 }

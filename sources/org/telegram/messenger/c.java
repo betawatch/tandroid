@@ -2,12 +2,12 @@ package org.telegram.messenger;
 
 import com.android.billingclient.api.Purchase;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ml0;
-import org.telegram.ui.Components.xk0;
+import org.telegram.ui.Components.hl0;
+import org.telegram.ui.Components.wl0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c implements xk0, c5.j {
+public final /* synthetic */ class c implements hl0, c5.j {
     public final /* synthetic */ Object a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -23,10 +23,10 @@ public final /* synthetic */ class c implements xk0, c5.j {
         BillingController.lambda$consumeGiftPurchase$12((TLRPC.InputStorePaymentPurpose) this.a, (Purchase) this.b, (Runnable) this.c, hVar, str);
     }
 
-    @Override // org.telegram.ui.Components.xk0
+    @Override // org.telegram.ui.Components.hl0
     public int run() {
         int lambda$scrollToFragmentRow$24;
-        lambda$scrollToFragmentRow$24 = AndroidUtilities.lambda$scrollToFragmentRow$24((org.telegram.ui.ActionBar.n2) this.a, (String) this.b, (ml0) this.c);
+        lambda$scrollToFragmentRow$24 = AndroidUtilities.lambda$scrollToFragmentRow$24((org.telegram.ui.ActionBar.m2) this.a, (String) this.b, (wl0) this.c);
         return lambda$scrollToFragmentRow$24;
     }
 }

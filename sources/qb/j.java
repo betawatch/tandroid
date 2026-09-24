@@ -10,11 +10,10 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
-import k2.b0;
 import t7.u;
-import w7.h7;
+import w7.i7;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public abstract class j {
     public static final k6.c[] a = new k6.c[0];
@@ -89,7 +88,7 @@ public abstract class j {
     public static void b(Context context) {
         t7.b bVar = t7.d.b;
         Object[] objArr = {"ica"};
-        h7.a(1, objArr);
+        i7.a(1, objArr);
         t7.g gVar = new t7.g(1, objArr);
         k6.e.b.getClass();
         if (k6.e.a(context) < 221500000) {
@@ -125,7 +124,7 @@ public abstract class j {
             e7.d = new k6.c[]{k7.b.c};
             e7.b = true;
             e7.a = 27304;
-            e7.c = new b0(gVar, b10);
+            e7.c = new ka.c(gVar, b10);
             e = gVar.e(0, e7.a());
         }
         e.addOnFailureListener(new rb.a(19));

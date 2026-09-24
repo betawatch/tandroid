@@ -16,7 +16,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class y20 extends FrameLayout {
     public float a;
@@ -286,8 +286,8 @@ public final class y20 extends FrameLayout {
         }
         this.c = false;
         a30 a30Var12 = this.n;
-        bj0 bj0Var = a30Var12.V;
-        yi0 yi0Var = a30Var12.v;
+        lj0 lj0Var = a30Var12.V;
+        ij0 ij0Var = a30Var12.v;
         ai.f0 f0Var = a30Var12.b;
         y20 y20Var2 = a30Var12.a;
         ci.r6 r6Var = a30Var12.c;
@@ -311,10 +311,10 @@ public final class y20 extends FrameLayout {
         a30Var12.d();
         a30.d0 = null;
         AnimatorSet animatorSet = new AnimatorSet();
-        int i13 = yi0Var.a0;
+        int i13 = ij0Var.a0;
         if (i13 < 33) {
             y20Var = y20Var3;
-            j3 = (long) (((1.0f - (i13 / 33.0f)) * yi0Var.r()) / 2.0f);
+            j3 = (long) (((1.0f - (i13 / 33.0f)) * ij0Var.r()) / 2.0f);
         } else {
             y20Var = y20Var3;
             j3 = 0;
@@ -378,9 +378,9 @@ public final class y20 extends FrameLayout {
         animatorSet.playTogether(ofFloat14);
         animatorSet.addListener(new z20(a30Var12, y20Var4, f0Var2, windowManager, frameLayout, u7Var));
         animatorSet.start();
-        yi0Var.P(66);
-        bj0Var.i();
-        bj0Var.d();
+        ij0Var.P(66);
+        lj0Var.i();
+        lj0Var.d();
         return false;
     }
 }

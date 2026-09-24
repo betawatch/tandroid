@@ -7,7 +7,7 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c3 implements Runnable {
     public final /* synthetic */ int a;
@@ -35,9 +35,9 @@ public final /* synthetic */ class c3 implements Runnable {
                 break;
             default:
                 k3 k3Var3 = this.b.d;
-                org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+                org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
                 if (U != null && U.getParentLayout() != null) {
-                    org.telegram.ui.ActionBar.c5 parentLayout = U.getParentLayout();
+                    org.telegram.ui.ActionBar.b5 parentLayout = U.getParentLayout();
                     U.presentFragment(ProfileActivity.m4(k3Var3.H));
                     AndroidUtilities.scrollToFragmentRow(parentLayout, "botPermissionLocation");
                     k3Var3.k(true);

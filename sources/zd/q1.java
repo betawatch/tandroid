@@ -1,8 +1,8 @@
 package zd;
 
-import v7.t7;
+import v7.u7;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class q1 extends kd.i implements rd.p {
     public v1 b;
@@ -43,7 +43,7 @@ public final class q1 extends kd.i implements rd.p {
         jd.a aVar = jd.a.a;
         int i10 = this.d;
         if (i10 == 0) {
-            t7.b(obj);
+            u7.b(obj);
             wd.c cVar2 = (wd.c) this.e;
             Object u10 = this.f.u();
             if (u10 instanceof q) {
@@ -63,7 +63,7 @@ public final class q1 extends kd.i implements rd.p {
                 }
             }
         } else if (i10 == 1) {
-            t7.b(obj);
+            u7.b(obj);
         } else {
             if (i10 != 2) {
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -71,7 +71,7 @@ public final class q1 extends kd.i implements rd.p {
             kVar = this.c;
             v1Var = this.b;
             cVar = (wd.c) this.e;
-            t7.b(obj);
+            u7.b(obj);
             kVar = kVar.g();
             if (!kVar.equals(v1Var)) {
                 if (kVar instanceof q) {

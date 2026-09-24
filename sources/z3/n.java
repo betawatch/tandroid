@@ -9,7 +9,7 @@ import e2.d0;
 import e2.v;
 import java.io.EOFException;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class n implements h0 {
     public final h0 a;
@@ -54,7 +54,7 @@ public final class n implements h0 {
         a2.j = str;
         a2.v = Long.MAX_VALUE;
         a2.O = kVar.D(sVar);
-        hg.c.u(a2, h0Var);
+        hg.c.s(a2, h0Var);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:21:0x005b  */
@@ -107,7 +107,7 @@ public final class n implements h0 {
             }
         }
         try {
-            mVar.B(bArr, i13, i15, lVar, dVar);
+            mVar.C(bArr, i13, i15, lVar, dVar);
             i15 = i15;
         } catch (RuntimeException e10) {
             e = e10;

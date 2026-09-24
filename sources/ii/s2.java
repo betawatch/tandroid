@@ -3,10 +3,12 @@ package ii;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.BitmapFactory;
+import android.graphics.SurfaceTexture;
 import android.media.MediaMetadataRetriever;
 import android.net.Uri;
 import android.text.TextUtils;
 import android.util.Pair;
+import android.util.Size;
 import android.webkit.MimeTypeMap;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -14,6 +16,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.FileLoader;
@@ -27,12 +30,12 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RLottieNative;
-import org.telegram.ui.Components.vv0;
-import org.telegram.ui.Components.wv0;
-import org.telegram.ui.Components.xv0;
-import org.telegram.ui.uq0;
+import org.telegram.ui.Components.gw0;
+import org.telegram.ui.Components.hw0;
+import org.telegram.ui.Components.iw0;
+import org.telegram.ui.tq0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s2 implements Runnable {
     public final /* synthetic */ int a;
@@ -44,7 +47,7 @@ public final /* synthetic */ class s2 implements Runnable {
     public final /* synthetic */ Object h;
 
     public /* synthetic */ s2(Activity activity, int i10, TLRPC.InputGroupCall inputGroupCall, boolean z10, TLRPC.GroupCall groupCall, HashSet hashSet) {
-        this.a = 4;
+        this.a = 5;
         this.d = activity;
         this.b = i10;
         this.e = inputGroupCall;
@@ -53,28 +56,38 @@ public final /* synthetic */ class s2 implements Runnable {
         this.h = hashSet;
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:102:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:129:0x02ba  */
     /* JADX WARN: Removed duplicated region for block: B:130:0x02c8  */
-    /* JADX WARN: Removed duplicated region for block: B:200:0x040e  */
-    /* JADX WARN: Removed duplicated region for block: B:206:0x04cd  */
-    /* JADX WARN: Removed duplicated region for block: B:210:0x0495 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:253:0x047e A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:280:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:315:0x0407 A[Catch: Exception -> 0x038d, TRY_ENTER, TRY_LEAVE, TryCatch #16 {Exception -> 0x038d, blocks: (B:289:0x0389, B:315:0x0407), top: B:282:0x0379 }] */
-    /* JADX WARN: Removed duplicated region for block: B:316:0x0400 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:325:0x04e4 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:331:? A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:332:0x04dd A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:224:0x0481  */
+    /* JADX WARN: Removed duplicated region for block: B:230:0x0540  */
+    /* JADX WARN: Removed duplicated region for block: B:234:0x0508 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:277:0x04f1 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:304:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:339:0x047a A[Catch: Exception -> 0x0400, TRY_ENTER, TRY_LEAVE, TryCatch #24 {Exception -> 0x0400, blocks: (B:313:0x03fc, B:339:0x047a), top: B:306:0x03ec }] */
+    /* JADX WARN: Removed duplicated region for block: B:340:0x0473 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:352:0x0557 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:358:? A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:359:0x0550 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:99:0x01e6  */
+    /* JADX WARN: Type inference failed for: r2v1, types: [android.net.Uri] */
+    /* JADX WARN: Type inference failed for: r2v2 */
+    /* JADX WARN: Type inference failed for: r2v3 */
+    /* JADX WARN: Type inference failed for: r2v4, types: [java.io.InputStream] */
+    /* JADX WARN: Type inference failed for: r2v5, types: [java.io.InputStream] */
+    /* JADX WARN: Type inference failed for: r4v2, types: [java.io.OutputStream] */
+    /* JADX WARN: Type inference failed for: r4v4 */
+    /* JADX WARN: Type inference failed for: r4v42 */
+    /* JADX WARN: Type inference failed for: r8v1, types: [android.content.ContentResolver] */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
         String str;
+        ?? r42;
         FileOutputStream fileOutputStream;
-        InputStream inputStream;
         String extensionFromMimeType;
         final String str2;
         int i10;
@@ -100,90 +113,102 @@ public final /* synthetic */ class s2 implements Runnable {
         switch (this.a) {
             case 0:
                 final x3 x3Var = (x3) this.d;
-                Uri uri = (Uri) this.e;
+                ?? r22 = (Uri) this.e;
                 String str3 = (String) this.f;
                 final a aVar = (a) this.h;
-                InputStream inputStream2 = null;
+                InputStream inputStream = null;
                 r5 = null;
                 MediaMetadataRetriever mediaMetadataRetriever2 = null;
                 try {
-                    str = AndroidUtilities.getPath(uri);
+                    str = AndroidUtilities.getPath(r22);
                 } catch (Exception e) {
                     FileLog.e(e);
                     str = null;
                 }
                 final boolean z11 = this.c;
                 int i22 = this.b;
-                if (str == null || !w.c.p(str)) {
+                if (str == null || !v7.j.s(str)) {
                     Context context = x3Var.getContext();
                     try {
-                        if (context != null) {
-                            try {
-                                inputStream = context.getContentResolver().openInputStream(uri);
-                            } catch (Exception e7) {
-                                e = e7;
-                                inputStream = null;
-                                fileOutputStream = null;
-                            } catch (Throwable th2) {
-                                th = th2;
-                                fileOutputStream = null;
-                                if (inputStream2 != null) {
-                                }
-                                if (fileOutputStream == null) {
-                                }
-                            }
-                            if (inputStream != null) {
-                                if (str3 != null) {
-                                    try {
-                                        extensionFromMimeType = MimeTypeMap.getSingleton().getExtensionFromMimeType(str3);
-                                    } catch (Exception e10) {
-                                        e = e10;
-                                        fileOutputStream = null;
-                                        FileLog.e(e);
-                                        if (inputStream != null) {
-                                        }
-                                        if (fileOutputStream != null) {
-                                        }
-                                        str = null;
-                                        str2 = str;
-                                        if (str2 == null) {
-                                        }
-                                    } catch (Throwable th3) {
-                                        th = th3;
-                                        fileOutputStream = null;
-                                        inputStream2 = inputStream;
-                                        if (inputStream2 != null) {
-                                        }
-                                        if (fileOutputStream == null) {
-                                        }
-                                    }
-                                } else {
-                                    extensionFromMimeType = null;
-                                }
-                                if (TextUtils.isEmpty(extensionFromMimeType)) {
-                                    extensionFromMimeType = z11 ? "mp4" : "jpg";
-                                }
-                                File file = new File(FileLoader.getDirectory(4), "rich_external_" + (-i22) + "_" + SharedConfig.getLastLocalId() + "." + extensionFromMimeType);
-                                fileOutputStream = new FileOutputStream(file);
+                        try {
+                            if (context != null) {
                                 try {
-                                    try {
-                                        AndroidUtilities.copyFile(inputStream, fileOutputStream);
-                                        str = file.getAbsolutePath();
+                                    r22 = context.getContentResolver().openInputStream(r22);
+                                } catch (Exception e7) {
+                                    e = e7;
+                                    r22 = 0;
+                                    fileOutputStream = null;
+                                } catch (Throwable th2) {
+                                    th = th2;
+                                    r42 = 0;
+                                    if (inputStream != null) {
                                         try {
                                             inputStream.close();
                                         } catch (Exception unused) {
                                         }
+                                    }
+                                    if (r42 != 0) {
+                                        throw th;
+                                    }
+                                    try {
+                                        r42.close();
+                                        throw th;
+                                    } catch (Exception unused2) {
+                                        throw th;
+                                    }
+                                }
+                                if (r22 != 0) {
+                                    if (str3 != null) {
+                                        try {
+                                            extensionFromMimeType = MimeTypeMap.getSingleton().getExtensionFromMimeType(str3);
+                                        } catch (Exception e10) {
+                                            e = e10;
+                                            fileOutputStream = null;
+                                            FileLog.e(e);
+                                            if (r22 != 0) {
+                                            }
+                                            if (fileOutputStream != null) {
+                                            }
+                                            str = null;
+                                            str2 = str;
+                                            if (str2 == null) {
+                                            }
+                                        } catch (Throwable th3) {
+                                            th = th3;
+                                            str3 = null;
+                                            inputStream = r22;
+                                            r42 = str3;
+                                            if (inputStream != null) {
+                                            }
+                                            if (r42 != 0) {
+                                            }
+                                        }
+                                    } else {
+                                        extensionFromMimeType = null;
+                                    }
+                                    if (TextUtils.isEmpty(extensionFromMimeType)) {
+                                        extensionFromMimeType = z11 ? "mp4" : "jpg";
+                                    }
+                                    File file = new File(FileLoader.getDirectory(4), "rich_external_" + (-i22) + "_" + SharedConfig.getLastLocalId() + "." + extensionFromMimeType);
+                                    fileOutputStream = new FileOutputStream(file);
+                                    try {
+                                        AndroidUtilities.copyFile((InputStream) r22, fileOutputStream);
+                                        str = file.getAbsolutePath();
+                                        try {
+                                            r22.close();
+                                        } catch (Exception unused3) {
+                                        }
                                         try {
                                             fileOutputStream.close();
-                                        } catch (Exception unused2) {
+                                        } catch (Exception unused4) {
                                         }
                                     } catch (Exception e11) {
                                         e = e11;
                                         FileLog.e(e);
-                                        if (inputStream != null) {
+                                        if (r22 != 0) {
                                             try {
-                                                inputStream.close();
-                                            } catch (Exception unused3) {
+                                                r22.close();
+                                            } catch (Exception unused5) {
                                             }
                                         }
                                         if (fileOutputStream != null) {
@@ -197,35 +222,19 @@ public final /* synthetic */ class s2 implements Runnable {
                                             return;
                                         }
                                     }
-                                } catch (Throwable th4) {
-                                    th = th4;
-                                    inputStream2 = inputStream;
-                                    if (inputStream2 != null) {
-                                        try {
-                                            inputStream2.close();
-                                        } catch (Exception unused4) {
-                                        }
-                                    }
-                                    if (fileOutputStream == null) {
-                                        throw th;
-                                    }
-                                    try {
-                                        fileOutputStream.close();
-                                        throw th;
-                                    } catch (Exception unused5) {
-                                        throw th;
-                                    }
+                                } else if (r22 != 0) {
+                                    r22.close();
                                 }
-                            } else if (inputStream != null) {
-                                inputStream.close();
                             }
+                        } catch (Throwable th4) {
+                            th = th4;
                         }
                     } catch (Exception unused6) {
                     }
                     str = null;
                 }
                 str2 = str;
-                if (str2 == null || !w.c.p(str2)) {
+                if (str2 == null || !v7.j.s(str2)) {
                     return;
                 }
                 if (z11) {
@@ -287,10 +296,6 @@ public final /* synthetic */ class s2 implements Runnable {
                                         mediaMetadataRetriever2 = mediaMetadataRetriever;
                                         FileLog.e(e);
                                         if (mediaMetadataRetriever2 != null) {
-                                            try {
-                                                mediaMetadataRetriever2.release();
-                                            } catch (Exception unused7) {
-                                            }
                                         }
                                         i12 = i22;
                                         i13 = i10;
@@ -320,7 +325,7 @@ public final /* synthetic */ class s2 implements Runnable {
                                 }
                                 try {
                                     mediaMetadataRetriever.release();
-                                } catch (Exception unused8) {
+                                } catch (Exception unused7) {
                                 }
                                 i12 = i22;
                                 i14 = ceil;
@@ -330,7 +335,7 @@ public final /* synthetic */ class s2 implements Runnable {
                                 if (mediaMetadataRetriever2 != null) {
                                     try {
                                         mediaMetadataRetriever2.release();
-                                    } catch (Exception unused9) {
+                                    } catch (Exception unused8) {
                                     }
                                 }
                                 throw th;
@@ -342,6 +347,10 @@ public final /* synthetic */ class s2 implements Runnable {
                             i11 = 0;
                             FileLog.e(e);
                             if (mediaMetadataRetriever2 != null) {
+                                try {
+                                    mediaMetadataRetriever2.release();
+                                } catch (Exception unused9) {
+                                }
                             }
                             i12 = i22;
                             i13 = i10;
@@ -446,98 +455,136 @@ public final /* synthetic */ class s2 implements Runnable {
                 });
                 return;
             case 1:
-                ((ContactsController) this.d).lambda$processLoadedContacts$36(this.b, (ArrayList) this.e, (ArrayList) this.f, (a0.i) this.h, this.c);
+                ki.q qVar = (ki.q) this.d;
+                Size size = (Size) this.e;
+                int i23 = this.b;
+                boolean z12 = this.c;
+                RuntimeException[] runtimeExceptionArr = (RuntimeException[]) this.f;
+                CountDownLatch countDownLatch = (CountDownLatch) this.h;
+                try {
+                    try {
+                        qVar.a = size;
+                        qVar.f = i23;
+                        qVar.g = z12;
+                        SurfaceTexture surfaceTexture = qVar.m;
+                        if (surfaceTexture != null) {
+                            surfaceTexture.setDefaultBufferSize(size.getWidth(), size.getHeight());
+                        }
+                        qVar.e();
+                        ki.a0 a0Var = qVar.w;
+                        if (a0Var != null) {
+                            a0Var.u(size, i23);
+                        }
+                        ki.l lVar = qVar.e;
+                        StringBuilder sb2 = new StringBuilder("GL input updated: input=");
+                        sb2.append(size);
+                        sb2.append(", crop=");
+                        sb2.append(i23);
+                        sb2.append(", filter=");
+                        sb2.append(qVar.f == qVar.c ? "NEAREST" : "LINEAR");
+                        lVar.b(sb2.toString());
+                    } catch (Throwable th7) {
+                        countDownLatch.countDown();
+                        throw th7;
+                    }
+                } catch (RuntimeException e19) {
+                    runtimeExceptionArr[0] = e19;
+                }
+                countDownLatch.countDown();
                 return;
             case 2:
-                ((SendMessagesHelper) this.d).lambda$performSendMessageRequestMulti$65((TLObject) this.e, this.b, (SendMessagesHelper.DelayedMessage) this.f, (ArrayList) this.h, this.c);
+                ((ContactsController) this.d).lambda$processLoadedContacts$36(this.b, (ArrayList) this.e, (ArrayList) this.f, (a0.i) this.h, this.c);
                 return;
             case 3:
-                xv0 xv0Var = (xv0) this.d;
+                ((SendMessagesHelper) this.d).lambda$performSendMessageRequestMulti$65((TLObject) this.e, this.b, (SendMessagesHelper.DelayedMessage) this.f, (ArrayList) this.h, this.c);
+                return;
+            case 4:
+                iw0 iw0Var = (iw0) this.d;
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) this.e;
                 MessageObject messageObject = (MessageObject) this.f;
-                org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) this.h;
-                RLottieNative[] rLottieNativeArr = xv0Var.f1;
-                RLottieNative[] rLottieNativeArr2 = xv0Var.i1;
-                int[] iArr = xv0Var.e;
-                if (xv0Var.W0) {
-                    AndroidUtilities.runOnUIThread(new vv0(xv0Var, 0));
+                org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) this.h;
+                RLottieNative[] rLottieNativeArr = iw0Var.f1;
+                RLottieNative[] rLottieNativeArr2 = iw0Var.i1;
+                int[] iArr = iw0Var.e;
+                if (iw0Var.W0) {
+                    AndroidUtilities.runOnUIThread(new gw0(iw0Var, 0));
                     return;
                 }
-                boolean z12 = false;
-                int i23 = 0;
+                boolean z13 = false;
+                int i24 = 0;
                 while (true) {
                     int length = rLottieNativeArr2.length + 2;
-                    int i24 = this.b;
-                    if (i23 >= length) {
-                        if (z12) {
-                            AndroidUtilities.runOnUIThread(new vv0(xv0Var, 1));
+                    int i25 = this.b;
+                    if (i24 >= length) {
+                        if (z13) {
+                            AndroidUtilities.runOnUIThread(new gw0(iw0Var, 1));
                             return;
                         } else {
-                            AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.l0(xv0Var, this.c, i24, t1Var));
+                            AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.l0(iw0Var, this.c, i25, u1Var));
                             return;
                         }
                     }
-                    if (i23 <= 2) {
-                        if (rLottieNativeArr2[i23] == null) {
-                            if (i23 == 0) {
-                                int i25 = xv0Var.b1;
-                                i20 = i25 == 1 ? 5 : i25 == 2 ? 6 : i25 == 3 ? 7 : i25 == 4 ? 4 : 3;
-                            } else if (i23 == 1) {
-                                int i26 = xv0Var.c1;
-                                i20 = i26 == 1 ? 11 : i26 == 2 ? 12 : i26 == 3 ? 13 : i26 == 4 ? 10 : 9;
+                    if (i24 <= 2) {
+                        if (rLottieNativeArr2[i24] == null) {
+                            if (i24 == 0) {
+                                int i26 = iw0Var.b1;
+                                i20 = i26 == 1 ? 5 : i26 == 2 ? 6 : i26 == 3 ? 7 : i26 == 4 ? 4 : 3;
+                            } else if (i24 == 1) {
+                                int i27 = iw0Var.c1;
+                                i20 = i27 == 1 ? 11 : i27 == 2 ? 12 : i27 == 3 ? 13 : i27 == 4 ? 10 : 9;
                             } else {
-                                int i27 = xv0Var.d1;
-                                i20 = i27 == 1 ? 17 : i27 == 2 ? 18 : i27 == 3 ? 19 : i27 == 4 ? 16 : 15;
+                                int i28 = iw0Var.d1;
+                                i20 = i28 == 1 ? 17 : i28 == 2 ? 18 : i28 == 3 ? 19 : i28 == 4 ? 16 : 15;
                             }
                             TLRPC.Document document = tL_messages_stickerSet.documents.get(i20);
                             readRes = AndroidUtilities.readRes(FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(document, true), 0);
                             if (TextUtils.isEmpty(readRes)) {
                                 RLottieNative b10 = RLottieNative.b(readRes, iArr, null, null);
-                                if (i23 <= 2) {
-                                    rLottieNativeArr2[i23] = b10;
-                                    xv0Var.j1[i23] = iArr[0];
+                                if (i24 <= 2) {
+                                    rLottieNativeArr2[i24] = b10;
+                                    iw0Var.j1[i24] = iArr[0];
                                 } else {
-                                    rLottieNativeArr[i23 == 3 ? (char) 0 : (char) 4] = b10;
-                                    xv0Var.g1[i23 == 3 ? (char) 0 : (char) 4] = iArr[0];
+                                    rLottieNativeArr[i24 == 3 ? (char) 0 : (char) 4] = b10;
+                                    iw0Var.g1[i24 == 3 ? (char) 0 : (char) 4] = iArr[0];
                                 }
                             } else {
-                                AndroidUtilities.runOnUIThread(new wv0(document, i24, messageObject, t1Var, tL_messages_stickerSet, 0));
-                                z12 = true;
+                                AndroidUtilities.runOnUIThread(new hw0(document, i25, messageObject, u1Var, tL_messages_stickerSet, 0));
+                                z13 = true;
                             }
                         }
-                    } else if (rLottieNativeArr[i23] == null) {
-                        i20 = i23 == 3 ? 1 : 2;
+                    } else if (rLottieNativeArr[i24] == null) {
+                        i20 = i24 == 3 ? 1 : 2;
                         TLRPC.Document document2 = tL_messages_stickerSet.documents.get(i20);
                         readRes = AndroidUtilities.readRes(FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(document2, true), 0);
                         if (TextUtils.isEmpty(readRes)) {
                         }
                     }
-                    i23++;
+                    i24++;
                 }
-            case 4:
+            case 5:
                 Activity activity = (Activity) this.d;
                 TLRPC.InputGroupCall inputGroupCall = (TLRPC.InputGroupCall) this.e;
                 TLRPC.GroupCall groupCall = (TLRPC.GroupCall) this.f;
                 HashSet hashSet = (HashSet) this.h;
-                org.telegram.ui.Components.voip.f2.a = 0L;
-                org.telegram.ui.Components.voip.f2.g(activity, this.b, inputGroupCall, this.c, groupCall, hashSet);
+                org.telegram.ui.Components.voip.g2.a = 0L;
+                org.telegram.ui.Components.voip.g2.g(activity, this.b, inputGroupCall, this.c, groupCall, hashSet);
                 return;
             default:
-                uq0 uq0Var = (uq0) this.d;
+                tq0 tq0Var = (tq0) this.d;
                 String str4 = (String) this.f;
                 TLObject tLObject = (TLObject) this.e;
                 TLRPC.User user = (TLRPC.User) this.h;
-                HashMap hashMap = uq0Var.h;
-                ArrayList arrayList = uq0Var.f;
-                ArrayList arrayList2 = uq0Var.n;
-                int size = arrayList2.size();
-                int i28 = 0;
+                HashMap hashMap = tq0Var.h;
+                ArrayList arrayList = tq0Var.f;
+                ArrayList arrayList2 = tq0Var.n;
+                int size2 = arrayList2.size();
+                int i29 = 0;
                 while (true) {
-                    if (i28 < size) {
-                        if (((String) arrayList2.get(i28)).equalsIgnoreCase(str4)) {
-                            arrayList2.remove(i28);
+                    if (i29 < size2) {
+                        if (((String) arrayList2.get(i29)).equalsIgnoreCase(str4)) {
+                            arrayList2.remove(i29);
                         } else {
-                            i28++;
+                            i29++;
                         }
                     }
                 }
@@ -545,31 +592,31 @@ public final /* synthetic */ class s2 implements Runnable {
                 while (arrayList2.size() > 20) {
                     a4.a.y(1, arrayList2);
                 }
-                uq0Var.c0();
-                if (this.b != uq0Var.y) {
+                tq0Var.c0();
+                if (this.b != tq0Var.y) {
                     return;
                 }
-                int size2 = arrayList.size();
+                int size3 = arrayList.size();
                 if (tLObject != null) {
                     TLRPC.messages_BotResults messages_botresults = (TLRPC.messages_BotResults) tLObject;
-                    uq0Var.w = messages_botresults.next_offset;
-                    int size3 = messages_botresults.results.size();
+                    tq0Var.w = messages_botresults.next_offset;
+                    int size4 = messages_botresults.results.size();
                     i21 = 0;
-                    for (int i29 = 0; i29 < size3; i29++) {
-                        TLRPC.BotInlineResult botInlineResult = messages_botresults.results.get(i29);
-                        boolean z13 = this.c;
-                        if ((z13 || "photo".equals(botInlineResult.type)) && ((!z13 || "gif".equals(botInlineResult.type)) && !hashMap.containsKey(botInlineResult.id))) {
+                    for (int i30 = 0; i30 < size4; i30++) {
+                        TLRPC.BotInlineResult botInlineResult = messages_botresults.results.get(i30);
+                        boolean z14 = this.c;
+                        if ((z14 || "photo".equals(botInlineResult.type)) && ((!z14 || "gif".equals(botInlineResult.type)) && !hashMap.containsKey(botInlineResult.id))) {
                             MediaController.SearchImage searchImage = new MediaController.SearchImage();
-                            if (z13 && botInlineResult.document != null) {
-                                for (int i30 = 0; i30 < botInlineResult.document.attributes.size(); i30++) {
-                                    TLRPC.DocumentAttribute documentAttribute = botInlineResult.document.attributes.get(i30);
+                            if (z14 && botInlineResult.document != null) {
+                                for (int i31 = 0; i31 < botInlineResult.document.attributes.size(); i31++) {
+                                    TLRPC.DocumentAttribute documentAttribute = botInlineResult.document.attributes.get(i31);
                                     if ((documentAttribute instanceof TLRPC.TL_documentAttributeImageSize) || (documentAttribute instanceof TLRPC.TL_documentAttributeVideo)) {
                                         searchImage.width = documentAttribute.w;
                                         searchImage.height = documentAttribute.h;
                                         searchImage.document = botInlineResult.document;
                                         searchImage.size = 0;
                                         photo2 = botInlineResult.photo;
-                                        if (photo2 != null && (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo2.sizes, uq0Var.R, true)) != null) {
+                                        if (photo2 != null && (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo2.sizes, tq0Var.R, true)) != null) {
                                             botInlineResult.document.thumbs.add(closestPhotoSizeWithSize);
                                             botInlineResult.document.flags |= 1;
                                         }
@@ -582,7 +629,7 @@ public final /* synthetic */ class s2 implements Runnable {
                                     botInlineResult.document.thumbs.add(closestPhotoSizeWithSize);
                                     botInlineResult.document.flags |= 1;
                                 }
-                            } else if (!z13 && (photo = botInlineResult.photo) != null) {
+                            } else if (!z14 && (photo = botInlineResult.photo) != null) {
                                 TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, AndroidUtilities.getPhotoSize());
                                 TLRPC.PhotoSize closestPhotoSizeWithSize3 = FileLoader.getClosestPhotoSizeWithSize(botInlineResult.photo.sizes, 320);
                                 if (closestPhotoSizeWithSize2 != null) {
@@ -594,15 +641,15 @@ public final /* synthetic */ class s2 implements Runnable {
                                     searchImage.thumbPhotoSize = closestPhotoSizeWithSize3;
                                 }
                             } else if (botInlineResult.content != null) {
-                                int i31 = 0;
+                                int i32 = 0;
                                 while (true) {
-                                    if (i31 < botInlineResult.content.attributes.size()) {
-                                        TLRPC.DocumentAttribute documentAttribute2 = botInlineResult.content.attributes.get(i31);
+                                    if (i32 < botInlineResult.content.attributes.size()) {
+                                        TLRPC.DocumentAttribute documentAttribute2 = botInlineResult.content.attributes.get(i32);
                                         if (documentAttribute2 instanceof TLRPC.TL_documentAttributeImageSize) {
                                             searchImage.width = documentAttribute2.w;
                                             searchImage.height = documentAttribute2.h;
                                         } else {
-                                            i31++;
+                                            i32++;
                                         }
                                     }
                                 }
@@ -614,10 +661,10 @@ public final /* synthetic */ class s2 implements Runnable {
                                 }
                                 TLRPC.WebDocument webDocument2 = botInlineResult.content;
                                 searchImage.imageUrl = webDocument2.url;
-                                searchImage.size = z13 ? 0 : webDocument2.size;
+                                searchImage.size = z14 ? 0 : webDocument2.size;
                             }
                             searchImage.id = botInlineResult.id;
-                            searchImage.type = z13 ? 1 : 0;
+                            searchImage.type = z14 ? 1 : 0;
                             searchImage.inlineResult = botInlineResult;
                             HashMap<String, String> hashMap2 = new HashMap<>();
                             searchImage.params = hashMap2;
@@ -629,18 +676,18 @@ public final /* synthetic */ class s2 implements Runnable {
                             i21++;
                         }
                     }
-                    uq0Var.s = size2 == arrayList.size() || uq0Var.w == null;
+                    tq0Var.s = size3 == arrayList.size() || tq0Var.w == null;
                 } else {
                     i21 = 0;
                 }
-                uq0Var.r = false;
+                tq0Var.r = false;
                 if (i21 != 0) {
-                    uq0Var.L.s(size2, i21);
-                } else if (uq0Var.s) {
+                    tq0Var.L.s(size3, i21);
+                } else if (tq0Var.s) {
                     z10 = true;
-                    uq0Var.L.u(arrayList.size() - 1);
+                    tq0Var.L.u(arrayList.size() - 1);
                     if (arrayList.size() > 0) {
-                        uq0Var.N.e(false, z10);
+                        tq0Var.N.e(false, z10);
                         return;
                     }
                     return;
@@ -672,8 +719,18 @@ public final /* synthetic */ class s2 implements Runnable {
         this.c = z10;
     }
 
-    public /* synthetic */ s2(ContactsController contactsController, int i10, ArrayList arrayList, ArrayList arrayList2, a0.i iVar, boolean z10) {
+    public /* synthetic */ s2(ki.q qVar, Size size, int i10, boolean z10, RuntimeException[] runtimeExceptionArr, CountDownLatch countDownLatch) {
         this.a = 1;
+        this.d = qVar;
+        this.e = size;
+        this.b = i10;
+        this.c = z10;
+        this.f = runtimeExceptionArr;
+        this.h = countDownLatch;
+    }
+
+    public /* synthetic */ s2(ContactsController contactsController, int i10, ArrayList arrayList, ArrayList arrayList2, a0.i iVar, boolean z10) {
+        this.a = 2;
         this.d = contactsController;
         this.b = i10;
         this.e = arrayList;
@@ -682,9 +739,9 @@ public final /* synthetic */ class s2 implements Runnable {
         this.c = z10;
     }
 
-    public /* synthetic */ s2(uq0 uq0Var, String str, int i10, TLObject tLObject, boolean z10, TLRPC.User user) {
-        this.a = 5;
-        this.d = uq0Var;
+    public /* synthetic */ s2(tq0 tq0Var, String str, int i10, TLObject tLObject, boolean z10, TLRPC.User user) {
+        this.a = 6;
+        this.d = tq0Var;
         this.f = str;
         this.b = i10;
         this.e = tLObject;

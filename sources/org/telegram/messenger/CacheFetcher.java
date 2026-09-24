@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public abstract class CacheFetcher<Args, R> {
     private HashMap<Pair<Integer, Args>, R> cachedResults;
@@ -28,7 +28,7 @@ public abstract class CacheFetcher<Args, R> {
     }
 
     private void callCallbacks(Pair<Integer, Args> pair, R r10, boolean z10) {
-        AndroidUtilities.runOnUIThread(new uj(this, pair, r10, z10, 1));
+        AndroidUtilities.runOnUIThread(new tj(this, pair, r10, z10, 1));
     }
 
     private R getCachedResult(Pair<Integer, Args> pair) {
@@ -100,7 +100,7 @@ public abstract class CacheFetcher<Args, R> {
             cacheResult(pair, obj2);
             callCallbacks(pair, obj2, false);
         }
-        getRemote(i10, obj, l4.longValue(), new Utilities.Callback4() { // from class: org.telegram.messenger.o0
+        getRemote(i10, obj, l4.longValue(), new Utilities.Callback4() { // from class: org.telegram.messenger.p0
             @Override // org.telegram.messenger.Utilities.Callback4
             public final void run(Object obj3, Object obj4, Object obj5, Object obj6) {
                 CacheFetcher.this.lambda$fetch$0(pair, obj2, i10, obj, (Boolean) obj3, obj4, (Long) obj5, (Boolean) obj6);
@@ -127,7 +127,7 @@ public abstract class CacheFetcher<Args, R> {
         if (callback == null) {
             return;
         }
-        AndroidUtilities.runOnUIThread(new f0(this, pair, callback, 11));
+        AndroidUtilities.runOnUIThread(new g0(this, pair, callback, 11));
     }
 
     private void saveLastRequested(Pair<Integer, Args> pair) {
@@ -163,7 +163,7 @@ public abstract class CacheFetcher<Args, R> {
         R cachedResult = getCachedResult(pair);
         if (cachedResult == null || shouldRequest(pair)) {
             saveCallback(pair, callback);
-            getLocal(i10, args, new Utilities.Callback2() { // from class: org.telegram.messenger.p0
+            getLocal(i10, args, new Utilities.Callback2() { // from class: org.telegram.messenger.q0
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
                     CacheFetcher.this.lambda$fetch$1(pair, args, i10, (Long) obj, obj2);

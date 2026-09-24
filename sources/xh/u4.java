@@ -7,24 +7,24 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.pv0;
+import org.telegram.ui.Components.aw0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
-public final class u4 extends org.telegram.ui.Cells.f3 {
+public final class u4 extends org.telegram.ui.Cells.g3 {
     public final /* synthetic */ z4 E;
     public final /* synthetic */ ch.f x;
     public final /* synthetic */ int y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u4(z4 z4Var, Context context, pv0 pv0Var, String str, int i10, d6 d6Var, ch.f fVar, int i11) {
-        super(context, pv0Var, str, true, i10, d6Var);
+    public u4(z4 z4Var, Context context, aw0 aw0Var, String str, int i10, d6 d6Var, ch.f fVar, int i11) {
+        super(context, aw0Var, str, true, i10, d6Var);
         this.E = z4Var;
         this.x = fVar;
         this.y = i11;
     }
 
-    @Override // org.telegram.ui.Cells.f3
+    @Override // org.telegram.ui.Cells.g3
     public final void b() {
         TLRPC.TL_textWithEntities tL_textWithEntities;
         z4 z4Var = this.E;
@@ -67,7 +67,7 @@ public final class u4 extends org.telegram.ui.Cells.f3 {
         super.dispatchDraw(canvas);
     }
 
-    @Override // org.telegram.ui.Cells.f3, android.widget.FrameLayout, android.view.View
+    @Override // org.telegram.ui.Cells.g3, android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
         setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(12.0f), 0);
         super.onMeasure(i10, i11);

@@ -12,24 +12,24 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.ul;
+import org.telegram.messenger.ok;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.bj0;
 import org.telegram.ui.Components.e6;
-import org.telegram.ui.Components.g90;
+import org.telegram.ui.Components.lj0;
 import org.telegram.ui.Components.p6;
+import org.telegram.ui.Components.q90;
 import org.telegram.ui.Components.rr;
 import org.telegram.ui.Components.up;
 import org.telegram.ui.Components.wq;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.e70;
-import w7.x5;
-import w7.z5;
+import org.telegram.ui.c70;
+import w7.a6;
+import w7.y5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public class p0 extends FrameLayout implements g90 {
+public class p0 extends FrameLayout implements q90 {
     public boolean E;
     public boolean F;
     public xq G;
@@ -54,7 +54,7 @@ public class p0 extends FrameLayout implements g90 {
     public final Path v;
     public final org.telegram.ui.Components.voip.h w;
     public boolean x;
-    public final bj0 y;
+    public final lj0 y;
 
     public p0(Context context, d6 d6Var, boolean z10) {
         this(AndroidUtilities.dp(8.0f), context, d6Var, z10);
@@ -87,7 +87,7 @@ public class p0 extends FrameLayout implements g90 {
         d(z11);
     }
 
-    @Override // org.telegram.ui.Components.g90
+    @Override // org.telegram.ui.Components.q90
     public final boolean c() {
         return this.N;
     }
@@ -106,7 +106,7 @@ public class p0 extends FrameLayout implements g90 {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.n, this.h ? 1.0f : 0.0f);
         this.s = ofFloat;
         ofFloat.addUpdateListener(new k6(this, 11));
-        this.s.addListener(new qg.n0(this, 3));
+        this.s.addListener(new pg.d0(this, 4));
         this.s.setDuration(250L);
         this.s.setInterpolator(rr.f);
         this.s.start();
@@ -204,7 +204,7 @@ public class p0 extends FrameLayout implements g90 {
         invalidate();
     }
 
-    public bj0 getIconView() {
+    public lj0 getIconView() {
         return this.y;
     }
 
@@ -234,16 +234,16 @@ public class p0 extends FrameLayout implements g90 {
     }
 
     public void setIcon(int i10) {
-        bj0 bj0Var = this.y;
-        bj0Var.f(i10, 24, 24, null);
+        lj0 lj0Var = this.y;
+        lj0Var.f(i10, 24, 24, null);
         org.telegram.ui.Components.voip.h hVar = this.w;
         hVar.g = 2.0f;
-        hVar.p = new org.telegram.ui.web.t0(this, 26);
+        hVar.p = new org.telegram.ui.web.q0(this, 27);
         invalidate();
-        bj0Var.setVisibility(0);
+        lj0Var.setVisibility(0);
     }
 
-    @Override // org.telegram.ui.Components.g90
+    @Override // org.telegram.ui.Components.q90
     public void setLoading(boolean z10) {
         if (this.N != z10) {
             ValueAnimator valueAnimator = this.O;
@@ -257,7 +257,7 @@ public class p0 extends FrameLayout implements g90 {
             this.O = ofFloat;
             int i10 = 16;
             ofFloat.addUpdateListener(new org.telegram.ui.Components.voip.r0(this, i10));
-            this.O.addListener(new e70(i10, this, z10));
+            this.O.addListener(new c70(i10, this, z10));
             this.O.setDuration(320L);
             this.O.setInterpolator(rr.h);
             this.O.start();
@@ -279,7 +279,7 @@ public class p0 extends FrameLayout implements g90 {
         hVar.n = 1.2f;
         hVar.k = false;
         hVar.m = 4.0f;
-        LinearLayout f7 = ul.f(context, 0);
+        LinearLayout f7 = ok.f(context, 0);
         o0 o0Var = new o0(this, context, 0);
         this.d = o0Var;
         o0Var.b(0.35f, 350L, rr.h);
@@ -287,21 +287,21 @@ public class p0 extends FrameLayout implements g90 {
         o0Var.setTextColor(-1);
         o0Var.setTextSize(AndroidUtilities.dp(14.0f));
         o0Var.setTypeface(AndroidUtilities.bold());
-        bj0 bj0Var = new bj0(context);
-        this.y = bj0Var;
-        bj0Var.setColorFilter(-1);
-        bj0Var.setVisibility(8);
+        lj0 lj0Var = new lj0(context);
+        this.y = lj0Var;
+        lj0Var.setColorFilter(-1);
+        lj0Var.setVisibility(8);
         ai.f0 f0Var = new ai.f0(this, context, 27);
         this.r = f0Var;
-        f0Var.addView(f7, x5.e(-2, -2, 17));
+        f0Var.addView(f7, y5.e(-2, -2, 17));
         int k10 = i0.a.k(-1, 120);
         f0Var.setBackground(h6.i0(i10, i10, i10, i10, 0, k10, k10));
-        f7.addView(o0Var, x5.q(-2, -2, 16));
-        f7.addView(bj0Var, x5.p(24, 24, 0.0f, 16, 4, 0, 0, 0));
+        f7.addView(o0Var, y5.q(-2, -2, 16));
+        f7.addView(lj0Var, y5.p(24, 24, 0.0f, 16, 4, 0, 0, 0));
         addView(f0Var);
         setOutlineProvider(yf.i0.b);
         setClipToOutline(true);
-        z5.b(this, 0.02f, 1.2f);
+        a6.b(this, 0.02f, 1.2f);
         if (z10) {
             o0 o0Var2 = new o0(this, context, 1);
             this.e = o0Var2;

@@ -6,10 +6,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public abstract class yr {
-    public final org.telegram.ui.ActionBar.n1 a;
+    public final org.telegram.ui.ActionBar.m1 a;
     public boolean b;
 
     public yr(Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10) {
@@ -19,19 +19,19 @@ public abstract class yr {
         actionBarPopupWindow$ActionBarPopupWindowLayout.setDispatchKeyEventListener(new s(this, 27));
         actionBarPopupWindow$ActionBarPopupWindowLayout.setShownFromBottom(false);
         b(actionBarPopupWindow$ActionBarPopupWindowLayout);
-        org.telegram.ui.ActionBar.n1 n1Var = new org.telegram.ui.ActionBar.n1(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
-        this.a = n1Var;
-        n1Var.b = false;
-        n1Var.setAnimationStyle(R.style.PopupContextAnimation2);
-        n1Var.setOutsideTouchable(true);
-        n1Var.setClippingEnabled(true);
-        n1Var.setInputMethodMode(2);
-        n1Var.setSoftInputMode(0);
-        n1Var.getContentView().setFocusableInTouchMode(true);
+        org.telegram.ui.ActionBar.m1 m1Var = new org.telegram.ui.ActionBar.m1(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
+        this.a = m1Var;
+        m1Var.b = false;
+        m1Var.setAnimationStyle(R.style.PopupContextAnimation2);
+        m1Var.setOutsideTouchable(true);
+        m1Var.setClippingEnabled(true);
+        m1Var.setInputMethodMode(2);
+        m1Var.setSoftInputMode(0);
+        m1Var.getContentView().setFocusableInTouchMode(true);
         if (AndroidUtilities.isAccessibilityTouchExplorationEnabled()) {
-            n1Var.setFocusable(true);
+            m1Var.setFocusable(true);
         }
-        n1Var.setOnDismissListener(new PopupWindow.OnDismissListener() { // from class: org.telegram.ui.Components.xr
+        m1Var.setOnDismissListener(new PopupWindow.OnDismissListener() { // from class: org.telegram.ui.Components.xr
             @Override // android.widget.PopupWindow.OnDismissListener
             public final void onDismiss() {
                 yr yrVar = yr.this;
@@ -42,9 +42,9 @@ public abstract class yr {
     }
 
     public final void a() {
-        org.telegram.ui.ActionBar.n1 n1Var = this.a;
-        if (n1Var != null) {
-            n1Var.dismiss();
+        org.telegram.ui.ActionBar.m1 m1Var = this.a;
+        if (m1Var != null) {
+            m1Var.dismiss();
         }
     }
 

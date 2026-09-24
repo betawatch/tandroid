@@ -3,9 +3,9 @@ package xh;
 import android.app.Activity;
 import android.view.Menu;
 import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.xn;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class g0 extends ChatActivityEnterView {
     public final /* synthetic */ j0 o5;
@@ -17,14 +17,14 @@ public final class g0 extends ChatActivityEnterView {
     }
 
     @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final void B0(float f7) {
+    public final void A0(float f7) {
         j0 j0Var = this.o5;
         j0Var.f.setInputBubbleHeight(f7);
         j0Var.o();
     }
 
     @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final void i0(Menu menu) {
-        xn.k8(menu, null, false, false, false, false);
+    public final void h0(Menu menu) {
+        wn.k8(menu, null, false, false, false, false);
     }
 }

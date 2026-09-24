@@ -9,9 +9,9 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.SignInAccount;
 import com.google.android.gms.common.api.Scope;
 import java.util.ArrayList;
-import w7.d0;
+import w7.e0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class d implements Parcelable.Creator {
     public final /* synthetic */ int a;
@@ -24,7 +24,7 @@ public final class d implements Parcelable.Creator {
     public final Object createFromParcel(Parcel parcel) {
         switch (this.a) {
             case 0:
-                int z10 = d0.z(parcel);
+                int z10 = e0.z(parcel);
                 String str = null;
                 String str2 = null;
                 String str3 = null;
@@ -41,50 +41,50 @@ public final class d implements Parcelable.Creator {
                     int readInt = parcel.readInt();
                     switch ((char) readInt) {
                         case 1:
-                            i10 = d0.u(parcel, readInt);
+                            i10 = e0.u(parcel, readInt);
                             break;
                         case 2:
-                            str = d0.h(parcel, readInt);
+                            str = e0.h(parcel, readInt);
                             break;
                         case 3:
-                            str2 = d0.h(parcel, readInt);
+                            str2 = e0.h(parcel, readInt);
                             break;
                         case 4:
-                            str3 = d0.h(parcel, readInt);
+                            str3 = e0.h(parcel, readInt);
                             break;
                         case 5:
-                            str4 = d0.h(parcel, readInt);
+                            str4 = e0.h(parcel, readInt);
                             break;
                         case 6:
-                            uri = (Uri) d0.g(parcel, readInt, Uri.CREATOR);
+                            uri = (Uri) e0.g(parcel, readInt, Uri.CREATOR);
                             break;
                         case 7:
-                            str5 = d0.h(parcel, readInt);
+                            str5 = e0.h(parcel, readInt);
                             break;
                         case '\b':
-                            j3 = d0.w(parcel, readInt);
+                            j3 = e0.w(parcel, readInt);
                             break;
                         case '\t':
-                            str6 = d0.h(parcel, readInt);
+                            str6 = e0.h(parcel, readInt);
                             break;
                         case '\n':
-                            arrayList = d0.l(parcel, readInt, Scope.CREATOR);
+                            arrayList = e0.l(parcel, readInt, Scope.CREATOR);
                             break;
                         case 11:
-                            str7 = d0.h(parcel, readInt);
+                            str7 = e0.h(parcel, readInt);
                             break;
                         case '\f':
-                            str8 = d0.h(parcel, readInt);
+                            str8 = e0.h(parcel, readInt);
                             break;
                         default:
-                            d0.y(parcel, readInt);
+                            e0.y(parcel, readInt);
                             break;
                     }
                 }
-                d0.m(parcel, z10);
+                e0.m(parcel, z10);
                 return new GoogleSignInAccount(i10, str, str2, str3, str4, uri, str5, j3, str6, arrayList, str7, str8);
             case 1:
-                int z11 = d0.z(parcel);
+                int z11 = e0.z(parcel);
                 ArrayList arrayList2 = null;
                 ArrayList arrayList3 = null;
                 Account account = null;
@@ -99,44 +99,44 @@ public final class d implements Parcelable.Creator {
                     int readInt2 = parcel.readInt();
                     switch ((char) readInt2) {
                         case 1:
-                            i11 = d0.u(parcel, readInt2);
+                            i11 = e0.u(parcel, readInt2);
                             break;
                         case 2:
-                            arrayList3 = d0.l(parcel, readInt2, Scope.CREATOR);
+                            arrayList3 = e0.l(parcel, readInt2, Scope.CREATOR);
                             break;
                         case 3:
-                            account = (Account) d0.g(parcel, readInt2, Account.CREATOR);
+                            account = (Account) e0.g(parcel, readInt2, Account.CREATOR);
                             break;
                         case 4:
-                            z12 = d0.n(parcel, readInt2);
+                            z12 = e0.n(parcel, readInt2);
                             break;
                         case 5:
-                            z13 = d0.n(parcel, readInt2);
+                            z13 = e0.n(parcel, readInt2);
                             break;
                         case 6:
-                            z14 = d0.n(parcel, readInt2);
+                            z14 = e0.n(parcel, readInt2);
                             break;
                         case 7:
-                            str9 = d0.h(parcel, readInt2);
+                            str9 = e0.h(parcel, readInt2);
                             break;
                         case '\b':
-                            str10 = d0.h(parcel, readInt2);
+                            str10 = e0.h(parcel, readInt2);
                             break;
                         case '\t':
-                            arrayList2 = d0.l(parcel, readInt2, a6.a.CREATOR);
+                            arrayList2 = e0.l(parcel, readInt2, a6.a.CREATOR);
                             break;
                         case '\n':
-                            str11 = d0.h(parcel, readInt2);
+                            str11 = e0.h(parcel, readInt2);
                             break;
                         default:
-                            d0.y(parcel, readInt2);
+                            e0.y(parcel, readInt2);
                             break;
                     }
                 }
-                d0.m(parcel, z11);
+                e0.m(parcel, z11);
                 return new GoogleSignInOptions(i11, arrayList3, account, z12, z13, z14, str9, str10, GoogleSignInOptions.c(arrayList2), str11);
             default:
-                int z15 = d0.z(parcel);
+                int z15 = e0.z(parcel);
                 String str12 = "";
                 GoogleSignInAccount googleSignInAccount = null;
                 String str13 = "";
@@ -144,16 +144,16 @@ public final class d implements Parcelable.Creator {
                     int readInt3 = parcel.readInt();
                     char c10 = (char) readInt3;
                     if (c10 == 4) {
-                        str12 = d0.h(parcel, readInt3);
+                        str12 = e0.h(parcel, readInt3);
                     } else if (c10 == 7) {
-                        googleSignInAccount = (GoogleSignInAccount) d0.g(parcel, readInt3, GoogleSignInAccount.CREATOR);
+                        googleSignInAccount = (GoogleSignInAccount) e0.g(parcel, readInt3, GoogleSignInAccount.CREATOR);
                     } else if (c10 != '\b') {
-                        d0.y(parcel, readInt3);
+                        e0.y(parcel, readInt3);
                     } else {
-                        str13 = d0.h(parcel, readInt3);
+                        str13 = e0.h(parcel, readInt3);
                     }
                 }
-                d0.m(parcel, z15);
+                e0.m(parcel, z15);
                 return new SignInAccount(str12, googleSignInAccount, str13);
         }
     }

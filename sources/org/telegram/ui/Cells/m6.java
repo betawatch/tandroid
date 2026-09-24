@@ -2,13 +2,13 @@ package org.telegram.ui.Cells;
 
 import android.view.View;
 import org.telegram.ui.Components.ao;
-import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.wl0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class m6 extends ai.ca {
-    public final /* synthetic */ int S = 1;
+    public final /* synthetic */ int S = 0;
     public final /* synthetic */ View T;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -24,11 +24,11 @@ public final class m6 extends ai.ca {
                 ((o6) this.T).b(j3);
                 break;
             case 1:
-                bb bbVar = (bb) this.T;
-                org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
+                za zaVar = (za) this.T;
+                org.telegram.ui.ActionBar.m2 R = LaunchActivity.R();
                 if (R != null) {
                     R.getOrCreateStoryViewer().getClass();
-                    R.getOrCreateStoryViewer().D(bbVar.getContext(), j3, ai.u9.a((ml0) bbVar.getParent()));
+                    R.getOrCreateStoryViewer().D(zaVar.getContext(), j3, ai.u9.a((wl0) zaVar.getParent()));
                     break;
                 }
                 break;
@@ -40,9 +40,9 @@ public final class m6 extends ai.ca {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m6(bb bbVar) {
+    public m6(za zaVar) {
         super(null, false);
-        this.T = bbVar;
+        this.T = zaVar;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

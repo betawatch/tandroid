@@ -13,18 +13,18 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.a90;
-import org.telegram.ui.Components.e90;
-import org.telegram.ui.Components.h90;
+import org.telegram.ui.Components.dm0;
+import org.telegram.ui.Components.k90;
+import org.telegram.ui.Components.o90;
+import org.telegram.ui.Components.r90;
 import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.tl0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class va {
-    public e90 a;
+    public o90 a;
     public org.telegram.ui.Components.z5 b;
-    public final a90 c;
+    public final k90 c;
     public org.telegram.ui.Components.v5 d;
     public StaticLayout e;
     public org.telegram.ui.Components.v5 f;
@@ -32,7 +32,7 @@ public final class va {
     public ta[] h;
     public final ArrayList i;
     public final Stack j;
-    public final vh.m k;
+    public final vh.l k;
     public int l;
     public int m;
     public CharSequence n;
@@ -40,14 +40,14 @@ public final class va {
     public sa p;
     public boolean q;
     public final org.telegram.ui.Components.e6 r;
-    public final h90 s;
+    public final r90 s;
     public final Path t;
     public final AtomicReference u;
     public final /* synthetic */ wa v;
 
     public va(wa waVar) {
         this.v = waVar;
-        this.c = new a90(waVar);
+        this.c = new k90(waVar);
         ArrayList arrayList = new ArrayList();
         this.i = arrayList;
         this.j = new Stack();
@@ -56,13 +56,13 @@ public final class va {
         Path path = new Path();
         this.t = path;
         this.u = new AtomicReference();
-        this.k = new vh.m(waVar, arrayList, new a1.c(this, 9));
-        h90 h90Var = new h90();
-        this.s = h90Var;
-        h90Var.x = path;
-        h90Var.j(4.0f);
-        h90Var.f(org.telegram.ui.ActionBar.h6.l1(0.3f, -1), org.telegram.ui.ActionBar.h6.l1(0.1f, -1), org.telegram.ui.ActionBar.h6.l1(0.2f, -1), org.telegram.ui.ActionBar.h6.l1(0.7f, -1));
-        h90Var.setCallback(waVar);
+        this.k = new vh.l(waVar, arrayList, new a1.c(this, 9));
+        r90 r90Var = new r90();
+        this.s = r90Var;
+        r90Var.x = path;
+        r90Var.j(4.0f);
+        r90Var.f(org.telegram.ui.ActionBar.h6.l1(0.3f, -1), org.telegram.ui.ActionBar.h6.l1(0.1f, -1), org.telegram.ui.ActionBar.h6.l1(0.2f, -1), org.telegram.ui.ActionBar.h6.l1(0.7f, -1));
+        r90Var.setCallback(waVar);
     }
 
     public final int a(int i10) {
@@ -111,9 +111,9 @@ public final class va {
         }
         if (e > 0.0f || this.q) {
             int i10 = (int) (e * 255.0f * lerp);
-            h90 h90Var = this.s;
-            h90Var.setAlpha(i10);
-            h90Var.draw(canvas2);
+            r90 r90Var = this.s;
+            r90Var.setAlpha(i10);
+            r90Var.draw(canvas2);
             waVar.invalidate();
         }
     }
@@ -253,7 +253,7 @@ public final class va {
         if (arrayList.isEmpty()) {
             staticLayout.draw(canvas);
         } else {
-            vh.h.g(this.v, false, -1, 0, this.u, 0, staticLayout, arrayList, canvas, false);
+            vh.g.g(this.v, false, -1, 0, this.u, 0, staticLayout, arrayList, canvas, false);
         }
     }
 
@@ -278,7 +278,7 @@ public final class va {
             }
             sa saVar2 = this.p;
             if (saVar2 != null) {
-                this.l = org.telegram.messenger.z0.C(4.0f, saVar2.b(), this.l);
+                this.l = org.telegram.messenger.f0.C(4.0f, saVar2.b(), this.l);
             }
             this.m = this.l;
             if (this == vaVarArr[0]) {
@@ -296,7 +296,7 @@ public final class va {
         int dp = saVar3 != null ? AndroidUtilities.dp(8.0f) + saVar3.b() : 0;
         sa saVar4 = this.p;
         if (saVar4 != null) {
-            this.l = org.telegram.messenger.z0.C(8.0f, saVar4.b(), this.l);
+            this.l = org.telegram.messenger.f0.C(8.0f, saVar4.b(), this.l);
         }
         this.l += dp;
         float measureText = textPaint2.measureText(" ");
@@ -328,7 +328,7 @@ public final class va {
             this.g = wa.a(waVar, textPaint2, this.n.subSequence(0, this.e.getLineEnd(2)), i10);
             stack.addAll(arrayList);
             arrayList.clear();
-            vh.h.c(xaVar, this.e, stack, arrayList);
+            vh.g.c(xaVar, this.e, stack, arrayList);
             float lineRight = this.e.getLineRight(2) + measureText;
             if (this.h != null) {
                 int i11 = 0;
@@ -381,13 +381,13 @@ public final class va {
             this.m = this.l;
             stack.addAll(arrayList);
             arrayList.clear();
-            vh.h.c(waVar, this.e, stack, arrayList);
+            vh.g.c(waVar, this.e, stack, arrayList);
         }
         int i13 = waVar.E;
         int i14 = waVar.F;
-        vh.m mVar = this.k;
-        mVar.c = i13;
-        mVar.d = i14;
+        vh.l lVar = this.k;
+        lVar.c = i13;
+        lVar.d = i14;
     }
 
     public final void f(Layout layout, float f7, float f10) {
@@ -418,7 +418,7 @@ public final class va {
             ua uaVar = new ua(this, 0);
             saVar.r = waVar;
             saVar.s = uaVar;
-            new tl0(waVar);
+            new dm0(waVar);
             saVar.j.setCallback(waVar);
             saVar.h.a = waVar;
             saVar.i.a = waVar;
@@ -429,7 +429,7 @@ public final class va {
             ua uaVar2 = new ua(this, 1);
             saVar3.r = waVar;
             saVar3.s = uaVar2;
-            new tl0(waVar);
+            new dm0(waVar);
             saVar3.j.setCallback(waVar);
             saVar3.h.a = waVar;
             saVar3.i.a = waVar;

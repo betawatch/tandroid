@@ -1,27 +1,34 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.Canvas;
+import android.view.MotionEvent;
+import android.widget.EditText;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class nb0 extends xd {
-    public final /* synthetic */ sb0 c;
+public final class nb0 extends EditText {
+    public final /* synthetic */ int a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nb0(sb0 sb0Var, Context context) {
+    public /* synthetic */ nb0(Context context, int i10) {
         super(context);
-        this.c = sb0Var;
+        this.a = i10;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        this.c.getClass();
-    }
-
-    @Override // org.telegram.ui.xd, android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
+    @Override // android.widget.TextView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 0:
+                if (motionEvent.getAction() == 1) {
+                    setCursorVisible(true);
+                }
+                break;
+            default:
+                if (motionEvent.getAction() == 1) {
+                    setCursorVisible(true);
+                }
+                break;
+        }
+        return super.onTouchEvent(motionEvent);
     }
 }

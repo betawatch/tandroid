@@ -1,21 +1,21 @@
 package ai;
 
 import android.view.ViewGroup;
-import org.telegram.ui.Components.wk0;
-import org.telegram.ui.ix;
+import org.telegram.ui.Components.gl0;
+import org.telegram.ui.hx;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class v extends og.b {
     public final boolean d;
-    public final /* synthetic */ ix e;
+    public final /* synthetic */ hx e;
 
-    public v(ix ixVar, boolean z10) {
-        this.e = ixVar;
+    public v(hx hxVar, boolean z10) {
+        this.e = hxVar;
         this.d = z10;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.vl0
     public final boolean D(s4.c1 c1Var) {
         return false;
     }
@@ -23,8 +23,8 @@ public final class v extends og.b {
     @Override // s4.h0
     public final int h() {
         boolean z10 = this.d;
-        ix ixVar = this.e;
-        return (z10 ? ixVar.y : ixVar.x).size();
+        hx hxVar = this.e;
+        return (z10 ? hxVar.y : hxVar.x).size();
     }
 
     @Override // s4.h0
@@ -32,11 +32,11 @@ public final class v extends og.b {
         a0 a0Var = (a0) c1Var.a;
         a0Var.b = i10;
         boolean z10 = this.d;
-        ix ixVar = this.e;
+        hx hxVar = this.e;
         if (z10) {
-            a0Var.setDialogId(((w) ixVar.y.get(i10)).c);
+            a0Var.setDialogId(((w) hxVar.y.get(i10)).c);
         } else {
-            a0Var.setDialogId(((w) ixVar.x.get(i10)).c);
+            a0Var.setDialogId(((w) hxVar.x.get(i10)).c);
         }
     }
 
@@ -48,6 +48,6 @@ public final class v extends og.b {
         if (z10) {
             a0Var.d(1.0f, 1.0f, 0.0f, false);
         }
-        return new wk0(a0Var);
+        return new gl0(a0Var);
     }
 }

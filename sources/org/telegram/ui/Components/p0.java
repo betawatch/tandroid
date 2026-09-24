@@ -2,19 +2,19 @@ package org.telegram.ui.Components;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p0 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ EditTextBoldCursor b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.b2 c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.a2 c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.m2 d;
 
-    public /* synthetic */ p0(EditTextBoldCursor editTextBoldCursor, org.telegram.ui.ActionBar.b2 b2Var, org.telegram.ui.ActionBar.n2 n2Var, int i10) {
+    public /* synthetic */ p0(EditTextBoldCursor editTextBoldCursor, org.telegram.ui.ActionBar.a2 a2Var, org.telegram.ui.ActionBar.m2 m2Var, int i10) {
         this.a = i10;
         this.b = editTextBoldCursor;
-        this.c = b2Var;
-        this.d = n2Var;
+        this.c = a2Var;
+        this.d = m2Var;
     }
 
     @Override // java.lang.Runnable

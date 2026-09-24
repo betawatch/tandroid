@@ -13,12 +13,12 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
-public abstract class h4 extends v7.r5 implements i9.w {
+public abstract class h4 extends v7.s5 implements i9.w {
     public static final boolean d;
     public static final Logger e;
-    public static final v7.p5 f;
+    public static final v7.q5 f;
     public static final Object h;
     public volatile Object a;
     public volatile b4 b;
@@ -26,7 +26,7 @@ public abstract class h4 extends v7.r5 implements i9.w {
 
     static {
         boolean z10;
-        v7.p5 d4Var;
+        v7.q5 d4Var;
         Throwable th2;
         Throwable th3;
         try {
@@ -157,7 +157,7 @@ public abstract class h4 extends v7.r5 implements i9.w {
     /* JADX WARN: Multi-variable type inference failed */
     public String c() {
         if (this instanceof ScheduledFuture) {
-            return org.telegram.ui.Cells.q3.h(((ScheduledFuture) this).getDelay(TimeUnit.MILLISECONDS), "remaining delay=[", " ms]");
+            return org.telegram.ui.Cells.c1.j(((ScheduledFuture) this).getDelay(TimeUnit.MILLISECONDS), "remaining delay=[", " ms]");
         }
         return null;
     }
@@ -224,9 +224,9 @@ public abstract class h4 extends v7.r5 implements i9.w {
         if (g4Var2 != g4Var) {
             g4 g4Var3 = new g4();
             do {
-                v7.p5 p5Var = f;
-                p5Var.c(g4Var3, g4Var2);
-                if (p5Var.g(this, g4Var2, g4Var3)) {
+                v7.q5 q5Var = f;
+                q5Var.c(g4Var3, g4Var2);
+                if (q5Var.g(this, g4Var2, g4Var3)) {
                     do {
                         LockSupport.park(this);
                         if (Thread.interrupted()) {
@@ -353,9 +353,9 @@ public abstract class h4 extends v7.r5 implements i9.w {
                 if (g4Var2 != g4Var) {
                     g4 g4Var3 = new g4();
                     while (true) {
-                        v7.p5 p5Var = f;
-                        p5Var.c(g4Var3, g4Var2);
-                        if (p5Var.g(this, g4Var2, g4Var3)) {
+                        v7.q5 q5Var = f;
+                        q5Var.c(g4Var3, g4Var2);
+                        if (q5Var.g(this, g4Var2, g4Var3)) {
                             j10 = j11;
                             while (true) {
                                 LockSupport.parkNanos(this, Math.min(nanos, 2147483647999999999L));

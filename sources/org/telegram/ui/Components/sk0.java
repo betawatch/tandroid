@@ -1,53 +1,17 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class sk0 extends Drawable {
-    public final Paint a = new Paint(1);
-    public final /* synthetic */ View b;
-    public final /* synthetic */ Path c;
-    public final /* synthetic */ RectF d;
-    public final /* synthetic */ ml0 e;
+public final class sk0 {
+    public float a;
+    public float b;
+    public float c;
+    public float d;
 
-    public sk0(ml0 ml0Var, View view, Path path, RectF rectF) {
-        this.e = ml0Var;
-        this.b = view;
-        this.c = path;
-        this.d = rectF;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        canvas.save();
-        View view = this.b;
-        canvas.translate(-view.getX(), -view.getY());
-        canvas.clipPath(this.c);
-        int v02 = org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.d6, this.e.p2);
-        Paint paint = this.a;
-        paint.setColor(i0.a.k(v02, paint.getAlpha()));
-        canvas.drawRect(this.d, paint);
-        canvas.restore();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.a.setAlpha(i10);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    public sk0(float f7, float f10, float f11, float f12) {
+        this.a = f7;
+        this.b = f10;
+        this.c = f11;
+        this.d = f12;
     }
 }

@@ -1,75 +1,57 @@
 package org.telegram.ui.Components;
 
-import android.webkit.JavascriptInterface;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaDataController;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class pf0 {
-    public final /* synthetic */ org.telegram.ui.bu0 a;
+    public final qf0 a = new qf0();
+    public final qf0 b = new qf0();
+    public final qf0 c = new qf0();
+    public final qf0 d = new qf0();
+    public final ByteBuffer e;
+    public int f;
 
-    public pf0(org.telegram.ui.bu0 bu0Var) {
-        this.a = bu0Var;
+    public pf0() {
+        ByteBuffer allocateDirect = ByteBuffer.allocateDirect(800);
+        this.e = allocateDirect;
+        allocateDirect.order(ByteOrder.LITTLE_ENDIAN);
     }
 
-    @JavascriptInterface
-    public void onPlayerError(String str) {
-        AndroidUtilities.runOnUIThread(new kd(this, Integer.parseInt(str), 5));
-    }
-
-    @JavascriptInterface
-    public void onPlayerLoaded() {
-        AndroidUtilities.runOnUIThread(new nf0(this, 0));
-    }
-
-    @JavascriptInterface
-    public void onPlayerNotifyBufferedPosition(float f7) {
-        this.a.J = f7;
-    }
-
-    @JavascriptInterface
-    public void onPlayerNotifyCurrentPosition(int i10) {
-        this.a.I = i10 * MediaDataController.MAX_STYLE_RUNS_COUNT;
-    }
-
-    @JavascriptInterface
-    public void onPlayerNotifyDuration(int i10) {
-        int i11 = i10 * MediaDataController.MAX_STYLE_RUNS_COUNT;
-        org.telegram.ui.bu0 bu0Var = this.a;
-        bu0Var.H = i11;
-        String str = bu0Var.s;
-        if (str != null) {
-            qf0.a(bu0Var, str);
-            bu0Var.s = null;
+    public final void a() {
+        ByteBuffer byteBuffer = this.e;
+        byteBuffer.position(0);
+        qf0 qf0Var = this.a;
+        if (qf0Var.f == null) {
+            qf0Var.a();
         }
+        float[] fArr = qf0Var.f;
+        qf0 qf0Var2 = this.b;
+        if (qf0Var2.f == null) {
+            qf0Var2.a();
+        }
+        float[] fArr2 = qf0Var2.f;
+        qf0 qf0Var3 = this.c;
+        if (qf0Var3.f == null) {
+            qf0Var3.a();
+        }
+        float[] fArr3 = qf0Var3.f;
+        qf0 qf0Var4 = this.d;
+        if (qf0Var4.f == null) {
+            qf0Var4.a();
+        }
+        float[] fArr4 = qf0Var4.f;
+        for (int i10 = 0; i10 < 200; i10++) {
+            byteBuffer.put((byte) (fArr2[i10] * 255.0f));
+            byteBuffer.put((byte) (fArr3[i10] * 255.0f));
+            byteBuffer.put((byte) (fArr4[i10] * 255.0f));
+            byteBuffer.put((byte) (fArr[i10] * 255.0f));
+        }
+        byteBuffer.position(0);
     }
 
-    @JavascriptInterface
-    public void onPlayerStateChange(String str) {
-        int parseInt = Integer.parseInt(str);
-        org.telegram.ui.bu0 bu0Var = this.a;
-        boolean z10 = bu0Var.G;
-        boolean z11 = false;
-        int i10 = 1;
-        bu0Var.G = parseInt == 1 || parseInt == 3;
-        bu0Var.b(z10);
-        if (parseInt != 0) {
-            if (parseInt == 1) {
-                z11 = true;
-            } else if (parseInt != 2) {
-                if (parseInt == 3) {
-                    z11 = true;
-                    i10 = 2;
-                }
-            }
-            i10 = 3;
-        } else {
-            i10 = 4;
-        }
-        if (i10 == 3 && bu0Var.h.getVisibility() != 4) {
-            AndroidUtilities.runOnUIThread(new nf0(this, 1), 300L);
-        }
-        AndroidUtilities.runOnUIThread(new i2.g0(this, z11, i10, 1));
+    public final boolean b() {
+        return this.a.b() && this.b.b() && this.c.b() && this.d.b();
     }
 }

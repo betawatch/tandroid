@@ -14,11 +14,12 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.ok;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ia implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -156,7 +157,7 @@ public final /* synthetic */ class ia implements Utilities.Callback {
                     lbVar.getWindow().setAttributes(lbVar.b);
                 }
                 kbVar.setTouchable(true);
-                new org.telegram.ui.Components.xc(kbVar, dVar).G(R.raw.fire_on, 3, AndroidUtilities.replaceSingleTag(LocaleController.formatPluralString("StoryPeriodPremium", intValue, new Object[0]), org.telegram.ui.ActionBar.h6.gc, 0, new ha(lcVar4, 27), dVar)).k(true);
+                new org.telegram.ui.Components.yc(kbVar, dVar).G(R.raw.fire_on, 3, AndroidUtilities.replaceSingleTag(LocaleController.formatPluralString("StoryPeriodPremium", intValue, new Object[0]), org.telegram.ui.ActionBar.h6.gc, 0, new ha(lcVar4, 27), dVar)).k(true);
                 break;
             case 6:
                 Boolean bool = (Boolean) obj;
@@ -168,13 +169,13 @@ public final /* synthetic */ class ia implements Utilities.Callback {
                         wcVar.G = true;
                         pc pcVar = wcVar.a;
                         if (pcVar != null) {
-                            pcVar.Q(true);
+                            pcVar.O(true);
                         }
                     }
                 }
                 lcVar5.X0.x(2, bool.booleanValue());
                 lcVar5.Y0.clearAnimation();
-                lcVar5.Y0.animate().alpha(bool.booleanValue() ? 0.0f : 1.0f).setDuration(120L).start();
+                ok.r(lcVar5.Y0.animate(), bool.booleanValue() ? 0.0f : 1.0f, 120L);
                 org.telegram.ui.Components.qc qcVar = org.telegram.ui.Components.qc.w;
                 if (qcVar != null && qcVar.a == 2) {
                     qcVar.l();

@@ -1,20 +1,40 @@
 package org.telegram.ui.Cells;
 
-import android.graphics.RectF;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.f01;
+import android.view.View;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class cb {
-    public final f01 a;
-    public f01 b;
-    public final boolean c;
-    public final RectF d = new RectF();
+public final /* synthetic */ class cb implements View.OnLongClickListener {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public cb(CharSequence charSequence, CharSequence charSequence2, boolean z10) {
-        this.a = new f01(charSequence, 12.0f, null);
-        this.b = new f01(charSequence2, 12.0f, AndroidUtilities.bold());
-        this.c = z10;
+    public /* synthetic */ cb(eb ebVar, db dbVar, int i10) {
+        this.c = ebVar;
+        this.d = dbVar;
+        this.b = i10;
+    }
+
+    @Override // android.view.View.OnLongClickListener
+    public final boolean onLongClick(View view) {
+        switch (this.a) {
+            case 0:
+                eb ebVar = (eb) this.c;
+                db dbVar = (db) this.d;
+                return ebVar.b(dbVar.h, this.b);
+            default:
+                yh.k5 k5Var = (yh.k5) this.c;
+                Runnable runnable = (Runnable) this.d;
+                k5Var.f(this.b, true);
+                runnable.run();
+                return true;
+        }
+    }
+
+    public /* synthetic */ cb(yh.k5 k5Var, int i10, Runnable runnable) {
+        this.c = k5Var;
+        this.b = i10;
+        this.d = runnable;
     }
 }

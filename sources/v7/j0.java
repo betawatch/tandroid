@@ -1,19 +1,27 @@
 package v7;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+import android.os.Build;
+import android.webkit.WebView;
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
-public final class j0 implements ia.d {
-    public static final j0 a = new j0();
-
-    static {
-        org.telegram.ui.Cells.q3.t(org.telegram.ui.Cells.q3.k(h.class, org.telegram.ui.Cells.q3.m(7, org.telegram.ui.Cells.q3.k(h.class, org.telegram.ui.Cells.q3.m(6, org.telegram.ui.Cells.q3.k(h.class, org.telegram.ui.Cells.q3.m(5, org.telegram.ui.Cells.q3.k(h.class, org.telegram.ui.Cells.q3.m(4, org.telegram.ui.Cells.q3.k(h.class, org.telegram.ui.Cells.q3.m(3, org.telegram.ui.Cells.q3.k(h.class, org.telegram.ui.Cells.q3.m(2, org.telegram.ui.Cells.q3.k(h.class, new e(1)))))))))))))));
-    }
-
-    @Override // ia.a
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+public abstract class j0 {
+    public static InvocationHandler a() {
+        ClassLoader classLoader;
+        if (Build.VERSION.SDK_INT >= 28) {
+            classLoader = b5.d.t();
+        } else {
+            try {
+                Method declaredMethod = WebView.class.getDeclaredMethod("getFactory", null);
+                declaredMethod.setAccessible(true);
+                classLoader = declaredMethod.invoke(null, null).getClass().getClassLoader();
+            } catch (IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
+                throw new RuntimeException(e);
+            }
         }
-        throw null;
+        return (InvocationHandler) Class.forName("org.chromium.support_lib_glue.SupportLibReflectionUtil", false, classLoader).getDeclaredMethod("createWebViewProviderFactory", null).invoke(null, null);
     }
 }

@@ -5,18 +5,18 @@ import java.util.HashMap;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.gh;
+import org.telegram.ui.Components.hh;
 import org.telegram.ui.Components.ui;
 import org.telegram.ui.Components.wi;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class z implements ui {
     public final /* synthetic */ wi a;
-    public final /* synthetic */ p0 b;
+    public final /* synthetic */ n0 b;
 
-    public z(p0 p0Var, wi wiVar) {
-        this.b = p0Var;
+    public z(n0 n0Var, wi wiVar) {
+        this.b = n0Var;
         this.a = wiVar;
     }
 
@@ -33,8 +33,8 @@ public final class z implements ui {
             if (str == null) {
                 str = photoEntry.path;
             }
-            p0 p0Var = this.b;
-            p0Var.f0(p0Var.h0(str, true));
+            n0 n0Var = this.b;
+            n0Var.f0(n0Var.h0(str, true));
             wiVar.dismiss();
         } catch (Throwable th2) {
             FileLog.e(th2);
@@ -53,8 +53,8 @@ public final class z implements ui {
     }
 
     @Override // org.telegram.ui.Components.ui
-    public final void x0(gh ghVar) {
-        ghVar.run();
+    public final void x0(hh hhVar) {
+        hhVar.run();
     }
 
     @Override // org.telegram.ui.Components.ui

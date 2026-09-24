@@ -5,7 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.view.View;
 import android.view.ViewPropertyAnimator;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class ys extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -39,13 +39,13 @@ public final class ys extends AnimatorListenerAdapter {
                     view.setTranslationY(0.0f);
                 }
                 View view2 = this.b.a;
-                if (!(view2 instanceof org.telegram.ui.Cells.r2)) {
+                if (!(view2 instanceof org.telegram.ui.Cells.s2)) {
                     if (view2 instanceof gg.l) {
                         ((gg.l) view2).a = false;
                         break;
                     }
                 } else {
-                    ((org.telegram.ui.Cells.r2) view2).setMoving(false);
+                    ((org.telegram.ui.Cells.s2) view2).setMoving(false);
                     break;
                 }
                 break;
@@ -74,8 +74,8 @@ public final class ys extends AnimatorListenerAdapter {
                 btVar.w.remove(c1Var);
                 btVar.A();
                 View view = c1Var.a;
-                if (view instanceof org.telegram.ui.Cells.r2) {
-                    ((org.telegram.ui.Cells.r2) view).setMoving(false);
+                if (view instanceof org.telegram.ui.Cells.s2) {
+                    ((org.telegram.ui.Cells.s2) view).setMoving(false);
                 } else if (view instanceof gg.l) {
                     ((gg.l) view).a = false;
                 }

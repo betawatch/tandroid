@@ -18,12 +18,12 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class z9 extends org.telegram.ui.ActionBar.n2 {
+public final class z9 extends org.telegram.ui.ActionBar.m2 {
     public y9 a;
     public y9 b;
-    public org.telegram.ui.ActionBar.v0 c;
+    public org.telegram.ui.ActionBar.u0 c;
     public org.telegram.ui.ActionBar.d6 d;
 
     public static void U(z9 z9Var) {
@@ -54,7 +54,7 @@ public final class z9 extends org.telegram.ui.ActionBar.n2 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final View createView(Context context) {
         org.telegram.ui.ActionBar.k kVar = this.actionBar;
         int i10 = org.telegram.ui.ActionBar.h6.f8;
@@ -102,7 +102,7 @@ public final class z9 extends org.telegram.ui.ActionBar.n2 {
         this.a.setCursorColor(org.telegram.ui.ActionBar.h6.v0(i12, d6Var));
         this.a.setCursorSize(AndroidUtilities.dp(20.0f));
         this.a.setCursorWidth(1.5f);
-        linearLayout.addView(this.a, w7.x5.k(24.0f, 24.0f, 24.0f, 0.0f, -1, 36));
+        linearLayout.addView(this.a, w7.y5.k(24.0f, 24.0f, 24.0f, 0.0f, -1, 36));
         final int i16 = 0;
         this.a.setOnEditorActionListener(new TextView.OnEditorActionListener(this) { // from class: org.telegram.ui.x9
             public final /* synthetic */ z9 b;
@@ -150,7 +150,7 @@ public final class z9 extends org.telegram.ui.ActionBar.n2 {
         this.b.setCursorColor(org.telegram.ui.ActionBar.h6.v0(i12, d6Var));
         this.b.setCursorSize(AndroidUtilities.dp(20.0f));
         this.b.setCursorWidth(1.5f);
-        linearLayout.addView(this.b, w7.x5.k(24.0f, 16.0f, 24.0f, 0.0f, -1, 36));
+        linearLayout.addView(this.b, w7.y5.k(24.0f, 16.0f, 24.0f, 0.0f, -1, 36));
         final int i17 = 1;
         this.b.setOnEditorActionListener(new TextView.OnEditorActionListener(this) { // from class: org.telegram.ui.x9
             public final /* synthetic */ z9 b;
@@ -190,12 +190,12 @@ public final class z9 extends org.telegram.ui.ActionBar.n2 {
         return this.fragmentView;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final org.telegram.ui.ActionBar.d6 getResourceProvider() {
         return this.d;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final ArrayList getThemeDescriptions() {
         ArrayList arrayList = new ArrayList();
         arrayList.add(new org.telegram.ui.ActionBar.j6(this.fragmentView, 1, null, null, null, null, org.telegram.ui.ActionBar.h6.d6));
@@ -222,7 +222,7 @@ public final class z9 extends org.telegram.ui.ActionBar.n2 {
         return arrayList;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final void onResume() {
         super.onResume();
         if (MessagesController.getGlobalMainSettings().getBoolean("view_animations", true)) {
@@ -232,10 +232,10 @@ public final class z9 extends org.telegram.ui.ActionBar.n2 {
         AndroidUtilities.showKeyboard(this.a);
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
         if (z10) {
-            AndroidUtilities.runOnUIThread(new fu0(this, 18), 100L);
+            AndroidUtilities.runOnUIThread(new eu0(this, 18), 100L);
         }
     }
 }

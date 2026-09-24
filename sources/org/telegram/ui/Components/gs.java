@@ -27,7 +27,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_communities;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class gs extends bb {
     public static final /* synthetic */ int G0 = 0;
@@ -37,7 +37,7 @@ public final class gs extends bb {
     public boolean D0;
     public boolean E0;
     public float F0;
-    public v51 X;
+    public j61 X;
     public final TLRPC.Chat Y;
     public final TLRPC.Chat Z;
     public final boolean a0;
@@ -138,8 +138,8 @@ public final class gs extends bb {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public gs(org.telegram.ui.ActionBar.n2 n2Var, TLRPC.Chat chat, ArrayList arrayList, ArrayList arrayList2, TLRPC.ChannelParticipant[] channelParticipantArr, long j3, int i10, int i11, boolean z10, Runnable runnable) {
-        super(n2Var.getContext(), n2Var, false, true, 2, n2Var.getResourceProvider());
+    public gs(org.telegram.ui.ActionBar.m2 m2Var, TLRPC.Chat chat, ArrayList arrayList, ArrayList arrayList2, TLRPC.ChannelParticipant[] channelParticipantArr, long j3, int i10, int i11, boolean z10, Runnable runnable) {
+        super(m2Var.getContext(), m2Var, false, true, 2, m2Var.getResourceProvider());
         TLRPC.TL_chatBannedRights tL_chatBannedRights;
         TLRPC.TL_chatBannedRights tL_chatBannedRights2;
         this.g0 = false;
@@ -155,9 +155,9 @@ public final class gs extends bb {
         fixNavigationBar();
         this.O = true;
         this.A0 = z10;
-        ml0 ml0Var = this.d;
+        wl0 wl0Var = this.d;
         int i12 = this.backgroundPaddingLeft;
-        ml0Var.setPadding(i12, this.G, i12, AndroidUtilities.dp(63.0f));
+        wl0Var.setPadding(i12, this.G, i12, AndroidUtilities.dp(63.0f));
         this.d.setClipToPadding(false);
         this.d.setOnItemClickListener(new cs(this, 1));
         this.O = true;
@@ -172,7 +172,7 @@ public final class gs extends bb {
         dVar.e();
         dVar.setText(LocaleController.getString(R.string.DeleteProceedBtn));
         dVar.setOnClickListener(new f0(this, 11));
-        this.containerView.addView(dVar, w7.x5.f(48.0f, 87, AndroidUtilities.dp(10.0f) + this.backgroundPaddingLeft, 0, AndroidUtilities.dp(10.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(10.0f)));
+        this.containerView.addView(dVar, w7.y5.f(48.0f, 87, AndroidUtilities.dp(10.0f) + this.backgroundPaddingLeft, 0, AndroidUtilities.dp(10.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(10.0f)));
         this.Y = chat;
         this.a0 = ChatObject.isForum(chat);
         this.b0 = arrayList;
@@ -337,7 +337,7 @@ public final class gs extends bb {
                     i14++;
                 }
             }
-            this.x0 = (ArrayList) DesugarArrays.stream(channelParticipantArr).map(new org.telegram.ui.l8(3)).collect(Collectors.toCollection(new org.telegram.ui.cg()));
+            this.x0 = (ArrayList) DesugarArrays.stream(channelParticipantArr).map(new org.telegram.ui.l8(3)).collect(Collectors.toCollection(new org.telegram.ui.bg()));
             fs fsVar = new fs(this, 2, arrayList2);
             this.l0 = fsVar;
             boolean[] zArr = this.m0;
@@ -379,13 +379,13 @@ public final class gs extends bb {
         boolean z11 = false;
         cs csVar = new cs(gsVar, 0 == true ? 1 : 0);
         Pattern pattern = e5.a;
-        LinearLayout f7 = org.telegram.messenger.ul.f(context2, 1);
-        org.telegram.ui.ActionBar.b2[] b2VarArr = new org.telegram.ui.ActionBar.b2[1];
+        LinearLayout f7 = org.telegram.messenger.ok.f(context2, 1);
+        org.telegram.ui.ActionBar.a2[] a2VarArr = new org.telegram.ui.ActionBar.a2[1];
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context2, 0, d6Var);
         String string = LocaleController.getString(R.string.CommunityBanUserTitle);
-        org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-        b2Var.R = string;
-        b2Var.T = AndroidUtilities.replaceTags(LocaleController.formatPluralString("CommunityBanWillRemoveFromChats", arrayList.size(), DialogObject.getShortName(i10, j3)));
+        org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
+        a2Var.R = string;
+        a2Var.T = AndroidUtilities.replaceTags(LocaleController.formatPluralString("CommunityBanWillRemoveFromChats", arrayList.size(), DialogObject.getShortName(i10, j3)));
         alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
         alertDialog$Builder.n(f7);
@@ -415,15 +415,15 @@ public final class gs extends bb {
                 textView.setText(charSequence);
                 ((w9) w7Var.d).e(chat, new h9(chat));
                 w7Var.setBackground(org.telegram.ui.ActionBar.h6.K0(z10));
-                w7Var.setOnClickListener(new org.telegram.ui.co(b2VarArr, csVar, longValue, 2));
-                f7.addView(w7Var, w7.x5.n(-1, -2));
+                w7Var.setOnClickListener(new org.telegram.ui.bo(a2VarArr, csVar, longValue, 2));
+                f7.addView(w7Var, w7.y5.n(-1, -2));
                 context2 = context;
                 size = i12;
                 z11 = false;
             }
         }
-        b2VarArr[0] = b2Var;
-        b2Var.show();
+        a2VarArr[0] = a2Var;
+        a2Var.show();
     }
 
     public final boolean S() {
@@ -437,7 +437,7 @@ public final class gs extends bb {
         int i11 = fsVar.a;
         if (c10) {
             if (!fsVar.b()) {
-                h51 y3 = h51.y(i11, fsVar.b);
+                v51 y3 = v51.y(i11, fsVar.b);
                 y3.K(fsVar.i > 0);
                 arrayList.add(y3);
                 return;
@@ -448,14 +448,14 @@ public final class gs extends bb {
                 i12 = fsVar.e != null ? fsVar.h : i10;
             }
             String valueOf = String.valueOf(i12);
-            h51 h51Var = new h51(36);
-            h51Var.d = i11;
-            h51Var.l = str;
-            h51Var.o = valueOf;
-            h51Var.K(fsVar.i > 0);
-            h51Var.f = fsVar.f;
-            h51Var.D = new org.telegram.ui.qf(28, this, fsVar);
-            arrayList.add(h51Var);
+            v51 v51Var = new v51(36);
+            v51Var.d = i11;
+            v51Var.l = str;
+            v51Var.o = valueOf;
+            v51Var.K(fsVar.i > 0);
+            v51Var.f = fsVar.f;
+            v51Var.D = new org.telegram.ui.pf(28, this, fsVar);
+            arrayList.add(v51Var);
             if (fsVar.f) {
                 return;
             }
@@ -463,12 +463,12 @@ public final class gs extends bb {
                 boolean[] zArr = fsVar.e;
                 if (zArr == null || zArr[i13]) {
                     TLObject tLObject = (TLObject) fsVar.c.get(i13);
-                    h51 h51Var2 = new h51(37);
-                    h51Var2.d = (i11 << 24) | i13;
-                    h51Var2.G = tLObject;
-                    h51Var2.K(fsVar.d[i13]);
-                    h51Var2.i = 1;
-                    arrayList.add(h51Var2);
+                    v51 v51Var2 = new v51(37);
+                    v51Var2.d = (i11 << 24) | i13;
+                    v51Var2.G = tLObject;
+                    v51Var2.K(fsVar.d[i13]);
+                    v51Var2.i = 1;
+                    arrayList.add(v51Var2);
                 }
             }
         }
@@ -559,13 +559,13 @@ public final class gs extends bb {
             cs csVar = new cs(this, i10);
             as asVar = new as(this, 0);
             Pattern pattern = e5.a;
-            LinearLayout f7 = org.telegram.messenger.ul.f(context, 1);
-            org.telegram.ui.ActionBar.b2[] b2VarArr = new org.telegram.ui.ActionBar.b2[1];
+            LinearLayout f7 = org.telegram.messenger.ok.f(context, 1);
+            org.telegram.ui.ActionBar.a2[] a2VarArr = new org.telegram.ui.ActionBar.a2[1];
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, d6Var);
             String string = LocaleController.getString(R.string.CommunityBanWarningTitle);
-            org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-            b2Var.R = string;
-            b2Var.T = AndroidUtilities.replaceTags(LocaleController.formatPluralString("CommunityBanWarningMessage", arrayList.size(), DialogObject.getShortName(i11, j13)));
+            org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
+            a2Var.R = string;
+            a2Var.T = AndroidUtilities.replaceTags(LocaleController.formatPluralString("CommunityBanWarningMessage", arrayList.size(), DialogObject.getShortName(i11, j13)));
             alertDialog$Builder.k(LocaleController.getString(R.string.Ban), new s(asVar, 6));
             alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
             alertDialog$Builder.n(f7);
@@ -599,17 +599,17 @@ public final class gs extends bb {
                     ((w9) w7Var.d).e(chat, new h9(chat));
                     w7Var.setBackground(org.telegram.ui.ActionBar.h6.K0(z11));
                     ?? r13 = f7;
-                    w7Var.setOnClickListener(new org.telegram.ui.co(b2VarArr, csVar, j12, 1));
-                    r13.addView(w7Var, w7.x5.n(-1, -2));
+                    w7Var.setOnClickListener(new org.telegram.ui.bo(a2VarArr, csVar, j12, 1));
+                    r13.addView(w7Var, w7.y5.n(-1, -2));
                     i12 = i13;
                     f7 = r13;
                     size = i14;
                     z12 = true;
                 }
             }
-            b2VarArr[0] = b2Var;
-            b2Var.show();
-            TextView textView = (TextView) b2Var.d(-1);
+            a2VarArr[0] = a2Var;
+            a2Var.show();
+            TextView textView = (TextView) a2Var.d(-1);
             if (textView != null) {
                 textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.q7, false));
                 return;
@@ -626,7 +626,7 @@ public final class gs extends bb {
         fs fsVar2 = this.l0;
         if (fsVar2.i > 0) {
             if (!TextUtils.isEmpty(str2)) {
-                str2 = w.c.g(str2, "\n");
+                str2 = v7.j.t(str2, "\n");
             }
             if (this.g0) {
                 StringBuilder v = a4.a.v(str2);
@@ -642,11 +642,11 @@ public final class gs extends bb {
         boolean z14 = z13 && !this.C0;
         int i16 = fsVar2.i > 0 ? R.raw.ic_admin : R.raw.contact_check;
         boolean isEmpty = TextUtils.isEmpty(str2);
-        org.telegram.ui.ActionBar.n2 n2Var = this.n;
+        org.telegram.ui.ActionBar.m2 m2Var = this.n;
         if (isEmpty) {
-            org.telegram.messenger.z0.o(z14 ? R.string.ReactionsDeleted : R.string.MessagesDeleted, xc.a0(n2Var), i16, 36);
+            org.telegram.messenger.f0.p(z14 ? R.string.ReactionsDeleted : R.string.MessagesDeleted, yc.a0(m2Var), i16, 36);
         } else {
-            xc.a0(n2Var).M(LocaleController.getString(z14 ? R.string.ReactionsDeleted : R.string.MessagesDeleted), str2, i16).j();
+            yc.a0(m2Var).M(LocaleController.getString(z14 ? R.string.ReactionsDeleted : R.string.MessagesDeleted), str2, i16).j();
         }
         long j14 = 0;
         if (j13 != 0 && this.p0) {
@@ -708,7 +708,7 @@ public final class gs extends bb {
                 }
                 return false;
             }
-        }).map(new org.telegram.ui.l8(i10)).collect(Collectors.toCollection(new org.telegram.ui.cg()));
+        }).map(new org.telegram.ui.l8(i10)).collect(Collectors.toCollection(new org.telegram.ui.bg()));
         final int i18 = 1;
         ArrayList<Integer> arrayList4 = (ArrayList) Collection.-EL.stream(arrayList2).filter(new Predicate(this) { // from class: org.telegram.ui.Components.bs
             public final /* synthetic */ gs b;
@@ -764,7 +764,7 @@ public final class gs extends bb {
                 }
                 return false;
             }
-        }).map(new org.telegram.ui.l8(i10)).collect(Collectors.toCollection(new org.telegram.ui.cg()));
+        }).map(new org.telegram.ui.l8(i10)).collect(Collectors.toCollection(new org.telegram.ui.bg()));
         TLRPC.Chat chat2 = this.Y;
         fs fsVar3 = this.j0;
         if (z13) {
@@ -921,7 +921,7 @@ public final class gs extends bb {
                         }
                         return false;
                     }
-                }).filter(new ds(1, tLObject2)).map(new org.telegram.ui.l8(i10)).collect(Collectors.toCollection(new org.telegram.ui.cg()));
+                }).filter(new ds(1, tLObject2)).map(new org.telegram.ui.l8(i10)).collect(Collectors.toCollection(new org.telegram.ui.bg()));
                 if (z13 && (tLObject2 instanceof TLRPC.User)) {
                     if (arrayList5.size() == 1) {
                         TLRPC.TL_messages_reportReaction tL_messages_reportReaction = new TLRPC.TL_messages_reportReaction();
@@ -998,7 +998,7 @@ public final class gs extends bb {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
+    @Override // org.telegram.ui.ActionBar.e3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.i2
     public final void dismiss() {
         SharedPreferences.Editor edit = MessagesController.getInstance(this.currentAccount).getMainSettings().edit();
         edit.putBoolean("delete_report", this.i0.a());
@@ -1008,16 +1008,16 @@ public final class gs extends bb {
         super.dismiss();
     }
 
-    @Override // org.telegram.ui.ActionBar.f3
+    @Override // org.telegram.ui.ActionBar.e3
     public final void onContainerLayout(int i10, int i11, int i12, int i13) {
         super.onContainerLayout(i10, i11, i12, i13);
         Rect rect = AndroidUtilities.rectTmp2;
-        ml0 ml0Var = this.d;
-        rect.set(0, 0, ml0Var.getMeasuredWidth(), ml0Var.getMeasuredHeight() - AndroidUtilities.dp(34.0f));
-        ml0Var.setClipBounds(rect);
+        wl0 wl0Var = this.d;
+        rect.set(0, 0, wl0Var.getMeasuredWidth(), wl0Var.getMeasuredHeight() - AndroidUtilities.dp(34.0f));
+        wl0Var.setClipBounds(rect);
     }
 
-    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog
+    @Override // org.telegram.ui.ActionBar.e3, android.app.Dialog
     public final void show() {
         super.show();
         qc.e();
@@ -1025,15 +1025,15 @@ public final class gs extends bb {
 
     @Override // org.telegram.ui.Components.bb
     public final boolean t(View view, float f7, float f10) {
-        return !(view instanceof org.telegram.ui.Cells.a2);
+        return !(view instanceof org.telegram.ui.Cells.b2);
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final ll0 v(ml0 ml0Var) {
-        v51 v51Var = new v51(ml0Var, getContext(), this.currentAccount, this.n.getClassGuid(), true, new zr(this, 0), this.resourcesProvider);
-        this.X = v51Var;
-        v51Var.r = false;
-        return v51Var;
+    public final vl0 v(wl0 wl0Var) {
+        j61 j61Var = new j61(wl0Var, getContext(), this.currentAccount, this.n.getClassGuid(), true, new zr(this, 0), this.resourcesProvider);
+        this.X = j61Var;
+        j61Var.r = false;
+        return j61Var;
     }
 
     @Override // org.telegram.ui.Components.bb

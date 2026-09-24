@@ -17,14 +17,14 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.ul;
+import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.zc;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class nb extends View {
     public int a;
@@ -39,7 +39,7 @@ public final class nb extends View {
     public boolean s;
     public final Paint v;
     public final Path w;
-    public final yc x;
+    public final zc x;
 
     public nb(Context context) {
         super(context);
@@ -51,7 +51,7 @@ public final class nb extends View {
         Paint paint = new Paint(1);
         this.v = paint;
         this.w = new Path();
-        this.x = new yc(this, 0.6f, 5.0f);
+        this.x = new zc(this, 0.6f, 5.0f);
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStrokeJoin(Paint.Join.ROUND);
@@ -181,7 +181,7 @@ public final class nb extends View {
             float dpf22 = this.s ? AndroidUtilities.dpf2(43.0f) : AndroidUtilities.dpf2(23.66f);
             float dpf23 = AndroidUtilities.dpf2(23.66f);
             RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(com.google.android.gms.internal.vision.e2.A(getWidth(), dpf22, 2.0f, dpf2), (getHeight() - dpf23) / 2.0f, org.telegram.messenger.z0.a(getWidth(), dpf22, 2.0f, dpf2), (getHeight() + dpf23) / 2.0f);
+            rectF.set(com.google.android.gms.internal.vision.e2.A(getWidth(), dpf22, 2.0f, dpf2), (getHeight() - dpf23) / 2.0f, org.telegram.messenger.f0.a(getWidth(), dpf22, 2.0f, dpf2), (getHeight() + dpf23) / 2.0f);
             float a2 = this.x.a(0.075f);
             canvas.save();
             canvas.scale(a2, a2, rectF.centerX(), rectF.centerY());
@@ -206,22 +206,22 @@ public final class nb extends View {
             } else {
                 float dpf24 = this.s ? AndroidUtilities.dpf2(14.66f) + rectF.left : rectF.centerX();
                 Drawable drawable2 = drawableArr[1];
-                int c11 = (int) ul.c(fArr[1], 2.0f, abs, dpf24);
+                int b10 = (int) ok.b(fArr[1], 2.0f, abs, dpf24);
                 float centerY = rectF.centerY();
                 float f11 = (fArr[1] / 2.0f) * abs;
                 f10 = 0.5f;
                 c10 = 0;
                 f7 = 12.0f;
-                drawable2.setBounds(c11, (int) (centerY - f11), (int) (f11 + dpf24), (int) a4.a.e(fArr[1], 2.0f, abs, rectF.centerY()));
+                drawable2.setBounds(b10, (int) (centerY - f11), (int) (f11 + dpf24), (int) a4.a.e(fArr[1], 2.0f, abs, rectF.centerY()));
                 drawableArr[1].draw(canvas);
             }
             if (drawableArr[c10] != null && d <= f10) {
                 float dpf25 = this.s ? AndroidUtilities.dpf2(14.66f) + rectF.left : rectF.centerX();
                 Drawable drawable3 = drawableArr[c10];
-                int c12 = (int) ul.c(fArr[c10], 2.0f, abs, dpf25);
+                int b11 = (int) ok.b(fArr[c10], 2.0f, abs, dpf25);
                 float centerY2 = rectF.centerY();
                 float f12 = (fArr[c10] / 2.0f) * abs;
-                drawable3.setBounds(c12, (int) (centerY2 - f12), (int) (f12 + dpf25), (int) a4.a.e(fArr[c10], 2.0f, abs, rectF.centerY()));
+                drawable3.setBounds(b11, (int) (centerY2 - f12), (int) (f12 + dpf25), (int) a4.a.e(fArr[c10], 2.0f, abs, rectF.centerY()));
                 drawableArr[c10].draw(canvas);
             }
             if (this.s) {

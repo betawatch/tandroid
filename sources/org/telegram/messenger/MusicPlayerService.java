@@ -30,7 +30,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class MusicPlayerService extends Service implements NotificationCenter.NotificationCenterDelegate {
     private static final int ID_NOTIFICATION = 5;
@@ -302,11 +302,11 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
         updateShuffleMode();
         a4.m mVar = new a4.m(1);
         String str8 = str3;
-        mVar.A0("android.media.metadata.ALBUM_ARTIST", str8);
-        mVar.A0("android.media.metadata.ARTIST", str8);
-        mVar.z0(duration);
+        mVar.w0("android.media.metadata.ALBUM_ARTIST", str8);
+        mVar.w0("android.media.metadata.ARTIST", str8);
+        mVar.v0(duration);
         String str9 = str2;
-        mVar.A0("android.media.metadata.TITLE", str9);
+        mVar.w0("android.media.metadata.TITLE", str9);
         if (aVar == null || !messageObject2.isMusic()) {
             aVar2 = aVar;
             str6 = str5;
@@ -314,12 +314,12 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
             aVar2 = aVar;
             str6 = aVar2.f;
         }
-        mVar.A0("android.media.metadata.ALBUM", str6);
+        mVar.w0("android.media.metadata.ALBUM", str6);
         if (bitmap4 == null || bitmap4.isRecycled()) {
             bitmap3 = bitmap4;
         } else {
             bitmap3 = bitmap4;
-            mVar.y0("android.media.metadata.ALBUM_ART", bitmap3);
+            mVar.t0("android.media.metadata.ALBUM_ART", bitmap3);
         }
         this.mediaSession.e(new MediaMetadataCompat((Bundle) mVar.b));
         builder.setVisibility(1);

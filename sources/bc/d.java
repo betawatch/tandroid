@@ -9,13 +9,12 @@ import java.util.Arrays;
 import java.util.List;
 import k.i;
 import m.p3;
-import n6.l;
-import n7.a1;
+import n7.z0;
 import org.telegram.tgnet.ConnectionsManager;
 import r0.l0;
 import r0.m0;
-import v7.r1;
-import w7.g9;
+import v7.l;
+import w7.h9;
 import z7.ee;
 import z7.fb;
 import z7.g;
@@ -28,7 +27,7 @@ import z7.te;
 import z7.va;
 import z7.vf;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements vf {
     public long a;
@@ -103,40 +102,40 @@ public final /* synthetic */ class d implements vf {
         ig igVar = (ig) this.f;
         cf.c cVar = new cf.c();
         boolean z11 = false;
-        r1 r1Var = new r1(15, false);
-        r1Var.b = Long.valueOf(j3 & Long.MAX_VALUE);
-        r1Var.d = gbVar;
-        r1Var.c = Boolean.valueOf(z10);
-        cVar.a = new va(r1Var);
+        l lVar = new l(16, false);
+        lVar.b = Long.valueOf(j3 & Long.MAX_VALUE);
+        lVar.c = gbVar;
+        lVar.d = Boolean.valueOf(z10);
+        cVar.a = new va(lVar);
         int i11 = aVar.e;
         f.l.getClass();
         int i12 = aVar.e;
         if (i12 == -1) {
             Bitmap bitmap = aVar.a;
-            l.h(bitmap);
+            n6.l.h(bitmap);
             i10 = bitmap.getAllocationByteCount();
         } else {
             if (i12 == 17 || i12 == 842094169) {
-                l.h(null);
+                n6.l.h(null);
                 throw null;
             }
             if (i12 == 35) {
-                l.h(null);
+                n6.l.h(null);
                 throw null;
             }
             i10 = 0;
         }
-        a1 a1Var = new a1(28);
-        a1Var.b = i11 != -1 ? i11 != 35 ? i11 != 842094169 ? i11 != 16 ? i11 != 17 ? qa.b : qa.d : qa.c : qa.e : qa.f : qa.h;
-        a1Var.c = Integer.valueOf(i10 & ConnectionsManager.DEFAULT_DATACENTER_ID);
-        cVar.b = new ra(a1Var);
+        z0 z0Var = new z0(28);
+        z0Var.b = i11 != -1 ? i11 != 35 ? i11 != 842094169 ? i11 != 16 ? i11 != 17 ? qa.b : qa.d : qa.c : qa.e : qa.f : qa.h;
+        z0Var.c = Integer.valueOf(i10 & ConnectionsManager.DEFAULT_DATACENTER_ID);
+        cVar.b = new ra(z0Var);
         cVar.c = fVar.e.a();
         if (igVar != null) {
             List list = igVar.d;
             g gVar = z7.i.b;
             Object[] array = list.toArray();
             int length = array.length;
-            g9.a(length, array);
+            h9.a(length, array);
             cVar.e = z7.i.r(length, array);
             List<hg> list2 = igVar.a;
             if (!list2.isEmpty()) {

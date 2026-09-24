@@ -1,45 +1,40 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.DialogInterface;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class az0 extends s4.c0 {
-    public final /* synthetic */ ProfileActivity I;
+public final /* synthetic */ class az0 implements DialogInterface.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
 
-    public az0(ProfileActivity profileActivity) {
-        this.I = profileActivity;
+    public /* synthetic */ az0(int i10, int i11) {
+        this.a = i11;
+        this.b = i10;
     }
 
-    @Override // s4.c0, s4.o0
-    public final int o0(int i10, of.e eVar, s4.z0 z0Var) {
-        ProfileActivity profileActivity = this.I;
-        View m10 = profileActivity.c.m(0);
-        if (m10 != null && !profileActivity.F0) {
-            int top = m10.getTop() - profileActivity.T3();
-            boolean z10 = profileActivity.o2;
-            if (z10 || top <= i10) {
-                if (z10) {
-                    if (i10 >= top) {
-                        profileActivity.o2 = false;
-                    } else if (profileActivity.a.getScrollState() == 1 && !profileActivity.p2) {
-                        i10 /= 2;
-                    }
+    @Override // android.content.DialogInterface.OnClickListener
+    public final void onClick(DialogInterface dialogInterface, int i10) {
+        switch (this.a) {
+            case 0:
+                int i11 = 2 - i10;
+                if (i11 != this.b) {
+                    SharedConfig.overrideDevicePerformanceClass(i11);
+                    break;
+                } else {
+                    SharedConfig.overrideDevicePerformanceClass(-1);
+                    break;
                 }
-            } else if (!profileActivity.n0.X0.isEmpty() && profileActivity.e0.getImageReceiver().hasNotThumb() && !AndroidUtilities.isAccessibilityScreenReaderEnabled() && ((!profileActivity.n2 && !AndroidUtilities.isTablet()) || profileActivity.I0)) {
-                profileActivity.o2 = profileActivity.J2 == null;
-            }
-            i10 = top;
+            default:
+                int i12 = 2 - i10;
+                if (i12 != this.b) {
+                    SharedConfig.overrideDevicePerformanceClass(i12);
+                    break;
+                } else {
+                    SharedConfig.overrideDevicePerformanceClass(-1);
+                    break;
+                }
         }
-        if (!profileActivity.O1 || profileActivity.a.O0) {
-            return super.o0(i10, eVar, z0Var);
-        }
-        return 0;
-    }
-
-    @Override // s4.c0, s4.o0
-    public final boolean y0() {
-        return this.I.q0 != null;
     }
 }

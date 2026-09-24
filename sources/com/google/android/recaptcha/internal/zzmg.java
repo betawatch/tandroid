@@ -4,16 +4,16 @@ import a4.a;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.telegram.messenger.BuildConfig;
-import org.telegram.ui.Cells.q3;
+import org.telegram.ui.Cells.c1;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class zzmg {
     public static String zza(String str, Object... objArr) {
         int length;
         int length2;
         int indexOf;
-        String j3;
+        String k10;
         int i10 = 0;
         int i11 = 0;
         while (true) {
@@ -23,17 +23,17 @@ public final class zzmg {
             }
             Object obj = objArr[i11];
             if (obj == null) {
-                j3 = BuildConfig.BETA_URL;
+                k10 = BuildConfig.BETA_URL;
             } else {
                 try {
-                    j3 = obj.toString();
+                    k10 = obj.toString();
                 } catch (Exception e) {
                     String D = a.D(obj.getClass().getName(), "@", Integer.toHexString(System.identityHashCode(obj)));
                     Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(D), (Throwable) e);
-                    j3 = q3.j("<", D, " threw ", e.getClass().getName(), ">");
+                    k10 = c1.k("<", D, " threw ", e.getClass().getName(), ">");
                 }
             }
-            objArr[i11] = j3;
+            objArr[i11] = k10;
             i11++;
         }
         StringBuilder sb2 = new StringBuilder(str.length() + (length * 16));

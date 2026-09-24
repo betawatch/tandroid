@@ -2,9 +2,9 @@ package v3;
 
 import c3.k;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
-public final class a extends k implements g {
+public final class a extends k implements f {
     public final long h;
     public final int i;
     public final int j;
@@ -21,22 +21,22 @@ public final class a extends k implements g {
         this.l = j11 == -1 ? -1L : j11;
     }
 
-    @Override // v3.g
+    @Override // v3.f
     public final long b(long j3) {
         return (Math.max(0L, j3 - this.b) * 8000000) / this.e;
     }
 
-    @Override // v3.g
+    @Override // v3.f
     public final long d() {
         return this.l;
     }
 
-    @Override // v3.g
+    @Override // v3.f
     public final long e() {
         return this.h;
     }
 
-    @Override // v3.g
+    @Override // v3.f
     public final int k() {
         return this.i;
     }

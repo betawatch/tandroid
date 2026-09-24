@@ -18,9 +18,9 @@ import org.telegram.messenger.SavedMessagesController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.xn;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -108,25 +108,25 @@ public final /* synthetic */ class f implements Runnable {
                 if (string.equals(string2)) {
                     if (g6Var.q() || string.equals("Dark Blue") || string.equals("Night")) {
                         str2 = string2;
-                        AndroidUtilities.runOnUIThread(new i2.h0(org.telegram.ui.ActionBar.h6.I.q() ? org.telegram.ui.ActionBar.h6.N0(str2) : org.telegram.ui.ActionBar.h6.N0(str), 11), 200L);
+                        AndroidUtilities.runOnUIThread(new i2.h0(org.telegram.ui.ActionBar.h6.I.q() ? org.telegram.ui.ActionBar.h6.N0(str2) : org.telegram.ui.ActionBar.h6.N0(str), 12), 200L);
                         break;
                     }
                 } else {
                     str2 = string2;
                 }
                 str = string;
-                AndroidUtilities.runOnUIThread(new i2.h0(org.telegram.ui.ActionBar.h6.I.q() ? org.telegram.ui.ActionBar.h6.N0(str2) : org.telegram.ui.ActionBar.h6.N0(str), 11), 200L);
+                AndroidUtilities.runOnUIThread(new i2.h0(org.telegram.ui.ActionBar.h6.I.q() ? org.telegram.ui.ActionBar.h6.N0(str2) : org.telegram.ui.ActionBar.h6.N0(str), 12), 200L);
                 break;
             case 16:
                 org.telegram.ui.ActionBar.h6.E(false);
                 break;
             case 17:
-                int i13 = xn.Gc;
+                int i13 = wn.Gc;
                 break;
             case 18:
                 break;
             case 19:
-                zg.l0.b(true);
+                zg.k0.b(true);
                 break;
             case 20:
                 NotificationCenter globalInstance = NotificationCenter.getGlobalInstance();
@@ -138,11 +138,11 @@ public final /* synthetic */ class f implements Runnable {
                 Pattern pattern = org.telegram.ui.Components.e5.a;
                 break;
             case 22:
-                org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+                org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
                 if (U != null) {
-                    org.telegram.ui.ActionBar.l2 l2Var = new org.telegram.ui.ActionBar.l2();
-                    l2Var.a = true;
-                    U.showAsSheet(new PremiumPreviewFragment(0, "schedule_repeat"), l2Var);
+                    org.telegram.ui.ActionBar.k2 k2Var = new org.telegram.ui.ActionBar.k2();
+                    k2Var.a = true;
+                    U.showAsSheet(new PremiumPreviewFragment(0, "schedule_repeat"), k2Var);
                     break;
                 }
                 break;

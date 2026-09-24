@@ -7,12 +7,12 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.ml0;
-import org.telegram.ui.gb0;
+import org.telegram.ui.Components.wl0;
+import org.telegram.ui.fb0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class t extends ml0 implements NotificationCenter.NotificationCenterDelegate {
+public final class t extends wl0 implements NotificationCenter.NotificationCenterDelegate {
     public ArrayList X2;
     public s4.c0 Y2;
     public int Z2;
@@ -24,24 +24,24 @@ public final class t extends ml0 implements NotificationCenter.NotificationCente
         }
     }
 
-    @Override // org.telegram.ui.Components.ml0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.premiumStatusChangedGlobal);
     }
 
-    @Override // org.telegram.ui.Components.ml0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.premiumStatusChangedGlobal);
     }
 
-    @Override // org.telegram.ui.Components.ml0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final void onMeasure(int i10, int i11) {
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
     }
 
-    @Override // org.telegram.ui.Components.ml0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final void onSizeChanged(int i10, int i11, int i12, int i13) {
         super.onSizeChanged(i10, i11, i12, i13);
         a0();
@@ -50,11 +50,11 @@ public final class t extends ml0 implements NotificationCenter.NotificationCente
     public final void w1() {
         ArrayList arrayList = this.X2;
         arrayList.clear();
-        arrayList.addAll(Arrays.asList(gb0.values()));
+        arrayList.addAll(Arrays.asList(fb0.values()));
         if (MessagesController.getInstance(this.Z2).premiumFeaturesBlocked()) {
             int i10 = 0;
             while (i10 < arrayList.size()) {
-                if (((gb0) arrayList.get(i10)).e) {
+                if (((fb0) arrayList.get(i10)).e) {
                     arrayList.remove(i10);
                     i10--;
                 }
@@ -64,7 +64,7 @@ public final class t extends ml0 implements NotificationCenter.NotificationCente
         getAdapter().l();
         a0();
         for (int i11 = 0; i11 < arrayList.size(); i11++) {
-            if (w7.e6.a((gb0) arrayList.get(i11))) {
+            if (w7.f6.a((fb0) arrayList.get(i11))) {
                 this.Y2.h1(i11, AndroidUtilities.dp(16.0f));
                 return;
             }

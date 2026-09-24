@@ -9,16 +9,16 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class pf1 extends org.telegram.ui.Components.ll0 {
+public final class pf1 extends org.telegram.ui.Components.vl0 {
     public final /* synthetic */ sf1 c;
 
     public pf1(sf1 sf1Var) {
         this.c = sf1Var;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.vl0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         return i10 == 3 || i10 == 2;
@@ -61,15 +61,15 @@ public final class pf1 extends org.telegram.ui.Components.ll0 {
             }
         }
         if (j(i10) == 2) {
-            org.telegram.ui.Cells.ua uaVar = (org.telegram.ui.Cells.ua) view;
-            uaVar.setTopic((TLRPC.TL_forumTopic) sf1Var.c0.get(i10 - sf1Var.f0));
-            uaVar.d = i10 != sf1Var.g0 - 1;
+            org.telegram.ui.Cells.sa saVar = (org.telegram.ui.Cells.sa) view;
+            saVar.setTopic((TLRPC.TL_forumTopic) sf1Var.c0.get(i10 - sf1Var.f0));
+            saVar.d = i10 != sf1Var.g0 - 1;
         }
         if (j(i10) == 3) {
             MessageObject messageObject = (MessageObject) sf1Var.d0.get(i10 - sf1Var.i0);
             tf1 tf1Var = (tf1) view;
             tf1Var.W4 = i10 != sf1Var.j0 - 1;
-            i11 = ((org.telegram.ui.ActionBar.n2) wf1Var).currentAccount;
+            i11 = ((org.telegram.ui.ActionBar.m2) wf1Var).currentAccount;
             long topicId = MessageObject.getTopicId(i11, messageObject.messageOwner, true);
             if (topicId == 0) {
                 topicId = 1;
@@ -85,7 +85,7 @@ public final class pf1 extends org.telegram.ui.Components.ll0 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r5v5, types: [org.telegram.ui.Cells.r2, org.telegram.ui.tf1] */
+    /* JADX WARN: Type inference failed for: r5v5, types: [org.telegram.ui.Cells.s2, org.telegram.ui.tf1] */
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
         FrameLayout frameLayout;
@@ -94,17 +94,17 @@ public final class pf1 extends org.telegram.ui.Components.ll0 {
         if (i10 == 1) {
             frameLayout = new org.telegram.ui.Cells.v3(viewGroup.getContext(), null);
         } else if (i10 == 2) {
-            frameLayout = new org.telegram.ui.Cells.ua(viewGroup.getContext());
+            frameLayout = new org.telegram.ui.Cells.sa(viewGroup.getContext());
         } else {
             if (i10 != 3) {
                 throw new RuntimeException("unsupported view type");
             }
             ?? tf1Var = new tf1(wf1Var, viewGroup.getContext(), true);
-            z10 = ((org.telegram.ui.ActionBar.n2) wf1Var).inPreviewMode;
+            z10 = ((org.telegram.ui.ActionBar.m2) wf1Var).inPreviewMode;
             tf1Var.k0 = z10;
             frameLayout = tf1Var;
         }
         frameLayout.setLayoutParams(new s4.p0(-1, -2));
-        return new org.telegram.ui.Components.wk0(frameLayout);
+        return new org.telegram.ui.Components.gl0(frameLayout);
     }
 }

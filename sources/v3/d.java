@@ -1,427 +1,1005 @@
 package v3;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.hardware.fingerprint.FingerprintManager;
-import android.os.Bundle;
-import android.os.Parcelable;
-import android.text.Layout;
-import android.text.SpannableString;
-import android.util.Log;
-import b2.l1;
-import com.google.android.gms.tasks.Continuation;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.sessions.FirebaseSessionsRegistrar;
+import a6.i;
+import b2.o0;
+import b2.p0;
+import b2.r;
+import b2.r0;
+import c3.b0;
+import c3.h0;
+import c3.k;
+import c3.n;
+import c3.o;
+import c3.p;
+import c3.q;
+import c3.s;
+import c3.w;
+import c3.z;
+import e2.d0;
+import e2.v;
 import e9.a1;
 import e9.g0;
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Set;
-import java.util.concurrent.ExecutorService;
-import org.telegram.messenger.GenericProvider;
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
-import org.telegram.ui.ActionBar.a2;
-import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.zg1;
-import u2.n1;
-import w3.o;
-import xh.h4;
-import yh.y3;
-import za.e0;
-import za.k0;
-import za.m;
-import za.u;
+import e9.i0;
+import java.io.EOFException;
+import java.math.RoundingMode;
+import java.util.List;
+import q3.m;
+import v7.q7;
+import v7.z7;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class d implements q3.g, d9.e, Continuation, q9.d, a2, GenericProvider, e2.h, Vector.TLDeserializer {
-    public final /* synthetic */ int a;
+public final class d implements o {
+    public final int a;
+    public final long b;
+    public final v c;
+    public final z d;
+    public final w e;
+    public final i f;
+    public final n g;
+    public q h;
+    public h0 i;
+    public h0 j;
+    public int k;
+    public p0 l;
+    public long m;
+    public long n;
+    public long o;
+    public long p;
+    public int q;
+    public f r;
+    public boolean s;
+    public boolean t;
+    public long u;
 
-    public /* synthetic */ d(int i10) {
-        this.a = i10;
+    public d(int i10) {
+        this(i10, -9223372036854775807L);
     }
 
-    public static /* bridge */ /* synthetic */ FingerprintManager a(Object obj) {
-        return (FingerprintManager) obj;
+    @Override // c3.o
+    public final boolean a(p pVar) {
+        return e(pVar, true);
     }
 
-    @Override // q9.d
-    public Object G(cf.c cVar) {
-        m mVar;
-        k0 k0Var;
-        e0 e0Var;
-        bb.h hVar;
-        u uVar;
-        switch (this.a) {
-            case 7:
-                Set w10 = cVar.w(xa.a.class);
-                xa.c cVar2 = xa.c.c;
-                if (cVar2 == null) {
-                    synchronized (xa.c.class) {
-                        try {
-                            cVar2 = xa.c.c;
-                            if (cVar2 == null) {
-                                cVar2 = new xa.c(0);
-                                xa.c.c = cVar2;
-                            }
-                        } finally {
-                        }
-                    }
-                }
-                return new xa.b(w10, cVar2);
-            case 25:
-                mVar = FirebaseSessionsRegistrar.getComponents$lambda-0(cVar);
-                return mVar;
-            case 26:
-                k0Var = FirebaseSessionsRegistrar.getComponents$lambda-1(cVar);
-                return k0Var;
-            case 27:
-                e0Var = FirebaseSessionsRegistrar.getComponents$lambda-2(cVar);
-                return e0Var;
-            case 28:
-                hVar = FirebaseSessionsRegistrar.getComponents$lambda-3(cVar);
-                return hVar;
-            default:
-                uVar = FirebaseSessionsRegistrar.getComponents$lambda-4(cVar);
-                return uVar;
+    public final void b() {
+        b0 b0Var = this.r;
+        if ((b0Var instanceof a) && ((k) b0Var).f()) {
+            long j3 = this.p;
+            if (j3 == -1 || j3 == this.r.d()) {
+                return;
+            }
+            a aVar = (a) this.r;
+            this.r = new a(this.p, aVar.i, aVar.j, aVar.k, aVar.h);
+            q qVar = this.h;
+            qVar.getClass();
+            qVar.X1(this.r);
+            this.i.getClass();
+            this.r.l();
         }
     }
 
-    @Override // e2.h
-    public void accept(Object obj) {
-        ((ExecutorService) obj).shutdown();
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x0111  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x0131  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x0141  */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x0152  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x0162  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x0184  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x0196  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x01a8  */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x01bd  */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x01ca  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x01db  */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x01ed  */
-    /* JADX WARN: Removed duplicated region for block: B:86:0x01f4  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x01e2  */
-    /* JADX WARN: Removed duplicated region for block: B:88:0x01d1  */
-    /* JADX WARN: Removed duplicated region for block: B:89:0x01c0  */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x01b0  */
-    /* JADX WARN: Removed duplicated region for block: B:91:0x019d  */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x018b  */
-    /* JADX WARN: Removed duplicated region for block: B:94:0x0158  */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x0147  */
-    /* JADX WARN: Removed duplicated region for block: B:96:0x0137  */
-    /* JADX WARN: Type inference failed for: r2v2, types: [java.lang.CharSequence] */
-    /* JADX WARN: Type inference failed for: r2v3 */
-    /* JADX WARN: Type inference failed for: r2v30, types: [android.text.Spannable, android.text.SpannableString] */
-    /* JADX WARN: Type inference failed for: r2v4 */
-    @Override // d9.e, i5.e
+    /* JADX WARN: Code restructure failed: missing block: B:6:0x0018, code lost:
+    
+        if (r9.i() > (r2 - 4)) goto L12;
+     */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public Object apply(Object obj) {
-        CharSequence charSequence;
-        Bitmap bitmap;
-        String str;
-        float f7;
-        int i10;
-        String str2;
-        int i11;
-        float f10;
-        String str3;
-        boolean z10;
-        int i12;
-        switch (this.a) {
-            case 1:
-                return Long.valueOf(((z3.a) obj).b);
-            case 2:
-                return Long.valueOf(((z3.a) obj).c);
-            case 3:
-                return (o) obj;
-            case 6:
-                n1 n1Var = (n1) obj;
-                n1Var.getClass();
-                Bundle bundle = new Bundle();
-                String str4 = n1.e;
-                a1 a1Var = n1Var.b;
-                ArrayList<? extends Parcelable> arrayList = new ArrayList<>(a1Var.d);
-                g0 listIterator = a1Var.listIterator(0);
-                while (listIterator.hasNext()) {
-                    arrayList.add(((l1) listIterator.next()).c());
-                }
-                bundle.putParcelableArrayList(str4, arrayList);
-                return bundle;
-            case 16:
-                Bundle bundle2 = (Bundle) obj;
-                ?? charSequence2 = bundle2.getCharSequence(d2.b.s);
-                int i13 = 1;
-                if (charSequence2 != 0) {
-                    ArrayList parcelableArrayList = bundle2.getParcelableArrayList(d2.b.t);
-                    if (parcelableArrayList != null) {
-                        charSequence2 = SpannableString.valueOf(charSequence2);
-                        int size = parcelableArrayList.size();
-                        int i14 = 0;
-                        while (i14 < size) {
-                            Object obj2 = parcelableArrayList.get(i14);
-                            i14++;
-                            Bundle bundle3 = (Bundle) obj2;
-                            int i15 = bundle3.getInt(d2.e.a);
-                            int i16 = bundle3.getInt(d2.e.b);
-                            int i17 = bundle3.getInt(d2.e.c);
-                            int i18 = bundle3.getInt(d2.e.d, -1);
-                            Bundle bundle4 = bundle3.getBundle(d2.e.e);
-                            if (i18 == i13) {
-                                bundle4.getClass();
-                                String string = bundle4.getString(d2.g.c);
-                                string.getClass();
-                                charSequence2.setSpan(new d2.g(string, bundle4.getInt(d2.g.d)), i15, i16, i17);
-                            } else if (i18 == 2) {
-                                bundle4.getClass();
-                                charSequence2.setSpan(new d2.h(bundle4.getInt(d2.h.d), bundle4.getInt(d2.h.e), bundle4.getInt(d2.h.f)), i15, i16, i17);
-                            } else if (i18 == 3) {
-                                charSequence2.setSpan(new d2.f(), i15, i16, i17);
-                            } else if (i18 == 4) {
-                                bundle4.getClass();
-                                String string2 = bundle4.getString(d2.i.b);
-                                string2.getClass();
-                                charSequence2.setSpan(new d2.i(string2), i15, i16, i17);
-                            }
-                            i13 = 1;
-                        }
-                    }
-                } else {
-                    charSequence2 = 0;
-                }
-                Layout.Alignment alignment = (Layout.Alignment) bundle2.getSerializable(d2.b.u);
-                Layout.Alignment alignment2 = alignment != null ? alignment : null;
-                Layout.Alignment alignment3 = (Layout.Alignment) bundle2.getSerializable(d2.b.v);
-                Layout.Alignment alignment4 = alignment3 != null ? alignment3 : null;
-                Bitmap bitmap2 = (Bitmap) bundle2.getParcelable(d2.b.w);
-                if (bitmap2 != null) {
-                    bitmap = bitmap2;
-                } else {
-                    byte[] byteArray = bundle2.getByteArray(d2.b.x);
-                    if (byteArray == null) {
-                        charSequence = charSequence2;
-                        bitmap = null;
-                        str = d2.b.y;
-                        if (bundle2.containsKey(str)) {
-                            String str5 = d2.b.z;
-                            if (bundle2.containsKey(str5)) {
-                                f7 = bundle2.getFloat(str);
-                                i10 = bundle2.getInt(str5);
-                                String str6 = d2.b.A;
-                                int i19 = bundle2.containsKey(str6) ? bundle2.getInt(str6) : TLObject.FLAG_31;
-                                String str7 = d2.b.B;
-                                float f11 = bundle2.containsKey(str7) ? bundle2.getFloat(str7) : -3.4028235E38f;
-                                String str8 = d2.b.C;
-                                int i20 = bundle2.containsKey(str8) ? bundle2.getInt(str8) : TLObject.FLAG_31;
-                                str2 = d2.b.E;
-                                if (bundle2.containsKey(str2)) {
-                                    String str9 = d2.b.D;
-                                    if (bundle2.containsKey(str9)) {
-                                        f10 = bundle2.getFloat(str2);
-                                        i11 = bundle2.getInt(str9);
-                                        String str10 = d2.b.F;
-                                        float f12 = !bundle2.containsKey(str10) ? bundle2.getFloat(str10) : -3.4028235E38f;
-                                        String str11 = d2.b.G;
-                                        float f13 = !bundle2.containsKey(str11) ? bundle2.getFloat(str11) : -3.4028235E38f;
-                                        str3 = d2.b.H;
-                                        if (bundle2.containsKey(str3)) {
-                                            z10 = false;
-                                            i12 = -16777216;
-                                        } else {
-                                            i12 = bundle2.getInt(str3);
-                                            z10 = true;
-                                        }
-                                        boolean z11 = bundle2.getBoolean(d2.b.I, false) ? false : z10;
-                                        String str12 = d2.b.J;
-                                        int i21 = !bundle2.containsKey(str12) ? bundle2.getInt(str12) : TLObject.FLAG_31;
-                                        String str13 = d2.b.K;
-                                        float f14 = !bundle2.containsKey(str13) ? bundle2.getFloat(str13) : 0.0f;
-                                        String str14 = d2.b.L;
-                                        return new d2.b(charSequence, alignment2, alignment4, bitmap, f7, i10, i19, f11, i20, i11, f10, f12, f13, z11, i12, i21, f14, !bundle2.containsKey(str14) ? bundle2.getInt(str14) : 0);
-                                    }
-                                }
-                                i11 = TLObject.FLAG_31;
-                                f10 = -3.4028235E38f;
-                                String str102 = d2.b.F;
-                                if (!bundle2.containsKey(str102)) {
-                                }
-                                String str112 = d2.b.G;
-                                if (!bundle2.containsKey(str112)) {
-                                }
-                                str3 = d2.b.H;
-                                if (bundle2.containsKey(str3)) {
-                                }
-                                if (bundle2.getBoolean(d2.b.I, false)) {
-                                }
-                                String str122 = d2.b.J;
-                                if (!bundle2.containsKey(str122)) {
-                                }
-                                String str132 = d2.b.K;
-                                if (!bundle2.containsKey(str132)) {
-                                }
-                                String str142 = d2.b.L;
-                                return new d2.b(charSequence, alignment2, alignment4, bitmap, f7, i10, i19, f11, i20, i11, f10, f12, f13, z11, i12, i21, f14, !bundle2.containsKey(str142) ? bundle2.getInt(str142) : 0);
-                            }
-                        }
-                        f7 = -3.4028235E38f;
-                        i10 = TLObject.FLAG_31;
-                        String str62 = d2.b.A;
-                        if (bundle2.containsKey(str62)) {
-                        }
-                        String str72 = d2.b.B;
-                        if (bundle2.containsKey(str72)) {
-                        }
-                        String str82 = d2.b.C;
-                        if (bundle2.containsKey(str82)) {
-                        }
-                        str2 = d2.b.E;
-                        if (bundle2.containsKey(str2)) {
-                        }
-                        i11 = TLObject.FLAG_31;
-                        f10 = -3.4028235E38f;
-                        String str1022 = d2.b.F;
-                        if (!bundle2.containsKey(str1022)) {
-                        }
-                        String str1122 = d2.b.G;
-                        if (!bundle2.containsKey(str1122)) {
-                        }
-                        str3 = d2.b.H;
-                        if (bundle2.containsKey(str3)) {
-                        }
-                        if (bundle2.getBoolean(d2.b.I, false)) {
-                        }
-                        String str1222 = d2.b.J;
-                        if (!bundle2.containsKey(str1222)) {
-                        }
-                        String str1322 = d2.b.K;
-                        if (!bundle2.containsKey(str1322)) {
-                        }
-                        String str1422 = d2.b.L;
-                        return new d2.b(charSequence, alignment2, alignment4, bitmap, f7, i10, i19, f11, i20, i11, f10, f12, f13, z11, i12, i21, f14, !bundle2.containsKey(str1422) ? bundle2.getInt(str1422) : 0);
-                    }
-                    bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
-                }
-                charSequence = null;
-                str = d2.b.y;
-                if (bundle2.containsKey(str)) {
-                }
-                f7 = -3.4028235E38f;
-                i10 = TLObject.FLAG_31;
-                String str622 = d2.b.A;
-                if (bundle2.containsKey(str622)) {
-                }
-                String str722 = d2.b.B;
-                if (bundle2.containsKey(str722)) {
-                }
-                String str822 = d2.b.C;
-                if (bundle2.containsKey(str822)) {
-                }
-                str2 = d2.b.E;
-                if (bundle2.containsKey(str2)) {
-                }
-                i11 = TLObject.FLAG_31;
-                f10 = -3.4028235E38f;
-                String str10222 = d2.b.F;
-                if (!bundle2.containsKey(str10222)) {
-                }
-                String str11222 = d2.b.G;
-                if (!bundle2.containsKey(str11222)) {
-                }
-                str3 = d2.b.H;
-                if (bundle2.containsKey(str3)) {
-                }
-                if (bundle2.getBoolean(d2.b.I, false)) {
-                }
-                String str12222 = d2.b.J;
-                if (!bundle2.containsKey(str12222)) {
-                }
-                String str13222 = d2.b.K;
-                if (!bundle2.containsKey(str13222)) {
-                }
-                String str14222 = d2.b.L;
-                return new d2.b(charSequence, alignment2, alignment4, bitmap, f7, i10, i19, f11, i20, i11, f10, f12, f13, z11, i12, i21, f14, !bundle2.containsKey(str14222) ? bundle2.getInt(str14222) : 0);
-            default:
-                long j3 = ((z3.a) obj).b;
-                if (j3 == -9223372036854775807L) {
-                    j3 = 0;
-                }
-                return Long.valueOf(j3);
+    public final boolean d(p pVar) {
+        f fVar = this.r;
+        if (fVar != null) {
+            long d = fVar.d();
+            if (d != -1) {
+            }
         }
-    }
-
-    @Override // q3.g
-    public boolean c(int i10, int i11, int i12, int i13, int i14) {
-        if (i11 == 67 && i12 == 79 && i13 == 77 && (i14 == 77 || i10 == 2)) {
+        try {
+            return !pVar.h(this.c.a, 0, 4, true);
+        } catch (EOFException unused) {
             return true;
         }
-        if (i11 == 77 && i12 == 76 && i13 == 76) {
-            return i14 == 84 || i10 == 2;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:59:0x00e0, code lost:
+    
+        if (r18 == false) goto L57;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:60:0x00e2, code lost:
+    
+        r17.q(r4 + r6);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:61:0x00ea, code lost:
+    
+        r16.k = r3;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:62:0x00ec, code lost:
+    
+        return true;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:63:0x00e7, code lost:
+    
+        r17.p();
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean e(p pVar, boolean z10) {
+        int i10;
+        int i11;
+        int h;
+        int i12 = z10 ? 32768 : 131072;
+        pVar.p();
+        if (pVar.getPosition() == 0) {
+            v vVar = (v) this.f.b;
+            p0 p0Var = null;
+            int i13 = 0;
+            while (true) {
+                try {
+                    pVar.a(0, 10, vVar.a);
+                    vVar.J(0);
+                    if (vVar.A() != 4801587) {
+                        break;
+                    }
+                    vVar.K(3);
+                    int w10 = vVar.w();
+                    int i14 = w10 + 10;
+                    if (p0Var == null) {
+                        byte[] bArr = new byte[i14];
+                        System.arraycopy(vVar.a, 0, bArr, 0, 10);
+                        pVar.a(10, w10, bArr);
+                        p0Var = new q3.i(null).c(i14, bArr);
+                    } else {
+                        pVar.l(w10);
+                    }
+                    i13 += i14;
+                } catch (EOFException unused) {
+                }
+            }
+            pVar.p();
+            pVar.l(i13);
+            this.l = p0Var;
+            if (p0Var != null) {
+                this.e.b(p0Var);
+            }
+            i11 = (int) pVar.i();
+            if (!z10) {
+                pVar.q(i11);
+            }
+            i10 = 0;
+        } else {
+            i10 = 0;
+            i11 = 0;
         }
-        return false;
-    }
-
-    @Override // org.telegram.tgnet.Vector.TLDeserializer
-    public TLObject deserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
-        return TLRPC.MessageReplyHeader.TLdeserialize(inputSerializedData, i10, z10);
-    }
-
-    @Override // org.telegram.ui.ActionBar.a2
-    public void f(b2 b2Var, int i10) {
-        switch (this.a) {
-            case 9:
-                b2Var.dismiss();
-                break;
-            case 10:
-                b2Var.dismiss();
-                break;
-            case 14:
-                y3.d2(new zg1(6, null));
-                break;
-            default:
-                int i11 = y3.q1;
-                break;
+        int i15 = 0;
+        int i16 = 0;
+        while (true) {
+            if (!d(pVar)) {
+                v vVar2 = this.c;
+                vVar2.J(0);
+                int j3 = vVar2.j();
+                if ((i10 == 0 || ((-128000) & j3) == (i10 & (-128000))) && (h = c3.b.h(j3)) != -1) {
+                    i15++;
+                    if (i15 != 1) {
+                        if (i15 == 4) {
+                            break;
+                        }
+                    } else {
+                        this.d.a(j3);
+                        i10 = j3;
+                    }
+                    pVar.l(h - 4);
+                } else {
+                    int i17 = i16 + 1;
+                    if (i16 == i12) {
+                        if (z10) {
+                            return false;
+                        }
+                        b();
+                        throw new EOFException();
+                    }
+                    if (z10) {
+                        pVar.p();
+                        pVar.l(i11 + i17);
+                    } else {
+                        pVar.q(1);
+                    }
+                    i16 = i17;
+                    i10 = 0;
+                    i15 = 0;
+                }
+            } else if (i15 <= 0) {
+                b();
+                throw new EOFException();
+            }
         }
     }
 
-    @Override // org.telegram.messenger.GenericProvider
-    public Object provide(Object obj) {
-        int i10 = h4.k0;
-        return 0;
+    @Override // c3.o
+    public final void g(q qVar) {
+        this.h = qVar;
+        h0 Z1 = qVar.Z1(0, 1);
+        this.i = Z1;
+        this.j = Z1;
+        this.h.e1();
     }
 
-    @Override // com.google.android.gms.tasks.Continuation
-    public Object then(Task task) {
-        boolean z10;
-        if (task.isSuccessful()) {
-            w9.b bVar = (w9.b) task.getResult();
-            String str = "Crashlytics report successfully enqueued to DataTransport: " + bVar.b;
-            t9.b bVar2 = t9.b.a;
-            bVar2.b(str);
-            File file = bVar.c;
-            z10 = true;
-            if (file.delete()) {
-                bVar2.b("Deleted report file: " + file.getPath());
+    @Override // c3.o
+    public final void h(long j3, long j10) {
+        this.k = 0;
+        this.m = -9223372036854775807L;
+        this.n = 0L;
+        this.q = 0;
+        this.u = j10;
+        if (this.r instanceof b) {
+            throw null;
+        }
+    }
+
+    @Override // c3.o
+    public final List i() {
+        g0 g0Var = i0.b;
+        return a1.e;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x0078, code lost:
+    
+        if (r3 != 1231971951) goto L25;
+     */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x006f  */
+    /* JADX WARN: Removed duplicated region for block: B:170:0x01a5  */
+    /* JADX WARN: Removed duplicated region for block: B:173:0x01af  */
+    /* JADX WARN: Removed duplicated region for block: B:176:0x01bd  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0097  */
+    /* JADX WARN: Removed duplicated region for block: B:184:0x01e0  */
+    /* JADX WARN: Removed duplicated region for block: B:187:0x01ec  */
+    /* JADX WARN: Removed duplicated region for block: B:190:0x020c  */
+    /* JADX WARN: Removed duplicated region for block: B:194:0x0225  */
+    /* JADX WARN: Removed duplicated region for block: B:201:0x0268  */
+    /* JADX WARN: Removed duplicated region for block: B:211:0x0291  */
+    /* JADX WARN: Removed duplicated region for block: B:232:0x01fc  */
+    /* JADX WARN: Removed duplicated region for block: B:233:0x01d9  */
+    /* JADX WARN: Removed duplicated region for block: B:234:0x01b6  */
+    /* JADX WARN: Removed duplicated region for block: B:235:0x01aa  */
+    /* JADX WARN: Removed duplicated region for block: B:238:0x0081  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x02f7  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x037b  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x047b  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x0575  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x0387  */
+    /* JADX WARN: Type inference failed for: r27v18 */
+    /* JADX WARN: Type inference failed for: r27v5 */
+    /* JADX WARN: Type inference failed for: r27v6, types: [c3.b0, v3.f] */
+    /* JADX WARN: Type inference failed for: r27v7 */
+    /* JADX WARN: Type inference failed for: r36v0 */
+    /* JADX WARN: Type inference failed for: r36v1, types: [long[]] */
+    /* JADX WARN: Type inference failed for: r36v2 */
+    @Override // c3.o
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final int m(p pVar, s sVar) {
+        z zVar;
+        Throwable th2;
+        int i10;
+        int i11;
+        long j3;
+        v vVar;
+        long j10;
+        int i12;
+        int i13;
+        w wVar;
+        int j11;
+        ?? r36;
+        v vVar2;
+        int i14;
+        int i15;
+        int i16;
+        int i17;
+        int i18;
+        long j12;
+        Object aVar;
+        p0 p0Var;
+        Object obj;
+        f aVar2;
+        long j13;
+        long j14;
+        int i19;
+        int x10;
+        Object obj2;
+        Object obj3;
+        e2.d.h(this.i);
+        String str = d0.a;
+        int i20 = this.k;
+        z zVar2 = this.d;
+        if (i20 == 0) {
+            try {
+                e(pVar, false);
+            } catch (EOFException unused) {
+                zVar = zVar2;
+                th2 = null;
+                i10 = -1;
+                i11 = -1;
+                j3 = 1000000;
+            }
+        }
+        f fVar = this.r;
+        v vVar3 = this.c;
+        if (fVar == null) {
+            v vVar4 = new v(zVar2.b);
+            j3 = 1000000;
+            pVar.a(0, zVar2.b, vVar4.a);
+            if ((zVar2.a & 1) != 0) {
+                if (zVar2.d != 1) {
+                    th2 = null;
+                    i12 = 36;
+                    j10 = 0;
+                    if (vVar4.c >= i12 + 4) {
+                        vVar4.J(i12);
+                        i13 = vVar4.j();
+                        if (i13 != 1483304551) {
+                        }
+                        wVar = this.e;
+                        if (i13 != 1231971951) {
+                            if (i13 == 1447187017) {
+                                long length = pVar.getLength();
+                                long position = pVar.getPosition();
+                                vVar4.K(6);
+                                long j15 = position + zVar2.b;
+                                long j16 = j15 + vVar4.j();
+                                int j17 = vVar4.j();
+                                if (j17 <= 0) {
+                                    obj2 = th2;
+                                    zVar = zVar2;
+                                } else {
+                                    long W = d0.W(zVar2.c, (j17 * zVar2.f) - 1);
+                                    int D = vVar4.D();
+                                    int D2 = vVar4.D();
+                                    int D3 = vVar4.D();
+                                    vVar4.K(2);
+                                    long j18 = position + zVar2.b;
+                                    long[] jArr = new long[D];
+                                    long[] jArr2 = new long[D];
+                                    int i21 = 0;
+                                    while (true) {
+                                        if (i21 < D) {
+                                            long j19 = j18;
+                                            long j20 = W;
+                                            jArr[i21] = (i21 * W) / D;
+                                            jArr2[i21] = j19;
+                                            if (D3 != 1) {
+                                                i19 = i21;
+                                                if (D3 == 2) {
+                                                    x10 = vVar4.D();
+                                                } else if (D3 == 3) {
+                                                    x10 = vVar4.A();
+                                                } else {
+                                                    if (D3 != 4) {
+                                                        obj2 = th2;
+                                                        zVar = zVar2;
+                                                        break;
+                                                    }
+                                                    x10 = vVar4.B();
+                                                }
+                                            } else {
+                                                i19 = i21;
+                                                x10 = vVar4.x();
+                                            }
+                                            j18 = (x10 * D2) + j19;
+                                            i21 = i19 + 1;
+                                            W = j20;
+                                        } else {
+                                            long j21 = W;
+                                            long j22 = j18;
+                                            if (length == -1 || length == j16) {
+                                                j14 = j16;
+                                            } else {
+                                                StringBuilder u10 = a4.a.u(length, "VBRI data size mismatch: ", ", ");
+                                                j14 = j16;
+                                                u10.append(j14);
+                                                e2.a.n("VbriSeeker", u10.toString());
+                                            }
+                                            if (j14 != j22) {
+                                                StringBuilder u11 = a4.a.u(j14, "VBRI bytes and ToC mismatch (using max): ", ", ");
+                                                u11.append(j22);
+                                                u11.append("\nSeeking will be inaccurate.");
+                                                e2.a.n("VbriSeeker", u11.toString());
+                                                j14 = Math.max(j14, j22);
+                                            }
+                                            zVar = zVar2;
+                                            obj2 = new g(jArr, jArr2, j21, j15, j14, zVar.e);
+                                        }
+                                    }
+                                }
+                                pVar.q(zVar.b);
+                                obj3 = obj2;
+                            } else if (i13 != 1483304551) {
+                                pVar.p();
+                                obj3 = th2;
+                                zVar = zVar2;
+                            }
+                            vVar2 = vVar3;
+                            aVar = obj3;
+                            p0Var = this.l;
+                            long position2 = pVar.getPosition();
+                            if (p0Var != null) {
+                                for (o0 o0Var : p0Var.a) {
+                                    if (o0Var instanceof m) {
+                                        int[] iArr = ((m) o0Var).e;
+                                        if (p0Var != null) {
+                                            for (o0 o0Var2 : p0Var.a) {
+                                                if (o0Var2 instanceof q3.o) {
+                                                    q3.o oVar = (q3.o) o0Var2;
+                                                    if (oVar.a.equals("TLEN")) {
+                                                        j13 = d0.Q(Long.parseLong((String) oVar.c.get(0)));
+                                                        break;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        j13 = -9223372036854775807L;
+                                        int length2 = iArr.length;
+                                        int i22 = length2 + 1;
+                                        long[] jArr3 = new long[i22];
+                                        long[] jArr4 = new long[i22];
+                                        jArr3[0] = position2;
+                                        jArr4[0] = 0;
+                                        long j23 = 0;
+                                        int i23 = 1;
+                                        while (i23 <= length2) {
+                                            int i24 = i23 - 1;
+                                            position2 += r10.c + iArr[i24];
+                                            j23 += r10.d + r10.f[i24];
+                                            jArr3[i23] = position2;
+                                            jArr4[i23] = j23;
+                                            i23++;
+                                            length2 = length2;
+                                            iArr = iArr;
+                                        }
+                                        obj = new c(j13, jArr3, jArr4);
+                                        ?? r27 = aVar;
+                                        if (this.s) {
+                                            if (obj != null) {
+                                                r27 = obj;
+                                            } else if (aVar == null) {
+                                                r27 = th2;
+                                            }
+                                            int i25 = this.a;
+                                            if (r27 != 0 && !r27.f() && (i25 & 1) != 0 && r27.l() != -9223372036854775807L && (r27.d() != -1 || pVar.getLength() != -1)) {
+                                                long e = r27.e() != -1 ? r27.e() : 0L;
+                                                long d = r27.d() != -1 ? r27.d() : pVar.getLength();
+                                                aVar2 = new a(d, z7.e(d0.Y(d - e, 8000000L, r27.l(), RoundingMode.HALF_UP)), -1, false, e);
+                                            } else if (r27 == 0 || !(r27.f() || (i25 & 1) == 0)) {
+                                                vVar = vVar2;
+                                                pVar.a(0, 4, vVar.a);
+                                                vVar.J(0);
+                                                zVar.a(vVar.j());
+                                                aVar2 = new a(pVar.getLength(), zVar.e, zVar.b, false, pVar.getPosition());
+                                                h0 h0Var = this.i;
+                                                aVar2.l();
+                                                h0Var.getClass();
+                                            } else {
+                                                aVar2 = r27;
+                                            }
+                                            vVar = vVar2;
+                                            h0 h0Var2 = this.i;
+                                            aVar2.l();
+                                            h0Var2.getClass();
+                                        } else {
+                                            aVar2 = new e(-9223372036854775807L);
+                                            vVar = vVar2;
+                                        }
+                                        this.r = aVar2;
+                                        this.h.X1(aVar2);
+                                        r rVar = new r();
+                                        rVar.p = r0.n("audio/mpeg");
+                                        rVar.q = r0.n((String) zVar.g);
+                                        rVar.r = 4096;
+                                        rVar.I = zVar.d;
+                                        rVar.J = zVar.c;
+                                        rVar.L = wVar.a;
+                                        rVar.M = wVar.b;
+                                        rVar.k = this.l;
+                                        if (this.r.k() != -2147483647) {
+                                            rVar.h = this.r.k();
+                                        }
+                                        this.j.b(new b2.s(rVar));
+                                        this.o = pVar.getPosition();
+                                    }
+                                }
+                            }
+                            obj = th2;
+                            ?? r272 = aVar;
+                            if (this.s) {
+                            }
+                            this.r = aVar2;
+                            this.h.X1(aVar2);
+                            r rVar2 = new r();
+                            rVar2.p = r0.n("audio/mpeg");
+                            rVar2.q = r0.n((String) zVar.g);
+                            rVar2.r = 4096;
+                            rVar2.I = zVar.d;
+                            rVar2.J = zVar.c;
+                            rVar2.L = wVar.a;
+                            rVar2.M = wVar.b;
+                            rVar2.k = this.l;
+                            if (this.r.k() != -2147483647) {
+                            }
+                            this.j.b(new b2.s(rVar2));
+                            this.o = pVar.getPosition();
+                        }
+                        zVar = zVar2;
+                        j11 = vVar4.j();
+                        int B = (j11 & 1) == 0 ? vVar4.B() : -1;
+                        long z10 = (j11 & 2) == 0 ? vVar4.z() : -1L;
+                        if ((j11 & 4) != 4) {
+                            long[] jArr5 = new long[100];
+                            int i26 = 0;
+                            for (int i27 = 100; i26 < i27; i27 = 100) {
+                                jArr5[i26] = vVar4.x();
+                                i26++;
+                                vVar3 = vVar3;
+                            }
+                            r36 = jArr5;
+                        } else {
+                            r36 = th2;
+                        }
+                        vVar2 = vVar3;
+                        if ((j11 & 8) != 0) {
+                            vVar4.K(4);
+                        }
+                        if (vVar4.a() < 24) {
+                            vVar4.K(21);
+                            int A = vVar4.A();
+                            i15 = (16773120 & A) >> 12;
+                            i14 = A & 4095;
+                        } else {
+                            i14 = -1;
+                            i15 = -1;
+                        }
+                        long j24 = B;
+                        int i28 = zVar.b;
+                        int i29 = zVar.c;
+                        int i30 = zVar.e;
+                        i16 = zVar.f;
+                        if ((wVar.a != -1 || wVar.b == -1) && i15 != -1 && i14 != -1) {
+                            wVar.a = i15;
+                            wVar.b = i14;
+                        }
+                        long position3 = pVar.getPosition();
+                        if (pVar.getLength() != -1 || z10 == -1) {
+                            i17 = i13;
+                            i18 = i16;
+                        } else {
+                            i18 = i16;
+                            long j25 = position3 + z10;
+                            if (pVar.getLength() != j25) {
+                                StringBuilder sb2 = new StringBuilder("Data size mismatch between stream (");
+                                i17 = i13;
+                                sb2.append(pVar.getLength());
+                                sb2.append(") and Xing frame (");
+                                sb2.append(j25);
+                                sb2.append("), using Xing value.");
+                                e2.a.i("Mp3Extractor", sb2.toString());
+                            } else {
+                                i17 = i13;
+                            }
+                        }
+                        pVar.q(zVar.b);
+                        if (i17 != 1483304551) {
+                            long W2 = (j24 == -1 || j24 == 0) ? -9223372036854775807L : d0.W(i29, (j24 * i18) - 1);
+                            if (W2 != -9223372036854775807L) {
+                                aVar = new h(position3, i28, W2, i30, z10, r36);
+                                p0Var = this.l;
+                                long position22 = pVar.getPosition();
+                                if (p0Var != null) {
+                                }
+                                obj = th2;
+                                ?? r2722 = aVar;
+                                if (this.s) {
+                                }
+                                this.r = aVar2;
+                                this.h.X1(aVar2);
+                                r rVar22 = new r();
+                                rVar22.p = r0.n("audio/mpeg");
+                                rVar22.q = r0.n((String) zVar.g);
+                                rVar22.r = 4096;
+                                rVar22.I = zVar.d;
+                                rVar22.J = zVar.c;
+                                rVar22.L = wVar.a;
+                                rVar22.M = wVar.b;
+                                rVar22.k = this.l;
+                                if (this.r.k() != -2147483647) {
+                                }
+                                this.j.b(new b2.s(rVar22));
+                                this.o = pVar.getPosition();
+                            }
+                            aVar = th2;
+                            p0Var = this.l;
+                            long position222 = pVar.getPosition();
+                            if (p0Var != null) {
+                            }
+                            obj = th2;
+                            ?? r27222 = aVar;
+                            if (this.s) {
+                            }
+                            this.r = aVar2;
+                            this.h.X1(aVar2);
+                            r rVar222 = new r();
+                            rVar222.p = r0.n("audio/mpeg");
+                            rVar222.q = r0.n((String) zVar.g);
+                            rVar222.r = 4096;
+                            rVar222.I = zVar.d;
+                            rVar222.J = zVar.c;
+                            rVar222.L = wVar.a;
+                            rVar222.M = wVar.b;
+                            rVar222.k = this.l;
+                            if (this.r.k() != -2147483647) {
+                            }
+                            this.j.b(new b2.s(rVar222));
+                            this.o = pVar.getPosition();
+                        } else {
+                            long length3 = pVar.getLength();
+                            long W3 = (j24 == -1 || j24 == 0) ? -9223372036854775807L : d0.W(i29, (i18 * j24) - 1);
+                            if (W3 != -9223372036854775807L) {
+                                if (z10 != -1) {
+                                    length3 = position3 + z10;
+                                    j12 = z10 - i28;
+                                } else if (length3 != -1) {
+                                    j12 = (length3 - position3) - i28;
+                                }
+                                long j26 = length3;
+                                long j27 = j12;
+                                RoundingMode roundingMode = RoundingMode.HALF_UP;
+                                aVar = new a(j26, z7.b(d0.Y(j27, 8000000L, W3, roundingMode)), z7.b(q7.b(j27, j24, roundingMode)), false, position3 + i28);
+                                p0Var = this.l;
+                                long position2222 = pVar.getPosition();
+                                if (p0Var != null) {
+                                }
+                                obj = th2;
+                                ?? r272222 = aVar;
+                                if (this.s) {
+                                }
+                                this.r = aVar2;
+                                this.h.X1(aVar2);
+                                r rVar2222 = new r();
+                                rVar2222.p = r0.n("audio/mpeg");
+                                rVar2222.q = r0.n((String) zVar.g);
+                                rVar2222.r = 4096;
+                                rVar2222.I = zVar.d;
+                                rVar2222.J = zVar.c;
+                                rVar2222.L = wVar.a;
+                                rVar2222.M = wVar.b;
+                                rVar2222.k = this.l;
+                                if (this.r.k() != -2147483647) {
+                                }
+                                this.j.b(new b2.s(rVar2222));
+                                this.o = pVar.getPosition();
+                            }
+                            aVar = th2;
+                            p0Var = this.l;
+                            long position22222 = pVar.getPosition();
+                            if (p0Var != null) {
+                            }
+                            obj = th2;
+                            ?? r2722222 = aVar;
+                            if (this.s) {
+                            }
+                            this.r = aVar2;
+                            this.h.X1(aVar2);
+                            r rVar22222 = new r();
+                            rVar22222.p = r0.n("audio/mpeg");
+                            rVar22222.q = r0.n((String) zVar.g);
+                            rVar22222.r = 4096;
+                            rVar22222.I = zVar.d;
+                            rVar22222.J = zVar.c;
+                            rVar22222.L = wVar.a;
+                            rVar22222.M = wVar.b;
+                            rVar22222.k = this.l;
+                            if (this.r.k() != -2147483647) {
+                            }
+                            this.j.b(new b2.s(rVar22222));
+                            this.o = pVar.getPosition();
+                        }
+                    }
+                    if (vVar4.c >= 40) {
+                        vVar4.J(36);
+                        if (vVar4.j() == 1447187017) {
+                            i13 = 1447187017;
+                            wVar = this.e;
+                            if (i13 != 1231971951) {
+                            }
+                            zVar = zVar2;
+                            j11 = vVar4.j();
+                            if ((j11 & 1) == 0) {
+                            }
+                            if ((j11 & 2) == 0) {
+                            }
+                            if ((j11 & 4) != 4) {
+                            }
+                            vVar2 = vVar3;
+                            if ((j11 & 8) != 0) {
+                            }
+                            if (vVar4.a() < 24) {
+                            }
+                            long j242 = B;
+                            int i282 = zVar.b;
+                            int i292 = zVar.c;
+                            int i302 = zVar.e;
+                            i16 = zVar.f;
+                            if (wVar.a != -1) {
+                            }
+                            wVar.a = i15;
+                            wVar.b = i14;
+                            long position32 = pVar.getPosition();
+                            if (pVar.getLength() != -1) {
+                            }
+                            i17 = i13;
+                            i18 = i16;
+                            pVar.q(zVar.b);
+                            if (i17 != 1483304551) {
+                            }
+                        }
+                    }
+                    i13 = 0;
+                    wVar = this.e;
+                    if (i13 != 1231971951) {
+                    }
+                    zVar = zVar2;
+                    j11 = vVar4.j();
+                    if ((j11 & 1) == 0) {
+                    }
+                    if ((j11 & 2) == 0) {
+                    }
+                    if ((j11 & 4) != 4) {
+                    }
+                    vVar2 = vVar3;
+                    if ((j11 & 8) != 0) {
+                    }
+                    if (vVar4.a() < 24) {
+                    }
+                    long j2422 = B;
+                    int i2822 = zVar.b;
+                    int i2922 = zVar.c;
+                    int i3022 = zVar.e;
+                    i16 = zVar.f;
+                    if (wVar.a != -1) {
+                    }
+                    wVar.a = i15;
+                    wVar.b = i14;
+                    long position322 = pVar.getPosition();
+                    if (pVar.getLength() != -1) {
+                    }
+                    i17 = i13;
+                    i18 = i16;
+                    pVar.q(zVar.b);
+                    if (i17 != 1483304551) {
+                    }
+                }
+                th2 = null;
+                i12 = 21;
+                j10 = 0;
+                if (vVar4.c >= i12 + 4) {
+                }
+                if (vVar4.c >= 40) {
+                }
+                i13 = 0;
+                wVar = this.e;
+                if (i13 != 1231971951) {
+                }
+                zVar = zVar2;
+                j11 = vVar4.j();
+                if ((j11 & 1) == 0) {
+                }
+                if ((j11 & 2) == 0) {
+                }
+                if ((j11 & 4) != 4) {
+                }
+                vVar2 = vVar3;
+                if ((j11 & 8) != 0) {
+                }
+                if (vVar4.a() < 24) {
+                }
+                long j24222 = B;
+                int i28222 = zVar.b;
+                int i29222 = zVar.c;
+                int i30222 = zVar.e;
+                i16 = zVar.f;
+                if (wVar.a != -1) {
+                }
+                wVar.a = i15;
+                wVar.b = i14;
+                long position3222 = pVar.getPosition();
+                if (pVar.getLength() != -1) {
+                }
+                i17 = i13;
+                i18 = i16;
+                pVar.q(zVar.b);
+                if (i17 != 1483304551) {
+                }
             } else {
-                bVar2.d("Crashlytics could not delete report file: " + file.getPath(), null);
+                if (zVar2.d == 1) {
+                    i12 = 13;
+                    th2 = null;
+                    j10 = 0;
+                    if (vVar4.c >= i12 + 4) {
+                    }
+                    if (vVar4.c >= 40) {
+                    }
+                    i13 = 0;
+                    wVar = this.e;
+                    if (i13 != 1231971951) {
+                    }
+                    zVar = zVar2;
+                    j11 = vVar4.j();
+                    if ((j11 & 1) == 0) {
+                    }
+                    if ((j11 & 2) == 0) {
+                    }
+                    if ((j11 & 4) != 4) {
+                    }
+                    vVar2 = vVar3;
+                    if ((j11 & 8) != 0) {
+                    }
+                    if (vVar4.a() < 24) {
+                    }
+                    long j242222 = B;
+                    int i282222 = zVar.b;
+                    int i292222 = zVar.c;
+                    int i302222 = zVar.e;
+                    i16 = zVar.f;
+                    if (wVar.a != -1) {
+                    }
+                    wVar.a = i15;
+                    wVar.b = i14;
+                    long position32222 = pVar.getPosition();
+                    if (pVar.getLength() != -1) {
+                    }
+                    i17 = i13;
+                    i18 = i16;
+                    pVar.q(zVar.b);
+                    if (i17 != 1483304551) {
+                    }
+                }
+                th2 = null;
+                i12 = 21;
+                j10 = 0;
+                if (vVar4.c >= i12 + 4) {
+                }
+                if (vVar4.c >= 40) {
+                }
+                i13 = 0;
+                wVar = this.e;
+                if (i13 != 1231971951) {
+                }
+                zVar = zVar2;
+                j11 = vVar4.j();
+                if ((j11 & 1) == 0) {
+                }
+                if ((j11 & 2) == 0) {
+                }
+                if ((j11 & 4) != 4) {
+                }
+                vVar2 = vVar3;
+                if ((j11 & 8) != 0) {
+                }
+                if (vVar4.a() < 24) {
+                }
+                long j2422222 = B;
+                int i2822222 = zVar.b;
+                int i2922222 = zVar.c;
+                int i3022222 = zVar.e;
+                i16 = zVar.f;
+                if (wVar.a != -1) {
+                }
+                wVar.a = i15;
+                wVar.b = i14;
+                long position322222 = pVar.getPosition();
+                if (pVar.getLength() != -1) {
+                }
+                i17 = i13;
+                i18 = i16;
+                pVar.q(zVar.b);
+                if (i17 != 1483304551) {
+                }
             }
         } else {
-            Log.w("FirebaseCrashlytics", "Crashlytics report could not be enqueued to DataTransport", task.getException());
-            z10 = false;
+            zVar = zVar2;
+            vVar = vVar3;
+            th2 = null;
+            j3 = 1000000;
+            j10 = 0;
+            if (this.o != 0) {
+                long position4 = pVar.getPosition();
+                long j28 = this.o;
+                if (position4 < j28) {
+                    pVar.q((int) (j28 - position4));
+                }
+            }
         }
-        return Boolean.valueOf(z10);
+        if (this.q == 0) {
+            pVar.p();
+            if (!d(pVar)) {
+                vVar.J(0);
+                int j29 = vVar.j();
+                if (((-128000) & j29) != (this.k & (-128000)) || c3.b.h(j29) == -1) {
+                    pVar.q(1);
+                    this.k = 0;
+                    i10 = 0;
+                    i11 = -1;
+                    if (i10 == i11) {
+                        f fVar2 = this.r;
+                        if (fVar2 instanceof b) {
+                            if (fVar2.l() != ((this.n * j3) / zVar.c) + this.m) {
+                                ((b) this.r).getClass();
+                                throw th2;
+                            }
+                        }
+                    }
+                    return i10;
+                }
+                zVar.a(j29);
+                if (this.m == -9223372036854775807L) {
+                    this.m = this.r.b(pVar.getPosition());
+                    long j30 = this.b;
+                    if (j30 != -9223372036854775807L) {
+                        this.m = (j30 - this.r.b(j10)) + this.m;
+                    }
+                }
+                this.q = zVar.b;
+                this.p = pVar.getPosition() + zVar.b;
+                if (this.r instanceof b) {
+                    long j31 = ((this.n + zVar.f) * j3) / zVar.c;
+                    throw th2;
+                }
+            }
+            i10 = -1;
+            i11 = -1;
+            if (i10 == i11) {
+            }
+            return i10;
+        }
+        int a2 = this.j.a(pVar, this.q, true);
+        if (a2 != -1) {
+            int i31 = this.q - a2;
+            this.q = i31;
+            if (i31 <= 0) {
+                this.j.c(((this.n * j3) / zVar.c) + this.m, 1, zVar.b, 0, null);
+                this.n += zVar.f;
+                this.q = 0;
+            }
+            i10 = 0;
+            i11 = -1;
+            if (i10 == i11) {
+            }
+            return i10;
+        }
+        i10 = -1;
+        i11 = -1;
+        if (i10 == i11) {
+        }
+        return i10;
     }
 
-    public /* synthetic */ d(Object obj, int i10) {
+    public d(int i10, long j3) {
         this.a = i10;
+        this.b = j3;
+        this.c = new v(10);
+        this.d = new z();
+        this.e = new w();
+        this.m = -9223372036854775807L;
+        this.f = new i(8);
+        n nVar = new n();
+        this.g = nVar;
+        this.j = nVar;
+        this.p = -1L;
+    }
+
+    @Override // c3.o
+    public final o c() {
+        return this;
+    }
+
+    @Override // c3.o
+    public final void release() {
     }
 }

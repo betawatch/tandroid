@@ -17,14 +17,14 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.h90;
-import w7.x5;
+import org.telegram.ui.Components.r90;
+import w7.y5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class l1 extends LinearLayout {
     public final d6 a;
-    public final h90 b;
+    public final r90 b;
     public final ImageReceiver c;
     public final TextView d;
     public boolean e;
@@ -35,13 +35,13 @@ public final class l1 extends LinearLayout {
         this.c = imageReceiver;
         this.a = d6Var;
         setOrientation(1);
-        h90 h90Var = new h90();
-        this.b = h90Var;
+        r90 r90Var = new r90();
+        this.b = r90Var;
         int i10 = h6.G6;
         int v02 = h6.v0(i10, d6Var);
-        h90Var.f(h6.l1(0.05f, v02), h6.l1(0.15f, v02), h6.l1(0.1f, v02), h6.l1(0.3f, v02));
-        h90Var.j(4.0f);
-        h90Var.w.setStrokeWidth(AndroidUtilities.dp(1.0f));
+        r90Var.f(h6.l1(0.05f, v02), h6.l1(0.15f, v02), h6.l1(0.1f, v02), h6.l1(0.3f, v02));
+        r90Var.j(4.0f);
+        r90Var.w.setStrokeWidth(AndroidUtilities.dp(1.0f));
         imageReceiver.setRoundRadius(AndroidUtilities.dp(4.0f));
         TextView textView = new TextView(context);
         this.d = textView;
@@ -49,14 +49,14 @@ public final class l1 extends LinearLayout {
         textView.setTextColor(h6.v0(i10, d6Var));
         textView.setTextSize(1, 16.0f);
         boolean z10 = LocaleController.isRTL;
-        addView(textView, x5.t(-1, -2, 55, z10 ? 70 : 18, 10, z10 ? 18 : 70, 4));
+        addView(textView, y5.t(-1, -2, 55, z10 ? 70 : 18, 10, z10 ? 18 : 70, 4));
         TextView textView2 = new TextView(context);
         textView2.setGravity(LocaleController.isRTL ? 5 : 3);
         textView2.setTextColor(h6.v0(h6.z6, d6Var));
         textView2.setText(LocaleController.getString(R.string.BusinessProfileLocation));
         textView2.setTextSize(1, 13.0f);
         boolean z11 = LocaleController.isRTL;
-        addView(textView2, x5.t(-1, -2, 55, z11 ? 70 : 18, 0, z11 ? 18 : 70, 8));
+        addView(textView2, y5.t(-1, -2, 55, z11 ? 70 : 18, 0, z11 ? 18 : 70, 8));
         setWillNotDraw(false);
     }
 

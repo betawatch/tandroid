@@ -27,16 +27,16 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.c5;
+import org.telegram.ui.ActionBar.b5;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Cells.q3;
+import org.telegram.ui.Cells.c1;
 import org.telegram.ui.Cells.z;
-import org.telegram.ui.Components.ml0;
 import org.telegram.ui.Components.qq;
+import org.telegram.ui.Components.wl0;
 import org.telegram.ui.LaunchActivity;
-import w7.p;
+import w7.q;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class i extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public ArrayList E;
@@ -54,14 +54,14 @@ public final class i extends FrameLayout implements NotificationCenter.Notificat
     public int v;
     public LinearLayout w;
     public TextView x;
-    public ml0 y;
+    public wl0 y;
 
     public static float a(DisplayMetrics displayMetrics, float f7) {
-        return p.a(f7, AndroidUtilities.dp(16.0f), displayMetrics.widthPixels - AndroidUtilities.dp(72.0f));
+        return q.a(f7, AndroidUtilities.dp(16.0f), displayMetrics.widthPixels - AndroidUtilities.dp(72.0f));
     }
 
     public static float b(DisplayMetrics displayMetrics, float f7) {
-        return p.a(f7, AndroidUtilities.dp(16.0f), displayMetrics.heightPixels - AndroidUtilities.dp(72.0f));
+        return q.a(f7, AndroidUtilities.dp(16.0f), displayMetrics.heightPixels - AndroidUtilities.dp(72.0f));
     }
 
     private List<a> getBuiltInDebugItems() {
@@ -87,7 +87,7 @@ public final class i extends FrameLayout implements NotificationCenter.Notificat
             this.w.setVisibility(0);
             arrayList.clear();
             if (getContext() instanceof LaunchActivity) {
-                c5 O = ((LaunchActivity) getContext()).O();
+                b5 O = ((LaunchActivity) getContext()).O();
                 if (O instanceof b) {
                     arrayList.addAll(((b) O).z());
                 }
@@ -110,7 +110,7 @@ public final class i extends FrameLayout implements NotificationCenter.Notificat
         final float translationX = m6Var.getTranslationX();
         final float translationY = m6Var.getTranslationY();
         k kVar = new k(new j(z10 ? 0.0f : 1000.0f));
-        l l4 = q3.l(1000.0f, 900.0f, 1.0f);
+        l l4 = c1.l(1000.0f, 900.0f, 1.0f);
         l4.i = z10 ? 1000.0f : 0.0f;
         kVar.u = l4;
         kVar.b(new o1.g() { // from class: mg.d

@@ -1,39 +1,37 @@
 package pg;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ z0 b;
+    public final /* synthetic */ f1 b;
 
-    public /* synthetic */ y0(z0 z0Var, int i10) {
+    public /* synthetic */ y0(f1 f1Var, int i10) {
         this.a = i10;
-        this.b = z0Var;
+        this.b = f1Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                b1 b1Var = this.b.b.d;
-                if (b1Var != null) {
-                    b1Var.postRunnable(b1Var.w);
+                e1 e1Var = this.b.a;
+                if (e1Var != null) {
+                    e1Var.b();
                     break;
                 }
                 break;
             case 1:
-                b1 b1Var2 = this.b.b.d;
-                if (b1Var2 != null) {
-                    b1Var2.postRunnable(b1Var2.w);
-                    break;
-                }
+                f1 f1Var = this.b;
+                f1Var.c.a(f1Var.r);
+                d1 d1Var = f1Var.d;
+                d1Var.getClass();
+                d1Var.postRunnable(new b1(d1Var, 2));
+                f1Var.d = null;
                 break;
             default:
-                d1 d1Var = this.b.b;
-                b1 b1Var3 = d1Var.d;
-                b1Var3.getClass();
-                b1Var3.postRunnable(new a1(b1Var3, 2));
-                d1Var.d = null;
+                f1 f1Var2 = this.b;
+                f1Var2.c.q(f1Var2.x);
                 break;
         }
     }

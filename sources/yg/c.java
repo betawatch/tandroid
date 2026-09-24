@@ -6,13 +6,13 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Cells.bb;
+import org.telegram.ui.Cells.za;
 import org.telegram.ui.Components.h9;
-import tg.t;
+import tg.s;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class c extends bb {
+public final class c extends za {
     public final a a0;
     public TL_stories.PrepaidGiveaway b0;
 
@@ -21,7 +21,7 @@ public final class c extends bb {
         this.a0 = new a(context);
     }
 
-    @Override // org.telegram.ui.Cells.bb
+    @Override // org.telegram.ui.Cells.za
     public /* bridge */ /* synthetic */ int[] getColorKeys() {
         return null;
     }
@@ -30,7 +30,7 @@ public final class c extends bb {
         return this.b0;
     }
 
-    @Override // org.telegram.ui.Cells.bb, android.view.View
+    @Override // org.telegram.ui.Cells.za, android.view.View
     public final void onDraw(Canvas canvas) {
         if (this.S) {
             canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(70.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(70.0f) : 0), getMeasuredHeight() - 1, h6.k0);
@@ -58,7 +58,7 @@ public final class c extends bb {
             } else {
                 h9Var.i(-6631068, -11945404);
             }
-            String valueOf2 = String.valueOf(t.g() * prepaidGiveaway.quantity);
+            String valueOf2 = String.valueOf(s.g() * prepaidGiveaway.quantity);
             a aVar2 = this.a0;
             aVar2.f = valueOf2;
             aVar2.e = aVar2.a.measureText(valueOf2);

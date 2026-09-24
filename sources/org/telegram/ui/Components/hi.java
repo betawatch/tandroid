@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class hi extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -37,26 +37,26 @@ public final class hi extends AnimatorListenerAdapter {
                 kVar.u.a(0.75f);
                 kVar.u.b(500.0f);
                 kVar.b(new k7(this, 3));
-                kVar.a(new ei.m4(3, this, (gh) this.c));
+                kVar.a(new ei.m4(3, this, (hh) this.c));
                 wiVar.t1 = kVar;
                 kVar.f();
                 break;
             case 1:
                 a5.a aVar = (a5.a) this.d;
-                ((ml0) aVar.d).scrollBy(0, this.b - ((int[]) this.c)[0]);
+                ((wl0) aVar.d).scrollBy(0, this.b - ((int[]) this.c)[0]);
                 aVar.c = null;
                 break;
             default:
-                yh.y3 y3Var = (yh.y3) this.d;
-                y3Var.T1();
-                yh.i2 i2Var = y3Var.f0;
+                yh.x3 x3Var = (yh.x3) this.d;
+                x3Var.T1();
+                yh.h2 h2Var = x3Var.f0;
                 int i10 = this.b;
-                i2Var.setVisibility(i10 == 0 ? 0 : 8);
-                y3Var.r0.setVisibility(i10 == 1 ? 0 : 8);
-                y3Var.y0.setVisibility(i10 == 2 ? 0 : 8);
-                y3Var.A0.setVisibility(i10 == 3 ? 0 : 8);
-                y3Var.s2();
-                y3Var.Z0 = null;
+                h2Var.setVisibility(i10 == 0 ? 0 : 8);
+                x3Var.r0.setVisibility(i10 == 1 ? 0 : 8);
+                x3Var.y0.setVisibility(i10 == 2 ? 0 : 8);
+                x3Var.A0.setVisibility(i10 == 3 ? 0 : 8);
+                x3Var.s2();
+                x3Var.Z0 = null;
                 Runnable runnable = (Runnable) this.c;
                 if (runnable != null) {
                     runnable.run();

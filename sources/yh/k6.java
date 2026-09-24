@@ -3,17 +3,17 @@ package yh;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k6 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ EditTextBoldCursor b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f3[] c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e3[] c;
 
-    public /* synthetic */ k6(EditTextBoldCursor editTextBoldCursor, org.telegram.ui.ActionBar.f3[] f3VarArr, int i10) {
+    public /* synthetic */ k6(EditTextBoldCursor editTextBoldCursor, org.telegram.ui.ActionBar.e3[] e3VarArr, int i10) {
         this.a = i10;
         this.b = editTextBoldCursor;
-        this.c = f3VarArr;
+        this.c = e3VarArr;
     }
 
     @Override // java.lang.Runnable
@@ -23,7 +23,7 @@ public final /* synthetic */ class k6 implements Runnable {
                 this.c[0].setFocusable(true);
                 EditTextBoldCursor editTextBoldCursor = this.b;
                 editTextBoldCursor.requestFocus();
-                AndroidUtilities.runOnUIThread(new w2(editTextBoldCursor, 3));
+                AndroidUtilities.runOnUIThread(new r2(editTextBoldCursor, 4));
                 break;
             case 1:
                 AndroidUtilities.hideKeyboard(this.b);
@@ -36,9 +36,9 @@ public final /* synthetic */ class k6 implements Runnable {
         }
     }
 
-    public /* synthetic */ k6(org.telegram.ui.ActionBar.f3[] f3VarArr, EditTextBoldCursor editTextBoldCursor) {
+    public /* synthetic */ k6(org.telegram.ui.ActionBar.e3[] e3VarArr, EditTextBoldCursor editTextBoldCursor) {
         this.a = 0;
-        this.c = f3VarArr;
+        this.c = e3VarArr;
         this.b = editTextBoldCursor;
     }
 }

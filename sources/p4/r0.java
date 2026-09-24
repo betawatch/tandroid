@@ -13,7 +13,7 @@ import com.google.android.gms.internal.vision.h3;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class r0 extends h3 implements ServiceConnection {
     public static final /* synthetic */ int G = 0;
@@ -31,7 +31,7 @@ public final class r0 extends h3 implements ServiceConnection {
     }
 
     public r0(Context context, ComponentName componentName) {
-        super(context, new k2.u(componentName, 17));
+        super(context, new n2.e(componentName, 12));
         this.v = new ArrayList();
         this.r = componentName;
         this.s = new com.google.android.gms.internal.cast.c0();

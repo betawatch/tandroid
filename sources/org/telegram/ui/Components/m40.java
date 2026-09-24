@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class m40 extends HorizontalScrollView {
     public static final RectF v = new RectF();
@@ -40,7 +40,7 @@ public final class m40 extends HorizontalScrollView {
         this.d = linearLayout;
         linearLayout.setLayerType(0, null);
         linearLayout.setOrientation(0);
-        addView(linearLayout, w7.x5.x(-1, -1, 8388611));
+        addView(linearLayout, w7.y5.x(-1, -1, 8388611));
         textPaint.setTextSize(AndroidUtilities.dp(13.0f));
         textPaint.setTypeface(AndroidUtilities.bold());
         final int i10 = 0;
@@ -130,13 +130,13 @@ public final class m40 extends HorizontalScrollView {
             CharSequence charSequence = (CharSequence) arrayList.get(i10);
             ci.bb bbVar = new ci.bb(getContext());
             bbVar.setDrawingCacheEnabled(false);
-            bbVar.setOnClickListener(new org.telegram.ui.Cells.wa(this, i10, intCallback, 7));
+            bbVar.setOnClickListener(new org.telegram.ui.Cells.ua(this, i10, intCallback, 7));
             bbVar.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(5.0f));
-            LinearLayout.LayoutParams n10 = w7.x5.n(-2, -2);
+            LinearLayout.LayoutParams n10 = w7.y5.n(-2, -2);
             if (i10 < arrayList.size() - 1) {
                 n10.rightMargin = AndroidUtilities.dp(4.0f);
             }
-            bbVar.b = new f01(charSequence, this.f);
+            bbVar.b = new t01(charSequence, this.f);
             linearLayout.addView(bbVar, n10);
         }
     }

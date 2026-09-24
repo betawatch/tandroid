@@ -5,20 +5,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.nr0;
+import org.telegram.ui.Components.zr0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import yh.l5;
+import yh.k5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class l2 extends s4.v {
-    public final /* synthetic */ nr0 d;
+    public final /* synthetic */ zr0 d;
     public final /* synthetic */ o2 e;
 
-    public l2(o2 o2Var, nr0 nr0Var) {
+    public l2(o2 o2Var, zr0 zr0Var) {
         this.e = o2Var;
-        this.d = nr0Var;
+        this.d = zr0Var;
     }
 
     @Override // s4.v
@@ -62,24 +62,24 @@ public final class l2 extends s4.v {
         int b10 = c1Var.b();
         int b11 = c1Var2.b();
         boolean z10 = o2Var.d;
-        nr0 nr0Var = this.d;
+        zr0 zr0Var = this.d;
         if (z10) {
             o2Var.e.k(b10, b11);
-            nr0Var.e.n(o2Var.e.d);
+            zr0Var.e.n(o2Var.e.d);
         } else {
-            l5 l5Var = o2Var.e;
-            if (l5Var.q == null) {
-                l5Var.q = l5Var.h();
+            k5 k5Var = o2Var.e;
+            if (k5Var.q == null) {
+                k5Var.q = k5Var.h();
             }
-            l5Var.k(b10, b11);
+            k5Var.k(b10, b11);
         }
         j2Var.Y2.p(b10, b11);
         j2Var.Y2.S();
         if (o2Var.d) {
             HashMap hashMap = s2.T;
-            nr0Var.f(true);
+            zr0Var.f(true);
         }
-        org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+        org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
         if ((U instanceof ProfileActivity) && (g0Var = ((ProfileActivity) U).v0) != null) {
             g0Var.a();
         }
@@ -100,22 +100,22 @@ public final class l2 extends s4.v {
             }
             return;
         }
-        l5 l5Var = o2Var.e;
-        if (l5Var != null) {
-            ArrayList arrayList = l5Var.q;
+        k5 k5Var = o2Var.e;
+        if (k5Var != null) {
+            ArrayList arrayList = k5Var.q;
             if (arrayList != null) {
-                ArrayList h = l5Var.h();
+                ArrayList h = k5Var.h();
                 if (arrayList.size() == h.size()) {
                     for (int i11 = 0; i11 < arrayList.size(); i11++) {
                         if (arrayList.get(i11) == h.get(i11)) {
                         }
                     }
                 }
-                l5Var.l();
-                l5Var.q = null;
+                k5Var.l();
+                k5Var.q = null;
                 return;
             }
-            l5Var.q = null;
+            k5Var.q = null;
         }
     }
 

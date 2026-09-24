@@ -1,27 +1,76 @@
 package org.telegram.ui.Components;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.tl.TL_stories;
+
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class ev0 {
-    public static final ev0 a;
-    public static final ev0 b;
-    public static final /* synthetic */ ev0[] c;
+public final class ev0 extends ai.sc {
+    public final /* synthetic */ gv0 h;
 
-    static {
-        ev0 ev0Var = new ev0("DEFAULT", 0);
-        a = ev0Var;
-        ev0 ev0Var2 = new ev0("RECORDING", 1);
-        b = ev0Var2;
-        c = new ev0[]{ev0Var, ev0Var2};
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ev0(gv0 gv0Var, ai.l9 l9Var, long j3, int i10) {
+        super(i10, j3, l9Var);
+        this.h = gv0Var;
     }
 
-    public static ev0 valueOf(String str) {
-        return (ev0) Enum.valueOf(ev0.class, str);
+    @Override // ai.sc
+    public final void a(ArrayList arrayList) {
+        is0 is0Var;
+        MessageObject messageObject;
+        gv0 gv0Var = this.h;
+        jv0 jv0Var = gv0Var.F;
+        int i10 = 0;
+        while (true) {
+            cu0[] cu0VarArr = jv0Var.k0;
+            if (i10 >= cu0VarArr.length) {
+                is0Var = null;
+                break;
+            }
+            is0 is0Var2 = cu0VarArr[i10].h;
+            if (is0Var2 != null && is0Var2.getAdapter() == gv0Var) {
+                is0Var = jv0Var.k0[i10].h;
+                break;
+            }
+            i10++;
+        }
+        if (is0Var != null) {
+            for (int i11 = 0; i11 < is0Var.getChildCount(); i11++) {
+                View childAt = is0Var.getChildAt(i11);
+                if ((childAt instanceof org.telegram.ui.Cells.t7) && (messageObject = ((org.telegram.ui.Cells.t7) childAt).getMessageObject()) != null && messageObject.isStory()) {
+                    arrayList.add(Integer.valueOf(messageObject.storyItem.id));
+                }
+            }
+        }
     }
 
-    public static ev0[] values() {
-        return (ev0[]) c.clone();
+    @Override // ai.sc
+    public final boolean d(ArrayList arrayList, TL_stories.TL_stories_storyViews tL_stories_storyViews) {
+        TL_stories.StoryItem storyItem;
+        ai.d9 d9Var = this.h.s;
+        ArrayList<TL_stories.StoryViews> arrayList2 = tL_stories_storyViews.views;
+        d9Var.getClass();
+        if (arrayList != null && arrayList2 != null) {
+            boolean z10 = false;
+            for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                Integer num = (Integer) arrayList.get(i10);
+                num.intValue();
+                if (i10 >= arrayList2.size()) {
+                    break;
+                }
+                TL_stories.StoryViews storyViews = arrayList2.get(i10);
+                MessageObject messageObject = (MessageObject) d9Var.j.get(num);
+                if (messageObject != null && (storyItem = messageObject.storyItem) != null) {
+                    storyItem.views = storyViews;
+                    z10 = true;
+                }
+            }
+            if (z10) {
+                d9Var.x();
+            }
+        }
+        return true;
     }
 }

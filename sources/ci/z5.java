@@ -6,11 +6,11 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.xn;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public final class z5 extends xn {
+public final class z5 extends wn {
     public final /* synthetic */ Utilities.Callback2 Pc;
     public final /* synthetic */ q6 Qc;
 
@@ -21,13 +21,13 @@ public final class z5 extends xn {
         this.Pc = callback2;
     }
 
-    @Override // org.telegram.ui.xn, org.telegram.ui.Components.bh, org.telegram.ui.Components.p50
+    @Override // org.telegram.ui.wn, org.telegram.ui.Components.ch, org.telegram.ui.Components.o50
     public final long a() {
         return 0L;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.ui.xn, org.telegram.ui.yc0
+    @Override // org.telegram.ui.wn, org.telegram.ui.xc0
     public final void b(TLRPC.MessageMedia messageMedia, int i10, boolean z10, int i11, long j3) {
         TL_stories.TL_mediaAreaGeoPoint tL_mediaAreaGeoPoint;
         TL_stories.TL_mediaAreaGeoPoint tL_mediaAreaGeoPoint2;
@@ -61,27 +61,27 @@ public final class z5 extends xn {
         this.Pc.run(messageMedia, tL_mediaAreaGeoPoint2);
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final Activity getParentActivity() {
         return AndroidUtilities.findActivity(this.Qc.getContext());
     }
 
-    @Override // org.telegram.ui.xn, org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.wn, org.telegram.ui.ActionBar.m2
     public final org.telegram.ui.ActionBar.d6 getResourceProvider() {
         return this.Qc.G1;
     }
 
-    @Override // org.telegram.ui.xn, org.telegram.ui.Components.bh
+    @Override // org.telegram.ui.wn, org.telegram.ui.Components.ch
     public final TLRPC.User i() {
         return UserConfig.getInstance(this.currentAccount).getCurrentUser();
     }
 
-    @Override // org.telegram.ui.xn, org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.wn, org.telegram.ui.ActionBar.m2
     public final boolean isLightStatusBar() {
         return false;
     }
 
-    @Override // org.telegram.ui.xn
+    @Override // org.telegram.ui.wn
     public final boolean x9() {
         return false;
     }

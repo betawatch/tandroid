@@ -15,7 +15,7 @@ import e6.j;
 import g6.b;
 import n6.l;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class MediaIntentReceiver extends BroadcastReceiver {
     public static final String ACTION_DISCONNECT = "com.google.android.gms.cast.framework.action.DISCONNECT";
@@ -54,7 +54,11 @@ public class MediaIntentReceiver extends BroadcastReceiver {
     }
 
     /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue
-    java.lang.NullPointerException
+    java.lang.NullPointerException: Cannot invoke "java.util.List.iterator()" because the return value of "jadx.core.dex.visitors.regions.SwitchOverStringVisitor$SwitchData.getNewCases()" is null
+    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.restoreSwitchOverString(SwitchOverStringVisitor.java:109)
+    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.visitRegion(SwitchOverStringVisitor.java:66)
+    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:77)
+    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:82)
      */
     @Override // android.content.BroadcastReceiver
     public void onReceive(Context context, Intent intent) {

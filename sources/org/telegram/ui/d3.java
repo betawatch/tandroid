@@ -11,7 +11,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class d3 extends FrameLayout {
     public final LinearLayout a;
@@ -33,37 +33,37 @@ public final class d3 extends FrameLayout {
         linearLayout.setPadding(AndroidUtilities.dp(32.0f), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(32.0f), AndroidUtilities.dp(24.0f));
         linearLayout.setOrientation(1);
         linearLayout.setGravity(3);
-        addView(linearLayout, w7.x5.e(-2, -2, 17));
+        addView(linearLayout, w7.y5.e(-2, -2, 17));
         org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
         this.c = w9Var;
-        linearLayout.addView(w9Var, w7.x5.n(100, 100));
+        linearLayout.addView(w9Var, w7.y5.n(100, 100));
         TextView textView = new TextView(context);
         this.d = textView;
         textView.setTextSize(1, 19.0f);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setTextColor(-1);
-        TextView h = com.google.android.gms.internal.vision.e2.h(linearLayout, textView, w7.x5.t(-2, -2, 3, 0, 4, 0, 2), context);
+        TextView h = com.google.android.gms.internal.vision.e2.h(linearLayout, textView, w7.y5.t(-2, -2, 3, 0, 4, 0, 2), context);
         this.e = h;
         h.setTextSize(1, 15.0f);
         h.setTextColor(-1);
         h.setSingleLine(false);
         h.setMaxLines(3);
-        TextView h10 = com.google.android.gms.internal.vision.e2.h(linearLayout, h, w7.x5.t(-2, -2, 3, 0, 0, 0, 1), context);
+        TextView h10 = com.google.android.gms.internal.vision.e2.h(linearLayout, h, w7.y5.t(-2, -2, 3, 0, 0, 0, 1), context);
         this.f = h10;
         h10.setTextSize(1, 12.0f);
         h10.setTextColor(-1);
         h10.setAlpha(0.4f);
-        linearLayout.addView(h10, w7.x5.q(-2, -2, 3));
+        linearLayout.addView(h10, w7.y5.q(-2, -2, 3));
         ci.d dVar = new ci.d(context, null, true);
         this.h = dVar;
         dVar.setMinWidth(AndroidUtilities.dp(140.0f));
         dVar.g(LocaleController.getString(R.string.Refresh), false, true);
-        linearLayout.addView(dVar, w7.x5.t(-2, 40, 3, 0, 12, 0, 0));
+        linearLayout.addView(dVar, w7.y5.t(-2, 40, 3, 0, 12, 0, 0));
     }
 
     public final void a(String str, String str2) {
         this.d.setText(LocaleController.getString(R.string.WebErrorTitle));
-        org.telegram.messenger.ul.q(R.string.WebErrorInfoBot, new Object[]{str}, this.e);
+        org.telegram.messenger.ok.q(R.string.WebErrorInfoBot, new Object[]{str}, this.e);
         this.f.setText(str2);
     }
 

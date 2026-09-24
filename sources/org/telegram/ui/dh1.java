@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class dh1 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -38,16 +38,16 @@ public final /* synthetic */ class dh1 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new ii.k((UserInfoActivity) this.b, tL_error, (TLObject) this.c, (TL_account.TL_birthday) this.d, (TLRPC.UserFull) this.e, tLObject, (int[]) this.f, (ArrayList) this.g));
                 break;
             case 1:
-                AndroidUtilities.runOnUIThread(new ii.k(tL_error, (tg.w) this.b, tLObject, (List) this.c, (c5.h) this.d, (tg.w) this.e, (org.telegram.ui.ActionBar.n2) this.f, (TLRPC.TL_inputStorePaymentPremiumGiveaway) this.g, 3));
+                AndroidUtilities.runOnUIThread(new ii.k(tL_error, (tg.v) this.b, tLObject, (List) this.c, (c5.h) this.d, (tg.v) this.e, (org.telegram.ui.ActionBar.m2) this.f, (TLRPC.TL_inputStorePaymentPremiumGiveaway) this.g, 3));
                 break;
             case 2:
-                AndroidUtilities.runOnUIThread(new ii.k(tL_error, (Utilities.Callback) this.b, tLObject, (List) this.c, (c5.h) this.d, (Utilities.Callback) this.e, (org.telegram.ui.ActionBar.n2) this.f, (TLRPC.TL_inputStorePaymentPremiumGiftCode) this.g, 4));
+                AndroidUtilities.runOnUIThread(new ii.k(tL_error, (Utilities.Callback) this.b, tLObject, (List) this.c, (c5.h) this.d, (Utilities.Callback) this.e, (org.telegram.ui.ActionBar.m2) this.f, (TLRPC.TL_inputStorePaymentPremiumGiftCode) this.g, 4));
                 break;
             case 3:
                 AndroidUtilities.runOnUIThread(new ii.k(tLObject, (c5.o) this.b, (c5.h) this.c, (ai.m0) this.d, (Activity) this.e, (TLRPC.TL_inputStorePaymentStarsGiveaway) this.f, (List) this.g, tL_error, 5));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new ii.k(tLObject, (c5.o) this.b, (c5.h) this.c, (org.telegram.ui.Components.e80) this.d, (Activity) this.e, (TLRPC.TL_inputStorePaymentStarsGift) this.f, (List) this.g, tL_error, 6));
+                AndroidUtilities.runOnUIThread(new ii.k(tLObject, (c5.o) this.b, (c5.h) this.c, (org.telegram.ui.Components.o80) this.d, (Activity) this.e, (TLRPC.TL_inputStorePaymentStarsGift) this.f, (List) this.g, tL_error, 6));
                 break;
         }
     }

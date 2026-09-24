@@ -3,18 +3,18 @@ package ai;
 import android.content.Context;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ix;
+import org.telegram.ui.hx;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class s extends org.telegram.ui.ActionBar.m {
     public final /* synthetic */ int d = 1;
     public final /* synthetic */ FrameLayout e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s(ix ixVar, Context context, com.google.firebase.messaging.m mVar) {
+    public s(hx hxVar, Context context, com.google.firebase.messaging.m mVar) {
         super(context, null, mVar);
-        this.e = ixVar;
+        this.e = hxVar;
     }
 
     @Override // org.telegram.ui.ActionBar.m, le.l
@@ -22,7 +22,7 @@ public final class s extends org.telegram.ui.ActionBar.m {
         switch (this.d) {
             case 0:
                 super.c(mVar);
-                ((ix) this.e).invalidate();
+                ((hx) this.e).invalidate();
                 break;
             default:
                 super.c(mVar);

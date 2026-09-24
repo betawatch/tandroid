@@ -5,10 +5,10 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
-import org.telegram.messenger.ul;
+import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class y5 extends FrameLayout {
     public w5[] a;
@@ -46,17 +46,17 @@ public final class y5 extends FrameLayout {
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
         View[] viewArr = this.a;
-        int A = AndroidUtilities.isTablet() ? ul.A(4.0f, this.c - 1, AndroidUtilities.dp(490.0f) - AndroidUtilities.dp(12.0f)) / this.c : ul.A(4.0f, this.c - 1, AndroidUtilities.displaySize.x - AndroidUtilities.dp(12.0f)) / this.c;
+        int B = AndroidUtilities.isTablet() ? ok.B(4.0f, this.c - 1, AndroidUtilities.dp(490.0f) - AndroidUtilities.dp(12.0f)) / this.c : ok.B(4.0f, this.c - 1, AndroidUtilities.displaySize.x - AndroidUtilities.dp(12.0f)) / this.c;
         for (int i12 = 0; i12 < this.c; i12++) {
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) viewArr[i12].getLayoutParams();
             layoutParams.topMargin = AndroidUtilities.dp(4.0f);
-            layoutParams.leftMargin = (AndroidUtilities.dp(4.0f) + A) * i12;
-            layoutParams.width = A;
-            layoutParams.height = A;
+            layoutParams.leftMargin = (AndroidUtilities.dp(4.0f) + B) * i12;
+            layoutParams.width = B;
+            layoutParams.height = B;
             layoutParams.gravity = 51;
             viewArr[i12].setLayoutParams(layoutParams);
         }
-        super.onMeasure(i10, ul.C(4.0f, A, TLObject.FLAG_30));
+        super.onMeasure(i10, ok.C(4.0f, B, TLObject.FLAG_30));
     }
 
     public void setAlbumsCount(int i10) {

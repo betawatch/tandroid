@@ -10,10 +10,10 @@ import java.io.File;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
-import org.telegram.ui.Components.fg0;
+import org.telegram.ui.Components.pg0;
 import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class nb extends q6 {
     public final /* synthetic */ lc A2;
@@ -140,13 +140,13 @@ public final class nb extends q6 {
         lcVar.c1.f.d();
         lcVar.l0(0, false, true);
         qg.j jVar = this.J0;
-        if (!(jVar instanceof qg.x2) || this.K0) {
+        if (!(jVar instanceof qg.v2) || this.K0) {
             return;
         }
-        qg.x2 x2Var = (qg.x2) jVar;
+        qg.v2 v2Var = (qg.v2) jVar;
         this.K0 = true;
-        x2Var.q();
-        View focusedView = x2Var.getFocusedView();
+        v2Var.q();
+        View focusedView = v2Var.getFocusedView();
         focusedView.requestFocus();
         AndroidUtilities.showKeyboard(focusedView);
     }
@@ -164,7 +164,7 @@ public final class nb extends q6 {
             zbVar.x(6, z10);
             r6 r6Var = lcVar.j1;
             if (r6Var != null) {
-                ((fg0) r6Var.c).a(lcVar.X0.k(), true);
+                ((pg0) r6Var.c).a(lcVar.X0.k(), true);
             }
         }
         bc bcVar = lcVar.c1;

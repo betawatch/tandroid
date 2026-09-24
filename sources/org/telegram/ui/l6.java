@@ -1,84 +1,168 @@
 package org.telegram.ui;
 
-import android.content.Context;
 import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
+import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public class l6 extends FrameLayout {
-    public final k0 a;
-    public final org.telegram.ui.Components.o6 b;
-    public final org.telegram.ui.Components.o6 c;
+public final /* synthetic */ class l6 implements Utilities.Callback2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public l6(Context context) {
-        super(context);
-        k0 k0Var = new k0(this, context, 3);
-        this.a = k0Var;
-        int i10 = org.telegram.ui.ActionBar.h6.Oh;
-        k0Var.setBackground(org.telegram.ui.ActionBar.x5.f(new float[]{24.0f}, i10));
-        k0Var.setImportantForAccessibility(1);
-        w7.z5.b(k0Var, 0.02f, 1.2f);
-        if (LocaleController.isRTL) {
-            TextView textView = new TextView(context);
-            textView.setText(LocaleController.getString(R.string.ClearCache));
-            textView.setGravity(17);
-            textView.setTextSize(1, 14.0f);
-            textView.setTypeface(AndroidUtilities.bold());
-            textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Sh, false));
-            k0Var.addView(textView, w7.x5.e(-2, -1, 17));
+    public /* synthetic */ l6(Object obj, Object obj2, Object obj3, int i10) {
+        this.a = i10;
+        this.b = obj;
+        this.c = obj2;
+        this.d = obj3;
+    }
+
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
+        int i10 = this.a;
+        int i11 = 7;
+        final int i12 = 1;
+        final int i13 = 0;
+        Object obj3 = this.d;
+        Object obj4 = this.c;
+        Object obj5 = this.b;
+        switch (i10) {
+            case 0:
+                org.telegram.ui.ActionBar.l5 l5Var = (org.telegram.ui.ActionBar.l5) obj3;
+                ((float[]) obj5)[0] = ((Float) obj).floatValue();
+                ((boolean[]) obj4)[0] = ((Boolean) obj2).booleanValue();
+                AndroidUtilities.cancelRunOnUIThread(l5Var);
+                AndroidUtilities.runOnUIThread(l5Var);
+                break;
+            case 1:
+                wn wnVar = (wn) obj5;
+                TL_account.getWebPagePreview getwebpagepreview = (TL_account.getWebPagePreview) obj4;
+                pg pgVar = (pg) obj3;
+                Boolean bool = (Boolean) obj;
+                TLRPC.WebPage webPage = (TLRPC.WebPage) obj2;
+                if (bool.booleanValue() && !(webPage instanceof TLRPC.TL_webPagePending)) {
+                    Iterator it = wnVar.lb.keySet().iterator();
+                    while (it.hasNext() && wnVar.lb.size() > 5) {
+                        it.next();
+                        it.remove();
+                    }
+                    wnVar.lb.put(getwebpagepreview.message, webPage);
+                }
+                pgVar.run(bool, webPage);
+                break;
+            case 2:
+                final qy qyVar = (qy) obj5;
+                ld ldVar = (ld) obj4;
+                org.telegram.ui.ActionBar.a2 a2Var = (org.telegram.ui.ActionBar.a2) obj3;
+                org.telegram.ui.ActionBar.m2 m2Var = (org.telegram.ui.ActionBar.m2) obj;
+                final Long l4 = (Long) obj2;
+                Utilities.doCallbacks(new ai.e4(qyVar, l4, ldVar, m2Var, 11), new z(qyVar, a2Var, l4, i11), new Utilities.Callback() { // from class: org.telegram.ui.xv
+                    @Override // org.telegram.messenger.Utilities.Callback
+                    public final void run(Object obj6) {
+                        switch (i13) {
+                            case 0:
+                                Runnable runnable = (Runnable) obj6;
+                                qy qyVar2 = qyVar;
+                                if (qyVar2.G.bot_admin_rights == null) {
+                                    runnable.run();
+                                    break;
+                                } else {
+                                    TLRPC.User user = qyVar2.getMessagesController().getUser(Long.valueOf(qyVar2.H));
+                                    MessagesController messagesController = qyVar2.getMessagesController();
+                                    long longValue = l4.longValue();
+                                    TLRPC.RequestPeerType requestPeerType = qyVar2.G;
+                                    TLRPC.TL_chatAdminRights tL_chatAdminRights = requestPeerType.bot_admin_rights;
+                                    Boolean bool2 = requestPeerType.bot_participant;
+                                    messagesController.setUserAdminRole(longValue, user, tL_chatAdminRights, null, false, qyVar2, bool2 == null || !bool2.booleanValue(), true, null, runnable, new kf(5, runnable));
+                                    break;
+                                }
+                                break;
+                            default:
+                                Runnable runnable2 = (Runnable) obj6;
+                                qy qyVar3 = qyVar;
+                                if (qyVar3.G.user_admin_rights == null) {
+                                    runnable2.run();
+                                    break;
+                                } else {
+                                    MessagesController messagesController2 = qyVar3.getMessagesController();
+                                    Long l10 = l4;
+                                    qyVar3.getMessagesController().setUserAdminRole(l10.longValue(), qyVar3.getAccountInstance().getUserConfig().getCurrentUser(), kq.s0(messagesController2.getChat(l10).admin_rights, qyVar3.G.user_admin_rights), null, true, qyVar3, false, true, null, runnable2, new kf(4, runnable2));
+                                    break;
+                                }
+                        }
+                    }
+                }, new Utilities.Callback() { // from class: org.telegram.ui.xv
+                    @Override // org.telegram.messenger.Utilities.Callback
+                    public final void run(Object obj6) {
+                        switch (i12) {
+                            case 0:
+                                Runnable runnable = (Runnable) obj6;
+                                qy qyVar2 = qyVar;
+                                if (qyVar2.G.bot_admin_rights == null) {
+                                    runnable.run();
+                                    break;
+                                } else {
+                                    TLRPC.User user = qyVar2.getMessagesController().getUser(Long.valueOf(qyVar2.H));
+                                    MessagesController messagesController = qyVar2.getMessagesController();
+                                    long longValue = l4.longValue();
+                                    TLRPC.RequestPeerType requestPeerType = qyVar2.G;
+                                    TLRPC.TL_chatAdminRights tL_chatAdminRights = requestPeerType.bot_admin_rights;
+                                    Boolean bool2 = requestPeerType.bot_participant;
+                                    messagesController.setUserAdminRole(longValue, user, tL_chatAdminRights, null, false, qyVar2, bool2 == null || !bool2.booleanValue(), true, null, runnable, new kf(5, runnable));
+                                    break;
+                                }
+                                break;
+                            default:
+                                Runnable runnable2 = (Runnable) obj6;
+                                qy qyVar3 = qyVar;
+                                if (qyVar3.G.user_admin_rights == null) {
+                                    runnable2.run();
+                                    break;
+                                } else {
+                                    MessagesController messagesController2 = qyVar3.getMessagesController();
+                                    Long l10 = l4;
+                                    qyVar3.getMessagesController().setUserAdminRole(l10.longValue(), qyVar3.getAccountInstance().getUserConfig().getCurrentUser(), kq.s0(messagesController2.getChat(l10).admin_rights, qyVar3.G.user_admin_rights), null, true, qyVar3, false, true, null, runnable2, new kf(4, runnable2));
+                                    break;
+                                }
+                        }
+                    }
+                }, new sa(qyVar, a2Var, l4, ldVar, m2Var, 4));
+                break;
+            default:
+                org.telegram.ui.ActionBar.e3 e3Var = (org.telegram.ui.ActionBar.e3) obj5;
+                TL_account.Passkey passkey = (TL_account.Passkey) obj4;
+                String str = (String) obj3;
+                TL_account.Passkeys passkeys = (TL_account.Passkeys) obj;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                if (passkeys == null) {
+                    if (tL_error != null) {
+                        new org.telegram.ui.Components.yc(e3Var.topBulletinContainer, e3Var.getResourcesProvider()).c0(str, false);
+                        break;
+                    }
+                } else {
+                    e3Var.dismiss();
+                    while (i13 < passkeys.passkeys.size()) {
+                        if (TextUtils.equals(passkeys.passkeys.get(i13).id, passkey.id)) {
+                            passkeys.passkeys.remove(i13);
+                            i13--;
+                        }
+                        i13++;
+                    }
+                    org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
+                    if (U != null) {
+                        PasskeysActivity passkeysActivity = new PasskeysActivity(passkeys.passkeys);
+                        U.presentFragment(passkeysActivity);
+                        AndroidUtilities.runOnUIThread(new xi0(i11, passkeysActivity, passkey), 150L);
+                        break;
+                    }
+                }
+                break;
         }
-        org.telegram.ui.Components.o6 o6Var = new org.telegram.ui.Components.o6(true, true, true, false);
-        this.b = o6Var;
-        org.telegram.ui.Components.rr rrVar = org.telegram.ui.Components.rr.h;
-        o6Var.k(0.25f, 300L, rrVar);
-        o6Var.setCallback(k0Var);
-        o6Var.t(AndroidUtilities.dp(14.0f));
-        o6Var.q(LocaleController.getString(R.string.ClearCache), true, true);
-        o6Var.b = 5;
-        o6Var.u(AndroidUtilities.bold());
-        int i11 = org.telegram.ui.ActionBar.h6.Sh;
-        o6Var.r(org.telegram.ui.ActionBar.h6.w0(null, i11, false));
-        org.telegram.ui.Components.o6 o6Var2 = new org.telegram.ui.Components.o6(true, true, true, false);
-        this.c = o6Var2;
-        o6Var2.k(0.25f, 300L, rrVar);
-        o6Var2.setCallback(k0Var);
-        o6Var2.t(AndroidUtilities.dp(14.0f));
-        o6Var2.u(AndroidUtilities.bold());
-        o6Var2.r(org.telegram.ui.ActionBar.h6.v(org.telegram.ui.ActionBar.h6.w0(null, i10, false), org.telegram.ui.ActionBar.h6.l1(0.7f, org.telegram.ui.ActionBar.h6.w0(null, i11, false))));
-        o6Var2.q("", true, true);
-        k0Var.setContentDescription(TextUtils.concat(o6Var.g, "\t", o6Var2.g));
-        addView(k0Var, w7.x5.d(-1, 48.0f, 119, 16.0f, 16.0f, 16.0f, 16.0f));
-    }
-
-    public final void a(long j3, boolean z10) {
-        String string = z10 ? LocaleController.getString(R.string.ClearCache) : LocaleController.getString(R.string.ClearSelectedCache);
-        org.telegram.ui.Components.o6 o6Var = this.b;
-        o6Var.q(string, true, true);
-        String formatFileSize = j3 <= 0 ? "" : AndroidUtilities.formatFileSize(j3);
-        org.telegram.ui.Components.o6 o6Var2 = this.c;
-        o6Var2.q(formatFileSize, true, true);
-        setDisabled(j3 <= 0);
-        k0 k0Var = this.a;
-        k0Var.invalidate();
-        k0Var.setContentDescription(TextUtils.concat(o6Var.g, "\t", o6Var2.g));
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
-    }
-
-    public void setDisabled(boolean z10) {
-        k0 k0Var = this.a;
-        k0Var.animate().cancel();
-        k0Var.animate().alpha(z10 ? 0.65f : 1.0f).start();
-        k0Var.setClickable(!z10);
     }
 }

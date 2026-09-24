@@ -1,134 +1,109 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.Spannable;
-import android.text.style.ReplacementSpan;
-import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.ContactsController;
+import org.telegram.messenger.ImageLoader;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.camera.CameraController;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class h5 extends ReplacementSpan {
-    public final Paint a;
-    public final ImageReceiver b;
-    public final org.telegram.ui.Components.h9 c;
-    public float d;
-    public final int e;
-    public View f;
-    public boolean h;
-    public final g5 n;
-    public float r;
-    public int s;
-    public boolean v;
+public abstract class h5 extends androidx.fragment.app.v {
+    public int O = -1;
 
-    public h5(int i10, View view) {
-        this(view, 18.0f, i10);
-    }
-
-    public static void a(CharSequence charSequence, org.telegram.ui.Cells.x8 x8Var) {
-        if (charSequence != null && (charSequence instanceof Spannable)) {
-            Spannable spannable = (Spannable) charSequence;
-            for (h5 h5Var : (h5[]) spannable.getSpans(0, spannable.length(), h5.class)) {
-                h5Var.d(x8Var);
-            }
+    public final boolean v(int i10, String[] strArr, int[] iArr) {
+        if (iArr == null) {
+            iArr = new int[0];
         }
-    }
-
-    public final void b(TLRPC.Chat chat) {
-        int i10 = this.e;
-        org.telegram.ui.Components.h9 h9Var = this.c;
-        h9Var.k(i10, chat);
-        this.b.setForUserOrChat(chat, h9Var);
-    }
-
-    public final void c(long j3) {
-        int i10 = this.e;
-        if (j3 >= 0) {
-            e(MessagesController.getInstance(i10).getUser(Long.valueOf(j3)));
+        if (strArr == null) {
+            strArr = new String[0];
+        }
+        boolean z10 = iArr.length > 0 && iArr[0] == 0;
+        if (i10 == 104) {
+            if (!z10) {
+                x(R.raw.permission_request_camera, LocaleController.getString(R.string.VoipNeedCameraPermission));
+                return true;
+            }
+            d60 d60Var = d60.D3;
+            if (d60Var != null) {
+                d60Var.n.callOnClick();
+                return true;
+            }
         } else {
-            b(MessagesController.getInstance(i10).getChat(Long.valueOf(-j3)));
-        }
-    }
-
-    public final void d(View view) {
-        View view2 = this.f;
-        if (view2 == view) {
-            return;
-        }
-        g5 g5Var = this.n;
-        ImageReceiver imageReceiver = this.b;
-        if (view2 != null) {
-            view2.removeOnAttachStateChangeListener(g5Var);
-            if (this.f.isAttachedToWindow() && !view.isAttachedToWindow()) {
-                imageReceiver.onDetachedFromWindow();
+            if (i10 == 4 || i10 == 151) {
+                if (z10) {
+                    ImageLoader.getInstance().checkMediaPaths();
+                    return true;
+                }
+                x(R.raw.permission_request_folder, i10 == 151 ? LocaleController.getString(R.string.PermissionNoStorageAvatar) : LocaleController.getString(R.string.PermissionStorageWithHint));
+                return true;
+            }
+            if (i10 == 5) {
+                if (z10) {
+                    ContactsController.getInstance(this.O).forceImportContacts();
+                    return true;
+                }
+                x(R.raw.permission_request_contacts, LocaleController.getString(R.string.PermissionNoContactsSharing));
+                return false;
+            }
+            if (i10 == 3 || i10 == 150) {
+                int min = Math.min(strArr.length, iArr.length);
+                boolean z11 = true;
+                boolean z12 = true;
+                for (int i11 = 0; i11 < min; i11++) {
+                    if ("android.permission.RECORD_AUDIO".equals(strArr[i11])) {
+                        z11 = iArr[i11] == 0;
+                    } else if ("android.permission.CAMERA".equals(strArr[i11])) {
+                        z12 = iArr[i11] == 0;
+                    }
+                }
+                if (i10 == 150 && (!z11 || !z12)) {
+                    x(R.raw.permission_request_camera, LocaleController.getString(R.string.PermissionNoCameraMicVideo));
+                    return true;
+                }
+                if (!z11) {
+                    x(R.raw.permission_request_microphone, LocaleController.getString(R.string.PermissionNoAudioWithHint));
+                    return true;
+                }
+                if (!z12) {
+                    x(R.raw.permission_request_camera, LocaleController.getString(R.string.PermissionNoCameraWithHint));
+                    return true;
+                }
+                if (SharedConfig.inappCamera) {
+                    CameraController.getInstance().initCamera(null);
+                }
+                return false;
+            }
+            if (i10 != 18 && i10 != 19 && i10 != 20 && i10 != 22) {
+                if (i10 == 2) {
+                    NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(z10 ? NotificationCenter.locationPermissionGranted : NotificationCenter.locationPermissionDenied, new Object[0]);
+                    return true;
+                }
+                if (i10 == 211) {
+                    NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(z10 ? NotificationCenter.locationPermissionGranted : NotificationCenter.locationPermissionDenied, 1);
+                    return true;
+                }
+            } else if (!z10) {
+                x(R.raw.permission_request_camera, LocaleController.getString(R.string.PermissionNoCameraWithHint));
             }
         }
-        View view3 = this.f;
-        if ((view3 == null || !view3.isAttachedToWindow()) && view != null && view.isAttachedToWindow()) {
-            imageReceiver.onAttachedToWindow();
-        }
-        this.f = view;
-        imageReceiver.setParentView(view);
-        if (view != null) {
-            view.addOnAttachStateChangeListener(g5Var);
-        }
+        return true;
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-        if (this.h) {
-            int i15 = this.s;
-            int alpha = paint.getAlpha();
-            Paint paint2 = this.a;
-            if (i15 != alpha) {
-                int alpha2 = paint.getAlpha();
-                this.s = alpha2;
-                paint2.setAlpha(alpha2);
-                paint2.setShadowLayer(AndroidUtilities.dp(1.0f), 0.0f, AndroidUtilities.dp(0.66f), org.telegram.ui.ActionBar.h6.l1(this.s / 255.0f, 855638016));
-            }
-            canvas.drawCircle((AndroidUtilities.dp(this.d) / 2.0f) + 0.0f + f7, ((i12 + i14) / 2.0f) + this.r, AndroidUtilities.dp(this.d) / 2.0f, paint2);
-        }
-        float f10 = 0.0f + f7;
-        float dp = (((i12 + i14) / 2.0f) + this.r) - (AndroidUtilities.dp(this.d) / 2.0f);
-        float dp2 = AndroidUtilities.dp(this.d);
-        float dp3 = AndroidUtilities.dp(this.d);
-        ImageReceiver imageReceiver = this.b;
-        imageReceiver.setImageCoords(f10, dp, dp2, dp3);
-        imageReceiver.setAlpha(this.v ? paint.getAlpha() / 255.0f : 1.0f);
-        imageReceiver.draw(canvas);
+    public final org.telegram.ui.ActionBar.a2 w(int i10, String str) {
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this);
+        alertDialog$Builder.m(i10, 72, org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.L5, false), null);
+        alertDialog$Builder.a.T = AndroidUtilities.replaceTags(str);
+        alertDialog$Builder.k(LocaleController.getString(R.string.PermissionOpenSettings), new z0(this, 4));
+        alertDialog$Builder.h(LocaleController.getString(R.string.ContactsPermissionAlertNotNow), null);
+        return alertDialog$Builder.a;
     }
 
-    public final void e(TLRPC.User user) {
-        int i10 = this.e;
-        org.telegram.ui.Components.h9 h9Var = this.c;
-        h9Var.m(i10, user);
-        this.b.setForUserOrChat(user, h9Var);
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        return AndroidUtilities.dp(this.d);
-    }
-
-    public h5(View view, float f7, int i10) {
-        this.h = true;
-        this.n = new g5(this, 0);
-        this.s = 255;
-        this.v = true;
-        this.e = i10;
-        ImageReceiver imageReceiver = new ImageReceiver(view);
-        this.b = imageReceiver;
-        imageReceiver.setInvalidateAll(true);
-        this.c = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.d6) null);
-        imageReceiver.setRoundRadius(AndroidUtilities.dp(f7));
-        this.d = f7;
-        Paint paint = new Paint(1);
-        this.a = paint;
-        paint.setShadowLayer(AndroidUtilities.dp(1.0f), 0.0f, AndroidUtilities.dp(0.66f), 855638016);
-        d(view);
+    public final void x(int i10, String str) {
+        w(i10, str).show();
     }
 }

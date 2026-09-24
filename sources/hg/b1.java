@@ -2,12 +2,13 @@ package hg;
 
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
+import org.telegram.messenger.ok;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b1 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -37,11 +38,11 @@ public final /* synthetic */ class b1 implements RequestDelegate {
                                         f1Var2.finishFragment();
                                         break;
                                     } else {
-                                        org.telegram.messenger.z0.p(R.string.UnknownError, xc.a0(f1Var2), null);
+                                        ok.p(R.string.UnknownError, yc.a0(f1Var2), null);
                                         break;
                                     }
                                 } else {
-                                    xc.b0(tL_error2);
+                                    yc.b0(tL_error2);
                                     break;
                                 }
                             default:
@@ -53,12 +54,12 @@ public final /* synthetic */ class b1 implements RequestDelegate {
                                         break;
                                     } else {
                                         f1Var3.b.a(0.0f);
-                                        org.telegram.messenger.z0.p(R.string.UnknownError, xc.a0(f1Var3), null);
+                                        ok.p(R.string.UnknownError, yc.a0(f1Var3), null);
                                         break;
                                     }
                                 } else {
                                     f1Var3.b.a(0.0f);
-                                    xc.b0(tL_error3);
+                                    yc.b0(tL_error3);
                                     break;
                                 }
                         }
@@ -81,11 +82,11 @@ public final /* synthetic */ class b1 implements RequestDelegate {
                                         f1Var22.finishFragment();
                                         break;
                                     } else {
-                                        org.telegram.messenger.z0.p(R.string.UnknownError, xc.a0(f1Var22), null);
+                                        ok.p(R.string.UnknownError, yc.a0(f1Var22), null);
                                         break;
                                     }
                                 } else {
-                                    xc.b0(tL_error2);
+                                    yc.b0(tL_error2);
                                     break;
                                 }
                             default:
@@ -97,12 +98,12 @@ public final /* synthetic */ class b1 implements RequestDelegate {
                                         break;
                                     } else {
                                         f1Var3.b.a(0.0f);
-                                        org.telegram.messenger.z0.p(R.string.UnknownError, xc.a0(f1Var3), null);
+                                        ok.p(R.string.UnknownError, yc.a0(f1Var3), null);
                                         break;
                                     }
                                 } else {
                                     f1Var3.b.a(0.0f);
-                                    xc.b0(tL_error3);
+                                    yc.b0(tL_error3);
                                     break;
                                 }
                         }

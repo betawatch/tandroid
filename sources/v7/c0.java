@@ -1,29 +1,11 @@
 package v7;
 
-import android.content.Context;
-import android.util.DisplayMetrics;
-import android.util.TypedValue;
-import org.telegram.messenger.beta.R;
+import android.view.View;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public abstract class c0 {
-    public static int a(Context context) {
-        float fraction;
-        DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
-        boolean z10 = displayMetrics.widthPixels < displayMetrics.heightPixels;
-        TypedValue typedValue = new TypedValue();
-        context.getResources().getValue(z10 ? R.dimen.mr_dialog_fixed_width_minor : R.dimen.mr_dialog_fixed_width_major, typedValue, true);
-        int i10 = typedValue.type;
-        if (i10 == 5) {
-            fraction = typedValue.getDimension(displayMetrics);
-        } else {
-            if (i10 != 6) {
-                return -2;
-            }
-            int i11 = displayMetrics.widthPixels;
-            fraction = typedValue.getFraction(i11, i11);
-        }
-        return (int) fraction;
-    }
+    public abstract View b(int i10);
+
+    public abstract boolean c();
 }

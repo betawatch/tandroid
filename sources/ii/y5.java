@@ -11,10 +11,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Cells.r9;
-import org.telegram.ui.Components.v51;
+import org.telegram.ui.Cells.q9;
+import org.telegram.ui.Components.j61;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class y5 implements h1 {
     public final /* synthetic */ e6 a;
@@ -24,9 +24,9 @@ public final class y5 implements h1 {
     }
 
     @Override // ii.h1
-    public final void D(i1 i1Var, int i10, int i11) {
+    public final void B(i1 i1Var, int i10, int i11) {
         b6 b6Var;
-        r9 textSelectionHelper;
+        q9 textSelectionHelper;
         e6 e6Var = this.a;
         if (e6Var.F || i10 == i11 || (b6Var = e6Var.y) == null || (textSelectionHelper = ((f3) b6Var).a.getTextSelectionHelper()) == null) {
             return;
@@ -35,7 +35,7 @@ public final class y5 implements h1 {
     }
 
     @Override // ii.h1
-    public final void M(CharSequence charSequence) {
+    public final void K(CharSequence charSequence) {
         b6 b6Var = this.a.y;
         if (b6Var != null) {
             f3 f3Var = (f3) b6Var;
@@ -47,7 +47,7 @@ public final class y5 implements h1 {
     }
 
     @Override // ii.h1
-    public final void W(Editable editable) {
+    public final void U(Editable editable) {
         a aVar;
         e6 e6Var = this.a;
         if (e6Var.x == null) {
@@ -95,7 +95,7 @@ public final class y5 implements h1 {
     }
 
     @Override // ii.h1
-    public final boolean b0(boolean z10) {
+    public final boolean X(boolean z10) {
         a aVar;
         e6 e6Var = this.a;
         b6 b6Var = e6Var.y;
@@ -176,7 +176,7 @@ public final class y5 implements h1 {
         a aVar = e6Var.x;
         x3 x3Var = ((f3) b6Var).a;
         ArrayList arrayList = x3Var.p4;
-        v51 v51Var = x3Var.Y2;
+        j61 j61Var = x3Var.Y2;
         ArrayList arrayList2 = x3Var.l3;
         int indexOf = arrayList2.indexOf(aVar);
         if (indexOf < 0) {
@@ -206,7 +206,7 @@ public final class y5 implements h1 {
                 ArrayList arrayList3 = aVar.k;
                 arrayList3.remove(arrayList3.size() - 1);
                 x3Var.s4();
-                v51Var.N(false);
+                j61Var.N(false);
                 i2 i2Var2 = x3Var.J3;
                 if (i2Var2 != null) {
                     i2Var2.h();
@@ -217,7 +217,7 @@ public final class y5 implements h1 {
             if (aVar.c > 0) {
                 x3Var.t2(indexOf);
                 x3Var.s4();
-                v51Var.N(false);
+                j61Var.N(false);
                 i2 i2Var3 = x3Var.J3;
                 if (i2Var3 != null) {
                     i2Var3.h();
@@ -256,7 +256,7 @@ public final class y5 implements h1 {
         arrayList2.add(i12, aVar2);
         x3Var.s4();
         if (z10) {
-            v51Var.N(false);
+            j61Var.N(false);
             i2 i2Var4 = x3Var.J3;
             if (i2Var4 != null) {
                 i2Var4.h();
@@ -269,17 +269,17 @@ public final class y5 implements h1 {
             text.delete(length, text.length());
             editText.h = false;
         }
-        v51Var.S();
+        j61Var.S();
         x3Var.p4(i12);
         int indexOf2 = arrayList.indexOf(aVar2);
         if (indexOf2 < 0) {
-            v51Var.l();
+            j61Var.l();
         } else {
             s4.m0 itemAnimator = x3Var.getItemAnimator();
             x3Var.setItemAnimator(null);
-            v51Var.o(indexOf2);
+            j61Var.o(indexOf2);
             if (aVar.d > 0 && (i10 = indexOf2 + 1) < arrayList.size()) {
-                v51Var.q(i10, (arrayList.size() - indexOf2) - 1);
+                j61Var.q(i10, (arrayList.size() - indexOf2) - 1);
             }
             x3Var.post(new z2(x3Var, itemAnimator, 0));
         }
@@ -291,7 +291,7 @@ public final class y5 implements h1 {
     }
 
     @Override // ii.h1
-    public final boolean q(i1 i1Var) {
+    public final boolean p(i1 i1Var) {
         a aVar;
         ClipData primaryClip;
         int indexOf;

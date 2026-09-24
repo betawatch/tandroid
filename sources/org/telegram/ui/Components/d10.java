@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class d10 extends bb {
     public boolean A0;
@@ -60,8 +60,8 @@ public final class d10 extends bb {
     public int z0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d10(org.telegram.ui.ActionBar.n2 n2Var, int i10, ArrayList arrayList) {
-        super(n2Var, false);
+    public d10(org.telegram.ui.ActionBar.m2 m2Var, int i10, ArrayList arrayList) {
+        super(m2Var, false);
         MessagesController.DialogFilter dialogFilter;
         TLRPC.Chat chat;
         this.Y = -1;
@@ -80,7 +80,7 @@ public final class d10 extends bb {
         if (arrayList != null) {
             arrayList2.addAll(arrayList);
         }
-        ArrayList<MessagesController.DialogFilter> arrayList3 = n2Var.getMessagesController().dialogFilters;
+        ArrayList<MessagesController.DialogFilter> arrayList3 = m2Var.getMessagesController().dialogFilters;
         if (arrayList3 != null) {
             for (int i11 = 0; i11 < arrayList3.size(); i11++) {
                 if (arrayList3.get(i11).id == i10) {
@@ -95,7 +95,7 @@ public final class d10 extends bb {
             this.d0 = dialogFilter.entities;
             this.e0 = dialogFilter.title_noanimate;
             for (int i12 = 0; i12 < this.i0.size(); i12++) {
-                TLRPC.Peer peer = n2Var.getMessagesController().getPeer(((Long) this.i0.get(i12)).longValue());
+                TLRPC.Peer peer = m2Var.getMessagesController().getPeer(((Long) this.i0.get(i12)).longValue());
                 if ((peer instanceof TLRPC.TL_peerChat) || (peer instanceof TLRPC.TL_peerChannel)) {
                     this.g0.add(peer);
                 }
@@ -104,8 +104,8 @@ public final class d10 extends bb {
                 Long l4 = dialogFilter.alwaysShow.get(i13);
                 long longValue = l4.longValue();
                 if (!this.i0.contains(l4)) {
-                    TLRPC.Peer peer2 = n2Var.getMessagesController().getPeer(longValue);
-                    if (((peer2 instanceof TLRPC.TL_peerChat) || (peer2 instanceof TLRPC.TL_peerChannel)) && ((chat = n2Var.getMessagesController().getChat(Long.valueOf(-longValue))) == null || !ChatObject.isNotInChat(chat))) {
+                    TLRPC.Peer peer2 = m2Var.getMessagesController().getPeer(longValue);
+                    if (((peer2 instanceof TLRPC.TL_peerChat) || (peer2 instanceof TLRPC.TL_peerChannel)) && ((chat = m2Var.getMessagesController().getChat(Long.valueOf(-longValue))) == null || !ChatObject.isNotInChat(chat))) {
                         this.g0.add(peer2);
                     }
                 }
@@ -114,9 +114,9 @@ public final class d10 extends bb {
         S();
     }
 
-    public static void T(org.telegram.ui.ActionBar.n2 n2Var, int i10, Utilities.Callback callback) {
+    public static void T(org.telegram.ui.ActionBar.m2 m2Var, int i10, Utilities.Callback callback) {
         MessagesController.DialogFilter dialogFilter;
-        ArrayList<MessagesController.DialogFilter> arrayList = n2Var.getMessagesController().dialogFilters;
+        ArrayList<MessagesController.DialogFilter> arrayList = m2Var.getMessagesController().dialogFilters;
         if (arrayList != null) {
             for (int i11 = 0; i11 < arrayList.size(); i11++) {
                 if (arrayList.get(i11).id == i10) {
@@ -126,30 +126,30 @@ public final class d10 extends bb {
             }
         }
         dialogFilter = null;
-        xm xmVar = new xm(i10, n2Var, callback, 3);
+        xm xmVar = new xm(i10, m2Var, callback, 3);
         if (dialogFilter == null || !dialogFilter.isMyChatlist()) {
             xmVar.run();
             return;
         }
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(n2Var.getContext());
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(m2Var.getContext());
         alertDialog$Builder.a.R = LocaleController.getString(R.string.FilterDelete);
         alertDialog$Builder.a.T = LocaleController.getString(R.string.FilterDeleteAlertLinks);
         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new um(callback));
-        alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new mv(xmVar, 4));
-        org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-        n2Var.showDialog(b2Var);
-        TextView textView = (TextView) b2Var.d(-1);
+        alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new nv(xmVar, 4));
+        org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
+        m2Var.showDialog(a2Var);
+        TextView textView = (TextView) a2Var.d(-1);
         if (textView != null) {
             textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.q7, false));
         }
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final void G(pv0 pv0Var) {
-        ml0 ml0Var = this.d;
-        ml0Var.setOverScrollMode(2);
-        ml0Var.setPadding(AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(this.l0 != null ? 68.0f : 0.0f));
-        ml0Var.setOnItemClickListener(new j(this, 8));
+    public final void G(aw0 aw0Var) {
+        wl0 wl0Var = this.d;
+        wl0Var.setOverScrollMode(2);
+        wl0Var.setPadding(AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(this.l0 != null ? 68.0f : 0.0f));
+        wl0Var.setOnItemClickListener(new j(this, 8));
     }
 
     public final void Q(boolean z10) {
@@ -180,14 +180,14 @@ public final class d10 extends bb {
             }
         }
         U(true);
-        a10Var.a(LocaleController.getString(z10 ? R.string.SelectAll : R.string.DeselectAll), new ci.y0(this, a10Var, z10, 18));
+        a10Var.a(LocaleController.getString(z10 ? R.string.SelectAll : R.string.DeselectAll), new ci.y0(this, a10Var, z10, 19));
         Q(true);
         while (true) {
-            ml0 ml0Var = this.d;
-            if (i10 >= ml0Var.getChildCount()) {
+            wl0 wl0Var = this.d;
+            if (i10 >= wl0Var.getChildCount()) {
                 return;
             }
-            View childAt = ml0Var.getChildAt(i10);
+            View childAt = wl0Var.getChildAt(i10);
             if (childAt instanceof org.telegram.ui.Cells.g4) {
                 Object tag = childAt.getTag();
                 if (tag instanceof Long) {
@@ -217,13 +217,13 @@ public final class d10 extends bb {
                         j3 = peer.user_id;
                     } else {
                         boolean z11 = peer instanceof TLRPC.TL_peerChat;
-                        org.telegram.ui.ActionBar.n2 n2Var = this.n;
+                        org.telegram.ui.ActionBar.m2 m2Var = this.n;
                         if (z11) {
                             j3 = -peer.chat_id;
-                            isNotInChat = ChatObject.isNotInChat(n2Var.getMessagesController().getChat(Long.valueOf(-j3)));
+                            isNotInChat = ChatObject.isNotInChat(m2Var.getMessagesController().getChat(Long.valueOf(-j3)));
                         } else if (peer instanceof TLRPC.TL_peerChannel) {
                             j3 = -peer.channel_id;
-                            isNotInChat = ChatObject.isNotInChat(n2Var.getMessagesController().getChat(Long.valueOf(-j3)));
+                            isNotInChat = ChatObject.isNotInChat(m2Var.getMessagesController().getChat(Long.valueOf(-j3)));
                         } else {
                             j3 = 0;
                         }
@@ -292,8 +292,8 @@ public final class d10 extends bb {
         View view = new View(context);
         z00Var.f = view;
         int i17 = org.telegram.ui.ActionBar.h6.Oh;
-        view.setBackground(org.telegram.ui.ActionBar.x5.d(new float[]{8.0f}, 0, org.telegram.ui.ActionBar.x5.b(org.telegram.ui.ActionBar.h6.w0(null, i17, false))));
-        z00Var.addView(view, w7.x5.c(-1.0f, -1));
+        view.setBackground(org.telegram.ui.ActionBar.w5.d(new float[]{8.0f}, 0, org.telegram.ui.ActionBar.w5.b(org.telegram.ui.ActionBar.h6.w0(null, i17, false))));
+        z00Var.addView(view, w7.y5.c(-1.0f, -1));
         z00Var.setBackground(org.telegram.ui.ActionBar.h6.b0(AndroidUtilities.dp(8.0f), org.telegram.ui.ActionBar.h6.w0(null, i17, false)));
         Paint paint = new Paint(1);
         z00Var.a = paint;
@@ -320,15 +320,15 @@ public final class d10 extends bb {
         z00Var.setWillNotDraw(false);
         this.l0 = z00Var;
         z00Var.setOnClickListener(new f0(this, 16));
-        this.containerView.addView(this.l0, w7.x5.d(-1, 48.0f, 87, 16.0f, 10.0f, 16.0f, 10.0f));
+        this.containerView.addView(this.l0, w7.y5.d(-1, 48.0f, 87, 16.0f, 10.0f, 16.0f, 10.0f));
         View view2 = new View(getContext());
         this.m0 = view2;
         view2.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.a7, false));
-        this.containerView.addView(this.m0, w7.x5.d(-1, 1.0f / AndroidUtilities.density, 87, 6.0f, 0.0f, 6.0f, 68.0f));
+        this.containerView.addView(this.m0, w7.y5.d(-1, 1.0f / AndroidUtilities.density, 87, 6.0f, 0.0f, 6.0f, 68.0f));
         this.d.setPadding(AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(this.l0 != null ? 68.0f : 0.0f));
         FrameLayout frameLayout = new FrameLayout(getContext());
         this.k0 = frameLayout;
-        this.containerView.addView(frameLayout, w7.x5.d(-1, 100.0f, 87, 6.0f, 0.0f, 6.0f, 68.0f));
+        this.containerView.addView(frameLayout, w7.y5.d(-1, 100.0f, 87, 6.0f, 0.0f, 6.0f, 68.0f));
         fixNavigationBar(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.h5, false));
         U(false);
         this.e.setTitle(y());
@@ -404,11 +404,11 @@ public final class d10 extends bb {
             this.y0.a("", null);
         } else {
             boolean z10 = this.i0.size() >= arrayList2.size() - arrayList.size();
-            this.y0.a(LocaleController.getString(z10 ? R.string.DeselectAll : R.string.SelectAll), new bi.f(23, this, z10));
+            this.y0.a(LocaleController.getString(z10 ? R.string.DeselectAll : R.string.SelectAll), new bi.f(24, this, z10));
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
+    @Override // org.telegram.ui.ActionBar.e3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.i2
     public final void dismiss() {
         super.dismiss();
         if (this.z0 >= 0) {
@@ -422,7 +422,7 @@ public final class d10 extends bb {
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final ll0 v(ml0 ml0Var) {
+    public final vl0 v(wl0 wl0Var) {
         return new x00(this);
     }
 

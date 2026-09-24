@@ -1,13 +1,27 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
-
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class tm0 extends org.telegram.ui.Cells.i7 {
-    @Override // org.telegram.ui.Cells.i7
-    public final boolean d(MessageObject messageObject) {
-        return MediaController.getInstance().playMessage(messageObject);
+public final class tm0 {
+    public static final tm0 a;
+    public static final tm0 b;
+    public static final /* synthetic */ tm0[] c;
+
+    static {
+        tm0 tm0Var = new tm0("LINE", 0);
+        a = tm0Var;
+        tm0 tm0Var2 = new tm0("TAB", 1);
+        b = tm0Var2;
+        c = new tm0[]{tm0Var, tm0Var2};
+    }
+
+    public static tm0 valueOf(String str) {
+        return (tm0) Enum.valueOf(tm0.class, str);
+    }
+
+    public static tm0[] values() {
+        return (tm0[]) c.clone();
     }
 }

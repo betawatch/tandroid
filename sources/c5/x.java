@@ -26,12 +26,12 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.concurrent.Callable;
-import v7.y8;
+import v7.z8;
 import w7.la;
 import x7.fa;
 import z7.wf;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class x implements Callable {
     public final /* synthetic */ int a;
@@ -269,15 +269,15 @@ public final /* synthetic */ class x implements Callable {
             case 4:
                 return BitmapFactory.decodeFile(((u4.h) this.b).b);
             case 5:
-                y8 y8Var = (y8) this.b;
-                y8Var.getClass();
-                return n6.i.c.a(y8Var.g);
+                z8 z8Var = (z8) this.b;
+                z8Var.getClass();
+                return n6.i.c.a(z8Var.g);
             case 6:
                 la laVar = (la) this.b;
                 laVar.getClass();
                 return n6.i.c.a(laVar.g);
             case 7:
-                ((com.google.firebase.messaging.w) this.b).run();
+                ((com.google.firebase.messaging.v) this.b).run();
                 return null;
             case 8:
                 x1.a aVar3 = (x1.a) this.b;

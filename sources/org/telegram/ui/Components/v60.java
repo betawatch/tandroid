@@ -1,49 +1,48 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class v60 extends xw0 {
-    public final /* synthetic */ int K;
+public final class v60 implements org.telegram.ui.qb0 {
+    public final /* synthetic */ w60 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ v60(Context context, View view, int i10, org.telegram.ui.ActionBar.d6 d6Var, int i11) {
-        super(context, view, i10, d6Var);
-        this.K = i11;
+    public v60(w60 w60Var) {
+        this.a = w60Var;
     }
 
-    @Override // org.telegram.ui.Components.xw0, android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
-        switch (this.K) {
-            case 0:
-                super.onAttachedToWindow();
-                this.b.getImageReceiver().startAnimation();
-                break;
-            case 1:
-                super.onAttachedToWindow();
-                this.b.getImageReceiver().startAnimation();
-                break;
-            default:
-                super.onAttachedToWindow();
-                break;
+    @Override // org.telegram.ui.qb0
+    public final void b(TLRPC.TL_chatInviteExported tL_chatInviteExported, TLObject tLObject) {
+        int i10;
+        org.telegram.ui.hb hbVar = this.a.a.c.j0;
+        if (hbVar != null) {
+            TLRPC.TL_channelAdminLogEvent tL_channelAdminLogEvent = new TLRPC.TL_channelAdminLogEvent();
+            TLRPC.TL_channelAdminLogEventActionExportedInviteEdit tL_channelAdminLogEventActionExportedInviteEdit = new TLRPC.TL_channelAdminLogEventActionExportedInviteEdit();
+            tL_channelAdminLogEventActionExportedInviteEdit.new_invite = tL_chatInviteExported;
+            tL_channelAdminLogEventActionExportedInviteEdit.prev_invite = tL_chatInviteExported;
+            tL_channelAdminLogEvent.action = tL_channelAdminLogEventActionExportedInviteEdit;
+            tL_channelAdminLogEvent.date = (int) (System.currentTimeMillis() / 1000);
+            org.telegram.ui.ub ubVar = hbVar.a;
+            tL_channelAdminLogEvent.user_id = ubVar.getAccountInstance().getUserConfig().clientUserId;
+            i10 = ((org.telegram.ui.ActionBar.m2) ubVar).currentAccount;
+            if (new MessageObject(i10, tL_channelAdminLogEvent, (ArrayList<MessageObject>) ubVar.n0, (HashMap<String, ArrayList<MessageObject>>) ubVar.m0, ubVar.f, ubVar.T, true).contentType < 0) {
+                return;
+            }
+            ubVar.R0();
+            ubVar.E.l();
+            org.telegram.ui.ub.K0(ubVar);
         }
     }
 
-    @Override // org.telegram.ui.Components.xw0, android.view.View
-    public void setVisibility(int i10) {
-        switch (this.K) {
-            case 2:
-                super.setVisibility(i10);
-                if (i10 != 0) {
-                    e(false, false);
-                    break;
-                }
-                break;
-            default:
-                super.setVisibility(i10);
-                break;
-        }
+    @Override // org.telegram.ui.qb0
+    public final void a(TLRPC.TL_chatInviteExported tL_chatInviteExported) {
+    }
+
+    @Override // org.telegram.ui.qb0
+    public final void c(TLObject tLObject) {
     }
 }

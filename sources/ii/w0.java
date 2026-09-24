@@ -6,9 +6,9 @@ import android.graphics.Paint;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public final class w0 extends View implements org.telegram.ui.ActionBar.y5 {
+public final class w0 extends View implements org.telegram.ui.ActionBar.x5 {
     public final org.telegram.ui.ActionBar.d6 a;
     public final Paint b;
     public a c;
@@ -20,7 +20,7 @@ public final class w0 extends View implements org.telegram.ui.ActionBar.y5 {
         e();
     }
 
-    @Override // org.telegram.ui.ActionBar.y5
+    @Override // org.telegram.ui.ActionBar.x5
     public final void e() {
         this.b.setColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Fk, this.a));
     }

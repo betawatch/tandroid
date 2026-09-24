@@ -4,24 +4,24 @@ import ai.n6;
 import ai.y1;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Components.bb;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.ml0;
-import org.telegram.ui.Components.v51;
+import org.telegram.ui.Components.j61;
+import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.wl0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class y extends bb {
     public final int X;
     public final CharSequence Y;
-    public v51 Z;
+    public j61 Z;
 
-    public y(n2 n2Var, String str, y1 y1Var) {
-        super(n2Var, true, false, n2Var.getResourceProvider());
+    public y(m2 m2Var, String str, y1 y1Var) {
+        super(m2Var, true, false, m2Var.getResourceProvider());
         new FrameLayout(getContext());
         new ImageView(getContext());
-        this.X = n2Var.getCurrentAccount();
+        this.X = m2Var.getCurrentAccount();
         this.Y = str;
         N();
         this.v = 0.6f;
@@ -29,18 +29,18 @@ public final class y extends bb {
         this.E = true;
         fixNavigationBar();
         K();
-        ml0 ml0Var = this.d;
+        wl0 wl0Var = this.d;
         int i10 = this.backgroundPaddingLeft;
-        ml0Var.setPadding(i10, 0, i10, 0);
+        wl0Var.setPadding(i10, 0, i10, 0);
         this.d.setOnItemClickListener(new n6(1, this, y1Var));
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final ll0 v(ml0 ml0Var) {
-        v51 v51Var = new v51(ml0Var, getContext(), this.X, 0, false, new v(this, 0), this.resourcesProvider);
-        this.Z = v51Var;
-        v51Var.r = false;
-        return v51Var;
+    public final vl0 v(wl0 wl0Var) {
+        j61 j61Var = new j61(wl0Var, getContext(), this.X, 0, false, new v(this, 0), this.resourcesProvider);
+        this.Z = j61Var;
+        j61Var.r = false;
+        return j61Var;
     }
 
     @Override // org.telegram.ui.Components.bb

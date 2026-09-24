@@ -1,6 +1,6 @@
 package vc;
 
-import c5.i;
+import ee.v;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -16,22 +16,24 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 import javax.net.ssl.HttpsURLConnection;
+import la.h;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.ui.Cells.q3;
+import org.telegram.ui.Cells.c1;
 import tc.d;
 import tc.e;
 import tc.f;
-import w7.q8;
-import w7.y7;
+import v7.j;
+import w7.r8;
+import w7.z7;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final c a = new c();
 
-    public static HttpURLConnection a(String str, i iVar) {
+    public static HttpURLConnection a(String str, v vVar) {
         Throwable th2;
         OutputStream outputStream;
         HttpURLConnection httpURLConnection = (HttpURLConnection) new URL("https://api.stripe.com/v1/tokens").openConnection();
@@ -42,7 +44,7 @@ public abstract class b {
         hashMap.put("Accept-Charset", "UTF-8");
         hashMap.put("Accept", "application/json");
         hashMap.put("User-Agent", "Stripe/v1 JavaBindings/3.5.0");
-        hashMap.put("Authorization", "Bearer " + iVar.a);
+        hashMap.put("Authorization", "Bearer " + vVar.b);
         String[] strArr = {"os.name", "os.version", "os.arch", "java.version", "java.vendor", "java.vm.version", "java.vm.vendor"};
         HashMap hashMap2 = new HashMap();
         for (int i10 = 0; i10 < 7; i10++) {
@@ -116,13 +118,13 @@ public abstract class b {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static lf.i c(HashMap hashMap, i iVar) {
+    public static h c(HashMap hashMap, v vVar) {
         String str;
         int i10;
         String str2;
         String str3;
         Boolean bool = Boolean.TRUE;
-        lf.i iVar2 = null;
+        h hVar = null;
         try {
             str = Security.getProperty("networkaddress.cache.ttl");
         } catch (SecurityException unused) {
@@ -132,14 +134,14 @@ public abstract class b {
             Security.setProperty("networkaddress.cache.ttl", "0");
         } catch (SecurityException unused2) {
             bool = Boolean.FALSE;
-            if (!iVar.a.trim().isEmpty()) {
+            if (!vVar.b.trim().isEmpty()) {
             }
         }
-        if (!iVar.a.trim().isEmpty()) {
+        if (!vVar.b.trim().isEmpty()) {
             throw new tc.c("No API key provided. (HINT: set your API key using 'Stripe.apiKey = <API-KEY>'. You can generate API keys from the Stripe web interface. See https://stripe.com/api for details or email support@stripe.com if you have questions.", null);
         }
         try {
-            a5.a f7 = f(hashMap, iVar);
+            a5.a f7 = f(hashMap, vVar);
             i10 = f7.b;
             str2 = (String) f7.c;
             Map map = (Map) f7.d;
@@ -162,10 +164,10 @@ public abstract class b {
             g(i10, str2, str3);
             throw null;
         }
-        iVar2 = y7.a(str2);
+        hVar = z7.a(str2);
         if (bool.booleanValue()) {
         }
-        return iVar2;
+        return hVar;
     }
 
     public static LinkedList d(String str, Map map) {
@@ -189,7 +191,7 @@ public abstract class b {
         }
         if (!(obj instanceof List)) {
             if ("".equals(obj)) {
-                throw new d(q3.j("You cannot set '", str, "' to an empty string. We interpret empty strings as null in requests. You may set '", str, "' to null to delete the property."), null, null);
+                throw new d(c1.k("You cannot set '", str, "' to an empty string. We interpret empty strings as null in requests. You may set '", str, "' to null to delete the property."), null, null);
             }
             if (obj == null) {
                 LinkedList linkedList = new LinkedList();
@@ -203,13 +205,13 @@ public abstract class b {
         List list = (List) obj;
         LinkedList linkedList3 = new LinkedList();
         Iterator it = list.iterator();
-        String g10 = w.c.g(str, "[]");
+        String t10 = j.t(str, "[]");
         if (list.isEmpty()) {
             linkedList3.add(new a(str, ""));
             return linkedList3;
         }
         while (it.hasNext()) {
-            linkedList3.addAll(e(it.next(), g10));
+            linkedList3.addAll(e(it.next(), t10));
         }
         return linkedList3;
     }
@@ -219,14 +221,14 @@ public abstract class b {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static a5.a f(HashMap hashMap, i iVar) {
+    public static a5.a f(HashMap hashMap, v vVar) {
         String next;
         HttpURLConnection httpURLConnection = null;
         try {
             String b10 = b(hashMap);
             try {
                 try {
-                    HttpURLConnection a2 = a(b10, iVar);
+                    HttpURLConnection a2 = a(b10, vVar);
                     try {
                         int responseCode = a2.getResponseCode();
                         if (responseCode < 200 || responseCode >= 300) {
@@ -274,12 +276,12 @@ public abstract class b {
         String str3;
         try {
             JSONObject jSONObject = new JSONObject(str).getJSONObject("error");
-            q8.a(jSONObject.optString("charge"));
-            q8.a(jSONObject.optString("code"));
-            q8.a(jSONObject.optString("decline_code"));
-            str3 = q8.a(jSONObject.optString("message"));
-            q8.a(jSONObject.optString("param"));
-            q8.a(jSONObject.optString(TeXSymbolParser.TYPE_ATTR));
+            r8.a(jSONObject.optString("charge"));
+            r8.a(jSONObject.optString("code"));
+            r8.a(jSONObject.optString("decline_code"));
+            str3 = r8.a(jSONObject.optString("message"));
+            r8.a(jSONObject.optString("param"));
+            r8.a(jSONObject.optString(TeXSymbolParser.TYPE_ATTR));
         } catch (JSONException unused) {
             str3 = "An improperly formatted error response was found.";
         }

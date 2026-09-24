@@ -14,9 +14,9 @@ import org.telegram.ui.Components.th;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.ad;
-import org.telegram.ui.x31;
+import org.telegram.ui.w31;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -60,36 +60,36 @@ public final /* synthetic */ class i implements Utilities.Callback {
                 ((View) obj).invalidate();
                 break;
             case 6:
-                HashMap hashMap = org.telegram.ui.ActionBar.n3.K;
+                HashMap hashMap = org.telegram.ui.ActionBar.m3.K;
                 break;
             case 7:
-                int i10 = org.telegram.ui.ActionBar.l3.r;
+                int i10 = org.telegram.ui.ActionBar.k3.r;
                 break;
             case 8:
-                int i11 = org.telegram.ui.Cells.ya.f;
+                int i11 = org.telegram.ui.Cells.wa.f;
                 break;
             case 9:
                 ad.Y0((View) obj);
                 break;
             case 10:
                 View view4 = (View) obj;
-                if ((view4 instanceof org.telegram.ui.Cells.t1) && (messageObject = ((org.telegram.ui.Cells.t1) view4).getMessageObject()) != null) {
+                if ((view4 instanceof org.telegram.ui.Cells.u1) && (messageObject = ((org.telegram.ui.Cells.u1) view4).getMessageObject()) != null) {
                     messageObject.forceUpdate = true;
+                    messageObject.reactionsChanged = true;
                     break;
                 }
                 break;
             case 11:
                 View view5 = (View) obj;
-                if ((view5 instanceof org.telegram.ui.Cells.t1) && (messageObject2 = ((org.telegram.ui.Cells.t1) view5).getMessageObject()) != null) {
+                if ((view5 instanceof org.telegram.ui.Cells.u1) && (messageObject2 = ((org.telegram.ui.Cells.u1) view5).getMessageObject()) != null) {
                     messageObject2.forceUpdate = true;
-                    messageObject2.reactionsChanged = true;
                     break;
                 }
                 break;
             case 12:
                 View view6 = (View) obj;
-                if (view6 instanceof org.telegram.ui.ActionBar.y2) {
-                    ((org.telegram.ui.ActionBar.y2) view6).getTextView().invalidate();
+                if (view6 instanceof org.telegram.ui.ActionBar.x2) {
+                    ((org.telegram.ui.ActionBar.x2) view6).getTextView().invalidate();
                     break;
                 } else {
                     view6.invalidate();
@@ -111,15 +111,15 @@ public final /* synthetic */ class i implements Utilities.Callback {
                 }
             case 14:
                 View view8 = (View) obj;
-                if (view8 instanceof org.telegram.ui.Cells.g8) {
-                    ((org.telegram.ui.Cells.g8) view8).a(true);
+                if (view8 instanceof org.telegram.ui.Cells.f8) {
+                    ((org.telegram.ui.Cells.f8) view8).a(true);
                     break;
                 }
                 break;
             case 15:
                 View view9 = (View) obj;
-                if (view9 instanceof org.telegram.ui.Cells.g8) {
-                    ((org.telegram.ui.Cells.g8) view9).c(true);
+                if (view9 instanceof org.telegram.ui.Cells.f8) {
+                    ((org.telegram.ui.Cells.f8) view9).c(true);
                     break;
                 }
                 break;
@@ -131,13 +131,13 @@ public final /* synthetic */ class i implements Utilities.Callback {
             case 18:
                 Long l4 = (Long) obj;
                 if (l4 != null && l4.longValue() != Long.MAX_VALUE) {
-                    org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+                    org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
                     if (U != null) {
                         U.presentFragment(ProfileActivity.m4(l4.longValue()));
                         break;
                     }
                 } else {
-                    AndroidUtilities.runOnUIThread(new th(25));
+                    AndroidUtilities.runOnUIThread(new th(27));
                     break;
                 }
                 break;
@@ -146,7 +146,7 @@ public final /* synthetic */ class i implements Utilities.Callback {
             case 20:
                 HashSet hashSet = (HashSet) obj;
                 String str = LocaleController.getInstance().getCurrentLocaleInfo().pluralLangCode;
-                hashSet.addAll(x31.Y());
+                hashSet.addAll(w31.Y());
                 SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
                 if (hashSet.size() == 1 && TextUtils.equals((CharSequence) hashSet.iterator().next(), str)) {
                     edit.remove("translate_button_restricted_languages");
@@ -154,7 +154,7 @@ public final /* synthetic */ class i implements Utilities.Callback {
                     edit.putStringSet("translate_button_restricted_languages", hashSet);
                 }
                 edit.putInt("translate_button_restricted_languages_version", 2).apply();
-                x31.s = false;
+                w31.s = false;
                 for (int i12 = 0; i12 < 4; i12++) {
                     try {
                         MessagesController.getInstance(i12).getTranslateController().checkRestrictedLanguagesUpdate();

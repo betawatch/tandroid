@@ -15,14 +15,14 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class da extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public TextView a;
     public TextView b;
     public ai.f0 c;
     public ai.f0 d;
-    public cj0 e;
+    public mj0 e;
     public ScrollView f;
     public AnimatorSet h;
     public TLRPC.TL_help_appUpdate n;

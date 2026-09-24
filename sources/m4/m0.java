@@ -2,28 +2,52 @@ package m4;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class m0 implements y0, z0 {
-    public final /* synthetic */ b1 a;
-    public final /* synthetic */ int b;
+public final /* synthetic */ class m0 implements x0, y0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ a1 b;
     public final /* synthetic */ int c;
 
-    public /* synthetic */ m0(b1 b1Var, int i10, int i11) {
-        this.a = b1Var;
-        this.b = i10;
-        this.c = i11;
-    }
-
-    @Override // m4.z0
-    public void a(f1 f1Var, r rVar, List list) {
-        b1 b1Var = this.a;
-        f1Var.P(b1Var.K0(rVar, f1Var, this.b), b1Var.K0(rVar, f1Var, this.c), list);
+    public /* synthetic */ m0(a1 a1Var, int i10, int i11) {
+        this.a = i11;
+        this.b = a1Var;
+        this.c = i10;
     }
 
     @Override // m4.y0
-    public void g(f1 f1Var, r rVar) {
-        b1 b1Var = this.a;
-        f1Var.S(b1Var.K0(rVar, f1Var, this.b), b1Var.K0(rVar, f1Var, this.c));
+    public void a(e1 e1Var, r rVar, List list) {
+        switch (this.a) {
+            case 1:
+                e1Var.b0(this.b.K0(rVar, e1Var, this.c), list);
+                break;
+            case 2:
+                a1 a1Var = this.b;
+                a1Var.getClass();
+                int size = list.size();
+                int i10 = this.c;
+                if (size != 1) {
+                    e1Var.P(a1Var.K0(rVar, e1Var, i10), a1Var.K0(rVar, e1Var, i10 + 1), list);
+                    break;
+                } else {
+                    e1Var.s0((b2.k0) list.get(0), a1Var.K0(rVar, e1Var, i10));
+                    break;
+                }
+            default:
+                e1Var.b0(this.b.K0(rVar, e1Var, this.c), list);
+                break;
+        }
+    }
+
+    @Override // m4.x0
+    public void d(e1 e1Var, r rVar) {
+        switch (this.a) {
+            case 0:
+                e1Var.Y(this.b.K0(rVar, e1Var, this.c));
+                break;
+            default:
+                e1Var.R(this.b.K0(rVar, e1Var, this.c));
+                break;
+        }
     }
 }

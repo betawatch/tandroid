@@ -14,7 +14,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class r10 extends FrameLayout {
     public final RectF a;
@@ -32,7 +32,7 @@ public final class r10 extends FrameLayout {
         float f7;
         super.dispatchDraw(canvas);
         FragmentContextView fragmentContextView = this.b;
-        org.telegram.ui.ActionBar.n2 n2Var = fragmentContextView.h;
+        org.telegram.ui.ActionBar.m2 m2Var = fragmentContextView.h;
         o6 o6Var = fragmentContextView.i0;
         if (fragmentContextView.T == 4 && fragmentContextView.g0) {
             int dp = AndroidUtilities.dp(24.0f) + ((int) Math.ceil(o6Var.d()));
@@ -43,10 +43,10 @@ public final class r10 extends FrameLayout {
                 fragmentContextView.e0 = dp;
             }
             ChatObject.Call groupCall = fragmentContextView.n.getGroupCall();
-            if (n2Var == null || groupCall == null || !groupCall.isScheduled()) {
+            if (m2Var == null || groupCall == null || !groupCall.isScheduled()) {
                 f7 = 0.0f;
             } else {
-                long currentTimeMillis = (groupCall.call.schedule_date * 1000) - n2Var.getConnectionsManager().getCurrentTimeMillis();
+                long currentTimeMillis = (groupCall.call.schedule_date * 1000) - m2Var.getConnectionsManager().getCurrentTimeMillis();
                 f7 = currentTimeMillis >= 0 ? currentTimeMillis < 5000 ? 1.0f - (currentTimeMillis / 5000.0f) : 0.0f : 1.0f;
                 if (currentTimeMillis < 6000) {
                     invalidate();
@@ -78,7 +78,7 @@ public final class r10 extends FrameLayout {
 
     @Override // android.view.ViewGroup, android.view.View
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        bh bhVar;
+        ch chVar;
         ChatObject.Call groupCall;
         FragmentContextView fragmentContextView = this.b;
         if (fragmentContextView.T == 4 && fragmentContextView.g0 && fragmentContextView.j0 != null) {
@@ -92,10 +92,10 @@ public final class r10 extends FrameLayout {
             } else if (motionEvent.getAction() == 1) {
                 if (contains) {
                     q10 q10Var = fragmentContextView.l0;
-                    org.telegram.ui.ActionBar.n2 n2Var = fragmentContextView.h;
-                    if (n2Var != null && (bhVar = fragmentContextView.n) != null && (groupCall = bhVar.getGroupCall()) != null && groupCall.call != null) {
+                    org.telegram.ui.ActionBar.m2 m2Var = fragmentContextView.h;
+                    if (m2Var != null && (chVar = fragmentContextView.n) != null && (groupCall = chVar.getGroupCall()) != null && groupCall.call != null) {
                         if (fragmentContextView.K0 != 0) {
-                            n2Var.getConnectionsManager().cancelRequest(fragmentContextView.K0, true);
+                            m2Var.getConnectionsManager().cancelRequest(fragmentContextView.K0, true);
                             fragmentContextView.K0 = 0;
                         }
                         TL_phone.toggleGroupCallStartSubscription togglegroupcallstartsubscription = new TL_phone.toggleGroupCallStartSubscription();
@@ -105,15 +105,15 @@ public final class r10 extends FrameLayout {
                         fragmentContextView.h0 = z10;
                         groupCall2.schedule_start_subscribed = z10;
                         togglegroupcallstartsubscription.subscribed = z10;
-                        fragmentContextView.K0 = n2Var.getConnectionsManager().sendRequest(togglegroupcallstartsubscription, null);
+                        fragmentContextView.K0 = m2Var.getConnectionsManager().sendRequest(togglegroupcallstartsubscription, null);
                         if (fragmentContextView.k0) {
                             AndroidUtilities.cancelRunOnUIThread(q10Var);
                             fragmentContextView.k0 = false;
                         }
                         q10Var.run();
-                        xc a02 = xc.a0(n2Var);
+                        yc a02 = yc.a0(m2Var);
                         boolean z11 = fragmentContextView.h0;
-                        org.telegram.messenger.z0.o(z11 ? R.string.LiveStreamWillNotify : R.string.LiveStreamWillNotNotify, a02, z11 ? R.raw.silent_unmute : R.raw.silent_mute, 36);
+                        org.telegram.messenger.f0.p(z11 ? R.string.LiveStreamWillNotify : R.string.LiveStreamWillNotNotify, a02, z11 ? R.raw.silent_unmute : R.raw.silent_mute, 36);
                     }
                 }
                 fragmentContextView.j0.c(false);
@@ -121,13 +121,13 @@ public final class r10 extends FrameLayout {
                 fragmentContextView.j0.c(false);
             }
         } else {
-            yc ycVar = fragmentContextView.j0;
-            if (ycVar != null) {
-                ycVar.c(false);
+            zc zcVar = fragmentContextView.j0;
+            if (zcVar != null) {
+                zcVar.c(false);
             }
         }
-        yc ycVar2 = fragmentContextView.j0;
-        return (ycVar2 != null && ycVar2.h) || super.dispatchTouchEvent(motionEvent);
+        zc zcVar2 = fragmentContextView.j0;
+        return (zcVar2 != null && zcVar2.h) || super.dispatchTouchEvent(motionEvent);
     }
 
     @Override // android.view.View

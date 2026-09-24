@@ -7,10 +7,10 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.h51;
-import org.telegram.ui.web.t0;
+import org.telegram.ui.Components.v51;
+import org.telegram.ui.web.q0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -41,7 +41,7 @@ public final /* synthetic */ class j implements Utilities.Callback2 {
                     int i12 = messagePeerVote.date;
                     a3 a3Var = new a3(pVar, peerDialogId, 3);
                     int i13 = m.a;
-                    h51 J = h51.J(m.class);
+                    v51 J = v51.J(m.class);
                     J.G = userOrChat;
                     J.B = peerDialogId;
                     J.z = i12;
@@ -51,15 +51,15 @@ public final /* synthetic */ class j implements Utilities.Callback2 {
                 if (!pVar.h) {
                     if (!arrayList2.isEmpty()) {
                         int i14 = o.a;
-                        arrayList.add(h51.J(o.class));
+                        arrayList.add(v51.J(o.class));
                         break;
                     } else {
                         int i15 = n.a;
-                        arrayList.add(h51.J(n.class));
-                        arrayList.add(h51.J(n.class));
-                        arrayList.add(h51.J(n.class));
-                        arrayList.add(h51.J(n.class));
-                        arrayList.add(h51.J(n.class));
+                        arrayList.add(v51.J(n.class));
+                        arrayList.add(v51.J(n.class));
+                        arrayList.add(v51.J(n.class));
+                        arrayList.add(v51.J(n.class));
+                        arrayList.add(v51.J(n.class));
                         break;
                     }
                 }
@@ -79,9 +79,9 @@ public final /* synthetic */ class j implements Utilities.Callback2 {
                     pVar.g = str;
                     pVar.h = str == null;
                     pVar.j.addAll(tL_messages_votesList.votes);
-                    t0 t0Var = pVar.e;
-                    if (t0Var != null) {
-                        t0Var.run();
+                    q0 q0Var = pVar.e;
+                    if (q0Var != null) {
+                        q0Var.run();
                         break;
                     }
                 }

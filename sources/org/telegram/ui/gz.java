@@ -1,14 +1,27 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+import android.content.Context;
+import android.view.View;
+
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class gz extends org.telegram.ui.Components.d61 {
-    @Override // org.telegram.ui.Components.ml0
-    public final Integer W0(int i10) {
-        org.telegram.ui.Components.h51 G = this.Y2.G(i10);
-        if (G == null || G.d != 2) {
-            return super.W0(i10);
-        }
-        return 0;
+public final class gz extends org.telegram.ui.Components.u51 {
+    public static final /* synthetic */ int a = 0;
+
+    static {
+        org.telegram.ui.Components.u51.setup(new gz());
+    }
+
+    @Override // org.telegram.ui.Components.u51
+    public final void bindView(View view, org.telegram.ui.Components.v51 v51Var, boolean z10, org.telegram.ui.Components.j61 j61Var, org.telegram.ui.Components.r61 r61Var) {
+        hz hzVar = (hz) view;
+        hzVar.b.setOnClickListener((View.OnClickListener) v51Var.G);
+        hzVar.e.setOnClickListener((View.OnClickListener) v51Var.H);
+        hzVar.a(v51Var.e, false);
+    }
+
+    @Override // org.telegram.ui.Components.u51
+    public final View createView(Context context, org.telegram.ui.Components.wl0 wl0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
+        return new hz(context, d6Var);
     }
 }

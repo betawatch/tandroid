@@ -1,37 +1,172 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Typeface;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class wc0 extends yc0 {
-    public final ci.h2 L;
+public abstract class wc0 extends aw0 implements r0.m, View.OnLayoutChangeListener {
+    public int A0;
+    public int B0;
+    public boolean C0;
+    public final b2.q0 w0;
+    public View x0;
+    public vc0 y0;
+    public org.telegram.ui.ActionBar.c3 z0;
 
     public wc0(Context context) {
         super(context, null);
-        ci.h2 h2Var = new ci.h2(this, context, 5);
-        this.L = h2Var;
-        h2Var.setTextSize(1, 18.0f);
-        h2Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.G6, false));
-        h2Var.setHintTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.H6, false));
-        h2Var.setBackground(null);
-        h2Var.setSingleLine(true);
-        h2Var.setInputType(1);
-        h2Var.setTypeface(Typeface.DEFAULT);
-        h2Var.setCursorColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.l6, false));
-        h2Var.setCursorWidth(1.5f);
-        h2Var.setPadding(AndroidUtilities.dp(15.0f), 0, AndroidUtilities.dp(15.0f), 0);
-        e(h2Var);
-        addView(h2Var, w7.x5.e(-1, -2, 16));
+        this.w0 = new b2.q0();
     }
 
-    public EditTextBoldCursor getEditText() {
-        return this.L;
+    public void E(ViewGroup viewGroup, int i10, int i11, int[] iArr, int i12) {
+        vc0 vc0Var;
+        if (viewGroup != this.x0 || (vc0Var = this.y0) == null || ((org.telegram.ui.s7) vc0Var).getListView() == null) {
+            return;
+        }
+        int top = this.y0.getTop();
+        if (i11 >= 0) {
+            org.telegram.ui.ActionBar.c3 c3Var = this.z0;
+            if (c3Var != null) {
+                c3Var.onNestedPreScroll(viewGroup, i10, i11, iArr);
+                return;
+            }
+            return;
+        }
+        if (top > this.A0) {
+            if (this.z0 == null || this.x0.canScrollVertically(i11)) {
+                return;
+            }
+            this.z0.onNestedScroll(viewGroup, 0, 0, i10, i11);
+            return;
+        }
+        wl0 listView = ((org.telegram.ui.s7) this.y0).getListView();
+        int L0 = ((s4.c0) listView.getLayoutManager()).L0();
+        if (L0 != -1) {
+            s4.c1 K = listView.K(L0);
+            int top2 = K != null ? K.a.getTop() : -1;
+            int paddingTop = listView.getPaddingTop();
+            if (top2 == paddingTop && L0 == 0) {
+                return;
+            }
+            iArr[1] = L0 != 0 ? i11 : Math.max(i11, top2 - paddingTop);
+            listView.scrollBy(0, i11);
+        }
     }
 
-    public void setHint(String str) {
-        setText(str);
+    public final boolean Z() {
+        vc0 vc0Var = this.y0;
+        return vc0Var != null && vc0Var.getTop() == this.A0;
+    }
+
+    public final void a0(vc0 vc0Var, int i10) {
+        this.B0 = i10;
+        if (this.y0 != vc0Var) {
+            this.y0 = vc0Var;
+            if (this.C0 && vc0Var != null) {
+                org.telegram.ui.s7 s7Var = (org.telegram.ui.s7) vc0Var;
+                if (s7Var.getListView() != null) {
+                    s7Var.getListView().addOnLayoutChangeListener(this);
+                }
+            }
+        }
+        b0();
+    }
+
+    public final void b0() {
+        View view = this.x0;
+        if (view == null || this.y0 == null) {
+            return;
+        }
+        if (this.B0 != 0) {
+            this.A0 = view.getPaddingTop() + this.B0;
+        } else {
+            this.A0 = (view.getMeasuredHeight() - this.x0.getPaddingBottom()) - this.y0.getMeasuredHeight();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.aw0
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
+    }
+
+    public void j(ViewGroup viewGroup, int i10, int i11, int i12, int i13, int i14, int[] iArr) {
+        vc0 vc0Var;
+        if (viewGroup != this.x0 || (vc0Var = this.y0) == null || ((org.telegram.ui.s7) vc0Var).getListView() == null) {
+            return;
+        }
+        wl0 listView = ((org.telegram.ui.s7) this.y0).getListView();
+        if (this.y0.getTop() == this.A0) {
+            iArr[1] = i13;
+            listView.scrollBy(0, i13);
+        }
+    }
+
+    public void o(int i10, View view) {
+        this.w0.a = 0;
+        org.telegram.ui.ActionBar.c3 c3Var = this.z0;
+        if (c3Var != null) {
+            c3Var.onStopNestedScroll(view);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.C0 = true;
+        vc0 vc0Var = this.y0;
+        if (vc0Var != null) {
+            vc0Var.addOnLayoutChangeListener(this);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.C0 = false;
+        vc0 vc0Var = this.y0;
+        if (vc0Var != null) {
+            vc0Var.removeOnLayoutChangeListener(this);
+        }
+    }
+
+    @Override // android.view.View.OnLayoutChangeListener
+    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
+        b0();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        b0();
+    }
+
+    public boolean p(View view, View view2, int i10, int i11) {
+        return view != null && view.isAttachedToWindow() && i10 == 2;
+    }
+
+    public void s(View view, View view2, int i10, int i11) {
+        this.w0.a = i10;
+    }
+
+    public void setBottomSheetContainerView(org.telegram.ui.ActionBar.c3 c3Var) {
+        this.z0 = c3Var;
+    }
+
+    public void setChildLayout(vc0 vc0Var) {
+        a0(vc0Var, 0);
+    }
+
+    public void setTargetListView(View view) {
+        this.x0 = view;
+        b0();
+    }
+
+    @Override // android.view.ViewGroup, android.view.ViewParent
+    public void onStopNestedScroll(View view) {
+    }
+
+    public void c(ViewGroup viewGroup, int i10, int i11, int i12, int i13, int i14) {
     }
 }

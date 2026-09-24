@@ -49,15 +49,15 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f3;
-import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.mr0;
+import org.telegram.ui.ActionBar.e3;
+import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.wi;
+import org.telegram.ui.Components.xr0;
 import org.telegram.ui.Stories.recorder.FfmpegAudioWaveformLoader;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a0 implements Runnable {
     public final /* synthetic */ int a;
@@ -106,9 +106,9 @@ public final /* synthetic */ class a0 implements Runnable {
                 return;
             case 3:
                 bi.u uVar = (bi.u) this.b;
-                mr0 mr0Var = uVar.W;
+                xr0 xr0Var = uVar.W;
                 u8 u8Var = uVar.a;
-                mr0Var.a(u8Var == null ? "" : u8Var.E);
+                xr0Var.a(u8Var == null ? "" : u8Var.E);
                 return;
             case 4:
                 ((c1.e) this.b).e().onError(new w0.h("Failed to launch the selector UI. Hint: ensure the `context` parameter is an Activity-based context.", 2));
@@ -136,7 +136,7 @@ public final /* synthetic */ class a0 implements Runnable {
             case 10:
                 y5 y5Var = (y5) this.b;
                 qc.e();
-                rg.x0 x0Var = new rg.x0((n2) new y3(y5Var), 14, false);
+                rg.x0 x0Var = new rg.x0((m2) new y3(y5Var), 14, false);
                 x0Var.setOnDismissListener(new f1(0));
                 x0Var.show();
                 return;
@@ -149,7 +149,7 @@ public final /* synthetic */ class a0 implements Runnable {
                 ArrayList arrayList2 = d2Var.s;
                 e2 e2Var = d2Var.N;
                 s2 s2Var = e2Var.s;
-                i10 = ((f3) s2Var).currentAccount;
+                i10 = ((e3) s2Var).currentAccount;
                 MediaDataController mediaDataController = MediaDataController.getInstance(i10);
                 String str = d2Var.H;
                 if ("premium".equalsIgnoreCase(str)) {
@@ -175,14 +175,14 @@ public final /* synthetic */ class a0 implements Runnable {
                     TLRPC.TL_messages_getStickers tL_messages_getStickers = new TLRPC.TL_messages_getStickers();
                     tL_messages_getStickers.emoticon = d2Var.H;
                     tL_messages_getStickers.hash = 0L;
-                    i12 = ((f3) s2Var).currentAccount;
+                    i12 = ((e3) s2Var).currentAccount;
                     ConnectionsManager.getInstance(i12).sendRequest(tL_messages_getStickers, new v1(5, d2Var, str));
                     return;
                 }
                 String[] currentKeyboardLanguage = AndroidUtilities.getCurrentKeyboardLanguage();
                 String[] strArr = d2Var.J;
                 if (strArr == null || !Arrays.equals(currentKeyboardLanguage, strArr)) {
-                    i11 = ((f3) s2Var).currentAccount;
+                    i11 = ((e3) s2Var).currentAccount;
                     MediaDataController.getInstance(i11).fetchNewEmojiKeywords(currentKeyboardLanguage);
                 }
                 d2Var.J = currentKeyboardLanguage;
@@ -207,10 +207,10 @@ public final /* synthetic */ class a0 implements Runnable {
                 if (i13 > arrayList3.size() - 1) {
                     p2Var.k = 0;
                 }
-                zg.g0 g0Var = p2Var.j;
-                g0Var.e((zg.p0) arrayList3.get(p2Var.k));
+                zg.f0 f0Var = p2Var.j;
+                f0Var.e((zg.o0) arrayList3.get(p2Var.k));
                 p2Var.j = p2Var.i;
-                p2Var.i = g0Var;
+                p2Var.i = f0Var;
                 p2Var.p.invalidate();
                 return;
             case 15:
@@ -258,7 +258,7 @@ public final /* synthetic */ class a0 implements Runnable {
             case 23:
                 kc kcVar = (kc) this.b;
                 kcVar.x0.onTouchEvent(AndroidUtilities.emptyMotionEvent());
-                kcVar.w0.y(AndroidUtilities.emptyMotionEvent());
+                kcVar.w0.g0(AndroidUtilities.emptyMotionEvent());
                 return;
             case 24:
                 lc lcVar = ((kb) this.b).k0;

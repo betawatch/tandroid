@@ -4,9 +4,9 @@ import android.util.Pair;
 import java.util.HashMap;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
-public final class w extends o1 {
+public final class w extends q1 {
     public final int l;
     public final HashMap m;
     public final HashMap n;
@@ -18,7 +18,7 @@ public final class w extends o1 {
         this.n = new HashMap();
     }
 
-    @Override // u2.o1
+    @Override // u2.q1
     public final void A(b2.k1 k1Var) {
         int i10 = this.l;
         n(i10 != Integer.MAX_VALUE ? new v(k1Var, i10) : new u(k1Var, 0));
@@ -40,14 +40,14 @@ public final class w extends o1 {
         return c10;
     }
 
-    @Override // u2.o1, u2.a
+    @Override // u2.q1, u2.a
     public final b2.k1 h() {
         a0 a0Var = (a0) this.k;
         int i10 = this.l;
         return i10 != Integer.MAX_VALUE ? new v(a0Var.o, i10) : new u(a0Var.o, 0);
     }
 
-    @Override // u2.o1, u2.a
+    @Override // u2.q1, u2.a
     public final boolean j() {
         return false;
     }
@@ -61,7 +61,7 @@ public final class w extends o1 {
         }
     }
 
-    @Override // u2.o1
+    @Override // u2.q1
     public final f0 z(f0 f0Var) {
         return this.l != Integer.MAX_VALUE ? (f0) this.m.get(f0Var) : f0Var;
     }

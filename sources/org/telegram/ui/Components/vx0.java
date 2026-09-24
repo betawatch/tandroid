@@ -1,44 +1,15 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.content.Context;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class vx0 extends ll0 {
-    public final Context c;
-    public final /* synthetic */ wx0 d;
-
-    public vx0(wx0 wx0Var, Activity activity) {
-        this.d = wx0Var;
-        this.c = activity;
+public final class vx0 extends org.telegram.ui.lu0 {
+    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
+    public final boolean P() {
+        return true;
     }
 
-    @Override // org.telegram.ui.Components.ll0
-    public final boolean D(s4.c1 c1Var) {
+    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
+    public final boolean z() {
         return false;
-    }
-
-    @Override // s4.h0
-    public final int h() {
-        return this.d.c.size();
-    }
-
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        org.telegram.ui.Cells.w wVar = (org.telegram.ui.Cells.w) c1Var.a;
-        ArrayList arrayList = this.d.c;
-        wVar.b((TLRPC.StickerSetCovered) arrayList.get(i10), i10 != arrayList.size() - 1);
-    }
-
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        org.telegram.ui.Cells.w wVar = new org.telegram.ui.Cells.w(this.c, false);
-        wVar.setLayoutParams(new s4.p0(-1, AndroidUtilities.dp(82.0f)));
-        return new wk0(wVar);
     }
 }

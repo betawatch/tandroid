@@ -1,17 +1,17 @@
 package s2;
 
 import b2.s;
-import org.telegram.ui.Cells.q3;
 import q3.i;
 import s3.c;
-import w7.l;
+import v7.j;
+import w7.m;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class a {
     public static final a a = new a();
 
-    public final l a(s sVar) {
+    public final m a(s sVar) {
         String str = sVar.r;
         if (str != null) {
             switch (str) {
@@ -27,7 +27,7 @@ public final class a {
                     return new c();
             }
         }
-        throw new IllegalArgumentException(q3.i("Attempted to create decoder for unsupported MIME type: ", str));
+        throw new IllegalArgumentException(j.g("Attempted to create decoder for unsupported MIME type: ", str));
     }
 
     public final boolean b(s sVar) {

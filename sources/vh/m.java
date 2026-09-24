@@ -1,18 +1,28 @@
 package vh;
 
-import android.view.View;
-import java.util.List;
-import k2.u;
-
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class m {
-    public final u a;
-    public boolean b;
-    public int c;
-    public int d;
+public final /* synthetic */ class m implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ n b;
 
-    public m(View view, List list, l lVar) {
-        this.a = new u(view.getContext(), new k(this, view, list, lVar));
+    public /* synthetic */ m(n nVar, int i10) {
+        this.a = i10;
+        this.b = nVar;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                n nVar = this.b;
+                nVar.post(new m(nVar, 1));
+                break;
+            default:
+                n nVar2 = this.b;
+                nVar2.d = true;
+                nVar2.b();
+                break;
+        }
     }
 }

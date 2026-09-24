@@ -4,7 +4,7 @@ import android.graphics.Rect;
 import android.view.MotionEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class ki implements View.OnTouchListener {
     public final /* synthetic */ int a;
@@ -12,28 +12,28 @@ public final class ki implements View.OnTouchListener {
     public final /* synthetic */ Rect c;
     public final /* synthetic */ Object d;
 
-    public ki(f60 f60Var, Rect rect) {
+    public ki(d60 d60Var, Rect rect) {
         this.a = 1;
-        this.d = f60Var;
+        this.d = d60Var;
         this.c = rect;
         this.b = new int[2];
     }
 
     @Override // android.view.View.OnTouchListener
     public final boolean onTouch(View view, MotionEvent motionEvent) {
-        f50 f50Var;
+        d50 d50Var;
         switch (this.a) {
             case 0:
-                xn xnVar = (xn) this.d;
+                wn wnVar = (wn) this.d;
                 if (motionEvent.getActionMasked() != 0) {
                     if (motionEvent.getActionMasked() == 4) {
-                        xnVar.A7(true);
+                        wnVar.A7(true);
                         break;
                     }
                 } else {
-                    org.telegram.ui.ActionBar.n1 n1Var = xnVar.Q8;
-                    if (n1Var != null && n1Var.isShowing()) {
-                        View contentView = xnVar.Q8.getContentView();
+                    org.telegram.ui.ActionBar.m1 m1Var = wnVar.Q8;
+                    if (m1Var != null && m1Var.isShowing()) {
+                        View contentView = wnVar.Q8.getContentView();
                         int[] iArr = this.b;
                         contentView.getLocationInWindow(iArr);
                         int i10 = iArr[0];
@@ -43,23 +43,23 @@ public final class ki implements View.OnTouchListener {
                         Rect rect = this.c;
                         rect.set(i10, i11, measuredWidth, measuredHeight);
                         if (!rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                            xnVar.A7(true);
+                            wnVar.A7(true);
                             break;
                         }
                     }
                 }
                 break;
             default:
-                f60 f60Var = (f60) this.d;
+                d60 d60Var = (d60) this.d;
                 if (motionEvent.getActionMasked() != 0) {
-                    if (motionEvent.getActionMasked() == 4 && (f50Var = f60Var.f3) != null && f50Var.isShowing()) {
-                        f60Var.f3.dismiss();
+                    if (motionEvent.getActionMasked() == 4 && (d50Var = d60Var.f3) != null && d50Var.isShowing()) {
+                        d60Var.f3.dismiss();
                         break;
                     }
                 } else {
-                    f50 f50Var2 = f60Var.f3;
-                    if (f50Var2 != null && f50Var2.isShowing()) {
-                        View contentView2 = f60Var.f3.getContentView();
+                    d50 d50Var2 = d60Var.f3;
+                    if (d50Var2 != null && d50Var2.isShowing()) {
+                        View contentView2 = d60Var.f3.getContentView();
                         int[] iArr2 = this.b;
                         contentView2.getLocationInWindow(iArr2);
                         int i12 = iArr2[0];
@@ -69,7 +69,7 @@ public final class ki implements View.OnTouchListener {
                         Rect rect2 = this.c;
                         rect2.set(i12, i13, measuredWidth2, measuredHeight2);
                         if (!rect2.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                            f60Var.f3.dismiss();
+                            d60Var.f3.dismiss();
                             break;
                         }
                     }
@@ -79,9 +79,9 @@ public final class ki implements View.OnTouchListener {
         return false;
     }
 
-    public ki(xn xnVar, Rect rect) {
+    public ki(wn wnVar, Rect rect) {
         this.a = 0;
-        this.d = xnVar;
+        this.d = wnVar;
         this.c = rect;
         this.b = new int[2];
     }

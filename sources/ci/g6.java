@@ -1,15 +1,15 @@
 package ci;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public final class g6 implements pg.c1 {
+public final class g6 implements pg.e1 {
     public final /* synthetic */ nb a;
 
     public g6(nb nbVar) {
         this.a = nbVar;
     }
 
-    @Override // pg.c1
+    @Override // pg.e1
     public final void b() {
         h6 h6Var = this.a.P0;
         if (h6Var != null) {
@@ -17,7 +17,7 @@ public final class g6 implements pg.c1 {
         }
     }
 
-    @Override // pg.c1
+    @Override // pg.e1
     public final void c() {
         nb nbVar = this.a;
         if (nbVar.c1) {
@@ -28,7 +28,7 @@ public final class g6 implements pg.c1 {
         }
     }
 
-    @Override // pg.c1
+    @Override // pg.e1
     public final boolean d() {
         nb nbVar = this.a;
         boolean z10 = nbVar.J0 == null;
@@ -38,14 +38,14 @@ public final class g6 implements pg.c1 {
         return z10;
     }
 
-    @Override // pg.c1
+    @Override // pg.e1
     public final void e() {
         nb nbVar = this.a;
         nbVar.D0.a.e();
         nbVar.d1.setViewHidden(false);
     }
 
-    @Override // pg.c1
+    @Override // pg.e1
     public final void f() {
         nb nbVar = this.a;
         if (nbVar.J0 != null) {
@@ -54,7 +54,7 @@ public final class g6 implements pg.c1 {
         nbVar.d1.setViewHidden(true);
     }
 
-    @Override // pg.c1
+    @Override // pg.e1
     public final void a() {
     }
 }

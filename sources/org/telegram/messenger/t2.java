@@ -11,10 +11,10 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.o70;
-import org.telegram.ui.p11;
+import org.telegram.ui.Components.y70;
+import org.telegram.ui.n11;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class t2 implements Runnable {
     public final /* synthetic */ int a;
@@ -69,30 +69,30 @@ public final /* synthetic */ class t2 implements Runnable {
                 ((TopicsController) obj3).lambda$loadTopic$27(this.b, (ArrayList) obj2, this.c, (Runnable) obj);
                 break;
             case 7:
-                ((o70) obj3).u();
+                ((y70) obj3).u();
                 Bundle bundle = new Bundle();
                 bundle.putLong("dialog_id", this.b);
                 bundle.putLong("topic_id", this.c);
-                ((org.telegram.ui.ActionBar.n2) obj2).presentFragment(new p11(bundle, (org.telegram.ui.ActionBar.d6) obj));
+                ((org.telegram.ui.ActionBar.m2) obj2).presentFragment(new n11(bundle, (org.telegram.ui.ActionBar.d6) obj));
                 break;
             default:
-                tg.b0 b0Var = (tg.b0) obj3;
+                tg.a0 a0Var = (tg.a0) obj3;
                 TL_stories.PrepaidGiveaway prepaidGiveaway = (TL_stories.PrepaidGiveaway) obj2;
                 TL_stories.TL_prepaidStarsGiveaway tL_prepaidStarsGiveaway = (TL_stories.TL_prepaidStarsGiveaway) obj;
-                int l4 = tg.t.l(b0Var.m0);
-                int i13 = b0Var.j0;
+                int l4 = tg.s.l(a0Var.m0);
+                int i13 = a0Var.j0;
                 int i14 = vg.u.s;
                 boolean z10 = i13 == 1;
-                b0Var.q0.b(true);
-                ArrayList arrayList = b0Var.c0;
-                ArrayList arrayList2 = b0Var.e0;
-                TLRPC.Chat chat = b0Var.b0;
-                boolean z11 = b0Var.x0;
-                boolean z12 = b0Var.w0;
+                a0Var.q0.b(true);
+                ArrayList arrayList = a0Var.c0;
+                ArrayList arrayList2 = a0Var.e0;
+                TLRPC.Chat chat = a0Var.b0;
+                boolean z11 = a0Var.x0;
+                boolean z12 = a0Var.w0;
                 int i15 = prepaidGiveaway.quantity;
-                String str = b0Var.v0;
-                tg.z zVar = new tg.z(b0Var, tL_prepaidStarsGiveaway, this.b, this.c, prepaidGiveaway);
-                tg.w wVar = new tg.w(b0Var, 6);
+                String str = a0Var.v0;
+                tg.y yVar = new tg.y(a0Var, tL_prepaidStarsGiveaway, this.b, this.c, prepaidGiveaway);
+                tg.v vVar = new tg.v(a0Var, 6);
                 MessagesController messagesController = MessagesController.getInstance(UserConfig.selectedAccount);
                 ConnectionsManager connectionsManager = ConnectionsManager.getInstance(UserConfig.selectedAccount);
                 if (prepaidGiveaway instanceof TL_stories.TL_prepaidGiveaway) {
@@ -174,7 +174,7 @@ public final /* synthetic */ class t2 implements Runnable {
                 tL_payments_launchPrepaidGiveaway.giveaway_id = prepaidGiveaway.id;
                 tL_payments_launchPrepaidGiveaway.peer = messagesController.getInputPeer(-chat.id);
                 tL_payments_launchPrepaidGiveaway.purpose = tL_inputStorePaymentStarsGiveaway;
-                connectionsManager.sendRequest(tL_payments_launchPrepaidGiveaway, new ai.s5(wVar, messagesController, zVar, 18));
+                connectionsManager.sendRequest(tL_payments_launchPrepaidGiveaway, new ai.s5(vVar, messagesController, yVar, 18));
                 break;
         }
     }

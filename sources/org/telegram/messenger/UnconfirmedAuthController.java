@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class UnconfirmedAuthController {
     private final int currentAccount;
@@ -256,7 +256,7 @@ public class UnconfirmedAuthController {
                 }
             };
         }
-        Utilities.raceCallbacks(new ci.u1(this, zArr, arrayList2, z10, callback, 11), callbackArr);
+        Utilities.raceCallbacks(new ci.u1(this, zArr, arrayList2, z10, callback, 12), callbackArr);
         if (z10) {
             HashSet hashSet = new HashSet();
             for (int i11 = 0; i11 < arrayList2.size(); i11++) {
@@ -358,7 +358,7 @@ public class UnconfirmedAuthController {
         saveCache();
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public class UnconfirmedAuth extends TLObject {
         public boolean bot;
         public long bot_id;

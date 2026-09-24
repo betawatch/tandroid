@@ -1,20 +1,33 @@
 package v7;
 
-import android.graphics.Rect;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.dm0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public abstract class p8 {
-    public static StaticLayout a;
+    public static void a(dm0 dm0Var, org.telegram.ui.ActionBar.d6 d6Var) {
+        dm0Var.q(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Oh, d6Var), d6Var != null ? d6Var.a() : org.telegram.ui.ActionBar.h6.I.q());
+    }
 
-    public static ii.c0 a(int i10, int i11, int i12, int i13) {
-        Rect rect = new Rect(i10, i11, i12, i13);
-        if (a == null) {
-            a = new StaticLayout(" ", new TextPaint(), 1, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+    public static int b(ii.a aVar) {
+        if (aVar == null) {
+            return 0;
         }
-        return new ii.c0(a, rect);
+        return c(aVar) + (Math.max(0, aVar.c) > 0 ? AndroidUtilities.dp(hg.c.f(r4, 1, 24, 28)) : 0);
+    }
+
+    public static int c(ii.a aVar) {
+        if ((aVar == null ? 0 : aVar.k.size()) <= 0) {
+            return 0;
+        }
+        return AndroidUtilities.dp(hg.c.f(r3, 1, 16, 12));
+    }
+
+    public static int d(ii.a aVar) {
+        if ((aVar == null ? 0 : aVar.k.size()) <= 0) {
+            return 0;
+        }
+        return AndroidUtilities.dp(hg.c.f(r3, 1, 16, 8));
     }
 }

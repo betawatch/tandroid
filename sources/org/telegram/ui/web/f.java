@@ -4,13 +4,13 @@ import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.f01;
+import org.telegram.ui.Components.t01;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class f extends Drawable {
     public final /* synthetic */ int a;
-    public final f01 b;
+    public final t01 b;
     public final /* synthetic */ h c;
 
     public f(h hVar, String str, int i10) {
@@ -18,11 +18,11 @@ public final class f extends Drawable {
         switch (i10) {
             case 1:
                 this.c = hVar;
-                this.b = new f01(str, 14.0f, AndroidUtilities.bold());
+                this.b = new t01(str, 14.0f, AndroidUtilities.bold());
                 break;
             default:
                 this.c = hVar;
-                this.b = new f01(str, 14.0f, AndroidUtilities.bold());
+                this.b = new t01(str, 14.0f, AndroidUtilities.bold());
                 break;
         }
     }

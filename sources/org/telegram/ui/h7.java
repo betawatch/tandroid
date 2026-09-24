@@ -6,20 +6,20 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class h7 extends mu0 {
-    public org.telegram.ui.Components.ml0 a;
+public final class h7 extends lu0 {
+    public org.telegram.ui.Components.wl0 a;
     public final /* synthetic */ s7 b;
 
     public h7(s7 s7Var) {
         this.b = s7Var;
     }
 
-    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
-    public final wu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
+    public final vu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
         org.telegram.ui.Cells.t7 t7Var;
-        org.telegram.ui.Components.ml0 listView = this.b.getListView();
+        org.telegram.ui.Components.wl0 listView = this.b.getListView();
         int i11 = 0;
         while (true) {
             if (i11 >= listView.getChildCount()) {
@@ -38,14 +38,14 @@ public final class h7 extends mu0 {
         }
         int[] iArr = new int[2];
         t7Var.getLocationInWindow(iArr);
-        wu0 wu0Var = new wu0();
-        wu0Var.b = iArr[0];
-        wu0Var.c = iArr[1];
-        wu0Var.d = this.a;
+        vu0 vu0Var = new vu0();
+        vu0Var.b = iArr[0];
+        vu0Var.c = iArr[1];
+        vu0Var.d = this.a;
         ImageReceiver imageReceiver = t7Var.c;
-        wu0Var.a = imageReceiver;
-        wu0Var.e = imageReceiver.getBitmapSafe();
-        wu0Var.k = t7Var.getScaleX();
-        return wu0Var;
+        vu0Var.a = imageReceiver;
+        vu0Var.e = imageReceiver.getBitmapSafe();
+        vu0Var.k = t7Var.getScaleX();
+        return vu0Var;
     }
 }

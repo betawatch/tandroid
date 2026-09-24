@@ -3,35 +3,34 @@ package org.telegram.ui;
 import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class n31 implements q31 {
-    public final /* synthetic */ org.telegram.messenger.video.a a;
-    public final /* synthetic */ org.telegram.ui.Components.xc b;
-    public final /* synthetic */ Context c;
-    public final /* synthetic */ ai.a1 d;
-    public final /* synthetic */ org.telegram.messenger.video.d e;
+public final class n31 implements p31 {
+    public final /* synthetic */ org.telegram.ui.ActionBar.m2 a;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.d6 c;
+    public final /* synthetic */ org.telegram.ui.Components.wn0 d;
 
-    public n31(org.telegram.messenger.video.a aVar, org.telegram.ui.Components.xc xcVar, Context context, ai.a1 a1Var, org.telegram.messenger.video.d dVar) {
-        this.a = aVar;
-        this.b = xcVar;
-        this.c = context;
-        this.d = a1Var;
-        this.e = dVar;
+    public n31(org.telegram.ui.ActionBar.m2 m2Var, Context context, org.telegram.ui.ActionBar.d6 d6Var, org.telegram.ui.Components.wn0 wn0Var) {
+        this.a = m2Var;
+        this.b = context;
+        this.c = d6Var;
+        this.d = wn0Var;
     }
 
-    @Override // org.telegram.ui.q31
+    @Override // org.telegram.ui.p31
     public final void a() {
-        AndroidUtilities.runOnUIThread(new j31(this.a, this.b, this.c, this.d, 2), 200L);
+        AndroidUtilities.runOnUIThread(new h31(this.a, this.b, this.c, this.d, 2), 200L);
     }
 
-    @Override // org.telegram.ui.q31
+    @Override // org.telegram.ui.p31
     public final void b() {
-        AndroidUtilities.runOnUIThread(new by0(19, this.a, this.b), 200L);
+        AndroidUtilities.runOnUIThread(new ix0(26, this.a, this.d), 200L);
     }
 
-    @Override // org.telegram.ui.q31
+    @Override // org.telegram.ui.p31
     public final void c() {
-        this.e.run();
+        org.telegram.ui.ActionBar.m2 m2Var = this.a;
+        m2Var.showDialog(new rg.x0(m2Var, 3, true));
     }
 }

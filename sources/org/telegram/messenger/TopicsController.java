@@ -26,7 +26,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_forum;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class TopicsController extends BaseController {
     public static final int LOAD_TYPE_HASH_CHECK = 3;
@@ -50,7 +50,7 @@ public class TopicsController extends BaseController {
     LongSparseIntArray topicsIsLoading;
     a0.i topicsMapByChatId;
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class TopicUpdate {
         boolean checkForDelete;
         long dialogId;
@@ -65,7 +65,7 @@ public class TopicsController extends BaseController {
         int unreadMentions;
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public class TopicsLoadOffset {
         int lastMessageDate;
         int lastMessageId;
@@ -179,7 +179,7 @@ public class TopicsController extends BaseController {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$loadTopic$27(long j3, ArrayList arrayList, long j10, Runnable runnable) {
         if (BuildVars.LOGS_ENABLED) {
-            z0.n(arrayList == null ? 0 : arrayList.size(), a4.a.u(j3, "loaded from cache ", " topics_count="));
+            f0.n(arrayList == null ? 0 : arrayList.size(), a4.a.u(j3, "loaded from cache ", " topics_count="));
         }
         processTopics(j3, arrayList, null, true, 0, -1);
         sortTopics(j3);
@@ -200,7 +200,7 @@ public class TopicsController extends BaseController {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$loadTopics$0(long j3, ArrayList arrayList, boolean z10, int i10) {
         if (BuildVars.LOGS_ENABLED) {
-            z0.n(arrayList == null ? 0 : arrayList.size(), a4.a.u(j3, "loaded from cache ", " topics_count="));
+            f0.n(arrayList == null ? 0 : arrayList.size(), a4.a.u(j3, "loaded from cache ", " topics_count="));
         }
         this.topicsIsLoading.put(j3, 0);
         processTopics(j3, arrayList, null, z10, i10, -1);
@@ -223,7 +223,7 @@ public class TopicsController extends BaseController {
         getMessagesStorage().saveTopics(-j3, (List) this.topicsByChatId.f(j3), true, true, getConnectionsManager().getCurrentTime());
         getMessagesStorage().putMessages(tL_messages_savedDialogs.messages, false, true, false, 0, false, 0, 0L);
         if (!tL_messages_savedDialogs.dialogs.isEmpty() && i10 == 1) {
-            TLRPC.TL_monoForumDialog tL_monoForumDialog = (TLRPC.TL_monoForumDialog) hg.c.h(1, tL_messages_savedDialogs.dialogs);
+            TLRPC.TL_monoForumDialog tL_monoForumDialog = (TLRPC.TL_monoForumDialog) hg.c.g(1, tL_messages_savedDialogs.dialogs);
             TLRPC.Message message = (TLRPC.Message) iVar.f(tL_monoForumDialog.top_message);
             saveLoadOffset(j3, tL_monoForumDialog.top_message, message == null ? 0 : message.date, DialogObject.getPeerDialogId(tL_monoForumDialog.peer));
         } else if (getTopics(j3) == null || getTopics(j3).size() < tL_messages_savedDialogs.dialogs.size()) {
@@ -243,7 +243,7 @@ public class TopicsController extends BaseController {
         getMessagesStorage().saveTopics(-j3, (List) this.topicsByChatId.f(j3), true, true, getConnectionsManager().getCurrentTime());
         getMessagesStorage().putMessages(tL_messages_savedDialogsSlice.messages, false, true, false, 0, false, 0, 0L);
         if (!tL_messages_savedDialogsSlice.dialogs.isEmpty() && i10 == 1) {
-            TLRPC.TL_monoForumDialog tL_monoForumDialog = (TLRPC.TL_monoForumDialog) hg.c.h(1, tL_messages_savedDialogsSlice.dialogs);
+            TLRPC.TL_monoForumDialog tL_monoForumDialog = (TLRPC.TL_monoForumDialog) hg.c.g(1, tL_messages_savedDialogsSlice.dialogs);
             TLRPC.Message message = (TLRPC.Message) iVar.f(tL_monoForumDialog.top_message);
             saveLoadOffset(j3, tL_monoForumDialog.top_message, message == null ? 0 : message.date, DialogObject.getPeerDialogId(tL_monoForumDialog.peer));
         } else if (getTopics(j3) == null || getTopics(j3).size() < tL_messages_savedDialogsSlice.count) {
@@ -274,7 +274,7 @@ public class TopicsController extends BaseController {
         getMessagesStorage().saveTopics(-j3, (List) this.topicsByChatId.f(j3), true, true, getConnectionsManager().getCurrentTime());
         getMessagesStorage().putMessages(tL_messages_forumTopics.messages, false, true, false, 0, false, 0, 0L);
         if (!tL_messages_forumTopics.topics.isEmpty() && i10 == 1) {
-            TLRPC.TL_forumTopic tL_forumTopic = (TLRPC.TL_forumTopic) hg.c.h(1, tL_messages_forumTopics.topics);
+            TLRPC.TL_forumTopic tL_forumTopic = (TLRPC.TL_forumTopic) hg.c.g(1, tL_messages_forumTopics.topics);
             TLRPC.Message message = (TLRPC.Message) iVar.f(tL_forumTopic.top_message);
             saveLoadOffset(j3, tL_forumTopic.top_message, message == null ? 0 : message.date, tL_forumTopic.id);
         } else if (getTopics(j3) == null || getTopics(j3).size() < tL_messages_forumTopics.count) {
@@ -360,29 +360,29 @@ public class TopicsController extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void lambda$pinTopic$19(org.telegram.ui.ActionBar.n2 n2Var) {
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(n2Var.getContext());
+    public void lambda$pinTopic$19(org.telegram.ui.ActionBar.m2 m2Var) {
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(m2Var.getContext());
         String string = LocaleController.getString(R.string.LimitReached);
-        org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-        b2Var.R = string;
-        b2Var.T = LocaleController.formatString(R.string.LimitReachedPinnedTopics, Integer.valueOf(MessagesController.getInstance(this.currentAccount).topicsPinnedLimit));
+        org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
+        a2Var.R = string;
+        a2Var.T = LocaleController.formatString(R.string.LimitReachedPinnedTopics, Integer.valueOf(MessagesController.getInstance(this.currentAccount).topicsPinnedLimit));
         alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
-        n2Var.showDialog(b2Var);
+        m2Var.showDialog(a2Var);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$pinTopic$20(org.telegram.ui.ActionBar.n2 n2Var, long j3, ArrayList arrayList, TLObject tLObject, TLRPC.TL_error tL_error) {
+    public /* synthetic */ void lambda$pinTopic$20(org.telegram.ui.ActionBar.m2 m2Var, long j3, ArrayList arrayList, TLObject tLObject, TLRPC.TL_error tL_error) {
         if (tL_error != null) {
             if (!"PINNED_TOO_MUCH".equals(tL_error.text)) {
                 if ("PINNED_TOPIC_NOT_MODIFIED".equals(tL_error.text)) {
                     reloadTopics(j3, false);
                 }
             } else {
-                if (n2Var == null) {
+                if (m2Var == null) {
                     return;
                 }
                 applyPinnedOrder(j3, arrayList);
-                AndroidUtilities.runOnUIThread(new vg(12, this, n2Var));
+                AndroidUtilities.runOnUIThread(new vg(12, this, m2Var));
             }
         }
     }
@@ -951,7 +951,7 @@ public class TopicsController extends BaseController {
         onTopicsDeletedServerSide(arrayList);
     }
 
-    public void pinTopic(long j3, int i10, boolean z10, org.telegram.ui.ActionBar.n2 n2Var) {
+    public void pinTopic(long j3, int i10, boolean z10, org.telegram.ui.ActionBar.m2 m2Var) {
         TL_forum.TL_messages_updatePinnedForumTopic tL_messages_updatePinnedForumTopic = new TL_forum.TL_messages_updatePinnedForumTopic();
         tL_messages_updatePinnedForumTopic.peer = getMessagesController().getInputPeer(-j3);
         tL_messages_updatePinnedForumTopic.topic_id = i10;
@@ -963,7 +963,7 @@ public class TopicsController extends BaseController {
             arrayList.add(0, Integer.valueOf(i10));
         }
         applyPinnedOrder(j3, arrayList);
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_updatePinnedForumTopic, new ja(this, n2Var, j3, currentPinnedOrder, 3));
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_updatePinnedForumTopic, new ja(this, m2Var, j3, currentPinnedOrder, 3));
     }
 
     public void preloadTopics(long j3) {
@@ -1286,7 +1286,7 @@ public class TopicsController extends BaseController {
         TLRPC.TL_channels_toggleViewForumAsMessages tL_channels_toggleViewForumAsMessages = new TLRPC.TL_channels_toggleViewForumAsMessages();
         tL_channels_toggleViewForumAsMessages.channel_id = getMessagesController().getInputChannel(j3);
         tL_channels_toggleViewForumAsMessages.enabled = z10;
-        getConnectionsManager().sendRequest(tL_channels_toggleViewForumAsMessages, new g0(this, 7));
+        getConnectionsManager().sendRequest(tL_channels_toggleViewForumAsMessages, new h0(this, 7));
     }
 
     public void updateMaxReadId(long j3, long j10, int i10, int i11, int i12) {
@@ -1479,7 +1479,7 @@ public class TopicsController extends BaseController {
                         sb2.append(" offset_id=");
                         sb2.append(loadOffset.lastMessageId);
                         sb2.append(" offset_topic=");
-                        hg.c.w(sb2, loadOffset.lastTopicId);
+                        hg.c.u(sb2, loadOffset.lastTopicId);
                     }
                 }
             }
@@ -1506,7 +1506,7 @@ public class TopicsController extends BaseController {
                     sb3.append(" offset_id=");
                     sb3.append(loadOffset2.lastMessageId);
                     sb3.append(" offset_topic=");
-                    hg.c.w(sb3, loadOffset2.lastTopicId);
+                    hg.c.u(sb3, loadOffset2.lastTopicId);
                 }
             }
         }

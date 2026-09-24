@@ -1,86 +1,86 @@
 package m4;
 
-import v7.l8;
+import v7.m8;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b0 implements k0 {
+public final /* synthetic */ class b0 implements j0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ l0 b;
+    public final /* synthetic */ k0 b;
 
-    public /* synthetic */ b0(l0 l0Var, int i10) {
+    public /* synthetic */ b0(k0 k0Var, int i10) {
         this.a = i10;
-        this.b = l0Var;
+        this.b = k0Var;
     }
 
-    @Override // m4.k0
+    @Override // m4.j0
     public final void g(r rVar) {
         int i10 = this.a;
-        l0 l0Var = this.b;
+        k0 k0Var = this.b;
         switch (i10) {
             case 0:
-                l0Var.g.t.F0();
+                k0Var.g.t.F0();
                 break;
             case 1:
-                a0 a0Var = l0Var.g;
+                a0 a0Var = k0Var.g;
                 if (a0Var.t.P0() != null) {
                     na.d dVar = a0Var.e;
                     a0Var.s(rVar);
                     dVar.getClass();
-                    l8.b(new l1(-6));
+                    m8.b(new k1(-6));
                     break;
                 }
                 break;
             case 2:
-                l0Var.g.t.V();
+                k0Var.g.t.V();
                 break;
             case 3:
-                l0Var.g.t.F();
+                k0Var.g.t.F();
                 break;
             case 4:
-                l0Var.g.t.G0();
+                k0Var.g.t.G0();
                 break;
             case 5:
-                l0Var.g.t.b();
+                k0Var.g.t.b();
                 break;
             case 6:
-                l0Var.g.t.stop();
+                k0Var.g.t.stop();
                 break;
             case 7:
-                a0 a0Var2 = l0Var.g;
-                f1 f1Var = a0Var2.t;
-                if (!e2.d0.a0(f1Var, a0Var2.p)) {
-                    if (f1Var != null && f1Var.m0(1)) {
-                        f1Var.e();
+                a0 a0Var2 = k0Var.g;
+                e1 e1Var = a0Var2.t;
+                if (!e2.d0.a0(e1Var, a0Var2.p)) {
+                    if (e1Var != null && e1Var.m0(1)) {
+                        e1Var.e();
                         break;
                     }
                 } else {
-                    e2.d0.H(f1Var);
+                    e2.d0.H(e1Var);
                     break;
                 }
                 break;
             case 8:
-                l0Var.g.t.E0();
+                k0Var.g.t.E0();
                 break;
             case 9:
-                l0Var.g.t.e0();
+                k0Var.g.t.e0();
                 break;
             case 10:
-                l0Var.g.g(rVar, true);
+                k0Var.g.g(rVar, true);
                 break;
             default:
-                f1 f1Var2 = l0Var.g.t;
+                e1 e1Var2 = k0Var.g.t;
                 String str = e2.d0.a;
-                if (f1Var2 != null && f1Var2.m0(1)) {
-                    f1Var2.e();
+                if (e1Var2 != null && e1Var2.m0(1)) {
+                    e1Var2.e();
                     break;
                 }
                 break;
         }
     }
 
-    public /* synthetic */ b0(l0 l0Var, b2.c1 c1Var) {
+    public /* synthetic */ b0(k0 k0Var, b2.c1 c1Var) {
         this.a = 1;
-        this.b = l0Var;
+        this.b = k0Var;
     }
 }

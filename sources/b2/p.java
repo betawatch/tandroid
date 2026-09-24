@@ -11,7 +11,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class p implements s4.e0, androidx.lifecycle.a0, x9.i {
     public final /* synthetic */ int a;
@@ -154,7 +154,7 @@ public final class p implements s4.e0, androidx.lifecycle.a0, x9.i {
             return;
         }
         try {
-            ((l5.s) this.c).a(new i5.a(null, x3Var, i5.d.a, null), new j2.e(17));
+            ((l5.r) this.c).a(new i5.a(null, x3Var, i5.d.a, null), new j2.e(19));
         } catch (Throwable unused) {
             com.google.android.gms.internal.play_billing.u.h("BillingLogger", "logging failed.");
         }
@@ -172,7 +172,7 @@ public final class p implements s4.e0, androidx.lifecycle.a0, x9.i {
     }
 
     @Override // androidx.lifecycle.a0
-    public void p0(Object obj) {
+    public void m0(Object obj) {
         this.b = true;
         a6.m mVar = (a6.m) this.c;
         mVar.getClass();

@@ -6,7 +6,7 @@ import android.os.Parcelable;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class ig extends o6.a {
     public static final Parcelable.Creator<ig> CREATOR = new cg(2);
@@ -24,25 +24,25 @@ public final class ig extends o6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.e0.q(parcel, 20293);
-        w7.e0.p(parcel, 1, this.a);
+        int q6 = w7.f0.q(parcel, 20293);
+        w7.f0.p(parcel, 1, this.a);
         float[] fArr = this.b;
         if (fArr != null) {
-            int q10 = w7.e0.q(parcel, 2);
+            int q10 = w7.f0.q(parcel, 2);
             parcel.writeFloatArray(fArr);
-            w7.e0.r(parcel, q10);
+            w7.f0.r(parcel, q10);
         }
-        w7.e0.k(parcel, 3, this.c, i10);
+        w7.f0.k(parcel, 3, this.c, i10);
         List list = this.d;
         if (list != null) {
-            int q11 = w7.e0.q(parcel, 4);
+            int q11 = w7.f0.q(parcel, 4);
             int size = list.size();
             parcel.writeInt(size);
             for (int i11 = 0; i11 < size; i11++) {
                 parcel.writeFloat(((Float) list.get(i11)).floatValue());
             }
-            w7.e0.r(parcel, q11);
+            w7.f0.r(parcel, q11);
         }
-        w7.e0.r(parcel, q6);
+        w7.f0.r(parcel, q6);
     }
 }

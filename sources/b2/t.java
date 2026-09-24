@@ -2,14 +2,14 @@ package b2;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class t implements z0 {
-    public final m4.f1 a;
+    public final m4.e1 a;
     public final z0 b;
 
-    public t(m4.f1 f1Var, z0 z0Var) {
-        this.a = f1Var;
+    public t(m4.e1 e1Var, z0 z0Var) {
+        this.a = e1Var;
         this.b = z0Var;
     }
 

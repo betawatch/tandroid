@@ -12,9 +12,9 @@ import android.util.SparseArray;
 import b2.r0;
 import e9.a1;
 import java.util.List;
-import v7.y7;
+import v7.z7;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class b {
     public static final b c = new b(e9.i0.z(a.d));
@@ -87,7 +87,7 @@ public final class b {
             a1 d10 = b2.c.d(eVar);
             d10.getClass();
             l0Var.d(d10);
-            return new b(a(10, y7.f(l0Var.i())));
+            return new b(a(10, z7.f(l0Var.i())));
         }
         ContentResolver contentResolver = context.getContentResolver();
         boolean z10 = Settings.Global.getInt(contentResolver, "use_external_surround_sound_flag", 0) == 1;
@@ -102,15 +102,15 @@ public final class b {
             l0Var.d(a1Var);
         }
         if (intent == null || z10 || intent.getIntExtra("android.media.extra.AUDIO_PLUG_STATE", 0) != 1) {
-            return new b(a(10, y7.f(l0Var.i())));
+            return new b(a(10, z7.f(l0Var.i())));
         }
         int[] intArrayExtra = intent.getIntArrayExtra("android.media.extra.ENCODINGS");
         if (intArrayExtra != null) {
-            List a2 = y7.a(intArrayExtra);
+            List a2 = z7.a(intArrayExtra);
             a2.getClass();
             l0Var.d(a2);
         }
-        return new b(a(intent.getIntExtra("android.media.extra.MAX_CHANNEL_COUNT", 10), y7.f(l0Var.i())));
+        return new b(a(intent.getIntExtra("android.media.extra.MAX_CHANNEL_COUNT", 10), z7.f(l0Var.i())));
     }
 
     public static b c(Context context, b2.e eVar, a6.m mVar) {

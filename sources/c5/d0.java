@@ -29,9 +29,9 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import org.telegram.messenger.BillingController;
-import v7.a6;
+import v7.b6;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class d0 extends c {
     public final Context C;
@@ -64,9 +64,9 @@ public final class d0 extends c {
             return j4Var;
         } catch (Exception e) {
             g2 g2Var = new g2(e);
-            a6 a6Var = g4.f;
+            b6 b6Var = g4.f;
             i4 i4Var = j4Var.b;
-            if (a6Var.d(i4Var, null, g2Var)) {
+            if (b6Var.d(i4Var, null, g2Var)) {
                 g4.d(i4Var);
             }
             return j4Var;

@@ -1,6 +1,5 @@
 package mg;
 
-import a4.m;
 import android.content.Context;
 import android.text.TextPaint;
 import android.view.View;
@@ -9,24 +8,24 @@ import android.widget.FrameLayout;
 import m1.j;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.x1;
+import org.telegram.ui.ActionBar.w1;
 import org.telegram.ui.Cells.m4;
-import org.telegram.ui.Components.d81;
-import org.telegram.ui.Components.e81;
-import org.telegram.ui.Components.f81;
-import org.telegram.ui.Components.fo0;
-import org.telegram.ui.Components.g81;
-import org.telegram.ui.Components.ll0;
+import org.telegram.ui.Components.gl0;
 import org.telegram.ui.Components.r6;
-import org.telegram.ui.Components.wk0;
+import org.telegram.ui.Components.s81;
+import org.telegram.ui.Components.so0;
+import org.telegram.ui.Components.t81;
+import org.telegram.ui.Components.u81;
+import org.telegram.ui.Components.v81;
+import org.telegram.ui.Components.vl0;
 import org.telegram.ui.LaunchActivity;
 import s4.c1;
 import s4.p0;
-import w7.x5;
+import w7.y5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class g extends ll0 {
+public final class g extends vl0 {
     public final /* synthetic */ int c = 0;
     public final Context d;
     public final /* synthetic */ FrameLayout e;
@@ -36,7 +35,7 @@ public final class g extends ll0 {
         this.d = launchActivity;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.vl0
     public final boolean D(c1 c1Var) {
         switch (this.c) {
             case 0:
@@ -53,7 +52,7 @@ public final class g extends ll0 {
             case 0:
                 return ((i) this.e).E.size();
             default:
-                return ((g81) this.e).h.size();
+                return ((v81) this.e).h.size();
         }
     }
 
@@ -61,7 +60,7 @@ public final class g extends ll0 {
     public long i(int i10) {
         switch (this.c) {
             case 1:
-                return ((d81) ((g81) this.e).h.get(i10)).a;
+                return ((s81) ((v81) this.e).h.get(i10)).a;
             default:
                 return super.i(i10);
         }
@@ -79,7 +78,7 @@ public final class g extends ll0 {
 
     @Override // s4.h0
     public final void v(c1 c1Var, int i10) {
-        f81 f81Var;
+        u81 u81Var;
         switch (this.c) {
             case 0:
                 View view = c1Var.a;
@@ -89,9 +88,9 @@ public final class g extends ll0 {
                 CharSequence charSequence = aVar.a;
                 int c10 = j.c(i11);
                 if (c10 == 0) {
-                    x1 x1Var = (x1) view;
-                    x1Var.setTextColor(h6.w0(null, h6.j5, false));
-                    x1Var.a(0, charSequence);
+                    w1 w1Var = (w1) view;
+                    w1Var.setTextColor(h6.w0(null, h6.j5, false));
+                    w1Var.a(0, charSequence);
                     break;
                 } else if (c10 == 1) {
                     m4 m4Var = (m4) view;
@@ -110,14 +109,14 @@ public final class g extends ll0 {
                 }
                 break;
             default:
-                e81 e81Var = (e81) c1Var.a;
-                g81 g81Var = (g81) this.e;
-                d81 d81Var = (d81) g81Var.h.get(i10);
-                e81Var.a = d81Var;
-                e81Var.setContentDescription(d81Var.b);
-                e81Var.setAlpha(1.0f);
-                e81Var.requestLayout();
-                e81Var.setReordering(g81Var.m0 && (f81Var = g81Var.y) != null && ((ka.c) f81Var).d(i10));
+                t81 t81Var = (t81) c1Var.a;
+                v81 v81Var = (v81) this.e;
+                s81 s81Var = (s81) v81Var.h.get(i10);
+                t81Var.a = s81Var;
+                t81Var.setContentDescription(s81Var.b);
+                t81Var.setAlpha(1.0f);
+                t81Var.requestLayout();
+                t81Var.setReordering(v81Var.m0 && (u81Var = v81Var.y) != null && ((l.d) u81Var).G(i10));
                 break;
         }
     }
@@ -132,30 +131,30 @@ public final class g extends ll0 {
                 if (c10 == 1) {
                     frameLayout = new m4(context);
                 } else if (c10 != 2) {
-                    frameLayout = new x1(context, null);
+                    frameLayout = new w1(context, null);
                 } else {
                     h hVar = new h(context);
                     hVar.setWillNotDraw(false);
                     TextPaint textPaint = new TextPaint(1);
                     hVar.h = textPaint;
                     textPaint.setTextSize(AndroidUtilities.dp(16.0f));
-                    fo0 fo0Var = new fo0(context);
-                    hVar.a = fo0Var;
-                    fo0Var.setReportChanges(true);
-                    fo0Var.setDelegate(new m(hVar, 26));
-                    fo0Var.setImportantForAccessibility(2);
-                    hVar.addView(fo0Var, x5.d(-1, 38.0f, 83, 5.0f, 29.0f, 47.0f, 0.0f));
+                    so0 so0Var = new so0(context);
+                    hVar.a = so0Var;
+                    so0Var.setReportChanges(true);
+                    so0Var.setDelegate(new ka.c(hVar, 3));
+                    so0Var.setImportantForAccessibility(2);
+                    hVar.addView(so0Var, y5.d(-1, 38.0f, 83, 5.0f, 29.0f, 47.0f, 0.0f));
                     frameLayout = hVar;
                 }
                 frameLayout.setLayoutParams(new p0(-1, -2));
-                return new wk0(frameLayout);
+                return new gl0(frameLayout);
             default:
-                return new wk0(new e81((g81) this.e, this.d));
+                return new gl0(new t81((v81) this.e, this.d));
         }
     }
 
-    public g(g81 g81Var, Context context) {
-        this.e = g81Var;
+    public g(v81 v81Var, Context context) {
+        this.e = v81Var;
         this.d = context;
     }
 }

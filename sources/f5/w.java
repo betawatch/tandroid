@@ -4,14 +4,13 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.WeakHashMap;
-import k2.b0;
-import w7.s6;
+import w7.t6;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class w extends com.googlecode.mp4parser.c {
-    public static final /* synthetic */ b0 f;
-    public static final /* synthetic */ b0 h;
+    public static final /* synthetic */ ka.c f;
+    public static final /* synthetic */ ka.c h;
     public List e;
 
     static {
@@ -25,7 +24,7 @@ public final class w extends com.googlecode.mp4parser.c {
     @Override // com.googlecode.mp4parser.c, com.googlecode.mp4parser.a
     public final void _parseDetails(ByteBuffer byteBuffer) {
         f(byteBuffer);
-        int a2 = s6.a(e5.b.i(byteBuffer));
+        int a2 = t6.a(e5.b.i(byteBuffer));
         this.e = new ArrayList(a2);
         for (int i10 = 0; i10 < a2; i10++) {
             this.e.add(new v(e5.b.i(byteBuffer), e5.b.i(byteBuffer)));

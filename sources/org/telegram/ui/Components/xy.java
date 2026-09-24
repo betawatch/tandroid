@@ -3,9 +3,9 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import org.telegram.messenger.LiteMode;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class xy extends vw0 {
+public final class xy extends gx0 {
     public final /* synthetic */ yy A3;
     public final /* synthetic */ int z3;
 
@@ -16,15 +16,15 @@ public final class xy extends vw0 {
         this.z3 = i11;
     }
 
-    @Override // org.telegram.ui.Components.vw0
+    @Override // org.telegram.ui.Components.gx0
     public final boolean A1() {
         return LiteMode.isEnabled(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
     }
 
-    @Override // org.telegram.ui.Components.vw0
+    @Override // org.telegram.ui.Components.gx0
     public final void E1(int i10) {
-        xw xwVar;
-        ox oxVar;
+        yw ywVar;
+        px pxVar;
         super.E1(i10);
         yy yyVar = this.A3;
         lz lzVar = yyVar.G;
@@ -33,11 +33,11 @@ public final class xy extends vw0 {
         int i11 = lz.O2;
         lzVar.M(z10);
         int i12 = this.z3;
-        if (i12 == 1 && (oxVar = lzVar.I) != null) {
-            oxVar.n(xyVar.getSelectedCategory() == null);
-        } else if (i12 == 0 && (xwVar = lzVar.B0) != null) {
-            xwVar.o0 = xyVar.getSelectedCategory() == null;
-            xwVar.invalidate();
+        if (i12 == 1 && (pxVar = lzVar.I) != null) {
+            pxVar.n(xyVar.getSelectedCategory() == null);
+        } else if (i12 == 0 && (ywVar = lzVar.B0) != null) {
+            ywVar.o0 = xyVar.getSelectedCategory() == null;
+            ywVar.invalidate();
         }
         yyVar.g(false);
     }

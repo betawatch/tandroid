@@ -1,55 +1,18 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import java.util.HashSet;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class t50 extends s4.j {
-    public float F;
-    public ValueAnimator G;
-    public final HashSet H = new HashSet();
-    public final HashSet I = new HashSet();
-    public float J;
-    public float K;
-    public final /* synthetic */ f60 L;
-
-    public t50(f60 f60Var) {
-        this.L = f60Var;
-    }
-
-    @Override // s4.j, s4.m0
-    public final void g() {
-        super.g();
-        this.I.clear();
-        this.H.clear();
-        this.K = Float.MAX_VALUE;
-        this.L.Q.invalidate();
-    }
-
-    @Override // s4.j, s4.m0
-    public final void m() {
-        boolean isEmpty = this.p.isEmpty();
-        boolean isEmpty2 = this.r.isEmpty();
-        boolean isEmpty3 = this.q.isEmpty();
-        ValueAnimator valueAnimator = this.G;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-            this.G = null;
+public final class t50 extends org.telegram.ui.Cells.x3 {
+    @Override // org.telegram.ui.Cells.x3, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        if (AndroidUtilities.isTablet()) {
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(420.0f), View.MeasureSpec.getSize(i10)), TLObject.FLAG_30), i11);
+        } else {
+            super.onMeasure(i10, i11);
         }
-        if (!isEmpty || !isEmpty2 || !isEmpty3) {
-            this.F = 0.0f;
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-            this.G = ofFloat;
-            ofFloat.addUpdateListener(new c3(this, 17));
-            this.G.addListener(new org.telegram.ui.Components.u81(this, 22));
-            this.G.setDuration(350L);
-            this.G.setInterpolator(org.telegram.ui.Components.rr.f);
-            this.G.start();
-            f60 f60Var = this.L;
-            f60Var.Q.invalidate();
-            f60Var.a2.invalidate();
-        }
-        super.m();
     }
 }

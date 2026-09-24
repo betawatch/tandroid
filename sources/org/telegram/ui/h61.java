@@ -1,25 +1,38 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class h61 extends rg.b1 {
-    public final /* synthetic */ i61 M;
+public final class h61 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ j61 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h61(i61 i61Var, Context context) {
-        super(context, 2, null);
-        this.M = i61Var;
+    public /* synthetic */ h61(j61 j61Var, int i10) {
+        this.a = i10;
+        this.b = j61Var;
     }
 
-    @Override // android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        i61 i61Var = this.M;
-        if (i61Var.getParent() instanceof View) {
-            ((View) i61Var.getParent()).invalidate();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                super.onAnimationEnd(animator);
+                this.b.I = null;
+                break;
+            case 1:
+                super.onAnimationEnd(animator);
+                this.b.I = null;
+                break;
+            default:
+                super.onAnimationEnd(animator);
+                j61 j61Var = this.b;
+                j61Var.N = 0.0f;
+                j61Var.I = null;
+                j61Var.M = false;
+                j61Var.d(true, false);
+                break;
         }
     }
 }

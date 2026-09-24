@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public abstract class l extends a {
     public final HashMap h = new HashMap();
@@ -70,23 +70,23 @@ public abstract class l extends a {
         a5.a aVar2 = aVar.c;
         aVar2.getClass();
         CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) aVar2.d;
-        i0 i0Var = new i0();
-        i0Var.a = handler;
-        i0Var.b = jVar;
-        copyOnWriteArrayList.add(i0Var);
+        j0 j0Var = new j0();
+        j0Var.a = handler;
+        j0Var.b = jVar;
+        copyOnWriteArrayList.add(j0Var);
         Handler handler2 = this.i;
         handler2.getClass();
-        n2.j jVar2 = aVar.d;
-        jVar2.getClass();
-        CopyOnWriteArrayList copyOnWriteArrayList2 = jVar2.c;
-        n2.i iVar = new n2.i();
-        iVar.a = handler2;
-        iVar.b = jVar;
-        copyOnWriteArrayList2.add(iVar);
+        n2.k kVar = aVar.d;
+        kVar.getClass();
+        CopyOnWriteArrayList copyOnWriteArrayList2 = kVar.c;
+        n2.j jVar2 = new n2.j();
+        jVar2.a = handler2;
+        jVar2.b = jVar;
+        copyOnWriteArrayList2.add(jVar2);
         g2.c0 c0Var = this.j;
-        j2.k kVar = this.g;
-        e2.d.h(kVar);
-        aVar.l(r12, c0Var, kVar);
+        j2.k kVar2 = this.g;
+        e2.d.h(kVar2);
+        aVar.l(r12, c0Var, kVar2);
         if (this.b.isEmpty()) {
             aVar.d(r12);
         }

@@ -1,120 +1,104 @@
 package org.telegram.ui;
 
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.SRPHelper;
+import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class sm0 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ um0 b;
+public final class sm0 implements RequestDelegate {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ byte[] b;
+    public final /* synthetic */ TL_account.getPasswordSettings c;
+    public final /* synthetic */ String d;
+    public final /* synthetic */ gn0 e;
 
-    public /* synthetic */ sm0(um0 um0Var, int i10) {
-        this.a = i10;
-        this.b = um0Var;
+    public sm0(gn0 gn0Var, boolean z10, byte[] bArr, TL_account.getPasswordSettings getpasswordsettings, String str) {
+        this.e = gn0Var;
+        this.a = z10;
+        this.b = bArr;
+        this.c = getpasswordsettings;
+        this.d = str;
+    }
+
+    public final void a() {
+        int i10;
+        org.telegram.ui.ActionBar.b5 b5Var;
+        org.telegram.ui.ActionBar.b5 b5Var2;
+        int i11;
+        gn0 gn0Var = this.e;
+        if (gn0Var.Y == null) {
+            return;
+        }
+        if (!this.a) {
+            i11 = ((org.telegram.ui.ActionBar.m2) gn0Var).currentAccount;
+            UserConfig.getInstance(i11).savePassword(this.b, gn0Var.e1);
+        }
+        AndroidUtilities.hideKeyboard(gn0Var.Y[0]);
+        gn0Var.f1 = true;
+        long j3 = gn0Var.c;
+        gn0 gn0Var2 = new gn0(j3 == 0 ? 8 : 0, j3, gn0Var.h, gn0Var.r, gn0Var.d, gn0Var.e, gn0Var.n, gn0Var.y, gn0Var.J);
+        gn0Var2.d1 = gn0Var.d1;
+        i10 = ((org.telegram.ui.ActionBar.m2) gn0Var).currentAccount;
+        ((org.telegram.ui.ActionBar.m2) gn0Var2).currentAccount = i10;
+        gn0Var2.e1 = gn0Var.e1;
+        gn0Var2.c1 = gn0Var.c1;
+        gn0Var2.b1 = gn0Var.b1;
+        gn0Var2.C1 = gn0Var.C1;
+        b5Var = ((org.telegram.ui.ActionBar.m2) gn0Var).parentLayout;
+        if (b5Var != null) {
+            b5Var2 = ((org.telegram.ui.ActionBar.m2) gn0Var).parentLayout;
+            if (((ActionBarLayout) b5Var2).j()) {
+                gn0Var.h1 = gn0Var2;
+                return;
+            }
+        }
+        gn0Var.presentFragment(gn0Var2, true);
+    }
+
+    public final void b() {
+        int i10;
+        TL_account.updatePasswordSettings updatepasswordsettings = new TL_account.updatePasswordSettings();
+        gn0 gn0Var = this.e;
+        TL_account.Password password = gn0Var.J;
+        TLRPC.PasswordKdfAlgo passwordKdfAlgo = password.current_algo;
+        if (passwordKdfAlgo instanceof TLRPC.TL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow) {
+            updatepasswordsettings.password = SRPHelper.startCheck(this.b, password.srp_id, password.srp_B, (TLRPC.TL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow) passwordKdfAlgo);
+        }
+        TL_account.passwordInputSettings passwordinputsettings = new TL_account.passwordInputSettings();
+        updatepasswordsettings.new_settings = passwordinputsettings;
+        passwordinputsettings.new_secure_settings = new TLRPC.TL_secureSecretSettings();
+        TLRPC.TL_secureSecretSettings tL_secureSecretSettings = updatepasswordsettings.new_settings.new_secure_settings;
+        tL_secureSecretSettings.secure_secret = new byte[0];
+        tL_secureSecretSettings.secure_algo = new TLRPC.TL_securePasswordKdfAlgoUnknown();
+        TL_account.passwordInputSettings passwordinputsettings2 = updatepasswordsettings.new_settings;
+        passwordinputsettings2.new_secure_settings.secure_secret_id = 0L;
+        passwordinputsettings2.flags |= 4;
+        i10 = ((org.telegram.ui.ActionBar.m2) gn0Var).currentAccount;
+        ConnectionsManager.getInstance(i10).sendRequest(this.c, new qm0(this, 1));
     }
 
     @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, final TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new tm0(this.b, tLObject, tL_error));
-                break;
-            case 1:
-                final int i10 = 1;
-                final um0 um0Var = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.rm0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        int i11;
-                        int i12;
-                        switch (i10) {
-                            case 0:
-                                um0 um0Var2 = um0Var;
-                                TLRPC.TL_error tL_error2 = tL_error;
-                                in0 in0Var = um0Var2.e;
-                                if (tL_error2 != null && "SRP_ID_INVALID".equals(tL_error2.text)) {
-                                    TL_account.getPassword getpassword = new TL_account.getPassword();
-                                    i11 = ((org.telegram.ui.ActionBar.n2) in0Var).currentAccount;
-                                    ConnectionsManager.getInstance(i11).sendRequest(getpassword, new sm0(um0Var2, 4), 8);
-                                    break;
-                                } else {
-                                    if (in0Var.y == null) {
-                                        in0Var.y = new TL_account.authorizationForm();
-                                    }
-                                    um0Var2.a();
-                                    break;
-                                }
-                                break;
-                            default:
-                                um0 um0Var3 = um0Var;
-                                TLRPC.TL_error tL_error3 = tL_error;
-                                if (tL_error3 != null && "SRP_ID_INVALID".equals(tL_error3.text)) {
-                                    TL_account.getPassword getpassword2 = new TL_account.getPassword();
-                                    i12 = ((org.telegram.ui.ActionBar.n2) um0Var3.e).currentAccount;
-                                    ConnectionsManager.getInstance(i12).sendRequest(getpassword2, new sm0(um0Var3, 3), 8);
-                                    break;
-                                } else {
-                                    Utilities.globalQueue.postRunnable(new kf0(um0Var3, um0Var3.b, um0Var3.d, 12));
-                                    break;
-                                }
-                        }
-                    }
-                });
-                break;
-            case 2:
-                final int i11 = 0;
-                final um0 um0Var2 = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.rm0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        int i112;
-                        int i12;
-                        switch (i11) {
-                            case 0:
-                                um0 um0Var22 = um0Var2;
-                                TLRPC.TL_error tL_error2 = tL_error;
-                                in0 in0Var = um0Var22.e;
-                                if (tL_error2 != null && "SRP_ID_INVALID".equals(tL_error2.text)) {
-                                    TL_account.getPassword getpassword = new TL_account.getPassword();
-                                    i112 = ((org.telegram.ui.ActionBar.n2) in0Var).currentAccount;
-                                    ConnectionsManager.getInstance(i112).sendRequest(getpassword, new sm0(um0Var22, 4), 8);
-                                    break;
-                                } else {
-                                    if (in0Var.y == null) {
-                                        in0Var.y = new TL_account.authorizationForm();
-                                    }
-                                    um0Var22.a();
-                                    break;
-                                }
-                                break;
-                            default:
-                                um0 um0Var3 = um0Var2;
-                                TLRPC.TL_error tL_error3 = tL_error;
-                                if (tL_error3 != null && "SRP_ID_INVALID".equals(tL_error3.text)) {
-                                    TL_account.getPassword getpassword2 = new TL_account.getPassword();
-                                    i12 = ((org.telegram.ui.ActionBar.n2) um0Var3.e).currentAccount;
-                                    ConnectionsManager.getInstance(i12).sendRequest(getpassword2, new sm0(um0Var3, 3), 8);
-                                    break;
-                                } else {
-                                    Utilities.globalQueue.postRunnable(new kf0(um0Var3, um0Var3.b, um0Var3.d, 12));
-                                    break;
-                                }
-                        }
-                    }
-                });
-                break;
-            case 3:
-                AndroidUtilities.runOnUIThread(new tm0(this.b, tL_error, tLObject, 1));
-                break;
-            default:
-                AndroidUtilities.runOnUIThread(new tm0(this.b, tL_error, tLObject, 2));
-                break;
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        int i10;
+        if (tL_error == null || !"SRP_ID_INVALID".equals(tL_error.text)) {
+            if (tL_error == null) {
+                Utilities.globalQueue.postRunnable(new ai.s4(this, tLObject, this.d, this.a, 25));
+                return;
+            } else {
+                AndroidUtilities.runOnUIThread(new da0(this, this.a, tL_error, 2));
+                return;
+            }
         }
+        TL_account.getPassword getpassword = new TL_account.getPassword();
+        i10 = ((org.telegram.ui.ActionBar.m2) this.e).currentAccount;
+        ConnectionsManager.getInstance(i10).sendRequest(getpassword, new ci.t3(9, this, this.a), 8);
     }
 }

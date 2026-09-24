@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.o6;
 import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class b extends View {
     public final o6 a;
@@ -41,7 +41,7 @@ public final class b extends View {
     }
 
     public final void a(int i10, boolean z10) {
-        if (!t.i()) {
+        if (!s.i()) {
             i10 = 0;
         }
         if (i10 > 0) {
@@ -60,7 +60,7 @@ public final class b extends View {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
             this.c = ofFloat;
             ofFloat.addUpdateListener(new org.telegram.ui.Components.voip.r0(this, 18));
-            this.c.addListener(new qg.n0(this, 6));
+            this.c.addListener(new pg.d0(this, 7));
             this.c.setInterpolator(new OvershootInterpolator(2.0f));
             this.c.setDuration(200L);
             this.c.start();

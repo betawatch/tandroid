@@ -7,7 +7,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public class mc extends nb {
     public final w9 a;
@@ -19,10 +19,10 @@ public class mc extends nb {
         int themedColor = getThemedColor(org.telegram.ui.ActionBar.h6.Hi);
         w9 w9Var = new w9(context);
         this.a = w9Var;
-        addView(w9Var, w7.x5.i(29.0f, 29.0f, 8388627, 12.0f, 12.0f, 12.0f, 12.0f));
+        addView(w9Var, w7.y5.i(29.0f, 29.0f, 8388627, 12.0f, 12.0f, 12.0f, 12.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        addView(linearLayout, w7.x5.i(-2.0f, -2.0f, 8388627, 54.0f, 8.0f, 12.0f, 8.0f));
+        addView(linearLayout, w7.y5.i(-2.0f, -2.0f, 8388627, 54.0f, 8.0f, 12.0f, 8.0f));
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setSingleLine();

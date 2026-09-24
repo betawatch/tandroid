@@ -1,136 +1,46 @@
 package tg;
 
-import ai.n6;
-import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.bb;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.ml0;
-import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.xc;
-import org.telegram.ui.l20;
-import org.telegram.ui.py0;
-import w7.x5;
-
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class t0 extends bb {
-    public final ArrayList X;
-    public final ArrayList Y;
-    public final TLRPC.Chat Z;
-    public final e0 a0;
-    public s0 b0;
-    public m0 c0;
+public final /* synthetic */ class t0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ z0 b;
 
-    public t0(n2 n2Var, TL_stories.TL_premium_myBoosts tL_premium_myBoosts, TLRPC.Chat chat) {
-        super(n2Var, false);
-        this.X = new ArrayList();
-        this.Y = new ArrayList();
-        this.v = 0.3f;
-        this.Z = chat;
-        ArrayList<TL_stories.TL_myBoost> arrayList = tL_premium_myBoosts.my_boosts;
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            TL_stories.TL_myBoost tL_myBoost = arrayList.get(i10);
-            i10++;
-            TL_stories.TL_myBoost tL_myBoost2 = tL_myBoost;
-            TLRPC.Peer peer = tL_myBoost2.peer;
-            if (peer != null && DialogObject.getPeerDialogId(peer) != (-chat.id)) {
-                this.Y.add(tL_myBoost2);
-            }
+    public /* synthetic */ t0(z0 z0Var, int i10) {
+        this.a = i10;
+        this.b = z0Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.W(true);
+                break;
+            case 1:
+                this.b.b0(true, false);
+                break;
+            case 2:
+                this.b.R();
+                break;
+            case 3:
+                this.b.b0(true, false);
+                break;
+            case 4:
+                this.b.b0(true, false);
+                break;
+            case 5:
+                this.b.b0(true, false);
+                break;
+            case 6:
+                z0 z0Var = this.b;
+                z0Var.e0.clear();
+                z0Var.f0.clear();
+                z0Var.dismiss();
+                break;
+            default:
+                this.b.dismiss();
+                break;
         }
-        l20 l20Var = new l20(getContext(), this.resourcesProvider, this.d);
-        l20Var.setClickable(true);
-        l20Var.setOrientation(1);
-        l20Var.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
-        l20Var.setBackgroundColor(h6.v0(h6.h5, this.resourcesProvider));
-        e0 e0Var = new e0(getContext(), this.resourcesProvider);
-        this.a0 = e0Var;
-        e0Var.k();
-        e0Var.setCounterColor(-6785796);
-        e0Var.setOnClickListener(new py0(17, this, chat));
-        l20Var.addView(e0Var, x5.q(-1, 48, 87));
-        ViewGroup viewGroup = this.containerView;
-        int i11 = this.backgroundPaddingLeft;
-        viewGroup.addView(l20Var, x5.f(-2.0f, 87, i11, 0, i11, 0));
-        ml0 ml0Var = this.d;
-        int i12 = this.backgroundPaddingLeft;
-        ml0Var.setPadding(i12, 0, i12, AndroidUtilities.dp(64.0f));
-        this.d.setOnItemClickListener(new n6(24, this, chat));
-        fixNavigationBar();
-        N();
-        S(false);
-        qc.a(this.container, new l0());
-    }
-
-    public static void P(t0 t0Var, TLRPC.Chat chat, View view) {
-        ArrayList arrayList = t0Var.X;
-        if (view instanceof xg.l) {
-            xg.l lVar = (xg.l) view;
-            if (lVar.getBoost().cooldown_until_date > 0) {
-                new xc(t0Var.container, t0Var.resourcesProvider).G(R.raw.chats_infotip, 5, AndroidUtilities.replaceTags(LocaleController.formatPluralString("BoostingWaitWarningPlural", (int) MessagesController.getInstance(UserConfig.selectedAccount).boostsPerSentGift, new Object[0]))).k(true);
-                return;
-            }
-            if (arrayList.contains(lVar.getBoost())) {
-                arrayList.remove(lVar.getBoost());
-            } else {
-                arrayList.add(lVar.getBoost());
-            }
-            lVar.c(arrayList.contains(lVar.getBoost()), true);
-            t0Var.S(true);
-            t0Var.b0.a(arrayList, chat);
-        }
-    }
-
-    public final void S(boolean z10) {
-        e0 e0Var = this.a0;
-        e0Var.setShowZero(false);
-        ArrayList arrayList = this.X;
-        if (arrayList.size() > 1) {
-            e0Var.g(LocaleController.getString(R.string.BoostingReassignBoosts), z10, true);
-        } else {
-            e0Var.g(LocaleController.getString(R.string.BoostingReassignBoost), z10, true);
-        }
-        e0Var.b(arrayList.size(), z10);
-        e0Var.setEnabled(arrayList.size() > 0);
-    }
-
-    @Override // android.app.Dialog, android.view.Window.Callback
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.c0 = new m0(this);
-    }
-
-    @Override // android.app.Dialog, android.view.Window.Callback
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.c0.cancel();
-    }
-
-    @Override // org.telegram.ui.ActionBar.f3
-    public final void onOpenAnimationEnd() {
-        this.c0.start();
-    }
-
-    @Override // org.telegram.ui.Components.bb
-    public final ll0 v(ml0 ml0Var) {
-        return new n0(this);
-    }
-
-    @Override // org.telegram.ui.Components.bb
-    public final CharSequence y() {
-        return LocaleController.getString(R.string.BoostingReassignBoost);
     }
 }

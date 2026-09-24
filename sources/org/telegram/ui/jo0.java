@@ -1,87 +1,197 @@
 package org.telegram.ui;
 
-import android.content.ActivityNotFoundException;
-import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
-import android.webkit.RenderProcessGoneDetail;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import java.util.Calendar;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class jo0 extends WebViewClient {
-    public final /* synthetic */ Context a;
-    public final /* synthetic */ qo0 b;
+public final class jo0 implements TextWatcher {
+    public int a = -1;
+    public boolean b;
+    public int c;
+    public final /* synthetic */ oo0 d;
 
-    public jo0(qo0 qo0Var, Context context) {
-        this.b = qo0Var;
-        this.a = context;
+    public jo0(oo0 oo0Var) {
+        this.d = oo0Var;
     }
 
-    @Override // android.webkit.WebViewClient
-    public final void onPageFinished(WebView webView, String str) {
-        super.onPageFinished(webView, str);
-        qo0 qo0Var = this.b;
-        qo0Var.z0 = false;
-        qo0Var.H0(true, false);
-        qo0Var.K0();
-    }
-
-    @Override // android.webkit.WebViewClient
-    public final boolean onRenderProcessGone(WebView webView, RenderProcessGoneDetail renderProcessGoneDetail) {
-        qo0 qo0Var = this.b;
-        try {
-            if (!AndroidUtilities.isSafeToShow(qo0Var.getParentActivity())) {
-                return true;
+    /* JADX WARN: Removed duplicated region for block: B:51:0x0171  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x017d  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x018b  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x01a6  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x0191  */
+    @Override // android.text.TextWatcher
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void afterTextChanged(Editable editable) {
+        int i10;
+        qt qtVar;
+        oo0 oo0Var = this.d;
+        if (oo0Var.o0) {
+            return;
+        }
+        boolean z10 = true;
+        EditTextBoldCursor editTextBoldCursor = oo0Var.f[1];
+        int selectionStart = editTextBoldCursor.getSelectionStart();
+        String obj = editTextBoldCursor.getText().toString();
+        if (this.a == 3) {
+            obj = obj.substring(0, this.c) + obj.substring(this.c + 1);
+            selectionStart--;
+        }
+        StringBuilder sb2 = new StringBuilder(obj.length());
+        int i11 = 0;
+        while (i11 < obj.length()) {
+            int i12 = i11 + 1;
+            String substring = obj.substring(i11, i12);
+            if ("0123456789".contains(substring)) {
+                sb2.append(substring);
             }
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(qo0Var.getParentActivity(), 0, qo0Var.Y0);
-            alertDialog$Builder.a.R = LocaleController.getString(R.string.ChromeCrashTitle);
-            alertDialog$Builder.a.T = AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ChromeCrashMessage), new jl0(this, 9));
-            alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
-            alertDialog$Builder.o();
-            return true;
-        } catch (Exception e) {
-            FileLog.e(e);
-            return false;
+            i11 = i12;
         }
-    }
-
-    @Override // android.webkit.WebViewClient
-    public final boolean shouldOverrideUrlLoading(WebView webView, String str) {
-        Uri parse;
-        qo0 qo0Var = this.b;
-        qo0Var.y = !str.equals(qo0Var.x);
-        try {
-            parse = Uri.parse(str);
-        } catch (Exception unused) {
+        oo0Var.o0 = true;
+        oo0Var.f[1].setTextColor(oo0Var.getThemedColor(org.telegram.ui.ActionBar.h6.G6));
+        if (sb2.length() > 4) {
+            sb2.setLength(4);
         }
-        if ("t.me".equals(parse.getHost())) {
-            qo0Var.t0();
-            return true;
+        if (sb2.length() < 2) {
+            this.b = false;
         }
-        if (!qo0.h1.contains(parse.getScheme())) {
-            if (!qo0.g1.contains(parse.getScheme())) {
-                try {
-                    if (qo0Var.getParentActivity() != null) {
-                        qo0Var.getParentActivity().startActivityForResult(new Intent("android.intent.action.VIEW", parse), 210);
-                        return true;
-                    }
-                } catch (ActivityNotFoundException unused2) {
-                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this.a);
-                    alertDialog$Builder.a.R = qo0Var.p0;
-                    alertDialog$Builder.a.T = LocaleController.getString(R.string.PaymentAppNotFoundForDeeplink);
-                    alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
-                    alertDialog$Builder.o();
+        if (!this.b) {
+            if (sb2.length() == 1) {
+                int intValue = Utilities.parseInt((CharSequence) sb2.toString()).intValue();
+                if (intValue != 1 && intValue != 0) {
+                    sb2.insert(0, "0");
+                    selectionStart++;
                 }
+            } else if (sb2.length() == 2) {
+                int intValue2 = Utilities.parseInt((CharSequence) sb2.toString()).intValue();
+                if (intValue2 > 12 || intValue2 == 0) {
+                    oo0Var.f[1].setTextColor(oo0Var.getThemedColor(org.telegram.ui.ActionBar.h6.p7));
+                } else {
+                    z10 = false;
+                }
+                selectionStart++;
+                if (!z10) {
+                }
+                if (sb2.length() == 2) {
+                }
+                selectionStart++;
+                editTextBoldCursor.setText(sb2);
+                if (selectionStart >= 0) {
+                }
+                oo0Var.o0 = false;
             }
-            return super.shouldOverrideUrlLoading(webView, str);
+            z10 = false;
+            if (!z10) {
+            }
+            if (sb2.length() == 2) {
+            }
+            selectionStart++;
+            editTextBoldCursor.setText(sb2);
+            if (selectionStart >= 0) {
+            }
+            oo0Var.o0 = false;
         }
-        return true;
+        int i13 = sb2.length() > 2 ? 2 : 1;
+        String[] strArr = new String[i13];
+        strArr[0] = sb2.substring(0, 2);
+        if (i13 == 2) {
+            strArr[1] = sb2.substring(2);
+        }
+        if (sb2.length() == 4 && i13 == 2) {
+            int intValue3 = Utilities.parseInt((CharSequence) strArr[0]).intValue();
+            int intValue4 = Utilities.parseInt((CharSequence) strArr[1]).intValue() + 2000;
+            Calendar calendar = Calendar.getInstance();
+            i10 = ((org.telegram.ui.ActionBar.m2) oo0Var).currentAccount;
+            boolean z11 = UserConfig.getInstance(i10).getClientPhone().startsWith("7") || ((qtVar = oo0Var.A0) != null && qtVar.c.equals("7"));
+            int i14 = z11 ? 2022 : calendar.get(1);
+            int i15 = z11 ? 1 : calendar.get(2) + 1;
+            if (intValue4 < i14 || (intValue4 == i14 && intValue3 < i15)) {
+                oo0Var.f[1].setTextColor(oo0Var.getThemedColor(org.telegram.ui.ActionBar.h6.p7));
+                if (!z10) {
+                }
+                if (sb2.length() == 2) {
+                }
+                selectionStart++;
+                editTextBoldCursor.setText(sb2);
+                if (selectionStart >= 0) {
+                }
+                oo0Var.o0 = false;
+            }
+            z10 = false;
+            if (!z10) {
+            }
+            if (sb2.length() == 2) {
+            }
+            selectionStart++;
+            editTextBoldCursor.setText(sb2);
+            if (selectionStart >= 0) {
+            }
+            oo0Var.o0 = false;
+        }
+        int intValue5 = Utilities.parseInt((CharSequence) strArr[0]).intValue();
+        if (intValue5 > 12 || intValue5 == 0) {
+            oo0Var.f[1].setTextColor(oo0Var.getThemedColor(org.telegram.ui.ActionBar.h6.p7));
+            if (!z10 && sb2.length() == 4) {
+                oo0Var.f[oo0Var.i0 ? (char) 2 : (char) 3].requestFocus();
+            }
+            if (sb2.length() == 2) {
+                if (sb2.length() > 2 && sb2.charAt(2) != '/') {
+                    sb2.insert(2, '/');
+                }
+                editTextBoldCursor.setText(sb2);
+                if (selectionStart >= 0) {
+                    editTextBoldCursor.setSelection(Math.min(selectionStart, editTextBoldCursor.length()));
+                }
+                oo0Var.o0 = false;
+            }
+            sb2.append('/');
+            selectionStart++;
+            editTextBoldCursor.setText(sb2);
+            if (selectionStart >= 0) {
+            }
+            oo0Var.o0 = false;
+        }
+        z10 = false;
+        if (!z10) {
+            oo0Var.f[oo0Var.i0 ? (char) 2 : (char) 3].requestFocus();
+        }
+        if (sb2.length() == 2) {
+        }
+        selectionStart++;
+        editTextBoldCursor.setText(sb2);
+        if (selectionStart >= 0) {
+        }
+        oo0Var.o0 = false;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        if (i11 == 0 && i12 == 1) {
+            this.b = TextUtils.indexOf((CharSequence) this.d.f[1].getText(), '/') != -1;
+            this.a = 1;
+            return;
+        }
+        if (i11 != 1 || i12 != 0) {
+            this.a = -1;
+            return;
+        }
+        if (charSequence.charAt(i10) != '/' || i10 <= 0) {
+            this.a = 2;
+            return;
+        }
+        this.b = false;
+        this.a = 3;
+        this.c = i10 - 1;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

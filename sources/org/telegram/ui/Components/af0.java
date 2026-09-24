@@ -1,195 +1,40 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
 import android.graphics.Path;
-import android.text.TextPaint;
-import android.view.MotionEvent;
-import android.view.View;
-import java.util.Locale;
+import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class af0 extends View {
+public final class af0 extends Path {
     public int a;
-    public boolean b;
-    public boolean c;
-    public float d;
-    public ik0 e;
-    public Paint f;
-    public Paint h;
-    public Paint n;
-    public TextPaint r;
-    public Path s;
-    public ze0 v;
-    public ff0 w;
+    public int b;
+    public int c;
 
-    public final void a(int i10, MotionEvent motionEvent) {
-        float x10 = motionEvent.getX();
-        float y3 = motionEvent.getY();
-        if (i10 == 1) {
-            if (this.a != 0) {
-                return;
-            }
-            ik0 ik0Var = this.e;
-            this.a = (int) Math.floor(com.google.android.gms.internal.vision.e2.A(x10, ik0Var.a, ik0Var.c / 5.0f, 1.0f));
+    public final void a(int i10, int i11, int i12) {
+        if (this.a == i10 && this.b == i11 && this.c == i12) {
             return;
         }
-        if (i10 != 2) {
-            if ((i10 == 3 || i10 == 4 || i10 == 5) && this.a != 0) {
-                this.a = 0;
-                return;
-            }
-            return;
-        }
-        float min = Math.min(2.0f, (this.d - y3) / 8.0f);
-        ff0 ff0Var = this.w;
-        int i11 = ff0Var.f;
-        gf0 gf0Var = i11 != 0 ? i11 != 1 ? i11 != 2 ? i11 != 3 ? null : ff0Var.d : ff0Var.c : ff0Var.b : ff0Var.a;
-        int i12 = this.a;
-        if (i12 == 1) {
-            gf0Var.a = Math.max(0.0f, Math.min(100.0f, gf0Var.a + min));
-        } else if (i12 == 2) {
-            gf0Var.b = Math.max(0.0f, Math.min(100.0f, gf0Var.b + min));
-        } else if (i12 == 3) {
-            gf0Var.c = Math.max(0.0f, Math.min(100.0f, gf0Var.c + min));
-        } else if (i12 == 4) {
-            gf0Var.d = Math.max(0.0f, Math.min(100.0f, gf0Var.d + min));
-        } else if (i12 == 5) {
-            gf0Var.e = Math.max(0.0f, Math.min(100.0f, gf0Var.e + min));
-        }
-        invalidate();
-        ze0 ze0Var = this.v;
-        if (ze0Var != null) {
-            jf0 jf0Var = ((bf0) ze0Var).a;
-            jf0Var.g();
-            wz wzVar = jf0Var.l0;
-            if (wzVar != null) {
-                wzVar.e(false, false, false);
-            }
-        }
-        this.d = y3;
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        gf0 gf0Var;
-        TextPaint textPaint = this.r;
-        Path path = this.s;
-        Paint paint = this.n;
-        ff0 ff0Var = this.w;
-        ik0 ik0Var = this.e;
-        float f7 = ik0Var.c / 5.0f;
-        for (int i10 = 0; i10 < 4; i10++) {
-            float f10 = ik0Var.a;
-            float f11 = i10 * f7;
-            float f12 = f10 + f7 + f11;
-            float f13 = ik0Var.b;
-            canvas.drawLine(f12, f13, f11 + f10 + f7, f13 + ik0Var.d, this.f);
-        }
-        float f14 = ik0Var.a;
-        float f15 = ik0Var.b;
-        canvas.drawLine(f14, f15 + ik0Var.d, f14 + ik0Var.c, f15, this.h);
-        int i11 = ff0Var.f;
-        int i12 = 3;
-        int i13 = 2;
-        if (i11 == 0) {
-            paint.setColor(-1);
-            gf0Var = ff0Var.a;
-        } else if (i11 == 1) {
-            paint.setColor(-1229492);
-            gf0Var = ff0Var.b;
-        } else if (i11 == 2) {
-            paint.setColor(-15667555);
-            gf0Var = ff0Var.c;
-        } else if (i11 != 3) {
-            gf0Var = null;
-        } else {
-            paint.setColor(-13404165);
-            gf0Var = ff0Var.d;
-        }
-        int i14 = 0;
-        while (i14 < 5) {
-            String format = i14 != 0 ? i14 != 1 ? i14 != i13 ? i14 != i12 ? i14 != 4 ? "" : String.format(Locale.US, "%.2f", Float.valueOf(gf0Var.e / 100.0f)) : String.format(Locale.US, "%.2f", Float.valueOf(gf0Var.d / 100.0f)) : String.format(Locale.US, "%.2f", Float.valueOf(gf0Var.c / 100.0f)) : String.format(Locale.US, "%.2f", Float.valueOf(gf0Var.b / 100.0f)) : String.format(Locale.US, "%.2f", Float.valueOf(gf0Var.a / 100.0f));
-            canvas.drawText(format, (i14 * f7) + com.google.android.gms.internal.vision.e2.A(f7, textPaint.measureText(format), 2.0f, ik0Var.a), (ik0Var.b + ik0Var.d) - AndroidUtilities.dp(4.0f), textPaint);
-            i14++;
-            i12 = 3;
-            i13 = 2;
-        }
-        float[] a2 = gf0Var.a();
-        invalidate();
-        path.reset();
-        for (int i15 = 0; i15 < a2.length / 2; i15++) {
-            if (i15 == 0) {
-                int i16 = i15 * 2;
-                path.moveTo((a2[i16] * ik0Var.c) + ik0Var.a, ((1.0f - a2[i16 + 1]) * ik0Var.d) + ik0Var.b);
-            } else {
-                int i17 = i15 * 2;
-                path.lineTo((a2[i17] * ik0Var.c) + ik0Var.a, ((1.0f - a2[i17 + 1]) * ik0Var.d) + ik0Var.b);
-            }
-        }
-        canvas.drawPath(path, paint);
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x0014, code lost:
-    
-        if (r0 != 6) goto L44;
-     */
-    @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        int actionMasked = motionEvent.getActionMasked();
-        if (actionMasked != 0) {
-            if (actionMasked != 1) {
-                if (actionMasked != 2) {
-                    if (actionMasked != 3) {
-                        if (actionMasked != 5) {
-                        }
-                    }
-                } else if (this.b) {
-                    a(2, motionEvent);
-                    return true;
-                }
-                return true;
-            }
-            if (this.b) {
-                a(3, motionEvent);
-                this.b = false;
-            }
-            this.c = true;
-            return true;
-        }
-        if (motionEvent.getPointerCount() == 1) {
-            if (this.c && !this.b) {
-                float x10 = motionEvent.getX();
-                float y3 = motionEvent.getY();
-                this.d = y3;
-                ik0 ik0Var = this.e;
-                float f7 = ik0Var.a;
-                if (x10 >= f7 && x10 <= f7 + ik0Var.c) {
-                    float f10 = ik0Var.b;
-                    if (y3 >= f10 && y3 <= f10 + ik0Var.d) {
-                        this.b = true;
-                    }
-                }
-                this.c = false;
-                if (this.b) {
-                    a(1, motionEvent);
-                    return true;
-                }
-            }
-        } else if (this.b) {
-            a(3, motionEvent);
-            this.c = true;
-            this.b = false;
-        }
-        return true;
-    }
-
-    public void setDelegate(ze0 ze0Var) {
-        this.v = ze0Var;
+        rewind();
+        RectF rectF = AndroidUtilities.rectTmp;
+        float f7 = i10 - i12;
+        float f10 = i11 + i12;
+        rectF.set(f7, i11 - i12, i10 + i12, f10);
+        arcTo(rectF, -180.0f, 270.0f, false);
+        float f11 = i12 / 81.0f;
+        float f12 = i10;
+        float f13 = f10 - (3.0f * f11);
+        cubicTo(f12 - (13.0f * f11), f10, f12 - (25.0f * f11), f13, f12 - (36.0f * f11), f10 - (8.42f * f11));
+        float f14 = f10 - f11;
+        cubicTo(f12 - (52.0f * f11), f14, f12 - (56.5f * f11), f14, f12 - (78.02f * f11), f14);
+        cubicTo(f12 - (80.0f * f11), f14, f12 - (81.0f * f11), f13, f12 - (79.52f * f11), f10 - (4.5f * f11));
+        float f15 = f12 - (63.73f * f11);
+        cubicTo(f12 - (78.0f * f11), f10 - (6.0f * f11), f15, f10 - (15.0f * f11), f15, f10 - (31.0f * f11));
+        float f16 = i11;
+        cubicTo(f12 - (74.5f * f11), f10 - (44.75f * f11), f7, (f11 * 18.87f) + f16, f7, f16);
+        close();
+        this.a = i10;
+        this.b = i11;
+        this.c = i12;
     }
 }

@@ -16,9 +16,9 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.u31;
+import org.telegram.ui.Components.i41;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class c6 {
     public TL_stories.StoryItem a = null;
@@ -334,7 +334,7 @@ public final class c6 {
         }
         TL_stories.StoryItem storyItem = c6Var.a;
         if (storyItem != null) {
-            if (!storyItem.translated || storyItem.translatedText == null || !TextUtils.equals(storyItem.translatedLng, u31.A())) {
+            if (!storyItem.translated || storyItem.translatedText == null || !TextUtils.equals(storyItem.translatedLng, i41.A())) {
                 String str = c6Var.a.caption;
                 this.h = str;
                 CharSequence replaceEmoji2 = Emoji.replaceEmoji(str, g5Var.b0.getPaint().getFontMetricsInt(), false);

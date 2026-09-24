@@ -6,13 +6,13 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.a2;
-import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.Components.pc0;
-import org.telegram.ui.Components.xk0;
+import org.telegram.ui.ActionBar.z1;
+import org.telegram.ui.Components.ad0;
+import org.telegram.ui.Components.hl0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class w implements e2.m, d9.e, e2.h, xk0, pc0, a2 {
+public final /* synthetic */ class w implements e2.m, d9.e, e2.h, hl0, ad0, z1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
 
@@ -25,16 +25,16 @@ public final /* synthetic */ class w implements e2.m, d9.e, e2.h, xk0, pc0, a2 {
     public void accept(Object obj) {
         switch (this.a) {
             case 3:
-                ((m4.f1) obj).f0(this.b);
+                ((m4.e1) obj).f0(this.b);
                 break;
             case 4:
-                ((m4.f1) obj).N(this.b);
+                ((m4.e1) obj).N(this.b);
                 break;
             case 5:
-                ((m4.f1) obj).j(this.b);
+                ((m4.e1) obj).j(this.b);
                 break;
             default:
-                ((m4.f1) obj).D0(this.b);
+                ((m4.e1) obj).D0(this.b);
                 break;
         }
     }
@@ -44,8 +44,25 @@ public final /* synthetic */ class w implements e2.m, d9.e, e2.h, xk0, pc0, a2 {
         return Integer.valueOf(this.b);
     }
 
-    @Override // org.telegram.ui.Components.pc0
-    public String e(int i10) {
+    @Override // org.telegram.ui.ActionBar.z1
+    public void f(a2 a2Var, int i10) {
+        MessagesController.getInstance(this.b).performLogout(1);
+    }
+
+    @Override // e2.m
+    public void invoke(Object obj) {
+        switch (this.a) {
+            case 0:
+                ((b2.z0) obj).onRepeatModeChanged(this.b);
+                break;
+            default:
+                ((b2.z0) obj).onAudioSessionIdChanged(this.b);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.ad0
+    public String j(int i10) {
         int i11 = this.a;
         int i12 = this.b;
         switch (i11) {
@@ -65,24 +82,7 @@ public final /* synthetic */ class w implements e2.m, d9.e, e2.h, xk0, pc0, a2 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void f(b2 b2Var, int i10) {
-        MessagesController.getInstance(this.b).performLogout(1);
-    }
-
-    @Override // e2.m
-    public void invoke(Object obj) {
-        switch (this.a) {
-            case 0:
-                ((b2.z0) obj).onRepeatModeChanged(this.b);
-                break;
-            default:
-                ((b2.z0) obj).onAudioSessionIdChanged(this.b);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.xk0
+    @Override // org.telegram.ui.Components.hl0
     public int run() {
         return this.b;
     }

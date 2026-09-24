@@ -1,28 +1,80 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.graphics.Matrix;
+import android.graphics.SurfaceTexture;
+import android.view.TextureView;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class of0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ pf0 b;
+public final class of0 implements TextureView.SurfaceTextureListener {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ ja b;
+    public final /* synthetic */ tf0 c;
 
-    public /* synthetic */ of0(pf0 pf0Var, int i10) {
-        this.a = i10;
-        this.b = pf0Var;
+    public of0(tf0 tf0Var, boolean z10, ja jaVar) {
+        this.c = tf0Var;
+        this.a = z10;
+        this.b = jaVar;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.a.n.setVisibility(8);
-                break;
-            default:
-                this.b.a.h.setVisibility(8);
-                break;
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i10, int i11) {
+        tf0 tf0Var = this.c;
+        TextureView textureView = tf0Var.i0;
+        if (tf0Var.l0 != null || surfaceTexture == null) {
+            return;
         }
+        wz wzVar = new wz(surfaceTexture, tf0Var.C0, tf0Var.H0, tf0Var.w0, this.a, this.b, i10, i11);
+        tf0Var.l0 = wzVar;
+        if (!this.a) {
+            wzVar.i(tf0Var.J0, tf0Var.K0);
+            wz wzVar2 = tf0Var.l0;
+            Matrix transform = textureView.getTransform(null);
+            int width = textureView.getWidth();
+            int height = textureView.getHeight();
+            pa paVar = wzVar2.I;
+            if (paVar != null) {
+                Matrix matrix = paVar.v;
+                transform.invert(matrix);
+                float f7 = width;
+                float f10 = height;
+                matrix.preScale(f7, f10);
+                matrix.postScale(1.0f / f7, 1.0f / f10);
+                paVar.c(matrix);
+                wzVar2.e(false, false, false);
+            }
+        }
+        tf0Var.l0.f(tf0Var);
+        wz wzVar3 = tf0Var.l0;
+        wzVar3.getClass();
+        wzVar3.postRunnable(new sz(wzVar3, i10, i11, 1));
+        tf0Var.l0.e(true, true, false);
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
+        tf0 tf0Var = this.c;
+        wz wzVar = tf0Var.l0;
+        if (wzVar == null) {
+            return true;
+        }
+        wzVar.postRunnable(new tz(wzVar, 0));
+        tf0Var.l0 = null;
+        return true;
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i10, int i11) {
+        tf0 tf0Var = this.c;
+        wz wzVar = tf0Var.l0;
+        if (wzVar != null) {
+            wzVar.postRunnable(new sz(wzVar, i10, i11, 1));
+            tf0Var.l0.e(false, true, false);
+            tf0Var.l0.postRunnable(new ic0(this, 7));
+        }
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
     }
 }

@@ -18,7 +18,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public class HttpGetFileTask extends AsyncTask<String, Void, File> {
     private Utilities.Callback<File> doneCallback;
@@ -144,7 +144,7 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                                         j3 = j10;
                                         if (read == -1) {
                                             if (this.progressCallback != null) {
-                                                AndroidUtilities.runOnUIThread(new t0(this, 2));
+                                                AndroidUtilities.runOnUIThread(new q0(this, 3));
                                             }
                                             if (channel != null) {
                                                 channel.close();

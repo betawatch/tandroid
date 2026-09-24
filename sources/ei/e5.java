@@ -8,55 +8,55 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.d61;
-import org.telegram.ui.Components.h51;
-import org.telegram.ui.Components.pv0;
+import org.telegram.ui.Components.aw0;
+import org.telegram.ui.Components.j61;
+import org.telegram.ui.Components.r61;
 import org.telegram.ui.Components.v51;
-import w7.x5;
+import w7.y5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public final class e5 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
+public final class e5 extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
     public final long a;
-    public org.telegram.ui.ActionBar.g2 b;
-    public d61 c;
+    public org.telegram.ui.ActionBar.f2 b;
+    public r61 c;
 
     public e5(long j3) {
         super(null);
         this.a = j3;
     }
 
-    public final void U(ArrayList arrayList, v51 v51Var) {
+    public final void U(ArrayList arrayList, j61 j61Var) {
         yh.m e = yh.o.g(this.currentAccount).e(this.a);
         ArrayList arrayList2 = e.e;
         for (int i10 = 0; i10 < arrayList2.size(); i10++) {
             Object obj = arrayList2.get(i10);
             int i11 = a4.a;
-            h51 J = h51.J(a4.class);
+            v51 J = v51.J(a4.class);
             J.G = obj;
             J.r = false;
             arrayList.add(J);
         }
         if (e.h) {
-            arrayList.add(h51.n(29));
-            arrayList.add(h51.n(29));
-            arrayList.add(h51.n(29));
+            arrayList.add(v51.n(29));
+            arrayList.add(v51.n(29));
+            arrayList.add(v51.n(29));
         }
     }
 
-    public final void V(h51 h51Var) {
-        Object obj = h51Var.G;
+    public final void V(v51 v51Var) {
+        Object obj = v51Var.G;
         if (obj instanceof TL_payments.starRefProgram) {
             e4.G0(getParentActivity(), this.currentAccount, (TL_payments.starRefProgram) obj, this.a, this.resourceProvider, false);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final View createView(Context context) {
         org.telegram.ui.ActionBar.k kVar = this.actionBar;
-        org.telegram.ui.ActionBar.g2 g2Var = new org.telegram.ui.ActionBar.g2(false);
-        this.b = g2Var;
-        kVar.setBackButtonDrawable(g2Var);
+        org.telegram.ui.ActionBar.f2 f2Var = new org.telegram.ui.ActionBar.f2(false);
+        this.b = f2Var;
+        kVar.setBackButtonDrawable(f2Var);
         this.b.k = 240.0f;
         this.actionBar.setActionBarMenuOnItemClick(new t(this, 2));
         this.actionBar.setBackgroundColor(h6.w0(null, h6.d6, false));
@@ -67,23 +67,23 @@ public final class e5 extends org.telegram.ui.ActionBar.n2 implements Notificati
         this.actionBar.A(h6.w0(null, h6.z8, false), false);
         this.actionBar.setTitleColor(h6.w0(null, i10, false));
         this.actionBar.setTitle(LocaleController.getString(R.string.ChannelAffiliatePrograms));
-        pv0 pv0Var = new pv0(context, null);
-        d61 d61Var = new d61(this, new bi.v(this, 18), new d5(this, 0), null);
-        this.c = d61Var;
-        pv0Var.addView(d61Var, x5.e(-1, -1, 119));
-        this.fragmentView = pv0Var;
-        return pv0Var;
+        aw0 aw0Var = new aw0(context, null);
+        r61 r61Var = new r61(this, new bi.v(this, 18), new d5(this, 0), null);
+        this.c = r61Var;
+        aw0Var.addView(r61Var, y5.e(-1, -1, 119));
+        this.fragmentView = aw0Var;
+        return aw0Var;
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        d61 d61Var;
-        if (i10 == NotificationCenter.channelSuggestedBotsUpdate && ((Long) objArr[0]).longValue() == this.a && (d61Var = this.c) != null && (d61Var.getAdapter() instanceof v51)) {
-            ((v51) this.c.getAdapter()).N(true);
+        r61 r61Var;
+        if (i10 == NotificationCenter.channelSuggestedBotsUpdate && ((Long) objArr[0]).longValue() == this.a && (r61Var = this.c) != null && (r61Var.getAdapter() instanceof j61)) {
+            ((j61) this.c.getAdapter()).N(true);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final boolean isLightStatusBar() {
         if (getLastStoryViewer() == null || getLastStoryViewer().H0) {
             int w02 = h6.w0(null, h6.d6, false);
@@ -97,13 +97,13 @@ public final class e5 extends org.telegram.ui.ActionBar.n2 implements Notificati
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final boolean onFragmentCreate() {
         NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.channelSuggestedBotsUpdate);
         return super.onFragmentCreate();
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final void onFragmentDestroy() {
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.channelSuggestedBotsUpdate);
         super.onFragmentDestroy();

@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public class qc {
     public static qc w;
@@ -19,7 +19,7 @@ public class qc {
     public o1.k d;
     public final ub e;
     public final ib f;
-    public final org.telegram.ui.ActionBar.n2 g;
+    public final org.telegram.ui.ActionBar.m2 g;
     public final FrameLayout h;
     public final Runnable i;
     public int j;
@@ -85,16 +85,16 @@ public class qc {
         return frameLayout == null ? new pb() : new qc(null, frameLayout, ubVar, i10);
     }
 
-    public static qc g(org.telegram.ui.ActionBar.n2 n2Var, nb nbVar, int i10) {
-        if (n2Var == null) {
+    public static qc g(org.telegram.ui.ActionBar.m2 m2Var, nb nbVar, int i10) {
+        if (m2Var == null) {
             return new pb();
         }
-        if (n2Var instanceof org.telegram.ui.xn) {
+        if (m2Var instanceof org.telegram.ui.wn) {
             ub.access$000(nbVar, -2, 1);
-        } else if (n2Var instanceof org.telegram.ui.ry) {
+        } else if (m2Var instanceof org.telegram.ui.qy) {
             ub.access$000(nbVar, -1, 0);
         }
-        return new qc(n2Var, n2Var.getBulletinLayoutContainer(), nbVar, i10);
+        return new qc(m2Var, m2Var.getBulletinLayoutContainer(), nbVar, i10);
     }
 
     public static void h(FrameLayout frameLayout) {
@@ -248,14 +248,14 @@ public class qc {
         }
     }
 
-    public qc(org.telegram.ui.ActionBar.n2 n2Var, FrameLayout frameLayout, ub ubVar, int i10) {
+    public qc(org.telegram.ui.ActionBar.m2 m2Var, FrameLayout frameLayout, ub ubVar, int i10) {
         this.i = new db(this, 0);
         this.r = true;
         this.u = true;
         this.e = ubVar;
         this.n = true ^ (ubVar instanceof vb);
         this.f = new ib(this, ubVar, frameLayout);
-        this.g = n2Var;
+        this.g = m2Var;
         this.h = frameLayout;
         this.j = i10;
     }

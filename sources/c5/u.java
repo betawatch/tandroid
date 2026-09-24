@@ -15,7 +15,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class u implements Callable {
     public final /* synthetic */ int a;
@@ -196,7 +196,7 @@ public final /* synthetic */ class u implements Callable {
                     } else {
                         int a2 = com.google.android.gms.internal.play_billing.u.a("BillingClient", c12);
                         String f7 = com.google.android.gms.internal.play_billing.u.f("BillingClient", c12);
-                        lVar = a2 != 0 ? cVar2.s(g0.a(a2, f7), 23, hg.c.i(a2, "getSkuDetails() failed for queryProductDetailsAsync. Response code: "), null) : cVar2.s(g0.a(6, f7), 45, "getSkuDetails() returned a bundle with neither an error nor a product detail list for queryProductDetailsAsync.", null);
+                        lVar = a2 != 0 ? cVar2.s(g0.a(a2, f7), 23, hg.c.h(a2, "getSkuDetails() failed for queryProductDetailsAsync. Response code: "), null) : cVar2.s(g0.a(6, f7), 45, "getSkuDetails() returned a bundle with neither an error nor a product detail list for queryProductDetailsAsync.", null);
                     }
                 } catch (DeadObjectException e10) {
                     e = e10;

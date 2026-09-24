@@ -1,107 +1,109 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.OutputSerializedData;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.MotionEvent;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class gf0 {
-    public float a = 0.0f;
-    public float b = 25.0f;
-    public float c = 50.0f;
-    public float d = 75.0f;
-    public float e = 100.0f;
-    public float[] f;
+public final class gf0 extends View {
+    public Paint a;
+    public Paint b;
+    public int c;
+    public int d;
+    public float e;
+    public boolean f;
+    public int h;
+    public int n;
+    public ff0 r;
 
-    public final float[] a() {
-        float f7 = this.a;
-        float f10 = this.b / 100.0f;
-        float f11 = this.c / 100.0f;
-        float f12 = this.d / 100.0f;
-        float f13 = this.e;
-        int i10 = 5;
-        float[] fArr = {-0.001f, f7 / 100.0f, 0.0f, f7 / 100.0f, 0.25f, f10, 0.5f, f11, 0.75f, f12, 1.0f, f13 / 100.0f, 1.001f, f13 / 100.0f};
-        int i11 = 100;
-        ArrayList arrayList = new ArrayList(100);
-        ArrayList arrayList2 = new ArrayList(100);
-        arrayList2.add(Float.valueOf(fArr[0]));
-        arrayList2.add(Float.valueOf(fArr[1]));
-        int i12 = 1;
-        while (i12 < i10) {
-            int i13 = (i12 - 1) * 2;
-            float f14 = fArr[i13];
-            float f15 = fArr[i13 + 1];
-            int i14 = i12 * 2;
-            float f16 = fArr[i14];
-            float f17 = fArr[i14 + 1];
-            int i15 = i12 + 1;
-            int i16 = i15 * 2;
-            float f18 = fArr[i16];
-            float f19 = fArr[i16 + 1];
-            int i17 = (i12 + 2) * 2;
-            float f20 = fArr[i17];
-            float f21 = fArr[i17 + 1];
-            int i18 = 1;
-            while (i18 < i11) {
-                float f22 = i18 * 0.01f;
-                float f23 = f22 * f22;
-                float f24 = f23 * f22;
-                float z10 = ((((((f16 * 3.0f) - f14) - (f18 * 3.0f)) + f20) * f24) + ((((f18 * 4.0f) + ((f14 * 2.0f) - (f16 * 5.0f))) - f20) * f23) + com.google.android.gms.internal.vision.e2.z(f18, f14, f22, f16 * 2.0f)) * 0.5f;
-                float max = Math.max(0.0f, Math.min(1.0f, ((((((f17 * 3.0f) - f15) - (f19 * 3.0f)) + f21) * f24) + ((((4.0f * f19) + ((2.0f * f15) - (5.0f * f17))) - f21) * f23) + com.google.android.gms.internal.vision.e2.z(f19, f15, f22, f17 * 2.0f)) * 0.5f));
-                if (z10 > f14) {
-                    arrayList2.add(Float.valueOf(z10));
-                    arrayList2.add(Float.valueOf(max));
-                }
-                if ((i18 - 1) % 2 == 0) {
-                    arrayList.add(Float.valueOf(max));
-                }
-                i18++;
-                i11 = 100;
+    public final void a(int i10, boolean z10) {
+        ff0 ff0Var;
+        int i11 = this.h;
+        if (i10 < i11) {
+            i10 = i11;
+        } else {
+            int i12 = this.n;
+            if (i10 > i12) {
+                i10 = i12;
             }
-            arrayList2.add(Float.valueOf(f18));
-            arrayList2.add(Float.valueOf(f19));
-            i12 = i15;
-            i10 = 5;
-            i11 = 100;
         }
-        arrayList2.add(Float.valueOf(fArr[12]));
-        arrayList2.add(Float.valueOf(fArr[13]));
-        this.f = new float[arrayList.size()];
-        int i19 = 0;
-        while (true) {
-            float[] fArr2 = this.f;
-            if (i19 >= fArr2.length) {
-                break;
+        this.e = (i10 - i11) / (this.n - i11);
+        invalidate();
+        if (!z10 || (ff0Var = this.r) == null) {
+            return;
+        }
+        ff0Var.l(((Integer) getTag()).intValue(), getProgress());
+    }
+
+    public int getProgress() {
+        return (int) ((this.e * (this.n - r0)) + this.h);
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        Paint paint = this.b;
+        int measuredHeight = getMeasuredHeight();
+        int i10 = this.c;
+        int i11 = (measuredHeight - i10) / 2;
+        int measuredWidth = (int) ((getMeasuredWidth() - i10) * this.e);
+        float f7 = i10 / 2;
+        canvas.drawRect(f7, (getMeasuredHeight() / 2) - AndroidUtilities.dp(1.0f), getMeasuredWidth() - r9, AndroidUtilities.dp(1.0f) + (getMeasuredHeight() / 2), this.a);
+        if (this.h == 0) {
+            canvas.drawRect(f7, (getMeasuredHeight() / 2) - AndroidUtilities.dp(1.0f), measuredWidth, AndroidUtilities.dp(1.0f) + (getMeasuredHeight() / 2), paint);
+        } else if (this.e > 0.5f) {
+            canvas.drawRect((getMeasuredWidth() / 2) - AndroidUtilities.dp(1.0f), (getMeasuredHeight() - i10) / 2, getMeasuredWidth() / 2, (getMeasuredHeight() + i10) / 2, paint);
+            canvas.drawRect(getMeasuredWidth() / 2, (getMeasuredHeight() / 2) - AndroidUtilities.dp(1.0f), measuredWidth, AndroidUtilities.dp(1.0f) + (getMeasuredHeight() / 2), paint);
+        } else {
+            canvas.drawRect(getMeasuredWidth() / 2, (getMeasuredHeight() - i10) / 2, AndroidUtilities.dp(1.0f) + (getMeasuredWidth() / 2), (getMeasuredHeight() + i10) / 2, paint);
+            canvas.drawRect(measuredWidth, (getMeasuredHeight() / 2) - AndroidUtilities.dp(1.0f), getMeasuredWidth() / 2, AndroidUtilities.dp(1.0f) + (getMeasuredHeight() / 2), paint);
+        }
+        canvas.drawCircle(measuredWidth + r9, r9 + i11, f7, paint);
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        int i10 = this.c;
+        if (motionEvent != null) {
+            float x10 = motionEvent.getX();
+            float y3 = motionEvent.getY();
+            float measuredWidth = (int) ((getMeasuredWidth() - i10) * this.e);
+            if (motionEvent.getAction() == 0) {
+                float measuredHeight = (getMeasuredHeight() - i10) / 2;
+                if (measuredWidth - measuredHeight <= x10 && x10 <= i10 + measuredWidth + measuredHeight && y3 >= 0.0f && y3 <= getMeasuredHeight()) {
+                    this.f = true;
+                    this.d = (int) (x10 - measuredWidth);
+                    getParent().requestDisallowInterceptTouchEvent(true);
+                    invalidate();
+                    return true;
+                }
+            } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+                if (this.f) {
+                    this.f = false;
+                    invalidate();
+                    return true;
+                }
+            } else if (motionEvent.getAction() == 2 && this.f) {
+                float f7 = (int) (x10 - this.d);
+                this.e = (f7 >= 0.0f ? f7 > ((float) (getMeasuredWidth() - i10)) ? getMeasuredWidth() - i10 : f7 : 0.0f) / (getMeasuredWidth() - i10);
+                ff0 ff0Var = this.r;
+                if (ff0Var != null) {
+                    ff0Var.l(((Integer) getTag()).intValue(), getProgress());
+                }
+                invalidate();
+                return true;
             }
-            fArr2[i19] = ((Float) arrayList.get(i19)).floatValue();
-            i19++;
         }
-        int size = arrayList2.size();
-        float[] fArr3 = new float[size];
-        for (int i20 = 0; i20 < size; i20++) {
-            fArr3[i20] = ((Float) arrayList2.get(i20)).floatValue();
-        }
-        return fArr3;
+        return false;
     }
 
-    public final boolean b() {
-        return ((double) Math.abs(this.a - 0.0f)) < 1.0E-5d && ((double) Math.abs(this.b - 25.0f)) < 1.0E-5d && ((double) Math.abs(this.c - 50.0f)) < 1.0E-5d && ((double) Math.abs(this.d - 75.0f)) < 1.0E-5d && ((double) Math.abs(this.e - 100.0f)) < 1.0E-5d;
+    public void setDelegate(ff0 ff0Var) {
+        this.r = ff0Var;
     }
 
-    public final void c(InputSerializedData inputSerializedData, boolean z10) {
-        this.a = inputSerializedData.readFloat(z10);
-        this.b = inputSerializedData.readFloat(z10);
-        this.c = inputSerializedData.readFloat(z10);
-        this.d = inputSerializedData.readFloat(z10);
-        this.e = inputSerializedData.readFloat(z10);
-    }
-
-    public final void d(OutputSerializedData outputSerializedData) {
-        outputSerializedData.writeFloat(this.a);
-        outputSerializedData.writeFloat(this.b);
-        outputSerializedData.writeFloat(this.c);
-        outputSerializedData.writeFloat(this.d);
-        outputSerializedData.writeFloat(this.e);
+    public void setProgress(int i10) {
+        a(i10, true);
     }
 }

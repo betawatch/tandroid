@@ -1,24 +1,35 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.view.View;
+import android.content.Context;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ts implements ah.m {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.Components.ml0 b;
+public final class ts extends gg.u1 {
+    public final /* synthetic */ ContactsActivity K;
 
-    public /* synthetic */ ts(org.telegram.ui.Components.ml0 ml0Var, int i10) {
-        this.a = i10;
-        this.b = ml0Var;
+    public ts(ContactsActivity contactsActivity, Context context, a0.i iVar, boolean z10, boolean z11, boolean z12) {
+        this.K = contactsActivity;
+        this.d = new ArrayList();
+        this.e = new ArrayList();
+        this.H = new ArrayList();
+        this.c = context;
+        this.h = iVar;
+        this.r = z10;
+        this.s = z11;
+        this.x = 0;
+        this.v = z12;
+        this.w = true;
+        gg.c2 c2Var = new gg.c2(true);
+        this.f = c2Var;
+        c2Var.a = new gg.r1(this);
     }
 
-    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
-    @Override // ah.m
-    public final boolean a(Canvas canvas, View view, long j3) {
-        switch (this.a) {
+    @Override // gg.u1
+    public final void F() {
+        if (this.y || this.f.e() || h() != 0) {
+            return;
         }
-        return this.b.drawChild(canvas, view, j3);
+        this.K.e.e(false, true);
     }
 }

@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.fd1;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class fp implements fd1 {
     public final /* synthetic */ np a;
@@ -25,19 +25,19 @@ public final class fp implements fd1 {
     @Override // org.telegram.ui.fd1
     public final void o1(boolean z10) {
         np npVar = this.a;
-        org.telegram.ui.xn xnVar = npVar.v;
+        org.telegram.ui.wn wnVar = npVar.v;
         npVar.N = !npVar.N;
         if (npVar.M != null) {
             npVar.P = true;
-            xnVar.e7 = true;
+            wnVar.e7 = true;
             TLRPC.WallPaper wallPaper = npVar.v() ? null : npVar.n.h;
-            org.telegram.ui.ActionBar.c4 c4Var = npVar.M.a;
-            if (c4Var.a) {
+            org.telegram.ui.ActionBar.b4 b4Var = npVar.M.a;
+            if (b4Var.a) {
                 npVar.n.i(null, wallPaper, z10, Boolean.valueOf(npVar.N), false);
             } else {
-                npVar.n.i(c4Var, wallPaper, z10, Boolean.valueOf(npVar.N), false);
+                npVar.n.i(b4Var, wallPaper, z10, Boolean.valueOf(npVar.N), false);
             }
-            xnVar.e7 = false;
+            wnVar.e7 = false;
         }
     }
 }

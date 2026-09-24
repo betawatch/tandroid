@@ -2,9 +2,9 @@ package u2;
 
 import android.util.Pair;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
-public final class a0 extends o1 {
+public final class a0 extends q1 {
     public final boolean l;
     public final b2.j1 m;
     public final b2.h1 n;
@@ -32,7 +32,7 @@ public final class a0 extends o1 {
     /* JADX WARN: Removed duplicated region for block: B:27:0x0086  */
     /* JADX WARN: Removed duplicated region for block: B:38:0x0092  */
     /* JADX WARN: Removed duplicated region for block: B:9:0x00cc  */
-    @Override // u2.o1
+    @Override // u2.q1
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -98,7 +98,7 @@ public final class a0 extends o1 {
                         if (a2 != null) {
                             x xVar4 = this.p;
                             xVar4.getClass();
-                            xVar4.b(a2);
+                            xVar4.a(a2);
                             return;
                         }
                         return;
@@ -135,7 +135,7 @@ public final class a0 extends o1 {
         }
     }
 
-    @Override // u2.o1
+    @Override // u2.q1
     public final void C() {
         if (this.l) {
             return;
@@ -162,7 +162,7 @@ public final class a0 extends o1 {
         if (this.o.g != null && obj.equals(y.h)) {
             obj = this.o.g;
         }
-        xVar.b(f0Var.a(obj));
+        xVar.a(f0Var.a(obj));
         return xVar;
     }
 
@@ -183,7 +183,7 @@ public final class a0 extends o1 {
         return true;
     }
 
-    @Override // u2.o1, u2.a
+    @Override // u2.q1, u2.a
     public final boolean a(b2.k0 k0Var) {
         return this.k.a(k0Var);
     }
@@ -208,7 +208,7 @@ public final class a0 extends o1 {
         super.q();
     }
 
-    @Override // u2.o1, u2.a
+    @Override // u2.q1, u2.a
     public final void t(b2.k0 k0Var) {
         if (this.s) {
             y yVar = this.o;
@@ -219,7 +219,7 @@ public final class a0 extends o1 {
         this.k.t(k0Var);
     }
 
-    @Override // u2.o1
+    @Override // u2.q1
     public final f0 z(f0 f0Var) {
         Object obj = f0Var.a;
         Object obj2 = this.o.g;

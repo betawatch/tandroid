@@ -1,29 +1,60 @@
 package org.telegram.ui;
 
-import java.util.TimerTask;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
+import android.text.Editable;
+import android.text.TextWatcher;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class d80 extends TimerTask {
-    public final /* synthetic */ String a;
-    public final /* synthetic */ e80 b;
+public final class d80 implements TextWatcher {
+    public final /* synthetic */ e80 a;
 
-    public d80(e80 e80Var, String str) {
-        this.b = e80Var;
-        this.a = str;
+    public d80(e80 e80Var) {
+        this.a = e80Var;
     }
 
-    @Override // java.util.TimerTask, java.lang.Runnable
-    public final void run() {
-        e80 e80Var = this.b;
-        try {
-            e80Var.f.cancel();
-            e80Var.f = null;
-        } catch (Exception e) {
-            FileLog.e(e);
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        g80 g80Var = this.a.f;
+        if (g80Var.d.d.length() != 0) {
+            g80Var.E = true;
+            g80Var.y = true;
+            c80 c80Var = g80Var.s;
+            if (!c80Var.h) {
+                c80Var.h = true;
+                c80Var.l();
+            }
+            g80Var.s.E(g80Var.d.d.toString());
+            g80Var.h.setFastScrollVisible(false);
+            g80Var.h.setVerticalScrollBarEnabled(true);
+            g80Var.r.e(true, true);
+            g80Var.r.setStickerType(1);
+            g80Var.r.d.setText(LocaleController.getString(R.string.NoResult));
+            g80Var.r.e.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
+            return;
         }
-        AndroidUtilities.runOnUIThread(new c80(this, this.a, 0));
+        g80Var.E = false;
+        g80Var.y = false;
+        c80 c80Var2 = g80Var.s;
+        if (c80Var2.h) {
+            c80Var2.h = false;
+            c80Var2.l();
+        }
+        g80Var.s.E(null);
+        g80Var.h.setFastScrollVisible(true);
+        g80Var.h.setVerticalScrollBarEnabled(false);
+        g80Var.r.e(false, true);
+        g80Var.r.setStickerType(0);
+        g80Var.r.d.setText(LocaleController.getString(R.string.NoContacts));
+        g80Var.r.e.setText("");
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

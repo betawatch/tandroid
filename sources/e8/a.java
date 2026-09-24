@@ -7,9 +7,9 @@ import android.os.Parcel;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import n6.l;
-import v7.g5;
+import v7.h5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class a extends Binder implements j, IInterface {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final class a extends Binder implements j, IInterface {
     public void I(int i10, boolean z10) {
         switch (this.a) {
             case 1:
-                g5.a(new Status(i10, null, null, null), Boolean.valueOf(z10), this.b);
+                h5.a(new Status(i10, null, null, null), Boolean.valueOf(z10), this.b);
                 break;
         }
     }
@@ -51,7 +51,7 @@ public final class a extends Binder implements j, IInterface {
     public void j0(Status status, boolean z10) {
         switch (this.a) {
             case 1:
-                g5.a(status, Boolean.valueOf(z10), this.b);
+                h5.a(status, Boolean.valueOf(z10), this.b);
                 break;
         }
     }

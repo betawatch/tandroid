@@ -1,22 +1,15 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+import android.view.View;
+
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class ps0 extends org.telegram.ui.Cells.ba {
-    public final /* synthetic */ int v0 = 0;
+public final class ps0 extends ru0 {
+    public final /* synthetic */ PhotoViewer t;
 
-    public /* synthetic */ ps0(ai.wa waVar, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(waVar, d6Var);
-    }
-
-    @Override // org.telegram.ui.Cells.ea
-    public final int p() {
-        switch (this.v0) {
-        }
-        return 0;
-    }
-
-    public ps0(ai.d dVar) {
-        super(null, dVar);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ps0(PhotoViewer photoViewer, View view) {
+        super(photoViewer, view);
+        this.t = photoViewer;
     }
 }

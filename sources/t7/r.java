@@ -2,9 +2,9 @@ package t7;
 
 import android.content.Context;
 import java.util.ArrayList;
-import v7.v8;
 import v7.w8;
-import v7.y8;
+import v7.x8;
+import v7.z8;
 import w7.ia;
 import w7.ka;
 import w7.la;
@@ -15,7 +15,7 @@ import z7.sf;
 import z7.uf;
 import z7.wf;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class r extends b2.g {
     public final /* synthetic */ int b;
@@ -36,15 +36,15 @@ public final class r extends b2.g {
                 ((o) obj).getClass();
                 qb.b bVar = new qb.b(22);
                 j5.a aVar = j5.a.e;
-                l5.t.b(b10);
-                l5.t.a().c(aVar);
+                l5.s.b(b10);
+                l5.s.a().c(aVar);
                 j5.a.d.contains(new i5.c("json"));
                 arrayList.add(bVar);
                 return new q(c10.b(), (qb.k) c10.a(qb.k.class));
             case 1:
-                v8 v8Var = (v8) obj;
+                w8 w8Var = (w8) obj;
                 qb.g c11 = qb.g.c();
-                return new y8(c11.b(), (qb.k) c11.a(qb.k.class), new w8(qb.g.c().b(), v8Var), v8Var.a);
+                return new z8(c11.b(), (qb.k) c11.a(qb.k.class), new x8(qb.g.c().b(), w8Var), w8Var.a);
             case 2:
                 qb.g c12 = qb.g.c();
                 return new la(c12.b(), (qb.k) c12.a(qb.k.class), new ka(qb.g.c().b(), (ia) obj));

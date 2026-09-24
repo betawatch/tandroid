@@ -5,26 +5,22 @@ import java.io.IOException;
 import u2.t;
 import y2.p;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class d implements y2.h {
     public final /* synthetic */ g a;
 
-    public /* synthetic */ d(g gVar) {
-        this.a = gVar;
-    }
-
     @Override // y2.h
-    public void V(y2.j jVar, long j3, long j10, boolean z10) {
+    public void E(y2.j jVar, long j3, long j10, boolean z10) {
         this.a.w((p) jVar, j10);
     }
 
     public void a() {
         long j3;
         g gVar = this.a;
-        synchronized (z2.b.b) {
+        synchronized (z2.c.b) {
             try {
-                j3 = z2.b.c ? z2.b.d : -9223372036854775807L;
+                j3 = z2.c.c ? z2.c.d : -9223372036854775807L;
             } catch (Throwable th2) {
                 throw th2;
             }
@@ -34,7 +30,7 @@ public final class d implements y2.h {
     }
 
     @Override // y2.h
-    public k4.d n(y2.j jVar, long j3, long j10, IOException iOException, int i10) {
+    public k4.d m(y2.j jVar, long j3, long j10, IOException iOException, int i10) {
         p pVar = (p) jVar;
         g gVar = this.a;
         a5.a aVar = gVar.q;
@@ -47,7 +43,7 @@ public final class d implements y2.h {
     }
 
     @Override // y2.h
-    public void q(y2.j jVar, long j3, long j10) {
+    public void o(y2.j jVar, long j3, long j10) {
         p pVar = (p) jVar;
         g gVar = this.a;
         long j11 = pVar.a;
@@ -60,6 +56,6 @@ public final class d implements y2.h {
     }
 
     @Override // y2.h
-    public /* synthetic */ void o(y2.j jVar, long j3, long j10, int i10) {
+    public /* synthetic */ void n(y2.j jVar, long j3, long j10, int i10) {
     }
 }

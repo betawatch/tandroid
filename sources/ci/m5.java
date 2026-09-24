@@ -12,13 +12,13 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.o70;
-import org.telegram.ui.Components.ug;
+import org.telegram.ui.Components.vg;
 import org.telegram.ui.Components.wi;
-import org.telegram.ui.wi0;
-import org.telegram.ui.xn;
+import org.telegram.ui.Components.y70;
+import org.telegram.ui.vi0;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m5 implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -36,10 +36,10 @@ public final /* synthetic */ class m5 implements View.OnLongClickListener {
                 q6 q6Var = (q6) this.b;
                 int i10 = q6Var.F1;
                 if (q6Var.I1 != null) {
-                    pg.t0 e = pg.t0.e(i10);
+                    pg.u0 e = pg.u0.e(i10);
                     e.k = !e.k;
                     e.a.edit().putBoolean("fill_shapes", e.k).apply();
-                    boolean z10 = pg.t0.e(i10).k;
+                    boolean z10 = pg.u0.e(i10).k;
                     for (int i11 = 0; i11 < q6Var.I1.getItemsCount(); i11++) {
                         View childAt = q6Var.I1.L.getChildAt(i11);
                         if (childAt instanceof n6) {
@@ -58,7 +58,7 @@ public final /* synthetic */ class m5 implements View.OnLongClickListener {
                     lcVar.p();
                     lcVar.E0.setSelected(true);
                     lcVar.s.e(0.85f, 240L, null);
-                    o70 F = o70.F(lcVar.r, lcVar.a, lcVar.E0);
+                    y70 F = y70.F(lcVar.r, lcVar.a, lcVar.E0);
                     f8 f8Var = new f8(activity, 1);
                     f8Var.d(lcVar.s.o);
                     f8Var.h = new ia(lcVar, 21);
@@ -97,18 +97,18 @@ public final /* synthetic */ class m5 implements View.OnLongClickListener {
                         if (x3Var.M3()) {
                             ArrayList<TL_iv.PageBlock> Z2 = x3Var.Z2();
                             if (!Z2.isEmpty()) {
-                                org.telegram.ui.ActionBar.n2 n2Var = wiVar.f0;
-                                xn xnVar = n2Var instanceof xn ? (xn) n2Var : null;
-                                wi0 wi0Var = rVar.O;
-                                if (wi0Var != null) {
-                                    wi0Var.h(false);
+                                org.telegram.ui.ActionBar.m2 m2Var = wiVar.f0;
+                                wn wnVar = m2Var instanceof wn ? (wn) m2Var : null;
+                                vi0 vi0Var = rVar.O;
+                                if (vi0Var != null) {
+                                    vi0Var.h(false);
                                     rVar.O = null;
                                 }
-                                wi0 wi0Var2 = new wi0(rVar.getContext(), d6Var);
-                                rVar.O = wi0Var2;
-                                wi0Var2.setOnDismissListener(new ai.f5(rVar, 4));
+                                vi0 vi0Var2 = new vi0(rVar.getContext(), d6Var);
+                                rVar.O = vi0Var2;
+                                vi0Var2.setOnDismissListener(new ai.f5(rVar, 4));
                                 long n12 = wiVar.n1();
-                                MessageObject messageObject = xnVar != null ? xnVar.n5 : null;
+                                MessageObject messageObject = wnVar != null ? wnVar.n5 : null;
                                 TLRPC.TL_message tL_message = new TLRPC.TL_message();
                                 tL_message.id = 0;
                                 tL_message.out = true;
@@ -134,21 +134,21 @@ public final /* synthetic */ class m5 implements View.OnLongClickListener {
                                 messageObject2.isOutOwnerCached = Boolean.TRUE;
                                 messageObject2.generateLayout(null);
                                 messageObject2.notime = true;
-                                rVar.O.q(org.telegram.messenger.z0.k(messageObject2));
-                                ug sendButton = c4Var.getSendButton();
+                                rVar.O.q(org.telegram.messenger.f0.k(messageObject2));
+                                vg sendButton = c4Var.getSendButton();
                                 sendButton.setScaleX(1.0f);
                                 sendButton.setScaleY(1.0f);
-                                ug r10 = rVar.O.r(sendButton, true, new ai.v0(rVar, 27));
+                                vg r10 = rVar.O.r(sendButton, true, new ai.v0(rVar, 27));
                                 if (r10 != null) {
                                     r10.setBackground(new ii.d2(org.telegram.ui.ActionBar.h6.b0(AndroidUtilities.dp(22.0f), org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Oh, d6Var))));
-                                    wi0 wi0Var3 = rVar.O;
+                                    vi0 vi0Var3 = rVar.O;
                                     int dp = AndroidUtilities.dp(44.0f);
-                                    wi0Var3.m0 = true;
-                                    wi0Var3.Y = dp;
+                                    vi0Var3.m0 = true;
+                                    vi0Var3.Y = dp;
                                 }
-                                o70 F2 = o70.F(rVar, d6Var, sendButton);
-                                boolean z11 = xnVar != null && UserObject.isUserSelf(xnVar.i());
-                                if (xnVar != null && xnVar.D6()) {
+                                y70 F2 = y70.F(rVar, d6Var, sendButton);
+                                boolean z11 = wnVar != null && UserObject.isUserSelf(wnVar.i());
+                                if (wnVar != null && wnVar.D6()) {
                                     F2.c(R.drawable.msg_calendar2, LocaleController.getString(z11 ? R.string.SetReminder : R.string.ScheduleMessage), new ai.j(rVar, n12, 10), false);
                                     if (!z11 && n12 > 0) {
                                         F2.c(R.drawable.msg_online, LocaleController.getString(R.string.SendWhenOnline), new ii.d(rVar, 0), false);
@@ -181,18 +181,18 @@ public final /* synthetic */ class m5 implements View.OnLongClickListener {
                 ((lg.f) this.b).c.callOnClick();
                 break;
             default:
-                qg.p0 p0Var = (qg.p0) this.b;
-                int i13 = p0Var.P1;
-                if (p0Var.S1 != null) {
-                    pg.t0 e7 = pg.t0.e(i13);
+                qg.n0 n0Var = (qg.n0) this.b;
+                int i13 = n0Var.P1;
+                if (n0Var.S1 != null) {
+                    pg.u0 e7 = pg.u0.e(i13);
                     e7.k = !e7.k;
                     e7.a.edit().putBoolean("fill_shapes", e7.k).apply();
-                    boolean z12 = pg.t0.e(i13).k;
-                    for (int i14 = 0; i14 < p0Var.S1.getItemsCount(); i14++) {
-                        View childAt2 = p0Var.S1.L.getChildAt(i14);
-                        if (childAt2 instanceof qg.o0) {
+                    boolean z12 = pg.u0.e(i13).k;
+                    for (int i14 = 0; i14 < n0Var.S1.getItemsCount(); i14++) {
+                        View childAt2 = n0Var.S1.L.getChildAt(i14);
+                        if (childAt2 instanceof qg.m0) {
                             pg.l lVar2 = (pg.l) pg.l.b.get(i14);
-                            ((qg.o0) childAt2).a(z12 ? lVar2.m() : lVar2.e(), z12, true);
+                            ((qg.m0) childAt2).a(z12 ? lVar2.m() : lVar2.e(), z12, true);
                         }
                     }
                     break;

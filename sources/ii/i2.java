@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class i2 {
     public final a4.m a;
@@ -217,7 +217,7 @@ public final class i2 {
         }
         x3Var.h3.onContentChanged();
         this.f = false;
-        ((x3) mVar.b).h3.F();
+        ((x3) mVar.b).h3.G();
         return;
         pageBlock = new TL_iv.pageBlockParagraph();
         pageBlock.text = new TL_iv.textEmpty();
@@ -357,7 +357,7 @@ public final class i2 {
         }
         this.c.clear();
         this.d = b10;
-        ((x3) this.a.b).h3.F();
+        ((x3) this.a.b).h3.G();
     }
 
     public final void d() {
@@ -382,7 +382,7 @@ public final class i2 {
         i2.h0 h0Var = this.g;
         AndroidUtilities.cancelRunOnUIThread(h0Var);
         AndroidUtilities.runOnUIThread(h0Var, 800L);
-        ((x3) this.a.b).h3.F();
+        ((x3) this.a.b).h3.G();
     }
 
     public final void h() {
@@ -412,7 +412,7 @@ public final class i2 {
         this.c.clear();
         this.d = b();
         this.e = false;
-        ((x3) this.a.b).h3.F();
+        ((x3) this.a.b).h3.G();
     }
 
     public final void k() {

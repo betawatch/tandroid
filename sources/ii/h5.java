@@ -9,13 +9,13 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Cells.ca;
+import org.telegram.ui.Cells.ba;
+import org.telegram.ui.Cells.p9;
 import org.telegram.ui.Cells.q9;
-import org.telegram.ui.Cells.r9;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public final class h5 extends a0 implements org.telegram.ui.ActionBar.y5, q9 {
+public final class h5 extends a0 implements org.telegram.ui.ActionBar.x5, p9 {
     public final org.telegram.ui.ActionBar.d6 n;
     public final i1 r;
     public f5 s;
@@ -38,24 +38,24 @@ public final class h5 extends a0 implements org.telegram.ui.ActionBar.y5, q9 {
         i1Var.setTextColorKey(org.telegram.ui.ActionBar.h6.Oh);
         i1Var.setAccentHint(true);
         i1Var.setHint(LocaleController.getString(R.string.ArticleHintAuthor));
-        i1Var.setListener(new a4.m(this, 22));
+        i1Var.setListener(new a4.m(this, 23));
         i1Var.setDelegate(new ei.d5(this, 19));
-        addView(i1Var, w7.x5.e(-1, -2, 51));
+        addView(i1Var, w7.y5.e(-1, -2, 51));
         e();
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         f5 f5Var = this.s;
-        r9 textSelectionHelper = f5Var != null ? ((c3) f5Var).a.getTextSelectionHelper() : null;
+        q9 textSelectionHelper = f5Var != null ? ((c3) f5Var).a.getTextSelectionHelper() : null;
         if (textSelectionHelper != null) {
             ArrayList arrayList = this.v;
             arrayList.clear();
             fillTextLayoutBlocks(arrayList);
             for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                ca caVar = (ca) arrayList.get(i10);
+                ba baVar = (ba) arrayList.get(i10);
                 canvas.save();
-                canvas.translate(caVar.getX(), caVar.getY());
+                canvas.translate(baVar.getX(), baVar.getY());
                 textSelectionHelper.a0(canvas, this, i10);
                 canvas.restore();
             }
@@ -63,7 +63,7 @@ public final class h5 extends a0 implements org.telegram.ui.ActionBar.y5, q9 {
         super.dispatchDraw(canvas);
     }
 
-    @Override // org.telegram.ui.ActionBar.y5
+    @Override // org.telegram.ui.ActionBar.x5
     public final void e() {
         i1 i1Var = this.r;
         i1Var.t();
@@ -73,7 +73,7 @@ public final class h5 extends a0 implements org.telegram.ui.ActionBar.y5, q9 {
         i1Var.setHintTextColor(org.telegram.ui.ActionBar.h6.l1(0.5f, org.telegram.ui.ActionBar.h6.v0(i10, d6Var)));
     }
 
-    @Override // org.telegram.ui.Cells.q9
+    @Override // org.telegram.ui.Cells.p9
     public final void fillTextLayoutBlocks(ArrayList arrayList) {
         i1 i1Var = this.r;
         Layout layout = i1Var.getLayout();

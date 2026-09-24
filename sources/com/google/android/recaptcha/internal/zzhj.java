@@ -5,9 +5,9 @@ import id.c;
 import jd.a;
 import org.telegram.tgnet.TLObject;
 import rd.p;
-import v7.t7;
+import v7.u7;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class zzhj {
     public static final Object zza(zzhh zzhhVar, p pVar, c cVar) {
@@ -33,7 +33,7 @@ public final class zzhj {
                 i10 = zzhiVar.zzb;
                 i iVar = i.a;
                 if (i10 != 0) {
-                    t7.b(obj);
+                    u7.b(obj);
                     zzhiVar.zzb = 1;
                     if (zzhfVar.zza(zzhkVar, zzhiVar) == obj2) {
                         return obj2;
@@ -42,7 +42,7 @@ public final class zzhj {
                     if (i10 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    t7.b(obj);
+                    u7.b(obj);
                 }
                 return iVar;
             }

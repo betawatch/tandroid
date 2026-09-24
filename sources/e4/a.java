@@ -13,12 +13,12 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.telegram.tgnet.TLObject;
-import w.c;
+import v7.j;
 import z3.d;
 import z3.l;
 import z3.m;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class a implements m {
     public static final Pattern d = Pattern.compile("\\s*((?:(\\d+):)?(\\d+):(\\d+)(?:,(\\d{3}))?)\\s*-->\\s*((?:(\\d+):)?(\\d+):(\\d+)(?:,(\\d{3}))?)\\s*");
@@ -214,7 +214,7 @@ public final class a implements m {
     }
 
     @Override // z3.m
-    public final void B(byte[] bArr, int i10, int i11, l lVar, h hVar) {
+    public final void C(byte[] bArr, int i10, int i11, l lVar, h hVar) {
         String k10;
         String str;
         a aVar = this;
@@ -318,7 +318,7 @@ public final class a implements m {
 
     @Override // z3.m
     public final /* synthetic */ d r(int i10, int i11, byte[] bArr) {
-        return c.a(this, bArr, i11);
+        return j.a(this, bArr, i11);
     }
 
     @Override // z3.m

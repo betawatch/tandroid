@@ -1,44 +1,44 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.widget.ImageView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vo0 implements Utilities.Callback {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ zf.b b;
-    public final /* synthetic */ TL_stars.TL_starGiftUnique c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+public final class vo0 extends zo0 {
+    public int G;
+    public final /* synthetic */ tp0 H;
 
-    public /* synthetic */ vo0(up0 up0Var, zf.b bVar, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, so0 so0Var) {
-        this.e = up0Var;
-        this.b = bVar;
-        this.c = tL_starGiftUnique;
-        this.d = j3;
-        this.f = so0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public vo0(tp0 tp0Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, d6Var);
+        this.H = tp0Var;
+        this.G = 0;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        switch (this.a) {
-            case 0:
-                up0.V((up0) this.e, this.b, this.c, this.d, (so0) this.f, (TLRPC.TL_payments_paymentFormStarGift) obj);
-                break;
-            default:
-                xh.h4.U((xh.h4) this.e, (org.telegram.ui.ActionBar.b2) this.f, this.b, this.c, this.d, (TLRPC.TL_payments_paymentFormStarGift) obj);
-                break;
+    @Override // org.telegram.ui.zo0
+    public final void a() {
+        tp0 tp0Var = this.H;
+        if (tp0Var.getParentActivity() != null) {
+            AndroidUtilities.setLightStatusBar(tp0Var.getParentActivity(), tp0Var.isLightStatusBar());
         }
-    }
-
-    public /* synthetic */ vo0(xh.h4 h4Var, org.telegram.ui.ActionBar.b2 b2Var, zf.b bVar, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3) {
-        this.e = h4Var;
-        this.f = b2Var;
-        this.b = bVar;
-        this.c = tL_starGiftUnique;
-        this.d = j3;
+        int actionBarButtonColor = getActionBarButtonColor();
+        if (this.G != actionBarButtonColor) {
+            ImageView imageView = tp0Var.J;
+            if (imageView != null) {
+                this.G = actionBarButtonColor;
+                imageView.setColorFilter(new PorterDuffColorFilter(actionBarButtonColor, PorterDuff.Mode.SRC_IN));
+            }
+            ImageView imageView2 = tp0Var.K;
+            if (imageView2 != null) {
+                this.G = actionBarButtonColor;
+                imageView2.setColorFilter(new PorterDuffColorFilter(actionBarButtonColor, PorterDuff.Mode.SRC_IN));
+            }
+        }
+        tp0Var.G0();
+        tp0Var.A0();
     }
 }

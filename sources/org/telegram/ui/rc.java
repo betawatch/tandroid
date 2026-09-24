@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class rc extends FrameLayout {
     public final org.telegram.ui.ActionBar.d6 a;
@@ -32,7 +32,7 @@ public final class rc extends FrameLayout {
         this.c = c0Var;
         c0Var.j1(0);
         wb1Var.setLayoutManager(c0Var);
-        addView(wb1Var, w7.x5.c(-1.0f, -1));
+        addView(wb1Var, w7.y5.c(-1.0f, -1));
     }
 
     public final void a(int i10, boolean z10) {

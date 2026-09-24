@@ -11,7 +11,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class q4 extends FrameLayout {
     public final RadioButton a;
@@ -33,7 +33,7 @@ public final class q4 extends FrameLayout {
         radioButton.setSize(AndroidUtilities.dp(20.0f));
         radioButton.b(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.D5, false), org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.E5, false));
         boolean z10 = LocaleController.isRTL;
-        addView(radioButton, w7.x5.d(22, 22.0f, (z10 ? 5 : 3) | 16, z10 ? 0 : 20, 0.0f, z10 ? 20 : 0, 0.0f));
+        addView(radioButton, w7.y5.d(22, 22.0f, (z10 ? 5 : 3) | 16, z10 ? 0 : 20, 0.0f, z10 ? 20 : 0, 0.0f));
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.j5, false));
@@ -43,7 +43,7 @@ public final class q4 extends FrameLayout {
         textView.setEllipsize(truncateAt);
         textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
         boolean z11 = LocaleController.isRTL;
-        addView(textView, w7.x5.d(-1, -1.0f, (z11 ? 5 : 3) | 48, z11 ? 23 : 62, 0.0f, z11 ? 62 : 23, 17.0f));
+        addView(textView, w7.y5.d(-1, -1.0f, (z11 ? 5 : 3) | 48, z11 ? 23 : 62, 0.0f, z11 ? 62 : 23, 17.0f));
         TextView textView2 = new TextView(context);
         this.c = textView2;
         textView2.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.r5, false));
@@ -52,7 +52,7 @@ public final class q4 extends FrameLayout {
         textView2.setEllipsize(truncateAt);
         textView2.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
         boolean z12 = LocaleController.isRTL;
-        addView(textView2, w7.x5.d(-1, -1.0f, (z12 ? 5 : 3) | 48, z12 ? 23 : 62, 20.0f, z12 ? 62 : 23, 0.0f));
+        addView(textView2, w7.y5.d(-1, -1.0f, (z12 ? 5 : 3) | 48, z12 ? 23 : 62, 20.0f, z12 ? 62 : 23, 0.0f));
     }
 
     public LocaleController.LocaleInfo getCurrentLocale() {

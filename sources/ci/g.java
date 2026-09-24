@@ -14,14 +14,15 @@ import android.view.View;
 import android.view.WindowInsets;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.aw0;
 import org.telegram.ui.Components.cu;
 import org.telegram.ui.Components.gu;
 import org.telegram.ui.Components.ku;
 import org.telegram.ui.Components.lz;
-import org.telegram.ui.Components.pv0;
+import org.telegram.ui.Components.md;
 import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class g extends ku {
     public org.telegram.ui.Components.na V;
@@ -31,8 +32,8 @@ public final class g extends ku {
     public final /* synthetic */ m c0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g(m mVar, Context context, pv0 pv0Var, int i10, ai.d dVar, org.telegram.ui.ActionBar.d6 d6Var, org.telegram.ui.Components.ja jaVar) {
-        super(context, pv0Var, null, i10, true, dVar);
+    public g(m mVar, Context context, aw0 aw0Var, int i10, ai.d dVar, org.telegram.ui.ActionBar.d6 d6Var, org.telegram.ui.Components.ja jaVar) {
+        super(context, aw0Var, null, i10, true, dVar);
         this.c0 = mVar;
         this.a0 = d6Var;
         this.b0 = jaVar;
@@ -62,7 +63,7 @@ public final class g extends ku {
                 emojiView.w0 = false;
                 emojiView.w2 = false;
                 emojiView.setShouldDrawBackground(false);
-                if (mVar instanceof org.telegram.ui.Components.ld) {
+                if (mVar instanceof md) {
                     emojiView.setPadding(0, 0, 0, AndroidUtilities.navigationBarHeight);
                     emojiView.c = 3;
                 }

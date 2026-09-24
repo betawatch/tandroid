@@ -1,13 +1,40 @@
 package qg;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+import android.view.ViewGroup;
+import org.telegram.messenger.LocaleController;
+import org.telegram.ui.Components.gl0;
+import org.telegram.ui.Components.vl0;
+
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public interface t1 {
-    void a();
+public final class t1 extends vl0 {
+    @Override // org.telegram.ui.Components.vl0
+    public final boolean D(s4.c1 c1Var) {
+        return true;
+    }
 
-    void b(pg.m mVar);
+    @Override // s4.h0
+    public final int h() {
+        return pg.k0.c().size();
+    }
 
-    pg.t0 v();
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
+        o1 o1Var = (o1) c1Var.a;
+        pg.k0 k0Var = (pg.k0) pg.k0.c().get(i10);
+        o1Var.getClass();
+        o1Var.setTypeface(k0Var.d());
+        String str = k0Var.c;
+        if (str == null) {
+            str = LocaleController.getString(k0Var.b);
+        }
+        o1Var.setText(str);
+    }
 
-    void y();
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        o1 o1Var = new o1(viewGroup.getContext());
+        o1Var.setLayoutParams(new s4.p0(-1, -2));
+        return new gl0(o1Var);
+    }
 }

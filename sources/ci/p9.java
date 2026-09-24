@@ -7,9 +7,9 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.vw0;
+import org.telegram.ui.Components.gx0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p9 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -30,9 +30,9 @@ public final /* synthetic */ class p9 implements Utilities.Callback {
             case 0:
                 y9 y9Var = (y9) this.c;
                 TLRPC.TL_channels_channelParticipants tL_channels_channelParticipants = (TLRPC.TL_channels_channelParticipants) obj;
-                org.telegram.ui.ActionBar.b2 b2Var = y9Var.G;
-                if (b2Var != null) {
-                    b2Var.c(350L);
+                org.telegram.ui.ActionBar.a2 a2Var = y9Var.G;
+                if (a2Var != null) {
+                    a2Var.c(350L);
                     y9Var.G = null;
                 }
                 if (tL_channels_channelParticipants != null && !tL_channels_channelParticipants.participants.isEmpty()) {
@@ -63,10 +63,10 @@ public final /* synthetic */ class p9 implements Utilities.Callback {
                 }
                 break;
             default:
-                vw0 vw0Var = (vw0) this.c;
+                gx0 gx0Var = (gx0) this.c;
                 TLRPC.TL_messages_emojiGroups tL_messages_emojiGroups = (TLRPC.TL_messages_emojiGroups) obj;
                 if (tL_messages_emojiGroups != null) {
-                    NotificationCenter.getInstance(UserConfig.selectedAccount).doOnIdle(new a3.h0(vw0Var, tL_messages_emojiGroups, this.b, 23));
+                    NotificationCenter.getInstance(UserConfig.selectedAccount).doOnIdle(new a3.h0(gx0Var, tL_messages_emojiGroups, this.b, 23));
                     break;
                 }
                 break;

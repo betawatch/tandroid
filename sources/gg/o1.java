@@ -16,16 +16,16 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Cells.r2;
-import org.telegram.ui.Components.ll0;
+import org.telegram.ui.Cells.s2;
 import org.telegram.ui.Components.u00;
-import org.telegram.ui.xn;
+import org.telegram.ui.Components.vl0;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class o1 extends ll0 implements NotificationCenter.NotificationCenterDelegate {
+public final class o1 extends vl0 implements NotificationCenter.NotificationCenterDelegate {
     public final Context c;
-    public final xn f;
+    public final wn f;
     public int h;
     public int n;
     public final d6 s;
@@ -38,15 +38,15 @@ public final class o1 extends ll0 implements NotificationCenter.NotificationCent
     public final int r = UserConfig.selectedAccount;
     public final rc E = new rc(this, 16);
 
-    public o1(Context context, xn xnVar, d6 d6Var, int i10, boolean z10) {
+    public o1(Context context, wn wnVar, d6 d6Var, int i10, boolean z10) {
         this.s = d6Var;
         this.c = context;
-        this.f = xnVar;
+        this.f = wnVar;
         this.v = i10;
         this.w = z10;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.vl0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         return i10 == 0 || i10 == 2;
@@ -136,13 +136,13 @@ public final class o1 extends ll0 implements NotificationCenter.NotificationCent
             }
             return;
         }
-        r2 r2Var = (r2) view;
-        r2Var.s2 = true;
+        s2 s2Var = (s2) view;
+        s2Var.s2 = true;
         MessageObject messageObject = (MessageObject) E(i10);
         long dialogId = messageObject.getDialogId();
         int i14 = messageObject.messageOwner.date;
         if (this.w) {
-            r2Var.r0 = true;
+            s2Var.r0 = true;
             long savedDialogId = messageObject.getSavedDialogId();
             TLRPC.Message message = messageObject.messageOwner;
             TLRPC.MessageFwdHeader messageFwdHeader = message.fwd_from;
@@ -164,13 +164,13 @@ public final class o1 extends ll0 implements NotificationCenter.NotificationCent
             i11 = i14;
             z10 = true;
         }
-        r2Var.W(dialogId, messageObject, i11, z10, false);
-        r2Var.setDialogCellDelegate(new l1(this));
+        s2Var.W(dialogId, messageObject, i11, z10, false);
+        s2Var.setDialogCellDelegate(new l1(this));
     }
 
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        View r2Var;
+        View s2Var;
         View view;
         if (i10 != 0) {
             d6 d6Var = this.s;
@@ -181,14 +181,14 @@ public final class o1 extends ll0 implements NotificationCenter.NotificationCent
                 u00Var.setViewType(7);
                 view = u00Var;
             } else if (i10 != 2) {
-                r2Var = null;
+                s2Var = null;
             } else {
                 view = new n1(context, d6Var);
             }
-            r2Var = view;
+            s2Var = view;
         } else {
-            r2Var = new r2(null, this.c, true, this.r, this.s);
+            s2Var = new s2(null, this.c, true, this.r, this.s);
         }
-        return com.google.android.gms.internal.vision.e2.k(r2Var, r2Var, -1, -2);
+        return com.google.android.gms.internal.vision.e2.k(s2Var, s2Var, -1, -2);
     }
 }

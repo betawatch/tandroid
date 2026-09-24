@@ -1,8 +1,8 @@
 package x4;
 
-import v7.g8;
+import v7.h8;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public abstract class l extends k {
     public i0.d[] a;
@@ -23,8 +23,8 @@ public abstract class l extends k {
     }
 
     public void setPathData(i0.d[] dVarArr) {
-        if (!g8.a(this.a, dVarArr)) {
-            this.a = g8.e(dVarArr);
+        if (!h8.a(this.a, dVarArr)) {
+            this.a = h8.e(dVarArr);
             return;
         }
         i0.d[] dVarArr2 = this.a;
@@ -45,6 +45,6 @@ public abstract class l extends k {
         this.a = null;
         this.c = 0;
         this.b = lVar.b;
-        this.a = g8.e(lVar.a);
+        this.a = h8.e(lVar.a);
     }
 }

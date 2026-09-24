@@ -10,13 +10,13 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class m5 {
     public HashMap a;
     public HashMap b;
     public HashSet c;
-    public og d;
+    public pg d;
     public final int e;
 
     public m5(int i10) {
@@ -67,9 +67,9 @@ public final class m5 {
                     if (this.d != null) {
                         return;
                     }
-                    og ogVar = new og(this, 5);
-                    this.d = ogVar;
-                    AndroidUtilities.runOnUIThread(ogVar);
+                    pg pgVar = new pg(this, 5);
+                    this.d = pgVar;
+                    AndroidUtilities.runOnUIThread(pgVar);
                 }
             } catch (Throwable th2) {
                 throw th2;

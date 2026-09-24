@@ -1,25 +1,46 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
+import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class oq0 extends g.p {
-    public final /* synthetic */ uq0 c;
+public final class oq0 implements org.telegram.ui.Components.xl0 {
+    public final /* synthetic */ tq0 a;
 
-    public oq0(uq0 uq0Var) {
-        this.c = uq0Var;
+    public oq0(tq0 tq0Var) {
+        this.a = tq0Var;
     }
 
-    @Override // g.p
-    public final int i(int i10) {
-        uq0 uq0Var = this.c;
-        if (uq0Var.L.j(i10) == 1 || uq0Var.Y || (uq0Var.J == null && TextUtils.isEmpty(uq0Var.v))) {
-            return uq0Var.M.J;
+    @Override // org.telegram.ui.Components.xl0
+    public final void a(boolean z10) {
+        org.telegram.ui.ActionBar.b5 b5Var;
+        tq0 tq0Var = this.a;
+        tq0Var.W = z10 ? 1 : 0;
+        if (z10) {
+            b5Var = ((org.telegram.ui.ActionBar.m2) tq0Var).parentLayout;
+            b5Var.getView().requestDisallowInterceptTouchEvent(true);
         }
-        int i11 = uq0Var.R;
-        int i12 = uq0Var.g0;
-        return i11 + (i10 % i12 != i12 - 1 ? AndroidUtilities.dp(2.0f) : 0);
+        tq0Var.K.d1(true);
+    }
+
+    @Override // org.telegram.ui.Components.xl0
+    public final boolean b(int i10) {
+        return this.a.L.j(i10) == 0;
+    }
+
+    @Override // org.telegram.ui.Components.xl0
+    public final void c(View view, boolean z10) {
+        if (z10 == this.a.X && (view instanceof org.telegram.ui.Cells.t5)) {
+            org.telegram.ui.Cells.t5 t5Var = (org.telegram.ui.Cells.t5) view;
+            t5Var.w.a(t5Var);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.xl0
+    public final boolean d(int i10) {
+        tq0 tq0Var = this.a;
+        MediaController.AlbumEntry albumEntry = tq0Var.J;
+        return tq0Var.b.containsKey(albumEntry != null ? Integer.valueOf(albumEntry.photos.get(i10).imageId) : ((MediaController.SearchImage) tq0Var.f.get(i10)).id);
     }
 }

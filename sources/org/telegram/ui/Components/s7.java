@@ -6,13 +6,13 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class s7 extends bj0 {
+public final class s7 extends lj0 {
     public float r;
     public float s;
     public boolean v;
-    public final org.telegram.ui.Cells.l7 w;
+    public final org.telegram.ui.Cells.t6 w;
     public final /* synthetic */ float x;
     public final /* synthetic */ j8 y;
 
@@ -21,7 +21,7 @@ public final class s7 extends bj0 {
         super(context);
         this.y = j8Var;
         this.x = f7;
-        this.w = new org.telegram.ui.Cells.l7(this, 3);
+        this.w = new org.telegram.ui.Cells.t6(this, 4);
     }
 
     @Override // android.view.View
@@ -47,12 +47,12 @@ public final class s7 extends bj0 {
         float rawX = motionEvent.getRawX();
         float rawY = motionEvent.getRawY();
         int action = motionEvent.getAction();
-        org.telegram.ui.Cells.l7 l7Var = this.w;
+        org.telegram.ui.Cells.t6 t6Var = this.w;
         if (action == 0) {
             this.v = false;
             this.r = rawX;
             this.s = rawY;
-            AndroidUtilities.runOnUIThread(l7Var, 300L);
+            AndroidUtilities.runOnUIThread(t6Var, 300L);
             if (getBackground() != null) {
                 getBackground().setHotspot(this.r, this.s);
             }
@@ -66,7 +66,7 @@ public final class s7 extends bj0 {
                 float f11 = (f10 * f10) + (f7 * f7);
                 float f12 = this.x;
                 if (f11 > f12 * f12 && !this.v) {
-                    AndroidUtilities.cancelRunOnUIThread(l7Var);
+                    AndroidUtilities.cancelRunOnUIThread(t6Var);
                     setPressed(false);
                 }
             }
@@ -77,7 +77,7 @@ public final class s7 extends bj0 {
             s7Var.setProgress(0.0f);
             s7Var.d();
         }
-        AndroidUtilities.cancelRunOnUIThread(l7Var);
+        AndroidUtilities.cancelRunOnUIThread(t6Var);
         if (j8Var.J0 > 0) {
             MediaController.getInstance().setPlaybackSpeed(true, 1.0f);
             if (MediaController.getInstance().isMessagePaused()) {

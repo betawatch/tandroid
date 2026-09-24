@@ -21,17 +21,17 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BillingController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
+import org.telegram.messenger.f0;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.z;
 import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.qq;
-import org.telegram.ui.Components.y5;
 import org.telegram.ui.je;
-import w7.x5;
+import w7.y5;
 import yh.w7;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public class e extends FrameLayout {
     public boolean E;
@@ -44,7 +44,7 @@ public class e extends FrameLayout {
     public DecimalFormat L;
     public boolean a;
     public final LinearLayout b;
-    public ni.f[] c;
+    public oi.f[] c;
     public final TextView d;
     public final TextView e;
     public final ImageView f;
@@ -87,11 +87,11 @@ public class e extends FrameLayout {
         radialProgressView.setSize(AndroidUtilities.dp(12.0f));
         radialProgressView.setStrokeWidth(AndroidUtilities.dp(0.5f));
         radialProgressView.setVisibility(8);
-        addView(linearLayout, x5.d(-2, -2.0f, 0, 0.0f, 22.0f, 0.0f, 0.0f));
-        addView(textView, x5.d(-2, -2.0f, 8388611, 4.0f, 0.0f, 4.0f, 0.0f));
-        addView(textView2, x5.d(-2, -2.0f, 8388613, 4.0f, 0.0f, 4.0f, 0.0f));
-        addView(imageView, x5.d(18, 18.0f, 8388661, 0.0f, 2.0f, 0.0f, 0.0f));
-        addView(radialProgressView, x5.d(18, 18.0f, 8388661, 0.0f, 2.0f, 0.0f, 0.0f));
+        addView(linearLayout, y5.d(-2, -2.0f, 0, 0.0f, 22.0f, 0.0f, 0.0f));
+        addView(textView, y5.d(-2, -2.0f, 8388611, 4.0f, 0.0f, 4.0f, 0.0f));
+        addView(textView2, y5.d(-2, -2.0f, 8388613, 4.0f, 0.0f, 4.0f, 0.0f));
+        addView(imageView, y5.d(18, 18.0f, 8388661, 0.0f, 2.0f, 0.0f, 0.0f));
+        addView(radialProgressView, y5.d(18, 18.0f, 8388661, 0.0f, 2.0f, 0.0f, 0.0f));
         b();
     }
 
@@ -166,14 +166,14 @@ public class e extends FrameLayout {
         }
         int i20 = 0;
         while (i20 < length) {
-            ni.f fVar = this.c[i20];
+            oi.f fVar = this.c[i20];
             int i21 = i20 % 2;
             f fVar2 = (f) arrayList.get((i11 == i17 || i11 == i16) ? i20 / 2 : i20);
             boolean z13 = fVar2.n;
             jg.a aVar = fVar2.a;
             if (z13) {
                 LinearLayout linearLayout = (LinearLayout) fVar.d;
-                y5 y5Var = (y5) fVar.a;
+                org.telegram.ui.Components.y5 y5Var = (org.telegram.ui.Components.y5) fVar.a;
                 TextView textView2 = (TextView) fVar.c;
                 TextView textView3 = (TextView) fVar.b;
                 if (linearLayout.getMeasuredHeight() == 0) {
@@ -258,7 +258,7 @@ public class e extends FrameLayout {
                         i18 = 0;
                     }
                 } else if (i21 == 0) {
-                    charSequence = w7.X0(false, hg.c.k(j11, ' ', new StringBuilder("XTR ")), 0.7f, null);
+                    charSequence = w7.X0(false, f0.h(j11, ' ', new StringBuilder("XTR ")), 0.7f, null);
                 } else {
                     charSequence = "≈" + BillingController.getInstance().formatCurrency((long) (j11 / f7), "USD");
                 }
@@ -317,10 +317,10 @@ public class e extends FrameLayout {
     public void setSize(int i10) {
         LinearLayout linearLayout = this.b;
         linearLayout.removeAllViews();
-        this.c = new ni.f[i10];
+        this.c = new oi.f[i10];
         for (int i11 = 0; i11 < i10; i11++) {
-            ni.f[] fVarArr = this.c;
-            ni.f fVar = new ni.f();
+            oi.f[] fVarArr = this.c;
+            oi.f fVar = new oi.f();
             LinearLayout linearLayout2 = new LinearLayout(getContext());
             fVar.d = linearLayout2;
             linearLayout2.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(2.0f));
@@ -335,10 +335,10 @@ public class e extends FrameLayout {
             }
             TextView textView2 = new TextView(getContext());
             fVar.b = textView2;
-            linearLayout2.addView(textView2, x5.k(0.0f, 0.0f, 20.0f, 0.0f, -2, -2));
-            y5 y5Var = new y5(getContext());
+            linearLayout2.addView(textView2, y5.k(0.0f, 0.0f, 20.0f, 0.0f, -2, -2));
+            org.telegram.ui.Components.y5 y5Var = new org.telegram.ui.Components.y5(getContext());
             fVar.a = y5Var;
-            linearLayout2.addView(y5Var, x5.n(-1, -2));
+            linearLayout2.addView(y5Var, y5.n(-1, -2));
             textView2.setGravity(8388611);
             y5Var.setGravity(8388613);
             y5Var.setTypeface(AndroidUtilities.bold());

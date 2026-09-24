@@ -1,10 +1,8 @@
 package u2;
 
-import i2.q1;
-
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
-public interface d0 extends c1 {
+public interface d0 extends d1 {
     void g();
 
     long h(long j3);
@@ -15,9 +13,9 @@ public interface d0 extends c1 {
 
     long l();
 
-    long p(x2.r[] rVarArr, boolean[] zArr, a1[] a1VarArr, boolean[] zArr2, long j3);
+    long q(x2.r[] rVarArr, boolean[] zArr, b1[] b1VarArr, boolean[] zArr2, long j3);
 
-    n1 r();
+    p1 r();
 
-    long t(long j3, q1 q1Var);
+    long t(long j3, i2.q1 q1Var);
 }

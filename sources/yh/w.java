@@ -12,9 +12,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.tc0;
+import org.telegram.ui.Components.ed0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -59,24 +59,24 @@ public final /* synthetic */ class w implements View.OnClickListener {
                             org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Sh, false);
                             org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Oh, false);
                             org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Qh, false);
-                            org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(1, context, (org.telegram.ui.ActionBar.d6) null, false);
-                            f3Var.fixNavigationBar();
-                            f3Var.applyBottomPadding = false;
+                            org.telegram.ui.ActionBar.e3 e3Var = new org.telegram.ui.ActionBar.e3(1, context, (org.telegram.ui.ActionBar.d6) null, false);
+                            e3Var.fixNavigationBar();
+                            e3Var.applyBottomPadding = false;
                             LinearLayout linearLayout = new LinearLayout(context);
                             linearLayout.setOrientation(0);
                             linearLayout.setWeightSum(1.0f);
-                            tc0 tc0Var = new tc0(context, null);
-                            tc0Var.setAllItemsCount(6);
-                            tc0Var.setItemCount(Math.min(6, 8));
-                            tc0Var.setTextColor(w02);
-                            tc0Var.setGravity(17);
-                            tc0Var.setMinValue(0);
-                            tc0Var.setMaxValue(5);
-                            tc0Var.setValue(i12);
-                            linearLayout.addView(tc0Var, w7.x5.l(1.0f, 0, 432));
+                            ed0 ed0Var = new ed0(context, null);
+                            ed0Var.setAllItemsCount(6);
+                            ed0Var.setItemCount(Math.min(6, 8));
+                            ed0Var.setTextColor(w02);
+                            ed0Var.setGravity(17);
+                            ed0Var.setMinValue(0);
+                            ed0Var.setMaxValue(5);
+                            ed0Var.setValue(i12);
+                            linearLayout.addView(ed0Var, w7.y5.l(1.0f, 0, 432));
                             int i13 = 7;
-                            tc0Var.setFormatter(new org.telegram.ui.Components.s(strArr, i13));
-                            org.telegram.ui.Components.w4 w4Var = new org.telegram.ui.Components.w4(context, tc0Var);
+                            ed0Var.setFormatter(new org.telegram.ui.Components.s(strArr, i13));
+                            org.telegram.ui.Components.w4 w4Var = new org.telegram.ui.Components.w4(context, ed0Var);
                             w4Var.setOrientation(1);
                             FrameLayout frameLayout = new FrameLayout(context);
                             TextView textView = new TextView(context);
@@ -84,20 +84,20 @@ public final /* synthetic */ class w implements View.OnClickListener {
                             textView.setTextColor(w02);
                             textView.setTextSize(1, 20.0f);
                             textView.setTypeface(AndroidUtilities.bold());
-                            frameLayout.addView(textView, w7.x5.d(-2, -2.0f, 51, 0.0f, 12.0f, 0.0f, 0.0f));
+                            frameLayout.addView(textView, w7.y5.d(-2, -2.0f, 51, 0.0f, 12.0f, 0.0f, 0.0f));
                             textView.setOnTouchListener(new bi.d(10));
-                            w4Var.addView(frameLayout, w7.x5.t(-1, -2, 51, 22, 0, 0, 4));
-                            w4Var.addView(linearLayout, w7.x5.p(-1, -2, 1.0f, 0, 0, 12, 0, 12));
+                            w4Var.addView(frameLayout, w7.y5.t(-1, -2, 51, 22, 0, 0, 4));
+                            w4Var.addView(linearLayout, w7.y5.p(-1, -2, 1.0f, 0, 0, 12, 0, 12));
                             ci.d dVar = new ci.d(context, null, true);
                             dVar.g(LocaleController.getString(R.string.Select), false, true);
                             dVar.setOnClickListener(new org.telegram.ui.Components.k2(r3, 1));
-                            w4Var.addView(dVar, w7.x5.t(-1, 48, 0, 16, 12, 16, 12));
-                            f3Var.customView = w4Var;
-                            f3Var.show();
-                            f3Var.setOnDismissListener(new ei.e0(i13, q1Var, tc0Var));
-                            f3Var.setBackgroundColor(w03);
-                            f3Var.fixNavigationBar(w03);
-                            org.telegram.ui.ActionBar.f3[] f3VarArr = {f3Var};
+                            w4Var.addView(dVar, w7.y5.t(-1, 48, 0, 16, 12, 16, 12));
+                            e3Var.customView = w4Var;
+                            e3Var.show();
+                            e3Var.setOnDismissListener(new ei.e0(i13, q1Var, ed0Var));
+                            e3Var.setBackgroundColor(w03);
+                            e3Var.fixNavigationBar(w03);
+                            org.telegram.ui.ActionBar.e3[] e3VarArr = {e3Var};
                             break;
                         }
                     } else {
@@ -167,16 +167,16 @@ public final /* synthetic */ class w implements View.OnClickListener {
                 s0Var2.U();
                 break;
             case 4:
-                nf.f.u(((y3) obj).getContext(), ((TL_stars.UniqueStarGiftValueInfo) obj2).fragment_listed_url);
+                nf.f.u(((x3) obj).getContext(), ((TL_stars.UniqueStarGiftValueInfo) obj2).fragment_listed_url);
                 break;
             case 5:
-                ((y3) obj).n2((CharSequence) obj2);
+                ((x3) obj).n2((CharSequence) obj2);
                 break;
             case 6:
-                y2 y2Var = (y2) obj;
+                x2 x2Var = (x2) obj;
                 org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) obj2;
-                if (y2Var.E.getAlpha() >= 1.0f && !y2Var.h0 && !y2Var.j0 && y2Var.d0 != null) {
-                    new s0(y2Var.getContext(), d6Var, y2Var.W, y2Var.c0, y2Var.d0, true).show();
+                if (x2Var.E.getAlpha() >= 1.0f && !x2Var.h0 && !x2Var.j0 && x2Var.d0 != null) {
+                    new s0(x2Var.getContext(), d6Var, x2Var.W, x2Var.c0, x2Var.d0, true).show();
                     break;
                 }
                 break;

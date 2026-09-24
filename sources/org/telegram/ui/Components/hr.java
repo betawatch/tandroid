@@ -13,10 +13,10 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class hr extends bb {
-    public final v70 X;
+    public final f80 X;
     public final ArrayList Y;
     public final boolean Z;
     public final boolean a0;
@@ -24,25 +24,25 @@ public final class hr extends bb {
     public boolean c0;
     public TLRPC.Peer d0;
     public TLRPC.InputPeer e0;
-    public final org.telegram.ui.ActionBar.n2 f0;
+    public final org.telegram.ui.ActionBar.m2 f0;
     public final long g0;
 
-    public hr(org.telegram.ui.ActionBar.n2 n2Var, ArrayList arrayList, long j3, v70 v70Var) {
-        super(n2Var, false);
+    public hr(org.telegram.ui.ActionBar.m2 m2Var, ArrayList arrayList, long j3, f80 f80Var) {
+        super(m2Var, false);
         TLRPC.Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-j3));
-        this.f0 = n2Var;
+        this.f0 = m2Var;
         this.g0 = j3;
         this.v = 0.26f;
         ArrayList arrayList2 = new ArrayList(arrayList);
         this.Y = arrayList2;
-        this.X = v70Var;
+        this.X = f80Var;
         boolean isChannelOrGiga = ChatObject.isChannelOrGiga(chat);
         this.b0 = isChannelOrGiga;
         this.d0 = (TLRPC.Peer) arrayList2.get(0);
         this.Z = arrayList2.size() > 1;
         this.a0 = ChatObject.canManageCalls(chat);
         Context context = this.containerView.getContext();
-        this.containerView.addView(new ci.bb(this, context, 16), w7.x5.d(-1, 120.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
+        this.containerView.addView(new ci.bb(this, context, 16), w7.y5.d(-1, 120.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
         TextView textView = new TextView(context);
         textView.setGravity(17);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
@@ -57,7 +57,7 @@ public final class hr extends bb {
         int w02 = org.telegram.ui.ActionBar.h6.w0(null, i10, false);
         int k10 = i0.a.k(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.d6, false), 120);
         textView.setBackground(org.telegram.ui.ActionBar.h6.i0(dp, dp, dp, dp, w02, k10, k10));
-        this.containerView.addView(textView, w7.x5.d(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, 60.0f));
+        this.containerView.addView(textView, w7.y5.d(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, 60.0f));
         TextView textView2 = new TextView(context);
         textView2.setGravity(17);
         textView2.setEllipsize(truncateAt);
@@ -70,7 +70,7 @@ public final class hr extends bb {
         int dp2 = AndroidUtilities.dp(8.0f);
         int k11 = i0.a.k(org.telegram.ui.ActionBar.h6.w0(null, i10, false), 120);
         textView2.setBackground(org.telegram.ui.ActionBar.h6.i0(dp2, dp2, dp2, dp2, 0, k11, k11));
-        this.containerView.addView(textView2, w7.x5.d(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, 6.0f));
+        this.containerView.addView(textView2, w7.y5.d(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, 6.0f));
         final int i11 = 0;
         textView.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.er
             public final /* synthetic */ hr b;
@@ -111,9 +111,9 @@ public final class hr extends bb {
                 }
             }
         });
-        ml0 ml0Var = this.d;
+        wl0 wl0Var = this.d;
         int i13 = this.backgroundPaddingLeft;
-        ml0Var.setPadding(i13, 0, i13, AndroidUtilities.dp(120.0f));
+        wl0Var.setPadding(i13, 0, i13, AndroidUtilities.dp(120.0f));
         this.d.setOnItemClickListener(new j(this, 4));
         fixNavigationBar();
         N();
@@ -130,7 +130,7 @@ public final class hr extends bb {
         hrVar.dismiss();
     }
 
-    @Override // org.telegram.ui.ActionBar.f3
+    @Override // org.telegram.ui.ActionBar.e3
     public final void dismissInternal() {
         super.dismissInternal();
         TLRPC.InputPeer inputPeer = this.e0;
@@ -140,7 +140,7 @@ public final class hr extends bb {
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final ll0 v(ml0 ml0Var) {
+    public final vl0 v(wl0 wl0Var) {
         return new fr(this);
     }
 

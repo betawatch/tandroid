@@ -19,7 +19,7 @@ import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public class Switch extends View {
     public int E;
@@ -85,7 +85,7 @@ public class Switch extends View {
                 ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", z10 ? 1.0f : 0.0f);
                 this.d = ofFloat;
                 ofFloat.setDuration(200L);
-                this.d.addListener(new ty0(this, 0));
+                this.d.addListener(new ez0(this, 0));
                 this.d.start();
             } else {
                 ObjectAnimator objectAnimator = this.d;
@@ -102,7 +102,7 @@ public class Switch extends View {
                 ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(this, "iconProgress", i10 == 0 ? 1.0f : 0.0f);
                 this.e = ofFloat2;
                 ofFloat2.setDuration(200L);
-                this.e.addListener(new ty0(this, 1));
+                this.e.addListener(new ez0(this, 1));
                 this.e.start();
                 return;
             }
@@ -311,7 +311,7 @@ public class Switch extends View {
                                 canvas.scale(f14, f14, f12, f13);
                             }
                             Drawable drawable2 = this.F;
-                            drawable2.setBounds(org.telegram.messenger.ul.x(2, dp2, drawable2), org.telegram.messenger.ul.e(2, measuredHeight2, this.F), org.telegram.messenger.ul.B(2, dp2, this.F), org.telegram.messenger.ul.z(2, measuredHeight2, this.F));
+                            drawable2.setBounds(org.telegram.messenger.ok.z(2, dp2, drawable2), org.telegram.messenger.ok.d(2, measuredHeight2, this.F), org.telegram.ui.Cells.c1.t(2, dp2, this.F), org.telegram.ui.Cells.c1.d(2, measuredHeight2, this.F));
                             this.F.draw(canvas4);
                             if (z10) {
                                 canvas.restore();
@@ -496,6 +496,6 @@ public class Switch extends View {
         return i10;
     }
 
-    public void setOnCheckedChangeListener(uy0 uy0Var) {
+    public void setOnCheckedChangeListener(fz0 fz0Var) {
     }
 }

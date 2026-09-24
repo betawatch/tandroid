@@ -1,12 +1,65 @@
 package v7;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public abstract class s6 {
-    public static boolean a(Object obj, Object obj2) {
-        if (obj != obj2) {
-            return obj != null && obj.equals(obj2);
+    public static boolean a(String str, String str2) {
+        int i10;
+        char c10;
+        int length = str.length();
+        if (str == str2) {
+            return true;
         }
-        return true;
+        if (length == str2.length()) {
+            while (i10 < length) {
+                char charAt = str.charAt(i10);
+                char charAt2 = str2.charAt(i10);
+                i10 = (charAt == charAt2 || ((c10 = (char) ((charAt | ' ') + (-97))) < 26 && c10 == ((char) ((charAt2 | ' ') + (-97))))) ? i10 + 1 : 0;
+            }
+            return true;
+        }
+        return false;
+    }
+
+    public static String b(String str) {
+        int length = str.length();
+        int i10 = 0;
+        while (i10 < length) {
+            char charAt = str.charAt(i10);
+            if (charAt >= 'A' && charAt <= 'Z') {
+                char[] charArray = str.toCharArray();
+                while (i10 < length) {
+                    char c10 = charArray[i10];
+                    if (c10 >= 'A' && c10 <= 'Z') {
+                        charArray[i10] = (char) (c10 ^ ' ');
+                    }
+                    i10++;
+                }
+                return String.valueOf(charArray);
+            }
+            i10++;
+        }
+        return str;
+    }
+
+    public static String c(String str) {
+        int length = str.length();
+        int i10 = 0;
+        while (i10 < length) {
+            char charAt = str.charAt(i10);
+            if (charAt >= 'a' && charAt <= 'z') {
+                char[] charArray = str.toCharArray();
+                while (i10 < length) {
+                    char c10 = charArray[i10];
+                    if (c10 >= 'a' && c10 <= 'z') {
+                        charArray[i10] = (char) (c10 ^ ' ');
+                    }
+                    i10++;
+                }
+                return String.valueOf(charArray);
+            }
+            i10++;
+        }
+        return str;
     }
 }

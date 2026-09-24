@@ -27,21 +27,21 @@ import e9.a1;
 import e9.f1;
 import e9.g0;
 import e9.i0;
-import e9.k0;
 import ei.d5;
 import hg.r;
 import i2.s;
 import java.io.IOException;
 import java.util.List;
+import n2.l;
 import org.telegram.messenger.MediaDataController;
 import u2.b0;
 import u2.f0;
-import u2.j0;
+import u2.k0;
 import u2.t;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
-public final class f implements z0, j0, n2.k {
+public final class f implements z0, k0, l {
     public final x a;
     public final h1 b;
     public final j1 c;
@@ -70,67 +70,67 @@ public final class f implements z0, j0, n2.k {
         this.e = new SparseArray();
     }
 
-    @Override // n2.k
+    @Override // n2.l
     public final void a(int i10, f0 f0Var, int i11) {
         a o9 = o(i10, f0Var);
         q(o9, 1022, new c(o9, i11, 13, (byte) 0));
     }
 
-    @Override // n2.k
+    @Override // n2.l
     public final void b(int i10, f0 f0Var, Exception exc) {
         a o9 = o(i10, f0Var);
         q(o9, 1024, new c(o9, exc, 14));
     }
 
-    @Override // u2.j0
+    @Override // u2.k0
     public final void c(int i10, f0 f0Var, b0 b0Var) {
         a o9 = o(i10, f0Var);
         q(o9, 1005, new c(o9, b0Var, 22));
     }
 
-    @Override // u2.j0
+    @Override // u2.k0
     public final void d(int i10, f0 f0Var, b0 b0Var) {
         a o9 = o(i10, f0Var);
         q(o9, 1004, new ah.b(21, o9, b0Var));
     }
 
-    @Override // u2.j0
+    @Override // u2.k0
     public final void e(int i10, f0 f0Var, t tVar, b0 b0Var) {
         a o9 = o(i10, f0Var);
         q(o9, 1001, new c(o9, (Object) tVar, (Object) b0Var, 15));
     }
 
-    @Override // u2.j0
+    @Override // u2.k0
     public final void f(int i10, f0 f0Var, t tVar, b0 b0Var, IOException iOException, boolean z10) {
         a o9 = o(i10, f0Var);
         q(o9, 1003, new d5(o9, tVar, b0Var, iOException, z10));
     }
 
-    @Override // n2.k
+    @Override // n2.l
     public final void g(int i10, f0 f0Var) {
         a o9 = o(i10, f0Var);
         q(o9, 1027, new c(o9, 23));
     }
 
-    @Override // u2.j0
+    @Override // u2.k0
     public final void h(int i10, f0 f0Var, t tVar, b0 b0Var, int i11) {
         a o9 = o(i10, f0Var);
         q(o9, MediaDataController.MAX_STYLE_RUNS_COUNT, new c(o9, tVar, b0Var, i11));
     }
 
-    @Override // n2.k
+    @Override // n2.l
     public final void i(int i10, f0 f0Var) {
         a o9 = o(i10, f0Var);
         q(o9, 1025, new c(o9, 28));
     }
 
-    @Override // u2.j0
+    @Override // u2.k0
     public final void j(int i10, f0 f0Var, t tVar, b0 b0Var) {
         a o9 = o(i10, f0Var);
         q(o9, 1002, new c(o9, (Object) tVar, (Object) b0Var, 11));
     }
 
-    @Override // n2.k
+    @Override // n2.l
     public final void k(int i10, f0 f0Var) {
         a o9 = o(i10, f0Var);
         q(o9, 1023, new e((Object) o9, 0));
@@ -160,7 +160,7 @@ public final class f implements z0, j0, n2.k {
 
     public final a n(f0 f0Var) {
         this.h.getClass();
-        k1 k1Var = f0Var == null ? null : (k1) ((k0) this.d.c).get(f0Var);
+        k1 k1Var = f0Var == null ? null : (k1) ((e9.k0) this.d.c).get(f0Var);
         if (f0Var != null && k1Var != null) {
             return m(k1Var, k1Var.g(f0Var.a, this.b).c, f0Var);
         }
@@ -175,7 +175,7 @@ public final class f implements z0, j0, n2.k {
     public final a o(int i10, f0 f0Var) {
         this.h.getClass();
         if (f0Var != null) {
-            return ((k1) ((k0) this.d.c).get(f0Var)) != null ? n(f0Var) : m(k1.a, i10, f0Var);
+            return ((k1) ((e9.k0) this.d.c).get(f0Var)) != null ? n(f0Var) : m(k1.a, i10, f0Var);
         }
         k1 w02 = this.h.w0();
         if (i10 >= w02.o()) {
@@ -199,7 +199,7 @@ public final class f implements z0, j0, n2.k {
     @Override // b2.z0
     public final void onAvailableCommandsChanged(x0 x0Var) {
         a l4 = l();
-        q(l4, 13, new e(3, l4, x0Var));
+        q(l4, 13, new e(l4, x0Var, 3));
     }
 
     @Override // b2.z0

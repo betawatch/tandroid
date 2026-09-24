@@ -17,9 +17,9 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class i8 extends ll0 {
+public final class i8 extends vl0 {
     public final Context c;
     public ArrayList d = new ArrayList();
     public String e;
@@ -32,7 +32,7 @@ public final class i8 extends ll0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.vl0
     public final boolean D(s4.c1 c1Var) {
         return (this.n.v0 && c1Var.b() == 0) ? false : true;
     }
@@ -102,11 +102,11 @@ public final class i8 extends ll0 {
                         ViewGroup viewGroup2;
                         switch (i10) {
                             case 0:
-                                viewGroup = ((org.telegram.ui.ActionBar.f3) this.b.n).containerView;
+                                viewGroup = ((org.telegram.ui.ActionBar.e3) this.b.n).containerView;
                                 viewGroup.invalidate();
                                 break;
                             default:
-                                viewGroup2 = ((org.telegram.ui.ActionBar.f3) this.b.n).containerView;
+                                viewGroup2 = ((org.telegram.ui.ActionBar.e3) this.b.n).containerView;
                                 viewGroup2.invalidate();
                                 break;
                         }
@@ -127,16 +127,16 @@ public final class i8 extends ll0 {
                         ViewGroup viewGroup2;
                         switch (i11) {
                             case 0:
-                                viewGroup = ((org.telegram.ui.ActionBar.f3) this.b.n).containerView;
+                                viewGroup = ((org.telegram.ui.ActionBar.e3) this.b.n).containerView;
                                 viewGroup.invalidate();
                                 break;
                             default:
-                                viewGroup2 = ((org.telegram.ui.ActionBar.f3) this.b.n).containerView;
+                                viewGroup2 = ((org.telegram.ui.ActionBar.e3) this.b.n).containerView;
                                 viewGroup2.invalidate();
                                 break;
                         }
                     }
-                }).setDuration(420L).setInterpolator(rr.h).withEndAction(new og(this, 9)).start();
+                }).setDuration(420L).setInterpolator(rr.h).withEndAction(new pg(this, 9)).start();
             }
         }
         if (j8Var.x0.size() > 1) {
@@ -202,7 +202,7 @@ public final class i8 extends ll0 {
         }
         ci.q1 q1Var = j8Var.s0() ? new ci.q1(2, this, xVar) : null;
         int i11 = org.telegram.ui.ActionBar.h6.h5;
-        d6Var = ((org.telegram.ui.ActionBar.f3) j8Var).resourcesProvider;
+        d6Var = ((org.telegram.ui.ActionBar.e3) j8Var).resourcesProvider;
         xVar.setBackgroundColor(org.telegram.ui.ActionBar.h6.v0(i11, d6Var));
         boolean s02 = j8Var.s0();
         ai.d0 d0Var = (j8Var.s0() || j8Var.z0 || messageObject.getId() <= 0) ? null : new ai.d0(this, xVar, messageObject, 15);
@@ -240,10 +240,10 @@ public final class i8 extends ll0 {
         if (i10 == 1) {
             ln lnVar = new ln(context, 10);
             lnVar.setTag(-33024);
-            return new wk0(lnVar);
+            return new gl0(lnVar);
         }
         boolean currentPlaylistIsGlobalSearch = MediaController.getInstance().currentPlaylistIsGlobalSearch();
-        d6Var = ((org.telegram.ui.ActionBar.f3) this.n).resourcesProvider;
-        return new wk0(new org.telegram.ui.Cells.x(context, currentPlaylistIsGlobalSearch ? 1 : 0, d6Var));
+        d6Var = ((org.telegram.ui.ActionBar.e3) this.n).resourcesProvider;
+        return new gl0(new org.telegram.ui.Cells.x(context, currentPlaylistIsGlobalSearch ? 1 : 0, d6Var));
     }
 }

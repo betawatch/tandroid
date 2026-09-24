@@ -6,9 +6,9 @@ import android.view.ViewGroup;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class lg1 extends org.telegram.ui.Components.ll0 {
+public final class lg1 extends org.telegram.ui.Components.vl0 {
     public final Context c;
     public final /* synthetic */ TwoStepVerificationActivity d;
 
@@ -17,7 +17,7 @@ public final class lg1 extends org.telegram.ui.Components.ll0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.vl0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 0;
     }
@@ -48,51 +48,51 @@ public final class lg1 extends org.telegram.ui.Components.ll0 {
             if (i13 != 1) {
                 return;
             }
-            org.telegram.ui.Cells.f9 f9Var = (org.telegram.ui.Cells.f9) view;
+            org.telegram.ui.Cells.e9 e9Var = (org.telegram.ui.Cells.e9) view;
             if (i10 == twoStepVerificationActivity.P) {
-                f9Var.setText(LocaleController.getString(R.string.SetAdditionalPasswordInfo));
+                e9Var.setText(LocaleController.getString(R.string.SetAdditionalPasswordInfo));
                 return;
             } else {
                 if (i10 == twoStepVerificationActivity.S) {
-                    f9Var.setText(LocaleController.getString(R.string.EnabledPasswordText));
+                    e9Var.setText(LocaleController.getString(R.string.EnabledPasswordText));
                     return;
                 }
                 return;
             }
         }
-        org.telegram.ui.Cells.fa faVar = (org.telegram.ui.Cells.fa) view;
+        org.telegram.ui.Cells.ea eaVar = (org.telegram.ui.Cells.ea) view;
         int i14 = org.telegram.ui.ActionBar.h6.G6;
-        faVar.setTag(Integer.valueOf(i14));
-        faVar.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, i14, false));
+        eaVar.setTag(Integer.valueOf(i14));
+        eaVar.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, i14, false));
         i11 = twoStepVerificationActivity.changePasswordRow;
         if (i10 == i11) {
-            faVar.b(LocaleController.getString(R.string.ChangePassword), true);
+            eaVar.b(LocaleController.getString(R.string.ChangePassword), true);
             return;
         }
         if (i10 == twoStepVerificationActivity.O) {
-            faVar.b(LocaleController.getString(R.string.SetAdditionalPassword), true);
+            eaVar.b(LocaleController.getString(R.string.SetAdditionalPassword), true);
             return;
         }
         i12 = twoStepVerificationActivity.turnPasswordOffRow;
         if (i10 == i12) {
-            faVar.b(LocaleController.getString(R.string.TurnPasswordOff), true);
+            eaVar.b(LocaleController.getString(R.string.TurnPasswordOff), true);
         } else if (i10 == twoStepVerificationActivity.R) {
-            faVar.b(LocaleController.getString(R.string.ChangeRecoveryEmail), false);
+            eaVar.b(LocaleController.getString(R.string.ChangeRecoveryEmail), false);
         } else if (i10 == twoStepVerificationActivity.Q) {
-            faVar.b(LocaleController.getString(R.string.SetRecoveryEmail), false);
+            eaVar.b(LocaleController.getString(R.string.SetRecoveryEmail), false);
         }
     }
 
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        View faVar;
+        View eaVar;
         Context context = this.c;
         if (i10 != 0) {
-            faVar = new org.telegram.ui.Cells.f9(context);
+            eaVar = new org.telegram.ui.Cells.e9(context);
         } else {
-            faVar = new org.telegram.ui.Cells.fa(context);
-            faVar.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.d6, false));
+            eaVar = new org.telegram.ui.Cells.ea(context);
+            eaVar.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.d6, false));
         }
-        return new org.telegram.ui.Components.wk0(faVar);
+        return new org.telegram.ui.Components.gl0(eaVar);
     }
 }

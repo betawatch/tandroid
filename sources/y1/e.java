@@ -2,9 +2,9 @@ package y1;
 
 import android.media.VolumeProvider;
 import androidx.emoji2.text.o;
-import lf.i;
+import la.h;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class e extends VolumeProvider {
     public final /* synthetic */ o a;
@@ -18,12 +18,12 @@ public final class e extends VolumeProvider {
     @Override // android.media.VolumeProvider
     public final void onAdjustVolume(int i10) {
         o oVar = this.a;
-        ((p4.e) ((i) oVar.f).d).a.post(new p4.c(oVar, i10, 1));
+        ((p4.e) ((h) oVar.f).d).a.post(new p4.c(oVar, i10, 1));
     }
 
     @Override // android.media.VolumeProvider
     public final void onSetVolumeTo(int i10) {
         o oVar = this.a;
-        ((p4.e) ((i) oVar.f).d).a.post(new p4.c(oVar, i10, 0));
+        ((p4.e) ((h) oVar.f).d).a.post(new p4.c(oVar, i10, 0));
     }
 }

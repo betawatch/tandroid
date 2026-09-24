@@ -7,7 +7,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n8 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -32,7 +32,7 @@ public final /* synthetic */ class n8 implements View.OnClickListener {
                     k9Var.getMessagesController().loadFullChat(l4.longValue(), 0, true);
                     break;
                 } else {
-                    org.telegram.ui.Components.voip.f2.l(chat, null, false, null, k9Var.getParentActivity(), k9Var, k9Var.getAccountInstance());
+                    org.telegram.ui.Components.voip.g2.l(chat, null, false, null, k9Var.getParentActivity(), k9Var, k9Var.getAccountInstance());
                     break;
                 }
             case 1:
@@ -40,7 +40,7 @@ public final /* synthetic */ class n8 implements View.OnClickListener {
                 break;
             case 2:
                 k9 k9Var2 = this.b;
-                org.telegram.ui.Components.o70 H = org.telegram.ui.Components.o70.H(k9Var2, k9Var2.F);
+                org.telegram.ui.Components.y70 H = org.telegram.ui.Components.y70.H(k9Var2, k9Var2.F);
                 H.s = 8;
                 if (k9Var2.getUserConfig().showCallsTab) {
                     H.c(R.drawable.msg_archive_hide, LocaleController.getString(R.string.HideCallTab), new j8(k9Var2, 1), false);

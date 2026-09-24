@@ -8,7 +8,7 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class k7 extends FrameLayout {
     public final org.telegram.ui.Components.op a;
@@ -38,16 +38,16 @@ public final class k7 extends FrameLayout {
         textView.setGravity(5);
         textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.n6, false));
         if (LocaleController.isRTL) {
-            addView(opVar, w7.x5.d(24, 24.0f, 21, 0.0f, 0.0f, 18.0f, 0.0f));
-            addView(view, w7.x5.d(40, 40.0f, 21, 0.0f, 0.0f, 0.0f, 0.0f));
-            addView(frameLayout, w7.x5.d(-1, -2.0f, 0, 90.0f, 0.0f, 40.0f, 0.0f));
-            addView(textView, w7.x5.d(69, -2.0f, 19, 0.0f, 0.0f, 0.0f, 0.0f));
+            addView(opVar, w7.y5.d(24, 24.0f, 21, 0.0f, 0.0f, 18.0f, 0.0f));
+            addView(view, w7.y5.d(40, 40.0f, 21, 0.0f, 0.0f, 0.0f, 0.0f));
+            addView(frameLayout, w7.y5.d(-1, -2.0f, 0, 90.0f, 0.0f, 40.0f, 0.0f));
+            addView(textView, w7.y5.d(69, -2.0f, 19, 0.0f, 0.0f, 0.0f, 0.0f));
             return;
         }
-        addView(opVar, w7.x5.d(24, 24.0f, 19, 18.0f, 0.0f, 0.0f, 0.0f));
-        addView(view, w7.x5.d(40, 40.0f, 19, 0.0f, 0.0f, 0.0f, 0.0f));
-        addView(frameLayout, w7.x5.d(-1, -2.0f, 0, 48.0f, 0.0f, 90.0f, 0.0f));
-        addView(textView, w7.x5.d(69, -2.0f, 21, 0.0f, 0.0f, 21.0f, 0.0f));
+        addView(opVar, w7.y5.d(24, 24.0f, 19, 18.0f, 0.0f, 0.0f, 0.0f));
+        addView(view, w7.y5.d(40, 40.0f, 19, 0.0f, 0.0f, 0.0f, 0.0f));
+        addView(frameLayout, w7.y5.d(-1, -2.0f, 0, 48.0f, 0.0f, 90.0f, 0.0f));
+        addView(textView, w7.y5.d(69, -2.0f, 21, 0.0f, 0.0f, 21.0f, 0.0f));
     }
 
     @Override // android.view.ViewGroup, android.view.View

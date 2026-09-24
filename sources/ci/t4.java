@@ -13,14 +13,14 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ul;
+import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.f01;
-import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.j61;
 import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.t01;
 import org.telegram.ui.Components.v51;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public abstract class t4 extends FrameLayout {
     public final Paint E;
@@ -29,7 +29,7 @@ public abstract class t4 extends FrameLayout {
     public final Path H;
     public boolean I;
     public final org.telegram.ui.Components.e6 J;
-    public f01 K;
+    public t01 K;
     public final Path L;
     public boolean M;
     public final org.telegram.ui.Components.na a;
@@ -39,11 +39,11 @@ public abstract class t4 extends FrameLayout {
     public ArrayList e;
     public int f;
     public final androidx.fragment.app.a0 h;
-    public final org.telegram.ui.Components.yc n;
+    public final org.telegram.ui.Components.zc n;
     public final RectF r;
     public final RectF s;
     public final Paint v;
-    public f01 w;
+    public t01 w;
     public final Path x;
     public final RectF y;
 
@@ -55,7 +55,7 @@ public abstract class t4 extends FrameLayout {
         this.e = new ArrayList();
         final cb cbVar = (cb) this;
         this.h = new androidx.fragment.app.a0(cbVar, 18);
-        this.n = new org.telegram.ui.Components.yc(this);
+        this.n = new org.telegram.ui.Components.zc(this);
         this.r = new RectF();
         this.s = new RectF();
         Paint paint = new Paint(1);
@@ -87,15 +87,15 @@ public abstract class t4 extends FrameLayout {
                 switch (i11) {
                     case 0:
                         ArrayList arrayList = (ArrayList) obj;
-                        v51 v51Var = (v51) obj2;
-                        v51Var.M();
+                        j61 j61Var = (j61) obj2;
+                        j61Var.M();
                         int i13 = 0;
                         for (int i14 = 0; i14 < cbVar2.d.size(); i14++) {
                             Integer num = (Integer) cbVar2.d.get(i14);
                             int intValue = num.intValue();
                             l8 l8Var = (l8) cbVar2.c.get(intValue);
                             int i15 = r4.a;
-                            h51 J = h51.J(r4.class);
+                            v51 J = v51.J(r4.class);
                             J.d = intValue;
                             J.G = l8Var;
                             J.z = i13;
@@ -107,7 +107,7 @@ public abstract class t4 extends FrameLayout {
                                 i13++;
                             }
                         }
-                        v51Var.L();
+                        j61Var.L();
                         break;
                     default:
                         ((Integer) obj).getClass();
@@ -117,7 +117,7 @@ public abstract class t4 extends FrameLayout {
                         while (i12 < size) {
                             Object obj3 = arrayList2.get(i12);
                             i12++;
-                            cbVar2.d.add(Integer.valueOf(((h51) obj3).d));
+                            cbVar2.d.add(Integer.valueOf(((v51) obj3).d));
                         }
                         AndroidUtilities.forEachViews((RecyclerView) cbVar2.b, (Utilities.Callback<View>) new ai.y1(cbVar2, 10));
                         break;
@@ -129,7 +129,7 @@ public abstract class t4 extends FrameLayout {
         o4Var.setClipToPadding(false);
         o4Var.setClipChildren(false);
         o4Var.setPadding(AndroidUtilities.dp(2.0f), 0, AndroidUtilities.dp(2.0f), 0);
-        addView(o4Var, w7.x5.e(-2, 120, 85));
+        addView(o4Var, w7.y5.e(-2, 120, 85));
         o4Var.w1(true);
         final int i11 = 1;
         o4Var.B1(new Utilities.Callback2() { // from class: ci.m4
@@ -141,15 +141,15 @@ public abstract class t4 extends FrameLayout {
                 switch (i112) {
                     case 0:
                         ArrayList arrayList = (ArrayList) obj;
-                        v51 v51Var = (v51) obj2;
-                        v51Var.M();
+                        j61 j61Var = (j61) obj2;
+                        j61Var.M();
                         int i13 = 0;
                         for (int i14 = 0; i14 < cbVar2.d.size(); i14++) {
                             Integer num = (Integer) cbVar2.d.get(i14);
                             int intValue = num.intValue();
                             l8 l8Var = (l8) cbVar2.c.get(intValue);
                             int i15 = r4.a;
-                            h51 J = h51.J(r4.class);
+                            v51 J = v51.J(r4.class);
                             J.d = intValue;
                             J.G = l8Var;
                             J.z = i13;
@@ -161,7 +161,7 @@ public abstract class t4 extends FrameLayout {
                                 i13++;
                             }
                         }
-                        v51Var.L();
+                        j61Var.L();
                         break;
                     default:
                         ((Integer) obj).getClass();
@@ -171,7 +171,7 @@ public abstract class t4 extends FrameLayout {
                         while (i12 < size) {
                             Object obj3 = arrayList2.get(i12);
                             i12++;
-                            cbVar2.d.add(Integer.valueOf(((h51) obj3).d));
+                            cbVar2.d.add(Integer.valueOf(((v51) obj3).d));
                         }
                         AndroidUtilities.forEachViews((RecyclerView) cbVar2.b, (Utilities.Callback<View>) new ai.y1(cbVar2, 10));
                         break;
@@ -252,7 +252,7 @@ public abstract class t4 extends FrameLayout {
         o4Var.animate().cancel();
         if (z11) {
             o4Var.setVisibility(0);
-            ul.r(o4Var.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.65f).scaleY(z10 ? 1.0f : 0.65f).setListener(new ai.n(10, this, z10)).setUpdateListener(new ai.a(this, 20)), rr.h, 360L);
+            ok.s(o4Var.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.65f).scaleY(z10 ? 1.0f : 0.65f).setListener(new ai.n(10, this, z10)).setUpdateListener(new ai.a(this, 20)), rr.h, 360L);
         } else {
             o4Var.setVisibility(z10 ? 0 : 8);
             o4Var.setAlpha(z10 ? 1.0f : 0.0f);
@@ -286,10 +286,10 @@ public abstract class t4 extends FrameLayout {
         paint.setStrokeWidth(dp);
         paint.setAlpha(255);
         canvas.drawCircle(rectF.centerX(), rectF.centerY(), (rectF.width() / 2.0f) - AndroidUtilities.dp(0.9f), paint);
-        f01 f01Var = this.w;
+        t01 t01Var = this.w;
         o4 o4Var = this.b;
-        if (f01Var != null) {
-            f01Var.c(rectF.centerX() - (this.w.c / 2.0f), rectF.centerY() - AndroidUtilities.dp(0.6f), 1.0f - o4Var.getAlpha(), -1, canvas);
+        if (t01Var != null) {
+            t01Var.c(rectF.centerX() - (this.w.c / 2.0f), rectF.centerY() - AndroidUtilities.dp(0.6f), 1.0f - o4Var.getAlpha(), -1, canvas);
         }
         if (o4Var.getAlpha() > 0.0f) {
             canvas.save();
@@ -392,9 +392,9 @@ public abstract class t4 extends FrameLayout {
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         boolean contains = this.r.contains(motionEvent.getX(), motionEvent.getY());
         int action = motionEvent.getAction();
-        org.telegram.ui.Components.yc ycVar = this.n;
+        org.telegram.ui.Components.zc zcVar = this.n;
         if (action == 0) {
-            ycVar.c(contains);
+            zcVar.c(contains);
             if (this.M && !contains) {
                 if (!this.y.contains(motionEvent.getX(), motionEvent.getY())) {
                     c(false, true);
@@ -403,17 +403,17 @@ public abstract class t4 extends FrameLayout {
             }
         } else if (motionEvent.getAction() == 2) {
             if (!contains) {
-                ycVar.c(false);
+                zcVar.c(false);
             }
         } else if (motionEvent.getAction() == 1) {
-            if (ycVar.h) {
+            if (zcVar.h) {
                 c(!this.M, true);
             }
-            ycVar.c(false);
+            zcVar.c(false);
         } else if (motionEvent.getAction() == 3) {
-            ycVar.c(false);
+            zcVar.c(false);
         }
-        return ycVar.h || super.onTouchEvent(motionEvent);
+        return zcVar.h || super.onTouchEvent(motionEvent);
     }
 
     public void setSelected(int i10) {

@@ -4,17 +4,17 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wd implements org.telegram.ui.ActionBar.a2, Utilities.Callback5, Utilities.Callback5Return {
+public final /* synthetic */ class wd implements org.telegram.ui.ActionBar.z1, Utilities.Callback5, Utilities.Callback5Return {
     public final /* synthetic */ je a;
 
     public /* synthetic */ wd(je jeVar) {
         this.a = jeVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.z1
+    public void f(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
         this.a.w0.presentFragment(new zg1(6, null));
     }
 
@@ -36,7 +36,7 @@ public final /* synthetic */ class wd implements org.telegram.ui.ActionBar.a2, U
         nd ndVar = jeVar.v1;
         int i10 = jeVar.y0;
         long j3 = jeVar.z0;
-        int i11 = ((org.telegram.ui.Components.h51) obj).d;
+        int i11 = ((org.telegram.ui.Components.v51) obj).d;
         if (i11 != 1) {
             if (i11 == 4) {
                 jeVar.w0.presentFragment(new ei.e4(j3));

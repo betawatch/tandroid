@@ -1,68 +1,45 @@
 package pg;
 
-import android.graphics.PointF;
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class w0 {
-    public float a;
-    public float b;
-    public float c;
-    public float d;
-    public float e;
-    public float f;
-    public double g;
-    public int h;
-    public int i;
-    public ByteBuffer j;
+    public final double a;
+    public final double b;
+    public final double c;
+    public boolean d;
 
-    public final boolean a(PointF pointF, float f7, float f10, float f11, int i10) {
-        if ((i10 != -1 && i10 >= this.i) || this.j.position() == this.j.limit()) {
-            d();
+    public w0(double d, double d10, double d11) {
+        this.a = d;
+        this.b = d10;
+        this.c = d11;
+    }
+
+    public final float a(w0 w0Var) {
+        return (float) Math.sqrt(Math.pow(this.c - w0Var.c, 2.0d) + Math.pow(this.b - w0Var.b, 2.0d) + Math.pow(this.a - w0Var.a, 2.0d));
+    }
+
+    public final w0 b(w0 w0Var) {
+        return new w0((this.a + w0Var.a) * 0.5d, (this.b + w0Var.b) * 0.5d, (this.c + w0Var.c) * 0.5d);
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj == null) {
             return false;
         }
-        if (i10 != -1) {
-            this.j.position(i10 * 20);
+        if (obj == this) {
+            return true;
         }
-        this.j.putFloat(pointF.x);
-        this.j.putFloat(pointF.y);
-        this.j.putFloat(f7);
-        this.j.putFloat(f10);
-        this.j.putFloat(f11);
-        return true;
+        if (!(obj instanceof w0)) {
+            return false;
+        }
+        w0 w0Var = (w0) obj;
+        return this.a == w0Var.a && this.b == w0Var.b && this.c == w0Var.c;
     }
 
-    public final void b(int i10) {
-        int i11 = this.h + i10;
-        if (i11 > this.i || this.j == null) {
-            d();
-        }
-        this.h = i11;
-    }
-
-    public final void c() {
-        this.h = 0;
-        if (this.j != null) {
-            return;
-        }
-        this.i = 256;
-        ByteBuffer allocateDirect = ByteBuffer.allocateDirect(256 * 5 * 4);
-        this.j = allocateDirect;
-        allocateDirect.order(ByteOrder.nativeOrder());
-        this.j.position(0);
-    }
-
-    public final void d() {
-        if (this.j != null) {
-            this.j = null;
-        }
-        int max = Math.max(this.i * 2, 256);
-        this.i = max;
-        ByteBuffer allocateDirect = ByteBuffer.allocateDirect(max * 20);
-        this.j = allocateDirect;
-        allocateDirect.order(ByteOrder.nativeOrder());
-        this.j.position(0);
+    public w0(double d, double d10, double d11, int i10) {
+        this.a = d;
+        this.b = d10;
+        this.c = d11;
+        this.d = true;
     }
 }

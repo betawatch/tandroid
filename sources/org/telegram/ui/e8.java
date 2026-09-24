@@ -17,10 +17,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class e8 extends FrameLayout {
-    public final org.telegram.ui.ActionBar.i5 a;
+    public final org.telegram.ui.ActionBar.h5 a;
     public int b;
     public int c;
     public int d;
@@ -29,7 +29,7 @@ public final class e8 extends FrameLayout {
     public int h;
     public SparseArray n;
     public SparseArray r;
-    public final k2.u s;
+    public final n2.e s;
     public final SparseArray v;
     public final SparseArray w;
     public final /* synthetic */ h8 x;
@@ -43,21 +43,21 @@ public final class e8 extends FrameLayout {
         this.v = new SparseArray();
         this.w = new SparseArray();
         setWillNotDraw(false);
-        org.telegram.ui.ActionBar.i5 i5Var = new org.telegram.ui.ActionBar.i5(context);
-        this.a = i5Var;
+        org.telegram.ui.ActionBar.h5 h5Var = new org.telegram.ui.ActionBar.h5(context);
+        this.a = h5Var;
         if (h8Var.e0 == 0 && h8Var.d0) {
-            i5Var.setOnLongClickListener(new v(this, 1));
-            i5Var.setOnClickListener(new y7(this, 0));
+            h5Var.setOnLongClickListener(new v(this, 1));
+            h5Var.setOnClickListener(new y7(this, 0));
         }
-        i5Var.setBackground(org.telegram.ui.ActionBar.h6.f0(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.i6, false), 2, -1));
-        i5Var.setTextSize(15);
-        i5Var.setTypeface(AndroidUtilities.bold());
-        i5Var.setGravity(17);
-        i5Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.G6, false));
-        addView(i5Var, w7.x5.d(-1, 28.0f, 0, 0.0f, 12.0f, 0.0f, 4.0f));
-        k2.u uVar = new k2.u(context, new c8(this, context));
-        this.s = uVar;
-        ((GestureDetector) uVar.b).setIsLongpressEnabled(h8Var.e0 == 0);
+        h5Var.setBackground(org.telegram.ui.ActionBar.h6.f0(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.i6, false), 2, -1));
+        h5Var.setTextSize(15);
+        h5Var.setTypeface(AndroidUtilities.bold());
+        h5Var.setGravity(17);
+        h5Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.G6, false));
+        addView(h5Var, w7.y5.d(-1, 28.0f, 0, 0.0f, 12.0f, 0.0f, 4.0f));
+        n2.e eVar = new n2.e(context, new c8(this, context));
+        this.s = eVar;
+        ((GestureDetector) eVar.b).setIsLongpressEnabled(h8Var.e0 == 0);
     }
 
     public static void a(e8 e8Var, int i10, int i11) {
@@ -215,7 +215,7 @@ public final class e8 extends FrameLayout {
         Canvas canvas2 = canvas;
         h8 h8Var2 = e8Var.x;
         Paint paint7 = h8Var2.w;
-        vh.h hVar = h8Var2.k0;
+        vh.g gVar = h8Var2.k0;
         Path path = h8Var2.j0;
         Paint paint8 = h8Var2.r;
         TextPaint textPaint = h8Var2.e;
@@ -396,9 +396,9 @@ public final class e8 extends FrameLayout {
                                 path.addCircle(f12, f13, dp8, Path.Direction.CW);
                                 canvas2.save();
                                 canvas2.clipPath(path);
-                                hVar.h(i0.a.k(-1, (int) (Color.alpha(-1) * 0.325f * f8Var.d)));
-                                hVar.setBounds((int) (f12 - dp8), (int) (f13 - dp8), (int) (f12 + dp8), (int) (f13 + dp8));
-                                hVar.draw(canvas2);
+                                gVar.h(i0.a.k(-1, (int) (Color.alpha(-1) * 0.325f * f8Var.d)));
+                                gVar.setBounds((int) (f12 - dp8), (int) (f13 - dp8), (int) (f12 + dp8), (int) (f13 + dp8));
+                                gVar.draw(canvas2);
                                 e8Var.invalidate();
                                 canvas2.restore();
                             }
@@ -429,9 +429,9 @@ public final class e8 extends FrameLayout {
                         path.addCircle(f12, f13, dp82, Path.Direction.CW);
                         canvas2.save();
                         canvas2.clipPath(path);
-                        hVar.h(i0.a.k(-1, (int) (Color.alpha(-1) * 0.325f * f8Var.d)));
-                        hVar.setBounds((int) (f12 - dp82), (int) (f13 - dp82), (int) (f12 + dp82), (int) (f13 + dp82));
-                        hVar.draw(canvas2);
+                        gVar.h(i0.a.k(-1, (int) (Color.alpha(-1) * 0.325f * f8Var.d)));
+                        gVar.setBounds((int) (f12 - dp82), (int) (f13 - dp82), (int) (f12 + dp82), (int) (f13 + dp82));
+                        gVar.draw(canvas2);
                         e8Var.invalidate();
                         canvas2.restore();
                     }

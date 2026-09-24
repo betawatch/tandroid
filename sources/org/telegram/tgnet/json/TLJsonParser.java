@@ -6,14 +6,14 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.yy0;
+import org.telegram.ui.Components.jz0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public class TLJsonParser {
     private final JSONObject jsonObject;
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public interface Deserializable {
         void deserializeFromJson(TLJsonParser tLJsonParser);
     }
@@ -87,7 +87,7 @@ public class TLJsonParser {
     }
 
     public <T extends Deserializable> ArrayList<T> readVector(String str, Utilities.CallbackReturn<TLJsonParser, T> callbackReturn) {
-        yy0 yy0Var = (ArrayList<T>) new ArrayList();
+        jz0 jz0Var = (ArrayList<T>) new ArrayList();
         JSONArray optJSONArray = this.jsonObject.optJSONArray(str);
         if (optJSONArray != null) {
             int length = optJSONArray.length();
@@ -95,14 +95,14 @@ public class TLJsonParser {
                 try {
                     Deserializable parse = parse(new TLJsonParser(optJSONArray.getJSONObject(i10)), callbackReturn);
                     if (parse != null) {
-                        yy0Var.add(parse);
+                        jz0Var.add(parse);
                     }
                 } catch (JSONException e) {
                     FileLog.e(e);
                 }
             }
         }
-        return yy0Var;
+        return jz0Var;
     }
 
     public String readString(String str, String str2) {

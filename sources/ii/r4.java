@@ -17,13 +17,13 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.ui.Cells.p9;
 import org.telegram.ui.Cells.q9;
-import org.telegram.ui.Cells.r9;
-import v7.p8;
+import v7.q8;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public final class r4 extends a0 implements org.telegram.ui.ActionBar.y5, q9 {
+public final class r4 extends a0 implements org.telegram.ui.ActionBar.x5, p9 {
     public final int[] E;
     public final org.telegram.ui.ActionBar.d6 n;
     public final Paint r;
@@ -52,7 +52,7 @@ public final class r4 extends a0 implements org.telegram.ui.ActionBar.y5, q9 {
         horizontalScrollView.setPadding(0, 0, 0, 0);
         horizontalScrollView.setFillViewport(true);
         horizontalScrollView.addView(frameLayout, new FrameLayout.LayoutParams(-2, -2));
-        addView(horizontalScrollView, w7.x5.e(-1, -2, 16));
+        addView(horizontalScrollView, w7.y5.e(-1, -2, 16));
         e();
     }
 
@@ -68,7 +68,7 @@ public final class r4 extends a0 implements org.telegram.ui.ActionBar.y5, q9 {
         return null;
     }
 
-    @Override // org.telegram.ui.ActionBar.y5
+    @Override // org.telegram.ui.ActionBar.x5
     public final void e() {
         int i10 = org.telegram.ui.ActionBar.h6.uf;
         org.telegram.ui.ActionBar.d6 d6Var = this.n;
@@ -78,11 +78,11 @@ public final class r4 extends a0 implements org.telegram.ui.ActionBar.y5, q9 {
         invalidate();
     }
 
-    @Override // org.telegram.ui.Cells.q9
+    @Override // org.telegram.ui.Cells.p9
     public final void fillTextLayoutBlocks(ArrayList arrayList) {
         int[] iArr = this.E;
         i(iArr);
-        arrayList.add(p8.a(iArr[0], iArr[1], iArr[2], iArr[3]));
+        arrayList.add(q8.a(iArr[0], iArr[1], iArr[2], iArr[3]));
     }
 
     public /* bridge */ /* synthetic */ int[] getColorKeys() {
@@ -130,7 +130,7 @@ public final class r4 extends a0 implements org.telegram.ui.ActionBar.y5, q9 {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         b3 b3Var;
-        r9 textSelectionHelper;
+        q9 textSelectionHelper;
         if (this.x != org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.G6, this.n)) {
             e();
         }

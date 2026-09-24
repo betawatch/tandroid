@@ -11,9 +11,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.wb1;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wm implements al0 {
+public final /* synthetic */ class wm implements kl0 {
     public final /* synthetic */ int a = 1;
     public final /* synthetic */ org.telegram.ui.ActionBar.d6 b;
     public final /* synthetic */ Object c;
@@ -27,7 +27,7 @@ public final /* synthetic */ class wm implements al0 {
         this.e = context;
     }
 
-    @Override // org.telegram.ui.Components.al0
+    @Override // org.telegram.ui.Components.kl0
     public final void d(int i10, View view) {
         boolean z10;
         boolean z11;
@@ -46,26 +46,26 @@ public final /* synthetic */ class wm implements al0 {
                 org.telegram.ui.ActionBar.d6 d6Var = this.b;
                 if (i10 == i11) {
                     th.f fVar = new th.f(vnVar.getContext(), d6Var);
-                    fVar.k0 = new k2.u(vnVar, 12);
+                    fVar.k0 = new l.d(vnVar);
                     ArrayList arrayList = vnVar.P0;
                     fVar.c0 = null;
                     fVar.o0 = new HashSet(arrayList);
                     fVar.show();
                     break;
                 } else if (i10 == vnVar.I0) {
-                    o70 F = o70.F(wiVar.container, d6Var, view);
+                    y70 F = y70.F(wiVar.container, d6Var, view);
                     int i12 = 0;
                     while (true) {
                         int[] iArr = vnVar.T0;
                         if (i12 >= iArr.length) {
-                            F.c(R.drawable.msg_customize, LocaleController.getString(R.string.PollV2PollDurationOptionCustom), new org.telegram.ui.ActionBar.m5(vnVar, context, view, d6Var, 19), false);
+                            F.c(R.drawable.msg_customize, LocaleController.getString(R.string.PollV2PollDurationOptionCustom), new org.telegram.ui.ActionBar.l5(vnVar, context, view, d6Var, 19), false);
                             F.t = false;
                             F.s = 0;
                             F.Z();
                             break;
                         } else {
                             int i13 = iArr[i12];
-                            u11 a2 = u11.a(i13);
+                            i21 a2 = i21.a(i13);
                             int i14 = org.telegram.ui.ActionBar.h6.F8;
                             a2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(i14, vnVar.a), PorterDuff.Mode.SRC_IN));
                             F.b(0, a2, LocaleController.formatPluralString("Hours", i13 / 3600, new Object[0]), i14, org.telegram.ui.ActionBar.h6.E8, new xm(vnVar, i13, view, 0));
@@ -76,7 +76,7 @@ public final /* synthetic */ class wm implements al0 {
                     vnVar.P();
                     break;
                 } else {
-                    boolean z12 = view instanceof org.telegram.ui.Cells.x8;
+                    boolean z12 = view instanceof org.telegram.ui.Cells.w8;
                     if (z12 || (view instanceof org.telegram.ui.Cells.a6)) {
                         boolean z13 = vnVar.c0;
                         kn knVar = vnVar.x;
@@ -281,7 +281,7 @@ public final /* synthetic */ class wm implements al0 {
                             }
                         }
                         if (z12) {
-                            ((org.telegram.ui.Cells.x8) view).setChecked(z11);
+                            ((org.telegram.ui.Cells.w8) view).setChecked(z11);
                         } else if (view instanceof org.telegram.ui.Cells.a6) {
                             ((org.telegram.ui.Cells.a6) view).setChecked(z11);
                         }
@@ -291,15 +291,15 @@ public final /* synthetic */ class wm implements al0 {
                 }
                 break;
             default:
-                tv.n((tv) this.c, (ArrayList) this.d, (org.telegram.ui.ActionBar.n2) this.e, this.b, view, i10);
+                uv.n((uv) this.c, (ArrayList) this.d, (org.telegram.ui.ActionBar.m2) this.e, this.b, view, i10);
                 break;
         }
     }
 
-    public /* synthetic */ wm(tv tvVar, ArrayList arrayList, org.telegram.ui.ActionBar.n2 n2Var, org.telegram.ui.ActionBar.d6 d6Var) {
-        this.c = tvVar;
+    public /* synthetic */ wm(uv uvVar, ArrayList arrayList, org.telegram.ui.ActionBar.m2 m2Var, org.telegram.ui.ActionBar.d6 d6Var) {
+        this.c = uvVar;
         this.d = arrayList;
-        this.e = n2Var;
+        this.e = m2Var;
         this.b = d6Var;
     }
 }

@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ua implements MessagesStorage.IntCallback {
     public final /* synthetic */ int a;
@@ -16,7 +16,7 @@ public final /* synthetic */ class ua implements MessagesStorage.IntCallback {
 
     @Override // org.telegram.messenger.MessagesStorage.IntCallback
     public final void run(int i10) {
-        ou0 ou0Var;
+        nu0 nu0Var;
         int i11 = this.a;
         Object obj = this.b;
         switch (i11) {
@@ -24,9 +24,9 @@ public final /* synthetic */ class ua implements MessagesStorage.IntCallback {
                 ((ub) obj).U0(true);
                 break;
             case 1:
-                xn xnVar = ((jn) obj).a;
-                if (i10 > 0 && xnVar.getParentActivity() != null && xnVar.fragmentView != null) {
-                    org.telegram.ui.Components.xc.a0(xnVar).m(org.telegram.ui.Components.wc.I, i10, 0, 0, xnVar.ea).j();
+                wn wnVar = ((in) obj).a;
+                if (i10 > 0 && wnVar.getParentActivity() != null && wnVar.fragmentView != null) {
+                    org.telegram.ui.Components.yc.a0(wnVar).m(org.telegram.ui.Components.xc.I, i10, 0, 0, wnVar.ea).j();
                     break;
                 }
                 break;
@@ -35,8 +35,8 @@ public final /* synthetic */ class ua implements MessagesStorage.IntCallback {
                 break;
             case 3:
                 PhotoViewer photoViewer = (PhotoViewer) obj;
-                if (photoViewer.y != null && (ou0Var = photoViewer.e0) != null && i10 > 0) {
-                    org.telegram.ui.Components.xc.F(ou0Var, true).j();
+                if (photoViewer.y != null && (nu0Var = photoViewer.e0) != null && i10 > 0) {
+                    org.telegram.ui.Components.yc.F(nu0Var, true).j();
                     break;
                 }
                 break;

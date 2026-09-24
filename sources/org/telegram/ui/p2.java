@@ -6,7 +6,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class p2 extends View {
     public final /* synthetic */ q2 a;
@@ -25,7 +25,7 @@ public final class p2 extends View {
             return;
         }
         int b10 = q2Var.b.b();
-        int dp = AndroidUtilities.dp(4.0f) + org.telegram.messenger.z0.D(6.0f, b10 - 1, AndroidUtilities.dp(7.0f) * b10);
+        int dp = AndroidUtilities.dp(4.0f) + org.telegram.messenger.f0.D(6.0f, b10 - 1, AndroidUtilities.dp(7.0f) * b10);
         float f7 = q2Var.v + q2Var.s;
         if (dp < getMeasuredWidth()) {
             clamp = (getMeasuredWidth() - dp) / 2.0f;

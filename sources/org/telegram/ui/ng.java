@@ -1,45 +1,59 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
-import org.telegram.tgnet.ConnectionsManager;
-
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ng implements DialogInterface.OnCancelListener {
+public final /* synthetic */ class ng implements q0.a {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ wn b;
 
-    public /* synthetic */ ng(Object obj, int i10) {
+    public /* synthetic */ ng(wn wnVar, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = wnVar;
     }
 
-    @Override // android.content.DialogInterface.OnCancelListener
-    public final void onCancel(DialogInterface dialogInterface) {
+    @Override // q0.a
+    public final void accept(Object obj) {
         switch (this.a) {
             case 0:
-                xn xnVar = (xn) this.b;
-                xnVar.b9 = true;
-                xnVar.Z8 = 0;
-                xnVar.pb = 0;
-                xnVar.N4 = 0;
-                xnVar.r9();
-                xnVar.Nb(false);
-                break;
+                Integer num = (Integer) obj;
+                wn wnVar = this.b;
+                wnVar.getClass();
+                if (num.intValue() != 0) {
+                    wnVar.Bc(true);
+                    wnVar.F(num.intValue(), 0, 0, 0, false, true);
+                    break;
+                } else {
+                    wnVar.l1 = 0;
+                    wnVar.Bc(true);
+                    wnVar.getMessagesController().markReactionsAsRead(wnVar.T5, wnVar.d());
+                    break;
+                }
             case 1:
-                so soVar = (so) this.b;
-                soVar.M0 = false;
-                soVar.b = null;
-                soVar.N0 = false;
-                break;
-            case 2:
-                ((sp) this.b).n = null;
-                break;
+                Integer num2 = (Integer) obj;
+                wn wnVar2 = this.b;
+                wnVar2.getClass();
+                if (num2.intValue() != 0) {
+                    int i10 = wnVar2.m1 - 1;
+                    wnVar2.m1 = i10;
+                    if (i10 <= 0) {
+                        wnVar2.getMessagesController().markPollVotesAsRead(wnVar2.T5, wnVar2.d());
+                    }
+                    wnVar2.Ac(true);
+                    wnVar2.F(num2.intValue(), 0, 0, 0, false, true);
+                    break;
+                } else {
+                    wnVar2.m1 = 0;
+                    wnVar2.Ac(true);
+                    wnVar2.getMessagesController().markPollVotesAsRead(wnVar2.T5, wnVar2.d());
+                    break;
+                }
             default:
-                ac0 ac0Var = (ac0) this.b;
-                if (ac0Var.h >= 0) {
-                    ConnectionsManager.getInstance(ac0Var.b).cancelRequest(ac0Var.h, true);
-                    ac0Var.h = -1;
+                wn wnVar3 = this.b;
+                wnVar3.getClass();
+                boolean booleanValue = ((Boolean) obj).booleanValue();
+                wnVar3.f7 = booleanValue;
+                if (!booleanValue) {
+                    wnVar3.r8();
                     break;
                 }
                 break;

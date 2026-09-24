@@ -3,16 +3,16 @@ package og;
 import android.graphics.Canvas;
 import android.graphics.RectF;
 import android.view.View;
-import org.telegram.ui.Cells.g8;
-import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Cells.f8;
+import org.telegram.ui.Components.wl0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public abstract class d extends ml0 {
+public abstract class d extends wl0 {
     public boolean X2;
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.wl0
     public final void J0(Canvas canvas, RectF rectF, long j3) {
         super.J0(canvas, rectF, j3);
         int childCount = getChildCount();
@@ -24,9 +24,9 @@ public abstract class d extends ml0 {
                 if (rectF.intersects(x10, y3, childAt.getWidth() + x10, childAt.getHeight() + y3)) {
                     canvas.save();
                     canvas.translate(x10, y3);
-                    g8 g8Var = (g8) ((c) childAt);
-                    if (g8Var.L) {
-                        g8Var.b(canvas, this);
+                    f8 f8Var = (f8) ((c) childAt);
+                    if (f8Var.L) {
+                        f8Var.b(canvas, this);
                     }
                     canvas.restore();
                 }
@@ -34,7 +34,7 @@ public abstract class d extends ml0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ml0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.wl0, android.view.ViewGroup, android.view.View
     public void dispatchDraw(Canvas canvas) {
         this.X2 = false;
         for (int i10 = 0; i10 < getChildCount(); i10++) {
@@ -42,9 +42,9 @@ public abstract class d extends ml0 {
                 c cVar = (c) getChildAt(i10);
                 canvas.save();
                 canvas.translate(cVar.getX(), cVar.getY());
-                g8 g8Var = (g8) cVar;
-                if (g8Var.L) {
-                    g8Var.b(canvas, this);
+                f8 f8Var = (f8) cVar;
+                if (f8Var.L) {
+                    f8Var.b(canvas, this);
                 }
                 canvas.restore();
             }

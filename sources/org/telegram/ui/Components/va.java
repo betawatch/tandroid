@@ -7,9 +7,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class va extends lc0 {
+public final class va extends wc0 {
     public final /* synthetic */ boolean D0;
     public final /* synthetic */ boolean E0;
     public final /* synthetic */ bb F0;
@@ -22,7 +22,7 @@ public final class va extends lc0 {
         this.E0 = z11;
     }
 
-    @Override // org.telegram.ui.Components.pv0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         bb bbVar = this.F0;
         bbVar.I(canvas, this);
@@ -36,7 +36,7 @@ public final class va extends lc0 {
         if (motionEvent.getAction() == 0) {
             float y3 = motionEvent.getY();
             bb bbVar = this.F0;
-            drawable = ((org.telegram.ui.ActionBar.f3) bbVar).shadowDrawable;
+            drawable = ((org.telegram.ui.ActionBar.e3) bbVar).shadowDrawable;
             if (y3 < drawable.getBounds().top) {
                 bbVar.dismiss();
             }
@@ -52,7 +52,7 @@ public final class va extends lc0 {
         return super.drawChild(canvas, view, j3);
     }
 
-    @Override // org.telegram.ui.Components.lc0, android.widget.FrameLayout, android.view.View
+    @Override // org.telegram.ui.Components.wc0, android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
         int size = View.MeasureSpec.getSize(i11);
         bb bbVar = this.F0;

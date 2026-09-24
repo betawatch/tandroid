@@ -5,7 +5,6 @@ import b2.r;
 import b2.r0;
 import b2.s0;
 import c3.h0;
-import c3.l;
 import c3.o;
 import c3.p;
 import c3.q;
@@ -18,9 +17,10 @@ import e9.g0;
 import e9.i0;
 import java.util.List;
 import org.xmlpull.v1.XmlPullParserException;
-import w3.k;
+import w3.l;
+import z3.k;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class b implements o {
     public q b;
@@ -30,13 +30,13 @@ public final class b implements o {
     public r3.a g;
     public p h;
     public n i;
-    public k j;
+    public l j;
     public final v a = new v(2);
     public long f = -1;
 
     @Override // c3.o
     public final boolean a(p pVar) {
-        l lVar = (l) pVar;
+        c3.l lVar = (c3.l) pVar;
         v vVar = this.a;
         vVar.G(2);
         lVar.h(vVar.a, 0, 2, false);
@@ -48,7 +48,7 @@ public final class b implements o {
             if (D == 65504) {
                 vVar.G(2);
                 lVar.h(vVar.a, 0, 2, false);
-                lVar.s(vVar.D() - 2, false);
+                lVar.t(vVar.D() - 2, false);
                 vVar.G(2);
                 lVar.h(vVar.a, 0, 2, false);
                 this.d = vVar.D();
@@ -79,9 +79,9 @@ public final class b implements o {
             this.c = 0;
             this.j = null;
         } else if (this.c == 5) {
-            k kVar = this.j;
-            kVar.getClass();
-            kVar.h(j3, j10);
+            l lVar = this.j;
+            lVar.getClass();
+            lVar.h(j3, j10);
         }
     }
 
@@ -142,9 +142,9 @@ public final class b implements o {
                     this.h = pVar;
                     this.i = new n(pVar, this.f);
                 }
-                k kVar = this.j;
-                kVar.getClass();
-                int m10 = kVar.m(this.i, sVar);
+                l lVar = this.j;
+                lVar.getClass();
+                int m10 = lVar.m(this.i, sVar);
                 if (m10 == 1) {
                     sVar.a += this.f;
                 }
@@ -162,7 +162,7 @@ public final class b implements o {
             }
             pVar.p();
             if (this.j == null) {
-                this.j = new k(z3.k.D, 8);
+                this.j = new l(k.D, 8);
             }
             n nVar2 = new n(pVar, this.f);
             this.i = nVar2;
@@ -170,11 +170,11 @@ public final class b implements o {
                 b();
                 return 0;
             }
-            k kVar2 = this.j;
+            l lVar2 = this.j;
             long j11 = this.f;
             q qVar = this.b;
             qVar.getClass();
-            kVar2.g(new n(j11, qVar, 3));
+            lVar2.g(new n(j11, qVar, 3));
             r3.a aVar2 = this.g;
             aVar2.getClass();
             q qVar2 = this.b;
@@ -183,7 +183,7 @@ public final class b implements o {
             r rVar = new r();
             rVar.p = r0.n("image/jpeg");
             rVar.k = new p0(aVar2);
-            hg.c.u(rVar, Z1);
+            hg.c.s(rVar, Z1);
             this.c = 5;
             return 0;
         }
@@ -253,9 +253,9 @@ public final class b implements o {
 
     @Override // c3.o
     public final void release() {
-        k kVar = this.j;
-        if (kVar != null) {
-            kVar.getClass();
+        l lVar = this.j;
+        if (lVar != null) {
+            lVar.getClass();
         }
     }
 

@@ -17,15 +17,16 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.LaunchActivity;
+import pg.c1;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class x extends View {
     public tf.a E;
     public final AtomicBoolean F;
     public final AtomicBoolean G;
     public final Handler H;
-    public final qg.b0 I;
+    public final c1 I;
     public int a;
     public long b;
     public int c;
@@ -55,7 +56,7 @@ public final class x extends View {
         this.F = new AtomicBoolean(false);
         this.G = new AtomicBoolean(false);
         this.H = new Handler(Looper.getMainLooper());
-        this.I = new qg.b0(this, 10);
+        this.I = new c1(this, 11);
         paint.setColor(-1342177280);
         paint2.setColor(-1);
         paint2.setTextSize(AndroidUtilities.dp(9.0f));

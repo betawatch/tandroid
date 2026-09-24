@@ -29,42 +29,42 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.b2;
+import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Cells.j6;
 import org.telegram.ui.Components.RadialProgressView;
-import org.telegram.ui.Components.d61;
 import org.telegram.ui.Components.e5;
-import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.o70;
+import org.telegram.ui.Components.r61;
 import org.telegram.ui.Components.rr;
 import org.telegram.ui.Components.u40;
 import org.telegram.ui.Components.v40;
+import org.telegram.ui.Components.v51;
 import org.telegram.ui.Components.w9;
+import org.telegram.ui.Components.y70;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.qr;
-import org.telegram.ui.wu0;
-import org.telegram.ui.xn;
-import w7.x5;
-import w7.z5;
+import org.telegram.ui.pr;
+import org.telegram.ui.vu0;
+import org.telegram.ui.wn;
+import w7.a6;
+import w7.y5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public final class p extends n2 implements u40, NotificationCenter.NotificationCenterDelegate, le.e {
+public final class p extends m2 implements u40, NotificationCenter.NotificationCenterDelegate, le.e {
     public v40 E;
     public TLRPC.FileLocation F;
     public bi.o G;
     public TLRPC.Chat H;
     public TLRPC.ChatFull I;
-    public final b2[] J;
+    public final a2[] J;
     public final m K;
     public final le.c a;
     public long b;
     public w7 c;
-    public d61 d;
+    public r61 d;
     public String e;
     public boolean f;
     public boolean h;
@@ -79,16 +79,16 @@ public final class p extends n2 implements u40, NotificationCenter.NotificationC
     public p(Bundle bundle) {
         super(bundle);
         this.a = new le.c(0, this, rr.h, 320L, false);
-        this.J = new b2[1];
+        this.J = new a2[1];
         this.K = new m(this);
     }
 
-    public static boolean U(p pVar, h51 h51Var, View view) {
+    public static boolean U(p pVar, v51 v51Var, View view) {
         long j3;
         boolean canRemoveBotFromCommunity;
         boolean z10;
         boolean z11;
-        Object obj = h51Var.G;
+        Object obj = v51Var.G;
         if (!(obj instanceof TLRPC.Chat)) {
             if (obj instanceof TLRPC.User) {
                 TLRPC.User user = (TLRPC.User) obj;
@@ -111,7 +111,7 @@ public final class p extends n2 implements u40, NotificationCenter.NotificationC
         int b10 = u0.b(pVar.currentAccount, j10);
         boolean z13 = b10 == 1 || b10 == 2;
         if (z12 || z13) {
-            o70 F = o70.F(pVar.c, null, view);
+            y70 F = y70.F(pVar.c, null, view);
             F.l(R.drawable.msg_viewintopic, LocaleController.getString(z10 ? R.string.CommunityMenuViewBot : z11 ? R.string.CommunityMenuViewChannel : R.string.CommunityMenuViewGroup), new g(pVar, j10, 1), z13);
             F.m(z12, R.drawable.msg_cancel, LocaleController.getString(R.string.CommunityMenuRemoveFromCommunity), true, new l(pVar, z10, z11, j10, 0));
             F.W(pVar.d.V0(view, true));
@@ -121,10 +121,10 @@ public final class p extends n2 implements u40, NotificationCenter.NotificationC
         return false;
     }
 
-    public static void V(p pVar, h51 h51Var) {
+    public static void V(p pVar, v51 v51Var) {
         TLRPC.Chat chat;
         TLRPC.ChatPhoto chatPhoto;
-        int i10 = h51Var.d;
+        int i10 = v51Var.d;
         if (i10 == 140) {
             if (pVar.E.h() || (chatPhoto = (chat = pVar.getMessagesController().getChat(Long.valueOf(pVar.b))).photo) == null || chatPhoto.photo_big == null) {
                 return;
@@ -154,18 +154,18 @@ public final class p extends n2 implements u40, NotificationCenter.NotificationC
             Bundle bundle = new Bundle();
             bundle.putLong("chat_id", pVar.b);
             bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
-            qr qrVar = new qr(bundle);
-            qrVar.x0(pVar.I);
-            pVar.presentFragment(qrVar);
+            pr prVar = new pr(bundle);
+            prVar.x0(pVar.I);
+            pVar.presentFragment(prVar);
             return;
         }
         if (i10 == 144) {
             Bundle bundle2 = new Bundle();
             bundle2.putLong("chat_id", pVar.b);
             bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 0);
-            qr qrVar2 = new qr(bundle2);
-            qrVar2.x0(pVar.I);
-            pVar.presentFragment(qrVar2);
+            pr prVar2 = new pr(bundle2);
+            prVar2.x0(pVar.I);
+            pVar.presentFragment(prVar2);
             return;
         }
         if (i10 == 143) {
@@ -190,11 +190,11 @@ public final class p extends n2 implements u40, NotificationCenter.NotificationC
             u0.e(pVar.J, pVar, pVar.currentAccount, pVar.H);
             return;
         }
-        Object obj = h51Var.G;
+        Object obj = v51Var.G;
         if (obj instanceof TLRPC.Chat) {
-            pVar.presentFragment(xn.R9(-((TLRPC.Chat) obj).id));
+            pVar.presentFragment(wn.R9(-((TLRPC.Chat) obj).id));
         } else if (obj instanceof TLRPC.User) {
-            pVar.presentFragment(xn.R9(((TLRPC.User) obj).id));
+            pVar.presentFragment(wn.R9(((TLRPC.User) obj).id));
         }
     }
 
@@ -298,11 +298,11 @@ public final class p extends n2 implements u40, NotificationCenter.NotificationC
         this.w.start();
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final View createView(Context context) {
         int i10 = 1;
         setHasOwnBackground(true);
-        hg.c.x(false, this.actionBar);
+        hg.c.v(false, this.actionBar);
         this.actionBar.setAllowOverlayTitle(false);
         this.actionBar.setAddToContainer(false);
         this.actionBar.setAllowOverlayTitle(true);
@@ -336,7 +336,7 @@ public final class p extends n2 implements u40, NotificationCenter.NotificationC
         oVar.setInputType(oVar.getInputType() | 16384);
         oVar.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(11.0f));
         oVar.setMinHeight(AndroidUtilities.dp(50.0f));
-        f0Var.addView(oVar, x5.d(-1, -2.0f, (LocaleController.isRTL ? 5 : 3) | 16, 13.0f, 0.0f, 13.0f, 0.0f));
+        f0Var.addView(oVar, y5.d(-1, -2.0f, (LocaleController.isRTL ? 5 : 3) | 16, 13.0f, 0.0f, 13.0f, 0.0f));
         this.n = f0Var;
         oVar.setText(name);
         ((o) this.n.b).setSelection(name.length());
@@ -351,27 +351,27 @@ public final class p extends n2 implements u40, NotificationCenter.NotificationC
         this.G.setVisibility(8);
         this.G.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
         this.G.setOnClickListener(new v0(this, 17));
-        z5.a(this.G);
-        this.actionBar.addView(this.G, x5.d(-2, 56.0f, 85, 0.0f, 0.0f, 12.0f, 0.0f));
+        a6.a(this.G);
+        this.actionBar.addView(this.G, y5.d(-2, 56.0f, 85, 0.0f, 0.0f, 12.0f, 0.0f));
         r6 r6Var = new r6(this, context);
         this.s = r6Var;
-        this.r.addView(r6Var, x5.d(72, 72.0f, 81, 0.0f, 0.0f, 0.0f, 28.0f));
+        this.r.addView(r6Var, y5.d(72, 72.0f, 81, 0.0f, 0.0f, 0.0f, 28.0f));
         RadialProgressView radialProgressView = new RadialProgressView(context, null);
         this.x = radialProgressView;
         radialProgressView.setSize(AndroidUtilities.dp(30.0f));
         this.x.setProgressColor(-1);
         this.x.setNoProgress(false);
-        this.r.addView(this.x, x5.d(64, 64.0f, 81, 0.0f, 0.0f, 0.0f, 32.0f));
+        this.r.addView(this.x, y5.d(64, 64.0f, 81, 0.0f, 0.0f, 0.0f, 32.0f));
         a0(false, false);
-        d61 d61Var = new d61(this, new i(this, i10), new j(this), new j(this));
-        this.d = d61Var;
-        d61Var.setClipToPadding(false);
-        d61 d61Var2 = this.d;
-        d61Var2.Y2.r = false;
-        d61Var2.p1();
+        r61 r61Var = new r61(this, new i(this, i10), new j(this), new j(this));
+        this.d = r61Var;
+        r61Var.setClipToPadding(false);
+        r61 r61Var2 = this.d;
+        r61Var2.Y2.r = false;
+        r61Var2.p1();
         this.actionBar.setBackground(null);
-        this.c.addView(this.d, x5.c(-1.0f, -1));
-        this.c.addView(this.actionBar, x5.e(-1, -2, 48));
+        this.c.addView(this.d, y5.c(-1.0f, -1));
+        this.c.addView(this.actionBar, y5.e(-1, -2, 48));
         w7 w7Var2 = this.c;
         j jVar = new j(this);
         WeakHashMap weakHashMap = r0.i0.a;
@@ -392,7 +392,7 @@ public final class p extends n2 implements u40, NotificationCenter.NotificationC
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final void dismissCurrentDialog() {
         if (this.E.g(this.visibleDialog)) {
             return;
@@ -400,12 +400,12 @@ public final class p extends n2 implements u40, NotificationCenter.NotificationC
         super.dismissCurrentDialog();
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final boolean dismissDialogOnPause(Dialog dialog) {
         return dialog != this.E.c && super.dismissDialogOnPause(dialog);
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final boolean drawEdgeNavigationBar() {
         return false;
     }
@@ -416,7 +416,7 @@ public final class p extends n2 implements u40, NotificationCenter.NotificationC
     }
 
     @Override // org.telegram.ui.Components.u40
-    public final /* synthetic */ wu0 getCloseIntoObject() {
+    public final /* synthetic */ vu0 getCloseIntoObject() {
         return null;
     }
 
@@ -425,17 +425,17 @@ public final class p extends n2 implements u40, NotificationCenter.NotificationC
         return ((o) this.n.b).getText().toString();
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final boolean isSupportEdgeToEdge() {
         return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final void onActivityResultFragment(int i10, int i11, Intent intent) {
         this.E.i(i10, i11, intent);
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final boolean onFragmentCreate() {
         TLRPC.TL_chatBannedRights tL_chatBannedRights;
         this.b = this.arguments.getLong("community_id", 0L);
@@ -453,7 +453,7 @@ public final class p extends n2 implements u40, NotificationCenter.NotificationC
         return super.onFragmentCreate();
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
         getNotificationCenter().removeObserver(this, NotificationCenter.chatInfoDidLoad);
@@ -463,24 +463,24 @@ public final class p extends n2 implements u40, NotificationCenter.NotificationC
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final void onPause() {
         super.onPause();
         this.E.j();
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final void onRequestPermissionsResultFragment(int i10, String[] strArr, int[] iArr) {
         this.E.k(i10, strArr, iArr);
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final void onResume() {
         super.onResume();
         this.E.l();
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final void restoreSelfArgs(Bundle bundle) {
         v40 v40Var = this.E;
         if (v40Var != null) {
@@ -488,7 +488,7 @@ public final class p extends n2 implements u40, NotificationCenter.NotificationC
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final void saveSelfArgs(Bundle bundle) {
         String str;
         v40 v40Var = this.E;

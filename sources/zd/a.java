@@ -1,9 +1,9 @@
 package zd;
 
-import v7.h7;
-import v7.t7;
+import v7.i7;
+import v7.u7;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public abstract class a extends u1 implements id.c, c0 {
     public final id.h c;
@@ -25,7 +25,7 @@ public abstract class a extends u1 implements id.c, c0 {
         Object invoke;
         int ordinal = d0Var.ordinal();
         if (ordinal == 0) {
-            h7.a(pVar, aVar, this);
+            i7.a(pVar, aVar, this);
             return;
         }
         if (ordinal != 1) {
@@ -58,7 +58,7 @@ public abstract class a extends u1 implements id.c, c0 {
                     ee.a.f(hVar, k10);
                 }
             } catch (Throwable th2) {
-                resumeWith(t7.a(th2));
+                resumeWith(u7.a(th2));
             }
         }
     }

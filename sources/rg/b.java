@@ -6,28 +6,28 @@ import android.graphics.Paint;
 import android.widget.FrameLayout;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.ml0;
-import w7.x5;
+import org.telegram.ui.Components.wl0;
+import w7.y5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public abstract class b extends FrameLayout implements l0 {
     public final d6 a;
-    public final ml0 b;
+    public final wl0 b;
     public final s4.c0 c;
 
     public b(Context context, d6 d6Var) {
         super(context);
         this.a = d6Var;
-        ml0 ml0Var = new ml0(context, d6Var);
-        this.b = ml0Var;
-        ml0Var.setNestedScrollingEnabled(true);
-        ml0Var.setAdapter(a());
+        wl0 wl0Var = new wl0(context, d6Var);
+        this.b = wl0Var;
+        wl0Var.setNestedScrollingEnabled(true);
+        wl0Var.setAdapter(a());
         s4.c0 c0Var = new s4.c0(1, false);
         this.c = c0Var;
-        ml0Var.setLayoutManager(c0Var);
-        ml0Var.setClipToPadding(false);
-        addView(ml0Var, x5.c(-1.0f, -1));
+        wl0Var.setLayoutManager(c0Var);
+        wl0Var.setClipToPadding(false);
+        addView(wl0Var, y5.c(-1.0f, -1));
     }
 
     public abstract s4.h0 a();
@@ -45,9 +45,9 @@ public abstract class b extends FrameLayout implements l0 {
     @Override // rg.l0
     public void setOffset(float f7) {
         if (Math.abs(f7 / getMeasuredWidth()) == 1.0f) {
-            ml0 ml0Var = this.b;
-            if (ml0Var.K(0) == null || ml0Var.K(0).a.getTop() != ml0Var.getPaddingTop()) {
-                ml0Var.u0(0);
+            wl0 wl0Var = this.b;
+            if (wl0Var.K(0) == null || wl0Var.K(0).a.getTop() != wl0Var.getPaddingTop()) {
+                wl0Var.u0(0);
             }
         }
     }

@@ -4,7 +4,7 @@ import java.util.AbstractList;
 import java.util.Arrays;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class z0 extends b implements RandomAccess {
     public static final z0 d;
@@ -54,9 +54,9 @@ public final class z0 extends b implements RandomAccess {
 
     public final void n(int i10) {
         if (i10 < 0 || i10 >= this.c) {
-            StringBuilder l4 = hg.c.l(i10, "Index:", ", Size:");
-            l4.append(this.c);
-            throw new IndexOutOfBoundsException(l4.toString());
+            StringBuilder j3 = hg.c.j(i10, "Index:", ", Size:");
+            j3.append(this.c);
+            throw new IndexOutOfBoundsException(j3.toString());
         }
     }
 
@@ -109,8 +109,8 @@ public final class z0 extends b implements RandomAccess {
             ((AbstractList) this).modCount++;
             return;
         }
-        StringBuilder l4 = hg.c.l(i10, "Index:", ", Size:");
-        l4.append(this.c);
-        throw new IndexOutOfBoundsException(l4.toString());
+        StringBuilder j3 = hg.c.j(i10, "Index:", ", Size:");
+        j3.append(this.c);
+        throw new IndexOutOfBoundsException(j3.toString());
     }
 }

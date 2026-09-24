@@ -22,13 +22,13 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.n70;
 import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.x70;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public class xa extends NestedScrollView implements n70 {
-    public final org.telegram.ui.Cells.ba W;
+public class xa extends NestedScrollView implements x70 {
+    public final org.telegram.ui.Cells.aa W;
     public final o1.k a0;
     public final wa b0;
     public boolean c0;
@@ -65,9 +65,9 @@ public class xa extends NestedScrollView implements n70 {
         NotificationCenter.listenEmojiLoading(this);
         wa waVar = new wa(this, getContext());
         this.b0 = waVar;
-        org.telegram.ui.Cells.ba baVar = new org.telegram.ui.Cells.ba(waVar, d6Var);
-        this.W = baVar;
-        baVar.i0 = false;
+        org.telegram.ui.Cells.aa aaVar = new org.telegram.ui.Cells.aa(waVar, d6Var);
+        this.W = aaVar;
+        aaVar.i0 = false;
         frameLayout.addView(waVar, -1, -2);
         addView(frameLayout, new ViewGroup.LayoutParams(-1, -2));
         paint.setColor(-16777216);
@@ -195,7 +195,7 @@ public class xa extends NestedScrollView implements n70 {
         }
     }
 
-    @Override // org.telegram.ui.Components.n70
+    @Override // org.telegram.ui.Components.x70
     public final void a(RectF rectF) {
         va vaVar;
         wa waVar = this.b0;
@@ -214,7 +214,7 @@ public class xa extends NestedScrollView implements n70 {
         rectF.offset(frameLayout.getX() + x10, frameLayout.getY() + (waVar.getY() - getScrollY()));
     }
 
-    @Override // org.telegram.ui.Components.n70
+    @Override // org.telegram.ui.Components.x70
     public final void b(Canvas canvas, float f7) {
         va vaVar;
         wa waVar = this.b0;

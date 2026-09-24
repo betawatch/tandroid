@@ -6,16 +6,16 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class is {
-    public final org.telegram.ui.Cells.r2 a;
+    public final org.telegram.ui.Cells.s2 a;
     public final ArrayList b = new ArrayList();
     public final ArrayList c = new ArrayList();
     public hs d = null;
 
-    public is(org.telegram.ui.Cells.r2 r2Var) {
-        this.a = r2Var;
+    public is(org.telegram.ui.Cells.s2 s2Var) {
+        this.a = s2Var;
     }
 
     public final void a(Canvas canvas, int i10) {
@@ -36,7 +36,7 @@ public final class is {
                 break;
             }
             hs hsVar = (hs) arrayList.get(i11);
-            dp = org.telegram.messenger.ul.w(4.0f, hsVar.e, dp);
+            dp = org.telegram.messenger.ok.y(4.0f, hsVar.e, dp);
             if (dp < 0) {
                 break;
             }
@@ -56,13 +56,13 @@ public final class is {
             if (hsVar2 == null || hsVar2.a != size) {
                 hs hsVar3 = new hs();
                 hsVar3.a = size;
-                f01 f01Var = new f01(hg.c.i(size, "+"), 10.0f, AndroidUtilities.bold());
-                f01Var.s(this.a);
-                hsVar3.c = f01Var;
+                t01 t01Var = new t01(hg.c.h(size, "+"), 10.0f, AndroidUtilities.bold());
+                t01Var.s(this.a);
+                hsVar3.c = t01Var;
                 int dp2 = AndroidUtilities.dp(9.32f);
-                f01 f01Var2 = hsVar3.c;
-                hsVar3.e = dp2 + ((int) f01Var2.c);
-                f01Var2.j();
+                t01 t01Var2 = hsVar3.c;
+                hsVar3.e = dp2 + ((int) t01Var2.c);
+                t01Var2.j();
                 hsVar3.d = org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.n8, false);
                 this.d = hsVar3;
             }

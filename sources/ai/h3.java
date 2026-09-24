@@ -17,18 +17,18 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.gg;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.hg;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.a01;
-import org.telegram.ui.f60;
-import org.telegram.ui.lq;
-import org.telegram.ui.ry;
-import org.telegram.ui.zz0;
+import org.telegram.ui.d60;
+import org.telegram.ui.kq;
+import org.telegram.ui.qy;
+import org.telegram.ui.xz0;
+import org.telegram.ui.yz0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h3 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -96,7 +96,7 @@ public final /* synthetic */ class h3 implements Runnable {
                         }
                     }
                 };
-                org.telegram.ui.Components.qc V = new xc(e6Var.d1, e6Var.B0).V(Arrays.asList(tLObject), !z11 ? AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StoriesMovedToDialogs, ContactsController.formatName(str, null, 10))) : AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StoriesMovedToContacts, ContactsController.formatName(str, null, 10))), null, aVar);
+                org.telegram.ui.Components.qc V = new yc(e6Var.d1, e6Var.B0).V(Arrays.asList(tLObject), !z11 ? AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StoriesMovedToDialogs, ContactsController.formatName(str, null, 10))) : AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StoriesMovedToContacts, ContactsController.formatName(str, null, 10))), null, aVar);
                 V.a = 2;
                 V.k(true);
                 return;
@@ -121,27 +121,27 @@ public final /* synthetic */ class h3 implements Runnable {
                     return;
                 }
                 if (tL_error.text.startsWith("STORY_LIVE_ALREADY_")) {
-                    org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
+                    org.telegram.ui.ActionBar.m2 R = LaunchActivity.R();
                     if (z10 && R != null) {
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(R.getContext(), 0, d6Var);
                         String string = LocaleController.getString(R.string.LiveStoryAlreadyStreamingTitle);
-                        org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-                        b2Var.R = string;
-                        b2Var.T = LocaleController.getString(R.string.LiveStoryAlreadyStreaming);
-                        hg.c.A(R.string.OK, alertDialog$Builder, null);
+                        org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
+                        a2Var.R = string;
+                        a2Var.T = LocaleController.getString(R.string.LiveStoryAlreadyStreaming);
+                        org.telegram.messenger.f0.o(R.string.OK, alertDialog$Builder, null);
                     }
                     callback.run(Boolean.FALSE);
                     return;
                 }
                 if (!tL_error.text.equalsIgnoreCase("PREMIUM_ACCOUNT_REQUIRED")) {
-                    xc X = xc.X();
+                    yc X = yc.X();
                     if (X != null) {
                         X.d0(tL_error, false);
                     }
                     callback.run(Boolean.FALSE);
                     return;
                 }
-                org.telegram.ui.ActionBar.n2 R2 = LaunchActivity.R();
+                org.telegram.ui.ActionBar.m2 R2 = LaunchActivity.R();
                 if (z10 && R2 != null) {
                     R2.showDialog(new rg.x0(R2, 14, true));
                 }
@@ -151,7 +151,7 @@ public final /* synthetic */ class h3 implements Runnable {
                 EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) obj3;
                 String str2 = (String) obj;
                 TLRPC.Document document = (TLRPC.Document) obj2;
-                ChatActivityEnterView chatActivityEnterView = ((gg) obj4).a;
+                ChatActivityEnterView chatActivityEnterView = ((hg) obj4).a;
                 if (editTextBoldCursor == null) {
                     return;
                 }
@@ -161,7 +161,7 @@ public final /* synthetic */ class h3 implements Runnable {
                 }
                 try {
                     try {
-                        chatActivityEnterView.R2 = 2;
+                        chatActivityEnterView.S2 = 2;
                         if (str2 == null) {
                             str2 = "😀";
                         }
@@ -177,21 +177,21 @@ public final /* synthetic */ class h3 implements Runnable {
                     } catch (Exception e) {
                         FileLog.e(e);
                     }
-                    chatActivityEnterView.R2 = 0;
+                    chatActivityEnterView.S2 = 0;
                     return;
                 } catch (Throwable th2) {
-                    chatActivityEnterView.R2 = 0;
+                    chatActivityEnterView.S2 = 0;
                     throw th2;
                 }
             case 3:
-                f60.y((f60) obj4, (org.telegram.ui.ActionBar.b2[]) obj3, this.b, (TLRPC.TL_error) obj, this.c, (TL_phone.inviteToGroupCall) obj2);
+                d60.y((d60) obj4, (org.telegram.ui.ActionBar.a2[]) obj3, this.b, (TLRPC.TL_error) obj, this.c, (TL_phone.inviteToGroupCall) obj2);
                 return;
             case 4:
-                a01 a01Var = (a01) obj4;
-                ProfileActivity profileActivity = a01Var.b;
-                lq lqVar = new lq(profileActivity.e1, -j3, (TLRPC.TL_chatAdminRights) obj3, null, null, (String) obj, 2, true, !z10, null);
-                lqVar.X0 = new zz0(a01Var, (ry) obj2);
-                profileActivity.presentFragment(lqVar);
+                yz0 yz0Var = (yz0) obj4;
+                ProfileActivity profileActivity = yz0Var.b;
+                kq kqVar = new kq(profileActivity.e1, -j3, (TLRPC.TL_chatAdminRights) obj3, null, null, (String) obj, 2, true, !z10, null);
+                kqVar.X0 = new xz0(yz0Var, (qy) obj2);
+                profileActivity.presentFragment(kqVar);
                 return;
             default:
                 yh.g gVar = (yh.g) obj4;
@@ -217,8 +217,8 @@ public final /* synthetic */ class h3 implements Runnable {
         this.h = d6Var;
     }
 
-    public /* synthetic */ h3(gg ggVar, EditTextBoldCursor editTextBoldCursor, String str, TLRPC.Document document, long j3, boolean z10) {
-        this.d = ggVar;
+    public /* synthetic */ h3(hg hgVar, EditTextBoldCursor editTextBoldCursor, String str, TLRPC.Document document, long j3, boolean z10) {
+        this.d = hgVar;
         this.e = editTextBoldCursor;
         this.f = str;
         this.h = document;
@@ -226,22 +226,22 @@ public final /* synthetic */ class h3 implements Runnable {
         this.b = z10;
     }
 
-    public /* synthetic */ h3(f60 f60Var, org.telegram.ui.ActionBar.b2[] b2VarArr, boolean z10, TLRPC.TL_error tL_error, long j3, TL_phone.inviteToGroupCall invitetogroupcall) {
-        this.d = f60Var;
-        this.e = b2VarArr;
+    public /* synthetic */ h3(d60 d60Var, org.telegram.ui.ActionBar.a2[] a2VarArr, boolean z10, TLRPC.TL_error tL_error, long j3, TL_phone.inviteToGroupCall invitetogroupcall) {
+        this.d = d60Var;
+        this.e = a2VarArr;
         this.b = z10;
         this.f = tL_error;
         this.c = j3;
         this.h = invitetogroupcall;
     }
 
-    public /* synthetic */ h3(a01 a01Var, long j3, TLRPC.TL_chatAdminRights tL_chatAdminRights, String str, boolean z10, ry ryVar) {
-        this.d = a01Var;
+    public /* synthetic */ h3(yz0 yz0Var, long j3, TLRPC.TL_chatAdminRights tL_chatAdminRights, String str, boolean z10, qy qyVar) {
+        this.d = yz0Var;
         this.c = j3;
         this.e = tL_chatAdminRights;
         this.f = str;
         this.b = z10;
-        this.h = ryVar;
+        this.h = qyVar;
     }
 
     public /* synthetic */ h3(yh.g gVar, TLRPC.TL_error tL_error, TLObject tLObject, TwoStepVerificationActivity twoStepVerificationActivity, boolean z10, long j3) {

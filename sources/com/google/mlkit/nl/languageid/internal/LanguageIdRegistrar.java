@@ -10,11 +10,11 @@ import q9.j;
 import qb.d;
 import ub.b;
 import ub.e;
-import v7.f9;
-import v7.h9;
-import v7.j9;
+import v7.g9;
+import v7.i9;
+import v7.k9;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class LanguageIdRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
@@ -30,12 +30,12 @@ public class LanguageIdRegistrar implements ComponentRegistrar {
         a10.f = b.c;
         Object[] objArr = {b10, a10.b()};
         for (int i10 = 0; i10 < 2; i10++) {
-            f9 f9Var = h9.b;
+            g9 g9Var = i9.b;
             if (objArr[i10] == null) {
-                throw new NullPointerException(c.i(i10, "at index "));
+                throw new NullPointerException(c.h(i10, "at index "));
             }
         }
-        f9 f9Var2 = h9.b;
-        return new j9(2, objArr);
+        g9 g9Var2 = i9.b;
+        return new k9(2, objArr);
     }
 }

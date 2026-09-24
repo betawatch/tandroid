@@ -1,49 +1,18 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.Utilities;
+import android.graphics.Paint;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class tz0 implements TextWatcher {
-    public final /* synthetic */ a01 a;
+public interface tz0 {
+    mz0 createTextLayout(TL_iv.pageTableCell pagetablecell, int i10);
 
-    public tz0(a01 a01Var) {
-        this.a = a01Var;
-    }
+    Paint getHeaderPaint();
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        a01 a01Var = this.a;
-        p6 p6Var = a01Var.n;
-        if (a01Var.x) {
-            return;
-        }
-        String trim = editable.toString().trim();
-        if (trim.length() > 16) {
-            p6Var.setText("-" + (trim.length() - 16));
-            trim = trim.substring(0, 16);
-        } else {
-            p6Var.setText("");
-        }
-        Utilities.Callback callback = a01Var.w;
-        if (callback != null) {
-            callback.run(trim);
-        }
-        MessageObject messageObject = a01Var.r;
-        if (messageObject != null) {
-            messageObject.forceUpdate = true;
-            a01Var.d.X3(messageObject, null, false, false, false, false);
-        }
-    }
+    Paint getLinePaint();
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
+    Paint getStripPaint();
 
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
+    void onLayoutChild(mz0 mz0Var, int i10, int i11);
 }

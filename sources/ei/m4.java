@@ -2,15 +2,15 @@ package ei;
 
 import android.view.ViewGroup;
 import java.util.LinkedList;
-import org.telegram.ui.Components.bc0;
-import org.telegram.ui.Components.gh;
+import org.telegram.ui.Components.ce0;
+import org.telegram.ui.Components.hh;
 import org.telegram.ui.Components.hi;
-import org.telegram.ui.Components.og;
-import org.telegram.ui.Components.sd0;
+import org.telegram.ui.Components.mc0;
+import org.telegram.ui.Components.pg;
 import org.telegram.ui.Components.ub;
 import org.telegram.ui.Components.wi;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m4 implements o1.f {
     public final /* synthetic */ int a;
@@ -53,40 +53,40 @@ public final /* synthetic */ class m4 implements o1.f {
                 break;
             case 1:
                 ub ubVar = (ub) this.b;
-                og ogVar = (og) this.c;
+                pg pgVar = (pg) this.c;
                 ubVar.setInOutOffset(0.0f);
                 if (!z10) {
-                    ogVar.run();
+                    pgVar.run();
                     break;
                 }
                 break;
             case 2:
-                wi.r((wi) this.b, (org.telegram.ui.ActionBar.p) this.c);
+                wi.r((wi) this.b, (org.telegram.messenger.video.o) this.c);
                 break;
             case 3:
                 hi hiVar = (hi) this.b;
-                gh ghVar = (gh) this.c;
+                hh hhVar = (hh) this.c;
                 wi wiVar = (wi) hiVar.d;
                 wiVar.z0.setTranslationY(0.0f);
                 wiVar.z0.k(wiVar.l2);
-                viewGroup = ((org.telegram.ui.ActionBar.f3) wiVar).containerView;
+                viewGroup = ((org.telegram.ui.ActionBar.e3) wiVar).containerView;
                 viewGroup.invalidate();
-                ghVar.run();
+                hhVar.run();
                 wiVar.a2(0);
                 break;
             default:
-                sd0 sd0Var = (sd0) this.b;
-                bc0 bc0Var = (bc0) this.c;
-                LinkedList linkedList = sd0Var.M;
-                sd0Var.L = null;
-                bc0Var.D = null;
-                bc0Var.z();
+                ce0 ce0Var = (ce0) this.b;
+                mc0 mc0Var = (mc0) this.c;
+                LinkedList linkedList = ce0Var.M;
+                ce0Var.L = null;
+                mc0Var.D = null;
+                mc0Var.z();
                 if (!z10) {
-                    bc0Var.h = 1.0f;
-                    bc0Var.z();
+                    mc0Var.h = 1.0f;
+                    mc0Var.z();
                     if (!linkedList.isEmpty()) {
                         ((Runnable) linkedList.poll()).run();
-                        sd0Var.N.poll();
+                        ce0Var.N.poll();
                         break;
                     }
                 }

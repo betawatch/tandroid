@@ -1,62 +1,52 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.widget.FrameLayout;
+import android.os.Build;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class r91 extends org.telegram.ui.Components.z71 {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ FrameLayout d;
-    public final /* synthetic */ ra1 e;
+public final class r91 extends s4.s0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ sa1 b;
 
-    public r91(ra1 ra1Var, boolean z10, boolean z11, boolean z12, FrameLayout frameLayout) {
-        this.e = ra1Var;
-        this.a = z10;
-        this.b = z11;
-        this.c = z12;
-        this.d = frameLayout;
+    public /* synthetic */ r91(sa1 sa1Var, int i10) {
+        this.a = i10;
+        this.b = sa1Var;
     }
 
-    @Override // org.telegram.ui.Components.z71
-    public final View d(int i10) {
-        ra1 ra1Var = this.e;
-        if (ra1Var.l0) {
-            return ra1Var.j0;
+    @Override // s4.s0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        ah.h hVar;
+        sa1 sa1Var;
+        ah.h hVar2;
+        sa1 sa1Var2;
+        ah.h hVar3;
+        switch (this.a) {
+            case 0:
+                sa1 sa1Var3 = this.b;
+                if (sa1Var3.r0.size() != sa1Var3.s0.size() && !sa1Var3.w0 && sa1Var3.U.N0() > sa1Var3.X.c0 - 20) {
+                    sa1Var3.h0();
+                }
+                if (Build.VERSION.SDK_INT >= 31 && (hVar = sa1Var3.C0) != null) {
+                    hVar.f(i10, i11);
+                    sa1.W(sa1Var3);
+                    break;
+                }
+                break;
+            case 1:
+                if (Build.VERSION.SDK_INT >= 31 && (hVar2 = (sa1Var = this.b).C0) != null) {
+                    hVar2.f(i10, i11);
+                    sa1.W(sa1Var);
+                    break;
+                }
+                break;
+            default:
+                if (Build.VERSION.SDK_INT >= 31 && (hVar3 = (sa1Var2 = this.b).C0) != null) {
+                    hVar3.f(i10, i11);
+                    sa1.W(sa1Var2);
+                    break;
+                }
+                break;
         }
-        boolean z10 = this.a;
-        FrameLayout frameLayout = this.d;
-        if (z10) {
-            if (i10 == 0) {
-                return frameLayout;
-            }
-            i10--;
-        }
-        if (this.b) {
-            if (i10 == 0) {
-                return ra1Var.j0;
-            }
-            i10--;
-        }
-        return (this.c && i10 == 0) ? ra1Var.k0 : frameLayout;
-    }
-
-    @Override // org.telegram.ui.Components.z71
-    public final int e() {
-        if (this.e.l0) {
-            return 1;
-        }
-        return (this.a ? 1 : 0) + (this.b ? 1 : 0) + (this.c ? 1 : 0);
-    }
-
-    @Override // org.telegram.ui.Components.z71
-    public final int h(int i10) {
-        return i10;
-    }
-
-    @Override // org.telegram.ui.Components.z71
-    public final void b(View view, int i10, int i11) {
     }
 }

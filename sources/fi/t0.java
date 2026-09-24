@@ -18,24 +18,24 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_communities;
-import org.telegram.ui.ActionBar.b2;
+import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.d61;
-import org.telegram.ui.Components.d90;
 import org.telegram.ui.Components.e5;
-import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.k9;
+import org.telegram.ui.Components.n90;
 import org.telegram.ui.Components.oc;
 import org.telegram.ui.Components.pc;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.r61;
+import org.telegram.ui.Components.v51;
+import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class t0 implements gi.e {
     public final Context a;
     public final d6 b;
-    public final xc c;
+    public final yc c;
     public final int d;
     public final long e;
     public final TLRPC.Chat f;
@@ -47,15 +47,15 @@ public final class t0 implements gi.e {
     public boolean n;
     public long o;
     public int p;
-    public b2 q;
+    public a2 q;
     public int r;
     public final a0.i g = new a0.i();
     public ArrayList j = new ArrayList();
 
-    public t0(Context context, d6 d6Var, xc xcVar, int i10, long j3) {
+    public t0(Context context, d6 d6Var, yc ycVar, int i10, long j3) {
         this.a = context;
         this.b = d6Var;
-        this.c = xcVar;
+        this.c = ycVar;
         this.d = i10;
         this.e = j3;
         this.f = MessagesController.getInstance(i10).getChat(Long.valueOf(j3));
@@ -80,8 +80,8 @@ public final class t0 implements gi.e {
         }
     }
 
-    public final void b(d61 d61Var) {
-        if (this.m || this.n || d61Var.X2.N0() + 10 <= d61Var.Y2.x.size()) {
+    public final void b(r61 r61Var) {
+        if (this.m || this.n || r61Var.X2.N0() + 10 <= r61Var.Y2.x.size()) {
             return;
         }
         d();
@@ -105,7 +105,7 @@ public final class t0 implements gi.e {
                     boolean z10 = !communityPeerRequest.visible;
                     boolean z11 = i10 < size + (-1);
                     int i11 = gi.g.a;
-                    h51 J = h51.J(gi.g.class);
+                    v51 J = v51.J(gi.g.class);
                     J.G = new gi.f(peerDialogId, user, z10);
                     J.H = this;
                     J.j = !z11;
@@ -117,7 +117,7 @@ public final class t0 implements gi.e {
         if (this.n) {
             return;
         }
-        arrayList.add(h51.n(29));
+        arrayList.add(v51.n(29));
     }
 
     public final void d() {
@@ -140,7 +140,7 @@ public final class t0 implements gi.e {
         TextView textView;
         if (this.q == null && this.r == 0) {
             if (z11) {
-                b2 P = e5.P(this.a, this.b, LocaleController.getString(z10 ? R.string.CommunityAddAllChatsTitle : R.string.CommunityDeclineAllTitle), AndroidUtilities.replaceTags(LocaleController.formatPluralString(z10 ? "CommunityAddAllChatsMessage" : "CommunityDeclineAllMessage", this.l, new Object[0])), LocaleController.getString(z10 ? R.string.Add : R.string.Decline), new bi.f(6, this, z10));
+                a2 P = e5.P(this.a, this.b, LocaleController.getString(z10 ? R.string.CommunityAddAllChatsTitle : R.string.CommunityDeclineAllTitle), AndroidUtilities.replaceTags(LocaleController.formatPluralString(z10 ? "CommunityAddAllChatsMessage" : "CommunityDeclineAllMessage", this.l, new Object[0])), LocaleController.getString(z10 ? R.string.Add : R.string.Decline), new bi.f(6, this, z10));
                 P.show();
                 if (z10 || (textView = (TextView) P.d(-1)) == null) {
                     return;
@@ -153,9 +153,9 @@ public final class t0 implements gi.e {
                 o9Var.run();
             }
             this.i = null;
-            b2 b2Var = new b2(this.a, 3, this.b);
-            this.q = b2Var;
-            b2Var.setOnCancelListener(new fd(this, 3));
+            a2 a2Var = new a2(this.a, 3, this.b);
+            this.q = a2Var;
+            a2Var.setOnCancelListener(new fd(this, 3));
             this.q.q(500L);
             this.r = MessagesController.getInstance(this.d).resolveCommunityAllJoinPendingRequests(this.e, !z10, new r0(this, 0));
         }
@@ -168,7 +168,7 @@ public final class t0 implements gi.e {
         a();
         s0 s0Var = this.h;
         if (s0Var != null) {
-            s0Var.e();
+            s0Var.f();
         }
         int i11 = z10 ? R.string.CommunityRequestApprovedToast : R.string.CommunityRequestDeclinedToast;
         int i12 = this.d;
@@ -194,17 +194,17 @@ public final class t0 implements gi.e {
         k9Var.setScaleX(1.333f);
         k9Var.setScaleY(1.333f);
         k9Var.a(false);
-        d90 d90Var = pcVar.b;
-        d90Var.setSingleLine(false);
-        d90Var.setMaxLines(2);
-        d90Var.setTextSize(1, 14.0f);
-        d90Var.setText(replaceTags);
-        if (d90Var.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
+        n90 n90Var = pcVar.b;
+        n90Var.setSingleLine(false);
+        n90Var.setMaxLines(2);
+        n90Var.setTextSize(1, 14.0f);
+        n90Var.setText(replaceTags);
+        if (n90Var.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
             int dp = AndroidUtilities.dp(74 - ((3 - i10) * 12));
             if (LocaleController.isRTL) {
-                ((ViewGroup.MarginLayoutParams) d90Var.getLayoutParams()).rightMargin = dp;
+                ((ViewGroup.MarginLayoutParams) n90Var.getLayoutParams()).rightMargin = dp;
             } else {
-                ((ViewGroup.MarginLayoutParams) d90Var.getLayoutParams()).leftMargin = dp;
+                ((ViewGroup.MarginLayoutParams) n90Var.getLayoutParams()).leftMargin = dp;
             }
         }
         if (LocaleController.isRTL) {

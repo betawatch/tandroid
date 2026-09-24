@@ -15,7 +15,7 @@ import org.telegram.messenger.BillingController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class he extends LinearLayout {
     public final LinearLayout a;
@@ -34,26 +34,26 @@ public final class he extends LinearLayout {
         LinearLayout linearLayout = new LinearLayout(context);
         this.a = linearLayout;
         linearLayout.setOrientation(1);
-        addView(linearLayout, w7.x5.k(22.0f, 9.0f, 22.0f, 0.0f, -1, -2));
+        addView(linearLayout, w7.y5.k(22.0f, 9.0f, 22.0f, 0.0f, -1, -2));
         for (int i10 = 0; i10 < 2; i10++) {
             this.b[i10] = new LinearLayout(context);
             this.b[i10].setOrientation(0);
-            this.a.addView(this.b[i10], w7.x5.o(-1, -2, 1.0f, 119));
+            this.a.addView(this.b[i10], w7.y5.o(-1, -2, 1.0f, 119));
             this.c[i10] = new org.telegram.ui.Components.y5(context);
             this.c[i10].setTypeface(AndroidUtilities.bold());
             this.c[i10].setTextSize(1, 16.0f);
             this.c[i10].setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.G6, d6Var));
-            this.b[i10].addView(this.c[i10], w7.x5.t(-2, -2, 80, 0, 0, 5, 0));
+            this.b[i10].addView(this.c[i10], w7.y5.t(-2, -2, 80, 0, 0, 5, 0));
             this.d[i10] = new org.telegram.ui.Components.y5(context);
             this.d[i10].setTextSize(1, 11.5f);
             this.d[i10].setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.y6, d6Var));
-            this.b[i10].addView(this.d[i10], w7.x5.q(-2, -2, 80));
+            this.b[i10].addView(this.d[i10], w7.y5.q(-2, -2, 80));
         }
         TextView textView = new TextView(context);
         this.e = textView;
         textView.setTextSize(1, 13.0f);
         textView.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.y6, d6Var));
-        addView(textView, w7.x5.t(-1, -2, 55, 22, 5, 22, 9));
+        addView(textView, w7.y5.t(-1, -2, 55, 22, 5, 22, 9));
         DecimalFormatSymbols decimalFormatSymbols = new DecimalFormatSymbols(Locale.US);
         decimalFormatSymbols.setDecimalSeparator('.');
         DecimalFormat decimalFormat = new DecimalFormat("#.##", decimalFormatSymbols);
@@ -83,7 +83,7 @@ public final class he extends LinearLayout {
             if (i11 == 0 && !geVar.a) {
                 linearLayoutArr[i11].setVisibility(8);
             } else if (i11 != 1 || geVar.g) {
-                SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(w.c.g(str, " "));
+                SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(v7.j.t(str, " "));
                 boolean equalsIgnoreCase = "TON".equalsIgnoreCase(str);
                 TextView[] textViewArr = this.c;
                 if (equalsIgnoreCase) {

@@ -16,10 +16,10 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class qy extends ll0 {
-    public oy E;
+public final class qy extends vl0 {
+    public cv E;
     public boolean F;
     public int G;
     public int H;
@@ -48,7 +48,7 @@ public final class qy extends ll0 {
         this.e = z10 ? null : new sy(lzVar, context);
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.vl0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 0;
     }
@@ -153,8 +153,8 @@ public final class qy extends ll0 {
         }
         int i11 = lzVar.c1;
         HashMap hashMap = lzVar.l0;
-        nw nwVar = lzVar.h0;
-        qw qwVar = lzVar.o0;
+        ow owVar = lzVar.h0;
+        rw rwVar = lzVar.o0;
         int i12 = lzVar.c1;
         TLObject userOrChat = MessagesController.getInstance(i11).getUserOrChat(MessagesController.getInstance(i12).gifSearchBot);
         boolean z13 = userOrChat instanceof TLRPC.User;
@@ -170,17 +170,17 @@ public final class qy extends ll0 {
                 if (z14) {
                     return;
                 }
-                qwVar.e(true);
+                rwVar.e(true);
                 return;
             }
             return;
         }
         if (!z14 && TextUtils.isEmpty(str2)) {
-            qwVar.e(true);
+            rwVar.e(true);
         }
         this.n = (TLRPC.User) userOrChat;
         final String j3 = com.google.android.gms.internal.vision.e2.j("gif_search_", str, "_", str2);
-        RequestDelegate requestDelegate = new RequestDelegate() { // from class: org.telegram.ui.Components.ny
+        RequestDelegate requestDelegate = new RequestDelegate() { // from class: org.telegram.ui.Components.oy
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
                 final qy qyVar = qy.this;
@@ -201,8 +201,8 @@ public final class qy extends ll0 {
         if (!z12 && !z14 && z11 && TextUtils.isEmpty(str2)) {
             this.x.clear();
             this.y.clear();
-            if (nwVar.getAdapter() != this) {
-                nwVar.setAdapter(this);
+            if (owVar.getAdapter() != this) {
+                owVar.setAdapter(this);
             }
             l();
             lzVar.i0.h1(0, 0);
@@ -248,9 +248,9 @@ public final class qy extends ll0 {
         if (syVar != null) {
             syVar.a(false);
         }
-        oy oyVar = this.E;
-        if (oyVar != null) {
-            AndroidUtilities.cancelRunOnUIThread(oyVar);
+        cv cvVar = this.E;
+        if (cvVar != null) {
+            AndroidUtilities.cancelRunOnUIThread(cvVar);
         }
         if (!TextUtils.isEmpty(str)) {
             String lowerCase = str.toLowerCase();
@@ -258,9 +258,9 @@ public final class qy extends ll0 {
             if (TextUtils.isEmpty(lowerCase)) {
                 return;
             }
-            oy oyVar2 = new oy(0, this, str);
-            this.E = oyVar2;
-            AndroidUtilities.runOnUIThread(oyVar2, z10 ? 300L : 0L);
+            cv cvVar2 = new cv(6, this, str);
+            this.E = cvVar2;
+            AndroidUtilities.runOnUIThread(cvVar2, z10 ? 300L : 0L);
             return;
         }
         this.w = null;
@@ -268,17 +268,17 @@ public final class qy extends ll0 {
             F("", "", true, true, true);
             return;
         }
-        rx rxVar = lzVar.p0;
-        nw nwVar = lzVar.h0;
-        int currentPosition = rxVar.getCurrentPosition();
+        sx sxVar = lzVar.p0;
+        ow owVar = lzVar.h0;
+        int currentPosition = sxVar.getCurrentPosition();
         if (currentPosition != lzVar.r0 && currentPosition != lzVar.s0) {
             H(MessagesController.getInstance(lzVar.c1).gifSearchEmojies.get(currentPosition - lzVar.t0));
             return;
         }
-        s4.h0 adapter = nwVar.getAdapter();
+        s4.h0 adapter = owVar.getAdapter();
         qy qyVar = lzVar.n0;
         if (adapter != qyVar) {
-            nwVar.setAdapter(qyVar);
+            owVar.setAdapter(qyVar);
         }
     }
 
@@ -338,9 +338,9 @@ public final class qy extends ll0 {
             if (i10 == Integer.MAX_VALUE) {
                 this.H = lzVar.i1.size();
             } else {
-                nw nwVar = lzVar.h0;
+                ow owVar = lzVar.h0;
                 ry ryVar = lzVar.i0;
-                if (nwVar.getMeasuredWidth() != 0) {
+                if (owVar.getMeasuredWidth() != 0) {
                     int measuredWidth = lzVar.h0.getMeasuredWidth();
                     int i11 = ryVar.J;
                     int dp = AndroidUtilities.dp(100.0f);
@@ -351,7 +351,7 @@ public final class qy extends ll0 {
                     int i14 = 0;
                     for (int i15 = 0; i15 < size; i15++) {
                         TLRPC.Document document = (TLRPC.Document) lzVar.i1.get(i15);
-                        jv0 C1 = oz.C1(ryVar.F1(document, document.attributes));
+                        uv0 C1 = oz.C1(ryVar.F1(document, document.attributes));
                         int min = Math.min(i11, (int) Math.floor((((C1.a / C1.b) * dp) / measuredWidth) * i11));
                         if (i12 < min) {
                             this.H += i13;
@@ -380,15 +380,15 @@ public final class qy extends ll0 {
         if (c1Var.f != 0) {
             return;
         }
-        org.telegram.ui.Cells.e2 e2Var = (org.telegram.ui.Cells.e2) c1Var.a;
+        org.telegram.ui.Cells.f2 f2Var = (org.telegram.ui.Cells.f2) c1Var.a;
         int i11 = this.J;
         if (i11 >= 0 && i10 >= i11) {
-            e2Var.e((TLRPC.BotInlineResult) this.x.get(i10 - i11), this.n, true, false, false, true);
+            f2Var.e((TLRPC.BotInlineResult) this.x.get(i10 - i11), this.n, true, false, false, true);
             return;
         }
         TLRPC.Document document = (TLRPC.Document) this.L.i1.get(i10);
-        e2Var.getClass();
-        e2Var.d(0, document, "gif" + document);
+        f2Var.getClass();
+        f2Var.d(0, document, "gif" + document);
     }
 
     @Override // s4.h0
@@ -406,20 +406,20 @@ public final class qy extends ll0 {
                 view3.setLayoutParams(p0Var);
                 view = view3;
             } else {
-                org.telegram.ui.Cells.p8 p8Var = new org.telegram.ui.Cells.p8(this.c, false, false, lzVar.Z1, lzVar.i2);
-                p8Var.b(0, LocaleController.getString(R.string.FeaturedGifs));
+                org.telegram.ui.Cells.o8 o8Var = new org.telegram.ui.Cells.o8(this.c, false, false, lzVar.Z1, lzVar.i2);
+                o8Var.b(0, LocaleController.getString(R.string.FeaturedGifs));
                 s4.p0 p0Var2 = new s4.p0(-1, -2);
                 ((ViewGroup.MarginLayoutParams) p0Var2).topMargin = AndroidUtilities.dp(2.5f);
                 ((ViewGroup.MarginLayoutParams) p0Var2).bottomMargin = AndroidUtilities.dp(5.5f);
-                p8Var.setLayoutParams(p0Var2);
-                view = p8Var;
+                o8Var.setLayoutParams(p0Var2);
+                view = o8Var;
             }
         } else {
-            org.telegram.ui.Cells.e2 e2Var = new org.telegram.ui.Cells.e2(this.c);
-            e2Var.setIsKeyboard(true);
-            e2Var.setCanPreviewGif(true);
-            view = e2Var;
+            org.telegram.ui.Cells.f2 f2Var = new org.telegram.ui.Cells.f2(this.c);
+            f2Var.setIsKeyboard(true);
+            f2Var.setCanPreviewGif(true);
+            view = f2Var;
         }
-        return new wk0(view);
+        return new gl0(view);
     }
 }

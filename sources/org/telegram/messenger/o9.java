@@ -4,7 +4,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLMethod;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class o9 implements Runnable {
     public final /* synthetic */ int a;
@@ -14,13 +14,13 @@ public final /* synthetic */ class o9 implements Runnable {
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
 
-    public /* synthetic */ o9(int i10, long j3, long j10, org.telegram.ui.ActionBar.f1 f1Var, org.telegram.ui.ActionBar.f1 f1Var2) {
+    public /* synthetic */ o9(int i10, long j3, long j10, org.telegram.ui.ActionBar.e1 e1Var, org.telegram.ui.ActionBar.e1 e1Var2) {
         this.a = 3;
         this.c = i10;
         this.b = j3;
         this.d = j10;
-        this.e = f1Var;
-        this.f = f1Var2;
+        this.e = e1Var;
+        this.f = e1Var2;
     }
 
     @Override // java.lang.Runnable
@@ -37,29 +37,29 @@ public final /* synthetic */ class o9 implements Runnable {
                 ((MessagesStorage) this.e).lambda$loadPendingTasks$20(this.b, this.d, (TLMethod) this.f, this.c);
                 break;
             default:
-                org.telegram.ui.ActionBar.f1 f1Var = (org.telegram.ui.ActionBar.f1) this.e;
-                org.telegram.ui.ActionBar.f1 f1Var2 = (org.telegram.ui.ActionBar.f1) this.f;
+                org.telegram.ui.ActionBar.e1 e1Var = (org.telegram.ui.ActionBar.e1) this.e;
+                org.telegram.ui.ActionBar.e1 e1Var2 = (org.telegram.ui.ActionBar.e1) this.f;
                 int i11 = this.c;
                 MessagesController messagesController = MessagesController.getInstance(i11);
                 long j3 = this.b;
                 long j10 = this.d;
                 if (messagesController.isDialogMuted(j3, j10)) {
-                    f1Var.g(LocaleController.getString(R.string.UnmuteNotifications), R.drawable.msg_unmute, null);
+                    e1Var.g(LocaleController.getString(R.string.UnmuteNotifications), R.drawable.msg_unmute, null);
                     i10 = org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.x6, false);
-                    f1Var2.setVisibility(8);
+                    e1Var2.setVisibility(8);
                 } else {
-                    f1Var.g(LocaleController.getString(R.string.MuteNotifications), R.drawable.msg_mute, null);
+                    e1Var.g(LocaleController.getString(R.string.MuteNotifications), R.drawable.msg_mute, null);
                     int w02 = org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.q7, false);
-                    f1Var2.setVisibility(0);
+                    e1Var2.setVisibility(0);
                     if (MessagesController.getInstance(i11).isDialogNotificationsSoundEnabled(j3, j10)) {
-                        f1Var2.g(LocaleController.getString(R.string.SoundOff), R.drawable.msg_tone_off, null);
+                        e1Var2.g(LocaleController.getString(R.string.SoundOff), R.drawable.msg_tone_off, null);
                     } else {
-                        f1Var2.g(LocaleController.getString(R.string.SoundOn), R.drawable.msg_tone_on, null);
+                        e1Var2.g(LocaleController.getString(R.string.SoundOn), R.drawable.msg_tone_on, null);
                     }
                     i10 = w02;
                 }
-                f1Var.c(i10, i10);
-                f1Var.setSelectorColor(org.telegram.ui.ActionBar.h6.l1(0.1f, i10));
+                e1Var.c(i10, i10);
+                e1Var.setSelectorColor(org.telegram.ui.ActionBar.h6.l1(0.1f, i10));
                 break;
         }
     }

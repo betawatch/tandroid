@@ -1,79 +1,79 @@
 package org.telegram.ui.Components;
 
-import android.text.Layout;
-import android.text.SpannableString;
-import android.text.SpannableStringBuilder;
-import android.text.Spanned;
-import android.text.TextUtils;
-import android.view.MotionEvent;
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.ValueAnimator;
+import android.view.View;
+import android.view.animation.OvershootInterpolator;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public class zc extends d90 {
-    public ad L;
-    public ad M;
+public class zc {
+    public View a;
+    public final float b;
+    public final float c;
+    public final float d;
+    public long e;
+    public Runnable f;
+    public ValueAnimator g;
+    public boolean h;
+    public float i;
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        if (this.M == null || getMeasuredWidth() <= 0) {
-            return;
-        }
-        SpannableString spannableString = new SpannableString(" btn");
-        spannableString.setSpan(this.M, 1, spannableString.length(), 33);
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(TextUtils.ellipsize(getText(), getPaint(), (((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight()) - this.M.a()) - AndroidUtilities.dp(4.0f), TextUtils.TruncateAt.END));
-        spannableStringBuilder.append((CharSequence) spannableString);
-        setText(spannableStringBuilder);
-        this.M = null;
+    public zc(View view) {
+        this(view, 1.0f, 5.0f);
     }
 
-    @Override // org.telegram.ui.Components.d90, android.widget.TextView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        Layout layout;
-        ad adVar;
-        Runnable runnable;
-        ad adVar2;
-        int action = motionEvent.getAction();
-        float x10 = motionEvent.getX() - getPaddingLeft();
-        int y3 = ((int) motionEvent.getY()) - getPaddingTop();
-        if ((getText() instanceof Spanned) && (layout = getLayout()) != null) {
-            int lineForVertical = layout.getLineForVertical(y3);
-            Spanned spanned = (Spanned) getText();
-            ad[] adVarArr = (ad[]) spanned.getSpans(layout.getLineStart(lineForVertical), layout.getLineEnd(lineForVertical), ad.class);
-            for (int i10 = 0; i10 < adVarArr.length; i10++) {
-                adVar = adVarArr[i10];
-                float primaryHorizontal = layout.getPrimaryHorizontal(spanned.getSpanStart(adVar));
-                float primaryHorizontal2 = layout.getPrimaryHorizontal(spanned.getSpanEnd(adVar));
-                if (primaryHorizontal2 < primaryHorizontal) {
-                    primaryHorizontal2 = primaryHorizontal;
-                    primaryHorizontal = primaryHorizontal2;
-                }
-                if (x10 >= primaryHorizontal && x10 <= primaryHorizontal2) {
-                    break;
-                }
-            }
+    public final float a(float f7) {
+        return com.google.android.gms.internal.vision.e2.z(1.0f, this.i, f7, 1.0f - f7);
+    }
+
+    public void b() {
+        View view = this.a;
+        if (view != null) {
+            view.invalidate();
         }
-        adVar = null;
-        if (action == 0) {
-            this.L = adVar;
-            if (adVar != null) {
-                adVar.c(this, true);
-                return true;
-            }
-        } else if (action == 1 || action == 3) {
-            ad adVar3 = this.L;
-            if (adVar3 != null) {
-                adVar3.c(this, false);
-                if (action == 1 && (runnable = this.L.d) != null) {
-                    runnable.run();
-                }
-            }
-            this.L = null;
-        } else if (action == 2 && (adVar2 = this.L) != null && adVar2 != adVar) {
-            adVar2.c(this, false);
-            this.L = null;
+        Runnable runnable = this.f;
+        if (runnable != null) {
+            runnable.run();
         }
-        return this.L != null || super.onTouchEvent(motionEvent);
+    }
+
+    public final void c(boolean z10) {
+        if (this.h != z10) {
+            this.h = z10;
+            ValueAnimator valueAnimator = this.g;
+            this.g = null;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+            }
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(this.i, z10 ? 1.0f : 0.0f);
+            this.g = ofFloat;
+            ofFloat.addUpdateListener(new k6(this, 7));
+            this.g.addListener(new ca(1, this, z10));
+            if (this.h) {
+                this.g.setInterpolator(rr.f);
+                this.g.setDuration((long) (this.b * 60.0f));
+                this.g.setStartDelay(0L);
+            } else {
+                this.g.setInterpolator(new OvershootInterpolator(this.d));
+                this.g.setDuration((long) (this.c * 350.0f));
+                this.g.setStartDelay(this.e);
+            }
+            this.g.start();
+        }
+    }
+
+    public zc(View view, float f7, float f10) {
+        this.e = 0L;
+        this.a = view;
+        this.c = f7;
+        this.b = f7;
+        this.d = f10;
+    }
+
+    public zc(ci.o6 o6Var) {
+        this.e = 0L;
+        this.a = o6Var;
+        this.b = 1.5f;
+        this.c = 1.0f;
+        this.d = 2.0f;
     }
 }

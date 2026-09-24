@@ -23,7 +23,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public class j40 extends FrameLayout {
     public long E;
@@ -33,7 +33,7 @@ public class j40 extends FrameLayout {
     public final ai.p4 a;
     public ImageView b;
     public final ImageView c;
-    public org.telegram.ui.Cells.t1 d;
+    public org.telegram.ui.Cells.u1 d;
     public View e;
     public AnimatorSet f;
     public Runnable h;
@@ -59,7 +59,7 @@ public class j40 extends FrameLayout {
         this.b.setColorFilter(new PorterDuffColorFilter(i0.a.k(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.pf, this.F), 125), PorterDuff.Mode.MULTIPLY));
         ImageView imageView2 = this.b;
         boolean z10 = this.r;
-        addView(imageView2, w7.x5.d(34, 34.0f, 21, 0.0f, z10 ? 3.0f : 0.0f, 0.0f, z10 ? 0.0f : 3.0f));
+        addView(imageView2, w7.y5.d(34, 34.0f, 21, 0.0f, z10 ? 3.0f : 0.0f, 0.0f, z10 ? 0.0f : 3.0f));
         setOnClickListener(new f0(this, 26));
     }
 
@@ -131,7 +131,7 @@ public class j40 extends FrameLayout {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean e(org.telegram.ui.Cells.t1 t1Var, Integer num, int i10, int i11, boolean z10) {
+    public final boolean e(org.telegram.ui.Cells.u1 u1Var, Integer num, int i10, int i11, boolean z10) {
         float f7;
         int i12;
         int dp;
@@ -140,28 +140,28 @@ public class j40 extends FrameLayout {
         AnimatorSet animatorSet;
         int i13 = 0;
         int i14 = this.n;
-        if ((i14 != 5 || i11 != this.v || this.d != t1Var) && (i14 == 5 || ((i14 != 0 || getTag() == null) && this.d != t1Var))) {
+        if ((i14 != 5 || i11 != this.v || this.d != u1Var) && (i14 == 5 || ((i14 != 0 || getTag() == null) && this.d != u1Var))) {
             Runnable runnable = this.h;
             if (runnable != null) {
                 AndroidUtilities.cancelRunOnUIThread(runnable);
                 this.h = null;
             }
             int[] iArr = new int[2];
-            t1Var.getLocationInWindow(iArr);
+            u1Var.getLocationInWindow(iArr);
             int i15 = iArr[1];
             ((View) getParent()).getLocationInWindow(iArr);
             int i16 = i15 - iArr[1];
-            View view = (View) t1Var.getParent();
+            View view = (View) u1Var.getParent();
             boolean z11 = this.r;
             if (i14 == 0) {
-                ImageReceiver photoImage = t1Var.getPhotoImage();
+                ImageReceiver photoImage = u1Var.getPhotoImage();
                 i12 = (int) (photoImage.getImageY() + i16);
                 int imageHeight = (int) photoImage.getImageHeight();
                 int i17 = i12 + imageHeight;
                 int measuredHeight = view.getMeasuredHeight();
                 f7 = 10.0f;
                 if (i12 > AndroidUtilities.dp(10.0f) + getMeasuredHeight() && i17 <= (imageHeight / 4) + measuredHeight) {
-                    forwardNameCenterX = t1Var.getNoSoundIconCenterX();
+                    forwardNameCenterX = u1Var.getNoSoundIconCenterX();
                     measure(View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLObject.FLAG_31));
                     int measuredWidth = view.getMeasuredWidth();
                     if (z11) {
@@ -175,12 +175,12 @@ public class j40 extends FrameLayout {
                         this.w = measuredHeight2;
                         setTranslationY(f11 + measuredHeight2);
                     }
-                    left = t1Var.getLeft() + forwardNameCenterX;
+                    left = u1Var.getLeft() + forwardNameCenterX;
                     int dp3 = AndroidUtilities.dp(19.0f);
                     if (i14 == 5) {
-                        int f12 = hg.c.f(19.1f, forwardNameCenterX - (getMeasuredWidth() / 2), 0);
-                        setTranslationX(f12);
-                        dp3 += f12;
+                        int b10 = org.telegram.messenger.f0.b(19.1f, forwardNameCenterX - (getMeasuredWidth() / 2), 0);
+                        setTranslationX(b10);
+                        dp3 += b10;
                     } else if (left > view.getMeasuredWidth() / 2) {
                         int measuredWidth2 = (measuredWidth - getMeasuredWidth()) - AndroidUtilities.dp(38.0f);
                         setTranslationX(measuredWidth2);
@@ -188,7 +188,7 @@ public class j40 extends FrameLayout {
                     } else {
                         setTranslationX(0.0f);
                     }
-                    int left2 = (t1Var.getLeft() + forwardNameCenterX) - dp3;
+                    int left2 = (u1Var.getLeft() + forwardNameCenterX) - dp3;
                     ImageView imageView = this.c;
                     float measuredWidth3 = left2 - (imageView.getMeasuredWidth() / 2);
                     imageView.setTranslationX(measuredWidth3);
@@ -207,7 +207,7 @@ public class j40 extends FrameLayout {
                         setTranslationX(getTranslationX() + dp5);
                         imageView.setTranslationX(measuredWidth3 - dp5);
                     }
-                    this.d = t1Var;
+                    this.d = u1Var;
                     animatorSet = this.f;
                     if (animatorSet != null) {
                         animatorSet.cancel();
@@ -233,7 +233,7 @@ public class j40 extends FrameLayout {
                 if (i14 == 5) {
                     i12 = i16 + i11;
                     this.v = i11;
-                    MessageObject messageObject = t1Var.getMessageObject();
+                    MessageObject messageObject = u1Var.getMessageObject();
                     if (messageObject != null && (MessageObject.getMedia(messageObject) instanceof TLRPC.TL_messageMediaPoll)) {
                         TLRPC.TL_messageMediaPoll tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) MessageObject.getMedia(messageObject);
                         if (MessageObject.isVoted(tL_messageMediaPoll) && !MessageObject.isVoteResultsIsNotEmpty(tL_messageMediaPoll)) {
@@ -245,17 +245,17 @@ public class j40 extends FrameLayout {
                                 int measuredWidth5 = view.getMeasuredWidth();
                                 if (z11) {
                                 }
-                                left = t1Var.getLeft() + forwardNameCenterX;
+                                left = u1Var.getLeft() + forwardNameCenterX;
                                 int dp32 = AndroidUtilities.dp(19.0f);
                                 if (i14 == 5) {
                                 }
-                                int left22 = (t1Var.getLeft() + forwardNameCenterX) - dp32;
+                                int left22 = (u1Var.getLeft() + forwardNameCenterX) - dp32;
                                 ImageView imageView2 = this.c;
                                 float measuredWidth32 = left22 - (imageView2.getMeasuredWidth() / 2);
                                 imageView2.setTranslationX(measuredWidth32);
                                 if (left > view.getMeasuredWidth() / 2) {
                                 }
-                                this.d = t1Var;
+                                this.d = u1Var;
                                 animatorSet = this.f;
                                 if (animatorSet != null) {
                                 }
@@ -273,17 +273,17 @@ public class j40 extends FrameLayout {
                         int measuredWidth52 = view.getMeasuredWidth();
                         if (z11) {
                         }
-                        left = t1Var.getLeft() + forwardNameCenterX;
+                        left = u1Var.getLeft() + forwardNameCenterX;
                         int dp322 = AndroidUtilities.dp(19.0f);
                         if (i14 == 5) {
                         }
-                        int left222 = (t1Var.getLeft() + forwardNameCenterX) - dp322;
+                        int left222 = (u1Var.getLeft() + forwardNameCenterX) - dp322;
                         ImageView imageView22 = this.c;
                         float measuredWidth322 = left222 - (imageView22.getMeasuredWidth() / 2);
                         imageView22.setTranslationX(measuredWidth322);
                         if (left > view.getMeasuredWidth() / 2) {
                         }
-                        this.d = t1Var;
+                        this.d = u1Var;
                         animatorSet = this.f;
                         if (animatorSet != null) {
                         }
@@ -293,7 +293,7 @@ public class j40 extends FrameLayout {
                         }
                     }
                 } else {
-                    MessageObject messageObject2 = t1Var.getMessageObject();
+                    MessageObject messageObject2 = u1Var.getMessageObject();
                     String str = this.s;
                     if (str == null) {
                         p4Var.setText(LocaleController.getString(R.string.HidAccount));
@@ -301,27 +301,27 @@ public class j40 extends FrameLayout {
                         p4Var.setText(str);
                     }
                     measure(View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLObject.FLAG_31));
-                    TLRPC.User currentUser = t1Var.getCurrentUser();
+                    TLRPC.User currentUser = u1Var.getCurrentUser();
                     if (currentUser == null || currentUser.id != 0) {
                         int dp6 = AndroidUtilities.dp(22.0f) + i16;
-                        if (messageObject2.isOutOwner() || !t1Var.Za || t1Var.Ka == null) {
+                        if (messageObject2.isOutOwner() || !u1Var.Za || u1Var.Ka == null) {
                             i12 = dp6;
                             if (!z11 || i12 > AndroidUtilities.dp(10.0f) + getMeasuredHeight()) {
-                                forwardNameCenterX = t1Var.getForwardNameCenterX();
+                                forwardNameCenterX = u1Var.getForwardNameCenterX();
                                 int measuredWidth522 = view.getMeasuredWidth();
                                 if (z11) {
                                 }
-                                left = t1Var.getLeft() + forwardNameCenterX;
+                                left = u1Var.getLeft() + forwardNameCenterX;
                                 int dp3222 = AndroidUtilities.dp(19.0f);
                                 if (i14 == 5) {
                                 }
-                                int left2222 = (t1Var.getLeft() + forwardNameCenterX) - dp3222;
+                                int left2222 = (u1Var.getLeft() + forwardNameCenterX) - dp3222;
                                 ImageView imageView222 = this.c;
                                 float measuredWidth3222 = left2222 - (imageView222.getMeasuredWidth() / 2);
                                 imageView222.setTranslationX(measuredWidth3222);
                                 if (left > view.getMeasuredWidth() / 2) {
                                 }
-                                this.d = t1Var;
+                                this.d = u1Var;
                                 animatorSet = this.f;
                                 if (animatorSet != null) {
                                 }
@@ -334,26 +334,26 @@ public class j40 extends FrameLayout {
                             dp = AndroidUtilities.dp(20.0f) + dp6;
                         }
                     } else {
-                        dp = org.telegram.messenger.ul.D(50.0f, t1Var.getMeasuredHeight() - Math.max(0, t1Var.getBottom() - view.getMeasuredHeight()), i16);
+                        dp = org.telegram.messenger.ok.D(50.0f, u1Var.getMeasuredHeight() - Math.max(0, u1Var.getBottom() - view.getMeasuredHeight()), i16);
                     }
                     i12 = dp;
                     if (!z11) {
                     }
-                    forwardNameCenterX = t1Var.getForwardNameCenterX();
+                    forwardNameCenterX = u1Var.getForwardNameCenterX();
                     int measuredWidth5222 = view.getMeasuredWidth();
                     if (z11) {
                     }
-                    left = t1Var.getLeft() + forwardNameCenterX;
+                    left = u1Var.getLeft() + forwardNameCenterX;
                     int dp32222 = AndroidUtilities.dp(19.0f);
                     if (i14 == 5) {
                     }
-                    int left22222 = (t1Var.getLeft() + forwardNameCenterX) - dp32222;
+                    int left22222 = (u1Var.getLeft() + forwardNameCenterX) - dp32222;
                     ImageView imageView2222 = this.c;
                     float measuredWidth32222 = left22222 - (imageView2222.getMeasuredWidth() / 2);
                     imageView2222.setTranslationX(measuredWidth32222);
                     if (left > view.getMeasuredWidth() / 2) {
                     }
-                    this.d = t1Var;
+                    this.d = u1Var;
                     animatorSet = this.f;
                     if (animatorSet != null) {
                     }
@@ -442,19 +442,19 @@ public class j40 extends FrameLayout {
         if (i12 == 4) {
             dp += AndroidUtilities.dp(4.0f);
         } else if (i12 == 6 && z10) {
-            dp = org.telegram.messenger.z0.C(10.0f, getMeasuredHeight() + view.getMeasuredHeight(), dp);
+            dp = org.telegram.messenger.f0.C(10.0f, getMeasuredHeight() + view.getMeasuredHeight(), dp);
         } else if (i12 == 7 || (i12 == 8 && z10)) {
-            dp = org.telegram.messenger.z0.C(8.0f, getMeasuredHeight() + view.getMeasuredHeight(), dp);
+            dp = org.telegram.messenger.f0.C(8.0f, getMeasuredHeight() + view.getMeasuredHeight(), dp);
         } else if (i12 == 8) {
             dp -= AndroidUtilities.dp(10.0f);
         }
         int i13 = 0;
         if (i12 != 8 || !z10) {
             measuredWidth = i12 == 3 ? iArr[0] : (view.getMeasuredWidth() / 2) + iArr[0];
-        } else if (view instanceof org.telegram.ui.ActionBar.i5) {
-            org.telegram.ui.ActionBar.i5 i5Var = (org.telegram.ui.ActionBar.i5) view;
-            Drawable rightDrawable = i5Var.getRightDrawable();
-            measuredWidth = (iArr[0] + (rightDrawable != null ? rightDrawable.getBounds().centerX() : i5Var.getTextWidth() / 2)) - AndroidUtilities.dp(8.0f);
+        } else if (view instanceof org.telegram.ui.ActionBar.h5) {
+            org.telegram.ui.ActionBar.h5 h5Var = (org.telegram.ui.ActionBar.h5) view;
+            Drawable rightDrawable = h5Var.getRightDrawable();
+            measuredWidth = (iArr[0] + (rightDrawable != null ? rightDrawable.getBounds().centerX() : h5Var.getTextWidth() / 2)) - AndroidUtilities.dp(8.0f);
         } else {
             measuredWidth = view instanceof TextView ? (((TextView) view).getMeasuredWidth() + iArr[0]) - AndroidUtilities.dp(16.5f) : iArr[0];
         }
@@ -524,7 +524,7 @@ public class j40 extends FrameLayout {
         return this.w;
     }
 
-    public org.telegram.ui.Cells.t1 getMessageCell() {
+    public org.telegram.ui.Cells.u1 getMessageCell() {
         return this.d;
     }
 
@@ -545,10 +545,10 @@ public class j40 extends FrameLayout {
     public void setOverrideText(String str) {
         this.s = str;
         this.a.setText(str);
-        org.telegram.ui.Cells.t1 t1Var = this.d;
-        if (t1Var != null) {
+        org.telegram.ui.Cells.u1 u1Var = this.d;
+        if (u1Var != null) {
             this.d = null;
-            e(t1Var, null, 0, 0, false);
+            e(u1Var, null, 0, 0, false);
         }
     }
 
@@ -591,12 +591,12 @@ public class j40 extends FrameLayout {
             p4Var.setGravity(19);
             p4Var.setBackground(org.telegram.ui.ActionBar.h6.b0(AndroidUtilities.dp(5.0f), org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.qf, d6Var)));
             p4Var.setPadding(AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f), 0);
-            addView(p4Var, w7.x5.d(-2, 30.0f, 51, 0.0f, z10 ? 6.0f : 0.0f, 0.0f, z10 ? 0.0f : 6.0f));
+            addView(p4Var, w7.y5.d(-2, 30.0f, 51, 0.0f, z10 ? 6.0f : 0.0f, 0.0f, z10 ? 0.0f : 6.0f));
         } else {
             p4Var.setGravity(51);
             p4Var.setBackground(org.telegram.ui.ActionBar.h6.b0(AndroidUtilities.dp(10.0f), org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.qf, d6Var)));
             p4Var.setPadding(AndroidUtilities.dp(i10 == 0 ? 54.0f : 12.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(10.0f));
-            addView(p4Var, w7.x5.d(-2, -2.0f, 51, 0.0f, z10 ? 6.0f : 0.0f, 0.0f, z10 ? 0.0f : 6.0f));
+            addView(p4Var, w7.y5.d(-2, -2.0f, 51, 0.0f, z10 ? 6.0f : 0.0f, 0.0f, z10 ? 0.0f : 6.0f));
         }
         if (i10 == 0) {
             p4Var.setText(LocaleController.getString(R.string.AutoplayVideoInfo));
@@ -605,13 +605,13 @@ public class j40 extends FrameLayout {
             imageView.setImageResource(R.drawable.tooltip_sound);
             this.b.setScaleType(ImageView.ScaleType.CENTER);
             this.b.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(i11, d6Var), PorterDuff.Mode.MULTIPLY));
-            addView(this.b, w7.x5.d(38, 34.0f, 51, 7.0f, 7.0f, 0.0f, 0.0f));
+            addView(this.b, w7.y5.d(38, 34.0f, 51, 7.0f, 7.0f, 0.0f, 0.0f));
         }
         ImageView imageView2 = new ImageView(context);
         this.c = imageView2;
         imageView2.setImageResource(z10 ? R.drawable.tooltip_arrow_up : R.drawable.tooltip_arrow);
         imageView2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.qf, d6Var), PorterDuff.Mode.MULTIPLY));
-        addView(imageView2, w7.x5.d(14, 6.0f, (z10 ? 48 : 80) | 3, 0.0f, 0.0f, 0.0f, 0.0f));
+        addView(imageView2, w7.y5.d(14, 6.0f, (z10 ? 48 : 80) | 3, 0.0f, 0.0f, 0.0f, 0.0f));
     }
 
     public void setVisibleListener(i40 i40Var) {

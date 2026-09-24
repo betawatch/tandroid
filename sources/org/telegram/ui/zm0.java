@@ -1,28 +1,51 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class zm0 implements org.telegram.ui.ActionBar.a2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ en0 b;
+import android.content.Context;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-    public /* synthetic */ zm0(en0 en0Var, int i10) {
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* loaded from: classes3.dex */
+public final class zm0 extends TextView {
+    public final /* synthetic */ int a;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ zm0(Context context, int i10) {
+        super(context);
         this.a = i10;
-        this.b = en0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    @Override // android.widget.TextView, android.view.View
+    public CharSequence getAccessibilityClassName() {
+        switch (this.a) {
+            case 3:
+                return Button.class.getName();
+            default:
+                return super.getAccessibilityClassName();
+        }
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public void onMeasure(int i10, int i11) {
         switch (this.a) {
             case 0:
-                en0 en0Var = this.b;
-                en0Var.c(true);
-                en0Var.Q.finishFragment();
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31));
                 break;
+            case 1:
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31));
+                break;
+            case 2:
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(AndroidUtilities.dp(26.0f)), TLObject.FLAG_30));
+                break;
+            case 3:
             default:
-                en0 en0Var2 = this.b;
-                en0Var2.c(true);
-                en0Var2.Q.K1(null, 0, true);
+                super.onMeasure(i10, i11);
+                break;
+            case 4:
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), TLObject.FLAG_30));
                 break;
         }
     }

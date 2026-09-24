@@ -10,26 +10,25 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.ul;
-import org.telegram.ui.Components.ml0;
-import org.telegram.ui.Components.uk0;
-import org.telegram.ui.Components.wk0;
+import org.telegram.ui.Components.el0;
+import org.telegram.ui.Components.gl0;
+import org.telegram.ui.Components.wl0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public final class o3 extends uk0 {
+public final class o3 extends el0 {
     public final /* synthetic */ w3 c;
 
     public o3(w3 w3Var) {
         this.c = w3Var;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.vl0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 2;
     }
 
-    @Override // org.telegram.ui.Components.uk0
+    @Override // org.telegram.ui.Components.el0
     public final String F(int i10) {
         MediaController.PhotoEntry photoEntry;
         int i11 = i10 - 2;
@@ -56,27 +55,27 @@ public final class o3 extends uk0 {
         return LocaleController.formatYearMont(j3, true);
     }
 
-    @Override // org.telegram.ui.Components.uk0
-    public final void G(ml0 ml0Var, float f7, int[] iArr) {
+    @Override // org.telegram.ui.Components.el0
+    public final void G(wl0 wl0Var, float f7, int[] iArr) {
         int k10 = k();
-        float width = (ml0Var.getWidth() - ml0Var.getPaddingLeft()) - ml0Var.getPaddingRight();
+        float width = (wl0Var.getWidth() - wl0Var.getPaddingLeft()) - wl0Var.getPaddingRight();
         w3 w3Var = this.c;
         f3 f3Var = w3Var.e;
         float f10 = f3Var.J;
         int i10 = (int) (((int) (width / f10)) * w3Var.O);
         int ceil = (int) Math.ceil(k10 / f10);
-        float lerp = (AndroidUtilities.lerp(0, Math.max(0, r2 - ((AndroidUtilities.displaySize.y - ml0Var.getPaddingTop()) - ml0Var.getPaddingBottom())), f7) / (ceil * i10)) * ceil;
+        float lerp = (AndroidUtilities.lerp(0, Math.max(0, r2 - ((AndroidUtilities.displaySize.y - wl0Var.getPaddingTop()) - wl0Var.getPaddingBottom())), f7) / (ceil * i10)) * ceil;
         int round = Math.round(lerp);
         iArr[0] = Math.max(0, f3Var.J * round) + 2;
-        iArr[1] = ml0Var.getPaddingTop() + ((int) ((lerp - round) * i10));
+        iArr[1] = wl0Var.getPaddingTop() + ((int) ((lerp - round) * i10));
     }
 
-    @Override // org.telegram.ui.Components.uk0
-    public final float H(ml0 ml0Var) {
+    @Override // org.telegram.ui.Components.el0
+    public final float H(wl0 wl0Var) {
         int k10 = k();
-        float width = (ml0Var.getWidth() - ml0Var.getPaddingLeft()) - ml0Var.getPaddingRight();
+        float width = (wl0Var.getWidth() - wl0Var.getPaddingLeft()) - wl0Var.getPaddingRight();
         float f7 = this.c.e.J;
-        return (Math.max(0, ml0Var.computeVerticalScrollOffset() - r2.getPadding()) - ml0Var.getPaddingTop()) / ((((int) Math.ceil(k10 / f7)) * ((int) (((int) (width / f7)) * r2.O))) - (AndroidUtilities.displaySize.y - ml0Var.getPaddingTop()));
+        return (Math.max(0, wl0Var.computeVerticalScrollOffset() - r2.getPadding()) - wl0Var.getPaddingTop()) / ((((int) Math.ceil(k10 / f7)) * ((int) (((int) (width / f7)) * r2.O))) - (AndroidUtilities.displaySize.y - wl0Var.getPaddingTop()));
     }
 
     @Override // s4.h0
@@ -148,7 +147,7 @@ public final class o3 extends uk0 {
                 r3Var.O = null;
             } else if (photoEntry.isVideo) {
                 StringBuilder sb2 = new StringBuilder();
-                ul.m(R.string.AttachVideo, ", ", sb2);
+                org.telegram.ui.Cells.c1.n(R.string.AttachVideo, ", ", sb2);
                 sb2.append(LocaleController.formatDuration(photoEntry.duration));
                 r3Var.O = sb2.toString();
             } else {
@@ -178,13 +177,13 @@ public final class o3 extends uk0 {
             textView.setTextColor(-1);
             textView.setTypeface(AndroidUtilities.bold());
             textView.setText(w3Var.getTitle());
-            w5Var.addView(textView, w7.x5.d(-1, -1.0f, 119, 0.0f, 0.0f, z10 ? 32.0f : 0.0f, 0.0f));
+            w5Var.addView(textView, w7.y5.d(-1, -1.0f, 119, 0.0f, 0.0f, z10 ? 32.0f : 0.0f, 0.0f));
             w3Var.i0 = w5Var;
             view = w5Var;
         } else {
             view = new r3(w3Var.getContext(), w3Var.b, w3Var.O, w3Var.M);
         }
-        return new wk0(view);
+        return new gl0(view);
     }
 
     @Override // s4.h0

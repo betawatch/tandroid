@@ -1,45 +1,18 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.view.animation.Interpolator;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class ur0 extends rt0 {
-    public final /* synthetic */ yu0 M;
+public final /* synthetic */ class ur0 implements Interpolator {
+    public final /* synthetic */ int a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ur0(yu0 yu0Var, Context context) {
-        super(context);
-        this.M = yu0Var;
-    }
-
-    @Override // android.view.View
-    public final void setTranslationX(float f7) {
-        rt0 rt0Var;
-        super.setTranslationX(f7);
-        yu0 yu0Var = this.M;
-        rt0[] rt0VarArr = yu0Var.k0;
-        if (yu0Var.g1 && (rt0Var = rt0VarArr[0]) == this) {
-            float abs = Math.abs(rt0Var.getTranslationX()) / rt0VarArr[0].getMeasuredWidth();
-            yu0Var.Z0(abs, rt0VarArr[1].F);
-            if (yu0Var.D()) {
-                int i10 = yu0Var.x0;
-                if (i10 == 2) {
-                    yu0Var.o0 = 1.0f - abs;
-                } else if (i10 == 1) {
-                    yu0Var.o0 = abs;
-                }
-                yu0Var.s1(abs);
-                float a02 = yu0Var.a0(abs);
-                yu0Var.p0 = a02;
-                yu0Var.r0.setVisibility((a02 == 0.0f || !yu0Var.D() || yu0Var.q0()) ? 4 : 0);
-            } else {
-                yu0Var.o0 = 0.0f;
-            }
-            yu0Var.q1(false);
+    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
+    @Override // android.animation.TimeInterpolator
+    public final float getInterpolation(float f7) {
+        switch (this.a) {
         }
-        yu0Var.I();
-        yu0Var.K();
-        yu0Var.o0();
+        float f10 = f7 - 1.0f;
+        return (f10 * f10 * f10 * f10 * f10) + 1.0f;
     }
 }

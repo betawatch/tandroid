@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class jb extends sb {
     public final /* synthetic */ ub X2;
@@ -22,48 +22,48 @@ public final class jb extends sb {
 
     /* JADX WARN: Removed duplicated region for block: B:15:0x004f  */
     /* JADX WARN: Removed duplicated region for block: B:18:0x0053  */
-    @Override // org.telegram.ui.Components.ml0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean drawChild(Canvas canvas, View view, long j3) {
-        org.telegram.ui.Cells.t1 t1Var;
+        org.telegram.ui.Cells.u1 u1Var;
         ImageReceiver avatarImage;
         boolean z10;
         int y3;
         int b10;
-        if (view instanceof org.telegram.ui.Cells.u1) {
+        if (view instanceof org.telegram.ui.Cells.v1) {
             canvas.save();
             canvas.translate(view.getX(), view.getY());
-            ((org.telegram.ui.Cells.u1) view).a(canvas);
+            ((org.telegram.ui.Cells.v1) view).a(canvas);
             canvas.restore();
         }
         boolean drawChild = super.drawChild(canvas, view, j3);
-        if ((view instanceof org.telegram.ui.Cells.t1) && (avatarImage = (t1Var = (org.telegram.ui.Cells.t1) view).getAvatarImage()) != null) {
-            boolean z11 = t1Var.getMessageObject().deleted;
+        if ((view instanceof org.telegram.ui.Cells.u1) && (avatarImage = (u1Var = (org.telegram.ui.Cells.u1) view).getAvatarImage()) != null) {
+            boolean z11 = u1Var.getMessageObject().deleted;
             ub ubVar = this.X2;
             if (!z11) {
                 ubVar.v.getClass();
-                if (RecyclerView.R(t1Var) != -1) {
+                if (RecyclerView.R(u1Var) != -1) {
                     z10 = true;
-                    if (!t1Var.getMessageObject().deleted) {
+                    if (!u1Var.getMessageObject().deleted) {
                         avatarImage.setVisible(false, false);
                         return drawChild;
                     }
                     int y10 = (int) view.getY();
-                    if (t1Var.j() && (b10 = ubVar.v.T(view).b()) >= 0) {
+                    if (u1Var.j() && (b10 = ubVar.v.T(view).b()) >= 0) {
                         if (ubVar.v.K(b10 + 1) != null) {
                             avatarImage.setVisible(false, false);
                             return drawChild;
                         }
                     }
-                    float checkBoxTranslation = t1Var.getCheckBoxTranslation() + t1Var.getSlidingOffsetX();
-                    int layoutHeight = t1Var.getLayoutHeight() + ((int) view.getY());
+                    float checkBoxTranslation = u1Var.getCheckBoxTranslation() + u1Var.getSlidingOffsetX();
+                    int layoutHeight = u1Var.getLayoutHeight() + ((int) view.getY());
                     int measuredHeight = ubVar.v.getMeasuredHeight() - ubVar.v.getPaddingBottom();
                     if (layoutHeight > measuredHeight) {
                         layoutHeight = measuredHeight;
                     }
-                    if (t1Var.h() && (r13 = ubVar.v.T(view).b()) >= 0) {
+                    if (u1Var.h() && (r13 = ubVar.v.T(view).b()) >= 0) {
                         int i10 = 0;
                         while (i10 < 20) {
                             i10++;
@@ -74,9 +74,9 @@ public final class jb extends sb {
                             }
                             View view2 = K.a;
                             int top = view2.getTop();
-                            if (view2 instanceof org.telegram.ui.Cells.t1) {
-                                t1Var = (org.telegram.ui.Cells.t1) view2;
-                                if (t1Var.h()) {
+                            if (view2 instanceof org.telegram.ui.Cells.u1) {
+                                u1Var = (org.telegram.ui.Cells.u1) view2;
+                                if (u1Var.h()) {
                                     y10 = top;
                                 }
                             }
@@ -87,22 +87,22 @@ public final class jb extends sb {
                     if (layoutHeight - AndroidUtilities.dp(48.0f) < y10) {
                         layoutHeight = AndroidUtilities.dp(48.0f) + y10;
                     }
-                    if (!t1Var.j() && layoutHeight > (y3 = (int) (t1Var.getY() + t1Var.getMeasuredHeight()))) {
+                    if (!u1Var.j() && layoutHeight > (y3 = (int) (u1Var.getY() + u1Var.getMeasuredHeight()))) {
                         layoutHeight = y3;
                     }
                     canvas.save();
                     if (checkBoxTranslation != 0.0f) {
                         canvas.translate(checkBoxTranslation, 0.0f);
                     }
-                    if (t1Var.getCurrentMessagesGroup() != null && t1Var.getCurrentMessagesGroup().transitionParams.backgroundChangeBounds) {
-                        layoutHeight = (int) (layoutHeight - t1Var.getTranslationY());
+                    if (u1Var.getCurrentMessagesGroup() != null && u1Var.getCurrentMessagesGroup().transitionParams.backgroundChangeBounds) {
+                        layoutHeight = (int) (layoutHeight - u1Var.getTranslationY());
                     }
                     if (z10) {
                         avatarImage.setImageY(layoutHeight - AndroidUtilities.dp(44.0f));
                     }
-                    if (t1Var.a()) {
-                        avatarImage.setAlpha(t1Var.getAlpha());
-                        canvas.scale(t1Var.getScaleX(), t1Var.getScaleY(), t1Var.getPivotX() + t1Var.getX(), t1Var.getY() + (t1Var.getHeight() >> 1));
+                    if (u1Var.a()) {
+                        avatarImage.setAlpha(u1Var.getAlpha());
+                        canvas.scale(u1Var.getScaleX(), u1Var.getScaleY(), u1Var.getPivotX() + u1Var.getX(), u1Var.getY() + (u1Var.getHeight() >> 1));
                     } else {
                         avatarImage.setAlpha(1.0f);
                     }
@@ -114,13 +114,13 @@ public final class jb extends sb {
                 }
             }
             z10 = false;
-            if (!t1Var.getMessageObject().deleted) {
+            if (!u1Var.getMessageObject().deleted) {
             }
         }
         return drawChild;
     }
 
-    @Override // org.telegram.ui.Components.ml0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         int i14;
         MessageObject messageObject;

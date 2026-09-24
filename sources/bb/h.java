@@ -4,16 +4,16 @@ import a6.m;
 import android.content.Context;
 import android.os.Bundle;
 import org.telegram.tgnet.TLObject;
-import v7.t7;
-import w7.q;
+import v7.u7;
+import w7.r;
 import za.d0;
 import za.t;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class h {
     public static final f c = new f();
-    public static final m1.c d = q.a(t.b);
+    public static final m1.c d = r.a(t.b);
     public final m a;
     public final d b;
 
@@ -76,7 +76,7 @@ public final class h {
                 i10 = gVar.d;
                 gd.i iVar = gd.i.a;
                 if (i10 != 0) {
-                    t7.b(obj);
+                    u7.b(obj);
                     gVar.a = this;
                     gVar.d = 1;
                     this.a.getClass();
@@ -86,12 +86,12 @@ public final class h {
                 }
                 if (i10 != 1) {
                     if (i10 == 2) {
-                        t7.b(obj);
+                        u7.b(obj);
                     }
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 }
                 hVar = gVar.a;
-                t7.b(obj);
+                u7.b(obj);
                 d dVar = hVar.b;
                 gVar.a = null;
                 gVar.d = 2;

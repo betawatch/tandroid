@@ -1,18 +1,24 @@
 package org.telegram.ui;
 
-import androidx.recyclerview.widget.RecyclerView;
-
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class l71 extends s4.s0 {
-    public final /* synthetic */ m71 a;
+public final class l71 extends g.p {
+    public final /* synthetic */ n71 c;
 
-    public l71(m71 m71Var) {
-        this.a = m71Var;
+    public l71(n71 n71Var) {
+        this.c = n71Var;
     }
 
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        this.a.P();
+    @Override // g.p
+    public final int i(int i10) {
+        int i11;
+        n71 n71Var = this.c;
+        org.telegram.ui.Components.oz ozVar = n71Var.X;
+        org.telegram.ui.Components.j61 j61Var = n71Var.d0;
+        if (j61Var == null) {
+            return ozVar.J;
+        }
+        org.telegram.ui.Components.v51 G = j61Var.G(i10 - 1);
+        return (G == null || (i11 = G.u) == -1) ? ozVar.J : i11;
     }
 }

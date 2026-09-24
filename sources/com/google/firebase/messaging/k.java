@@ -12,9 +12,9 @@ import ci.rc;
 import java.util.Collections;
 import java.util.Set;
 import java.util.WeakHashMap;
-import v7.n6;
+import v7.o6;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class k implements Application.ActivityLifecycleCallbacks {
     public final Set a = Collections.newSetFromMap(new WeakHashMap());
@@ -43,7 +43,7 @@ public final class k implements Application.ActivityLifecycleCallbacks {
                     Log.d("FirebaseMessaging", "Received event with track-conversion=false. Do not set user property");
                 }
             }
-            n6.a("_no", bundle);
+            o6.a("_no", bundle);
         }
     }
 

@@ -1,49 +1,78 @@
 package v7;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+import java.util.ListIterator;
+import java.util.NoSuchElementException;
+
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
-public final class g9 extends h9 {
-    public final transient int c;
-    public final transient int d;
-    public final /* synthetic */ h9 e;
+public final class g9 extends a9.o implements ListIterator {
+    public final int b;
+    public int c;
+    public final i9 d;
 
-    public g9(h9 h9Var, int i10, int i11) {
-        this.e = h9Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g9(i9 i9Var, int i10) {
+        super(6);
+        int size = i9Var.size();
+        if (i10 < 0 || i10 > size) {
+            throw new IndexOutOfBoundsException(w7.x7.c(i10, size, "index"));
+        }
+        this.b = size;
         this.c = i10;
-        this.d = i11;
+        this.d = i9Var;
     }
 
-    @Override // java.util.List
-    public final Object get(int i10) {
-        w7.w7.a(i10, this.d);
-        return this.e.get(i10 + this.c);
+    public final Object a(int i10) {
+        return this.d.get(i10);
     }
 
-    @Override // v7.e9
-    public final int n() {
-        return this.e.o() + this.c + this.d;
+    @Override // java.util.ListIterator
+    public final void add(Object obj) {
+        throw new UnsupportedOperationException();
     }
 
-    @Override // v7.e9
-    public final int o() {
-        return this.e.o() + this.c;
+    @Override // java.util.Iterator, java.util.ListIterator
+    public final boolean hasNext() {
+        return this.c < this.b;
     }
 
-    @Override // v7.e9
-    public final Object[] p() {
-        return this.e.p();
+    @Override // java.util.ListIterator
+    public final boolean hasPrevious() {
+        return this.c > 0;
     }
 
-    @Override // v7.h9, java.util.List
-    /* renamed from: q, reason: merged with bridge method [inline-methods] */
-    public final h9 subList(int i10, int i11) {
-        w7.w7.b(i10, i11, this.d);
-        int i12 = this.c;
-        return this.e.subList(i10 + i12, i11 + i12);
+    @Override // java.util.Iterator, java.util.ListIterator
+    public final Object next() {
+        if (!hasNext()) {
+            throw new NoSuchElementException();
+        }
+        int i10 = this.c;
+        this.c = i10 + 1;
+        return a(i10);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.d;
+    @Override // java.util.ListIterator
+    public final int nextIndex() {
+        return this.c;
+    }
+
+    @Override // java.util.ListIterator
+    public final Object previous() {
+        if (!hasPrevious()) {
+            throw new NoSuchElementException();
+        }
+        int i10 = this.c - 1;
+        this.c = i10;
+        return a(i10);
+    }
+
+    @Override // java.util.ListIterator
+    public final int previousIndex() {
+        return this.c - 1;
+    }
+
+    @Override // java.util.ListIterator
+    public final void set(Object obj) {
+        throw new UnsupportedOperationException();
     }
 }

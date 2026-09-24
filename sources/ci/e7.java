@@ -15,7 +15,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildConfig;
 import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class e7 {
     public boolean a;
@@ -52,28 +52,28 @@ public final class e7 {
             return;
         }
         this.h = bVar;
-        k2.f0 f0Var = (k2.f0) ((ei.d5) this.c).b;
+        k2.e0 e0Var = (k2.e0) ((ei.d5) this.c).b;
         Looper myLooper = Looper.myLooper();
-        boolean z10 = f0Var.i0 == myLooper;
+        boolean z10 = e0Var.i0 == myLooper;
         StringBuilder sb2 = new StringBuilder("Current looper (");
         String str = BuildConfig.BETA_URL;
         sb2.append(myLooper == null ? BuildConfig.BETA_URL : myLooper.getThread().getName());
         sb2.append(") is not the playback looper (");
-        Looper looper = f0Var.i0;
+        Looper looper = e0Var.i0;
         if (looper != null) {
             str = looper.getThread().getName();
         }
         sb2.append(str);
         sb2.append(")");
         e2.d.f(sb2.toString(), z10);
-        k2.b bVar2 = f0Var.y;
+        k2.b bVar2 = e0Var.y;
         if (bVar2 == null || bVar.equals(bVar2)) {
             return;
         }
-        f0Var.y = bVar;
-        k2.n nVar = f0Var.t;
+        e0Var.y = bVar;
+        k2.n nVar = e0Var.t;
         if (nVar != null) {
-            nVar.J();
+            nVar.G();
         }
     }
 

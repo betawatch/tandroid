@@ -17,7 +17,7 @@ import org.webrtc.EglRenderer;
 import org.webrtc.GlGenericDrawer;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public class TextureViewRenderer extends TextureView implements TextureView.SurfaceTextureListener, VideoSink, RendererCommon.RendererEvents {
     private static final String TAG = "TextureViewRenderer";
@@ -139,7 +139,7 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
         sb2.append(", frame size: ");
         sb2.append(this.rotatedFrameWidth);
         sb2.append("x");
-        hg.c.v(sb2, this.rotatedFrameHeight, ", requested surface size: ", min, "x");
+        hg.c.t(sb2, this.rotatedFrameHeight, ", requested surface size: ", min, "x");
         sb2.append(min2);
         sb2.append(", old surface size: ");
         sb2.append(this.surfaceWidth);
@@ -568,7 +568,7 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
         requestLayout();
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class TextureEglRenderer extends EglRenderer implements TextureView.SurfaceTextureListener {
         private static final String TAG = "TextureEglRenderer";
         private int frameRotation;
@@ -657,7 +657,7 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
         public boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
             ThreadUtils.checkIsOnMainThread();
             CountDownLatch countDownLatch = new CountDownLatch(1);
-            releaseEglSurface(new org.telegram.ui.ActionBar.q(countDownLatch, 16), false);
+            releaseEglSurface(new org.telegram.ui.ActionBar.p(countDownLatch, 16), false);
             ThreadUtils.awaitUninterruptibly(countDownLatch);
             return true;
         }

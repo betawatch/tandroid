@@ -1,13 +1,34 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
+import android.transition.Transition;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class e21 extends org.telegram.ui.Components.zn0 {
-    @Override // org.telegram.ui.Components.zn0, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        invalidate();
+public final class e21 implements Transition.TransitionListener {
+    public final /* synthetic */ Runnable a;
+
+    public e21(Runnable runnable) {
+        this.a = runnable;
+    }
+
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionEnd(Transition transition) {
+        this.a.run();
+    }
+
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionCancel(Transition transition) {
+    }
+
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionPause(Transition transition) {
+    }
+
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionResume(Transition transition) {
+    }
+
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionStart(Transition transition) {
     }
 }

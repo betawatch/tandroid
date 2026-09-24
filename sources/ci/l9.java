@@ -10,7 +10,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l9 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -42,7 +42,7 @@ public final /* synthetic */ class l9 implements View.OnClickListener {
                 fa faVar = y9Var.W;
                 d dVar = y9Var.v;
                 if (!dVar.N) {
-                    i10 = ((org.telegram.ui.ActionBar.f3) faVar).currentAccount;
+                    i10 = ((org.telegram.ui.ActionBar.e3) faVar).currentAccount;
                     HashMap hashMap2 = faVar.e;
                     ArrayList arrayList2 = faVar.d;
                     HashMap hashMap3 = faVar.r;
@@ -60,7 +60,7 @@ public final /* synthetic */ class l9 implements View.OnClickListener {
                         TLRPC.TL_editCloseFriends tL_editCloseFriends = new TLRPC.TL_editCloseFriends();
                         tL_editCloseFriends.id.addAll(arrayList);
                         dVar.setLoading(true);
-                        i18 = ((org.telegram.ui.ActionBar.f3) faVar).currentAccount;
+                        i18 = ((org.telegram.ui.ActionBar.e3) faVar).currentAccount;
                         ConnectionsManager.getInstance(i18).sendRequest(tL_editCloseFriends, new ai.v1(7, y9Var, messagesController));
                         break;
                     } else if (i19 == 0) {
@@ -68,7 +68,7 @@ public final /* synthetic */ class l9 implements View.OnClickListener {
                         if (i20 == 3) {
                             HashSet l1 = fa.l1(arrayList3, hashMap3);
                             int i21 = faVar.N;
-                            i17 = ((org.telegram.ui.ActionBar.f3) faVar).currentAccount;
+                            i17 = ((org.telegram.ui.ActionBar.e3) faVar).currentAccount;
                             daVar = new da(i21, i17, new ArrayList(l1));
                             ArrayList arrayList4 = daVar.c;
                             arrayList4.clear();
@@ -77,12 +77,12 @@ public final /* synthetic */ class l9 implements View.OnClickListener {
                             hashMap4.clear();
                             hashMap4.putAll(hashMap3);
                         } else if (i20 == 2) {
-                            i16 = ((org.telegram.ui.ActionBar.f3) faVar).currentAccount;
+                            i16 = ((org.telegram.ui.ActionBar.e3) faVar).currentAccount;
                             daVar = new da(i20, i16, faVar.h);
                         } else if (i20 == 4) {
                             HashSet l12 = fa.l1(arrayList2, hashMap2);
                             int i22 = faVar.N;
-                            i15 = ((org.telegram.ui.ActionBar.f3) faVar).currentAccount;
+                            i15 = ((org.telegram.ui.ActionBar.e3) faVar).currentAccount;
                             daVar = new da(i22, i15, new ArrayList(l12));
                             ArrayList arrayList5 = daVar.c;
                             arrayList5.clear();
@@ -91,7 +91,7 @@ public final /* synthetic */ class l9 implements View.OnClickListener {
                             hashMap5.clear();
                             hashMap5.putAll(hashMap2);
                         } else {
-                            i14 = ((org.telegram.ui.ActionBar.f3) faVar).currentAccount;
+                            i14 = ((org.telegram.ui.ActionBar.e3) faVar).currentAccount;
                             daVar = new da(i20, i14, (ArrayList) null);
                         }
                         faVar.g1(daVar, new ai.r5(faVar, 1), false);
@@ -99,7 +99,7 @@ public final /* synthetic */ class l9 implements View.OnClickListener {
                     } else if (i19 == 2) {
                         if (faVar.Z) {
                             faVar.f1();
-                            i13 = ((org.telegram.ui.ActionBar.f3) faVar).currentAccount;
+                            i13 = ((org.telegram.ui.ActionBar.e3) faVar).currentAccount;
                             faVar.g1(new da(2, i13, arrayList), new ai.r5(faVar, 1), false);
                             break;
                         } else {
@@ -111,7 +111,7 @@ public final /* synthetic */ class l9 implements View.OnClickListener {
                         if (i19 == 6) {
                             HashSet l13 = fa.l1(arrayList, hashMap);
                             dVar.setLoading(true);
-                            i11 = ((org.telegram.ui.ActionBar.f3) faVar).currentAccount;
+                            i11 = ((org.telegram.ui.ActionBar.e3) faVar).currentAccount;
                             ai.l9 storiesController = MessagesController.getInstance(i11).getStoriesController();
                             m9 m9Var = new m9(y9Var, 1);
                             int i23 = storiesController.a;
@@ -148,7 +148,7 @@ public final /* synthetic */ class l9 implements View.OnClickListener {
                         HashSet l14 = fa.l1(arrayList, hashMap);
                         if (!l14.isEmpty()) {
                             faVar.f1();
-                            i12 = ((org.telegram.ui.ActionBar.f3) faVar).currentAccount;
+                            i12 = ((org.telegram.ui.ActionBar.e3) faVar).currentAccount;
                             da daVar2 = new da(3, i12, new ArrayList(l14));
                             ArrayList arrayList6 = daVar2.c;
                             arrayList6.clear();
@@ -176,7 +176,7 @@ public final /* synthetic */ class l9 implements View.OnClickListener {
                     break;
                 } else {
                     Context context = y9Var2.getContext();
-                    d6Var = ((org.telegram.ui.ActionBar.f3) faVar2).resourcesProvider;
+                    d6Var = ((org.telegram.ui.ActionBar.e3) faVar2).resourcesProvider;
                     fa faVar3 = new fa(context, d6Var);
                     faVar3.V = new n9(y9Var2, 1);
                     faVar3.Q = faVar2.Q;

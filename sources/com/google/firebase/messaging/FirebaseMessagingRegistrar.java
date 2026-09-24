@@ -5,9 +5,9 @@ import b2.i0;
 import com.google.firebase.components.ComponentRegistrar;
 import java.util.Arrays;
 import java.util.List;
-import w7.o8;
+import w7.p8;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class FirebaseMessagingRegistrar implements ComponentRegistrar {
     private static final String LIBRARY_NAME = "fire-fcm";
@@ -34,6 +34,6 @@ public class FirebaseMessagingRegistrar implements ComponentRegistrar {
         a2.a(q9.j.a(ma.b.class));
         a2.f = new w1(28);
         a2.c(1);
-        return Arrays.asList(a2.b(), o8.a(LIBRARY_NAME, "23.4.0"));
+        return Arrays.asList(a2.b(), p8.a(LIBRARY_NAME, "23.4.0"));
     }
 }

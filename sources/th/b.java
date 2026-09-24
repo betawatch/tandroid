@@ -6,9 +6,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.d20;
 import r0.l1;
 import r0.n;
-import rg.w1;
+import rg.q1;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b implements d20, n {
     public final /* synthetic */ f a;
@@ -36,7 +36,7 @@ public final /* synthetic */ class b implements d20, n {
         if (fVar.l0 != min) {
             fVar.l0 = min;
             fVar.X.a(min);
-            fVar.h0.postOnAnimation(new w1(fVar, 9));
+            fVar.h0.postOnAnimation(new q1(fVar, 10));
         }
     }
 }

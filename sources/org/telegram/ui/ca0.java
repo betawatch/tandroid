@@ -1,50 +1,38 @@
 package org.telegram.ui;
 
-import android.graphics.Point;
-import android.os.SystemClock;
-import android.view.View;
-import android.view.ViewTreeObserver;
 import java.util.regex.Pattern;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildVars;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ca0 implements ViewTreeObserver.OnGlobalLayoutListener {
+public final /* synthetic */ class ca0 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ LaunchActivity b;
 
-    public /* synthetic */ ca0(Object obj, int i10) {
+    public /* synthetic */ ca0(LaunchActivity launchActivity, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = launchActivity;
     }
 
-    @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
-    public final void onGlobalLayout() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         int i10 = this.a;
-        Object obj = this.b;
+        LaunchActivity launchActivity = this.b;
         switch (i10) {
             case 0:
                 Pattern pattern = LaunchActivity.B1;
-                int measuredHeight = ((View) obj).getMeasuredHeight();
-                org.telegram.messenger.z0.n(AndroidUtilities.displaySize.y, hg.c.l(measuredHeight, "height = ", " displayHeight = "));
-                int i11 = (measuredHeight - AndroidUtilities.navigationBarHeight) - AndroidUtilities.statusBarHeight;
-                if (i11 > AndroidUtilities.dp(100.0f) && i11 < AndroidUtilities.displaySize.y) {
-                    int dp = AndroidUtilities.dp(100.0f) + i11;
-                    Point point = AndroidUtilities.displaySize;
-                    if (dp > point.y) {
-                        point.y = i11;
-                        if (BuildVars.LOGS_ENABLED) {
-                            org.telegram.messenger.z0.n(AndroidUtilities.displaySize.y, new StringBuilder("fix display size y to "));
-                            break;
-                        }
-                    }
+                if (tLObject != null) {
+                    AndroidUtilities.runOnUIThread(new m80(6, launchActivity, (TL_account.Password) tLObject));
+                    break;
                 }
                 break;
             default:
-                od1 od1Var = (od1) obj;
-                od1Var.P = SystemClock.elapsedRealtime() + 1500;
-                od1Var.k0.invalidate();
+                Pattern pattern2 = LaunchActivity.B1;
+                AndroidUtilities.runOnUIThread(new m80(2, launchActivity, tLObject));
                 break;
         }
     }

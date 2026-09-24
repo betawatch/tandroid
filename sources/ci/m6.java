@@ -32,38 +32,38 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.ul;
+import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.bc0;
-import org.telegram.ui.Components.bm0;
-import org.telegram.ui.Components.fd0;
-import org.telegram.ui.Components.gk0;
-import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.ce0;
+import org.telegram.ui.Components.mc0;
+import org.telegram.ui.Components.mm0;
 import org.telegram.ui.Components.np;
-import org.telegram.ui.Components.om0;
+import org.telegram.ui.Components.qd0;
+import org.telegram.ui.Components.qk0;
 import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.sd0;
+import org.telegram.ui.Components.wl0;
 import org.telegram.ui.Components.yy;
+import org.telegram.ui.Components.zm0;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.SecretMediaViewer;
-import org.telegram.ui.a51;
-import org.telegram.ui.a80;
-import org.telegram.ui.at;
-import org.telegram.ui.c61;
+import org.telegram.ui.a71;
+import org.telegram.ui.b51;
 import org.telegram.ui.d61;
 import org.telegram.ui.e61;
-import org.telegram.ui.i20;
-import org.telegram.ui.i61;
-import org.telegram.ui.jl0;
+import org.telegram.ui.f61;
+import org.telegram.ui.g20;
+import org.telegram.ui.il0;
+import org.telegram.ui.j61;
+import org.telegram.ui.nt;
 import org.telegram.ui.od1;
-import org.telegram.ui.pt;
-import org.telegram.ui.t41;
-import org.telegram.ui.ut0;
+import org.telegram.ui.tt0;
+import org.telegram.ui.u41;
+import org.telegram.ui.v21;
 import org.telegram.ui.w21;
-import org.telegram.ui.x21;
-import org.telegram.ui.z61;
+import org.telegram.ui.y70;
+import org.telegram.ui.ys;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class m6 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -92,7 +92,7 @@ public final class m6 extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     public void dispatchDraw(Canvas canvas) {
         org.telegram.ui.ActionBar.d6 d6Var;
-        org.telegram.ui.ActionBar.i5[] i5VarArr;
+        org.telegram.ui.ActionBar.h5[] h5VarArr;
         float f7;
         ?? r92;
         char c10;
@@ -110,7 +110,7 @@ public final class m6 extends FrameLayout {
                 super.dispatchDraw(canvas);
                 Paint paint = (Paint) this.b;
                 int i10 = org.telegram.ui.ActionBar.h6.a7;
-                d6Var = ((org.telegram.ui.ActionBar.n2) ((org.telegram.ui.p5) this.c).d).resourceProvider;
+                d6Var = ((org.telegram.ui.ActionBar.m2) ((org.telegram.ui.o5) this.c).d).resourceProvider;
                 paint.setColor(org.telegram.ui.ActionBar.h6.v0(i10, d6Var));
                 canvas.drawRect(0.0f, getHeight() - 2, getWidth(), getHeight(), paint);
                 break;
@@ -165,10 +165,10 @@ public final class m6 extends FrameLayout {
                 canvas.saveLayerAlpha(rectF2, 255, 31);
                 super.dispatchDraw(canvas);
                 rectF2.set(getPaddingLeft(), getPaddingTop(), getWidth() - getPaddingRight(), AndroidUtilities.dp(6.0f) + getPaddingTop());
-                i20 i20Var = (i20) this.c;
-                i20Var.b(canvas, rectF2, 1, 1.0f);
+                g20 g20Var = (g20) this.c;
+                g20Var.b(canvas, rectF2, 1, 1.0f);
                 rectF2.set(getPaddingLeft(), (getHeight() - getPaddingBottom()) - AndroidUtilities.dp(6.0f), getWidth() - getPaddingRight(), getHeight() - getPaddingBottom());
-                i20Var.b(canvas, rectF2, 3, 1.0f);
+                g20Var.b(canvas, rectF2, 3, 1.0f);
                 canvas.restore();
                 canvas.restore();
                 break;
@@ -210,14 +210,14 @@ public final class m6 extends FrameLayout {
                 break;
             case 13:
                 Paint paint5 = (Paint) this.b;
-                gk0 gk0Var = (gk0) this.c;
-                int i12 = gk0Var.M0;
-                paint5.setColor((i12 == 1 || i12 == 2 || i12 == 4) ? i0.a.k(-1, 30) : i0.a.d(0.7f, org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.F8, gk0Var.k0), org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.h5, gk0Var.k0)));
+                qk0 qk0Var = (qk0) this.c;
+                int i12 = qk0Var.M0;
+                paint5.setColor((i12 == 1 || i12 == 2 || i12 == 4) ? i0.a.k(-1, 30) : i0.a.d(0.7f, org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.F8, qk0Var.k0), org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.h5, qk0Var.k0)));
                 float measuredHeight = getMeasuredHeight() / 2.0f;
                 float measuredWidth2 = getMeasuredWidth() / 2.0f;
                 View childAt = getChildAt(0);
                 float measuredWidth3 = (getMeasuredWidth() - AndroidUtilities.dpf2(6.0f)) / 2.0f;
-                float g10 = gk0Var.g();
+                float g10 = qk0Var.g();
                 RectF rectF3 = AndroidUtilities.rectTmp;
                 rectF3.set(measuredWidth2 - measuredWidth3, (measuredHeight - measuredWidth3) - g10, measuredWidth2 + measuredWidth3, measuredHeight + measuredWidth3 + g10);
                 canvas.save();
@@ -232,11 +232,11 @@ public final class m6 extends FrameLayout {
             case 19:
                 super.dispatchDraw(canvas);
                 ProfileActivity profileActivity = (ProfileActivity) this.c;
-                org.telegram.ui.ActionBar.i5[] i5VarArr2 = profileActivity.r;
+                org.telegram.ui.ActionBar.h5[] h5VarArr2 = profileActivity.r;
                 if (profileActivity.W4 != null) {
                     canvas.save();
-                    canvas.translate(i5VarArr2[0].getX(), i5VarArr2[0].getY());
-                    i5VarArr = i5VarArr2;
+                    canvas.translate(h5VarArr2[0].getX(), h5VarArr2[0].getY());
+                    h5VarArr = h5VarArr2;
                     f7 = 0.0f;
                     r92 = 0;
                     c10 = 2;
@@ -248,7 +248,7 @@ public final class m6 extends FrameLayout {
                     canvas.restore();
                     invalidate();
                 } else {
-                    i5VarArr = i5VarArr2;
+                    h5VarArr = h5VarArr2;
                     f7 = 0.0f;
                     r92 = 0;
                     c10 = 2;
@@ -256,9 +256,9 @@ public final class m6 extends FrameLayout {
                     f11 = 24.0f;
                 }
                 if (profileActivity.p5 && profileActivity.Y5 != f7 && profileActivity.n5 != 1.0f) {
-                    float measuredHeight2 = (i5VarArr[1].getMeasuredHeight() / 2.0f) + i5VarArr[1].getY();
+                    float measuredHeight2 = (h5VarArr[1].getMeasuredHeight() / 2.0f) + h5VarArr[1].getY();
                     float dp8 = AndroidUtilities.dp(22.0f);
-                    float x11 = ((i5VarArr[1].getX() + (AndroidUtilities.dp(28.0f) - profileActivity.o5)) - dp8) - profileActivity.Z3();
+                    float x11 = ((h5VarArr[1].getX() + (AndroidUtilities.dp(28.0f) - profileActivity.o5)) - dp8) - profileActivity.Z3();
                     profileActivity.r5.setImageCoords(x11, measuredHeight2 - (dp8 / 2.0f), dp8, dp8);
                     profileActivity.r5.setAlpha(profileActivity.Y5);
                     canvas.save();
@@ -267,38 +267,38 @@ public final class m6 extends FrameLayout {
                     profileActivity.r5.draw(canvas);
                     canvas.restore();
                     if (profileActivity.n5 != f7) {
-                        org.telegram.ui.Components.fd fdVar = (org.telegram.ui.Components.fd) this.b;
-                        if (fdVar != null && (zVar = fdVar.e) != null) {
+                        org.telegram.ui.Components.gd gdVar = (org.telegram.ui.Components.gd) this.b;
+                        if (gdVar != null && (zVar = gdVar.e) != null) {
                             zVar.setState(StateSet.NOTHING);
                             zVar.jumpToCurrentState();
                             break;
                         }
                     } else {
-                        if (((org.telegram.ui.Components.fd) this.b) == null) {
-                            org.telegram.ui.Components.fd fdVar2 = new org.telegram.ui.Components.fd(this);
-                            this.b = fdVar2;
-                            fdVar2.h = new jl0(this, 29);
+                        if (((org.telegram.ui.Components.gd) this.b) == null) {
+                            org.telegram.ui.Components.gd gdVar2 = new org.telegram.ui.Components.gd(this);
+                            this.b = gdVar2;
+                            gdVar2.h = new il0(this, 29);
                         }
                         float dp9 = (1.0f - profileActivity.n5) * AndroidUtilities.dp(28.0f);
-                        float textWidth = i5VarArr[c10].getTextWidth();
+                        float textWidth = h5VarArr[c10].getTextWidth();
                         float max = Math.max(textWidth, profileActivity.T != null ? (AndroidUtilities.dp(f11) + textWidth + AndroidUtilities.dp(4.0f)) * profileActivity.T.getVisibilityFactor() : 0.0f) + dp9;
                         RectF rectF4 = AndroidUtilities.rectTmp;
                         rectF4.set(x11 - AndroidUtilities.dp(4.0f), measuredHeight2 - AndroidUtilities.dp(f10), x11 + max + AndroidUtilities.dp(4.0f), measuredHeight2 + AndroidUtilities.dp(f10));
-                        org.telegram.ui.Components.fd fdVar3 = (org.telegram.ui.Components.fd) this.b;
-                        fdVar3.i = r92;
-                        fdVar3.c = r92;
-                        fdVar3.a(rectF4);
-                        org.telegram.ui.Components.fd fdVar4 = (org.telegram.ui.Components.fd) this.b;
-                        fdVar4.n = true;
+                        org.telegram.ui.Components.gd gdVar3 = (org.telegram.ui.Components.gd) this.b;
+                        gdVar3.i = r92;
+                        gdVar3.c = r92;
+                        gdVar3.a(rectF4);
+                        org.telegram.ui.Components.gd gdVar4 = (org.telegram.ui.Components.gd) this.b;
+                        gdVar4.n = true;
                         int k10 = i0.a.k(-1, 50);
-                        fdVar4.g.setColor((int) r92);
-                        org.telegram.ui.Cells.z zVar2 = fdVar4.e;
+                        gdVar4.g.setColor((int) r92);
+                        org.telegram.ui.Cells.z zVar2 = gdVar4.e;
                         if (zVar2 != null) {
                             org.telegram.ui.ActionBar.h6.B1(zVar2, k10, true);
                         }
-                        org.telegram.ui.Components.fd fdVar5 = (org.telegram.ui.Components.fd) this.b;
-                        fdVar5.c(canvas, fdVar5.g);
-                        org.telegram.ui.Cells.z zVar3 = fdVar5.e;
+                        org.telegram.ui.Components.gd gdVar5 = (org.telegram.ui.Components.gd) this.b;
+                        gdVar5.c(canvas, gdVar5.g);
+                        org.telegram.ui.Cells.z zVar3 = gdVar5.e;
                         if (zVar3 != null) {
                             zVar3.draw(canvas);
                             break;
@@ -308,14 +308,14 @@ public final class m6 extends FrameLayout {
                 break;
             case 20:
                 Rect rect = (Rect) this.b;
-                w21 w21Var = (w21) this.c;
-                if (w21Var.R) {
-                    w21Var.f.setBounds(-rect.left, -rect.top, getWidth() + rect.right, getHeight() + rect.bottom);
-                    w21Var.f.draw(canvas);
+                v21 v21Var = (v21) this.c;
+                if (v21Var.R) {
+                    v21Var.f.setBounds(-rect.left, -rect.top, getWidth() + rect.right, getHeight() + rect.bottom);
+                    v21Var.f.draw(canvas);
                 } else {
                     RectF rectF5 = AndroidUtilities.rectTmp;
                     rectF5.set(0.0f, 0.0f, AndroidUtilities.dp(14.0f) + getWidth(), getHeight());
-                    canvas.drawRoundRect(rectF5, AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f), w21Var.a);
+                    canvas.drawRoundRect(rectF5, AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f), v21Var.a);
                 }
                 super.dispatchDraw(canvas);
                 break;
@@ -351,7 +351,7 @@ public final class m6 extends FrameLayout {
                 return true;
             case 4:
                 org.telegram.ui.i4 i4Var = (org.telegram.ui.i4) this.c;
-                org.telegram.ui.Cells.da o9 = i4Var.P0.o(getContext());
+                org.telegram.ui.Cells.ca o9 = i4Var.P0.o(getContext());
                 MotionEvent obtain = MotionEvent.obtain(motionEvent);
                 LinearLayout linearLayout = (LinearLayout) this.b;
                 obtain.offsetLocation(-linearLayout.getX(), -linearLayout.getY());
@@ -370,14 +370,14 @@ public final class m6 extends FrameLayout {
                 return true;
             case 14:
                 int action = motionEvent.getAction();
-                org.telegram.ui.Components.voip.j1 j1Var = (org.telegram.ui.Components.voip.j1) this.c;
-                if (j1Var.J != null) {
+                org.telegram.ui.Components.voip.k1 k1Var = (org.telegram.ui.Components.voip.k1) this.c;
+                if (k1Var.J != null) {
                     MotionEvent obtain2 = MotionEvent.obtain(motionEvent);
-                    obtain2.offsetLocation(j1Var.J.getX(), j1Var.J.getY());
-                    boolean dispatchTouchEvent = j1Var.J.dispatchTouchEvent(motionEvent);
+                    obtain2.offsetLocation(k1Var.J.getX(), k1Var.J.getY());
+                    boolean dispatchTouchEvent = k1Var.J.dispatchTouchEvent(motionEvent);
                     obtain2.recycle();
                     if (action == 1 || action == 3) {
-                        j1Var.J = null;
+                        k1Var.J = null;
                     }
                     if (dispatchTouchEvent) {
                         return true;
@@ -385,26 +385,26 @@ public final class m6 extends FrameLayout {
                 }
                 MotionEvent obtain3 = MotionEvent.obtain(motionEvent);
                 obtain3.offsetLocation(motionEvent.getRawX() - motionEvent.getX(), motionEvent.getRawY() - motionEvent.getY());
-                boolean onTouchEvent = j1Var.F.onTouchEvent(obtain3);
+                boolean onTouchEvent = k1Var.F.onTouchEvent(obtain3);
                 obtain3.recycle();
-                boolean z10 = !j1Var.F.isInProgress() && ((GestureDetector) j1Var.G.b).onTouchEvent(motionEvent);
+                boolean z10 = !k1Var.F.isInProgress() && ((GestureDetector) k1Var.G.b).onTouchEvent(motionEvent);
                 if (action == 1 || action == 3) {
-                    j1Var.H = false;
-                    j1Var.I = false;
-                    o1.k kVar = j1Var.S;
+                    k1Var.H = false;
+                    k1Var.I = false;
+                    o1.k kVar = k1Var.S;
                     if (!kVar.f) {
-                        float f7 = j1Var.Q;
+                        float f7 = k1Var.Q;
                         kVar.b = f7;
                         kVar.c = true;
-                        kVar.u.i = (j1Var.M / 2.0f) + f7 >= ((float) AndroidUtilities.displaySize.x) / 2.0f ? (r2 - r7) - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f);
-                        j1Var.S.f();
+                        kVar.u.i = (k1Var.M / 2.0f) + f7 >= ((float) AndroidUtilities.displaySize.x) / 2.0f ? (r2 - r7) - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f);
+                        k1Var.S.f();
                     }
-                    o1.k kVar2 = j1Var.T;
+                    o1.k kVar2 = k1Var.T;
                     if (!kVar2.f) {
-                        kVar2.b = j1Var.R;
+                        kVar2.b = k1Var.R;
                         kVar2.c = true;
-                        kVar2.u.i = w7.p.a(r2, AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - j1Var.N) - AndroidUtilities.dp(16.0f));
-                        j1Var.T.f();
+                        kVar2.u.i = w7.q.a(r2, AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - k1Var.N) - AndroidUtilities.dp(16.0f));
+                        k1Var.T.f();
                     }
                 }
                 return onTouchEvent || z10;
@@ -433,7 +433,7 @@ public final class m6 extends FrameLayout {
                 canvas.restore();
                 return drawChild;
             case 16:
-                if (view instanceof fd0) {
+                if (view instanceof qd0) {
                     return false;
                 }
                 return super.drawChild(canvas, view, j3);
@@ -441,53 +441,53 @@ public final class m6 extends FrameLayout {
                 return view != ((SecretMediaViewer) this.b).w && super.drawChild(canvas, view, j3);
             case 22:
                 Path path2 = (Path) this.b;
-                a51 a51Var = (a51) this.c;
-                RectF rectF = a51Var.R;
-                if (view == a51Var.N || view == a51Var.x) {
+                b51 b51Var = (b51) this.c;
+                RectF rectF = b51Var.R;
+                if (view == b51Var.N || view == b51Var.x) {
                     canvas.save();
-                    canvas.clipRect(0.0f, AndroidUtilities.lerp(a51Var.T, 0.0f, a51Var.s), getWidth(), AndroidUtilities.lerp(a51Var.U, getHeight(), a51Var.s));
+                    canvas.clipRect(0.0f, AndroidUtilities.lerp(b51Var.T, 0.0f, b51Var.s), getWidth(), AndroidUtilities.lerp(b51Var.U, getHeight(), b51Var.s));
                     boolean drawChild2 = super.drawChild(canvas, view, j3);
                     canvas.restore();
                     return drawChild2;
                 }
-                if (view != a51Var.P) {
+                if (view != b51Var.P) {
                     return super.drawChild(canvas, view, j3);
                 }
                 canvas.save();
                 path2.rewind();
-                path2.addCircle(rectF.centerX() + a51Var.N.getX(), rectF.centerY() + a51Var.N.getY(), rectF.width() / 2.0f, Path.Direction.CW);
+                path2.addCircle(rectF.centerX() + b51Var.N.getX(), rectF.centerY() + b51Var.N.getY(), rectF.width() / 2.0f, Path.Direction.CW);
                 canvas.clipPath(path2);
-                canvas.clipRect(0.0f, AndroidUtilities.lerp(a51Var.T, 0.0f, a51Var.s), getWidth(), AndroidUtilities.lerp(a51Var.U, getHeight(), a51Var.s));
-                canvas.translate(-a51Var.P.getX(), -a51Var.P.getY());
-                canvas.translate(a51Var.N.getX() + rectF.left, a51Var.N.getY() + rectF.top);
-                canvas.scale(rectF.width() / a51Var.P.getMeasuredWidth(), rectF.height() / a51Var.P.getMeasuredHeight(), a51Var.P.getX(), a51Var.P.getY());
+                canvas.clipRect(0.0f, AndroidUtilities.lerp(b51Var.T, 0.0f, b51Var.s), getWidth(), AndroidUtilities.lerp(b51Var.U, getHeight(), b51Var.s));
+                canvas.translate(-b51Var.P.getX(), -b51Var.P.getY());
+                canvas.translate(b51Var.N.getX() + rectF.left, b51Var.N.getY() + rectF.top);
+                canvas.scale(rectF.width() / b51Var.P.getMeasuredWidth(), rectF.height() / b51Var.P.getMeasuredHeight(), b51Var.P.getX(), b51Var.P.getY());
                 boolean drawChild3 = super.drawChild(canvas, view, j3);
                 canvas.restore();
                 return drawChild3;
             case 23:
-                if (view != ((z61) this.c).h0 || !zg.f0.b || !zg.f0.f) {
+                if (view != ((a71) this.c).h0 || !zg.e0.b || !zg.e0.f) {
                     return super.drawChild(canvas, view, j3);
                 }
-                for (int i10 = 0; i10 < ((z61) this.c).h0.getChildCount(); i10++) {
-                    View childAt = ((z61) this.c).h0.getChildAt(i10);
-                    if (childAt instanceof i61) {
-                        i61 i61Var = (i61) childAt;
-                        if (i61Var.getAnimatedScale() == 1.0f) {
+                for (int i10 = 0; i10 < ((a71) this.c).h0.getChildCount(); i10++) {
+                    View childAt = ((a71) this.c).h0.getChildAt(i10);
+                    if (childAt instanceof j61) {
+                        j61 j61Var = (j61) childAt;
+                        if (j61Var.getAnimatedScale() == 1.0f) {
                             ((Rect) this.b).set(childAt.getLeft(), childAt.getTop(), childAt.getRight(), childAt.getBottom());
                             canvas.save();
                             canvas.clipRect((Rect) this.b);
                             super.drawChild(canvas, view, j3);
                             canvas.restore();
-                        } else if (i61Var.getAnimatedScale() > 0.0f) {
+                        } else if (j61Var.getAnimatedScale() > 0.0f) {
                             ((Rect) this.b).set(childAt.getLeft(), childAt.getTop(), childAt.getRight(), childAt.getBottom());
-                            ((Rect) this.b).set((int) (r2.centerX() - (i61Var.getAnimatedScale() * (((Rect) this.b).width() / 2.0f))), (int) (((Rect) this.b).centerY() - (i61Var.getAnimatedScale() * (((Rect) this.b).height() / 2.0f))), (int) ((i61Var.getAnimatedScale() * (((Rect) this.b).width() / 2.0f)) + ((Rect) this.b).centerX()), (int) ((i61Var.getAnimatedScale() * (((Rect) this.b).height() / 2.0f)) + ((Rect) this.b).centerY()));
+                            ((Rect) this.b).set((int) (r2.centerX() - (j61Var.getAnimatedScale() * (((Rect) this.b).width() / 2.0f))), (int) (((Rect) this.b).centerY() - (j61Var.getAnimatedScale() * (((Rect) this.b).height() / 2.0f))), (int) ((j61Var.getAnimatedScale() * (((Rect) this.b).width() / 2.0f)) + ((Rect) this.b).centerX()), (int) ((j61Var.getAnimatedScale() * (((Rect) this.b).height() / 2.0f)) + ((Rect) this.b).centerY()));
                             canvas.save();
                             canvas.clipRect((Rect) this.b);
-                            canvas.scale(i61Var.getAnimatedScale(), i61Var.getAnimatedScale(), ((Rect) this.b).centerX(), ((Rect) this.b).centerY());
+                            canvas.scale(j61Var.getAnimatedScale(), j61Var.getAnimatedScale(), ((Rect) this.b).centerX(), ((Rect) this.b).centerY());
                             super.drawChild(canvas, view, j3);
                             canvas.restore();
                         }
-                    } else if ((childAt instanceof TextView) || (childAt instanceof d61) || (childAt instanceof c61) || (childAt instanceof e61)) {
+                    } else if ((childAt instanceof TextView) || (childAt instanceof e61) || (childAt instanceof d61) || (childAt instanceof f61)) {
                         ((Rect) this.b).set(childAt.getLeft(), childAt.getTop(), childAt.getRight(), childAt.getBottom());
                         canvas.save();
                         canvas.clipRect((Rect) this.b);
@@ -498,11 +498,11 @@ public final class m6 extends FrameLayout {
                 return false;
             case 27:
                 Path path3 = (Path) this.b;
-                qg.o0 o0Var = (qg.o0) this.c;
-                if (o0Var.h == null || (!((z11 = o0Var.f) && view == o0Var.d) && (z11 || view != o0Var.c))) {
+                qg.m0 m0Var = (qg.m0) this.c;
+                if (m0Var.h == null || (!((z11 = m0Var.f) && view == m0Var.d) && (z11 || view != m0Var.c))) {
                     return super.drawChild(canvas, view, j3);
                 }
-                float measuredWidth2 = ((z11 ? o0Var.e : 1.0f - o0Var.e) * getMeasuredWidth()) / 2.0f;
+                float measuredWidth2 = ((z11 ? m0Var.e : 1.0f - m0Var.e) * getMeasuredWidth()) / 2.0f;
                 canvas.save();
                 path3.rewind();
                 path3.addCircle(getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f, measuredWidth2, Path.Direction.CW);
@@ -524,9 +524,9 @@ public final class m6 extends FrameLayout {
                 break;
             case 26:
                 super.invalidate();
-                org.telegram.ui.ActionBar.q0 q0Var = ((od1) this.c).t0;
-                if (q0Var != null) {
-                    q0Var.invalidate();
+                org.telegram.ui.ActionBar.p0 p0Var = ((od1) this.c).t0;
+                if (p0Var != null) {
+                    p0Var.invalidate();
                     break;
                 }
                 break;
@@ -541,9 +541,9 @@ public final class m6 extends FrameLayout {
         switch (this.a) {
             case 16:
                 super.onAttachedToWindow();
-                pt ptVar = (pt) this.c;
-                ptVar.A.onAttachedToWindow();
-                ptVar.B.onAttachedToWindow();
+                nt ntVar = (nt) this.c;
+                ntVar.A.onAttachedToWindow();
+                ntVar.B.onAttachedToWindow();
                 break;
             case 19:
                 super.onAttachedToWindow();
@@ -568,9 +568,9 @@ public final class m6 extends FrameLayout {
         switch (this.a) {
             case 14:
                 AndroidUtilities.checkDisplaySize(getContext(), configuration);
-                org.telegram.ui.Components.voip.j1 j1Var = (org.telegram.ui.Components.voip.j1) this.c;
-                AndroidUtilities.setPreferredMaxRefreshRate(j1Var.b, j1Var.d, j1Var.c);
-                j1Var.i(false);
+                org.telegram.ui.Components.voip.k1 k1Var = (org.telegram.ui.Components.voip.k1) this.c;
+                AndroidUtilities.setPreferredMaxRefreshRate(k1Var.b, k1Var.d, k1Var.c);
+                k1Var.i(false);
                 break;
             default:
                 super.onConfigurationChanged(configuration);
@@ -583,9 +583,9 @@ public final class m6 extends FrameLayout {
         switch (this.a) {
             case 16:
                 super.onDetachedFromWindow();
-                pt ptVar = (pt) this.c;
-                ptVar.A.onDetachedFromWindow();
-                ptVar.B.onDetachedFromWindow();
+                nt ntVar = (nt) this.c;
+                ntVar.A.onDetachedFromWindow();
+                ntVar.B.onDetachedFromWindow();
                 break;
             case 19:
                 super.onDetachedFromWindow();
@@ -616,79 +616,79 @@ public final class m6 extends FrameLayout {
         float f7;
         switch (this.a) {
             case 12:
-                sd0 sd0Var = (sd0) this.c;
-                Drawable drawable2 = sd0Var.a;
+                ce0 ce0Var = (ce0) this.c;
+                Drawable drawable2 = ce0Var.a;
                 if (drawable2 == null) {
                     super.onDraw(canvas);
-                } else if ((drawable2 instanceof bc0) || (drawable2 instanceof ColorDrawable) || (drawable2 instanceof GradientDrawable)) {
+                } else if ((drawable2 instanceof mc0) || (drawable2 instanceof ColorDrawable) || (drawable2 instanceof GradientDrawable)) {
                     drawable2.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
-                    sd0Var.a.draw(canvas);
+                    ce0Var.a.draw(canvas);
                 } else {
-                    float max = Math.max(getMeasuredWidth() / sd0Var.a.getIntrinsicWidth(), (getMeasuredHeight() + sd0Var.G) / sd0Var.a.getIntrinsicHeight());
-                    int ceil = (int) Math.ceil(sd0Var.a.getIntrinsicWidth() * max);
-                    int ceil2 = (int) Math.ceil(sd0Var.a.getIntrinsicHeight() * max);
+                    float max = Math.max(getMeasuredWidth() / ce0Var.a.getIntrinsicWidth(), (getMeasuredHeight() + ce0Var.G) / ce0Var.a.getIntrinsicHeight());
+                    int ceil = (int) Math.ceil(ce0Var.a.getIntrinsicWidth() * max);
+                    int ceil2 = (int) Math.ceil(ce0Var.a.getIntrinsicHeight() * max);
                     int measuredWidth = (getMeasuredWidth() - ceil) / 2;
-                    int measuredHeight = ((getMeasuredHeight() - ceil2) + sd0Var.G) / 2;
-                    sd0Var.a.setBounds(measuredWidth, measuredHeight, ceil + measuredWidth, ceil2 + measuredHeight);
-                    sd0Var.a.draw(canvas);
+                    int measuredHeight = ((getMeasuredHeight() - ceil2) + ce0Var.G) / 2;
+                    ce0Var.a.setBounds(measuredWidth, measuredHeight, ceil + measuredWidth, ceil2 + measuredHeight);
+                    ce0Var.a.draw(canvas);
                 }
                 canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), (Paint) this.b);
                 break;
             case 15:
                 canvas.save();
-                org.telegram.ui.Components.voip.m2 m2Var = (org.telegram.ui.Components.voip.m2) this.c;
-                canvas.scale(m2Var.b.getScaleX(), m2Var.b.getScaleY(), m2Var.b.getPivotX() + m2Var.b.getLeft(), m2Var.b.getPivotY() + m2Var.b.getTop());
+                org.telegram.ui.Components.voip.n2 n2Var = (org.telegram.ui.Components.voip.n2) this.c;
+                canvas.scale(n2Var.b.getScaleX(), n2Var.b.getScaleY(), n2Var.b.getPivotX() + n2Var.b.getLeft(), n2Var.b.getPivotY() + n2Var.b.getTop());
                 Drawable drawable3 = (Drawable) this.b;
-                drawable3.setBounds(m2Var.b.getLeft() - AndroidUtilities.dp(2.0f), m2Var.b.getTop() - AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f) + m2Var.b.getRight(), AndroidUtilities.dp(2.0f) + m2Var.b.getBottom());
+                drawable3.setBounds(n2Var.b.getLeft() - AndroidUtilities.dp(2.0f), n2Var.b.getTop() - AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f) + n2Var.b.getRight(), AndroidUtilities.dp(2.0f) + n2Var.b.getBottom());
                 drawable3.draw(canvas);
                 canvas.restore();
                 super.onDraw(canvas);
                 break;
             case 16:
-                pt ptVar = (pt) this.b;
-                Paint paint = ptVar.N;
-                ImageReceiver imageReceiver = ptVar.B;
-                ColorDrawable colorDrawable = ptVar.u;
-                ImageReceiver imageReceiver2 = ptVar.A;
-                if (ptVar.z != null && colorDrawable != null) {
-                    if (ptVar.K && ptVar.v == null && ptVar.w != null && !ptVar.e0) {
-                        ptVar.e0 = true;
+                nt ntVar = (nt) this.b;
+                Paint paint = ntVar.N;
+                ImageReceiver imageReceiver = ntVar.B;
+                ColorDrawable colorDrawable = ntVar.u;
+                ImageReceiver imageReceiver2 = ntVar.A;
+                if (ntVar.z != null && colorDrawable != null) {
+                    if (ntVar.K && ntVar.v == null && ntVar.w != null && !ntVar.e0) {
+                        ntVar.e0 = true;
                         imageReceiver2.setVisible(false, false);
-                        bm0.d(new org.telegram.ui.c5(ptVar, 8));
+                        mm0.d(new org.telegram.ui.b5(ntVar, 8));
                     }
-                    if (ptVar.v != null) {
-                        boolean z10 = ptVar.K;
+                    if (ntVar.v != null) {
+                        boolean z10 = ntVar.K;
                         if (z10) {
-                            float f10 = ptVar.M;
+                            float f10 = ntVar.M;
                             if (f10 != 1.0f) {
                                 float f11 = f10 + 0.13333334f;
-                                ptVar.M = f11;
+                                ntVar.M = f11;
                                 if (f11 > 1.0f) {
-                                    ptVar.M = 1.0f;
+                                    ntVar.M = 1.0f;
                                 }
-                                ptVar.z.invalidate();
-                                f7 = ptVar.M;
-                                if (f7 != 0.0f && ptVar.v != null) {
+                                ntVar.z.invalidate();
+                                f7 = ntVar.M;
+                                if (f7 != 0.0f && ntVar.v != null) {
                                     paint.setAlpha((int) (f7 * 255.0f));
                                     if (paint.getAlpha() != 255) {
-                                        canvas.drawColor(org.telegram.ui.ActionBar.h6.l1(ptVar.M, org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.a7, ptVar.c0)));
+                                        canvas.drawColor(org.telegram.ui.ActionBar.h6.l1(ntVar.M, org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.a7, ntVar.c0)));
                                     }
                                     canvas.drawPaint(paint);
                                 }
                             }
                         }
                         if (!z10) {
-                            float f12 = ptVar.M;
+                            float f12 = ntVar.M;
                             if (f12 != 0.0f) {
                                 float f13 = f12 - 0.13333334f;
-                                ptVar.M = f13;
+                                ntVar.M = f13;
                                 if (f13 < 0.0f) {
-                                    ptVar.M = 0.0f;
+                                    ntVar.M = 0.0f;
                                 }
-                                ptVar.z.invalidate();
+                                ntVar.z.invalidate();
                             }
                         }
-                        f7 = ptVar.M;
+                        f7 = ntVar.M;
                         if (f7 != 0.0f) {
                             paint.setAlpha((int) (f7 * 255.0f));
                             if (paint.getAlpha() != 255) {
@@ -696,119 +696,119 @@ public final class m6 extends FrameLayout {
                             canvas.drawPaint(paint);
                         }
                     }
-                    colorDrawable.setAlpha((int) (ptVar.F * 180.0f));
-                    colorDrawable.setBounds(0, 0, ptVar.z.getWidth(), ptVar.z.getHeight());
+                    colorDrawable.setAlpha((int) (ntVar.F * 180.0f));
+                    colorDrawable.setBounds(0, 0, ntVar.z.getWidth(), ntVar.z.getHeight());
                     colorDrawable.draw(canvas);
                     canvas.save();
-                    i0.b bVar = ptVar.q;
+                    i0.b bVar = ntVar.q;
                     int i10 = bVar.d;
                     int i11 = bVar.b;
                     int i12 = i10 + i11;
-                    if (ptVar.V == 1) {
-                        min = Math.min(ptVar.z.getWidth(), ptVar.z.getHeight() - i12) - AndroidUtilities.dp(40.0f);
+                    if (ntVar.V == 1) {
+                        min = Math.min(ntVar.z.getWidth(), ntVar.z.getHeight() - i12) - AndroidUtilities.dp(40.0f);
                     } else {
-                        min = (int) (ptVar.S ? Math.min(ptVar.z.getWidth(), ptVar.z.getHeight() - i12) - AndroidUtilities.dpf2(40.0f) : Math.min(ptVar.z.getWidth(), ptVar.z.getHeight() - i12) / 1.8f);
+                        min = (int) (ntVar.S ? Math.min(ntVar.z.getWidth(), ntVar.z.getHeight() - i12) - AndroidUtilities.dpf2(40.0f) : Math.min(ntVar.z.getWidth(), ntVar.z.getHeight() - i12) / 1.8f);
                     }
-                    float max2 = Math.max((min / 2) + i11 + (ptVar.G != null ? AndroidUtilities.dp(40.0f) : 0), ((ptVar.z.getHeight() - i12) - ptVar.I) / 2);
-                    if (ptVar.S) {
+                    float max2 = Math.max((min / 2) + i11 + (ntVar.G != null ? AndroidUtilities.dp(40.0f) : 0), ((ntVar.z.getHeight() - i12) - ntVar.I) / 2);
+                    if (ntVar.S) {
                         max2 += AndroidUtilities.dp(40.0f);
                     }
-                    canvas.translate(ptVar.z.getWidth() / 2, ptVar.e + max2);
-                    int i13 = (int) (min * ((ptVar.F * 0.8f) / 0.8f));
-                    if (ptVar.V == 3) {
+                    canvas.translate(ntVar.z.getWidth() / 2, ntVar.e + max2);
+                    int i13 = (int) (min * ((ntVar.F * 0.8f) / 0.8f));
+                    if (ntVar.V == 3) {
                         canvas.translate(0.0f, AndroidUtilities.dp(70.0f));
                     }
-                    if (ptVar.S) {
+                    if (ntVar.S) {
                         float f14 = i13;
                         float f15 = 0.6669f * f14;
-                        imageReceiver2.setAlpha(ptVar.F);
+                        imageReceiver2.setAlpha(ntVar.F);
                         float f16 = f14 - f15;
                         float f17 = f14 / 2.0f;
                         imageReceiver2.setImageCoords((f16 - f17) - (0.0546875f * f14), (f16 / 2.0f) - f17, f15, f15);
                         imageReceiver2.draw(canvas);
-                        imageReceiver.setAlpha(ptVar.F);
+                        imageReceiver.setAlpha(ntVar.F);
                         float f18 = (-i13) / 2.0f;
                         imageReceiver.setImageCoords(f18, f18, f14, f14);
                         imageReceiver.draw(canvas);
                     } else {
-                        imageReceiver2.setAlpha(ptVar.F);
+                        imageReceiver2.setAlpha(ntVar.F);
                         float f19 = (-i13) / 2.0f;
                         float f20 = i13;
                         imageReceiver2.setImageCoords(f19, f19, f20, f20);
                         imageReceiver2.draw(canvas);
                     }
-                    if (ptVar.C != null) {
+                    if (ntVar.C != null) {
                         canvas.save();
                         float f21 = (-i13) / 2.0f;
                         canvas.translate(f21, f21);
                         float f22 = i13;
-                        canvas.scale(f22 / ptVar.C.getWidth(), f22 / ptVar.C.getHeight());
-                        ptVar.C.setAlpha(ptVar.F);
-                        if (ptVar.D == null) {
-                            ptVar.D = new Path();
+                        canvas.scale(f22 / ntVar.C.getWidth(), f22 / ntVar.C.getHeight());
+                        ntVar.C.setAlpha(ntVar.F);
+                        if (ntVar.D == null) {
+                            ntVar.D = new Path();
                         }
-                        ptVar.D.rewind();
+                        ntVar.D.rewind();
                         RectF rectF = AndroidUtilities.rectTmp;
-                        rectF.set(0.0f, 0.0f, ptVar.C.getWidth(), ptVar.C.getHeight());
+                        rectF.set(0.0f, 0.0f, ntVar.C.getWidth(), ntVar.C.getHeight());
                         float f23 = f22 / 8.0f;
-                        ptVar.D.addRoundRect(rectF, f23, f23, Path.Direction.CW);
-                        canvas.clipPath(ptVar.D);
-                        ptVar.C.draw(canvas);
+                        ntVar.D.addRoundRect(rectF, f23, f23, Path.Direction.CW);
+                        canvas.clipPath(ntVar.D);
+                        ntVar.C.draw(canvas);
                         canvas.restore();
                     }
-                    if (ptVar.V == 1 && !ptVar.m && (drawable = ptVar.J) != null) {
+                    if (ntVar.V == 1 && !ntVar.m && (drawable = ntVar.J) != null) {
                         int intrinsicWidth = drawable.getIntrinsicWidth();
-                        int intrinsicHeight = ptVar.J.getIntrinsicHeight();
-                        int dp = (int) (imageReceiver2.getDrawRegion().top - AndroidUtilities.dp(((ptVar.d / AndroidUtilities.dp(60.0f)) * 6.0f) + 17.0f));
-                        ptVar.J.setAlpha((int) ((1.0f - ptVar.g) * 255.0f));
-                        ptVar.J.setBounds((-intrinsicWidth) / 2, (-intrinsicHeight) + dp, intrinsicWidth / 2, dp);
-                        ptVar.J.draw(canvas);
+                        int intrinsicHeight = ntVar.J.getIntrinsicHeight();
+                        int dp = (int) (imageReceiver2.getDrawRegion().top - AndroidUtilities.dp(((ntVar.d / AndroidUtilities.dp(60.0f)) * 6.0f) + 17.0f));
+                        ntVar.J.setAlpha((int) ((1.0f - ntVar.g) * 255.0f));
+                        ntVar.J.setBounds((-intrinsicWidth) / 2, (-intrinsicHeight) + dp, intrinsicWidth / 2, dp);
+                        ntVar.J.draw(canvas);
                     }
-                    if (ptVar.G != null) {
-                        if (ptVar.S) {
+                    if (ntVar.G != null) {
+                        if (ntVar.S) {
                             canvas.translate((-r3.getWidth()) / 2.0f, ((-imageReceiver.getImageHeight()) / 2.0f) - AndroidUtilities.dp(30.0f));
                         } else {
                             canvas.translate((-r3.getWidth()) / 2.0f, ((-imageReceiver2.getImageHeight()) / 2.0f) - AndroidUtilities.dp(30.0f));
                         }
-                        pt.f0.setAlpha((int) (ptVar.F * 255.0f));
-                        ptVar.G.draw(canvas);
+                        nt.f0.setAlpha((int) (ntVar.F * 255.0f));
+                        ntVar.G.draw(canvas);
                     }
                     canvas.restore();
-                    if (ptVar.E) {
-                        if (ptVar.F != 1.0f) {
+                    if (ntVar.E) {
+                        if (ntVar.F != 1.0f) {
                             long currentTimeMillis = System.currentTimeMillis();
-                            long j3 = currentTimeMillis - ptVar.H;
-                            ptVar.H = currentTimeMillis;
-                            ptVar.F = (j3 / 120.0f) + ptVar.F;
-                            ptVar.z.invalidate();
-                            if (ptVar.F > 1.0f) {
-                                ptVar.F = 1.0f;
+                            long j3 = currentTimeMillis - ntVar.H;
+                            ntVar.H = currentTimeMillis;
+                            ntVar.F = (j3 / 120.0f) + ntVar.F;
+                            ntVar.z.invalidate();
+                            if (ntVar.F > 1.0f) {
+                                ntVar.F = 1.0f;
                                 break;
                             }
                         }
-                    } else if (ptVar.F != 0.0f) {
+                    } else if (ntVar.F != 0.0f) {
                         long currentTimeMillis2 = System.currentTimeMillis();
-                        long j10 = currentTimeMillis2 - ptVar.H;
-                        ptVar.H = currentTimeMillis2;
-                        ptVar.F -= j10 / 120.0f;
-                        ptVar.z.invalidate();
-                        if (ptVar.F < 0.0f) {
-                            ptVar.F = 0.0f;
+                        long j10 = currentTimeMillis2 - ntVar.H;
+                        ntVar.H = currentTimeMillis2;
+                        ntVar.F -= j10 / 120.0f;
+                        ntVar.z.invalidate();
+                        if (ntVar.F < 0.0f) {
+                            ntVar.F = 0.0f;
                         }
-                        if (ptVar.F == 0.0f) {
+                        if (ntVar.F == 0.0f) {
                             imageReceiver2.setImageBitmap((Drawable) null);
-                            AndroidUtilities.unlockOrientation(ptVar.w);
-                            AndroidUtilities.runOnUIThread(new at(ptVar, 1));
-                            Bitmap bitmap = ptVar.v;
+                            AndroidUtilities.unlockOrientation(ntVar.w);
+                            AndroidUtilities.runOnUIThread(new ys(ntVar, 1));
+                            Bitmap bitmap = ntVar.v;
                             if (bitmap != null) {
                                 bitmap.recycle();
-                                ptVar.v = null;
+                                ntVar.v = null;
                             }
-                            AndroidUtilities.updateViewVisibilityAnimated(ptVar.O, false, 1.0f, false);
-                            ptVar.M = 0.0f;
+                            AndroidUtilities.updateViewVisibilityAnimated(ntVar.O, false, 1.0f, false);
+                            ntVar.M = 0.0f;
                             try {
-                                if (ptVar.y.getParent() != null) {
-                                    ((WindowManager) ptVar.w.getSystemService("window")).removeView(ptVar.y);
+                                if (ntVar.y.getParent() != null) {
+                                    ((WindowManager) ntVar.w.getSystemService("window")).removeView(ntVar.y);
                                     break;
                                 }
                             } catch (Exception e) {
@@ -853,10 +853,10 @@ public final class m6 extends FrameLayout {
 
     @Override // android.view.ViewGroup
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.Components.fd fdVar;
+        org.telegram.ui.Components.gd gdVar;
         switch (this.a) {
             case 19:
-                return (((ProfileActivity) this.c).n5 == 0.0f && (fdVar = (org.telegram.ui.Components.fd) this.b) != null && fdVar.b(motionEvent)) || super.onInterceptTouchEvent(motionEvent);
+                return (((ProfileActivity) this.c).n5 == 0.0f && (gdVar = (org.telegram.ui.Components.gd) this.b) != null && gdVar.b(motionEvent)) || super.onInterceptTouchEvent(motionEvent);
             default:
                 return super.onInterceptTouchEvent(motionEvent);
         }
@@ -869,24 +869,24 @@ public final class m6 extends FrameLayout {
                 super.onLayout(z10, i10, i11, i12, i13);
                 int i14 = (i13 - i11) / 4;
                 int i15 = i14 * 3;
-                int y3 = ul.y(275.0f, i15, 2);
-                a80 a80Var = (a80) this.c;
-                FrameLayout frameLayout = a80Var.r;
-                frameLayout.layout(0, y3, frameLayout.getMeasuredWidth(), a80Var.r.getMeasuredHeight() + y3);
-                int dp = AndroidUtilities.dp(139.0f) + AndroidUtilities.dp(150.0f) + y3;
-                int measuredWidth = (getMeasuredWidth() - a80Var.e.getMeasuredWidth()) / 2;
-                org.telegram.ui.Components.sa saVar = a80Var.e;
-                saVar.layout(measuredWidth, dp, saVar.getMeasuredWidth() + measuredWidth, a80Var.e.getMeasuredHeight() + dp);
-                z4.g gVar = a80Var.d;
-                gVar.layout(0, 0, gVar.getMeasuredWidth(), a80Var.d.getMeasuredHeight());
-                int measuredHeight = ((i14 - a80Var.n.getMeasuredHeight()) / 2) + i15;
-                int measuredWidth2 = (getMeasuredWidth() - a80Var.n.getMeasuredWidth()) / 2;
-                bi.o oVar = a80Var.n;
-                oVar.layout(measuredWidth2, measuredHeight, oVar.getMeasuredWidth() + measuredWidth2, a80Var.n.getMeasuredHeight() + measuredHeight);
+                int A = ok.A(275.0f, i15, 2);
+                y70 y70Var = (y70) this.c;
+                FrameLayout frameLayout = y70Var.r;
+                frameLayout.layout(0, A, frameLayout.getMeasuredWidth(), y70Var.r.getMeasuredHeight() + A);
+                int dp = AndroidUtilities.dp(139.0f) + AndroidUtilities.dp(150.0f) + A;
+                int measuredWidth = (getMeasuredWidth() - y70Var.e.getMeasuredWidth()) / 2;
+                org.telegram.ui.Components.sa saVar = y70Var.e;
+                saVar.layout(measuredWidth, dp, saVar.getMeasuredWidth() + measuredWidth, y70Var.e.getMeasuredHeight() + dp);
+                z4.g gVar = y70Var.d;
+                gVar.layout(0, 0, gVar.getMeasuredWidth(), y70Var.d.getMeasuredHeight());
+                int measuredHeight = ((i14 - y70Var.n.getMeasuredHeight()) / 2) + i15;
+                int measuredWidth2 = (getMeasuredWidth() - y70Var.n.getMeasuredWidth()) / 2;
+                bi.o oVar = y70Var.n;
+                oVar.layout(measuredWidth2, measuredHeight, oVar.getMeasuredWidth() + measuredWidth2, y70Var.n.getMeasuredHeight() + measuredHeight);
                 int dp2 = measuredHeight - AndroidUtilities.dp(30.0f);
-                int measuredWidth3 = (getMeasuredWidth() - a80Var.f.getMeasuredWidth()) / 2;
-                TextView textView = a80Var.f;
-                textView.layout(measuredWidth3, dp2 - textView.getMeasuredHeight(), a80Var.f.getMeasuredWidth() + measuredWidth3, dp2);
+                int measuredWidth3 = (getMeasuredWidth() - y70Var.f.getMeasuredWidth()) / 2;
+                TextView textView = y70Var.f;
+                textView.layout(measuredWidth3, dp2 - textView.getMeasuredHeight(), y70Var.f.getMeasuredWidth() + measuredWidth3, dp2);
                 FrameLayout frameLayout2 = (FrameLayout) this.b;
                 ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) frameLayout2.getLayoutParams();
                 int dp3 = AndroidUtilities.dp(4) + (AndroidUtilities.isTablet() ? 0 : AndroidUtilities.statusBarHeight);
@@ -897,7 +897,7 @@ public final class m6 extends FrameLayout {
                 }
                 break;
             case 18:
-                int dp4 = AndroidUtilities.dp(25.0f) + AndroidUtilities.dp(150.0f) + ul.y(275.0f, ((i13 - i11) / 4) * 3, 2);
+                int dp4 = AndroidUtilities.dp(25.0f) + AndroidUtilities.dp(150.0f) + ok.A(275.0f, ((i13 - i11) / 4) * 3, 2);
                 int dp5 = AndroidUtilities.dp(18.0f);
                 TextView textView2 = (TextView) this.b;
                 textView2.layout(dp5, dp4, textView2.getMeasuredWidth() + dp5, textView2.getMeasuredHeight() + dp4);
@@ -919,8 +919,8 @@ public final class m6 extends FrameLayout {
                 SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.c;
                 if (secretMediaViewer.n != null) {
                     int currentActionBarHeight = ((org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() - secretMediaViewer.n.getMeasuredHeight()) / 2) + AndroidUtilities.statusBarHeight;
-                    t41 t41Var = secretMediaViewer.n;
-                    t41Var.layout(t41Var.getLeft(), currentActionBarHeight, secretMediaViewer.n.getRight(), secretMediaViewer.n.getMeasuredHeight() + currentActionBarHeight);
+                    u41 u41Var = secretMediaViewer.n;
+                    u41Var.layout(u41Var.getLeft(), currentActionBarHeight, secretMediaViewer.n.getRight(), secretMediaViewer.n.getMeasuredHeight() + currentActionBarHeight);
                 }
                 if (secretMediaViewer.r != null && secretMediaViewer.n != null) {
                     int measuredHeight2 = (secretMediaViewer.n.getMeasuredHeight() + (((org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() - secretMediaViewer.n.getMeasuredHeight()) / 2) + AndroidUtilities.statusBarHeight)) - AndroidUtilities.dp(10.0f);
@@ -929,8 +929,8 @@ public final class m6 extends FrameLayout {
                 }
                 if (secretMediaViewer.a0 != null) {
                     int currentActionBarHeight2 = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight;
-                    ut0 ut0Var = secretMediaViewer.a0;
-                    ut0Var.layout(ut0Var.getLeft(), currentActionBarHeight2, secretMediaViewer.a0.getRight(), secretMediaViewer.a0.getMeasuredHeight() + currentActionBarHeight2);
+                    tt0 tt0Var = secretMediaViewer.a0;
+                    tt0Var.layout(tt0Var.getLeft(), currentActionBarHeight2, secretMediaViewer.a0.getRight(), secretMediaViewer.a0.getMeasuredHeight() + currentActionBarHeight2);
                 }
                 View view = secretMediaViewer.f;
                 if (view != null) {
@@ -971,7 +971,7 @@ public final class m6 extends FrameLayout {
                 }
             case 4:
                 super.onMeasure(i10, i11);
-                super.onMeasure(i10, ul.C(8.0f, ((LinearLayout) this.b).getMeasuredHeight(), TLObject.FLAG_30));
+                super.onMeasure(i10, ok.C(8.0f, ((LinearLayout) this.b).getMeasuredHeight(), TLObject.FLAG_30));
                 break;
             case 9:
                 super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
@@ -981,32 +981,32 @@ public final class m6 extends FrameLayout {
                 setPadding(AndroidUtilities.dp(18.0f), 0, AndroidUtilities.dp(18.0f), 0);
                 break;
             case 20:
-                w21 w21Var = (w21) this.c;
-                View view = w21Var.H;
-                View view2 = w21Var.I;
-                LinearLayout linearLayout = w21Var.v;
-                TextView textView = w21Var.s;
-                ml0 ml0Var = w21Var.y;
-                boolean z10 = w21Var.S.P;
+                v21 v21Var = (v21) this.c;
+                View view = v21Var.H;
+                View view2 = v21Var.I;
+                LinearLayout linearLayout = v21Var.v;
+                TextView textView = v21Var.s;
+                wl0 wl0Var = v21Var.y;
+                boolean z10 = v21Var.S.P;
                 int dp3 = AndroidUtilities.dp(12.0f);
                 if (z10) {
-                    ml0Var.setLayoutParams(w7.x5.d(-1, 104.0f, 8388611, 0.0f, 44.0f, 0.0f, 0.0f));
-                    ml0Var.setPadding(dp3, 0, dp3, 0);
+                    wl0Var.setLayoutParams(w7.y5.d(-1, 104.0f, 8388611, 0.0f, 44.0f, 0.0f, 0.0f));
+                    wl0Var.setPadding(dp3, 0, dp3, 0);
                     if (linearLayout != null) {
-                        textView.setLayoutParams(w7.x5.d(-1, 48.0f, 8388611, 16.0f, 162.0f, 16.0f, 72.0f));
-                        linearLayout.setLayoutParams(w7.x5.d(-1, 48.0f, 8388691, 16.0f, 162.0f, 16.0f, 16.0f));
+                        textView.setLayoutParams(w7.y5.d(-1, 48.0f, 8388611, 16.0f, 162.0f, 16.0f, 72.0f));
+                        linearLayout.setLayoutParams(w7.y5.d(-1, 48.0f, 8388691, 16.0f, 162.0f, 16.0f, 16.0f));
                     } else {
-                        textView.setLayoutParams(w7.x5.d(-1, 48.0f, 8388611, 16.0f, 162.0f, 16.0f, 16.0f));
+                        textView.setLayoutParams(w7.y5.d(-1, 48.0f, 8388611, 16.0f, 162.0f, 16.0f, 16.0f));
                     }
                 } else {
-                    ml0Var.setPadding(dp3, dp3 / 2, dp3, dp3);
+                    wl0Var.setPadding(dp3, dp3 / 2, dp3, dp3);
                     if (linearLayout != null) {
-                        ml0Var.setLayoutParams(w7.x5.d(-1, -1.0f, 8388611, 0.0f, 44.0f, 0.0f, 136.0f));
-                        textView.setLayoutParams(w7.x5.d(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, 72.0f));
-                        linearLayout.setLayoutParams(w7.x5.d(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, 16.0f));
+                        wl0Var.setLayoutParams(w7.y5.d(-1, -1.0f, 8388611, 0.0f, 44.0f, 0.0f, 136.0f));
+                        textView.setLayoutParams(w7.y5.d(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, 72.0f));
+                        linearLayout.setLayoutParams(w7.y5.d(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, 16.0f));
                     } else {
-                        ml0Var.setLayoutParams(w7.x5.d(-1, -1.0f, 8388611, 0.0f, 44.0f, 0.0f, 80.0f));
-                        textView.setLayoutParams(w7.x5.d(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, 16.0f));
+                        wl0Var.setLayoutParams(w7.y5.d(-1, -1.0f, 8388611, 0.0f, 44.0f, 0.0f, 80.0f));
+                        textView.setLayoutParams(w7.y5.d(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, 16.0f));
                     }
                 }
                 if (z10) {
@@ -1015,27 +1015,27 @@ public final class m6 extends FrameLayout {
                 } else {
                     int i12 = textView != null ? 136 : 80;
                     view2.setVisibility(0);
-                    view2.setLayoutParams(w7.x5.d(-1, AndroidUtilities.dp(2.0f), 80, 0.0f, 0.0f, 0.0f, i12));
+                    view2.setLayoutParams(w7.y5.d(-1, AndroidUtilities.dp(2.0f), 80, 0.0f, 0.0f, 0.0f, i12));
                     view.setVisibility(0);
-                    view.setLayoutParams(w7.x5.d(-1, AndroidUtilities.dp(2.0f), 48, 0.0f, 44.0f, 0.0f, 0.0f));
+                    view.setLayoutParams(w7.y5.d(-1, AndroidUtilities.dp(2.0f), 48, 0.0f, 44.0f, 0.0f, 0.0f));
                 }
-                if (w21Var.R != z10) {
-                    x21 x21Var = w21Var.d;
+                if (v21Var.R != z10) {
+                    w21 w21Var = v21Var.d;
                     if (z10) {
-                        x21Var.getParentActivity();
+                        w21Var.getParentActivity();
                         sVar = new s4.c0(0, false);
                     } else {
-                        x21Var.getParentActivity();
+                        w21Var.getParentActivity();
                         sVar = new s4.s(3, false);
                     }
-                    w21Var.G = sVar;
-                    ml0Var.setLayoutManager(sVar);
-                    ml0Var.requestLayout();
-                    int i13 = w21Var.L;
+                    v21Var.G = sVar;
+                    wl0Var.setLayoutManager(sVar);
+                    wl0Var.requestLayout();
+                    int i13 = v21Var.L;
                     if (i13 != -1) {
-                        w21Var.b(i13);
+                        v21Var.b(i13);
                     }
-                    w21Var.R = z10;
+                    v21Var.R = z10;
                 }
                 super.onMeasure(i10, i11);
                 break;
@@ -1044,9 +1044,9 @@ public final class m6 extends FrameLayout {
                 int measuredWidth = getMeasuredWidth();
                 int measuredHeight = getMeasuredHeight();
                 SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.c;
-                ut0 ut0Var = secretMediaViewer.a0;
-                if (ut0Var != null) {
-                    ut0Var.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(((measuredHeight - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - AndroidUtilities.statusBarHeight) - (secretMediaViewer.U.getVisibility() != 0 ? 0 : secretMediaViewer.U.getMeasuredHeight()), TLObject.FLAG_30));
+                tt0 tt0Var = secretMediaViewer.a0;
+                if (tt0Var != null) {
+                    tt0Var.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(((measuredHeight - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - AndroidUtilities.statusBarHeight) - (secretMediaViewer.U.getVisibility() != 0 ? 0 : secretMediaViewer.U.getMeasuredHeight()), TLObject.FLAG_30));
                 }
                 View view3 = secretMediaViewer.f;
                 if (view3 != null) {
@@ -1055,7 +1055,7 @@ public final class m6 extends FrameLayout {
                 }
                 break;
             case 28:
-                super.onMeasure(i10, ul.C(2.0f, ((rg.x0) this.c).s, TLObject.FLAG_30));
+                super.onMeasure(i10, ok.C(2.0f, ((rg.x0) this.c).s, TLObject.FLAG_30));
                 break;
             default:
                 super.onMeasure(i10, i11);
@@ -1110,12 +1110,12 @@ public final class m6 extends FrameLayout {
     public boolean onTouchEvent(MotionEvent motionEvent) {
         DisplayMetrics displayMetrics;
         float f7;
-        org.telegram.ui.Components.fd fdVar;
+        org.telegram.ui.Components.gd gdVar;
         switch (this.a) {
             case 2:
                 mg.i iVar = (mg.i) this.c;
                 mg.c cVar = iVar.r;
-                boolean onTouchEvent = ((GestureDetector) ((k2.u) this.b).b).onTouchEvent(motionEvent);
+                boolean onTouchEvent = ((GestureDetector) ((n2.e) this.b).b).onTouchEvent(motionEvent);
                 if (motionEvent.getAction() == 0) {
                     AndroidUtilities.runOnUIThread(cVar, 200L);
                 } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
@@ -1140,7 +1140,7 @@ public final class m6 extends FrameLayout {
                 }
                 return onTouchEvent;
             case 19:
-                return (((ProfileActivity) this.c).n5 == 0.0f && (fdVar = (org.telegram.ui.Components.fd) this.b) != null && fdVar.b(motionEvent)) || super.onTouchEvent(motionEvent);
+                return (((ProfileActivity) this.c).n5 == 0.0f && (gdVar = (org.telegram.ui.Components.gd) this.b) != null && gdVar.b(motionEvent)) || super.onTouchEvent(motionEvent);
             case 21:
                 SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.b;
                 if (secretMediaViewer.m0 == 0 && secretMediaViewer.J0 == 0) {
@@ -1151,9 +1151,9 @@ public final class m6 extends FrameLayout {
                         secretMediaViewer.d(false);
                     } else if (motionEvent.getActionMasked() == 0 || motionEvent.getActionMasked() == 5) {
                         secretMediaViewer.f1 = false;
-                        om0 om0Var = secretMediaViewer.g1;
-                        if (!om0Var.q) {
-                            om0Var.a();
+                        zm0 zm0Var = secretMediaViewer.g1;
+                        if (!zm0Var.q) {
+                            zm0Var.a();
                         }
                         if (!secretMediaViewer.p0) {
                             if (motionEvent.getPointerCount() == 2) {
@@ -1180,11 +1180,11 @@ public final class m6 extends FrameLayout {
                             if (motionEvent.getPointerCount() == 2 && !secretMediaViewer.p0 && secretMediaViewer.Z0) {
                                 secretMediaViewer.f1 = true;
                                 secretMediaViewer.y0 = (((float) Math.hypot(motionEvent.getX(1) - motionEvent.getX(0), motionEvent.getY(1) - motionEvent.getY(0))) / secretMediaViewer.N0) * secretMediaViewer.O0;
-                                secretMediaViewer.w0 = ul.c(secretMediaViewer.y0, secretMediaViewer.O0, (secretMediaViewer.P0 - (secretMediaViewer.e.getWidth() / 2)) - secretMediaViewer.R0, secretMediaViewer.P0 - (secretMediaViewer.e.getWidth() / 2));
+                                secretMediaViewer.w0 = ok.b(secretMediaViewer.y0, secretMediaViewer.O0, (secretMediaViewer.P0 - (secretMediaViewer.e.getWidth() / 2)) - secretMediaViewer.R0, secretMediaViewer.P0 - (secretMediaViewer.e.getWidth() / 2));
                                 float height = secretMediaViewer.Q0 - (secretMediaViewer.e.getHeight() / 2);
                                 float height2 = (secretMediaViewer.Q0 - (secretMediaViewer.e.getHeight() / 2)) - secretMediaViewer.S0;
                                 float f11 = secretMediaViewer.y0;
-                                secretMediaViewer.x0 = ul.c(f11, secretMediaViewer.O0, height2, height);
+                                secretMediaViewer.x0 = ok.b(f11, secretMediaViewer.O0, height2, height);
                                 secretMediaViewer.n(f11);
                                 secretMediaViewer.e.invalidate();
                             } else if (motionEvent.getPointerCount() == 1) {
@@ -1268,22 +1268,22 @@ public final class m6 extends FrameLayout {
                                     secretMediaViewer.n(1.0f);
                                     secretMediaViewer.c(1.0f, 0.0f, 0.0f, true);
                                 } else if (f17 > 3.0f) {
-                                    float c10 = ul.c(3.0f, secretMediaViewer.O0, (secretMediaViewer.P0 - (secretMediaViewer.e.getWidth() / 2)) - secretMediaViewer.R0, secretMediaViewer.P0 - (secretMediaViewer.e.getWidth() / 2));
-                                    float c11 = ul.c(3.0f, secretMediaViewer.O0, (secretMediaViewer.Q0 - (secretMediaViewer.e.getHeight() / 2)) - secretMediaViewer.S0, secretMediaViewer.Q0 - (secretMediaViewer.e.getHeight() / 2));
+                                    float b10 = ok.b(3.0f, secretMediaViewer.O0, (secretMediaViewer.P0 - (secretMediaViewer.e.getWidth() / 2)) - secretMediaViewer.R0, secretMediaViewer.P0 - (secretMediaViewer.e.getWidth() / 2));
+                                    float b11 = ok.b(3.0f, secretMediaViewer.O0, (secretMediaViewer.Q0 - (secretMediaViewer.e.getHeight() / 2)) - secretMediaViewer.S0, secretMediaViewer.Q0 - (secretMediaViewer.e.getHeight() / 2));
                                     secretMediaViewer.n(3.0f);
                                     float f18 = secretMediaViewer.V0;
-                                    if (c10 >= f18) {
+                                    if (b10 >= f18) {
                                         f18 = secretMediaViewer.W0;
                                         break;
                                     }
-                                    c10 = f18;
+                                    b10 = f18;
                                     float f19 = secretMediaViewer.X0;
-                                    if (c11 >= f19) {
+                                    if (b11 >= f19) {
                                         f19 = secretMediaViewer.Y0;
                                         break;
                                     }
-                                    c11 = f19;
-                                    secretMediaViewer.c(3.0f, c10, c11, true);
+                                    b11 = f19;
+                                    secretMediaViewer.c(3.0f, b10, b11, true);
                                 } else {
                                     secretMediaViewer.d(true);
                                 }
@@ -1370,7 +1370,7 @@ public final class m6 extends FrameLayout {
             case 11:
                 return ((org.telegram.ui.Components.o6) this.b) == drawable || ((org.telegram.ui.Components.o6) this.c) == drawable || super.verifyDrawable(drawable);
             case 20:
-                return drawable == ((w21) this.c).f || super.verifyDrawable(drawable);
+                return drawable == ((v21) this.c).f || super.verifyDrawable(drawable);
             default:
                 return super.verifyDrawable(drawable);
         }
@@ -1412,14 +1412,14 @@ public final class m6 extends FrameLayout {
                 break;
             case 29:
                 super(context);
-                LinearLayout f7 = ul.f(context, 1);
+                LinearLayout f7 = ok.f(context, 1);
                 org.telegram.ui.Components.p6 p6Var = new org.telegram.ui.Components.p6(context, false, false, false);
                 this.b = p6Var;
                 int i11 = org.telegram.ui.ActionBar.h6.G6;
                 p6Var.setTextColor(org.telegram.ui.ActionBar.h6.v0(i11, d6Var));
                 p6Var.setTextSize(AndroidUtilities.dp(17.0f));
                 p6Var.setTypeface(AndroidUtilities.bold());
-                f7.addView(p6Var, w7.x5.q(-2, 23, 1));
+                f7.addView(p6Var, w7.y5.q(-2, 23, 1));
                 TextView textView = new TextView(context);
                 this.c = textView;
                 textView.setTextSize(1, 11.0f);
@@ -1427,8 +1427,8 @@ public final class m6 extends FrameLayout {
                 textView.setSingleLine();
                 textView.setMaxLines(1);
                 textView.setEllipsize(TextUtils.TruncateAt.END);
-                f7.addView(textView, w7.x5.q(-2, -2, 1));
-                addView(f7, w7.x5.e(-2, -2, 17));
+                f7.addView(textView, w7.y5.q(-2, -2, 1));
+                addView(f7, w7.y5.e(-2, -2, 17));
                 break;
             default:
                 this.c = new yf.y(8);
@@ -1446,10 +1446,10 @@ public final class m6 extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m6(a51 a51Var, Context context) {
+    public m6(b51 b51Var, Context context) {
         super(context);
         this.a = 22;
-        this.c = a51Var;
+        this.c = b51Var;
         this.b = new Path();
     }
 
@@ -1462,26 +1462,26 @@ public final class m6 extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m6(org.telegram.ui.p5 p5Var, Activity activity) {
+    public m6(org.telegram.ui.o5 o5Var, Activity activity) {
         super(activity);
         this.a = 5;
-        this.c = p5Var;
+        this.c = o5Var;
         this.b = new Paint(1);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m6(org.telegram.ui.Components.voip.j1 j1Var, Context context) {
+    public m6(org.telegram.ui.Components.voip.k1 k1Var, Context context) {
         super(context);
         this.a = 14;
-        this.c = j1Var;
+        this.c = k1Var;
         this.b = new Path();
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m6(sd0 sd0Var, Context context) {
+    public m6(ce0 ce0Var, Context context) {
         super(context);
         this.a = 12;
-        this.c = sd0Var;
+        this.c = ce0Var;
         this.b = new Paint();
     }
 
@@ -1503,22 +1503,22 @@ public final class m6 extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m6(z61 z61Var, Context context) {
+    public m6(a71 a71Var, Context context) {
         super(context);
         this.a = 23;
-        this.c = z61Var;
+        this.c = a71Var;
         this.b = new Rect();
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m6(w21 w21Var, Activity activity, x21 x21Var) {
+    public m6(v21 v21Var, Activity activity, w21 w21Var) {
         super(activity);
         this.a = 20;
-        this.c = w21Var;
+        this.c = v21Var;
         Rect rect = new Rect();
         this.b = rect;
-        w21Var.a.setColor(x21Var.getThemedColor(org.telegram.ui.ActionBar.h6.d6));
-        Drawable drawable = w21Var.f;
+        v21Var.a.setColor(w21Var.getThemedColor(org.telegram.ui.ActionBar.h6.d6));
+        Drawable drawable = v21Var.f;
         drawable.setCallback(this);
         drawable.getPadding(rect);
     }
@@ -1532,11 +1532,11 @@ public final class m6 extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m6(pt ptVar, Activity activity) {
+    public m6(nt ntVar, Activity activity) {
         super(activity);
         this.a = 16;
-        this.c = ptVar;
-        this.b = ptVar;
+        this.c = ntVar;
+        this.b = ntVar;
         setWillNotDraw(false);
     }
 
@@ -1558,18 +1558,18 @@ public final class m6 extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m6(qg.o0 o0Var, Context context) {
+    public m6(qg.m0 m0Var, Context context) {
         super(context);
         this.a = 27;
-        this.c = o0Var;
+        this.c = m0Var;
         this.b = new Path();
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m6(gk0 gk0Var, Context context) {
+    public m6(qk0 qk0Var, Context context) {
         super(context);
         this.a = 13;
-        this.c = gk0Var;
+        this.c = qk0Var;
         this.b = new Paint(1);
     }
 
@@ -1583,7 +1583,7 @@ public final class m6 extends FrameLayout {
                 break;
             default:
                 this.b = new Path();
-                this.c = new i20();
+                this.c = new g20();
                 break;
         }
     }

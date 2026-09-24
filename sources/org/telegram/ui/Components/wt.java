@@ -3,9 +3,9 @@ package org.telegram.ui.Components;
 import android.view.KeyEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wt implements bu, bl0 {
+public final /* synthetic */ class wt implements bu, ll0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ KeyEvent.Callback c;
@@ -18,12 +18,12 @@ public final /* synthetic */ class wt implements bu, bl0 {
         this.d = runnable;
     }
 
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.ll0
     public void c(float f7, float f10, int i10, View view) {
-        tg.n1.Q((tg.n1) this.c, this.a, (org.telegram.ui.ActionBar.d6) this.d, this.b, view);
+        tg.m1.Q((tg.m1) this.c, this.a, (org.telegram.ui.ActionBar.d6) this.d, this.b, view);
     }
 
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.ll0
     public /* synthetic */ boolean d1(View view) {
         return false;
     }
@@ -33,14 +33,14 @@ public final /* synthetic */ class wt implements bu, bl0 {
         cu.k((cu) this.c, this.a, this.b, (Runnable) this.d, str);
     }
 
-    public /* synthetic */ wt(tg.n1 n1Var, int i10, org.telegram.ui.ActionBar.d6 d6Var, int i11) {
-        this.c = n1Var;
+    public /* synthetic */ wt(tg.m1 m1Var, int i10, org.telegram.ui.ActionBar.d6 d6Var, int i11) {
+        this.c = m1Var;
         this.a = i10;
         this.d = d6Var;
         this.b = i11;
     }
 
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.ll0
     public /* synthetic */ void r0(View view, float f7, float f10) {
     }
 }

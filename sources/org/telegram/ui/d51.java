@@ -1,29 +1,68 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MediaDataController;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_account;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.concurrent.CountDownLatch;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageLoader;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d51 implements org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.ok0 {
-    public final /* synthetic */ z61 a;
+public final /* synthetic */ class d51 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ a71 b;
 
-    public /* synthetic */ d51(z61 z61Var) {
-        this.a = z61Var;
+    public /* synthetic */ d51(a71 a71Var, int i10) {
+        this.a = i10;
+        this.b = a71Var;
     }
 
-    @Override // org.telegram.ui.Components.ok0
-    public void a() {
-        this.a.m();
-    }
-
-    @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        z61 z61Var = this.a;
-        int i11 = z61Var.V;
-        ConnectionsManager.getInstance(i11).sendRequest(new TL_account.clearRecentEmojiStatuses(), null);
-        MediaDataController.getInstance(i11).clearRecentEmojiStatuses();
-        z61Var.B(false, true, true);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                a71 a71Var = this.b;
+                a71Var.getClass();
+                HashSet hashSet = zg.e0.a;
+                ff.c cacheOutQueue = ImageLoader.getInstance().getCacheOutQueue();
+                if (cacheOutQueue.b == null) {
+                    cacheOutQueue.b = new CountDownLatch(1);
+                }
+                zg.e0.b = true;
+                zg.e0.e = false;
+                zg.e0.g = false;
+                AndroidUtilities.runOnUIThread(new d51(a71Var, 2), 0L);
+                break;
+            case 1:
+                a71 a71Var2 = this.b;
+                ArrayList arrayList = a71Var2.A1;
+                if (arrayList != null) {
+                    arrayList.clear();
+                }
+                ArrayList arrayList2 = a71Var2.B1;
+                if (arrayList2 != null) {
+                    arrayList2.clear();
+                }
+                ArrayList arrayList3 = a71Var2.D1;
+                if (arrayList3 != null) {
+                    arrayList3.clear();
+                }
+                a71Var2.q0.E(true);
+                break;
+            case 2:
+                this.b.U1.start();
+                break;
+            case 3:
+                this.b.B(true, true, true);
+                break;
+            default:
+                a71 a71Var3 = this.b;
+                NotificationCenter globalInstance = NotificationCenter.getGlobalInstance();
+                d51 d51Var = a71Var3.R1;
+                globalInstance.removeDelayed(d51Var);
+                NotificationCenter.getGlobalInstance().doOnIdle(d51Var);
+                break;
+        }
     }
 }

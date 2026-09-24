@@ -5,9 +5,9 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.e5;
-import org.telegram.ui.xn;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l implements Runnable {
     public final /* synthetic */ int a;
@@ -38,14 +38,14 @@ public final /* synthetic */ class l implements Runnable {
                 ((MessagesController) this.e).lambda$setLastCreatedDialogId$55(this.b, this.c, this.d);
                 break;
             default:
-                xn.c1((xn) this.e, this.d, this.b, this.c);
+                wn.P0((wn) this.e, this.d, this.b, this.c);
                 break;
         }
     }
 
-    public /* synthetic */ l(xn xnVar, long j3, boolean z10, boolean z11) {
+    public /* synthetic */ l(wn wnVar, long j3, boolean z10, boolean z11) {
         this.a = 3;
-        this.e = xnVar;
+        this.e = wnVar;
         this.d = j3;
         this.b = z10;
         this.c = z11;

@@ -2,10 +2,10 @@ package ai;
 
 import android.animation.ValueAnimator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.dd0;
-import org.telegram.ui.Components.gh0;
+import org.telegram.ui.Components.od0;
+import org.telegram.ui.Components.qh0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class n7 implements z4.e {
     public final /* synthetic */ int a;
@@ -20,14 +20,14 @@ public final class n7 implements z4.e {
     public final void a(int i10) {
         switch (this.a) {
             case 2:
-                dd0 dd0Var = (dd0) this.b;
-                z4.e eVar = dd0Var.c;
+                od0 od0Var = (od0) this.b;
+                z4.e eVar = od0Var.c;
                 if (eVar != null) {
                     eVar.a(i10);
                 }
                 int i11 = 0;
-                while (i11 < dd0Var.d.getChildCount()) {
-                    dd0Var.d.getChildAt(i11).setSelected(i11 == i10);
+                while (i11 < od0Var.d.getChildCount()) {
+                    od0Var.d.getChildAt(i11).setSelected(i11 == i10);
                     i11++;
                 }
                 break;
@@ -68,16 +68,16 @@ public final class n7 implements z4.e {
                 }
                 break;
             case 1:
-                ((ki.e) this.b).f++;
+                ((li.e) this.b).f++;
                 break;
             case 2:
-                dd0 dd0Var = (dd0) this.b;
-                dd0Var.h = i10;
-                dd0Var.n = f7;
-                if (dd0Var.d.getChildAt(i10) != null) {
-                    dd0.a(dd0Var, i10, (int) (dd0Var.d.getChildAt(i10).getWidth() * f7));
-                    dd0Var.invalidate();
-                    z4.e eVar = dd0Var.c;
+                od0 od0Var = (od0) this.b;
+                od0Var.h = i10;
+                od0Var.n = f7;
+                if (od0Var.d.getChildAt(i10) != null) {
+                    od0.a(od0Var, i10, (int) (od0Var.d.getChildAt(i10).getWidth() * f7));
+                    od0Var.invalidate();
+                    z4.e eVar = od0Var.c;
                     if (eVar != null) {
                         eVar.b(f7, i10, i11);
                         break;
@@ -85,23 +85,23 @@ public final class n7 implements z4.e {
                 }
                 break;
             default:
-                gh0 gh0Var = (gh0) this.b;
-                if (!gh0Var.a && Math.abs(i10 - gh0Var.w) == 1) {
-                    int i12 = gh0Var.w;
+                qh0 qh0Var = (qh0) this.b;
+                if (!qh0Var.a && Math.abs(i10 - qh0Var.w) == 1) {
+                    int i12 = qh0Var.w;
                     if (i10 > i12) {
-                        gh0.a(gh0Var, 0, 1, 1);
+                        qh0.a(qh0Var, 0, 1, 1);
                     } else if (i10 < i12) {
-                        gh0.a(gh0Var, 1, 0, 0);
-                        gh0.a(gh0Var, 2, 0, -1);
+                        qh0.a(qh0Var, 1, 0, 0);
+                        qh0.a(qh0Var, 2, 0, -1);
                     }
                 }
-                int i13 = gh0Var.w;
-                int i14 = gh0Var.x;
-                gh0Var.w = i10;
-                gh0Var.x = i11;
+                int i13 = qh0Var.w;
+                int i14 = qh0Var.x;
+                qh0Var.w = i10;
+                qh0Var.x = i11;
                 if (i13 != i10 || i14 != i11) {
-                    gh0Var.H = true;
-                    gh0Var.postInvalidateOnAnimation();
+                    qh0Var.H = true;
+                    qh0Var.postInvalidateOnAnimation();
                     break;
                 }
                 break;
@@ -119,11 +119,11 @@ public final class n7 implements z4.e {
                 }
                 break;
             case 2:
-                dd0 dd0Var = (dd0) this.b;
+                od0 od0Var = (od0) this.b;
                 if (i10 == 0) {
-                    dd0.a(dd0Var, dd0Var.e.getCurrentItem(), 0);
+                    od0.a(od0Var, od0Var.e.getCurrentItem(), 0);
                 }
-                z4.e eVar = dd0Var.c;
+                z4.e eVar = od0Var.c;
                 if (eVar != null) {
                     eVar.c(i10);
                     break;

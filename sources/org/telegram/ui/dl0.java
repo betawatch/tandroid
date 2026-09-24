@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class dl0 implements Runnable {
     public final /* synthetic */ int a;
@@ -25,9 +25,9 @@ public final /* synthetic */ class dl0 implements Runnable {
                 PasscodeActivity passcodeActivity2 = new PasscodeActivity(0);
                 PasscodeActivity passcodeActivity3 = this.b;
                 passcodeActivity3.presentFragment(passcodeActivity2, true);
-                vb0 vb0Var = passcodeActivity3.Q;
-                if (vb0Var != null) {
-                    AndroidUtilities.runOnUIThread(vb0Var);
+                ub0 ub0Var = passcodeActivity3.Q;
+                if (ub0Var != null) {
+                    AndroidUtilities.runOnUIThread(ub0Var);
                     passcodeActivity3.Q = null;
                     break;
                 }
@@ -39,8 +39,8 @@ public final /* synthetic */ class dl0 implements Runnable {
             case 3:
                 PasscodeActivity passcodeActivity5 = this.b;
                 if (passcodeActivity5.e0()) {
-                    for (bs bsVar : passcodeActivity5.n.f) {
-                        bsVar.i(0.0f);
+                    for (as asVar : passcodeActivity5.n.f) {
+                        asVar.i(0.0f);
                     }
                     break;
                 } else {

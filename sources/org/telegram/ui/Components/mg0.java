@@ -1,324 +1,235 @@
 package org.telegram.ui.Components;
 
-import android.animation.ObjectAnimator;
-import android.content.Context;
-import android.text.TextUtils;
-import android.util.Property;
+import android.animation.ValueAnimator;
+import android.content.SharedPreferences;
+import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewParent;
-import j$.util.Objects;
-import java.util.ArrayList;
-import java.util.Arrays;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.Emoji;
+import android.view.WindowManager;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class mg0 extends il0 {
-    public final Context r;
-    public final /* synthetic */ qg0 s;
+public final class mg0 extends m20 {
+    public float a;
+    public float b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ og0 d;
 
-    public mg0(qg0 qg0Var, Context context) {
-        this.s = qg0Var;
-        this.r = context;
+    public mg0(og0 og0Var, int i10) {
+        this.d = og0Var;
+        this.c = i10;
     }
 
-    @Override // org.telegram.ui.Components.uk0
-    public final String F(int i10) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.uk0
-    public final void G(ml0 ml0Var, float f7, int[] iArr) {
-        iArr[0] = 0;
-        iArr[1] = 0;
-    }
-
-    @Override // org.telegram.ui.Components.il0
-    public final int M(int i10) {
-        int i11 = 1;
-        if (i10 == 0) {
-            return 1;
-        }
-        pg0 pg0Var = (pg0) this.s.x.get(i10 - 1);
-        int b10 = pg0Var.b() + 1;
-        if (TextUtils.isEmpty(pg0Var.c) && !pg0Var.e) {
-            i11 = 0;
-        }
-        return b10 + i11;
-    }
-
-    @Override // org.telegram.ui.Components.il0
-    public final Object O(int i10, int i11) {
-        int i12;
-        if (i10 == 0) {
-            return 293145;
-        }
-        int i13 = i10 - 1;
-        if (i11 == 0) {
-            return -928312;
-        }
-        if (i13 >= 0) {
-            qg0 qg0Var = this.s;
-            if (i13 < qg0Var.x.size() && (i12 = i11 - 1) < ((pg0) qg0Var.x.get(i13)).b()) {
-                return Integer.valueOf(Objects.hash(Long.valueOf(DialogObject.getPeerDialogId(((TLRPC.MessagePeerVote) ((pg0) qg0Var.x.get(i13)).b.get(i12)).peer))));
-            }
-        }
-        return -182734;
-    }
-
-    @Override // org.telegram.ui.Components.il0
-    public final int P(int i10, int i11) {
-        if (i10 == 0) {
-            return 1;
-        }
-        if (i11 == 0) {
-            return 2;
-        }
-        return i11 + (-1) < ((pg0) this.s.x.get(i10 + (-1))).b() ? 0 : 3;
-    }
-
-    @Override // org.telegram.ui.Components.il0
-    public final int R() {
-        return this.s.x.size() + 1;
-    }
-
-    @Override // org.telegram.ui.Components.il0
-    public final View T(int i10, View view) {
-        TLRPC.Message message;
-        qg0 qg0Var = this.s;
-        TLRPC.Poll poll = qg0Var.r;
-        MessageObject messageObject = qg0Var.n;
-        if (view == null) {
-            view = new lg0(this, this.r);
-        }
-        og0 og0Var = (og0) view;
-        if (i10 == 0) {
-            og0Var.setAlpha(0.0f);
-            return view;
-        }
-        view.setAlpha(1.0f);
-        pg0 pg0Var = (pg0) qg0Var.x.get(i10 - 1);
-        int size = poll.answers.size();
-        int i11 = 0;
-        for (int i12 = 0; i12 < size; i12++) {
-            TLRPC.PollAnswer pollAnswer = poll.answers.get(i12);
-            if (Arrays.equals(pollAnswer.option, pg0Var.d) && ((ng0) qg0Var.w.get(pg0Var)) != null) {
-                TLRPC.TL_textWithEntities tL_textWithEntities = pollAnswer.text;
-                if (messageObject != null && messageObject.translated && (message = messageObject.messageOwner) != null && message.translatedPoll != null) {
-                    while (true) {
-                        if (i11 >= messageObject.messageOwner.translatedPoll.answers.size()) {
-                            break;
-                        }
-                        TLRPC.PollAnswer pollAnswer2 = messageObject.messageOwner.translatedPoll.answers.get(i11);
-                        if (Arrays.equals(pollAnswer2.option, pollAnswer.option)) {
-                            tL_textWithEntities = pollAnswer2.text;
-                            break;
-                        }
-                        i11++;
-                    }
-                }
-                og0Var.a(tL_textWithEntities == null ? "" : tL_textWithEntities.text, tL_textWithEntities == null ? null : tL_textWithEntities.entities, qg0Var.P(pg0Var.d), pg0Var.a, pg0Var.a(), false);
-                og0Var.setTag(R.id.object_tag, pg0Var);
-                return view;
-            }
-        }
-        return view;
-    }
-
-    @Override // org.telegram.ui.Components.il0
-    public final boolean V(int i10, int i11, s4.c1 c1Var) {
-        if (i10 == 0 || i11 == 0) {
+    @Override // org.telegram.ui.Components.m20
+    public final boolean a() {
+        og0 og0Var = this.d;
+        PhotoViewer photoViewer = og0Var.V;
+        if (photoViewer == null) {
             return false;
         }
-        ArrayList arrayList = this.s.F;
-        return arrayList == null || arrayList.isEmpty();
+        if ((photoViewer.F2 == null && og0Var.r == null) || og0Var.c0 || og0Var.Y || og0Var.w || og0Var.s.isInProgress() || !og0Var.f0) {
+            return false;
+        }
+        return og0Var.l() != -9223372036854775807L && og0Var.m() >= 15000;
     }
 
-    @Override // org.telegram.ui.Components.il0
-    public final void W(int i10, int i11, s4.c1 c1Var) {
-        TLRPC.Message message;
-        qg0 qg0Var = this.s;
-        TLRPC.Poll poll = qg0Var.r;
-        ArrayList arrayList = qg0Var.x;
-        MessageObject messageObject = qg0Var.n;
-        int i12 = c1Var.f;
-        View view = c1Var.a;
-        int i13 = 0;
-        if (i12 != 2) {
-            if (i12 != 3) {
-                return;
-            }
-            pg0 pg0Var = (pg0) arrayList.get(i10 - 1);
-            ((org.telegram.ui.Cells.s8) view).m(R.drawable.arrow_more, LocaleController.formatPluralString("ShowVotes", pg0Var.a - pg0Var.b(), new Object[0]), false);
-            return;
-        }
-        og0 og0Var = (og0) view;
-        pg0 pg0Var2 = (pg0) arrayList.get(i10 - 1);
-        ArrayList arrayList2 = pg0Var2.b;
-        byte[] bArr = pg0Var2.d;
-        int size = poll.answers.size();
-        for (int i14 = 0; i14 < size; i14++) {
-            TLRPC.PollAnswer pollAnswer = poll.answers.get(i14);
-            if (Arrays.equals(pollAnswer.option, bArr) && ((ng0) qg0Var.w.get(pg0Var2)) != null) {
-                TLRPC.TL_textWithEntities tL_textWithEntities = pollAnswer.text;
-                if (messageObject != null && messageObject.translated && (message = messageObject.messageOwner) != null && message.translatedPoll != null) {
-                    while (true) {
-                        if (i13 >= messageObject.messageOwner.translatedPoll.answers.size()) {
-                            break;
-                        }
-                        TLRPC.PollAnswer pollAnswer2 = messageObject.messageOwner.translatedPoll.answers.get(i13);
-                        if (Arrays.equals(pollAnswer2.option, pollAnswer.option)) {
-                            tL_textWithEntities = pollAnswer2.text;
-                            break;
-                        }
-                        i13++;
-                    }
-                }
-                og0Var.a(tL_textWithEntities == null ? "" : tL_textWithEntities.text, tL_textWithEntities == null ? null : tL_textWithEntities.entities, qg0Var.P(bArr), pg0Var2.a, pg0Var2.a(), false);
-                og0Var.setTag(R.id.object_tag, pg0Var2);
-                return;
-            }
-        }
-    }
-
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        View view;
-        qg0 qg0Var = this.s;
-        View view2 = qg0Var.y;
-        Context context = this.r;
-        if (i10 == 0) {
-            view = new PollVotesAlert$UserCell(qg0Var, context);
-        } else if (i10 == 1) {
-            ViewParent parent = view2.getParent();
-            view = view2;
-            if (parent != null) {
-                ((ViewGroup) view2.getParent()).removeView(view2);
-                view = view2;
-            }
-        } else if (i10 != 2) {
-            org.telegram.ui.Cells.s8 s8Var = new org.telegram.ui.Cells.s8(23, context, true);
-            s8Var.setOffsetFromImage(65);
-            s8Var.setBackgroundColor(qg0Var.getThemedColor(org.telegram.ui.ActionBar.h6.h5));
-            s8Var.e(org.telegram.ui.ActionBar.h6.N6, org.telegram.ui.ActionBar.h6.q6);
-            view = s8Var;
-        } else {
-            View lg0Var = new lg0(this, context);
-            lg0Var.setTag(-33024);
-            view = lg0Var;
-        }
-        return new wk0(view);
-    }
-
-    @Override // s4.h0
-    public final void y(s4.c1 c1Var) {
-        TLRPC.Chat chat;
+    /* JADX WARN: Removed duplicated region for block: B:34:0x008a  */
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean onDoubleTap(MotionEvent motionEvent) {
         boolean z10;
-        org.telegram.ui.ActionBar.d6 d6Var;
-        if (c1Var.f == 0) {
-            int b10 = c1Var.b();
-            int S = S(b10);
-            int Q = Q(b10) - 1;
-            PollVotesAlert$UserCell pollVotesAlert$UserCell = (PollVotesAlert$UserCell) c1Var.a;
-            qg0 qg0Var = this.s;
-            pg0 pg0Var = (pg0) qg0Var.x.get(S - 1);
-            TLRPC.MessagePeerVote messagePeerVote = (TLRPC.MessagePeerVote) pg0Var.b.get(Q);
-            TLObject userOrChat = qg0Var.Q().getUserOrChat(DialogObject.getPeerDialogId(messagePeerVote.peer));
-            int i10 = messagePeerVote.date;
-            boolean z11 = (Q == pg0Var.b() - 1 && TextUtils.isEmpty(pg0Var.c) && !pg0Var.e) ? false : true;
-            w9 w9Var = pollVotesAlert$UserCell.a;
-            org.telegram.ui.ActionBar.i5 i5Var = pollVotesAlert$UserCell.b;
-            if (userOrChat instanceof TLRPC.User) {
-                pollVotesAlert$UserCell.h = (TLRPC.User) userOrChat;
-                pollVotesAlert$UserCell.n = null;
-            } else if (userOrChat instanceof TLRPC.Chat) {
-                pollVotesAlert$UserCell.n = (TLRPC.Chat) userOrChat;
-                pollVotesAlert$UserCell.h = null;
-            } else {
-                pollVotesAlert$UserCell.h = null;
-                pollVotesAlert$UserCell.n = null;
-            }
-            long j3 = i10;
-            pollVotesAlert$UserCell.d.setText(LocaleController.getInstance().getFormatterDay().format(j3 * 1000));
-            pollVotesAlert$UserCell.c.setText(LocaleController.formatDate(j3, true));
-            pollVotesAlert$UserCell.v = z11;
-            pollVotesAlert$UserCell.x = userOrChat == null;
-            pollVotesAlert$UserCell.w = Q;
-            if (userOrChat == null) {
-                i5Var.l("", false);
-                w9Var.setImageDrawable(null);
-            } else {
-                int i11 = pollVotesAlert$UserCell.s;
-                h9 h9Var = pollVotesAlert$UserCell.e;
-                TLRPC.User user = pollVotesAlert$UserCell.h;
-                if ((user == null || user.photo == null) && (chat = pollVotesAlert$UserCell.n) != null) {
-                    TLRPC.ChatPhoto chatPhoto = chat.photo;
-                }
-                if (user != null) {
-                    h9Var.m(i11, user);
-                    TLRPC.UserStatus userStatus = pollVotesAlert$UserCell.h.status;
-                } else {
-                    TLRPC.Chat chat2 = pollVotesAlert$UserCell.n;
-                    if (chat2 != null) {
-                        h9Var.k(i11, chat2);
+        og0 og0Var = this.d;
+        PhotoViewer photoViewer = og0Var.V;
+        k71 k71Var = og0Var.Q;
+        if (photoViewer != null && ((photoViewer.F2 != null || og0Var.r != null) && !og0Var.c0 && !og0Var.Y && !og0Var.w && !og0Var.s.isInProgress() && og0Var.f0)) {
+            og0Var.V.getClass();
+            boolean z11 = motionEvent.getX() >= (((float) og0Var.t()) * og0Var.J) * 0.5f;
+            long l4 = og0Var.l();
+            long m10 = og0Var.m();
+            if (l4 != -9223372036854775807L && m10 >= 15000) {
+                long j3 = z11 ? l4 + 10000 : l4 - 10000;
+                if (l4 != j3) {
+                    if (j3 > m10) {
+                        j3 = m10;
+                    } else if (j3 < 0) {
+                        z10 = j3 >= -9000;
+                        j3 = 0;
+                        if (z10) {
+                            k71Var.e(true);
+                            k71Var.d(!z11);
+                            long j10 = k71Var.o + 10000;
+                            k71Var.o = j10;
+                            k71Var.p = LocaleController.formatPluralString("Seconds", (int) (j10 / 1000), new Object[0]);
+                            ag0 ag0Var = og0Var.r;
+                            if (ag0Var != null) {
+                                ag0Var.i(j3);
+                            } else {
+                                s71 s71Var = og0Var.V.F2;
+                                if (s71Var != null) {
+                                    s71Var.K(j3);
+                                }
+                            }
+                            k71Var.g(0L);
+                            og0Var.Z = j3 / m10;
+                            ai.n4 n4Var = og0Var.b0;
+                            if (n4Var != null) {
+                                n4Var.invalidate();
+                            }
+                            ng0 ng0Var = og0Var.h;
+                            if (ng0Var != null) {
+                                ng0Var.invalidate();
+                            }
+                            if (!og0Var.E) {
+                                og0Var.E = true;
+                                og0Var.y(true);
+                                if (!og0Var.i0) {
+                                    og0Var.i0 = true;
+                                    AndroidUtilities.runOnUIThread(og0Var.j0, 2500L);
+                                }
+                            }
+                        }
+                        return true;
                     }
-                }
-                TLRPC.User user2 = pollVotesAlert$UserCell.h;
-                if (user2 != null) {
-                    String userName = UserObject.getUserName(user2);
-                    pollVotesAlert$UserCell.r = userName;
-                    z10 = false;
-                    pollVotesAlert$UserCell.r = Emoji.replaceEmoji(userName, i5Var.getPaint().getFontMetricsInt(), false);
-                } else {
-                    z10 = false;
-                    TLRPC.Chat chat3 = pollVotesAlert$UserCell.n;
-                    if (chat3 != null) {
-                        String str = chat3.title;
-                        pollVotesAlert$UserCell.r = str;
-                        pollVotesAlert$UserCell.r = Emoji.replaceEmoji(str, i5Var.getPaint().getFontMetricsInt(), false);
-                    } else {
-                        pollVotesAlert$UserCell.r = "";
+                    z10 = true;
+                    if (z10) {
                     }
+                    return true;
                 }
-                i5Var.l(pollVotesAlert$UserCell.r, z10);
-                kw0 kw0Var = pollVotesAlert$UserCell.f;
-                TLRPC.User user3 = pollVotesAlert$UserCell.h;
-                TLRPC.Chat chat4 = pollVotesAlert$UserCell.n;
-                int i12 = org.telegram.ui.ActionBar.h6.z9;
-                d6Var = ((org.telegram.ui.ActionBar.f3) pollVotesAlert$UserCell.F).resourcesProvider;
-                i5Var.i(kw0Var.a(user3, chat4, org.telegram.ui.ActionBar.h6.v0(i12, d6Var), z10));
-                TLRPC.Chat chat5 = pollVotesAlert$UserCell.n;
-                if (chat5 != null) {
-                    w9Var.e(chat5, h9Var);
-                } else {
-                    TLRPC.User user4 = pollVotesAlert$UserCell.h;
-                    if (user4 != null) {
-                        w9Var.e(user4, h9Var);
-                    } else {
-                        w9Var.setImageDrawable(h9Var);
-                    }
-                }
-            }
-            ArrayList arrayList = pollVotesAlert$UserCell.E;
-            if (arrayList == null) {
-                if (pollVotesAlert$UserCell.x) {
-                    return;
-                }
-                pollVotesAlert$UserCell.y = 0.0f;
-            } else {
-                Property property = View.ALPHA;
-                arrayList.add(ObjectAnimator.ofFloat(w9Var, (Property<w9, Float>) property, 0.0f, 1.0f));
-                pollVotesAlert$UserCell.E.add(ObjectAnimator.ofFloat(i5Var, (Property<org.telegram.ui.ActionBar.i5, Float>) property, 0.0f, 1.0f));
-                pollVotesAlert$UserCell.E.add(ObjectAnimator.ofFloat(pollVotesAlert$UserCell, qg0.O, 1.0f, 0.0f));
             }
         }
+        return false;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onDown(MotionEvent motionEvent) {
+        og0 og0Var = this.d;
+        if (og0Var.E) {
+            for (int i10 = 1; i10 < og0Var.e.getChildCount(); i10++) {
+                View childAt = og0Var.e.getChildAt(i10);
+                if (childAt.dispatchTouchEvent(motionEvent)) {
+                    og0Var.y = childAt;
+                    return true;
+                }
+            }
+        }
+        this.a = og0Var.K;
+        this.b = og0Var.L;
+        return true;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10) {
+        og0 og0Var = this.d;
+        if (!og0Var.w || og0Var.x) {
+            return false;
+        }
+        o1.k kVar = og0Var.M;
+        kVar.a = f7;
+        float f11 = og0Var.K;
+        kVar.b = f11;
+        kVar.c = true;
+        kVar.u.i = (f7 / 7.0f) + ((og0Var.H / 2.0f) + f11) >= ((float) AndroidUtilities.displaySize.x) / 2.0f ? (r3 - r2) - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f);
+        og0Var.M.f();
+        o1.k kVar2 = og0Var.N;
+        kVar2.a = f7;
+        kVar2.b = og0Var.L;
+        kVar2.c = true;
+        kVar2.u.i = w7.q.a((f10 / 10.0f) + r9, AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - og0Var.I) - AndroidUtilities.dp(16.0f));
+        og0Var.N.f();
+        return true;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10) {
+        og0 og0Var = this.d;
+        if (!og0Var.w && og0Var.F == null && !og0Var.x) {
+            float abs = Math.abs(f7);
+            float f11 = this.c;
+            if (abs >= f11 || Math.abs(f10) >= f11) {
+                og0Var.w = true;
+                og0Var.M.c();
+                og0Var.N.c();
+                og0Var.f0 = false;
+                og0Var.i();
+                AndroidUtilities.cancelRunOnUIThread(og0Var.h0);
+            }
+        }
+        if (og0Var.w) {
+            float f12 = og0Var.K;
+            float rawX = (motionEvent2.getRawX() + this.a) - motionEvent.getRawX();
+            og0Var.L = (motionEvent2.getRawY() + this.b) - motionEvent.getRawY();
+            int i10 = og0Var.H;
+            if (rawX > (-i10) * 0.25f && rawX < AndroidUtilities.displaySize.x - (i10 * 0.75f)) {
+                boolean z10 = og0Var.d0;
+                if (z10) {
+                    if (z10) {
+                        og0Var.M.a(new ci.sa(this, rawX, 2));
+                        o1.k kVar = og0Var.M;
+                        kVar.b = f12;
+                        kVar.c = true;
+                        kVar.u.i = rawX;
+                        kVar.f();
+                    }
+                    og0Var.d0 = false;
+                    return true;
+                }
+                o1.k kVar2 = og0Var.M;
+                if (kVar2.f) {
+                    kVar2.u.i = rawX;
+                } else {
+                    WindowManager.LayoutParams layoutParams = og0Var.c;
+                    og0Var.K = rawX;
+                    layoutParams.x = (int) rawX;
+                    ((SharedPreferences) og0Var.n().b).edit().putFloat("x", rawX).apply();
+                }
+                og0Var.c.y = (int) og0Var.L;
+                ((SharedPreferences) og0Var.n().b).edit().putFloat("y", og0Var.L).apply();
+                AndroidUtilities.updateViewLayout(og0Var.b, og0Var.d, og0Var.c);
+                return true;
+            }
+            if (!og0Var.d0) {
+                o1.k kVar3 = og0Var.M;
+                kVar3.b = f12;
+                kVar3.c = true;
+                kVar3.u.i = (i10 / 2.0f) + rawX >= ((float) AndroidUtilities.displaySize.x) / 2.0f ? r9 - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f) - og0Var.H;
+                og0Var.M.f();
+            }
+            og0Var.d0 = true;
+        }
+        return true;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
+    public final boolean onSingleTapConfirmed(MotionEvent motionEvent) {
+        og0 og0Var = this.d;
+        ValueAnimator valueAnimator = og0Var.F;
+        jg0 jg0Var = og0Var.j0;
+        if (valueAnimator == null) {
+            if (og0Var.i0) {
+                AndroidUtilities.cancelRunOnUIThread(jg0Var);
+                og0Var.i0 = false;
+            }
+            boolean z10 = !og0Var.E;
+            og0Var.E = z10;
+            og0Var.y(z10);
+            if (og0Var.E && !og0Var.i0) {
+                AndroidUtilities.runOnUIThread(jg0Var, 2500L);
+                og0Var.i0 = true;
+            }
+        }
+        return true;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onSingleTapUp(MotionEvent motionEvent) {
+        if (a()) {
+            return super.onSingleTapUp(motionEvent);
+        }
+        onSingleTapConfirmed(motionEvent);
+        return true;
     }
 }

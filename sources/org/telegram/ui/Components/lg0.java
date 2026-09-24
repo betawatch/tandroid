@@ -1,15 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class lg0 extends og0 {
-    public final /* synthetic */ mg0 e;
+public final class lg0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ og0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lg0(mg0 mg0Var, Context context) {
-        super(mg0Var.s, context);
-        this.e = mg0Var;
+    public /* synthetic */ lg0(og0 og0Var, int i10) {
+        this.a = i10;
+        this.b = og0Var;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.b.F = null;
+                break;
+            default:
+                this.b.u();
+                break;
+        }
     }
 }

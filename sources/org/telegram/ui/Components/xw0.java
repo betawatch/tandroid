@@ -1,405 +1,115 @@
 package org.telegram.ui.Components;
 
 import android.animation.ValueAnimator;
-import android.content.Context;
-import android.view.View;
-import android.view.ViewPropertyAnimator;
-import android.widget.FrameLayout;
+import android.text.TextUtils;
+import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DocumentObject;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ub1;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public class xw0 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
-    public boolean E;
-    public int F;
-    public int G;
-    public ValueAnimator H;
-    public float I;
-    public boolean J;
-    public final ub1 a;
-    public final w9 b;
-    public final RadialProgressView c;
-    public final vh.o d;
-    public final d90 e;
-    public final ci.d f;
-    public boolean h;
-    public final org.telegram.ui.ActionBar.d6 n;
-    public int r;
-    public final View s;
-    public int v;
-    public final int w;
-    public boolean x;
-    public final org.telegram.ui.Cells.l7 y;
+public final class xw0 extends vl0 {
+    public int c;
+    public final /* synthetic */ gx0 d;
 
-    public xw0(Context context) {
-        this(context, null, 1, null);
+    public xw0(gx0 gx0Var) {
+        this.d = gx0Var;
     }
 
-    public void a() {
-        invalidate();
+    @Override // org.telegram.ui.Components.vl0
+    public final boolean D(s4.c1 c1Var) {
+        return c1Var.f == 1;
     }
 
-    public final void b(int i10, boolean z10) {
-        if (this.v != i10) {
-            if (getVisibility() != 0) {
-                z10 = false;
+    @Override // s4.h0
+    public final int h() {
+        gx0 gx0Var = this.d;
+        cx0[] cx0VarArr = gx0Var.Y2;
+        int length = (cx0VarArr == null ? 0 : cx0VarArr.length) + 1;
+        if (length != this.c) {
+            ci.bb bbVar = gx0Var.l3;
+            if (bbVar != null) {
+                bbVar.requestLayout();
             }
-            this.v = i10;
-            float dp = (-(i10 >> 1)) + (i10 > 0 ? AndroidUtilities.dp(20.0f) : 0);
-            RadialProgressView radialProgressView = this.c;
-            ub1 ub1Var = this.a;
-            if (!z10) {
-                ub1Var.setTranslationY(dp);
-                if (radialProgressView != null) {
-                    radialProgressView.setTranslationY(dp);
-                    return;
-                }
-                return;
-            }
-            ViewPropertyAnimator translationY = ub1Var.animate().translationY(dp);
-            rr rrVar = rr.f;
-            translationY.setInterpolator(rrVar).setDuration(250L);
-            if (radialProgressView != null) {
-                radialProgressView.animate().translationY(dp).setInterpolator(rrVar).setDuration(250L);
-            }
+            this.c = length;
         }
+        return length;
     }
 
-    public final void c() {
-        Object obj;
-        TLRPC.Document document;
-        int i10;
-        int i11 = this.r;
-        w9 w9Var = this.b;
-        if (i11 != 0) {
-            if (i11 != 1) {
-                TLRPC.Document document2 = null;
-                String str = null;
-                document2 = null;
-                document2 = null;
-                int i12 = this.w;
-                if (i11 == 16) {
-                    document = MediaDataController.getInstance(i12).getEmojiAnimatedSticker("👍");
-                    obj = null;
-                } else {
-                    TLRPC.TL_messages_stickerSet stickerSetByName = MediaDataController.getInstance(i12).getStickerSetByName(AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME);
-                    if (stickerSetByName == null) {
-                        stickerSetByName = MediaDataController.getInstance(i12).getStickerSetByEmojiOrName(AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME);
-                    }
-                    if (stickerSetByName != null && (i10 = this.r) >= 0 && i10 < stickerSetByName.documents.size()) {
-                        document2 = stickerSetByName.documents.get(this.r);
-                    }
-                    obj = stickerSetByName;
-                    document = document2;
-                    str = "130_130";
-                }
-                if (!LiteMode.isEnabled(3)) {
-                    str = w.c.g(str, "_firstframe");
-                }
-                if (document == null) {
-                    MediaDataController.getInstance(i12).loadStickersByEmojiOrName(AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME, false, obj == null);
-                    w9Var.getImageReceiver().clearImage();
-                    return;
-                }
-                SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(document.thumbs, this.G, 0.2f);
-                if (svgThumb != null) {
-                    svgThumb.overrideWidthAndHeight(512, 512);
-                }
-                w9Var.i(ImageLocation.getForDocument(document), str, "tgs", svgThumb, obj);
-                int i13 = this.r;
-                if (i13 == 9 || i13 == 0) {
-                    w9Var.getImageReceiver().setAutoRepeat(1);
-                    return;
-                } else {
-                    w9Var.getImageReceiver().setAutoRepeat(2);
-                    return;
-                }
-            }
-        }
-        w9Var.setImageDrawable(new yi0(R.raw.utyan_empty, AndroidUtilities.dp(130.0f), AndroidUtilities.dp(130.0f)));
+    @Override // s4.h0
+    public final int j(int i10) {
+        return i10 == 0 ? 0 : 1;
     }
 
-    public final void d(int i10, boolean z10) {
-        boolean z11 = i10 == 0;
-        if (this.J != z11) {
-            this.J = z11;
-            setEnabled(z11);
-            ValueAnimator valueAnimator = this.H;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
-                this.H = null;
-            }
-            if (z10) {
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(this.I, z11 ? 1.0f : 0.0f);
-                this.H = ofFloat;
-                ofFloat.setDuration(480L);
-                this.H.setInterpolator(rr.h);
-                this.H.addUpdateListener(new i70(this, 24));
-                this.H.start();
-            } else {
-                this.I = z11 ? 1.0f : 0.0f;
-                a();
-            }
-        }
-        int visibility = getVisibility();
-        w9 w9Var = this.b;
-        RadialProgressView radialProgressView = this.c;
-        ub1 ub1Var = this.a;
-        View view = this.s;
-        if (visibility != i10 && i10 == 0) {
-            if (this.h) {
-                ub1Var.animate().alpha(0.0f).scaleY(0.8f).scaleX(0.8f).setDuration(150L).start();
-                view.animate().setListener(null).cancel();
-                view.setVisibility(0);
-                view.setAlpha(1.0f);
-            } else {
-                ub1Var.animate().alpha(1.0f).scaleY(1.0f).scaleX(1.0f).setDuration(150L).start();
-                if (view != null) {
-                    view.animate().setListener(null).cancel();
-                    view.animate().setListener(new ww0(this, 0)).alpha(0.0f).setDuration(150L).start();
-                } else {
-                    radialProgressView.animate().alpha(0.0f).scaleY(0.5f).scaleX(0.5f).setDuration(150L).start();
-                }
-                w9Var.getImageReceiver().startAnimation();
-            }
-        }
-        super.setVisibility(i10);
-        if (getVisibility() == 0) {
-            c();
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
+        gx0 gx0Var;
+        cx0[] cx0VarArr;
+        if (c1Var.f != 1 || (cx0VarArr = (gx0Var = this.d).Y2) == null) {
             return;
         }
-        this.F = 0;
-        ub1Var.setAlpha(0.0f);
-        ub1Var.setScaleX(0.8f);
-        ub1Var.setScaleY(0.8f);
-        if (view != null) {
-            view.animate().setListener(null).cancel();
-            view.animate().setListener(new ww0(this, 1)).alpha(0.0f).setDuration(150L).start();
+        int i11 = i10 - 1;
+        cx0 cx0Var = cx0VarArr[i11];
+        final bx0 bx0Var = (bx0) c1Var.a;
+        boolean z10 = gx0Var.m3 == i11;
+        bx0Var.getClass();
+        if (!TextUtils.isEmpty(cx0Var.d)) {
+            bx0Var.setContentDescription(cx0Var.d);
+        } else if (TextUtils.isEmpty(cx0Var.a)) {
+            bx0Var.setContentDescription(null);
         } else {
-            radialProgressView.setAlpha(0.0f);
-            radialProgressView.setScaleX(0.5f);
-            radialProgressView.setScaleY(0.5f);
+            bx0Var.setContentDescription(cx0Var.a);
         }
-        w9Var.getImageReceiver().stopAnimation();
-        w9Var.getImageReceiver().clearImage();
-    }
-
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == NotificationCenter.diceStickersDidLoad && AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME.equals((String) objArr[0]) && getVisibility() == 0) {
-            c();
+        ValueAnimator valueAnimator = bx0Var.G;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+            bx0Var.G = null;
         }
-    }
-
-    public void e(boolean z10, boolean z11) {
-        if (this.h != z10) {
-            this.h = z10;
-            if (getVisibility() != 0) {
-                return;
+        bx0Var.setImageResource(0);
+        bx0Var.a();
+        final boolean A1 = bx0Var.H.A1();
+        bx0Var.w = false;
+        bx0Var.y = 1.0f;
+        q5.h(UserConfig.selectedAccount).b(cx0Var.c, new n5() { // from class: org.telegram.ui.Components.zw0
+            @Override // org.telegram.ui.Components.n5
+            public final void a(TLRPC.Document document) {
+                boolean z11 = !A1;
+                bx0 bx0Var2 = bx0.this;
+                bx0Var2.setOnlyLastFrame(z11);
+                bx0Var2.g(24, 24, document);
+                bx0Var2.d();
             }
-            RadialProgressView radialProgressView = this.c;
-            View view = this.s;
-            ub1 ub1Var = this.a;
-            if (z11) {
-                if (z10) {
-                    ub1Var.animate().alpha(0.0f).scaleY(0.8f).scaleX(0.8f).setDuration(150L).start();
-                    this.y.run();
-                    return;
-                }
-                ub1Var.animate().alpha(1.0f).scaleY(1.0f).scaleX(1.0f).setDuration(150L).start();
-                if (view != null) {
-                    view.animate().setListener(null).cancel();
-                    view.animate().setListener(new ww0(this, 2)).alpha(0.0f).setDuration(150L).start();
-                } else {
-                    radialProgressView.animate().alpha(0.0f).scaleY(0.5f).scaleX(0.5f).setDuration(150L).start();
-                }
-                this.b.getImageReceiver().startAnimation();
-                return;
-            }
-            if (!z10) {
-                ub1Var.animate().cancel();
-                ub1Var.setAlpha(1.0f);
-                ub1Var.setScaleX(1.0f);
-                ub1Var.setScaleY(1.0f);
-                if (view != null) {
-                    view.animate().setListener(null).cancel();
-                    view.setVisibility(8);
-                    return;
-                } else {
-                    radialProgressView.setAlpha(0.0f);
-                    radialProgressView.setScaleX(0.5f);
-                    radialProgressView.setScaleY(0.5f);
-                    return;
-                }
-            }
-            ub1Var.animate().cancel();
-            ub1Var.setAlpha(0.0f);
-            ub1Var.setScaleX(0.8f);
-            ub1Var.setScaleY(0.8f);
-            if (view != null) {
-                view.animate().setListener(null).cancel();
-                view.setAlpha(1.0f);
-                view.setVisibility(0);
-            } else {
-                radialProgressView.setAlpha(1.0f);
-                radialProgressView.setScaleX(1.0f);
-                radialProgressView.setScaleY(1.0f);
-            }
+        });
+        AndroidUtilities.runOnUIThread(new wq0(bx0Var, 10), 60L);
+        bx0Var.l(z10, false);
+        bx0Var.setAlpha(gx0Var.o3);
+        bx0Var.setScaleX(gx0Var.o3);
+        bx0Var.setScaleY(gx0Var.o3);
+        bx0Var.j();
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        bx0 bx0Var;
+        gx0 gx0Var = this.d;
+        if (i10 == 0) {
+            ci.bb bbVar = new ci.bb(this, gx0Var.getContext(), 25);
+            gx0Var.l3 = bbVar;
+            bx0Var = bbVar;
+        } else {
+            bx0Var = new bx0(gx0Var, gx0Var.getContext());
         }
+        return new gl0(bx0Var);
     }
 
-    public float getVisibilityFactor() {
-        return this.I;
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        if (getVisibility() == 0) {
-            c();
-        }
-        NotificationCenter.getInstance(this.w).addObserver(this, NotificationCenter.diceStickersDidLoad);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        NotificationCenter.getInstance(this.w).removeObserver(this, NotificationCenter.diceStickersDidLoad);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        int i14;
-        super.onLayout(z10, i10, i11, i12, i13);
-        if ((this.E || this.x) && (i14 = this.F) > 0 && i14 != getMeasuredHeight()) {
-            float measuredHeight = (this.F - getMeasuredHeight()) / 2.0f;
-            ub1 ub1Var = this.a;
-            ub1Var.setTranslationY(ub1Var.getTranslationY() + measuredHeight);
-            if (!this.x) {
-                ub1Var.animate().translationY(0.0f).setInterpolator(rr.f).setDuration(250L);
-            }
-            RadialProgressView radialProgressView = this.c;
-            if (radialProgressView != null) {
-                radialProgressView.setTranslationY(radialProgressView.getTranslationY() + measuredHeight);
-                if (!this.x) {
-                    radialProgressView.animate().translationY(0.0f).setInterpolator(rr.f).setDuration(250L);
-                }
-            }
-        }
-        this.F = getMeasuredHeight();
-    }
-
-    public void setAnimateLayoutChange(boolean z10) {
-        this.E = z10;
-    }
-
-    public void setPreventMoving(boolean z10) {
-        this.x = z10;
-        if (z10) {
-            return;
-        }
-        this.a.setTranslationY(0.0f);
-        RadialProgressView radialProgressView = this.c;
-        if (radialProgressView != null) {
-            radialProgressView.setTranslationY(0.0f);
-        }
-    }
-
-    public void setStickerType(int i10) {
-        if (this.r != i10) {
-            this.r = i10;
-            c();
-        }
-    }
-
-    public void setSubtitle(CharSequence charSequence) {
-        int i10 = 0;
-        for (int i11 = 0; i11 < charSequence.length(); i11++) {
-            if (Character.isWhitespace(charSequence.charAt(i11))) {
-                i10++;
-            }
-        }
-        if (i10 > 4 && charSequence.length() > 20) {
-            int length = charSequence.length() >> 1;
-            int i12 = -1;
-            int i13 = 0;
-            for (int i14 = 0; i14 < charSequence.length(); i14++) {
-                if (Character.isWhitespace(charSequence.charAt(i14))) {
-                    int abs = Math.abs(length - i14);
-                    if (i12 == -1 || abs < i13) {
-                        i12 = i14;
-                        i13 = abs;
-                    }
-                }
-            }
-            if (i12 > 0) {
-                charSequence = ((Object) charSequence.subSequence(0, i12)) + "\n" + ((Object) charSequence.subSequence(i12 + 1, charSequence.length()));
-            }
-        }
-        this.e.setText(charSequence);
-    }
-
-    @Override // android.view.View
-    public void setVisibility(int i10) {
-        d(i10, true);
-    }
-
-    public xw0(Context context, View view, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context);
-        this.w = UserConfig.selectedAccount;
-        this.y = new org.telegram.ui.Cells.l7(this, 24);
-        this.G = org.telegram.ui.ActionBar.h6.c7;
-        this.n = d6Var;
-        this.s = view;
-        this.r = i10;
-        ub1 ub1Var = new ub1(this, context, 10);
-        this.a = ub1Var;
-        ub1Var.setOrientation(1);
-        w9 w9Var = new w9(context);
-        this.b = w9Var;
-        w9Var.setOnClickListener(new y70(this, 18));
-        vh.o oVar = new vh.o(context);
-        this.d = oVar;
-        oVar.setTypeface(AndroidUtilities.bold());
-        int i11 = org.telegram.ui.ActionBar.h6.G6;
-        oVar.setTag(Integer.valueOf(i11));
-        oVar.setTextColor(org.telegram.ui.ActionBar.h6.v0(i11, d6Var));
-        oVar.setTextSize(1, 20.0f);
-        oVar.setGravity(17);
-        d90 d90Var = new d90(context, null);
-        this.e = d90Var;
-        int i12 = org.telegram.ui.ActionBar.h6.y6;
-        d90Var.setTag(Integer.valueOf(i12));
-        d90Var.setTextColor(org.telegram.ui.ActionBar.h6.v0(i12, d6Var));
-        d90Var.setLinkTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.J6, d6Var));
-        d90Var.setTextSize(1, 14.0f);
-        d90Var.setGravity(17);
-        ci.d dVar = new ci.d(context, d6Var, true);
-        dVar.setRoundRadius(24);
-        this.f = dVar;
-        dVar.setVisibility(8);
-        ub1Var.addView(w9Var, w7.x5.q(117, 117, 1));
-        ub1Var.addView(oVar, w7.x5.t(-2, -2, 1, 0, 12, 0, 0));
-        ub1Var.addView(d90Var, w7.x5.t(-2, -2, 1, 0, 8, 0, 0));
-        ub1Var.addView(dVar, w7.x5.t(-1, 48, 1, 28, 16, 28, 0));
-        addView(ub1Var, w7.x5.d(-2, -2.0f, 17, 46.0f, 0.0f, 46.0f, 30.0f));
-        if (view == null) {
-            RadialProgressView radialProgressView = new RadialProgressView(context, d6Var);
-            this.c = radialProgressView;
-            radialProgressView.setAlpha(0.0f);
-            radialProgressView.setScaleY(0.5f);
-            radialProgressView.setScaleX(0.5f);
-            addView(radialProgressView, w7.x5.e(-2, -2, 17));
+    @Override // s4.h0
+    public final void y(s4.c1 c1Var) {
+        if (c1Var.f == 1) {
+            bx0 bx0Var = (bx0) c1Var.a;
+            bx0Var.l(this.d.m3 == c1Var.b() - 1, false);
+            bx0Var.j();
         }
     }
 }

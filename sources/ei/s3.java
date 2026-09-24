@@ -13,11 +13,11 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.gf1;
 import org.telegram.ui.wf1;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s3 implements Utilities.Callback {
     public final /* synthetic */ int a = 0;
@@ -28,10 +28,10 @@ public final /* synthetic */ class s3 implements Utilities.Callback {
     public final /* synthetic */ Object f;
     public final /* synthetic */ Object g;
 
-    public /* synthetic */ s3(int i10, long j3, Context context, TL_payments.connectedBotStarRef connectedbotstarref, org.telegram.ui.ActionBar.f3 f3Var, d6 d6Var) {
+    public /* synthetic */ s3(int i10, long j3, Context context, TL_payments.connectedBotStarRef connectedbotstarref, org.telegram.ui.ActionBar.e3 e3Var, d6 d6Var) {
         this.b = i10;
         this.d = connectedbotstarref;
-        this.e = f3Var;
+        this.e = e3Var;
         this.f = context;
         this.c = j3;
         this.g = d6Var;
@@ -49,20 +49,20 @@ public final /* synthetic */ class s3 implements Utilities.Callback {
         switch (i11) {
             case 0:
                 TL_payments.connectedBotStarRef connectedbotstarref = (TL_payments.connectedBotStarRef) obj5;
-                org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) obj4;
+                org.telegram.ui.ActionBar.e3 e3Var = (org.telegram.ui.ActionBar.e3) obj4;
                 Context context = (Context) obj3;
                 d6 d6Var = (d6) obj2;
                 TL_payments.connectedBotStarRef connectedbotstarref2 = (TL_payments.connectedBotStarRef) obj;
                 int i12 = this.b;
                 long j3 = this.c;
                 if (connectedbotstarref2 != null) {
-                    f3Var.dismiss();
+                    e3Var.dismiss();
                     e4.H0(context, i12, connectedbotstarref2, j3, d6Var);
                     break;
                 } else {
                     TLRPC.User user = MessagesController.getInstance(i12).getUser(Long.valueOf(connectedbotstarref.bot_id));
                     if (user != null) {
-                        MessagesController.getInstance(i12).loadFullUser(user, 0, true, new q3(f3Var, context, i12, j3, d6Var, 1));
+                        MessagesController.getInstance(i12).loadFullUser(user, 0, true, new q3(e3Var, context, i12, j3, d6Var, 1));
                         break;
                     }
                 }
@@ -83,11 +83,11 @@ public final /* synthetic */ class s3 implements Utilities.Callback {
                     long j10 = this.c;
                     if (!isEmpty) {
                         TLRPC.Chat chat = wf1Var.getMessagesController().getChat(Long.valueOf(j10));
-                        i10 = ((org.telegram.ui.ActionBar.n2) wf1Var).currentAccount;
+                        i10 = ((org.telegram.ui.ActionBar.m2) wf1Var).currentAccount;
                         org.telegram.ui.Components.e5.f(i10, chat, tL_messages_invitedUsers);
                         break;
                     } else {
-                        xc a02 = xc.a0(wf1Var);
+                        yc a02 = yc.a0(wf1Var);
                         TLRPC.Chat chat2 = wf1Var.getMessagesController().getChat(Long.valueOf(j10));
                         a02.getClass();
                         if (arrayList.size() == 0) {

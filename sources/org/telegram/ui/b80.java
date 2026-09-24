@@ -1,26 +1,29 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class b80 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ i80 b;
+import java.util.TimerTask;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
 
-    public /* synthetic */ b80(i80 i80Var, int i10) {
-        this.a = i10;
-        this.b = i80Var;
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* loaded from: classes3.dex */
+public final class b80 extends TimerTask {
+    public final /* synthetic */ String a;
+    public final /* synthetic */ c80 b;
+
+    public b80(c80 c80Var, String str) {
+        this.b = c80Var;
+        this.a = str;
     }
 
-    @Override // java.lang.Runnable
+    @Override // java.util.TimerTask, java.lang.Runnable
     public final void run() {
-        switch (this.a) {
-            case 0:
-                i80 i80Var = this.b;
-                i80Var.h.postOnAnimation(new b80(i80Var, 1));
-                break;
-            default:
-                this.b.Y();
-                break;
+        c80 c80Var = this.b;
+        try {
+            c80Var.f.cancel();
+            c80Var.f = null;
+        } catch (Exception e) {
+            FileLog.e(e);
         }
+        AndroidUtilities.runOnUIThread(new a80(this, this.a, 0));
     }
 }

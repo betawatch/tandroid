@@ -1,42 +1,61 @@
 package n7;
 
-import java.io.Serializable;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
-public final class b0 extends x implements Serializable {
-    public final x a;
+public final class b0 extends o {
+    public final transient Object d;
 
-    public b0(x xVar) {
-        this.a = xVar;
+    public b0(Object obj) {
+        this.d = obj;
     }
 
-    @Override // n7.x
-    public final x a() {
-        return this.a;
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        return this.d.equals(obj);
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        return this.a.compare(obj2, obj);
-    }
-
-    @Override // java.util.Comparator
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (obj instanceof b0) {
-            return this.a.equals(((b0) obj).a);
-        }
-        return false;
-    }
-
+    @Override // n7.o, java.util.Collection, java.util.Set
     public final int hashCode() {
-        return -this.a.hashCode();
+        return this.d.hashCode();
     }
 
+    @Override // n7.h
+    public final int i(Object[] objArr) {
+        objArr[0] = this.d;
+        return 1;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final /* synthetic */ Iterator iterator() {
+        return new t(this.d);
+    }
+
+    @Override // n7.h
+    public final d0 p() {
+        return new t(this.d);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        return 1;
+    }
+
+    @Override // n7.o
+    public final m t() {
+        Object[] objArr = {this.d};
+        for (int i10 = 0; i10 < 1; i10++) {
+            i iVar = m.b;
+            if (objArr[i10] == null) {
+                throw new NullPointerException(hg.c.h(i10, "at index "));
+            }
+        }
+        return m.t(1, objArr);
+    }
+
+    @Override // java.util.AbstractCollection
     public final String toString() {
-        return this.a.toString().concat(".reverse()");
+        return a4.a.q("[", this.d.toString(), "]");
     }
 }

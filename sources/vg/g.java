@@ -17,10 +17,10 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.w9;
-import org.telegram.ui.py0;
-import w7.x5;
+import org.telegram.ui.ny0;
+import w7.y5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class g extends c {
     public final ImageView r;
@@ -40,7 +40,7 @@ public final class g extends c {
         imageView.setColorFilter(new PorterDuffColorFilter(h6.w0(null, h6.m6, false), PorterDuff.Mode.MULTIPLY));
         imageView.setContentDescription(LocaleController.getString(R.string.Delete));
         boolean z10 = LocaleController.isRTL;
-        addView(imageView, x5.d(48, 50.0f, (z10 ? 3 : 5) | 17, z10 ? 3.0f : 0.0f, 0.0f, z10 ? 0.0f : 3.0f, 0.0f));
+        addView(imageView, y5.d(48, 50.0f, (z10 ? 3 : 5) | 17, z10 ? 3.0f : 0.0f, 0.0f, z10 ? 0.0f : 3.0f, 0.0f));
         this.d.setPadding(AndroidUtilities.dp(LocaleController.isRTL ? 24.0f : 0.0f), 0, AndroidUtilities.dp(LocaleController.isRTL ? 0.0f : 24.0f), 0);
     }
 
@@ -81,7 +81,7 @@ public final class g extends c {
         } else {
             imageView.setVisibility(4);
         }
-        imageView.setOnClickListener(new py0(21, this, chat));
+        imageView.setOnClickListener(new ny0(21, this, chat));
     }
 
     public TLRPC.Chat getChat() {

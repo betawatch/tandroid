@@ -1,18 +1,16 @@
 package org.telegram.ui;
 
-import android.view.View;
-
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class f71 implements View.OnLayoutChangeListener {
-    public final /* synthetic */ j71 a;
+public final class f71 extends s4.j {
+    public final /* synthetic */ k71 F;
 
-    public f71(j71 j71Var) {
-        this.a = j71Var;
+    public f71(k71 k71Var) {
+        this.F = k71Var;
     }
 
-    @Override // android.view.View.OnLayoutChangeListener
-    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
-        j71.S(this.a);
+    @Override // s4.j
+    public final void P(s4.c1 c1Var) {
+        k71.S(this.F);
     }
 }

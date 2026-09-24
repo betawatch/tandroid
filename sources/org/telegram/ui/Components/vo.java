@@ -1,8 +1,8 @@
 package org.telegram.ui.Components;
 
-import org.telegram.ui.ra1;
+import org.telegram.ui.sa1;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vo implements Runnable {
     public final /* synthetic */ int a;
@@ -24,17 +24,17 @@ public final /* synthetic */ class vo implements Runnable {
                 break;
             case 2:
                 np npVar = this.b;
-                org.telegram.ui.xn xnVar = npVar.v;
-                org.telegram.ui.ActionBar.n2 d02 = ra1.d0(xnVar.getMessagesController().getChat(Long.valueOf(-xnVar.a())), true);
-                org.telegram.ui.ActionBar.l2 l2Var = new org.telegram.ui.ActionBar.l2();
-                l2Var.a = true;
-                d02.setResourceProvider(xnVar.getResourceProvider());
-                l2Var.c = new th(2);
-                l2Var.d = new vo(npVar, 3);
-                l2Var.b = new vo(npVar, 4);
-                l2Var.e = true;
+                org.telegram.ui.wn wnVar = npVar.v;
+                org.telegram.ui.ActionBar.m2 d02 = sa1.d0(wnVar.getMessagesController().getChat(Long.valueOf(-wnVar.a())), true);
+                org.telegram.ui.ActionBar.k2 k2Var = new org.telegram.ui.ActionBar.k2();
+                k2Var.a = true;
+                d02.setResourceProvider(wnVar.getResourceProvider());
+                k2Var.c = new th(2);
+                k2Var.d = new vo(npVar, 3);
+                k2Var.b = new vo(npVar, 4);
+                k2Var.e = true;
                 npVar.X = d02;
-                xnVar.showAsSheet(d02, l2Var);
+                wnVar.showAsSheet(d02, k2Var);
                 break;
             case 3:
                 this.b.u();

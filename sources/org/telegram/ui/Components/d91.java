@@ -1,281 +1,140 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.view.MotionEvent;
-import android.view.View;
+import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Point;
+import android.os.Build;
+import java.io.File;
+import java.io.FileOutputStream;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.ImageLoader;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.WallpapersListActivity;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class d91 extends View {
-    public float E;
-    public boolean F;
-    public boolean G;
-    public float H;
-    public float I;
-    public float J;
-    public AnimatorSet K;
-    public c91 L;
-    public boolean M;
-    public final org.telegram.ui.Cells.c2 N;
-    public final Drawable a;
-    public final Drawable b;
-    public final Drawable c;
-    public final Drawable d;
-    public final Drawable e;
-    public final Drawable f;
-    public int h;
-    public int n;
-    public int r;
-    public int s;
-    public int v;
-    public int w;
-    public int x;
-    public int y;
+public final class d91 {
+    public String a;
+    public final Activity b;
+    public final org.telegram.ui.ActionBar.m2 c;
+    public final c91 d;
+    public File e;
 
-    public d91(Context context) {
-        super(context);
-        this.M = true;
-        this.N = new org.telegram.ui.Cells.c2(this);
-        this.a = context.getResources().getDrawable(R.drawable.zoom_minus);
-        this.b = context.getResources().getDrawable(R.drawable.zoom_plus);
-        this.c = context.getResources().getDrawable(R.drawable.zoom_slide);
-        this.d = context.getResources().getDrawable(R.drawable.zoom_slide_a);
-        this.e = context.getResources().getDrawable(R.drawable.zoom_round);
-        this.f = context.getResources().getDrawable(R.drawable.zoom_round_b);
+    public d91(Activity activity, WallpapersListActivity wallpapersListActivity, c91 c91Var) {
+        this.b = activity;
+        this.c = wallpapersListActivity;
+        this.d = c91Var;
     }
 
-    public final boolean a(float f7) {
-        if (f7 < 0.0f || f7 > 1.0f) {
-            return false;
-        }
-        AnimatorSet animatorSet = this.K;
-        if (animatorSet != null) {
-            animatorSet.cancel();
-        }
-        this.J = f7;
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        this.K = animatorSet2;
-        animatorSet2.playTogether(ObjectAnimator.ofFloat(this, this.N, f7));
-        this.K.setDuration(180L);
-        this.K.addListener(new u81(this, 1));
-        this.K.start();
-        return true;
-    }
-
-    public final void b(float f7, boolean z10) {
-        c91 c91Var;
-        if (f7 == this.E) {
-            return;
-        }
-        if (f7 < 0.0f) {
-            f7 = 0.0f;
-        } else if (f7 > 1.0f) {
-            f7 = 1.0f;
-        }
-        this.E = f7;
-        if (z10 && (c91Var = this.L) != null) {
-            c91Var.a(f7);
-        }
-        invalidate();
-    }
-
-    public float getZoom() {
-        return this.K != null ? this.J : this.E;
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        int measuredWidth = getMeasuredWidth() / 2;
-        int measuredHeight = getMeasuredHeight() / 2;
-        boolean z10 = getMeasuredWidth() > getMeasuredHeight();
-        if (z10) {
-            this.h = AndroidUtilities.dp(41.0f);
-            this.n = measuredHeight;
-            this.r = getMeasuredWidth() - AndroidUtilities.dp(41.0f);
-            this.s = measuredHeight;
-            this.v = AndroidUtilities.dp(18.0f) + this.h;
-            this.w = measuredHeight;
-            this.x = this.r - AndroidUtilities.dp(18.0f);
-            this.y = measuredHeight;
-        } else {
-            this.h = measuredWidth;
-            this.n = AndroidUtilities.dp(41.0f);
-            this.r = measuredWidth;
-            this.s = getMeasuredHeight() - AndroidUtilities.dp(41.0f);
-            this.v = measuredWidth;
-            this.w = AndroidUtilities.dp(18.0f) + this.n;
-            this.x = measuredWidth;
-            this.y = this.s - AndroidUtilities.dp(18.0f);
-        }
-        int dp = this.h - AndroidUtilities.dp(7.0f);
-        int dp2 = this.n - AndroidUtilities.dp(7.0f);
-        int dp3 = AndroidUtilities.dp(7.0f) + this.h;
-        int dp4 = AndroidUtilities.dp(7.0f) + this.n;
-        Drawable drawable = this.a;
-        drawable.setBounds(dp, dp2, dp3, dp4);
-        drawable.draw(canvas);
-        int dp5 = this.r - AndroidUtilities.dp(7.0f);
-        int dp6 = this.s - AndroidUtilities.dp(7.0f);
-        int dp7 = AndroidUtilities.dp(7.0f) + this.r;
-        int dp8 = AndroidUtilities.dp(7.0f) + this.s;
-        Drawable drawable2 = this.b;
-        drawable2.setBounds(dp5, dp6, dp7, dp8);
-        drawable2.draw(canvas);
-        int i10 = this.x;
-        int i11 = this.v;
-        int i12 = this.y;
-        int i13 = this.w;
-        float f7 = this.E;
-        int i14 = (int) (((i10 - i11) * f7) + i11);
-        int i15 = (int) (((i12 - i13) * f7) + i13);
-        Drawable drawable3 = this.d;
-        Drawable drawable4 = this.c;
-        if (z10) {
-            drawable4.setBounds(i11, i13 - AndroidUtilities.dp(3.0f), this.x, AndroidUtilities.dp(3.0f) + this.w);
-            drawable3.setBounds(this.v, this.w - AndroidUtilities.dp(3.0f), i14, AndroidUtilities.dp(3.0f) + this.w);
-        } else {
-            drawable4.setBounds(i13, 0, i12, AndroidUtilities.dp(6.0f));
-            drawable3.setBounds(this.w, 0, i15, AndroidUtilities.dp(6.0f));
-            canvas.save();
-            canvas.rotate(90.0f);
-            canvas.translate(0.0f, (-this.v) - AndroidUtilities.dp(3.0f));
-        }
-        drawable4.draw(canvas);
-        drawable3.draw(canvas);
-        if (!z10) {
-            canvas.restore();
-        }
-        Drawable drawable5 = this.G ? this.f : this.e;
-        int intrinsicWidth = drawable5.getIntrinsicWidth() / 2;
-        drawable5.setBounds(i14 - intrinsicWidth, i15 - intrinsicWidth, i14 + intrinsicWidth, i15 + intrinsicWidth);
-        drawable5.draw(canvas);
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:30:0x01d9  */
-    @Override // android.view.View
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x006c, code lost:
+    
+        if (r10 == null) goto L24;
+     */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0074 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Type inference failed for: r10v1 */
+    /* JADX WARN: Type inference failed for: r10v11, types: [java.io.FileOutputStream] */
+    /* JADX WARN: Type inference failed for: r10v15 */
+    /* JADX WARN: Type inference failed for: r10v16 */
+    /* JADX WARN: Type inference failed for: r10v9 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        boolean z10;
-        if (!this.M) {
-            return false;
-        }
-        float x10 = motionEvent.getX();
-        float y3 = motionEvent.getY();
-        int action = motionEvent.getAction();
-        boolean z11 = getMeasuredWidth() > getMeasuredHeight();
-        int i10 = this.v;
-        float f7 = i10;
-        float f10 = this.x - i10;
-        float f11 = this.E;
-        int i11 = (int) ((f10 * f11) + f7);
-        int i12 = this.w;
-        float f12 = i12;
-        float f13 = this.y - i12;
-        int i13 = (int) ((f11 * f13) + f12);
-        if (action == 1 || action == 0) {
-            if (x10 < i11 - AndroidUtilities.dp(20.0f) || x10 > AndroidUtilities.dp(20.0f) + i11 || y3 < i13 - AndroidUtilities.dp(25.0f) || y3 > AndroidUtilities.dp(25.0f) + i13) {
-                try {
-                    if (x10 >= this.h - AndroidUtilities.dp(16.0f)) {
-                        if (x10 <= AndroidUtilities.dp(16.0f) + this.h && y3 >= this.n - AndroidUtilities.dp(16.0f)) {
-                            if (y3 <= AndroidUtilities.dp(16.0f) + this.n) {
-                                if (action == 1 && a((((float) Math.floor(getZoom() / 0.25f)) * 0.25f) - 0.25f)) {
-                                    performHapticFeedback(3);
-                                } else {
-                                    this.F = true;
-                                }
-                            }
-                        }
-                    }
-                    if (x10 >= this.r - AndroidUtilities.dp(16.0f)) {
-                        if (x10 <= AndroidUtilities.dp(16.0f) + this.r && y3 >= this.s - AndroidUtilities.dp(16.0f)) {
-                            if (y3 <= AndroidUtilities.dp(16.0f) + this.s) {
-                                if (action == 1 && a((((float) Math.floor(getZoom() / 0.25f)) * 0.25f) + 0.25f)) {
-                                    performHapticFeedback(3);
-                                } else {
-                                    this.F = true;
-                                }
-                            }
-                        }
-                    }
-                    if (z11) {
-                        if (x10 >= this.v && x10 <= this.x) {
-                            if (action == 0) {
-                                this.H = x10;
-                                this.F = true;
-                            } else if (Math.abs(this.H - x10) <= AndroidUtilities.dp(10.0f)) {
-                                float f14 = (x10 - this.v) / (this.x - r2);
-                                this.E = f14;
-                                c91 c91Var = this.L;
-                                if (c91Var != null) {
-                                    c91Var.a(f14);
-                                }
-                                invalidate();
-                            }
-                        }
-                    } else if (y3 >= this.w && y3 <= this.y) {
-                        if (action == 1) {
-                            this.I = y3;
-                            this.F = true;
-                        } else if (Math.abs(this.I - y3) <= AndroidUtilities.dp(10.0f)) {
-                            float f15 = (y3 - this.w) / (this.y - r0);
-                            this.E = f15;
-                            c91 c91Var2 = this.L;
-                            if (c91Var2 != null) {
-                                c91Var2.a(f15);
-                            }
-                            invalidate();
-                        }
-                    }
-                } catch (Exception unused) {
+    public final void a(int i10, int i11, Intent intent) {
+        FileOutputStream fileOutputStream;
+        if (i11 == -1) {
+            ?? r10 = 10;
+            c91 c91Var = this.d;
+            FileOutputStream fileOutputStream2 = null;
+            if (i10 != 10) {
+                if (i10 != 11 || intent == null || intent.getData() == null) {
+                    return;
                 }
-            } else if (action == 0) {
-                this.G = true;
-                this.H = x10 - i11;
-                this.I = y3 - i13;
-                invalidate();
+                try {
+                    this.e = new File(FileLoader.getDirectory(4), Utilities.random.nextInt() + ".jpg");
+                    Point realScreenSize = AndroidUtilities.getRealScreenSize();
+                    Bitmap loadBitmap = ImageLoader.loadBitmap(null, intent.getData(), (float) realScreenSize.x, (float) realScreenSize.y, true);
+                    loadBitmap.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(this.e));
+                    c91Var.b(this.e, loadBitmap, false);
+                    return;
+                } catch (Exception e) {
+                    FileLog.e(e);
+                    return;
+                }
             }
-            z10 = true;
-            if (action == 1) {
-                this.F = false;
-                this.G = false;
-                invalidate();
+            AndroidUtilities.addMediaToGallery(this.a);
+            try {
+                try {
+                    this.e = new File(FileLoader.getDirectory(4), Utilities.random.nextInt() + ".jpg");
+                    Point realScreenSize2 = AndroidUtilities.getRealScreenSize();
+                    Bitmap loadBitmap2 = ImageLoader.loadBitmap(this.a, null, (float) realScreenSize2.x, (float) realScreenSize2.y, true);
+                    fileOutputStream = new FileOutputStream(this.e);
+                    try {
+                        loadBitmap2.compress(Bitmap.CompressFormat.JPEG, 87, fileOutputStream);
+                        c91Var.b(this.e, loadBitmap2, false);
+                        r10 = fileOutputStream;
+                    } catch (Exception e7) {
+                        e = e7;
+                        FileLog.e(e);
+                        r10 = fileOutputStream;
+                    }
+                } catch (Throwable th2) {
+                    th = th2;
+                    fileOutputStream2 = r10;
+                    if (fileOutputStream2 != null) {
+                        try {
+                            fileOutputStream2.close();
+                        } catch (Exception e10) {
+                            FileLog.e(e10);
+                        }
+                    }
+                    throw th;
+                }
+            } catch (Exception e11) {
+                e = e11;
+                fileOutputStream = null;
+            } catch (Throwable th3) {
+                th = th3;
+                if (fileOutputStream2 != null) {
+                }
+                throw th;
             }
-            return !z10 || this.F || this.G || super.onTouchEvent(motionEvent);
-        }
-        if (action == 2 && this.G) {
-            if (z11) {
-                this.E = ((x10 + this.H) - f7) / f10;
-            } else {
-                this.E = ((y3 + this.I) - f12) / f13;
+            try {
+                r10.close();
+            } catch (Exception e12) {
+                FileLog.e(e12);
             }
-            float f16 = this.E;
-            if (f16 < 0.0f) {
-                this.E = 0.0f;
-            } else if (f16 > 1.0f) {
-                this.E = 1.0f;
-            }
-            c91 c91Var3 = this.L;
-            if (c91Var3 != null) {
-                c91Var3.a(this.E);
-            }
-            invalidate();
-        }
-        z10 = false;
-        if (action == 1) {
-        }
-        if (z10) {
+            this.a = null;
         }
     }
 
-    public void setDelegate(c91 c91Var) {
-        this.L = c91Var;
+    public final void b() {
+        org.telegram.ui.ActionBar.m2 m2Var = this.c;
+        if (m2Var == null) {
+            Intent intent = new Intent("android.intent.action.PICK");
+            intent.setType("image/*");
+            this.b.startActivityForResult(intent, 11);
+            return;
+        }
+        Activity parentActivity = m2Var.getParentActivity();
+        if (parentActivity != null) {
+            int i10 = Build.VERSION.SDK_INT;
+            if (i10 >= 33) {
+                if (parentActivity.checkSelfPermission("android.permission.READ_MEDIA_IMAGES") != 0) {
+                    parentActivity.requestPermissions(new String[]{"android.permission.READ_MEDIA_IMAGES"}, 4);
+                    return;
+                }
+            } else if (i10 >= 23 && parentActivity.checkSelfPermission("android.permission.READ_EXTERNAL_STORAGE") != 0) {
+                parentActivity.requestPermissions(new String[]{"android.permission.READ_EXTERNAL_STORAGE"}, 4);
+                return;
+            }
+        }
+        org.telegram.ui.cq0 cq0Var = new org.telegram.ui.cq0(2, false, false, null);
+        cq0Var.x = false;
+        cq0Var.V = new b91(this);
+        m2Var.presentFragment(cq0Var);
     }
 }

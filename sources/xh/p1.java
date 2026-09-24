@@ -9,32 +9,32 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.d61;
-import org.telegram.ui.Components.d90;
-import org.telegram.ui.Components.g51;
-import org.telegram.ui.Components.h51;
-import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.j61;
+import org.telegram.ui.Components.n90;
+import org.telegram.ui.Components.r61;
+import org.telegram.ui.Components.u51;
 import org.telegram.ui.Components.v51;
+import org.telegram.ui.Components.wl0;
 import org.telegram.ui.ub1;
-import w7.x5;
-import w7.z5;
+import w7.a6;
+import w7.y5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
-public final class p1 extends g51 {
+public final class p1 extends u51 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        g51.setup(new p1());
+        u51.setup(new p1());
     }
 
-    @Override // org.telegram.ui.Components.g51
-    public final void bindView(View view, h51 h51Var, boolean z10, v51 v51Var, d61 d61Var) {
+    @Override // org.telegram.ui.Components.u51
+    public final void bindView(View view, v51 v51Var, boolean z10, j61 j61Var, r61 r61Var) {
         q1 q1Var = (q1) view;
-        int i10 = h51Var.d;
-        ArrayList arrayList = (ArrayList) h51Var.G;
-        int i11 = h51Var.z;
-        Utilities.Callback callback = (Utilities.Callback) h51Var.H;
+        int i10 = v51Var.d;
+        ArrayList arrayList = (ArrayList) v51Var.G;
+        int i11 = v51Var.z;
+        Utilities.Callback callback = (Utilities.Callback) v51Var.H;
         ub1 ub1Var = q1Var.a;
         ArrayList arrayList2 = q1Var.d;
         boolean z11 = q1Var.r == i10;
@@ -57,19 +57,19 @@ public final class p1 extends g51 {
                 i12++;
             }
             while (i13 < arrayList.size()) {
-                d90 d90Var = new d90(q1Var.getContext(), null);
-                d90Var.setGravity(17);
-                d90Var.setText((CharSequence) arrayList.get(i13));
-                d90Var.setTypeface(AndroidUtilities.bold());
-                d90Var.setTextColor(h6.v(h6.w0(null, h6.b6, false), h6.w0(null, h6.c6, false)));
-                d90Var.setTextSize(1, 14.0f);
-                d90Var.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
-                d90Var.setEllipsize(TextUtils.TruncateAt.END);
-                d90Var.setSingleLine();
-                d90Var.setMaxLines(1);
-                z5.b(d90Var, 0.075f, 1.4f);
-                ub1Var.addView(d90Var, x5.n(-2, 26));
-                arrayList2.add(d90Var);
+                n90 n90Var = new n90(q1Var.getContext(), null);
+                n90Var.setGravity(17);
+                n90Var.setText((CharSequence) arrayList.get(i13));
+                n90Var.setTypeface(AndroidUtilities.bold());
+                n90Var.setTextColor(h6.v(h6.w0(null, h6.b6, false), h6.w0(null, h6.c6, false)));
+                n90Var.setTextSize(1, 14.0f);
+                n90Var.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
+                n90Var.setEllipsize(TextUtils.TruncateAt.END);
+                n90Var.setSingleLine();
+                n90Var.setMaxLines(1);
+                a6.b(n90Var, 0.075f, 1.4f);
+                ub1Var.addView(n90Var, y5.n(-2, 26));
+                arrayList2.add(n90Var);
                 i13++;
             }
         }
@@ -83,21 +83,21 @@ public final class p1 extends g51 {
         }
     }
 
-    @Override // org.telegram.ui.Components.g51
-    public final boolean contentsEquals(h51 h51Var, h51 h51Var2) {
-        return h51Var.z == h51Var2.z && h51Var.H == h51Var2.H && equals(h51Var, h51Var2);
+    @Override // org.telegram.ui.Components.u51
+    public final boolean contentsEquals(v51 v51Var, v51 v51Var2) {
+        return v51Var.z == v51Var2.z && v51Var.H == v51Var2.H && equals(v51Var, v51Var2);
     }
 
-    @Override // org.telegram.ui.Components.g51
-    public final View createView(Context context, ml0 ml0Var, int i10, int i11, d6 d6Var) {
+    @Override // org.telegram.ui.Components.u51
+    public final View createView(Context context, wl0 wl0Var, int i10, int i11, d6 d6Var) {
         return new q1(context);
     }
 
-    @Override // org.telegram.ui.Components.g51
-    public final boolean equals(h51 h51Var, h51 h51Var2) {
-        if (h51Var.d == h51Var2.d) {
-            ArrayList arrayList = (ArrayList) h51Var.G;
-            ArrayList arrayList2 = (ArrayList) h51Var2.G;
+    @Override // org.telegram.ui.Components.u51
+    public final boolean equals(v51 v51Var, v51 v51Var2) {
+        if (v51Var.d == v51Var2.d) {
+            ArrayList arrayList = (ArrayList) v51Var.G;
+            ArrayList arrayList2 = (ArrayList) v51Var2.G;
             if (arrayList == arrayList2) {
                 return true;
             }

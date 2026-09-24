@@ -6,9 +6,9 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.bb;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.xn;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p0 implements Runnable {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final /* synthetic */ class p0 implements Runnable {
                 r1 r1Var = (r1) this.c;
                 Utilities.Callback callback = (Utilities.Callback) this.d;
                 r1Var.getClass();
-                org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+                org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
                 if (U != null) {
                     r1Var.dismiss();
                     if (callback != null) {
@@ -44,31 +44,31 @@ public final /* synthetic */ class p0 implements Runnable {
                 }
                 break;
             case 1:
-                yh.y3 y3Var = (yh.y3) this.c;
+                yh.x3 x3Var = (yh.x3) this.c;
                 Runnable runnable = (Runnable) this.d;
-                y3Var.p2((int) this.b, y3Var.getContext(), true);
+                x3Var.p2((int) this.b, x3Var.getContext(), true);
                 if (runnable != null) {
                     runnable.run();
                     break;
                 }
                 break;
             case 2:
-                yh.y3 y3Var2 = (yh.y3) this.c;
+                yh.x3 x3Var2 = (yh.x3) this.c;
                 nf.e eVar = (nf.e) this.d;
-                y3Var2.getClass();
+                x3Var2.getClass();
                 eVar.b();
-                y3Var2.p2((int) this.b, y3Var2.getContext(), true);
+                x3Var2.p2((int) this.b, x3Var2.getContext(), true);
                 break;
             default:
-                org.telegram.ui.ActionBar.f3[] f3VarArr = (org.telegram.ui.ActionBar.f3[]) this.c;
+                org.telegram.ui.ActionBar.e3[] e3VarArr = (org.telegram.ui.ActionBar.e3[]) this.c;
                 TL_stories.Boost boost = (TL_stories.Boost) this.d;
-                org.telegram.ui.ActionBar.f3 f3Var = f3VarArr[0];
-                if (f3Var != null) {
-                    f3Var.dismiss();
+                org.telegram.ui.ActionBar.e3 e3Var = e3VarArr[0];
+                if (e3Var != null) {
+                    e3Var.dismiss();
                 }
-                org.telegram.ui.ActionBar.n2 U2 = LaunchActivity.U();
+                org.telegram.ui.ActionBar.m2 U2 = LaunchActivity.U();
                 if (U2 != null) {
-                    U2.presentFragment(xn.Q9(boost.giveaway_msg_id, this.b));
+                    U2.presentFragment(wn.Q9(boost.giveaway_msg_id, this.b));
                     break;
                 }
                 break;

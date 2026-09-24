@@ -8,7 +8,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.support.LongSparseLongArray;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class rc {
     public static final rc[] f = new rc[4];
@@ -31,7 +31,7 @@ public final class rc {
         arrayList.clear();
         for (int i10 = 0; i10 < iaVar.getChildCount(); i10++) {
             View childAt = iaVar.getChildAt(i10);
-            long dialogId = childAt instanceof org.telegram.ui.Cells.r2 ? ((org.telegram.ui.Cells.r2) childAt).getDialogId() : childAt instanceof org.telegram.ui.Cells.bb ? ((org.telegram.ui.Cells.bb) childAt).getDialogId() : 0L;
+            long dialogId = childAt instanceof org.telegram.ui.Cells.s2 ? ((org.telegram.ui.Cells.s2) childAt).getDialogId() : childAt instanceof org.telegram.ui.Cells.za ? ((org.telegram.ui.Cells.za) childAt).getDialogId() : 0L;
             int i11 = this.a;
             LongSparseLongArray longSparseLongArray = this.b;
             if (dialogId > 0) {

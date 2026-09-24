@@ -25,24 +25,24 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.cg;
+import org.telegram.ui.Components.dg;
 import org.telegram.ui.Components.hl;
-import org.telegram.ui.Components.ky;
-import org.telegram.ui.Components.o70;
+import org.telegram.ui.Components.jv0;
+import org.telegram.ui.Components.ly;
 import org.telegram.ui.Components.rr;
 import org.telegram.ui.Components.vn;
-import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.yu0;
+import org.telegram.ui.Components.y70;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.a71;
 import org.telegram.ui.ad;
 import org.telegram.ui.ld;
-import org.telegram.ui.ry;
-import org.telegram.ui.tq;
+import org.telegram.ui.qy;
+import org.telegram.ui.sq;
+import org.telegram.ui.wn;
 import org.telegram.ui.xk0;
-import org.telegram.ui.xn;
-import org.telegram.ui.z61;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e4 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -59,11 +59,11 @@ public final /* synthetic */ class e4 implements Utilities.Callback {
         this.e = obj4;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:74:0x01e9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:74:0x01eb, code lost:
     
         if (r11.charAt(r13) <= 57343) goto L78;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:84:0x0203, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:84:0x0205, code lost:
     
         if (r11.charAt(r13) != 9794) goto L80;
      */
@@ -75,10 +75,9 @@ public final /* synthetic */ class e4 implements Utilities.Callback {
         String formatString;
         int i10 = this.a;
         String str = "";
-        int i11 = 4;
-        int i12 = 2;
-        int i13 = 0;
-        int i14 = 1;
+        int i11 = 2;
+        int i12 = 0;
+        int i13 = 1;
         Object obj2 = this.e;
         Object obj3 = this.d;
         Object obj4 = this.c;
@@ -89,7 +88,7 @@ public final /* synthetic */ class e4 implements Utilities.Callback {
                 Long l4 = (Long) obj;
                 e6 e6Var = ((f4) obj5).a;
                 SendMessagesHelper.getInstance(e6Var.C2).sendSticker(tL_document, (String) obj3, e6Var.B1, null, null, e6Var.O1.a, null, null, true, 0, 0, false, this.e, null, l4.longValue(), e6Var.b2.getSendMonoForumPeerId(), e6Var.b2.getSendMessageSuggestionParams());
-                e6Var.b2.p(tL_document);
+                e6Var.b2.o(tL_document);
                 e6Var.b2.setFieldText("");
                 e6Var.k0(l4.longValue() <= 0);
                 break;
@@ -100,12 +99,12 @@ public final /* synthetic */ class e4 implements Utilities.Callback {
                 org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) obj2;
                 TL_stories.StoryItem storyItem = (TL_stories.StoryItem) obj;
                 if (storyItem == null) {
-                    org.telegram.ui.Components.qc Q = new xc(g5Var.z0.c1, d6Var).Q(R.raw.story_bomb2, 36, LocaleController.getString(R.string.StoryNotFound));
+                    org.telegram.ui.Components.qc Q = new yc(g5Var.z0.c1, d6Var).Q(R.raw.story_bomb2, 36, LocaleController.getString(R.string.StoryNotFound));
                     Q.a = 3;
                     Q.k(true);
                     break;
                 } else {
-                    org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
+                    org.telegram.ui.ActionBar.m2 R = LaunchActivity.R();
                     if (R != null) {
                         storyItem.dialogId = saVar.b.longValue();
                         jc createOverlayStoryViewer = R.createOverlayStoryViewer();
@@ -127,14 +126,14 @@ public final /* synthetic */ class e4 implements Utilities.Callback {
                 } else {
                     l9 l9Var = e6Var2.S1;
                     long j3 = e6Var2.B1;
-                    int i15 = e9Var.a;
+                    int i14 = e9Var.a;
                     l9Var.getClass();
                     ArrayList arrayList = new ArrayList(1);
                     arrayList.add(storyItem2);
-                    l9Var.c0(i15, j3, arrayList);
+                    l9Var.c0(i14, j3, arrayList);
                     formatString = LocaleController.formatString(R.string.StoryRemovedFromAlbumX, e9Var.b);
                 }
-                new xc(e6Var2.c1, d6Var2).Q(R.raw.contact_check, 36, AndroidUtilities.replaceTags(formatString)).j();
+                new yc(e6Var2.c1, d6Var2).Q(R.raw.contact_check, 36, AndroidUtilities.replaceTags(formatString)).j();
                 v5 v5Var = e6Var2.t1;
                 if (v5Var != null) {
                     v5Var.a();
@@ -154,7 +153,7 @@ public final /* synthetic */ class e4 implements Utilities.Callback {
                 }
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(textView.getAlpha(), bool.booleanValue() ? 1.0f : 0.0f);
                 valueAnimatorArr[0] = ofFloat;
-                ofFloat.addUpdateListener(new x(i12, textView, textView2));
+                ofFloat.addUpdateListener(new x(i11, textView, textView2));
                 valueAnimatorArr[0].setDuration(320L);
                 valueAnimatorArr[0].setInterpolator(rr.h);
                 valueAnimatorArr[0].start();
@@ -172,7 +171,7 @@ public final /* synthetic */ class e4 implements Utilities.Callback {
                 TL_keyboard.TL_buttonTypeRequestPeer tL_buttonTypeRequestPeer = (TL_keyboard.TL_buttonTypeRequestPeer) obj3;
                 TLRPC.User user = (TLRPC.User) obj2;
                 TLRPC.User user2 = (TLRPC.User) obj;
-                int i16 = ChatActivityEnterView.n5;
+                int i15 = ChatActivityEnterView.n5;
                 if (user2 != null) {
                     TLRPC.TL_messages_sendBotRequestedPeer tL_messages_sendBotRequestedPeer = new TLRPC.TL_messages_sendBotRequestedPeer();
                     tL_messages_sendBotRequestedPeer.peer = MessagesController.getInstance(chatActivityEnterView.Q).getInputPeer(messageObject.messageOwner.peer_id);
@@ -184,28 +183,28 @@ public final /* synthetic */ class e4 implements Utilities.Callback {
                     long j10 = user.id;
                     Bundle bundle = new Bundle();
                     bundle.putLong("user_id", user2.id);
-                    cg cgVar = new cg(bundle, user2, user, j10);
-                    xn xnVar = chatActivityEnterView.O2;
-                    if (xnVar != null) {
-                        xnVar.presentFragment(cgVar);
+                    dg dgVar = new dg(bundle, user2, user, j10);
+                    wn wnVar = chatActivityEnterView.P2;
+                    if (wnVar != null) {
+                        wnVar.presentFragment(dgVar);
                         break;
                     }
                 }
                 break;
             case 6:
-                hl.L((hl) obj5, (xn) obj4, (TLRPC.TL_messageMediaGeo) obj3, (org.telegram.ui.ActionBar.d6) obj2, (Long) obj);
+                hl.L((hl) obj5, (wn) obj4, (TLRPC.TL_messageMediaGeo) obj3, (org.telegram.ui.ActionBar.d6) obj2, (Long) obj);
                 break;
             case 7:
-                hl.P((hl) obj5, (xn) obj4, (TLRPC.TL_messageMediaVenue) obj3, (org.telegram.ui.ActionBar.d6) obj2);
+                hl.P((hl) obj5, (wn) obj4, (TLRPC.TL_messageMediaVenue) obj3, (org.telegram.ui.ActionBar.d6) obj2);
                 break;
             case 8:
                 vn vnVar = (vn) obj5;
-                xn xnVar2 = (xn) obj4;
+                wn wnVar2 = (wn) obj4;
                 TLRPC.TL_messageMediaPoll tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) obj3;
                 ArrayList arrayList2 = (ArrayList) obj2;
                 Long l10 = (Long) obj;
-                if (xnVar2.c()) {
-                    org.telegram.ui.Components.e5.L(xnVar2.getParentActivity(), xnVar2.a(), new a1.d(vnVar, tL_messageMediaPoll, arrayList2, l10, 8));
+                if (wnVar2.c()) {
+                    org.telegram.ui.Components.e5.L(wnVar2.getParentActivity(), wnVar2.a(), new a1.d(vnVar, tL_messageMediaPoll, arrayList2, l10, 8));
                     break;
                 } else {
                     vnVar.j0.e(tL_messageMediaPoll, vnVar.O, vnVar.l1, arrayList2, true, 0, l10.longValue());
@@ -213,16 +212,16 @@ public final /* synthetic */ class e4 implements Utilities.Callback {
                     break;
                 }
             case 9:
-                ky kyVar = (ky) obj5;
+                ly lyVar = (ly) obj5;
                 ArrayList arrayList3 = (ArrayList) obj4;
                 Runnable runnable = (Runnable) obj2;
                 ArrayList arrayList4 = (ArrayList) obj;
-                if (((String) obj3).equals(kyVar.v)) {
-                    org.telegram.ui.Components.q5.h(kyVar.F.c1).f(arrayList4);
+                if (((String) obj3).equals(lyVar.v)) {
+                    org.telegram.ui.Components.q5.h(lyVar.F.c1).f(arrayList4);
                     int size = arrayList4.size();
-                    while (i13 < size) {
-                        Object obj6 = arrayList4.get(i13);
-                        i13++;
+                    while (i12 < size) {
+                        Object obj6 = arrayList4.get(i12);
+                        i12++;
                         MediaDataController.KeywordResult keywordResult = new MediaDataController.KeywordResult();
                         keywordResult.emoji = "animated_" + ((TLRPC.Document) obj6).id;
                         keywordResult.keyword = null;
@@ -233,88 +232,88 @@ public final /* synthetic */ class e4 implements Utilities.Callback {
                 }
                 break;
             case 10:
-                yu0.m((yu0) obj5, (HashSet) obj4, (TL_stories.StoryItem) obj3, (o70) obj2, (e9) obj);
+                jv0.m((jv0) obj5, (HashSet) obj4, (TL_stories.StoryItem) obj3, (y70) obj2, (e9) obj);
                 break;
             case 11:
-                ry ryVar = (ry) obj5;
-                ryVar.Q4(ryVar.getMessagesController().getChat((Long) obj4), (Runnable) obj, new tq(ryVar, (ld) obj3, (org.telegram.ui.ActionBar.n2) obj2, i14));
+                qy qyVar = (qy) obj5;
+                qyVar.Q4(qyVar.getMessagesController().getChat((Long) obj4), (Runnable) obj, new sq(qyVar, (ld) obj3, (org.telegram.ui.ActionBar.m2) obj2, i13));
                 break;
             case 12:
-                z61 z61Var = (z61) obj5;
+                a71 a71Var = (a71) obj5;
                 String[] strArr = (String[]) obj4;
                 String str2 = (String) obj3;
                 LinkedHashSet linkedHashSet = (LinkedHashSet) obj2;
                 Runnable runnable2 = (Runnable) obj;
-                int i17 = z61Var.V;
-                if (ConnectionsManager.getInstance(i17).getConnectionState() != 3) {
+                int i16 = a71Var.V;
+                if (ConnectionsManager.getInstance(i16).getConnectionState() != 3) {
                     runnable2.run();
                     break;
                 } else {
                     if (strArr != null && strArr.length != 0) {
                         str = strArr[0];
                     }
-                    MediaDataController.getInstance(i17).searchStickers(true, str, str2, new org.telegram.ui.z(z61Var, linkedHashSet, runnable2, 13));
+                    MediaDataController.getInstance(i16).searchStickers(true, str, str2, new org.telegram.ui.z(a71Var, linkedHashSet, runnable2, 13));
                     break;
                 }
             case 13:
-                z61 z61Var2 = (z61) obj5;
+                a71 a71Var2 = (a71) obj5;
                 String str3 = (String) obj3;
                 ArrayList arrayList5 = (ArrayList) obj4;
                 HashMap hashMap = (HashMap) obj2;
                 Runnable runnable3 = (Runnable) obj;
-                int i18 = z61Var2.V;
-                if (z61Var2.W != 4) {
+                int i17 = a71Var2.V;
+                if (a71Var2.W != 4) {
                     runnable3.run();
                     break;
                 } else {
                     ArrayList arrayList6 = new ArrayList(0);
                     LongSparseArray longSparseArray = new LongSparseArray(0);
-                    HashMap<String, ArrayList<TLRPC.Document>> allStickers = MediaDataController.getInstance(i18).getAllStickers();
+                    HashMap<String, ArrayList<TLRPC.Document>> allStickers = MediaDataController.getInstance(i17).getAllStickers();
                     if (str3.length() <= 14) {
                         int length = str3.length();
                         CharSequence charSequence = str3;
-                        int i19 = 0;
-                        while (i19 < length) {
-                            if (i19 < length - 1) {
-                                if (charSequence.charAt(i19) == 55356) {
-                                    int i20 = i19 + 1;
-                                    if (charSequence.charAt(i20) >= 57339) {
+                        int i18 = 0;
+                        while (i18 < length) {
+                            if (i18 < length - 1) {
+                                if (charSequence.charAt(i18) == 55356) {
+                                    int i19 = i18 + 1;
+                                    if (charSequence.charAt(i19) >= 57339) {
                                         break;
                                     }
                                 }
-                                if (charSequence.charAt(i19) == 8205) {
-                                    int i21 = i19 + 1;
-                                    if (charSequence.charAt(i21) != 9792) {
+                                if (charSequence.charAt(i18) == 8205) {
+                                    int i20 = i18 + 1;
+                                    if (charSequence.charAt(i20) != 9792) {
                                         break;
                                     }
-                                    charSequence = TextUtils.concat(charSequence.subSequence(0, i19), charSequence.subSequence(i19 + 2, charSequence.length()));
+                                    charSequence = TextUtils.concat(charSequence.subSequence(0, i18), charSequence.subSequence(i18 + 2, charSequence.length()));
                                     length -= 2;
-                                    i19--;
-                                    i19++;
+                                    i18--;
+                                    i18++;
                                 }
                             }
-                            if (charSequence.charAt(i19) == 65039) {
-                                charSequence = TextUtils.concat(charSequence.subSequence(0, i19), charSequence.subSequence(i19 + 1, charSequence.length()));
+                            if (charSequence.charAt(i18) == 65039) {
+                                charSequence = TextUtils.concat(charSequence.subSequence(0, i18), charSequence.subSequence(i18 + 1, charSequence.length()));
                                 length--;
-                                i19--;
-                                i19++;
+                                i18--;
+                                i18++;
                             } else {
-                                i19++;
+                                i18++;
                             }
                         }
                         ArrayList<TLRPC.Document> arrayList7 = allStickers != null ? allStickers.get(charSequence.toString()) : null;
                         if (arrayList7 != null && !arrayList7.isEmpty()) {
                             arrayList6.addAll(arrayList7);
                             int size2 = arrayList7.size();
-                            for (int i22 = 0; i22 < size2; i22++) {
-                                TLRPC.Document document = arrayList7.get(i22);
+                            for (int i21 = 0; i21 < size2; i21++) {
+                                TLRPC.Document document = arrayList7.get(i21);
                                 longSparseArray.put(document.id, document);
                             }
                             arrayList5.add(arrayList6);
                         }
                     }
                     if (allStickers != null && !allStickers.isEmpty() && str3.length() > 1) {
-                        MediaDataController.getInstance(i18).getEmojiSuggestions(z61.a2, str3, false, new a1.d(allStickers, hashMap, arrayList5, runnable3, 16), false);
+                        MediaDataController.getInstance(i17).getEmojiSuggestions(a71.a2, str3, false, new a1.d(allStickers, hashMap, arrayList5, runnable3, 16), false);
                         break;
                     }
                 }
@@ -352,28 +351,28 @@ public final /* synthetic */ class e4 implements Utilities.Callback {
                     break;
                 }
             case 16:
-                org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) obj4;
+                org.telegram.ui.ActionBar.m2 m2Var = (org.telegram.ui.ActionBar.m2) obj4;
                 String str7 = (String) obj3;
                 nf.e eVar = (nf.e) obj2;
                 TLRPC.TL_payments_checkedGiftCode tL_payments_checkedGiftCode = (TLRPC.TL_payments_checkedGiftCode) obj;
-                if (!((AtomicBoolean) obj5).get() && n2Var.getParentActivity() != null) {
+                if (!((AtomicBoolean) obj5).get() && m2Var.getParentActivity() != null) {
                     if (tL_payments_checkedGiftCode.from_id == null) {
                         TLRPC.TL_premiumGiftOption tL_premiumGiftOption = new TLRPC.TL_premiumGiftOption();
                         tL_premiumGiftOption.months = tL_payments_checkedGiftCode.months;
-                        TLRPC.User i23 = n2Var instanceof xn ? ((xn) n2Var).i() : null;
-                        if (i23 == null || i23.self) {
-                            i23 = new TLRPC.TL_user();
+                        TLRPC.User i22 = m2Var instanceof wn ? ((wn) m2Var).i() : null;
+                        if (i22 == null || i22.self) {
+                            i22 = new TLRPC.TL_user();
                         }
-                        TLRPC.User user4 = i23;
+                        TLRPC.User user4 = i22;
                         boolean z10 = tL_payments_checkedGiftCode.used_date != 0;
-                        org.telegram.ui.ActionBar.n2 R2 = LaunchActivity.R();
-                        if (R2 != null && tg.h0.S0 == null) {
-                            tg.h0 h0Var = new tg.h0(R2, UserConfig.selectedAccount, user4, new rg.k(tL_premiumGiftOption), str7, z10, R2.getResourceProvider());
-                            h0Var.show();
-                            tg.h0.S0 = h0Var;
+                        org.telegram.ui.ActionBar.m2 R2 = LaunchActivity.R();
+                        if (R2 != null && tg.g0.S0 == null) {
+                            tg.g0 g0Var = new tg.g0(R2, UserConfig.selectedAccount, user4, new rg.k(tL_premiumGiftOption), str7, z10, R2.getResourceProvider());
+                            g0Var.show();
+                            tg.g0.S0 = g0Var;
                         }
                     } else {
-                        n2Var.showDialog(new tg.d0(n2Var, tL_payments_checkedGiftCode, str7));
+                        m2Var.showDialog(new tg.c0(m2Var, tL_payments_checkedGiftCode, str7));
                     }
                     if (eVar != null) {
                         eVar.b();
@@ -382,10 +381,10 @@ public final /* synthetic */ class e4 implements Utilities.Callback {
                 }
                 break;
             case 17:
-                MessagesController.getInstance(r13.currentAccount).getBoostsController().getBoostsStats(-((TLRPC.Chat) obj4).id, new e4((tg.t0) obj5, (TL_stories.TL_premium_myBoosts) obj, (ArrayList) obj3, (HashSet) obj2, 18));
+                MessagesController.getInstance(r13.currentAccount).getBoostsController().getBoostsStats(-((TLRPC.Chat) obj4).id, new e4((tg.s0) obj5, (TL_stories.TL_premium_myBoosts) obj, (ArrayList) obj3, (HashSet) obj2, 18));
                 break;
             case 18:
-                ((tg.t0) obj5).dismiss();
+                ((tg.s0) obj5).dismiss();
                 NotificationCenter.getInstance(UserConfig.selectedAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.boostedChannelByUser, (TL_stories.TL_premium_myBoosts) obj4, Integer.valueOf(((ArrayList) obj3).size()), Integer.valueOf(((HashSet) obj2).size()), (TL_stories.TL_premium_boostsStatus) obj);
                 break;
             default:
@@ -399,7 +398,7 @@ public final /* synthetic */ class e4 implements Utilities.Callback {
                 }
                 r1Var.dismiss();
                 if (tL_error != null) {
-                    AndroidUtilities.runOnUIThread(new uh.i(i11, c1Var, tL_error));
+                    AndroidUtilities.runOnUIThread(new u2.i0(10, c1Var, tL_error));
                     break;
                 } else {
                     r1Var.dismiss();

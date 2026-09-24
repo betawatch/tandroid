@@ -17,7 +17,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public abstract class yy extends FrameLayout implements le.e {
     public yp E;
@@ -25,7 +25,7 @@ public abstract class yy extends FrameLayout implements le.e {
     public final /* synthetic */ lz G;
     public final le.c a;
     public final int b;
-    public final ym0 c;
+    public final kn0 c;
     public final jq d;
     public final View e;
     public final View f;
@@ -68,21 +68,21 @@ public abstract class yy extends FrameLayout implements le.e {
         frameLayout.setOutlineProvider(new yf.h0(0, dp));
         int i12 = 2;
         if (i10 == 2) {
-            addView(frameLayout, w7.x5.d(-1, 36.0f, 119, 10.0f, 8.0f, 10.0f, 8.0f));
+            addView(frameLayout, w7.y5.d(-1, 36.0f, 119, 10.0f, 8.0f, 10.0f, 8.0f));
         } else {
-            addView(frameLayout, w7.x5.d(-1, 36.0f, 119, 10.0f, 6.0f, 10.0f, 8.0f));
+            addView(frameLayout, w7.y5.d(-1, 36.0f, 119, 10.0f, 6.0f, 10.0f, 8.0f));
         }
         ci.m6 m6Var = new ci.m6(this, context, 10);
         this.s = m6Var;
-        frameLayout.addView(m6Var, w7.x5.d(-1, 40.0f, 51, 38.0f, 0.0f, 0.0f, 0.0f));
+        frameLayout.addView(m6Var, w7.y5.d(-1, 40.0f, 51, 38.0f, 0.0f, 0.0f, 0.0f));
         ImageView imageView = new ImageView(context);
-        ym0 ym0Var = new ym0();
-        this.c = ym0Var;
-        ym0Var.c(0, false, false);
-        ym0Var.a(z11 ? lzVar.v(0.4f) : lzVar.z(org.telegram.ui.ActionBar.h6.Je));
+        kn0 kn0Var = new kn0();
+        this.c = kn0Var;
+        kn0Var.c(0, false, false);
+        kn0Var.a(z11 ? lzVar.v(0.4f) : lzVar.z(org.telegram.ui.ActionBar.h6.Je));
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
-        imageView.setImageDrawable(ym0Var);
+        imageView.setImageDrawable(kn0Var);
         imageView.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.vy
             public final /* synthetic */ yy b;
 
@@ -131,7 +131,7 @@ public abstract class yy extends FrameLayout implements le.e {
                 }
             }
         });
-        frameLayout.addView(imageView, w7.x5.e(36, 36, 51));
+        frameLayout.addView(imageView, w7.y5.e(36, 36, 51));
         jq jqVar = new jq(this, context, i10, i12);
         this.d = jqVar;
         jqVar.setTextSize(1, 16.0f);
@@ -148,7 +148,7 @@ public abstract class yy extends FrameLayout implements le.e {
         jqVar.setCursorSize(AndroidUtilities.dp(20.0f));
         jqVar.setCursorWidth(1.5f);
         jqVar.setTranslationY(AndroidUtilities.dp(-2.0f));
-        m6Var.addView(jqVar, w7.x5.d(-1, 40.0f, 51, 0.0f, 0.0f, 28.0f, 0.0f));
+        m6Var.addView(jqVar, w7.y5.d(-1, 40.0f, 51, 0.0f, 0.0f, 28.0f, 0.0f));
         jqVar.addTextChangedListener(new ci.i2(this, 8));
         if (lzVar.u0) {
             View view3 = new View(context);
@@ -157,7 +157,7 @@ public abstract class yy extends FrameLayout implements le.e {
             mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v(lzVar.z(org.telegram.ui.ActionBar.h6.He), lzVar.z(org.telegram.ui.ActionBar.h6.Ie)), PorterDuff.Mode.MULTIPLY));
             view3.setBackground(mutate);
             view3.setAlpha(0.0f);
-            m6Var.addView(view3, w7.x5.e(18, -1, 3));
+            m6Var.addView(view3, w7.y5.e(18, -1, 3));
         }
         ImageView imageView2 = new ImageView(context);
         this.h = imageView2;
@@ -214,7 +214,7 @@ public abstract class yy extends FrameLayout implements le.e {
                 }
             }
         });
-        frameLayout.addView(imageView2, w7.x5.e(36, 36, 53));
+        frameLayout.addView(imageView2, w7.y5.e(36, 36, 53));
         if (i10 != 1 || (lzVar.c2 && UserConfig.getInstance(UserConfig.selectedAccount).isPremium())) {
             xy xyVar = new xy(this, context, i10 == 0 ? 3 : 0, lzVar.Z1, i10);
             this.r = xyVar;
@@ -242,14 +242,14 @@ public abstract class yy extends FrameLayout implements le.e {
                             yyVar.g(false);
                             break;
                         default:
-                            rw0 rw0Var = (rw0) obj;
+                            cx0 cx0Var = (cx0) obj;
                             yy yyVar2 = this.b;
                             lz lzVar2 = yyVar2.G;
                             xy xyVar2 = yyVar2.r;
-                            if (rw0Var != null) {
-                                if (xyVar2.getSelectedCategory() != rw0Var) {
-                                    yyVar2.c(rw0Var.a, false);
-                                    xyVar2.F1(rw0Var);
+                            if (cx0Var != null) {
+                                if (xyVar2.getSelectedCategory() != cx0Var) {
+                                    yyVar2.c(cx0Var.a, false);
+                                    xyVar2.F1(cx0Var);
                                     break;
                                 } else {
                                     yyVar2.c(null, false);
@@ -286,14 +286,14 @@ public abstract class yy extends FrameLayout implements le.e {
                             yyVar.g(false);
                             break;
                         default:
-                            rw0 rw0Var = (rw0) obj;
+                            cx0 cx0Var = (cx0) obj;
                             yy yyVar2 = this.b;
                             lz lzVar2 = yyVar2.G;
                             xy xyVar2 = yyVar2.r;
-                            if (rw0Var != null) {
-                                if (xyVar2.getSelectedCategory() != rw0Var) {
-                                    yyVar2.c(rw0Var.a, false);
-                                    xyVar2.F1(rw0Var);
+                            if (cx0Var != null) {
+                                if (xyVar2.getSelectedCategory() != cx0Var) {
+                                    yyVar2.c(cx0Var.a, false);
+                                    xyVar2.F1(cx0Var);
                                     break;
                                 } else {
                                     yyVar2.c(null, false);
@@ -310,7 +310,7 @@ public abstract class yy extends FrameLayout implements le.e {
                     }
                 }
             });
-            frameLayout.addView(xyVar, w7.x5.d(-1, 36.0f, 51, 36.0f, 0.0f, 0.0f, 0.0f));
+            frameLayout.addView(xyVar, w7.y5.d(-1, 36.0f, 51, 36.0f, 0.0f, 0.0f, 0.0f));
         }
     }
 
@@ -349,8 +349,8 @@ public abstract class yy extends FrameLayout implements le.e {
         gz gzVar = lzVar.z0;
         ez ezVar = gzVar.O;
         lz lzVar2 = gzVar.Q;
-        ww wwVar = lzVar2.G0;
-        tw twVar = lzVar2.D0;
+        xw xwVar = lzVar2.G0;
+        uw uwVar = lzVar2.D0;
         if (gzVar.L != 0) {
             ConnectionsManager.getInstance(lzVar2.c1).cancelRequest(gzVar.L, true);
             gzVar.L = 0;
@@ -360,18 +360,18 @@ public abstract class yy extends FrameLayout implements le.e {
             gzVar.E.clear();
             gzVar.H.clear();
             gzVar.K = new ArrayList();
-            s4.h0 adapter = twVar.getAdapter();
+            s4.h0 adapter = uwVar.getAdapter();
             cz czVar = lzVar2.y0;
             if (adapter != czVar) {
-                twVar.setAdapter(czVar);
+                uwVar.setAdapter(czVar);
             }
             gzVar.d = 0L;
             lzVar2.a.a(false, true);
             gzVar.l();
-            wwVar.e(false);
+            xwVar.e(false);
         } else {
             gzVar.N = str.toLowerCase();
-            wwVar.e(true);
+            xwVar.e(true);
         }
         AndroidUtilities.cancelRunOnUIThread(ezVar);
         AndroidUtilities.runOnUIThread(ezVar, 300L);

@@ -26,7 +26,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class FileLoader extends BaseController {
     public static final long DEFAULT_MAX_FILE_SIZE = 2097152000;
@@ -75,7 +75,7 @@ public class FileLoader extends BaseController {
     private static SparseArray<File> mediaDirs = null;
     private static final FileLoader[] Instance = new FileLoader[4];
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public class 1 implements FileUploadOperation.FileUploadOperationDelegate {
         final /* synthetic */ boolean val$encrypted;
         final /* synthetic */ String val$location;
@@ -161,7 +161,7 @@ public class FileLoader extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public class 2 implements FileLoadOperation.FileLoadOperationDelegate {
         final /* synthetic */ TLRPC.Document val$document;
         final /* synthetic */ String val$fileName;
@@ -249,7 +249,7 @@ public class FileLoader extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public interface FileLoaderDelegate {
         void fileDidFailedLoad(String str, int i10);
 
@@ -264,12 +264,12 @@ public class FileLoader extends BaseController {
         void fileUploadProgressChanged(FileUploadOperation fileUploadOperation, String str, long j3, long j10, boolean z10);
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public interface FileResolver {
         File getFile();
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class LoadOperationUIObject {
         Runnable loadInternalRunnable;
 
@@ -310,7 +310,7 @@ public class FileLoader extends BaseController {
             int i12 = i11 + 1;
             sb2.append(i12);
             fileLoaderPriorityQueueArr[i11] = new FileLoaderPriorityQueue(i10, sb2.toString(), 0, fileLoaderQueue);
-            this.largeFilesQueue[i11] = new FileLoaderPriorityQueue(i10, hg.c.i(i12, "largeFilesQueue dc"), 1, fileLoaderQueue);
+            this.largeFilesQueue[i11] = new FileLoaderPriorityQueue(i10, hg.c.h(i12, "largeFilesQueue dc"), 1, fileLoaderQueue);
             i11 = i12;
         }
     }
@@ -813,7 +813,7 @@ public class FileLoader extends BaseController {
         sb2.append(" position in queue ");
         sb2.append(fileLoadOperation.getPositionInQueue());
         sb2.append(" account=");
-        z0.n(this.currentAccount, sb2);
+        f0.n(this.currentAccount, sb2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1301,7 +1301,7 @@ public class FileLoader extends BaseController {
                                 w10.append(" position in queue ");
                                 w10.append(fileLoadOperation8.getPositionInQueue());
                                 w10.append(" account=");
-                                hg.c.v(w10, this.currentAccount, " cacheType=", i11, " priority=");
+                                hg.c.t(w10, this.currentAccount, " cacheType=", i11, " priority=");
                                 w10.append(fileLoadOperation8.getPriority());
                                 w10.append(" stream=");
                                 w10.append(fileStreamLoadOperation);
@@ -1674,7 +1674,7 @@ public class FileLoader extends BaseController {
     }
 
     public void onNetworkChanged(boolean z10) {
-        fileLoaderQueue.postRunnable(new bi.f(8, this, z10));
+        fileLoaderQueue.postRunnable(new bi.f(9, this, z10));
     }
 
     public void removeLoadingVideo(TLRPC.Document document, boolean z10, boolean z11) {
@@ -1696,7 +1696,7 @@ public class FileLoader extends BaseController {
         if (fileLocation == null) {
             return;
         }
-        fileLoaderQueue.postRunnable(new f0(this, fileLocation, str, 23));
+        fileLoaderQueue.postRunnable(new g0(this, fileLocation, str, 23));
     }
 
     public void setLoadingVideo(TLRPC.Document document, boolean z10, boolean z11) {
@@ -1756,7 +1756,7 @@ public class FileLoader extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void checkDownloadQueue(FileLoadOperation fileLoadOperation, FileLoaderPriorityQueue fileLoaderPriorityQueue, long j3) {
-        fileLoaderQueue.postRunnable(new f0(this, fileLoaderPriorityQueue, fileLoadOperation, 24), j3);
+        fileLoaderQueue.postRunnable(new g0(this, fileLoaderPriorityQueue, fileLoadOperation, 24), j3);
     }
 
     public static boolean copyFile(InputStream inputStream, File file, int i10) {

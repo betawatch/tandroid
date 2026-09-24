@@ -6,14 +6,14 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.Button;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.Components.hq0;
-import org.telegram.ui.Components.ug;
+import org.telegram.ui.Components.uq0;
+import org.telegram.ui.Components.vg;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.ry;
+import org.telegram.ui.qy;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public final class z1 extends ug {
+public final class z1 extends vg {
     public final /* synthetic */ int l0;
     public final /* synthetic */ Object m0;
 
@@ -24,7 +24,7 @@ public final class z1 extends ug {
         this.m0 = obj;
     }
 
-    @Override // org.telegram.ui.Components.ug
+    @Override // org.telegram.ui.Components.vg
     public boolean d() {
         switch (this.l0) {
             case 0:
@@ -40,7 +40,7 @@ public final class z1 extends ug {
         }
     }
 
-    @Override // org.telegram.ui.Components.ug
+    @Override // org.telegram.ui.Components.vg
     public final boolean f() {
         switch (this.l0) {
             case 0:
@@ -55,13 +55,13 @@ public final class z1 extends ug {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.ug
+    @Override // org.telegram.ui.Components.vg
     public int getFillColor() {
         int i10 = this.l0;
         Object obj = this.m0;
         switch (i10) {
             case 2:
-                return ((hq0) obj).getThemedColor(org.telegram.ui.ActionBar.h6.S5);
+                return ((uq0) obj).getThemedColor(org.telegram.ui.ActionBar.h6.S5);
             case 3:
             default:
                 return super.getFillColor();
@@ -72,7 +72,7 @@ public final class z1 extends ug {
         }
     }
 
-    @Override // org.telegram.ui.Components.ug
+    @Override // org.telegram.ui.Components.vg
     public boolean j() {
         switch (this.l0) {
             case 2:
@@ -91,7 +91,7 @@ public final class z1 extends ug {
         switch (this.l0) {
             case 3:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setText(LocaleController.formatPluralString("AccDescrShareInChats", ((ry) this.m0).I2.size(), new Object[0]));
+                accessibilityNodeInfo.setText(LocaleController.formatPluralString("AccDescrShareInChats", ((qy) this.m0).I2.size(), new Object[0]));
                 accessibilityNodeInfo.setClassName(Button.class.getName());
                 accessibilityNodeInfo.setLongClickable(true);
                 accessibilityNodeInfo.setClickable(true);

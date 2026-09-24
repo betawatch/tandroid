@@ -8,9 +8,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.ThemeActivity;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rb1 implements org.telegram.ui.Components.al0 {
+public final /* synthetic */ class rb1 implements org.telegram.ui.Components.kl0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -23,7 +23,7 @@ public final /* synthetic */ class rb1 implements org.telegram.ui.Components.al0
         this.d = obj3;
     }
 
-    @Override // org.telegram.ui.Components.al0
+    @Override // org.telegram.ui.Components.kl0
     public final void d(int i10, View view) {
         Interpolator interpolator;
         int i11 = this.a;
@@ -50,7 +50,7 @@ public final /* synthetic */ class rb1 implements org.telegram.ui.Components.al0
                     int i14 = f6Var.a;
                     if (i13 != i14) {
                         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needSetDayNightTheme, A0, Boolean.valueOf(i12 == 1), null, Integer.valueOf(f6Var.a));
-                        org.telegram.ui.ActionBar.c4.q(A0, f6Var.a);
+                        org.telegram.ui.ActionBar.b4.q(A0, f6Var.a);
                         org.telegram.ui.ActionBar.h6.F1(themeActivity);
                     } else {
                         themeActivity.presentFragment(new od1(A0, false, 1, i14 >= 100, i12 == 1));
@@ -77,7 +77,7 @@ public final /* synthetic */ class rb1 implements org.telegram.ui.Components.al0
                 }
                 break;
             default:
-                p11.V((p11) obj3, (Context) obj2, (String) obj, view, i10);
+                n11.V((n11) obj3, (Context) obj2, (String) obj, view, i10);
                 break;
         }
     }

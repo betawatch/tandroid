@@ -1,139 +1,93 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
-import android.graphics.Shader;
-import android.os.SystemClock;
+import android.graphics.Paint;
+import android.text.style.ReplacementSpan;
 import android.view.View;
-import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class s90 extends TextView {
-    public final Matrix a;
-    public LinearGradient b;
-    public int c;
-    public boolean d;
-    public boolean e;
+public final class s90 extends ReplacementSpan {
+    public final int a;
+    public View b;
+    public final r90 c;
+    public final int d;
+    public float e;
     public float f;
-    public long h;
-    public final yp n;
-    public boolean r;
-    public int s;
+    public float h;
+    public boolean n;
 
-    public s90(Context context) {
-        super(context);
-        this.a = new Matrix();
-        this.n = new yp(this, 25);
+    public s90(int i10, View view) {
+        this(view, i10, AndroidUtilities.dp(2.0f), null);
     }
 
-    public final void a() {
-        float min = Math.min(AndroidUtilities.dp(10.0f) / this.c, 0.49f);
-        int currentTextColor = getCurrentTextColor();
-        int i10 = 1048575 & currentTextColor;
-        this.b = new LinearGradient(0.0f, 0.0f, this.c, 0.0f, new int[]{i10, currentTextColor, currentTextColor, i10}, new float[]{0.0f, min, 1.0f - min, 1.0f}, Shader.TileMode.CLAMP);
-        if (this.d) {
-            getPaint().setShader(this.b);
+    public final void a(int i10, int i11) {
+        Integer valueOf = Integer.valueOf(i10);
+        r90 r90Var = this.c;
+        r90Var.o = valueOf;
+        r90Var.p = Integer.valueOf(i11);
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+        View view;
+        boolean z10 = this.n;
+        int i15 = this.a;
+        if (z10 && (view = this.b) != null && view.getMeasuredWidth() > 0) {
+            i15 = ((this.b.getMeasuredWidth() - this.b.getPaddingLeft()) - this.b.getPaddingRight()) - i15;
+        }
+        float f10 = this.f;
+        r90 r90Var = this.c;
+        if (f10 > 0.0f) {
+            float f11 = (i12 + i14) / 2.0f;
+            int i16 = (int) f7;
+            float f12 = f10 / 2.0f;
+            r90Var.setBounds(i16, (int) (f11 - f12), i15 + i16, (int) (f12 + f11));
         } else {
-            getPaint().setShader(null);
+            int i17 = (int) f7;
+            float z11 = com.google.android.gms.internal.vision.e2.z(1.0f, this.e, org.telegram.messenger.f0.B(2.0f, i14, i12) / 2.0f, i12);
+            float f13 = this.d;
+            r90Var.setBounds(i17, (int) (z11 + f13), i15 + i17, (int) (((i14 - AndroidUtilities.dp(2.0f)) - ((1.0f - this.e) * (org.telegram.messenger.f0.B(2.0f, i14, i12) / 2.0f))) + f13));
         }
-        this.b.setLocalMatrix(this.a);
-        invalidate();
+        r90Var.setAlpha((int) ((paint == null ? 255 : paint.getAlpha()) * this.h));
+        r90Var.draw(canvas);
+        View view2 = this.b;
+        if (view2 != null) {
+            view2.invalidate();
+        }
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        boolean z10;
-        int measuredWidth = getMeasuredWidth();
-        int dp = AndroidUtilities.dp(40.0f);
-        float f7 = this.f;
-        float f10 = measuredWidth;
-        float a2 = f7 < f10 ? w7.p.a(f7 / AndroidUtilities.dp(10.0f), 0.0f, 1.0f) : 0.0f;
-        Matrix matrix = this.a;
-        matrix.reset();
-        float dp2 = AndroidUtilities.dp(10.0f);
-        float f11 = this.c;
-        matrix.postScale(com.google.android.gms.internal.vision.e2.z(1.0f, a2, dp2 / f11, 1.0f), 1.0f, f11, 0.0f);
-        matrix.postScale(1.0f - (this.s / this.c), 1.0f, 0.0f, 0.0f);
-        matrix.postTranslate(this.f, 0.0f);
-        this.b.setLocalMatrix(matrix);
-        canvas.save();
-        canvas.translate(-this.f, 0.0f);
-        super.onDraw(canvas);
-        canvas.restore();
-        if (measuredWidth > 0) {
-            float f12 = this.f;
-            if (f12 > 0.0f && f12 + getWidth() > f10 && this.d && this.e) {
-                float f13 = -this.f;
-                float f14 = dp;
-                matrix.postTranslate(f13 - ((f13 + f10) + f14), 0.0f);
-                this.b.setLocalMatrix(matrix);
-                canvas.save();
-                canvas.translate((-this.f) + f10 + f14, 0.0f);
-                super.onDraw(canvas);
-                canvas.restore();
-            }
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
+        View view;
+        Paint.FontMetrics fontMetrics = paint.getFontMetrics();
+        if (fontMetricsInt != null) {
+            fontMetricsInt.ascent = (int) fontMetrics.ascent;
+            fontMetricsInt.bottom = (int) fontMetrics.bottom;
+            fontMetricsInt.descent = (int) fontMetrics.descent;
+            fontMetricsInt.leading = (int) fontMetrics.leading;
+            fontMetricsInt.top = (int) fontMetrics.top;
         }
-        boolean z11 = ((double) this.f) < 1.0E-4d;
-        long uptimeMillis = SystemClock.uptimeMillis();
-        long j3 = this.h;
-        long min = (j3 == 0 || z11) ? 16L : Math.min(uptimeMillis - j3, 120L);
-        this.h = uptimeMillis;
-        boolean z12 = this.d;
-        yp ypVar = this.n;
-        if ((z12 && this.e) || !z11) {
-            float e = a4.a.e(min, 1000.0f, AndroidUtilities.dp(60.0f), this.f);
-            this.f = e;
-            if (e > measuredWidth + dp) {
-                AndroidUtilities.cancelRunOnUIThread(ypVar);
-                this.r = false;
-                this.e = false;
-                this.f = 0.0f;
-            }
-            invalidate();
+        r90 r90Var = this.c;
+        if (r90Var.o == null && r90Var.p == null) {
+            r90Var.e(org.telegram.ui.ActionBar.h6.l1(0.1f, paint.getColor()), org.telegram.ui.ActionBar.h6.l1(0.25f, paint.getColor()));
         }
-        if (!this.d || this.e || (z10 = this.r) || z10) {
-            return;
-        }
-        this.r = true;
-        AndroidUtilities.runOnUIThread(ypVar, 1500L);
+        boolean z10 = this.n;
+        int i12 = this.a;
+        return (!z10 || (view = this.b) == null || view.getMeasuredWidth() <= 0) ? i12 : ((this.b.getMeasuredWidth() - this.b.getPaddingLeft()) - this.b.getPaddingRight()) - i12;
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(0, 0), i11);
-        this.c = View.MeasureSpec.getSize(i10);
-        this.d = getMeasuredWidth() > this.c - this.s;
-        a();
-    }
-
-    public void setCustomPaddingRight(int i10) {
-        this.s = i10;
-        boolean z10 = getMeasuredWidth() > this.c - this.s;
-        this.d = z10;
-        if (z10) {
-            getPaint().setShader(this.b);
-        } else {
-            getPaint().setShader(null);
-        }
-        invalidate();
-    }
-
-    @Override // android.widget.TextView
-    public final void setText(CharSequence charSequence, TextView.BufferType bufferType) {
-        super.setText(charSequence, bufferType);
-        AndroidUtilities.cancelRunOnUIThread(this.n);
-        this.r = false;
-        this.e = false;
-        this.f = 0.0f;
-    }
-
-    @Override // android.widget.TextView
-    public void setTextColor(int i10) {
-        super.setTextColor(i10);
-        a();
+    public s90(View view, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
+        this.e = 1.0f;
+        this.f = -1.0f;
+        this.h = 1.0f;
+        this.n = false;
+        this.b = view;
+        this.a = i10;
+        this.d = i11;
+        r90 r90Var = new r90(d6Var);
+        this.c = r90Var;
+        r90Var.j(4.0f);
     }
 }

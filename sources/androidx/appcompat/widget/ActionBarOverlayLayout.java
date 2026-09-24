@@ -20,8 +20,7 @@ import android.widget.OverScroller;
 import b2.q0;
 import g.b0;
 import java.util.WeakHashMap;
-import l.k;
-import l.w;
+import l.x;
 import m.g3;
 import m.h;
 import m.j1;
@@ -42,9 +41,9 @@ import r0.x0;
 import r0.y;
 import r0.y0;
 import r0.z0;
-import v7.v7;
+import v7.w7;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class ActionBarOverlayLayout extends ViewGroup implements j1, l, m {
     public static final int[] R = {R.attr.actionBarSize, android.R.attr.windowContentOverlay};
@@ -201,7 +200,7 @@ public class ActionBarOverlayLayout extends ViewGroup implements j1, l, m {
         return super.fitSystemWindows(rect);
     }
 
-    public final void g(Menu menu, w wVar) {
+    public final void g(Menu menu, x xVar) {
         f();
         l3 l3Var = (l3) this.e;
         Toolbar toolbar = l3Var.a;
@@ -209,27 +208,27 @@ public class ActionBarOverlayLayout extends ViewGroup implements j1, l, m {
             l3Var.m = new h(toolbar.getContext());
         }
         h hVar = l3Var.m;
-        hVar.e = wVar;
-        k kVar = (k) menu;
-        if (kVar == null && toolbar.a == null) {
+        hVar.e = xVar;
+        l.l lVar = (l.l) menu;
+        if (lVar == null && toolbar.a == null) {
             return;
         }
         toolbar.f();
-        k kVar2 = toolbar.a.F;
-        if (kVar2 == kVar) {
+        l.l lVar2 = toolbar.a.F;
+        if (lVar2 == lVar) {
             return;
         }
-        if (kVar2 != null) {
-            kVar2.r(toolbar.d0);
-            kVar2.r(toolbar.e0);
+        if (lVar2 != null) {
+            lVar2.r(toolbar.d0);
+            lVar2.r(toolbar.e0);
         }
         if (toolbar.e0 == null) {
             toolbar.e0 = new g3(toolbar);
         }
         hVar.G = true;
-        if (kVar != null) {
-            kVar.b(hVar, toolbar.s);
-            kVar.b(toolbar.e0, toolbar.s);
+        if (lVar != null) {
+            lVar.b(hVar, toolbar.s);
+            lVar.b(toolbar.e0, toolbar.s);
         } else {
             hVar.i(toolbar.s, null);
             toolbar.e0.i(toolbar.s, null);
@@ -550,14 +549,14 @@ public class ActionBarOverlayLayout extends ViewGroup implements j1, l, m {
     public void setIcon(int i10) {
         f();
         l3 l3Var = (l3) this.e;
-        l3Var.d = i10 != 0 ? v7.b(l3Var.a.getContext(), i10) : null;
+        l3Var.d = i10 != 0 ? w7.b(l3Var.a.getContext(), i10) : null;
         l3Var.c();
     }
 
     public void setLogo(int i10) {
         f();
         l3 l3Var = (l3) this.e;
-        l3Var.e = i10 != 0 ? v7.b(l3Var.a.getContext(), i10) : null;
+        l3Var.e = i10 != 0 ? w7.b(l3Var.a.getContext(), i10) : null;
         l3Var.c();
     }
 

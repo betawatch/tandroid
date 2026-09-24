@@ -14,7 +14,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public class p6 extends View {
     public boolean a;
@@ -34,7 +34,7 @@ public class p6 extends View {
         o6 o6Var = new o6(z10, z11, z12, false);
         this.c = o6Var;
         o6Var.setCallback(this);
-        o6Var.C = new og(this, 8);
+        o6Var.C = new pg(this, 8);
     }
 
     public final void a() {

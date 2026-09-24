@@ -1,64 +1,64 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Path;
 import android.graphics.RectF;
-import android.view.View;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class yz0 extends pv0 {
-    public final org.telegram.ui.i20 w0;
-    public final /* synthetic */ org.telegram.ui.ActionBar.d6 x0;
-    public final /* synthetic */ wz0 y0;
+public final class yz0 extends TextView {
+    public final zz0 a;
+    public boolean b;
+    public boolean c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yz0(Context context, org.telegram.ui.ActionBar.d6 d6Var, wz0 wz0Var) {
-        super(context, null);
-        this.x0 = d6Var;
-        this.y0 = wz0Var;
-        this.w0 = new org.telegram.ui.i20();
+    public yz0(zz0 zz0Var, CharSequence charSequence) {
+        super(zz0Var.getContext());
+        this.a = zz0Var;
+        org.telegram.ui.ActionBar.d6 d6Var = zz0Var.a;
+        setPadding(AndroidUtilities.dp(12.66f), AndroidUtilities.dp(9.33f), AndroidUtilities.dp(12.66f), AndroidUtilities.dp(9.33f));
+        setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.G6, d6Var));
+        setTypeface(AndroidUtilities.bold());
+        setTextSize(1, 14.0f);
+        setText(charSequence);
     }
 
-    @Override // org.telegram.ui.Components.pv0
-    public final boolean P() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.pv0
-    public final boolean Q() {
-        return false;
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        if (view != this.y0) {
-            return super.drawChild(canvas, view, j3);
+    @Override // android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        Canvas canvas2;
+        boolean z10 = this.b;
+        zz0 zz0Var = this.a;
+        if (z10 || this.c) {
+            canvas2 = canvas;
+            float dp = AndroidUtilities.dp(10.0f);
+            float[] fArr = zz0Var.c;
+            float f7 = this.b ? dp : 0.0f;
+            fArr[1] = f7;
+            fArr[0] = f7;
+            fArr[3] = 0.0f;
+            fArr[2] = 0.0f;
+            fArr[5] = 0.0f;
+            fArr[4] = 0.0f;
+            if (!this.c) {
+                dp = 0.0f;
+            }
+            fArr[7] = dp;
+            fArr[6] = dp;
+            zz0Var.b.rewind();
+            RectF rectF = AndroidUtilities.rectTmp;
+            float f10 = zz0Var.h;
+            rectF.set(f10, f10, getWidth() + zz0Var.h, (zz0Var.h * AndroidUtilities.dp(this.c ? -1.0f : 1.0f)) + getHeight());
+            zz0Var.b.addRoundRect(rectF, zz0Var.c, Path.Direction.CW);
+            canvas2.drawPath(zz0Var.b, zz0Var.d);
+            canvas2.drawPath(zz0Var.b, zz0Var.e);
+        } else {
+            float f11 = zz0Var.h;
+            canvas2 = canvas;
+            canvas2.drawRect(f11, f11, getWidth() + zz0Var.h, getHeight() + zz0Var.h, zz0Var.d);
+            float f12 = zz0Var.h;
+            canvas2.drawRect(f12, f12, getWidth() + zz0Var.h, getHeight() + zz0Var.h, zz0Var.e);
         }
-        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
-        boolean drawChild = super.drawChild(canvas, view, j3);
-        canvas.save();
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(0.0f, 0.0f, AndroidUtilities.dp(45.0f), getHeight());
-        this.w0.b(canvas, rectF, 0, 1.0f);
-        canvas.restore();
-        canvas.restore();
-        return drawChild;
-    }
-
-    @Override // org.telegram.ui.Components.pv0
-    public final org.telegram.ui.ActionBar.d6 getResourceProvider() {
-        return this.x0;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x, TLObject.FLAG_30);
-        wz0 wz0Var = this.y0;
-        wz0Var.measure(makeMeasureSpec, i11);
-        setMeasuredDimension(View.MeasureSpec.getSize(i10), wz0Var.getMeasuredHeight() + AndroidUtilities.dp(24.0f));
+        super.onDraw(canvas2);
     }
 }

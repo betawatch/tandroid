@@ -1,11 +1,52 @@
 package v7;
 
-import java.io.Serializable;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public abstract class v6 {
-    public static d9.i a(d9.i iVar) {
-        return !(iVar instanceof d9.k) ? iVar instanceof d9.j ? iVar : iVar instanceof Serializable ? new d9.j(iVar) : new d9.k(iVar) : iVar;
+    public static String a(String str, Object... objArr) {
+        int indexOf;
+        String sb2;
+        int i10 = 0;
+        for (int i11 = 0; i11 < objArr.length; i11++) {
+            Object obj = objArr[i11];
+            if (obj == null) {
+                sb2 = BuildConfig.BETA_URL;
+            } else {
+                try {
+                    sb2 = obj.toString();
+                } catch (Exception e) {
+                    String str2 = obj.getClass().getName() + '@' + Integer.toHexString(System.identityHashCode(obj));
+                    Logger.getLogger("com.google.common.base.Strings").log(Level.WARNING, "Exception during lenientFormat for " + str2, (Throwable) e);
+                    StringBuilder w10 = a4.a.w("<", str2, " threw ");
+                    w10.append(e.getClass().getName());
+                    w10.append(">");
+                    sb2 = w10.toString();
+                }
+            }
+            objArr[i11] = sb2;
+        }
+        StringBuilder sb3 = new StringBuilder((objArr.length * 16) + str.length());
+        int i12 = 0;
+        while (i10 < objArr.length && (indexOf = str.indexOf("%s", i12)) != -1) {
+            sb3.append((CharSequence) str, i12, indexOf);
+            sb3.append(objArr[i10]);
+            i12 = indexOf + 2;
+            i10++;
+        }
+        sb3.append((CharSequence) str, i12, str.length());
+        if (i10 < objArr.length) {
+            sb3.append(" [");
+            sb3.append(objArr[i10]);
+            for (int i13 = i10 + 1; i13 < objArr.length; i13++) {
+                sb3.append(", ");
+                sb3.append(objArr[i13]);
+            }
+            sb3.append(']');
+        }
+        return sb3.toString();
     }
 }

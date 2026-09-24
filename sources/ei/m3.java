@@ -25,14 +25,14 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.Components.bk0;
+import org.telegram.ui.Components.ed0;
 import org.telegram.ui.Components.nr;
-import org.telegram.ui.Components.o70;
-import org.telegram.ui.Components.rj0;
 import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.tc0;
+import org.telegram.ui.Components.y70;
 import org.telegram.ui.da;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m3 implements View.OnClickListener {
     public final /* synthetic */ int a = 0;
@@ -43,9 +43,9 @@ public final /* synthetic */ class m3 implements View.OnClickListener {
     public final /* synthetic */ Object f;
     public final /* synthetic */ Object h;
 
-    public /* synthetic */ m3(int i10, org.telegram.ui.ActionBar.f3 f3Var, d6 d6Var, LinearLayout linearLayout, long[] jArr, l3 l3Var) {
+    public /* synthetic */ m3(int i10, org.telegram.ui.ActionBar.e3 e3Var, d6 d6Var, LinearLayout linearLayout, long[] jArr, l3 l3Var) {
         this.b = i10;
-        this.d = f3Var;
+        this.d = e3Var;
         this.e = d6Var;
         this.c = linearLayout;
         this.f = jArr;
@@ -66,7 +66,7 @@ public final /* synthetic */ class m3 implements View.OnClickListener {
         KeyEvent.Callback callback = this.d;
         switch (i10) {
             case 0:
-                org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) callback;
+                org.telegram.ui.ActionBar.e3 e3Var = (org.telegram.ui.ActionBar.e3) callback;
                 d6 d6Var = (d6) obj4;
                 LinearLayout linearLayout = (LinearLayout) obj3;
                 long[] jArr = (long[]) obj2;
@@ -84,7 +84,7 @@ public final /* synthetic */ class m3 implements View.OnClickListener {
                     arrayList.addAll(arrayList3);
                 }
                 arrayList.add(0, UserConfig.getInstance(i11).getCurrentUser());
-                o70 F = o70.F(f3Var.getContainerView(), d6Var, linearLayout);
+                y70 F = y70.F(e3Var.getContainerView(), d6Var, linearLayout);
                 int size = arrayList.size();
                 int i12 = 0;
                 while (i12 < size) {
@@ -113,42 +113,42 @@ public final /* synthetic */ class m3 implements View.OnClickListener {
                 LinearLayout linearLayout2 = (LinearLayout) obj3;
                 AtomicBoolean atomicBoolean = (AtomicBoolean) obj4;
                 HorizontalScrollView horizontalScrollView = (HorizontalScrollView) obj2;
-                rj0 rj0Var = (rj0) obj;
+                bk0 bk0Var = (bk0) obj;
                 int currentItem = gVar.getCurrentItem();
                 if (i11 != currentItem) {
-                    rj0 rj0Var2 = (rj0) linearLayout2.getChildAt(currentItem);
+                    bk0 bk0Var2 = (bk0) linearLayout2.getChildAt(currentItem);
                     atomicBoolean.set(true);
                     gVar.x(i11, true);
                     float scrollX = horizontalScrollView.getScrollX();
-                    float x10 = rj0Var.getX() - ((horizontalScrollView.getWidth() - rj0Var.getWidth()) / 2.0f);
+                    float x10 = bk0Var.getX() - ((horizontalScrollView.getWidth() - bk0Var.getWidth()) / 2.0f);
                     ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(150L);
                     duration.setInterpolator(rr.f);
-                    duration.addUpdateListener(new org.telegram.ui.Cells.b(horizontalScrollView, scrollX, x10, rj0Var2, rj0Var));
+                    duration.addUpdateListener(new org.telegram.ui.Cells.b(horizontalScrollView, scrollX, x10, bk0Var2, bk0Var));
                     duration.start();
                     break;
                 }
                 break;
             case 2:
-                tc0 tc0Var = (tc0) obj3;
-                org.telegram.ui.ActionBar.a3 a3Var = (org.telegram.ui.ActionBar.a3) obj2;
+                ed0 ed0Var = (ed0) obj3;
+                org.telegram.ui.ActionBar.z2 z2Var = (org.telegram.ui.ActionBar.z2) obj2;
                 Utilities.Callback callback2 = (Utilities.Callback) obj;
                 TL_account.TL_birthday tL_birthday = new TL_account.TL_birthday();
-                tL_birthday.day = ((tc0) callback).getValue();
-                tL_birthday.month = ((tc0) obj4).getValue() + 1;
-                if (tc0Var.getValue() != i11) {
+                tL_birthday.day = ((ed0) callback).getValue();
+                tL_birthday.month = ((ed0) obj4).getValue() + 1;
+                if (ed0Var.getValue() != i11) {
                     tL_birthday.flags |= 1;
-                    tL_birthday.year = tc0Var.getValue();
+                    tL_birthday.year = ed0Var.getValue();
                 }
-                runnable = a3Var.a.dismissRunnable;
+                runnable = z2Var.a.dismissRunnable;
                 runnable.run();
                 callback2.run(tL_birthday);
                 break;
             case 3:
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder((Context) obj4, 0, (ai.d) obj3);
                 String string = LocaleController.getString(R.string.LiveStoryRTMPRevokeTitle);
-                org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-                b2Var.R = string;
-                b2Var.T = LocaleController.getString(R.string.LiveStoryRTMPRevokeText);
+                org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
+                a2Var.R = string;
+                a2Var.T = LocaleController.getString(R.string.LiveStoryRTMPRevokeText);
                 alertDialog$Builder.k(LocaleController.getString(R.string.RevokeButton), new da((nr) callback, (ci.d) obj2, (TL_phone.getGroupCallStreamRtmpUrl) obj, this.b, 2));
                 alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
                 alertDialog$Builder.d(-1);
@@ -157,7 +157,7 @@ public final /* synthetic */ class m3 implements View.OnClickListener {
             case 4:
                 TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth = (TLRPC.TL_messages_requestUrlAuth) obj4;
                 boolean[] zArr = (boolean[]) obj3;
-                org.telegram.ui.ActionBar.f3 f3Var2 = (org.telegram.ui.ActionBar.f3) callback;
+                org.telegram.ui.ActionBar.e3 e3Var2 = (org.telegram.ui.ActionBar.e3) callback;
                 ci.d dVar = (ci.d) obj2;
                 org.telegram.ui.web.b1 b1Var = (org.telegram.ui.web.b1) obj;
                 if (tL_messages_requestUrlAuth != null && !TextUtils.isEmpty(tL_messages_requestUrlAuth.url)) {
@@ -173,19 +173,19 @@ public final /* synthetic */ class m3 implements View.OnClickListener {
                         }
                         TLRPC.TL_messages_declineUrlAuth tL_messages_declineUrlAuth = new TLRPC.TL_messages_declineUrlAuth();
                         tL_messages_declineUrlAuth.url = tL_messages_requestUrlAuth.url;
-                        ConnectionsManager.getInstance(i11).sendRequestTyped(tL_messages_declineUrlAuth, new org.telegram.messenger.a(), new ai.m0(17, zArr, f3Var2));
+                        ConnectionsManager.getInstance(i11).sendRequestTyped(tL_messages_declineUrlAuth, new org.telegram.messenger.a(), new ai.m0(17, zArr, e3Var2));
                         break;
                     }
                 } else {
                     zArr[0] = true;
-                    f3Var2.dismiss();
+                    e3Var2.dismiss();
                     break;
                 }
                 break;
             default:
                 ci.d dVar2 = (ci.d) callback;
                 TL_stars.StarsSubscription starsSubscription = (TL_stars.StarsSubscription) obj4;
-                org.telegram.ui.ActionBar.f3[] f3VarArr = (org.telegram.ui.ActionBar.f3[]) obj3;
+                org.telegram.ui.ActionBar.e3[] e3VarArr = (org.telegram.ui.ActionBar.e3[]) obj3;
                 TLObject tLObject2 = (TLObject) obj2;
                 String str = (String) obj;
                 if (!dVar2.N) {
@@ -195,26 +195,26 @@ public final /* synthetic */ class m3 implements View.OnClickListener {
                     tL_changeStarsSubscription.peer = new TLRPC.TL_inputPeerSelf();
                     tL_changeStarsSubscription.subscription_id = starsSubscription.id;
                     int i13 = this.b;
-                    ConnectionsManager.getInstance(i13).sendRequest(tL_changeStarsSubscription, new ya(dVar2, f3VarArr, i13, tLObject2, str, 13));
+                    ConnectionsManager.getInstance(i13).sendRequest(tL_changeStarsSubscription, new ya(dVar2, e3VarArr, i13, tLObject2, str, 13));
                     break;
                 }
                 break;
         }
     }
 
-    public /* synthetic */ m3(ci.d dVar, TL_stars.StarsSubscription starsSubscription, int i10, org.telegram.ui.ActionBar.f3[] f3VarArr, TLObject tLObject, String str) {
+    public /* synthetic */ m3(ci.d dVar, TL_stars.StarsSubscription starsSubscription, int i10, org.telegram.ui.ActionBar.e3[] e3VarArr, TLObject tLObject, String str) {
         this.d = dVar;
         this.e = starsSubscription;
         this.b = i10;
-        this.c = f3VarArr;
+        this.c = e3VarArr;
         this.f = tLObject;
         this.h = str;
     }
 
-    public /* synthetic */ m3(TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, boolean[] zArr, org.telegram.ui.ActionBar.f3 f3Var, ci.d dVar, org.telegram.ui.web.b1 b1Var, int i10) {
+    public /* synthetic */ m3(TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, boolean[] zArr, org.telegram.ui.ActionBar.e3 e3Var, ci.d dVar, org.telegram.ui.web.b1 b1Var, int i10) {
         this.e = tL_messages_requestUrlAuth;
         this.c = zArr;
-        this.d = f3Var;
+        this.d = e3Var;
         this.f = dVar;
         this.h = b1Var;
         this.b = i10;
@@ -229,21 +229,21 @@ public final /* synthetic */ class m3 implements View.OnClickListener {
         this.b = i10;
     }
 
-    public /* synthetic */ m3(tc0 tc0Var, tc0 tc0Var2, tc0 tc0Var3, int i10, org.telegram.ui.ActionBar.a3 a3Var, Utilities.Callback callback) {
-        this.d = tc0Var;
-        this.e = tc0Var2;
-        this.c = tc0Var3;
+    public /* synthetic */ m3(ed0 ed0Var, ed0 ed0Var2, ed0 ed0Var3, int i10, org.telegram.ui.ActionBar.z2 z2Var, Utilities.Callback callback) {
+        this.d = ed0Var;
+        this.e = ed0Var2;
+        this.c = ed0Var3;
         this.b = i10;
-        this.f = a3Var;
+        this.f = z2Var;
         this.h = callback;
     }
 
-    public /* synthetic */ m3(z4.g gVar, int i10, LinearLayout linearLayout, AtomicBoolean atomicBoolean, HorizontalScrollView horizontalScrollView, rj0 rj0Var) {
+    public /* synthetic */ m3(z4.g gVar, int i10, LinearLayout linearLayout, AtomicBoolean atomicBoolean, HorizontalScrollView horizontalScrollView, bk0 bk0Var) {
         this.d = gVar;
         this.b = i10;
         this.c = linearLayout;
         this.e = atomicBoolean;
         this.f = horizontalScrollView;
-        this.h = rj0Var;
+        this.h = bk0Var;
     }
 }

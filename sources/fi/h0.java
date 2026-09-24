@@ -5,19 +5,19 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.d61;
-import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.r61;
 import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.v51;
 import s4.c1;
-import w7.x5;
+import w7.y5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public abstract class h0 extends FrameLayout {
     public org.telegram.ui.ActionBar.k a;
     public final jh.f b;
     public final FrameLayout c;
-    public d61 d;
+    public r61 d;
     public boolean e;
     public final /* synthetic */ k0 f;
 
@@ -29,7 +29,7 @@ public abstract class h0 extends FrameLayout {
         this.c = frameLayout;
         frameLayout.setPadding(0, 0, 0, 0);
         frameLayout.setClipToPadding(true);
-        addView(frameLayout, x5.e(-1, -1, 119));
+        addView(frameLayout, y5.e(-1, -1, 119));
         jh.f fVar = new jh.f(getContext());
         this.b = fVar;
         fVar.setupColorKey(h6.a7);
@@ -37,7 +37,7 @@ public abstract class h0 extends FrameLayout {
         fVar.setFadeHeightBottom(AndroidUtilities.dp(24.0f));
         fVar.setFadeZoneTop(AndroidUtilities.dp(64.0f) + AndroidUtilities.statusBarHeight);
         fVar.a.b(-AndroidUtilities.dp(20.0f), false);
-        frameLayout.addView(fVar, x5.g());
+        frameLayout.addView(fVar, y5.g());
     }
 
     public final void a() {
@@ -56,7 +56,7 @@ public abstract class h0 extends FrameLayout {
             View childAt = this.d.getChildAt(i10);
             c1 T = this.d.T(childAt);
             if (T != null) {
-                h51 G = this.d.Y2.G(T.b());
+                v51 G = this.d.Y2.G(T.b());
                 if (G != null && G.d != 99) {
                     f7 = Math.min(childAt.getY() + this.c.getPaddingTop(), f7);
                 }

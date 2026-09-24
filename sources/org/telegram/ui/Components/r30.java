@@ -15,9 +15,9 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class r30 extends ll0 {
+public final class r30 extends vl0 {
     public final Context c;
     public final gg.c2 d;
     public p30 e;
@@ -45,7 +45,7 @@ public final class r30 extends ll0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.vl0
     public final boolean D(s4.c1 c1Var) {
         View view = c1Var.a;
         return !((view instanceof org.telegram.ui.Cells.b5) && this.w.f0.contains(Long.valueOf(((org.telegram.ui.Cells.b5) view).getUserId()))) && c1Var.f == 0;
@@ -142,13 +142,13 @@ public final class r30 extends ll0 {
                 if (z10) {
                     user = (TLRPC.User) tLObject;
                 } else if (tLObject instanceof TLRPC.ChannelParticipant) {
-                    i12 = ((org.telegram.ui.ActionBar.f3) s30Var).currentAccount;
+                    i12 = ((org.telegram.ui.ActionBar.e3) s30Var).currentAccount;
                     user = MessagesController.getInstance(i12).getUser(Long.valueOf(MessageObject.getPeerId(((TLRPC.ChannelParticipant) tLObject).peer)));
                 } else {
                     if (!(tLObject instanceof TLRPC.ChatParticipant)) {
                         return;
                     }
-                    i11 = ((org.telegram.ui.ActionBar.f3) s30Var).currentAccount;
+                    i11 = ((org.telegram.ui.ActionBar.e3) s30Var).currentAccount;
                     user = MessagesController.getInstance(i11).getUser(Long.valueOf(((TLRPC.ChatParticipant) tLObject).user_id));
                 }
                 String publicUsername = UserObject.getPublicUsername(user);
@@ -287,6 +287,6 @@ public final class r30 extends ll0 {
             b5Var.setDividerColor(org.telegram.ui.ActionBar.h6.tg);
             view = b5Var;
         }
-        return new wk0(view);
+        return new gl0(view);
     }
 }

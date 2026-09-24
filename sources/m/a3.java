@@ -9,9 +9,9 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
-import v7.v7;
+import v7.w7;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public abstract class a3 {
     public static final ThreadLocal a = new ThreadLocal();
@@ -67,7 +67,7 @@ public abstract class a3 {
         iArr[0] = i10;
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes((AttributeSet) null, iArr);
         try {
-            if (!obtainStyledAttributes.hasValue(0) || (resourceId = obtainStyledAttributes.getResourceId(0, 0)) == 0 || (colorStateList = v7.a(context, resourceId)) == null) {
+            if (!obtainStyledAttributes.hasValue(0) || (resourceId = obtainStyledAttributes.getResourceId(0, 0)) == 0 || (colorStateList = w7.a(context, resourceId)) == null) {
                 colorStateList = obtainStyledAttributes.getColorStateList(0);
             }
             return colorStateList;

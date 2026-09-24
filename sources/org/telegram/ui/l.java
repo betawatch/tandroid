@@ -11,10 +11,10 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class l extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
-    public org.telegram.ui.Components.ml0 a;
+public final class l extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
+    public org.telegram.ui.Components.wl0 a;
     public k b;
     public boolean c;
     public TLRPC.GlobalPrivacySettings d;
@@ -58,7 +58,7 @@ public final class l extends org.telegram.ui.ActionBar.n2 implements Notificatio
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final View createView(Context context) {
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
@@ -67,24 +67,24 @@ public final class l extends org.telegram.ui.ActionBar.n2 implements Notificatio
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.a7, false));
-        org.telegram.ui.Components.ml0 ml0Var = new org.telegram.ui.Components.ml0(context, null);
-        this.a = ml0Var;
-        ml0Var.p1();
+        org.telegram.ui.Components.wl0 wl0Var = new org.telegram.ui.Components.wl0(context, null);
+        this.a = wl0Var;
+        wl0Var.p1();
         this.actionBar.setAdaptiveBackground(this.a);
         this.a.setLayoutManager(new gg.b0(1, false, 2));
         this.a.setVerticalScrollBarEnabled(false);
         this.a.setLayoutAnimation(null);
-        org.telegram.ui.Components.ml0 ml0Var2 = this.a;
+        org.telegram.ui.Components.wl0 wl0Var2 = this.a;
         k kVar = new k(this);
         this.b = kVar;
-        ml0Var2.setAdapter(kVar);
+        wl0Var2.setAdapter(kVar);
         s4.j jVar = new s4.j();
         jVar.n(350L);
         jVar.o(org.telegram.ui.Components.rr.h);
         jVar.C = false;
         jVar.m = false;
         this.a.setItemAnimator(jVar);
-        frameLayout.addView(this.a, w7.x5.c(-1.0f, -1));
+        frameLayout.addView(this.a, w7.y5.c(-1.0f, -1));
         this.a.setOnItemClickListener(new i(this, 0));
         getContactsController().loadGlobalPrivacySetting();
         TLRPC.GlobalPrivacySettings globalPrivacySettings = getContactsController().getGlobalPrivacySettings();
@@ -120,11 +120,11 @@ public final class l extends org.telegram.ui.ActionBar.n2 implements Notificatio
                     if (R < arrayList.size()) {
                         int i13 = ((j) arrayList.get(R)).d;
                         if (i13 == 1) {
-                            ((org.telegram.ui.Cells.x8) childAt).setChecked(this.d.keep_archived_unmuted);
+                            ((org.telegram.ui.Cells.w8) childAt).setChecked(this.d.keep_archived_unmuted);
                         } else if (i13 == 4) {
-                            ((org.telegram.ui.Cells.x8) childAt).setChecked(this.d.keep_archived_folders);
+                            ((org.telegram.ui.Cells.w8) childAt).setChecked(this.d.keep_archived_folders);
                         } else if (i13 == 7) {
-                            ((org.telegram.ui.Cells.x8) childAt).setChecked(this.d.archive_and_mute_new_noncontact_peers);
+                            ((org.telegram.ui.Cells.w8) childAt).setChecked(this.d.archive_and_mute_new_noncontact_peers);
                         }
                     }
                 }
@@ -133,18 +133,18 @@ public final class l extends org.telegram.ui.ActionBar.n2 implements Notificatio
         this.c = false;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final boolean isSupportEdgeToEdge() {
         return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final boolean onFragmentCreate() {
         getNotificationCenter().addObserver(this, NotificationCenter.privacyRulesUpdated);
         return super.onFragmentCreate();
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final void onFragmentDestroy() {
         getNotificationCenter().removeObserver(this, NotificationCenter.privacyRulesUpdated);
         super.onFragmentDestroy();
@@ -156,7 +156,7 @@ public final class l extends org.telegram.ui.ActionBar.n2 implements Notificatio
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final void onInsets(int i10, int i11, int i12, int i13) {
         this.a.setPadding(0, 0, 0, i13);
         this.a.setClipToPadding(false);

@@ -5,7 +5,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MrzRecognizer;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class vj0 implements t9 {
     public final /* synthetic */ wj0 a;
@@ -24,9 +24,9 @@ public final class vj0 implements t9 {
         int i10;
         String b10 = nf.f.b(str);
         if (TextUtils.isEmpty(b10)) {
-            AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.th(24));
+            AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.th(26));
         } else {
-            i10 = ((org.telegram.ui.ActionBar.f3) this.a).currentAccount;
+            i10 = ((org.telegram.ui.ActionBar.e3) this.a).currentAccount;
             MessagesController.getInstance(i10).getUserNameResolver().resolve(b10, new ai.i(18));
         }
     }

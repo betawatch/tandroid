@@ -1,29 +1,29 @@
 package k2;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public interface n {
-    void J();
+    void G();
 
-    void R(Exception exc);
+    void P(Exception exc);
 
-    void U();
+    void S();
 
-    void Y(k kVar);
+    void V(k kVar);
 
-    void e(long j3);
+    void b(long j3);
 
-    void h0();
+    void f0();
 
-    void l0(k kVar);
+    void j0(k kVar);
+
+    void o();
 
     void onAudioSessionIdChanged(int i10);
 
     void onSkipSilenceEnabledChanged(boolean z10);
 
-    void p();
-
-    void r();
+    void q();
 
     void y(int i10, long j3, long j10);
 }

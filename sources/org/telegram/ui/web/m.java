@@ -11,10 +11,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.kv0;
+import org.telegram.ui.ds0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class m extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ o a;
@@ -30,12 +29,12 @@ public final class m extends org.telegram.ui.ActionBar.j {
         o oVar = this.a;
         HashSet hashSet = oVar.w;
         if (i10 == -1) {
-            kVar = ((n2) oVar).actionBar;
+            kVar = ((org.telegram.ui.ActionBar.m2) oVar).actionBar;
             if (!kVar.s()) {
                 oVar.finishFragment();
                 return;
             }
-            kVar2 = ((n2) oVar).actionBar;
+            kVar2 = ((org.telegram.ui.ActionBar.m2) oVar).actionBar;
             kVar2.r();
             hashSet.clear();
             AndroidUtilities.forEachViews((RecyclerView) oVar.a, (Utilities.Callback<View>) new ai.i(22));
@@ -100,7 +99,7 @@ public final class m extends org.telegram.ui.ActionBar.j {
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(oVar.getParentActivity(), 0, oVar.getResourceProvider());
         alertDialog$Builder.a.R = LocaleController.formatPluralString("DeleteOptionsTitle", hashSet3.size(), new Object[0]);
         alertDialog$Builder.a.T = LocaleController.getString(hashSet3.size() == 1 ? "AreYouSureUnsaveSingleMessage" : "AreYouSureUnsaveFewMessages");
-        alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new kv0(21, oVar, hashSet3));
+        alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new ds0(22, oVar, hashSet3));
         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
         alertDialog$Builder.d(-1);
         alertDialog$Builder.o();

@@ -5,9 +5,9 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import v7.t7;
+import v7.u7;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class g0 extends kd.j implements rd.p {
     public i0 a;
@@ -76,7 +76,7 @@ public final class g0 extends kd.j implements rd.p {
         jd.a aVar = jd.a.a;
         int i10 = this.r;
         if (i10 == 0) {
-            t7.b(obj);
+            u7.b(obj);
             this.r = 1;
             b10 = i0.b(i0Var2, this);
         } else {
@@ -93,7 +93,7 @@ public final class g0 extends kd.j implements rd.p {
                     k9.h hVar3 = this.c;
                     d0 d0Var2 = this.b;
                     i0 i0Var3 = this.a;
-                    t7.b(obj);
+                    u7.b(obj);
                     i0Var = i0Var3;
                     d0Var = d0Var2;
                     firebaseApp = hVar3;
@@ -127,7 +127,7 @@ public final class g0 extends kd.j implements rd.p {
                     int i12 = i0.g;
                     i0Var.getClass();
                     try {
-                        i0Var.d.g(c0Var);
+                        i0Var.d.a(c0Var);
                         Log.d("SessionFirelogPublisher", "Successfully logged Session Start event: ".concat(str2));
                     } catch (RuntimeException e) {
                         Log.e("SessionFirelogPublisher", "Error logging Session Start event to DataTransport: ", e);
@@ -141,7 +141,7 @@ public final class g0 extends kd.j implements rd.p {
                 k9.h hVar5 = this.c;
                 d0 d0Var3 = this.b;
                 i0Var = this.a;
-                t7.b(obj);
+                u7.b(obj);
                 a2 = list;
                 hVar2 = hVar5;
                 d0Var = d0Var3;
@@ -190,13 +190,13 @@ public final class g0 extends kd.j implements rd.p {
                     c0 c0Var2 = new c0(new l0(str22, str32, i112, j32, new j(iVar4, iVar5, sessionsSettings.a()), str4), d0.a(firebaseApp));
                     int i122 = i0.g;
                     i0Var.getClass();
-                    i0Var.d.g(c0Var2);
+                    i0Var.d.a(c0Var2);
                     Log.d("SessionFirelogPublisher", "Successfully logged Session Start event: ".concat(str22));
                     return gd.i.a;
                 }
                 return aVar;
             }
-            t7.b(obj);
+            u7.b(obj);
             b10 = obj;
         }
         if (((Boolean) b10).booleanValue()) {

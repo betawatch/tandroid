@@ -8,9 +8,9 @@ import android.os.Message;
 import android.os.Messenger;
 import android.util.Log;
 import java.util.ArrayList;
-import w7.z8;
+import w7.a9;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class n0 extends Handler {
     public boolean a;
@@ -31,8 +31,8 @@ public final class n0 extends Handler {
         }
         Object b11 = k9.h.c().b(u.class);
         kotlin.jvm.internal.i.d(b11, "Firebase.app[SessionDatastore::class.java]");
-        n nVar = (n) ((a0) ((u) b11)).c.get();
-        String str = nVar != null ? nVar.a : null;
+        o oVar = (o) ((a0) ((u) b11)).c.get();
+        String str = oVar != null ? oVar.a : null;
         Log.d("SessionLifecycleService", "App has not yet foregrounded. Using previously stored session: " + str);
         if (str != null) {
             c(messenger, str);
@@ -152,7 +152,7 @@ public final class n0 extends Handler {
             bb.h hVar = (bb.h) b10;
             Bundle bundle = (Bundle) hVar.a.b;
             yd.a aVar = null;
-            yd.a aVar2 = bundle.containsKey("firebase_sessions_sessions_restart_timeout") ? new yd.a(z8.a(bundle.getInt("firebase_sessions_sessions_restart_timeout"), yd.c.d)) : null;
+            yd.a aVar2 = bundle.containsKey("firebase_sessions_sessions_restart_timeout") ? new yd.a(a9.a(bundle.getInt("firebase_sessions_sessions_restart_timeout"), yd.c.d)) : null;
             if (aVar2 != null) {
                 a2 = aVar2.a;
                 int i11 = yd.a.d;
@@ -167,7 +167,7 @@ public final class n0 extends Handler {
             Integer num = eVar.c;
             if (num != null) {
                 int i12 = yd.a.d;
-                aVar = new yd.a(z8.a(num.intValue(), yd.c.d));
+                aVar = new yd.a(a9.a(num.intValue(), yd.c.d));
             }
             if (aVar != null) {
                 a2 = aVar.a;
@@ -176,7 +176,7 @@ public final class n0 extends Handler {
                 }
             }
             int i14 = yd.a.d;
-            a2 = z8.a(30, yd.c.e);
+            a2 = a9.a(30, yd.c.e);
             if (when > (((((int) a2) & 1) != 1 || yd.a.b(a2)) ? yd.a.c(a2, yd.c.c) : a2 >> 1)) {
                 Log.d("SessionLifecycleService", "Session too long in background. Creating new session.");
                 b();

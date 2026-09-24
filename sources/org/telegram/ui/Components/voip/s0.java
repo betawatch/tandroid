@@ -6,15 +6,15 @@ import android.graphics.Paint;
 import android.view.View;
 import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class s0 {
     public float a;
     public float b;
     public float c;
     public boolean e;
-    public final l3 f;
-    public final l3 g;
+    public final m3 f;
+    public final m3 g;
     public ValueAnimator j;
     public int k;
     public float d = 0.0f;
@@ -22,20 +22,20 @@ public final class s0 {
     public float i = 1.0f;
 
     public s0(int i10, int i11, int i12, int i13) {
-        l3 l3Var = new l3(i13 - 1);
-        this.f = l3Var;
-        l3 l3Var2 = new l3(i13);
-        this.g = l3Var2;
-        l3Var.a = i10;
-        l3Var.b = i11;
-        l3Var2.a = i10 - i12;
-        l3Var2.b = i11 - i12;
-        l3Var.b();
-        l3Var2.b();
-        l3Var.d.setColor(-1);
-        l3Var.d.setAlpha(20);
-        l3Var2.d.setColor(-1);
-        l3Var2.d.setAlpha(36);
+        m3 m3Var = new m3(i13 - 1);
+        this.f = m3Var;
+        m3 m3Var2 = new m3(i13);
+        this.g = m3Var2;
+        m3Var.a = i10;
+        m3Var.b = i11;
+        m3Var2.a = i10 - i12;
+        m3Var2.b = i11 - i12;
+        m3Var.b();
+        m3Var2.b();
+        m3Var.d.setColor(-1);
+        m3Var.d.setAlpha(20);
+        m3Var2.d.setColor(-1);
+        m3Var2.d.setAlpha(36);
     }
 
     public final void a(Canvas canvas, float f7, float f10, View view) {
@@ -46,15 +46,15 @@ public final class s0 {
             canvas.scale(interpolation, interpolation, f7, f10);
             float f12 = this.a;
             float f13 = this.i;
-            l3 l3Var = this.f;
-            l3Var.g(f12, f13);
-            Paint paint = l3Var.d;
-            l3Var.a(f7, f10, canvas, paint);
+            m3 m3Var = this.f;
+            m3Var.g(f12, f13);
+            Paint paint = m3Var.d;
+            m3Var.a(f7, f10, canvas, paint);
             float f14 = this.a;
             float f15 = this.i;
-            l3 l3Var2 = this.g;
-            l3Var2.g(f14, f15);
-            l3Var2.a(f7, f10, canvas, paint);
+            m3 m3Var2 = this.g;
+            m3Var2.g(f14, f15);
+            m3Var2.a(f7, f10, canvas, paint);
             canvas.restore();
         }
         if (this.h && this.k == 0) {

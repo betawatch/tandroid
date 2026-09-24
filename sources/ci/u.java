@@ -11,10 +11,10 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ac0;
+import org.telegram.ui.Components.ic0;
 import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class u extends Drawable {
     public final /* synthetic */ int a = 1;
@@ -34,7 +34,7 @@ public final class u extends Drawable {
         this.d = paint2;
         Paint paint3 = new Paint(1);
         this.e = paint3;
-        this.g = new org.telegram.ui.Components.e6(new ac0(this, 1), 320L, rr.h, 0);
+        this.g = new org.telegram.ui.Components.e6(new ic0(this, 2), 320L, rr.h, 0);
         Paint.Style style = Paint.Style.STROKE;
         paint.setStyle(style);
         paint.setColor(-1);
@@ -211,7 +211,7 @@ public final class u extends Drawable {
             float f18 = dpf25;
             float f19 = f17 + f16;
             float f20 = dpf26;
-            rectF2.set(f12 + f11, f19, org.telegram.ui.Cells.q3.a(max, i15 + 1, f7, f12), org.telegram.ui.Cells.q3.a(max2, i14 + 1, f13, f17));
+            rectF2.set(f12 + f11, f19, org.telegram.ui.Cells.c1.b(max, i15 + 1, f7, f12), org.telegram.ui.Cells.c1.b(max2, i14 + 1, f13, f17));
             float[] fArr = (float[]) this.g;
             float f21 = 0.0f;
             float f22 = (i15 == 0 && i14 == 0) ? f20 : 0.0f;

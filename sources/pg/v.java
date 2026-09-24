@@ -14,9 +14,9 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.r2;
 import org.telegram.ui.Components.rn;
-import w7.x5;
+import w7.y5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class v extends FrameLayout {
     public final TextView a;
@@ -32,11 +32,11 @@ public final class v extends FrameLayout {
         this.f = xVar;
         TextView textView = new TextView(context);
         this.a = textView;
-        org.telegram.messenger.z0.q(textView, -1711276033, 1, 14.0f);
-        addView(textView, x5.d(-2, -2.0f, 3, 8.0f, 0.0f, 8.0f, 0.0f));
+        org.telegram.messenger.f0.q(textView, -1711276033, 1, 14.0f);
+        addView(textView, y5.d(-2, -2.0f, 3, 8.0f, 0.0f, 8.0f, 0.0f));
         r rVar = new r(xVar, context);
         this.b = rVar;
-        addView(rVar, x5.d(-1, -1.0f, 3, 0.0f, 16.0f, 78.0f, 0.0f));
+        addView(rVar, y5.d(-1, -1.0f, 3, 0.0f, 16.0f, 78.0f, 0.0f));
         EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
         this.c = editTextBoldCursor;
         editTextBoldCursor.setTextSize(1, 16.0f);
@@ -52,7 +52,7 @@ public final class v extends FrameLayout {
         editTextBoldCursor.addTextChangedListener(new rn(this));
         editTextBoldCursor.setOnFocusChangeListener(new w5(this, 1));
         editTextBoldCursor.setOnEditorActionListener(new r2(4));
-        addView(editTextBoldCursor, x5.e(72, 36, 85));
+        addView(editTextBoldCursor, y5.e(72, 36, 85));
     }
 
     public final void a(int i10) {

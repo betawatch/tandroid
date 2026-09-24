@@ -1,52 +1,21 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLObject;
+import android.text.Editable;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class vy0 {
-    public final /* synthetic */ int a;
+public interface vy0 {
+    void a(ci.i2 i2Var);
 
-    public /* synthetic */ vy0(int i10) {
-        this.a = i10;
-    }
+    EditTextBoldCursor getEditField();
 
-    public final int a(cz0 cz0Var, int i10) {
-        switch (this.a) {
-            case 0:
-                return TLObject.FLAG_31;
-            case 1:
-                return 0;
-            case 2:
-                return i10;
-            case 3:
-                return TLObject.FLAG_31;
-            default:
-                return TLObject.FLAG_31;
-        }
-    }
+    Editable getEditText();
 
-    public final int b(cz0 cz0Var, int i10) {
-        switch (this.a) {
-            case 0:
-                return TLObject.FLAG_31;
-            case 1:
-                return 0;
-            case 2:
-                return i10;
-            case 3:
-                return 0;
-            default:
-                return 0;
-        }
-    }
+    CharSequence getFieldText();
 
-    public int c(int i10, int i11) {
-        switch (this.a) {
-            case 4:
-                return i11;
-            default:
-                return i10;
-        }
-    }
+    org.telegram.ui.ActionBar.m2 getParentFragment();
+
+    int getVisibility();
+
+    void setFieldText(CharSequence charSequence);
 }

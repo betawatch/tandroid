@@ -21,7 +21,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class s4 extends View {
     public final org.telegram.ui.Components.e6 E;
@@ -32,7 +32,7 @@ public final class s4 extends View {
     public boolean e;
     public boolean f;
     public View.OnClickListener h;
-    public final org.telegram.ui.Components.yc n;
+    public final org.telegram.ui.Components.zc n;
     public int r;
     public String s;
     public float v;
@@ -50,7 +50,7 @@ public final class s4 extends View {
         this.c = paint2;
         org.telegram.ui.Components.o6 o6Var = new org.telegram.ui.Components.o6(false, false, false, false);
         this.d = o6Var;
-        this.n = new org.telegram.ui.Components.yc(this);
+        this.n = new org.telegram.ui.Components.zc(this);
         this.r = -1;
         rr rrVar = rr.h;
         this.y = new org.telegram.ui.Components.e6(this, 0L, 320L, rrVar);
@@ -67,7 +67,7 @@ public final class s4 extends View {
         paint.setColor(-1);
         paint2.setColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Oh, d6Var));
         imageReceiver.setRoundRadius(AndroidUtilities.dp(6.0f));
-        w7.z5.a(this);
+        w7.a6.a(this);
     }
 
     public final void a(int i10, int i11, final l8 l8Var) {
@@ -336,18 +336,18 @@ public final class s4 extends View {
         View.OnClickListener onClickListener;
         boolean z10 = motionEvent.getX() >= this.v - ((float) AndroidUtilities.dp(14.0f)) && motionEvent.getX() <= this.v + ((float) AndroidUtilities.dp(14.0f)) && motionEvent.getY() >= this.w - ((float) AndroidUtilities.dp(14.0f)) && motionEvent.getY() <= this.w + ((float) AndroidUtilities.dp(14.0f));
         int action = motionEvent.getAction();
-        org.telegram.ui.Components.yc ycVar = this.n;
+        org.telegram.ui.Components.zc zcVar = this.n;
         if (action == 0) {
-            ycVar.c(z10);
+            zcVar.c(z10);
         } else if (motionEvent.getAction() == 1) {
-            if (ycVar.h && z10 && (onClickListener = this.h) != null) {
+            if (zcVar.h && z10 && (onClickListener = this.h) != null) {
                 onClickListener.onClick(this);
             }
-            ycVar.c(false);
+            zcVar.c(false);
         } else if (motionEvent.getAction() == 3) {
-            ycVar.c(false);
+            zcVar.c(false);
         }
-        return ycVar.h || super.onTouchEvent(motionEvent);
+        return zcVar.h || super.onTouchEvent(motionEvent);
     }
 
     public void setOnCheckboxClick(View.OnClickListener onClickListener) {

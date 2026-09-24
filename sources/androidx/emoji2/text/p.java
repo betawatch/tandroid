@@ -9,9 +9,10 @@ import java.util.ArrayList;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import w7.n6;
+import v7.y;
+import w7.o6;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class p implements k {
     public final Context a;
@@ -21,19 +22,19 @@ public final class p implements k {
     public Handler e;
     public ThreadPoolExecutor f;
     public ThreadPoolExecutor g;
-    public v7.w h;
+    public y h;
 
     public p(Context context, o0.e eVar) {
-        n6.a(context, "Context cannot be null");
+        o6.a(context, "Context cannot be null");
         this.a = context.getApplicationContext();
         this.b = eVar;
         this.c = q.d;
     }
 
     @Override // androidx.emoji2.text.k
-    public final void a(v7.w wVar) {
+    public final void a(y yVar) {
         synchronized (this.d) {
-            this.h = wVar;
+            this.h = yVar;
         }
         c();
     }
@@ -92,7 +93,7 @@ public final class p implements k {
             j4.f a2 = o0.d.a(context, DesugarCollections.unmodifiableList(arrayList));
             int i10 = a2.a;
             if (i10 != 0) {
-                throw new RuntimeException(hg.c.j(i10, "fetchFonts failed (", ")"));
+                throw new RuntimeException(hg.c.i(i10, "fetchFonts failed (", ")"));
             }
             o0.i[] iVarArr = (o0.i[]) a2.b.get(0);
             if (iVarArr == null || iVarArr.length == 0) {

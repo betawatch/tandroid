@@ -1,52 +1,39 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
+import android.content.Context;
+import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class af implements Runnable {
-    public final /* synthetic */ int a;
+public final class af extends ImageView {
+    public float a;
     public final /* synthetic */ ChatActivityEnterView b;
 
-    public /* synthetic */ af(ChatActivityEnterView chatActivityEnterView, int i10) {
-        this.a = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public af(ChatActivityEnterView chatActivityEnterView, Context context) {
+        super(context);
         this.b = chatActivityEnterView;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ChatActivityEnterView chatActivityEnterView = this.b;
-                af afVar = chatActivityEnterView.q3;
-                if ((!chatActivityEnterView.k0() || !chatActivityEnterView.w()) && !org.telegram.ui.ActionBar.n2.hasSheets(chatActivityEnterView.O2) && !chatActivityEnterView.X1 && chatActivityEnterView.E0 != null && chatActivityEnterView.j3 && !chatActivityEnterView.y2 && !AndroidUtilities.usingHardwareInput && !AndroidUtilities.isInMultiwindow) {
-                    ng ngVar = chatActivityEnterView.Y2;
-                    if (ngVar != null) {
-                        ngVar.r1();
-                    }
-                    chatActivityEnterView.E0.requestFocus();
-                    AndroidUtilities.showKeyboard(chatActivityEnterView.E0);
-                    AndroidUtilities.cancelRunOnUIThread(afVar);
-                    AndroidUtilities.runOnUIThread(afVar, 100L);
-                    break;
-                }
-                break;
-            case 1:
-                ng ngVar2 = this.b.Y2;
-                if (ngVar2 != null) {
-                    ngVar2.k2(0, 0, 0, 0L, 0L, true);
-                    break;
-                }
-                break;
-            default:
-                ChatActivityEnterView chatActivityEnterView2 = this.b;
-                AnimatorSet animatorSet = chatActivityEnterView2.V0;
-                if (animatorSet != null && !animatorSet.isRunning()) {
-                    chatActivityEnterView2.V0.start();
-                    break;
-                }
-                break;
-        }
+    @Override // android.view.View
+    public final float getTranslationX() {
+        return this.a;
+    }
+
+    @Override // android.view.View
+    public final void setTranslationX(float f7) {
+        this.a = f7;
+        float dp = AndroidUtilities.dp(-44.0f) + this.a;
+        ChatActivityEnterView chatActivityEnterView = this.b;
+        float f10 = dp + chatActivityEnterView.y + chatActivityEnterView.x;
+        cf cfVar = chatActivityEnterView.K1;
+        float dp2 = AndroidUtilities.dp((cfVar == null || cfVar.getVisibility() != 0) ? 0.0f : -44.0f);
+        cf cfVar2 = chatActivityEnterView.K1;
+        float alpha = (dp2 * (cfVar2 == null ? 0.0f : cfVar2.getAlpha())) + f10;
+        cf cfVar3 = chatActivityEnterView.x1;
+        float dp3 = AndroidUtilities.dp((cfVar3 == null || cfVar3.getVisibility() != 0) ? 0.0f : -44.0f);
+        cf cfVar4 = chatActivityEnterView.x1;
+        super.setTranslationX((dp3 * (cfVar4 != null ? cfVar4.getAlpha() : 0.0f)) + alpha);
     }
 }

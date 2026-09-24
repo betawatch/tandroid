@@ -11,16 +11,17 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicReference;
-import n7.a1;
+import n7.z0;
+import u2.o1;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class o {
     public final Context a;
     public final r b;
     public final o0.a c;
-    public a1 d;
-    public a1 e;
+    public z0 d;
+    public z0 e;
     public m f;
     public final u g;
     public final ba.c h;
@@ -30,9 +31,9 @@ public final class o {
     public final com.google.firebase.messaging.t l;
     public final j m;
     public final t9.a n;
-    public final ka.c o;
+    public final l.d o;
 
-    public o(k9.h hVar, u uVar, t9.a aVar, r rVar, s9.a aVar2, s9.a aVar3, ba.c cVar, ExecutorService executorService, j jVar, ka.c cVar2) {
+    public o(k9.h hVar, u uVar, t9.a aVar, r rVar, s9.a aVar2, s9.a aVar3, ba.c cVar, ExecutorService executorService, j jVar, l.d dVar) {
         this.b = rVar;
         hVar.a();
         this.a = hVar.a;
@@ -44,7 +45,7 @@ public final class o {
         this.h = cVar;
         this.l = new com.google.firebase.messaging.t(executorService);
         this.m = jVar;
-        this.o = cVar2;
+        this.o = dVar;
         System.currentTimeMillis();
         this.c = new o0.a();
     }
@@ -56,13 +57,13 @@ public final class o {
         if (!Boolean.TRUE.equals(((ThreadLocal) tVar.e).get())) {
             throw new IllegalStateException("Not running on background worker thread as intended.");
         }
-        oVar.d.k();
+        oVar.d.o();
         if (Log.isLoggable("FirebaseCrashlytics", 2)) {
             Log.v("FirebaseCrashlytics", "Initialization marker file was created.", null);
         }
         try {
             try {
-                oVar.i.a(new v3.d(4));
+                oVar.i.a(new o1(10));
                 oVar.f.g();
                 if (bVar.d().b.a) {
                     if (!oVar.f.d(bVar)) {

@@ -20,6 +20,7 @@ import android.os.Trace;
 import android.text.TextUtils;
 import android.view.View;
 import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
+import b2.b1;
 import b2.j1;
 import b2.l1;
 import b2.m1;
@@ -41,14 +42,18 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import e2.d0;
+import e9.k0;
 import e9.o1;
 import ei.e4;
 import gg.k1;
+import hg.f1;
 import hg.x;
 import i9.w;
+import ii.d3;
 import ii.i1;
 import ii.i6;
 import ii.j4;
+import ii.l0;
 import ii.p0;
 import ii.p5;
 import ii.r;
@@ -63,11 +68,11 @@ import java.util.Map;
 import java.util.concurrent.Executor;
 import m4.a0;
 import m4.a1;
-import m4.b1;
-import m4.f1;
-import m4.h1;
-import m4.k0;
-import m4.l0;
+import m4.e1;
+import m4.g1;
+import m4.j0;
+import m4.o0;
+import m4.y0;
 import m4.z0;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.DialogObject;
@@ -77,6 +82,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.f0;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
@@ -87,27 +93,26 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.a2;
-import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.ActionBar.d3;
+import org.telegram.ui.ActionBar.c3;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.f3;
-import org.telegram.ui.Cells.s8;
-import org.telegram.ui.Cells.v;
+import org.telegram.ui.ActionBar.e3;
+import org.telegram.ui.ActionBar.z1;
+import org.telegram.ui.Cells.r8;
 import org.telegram.ui.Components.au;
-import org.telegram.ui.Components.bl0;
-import org.telegram.ui.Components.cl0;
-import org.telegram.ui.Components.o70;
+import org.telegram.ui.Components.ll0;
+import org.telegram.ui.Components.ml0;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.xc;
-import org.telegram.ui.dd0;
-import org.telegram.ui.rc0;
-import org.telegram.ui.yc0;
+import org.telegram.ui.Components.y70;
+import org.telegram.ui.Components.yc;
+import org.telegram.ui.cd0;
+import org.telegram.ui.qc0;
+import org.telegram.ui.xc0;
 import u2.b0;
-import v7.l8;
+import v7.m8;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b implements hh.i, h9, a2, OnFailureListener, q9.d, bl0, OnCompleteListener, Continuation, cl0, Utilities.Callback3Return, yc0, p0, au, j4, e2.n, e2.m, k0, e2.h, a1, v {
+public final /* synthetic */ class b implements hh.i, h9, z1, OnFailureListener, q9.d, ll0, OnCompleteListener, Continuation, ml0, Utilities.Callback3Return, xc0, p0, au, j4, e2.n, e2.m, j0, e2.h, z0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -131,30 +136,30 @@ public final /* synthetic */ class b implements hh.i, h9, a2, OnFailureListener,
     }
 
     @Override // ii.p0
-    public o70 a(i1 i1Var) {
+    public y70 a(i1 i1Var) {
         of.b bVar = (of.b) this.b;
         d6 d6Var = (d6) this.c;
         r rVar = (r) bVar.c;
-        o70 o70Var = new o70(rVar, d6Var, i1Var, false, false, true);
-        rVar.H = o70Var;
-        return o70Var;
+        y70 y70Var = new y70(rVar, d6Var, i1Var, false, false, true);
+        rVar.H = y70Var;
+        return y70Var;
     }
 
     @Override // e2.h
     public void accept(Object obj) {
         switch (this.a) {
-            case 25:
-                b1 b1Var = (b1) this.b;
+            case 26:
+                a1 a1Var = (a1) this.b;
                 q1 q1Var = (q1) this.c;
-                f1 f1Var = (f1) obj;
-                b1Var.getClass();
-                e9.k0 k0Var = q1Var.D;
+                e1 e1Var = (e1) obj;
+                a1Var.getClass();
+                k0 k0Var = q1Var.D;
                 if (!k0Var.isEmpty()) {
                     p1 c10 = q1Var.a().c();
                     o1 it = k0Var.values().iterator();
                     while (it.hasNext()) {
                         m1 m1Var = (m1) it.next();
-                        l1 l1Var = (l1) b1Var.d.n.get(m1Var.a.b);
+                        l1 l1Var = (l1) a1Var.d.n.get(m1Var.a.b);
                         if (l1Var == null || m1Var.a.a != l1Var.a) {
                             c10.a(m1Var);
                         } else {
@@ -163,12 +168,12 @@ public final /* synthetic */ class b implements hh.i, h9, a2, OnFailureListener,
                     }
                     q1Var = c10.b();
                 }
-                f1Var.q(q1Var);
+                e1Var.q(q1Var);
                 break;
             default:
-                b1 b1Var2 = (b1) this.b;
+                a1 a1Var2 = (a1) this.b;
                 m4.r rVar = (m4.r) this.c;
-                a0 a0Var = (a0) b1Var2.a.get();
+                a0 a0Var = (a0) a1Var2.a.get();
                 if (a0Var != null && !a0Var.j()) {
                     a0Var.g(rVar, false);
                     break;
@@ -236,21 +241,21 @@ public final /* synthetic */ class b implements hh.i, h9, a2, OnFailureListener,
     
         if (r1 == null) goto L15;
      */
-    @Override // org.telegram.ui.yc0
+    @Override // org.telegram.ui.xc0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void b(TLRPC.MessageMedia messageMedia, int i10, boolean z10, int i11, long j3) {
-        hg.f1 f1Var = (hg.f1) this.b;
-        dd0 dd0Var = (dd0) this.c;
+        f1 f1Var = (f1) this.b;
+        cd0 cd0Var = (cd0) this.c;
         f1Var.x = messageMedia.geo;
         String str = null;
         if (TextUtils.isEmpty(f1Var.y)) {
-            rc0 rc0Var = dd0Var.T;
+            qc0 qc0Var = cd0Var.T;
         }
     }
 
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.ll0
     public void c(float f7, float f10, int i10, View view) {
         d6 d6Var;
         int i11;
@@ -301,14 +306,14 @@ public final /* synthetic */ class b implements hh.i, h9, a2, OnFailureListener,
                         if (inputPeer != null) {
                             clientUserId = DialogObject.getPeerDialogId(inputPeer);
                         } else {
-                            i12 = ((f3) faVar).currentAccount;
+                            i12 = ((e3) faVar).currentAccount;
                             clientUserId = UserConfig.getInstance(i12).getClientUserId();
                         }
-                        d6Var2 = ((f3) faVar).resourcesProvider;
-                        o70 F = o70.F(y9Var, d6Var2, view);
+                        d6Var2 = ((e3) faVar).resourcesProvider;
+                        y70 F = y70.F(y9Var, d6Var2, view);
                         F.c(R.drawable.msg_addfolder, LocaleController.getString(R.string.StoriesAlbumNewAlbum), new ai.j(y9Var, clientUserId, 5), false);
                         F.k();
-                        o70.f(F, faVar.i1().B(clientUserId, true), faVar.v, false, null, new g3(5, y9Var, F));
+                        y70.f(F, faVar.i1().B(clientUserId, true), faVar.v, false, null, new g3(5, y9Var, F));
                         F.Z();
                         return;
                     }
@@ -321,9 +326,9 @@ public final /* synthetic */ class b implements hh.i, h9, a2, OnFailureListener,
                         return;
                     }
                     Context context2 = y9Var.getContext();
-                    d6Var = ((f3) faVar).resourcesProvider;
-                    b2 b2Var = new b2(context2, 3, d6Var);
-                    b2Var.q(500L);
+                    d6Var = ((e3) faVar).resourcesProvider;
+                    a2 a2Var = new a2(context2, 3, d6Var);
+                    a2Var.q(500L);
                     TL_phone.getGroupCallStreamRtmpUrl getgroupcallstreamrtmpurl = new TL_phone.getGroupCallStreamRtmpUrl();
                     getgroupcallstreamrtmpurl.live_story = true;
                     TLRPC.InputPeer inputPeer2 = faVar.c;
@@ -331,57 +336,57 @@ public final /* synthetic */ class b implements hh.i, h9, a2, OnFailureListener,
                         inputPeer2 = new TLRPC.TL_inputPeerSelf();
                     }
                     getgroupcallstreamrtmpurl.peer = inputPeer2;
-                    i11 = ((f3) faVar).currentAccount;
-                    ConnectionsManager.getInstance(i11).sendRequest(getgroupcallstreamrtmpurl, new s5(y9Var, b2Var, getgroupcallstreamrtmpurl, 1));
+                    i11 = ((e3) faVar).currentAccount;
+                    ConnectionsManager.getInstance(i11).sendRequest(getgroupcallstreamrtmpurl, new s5(y9Var, a2Var, getgroupcallstreamrtmpurl, 1));
                     return;
                 }
                 return;
             }
-            if (view instanceof s8) {
-                s8 s8Var = (s8) view;
-                s8Var.setChecked(!s8Var.b());
-                k9Var.k = s8Var.b();
+            if (view instanceof r8) {
+                r8 r8Var = (r8) view;
+                r8Var.setChecked(!r8Var.b());
+                k9Var.k = r8Var.b();
                 int i20 = k9Var.c;
                 if (i20 == 0) {
-                    boolean b10 = s8Var.b();
+                    boolean b10 = r8Var.b();
                     faVar.x = b10;
                     boolean z10 = faVar.N == 4;
                     if (b10) {
-                        d3 d3Var = faVar.container;
-                        d6Var6 = ((f3) faVar).resourcesProvider;
-                        qc G = new xc(d3Var, d6Var6).G(R.raw.ic_save_to_gallery, 4, LocaleController.getString(z10 ? R.string.StoryEnabledScreenshotsShare : R.string.StoryEnabledScreenshots));
+                        c3 c3Var = faVar.container;
+                        d6Var6 = ((e3) faVar).resourcesProvider;
+                        qc G = new yc(c3Var, d6Var6).G(R.raw.ic_save_to_gallery, 4, LocaleController.getString(z10 ? R.string.StoryEnabledScreenshotsShare : R.string.StoryEnabledScreenshots));
                         G.j = 5000;
                         G.k(true);
                         return;
                     }
-                    d3 d3Var2 = faVar.container;
-                    d6Var5 = ((f3) faVar).resourcesProvider;
-                    qc G2 = new xc(d3Var2, d6Var5).G(R.raw.passcode_lock_close, 4, LocaleController.getString(z10 ? R.string.StoryDisabledScreenshotsShare : R.string.StoryDisabledScreenshots));
+                    c3 c3Var2 = faVar.container;
+                    d6Var5 = ((e3) faVar).resourcesProvider;
+                    qc G2 = new yc(c3Var2, d6Var5).G(R.raw.passcode_lock_close, 4, LocaleController.getString(z10 ? R.string.StoryDisabledScreenshotsShare : R.string.StoryDisabledScreenshots));
                     G2.j = 5000;
                     G2.k(true);
                     return;
                 }
                 if (i20 != 1) {
                     if (i20 == 2) {
-                        faVar.w = s8Var.b();
+                        faVar.w = r8Var.b();
                         y9Var.g(true);
                         return;
                     }
                     return;
                 }
-                boolean b11 = s8Var.b();
+                boolean b11 = r8Var.b();
                 faVar.y = b11;
                 boolean z11 = faVar.c instanceof TLRPC.TL_inputPeerChannel;
                 if (b11) {
-                    d3 d3Var3 = faVar.container;
-                    d6Var4 = ((f3) faVar).resourcesProvider;
-                    qc G3 = new xc(d3Var3, d6Var4).G(R.raw.msg_story_keep, 4, LocaleController.getString(z11 ? R.string.StoryChannelEnableKeep : R.string.StoryEnableKeep));
+                    c3 c3Var3 = faVar.container;
+                    d6Var4 = ((e3) faVar).resourcesProvider;
+                    qc G3 = new yc(c3Var3, d6Var4).G(R.raw.msg_story_keep, 4, LocaleController.getString(z11 ? R.string.StoryChannelEnableKeep : R.string.StoryEnableKeep));
                     G3.j = 5000;
                     G3.k(true);
                 } else {
-                    d3 d3Var4 = faVar.container;
-                    d6Var3 = ((f3) faVar).resourcesProvider;
-                    qc G4 = new xc(d3Var4, d6Var3).G(R.raw.fire_on, 4, LocaleController.getString(z11 ? R.string.StoryChannelDisableKeep : R.string.StoryDisableKeep));
+                    c3 c3Var4 = faVar.container;
+                    d6Var3 = ((e3) faVar).resourcesProvider;
+                    qc G4 = new yc(c3Var4, d6Var3).G(R.raw.fire_on, 4, LocaleController.getString(z11 ? R.string.StoryChannelDisableKeep : R.string.StoryDisableKeep));
                     G4.j = 5000;
                     G4.k(true);
                 }
@@ -391,11 +396,11 @@ public final /* synthetic */ class b implements hh.i, h9, a2, OnFailureListener,
             return;
         }
         if (k9Var.n && faVar.F) {
-            i16 = ((f3) faVar).currentAccount;
+            i16 = ((e3) faVar).currentAccount;
             boolean z12 = faVar.K;
             TLRPC.InputPeer inputPeer3 = faVar.c;
             n9 n9Var = new n9(y9Var, 0);
-            d6Var9 = ((f3) faVar).resourcesProvider;
+            d6Var9 = ((e3) faVar).resourcesProvider;
             new f9(context, i16, z12, inputPeer3, n9Var, d6Var9).show();
             return;
         }
@@ -451,11 +456,11 @@ public final /* synthetic */ class b implements hh.i, h9, a2, OnFailureListener,
                     } catch (Throwable unused) {
                     }
                     Context context3 = y9Var.getContext();
-                    d6Var7 = ((f3) faVar).resourcesProvider;
+                    d6Var7 = ((e3) faVar).resourcesProvider;
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context3, 0, d6Var7);
                     alertDialog$Builder.a.R = LocaleController.getString(R.string.GroupTooLarge);
                     alertDialog$Builder.a.T = LocaleController.getString(R.string.GroupTooLargeMessage);
-                    hg.c.A(R.string.OK, alertDialog$Builder, null);
+                    f0.o(R.string.OK, alertDialog$Builder, null);
                 } else if (hashMap.containsKey(Long.valueOf(j3))) {
                     ArrayList arrayList4 = (ArrayList) hashMap.get(Long.valueOf(j3));
                     if (arrayList4 != null) {
@@ -469,23 +474,23 @@ public final /* synthetic */ class b implements hh.i, h9, a2, OnFailureListener,
                     hashMap.remove(Long.valueOf(j3));
                     y9Var.i(true);
                 } else {
-                    i13 = ((f3) faVar).currentAccount;
+                    i13 = ((e3) faVar).currentAccount;
                     TLRPC.Chat chat2 = MessagesController.getInstance(i13).getChat(Long.valueOf(j3));
-                    i14 = ((f3) faVar).currentAccount;
+                    i14 = ((e3) faVar).currentAccount;
                     TLRPC.ChatFull chatFull = MessagesController.getInstance(i14).getChatFull(j3);
                     if (chatFull == null || (chatParticipants = chatFull.participants) == null || (arrayList = chatParticipants.participants) == null || arrayList.isEmpty() || chatFull.participants.participants.size() < chatFull.participants_count - 1) {
-                        b2 b2Var2 = y9Var.G;
-                        if (b2Var2 != null) {
-                            b2Var2.dismiss();
+                        a2 a2Var2 = y9Var.G;
+                        if (a2Var2 != null) {
+                            a2Var2.dismiss();
                             y9Var.G = null;
                         }
                         y9Var.H = j3;
                         Context context4 = y9Var.getContext();
-                        d6Var8 = ((f3) faVar).resourcesProvider;
-                        b2 b2Var3 = new b2(context4, 3, d6Var8);
-                        y9Var.G = b2Var3;
-                        b2Var3.q(50L);
-                        i15 = ((f3) faVar).currentAccount;
+                        d6Var8 = ((e3) faVar).resourcesProvider;
+                        a2 a2Var3 = new a2(context4, 3, d6Var8);
+                        y9Var.G = a2Var3;
+                        a2Var3.q(50L);
+                        i15 = ((e3) faVar).currentAccount;
                         MessagesStorage messagesStorage = MessagesStorage.getInstance(i15);
                         messagesStorage.getStorageQueue().postRunnable(new q8(y9Var, chat2, messagesStorage, j3, 4));
                     } else {
@@ -544,12 +549,12 @@ public final /* synthetic */ class b implements hh.i, h9, a2, OnFailureListener,
         r9Var.K = true;
     }
 
-    @Override // org.telegram.ui.Components.cl0
+    @Override // org.telegram.ui.Components.ml0
     public boolean d(int i10, View view) {
         return e4.B0((e4) this.b, (Context) this.c, view, i10);
     }
 
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.ll0
     public /* synthetic */ boolean d1(View view) {
         return false;
     }
@@ -557,11 +562,11 @@ public final /* synthetic */ class b implements hh.i, h9, a2, OnFailureListener,
     @Override // e2.n
     public void e(Object obj, q qVar) {
         j2.b bVar = (j2.b) obj;
-        bVar.d((b2.b1) this.c, new of.b(qVar, ((j2.f) this.b).e));
+        bVar.d((b1) this.c, new of.b(qVar, ((j2.f) this.b).e));
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void f(b2 b2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.z1
+    public void f(a2 a2Var, int i10) {
         switch (this.a) {
             case 3:
                 v5 v5Var = (v5) this.b;
@@ -593,34 +598,34 @@ public final /* synthetic */ class b implements hh.i, h9, a2, OnFailureListener,
         }
     }
 
-    @Override // m4.k0
+    @Override // m4.j0
     public void g(m4.r rVar) {
         switch (this.a) {
-            case 23:
-                l0 l0Var = (l0) this.b;
+            case 24:
+                m4.k0 k0Var = (m4.k0) this.b;
                 Bundle bundle = (Bundle) this.c;
-                a0 a0Var = l0Var.g;
+                a0 a0Var = k0Var.g;
                 if (bundle == null) {
                     Bundle bundle2 = Bundle.EMPTY;
                 }
                 a0Var.n(rVar);
                 break;
             default:
-                l0 l0Var2 = (l0) this.b;
+                m4.k0 k0Var2 = (m4.k0) this.b;
                 n4.l lVar = (n4.l) this.c;
-                l0Var2.getClass();
+                k0Var2.getClass();
                 String str = lVar.a;
                 if (TextUtils.isEmpty(str)) {
                     e2.a.n("MediaSessionLegacyStub", "onRemoveQueueItem(): Media ID shouldn't be null");
                     break;
                 } else {
-                    f1 f1Var = l0Var2.g.t;
-                    if (f1Var.m0(17)) {
-                        b2.k1 w02 = f1Var.w0();
+                    e1 e1Var = k0Var2.g.t;
+                    if (e1Var.m0(17)) {
+                        b2.k1 w02 = e1Var.w0();
                         j1 j1Var = new j1();
                         for (int i10 = 0; i10 < w02.o(); i10++) {
                             if (TextUtils.equals(w02.m(i10, j1Var, 0L).c.a, str)) {
-                                f1Var.R(i10);
+                                e1Var.R(i10);
                                 break;
                             }
                         }
@@ -633,39 +638,22 @@ public final /* synthetic */ class b implements hh.i, h9, a2, OnFailureListener,
         }
     }
 
-    @Override // m4.a1
+    @Override // m4.z0
     public Object h(a0 a0Var, m4.r rVar, int i10) {
         switch (this.a) {
-            case 27:
-                return a0Var.j() ? l8.b(new m4.l1(-100)) : d0.d0((w) ((a1) this.b).h(a0Var, rVar, i10), new q5(a0Var, rVar, (m4.p0) this.c, 14));
+            case 28:
+                return a0Var.j() ? m8.b(new m4.k1(-100)) : d0.d0((w) ((z0) this.b).h(a0Var, rVar, i10), new q5(a0Var, rVar, (o0) this.c, 14));
             default:
-                return a0Var.j() ? l8.b(new m4.l1(-100)) : d0.d0((w) ((a1) this.b).h(a0Var, rVar, i10), new q5(a0Var, rVar, (z0) this.c, 15));
+                return a0Var.j() ? m8.b(new m4.k1(-100)) : d0.d0((w) ((z0) this.b).h(a0Var, rVar, i10), new q5(a0Var, rVar, (y0) this.c, 15));
         }
     }
 
-    @Override // org.telegram.ui.Components.au
-    public void i() {
-        switch (this.a) {
-            case 17:
-                ii.l0 l0Var = (ii.l0) this.b;
-                ii.k0 k0Var = (ii.k0) this.c;
-                l0Var.i();
-                k0Var.n0();
-                break;
-            default:
-                p5 p5Var = (p5) this.b;
-                ii.s5 s5Var = (ii.s5) this.c;
-                TL_iv.pageTableCell pagetablecell = s5Var.b;
-                if (pagetablecell != null) {
-                    i6.d(pagetablecell, s5Var.a.getText());
-                }
-                ii.d3 d3Var = p5Var.E;
-                if (d3Var != null && p5Var.a != null) {
-                    x3.O1(d3Var.a);
-                    break;
-                }
-                break;
-        }
+    @Override // hh.i
+    public void i(RectF rectF, View view) {
+        ch.d dVar = (ch.d) this.b;
+        View view2 = (View) this.c;
+        dVar.t(rectF.left, rectF.top);
+        view2.invalidate();
     }
 
     @Override // e2.m
@@ -680,12 +668,29 @@ public final /* synthetic */ class b implements hh.i, h9, a2, OnFailureListener,
         }
     }
 
-    @Override // hh.i
-    public void j(RectF rectF, View view) {
-        ch.d dVar = (ch.d) this.b;
-        View view2 = (View) this.c;
-        dVar.t(rectF.left, rectF.top);
-        view2.invalidate();
+    @Override // org.telegram.ui.Components.au
+    public void j() {
+        switch (this.a) {
+            case 17:
+                l0 l0Var = (l0) this.b;
+                ii.k0 k0Var = (ii.k0) this.c;
+                l0Var.i();
+                k0Var.k0();
+                break;
+            default:
+                p5 p5Var = (p5) this.b;
+                ii.s5 s5Var = (ii.s5) this.c;
+                TL_iv.pageTableCell pagetablecell = s5Var.b;
+                if (pagetablecell != null) {
+                    i6.d(pagetablecell, s5Var.a.getText());
+                }
+                d3 d3Var = p5Var.E;
+                if (d3Var != null && p5Var.a != null) {
+                    x3.O1(d3Var.a);
+                    break;
+                }
+                break;
+        }
     }
 
     @Override // ci.h9
@@ -812,9 +817,9 @@ public final /* synthetic */ class b implements hh.i, h9, a2, OnFailureListener,
         this.c = obj;
     }
 
-    public /* synthetic */ b(l0 l0Var, h1 h1Var, Bundle bundle) {
-        this.a = 23;
-        this.b = l0Var;
+    public /* synthetic */ b(m4.k0 k0Var, g1 g1Var, Bundle bundle) {
+        this.a = 24;
+        this.b = k0Var;
         this.c = bundle;
     }
 
@@ -828,12 +833,12 @@ public final /* synthetic */ class b implements hh.i, h9, a2, OnFailureListener,
         hg.j jVar = nVar.n;
         nVar.x = document;
         jVar.setSticker(document);
-        ((s8) view).setValueSticker(document);
+        ((r8) view).setValueSticker(document);
         nVar.e0(true);
         return Boolean.TRUE;
     }
 
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.ll0
     public /* synthetic */ void r0(View view, float f7, float f10) {
     }
 }

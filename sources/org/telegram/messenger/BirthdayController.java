@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class BirthdayController {
     private static volatile BirthdayController[] Instance = new BirthdayController[4];
@@ -25,7 +25,7 @@ public class BirthdayController {
     private boolean loading;
     private BirthdayState state;
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class BirthdayState {
         public String todayKey;
         public String tomorrowKey;
@@ -139,7 +139,7 @@ public class BirthdayController {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class TL_birthdays extends TLObject {
         public static final int constructor = 290452237;
         public ArrayList<TL_account.TL_contactBirthday> contacts;
@@ -215,7 +215,7 @@ public class BirthdayController {
                 }
                 birthdayController = this;
                 try {
-                    MessagesStorage.getInstance(i10).getStorageQueue().postRunnable(new h0(birthdayController, i10, arrayList, TLdeserialize, 0));
+                    MessagesStorage.getInstance(i10).getStorageQueue().postRunnable(new i0(birthdayController, i10, arrayList, TLdeserialize, 0));
                 } catch (Exception e10) {
                     e = e10;
                     exc = e;
@@ -287,7 +287,7 @@ public class BirthdayController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$1(int i10, ArrayList arrayList, TL_birthdays tL_birthdays) {
-        AndroidUtilities.runOnUIThread(new f0(this, tL_birthdays, MessagesStorage.getInstance(i10).getUsers(arrayList), 0));
+        AndroidUtilities.runOnUIThread(new g0(this, tL_birthdays, MessagesStorage.getInstance(i10).getUsers(arrayList), 0));
     }
 
     public void check() {
@@ -309,7 +309,7 @@ public class BirthdayController {
         }
         if (z10) {
             this.loading = true;
-            ConnectionsManager.getInstance(this.currentAccount).sendRequest(new TL_account.getBirthdays(), new g0(this, 0));
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(new TL_account.getBirthdays(), new h0(this, 0));
         }
     }
 

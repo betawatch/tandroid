@@ -8,7 +8,7 @@ import b2.k1;
 import e2.d0;
 import java.util.List;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class e extends k1 {
     public final long e;
@@ -115,8 +115,8 @@ public final class e extends k1 {
                 i12++;
                 j13 = j11;
             }
-            if (i12 != -1 && (d = ((m2.m) ((m2.a) b10.c.get(i12)).c.get(0)).d()) != null && d.P(d10) != j11) {
-                j12 = (d.b(d.v(j14, d10)) + j12) - j14;
+            if (i12 != -1 && (d = ((m2.m) ((m2.a) b10.c.get(i12)).c.get(0)).d()) != null && d.z(d10) != j11) {
+                j12 = (d.b(d.s(j14, d10)) + j12) - j14;
             }
         } else {
             j10 = -9223372036854775807L;

@@ -5,20 +5,20 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class gb extends mu0 {
+public final class gb extends lu0 {
     public final /* synthetic */ ub a;
 
     public gb(ub ubVar) {
         this.a = ubVar;
     }
 
-    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
-    public final wu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
+    public final vu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
         org.telegram.ui.Cells.w0 w0Var;
         MessageObject messageObject2;
-        org.telegram.ui.Cells.t1 t1Var;
+        org.telegram.ui.Cells.u1 u1Var;
         MessageObject messageObject3;
         ub ubVar = this.a;
         int childCount = ubVar.v.getChildCount();
@@ -29,9 +29,9 @@ public final class gb extends mu0 {
                 return null;
             }
             View childAt = ubVar.v.getChildAt(i11);
-            if (childAt instanceof org.telegram.ui.Cells.t1) {
-                if (messageObject != null && (messageObject3 = (t1Var = (org.telegram.ui.Cells.t1) childAt).getMessageObject()) != null && messageObject3.getId() == messageObject.getId()) {
-                    imageReceiver = t1Var.getPhotoImage();
+            if (childAt instanceof org.telegram.ui.Cells.u1) {
+                if (messageObject != null && (messageObject3 = (u1Var = (org.telegram.ui.Cells.u1) childAt).getMessageObject()) != null && messageObject3.getId() == messageObject.getId()) {
+                    imageReceiver = u1Var.getPhotoImage();
                 }
             } else if ((childAt instanceof org.telegram.ui.Cells.w0) && (messageObject2 = (w0Var = (org.telegram.ui.Cells.w0) childAt).getMessageObject()) != null) {
                 if (messageObject != null) {
@@ -56,15 +56,15 @@ public final class gb extends mu0 {
             if (imageReceiver != null) {
                 int[] iArr = new int[2];
                 childAt.getLocationInWindow(iArr);
-                wu0 wu0Var = new wu0();
-                wu0Var.b = iArr[0];
-                wu0Var.c = iArr[1];
-                wu0Var.d = ubVar.v;
-                wu0Var.a = imageReceiver;
-                wu0Var.e = imageReceiver.getBitmapSafe();
-                wu0Var.h = imageReceiver.getRoundRadius(true);
-                wu0Var.l = true;
-                return wu0Var;
+                vu0 vu0Var = new vu0();
+                vu0Var.b = iArr[0];
+                vu0Var.c = iArr[1];
+                vu0Var.d = ubVar.v;
+                vu0Var.a = imageReceiver;
+                vu0Var.e = imageReceiver.getBitmapSafe();
+                vu0Var.h = imageReceiver.getRoundRadius(true);
+                vu0Var.l = true;
+                return vu0Var;
             }
             i11++;
         }

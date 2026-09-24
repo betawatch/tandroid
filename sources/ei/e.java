@@ -6,7 +6,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_payments;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e implements Runnable {
     public final /* synthetic */ int a;
@@ -43,9 +43,9 @@ public final /* synthetic */ class e implements Runnable {
                     updatestarrefprogram.flags &= -2;
                     starrefprogram.duration_months = i10 & (-2);
                 }
-                org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(lVar2.getParentActivity(), 3, null);
-                b2Var.q(150L);
-                lVar2.getConnectionsManager().sendRequest(updatestarrefprogram, new b(lVar2, b2Var, 1));
+                org.telegram.ui.ActionBar.a2 a2Var = new org.telegram.ui.ActionBar.a2(lVar2.getParentActivity(), 3, null);
+                a2Var.q(150L);
+                lVar2.getConnectionsManager().sendRequest(updatestarrefprogram, new b(lVar2, a2Var, 1));
                 break;
             default:
                 l lVar3 = this.b;

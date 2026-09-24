@@ -1,25 +1,90 @@
 package org.telegram.ui.Components;
 
-import androidx.core.widget.NestedScrollView;
+import android.app.Dialog;
+import android.os.Bundle;
+import android.view.KeyEvent;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.FrameLayout;
+import java.util.WeakHashMap;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.R;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ee0 implements u0.g, d5 {
-    public final /* synthetic */ pe0 a;
+public final class ee0 extends Dialog {
+    public final FrameLayout a;
+    public final de0 b;
 
-    public /* synthetic */ ee0(pe0 pe0Var) {
-        this.a = pe0Var;
+    public ee0(LaunchActivity launchActivity) {
+        super(launchActivity, R.style.TransparentDialog);
+        AndroidUtilities.enableEdgeToEdge(getWindow());
+        FrameLayout frameLayout = new FrameLayout(launchActivity);
+        this.a = frameLayout;
+        fa0 fa0Var = new fa0(9);
+        WeakHashMap weakHashMap = r0.i0.a;
+        r0.a0.j(frameLayout, fa0Var);
+        de0 de0Var = new de0(this, launchActivity);
+        this.b = de0Var;
+        frameLayout.addView(de0Var, w7.y5.e(-1, -1, 119));
     }
 
-    @Override // org.telegram.ui.Components.d5
-    public void J(int i10, int i11, boolean z10) {
-        pe0 pe0Var = this.a;
-        pe0Var.K.a(pe0Var.N, z10, i10, 0L);
-        pe0Var.dismiss();
+    @Override // android.app.Dialog, android.content.DialogInterface
+    public final void dismiss() {
+        LaunchActivity launchActivity;
+        if (!this.b.g() || (launchActivity = LaunchActivity.G1) == null) {
+            return;
+        }
+        launchActivity.moveTaskToBack(true);
     }
 
-    @Override // u0.g
-    public void a(NestedScrollView nestedScrollView) {
-        this.a.H(!r2.s);
+    @Override // android.app.Dialog, android.view.Window.Callback
+    public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
+        LaunchActivity launchActivity;
+        if (keyEvent.getKeyCode() != 4 || keyEvent.getRepeatCount() != 0) {
+            return super.dispatchKeyEvent(keyEvent);
+        }
+        if (this.b.g() && (launchActivity = LaunchActivity.G1) != null) {
+            launchActivity.moveTaskToBack(true);
+        }
+        return true;
+    }
+
+    @Override // android.app.Dialog
+    public final void onBackPressed() {
+        LaunchActivity launchActivity;
+        if (!this.b.g() || (launchActivity = LaunchActivity.G1) == null) {
+            return;
+        }
+        launchActivity.moveTaskToBack(true);
+    }
+
+    @Override // android.app.Dialog
+    public final void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
+        Window window = getWindow();
+        window.setWindowAnimations(R.style.DialogNoAnimation);
+        ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(-1, -1);
+        FrameLayout frameLayout = this.a;
+        setContentView(frameLayout, layoutParams);
+        WindowManager.LayoutParams attributes = window.getAttributes();
+        attributes.width = -1;
+        attributes.height = -1;
+        attributes.gravity = 119;
+        attributes.dimAmount = 0.0f;
+        int i10 = attributes.flags & (-3);
+        attributes.flags = i10;
+        attributes.softInputMode = 16;
+        if (!BuildVars.DEBUG_PRIVATE_VERSION) {
+            attributes.flags = i10 | 8192;
+            AndroidUtilities.logFlagSecure();
+        }
+        attributes.flags |= -2013198976;
+        window.setAttributes(attributes);
+        frameLayout.setSystemUiVisibility(256);
+        AndroidUtilities.setLightNavigationBar((Dialog) this, false);
     }
 }

@@ -2,9 +2,9 @@ package ii;
 
 import android.text.Editable;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Cells.r9;
+import org.telegram.ui.Cells.q9;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class j5 implements h1 {
     public final /* synthetic */ s5 a;
@@ -16,9 +16,9 @@ public final class j5 implements h1 {
     }
 
     @Override // ii.h1
-    public final void D(final i1 i1Var, final int i10, final int i11) {
+    public final void B(final i1 i1Var, final int i10, final int i11) {
         d3 d3Var;
-        final r9 textSelectionHelper;
+        final q9 textSelectionHelper;
         final int k10;
         p5 p5Var = this.b;
         if (p5Var.G || i10 == i11 || (d3Var = p5Var.E) == null || (textSelectionHelper = d3Var.a.getTextSelectionHelper()) == null) {
@@ -44,7 +44,7 @@ public final class j5 implements h1 {
     }
 
     @Override // ii.h1
-    public final void M(CharSequence charSequence) {
+    public final void K(CharSequence charSequence) {
         d3 d3Var = this.b.E;
         if (d3Var == null || charSequence == null || charSequence.length() <= 0) {
             return;
@@ -53,7 +53,7 @@ public final class j5 implements h1 {
     }
 
     @Override // ii.h1
-    public final void W(Editable editable) {
+    public final void U(Editable editable) {
         TL_iv.pageTableCell pagetablecell = this.a.b;
         if (pagetablecell != null) {
             i6.d(pagetablecell, editable);
@@ -68,7 +68,7 @@ public final class j5 implements h1 {
     }
 
     @Override // ii.h1
-    public final boolean b0(boolean z10) {
+    public final boolean X(boolean z10) {
         return this.b.s(this.a, z10);
     }
 
@@ -104,7 +104,7 @@ public final class j5 implements h1 {
     }
 
     @Override // ii.h1
-    public final /* synthetic */ boolean q(i1 i1Var) {
+    public final /* synthetic */ boolean p(i1 i1Var) {
         return false;
     }
 

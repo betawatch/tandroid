@@ -11,21 +11,21 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.f01;
+import org.telegram.ui.Components.ij0;
 import org.telegram.ui.Components.pq;
 import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.yi0;
+import org.telegram.ui.Components.t01;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class v2 {
     public final long a;
     public final float b;
     public final float c;
-    public final yi0 d;
+    public final ij0 d;
     public final Paint e;
     public final ImageReceiver f;
-    public final f01 g;
+    public final t01 g;
     public boolean h;
     public final org.telegram.ui.Components.e6 i;
     public final org.telegram.ui.Components.e6 j;
@@ -38,12 +38,12 @@ public final class v2 {
         this.c = Utilities.clamp01(Utilities.fastRandom.nextFloat());
         if (z10) {
             int[] iArr = w2Var.f;
-            yi0 yi0Var = new yi0(iArr[Utilities.fastRandom.nextInt(iArr.length)], AndroidUtilities.dp(70.0f), AndroidUtilities.dp(70.0f));
-            this.d = yi0Var;
-            yi0Var.R(view);
-            yi0Var.J(true);
-            yi0Var.K(0);
-            yi0Var.start();
+            ij0 ij0Var = new ij0(iArr[Utilities.fastRandom.nextInt(iArr.length)], AndroidUtilities.dp(70.0f), AndroidUtilities.dp(70.0f));
+            this.d = ij0Var;
+            ij0Var.R(view);
+            ij0Var.J(true);
+            ij0Var.K(0);
+            ij0Var.start();
         }
         TLObject userOrChat = MessagesController.getInstance(i10).getUserOrChat(j3);
         org.telegram.ui.Components.h9 h9Var = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.d6) null);
@@ -64,7 +64,7 @@ public final class v2 {
         spannableStringBuilder.setSpan(pqVar, 0, spannableStringBuilder.length(), 33);
         spannableStringBuilder.append((CharSequence) " ");
         spannableStringBuilder.append((CharSequence) LocaleController.formatNumber(i11, ','));
-        this.g = new f01(spannableStringBuilder, 10.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
+        this.g = new t01(spannableStringBuilder, 10.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
         org.telegram.ui.Components.e6 e6Var = new org.telegram.ui.Components.e6(view, 2000L, new LinearInterpolator());
         this.i = e6Var;
         e6Var.d(0.0f, true);

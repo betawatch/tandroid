@@ -9,9 +9,9 @@ import e9.i0;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import v7.t8;
+import v7.u8;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class d0 implements c3.o {
     public final int a;
@@ -200,7 +200,7 @@ public final class d0 implements c3.o {
                             break;
                         }
                         if (vVar.a[i16] == 71) {
-                            long a2 = t8.a(vVar, i16, i15);
+                            long a2 = u8.a(vVar, i16, i15);
                             if (a2 != -9223372036854775807L) {
                                 j3 = a2;
                                 break;
@@ -242,7 +242,7 @@ public final class d0 implements c3.o {
                         } else {
                             i22++;
                             if (i22 == 5) {
-                                long a10 = t8.a(vVar, i20, i15);
+                                long a10 = u8.a(vVar, i20, i15);
                                 if (a10 != -9223372036854775807L) {
                                     j3 = a10;
                                     break;

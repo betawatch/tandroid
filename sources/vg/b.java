@@ -10,34 +10,34 @@ import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.ul;
+import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h5;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.i5;
 import org.telegram.ui.Components.qq;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class b extends FrameLayout {
-    public final i5 a;
+    public final h5 a;
     public final ImageView b;
 
     public b(Context context, d6 d6Var) {
         super(context);
-        i5 i5Var = new i5(context);
-        this.a = i5Var;
-        i5Var.setTextSize(16);
-        i5Var.setGravity(LocaleController.isRTL ? 5 : 3);
+        h5 h5Var = new h5(context);
+        this.a = h5Var;
+        h5Var.setTextSize(16);
+        h5Var.setGravity(LocaleController.isRTL ? 5 : 3);
         int i10 = h6.L6;
-        i5Var.setTextColor(h6.v0(i10, d6Var));
-        i5Var.setTag(Integer.valueOf(i10));
-        addView(i5Var);
+        h5Var.setTextColor(h6.v0(i10, d6Var));
+        h5Var.setTag(Integer.valueOf(i10));
+        addView(h5Var);
         ImageView imageView = new ImageView(context);
         this.b = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         addView(imageView);
-        i5Var.k(LocaleController.getString(R.string.BoostingAddChannelOrGroup));
+        h5Var.k(LocaleController.getString(R.string.BoostingAddChannelOrGroup));
         Drawable drawable = getResources().getDrawable(R.drawable.poll_add_circle);
         Drawable drawable2 = getResources().getDrawable(R.drawable.poll_add_plus);
         int v02 = h6.v0(h6.N6, d6Var);
@@ -52,16 +52,16 @@ public final class b extends FrameLayout {
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         int dp;
         int i14 = i12 - i10;
-        i5 i5Var = this.a;
-        int textHeight = ((i13 - i11) - i5Var.getTextHeight()) / 2;
+        h5 h5Var = this.a;
+        int textHeight = ((i13 - i11) - h5Var.getTextHeight()) / 2;
         boolean z11 = LocaleController.isRTL;
         ImageView imageView = this.b;
         if (z11) {
-            dp = (getMeasuredWidth() - i5Var.getMeasuredWidth()) - AndroidUtilities.dp(imageView.getVisibility() == 0 ? 68.0f : 23.0f);
+            dp = (getMeasuredWidth() - h5Var.getMeasuredWidth()) - AndroidUtilities.dp(imageView.getVisibility() == 0 ? 68.0f : 23.0f);
         } else {
             dp = AndroidUtilities.dp(imageView.getVisibility() == 0 ? 68.0f : 23.0f);
         }
-        i5Var.layout(dp, textHeight, i5Var.getMeasuredWidth() + dp, i5Var.getMeasuredHeight() + textHeight);
+        h5Var.layout(dp, textHeight, h5Var.getMeasuredWidth() + dp, h5Var.getMeasuredHeight() + textHeight);
         int dp2 = !LocaleController.isRTL ? AndroidUtilities.dp(24.0f) : (i14 - imageView.getMeasuredWidth()) - AndroidUtilities.dp(24.0f);
         imageView.layout(dp2, 0, imageView.getMeasuredWidth() + dp2, imageView.getMeasuredHeight());
     }
@@ -69,7 +69,7 @@ public final class b extends FrameLayout {
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
         int size = View.MeasureSpec.getSize(i10);
-        this.a.measure(ul.d(94.0f, size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLObject.FLAG_30));
+        this.a.measure(ok.c(94.0f, size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLObject.FLAG_30));
         this.b.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
         setMeasuredDimension(size, AndroidUtilities.dp(50.0f));
     }

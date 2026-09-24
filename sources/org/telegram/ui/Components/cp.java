@@ -16,7 +16,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.zi1;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class cp implements ui {
     public final /* synthetic */ wi a;
@@ -64,10 +64,10 @@ public final class cp implements ui {
                 bpVar.n1 = 0.2f;
                 bpVar.c1(this.e);
                 bpVar.I1 = new ap(wiVar, this.f, 0);
-                org.telegram.ui.ActionBar.l2 l2Var = new org.telegram.ui.ActionBar.l2();
-                l2Var.a = true;
-                l2Var.e = true;
-                this.h.showAsSheet(bpVar, l2Var);
+                org.telegram.ui.ActionBar.k2 k2Var = new org.telegram.ui.ActionBar.k2();
+                k2Var.a = true;
+                k2Var.e = true;
+                this.h.showAsSheet(bpVar, k2Var);
                 wiVar.dismiss();
             }
         } catch (Throwable th2) {
@@ -89,10 +89,10 @@ public final class cp implements ui {
         bpVar.p1 = this.d;
         bpVar.c1(this.e);
         bpVar.I1 = new ap(this.a, this.f, 1);
-        org.telegram.ui.ActionBar.l2 l2Var = new org.telegram.ui.ActionBar.l2();
-        l2Var.a = true;
-        l2Var.e = true;
-        this.h.showAsSheet(bpVar, l2Var);
+        org.telegram.ui.ActionBar.k2 k2Var = new org.telegram.ui.ActionBar.k2();
+        k2Var.a = true;
+        k2Var.e = true;
+        this.h.showAsSheet(bpVar, k2Var);
     }
 
     @Override // org.telegram.ui.Components.ui
@@ -101,8 +101,8 @@ public final class cp implements ui {
     }
 
     @Override // org.telegram.ui.Components.ui
-    public final void x0(gh ghVar) {
-        ghVar.run();
+    public final void x0(hh hhVar) {
+        hhVar.run();
     }
 
     @Override // org.telegram.ui.Components.ui

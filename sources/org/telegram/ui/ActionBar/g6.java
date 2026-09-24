@@ -26,10 +26,10 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.bc0;
+import org.telegram.ui.Components.mc0;
 import org.telegram.ui.Components.v9;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class g6 implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -69,7 +69,7 @@ public final class g6 implements NotificationCenter.NotificationCenterDelegate {
     public String g0;
     public boolean h;
     public String h0;
-    public a6 i0;
+    public z5 i0;
     public int j0;
     public boolean n;
     public int r;
@@ -322,7 +322,7 @@ public final class g6 implements NotificationCenter.NotificationCenterDelegate {
                 Canvas canvas = new Canvas(createBitmap);
                 int i10 = this.v;
                 if (i10 != 0) {
-                    patternColor = bc0.g(this.r, this.s, i10, this.w);
+                    patternColor = mc0.g(this.r, this.s, i10, this.w);
                 } else {
                     int i11 = this.s;
                     if (i11 != 0) {
@@ -366,7 +366,7 @@ public final class g6 implements NotificationCenter.NotificationCenterDelegate {
             }
             if (str.equals(this.g0)) {
                 this.g0 = null;
-                Utilities.globalQueue.postRunnable(new m4.g0(26, this, (File) objArr[1]));
+                Utilities.globalQueue.postRunnable(new a6(2, this, (File) objArr[1]));
                 return;
             }
             if (str.equals(FileLoader.getAttachFileName(this.F.document))) {
@@ -498,54 +498,54 @@ public final class g6 implements NotificationCenter.NotificationCenterDelegate {
         f6Var2.p = f6Var.p;
         f6Var2.q = f6Var.q;
         f6Var2.b = this;
-        a6 a6Var = this.i0;
-        if (a6Var != null) {
-            a6 a6Var2 = new a6();
-            a6Var2.a = "";
-            a6Var2.b = "";
-            a6Var2.c = "";
-            a6Var2.c = a6Var.c;
-            a6Var2.d = a6Var.d;
-            a6Var2.e = a6Var.e;
-            a6Var2.f = a6Var.f;
-            a6Var2.g = a6Var.g;
-            a6Var2.h = a6Var.h;
-            a6Var2.i = a6Var.i;
-            a6Var2.j = a6Var.j;
-            a6Var2.k = a6Var.k;
-            a6Var2.p = this;
-            a6Var2.q = f6Var2;
-            if (TextUtils.isEmpty(a6Var.a)) {
-                a6Var2.a = "";
+        z5 z5Var = this.i0;
+        if (z5Var != null) {
+            z5 z5Var2 = new z5();
+            z5Var2.a = "";
+            z5Var2.b = "";
+            z5Var2.c = "";
+            z5Var2.c = z5Var.c;
+            z5Var2.d = z5Var.d;
+            z5Var2.e = z5Var.e;
+            z5Var2.f = z5Var.f;
+            z5Var2.g = z5Var.g;
+            z5Var2.h = z5Var.h;
+            z5Var2.i = z5Var.i;
+            z5Var2.j = z5Var.j;
+            z5Var2.k = z5Var.k;
+            z5Var2.p = this;
+            z5Var2.q = f6Var2;
+            if (TextUtils.isEmpty(z5Var.a)) {
+                z5Var2.a = "";
             } else {
                 try {
-                    File file = new File(ApplicationLoader.getFilesDirFixed(), a6Var.a);
+                    File file = new File(ApplicationLoader.getFilesDirFixed(), z5Var.a);
                     File filesDirFixed = ApplicationLoader.getFilesDirFixed();
-                    String j3 = a6Var2.p.j(a6Var2.q, false);
-                    a6Var2.a = j3;
+                    String j3 = z5Var2.p.j(z5Var2.q, false);
+                    z5Var2.a = j3;
                     AndroidUtilities.copyFile(file, new File(filesDirFixed, j3));
                 } catch (Exception e) {
-                    a6Var2.a = "";
+                    z5Var2.a = "";
                     FileLog.e(e);
                 }
             }
-            if (TextUtils.isEmpty(a6Var.b)) {
-                a6Var2.b = "";
-            } else if (a6Var.b.equals(a6Var.a)) {
-                a6Var2.b = a6Var2.a;
+            if (TextUtils.isEmpty(z5Var.b)) {
+                z5Var2.b = "";
+            } else if (z5Var.b.equals(z5Var.a)) {
+                z5Var2.b = z5Var2.a;
             } else {
                 try {
-                    File file2 = new File(ApplicationLoader.getFilesDirFixed(), a6Var.b);
+                    File file2 = new File(ApplicationLoader.getFilesDirFixed(), z5Var.b);
                     File filesDirFixed2 = ApplicationLoader.getFilesDirFixed();
-                    String j10 = a6Var2.p.j(a6Var2.q, true);
-                    a6Var2.b = j10;
+                    String j10 = z5Var2.p.j(z5Var2.q, true);
+                    z5Var2.b = j10;
                     AndroidUtilities.copyFile(file2, new File(filesDirFixed2, j10));
                 } catch (Exception e7) {
-                    a6Var2.b = "";
+                    z5Var2.b = "";
                     FileLog.e(e7);
                 }
             }
-            f6Var2.y = a6Var2;
+            f6Var2.y = z5Var2;
         }
         this.Z = this.Y;
         f6Var2.a = i10;
@@ -629,27 +629,27 @@ public final class g6 implements NotificationCenter.NotificationCenterDelegate {
                 return;
             }
             JSONObject jSONObject = new JSONObject(string);
-            a6 a6Var = new a6();
-            a6Var.a = jSONObject.getString("wall");
-            a6Var.b = jSONObject.getString("owall");
-            a6Var.d = jSONObject.getInt("pColor");
-            a6Var.e = jSONObject.getInt("pGrColor");
-            a6Var.f = jSONObject.optInt("pGrColor2");
-            a6Var.g = jSONObject.optInt("pGrColor3");
-            a6Var.h = jSONObject.getInt("pGrAngle");
-            a6Var.c = jSONObject.getString("wallSlug");
-            a6Var.i = jSONObject.getBoolean("wBlur");
-            a6Var.j = jSONObject.getBoolean("wMotion");
-            a6Var.k = (float) jSONObject.getDouble("pIntensity");
-            a6Var.p = this;
-            a6Var.q = f6Var;
+            z5 z5Var = new z5();
+            z5Var.a = jSONObject.getString("wall");
+            z5Var.b = jSONObject.getString("owall");
+            z5Var.d = jSONObject.getInt("pColor");
+            z5Var.e = jSONObject.getInt("pGrColor");
+            z5Var.f = jSONObject.optInt("pGrColor2");
+            z5Var.g = jSONObject.optInt("pGrColor3");
+            z5Var.h = jSONObject.getInt("pGrAngle");
+            z5Var.c = jSONObject.getString("wallSlug");
+            z5Var.i = jSONObject.getBoolean("wBlur");
+            z5Var.j = jSONObject.getBoolean("wMotion");
+            z5Var.k = (float) jSONObject.getDouble("pIntensity");
+            z5Var.p = this;
+            z5Var.q = f6Var;
             if (f6Var != null) {
-                f6Var.y = a6Var;
+                f6Var.y = z5Var;
             } else {
-                this.i0 = a6Var;
+                this.i0 = z5Var;
             }
             if (jSONObject.has("wallId") && jSONObject.getLong("wallId") == 1000001) {
-                a6Var.c = "d";
+                z5Var.c = "d";
             }
         } catch (Throwable th2) {
             FileLog.e(th2);
@@ -678,23 +678,23 @@ public final class g6 implements NotificationCenter.NotificationCenterDelegate {
         }
     }
 
-    public final void v(a6 a6Var) {
-        if (this.i0 == a6Var) {
+    public final void v(z5 z5Var) {
+        if (this.i0 == z5Var) {
             return;
         }
         f6 k10 = k(false);
-        a6 a6Var2 = this.i0;
-        if (a6Var2 != null) {
-            a6.a(a6Var2);
+        z5 z5Var2 = this.i0;
+        if (z5Var2 != null) {
+            z5.a(z5Var2);
         }
-        if (a6Var != null) {
-            a6Var.q = k10;
-            a6Var.p = this;
-            a6Var.c();
+        if (z5Var != null) {
+            z5Var.q = k10;
+            z5Var.p = this;
+            z5Var.c();
         }
-        this.i0 = a6Var;
+        this.i0 = z5Var;
         if (k10 != null) {
-            k10.y = a6Var;
+            k10.y = z5Var;
         }
     }
 

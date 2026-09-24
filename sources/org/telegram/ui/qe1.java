@@ -6,7 +6,7 @@ import android.view.animation.OvershootInterpolator;
 import android.widget.FrameLayout;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class qe1 extends FrameLayout {
     public ValueAnimator a;
@@ -47,8 +47,8 @@ public final class qe1 extends FrameLayout {
             if (f7 != 0.0f) {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(f7, 0.0f);
                 this.a = ofFloat;
-                ofFloat.addUpdateListener(new s11(this, 16));
-                this.a.addListener(new wq0(this, 23));
+                ofFloat.addUpdateListener(new q11(this, 16));
+                this.a.addListener(new xo0(this, 24));
                 this.a.setInterpolator(new OvershootInterpolator(5.0f));
                 this.a.setDuration(350L);
                 this.a.start();

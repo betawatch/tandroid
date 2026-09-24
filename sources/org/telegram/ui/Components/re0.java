@@ -1,47 +1,35 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+import android.app.Activity;
+import android.graphics.Rect;
+import android.view.View;
+import androidx.core.widget.NestedScrollView;
+
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class re0 extends r6 {
-    public final /* synthetic */ int b;
-    public final /* synthetic */ ue0 c;
+public final class re0 extends NestedScrollView {
+    public View W;
+    public final /* synthetic */ ze0 a0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public re0(ue0 ue0Var, int i10) {
-        super("thumbAnimationProgress", 0);
-        this.b = i10;
-        switch (i10) {
-            case 1:
-                this.c = ue0Var;
-                super("thumbImageVisibleProgress", 0);
-                break;
-            default:
-                this.c = ue0Var;
-                break;
-        }
+    public re0(ze0 ze0Var, Activity activity) {
+        super(activity);
+        this.a0 = ze0Var;
     }
 
-    @Override // org.telegram.ui.Components.r6
-    public final void b(Object obj, float f7) {
-        switch (this.b) {
-            case 0:
-                this.c.r = f7;
-                ((ue0) obj).invalidate();
-                break;
-            default:
-                this.c.n = f7;
-                ((ue0) obj).invalidate();
-                break;
+    @Override // androidx.core.widget.NestedScrollView
+    public final int f(Rect rect) {
+        if (this.W == null || this.a0.d.getTop() != getPaddingTop()) {
+            return 0;
         }
+        int f7 = super.f(rect);
+        int currentActionBarHeight = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() - (((this.W.getTop() - getScrollY()) + rect.top) + f7);
+        return currentActionBarHeight > 0 ? org.telegram.messenger.ok.y(10.0f, currentActionBarHeight, f7) : f7;
     }
 
-    @Override // android.util.Property
-    public final Object get(Object obj) {
-        switch (this.b) {
-            case 0:
-                return Float.valueOf(this.c.r);
-            default:
-                return Float.valueOf(this.c.n);
-        }
+    @Override // androidx.core.widget.NestedScrollView, android.view.ViewGroup, android.view.ViewParent
+    public final void requestChildFocus(View view, View view2) {
+        this.W = view2;
+        super.requestChildFocus(view, view2);
     }
 }

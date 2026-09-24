@@ -3,9 +3,9 @@ package org.telegram.ui;
 import android.content.Context;
 import android.text.Editable;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class fh1 extends org.telegram.ui.Cells.i3 {
+public final class fh1 extends org.telegram.ui.Cells.j3 {
     public final /* synthetic */ int x;
     public final /* synthetic */ UserInfoActivity y;
 
@@ -16,7 +16,7 @@ public final class fh1 extends org.telegram.ui.Cells.i3 {
         this.y = userInfoActivity;
     }
 
-    @Override // org.telegram.ui.Cells.i3
+    @Override // org.telegram.ui.Cells.j3
     public final void b(Editable editable) {
         switch (this.x) {
             case 0:

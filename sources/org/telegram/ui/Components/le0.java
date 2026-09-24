@@ -1,27 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.app.Activity;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class le0 extends AnimatorListenerAdapter {
+public final /* synthetic */ class le0 implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ pe0 b;
+    public final /* synthetic */ String[] b;
+    public final /* synthetic */ Activity c;
+    public final /* synthetic */ Utilities.Callback d;
 
-    public /* synthetic */ le0(pe0 pe0Var, int i10) {
+    public /* synthetic */ le0(String[] strArr, Activity activity, Utilities.Callback callback, int i10) {
         this.a = i10;
-        this.b = pe0Var;
+        this.b = strArr;
+        this.c = activity;
+        this.d = callback;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        int i10 = this.a;
+        String[] strArr = this.b;
+        switch (i10) {
             case 0:
-                this.b.x = null;
+                ne0.a(strArr, this.c, this.d);
                 break;
             default:
-                this.b.y = null;
+                ne0.b(strArr, this.c, this.d);
                 break;
         }
     }

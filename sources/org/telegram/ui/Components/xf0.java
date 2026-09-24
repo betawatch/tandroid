@@ -1,65 +1,41 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class xf0 extends org.telegram.ui.l4 {
-    public final /* synthetic */ int h;
-    public final /* synthetic */ Object n;
+public final /* synthetic */ class xf0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ zf0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ xf0(Object obj, Context context, int i10) {
-        super(context);
-        this.h = i10;
-        this.n = obj;
+    public /* synthetic */ xf0(zf0 zf0Var, int i10) {
+        this.a = i10;
+        this.b = zf0Var;
     }
 
-    @Override // android.view.ViewGroup
-    public boolean drawChild(Canvas canvas, View view, long j3) {
-        MessageObject playingMessageObject;
-        switch (this.h) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                boolean drawChild = super.drawChild(canvas, view, j3);
-                PipRoundVideoView pipRoundVideoView = (PipRoundVideoView) this.n;
-                if (view == pipRoundVideoView.c && (playingMessageObject = MediaController.getInstance().getPlayingMessageObject()) != null) {
-                    pipRoundVideoView.E.set(AndroidUtilities.dpf2(1.5f), AndroidUtilities.dpf2(1.5f), getMeasuredWidth() - AndroidUtilities.dpf2(1.5f), getMeasuredHeight() - AndroidUtilities.dpf2(1.5f));
-                    canvas.drawArc(pipRoundVideoView.E, -90.0f, playingMessageObject.audioProgress * 360.0f, false, org.telegram.ui.ActionBar.h6.k2);
+                org.telegram.ui.au0 au0Var = this.b.a;
+                RadialProgressView radialProgressView = au0Var.n;
+                View view = au0Var.r;
+                radialProgressView.setVisibility(4);
+                if (au0Var.F) {
+                    au0Var.F = false;
+                    au0Var.setPlaybackSpeed(au0Var.E);
                 }
-                return drawChild;
-            default:
-                return super.drawChild(canvas, view, j3);
-        }
-    }
-
-    @Override // org.telegram.ui.l4, android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.h) {
-            case 1:
-                super.onMeasure(i10, i11);
-                b91 b91Var = (b91) this.n;
-                if (b91Var.f != null) {
-                    ViewGroup.LayoutParams layoutParams = b91Var.d.getLayoutParams();
-                    layoutParams.width = getMeasuredWidth();
-                    layoutParams.height = getMeasuredHeight();
-                    ImageView imageView = b91Var.e;
-                    if (imageView != null) {
-                        ViewGroup.LayoutParams layoutParams2 = imageView.getLayoutParams();
-                        layoutParams2.width = getMeasuredWidth();
-                        layoutParams2.height = getMeasuredHeight();
-                        break;
-                    }
+                view.setEnabled(true);
+                view.setAlpha(1.0f);
+                PhotoViewer photoViewer = au0Var.b;
+                if (photoViewer != null) {
+                    photoViewer.z0();
+                    break;
                 }
                 break;
             default:
-                super.onMeasure(i10, i11);
+                this.b.a.h.setVisibility(4);
                 break;
         }
     }

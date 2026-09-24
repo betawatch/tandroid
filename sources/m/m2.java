@@ -17,9 +17,9 @@ import java.lang.ref.WeakReference;
 import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 import org.xmlpull.v1.XmlPullParserException;
-import v7.r8;
+import v7.s8;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class m2 {
     public static m2 i;
@@ -282,7 +282,7 @@ public final class m2 {
         PorterDuff.Mode mode = null;
         if (i12 != null) {
             int[] iArr = l1.a;
-            Drawable d = r8.d(drawable.mutate());
+            Drawable d = s8.d(drawable.mutate());
             d.setTintList(i12);
             if (this.g != null && i10 == R.drawable.abc_switch_thumb_material) {
                 mode = PorterDuff.Mode.MULTIPLY;

@@ -6,9 +6,9 @@ import com.google.android.gms.internal.vision.e2;
 import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import v7.r6;
+import v7.s6;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public abstract class f {
     public static final Pattern a = Pattern.compile("^rgb\\((\\d{1,3}),(\\d{1,3}),(\\d{1,3})\\)$");
@@ -164,7 +164,7 @@ public abstract class f {
                 return Color.rgb(parseInt4, parseInt5, Integer.parseInt(group8, 10));
             }
         } else {
-            Integer num = (Integer) d.get(r6.b(replace));
+            Integer num = (Integer) d.get(s6.b(replace));
             if (num != null) {
                 return num.intValue();
             }

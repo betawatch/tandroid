@@ -20,7 +20,7 @@ import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ul;
+import org.telegram.messenger.ok;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.rr;
@@ -29,7 +29,7 @@ import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 import org.webrtc.VideoSink;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class k4 extends FrameLayout implements RendererCommon.RendererEvents, NotificationCenter.NotificationCenterDelegate {
     public int a;
@@ -53,10 +53,10 @@ public final class k4 extends FrameLayout implements RendererCommon.RendererEven
         org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
         this.e = w9Var;
         w9Var.setAlpha(0.75f);
-        addView(w9Var, w7.x5.e(-1, -1, 119));
+        addView(w9Var, w7.y5.e(-1, -1, 119));
         TextureView textureView = new TextureView(context);
         this.f = textureView;
-        addView(textureView, w7.x5.e(-1, -1, 119));
+        addView(textureView, w7.y5.e(-1, -1, 119));
         TextureViewRenderer textureViewRenderer = new TextureViewRenderer(context);
         this.d = textureViewRenderer;
         textureViewRenderer.setOpaque(false);
@@ -64,14 +64,14 @@ public final class k4 extends FrameLayout implements RendererCommon.RendererEven
         textureViewRenderer.setIsCamera(true);
         textureViewRenderer.setRotateTextureWithScreen(true);
         textureViewRenderer.setScalingType(RendererCommon.ScalingType.SCALE_ASPECT_FIT);
-        addView(textureViewRenderer, w7.x5.e(-1, -1, 119));
+        addView(textureViewRenderer, w7.y5.e(-1, -1, 119));
         textureViewRenderer.setAlpha(1.0f);
         this.c = null;
         j4 j4Var = new j4(context);
         this.b = j4Var;
         j4Var.setAlpha(0.0f);
         j4Var.setVisibility(8);
-        addView(j4Var, w7.x5.e(-1, -1, 119));
+        addView(j4Var, w7.y5.e(-1, -1, 119));
     }
 
     public final boolean a() {
@@ -115,7 +115,7 @@ public final class k4 extends FrameLayout implements RendererCommon.RendererEven
         if (d6Var == null) {
             long j10 = this.s;
             if (j10 != 0 && this.r && (textureViewRenderer = this.d) != null) {
-                File file = new File(FileLoader.getDirectory(4), org.telegram.ui.Cells.q3.h(j10, "live", ".jpg"));
+                File file = new File(FileLoader.getDirectory(4), org.telegram.ui.Cells.c1.j(j10, "live", ".jpg"));
                 Bitmap bitmap = textureViewRenderer.getBitmap();
                 if (bitmap != null) {
                     Paint paint = new Paint(3);
@@ -145,7 +145,7 @@ public final class k4 extends FrameLayout implements RendererCommon.RendererEven
             if (j3 == 0) {
                 w9Var.b();
             } else {
-                String absolutePath = new File(FileLoader.getDirectory(4), org.telegram.ui.Cells.q3.h(j3, "live", ".jpg")).getAbsolutePath();
+                String absolutePath = new File(FileLoader.getDirectory(4), org.telegram.ui.Cells.c1.j(j3, "live", ".jpg")).getAbsolutePath();
                 if (j3 > 0) {
                     TLRPC.User user = MessagesController.getInstance(this.a).getUser(Long.valueOf(j3));
                     ImageLocation forUser = ImageLocation.getForUser(this.a, user, 1);
@@ -255,7 +255,7 @@ public final class k4 extends FrameLayout implements RendererCommon.RendererEven
     public final void e(boolean z10, boolean z11) {
         if (z10 || !z11) {
             if (z11) {
-                ul.r(getTextureView().animate().alpha(z10 ? 1.0f : 0.0f), rr.h, 320L);
+                ok.s(getTextureView().animate().alpha(z10 ? 1.0f : 0.0f), rr.h, 320L);
             } else {
                 getTextureView().animate().cancel();
                 getTextureView().setAlpha(z10 ? 1.0f : 0.0f);
@@ -308,7 +308,7 @@ public final class k4 extends FrameLayout implements RendererCommon.RendererEven
         if (this.h == null) {
             View view = new View(getContext());
             this.h = view;
-            addView(view, w7.x5.g());
+            addView(view, w7.y5.g());
         }
         return this.h;
     }

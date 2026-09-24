@@ -34,13 +34,13 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.f01;
 import org.telegram.ui.Components.p20;
 import org.telegram.ui.Components.pq;
 import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.t01;
+import org.telegram.ui.Components.zc;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public abstract class ia {
     public static p20 b;
@@ -50,7 +50,7 @@ public abstract class ia {
     public static RectF f;
     public static Paint g;
     public static Paint h;
-    public static f01 i;
+    public static t01 i;
     public static int j;
     public static BitmapDrawable m;
     public static final p20[] a = new p20[2];
@@ -64,18 +64,18 @@ public abstract class ia {
     public static final PathMeasure s = new PathMeasure();
     public static final Path t = new Path();
 
-    public static void a(org.telegram.ui.ActionBar.i5 i5Var) {
+    public static void a(org.telegram.ui.ActionBar.h5 h5Var) {
         String string = LocaleController.getString(R.string.UploadingStory);
         if (string.indexOf("…") <= 0) {
-            i5Var.l(string, false);
+            h5Var.l(string, false);
             return;
         }
         SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(string);
         pc pcVar = new pc();
         valueOf.setSpan(pcVar, valueOf.length() - 1, valueOf.length(), 0);
-        pcVar.a = i5Var;
+        pcVar.a = h5Var;
         pcVar.n = true;
-        i5Var.l(valueOf, false);
+        h5Var.l(valueOf, false);
     }
 
     public static void b(TL_stories.StoryItem storyItem, TLRPC.User user) {
@@ -311,8 +311,8 @@ public abstract class ia {
                 caVar.B = 1.0f;
             }
         }
-        yc ycVar = caVar.H;
-        float a2 = ycVar != null ? ycVar.a(0.08f) : 1.0f;
+        zc zcVar = caVar.H;
+        float a2 = zcVar != null ? zcVar.a(0.08f) : 1.0f;
         if (caVar.C != z17 && z17) {
             caVar.K = 1.0f;
             caVar.L = false;
@@ -716,7 +716,7 @@ public abstract class ia {
     public static void k(Canvas canvas, RectF rectF, float f7, boolean z10, float f10) {
         Canvas canvas2;
         if (i == null) {
-            i = new f01(LocaleController.getString(R.string.LiveStoryBadge), 9.66f, AndroidUtilities.bold());
+            i = new t01(LocaleController.getString(R.string.LiveStoryBadge), 9.66f, AndroidUtilities.bold());
         }
         if (g == null) {
             Paint paint = new Paint(1);
@@ -748,10 +748,10 @@ public abstract class ia {
             f.set(rectF.centerX() - f11, rectF.bottom - f12, rectF.centerX() + f11, rectF.bottom + f13);
             RectF rectF3 = f;
             canvas.drawRoundRect(rectF3, rectF3.height() / 2.0f, f.height() / 2.0f, h);
-            f01 f01Var = i;
+            t01 t01Var = i;
             RectF rectF4 = f;
             canvas2 = canvas;
-            f01Var.c(rectF4.left + lerp, rectF4.centerY(), f7, -1, canvas2);
+            t01Var.c(rectF4.left + lerp, rectF4.centerY(), f7, -1, canvas2);
         } else {
             canvas2 = canvas;
         }
@@ -1050,7 +1050,7 @@ public abstract class ia {
             }
             ((aa) daVar.e).setImage(null, null, ImageLocation.getForPhoto(FileLoader.getClosestPhotoSizeWithSize(arrayList2, ConnectionsManager.DEFAULT_DATACENTER_ID), photo2), s10, null, null, null, 0L, null, storyItem2, 0);
         } else {
-            ((aa) daVar.e).setImage(ImageLocation.getForDocument(document), w.c.g(s10, "_pframe"), null, null, null, 0L, null, storyItem2, 0);
+            ((aa) daVar.e).setImage(ImageLocation.getForDocument(document), v7.j.t(s10, "_pframe"), null, null, null, 0L, null, storyItem2, 0);
         }
         return daVar;
     }

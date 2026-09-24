@@ -2,18 +2,18 @@ package org.telegram.ui;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class v6 extends org.telegram.ui.Components.dd {
+public final class v6 extends org.telegram.ui.Components.ed {
     public final /* synthetic */ x6 e0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public v6(x6 x6Var, Context context) {
-        super(context, 11, org.telegram.ui.Components.dd.W, 0, org.telegram.ui.Components.dd.a0);
+        super(context, 11, org.telegram.ui.Components.ed.W, 0, org.telegram.ui.Components.ed.a0);
         this.e0 = x6Var;
     }
 
-    @Override // org.telegram.ui.Components.dd
+    @Override // org.telegram.ui.Components.ed
     public final void d(int i10, boolean z10) {
         z6 z6Var = this.e0.e;
         if (!z10) {
@@ -27,8 +27,8 @@ public final class v6 extends org.telegram.ui.Components.dd {
         int i12 = 0;
         while (true) {
             if (i12 < z6Var.a0.size()) {
-                u6 u6Var = (u6) z6Var.a0.get(i12);
-                if (u6Var != null && u6Var.a == 11 && u6Var.f == i10) {
+                t6 t6Var = (t6) z6Var.a0.get(i12);
+                if (t6Var != null && t6Var.a == 11 && t6Var.f == i10) {
                     i11 = i12;
                     break;
                 }

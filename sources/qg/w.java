@@ -6,17 +6,17 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.view.View;
 import android.widget.FrameLayout;
-import org.telegram.ui.tt0;
+import org.telegram.ui.st0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class w implements pg.u {
     public boolean a;
     public final /* synthetic */ Bitmap b;
-    public final /* synthetic */ tt0 c;
+    public final /* synthetic */ st0 c;
 
-    public w(tt0 tt0Var, Bitmap bitmap) {
-        this.c = tt0Var;
+    public w(st0 st0Var, Bitmap bitmap) {
+        this.c = st0Var;
         this.b = bitmap;
     }
 
@@ -27,14 +27,14 @@ public final class w implements pg.u {
 
     @Override // pg.u
     public final void b(Canvas canvas) {
-        e0 e0Var = this.c.W0;
-        Matrix matrix = e0Var.getMatrix();
+        d0 d0Var = this.c.W0;
+        Matrix matrix = d0Var.getMatrix();
         canvas.save();
-        canvas.translate(e0Var.getX(), e0Var.getY());
+        canvas.translate(d0Var.getX(), d0Var.getY());
         canvas.concat(matrix);
-        float width = e0Var.getWidth();
+        float width = d0Var.getWidth();
         Bitmap bitmap = this.b;
-        canvas.scale(width / bitmap.getWidth(), e0Var.getHeight() / bitmap.getHeight(), 0.0f, 0.0f);
+        canvas.scale(width / bitmap.getWidth(), d0Var.getHeight() / bitmap.getHeight(), 0.0f, 0.0f);
         canvas.drawBitmap(bitmap, 0.0f, 0.0f, (Paint) null);
         canvas.restore();
     }
@@ -66,14 +66,14 @@ public final class w implements pg.u {
 
     @Override // pg.u
     public final void h(int i10) {
-        tt0 tt0Var = this.c;
-        tt0Var.x0(false);
-        pg.t0 t0Var = tt0Var.V1;
-        t0Var.h(i10, true);
-        t0Var.g();
-        tt0Var.setNewColor(i10);
-        l0 l0Var = tt0Var.G1;
-        l0Var.setSelectedColorIndex(t0Var.d());
-        l0Var.getAdapter().l();
+        st0 st0Var = this.c;
+        st0Var.x0(false);
+        pg.u0 u0Var = st0Var.V1;
+        u0Var.h(i10, true);
+        u0Var.g();
+        st0Var.setNewColor(i10);
+        k0 k0Var = st0Var.G1;
+        k0Var.setSelectedColorIndex(u0Var.d());
+        k0Var.getAdapter().l();
     }
 }

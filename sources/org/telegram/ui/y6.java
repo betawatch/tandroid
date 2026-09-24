@@ -13,10 +13,10 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class y6 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
-    public s6 a;
+    public r6 a;
     public final org.telegram.ui.ActionBar.d6 b;
     public final TextView c;
     public final org.telegram.ui.Components.p6 d;
@@ -38,7 +38,7 @@ public final class y6 extends FrameLayout implements NotificationCenter.Notifica
         textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
         textView.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.G6, d6Var));
         boolean z10 = LocaleController.isRTL;
-        addView(textView, w7.x5.d(-1, -1.0f, (z10 ? 5 : 3) | 48, z10 ? 21.0f : 72.0f, 0.0f, z10 ? 72.0f : 21.0f, 0.0f));
+        addView(textView, w7.y5.d(-1, -1.0f, (z10 ? 5 : 3) | 48, z10 ? 21.0f : 72.0f, 0.0f, z10 ? 72.0f : 21.0f, 0.0f));
         org.telegram.ui.Components.p6 p6Var = new org.telegram.ui.Components.p6(context, true, true, !LocaleController.isRTL);
         this.d = p6Var;
         p6Var.b(0.55f, 320L, org.telegram.ui.Components.rr.h);
@@ -46,11 +46,11 @@ public final class y6 extends FrameLayout implements NotificationCenter.Notifica
         p6Var.setGravity((LocaleController.isRTL ? 3 : 5) | 16);
         p6Var.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.I6, d6Var));
         boolean z11 = LocaleController.isRTL;
-        addView(p6Var, w7.x5.d(-2, -1.0f, (z11 ? 3 : 5) | 48, z11 ? 21.0f : 72.0f, 0.0f, z11 ? 72.0f : 21.0f, 0.0f));
+        addView(p6Var, w7.y5.d(-2, -1.0f, (z11 ? 3 : 5) | 48, z11 ? 21.0f : 72.0f, 0.0f, z11 ? 72.0f : 21.0f, 0.0f));
         org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
         this.e = w9Var;
         w9Var.getAvatarDrawable().p = 0.8f;
-        addView(w9Var, w7.x5.d(38, 38.0f, (LocaleController.isRTL ? 5 : 3) | 16, 17.0f, 0.0f, 17.0f, 0.0f));
+        addView(w9Var, w7.y5.d(38, 38.0f, (LocaleController.isRTL ? 5 : 3) | 16, 17.0f, 0.0f, 17.0f, 0.0f));
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate

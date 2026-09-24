@@ -31,7 +31,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.camera.Camera2Session;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class Camera2Session {
     private CameraCharacteristics cameraCharacteristics;
@@ -64,7 +64,7 @@ public class Camera2Session {
     private boolean opened = false;
     private final Rect cropRegion = new Rect();
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public class 1 extends CameraDevice.StateCallback {
         final /* synthetic */ String val$cameraId;
 
@@ -99,7 +99,7 @@ public class Camera2Session {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public class 2 extends CameraCaptureSession.StateCallback {
         final /* synthetic */ String val$cameraId;
 
@@ -142,7 +142,7 @@ public class Camera2Session {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public class 3 implements ImageReader.OnImageAvailableListener {
         final /* synthetic */ File val$file;
         final /* synthetic */ int val$orientation;
@@ -228,7 +228,7 @@ public class Camera2Session {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class CompareSizesByArea implements Comparator<android.util.Size> {
         @Override // java.util.Comparator
         public int compare(android.util.Size size, android.util.Size size2) {

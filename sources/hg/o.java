@@ -5,9 +5,9 @@ import android.view.KeyEvent;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.voip.VoIPService;
-import org.telegram.ui.ActionBar.f3;
+import org.telegram.ui.ActionBar.e3;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o implements DialogInterface.OnShowListener {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final /* synthetic */ class o implements DialogInterface.OnShowListener {
                 AndroidUtilities.showKeyboard(uVar);
                 break;
             default:
-                VoIPService.lambda$toggleSpeakerphoneOrShowRouteSheet$94((f3) this.b, (Integer) this.c, dialogInterface);
+                VoIPService.lambda$toggleSpeakerphoneOrShowRouteSheet$94((e3) this.b, (Integer) this.c, dialogInterface);
                 break;
         }
     }

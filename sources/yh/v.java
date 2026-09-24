@@ -2,7 +2,7 @@ package yh;
 
 import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v implements MessagesStorage.IntCallback {
     public final /* synthetic */ int a;
@@ -29,10 +29,10 @@ public final /* synthetic */ class v implements MessagesStorage.IntCallback {
                 e0Var.h.setText("");
                 break;
             default:
-                d3 d3Var = (d3) this.b;
-                d3Var.getClass();
-                d3Var.q = i10 == 0 ? zf.b.a : zf.b.b;
-                d3Var.a(true);
+                c3 c3Var = (c3) this.b;
+                c3Var.getClass();
+                c3Var.q = i10 == 0 ? zf.b.a : zf.b.b;
+                c3Var.a(true);
                 break;
         }
     }

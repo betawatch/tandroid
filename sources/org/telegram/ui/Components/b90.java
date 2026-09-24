@@ -1,103 +1,35 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.text.Layout;
-import android.text.SpannableString;
-import android.text.style.CharacterStyle;
-import android.text.style.ClickableSpan;
-import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class b90 extends org.telegram.ui.ActionBar.i5 {
-    public final org.telegram.ui.ActionBar.d6 M0;
-    public final a90 N0;
-    public e90 O0;
+public final class b90 extends uq0 {
+    public final /* synthetic */ g90 b1;
 
-    public b90(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context);
-        this.N0 = new a90(this);
-        this.M0 = d6Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b90(g90 g90Var, Context context, String str, String str2, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, null, str, false, str2, false, d6Var);
+        this.b1 = g90Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.i5, android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        canvas.save();
-        canvas.translate(getLayoutX(), getLayoutY());
-        if (this.N0.f(canvas)) {
-            invalidate();
+    @Override // org.telegram.ui.Components.uq0
+    public final void R0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        String formatString;
+        if (z10) {
+            if (iVar == null || iVar.m() != 1) {
+                formatString = LocaleController.formatString(R.string.InvLinkToChats, LocaleController.formatPluralString("Chats", i10, new Object[0]));
+            } else {
+                long j3 = ((TLRPC.Dialog) iVar.n(0)).id;
+                formatString = (j3 == 0 || j3 == UserConfig.getInstance(this.currentAccount).getClientUserId()) ? LocaleController.getString(R.string.InvLinkToSavedMessages) : LocaleController.formatString(R.string.InvLinkToUser, MessagesController.getInstance(this.currentAccount).getPeerName(j3, true));
+            }
+            this.b1.e(R.raw.forward, AndroidUtilities.replaceTags(formatString));
         }
-        canvas.restore();
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:14:0x00b4  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x00d4  */
-    @Override // org.telegram.ui.ActionBar.i5, android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        ClickableSpan clickableSpan;
-        CharacterStyle characterStyle;
-        a90 a90Var = this.N0;
-        if (a90Var != null) {
-            Layout layout = getLayout();
-            int x10 = (int) motionEvent.getX();
-            int y3 = (int) motionEvent.getY();
-            Layout layout2 = getLayout();
-            if (layout2 != null) {
-                int layoutX = (int) (x10 - getLayoutX());
-                int layoutY = (int) (y3 - getLayoutY());
-                int lineForVertical = layout2.getLineForVertical(layoutY);
-                float f7 = layoutX;
-                int offsetForHorizontal = layout2.getOffsetForHorizontal(lineForVertical, f7);
-                float lineLeft = layout2.getLineLeft(lineForVertical);
-                if (lineLeft <= f7 && layout2.getLineWidth(lineForVertical) + lineLeft >= f7 && layoutY >= 0 && layoutY <= layout2.getHeight()) {
-                    ClickableSpan[] clickableSpanArr = (ClickableSpan[]) new SpannableString(layout2.getText()).getSpans(offsetForHorizontal, offsetForHorizontal, ClickableSpan.class);
-                    if (clickableSpanArr.length != 0 && !AndroidUtilities.isAccessibilityScreenReaderEnabled()) {
-                        clickableSpan = clickableSpanArr[0];
-                        if (clickableSpan == null && motionEvent.getAction() == 0) {
-                            e90 e90Var = new e90(clickableSpan, this.M0, motionEvent.getX(), motionEvent.getY(), 0);
-                            this.O0 = e90Var;
-                            a90Var.a(e90Var, null);
-                            SpannableString spannableString = new SpannableString(layout.getText());
-                            int spanStart = spannableString.getSpanStart(this.O0.i);
-                            int spanEnd = spannableString.getSpanEnd(this.O0.i);
-                            x80 b10 = this.O0.b();
-                            b10.d(layout, spanStart, 0.0f);
-                            layout.getSelectionPath(spanStart, spanEnd, b10);
-                            return true;
-                        }
-                        if (motionEvent.getAction() == 1) {
-                            a90Var.d(true);
-                            e90 e90Var2 = this.O0;
-                            if (e90Var2 != null && (characterStyle = e90Var2.i) == clickableSpan) {
-                                if (characterStyle instanceof ClickableSpan) {
-                                    ((ClickableSpan) characterStyle).onClick(this);
-                                }
-                                this.O0 = null;
-                                return true;
-                            }
-                            this.O0 = null;
-                        }
-                        if (motionEvent.getAction() == 3) {
-                            a90Var.d(true);
-                            this.O0 = null;
-                        }
-                    }
-                }
-            }
-            clickableSpan = null;
-            if (clickableSpan == null) {
-            }
-            if (motionEvent.getAction() == 1) {
-            }
-            if (motionEvent.getAction() == 3) {
-            }
-        }
-        return this.O0 != null || super.onTouchEvent(motionEvent);
     }
 }

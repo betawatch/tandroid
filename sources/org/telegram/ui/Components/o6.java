@@ -25,12 +25,12 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public class o6 extends Drawable {
     public boolean A;
     public boolean B;
-    public og C;
+    public pg C;
     public boolean D;
     public boolean E;
     public boolean F;
@@ -762,7 +762,7 @@ public class o6 extends Drawable {
             runnable2.run();
         }
         this.o.addUpdateListener(new k6(this, 0));
-        this.o.addListener(new org.telegram.ui.u4(this, 28));
+        this.o.addListener(new org.telegram.ui.t4(this, 28));
         this.o.setStartDelay(0L);
         this.o.setDuration(this.r);
         this.o.setInterpolator(this.s);

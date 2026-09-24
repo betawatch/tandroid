@@ -9,7 +9,7 @@ import java.util.ServiceConfigurationError;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public abstract class s1 {
     public static void a(int i10, int i11) {
@@ -19,7 +19,7 @@ public abstract class s1 {
                 a2 = e6.e.a("%s (%s) must not be negative", "index", Integer.valueOf(i10));
             } else {
                 if (i11 < 0) {
-                    throw new IllegalArgumentException(hg.c.i(i11, "negative size: "));
+                    throw new IllegalArgumentException(hg.c.h(i11, "negative size: "));
                 }
                 a2 = e6.e.a("%s (%s) must be less than size (%s)", "index", Integer.valueOf(i10), Integer.valueOf(i11));
             }
@@ -40,7 +40,7 @@ public abstract class s1 {
         if (i11 >= 0) {
             return e6.e.a("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i10), Integer.valueOf(i11));
         }
-        throw new IllegalArgumentException(hg.c.i(i11, "negative size: "));
+        throw new IllegalArgumentException(hg.c.h(i11, "negative size: "));
     }
 
     public static o1 d() {

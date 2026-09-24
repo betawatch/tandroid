@@ -18,14 +18,14 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Cells.t1;
+import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Components.h9;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class d implements ValueAnimator.AnimatorUpdateListener {
     public final h a;
-    public final t1 b;
+    public final u1 b;
     public final ImageReceiver c;
     public final long d;
     public b e;
@@ -54,8 +54,8 @@ public final class d implements ValueAnimator.AnimatorUpdateListener {
         ImageReceiver imageReceiver2 = new ImageReceiver(hVar.a);
         this.c = imageReceiver2;
         this.a = hVar;
-        t1 t1Var = hVar.y;
-        this.b = t1Var;
+        u1 u1Var = hVar.y;
+        this.b = u1Var;
         this.d = j3;
         h9Var.p = 1.0f;
         if (DialogObject.isUserDialog(j3)) {
@@ -69,7 +69,7 @@ public final class d implements ValueAnimator.AnimatorUpdateListener {
                 imageReceiver.setImage(null, null, null, null, h9Var, 0L, null, user, 0);
                 imageReceiver.setRoundRadius(AndroidUtilities.dp(g.a / 2.0f));
                 imageReceiver.setImageCoords(0.0f, 0.0f, AndroidUtilities.dp(r2), AndroidUtilities.dp(r2));
-                Paint M2 = t1Var.M2("paintChatActionText");
+                Paint M2 = u1Var.M2("paintChatActionText");
                 if (str2 != null || M2 == null) {
                 }
                 int dp = AndroidUtilities.displaySize.x - AndroidUtilities.dp(48);
@@ -90,7 +90,7 @@ public final class d implements ValueAnimator.AnimatorUpdateListener {
         str2 = str;
         imageReceiver.setRoundRadius(AndroidUtilities.dp(g.a / 2.0f));
         imageReceiver.setImageCoords(0.0f, 0.0f, AndroidUtilities.dp(r2), AndroidUtilities.dp(r2));
-        Paint M22 = t1Var.M2("paintChatActionText");
+        Paint M22 = u1Var.M2("paintChatActionText");
         if (str2 != null) {
         }
     }

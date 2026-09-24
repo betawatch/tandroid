@@ -2,39 +2,51 @@ package org.telegram.ui.Components;
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class gz0 {
-    public static final gz0 e = new gz0(false, new dz0(TLObject.FLAG_31, -2147483647), jz0.R, 0.0f);
-    public final boolean a;
-    public final dz0 b;
-    public final vy0 c;
-    public final float d;
+    public final /* synthetic */ int a;
 
-    public gz0(boolean z10, dz0 dz0Var, vy0 vy0Var, float f7) {
-        this.a = z10;
-        this.b = dz0Var;
-        this.c = vy0Var;
-        this.d = f7;
+    public /* synthetic */ gz0(int i10) {
+        this.a = i10;
     }
 
-    public static vy0 a(gz0 gz0Var, boolean z10) {
-        vy0 vy0Var = gz0Var.c;
-        return vy0Var != jz0.R ? vy0Var : gz0Var.d == 0.0f ? z10 ? jz0.S : jz0.T : jz0.U;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public final int a(nz0 nz0Var, int i10) {
+        switch (this.a) {
+            case 0:
+                return TLObject.FLAG_31;
+            case 1:
+                return 0;
+            case 2:
+                return i10;
+            case 3:
+                return TLObject.FLAG_31;
+            default:
+                return TLObject.FLAG_31;
         }
-        if (obj == null || gz0.class != obj.getClass()) {
-            return false;
-        }
-        gz0 gz0Var = (gz0) obj;
-        return this.c.equals(gz0Var.c) && this.b.equals(gz0Var.b);
     }
 
-    public final int hashCode() {
-        return this.c.hashCode() + (this.b.hashCode() * 31);
+    public final int b(nz0 nz0Var, int i10) {
+        switch (this.a) {
+            case 0:
+                return TLObject.FLAG_31;
+            case 1:
+                return 0;
+            case 2:
+                return i10;
+            case 3:
+                return 0;
+            default:
+                return 0;
+        }
+    }
+
+    public int c(int i10, int i11) {
+        switch (this.a) {
+            case 4:
+                return i11;
+            default:
+                return i10;
+        }
     }
 }

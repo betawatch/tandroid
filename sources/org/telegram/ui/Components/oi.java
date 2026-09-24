@@ -6,13 +6,13 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public abstract class oi extends FrameLayout {
     public final org.telegram.ui.ActionBar.d6 a;
     public final wi b;
-    public ml0 c;
-    public ml0 d;
+    public wl0 c;
+    public wl0 d;
     public int e;
     public boolean f;
     public boolean h;

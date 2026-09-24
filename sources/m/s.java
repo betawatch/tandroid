@@ -22,9 +22,9 @@ import android.view.textclassifier.TextClassifier;
 import android.widget.EditText;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
-import w7.q7;
+import w7.r7;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class s extends EditText implements r0.o, u0.k {
     public final e2.c a;
@@ -100,7 +100,7 @@ public final class s extends EditText implements r0.o, u0.k {
 
     @Override // android.widget.TextView
     public ActionMode.Callback getCustomSelectionActionModeCallback() {
-        return q7.d(super.getCustomSelectionActionModeCallback());
+        return r7.d(super.getCustomSelectionActionModeCallback());
     }
 
     public ColorStateList getSupportBackgroundTintList() {
@@ -143,7 +143,7 @@ public final class s extends EditText implements r0.o, u0.k {
         InputConnection onCreateInputConnection = super.onCreateInputConnection(editorInfo);
         this.b.getClass();
         w0.h(editorInfo, onCreateInputConnection, this);
-        w7.n.a(editorInfo, onCreateInputConnection, this);
+        w7.o.a(editorInfo, onCreateInputConnection, this);
         if (onCreateInputConnection != null && Build.VERSION.SDK_INT <= 30 && (e = r0.i0.e(this)) != null) {
             t0.b.b(editorInfo, e);
             onCreateInputConnection = t0.f.a(onCreateInputConnection, editorInfo, new r5.d(this, 3));
@@ -243,7 +243,7 @@ public final class s extends EditText implements r0.o, u0.k {
 
     @Override // android.widget.TextView
     public void setCustomSelectionActionModeCallback(ActionMode.Callback callback) {
-        super.setCustomSelectionActionModeCallback(q7.e(callback, this));
+        super.setCustomSelectionActionModeCallback(r7.e(callback, this));
     }
 
     public void setEmojiCompatEnabled(boolean z10) {

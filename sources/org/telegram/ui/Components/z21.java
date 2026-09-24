@@ -1,0 +1,35 @@
+package org.telegram.ui.Components;
+
+import androidx.recyclerview.widget.RecyclerView;
+
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* loaded from: classes3.dex */
+public final class z21 extends s4.s0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ k31 b;
+
+    public /* synthetic */ z21(k31 k31Var, int i10) {
+        this.a = i10;
+        this.b = k31Var;
+    }
+
+    @Override // s4.s0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                k31 k31Var = this.b;
+                if (k31Var.k()) {
+                    k31Var.l();
+                    break;
+                }
+                break;
+            default:
+                k31 k31Var2 = this.b;
+                if (k31Var2.k()) {
+                    k31Var2.l();
+                    break;
+                }
+                break;
+        }
+    }
+}

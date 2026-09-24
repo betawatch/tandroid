@@ -1,16 +1,154 @@
 package org.telegram.ui.ActionBar;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Point;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import java.util.WeakHashMap;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.FileLog;
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class x3 extends b2 {
-    @Override // org.telegram.ui.ActionBar.b2
-    public final int e(int i10) {
-        if (i10 == h6.h5) {
-            return -14277082;
+public final class x3 extends FrameLayout {
+    public b5 a;
+    public ActionBarLayout b;
+    public boolean c;
+    public final Paint d;
+    public r0.l1 e;
+    public i0.b f;
+    public i0.b h;
+
+    public x3(Activity activity) {
+        super(activity);
+        this.d = new Paint(1);
+        i0.b bVar = i0.b.e;
+        this.f = bVar;
+        this.h = bVar;
+        n nVar = new n(this, 8);
+        WeakHashMap weakHashMap = r0.i0.a;
+        r0.a0.j(this, nVar);
+        setSystemUiVisibility(1280);
+    }
+
+    @Override // android.view.ViewGroup
+    public final void addView(View view, int i10, ViewGroup.LayoutParams layoutParams) {
+        super.addView(view, i10, layoutParams);
+        r0.l1 l1Var = this.e;
+        if (l1Var != null) {
+            if ((view instanceof ActionBarLayout) || view.getTag() == null) {
+                r0.i0.b(view, l1Var);
+            }
         }
-        if (i10 == h6.j5 || i10 == h6.H5 || i10 == h6.A5) {
-            return -1;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        ActionBarLayout actionBarLayout = this.b;
+        if (actionBarLayout != null && actionBarLayout.getParent() == this) {
+            this.b.N(canvas, this);
         }
-        return h6.v0(i10, this.R0);
+        super.dispatchDraw(canvas);
+    }
+
+    public Paint getInternalNavbarPaint() {
+        return this.d;
+    }
+
+    @Override // android.view.View
+    public final boolean hasOverlappingRendering() {
+        return false;
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return ((ActionBarLayout) this.a).j();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        this.c = true;
+        int childCount = getChildCount();
+        for (int i14 = 0; i14 < childCount; i14++) {
+            View childAt = getChildAt(i14);
+            if (childAt.getVisibility() != 8) {
+                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
+                try {
+                    childAt.layout(layoutParams.leftMargin, layoutParams.topMargin + getPaddingTop(), layoutParams.leftMargin + childAt.getMeasuredWidth(), layoutParams.topMargin + childAt.getMeasuredHeight() + getPaddingTop());
+                } catch (Exception e) {
+                    FileLog.e(e);
+                    if (BuildVars.DEBUG_VERSION) {
+                        throw e;
+                    }
+                }
+            }
+        }
+        this.c = false;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int size = View.MeasureSpec.getSize(i10);
+        int size2 = View.MeasureSpec.getSize(i11);
+        setMeasuredDimension(size, size2);
+        i0.b bVar = this.f;
+        int i12 = (size - bVar.a) - bVar.c;
+        int i13 = (size2 - bVar.b) - bVar.d;
+        Point point = AndroidUtilities.displaySize;
+        point.x = i12;
+        point.y = i13;
+        int childCount = getChildCount();
+        for (int i14 = 0; i14 < childCount; i14++) {
+            View childAt = getChildAt(i14);
+            if (childAt.getVisibility() != 8) {
+                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
+                int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec((size - layoutParams.leftMargin) - layoutParams.rightMargin, TLObject.FLAG_30);
+                int i15 = layoutParams.height;
+                int makeMeasureSpec2 = i15 > 0 ? View.MeasureSpec.makeMeasureSpec(i15, TLObject.FLAG_30) : View.MeasureSpec.makeMeasureSpec((size2 - layoutParams.topMargin) - layoutParams.bottomMargin, TLObject.FLAG_30);
+                if ((childAt instanceof ActionBarLayout) && ((ActionBarLayout) childAt).e0()) {
+                    childAt.forceLayout();
+                }
+                childAt.measure(makeMeasureSpec, makeMeasureSpec2);
+            }
+        }
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.c) {
+            return;
+        }
+        super.requestLayout();
+    }
+
+    public void setActionBarLayout(ActionBarLayout actionBarLayout) {
+        this.b = actionBarLayout;
+    }
+
+    public void setInternalNavigationBarColor(int i10) {
+        Paint paint = this.d;
+        if (paint.getColor() != i10) {
+            paint.setColor(i10);
+            invalidate();
+            int childCount = getChildCount();
+            for (int i11 = 0; i11 < childCount; i11++) {
+                getChildAt(i11).invalidate();
+            }
+        }
+    }
+
+    public void setParentActionBarLayout(b5 b5Var) {
+        this.a = b5Var;
     }
 }

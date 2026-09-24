@@ -14,8 +14,8 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.lt;
+import org.telegram.ui.a6;
 import org.telegram.ui.ad;
-import org.telegram.ui.b6;
 import org.telegram.ui.fc;
 import org.telegram.ui.h8;
 import org.telegram.ui.k9;
@@ -27,7 +27,7 @@ import org.telegram.ui.w6;
 import org.telegram.ui.z6;
 import org.telegram.ui.z9;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class t extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ int a;
@@ -231,19 +231,19 @@ public final class t extends org.telegram.ui.ActionBar.j {
                 break;
             case 19:
                 if (i10 == -1) {
-                    ((org.telegram.ui.p) obj).finishFragment();
+                    ((org.telegram.ui.q) obj).finishFragment();
                     break;
                 }
                 break;
             case 20:
                 if (i10 == -1) {
-                    ((org.telegram.ui.q4) obj).finishFragment();
+                    ((org.telegram.ui.p4) obj).finishFragment();
                     break;
                 }
                 break;
             case 21:
                 if (i10 == -1) {
-                    ((b6) obj).finishFragment();
+                    ((a6) obj).finishFragment();
                     break;
                 }
                 break;
@@ -265,7 +265,7 @@ public final class t extends org.telegram.ui.ActionBar.j {
                         break;
                     }
                 } else {
-                    kVar = ((org.telegram.ui.ActionBar.n2) z6Var).actionBar;
+                    kVar = ((org.telegram.ui.ActionBar.m2) z6Var).actionBar;
                     if (!kVar.s()) {
                         z6Var.finishFragment();
                         break;
@@ -307,7 +307,7 @@ public final class t extends org.telegram.ui.ActionBar.j {
                         break;
                     }
                 } else {
-                    kVar2 = ((org.telegram.ui.ActionBar.n2) k9Var).actionBar;
+                    kVar2 = ((org.telegram.ui.ActionBar.m2) k9Var).actionBar;
                     if (!kVar2.s()) {
                         k9Var.finishFragment();
                         break;
@@ -384,7 +384,7 @@ public final class t extends org.telegram.ui.ActionBar.j {
                         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                         adVar.o0 = ofFloat;
                         ofFloat.addUpdateListener(new ci.ub(adVar, 1));
-                        adVar.o0.addListener(new org.telegram.ui.u4(adVar, 17));
+                        adVar.o0.addListener(new org.telegram.ui.t4(adVar, 17));
                         adVar.o0.setDuration(400L);
                         adVar.o0.setInterpolator(lt.e);
                         adVar.o0.start();

@@ -8,9 +8,9 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.RandomAccess;
 import java.util.function.UnaryOperator;
-import w7.r7;
+import w7.s7;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public abstract class d extends a implements List, RandomAccess, j$.util.List {
     public static final b b = new b(e.e, 0);
@@ -125,7 +125,7 @@ public abstract class d extends a implements List, RandomAccess, j$.util.List {
     @Override // java.util.List
     /* renamed from: q */
     public d subList(int i10, int i11) {
-        r7.b(i10, i11, size());
+        s7.b(i10, i11, size());
         int i12 = i11 - i10;
         return i12 == size() ? this : i12 == 0 ? e.e : new c(this, i10, i12);
     }
@@ -135,7 +135,7 @@ public abstract class d extends a implements List, RandomAccess, j$.util.List {
     public final b listIterator(int i10) {
         int size = size();
         if (i10 < 0 || i10 > size) {
-            throw new IndexOutOfBoundsException(r7.c(i10, size, "index"));
+            throw new IndexOutOfBoundsException(s7.c(i10, size, "index"));
         }
         return isEmpty() ? b : new b(this, i10);
     }

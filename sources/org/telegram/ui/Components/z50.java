@@ -1,37 +1,59 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+import android.content.Context;
+import android.graphics.Canvas;
+import android.widget.FrameLayout;
+import org.telegram.messenger.ImageReceiver;
+
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class z50 {
-    public final int a;
-    public final int b;
+public final class z50 extends e60 {
+    public ImageReceiver a;
+    public float b;
+    public final /* synthetic */ b60 c;
 
-    public z50(int i10, int i11) {
-        this.a = i10;
-        this.b = i11;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public z50(b60 b60Var, Context context) {
+        super(context);
+        this.c = b60Var;
+        setWillNotDraw(false);
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        b60 b60Var = this.c;
+        FrameLayout frameLayout = b60Var.x;
+        im0 im0Var = b60Var.w;
+        y50 y50Var = b60Var.y;
+        super.dispatchDraw(canvas);
+        if (this.a == null) {
+            return;
         }
-        if (obj != null && z50.class == obj.getClass()) {
-            z50 z50Var = (z50) obj;
-            if (this.a == z50Var.a && this.b == z50Var.b) {
-                return true;
-            }
+        float f7 = this.b;
+        if (f7 < 1.0f) {
+            this.b = Math.min(1.0f, f7 + 0.064f);
+            invalidate();
         }
-        return false;
+        canvas.save();
+        canvas.translate(y50Var.getLeft() + frameLayout.getLeft() + im0Var.getLeft(), y50Var.getTop() + frameLayout.getTop() + im0Var.getTop());
+        if (this.a.getImageWidth() != y50Var.getWidth()) {
+            float width = y50Var.getWidth() / this.a.getImageWidth();
+            canvas.scale(width, width);
+        }
+        canvas.translate(-this.a.getImageX(), -this.a.getImageY());
+        float alpha = this.a.getAlpha();
+        this.a.setAlpha(this.b);
+        this.a.draw(canvas);
+        this.a.setAlpha(alpha);
+        canvas.restore();
     }
 
-    public final int hashCode() {
-        return (this.a * 31) + this.b;
-    }
-
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder("IntSize(");
-        sb2.append(this.a);
-        sb2.append(", ");
-        return a4.a.o(this.b, ")", sb2);
+    @Override // org.telegram.ui.Components.e60
+    public final void setImageReceiver(ImageReceiver imageReceiver) {
+        if (this.a == null) {
+            this.b = 0.0f;
+        }
+        this.a = imageReceiver;
+        invalidate();
     }
 }

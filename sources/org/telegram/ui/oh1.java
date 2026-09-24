@@ -11,7 +11,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class oh1 implements Runnable {
     public final /* synthetic */ int a;
@@ -138,7 +138,7 @@ public final /* synthetic */ class oh1 implements Runnable {
                                     if (str8 != null) {
                                         if (!str8.startsWith(str7)) {
                                             i10 = i14;
-                                            if (org.telegram.messenger.z0.w(" ", str7, str8)) {
+                                            if (org.telegram.messenger.f0.w(" ", str7, str8)) {
                                             }
                                         }
                                         c11 = 1;
@@ -148,7 +148,7 @@ public final /* synthetic */ class oh1 implements Runnable {
                                         if (c11 == 0) {
                                             if (c11 != 1) {
                                                 str3 = str;
-                                                arrayList4.add(AndroidUtilities.generateSearchName(org.telegram.ui.Cells.q3.i("@", str2), str3, "@" + str7));
+                                                arrayList4.add(AndroidUtilities.generateSearchName(v7.j.g("@", str2), str3, "@" + str7));
                                             } else if (z18) {
                                                 TLRPC.User user2 = (TLRPC.User) tLObject;
                                                 arrayList4.add(AndroidUtilities.generateSearchName(user2.first_name, user2.last_name, str7));

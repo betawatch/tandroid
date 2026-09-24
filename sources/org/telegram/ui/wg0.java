@@ -1,67 +1,60 @@
 package org.telegram.ui;
 
 import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.graphics.RectF;
-import android.util.SparseArray;
-import android.view.View;
-import org.telegram.messenger.SharedConfig;
+import android.text.TextPaint;
+import android.text.style.ReplacementSpan;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class wg0 implements ah.j {
-    public final /* synthetic */ zg0 a;
+public final class wg0 extends ReplacementSpan {
+    public final String a;
+    public final boolean b;
+    public final TextPaint c;
+    public final Paint d;
+    public final float e;
+    public final /* synthetic */ yg0 f;
 
-    public /* synthetic */ wg0(zg0 zg0Var) {
-        this.a = zg0Var;
+    public wg0(yg0 yg0Var, int i10, boolean z10) {
+        this.f = yg0Var;
+        TextPaint textPaint = new TextPaint(1);
+        this.c = textPaint;
+        this.d = new Paint(1);
+        String valueOf = String.valueOf(i10);
+        this.a = valueOf;
+        this.b = z10;
+        textPaint.setTextSize(AndroidUtilities.dpf2(11.0f));
+        textPaint.setTypeface(AndroidUtilities.bold());
+        this.e = Math.max(AndroidUtilities.dp(7.333f), textPaint.measureText(valueOf)) + AndroidUtilities.dp(10.0f);
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // ah.j
-    public void b(Canvas canvas) {
-        fh.d x10;
-        Canvas canvas2;
-        zg0 zg0Var = this.a;
-        RectF rectF = zg0Var.T;
-        int measuredWidth = zg0Var.fragmentView.getMeasuredWidth();
-        int measuredHeight = zg0Var.fragmentView.getMeasuredHeight();
-        canvas.drawColor(zg0Var.getThemedColor(org.telegram.ui.ActionBar.h6.d6));
-        SparseArray sparseArray = zg0Var.a;
-        int size = sparseArray.size();
-        int i10 = 0;
-        while (i10 < size) {
-            org.telegram.ui.ActionBar.n2 n2Var = ((rh1) sparseArray.valueAt(i10)).a;
-            View view = n2Var.fragmentView;
-            if (view != null && hh.k.c(view, zg0Var.b, rectF) && rectF.right > 0.0f && rectF.left < zg0Var.fragmentView.getMeasuredWidth() && (n2Var instanceof yg0) && (x10 = ((yg0) n2Var).x()) != null) {
-                canvas.save();
-                canvas.translate(rectF.left, rectF.top);
-                canvas2 = canvas;
-                x10.y(canvas2, 0.0f, 0.0f, measuredWidth, measuredHeight);
-                canvas2.restore();
-            } else {
-                canvas2 = canvas;
-            }
-            i10++;
-            canvas = canvas2;
-        }
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+        float dp = f7 + AndroidUtilities.dp(5.0f);
+        float dp2 = ((i12 + i14) / 2.0f) + AndroidUtilities.dp(1.0f);
+        float dp3 = AndroidUtilities.dp(17.333f) / 2.0f;
+        int i15 = this.b ? org.telegram.ui.ActionBar.h6.Oh : org.telegram.ui.ActionBar.h6.U9;
+        yg0 yg0Var = this.f;
+        int themedColor = yg0Var.getThemedColor(i15);
+        Paint paint2 = this.d;
+        paint2.setColor(themedColor);
+        int themedColor2 = yg0Var.getThemedColor(org.telegram.ui.ActionBar.h6.s8);
+        TextPaint textPaint = this.c;
+        textPaint.setColor(themedColor2);
+        RectF rectF = AndroidUtilities.rectTmp;
+        float f10 = this.e;
+        rectF.set(dp, dp2 - dp3, dp + f10, dp2 + dp3);
+        canvas.drawRoundRect(rectF, dp3, dp3, paint2);
+        Paint.FontMetrics fontMetrics = textPaint.getFontMetrics();
+        float f11 = dp2 - ((fontMetrics.ascent + fontMetrics.descent) / 2.0f);
+        String str = this.a;
+        canvas.drawText(str, ((f10 - textPaint.measureText(str)) / 2.0f) + dp, f11, textPaint);
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // ah.j
-    public void m(ah.a aVar) {
-        zg0 zg0Var = this.a;
-        RectF rectF = zg0Var.T;
-        aVar.a(zg0Var.getThemedColor(org.telegram.ui.ActionBar.h6.d6));
-        aVar.b(SharedConfig.chatBlurEnabled());
-        SparseArray sparseArray = zg0Var.a;
-        int size = sparseArray.size();
-        for (int i10 = 0; i10 < size; i10++) {
-            org.telegram.ui.ActionBar.n2 n2Var = ((rh1) sparseArray.valueAt(i10)).a;
-            View view = n2Var.fragmentView;
-            if (view != null && hh.k.c(view, zg0Var.b, rectF) && rectF.right > 0.0f && rectF.left < zg0Var.fragmentView.getMeasuredWidth() && (n2Var instanceof yg0) && ((yg0) n2Var).x() != null) {
-                aVar.c(rectF.left);
-                aVar.c(rectF.top);
-                aVar.a(n2Var.getClassGuid());
-            }
-        }
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
+        return (int) Math.ceil(AndroidUtilities.dp(5.0f) + this.e);
     }
 }

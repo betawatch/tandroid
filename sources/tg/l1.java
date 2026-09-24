@@ -1,21 +1,26 @@
 package tg;
 
+import android.graphics.Rect;
+import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class l1 extends s4.s0 {
-    public final /* synthetic */ n1 a;
+public final class l1 extends s4.n0 {
+    public final /* synthetic */ m1 a;
 
-    public l1(n1 n1Var) {
-        this.a = n1Var;
+    public l1(m1 m1Var) {
+        this.a = m1Var;
     }
 
-    @Override // s4.s0
-    public final void a(RecyclerView recyclerView, int i10) {
-        if (i10 == 1) {
-            AndroidUtilities.hideKeyboard(this.a.Z.getEditText());
+    @Override // s4.n0
+    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.z0 z0Var) {
+        super.a(rect, view, recyclerView, z0Var);
+        recyclerView.getClass();
+        int R = RecyclerView.R(view);
+        m1 m1Var = this.a;
+        if (R == m1Var.g0.size()) {
+            rect.bottom = m1Var.q0;
         }
     }
 }

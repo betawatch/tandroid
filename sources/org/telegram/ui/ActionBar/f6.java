@@ -10,7 +10,7 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class f6 {
     public int a;
@@ -35,7 +35,7 @@ public final class f6 {
     public String v;
     public TLRPC.InputFile w;
     public TLRPC.InputFile x;
-    public a6 y;
+    public z5 y;
     public boolean z;
     public int n = 45;
     public String o = "";
@@ -519,15 +519,15 @@ public final class f6 {
         if (fArr[1] > 0.0f) {
             float f10 = fArr[2];
             if (f10 < 1.0f && f10 > 0.0f) {
-                fArr[0] = w7.p.a(fArr[0] + 0.22f, 0.0f, 1.0f);
-                fArr[1] = w7.p.a(fArr[1] - 0.35f, 0.0f, 1.0f);
-                fArr[2] = w7.p.a(fArr[2] - 0.65f, 0.0f, 1.0f);
+                fArr[0] = w7.q.a(fArr[0] + 0.22f, 0.0f, 1.0f);
+                fArr[1] = w7.q.a(fArr[1] - 0.35f, 0.0f, 1.0f);
+                fArr[2] = w7.q.a(fArr[2] - 0.65f, 0.0f, 1.0f);
                 return Color.HSVToColor(90, fArr);
             }
         }
         fArr[0] = f7;
         fArr[1] = 0.2f;
-        fArr[2] = w7.p.a(fArr[2] - 0.65f, 0.0f, 1.0f);
+        fArr[2] = w7.q.a(fArr[2] - 0.65f, 0.0f, 1.0f);
         return Color.HSVToColor(90, fArr);
     }
 

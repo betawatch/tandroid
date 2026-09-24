@@ -2,7 +2,7 @@ package i2;
 
 import java.util.Locale;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class g {
     public int a;
@@ -33,15 +33,15 @@ public final class g {
         int i20 = this.l;
         String str = e2.d0.a;
         Locale locale = Locale.US;
-        StringBuilder m10 = hg.c.m("DecoderCounters {\n decoderInits=", i10, ",\n decoderReleases=", i11, "\n queuedInputBuffers=");
-        hg.c.v(m10, i12, "\n skippedInputBuffers=", i13, "\n renderedOutputBuffers=");
-        hg.c.v(m10, i14, "\n skippedOutputBuffers=", i15, "\n droppedBuffers=");
-        hg.c.v(m10, i16, "\n droppedInputBuffers=", i17, "\n maxConsecutiveDroppedBuffers=");
-        hg.c.v(m10, i18, "\n droppedToKeyframeEvents=", i19, "\n totalVideoFrameProcessingOffsetUs=");
-        m10.append(j3);
-        m10.append("\n videoFrameProcessingOffsetCount=");
-        m10.append(i20);
-        m10.append("\n}");
-        return m10.toString();
+        StringBuilder k10 = hg.c.k("DecoderCounters {\n decoderInits=", i10, ",\n decoderReleases=", i11, "\n queuedInputBuffers=");
+        hg.c.t(k10, i12, "\n skippedInputBuffers=", i13, "\n renderedOutputBuffers=");
+        hg.c.t(k10, i14, "\n skippedOutputBuffers=", i15, "\n droppedBuffers=");
+        hg.c.t(k10, i16, "\n droppedInputBuffers=", i17, "\n maxConsecutiveDroppedBuffers=");
+        hg.c.t(k10, i18, "\n droppedToKeyframeEvents=", i19, "\n totalVideoFrameProcessingOffsetUs=");
+        k10.append(j3);
+        k10.append("\n videoFrameProcessingOffsetCount=");
+        k10.append(i20);
+        k10.append("\n}");
+        return k10.toString();
     }
 }

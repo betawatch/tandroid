@@ -23,13 +23,13 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class lj0 extends org.telegram.ui.Components.bb {
     public static lj0 u0;
     public final jj0 X;
     public final ij0 Y;
-    public final p50 Z;
+    public final n50 Z;
     public final hj0 a0;
     public final ArrayList b0;
     public final ArrayList c0;
@@ -44,15 +44,15 @@ public final class lj0 extends org.telegram.ui.Components.bb {
     public int l0;
     public int m0;
     public float n0;
-    public org.telegram.ui.Components.sa0 o0;
+    public org.telegram.ui.Components.db0 o0;
     public final int p0;
     public final kj0 q0;
     public final Boolean r0;
     public final Boolean s0;
-    public final x5 t0;
+    public final w5 t0;
 
-    public lj0(org.telegram.ui.ActionBar.n2 n2Var, int i10, Boolean bool, Boolean bool2, kj0 kj0Var) {
-        super(n2Var, true, false, n2Var.getResourceProvider());
+    public lj0(org.telegram.ui.ActionBar.m2 m2Var, int i10, Boolean bool, Boolean bool2, kj0 kj0Var) {
+        super(m2Var, true, false, m2Var.getResourceProvider());
         this.b0 = new ArrayList();
         ArrayList arrayList = new ArrayList();
         this.c0 = arrayList;
@@ -69,7 +69,7 @@ public final class lj0 extends org.telegram.ui.Components.bb {
         this.i0 = new LinkedHashMap();
         this.l0 = AndroidUtilities.dp(120.0f);
         this.m0 = -1;
-        this.t0 = new x5(this, 11);
+        this.t0 = new w5(this, 11);
         this.p0 = i10;
         this.r0 = bool;
         this.s0 = bool2;
@@ -81,42 +81,42 @@ public final class lj0 extends org.telegram.ui.Components.bb {
         hj0Var.setText(y());
         hj0Var.setCloseImageVisible(false);
         hj0Var.e.c(0.0f, false);
-        this.o0 = new org.telegram.ui.Components.sa0(this, 1);
+        this.o0 = new org.telegram.ui.Components.db0(this, 1);
         ij0 ij0Var = new ij0(this, getContext(), this.resourcesProvider);
         this.Y = ij0Var;
         int i11 = org.telegram.ui.ActionBar.h6.h5;
         ij0Var.setBackgroundColor(getThemedColor(i11));
         ij0Var.setOnSearchTextChange(new t3(this, 12));
         ij0Var.b.setHintText(LocaleController.getString(R.string.Search), false);
-        p50 p50Var = new p50(this, getContext(), 1);
-        this.Z = p50Var;
+        n50 n50Var = new n50(this, getContext(), 1);
+        this.Z = n50Var;
         ViewGroup viewGroup = this.containerView;
         int i12 = this.backgroundPaddingLeft;
-        viewGroup.addView(hj0Var, 0, w7.x5.f(-2.0f, 55, i12, 0, i12, 0));
+        viewGroup.addView(hj0Var, 0, w7.y5.f(-2.0f, 55, i12, 0, i12, 0));
         ViewGroup viewGroup2 = this.containerView;
         int i13 = this.backgroundPaddingLeft;
-        viewGroup2.addView(ij0Var, w7.x5.f(-2.0f, 55, i13, 0, i13, 0));
+        viewGroup2.addView(ij0Var, w7.y5.f(-2.0f, 55, i13, 0, i13, 0));
         ViewGroup viewGroup3 = this.containerView;
         int i14 = this.backgroundPaddingLeft;
-        viewGroup3.addView(p50Var, w7.x5.f(1.0f, 55, i14, 0, i14, 0));
-        l20 l20Var = new l20(getContext(), this.resourcesProvider, (org.telegram.ui.Components.ml0) null);
-        l20Var.setClickable(true);
-        l20Var.setOrientation(1);
-        l20Var.setPadding(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f));
-        l20Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.v0(i11, this.resourcesProvider));
+        viewGroup3.addView(n50Var, w7.y5.f(1.0f, 55, i14, 0, i14, 0));
+        j20 j20Var = new j20(getContext(), this.resourcesProvider, (org.telegram.ui.Components.wl0) null);
+        j20Var.setClickable(true);
+        j20Var.setOrientation(1);
+        j20Var.setPadding(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f));
+        j20Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.v0(i11, this.resourcesProvider));
         jj0 jj0Var = new jj0(this, getContext(), this.resourcesProvider);
         this.X = jj0Var;
         jj0Var.setOnClickListener(new gj0(this, 0));
-        l20Var.addView(jj0Var, w7.x5.q(-1, 48, 87));
+        j20Var.addView(jj0Var, w7.y5.q(-1, 48, 87));
         ViewGroup viewGroup4 = this.containerView;
         int i15 = this.backgroundPaddingLeft;
-        viewGroup4.addView(l20Var, w7.x5.f(-2.0f, 87, i15, 0, i15, 0));
+        viewGroup4.addView(j20Var, w7.y5.f(-2.0f, 87, i15, 0, i15, 0));
         ug.h hVar = this.k0;
-        org.telegram.ui.Components.ml0 ml0Var = this.d;
+        org.telegram.ui.Components.wl0 wl0Var = this.d;
         hVar.n = arrayList;
-        hVar.f = ml0Var;
+        hVar.f = wl0Var;
         int i16 = this.backgroundPaddingLeft;
-        ml0Var.setPadding(i16, 0, i16, AndroidUtilities.dp(60.0f));
+        wl0Var.setPadding(i16, 0, i16, AndroidUtilities.dp(60.0f));
         this.d.j(new i3(this, 21));
         this.d.setOnItemClickListener(new i2.s(this, i10, 15));
         s4.j jVar = new s4.j();
@@ -156,7 +156,7 @@ public final class lj0 extends org.telegram.ui.Components.bb {
             }
             if (hashSet.size() == i10 + 1) {
                 hashSet.remove(Long.valueOf(j3));
-                new org.telegram.ui.Components.xc(lj0Var.container, lj0Var.resourcesProvider).Q(R.raw.chats_infotip, 36, LocaleController.formatPluralString("BotMultiContactsSelectorLimit", lj0Var.p0, new Object[0])).k(true);
+                new org.telegram.ui.Components.yc(lj0Var.container, lj0Var.resourcesProvider).Q(R.raw.chats_infotip, 36, LocaleController.formatPluralString("BotMultiContactsSelectorLimit", lj0Var.p0, new Object[0])).k(true);
                 try {
                     lj0Var.container.performHapticFeedback(3, 2);
                     return;
@@ -184,7 +184,7 @@ public final class lj0 extends org.telegram.ui.Components.bb {
         }
         Boolean bool = lj0Var.r0;
         boolean z10 = bool != null && bool.booleanValue();
-        dt dtVar = new dt(6, lj0Var, str);
+        bt btVar = new bt(6, lj0Var, str);
         int i10 = UserConfig.selectedAccount;
         ArrayList arrayList = new ArrayList();
         ArrayList<TLRPC.TL_contact> arrayList2 = ContactsController.getInstance(i10).contacts;
@@ -200,14 +200,14 @@ public final class lj0 extends org.telegram.ui.Components.bb {
                 if (tL_contact != null && (user = messagesController.getUser(Long.valueOf(tL_contact.user_id))) != null && ((z10 || !user.bot) && !UserObject.isService(user.id) && !UserObject.isUserSelf(user))) {
                     String lowerCase2 = UserObject.getUserName(user).toLowerCase();
                     String translitSafe2 = AndroidUtilities.translitSafe(lowerCase2);
-                    if (lowerCase2.startsWith(lowerCase) || org.telegram.messenger.z0.w(" ", lowerCase, lowerCase2) || translitSafe2.startsWith(translitSafe) || org.telegram.messenger.z0.w(" ", translitSafe, translitSafe2)) {
+                    if (lowerCase2.startsWith(lowerCase) || org.telegram.messenger.f0.w(" ", lowerCase, lowerCase2) || translitSafe2.startsWith(translitSafe) || org.telegram.messenger.f0.w(" ", translitSafe, translitSafe2)) {
                         arrayList.add(user);
                     } else if (user.usernames != null) {
                         for (int i12 = 0; i12 < user.usernames.size(); i12++) {
                             TLRPC.TL_username tL_username = user.usernames.get(i12);
                             if (tL_username != null && tL_username.active) {
                                 String lowerCase3 = tL_username.username.toLowerCase();
-                                if (lowerCase3.startsWith(lowerCase) || org.telegram.messenger.z0.w("_", lowerCase, lowerCase3) || lowerCase3.startsWith(translitSafe) || org.telegram.messenger.z0.w(" ", translitSafe, lowerCase3)) {
+                                if (lowerCase3.startsWith(lowerCase) || org.telegram.messenger.f0.w("_", lowerCase, lowerCase3) || lowerCase3.startsWith(translitSafe) || org.telegram.messenger.f0.w(" ", translitSafe, lowerCase3)) {
                                     arrayList.add(user);
                                     break;
                                 }
@@ -217,7 +217,7 @@ public final class lj0 extends org.telegram.ui.Components.bb {
                         String str2 = user.username;
                         if (str2 != null) {
                             String lowerCase4 = str2.toLowerCase();
-                            if (lowerCase4.startsWith(lowerCase) || org.telegram.messenger.z0.w("_", lowerCase, lowerCase4) || lowerCase4.startsWith(translitSafe) || org.telegram.messenger.z0.w(" ", translitSafe, lowerCase4)) {
+                            if (lowerCase4.startsWith(lowerCase) || org.telegram.messenger.f0.w("_", lowerCase, lowerCase4) || lowerCase4.startsWith(translitSafe) || org.telegram.messenger.f0.w(" ", translitSafe, lowerCase4)) {
                                 arrayList.add(user);
                             }
                         }
@@ -225,7 +225,7 @@ public final class lj0 extends org.telegram.ui.Components.bb {
                 }
             }
         }
-        dtVar.run(arrayList);
+        btVar.run(arrayList);
     }
 
     @Override // org.telegram.ui.Components.bb
@@ -447,11 +447,11 @@ public final class lj0 extends org.telegram.ui.Components.bb {
         int i11 = -1;
         int i12 = 0;
         while (true) {
-            org.telegram.ui.Components.ml0 ml0Var = this.d;
-            if (i10 >= ml0Var.getChildCount()) {
+            org.telegram.ui.Components.wl0 wl0Var = this.d;
+            if (i10 >= wl0Var.getChildCount()) {
                 break;
             }
-            View childAt = ml0Var.getChildAt(i10);
+            View childAt = wl0Var.getChildAt(i10);
             if ((childAt instanceof xg.l) && (R = RecyclerView.R(childAt)) > 0) {
                 if (i11 == -1) {
                     i11 = R;
@@ -483,27 +483,27 @@ public final class lj0 extends org.telegram.ui.Components.bb {
         S(z10);
     }
 
-    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
+    @Override // org.telegram.ui.ActionBar.e3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.i2
     public final void dismiss() {
         AndroidUtilities.hideKeyboard(this.Y.getEditText());
         super.dismiss();
     }
 
-    @Override // org.telegram.ui.ActionBar.f3
+    @Override // org.telegram.ui.ActionBar.e3
     public final void dismissInternal() {
         super.dismissInternal();
         u0 = null;
         AndroidUtilities.cancelRunOnUIThread(this.t0);
     }
 
-    @Override // org.telegram.ui.ActionBar.f3
+    @Override // org.telegram.ui.ActionBar.e3
     public final void onConfigurationChanged(Configuration configuration) {
         super.onConfigurationChanged(configuration);
         T(false, true);
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final org.telegram.ui.Components.ll0 v(org.telegram.ui.Components.ml0 ml0Var) {
+    public final org.telegram.ui.Components.vl0 v(org.telegram.ui.Components.wl0 wl0Var) {
         ug.h hVar = new ug.h(getContext(), this.resourcesProvider, true);
         this.k0 = hVar;
         hVar.s = true;

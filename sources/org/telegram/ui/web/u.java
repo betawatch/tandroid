@@ -7,17 +7,17 @@ import android.os.Bundle;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.ok;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.dr;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.lj0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -50,11 +50,11 @@ public final /* synthetic */ class u implements Utilities.Callback2 {
                 String str2 = this.d;
                 if (tL_buttonTypeRequestPeer == null) {
                     if (tL_error == null) {
-                        new xc(b1Var2, d6Var).c0("UNKNOWN_BUTTON", false);
+                        new yc(b1Var2, d6Var).c0("UNKNOWN_BUTTON", false);
                         b1Var2.y(daVar2, "requested_chat_failed", b1.B(str2, "req_id"));
                         break;
                     } else {
-                        new xc(b1Var2, d6Var).d0(tL_error, false);
+                        new yc(b1Var2, d6Var).d0(tL_error, false);
                         b1Var2.y(daVar2, "requested_chat_failed", b1.B(str2, "req_id"));
                         break;
                     }
@@ -68,7 +68,7 @@ public final /* synthetic */ class u implements Utilities.Callback2 {
                             Boolean bool2 = tL_requestPeerTypeUser.premium;
                             b0 b0Var = new b0(b1Var2, zArr, str2, tL_buttonTypeRequestPeer, daVar2);
                             lj0 lj0Var2 = lj0.u0;
-                            n2 R = LaunchActivity.R();
+                            org.telegram.ui.ActionBar.m2 R = LaunchActivity.R();
                             if (R == null) {
                                 lj0Var = null;
                             } else {
@@ -85,7 +85,7 @@ public final /* synthetic */ class u implements Utilities.Callback2 {
                                 break;
                             }
                         } else {
-                            Bundle e = org.telegram.messenger.z0.e(15, "onlySelect", "dialogsType", true);
+                            Bundle e = ok.e(15, "onlySelect", "dialogsType", true);
                             e.putLong("requestPeerBotId", b1Var2.U.id);
                             try {
                                 SerializedData serializedData = new SerializedData(tL_buttonTypeRequestPeer.peer_type.getObjectSize());
@@ -98,11 +98,11 @@ public final /* synthetic */ class u implements Utilities.Callback2 {
                             boolean[] zArr2 = new boolean[1];
                             f0 f0Var = new f0(b1Var2, e, zArr2, daVar2);
                             f0Var.C2 = new b0(b1Var2, zArr2, str2, tL_buttonTypeRequestPeer, daVar2);
-                            n2 U = LaunchActivity.U();
+                            org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
                             if (U != null) {
-                                org.telegram.ui.ActionBar.l2 l2Var = new org.telegram.ui.ActionBar.l2();
-                                l2Var.a = true;
-                                U.showAsSheet(f0Var, l2Var);
+                                org.telegram.ui.ActionBar.k2 k2Var = new org.telegram.ui.ActionBar.k2();
+                                k2Var.a = true;
+                                U.showAsSheet(f0Var, k2Var);
                                 break;
                             }
                         }
@@ -112,7 +112,7 @@ public final /* synthetic */ class u implements Utilities.Callback2 {
                         TLRPC.User user = b1Var2.U;
                         e4 e4Var = new e4(b1Var2, daVar2, str2, tL_buttonTypeRequestPeer, 14);
                         d6 d6Var2 = b1Var2.e;
-                        dr.a(context, i12, user, (TLRPC.TL_requestPeerTypeCreateBot) requestPeerType, false, e4Var, d6Var2, new xc(b1Var2, d6Var2));
+                        dr.a(context, i12, user, (TLRPC.TL_requestPeerTypeCreateBot) requestPeerType, false, e4Var, d6Var2, new yc(b1Var2, d6Var2));
                         break;
                     }
                 }
@@ -123,11 +123,11 @@ public final /* synthetic */ class u implements Utilities.Callback2 {
                 d6 d6Var3 = b1Var.e;
                 if (updates == null) {
                     if (tL_error2 == null) {
-                        new xc(b1Var, d6Var3).c0("UNKNOWN_BUTTON", false);
+                        new yc(b1Var, d6Var3).c0("UNKNOWN_BUTTON", false);
                         b1Var.y(daVar, "requested_chat_failed", b1.B(str, "req_id"));
                         break;
                     } else {
-                        new xc(b1Var, d6Var3).d0(tL_error2, false);
+                        new yc(b1Var, d6Var3).d0(tL_error2, false);
                         b1Var.y(daVar, "requested_chat_failed", b1.B(str, "req_id"));
                         break;
                     }
@@ -142,11 +142,11 @@ public final /* synthetic */ class u implements Utilities.Callback2 {
                 d6 d6Var4 = b1Var.e;
                 if (updates2 == null) {
                     if (tL_error3 == null) {
-                        new xc(b1Var, d6Var4).c0("UNKNOWN_BUTTON", false);
+                        new yc(b1Var, d6Var4).c0("UNKNOWN_BUTTON", false);
                         b1Var.y(daVar, "requested_chat_failed", b1.B(str, "req_id"));
                         break;
                     } else {
-                        new xc(b1Var, d6Var4).d0(tL_error3, false);
+                        new yc(b1Var, d6Var4).d0(tL_error3, false);
                         b1Var.y(daVar, "requested_chat_failed", b1.B(str, "req_id"));
                         break;
                     }

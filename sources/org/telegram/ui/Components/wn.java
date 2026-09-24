@@ -11,11 +11,11 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class wn extends oi {
     public final nz n;
-    public final ml0 r;
+    public final wl0 r;
     public final int s;
     public final org.telegram.ui.w7 v;
     public int w;
@@ -28,7 +28,7 @@ public final class wn extends oi {
         nzVar.setText(LocaleController.getString(R.string.NoPhotos));
         nzVar.setOnTouchListener(null);
         nzVar.setTextSize(16);
-        addView(nzVar, w7.x5.c(-2.0f, -1));
+        addView(nzVar, w7.y5.c(-2.0f, -1));
         nzVar.a(R.raw.media_forbidden, ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
         TLRPC.Chat k12 = this.b.k1();
         if (i10 == 1) {
@@ -41,34 +41,34 @@ public final class wn extends oi {
             nzVar.setText(ChatObject.getRestrictedErrorText(k12, 22));
         }
         nzVar.c();
-        ml0 ml0Var = new ml0(context, d6Var);
-        this.r = ml0Var;
-        ml0Var.setSectionsType(2);
-        ml0Var.setVerticalScrollBarEnabled(false);
-        ml0Var.setLayoutManager(new s4.c0());
-        ml0Var.setClipToPadding(false);
+        wl0 wl0Var = new wl0(context, d6Var);
+        this.r = wl0Var;
+        wl0Var.setSectionsType(2);
+        wl0Var.setVerticalScrollBarEnabled(false);
+        wl0Var.setLayoutManager(new s4.c0());
+        wl0Var.setClipToPadding(false);
         org.telegram.ui.w7 w7Var = new org.telegram.ui.w7(this, 4);
         this.v = w7Var;
-        ml0Var.setAdapter(w7Var);
-        ml0Var.setPadding(0, 0, 0, AndroidUtilities.dp(48.0f));
-        ml0Var.setOnScrollListener(new ai.r(this, 23));
-        addView(ml0Var, w7.x5.c(-1.0f, -1));
+        wl0Var.setAdapter(w7Var);
+        wl0Var.setPadding(0, 0, 0, AndroidUtilities.dp(48.0f));
+        wl0Var.setOnScrollListener(new ai.r(this, 23));
+        addView(wl0Var, w7.y5.c(-1.0f, -1));
     }
 
     @Override // org.telegram.ui.Components.oi
     public int getCurrentItemTop() {
-        ml0 ml0Var = this.r;
-        if (ml0Var.getChildCount() <= 0) {
+        wl0 wl0Var = this.r;
+        if (wl0Var.getChildCount() <= 0) {
             return ConnectionsManager.DEFAULT_DATACENTER_ID;
         }
         int i10 = 0;
-        View childAt = ml0Var.getChildAt(0);
-        wk0 wk0Var = (wk0) ml0Var.G(childAt);
+        View childAt = wl0Var.getChildAt(0);
+        gl0 gl0Var = (gl0) wl0Var.G(childAt);
         int top = childAt.getTop() - AndroidUtilities.dp(8.0f);
-        if (top > 0 && wk0Var != null && wk0Var.b() == 0) {
+        if (top > 0 && gl0Var != null && gl0Var.b() == 0) {
             i10 = top;
         }
-        if (top < 0 || wk0Var == null || wk0Var.b() != 0) {
+        if (top < 0 || gl0Var == null || gl0Var.b() != 0) {
             top = i10;
         }
         int measuredHeight = (getMeasuredHeight() - top) - AndroidUtilities.dp(50.0f);
@@ -102,7 +102,7 @@ public final class wn extends oi {
     public final void y(int i10, int i11) {
         int i12;
         int i13;
-        ml0 ml0Var;
+        wl0 wl0Var;
         int max = Math.max(0, i11 - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight());
         if (this.w != max) {
             this.w = max;
@@ -114,9 +114,9 @@ public final class wn extends oi {
                 i12 = (int) (i11 / 3.5f);
                 int dp = i12 - AndroidUtilities.dp(52.0f);
                 i13 = dp >= 0 ? dp : 0;
-                ml0Var = this.r;
-                if (ml0Var.getPaddingTop() == i13) {
-                    ml0Var.setPadding(AndroidUtilities.dp(6.0f), i13, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(48.0f));
+                wl0Var = this.r;
+                if (wl0Var.getPaddingTop() == i13) {
+                    wl0Var.setPadding(AndroidUtilities.dp(6.0f), i13, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(48.0f));
                     return;
                 }
                 return;
@@ -126,8 +126,8 @@ public final class wn extends oi {
         int dp2 = i12 - AndroidUtilities.dp(52.0f);
         if (dp2 >= 0) {
         }
-        ml0Var = this.r;
-        if (ml0Var.getPaddingTop() == i13) {
+        wl0Var = this.r;
+        if (wl0Var.getPaddingTop() == i13) {
         }
     }
 }

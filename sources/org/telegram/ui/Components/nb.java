@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public abstract class nb extends ub {
     private mb button;
@@ -27,7 +27,7 @@ public abstract class nb extends ub {
     public void measureChildWithMargins(View view, int i10, int i11, int i12, int i13) {
         mb mbVar = this.button;
         if (mbVar != null && view != mbVar) {
-            i11 = org.telegram.messenger.ul.D(12.0f, mbVar.getMeasuredWidth(), i11);
+            i11 = org.telegram.messenger.ok.D(12.0f, mbVar.getMeasuredWidth(), i11);
         }
         super.measureChildWithMargins(view, i10, i11, i12, i13);
         if (view != this.button) {
@@ -58,7 +58,7 @@ public abstract class nb extends ub {
         this.button = mbVar;
         if (mbVar != null) {
             addCallback(mbVar);
-            addView(mbVar, 0, w7.x5.h(-2.0f, -2.0f, 8388629));
+            addView(mbVar, 0, w7.y5.h(-2.0f, -2.0f, 8388629));
         }
     }
 
@@ -66,7 +66,7 @@ public abstract class nb extends ub {
         jc jcVar = new jc(getContext(), this.resourcesProvider);
         this.timerView = jcVar;
         jcVar.b = 5000L;
-        addView(jcVar, w7.x5.i(20.0f, 20.0f, 8388627, 21.0f, 0.0f, 21.0f, 0.0f));
+        addView(jcVar, w7.y5.i(20.0f, 20.0f, 8388627, 21.0f, 0.0f, 21.0f, 0.0f));
     }
 
     public void setWrapWidth() {

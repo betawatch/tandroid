@@ -20,9 +20,9 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-import v7.n6;
+import v7.o6;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class FirebaseInstanceIdReceiver extends BroadcastReceiver {
     public static SoftReference a;
@@ -93,10 +93,10 @@ public final class FirebaseInstanceIdReceiver extends BroadcastReceiver {
             return 500;
         }
         Intent putExtras = new Intent("com.google.firebase.messaging.NOTIFICATION_DISMISS").putExtras(extras);
-        if (!n6.b(putExtras)) {
+        if (!o6.b(putExtras)) {
             return -1;
         }
-        n6.a("_nd", putExtras.getExtras());
+        o6.a("_nd", putExtras.getExtras());
         return -1;
     }
 

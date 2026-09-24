@@ -21,7 +21,7 @@ import e0.t;
 import n6.q;
 import n6.r;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class d extends e {
     public static final Object c = new Object();
@@ -47,7 +47,7 @@ public final class d extends e {
         if (d10 != null) {
             builder.setTitle(d10);
         }
-        Log.w("GoogleApiAvailability", hg.c.i(i10, "Creating dialog for Google Play services availability issue. ConnectionResult="), new IllegalArgumentException());
+        Log.w("GoogleApiAvailability", hg.c.h(i10, "Creating dialog for Google Play services availability issue. ConnectionResult="), new IllegalArgumentException());
         return builder.create();
     }
 
@@ -97,7 +97,7 @@ public final class d extends e {
 
     public final void h(Context context, int i10, PendingIntent pendingIntent) {
         int i11;
-        Log.w("GoogleApiAvailability", hg.c.j(i10, "GMS core API Availability. ConnectionResult=", ", tag=null"), new IllegalArgumentException());
+        Log.w("GoogleApiAvailability", hg.c.i(i10, "GMS core API Availability. ConnectionResult=", ", tag=null"), new IllegalArgumentException());
         if (i10 == 18) {
             new j(this, context).sendEmptyMessageDelayed(1, 120000L);
             return;

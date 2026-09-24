@@ -10,13 +10,13 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.kj0;
-import org.telegram.ui.ly;
-import org.telegram.ui.ry;
+import org.telegram.ui.ky;
+import org.telegram.ui.qy;
 import org.telegram.ui.wf1;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class b0 implements kj0, ly {
+public final /* synthetic */ class b0 implements kj0, ky {
     public final /* synthetic */ b1 a;
     public final /* synthetic */ boolean[] b;
     public final /* synthetic */ String c;
@@ -31,13 +31,13 @@ public final /* synthetic */ class b0 implements kj0, ly {
         this.e = daVar;
     }
 
-    @Override // org.telegram.ui.ly
+    @Override // org.telegram.ui.ky
     public /* synthetic */ boolean A() {
         return false;
     }
 
-    @Override // org.telegram.ui.ly
-    public /* synthetic */ boolean K(ry ryVar) {
+    @Override // org.telegram.ui.ky
+    public /* synthetic */ boolean K(qy qyVar) {
         return false;
     }
 
@@ -64,8 +64,8 @@ public final /* synthetic */ class b0 implements kj0, ly {
         ConnectionsManager.getInstance(b1Var.M).sendRequestTyped(tL_messages_sendBotRequestedPeer, new org.telegram.messenger.a(), new u(b1Var, this.e, str, 2));
     }
 
-    @Override // org.telegram.ui.ly
-    public boolean u(ry ryVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, wf1 wf1Var) {
+    @Override // org.telegram.ui.ky
+    public boolean u(qy qyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, wf1 wf1Var) {
         if (!arrayList.isEmpty()) {
             int i12 = 0;
             this.b[0] = true;
@@ -89,7 +89,7 @@ public final /* synthetic */ class b0 implements kj0, ly {
             }
             ConnectionsManager.getInstance(b1Var.M).sendRequestTyped(tL_messages_sendBotRequestedPeer, new org.telegram.messenger.a(), new u(b1Var, this.e, str, 1));
         }
-        ryVar.finishFragment();
+        qyVar.finishFragment();
         return true;
     }
 }

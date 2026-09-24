@@ -2,42 +2,36 @@ package yh;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class s3 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ v3 b;
+    public final /* synthetic */ u3 a;
 
-    public /* synthetic */ s3(v3 v3Var, int i10) {
-        this.a = i10;
-        this.b = v3Var;
+    public s3(u3 u3Var) {
+        this.a = u3Var;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.d0 = false;
-                break;
-            case 1:
-                this.b.d0 = false;
-                break;
-            case 2:
-                this.b.N.setVisibility(4);
-                break;
-            case 3:
-                v3 v3Var = this.b;
-                v3Var.s0 = v3Var.r0;
-                v3Var.d(v3Var.U);
-                break;
-            default:
-                v3 v3Var2 = this.b;
-                v3Var2.t0 = 1.0f;
-                v3Var2.b.setScaleX(1.0f);
-                v3Var2.b.setScaleY(v3Var2.t0);
-                v3Var2.invalidate();
-                break;
+        u3 u3Var = this.a;
+        r2 r2Var = u3Var.i0;
+        u3Var.s0 = u3Var.r0;
+        u3Var.d(u3Var.U);
+        TL_stars.starGiftAttributeModel[] stargiftattributemodelArr = u3Var.e;
+        int i10 = 2 - u3Var.r0;
+        stargiftattributemodelArr[i10] = (TL_stars.starGiftAttributeModel) u3Var.W.f;
+        w7.Z0(u3Var.d[i10].getImageReceiver(), stargiftattributemodelArr[2 - u3Var.r0].document, 160);
+        TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) u3Var.a0.f;
+        if (stargiftattributepattern != null) {
+            org.telegram.ui.Components.q5 m10 = org.telegram.ui.Components.q5.m(UserConfig.selectedAccount, 7, stargiftattributepattern.document);
+            m10.m = true;
+            m10.v();
         }
+        AndroidUtilities.cancelRunOnUIThread(r2Var);
+        AndroidUtilities.runOnUIThread(r2Var, 2500L);
     }
 }

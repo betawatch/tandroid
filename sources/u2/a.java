@@ -6,13 +6,13 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public abstract class a {
     public final ArrayList a = new ArrayList(1);
     public final HashSet b = new HashSet(1);
     public final a5.a c = new a5.a(new CopyOnWriteArrayList(), 0, null, 20);
-    public final n2.j d = new n2.j(new CopyOnWriteArrayList(), 0, null);
+    public final n2.k d = new n2.k(new CopyOnWriteArrayList(), 0, null);
     public Looper e;
     public b2.k1 f;
     public j2.k g;
@@ -108,24 +108,24 @@ public abstract class a {
 
     public abstract void q();
 
-    public final void r(n2.k kVar) {
+    public final void r(n2.l lVar) {
         CopyOnWriteArrayList copyOnWriteArrayList = this.d.c;
         Iterator it = copyOnWriteArrayList.iterator();
         while (it.hasNext()) {
-            n2.i iVar = (n2.i) it.next();
-            if (iVar.b == kVar) {
-                copyOnWriteArrayList.remove(iVar);
+            n2.j jVar = (n2.j) it.next();
+            if (jVar.b == lVar) {
+                copyOnWriteArrayList.remove(jVar);
             }
         }
     }
 
-    public final void s(j0 j0Var) {
+    public final void s(k0 k0Var) {
         CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) this.c.d;
         Iterator it = copyOnWriteArrayList.iterator();
         while (it.hasNext()) {
-            i0 i0Var = (i0) it.next();
-            if (i0Var.b == j0Var) {
-                copyOnWriteArrayList.remove(i0Var);
+            j0 j0Var = (j0) it.next();
+            if (j0Var.b == k0Var) {
+                copyOnWriteArrayList.remove(j0Var);
             }
         }
     }

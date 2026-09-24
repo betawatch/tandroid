@@ -5,7 +5,7 @@ import android.graphics.RectF;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class vc extends Path {
     public final int a = AndroidUtilities.dp(10.0f);
@@ -124,7 +124,7 @@ public final class vc extends Path {
             }
             float max2 = Math.max(f18, AndroidUtilities.lerp(AndroidUtilities.dpf2(0.66f), AndroidUtilities.dpf2(1.5f), 0.0f));
             RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(dp, AndroidUtilities.lerp(f14 - max2, f14 - ((f12 + max2) / 2.0f), 0.0f), AndroidUtilities.dpf2(1.66f) + dp, AndroidUtilities.lerp(f14, org.telegram.messenger.z0.y(f12, max2, 2.0f, f14), 0.0f));
+            rectF.set(dp, AndroidUtilities.lerp(f14 - max2, f14 - ((f12 + max2) / 2.0f), 0.0f), AndroidUtilities.dpf2(1.66f) + dp, AndroidUtilities.lerp(f14, org.telegram.messenger.f0.x(f12, max2, 2.0f, f14), 0.0f));
             addRoundRect(rectF, this.b, Path.Direction.CW);
             max++;
             f15 = f7;
@@ -196,7 +196,7 @@ public final class vc extends Path {
             }
             float max2 = Math.max(f20, AndroidUtilities.lerp(AndroidUtilities.dpf2(0.66f), AndroidUtilities.dpf2(1.5f), f12));
             RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(dp, AndroidUtilities.lerp(f15 - max2, f15 - ((f13 + max2) / 2.0f), f12), AndroidUtilities.dpf2(1.66f) + dp, AndroidUtilities.lerp(f15, org.telegram.messenger.z0.y(f13, max2, 2.0f, f15), f12));
+            rectF.set(dp, AndroidUtilities.lerp(f15 - max2, f15 - ((f13 + max2) / 2.0f), f12), AndroidUtilities.dpf2(1.66f) + dp, AndroidUtilities.lerp(f15, org.telegram.messenger.f0.x(f13, max2, 2.0f, f15), f12));
             addRoundRect(rectF, this.b, Path.Direction.CW);
             max++;
             f16 = f7;

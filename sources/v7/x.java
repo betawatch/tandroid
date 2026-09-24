@@ -1,60 +1,64 @@
 package v7;
 
-import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-import java.nio.MappedByteBuffer;
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.ProviderInfo;
+import android.content.pm.ResolveInfo;
+import android.content.pm.Signature;
+import android.os.Build;
+import android.util.Log;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public abstract class x {
-    public static p1.b a(MappedByteBuffer mappedByteBuffer) {
-        long j3;
-        ByteBuffer duplicate = mappedByteBuffer.duplicate();
-        duplicate.order(ByteOrder.BIG_ENDIAN);
-        duplicate.position(duplicate.position() + 4);
-        int i10 = duplicate.getShort() & 65535;
-        if (i10 > 100) {
-            throw new IOException("Cannot read metadata.");
-        }
-        duplicate.position(duplicate.position() + 6);
-        int i11 = 0;
+    /* JADX WARN: Removed duplicated region for block: B:19:0x007f  */
+    /* JADX WARN: Removed duplicated region for block: B:22:? A[RETURN, SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static androidx.emoji2.text.q a(Context context) {
+        ProviderInfo providerInfo;
+        o0.e eVar;
+        ApplicationInfo applicationInfo;
+        qb.b cVar = Build.VERSION.SDK_INT >= 28 ? new androidx.emoji2.text.c(2) : new qb.b(2);
+        PackageManager packageManager = context.getPackageManager();
+        w7.o6.a(packageManager, "Package manager required to locate emoji font provider");
+        Iterator<ResolveInfo> it = packageManager.queryIntentContentProviders(new Intent("androidx.content.action.LOAD_EMOJI_FONT"), 0).iterator();
         while (true) {
-            if (i11 >= i10) {
-                j3 = -1;
+            if (!it.hasNext()) {
+                providerInfo = null;
                 break;
             }
-            int i12 = duplicate.getInt();
-            duplicate.position(duplicate.position() + 4);
-            j3 = duplicate.getInt() & 4294967295L;
-            duplicate.position(duplicate.position() + 4);
-            if (1835365473 == i12) {
+            providerInfo = it.next().providerInfo;
+            if (providerInfo != null && (applicationInfo = providerInfo.applicationInfo) != null && (applicationInfo.flags & 1) == 1) {
                 break;
             }
-            i11++;
         }
-        if (j3 != -1) {
-            duplicate.position(duplicate.position() + ((int) (j3 - duplicate.position())));
-            duplicate.position(duplicate.position() + 12);
-            long j10 = duplicate.getInt() & 4294967295L;
-            for (int i13 = 0; i13 < j10; i13++) {
-                int i14 = duplicate.getInt();
-                long j11 = duplicate.getInt() & 4294967295L;
-                duplicate.getInt();
-                if (1164798569 == i14 || 1701669481 == i14) {
-                    duplicate.position((int) (j11 + j3));
-                    p1.b bVar = new p1.b();
-                    duplicate.order(ByteOrder.LITTLE_ENDIAN);
-                    int position = duplicate.position() + duplicate.getInt(duplicate.position());
-                    bVar.d = duplicate;
-                    bVar.a = position;
-                    int i15 = position - duplicate.getInt(position);
-                    bVar.b = i15;
-                    bVar.c = ((ByteBuffer) bVar.d).getShort(i15);
-                    return bVar;
+        if (providerInfo != null) {
+            try {
+                String str = providerInfo.authority;
+                String str2 = providerInfo.packageName;
+                Signature[] N3 = cVar.N3(packageManager, str2);
+                ArrayList arrayList = new ArrayList();
+                for (Signature signature : N3) {
+                    arrayList.add(signature.toByteArray());
                 }
+                eVar = new o0.e(str, str2, "emojicompat-emoji-font", Collections.singletonList(arrayList));
+            } catch (PackageManager.NameNotFoundException e) {
+                Log.wtf("emoji2.text.DefaultEmojiConfig", e);
             }
+            if (eVar != null) {
+                return null;
+            }
+            return new androidx.emoji2.text.q(new androidx.emoji2.text.p(context, eVar));
         }
-        throw new IOException("Cannot read metadata.");
+        eVar = null;
+        if (eVar != null) {
+        }
     }
 }

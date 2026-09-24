@@ -6,13 +6,13 @@ import java.util.Random;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class k8 {
     public float f;
     public boolean g;
     public final Paint h;
-    public org.telegram.ui.Cells.t1 i;
+    public org.telegram.ui.Cells.u1 i;
     public int p;
     public int q;
     public float r;
@@ -161,8 +161,8 @@ public final class k8 {
         }
     }
 
-    public final void d(org.telegram.ui.Cells.t1 t1Var) {
-        this.i = t1Var;
+    public final void d(org.telegram.ui.Cells.u1 u1Var) {
+        this.i = u1Var;
     }
 
     public final void e(boolean z10, boolean z11, float[] fArr) {

@@ -23,21 +23,21 @@ import org.telegram.tgnet.json.TLJsonParser;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class GroupCallMessagesController extends BaseController {
     private static volatile GroupCallMessagesController[] Instance = new GroupCallMessagesController[4];
     private final LongSparseArray<MessagesList> callMessagesList;
     private final LongSparseArray<List<CallMessageListener>> callMessagesListeners;
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public interface CallMessageListener {
         void onNewGroupCallMessage(long j3, GroupCallMessage groupCallMessage);
 
         void onPopGroupCallMessage();
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class MessagesList {
         private final List<GroupCallMessage> messages;
         private final Set<Long> randomIds;
@@ -304,6 +304,6 @@ public class GroupCallMessagesController extends BaseController {
         if (getUserConfig().clientUserId == peerDialogId) {
             return;
         }
-        Utilities.globalQueue.postRunnable(new a3.g0(this, j3, peerDialogId, bArr, 11));
+        Utilities.globalQueue.postRunnable(new a3.g0(this, j3, peerDialogId, bArr, 12));
     }
 }

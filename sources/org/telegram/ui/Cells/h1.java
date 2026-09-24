@@ -1,87 +1,97 @@
 package org.telegram.ui.Cells;
 
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.SharedConfig;
+import android.view.MotionEvent;
+import org.telegram.messenger.video.OldVideoPlayerRewinder;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.ng0;
+import org.telegram.ui.Components.og0;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class h1 extends n1 {
-    public final /* synthetic */ int e;
-    public final /* synthetic */ t1 f;
+public final class h1 extends OldVideoPlayerRewinder {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h1(int i10, t1 t1Var) {
-        super(0);
-        this.f = t1Var;
-        this.e = i10;
+    public /* synthetic */ h1(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.Cells.n1
-    public final void e() {
-        MessageObject.GroupedMessagePosition groupedMessagePosition;
-        Rect bounds = getBounds();
-        RectF rectF = (RectF) this.d;
-        rectF.set(bounds.left, bounds.top, bounds.right, bounds.bottom);
-        Path path = this.b;
-        path.rewind();
-        t1 t1Var = this.f;
-        int[] iArr = t1Var.x3;
-        int i10 = this.e;
-        int i11 = iArr[i10];
-        if (i11 == 3 || i11 == 4) {
-            path.addCircle(rectF.centerX(), rectF.centerY(), AndroidUtilities.dp(iArr[i10] == 3 ? 16.0f : 20.0f), Path.Direction.CW);
-            return;
+    @Override // org.telegram.messenger.video.OldVideoPlayerRewinder
+    public final void onRewindCanceled() {
+        switch (this.a) {
+            case 0:
+                u1 u1Var = (u1) this.b;
+                u1Var.onTouchEvent(MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0));
+                u1Var.Gd.f(false);
+                break;
+            default:
+                PhotoViewer photoViewer = (PhotoViewer) this.b;
+                PhotoViewer.k(photoViewer, MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0));
+                photoViewer.z1.f(false);
+                og0.p0.Q.f(false);
+                break;
         }
-        if (i11 != 2) {
-            float dp = i11 == 0 ? AndroidUtilities.dp(6.0f) : 0.0f;
-            path.addRoundRect(rectF, dp, dp, Path.Direction.CW);
-            return;
+    }
+
+    @Override // org.telegram.messenger.video.OldVideoPlayerRewinder
+    public final void onRewindStart(boolean z10) {
+        switch (this.a) {
+            case 0:
+                u1 u1Var = (u1) this.b;
+                k71 k71Var = u1Var.Gd;
+                k71Var.n = new n2.e(this, 3);
+                k71Var.e(false);
+                u1Var.Gd.d(!z10);
+                u1Var.Gd.f(true);
+                u1Var.invalidate();
+                break;
+            default:
+                PhotoViewer photoViewer = (PhotoViewer) this.b;
+                photoViewer.z1.e(false);
+                photoViewer.z1.d(!z10);
+                photoViewer.z1.f(true);
+                photoViewer.e0.invalidate();
+                og0.v(z10);
+                break;
         }
-        MessageObject messageObject = t1Var.y7;
-        boolean z10 = messageObject != null && messageObject.isOutOwner();
-        for (int i12 = 0; i12 < 4; i12++) {
-            if (!t1Var.q3) {
-                if (i12 == (z10 ? 3 : 2)) {
-                    float[] fArr = t1.Fe;
-                    int i13 = i12 * 2;
-                    float dp2 = AndroidUtilities.dp(SharedConfig.bubbleRadius);
-                    fArr[i13 + 1] = dp2;
-                    fArr[i13] = dp2;
-                } else if (((t1Var.k8 && t1Var.L == null) || t1Var.F) && (i12 == 2 || i12 == 3)) {
-                    float[] fArr2 = t1.Fe;
-                    int i14 = i12 * 2;
-                    int i15 = i14 + 1;
-                    float dp3 = AndroidUtilities.dp(t1Var.F ? Math.min(5, SharedConfig.bubbleRadius) : SharedConfig.bubbleRadius);
-                    fArr2[i15] = dp3;
-                    fArr2[i14] = dp3;
+    }
+
+    @Override // org.telegram.messenger.video.OldVideoPlayerRewinder
+    public final void updateRewindProgressUi(long j3, float f7, boolean z10) {
+        switch (this.a) {
+            case 0:
+                u1 u1Var = (u1) this.b;
+                u1Var.Gd.g(Math.abs(j3));
+                if (z10) {
+                    u1Var.y7.audioProgress = f7;
+                    u1Var.q4();
+                    break;
                 }
-            }
-            float[] fArr3 = t1.Fe;
-            int i16 = i12 * 2;
-            fArr3[i16 + 1] = 0.0f;
-            fArr3[i16] = 0.0f;
+                break;
+            default:
+                PhotoViewer photoViewer = (PhotoViewer) this.b;
+                photoViewer.z1.g(Math.abs(j3));
+                if (z10) {
+                    photoViewer.q3.h(f7, false);
+                    photoViewer.r3.invalidate();
+                }
+                og0 og0Var = og0.p0;
+                og0Var.Q.g(0L);
+                if (z10) {
+                    og0Var.Z = f7;
+                    ai.n4 n4Var = og0Var.b0;
+                    if (n4Var != null) {
+                        n4Var.invalidate();
+                    }
+                    ng0 ng0Var = og0Var.h;
+                    if (ng0Var != null) {
+                        ng0Var.invalidate();
+                        break;
+                    }
+                }
+                break;
         }
-        if (z10 || t1Var.J || (groupedMessagePosition = t1Var.L) != null || !(groupedMessagePosition == null || t1Var.a3)) {
-            path.addRoundRect(rectF, t1.Fe, Path.Direction.CW);
-        } else {
-            path.moveTo(rectF.left + AndroidUtilities.dp(6.0f), rectF.top);
-            path.lineTo(rectF.left + AndroidUtilities.dp(6.0f), (rectF.bottom - AndroidUtilities.dp(6.0f)) - AndroidUtilities.dp(5.0f));
-            RectF rectF2 = AndroidUtilities.rectTmp;
-            rectF2.set(rectF.left + AndroidUtilities.dp(-7.0f), rectF.bottom - AndroidUtilities.dp(23.0f), rectF.left + AndroidUtilities.dp(6.0f), rectF.bottom);
-            path.arcTo(rectF2, 0.0f, 83.0f, false);
-            float f7 = rectF.right;
-            float[] fArr4 = t1.Fe;
-            float f10 = f7 - (fArr4[4] * 2.0f);
-            float f11 = rectF.bottom;
-            rectF2.set(f10, f11 - (fArr4[5] * 2.0f), f7, f11);
-            path.arcTo(rectF2, 90.0f, -90.0f, false);
-            path.lineTo(rectF.right, rectF.top);
-            path.close();
-        }
-        path.close();
     }
 }

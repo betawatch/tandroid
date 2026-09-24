@@ -1,19 +1,16 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class ab0 implements View.OnLayoutChangeListener {
-    public boolean a;
+public final class ab0 extends org.telegram.ui.Components.s00 {
+    @Override // org.telegram.ui.Components.s00
+    public final void b() {
+        setVisibility(8);
+    }
 
-    @Override // android.view.View.OnLayoutChangeListener
-    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
-        boolean z10 = i13 - i11 > i12 - i10;
-        if (z10 != this.a) {
-            AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.th(this, 21));
-            this.a = z10;
-        }
+    @Override // org.telegram.ui.Components.s00
+    public final void c(boolean z10) {
+        setVisibility(0);
+        super.c(z10);
     }
 }

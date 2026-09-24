@@ -1,157 +1,132 @@
 package org.telegram.ui.Components;
 
-import android.graphics.CornerPathEffect;
-import android.graphics.Path;
-import android.os.Build;
-import android.text.Layout;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.view.View;
+import android.view.animation.DecelerateInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class x80 extends vq {
-    public static CornerPathEffect w;
-    public static int x;
-    public Layout h;
-    public int i;
-    public float j;
-    public float k;
-    public float l;
-    public final boolean m;
-    public boolean n;
-    public int o;
-    public int p;
-    public float q;
-    public float r;
-    public float s;
-    public float t;
-    public float u;
-    public float v;
+public final class x80 extends View {
+    public static DecelerateInterpolator v;
+    public static Paint w;
+    public long a;
+    public float b;
+    public float c;
+    public long d;
+    public float e;
+    public float f;
+    public int h;
+    public int n;
+    public final RectF r;
+    public org.telegram.ui.Components.voip.h s;
 
-    public x80() {
-        this.j = -1.0f;
-        this.n = true;
-        this.s = Float.MAX_VALUE;
-        this.u = Float.MAX_VALUE;
-        this.c = false;
+    public x80(Context context) {
+        super(context);
+        this.f = 1.0f;
+        this.r = new RectF();
+        if (v == null) {
+            v = new DecelerateInterpolator();
+            Paint paint = new Paint(1);
+            w = paint;
+            paint.setStrokeCap(Paint.Cap.ROUND);
+            w.setStrokeWidth(AndroidUtilities.dp(2.0f));
+        }
     }
 
-    public static CornerPathEffect c() {
-        if (w == null || x != AndroidUtilities.dp(5.0f)) {
-            int dp = AndroidUtilities.dp(5.0f);
-            x = dp;
-            w = new CornerPathEffect(dp);
+    public final void a(float f7, boolean z10) {
+        if (z10) {
+            this.c = this.e;
+        } else {
+            this.e = f7;
+            this.c = f7;
         }
-        return w;
+        if (f7 != 1.0f) {
+            this.f = 1.0f;
+        }
+        this.b = f7;
+        this.d = 0L;
+        this.a = System.currentTimeMillis();
+        invalidate();
     }
 
-    @Override // org.telegram.ui.Components.vq, android.graphics.Path
-    public final void addRect(float f7, float f10, float f11, float f12, Path.Direction direction) {
-        Layout layout = this.h;
-        if (layout == null) {
-            f(f7, f10, f11, f12, direction);
-            return;
+    public float getCurrentProgress() {
+        return this.b;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        int i10 = this.h;
+        RectF rectF = this.r;
+        if (i10 != 0 && this.e != 1.0f) {
+            w.setColor(i10);
+            w.setAlpha((int) (this.f * 255.0f));
+            getWidth();
+            rectF.set(0.0f, 0.0f, getWidth(), getHeight());
+            canvas.drawRoundRect(rectF, getHeight() / 2.0f, getHeight() / 2.0f, w);
         }
-        try {
-            float f13 = this.l;
-            float f14 = f10 + f13;
-            float f15 = f12 + f13;
-            float f16 = this.j;
-            if (f16 == -1.0f) {
-                this.j = f14;
-            } else if (f16 != f14) {
-                this.j = f14;
-                this.i++;
+        w.setColor(this.n);
+        w.setAlpha((int) (this.f * 255.0f));
+        rectF.set(0.0f, 0.0f, getWidth() * this.e, getHeight());
+        canvas.drawRoundRect(rectF, getHeight() / 2.0f, getHeight() / 2.0f, w);
+        if (this.f > 0.0f) {
+            if (this.s == null) {
+                org.telegram.ui.Components.voip.h hVar = new org.telegram.ui.Components.voip.h(160, 0);
+                this.s = hVar;
+                hVar.k = false;
+                hVar.n = 0.8f;
+                hVar.m = 1.2f;
             }
-            float lineRight = layout.getLineRight(this.i);
-            float lineLeft = this.h.getLineLeft(this.i);
-            if (f7 < lineRight) {
-                if (f7 > lineLeft || f11 > lineLeft) {
-                    if (f11 > lineRight) {
-                        f11 = lineRight;
-                    }
-                    if (f7 < lineLeft) {
-                        f7 = lineLeft;
-                    }
-                    float f17 = this.k;
-                    float f18 = f7 + f17;
-                    float f19 = f11 + f17;
-                    if (Build.VERSION.SDK_INT < 28) {
-                        f15 -= f15 != ((float) this.h.getHeight()) ? this.h.getSpacingAdd() : 0.0f;
-                    } else if (f15 - f14 > this.p) {
-                        f15 = this.l + (f15 != ((float) this.h.getHeight()) ? this.h.getLineBottom(this.i) - this.h.getSpacingAdd() : 0.0f);
-                    }
-                    int i10 = this.o;
-                    if (i10 < 0) {
-                        f15 += i10;
-                    } else if (i10 > 0) {
-                        f14 += i10;
-                    }
-                    float f20 = f14;
-                    float f21 = f15;
-                    if (this.m) {
-                        f(f18 - (AndroidUtilities.dp(5.0f) / 2.0f), f20, f19 + (AndroidUtilities.dp(5.0f) / 2.0f), f21, direction);
+            this.s.f = getMeasuredWidth();
+            this.s.a(getHeight() / 2.0f, canvas, rectF, null);
+            invalidate();
+        }
+        long currentTimeMillis = System.currentTimeMillis();
+        long j3 = currentTimeMillis - this.a;
+        this.a = currentTimeMillis;
+        float f7 = this.e;
+        if (f7 != 1.0f) {
+            float f10 = this.b;
+            if (f7 != f10) {
+                float f11 = this.c;
+                float f12 = f10 - f11;
+                if (f12 > 0.0f) {
+                    long j10 = this.d + j3;
+                    this.d = j10;
+                    if (j10 >= 300) {
+                        this.e = f10;
+                        this.c = f10;
+                        this.d = 0L;
                     } else {
-                        f(f18, f20, f19, f21, direction);
+                        this.e = (v.getInterpolation(j10 / 300.0f) * f12) + f11;
                     }
                 }
+                invalidate();
             }
-        } catch (Exception unused) {
         }
-    }
-
-    public final void d(Layout layout, int i10, float f7) {
-        e(layout, i10, 0.0f, f7);
-    }
-
-    public final void e(Layout layout, int i10, float f7, float f10) {
-        int lineCount;
-        if (layout == null) {
-            this.h = null;
-            this.i = 0;
-            this.j = -1.0f;
-            this.k = f7;
-            this.l = f10;
+        float f13 = this.e;
+        if (f13 < 1.0f || f13 != 1.0f) {
             return;
         }
-        this.h = layout;
-        this.i = layout.getLineForOffset(i10);
-        this.j = -1.0f;
-        this.k = f7;
-        this.l = f10;
-        if (Build.VERSION.SDK_INT < 28 || (lineCount = layout.getLineCount()) <= 0) {
-            return;
-        }
-        int i11 = lineCount - 1;
-        this.p = layout.getLineBottom(i11) - layout.getLineTop(i11);
-    }
-
-    public final void f(float f7, float f10, float f11, float f12, Path.Direction direction) {
-        float f13 = this.r;
-        float f14 = f7 - f13;
-        float f15 = this.q;
-        float f16 = f10 - f15;
-        float f17 = f11 + f13;
-        float f18 = f12 + f15;
-        this.s = Math.min(this.s, Math.min(f14, f17));
-        this.u = Math.min(this.u, Math.min(f16, f18));
-        this.t = Math.max(this.t, Math.max(f14, f17));
-        this.v = Math.max(this.v, Math.max(f16, f18));
-        super.addRect(f14, f16, f17, f18, direction);
-    }
-
-    @Override // org.telegram.ui.Components.vq, android.graphics.Path
-    public final void reset() {
-        if (this.n) {
-            super.reset();
+        float f14 = this.f;
+        if (f14 != 0.0f) {
+            float f15 = f14 - (j3 / 200.0f);
+            this.f = f15;
+            if (f15 <= 0.0f) {
+                this.f = 0.0f;
+            }
+            invalidate();
         }
     }
 
-    public x80(int i10) {
-        this.j = -1.0f;
-        this.n = true;
-        this.s = Float.MAX_VALUE;
-        this.u = Float.MAX_VALUE;
-        this.m = true;
-        this.c = false;
+    public void setBackColor(int i10) {
+        this.h = i10;
+    }
+
+    public void setProgressColor(int i10) {
+        this.n = i10;
     }
 }

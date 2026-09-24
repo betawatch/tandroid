@@ -7,7 +7,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class y extends FrameLayout {
     public final v a;
@@ -27,7 +27,7 @@ public final class y extends FrameLayout {
         vVar.setVisibility(8);
         vVar.setWillNotDraw(false);
         vVar.setOnItemClickListener(new ai.g(this, 2));
-        addView(vVar, w7.x5.c(56.0f, -1));
+        addView(vVar, w7.y5.c(56.0f, -1));
     }
 
     public final void a(boolean z10, boolean z11) {

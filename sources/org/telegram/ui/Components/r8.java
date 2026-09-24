@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class r8 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -55,10 +55,10 @@ public final class r8 extends AnimatorListenerAdapter {
                 j9Var.f = null;
                 break;
             case 2:
-                ((rf) this.b).f.b0.setVisibility(8);
+                ((sf) this.b).f.b0.setVisibility(8);
                 break;
             case 3:
-                ((ug) this.b).d0 = 1.0f;
+                ((vg) this.b).d0 = 1.0f;
                 break;
             case 4:
                 ((di) this.b).c.s.setVisibility(8);
@@ -76,9 +76,9 @@ public final class r8 extends AnimatorListenerAdapter {
                     wiVar.i1.setVisibility(4);
                     break;
                 } else {
-                    org.telegram.ui.ActionBar.v0 v0Var = wiVar.e1;
-                    if (v0Var != null) {
-                        v0Var.setVisibility(4);
+                    org.telegram.ui.ActionBar.u0 u0Var = wiVar.e1;
+                    if (u0Var != null) {
+                        u0Var.setVisibility(4);
                         break;
                     }
                 }
@@ -186,7 +186,7 @@ public final class r8 extends AnimatorListenerAdapter {
                 break;
             case 18:
                 super.onAnimationEnd(animator);
-                ((kv) this.b).d = null;
+                ((lv) this.b).d = null;
                 break;
             case 19:
                 ((lz) this.b).W = null;
@@ -215,47 +215,50 @@ public final class r8 extends AnimatorListenerAdapter {
                 z00Var.invalidate();
                 break;
             case 24:
-                o70 o70Var = (o70) this.b;
-                m70 m70Var = o70Var.x;
-                if (m70Var != null) {
-                    m70Var.setProgress(1.0f);
-                    o70Var.x.invalidate();
+                b60 b60Var = (b60) this.b;
+                if (animator == b60Var.T) {
+                    b60Var.c(true);
+                    b60Var.setVisibility(4);
+                    break;
                 }
-                o70Var.m0 = null;
                 break;
             case 25:
+                y70 y70Var = (y70) this.b;
+                w70 w70Var = y70Var.x;
+                if (w70Var != null) {
+                    w70Var.setProgress(1.0f);
+                    y70Var.x.invalidate();
+                }
+                y70Var.m0 = null;
+                break;
+            case 26:
                 m00 m00Var = (m00) this.b;
-                ((x70) m00Var.e).E = false;
+                ((h80) m00Var.e).E = false;
                 TextView[] textViewArr = (TextView[]) m00Var.d;
                 TextView textView = textViewArr[0];
                 textViewArr[0] = textViewArr[1];
                 textViewArr[1] = textView;
                 break;
-            case 26:
-                l80 l80Var = (l80) this.b;
-                if (!l80Var.f) {
-                    l80Var.c.setVisibility(8);
+            case 27:
+                v80 v80Var = (v80) this.b;
+                if (!v80Var.f) {
+                    v80Var.c.setVisibility(8);
                     break;
                 }
                 break;
-            case 27:
-                s80 s80Var = (s80) this.b;
-                FrameLayout frameLayout = s80Var.b;
-                ci.r6 r6Var = (ci.r6) s80Var.c;
+            case 28:
+                c90 c90Var = (c90) this.b;
+                FrameLayout frameLayout = c90Var.b;
+                ci.r6 r6Var = (ci.r6) c90Var.c;
                 if (r6Var.getParent() != null) {
                     frameLayout.removeView(r6Var);
                 }
-                frameLayout.getViewTreeObserver().removeOnPreDrawListener((org.telegram.ui.Cells.ga) s80Var.d);
-                break;
-            case 28:
-                ob0 ob0Var = (ob0) this.b;
-                ob0Var.c0.h = null;
-                ob0Var.e(ob0Var.S, ob0Var.R);
+                frameLayout.getViewTreeObserver().removeOnPreDrawListener((org.telegram.ui.Cells.fa) c90Var.d);
                 break;
             default:
-                NumberTextView numberTextView = (NumberTextView) this.b;
-                numberTextView.d = null;
-                numberTextView.b.clear();
+                zb0 zb0Var = (zb0) this.b;
+                zb0Var.c0.h = null;
+                zb0Var.e(zb0Var.S, zb0Var.R);
                 break;
         }
     }

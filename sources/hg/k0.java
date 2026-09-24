@@ -17,16 +17,16 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.gl0;
 import org.telegram.ui.Components.nz;
 import org.telegram.ui.Components.oi;
 import org.telegram.ui.Components.rr;
 import org.telegram.ui.Components.si;
 import org.telegram.ui.Components.vi;
 import org.telegram.ui.Components.wi;
-import org.telegram.ui.Components.wk0;
-import w7.x5;
+import w7.y5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class k0 extends oi implements NotificationCenter.NotificationCenterDelegate, le.e {
     public final nz E;
@@ -55,14 +55,14 @@ public final class k0 extends oi implements NotificationCenter.NotificationCente
         h2 h2Var = siVar.r;
         h2Var.addTextChangedListener(e0Var);
         h2Var.setHint(LocaleController.getString(R.string.BusinessRepliesSearch));
-        frameLayout.addView(viVar, x5.g());
-        FrameLayout.LayoutParams d = x5.d(-1, 48.0f, 51, 7.0f, 8.0f, 7.0f, 4.0f);
+        frameLayout.addView(viVar, y5.g());
+        FrameLayout.LayoutParams d = y5.d(-1, 48.0f, 51, 7.0f, 8.0f, 7.0f, 4.0f);
         ((ViewGroup.MarginLayoutParams) d).topMargin += AndroidUtilities.statusBarHeight;
         frameLayout.addView(siVar, d);
         nz nzVar = new nz(context, d6Var);
         this.E = nzVar;
         nzVar.c();
-        addView(nzVar, x5.d(-1, -1.0f, 51, 0.0f, 52.0f, 0.0f, 0.0f));
+        addView(nzVar, y5.d(-1, -1.0f, 51, 0.0f, 52.0f, 0.0f, 0.0f));
         ai.w0 w0Var = new ai.w0(this, context, d6Var, 3);
         this.s = w0Var;
         w0Var.p1();
@@ -80,14 +80,14 @@ public final class k0 extends oi implements NotificationCenter.NotificationCente
         w0Var.setHorizontalScrollBarEnabled(false);
         w0Var.setVerticalScrollBarEnabled(false);
         w0Var.setClipToPadding(false);
-        addView(w0Var, x5.d(-1, -1.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
+        addView(w0Var, y5.d(-1, -1.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
         h0 h0Var = new h0(this, context);
         this.x = h0Var;
         w0Var.setAdapter(h0Var);
         w0Var.setGlowColor(h6.v0(h6.A5, this.a));
         w0Var.setOnItemClickListener(new ai.g(this, 10));
         w0Var.setOnScrollListener(new ai.r(this, 9));
-        FrameLayout.LayoutParams e = x5.e(-1, 60, 51);
+        FrameLayout.LayoutParams e = y5.e(-1, 60, 51);
         ((ViewGroup.MarginLayoutParams) e).height += AndroidUtilities.statusBarHeight;
         addView(frameLayout, e);
         L();
@@ -101,12 +101,12 @@ public final class k0 extends oi implements NotificationCenter.NotificationCente
         }
         int i10 = 0;
         View childAt = w0Var.getChildAt(0);
-        wk0 wk0Var = (wk0) w0Var.G(childAt);
-        if (wk0Var == null) {
+        gl0 gl0Var = (gl0) w0Var.G(childAt);
+        if (gl0Var == null) {
             return -1000;
         }
         int paddingTop = w0Var.getPaddingTop();
-        if (wk0Var.b() == 0 && childAt.getTop() >= 0) {
+        if (gl0Var.b() == 0 && childAt.getTop() >= 0) {
             i10 = childAt.getTop();
         }
         return paddingTop - i10;
@@ -142,11 +142,11 @@ public final class k0 extends oi implements NotificationCenter.NotificationCente
             return ConnectionsManager.DEFAULT_DATACENTER_ID;
         }
         View childAt = w0Var.getChildAt(0);
-        wk0 wk0Var = (wk0) w0Var.G(childAt);
+        gl0 gl0Var = (gl0) w0Var.G(childAt);
         int top = (childAt.getTop() - AndroidUtilities.statusBarHeight) - AndroidUtilities.dp(8.0f);
-        int i10 = (top <= 0 || wk0Var == null || wk0Var.b() != 0) ? 0 : top;
+        int i10 = (top <= 0 || gl0Var == null || gl0Var.b() != 0) ? 0 : top;
         le.c cVar = this.n;
-        if (top < 0 || wk0Var == null || wk0Var.b() != 0) {
+        if (top < 0 || gl0Var == null || gl0Var.b() != 0) {
             cVar.a(true, true);
             top = i10;
         } else {

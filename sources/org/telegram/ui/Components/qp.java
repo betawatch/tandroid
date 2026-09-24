@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class qp extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -21,9 +21,9 @@ public final class qp extends AnimatorListenerAdapter {
             case 0:
                 rp rpVar = this.b;
                 rpVar.d = null;
-                og ogVar = new og(this, 29);
-                rpVar.e = ogVar;
-                AndroidUtilities.runOnUIThread(ogVar, 3000L);
+                pg pgVar = new pg(this, 29);
+                rpVar.e = pgVar;
+                AndroidUtilities.runOnUIThread(pgVar, 3000L);
                 break;
             default:
                 rp rpVar2 = this.b;

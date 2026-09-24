@@ -4,9 +4,9 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
-import w7.v6;
+import w7.w6;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public abstract class h extends Activity implements androidx.lifecycle.t, r0.j {
     public final androidx.lifecycle.v a = new androidx.lifecycle.v(this);
@@ -16,10 +16,10 @@ public abstract class h extends Activity implements androidx.lifecycle.t, r0.j {
         kotlin.jvm.internal.i.e(event, "event");
         View decorView = getWindow().getDecorView();
         kotlin.jvm.internal.i.d(decorView, "window.decorView");
-        if (v6.a(decorView, event)) {
+        if (w6.a(decorView, event)) {
             return true;
         }
-        return v6.b(this, decorView, this, event);
+        return w6.b(this, decorView, this, event);
     }
 
     @Override // android.app.Activity, android.view.Window.Callback
@@ -27,7 +27,7 @@ public abstract class h extends Activity implements androidx.lifecycle.t, r0.j {
         kotlin.jvm.internal.i.e(event, "event");
         View decorView = getWindow().getDecorView();
         kotlin.jvm.internal.i.d(decorView, "window.decorView");
-        if (v6.a(decorView, event)) {
+        if (w6.a(decorView, event)) {
             return true;
         }
         return super.dispatchKeyShortcutEvent(event);

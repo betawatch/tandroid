@@ -23,11 +23,11 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.lb;
 import org.telegram.ui.Components.oi;
 import org.telegram.ui.Components.wi;
-import org.telegram.ui.Components.xc;
-import org.telegram.ui.u31;
-import org.telegram.ui.xn;
+import org.telegram.ui.Components.yc;
+import org.telegram.ui.t31;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class q4 extends oi implements NotificationCenter.NotificationCenterDelegate {
     public long E;
@@ -36,9 +36,9 @@ public final class q4 extends oi implements NotificationCenter.NotificationCente
     public boolean H;
     public k4 I;
     public a3 J;
-    public org.telegram.ui.ActionBar.v0 K;
-    public org.telegram.ui.ActionBar.f1 L;
-    public org.telegram.ui.ActionBar.f1 M;
+    public org.telegram.ui.ActionBar.u0 K;
+    public org.telegram.ui.ActionBar.e1 L;
+    public org.telegram.ui.ActionBar.e1 M;
     public int N;
     public boolean O;
     public boolean P;
@@ -73,9 +73,9 @@ public final class q4 extends oi implements NotificationCenter.NotificationCente
         if (j4Var.getWebView() != null) {
             j4Var.getWebView().scrollTo(0, 0);
         }
-        org.telegram.ui.ActionBar.n2 n2Var = wiVar.f0;
-        if (n2Var != null) {
-            j4Var.setParentActivity(n2Var.getParentActivity());
+        org.telegram.ui.ActionBar.m2 m2Var = wiVar.f0;
+        if (m2Var != null) {
+            j4Var.setParentActivity(m2Var.getParentActivity());
         }
         this.K.setVisibility(0);
         if (j4Var.R) {
@@ -111,16 +111,16 @@ public final class q4 extends oi implements NotificationCenter.NotificationCente
         alertDialog$Builder.a.T = LocaleController.getString(R.string.BotWebViewChangesMayNotBeSaved);
         alertDialog$Builder.k(LocaleController.getString(R.string.BotWebViewCloseAnyway), new i4(this));
         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-        org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-        b2Var.show();
-        ((TextView) b2Var.d(-1)).setTextColor(h6.v0(h6.q7, this.a));
+        org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
+        a2Var.show();
+        ((TextView) a2Var.d(-1)).setTextColor(h6.v0(h6.q7, this.a));
         return false;
     }
 
     public final void L() {
         wi wiVar = this.b;
-        org.telegram.ui.ActionBar.n2 n2Var = wiVar.f0;
-        if ((n2Var instanceof xn) && ((xn) n2Var).X0.R() > AndroidUtilities.dp(20.0f)) {
+        org.telegram.ui.ActionBar.m2 m2Var = wiVar.f0;
+        if ((m2Var instanceof wn) && ((wn) m2Var).X0.R() > AndroidUtilities.dp(20.0f)) {
             AndroidUtilities.hideKeyboard(wiVar.f0.getFragmentView());
             AndroidUtilities.runOnUIThread(new g4(this, 1), 250L);
         } else {
@@ -214,13 +214,13 @@ public final class q4 extends oi implements NotificationCenter.NotificationCente
     public final void m() {
         NotificationCenter.getInstance(this.F).removeObserver(this, NotificationCenter.webViewResultSent);
         NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.didSetNewTheme);
-        org.telegram.ui.ActionBar.z n10 = this.b.X0.n();
-        org.telegram.ui.ActionBar.v0 v0Var = this.K;
-        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = v0Var.b;
+        org.telegram.ui.ActionBar.y n10 = this.b.X0.n();
+        org.telegram.ui.ActionBar.u0 u0Var = this.K;
+        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = u0Var.b;
         if (actionBarPopupWindow$ActionBarPopupWindowLayout != null) {
             actionBarPopupWindow$ActionBarPopupWindowLayout.d();
         }
-        n10.removeView(v0Var);
+        n10.removeView(u0Var);
         this.n.i();
         this.T = true;
         AndroidUtilities.cancelRunOnUIThread(this.U);
@@ -322,7 +322,7 @@ public final class q4 extends oi implements NotificationCenter.NotificationCente
         if (i10 == i11) {
             Bundle bundle = new Bundle();
             bundle.putLong("user_id", this.v);
-            wiVar.f0.presentFragment(new xn(bundle));
+            wiVar.f0.presentFragment(new wn(bundle));
             wiVar.dismiss();
             return;
         }
@@ -370,10 +370,10 @@ public final class q4 extends oi implements NotificationCenter.NotificationCente
             if (i10 == R.id.menu_report_bot) {
                 int i13 = this.F;
                 Context context = getContext();
-                xc xcVar = new xc(lb.a(getContext()), this.a);
+                yc ycVar = new yc(lb.a(getContext()), this.a);
                 long j3 = this.v;
-                int i14 = u31.v;
-                u31.K(i13, context, j3, false, false, new ArrayList(), xcVar, null, new byte[0], null, null);
+                int i14 = t31.v;
+                t31.K(i13, context, j3, false, false, new ArrayList(), ycVar, null, new byte[0], null, null);
             }
         }
     }

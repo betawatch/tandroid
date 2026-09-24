@@ -1,16 +1,19 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.LocaleController;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class l40 extends org.telegram.ui.Components.tc0 {
-    public l40(LaunchActivity launchActivity) {
-        super(launchActivity, null);
+public final class l40 extends AnimatorListenerAdapter {
+    public final /* synthetic */ d60 a;
+
+    public l40(d60 d60Var) {
+        this.a = d60Var;
     }
 
-    @Override // org.telegram.ui.Components.tc0
-    public final CharSequence d(int i10) {
-        return LocaleController.formatPluralString("Minutes", i10, new Object[0]);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        this.a.X0 = null;
     }
 }

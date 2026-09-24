@@ -32,10 +32,9 @@ import k5.v;
 import ka.c;
 import m5.e;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.ui.Cells.q3;
-import w7.f6;
+import w7.g6;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class b implements e {
     public final c a;
@@ -49,23 +48,23 @@ public final class b implements e {
     public b(Context context, u5.a aVar, u5.a aVar2) {
         ka.e eVar = new ka.e();
         k5.c cVar = k5.c.a;
-        eVar.m(o.class, cVar);
-        eVar.m(i.class, cVar);
+        eVar.a(o.class, cVar);
+        eVar.a(i.class, cVar);
         f fVar = f.a;
-        eVar.m(s.class, fVar);
-        eVar.m(l.class, fVar);
+        eVar.a(s.class, fVar);
+        eVar.a(l.class, fVar);
         d dVar = d.a;
-        eVar.m(q.class, dVar);
-        eVar.m(j.class, dVar);
+        eVar.a(q.class, dVar);
+        eVar.a(j.class, dVar);
         k5.b bVar = k5.b.a;
-        eVar.m(k5.a.class, bVar);
-        eVar.m(h.class, bVar);
+        eVar.a(k5.a.class, bVar);
+        eVar.a(h.class, bVar);
         k5.e eVar2 = k5.e.a;
-        eVar.m(r.class, eVar2);
-        eVar.m(k.class, eVar2);
+        eVar.a(r.class, eVar2);
+        eVar.a(k.class, eVar2);
         g gVar = g.a;
-        eVar.m(v.class, gVar);
-        eVar.m(n.class, gVar);
+        eVar.a(v.class, gVar);
+        eVar.a(n.class, gVar);
         eVar.d = true;
         this.a = new c(eVar, 0);
         this.c = context;
@@ -80,7 +79,7 @@ public final class b implements e {
         try {
             return new URL(str);
         } catch (MalformedURLException e) {
-            throw new IllegalArgumentException(q3.i("Invalid url: ", str), e);
+            throw new IllegalArgumentException(v7.j.g("Invalid url: ", str), e);
         }
     }
 
@@ -149,7 +148,7 @@ public final class b implements e {
             try {
                 i11 = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionCode;
             } catch (PackageManager.NameNotFoundException e) {
-                f6.b("CctTransportBackend", "Unable to find version code for package", e);
+                g6.b("CctTransportBackend", "Unable to find version code for package", e);
             }
             c10.c("application_build", Integer.toString(i11));
             return c10.g();

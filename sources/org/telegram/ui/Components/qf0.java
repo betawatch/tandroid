@@ -1,232 +1,107 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.os.Build;
-import android.provider.Settings;
-import android.view.MotionEvent;
-import android.view.View;
-import android.webkit.WebView;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import java.util.ArrayList;
-import java.util.Locale;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.PhotoViewer;
+import org.telegram.tgnet.InputSerializedData;
+import org.telegram.tgnet.OutputSerializedData;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public abstract class qf0 extends FrameLayout {
-    public float E;
-    public boolean F;
-    public boolean G;
-    public int H;
-    public int I;
-    public float J;
-    public boolean K;
-    public ac0 L;
-    public int a;
-    public PhotoViewer b;
-    public LinearLayout c;
-    public TextView d;
-    public TextView e;
-    public qu f;
-    public ci.bb h;
-    public RadialProgressView n;
-    public View r;
-    public String s;
-    public ArrayList v;
-    public String w;
-    public boolean x;
-    public TLRPC.WebPage y;
+public final class qf0 {
+    public float a = 0.0f;
+    public float b = 25.0f;
+    public float c = 50.0f;
+    public float d = 75.0f;
+    public float e = 100.0f;
+    public float[] f;
 
-    public static void a(org.telegram.ui.bu0 bu0Var, String str) {
-        int videoDuration = bu0Var.getVideoDuration() / MediaDataController.MAX_STYLE_RUNS_COUNT;
-        ArrayList arrayList = bu0Var.v;
-        arrayList.clear();
-        if (videoDuration <= 15) {
-            return;
-        }
-        String[] split = str.split("\\|");
-        String t10 = a4.a.t(new StringBuilder(), split[0].split("\\$")[0], "2/");
-        String str2 = split[0].split("\\$N")[1];
-        String str3 = split.length == 3 ? split[2].split("M#")[1] : split.length == 2 ? split[1].split("t#")[1] : split[3].split("M#")[1];
-        int ceil = (int) (videoDuration <= 100 ? Math.ceil(videoDuration / 25.0f) : videoDuration <= 250 ? Math.ceil((videoDuration / 2.0f) / 25.0f) : videoDuration <= 500 ? Math.ceil((videoDuration / 4.0f) / 25.0f) : videoDuration <= 1000 ? Math.ceil((videoDuration / 5.0f) / 25.0f) : Math.ceil((videoDuration / 10.0f) / 25.0f));
-        for (int i10 = 0; i10 < ceil; i10++) {
-            Locale locale = Locale.ROOT;
-            arrayList.add(t10 + "M" + i10 + str2 + "&sigh=" + str3);
-        }
-    }
-
-    public final void b(boolean z10) {
-        ac0 ac0Var = this.L;
-        if (!z10 && this.G) {
-            AndroidUtilities.runOnUIThread(ac0Var, 500L);
-        } else {
-            if (!z10 || this.G) {
-                return;
+    public final float[] a() {
+        float f7 = this.a;
+        float f10 = this.b / 100.0f;
+        float f11 = this.c / 100.0f;
+        float f12 = this.d / 100.0f;
+        float f13 = this.e;
+        int i10 = 5;
+        float[] fArr = {-0.001f, f7 / 100.0f, 0.0f, f7 / 100.0f, 0.25f, f10, 0.5f, f11, 0.75f, f12, 1.0f, f13 / 100.0f, 1.001f, f13 / 100.0f};
+        int i11 = 100;
+        ArrayList arrayList = new ArrayList(100);
+        ArrayList arrayList2 = new ArrayList(100);
+        arrayList2.add(Float.valueOf(fArr[0]));
+        arrayList2.add(Float.valueOf(fArr[1]));
+        int i12 = 1;
+        while (i12 < i10) {
+            int i13 = (i12 - 1) * 2;
+            float f14 = fArr[i13];
+            float f15 = fArr[i13 + 1];
+            int i14 = i12 * 2;
+            float f16 = fArr[i14];
+            float f17 = fArr[i14 + 1];
+            int i15 = i12 + 1;
+            int i16 = i15 * 2;
+            float f18 = fArr[i16];
+            float f19 = fArr[i16 + 1];
+            int i17 = (i12 + 2) * 2;
+            float f20 = fArr[i17];
+            float f21 = fArr[i17 + 1];
+            int i18 = 1;
+            while (i18 < i11) {
+                float f22 = i18 * 0.01f;
+                float f23 = f22 * f22;
+                float f24 = f23 * f22;
+                float z10 = ((((((f16 * 3.0f) - f14) - (f18 * 3.0f)) + f20) * f24) + ((((f18 * 4.0f) + ((f14 * 2.0f) - (f16 * 5.0f))) - f20) * f23) + com.google.android.gms.internal.vision.e2.z(f18, f14, f22, f16 * 2.0f)) * 0.5f;
+                float max = Math.max(0.0f, Math.min(1.0f, ((((((f17 * 3.0f) - f15) - (f19 * 3.0f)) + f21) * f24) + ((((4.0f * f19) + ((2.0f * f15) - (5.0f * f17))) - f21) * f23) + com.google.android.gms.internal.vision.e2.z(f19, f15, f22, f17 * 2.0f)) * 0.5f));
+                if (z10 > f14) {
+                    arrayList2.add(Float.valueOf(z10));
+                    arrayList2.add(Float.valueOf(max));
+                }
+                if ((i18 - 1) % 2 == 0) {
+                    arrayList.add(Float.valueOf(max));
+                }
+                i18++;
+                i11 = 100;
             }
-            AndroidUtilities.cancelRunOnUIThread(ac0Var);
+            arrayList2.add(Float.valueOf(f18));
+            arrayList2.add(Float.valueOf(f19));
+            i12 = i15;
+            i10 = 5;
+            i11 = 100;
         }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0047 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:7:0x0040  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final String c(int i10) {
-        float f7;
-        int i11;
-        ArrayList arrayList = this.v;
-        int videoDuration = getVideoDuration() / MediaDataController.MAX_STYLE_RUNS_COUNT;
-        if (videoDuration > 100) {
-            if (videoDuration <= 250) {
-                i11 = ((int) (i10 / 2.0f)) / 25;
-            } else if (videoDuration <= 500) {
-                i11 = ((int) (i10 / 4.0f)) / 25;
-            } else if (videoDuration <= 1000) {
-                i11 = ((int) (i10 / 5.0f)) / 25;
-            } else {
-                f7 = i10 / 10.0f;
+        arrayList2.add(Float.valueOf(fArr[12]));
+        arrayList2.add(Float.valueOf(fArr[13]));
+        this.f = new float[arrayList.size()];
+        int i19 = 0;
+        while (true) {
+            float[] fArr2 = this.f;
+            if (i19 >= fArr2.length) {
+                break;
             }
-            if (i11 >= arrayList.size()) {
-                return (String) arrayList.get(i11);
-            }
-            return null;
+            fArr2[i19] = ((Float) arrayList.get(i19)).floatValue();
+            i19++;
         }
-        f7 = i10;
-        i11 = (int) (f7 / 25.0f);
-        if (i11 >= arrayList.size()) {
+        int size = arrayList2.size();
+        float[] fArr3 = new float[size];
+        for (int i20 = 0; i20 < size; i20++) {
+            fArr3[i20] = ((Float) arrayList2.get(i20)).floatValue();
         }
+        return fArr3;
     }
 
-    public final boolean d() {
-        return this.x;
+    public final boolean b() {
+        return ((double) Math.abs(this.a - 0.0f)) < 1.0E-5d && ((double) Math.abs(this.b - 25.0f)) < 1.0E-5d && ((double) Math.abs(this.c - 50.0f)) < 1.0E-5d && ((double) Math.abs(this.d - 75.0f)) < 1.0E-5d && ((double) Math.abs(this.e - 100.0f)) < 1.0E-5d;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (this.K) {
-            return false;
-        }
-        return super.dispatchTouchEvent(motionEvent);
+    public final void c(InputSerializedData inputSerializedData, boolean z10) {
+        this.a = inputSerializedData.readFloat(z10);
+        this.b = inputSerializedData.readFloat(z10);
+        this.c = inputSerializedData.readFloat(z10);
+        this.d = inputSerializedData.readFloat(z10);
+        this.e = inputSerializedData.readFloat(z10);
     }
 
-    public final boolean e() {
-        boolean z10 = this.x && "inapp".equals(MessagesController.getInstance(this.a).youtubePipType);
-        if (!z10 && Build.VERSION.SDK_INT >= 23 && !Settings.canDrawOverlays(getContext())) {
-            e5.B((Activity) getContext(), null, false);
-            return false;
-        }
-        if (this.n.getVisibility() == 0) {
-            return false;
-        }
-        if (eg0.p0.P) {
-            eg0.j(false);
-            AndroidUtilities.runOnUIThread(new mf0(this, 0), 300L);
-            return true;
-        }
-        this.h.setVisibility(0);
-        Activity activity = (Activity) getContext();
-        qu quVar = this.f;
-        TLRPC.WebPage webPage = this.y;
-        if (eg0.x(z10, activity, this, quVar, webPage.embed_width, webPage.embed_height, false)) {
-            eg0.w(PhotoViewer.t1());
-        }
-        return true;
-    }
-
-    public final void f() {
-        if (this.G && this.x) {
-            h("pauseVideo();");
-            this.G = false;
-            b(true);
-        }
-    }
-
-    public final void g() {
-        if (this.G || !this.x) {
-            return;
-        }
-        h("playVideo();");
-        this.G = true;
-        b(false);
-    }
-
-    public float getBufferedPosition() {
-        return this.J;
-    }
-
-    public int getCurrentPosition() {
-        return this.I;
-    }
-
-    public int getVideoDuration() {
-        return this.H;
-    }
-
-    public WebView getWebView() {
-        return this.f;
-    }
-
-    public final void h(String str) {
-        this.f.evaluateJavascript(str, null);
-    }
-
-    public final void i(long j3) {
-        boolean z10 = this.G;
-        this.I = (int) j3;
-        if (z10) {
-            f();
-        }
-        if (z10) {
-            AndroidUtilities.runOnUIThread(new ai.j(this, j3, 21), 100L);
-            return;
-        }
-        h("seekTo(" + Math.round(j3 / 1000.0f) + ", true);");
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        qu quVar = this.f;
-        if (quVar.getParent() == this) {
-            TLRPC.WebPage webPage = this.y;
-            int i12 = webPage.embed_width;
-            if (i12 == 0) {
-                i12 = 100;
-            }
-            int i13 = webPage.embed_height;
-            int i14 = i13 != 0 ? i13 : 100;
-            int size = View.MeasureSpec.getSize(i10);
-            int size2 = View.MeasureSpec.getSize(i11);
-            float f7 = i12;
-            float f10 = i14;
-            float min = Math.min(size / f7, size2 / f10);
-            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) quVar.getLayoutParams();
-            int i15 = (int) (f7 * min);
-            layoutParams.width = i15;
-            int i16 = (int) (f10 * min);
-            layoutParams.height = i16;
-            layoutParams.topMargin = (size2 - i16) / 2;
-            layoutParams.leftMargin = (size - i15) / 2;
-        }
-        super.onMeasure(i10, i11);
-    }
-
-    public void setPlaybackSpeed(float f7) {
-        this.E = f7;
-        if (this.n.getVisibility() == 0) {
-            this.F = true;
-        } else if (this.x) {
-            h("setPlaybackSpeed(" + f7 + ");");
-        }
-    }
-
-    public void setTouchDisabled(boolean z10) {
-        this.K = z10;
+    public final void d(OutputSerializedData outputSerializedData) {
+        outputSerializedData.writeFloat(this.a);
+        outputSerializedData.writeFloat(this.b);
+        outputSerializedData.writeFloat(this.c);
+        outputSerializedData.writeFloat(this.d);
+        outputSerializedData.writeFloat(this.e);
     }
 }

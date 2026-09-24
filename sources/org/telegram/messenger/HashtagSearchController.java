@@ -12,7 +12,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class HashtagSearchController {
     public static final int HISTORY_LIMIT = 100;
@@ -25,7 +25,7 @@ public class HashtagSearchController {
     private final SearchResult localPostsSearch;
     private final SearchResult myMessagesSearch;
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static final class MessageCompositeID {
         final long dialog_id;
         final int id;
@@ -57,7 +57,7 @@ public class HashtagSearchController {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class SearchResult {
         public Runnable cancel;
         public int count;
@@ -186,7 +186,7 @@ public class HashtagSearchController {
                 message.id = num.intValue();
             }
             if (!messages_messages.messages.isEmpty()) {
-                TLRPC.Message message2 = (TLRPC.Message) hg.c.h(1, messages_messages.messages);
+                TLRPC.Message message2 = (TLRPC.Message) hg.c.g(1, messages_messages.messages);
                 searchResult.lastOffsetId = message2.realId;
                 searchResult.lastOffsetPeer = message2.peer_id;
             }
@@ -245,7 +245,7 @@ public class HashtagSearchController {
         edit.clear();
         edit.putInt(NotificationBadge.NewHtcHomeBadger.COUNT, this.history.size());
         for (int i10 = 0; i10 < this.history.size(); i10++) {
-            edit.putString(hg.c.i(i10, "e_"), this.history.get(i10));
+            edit.putString(hg.c.h(i10, "e_"), this.history.get(i10));
         }
         edit.apply();
     }

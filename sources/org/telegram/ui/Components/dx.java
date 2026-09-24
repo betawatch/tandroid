@@ -1,38 +1,143 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class dx extends tv {
-    public final /* synthetic */ TLRPC.StickerSet W;
-    public final /* synthetic */ lz X;
+public final class dx implements z4.e {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ lz b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dx(lz lzVar, org.telegram.ui.ActionBar.n2 n2Var, Context context, org.telegram.ui.ActionBar.d6 d6Var, ArrayList arrayList, TLRPC.StickerSet stickerSet) {
-        super(n2Var, context, d6Var, arrayList);
-        this.X = lzVar;
-        this.W = stickerSet;
+    public dx(lz lzVar, boolean z10) {
+        this.b = lzVar;
+        this.a = z10;
     }
 
-    @Override // org.telegram.ui.Components.tv
-    public final void X(boolean z10) {
-        lz lzVar = this.X;
-        ArrayList arrayList = lzVar.p1;
-        TLRPC.StickerSet stickerSet = this.W;
-        if (!z10) {
-            arrayList.remove(Long.valueOf(stickerSet.id));
-        } else if (!arrayList.contains(Long.valueOf(stickerSet.id))) {
-            arrayList.add(Long.valueOf(stickerSet.id));
+    @Override // z4.e
+    public final void a(int i10) {
+        lz lzVar = this.b;
+        ax axVar = lzVar.h;
+        boolean z10 = false;
+        if (axVar != null) {
+            int currentItem = axVar.getCurrentItem();
+            int i11 = currentItem == 2 ? 1 : currentItem == 1 ? 2 : 0;
+            if (lzVar.A1 != i11) {
+                lzVar.A1 = i11;
+                MessagesController.getGlobalEmojiSettings().edit().putInt("selected_page", i11).commit();
+            }
         }
-        lzVar.T();
+        lzVar.L(i10 == 0, true);
+        if (i10 == 2 && (this.a || lzVar.v0)) {
+            z10 = true;
+        }
+        lzVar.Q(z10, true);
+        if (lzVar.t1.z()) {
+            if (i10 == 0) {
+                lw lwVar = lzVar.V;
+                if (lwVar != null) {
+                    lwVar.d.requestFocus();
+                    return;
+                }
+                return;
+            }
+            if (i10 == 1) {
+                rw rwVar = lzVar.o0;
+                if (rwVar != null) {
+                    rwVar.d.requestFocus();
+                    return;
+                }
+                return;
+            }
+            xw xwVar = lzVar.G0;
+            if (xwVar != null) {
+                xwVar.d.requestFocus();
+            }
+        }
     }
 
-    @Override // org.telegram.ui.Components.tv, org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
-    public final void dismiss() {
-        this.X.v2 = false;
-        super.dismiss();
+    @Override // z4.e
+    public final void b(float f7, int i10, int i11) {
+        float f10;
+        lz lzVar = this.b;
+        yy yyVar = lzVar.G0;
+        yy yyVar2 = lzVar.o0;
+        yy yyVar3 = lzVar.V;
+        zw zwVar = lzVar.C0;
+        uw uwVar = lzVar.D0;
+        sx sxVar = lzVar.p0;
+        ow owVar = lzVar.h0;
+        xx xxVar = lzVar.P;
+        boolean z10 = true;
+        if (lzVar.x0 == null || lzVar.g0 == null) {
+            f10 = 0.0f;
+        } else {
+            if (i10 == 0) {
+                xxVar.setVisibility(0);
+                f10 = 0.0f;
+                owVar.setVisibility(f7 == 0.0f ? 8 : 0);
+                sxVar.setVisibility(f7 == 0.0f ? 8 : 0);
+                uwVar.setVisibility(8);
+                if (zwVar != null) {
+                    zwVar.setVisibility(8);
+                }
+            } else {
+                f10 = 0.0f;
+                if (i10 == 1) {
+                    xxVar.setVisibility(8);
+                    owVar.setVisibility(0);
+                    sxVar.setVisibility(0);
+                    uwVar.setVisibility(f7 == 0.0f ? 8 : 0);
+                    if (zwVar != null) {
+                        zwVar.setVisibility(f7 != 0.0f ? 0 : 8);
+                    }
+                } else if (i10 == 2) {
+                    xxVar.setVisibility(8);
+                    owVar.setVisibility(8);
+                    sxVar.setVisibility(8);
+                    uwVar.setVisibility(0);
+                    if (zwVar != null) {
+                        zwVar.setVisibility(0);
+                    }
+                }
+            }
+        }
+        lzVar.getMeasuredWidth();
+        lzVar.getPaddingLeft();
+        lzVar.getPaddingRight();
+        my myVar = lzVar.t1;
+        if (myVar != null) {
+            if (i10 == 1) {
+                myVar.s(i11 == 0 ? 0 : 2);
+            } else if (i10 == 2) {
+                myVar.s(3);
+            } else {
+                myVar.s(0);
+            }
+        }
+        lzVar.M(true);
+        int currentItem = lzVar.h.getCurrentItem();
+        yy yyVar4 = currentItem == 0 ? yyVar3 : currentItem == 1 ? yyVar2 : yyVar;
+        String obj = yyVar4.d.getText().toString();
+        int i12 = 0;
+        while (i12 < 3) {
+            yy yyVar5 = i12 == 0 ? yyVar3 : i12 == 1 ? yyVar2 : yyVar;
+            if (yyVar5 != null) {
+                jq jqVar = yyVar5.d;
+                if (yyVar5 != yyVar4 && jqVar != null && !jqVar.getText().toString().equals(obj)) {
+                    jqVar.setText(obj);
+                    jqVar.setSelection(obj.length());
+                }
+            }
+            i12++;
+        }
+        if ((i10 != 0 || f7 <= f10) && i10 != 1) {
+            z10 = false;
+        }
+        lz.a(lzVar, z10);
+        lzVar.Y();
+    }
+
+    @Override // z4.e
+    public final void c(int i10) {
     }
 }

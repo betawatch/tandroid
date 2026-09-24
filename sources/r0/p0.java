@@ -7,9 +7,9 @@ import android.view.ViewGroup;
 import android.view.WindowInsets;
 import j$.util.Objects;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.qk0;
+import org.telegram.ui.Components.al0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class p0 implements View.OnApplyWindowInsetsListener {
     public final ph.e a;
@@ -108,7 +108,7 @@ public final class p0 implements View.OnApplyWindowInsetsListener {
                     o0.a aVar = new o0.a(13, i0.b.b(min, min2, min3, Math.min(i27, i28)), i0.b.b(Math.max(f11.a, f12.a), Math.max(i23, i24), Math.max(i25, i26), Math.max(i27, i28)));
                     q0.f(view, h, false);
                     duration.addUpdateListener(new o0(v0Var, h, l1Var2, i22, view));
-                    duration.addListener(new qk0(v0Var, view, 19));
+                    duration.addListener(new al0(v0Var, view, 19));
                     p.a(view, new com.google.android.gms.internal.cast.p(view, v0Var, aVar, duration, 4));
                     this.b = h;
                     if (view.getTag(R.id.tag_on_apply_window_listener) == null) {

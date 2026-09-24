@@ -1,24 +1,636 @@
 package org.telegram.ui;
 
-import android.view.ViewGroup;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.RadialGradient;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.os.SystemClock;
+import android.view.animation.OvershootInterpolator;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LiteMode;
+import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class i30 extends s4.j {
-    public final /* synthetic */ f60 F;
+public final class i30 extends kh.b {
+    public final OvershootInterpolator d;
+    public int e;
+    public final /* synthetic */ d60 f;
 
-    public i30(f60 f60Var) {
-        this.F = f60Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public i30(d60 d60Var, LaunchActivity launchActivity) {
+        super(launchActivity);
+        this.f = d60Var;
+        this.d = new OvershootInterpolator(1.5f);
     }
 
-    @Override // s4.j
-    public final void P(s4.c1 c1Var) {
-        ViewGroup viewGroup;
-        f60 f60Var = this.F;
-        f60Var.Q.invalidate();
-        f60Var.a2.invalidate();
-        viewGroup = ((org.telegram.ui.ActionBar.f3) f60Var).containerView;
-        viewGroup.invalidate();
-        f60.J0(f60Var);
+    /* JADX WARN: Removed duplicated region for block: B:115:0x04b3  */
+    /* JADX WARN: Removed duplicated region for block: B:125:0x05b2  */
+    /* JADX WARN: Removed duplicated region for block: B:130:0x060a  */
+    /* JADX WARN: Removed duplicated region for block: B:134:0x0685  */
+    /* JADX WARN: Removed duplicated region for block: B:151:0x06ac  */
+    /* JADX WARN: Removed duplicated region for block: B:153:0x0620  */
+    /* JADX WARN: Removed duplicated region for block: B:157:0x05fa  */
+    /* JADX WARN: Removed duplicated region for block: B:159:0x0500  */
+    /* JADX WARN: Removed duplicated region for block: B:176:0x0737 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:177:0x0738  */
+    /* JADX WARN: Removed duplicated region for block: B:196:0x029b  */
+    /* JADX WARN: Removed duplicated region for block: B:202:0x025b  */
+    /* JADX WARN: Removed duplicated region for block: B:208:0x0271  */
+    /* JADX WARN: Removed duplicated region for block: B:218:0x02ae  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x010b  */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x0285  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x02df  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x042f  */
+    @Override // android.view.ViewGroup, android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void dispatchDraw(Canvas canvas) {
+        float f7;
+        float f10;
+        c60 c60Var;
+        boolean z10;
+        Paint paint;
+        Matrix matrix;
+        RadialProgressView radialProgressView;
+        boolean z11;
+        Canvas canvas2;
+        Paint paint2;
+        RadialProgressView radialProgressView2;
+        Matrix matrix2;
+        float f11;
+        float f12;
+        int i10;
+        float f13;
+        RadialProgressView radialProgressView3;
+        org.telegram.ui.Components.ba baVar;
+        org.telegram.ui.Components.ba baVar2;
+        RectF rectF;
+        float f14;
+        int dp;
+        float f15;
+        float f16;
+        RadialProgressView radialProgressView4;
+        org.telegram.ui.Components.ba baVar3;
+        org.telegram.ui.Components.ba baVar4;
+        org.telegram.ui.Components.ba baVar5;
+        float f17;
+        Paint paint3;
+        float f18;
+        float f19;
+        int i11;
+        boolean z12;
+        boolean z13;
+        c60 c60Var2;
+        c60 c60Var3;
+        int i12;
+        int i13;
+        int i14;
+        int i15;
+        d60 d60Var = this.f;
+        Paint paint4 = d60Var.J1;
+        org.telegram.ui.Components.voip.w2 w2Var = d60Var.r;
+        org.telegram.ui.Components.voip.w2 w2Var2 = d60Var.v;
+        Matrix matrix3 = d60Var.S0;
+        org.telegram.ui.Components.ba baVar6 = d60Var.N0;
+        org.telegram.ui.Components.ba baVar7 = d60Var.M0;
+        RectF rectF2 = d60Var.v0;
+        Paint paint5 = d60Var.T0;
+        RadialProgressView radialProgressView5 = d60Var.e0;
+        k40 k40Var = d60Var.T;
+        int[] iArr = d60Var.X1;
+        org.telegram.ui.Components.voip.w2 w2Var3 = d60Var.w;
+        Paint paint6 = d60Var.I1;
+        if (d60Var.l2 && d60Var.g2) {
+            return;
+        }
+        int measuredWidth = (getMeasuredWidth() - getMeasuredHeight()) / 2;
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        long j3 = elapsedRealtime - d60Var.O1;
+        d60Var.O1 = elapsedRealtime;
+        if (j3 > 20) {
+            j3 = 17;
+        }
+        long j10 = j3;
+        c60 c60Var4 = d60Var.N1;
+        if (c60Var4 != null) {
+            c60Var4.b(0, measuredWidth, getMeasuredHeight(), j10, d60Var.O0);
+        }
+        baVar7.a = AndroidUtilities.dp(62.0f) * 0.46296296f;
+        RectF rectF3 = rectF2;
+        baVar7.b = com.google.android.gms.internal.vision.e2.B(AndroidUtilities.dp(20.0f), 0.6f, AndroidUtilities.dp(62.0f), 0.48076922f);
+        baVar6.a = AndroidUtilities.dp(65.0f) * 0.46296296f;
+        baVar6.b = com.google.android.gms.internal.vision.e2.B(AndroidUtilities.dp(20.0f), 0.6f, AndroidUtilities.dp(65.0f), 0.48076922f);
+        float f20 = d60Var.P0;
+        float f21 = d60Var.O0;
+        if (f20 != f21) {
+            f7 = 0.6f;
+            float f22 = d60Var.Q0;
+            f10 = 0.0f;
+            float f23 = (j10 * f22) + f21;
+            d60Var.O0 = f23;
+            if (f22 > 0.0f) {
+                if (f23 > f20) {
+                    d60Var.O0 = f20;
+                }
+            } else if (f23 < f20) {
+                d60Var.O0 = f20;
+            }
+        } else {
+            f7 = 0.6f;
+            f10 = 0.0f;
+        }
+        c60 c60Var5 = d60Var.M1;
+        if (c60Var5 != null && c60Var5.i == 3) {
+            radialProgressView5.H = true;
+            if (Math.abs(radialProgressView5.n) < 360.0f) {
+                z10 = false;
+                if (z10) {
+                }
+                float interpolation = (this.d.getInterpolation(d60Var.P1) * f7) + 0.4f;
+                baVar6.e(d60Var.O0, 1.0f);
+                baVar7.e(d60Var.O0, 1.0f);
+                if (d60Var.M1 != null) {
+                }
+                canvas2 = canvas;
+                paint2 = paint6;
+                radialProgressView2 = radialProgressView;
+                matrix2 = matrix;
+                f11 = 25.909092f;
+                f12 = 25.0f;
+                i10 = 0;
+                while (i10 < 2) {
+                }
+                super.dispatchDraw(canvas);
+                if (d60Var.a2.r == null) {
+                }
+            }
+        } else if (c60Var5 != null && (c60Var = d60Var.N1) != null && c60Var.i == 3) {
+            radialProgressView5.H = true;
+            radialProgressView5.I = 1.0f;
+            z10 = true;
+            if (z10) {
+                float f24 = d60Var.L1;
+                if (f24 != 1.0f) {
+                    c60 c60Var6 = d60Var.M1;
+                    if (c60Var6 == null || c60Var6.i != 3) {
+                        d60Var.L1 = (j10 / 180.0f) + f24;
+                    } else {
+                        d60Var.L1 = (j10 / 100.0f) + f24;
+                    }
+                    if (d60Var.L1 >= 1.0f) {
+                        d60Var.L1 = 1.0f;
+                        d60Var.M1 = null;
+                        c60 c60Var7 = d60Var.N1;
+                        if (c60Var7 != null && c60Var7.i == 3) {
+                            radialProgressView5.H = false;
+                        }
+                    }
+                    d60Var.W1 = true;
+                }
+                if (!d60Var.W1 || (c60Var3 = d60Var.N1) == null) {
+                    paint = paint4;
+                    matrix = matrix3;
+                    radialProgressView = radialProgressView5;
+                    z11 = z10;
+                } else {
+                    d60Var.W1 = false;
+                    c60 c60Var8 = d60Var.M1;
+                    if (c60Var8 != null) {
+                        d60.S(d60Var, c60Var8.i, iArr);
+                        int i16 = iArr[0];
+                        int i17 = iArr[1];
+                        z11 = z10;
+                        int i18 = iArr[2];
+                        radialProgressView = radialProgressView5;
+                        int i19 = iArr[3];
+                        matrix = matrix3;
+                        d60.S(d60Var, d60Var.N1.i, iArr);
+                        paint = paint4;
+                        i12 = i0.a.d(d60Var.L1, i16, iArr[0]);
+                        i13 = i0.a.d(d60Var.L1, i17, iArr[1]);
+                        i14 = i0.a.d(d60Var.L1, i18, iArr[2]);
+                        i15 = i0.a.d(d60Var.L1, i19, iArr[3]);
+                    } else {
+                        paint = paint4;
+                        matrix = matrix3;
+                        radialProgressView = radialProgressView5;
+                        z11 = z10;
+                        d60.S(d60Var, c60Var3.i, iArr);
+                        i12 = iArr[0];
+                        i13 = iArr[1];
+                        i14 = iArr[2];
+                        i15 = iArr[3];
+                    }
+                    if (this.e != i12) {
+                        RadialGradient radialGradient = new RadialGradient(0.0f, 0.0f, AndroidUtilities.dp(45.454548f), new int[]{i0.a.k(i12, 60), i0.a.k(i12, 0)}, (float[]) null, Shader.TileMode.CLAMP);
+                        d60Var.R0 = radialGradient;
+                        paint5.setShader(radialGradient);
+                        this.e = i12;
+                    }
+                    w2Var2.a(i14, i13);
+                    w2Var.a(i14, i13);
+                    d60Var.n.a(i14, i13);
+                    d60Var.f.a(i14, i13);
+                    org.telegram.ui.Components.voip.w2 w2Var4 = d60Var.s;
+                    int i20 = org.telegram.ui.ActionBar.h6.Dg;
+                    w2Var4.a(org.telegram.ui.ActionBar.h6.w0(null, i20, false), org.telegram.ui.ActionBar.h6.w0(null, i20, false));
+                    d60Var.h.a(i13, i15);
+                }
+                c60 c60Var9 = d60Var.N1;
+                if (c60Var9 != null) {
+                    int i21 = c60Var9.i;
+                    z12 = i21 == 1 || i21 == 0 || d60.p1(i21);
+                    i11 = 3;
+                    if (d60Var.N1.i != 3) {
+                        z13 = true;
+                        if (d60Var.M1 == null && (c60Var2 = d60Var.N1) != null && c60Var2.i == i11) {
+                            float f25 = d60Var.P1 - (j10 / 180.0f);
+                            d60Var.P1 = f25;
+                            if (f25 < f10) {
+                                d60Var.P1 = 0.0f;
+                            }
+                        } else {
+                            if (z12) {
+                                float f26 = d60Var.P1;
+                                if (f26 != 1.0f) {
+                                    float f27 = (j10 / 350.0f) + f26;
+                                    d60Var.P1 = f27;
+                                    if (f27 > 1.0f) {
+                                        d60Var.P1 = 1.0f;
+                                    }
+                                }
+                            }
+                            if (!z12) {
+                                float f28 = d60Var.P1;
+                                if (f28 != 0.0f) {
+                                    float f29 = f28 - (j10 / 350.0f);
+                                    d60Var.P1 = f29;
+                                    if (f29 < 0.0f) {
+                                        d60Var.P1 = 0.0f;
+                                    }
+                                }
+                            }
+                        }
+                        if (z13) {
+                            float f30 = d60Var.Q1;
+                            if (f30 != 1.0f) {
+                                float f31 = (j10 / 350.0f) + f30;
+                                d60Var.Q1 = f31;
+                                if (f31 > 1.0f) {
+                                    d60Var.Q1 = 1.0f;
+                                }
+                            }
+                        }
+                        if (!z13) {
+                            float f32 = d60Var.Q1;
+                            if (f32 != 0.0f) {
+                                float f33 = f32 - (j10 / 350.0f);
+                                d60Var.Q1 = f33;
+                                if (f33 < 0.0f) {
+                                    d60Var.Q1 = 0.0f;
+                                }
+                            }
+                        }
+                    }
+                } else {
+                    i11 = 3;
+                    z12 = false;
+                }
+                z13 = false;
+                if (d60Var.M1 == null) {
+                }
+                if (z12) {
+                }
+                if (!z12) {
+                }
+                if (z13) {
+                }
+                if (!z13) {
+                }
+            } else {
+                paint = paint4;
+                matrix = matrix3;
+                radialProgressView = radialProgressView5;
+                z11 = z10;
+            }
+            float interpolation2 = (this.d.getInterpolation(d60Var.P1) * f7) + 0.4f;
+            baVar6.e(d60Var.O0, 1.0f);
+            baVar7.e(d60Var.O0, 1.0f);
+            if (d60Var.M1 != null || d60Var.N1 == null || d60Var.r1()) {
+                canvas2 = canvas;
+                paint2 = paint6;
+                radialProgressView2 = radialProgressView;
+                matrix2 = matrix;
+                f11 = 25.909092f;
+                f12 = 25.0f;
+            } else {
+                c60 c60Var10 = d60Var.N1;
+                f11 = 25.909092f;
+                int i22 = c60Var10.i;
+                f12 = 25.0f;
+                if (i22 == 3 || d60Var.M1.i == 3) {
+                    if (i22 == 3) {
+                        f19 = d60Var.L1;
+                        paint3 = paint6;
+                        paint3.setShader(d60Var.M1.g);
+                        f18 = 1.0f;
+                    } else {
+                        paint3 = paint6;
+                        f18 = 1.0f;
+                        float f34 = 1.0f - d60Var.L1;
+                        paint3.setShader(c60Var10.g);
+                        f19 = f34;
+                    }
+                    int offsetColor = AndroidUtilities.getOffsetColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.kg, false), org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Kg, false), d60Var.U1, f18);
+                    Paint paint7 = paint;
+                    paint7.setColor(offsetColor);
+                    float measuredWidth2 = (int) ((w2Var3.getMeasuredWidth() / 2.0f) + w2Var3.getX());
+                    float y3 = (int) (w2Var3.getY() + AndroidUtilities.dp(25.0f));
+                    Matrix matrix4 = matrix;
+                    matrix4.setTranslate(measuredWidth2, y3);
+                    d60Var.R0.setLocalMatrix(matrix4);
+                    paint3.setAlpha(76);
+                    canvas.save();
+                    canvas.scale(w2Var3.getScaleX() * 1.0f, w2Var3.getScaleY() * 1.0f, measuredWidth2, y3);
+                    canvas.save();
+                    float x10 = com.google.android.gms.internal.vision.e2.x(0.807f, d60Var.O0, 0.5f, 0.878f) * d60Var.Q1;
+                    canvas.scale(x10, x10, measuredWidth2, y3);
+                    canvas.save();
+                    canvas.scale(1.2f, 1.2f, measuredWidth2, y3);
+                    canvas.drawCircle(measuredWidth2, y3, AndroidUtilities.dp(160.0f), paint5);
+                    canvas.restore();
+                    canvas.restore();
+                    if (d60Var.a1 != null) {
+                        canvas.save();
+                        float B = com.google.android.gms.internal.vision.e2.B(0.807f, d60Var.O0, 0.878f, interpolation2);
+                        canvas.scale(B, B, measuredWidth2, y3);
+                        baVar6.a(measuredWidth2, y3, canvas, paint3);
+                        canvas.restore();
+                        canvas.save();
+                        float B2 = com.google.android.gms.internal.vision.e2.B(0.704f, d60Var.O0, 0.926f, interpolation2);
+                        canvas.scale(B2, B2, measuredWidth2, y3);
+                        baVar7.a(measuredWidth2, y3, canvas, paint3);
+                        canvas.restore();
+                    }
+                    paint3.setAlpha(255);
+                    if (z11) {
+                        canvas.drawCircle(measuredWidth2, y3, AndroidUtilities.dp(25.909092f), paint3);
+                        paint3.setColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Og, false));
+                        if (f19 != 0.0f) {
+                            paint3.setAlpha((int) (f19 * 255.0f));
+                            paint3.setShader(null);
+                            canvas.drawCircle(measuredWidth2, y3, AndroidUtilities.dp(25.909092f), paint3);
+                        }
+                    }
+                    canvas.drawCircle(measuredWidth2, y3, AndroidUtilities.dp(25.0f) * f19, paint7);
+                    if (!z11) {
+                        radialProgressView.a(canvas, measuredWidth2, y3);
+                    }
+                    canvas.restore();
+                    super.dispatchDraw(canvas);
+                    if (d60Var.a2.r == null) {
+                        return;
+                    }
+                    invalidate();
+                    return;
+                }
+                canvas2 = canvas;
+                paint2 = paint6;
+                radialProgressView2 = radialProgressView;
+                matrix2 = matrix;
+            }
+            i10 = 0;
+            while (i10 < 2) {
+                float dp2 = AndroidUtilities.dp(f11);
+                if (i10 == 0 && d60Var.M1 != null) {
+                    if (!d60Var.r1()) {
+                        paint2.setShader(d60Var.M1.g);
+                    }
+                    f14 = 1.0f - d60Var.L1;
+                    if (d60Var.M1.i == 3) {
+                        dp = AndroidUtilities.dp(2.0f);
+                        dp2 -= dp * f14;
+                    }
+                    if (paint2.getShader() == null) {
+                    }
+                    f15 = f14;
+                    f16 = dp2;
+                    if (d60Var.r1()) {
+                    }
+                    float measuredWidth3 = (int) ((w2Var3.getMeasuredWidth() / 2.0f) + w2Var3.getX());
+                    float y10 = (int) (w2Var3.getY() + AndroidUtilities.dp(f12));
+                    matrix2.setTranslate(measuredWidth3, y10);
+                    d60Var.R0.setLocalMatrix(matrix2);
+                    paint2.setAlpha((int) (d60Var.V0 * 76.0f * f15));
+                    canvas2.save();
+                    canvas2.scale(w2Var3.getScaleX() * 1.0f, w2Var3.getScaleX() * 1.0f, measuredWidth3, y10);
+                    canvas2.save();
+                    float x11 = com.google.android.gms.internal.vision.e2.x(d60Var.O0, 0.807f, 0.5f, 0.878f);
+                    float f35 = d60Var.Q1;
+                    canvas2.scale(f35 * x11, f35 * x11, measuredWidth3, y10);
+                    if (i10 != 1) {
+                    }
+                    canvas2.restore();
+                    if (!d60Var.r1()) {
+                    }
+                    if (d60.F3) {
+                    }
+                    float measuredWidth4 = (getMeasuredWidth() / 2.0f) - AndroidUtilities.dp(21.0f);
+                    float dp3 = AndroidUtilities.dp(24.0f);
+                    float f36 = (f16 - measuredWidth4) + measuredWidth4;
+                    float f37 = d60Var.V0;
+                    float f38 = f36 * f37;
+                    float f39 = ((f16 - dp3) + dp3) * f37;
+                    float f40 = measuredWidth3 + f38;
+                    f13 = interpolation2;
+                    baVar = baVar5;
+                    rectF = rectF3;
+                    rectF.set(measuredWidth3 - f38, y10 - f39, f40, y10 + f39);
+                    float dp4 = (f16 - AndroidUtilities.dp(4.0f)) + AndroidUtilities.dp(4.0f);
+                    paint2.setAlpha((int) (d60Var.V0 * paint2.getAlpha()));
+                    canvas2.drawRoundRect(rectF, dp4, dp4, paint2);
+                    if (i10 != 1) {
+                    }
+                    canvas2.restore();
+                    if (k40Var != null) {
+                        paint2.setAlpha((int) (k40Var.getAlpha() * 255.0f));
+                        float x12 = k40Var.getX() - getX();
+                        float y11 = k40Var.getY() - getY();
+                        rectF.set(x12, y11, k40Var.getMeasuredWidth() + x12, k40Var.getMeasuredHeight() + y11);
+                        canvas2.save();
+                        canvas2.scale(k40Var.getScaleX(), k40Var.getScaleY(), rectF.centerX(), rectF.centerY());
+                        canvas2.drawRoundRect(rectF, AndroidUtilities.dp(f17), AndroidUtilities.dp(f17), paint2);
+                        canvas2.restore();
+                    }
+                } else if (i10 != 1 || d60Var.N1 == null) {
+                    f13 = interpolation2;
+                    radialProgressView3 = radialProgressView2;
+                    baVar = baVar6;
+                    baVar2 = baVar7;
+                    rectF = rectF3;
+                } else {
+                    if (!d60Var.r1()) {
+                        paint2.setShader(d60Var.N1.g);
+                    }
+                    f14 = d60Var.L1;
+                    if (d60Var.N1.i == 3) {
+                        dp = AndroidUtilities.dp(2.0f);
+                        dp2 -= dp * f14;
+                    }
+                    if (paint2.getShader() == null || d60Var.r1()) {
+                        f15 = f14;
+                        f16 = dp2;
+                    } else {
+                        f15 = f14;
+                        f16 = dp2;
+                        paint2.setColor(AndroidUtilities.getOffsetColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.kg, false), org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Kg, false), d60Var.U1, 1.0f));
+                    }
+                    if (d60Var.r1()) {
+                        radialProgressView4 = radialProgressView2;
+                        baVar3 = baVar6;
+                        baVar4 = baVar7;
+                    } else {
+                        int w02 = org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Lg, false);
+                        int i23 = org.telegram.ui.ActionBar.h6.Kg;
+                        radialProgressView4 = radialProgressView2;
+                        int offsetColor2 = AndroidUtilities.getOffsetColor(w02, org.telegram.ui.ActionBar.h6.w0(null, i23, false), d60Var.U1, 1.0f);
+                        paint2.setColor(offsetColor2);
+                        paint2.setShader(null);
+                        int i24 = org.telegram.ui.ActionBar.h6.kg;
+                        baVar4 = baVar7;
+                        baVar3 = baVar6;
+                        w2Var.a(AndroidUtilities.getOffsetColor(org.telegram.ui.ActionBar.h6.w0(null, i24, false), org.telegram.ui.ActionBar.h6.w0(null, i23, false), d60Var.U1, 1.0f), offsetColor2);
+                        w2Var2.a(AndroidUtilities.getOffsetColor(org.telegram.ui.ActionBar.h6.w0(null, i24, false), org.telegram.ui.ActionBar.h6.w0(null, i23, false), d60Var.U1, 1.0f), offsetColor2);
+                    }
+                    float measuredWidth32 = (int) ((w2Var3.getMeasuredWidth() / 2.0f) + w2Var3.getX());
+                    float y102 = (int) (w2Var3.getY() + AndroidUtilities.dp(f12));
+                    matrix2.setTranslate(measuredWidth32, y102);
+                    d60Var.R0.setLocalMatrix(matrix2);
+                    paint2.setAlpha((int) (d60Var.V0 * 76.0f * f15));
+                    canvas2.save();
+                    canvas2.scale(w2Var3.getScaleX() * 1.0f, w2Var3.getScaleX() * 1.0f, measuredWidth32, y102);
+                    canvas2.save();
+                    float x112 = com.google.android.gms.internal.vision.e2.x(d60Var.O0, 0.807f, 0.5f, 0.878f);
+                    float f352 = d60Var.Q1;
+                    canvas2.scale(f352 * x112, f352 * x112, measuredWidth32, y102);
+                    if (i10 != 1 && !d60Var.r1() && LiteMode.isEnabled(512)) {
+                        canvas2.save();
+                        canvas2.scale(1.2f, 1.2f, measuredWidth32, y102);
+                        int alpha = paint5.getAlpha();
+                        paint5.setAlpha((int) ((1.0f - d60Var.z3.e) * d60Var.V0 * alpha));
+                        canvas2.drawCircle(measuredWidth32, y102, AndroidUtilities.dp(160.0f), paint5);
+                        paint5.setAlpha(alpha);
+                        canvas2.restore();
+                    }
+                    canvas2.restore();
+                    if (!d60Var.r1()) {
+                        baVar2 = baVar4;
+                        baVar5 = baVar3;
+                    } else if (d60Var.V0 > 0.0f) {
+                        canvas2.save();
+                        float x13 = com.google.android.gms.internal.vision.e2.x(d60Var.O0, 0.807f, interpolation2, 0.878f);
+                        canvas2.scale(x13, x13, measuredWidth32, y102);
+                        baVar5 = baVar3;
+                        baVar5.a(measuredWidth32, y102, canvas2, paint2);
+                        canvas2.restore();
+                        canvas2.save();
+                        float x14 = com.google.android.gms.internal.vision.e2.x(d60Var.O0, 0.704f, interpolation2, 0.926f);
+                        canvas2.scale(x14, x14, measuredWidth32, y102);
+                        baVar2 = baVar4;
+                        baVar2.a(measuredWidth32, y102, canvas2, paint2);
+                        canvas2.restore();
+                    } else {
+                        baVar2 = baVar4;
+                        baVar5 = baVar3;
+                    }
+                    if (d60.F3) {
+                        if (i10 == 0) {
+                            paint2.setAlpha(255);
+                        } else {
+                            paint2.setAlpha((int) (f15 * 255.0f));
+                        }
+                    } else if (i10 == 0) {
+                        paint2.setAlpha((int) (d60Var.W0 * 255.0f));
+                    } else {
+                        paint2.setAlpha((int) (d60Var.W0 * f15 * 255.0f));
+                    }
+                    float measuredWidth42 = (getMeasuredWidth() / 2.0f) - AndroidUtilities.dp(21.0f);
+                    float dp32 = AndroidUtilities.dp(24.0f);
+                    float f362 = (f16 - measuredWidth42) + measuredWidth42;
+                    float f372 = d60Var.V0;
+                    float f382 = f362 * f372;
+                    float f392 = ((f16 - dp32) + dp32) * f372;
+                    float f402 = measuredWidth32 + f382;
+                    f13 = interpolation2;
+                    baVar = baVar5;
+                    rectF = rectF3;
+                    rectF.set(measuredWidth32 - f382, y102 - f392, f402, y102 + f392);
+                    float dp42 = (f16 - AndroidUtilities.dp(4.0f)) + AndroidUtilities.dp(4.0f);
+                    paint2.setAlpha((int) (d60Var.V0 * paint2.getAlpha()));
+                    canvas2.drawRoundRect(rectF, dp42, dp42, paint2);
+                    if (i10 != 1) {
+                        f17 = 4.0f;
+                        if (d60Var.N1.i == 3) {
+                            if (d60Var.r1()) {
+                                radialProgressView3 = radialProgressView4;
+                                radialProgressView3.setSize((int) ((dp42 * 2.0f) - AndroidUtilities.dp(4.0f)));
+                            } else {
+                                radialProgressView3 = radialProgressView4;
+                            }
+                            radialProgressView3.a(canvas2, measuredWidth32, y102);
+                        } else {
+                            radialProgressView3 = radialProgressView4;
+                        }
+                    } else {
+                        radialProgressView3 = radialProgressView4;
+                        f17 = 4.0f;
+                    }
+                    canvas2.restore();
+                    if (k40Var != null && k40Var.getVisibility() == 0) {
+                        paint2.setAlpha((int) (k40Var.getAlpha() * 255.0f));
+                        float x122 = k40Var.getX() - getX();
+                        float y112 = k40Var.getY() - getY();
+                        rectF.set(x122, y112, k40Var.getMeasuredWidth() + x122, k40Var.getMeasuredHeight() + y112);
+                        canvas2.save();
+                        canvas2.scale(k40Var.getScaleX(), k40Var.getScaleY(), rectF.centerX(), rectF.centerY());
+                        canvas2.drawRoundRect(rectF, AndroidUtilities.dp(f17), AndroidUtilities.dp(f17), paint2);
+                        canvas2.restore();
+                    }
+                }
+                i10++;
+                rectF3 = rectF;
+                baVar7 = baVar2;
+                radialProgressView2 = radialProgressView3;
+                interpolation2 = f13;
+                baVar6 = baVar;
+            }
+            super.dispatchDraw(canvas);
+            if (d60Var.a2.r == null) {
+            }
+        }
+        z10 = true;
+        if (z10) {
+        }
+        float interpolation22 = (this.d.getInterpolation(d60Var.P1) * f7) + 0.4f;
+        baVar6.e(d60Var.O0, 1.0f);
+        baVar7.e(d60Var.O0, 1.0f);
+        if (d60Var.M1 != null) {
+        }
+        canvas2 = canvas;
+        paint2 = paint6;
+        radialProgressView2 = radialProgressView;
+        matrix2 = matrix;
+        f11 = 25.909092f;
+        f12 = 25.0f;
+        i10 = 0;
+        while (i10 < 2) {
+        }
+        super.dispatchDraw(canvas);
+        if (d60Var.a2.r == null) {
+        }
     }
 }

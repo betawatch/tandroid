@@ -21,11 +21,11 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgress2;
-import org.telegram.ui.Components.bc0;
+import org.telegram.ui.Components.mc0;
 import org.telegram.ui.ld1;
 import org.telegram.ui.od1;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class k5 extends org.telegram.ui.Components.w9 implements DownloadController.FileDownloadProgressListener {
     public RectF G;
@@ -39,7 +39,7 @@ public final class k5 extends org.telegram.ui.Components.w9 implements DownloadC
     public int O;
     public int P;
     public Paint Q;
-    public bc0 R;
+    public mc0 R;
     public int S;
     public ld1 T;
     public int U;
@@ -84,7 +84,7 @@ public final class k5 extends org.telegram.ui.Components.w9 implements DownloadC
         int i15;
         od1 od1Var3;
         int i16;
-        bc0 bc0Var;
+        mc0 mc0Var;
         BlendMode blendMode;
         RadialProgress2 radialProgress2 = this.H;
         RectF rectF = this.G;
@@ -141,15 +141,15 @@ public final class k5 extends org.telegram.ui.Components.w9 implements DownloadC
                                     this.P = i17;
                                     if (i15 != 0) {
                                         this.K = null;
-                                        bc0 bc0Var2 = this.R;
-                                        if (bc0Var2 != null) {
-                                            bc0Var2.o(i11, i13, i15, i16, 0, false);
+                                        mc0 mc0Var2 = this.R;
+                                        if (mc0Var2 != null) {
+                                            mc0Var2.o(i11, i13, i15, i16, 0, false);
                                         } else {
                                             int i19 = i11;
-                                            bc0 bc0Var3 = new bc0(true, i19, i13, i15, i16);
+                                            mc0 mc0Var3 = new mc0(true, i19, i13, i15, i16);
                                             i11 = i19;
-                                            this.R = bc0Var3;
-                                            bc0Var3.w(AndroidUtilities.dp(6.0f));
+                                            this.R = mc0Var3;
+                                            mc0Var3.w(AndroidUtilities.dp(6.0f));
                                             this.R.r(this);
                                         }
                                         if (f7 < 0.0f) {
@@ -171,9 +171,9 @@ public final class k5 extends org.telegram.ui.Components.w9 implements DownloadC
                                         this.a.setGradientBitmap(null);
                                     }
                                 }
-                                bc0Var = this.R;
-                                if (bc0Var == null) {
-                                    bc0Var.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
+                                mc0Var = this.R;
+                                if (mc0Var == null) {
+                                    mc0Var.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
                                     this.R.draw(canvas);
                                 } else {
                                     paint.setShader(this.K);
@@ -202,8 +202,8 @@ public final class k5 extends org.telegram.ui.Components.w9 implements DownloadC
                         int i182 = od1Var52.k1;
                         if (i13 != 0) {
                         }
-                        bc0Var = this.R;
-                        if (bc0Var == null) {
+                        mc0Var = this.R;
+                        if (mc0Var == null) {
                         }
                         super.onDraw(canvas);
                         if (radialProgress2.i.q == 4) {
@@ -224,8 +224,8 @@ public final class k5 extends org.telegram.ui.Components.w9 implements DownloadC
                 int i1822 = od1Var522.k1;
                 if (i13 != 0) {
                 }
-                bc0Var = this.R;
-                if (bc0Var == null) {
+                mc0Var = this.R;
+                if (mc0Var == null) {
                 }
                 super.onDraw(canvas);
                 if (radialProgress2.i.q == 4) {
@@ -250,8 +250,8 @@ public final class k5 extends org.telegram.ui.Components.w9 implements DownloadC
         int i18222 = od1Var5222.k1;
         if (i13 != 0) {
         }
-        bc0Var = this.R;
-        if (bc0Var == null) {
+        mc0Var = this.R;
+        if (mc0Var == null) {
         }
         super.onDraw(canvas);
         if (radialProgress2.i.q == 4) {

@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.animation.OvershootInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class yj0 extends View {
     public final Paint a;
@@ -69,7 +69,7 @@ public final class yj0 extends View {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                 this.h = ofFloat;
                 ofFloat.addUpdateListener(new c3(this, 18));
-                this.h.addListener(new org.telegram.ui.Components.u81(this, 27));
+                this.h.addListener(new org.telegram.ui.Components.q81(this, 28));
                 this.h.setInterpolator(new OvershootInterpolator(2.0f));
                 this.h.setDuration(200L);
                 this.h.start();

@@ -6,20 +6,20 @@ import org.telegram.ui.aj1;
 import org.telegram.ui.bj1;
 import org.telegram.ui.od1;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class jj extends org.telegram.ui.Cells.gb {
+public final class jj extends org.telegram.ui.Cells.eb {
     public final /* synthetic */ int w;
-    public final /* synthetic */ ll0 x;
+    public final /* synthetic */ vl0 x;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ jj(ll0 ll0Var, Context context, int i10) {
+    public /* synthetic */ jj(vl0 vl0Var, Context context, int i10) {
         super(context, 5);
         this.w = i10;
-        this.x = ll0Var;
+        this.x = vl0Var;
     }
 
-    @Override // org.telegram.ui.Cells.gb
+    @Override // org.telegram.ui.Cells.eb
     public final void a(int i10, Object obj) {
         switch (this.w) {
             case 0:
@@ -38,7 +38,7 @@ public final class jj extends org.telegram.ui.Cells.gb {
         }
     }
 
-    @Override // org.telegram.ui.Cells.gb
+    @Override // org.telegram.ui.Cells.eb
     public boolean b(Object obj, int i10) {
         switch (this.w) {
             case 1:

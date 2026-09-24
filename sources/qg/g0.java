@@ -1,27 +1,23 @@
 package qg;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
-import org.telegram.ui.tt0;
+import org.telegram.ui.st0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class g0 extends View {
-    public final /* synthetic */ tt0 a;
+public final class g0 implements c {
+    public final /* synthetic */ st0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g0(tt0 tt0Var, Context context) {
-        super(context);
-        this.a = tt0Var;
+    public g0(st0 st0Var) {
+        this.a = st0Var;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        e0 e0Var = this.a.W0;
-        if (e0Var != null) {
-            e0Var.d(canvas);
-        }
+    @Override // qg.c
+    public final void a() {
+        this.a.s0(null, true);
+    }
+
+    @Override // qg.c
+    public final j b() {
+        return this.a.S0;
     }
 }

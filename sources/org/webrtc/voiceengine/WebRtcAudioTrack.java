@@ -13,7 +13,7 @@ import org.webrtc.Logging;
 import org.webrtc.MediaStreamTrack;
 import org.webrtc.ThreadUtils;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public class WebRtcAudioTrack {
     private static final long AUDIO_TRACK_THREAD_JOIN_TIMEOUT_MS = 2000;
@@ -36,13 +36,13 @@ public class WebRtcAudioTrack {
     private final long nativeAudioTrack;
     private final ThreadUtils.ThreadChecker threadChecker;
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public enum AudioTrackStartErrorCode {
         AUDIO_TRACK_START_EXCEPTION,
         AUDIO_TRACK_START_STATE_MISMATCH
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public class AudioTrackThread extends Thread {
         private volatile boolean keepAlive;
         private long lastPlaybackHeadPosition;
@@ -128,7 +128,7 @@ public class WebRtcAudioTrack {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public interface ErrorCallback {
         void onWebRtcAudioTrackError(String str);
 
@@ -137,7 +137,7 @@ public class WebRtcAudioTrack {
         void onWebRtcAudioTrackStartError(AudioTrackStartErrorCode audioTrackStartErrorCode, String str);
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     @Deprecated
     public interface WebRtcAudioTrackErrorCallback {
         void onWebRtcAudioTrackError(String str);

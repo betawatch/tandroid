@@ -1,26 +1,26 @@
 package org.telegram.ui;
 
-import android.view.ViewTreeObserver;
-import android.widget.FrameLayout;
+import android.app.Activity;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class m60 implements ViewTreeObserver.OnGlobalLayoutListener {
-    public final /* synthetic */ FrameLayout a;
-    public final /* synthetic */ p60 b;
+public final class m60 extends rg.j0 {
+    public final /* synthetic */ n60 W0;
 
-    public m60(p60 p60Var, FrameLayout frameLayout) {
-        this.b = p60Var;
-        this.a = frameLayout;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m60(n60 n60Var, n60 n60Var2, Activity activity, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(i10, i11, activity, n60Var2, d6Var);
+        this.W0 = n60Var;
     }
 
-    @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
-    public final void onGlobalLayout() {
-        this.a.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-        p60 p60Var = this.b;
-        if (p60Var.z0 == null) {
-            p60Var.z0 = (tc) p60Var.y0(p60Var.Z);
-        }
-        p60Var.z0.f.setOnClickListener(new h60(this, 1));
+    @Override // org.telegram.ui.ActionBar.e3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.i2
+    public final void dismiss() {
+        super.dismiss();
+        this.W0.B0 = false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.e3
+    public final void onOpenAnimationEnd() {
+        this.W0.B0 = false;
     }
 }

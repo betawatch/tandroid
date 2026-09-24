@@ -28,16 +28,16 @@ import com.google.android.gms.fido.common.Transport;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.concurrent.Executor;
-import n7.t0;
+import n7.s0;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.MediaDataController;
 import v0.i;
-import v7.o6;
+import v7.p6;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class e extends b1.d {
     public final Context e;
@@ -56,11 +56,11 @@ public final class e extends b1.d {
         JSONObject jSONObject;
         try {
             k kVar = uVar.f;
-            t0 t0Var = uVar.c;
+            s0 s0Var = uVar.c;
             try {
                 JSONObject jSONObject2 = new JSONObject();
-                if (t0Var != null && t0Var.u().length > 0) {
-                    jSONObject2.put("rawId", u6.b.c(t0Var.u()));
+                if (s0Var != null && s0Var.u().length > 0) {
+                    jSONObject2.put("rawId", u6.b.c(s0Var.u()));
                 }
                 String str = uVar.n;
                 if (str != null) {
@@ -154,7 +154,7 @@ public final class e extends b1.d {
             }
         }
         JSONObject jSONObject = new JSONObject(str2);
-        byte[] a2 = o6.a(jSONObject);
+        byte[] a2 = p6.a(jSONObject);
         JSONObject jSONObject2 = jSONObject.getJSONObject("user");
         String str3 = "id";
         String string = jSONObject2.getString("id");

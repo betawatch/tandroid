@@ -1,39 +1,58 @@
 package org.telegram.ui.ActionBar;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o2 implements Runnable {
+public final /* synthetic */ class o2 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ f3 b;
+    public final /* synthetic */ e3 b;
 
-    public /* synthetic */ o2(f3 f3Var, int i10) {
+    public /* synthetic */ o2(e3 e3Var, int i10) {
         this.a = i10;
-        this.b = f3Var;
+        this.b = e3Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                f3 f3Var = this.b;
-                f3Var.getClass();
-                try {
-                    f3Var.dismissInternal();
+                e3 e3Var = this.b;
+                e3Var.getClass();
+                e3Var.navigationBarAlpha = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                c3 c3Var = e3Var.container;
+                if (c3Var != null) {
+                    c3Var.invalidate();
                     break;
-                } catch (Exception e) {
-                    FileLog.e(e);
-                    return;
                 }
+                break;
             case 1:
-                f3 f3Var2 = this.b;
-                AndroidUtilities.removeFromParent(f3Var2.container);
-                f3Var2.attachedFragment.getLayoutContainer().addView(f3Var2.container);
+                e3 e3Var2 = this.b;
+                e3Var2.getClass();
+                e3Var2.navigationBarAlpha = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                c3 c3Var2 = e3Var2.container;
+                if (c3Var2 != null) {
+                    c3Var2.invalidate();
+                    break;
+                }
+                break;
+            case 2:
+                this.b.onContainerViewTranslation();
+                break;
+            case 3:
+                this.b.onContainerViewTranslation();
+                break;
+            case 4:
+                this.b.onContainerViewTranslation();
+                break;
+            case 5:
+                e3.j(this.b, valueAnimator);
+                break;
+            case 6:
+                this.b.onContainerViewTranslation();
                 break;
             default:
-                this.b.dismiss();
+                e3.i(this.b, valueAnimator);
                 break;
         }
     }

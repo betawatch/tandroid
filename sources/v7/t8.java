@@ -1,18 +1,83 @@
 package v7;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public abstract class t8 {
-    public static long a(e2.v vVar, int i10, int i11) {
-        vVar.J(i10);
-        if (vVar.a() < 5) {
-            return -9223372036854775807L;
+    public static int a(a4.h hVar, int i10, int i11, int i12) {
+        e2.d.b(Math.max(Math.max(i10, i11), i12) <= 31);
+        int i13 = (1 << i10) - 1;
+        int i14 = (1 << i11) - 1;
+        p7.a(p7.a(i13, i14), 1 << i12);
+        if (hVar.b() < i10) {
+            return -1;
         }
-        int j3 = vVar.j();
-        if ((8388608 & j3) != 0 || ((2096896 & j3) >> 8) != i11 || (j3 & 32) == 0 || vVar.x() < 7 || vVar.a() < 7 || (vVar.x() & 16) != 16) {
-            return -9223372036854775807L;
+        int i15 = hVar.i(i10);
+        if (i15 == i13) {
+            if (hVar.b() < i11) {
+                return -1;
+            }
+            int i16 = hVar.i(i11);
+            i15 += i16;
+            if (i16 == i14) {
+                if (hVar.b() < i12) {
+                    return -1;
+                }
+                return hVar.i(i12) + i15;
+            }
         }
-        vVar.h(0, 6, new byte[6]);
-        return ((r0[0] & 255) << 25) | ((r0[1] & 255) << 17) | ((r0[2] & 255) << 9) | ((r0[3] & 255) << 1) | ((255 & r0[4]) >> 7);
+        return i15;
+    }
+
+    public static void b(a4.h hVar) {
+        hVar.t(3);
+        hVar.t(8);
+        boolean h = hVar.h();
+        boolean h10 = hVar.h();
+        if (h) {
+            hVar.t(5);
+        }
+        if (h10) {
+            hVar.t(6);
+        }
+    }
+
+    public static void c(a4.h hVar) {
+        int i10;
+        int i11 = hVar.i(2);
+        if (i11 == 0) {
+            hVar.t(6);
+            return;
+        }
+        int a2 = a(hVar, 5, 8, 16) + 1;
+        if (i11 == 1) {
+            hVar.t(a2 * 7);
+            return;
+        }
+        if (i11 == 2) {
+            boolean h = hVar.h();
+            int i12 = h ? 1 : 5;
+            int i13 = h ? 7 : 5;
+            int i14 = h ? 8 : 6;
+            int i15 = 0;
+            while (i15 < a2) {
+                if (hVar.h()) {
+                    hVar.t(7);
+                    i10 = 0;
+                } else {
+                    if (hVar.i(2) == 3 && hVar.i(i13) * i12 != 0) {
+                        hVar.s();
+                    }
+                    i10 = hVar.i(i14) * i12;
+                    if (i10 != 0 && i10 != 180) {
+                        hVar.s();
+                    }
+                    hVar.s();
+                }
+                if (i10 != 0 && i10 != 180 && hVar.h()) {
+                    i15++;
+                }
+                i15++;
+            }
+        }
     }
 }

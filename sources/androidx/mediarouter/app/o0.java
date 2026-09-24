@@ -30,9 +30,8 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Cells.ja;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class o0 extends g.u {
     public static final /* synthetic */ int j0 = 0;
@@ -86,9 +85,9 @@ public final class o0 extends g.u {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public o0(Context context) {
-        super(r2, r0 == 0 ? v7.d0.e(r2) : r0);
-        ContextThemeWrapper a2 = v7.d0.a(context, false);
-        int g10 = v7.d0.g(a2, R.attr.mediaRouteTheme);
+        super(r2, r0 == 0 ? v7.f0.e(r2) : r0);
+        ContextThemeWrapper a2 = v7.f0.a(context, false);
+        int g10 = v7.f0.g(a2, R.attr.mediaRouteTheme);
         this.n = p4.r.c;
         this.s = new ArrayList();
         this.v = new ArrayList();
@@ -137,13 +136,13 @@ public final class o0 extends g.u {
         n4.y yVar = this.Z;
         r rVar = this.a0;
         if (yVar != null) {
-            yVar.Z(rVar);
+            yVar.a0(rVar);
             this.Z = null;
         }
         if (mediaSessionCompat$Token != null && this.F) {
             n4.y yVar2 = new n4.y(this.y, mediaSessionCompat$Token);
             this.Z = yVar2;
-            yVar2.V(rVar);
+            yVar2.W(rVar);
             MediaMetadata metadata = ((android.support.v4.media.session.h) this.Z.b).a.getMetadata();
             if (metadata != null) {
                 a0.f fVar = MediaMetadataCompat.d;
@@ -181,7 +180,7 @@ public final class o0 extends g.u {
 
     public final void j() {
         Context context = this.y;
-        getWindow().setLayout(!context.getResources().getBoolean(R.bool.is_tablet) ? -1 : v7.c0.a(context), context.getResources().getBoolean(R.bool.is_tablet) ? -2 : -1);
+        getWindow().setLayout(!context.getResources().getBoolean(R.bool.is_tablet) ? -1 : v7.e0.a(context), context.getResources().getBoolean(R.bool.is_tablet) ? -2 : -1);
         this.d0 = null;
         this.e0 = null;
         f();
@@ -292,7 +291,7 @@ public final class o0 extends g.u {
         uVar.getClass();
         p4.x.b();
         for (p4.v vVar : DesugarCollections.unmodifiableList(uVar.b)) {
-            ja b10 = this.r.b(vVar);
+            k2.u b10 = this.r.b(vVar);
             if (b10 != null) {
                 p4.o oVar = (p4.o) b10.b;
                 if (oVar != null && oVar.d) {
@@ -357,7 +356,7 @@ public final class o0 extends g.u {
         setContentView(R.layout.mr_cast_dialog);
         View decorView = getWindow().getDecorView();
         Context context = this.y;
-        decorView.setBackgroundColor(f0.e.c(context, v7.d0.h(context) ? R.color.mr_dynamic_dialog_background_light : R.color.mr_dynamic_dialog_background_dark));
+        decorView.setBackgroundColor(f0.e.c(context, v7.f0.h(context) ? R.color.mr_dynamic_dialog_background_light : R.color.mr_dynamic_dialog_background_dark));
         ImageButton imageButton = (ImageButton) findViewById(R.id.mr_cast_close_button);
         this.R = imageButton;
         imageButton.setColorFilter(-1);

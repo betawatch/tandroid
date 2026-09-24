@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class j7 {
     public int a;
@@ -102,8 +102,8 @@ public final class j7 {
             } else {
                 str = u6Var.c.trim().toLowerCase();
                 str2 = LocaleController.getInstance().getTranslitString(str);
-                str4 = org.telegram.ui.Cells.q3.i(" ", str);
-                str3 = org.telegram.ui.Cells.q3.i(" ", str2);
+                str4 = v7.j.g(" ", str);
+                str3 = v7.j.g(" ", str2);
             }
             for (int i10 = 0; i10 < arrayList2.size(); i10++) {
                 TLRPC.User user = MessagesController.getInstance(this.d).getUser(Long.valueOf(((TL_stories.StoryView) arrayList2.get(i10)).user_id));

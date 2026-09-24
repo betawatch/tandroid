@@ -1,38 +1,25 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.util.SparseIntArray;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d21 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ w21 b;
+public final class d21 extends org.telegram.ui.ActionBar.d5 {
+    public final /* synthetic */ SparseIntArray R;
 
-    public /* synthetic */ d21(w21 w21Var, int i10) {
-        this.a = i10;
-        this.b = w21Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public d21(boolean z10, SparseIntArray sparseIntArray) {
+        super(2, z10, false, null);
+        this.R = sparseIntArray;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                w21 w21Var = this.b;
-                m21 m21Var = w21Var.G;
-                m21Var.w1(true);
-                k21 k21Var = w21Var.s;
-                k21Var.w1(true);
-                w21Var.J.a(true, true);
-                AndroidUtilities.updateVisibleRows(k21Var);
-                AndroidUtilities.updateVisibleRows(m21Var);
-                break;
-            default:
-                w21 w21Var2 = this.b;
-                if (w21Var2.k()) {
-                    w21Var2.l();
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.ActionBar.d5
+    public final int g(int i10) {
+        return this.R.get(i10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.d5
+    public final int h(int i10) {
+        return this.R.get(i10);
     }
 }

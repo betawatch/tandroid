@@ -5,10 +5,10 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.qe;
-import yh.y3;
+import org.telegram.ui.re;
+import yh.x3;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -30,16 +30,16 @@ public final /* synthetic */ class f implements RequestDelegate {
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new qe((n) this.d, this.b, (Runnable) this.e, (String) this.f, tL_error, tLObject, this.c));
+                AndroidUtilities.runOnUIThread(new re((n) this.d, this.b, (Runnable) this.e, (String) this.f, tL_error, tLObject, this.c));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new qe((y3) this.d, tLObject, this.b, (TLRPC.Document) this.e, this.c, tL_error, (TL_stars.saveStarGift) this.f));
+                AndroidUtilities.runOnUIThread(new re((x3) this.d, tLObject, this.b, (TLRPC.Document) this.e, this.c, tL_error, (TL_stars.saveStarGift) this.f));
                 break;
         }
     }
 
-    public /* synthetic */ f(y3 y3Var, boolean z10, TLRPC.Document document, boolean z11, TL_stars.saveStarGift savestargift) {
-        this.d = y3Var;
+    public /* synthetic */ f(x3 x3Var, boolean z10, TLRPC.Document document, boolean z11, TL_stars.saveStarGift savestargift) {
+        this.d = x3Var;
         this.b = z10;
         this.e = document;
         this.c = z11;

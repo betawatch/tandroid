@@ -3,9 +3,9 @@ package y8;
 import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.Arrays;
-import w7.y8;
+import w7.z8;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class c1 extends o6.a {
     public static final Parcelable.Creator<c1> CREATOR = new n0(10);
@@ -33,7 +33,7 @@ public final class c1 extends o6.a {
         }
         if (obj != null && c1.class == obj.getClass()) {
             c1 c1Var = (c1) obj;
-            if (y8.a(this.a, c1Var.a) && y8.a(this.b, c1Var.b) && y8.a(this.c, c1Var.c) && y8.a(this.d, c1Var.d) && y8.a(this.e, c1Var.e) && y8.a(this.f, c1Var.f) && y8.a(this.h, c1Var.h)) {
+            if (z8.a(this.a, c1Var.a) && z8.a(this.b, c1Var.b) && z8.a(this.c, c1Var.c) && z8.a(this.d, c1Var.d) && z8.a(this.e, c1Var.e) && z8.a(this.f, c1Var.f) && z8.a(this.h, c1Var.h)) {
                 return true;
             }
         }
@@ -58,14 +58,14 @@ public final class c1 extends o6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.e0.q(parcel, 20293);
-        w7.e0.l(parcel, 1, this.a);
-        w7.e0.l(parcel, 2, this.b);
-        w7.e0.k(parcel, 3, this.c, i10);
-        w7.e0.l(parcel, 4, this.d);
-        w7.e0.l(parcel, 5, this.e);
-        w7.e0.e(parcel, 6, this.f);
-        w7.e0.k(parcel, 7, this.h, i10);
-        w7.e0.r(parcel, q6);
+        int q6 = w7.f0.q(parcel, 20293);
+        w7.f0.l(parcel, 1, this.a);
+        w7.f0.l(parcel, 2, this.b);
+        w7.f0.k(parcel, 3, this.c, i10);
+        w7.f0.l(parcel, 4, this.d);
+        w7.f0.l(parcel, 5, this.e);
+        w7.f0.e(parcel, 6, this.f);
+        w7.f0.k(parcel, 7, this.h, i10);
+        w7.f0.r(parcel, q6);
     }
 }

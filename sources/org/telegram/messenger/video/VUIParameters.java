@@ -1,6 +1,6 @@
 package org.telegram.messenger.video;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class VUIParameters {
     public oc.a aspect_ratio;
@@ -29,7 +29,7 @@ public class VUIParameters {
     public boolean video_full_range_flag;
     public boolean video_signal_type_present_flag;
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class BitstreamRestriction {
         public int log2_max_mv_length_horizontal;
         public int log2_max_mv_length_vertical;

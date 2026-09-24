@@ -23,10 +23,10 @@ import java.util.Map;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.MediaController;
-import v7.m7;
-import v7.r6;
+import v7.n7;
+import v7.s6;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class j extends v2.k {
     public static final AtomicInteger c0 = new AtomicInteger();
@@ -87,7 +87,7 @@ public final class j extends v2.k {
     }
 
     public static byte[] e(String str) {
-        if (r6.b(str).startsWith("0x")) {
+        if (s6.b(str).startsWith("0x")) {
             str = str.substring(2);
         }
         byte[] byteArray = new BigInteger(str, 16).toByteArray();
@@ -98,7 +98,7 @@ public final class j extends v2.k {
     }
 
     @Override // y2.j
-    public final void H() {
+    public final void D() {
         this.W = true;
     }
 
@@ -108,7 +108,7 @@ public final class j extends v2.k {
         this.T.getClass();
         if (this.S == null && (bVar = this.H) != null) {
             c3.o c10 = bVar.a.c();
-            if ((c10 instanceof d0) || (c10 instanceof w3.h)) {
+            if ((c10 instanceof d0) || (c10 instanceof w3.i)) {
                 this.S = this.H;
                 this.V = false;
             }
@@ -174,10 +174,10 @@ public final class j extends v2.k {
             this.U = (int) (j3 - mVar.e);
         } catch (Exception unused) {
         } catch (Throwable th3) {
-            m7.a(hVar);
+            n7.a(hVar);
             throw th3;
         }
-        m7.a(hVar);
+        n7.a(hVar);
     }
 
     public final int f(int i10) {
@@ -207,7 +207,7 @@ public final class j extends v2.k {
         z3.k kVar2;
         List singletonList;
         int i11;
-        c3.o eVar;
+        c3.o dVar;
         long j12 = this.h;
         b0 b0Var2 = this.K;
         long open = hVar.open(mVar);
@@ -262,10 +262,10 @@ public final class j extends v2.k {
                     c cVar = this.L;
                     cVar.getClass();
                     b2.s sVar = this.d;
-                    int a2 = v7.g0.a(sVar.r);
+                    int a2 = v7.i0.a(sVar.r);
                     List list = (List) responseHeaders.get("Content-Type");
-                    int a10 = v7.g0.a((list == null || list.isEmpty()) ? null : (String) list.get(0));
-                    int b10 = v7.g0.b(uri);
+                    int a10 = v7.i0.a((list == null || list.isEmpty()) ? null : (String) list.get(0));
+                    int b10 = v7.i0.b(uri);
                     ArrayList arrayList2 = new ArrayList(7);
                     c.a(a2, arrayList2);
                     c.a(a10, arrayList2);
@@ -342,7 +342,7 @@ public final class j extends v2.k {
                                     i17 |= 32;
                                     kVar2 = kVar3;
                                 }
-                                aVar = new w3.h(kVar2, i17, b0Var, list2 != null ? list2 : a1.e, null);
+                                aVar = new w3.i(kVar2, i17, b0Var, list2 != null ? list2 : a1.e, null);
                             } else if (intValue == 11) {
                                 i10 = i15;
                                 arrayList = arrayList2;
@@ -383,7 +383,7 @@ public final class j extends v2.k {
                             i10 = i15;
                             b0Var = b0Var3;
                             arrayList = arrayList2;
-                            aVar = new v3.e(0, 0L);
+                            aVar = new v3.d(0, 0L);
                         }
                         aVar.getClass();
                         try {
@@ -412,29 +412,29 @@ public final class j extends v2.k {
                 } else {
                     c3.o oVar2 = bVar2.a;
                     c3.o c11 = oVar2.c();
-                    e2.d.g(!((c11 instanceof d0) || (c11 instanceof w3.h)));
+                    e2.d.g(!((c11 instanceof d0) || (c11 instanceof w3.i)));
                     e2.d.f("Can't recreate wrapped extractors. Outer type: " + oVar2.getClass(), oVar2.c() == oVar2);
                     if (oVar2 instanceof t) {
-                        eVar = new t(bVar2.b.d, bVar2.c, bVar2.d, bVar2.e);
+                        dVar = new t(bVar2.b.d, bVar2.c, bVar2.d, bVar2.e);
                     } else if (oVar2 instanceof j4.d) {
-                        eVar = new j4.d(0);
+                        dVar = new j4.d(0);
                     } else if (oVar2 instanceof j4.a) {
-                        eVar = new j4.a();
+                        dVar = new j4.a();
                     } else if (oVar2 instanceof j4.c) {
-                        eVar = new j4.c();
+                        dVar = new j4.c();
                     } else {
-                        if (!(oVar2 instanceof v3.e)) {
+                        if (!(oVar2 instanceof v3.d)) {
                             throw new IllegalStateException("Unexpected extractor type for recreation: ".concat(oVar2.getClass().getSimpleName()));
                         }
-                        eVar = new v3.e(0);
+                        dVar = new v3.d(0);
                     }
-                    bVar = new b(eVar, bVar2.b, bVar2.c, bVar2.d, bVar2.e);
+                    bVar = new b(dVar, bVar2.b, bVar2.c, bVar2.d, bVar2.e);
                     j11 = j12;
                 }
                 b bVar3 = bVar;
                 this.S = bVar3;
                 c3.o c12 = bVar3.a.c();
-                if ((c12 instanceof j4.d) || (c12 instanceof j4.a) || (c12 instanceof j4.c) || (c12 instanceof v3.e)) {
+                if ((c12 instanceof j4.d) || (c12 instanceof j4.a) || (c12 instanceof j4.c) || (c12 instanceof v3.d)) {
                     q qVar = this.T;
                     long b11 = j10 != j3 ? b0Var2.b(j10) : j11;
                     if (qVar.l0 != b11) {

@@ -10,9 +10,9 @@ import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class tj extends il0 {
+public final class tj extends sl0 {
     public final int r = UserConfig.selectedAccount;
     public final Context s;
     public final /* synthetic */ zj v;
@@ -22,18 +22,18 @@ public final class tj extends il0 {
         this.s = context;
     }
 
-    @Override // org.telegram.ui.Components.uk0
+    @Override // org.telegram.ui.Components.el0
     public final String F(int i10) {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.uk0
-    public final void G(ml0 ml0Var, float f7, int[] iArr) {
+    @Override // org.telegram.ui.Components.el0
+    public final void G(wl0 wl0Var, float f7, int[] iArr) {
         iArr[0] = 0;
         iArr[1] = 0;
     }
 
-    @Override // org.telegram.ui.Components.il0
+    @Override // org.telegram.ui.Components.sl0
     public final int M(int i10) {
         if (i10 == 0 || i10 == R() - 1) {
             return 1;
@@ -48,7 +48,7 @@ public final class tj extends il0 {
         return 0;
     }
 
-    @Override // org.telegram.ui.Components.il0
+    @Override // org.telegram.ui.Components.sl0
     public final Object O(int i10, int i11) {
         if (i10 == 0) {
             return null;
@@ -66,7 +66,7 @@ public final class tj extends il0 {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.il0
+    @Override // org.telegram.ui.Components.sl0
     public final int P(int i10, int i11) {
         if (i10 == 0) {
             return 1;
@@ -74,17 +74,17 @@ public final class tj extends il0 {
         return i10 == R() - 1 ? 2 : 0;
     }
 
-    @Override // org.telegram.ui.Components.il0
+    @Override // org.telegram.ui.Components.sl0
     public final int R() {
         return ContactsController.getInstance(this.r).phoneBookSectionsArray.size() + 2;
     }
 
-    @Override // org.telegram.ui.Components.il0
+    @Override // org.telegram.ui.Components.sl0
     public final View T(int i10, View view) {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.il0
+    @Override // org.telegram.ui.Components.sl0
     public final boolean V(int i10, int i11, s4.c1 c1Var) {
         if (i10 == 0 || i10 == R() - 1) {
             return false;
@@ -93,7 +93,7 @@ public final class tj extends il0 {
         return i11 < ContactsController.getInstance(i12).phoneBookSectionsDict.get(ContactsController.getInstance(i12).phoneBookSectionsArray.get(i10 + (-1))).size();
     }
 
-    @Override // org.telegram.ui.Components.il0
+    @Override // org.telegram.ui.Components.sl0
     public final void W(int i10, int i11, s4.c1 c1Var) {
         TLRPC.User user;
         if (c1Var.f == 0) {
@@ -126,7 +126,7 @@ public final class tj extends il0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.il0, s4.h0
+    @Override // org.telegram.ui.Components.sl0, s4.h0
     public final void l() {
         X(false);
         this.v.N();
@@ -146,6 +146,6 @@ public final class tj extends il0 {
             yjVar.setLayoutParams(new s4.p0(-1, AndroidUtilities.dp(56.0f)));
             yjVar.setTag(-33024);
         }
-        return new wk0(yjVar);
+        return new gl0(yjVar);
     }
 }

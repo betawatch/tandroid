@@ -10,7 +10,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class gd extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ ld a;
@@ -59,7 +59,7 @@ public final class gd extends org.telegram.ui.ActionBar.j {
                     ldVar.q0 = true;
                     return;
                 } else {
-                    i12 = ((org.telegram.ui.ActionBar.n2) ldVar).currentAccount;
+                    i12 = ((org.telegram.ui.ActionBar.m2) ldVar).currentAccount;
                     ldVar.s0 = Integer.valueOf(MessagesController.getInstance(i12).createChat(ldVar.c.getText().toString(), new ArrayList<>(), ldVar.w.getText().toString(), 2, false, null, null, -1, ldVar));
                     return;
                 }
@@ -88,7 +88,7 @@ public final class gd extends org.telegram.ui.ActionBar.j {
                         return;
                     }
                     AndroidUtilities.runOnUIThread(cdVar, 200L);
-                    i11 = ((org.telegram.ui.ActionBar.n2) ldVar).currentAccount;
+                    i11 = ((org.telegram.ui.ActionBar.m2) ldVar).currentAccount;
                     MessagesController messagesController = MessagesController.getInstance(i11);
                     long j10 = ldVar.i0;
                     String str = ldVar.X;
@@ -162,7 +162,7 @@ public final class gd extends org.telegram.ui.ActionBar.j {
                     bundle.putInt("step", 2);
                     bundle.putLong("chatId", j3);
                     bundle.putInt("chatType", 2);
-                    ldVar.presentFragment(new b70(bundle), true);
+                    ldVar.presentFragment(new z60(bundle), true);
                 }
             }
         }

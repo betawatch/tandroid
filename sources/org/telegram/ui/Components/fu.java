@@ -10,7 +10,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
 import org.telegram.messenger.XiaomiUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class fu extends cu {
     public Drawable c;
@@ -34,7 +34,7 @@ public final class fu extends cu {
     public final void extendActionMode(ActionMode actionMode, Menu menu) {
         ku kuVar = this.e;
         if (kuVar.a()) {
-            org.telegram.ui.xn.k8(menu, null, kuVar.L == 3, true, true, true);
+            org.telegram.ui.wn.k8(menu, null, kuVar.L == 3, true, true, true);
         } else {
             kuVar.i(menu);
         }
@@ -58,8 +58,8 @@ public final class fu extends cu {
     public final void onSelectionChanged(int i10, int i11) {
         super.onSelectionChanged(i10, i11);
         ku kuVar = this.e;
-        rl0 rl0Var = kuVar.c;
-        if (rl0Var != null) {
+        bm0 bm0Var = kuVar.c;
+        if (bm0Var != null) {
             boolean z10 = false;
             boolean z11 = i11 != i10;
             if (kuVar.a() && z11) {
@@ -69,10 +69,10 @@ public final class fu extends cu {
             if (kuVar.n != z10) {
                 kuVar.n = z10;
                 if (z10) {
-                    this.c = rl0Var.d;
-                    rl0Var.a(R.drawable.msg_edit, true);
+                    this.c = bm0Var.d;
+                    bm0Var.a(R.drawable.msg_edit, true);
                 } else {
-                    rl0Var.b(this.c, true);
+                    bm0Var.b(this.c, true);
                     this.c = null;
                 }
             }

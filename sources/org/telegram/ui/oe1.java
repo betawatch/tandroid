@@ -8,7 +8,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_forum;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class oe1 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ se1 a;
@@ -40,8 +40,8 @@ public final class oe1 extends org.telegram.ui.ActionBar.j {
             if (se1Var.r) {
                 return;
             }
-            org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(se1Var.getParentActivity(), 3, null);
-            b2Var.q(500L);
+            org.telegram.ui.ActionBar.a2 a2Var = new org.telegram.ui.ActionBar.a2(se1Var.getParentActivity(), 3, null);
+            a2Var.q(500L);
             se1Var.r = true;
             TL_forum.TL_messages_createForumTopic tL_messages_createForumTopic = new TL_forum.TL_messages_createForumTopic();
             tL_messages_createForumTopic.peer = se1Var.getMessagesController().getInputPeer(se1Var.a);
@@ -54,8 +54,8 @@ public final class oe1 extends org.telegram.ui.ActionBar.j {
             tL_messages_createForumTopic.random_id = Utilities.random.nextLong();
             tL_messages_createForumTopic.icon_color = se1Var.E;
             tL_messages_createForumTopic.flags |= 1;
-            i13 = ((org.telegram.ui.ActionBar.n2) se1Var).currentAccount;
-            ConnectionsManager.getInstance(i13).sendRequest(tL_messages_createForumTopic, new gs0(this, obj, b2Var, 11));
+            i13 = ((org.telegram.ui.ActionBar.m2) se1Var).currentAccount;
+            ConnectionsManager.getInstance(i13).sendRequest(tL_messages_createForumTopic, new fs0(this, obj, a2Var, 11));
             return;
         }
         if (i10 == 2) {
@@ -83,7 +83,7 @@ public final class oe1 extends org.telegram.ui.ActionBar.j {
                     tL_messages_editForumTopic.icon_emoji_id = j11;
                     tL_messages_editForumTopic.flags |= 2;
                 }
-                i11 = ((org.telegram.ui.ActionBar.n2) se1Var).currentAccount;
+                i11 = ((org.telegram.ui.ActionBar.m2) se1Var).currentAccount;
                 ConnectionsManager.getInstance(i11).sendRequest(tL_messages_editForumTopic, new ai.u7(8));
             }
             if (se1Var.d != null) {
@@ -94,7 +94,7 @@ public final class oe1 extends org.telegram.ui.ActionBar.j {
                     tL_messages_editForumTopic2.topic_id = se1Var.w.id;
                     tL_messages_editForumTopic2.hidden = !se1Var.d.d.h;
                     tL_messages_editForumTopic2.flags |= 8;
-                    i12 = ((org.telegram.ui.ActionBar.n2) se1Var).currentAccount;
+                    i12 = ((org.telegram.ui.ActionBar.m2) se1Var).currentAccount;
                     ConnectionsManager.getInstance(i12).sendRequest(tL_messages_editForumTopic2, new ai.u7(8));
                 }
             }

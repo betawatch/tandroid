@@ -1,9 +1,9 @@
 package g9;
 
 import java.math.RoundingMode;
-import v7.n7;
+import v7.o7;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final /* synthetic */ int a = 0;
@@ -13,15 +13,15 @@ public abstract class c {
     }
 
     public static boolean a(double d) {
-        if (n7.b(d)) {
-            return d == 0.0d || 52 - Long.numberOfTrailingZeros(n7.a(d)) <= Math.getExponent(d);
+        if (o7.b(d)) {
+            return d == 0.0d || 52 - Long.numberOfTrailingZeros(o7.a(d)) <= Math.getExponent(d);
         }
         return false;
     }
 
     public static boolean b(double d) {
-        if (d > 0.0d && n7.b(d)) {
-            long a2 = n7.a(d);
+        if (d > 0.0d && o7.b(d)) {
+            long a2 = o7.a(d);
             if ((a2 & (a2 - 1)) == 0) {
                 return true;
             }
@@ -38,7 +38,7 @@ public abstract class c {
     public static int c(double d) {
         boolean b10;
         RoundingMode roundingMode = RoundingMode.CEILING;
-        if (!(d > 0.0d && n7.b(d))) {
+        if (!(d > 0.0d && o7.b(d))) {
             throw new IllegalArgumentException("x must be positive and finite");
         }
         int exponent = Math.getExponent(d);

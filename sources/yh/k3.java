@@ -1,83 +1,45 @@
 package yh;
 
-import java.util.ArrayList;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public final class k3 {
-    public final v3 a;
-    public p3 b;
-    public p3 c;
-    public p3 d;
-    public g3 h;
-    public g3 i;
-    public g3 j;
-    public g3 k;
-    public TL_stars.TL_starGiftUnique l;
-    public long m;
-    public b1 r;
-    public b1 s;
-    public float t;
-    public boolean u;
-    public boolean v;
-    public final ArrayList e = new ArrayList();
-    public final ArrayList f = new ArrayList();
-    public final ArrayList g = new ArrayList();
-    public float n = 0.0f;
-    public boolean o = false;
-    public boolean p = false;
-    public boolean q = false;
+public final class k3 extends Drawable {
+    public final float a;
+    public final Paint b;
 
-    public k3(v3 v3Var) {
-        this.a = v3Var;
-        v3Var.c.addOnAttachStateChangeListener(new ai.u2(this, 15));
+    public k3(float f7, int i10) {
+        Paint paint = new Paint(1);
+        this.b = paint;
+        this.a = f7;
+        paint.setColor(i10);
     }
 
-    public final void a() {
-        this.o = false;
-        this.a.c.c();
-        g3 g3Var = this.h;
-        if (g3Var != null) {
-            g3Var.a();
-        }
-        g3 g3Var2 = this.i;
-        if (g3Var2 != null) {
-            g3Var2.a();
-        }
-        g3 g3Var3 = this.j;
-        if (g3Var3 != null) {
-            g3Var3.a();
-        }
-        g3 g3Var4 = this.k;
-        if (g3Var4 != null) {
-            g3Var4.a();
-        }
-        c();
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(getBounds());
+        Paint paint = this.b;
+        float f7 = this.a;
+        canvas.drawRoundRect(rectF, f7, f7, paint);
+        AndroidUtilities.drawStroke(canvas, rectF, f7);
     }
 
-    public final void b() {
-        if (this.o && !this.v) {
-            this.v = true;
-            AndroidUtilities.runOnUIThread(new e3(this, 1));
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
     }
 
-    public final void c() {
-        if (this.o) {
-            return;
-        }
-        ArrayList arrayList = this.e;
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            ((i3) obj).a();
-        }
-        arrayList.clear();
-        this.f.clear();
-        this.g.clear();
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

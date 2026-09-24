@@ -1,51 +1,48 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.ValueAnimator;
-import org.telegram.messenger.AndroidUtilities;
+import java.util.Random;
+import org.telegram.messenger.LiteMode;
+import org.telegram.ui.Components.ba;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m3 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ o3 b;
-
-    public /* synthetic */ m3(o3 o3Var, int i10) {
-        this.a = i10;
-        this.b = o3Var;
-    }
-
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                o3 o3Var = this.b;
-                o3Var.n = floatValue;
-                o3Var.k.invalidate();
-                if (o3Var.n > 1.0f && o3Var.r == null) {
-                    ValueAnimator ofInt = ValueAnimator.ofInt(AndroidUtilities.dp(12), 0);
-                    o3Var.r = ofInt;
-                    ofInt.addUpdateListener(new m3(o3Var, 2));
-                    o3Var.r.setDuration(350 - valueAnimator.getCurrentPlayTime());
-                    o3Var.r.start();
-                    break;
+public final class m3 extends ba {
+    public final void g(float f7, float f10) {
+        if (!LiteMode.isEnabled(this.r)) {
+            return;
+        }
+        int i10 = 0;
+        while (true) {
+            float f11 = i10;
+            float f12 = this.n;
+            if (f11 >= f12) {
+                return;
+            }
+            float[] fArr = this.i;
+            float f13 = fArr[i10];
+            float[] fArr2 = this.j;
+            float f14 = fArr2[i10];
+            float f15 = (f14 * f7 * 8.2f * 1.0f) + (0.8f * f14) + f13;
+            fArr[i10] = f15;
+            if (f15 >= 1.0f) {
+                fArr[i10] = 0.0f;
+                float[] fArr3 = this.g;
+                this.e[i10] = fArr3[i10];
+                float[] fArr4 = this.h;
+                this.f[i10] = fArr4[i10];
+                if (f10 < 1.0f) {
+                    float f16 = 360.0f / f12;
+                    float f17 = this.b;
+                    float f18 = this.a;
+                    Random random = this.m;
+                    fArr3[i10] = (Math.abs((random.nextInt() % 100.0f) / 100.0f) * (f17 - f18) * f10) + f18;
+                    fArr4[i10] = ((((random.nextInt() * f10) % 100.0f) / 100.0f) * 0.05f * f16) + (f16 * f11);
+                    fArr2[i10] = (float) (((Math.abs(random.nextInt() % 100.0f) / 100.0f) * 0.003d) + 0.017d);
+                } else {
+                    c(fArr3, fArr4, i10);
                 }
-                break;
-            case 1:
-                int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                o3 o3Var2 = this.b;
-                o3Var2.m = intValue;
-                o3Var2.k.invalidate();
-                break;
-            default:
-                int intValue2 = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                o3 o3Var3 = this.b;
-                if (o3Var3.i <= o3Var3.o / 2) {
-                    intValue2 = -intValue2;
-                }
-                o3Var3.p = intValue2;
-                o3Var3.k.invalidate();
-                break;
+            }
+            i10++;
         }
     }
 }

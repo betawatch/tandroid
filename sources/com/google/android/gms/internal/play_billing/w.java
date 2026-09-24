@@ -2,9 +2,9 @@ package com.google.android.gms.internal.play_billing;
 
 import j$.util.Objects;
 import java.util.AbstractMap;
-import v7.u5;
+import v7.v5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class w extends r {
     public final /* synthetic */ x c;
@@ -16,7 +16,7 @@ public final class w extends r {
     @Override // java.util.List
     public final /* bridge */ /* synthetic */ Object get(int i10) {
         x xVar = this.c;
-        u5.a(i10, xVar.e);
+        v5.a(i10, xVar.e);
         Object[] objArr = xVar.d;
         int i11 = i10 + i10;
         Object obj = objArr[i11];

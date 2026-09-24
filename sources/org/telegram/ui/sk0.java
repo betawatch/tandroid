@@ -30,9 +30,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.NumberTextView;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class sk0 extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.Components.gk, NotificationCenter.NotificationCenterDelegate {
+public final class sk0 extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.Components.gk, NotificationCenter.NotificationCenterDelegate {
     public int E;
     public int F;
     public int G;
@@ -50,7 +50,7 @@ public final class sk0 extends org.telegram.ui.ActionBar.n2 implements org.teleg
     public final ArrayList b;
     public final ArrayList c;
     public NumberTextView d;
-    public org.telegram.ui.Components.ml0 e;
+    public org.telegram.ui.Components.wl0 e;
     public pk0 f;
     public final org.telegram.ui.ActionBar.d6 h;
     public int n;
@@ -236,13 +236,13 @@ public final class sk0 extends org.telegram.ui.ActionBar.n2 implements org.teleg
         this.x = i14;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final View createView(Context context) {
         TLRPC.Document document;
         TLRPC.Document document2;
         this.actionBar.A(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.f8, this.h), false);
         this.actionBar.B(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.v8, this.h), false);
-        hg.c.x(false, this.actionBar);
+        hg.c.v(false, this.actionBar);
         this.actionBar.setAllowOverlayTitle(false);
         this.actionBar.setActionBarMenuOnItemClick(new ok0(this, context));
         if (this.L == 0) {
@@ -262,7 +262,7 @@ public final class sk0 extends org.telegram.ui.ActionBar.n2 implements org.teleg
             org.telegram.ui.Components.fo foVar = new org.telegram.ui.Components.fo(context, null, false, this.h);
             this.K = foVar;
             foVar.setOccupyStatusBar(!AndroidUtilities.isTablet());
-            this.actionBar.addView(this.K, 0, w7.x5.d(-2, -1.0f, 51, !this.inPreviewMode ? 56.0f : 0.0f, 0.0f, 40.0f, 0.0f));
+            this.actionBar.addView(this.K, 0, w7.y5.d(-2, -1.0f, 51, !this.inPreviewMode ? 56.0f : 0.0f, 0.0f, 40.0f, 0.0f));
             if (this.L >= 0) {
                 TLRPC.User user = getMessagesController().getUser(Long.valueOf(this.L));
                 if (user != null) {
@@ -280,24 +280,24 @@ public final class sk0 extends org.telegram.ui.ActionBar.n2 implements org.teleg
             }
             this.K.setSubtitle(LocaleController.getString(R.string.NotificationsSound));
         }
-        org.telegram.ui.ActionBar.z j3 = this.actionBar.j(null);
+        org.telegram.ui.ActionBar.y j3 = this.actionBar.j(null);
         NumberTextView numberTextView = new NumberTextView(j3.getContext());
         this.d = numberTextView;
         numberTextView.setTextSize(18);
         this.d.setTypeface(AndroidUtilities.bold());
         this.d.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.y8, this.h));
-        j3.addView(this.d, w7.x5.m(1.0f, 0, -1, 72, 0, 0));
+        j3.addView(this.d, w7.y5.m(1.0f, 0, -1, 72, 0, 0));
         this.d.setOnTouchListener(new bi.d(2));
         j3.h(2, R.drawable.msg_forward, LocaleController.getString(R.string.ShareFile), AndroidUtilities.dp(54.0f));
         j3.h(1, R.drawable.msg_delete, LocaleController.getString(R.string.Delete), AndroidUtilities.dp(54.0f));
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.a7, this.h));
-        org.telegram.ui.Components.ml0 ml0Var = new org.telegram.ui.Components.ml0(context, null);
-        this.e = ml0Var;
-        ml0Var.p1();
+        org.telegram.ui.Components.wl0 wl0Var = new org.telegram.ui.Components.wl0(context, null);
+        this.e = wl0Var;
+        wl0Var.p1();
         this.actionBar.setAdaptiveBackground(this.e);
-        frameLayout.addView(this.e, w7.x5.c(-1.0f, -1));
+        frameLayout.addView(this.e, w7.y5.c(-1.0f, -1));
         pk0 pk0Var = new pk0(this);
         this.f = pk0Var;
         pk0Var.C(true);
@@ -306,7 +306,7 @@ public final class sk0 extends org.telegram.ui.ActionBar.n2 implements org.teleg
         ((s4.j) this.e.getItemAnimator()).C = false;
         this.e.setLayoutManager(new s4.c0());
         this.e.setOnItemClickListener(new ai.n6(20, this, context));
-        this.e.setOnItemLongClickListener(new eu(this, 27));
+        this.e.setOnItemLongClickListener(new du(this, 27));
         getMediaDataController().ringtoneDataStore.g(false);
         this.a.clear();
         this.b.clear();
@@ -444,12 +444,12 @@ public final class sk0 extends org.telegram.ui.ActionBar.n2 implements org.teleg
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final org.telegram.ui.ActionBar.d6 getResourceProvider() {
         return this.h;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final boolean isSupportEdgeToEdge() {
         return true;
     }
@@ -462,7 +462,7 @@ public final class sk0 extends org.telegram.ui.ActionBar.n2 implements org.teleg
         getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.onUserRingtonesUpdated, new Object[0]);
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final void onActivityResultFragment(int i10, int i11, Intent intent) {
         if (i10 != 21 || intent == null || this.O == null) {
             return;
@@ -505,7 +505,7 @@ public final class sk0 extends org.telegram.ui.ActionBar.n2 implements org.teleg
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final boolean onFragmentCreate() {
         String str;
         String str2;
@@ -517,8 +517,8 @@ public final class sk0 extends org.telegram.ui.ActionBar.n2 implements org.teleg
         long j3 = this.L;
         if (j3 != 0) {
             String sharedPrefKey = NotificationsController.getSharedPrefKey(j3, this.Q);
-            str2 = org.telegram.ui.Cells.q3.i("sound_document_id_", sharedPrefKey);
-            str = org.telegram.ui.Cells.q3.i("sound_path_", sharedPrefKey);
+            str2 = v7.j.g("sound_document_id_", sharedPrefKey);
+            str = v7.j.g("sound_path_", sharedPrefKey);
         } else {
             int i10 = this.M;
             if (i10 == 1) {
@@ -555,7 +555,7 @@ public final class sk0 extends org.telegram.ui.ActionBar.n2 implements org.teleg
         return super.onFragmentCreate();
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final void onFragmentDestroy() {
         String str;
         String str2;
@@ -567,10 +567,10 @@ public final class sk0 extends org.telegram.ui.ActionBar.n2 implements org.teleg
         }
         SharedPreferences.Editor edit = getNotificationsSettings().edit();
         if (this.L != 0) {
-            str = org.telegram.messenger.z0.i(this.L, this.Q, new StringBuilder("sound_"));
-            str2 = org.telegram.messenger.z0.i(this.L, this.Q, new StringBuilder("sound_path_"));
-            str3 = org.telegram.messenger.z0.i(this.L, this.Q, new StringBuilder("sound_document_id_"));
-            edit.putBoolean(org.telegram.messenger.z0.i(this.L, this.Q, new StringBuilder("sound_enabled_")), true);
+            str = org.telegram.messenger.f0.i(this.L, this.Q, new StringBuilder("sound_"));
+            str2 = org.telegram.messenger.f0.i(this.L, this.Q, new StringBuilder("sound_path_"));
+            str3 = org.telegram.messenger.f0.i(this.L, this.Q, new StringBuilder("sound_document_id_"));
+            edit.putBoolean(org.telegram.messenger.f0.i(this.L, this.Q, new StringBuilder("sound_enabled_")), true);
         } else {
             int i10 = this.M;
             if (i10 == 1) {
@@ -625,19 +625,19 @@ public final class sk0 extends org.telegram.ui.ActionBar.n2 implements org.teleg
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final void onInsets(int i10, int i11, int i12, int i13) {
         this.e.setClipToPadding(false);
         this.e.setPadding(0, 0, 0, i13);
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final void onPause() {
         super.onPause();
         getNotificationCenter().removeObserver(this, NotificationCenter.onUserRingtonesUpdated);
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final void onResume() {
         super.onResume();
         getNotificationCenter().addObserver(this, NotificationCenter.onUserRingtonesUpdated);

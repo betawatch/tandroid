@@ -1,73 +1,35 @@
 package org.telegram.ui;
 
+import android.content.Context;
+import android.graphics.Rect;
+import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xo implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ gp b;
+public final class xo extends org.telegram.ui.Components.mo0 {
+    public final /* synthetic */ fp r;
 
-    public /* synthetic */ xo(gp gpVar, int i10) {
-        this.a = i10;
-        this.b = gpVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public xo(fp fpVar, Context context, xd xdVar, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, xdVar, d6Var, false);
+        this.r = fpVar;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        int i10 = this.a;
-        gp gpVar = this.b;
-        switch (i10) {
-            case 0:
-                TLRPC.Chat currentChannel = ((org.telegram.ui.Cells.n) view.getParent()).getCurrentChannel();
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(gpVar.getParentActivity());
-                String string = LocaleController.getString(R.string.AppName);
-                org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-                b2Var.R = string;
-                if (gpVar.a0) {
-                    b2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString("RevokeLinkAlertChannel", R.string.RevokeLinkAlertChannel, gpVar.getMessagesController().linkPrefix + "/" + ChatObject.getPublicUsername(currentChannel), currentChannel.title));
-                } else {
-                    b2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString("RevokeLinkAlert", R.string.RevokeLinkAlert, gpVar.getMessagesController().linkPrefix + "/" + ChatObject.getPublicUsername(currentChannel), currentChannel.title));
-                }
-                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-                alertDialog$Builder.k(LocaleController.getString(R.string.RevokeButton), new u(15, gpVar, currentChannel));
-                gpVar.showDialog(b2Var);
-                break;
-            case 1:
-                if (!gpVar.V) {
-                    gpVar.V = true;
-                    gpVar.b0();
-                    break;
-                }
-                break;
-            case 2:
-                if (gpVar.V) {
-                    if (!gpVar.c0) {
-                        gpVar.Z();
-                        break;
-                    } else {
-                        gpVar.V = false;
-                        gpVar.b0();
-                        break;
-                    }
-                }
-                break;
-            case 3:
-                th0 th0Var = new th0(gpVar.Z, 0L, 0);
-                th0Var.g0(gpVar.Y, gpVar.l0);
-                gpVar.presentFragment(th0Var);
-                break;
-            default:
-                boolean z10 = !gpVar.b0;
-                gpVar.b0 = z10;
-                ((org.telegram.ui.Cells.x8) view).setChecked(z10);
-                break;
-        }
+    @Override // android.widget.ScrollView, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return !this.r.L && super.onInterceptTouchEvent(motionEvent);
+    }
+
+    @Override // android.widget.ScrollView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return motionEvent.getAction() != 0 ? super.onTouchEvent(motionEvent) : !this.r.L && super.onTouchEvent(motionEvent);
+    }
+
+    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
+    public final boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z10) {
+        rect.bottom = AndroidUtilities.dp(60.0f) + rect.bottom;
+        return super.requestChildRectangleOnScreen(view, rect, z10);
     }
 }

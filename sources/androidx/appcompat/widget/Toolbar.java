@@ -1,6 +1,5 @@
 package androidx.appcompat.widget;
 
-import a4.m;
 import ai.q4;
 import android.content.Context;
 import android.content.res.ColorStateList;
@@ -28,12 +27,12 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.WeakHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
-import l.k;
-import lf.i;
+import l.l;
+import l.n;
+import la.h;
 import m.e3;
 import m.f3;
 import m.g3;
-import m.h;
 import m.h3;
 import m.i3;
 import m.j3;
@@ -48,10 +47,10 @@ import m.z0;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import r0.i0;
-import v7.v7;
-import w7.o;
+import v7.w7;
+import w7.p;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class Toolbar extends ViewGroup {
     public final int E;
@@ -72,15 +71,15 @@ public class Toolbar extends ViewGroup {
     public final ArrayList T;
     public final ArrayList U;
     public final int[] V;
-    public final i W;
+    public final h W;
     public ActionMenuView a;
     public ArrayList a0;
     public z0 b;
-    public final m b0;
+    public final ka.c b0;
     public z0 c;
     public l3 c0;
     public u d;
-    public h d0;
+    public m.h d0;
     public v e;
     public g3 e0;
     public final Drawable f;
@@ -254,12 +253,12 @@ public class Toolbar extends ViewGroup {
         f();
         ActionMenuView actionMenuView = this.a;
         if (actionMenuView.F == null) {
-            k kVar = (k) actionMenuView.getMenu();
+            l lVar = (l) actionMenuView.getMenu();
             if (this.e0 == null) {
                 this.e0 = new g3(this);
             }
             this.a.setExpandedActionViewsExclusive(true);
-            kVar.b(this.e0, this.s);
+            lVar.b(this.e0, this.s);
             t();
         }
     }
@@ -271,9 +270,9 @@ public class Toolbar extends ViewGroup {
             actionMenuView.setPopupTheme(this.v);
             this.a.setOnMenuItemClickListener(this.b0);
             ActionMenuView actionMenuView2 = this.a;
-            ka.c cVar = new ka.c(this, 3);
+            k2.u uVar = new k2.u(this, 5);
             actionMenuView2.getClass();
-            actionMenuView2.K = cVar;
+            actionMenuView2.K = uVar;
             h3 h = h();
             h.a = (this.y & 112) | 8388613;
             this.a.setLayoutParams(h);
@@ -359,9 +358,9 @@ public class Toolbar extends ViewGroup {
     }
 
     public int getCurrentContentInsetEnd() {
-        k kVar;
+        l lVar;
         ActionMenuView actionMenuView = this.a;
-        return (actionMenuView == null || (kVar = actionMenuView.F) == null || !kVar.hasVisibleItems()) ? getContentInsetEnd() : Math.max(getContentInsetEnd(), Math.max(this.L, 0));
+        return (actionMenuView == null || (lVar = actionMenuView.F) == null || !lVar.hasVisibleItems()) ? getContentInsetEnd() : Math.max(getContentInsetEnd(), Math.max(this.L, 0));
     }
 
     public int getCurrentContentInsetLeft() {
@@ -419,7 +418,7 @@ public class Toolbar extends ViewGroup {
         return null;
     }
 
-    public h getOuterActionMenuPresenter() {
+    public m.h getOuterActionMenuPresenter() {
         return this.d0;
     }
 
@@ -478,7 +477,7 @@ public class Toolbar extends ViewGroup {
             l3Var.i = getSubtitle();
             l3Var.g = l3Var.h != null;
             l3Var.f = getNavigationIcon();
-            i Q = i.Q(getContext(), null, f.a.a, R.attr.actionBarStyle);
+            h Q = h.Q(getContext(), null, f.a.a, R.attr.actionBarStyle);
             TypedArray typedArray = (TypedArray) Q.c;
             l3Var.o = Q.F(15);
             CharSequence text = typedArray.getText(27);
@@ -626,7 +625,7 @@ public class Toolbar extends ViewGroup {
         getMenu();
         ArrayList<MenuItem> currentMenuItems = getCurrentMenuItems();
         getMenuInflater();
-        Iterator it = ((CopyOnWriteArrayList) this.W.c).iterator();
+        Iterator it = ((CopyOnWriteArrayList) this.W.d).iterator();
         while (it.hasNext()) {
             ((c0) it.next()).a.k();
         }
@@ -1106,9 +1105,9 @@ public class Toolbar extends ViewGroup {
         j3 j3Var = (j3) parcelable;
         super.onRestoreInstanceState(j3Var.a);
         ActionMenuView actionMenuView = this.a;
-        k kVar = actionMenuView != null ? actionMenuView.F : null;
+        l lVar = actionMenuView != null ? actionMenuView.F : null;
         int i10 = j3Var.c;
-        if (i10 != 0 && this.e0 != null && kVar != null && (findItem = kVar.findItem(i10)) != null) {
+        if (i10 != 0 && this.e0 != null && lVar != null && (findItem = lVar.findItem(i10)) != null) {
             findItem.expandActionView();
         }
         if (j3Var.d) {
@@ -1160,12 +1159,12 @@ public class Toolbar extends ViewGroup {
 
     @Override // android.view.View
     public final Parcelable onSaveInstanceState() {
-        h hVar;
-        l.m mVar;
+        m.h hVar;
+        n nVar;
         j3 j3Var = new j3(super.onSaveInstanceState());
         g3 g3Var = this.e0;
-        if (g3Var != null && (mVar = g3Var.b) != null) {
-            j3Var.c = mVar.a;
+        if (g3Var != null && (nVar = g3Var.b) != null) {
+            j3Var.c = nVar.a;
         }
         ActionMenuView actionMenuView = this.a;
         j3Var.d = (actionMenuView == null || (hVar = actionMenuView.J) == null || !hVar.h()) ? false : true;
@@ -1243,7 +1242,7 @@ public class Toolbar extends ViewGroup {
     }
 
     public void setCollapseIcon(int i10) {
-        setCollapseIcon(v7.b(getContext(), i10));
+        setCollapseIcon(w7.b(getContext(), i10));
     }
 
     public void setCollapsible(boolean z10) {
@@ -1276,7 +1275,7 @@ public class Toolbar extends ViewGroup {
     }
 
     public void setLogo(int i10) {
-        setLogo(v7.b(getContext(), i10));
+        setLogo(w7.b(getContext(), i10));
     }
 
     public void setLogoDescription(int i10) {
@@ -1288,7 +1287,7 @@ public class Toolbar extends ViewGroup {
     }
 
     public void setNavigationIcon(int i10) {
-        setNavigationIcon(v7.b(getContext(), i10));
+        setNavigationIcon(w7.b(getContext(), i10));
     }
 
     public void setNavigationOnClickListener(View.OnClickListener onClickListener) {
@@ -1458,7 +1457,7 @@ public class Toolbar extends ViewGroup {
         u uVar = this.d;
         if (uVar != null) {
             uVar.setContentDescription(charSequence);
-            o.a(this.d, charSequence);
+            p.a(this.d, charSequence);
         }
     }
 
@@ -1571,14 +1570,13 @@ public class Toolbar extends ViewGroup {
         this.T = new ArrayList();
         this.U = new ArrayList();
         this.V = new int[2];
-        this.W = new i(new e3(this, 1));
+        this.W = new h(new e3(this, 1));
         this.a0 = new ArrayList();
-        int i11 = 25;
-        this.b0 = new m(this, i11);
-        this.j0 = new q4(this, i11);
+        this.b0 = new ka.c(this, 2);
+        this.j0 = new q4(this, 26);
         Context context2 = getContext();
         int[] iArr = f.a.x;
-        i Q = i.Q(context2, attributeSet, iArr, i10);
+        h Q = h.Q(context2, attributeSet, iArr, i10);
         i0.j(this, context, iArr, attributeSet, (TypedArray) Q.c, i10);
         TypedArray typedArray = (TypedArray) Q.c;
         this.w = typedArray.getResourceId(28, 0);

@@ -14,9 +14,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ub1;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class w8 extends pv0 {
+public final class w8 extends aw0 {
     public float A0;
     public float B0;
     public final /* synthetic */ e9 C0;
@@ -33,7 +33,7 @@ public final class w8 extends pv0 {
         this.w0 = new b2.q0();
     }
 
-    @Override // org.telegram.ui.Components.pv0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         Canvas canvas2;
         int save = canvas.save();
@@ -54,13 +54,13 @@ public final class w8 extends pv0 {
                 x8 x8Var = e9Var.a;
                 float f10 = x10 + x8Var.y;
                 float f11 = lerp + x8Var.E;
-                fd fdVar = e9Var.K;
+                gd gdVar = e9Var.K;
                 float f12 = x8Var.x;
-                fdVar.getClass();
+                gdVar.getClass();
                 rectF.set((int) (f10 - f12), (int) (f11 - f12), (int) (f10 + f12), (int) (f11 + f12));
-                fdVar.i = false;
-                fdVar.c = 0;
-                fdVar.a(rectF);
+                gdVar.i = false;
+                gdVar.c = 0;
+                gdVar.a(rectF);
                 canvas.restore();
             }
             canvas.restoreToCount(save);
@@ -95,7 +95,7 @@ public final class w8 extends pv0 {
         if (view == e9Var.H) {
             return true;
         }
-        kVar = ((org.telegram.ui.ActionBar.n2) e9Var).actionBar;
+        kVar = ((org.telegram.ui.ActionBar.m2) e9Var).actionBar;
         if (view != kVar || e9Var.N <= 0.0f) {
             canvas2 = canvas;
         } else {
@@ -137,9 +137,9 @@ public final class w8 extends pv0 {
             if (e9Var.U) {
                 e9Var.i0(0.0f, false);
                 e9Var.a.setExpanded(false);
-                addView(e9Var.a, 0, w7.x5.c(-1.0f, -1));
+                addView(e9Var.a, 0, w7.y5.c(-1.0f, -1));
             } else {
-                e9Var.r.addView(e9Var.a, 0, w7.x5.c(-2.0f, -1));
+                e9Var.r.addView(e9Var.a, 0, w7.y5.c(-2.0f, -1));
             }
             AndroidUtilities.requestAdjustResize(e9Var.getParentActivity(), e9Var.getClassGuid());
         }
@@ -166,7 +166,7 @@ public final class w8 extends pv0 {
             super.onMeasure(i10, i11);
             if (e9Var.L) {
                 int i13 = -e9Var.b.getTop();
-                kVar = ((org.telegram.ui.ActionBar.n2) e9Var).actionBar;
+                kVar = ((org.telegram.ui.ActionBar.m2) e9Var).actionBar;
                 i12 = AndroidUtilities.dp(8.0f) + kVar.getMeasuredHeight() + i13;
             } else {
                 i12 = 0;
@@ -192,7 +192,7 @@ public final class w8 extends pv0 {
                 e9Var.M.addUpdateListener(new z8(e9Var, f10, f7, z13));
                 e9Var.M.addListener(new t8(e9Var, 1));
                 e9Var.M.setDuration(250L);
-                e9Var.M.setInterpolator(org.telegram.ui.ActionBar.p1.w);
+                e9Var.M.setInterpolator(org.telegram.ui.ActionBar.o1.w);
                 e9Var.M.start();
             }
         }

@@ -1,26 +1,43 @@
 package za;
 
-import android.app.Application;
-import android.content.Context;
-import android.util.Log;
+import com.google.firebase.sessions.FirebaseSessionsRegistrar;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
-public final class m {
-    public final k9.h a;
-    public final bb.h b;
+public final /* synthetic */ class m implements q9.d {
+    public final /* synthetic */ int a;
 
-    public m(k9.h hVar, bb.h hVar2, id.h hVar3) {
-        this.a = hVar;
-        this.b = hVar2;
-        Log.d("FirebaseSessions", "Initializing Firebase Sessions SDK.");
-        hVar.a();
-        Context applicationContext = hVar.a.getApplicationContext();
-        if (applicationContext instanceof Application) {
-            ((Application) applicationContext).registerActivityLifecycleCallbacks(q0.a);
-            zd.e0.q(zd.e0.b(hVar3), new bb.i(this, hVar3, null, 4));
-        } else {
-            Log.e("FirebaseSessions", "Failed to register lifecycle callbacks, unexpected context " + applicationContext.getClass() + '.');
+    public /* synthetic */ m(int i10) {
+        this.a = i10;
+    }
+
+    @Override // q9.d
+    public Object G(cf.c cVar) {
+        n nVar;
+        k0 k0Var;
+        e0 e0Var;
+        bb.h hVar;
+        u uVar;
+        o0 o0Var;
+        switch (this.a) {
+            case 1:
+                nVar = FirebaseSessionsRegistrar.getComponents$lambda-0(cVar);
+                return nVar;
+            case 2:
+                k0Var = FirebaseSessionsRegistrar.getComponents$lambda-1(cVar);
+                return k0Var;
+            case 3:
+                e0Var = FirebaseSessionsRegistrar.getComponents$lambda-2(cVar);
+                return e0Var;
+            case 4:
+                hVar = FirebaseSessionsRegistrar.getComponents$lambda-3(cVar);
+                return hVar;
+            case 5:
+                uVar = FirebaseSessionsRegistrar.getComponents$lambda-4(cVar);
+                return uVar;
+            default:
+                o0Var = FirebaseSessionsRegistrar.getComponents$lambda-5(cVar);
+                return o0Var;
         }
     }
 }

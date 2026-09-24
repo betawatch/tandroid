@@ -7,17 +7,17 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.ul;
+import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.w9;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class o7 extends LinearLayout {
     public final int a;
     public final org.telegram.ui.ActionBar.d6 b;
     public final w9 c;
-    public final org.telegram.ui.ActionBar.i5 d;
+    public final org.telegram.ui.ActionBar.h5 d;
     public final TextView e;
     public final TextView f;
     public final TextView h;
@@ -33,39 +33,39 @@ public final class o7 extends LinearLayout {
         w9 w9Var = new w9(context);
         this.c = w9Var;
         w9Var.setRoundRadius(AndroidUtilities.dp(46.0f));
-        addView(w9Var, w7.x5.p(46, 46, 0.0f, 19, 13, 0, 13, 0));
+        addView(w9Var, w7.y5.p(46, 46, 0.0f, 19, 13, 0, 13, 0));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        addView(linearLayout, w7.x5.p(-1, -2, 1.0f, 16, 0, 0, 0, 0));
-        org.telegram.ui.ActionBar.i5 i5Var = new org.telegram.ui.ActionBar.i5(context);
-        this.d = i5Var;
+        addView(linearLayout, w7.y5.p(-1, -2, 1.0f, 16, 0, 0, 0, 0));
+        org.telegram.ui.ActionBar.h5 h5Var = new org.telegram.ui.ActionBar.h5(context);
+        this.d = h5Var;
         int i11 = org.telegram.ui.ActionBar.h6.G6;
-        i5Var.setTextColor(org.telegram.ui.ActionBar.h6.v0(i11, d6Var));
-        i5Var.setTextSize(16);
-        i5Var.setTypeface(AndroidUtilities.bold());
-        NotificationCenter.listenEmojiLoading(i5Var);
-        linearLayout.addView(i5Var, w7.x5.k(0.0f, 0.0f, 0.0f, 2.0f, -1, -2));
+        h5Var.setTextColor(org.telegram.ui.ActionBar.h6.v0(i11, d6Var));
+        h5Var.setTextSize(16);
+        h5Var.setTypeface(AndroidUtilities.bold());
+        NotificationCenter.listenEmojiLoading(h5Var);
+        linearLayout.addView(h5Var, w7.y5.k(0.0f, 0.0f, 0.0f, 2.0f, -1, -2));
         TextView textView = new TextView(context);
         this.e = textView;
-        ul.o(i11, d6Var, textView, 1, 13.0f);
+        ok.n(i11, d6Var, textView, 1, 13.0f);
         textView.setVisibility(8);
-        TextView h = com.google.android.gms.internal.vision.e2.h(linearLayout, textView, w7.x5.k(0.0f, 0.0f, 0.0f, 1.0f, -1, -2), context);
+        TextView h = com.google.android.gms.internal.vision.e2.h(linearLayout, textView, w7.y5.k(0.0f, 0.0f, 0.0f, 1.0f, -1, -2), context);
         this.f = h;
         int i12 = org.telegram.ui.ActionBar.h6.z6;
-        ul.o(i12, d6Var, h, 1, 14.0f);
-        linearLayout.addView(h, w7.x5.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2));
+        ok.n(i12, d6Var, h, 1, 14.0f);
+        linearLayout.addView(h, w7.y5.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2));
         LinearLayout linearLayout2 = new LinearLayout(context);
         linearLayout2.setOrientation(1);
-        addView(linearLayout2, w7.x5.p(-2, -2, 0.0f, 16, 0, 0, 18, 0));
+        addView(linearLayout2, w7.y5.p(-2, -2, 0.0f, 16, 0, 0, 18, 0));
         TextView textView2 = new TextView(context);
         this.h = textView2;
-        org.telegram.ui.Cells.q3.p(i11, d6Var, textView2, 1, 16.0f);
+        org.telegram.ui.Cells.c1.p(i11, d6Var, textView2, 1, 16.0f);
         textView2.setGravity(5);
-        TextView h10 = com.google.android.gms.internal.vision.e2.h(linearLayout2, textView2, w7.x5.t(-1, -2, 5, 0, 0, 0, 1), context);
+        TextView h10 = com.google.android.gms.internal.vision.e2.h(linearLayout2, textView2, w7.y5.t(-1, -2, 5, 0, 0, 0, 1), context);
         this.n = h10;
-        ul.o(i12, d6Var, h10, 1, 13.0f);
+        ok.n(i12, d6Var, h10, 1, 13.0f);
         h10.setGravity(5);
-        linearLayout2.addView(h10, w7.x5.t(-1, -2, 5, 0, 0, 0, 0));
+        linearLayout2.addView(h10, w7.y5.t(-1, -2, 5, 0, 0, 0, 0));
     }
 
     @Override // android.widget.LinearLayout, android.view.View

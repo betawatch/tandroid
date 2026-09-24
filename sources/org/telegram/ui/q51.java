@@ -1,51 +1,103 @@
 package org.telegram.ui;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class q51 extends o61 {
-    public final /* synthetic */ z61 E;
+public final class q51 implements org.telegram.ui.Components.nl0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.d6 c;
+    public final /* synthetic */ Integer d;
+    public final /* synthetic */ a71 e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q51(z61 z61Var, Context context, boolean z10) {
-        super(z61Var, context, z10);
-        this.E = z61Var;
+    public q51(a71 a71Var, int i10, Context context, org.telegram.ui.ActionBar.d6 d6Var, Integer num) {
+        this.e = a71Var;
+        this.a = i10;
+        this.b = context;
+        this.c = d6Var;
+        this.d = num;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        z61 z61Var = this.E;
-        l51 l51Var = z61Var.g0;
-        q51 q51Var = z61Var.f0;
-        z51 z51Var = z61Var.U;
-        if (z51Var != null) {
-            int measuredWidth = getMeasuredWidth();
-            int measuredHeight = getMeasuredHeight();
-            float x10 = l51Var.getX() + q51Var.getX();
-            float y3 = l51Var.getY() + q51Var.getY();
-            tg.d dVar = (tg.d) z51Var;
-            zg.c0 c0Var = (zg.c0) dVar.b;
-            zg.b0 b0Var = c0Var.a;
-            org.telegram.ui.Components.gk0 gk0Var = (org.telegram.ui.Components.gk0) dVar.c;
-            RectF rectF = AndroidUtilities.rectTmp;
-            float f7 = 0;
-            rectF.set(f7, f7, measuredWidth, measuredHeight);
-            gk0Var.getDelegate().n(canvas, rectF, 0.0f, b0Var.getX() + x10, (c0Var.y == 1 ? b0Var.getY() - AndroidUtilities.statusBarHeight : b0Var.getY() + c0Var.c.getY()) + y3, 255, true);
-        }
-        super.dispatchDraw(canvas);
-    }
-
-    @Override // android.view.View
-    public final void setTranslationY(float f7) {
-        if (f7 != getTranslationY()) {
-            super.setTranslationY(f7);
-            if (this.E.U != null) {
-                invalidate();
+    @Override // org.telegram.ui.Components.nl0
+    public final boolean c(float f7, float f10, int i10, View view) {
+        a71 a71Var = this.e;
+        int i11 = a71Var.V;
+        int i12 = this.a;
+        if (i12 != 11 && i12 != 13 && a71Var.h1) {
+            boolean z10 = view instanceof j61;
+            if (z10 && (i12 == 1 || i12 == 8)) {
+                a71Var.l();
+                try {
+                    a71Var.performHapticFeedback(0);
+                } catch (Exception unused) {
+                }
+                j61 j61Var = (j61) view;
+                if (!j61Var.s && !UserConfig.getInstance(i11).isPremium()) {
+                    org.telegram.ui.Components.z5 z5Var = j61Var.e;
+                    TLRPC.Document document = z5Var.document;
+                    if (document == null) {
+                        document = org.telegram.ui.Components.q5.f(i11, z5Var.documentId);
+                    }
+                    a71Var.p(j61Var, Long.valueOf(j61Var.e.documentId), document, j61Var.v, null);
+                    return true;
+                }
+                a71Var.S0 = j61Var;
+                a71Var.U0 = 0.0f;
+                a71Var.T0 = false;
+                if (j61Var.s) {
+                    a71Var.setBigReactionAnimatedEmoji(null);
+                    TLRPC.TL_availableReaction tL_availableReaction = MediaDataController.getInstance(i11).getReactionsMap().get(a71Var.S0.x.f);
+                    if (tL_availableReaction != null) {
+                        a71Var.V0.setImage(ImageLocation.getForDocument(tL_availableReaction.select_animation), "60_60_pcache", null, null, null, 0L, "tgs", a71Var.S0.x, 0);
+                    }
+                } else {
+                    a71Var.setBigReactionAnimatedEmoji(new org.telegram.ui.Components.q5(4, i11, a71Var.S0.e.documentId));
+                }
+                a71Var.h0.invalidate();
+                a71Var.m();
+                return true;
+            }
+            if (z10) {
+                j61 j61Var2 = (j61) view;
+                if (j61Var2.e != null && (i12 == 0 || i12 == 12 || i12 == 9 || i12 == 10)) {
+                    TL_stars.TL_starGiftUnique tL_starGiftUnique = j61Var2.v;
+                    p51 p51Var = new p51(this, this.b, a71Var.T1, a71Var, j61Var2, this.c, view, tL_starGiftUnique);
+                    a71Var.X0 = p51Var;
+                    p51Var.show();
+                    try {
+                        view.performHapticFeedback(0, 1);
+                    } catch (Exception unused2) {
+                    }
+                    return true;
+                }
             }
         }
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.nl0
+    public final void g() {
+        a71 a71Var = this.e;
+        if (a71Var.S0 != null) {
+            a71Var.T0 = true;
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(a71Var.U0, 0.0f);
+            ofFloat.addUpdateListener(new q11(this, 8));
+            ofFloat.addListener(new xo0(this, 20));
+            ofFloat.setDuration(150L);
+            ofFloat.setInterpolator(org.telegram.ui.Components.rr.f);
+            ofFloat.start();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.nl0
+    public final /* synthetic */ void q(float f7) {
     }
 }

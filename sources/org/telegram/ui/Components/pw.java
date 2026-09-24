@@ -1,26 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.os.Build;
+import android.graphics.Rect;
+import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class pw extends kz {
-    public final /* synthetic */ lz d;
+public final class pw extends s4.n0 {
+    public final /* synthetic */ lz a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public pw(lz lzVar) {
-        super(lzVar, 2);
-        this.d = lzVar;
+        this.a = lzVar;
     }
 
-    @Override // org.telegram.ui.Components.kz, s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        ah.h hVar;
-        super.b(recyclerView, i10, i11);
-        if (Build.VERSION.SDK_INT < 31 || (hVar = this.d.j2) == null) {
+    @Override // s4.n0
+    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.z0 z0Var) {
+        recyclerView.getClass();
+        int R = RecyclerView.R(view);
+        lz lzVar = this.a;
+        s4.h0 adapter = lzVar.h0.getAdapter();
+        qy qyVar = lzVar.n0;
+        if (adapter == qyVar && R == qyVar.I) {
+            rect.set(0, 0, 0, 0);
             return;
         }
-        hVar.f(i10, i11);
+        if (R == 0) {
+            qyVar.getClass();
+        }
+        rect.left = 0;
+        rect.bottom = 0;
+        rect.top = AndroidUtilities.dp(2.0f);
+        ry ryVar = lzVar.i0;
+        qyVar.getClass();
+        rect.right = ryVar.E1(R) ? 0 : AndroidUtilities.dp(2.0f);
     }
 }

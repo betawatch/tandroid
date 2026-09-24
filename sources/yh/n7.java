@@ -17,33 +17,33 @@ import org.telegram.messenger.WebFile;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.d61;
-import org.telegram.ui.Components.g51;
-import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.j61;
+import org.telegram.ui.Components.r61;
+import org.telegram.ui.Components.u51;
 import org.telegram.ui.Components.v51;
 import org.telegram.ui.Components.w9;
-import org.telegram.ui.u70;
+import org.telegram.ui.Components.wl0;
+import org.telegram.ui.s70;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public final class n7 extends g51 {
+public final class n7 extends u51 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        g51.setup(new n7());
+        u51.setup(new n7());
     }
 
-    @Override // org.telegram.ui.Components.g51
-    public final void bindView(View view, h51 h51Var, boolean z10, v51 v51Var, d61 d61Var) {
+    @Override // org.telegram.ui.Components.u51
+    public final void bindView(View view, v51 v51Var, boolean z10, j61 j61Var, r61 r61Var) {
         String userName;
         boolean z11;
         boolean z12;
-        org.telegram.ui.ActionBar.i5 i5Var;
+        org.telegram.ui.ActionBar.h5 h5Var;
         o7 o7Var = (o7) view;
-        TL_stars.StarsSubscription starsSubscription = (TL_stars.StarsSubscription) h51Var.G;
-        org.telegram.ui.ActionBar.i5 i5Var2 = o7Var.d;
+        TL_stars.StarsSubscription starsSubscription = (TL_stars.StarsSubscription) v51Var.G;
+        org.telegram.ui.ActionBar.h5 h5Var2 = o7Var.d;
         w9 w9Var = o7Var.c;
         org.telegram.ui.ActionBar.d6 d6Var = o7Var.b;
         TextView textView = o7Var.h;
@@ -69,7 +69,7 @@ public final class n7 extends g51 {
             z11 = !UserObject.isBot(user);
         }
         long currentTime = ConnectionsManager.getInstance(i10).getCurrentTime();
-        i5Var2.l(Emoji.replaceEmoji(userName, i5Var2.getPaint().getFontMetricsInt(), false), false);
+        h5Var2.l(Emoji.replaceEmoji(userName, h5Var2.getPaint().getFontMetricsInt(), false), false);
         if (TextUtils.isEmpty(starsSubscription.title)) {
             z12 = z11;
             textView3.setVisibility(8);
@@ -77,20 +77,20 @@ public final class n7 extends g51 {
             textView3.setVisibility(0);
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
             if (starsSubscription.photo != null) {
-                u70 u70Var = new u70(textView3, 14.0f, i10);
-                u70Var.a(4.0f);
-                u70Var.f = false;
+                s70 s70Var = new s70(textView3, 14.0f, i10);
+                s70Var.a(4.0f);
+                s70Var.f = false;
                 SpannableString spannableString = new SpannableString("x");
-                i5Var = i5Var2;
+                h5Var = h5Var2;
                 z12 = z11;
-                spannableString.setSpan(u70Var, 0, 1, 33);
-                u70Var.b.setImage(ImageLocation.getForWebFile(WebFile.createWithWebDocument(starsSubscription.photo)), "14_14", null, null, 0, 0);
+                spannableString.setSpan(s70Var, 0, 1, 33);
+                s70Var.b.setImage(ImageLocation.getForWebFile(WebFile.createWithWebDocument(starsSubscription.photo)), "14_14", null, null, 0, 0);
                 spannableStringBuilder.append((CharSequence) spannableString).append((CharSequence) " ");
             } else {
-                i5Var = i5Var2;
+                h5Var = h5Var2;
                 z12 = z11;
             }
-            spannableStringBuilder.append(Emoji.replaceEmoji(starsSubscription.title, i5Var.getPaint().getFontMetricsInt(), false));
+            spannableStringBuilder.append(Emoji.replaceEmoji(starsSubscription.title, h5Var.getPaint().getFontMetricsInt(), false));
             textView3.setText(spannableStringBuilder);
         }
         textView2.setTextSize(1, o7Var.r ? 13.0f : 14.0f);
@@ -126,22 +126,22 @@ public final class n7 extends g51 {
         o7Var.setWillNotDraw(!z10);
     }
 
-    @Override // org.telegram.ui.Components.g51
-    public final View createView(Context context, ml0 ml0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
+    @Override // org.telegram.ui.Components.u51
+    public final View createView(Context context, wl0 wl0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
         o7 o7Var = (o7) getCached();
         return o7Var != null ? o7Var : new o7(context, i10, d6Var);
     }
 
-    @Override // org.telegram.ui.Components.g51
-    public final boolean equals(h51 h51Var, h51 h51Var2) {
-        if (h51Var2 == null) {
+    @Override // org.telegram.ui.Components.u51
+    public final boolean equals(v51 v51Var, v51 v51Var2) {
+        if (v51Var2 == null) {
             return false;
         }
-        Object obj = h51Var.G;
+        Object obj = v51Var.G;
         if (!(obj instanceof TL_stars.StarsSubscription)) {
             return false;
         }
-        Object obj2 = h51Var2.G;
+        Object obj2 = v51Var2.G;
         if (obj2 instanceof TL_stars.StarsSubscription) {
             return TextUtils.equals(((TL_stars.StarsSubscription) obj).id, ((TL_stars.StarsSubscription) obj2).id);
         }

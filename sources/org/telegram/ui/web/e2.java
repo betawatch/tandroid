@@ -1,45 +1,8 @@
 package org.telegram.ui.web;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import android.webkit.WebChromeClient;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class e2 implements Utilities.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ f2 b;
-
-    public /* synthetic */ e2(f2 f2Var, int i10) {
-        this.a = i10;
-        this.b = f2Var;
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        h2 h2Var = (h2) obj;
-        switch (this.a) {
-            case 0:
-                f2 f2Var = this.b;
-                f2Var.l = null;
-                f2Var.i = true;
-                TLRPC.TL_webPage tL_webPage = f2Var.j;
-                if (tL_webPage != null) {
-                    h2.o(tL_webPage);
-                }
-                f2Var.j = h2Var.c;
-                f2Var.c();
-                break;
-            default:
-                f2 f2Var2 = this.b;
-                f2Var2.l = null;
-                f2Var2.i = true;
-                TLRPC.TL_webPage tL_webPage2 = f2Var2.j;
-                if (tL_webPage2 != null) {
-                    h2.o(tL_webPage2);
-                }
-                f2Var2.j = h2Var.c;
-                f2Var2.c();
-                break;
-        }
-    }
+public final class e2 extends WebChromeClient {
 }

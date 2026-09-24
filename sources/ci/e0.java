@@ -28,12 +28,12 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.camera.CameraView;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.n70;
 import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.x70;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public abstract class e0 extends FrameLayout implements n70 {
+public abstract class e0 extends FrameLayout implements x70 {
     public static final /* synthetic */ int x0 = 0;
     public final LinearGradient E;
     public final Matrix F;
@@ -196,7 +196,7 @@ public abstract class e0 extends FrameLayout implements n70 {
         canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.n70
+    @Override // org.telegram.ui.Components.x70
     public final void a(RectF rectF) {
         d0 d0Var = this.j0;
         if (d0Var == null) {
@@ -212,7 +212,7 @@ public abstract class e0 extends FrameLayout implements n70 {
         rectF.set((getMeasuredWidth() / d) * i10, (getMeasuredHeight() / f7) * i11, (getMeasuredWidth() / d) * (i10 + 1), (getMeasuredHeight() / f7) * (i11 + 1));
     }
 
-    @Override // org.telegram.ui.Components.n70
+    @Override // org.telegram.ui.Components.x70
     public final void b(Canvas canvas, float f7) {
         d0 d0Var = this.j0;
         if (d0Var != null) {
@@ -546,11 +546,11 @@ public abstract class e0 extends FrameLayout implements n70 {
                 AndroidUtilities.runOnUIThread(a0Var2, ViewConfiguration.getLongPressTimeout());
             }
         } else if (motionEvent.getAction() == 2) {
-            if (v7.z6.a(motionEvent.getX(), motionEvent.getY(), this.V, this.W) > AndroidUtilities.touchSlop * 1.2f && (a0Var = this.i0) != null) {
+            if (v7.a7.a(motionEvent.getX(), motionEvent.getY(), this.V, this.W) > AndroidUtilities.touchSlop * 1.2f && (a0Var = this.i0) != null) {
                 AndroidUtilities.cancelRunOnUIThread(a0Var);
                 this.i0 = null;
             }
-            if (!this.e0 && getFilledProgress() >= 1.0f && this.g0 != null && d0Var != null && v7.z6.a(motionEvent.getX(), motionEvent.getY(), this.V, this.W) > AndroidUtilities.touchSlop * 1.2f) {
+            if (!this.e0 && getFilledProgress() >= 1.0f && this.g0 != null && d0Var != null && v7.a7.a(motionEvent.getX(), motionEvent.getY(), this.V, this.W) > AndroidUtilities.touchSlop * 1.2f) {
                 this.e0 = true;
                 this.h0 = this.g0;
                 this.c0 = 0.0f;
@@ -1264,7 +1264,7 @@ public abstract class e0 extends FrameLayout implements n70 {
         }
         this.d = cameraView;
         if (cameraView != null) {
-            addView(cameraView, w7.x5.e(-1, -1, 119));
+            addView(cameraView, w7.y5.e(-1, -1, 119));
         }
         CameraView cameraView3 = this.d;
         if (cameraView3 != null) {

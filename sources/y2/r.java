@@ -2,13 +2,13 @@ package y2;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import org.telegram.ui.cb1;
+import org.telegram.ui.db1;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class r {
-    public static final cb1 g = new cb1(18);
-    public static final cb1 h = new cb1(19);
+    public static final db1 g = new db1(18);
+    public static final db1 h = new db1(19);
     public int d;
     public int e;
     public int f;
@@ -82,6 +82,6 @@ public final class r {
         if (arrayList.isEmpty()) {
             return Float.NaN;
         }
-        return ((q) hg.c.h(1, arrayList)).c;
+        return ((q) hg.c.g(1, arrayList)).c;
     }
 }

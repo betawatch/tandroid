@@ -9,9 +9,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.xn;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l6 implements View.OnClickListener {
     public final /* synthetic */ int a = 0;
@@ -25,11 +25,11 @@ public final /* synthetic */ class l6 implements View.OnClickListener {
     public final /* synthetic */ Context r;
     public final /* synthetic */ Object s;
 
-    public /* synthetic */ l6(ci.d dVar, int i10, TL_stars.StarsSubscription starsSubscription, org.telegram.ui.ActionBar.f3[] f3VarArr, long j3, Activity activity, org.telegram.ui.ActionBar.d6 d6Var, boolean z10, String str) {
+    public /* synthetic */ l6(ci.d dVar, int i10, TL_stars.StarsSubscription starsSubscription, org.telegram.ui.ActionBar.e3[] e3VarArr, long j3, Activity activity, org.telegram.ui.ActionBar.d6 d6Var, boolean z10, String str) {
         this.f = dVar;
         this.b = i10;
         this.h = starsSubscription;
-        this.n = f3VarArr;
+        this.n = e3VarArr;
         this.e = j3;
         this.r = activity;
         this.d = d6Var;
@@ -43,14 +43,14 @@ public final /* synthetic */ class l6 implements View.OnClickListener {
             case 0:
                 ci.d dVar = (ci.d) this.f;
                 TL_stars.StarsSubscription starsSubscription = (TL_stars.StarsSubscription) this.h;
-                org.telegram.ui.ActionBar.f3[] f3VarArr = (org.telegram.ui.ActionBar.f3[]) this.n;
+                org.telegram.ui.ActionBar.e3[] e3VarArr = (org.telegram.ui.ActionBar.e3[]) this.n;
                 Activity activity = (Activity) this.r;
                 String str = (String) this.s;
                 if (!dVar.N) {
                     int i10 = this.b;
                     t5 y3 = t5.y(i10, false);
                     long j3 = this.e;
-                    ai.m8 m8Var = new ai.m8(dVar, starsSubscription, i10, f3VarArr, j3, 13);
+                    ai.m8 m8Var = new ai.m8(dVar, starsSubscription, i10, e3VarArr, j3, 13);
                     if (y3.f.amount >= starsSubscription.pricing.amount) {
                         m8Var.run();
                         break;
@@ -63,15 +63,15 @@ public final /* synthetic */ class l6 implements View.OnClickListener {
             default:
                 o8 o8Var = (o8) this.f;
                 MessageObject messageObject = (MessageObject) this.h;
-                xn xnVar = (xn) this.n;
+                wn wnVar = (wn) this.n;
                 TLRPC.Chat chat = (TLRPC.Chat) this.s;
                 if (!o8Var.R) {
                     long value = o8Var.r.getValue();
-                    if ((o8Var.P != null || (messageObject != null && xnVar != null)) && o8Var.V == null) {
+                    if ((o8Var.P != null || (messageObject != null && wnVar != null)) && o8Var.V == null) {
                         int i11 = this.b;
                         if (!MessagesController.getInstance(i11).isFrozen()) {
                             t5 y10 = t5.y(i11, false);
-                            org.telegram.messenger.voip.f fVar = new org.telegram.messenger.voip.f(o8Var, value, y10, messageObject, xnVar, 15);
+                            org.telegram.messenger.voip.f fVar = new org.telegram.messenger.voip.f(o8Var, value, y10, messageObject, wnVar, 15);
                             if (y10.e && y10.p().amount < value) {
                                 boolean z10 = this.c;
                                 Context context = this.r;
@@ -98,10 +98,10 @@ public final /* synthetic */ class l6 implements View.OnClickListener {
         }
     }
 
-    public /* synthetic */ l6(o8 o8Var, MessageObject messageObject, xn xnVar, int i10, boolean z10, Context context, org.telegram.ui.ActionBar.d6 d6Var, long j3, TLRPC.Chat chat) {
+    public /* synthetic */ l6(o8 o8Var, MessageObject messageObject, wn wnVar, int i10, boolean z10, Context context, org.telegram.ui.ActionBar.d6 d6Var, long j3, TLRPC.Chat chat) {
         this.f = o8Var;
         this.h = messageObject;
-        this.n = xnVar;
+        this.n = wnVar;
         this.b = i10;
         this.c = z10;
         this.r = context;

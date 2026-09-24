@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.ActionBar.d6;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q3 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final /* synthetic */ class q3 implements Utilities.Callback {
     public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                final org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) this.b;
+                final org.telegram.ui.ActionBar.e3 e3Var = (org.telegram.ui.ActionBar.e3) this.b;
                 final TLRPC.UserFull userFull = (TLRPC.UserFull) obj;
                 final int i10 = 0;
                 final Context context = this.c;
@@ -44,7 +44,7 @@ public final /* synthetic */ class q3 implements Utilities.Callback {
                             case 0:
                                 TLRPC.UserFull userFull2 = userFull;
                                 if (userFull2 != null && userFull2.starref_program != null) {
-                                    f3Var.dismiss();
+                                    e3Var.dismiss();
                                     e4.G0(context, i11, userFull2.starref_program, j3, d6Var, true);
                                     break;
                                 }
@@ -52,7 +52,7 @@ public final /* synthetic */ class q3 implements Utilities.Callback {
                             default:
                                 TLRPC.UserFull userFull3 = userFull;
                                 if (userFull3 != null && userFull3.starref_program != null) {
-                                    f3Var.dismiss();
+                                    e3Var.dismiss();
                                     e4.G0(context, i11, userFull3.starref_program, j3, d6Var, true);
                                     break;
                                 }
@@ -62,7 +62,7 @@ public final /* synthetic */ class q3 implements Utilities.Callback {
                 });
                 break;
             case 1:
-                final org.telegram.ui.ActionBar.f3 f3Var2 = (org.telegram.ui.ActionBar.f3) this.b;
+                final org.telegram.ui.ActionBar.e3 e3Var2 = (org.telegram.ui.ActionBar.e3) this.b;
                 final TLRPC.UserFull userFull2 = (TLRPC.UserFull) obj;
                 final int i12 = 1;
                 final Context context2 = this.c;
@@ -76,7 +76,7 @@ public final /* synthetic */ class q3 implements Utilities.Callback {
                             case 0:
                                 TLRPC.UserFull userFull22 = userFull2;
                                 if (userFull22 != null && userFull22.starref_program != null) {
-                                    f3Var2.dismiss();
+                                    e3Var2.dismiss();
                                     e4.G0(context2, i13, userFull22.starref_program, j10, d6Var2, true);
                                     break;
                                 }
@@ -84,7 +84,7 @@ public final /* synthetic */ class q3 implements Utilities.Callback {
                             default:
                                 TLRPC.UserFull userFull3 = userFull2;
                                 if (userFull3 != null && userFull3.starref_program != null) {
-                                    f3Var2.dismiss();
+                                    e3Var2.dismiss();
                                     e4.G0(context2, i13, userFull3.starref_program, j10, d6Var2, true);
                                     break;
                                 }
@@ -94,7 +94,7 @@ public final /* synthetic */ class q3 implements Utilities.Callback {
                 });
                 break;
             default:
-                ((org.telegram.ui.ActionBar.f3[]) this.b)[0].dismiss();
+                ((org.telegram.ui.ActionBar.e3[]) this.b)[0].dismiss();
                 e4.H0(this.c, this.d, (TL_payments.connectedBotStarRef) obj, this.e, this.f);
                 break;
         }

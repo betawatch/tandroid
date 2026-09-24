@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rg1 implements Runnable {
     public final /* synthetic */ int a;
@@ -28,8 +28,8 @@ public final /* synthetic */ class rg1 implements Runnable {
                 break;
             case 1:
                 zg1 zg1Var2 = this.b;
-                yd0 yd0Var = zg1Var2.w;
-                if (yd0Var != null && yd0Var.getVisibility() == 0) {
+                xd0 xd0Var = zg1Var2.w;
+                if (xd0Var != null && xd0Var.getVisibility() == 0) {
                     zg1Var2.w.f[0].requestFocus();
                     break;
                 }
@@ -37,11 +37,11 @@ public final /* synthetic */ class rg1 implements Runnable {
             case 2:
                 int i10 = 0;
                 while (true) {
-                    bs[] bsVarArr = this.b.w.f;
-                    if (i10 >= bsVarArr.length) {
+                    as[] asVarArr = this.b.w.f;
+                    if (i10 >= asVarArr.length) {
                         break;
                     } else {
-                        bsVarArr[i10].i(0.0f);
+                        asVarArr[i10].i(0.0f);
                         i10++;
                     }
                 }
@@ -74,8 +74,8 @@ public final /* synthetic */ class rg1 implements Runnable {
                 AndroidUtilities.runOnUIThread(new rg1(this.b, 7), 150L);
                 break;
             default:
-                for (bs bsVar : this.b.w.f) {
-                    bsVar.i(0.0f);
+                for (as asVar : this.b.w.f) {
+                    asVar.i(0.0f);
                 }
                 break;
         }

@@ -1,27 +1,58 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.widget.LinearLayout;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import androidx.mediarouter.app.MediaRouteButton;
+import java.lang.reflect.Field;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class nd extends LinearLayout {
-    public final od[] a;
+public abstract class nd extends MediaRouteButton {
+    public boolean a;
 
-    public nd(Context context) {
-        super(context);
-        this.a = new od[2];
-    }
-
-    public final void a(org.telegram.ui.mk mkVar, LinearLayout.LayoutParams layoutParams) {
-        int childCount = getChildCount();
-        if (childCount < 2) {
-            this.a[childCount] = mkVar;
-            addView(mkVar, layoutParams);
+    public final void a() {
+        boolean b10 = b();
+        if (this.a != b10) {
+            this.a = b10;
+            c(b10);
         }
     }
 
-    public od[] getButtons() {
-        return this.a;
+    public final boolean b() {
+        Field declaredField;
+        try {
+            declaredField = MediaRouteButton.class.getDeclaredField("mConnectionState");
+            declaredField.setAccessible(true);
+        } catch (Exception unused) {
+        }
+        return ((Integer) declaredField.get(this)).intValue() > 0;
+    }
+
+    public abstract void c(boolean z10);
+
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        a();
+    }
+
+    @Override // android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        a();
+    }
+
+    @Override // androidx.mediarouter.app.MediaRouteButton, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        a();
+    }
+
+    @Override // androidx.mediarouter.app.MediaRouteButton, android.view.View
+    public final void onDraw(Canvas canvas) {
+        a();
+    }
+
+    @Override // android.view.View
+    public void setBackground(Drawable drawable) {
     }
 }

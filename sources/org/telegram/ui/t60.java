@@ -1,40 +1,23 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import java.util.Comparator;
+import org.telegram.messenger.ContactsController;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class t60 extends org.telegram.ui.Components.g20 {
-    public final /* synthetic */ b70 r;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t60(b70 b70Var, Context context, int i10) {
-        super(context, i10);
-        this.r = b70Var;
-    }
-
-    @Override // org.telegram.ui.Components.g20
-    public final void a(org.telegram.ui.Components.n30 n30Var) {
-        super.a(n30Var);
-        b70.Z(this.r);
-    }
-
-    @Override // org.telegram.ui.Components.g20
-    public final void b() {
-        super.b();
-        b70.Z(this.r);
-    }
-
-    @Override // org.telegram.ui.Components.g20
-    public final void c(org.telegram.ui.Components.n30 n30Var) {
-        b70 b70Var = this.r;
-        if (n30Var == b70Var.X) {
-            b70Var.X = null;
+public final class t60 implements Comparator {
+    public static String a(TLObject tLObject) {
+        if (!(tLObject instanceof TLRPC.User)) {
+            return tLObject instanceof TLRPC.Chat ? ((TLRPC.Chat) tLObject).title : "";
         }
-        if (n30Var == b70Var.Y) {
-            b70Var.Y = null;
-        }
-        super.c(n30Var);
-        b70.Z(b70Var);
+        TLRPC.User user = (TLRPC.User) tLObject;
+        return ContactsController.formatName(user.first_name, user.last_name);
+    }
+
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        return a((TLObject) obj).compareTo(a((TLObject) obj2));
     }
 }

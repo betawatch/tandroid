@@ -15,15 +15,15 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.e6;
+import org.telegram.ui.Components.ij0;
 import org.telegram.ui.Components.mb;
 import org.telegram.ui.Components.nb;
 import org.telegram.ui.Components.oc;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.yi0;
 import org.telegram.ui.LaunchActivity;
-import w7.x5;
+import w7.y5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class j0 extends nb {
     public final d6 a;
@@ -47,21 +47,21 @@ public final class j0 extends nb {
         i0 i0Var = new i0(context, imageView);
         this.c = i0Var;
         imageView.setImageDrawable(i0Var);
-        addView(imageView, x5.d(40, 40.0f, 23, 7.0f, 0.0f, 0.0f, 0.0f));
+        addView(imageView, y5.d(40, 40.0f, 23, 7.0f, 0.0f, 0.0f, 0.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        addView(linearLayout, x5.d(-1, -2.0f, 23, 54.0f, 0.0f, 0.0f, 0.0f));
+        addView(linearLayout, y5.d(-1, -2.0f, 23, 54.0f, 0.0f, 0.0f, 0.0f));
         TextView textView = new TextView(context);
         this.d = textView;
         textView.setTextSize(1, 14.0f);
         int i10 = h6.Hi;
         textView.setTextColor(h6.v0(i10, d6Var));
         textView.setTypeface(AndroidUtilities.bold());
-        TextView h = com.google.android.gms.internal.vision.e2.h(linearLayout, textView, x5.t(-1, -2, 55, 0, 0, 0, 2), context);
+        TextView h = com.google.android.gms.internal.vision.e2.h(linearLayout, textView, y5.t(-1, -2, 55, 0, 0, 0, 2), context);
         this.e = h;
         h.setTextSize(1, 13.0f);
         h.setTextColor(h6.v0(i10, d6Var));
-        linearLayout.addView(h, x5.t(-1, -2, 55, 0, 0, 0, 0));
+        linearLayout.addView(h, y5.t(-1, -2, 55, 0, 0, 0, 0));
     }
 
     private void setButton(int i10) {
@@ -183,9 +183,9 @@ public final class j0 extends nb {
             i0Var.h = false;
             e6Var.getClass();
             e6Var.d(0.0f, true);
-            yi0 yi0Var = i0Var.l;
-            if (yi0Var != null) {
-                yi0Var.C(true);
+            ij0 ij0Var = i0Var.l;
+            if (ij0Var != null) {
+                ij0Var.C(true);
                 i0Var.l = null;
             }
             e6 e6Var2 = i0Var.i;
@@ -228,9 +228,9 @@ public final class j0 extends nb {
             setButton(2);
             if (!i0Var.h) {
                 i0Var.h = true;
-                yi0 yi0Var2 = new yi0(R.raw.contact_check, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(40.0f));
-                i0Var.l = yi0Var2;
-                yi0Var2.R(i0Var.a);
+                ij0 ij0Var2 = new ij0(R.raw.contact_check, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(40.0f));
+                i0Var.l = ij0Var2;
+                ij0Var2.R(i0Var.a);
                 i0Var.l.J(true);
                 i0Var.l.start();
                 i0Var.g = 1.0f;

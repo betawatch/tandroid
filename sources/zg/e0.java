@@ -1,147 +1,64 @@
 package zg;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.Paint;
-import android.os.Build;
-import android.text.InputFilter;
-import android.text.SpannableStringBuilder;
-import android.view.ActionMode;
-import android.view.GestureDetector;
-import android.view.Menu;
-import android.view.MotionEvent;
-import ii.w5;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.cu;
+import android.view.View;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.concurrent.CountDownLatch;
+import org.telegram.messenger.ImageLoader;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public abstract class e0 extends cu {
-    public final d6 c;
-    public final k2.u d;
-    public Runnable e;
-    public int f;
+public abstract class e0 {
+    public static Runnable c;
+    public static Boolean h;
+    public static final HashSet a = new HashSet();
+    public static volatile boolean b = false;
+    public static boolean d = true;
+    public static boolean e = false;
+    public static boolean f = false;
+    public static boolean g = false;
 
-    public e0(Context context, int i10, d6 d6Var) {
-        super(context, d6Var);
-        this.c = d6Var;
-        this.d = new k2.u(getContext(), new d0());
-        setBackground(null);
-        setIncludeFontPadding(true);
-        int i11 = Build.VERSION.SDK_INT;
-        setShowSoftInputOnFocus(false);
-        setSingleLine(false);
-        setMaxLines(50);
-        this.f = i10;
-        setFilters(new InputFilter[]{new InputFilter.LengthFilter(i10)});
-        setTextSize(1, 22.0f);
-        setGravity(80);
-        setPadding(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(18.0f), AndroidUtilities.dp(12.0f));
-        setTextColor(h6.v0(h6.Ud, d6Var));
-        setLinkTextColor(h6.v0(h6.hc, d6Var));
-        setHighlightColor(h6.v0(h6.uf, d6Var));
-        int i12 = h6.Vd;
-        setHintColor(h6.v0(i12, d6Var));
-        setHintTextColor(h6.v0(i12, d6Var));
-        setCursorColor(h6.v0(h6.Wd, d6Var));
-        setHandlesColor(h6.v0(h6.vf, d6Var));
-        if (i11 >= 28) {
-            setFallbackLineSpacing(false);
+    public static void a() {
+        ff.c cacheOutQueue = ImageLoader.getInstance().getCacheOutQueue();
+        CountDownLatch countDownLatch = cacheOutQueue.b;
+        if (countDownLatch != null) {
+            countDownLatch.countDown();
+            cacheOutQueue.b = null;
         }
-        setOnFocusChangeListener(new w5((o) this, 7));
-        setTextIsSelectable(true);
-        setLongClickable(false);
-        setFocusableInTouchMode(false);
-    }
-
-    @Override // org.telegram.ui.Components.eu, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (!((GestureDetector) this.d.b).onTouchEvent(motionEvent) || isLongClickable()) {
-            return super.dispatchTouchEvent(motionEvent);
+        b = false;
+        e = false;
+        g = false;
+        c = null;
+        Iterator it = a.iterator();
+        while (it.hasNext()) {
+            ((View) it.next()).invalidate();
         }
-        return false;
+        a.clear();
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor
-    public final void extendActionMode(ActionMode actionMode, Menu menu) {
-        menu.clear();
-        int i10 = R.id.menu_delete;
-        menu.add(i10, i10, 0, LocaleController.getString(R.string.Delete));
-    }
-
-    public int getEditTextSelectionEnd() {
-        int selectionEnd = getSelectionEnd();
-        if (selectionEnd < 0) {
-            return 0;
+    public static boolean b(View view) {
+        if (b) {
+            a.add(view);
         }
-        return selectionEnd;
+        return b;
     }
 
-    public int getEditTextSelectionStart() {
-        int selectionStart = getSelectionStart();
-        if (selectionStart < 0) {
-            return 0;
+    public static boolean c(View... viewArr) {
+        if (h == null) {
+            h = Boolean.valueOf(SharedConfig.getDevicePerformanceClass() != 2);
         }
-        return selectionStart;
-    }
-
-    public Paint.FontMetricsInt getFontMetricsInt() {
-        return getPaint().getFontMetricsInt();
-    }
-
-    public final void m() {
-        setLongClickable(false);
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(getText());
-        if (((b[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), b.class)).length == 0) {
-            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("x");
-            b bVar = new b(this.c);
-            ValueAnimator ofInt = ValueAnimator.ofInt(bVar.f, 255);
-            ofInt.addUpdateListener(new a(bVar, this, 0));
-            ofInt.setDuration(200L);
-            ofInt.start();
-            spannableStringBuilder2.setSpan(bVar, 0, spannableStringBuilder2.length(), 33);
-            setText(getText().append((CharSequence) spannableStringBuilder2));
+        if (!h.booleanValue()) {
+            return false;
         }
-    }
-
-    public final void n(boolean z10) {
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(getText());
-        for (b bVar : (b[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), b.class)) {
-            v vVar = new v(1, this, bVar);
-            if (z10) {
-                setCursorVisible(false);
-                ValueAnimator ofInt = ValueAnimator.ofInt(bVar.f, 0);
-                ofInt.addUpdateListener(new a(bVar, this, 1));
-                ofInt.addListener(new qg.n0(vVar, 11));
-                ofInt.setDuration(200L);
-                ofInt.start();
-            } else {
-                vVar.run();
-            }
+        if (b) {
+            a.addAll(Arrays.asList(viewArr));
         }
+        return b;
     }
 
-    @Override // org.telegram.ui.Components.eu, android.widget.TextView
-    public final void onSelectionChanged(int i10, int i11) {
-        super.onSelectionChanged(i10, i11);
-        if (!hasSelection() || ((b[]) getText().getSpans(i10, i11, b.class)).length == 0) {
-            return;
-        }
-        setSelection(i10, i11 - 1);
-    }
-
-    public void setMaxLength(int i10) {
-        if (this.f != i10) {
-            this.f = i10;
-            setFilters(new InputFilter[]{new InputFilter.LengthFilter(i10)});
-        }
-    }
-
-    public void setOnFocused(Runnable runnable) {
-        this.e = runnable;
+    public static boolean d() {
+        return b || e || g;
     }
 }

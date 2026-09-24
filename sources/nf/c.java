@@ -12,13 +12,13 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.ActionBar.b2;
+import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.g4;
 import org.telegram.ui.i4;
 import org.telegram.ui.m3;
 import s4.c1;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -30,9 +30,9 @@ public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ Object h;
     public final /* synthetic */ Object n;
 
-    public /* synthetic */ c(e eVar, b2[] b2VarArr, TLObject tLObject, int i10, Uri uri, Context context, boolean z10) {
+    public /* synthetic */ c(e eVar, a2[] a2VarArr, TLObject tLObject, int i10, Uri uri, Context context, boolean z10) {
         this.e = eVar;
-        this.f = b2VarArr;
+        this.f = a2VarArr;
         this.b = tLObject;
         this.c = i10;
         this.h = uri;
@@ -47,7 +47,7 @@ public final /* synthetic */ class c implements Runnable {
         switch (this.a) {
             case 0:
                 e eVar = (e) this.e;
-                b2[] b2VarArr = (b2[]) this.f;
+                a2[] a2VarArr = (a2[]) this.f;
                 TLObject tLObject = this.b;
                 int i11 = this.c;
                 Uri uri = (Uri) this.h;
@@ -57,10 +57,10 @@ public final /* synthetic */ class c implements Runnable {
                     eVar.b();
                 } else {
                     try {
-                        b2VarArr[0].dismiss();
+                        a2VarArr[0].dismiss();
                     } catch (Throwable unused) {
                     }
-                    b2VarArr[0] = null;
+                    a2VarArr[0] = null;
                 }
                 if (tLObject instanceof TL_account.webPagePreview) {
                     TL_account.webPagePreview webpagepreview = (TL_account.webPagePreview) tLObject;

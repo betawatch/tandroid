@@ -1,30 +1,8 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class zx0 implements TextWatcher {
-    public final /* synthetic */ NumberTextView a;
-    public final /* synthetic */ yx0 b;
-
-    public zx0(NumberTextView numberTextView, yx0 yx0Var) {
-        this.a = numberTextView;
-        this.b = yx0Var;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        this.a.a(50 - Character.codePointCount(editable, 0, editable.length()), true);
-        this.b.setErrorText(null);
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
+public final class zx0 extends FrameLayout {
 }

@@ -1,73 +1,82 @@
 package org.telegram.ui;
 
-import android.view.MotionEvent;
-import android.view.View;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.content.Intent;
+import android.net.Uri;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.UserConfig;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tl0 implements View.OnTouchListener {
+public final /* synthetic */ class tl0 implements org.telegram.ui.ActionBar.z1, vt, um0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ in0 b;
+    public final /* synthetic */ gn0 b;
 
-    public /* synthetic */ tl0(in0 in0Var, int i10) {
+    public /* synthetic */ tl0(gn0 gn0Var, int i10) {
         this.a = i10;
-        this.b = in0Var;
+        this.b = gn0Var;
     }
 
-    @Override // android.view.View.OnTouchListener
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        int i10 = this.a;
-        int i11 = 2;
-        in0 in0Var = this.b;
-        switch (i10) {
-            case 0:
-                if (in0Var.getParentActivity() != null) {
-                    if (motionEvent.getAction() == 1) {
-                        xt xtVar = new xt(null, false);
-                        xtVar.r = new w10(23, in0Var, view);
-                        in0Var.presentFragment(xtVar);
-                        break;
-                    }
-                }
-                break;
-            case 1:
-                if (in0Var.getParentActivity() != null) {
-                    if (motionEvent.getAction() == 1) {
-                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(in0Var.getParentActivity());
-                        String string = LocaleController.getString(R.string.PassportSelectGender);
-                        org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-                        b2Var.R = string;
-                        alertDialog$Builder.f(new CharSequence[]{LocaleController.getString(R.string.PassportMale), LocaleController.getString(R.string.PassportFemale)}, new rv(in0Var, i11));
-                        alertDialog$Builder.k(LocaleController.getString(R.string.Cancel), null);
-                        in0Var.showDialog(b2Var);
-                        break;
-                    }
-                }
-                break;
+    @Override // org.telegram.ui.vt
+    public void a1(qt qtVar) {
+        switch (this.a) {
             case 2:
-                if (in0Var.getParentActivity() != null) {
-                    if (motionEvent.getAction() == 1) {
-                        xt xtVar2 = new xt(null, false);
-                        xtVar2.r = new ul0(in0Var, i11);
-                        in0Var.presentFragment(xtVar2);
-                        break;
-                    }
-                }
+                gn0 gn0Var = this.b;
+                gn0Var.Y[5].setText(qtVar.a);
+                gn0Var.s = qtVar.d;
                 break;
             default:
-                if (in0Var.getParentActivity() != null) {
-                    if (motionEvent.getAction() == 1) {
-                        xt xtVar3 = new xt(null, false);
-                        xtVar3.r = new ul0(in0Var, 3);
-                        in0Var.presentFragment(xtVar3);
-                        break;
-                    }
+                gn0 gn0Var2 = this.b;
+                gn0Var2.Y[0].setText(qtVar.a);
+                if (gn0Var2.U0.indexOf(qtVar.a) != -1) {
+                    gn0Var2.Z0 = true;
+                    String str = (String) gn0Var2.V0.get(qtVar.a);
+                    gn0Var2.Y[1].setText(str);
+                    String str2 = (String) gn0Var2.X0.get(str);
+                    gn0Var2.Y[2].setHintText(str2 != null ? str2.replace('X', (char) 8211) : null);
+                    gn0Var2.Z0 = false;
                 }
+                AndroidUtilities.runOnUIThread(new ql0(gn0Var2, 3), 300L);
+                gn0Var2.Y[2].requestFocus();
+                EditTextBoldCursor editTextBoldCursor = gn0Var2.Y[2];
+                editTextBoldCursor.setSelection(editTextBoldCursor.length());
                 break;
         }
-        return false;
+    }
+
+    @Override // org.telegram.ui.um0
+    public void c(String str, String str2) {
+        this.b.x1();
+    }
+
+    @Override // org.telegram.ui.ActionBar.z1
+    public void f(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
+        switch (this.a) {
+            case 0:
+                gn0 gn0Var = this.b;
+                gn0Var.getClass();
+                try {
+                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+                    intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
+                    gn0Var.getParentActivity().startActivity(intent);
+                    break;
+                } catch (Exception e) {
+                    FileLog.e(e);
+                    return;
+                }
+            case 1:
+                this.b.finishFragment();
+                break;
+            case 2:
+            case 3:
+            default:
+                gn0.a0(this.b);
+                break;
+            case 4:
+                nf.f.s(r3.getParentActivity(), "https://telegram.org/deactivate?phone=" + UserConfig.getInstance(this.b.currentAccount).getClientPhone());
+                break;
+        }
     }
 }

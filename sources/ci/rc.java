@@ -21,11 +21,11 @@ import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.ml0;
-import org.telegram.ui.Components.v51;
+import org.telegram.ui.Components.j61;
+import org.telegram.ui.Components.wl0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class rc implements Runnable {
     public final /* synthetic */ int a;
@@ -57,11 +57,11 @@ public final /* synthetic */ class rc implements Runnable {
                                     if (context != null && (telephonyManager = (TelephonyManager) context.getSystemService("phone")) != null) {
                                         String networkCountryIso = telephonyManager.getNetworkCountryIso();
                                         if (!TextUtils.isEmpty(networkCountryIso)) {
-                                            c10 = v7.r6.c(networkCountryIso);
+                                            c10 = v7.s6.c(networkCountryIso);
                                             fVar.o = c10;
                                         }
                                     }
-                                    c10 = v7.r6.c(Locale.getDefault().getCountry());
+                                    c10 = v7.s6.c(Locale.getDefault().getCountry());
                                     fVar.o = c10;
                                 }
                                 fVar.l = fVar.a(b10);
@@ -140,15 +140,15 @@ public final /* synthetic */ class rc implements Runnable {
                 }
                 return;
             case 3:
-                com.google.firebase.messaging.f0 f0Var = (com.google.firebase.messaging.f0) this.b;
-                Log.w("FirebaseMessaging", "Service took too long to process intent: " + f0Var.a.getAction() + " finishing.");
-                f0Var.b.trySetResult(null);
+                com.google.firebase.messaging.e0 e0Var = (com.google.firebase.messaging.e0) this.b;
+                Log.w("FirebaseMessaging", "Service took too long to process intent: " + e0Var.a.getAction() + " finishing.");
+                e0Var.b.trySetResult(null);
                 return;
             case 4:
                 di.f fVar = (di.f) this.b;
                 fVar.getClass();
                 try {
-                    ml0 currentListView = ((di.i) fVar.M0).R.getCurrentListView();
+                    wl0 currentListView = ((di.i) fVar.M0).R.getCurrentListView();
                     if (currentListView == null || currentListView.getAdapter() == null) {
                         return;
                     }
@@ -208,13 +208,13 @@ public final /* synthetic */ class rc implements Runnable {
                 return;
             case 19:
                 AndroidUtilities.addToClipboard(((TL_account.TL_businessChatLink) this.b).link);
-                org.telegram.ui.Components.xc.a0(LaunchActivity.R()).k(false).j();
+                org.telegram.ui.Components.yc.a0(LaunchActivity.R()).k(false).j();
                 return;
             case 20:
                 hg.m0 m0Var = (hg.m0) this.b;
-                v51 v51Var = m0Var.d0;
-                if (v51Var != null) {
-                    v51Var.N(true);
+                j61 j61Var = m0Var.d0;
+                if (j61Var != null) {
+                    j61Var.N(true);
                 }
                 m0Var.T(true);
                 return;
@@ -251,9 +251,9 @@ public final /* synthetic */ class rc implements Runnable {
                 }
                 return;
             case 28:
-                i2.f0 f0Var2 = (i2.f0) this.b;
-                e2.c cVar2 = f0Var2.E;
-                Context context = f0Var2.e;
+                i2.f0 f0Var = (i2.f0) this.b;
+                e2.c cVar2 = f0Var.E;
+                Context context = f0Var.e;
                 String str2 = e2.d0.a;
                 Integer valueOf = Integer.valueOf(c2.d.e(context).generateAudioSessionId());
                 cVar2.f = valueOf;
@@ -265,9 +265,9 @@ public final /* synthetic */ class rc implements Runnable {
                 }
                 return;
             default:
-                i2.f0 f0Var3 = ((i2.c0) this.b).a;
-                f0Var3.t1(null);
-                f0Var3.m1(0, 0);
+                i2.f0 f0Var2 = ((i2.c0) this.b).a;
+                f0Var2.t1(null);
+                f0Var2.m1(0, 0);
                 return;
         }
     }

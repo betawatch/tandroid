@@ -46,9 +46,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterView.OnItemSelectedListener {
+public final class wj0 extends org.telegram.ui.ActionBar.e3 implements AdapterView.OnItemSelectedListener {
     public static final /* synthetic */ int d0 = 0;
     public boolean E;
     public boolean F;
@@ -58,7 +58,7 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
     public boolean J;
     public String K;
     public String L;
-    public final org.telegram.ui.ActionBar.n2 M;
+    public final org.telegram.ui.ActionBar.m2 M;
     public final int N;
     public final uj0 O;
     public final View P;
@@ -77,14 +77,14 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
     public String b0;
     public final org.telegram.ui.Components.uq c;
     public int c0;
-    public final org.telegram.ui.Components.wc0 d;
-    public final org.telegram.ui.Components.wc0 e;
+    public final org.telegram.ui.Components.id0 d;
+    public final org.telegram.ui.Components.id0 e;
     public final FrameLayout f;
     public final View h;
     public final ci.d n;
-    public final org.telegram.ui.Components.wc0 r;
-    public final org.telegram.ui.Components.yc0 s;
-    public final org.telegram.ui.Components.d90 v;
+    public final org.telegram.ui.Components.id0 r;
+    public final org.telegram.ui.Components.jd0 s;
+    public final org.telegram.ui.Components.n90 v;
     public final ArrayList w;
     public final HashMap x;
     public final HashMap y;
@@ -97,12 +97,12 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public wj0(Context context, org.telegram.ui.ActionBar.n2 n2Var) {
+    public wj0(Context context, org.telegram.ui.ActionBar.m2 m2Var) {
         super(context, true);
         String str;
         String str2;
         int i10;
-        st stVar;
+        qt qtVar;
         TelephonyManager telephonyManager;
         final int i11 = 1;
         this.w = new ArrayList();
@@ -113,7 +113,7 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
         this.waitingKeyboard = true;
         this.smoothKeyboardAnimationEnabled = true;
         this.N = ConnectionsManager.generateClassGuid();
-        this.M = n2Var;
+        this.M = m2Var;
         Context context2 = getContext();
         org.telegram.ui.Components.uq uqVar = new org.telegram.ui.Components.uq(context2, 1);
         this.c = uqVar;
@@ -125,20 +125,20 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
         final int i13 = 0;
         linearLayout.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
         this.b.setOrientation(1);
-        scrollView.addView(this.b, w7.x5.x(-1, -2, 51));
+        scrollView.addView(this.b, w7.y5.x(-1, -2, 51));
         this.b.setOnTouchListener(new bi.d(27));
         FrameLayout frameLayout = new FrameLayout(context2);
-        this.b.addView(frameLayout, w7.x5.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2));
-        org.telegram.ui.Components.wc0 wc0Var = new org.telegram.ui.Components.wc0(context2);
-        this.d = wc0Var;
-        wc0Var.getEditText().setInputType(49152);
+        this.b.addView(frameLayout, w7.y5.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2));
+        org.telegram.ui.Components.id0 id0Var = new org.telegram.ui.Components.id0(context2);
+        this.d = id0Var;
+        id0Var.getEditText().setInputType(49152);
         this.d.getEditText().setImeOptions(5);
         this.d.setHint(LocaleController.getString(R.string.FirstName));
         if (this.K != null) {
             this.d.getEditText().setText(this.K);
             this.K = null;
         }
-        frameLayout.addView(this.d, w7.x5.d(-1, 58.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
+        frameLayout.addView(this.d, w7.y5.d(-1, 58.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
         this.d.getEditText().setOnEditorActionListener(new TextView.OnEditorActionListener(this) { // from class: org.telegram.ui.rj0
             public final /* synthetic */ wj0 b;
 
@@ -199,9 +199,9 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
                 return false;
             }
         });
-        org.telegram.ui.Components.wc0 wc0Var2 = new org.telegram.ui.Components.wc0(context2);
-        this.e = wc0Var2;
-        wc0Var2.setBackground(null);
+        org.telegram.ui.Components.id0 id0Var2 = new org.telegram.ui.Components.id0(context2);
+        this.e = id0Var2;
+        id0Var2.setBackground(null);
         this.e.getEditText().setInputType(49152);
         this.e.getEditText().setImeOptions(5);
         this.e.setHint(LocaleController.getString(R.string.LastName));
@@ -209,7 +209,7 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
             this.e.getEditText().setText(this.L);
             this.L = null;
         }
-        frameLayout.addView(this.e, w7.x5.d(-1, 58.0f, 51, 0.0f, 68.0f, 0.0f, 0.0f));
+        frameLayout.addView(this.e, w7.y5.d(-1, 58.0f, 51, 0.0f, 68.0f, 0.0f, 0.0f));
         final int i14 = 2;
         this.e.getEditText().setOnEditorActionListener(new TextView.OnEditorActionListener(this) { // from class: org.telegram.ui.rj0
             public final /* synthetic */ wj0 b;
@@ -273,17 +273,17 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
         });
         LinearLayout linearLayout2 = new LinearLayout(context2);
         linearLayout2.setOrientation(0);
-        org.telegram.ui.Components.yc0 yc0Var = new org.telegram.ui.Components.yc0(context2, null);
-        this.s = yc0Var;
-        yc0Var.addView(linearLayout2, w7.x5.d(-1, -2.0f, 16, 4.0f, 8.0f, 16.0f, 8.0f));
+        org.telegram.ui.Components.jd0 jd0Var = new org.telegram.ui.Components.jd0(context2, null);
+        this.s = jd0Var;
+        jd0Var.addView(linearLayout2, w7.y5.d(-1, -2.0f, 16, 4.0f, 8.0f, 16.0f, 8.0f));
         this.s.setText(LocaleController.getString(R.string.PhoneNumber));
-        this.b.addView(this.s, w7.x5.k(0.0f, 12.0f, 0.0f, 6.0f, -1, 58));
-        org.telegram.ui.Components.d90 d90Var = new org.telegram.ui.Components.d90(context2, null);
-        this.v = d90Var;
-        d90Var.setTextSize(1, 12.0f);
+        this.b.addView(this.s, w7.y5.k(0.0f, 12.0f, 0.0f, 6.0f, -1, 58));
+        org.telegram.ui.Components.n90 n90Var = new org.telegram.ui.Components.n90(context2, null);
+        this.v = n90Var;
+        n90Var.setTextSize(1, 12.0f);
         this.v.setTextColor(getThemedColor(org.telegram.ui.ActionBar.h6.y6));
         this.v.setLinkTextColor(getThemedColor(org.telegram.ui.ActionBar.h6.gc));
-        this.b.addView(this.v, w7.x5.k(12.0f, 0.0f, 12.0f, 0.0f, -1, -2));
+        this.b.addView(this.v, w7.y5.k(12.0f, 0.0f, 12.0f, 0.0f, -1, -2));
         FrameLayout frameLayout2 = new FrameLayout(context2);
         tj0 tj0Var = new tj0(context2);
         this.W = tj0Var;
@@ -308,8 +308,8 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
                         break;
                     case 1:
                         wj0 wj0Var2 = this.b;
-                        org.telegram.ui.ActionBar.n2 n2Var2 = wj0Var2.M;
-                        if (!wj0Var2.H && n2Var2 != null && n2Var2.getParentActivity() != null) {
+                        org.telegram.ui.ActionBar.m2 m2Var2 = wj0Var2.M;
+                        if (!wj0Var2.H && m2Var2 != null && m2Var2.getParentActivity() != null) {
                             if (wj0Var2.d.getEditText().length() != 0) {
                                 if (wj0Var2.O.length() != 0) {
                                     if (wj0Var2.Q.length() != 0) {
@@ -317,11 +317,11 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
                                             wj0Var2.r();
                                             break;
                                         } else {
-                                            org.telegram.ui.Components.de0.e(R.raw.permission_request_contacts, R.string.PermissionNoContactsSaving, new String[]{"android.permission.WRITE_CONTACTS"}, new String[]{"android.permission.WRITE_CONTACTS"}, new t3(wj0Var2, 13));
+                                            org.telegram.ui.Components.ne0.e(R.raw.permission_request_contacts, R.string.PermissionNoContactsSaving, new String[]{"android.permission.WRITE_CONTACTS"}, new String[]{"android.permission.WRITE_CONTACTS"}, new t3(wj0Var2, 13));
                                             break;
                                         }
                                     } else {
-                                        Vibrator vibrator = (Vibrator) n2Var2.getParentActivity().getSystemService("vibrator");
+                                        Vibrator vibrator = (Vibrator) m2Var2.getParentActivity().getSystemService("vibrator");
                                         if (vibrator != null) {
                                             vibrator.vibrate(200L);
                                         }
@@ -329,7 +329,7 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
                                         break;
                                     }
                                 } else {
-                                    Vibrator vibrator2 = (Vibrator) n2Var2.getParentActivity().getSystemService("vibrator");
+                                    Vibrator vibrator2 = (Vibrator) m2Var2.getParentActivity().getSystemService("vibrator");
                                     if (vibrator2 != null) {
                                         vibrator2.vibrate(200L);
                                     }
@@ -337,7 +337,7 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
                                     break;
                                 }
                             } else {
-                                Vibrator vibrator3 = (Vibrator) n2Var2.getParentActivity().getSystemService("vibrator");
+                                Vibrator vibrator3 = (Vibrator) m2Var2.getParentActivity().getSystemService("vibrator");
                                 if (vibrator3 != null) {
                                     vibrator3.vibrate(200L);
                                 }
@@ -347,10 +347,10 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
                         }
                         break;
                     case 2:
-                        xt xtVar = new xt(null, true);
+                        wt wtVar = new wt(null, true);
                         wj0 wj0Var3 = this.b;
-                        xtVar.r = new g(wj0Var3, 27);
-                        wj0Var3.M.showAsSheet(xtVar);
+                        wtVar.r = new g(wj0Var3, 27);
+                        wj0Var3.M.showAsSheet(wtVar);
                         break;
                     default:
                         wj0 wj0Var4 = this.b;
@@ -364,14 +364,14 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
         int i16 = org.telegram.ui.ActionBar.h6.i6;
         int w02 = org.telegram.ui.ActionBar.h6.w0(null, i16, false);
         frameLayout2.setBackground(org.telegram.ui.ActionBar.h6.i0(dp, dp, dp, dp, 0, w02, w02));
-        frameLayout2.addView(this.W, w7.x5.e(-1, -2, 16));
-        linearLayout2.addView(frameLayout2, w7.x5.n(42, -1));
+        frameLayout2.addView(this.W, w7.y5.e(-1, -2, 16));
+        linearLayout2.addView(frameLayout2, w7.y5.n(42, -1));
         TextView textView = new TextView(context2);
         this.a0 = textView;
         textView.setText("+");
         this.a0.setTextSize(1, 16.0f);
         this.a0.setFocusable(false);
-        linearLayout2.addView(this.a0, w7.x5.n(-2, -2));
+        linearLayout2.addView(this.a0, w7.y5.n(-2, -2));
         uj0 uj0Var = new uj0(this, context2, 0);
         this.O = uj0Var;
         int i17 = org.telegram.ui.ActionBar.h6.G6;
@@ -386,7 +386,7 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
         this.O.setImeOptions(268435461);
         this.O.setBackground(null);
         this.O.setContentDescription(LocaleController.getString(R.string.LoginAccessibilityCountryCode));
-        linearLayout2.addView(this.O, w7.x5.k(-9.0f, 0.0f, 0.0f, 0.0f, 55, 36));
+        linearLayout2.addView(this.O, w7.y5.k(-9.0f, 0.0f, 0.0f, 0.0f, 55, 36));
         this.O.addTextChangedListener(new m0(this, 11));
         final int i18 = 3;
         this.O.setOnEditorActionListener(new TextView.OnEditorActionListener(this) { // from class: org.telegram.ui.rj0
@@ -450,7 +450,7 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
             }
         });
         this.P = new View(context2);
-        LinearLayout.LayoutParams k10 = w7.x5.k(4.0f, 8.0f, 12.0f, 8.0f, 0, -1);
+        LinearLayout.LayoutParams k10 = w7.y5.k(4.0f, 8.0f, 12.0f, 8.0f, 0, -1);
         k10.width = Math.max(2, AndroidUtilities.dp(0.5f));
         linearLayout2.addView(this.P, k10);
         uj0 uj0Var2 = new uj0(this, context2, 1);
@@ -466,8 +466,8 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
         this.Q.setImeOptions(268435461);
         this.Q.setBackground(null);
         this.Q.setContentDescription(LocaleController.getString(R.string.PhoneNumber));
-        linearLayout2.addView(this.Q, w7.x5.n(-1, 36));
-        this.Q.addTextChangedListener(new yr(this, 2));
+        linearLayout2.addView(this.Q, w7.y5.n(-1, 36));
+        this.Q.addTextChangedListener(new xr(this, 2));
         this.Q.setOnEditorActionListener(new TextView.OnEditorActionListener(this) { // from class: org.telegram.ui.rj0
             public final /* synthetic */ wj0 b;
 
@@ -533,7 +533,7 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
         imageView.setScaleX(0.5f);
         this.R.setScaleY(0.5f);
         this.R.setAlpha(0.0f);
-        this.s.addView(this.R, w7.x5.d(24, 24.0f, 21, 0.0f, 0.0f, 12.0f, 0.0f));
+        this.s.addView(this.R, w7.y5.d(24, 24.0f, 21, 0.0f, 0.0f, 12.0f, 0.0f));
         org.telegram.ui.Components.op opVar = new org.telegram.ui.Components.op(context2, 21, this.resourcesProvider);
         this.S = opVar;
         opVar.b(org.telegram.ui.ActionBar.h6.h7, org.telegram.ui.ActionBar.h6.j7, org.telegram.ui.ActionBar.h6.k7);
@@ -549,8 +549,8 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
         this.U = linearLayout3;
         linearLayout3.setOrientation(0);
         this.U.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(8.0f));
-        this.U.addView(this.S, w7.x5.t(21, 21, 16, 0, 0, 9, 0));
-        this.U.addView(this.T, w7.x5.q(-2, -2, 16));
+        this.U.addView(this.S, w7.y5.t(21, 21, 16, 0, 0, 9, 0));
+        this.U.addView(this.T, w7.y5.q(-2, -2, 16));
         final int i19 = 3;
         this.U.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.qj0
             public final /* synthetic */ wj0 b;
@@ -569,8 +569,8 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
                         break;
                     case 1:
                         wj0 wj0Var2 = this.b;
-                        org.telegram.ui.ActionBar.n2 n2Var2 = wj0Var2.M;
-                        if (!wj0Var2.H && n2Var2 != null && n2Var2.getParentActivity() != null) {
+                        org.telegram.ui.ActionBar.m2 m2Var2 = wj0Var2.M;
+                        if (!wj0Var2.H && m2Var2 != null && m2Var2.getParentActivity() != null) {
                             if (wj0Var2.d.getEditText().length() != 0) {
                                 if (wj0Var2.O.length() != 0) {
                                     if (wj0Var2.Q.length() != 0) {
@@ -578,11 +578,11 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
                                             wj0Var2.r();
                                             break;
                                         } else {
-                                            org.telegram.ui.Components.de0.e(R.raw.permission_request_contacts, R.string.PermissionNoContactsSaving, new String[]{"android.permission.WRITE_CONTACTS"}, new String[]{"android.permission.WRITE_CONTACTS"}, new t3(wj0Var2, 13));
+                                            org.telegram.ui.Components.ne0.e(R.raw.permission_request_contacts, R.string.PermissionNoContactsSaving, new String[]{"android.permission.WRITE_CONTACTS"}, new String[]{"android.permission.WRITE_CONTACTS"}, new t3(wj0Var2, 13));
                                             break;
                                         }
                                     } else {
-                                        Vibrator vibrator = (Vibrator) n2Var2.getParentActivity().getSystemService("vibrator");
+                                        Vibrator vibrator = (Vibrator) m2Var2.getParentActivity().getSystemService("vibrator");
                                         if (vibrator != null) {
                                             vibrator.vibrate(200L);
                                         }
@@ -590,7 +590,7 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
                                         break;
                                     }
                                 } else {
-                                    Vibrator vibrator2 = (Vibrator) n2Var2.getParentActivity().getSystemService("vibrator");
+                                    Vibrator vibrator2 = (Vibrator) m2Var2.getParentActivity().getSystemService("vibrator");
                                     if (vibrator2 != null) {
                                         vibrator2.vibrate(200L);
                                     }
@@ -598,7 +598,7 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
                                     break;
                                 }
                             } else {
-                                Vibrator vibrator3 = (Vibrator) n2Var2.getParentActivity().getSystemService("vibrator");
+                                Vibrator vibrator3 = (Vibrator) m2Var2.getParentActivity().getSystemService("vibrator");
                                 if (vibrator3 != null) {
                                     vibrator3.vibrate(200L);
                                 }
@@ -608,10 +608,10 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
                         }
                         break;
                     case 2:
-                        xt xtVar = new xt(null, true);
+                        wt wtVar = new wt(null, true);
                         wj0 wj0Var3 = this.b;
-                        xtVar.r = new g(wj0Var3, 27);
-                        wj0Var3.M.showAsSheet(xtVar);
+                        wtVar.r = new g(wj0Var3, 27);
+                        wj0Var3.M.showAsSheet(wtVar);
                         break;
                     default:
                         wj0 wj0Var4 = this.b;
@@ -623,17 +623,17 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
         });
         this.U.setTranslationY(AndroidUtilities.dp(-21.33f));
         this.U.setPivotX(0.0f);
-        w7.z5.b(this.U, 0.0125f, 1.2f);
+        w7.a6.b(this.U, 0.0125f, 1.2f);
         this.U.setBackground(org.telegram.ui.ActionBar.h6.Y(org.telegram.ui.ActionBar.h6.v0(i16, this.resourcesProvider), 6, 6));
-        this.b.addView(this.U, w7.x5.k(0.0f, 5.0f, 0.0f, 0.0f, -2, -2));
+        this.b.addView(this.U, w7.y5.k(0.0f, 5.0f, 0.0f, 0.0f, -2, -2));
         FrameLayout frameLayout3 = new FrameLayout(context2);
         this.f = frameLayout3;
         frameLayout3.setTranslationY(AndroidUtilities.dp(-10.665f));
-        this.b.addView(this.f, w7.x5.k(0.0f, 6.0f, 0.0f, -6.0f, -1, -2));
+        this.b.addView(this.f, w7.y5.k(0.0f, 6.0f, 0.0f, -6.0f, -1, -2));
         View view = new View(context2);
         this.h = view;
         view.setBackgroundColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.d7, this.resourcesProvider));
-        this.f.addView(this.h, w7.x5.d(-1, 1.0f / AndroidUtilities.density, 48, 0.0f, 6.0f, 0.0f, 0.0f));
+        this.f.addView(this.h, w7.y5.d(-1, 1.0f / AndroidUtilities.density, 48, 0.0f, 6.0f, 0.0f, 0.0f));
         ci.d dVar = new ci.d(context2, this.resourcesProvider, false);
         this.n = dVar;
         dVar.e();
@@ -659,8 +659,8 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
                         break;
                     case 1:
                         wj0 wj0Var2 = this.b;
-                        org.telegram.ui.ActionBar.n2 n2Var2 = wj0Var2.M;
-                        if (!wj0Var2.H && n2Var2 != null && n2Var2.getParentActivity() != null) {
+                        org.telegram.ui.ActionBar.m2 m2Var2 = wj0Var2.M;
+                        if (!wj0Var2.H && m2Var2 != null && m2Var2.getParentActivity() != null) {
                             if (wj0Var2.d.getEditText().length() != 0) {
                                 if (wj0Var2.O.length() != 0) {
                                     if (wj0Var2.Q.length() != 0) {
@@ -668,11 +668,11 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
                                             wj0Var2.r();
                                             break;
                                         } else {
-                                            org.telegram.ui.Components.de0.e(R.raw.permission_request_contacts, R.string.PermissionNoContactsSaving, new String[]{"android.permission.WRITE_CONTACTS"}, new String[]{"android.permission.WRITE_CONTACTS"}, new t3(wj0Var2, 13));
+                                            org.telegram.ui.Components.ne0.e(R.raw.permission_request_contacts, R.string.PermissionNoContactsSaving, new String[]{"android.permission.WRITE_CONTACTS"}, new String[]{"android.permission.WRITE_CONTACTS"}, new t3(wj0Var2, 13));
                                             break;
                                         }
                                     } else {
-                                        Vibrator vibrator = (Vibrator) n2Var2.getParentActivity().getSystemService("vibrator");
+                                        Vibrator vibrator = (Vibrator) m2Var2.getParentActivity().getSystemService("vibrator");
                                         if (vibrator != null) {
                                             vibrator.vibrate(200L);
                                         }
@@ -680,7 +680,7 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
                                         break;
                                     }
                                 } else {
-                                    Vibrator vibrator2 = (Vibrator) n2Var2.getParentActivity().getSystemService("vibrator");
+                                    Vibrator vibrator2 = (Vibrator) m2Var2.getParentActivity().getSystemService("vibrator");
                                     if (vibrator2 != null) {
                                         vibrator2.vibrate(200L);
                                     }
@@ -688,7 +688,7 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
                                     break;
                                 }
                             } else {
-                                Vibrator vibrator3 = (Vibrator) n2Var2.getParentActivity().getSystemService("vibrator");
+                                Vibrator vibrator3 = (Vibrator) m2Var2.getParentActivity().getSystemService("vibrator");
                                 if (vibrator3 != null) {
                                     vibrator3.vibrate(200L);
                                 }
@@ -698,10 +698,10 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
                         }
                         break;
                     case 2:
-                        xt xtVar = new xt(null, true);
+                        wt wtVar = new wt(null, true);
                         wj0 wj0Var3 = this.b;
-                        xtVar.r = new g(wj0Var3, 27);
-                        wj0Var3.M.showAsSheet(xtVar);
+                        wtVar.r = new g(wj0Var3, 27);
+                        wj0Var3.M.showAsSheet(wtVar);
                         break;
                     default:
                         wj0 wj0Var4 = this.b;
@@ -711,14 +711,14 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
                 }
             }
         });
-        this.f.addView(this.n, w7.x5.d(-1, 48.0f, 48, 0.0f, 12.0f, 0.0f, 0.0f));
-        org.telegram.ui.Components.wc0 wc0Var3 = new org.telegram.ui.Components.wc0(context2);
-        this.r = wc0Var3;
-        wc0Var3.setBackground(null);
+        this.f.addView(this.n, w7.y5.d(-1, 48.0f, 48, 0.0f, 12.0f, 0.0f, 0.0f));
+        org.telegram.ui.Components.id0 id0Var3 = new org.telegram.ui.Components.id0(context2);
+        this.r = id0Var3;
+        id0Var3.setBackground(null);
         this.r.getEditText().setInputType(49152);
         this.r.getEditText().setImeOptions(5);
         this.r.setHint("Notes");
-        this.f.addView(this.r, w7.x5.d(-1, 58.0f, 48, 0.0f, 0.0f, 0.0f, 0.0f));
+        this.f.addView(this.r, w7.y5.d(-1, 58.0f, 48, 0.0f, 0.0f, 0.0f, 0.0f));
         this.r.getEditText().setOnEditorActionListener(new TextView.OnEditorActionListener(this) { // from class: org.telegram.ui.rj0
             public final /* synthetic */ wj0 b;
 
@@ -789,11 +789,11 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
                     break;
                 }
                 String[] split = readLine.split(";");
-                st stVar2 = new st();
-                stVar2.a = split[2];
-                stVar2.c = split[0];
-                stVar2.d = split[1];
-                this.w.add(0, stVar2);
+                qt qtVar2 = new qt();
+                qtVar2.a = split[2];
+                qtVar2.c = split[0];
+                qtVar2.d = split[1];
+                this.w.add(0, qtVar2);
                 List list = (List) this.x.get(split[0]);
                 if (list == null) {
                     HashMap hashMap2 = this.x;
@@ -802,7 +802,7 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
                     hashMap2.put(str3, arrayList);
                     list = arrayList;
                 }
-                list.add(stVar2);
+                list.add(qtVar2);
                 if (split.length > 3) {
                     this.y.put(split[0], Collections.singletonList(split[3]));
                 }
@@ -825,18 +825,18 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
                     i10 = 0;
                     while (true) {
                         if (i10 < this.w.size()) {
-                            stVar = null;
+                            qtVar = null;
                             break;
                         } else {
-                            if (Objects.equals(((st) this.w.get(i10)).a, str2)) {
-                                stVar = (st) this.w.get(i10);
+                            if (Objects.equals(((qt) this.w.get(i10)).a, str2)) {
+                                qtVar = (qt) this.w.get(i10);
                                 break;
                             }
                             i10++;
                         }
                     }
-                    if (stVar != null) {
-                        this.O.setText(stVar.c);
+                    if (qtVar != null) {
+                        this.O.setText(qtVar.c);
                     }
                 }
                 if (this.O.length() == 0) {
@@ -851,7 +851,7 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
                     }
                     i10++;
                 }
-                if (stVar != null) {
+                if (qtVar != null) {
                 }
             }
             if (this.O.length() == 0) {
@@ -888,22 +888,22 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
         this.X.setSingleLine(true);
         this.X.setText(LocaleController.getString(R.string.CreateContact));
         TextView textView4 = this.X;
-        org.telegram.ui.ActionBar.n2 n2Var2 = this.M;
+        org.telegram.ui.ActionBar.m2 m2Var2 = this.M;
         int i20 = org.telegram.ui.ActionBar.h6.Sh;
-        textView4.setTextColor(n2Var2.getThemedColor(i20));
+        textView4.setTextColor(m2Var2.getThemedColor(i20));
         this.X.setTextSize(1, 15.0f);
         this.X.setTypeface(AndroidUtilities.bold());
-        w7.z5.b(this.Z, 0.02f, 1.2f);
+        w7.a6.b(this.Z, 0.02f, 1.2f);
         RadialProgressView radialProgressView = new RadialProgressView(context2, null);
         this.Y = radialProgressView;
         radialProgressView.setSize(AndroidUtilities.dp(20.0f));
         this.Y.setProgressColor(this.M.getThemedColor(i20));
-        this.Z.addView(this.X, w7.x5.c(-1.0f, -1));
-        this.Z.addView(this.Y, w7.x5.e(40, 40, 17));
-        this.b.addView(this.Z, w7.x5.t(-1, 48, 0, 0, 8, 0, 4));
+        this.Z.addView(this.X, w7.y5.c(-1.0f, -1));
+        this.Z.addView(this.Y, w7.y5.e(40, 40, 17));
+        this.b.addView(this.Z, w7.y5.t(-1, 48, 0, 0, 8, 0, 4));
         AndroidUtilities.updateViewVisibilityAnimated(this.X, true, 1.0f, false);
         AndroidUtilities.updateViewVisibilityAnimated(this.Y, false, 1.0f, false);
-        this.Z.setBackground(org.telegram.ui.ActionBar.x5.e(new float[]{24.0f}, this.M.getThemedColor(org.telegram.ui.ActionBar.h6.Oh)));
+        this.Z.setBackground(org.telegram.ui.ActionBar.w5.e(new float[]{24.0f}, this.M.getThemedColor(org.telegram.ui.ActionBar.h6.Oh)));
         this.Z.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.qj0
             public final /* synthetic */ wj0 b;
 
@@ -921,8 +921,8 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
                         break;
                     case 1:
                         wj0 wj0Var2 = this.b;
-                        org.telegram.ui.ActionBar.n2 n2Var22 = wj0Var2.M;
-                        if (!wj0Var2.H && n2Var22 != null && n2Var22.getParentActivity() != null) {
+                        org.telegram.ui.ActionBar.m2 m2Var22 = wj0Var2.M;
+                        if (!wj0Var2.H && m2Var22 != null && m2Var22.getParentActivity() != null) {
                             if (wj0Var2.d.getEditText().length() != 0) {
                                 if (wj0Var2.O.length() != 0) {
                                     if (wj0Var2.Q.length() != 0) {
@@ -930,11 +930,11 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
                                             wj0Var2.r();
                                             break;
                                         } else {
-                                            org.telegram.ui.Components.de0.e(R.raw.permission_request_contacts, R.string.PermissionNoContactsSaving, new String[]{"android.permission.WRITE_CONTACTS"}, new String[]{"android.permission.WRITE_CONTACTS"}, new t3(wj0Var2, 13));
+                                            org.telegram.ui.Components.ne0.e(R.raw.permission_request_contacts, R.string.PermissionNoContactsSaving, new String[]{"android.permission.WRITE_CONTACTS"}, new String[]{"android.permission.WRITE_CONTACTS"}, new t3(wj0Var2, 13));
                                             break;
                                         }
                                     } else {
-                                        Vibrator vibrator = (Vibrator) n2Var22.getParentActivity().getSystemService("vibrator");
+                                        Vibrator vibrator = (Vibrator) m2Var22.getParentActivity().getSystemService("vibrator");
                                         if (vibrator != null) {
                                             vibrator.vibrate(200L);
                                         }
@@ -942,7 +942,7 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
                                         break;
                                     }
                                 } else {
-                                    Vibrator vibrator2 = (Vibrator) n2Var22.getParentActivity().getSystemService("vibrator");
+                                    Vibrator vibrator2 = (Vibrator) m2Var22.getParentActivity().getSystemService("vibrator");
                                     if (vibrator2 != null) {
                                         vibrator2.vibrate(200L);
                                     }
@@ -950,7 +950,7 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
                                     break;
                                 }
                             } else {
-                                Vibrator vibrator3 = (Vibrator) n2Var22.getParentActivity().getSystemService("vibrator");
+                                Vibrator vibrator3 = (Vibrator) m2Var22.getParentActivity().getSystemService("vibrator");
                                 if (vibrator3 != null) {
                                     vibrator3.vibrate(200L);
                                 }
@@ -960,10 +960,10 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
                         }
                         break;
                     case 2:
-                        xt xtVar = new xt(null, true);
+                        wt wtVar = new wt(null, true);
                         wj0 wj0Var3 = this.b;
-                        xtVar.r = new g(wj0Var3, 27);
-                        wj0Var3.M.showAsSheet(xtVar);
+                        wtVar.r = new g(wj0Var3, 27);
+                        wj0Var3.M.showAsSheet(wtVar);
                         break;
                     default:
                         wj0 wj0Var4 = this.b;
@@ -979,7 +979,7 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
         setTitle(LocaleController.getString(R.string.NewContactTitle), true);
     }
 
-    public static /* synthetic */ void m(wj0 wj0Var, TLObject tLObject, dt dtVar) {
+    public static /* synthetic */ void m(wj0 wj0Var, TLObject tLObject, bt btVar) {
         TLRPC.User user;
         if (tLObject instanceof TLRPC.TL_contacts_resolvedPeer) {
             TLRPC.TL_contacts_resolvedPeer tL_contacts_resolvedPeer = (TLRPC.TL_contacts_resolvedPeer) tLObject;
@@ -988,31 +988,31 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
             long peerDialogId = DialogObject.getPeerDialogId(tL_contacts_resolvedPeer.peer);
             if (peerDialogId >= 0) {
                 user = MessagesController.getInstance(wj0Var.currentAccount).getUser(Long.valueOf(peerDialogId));
-                dtVar.run(user);
+                btVar.run(user);
             }
         }
         user = null;
-        dtVar.run(user);
+        btVar.run(user);
     }
 
     public static void n(wj0 wj0Var, TLRPC.TL_contacts_importedContacts tL_contacts_importedContacts, TLRPC.TL_inputPhoneContact tL_inputPhoneContact, TLRPC.TL_error tL_error, TLRPC.TL_contacts_importContacts tL_contacts_importContacts) {
-        org.telegram.ui.ActionBar.n2 n2Var = wj0Var.M;
+        org.telegram.ui.ActionBar.m2 m2Var = wj0Var.M;
         wj0Var.H = false;
         if (tL_contacts_importedContacts == null) {
             AndroidUtilities.updateViewVisibilityAnimated(wj0Var.X, true, 0.5f, true);
             AndroidUtilities.updateViewVisibilityAnimated(wj0Var.Y, false, 0.5f, true);
-            org.telegram.ui.Components.e5.f0(wj0Var.currentAccount, tL_error, n2Var, tL_contacts_importContacts, new Object[0]);
+            org.telegram.ui.Components.e5.f0(wj0Var.currentAccount, tL_error, m2Var, tL_contacts_importContacts, new Object[0]);
         } else if (!tL_contacts_importedContacts.users.isEmpty()) {
             MessagesController.getInstance(wj0Var.currentAccount).putUsers(tL_contacts_importedContacts.users, false);
             MessagesController.getInstance(wj0Var.currentAccount).openChatOrProfileWith(tL_contacts_importedContacts.users.get(0), null, wj0Var.M, 1, false);
             wj0Var.dismiss();
         } else {
-            if (n2Var.getParentActivity() == null) {
+            if (m2Var.getParentActivity() == null) {
                 return;
             }
             AndroidUtilities.updateViewVisibilityAnimated(wj0Var.X, true, 0.5f, true);
             AndroidUtilities.updateViewVisibilityAnimated(wj0Var.Y, false, 0.5f, true);
-            org.telegram.ui.Components.e5.v(n2Var, tL_inputPhoneContact.first_name, tL_inputPhoneContact.last_name, tL_inputPhoneContact.phone);
+            org.telegram.ui.Components.e5.v(m2Var, tL_inputPhoneContact.first_name, tL_inputPhoneContact.last_name, tL_inputPhoneContact.phone);
         }
     }
 
@@ -1087,13 +1087,13 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
         return str;
     }
 
-    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
+    @Override // org.telegram.ui.ActionBar.e3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.i2
     public final void dismiss() {
         super.dismiss();
         AndroidUtilities.runOnUIThread(new pj0(this, 0), 50L);
     }
 
-    @Override // org.telegram.ui.ActionBar.f3
+    @Override // org.telegram.ui.ActionBar.e3
     public final ArrayList getThemeDescriptions() {
         ArrayList arrayList = new ArrayList();
         int i10 = org.telegram.ui.ActionBar.h6.G6;
@@ -1127,7 +1127,7 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
             return;
         }
         this.E = true;
-        this.O.setText(((st) this.w.get(i10)).c);
+        this.O.setText(((qt) this.w.get(i10)).c);
         this.E = false;
     }
 
@@ -1179,7 +1179,7 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog
+    @Override // org.telegram.ui.ActionBar.e3, android.app.Dialog
     public final void show() {
         super.show();
         this.d.getEditText().requestFocus();
@@ -1211,10 +1211,10 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void u(String str, st stVar) {
+    public final void u(String str, qt qtVar) {
         int i10;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        String languageFlag = LocaleController.getLanguageFlag(stVar.d);
+        String languageFlag = LocaleController.getLanguageFlag(qtVar.d);
         if (languageFlag != null) {
             spannableStringBuilder.append((CharSequence) languageFlag);
         }
@@ -1286,7 +1286,7 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
                     if (list == null || list.size() <= 0) {
                         i10--;
                     } else {
-                        String str3 = ((st) list.get(0)).c;
+                        String str3 = ((qt) list.get(0)).c;
                         this.O.setText(str3);
                         if (str3.endsWith("0") && this.I.startsWith("0")) {
                             this.I = this.I.substring(1);
@@ -1309,7 +1309,7 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
     public final void w(boolean z10) {
         ViewPropertyAnimator translationY = this.U.animate().translationY(z10 ? -AndroidUtilities.dp(21.33f) : 0.0f);
         org.telegram.ui.Components.rr rrVar = org.telegram.ui.Components.rr.h;
-        org.telegram.messenger.ul.r(translationY, rrVar, 420L);
+        org.telegram.messenger.ok.s(translationY, rrVar, 420L);
         this.f.animate().translationY(z10 ? -AndroidUtilities.dp(10.665f) : 0.0f).setInterpolator(rrVar).setDuration(420L).start();
     }
 
@@ -1473,27 +1473,27 @@ public final class wj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
             this.c0 = -1;
         }
         if (TextUtils.isEmpty(str)) {
-            org.telegram.messenger.ul.r(this.R.animate().scaleX(0.5f).scaleY(0.5f).alpha(0.0f), org.telegram.ui.Components.rr.h, 420L);
+            org.telegram.messenger.ok.s(this.R.animate().scaleX(0.5f).scaleY(0.5f).alpha(0.0f), org.telegram.ui.Components.rr.h, 420L);
             this.v.setText("");
             w(true);
             return;
         }
-        org.telegram.messenger.ul.r(this.R.animate().scaleX(1.0f).scaleY(1.0f).alpha(1.0f), org.telegram.ui.Components.rr.h, 420L);
+        org.telegram.messenger.ok.s(this.R.animate().scaleX(1.0f).scaleY(1.0f).alpha(1.0f), org.telegram.ui.Components.rr.h, 420L);
         this.R.setImageDrawable(new org.telegram.ui.Components.up(AndroidUtilities.dp(30.0f), AndroidUtilities.dp(3.0f), getThemedColor(org.telegram.ui.ActionBar.h6.m5)));
         this.v.setText("");
         w(true);
-        dt dtVar = new dt(8, this, str);
+        bt btVar = new bt(8, this, str);
         TLRPC.TL_contact tL_contact = ContactsController.getInstance(this.currentAccount).contactsByPhone.get(gf.b.d(str, false));
         if (tL_contact == null) {
             TLRPC.TL_contacts_resolvePhone tL_contacts_resolvePhone = new TLRPC.TL_contacts_resolvePhone();
             tL_contacts_resolvePhone.phone = gf.b.d(str, false);
-            this.c0 = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_contacts_resolvePhone, new wb0(6, this, dtVar));
+            this.c0 = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_contacts_resolvePhone, new vb0(6, this, btVar));
         } else {
             TLRPC.User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(tL_contact.user_id));
             if (user != null) {
-                dtVar.run(user);
+                btVar.run(user);
             } else {
-                MessagesStorage.getInstance(this.currentAccount).getStorageQueue().postRunnable(new kf0((Object) this, (Object) tL_contact, (Object) dtVar, 6));
+                MessagesStorage.getInstance(this.currentAccount).getStorageQueue().postRunnable(new jf0((Object) this, (Object) tL_contact, (Object) btVar, 6));
             }
         }
     }

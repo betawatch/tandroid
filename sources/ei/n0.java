@@ -12,12 +12,12 @@ import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.z5;
-import w7.x5;
+import w7.y5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class n0 extends FrameLayout {
-    public final vh.o a;
+    public final vh.n a;
     public final ImageView b;
     public final TL_keyboard.KeyboardButton c;
     public boolean d;
@@ -31,22 +31,22 @@ public final class n0 extends FrameLayout {
         super(context);
         this.n = p0Var;
         this.c = keyboardButton;
-        vh.o oVar = new vh.o(context);
-        this.a = oVar;
-        oVar.f = false;
-        oVar.setTextSize(1, 14.0f);
-        oVar.setTypeface(AndroidUtilities.bold());
-        NotificationCenter.listenEmojiLoading(oVar);
-        addView(oVar, x5.e(-2, -2, 17));
-        NotificationCenter.listenEmojiLoading(oVar);
+        vh.n nVar = new vh.n(context);
+        this.a = nVar;
+        nVar.f = false;
+        nVar.setTextSize(1, 14.0f);
+        nVar.setTypeface(AndroidUtilities.bold());
+        NotificationCenter.listenEmojiLoading(nVar);
+        addView(nVar, y5.e(-2, -2, 17));
+        NotificationCenter.listenEmojiLoading(nVar);
         setTag(keyboardButton);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         TL_keyboard.KeyboardButtonStyle keyboardButtonStyle = keyboardButton.style;
         if (keyboardButtonStyle != null && keyboardButtonStyle.icon != 0) {
             spannableStringBuilder.append((CharSequence) "* ");
-            spannableStringBuilder.setSpan(new z5(keyboardButton.style.icon, oVar.getPaint().getFontMetricsInt()), 0, 1, 33);
+            spannableStringBuilder.setSpan(new z5(keyboardButton.style.icon, nVar.getPaint().getFontMetricsInt()), 0, 1, 33);
         }
-        spannableStringBuilder.append(Emoji.replaceEmoji(keyboardButton.text, oVar.getPaint().getFontMetricsInt(), false));
+        spannableStringBuilder.append(Emoji.replaceEmoji(keyboardButton.text, nVar.getPaint().getFontMetricsInt(), false));
         ImageView imageView = new ImageView(getContext());
         this.b = imageView;
         imageView.setColorFilter(h6.v0(h6.Xe, p0Var.a));
@@ -56,8 +56,8 @@ public final class n0 extends FrameLayout {
         } else {
             imageView.setVisibility(8);
         }
-        addView(imageView, x5.d(12, 12.0f, 53, 0.0f, 8.0f, 8.0f, 0.0f));
-        oVar.setText(spannableStringBuilder);
+        addView(imageView, y5.d(12, 12.0f, 53, 0.0f, 8.0f, 8.0f, 0.0f));
+        nVar.setText(spannableStringBuilder);
     }
 
     public final void a() {

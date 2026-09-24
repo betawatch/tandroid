@@ -3,12 +3,12 @@ package hg;
 import android.content.Context;
 import android.text.Editable;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Cells.i3;
-import org.telegram.ui.Components.x51;
+import org.telegram.ui.Cells.j3;
+import org.telegram.ui.Components.l61;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class m extends i3 {
+public final class m extends j3 {
     public final /* synthetic */ int x;
     public final /* synthetic */ n y;
 
@@ -27,27 +27,27 @@ public final class m extends i3 {
         }
     }
 
-    @Override // org.telegram.ui.Cells.i3
+    @Override // org.telegram.ui.Cells.j3
     public final void a(boolean z10) {
-        x51 x51Var;
-        x51 x51Var2;
+        l61 l61Var;
+        l61 l61Var2;
         switch (this.x) {
             case 0:
-                if (z10 && (x51Var = this.y.a) != null) {
-                    x51Var.x0(2);
+                if (z10 && (l61Var = this.y.a) != null) {
+                    l61Var.x0(2);
                     break;
                 }
                 break;
             default:
-                if (z10 && (x51Var2 = this.y.a) != null) {
-                    x51Var2.x0(3);
+                if (z10 && (l61Var2 = this.y.a) != null) {
+                    l61Var2.x0(3);
                     break;
                 }
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Cells.i3
+    @Override // org.telegram.ui.Cells.j3
     public final void b(Editable editable) {
         switch (this.x) {
             case 0:

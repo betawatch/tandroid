@@ -13,7 +13,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class t2 extends View {
     public final Paint a;
@@ -73,11 +73,11 @@ public final class t2 extends View {
         float height = getHeight() / 2.0f;
         float min = Math.min(getWidth(), getHeight()) / 2.0f;
         for (int i11 = 0; i11 < 6; i11++) {
-            float a2 = org.telegram.ui.Cells.q3.a(i11, 60.0f, 12.5f, currentTimeMillis);
+            float b10 = org.telegram.ui.Cells.c1.b(i11, 60.0f, 12.5f, currentTimeMillis);
             path.moveTo(width, height);
-            double d10 = ((a2 - 12.5f) / 180.0f) * 3.141592653589793d;
+            double d10 = ((b10 - 12.5f) / 180.0f) * 3.141592653589793d;
             path.lineTo((((float) Math.cos(d10)) * min) + width, (((float) Math.sin(d10)) * min) + height);
-            double d11 = ((a2 + 12.5f) / 180.0f) * 3.141592653589793d;
+            double d11 = ((b10 + 12.5f) / 180.0f) * 3.141592653589793d;
             path.lineTo((((float) Math.cos(d11)) * min) + width, (((float) Math.sin(d11)) * min) + height);
             path.lineTo(width, height);
         }

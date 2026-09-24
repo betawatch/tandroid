@@ -3,17 +3,17 @@ package ka;
 import java.util.Date;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class e implements ja.a {
     public static final b f;
-    public static final b h;
+    public static final b g;
     public final HashMap a;
     public final HashMap b;
     public final a c;
     public boolean d;
     public static final a e = new a(0);
-    public static final d n = new d();
+    public static final d h = new d();
 
     /* JADX WARN: Type inference failed for: r0v1, types: [ka.b] */
     /* JADX WARN: Type inference failed for: r0v2, types: [ka.b] */
@@ -33,7 +33,7 @@ public final class e implements ja.a {
             }
         };
         final int i11 = 1;
-        h = new ia.f() { // from class: ka.b
+        g = new ia.f() { // from class: ka.b
             @Override // ia.a
             public final void a(Object obj, Object obj2) {
                 switch (i11) {
@@ -57,14 +57,14 @@ public final class e implements ja.a {
         this.d = false;
         hashMap2.put(String.class, f);
         hashMap.remove(String.class);
-        hashMap2.put(Boolean.class, h);
+        hashMap2.put(Boolean.class, g);
         hashMap.remove(Boolean.class);
-        hashMap2.put(Date.class, n);
+        hashMap2.put(Date.class, h);
         hashMap.remove(Date.class);
     }
 
     @Override // ja.a
-    public final ja.a m(Class cls, ia.d dVar) {
+    public final ja.a a(Class cls, ia.d dVar) {
         this.a.put(cls, dVar);
         this.b.remove(cls);
         return this;

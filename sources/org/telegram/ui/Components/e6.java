@@ -5,7 +5,7 @@ import android.os.SystemClock;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class e6 {
     public View a;
@@ -36,7 +36,7 @@ public final class e6 {
 
     public final float b() {
         if (this.i) {
-            return w7.p.a(((SystemClock.elapsedRealtime() - this.j) - this.f) / this.g, 0.0f, 1.0f);
+            return w7.q.a(((SystemClock.elapsedRealtime() - this.j) - this.f) / this.g, 0.0f, 1.0f);
         }
         return 0.0f;
     }
@@ -44,7 +44,7 @@ public final class e6 {
     public final float c() {
         if (this.i) {
             long elapsedRealtime = SystemClock.elapsedRealtime();
-            float a2 = w7.p.a(((elapsedRealtime - this.j) - this.f) / this.g, 0.0f, 1.0f);
+            float a2 = w7.q.a(((elapsedRealtime - this.j) - this.f) / this.g, 0.0f, 1.0f);
             if (elapsedRealtime - this.j >= this.f) {
                 TimeInterpolator timeInterpolator = this.h;
                 if (timeInterpolator == null) {

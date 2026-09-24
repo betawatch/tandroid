@@ -13,7 +13,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class yc extends FrameLayout {
     public final int a;
@@ -41,7 +41,7 @@ public final class yc extends FrameLayout {
         this.e = u00Var;
         u00Var.setViewType(14);
         u00Var.setVisibility(0);
-        addView(u00Var, w7.x5.d(-1, 104.0f, 8388611, 16.0f, 13.0f, 16.0f, 6.0f));
+        addView(u00Var, w7.y5.d(-1, 104.0f, 8388611, 16.0f, 13.0f, 16.0f, 6.0f));
         wb1 wb1Var = new wb1(activity, 4, d6Var);
         this.d = wb1Var;
         wb1Var.setClipToPadding(false);
@@ -54,7 +54,7 @@ public final class yc extends FrameLayout {
         wc wcVar = new wc(this, i10, d6Var);
         this.h = wcVar;
         wb1Var.setAdapter(wcVar);
-        addView(wb1Var, w7.x5.c(130.0f, -1));
+        addView(wb1Var, w7.y5.c(130.0f, -1));
         wb1Var.setOnItemClickListener(new i(this, 2));
         ChatThemeController chatThemeController = ChatThemeController.getInstance(i10);
         chatThemeController.preloadAllWallpaperThumbs(true);
@@ -97,8 +97,8 @@ public final class yc extends FrameLayout {
         }
         for (int i12 = 0; i12 < wb1Var.getChildCount(); i12++) {
             View childAt = wb1Var.getChildAt(i12);
-            if ((childAt instanceof org.telegram.ui.Components.t11) && (R = RecyclerView.R(childAt)) >= 0 && R < arrayList.size()) {
-                ((org.telegram.ui.Components.t11) childAt).g(((org.telegram.ui.Components.mp) arrayList.get(R)).d, true);
+            if ((childAt instanceof org.telegram.ui.Components.h21) && (R = RecyclerView.R(childAt)) >= 0 && R < arrayList.size()) {
+                ((org.telegram.ui.Components.h21) childAt).g(((org.telegram.ui.Components.mp) arrayList.get(R)).d, true);
             }
         }
     }
@@ -114,7 +114,7 @@ public final class yc extends FrameLayout {
         if (this.v != null) {
             ArrayList arrayList = this.c;
             if ((arrayList.isEmpty() || ((org.telegram.ui.Components.mp) arrayList.get(0)).a.a) && this.f) {
-                arrayList.add(0, new org.telegram.ui.Components.mp(org.telegram.ui.ActionBar.c4.a(this.a)));
+                arrayList.add(0, new org.telegram.ui.Components.mp(org.telegram.ui.ActionBar.b4.a(this.a)));
                 this.h.l();
             }
         }

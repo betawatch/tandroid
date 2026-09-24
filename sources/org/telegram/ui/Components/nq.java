@@ -28,15 +28,15 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public class nq extends FrameLayout {
     public static final /* synthetic */ int e0 = 0;
     public final EditTextBoldCursor[] E;
-    public final org.telegram.ui.ActionBar.k0 F;
+    public final org.telegram.ui.ActionBar.j0 F;
     public final ImageView G;
     public final TextView H;
-    public final org.telegram.ui.ActionBar.v0 I;
+    public final org.telegram.ui.ActionBar.u0 I;
     public int J;
     public int K;
     public int L;
@@ -101,19 +101,19 @@ public class nq extends FrameLayout {
         ai.d1 d1Var = new ai.d1(this, context);
         this.x = d1Var;
         d1Var.setOrientation(0);
-        addView(d1Var, w7.x5.d(-1, 54.0f, 51, 27.0f, -6.0f, 17.0f, 0.0f));
+        addView(d1Var, w7.y5.d(-1, 54.0f, 51, 27.0f, -6.0f, 17.0f, 0.0f));
         d1Var.setWillNotDraw(false);
         FrameLayout frameLayout = new FrameLayout(context);
         this.w = frameLayout;
         frameLayout.setClipChildren(false);
-        addView(frameLayout, w7.x5.d(174, 30.0f, 49, 72.0f, 1.0f, 0.0f, 0.0f));
+        addView(frameLayout, w7.y5.d(174, 30.0f, 49, 72.0f, 1.0f, 0.0f, 0.0f));
         int i14 = 0;
         while (i14 < 4) {
             this.v[i14] = new ColorPicker$RadioButton(context);
             ColorPicker$RadioButton colorPicker$RadioButton = this.v[i14];
             colorPicker$RadioButton.d = this.S == i14;
             colorPicker$RadioButton.b(false);
-            this.w.addView(this.v[i14], w7.x5.d(30, 30.0f, 48, 0.0f, 0.0f, 0.0f, 0.0f));
+            this.w.addView(this.v[i14], w7.y5.d(30, 30.0f, 48, 0.0f, 0.0f, 0.0f, 0.0f));
             this.v[i14].setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.iq
                 public final /* synthetic */ nq b;
 
@@ -133,7 +133,7 @@ public class nq extends FrameLayout {
                             Property property3 = View.SCALE_X;
                             Property property4 = View.ALPHA;
                             mq mqVar2 = nqVar.a;
-                            org.telegram.ui.ActionBar.k0 k0Var = nqVar.F;
+                            org.telegram.ui.ActionBar.j0 j0Var = nqVar.F;
                             ImageView imageView = nqVar.G;
                             ColorPicker$RadioButton[] colorPicker$RadioButtonArr = nqVar.v;
                             if (nqVar.y == null) {
@@ -178,22 +178,22 @@ public class nq extends FrameLayout {
                                     arrayList.add(ObjectAnimator.ofFloat(imageView, (Property<ImageView, Float>) property4, 1.0f));
                                     arrayList.add(ObjectAnimator.ofFloat(imageView, (Property<ImageView, Float>) property3, 1.0f));
                                     arrayList.add(ObjectAnimator.ofFloat(imageView, (Property<ImageView, Float>) property2, 1.0f));
-                                    arrayList.add(ObjectAnimator.ofFloat(imageView, (Property<ImageView, Float>) property, hg.c.g(nqVar.K, 1, AndroidUtilities.dp(13.0f), (nqVar.K - 1) * AndroidUtilities.dp(30.0f))));
+                                    arrayList.add(ObjectAnimator.ofFloat(imageView, (Property<ImageView, Float>) property, hg.c.f(nqVar.K, 1, AndroidUtilities.dp(13.0f), (nqVar.K - 1) * AndroidUtilities.dp(30.0f))));
                                 } else {
-                                    arrayList.add(ObjectAnimator.ofFloat(imageView, (Property<ImageView, Float>) property, hg.c.g(nqVar.K, 1, AndroidUtilities.dp(13.0f), (nqVar.K - 1) * AndroidUtilities.dp(30.0f))));
+                                    arrayList.add(ObjectAnimator.ofFloat(imageView, (Property<ImageView, Float>) property, hg.c.f(nqVar.K, 1, AndroidUtilities.dp(13.0f), (nqVar.K - 1) * AndroidUtilities.dp(30.0f))));
                                     arrayList.add(ObjectAnimator.ofFloat(imageView, (Property<ImageView, Float>) property4, 0.0f));
                                     arrayList.add(ObjectAnimator.ofFloat(imageView, (Property<ImageView, Float>) property3, 0.0f));
                                     arrayList.add(ObjectAnimator.ofFloat(imageView, (Property<ImageView, Float>) property2, 0.0f));
                                 }
                                 if (nqVar.K > 1) {
-                                    if (k0Var.getVisibility() != 0) {
-                                        k0Var.setScaleX(0.0f);
-                                        k0Var.setScaleY(0.0f);
+                                    if (j0Var.getVisibility() != 0) {
+                                        j0Var.setScaleX(0.0f);
+                                        j0Var.setScaleY(0.0f);
                                     }
-                                    k0Var.setVisibility(0);
-                                    arrayList.add(ObjectAnimator.ofFloat(k0Var, (Property<org.telegram.ui.ActionBar.k0, Float>) property4, 1.0f));
-                                    arrayList.add(ObjectAnimator.ofFloat(k0Var, (Property<org.telegram.ui.ActionBar.k0, Float>) property3, 1.0f));
-                                    arrayList.add(ObjectAnimator.ofFloat(k0Var, (Property<org.telegram.ui.ActionBar.k0, Float>) property2, 1.0f));
+                                    j0Var.setVisibility(0);
+                                    arrayList.add(ObjectAnimator.ofFloat(j0Var, (Property<org.telegram.ui.ActionBar.j0, Float>) property4, 1.0f));
+                                    arrayList.add(ObjectAnimator.ofFloat(j0Var, (Property<org.telegram.ui.ActionBar.j0, Float>) property3, 1.0f));
+                                    arrayList.add(ObjectAnimator.ofFloat(j0Var, (Property<org.telegram.ui.ActionBar.j0, Float>) property2, 1.0f));
                                 }
                                 colorPicker$RadioButtonArr[nqVar.K - 1].callOnClick();
                                 nqVar.y = new AnimatorSet();
@@ -212,7 +212,7 @@ public class nq extends FrameLayout {
                             Property property6 = View.SCALE_Y;
                             Property property7 = View.SCALE_X;
                             Property property8 = View.ALPHA;
-                            org.telegram.ui.ActionBar.k0 k0Var2 = nqVar.F;
+                            org.telegram.ui.ActionBar.j0 j0Var2 = nqVar.F;
                             ColorPicker$RadioButton[] colorPicker$RadioButtonArr2 = nqVar.v;
                             ImageView imageView2 = nqVar.G;
                             if (nqVar.y == null) {
@@ -220,16 +220,16 @@ public class nq extends FrameLayout {
                                 int i18 = nqVar.K;
                                 if (i18 == 2) {
                                     nqVar.K = 1;
-                                    arrayList2.add(ObjectAnimator.ofFloat(k0Var2, (Property<org.telegram.ui.ActionBar.k0, Float>) property8, 0.0f));
-                                    arrayList2.add(ObjectAnimator.ofFloat(k0Var2, (Property<org.telegram.ui.ActionBar.k0, Float>) property7, 0.0f));
-                                    arrayList2.add(ObjectAnimator.ofFloat(k0Var2, (Property<org.telegram.ui.ActionBar.k0, Float>) property6, 0.0f));
+                                    arrayList2.add(ObjectAnimator.ofFloat(j0Var2, (Property<org.telegram.ui.ActionBar.j0, Float>) property8, 0.0f));
+                                    arrayList2.add(ObjectAnimator.ofFloat(j0Var2, (Property<org.telegram.ui.ActionBar.j0, Float>) property7, 0.0f));
+                                    arrayList2.add(ObjectAnimator.ofFloat(j0Var2, (Property<org.telegram.ui.ActionBar.j0, Float>) property6, 0.0f));
                                     arrayList2.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property5, 0.0f));
                                 } else if (i18 == 3) {
                                     nqVar.K = 2;
                                     arrayList2.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property5, AndroidUtilities.dp(13.0f) + AndroidUtilities.dp(30.0f)));
                                 } else if (i18 == 4) {
                                     nqVar.K = 3;
-                                    arrayList2.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property5, org.telegram.messenger.z0.D(13.0f, 2, AndroidUtilities.dp(30.0f) * 2)));
+                                    arrayList2.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property5, org.telegram.messenger.f0.D(13.0f, 2, AndroidUtilities.dp(30.0f) * 2)));
                                 }
                                 if (nqVar.K < nqVar.L) {
                                     imageView2.setVisibility(0);
@@ -298,14 +298,14 @@ public class nq extends FrameLayout {
                 this.E[i15].setEnabled(false);
                 this.E[i15].setFocusable(false);
                 this.E[i15].setPadding(0, AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(16.0f));
-                this.x.addView(this.E[i15], w7.x5.k(0.0f, 0.0f, 0.0f, 0.0f, -2, -1));
+                this.x.addView(this.E[i15], w7.y5.k(0.0f, 0.0f, 0.0f, 0.0f, -2, -1));
             } else {
                 editTextBoldCursorArr[i15] = new jq(this, context, i15, i10);
                 this.E[i15].setBackgroundDrawable(null);
                 this.E[i15].setFilters(new InputFilter[]{new InputFilter.LengthFilter(6)});
                 this.E[i15].setHint("8BC6ED");
                 this.E[i15].setPadding(0, AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(16.0f));
-                this.x.addView(this.E[i15], w7.x5.k(0.0f, 0.0f, 0.0f, 0.0f, 71, -1));
+                this.x.addView(this.E[i15], w7.y5.k(0.0f, 0.0f, 0.0f, 0.0f, 71, -1));
                 this.E[i15].addTextChangedListener(new kq(this, i15));
                 this.E[i15].setOnEditorActionListener(new r2(i10));
             }
@@ -360,7 +360,7 @@ public class nq extends FrameLayout {
                         Property property3 = View.SCALE_X;
                         Property property4 = View.ALPHA;
                         mq mqVar2 = nqVar.a;
-                        org.telegram.ui.ActionBar.k0 k0Var = nqVar.F;
+                        org.telegram.ui.ActionBar.j0 j0Var = nqVar.F;
                         ImageView imageView2 = nqVar.G;
                         ColorPicker$RadioButton[] colorPicker$RadioButtonArr = nqVar.v;
                         if (nqVar.y == null) {
@@ -405,22 +405,22 @@ public class nq extends FrameLayout {
                                 arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property4, 1.0f));
                                 arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property3, 1.0f));
                                 arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property2, 1.0f));
-                                arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property, hg.c.g(nqVar.K, 1, AndroidUtilities.dp(13.0f), (nqVar.K - 1) * AndroidUtilities.dp(30.0f))));
+                                arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property, hg.c.f(nqVar.K, 1, AndroidUtilities.dp(13.0f), (nqVar.K - 1) * AndroidUtilities.dp(30.0f))));
                             } else {
-                                arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property, hg.c.g(nqVar.K, 1, AndroidUtilities.dp(13.0f), (nqVar.K - 1) * AndroidUtilities.dp(30.0f))));
+                                arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property, hg.c.f(nqVar.K, 1, AndroidUtilities.dp(13.0f), (nqVar.K - 1) * AndroidUtilities.dp(30.0f))));
                                 arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property4, 0.0f));
                                 arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property3, 0.0f));
                                 arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property2, 0.0f));
                             }
                             if (nqVar.K > 1) {
-                                if (k0Var.getVisibility() != 0) {
-                                    k0Var.setScaleX(0.0f);
-                                    k0Var.setScaleY(0.0f);
+                                if (j0Var.getVisibility() != 0) {
+                                    j0Var.setScaleX(0.0f);
+                                    j0Var.setScaleY(0.0f);
                                 }
-                                k0Var.setVisibility(0);
-                                arrayList.add(ObjectAnimator.ofFloat(k0Var, (Property<org.telegram.ui.ActionBar.k0, Float>) property4, 1.0f));
-                                arrayList.add(ObjectAnimator.ofFloat(k0Var, (Property<org.telegram.ui.ActionBar.k0, Float>) property3, 1.0f));
-                                arrayList.add(ObjectAnimator.ofFloat(k0Var, (Property<org.telegram.ui.ActionBar.k0, Float>) property2, 1.0f));
+                                j0Var.setVisibility(0);
+                                arrayList.add(ObjectAnimator.ofFloat(j0Var, (Property<org.telegram.ui.ActionBar.j0, Float>) property4, 1.0f));
+                                arrayList.add(ObjectAnimator.ofFloat(j0Var, (Property<org.telegram.ui.ActionBar.j0, Float>) property3, 1.0f));
+                                arrayList.add(ObjectAnimator.ofFloat(j0Var, (Property<org.telegram.ui.ActionBar.j0, Float>) property2, 1.0f));
                             }
                             colorPicker$RadioButtonArr[nqVar.K - 1].callOnClick();
                             nqVar.y = new AnimatorSet();
@@ -439,7 +439,7 @@ public class nq extends FrameLayout {
                         Property property6 = View.SCALE_Y;
                         Property property7 = View.SCALE_X;
                         Property property8 = View.ALPHA;
-                        org.telegram.ui.ActionBar.k0 k0Var2 = nqVar.F;
+                        org.telegram.ui.ActionBar.j0 j0Var2 = nqVar.F;
                         ColorPicker$RadioButton[] colorPicker$RadioButtonArr2 = nqVar.v;
                         ImageView imageView22 = nqVar.G;
                         if (nqVar.y == null) {
@@ -447,16 +447,16 @@ public class nq extends FrameLayout {
                             int i182 = nqVar.K;
                             if (i182 == 2) {
                                 nqVar.K = 1;
-                                arrayList2.add(ObjectAnimator.ofFloat(k0Var2, (Property<org.telegram.ui.ActionBar.k0, Float>) property8, 0.0f));
-                                arrayList2.add(ObjectAnimator.ofFloat(k0Var2, (Property<org.telegram.ui.ActionBar.k0, Float>) property7, 0.0f));
-                                arrayList2.add(ObjectAnimator.ofFloat(k0Var2, (Property<org.telegram.ui.ActionBar.k0, Float>) property6, 0.0f));
+                                arrayList2.add(ObjectAnimator.ofFloat(j0Var2, (Property<org.telegram.ui.ActionBar.j0, Float>) property8, 0.0f));
+                                arrayList2.add(ObjectAnimator.ofFloat(j0Var2, (Property<org.telegram.ui.ActionBar.j0, Float>) property7, 0.0f));
+                                arrayList2.add(ObjectAnimator.ofFloat(j0Var2, (Property<org.telegram.ui.ActionBar.j0, Float>) property6, 0.0f));
                                 arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property5, 0.0f));
                             } else if (i182 == 3) {
                                 nqVar.K = 2;
                                 arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property5, AndroidUtilities.dp(13.0f) + AndroidUtilities.dp(30.0f)));
                             } else if (i182 == 4) {
                                 nqVar.K = 3;
-                                arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property5, org.telegram.messenger.z0.D(13.0f, 2, AndroidUtilities.dp(30.0f) * 2)));
+                                arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property5, org.telegram.messenger.f0.D(13.0f, 2, AndroidUtilities.dp(30.0f) * 2)));
                             }
                             if (nqVar.K < nqVar.L) {
                                 imageView22.setVisibility(0);
@@ -511,18 +511,18 @@ public class nq extends FrameLayout {
             }
         });
         imageView.setContentDescription(LocaleController.getString(R.string.Add));
-        addView(imageView, w7.x5.d(30, 30.0f, 49, 36.0f, 1.0f, 0.0f, 0.0f));
-        org.telegram.ui.ActionBar.k0 k0Var = new org.telegram.ui.ActionBar.k0(this, getContext(), 1);
-        this.F = k0Var;
-        k0Var.setBackground(org.telegram.ui.ActionBar.h6.f0(org.telegram.ui.ActionBar.h6.v0(i17, this.d0), 1, -1));
-        k0Var.setImageResource(R.drawable.msg_close);
-        k0Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(i18, this.d0), mode));
-        k0Var.setAlpha(0.0f);
-        k0Var.setScaleX(0.0f);
-        k0Var.setScaleY(0.0f);
-        k0Var.setScaleType(scaleType);
-        k0Var.setVisibility(4);
-        k0Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.iq
+        addView(imageView, w7.y5.d(30, 30.0f, 49, 36.0f, 1.0f, 0.0f, 0.0f));
+        org.telegram.ui.ActionBar.j0 j0Var = new org.telegram.ui.ActionBar.j0(this, getContext(), 1);
+        this.F = j0Var;
+        j0Var.setBackground(org.telegram.ui.ActionBar.h6.f0(org.telegram.ui.ActionBar.h6.v0(i17, this.d0), 1, -1));
+        j0Var.setImageResource(R.drawable.msg_close);
+        j0Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(i18, this.d0), mode));
+        j0Var.setAlpha(0.0f);
+        j0Var.setScaleX(0.0f);
+        j0Var.setScaleY(0.0f);
+        j0Var.setScaleType(scaleType);
+        j0Var.setVisibility(4);
+        j0Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.iq
             public final /* synthetic */ nq b;
 
             {
@@ -541,7 +541,7 @@ public class nq extends FrameLayout {
                         Property property3 = View.SCALE_X;
                         Property property4 = View.ALPHA;
                         mq mqVar2 = nqVar.a;
-                        org.telegram.ui.ActionBar.k0 k0Var2 = nqVar.F;
+                        org.telegram.ui.ActionBar.j0 j0Var2 = nqVar.F;
                         ImageView imageView2 = nqVar.G;
                         ColorPicker$RadioButton[] colorPicker$RadioButtonArr = nqVar.v;
                         if (nqVar.y == null) {
@@ -586,22 +586,22 @@ public class nq extends FrameLayout {
                                 arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property4, 1.0f));
                                 arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property3, 1.0f));
                                 arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property2, 1.0f));
-                                arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property, hg.c.g(nqVar.K, 1, AndroidUtilities.dp(13.0f), (nqVar.K - 1) * AndroidUtilities.dp(30.0f))));
+                                arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property, hg.c.f(nqVar.K, 1, AndroidUtilities.dp(13.0f), (nqVar.K - 1) * AndroidUtilities.dp(30.0f))));
                             } else {
-                                arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property, hg.c.g(nqVar.K, 1, AndroidUtilities.dp(13.0f), (nqVar.K - 1) * AndroidUtilities.dp(30.0f))));
+                                arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property, hg.c.f(nqVar.K, 1, AndroidUtilities.dp(13.0f), (nqVar.K - 1) * AndroidUtilities.dp(30.0f))));
                                 arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property4, 0.0f));
                                 arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property3, 0.0f));
                                 arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property2, 0.0f));
                             }
                             if (nqVar.K > 1) {
-                                if (k0Var2.getVisibility() != 0) {
-                                    k0Var2.setScaleX(0.0f);
-                                    k0Var2.setScaleY(0.0f);
+                                if (j0Var2.getVisibility() != 0) {
+                                    j0Var2.setScaleX(0.0f);
+                                    j0Var2.setScaleY(0.0f);
                                 }
-                                k0Var2.setVisibility(0);
-                                arrayList.add(ObjectAnimator.ofFloat(k0Var2, (Property<org.telegram.ui.ActionBar.k0, Float>) property4, 1.0f));
-                                arrayList.add(ObjectAnimator.ofFloat(k0Var2, (Property<org.telegram.ui.ActionBar.k0, Float>) property3, 1.0f));
-                                arrayList.add(ObjectAnimator.ofFloat(k0Var2, (Property<org.telegram.ui.ActionBar.k0, Float>) property2, 1.0f));
+                                j0Var2.setVisibility(0);
+                                arrayList.add(ObjectAnimator.ofFloat(j0Var2, (Property<org.telegram.ui.ActionBar.j0, Float>) property4, 1.0f));
+                                arrayList.add(ObjectAnimator.ofFloat(j0Var2, (Property<org.telegram.ui.ActionBar.j0, Float>) property3, 1.0f));
+                                arrayList.add(ObjectAnimator.ofFloat(j0Var2, (Property<org.telegram.ui.ActionBar.j0, Float>) property2, 1.0f));
                             }
                             colorPicker$RadioButtonArr[nqVar.K - 1].callOnClick();
                             nqVar.y = new AnimatorSet();
@@ -620,7 +620,7 @@ public class nq extends FrameLayout {
                         Property property6 = View.SCALE_Y;
                         Property property7 = View.SCALE_X;
                         Property property8 = View.ALPHA;
-                        org.telegram.ui.ActionBar.k0 k0Var22 = nqVar.F;
+                        org.telegram.ui.ActionBar.j0 j0Var22 = nqVar.F;
                         ColorPicker$RadioButton[] colorPicker$RadioButtonArr2 = nqVar.v;
                         ImageView imageView22 = nqVar.G;
                         if (nqVar.y == null) {
@@ -628,16 +628,16 @@ public class nq extends FrameLayout {
                             int i182 = nqVar.K;
                             if (i182 == 2) {
                                 nqVar.K = 1;
-                                arrayList2.add(ObjectAnimator.ofFloat(k0Var22, (Property<org.telegram.ui.ActionBar.k0, Float>) property8, 0.0f));
-                                arrayList2.add(ObjectAnimator.ofFloat(k0Var22, (Property<org.telegram.ui.ActionBar.k0, Float>) property7, 0.0f));
-                                arrayList2.add(ObjectAnimator.ofFloat(k0Var22, (Property<org.telegram.ui.ActionBar.k0, Float>) property6, 0.0f));
+                                arrayList2.add(ObjectAnimator.ofFloat(j0Var22, (Property<org.telegram.ui.ActionBar.j0, Float>) property8, 0.0f));
+                                arrayList2.add(ObjectAnimator.ofFloat(j0Var22, (Property<org.telegram.ui.ActionBar.j0, Float>) property7, 0.0f));
+                                arrayList2.add(ObjectAnimator.ofFloat(j0Var22, (Property<org.telegram.ui.ActionBar.j0, Float>) property6, 0.0f));
                                 arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property5, 0.0f));
                             } else if (i182 == 3) {
                                 nqVar.K = 2;
                                 arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property5, AndroidUtilities.dp(13.0f) + AndroidUtilities.dp(30.0f)));
                             } else if (i182 == 4) {
                                 nqVar.K = 3;
-                                arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property5, org.telegram.messenger.z0.D(13.0f, 2, AndroidUtilities.dp(30.0f) * 2)));
+                                arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property5, org.telegram.messenger.f0.D(13.0f, 2, AndroidUtilities.dp(30.0f) * 2)));
                             }
                             if (nqVar.K < nqVar.L) {
                                 imageView22.setVisibility(0);
@@ -691,8 +691,8 @@ public class nq extends FrameLayout {
                 }
             }
         });
-        k0Var.setContentDescription(LocaleController.getString(R.string.ClearButton));
-        addView(k0Var, w7.x5.d(30, 30.0f, 51, 97.0f, 1.0f, 0.0f, 0.0f));
+        j0Var.setContentDescription(LocaleController.getString(R.string.ClearButton));
+        addView(j0Var, w7.y5.d(30, 30.0f, 51, 97.0f, 1.0f, 0.0f, 0.0f));
         TextView textView = new TextView(context);
         this.H = textView;
         textView.setTextSize(1, 15.0f);
@@ -700,25 +700,25 @@ public class nq extends FrameLayout {
         textView.setGravity(17);
         textView.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
         textView.setTextColor(org.telegram.ui.ActionBar.h6.v0(i18, this.d0));
-        addView(textView, w7.x5.d(-2, 36.0f, 53, 0.0f, 3.0f, 14.0f, 0.0f));
+        addView(textView, w7.y5.d(-2, 36.0f, 53, 0.0f, 3.0f, 14.0f, 0.0f));
         textView.setOnClickListener(new ai.e2(9));
         if (z10) {
-            org.telegram.ui.ActionBar.v0 v0Var = new org.telegram.ui.ActionBar.v0(context, (org.telegram.ui.ActionBar.z) null, 0, org.telegram.ui.ActionBar.h6.v0(i18, this.d0));
-            this.I = v0Var;
-            v0Var.setLongClickEnabled(false);
-            v0Var.setIcon(R.drawable.ic_ab_other);
-            v0Var.setContentDescription(LocaleController.getString(R.string.AccDescrMoreOptions));
-            v0Var.e(1, R.drawable.msg_edit, LocaleController.getString(R.string.OpenInEditor));
-            v0Var.e(2, R.drawable.msg_share, LocaleController.getString(R.string.ShareTheme));
-            v0Var.e(3, R.drawable.msg_delete, LocaleController.getString(R.string.DeleteTheme));
-            v0Var.setMenuYOffset(-AndroidUtilities.dp(80.0f));
-            v0Var.setSubMenuOpenSide(2);
-            v0Var.setDelegate(new s(this, 26));
-            v0Var.setAdditionalYOffset(AndroidUtilities.dp(72.0f));
-            v0Var.setTranslationX(AndroidUtilities.dp(6.0f));
-            v0Var.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.f0(org.telegram.ui.ActionBar.h6.v0(i17, this.d0), 1, -1));
-            addView(v0Var, w7.x5.d(30, 30.0f, 53, 0.0f, 2.0f, 10.0f, 0.0f));
-            v0Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.iq
+            org.telegram.ui.ActionBar.u0 u0Var = new org.telegram.ui.ActionBar.u0(context, (org.telegram.ui.ActionBar.y) null, 0, org.telegram.ui.ActionBar.h6.v0(i18, this.d0));
+            this.I = u0Var;
+            u0Var.setLongClickEnabled(false);
+            u0Var.setIcon(R.drawable.ic_ab_other);
+            u0Var.setContentDescription(LocaleController.getString(R.string.AccDescrMoreOptions));
+            u0Var.e(1, R.drawable.msg_edit, LocaleController.getString(R.string.OpenInEditor));
+            u0Var.e(2, R.drawable.msg_share, LocaleController.getString(R.string.ShareTheme));
+            u0Var.e(3, R.drawable.msg_delete, LocaleController.getString(R.string.DeleteTheme));
+            u0Var.setMenuYOffset(-AndroidUtilities.dp(80.0f));
+            u0Var.setSubMenuOpenSide(2);
+            u0Var.setDelegate(new s(this, 26));
+            u0Var.setAdditionalYOffset(AndroidUtilities.dp(72.0f));
+            u0Var.setTranslationX(AndroidUtilities.dp(6.0f));
+            u0Var.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.f0(org.telegram.ui.ActionBar.h6.v0(i17, this.d0), 1, -1));
+            addView(u0Var, w7.y5.d(30, 30.0f, 53, 0.0f, 2.0f, 10.0f, 0.0f));
+            u0Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.iq
                 public final /* synthetic */ nq b;
 
                 {
@@ -737,7 +737,7 @@ public class nq extends FrameLayout {
                             Property property3 = View.SCALE_X;
                             Property property4 = View.ALPHA;
                             mq mqVar2 = nqVar.a;
-                            org.telegram.ui.ActionBar.k0 k0Var2 = nqVar.F;
+                            org.telegram.ui.ActionBar.j0 j0Var2 = nqVar.F;
                             ImageView imageView2 = nqVar.G;
                             ColorPicker$RadioButton[] colorPicker$RadioButtonArr = nqVar.v;
                             if (nqVar.y == null) {
@@ -782,22 +782,22 @@ public class nq extends FrameLayout {
                                     arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property4, 1.0f));
                                     arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property3, 1.0f));
                                     arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property2, 1.0f));
-                                    arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property, hg.c.g(nqVar.K, 1, AndroidUtilities.dp(13.0f), (nqVar.K - 1) * AndroidUtilities.dp(30.0f))));
+                                    arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property, hg.c.f(nqVar.K, 1, AndroidUtilities.dp(13.0f), (nqVar.K - 1) * AndroidUtilities.dp(30.0f))));
                                 } else {
-                                    arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property, hg.c.g(nqVar.K, 1, AndroidUtilities.dp(13.0f), (nqVar.K - 1) * AndroidUtilities.dp(30.0f))));
+                                    arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property, hg.c.f(nqVar.K, 1, AndroidUtilities.dp(13.0f), (nqVar.K - 1) * AndroidUtilities.dp(30.0f))));
                                     arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property4, 0.0f));
                                     arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property3, 0.0f));
                                     arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property2, 0.0f));
                                 }
                                 if (nqVar.K > 1) {
-                                    if (k0Var2.getVisibility() != 0) {
-                                        k0Var2.setScaleX(0.0f);
-                                        k0Var2.setScaleY(0.0f);
+                                    if (j0Var2.getVisibility() != 0) {
+                                        j0Var2.setScaleX(0.0f);
+                                        j0Var2.setScaleY(0.0f);
                                     }
-                                    k0Var2.setVisibility(0);
-                                    arrayList.add(ObjectAnimator.ofFloat(k0Var2, (Property<org.telegram.ui.ActionBar.k0, Float>) property4, 1.0f));
-                                    arrayList.add(ObjectAnimator.ofFloat(k0Var2, (Property<org.telegram.ui.ActionBar.k0, Float>) property3, 1.0f));
-                                    arrayList.add(ObjectAnimator.ofFloat(k0Var2, (Property<org.telegram.ui.ActionBar.k0, Float>) property2, 1.0f));
+                                    j0Var2.setVisibility(0);
+                                    arrayList.add(ObjectAnimator.ofFloat(j0Var2, (Property<org.telegram.ui.ActionBar.j0, Float>) property4, 1.0f));
+                                    arrayList.add(ObjectAnimator.ofFloat(j0Var2, (Property<org.telegram.ui.ActionBar.j0, Float>) property3, 1.0f));
+                                    arrayList.add(ObjectAnimator.ofFloat(j0Var2, (Property<org.telegram.ui.ActionBar.j0, Float>) property2, 1.0f));
                                 }
                                 colorPicker$RadioButtonArr[nqVar.K - 1].callOnClick();
                                 nqVar.y = new AnimatorSet();
@@ -816,7 +816,7 @@ public class nq extends FrameLayout {
                             Property property6 = View.SCALE_Y;
                             Property property7 = View.SCALE_X;
                             Property property8 = View.ALPHA;
-                            org.telegram.ui.ActionBar.k0 k0Var22 = nqVar.F;
+                            org.telegram.ui.ActionBar.j0 j0Var22 = nqVar.F;
                             ColorPicker$RadioButton[] colorPicker$RadioButtonArr2 = nqVar.v;
                             ImageView imageView22 = nqVar.G;
                             if (nqVar.y == null) {
@@ -824,16 +824,16 @@ public class nq extends FrameLayout {
                                 int i182 = nqVar.K;
                                 if (i182 == 2) {
                                     nqVar.K = 1;
-                                    arrayList2.add(ObjectAnimator.ofFloat(k0Var22, (Property<org.telegram.ui.ActionBar.k0, Float>) property8, 0.0f));
-                                    arrayList2.add(ObjectAnimator.ofFloat(k0Var22, (Property<org.telegram.ui.ActionBar.k0, Float>) property7, 0.0f));
-                                    arrayList2.add(ObjectAnimator.ofFloat(k0Var22, (Property<org.telegram.ui.ActionBar.k0, Float>) property6, 0.0f));
+                                    arrayList2.add(ObjectAnimator.ofFloat(j0Var22, (Property<org.telegram.ui.ActionBar.j0, Float>) property8, 0.0f));
+                                    arrayList2.add(ObjectAnimator.ofFloat(j0Var22, (Property<org.telegram.ui.ActionBar.j0, Float>) property7, 0.0f));
+                                    arrayList2.add(ObjectAnimator.ofFloat(j0Var22, (Property<org.telegram.ui.ActionBar.j0, Float>) property6, 0.0f));
                                     arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property5, 0.0f));
                                 } else if (i182 == 3) {
                                     nqVar.K = 2;
                                     arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property5, AndroidUtilities.dp(13.0f) + AndroidUtilities.dp(30.0f)));
                                 } else if (i182 == 4) {
                                     nqVar.K = 3;
-                                    arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property5, org.telegram.messenger.z0.D(13.0f, 2, AndroidUtilities.dp(30.0f) * 2)));
+                                    arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property5, org.telegram.messenger.f0.D(13.0f, 2, AndroidUtilities.dp(30.0f) * 2)));
                                 }
                                 if (nqVar.K < nqVar.L) {
                                     imageView22.setVisibility(0);
@@ -998,23 +998,23 @@ public class nq extends FrameLayout {
         } else if (i12 == 2) {
             imageView.setTranslationX(AndroidUtilities.dp(13.0f) + AndroidUtilities.dp(30.0f));
         } else if (i12 == 3) {
-            imageView.setTranslationX(org.telegram.messenger.z0.D(13.0f, 2, AndroidUtilities.dp(30.0f) * 2));
+            imageView.setTranslationX(org.telegram.messenger.f0.D(13.0f, 2, AndroidUtilities.dp(30.0f) * 2));
         } else {
-            imageView.setTranslationX(org.telegram.messenger.z0.D(13.0f, 3, AndroidUtilities.dp(30.0f) * 3));
+            imageView.setTranslationX(org.telegram.messenger.f0.D(13.0f, 3, AndroidUtilities.dp(30.0f) * 3));
         }
-        org.telegram.ui.ActionBar.k0 k0Var = this.F;
-        org.telegram.ui.ActionBar.v0 v0Var = this.I;
-        if (v0Var != null) {
+        org.telegram.ui.ActionBar.j0 j0Var = this.F;
+        org.telegram.ui.ActionBar.u0 u0Var = this.I;
+        if (u0Var != null) {
             if (i10 == 1) {
-                v0Var.setVisibility(0);
+                u0Var.setVisibility(0);
             } else {
-                v0Var.setVisibility(8);
-                k0Var.setTranslationX(0.0f);
+                u0Var.setVisibility(8);
+                j0Var.setTranslationX(0.0f);
             }
         }
         if (i11 <= 1) {
             imageView.setVisibility(8);
-            k0Var.setVisibility(8);
+            j0Var.setVisibility(8);
         } else {
             if (i12 < i11) {
                 imageView.setVisibility(0);
@@ -1025,12 +1025,12 @@ public class nq extends FrameLayout {
                 imageView.setVisibility(8);
             }
             if (i12 > 1) {
-                k0Var.setVisibility(0);
-                k0Var.setScaleX(1.0f);
-                k0Var.setScaleY(1.0f);
-                k0Var.setAlpha(1.0f);
+                j0Var.setVisibility(0);
+                j0Var.setScaleX(1.0f);
+                j0Var.setScaleY(1.0f);
+                j0Var.setAlpha(1.0f);
             } else {
-                k0Var.setVisibility(8);
+                j0Var.setVisibility(8);
             }
         }
         this.x.invalidate();
@@ -1040,7 +1040,7 @@ public class nq extends FrameLayout {
     public final void g(int i10, ArrayList arrayList, boolean z10) {
         float f7;
         int i11 = this.K;
-        int D = org.telegram.messenger.z0.D(13.0f, i11 - 1, AndroidUtilities.dp(30.0f) * i11);
+        int D = org.telegram.messenger.f0.D(13.0f, i11 - 1, AndroidUtilities.dp(30.0f) * i11);
         FrameLayout frameLayout = this.w;
         float f10 = frameLayout.getLeft() + D > i10 - AndroidUtilities.dp(this.J == 1 ? 50.0f : 0.0f) ? r7 - r2 : 0.0f;
         Property property = View.TRANSLATION_X;
@@ -1107,7 +1107,7 @@ public class nq extends FrameLayout {
                 }
                 colorPicker$RadioButtonArr[i12].setTag(R.id.index_tag, null);
             }
-            i13 = org.telegram.messenger.z0.C(13.0f, AndroidUtilities.dp(f7), i13);
+            i13 = org.telegram.messenger.f0.C(13.0f, AndroidUtilities.dp(f7), i13);
             i12++;
         }
     }
@@ -1123,12 +1123,12 @@ public class nq extends FrameLayout {
     }
 
     public final void h() {
-        org.telegram.ui.ActionBar.k0 k0Var = this.F;
-        if (k0Var == null) {
+        org.telegram.ui.ActionBar.j0 j0Var = this.F;
+        if (j0Var == null) {
             return;
         }
-        float f7 = k0Var.getTag() != null ? 0.0f : this.W;
-        float f10 = k0Var.getTag() != null ? 1.0f : this.a0;
+        float f7 = j0Var.getTag() != null ? 0.0f : this.W;
+        float f10 = j0Var.getTag() != null ? 1.0f : this.a0;
         float[] fArr = this.N;
         float f11 = fArr[2];
         if (f7 == 0.0f && f10 == 1.0f) {

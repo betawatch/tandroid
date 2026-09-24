@@ -8,13 +8,13 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Cells.p9;
 import org.telegram.ui.Cells.q9;
-import org.telegram.ui.Cells.r9;
-import v7.p8;
+import v7.q8;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public final class y0 extends a0 implements org.telegram.ui.ActionBar.y5, q9 {
+public final class y0 extends a0 implements org.telegram.ui.ActionBar.x5, p9 {
     public final org.telegram.ui.ActionBar.d6 n;
     public final Paint r;
     public final Paint s;
@@ -30,7 +30,7 @@ public final class y0 extends a0 implements org.telegram.ui.ActionBar.y5, q9 {
         e();
     }
 
-    @Override // org.telegram.ui.ActionBar.y5
+    @Override // org.telegram.ui.ActionBar.x5
     public final void e() {
         int i10 = org.telegram.ui.ActionBar.h6.vk;
         org.telegram.ui.ActionBar.d6 d6Var = this.n;
@@ -43,11 +43,11 @@ public final class y0 extends a0 implements org.telegram.ui.ActionBar.y5, q9 {
         invalidate();
     }
 
-    @Override // org.telegram.ui.Cells.q9
+    @Override // org.telegram.ui.Cells.p9
     public final void fillTextLayoutBlocks(ArrayList arrayList) {
         int i10 = this.w ? 0 : this.c;
         int h = (h() - i10) / 4;
-        arrayList.add(p8.a((i10 + h) - AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f) + (h() - h), AndroidUtilities.dp(12.0f)));
+        arrayList.add(q8.a((i10 + h) - AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f) + (h() - h), AndroidUtilities.dp(12.0f)));
     }
 
     public /* bridge */ /* synthetic */ int[] getColorKeys() {
@@ -65,7 +65,7 @@ public final class y0 extends a0 implements org.telegram.ui.ActionBar.y5, q9 {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         Canvas canvas2;
-        r9 textSelectionHelper;
+        q9 textSelectionHelper;
         int i10 = this.w ? 0 : this.c;
         int h = (h() - i10) / 4;
         int i11 = i10 + h;

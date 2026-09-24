@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m8 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -20,32 +20,32 @@ public final /* synthetic */ class m8 implements View.OnClickListener {
                 boolean[] zArr = this.b;
                 boolean z10 = !zArr[0];
                 zArr[0] = z10;
-                ((org.telegram.ui.Cells.z1) view).c(z10, true);
+                ((org.telegram.ui.Cells.a2) view).c(z10, true);
                 break;
             case 1:
                 boolean[] zArr2 = this.b;
                 boolean z11 = !zArr2[1];
                 zArr2[1] = z11;
-                ((org.telegram.ui.Cells.z1) view).c(z11, true);
+                ((org.telegram.ui.Cells.a2) view).c(z11, true);
                 break;
             case 2:
                 boolean[] zArr3 = this.b;
                 boolean z12 = !zArr3[0];
                 zArr3[0] = z12;
-                ((org.telegram.ui.Cells.z1) view).c(z12, true);
+                ((org.telegram.ui.Cells.a2) view).c(z12, true);
                 break;
             case 3:
                 boolean[] zArr4 = this.b;
                 boolean z13 = !zArr4[0];
                 zArr4[0] = z13;
-                ((org.telegram.ui.Cells.z1) view).c(z13, true);
+                ((org.telegram.ui.Cells.a2) view).c(z13, true);
                 break;
             case 4:
                 if (view.isEnabled()) {
                     boolean[] zArr5 = this.b;
                     boolean z14 = !zArr5[0];
                     zArr5[0] = z14;
-                    ((org.telegram.ui.Cells.z1) view).c(z14, true);
+                    ((org.telegram.ui.Cells.a2) view).c(z14, true);
                     break;
                 }
                 break;
@@ -53,14 +53,14 @@ public final /* synthetic */ class m8 implements View.OnClickListener {
                 boolean[] zArr6 = this.b;
                 boolean z15 = !zArr6[0];
                 zArr6[0] = z15;
-                ((org.telegram.ui.Cells.z1) view).c(z15, true);
+                ((org.telegram.ui.Cells.a2) view).c(z15, true);
                 break;
             default:
                 if (view.isEnabled()) {
                     boolean[] zArr7 = this.b;
                     boolean z16 = !zArr7[0];
                     zArr7[0] = z16;
-                    ((org.telegram.ui.Cells.z1) view).c(z16, true);
+                    ((org.telegram.ui.Cells.a2) view).c(z16, true);
                     break;
                 }
                 break;

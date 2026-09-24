@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.ui.Components.FragmentContextView;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class pk extends TextView {
     public final /* synthetic */ int a;
@@ -49,10 +49,10 @@ public final class pk extends TextView {
                 break;
             case 3:
                 super.draw(canvas);
-                j81 j81Var = (j81) this.b;
-                org.telegram.ui.Components.voip.h hVar = j81Var.c;
+                l81 l81Var = (l81) this.b;
+                org.telegram.ui.Components.voip.h hVar = l81Var.c;
                 if (hVar.g <= 1.0f) {
-                    SessionsActivity sessionsActivity = j81Var.d;
+                    SessionsActivity sessionsActivity = l81Var.d;
                     if (sessionsActivity.W && sessionsActivity.X) {
                         RectF rectF2 = AndroidUtilities.rectTmp;
                         rectF2.set(0.0f, 0.0f, getWidth(), getHeight());
@@ -121,13 +121,13 @@ public final class pk extends TextView {
             case 2:
                 super.onMeasure(i10, i11);
                 if (LocaleController.isRTL) {
-                    ((org.telegram.ui.Components.s31) this.b).b.setPivotX(getMeasuredWidth());
+                    ((org.telegram.ui.Components.g41) this.b).b.setPivotX(getMeasuredWidth());
                     break;
                 }
                 break;
             case 6:
                 super.onMeasure(i10, i11);
-                ((org.telegram.ui.web.x1) this.b).c.setPivotY(getMeasuredHeight() / 2.0f);
+                ((org.telegram.ui.web.y1) this.b).c.setPivotY(getMeasuredHeight() / 2.0f);
                 break;
             default:
                 super.onMeasure(i10, i11);

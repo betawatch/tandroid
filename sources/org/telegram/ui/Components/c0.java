@@ -10,9 +10,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class c0 extends FrameLayout implements org.telegram.ui.ActionBar.y5 {
+public final class c0 extends FrameLayout implements org.telegram.ui.ActionBar.x5 {
     public final int a;
     public final org.telegram.ui.ActionBar.d6 b;
     public int c;
@@ -31,19 +31,19 @@ public final class c0 extends FrameLayout implements org.telegram.ui.ActionBar.y
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setClipToPadding(false);
         linearLayout.setOrientation(1);
-        addView(linearLayout, w7.x5.d(-2, -2.0f, 17, 0.0f, 2.0f, 0.0f, 2.0f));
+        addView(linearLayout, w7.y5.d(-2, -2.0f, 17, 0.0f, 2.0f, 0.0f, 2.0f));
         w9 w9Var = new w9(context);
         this.h = w9Var;
         NotificationCenter.listenEmojiLoading(w9Var);
-        linearLayout.addView(w9Var, w7.x5.t(24, 24, 49, 0, 4, 0, 0));
+        linearLayout.addView(w9Var, w7.y5.t(24, 24, 49, 0, 4, 0, 0));
         TextView textView = new TextView(context);
         this.n = textView;
         textView.setTypeface(AndroidUtilities.bold());
         textView.setTextSize(1, 12.0f);
         textView.setGravity(17);
         textView.setSingleLine();
-        linearLayout.addView(textView, w7.x5.t(-2, -2, 49, 0, 2, 0, 0));
-        w7.z5.b(this, 0.05f, 1.5f);
+        linearLayout.addView(textView, w7.y5.t(-2, -2, 49, 0, 2, 0, 0));
+        w7.a6.b(this, 0.05f, 1.5f);
         a(0.0f, true);
     }
 
@@ -65,7 +65,7 @@ public final class c0 extends FrameLayout implements org.telegram.ui.ActionBar.y
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.y5
+    @Override // org.telegram.ui.ActionBar.x5
     public final void e() {
         a(this.r, true);
         boolean z10 = this.d;

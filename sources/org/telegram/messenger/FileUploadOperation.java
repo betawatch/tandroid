@@ -14,7 +14,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class FileUploadOperation {
     private static final int initialRequestsCount = 8;
@@ -68,7 +68,7 @@ public class FileUploadOperation {
     private SparseArray<UploadCachedResult> cachedResults = new SparseArray<>();
     private boolean[] recalculatedEstimatedSize = {false, false};
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public interface FileUploadOperationDelegate {
         void didChangedUploadProgress(FileUploadOperation fileUploadOperation, long j3, long j10);
 
@@ -77,7 +77,7 @@ public class FileUploadOperation {
         void didFinishUploadingFile(FileUploadOperation fileUploadOperation, TLRPC.InputFile inputFile, TLRPC.InputEncryptedFile inputEncryptedFile, byte[] bArr, byte[] bArr2);
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class UploadCachedResult {
         private long bytesOffset;
         private byte[] iv;
@@ -771,7 +771,7 @@ public class FileUploadOperation {
                     sb3.append(" isBig=");
                     sb3.append(this.isBigFile);
                     sb3.append(" file_id=");
-                    hg.c.w(sb3, this.currentFileId);
+                    hg.c.u(sb3, this.currentFileId);
                 }
                 this.requestTokens.put(i26, iArr[0]);
                 AndroidUtilities.runOnUIThread(new s3(this, iArr, 1));
@@ -810,7 +810,7 @@ public class FileUploadOperation {
     }
 
     public void checkNewDataAvailable(long j3, long j10, Float f7) {
-        Utilities.stageQueue.postRunnable(new a3.g0(this, f7, j10, j3, 3));
+        Utilities.stageQueue.postRunnable(new a3.g0(this, f7, j10, j3, 4));
     }
 
     public long getTotalFileSize() {
@@ -821,7 +821,7 @@ public class FileUploadOperation {
         if (this.state != 1) {
             return;
         }
-        Utilities.stageQueue.postRunnable(new bi.f(9, this, z10));
+        Utilities.stageQueue.postRunnable(new bi.f(10, this, z10));
         AndroidUtilities.runOnUIThread(new r3(this, 3));
     }
 

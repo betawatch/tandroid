@@ -42,7 +42,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.RLottieNative;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class l8 {
     public String A;
@@ -444,7 +444,7 @@ public final class l8 {
         }
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true;
-        j8Var.c(options);
+        j8Var.g(options);
         options.inJustDecodeBounds = false;
         options.inScaled = false;
         Runtime runtime = Runtime.getRuntime();
@@ -453,13 +453,13 @@ public final class l8 {
         int i16 = options.outHeight;
         boolean z11 = ((double) ((((long) (i14 * i13)) * 4) + (((long) (i15 * i16)) * 4))) * 1.1d <= ((double) maxMemory);
         if (i15 <= i14 && i16 <= i13) {
-            return j8Var.c(options);
+            return j8Var.g(options);
         }
         if (z10 && z11 && SharedConfig.getDevicePerformanceClass() >= 1) {
-            Bitmap c10 = j8Var.c(options);
-            float max = Math.max(i14 / c10.getWidth(), i13 / c10.getHeight());
-            Bitmap createBitmap = Bitmap.createBitmap((int) (c10.getWidth() * max), (int) (c10.getHeight() * max), Bitmap.Config.ARGB_8888);
-            Utilities.libyuvARGBSaleBitmap(c10, createBitmap, Utilities.libyuv_ScaleFilter.Box);
+            Bitmap g10 = j8Var.g(options);
+            float max = Math.max(i14 / g10.getWidth(), i13 / g10.getHeight());
+            Bitmap createBitmap = Bitmap.createBitmap((int) (g10.getWidth() * max), (int) (g10.getHeight() * max), Bitmap.Config.ARGB_8888);
+            Utilities.libyuvARGBSaleBitmap(g10, createBitmap, Utilities.libyuv_ScaleFilter.Box);
             Utilities.clamp(Math.round(1.0f / max), 8, 0);
             return createBitmap;
         }
@@ -474,7 +474,7 @@ public final class l8 {
             options.inDensity = i18;
             options.inTargetDensity = i13;
         }
-        return j8Var.c(options);
+        return j8Var.g(options);
     }
 
     public static boolean u(TLRPC.Document document, String str) {
@@ -665,7 +665,7 @@ public final class l8 {
             try {
                 Bitmap q10 = q(new j8() { // from class: ci.h8
                     @Override // ci.j8
-                    public final Bitmap c(BitmapFactory.Options options) {
+                    public final Bitmap g(BitmapFactory.Options options) {
                         switch (i14) {
                             case 0:
                                 return BitmapFactory.decodeFile(this.Y0.getPath(), options);
@@ -715,7 +715,7 @@ public final class l8 {
                             try {
                                 Bitmap q11 = q(new j8() { // from class: ci.i8
                                     @Override // ci.j8
-                                    public final Bitmap c(BitmapFactory.Options options) {
+                                    public final Bitmap g(BitmapFactory.Options options) {
                                         switch (i10) {
                                         }
                                         return BitmapFactory.decodeFile(file.getPath(), options);
@@ -804,7 +804,7 @@ public final class l8 {
                             final int i16 = 1;
                             q6 = q(new j8() { // from class: ci.i8
                                 @Override // ci.j8
-                                public final Bitmap c(BitmapFactory.Options options) {
+                                public final Bitmap g(BitmapFactory.Options options) {
                                     switch (i16) {
                                     }
                                     return BitmapFactory.decodeFile(file2.getPath(), options);
@@ -840,7 +840,7 @@ public final class l8 {
                         final int i17 = 1;
                         Bitmap q12 = q(new j8() { // from class: ci.h8
                             @Override // ci.j8
-                            public final Bitmap c(BitmapFactory.Options options) {
+                            public final Bitmap g(BitmapFactory.Options options) {
                                 switch (i17) {
                                     case 0:
                                         return BitmapFactory.decodeFile(this.Y0.getPath(), options);
@@ -869,7 +869,7 @@ public final class l8 {
                         final int i18 = 2;
                         Bitmap q13 = q(new j8() { // from class: ci.h8
                             @Override // ci.j8
-                            public final Bitmap c(BitmapFactory.Options options) {
+                            public final Bitmap g(BitmapFactory.Options options) {
                                 switch (i18) {
                                     case 0:
                                         return BitmapFactory.decodeFile(this.Y0.getPath(), options);
@@ -900,7 +900,7 @@ public final class l8 {
                     final int i19 = 3;
                     Bitmap q14 = q(new j8() { // from class: ci.h8
                         @Override // ci.j8
-                        public final Bitmap c(BitmapFactory.Options options) {
+                        public final Bitmap g(BitmapFactory.Options options) {
                             switch (i19) {
                                 case 0:
                                     return BitmapFactory.decodeFile(this.Y0.getPath(), options);

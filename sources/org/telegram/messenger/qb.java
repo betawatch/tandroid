@@ -4,9 +4,9 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.uq0;
+import org.telegram.ui.tq0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class qb implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -31,13 +31,13 @@ public final /* synthetic */ class qb implements RequestDelegate {
                 ((MessagesController) this.e).lambda$pinMessage$130(this.b, (TLRPC.Chat) this.f, this.d, this.c, tLObject, tL_error);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new ii.s2((uq0) this.e, (String) this.f, this.b, tLObject, this.c, this.d));
+                AndroidUtilities.runOnUIThread(new ii.s2((tq0) this.e, (String) this.f, this.b, tLObject, this.c, this.d));
                 break;
         }
     }
 
-    public /* synthetic */ qb(uq0 uq0Var, String str, int i10, boolean z10, TLRPC.User user) {
-        this.e = uq0Var;
+    public /* synthetic */ qb(tq0 tq0Var, String str, int i10, boolean z10, TLRPC.User user) {
+        this.e = tq0Var;
         this.f = str;
         this.b = i10;
         this.c = z10;

@@ -20,9 +20,9 @@ import android.view.animation.AnimationUtils;
 import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
 import org.xmlpull.v1.XmlPullParser;
-import v7.g8;
+import v7.h8;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public abstract class a {
     public static final int[] a = {R.attr.name, R.attr.tint, R.attr.height, R.attr.width, R.attr.alpha, R.attr.autoMirrored, R.attr.tintMode, R.attr.viewportWidth, R.attr.viewportHeight};
@@ -394,15 +394,15 @@ public abstract class a {
         if (i10 == 2) {
             String string = typedArray.getString(i11);
             String string2 = typedArray.getString(i12);
-            i0.d[] c10 = g8.c(string);
-            i0.d[] c11 = g8.c(string2);
+            i0.d[] c10 = h8.c(string);
+            i0.d[] c11 = h8.c(string2);
             if (c10 != null || c11 != null) {
                 if (c10 != null) {
                     e eVar = new e();
                     if (c11 == null) {
                         return PropertyValuesHolder.ofObject(str, eVar, c10);
                     }
-                    if (g8.a(c10, c11)) {
+                    if (h8.a(c10, c11)) {
                         return PropertyValuesHolder.ofObject(str, eVar, c10, c11);
                     }
                     throw new InflateException(e2.j(" Can't morph from ", string, " to ", string2));
@@ -511,7 +511,7 @@ public abstract class a {
             if (b12 == null && b13 == null) {
                 throw new InflateException(f10.getPositionDescription() + " propertyXName or propertyYName is needed for PathData");
             }
-            Path d10 = g8.d(b11);
+            Path d10 = h8.d(b11);
             PathMeasure pathMeasure = new PathMeasure(d10, false);
             ArrayList arrayList = new ArrayList();
             arrayList.add(Float.valueOf(0.0f));

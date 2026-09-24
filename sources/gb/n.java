@@ -4,7 +4,7 @@ import j$.util.Objects;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class n extends lb.b {
     public static final m H = new m();
@@ -145,7 +145,7 @@ public final class n extends lb.b {
     }
 
     public final db.i v() {
-        return (db.i) hg.c.h(1, this.E);
+        return (db.i) hg.c.g(1, this.E);
     }
 
     public final void w(db.i iVar) {

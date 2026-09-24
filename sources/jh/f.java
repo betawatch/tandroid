@@ -5,11 +5,11 @@ import android.graphics.Canvas;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.y5;
+import org.telegram.ui.ActionBar.x5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class f extends View implements y5 {
+public final class f extends View implements x5 {
     public ah.d a;
     public ah.d b;
     public int c;
@@ -39,7 +39,7 @@ public final class f extends View implements y5 {
         dVar2.b(AndroidUtilities.dp(30.0f), true);
     }
 
-    @Override // org.telegram.ui.ActionBar.y5
+    @Override // org.telegram.ui.ActionBar.x5
     public final void e() {
         int i10;
         fh.c cVar = this.e;

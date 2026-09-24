@@ -13,33 +13,33 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.d61;
-import org.telegram.ui.Components.g51;
-import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.j61;
+import org.telegram.ui.Components.r61;
+import org.telegram.ui.Components.u51;
 import org.telegram.ui.Components.v51;
 import org.telegram.ui.Components.w9;
+import org.telegram.ui.Components.wl0;
 import s4.p0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public final class g extends g51 {
+public final class g extends u51 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        g51.setup(new g());
+        u51.setup(new g());
     }
 
-    @Override // org.telegram.ui.Components.g51
-    public final void bindView(View view, h51 h51Var, boolean z10, v51 v51Var, d61 d61Var) {
+    @Override // org.telegram.ui.Components.u51
+    public final void bindView(View view, v51 v51Var, boolean z10, j61 j61Var, r61 r61Var) {
         h hVar = (h) view;
-        f fVar = (f) h51Var.G;
+        f fVar = (f) v51Var.G;
         TLRPC.User user = fVar.b;
         long j3 = fVar.a;
-        e eVar = (e) h51Var.H;
+        e eVar = (e) v51Var.H;
         boolean z11 = fVar.c;
-        boolean z12 = !h51Var.j;
+        boolean z12 = !v51Var.j;
         w9 w9Var = hVar.c;
         TextView textView = hVar.n;
         TextView textView2 = hVar.d;
@@ -76,18 +76,18 @@ public final class g extends g51 {
         hVar.e.e(user, new h9(0, user));
     }
 
-    @Override // org.telegram.ui.Components.g51
-    public final View createView(Context context, ml0 ml0Var, int i10, int i11, d6 d6Var) {
+    @Override // org.telegram.ui.Components.u51
+    public final View createView(Context context, wl0 wl0Var, int i10, int i11, d6 d6Var) {
         h hVar = new h(context, i10, d6Var);
         hVar.setLayoutParams(new p0(-1, -2));
         hVar.setClickable(false);
         return hVar;
     }
 
-    @Override // org.telegram.ui.Components.g51
-    public final boolean equals(h51 h51Var, h51 h51Var2) {
-        f fVar = (f) h51Var.G;
-        f fVar2 = (f) h51Var2.G;
+    @Override // org.telegram.ui.Components.u51
+    public final boolean equals(v51 v51Var, v51 v51Var2) {
+        f fVar = (f) v51Var.G;
+        f fVar2 = (f) v51Var2.G;
         return fVar.a == fVar2.a && DialogObject.getDialogId(fVar.b) == DialogObject.getDialogId(fVar2.b);
     }
 }

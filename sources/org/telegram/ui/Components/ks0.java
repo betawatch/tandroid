@@ -1,21 +1,26 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class ks0 extends FragmentContextView {
-    public final /* synthetic */ yu0 P0;
+public final class ks0 extends s4.s {
+    public final /* synthetic */ jv0 Q;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ks0(yu0 yu0Var, Context context, org.telegram.ui.ActionBar.n2 n2Var, yu0 yu0Var2, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, n2Var, yu0Var2, false, d6Var);
-        this.P0 = yu0Var;
+    public ks0(jv0 jv0Var) {
+        super(3);
+        this.Q = jv0Var;
     }
 
-    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
-    public final void setVisibility(int i10) {
-        yu0 yu0Var = this.P0;
-        yu0Var.P0.i(yu0Var.Q0, i10 == 0, true);
+    @Override // s4.s, s4.c0, s4.o0
+    public final int o0(int i10, of.e eVar, s4.z0 z0Var) {
+        if (this.Q.o1) {
+            i10 = 0;
+        }
+        return super.o0(i10, eVar, z0Var);
+    }
+
+    @Override // s4.s, s4.c0, s4.o0
+    public final boolean y0() {
+        return false;
     }
 }

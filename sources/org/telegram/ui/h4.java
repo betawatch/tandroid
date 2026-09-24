@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class h4 extends AnimatorListenerAdapter {
     public final /* synthetic */ boolean a;
@@ -36,11 +36,11 @@ public final class h4 extends AnimatorListenerAdapter {
                 if (v3Var != null) {
                     v3Var.m();
                 }
-                obj = hg.c.z(1, i4Var.d0);
+                obj = hg.c.x(1, i4Var.d0);
                 i4Var.O0.T(i4Var.u0[0].b);
-                org.telegram.ui.Cells.r9 r9Var = i4Var.O0;
-                r9Var.E0 = i4Var.u0[0].d;
-                r9Var.f(true);
+                org.telegram.ui.Cells.q9 q9Var = i4Var.O0;
+                q9Var.E0 = i4Var.u0[0].d;
+                q9Var.f(true);
                 i4Var.i0(false);
                 i4Var.f0();
             }
@@ -50,7 +50,7 @@ public final class h4 extends AnimatorListenerAdapter {
                 ((z2) obj).a();
             }
             if (obj instanceof TLRPC.WebPage) {
-                org.telegram.ui.web.h2.o((TLRPC.WebPage) obj);
+                org.telegram.ui.web.i2.o((TLRPC.WebPage) obj);
             }
         } else if (!z11) {
             v3 v3Var2 = i4Var.K;

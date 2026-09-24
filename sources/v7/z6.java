@@ -1,17 +1,25 @@
 package v7;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+import android.content.Context;
+import android.content.SharedPreferences;
+
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public abstract class z6 {
-    public static float a(float f7, float f10, float f11, float f12) {
-        double d = f7 - f11;
-        double d10 = f10 - f12;
-        return (float) Math.sqrt((d10 * d10) + (d * d));
-    }
+    public static SharedPreferences a;
 
-    public static float b(int i10, int i11, int i12, int i13) {
-        double d = i10 - i12;
-        double d10 = i11 - i13;
-        return (float) Math.sqrt((d10 * d10) + (d * d));
+    public static SharedPreferences a(Context context) {
+        SharedPreferences sharedPreferences;
+        synchronized (SharedPreferences.class) {
+            try {
+                if (a == null) {
+                    a = (SharedPreferences) w7.h0.a(new c5.x(context, 1));
+                }
+                sharedPreferences = a;
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+        return sharedPreferences;
     }
 }

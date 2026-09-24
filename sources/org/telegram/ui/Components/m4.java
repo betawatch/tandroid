@@ -5,51 +5,51 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.ui.StickersActivity;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class m4 extends l51 {
+public final class m4 extends z51 {
     public final /* synthetic */ int e;
     public Object f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public /* synthetic */ m4(Object obj, int i10) {
-        super("@stickers", (n01) null);
+        super("@stickers", (b11) null);
         this.e = i10;
         this.f = obj;
     }
 
-    @Override // org.telegram.ui.Components.l51, android.text.style.URLSpan, android.text.style.ClickableSpan
+    @Override // org.telegram.ui.Components.z51, android.text.style.URLSpan, android.text.style.ClickableSpan
     public final void onClick(View view) {
         int i10;
         int i11;
         int i12;
         switch (this.e) {
             case 0:
-                ((org.telegram.ui.ActionBar.n2) this.f).dismissCurrentDialog();
+                ((org.telegram.ui.ActionBar.m2) this.f).dismissCurrentDialog();
                 super.onClick(view);
                 break;
             case 1:
-                ux0 ux0Var = (ux0) this.f;
-                i10 = ((org.telegram.ui.ActionBar.f3) ux0Var).currentAccount;
-                MessagesController.getInstance(i10).openByUserName(getURL(), ux0Var.L, 1);
-                ux0Var.dismiss();
+                fy0 fy0Var = (fy0) this.f;
+                i10 = ((org.telegram.ui.ActionBar.e3) fy0Var).currentAccount;
+                MessagesController.getInstance(i10).openByUserName(getURL(), fy0Var.L, 1);
+                fy0Var.dismiss();
                 break;
             case 2:
                 AndroidUtilities.addToClipboard(getURL());
-                xc.a0((hg.x) this.f).k(false).j();
+                yc.a0((hg.x) this.f).k(false).j();
                 break;
             case 3:
-                org.telegram.ui.q70 q70Var = ((org.telegram.ui.o70) this.f).d;
-                i11 = ((org.telegram.ui.ActionBar.n2) q70Var).currentAccount;
-                MessagesController.getInstance(i11).openByUserName("stickers", q70Var, 1);
+                org.telegram.ui.o70 o70Var = ((org.telegram.ui.m70) this.f).d;
+                i11 = ((org.telegram.ui.ActionBar.m2) o70Var).currentAccount;
+                MessagesController.getInstance(i11).openByUserName("stickers", o70Var, 1);
                 break;
             case 4:
-                ((org.telegram.ui.qm0) this.f).a.dismissCurrentDialog();
+                ((org.telegram.ui.om0) this.f).a.dismissCurrentDialog();
                 super.onClick(view);
                 break;
             default:
                 StickersActivity stickersActivity = (StickersActivity) this.f;
-                i12 = ((org.telegram.ui.ActionBar.n2) stickersActivity).currentAccount;
+                i12 = ((org.telegram.ui.ActionBar.m2) stickersActivity).currentAccount;
                 MessagesController.getInstance(i12).openByUserName("stickers", stickersActivity, 3);
                 break;
         }
@@ -57,21 +57,21 @@ public final class m4 extends l51 {
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public /* synthetic */ m4(String str, int i10, Object obj) {
-        super(str, (n01) null);
+        super(str, (b11) null);
         this.e = i10;
         this.f = obj;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ m4(String str, n01 n01Var) {
-        super(str, n01Var);
+    public /* synthetic */ m4(String str, b11 b11Var) {
+        super(str, b11Var);
         this.e = 2;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m4(org.telegram.ui.ActionBar.n2 n2Var, String str) {
-        super(str, (n01) null);
+    public m4(org.telegram.ui.ActionBar.m2 m2Var, String str) {
+        super(str, (b11) null);
         this.e = 0;
-        this.f = n2Var;
+        this.f = m2Var;
     }
 }

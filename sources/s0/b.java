@@ -12,7 +12,6 @@ import android.os.Build;
 import android.text.TextUtils;
 import android.util.Base64;
 import android.util.Log;
-import b2.l1;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
@@ -29,72 +28,71 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.atomic.AtomicReference;
 import m.p3;
 import n4.y;
-import n7.a1;
+import n7.z0;
 import org.telegram.ui.ActionBar.a2;
-import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.Cells.ja;
-import org.telegram.ui.Cells.q3;
-import org.telegram.ui.Components.pc0;
+import org.telegram.ui.ActionBar.z1;
+import org.telegram.ui.Components.ad0;
 import q9.p;
 import u2.d0;
-import u2.x0;
+import u2.o1;
+import u2.y0;
 import w9.o;
 import w9.q;
 import w9.r;
 import w9.u;
+import w9.v;
 import w9.w;
-import w9.x;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b implements s5.e, pa.a, q9.d, a2, pc0, d9.e, e2.h {
+public final /* synthetic */ class b implements s5.f, pa.a, q9.d, z1, ad0, d9.e, e2.h {
     public final /* synthetic */ int a;
 
     public /* synthetic */ b(int i10) {
         this.a = i10;
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(44:44|(1:46)|(1:48)(1:164)|49|(4:52|(2:54|55)(1:57)|56|50)|58|59|(1:61)|62|63|(1:65)(1:163)|(1:67)(1:162)|68|(5:149|(1:151)|152|3a4|157)(1:72)|73|(25:77|(1:79)(2:145|(1:147))|80|81|(2:83|(1:85))(2:141|(2:143|144))|86|87|88|89|90|91|92|93|94|95|96|97|98|99|100|101|102|103|104|(5:121|(1:123)|124|117|118)(6:112|(1:114)|115|116|117|118))|148|81|(0)(0)|86|87|88|89|90|91|92|93|94|95|96|97|98|99|100|101|102|103|104|(2:106|108)|121|(0)|124|117|118) */
-    /* JADX WARN: Code restructure failed: missing block: B:127:0x054c, code lost:
+    /* JADX WARN: Can't wrap try/catch for region: R(44:44|(1:46)|(1:48)(1:164)|49|(4:52|(2:54|55)(1:57)|56|50)|58|59|(1:61)|62|63|(1:65)(1:163)|(1:67)(1:162)|68|(5:149|(1:151)|152|3a2|157)(1:72)|73|(25:77|(1:79)(2:145|(1:147))|80|81|(2:83|(1:85))(2:141|(2:143|144))|86|87|88|89|90|91|92|93|94|95|96|97|98|99|100|101|102|103|104|(5:121|(1:123)|124|117|118)(6:112|(1:114)|115|116|117|118))|148|81|(0)(0)|86|87|88|89|90|91|92|93|94|95|96|97|98|99|100|101|102|103|104|(2:106|108)|121|(0)|124|117|118) */
+    /* JADX WARN: Code restructure failed: missing block: B:127:0x0548, code lost:
     
         r0 = e;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:128:0x056c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:128:0x0568, code lost:
     
         android.util.Log.e(r5, "Crashlytics was not started due to an exception during initialization", r0);
         r2.f = null;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:130:0x055d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:130:0x0559, code lost:
     
         r0 = e;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:131:0x055e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:131:0x055a, code lost:
     
         r1 = r3;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:133:0x0561, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:133:0x055d, code lost:
     
         r0 = e;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:134:0x0562, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:134:0x055e, code lost:
     
         r1 = r3;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:136:0x0564, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:136:0x0560, code lost:
     
         r0 = e;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:139:0x0568, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:139:0x0564, code lost:
     
         r0 = e;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:140:0x0569, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:140:0x0565, code lost:
     
         r1 = r3;
      */
-    /* JADX WARN: Removed duplicated region for block: B:123:0x0557  */
-    /* JADX WARN: Removed duplicated region for block: B:141:0x0426  */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x0416  */
+    /* JADX WARN: Removed duplicated region for block: B:123:0x0553  */
+    /* JADX WARN: Removed duplicated region for block: B:141:0x0424  */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x0414  */
     @Override // q9.d
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -145,12 +143,12 @@ public final /* synthetic */ class b implements s5.e, pa.a, q9.d, a2, pc0, d9.e,
             str = null;
             a10.a.e(null);
         }
-        ka.c cVar5 = new ka.c(t12, 19);
+        l.d dVar3 = new l.d(t12);
         s9.a aVar3 = new s9.a(fVar);
         u uVar3 = uVar2;
         s9.a aVar4 = new s9.a(fVar);
         String str3 = str;
-        o oVar = new o(hVar, uVar3, aVar2, rVar, aVar3, aVar4, cVar2, a2, jVar, cVar5);
+        o oVar = new o(hVar, uVar3, aVar2, rVar, aVar3, aVar4, cVar2, a2, jVar, dVar3);
         hVar.a();
         String str4 = hVar.c.b;
         int e = w9.h.e(context, "com.google.firebase.crashlytics.mapping_file_id", "string");
@@ -195,31 +193,31 @@ public final /* synthetic */ class b implements s5.e, pa.a, q9.d, a2, pc0, d9.e,
             th2 = null;
             i10 = 3;
         }
-        String i14 = q3.i("Mapping file ID is: ", string);
+        String g10 = v7.j.g("Mapping file ID is: ", string);
         if (Log.isLoggable("FirebaseCrashlytics", i10)) {
-            Log.d("FirebaseCrashlytics", i14, th2);
+            Log.d("FirebaseCrashlytics", g10, th2);
         }
         int size = arrayList.size();
-        int i15 = 0;
-        while (i15 < size) {
-            Object obj = arrayList.get(i15);
-            i15++;
+        int i14 = 0;
+        while (i14 < size) {
+            Object obj = arrayList.get(i14);
+            i14++;
             w9.e eVar = (w9.e) obj;
             String str5 = eVar.a;
             String str6 = eVar.b;
             String str7 = eVar.c;
-            int i16 = size;
+            int i15 = size;
             StringBuilder x10 = a4.a.x("Build id for ", str5, " on ", str6, ": ");
             x10.append(str7);
             String sb2 = x10.toString();
             if (Log.isLoggable("FirebaseCrashlytics", 3)) {
                 Log.d("FirebaseCrashlytics", sb2, null);
             }
-            size = i16;
+            size = i15;
         }
         u uVar4 = uVar;
         try {
-            w9.a a11 = w9.a.a(context, uVar4, str4, string, arrayList, new a1(context));
+            w9.a a11 = w9.a.a(context, uVar4, str4, string, arrayList, new z0(context));
             String str8 = "Installer package name is: " + a11.d;
             if (Log.isLoggable("FirebaseCrashlytics", 2)) {
                 Log.v("FirebaseCrashlytics", str8, null);
@@ -229,8 +227,8 @@ public final /* synthetic */ class b implements s5.e, pa.a, q9.d, a2, pc0, d9.e,
             String str9 = a11.f;
             String str10 = a11.g;
             String c11 = uVar4.c();
-            na.d dVar3 = new na.d(25);
-            a6.i iVar = new a6.i(dVar3, 17);
+            na.d dVar4 = new na.d(25);
+            a6.i iVar = new a6.i(dVar4, 17);
             m mVar = new m(cVar2);
             Locale locale = Locale.US;
             String q6 = a4.a.q("https://firebase-settings.crashlytics.com/spi/v2/platforms/android/gmp/", str4, "/settings");
@@ -250,40 +248,40 @@ public final /* synthetic */ class b implements s5.e, pa.a, q9.d, a2, pc0, d9.e,
             }
             String[] strArr = {e12 != 0 ? context.getResources().getString(e12) : null, str4, str10, str9};
             ArrayList arrayList2 = new ArrayList();
-            int i17 = 0;
-            while (i17 < 4) {
-                String str13 = strArr[i17];
+            int i16 = 0;
+            while (i16 < 4) {
+                String str13 = strArr[i16];
                 String[] strArr2 = strArr;
                 if (str13 != null) {
                     arrayList2.add(str13.replace("-", "").toLowerCase(Locale.US));
                 }
-                i17++;
+                i16++;
                 strArr = strArr2;
             }
             Collections.sort(arrayList2);
             StringBuilder sb3 = new StringBuilder();
             int size2 = arrayList2.size();
-            int i18 = 0;
-            while (i18 < size2) {
-                Object obj2 = arrayList2.get(i18);
-                i18++;
+            int i17 = 0;
+            while (i17 < size2) {
+                Object obj2 = arrayList2.get(i17);
+                i17++;
                 sb3.append((String) obj2);
                 arrayList2 = arrayList2;
             }
             String sb4 = sb3.toString();
-            da.d dVar4 = new da.d(str4, D, replaceAll, replaceAll2, uVar4, sb4.length() > 0 ? w9.h.i(sb4) : null, str10, str9, w.c.c(c11 != null ? 4 : 1));
+            da.d dVar5 = new da.d(str4, D, replaceAll, replaceAll2, uVar4, sb4.length() > 0 ? w9.h.i(sb4) : null, str10, str9, v7.j.c(c11 != null ? 4 : 1));
             da.b bVar2 = new da.b();
             AtomicReference atomicReference = new AtomicReference();
             bVar2.h = atomicReference;
             bVar2.i = new AtomicReference(new TaskCompletionSource());
             bVar2.a = context;
-            bVar2.b = dVar4;
-            bVar2.d = dVar3;
+            bVar2.b = dVar5;
+            bVar2.d = dVar4;
             bVar2.c = iVar;
             bVar2.e = mVar;
             bVar2.f = iVar2;
             bVar2.g = rVar;
-            atomicReference.set(ob.a.B2(dVar3));
+            atomicReference.set(ob.a.B2(dVar4));
             AtomicReference atomicReference2 = (AtomicReference) bVar2.i;
             AtomicReference atomicReference3 = (AtomicReference) bVar2.h;
             if (!((Context) bVar2.a).getSharedPreferences("com.google.firebase.crashlytics", 0).getString("existing_instance_identifier", "").equals(((da.d) bVar2.b).f) || (c10 = bVar2.c(1)) == null) {
@@ -297,11 +295,11 @@ public final /* synthetic */ class b implements s5.e, pa.a, q9.d, a2, pc0, d9.e,
                 synchronized (rVar2.c) {
                     task = rVar2.d.getTask();
                 }
-                ExecutorService executorService = x.a;
+                ExecutorService executorService = w.a;
                 TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-                w wVar = new w(0, taskCompletionSource);
-                task2.continueWith(a12, wVar);
-                task.continueWith(a12, wVar);
+                v vVar = new v(0, taskCompletionSource);
+                task2.continueWith(a12, vVar);
+                task.continueWith(a12, vVar);
                 onSuccessTask = taskCompletionSource.getTask().onSuccessTask(a12, new xa.c(bVar2, 16));
             } else {
                 atomicReference3.set(c10);
@@ -310,7 +308,7 @@ public final /* synthetic */ class b implements s5.e, pa.a, q9.d, a2, pc0, d9.e,
             }
             onSuccessTask.continueWith(a12, new na.d(22));
             t tVar = oVar.l;
-            ba.c cVar6 = oVar.h;
+            ba.c cVar5 = oVar.h;
             Context context2 = oVar.a;
             if (context2 != null && (resources = context2.getResources()) != null) {
                 int e13 = w9.h.e(context2, "com.crashlytics.RequireBuildId", "bool");
@@ -356,29 +354,29 @@ public final /* synthetic */ class b implements s5.e, pa.a, q9.d, a2, pc0, d9.e,
                 }
                 new w9.f(oVar.g);
                 String str15 = w9.f.b;
-                int i19 = 24;
-                oVar.e = new a1(i19, "crash_marker", cVar6);
-                oVar.d = new a1(i19, "initialization_marker", cVar6);
-                p3 p3Var = new p3(str15, cVar6, tVar);
-                x9.e eVar2 = new x9.e(cVar6);
+                int i18 = 24;
+                oVar.e = new z0(i18, "crash_marker", cVar5);
+                oVar.d = new z0(i18, "initialization_marker", cVar5);
+                p3 p3Var = new p3(str15, cVar5, tVar);
+                x9.e eVar2 = new x9.e(cVar5);
                 ea.a[] aVarArr = new ea.a[1];
                 aVarArr[0] = new t7.u();
                 y yVar = new y(aVarArr);
-                ((p) oVar.o.b).a(new b(15));
+                ((p) oVar.o.a).a(new b(21));
                 w9.a aVar5 = aVar;
                 n k10 = n.k(oVar.a, oVar.g, oVar.h, aVar5, eVar2, p3Var, yVar, bVar2, oVar.c, oVar.m);
                 bVar = bVar2;
                 oVar.f = new w9.m(oVar.a, oVar.l, oVar.g, oVar.b, oVar.h, oVar.e, aVar5, p3Var, eVar2, k10, oVar.n, oVar.j, oVar.m);
-                a1 a1Var = oVar.d;
-                ba.c cVar7 = (ba.c) a1Var.c;
-                String str16 = (String) a1Var.b;
-                cVar7.getClass();
-                exists = new File(cVar7.b, str16).exists();
-                Boolean.TRUE.equals((Boolean) x.a(tVar.k(new w9.n(oVar, 1))));
+                z0 z0Var = oVar.d;
+                ba.c cVar6 = (ba.c) z0Var.c;
+                String str16 = (String) z0Var.b;
+                cVar6.getClass();
+                exists = new File(cVar6.b, str16).exists();
+                Boolean.TRUE.equals((Boolean) w.a(tVar.k(new w9.n(oVar, 1))));
                 w9.m mVar2 = oVar.f;
                 Thread.UncaughtExceptionHandler defaultUncaughtExceptionHandler = Thread.getDefaultUncaughtExceptionHandler();
                 mVar2.e.k(new u4.g(2, mVar2, str15));
-                q qVar = new q(new ja(mVar2, 20), bVar, defaultUncaughtExceptionHandler, mVar2.j);
+                q qVar = new q(new w3.b(mVar2), bVar, defaultUncaughtExceptionHandler, mVar2.j);
                 mVar2.n = qVar;
                 Thread.setDefaultUncaughtExceptionHandler(qVar);
                 if (exists || (context2.checkCallingOrSelfPermission("android.permission.ACCESS_NETWORK_STATE") == 0 && ((activeNetworkInfo = ((ConnectivityManager) context2.getSystemService("connectivity")).getActiveNetworkInfo()) == null || !activeNetworkInfo.isConnectedOrConnecting()))) {
@@ -404,29 +402,29 @@ public final /* synthetic */ class b implements s5.e, pa.a, q9.d, a2, pc0, d9.e,
             }
             new w9.f(oVar.g);
             String str152 = w9.f.b;
-            int i192 = 24;
-            oVar.e = new a1(i192, "crash_marker", cVar6);
-            oVar.d = new a1(i192, "initialization_marker", cVar6);
-            p3 p3Var2 = new p3(str152, cVar6, tVar);
-            x9.e eVar22 = new x9.e(cVar6);
+            int i182 = 24;
+            oVar.e = new z0(i182, "crash_marker", cVar5);
+            oVar.d = new z0(i182, "initialization_marker", cVar5);
+            p3 p3Var2 = new p3(str152, cVar5, tVar);
+            x9.e eVar22 = new x9.e(cVar5);
             ea.a[] aVarArr2 = new ea.a[1];
             aVarArr2[0] = new t7.u();
             y yVar2 = new y(aVarArr2);
-            ((p) oVar.o.b).a(new b(15));
+            ((p) oVar.o.a).a(new b(21));
             w9.a aVar52 = aVar;
             n k102 = n.k(oVar.a, oVar.g, oVar.h, aVar52, eVar22, p3Var2, yVar2, bVar2, oVar.c, oVar.m);
             bVar = bVar2;
             oVar.f = new w9.m(oVar.a, oVar.l, oVar.g, oVar.b, oVar.h, oVar.e, aVar52, p3Var2, eVar22, k102, oVar.n, oVar.j, oVar.m);
-            a1 a1Var2 = oVar.d;
-            ba.c cVar72 = (ba.c) a1Var2.c;
-            String str162 = (String) a1Var2.b;
-            cVar72.getClass();
-            exists = new File(cVar72.b, str162).exists();
-            Boolean.TRUE.equals((Boolean) x.a(tVar.k(new w9.n(oVar, 1))));
+            z0 z0Var2 = oVar.d;
+            ba.c cVar62 = (ba.c) z0Var2.c;
+            String str162 = (String) z0Var2.b;
+            cVar62.getClass();
+            exists = new File(cVar62.b, str162).exists();
+            Boolean.TRUE.equals((Boolean) w.a(tVar.k(new w9.n(oVar, 1))));
             w9.m mVar22 = oVar.f;
             Thread.UncaughtExceptionHandler defaultUncaughtExceptionHandler2 = Thread.getDefaultUncaughtExceptionHandler();
             mVar22.e.k(new u4.g(2, mVar22, str152));
-            q qVar2 = new q(new ja(mVar22, 20), bVar, defaultUncaughtExceptionHandler2, mVar22.j);
+            q qVar2 = new q(new w3.b(mVar22), bVar, defaultUncaughtExceptionHandler2, mVar22.j);
             mVar22.n = qVar2;
             Thread.setDefaultUncaughtExceptionHandler(qVar2);
             if (exists) {
@@ -444,19 +442,19 @@ public final /* synthetic */ class b implements s5.e, pa.a, q9.d, a2, pc0, d9.e,
 
     @Override // e2.h
     public void accept(Object obj) {
-        ((x0) obj).b.release();
+        ((y0) obj).b.release();
     }
 
-    @Override // s5.e
+    @Override // s5.f
     public Object apply(Object obj) {
         switch (this.a) {
-            case 10:
+            case 16:
                 Cursor rawQuery = ((SQLiteDatabase) obj).rawQuery("SELECT distinct t._id, t.backend_name, t.priority, t.extras FROM transport_contexts AS t, events AS e WHERE e.context_id = t._id", new String[0]);
                 try {
                     ArrayList arrayList = new ArrayList();
                     while (rawQuery.moveToNext()) {
                         aa.a a2 = l5.i.a();
-                        a2.u(rawQuery.getString(1));
+                        a2.t(rawQuery.getString(1));
                         a2.d = v5.a.b(rawQuery.getInt(2));
                         String string = rawQuery.getString(3);
                         a2.c = string == null ? null : Base64.decode(string, 0);
@@ -466,35 +464,23 @@ public final /* synthetic */ class b implements s5.e, pa.a, q9.d, a2, pc0, d9.e,
                 } finally {
                     rawQuery.close();
                 }
-            case 21:
+            case 27:
                 return ((c3.o) obj).c().getClass().getSimpleName();
+            default:
+                return i0.v(e9.q.w(((d0) obj).r().b, new o1(0)));
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.z1
+    public void f(a2 a2Var, int i10) {
+        switch (this.a) {
             case 22:
-                return i0.v(e9.q.w(((d0) obj).r().b, new b(24)));
-            default:
-                return Integer.valueOf(((l1) obj).c);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.pc0
-    public String e(int i10) {
-        switch (this.a) {
-            case 17:
-                return String.valueOf(i10);
-            default:
-                return String.format("%02d", Integer.valueOf(i10 * 5));
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.a2
-    public void f(b2 b2Var, int i10) {
-        switch (this.a) {
-            case 16:
                 break;
-            case 19:
-                b2Var.dismiss();
+            case 25:
+                a2Var.dismiss();
                 break;
             default:
-                b2Var.dismiss();
+                a2Var.dismiss();
                 break;
         }
     }
@@ -502,7 +488,7 @@ public final /* synthetic */ class b implements s5.e, pa.a, q9.d, a2, pc0, d9.e,
     @Override // pa.a
     public void g(pa.b bVar) {
         switch (this.a) {
-            case 11:
+            case 17:
                 if (Log.isLoggable("FirebaseCrashlytics", 3)) {
                     Log.d("FirebaseCrashlytics", "AnalyticsConnector now available.", null);
                 }
@@ -514,10 +500,20 @@ public final /* synthetic */ class b implements s5.e, pa.a, q9.d, a2, pc0, d9.e,
         }
     }
 
+    @Override // org.telegram.ui.Components.ad0
+    public String j(int i10) {
+        switch (this.a) {
+            case 23:
+                return String.valueOf(i10);
+            default:
+                return String.format("%02d", Integer.valueOf(i10 * 5));
+        }
+    }
+
     public /* synthetic */ b(Object obj, int i10) {
         this.a = i10;
     }
 
-    private final void a(b2 b2Var, int i10) {
+    private final void a(a2 a2Var, int i10) {
     }
 }

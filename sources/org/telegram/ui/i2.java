@@ -19,10 +19,10 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class i2 extends View implements org.telegram.ui.Cells.q9 {
-    public final r70 a;
+public final class i2 extends View implements org.telegram.ui.Cells.p9 {
+    public final p70 a;
     public final g4 b;
     public b3 c;
     public b3 d;
@@ -35,18 +35,18 @@ public final class i2 extends View implements org.telegram.ui.Cells.q9 {
     public final int v;
     public int w;
 
-    public i2(Context context, r70 r70Var, g4 g4Var) {
+    public i2(Context context, p70 p70Var, g4 g4Var) {
         super(context);
         this.s = AndroidUtilities.dp(18.0f);
         this.v = AndroidUtilities.dp(10.0f);
-        this.a = r70Var;
+        this.a = p70Var;
         this.b = g4Var;
         ImageReceiver imageReceiver = new ImageReceiver(this);
         this.h = imageReceiver;
         imageReceiver.setRoundRadius(AndroidUtilities.dp(6.0f));
     }
 
-    @Override // org.telegram.ui.Cells.q9
+    @Override // org.telegram.ui.Cells.p9
     public final void fillTextLayoutBlocks(ArrayList arrayList) {
         b3 b3Var = this.c;
         if (b3Var != null) {
@@ -96,10 +96,10 @@ public final class i2 extends View implements org.telegram.ui.Cells.q9 {
         canvas.save();
         canvas.translate(this.s, AndroidUtilities.dp(10.0f));
         b3 b3Var = this.c;
-        r70 r70Var = this.a;
+        p70 p70Var = this.a;
         int i11 = 0;
         if (b3Var != null) {
-            i4.v(r70Var, canvas, this, 0);
+            i4.v(p70Var, canvas, this, 0);
             this.c.draw(canvas, this);
             i10 = 1;
         } else {
@@ -107,7 +107,7 @@ public final class i2 extends View implements org.telegram.ui.Cells.q9 {
         }
         if (this.d != null) {
             canvas.translate(0.0f, this.w);
-            i4.v(r70Var, canvas, this, i10);
+            i4.v(p70Var, canvas, this, i10);
             this.d.draw(canvas, this);
         }
         canvas.restore();
@@ -133,12 +133,12 @@ public final class i2 extends View implements org.telegram.ui.Cells.q9 {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         b3 b3Var = this.c;
         g4 g4Var = this.b;
-        r70 r70Var = this.a;
-        if (b3Var != null && (j10 = i4.j(r70Var, g4Var, b3Var)) != null) {
+        p70 p70Var = this.a;
+        if (b3Var != null && (j10 = i4.j(p70Var, g4Var, b3Var)) != null) {
             spannableStringBuilder.append(j10);
         }
         b3 b3Var2 = this.d;
-        if (b3Var2 != null && (j3 = i4.j(r70Var, g4Var, b3Var2)) != null) {
+        if (b3Var2 != null && (j3 = i4.j(p70Var, g4Var, b3Var2)) != null) {
             if (spannableStringBuilder.length() > 0) {
                 spannableStringBuilder.append((CharSequence) ", ");
             }
@@ -206,7 +206,7 @@ public final class i2 extends View implements org.telegram.ui.Cells.q9 {
         if (b3Var != null) {
             int lineCount = b3Var.d.getLineCount();
             int i17 = 4 - lineCount;
-            this.w = org.telegram.messenger.z0.C(f7, this.c.d.getHeight(), dp);
+            this.w = org.telegram.messenger.f0.C(f7, this.c.d.getHeight(), dp);
             dp5 = this.c.d.getHeight() + dp5;
             int i18 = 0;
             while (true) {
@@ -241,12 +241,12 @@ public final class i2 extends View implements org.telegram.ui.Cells.q9 {
             objArr[c10] = str2;
             formatString = LocaleController.formatString(i19, objArr);
         }
-        b3 p5 = i4.p(this.a, this, formatString, null, i14, this.w + i16, this.n, ((g4Var == null || !g4Var.G) && !z10) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.jw0.a(), i13, this.b);
+        b3 p5 = i4.p(this.a, this, formatString, null, i14, this.w + i16, this.n, ((g4Var == null || !g4Var.G) && !z10) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.uw0.a(), i13, this.b);
         this.d = p5;
         if (p5 != null) {
             int height = p5.d.getHeight() + dp5;
             if (this.c != null) {
-                height = org.telegram.messenger.z0.C(f7, dp, height);
+                height = org.telegram.messenger.f0.C(f7, dp, height);
             }
             dp5 = height;
             b3 b3Var3 = this.d;

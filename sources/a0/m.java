@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.ConcurrentModificationException;
 import java.util.Map;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class m {
     public int[] a;
@@ -108,7 +108,7 @@ public class m {
 
     public final Object e(int i10) {
         if (i10 < 0 || i10 >= this.c) {
-            throw new IllegalArgumentException(hg.c.i(i10, "Expected index to be within 0..size()-1, but was ").toString());
+            throw new IllegalArgumentException(hg.c.h(i10, "Expected index to be within 0..size()-1, but was ").toString());
         }
         return this.b[i10 << 1];
     }
@@ -163,7 +163,7 @@ public class m {
     public final Object f(int i10) {
         int i11;
         if (i10 < 0 || i10 >= (i11 = this.c)) {
-            throw new IllegalArgumentException(hg.c.i(i10, "Expected index to be within 0..size()-1, but was ").toString());
+            throw new IllegalArgumentException(hg.c.h(i10, "Expected index to be within 0..size()-1, but was ").toString());
         }
         Object[] objArr = this.b;
         int i12 = i10 << 1;
@@ -215,7 +215,7 @@ public class m {
 
     public final Object g(int i10, Object obj) {
         if (i10 < 0 || i10 >= this.c) {
-            throw new IllegalArgumentException(hg.c.i(i10, "Expected index to be within 0..size()-1, but was ").toString());
+            throw new IllegalArgumentException(hg.c.h(i10, "Expected index to be within 0..size()-1, but was ").toString());
         }
         int i11 = (i10 << 1) + 1;
         Object[] objArr = this.b;
@@ -239,7 +239,7 @@ public class m {
 
     public final Object h(int i10) {
         if (i10 < 0 || i10 >= this.c) {
-            throw new IllegalArgumentException(hg.c.i(i10, "Expected index to be within 0..size()-1, but was ").toString());
+            throw new IllegalArgumentException(hg.c.h(i10, "Expected index to be within 0..size()-1, but was ").toString());
         }
         return this.b[(i10 << 1) + 1];
     }

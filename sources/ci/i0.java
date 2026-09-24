@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 import org.telegram.ui.BubbleActivity;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class i0 extends View {
     public final Paint a;
@@ -177,7 +177,7 @@ public final class i0 extends View {
         matrix.preScale(b7Var.getWidth() / j0Var.x.i0, b7Var.getHeight() / j0Var.x.j0);
         matrix.preConcat(j0Var.x.n0);
         matrix.preTranslate(b7Var.getContentWidth() / f7, b7Var.getContentHeight() / f7);
-        matrix2.preTranslate((getContainerWidth() / f7) + AndroidUtilities.dp(16.0f), org.telegram.messenger.z0.a(getContainerHeight(), AndroidUtilities.dp(32.0f), f7, !(getContext() instanceof BubbleActivity) ? AndroidUtilities.statusBarHeight : 0.0f));
+        matrix2.preTranslate((getContainerWidth() / f7) + AndroidUtilities.dp(16.0f), org.telegram.messenger.f0.a(getContainerHeight(), AndroidUtilities.dp(32.0f), f7, !(getContext() instanceof BubbleActivity) ? AndroidUtilities.statusBarHeight : 0.0f));
         if (z10) {
             Matrix matrix3 = this.d;
             float f13 = j0Var.r;
@@ -225,9 +225,9 @@ public final class i0 extends View {
                 float f18 = 1.0f - (e * f11);
                 matrix2.preScale(f18, 1.0f);
                 matrix.preScale(f18, 1.0f);
-                float A = org.telegram.messenger.z0.A(1.0f, e, 4.0f * e, 0.25f);
-                matrix2.preSkew(0.0f, A);
-                matrix.preSkew(0.0f, A);
+                float z13 = org.telegram.messenger.f0.z(1.0f, e, 4.0f * e, 0.25f);
+                matrix2.preSkew(0.0f, z13);
+                matrix.preSkew(0.0f, z13);
                 matrix2.preTranslate((-b7Var.getContentWidth()) / f11, (-b7Var.getContentHeight()) / f11);
                 matrix.preTranslate((-b7Var.getContentWidth()) / f11, (-b7Var.getContentHeight()) / f11);
                 float f19 = j0Var.r;
@@ -266,9 +266,9 @@ public final class i0 extends View {
         float f182 = 1.0f - (e7 * f11);
         matrix2.preScale(f182, 1.0f);
         matrix.preScale(f182, 1.0f);
-        float A2 = org.telegram.messenger.z0.A(1.0f, e7, 4.0f * e7, 0.25f);
-        matrix2.preSkew(0.0f, A2);
-        matrix.preSkew(0.0f, A2);
+        float z132 = org.telegram.messenger.f0.z(1.0f, e7, 4.0f * e7, 0.25f);
+        matrix2.preSkew(0.0f, z132);
+        matrix.preSkew(0.0f, z132);
         matrix2.preTranslate((-b7Var.getContentWidth()) / f11, (-b7Var.getContentHeight()) / f11);
         matrix.preTranslate((-b7Var.getContentWidth()) / f11, (-b7Var.getContentHeight()) / f11);
         float f192 = j0Var.r;

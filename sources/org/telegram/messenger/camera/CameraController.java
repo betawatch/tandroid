@@ -46,7 +46,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.SerializedData;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class CameraController implements MediaRecorder.OnInfoListener {
     private static final int CORE_POOL_SIZE = 1;
@@ -65,7 +65,7 @@ public class CameraController implements MediaRecorder.OnInfoListener {
     private ArrayList<Runnable> onFinishCameraInitRunnables = new ArrayList<>();
     protected ThreadPoolExecutor threadPool = new ThreadPoolExecutor(1, 1, 60, TimeUnit.SECONDS, new LinkedBlockingQueue());
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class CompareSizesByArea implements Comparator<Size> {
         @Override // java.util.Comparator
         public int compare(Size size, Size size2) {
@@ -73,19 +73,19 @@ public class CameraController implements MediaRecorder.OnInfoListener {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public interface ErrorCallback {
         void onError(int i10, Camera camera, CameraSessionWrapper cameraSessionWrapper);
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public interface ICameraView {
         boolean startRecording(File file, Runnable runnable);
 
         void stopRecording();
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public interface VideoTakeCallback {
         void onFinishVideoRecording(String str, long j3);
     }
@@ -540,7 +540,7 @@ public class CameraController implements MediaRecorder.OnInfoListener {
             AndroidUtilities.runOnUIThread(new c(this, 2));
         } catch (Exception e) {
             FileLog.e(e, !"APP_PAUSED".equals(e.getMessage()));
-            AndroidUtilities.runOnUIThread(new s4(this, z10, e, runnable, 8));
+            AndroidUtilities.runOnUIThread(new s4(this, z10, e, runnable, 9));
         }
     }
 
@@ -640,7 +640,7 @@ public class CameraController implements MediaRecorder.OnInfoListener {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$recordVideo$12(ICameraView iCameraView, File file, boolean z10, Runnable runnable) {
-        iCameraView.startRecording(file, new bi.f(13, this, z10));
+        iCameraView.startRecording(file, new bi.f(14, this, z10));
         if (runnable != null) {
             runnable.run();
         }
@@ -665,7 +665,7 @@ public class CameraController implements MediaRecorder.OnInfoListener {
             } else if (obj instanceof Camera2Session) {
                 ((Camera2Session) obj).setRecordingVideo(true);
             }
-            AndroidUtilities.runOnUIThread(new u1(this, iCameraView, file, z10, runnable, 12));
+            AndroidUtilities.runOnUIThread(new u1(this, iCameraView, file, z10, runnable, 13));
         } catch (Exception e7) {
             FileLog.e(e7);
         }
@@ -1090,7 +1090,7 @@ public class CameraController implements MediaRecorder.OnInfoListener {
             return;
         }
         this.loadingCameras = true;
-        this.threadPool.execute(new y0(this, z10, runnable, 7));
+        this.threadPool.execute(new y0(this, z10, runnable, 8));
     }
 
     public void close(CameraSession cameraSession, CountDownLatch countDownLatch, Runnable runnable, Runnable runnable2) {

@@ -1,29 +1,26 @@
 package v7;
 
-import android.content.Context;
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
-public final class w8 implements x8 {
-    public final ArrayList a;
+public final class w8 {
+    public final String a;
 
-    public w8(Context context, v8 v8Var) {
-        ArrayList arrayList = new ArrayList();
-        this.a = arrayList;
-        v8Var.getClass();
-        arrayList.add(new b9(context, v8Var));
+    public w8(String str) {
+        this.a = str;
     }
 
-    @Override // v7.x8
-    public final void a(a5.a aVar) {
-        ArrayList arrayList = this.a;
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            ((x8) obj).a(aVar);
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
+        return (obj instanceof w8) && this.a.equals(((w8) obj).a);
+    }
+
+    public final int hashCode() {
+        return ((((this.a.hashCode() ^ 1000003) * 1000003) ^ 1231) * 1000003) ^ 1;
+    }
+
+    public final String toString() {
+        return a4.a.q("MLKitLoggingOptions{libraryName=", this.a, ", enableFirelog=true, firelogEventType=1}");
     }
 }

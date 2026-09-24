@@ -20,28 +20,28 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Cells.s8;
+import org.telegram.ui.Cells.r8;
 import org.telegram.ui.Cells.u3;
 import org.telegram.ui.Cells.v3;
-import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.gl0;
+import org.telegram.ui.Components.ix0;
 import org.telegram.ui.Components.op;
 import org.telegram.ui.Components.qq;
 import org.telegram.ui.Components.w9;
-import org.telegram.ui.Components.wk0;
-import org.telegram.ui.Components.xw0;
-import org.telegram.ui.py0;
+import org.telegram.ui.Components.wl0;
+import org.telegram.ui.ny0;
+import org.telegram.ui.web.f1;
 import s4.c1;
 import s4.p0;
-import tg.d1;
-import w7.x5;
+import w7.y5;
 import xg.l;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class h extends og.b {
     public final d6 d;
     public final Context e;
-    public ml0 f;
+    public wl0 f;
     public ArrayList n;
     public boolean s;
     public v3 v;
@@ -57,10 +57,10 @@ public final class h extends og.b {
         this.d = d6Var;
         q1 q1Var = new q1(this, 18);
         MessagesStorage messagesStorage = MessagesStorage.getInstance(UserConfig.selectedAccount);
-        messagesStorage.getStorageQueue().postRunnable(new p2.b(20, messagesStorage, q1Var));
+        messagesStorage.getStorageQueue().postRunnable(new f1(26, messagesStorage, q1Var));
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.vl0
     public final boolean D(c1 c1Var) {
         int i10 = c1Var.f;
         return i10 == 3 || i10 == 6 || i10 == 9;
@@ -139,7 +139,7 @@ public final class h extends og.b {
             }
             if (i12 == 5) {
                 try {
-                    ((xw0) view).b.getImageReceiver().startAnimation();
+                    ((ix0) view).b.getImageReceiver().startAnimation();
                     return;
                 } catch (Exception unused) {
                     return;
@@ -147,9 +147,9 @@ public final class h extends og.b {
             }
             if (i12 != 8) {
                 if (i12 == 9) {
-                    s8 s8Var = (s8) view;
-                    s8Var.e(h6.v6, h6.u6);
-                    s8Var.m(gVar.j, gVar.g, false);
+                    r8 r8Var = (r8) view;
+                    r8Var.e(h6.v6, h6.u6);
+                    r8Var.m(gVar.j, gVar.g, false);
                     return;
                 } else {
                     if (i12 == 10) {
@@ -158,7 +158,7 @@ public final class h extends og.b {
                             return;
                         }
                         AndroidUtilities.removeFromParent(gVar.q);
-                        frameLayout.addView(gVar.q, x5.c(-2.0f, -1));
+                        frameLayout.addView(gVar.q, y5.c(-2.0f, -1));
                         return;
                     }
                     return;
@@ -175,10 +175,10 @@ public final class h extends og.b {
                 v3Var.setText(Emoji.replaceWithRestrictedEmoji(gVar.g, v3Var.getTextView(), (Runnable) null));
                 if (!TextUtils.isEmpty(gVar.h)) {
                     String str2 = gVar.h;
-                    py0 py0Var = gVar.m;
+                    ny0 ny0Var = gVar.m;
                     u3 u3Var = v3Var.b;
                     u3Var.c(str2, false, true);
-                    u3Var.setOnClickListener(py0Var);
+                    u3Var.setOnClickListener(ny0Var);
                     u3Var.setVisibility(0);
                 }
             }
@@ -246,21 +246,21 @@ public final class h extends og.b {
             lVar.setDivider(false);
         }
         lVar.setOptions(gVar.n);
-        d1 d1Var = gVar.o;
-        d1 d1Var2 = gVar.p;
+        tg.c1 c1Var2 = gVar.o;
+        tg.c1 c1Var3 = gVar.p;
         ImageView imageView = lVar.E;
         ImageView imageView2 = lVar.x;
-        boolean z11 = d1Var != null;
+        boolean z11 = c1Var2 != null;
         lVar.w = z11;
         imageView2.setVisibility((z11 && lVar.F) ? 0 : 8);
-        imageView2.setOnClickListener(d1Var);
-        z10 = d1Var2 != null;
+        imageView2.setOnClickListener(c1Var2);
+        z10 = c1Var3 != null;
         lVar.y = z10;
         if (z10 && lVar.F) {
             i13 = 0;
         }
         imageView.setVisibility(i13);
-        imageView.setOnClickListener(d1Var2);
+        imageView.setOnClickListener(c1Var3);
         lVar.g(this.y, false);
     }
 
@@ -277,11 +277,11 @@ public final class h extends og.b {
         } else {
             d6 d6Var = this.d;
             if (i10 == 5) {
-                xw0 xw0Var = new xw0(context, null, 1, d6Var);
-                xw0Var.d.setText(LocaleController.getString(R.string.NoResult));
-                xw0Var.e.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
-                xw0Var.a.setTranslationY(AndroidUtilities.dp(24.0f));
-                lVar = xw0Var;
+                ix0 ix0Var = new ix0(context, null, 1, d6Var);
+                ix0Var.d.setText(LocaleController.getString(R.string.NoResult));
+                ix0Var.e.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
+                ix0Var.a.setTranslationY(AndroidUtilities.dp(24.0f));
+                lVar = ix0Var;
             } else {
                 boolean z10 = this.h;
                 if (i10 == 7) {
@@ -309,16 +309,16 @@ public final class h extends og.b {
                         lVar = v3Var;
                     }
                 } else if (i10 == 9) {
-                    s8 s8Var = new s8(context, d6Var);
-                    s8Var.n = 16;
-                    s8Var.w = 19;
-                    lVar = s8Var;
+                    r8 r8Var = new r8(context, d6Var);
+                    r8Var.n = 16;
+                    r8Var.w = 19;
+                    lVar = r8Var;
                 } else {
                     lVar = i10 == 10 ? new FrameLayout(context) : new View(context);
                 }
             }
         }
-        return new wk0(lVar);
+        return new gl0(lVar);
     }
 
     @Override // s4.h0

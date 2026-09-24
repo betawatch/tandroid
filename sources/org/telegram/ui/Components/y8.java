@@ -6,9 +6,9 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class y8 extends org.telegram.ui.z61 {
+public final class y8 extends org.telegram.ui.a71 {
     public boolean d2;
     public final /* synthetic */ e9 e2;
 
@@ -19,7 +19,7 @@ public final class y8 extends org.telegram.ui.z61 {
         this.d2 = true;
     }
 
-    @Override // org.telegram.ui.z61, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.a71, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
         if (this.d2) {
@@ -28,7 +28,7 @@ public final class y8 extends org.telegram.ui.z61 {
         }
     }
 
-    @Override // org.telegram.ui.z61
+    @Override // org.telegram.ui.a71
     public final void p(View view, Long l4, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
         int i10;
         TLRPC.TL_emojiList tL_emojiList;
@@ -37,10 +37,10 @@ public final class y8 extends org.telegram.ui.z61 {
         boolean z11 = this.R;
         e9 e9Var = this.e2;
         if (z11) {
-            i11 = ((org.telegram.ui.ActionBar.n2) e9Var).currentAccount;
+            i11 = ((org.telegram.ui.ActionBar.m2) e9Var).currentAccount;
             tL_emojiList = MediaDataController.getInstance(i11).profileAvatarConstructorDefault;
         } else {
-            i10 = ((org.telegram.ui.ActionBar.n2) e9Var).currentAccount;
+            i10 = ((org.telegram.ui.ActionBar.m2) e9Var).currentAccount;
             tL_emojiList = MediaDataController.getInstance(i10).groupAvatarConstructorDefault;
         }
         if (tL_emojiList != null) {

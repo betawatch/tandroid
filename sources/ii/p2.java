@@ -2,9 +2,9 @@ package ii;
 
 import android.view.KeyEvent;
 import android.view.View;
-import org.telegram.ui.Cells.q9;
+import org.telegram.ui.Cells.p9;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p2 implements Runnable {
     public final /* synthetic */ int a;
@@ -71,16 +71,16 @@ public final /* synthetic */ class p2 implements Runnable {
             case 14:
                 x3 x3Var = this.b;
                 KeyEvent.Callback z13 = x3Var.z1(this.c);
-                if (z13 instanceof q9) {
-                    x3Var.n3.c0(0, 0, (q9) z13);
+                if (z13 instanceof p9) {
+                    x3Var.n3.c0(0, 0, (p9) z13);
                     break;
                 }
                 break;
             case 15:
                 x3 x3Var2 = this.b;
                 KeyEvent.Callback z14 = x3Var2.z1(this.c);
-                if (z14 instanceof q9) {
-                    x3Var2.n3.c0(0, z14 instanceof e6 ? ((e6) z14).getEditText().length() : 0, (q9) z14);
+                if (z14 instanceof p9) {
+                    x3Var2.n3.c0(0, z14 instanceof e6 ? ((e6) z14).getEditText().length() : 0, (p9) z14);
                     break;
                 }
                 break;

@@ -9,23 +9,23 @@ import org.telegram.messenger.BillingController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.yc0;
+import org.telegram.ui.Components.jd0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class x6 implements TextWatcher {
     public boolean a;
     public int b = 2;
     public final /* synthetic */ EditTextBoldCursor c;
-    public final /* synthetic */ yc0 d;
+    public final /* synthetic */ jd0 d;
     public final /* synthetic */ long e;
     public final /* synthetic */ boolean f;
     public final /* synthetic */ ci.d h;
     public final /* synthetic */ TextView n;
 
-    public x6(EditTextBoldCursor editTextBoldCursor, yc0 yc0Var, long j3, boolean z10, ci.d dVar, TextView textView) {
+    public x6(EditTextBoldCursor editTextBoldCursor, jd0 jd0Var, long j3, boolean z10, ci.d dVar, TextView textView) {
         this.c = editTextBoldCursor;
-        this.d = yc0Var;
+        this.d = jd0Var;
         this.e = j3;
         this.f = z10;
         this.h = dVar;
@@ -41,7 +41,7 @@ public final class x6 implements TextWatcher {
     */
     public final void afterTextChanged(Editable editable) {
         long j3;
-        yc0 yc0Var = this.d;
+        jd0 jd0Var = this.d;
         EditTextBoldCursor editTextBoldCursor = this.c;
         if (this.a) {
             return;
@@ -59,7 +59,7 @@ public final class x6 implements TextWatcher {
                 editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
                 int i10 = -this.b;
                 this.b = i10;
-                AndroidUtilities.shakeViewSpring(yc0Var, i10);
+                AndroidUtilities.shakeViewSpring(jd0Var, i10);
             }
         } catch (Exception unused2) {
             this.a = true;
@@ -69,7 +69,7 @@ public final class x6 implements TextWatcher {
             this.a = false;
             if (!this.f) {
             }
-            yc0Var.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(editTextBoldCursor.getText()));
+            jd0Var.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(editTextBoldCursor.getText()));
             TextView textView = this.n;
             if (j3 != 0) {
             }
@@ -78,7 +78,7 @@ public final class x6 implements TextWatcher {
         if (!this.f) {
             this.h.setEnabled(j3 > 0);
         }
-        yc0Var.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(editTextBoldCursor.getText()));
+        jd0Var.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(editTextBoldCursor.getText()));
         TextView textView2 = this.n;
         if (j3 != 0) {
             textView2.animate().alpha(0.0f).start();

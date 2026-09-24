@@ -12,9 +12,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.CheckBoxBase;
-import org.telegram.ui.Components.o70;
+import org.telegram.ui.Components.y70;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u5 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -61,24 +61,24 @@ public final /* synthetic */ class u5 implements View.OnClickListener {
                         ArrayList arrayList = new ArrayList(languages);
                         Collections.sort(arrayList);
                         TL_iv.pageBlockPreformatted pageblockpreformatted = (TL_iv.pageBlockPreformatted) aVar3.b;
-                        o70 D = x3Var2.h3.D(view);
-                        D.W(org.telegram.ui.ActionBar.h6.b0(AndroidUtilities.dp(3.0f), org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.d6, x3Var2.g3)));
-                        D.Z = true;
-                        D.X = AndroidUtilities.dp(350.0f);
-                        D.i(new p2(x3Var2, aVar3, 25), LocaleController.getString(R.string.ArticleNone), TextUtils.isEmpty(pageblockpreformatted.language));
+                        y70 F = x3Var2.h3.F(view);
+                        F.W(org.telegram.ui.ActionBar.h6.b0(AndroidUtilities.dp(3.0f), org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.d6, x3Var2.g3)));
+                        F.Z = true;
+                        F.X = AndroidUtilities.dp(350.0f);
+                        F.i(new p2(x3Var2, aVar3, 25), LocaleController.getString(R.string.ArticleNone), TextUtils.isEmpty(pageblockpreformatted.language));
                         if (!TextUtils.isEmpty(pageblockpreformatted.language)) {
-                            D.i(null, MessageObject.TextLayoutBlock.capitalizeLanguage(pageblockpreformatted.language), true);
+                            F.i(null, MessageObject.TextLayoutBlock.capitalizeLanguage(pageblockpreformatted.language), true);
                         }
-                        D.k();
+                        F.k();
                         int size = arrayList.size();
                         int i10 = 0;
                         while (i10 < size) {
                             Object obj = arrayList.get(i10);
                             i10++;
                             String str = (String) obj;
-                            D.i(new gg.t(x3Var2, aVar3, str, 17), MessageObject.TextLayoutBlock.capitalizeLanguage(str), TextUtils.equals(str, pageblockpreformatted.language));
+                            F.i(new gg.t(x3Var2, aVar3, str, 17), MessageObject.TextLayoutBlock.capitalizeLanguage(str), TextUtils.equals(str, pageblockpreformatted.language));
                         }
-                        D.Z();
+                        F.Z();
                         break;
                     }
                 }

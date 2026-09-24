@@ -1,14 +1,15 @@
 package v7;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
-public abstract class h7 {
-    public static void a(rd.p pVar, zd.a aVar, zd.a aVar2) {
-        try {
-            ee.a.g(gd.i.a, w7.g.b(w7.g.a(aVar, aVar2, pVar)));
-        } catch (Throwable th2) {
-            aVar2.resumeWith(t7.a(th2));
-            throw th2;
-        }
+public final class h7 {
+    public final c6 a;
+    public final g6 b;
+    public final f7 c;
+
+    public /* synthetic */ h7(l lVar) {
+        this.a = (c6) lVar.b;
+        this.b = (g6) lVar.c;
+        this.c = (f7) lVar.d;
     }
 }

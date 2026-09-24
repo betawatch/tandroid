@@ -10,17 +10,17 @@ import android.widget.ScrollView;
 import java.util.ArrayList;
 import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ul;
+import org.telegram.messenger.ok;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.rr;
-import w7.x5;
-import w7.z5;
+import w7.a6;
+import w7.y5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public abstract class p0 extends LinearLayout implements ph.a, le.l {
     public final d6 a;
@@ -121,7 +121,7 @@ public abstract class p0 extends LinearLayout implements ph.a, le.l {
         if (this.f) {
             return this.e;
         }
-        return org.telegram.messenger.z0.D(4.0f, this.c.rows.size() - 1, AndroidUtilities.dp(16.0f) + (AndroidUtilities.dp(this.h) * tL_replyKeyboardMarkup.rows.size()));
+        return org.telegram.messenger.f0.D(4.0f, this.c.rows.size() - 1, AndroidUtilities.dp(16.0f) + (AndroidUtilities.dp(this.h) * tL_replyKeyboardMarkup.rows.size()));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:18:0x0046, code lost:
@@ -194,13 +194,13 @@ public abstract class p0 extends LinearLayout implements ph.a, le.l {
         this.b.addView(o0Var2);
         boolean z10 = tL_replyKeyboardMarkup.resize;
         this.f = !z10;
-        this.h = z10 ? 44 : (int) Math.max(44.0f, (ul.A(4.0f, this.c.rows.size() - 1, this.e - AndroidUtilities.dp(16.0f)) / this.c.rows.size()) / AndroidUtilities.density);
+        this.h = z10 ? 44 : (int) Math.max(44.0f, (ok.B(4.0f, this.c.rows.size() - 1, this.e - AndroidUtilities.dp(16.0f)) / this.c.rows.size()) / AndroidUtilities.density);
         int i11 = 0;
         while (i11 < tL_replyKeyboardMarkup.rows.size()) {
             TL_keyboard.KeyboardButtonRow keyboardButtonRow = tL_replyKeyboardMarkup.rows.get(i11);
             LinearLayout linearLayout = new LinearLayout(getContext());
             linearLayout.setOrientation(i10);
-            o0Var2.addView(linearLayout, x5.k(8.0f, i11 == 0 ? 8.0f : 4.0f, 8.0f, i11 == tL_replyKeyboardMarkup.rows.size() - 1 ? 8.0f : 0.0f, -1, this.h));
+            o0Var2.addView(linearLayout, y5.k(8.0f, i11 == 0 ? 8.0f : 4.0f, 8.0f, i11 == tL_replyKeyboardMarkup.rows.size() - 1 ? 8.0f : 0.0f, -1, this.h));
             float size = 1.0f / keyboardButtonRow.buttons.size();
             int i12 = 0;
             while (i12 < keyboardButtonRow.buttons.size()) {
@@ -215,10 +215,10 @@ public abstract class p0 extends LinearLayout implements ph.a, le.l {
                 n0Var.h = z14;
                 n0Var.a();
                 FrameLayout frameLayout = new FrameLayout(getContext());
-                frameLayout.addView(n0Var, x5.c(-1.0f, -1));
-                linearLayout.addView(frameLayout, x5.m(size, 0, -1, 0, i12 != keyboardButtonRow.buttons.size() - 1 ? 4 : 0, 0));
+                frameLayout.addView(n0Var, y5.c(-1.0f, -1));
+                linearLayout.addView(frameLayout, y5.m(size, 0, -1, 0, i12 != keyboardButtonRow.buttons.size() - 1 ? 4 : 0, 0));
                 n0Var.setOnClickListener(new ai.v0(this, 15));
-                z5.b(n0Var, 0.02f, 1.5f);
+                a6.b(n0Var, 0.02f, 1.5f);
                 arrayList.add(n0Var);
                 n0Var.a();
                 i12++;
@@ -239,7 +239,7 @@ public abstract class p0 extends LinearLayout implements ph.a, le.l {
         if (!this.f || (tL_replyKeyboardMarkup = this.c) == null || tL_replyKeyboardMarkup.rows.isEmpty()) {
             return;
         }
-        int max = !this.f ? 44 : (int) Math.max(44.0f, (ul.A(4.0f, this.c.rows.size() - 1, this.e - AndroidUtilities.dp(16.0f)) / this.c.rows.size()) / AndroidUtilities.density);
+        int max = !this.f ? 44 : (int) Math.max(44.0f, (ok.B(4.0f, this.c.rows.size() - 1, this.e - AndroidUtilities.dp(16.0f)) / this.c.rows.size()) / AndroidUtilities.density);
         this.h = max;
         int dp = AndroidUtilities.dp(max);
         Iterator it = this.x.iterator();
@@ -257,11 +257,11 @@ public abstract class p0 extends LinearLayout implements ph.a, le.l {
         }
     }
 
-    @Override // le.l
-    public final /* synthetic */ void a() {
-    }
-
     @Override // ph.a
     public final void d(float f7) {
+    }
+
+    @Override // le.l
+    public final /* synthetic */ void a() {
     }
 }

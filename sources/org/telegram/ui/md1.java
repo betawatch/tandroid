@@ -15,9 +15,9 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class md1 extends org.telegram.ui.Components.ll0 {
+public final class md1 extends org.telegram.ui.Components.vl0 {
     public final Context c;
     public final /* synthetic */ od1 d;
 
@@ -26,7 +26,7 @@ public final class md1 extends org.telegram.ui.Components.ll0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.vl0
     public final boolean D(s4.c1 c1Var) {
         return false;
     }
@@ -92,6 +92,6 @@ public final class md1 extends org.telegram.ui.Components.ll0 {
         k5Var.S = DownloadController.getInstance(i12).generateObserverTag();
         k5Var.setOutlineProvider(new ai.k2(7));
         k5Var.setClipToOutline(true);
-        return new org.telegram.ui.Components.wk0(k5Var);
+        return new org.telegram.ui.Components.gl0(k5Var);
     }
 }

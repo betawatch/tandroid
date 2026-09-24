@@ -4,13 +4,12 @@ import android.net.Uri;
 import e9.i0;
 import java.util.ArrayList;
 import java.util.List;
-import k2.u;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class l extends m {
     public final j n;
-    public final u r;
+    public final l.d r;
 
     public l(b2.s sVar, i0 i0Var, r rVar, ArrayList arrayList, List list, List list2) {
         super(sVar, i0Var, rVar, arrayList, list, list2);
@@ -18,7 +17,7 @@ public final class l extends m {
         long j3 = rVar.e;
         j jVar = j3 <= 0 ? null : new j(rVar.d, j3, null);
         this.n = jVar;
-        this.r = jVar == null ? new u(new j(0L, -1L, null), 5) : null;
+        this.r = jVar == null ? new l.d(new j(0L, -1L, null)) : null;
     }
 
     @Override // m2.m

@@ -1,49 +1,154 @@
 package org.telegram.ui.ActionBar;
 
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.GradientDrawable;
+import android.graphics.Rect;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.ScrollView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.m70;
+import org.telegram.ui.UsersSelectActivity;
+import org.telegram.ui.g80;
+import org.telegram.ui.gn0;
+import org.telegram.ui.qg0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class u1 extends Drawable {
-    public final int a;
-    public final /* synthetic */ GradientDrawable b;
-    public final /* synthetic */ b2 c;
+public final class u1 extends ScrollView {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public u1(b2 b2Var, GradientDrawable gradientDrawable) {
-        this.c = b2Var;
-        this.b = gradientDrawable;
-        this.a = AndroidUtilities.dp(52.0f) + b2Var.Y;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ u1(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Context context, int i10) {
+        super(context);
+        this.a = i10;
+        this.b = notificationCenterDelegate;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        int width = this.c.k0.getWidth();
-        int i10 = this.a;
-        int i11 = (int) ((width - i10) / 2.0f);
-        int height = (int) ((r0.k0.getHeight() - i10) / 2.0f);
-        int width2 = (int) ((r0.k0.getWidth() + i10) / 2.0f);
-        int height2 = (int) ((r0.k0.getHeight() + i10) / 2.0f);
-        GradientDrawable gradientDrawable = this.b;
-        gradientDrawable.setBounds(i11, height, width2, height2);
-        gradientDrawable.draw(canvas);
+    @Override // android.view.ViewGroup, android.view.View
+    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 3:
+                int action = motionEvent.getAction();
+                float f7 = ((g80) this.b).b.e;
+                float y3 = motionEvent.getY();
+                if (action != 0 || y3 <= f7) {
+                    return super.dispatchTouchEvent(motionEvent);
+                }
+                return false;
+            default:
+                return super.dispatchTouchEvent(motionEvent);
+        }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return this.b.getOpacity();
+    @Override // android.view.ViewGroup
+    public boolean drawChild(Canvas canvas, View view, long j3) {
+        switch (this.a) {
+            case 0:
+                boolean drawChild = super.drawChild(canvas, view, j3);
+                a2 a2Var = (a2) this.b;
+                if (a2Var.y[0].getPaint().getAlpha() != 0) {
+                    a2Var.y[0].setBounds(0, getScrollY(), getMeasuredWidth(), AndroidUtilities.dp(3.0f) + getScrollY());
+                    a2Var.y[0].draw(canvas);
+                }
+                if (a2Var.y[1].getPaint().getAlpha() != 0) {
+                    a2Var.y[1].setBounds(0, (getMeasuredHeight() + getScrollY()) - AndroidUtilities.dp(3.0f), getMeasuredWidth(), getMeasuredHeight() + getScrollY());
+                    a2Var.y[1].draw(canvas);
+                }
+                return drawChild;
+            default:
+                return super.drawChild(canvas, view, j3);
+        }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.b.setAlpha(i10);
+    @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.a) {
+            case 1:
+                m70 m70Var = (m70) this.b;
+                int size = View.MeasureSpec.getSize(i10);
+                int size2 = View.MeasureSpec.getSize(i11);
+                if (AndroidUtilities.isTablet() || size2 > size) {
+                    m70Var.s0 = AndroidUtilities.dp(144.0f);
+                } else {
+                    m70Var.s0 = AndroidUtilities.dp(56.0f);
+                }
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(m70Var.s0, TLObject.FLAG_31));
+                break;
+            case 2:
+                super.onMeasure(i10, i11);
+                setMeasuredDimension(((ci.w5) this.b).getMeasuredWidth(), getMeasuredHeight());
+                break;
+            case 3:
+            case 4:
+            default:
+                super.onMeasure(i10, i11);
+                break;
+            case 5:
+                ((gn0) this.b).s0 = View.MeasureSpec.getSize(i11) - AndroidUtilities.dp(30.0f);
+                super.onMeasure(i10, i11);
+                break;
+        }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.b.setColorFilter(colorFilter);
+    @Override // android.widget.ScrollView, android.view.ViewGroup
+    public boolean onRequestFocusInDescendants(int i10, Rect rect) {
+        switch (this.a) {
+            case 5:
+                return false;
+            default:
+                return super.onRequestFocusInDescendants(i10, rect);
+        }
+    }
+
+    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
+    public boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z10) {
+        switch (this.a) {
+            case 3:
+                g80 g80Var = (g80) this.b;
+                if (!g80Var.v) {
+                    rect.offset(view.getLeft() - view.getScrollX(), view.getTop() - view.getScrollY());
+                    rect.top = org.telegram.messenger.f0.C(20.0f, g80Var.I, rect.top);
+                    rect.bottom = org.telegram.messenger.f0.C(50.0f, g80Var.I, rect.bottom);
+                    break;
+                } else {
+                    g80Var.v = false;
+                    break;
+                }
+            case 4:
+                int i10 = ((qg0) this.b).a;
+                if (i10 == 1 || i10 == 2 || i10 == 4) {
+                    rect.bottom = AndroidUtilities.dp(40.0f) + rect.bottom;
+                }
+                break;
+            case 5:
+                int i11 = ((gn0) this.b).I1;
+                if (i11 == 1 || i11 == 2 || i11 == 4) {
+                    rect.bottom = AndroidUtilities.dp(40.0f) + rect.bottom;
+                }
+                break;
+            case 6:
+                UsersSelectActivity usersSelectActivity = (UsersSelectActivity) this.b;
+                if (!usersSelectActivity.v) {
+                    rect.offset(view.getLeft() - view.getScrollX(), view.getTop() - view.getScrollY());
+                    rect.top = org.telegram.messenger.f0.C(20.0f, usersSelectActivity.Q, rect.top);
+                    rect.bottom = org.telegram.messenger.f0.C(50.0f, usersSelectActivity.Q, rect.bottom);
+                    break;
+                } else {
+                    usersSelectActivity.v = false;
+                    break;
+                }
+        }
+        return super.requestChildRectangleOnScreen(view, rect, z10);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public u1(Context context, int i10, ci.w5 w5Var) {
+        super(context, null, 0, i10);
+        this.a = 2;
+        this.b = w5Var;
     }
 }

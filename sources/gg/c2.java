@@ -16,10 +16,10 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.m5;
-import org.telegram.ui.Components.vp0;
+import org.telegram.ui.ActionBar.l5;
+import org.telegram.ui.Components.iq0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public class c2 {
     public b2 a;
@@ -117,8 +117,8 @@ public class c2 {
                 if (obj instanceof h0) {
                     obj = ((h0) obj).a;
                 }
-                if (obj instanceof vp0) {
-                    obj = ((vp0) obj).b;
+                if (obj instanceof iq0) {
+                    obj = ((iq0) obj).b;
                 }
                 boolean z10 = obj instanceof TLRPC.User;
                 ArrayList arrayList3 = this.d;
@@ -167,7 +167,7 @@ public class c2 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void h(final String str, boolean z10, final boolean z11, final boolean z12, boolean z13, final boolean z14, long j3, boolean z15, int i10, final int i11, final long j10, final m5 m5Var) {
+    public final void h(final String str, boolean z10, final boolean z11, final boolean z12, boolean z13, final boolean z14, long j3, boolean z15, int i10, final int i11, final long j10, final l5 l5Var) {
         int i12;
         boolean z16;
         boolean z17;
@@ -205,7 +205,7 @@ public class c2 {
             arrayList2.clear();
             arrayList5.clear();
             iVar3.b();
-            this.a.h(i11);
+            this.a.a(i11);
             return;
         }
         ArrayList arrayList6 = new ArrayList();
@@ -288,7 +288,7 @@ public class c2 {
                             final AtomicInteger atomicInteger5 = atomicInteger3;
                             final ArrayList arrayList12 = arrayList10;
                             final int i18 = i11;
-                            final Runnable runnable = m5Var;
+                            final Runnable runnable = l5Var;
                             AndroidUtilities.runOnUIThread(new Runnable() { // from class: gg.y1
                                 @Override // java.lang.Runnable
                                 public final void run() {
@@ -320,11 +320,11 @@ public class c2 {
                                             a0.i iVar4 = c2Var2.f;
                                             b2 b2Var = c2Var2.a;
                                             if (b2Var != null) {
-                                                a0.i F = b2Var.F();
-                                                if (F != null) {
-                                                    int m10 = F.m();
+                                                a0.i o9 = b2Var.o();
+                                                if (o9 != null) {
+                                                    int m10 = o9.m();
                                                     for (int i20 = 0; i20 < m10; i20++) {
-                                                        TLRPC.User user2 = (TLRPC.User) iVar4.f(F.j(i20));
+                                                        TLRPC.User user2 = (TLRPC.User) iVar4.f(o9.j(i20));
                                                         if (user2 != null) {
                                                             arrayList18.remove(user2);
                                                             arrayList17.remove(user2);
@@ -332,11 +332,11 @@ public class c2 {
                                                         }
                                                     }
                                                 }
-                                                a0.i w10 = c2Var2.a.w();
-                                                if (w10 != null) {
-                                                    int m11 = w10.m();
-                                                    for (int i21 = 0; i21 < m11; i21++) {
-                                                        TLRPC.User user3 = (TLRPC.User) iVar4.f(w10.j(i21));
+                                                a0.i i21 = c2Var2.a.i();
+                                                if (i21 != null) {
+                                                    int m11 = i21.m();
+                                                    for (int i22 = 0; i22 < m11; i22++) {
+                                                        TLRPC.User user3 = (TLRPC.User) iVar4.f(i21.j(i22));
                                                         if (user3 != null) {
                                                             arrayList18.remove(user3);
                                                             arrayList17.remove(user3);
@@ -345,7 +345,7 @@ public class c2 {
                                                     }
                                                 }
                                             }
-                                            c2Var2.a.h(i18);
+                                            c2Var2.a.a(i18);
                                             Runnable runnable2 = runnable;
                                             if (runnable2 != null) {
                                                 runnable2.run();
@@ -365,7 +365,7 @@ public class c2 {
                 if (z18) {
                     return;
                 }
-                this.a.h(i11);
+                this.a.a(i11);
                 return;
             }
             TLRPC.TL_contacts_search tL_contacts_search = new TLRPC.TL_contacts_search();
@@ -410,7 +410,7 @@ public class c2 {
                     ArrayList arrayList12 = c2Var.d;
                     ArrayList arrayList13 = c2Var.e;
                     a0.i iVar7 = c2Var.f;
-                    if (c2Var.a.O(i11) && tL_error == null) {
+                    if (c2Var.a.s(i11) && tL_error == null) {
                         TLRPC.TL_contacts_found tL_contacts_found2 = (TLRPC.TL_contacts_found) tLObject2;
                         arrayList13.clear();
                         iVar7.b();

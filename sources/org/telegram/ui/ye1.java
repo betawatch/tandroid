@@ -8,7 +8,7 @@ import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class ye1 extends s4.c0 {
     public boolean I;
@@ -32,7 +32,7 @@ public final class ye1 extends s4.c0 {
             super.b0(eVar, z0Var);
         } catch (IndexOutOfBoundsException e) {
             FileLog.e(e);
-            AndroidUtilities.runOnUIThread(new xz0(this, 18));
+            AndroidUtilities.runOnUIThread(new vz0(this, 18));
         }
     }
 
@@ -60,7 +60,7 @@ public final class ye1 extends s4.c0 {
     public final int o0(int i10, of.e eVar, s4.z0 z0Var) {
         int i11;
         hf1 hf1Var;
-        xw xwVar;
+        ww wwVar;
         float f7;
         int i12;
         wf1 wf1Var = this.J;
@@ -86,9 +86,9 @@ public final class ye1 extends s4.c0 {
             if (!z11) {
                 View m11 = wf1Var.F.m(L0);
                 if (m11 != null) {
-                    int g10 = hg.c.g(L0, 1, AndroidUtilities.dp(SharedConfig.useThreeLinesLayout ? 78.0f : 72.0f) + 1, -(m11.getTop() - paddingTop));
-                    if (g10 < Math.abs(i10)) {
-                        i11 = -g10;
+                    int f10 = hg.c.f(L0, 1, AndroidUtilities.dp(SharedConfig.useThreeLinesLayout ? 78.0f : 72.0f) + 1, -(m11.getTop() - paddingTop));
+                    if (f10 < Math.abs(i10)) {
+                        i11 = -f10;
                     }
                 }
             } else if (L0 == 0) {
@@ -119,9 +119,9 @@ public final class ye1 extends s4.c0 {
                 return super.o0(i11, eVar, z0Var);
             }
             int o02 = super.o0(i11, eVar, z0Var);
-            xw xwVar2 = wf1Var.w;
-            if (xwVar2 != null) {
-                xwVar2.a = o02;
+            ww wwVar2 = wf1Var.w;
+            if (wwVar2 != null) {
+                wwVar2.a = o02;
             }
             int L02 = wf1Var.F.L0();
             View m13 = L02 == 0 ? wf1Var.F.m(L02) : null;
@@ -133,19 +133,19 @@ public final class ye1 extends s4.c0 {
                 wf1Var.Y = 0L;
                 wf1Var.Z = false;
                 wf1Var.y = 2;
-                xw xwVar3 = wf1Var.w;
-                if (xwVar3 != null) {
-                    ValueAnimator valueAnimator = xwVar3.z;
+                ww wwVar3 = wf1Var.w;
+                if (wwVar3 != null) {
+                    ValueAnimator valueAnimator = wwVar3.z;
                     if (valueAnimator != null) {
                         valueAnimator.cancel();
                     }
-                    org.telegram.ui.Cells.r2 r2Var = xwVar3.H;
-                    if (r2Var != null) {
-                        r2Var.removeCallbacks(xwVar3.d0);
+                    org.telegram.ui.Cells.s2 s2Var = wwVar3.H;
+                    if (s2Var != null) {
+                        s2Var.removeCallbacks(wwVar3.d0);
                     }
-                    xwVar3.x = 0.0f;
-                    xwVar3.y = false;
-                    xwVar3.e0 = false;
+                    wwVar3.x = 0.0f;
+                    wwVar3.y = false;
+                    wwVar3.e0 = false;
                     wf1Var.w.f(0.0f);
                     wf1Var.w.I = wf1Var.N;
                 }
@@ -153,8 +153,8 @@ public final class ye1 extends s4.c0 {
                 if (wf1Var.Y == 0) {
                     wf1Var.Y = System.currentTimeMillis();
                 }
-                if (wf1Var.y == 2 && (xwVar = wf1Var.w) != null) {
-                    xwVar.h();
+                if (wf1Var.y == 2 && (wwVar = wf1Var.w) != null) {
+                    wwVar.h();
                 }
                 float top2 = ((m13.getTop() - paddingTop) / m13.getMeasuredHeight()) + 1.0f;
                 if (top2 > 1.0f) {
@@ -171,9 +171,9 @@ public final class ye1 extends s4.c0 {
                             wf1Var.N.performHapticFeedback(3, 2);
                         } catch (Exception unused) {
                         }
-                        xw xwVar4 = wf1Var.w;
-                        if (xwVar4 != null) {
-                            xwVar4.a(z10);
+                        ww wwVar4 = wf1Var.w;
+                        if (wwVar4 != null) {
+                            wwVar4.a(z10);
                         }
                     }
                 }
@@ -182,9 +182,9 @@ public final class ye1 extends s4.c0 {
                     hf1 hf1Var3 = wf1Var.N;
                     hf1Var3.setViewsOffset(hf1Var3.f3 - ((i10 * 0.2f) * dp));
                 }
-                xw xwVar5 = wf1Var.w;
-                if (xwVar5 != null) {
-                    xwVar5.f(top2);
+                ww wwVar5 = wf1Var.w;
+                if (wwVar5 != null) {
+                    wwVar5.f(top2);
                     wf1Var.w.I = wf1Var.N;
                 }
             }

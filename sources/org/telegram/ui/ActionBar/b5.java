@@ -1,29 +1,64 @@
 package org.telegram.ui.ActionBar;
 
-import org.telegram.ui.qn;
-import org.telegram.ui.sn;
+import android.app.Activity;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.FrameLayout;
+import java.util.List;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class b5 {
-    public final g6 a;
-    public final int b;
-    public final boolean c;
-    public final boolean d;
-    public boolean e;
-    public Runnable h;
-    public qn i;
-    public qn j;
-    public sn k;
-    public d6 m;
-    public boolean f = true;
-    public boolean g = true;
-    public long l = 200;
+public interface b5 {
+    m2 getBackgroundFragment();
 
-    public b5(g6 g6Var, int i10, boolean z10, boolean z11) {
-        this.a = g6Var;
-        this.b = i10;
-        this.c = z10;
-        this.d = z11;
-    }
+    e3 getBottomSheet();
+
+    List getFragmentStack();
+
+    m2 getLastFragment();
+
+    d5 getMessageDrawableOutMediaStart();
+
+    d5 getMessageDrawableOutStart();
+
+    FrameLayout getOverlayContainerView();
+
+    Activity getParentActivity();
+
+    List getPulledDialogs();
+
+    m2 getSafeLastFragment();
+
+    float getThemeAnimationValue();
+
+    ViewGroup getView();
+
+    Window getWindow();
+
+    void setBackgroundView(View view);
+
+    void setDelegate(y4 y4Var);
+
+    void setDrawerLayoutContainer(x3 x3Var);
+
+    void setFragmentPanTranslationOffset(int i10);
+
+    void setFragmentStack(List list);
+
+    void setHighlightActionButtons(boolean z10);
+
+    void setInBubbleMode(boolean z10);
+
+    void setIsSheet(boolean z10);
+
+    void setNavigationBarColor(int i10);
+
+    void setPulledDialogs(List list);
+
+    void setRemoveActionBarExtraHeight(boolean z10);
+
+    void setUseAlphaAnimations(boolean z10);
+
+    void setWindow(Window window);
 }

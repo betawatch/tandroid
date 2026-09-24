@@ -22,25 +22,25 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.ll0;
+import org.telegram.ui.Components.vl0;
 import org.telegram.ui.Components.voip.o;
 import org.telegram.ui.Components.w9;
-import org.telegram.ui.py0;
+import org.telegram.ui.ny0;
 import s4.c1;
-import uh.i;
+import u2.i0;
 import vg.c0;
 import vg.d0;
 import vg.r;
 import vg.t;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public abstract class e extends ll0 {
+public abstract class e extends vl0 {
     public final d6 c;
     public boolean d;
-    public n2 e;
+    public m2 e;
     public TLRPC.TL_payments_checkedGiftCode f;
     public String h;
     public FrameLayout n;
@@ -49,7 +49,7 @@ public abstract class e extends ll0 {
         this.c = d6Var;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.vl0
     public final boolean D(c1 c1Var) {
         return false;
     }
@@ -151,7 +151,7 @@ public abstract class e extends ll0 {
                 }
                 vg.a aVar = (vg.a) view;
                 aVar.setOkStyle(this.d);
-                aVar.setOnClickListener(new py0(20, this, aVar));
+                aVar.setOnClickListener(new ny0(20, this, aVar));
                 TLRPC.TL_payments_checkedGiftCode tL_payments_checkedGiftCode2 = this.f;
                 if (tL_payments_checkedGiftCode2.boost != null || tL_payments_checkedGiftCode2.flags == -1) {
                     aVar.e = false;
@@ -224,7 +224,7 @@ public abstract class e extends ll0 {
                     }
                 }
             }, d6Var));
-            textView3.setOnClickListener(new py0(22, q1Var2, tL_payments_checkedGiftCode4));
+            textView3.setOnClickListener(new ny0(22, q1Var2, tL_payments_checkedGiftCode4));
         } else {
             textView3.setText(LocaleController.getString(isChannelAndNotMegaGroup ? R.string.BoostingYouWereSelected : R.string.BoostingYouWereSelectedGroup));
             textView3.setOnClickListener(null);
@@ -250,9 +250,9 @@ public abstract class e extends ll0 {
             spannableStringBuilder2.append((CharSequence) "**");
             spannableStringBuilder2.append((CharSequence) chat.title);
             spannableStringBuilder2.append((CharSequence) "**");
-            textView.setText(Emoji.replaceEmoji(AndroidUtilities.replaceSingleTag(spannableStringBuilder2.toString(), h6.gc, 0, new i(1, q1Var2, chat), d6Var), textView.getPaint().getFontMetricsInt(), false));
+            textView.setText(Emoji.replaceEmoji(AndroidUtilities.replaceSingleTag(spannableStringBuilder2.toString(), h6.gc, 0, new i0(7, q1Var2, chat), d6Var), textView.getPaint().getFontMetricsInt(), false));
             w9Var2.e(chat, new h9(chat));
-            frameLayout.setOnClickListener(new py0(23, q1Var2, chat));
+            frameLayout.setOnClickListener(new ny0(23, q1Var2, chat));
         } else {
             final TLRPC.User user2 = MessagesController.getInstance(UserConfig.selectedAccount).getUser(Long.valueOf(tL_payments_checkedGiftCode4.from_id.user_id));
             final int i19 = 0;

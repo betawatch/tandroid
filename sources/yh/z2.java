@@ -2,39 +2,47 @@ package yh;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
+import android.graphics.Paint;
+import android.graphics.Path;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.h9;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class z2 extends View {
-    public final m3 a;
+    public final l3 a;
     public final ImageReceiver b;
-    public final Drawable c;
+    public final Path c;
+    public final Paint d;
 
-    public z2(Context context, TL_stars.TL_starGiftUnique tL_starGiftUnique, TLObject tLObject) {
+    public z2(Context context, TL_stars.StarGift starGift, TLObject tLObject) {
         super(context);
-        m3 m3Var = new m3(this, tL_starGiftUnique, 60, 0.27f);
-        this.a = m3Var;
-        m3Var.t = 3;
+        Path path = new Path();
+        this.c = path;
+        Paint paint = new Paint(1);
+        this.d = paint;
+        l3 l3Var = new l3(this, starGift, 60, 0.27f);
+        this.a = l3Var;
+        l3Var.t = 3;
         h9 h9Var = new h9((org.telegram.ui.ActionBar.d6) null);
         h9Var.p(tLObject);
         ImageReceiver imageReceiver = new ImageReceiver(this);
         this.b = imageReceiver;
         imageReceiver.setRoundRadius(AndroidUtilities.dp(30.0f));
         imageReceiver.setForUserOrChat(tLObject, h9Var);
-        Drawable mutate = context.getDrawable(R.drawable.chats_undo).mutate();
-        this.c = mutate;
-        mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.z6, false), PorterDuff.Mode.MULTIPLY));
-        mutate.setBounds(AndroidUtilities.dp(-12.0f), AndroidUtilities.dp(-12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f));
+        paint.setColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.E6, false));
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStrokeJoin(Paint.Join.ROUND);
+        paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
+        path.rewind();
+        path.moveTo(0.0f, -AndroidUtilities.dp(8.0f));
+        path.lineTo(AndroidUtilities.dp(6.166f), 0.0f);
+        path.lineTo(0.0f, AndroidUtilities.dp(8.0f));
     }
 
     @Override // android.view.View
@@ -55,12 +63,12 @@ public final class z2 extends View {
         int height = (getHeight() / 2) - AndroidUtilities.dp(30.0f);
         int dp = AndroidUtilities.dp(60.0f) + width;
         int dp2 = AndroidUtilities.dp(60.0f) + height;
-        m3 m3Var = this.a;
-        m3Var.setBounds(width, height, dp, dp2);
-        m3Var.draw(canvas);
+        l3 l3Var = this.a;
+        l3Var.setBounds(width, height, dp, dp2);
+        l3Var.draw(canvas);
         canvas.save();
-        canvas.translate(getWidth() / 2.0f, getHeight() / 2.0f);
-        this.c.draw(canvas);
+        canvas.translate((getWidth() / 2.0f) - (AndroidUtilities.dp(6.166f) / 2.0f), getHeight() / 2.0f);
+        canvas.drawPath(this.c, this.d);
         canvas.restore();
         float dp3 = AndroidUtilities.dp(60.0f);
         float dp4 = AndroidUtilities.dp(60.0f);
@@ -72,5 +80,29 @@ public final class z2 extends View {
     @Override // android.view.View
     public final void onMeasure(int i10, int i11) {
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_30));
+    }
+
+    public z2(Context context, TL_stars.TL_starGiftUnique tL_starGiftUnique) {
+        super(context);
+        Path path = new Path();
+        this.c = path;
+        Paint paint = new Paint(1);
+        this.d = paint;
+        l3 l3Var = new l3(this, tL_starGiftUnique, 60, 0.27f);
+        this.a = l3Var;
+        l3Var.t = 3;
+        ImageReceiver imageReceiver = new ImageReceiver(this);
+        this.b = imageReceiver;
+        imageReceiver.setRoundRadius(AndroidUtilities.dp(30.0f));
+        imageReceiver.setImageBitmap(org.telegram.ui.Cells.v6.a(60, "fragment"));
+        paint.setColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.E6, false));
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStrokeJoin(Paint.Join.ROUND);
+        paint.setStrokeWidth(AndroidUtilities.dp(2.33f));
+        path.rewind();
+        path.moveTo(0.0f, -AndroidUtilities.dp(8.0f));
+        path.lineTo(AndroidUtilities.dp(6.166f), 0.0f);
+        path.lineTo(0.0f, AndroidUtilities.dp(8.0f));
     }
 }

@@ -1,50 +1,69 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class sl extends mu0 {
-    public final /* synthetic */ ArrayList a;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ xn c;
+public final class sl extends lu0 {
+    public final /* synthetic */ MessageObject a;
+    public final /* synthetic */ MediaController.PhotoEntry b;
+    public final /* synthetic */ wn c;
 
-    public sl(xn xnVar, ArrayList arrayList, boolean[] zArr) {
-        this.c = xnVar;
-        this.a = arrayList;
-        this.b = zArr;
+    public sl(wn wnVar, MessageObject messageObject, MediaController.PhotoEntry photoEntry) {
+        this.c = wnVar;
+        this.a = messageObject;
+        this.b = photoEntry;
     }
 
-    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
-    public final boolean S() {
-        return false;
+    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
+    public final vu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        return wn.A1(this.c, this.a, null, i10, z10, true);
     }
 
-    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
-    public final ImageReceiver.BitmapHolder j(int i10) {
+    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
+    public final boolean O() {
+        wn wnVar = this.c;
+        if (wnVar.Y == null || !wnVar.x9()) {
+            return false;
+        }
+        wnVar.Y.P();
+        return true;
+    }
+
+    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
+    public final MessageObject U() {
+        MessageObject messageObject = this.c.p5;
+        MessageObject messageObject2 = this.a;
+        if (messageObject == messageObject2) {
+            return messageObject2;
+        }
         return null;
     }
 
-    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
+    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
+    public final void e(CharSequence charSequence) {
+        this.c.Y.f1(charSequence, false);
+    }
+
+    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
+    public final boolean g() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
     public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
-        ArrayList arrayList = this.a;
-        for (int size = arrayList.size() - 1; size >= 0; size--) {
-            if (!this.b[size]) {
-                arrayList.remove(size);
-            }
+        wn wnVar = this.c;
+        if (wnVar.p5 != this.a) {
+            return;
         }
-        this.c.eb(arrayList, i11, z10, z11);
-    }
-
-    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
-    public final boolean x(int i10) {
-        return this.b[i10];
-    }
-
-    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
-    public final int k(int i10, VideoEditedInfo videoEditedInfo) {
-        return i10;
+        MediaController.PhotoEntry photoEntry = this.b;
+        if (photoEntry.isCropped || photoEntry.isPainted || photoEntry.isFiltered || videoEditedInfo != null) {
+            wnVar.q(photoEntry, videoEditedInfo, z10, i11, 0, z11, 0L);
+        } else {
+            wnVar.Y.d0();
+        }
     }
 }

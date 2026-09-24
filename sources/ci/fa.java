@@ -29,11 +29,11 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.e51;
+import org.telegram.ui.Components.s51;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public final class fa extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate {
+public final class fa extends org.telegram.ui.ActionBar.e3 implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int d0 = 0;
     public boolean E;
     public boolean F;
@@ -297,7 +297,7 @@ public final class fa extends org.telegram.ui.ActionBar.f3 implements Notificati
         return hashSet;
     }
 
-    @Override // org.telegram.ui.ActionBar.f3
+    @Override // org.telegram.ui.ActionBar.e3
     public final boolean canDismissWithSwipe() {
         View currentView = this.b.getCurrentView();
         if (currentView instanceof y9) {
@@ -306,7 +306,7 @@ public final class fa extends org.telegram.ui.ActionBar.f3 implements Notificati
         return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.f3
+    @Override // org.telegram.ui.ActionBar.e3
     public final boolean canSwipeToBack(MotionEvent motionEvent) {
         return false;
     }
@@ -364,7 +364,7 @@ public final class fa extends org.telegram.ui.ActionBar.f3 implements Notificati
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
+    @Override // org.telegram.ui.ActionBar.e3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.i2
     public final void dismiss() {
         da daVar;
         Utilities.Callback callback = this.U;
@@ -420,7 +420,7 @@ public final class fa extends org.telegram.ui.ActionBar.f3 implements Notificati
         super.dismiss();
     }
 
-    @Override // org.telegram.ui.ActionBar.f3
+    @Override // org.telegram.ui.ActionBar.e3
     public final void dismissInternal() {
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.contactsDidLoad);
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.storiesBlocklistUpdate);
@@ -489,14 +489,14 @@ public final class fa extends org.telegram.ui.ActionBar.f3 implements Notificati
                 spannableStringBuilder.append((CharSequence) ", ");
             }
             SpannableString spannableString = new SpannableString("@" + ((String) arrayList.get(i11)));
-            spannableString.setSpan(new e51(AndroidUtilities.bold()), 0, spannableString.length(), 33);
+            spannableString.setSpan(new s51(AndroidUtilities.bold()), 0, spannableString.length(), 33);
             spannableStringBuilder.append((CharSequence) spannableString);
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getContext(), 0, this.resourcesProvider);
         alertDialog$Builder.a.R = LocaleController.getString(R.string.StoryRestrictions);
         alertDialog$Builder.a.T = AndroidUtilities.replaceCharSequence("%s", LocaleController.getString(R.string.StoryRestrictionsInfo), spannableStringBuilder);
         alertDialog$Builder.k(LocaleController.getString(R.string.Proceed), new ai.q5(this, daVar, runnable, 5));
-        hg.c.r(R.string.Cancel, alertDialog$Builder, null);
+        hg.c.p(R.string.Cancel, alertDialog$Builder, null);
     }
 
     public final ArrayList h1() {
@@ -535,7 +535,7 @@ public final class fa extends org.telegram.ui.ActionBar.f3 implements Notificati
         this.b = i1Var;
         int i11 = this.backgroundPaddingLeft;
         i1Var.setPadding(i11, 0, i11, 0);
-        this.containerView.addView(this.b, w7.x5.e(-1, -1, 119));
+        this.containerView.addView(this.b, w7.y5.e(-1, -1, 119));
     }
 
     public final void k1(boolean z10) {
@@ -593,7 +593,7 @@ public final class fa extends org.telegram.ui.ActionBar.f3 implements Notificati
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog
+    @Override // org.telegram.ui.ActionBar.e3, android.app.Dialog
     public final void onBackPressed() {
         if (this.b.getCurrentPosition() <= 0) {
             super.onBackPressed();

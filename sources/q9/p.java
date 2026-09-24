@@ -1,19 +1,18 @@
 package q9;
 
-import org.telegram.ui.kv0;
-import pg.e0;
+import org.telegram.ui.ds0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class p implements pa.b {
-    public static final e0 c = new e0(5);
+    public static final org.webrtc.audio.b c = new org.webrtc.audio.b(11);
     public static final f d = new f(1);
     public pa.a a;
     public volatile pa.b b;
 
-    public p(e0 e0Var, pa.b bVar) {
-        this.a = e0Var;
-        this.b = bVar;
+    public p(org.webrtc.audio.b bVar, pa.b bVar2) {
+        this.a = bVar;
+        this.b = bVar2;
     }
 
     public final void a(pa.a aVar) {
@@ -30,7 +29,7 @@ public final class p implements pa.b {
             if (bVar != fVar) {
                 bVar2 = bVar;
             } else {
-                this.a = new kv0(24, this.a, aVar);
+                this.a = new ds0(25, this.a, aVar);
                 bVar2 = null;
             }
         }

@@ -1,18 +1,19 @@
 package v7;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class u2 implements ia.d {
     public static final u2 a = new u2();
-    public static final ia.c b = new ia.c("identifyLanguageConfidenceThreshold", hg.c.o(org.telegram.ui.Cells.q3.k(h.class, new e(1))));
-    public static final ia.c c = new ia.c("identifyAllLanguagesConfidenceThreshold", hg.c.o(org.telegram.ui.Cells.q3.k(h.class, new e(2))));
-    public static final ia.c d = new ia.c("confidenceThreshold", hg.c.o(org.telegram.ui.Cells.q3.k(h.class, new e(3))));
+
+    static {
+        j.r(j.j(h.class, j.n(3, j.j(h.class, j.n(2, j.j(h.class, new e(1)))))));
+    }
 
     @Override // ia.a
-    public final void a(Object obj, Object obj2) {
-        ia.e eVar = (ia.e) obj2;
-        eVar.a(b, null);
-        eVar.a(c, null);
-        eVar.a(d, ((f6) obj).a);
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
     }
 }

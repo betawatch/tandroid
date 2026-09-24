@@ -1,58 +1,119 @@
 package org.telegram.ui;
 
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.text.TextPaint;
+import android.view.MotionEvent;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class xu0 extends org.telegram.ui.Components.y50 {
-    public final /* synthetic */ yu0 d;
+public final class xu0 extends View {
+    public final Paint a;
+    public final TextPaint b;
+    public int c;
+    public int d;
+    public int e;
+    public int f;
+    public final String h;
+    public final String n;
+    public int r;
+    public final /* synthetic */ PhotoViewer s;
 
-    public xu0(yu0 yu0Var) {
-        this.d = yu0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public xu0(Context context, PhotoViewer photoViewer) {
+        super(context);
+        this.s = photoViewer;
+        this.a = new Paint(1);
+        TextPaint textPaint = new TextPaint(1);
+        this.b = textPaint;
+        textPaint.setTextSize(AndroidUtilities.dp(14.0f));
+        textPaint.setColor(-3289651);
+        this.h = LocaleController.getString("AccDescrVideoCompressLow", R.string.AccDescrVideoCompressLow);
+        this.n = LocaleController.getString("AccDescrVideoCompressHigh", R.string.AccDescrVideoCompressHigh);
+        setImportantForAccessibility(1);
+        setFocusable(true);
+        setAccessibilityDelegate(new wu0(this));
     }
 
-    @Override // org.telegram.ui.Components.co0
-    public final CharSequence d() {
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append(LocaleController.getString("AccDescrVideoQuality", R.string.AccDescrVideoQuality));
-        if (this.d.s.Z7 > 0) {
-            sb2.append(", ");
-            sb2.append(this.d.s.Y7 + 1);
-            sb2.append(" / ");
-            sb2.append(this.d.s.Z7);
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.s.Z7 != 1) {
+            this.f = (((getMeasuredWidth() - (this.c * this.s.Z7)) - (((this.s.Z7 * 2) - 2) * this.d)) - (this.e * 2)) / (this.s.Z7 - 1);
+        } else {
+            this.f = ((getMeasuredWidth() - (this.c * this.s.Z7)) - (this.d * 2)) - (this.e * 2);
         }
-        sb2.append(", ");
-        sb2.append(this.d.h);
-        sb2.append(" – ");
-        sb2.append(this.d.n);
-        return sb2.toString();
-    }
-
-    @Override // org.telegram.ui.Components.y50
-    public final int i() {
-        return Math.max(0, this.d.s.Z7 - 1);
-    }
-
-    @Override // org.telegram.ui.Components.y50
-    public final int j() {
-        return this.d.s.Y7;
-    }
-
-    @Override // org.telegram.ui.Components.y50
-    public final void k(int i10) {
-        int max;
-        if (this.d.s.Z7 > 0 && (max = Math.max(0, Math.min(this.d.s.Z7 - 1, i10))) != this.d.s.Y7) {
-            yu0 yu0Var = this.d;
-            yu0Var.r = yu0Var.s.Y7;
-            this.d.s.Y7 = max;
-            this.d.s.R0();
-            this.d.invalidate();
-            int i11 = this.d.s.Y7;
-            yu0 yu0Var2 = this.d;
-            if (i11 != yu0Var2.r) {
-                yu0Var2.s.o2(1);
+        int dp = AndroidUtilities.dp(6.0f) + (getMeasuredHeight() / 2);
+        int i10 = 0;
+        while (i10 < this.s.Z7) {
+            int i11 = this.e;
+            int i12 = (this.d * 2) + this.f;
+            int i13 = this.c;
+            int i14 = (i13 / 2) + ((i12 + i13) * i10) + i11;
+            if (i10 <= this.s.Y7) {
+                this.a.setColor(-11292945);
+            } else {
+                this.a.setColor(1728053247);
             }
+            canvas.drawCircle(i14, dp, i10 == this.s.Y7 ? AndroidUtilities.dp(6.0f) : this.c / 2, this.a);
+            if (i10 != 0) {
+                canvas.drawRect((i10 == this.s.Y7 + 1 ? AndroidUtilities.dpf2(2.0f) : 0.0f) + (((i14 - (this.c / 2)) - this.d) - this.f), dp - AndroidUtilities.dp(1.0f), (r2 + this.f) - (i10 == this.s.Y7 ? AndroidUtilities.dpf2(2.0f) : 0.0f), AndroidUtilities.dp(2.0f) + dp, this.a);
+            }
+            i10++;
         }
+        canvas.drawText(this.h, this.e, dp - AndroidUtilities.dp(16.0f), this.b);
+        canvas.drawText(this.n, (getMeasuredWidth() - this.e) - this.b.measureText(this.n), dp - AndroidUtilities.dp(16.0f), this.b);
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        this.c = AndroidUtilities.dp(8.0f);
+        this.d = AndroidUtilities.dp(2.0f);
+        this.e = AndroidUtilities.dp(18.0f);
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        float x10 = motionEvent.getX();
+        if (motionEvent.getAction() == 0) {
+            this.r = this.s.Y7;
+            getParent().requestDisallowInterceptTouchEvent(true);
+        }
+        int i10 = 0;
+        if (motionEvent.getAction() == 0 || motionEvent.getAction() == 2) {
+            while (true) {
+                if (i10 >= this.s.Z7) {
+                    break;
+                }
+                int i11 = this.e;
+                int i12 = this.f;
+                int i13 = this.d;
+                int i14 = this.c;
+                int i15 = (((i13 * 2) + i12 + i14) * i10) + i11;
+                int i16 = i14 / 2;
+                int i17 = i15 + i16;
+                int i18 = (i12 / 2) + i16 + i13;
+                if (x10 <= i17 - i18 || x10 >= i17 + i18) {
+                    i10++;
+                } else if (this.s.Y7 != i10) {
+                    this.s.Y7 = i10;
+                    this.s.R0();
+                    invalidate();
+                    return true;
+                }
+            }
+        } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+            if (this.s.Y7 != this.r) {
+                this.s.o2(1);
+            }
+            this.s.L6 = false;
+            return true;
+        }
+        return true;
     }
 }

@@ -14,7 +14,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class ie extends FrameLayout {
     public final org.telegram.ui.ActionBar.d6 a;
@@ -27,22 +27,22 @@ public final class ie extends FrameLayout {
     public ie(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context);
         this.a = d6Var;
-        LinearLayout f7 = org.telegram.messenger.ul.f(context, 1);
-        addView(f7, w7.x5.d(-1, -2.0f, 119, 17.0f, 9.0f, 130.0f, 9.0f));
+        LinearLayout f7 = org.telegram.messenger.ok.f(context, 1);
+        addView(f7, w7.y5.d(-1, -2.0f, 119, 17.0f, 9.0f, 130.0f, 9.0f));
         TextView textView = new TextView(context);
         this.c = textView;
         textView.setTextSize(1, 16.0f);
         textView.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.G6, d6Var));
-        TextView h = com.google.android.gms.internal.vision.e2.h(f7, textView, w7.x5.n(-1, -2), context);
+        TextView h = com.google.android.gms.internal.vision.e2.h(f7, textView, w7.y5.n(-1, -2), context);
         this.d = h;
         h.setTextSize(1, 13.0f);
         h.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.y6, d6Var));
-        f7.addView(h, w7.x5.k(0.0f, 4.0f, 0.0f, 0.0f, -1, -2));
+        f7.addView(h, w7.y5.k(0.0f, 4.0f, 0.0f, 0.0f, -1, -2));
         org.telegram.ui.Components.y5 y5Var = new org.telegram.ui.Components.y5(context);
         this.b = y5Var;
         y5Var.setTypeface(AndroidUtilities.bold());
         y5Var.setTextSize(1, 13.0f);
-        addView(y5Var, w7.x5.d(-2, -2.0f, 21, 0.0f, 0.0f, 18.0f, 0.0f));
+        addView(y5Var, w7.y5.d(-2, -2.0f, 21, 0.0f, 0.0f, 18.0f, 0.0f));
         DecimalFormatSymbols decimalFormatSymbols = new DecimalFormatSymbols(Locale.US);
         decimalFormatSymbols.setDecimalSeparator('.');
         DecimalFormat decimalFormat = new DecimalFormat("#.##", decimalFormatSymbols);

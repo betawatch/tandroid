@@ -6,11 +6,11 @@ import android.view.View;
 import androidx.appcompat.widget.ActionBarContextView;
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
-public final class a0 extends k.a implements l.i {
+public final class a0 extends k.a implements l.j {
     public final Context c;
-    public final l.k d;
+    public final l.l d;
     public n4.y e;
     public WeakReference f;
     public final /* synthetic */ b0 h;
@@ -19,19 +19,10 @@ public final class a0 extends k.a implements l.i {
         this.h = b0Var;
         this.c = context;
         this.e = yVar;
-        l.k kVar = new l.k(context);
-        kVar.l = 1;
-        this.d = kVar;
-        kVar.e = this;
-    }
-
-    @Override // l.i
-    public final boolean A(l.k kVar, MenuItem menuItem) {
-        n4.y yVar = this.e;
-        if (yVar != null) {
-            return ((ni.f) yVar.b).G(this, menuItem);
-        }
-        return false;
+        l.l lVar = new l.l(context);
+        lVar.l = 1;
+        this.d = lVar;
+        lVar.e = this;
     }
 
     @Override // k.a
@@ -66,7 +57,7 @@ public final class a0 extends k.a implements l.i {
     }
 
     @Override // k.a
-    public final l.k c() {
+    public final l.l c() {
         return this.d;
     }
 
@@ -90,12 +81,12 @@ public final class a0 extends k.a implements l.i {
         if (this.h.i != this) {
             return;
         }
-        l.k kVar = this.d;
-        kVar.w();
+        l.l lVar = this.d;
+        lVar.w();
         try {
-            this.e.U(this, kVar);
+            this.e.V(this, lVar);
         } finally {
-            kVar.v();
+            lVar.v();
         }
     }
 
@@ -136,8 +127,8 @@ public final class a0 extends k.a implements l.i {
         this.h.f.setTitleOptional(z10);
     }
 
-    @Override // l.i
-    public final void t(l.k kVar) {
+    @Override // l.j
+    public final void r(l.l lVar) {
         if (this.e == null) {
             return;
         }
@@ -146,5 +137,14 @@ public final class a0 extends k.a implements l.i {
         if (hVar != null) {
             hVar.l();
         }
+    }
+
+    @Override // l.j
+    public final boolean t(l.l lVar, MenuItem menuItem) {
+        n4.y yVar = this.e;
+        if (yVar != null) {
+            return ((oi.f) yVar.b).G(this, menuItem);
+        }
+        return false;
     }
 }

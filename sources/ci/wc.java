@@ -28,15 +28,15 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ul;
+import org.telegram.messenger.ok;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.f01;
-import org.telegram.ui.Components.o70;
-import org.telegram.ui.Components.om0;
 import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.t01;
+import org.telegram.ui.Components.y70;
+import org.telegram.ui.Components.zm0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class wc extends View {
     public final Paint A0;
@@ -80,7 +80,7 @@ public final class wc extends View {
     public float V;
     public final Paint V0;
     public boolean W;
-    public final om0 W0;
+    public final zm0 W0;
     public boolean X0;
     public final ai.m3 Y0;
     public long Z0;
@@ -124,7 +124,7 @@ public final class wc extends View {
     public boolean o1;
     public final Path p0;
     public VelocityTracker p1;
-    public final f01 q0;
+    public final t01 q0;
     public boolean q1;
     public final ArrayList r;
     public final Drawable r0;
@@ -206,7 +206,7 @@ public final class wc extends View {
         this.U0 = new Matrix();
         Paint paint8 = new Paint(1);
         this.V0 = paint8;
-        this.W0 = new om0(getContext(), null);
+        this.W0 = new zm0(getContext(), null);
         this.Z0 = -1L;
         this.a1 = -1L;
         this.b1 = new org.telegram.ui.Components.e6(0.0f, this, 0L, 340L, rrVar);
@@ -238,7 +238,7 @@ public final class wc extends View {
         paint3.setColor(-16777216);
         paint5.setColor(-1);
         paint4.setColor(637534208);
-        this.q0 = new f01(LocaleController.getString(R.string.StoryTimeline), 12.0f, AndroidUtilities.bold());
+        this.q0 = new t01(LocaleController.getString(R.string.StoryTimeline), 12.0f, AndroidUtilities.bold());
         Drawable mutate = getContext().getResources().getDrawable(R.drawable.timeline).mutate();
         this.r0 = mutate;
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
@@ -281,7 +281,7 @@ public final class wc extends View {
                                 wcVar2.V = floatValue;
                                 pc pcVar = wcVar2.a;
                                 if (pcVar != null) {
-                                    pcVar.n(f7.floatValue());
+                                    pcVar.l(f7.floatValue());
                                     break;
                                 }
                                 break;
@@ -291,7 +291,7 @@ public final class wc extends View {
                                 wcVar3.L = floatValue2;
                                 pc pcVar2 = wcVar3.a;
                                 if (pcVar2 != null) {
-                                    pcVar2.h(f7.floatValue());
+                                    pcVar2.i(f7.floatValue());
                                     break;
                                 }
                                 break;
@@ -300,7 +300,7 @@ public final class wc extends View {
                                 wcVar4.h.i = f7.floatValue();
                                 pc pcVar3 = wcVar4.a;
                                 if (pcVar3 != null) {
-                                    pcVar3.F(f7.floatValue());
+                                    pcVar3.D(f7.floatValue());
                                     break;
                                 }
                                 break;
@@ -312,7 +312,7 @@ public final class wc extends View {
                 int i14 = wcVar.y1;
                 int i15 = wcVar.x1;
                 float min2 = Math.min((i13 - i14) - i15, ((((AndroidUtilities.lerp(wcVar.T, 1.0f, wcVar.f0.c) * wcVar.R) + (wcVar.Q - wcVar.f)) / min) * wcVar.u1) + i14 + i15);
-                o70 F = o70.F(viewGroup, d6Var, wcVar);
+                y70 F = y70.F(viewGroup, d6Var, wcVar);
                 F.q(f8Var);
                 F.o();
                 F.c(R.drawable.msg_delete, LocaleController.getString(R.string.StoryAudioRemove), new mc(wcVar, 1), false);
@@ -345,7 +345,7 @@ public final class wc extends View {
                                 wcVar2.V = floatValue;
                                 pc pcVar = wcVar2.a;
                                 if (pcVar != null) {
-                                    pcVar.n(f7.floatValue());
+                                    pcVar.l(f7.floatValue());
                                     break;
                                 }
                                 break;
@@ -355,7 +355,7 @@ public final class wc extends View {
                                 wcVar3.L = floatValue2;
                                 pc pcVar2 = wcVar3.a;
                                 if (pcVar2 != null) {
-                                    pcVar2.h(f7.floatValue());
+                                    pcVar2.i(f7.floatValue());
                                     break;
                                 }
                                 break;
@@ -364,7 +364,7 @@ public final class wc extends View {
                                 wcVar4.h.i = f7.floatValue();
                                 pc pcVar3 = wcVar4.a;
                                 if (pcVar3 != null) {
-                                    pcVar3.F(f7.floatValue());
+                                    pcVar3.D(f7.floatValue());
                                     break;
                                 }
                                 break;
@@ -376,7 +376,7 @@ public final class wc extends View {
                 int i18 = wcVar.y1;
                 int i19 = wcVar.x1;
                 float min4 = Math.min((i17 - i18) - i19, ((((AndroidUtilities.lerp(wcVar.K, 1.0f, wcVar.d0.c) * wcVar.H) + (wcVar.I - wcVar.f)) / min3) * wcVar.u1) + i18 + i19);
-                o70 F2 = o70.F(viewGroup, d6Var, wcVar);
+                y70 F2 = y70.F(viewGroup, d6Var, wcVar);
                 F2.q(f8Var2);
                 F2.o();
                 F2.c(R.drawable.msg_delete, LocaleController.getString(R.string.StoryRoundRemove), new mc(wcVar, 2), false);
@@ -409,7 +409,7 @@ public final class wc extends View {
                                 wcVar2.V = floatValue;
                                 pc pcVar = wcVar2.a;
                                 if (pcVar != null) {
-                                    pcVar.n(f7.floatValue());
+                                    pcVar.l(f7.floatValue());
                                     break;
                                 }
                                 break;
@@ -419,7 +419,7 @@ public final class wc extends View {
                                 wcVar3.L = floatValue2;
                                 pc pcVar2 = wcVar3.a;
                                 if (pcVar2 != null) {
-                                    pcVar2.h(f7.floatValue());
+                                    pcVar2.i(f7.floatValue());
                                     break;
                                 }
                                 break;
@@ -428,14 +428,14 @@ public final class wc extends View {
                                 wcVar4.h.i = f7.floatValue();
                                 pc pcVar3 = wcVar4.a;
                                 if (pcVar3 != null) {
-                                    pcVar3.F(f7.floatValue());
+                                    pcVar3.D(f7.floatValue());
                                     break;
                                 }
                                 break;
                         }
                     }
                 };
-                o70 F3 = o70.F(viewGroup, d6Var, wcVar);
+                y70 F3 = y70.F(viewGroup, d6Var, wcVar);
                 F3.q(f8Var3);
                 F3.V(5);
                 F3.U = true;
@@ -453,7 +453,7 @@ public final class wc extends View {
                 f8Var4.c = 1.5f;
                 f8Var4.d(qcVar.i);
                 f8Var4.h = new ai.g3(8, wcVar, qcVar);
-                o70 F4 = o70.F(viewGroup, d6Var, wcVar);
+                y70 F4 = y70.F(viewGroup, d6Var, wcVar);
                 F4.q(f8Var4);
                 F4.V(5);
                 F4.U = true;
@@ -678,8 +678,8 @@ public final class wc extends View {
 
     @Override // android.view.View
     public final void computeScroll() {
-        om0 om0Var = this.W0;
-        if (!om0Var.b()) {
+        zm0 zm0Var = this.W0;
+        if (!zm0Var.b()) {
             if (this.r1) {
                 this.r1 = false;
                 pc pcVar = this.a;
@@ -691,13 +691,13 @@ public final class wc extends View {
             }
             return;
         }
-        int i10 = om0Var.j;
+        int i10 = zm0Var.j;
         long min = Math.min(getBaseDuration(), getMaxScrollDuration());
         if (this.q1) {
             this.f = (long) Math.max(0.0f, (((i10 - this.y1) - this.x1) / this.u1) * min);
         } else {
             if (!this.P) {
-                om0Var.a();
+                zm0Var.a();
                 return;
             }
             int i11 = this.y1;
@@ -920,10 +920,10 @@ public final class wc extends View {
                     float h = ((wcVar.q0.h() + AndroidUtilities.dp(3.66f)) + drawable.getIntrinsicWidth()) / 2.0f;
                     int centerX = (int) (rectF9.centerX() - h);
                     int centerY = (int) rectF9.centerY();
-                    drawable.setBounds(centerX, ul.e(2, centerY, drawable), drawable.getIntrinsicWidth() + centerX, ul.z(2, centerY, drawable));
+                    drawable.setBounds(centerX, ok.d(2, centerY, drawable), drawable.getIntrinsicWidth() + centerX, org.telegram.ui.Cells.c1.d(2, centerY, drawable));
                     drawable.setAlpha(191);
                     drawable.draw(canvas);
-                    f01 f01Var = wcVar.q0;
+                    t01 t01Var = wcVar.q0;
                     float centerX2 = (rectF9.centerX() - h) + drawable.getIntrinsicWidth() + AndroidUtilities.dp(3.66f);
                     float f63 = centerY;
                     paint = paint4;
@@ -931,7 +931,7 @@ public final class wc extends View {
                     arrayList = arrayList21;
                     naVar = naVar2;
                     f7 = 0.4f;
-                    f01Var.c(centerX2, f63, 0.75f, -1, canvas);
+                    t01Var.c(centerX2, f63, 0.75f, -1, canvas);
                     canvas.restore();
                 }
             } else {
@@ -950,10 +950,10 @@ public final class wc extends View {
             float h10 = ((wcVar.q0.h() + AndroidUtilities.dp(3.66f)) + drawable.getIntrinsicWidth()) / 2.0f;
             int centerX3 = (int) (rectF9.centerX() - h10);
             int centerY2 = (int) rectF9.centerY();
-            drawable.setBounds(centerX3, ul.e(2, centerY2, drawable), drawable.getIntrinsicWidth() + centerX3, ul.z(2, centerY2, drawable));
+            drawable.setBounds(centerX3, ok.d(2, centerY2, drawable), drawable.getIntrinsicWidth() + centerX3, org.telegram.ui.Cells.c1.d(2, centerY2, drawable));
             drawable.setAlpha(191);
             drawable.draw(canvas);
-            f01 f01Var2 = wcVar.q0;
+            t01 t01Var2 = wcVar.q0;
             float centerX22 = (rectF9.centerX() - h10) + drawable.getIntrinsicWidth() + AndroidUtilities.dp(3.66f);
             float f632 = centerY2;
             paint = paint4;
@@ -961,7 +961,7 @@ public final class wc extends View {
             arrayList = arrayList21;
             naVar = naVar2;
             f7 = 0.4f;
-            f01Var2.c(centerX22, f632, 0.75f, -1, canvas);
+            t01Var2.c(centerX22, f632, 0.75f, -1, canvas);
             canvas.restore();
         } else {
             rectF = rectF6;
@@ -1841,8 +1841,8 @@ public final class wc extends View {
                 qcVar15.h = Utilities.clamp(qcVar15.h + max, f10, 0.0f);
                 pc pcVar = wcVar.a;
                 if (pcVar != null) {
-                    pcVar.H(wcVar.h.g, false);
-                    wcVar.a.e0(wcVar.h.h);
+                    pcVar.F(wcVar.h.g, false);
+                    wcVar.a.a0(wcVar.h.h);
                 }
                 wcVar.invalidate();
             } else if (i42 == 8) {
@@ -1884,9 +1884,9 @@ public final class wc extends View {
                     wcVar.T = Utilities.clamp(wcVar.T + min9, 1.0f, 0.0f);
                     pc pcVar2 = wcVar.a;
                     if (pcVar2 != null) {
-                        pcVar2.Z(wcVar.S);
-                        wcVar.a.V(wcVar.T);
-                        wcVar.a.o(wcVar.e, false);
+                        pcVar2.Y(wcVar.S);
+                        wcVar.a.T(wcVar.T);
+                        wcVar.a.n(wcVar.e, false);
                     }
                     wcVar.invalidate();
                 } else {
@@ -1936,7 +1936,7 @@ public final class wc extends View {
         float f14 = f7 + f10;
         float f15 = (f14 - dp2) / 2.0f;
         float f16 = (f14 + dp2) / 2.0f;
-        rectF.set(org.telegram.messenger.z0.y(AndroidUtilities.dp(this.X0 ? 2.0f : 10.0f), dp, 2.0f, f11), f15, f11 - ((AndroidUtilities.dp(this.X0 ? 2.0f : 10.0f) + dp) / 2.0f), f16);
+        rectF.set(org.telegram.messenger.f0.x(AndroidUtilities.dp(this.X0 ? 2.0f : 10.0f), dp, 2.0f, f11), f15, f11 - ((AndroidUtilities.dp(this.X0 ? 2.0f : 10.0f) + dp) / 2.0f), f16);
         if (!this.X0) {
             canvas.drawRoundRect(rectF, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), paint5);
             if (paint != null && !this.X0) {
@@ -1944,7 +1944,7 @@ public final class wc extends View {
                 canvas.drawRoundRect(rectF, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), paint4);
             }
         }
-        rectF.set(com.google.android.gms.internal.vision.e2.A(AndroidUtilities.dp(this.X0 ? 2.5f : 10.0f), dp, 2.0f, f12), f15, org.telegram.messenger.z0.a(AndroidUtilities.dp(this.X0 ? 2.5f : 10.0f), dp, 2.0f, f12), f16);
+        rectF.set(com.google.android.gms.internal.vision.e2.A(AndroidUtilities.dp(this.X0 ? 2.5f : 10.0f), dp, 2.0f, f12), f15, org.telegram.messenger.f0.a(AndroidUtilities.dp(this.X0 ? 2.5f : 10.0f), dp, 2.0f, f12), f16);
         if (!this.X0) {
             canvas.drawRoundRect(rectF, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), paint5);
             if (paint != null) {
@@ -2003,8 +2003,8 @@ public final class wc extends View {
             this.T = Utilities.clamp(this.T - (f12 / this.R), 1.0f, 0.0f);
             pc pcVar2 = this.a;
             if (pcVar2 != null) {
-                pcVar2.Z(this.S);
-                this.a.V(this.T);
+                pcVar2.Y(this.S);
+                this.a.T(this.T);
             }
         } else if (this.P) {
             if (qcVar != null) {
@@ -2052,8 +2052,8 @@ public final class wc extends View {
                 this.Q = Utilities.clamp(this.Q + j19, j14, j13);
                 pc pcVar3 = this.a;
                 if (pcVar3 != null) {
-                    pcVar3.Z(this.S);
-                    this.a.V(this.T);
+                    pcVar3.Y(this.S);
+                    this.a.T(this.T);
                 }
             } else if (j20 < j17) {
                 float clamp5 = Utilities.clamp(((f13 - j18) - j19) / this.R, 1.0f - min, 0.0f);
@@ -2073,8 +2073,8 @@ public final class wc extends View {
                 this.Q = Utilities.clamp(this.Q + j19, j12, j11);
                 pc pcVar4 = this.a;
                 if (pcVar4 != null) {
-                    pcVar4.Z(this.S);
-                    this.a.V(this.T);
+                    pcVar4.Y(this.S);
+                    this.a.T(this.T);
                 }
             } else {
                 this.Q = j20;
@@ -2088,7 +2088,7 @@ public final class wc extends View {
         invalidate();
         pc pcVar5 = this.a;
         if (pcVar5 != null) {
-            pcVar5.o0(this.Q + ((long) (this.S * this.R)));
+            pcVar5.l0(this.Q + ((long) (this.S * this.R)));
         }
         boolean z10 = this.m1;
         if (z10 || (pcVar = this.a) == null) {
@@ -2111,7 +2111,7 @@ public final class wc extends View {
                 }
                 pc pcVar6 = this.a;
                 if (pcVar6 != null) {
-                    pcVar6.o(this.e, false);
+                    pcVar6.n(this.e, false);
                     return;
                 }
                 return;
@@ -2141,7 +2141,7 @@ public final class wc extends View {
         }
         pc pcVar7 = this.a;
         this.e = clamp;
-        pcVar7.o(clamp, false);
+        pcVar7.n(clamp, false);
     }
 
     public final void i(qc qcVar, float f7) {
@@ -2190,8 +2190,8 @@ public final class wc extends View {
                     qcVar.f = Utilities.clamp(qcVar.f + j16, j12, j11);
                     pc pcVar2 = this.a;
                     if (pcVar2 != null) {
-                        pcVar2.T(qcVar.g, qcVar.a);
-                        this.a.d0(qcVar.h, qcVar.a);
+                        pcVar2.R(qcVar.g, qcVar.a);
+                        this.a.Z(qcVar.h, qcVar.a);
                     }
                 } else if (j17 < j14) {
                     float clamp4 = Utilities.clamp((((this.v.g * r2.e) - j15) - j16) / qcVar.e, 1.0f - min, 0.0f);
@@ -2214,8 +2214,8 @@ public final class wc extends View {
                     qcVar.f = Utilities.clamp(qcVar.f + j16, j10, j3);
                     pc pcVar3 = this.a;
                     if (pcVar3 != null) {
-                        pcVar3.T(qcVar.g, qcVar.a);
-                        this.a.d0(qcVar.h, qcVar.a);
+                        pcVar3.R(qcVar.g, qcVar.a);
+                        this.a.Z(qcVar.h, qcVar.a);
                     }
                 } else {
                     qcVar.f = j17;
@@ -2230,7 +2230,7 @@ public final class wc extends View {
         invalidate();
         pc pcVar4 = this.a;
         if (pcVar4 != null) {
-            pcVar4.j0(qcVar.a, qcVar.f);
+            pcVar4.i0(qcVar.a, qcVar.f);
         }
         boolean z10 = this.m1;
         if (z10 || (pcVar = this.a) == null) {
@@ -2248,7 +2248,7 @@ public final class wc extends View {
                 }
                 pc pcVar5 = this.a;
                 if (pcVar5 != null) {
-                    pcVar5.o(this.e, false);
+                    pcVar5.n(this.e, false);
                     return;
                 }
                 return;
@@ -2274,7 +2274,7 @@ public final class wc extends View {
         }
         pc pcVar6 = this.a;
         this.e = clamp;
-        pcVar6.o(clamp, false);
+        pcVar6.n(clamp, false);
     }
 
     public final void j(float f7) {
@@ -2295,7 +2295,7 @@ public final class wc extends View {
             pc pcVar2 = this.a;
             if (pcVar2 != null) {
                 pcVar2.u(this.J);
-                this.a.i0(this.K);
+                this.a.h0(this.K);
             }
         } else if (this.G) {
             float f11 = qcVar.h;
@@ -2333,7 +2333,7 @@ public final class wc extends View {
                 pc pcVar3 = this.a;
                 if (pcVar3 != null) {
                     pcVar3.u(this.J);
-                    this.a.i0(this.K);
+                    this.a.h0(this.K);
                 }
             } else if (j18 < j15) {
                 float clamp5 = Utilities.clamp((((this.h.g * r1.e) - j16) - j17) / this.H, 1.0f - min, 0.0f);
@@ -2357,7 +2357,7 @@ public final class wc extends View {
                 pc pcVar4 = this.a;
                 if (pcVar4 != null) {
                     pcVar4.u(this.J);
-                    this.a.i0(this.K);
+                    this.a.h0(this.K);
                 }
             } else {
                 this.I = j18;
@@ -2371,7 +2371,7 @@ public final class wc extends View {
         invalidate();
         pc pcVar5 = this.a;
         if (pcVar5 != null) {
-            pcVar5.O(this.I + ((long) (this.J * this.H)));
+            pcVar5.J(this.I + ((long) (this.J * this.H)));
         }
         boolean z10 = this.m1;
         if (z10 || (pcVar = this.a) == null) {
@@ -2389,7 +2389,7 @@ public final class wc extends View {
                 }
                 pc pcVar6 = this.a;
                 if (pcVar6 != null) {
-                    pcVar6.o(this.e, false);
+                    pcVar6.n(this.e, false);
                     return;
                 }
                 return;
@@ -2414,7 +2414,7 @@ public final class wc extends View {
         }
         pc pcVar7 = this.a;
         this.e = clamp;
-        pcVar7.o(clamp, false);
+        pcVar7.n(clamp, false);
     }
 
     public final void k() {
@@ -2473,7 +2473,7 @@ public final class wc extends View {
         invalidate();
         pc pcVar = this.a;
         if (pcVar != null) {
-            pcVar.o(clamp, z10);
+            pcVar.n(clamp, z10);
         }
         ai.j jVar = this.d1;
         if (jVar != null) {
@@ -2687,7 +2687,7 @@ public final class wc extends View {
             if (motionEvent.getAction() != 0 || motionEvent.getY() >= timelineHeight) {
                 long currentTimeMillis = System.currentTimeMillis();
                 int action = motionEvent.getAction();
-                om0 om0Var = this.W0;
+                zm0 zm0Var = this.W0;
                 ai.m3 m3Var = this.Y0;
                 if (action == 0) {
                     ai.j jVar2 = this.d1;
@@ -2695,7 +2695,7 @@ public final class wc extends View {
                         AndroidUtilities.cancelRunOnUIThread(jVar2);
                         this.d1 = null;
                     }
-                    om0Var.a();
+                    zm0Var.a();
                     this.i1 = -1;
                     this.h1 = c(motionEvent);
                     this.j1 = -1;
@@ -2816,11 +2816,11 @@ public final class wc extends View {
                                     }
                                     pc pcVar5 = this.a;
                                     if (pcVar5 != null) {
-                                        pcVar5.o0(this.Q + ((long) (this.S * this.R)));
+                                        pcVar5.l0(this.Q + ((long) (this.S * this.R)));
                                     }
                                     pc pcVar6 = this.a;
                                     if (pcVar6 != null) {
-                                        pcVar6.Z(this.S);
+                                        pcVar6.Y(this.S);
                                     }
                                 } else if (i15 == 7) {
                                     float min4 = Math.min(1.0f, Math.max(0L, (this.f - this.Q) + min3) / this.R);
@@ -2854,7 +2854,7 @@ public final class wc extends View {
                                     }
                                     pc pcVar7 = this.a;
                                     if (pcVar7 != null) {
-                                        pcVar7.V(this.T);
+                                        pcVar7.T(this.T);
                                     }
                                 }
                                 if (this.h1 == 8) {
@@ -2864,9 +2864,9 @@ public final class wc extends View {
                                     this.T += min5;
                                     pc pcVar8 = this.a;
                                     if (pcVar8 != null) {
-                                        pcVar8.Z(f27);
-                                        this.a.o0(this.Q + ((long) (this.S * this.R)));
-                                        this.a.V(this.T);
+                                        pcVar8.Y(f27);
+                                        this.a.l0(this.Q + ((long) (this.S * this.R)));
+                                        this.a.T(this.T);
                                     }
                                     pc pcVar9 = this.a;
                                     if (pcVar9 != null) {
@@ -2878,7 +2878,7 @@ public final class wc extends View {
                                     pc pcVar10 = this.a;
                                     if (pcVar10 != null) {
                                         pcVar10.w(true);
-                                        this.a.o(this.e, false);
+                                        this.a.n(this.e, false);
                                     }
                                 }
                                 invalidate();
@@ -2916,7 +2916,7 @@ public final class wc extends View {
                                     }
                                     pc pcVar11 = this.a;
                                     if (pcVar11 != null) {
-                                        pcVar11.O(this.I + ((long) (this.J * this.H)));
+                                        pcVar11.J(this.I + ((long) (this.J * this.H)));
                                     }
                                     pc pcVar12 = this.a;
                                     if (pcVar12 != null) {
@@ -2951,7 +2951,7 @@ public final class wc extends View {
                                     }
                                     pc pcVar13 = this.a;
                                     if (pcVar13 != null) {
-                                        pcVar13.i0(this.K);
+                                        pcVar13.h0(this.K);
                                     }
                                 }
                                 if (this.h1 == 12) {
@@ -2962,8 +2962,8 @@ public final class wc extends View {
                                     pc pcVar14 = this.a;
                                     if (pcVar14 != null) {
                                         pcVar14.u(f36);
-                                        this.a.O(this.I + ((long) (this.J * this.H)));
-                                        this.a.i0(this.K);
+                                        this.a.J(this.I + ((long) (this.J * this.H)));
+                                        this.a.h0(this.K);
                                     }
                                     pc pcVar15 = this.a;
                                     if (pcVar15 != null) {
@@ -2976,7 +2976,7 @@ public final class wc extends View {
                                     if (pcVar16 != null) {
                                         pcVar16.w(true);
                                         z13 = false;
-                                        this.a.o(this.e, false);
+                                        this.a.n(this.e, false);
                                         invalidate();
                                         if (!this.m1) {
                                             this.n1 = 1.0f;
@@ -3055,11 +3055,11 @@ public final class wc extends View {
                                                 }
                                                 pcVar3 = this.a;
                                                 if (pcVar3 != null) {
-                                                    pcVar3.j0(qcVar11.a, qcVar11.f);
+                                                    pcVar3.i0(qcVar11.a, qcVar11.f);
                                                 }
                                                 pcVar4 = this.a;
                                                 if (pcVar4 != null) {
-                                                    pcVar4.T(qcVar11.g, qcVar11.a);
+                                                    pcVar4.R(qcVar11.g, qcVar11.a);
                                                 }
                                             }
                                         } else {
@@ -3099,7 +3099,7 @@ public final class wc extends View {
                                             }
                                             pc pcVar17 = this.a;
                                             if (pcVar17 != null) {
-                                                pcVar17.d0(qcVar11.h, qcVar11.a);
+                                                pcVar17.Z(qcVar11.h, qcVar11.a);
                                             }
                                         }
                                     }
@@ -3110,9 +3110,9 @@ public final class wc extends View {
                                         qcVar11.h += min9;
                                         pc pcVar18 = this.a;
                                         if (pcVar18 != null) {
-                                            pcVar18.T(f39, qcVar11.a);
-                                            this.a.j0(qcVar11.a, qcVar11.f);
-                                            this.a.d0(qcVar11.h, qcVar11.a);
+                                            pcVar18.R(f39, qcVar11.a);
+                                            this.a.i0(qcVar11.a, qcVar11.f);
+                                            this.a.Z(qcVar11.h, qcVar11.a);
                                         }
                                         pc pcVar19 = this.a;
                                         if (pcVar19 != null) {
@@ -3141,7 +3141,7 @@ public final class wc extends View {
                                 qcVar2.g = Utilities.clamp(qcVar2.g + f41, qcVar2.h - (1000.0f / f40), 0.0f);
                                 pc pcVar20 = this.a;
                                 if (pcVar20 != null) {
-                                    pcVar20.H(this.h.g, false);
+                                    pcVar20.F(this.h.g, false);
                                 }
                                 qc qcVar12 = this.h;
                                 float f42 = qcVar12.h - qcVar12.g;
@@ -3151,14 +3151,14 @@ public final class wc extends View {
                                     qcVar13.h = Math.min(1.0f, (f() / this.h.e) + qcVar13.g);
                                     pc pcVar21 = this.a;
                                     if (pcVar21 != null) {
-                                        pcVar21.e0(this.h.h);
+                                        pcVar21.a0(this.h.h);
                                     }
                                 }
                             } else if (i11 == 3) {
                                 qcVar2.h = Utilities.clamp(qcVar2.h + f41, 1.0f, (1000.0f / f40) + qcVar2.g);
                                 pc pcVar22 = this.a;
                                 if (pcVar22 != null) {
-                                    pcVar22.e0(this.h.h);
+                                    pcVar22.a0(this.h.h);
                                 }
                                 qc qcVar14 = this.h;
                                 float f44 = qcVar14.h - qcVar14.g;
@@ -3168,7 +3168,7 @@ public final class wc extends View {
                                     qcVar15.g = Math.max(0.0f, qcVar15.h - (f() / this.h.e));
                                     pc pcVar23 = this.a;
                                     if (pcVar23 != null) {
-                                        pcVar23.H(this.h.g, false);
+                                        pcVar23.F(this.h.g, false);
                                     }
                                 }
                             } else if (i11 == 4) {
@@ -3179,8 +3179,8 @@ public final class wc extends View {
                                 qcVar16.h += min10;
                                 pc pcVar24 = this.a;
                                 if (pcVar24 != null) {
-                                    pcVar24.H(f46, false);
-                                    this.a.e0(this.h.h);
+                                    pcVar24.F(f46, false);
+                                    this.a.a0(this.h.h);
                                 }
                             }
                             float f47 = this.e;
@@ -3193,7 +3193,7 @@ public final class wc extends View {
                                 this.e = j15;
                                 pc pcVar25 = this.a;
                                 if (pcVar25 != null) {
-                                    pcVar25.o(j15, false);
+                                    pcVar25.n(j15, false);
                                 }
                             }
                             invalidate();
@@ -3214,7 +3214,7 @@ public final class wc extends View {
                     }
                 } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
                     AndroidUtilities.cancelRunOnUIThread(m3Var);
-                    om0Var.a();
+                    zm0Var.a();
                     if (motionEvent.getAction() == 1) {
                         if ((System.currentTimeMillis() - this.f1 > ViewConfiguration.getTapTimeout() || this.m1) && this.j0) {
                             int i21 = this.h1;
@@ -3357,7 +3357,7 @@ public final class wc extends View {
                                         this.G = false;
                                         this.n = i31;
                                         if (this.a != null && i31 >= 0 && i31 < arrayList.size()) {
-                                            this.a.b(((qc) arrayList.get(this.k1)).a);
+                                            this.a.e(((qc) arrayList.get(this.k1)).a);
                                         }
                                         invalidate();
                                     }
@@ -3367,7 +3367,7 @@ public final class wc extends View {
                                     this.G = false;
                                     pc pcVar26 = this.a;
                                     if (pcVar26 != null) {
-                                        pcVar26.Q(false);
+                                        pcVar26.O(false);
                                     }
                                     invalidate();
                                 } else if (i29 == 1 && !this.G) {
@@ -3375,7 +3375,7 @@ public final class wc extends View {
                                     this.G = true;
                                     pc pcVar27 = this.a;
                                     if (pcVar27 != null) {
-                                        pcVar27.Q(true);
+                                        pcVar27.O(true);
                                     }
                                     invalidate();
                                 } else if (i29 != 2 && this.P) {
@@ -3383,7 +3383,7 @@ public final class wc extends View {
                                     this.G = false;
                                     pc pcVar28 = this.a;
                                     if (pcVar28 != null) {
-                                        pcVar28.Q(false);
+                                        pcVar28.O(false);
                                     }
                                     invalidate();
                                 } else if (i29 == 1 || !this.G) {
@@ -3398,7 +3398,7 @@ public final class wc extends View {
                                     this.G = false;
                                     pc pcVar29 = this.a;
                                     if (pcVar29 != null) {
-                                        pcVar29.Q(false);
+                                        pcVar29.O(false);
                                     }
                                     invalidate();
                                 }
@@ -3412,8 +3412,8 @@ public final class wc extends View {
                                 qcVar21.h = f67 + f68;
                                 pc pcVar30 = this.a;
                                 if (pcVar30 != null) {
-                                    pcVar30.H(f68, true);
-                                    this.a.e0(this.h.h);
+                                    pcVar30.F(f68, true);
+                                    this.a.a0(this.h.h);
                                 }
                                 invalidate();
                             }

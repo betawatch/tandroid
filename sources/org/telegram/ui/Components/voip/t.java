@@ -15,13 +15,13 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.ba;
 import org.telegram.ui.Components.h9;
-import org.telegram.ui.e60;
-import org.telegram.ui.f60;
+import org.telegram.ui.c60;
+import org.telegram.ui.d60;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class t extends View {
-    public e60 E;
+    public c60 E;
     public int F;
     public float G;
     public final /* synthetic */ u H;
@@ -37,8 +37,8 @@ public final class t extends View {
     public float s;
     public float v;
     public float w;
-    public final e60[] x;
-    public e60 y;
+    public final c60[] x;
+    public c60 y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public t(u uVar, Context context) {
@@ -51,7 +51,7 @@ public final class t extends View {
         this.f = paint;
         Paint paint2 = new Paint(1);
         this.h = paint2;
-        this.x = new e60[3];
+        this.x = new c60[3];
         this.F = -1;
         this.G = 1.0f;
         ba baVar = new ba(9);
@@ -71,30 +71,30 @@ public final class t extends View {
 
     public static void a(t tVar, boolean z10) {
         TLRPC.GroupCallParticipant groupCallParticipant;
-        e60[] e60VarArr = tVar.x;
+        c60[] c60VarArr = tVar.x;
         p0 p0Var = tVar.H.n0;
         int i10 = (p0Var.k || !((groupCallParticipant = p0Var.h) == null || !groupCallParticipant.muted || groupCallParticipant.can_self_unmute)) ? 2 : p0Var.e ? 1 : 0;
         if (i10 == tVar.F) {
             return;
         }
         tVar.F = i10;
-        if (e60VarArr[i10] == null) {
-            e60VarArr[i10] = new e60(i10);
+        if (c60VarArr[i10] == null) {
+            c60VarArr[i10] = new c60(i10);
             int i11 = tVar.F;
             if (i11 == 2) {
-                e60VarArr[i11].g = new LinearGradient(0.0f, 400.0f, 400.0f, 0.0f, new int[]{h6.w0(null, h6.ih, false), h6.w0(null, h6.kh, false), h6.w0(null, h6.jh, false)}, (float[]) null, Shader.TileMode.CLAMP);
+                c60VarArr[i11].g = new LinearGradient(0.0f, 400.0f, 400.0f, 0.0f, new int[]{h6.w0(null, h6.ih, false), h6.w0(null, h6.kh, false), h6.w0(null, h6.jh, false)}, (float[]) null, Shader.TileMode.CLAMP);
             } else if (i11 == 1) {
-                e60VarArr[i11].g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{h6.w0(null, h6.Fg, false), h6.w0(null, h6.Hg, false)}, (float[]) null, Shader.TileMode.CLAMP);
+                c60VarArr[i11].g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{h6.w0(null, h6.Fg, false), h6.w0(null, h6.Hg, false)}, (float[]) null, Shader.TileMode.CLAMP);
             } else {
-                e60VarArr[i11].g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{h6.w0(null, h6.Jg, false), h6.w0(null, h6.Ig, false)}, (float[]) null, Shader.TileMode.CLAMP);
+                c60VarArr[i11].g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{h6.w0(null, h6.Jg, false), h6.w0(null, h6.Ig, false)}, (float[]) null, Shader.TileMode.CLAMP);
             }
         }
-        e60 e60Var = e60VarArr[tVar.F];
-        e60 e60Var2 = tVar.y;
-        if (e60Var != e60Var2) {
-            tVar.E = e60Var2;
-            tVar.y = e60Var;
-            if (e60Var2 == null || !z10) {
+        c60 c60Var = c60VarArr[tVar.F];
+        c60 c60Var2 = tVar.y;
+        if (c60Var != c60Var2) {
+            tVar.E = c60Var2;
+            tVar.y = c60Var;
+            if (c60Var2 == null || !z10) {
                 tVar.G = 1.0f;
                 tVar.E = null;
             } else {
@@ -120,9 +120,9 @@ public final class t extends View {
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        e60 e60Var;
+        c60 c60Var;
         float f7;
-        e60 e60Var2;
+        c60 c60Var2;
         super.onDraw(canvas);
         RectF rectF = AndroidUtilities.rectTmp;
         p pVar = this.H.a;
@@ -164,9 +164,9 @@ public final class t extends View {
         float f18 = (this.n * 0.8f) + 1.0f;
         canvas.save();
         canvas.scale(f18, f18, this.v, this.w);
-        e60 e60Var3 = this.y;
-        if (e60Var3 != null) {
-            e60Var3.b((int) (this.w - AndroidUtilities.dp(100.0f)), (int) (this.v - AndroidUtilities.dp(100.0f)), AndroidUtilities.dp(200.0f), 16L, this.n);
+        c60 c60Var3 = this.y;
+        if (c60Var3 != null) {
+            c60Var3.b((int) (this.w - AndroidUtilities.dp(100.0f)), (int) (this.v - AndroidUtilities.dp(100.0f)), AndroidUtilities.dp(200.0f), 16L, this.n);
         }
         float f19 = this.n;
         ba baVar = this.e;
@@ -176,13 +176,13 @@ public final class t extends View {
         baVar2.e(f20, 1.0f);
         for (int i10 = 0; i10 < 2; i10++) {
             Paint paint = this.f;
-            if (i10 != 0 || (e60Var2 = this.E) == null) {
-                if (i10 == 1 && (e60Var = this.y) != null) {
-                    paint.setShader(e60Var.g);
+            if (i10 != 0 || (c60Var2 = this.E) == null) {
+                if (i10 == 1 && (c60Var = this.y) != null) {
+                    paint.setShader(c60Var.g);
                     f7 = this.G;
                 }
             } else {
-                paint.setShader(e60Var2.g);
+                paint.setShader(c60Var2.g);
                 f7 = 1.0f - this.G;
             }
             paint.setAlpha((int) (f7 * 76.0f));
@@ -203,7 +203,7 @@ public final class t extends View {
         super.onMeasure(i10, i11);
         float dp = AndroidUtilities.dp(157.0f);
         this.v = getMeasuredWidth() >> 1;
-        this.w = (getMeasuredHeight() >> 1) + (f60.F3 ? 0.0f : (-getMeasuredHeight()) * 0.12f);
+        this.w = (getMeasuredHeight() >> 1) + (d60.F3 ? 0.0f : (-getMeasuredHeight()) * 0.12f);
         float f7 = dp / 2.0f;
         ImageReceiver imageReceiver = this.a;
         imageReceiver.setRoundRadius((int) f7);

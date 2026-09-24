@@ -7,16 +7,16 @@ import android.view.ViewOutlineProvider;
 import ci.i;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.k;
-import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.ob0;
-import org.telegram.ui.Components.voip.s2;
-import org.telegram.ui.Components.voip.u1;
+import org.telegram.ui.Components.c60;
+import org.telegram.ui.Components.voip.t2;
+import org.telegram.ui.Components.voip.v1;
 import org.telegram.ui.Components.wi;
-import org.telegram.ui.Components.x50;
+import org.telegram.ui.Components.zb0;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class b extends ViewOutlineProvider {
     public final /* synthetic */ int a;
@@ -69,42 +69,42 @@ public final class b extends ViewOutlineProvider {
                     break;
                 }
             case 2:
-                int i11 = ((x50) obj).N0;
+                int i11 = ((c60) obj).S0;
                 outline.setOval(0, 0, i11, i11);
                 break;
             case 3:
-                outline.setRoundRect(0, ((ob0) obj).T + 1, view.getMeasuredWidth(), view.getMeasuredHeight(), AndroidUtilities.dp(8.0f));
+                outline.setRoundRect(0, ((zb0) obj).T + 1, view.getMeasuredWidth(), view.getMeasuredHeight(), AndroidUtilities.dp(8.0f));
                 break;
             case 4:
-                u1 u1Var = (u1) obj;
-                float f12 = u1Var.Q;
+                v1 v1Var = (v1) obj;
+                float f12 = v1Var.Q;
                 if (f12 < 0.0f) {
-                    if (!u1Var.M) {
+                    if (!v1Var.M) {
                         outline.setRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
                         break;
                     } else {
-                        outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), u1Var.M ? AndroidUtilities.dp(4.0f) : 0.0f);
+                        outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), v1Var.M ? AndroidUtilities.dp(4.0f) : 0.0f);
                         break;
                     }
                 } else if (f12 >= 1.0f) {
-                    outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), u1Var.Q);
+                    outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), v1Var.Q);
                     break;
                 } else {
                     outline.setRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
                     break;
                 }
             case 5:
-                s2 s2Var = (s2) obj;
-                if (s2Var.b >= 1.0f) {
-                    outline.setRoundRect((int) s2Var.O, (int) s2Var.N, (int) (view.getMeasuredWidth() - s2Var.O), (int) (view.getMeasuredHeight() - s2Var.N), s2Var.b);
+                t2 t2Var = (t2) obj;
+                if (t2Var.b >= 1.0f) {
+                    outline.setRoundRect((int) t2Var.O, (int) t2Var.N, (int) (view.getMeasuredWidth() - t2Var.O), (int) (view.getMeasuredHeight() - t2Var.N), t2Var.b);
                     break;
                 } else {
-                    outline.setRect((int) s2Var.O, (int) s2Var.N, (int) (view.getMeasuredWidth() - s2Var.O), (int) (view.getMeasuredHeight() - s2Var.N));
+                    outline.setRect((int) t2Var.O, (int) t2Var.N, (int) (view.getMeasuredWidth() - t2Var.O), (int) (view.getMeasuredHeight() - t2Var.N));
                     break;
                 }
             default:
                 int dp2 = AndroidUtilities.dp(12.0f);
-                kVar = ((n2) ((PremiumPreviewFragment) obj)).actionBar;
+                kVar = ((m2) ((PremiumPreviewFragment) obj)).actionBar;
                 outline.setRoundRect(dp2, AndroidUtilities.dp(12.0f) + kVar.getBottom(), view.getWidth() - AndroidUtilities.dp(12.0f), AndroidUtilities.dp(16.0f) + view.getMeasuredHeight(), AndroidUtilities.dp(16.0f));
                 break;
         }

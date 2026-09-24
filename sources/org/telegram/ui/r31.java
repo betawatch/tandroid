@@ -1,34 +1,26 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.text.Editable;
+import android.text.TextUtils;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class r31 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ t31 b;
+public final class r31 extends org.telegram.ui.Cells.j3 {
+    public final /* synthetic */ s31 x;
 
-    public /* synthetic */ r31(t31 t31Var, int i10) {
-        this.a = i10;
-        this.b = t31Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public r31(s31 s31Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, "", true, false, 1024, d6Var);
+        this.x = s31Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                t31 t31Var = this.b;
-                u31 u31Var = t31Var.v;
-                if (t31Var.a != 0) {
-                    u31Var.onBackPressed();
-                    break;
-                } else {
-                    u31Var.dismiss();
-                    break;
-                }
-            default:
-                AndroidUtilities.showKeyboard(this.b.n.b);
-                break;
+    @Override // org.telegram.ui.Cells.j3
+    public final void b(Editable editable) {
+        s31 s31Var = this.x;
+        ci.d dVar = s31Var.s;
+        if (dVar != null) {
+            dVar.setEnabled(s31Var.d.optional || !TextUtils.isEmpty(s31Var.n.getText()));
         }
     }
 }

@@ -2,7 +2,7 @@ package d6;
 
 import android.os.Parcel;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class z extends b8.b {
     public final h b;
@@ -39,7 +39,7 @@ public final class z extends b8.b {
                 com.google.android.gms.internal.cast.v.b(parcel);
                 f fVar2 = (f) x6.b.M0(L02);
                 if (cls.isInstance(fVar2) && hVar != null) {
-                    hVar.w((f) cls.cast(fVar2), readString);
+                    hVar.x((f) cls.cast(fVar2), readString);
                 }
                 parcel2.writeNoException();
                 return true;
@@ -89,7 +89,7 @@ public final class z extends b8.b {
                 com.google.android.gms.internal.cast.v.b(parcel);
                 f fVar7 = (f) x6.b.M0(L07);
                 if (cls.isInstance(fVar7) && hVar != null) {
-                    hVar.i((f) cls.cast(fVar7), z10);
+                    hVar.h((f) cls.cast(fVar7), z10);
                 }
                 parcel2.writeNoException();
                 return true;
@@ -109,7 +109,7 @@ public final class z extends b8.b {
                 com.google.android.gms.internal.cast.v.b(parcel);
                 f fVar9 = (f) x6.b.M0(L09);
                 if (cls.isInstance(fVar9) && hVar != null) {
-                    hVar.x((f) cls.cast(fVar9), readInt4);
+                    hVar.y((f) cls.cast(fVar9), readInt4);
                 }
                 parcel2.writeNoException();
                 return true;

@@ -1,215 +1,282 @@
 package org.telegram.ui.Components.voip;
 
-import android.app.Activity;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
-import android.widget.FrameLayout;
-import android.widget.TextView;
+import android.graphics.PorterDuffXfermode;
+import android.view.MotionEvent;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.qk0;
-import org.telegram.ui.Components.u81;
-import org.telegram.ui.Components.yi0;
-import w7.x5;
+import org.telegram.ui.Components.ij0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class k3 extends FrameLayout {
-    public final q1 a;
-    public j3 b;
-    public int c;
-    public final TextView d;
-    public final TextView e;
-    public int f;
+public final class k3 extends View {
+    public final r1 E;
+    public ValueAnimator F;
+    public float G;
+    public float H;
+    public float I;
+    public ij0 a;
+    public ij0 b;
+    public ij0 c;
+    public final Paint d;
+    public final Paint e;
+    public final Paint f;
+    public final Path h;
+    public final int n;
+    public int r;
+    public int s;
+    public boolean v;
+    public int w;
+    public j3 x;
+    public ValueAnimator y;
 
-    public k3(Activity activity, q1 q1Var) {
-        super(activity);
-        this.a = q1Var;
-        setWillNotDraw(true);
-        j3 j3Var = new j3(activity, q1Var);
-        this.b = j3Var;
-        addView(j3Var, x5.a(53.5f, 53.5f, 1));
-        TextView textView = new TextView(activity);
-        this.d = textView;
-        textView.setGravity(1);
-        textView.setTextSize(1, 11.0f);
-        textView.setTextColor(-1);
-        textView.setImportantForAccessibility(2);
-        addView(textView, x5.d(-1, -2.0f, 0, 0.0f, 58.0f, 0.0f, 2.0f));
-        TextView textView2 = new TextView(activity);
-        this.e = textView2;
-        textView2.setGravity(1);
-        textView2.setTextSize(1, 11.0f);
-        textView2.setTextColor(-1);
-        textView2.setImportantForAccessibility(2);
-        addView(textView2, x5.d(-1, -2.0f, 0, 0.0f, 58.0f, 0.0f, 2.0f));
-        textView.setVisibility(8);
-        textView2.setVisibility(8);
+    public k3(Context context, r1 r1Var) {
+        super(context);
+        Paint paint = new Paint(1);
+        this.d = paint;
+        Paint paint2 = new Paint(1);
+        this.e = paint2;
+        Paint paint3 = new Paint(1);
+        this.f = paint3;
+        this.h = new Path();
+        int dp = AndroidUtilities.dp(26.0f);
+        this.n = dp;
+        this.r = dp;
+        this.s = 0;
+        this.v = false;
+        this.w = 0;
+        this.G = 1.0f;
+        this.E = r1Var;
+        r1Var.a(this);
+        setLayerType(1, null);
+        paint2.setColor(-1);
+        paint.setColor(-16777216);
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
+        paint3.setColor(-16777216);
+        paint3.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.SRC_ATOP));
+        paint3.setAlpha(35);
     }
 
-    public final void a(int i10) {
-        this.b.a = new yi0(R.raw.bt_to_speaker, i10, i10, true, null);
-        this.b.b = new yi0(R.raw.bt_to_speaker, i10, i10, true, null);
-        this.b.b.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
-    }
-
-    public final void b(int i10, int i11, int i12, boolean z10) {
-        j3 j3Var = new j3(getContext(), this.a);
-        if (i10 == R.raw.camera_flip2) {
-            yi0 yi0Var = new yi0(i10, i11, i11, true, null);
-            j3Var.c = yi0Var;
-            yi0Var.R(j3Var);
-        } else {
-            j3Var.a = new yi0(i10, i11, i11, true, null);
-            yi0 yi0Var2 = new yi0(i10, i11, i11, true, null);
-            j3Var.b = yi0Var2;
-            yi0Var2.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
+    private void setPressedBtn(boolean z10) {
+        ValueAnimator valueAnimator = this.F;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
         }
-        j3Var.a(i12, z10, false);
-        j3Var.setAlpha(0.0f);
-        j3Var.setOnBtnClickedListener(this.b.x);
-        addView(j3Var, x5.a(53.5f, 53.5f, 1));
-        j3 j3Var2 = this.b;
-        this.b = j3Var;
-        j3Var.animate().alpha(1.0f).setDuration(250L).start();
-        j3Var2.animate().alpha(0.0f).setDuration(250L).setListener(new qk0(5, this, j3Var2)).start();
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.G, z10 ? 0.8f : 1.0f);
+        this.F = ofFloat;
+        ofFloat.addUpdateListener(new h3(this, 0));
+        this.F.setDuration(150L);
+        this.F.start();
     }
 
-    public final void c(int i10) {
-        this.b.a = new yi0(R.raw.speaker_to_bt, i10, i10, true, null);
-        this.b.b = new yi0(R.raw.speaker_to_bt, i10, i10, true, null);
-        this.b.b.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
+    public final void a(int i10, boolean z10, boolean z11) {
+        ValueAnimator valueAnimator = this.y;
+        if (valueAnimator != null && valueAnimator.isRunning()) {
+            this.y.removeAllUpdateListeners();
+            this.y.cancel();
+            z11 = false;
+        }
+        int i11 = this.n;
+        if (z11) {
+            if (this.c != null) {
+                ValueAnimator valueAnimator2 = this.y;
+                if (valueAnimator2 != null) {
+                    valueAnimator2.removeAllUpdateListeners();
+                    this.y.cancel();
+                }
+                ValueAnimator ofInt = z10 ? ValueAnimator.ofInt(20, 100) : ValueAnimator.ofInt(100, 20);
+                this.y = ofInt;
+                ofInt.addUpdateListener(new h3(this, 1));
+                this.y.setDuration(200L);
+                this.y.start();
+                if (i10 == 2) {
+                    this.c.N(0, false, false);
+                    this.c.start();
+                }
+            } else {
+                ValueAnimator valueAnimator3 = this.y;
+                if (valueAnimator3 != null) {
+                    valueAnimator3.removeAllUpdateListeners();
+                    this.y.cancel();
+                }
+                ValueAnimator ofInt2 = ValueAnimator.ofInt(0, i11);
+                this.y = ofInt2;
+                if (z10) {
+                    this.r = i11;
+                    ofInt2.addUpdateListener(new h3(this, 2));
+                    this.y.addListener(new i3(this, 0));
+                    this.y.setDuration(200L);
+                    this.y.start();
+                    this.b.N(0, false, false);
+                    this.b.start();
+                } else {
+                    this.s = i11;
+                    ofInt2.addUpdateListener(new h3(this, 3));
+                    this.y.setDuration(200L);
+                    this.y.addListener(new i3(this, 1));
+                    this.y.start();
+                }
+            }
+        } else if (z10) {
+            this.s = i11;
+            this.r = 0;
+            this.w = 100;
+            if (i10 == 3 || i10 == 1) {
+                ij0 ij0Var = this.b;
+                ij0Var.N(ij0Var.e[0] - 1, false, false);
+            }
+        } else {
+            this.s = 0;
+            this.r = i11;
+            this.w = 20;
+        }
+        this.v = z10;
+        invalidate();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:30:0x0137  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x014b  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x017b  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void d(int i10, boolean z10, boolean z11) {
-        boolean z12;
-        String string;
-        TextView textView;
-        int visibility;
-        TextView textView2;
-        if (this.c == i10 && z10 == this.b.v) {
-            if (getVisibility() != 0) {
-                setVisibility(0);
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        int i10;
+        Path path;
+        canvas.save();
+        float f7 = this.G;
+        canvas.scale(f7, f7, getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f);
+        float width = getWidth() / 2.0f;
+        float height = getHeight() / 2.0f;
+        float x10 = ((View) getParent()).getX() + getX();
+        float y3 = ((View) ((View) getParent()).getParent()).getY() + getY();
+        r1 r1Var = this.E;
+        int i11 = r1Var.g;
+        Paint paint = r1Var.j;
+        com.google.firebase.messaging.n nVar = r1Var.a;
+        float f10 = r1Var.g;
+        float f11 = 1.12f * f10;
+        float f12 = (f11 - r1Var.f) / 2.0f;
+        float f13 = (f11 - f10) / 2.0f;
+        float f14 = -x10;
+        float f15 = f14 - f12;
+        float f16 = -y3;
+        nVar.B(f15, f16 - f13, (i11 * 1.12f) / ((Bitmap) nVar.c).getHeight(), r1Var.h);
+        r1Var.c.z(f14, f16, r1Var.f - x10, r1Var.g - y3);
+        ij0 ij0Var = this.c;
+        Paint paint2 = this.e;
+        Paint paint3 = this.d;
+        int i12 = this.n;
+        if (ij0Var != null) {
+            if (this.w > 20) {
+                Paint paint4 = this.f;
+                paint4.setAlpha((int) ((r1 * 35) / 100.0f));
+                paint2.setAlpha((int) ((this.w * 255) / 100.0f));
+                canvas.drawCircle(width, height, i12, paint2);
+                this.c.q(canvas, paint3, false, 0L, 0);
+                this.c.q(canvas, paint4, false, 0L, 0);
                 return;
             }
+            float f17 = i12;
+            if (!r1Var.i) {
+                paint = (Paint) nVar.a;
+            }
+            canvas.drawCircle(width, height, f17, paint);
+            if (r1Var.e) {
+                canvas.drawCircle(width, height, f17, (Paint) r1Var.c.a);
+            }
+            this.c.draw(canvas);
             return;
         }
-        if (getVisibility() != 0) {
-            setVisibility(0);
+        if (this.b == null || this.a == null) {
+            return;
         }
-        int dp = AndroidUtilities.dp(53.5f);
-        int c10 = m1.j.c(i10);
-        if (c10 != 0) {
-            if (c10 == 1) {
-                int i11 = this.c;
-                if (i11 == 5 || i11 == 4) {
-                    b(R.raw.camera_flip2, dp, i10, z10);
-                    z12 = true;
-                } else if (i11 != 2) {
-                    this.b.c = new yi0(R.raw.camera_flip2, dp, dp, true, null);
-                    j3 j3Var = this.b;
-                    j3Var.c.R(j3Var);
-                }
-            } else if (c10 != 2) {
-                if (c10 == 3) {
-                    int i12 = this.c;
-                    if (i12 == 5) {
-                        j3 j3Var2 = this.b;
-                        z12 = z10 == j3Var2.v;
-                        yi0 yi0Var = z10 ? j3Var2.b : j3Var2.a;
-                        yi0Var.R(j3Var2);
-                        yi0Var.t0 = new f3(this, dp, 1);
-                        yi0Var.start();
-                    } else if (i12 == 2) {
-                        b(R.raw.bt_to_speaker, dp, i10, z10);
-                        z12 = true;
-                    } else if (i12 != 4) {
-                        a(dp);
-                    }
-                } else if (c10 == 4) {
-                    int i13 = this.c;
-                    if (i13 == 4) {
-                        j3 j3Var3 = this.b;
-                        z12 = z10 == j3Var3.v;
-                        yi0 yi0Var2 = z10 ? j3Var3.b : j3Var3.a;
-                        yi0Var2.R(j3Var3);
-                        yi0Var2.t0 = new f3(this, dp, 0);
-                        yi0Var2.start();
-                    } else if (i13 == 2) {
-                        b(R.raw.speaker_to_bt, dp, i10, z10);
-                        z12 = true;
-                    } else if (i13 != 5) {
-                        c(dp);
-                    }
-                }
-            } else if (this.c != 3) {
-                this.b.a = new yi0(R.raw.video_stop, dp, dp, true, null);
-                this.b.b = new yi0(R.raw.video_stop, dp, dp, true, null);
-                this.b.b.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
-                j3 j3Var4 = this.b;
-                j3Var4.b.R(j3Var4);
+        int i13 = this.r;
+        boolean z10 = i13 == i12 && this.s == 0;
+        int i14 = this.s;
+        boolean z11 = i14 == i12 && i13 == 0;
+        Path path2 = this.h;
+        if (i14 != i12 || i13 <= 0 || i13 == i12) {
+            i10 = i12;
+            path = path2;
+        } else {
+            canvas.drawCircle(width, height, i14, paint2);
+            canvas.drawCircle(width, height, this.r, paint3);
+            this.b.setAlpha(255);
+            i10 = i12;
+            this.b.q(canvas, paint3, false, 0L, 0);
+            this.b.setAlpha(35);
+            this.b.draw(canvas);
+            path2.reset();
+            path = path2;
+            path.addCircle(width, height, this.r, Path.Direction.CW);
+            canvas.clipPath(path);
+            canvas.drawCircle(width, height, this.r, paint3);
+        }
+        if (z10 || this.r > 0) {
+            float f18 = this.r;
+            if (!r1Var.i) {
+                paint = (Paint) nVar.a;
             }
-            if (!z12) {
-                this.b.a(i10, z10, (this.c == 0 || z11) ? false : true);
+            canvas.drawCircle(width, height, f18, paint);
+            if (r1Var.e) {
+                canvas.drawCircle(width, height, this.r, (Paint) r1Var.c.a);
             }
-            int c11 = m1.j.c(i10);
-            string = c11 == 0 ? c11 != 1 ? c11 != 2 ? c11 != 3 ? c11 != 4 ? "" : LocaleController.getString(R.string.VoipSpeaker) : LocaleController.getString(R.string.VoipAudioRoutingBluetooth) : z10 ? LocaleController.getString(R.string.VoipStartVideo) : LocaleController.getString(R.string.VoipStopVideo) : LocaleController.getString(R.string.VoipFlip) : z10 ? LocaleController.getString(R.string.VoipUnmute) : LocaleController.getString(R.string.VoipMute);
-            setContentDescription(string);
-            textView = this.d;
-            visibility = textView.getVisibility();
-            textView2 = this.e;
-            if (visibility != 8 && textView2.getVisibility() == 8) {
-                textView.setVisibility(0);
-                textView.setText(string);
-                textView2.setText(string);
-            } else if (textView2.getText().equals(string) || !textView.getText().equals(string)) {
-                textView.animate().alpha(0.0f).translationY(-AndroidUtilities.dp(4.0f)).setDuration(140L).setListener(new qk0(4, this, string)).start();
-                textView2.setText(string);
-                textView2.setVisibility(0);
-                textView2.setAlpha(0.0f);
-                textView2.setTranslationY(AndroidUtilities.dp(5.0f));
-                textView2.animate().alpha(1.0f).translationY(0.0f).setDuration(150L).setListener(new u81(this, 12)).start();
-            }
-            this.c = i10;
+            this.a.draw(canvas);
         }
-        if (this.c != 1) {
-            this.b.a = new yi0(R.raw.call_mute, dp, dp, true, null);
-            this.b.b = new yi0(R.raw.call_mute, dp, dp, true, null);
-            this.b.b.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
-            j3 j3Var5 = this.b;
-            j3Var5.b.R(j3Var5);
+        if (z11 || (this.s > 0 && this.r == i10)) {
+            path.reset();
+            path.addCircle(width, height, this.s, Path.Direction.CW);
+            canvas.clipPath(path);
+            canvas.drawCircle(width, height, this.s, paint2);
+            this.b.setAlpha(255);
+            this.b.q(canvas, paint3, false, 0L, 0);
+            this.b.setAlpha(35);
+            this.b.draw(canvas);
         }
-        z12 = false;
-        if (!z12) {
-        }
-        int c112 = m1.j.c(i10);
-        if (c112 == 0) {
-        }
-        setContentDescription(string);
-        textView = this.d;
-        visibility = textView.getVisibility();
-        textView2 = this.e;
-        if (visibility != 8) {
-        }
-        if (textView2.getText().equals(string)) {
-        }
-        textView.animate().alpha(0.0f).translationY(-AndroidUtilities.dp(4.0f)).setDuration(140L).setListener(new qk0(4, this, string)).start();
-        textView2.setText(string);
-        textView2.setVisibility(0);
-        textView2.setAlpha(0.0f);
-        textView2.setTranslationY(AndroidUtilities.dp(5.0f));
-        textView2.animate().alpha(1.0f).translationY(0.0f).setDuration(150L).setListener(new u81(this, 12)).start();
-        this.c = i10;
+        canvas.restore();
     }
 
-    public void setOnBtnClickedListener(i3 i3Var) {
-        this.b.setOnBtnClickedListener(i3Var);
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        j3 j3Var;
+        int action = motionEvent.getAction();
+        if (action == 0) {
+            setPressedBtn(true);
+            this.H = motionEvent.getX();
+            this.I = motionEvent.getY();
+            return true;
+        }
+        boolean z10 = false;
+        if (action == 1) {
+            setPressedBtn(false);
+            float x10 = motionEvent.getX();
+            float y3 = motionEvent.getY();
+            float f7 = this.H;
+            float f10 = this.I;
+            float abs = Math.abs(f7 - x10);
+            float abs2 = Math.abs(f10 - y3);
+            if (abs <= AndroidUtilities.dp(48.0f) && abs2 <= AndroidUtilities.dp(48.0f)) {
+                int i10 = this.r;
+                int i11 = this.n;
+                boolean z11 = i10 == i11 && this.s == 0;
+                if (this.s == i11 && i10 == 0) {
+                    z10 = true;
+                }
+                if ((z11 || z10) && (j3Var = this.x) != null) {
+                    j3Var.h(this);
+                }
+            }
+        } else if (action == 3) {
+            setPressedBtn(false);
+            return true;
+        }
+        return true;
+    }
+
+    public void setOnBtnClickedListener(j3 j3Var) {
+        this.x = j3Var;
     }
 }

@@ -7,9 +7,9 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.ActionBar.m2;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class g implements Runnable {
     public final /* synthetic */ int a;
@@ -45,7 +45,7 @@ public final class g implements Runnable {
                 ActionBarLayout actionBarLayout = (ActionBarLayout) this.d;
                 if (actionBarLayout.e == this) {
                     actionBarLayout.e = null;
-                    ((n2) this.c).onTransitionAnimationStart(true, false);
+                    ((m2) this.c).onTransitionAnimationStart(true, false);
                     actionBarLayout.d0(true, true, this.b);
                     break;
                 }
@@ -60,7 +60,7 @@ public final class g implements Runnable {
                             accept.setSoTimeout(5000);
                             InputStream inputStream = accept.getInputStream();
                             yc.i iVar2 = (yc.i) this.d;
-                            iVar2.c.y(new yc.a(iVar2, inputStream, accept));
+                            iVar2.c.C(new yc.a(iVar2, inputStream, accept));
                         } catch (IOException e) {
                             yc.i.d.log(Level.FINE, "Communication with the client broken", (Throwable) e);
                         }

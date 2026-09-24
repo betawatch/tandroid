@@ -1,37 +1,55 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.widget.ImageView;
+import android.view.View;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class pl0 extends ic {
-    public final ql0 c;
+public final class pl0 implements Runnable {
+    public final /* synthetic */ View a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ float d;
+    public final /* synthetic */ ql0 e;
 
-    public pl0(Activity activity, String str) {
-        super(activity, null);
-        this.b.setText(str);
-        this.b.setTranslationY(-1.0f);
-        ImageView imageView = this.a;
-        ql0 ql0Var = new ql0();
-        this.c = ql0Var;
-        imageView.setImageDrawable(ql0Var);
+    public pl0(ql0 ql0Var, View view, int i10, float f7, float f10) {
+        this.e = ql0Var;
+        this.a = view;
+        this.b = i10;
+        this.c = f7;
+        this.d = f10;
     }
 
-    @Override // org.telegram.ui.Components.ub
-    public final void onEnterTransitionEnd() {
-        super.onEnterTransitionEnd();
-        ql0 ql0Var = this.c;
-        ql0Var.getClass();
-        ql0Var.g = System.currentTimeMillis();
-        ql0Var.invalidateSelf();
-    }
-
-    @Override // org.telegram.ui.Components.ub
-    public final void onExitTransitionEnd() {
-        super.onExitTransitionEnd();
-        ql0 ql0Var = this.c;
-        ql0Var.g = -1L;
-        ql0Var.invalidateSelf();
+    @Override // java.lang.Runnable
+    public final void run() {
+        rl0 rl0Var = this.e.b;
+        wl0 wl0Var = (wl0) rl0Var.b;
+        if (this == wl0Var.S1) {
+            wl0Var.S1 = null;
+        }
+        View view = this.a;
+        if (view != null) {
+            wl0Var.h1(view, 0.0f, 0.0f, false);
+            if (((wl0) rl0Var.b).R1) {
+                return;
+            }
+            try {
+                view.playSoundEffect(0);
+            } catch (Exception unused) {
+            }
+            view.sendAccessibilityEvent(1);
+            int i10 = this.b;
+            if (i10 != -1) {
+                wl0 wl0Var2 = (wl0) rl0Var.b;
+                kl0 kl0Var = wl0Var2.V0;
+                if (kl0Var != null) {
+                    kl0Var.d(i10, view);
+                    return;
+                }
+                ll0 ll0Var = wl0Var2.W0;
+                if (ll0Var != null) {
+                    ll0Var.c(this.c - view.getX(), this.d - view.getY(), i10, view);
+                }
+            }
+        }
     }
 }

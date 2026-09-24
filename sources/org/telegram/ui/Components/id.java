@@ -1,425 +1,108 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.os.SystemClock;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Paint;
+import java.util.Random;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class id extends Drawable {
-    public static final gd H = new gd(0);
-    public int B;
-    public int C;
-    public int D;
-    public float h;
-    public float i;
-    public float j;
-    public float k;
-    public float l;
-    public float m;
-    public float n;
-    public float o;
-    public float p;
-    public final hd q;
-    public final hd r;
-    public float s;
-    public long t;
-    public boolean u;
-    public float v;
-    public float w;
-    public float x;
-    public final float a = AndroidUtilities.dp(18.0f);
-    public final float b = AndroidUtilities.dp(22.0f);
-    public final float c = 2.4f;
-    public final float d = AndroidUtilities.dp(12.0f);
-    public final float e = AndroidUtilities.dp(1.5f);
-    public final float f = 3600.0f;
-    public final float g = 0.25f;
-    public final Path y = new Path();
-    public final float[] z = new float[4];
-    public int A = -1;
-    public float E = 1.0f;
-    public final og F = new og(this, 16);
-    public int G = 255;
+public final class id {
+    public float a;
+    public float b;
+    public float c;
+    public float d;
+    public float e;
+    public float f;
+    public int g;
+    public float[] k;
+    public float[] l;
+    public float[] m;
+    public float[] n;
+    public float[] o;
+    public float[] p;
+    public float[] q;
+    public float[] r;
+    public float[] s;
+    public float[] t;
+    public float[] u;
+    public float[] v;
+    public float[] w;
+    public int x;
+    public int h = -11318601;
+    public final Paint i = new Paint(1);
+    public final Random j = new Random();
+    public int y = 255;
 
-    public id() {
-        hd hdVar = new hd();
-        this.q = hdVar;
-        hdVar.a = 1.0f;
-        hdVar.b = 0.0f;
-        hdVar.c = AndroidUtilities.dp(0.5f);
-        hdVar.d = AndroidUtilities.dp(8.5f);
-        hdVar.e = 1.0f;
-        hdVar.f = 1.0f;
-        hdVar.g = 61;
-        hd hdVar2 = new hd();
-        this.r = hdVar2;
-        hdVar2.a = 0.82f;
-        hdVar2.b = 0.6f;
-        hdVar2.c = AndroidUtilities.dp(0.0f);
-        hdVar2.d = AndroidUtilities.dp(4.25f);
-        hdVar2.e = 0.55f;
-        hdVar2.f = 0.55f;
-        hdVar2.g = 128;
-        e(0, false);
+    public final void a() {
+        int i10 = this.h;
+        Paint paint = this.i;
+        paint.setColor(i10);
+        paint.setAlpha((this.g * this.y) / 255);
     }
 
-    public final void a(float f7, float f10, float f11, float[] fArr) {
-        double d = f11;
-        float cos = (float) Math.cos(d);
-        float sin = (float) Math.sin(d);
-        float f12 = this.j;
-        fArr[0] = (f12 * cos) + f7;
-        fArr[1] = (f12 * sin) + f10;
-        fArr[2] = -sin;
-        fArr[3] = cos;
+    public final void b(int i10) {
+        float f7 = 0.18f / this.x;
+        float f10 = this.k[i10];
+        Random random = this.j;
+        float nextFloat = ((random.nextFloat() - 0.5f) * 2.0f * 0.35f) + f10;
+        float[] fArr = this.l;
+        if (nextFloat < 0.0f) {
+            nextFloat = 0.0f;
+        } else if (nextFloat > 1.0f) {
+            nextFloat = 1.0f;
+        }
+        fArr[i10] = nextFloat;
+        float nextFloat2 = ((random.nextFloat() - 0.5f) * 2.0f * f7 * 0.35f) + this.m[i10];
+        float[] fArr2 = this.n;
+        float f11 = -f7;
+        if (nextFloat2 < f11) {
+            f7 = f11;
+        } else if (nextFloat2 <= f7) {
+            f7 = nextFloat2;
+        }
+        fArr2[i10] = f7;
+        this.p[i10] = ((random.nextFloat() * 0.003f) + 0.017f) * this.a;
     }
 
-    public final void b(Canvas canvas, hd hdVar, float f7, float f10, float f11) {
-        char c10;
-        char c11;
-        int i10 = hdVar.x;
-        if (i10 == 0) {
-            return;
+    public final void c(int i10) {
+        this.x = i10;
+        this.k = new float[i10];
+        this.l = new float[i10];
+        this.m = new float[i10];
+        this.n = new float[i10];
+        this.o = new float[i10];
+        this.p = new float[i10];
+        this.q = new float[i10];
+        this.r = new float[i10];
+        this.s = new float[i10];
+        this.t = new float[i10];
+        this.u = new float[i10];
+        this.v = new float[i10];
+        this.w = new float[i10];
+        for (int i11 = 0; i11 < this.x; i11++) {
+            float[] fArr = this.k;
+            Random random = this.j;
+            fArr[i11] = random.nextFloat();
+            this.m[i11] = (((random.nextFloat() - 0.5f) * 2.0f) * 0.18f) / this.x;
+            b(i11);
+            this.o[i11] = random.nextFloat();
         }
-        float f12 = hdVar.c;
-        float f13 = hdVar.d - f12;
-        float f14 = this.v;
-        float f15 = (f13 * f14) + f12;
-        float B = com.google.android.gms.internal.vision.e2.B(f14, 1.0f, 0.0f, this.d * hdVar.e);
-        float[] fArr = hdVar.u;
-        float[] fArr2 = hdVar.v;
-        float[] fArr3 = hdVar.w;
-        char c12 = 0;
-        for (int i11 = 0; i11 < i10; i11++) {
-            float interpolation = H.getInterpolation(hdVar.o[i11]);
-            float f16 = 1.0f - interpolation;
-            fArr[i11] = (hdVar.l[i11] * interpolation) + (hdVar.k[i11] * f16);
-            fArr3[i11] = (hdVar.n[i11] * interpolation) + (hdVar.m[i11] * f16);
-        }
-        float f17 = this.g;
-        char c13 = 2;
-        if (f17 > 0.0f) {
-            int i12 = 0;
-            while (i12 < 2) {
-                int i13 = 0;
-                while (i13 < i10) {
-                    int i14 = i13 + 1;
-                    float f18 = (fArr[i13 == 0 ? i10 - 1 : i13 - 1] + fArr[i14 == i10 ? 0 : i14]) * 0.5f;
-                    float f19 = fArr[i13];
-                    fArr2[i13] = com.google.android.gms.internal.vision.e2.z(f18, f19, f17, f19);
-                    i13 = i14;
-                }
-                i12++;
-                float[] fArr4 = fArr2;
-                fArr2 = fArr;
-                fArr = fArr4;
-            }
-        }
-        int i15 = 0;
-        while (i15 < i10) {
-            float f20 = (i15 / i10) + fArr3[i15];
-            float floor = (f20 - ((float) Math.floor(f20))) * this.p;
-            float f21 = this.m;
-            float[] fArr5 = this.z;
-            if (floor < f21) {
-                fArr5[c12] = (-this.k) + floor;
-                fArr5[1] = -this.i;
-                fArr5[c13] = 1.0f;
-                fArr5[3] = 0.0f;
-                c10 = 0;
-                c11 = 2;
-            } else {
-                float f22 = floor - f21;
-                float f23 = this.o;
-                c10 = 0;
-                float f24 = this.c;
-                if (f22 < f23) {
-                    c11 = 2;
-                    a(this.k, -this.l, (f22 / (f24 * this.j)) - 1.5707964f, fArr5);
-                } else {
-                    c11 = 2;
-                    float f25 = f22 - f23;
-                    float f26 = this.n;
-                    if (f25 < f26) {
-                        fArr5[0] = this.h;
-                        fArr5[1] = (-this.l) + f25;
-                        fArr5[2] = 0.0f;
-                        fArr5[3] = 1.0f;
-                    } else {
-                        float f27 = f25 - f26;
-                        if (f27 < f23) {
-                            a(this.k, this.l, f27 / (f24 * this.j), fArr5);
-                        } else {
-                            float f28 = f27 - f23;
-                            if (f28 < f21) {
-                                fArr5[0] = this.k - f28;
-                                fArr5[1] = this.i;
-                                fArr5[2] = -1.0f;
-                                fArr5[3] = 0.0f;
-                            } else {
-                                float f29 = f28 - f21;
-                                if (f29 < f23) {
-                                    a(-this.k, this.l, (f29 / (f24 * this.j)) + 1.5707964f, fArr5);
-                                } else {
-                                    float f30 = f29 - f23;
-                                    if (f30 < f26) {
-                                        fArr5[0] = -this.h;
-                                        fArr5[1] = this.l - f30;
-                                        fArr5[2] = 0.0f;
-                                        fArr5[3] = -1.0f;
-                                    } else {
-                                        a(-this.k, -this.l, ((f30 - f26) / (f24 * this.j)) + 3.1415927f, fArr5);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            float f31 = fArr5[3];
-            float f32 = -fArr5[c11];
-            float f33 = (fArr[i15] * B) + f15 + f11;
-            hdVar.q[i15] = (f31 * f33) + f7 + fArr5[c10];
-            hdVar.r[i15] = (f32 * f33) + f10 + fArr5[1];
-            hdVar.s[i15] = fArr5[c11];
-            hdVar.t[i15] = fArr5[3];
-            i15++;
-            c12 = 0;
-            c13 = 2;
-        }
-        Path path = this.y;
-        path.rewind();
-        path.moveTo(hdVar.q[0], hdVar.r[0]);
-        int i16 = 0;
-        while (i16 < i10) {
-            int i17 = i16 + 1;
-            int i18 = i17 < i10 ? i17 : 0;
-            float[] fArr6 = hdVar.q;
-            float f34 = fArr6[i18] - fArr6[i16];
-            float[] fArr7 = hdVar.r;
-            float f35 = fArr7[i18] - fArr7[i16];
-            float sqrt = ((float) Math.sqrt((f35 * f35) + (f34 * f34))) / 3.0f;
-            float[] fArr8 = hdVar.q;
-            float f36 = fArr8[i16];
-            float[] fArr9 = hdVar.s;
-            float f37 = (fArr9[i16] * sqrt) + f36;
-            float[] fArr10 = hdVar.r;
-            float f38 = fArr10[i16];
-            float[] fArr11 = hdVar.t;
-            float f39 = (fArr11[i16] * sqrt) + f38;
-            float f40 = fArr8[i18];
-            float f41 = f40 - (fArr9[i18] * sqrt);
-            float f42 = fArr10[i18];
-            path.cubicTo(f37, f39, f41, f42 - (fArr11[i18] * sqrt), f40, f42);
-            i16 = i17;
-        }
-        path.close();
-        canvas.drawPath(path, hdVar.i);
-    }
-
-    public final float c() {
-        hd hdVar = this.q;
-        float f7 = hdVar.d;
-        float f10 = hdVar.f;
-        float f11 = this.e;
-        float f12 = (f10 * f11) + f7;
-        float f13 = hdVar.e;
-        float f14 = this.d;
-        float f15 = (f13 * f14) + f12;
-        hd hdVar2 = this.r;
-        return Math.max(f15, (f14 * hdVar2.e) + (f11 * hdVar2.f) + hdVar2.d);
+        a();
     }
 
     public final void d(float f7) {
-        this.w = f7;
-        if (LiteMode.isEnabled(512)) {
-            float f10 = this.w - this.v;
-            this.x = f10 / (((f10 > 0.0f ? 400.0f : 500.0f) * 0.55f) + 100.0f);
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Rect bounds = getBounds();
-        if (bounds.isEmpty() || this.h < 1.0f) {
-            return;
-        }
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        long min = (this.u || this.E < 1.0f) ? Math.min(40L, Math.max(0L, elapsedRealtime - this.t)) : 0L;
-        this.t = elapsedRealtime;
-        boolean isEnabled = LiteMode.isEnabled(512);
-        hd hdVar = this.r;
-        hd hdVar2 = this.q;
-        if (isEnabled && min > 0) {
-            float f7 = this.w;
-            float f10 = this.v;
-            if (f7 != f10) {
-                float f11 = this.x;
-                float f12 = (min * f11) + f10;
-                this.v = f12;
-                if (f11 > 0.0f) {
-                    if (f12 > f7) {
-                        this.v = f7;
-                    }
-                } else if (f12 < f7) {
-                    this.v = f7;
-                }
+        for (int i10 = 0; i10 < this.x; i10++) {
+            float[] fArr = this.o;
+            float f10 = fArr[i10];
+            float f11 = this.p[i10];
+            hd hdVar = jd.H;
+            float f12 = (f11 * f7 * 8.2f) + (0.8f * f11) + f10;
+            fArr[i10] = f12;
+            if (f12 >= 1.0f) {
+                fArr[i10] = 0.0f;
+                this.k[i10] = this.l[i10];
+                this.m[i10] = this.n[i10];
+                b(i10);
             }
-            this.s = a4.a.e(min, this.f, 6.2831855f, this.s);
-            hdVar2.d(this.v);
-            hdVar.d(this.v);
         }
-        float f13 = this.E;
-        if (f13 < 1.0f && min > 0) {
-            float f14 = (min / 250.0f) + f13;
-            this.E = f14;
-            if (f14 > 1.0f) {
-                this.E = 1.0f;
-            }
-            int d = i0.a.d(this.E, this.C, this.D);
-            this.B = d;
-            hdVar2.h = d;
-            hdVar.h = d;
-            hdVar2.a();
-            hdVar.a();
-        }
-        float exactCenterX = bounds.exactCenterX();
-        float exactCenterY = bounds.exactCenterY();
-        float f15 = 1.0f - (this.v * 0.7f);
-        float f16 = hdVar2.f;
-        float f17 = this.e;
-        float B = com.google.android.gms.internal.vision.e2.B((float) Math.sin(this.s), 0.5f, 0.5f, f16 * f17 * f15);
-        float B2 = com.google.android.gms.internal.vision.e2.B((float) Math.sin(this.s + hdVar.b), 0.5f, 0.5f, f17 * hdVar.f * f15);
-        b(canvas, this.q, exactCenterX, exactCenterY, B);
-        b(canvas, this.r, exactCenterX, exactCenterY, B2);
-        if (this.E < 1.0f) {
-            invalidateSelf();
-        }
-    }
-
-    public final void e(int i10, boolean z10) {
-        if (i10 != this.A || this.E < 1.0f) {
-            this.A = i10;
-            int w02 = i10 != 0 ? i10 != 1 ? i10 != 3 ? org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.bh, false) : i0.a.d(0.5f, i0.a.d(0.5f, org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.ih, false), org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.jh, false)), org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.kh, false)) : i0.a.d(0.5f, org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Zg, false), org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.ah, false)) : i0.a.d(0.5f, org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Xg, false), org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Yg, false));
-            if (z10 && this.B != 0 && LiteMode.isEnabled(512)) {
-                this.C = this.B;
-                this.D = w02;
-                this.E = 0.0f;
-            } else {
-                this.E = 1.0f;
-                this.B = w02;
-                hd hdVar = this.q;
-                hdVar.h = w02;
-                hd hdVar2 = this.r;
-                hdVar2.h = w02;
-                hdVar.a();
-                hdVar2.a();
-            }
-            invalidateSelf();
-        }
-    }
-
-    public final void f(boolean z10) {
-        VoIPService sharedInstance = VoIPService.getSharedInstance();
-        if (sharedInstance == null) {
-            return;
-        }
-        int callState = sharedInstance.getCallState();
-        if (!sharedInstance.isSwitchingStream() && (callState == 1 || callState == 2 || callState == 6 || callState == 5)) {
-            e(2, z10);
-            return;
-        }
-        ChatObject.Call call = sharedInstance.groupCall;
-        if (call == null) {
-            e(sharedInstance.isMicMute() ? 1 : 0, z10);
-            return;
-        }
-        TLRPC.GroupCallParticipant groupCallParticipant = (TLRPC.GroupCallParticipant) call.participants.f(sharedInstance.getSelfId());
-        if ((groupCallParticipant == null || groupCallParticipant.can_self_unmute || !groupCallParticipant.muted || ChatObject.canManageCalls(sharedInstance.getChat())) && !sharedInstance.groupCall.call.rtmp_stream) {
-            e(sharedInstance.isMicMute() ? 1 : 0, z10);
-        } else {
-            sharedInstance.setMicMute(true, false, false);
-            e(3, z10);
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getAlpha() {
-        return this.G;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -3;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        super.onBoundsChange(rect);
-        if (getBounds().isEmpty()) {
-            return;
-        }
-        float c10 = c() + AndroidUtilities.dp(1.0f);
-        float min = (Math.min(r6.width(), r6.height()) / 2.0f) - AndroidUtilities.dp(2.0f);
-        if (c10 > min) {
-            c10 = Math.max(0.0f, min);
-        }
-        this.h = (r6.width() / 2.0f) - c10;
-        float height = (r6.height() / 2.0f) - c10;
-        this.i = height;
-        float f7 = this.h;
-        if (f7 < 1.0f || height < 1.0f) {
-            return;
-        }
-        float min2 = Math.min(this.a, Math.min(f7, height));
-        this.j = min2;
-        float f10 = this.h - min2;
-        this.k = f10;
-        float f11 = this.i - min2;
-        this.l = f11;
-        float f12 = f10 * 2.0f;
-        this.m = f12;
-        float f13 = f11 * 2.0f;
-        this.n = f13;
-        float f14 = this.c * 1.5707964f * min2;
-        this.o = f14;
-        float f15 = (f13 * 2.0f) + (f12 * 2.0f);
-        this.p = (f14 * 4.0f) + f15;
-        int max = Math.max(12, Math.min(80, Math.round(((min2 * 6.2831855f) + f15) / this.b)));
-        hd hdVar = this.q;
-        if (max != hdVar.x) {
-            hdVar.c(max);
-            this.r.c(max);
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        if (this.G != i10) {
-            this.G = i10;
-            hd hdVar = this.q;
-            hdVar.y = i10;
-            hdVar.a();
-            hd hdVar2 = this.r;
-            hdVar2.y = i10;
-            hdVar2.a();
-            invalidateSelf();
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.q.i.setColorFilter(colorFilter);
-        this.r.i.setColorFilter(colorFilter);
-        invalidateSelf();
     }
 }

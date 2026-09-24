@@ -1,27 +1,15 @@
 package v3;
 
-import c3.t;
+import c3.b0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
-public final class f extends t implements g {
-    @Override // v3.g
-    public final long b(long j3) {
-        return 0L;
-    }
+public interface f extends b0 {
+    long b(long j3);
 
-    @Override // v3.g
-    public final long d() {
-        return -1L;
-    }
+    long d();
 
-    @Override // v3.g
-    public final long e() {
-        return 0L;
-    }
+    long e();
 
-    @Override // v3.g
-    public final int k() {
-        return -2147483647;
-    }
+    int k();
 }

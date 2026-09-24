@@ -1,54 +1,35 @@
 package m4;
 
-import android.os.Bundle;
-import android.text.TextUtils;
 import j$.util.Objects;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class h1 {
-    public static final e9.a1 d = e9.i0.z(40010);
-    public static final e9.a1 e;
-    public static final String f;
-    public static final String g;
-    public static final String h;
-    public final int a;
-    public final String b;
-    public final Bundle c;
+    public static final String b;
+    public final e9.m0 a;
 
     static {
-        Object[] objArr = {50000, 50001, 50002, 50003, 50004, 50005, 50006};
-        e9.q.d(7, objArr);
-        e = e9.i0.t(7, objArr);
+        new h1(new HashSet());
         String str = e2.d0.a;
-        f = Integer.toString(0, 36);
-        g = Integer.toString(1, 36);
-        h = Integer.toString(2, 36);
+        b = Integer.toString(0, 36);
     }
 
-    public h1(int i10) {
-        e2.d.a("commandCode shouldn't be COMMAND_CODE_CUSTOM", i10 != 0);
-        this.a = i10;
-        this.b = "";
-        this.c = Bundle.EMPTY;
+    public h1(HashSet hashSet) {
+        this.a = e9.m0.v(hashSet);
     }
 
     public final boolean equals(Object obj) {
-        if (!(obj instanceof h1)) {
-            return false;
+        if (this == obj) {
+            return true;
         }
-        h1 h1Var = (h1) obj;
-        return this.a == h1Var.a && TextUtils.equals(this.b, h1Var.b);
+        if (obj instanceof h1) {
+            return this.a.equals(((h1) obj).a);
+        }
+        return false;
     }
 
     public final int hashCode() {
-        return Objects.hash(this.b, Integer.valueOf(this.a));
-    }
-
-    public h1(String str, Bundle bundle) {
-        this.a = 0;
-        this.b = str;
-        bundle.getClass();
-        this.c = new Bundle(bundle);
+        return Objects.hash(this.a);
     }
 }

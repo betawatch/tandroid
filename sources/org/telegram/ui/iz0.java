@@ -1,22 +1,46 @@
 package org.telegram.ui;
 
 import android.content.Context;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.Stories.ProfileStoriesView;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class iz0 extends org.telegram.ui.Components.ph0 {
-    public final /* synthetic */ ProfileActivity s1;
+public final class iz0 extends ProfileStoriesView {
+    public final /* synthetic */ Context t0;
+    public final /* synthetic */ ProfileActivity u0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public iz0(ProfileActivity profileActivity, Context context, long j3, org.telegram.ui.ActionBar.k kVar, yy0 yy0Var, hz0 hz0Var, org.telegram.ui.Components.kh0 kh0Var, org.telegram.ui.Components.gh0 gh0Var) {
-        super(context, j3, kVar, yy0Var, hz0Var, kh0Var, gh0Var);
-        this.s1 = profileActivity;
+    public iz0(ProfileActivity profileActivity, Context context, int i10, long j3, boolean z10, k0 k0Var, fz0 fz0Var, org.telegram.ui.ActionBar.d6 d6Var, Context context2) {
+        super(context, i10, j3, z10, k0Var, fz0Var, d6Var);
+        this.u0 = profileActivity;
+        this.t0 = context2;
     }
 
-    @Override // org.telegram.ui.Components.ph0
-    public final void setCustomAvatarProgress(float f7) {
-        ProfileActivity profileActivity = this.s1;
-        profileActivity.n5 = f7;
-        profileActivity.B3();
+    @Override // org.telegram.ui.Stories.ProfileStoriesView
+    public final void e(a6.i iVar) {
+        TL_stories.PeerStories peerStories;
+        TL_stories.PeerStories peerStories2;
+        ProfileActivity profileActivity = this.u0;
+        long a2 = profileActivity.a();
+        ai.l9 storiesController = profileActivity.getMessagesController().getStoriesController();
+        boolean I = storiesController.I(a2);
+        Context context = this.t0;
+        if (I || storiesController.K(a2) || storiesController.N(a2)) {
+            profileActivity.getOrCreateStoryViewer().D(context, a2, iVar);
+            return;
+        }
+        TLRPC.UserFull userFull = profileActivity.v2;
+        if (userFull != null && (peerStories2 = userFull.stories) != null && !peerStories2.stories.isEmpty() && profileActivity.e1 != profileActivity.getUserConfig().clientUserId) {
+            profileActivity.getOrCreateStoryViewer().E(context, profileActivity.v2.stories, iVar);
+            return;
+        }
+        TLRPC.ChatFull chatFull = profileActivity.u2;
+        if (chatFull == null || (peerStories = chatFull.stories) == null || peerStories.stories.isEmpty()) {
+            profileActivity.K3();
+        } else {
+            profileActivity.getOrCreateStoryViewer().E(context, profileActivity.u2.stories, iVar);
+        }
     }
 }

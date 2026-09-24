@@ -18,10 +18,10 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.concurrent.Executor;
 import org.telegram.messenger.MessageObject;
-import org.telegram.ui.Cells.l7;
-import org.telegram.ui.yl0;
+import org.telegram.ui.Cells.t6;
+import org.telegram.ui.wl0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class s0 {
     public boolean a;
@@ -36,7 +36,7 @@ public final class s0 {
     public s0(Context context, e eVar) {
         this.f = new ArrayList();
         this.g = new androidx.mediarouter.app.g(this, 8);
-        this.h = new l7(this, 27);
+        this.h = new t6(this, 28);
         this.b = context;
         this.c = eVar;
         this.d = new Handler();
@@ -57,7 +57,7 @@ public final class s0 {
     }
 
     public void b(int i10, Serializable serializable) {
-        ((Executor) this.b).execute(new yl0(this, i10, serializable, 13));
+        ((Executor) this.b).execute(new wl0(this, i10, serializable, 13));
     }
 
     public void c() {

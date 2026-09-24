@@ -1,11 +1,11 @@
 package com.google.android.gms.internal.play_billing;
 
-import v7.y5;
+import v7.z5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
-public final class i0 extends y5 {
-    @Override // v7.y5
+public final class i0 extends z5 {
+    @Override // v7.z5
     public final f0 a(w0 w0Var) {
         f0 f0Var;
         f0 f0Var2 = f0.d;
@@ -22,7 +22,7 @@ public final class i0 extends y5 {
         return f0Var;
     }
 
-    @Override // v7.y5
+    @Override // v7.z5
     public final k0 b(w0 w0Var) {
         k0 k0Var;
         k0 k0Var2 = k0.c;
@@ -39,17 +39,17 @@ public final class i0 extends y5 {
         return k0Var;
     }
 
-    @Override // v7.y5
+    @Override // v7.z5
     public final void c(k0 k0Var, k0 k0Var2) {
         k0Var.b = k0Var2;
     }
 
-    @Override // v7.y5
+    @Override // v7.z5
     public final void d(k0 k0Var, Thread thread) {
         k0Var.a = thread;
     }
 
-    @Override // v7.y5
+    @Override // v7.z5
     public final boolean e(w0 w0Var, f0 f0Var, f0 f0Var2) {
         synchronized (w0Var) {
             try {
@@ -64,7 +64,7 @@ public final class i0 extends y5 {
         }
     }
 
-    @Override // v7.y5
+    @Override // v7.z5
     public final boolean f(l0 l0Var, Object obj, Object obj2) {
         synchronized (l0Var) {
             try {
@@ -79,7 +79,7 @@ public final class i0 extends y5 {
         }
     }
 
-    @Override // v7.y5
+    @Override // v7.z5
     public final boolean g(l0 l0Var, k0 k0Var, k0 k0Var2) {
         synchronized (l0Var) {
             try {

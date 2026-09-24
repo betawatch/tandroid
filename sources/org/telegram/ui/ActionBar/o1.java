@@ -1,121 +1,148 @@
 package org.telegram.ui.ActionBar;
 
+import android.R;
 import android.animation.ValueAnimator;
-import android.os.SystemClock;
+import android.app.Activity;
+import android.content.Context;
+import android.view.ContextThemeWrapper;
 import android.view.View;
-import android.view.ViewTreeObserver;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.LaunchActivity;
+import org.telegram.messenger.AnimationNotificationsLocker;
+import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class o1 implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ p1 a;
+public abstract class o1 {
+    public static final rr w = ji.n.V;
+    public final FrameLayout a;
+    public FrameLayout b;
+    public ViewGroup c;
+    public View d;
+    public boolean f;
+    public boolean g;
+    public View l;
+    public ValueAnimator m;
+    public float p;
+    public float q;
+    public boolean r;
+    public boolean s;
+    public boolean v;
+    public boolean e = false;
+    public final u2 h = new u2(this, 2);
+    public int i = -1;
+    public int j = -1;
+    public int k = -1;
+    public final AnimationNotificationsLocker n = new AnimationNotificationsLocker();
+    public final ArrayList o = new ArrayList();
+    public final n1 t = new n1(this);
+    public final boolean u = true;
 
-    public o1(p1 p1Var) {
-        this.a = p1Var;
+    public o1(FrameLayout frameLayout) {
+        this.a = frameLayout;
+        AndroidUtilities.runOnUIThread(new p(this, 4));
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        p1 p1Var = this.a;
-        FrameLayout frameLayout = p1Var.a;
-        int height = frameLayout.getHeight();
-        int i10 = height - p1Var.i();
-        int i11 = p1Var.i;
-        if (i10 == i11 - p1Var.k || height == i11 || p1Var.m != null) {
-            if (p1Var.m == null) {
-                p1Var.i = height;
-                p1Var.j = p1Var.c.getHeight();
-                p1Var.k = p1Var.i();
-                p1Var.e = false;
-            }
-            return true;
+    public static Activity a(Context context) {
+        if (context instanceof Activity) {
+            return (Activity) context;
         }
-        if (!p1Var.b() || Math.abs(p1Var.i - height) < AndroidUtilities.dp(20.0f)) {
-            p1Var.i = height;
-            p1Var.j = p1Var.c.getHeight();
-            p1Var.k = p1Var.i();
-            p1Var.e = false;
-            return true;
+        if (context instanceof ContextThemeWrapper) {
+            return a(((ContextThemeWrapper) context).getBaseContext());
         }
-        if (p1Var.i == -1 || p1Var.j != p1Var.c.getHeight()) {
-            p1Var.i = height;
-            p1Var.j = p1Var.c.getHeight();
-            p1Var.k = p1Var.i();
-            return false;
+        return null;
+    }
+
+    public abstract boolean b();
+
+    public final void c() {
+        d();
+        View view = this.a;
+        Activity a2 = a(view.getContext());
+        if (a2 != null) {
+            this.c = (ViewGroup) ((ViewGroup) a2.getWindow().getDecorView()).findViewById(R.id.content);
         }
-        boolean z10 = height < p1Var.c.getBottom();
-        p1Var.s = z10;
-        int i12 = p1Var.i;
-        if (p1Var.v) {
-            p1Var.v = false;
-        } else if (p1Var.u) {
-            ValueAnimator valueAnimator = p1Var.m;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
-            }
-            int i13 = p1Var.i();
-            ArrayList arrayList = p1Var.o;
-            arrayList.clear();
-            View view = frameLayout;
-            while (view != null) {
-                arrayList.add(view);
-                if (view == p1Var.d) {
+        View view2 = this.b;
+        if (view2 == null) {
+            while (true) {
+                view2 = null;
+                if (view != null) {
+                    if (!(view.getParent() instanceof x3)) {
+                        if (!(view.getParent() instanceof View)) {
+                            break;
+                        } else {
+                            view = (View) view.getParent();
+                        }
+                    } else {
+                        view2 = view;
+                        break;
+                    }
+                } else {
                     break;
                 }
-                view = view.getParent() instanceof View ? (View) view.getParent() : null;
-            }
-            LaunchActivity launchActivity = LaunchActivity.G1;
-            int expandedHeight = (launchActivity == null || launchActivity.P() == null) ? 0 : LaunchActivity.G1.P().getExpandedHeight();
-            boolean z11 = p1Var instanceof zg.n;
-            if (!z11) {
-                p1Var.h(Math.max(i12, height + expandedHeight));
-            }
-            p1Var.d.requestLayout();
-            p1Var.g(height, z10);
-            float f7 = height - i12;
-            Math.abs(f7);
-            p1Var.f = true;
-            if (height > i12) {
-                float f10 = f7 - i13;
-                if (!z11) {
-                    frameLayout.setTranslationY(-f10);
-                }
-                p1Var.e(f10, 1.0f, z10);
-                p1Var.p = -f10;
-                p1Var.q = -expandedHeight;
-                p1Var.r = true;
-            } else {
-                if (!z11) {
-                    frameLayout.setTranslationY(p1Var.k);
-                }
-                p1Var.e(-p1Var.k, 0.0f, z10);
-                p1Var.q = -p1Var.k;
-                p1Var.p = f7;
-                p1Var.r = false;
-            }
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-            p1Var.m = ofFloat;
-            p1Var.e = false;
-            ofFloat.addUpdateListener(new w0(p1Var, 3));
-            p1Var.m.addListener(new h(p1Var, 2));
-            p1Var.m.setDuration(250L);
-            p1Var.m.setInterpolator(p1.w);
-            p1Var.n.lock();
-            if (p1Var.g) {
-                p1Var.g = false;
-                SystemClock.elapsedRealtime();
-                AndroidUtilities.runOnUIThread(p1Var.h, 100L);
-            } else {
-                p1Var.m.start();
             }
         }
-        p1Var.i = height;
-        p1Var.j = p1Var.c.getHeight();
-        p1Var.k = p1Var.i();
-        return false;
+        this.d = view2;
+        if (view2 != null) {
+            this.l = view2;
+            view2.getViewTreeObserver().addOnPreDrawListener(this.t);
+        }
+    }
+
+    public final void d() {
+        ValueAnimator valueAnimator = this.m;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        View view = this.l;
+        if (view != null) {
+            view.getViewTreeObserver().removeOnPreDrawListener(this.t);
+            this.l = null;
+        }
+    }
+
+    public abstract void e(float f7, float f10, boolean z10);
+
+    public abstract void f();
+
+    public abstract void g(int i10, boolean z10);
+
+    public final void h(int i10) {
+        int i11 = 0;
+        while (true) {
+            ArrayList arrayList = this.o;
+            if (i11 >= arrayList.size()) {
+                return;
+            }
+            ((View) arrayList.get(i11)).getLayoutParams().height = i10;
+            ((View) arrayList.get(i11)).requestLayout();
+            i11++;
+        }
+    }
+
+    public int i() {
+        return 0;
+    }
+
+    public final void j() {
+        ValueAnimator valueAnimator = this.m;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        this.f = false;
+        this.e = false;
+        this.n.unlock();
+        this.m = null;
+        h(-1);
+        this.o.clear();
+        this.d.requestLayout();
+        boolean z10 = this.s;
+        e(0.0f, z10 ? 1.0f : 0.0f, z10);
+        if (!(this instanceof zg.n)) {
+            this.a.setTranslationY(0.0f);
+        }
+        f();
     }
 }

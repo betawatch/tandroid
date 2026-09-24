@@ -23,9 +23,9 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
-import v7.j5;
+import v7.k5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class a {
     public static final g6.b l = new g6.b("CastContext", null);
@@ -136,18 +136,18 @@ public final class a {
                             com.google.android.gms.internal.cast.n nVar = this.h;
                             List unmodifiableList = DesugarCollections.unmodifiableList(this.e.w);
                             nVar.getClass();
-                            com.google.android.gms.internal.cast.n.f.b(hg.c.j(unmodifiableList.size(), "SetRouteDiscovery for ", " IDs"), new Object[0]);
+                            com.google.android.gms.internal.cast.n.f.b(hg.c.i(unmodifiableList.size(), "SetRouteDiscovery for ", " IDs"), new Object[0]);
                             LinkedHashSet<String> linkedHashSet = new LinkedHashSet();
                             Iterator it2 = unmodifiableList.iterator();
                             while (it2.hasNext()) {
-                                linkedHashSet.add(j5.a((String) it2.next()));
+                                linkedHashSet.add(k5.a((String) it2.next()));
                             }
                             com.google.android.gms.internal.cast.n.f.b("resetting routes. appIdToRouteInfo has these appId route keys: ".concat(String.valueOf(nVar.c.keySet())), new Object[0]);
                             HashMap hashMap2 = new HashMap();
                             synchronized (nVar.c) {
                                 try {
                                     for (String str2 : linkedHashSet) {
-                                        com.google.android.gms.internal.cast.l lVar4 = (com.google.android.gms.internal.cast.l) nVar.c.get(j5.a(str2));
+                                        com.google.android.gms.internal.cast.l lVar4 = (com.google.android.gms.internal.cast.l) nVar.c.get(k5.a(str2));
                                         if (lVar4 != null) {
                                             hashMap2.put(str2, lVar4);
                                         }
@@ -206,7 +206,7 @@ public final class a {
     }
 
     public static e d(Context context) {
-        v0.k a2;
+        k6.h a2;
         try {
             a2 = w6.b.a(context);
         } catch (PackageManager.NameNotFoundException | ClassNotFoundException | IllegalAccessException | InstantiationException | NoSuchMethodException | NullPointerException | InvocationTargetException e) {

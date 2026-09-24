@@ -7,12 +7,12 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.s00;
-import org.telegram.ui.Components.xc;
-import org.telegram.ui.xn;
+import org.telegram.ui.Components.yc;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
-public final class d3 extends xn {
+public final class d3 extends wn {
     public boolean Pc;
     public final /* synthetic */ TL_stars.TL_starGiftUnique Qc;
     public final /* synthetic */ long Rc;
@@ -25,14 +25,14 @@ public final class d3 extends xn {
         this.Pc = false;
     }
 
-    @Override // org.telegram.ui.xn, org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.wn, org.telegram.ui.ActionBar.m2
     public final void onBecomeFullyVisible() {
         super.onBecomeFullyVisible();
         if (this.Pc) {
             return;
         }
         this.Pc = true;
-        qc O = xc.a0(this).O(this.Qc.getDocument(), LocaleController.getString(R.string.BoughtResoldGiftToTitle), LocaleController.formatString(R.string.BoughtResoldGiftToText, DialogObject.getShortName(this.currentAccount, this.Rc)));
+        qc O = yc.a0(this).O(this.Qc.getDocument(), LocaleController.getString(R.string.BoughtResoldGiftToTitle), LocaleController.formatString(R.string.BoughtResoldGiftToText, DialogObject.getShortName(this.currentAccount, this.Rc)));
         O.r = false;
         O.j();
         s00 s00Var = this.m9;

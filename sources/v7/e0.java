@@ -1,27 +1,29 @@
 package v7;
 
 import android.content.Context;
-import android.content.Intent;
-import android.content.pm.ActivityInfo;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.ResolveInfo;
-import java.util.Iterator;
-import org.telegram.tgnet.TLObject;
+import android.util.DisplayMetrics;
+import android.util.TypedValue;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public abstract class e0 {
-    public static boolean a(Context context) {
-        ApplicationInfo applicationInfo;
-        Intent putExtra = new Intent().addFlags(TLObject.FLAG_28).setAction("com.android.settings.panel.action.MEDIA_OUTPUT").putExtra("com.android.settings.panel.extra.PACKAGE_NAME", context.getPackageName());
-        Iterator<ResolveInfo> it = context.getPackageManager().queryIntentActivities(putExtra, 0).iterator();
-        while (it.hasNext()) {
-            ActivityInfo activityInfo = it.next().activityInfo;
-            if (activityInfo != null && (applicationInfo = activityInfo.applicationInfo) != null && (applicationInfo.flags & 129) != 0) {
-                context.startActivity(putExtra);
-                return true;
+    public static int a(Context context) {
+        float fraction;
+        DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
+        boolean z10 = displayMetrics.widthPixels < displayMetrics.heightPixels;
+        TypedValue typedValue = new TypedValue();
+        context.getResources().getValue(z10 ? R.dimen.mr_dialog_fixed_width_minor : R.dimen.mr_dialog_fixed_width_major, typedValue, true);
+        int i10 = typedValue.type;
+        if (i10 == 5) {
+            fraction = typedValue.getDimension(displayMetrics);
+        } else {
+            if (i10 != 6) {
+                return -2;
             }
+            int i11 = displayMetrics.widthPixels;
+            fraction = typedValue.getFraction(i11, i11);
         }
-        return false;
+        return (int) fraction;
     }
 }

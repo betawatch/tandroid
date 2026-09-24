@@ -1,18 +1,20 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class o61 extends ImageReceiver {
-    public final /* synthetic */ p61 a;
+public final class o61 extends oz {
+    public final /* synthetic */ r61 X;
 
-    public o61(p61 p61Var) {
-        this.a = p61Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public o61(r61 r61Var, int i10) {
+        super(i10, false);
+        this.X = r61Var;
     }
 
-    @Override // org.telegram.messenger.ImageReceiver, org.telegram.ui.Components.w5
-    public final void invalidate() {
-        this.a.invalidate();
+    @Override // s4.c0
+    public final int W0(s4.z0 z0Var) {
+        return this.X.a3 ? AndroidUtilities.displaySize.y : super.W0(z0Var);
     }
 }

@@ -1,37 +1,47 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class pw0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ qw0 b;
+public final class pw0 extends bb {
+    public ss X;
 
-    public /* synthetic */ pw0(qw0 qw0Var, int i10) {
-        this.a = i10;
-        this.b = qw0Var;
+    public pw0(Context context) {
+        super(context, null, true, false, null);
+        fixNavigationBar();
+        this.E = true;
+        this.y = true;
+        K();
+        wl0 wl0Var = this.d;
+        int i10 = this.backgroundPaddingLeft;
+        wl0Var.setPadding(i10, 0, i10, 0);
+        this.d.j(new ug0(this, 5));
+        this.d.setOnItemClickListener(new j(this, 14));
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                qw0 qw0Var = this.b;
-                qw0Var.y = 1.0f;
-                qw0Var.invalidate();
-                qw0Var.G = null;
-                break;
-            case 1:
-                qw0 qw0Var2 = this.b;
-                qw0Var2.m(((Float) qw0Var2.v.getAnimatedValue()).floatValue());
-                qw0Var2.v = null;
-                break;
-            default:
-                super.onAnimationEnd(animator);
-                this.b.F = null;
-                break;
+    public static void P(pw0 pw0Var, int i10) {
+        v51 G = pw0Var.X.G(i10 - 1);
+        Object obj = G != null ? G.G : null;
+        if (obj instanceof TLRPC.User) {
+            MessagesController.getInstance(pw0Var.currentAccount).openApp(pw0Var.attachedFragment, (TLRPC.User) obj, null, 0, null);
         }
+    }
+
+    @Override // org.telegram.ui.Components.bb
+    public final vl0 v(wl0 wl0Var) {
+        ss ssVar = new ss(wl0Var, getContext(), this.currentAccount, 0, true, this.resourcesProvider);
+        this.X = ssVar;
+        ssVar.r = false;
+        return ssVar;
+    }
+
+    @Override // org.telegram.ui.Components.bb
+    public final CharSequence y() {
+        return LocaleController.getString(R.string.SearchAppsExamples);
     }
 }

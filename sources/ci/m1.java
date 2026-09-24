@@ -1,12 +1,12 @@
 package ci;
 
 import android.content.Context;
-import org.telegram.ui.Components.kx;
+import org.telegram.ui.Components.lx;
 import org.telegram.ui.Components.lz;
-import org.telegram.ui.n51;
-import org.telegram.ui.z61;
+import org.telegram.ui.a71;
+import org.telegram.ui.o51;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class m1 extends ji.o {
     public final /* synthetic */ int q;
@@ -29,7 +29,7 @@ public final class m1 extends ji.o {
                 ((lz) this.r).f0 = true;
                 break;
             case 4:
-                ((z61) this.r).w1 = true;
+                ((a71) this.r).w1 = true;
                 break;
         }
     }
@@ -44,16 +44,16 @@ public final class m1 extends ji.o {
                 ((lz) this.r).f0 = false;
                 break;
             case 2:
-                ((kx) this.r).Q.f0 = false;
+                ((lx) this.r).Q.f0 = false;
                 break;
             case 3:
-                ((n51) this.r).R.w1 = false;
+                ((o51) this.r).R.w1 = false;
                 break;
             case 4:
-                ((z61) this.r).w1 = false;
+                ((a71) this.r).w1 = false;
                 break;
             default:
-                ((n51) this.r).R.w1 = false;
+                ((o51) this.r).R.w1 = false;
                 break;
         }
     }

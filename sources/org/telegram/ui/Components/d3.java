@@ -4,7 +4,7 @@ import java.util.regex.Pattern;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d3 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -12,10 +12,10 @@ public final /* synthetic */ class d3 implements Runnable {
     public final /* synthetic */ int[] c;
     public final /* synthetic */ Runnable d;
 
-    public /* synthetic */ d3(int i10, int[] iArr, org.telegram.ui.ia0 ia0Var) {
+    public /* synthetic */ d3(int i10, int[] iArr, org.telegram.ui.m80 m80Var) {
         this.b = i10;
         this.c = iArr;
-        this.d = ia0Var;
+        this.d = m80Var;
     }
 
     @Override // java.lang.Runnable

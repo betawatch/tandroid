@@ -10,19 +10,19 @@ import android.widget.TextView;
 import com.google.android.gms.internal.vision.e2;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.ul;
+import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.y5;
-import org.telegram.ui.Components.pb0;
-import w7.x5;
+import org.telegram.ui.ActionBar.x5;
+import org.telegram.ui.Components.ac0;
+import w7.y5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public final class j extends LinearLayout implements y5 {
+public final class j extends LinearLayout implements x5 {
     public final d6 a;
-    public final pb0 b;
+    public final ac0 b;
     public final FrameLayout c;
     public final ImageView d;
     public final TextView e;
@@ -37,31 +37,31 @@ public final class j extends LinearLayout implements y5 {
         setOrientation(0);
         FrameLayout frameLayout = new FrameLayout(context);
         this.c = frameLayout;
-        pb0 pb0Var = new pb0(1);
-        this.b = pb0Var;
-        frameLayout.setBackground(pb0Var);
+        ac0 ac0Var = new ac0(1);
+        this.b = ac0Var;
+        frameLayout.setBackground(ac0Var);
         ImageView imageView = new ImageView(context);
         this.d = imageView;
         imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
-        frameLayout.addView(imageView, x5.e(24, 24, 17));
-        LinearLayout f7 = ul.f(context, 1);
+        frameLayout.addView(imageView, y5.e(24, 24, 17));
+        LinearLayout f7 = ok.f(context, 1);
         TextView textView = new TextView(context);
         this.e = textView;
         textView.setTextSize(1, 16.0f);
-        TextView h = e2.h(f7, textView, x5.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2), context);
+        TextView h = e2.h(f7, textView, y5.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2), context);
         this.f = h;
         h.setGravity(17);
         h.setMinWidth(AndroidUtilities.dp(20.66f));
         h.setPadding(AndroidUtilities.dp(6.33f), 0, AndroidUtilities.dp(6.33f), 0);
         h.setTextSize(1, 16.0f);
         if (LocaleController.isRTL) {
-            addView(h, x5.j(13.33f, 0.0f));
-            addView(f7, x5.p(0, -2, 1.0f, 23, 20, 0, z10 ? 12 : 16, 0));
-            addView(frameLayout, x5.t(28, 28, 21, 0, 0, z10 ? 9 : 14, 0));
+            addView(h, y5.j(13.33f, 0.0f));
+            addView(f7, y5.p(0, -2, 1.0f, 23, 20, 0, z10 ? 12 : 16, 0));
+            addView(frameLayout, y5.t(28, 28, 21, 0, 0, z10 ? 9 : 14, 0));
         } else {
-            addView(frameLayout, x5.t(28, 28, 19, z10 ? 9 : 14, 0, 0, 0));
-            addView(f7, x5.p(0, -2, 1.0f, 23, z10 ? 12 : 16, 0, 20, 0));
-            addView(h, x5.j(0.0f, 13.33f));
+            addView(frameLayout, y5.t(28, 28, 19, z10 ? 9 : 14, 0, 0, 0));
+            addView(f7, y5.p(0, -2, 1.0f, 23, z10 ? 12 : 16, 0, 20, 0));
+            addView(h, y5.j(0.0f, 13.33f));
         }
         e();
         setUnreadMode(true);
@@ -77,7 +77,7 @@ public final class j extends LinearLayout implements y5 {
         setUnreadMode(z10);
     }
 
-    @Override // org.telegram.ui.ActionBar.y5
+    @Override // org.telegram.ui.ActionBar.x5
     public final void e() {
         int i10 = h6.G6;
         d6 d6Var = this.a;

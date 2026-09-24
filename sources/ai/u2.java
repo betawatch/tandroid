@@ -3,11 +3,11 @@ package ai;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import java.util.ArrayList;
-import org.telegram.ui.Components.co0;
+import org.telegram.ui.Components.dm0;
+import org.telegram.ui.Components.po0;
 import org.telegram.ui.Components.sq;
-import org.telegram.ui.Components.tl0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class u2 implements View.OnAttachStateChangeListener {
     public final /* synthetic */ int a;
@@ -66,12 +66,12 @@ public final class u2 implements View.OnAttachStateChangeListener {
                 ((sq) this.b).a();
                 break;
             case 8:
-                tl0 tl0Var = (tl0) this.b;
-                org.telegram.ui.Components.o5 o5Var = tl0Var.t;
+                dm0 dm0Var = (dm0) this.b;
+                org.telegram.ui.Components.o5 o5Var = dm0Var.t;
                 if (o5Var != null) {
                     o5Var.a();
                 }
-                org.telegram.ui.Components.o5 o5Var2 = tl0Var.u;
+                org.telegram.ui.Components.o5 o5Var2 = dm0Var.u;
                 if (o5Var2 != null) {
                     o5Var2.a();
                     break;
@@ -83,7 +83,7 @@ public final class u2 implements View.OnAttachStateChangeListener {
                 ((org.telegram.ui.Components.o5) this.b).a();
                 break;
             case 11:
-                ni.f fVar = (ni.f) this.b;
+                oi.f fVar = (oi.f) this.b;
                 if (view == ((View) fVar.b)) {
                     fVar.Q(view.getViewTreeObserver());
                     break;
@@ -109,15 +109,15 @@ public final class u2 implements View.OnAttachStateChangeListener {
                 }
                 break;
             default:
-                ArrayList arrayList2 = ((yh.k3) this.b).e;
+                ArrayList arrayList2 = ((yh.j3) this.b).e;
                 int size = arrayList2.size();
                 int i10 = 0;
                 while (i10 < size) {
                     Object obj = arrayList2.get(i10);
                     i10++;
-                    yh.i3 i3Var = (yh.i3) obj;
-                    if (i3Var.c) {
-                        i3Var.d.onAttachedToWindow();
+                    yh.h3 h3Var = (yh.h3) obj;
+                    if (h3Var.c) {
+                        h3Var.d.onAttachedToWindow();
                     }
                 }
                 break;
@@ -142,24 +142,24 @@ public final class u2 implements View.OnAttachStateChangeListener {
                 }
                 break;
             case 2:
-                l.e eVar = (l.e) this.b;
-                ViewTreeObserver viewTreeObserver2 = eVar.N;
+                l.f fVar = (l.f) this.b;
+                ViewTreeObserver viewTreeObserver2 = fVar.N;
                 if (viewTreeObserver2 != null) {
                     if (!viewTreeObserver2.isAlive()) {
-                        eVar.N = view.getViewTreeObserver();
+                        fVar.N = view.getViewTreeObserver();
                     }
-                    eVar.N.removeGlobalOnLayoutListener(eVar.r);
+                    fVar.N.removeGlobalOnLayoutListener(fVar.r);
                 }
                 view.removeOnAttachStateChangeListener(this);
                 break;
             case 3:
-                l.c0 c0Var = (l.c0) this.b;
-                ViewTreeObserver viewTreeObserver3 = c0Var.E;
+                l.d0 d0Var = (l.d0) this.b;
+                ViewTreeObserver viewTreeObserver3 = d0Var.E;
                 if (viewTreeObserver3 != null) {
                     if (!viewTreeObserver3.isAlive()) {
-                        c0Var.E = view.getViewTreeObserver();
+                        d0Var.E = view.getViewTreeObserver();
                     }
-                    c0Var.E.removeGlobalOnLayoutListener(c0Var.r);
+                    d0Var.E.removeGlobalOnLayoutListener(d0Var.r);
                 }
                 view.removeOnAttachStateChangeListener(this);
                 break;
@@ -178,28 +178,28 @@ public final class u2 implements View.OnAttachStateChangeListener {
                 ((sq) this.b).b();
                 break;
             case 8:
-                tl0 tl0Var = (tl0) this.b;
-                org.telegram.ui.Components.o5 o5Var = tl0Var.t;
+                dm0 dm0Var = (dm0) this.b;
+                org.telegram.ui.Components.o5 o5Var = dm0Var.t;
                 if (o5Var != null) {
                     o5Var.b();
                 }
-                org.telegram.ui.Components.o5 o5Var2 = tl0Var.u;
+                org.telegram.ui.Components.o5 o5Var2 = dm0Var.u;
                 if (o5Var2 != null) {
                     o5Var2.a();
                     break;
                 }
                 break;
             case 9:
-                view.removeCallbacks((Runnable) ((co0) this.b).a.remove(view));
+                view.removeCallbacks((Runnable) ((po0) this.b).a.remove(view));
                 view.removeOnAttachStateChangeListener(this);
                 break;
             case 10:
                 ((org.telegram.ui.Components.o5) this.b).b();
                 break;
             case 11:
-                ni.f fVar = (ni.f) this.b;
-                if (view == ((View) fVar.b)) {
-                    fVar.Q(null);
+                oi.f fVar2 = (oi.f) this.b;
+                if (view == ((View) fVar2.b)) {
+                    fVar2.Q(null);
                     break;
                 }
                 break;
@@ -223,13 +223,13 @@ public final class u2 implements View.OnAttachStateChangeListener {
                 }
                 break;
             default:
-                ArrayList arrayList = ((yh.k3) this.b).e;
+                ArrayList arrayList = ((yh.j3) this.b).e;
                 int size = arrayList.size();
                 int i10 = 0;
                 while (i10 < size) {
                     Object obj = arrayList.get(i10);
                     i10++;
-                    ((yh.i3) obj).a();
+                    ((yh.h3) obj).a();
                 }
                 break;
         }

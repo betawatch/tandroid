@@ -3,12 +3,12 @@ package pf;
 import android.graphics.Rect;
 import android.view.Choreographer;
 import java.util.ArrayList;
+import vh.h;
 import vh.i;
-import vh.j;
-import w7.p;
+import w7.q;
 import yf.x;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements Choreographer.FrameCallback {
     public final /* synthetic */ int a;
@@ -39,9 +39,9 @@ public final /* synthetic */ class b implements Choreographer.FrameCallback {
                         }
                     }
                     if (aVar2.c != 0) {
-                        cVar.d(p.a(aVar2.b() / 0.95f, 0.0f, 1.0f));
+                        cVar.d(q.a(aVar2.b() / 0.95f, 0.0f, 1.0f));
                     } else if (aVar.c != 0) {
-                        cVar.d(p.a(1.0f - (aVar.b() / 0.95f), 0.0f, 1.0f));
+                        cVar.d(q.a(1.0f - (aVar.b() / 0.95f), 0.0f, 1.0f));
                     }
                     cVar.l.postFrameCallback(cVar.m);
                     break;
@@ -51,17 +51,17 @@ public final /* synthetic */ class b implements Choreographer.FrameCallback {
                 ((Runnable) this.b).run();
                 break;
             case 2:
-                j jVar = (j) this.b;
-                Rect rect = jVar.m;
+                i iVar = (i) this.b;
+                Rect rect = iVar.m;
                 long currentTimeMillis = System.currentTimeMillis();
-                if (currentTimeMillis - jVar.h > 32 && !jVar.j && !rect.isEmpty()) {
-                    jVar.h = currentTimeMillis;
-                    jVar.j = true;
-                    jVar.o.set(rect);
-                    jVar.a.postRunnable(new i(jVar, (jVar.d + 1) % 2, 0));
+                if (currentTimeMillis - iVar.h > 32 && !iVar.j && !rect.isEmpty()) {
+                    iVar.h = currentTimeMillis;
+                    iVar.j = true;
+                    iVar.o.set(rect);
+                    iVar.a.postRunnable(new h(iVar, (iVar.d + 1) % 2, 0));
                 }
                 rect.set(0, 0, 0, 0);
-                jVar.l = false;
+                iVar.l = false;
                 break;
             default:
                 x xVar = (x) this.b;

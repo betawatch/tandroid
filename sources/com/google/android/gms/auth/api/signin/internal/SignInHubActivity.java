@@ -21,7 +21,7 @@ import com.google.android.gms.common.api.Status;
 import java.lang.reflect.Modifier;
 import java.util.Set;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class SignInHubActivity extends v {
     public static boolean T = false;
@@ -176,7 +176,7 @@ public class SignInHubActivity extends v {
     }
 
     public final void v() {
-        w1.b bVar = (w1.b) new a(f(), w1.b.f).m(w1.b.class);
+        w1.b bVar = (w1.b) new a(f(), w1.b.f).k(w1.b.class);
         m mVar = new m(this, 0);
         boolean z10 = bVar.e;
         n nVar = bVar.d;

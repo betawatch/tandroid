@@ -9,9 +9,9 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.messenger.ul;
+import org.telegram.messenger.ok;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class c2 extends Drawable {
     public final Context a;
@@ -44,7 +44,7 @@ public final class c2 extends Drawable {
         int centerX = bounds.centerX();
         int centerY = bounds.centerY();
         Drawable drawable = this.b;
-        drawable.setBounds(ul.x(2, centerX, drawable), ul.e(2, centerY, drawable), ul.B(2, centerX, drawable), ul.z(2, centerY, drawable));
+        drawable.setBounds(ok.z(2, centerX, drawable), ok.d(2, centerY, drawable), org.telegram.ui.Cells.c1.t(2, centerX, drawable), org.telegram.ui.Cells.c1.d(2, centerY, drawable));
         drawable.draw(canvas);
         if (this.g) {
             int dp = AndroidUtilities.dp(9.0f) + centerX;

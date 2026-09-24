@@ -1,44 +1,43 @@
 package org.telegram.ui.Components;
 
-import android.view.KeyEvent;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o80 implements org.telegram.ui.ActionBar.a2, org.telegram.ui.ActionBar.l1 {
+public final /* synthetic */ class o80 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ w80 b;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e3 c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ o80(w80 w80Var, int i10) {
+    public /* synthetic */ o80(bb bbVar, Object obj, long j3, int i10) {
         this.a = i10;
-        this.b = w80Var;
+        this.c = bbVar;
+        this.d = obj;
+        this.b = j3;
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                v80 v80Var = this.b.r;
-                if (v80Var != null) {
-                    v80Var.j();
-                    break;
-                }
+                r80.m((r80) this.c, this.b, (TLRPC.TL_messages_importChatInvite) this.d, (TLRPC.ChatInviteJoinResult) obj, (TLRPC.TL_error) obj2);
+                break;
+            case 1:
+                xh.h4.V((xh.h4) this.c, (TL_stars.TL_starGiftUnique) this.d, this.b, (yh.a3) obj, (nf.e) obj2);
                 break;
             default:
-                v80 v80Var2 = this.b.r;
-                if (v80Var2 != null) {
-                    v80Var2.c();
-                    break;
-                }
+                yh.h7.Q((yh.h7) this.c, (v51) this.d, this.b, (Boolean) obj, (String) obj2);
                 break;
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.l1
-    public void o(KeyEvent keyEvent) {
-        w80 w80Var = this.b;
-        w80Var.getClass();
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && w80Var.s.isShowing()) {
-            w80Var.s.d(true);
-        }
+    public /* synthetic */ o80(r80 r80Var, long j3, TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite) {
+        this.a = 0;
+        this.c = r80Var;
+        this.b = j3;
+        this.d = tL_messages_importChatInvite;
     }
 }

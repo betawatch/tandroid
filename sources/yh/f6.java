@@ -3,7 +3,7 @@ package yh;
 import android.view.View;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f6 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -16,22 +16,22 @@ public final /* synthetic */ class f6 implements View.OnClickListener {
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        org.telegram.ui.ActionBar.n2 R;
-        org.telegram.ui.ActionBar.n2 R2;
+        org.telegram.ui.ActionBar.m2 R;
+        org.telegram.ui.ActionBar.m2 R2;
         switch (this.a) {
             case 0:
                 if (this.b.f > 0 && (R = LaunchActivity.R()) != null) {
-                    org.telegram.ui.ActionBar.l2 l2Var = new org.telegram.ui.ActionBar.l2();
-                    l2Var.a = true;
-                    R.showAsSheet(new w7(), l2Var);
+                    org.telegram.ui.ActionBar.k2 k2Var = new org.telegram.ui.ActionBar.k2();
+                    k2Var.a = true;
+                    R.showAsSheet(new w7(), k2Var);
                     break;
                 }
                 break;
             default:
                 if (this.b.f > 0 && (R2 = LaunchActivity.R()) != null) {
-                    org.telegram.ui.ActionBar.l2 l2Var2 = new org.telegram.ui.ActionBar.l2();
-                    l2Var2.a = true;
-                    R2.showAsSheet(new w7(), l2Var2);
+                    org.telegram.ui.ActionBar.k2 k2Var2 = new org.telegram.ui.ActionBar.k2();
+                    k2Var2.a = true;
+                    R2.showAsSheet(new w7(), k2Var2);
                     break;
                 }
                 break;

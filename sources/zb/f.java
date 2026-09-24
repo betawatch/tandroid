@@ -10,11 +10,9 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 import n6.j;
 import n6.l;
-import n7.a1;
+import n7.z0;
 import org.telegram.tgnet.ConnectionsManager;
-import v7.r1;
-import v8.s;
-import w7.j8;
+import w7.k8;
 import x7.d7;
 import x7.da;
 import x7.e7;
@@ -29,8 +27,9 @@ import x7.n7;
 import x7.o;
 import x7.o7;
 import x7.r0;
+import x7.s;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class f extends qb.e {
     public boolean d = true;
@@ -43,9 +42,9 @@ public final class f extends qb.e {
         l.i(aVar, "ImageLabelerOptions can not be null");
         this.f = bVar;
         this.g = faVar;
-        s sVar = new s();
-        sVar.a = Float.valueOf(aVar.a);
-        this.e = new h8(sVar);
+        ka.c cVar = new ka.c(29, false);
+        cVar.b = Float.valueOf(aVar.a);
+        this.e = new h8(cVar);
         this.h = new o0.a(qb.g.c().b());
     }
 
@@ -55,13 +54,13 @@ public final class f extends qb.e {
         fa faVar = this.g;
         n nVar = new n();
         nVar.c = m7.b;
-        a1 a1Var = new a1(26);
-        a1Var.b = this.e;
+        z0 z0Var = new z0(26);
+        z0Var.b = this.e;
         m mVar = o.b;
         Object[] objArr = {n7.b};
-        j8.a(1, objArr);
-        a1Var.c = new x7.s(1, objArr);
-        nVar.d = new g8(a1Var);
+        k8.a(1, objArr);
+        z0Var.c = new s(1, objArr);
+        nVar.d = new g8(z0Var);
         qb.m.a.execute(new p(faVar, new a5.a(nVar, 0), o7.e, faVar.b(), 7));
     }
 
@@ -104,7 +103,7 @@ public final class f extends qb.e {
             faVar.i.put(o7Var, Long.valueOf(elapsedRealtime2));
             n nVar = new n();
             nVar.c = m7.b;
-            r1 r1Var = new r1(9, false);
+            v7.l lVar = new v7.l(10, false);
             cf.c cVar = new cf.c();
             cVar.a = Long.valueOf(Long.MAX_VALUE & elapsedRealtime);
             cVar.b = n7Var;
@@ -112,7 +111,7 @@ public final class f extends qb.e {
             Boolean bool = Boolean.TRUE;
             cVar.d = bool;
             cVar.e = bool;
-            r1Var.b = new g7(cVar);
+            lVar.b = new g7(cVar);
             int i11 = aVar.e;
             if (i11 == -1) {
                 Bitmap bitmap = aVar.a;
@@ -132,27 +131,26 @@ public final class f extends qb.e {
             o0.a aVar2 = new o0.a(25, b10);
             aVar2.b = i11 != -1 ? i11 != 35 ? i11 != 842094169 ? i11 != 16 ? i11 != 17 ? d7.b : d7.d : d7.c : d7.e : d7.f : d7.h;
             aVar2.c = Integer.valueOf(i10 & ConnectionsManager.DEFAULT_DATACENTER_ID);
-            r1Var.c = new e7(aVar2);
-            r1Var.d = this.e;
-            nVar.e = new f8(r1Var);
+            lVar.d = new e7(aVar2);
+            lVar.c = this.e;
+            nVar.e = new f8(lVar);
             qb.m.a.execute(new p(faVar, new a5.a(nVar, 0), o7Var, faVar.b(), 7));
         }
-        int i12 = 8;
-        r1 r1Var2 = new r1(8, false);
-        r1Var2.c = this.e;
-        r1Var2.b = n7Var;
-        r1Var2.d = Boolean.valueOf(this.d);
-        qb.m.a.execute(new da(this.g, new r0(r1Var2), elapsedRealtime));
+        v7.l lVar2 = new v7.l(9, false);
+        lVar2.d = this.e;
+        lVar2.b = n7Var;
+        lVar2.c = Boolean.valueOf(this.d);
+        qb.m.a.execute(new da(this.g, new r0(lVar2), elapsedRealtime));
         long currentTimeMillis = System.currentTimeMillis();
         o0.a aVar3 = this.h;
-        int i13 = n7Var.a;
+        int i12 = n7Var.a;
         long j10 = currentTimeMillis - elapsedRealtime;
         synchronized (aVar3) {
             long elapsedRealtime3 = SystemClock.elapsedRealtime();
             if (((AtomicLong) aVar3.c).get() != -1 && elapsedRealtime3 - ((AtomicLong) aVar3.c).get() <= TimeUnit.MINUTES.toMillis(30L)) {
                 return;
             }
-            ((p6.b) aVar3.b).f(new n6.o(0, Arrays.asList(new j(24305, i13, 0, j10, currentTimeMillis, null, null, 0, -1)))).addOnFailureListener(new e6.n(aVar3, elapsedRealtime3, i12));
+            ((p6.b) aVar3.b).f(new n6.o(0, Arrays.asList(new j(24305, i12, 0, j10, currentTimeMillis, null, null, 0, -1)))).addOnFailureListener(new e6.n(aVar3, elapsedRealtime3, 8));
         }
     }
 }

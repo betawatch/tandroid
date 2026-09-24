@@ -1,14 +1,17 @@
 package p2;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
-/* loaded from: classes.dex */
-public final class h extends k {
-    public final boolean w;
-    public final boolean x;
+import android.net.Uri;
 
-    public h(String str, j jVar, long j3, int i10, long j10, b2.o oVar, String str2, String str3, long j11, long j12, boolean z10, boolean z11, boolean z12) {
-        super(str, jVar, j3, i10, j10, oVar, str2, str3, j11, j12, z10);
-        this.w = z11;
-        this.x = z12;
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* loaded from: classes.dex */
+public final class h {
+    public final Uri a;
+    public final long b;
+    public final int c;
+
+    public h(Uri uri, long j3, int i10) {
+        this.a = uri;
+        this.b = j3;
+        this.c = i10;
     }
 }

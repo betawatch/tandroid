@@ -29,9 +29,9 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.ct;
-import org.telegram.ui.u10;
+import org.telegram.ui.t10;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class x extends FrameLayout implements DownloadController.FileDownloadProgressListener {
     public static final /* synthetic */ int L = 0;
@@ -72,7 +72,7 @@ public final class x extends FrameLayout implements DownloadController.FileDownl
         imageView.setImageResource(R.drawable.ic_ab_other);
         imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.m6, d6Var), PorterDuff.Mode.SRC_IN));
         imageView.setBackground(org.telegram.ui.ActionBar.h6.f0(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.i6, d6Var), 1, -1));
-        addView(imageView, w7.x5.d(42, 42.0f, (LocaleController.isRTL ? 3 : 5) | 16, 5.0f, 0.0f, 5.0f, 0.0f));
+        addView(imageView, w7.y5.d(42, 42.0f, (LocaleController.isRTL ? 3 : 5) | 16, 5.0f, 0.0f, 5.0f, 0.0f));
         imageView.setOnClickListener(new ai.e2(6));
         RadialProgress2 radialProgress2 = new RadialProgress2(this, d6Var);
         this.H = radialProgress2;
@@ -341,7 +341,7 @@ public final class x extends FrameLayout implements DownloadController.FileDownl
         try {
             CharSequence replace = this.w.getMusicAuthor().replace('\n', ' ');
             if (this.I == 1) {
-                replace = new SpannableStringBuilder(replace).append(' ').append((CharSequence) this.J).append(' ').append(u10.d(this.w, true, 2, null));
+                replace = new SpannableStringBuilder(replace).append(' ').append((CharSequence) this.J).append(' ').append(t10.d(this.w, true, 2, null));
             }
             CharSequence ellipsize2 = TextUtils.ellipsize(replace, org.telegram.ui.ActionBar.h6.g3, size, TextUtils.TruncateAt.END);
             CharSequence highlightText2 = AndroidUtilities.highlightText(ellipsize2, this.w.highlightedWords, d6Var);
@@ -352,7 +352,7 @@ public final class x extends FrameLayout implements DownloadController.FileDownl
             FileLog.e(e7);
         }
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(56.0f), TLObject.FLAG_30));
-        int B = LocaleController.isRTL ? org.telegram.messenger.z0.B(8.0f, View.MeasureSpec.getSize(i10), AndroidUtilities.dp(52.0f)) : AndroidUtilities.dp(8.0f);
+        int B = LocaleController.isRTL ? org.telegram.messenger.f0.B(8.0f, View.MeasureSpec.getSize(i10), AndroidUtilities.dp(52.0f)) : AndroidUtilities.dp(8.0f);
         int dp = AndroidUtilities.dp(4.0f) + B;
         this.c = dp;
         int dp2 = AndroidUtilities.dp(6.0f);

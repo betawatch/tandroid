@@ -6,7 +6,7 @@ import java.io.File;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z implements Utilities.Callback {
     public final /* synthetic */ int a = 0;
@@ -49,14 +49,14 @@ public final /* synthetic */ class z implements Utilities.Callback {
                 }
             default:
                 b1 b1Var2 = this.b;
-                AndroidUtilities.runOnUIThread(new z8(b1Var2, (File) obj, (org.telegram.ui.ActionBar.b2) this.e, this.c, this.d, (String) this.f, 14));
+                AndroidUtilities.runOnUIThread(new z8(b1Var2, (File) obj, (org.telegram.ui.ActionBar.a2) this.e, this.c, this.d, (String) this.f, 14));
                 break;
         }
     }
 
-    public /* synthetic */ z(b1 b1Var, org.telegram.ui.ActionBar.b2 b2Var, String str, String str2, String str3) {
+    public /* synthetic */ z(b1 b1Var, org.telegram.ui.ActionBar.a2 a2Var, String str, String str2, String str3) {
         this.b = b1Var;
-        this.e = b2Var;
+        this.e = a2Var;
         this.c = str;
         this.d = str2;
         this.f = str3;

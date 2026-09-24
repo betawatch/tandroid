@@ -16,16 +16,16 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.WebFile;
-import org.telegram.messenger.ul;
+import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.ui.Cells.p9;
 import org.telegram.ui.Cells.q9;
-import org.telegram.ui.Cells.r9;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public final class p4 extends a0 implements org.telegram.ui.ActionBar.y5, q9, m0 {
+public final class p4 extends a0 implements org.telegram.ui.ActionBar.x5, p9, m0 {
     public static final /* synthetic */ int M = 0;
     public final Drawable E;
     public final View F;
@@ -61,10 +61,10 @@ public final class p4 extends a0 implements org.telegram.ui.ActionBar.y5, q9, m0
         View view = new View(context);
         this.F = view;
         view.setOnClickListener(new ai.v0(this, 29));
-        addView(view, w7.x5.e(-1, -2, 51));
+        addView(view, w7.y5.e(-1, -2, 51));
         l0 l0Var = new l0(context, d6Var, new xa.c(this, 28));
         this.L = l0Var;
-        addView(l0Var.a, w7.x5.e(-2, -2, 51));
+        addView(l0Var.a, w7.y5.e(-2, -2, 51));
         e();
     }
 
@@ -101,7 +101,7 @@ public final class p4 extends a0 implements org.telegram.ui.ActionBar.y5, q9, m0
         this.L.c(canvas);
     }
 
-    @Override // org.telegram.ui.ActionBar.y5
+    @Override // org.telegram.ui.ActionBar.x5
     public final void e() {
         int i10 = org.telegram.ui.ActionBar.h6.pe;
         org.telegram.ui.ActionBar.d6 d6Var = this.r;
@@ -117,7 +117,7 @@ public final class p4 extends a0 implements org.telegram.ui.ActionBar.y5, q9, m0
         }
     }
 
-    @Override // org.telegram.ui.Cells.q9
+    @Override // org.telegram.ui.Cells.p9
     public final void fillTextLayoutBlocks(ArrayList arrayList) {
         this.L.e(arrayList);
     }
@@ -195,7 +195,7 @@ public final class p4 extends a0 implements org.telegram.ui.ActionBar.y5, q9, m0
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         Canvas canvas2;
-        r9 textSelectionHelper;
+        q9 textSelectionHelper;
         if (getMap() != null) {
             ImageReceiver imageReceiver = this.y;
             canvas2 = canvas;
@@ -204,9 +204,9 @@ public final class p4 extends a0 implements org.telegram.ui.ActionBar.y5, q9, m0
             int centerY = (int) imageReceiver.getCenterY();
             Drawable drawable = this.E;
             if (drawable != null) {
-                int x10 = ul.x(2, centerX, drawable);
-                int e = ul.e(2, centerY, drawable);
-                drawable.setBounds(x10, e, drawable.getIntrinsicWidth() + x10, drawable.getIntrinsicHeight() + e);
+                int z10 = ok.z(2, centerX, drawable);
+                int d = ok.d(2, centerY, drawable);
+                drawable.setBounds(z10, d, drawable.getIntrinsicWidth() + z10, drawable.getIntrinsicHeight() + d);
                 drawable.draw(canvas2);
             }
             TL_iv.pageBlockMap map = getMap();

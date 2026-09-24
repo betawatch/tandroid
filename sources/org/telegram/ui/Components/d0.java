@@ -17,7 +17,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class d0 extends FrameLayout {
     public final int a;
@@ -38,13 +38,13 @@ public final class d0 extends FrameLayout {
         b0Var.setOrientation(0);
         this.h = new e6(b0Var, 0L, 320L, rr.h);
         if (!z10) {
-            addView(b0Var, w7.x5.e(-1, -1, 119));
+            addView(b0Var, w7.y5.e(-1, -1, 119));
             return;
         }
         HorizontalScrollView horizontalScrollView = new HorizontalScrollView(context);
         horizontalScrollView.setFillViewport(true);
         horizontalScrollView.addView(b0Var);
-        addView(horizontalScrollView, w7.x5.e(-1, -1, 119));
+        addView(horizontalScrollView, w7.y5.e(-1, -1, 119));
     }
 
     public final void a(int i10, String str, Utilities.Callback callback) {
@@ -57,7 +57,7 @@ public final class d0 extends FrameLayout {
         c0Var.h.setImageResource(i10);
         c0Var.n.setText(str);
         c0Var.setOnClickListener(new a0(childCount, 0, callback));
-        b0Var.addView(c0Var, w7.x5.o(0, -1, 1.0f, 119));
+        b0Var.addView(c0Var, w7.y5.o(0, -1, 1.0f, 119));
     }
 
     public final void b(TL_aicompose.AiComposeTone aiComposeTone, Utilities.Callback callback) {
@@ -97,10 +97,10 @@ public final class d0 extends FrameLayout {
             }
             w9Var.setAnimatedEmojiDrawable(new q5(9, i12, j3));
         }
-        c0Var.setOnClickListener(new org.telegram.ui.qf(10, callback, aiComposeTone));
+        c0Var.setOnClickListener(new org.telegram.ui.pf(10, callback, aiComposeTone));
         c0Var.setOnLongClickListener(new ai.q3(1, this, c0Var));
         b0 b0Var = this.c;
-        b0Var.addView(c0Var, w7.x5.o(b0Var.getOrientation() == 0 ? 0 : -1, b0Var.getOrientation() != 1 ? -1 : 0, 1.0f, 119));
+        b0Var.addView(c0Var, w7.y5.o(b0Var.getOrientation() == 0 ? 0 : -1, b0Var.getOrientation() != 1 ? -1 : 0, 1.0f, 119));
     }
 
     public final void c(int i10) {

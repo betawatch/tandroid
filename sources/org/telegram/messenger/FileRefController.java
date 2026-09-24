@@ -18,7 +18,7 @@ import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class FileRefController extends BaseController {
     private static volatile FileRefController[] Instance = new FileRefController[4];
@@ -32,7 +32,7 @@ public class FileRefController extends BaseController {
     private ArrayList<Waiter> savedGifsWaiters;
     private ArrayList<Waiter> wallpaperWaiters;
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class CachedResult {
         private long firstQueryTime;
         private TLObject response;
@@ -41,7 +41,7 @@ public class FileRefController extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class Requester {
         private Object[] args;
         private boolean completed;
@@ -52,7 +52,7 @@ public class FileRefController extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class Waiter {
         private String locationKey;
         private String parentKey;

@@ -1,70 +1,41 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PremiumPreviewFragment;
+import android.content.Context;
+import org.telegram.messenger.ChatMessageSharedResources;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wb0 implements View.OnClickListener {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+public final class wb0 extends org.telegram.ui.Cells.u1 {
+    public final /* synthetic */ yb0 Ge;
 
-    public /* synthetic */ wb0(org.telegram.ui.lt ltVar, ArrayList arrayList, boolean z10) {
-        this.c = ltVar;
-        this.d = arrayList;
-        this.b = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public wb0(yb0 yb0Var, Context context, int i10, ChatMessageSharedResources chatMessageSharedResources, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, i10, false, chatMessageSharedResources, d6Var);
+        this.Ge = yb0Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) this.c;
-                Runnable runnable = (Runnable) this.d;
-                org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
-                if (R != null) {
-                    R.presentFragment(new PremiumPreviewFragment(0, this.b ? "lastseen" : "readtime"));
-                    f3Var.dismiss();
-                    if (runnable != null) {
-                        runnable.run();
-                        break;
-                    }
-                }
-                break;
-            default:
-                org.telegram.ui.lt ltVar = (org.telegram.ui.lt) this.c;
-                ArrayList arrayList = (ArrayList) this.d;
-                org.telegram.ui.pt ptVar = ltVar.a;
-                if (ptVar.w != null && ptVar.l != null) {
-                    int intValue = ((Integer) arrayList.get(((Integer) view.getTag()).intValue())).intValue();
-                    if (intValue == 0) {
-                        ptVar.l.C(ptVar.W);
-                    } else if (intValue == 1) {
-                        ptVar.l.v(ptVar.W);
-                    } else if (intValue == 2) {
-                        ptVar.l.v(null);
-                    } else if (intValue == 3) {
-                        ptVar.l.H(ptVar.W);
-                    } else if (intValue == 4) {
-                        ptVar.l.r(ptVar.W);
-                    } else if (intValue == 5) {
-                        MediaDataController.getInstance(ptVar.r).addRecentSticker(2, ptVar.b0, ptVar.W, (int) (System.currentTimeMillis() / 1000), this.b);
-                    }
-                    ptVar.p();
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.Cells.u1
+    public final void X3(MessageObject messageObject, MessageObject.GroupedMessages groupedMessages, boolean z10, boolean z11, boolean z12, boolean z13) {
+        super.X3(messageObject, groupedMessages, z10, z11, z12, z13);
+        zb0.b(this.Ge.c, this);
     }
 
-    public /* synthetic */ wb0(boolean z10, org.telegram.ui.ActionBar.f3 f3Var, Runnable runnable) {
-        this.b = z10;
-        this.c = f3Var;
-        this.d = runnable;
+    @Override // org.telegram.ui.Cells.u1, org.telegram.ui.Cells.a0, android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        this.Ge.c.f.invalidate();
+    }
+
+    @Override // org.telegram.ui.Cells.u1, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        zb0.b(this.Ge.c, this);
+    }
+
+    @Override // org.telegram.ui.Cells.u1, android.view.View
+    public final void invalidate(int i10, int i11, int i12, int i13) {
+        super.invalidate(i10, i11, i12, i13);
+        this.Ge.c.f.invalidate();
     }
 }

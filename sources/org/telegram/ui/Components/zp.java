@@ -9,7 +9,7 @@ import androidx.core.widget.NestedScrollView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class zp extends NestedScrollView {
     public boolean W;
@@ -27,12 +27,12 @@ public final class zp extends NestedScrollView {
         int i11;
         dq dqVar = this.a0;
         int i12 = dqVar.f;
-        i10 = ((org.telegram.ui.ActionBar.f3) dqVar).backgroundPaddingTop;
+        i10 = ((org.telegram.ui.ActionBar.e3) dqVar).backgroundPaddingTop;
         int scrollY = (int) ((getScrollY() + (i12 - i10)) - getTranslationY());
         Drawable drawable = dqVar.b;
         int measuredWidth = getMeasuredWidth();
         int measuredHeight = dqVar.c.getMeasuredHeight() + scrollY;
-        i11 = ((org.telegram.ui.ActionBar.f3) dqVar).backgroundPaddingTop;
+        i11 = ((org.telegram.ui.ActionBar.e3) dqVar).backgroundPaddingTop;
         drawable.setBounds(0, scrollY, measuredWidth, AndroidUtilities.dp(19.0f) + i11 + measuredHeight);
         drawable.draw(canvas);
     }

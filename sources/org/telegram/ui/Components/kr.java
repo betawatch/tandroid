@@ -7,7 +7,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class kr implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -31,23 +31,23 @@ public final /* synthetic */ class kr implements View.OnClickListener {
                 nr.S((nr) this.c, (Context) this.d, (ci.d) this.e, this.b);
                 break;
             case 1:
-                org.telegram.ui.ry ryVar = (org.telegram.ui.ry) this.c;
+                org.telegram.ui.qy qyVar = (org.telegram.ui.qy) this.c;
                 MessagesController.DialogFilter dialogFilter = (MessagesController.DialogFilter) this.d;
                 TLRPC.Dialog dialog = (TLRPC.Dialog) this.e;
-                ryVar.finishPreviewFragment();
-                AndroidUtilities.runOnUIThread(new i21(ryVar, dialogFilter, dialog, this.b, 1), 100L);
+                qyVar.finishPreviewFragment();
+                AndroidUtilities.runOnUIThread(new w21(qyVar, dialogFilter, dialog, this.b, 1), 100L);
                 break;
             default:
-                tg.b0.P((tg.b0) this.c, (TL_stories.PrepaidGiveaway) this.d, this.b, (org.telegram.ui.ActionBar.n2) this.e);
+                tg.a0.P((tg.a0) this.c, (TL_stories.PrepaidGiveaway) this.d, this.b, (org.telegram.ui.ActionBar.m2) this.e);
                 break;
         }
     }
 
-    public /* synthetic */ kr(tg.b0 b0Var, TL_stories.PrepaidGiveaway prepaidGiveaway, long j3, org.telegram.ui.ActionBar.n2 n2Var) {
+    public /* synthetic */ kr(tg.a0 a0Var, TL_stories.PrepaidGiveaway prepaidGiveaway, long j3, org.telegram.ui.ActionBar.m2 m2Var) {
         this.a = 2;
-        this.c = b0Var;
+        this.c = a0Var;
         this.d = prepaidGiveaway;
         this.b = j3;
-        this.e = n2Var;
+        this.e = m2Var;
     }
 }

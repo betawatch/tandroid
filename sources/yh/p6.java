@@ -5,7 +5,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ad;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p6 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -22,7 +22,7 @@ public final /* synthetic */ class p6 implements Utilities.Callback {
     public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                ((Utilities.Callback2) this.b).run((zf.a) obj, new w2((i0[]) this.c, 4));
+                ((Utilities.Callback2) this.b).run((zf.a) obj, new r2((i0[]) this.c, 5));
                 break;
             default:
                 ad adVar = (ad) this.b;

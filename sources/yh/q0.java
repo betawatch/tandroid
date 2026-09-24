@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.rr;
 import org.telegram.ui.Components.w9;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class q0 extends FrameLayout implements le.e {
     public final org.telegram.ui.ActionBar.d6 a;
@@ -39,11 +39,11 @@ public final class q0 extends FrameLayout implements le.e {
         this.c = f1Var;
         frameLayout.setBackground(f1Var);
         f1Var.v = 1;
-        addView(frameLayout, w7.x5.e(-1, -1, 119));
+        addView(frameLayout, w7.y5.e(-1, -1, 119));
         w9 w9Var = new w9(context);
         this.d = w9Var;
         w9Var.getImageReceiver().setAutoRepeat(0);
-        addView(w9Var, w7.x5.d(80, 80.0f, 49, 0.0f, 17.0f, 0.0f, 0.0f));
+        addView(w9Var, w7.y5.d(80, 80.0f, 49, 0.0f, 17.0f, 0.0f, 0.0f));
         TextView textView = new TextView(context);
         this.e = textView;
         textView.setTypeface(AndroidUtilities.bold());
@@ -51,7 +51,7 @@ public final class q0 extends FrameLayout implements le.e {
         textView.setGravity(17);
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setTextColor(-1);
-        addView(textView, w7.x5.d(-1, -2.0f, 0, 12.0f, 106.0f, 12.0f, 14.0f));
+        addView(textView, w7.y5.d(-1, -2.0f, 0, 12.0f, 106.0f, 12.0f, 14.0f));
         TextView textView2 = new TextView(context);
         this.f = textView2;
         textView2.setClickable(false);
@@ -59,7 +59,7 @@ public final class q0 extends FrameLayout implements le.e {
         textView2.setTextSize(1, 11.0f);
         textView2.setPadding(AndroidUtilities.dp(5.0f), AndroidUtilities.dp(1.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(1.0f));
         textView2.setBackground(org.telegram.ui.ActionBar.h6.b0(AndroidUtilities.dp(10.0f), 285212671));
-        addView(textView2, w7.x5.d(-2, -2.0f, 53, 0.0f, 10.0f, 10.0f, 0.0f));
+        addView(textView2, w7.y5.d(-2, -2.0f, 53, 0.0f, 10.0f, 10.0f, 0.0f));
     }
 
     public static void a(q0 q0Var, TLRPC.Document document, int i10, Object obj, boolean z10) {
@@ -81,7 +81,7 @@ public final class q0 extends FrameLayout implements le.e {
         sb2.append(i10);
         sb2.append(z10 ? "_nolimit_pcache" : "");
         String sb3 = sb2.toString();
-        w9Var.setLayoutParams(w7.x5.d(i10, i10, 49, 0.0f, r3 + 17, 0.0f, (80 - i10) / 2));
+        w9Var.setLayoutParams(w7.y5.d(i10, i10, 49, 0.0f, r3 + 17, 0.0f, (80 - i10) / 2));
         w9Var.l(ImageLocation.getForDocument(document), sb3, ImageLocation.getForDocument(closestPhotoSizeWithSize, document), sb3, svgThumb, obj);
     }
 

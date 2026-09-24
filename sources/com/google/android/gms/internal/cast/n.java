@@ -12,7 +12,7 @@ import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class n extends p4.s {
     public static final g6.b f = new g6.b("MRDiscoveryCallback", null);
@@ -46,7 +46,7 @@ public final class n extends p4.s {
 
     public final void m() {
         g6.b bVar = f;
-        bVar.b(hg.c.j(this.d.size(), "Starting RouteDiscovery with ", " IDs"), new Object[0]);
+        bVar.b(hg.c.i(this.d.size(), "Starting RouteDiscovery with ", " IDs"), new Object[0]);
         bVar.b("appIdToRouteInfo has these appId route keys: ".concat(String.valueOf(this.c.keySet())), new Object[0]);
         if (Looper.myLooper() == Looper.getMainLooper()) {
             n();
@@ -150,7 +150,7 @@ public final class n extends p4.s {
                     HashMap hashMap = new HashMap();
                     synchronized (this.c) {
                         for (String str2 : this.c.keySet()) {
-                            l lVar2 = (l) this.c.get(v7.j5.a(str2));
+                            l lVar2 = (l) this.c.get(v7.k5.a(str2));
                             if (lVar2 == null) {
                                 int i10 = m0.c;
                                 r10 = v0.s;

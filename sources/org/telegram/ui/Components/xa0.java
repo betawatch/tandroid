@@ -1,38 +1,44 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.graphics.Rect;
 import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class xa0 extends z71 {
-    public final /* synthetic */ Context a;
-    public final /* synthetic */ ub0 b;
+public final class xa0 extends s4.n0 {
+    public final /* synthetic */ ya0 a;
 
-    public xa0(ub0 ub0Var, Context context) {
-        this.b = ub0Var;
-        this.a = context;
+    public xa0(ya0 ya0Var) {
+        this.a = ya0Var;
     }
 
-    @Override // org.telegram.ui.Components.z71
-    public final void b(View view, int i10, int i11) {
-        ob0 ob0Var = (ob0) view;
-        ob0Var.h();
-        ob0Var.k(false);
-    }
-
-    @Override // org.telegram.ui.Components.z71
-    public final View d(int i10) {
-        return new ob0(this.b, this.a, i10);
-    }
-
-    @Override // org.telegram.ui.Components.z71
-    public final int e() {
-        return this.b.e.a.size();
-    }
-
-    @Override // org.telegram.ui.Components.z71
-    public final int h(int i10) {
-        return ((rb0) this.b.e.a.get(i10)).a;
+    @Override // s4.n0
+    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.z0 z0Var) {
+        int R;
+        rect.left = 0;
+        rect.right = 0;
+        rect.top = 0;
+        rect.bottom = 0;
+        s4.o0 layoutManager = recyclerView.getLayoutManager();
+        za0 za0Var = this.a.b3;
+        if (layoutManager != za0Var.d || (R = RecyclerView.R(view)) == 0 || za0Var.f.N()) {
+            return;
+        }
+        if (za0Var.f.I() == null && za0Var.f.U == null) {
+            rect.top = AndroidUtilities.dp(2.0f);
+        } else {
+            if (R == 0) {
+                return;
+            }
+            R--;
+            sa0 sa0Var = za0Var.d;
+            sa0Var.B1();
+            if (R > sa0Var.U) {
+                rect.top = AndroidUtilities.dp(2.0f);
+            }
+        }
+        rect.right = za0Var.d.E1(R) ? 0 : AndroidUtilities.dp(2.0f);
     }
 }

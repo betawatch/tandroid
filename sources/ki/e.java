@@ -1,88 +1,129 @@
 package ki;
 
-import ai.r;
-import android.graphics.RectF;
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.ml0;
-import org.telegram.ui.Components.nt;
+import android.hardware.camera2.CameraCaptureSession;
+import android.hardware.camera2.CaptureRequest;
+import android.os.Handler;
+import android.util.Size;
+import ci.y0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public final class e {
-    public c a;
-    public long f;
-    public long g;
-    public long h;
-    public View i;
-    public long j;
-    public long k;
-    public long l;
-    public int n;
-    public int o;
-    public final a b = new a(this);
-    public final ArrayList c = new ArrayList();
-    public final ArrayList d = new ArrayList();
-    public li.b e = li.b.c;
-    public final RectF m = new RectF();
-    public final li.a p = new li.a();
-    public final li.a q = new li.a();
-    public final li.a r = new li.a();
-    public final ArrayList s = new ArrayList();
+public final class e extends CameraCaptureSession.StateCallback {
+    public final /* synthetic */ h a;
 
-    public final void a(ml0 ml0Var) {
-        if (ml0Var == null) {
-            return;
-        }
-        ml0Var.E2.b.add(new nt() { // from class: ki.b
-            @Override // org.telegram.ui.Components.nt
-            public final void a(int i10, boolean z10) {
-                e.this.g++;
-            }
-        });
-        ml0Var.j(new r(this, 11));
+    public e(h hVar) {
+        this.a = hVar;
     }
 
-    public final void b(View view) {
-        tf.b a2;
-        tf.d dVar;
-        View view2 = this.i;
-        if (view2 != view) {
-            a aVar = this.b;
-            if (view2 != null && (dVar = (tf.d) view2.getTag(R.id.tag_view_on_post_draw_state)) != null) {
-                ArrayList arrayList = dVar.a;
-                if (arrayList.remove(aVar)) {
-                    tf.b bVar = dVar.b;
-                    if (bVar != null) {
-                        ((pe.b) bVar.a.b).remove(aVar);
-                    }
-                    if (arrayList.isEmpty()) {
-                        dVar.b = null;
-                        view2.removeOnAttachStateChangeListener(dVar.c);
-                        view2.setTag(R.id.tag_view_on_post_draw_state, null);
-                    }
-                }
-            }
-            if (view != null) {
-                if (view.isAttachedToWindow() && view == view.getRootView()) {
-                    throw new IllegalArgumentException("Cannot add OnPostDrawListener to root view");
-                }
-                tf.d dVar2 = (tf.d) view.getTag(R.id.tag_view_on_post_draw_state);
-                if (dVar2 == null) {
-                    dVar2 = new tf.d();
-                    view.setTag(R.id.tag_view_on_post_draw_state, dVar2);
-                    view.addOnAttachStateChangeListener(dVar2.c);
-                }
-                ArrayList arrayList2 = dVar2.a;
-                if (!arrayList2.contains(aVar)) {
-                    arrayList2.add(aVar);
-                    if (view.isAttachedToWindow() && (a2 = tf.e.a(view, dVar2)) != null) {
-                        ((pe.b) a2.a.b).add(aVar);
-                    }
-                }
-            }
-            this.i = view;
+    @Override // android.hardware.camera2.CameraCaptureSession.StateCallback
+    public final void onClosed(CameraCaptureSession cameraCaptureSession) {
+        h hVar = this.a;
+        if (hVar.y != cameraCaptureSession) {
+            return;
         }
+        hVar.y = null;
+        hVar.z = null;
+        hVar.M = false;
+        hVar.j.b("capture session closed");
+    }
+
+    @Override // android.hardware.camera2.CameraCaptureSession.StateCallback
+    public final void onConfigureFailed(CameraCaptureSession cameraCaptureSession) {
+        cameraCaptureSession.close();
+        h hVar = this.a;
+        if (hVar.y == cameraCaptureSession) {
+            hVar.y = null;
+            hVar.z = null;
+        }
+        if (hVar.R) {
+            h hVar2 = this.a;
+            if (hVar2.x != null && !hVar2.T && !hVar2.X) {
+                h hVar3 = this.a;
+                if (hVar3.F == m0.c) {
+                    hVar3.m("60 fps session configuration failed", null);
+                    return;
+                } else {
+                    hVar3.s(new IllegalStateException("Camera capture session configuration failed"));
+                    return;
+                }
+            }
+        }
+        this.a.j.b("stale capture session configuration failure ignored");
+    }
+
+    @Override // android.hardware.camera2.CameraCaptureSession.StateCallback
+    public final void onConfigured(CameraCaptureSession cameraCaptureSession) {
+        String str;
+        if (this.a.R) {
+            h hVar = this.a;
+            if (hVar.x != null) {
+                hVar.y = cameraCaptureSession;
+                try {
+                    hVar.C = hVar.D;
+                    hVar.z = hVar.k(true);
+                    q qVar = this.a.v;
+                    if (qVar != null) {
+                        Handler handler = qVar.l;
+                        if (qVar.V && handler != null) {
+                            handler.post(new m(qVar, 1));
+                        }
+                    }
+                    h hVar2 = this.a;
+                    boolean z10 = hVar2.V;
+                    hVar2.V = false;
+                    hVar2.W = z10;
+                    h hVar3 = this.a;
+                    CameraCaptureSession cameraCaptureSession2 = hVar3.y;
+                    CaptureRequest.Builder builder = hVar3.z;
+                    if (cameraCaptureSession2 != null && builder != null) {
+                        cameraCaptureSession2.setRepeatingRequest(builder.build(), hVar3.Q0, hVar3.n);
+                    }
+                    l lVar = this.a.j;
+                    StringBuilder sb2 = new StringBuilder("capture session configured: facing=");
+                    sb2.append(this.a.C);
+                    sb2.append(", fpsRange=");
+                    sb2.append(this.a.G);
+                    sb2.append(", elapsedMs=");
+                    sb2.append(h.l(this.a.g0));
+                    sb2.append(", segmentElapsedMs=");
+                    sb2.append(h.l(this.a.e0));
+                    if (z10) {
+                        str = ", switchElapsedMs=" + h.l(this.a.h0);
+                    } else {
+                        str = "";
+                    }
+                    sb2.append(str);
+                    lVar.b(sb2.toString());
+                    h hVar4 = this.a;
+                    hVar4.c.post(new b(hVar4, 6));
+                    h hVar5 = this.a;
+                    k2.u uVar = hVar5.k;
+                    k0 k0Var = hVar5.C;
+                    l0 l0Var = hVar5.E;
+                    m0 m0Var = hVar5.F;
+                    Size size = hVar5.q;
+                    Size size2 = hVar5.r;
+                    h hVar6 = this.a;
+                    ((r0) uVar.b).h.post(new y0(uVar, new g(k0Var, l0Var, m0Var, size, size2, hVar6.K, hVar6.p()), z10, 7));
+                    k0 k0Var2 = this.a.B;
+                    h hVar7 = this.a;
+                    if (k0Var2 != hVar7.C) {
+                        hVar7.E(hVar7.B);
+                        return;
+                    }
+                    return;
+                } catch (Exception e) {
+                    h hVar8 = this.a;
+                    if (hVar8.F == m0.c) {
+                        hVar8.m("60 fps request submission rejected", e);
+                        return;
+                    } else {
+                        hVar8.s(e);
+                        return;
+                    }
+                }
+            }
+        }
+        cameraCaptureSession.close();
     }
 }

@@ -9,20 +9,20 @@ import org.telegram.messenger.GiftAuctionController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.f3;
-import org.telegram.ui.Components.nr0;
-import org.telegram.ui.Components.o70;
+import org.telegram.ui.ActionBar.e3;
+import org.telegram.ui.Components.y70;
+import org.telegram.ui.Components.zr0;
 import xh.g2;
 import xh.m;
 import xh.o2;
 import xh.s2;
 import xh.v;
 import yh.a0;
-import yh.g5;
+import yh.f5;
 import yh.m7;
-import yh.x4;
+import yh.w4;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -64,11 +64,11 @@ public final /* synthetic */ class e implements View.OnClickListener {
                 break;
             case 5:
                 o2 o2Var = (o2) obj3;
-                ((o70) obj2).u();
-                nr0 nr0Var = o2Var.a;
+                ((y70) obj2).u();
+                zr0 zr0Var = o2Var.a;
                 g2 g2Var = new g2(o2Var, (TL_stars.SavedStarGift) obj, i12);
                 HashMap hashMap = s2.T;
-                nr0Var.h(null, g2Var);
+                zr0Var.h(null, g2Var);
                 break;
             case 6:
                 Context context = (Context) obj2;
@@ -79,18 +79,18 @@ public final /* synthetic */ class e implements View.OnClickListener {
                 }
                 break;
             case 7:
-                final f3 f3Var = (f3) obj2;
+                final e3 e3Var = (e3) obj2;
                 final ci.d dVar = (ci.d) obj;
-                f3Var.setCanDismissWithSwipe(false);
+                e3Var.setCanDismissWithSwipe(false);
                 dVar.setLoading(true);
-                ((x4) obj3).run(new Utilities.Callback() { // from class: yh.h6
+                ((w4) obj3).run(new Utilities.Callback() { // from class: yh.h6
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj4) {
                         Boolean bool = (Boolean) obj4;
                         switch (i12) {
                             case 0:
                                 boolean booleanValue = bool.booleanValue();
-                                final org.telegram.ui.ActionBar.f3 f3Var2 = f3Var;
+                                final org.telegram.ui.ActionBar.e3 e3Var2 = e3Var;
                                 if (!booleanValue) {
                                     final int i13 = 0;
                                     final ci.d dVar2 = dVar;
@@ -99,11 +99,11 @@ public final /* synthetic */ class e implements View.OnClickListener {
                                         public final void run() {
                                             switch (i13) {
                                                 case 0:
-                                                    f3Var2.setCanDismissWithSwipe(false);
+                                                    e3Var2.setCanDismissWithSwipe(false);
                                                     dVar2.setLoading(false);
                                                     break;
                                                 default:
-                                                    f3Var2.setCanDismissWithSwipe(false);
+                                                    e3Var2.setCanDismissWithSwipe(false);
                                                     dVar2.setLoading(false);
                                                     break;
                                             }
@@ -111,12 +111,12 @@ public final /* synthetic */ class e implements View.OnClickListener {
                                     }, 400L);
                                     break;
                                 } else {
-                                    f3Var2.dismiss();
+                                    e3Var2.dismiss();
                                     break;
                                 }
                             default:
                                 boolean booleanValue2 = bool.booleanValue();
-                                final org.telegram.ui.ActionBar.f3 f3Var3 = f3Var;
+                                final org.telegram.ui.ActionBar.e3 e3Var3 = e3Var;
                                 if (!booleanValue2) {
                                     final int i14 = 1;
                                     final ci.d dVar3 = dVar;
@@ -125,11 +125,11 @@ public final /* synthetic */ class e implements View.OnClickListener {
                                         public final void run() {
                                             switch (i14) {
                                                 case 0:
-                                                    f3Var3.setCanDismissWithSwipe(false);
+                                                    e3Var3.setCanDismissWithSwipe(false);
                                                     dVar3.setLoading(false);
                                                     break;
                                                 default:
-                                                    f3Var3.setCanDismissWithSwipe(false);
+                                                    e3Var3.setCanDismissWithSwipe(false);
                                                     dVar3.setLoading(false);
                                                     break;
                                             }
@@ -137,7 +137,7 @@ public final /* synthetic */ class e implements View.OnClickListener {
                                     }, 400L);
                                     break;
                                 } else {
-                                    f3Var3.dismiss();
+                                    e3Var3.dismiss();
                                     break;
                                 }
                         }
@@ -145,18 +145,18 @@ public final /* synthetic */ class e implements View.OnClickListener {
                 });
                 break;
             default:
-                final f3 f3Var2 = (f3) obj2;
+                final e3 e3Var2 = (e3) obj2;
                 final ci.d dVar2 = (ci.d) obj;
-                f3Var2.setCanDismissWithSwipe(false);
+                e3Var2.setCanDismissWithSwipe(false);
                 dVar2.setLoading(true);
-                ((g5) obj3).run(new Utilities.Callback() { // from class: yh.h6
+                ((f5) obj3).run(new Utilities.Callback() { // from class: yh.h6
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj4) {
                         Boolean bool = (Boolean) obj4;
                         switch (i11) {
                             case 0:
                                 boolean booleanValue = bool.booleanValue();
-                                final org.telegram.ui.ActionBar.f3 f3Var22 = f3Var2;
+                                final org.telegram.ui.ActionBar.e3 e3Var22 = e3Var2;
                                 if (!booleanValue) {
                                     final int i13 = 0;
                                     final ci.d dVar22 = dVar2;
@@ -165,11 +165,11 @@ public final /* synthetic */ class e implements View.OnClickListener {
                                         public final void run() {
                                             switch (i13) {
                                                 case 0:
-                                                    f3Var22.setCanDismissWithSwipe(false);
+                                                    e3Var22.setCanDismissWithSwipe(false);
                                                     dVar22.setLoading(false);
                                                     break;
                                                 default:
-                                                    f3Var22.setCanDismissWithSwipe(false);
+                                                    e3Var22.setCanDismissWithSwipe(false);
                                                     dVar22.setLoading(false);
                                                     break;
                                             }
@@ -177,12 +177,12 @@ public final /* synthetic */ class e implements View.OnClickListener {
                                     }, 400L);
                                     break;
                                 } else {
-                                    f3Var22.dismiss();
+                                    e3Var22.dismiss();
                                     break;
                                 }
                             default:
                                 boolean booleanValue2 = bool.booleanValue();
-                                final org.telegram.ui.ActionBar.f3 f3Var3 = f3Var2;
+                                final org.telegram.ui.ActionBar.e3 e3Var3 = e3Var2;
                                 if (!booleanValue2) {
                                     final int i14 = 1;
                                     final ci.d dVar3 = dVar2;
@@ -191,11 +191,11 @@ public final /* synthetic */ class e implements View.OnClickListener {
                                         public final void run() {
                                             switch (i14) {
                                                 case 0:
-                                                    f3Var3.setCanDismissWithSwipe(false);
+                                                    e3Var3.setCanDismissWithSwipe(false);
                                                     dVar3.setLoading(false);
                                                     break;
                                                 default:
-                                                    f3Var3.setCanDismissWithSwipe(false);
+                                                    e3Var3.setCanDismissWithSwipe(false);
                                                     dVar3.setLoading(false);
                                                     break;
                                             }
@@ -203,7 +203,7 @@ public final /* synthetic */ class e implements View.OnClickListener {
                                     }, 400L);
                                     break;
                                 } else {
-                                    f3Var3.dismiss();
+                                    e3Var3.dismiss();
                                     break;
                                 }
                         }

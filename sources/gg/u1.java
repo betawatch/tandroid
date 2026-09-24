@@ -14,22 +14,22 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
-import org.telegram.messenger.ul;
+import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.i6;
-import org.telegram.ui.Cells.s8;
+import org.telegram.ui.Cells.r8;
 import org.telegram.ui.Cells.v3;
 import org.telegram.ui.Components.f10;
-import org.telegram.ui.Components.ll0;
+import org.telegram.ui.Components.gl0;
 import org.telegram.ui.Components.ln;
 import org.telegram.ui.Components.u00;
-import org.telegram.ui.Components.wk0;
+import org.telegram.ui.Components.vl0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public abstract class u1 extends ll0 {
+public abstract class u1 extends vl0 {
     public int E;
     public int F;
     public ArrayList G;
@@ -49,7 +49,7 @@ public abstract class u1 extends ll0 {
     public long x;
     public boolean y;
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.vl0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         return i10 == 0 || i10 == 2 || i10 == 3;
@@ -172,13 +172,13 @@ public abstract class u1 extends ll0 {
                     return;
                 }
                 ContactsController.Contact contact = (ContactsController.Contact) E(i10);
-                ((i6) view).t(contact, null, ContactsController.formatName(contact.first_name, contact.last_name), ul.h(new StringBuilder("+"), contact.shortPhones.get(0), gf.b.c()), false, false);
+                ((i6) view).t(contact, null, ContactsController.formatName(contact.first_name, contact.last_name), ok.h(new StringBuilder("+"), contact.shortPhones.get(0), gf.b.c()), false, false);
                 return;
             }
             String str2 = (String) E(i10);
-            s8 s8Var = (s8) view;
-            s8Var.e(-1, h6.o6);
-            s8Var.i(LocaleController.formatString(R.string.AddContactByPhone, gf.b.c().b("+" + str2)), false);
+            r8 r8Var = (r8) view;
+            r8Var.e(-1, h6.o6);
+            r8Var.i(LocaleController.formatString(R.string.AddContactByPhone, gf.b.c().b("+" + str2)), false);
             return;
         }
         TLObject tLObject = (TLObject) E(i10);
@@ -291,7 +291,7 @@ public abstract class u1 extends ll0 {
             lnVar.setTag(-33024);
             view = lnVar;
         } else if (i10 != 5) {
-            view = new s8(16, context, false);
+            view = new r8(16, context, false);
         } else {
             u00 u00Var = new u00(context, null);
             u00Var.setIsSingleCell(true);
@@ -299,6 +299,6 @@ public abstract class u1 extends ll0 {
             u00Var.setBackgroundColor(h6.w0(null, h6.d6, false));
             view = u00Var;
         }
-        return new wk0(view);
+        return new gl0(view);
     }
 }

@@ -1,6 +1,5 @@
 package aa;
 
-import a4.e;
 import ai.ba;
 import ai.u2;
 import android.app.ActivityManager;
@@ -22,7 +21,6 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
-import androidx.car.app.j;
 import androidx.core.graphics.drawable.IconCompat;
 import androidx.lifecycle.j0;
 import androidx.lifecycle.n0;
@@ -37,6 +35,7 @@ import c3.h0;
 import c3.q;
 import c6.e0;
 import c6.i;
+import cf.c;
 import ci.a7;
 import ci.b7;
 import ci.ha;
@@ -52,17 +51,19 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.messaging.FirebaseMessagingService;
+import com.google.firebase.messaging.m;
+import com.google.firebase.messaging.t;
 import e0.n;
 import e2.b0;
 import e2.d0;
 import e2.v;
 import g6.f;
 import g6.w;
+import hc.e;
 import j$.util.DesugarCollections;
 import j4.a0;
 import j4.f0;
 import java.io.BufferedReader;
-import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.lang.reflect.InvocationTargetException;
@@ -90,27 +91,24 @@ import java.util.concurrent.atomic.AtomicLong;
 import javax.crypto.Cipher;
 import javax.crypto.Mac;
 import javax.net.ssl.HttpsURLConnection;
-import k2.k0;
 import k6.h;
-import l5.t;
 import m.p;
 import m.p3;
 import n6.l;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.c71;
-import org.telegram.ui.Components.f71;
+import org.telegram.ui.Components.i71;
+import org.telegram.ui.Components.p71;
+import org.telegram.ui.Components.s71;
 import org.telegram.ui.Components.sz;
-import org.telegram.ui.Components.t61;
 import org.telegram.ui.Components.wz;
-import v7.m;
+import v7.j;
 import v7.o;
-import w.c;
 import z3.d;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
-public final class a implements s, c71, d, a0, OnCompleteListener, n5.b {
+public final class a implements s, p71, d, a0, OnCompleteListener, n5.b {
     public static a e;
     public final /* synthetic */ int a;
     public Object b;
@@ -153,12 +151,7 @@ public final class a implements s, c71, d, a0, OnCompleteListener, n5.b {
         if (!str.endsWith("&")) {
             sb3 = "&".concat(sb3);
         }
-        return c.g(str, sb3);
-    }
-
-    @Override // z3.d
-    public int A() {
-        return ((long[]) this.d).length;
+        return j.t(str, sb3);
     }
 
     @Override // j4.a0
@@ -270,15 +263,15 @@ public final class a implements s, c71, d, a0, OnCompleteListener, n5.b {
             Log.e("BiometricManager", "Failure in canAuthenticate(). BiometricManager was null.");
             return 1;
         }
-        if (!m.b(i10)) {
+        if (!o.b(i10)) {
             return -2;
         }
         if (i10 != 0) {
             Context context = hVar.a;
-            if (v7.q.a(context) != null) {
+            if (v7.s.a(context) != null) {
                 int i13 = 0;
-                if (m.a(i10)) {
-                    return v7.q.b(context) ? 0 : 11;
+                if (o.a(i10)) {
+                    return v7.s.b(context) ? 0 : 11;
                 }
                 if (i11 != 29) {
                     if (i11 != 28) {
@@ -287,7 +280,7 @@ public final class a implements s, c71, d, a0, OnCompleteListener, n5.b {
                     if (i11 < 23 || context == null || context.getPackageManager() == null || !androidx.biometric.h0.a(context.getPackageManager())) {
                         return 12;
                     }
-                    return !v7.q.b(hVar.a) ? h() : h() == 0 ? 0 : -1;
+                    return !v7.s.b(hVar.a) ? h() : h() == 0 ? 0 : -1;
                 }
                 if ((i10 & 255) == 255) {
                     BiometricManager biometricManager3 = (BiometricManager) this.c;
@@ -298,7 +291,7 @@ public final class a implements s, c71, d, a0, OnCompleteListener, n5.b {
                     return 1;
                 }
                 Method c10 = androidx.biometric.q.c();
-                if (c10 != null && (b10 = o.b(o.a())) != null) {
+                if (c10 != null && (b10 = v7.q.b(v7.q.a())) != null) {
                     try {
                         Object invoke = c10.invoke((BiometricManager) this.c, b10);
                         if (invoke instanceof Integer) {
@@ -359,7 +352,7 @@ public final class a implements s, c71, d, a0, OnCompleteListener, n5.b {
                 if (i12 == 0) {
                     return i12;
                 }
-                if (!v7.q.b(hVar.a)) {
+                if (!v7.s.b(hVar.a)) {
                     i13 = h();
                 } else if (h() != 0) {
                     i13 = -1;
@@ -381,7 +374,7 @@ public final class a implements s, c71, d, a0, OnCompleteListener, n5.b {
     @Override // fd.a
     public Object get() {
         int i10 = 23;
-        return new t(new rb.a(i10), new qb.b(i10), (q5.b) ((cf.c) this.b).get(), (da.b) ((p3) this.c).get(), (com.google.firebase.messaging.t) ((ni.f) this.d).get());
+        return new l5.s(new rb.a(i10), new qb.b(i10), (q5.b) ((c) this.b).get(), (da.b) ((p3) this.c).get(), (t) ((oi.f) this.d).get());
     }
 
     public int h() {
@@ -400,26 +393,12 @@ public final class a implements s, c71, d, a0, OnCompleteListener, n5.b {
         return (i10 < 23 || (g11 = e0.b.g(context)) == null || !e0.b.m(g11)) ? 11 : 0;
     }
 
-    public void j(Object obj, ByteArrayOutputStream byteArrayOutputStream) {
-        HashMap hashMap = (HashMap) this.c;
-        la.f fVar = new la.f(byteArrayOutputStream, hashMap, (HashMap) this.d, (ia.d) this.b);
-        if (obj == null) {
-            return;
-        }
-        ia.d dVar = (ia.d) hashMap.get(obj.getClass());
-        if (dVar != null) {
-            dVar.a(obj, fVar);
-        } else {
-            throw new ia.b("No encoder for " + obj.getClass());
-        }
-    }
-
     /* JADX WARN: Removed duplicated region for block: B:38:0x00ba  */
     /* JADX WARN: Removed duplicated region for block: B:40:0x00bf  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public b k() {
+    public b j() {
         Throwable th2;
         HttpsURLConnection httpsURLConnection;
         String i10;
@@ -503,41 +482,15 @@ public final class a implements s, c71, d, a0, OnCompleteListener, n5.b {
         }
     }
 
-    @Override // z3.d
-    public List l(long j3) {
-        List list = (List) this.b;
-        ArrayList arrayList = new ArrayList();
-        ArrayList arrayList2 = new ArrayList();
-        for (int i10 = 0; i10 < list.size(); i10++) {
-            long[] jArr = (long[]) this.c;
-            int i11 = i10 * 2;
-            if (jArr[i11] <= j3 && j3 < jArr[i11 + 1]) {
-                i4.c cVar = (i4.c) list.get(i10);
-                d2.b bVar = cVar.a;
-                if (bVar.e == -3.4028235E38f) {
-                    arrayList2.add(cVar);
-                } else {
-                    arrayList.add(bVar);
-                }
-            }
-        }
-        Collections.sort(arrayList2, new e(18));
-        for (int i12 = 0; i12 < arrayList2.size(); i12++) {
-            d2.b bVar2 = ((i4.c) arrayList2.get(i12)).a;
-            arrayList.add(new d2.b(bVar2.a, bVar2.b, bVar2.c, bVar2.d, (-1) - i12, 1, bVar2.g, bVar2.h, bVar2.i, bVar2.n, bVar2.o, bVar2.j, bVar2.k, bVar2.l, bVar2.m, bVar2.p, bVar2.q, bVar2.r));
-        }
-        return arrayList;
-    }
-
-    public p0 m(Class cls) {
+    public p0 k(Class cls) {
         String canonicalName = cls.getCanonicalName();
         if (canonicalName != null) {
-            return n(cls, "androidx.lifecycle.ViewModelProvider.DefaultKey:".concat(canonicalName));
+            return l(cls, "androidx.lifecycle.ViewModelProvider.DefaultKey:".concat(canonicalName));
         }
         throw new IllegalArgumentException("Local and anonymous classes can not be ViewModels");
     }
 
-    public p0 n(Class cls, String key) {
+    public p0 l(Class cls, String key) {
         p0 viewModel;
         s0 s0Var = (s0) this.c;
         kotlin.jvm.internal.i.e(key, "key");
@@ -551,7 +504,7 @@ public final class a implements s, c71, d, a0, OnCompleteListener, n5.b {
             try {
                 viewModel = s0Var.H(cls, bVar);
             } catch (AbstractMethodError unused) {
-                viewModel = s0Var.b(cls);
+                viewModel = s0Var.a(cls);
             }
             kotlin.jvm.internal.i.e(viewModel, "viewModel");
             p0 p0Var2 = (p0) linkedHashMap.put(key, viewModel);
@@ -574,7 +527,7 @@ public final class a implements s, c71, d, a0, OnCompleteListener, n5.b {
         return p0Var;
     }
 
-    public Object o(Bitmap bitmap) {
+    public Object m(Bitmap bitmap) {
         gh.a aVar = (gh.a) this.b;
         if (aVar.a(bitmap)) {
             this.d = ((gh.b) this.c).a(bitmap);
@@ -583,91 +536,7 @@ public final class a implements s, c71, d, a0, OnCompleteListener, n5.b {
         return this.d;
     }
 
-    @Override // com.google.android.gms.tasks.OnCompleteListener
-    public void onComplete(Task task) {
-        j6.a aVar = (j6.a) this.c;
-        String str = (String) this.b;
-        ScheduledFuture scheduledFuture = (ScheduledFuture) this.d;
-        synchronized (aVar.a) {
-            aVar.a.remove(str);
-        }
-        scheduledFuture.cancel(false);
-    }
-
-    @Override // org.telegram.ui.Components.c71
-    public void onError(f71 f71Var, Exception exc) {
-        ha haVar = ((b7) this.d).N;
-        if (haVar != null) {
-            haVar.run();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.c71
-    public /* synthetic */ void onRenderedFirstFrame(j2.a aVar) {
-    }
-
-    @Override // org.telegram.ui.Components.c71
-    public void onStateChanged(boolean z10, int i10) {
-        b7 b7Var = (b7) this.d;
-        z6 z6Var = b7Var.K;
-        f71 f71Var = b7Var.e;
-        if (f71Var == null) {
-            return;
-        }
-        if (f71Var.y()) {
-            AndroidUtilities.runOnUIThread(z6Var);
-        } else {
-            AndroidUtilities.cancelRunOnUIThread(z6Var);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.c71
-    public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.c71
-    public void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
-        ((b7) this.d).i();
-    }
-
-    @Override // org.telegram.ui.Components.c71
-    public void onVideoSizeChanged(int i10, int i11, int i12, float f7) {
-        b7 b7Var = (b7) this.d;
-        l8 l8Var = (l8) this.b;
-        if (l8Var != null) {
-            k8 q6 = b7Var.e.q(l8Var.d1);
-            l8Var.d1 = q6;
-            t61 t61Var = b7Var.n;
-            if (t61Var != null) {
-                t61Var.setHDRInfo(q6);
-            }
-        }
-        int i13 = (int) (i10 * f7);
-        b7Var.f = i13;
-        int i14 = (int) (i11 * f7);
-        b7Var.h = i14;
-        if (l8Var != null && (l8Var.k0 != i13 || l8Var.l0 != i14)) {
-            l8Var.k0 = i13;
-            l8Var.l0 = i14;
-            l8Var.A();
-        }
-        b7Var.b();
-        t61 t61Var2 = b7Var.n;
-        if (t61Var2 != null) {
-            int i15 = b7Var.f;
-            int i16 = b7Var.h;
-            t61Var2.d = i15;
-            t61Var2.e = i16;
-            wz wzVar = t61Var2.b;
-            if (wzVar == null) {
-                return;
-            }
-            wzVar.postRunnable(new sz(wzVar, i15, i16, 0));
-        }
-    }
-
-    public void p(h8.f fVar) {
+    public void n(h8.f fVar) {
         try {
             i8.g gVar = (i8.g) this.c;
             h8.i iVar = new h8.i(fVar);
@@ -675,11 +544,11 @@ public final class a implements s, c71, d, a0, OnCompleteListener, n5.b {
             s7.b.c(O0, iVar);
             gVar.S0(O0, 9);
         } catch (RemoteException e7) {
-            throw new j(e7);
+            throw new androidx.car.app.j(e7);
         }
     }
 
-    public int q(hc.f fVar) {
+    public int o(hc.f fVar) {
         ArrayList arrayList = (ArrayList) this.b;
         int size = arrayList.size();
         int i10 = 0;
@@ -689,7 +558,7 @@ public final class a implements s, c71, d, a0, OnCompleteListener, n5.b {
             i11++;
             jc.f fVar2 = (jc.f) obj;
             int i12 = fVar2.d;
-            hc.e eVar = fVar2.a;
+            e eVar = fVar2.a;
             int a2 = eVar.a(fVar);
             int i13 = a2 + 4;
             int ordinal = eVar.ordinal();
@@ -713,13 +582,97 @@ public final class a implements s, c71, d, a0, OnCompleteListener, n5.b {
         return i10;
     }
 
+    @Override // com.google.android.gms.tasks.OnCompleteListener
+    public void onComplete(Task task) {
+        j6.a aVar = (j6.a) this.c;
+        String str = (String) this.b;
+        ScheduledFuture scheduledFuture = (ScheduledFuture) this.d;
+        synchronized (aVar.a) {
+            aVar.a.remove(str);
+        }
+        scheduledFuture.cancel(false);
+    }
+
+    @Override // org.telegram.ui.Components.p71
+    public void onError(s71 s71Var, Exception exc) {
+        ha haVar = ((b7) this.d).N;
+        if (haVar != null) {
+            haVar.run();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.p71
+    public /* synthetic */ void onRenderedFirstFrame(j2.a aVar) {
+    }
+
+    @Override // org.telegram.ui.Components.p71
+    public void onStateChanged(boolean z10, int i10) {
+        b7 b7Var = (b7) this.d;
+        z6 z6Var = b7Var.K;
+        s71 s71Var = b7Var.e;
+        if (s71Var == null) {
+            return;
+        }
+        if (s71Var.y()) {
+            AndroidUtilities.runOnUIThread(z6Var);
+        } else {
+            AndroidUtilities.cancelRunOnUIThread(z6Var);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.p71
+    public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.p71
+    public void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
+        ((b7) this.d).i();
+    }
+
+    @Override // org.telegram.ui.Components.p71
+    public void onVideoSizeChanged(int i10, int i11, int i12, float f7) {
+        b7 b7Var = (b7) this.d;
+        l8 l8Var = (l8) this.b;
+        if (l8Var != null) {
+            k8 q6 = b7Var.e.q(l8Var.d1);
+            l8Var.d1 = q6;
+            i71 i71Var = b7Var.n;
+            if (i71Var != null) {
+                i71Var.setHDRInfo(q6);
+            }
+        }
+        int i13 = (int) (i10 * f7);
+        b7Var.f = i13;
+        int i14 = (int) (i11 * f7);
+        b7Var.h = i14;
+        if (l8Var != null && (l8Var.k0 != i13 || l8Var.l0 != i14)) {
+            l8Var.k0 = i13;
+            l8Var.l0 = i14;
+            l8Var.A();
+        }
+        b7Var.b();
+        i71 i71Var2 = b7Var.n;
+        if (i71Var2 != null) {
+            int i15 = b7Var.f;
+            int i16 = b7Var.h;
+            i71Var2.d = i15;
+            i71Var2.e = i16;
+            wz wzVar = i71Var2.b;
+            if (wzVar == null) {
+                return;
+            }
+            wzVar.postRunnable(new sz(wzVar, i15, i16, 0));
+        }
+    }
+
     /* JADX WARN: Removed duplicated region for block: B:24:0x0083  */
     /* JADX WARN: Removed duplicated region for block: B:29:0x0111  */
     /* JADX WARN: Removed duplicated region for block: B:32:0x00b1 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public boolean r() {
+    public boolean p() {
         com.google.firebase.messaging.o oVar;
         if (((com.google.firebase.messaging.q) this.d).a("gcm.n.noui")) {
             return true;
@@ -799,15 +752,48 @@ public final class a implements s, c71, d, a0, OnCompleteListener, n5.b {
         return true;
     }
 
-    public void s(String str, String str2) {
+    public void q(String str, String str2) {
         ((HashMap) this.d).put(str, str2);
     }
 
-    public void t(cc.i iVar, Object obj) {
+    public void r(cc.i iVar, Object obj) {
         if (((EnumMap) this.d) == null) {
             this.d = new EnumMap(cc.i.class);
         }
         ((EnumMap) this.d).put((EnumMap) iVar, (cc.i) obj);
+    }
+
+    @Override // z3.d
+    public List s(long j3) {
+        List list = (List) this.b;
+        ArrayList arrayList = new ArrayList();
+        ArrayList arrayList2 = new ArrayList();
+        for (int i10 = 0; i10 < list.size(); i10++) {
+            long[] jArr = (long[]) this.c;
+            int i11 = i10 * 2;
+            if (jArr[i11] <= j3 && j3 < jArr[i11 + 1]) {
+                i4.c cVar = (i4.c) list.get(i10);
+                d2.b bVar = cVar.a;
+                if (bVar.e == -3.4028235E38f) {
+                    arrayList2.add(cVar);
+                } else {
+                    arrayList.add(bVar);
+                }
+            }
+        }
+        Collections.sort(arrayList2, new a4.e(18));
+        for (int i12 = 0; i12 < arrayList2.size(); i12++) {
+            d2.b bVar2 = ((i4.c) arrayList2.get(i12)).a;
+            arrayList.add(new d2.b(bVar2.a, bVar2.b, bVar2.c, bVar2.d, (-1) - i12, 1, bVar2.g, bVar2.h, bVar2.i, bVar2.n, bVar2.o, bVar2.j, bVar2.k, bVar2.l, bVar2.m, bVar2.p, bVar2.q, bVar2.r));
+        }
+        return arrayList;
+    }
+
+    public void t(String str) {
+        if (str == null) {
+            throw new NullPointerException("Null backendName");
+        }
+        this.b = str;
     }
 
     public String toString() {
@@ -874,17 +860,15 @@ public final class a implements s, c71, d, a0, OnCompleteListener, n5.b {
         }
     }
 
-    public void u(String str) {
-        if (str == null) {
-            throw new NullPointerException("Null backendName");
-        }
-        this.b = str;
-    }
-
-    public void v(int i10, String str, String str2) {
+    public void u(int i10, String str, String str2) {
         ((HashMap) this.c).put(str, str2);
         ((HashMap) this.d).put(str2, str);
         ((HashMap) this.b).put(str, Integer.valueOf(i10));
+    }
+
+    @Override // z3.d
+    public int v() {
+        return ((long[]) this.d).length;
     }
 
     public /* synthetic */ a(Object obj, Object obj2, Object obj3, int i10) {
@@ -894,7 +878,7 @@ public final class a implements s, c71, d, a0, OnCompleteListener, n5.b {
         this.d = obj2;
     }
 
-    @Override // org.telegram.ui.Components.c71
+    @Override // org.telegram.ui.Components.p71
     public void onRenderedFirstFrame() {
         l8 l8Var = (l8) this.b;
         Runnable[] runnableArr = (Runnable[]) this.c;
@@ -913,10 +897,10 @@ public final class a implements s, c71, d, a0, OnCompleteListener, n5.b {
         }
         Runnable runnable = runnableArr[0];
         if (runnable == null) {
-            t61 t61Var = b7Var.n;
-            if (t61Var != null) {
+            i71 i71Var = b7Var.n;
+            if (i71Var != null) {
                 if (a7Var == null || !a7Var.g) {
-                    t61Var.animate().alpha(1.0f).setDuration(180L).withEndAction(new ba(21, this, l8Var)).start();
+                    i71Var.animate().alpha(1.0f).setDuration(180L).withEndAction(new ba(21, this, l8Var)).start();
                     return;
                 }
                 return;
@@ -1001,11 +985,11 @@ public final class a implements s, c71, d, a0, OnCompleteListener, n5.b {
         }
     }
 
-    @Override // org.telegram.ui.Components.c71
+    @Override // org.telegram.ui.Components.p71
     public /* synthetic */ void onSeekFinished(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.c71
+    @Override // org.telegram.ui.Components.p71
     public /* synthetic */ void onSeekStarted(j2.a aVar) {
     }
 
@@ -1092,7 +1076,7 @@ public final class a implements s, c71, d, a0, OnCompleteListener, n5.b {
 
     public a(c2.h[] hVarArr) {
         this.a = 26;
-        k0 k0Var = new k0();
+        k2.j0 j0Var = new k2.j0();
         c2.k kVar = new c2.k();
         kVar.c = 1.0f;
         kVar.d = 1.0f;
@@ -1109,9 +1093,9 @@ public final class a implements s, c71, d, a0, OnCompleteListener, n5.b {
         c2.h[] hVarArr2 = new c2.h[hVarArr.length + 2];
         this.b = hVarArr2;
         System.arraycopy(hVarArr, 0, hVarArr2, 0, hVarArr.length);
-        this.c = k0Var;
+        this.c = j0Var;
         this.d = kVar;
-        hVarArr2[hVarArr.length] = k0Var;
+        hVarArr2[hVarArr.length] = j0Var;
         hVarArr2[hVarArr.length + 1] = kVar;
     }
 
@@ -1165,11 +1149,11 @@ public final class a implements s, c71, d, a0, OnCompleteListener, n5.b {
         this.b = hVar;
         int i10 = Build.VERSION.SDK_INT;
         this.c = i10 >= 29 ? androidx.biometric.q.b(context) : null;
-        this.d = i10 <= 29 ? new h(context, 3) : null;
+        this.d = i10 <= 29 ? new h(context, (short) 0) : null;
     }
 
-    public a(com.google.firebase.messaging.m mVar, hc.f fVar, jc.e eVar) {
-        hc.e eVar2;
+    public a(m mVar, hc.f fVar, jc.e eVar) {
+        e eVar2;
         int i10;
         int i11;
         this.a = 23;
@@ -1179,7 +1163,7 @@ public final class a implements s, c71, d, a0, OnCompleteListener, n5.b {
         int i12 = 0;
         int i13 = 0;
         while (true) {
-            eVar2 = hc.e.n;
+            eVar2 = e.n;
             if (eVar3 == null) {
                 break;
             }
@@ -1187,8 +1171,8 @@ public final class a implements s, c71, d, a0, OnCompleteListener, n5.b {
             int i15 = i12 + eVar3.d;
             jc.e eVar4 = eVar3.e;
             int i16 = i13;
-            hc.e eVar5 = eVar3.a;
-            boolean z10 = (eVar5 == hc.e.h && eVar4 == null && i14 != 0) || !(eVar4 == null || i14 == eVar4.c);
+            e eVar5 = eVar3.a;
+            boolean z10 = (eVar5 == e.h && eVar4 == null && i14 != 0) || !(eVar4 == null || i14 == eVar4.c);
             i10 = z10 ? 1 : i16;
             if (eVar4 == null || eVar4.a != eVar5 || z10) {
                 ((ArrayList) this.b).add(0, new jc.f(this, eVar5, eVar3.b, i14, i15));
@@ -1211,7 +1195,7 @@ public final class a implements s, c71, d, a0, OnCompleteListener, n5.b {
             if (fVar2 != null && fVar2.a != eVar2 && i17 != 0) {
                 ((ArrayList) this.b).add(0, new jc.f(this, eVar2, 0, 0, 0));
             }
-            ((ArrayList) this.b).add(((jc.f) ((ArrayList) this.b).get(0)).a == eVar2 ? 1 : 0, new jc.f(this, hc.e.s, 0, 0, 0));
+            ((ArrayList) this.b).add(((jc.f) ((ArrayList) this.b).get(0)).a == eVar2 ? 1 : 0, new jc.f(this, e.s, 0, 0, 0));
         }
         int i18 = fVar.a;
         int i19 = 26;
@@ -1224,11 +1208,11 @@ public final class a implements s, c71, d, a0, OnCompleteListener, n5.b {
         } else {
             i10 = 10;
         }
-        int q6 = q(fVar);
-        while (i18 < i19 && !jc.c.c(q6, hc.f.c(i18), cVar)) {
+        int o9 = o(fVar);
+        while (i18 < i19 && !jc.c.c(o9, hc.f.c(i18), cVar)) {
             i18++;
         }
-        while (i18 > i10 && jc.c.c(q6, hc.f.c(i18 - 1), cVar)) {
+        while (i18 > i10 && jc.c.c(o9, hc.f.c(i18 - 1), cVar)) {
             i18--;
         }
         this.c = hc.f.c(i18);

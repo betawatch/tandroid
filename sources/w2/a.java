@@ -2,18 +2,18 @@ package w2;
 
 import e9.i0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public interface a {
-    long a(long j3);
-
-    i0 b(long j3);
-
-    boolean c(z3.a aVar, long j3);
+    long b(long j3);
 
     void clear();
 
-    long d(long j3);
+    i0 d(long j3);
 
-    void e(long j3);
+    boolean e(z3.a aVar, long j3);
+
+    long l(long j3);
+
+    void r(long j3);
 }

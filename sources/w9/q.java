@@ -3,20 +3,19 @@ package w9;
 import android.util.Log;
 import java.lang.Thread;
 import java.util.concurrent.atomic.AtomicBoolean;
-import org.telegram.ui.Cells.ja;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class q implements Thread.UncaughtExceptionHandler {
-    public final ja a;
+    public final w3.b a;
     public final da.b b;
     public final Thread.UncaughtExceptionHandler c;
     public final t9.a d;
     public final AtomicBoolean e = new AtomicBoolean(false);
 
-    public q(ja jaVar, da.b bVar, Thread.UncaughtExceptionHandler uncaughtExceptionHandler, t9.a aVar) {
-        this.a = jaVar;
-        this.b = bVar;
+    public q(w3.b bVar, da.b bVar2, Thread.UncaughtExceptionHandler uncaughtExceptionHandler, t9.a aVar) {
+        this.a = bVar;
+        this.b = bVar2;
         this.c = uncaughtExceptionHandler;
         this.d = aVar;
     }
@@ -71,7 +70,7 @@ public final class q implements Thread.UncaughtExceptionHandler {
         try {
             try {
                 if (a(thread, th2)) {
-                    this.a.B(this.b, thread, th2);
+                    this.a.b(this.b, thread, th2);
                 } else if (Log.isLoggable("FirebaseCrashlytics", 3)) {
                     Log.d("FirebaseCrashlytics", "Uncaught exception will not be recorded by Crashlytics.", null);
                 }

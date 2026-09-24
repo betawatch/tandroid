@@ -14,12 +14,12 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.ij0;
 import org.telegram.ui.Components.q5;
 import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.yi0;
-import org.telegram.ui.dz;
+import org.telegram.ui.cz;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class d {
     public static int m;
@@ -211,13 +211,13 @@ public final class d {
                 sb2.append(i11);
                 sb2.append(" ");
                 imageReceiver.setUniqKeyPrefix(sb2.toString());
-                int f7 = dz.f();
+                int f7 = cz.f();
                 TLRPC.Document document3 = tL_availableReaction.around_animation;
                 z10 = true;
                 imageReceiver.setImage(ImageLocation.getForDocument(tL_availableReaction.around_animation), f7 + "_" + f7 + "_pcache_compress", null, null, document3, 0);
             } else {
                 ImageLocation forDocument = ImageLocation.getForDocument(document);
-                String a2 = l0.a();
+                String a2 = k0.a();
                 TLRPC.Document document4 = tL_availableReaction.around_animation;
                 z10 = true;
                 imageReceiver.setImage(forDocument, a2, null, null, document4, 0);
@@ -240,7 +240,7 @@ public final class d {
                     sb3.append(i12);
                     sb3.append(" ");
                     imageReceiver.setUniqKeyPrefix(sb3.toString());
-                    int f10 = dz.f();
+                    int f10 = cz.f();
                     imageReceiver.setImage(ImageLocation.getForDocument(tL_messages_stickerSet.documents.get(this.k)), f10 + "_" + f10 + "_pcache_compress", null, null, tL_messages_stickerSet.documents.get(this.k), 0);
                 } else {
                     imageReceiver.setImage(ImageLocation.getForDocument(tL_messages_stickerSet.documents.get(this.k)), "60_60", null, null, tL_messages_stickerSet.documents.get(this.k), 0);
@@ -249,7 +249,7 @@ public final class d {
             }
         }
         if (!z11) {
-            imageReceiver.setImageBitmap(new yi0(R.raw.custom_emoji_reaction, AndroidUtilities.dp(60.0f), AndroidUtilities.dp(60.0f), false, null));
+            imageReceiver.setImageBitmap(new ij0(R.raw.custom_emoji_reaction, AndroidUtilities.dp(60.0f), AndroidUtilities.dp(60.0f), false, null));
             return;
         }
         if (imageReceiver.getLottieAnimation() != null) {

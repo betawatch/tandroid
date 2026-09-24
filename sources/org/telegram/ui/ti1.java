@@ -16,27 +16,27 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ti1 implements org.telegram.ui.ActionBar.a2, ly {
+public final /* synthetic */ class ti1 implements org.telegram.ui.ActionBar.z1, ky {
     public final /* synthetic */ vi1 a;
 
     public /* synthetic */ ti1(vi1 vi1Var) {
         this.a = vi1Var;
     }
 
-    @Override // org.telegram.ui.ly
+    @Override // org.telegram.ui.ky
     public /* synthetic */ boolean A() {
         return false;
     }
 
-    @Override // org.telegram.ui.ly
-    public /* synthetic */ boolean K(ry ryVar) {
+    @Override // org.telegram.ui.ky
+    public /* synthetic */ boolean K(qy qyVar) {
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.z1
+    public void f(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
         org.telegram.ui.ActionBar.k kVar;
         org.telegram.ui.ActionBar.k kVar2;
         int i11;
@@ -44,10 +44,10 @@ public final /* synthetic */ class ti1 implements org.telegram.ui.ActionBar.a2, 
         WallpapersListActivity wallpapersListActivity = vi1Var.a;
         Activity parentActivity = wallpapersListActivity.getParentActivity();
         LongSparseArray longSparseArray = wallpapersListActivity.i0;
-        org.telegram.ui.ActionBar.b2 b2Var2 = new org.telegram.ui.ActionBar.b2(parentActivity, 3, null);
-        wallpapersListActivity.P = b2Var2;
-        b2Var2.g0 = false;
-        b2Var2.show();
+        org.telegram.ui.ActionBar.a2 a2Var2 = new org.telegram.ui.ActionBar.a2(parentActivity, 3, null);
+        wallpapersListActivity.P = a2Var2;
+        a2Var2.g0 = false;
+        a2Var2.show();
         new ArrayList();
         int[] iArr = {0};
         for (int i12 = 0; i12 < longSparseArray.size(); i12++) {
@@ -85,7 +85,7 @@ public final /* synthetic */ class ti1 implements org.telegram.ui.ActionBar.a2, 
                     org.telegram.ui.ActionBar.h6.I.v(null);
                     org.telegram.ui.ActionBar.h6.o1(true);
                 }
-                i11 = ((org.telegram.ui.ActionBar.n2) wallpapersListActivity).currentAccount;
+                i11 = ((org.telegram.ui.ActionBar.m2) wallpapersListActivity).currentAccount;
                 ConnectionsManager.getInstance(i11).sendRequest(savewallpaper, new ui1(0, vi1Var, iArr));
             }
         }
@@ -93,14 +93,14 @@ public final /* synthetic */ class ti1 implements org.telegram.ui.ActionBar.a2, 
             wallpapersListActivity.B0(true);
         }
         longSparseArray.clear();
-        kVar = ((org.telegram.ui.ActionBar.n2) wallpapersListActivity).actionBar;
+        kVar = ((org.telegram.ui.ActionBar.m2) wallpapersListActivity).actionBar;
         kVar.r();
-        kVar2 = ((org.telegram.ui.ActionBar.n2) wallpapersListActivity).actionBar;
+        kVar2 = ((org.telegram.ui.ActionBar.m2) wallpapersListActivity).actionBar;
         kVar2.h(true);
     }
 
-    @Override // org.telegram.ui.ly
-    public boolean u(ry ryVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, wf1 wf1Var) {
+    @Override // org.telegram.ui.ky
+    public boolean u(qy qyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, wf1 wf1Var) {
         LongSparseArray longSparseArray;
         org.telegram.ui.ActionBar.k kVar;
         org.telegram.ui.ActionBar.k kVar2;
@@ -136,13 +136,13 @@ public final /* synthetic */ class ti1 implements org.telegram.ui.ActionBar.a2, 
             i18++;
         }
         longSparseArray.clear();
-        kVar = ((org.telegram.ui.ActionBar.n2) wallpapersListActivity).actionBar;
+        kVar = ((org.telegram.ui.ActionBar.m2) wallpapersListActivity).actionBar;
         kVar.r();
-        kVar2 = ((org.telegram.ui.ActionBar.n2) wallpapersListActivity).actionBar;
+        kVar2 = ((org.telegram.ui.ActionBar.m2) wallpapersListActivity).actionBar;
         kVar2.h(true);
         if (arrayList.size() <= 1) {
             long j3 = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
-            i14 = ((org.telegram.ui.ActionBar.n2) wallpapersListActivity).currentAccount;
+            i14 = ((org.telegram.ui.ActionBar.m2) wallpapersListActivity).currentAccount;
             if (j3 != UserConfig.getInstance(i14).getClientUserId() && charSequence == null) {
                 long j10 = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
                 Bundle i19 = a4.a.i("scrollToTopOnResume", true);
@@ -154,15 +154,15 @@ public final /* synthetic */ class ti1 implements org.telegram.ui.ActionBar.a2, 
                     } else if (DialogObject.isChatDialog(j10)) {
                         i19.putLong("chat_id", -j10);
                     }
-                    i15 = ((org.telegram.ui.ActionBar.n2) wallpapersListActivity).currentAccount;
-                    if (!MessagesController.getInstance(i15).checkCanOpenChat(i19, ryVar)) {
+                    i15 = ((org.telegram.ui.ActionBar.m2) wallpapersListActivity).currentAccount;
+                    if (!MessagesController.getInstance(i15).checkCanOpenChat(i19, qyVar)) {
                         return true;
                     }
                 }
-                i16 = ((org.telegram.ui.ActionBar.n2) wallpapersListActivity).currentAccount;
+                i16 = ((org.telegram.ui.ActionBar.m2) wallpapersListActivity).currentAccount;
                 NotificationCenter.getInstance(i16).lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
-                wallpapersListActivity.presentFragment(new xn(i19), true);
-                i17 = ((org.telegram.ui.ActionBar.n2) wallpapersListActivity).currentAccount;
+                wallpapersListActivity.presentFragment(new wn(i19), true);
+                i17 = ((org.telegram.ui.ActionBar.m2) wallpapersListActivity).currentAccount;
                 SendMessagesHelper.getInstance(i17).sendMessage(SendMessagesHelper.SendMessageParams.of(sb2.toString(), j10, null, null, null, true, null, null, null, true, 0, 0, null, false));
                 return true;
             }
@@ -171,15 +171,15 @@ public final /* synthetic */ class ti1 implements org.telegram.ui.ActionBar.a2, 
         for (int i20 = 0; i20 < arrayList.size(); i20++) {
             long j11 = ((MessagesStorage.TopicKey) arrayList.get(i20)).dialogId;
             if (charSequence != null) {
-                i13 = ((org.telegram.ui.ActionBar.n2) wallpapersListActivity).currentAccount;
+                i13 = ((org.telegram.ui.ActionBar.m2) wallpapersListActivity).currentAccount;
                 SendMessagesHelper.getInstance(i13).sendMessage(SendMessagesHelper.SendMessageParams.of(charSequence.toString(), j11, null, null, null, true, null, null, null, true, 0, 0, null, false));
             }
             if (!TextUtils.isEmpty(sb2)) {
-                i12 = ((org.telegram.ui.ActionBar.n2) wallpapersListActivity).currentAccount;
+                i12 = ((org.telegram.ui.ActionBar.m2) wallpapersListActivity).currentAccount;
                 SendMessagesHelper.getInstance(i12).sendMessage(SendMessagesHelper.SendMessageParams.of(sb2.toString(), j11, null, null, null, true, null, null, null, true, 0, 0, null, false));
             }
         }
-        ryVar.finishFragment();
+        qyVar.finishFragment();
         return true;
     }
 }

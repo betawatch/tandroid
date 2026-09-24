@@ -6,7 +6,7 @@ import android.media.RingtoneManager;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class NotificationsSettingsFacade {
     public static final String PROPERTY_CONTENT_PREVIEW = "content_preview_";
@@ -40,17 +40,17 @@ public class NotificationsSettingsFacade {
         ConnectionsManager connectionsManager = ConnectionsManager.getInstance(this.currentAccount);
         MessagesStorage messagesStorage = MessagesStorage.getInstance(this.currentAccount);
         NotificationsController notificationsController = NotificationsController.getInstance(this.currentAccount);
-        int c10 = z0.c(PROPERTY_NOTIFY, sharedPrefKey, getPreferences(), -1);
+        int c10 = f0.c(PROPERTY_NOTIFY, sharedPrefKey, getPreferences(), -1);
         boolean z11 = true;
-        int c11 = z0.c(PROPERTY_NOTIFY_UNTIL, sharedPrefKey, getPreferences(), 0);
+        int c11 = f0.c(PROPERTY_NOTIFY_UNTIL, sharedPrefKey, getPreferences(), 0);
         SharedPreferences.Editor edit = getPreferences().edit();
         if ((peerNotifySettings.flags & 2) != 0) {
-            edit.putBoolean(org.telegram.ui.Cells.q3.i(PROPERTY_SILENT, sharedPrefKey), peerNotifySettings.silent);
+            edit.putBoolean(v7.j.g(PROPERTY_SILENT, sharedPrefKey), peerNotifySettings.silent);
         } else {
             edit.remove(PROPERTY_SILENT + sharedPrefKey);
         }
         if ((peerNotifySettings.flags & 64) != 0) {
-            edit.putBoolean(org.telegram.ui.Cells.q3.i(PROPERTY_STORIES_NOTIFY, sharedPrefKey), !peerNotifySettings.stories_muted);
+            edit.putBoolean(v7.j.g(PROPERTY_STORIES_NOTIFY, sharedPrefKey), !peerNotifySettings.stories_muted);
         } else {
             edit.remove(PROPERTY_STORIES_NOTIFY + sharedPrefKey);
         }
@@ -128,7 +128,7 @@ public class NotificationsSettingsFacade {
         if (peerNotifySettings == null) {
             return;
         }
-        Utilities.globalQueue.postRunnable(new a3.g0(this, j3, j10, peerNotifySettings, 9));
+        Utilities.globalQueue.postRunnable(new a3.g0(this, j3, j10, peerNotifySettings, 10));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:15:0x00f7  */
@@ -152,9 +152,9 @@ public class NotificationsSettingsFacade {
         int i13 = (j3 > 0L ? 1 : (j3 == 0L ? 0 : -1));
         if (i13 != 0) {
             String sharedPrefKey = NotificationsController.getSharedPrefKey(j3, j10, true);
-            str = org.telegram.ui.Cells.q3.i("sound_", sharedPrefKey);
-            str3 = org.telegram.ui.Cells.q3.i("sound_path_", sharedPrefKey);
-            str2 = org.telegram.ui.Cells.q3.i("sound_document_id_", sharedPrefKey);
+            str = v7.j.g("sound_", sharedPrefKey);
+            str3 = v7.j.g("sound_path_", sharedPrefKey);
+            str2 = v7.j.g("sound_document_id_", sharedPrefKey);
         } else if (i10 == 0) {
             str = "GroupSound";
             str2 = "GroupSoundDocId";

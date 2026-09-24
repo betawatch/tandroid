@@ -5,7 +5,7 @@ import java.util.HashSet;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n9 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -41,7 +41,7 @@ public final /* synthetic */ class n9 implements Utilities.Callback {
                 break;
             case 1:
                 fa faVar2 = this.b.W;
-                i10 = ((org.telegram.ui.ActionBar.f3) faVar2).currentAccount;
+                i10 = ((org.telegram.ui.ActionBar.e3) faVar2).currentAccount;
                 faVar2.g1(new da(5, i10, (ArrayList) obj), new ai.r5(faVar2, 1), false);
                 break;
             case 2:

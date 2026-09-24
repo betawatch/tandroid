@@ -7,22 +7,22 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.c5;
+import org.telegram.ui.ActionBar.b5;
+import org.telegram.ui.Components.aw0;
 import org.telegram.ui.Components.lz;
-import org.telegram.ui.Components.pv0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class r1 extends pv0 {
+public final class r1 extends aw0 {
     public final /* synthetic */ int w0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ r1(Context context, c5 c5Var, int i10) {
-        super(context, c5Var);
+    public /* synthetic */ r1(Context context, b5 b5Var, int i10) {
+        super(context, b5Var);
         this.w0 = i10;
     }
 
-    @Override // org.telegram.ui.Components.pv0
+    @Override // org.telegram.ui.Components.aw0
     public boolean P() {
         switch (this.w0) {
             case 2:
@@ -62,7 +62,7 @@ public final class r1 extends pv0 {
     /* JADX WARN: Removed duplicated region for block: B:20:0x007a  */
     /* JADX WARN: Removed duplicated region for block: B:28:0x00a0  */
     /* JADX WARN: Removed duplicated region for block: B:38:0x0090  */
-    @Override // org.telegram.ui.Components.pv0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.aw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

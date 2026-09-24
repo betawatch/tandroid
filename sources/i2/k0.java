@@ -2,17 +2,17 @@ package i2;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class k0 {
     public final ArrayList a;
-    public final u2.f1 b;
+    public final u2.g1 b;
     public final int c;
     public final long d;
 
-    public k0(ArrayList arrayList, u2.f1 f1Var, int i10, long j3) {
+    public k0(ArrayList arrayList, u2.g1 g1Var, int i10, long j3) {
         this.a = arrayList;
-        this.b = f1Var;
+        this.b = g1Var;
         this.c = i10;
         this.d = j3;
     }

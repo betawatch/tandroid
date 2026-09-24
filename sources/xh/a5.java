@@ -22,10 +22,10 @@ import org.telegram.ui.Components.z5;
 import yh.t5;
 import yh.w7;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class a5 extends View {
-    public final yh.a4 a;
+    public final yh.z3 a;
     public final d6 b;
     public float c;
     public float d;
@@ -34,102 +34,102 @@ public final class a5 extends View {
     public a5(Context context, int i10, d6 d6Var) {
         super(context);
         this.b = d6Var;
-        yh.a4 a4Var = new yh.a4(i10, this, d6Var);
-        this.a = a4Var;
-        a4Var.y.setCallback(this);
+        yh.z3 z3Var = new yh.z3(i10, this, d6Var);
+        this.a = z3Var;
+        z3Var.y.setCallback(this);
         NotificationCenter.listenEmojiLoading(this);
     }
 
     public final void a(TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, TLRPC.TL_textWithEntities tL_textWithEntities, String str, boolean z10) {
-        yh.a4 a4Var = this.a;
-        o5 o5Var = a4Var.e;
-        m1 m1Var = a4Var.j;
-        ImageReceiver imageReceiver = a4Var.d;
-        a4Var.K = false;
-        a4Var.N = null;
-        a4Var.O = null;
-        a4Var.p = false;
-        a4Var.k = (TL_stars.starGiftAttributeBackdrop) t5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class);
-        a4Var.l = (TL_stars.starGiftAttributePattern) t5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class);
-        TL_stars.starGiftAttributeModel stargiftattributemodel = a4Var.m;
-        a4Var.m = (TL_stars.starGiftAttributeModel) t5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class);
-        Paint paint = a4Var.f;
-        a4Var.h = null;
+        yh.z3 z3Var = this.a;
+        o5 o5Var = z3Var.e;
+        m1 m1Var = z3Var.j;
+        ImageReceiver imageReceiver = z3Var.d;
+        z3Var.K = false;
+        z3Var.N = null;
+        z3Var.O = null;
+        z3Var.p = false;
+        z3Var.k = (TL_stars.starGiftAttributeBackdrop) t5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class);
+        z3Var.l = (TL_stars.starGiftAttributePattern) t5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class);
+        TL_stars.starGiftAttributeModel stargiftattributemodel = z3Var.m;
+        z3Var.m = (TL_stars.starGiftAttributeModel) t5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class);
+        Paint paint = z3Var.f;
+        z3Var.h = null;
         paint.setShader(null);
-        TL_stars.starGiftAttributePattern stargiftattributepattern = a4Var.l;
+        TL_stars.starGiftAttributePattern stargiftattributepattern = z3Var.l;
         if (stargiftattributepattern != null) {
             o5Var.i(stargiftattributepattern.document, false);
         } else {
             o5Var.g(null, false);
         }
-        TL_stars.starGiftAttributeModel stargiftattributemodel2 = a4Var.m;
+        TL_stars.starGiftAttributeModel stargiftattributemodel2 = z3Var.m;
         if (stargiftattributemodel2 != null && (stargiftattributemodel == null || stargiftattributemodel.document.id != stargiftattributemodel2.document.id)) {
             imageReceiver.setAutoRepeatCount(0);
             imageReceiver.clearDecorators();
             imageReceiver.setAutoRepeat(0);
-            w7.Z0(imageReceiver, a4Var.m.document, 110);
+            w7.Z0(imageReceiver, z3Var.m.document, 110);
         }
         boolean z11 = tL_starGiftUnique.burned;
-        a4Var.J = z11;
+        z3Var.J = z11;
         if (z11) {
-            int v02 = h6.v0(h6.q7, a4Var.c);
+            int v02 = h6.v0(h6.q7, z3Var.c);
             Paint paint2 = m1Var.a;
             paint2.setShader(null);
             paint2.setColor(v02);
             m1Var.e(11, LocaleController.getString(R.string.Gift2UniqueRibbonBurned), true);
         } else {
-            m1Var.d(a4Var.k, true, false);
+            m1Var.d(z3Var.k, true, false);
             m1Var.e(11, LocaleController.getString(R.string.Gift2UniqueRibbon), true);
         }
-        if (a4Var.P) {
+        if (z3Var.P) {
             imageReceiver.onAttachedToWindow();
             o5Var.a();
-            a4Var.y.d.onAttachedToWindow();
+            z3Var.y.d.onAttachedToWindow();
         }
-        a4Var.L = Math.min((int) (AndroidUtilities.isTablet() ? AndroidUtilities.getMinTabletSide() * 0.6f : (AndroidUtilities.displaySize.x * 0.62f) - AndroidUtilities.dp(34.0f)), ((AndroidUtilities.displaySize.y - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - AndroidUtilities.statusBarHeight) - AndroidUtilities.dp(64.0f));
+        z3Var.L = Math.min((int) (AndroidUtilities.isTablet() ? AndroidUtilities.getMinTabletSide() * 0.6f : (AndroidUtilities.displaySize.x * 0.62f) - AndroidUtilities.dp(34.0f)), ((AndroidUtilities.displaySize.y - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - AndroidUtilities.statusBarHeight) - AndroidUtilities.dp(64.0f));
         if (!AndroidUtilities.isTablet()) {
-            a4Var.L = (int) (a4Var.L * 1.2f);
+            z3Var.L = (int) (z3Var.L * 1.2f);
         }
-        a4Var.L -= AndroidUtilities.dp(8.0f);
-        a4Var.h(tL_starGiftUnique, j3, tL_textWithEntities, str);
-        le.f fVar = a4Var.Q;
+        z3Var.L -= AndroidUtilities.dp(8.0f);
+        z3Var.h(tL_starGiftUnique, j3, tL_textWithEntities, str);
+        le.f fVar = z3Var.Q;
         if (z10) {
             int round = Math.round(fVar.g ? fVar.f : fVar.e);
-            int i10 = a4Var.L;
+            int i10 = z3Var.L;
             if (round != i10) {
                 fVar.a(i10);
             }
         } else {
-            fVar.c(a4Var.L);
+            fVar.c(z3Var.L);
         }
         requestLayout();
         invalidate();
     }
 
-    public yh.a4 getLayout() {
+    public yh.z3 getLayout() {
         return this.a;
     }
 
     @Override // android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        yh.a4 a4Var = this.a;
-        a4Var.P = true;
-        if (a4Var.N != null) {
-            a4Var.d.onAttachedToWindow();
-            a4Var.e.a();
-            a4Var.y.d.onAttachedToWindow();
+        yh.z3 z3Var = this.a;
+        z3Var.P = true;
+        if (z3Var.N != null) {
+            z3Var.d.onAttachedToWindow();
+            z3Var.e.a();
+            z3Var.y.d.onAttachedToWindow();
         }
     }
 
     @Override // android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        yh.a4 a4Var = this.a;
-        a4Var.P = false;
-        a4Var.d.onDetachedFromWindow();
-        a4Var.e.b();
-        k0 k0Var = a4Var.y;
+        yh.z3 z3Var = this.a;
+        z3Var.P = false;
+        z3Var.d.onDetachedFromWindow();
+        z3Var.e.b();
+        k0 k0Var = z3Var.y;
         k0Var.d.onDetachedFromWindow();
         z5.release((View) null, k0Var.q);
         k0Var.q = null;
@@ -144,21 +144,21 @@ public final class a5 extends View {
         } else {
             h6.q(0.0f, getY(), getMeasuredWidth(), height);
         }
-        yh.a4 a4Var = this.a;
-        this.c = (getWidth() - ((int) a4Var.Q.e)) / 2.0f;
-        float dp = a4Var.Q.e + AndroidUtilities.dp(8.0f);
+        yh.z3 z3Var = this.a;
+        this.c = (getWidth() - ((int) z3Var.Q.e)) / 2.0f;
+        float dp = z3Var.Q.e + AndroidUtilities.dp(8.0f);
         float width = (getWidth() - dp) / 2.0f;
         float dp2 = this.d - AndroidUtilities.dp(4.0f);
         RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(width, dp2, dp + width, a4Var.M + dp2 + AndroidUtilities.dp(8.0f));
+        rectF.set(width, dp2, dp + width, z3Var.M + dp2 + AndroidUtilities.dp(8.0f));
         Rect rect = AndroidUtilities.rectTmp2;
         rectF.round(rect);
         this.e.setBounds(rect);
         this.e.draw(canvas);
         canvas.save();
         canvas.translate(this.c, this.d);
-        a4Var.a(canvas);
-        a4Var.b(canvas);
+        z3Var.a(canvas);
+        z3Var.b(canvas);
         canvas.restore();
     }
 

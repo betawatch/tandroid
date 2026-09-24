@@ -4,7 +4,7 @@ import android.os.SystemClock;
 import android.util.SparseIntArray;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class DispatchQueuePoolBackground {
     public static final String THREAD_PREFIX = "DispatchQueuePoolThreadSafety_";
@@ -82,12 +82,12 @@ public class DispatchQueuePoolBackground {
                 this.totalTasksCount++;
                 this.busyQueues.add(remove);
                 this.busyQueuesMap.put(remove.index, this.busyQueuesMap.get(remove.index, 0) + 1);
-                if (zg.f0.b) {
+                if (zg.e0.b) {
                     remove.setPriority(1);
                 } else if (remove.getPriority() != 10) {
                     remove.setPriority(10);
                 }
-                remove.postRunnable(new f0(this, runnable, remove, 18));
+                remove.postRunnable(new g0(this, runnable, remove, 18));
             }
         }
     }
@@ -153,7 +153,7 @@ public class DispatchQueuePoolBackground {
         if (updateTaskCollection == null) {
             ArrayList<ArrayList<Runnable>> arrayList = freeCollections;
             if (!arrayList.isEmpty()) {
-                updateTaskCollection = (ArrayList) hg.c.z(1, arrayList);
+                updateTaskCollection = (ArrayList) hg.c.x(1, arrayList);
             } else {
                 updateTaskCollection = new ArrayList<>(100);
             }

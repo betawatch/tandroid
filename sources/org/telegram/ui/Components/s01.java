@@ -1,35 +1,42 @@
 package org.telegram.ui.Components;
 
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class s01 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Runnable b;
-    public final /* synthetic */ Runnable c;
+public final class s01 extends FrameLayout {
+    public static final /* synthetic */ int e = 0;
+    public TextView a;
+    public r01 b;
+    public TLRPC.TL_help_termsOfService c;
+    public int d;
 
-    public /* synthetic */ s01(Runnable runnable, Runnable runnable2, int i10) {
-        this.a = i10;
-        this.b = runnable;
-        this.c = runnable2;
+    public final void a() {
+        r01 r01Var = this.b;
+        int i10 = this.d;
+        org.telegram.ui.ra0 ra0Var = (org.telegram.ui.ra0) r01Var;
+        ra0Var.getClass();
+        UserConfig.getInstance(i10).unacceptedTermsOfService = null;
+        UserConfig.getInstance(i10).saveConfig(false);
+        LaunchActivity launchActivity = ra0Var.a;
+        ArrayList arrayList = launchActivity.d0;
+        if (!arrayList.isEmpty()) {
+            ((org.telegram.ui.ActionBar.m2) hg.c.g(1, arrayList)).onResume();
+        }
+        launchActivity.C0.animate().alpha(0.0f).setDuration(150L).setInterpolator(AndroidUtilities.accelerateInterpolator).withEndAction(new org.telegram.ui.c10(ra0Var, 15)).start();
+        TLRPC.TL_help_acceptTermsOfService tL_help_acceptTermsOfService = new TLRPC.TL_help_acceptTermsOfService();
+        tL_help_acceptTermsOfService.id = this.c.id;
+        ConnectionsManager.getInstance(this.d).sendRequest(tL_help_acceptTermsOfService, new ai.u7(16));
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                w01.b(this.b);
-                Runnable runnable = this.c;
-                if (runnable != null) {
-                    AndroidUtilities.runOnUIThread(runnable);
-                    break;
-                }
-                break;
-            default:
-                this.b.run();
-                this.c.run();
-                break;
-        }
+    public void setDelegate(r01 r01Var) {
+        this.b = r01Var;
     }
 }

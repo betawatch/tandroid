@@ -1,26 +1,47 @@
 package org.telegram.ui;
 
-import android.app.Activity;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class o60 extends rg.j0 {
-    public final /* synthetic */ p60 W0;
+public final /* synthetic */ class o60 implements org.telegram.ui.Components.d20, org.telegram.ui.ActionBar.z1, r0.n {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ z60 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o60(p60 p60Var, p60 p60Var2, Activity activity, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(i10, i11, activity, p60Var2, d6Var);
-        this.W0 = p60Var;
+    public /* synthetic */ o60(z60 z60Var, int i10) {
+        this.a = i10;
+        this.b = z60Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
-    public final void dismiss() {
-        super.dismiss();
-        this.W0.B0 = false;
+    @Override // r0.n
+    public r0.l1 Q0(View view, r0.l1 l1Var) {
+        int i10 = AndroidUtilities.getDefaultWindowInsets(l1Var, false).d;
+        z60 z60Var = this.b;
+        z60Var.m0 = i10;
+        ai.w7 w7Var = z60Var.F;
+        if (w7Var != null) {
+            w7Var.setPadding(0, 0, 0, i10);
+        }
+        z60Var.j0();
+        z60Var.h0();
+        return r0.l1.b;
     }
 
-    @Override // org.telegram.ui.ActionBar.f3
-    public final void onOpenAnimationEnd() {
-        this.W0.B0 = false;
+    @Override // org.telegram.ui.Components.d20
+    public void a(int i10) {
+        this.b.b.a(Math.min(i10, r0.c0));
+    }
+
+    @Override // org.telegram.ui.ActionBar.z1
+    public void f(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
+        switch (this.a) {
+            case 1:
+                this.b.o0();
+                break;
+            default:
+                this.b.finishFragment();
+                break;
+        }
     }
 }

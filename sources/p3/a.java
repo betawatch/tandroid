@@ -7,17 +7,17 @@ import java.nio.charset.CharsetDecoder;
 import java.nio.charset.StandardCharsets;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import v7.r6;
-import w7.l;
+import v7.s6;
+import w7.m;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
-public final class a extends l {
+public final class a extends m {
     public static final Pattern c = Pattern.compile("(.+?)='(.*?)';", 32);
     public final CharsetDecoder a = StandardCharsets.UTF_8.newDecoder();
     public final CharsetDecoder b = StandardCharsets.ISO_8859_1.newDecoder();
 
-    @Override // w7.l
+    @Override // w7.m
     public final p0 b(l3.a aVar, ByteBuffer byteBuffer) {
         String str;
         CharsetDecoder charsetDecoder = this.b;
@@ -55,7 +55,7 @@ public final class a extends l {
             String group = matcher.group(1);
             String group2 = matcher.group(2);
             if (group != null) {
-                String b10 = r6.b(group);
+                String b10 = s6.b(group);
                 b10.getClass();
                 if (b10.equals("streamurl")) {
                     str3 = group2;

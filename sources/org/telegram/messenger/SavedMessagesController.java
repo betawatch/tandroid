@@ -16,9 +16,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.xn;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class SavedMessagesController {
     private final int currentAccount;
@@ -38,7 +38,7 @@ public class SavedMessagesController {
     private final Runnable saveCacheRunnable = new yh(this, 1);
     private final a0.i checkMessagesCallbacks = new a0.i();
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class SavedDialog {
         public long dialogId;
         private int lastDate;
@@ -787,24 +787,24 @@ public class SavedMessagesController {
     }
 
     public static void openSavedMessages() {
-        org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
+        org.telegram.ui.ActionBar.m2 R = LaunchActivity.R();
         if (R == null) {
             return;
         }
         Bundle bundle = new Bundle();
         bundle.putLong("user_id", UserConfig.getInstance(R.getCurrentAccount()).getClientUserId());
-        R.presentFragment(new xn(bundle));
+        R.presentFragment(new wn(bundle));
     }
 
     public static void openSavedMessagesReminders() {
-        org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
+        org.telegram.ui.ActionBar.m2 R = LaunchActivity.R();
         if (R == null) {
             return;
         }
         Bundle bundle = new Bundle();
         bundle.putLong("user_id", UserConfig.getInstance(R.getCurrentAccount()).getClientUserId());
         bundle.putInt("chatMode", 1);
-        R.presentFragment(new xn(bundle));
+        R.presentFragment(new wn(bundle));
     }
 
     private boolean processUpdateInternal(TLRPC.Update update) {
@@ -1103,7 +1103,7 @@ public class SavedMessagesController {
         }
         this.dialogsLoading = true;
         TLRPC.TL_messages_getSavedDialogs tL_messages_getSavedDialogs = new TLRPC.TL_messages_getSavedDialogs();
-        SavedDialog savedDialog = this.loadedDialogs.isEmpty() ? null : (SavedDialog) hg.c.h(1, this.loadedDialogs);
+        SavedDialog savedDialog = this.loadedDialogs.isEmpty() ? null : (SavedDialog) hg.c.g(1, this.loadedDialogs);
         if (savedDialog != null) {
             tL_messages_getSavedDialogs.offset_id = savedDialog.top_message_id;
             tL_messages_getSavedDialogs.offset_date = savedDialog.getDate();
@@ -1164,11 +1164,11 @@ public class SavedMessagesController {
                 }
                 if (str2 != null) {
                     String translitSafe2 = AndroidUtilities.translitSafe(str2.toLowerCase());
-                    if (translitSafe2.startsWith(translitSafe) || z0.w(" ", translitSafe, translitSafe2)) {
+                    if (translitSafe2.startsWith(translitSafe) || f0.w(" ", translitSafe, translitSafe2)) {
                         arrayList.add(savedDialog);
                     } else if (str3 != null) {
                         String translitSafe3 = AndroidUtilities.translitSafe(str3.toLowerCase());
-                        if (translitSafe3.startsWith(translitSafe) || z0.w(" ", translitSafe, translitSafe3)) {
+                        if (translitSafe3.startsWith(translitSafe) || f0.w(" ", translitSafe, translitSafe3)) {
                             arrayList.add(savedDialog);
                         }
                     }

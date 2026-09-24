@@ -1,23 +1,29 @@
 package tg;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.Components.db0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class j1 extends View {
-    public final /* synthetic */ n1 a;
+public final class j1 extends ci.d {
+    public final /* synthetic */ m1 h0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j1(n1 n1Var, Context context) {
-        super(context);
-        this.a = n1Var;
+    public j1(m1 m1Var, Context context, d6 d6Var) {
+        super(context, d6Var, true);
+        this.h0 = m1Var;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        canvas.drawColor(this.a.getThemedColor(h6.e7));
+    @Override // ci.d
+    public final float a(float f7, float f10) {
+        m1 m1Var = this.h0;
+        boolean z10 = m1Var.t0 == 0.0f;
+        m1Var.t0 = f7;
+        if (z10) {
+            m1Var.u0 = new db0(m1Var, 2);
+            m1Var.g0(false);
+        }
+        return f7;
     }
 }

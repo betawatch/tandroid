@@ -8,7 +8,7 @@ import android.widget.FrameLayout;
 import org.telegram.tgnet.TLObject;
 import yh.w7;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class h1 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -73,10 +73,10 @@ public final class h1 extends FrameLayout {
         switch (this.a) {
             case 1:
                 super.setTranslationY(f7);
-                yh.y3 y3Var = (yh.y3) this.b;
-                yh.j2 j2Var = y3Var.d0;
-                if (j2Var != null && j2Var.getVisibility() == 0) {
-                    y3Var.d0.invalidate();
+                yh.x3 x3Var = (yh.x3) this.b;
+                yh.i2 i2Var = x3Var.d0;
+                if (i2Var != null && i2Var.getVisibility() == 0) {
+                    x3Var.d0.invalidate();
                     break;
                 }
                 break;

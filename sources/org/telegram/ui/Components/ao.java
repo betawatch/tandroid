@@ -8,20 +8,20 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.wf1;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class ao extends w9 {
     public final org.telegram.ui.Cells.m6 G;
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 H;
+    public final /* synthetic */ org.telegram.ui.ActionBar.m2 H;
     public final /* synthetic */ boolean I;
     public final /* synthetic */ org.telegram.ui.ActionBar.d6 J;
     public final /* synthetic */ fo K;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ao(fo foVar, Context context, org.telegram.ui.ActionBar.n2 n2Var, boolean z10, org.telegram.ui.ActionBar.d6 d6Var) {
+    public ao(fo foVar, Context context, org.telegram.ui.ActionBar.m2 m2Var, boolean z10, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context);
         this.K = foVar;
-        this.H = n2Var;
+        this.H = m2Var;
         this.I = z10;
         this.J = d6Var;
         this.G = new org.telegram.ui.Cells.m6(this);
@@ -44,12 +44,12 @@ public final class ao extends w9 {
         if (num != null) {
             m6Var.z = num.intValue();
         }
-        org.telegram.ui.xn xnVar = foVar.G;
-        if (xnVar != null) {
-            j3 = xnVar.a();
+        org.telegram.ui.wn wnVar = foVar.G;
+        if (wnVar != null) {
+            j3 = wnVar.a();
         } else {
-            org.telegram.ui.ActionBar.n2 n2Var = this.H;
-            j3 = n2Var instanceof wf1 ? -((wf1) n2Var).a : 0L;
+            org.telegram.ui.ActionBar.m2 m2Var = this.H;
+            j3 = m2Var instanceof wf1 ? -((wf1) m2Var).a : 0L;
         }
         ai.ia.h(j3, canvas, this.a, m6Var);
     }

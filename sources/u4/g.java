@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Executor;
-import n7.a1;
+import n7.z0;
 import w7.ga;
 import w7.ha;
 import w7.oa;
@@ -19,7 +19,7 @@ import w9.m;
 import w9.o;
 import w9.r;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class g implements Callable {
     public final /* synthetic */ int a;
@@ -58,7 +58,7 @@ public final class g implements Callable {
                     }
                     rVar.h.trySetResult(null);
                     Executor executor = (Executor) mVar.e.b;
-                    return ((Task) aVar.b).onSuccessTask(executor, new a1(this, executor, z10, 23));
+                    return ((Task) aVar.b).onSuccessTask(executor, new z0(this, executor, z10, 23));
                 }
                 if (Log.isLoggable("FirebaseCrashlytics", 2)) {
                     Log.v("FirebaseCrashlytics", "Deleting cached crash reports...", null);

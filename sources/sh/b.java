@@ -22,18 +22,18 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.WebFile;
-import org.telegram.messenger.z0;
+import org.telegram.messenger.f0;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Cells.t1;
+import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.m9;
 import org.telegram.ui.Components.o6;
 import org.telegram.ui.Components.rr;
 import yf.p;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class b extends Drawable implements DownloadController.FileDownloadProgressListener {
     public final RadialProgress2 E;
@@ -47,7 +47,7 @@ public final class b extends Drawable implements DownloadController.FileDownload
     public final o6 a;
     public final m9 b;
     public final ImageReceiver c;
-    public final t1 d;
+    public final u1 d;
     public final int e;
     public boolean f;
     public boolean h;
@@ -59,25 +59,25 @@ public final class b extends Drawable implements DownloadController.FileDownload
     public final Paint x;
     public final le.c y;
 
-    public b(int i10, t1 t1Var) {
+    public b(int i10, u1 u1Var) {
         Paint paint = new Paint(1);
         this.w = paint;
         this.x = new Paint(1);
         this.G = new a5.a((char) 0, 14);
         this.e = i10;
-        this.d = t1Var;
-        this.y = new le.c(t1Var, rr.h, 380L);
+        this.d = u1Var;
+        this.y = new le.c(u1Var, rr.h, 380L);
         o6 o6Var = new o6(false, false, false, false);
         this.a = o6Var;
         o6Var.b = 21;
         o6Var.t(AndroidUtilities.dp(11.0f));
-        o6Var.setCallback(t1Var);
-        this.b = new m9(i10, t1Var, AndroidUtilities.dp(18.0f), AndroidUtilities.dp(8.33f), AndroidUtilities.dpf2(1.0f));
-        ImageReceiver imageReceiver = new ImageReceiver(t1Var);
+        o6Var.setCallback(u1Var);
+        this.b = new m9(i10, u1Var, AndroidUtilities.dp(18.0f), AndroidUtilities.dp(8.33f), AndroidUtilities.dpf2(1.0f));
+        ImageReceiver imageReceiver = new ImageReceiver(u1Var);
         this.c = imageReceiver;
         imageReceiver.setRoundRadius(AndroidUtilities.dp(5.0f));
         paint.setColor(TLObject.FLAG_30);
-        RadialProgress2 radialProgress2 = new RadialProgress2(t1Var, null);
+        RadialProgress2 radialProgress2 = new RadialProgress2(u1Var, null);
         this.E = radialProgress2;
         radialProgress2.setCircleRadius(AndroidUtilities.dp(18.0f));
         radialProgress2.d = -1;
@@ -125,7 +125,7 @@ public final class b extends Drawable implements DownloadController.FileDownload
         if (this.h) {
             int dp3 = AndroidUtilities.dp(36.0f);
             Rect rect = AndroidUtilities.rectTmp2;
-            rect.set(z0.B(9.0f, bounds.right, dp3), z0.B(4.0f, bounds.bottom, dp3), bounds.right - AndroidUtilities.dp(9.0f), bounds.bottom - AndroidUtilities.dp(4.0f));
+            rect.set(f0.B(9.0f, bounds.right, dp3), f0.B(4.0f, bounds.bottom, dp3), bounds.right - AndroidUtilities.dp(9.0f), bounds.bottom - AndroidUtilities.dp(4.0f));
             RectF rectF = AndroidUtilities.rectTmp;
             rectF.set(rect);
             this.E.a.set(rectF.left, rectF.top, rectF.right, rectF.bottom);

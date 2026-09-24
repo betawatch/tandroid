@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class x implements Runnable {
     public final /* synthetic */ int a;
@@ -75,16 +75,16 @@ public final /* synthetic */ class x implements Runnable {
                         Iterator it = hashSet2.iterator();
                         while (it.hasNext()) {
                             String num = Integer.toString(((f1) it.next()).a);
-                            String i10 = org.telegram.ui.Cells.q3.i("feature_usage_timestamp_reported_feature_", num);
-                            if (!sharedPreferences.contains(i10)) {
-                                i10 = org.telegram.ui.Cells.q3.i("feature_usage_timestamp_detected_feature_", num);
+                            String g10 = v7.j.g("feature_usage_timestamp_reported_feature_", num);
+                            if (!sharedPreferences.contains(g10)) {
+                                g10 = v7.j.g("feature_usage_timestamp_detected_feature_", num);
                             }
-                            String i11 = org.telegram.ui.Cells.q3.i("feature_usage_timestamp_reported_feature_", num);
-                            if (!TextUtils.equals(i10, i11)) {
-                                long j11 = sharedPreferences.getLong(i10, 0L);
-                                edit.remove(i10);
+                            String g11 = v7.j.g("feature_usage_timestamp_reported_feature_", num);
+                            if (!TextUtils.equals(g10, g11)) {
+                                long j11 = sharedPreferences.getLong(g10, 0L);
+                                edit.remove(g10);
                                 if (j11 != 0) {
-                                    edit.putLong(i11, j11);
+                                    edit.putLong(g11, j11);
                                 }
                             }
                         }

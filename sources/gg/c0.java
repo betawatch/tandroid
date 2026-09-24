@@ -9,14 +9,14 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Cells.i2;
+import org.telegram.ui.Cells.j2;
 import org.telegram.ui.Cells.n4;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.wk0;
+import org.telegram.ui.Components.gl0;
+import org.telegram.ui.Components.vl0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public class c0 extends ll0 {
+public class c0 extends vl0 {
     public final Context c;
     public final int d;
     public final boolean e;
@@ -31,7 +31,7 @@ public class c0 extends ll0 {
         this.h = d6Var;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.vl0
     public final boolean D(s4.c1 c1Var) {
         return true;
     }
@@ -80,9 +80,9 @@ public class c0 extends ll0 {
         n4 n4Var = new n4(this.c, this.h, z10);
         if (this.f && !n4Var.x) {
             n4Var.x = true;
-            NotificationCenter.getInstance(n4Var.h).listen(n4Var, NotificationCenter.userIsPremiumBlockedUpadted, new i2(n4Var, 1));
+            NotificationCenter.getInstance(n4Var.h).listen(n4Var, NotificationCenter.userIsPremiumBlockedUpadted, new j2(n4Var, 1));
         }
         n4Var.setLayoutParams(new s4.p0(AndroidUtilities.dp(80.0f), AndroidUtilities.dp(86.0f)));
-        return new wk0(n4Var);
+        return new gl0(n4Var);
     }
 }

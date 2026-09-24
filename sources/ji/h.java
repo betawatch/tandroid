@@ -2,10 +2,10 @@ package ji;
 
 import android.animation.ValueAnimator;
 import android.view.View;
-import org.telegram.ui.Cells.db;
+import org.telegram.ui.Cells.bb;
 import org.telegram.ui.Cells.h0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class h implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -35,9 +35,9 @@ public final class h implements ValueAnimator.AnimatorUpdateListener {
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 n nVar2 = this.c;
                 float measuredHeight3 = ((nVar2.G.getMeasuredHeight() - nVar2.F.s9) - r2.Aa) / 2.0f;
-                db dbVar = (db) this.d;
-                float measuredHeight4 = (measuredHeight3 - (dbVar.getMeasuredHeight() / 2.0f)) + nVar2.F.s9;
-                dbVar.setTranslationY(((((float) dbVar.getTop()) > measuredHeight4 ? measuredHeight4 - dbVar.getTop() : 0.0f) * floatValue2) + ((1.0f - floatValue2) * this.b));
+                bb bbVar = (bb) this.d;
+                float measuredHeight4 = (measuredHeight3 - (bbVar.getMeasuredHeight() / 2.0f)) + nVar2.F.s9;
+                bbVar.setTranslationY(((((float) bbVar.getTop()) > measuredHeight4 ? measuredHeight4 - bbVar.getTop() : 0.0f) * floatValue2) + ((1.0f - floatValue2) * this.b));
                 break;
         }
     }

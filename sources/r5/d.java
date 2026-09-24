@@ -34,36 +34,37 @@ import org.telegram.messenger.t2;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.a2;
-import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.ActionBar.m2;
+import org.telegram.ui.ActionBar.z1;
 import org.telegram.ui.Cells.w0;
-import org.telegram.ui.Components.bl0;
 import org.telegram.ui.Components.d5;
-import org.telegram.ui.Components.e80;
-import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.ll0;
+import org.telegram.ui.Components.o80;
+import org.telegram.ui.Components.v51;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.po0;
+import org.telegram.ui.no0;
 import r0.l1;
 import r0.n;
 import rg.k;
-import rg.w1;
-import tg.d0;
-import tg.u0;
+import rg.q1;
+import tg.c0;
+import tg.t0;
+import tg.z0;
 import x2.i;
 import x2.m;
 import xh.j0;
 import xh.r1;
-import yh.a4;
 import yh.e0;
-import yh.m3;
+import yh.l3;
 import yh.t5;
 import yh.t7;
 import yh.w7;
+import yh.z3;
 import z3.g;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class d implements t5.b, t0.e, pa.a, a2, bl0, uh.a, Continuation, m, yf.m, n, BillingController.ProductDetailsResponseListenerLegacy, d5, le.e, Utilities.Callback5, po0, h {
+public final /* synthetic */ class d implements t5.b, t0.e, pa.a, z1, ll0, uh.a, Continuation, m, yf.m, n, BillingController.ProductDetailsResponseListenerLegacy, d5, le.e, Utilities.Callback5, no0, h {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -74,7 +75,7 @@ public final /* synthetic */ class d implements t5.b, t0.e, pa.a, a2, bl0, uh.a,
 
     @Override // le.e
     public void D(int i10, float f7, float f10, f fVar) {
-        View view = ((a4) this.b).b;
+        View view = ((z3) this.b).b;
         if (view instanceof w0) {
             ((w0) view).K();
         } else {
@@ -101,7 +102,7 @@ public final /* synthetic */ class d implements t5.b, t0.e, pa.a, a2, bl0, uh.a,
         return l1.b;
     }
 
-    @Override // org.telegram.ui.po0
+    @Override // org.telegram.ui.no0
     public void a(int i10) {
         switch (this.a) {
             case 24:
@@ -129,14 +130,14 @@ public final /* synthetic */ class d implements t5.b, t0.e, pa.a, a2, bl0, uh.a,
                 }
                 break;
             default:
-                e80 e80Var = (e80) this.b;
+                o80 o80Var = (o80) this.b;
                 if (i10 != 1) {
                     if (i10 != 3) {
-                        e80Var.run(Boolean.FALSE, null);
+                        o80Var.run(Boolean.FALSE, null);
                         break;
                     }
                 } else {
-                    e80Var.run(Boolean.TRUE, null);
+                    o80Var.run(Boolean.TRUE, null);
                     break;
                 }
                 break;
@@ -173,12 +174,12 @@ public final /* synthetic */ class d implements t5.b, t0.e, pa.a, a2, bl0, uh.a,
         return u10.i();
     }
 
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.ll0
     public void c(float f7, float f10, int i10, View view) {
-        tg.a1.Q((tg.a1) this.b, view);
+        z0.Q((z0) this.b, view);
     }
 
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.ll0
     public /* synthetic */ boolean d1(View view) {
         return false;
     }
@@ -190,22 +191,22 @@ public final /* synthetic */ class d implements t5.b, t0.e, pa.a, a2, bl0, uh.a,
                 ((xh.d) this.b).a(j3, true);
                 break;
             default:
-                ((m3) this.b).h();
+                ((l3) this.b).h();
                 break;
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void f(b2 b2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.z1
+    public void f(a2 a2Var, int i10) {
         switch (this.a) {
             case 5:
-                ((u0) this.b).run();
+                ((t0) this.b).run();
                 break;
             case 6:
                 TLRPC.TL_payments_giveawayInfoResults tL_payments_giveawayInfoResults = (TLRPC.TL_payments_giveawayInfoResults) this.b;
-                n2 R = LaunchActivity.R();
+                m2 R = LaunchActivity.R();
                 if (R != null) {
-                    d0.T(R, tL_payments_giveawayInfoResults.gift_code_slug, null);
+                    c0.T(R, tL_payments_giveawayInfoResults.gift_code_slug, null);
                     break;
                 }
                 break;
@@ -213,13 +214,13 @@ public final /* synthetic */ class d implements t5.b, t0.e, pa.a, a2, bl0, uh.a,
                 ((t2) this.b).run();
                 break;
             case 8:
-                ((u0) this.b).run();
+                ((t0) this.b).run();
                 break;
             case 15:
                 ((m8) this.b).run();
                 break;
             default:
-                ((Utilities.Callback) this.b).run(b2Var.g(i10, true, true));
+                ((Utilities.Callback) this.b).run(a2Var.g(i10, true, true));
                 break;
         }
     }
@@ -233,8 +234,57 @@ public final /* synthetic */ class d implements t5.b, t0.e, pa.a, a2, bl0, uh.a,
         aVar.b.set((t9.a) bVar.get());
     }
 
+    @Override // t5.b
+    public Object i() {
+        SQLiteDatabase a2;
+        switch (this.a) {
+            case 0:
+                s5.h hVar = (s5.h) ((s5.d) this.b);
+                long q6 = hVar.b.q() - hVar.d.d;
+                a2 = hVar.a();
+                a2.beginTransaction();
+                try {
+                    String[] strArr = {String.valueOf(q6)};
+                    Cursor rawQuery = a2.rawQuery("SELECT COUNT(*), transport_name FROM events WHERE timestamp_ms < ? GROUP BY transport_name", strArr);
+                    while (rawQuery.moveToNext()) {
+                        try {
+                            hVar.e(rawQuery.getInt(0), o5.c.c, rawQuery.getString(1));
+                        } catch (Throwable th2) {
+                            rawQuery.close();
+                            throw th2;
+                        }
+                    }
+                    rawQuery.close();
+                    int delete = a2.delete("events", "timestamp_ms < ?", strArr);
+                    a2.setTransactionSuccessful();
+                    a2.endTransaction();
+                    return Integer.valueOf(delete);
+                } finally {
+                }
+            case 1:
+                s5.h hVar2 = (s5.h) ((s5.c) ((da.b) this.b).i);
+                a2 = hVar2.a();
+                a2.beginTransaction();
+                try {
+                    a2.compileStatement("DELETE FROM log_event_dropped").execute();
+                    a2.compileStatement("UPDATE global_log_event_state SET last_metrics_upload_ms=" + hVar2.b.q()).execute();
+                    a2.setTransactionSuccessful();
+                    a2.endTransaction();
+                    return null;
+                } finally {
+                }
+            default:
+                t tVar = (t) this.b;
+                Iterator it = ((Iterable) ((s5.h) ((s5.d) tVar.c)).c(new s0.b(16))).iterator();
+                while (it.hasNext()) {
+                    ((la.h) tVar.d).V((l5.i) it.next(), 1, false);
+                }
+                return null;
+        }
+    }
+
     @Override // t0.e
-    public boolean h(t0.i iVar, int i10, Bundle bundle) {
+    public boolean k(t0.i iVar, int i10, Bundle bundle) {
         r0.d dVar;
         s sVar = (s) this.b;
         int i11 = Build.VERSION.SDK_INT;
@@ -264,53 +314,15 @@ public final /* synthetic */ class d implements t5.b, t0.e, pa.a, a2, bl0, uh.a,
         return r0.i0.i(sVar, dVar.build()) == null;
     }
 
-    @Override // t5.b
-    public Object i() {
-        SQLiteDatabase a2;
-        switch (this.a) {
-            case 0:
-                s5.g gVar = (s5.g) ((s5.d) this.b);
-                long q6 = gVar.b.q() - gVar.d.d;
-                a2 = gVar.a();
-                a2.beginTransaction();
-                try {
-                    String[] strArr = {String.valueOf(q6)};
-                    Cursor rawQuery = a2.rawQuery("SELECT COUNT(*), transport_name FROM events WHERE timestamp_ms < ? GROUP BY transport_name", strArr);
-                    while (rawQuery.moveToNext()) {
-                        try {
-                            gVar.e(rawQuery.getInt(0), o5.c.c, rawQuery.getString(1));
-                        } catch (Throwable th2) {
-                            rawQuery.close();
-                            throw th2;
-                        }
-                    }
-                    rawQuery.close();
-                    int delete = a2.delete("events", "timestamp_ms < ?", strArr);
-                    a2.setTransactionSuccessful();
-                    a2.endTransaction();
-                    return Integer.valueOf(delete);
-                } finally {
-                }
-            case 1:
-                s5.g gVar2 = (s5.g) ((s5.c) ((da.b) this.b).i);
-                a2 = gVar2.a();
-                a2.beginTransaction();
-                try {
-                    a2.compileStatement("DELETE FROM log_event_dropped").execute();
-                    a2.compileStatement("UPDATE global_log_event_state SET last_metrics_upload_ms=" + gVar2.b.q()).execute();
-                    a2.setTransactionSuccessful();
-                    a2.endTransaction();
-                    return null;
-                } finally {
-                }
-            default:
-                t tVar = (t) this.b;
-                Iterator it = ((Iterable) ((s5.g) ((s5.d) tVar.c)).c(new s0.b(10))).iterator();
-                while (it.hasNext()) {
-                    ((lf.i) tVar.d).V((l5.i) it.next(), 1, false);
-                }
-                return null;
-        }
+    @Override // uh.a
+    public void o(Canvas canvas, int i10) {
+        uh.h hVar = (uh.h) this.b;
+        hVar.getClass();
+        canvas.save();
+        RectF rectF = hVar.r;
+        canvas.translate(-rectF.left, (-rectF.top) + AndroidUtilities.dp(30.0f));
+        hVar.e(canvas, true, i10);
+        canvas.restore();
     }
 
     @Override // org.telegram.messenger.BillingController.ProductDetailsResponseListenerLegacy
@@ -347,18 +359,7 @@ public final /* synthetic */ class d implements t5.b, t0.e, pa.a, a2, bl0, uh.a,
             i10++;
             ((k) obj2).g = j3;
         }
-        AndroidUtilities.runOnUIThread(new w1(r1Var, 14));
-    }
-
-    @Override // uh.a
-    public void p(Canvas canvas, int i10) {
-        uh.h hVar = (uh.h) this.b;
-        hVar.getClass();
-        canvas.save();
-        RectF rectF = hVar.r;
-        canvas.translate(-rectF.left, (-rectF.top) + AndroidUtilities.dp(30.0f));
-        hVar.e(canvas, true, i10);
-        canvas.restore();
+        AndroidUtilities.runOnUIThread(new q1(r1Var, 15));
     }
 
     @Override // org.telegram.messenger.Utilities.Callback5
@@ -369,13 +370,13 @@ public final /* synthetic */ class d implements t5.b, t0.e, pa.a, a2, bl0, uh.a,
                 break;
             default:
                 t7 t7Var = (t7) this.b;
-                h51 h51Var = (h51) obj;
+                v51 v51Var = (v51) obj;
                 ((Integer) obj3).intValue();
                 ((Float) obj4).floatValue();
                 ((Float) obj5).floatValue();
                 t7Var.getClass();
-                if (h51Var.G instanceof TL_stars.StarsTransaction) {
-                    w7.h1(t7Var.getContext(), false, 0L, t7Var.c, (TL_stars.StarsTransaction) h51Var.G, t7Var.b);
+                if (v51Var.G instanceof TL_stars.StarsTransaction) {
+                    w7.h1(t7Var.getContext(), false, 0L, t7Var.c, (TL_stars.StarsTransaction) v51Var.G, t7Var.b);
                     break;
                 }
                 break;
@@ -392,7 +393,7 @@ public final /* synthetic */ class d implements t5.b, t0.e, pa.a, a2, bl0, uh.a,
     public /* synthetic */ void C(float f7, int i10) {
     }
 
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.ll0
     public /* synthetic */ void r0(View view, float f7, float f10) {
     }
 }

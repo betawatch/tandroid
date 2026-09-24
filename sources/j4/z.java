@@ -6,7 +6,7 @@ import e9.i0;
 import java.util.List;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class z implements c3.o {
     public boolean e;
@@ -27,7 +27,7 @@ public final class z implements c3.o {
         c3.l lVar = (c3.l) pVar;
         lVar.h(bArr, 0, 14, false);
         if (442 == (((bArr[0] & 255) << 24) | ((bArr[1] & 255) << 16) | ((bArr[2] & 255) << 8) | (bArr[3] & 255)) && (bArr[4] & 196) == 68 && (bArr[6] & 4) == 4 && (bArr[8] & 4) == 4 && (bArr[9] & 1) == 1 && (bArr[12] & 3) == 3) {
-            lVar.s(bArr[13] & 7, false);
+            lVar.t(bArr[13] & 7, false);
             lVar.h(bArr, 0, 3, false);
             if (1 == (((bArr[0] & 255) << 16) | ((bArr[1] & 255) << 8) | (bArr[2] & 255))) {
                 return true;

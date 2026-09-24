@@ -3,51 +3,51 @@ package org.telegram.ui;
 import android.content.Context;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class mj extends org.telegram.ui.Components.fo {
-    public final /* synthetic */ xn v0;
+    public final /* synthetic */ wn v0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mj(xn xnVar, Context context, xn xnVar2, boolean z10, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, xnVar2, z10, d6Var);
-        this.v0 = xnVar;
+    public mj(wn wnVar, Context context, wn wnVar2, boolean z10, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, wnVar2, z10, d6Var);
+        this.v0 = wnVar;
     }
 
     @Override // org.telegram.ui.Components.fo
     public final boolean a() {
         boolean z10;
-        xn xnVar = this.v0;
-        if (xnVar.Oa || xnVar.isInPreviewMode()) {
+        wn wnVar = this.v0;
+        if (wnVar.Oa || wnVar.isInPreviewMode()) {
             return false;
         }
-        z10 = ((org.telegram.ui.ActionBar.n2) xnVar).inBubbleMode;
-        if (z10 || xnVar.j0 == null || xnVar.s3) {
+        z10 = ((org.telegram.ui.ActionBar.m2) wnVar).inBubbleMode;
+        if (z10 || wnVar.j0 == null || wnVar.s3) {
             return false;
         }
-        return !xnVar.F9() || xnVar.h4;
+        return !wnVar.F9() || wnVar.h4;
     }
 
     @Override // org.telegram.ui.Components.fo
     public final boolean d() {
-        xn xnVar = this.v0;
-        TLRPC.User user = xnVar.f;
+        wn wnVar = this.v0;
+        TLRPC.User user = wnVar.f;
         if (user != null && user.linked_community_id != 0) {
-            xnVar.showDialog(new fi.k0(xnVar, xnVar.f.linked_community_id, null, null));
+            wnVar.showDialog(new fi.k0(wnVar, wnVar.f.linked_community_id, null, null));
             return true;
         }
-        TLRPC.Chat chat = xnVar.e;
+        TLRPC.Chat chat = wnVar.e;
         if (chat == null || chat.linked_community_id == 0) {
             return false;
         }
-        xnVar.showDialog(new fi.k0(xnVar, xnVar.e.linked_community_id, null, null));
+        wnVar.showDialog(new fi.k0(wnVar, wnVar.e.linked_community_id, null, null));
         return true;
     }
 
     @Override // org.telegram.ui.Components.fo
     public final void f() {
-        xn xnVar = this.v0;
-        xnVar.la(xnVar.E9() ? "" : null);
+        wn wnVar = this.v0;
+        wnVar.la(wnVar.E9() ? "" : null);
     }
 
     @Override // org.telegram.ui.Components.fo

@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class FileLog {
     private static volatile FileLog Instance = null;
@@ -50,7 +50,7 @@ public class FileLog {
     private OutputStreamWriter tlStreamWriter = null;
     private File tlRequestsFile = null;
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class ByteArrayHexAdapter extends db.u {
         @Override // db.u
         public byte[] read(lb.a aVar) {
@@ -78,14 +78,14 @@ public class FileLog {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class IgnoreSentException extends Exception {
         public IgnoreSentException(String str) {
             super(str);
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class TLObjectDeserializer implements db.o {
         private TLObjectDeserializer() {
         }
@@ -115,7 +115,7 @@ public class FileLog {
                                     }
                                 }
                             }
-                            lVar.o(field.getName(), ((a6.i) nVar).R(obj));
+                            lVar.o(field.getName(), ((a6.i) nVar).S(obj));
                         } catch (IllegalAccessException e) {
                             e.printStackTrace();
                         }

@@ -1,49 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.net.Uri;
-import java.util.Map;
-import org.telegram.messenger.secretmedia.ExtendedDefaultDataSource;
+import android.content.Context;
+import android.view.MotionEvent;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class a71 implements g2.h {
-    public final g2.h a;
-    public final long b;
+public final class a71 extends c20 {
+    public final ci.h2 J;
+    public final /* synthetic */ b71 K;
 
-    public a71(ExtendedDefaultDataSource extendedDefaultDataSource, long j3) {
-        this.a = extendedDefaultDataSource;
-        this.b = j3;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a71(b71 b71Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, d6Var);
+        this.K = b71Var;
+        ci.h2 h2Var = this.r;
+        this.J = h2Var;
+        h2Var.setImeOptions(268435459);
+        h2Var.setHint(LocaleController.getString(R.string.VoipGroupSearchMembers));
+        h2Var.addTextChangedListener(new ci.i2(this, 14));
+        h2Var.setOnEditorActionListener(new e1(this, 10));
     }
 
-    @Override // g2.h
-    public final void addTransferListener(g2.c0 c0Var) {
-        this.a.addTransferListener(c0Var);
+    @Override // org.telegram.ui.Components.c20
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
     }
 
-    @Override // g2.h
-    public final void close() {
-        this.a.close();
-    }
-
-    @Override // g2.h
-    public final Map getResponseHeaders() {
-        return this.a.getResponseHeaders();
-    }
-
-    @Override // g2.h
-    public final Uri getUri() {
-        return this.a.getUri();
-    }
-
-    @Override // g2.h
-    public final long open(g2.m mVar) {
-        g2.l a2 = mVar.a();
-        a2.b = mVar.e + this.b;
-        return this.a.open(a2.d());
-    }
-
-    @Override // b2.k
-    public final int read(byte[] bArr, int i10, int i11) {
-        return this.a.read(bArr, i10, i11);
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        this.K.E(motionEvent, this.J);
+        return super.onInterceptTouchEvent(motionEvent);
     }
 }

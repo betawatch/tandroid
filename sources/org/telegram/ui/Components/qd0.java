@@ -1,96 +1,307 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.accessibility.AccessibilityNodeInfo;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.drawable.BitmapDrawable;
+import android.os.Build;
+import android.text.SpannableString;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
+import java.util.ArrayList;
+import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.messenger.Emoji;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class qd0 extends FrameLayout {
-    public final ImageView a;
-    public final TextView b;
-    public final TextView c;
+    public Bitmap a;
+    public HashMap b;
+    public boolean c;
+    public BitmapDrawable d;
+    public boolean e;
 
     public qd0(Context context) {
         super(context);
-        ImageView imageView = new ImageView(context);
-        this.a = imageView;
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setImageResource(R.drawable.fingerprint);
-        addView(imageView, w7.x5.e(-1, -1, 119));
-        TextView textView = new TextView(context);
-        this.b = textView;
-        textView.setTypeface(AndroidUtilities.bold());
-        textView.setTextColor(-1);
-        textView.setTextSize(1, 26.0f);
-        textView.setGravity(17);
-        addView(textView, w7.x5.d(-1, -2.0f, 17, 0.0f, -5.33f, 0.0f, 0.0f));
-        TextView textView2 = new TextView(context);
-        this.c = textView2;
-        textView2.setTypeface(AndroidUtilities.bold());
-        textView2.setTextSize(1, 10.0f);
-        textView2.setTextColor(ConnectionsManager.DEFAULT_DATACENTER_ID);
-        textView2.setGravity(17);
-        addView(textView2, w7.x5.d(-1, -2.0f, 17, 0.0f, 14.0f, 0.0f, 0.0f));
+        this.e = true;
+    }
+
+    public final void a() {
+        this.a = null;
+        this.d = null;
+        setBackground(null);
+        HashMap hashMap = this.b;
+        if (hashMap != null) {
+            hashMap.clear();
+        }
+        removeAllViews();
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r6v2, types: [android.view.View, android.widget.EditText, android.widget.TextView, org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.eu, qg.b] */
+    public final void b(ArrayList arrayList, boolean z10, boolean z11, boolean z12) {
+        w9 w9Var;
+        int i10;
+        int i11;
+        setClipChildren(z12);
+        a();
+        this.b = new HashMap();
+        if (arrayList == null || arrayList.isEmpty()) {
+            return;
+        }
+        int size = arrayList.size();
+        for (int i12 = 0; i12 < size; i12++) {
+            VideoEditedInfo.MediaEntity mediaEntity = (VideoEditedInfo.MediaEntity) arrayList.get(i12);
+            byte b10 = mediaEntity.type;
+            if (b10 == 0) {
+                w9 w9Var2 = new w9(getContext());
+                w9Var2.setLayerNum(12);
+                w9Var2.setAspectFit(true);
+                ImageReceiver imageReceiver = w9Var2.getImageReceiver();
+                if (z10) {
+                    imageReceiver.setAllowDecodeSingleFrame(true);
+                    imageReceiver.setAllowStartLottieAnimation(false);
+                    if (z11) {
+                        imageReceiver.setDelegate(new fa0(8));
+                    }
+                }
+                imageReceiver.setImage(ImageLocation.getForDocument(mediaEntity.document), null, null, null, ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(mediaEntity.document.thumbs, 90), mediaEntity.document), null, null, 0L, "webp", mediaEntity.parentObject, 1);
+                if ((2 & mediaEntity.subType) != 0) {
+                    w9Var2.setScaleX(-1.0f);
+                }
+                mediaEntity.view = w9Var2;
+                w9Var = w9Var2;
+            } else if (b10 == 1) {
+                ?? pd0Var = new pd0(getContext());
+                pd0Var.setBackgroundColor(0);
+                pd0Var.setPadding(AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f));
+                pd0Var.setTextSize(0, mediaEntity.fontSize);
+                pd0Var.setTypeface(mediaEntity.textTypeface.d());
+                SpannableString spannableString = new SpannableString(Emoji.replaceEmoji(mediaEntity.text, pd0Var.getPaint().getFontMetricsInt(), false));
+                ArrayList<VideoEditedInfo.EmojiEntity> arrayList2 = mediaEntity.entities;
+                int size2 = arrayList2.size();
+                int i13 = 0;
+                while (i13 < size2) {
+                    VideoEditedInfo.EmojiEntity emojiEntity = arrayList2.get(i13);
+                    i13++;
+                    VideoEditedInfo.EmojiEntity emojiEntity2 = emojiEntity;
+                    z5 z5Var = new z5(emojiEntity2.document_id, pd0Var.getPaint().getFontMetricsInt());
+                    int i14 = emojiEntity2.offset;
+                    spannableString.setSpan(z5Var, i14, emojiEntity2.length + i14, 33);
+                }
+                Emoji.EmojiSpan[] emojiSpanArr = (Emoji.EmojiSpan[]) spannableString.getSpans(0, spannableString.length(), Emoji.EmojiSpan.class);
+                if (emojiSpanArr != null) {
+                    for (Emoji.EmojiSpan emojiSpan : emojiSpanArr) {
+                        emojiSpan.scale = 0.85f;
+                    }
+                }
+                pd0Var.setText(spannableString);
+                int i15 = 17;
+                pd0Var.setGravity(17);
+                int i16 = mediaEntity.textAlign;
+                if (i16 != 1) {
+                    i10 = 2;
+                    i15 = i16 != 2 ? 19 : 21;
+                } else {
+                    i10 = 2;
+                }
+                pd0Var.setGravity(i15);
+                int i17 = Build.VERSION.SDK_INT;
+                int i18 = mediaEntity.textAlign;
+                if (i18 != 1) {
+                    int i19 = 3;
+                    if (i18 == i10 ? LocaleController.isRTL : !LocaleController.isRTL) {
+                        i19 = 2;
+                    }
+                    i11 = i19;
+                } else {
+                    i11 = 4;
+                }
+                pd0Var.setTextAlignment(i11);
+                pd0Var.setHorizontallyScrolling(false);
+                pd0Var.setImeOptions(TLObject.FLAG_28);
+                pd0Var.setFocusableInTouchMode(true);
+                pd0Var.setEnabled(false);
+                pd0Var.setInputType(pd0Var.getInputType() | 16384);
+                if (i17 >= 23) {
+                    pd0Var.setBreakStrategy(0);
+                }
+                pd0Var.setShadowLayer(0.0f, 0.0f, 0.0f, 0);
+                int i20 = mediaEntity.color;
+                byte b11 = mediaEntity.subType;
+                if (b11 == 0) {
+                    pd0Var.setFrameColor(i20);
+                    i20 = AndroidUtilities.computePerceivedBrightness(mediaEntity.color) >= 0.721f ? -16777216 : -1;
+                } else if (b11 == 1) {
+                    pd0Var.setFrameColor(AndroidUtilities.computePerceivedBrightness(i20) >= 0.25f ? -1728053248 : -1711276033);
+                } else if (b11 == 2) {
+                    pd0Var.setFrameColor(AndroidUtilities.computePerceivedBrightness(i20) >= 0.25f ? -16777216 : -1);
+                } else {
+                    pd0Var.setFrameColor(0);
+                }
+                pd0Var.setTextColor(i20);
+                pd0Var.setCursorColor(i20);
+                pd0Var.setHandlesColor(i20);
+                pd0Var.setHighlightColor(org.telegram.ui.ActionBar.h6.l1(0.4f, i20));
+                mediaEntity.view = pd0Var;
+                w9Var = pd0Var;
+            } else {
+                w9Var = null;
+            }
+            if (w9Var != null) {
+                addView(w9Var);
+                w9Var.setRotation((float) (((-mediaEntity.rotation) / 3.141592653589793d) * 180.0d));
+                this.b.put(w9Var, mediaEntity);
+            }
+        }
+    }
+
+    public final void c() {
+        int childCount = getChildCount();
+        for (int i10 = 0; i10 < childCount; i10++) {
+            getChildAt(i10).setVisibility(0);
+        }
+        setBackground(this.d);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j3) {
+        if (this.e) {
+            return super.drawChild(canvas, view, j3);
+        }
+        return false;
+    }
+
+    public Bitmap getBitmap() {
+        return this.a;
+    }
+
+    public Bitmap getThumb() {
+        float measuredWidth = getMeasuredWidth();
+        float measuredHeight = getMeasuredHeight();
+        float max = Math.max(measuredWidth / AndroidUtilities.dp(120.0f), measuredHeight / AndroidUtilities.dp(120.0f));
+        Bitmap createBitmap = Bitmap.createBitmap((int) (measuredWidth / max), (int) (measuredHeight / max), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(createBitmap);
+        float f7 = 1.0f / max;
+        canvas.scale(f7, f7);
+        draw(canvas);
+        return createBitmap;
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        int i14;
+        int i15;
+        int i16;
+        int measuredHeight;
+        if (this.b != null) {
+            int measuredWidth = getMeasuredWidth();
+            int measuredHeight2 = getMeasuredHeight();
+            int childCount = getChildCount();
+            for (int i17 = 0; i17 < childCount; i17++) {
+                View childAt = getChildAt(i17);
+                VideoEditedInfo.MediaEntity mediaEntity = (VideoEditedInfo.MediaEntity) this.b.get(childAt);
+                if (mediaEntity != null) {
+                    int measuredWidth2 = childAt.getMeasuredWidth();
+                    int measuredHeight3 = childAt.getMeasuredHeight();
+                    if (childAt instanceof qg.b) {
+                        if (mediaEntity.customTextView) {
+                            i14 = ((int) (((mediaEntity.width / 2.0f) + mediaEntity.x) * measuredWidth)) - (childAt.getMeasuredWidth() / 2);
+                            i16 = (int) (((mediaEntity.height / 2.0f) + mediaEntity.y) * measuredHeight2);
+                            measuredHeight = childAt.getMeasuredHeight() / 2;
+                        } else {
+                            i14 = ((int) (measuredWidth * mediaEntity.textViewX)) - (childAt.getMeasuredWidth() / 2);
+                            i16 = (int) (measuredHeight2 * mediaEntity.textViewY);
+                            measuredHeight = childAt.getMeasuredHeight() / 2;
+                        }
+                        i15 = i16 - measuredHeight;
+                    } else {
+                        i14 = (int) (measuredWidth * mediaEntity.x);
+                        i15 = (int) (measuredHeight2 * mediaEntity.y);
+                    }
+                    childAt.layout(i14, i15, measuredWidth2 + i14, measuredHeight3 + i15);
+                }
+            }
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        this.c = true;
+        setMeasuredDimension(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i11));
+        if (this.b != null) {
+            int measuredWidth = getMeasuredWidth();
+            int measuredHeight = getMeasuredHeight();
+            int childCount = getChildCount();
+            for (int i12 = 0; i12 < childCount; i12++) {
+                View childAt = getChildAt(i12);
+                VideoEditedInfo.MediaEntity mediaEntity = (VideoEditedInfo.MediaEntity) this.b.get(childAt);
+                if (mediaEntity != null) {
+                    if (childAt instanceof qg.b) {
+                        childAt.measure(View.MeasureSpec.makeMeasureSpec(mediaEntity.viewWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
+                        float measuredWidth2 = mediaEntity.customTextView ? (mediaEntity.width * getMeasuredWidth()) / mediaEntity.viewWidth : mediaEntity.scale * ((mediaEntity.textViewWidth * measuredWidth) / mediaEntity.viewWidth);
+                        childAt.setScaleX(measuredWidth2);
+                        childAt.setScaleY(measuredWidth2);
+                    } else {
+                        childAt.measure(View.MeasureSpec.makeMeasureSpec((int) (measuredWidth * mediaEntity.width), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) (measuredHeight * mediaEntity.height), TLObject.FLAG_30));
+                    }
+                }
+            }
+        }
+        this.c = false;
     }
 
     @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setClassName("android.widget.Button");
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return false;
     }
 
-    public void setImage(int i10) {
-        ImageView imageView = this.a;
-        imageView.setVisibility(0);
-        this.b.setVisibility(8);
-        this.c.setVisibility(8);
-        imageView.setImageResource(i10);
-    }
-
-    public void setNum(int i10) {
-        this.a.setVisibility(8);
-        TextView textView = this.b;
-        textView.setVisibility(0);
-        TextView textView2 = this.c;
-        textView2.setVisibility(0);
-        String str = "";
-        textView.setText("" + i10);
-        if (i10 != 0) {
-            switch (i10) {
-                case 2:
-                    str = "ABC";
-                    break;
-                case 3:
-                    str = "DEF";
-                    break;
-                case 4:
-                    str = "GHI";
-                    break;
-                case 5:
-                    str = "JKL";
-                    break;
-                case 6:
-                    str = "MNO";
-                    break;
-                case 7:
-                    str = "PQRS";
-                    break;
-                case 8:
-                    str = "TUV";
-                    break;
-                case 9:
-                    str = "WXYZ";
-                    break;
-            }
-        } else {
-            str = "+";
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.c) {
+            return;
         }
-        textView2.setText(str);
+        super.requestLayout();
+    }
+
+    @Override // android.view.View
+    public void setAlpha(float f7) {
+        super.setAlpha(f7);
+        BitmapDrawable bitmapDrawable = this.d;
+        if (bitmapDrawable != null) {
+            bitmapDrawable.setAlpha((int) (255.0f * f7));
+        }
+        int childCount = getChildCount();
+        for (int i10 = 0; i10 < childCount; i10++) {
+            View childAt = getChildAt(i10);
+            if (childAt != null && childAt.getParent() == this) {
+                childAt.setAlpha(f7);
+            }
+        }
+    }
+
+    public void setBitmap(Bitmap bitmap) {
+        this.a = bitmap;
+        BitmapDrawable bitmapDrawable = new BitmapDrawable(bitmap);
+        this.d = bitmapDrawable;
+        setBackground(bitmapDrawable);
     }
 }

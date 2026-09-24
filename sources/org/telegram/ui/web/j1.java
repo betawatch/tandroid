@@ -1,40 +1,63 @@
 package org.telegram.ui.web;
 
-import java.io.File;
-import java.io.FileInputStream;
+import android.os.AsyncTask;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public final class j1 extends FileInputStream {
-    public final long a;
+public final class j1 extends AsyncTask {
+    public final HashMap a = new HashMap();
+    public final Utilities.Callback b;
+    public Exception c;
 
-    public j1(File file, long j3, long j10) {
-        super(file);
-        this.a = j10;
-        if (j3 > 0 && skip(j3) != j3) {
-            throw new RuntimeException("BoundedInputStream failed to skip");
+    public j1(Utilities.Callback callback) {
+        this.b = callback;
+    }
+
+    @Override // android.os.AsyncTask
+    public final Object doInBackground(Object[] objArr) {
+        try {
+            HttpURLConnection httpURLConnection = (HttpURLConnection) new URL(((String[]) objArr)[0]).openConnection();
+            for (Map.Entry entry : this.a.entrySet()) {
+                if (entry.getKey() != null && entry.getValue() != null) {
+                    httpURLConnection.setRequestProperty((String) entry.getKey(), (String) entry.getValue());
+                }
+            }
+            httpURLConnection.setRequestMethod("GET");
+            httpURLConnection.setDoInput(true);
+            int responseCode = httpURLConnection.getResponseCode();
+            BufferedReader bufferedReader = (responseCode < 200 || responseCode >= 300) ? new BufferedReader(new InputStreamReader(httpURLConnection.getErrorStream())) : new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream()));
+            StringBuilder sb2 = new StringBuilder();
+            while (true) {
+                String readLine = bufferedReader.readLine();
+                if (readLine == null) {
+                    bufferedReader.close();
+                    return sb2.toString();
+                }
+                sb2.append(readLine);
+            }
+        } catch (Exception e) {
+            this.c = e;
+            return null;
         }
     }
 
-    @Override // java.io.FileInputStream, java.io.InputStream
-    public final int read() {
-        if (getChannel().position() >= this.a) {
-            return -1;
+    @Override // android.os.AsyncTask
+    public final void onPostExecute(Object obj) {
+        String str = (String) obj;
+        Utilities.Callback callback = this.b;
+        if (callback != null) {
+            if (this.c == null) {
+                callback.run(str);
+            } else {
+                callback.run(null);
+            }
         }
-        return super.read();
-    }
-
-    @Override // java.io.FileInputStream, java.io.InputStream
-    public final int read(byte[] bArr, int i10, int i11) {
-        long position = getChannel().position();
-        long j3 = this.a;
-        if (position >= j3) {
-            return -1;
-        }
-        long position2 = j3 - getChannel().position();
-        if (i11 > position2) {
-            i11 = (int) position2;
-        }
-        return super.read(bArr, i10, i11);
     }
 }

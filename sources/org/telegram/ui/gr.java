@@ -1,47 +1,30 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gr implements q0.a {
-    public final /* synthetic */ int a;
+public final class gr implements u60 {
+    public final /* synthetic */ z60 a;
+    public final /* synthetic */ pr b;
 
-    public /* synthetic */ gr(int i10) {
-        this.a = i10;
+    public gr(pr prVar, z60 z60Var) {
+        this.b = prVar;
+        this.a = z60Var;
     }
 
-    @Override // q0.a
-    public final void accept(Object obj) {
-        switch (this.a) {
-            case 0:
-                break;
-            case 1:
-                View view = (View) obj;
-                boolean z10 = ChatAttachAlertPhotoLayout.q1;
-                if (view instanceof org.telegram.ui.Cells.t5) {
-                    org.telegram.ui.Cells.t5 t5Var = (org.telegram.ui.Cells.t5) view;
-                    t5Var.c(t5Var.getPhotoEntry() != null && t5Var.getPhotoEntry().hasSpoiler, Float.valueOf(250.0f));
-                    t5Var.setHighQuality(t5Var.getPhotoEntry() != null && t5Var.getPhotoEntry().isHighQuality());
-                    t5Var.f(t5Var.getPhotoEntry() != null ? t5Var.getPhotoEntry().starsAmount : 0L, ChatAttachAlertPhotoLayout.s1.size() > 1);
-                    break;
-                }
-                break;
-            case 2:
-                View view2 = (View) obj;
-                if (view2 instanceof org.telegram.ui.Components.hn0) {
-                    ((org.telegram.ui.Components.hn0) view2).a(false, true);
-                    break;
-                }
-                break;
-            default:
-                View view3 = (View) obj;
-                if (view3 instanceof org.telegram.ui.Components.hn0) {
-                    ((org.telegram.ui.Components.hn0) view3).a(false, true);
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.u60
+    public final void g(TLRPC.User user) {
+        this.b.t0(user.id, null, null, null, "", true, 0, false);
+    }
+
+    @Override // org.telegram.ui.u60
+    public final void i(int i10, ArrayList arrayList) {
+        if (this.a.getParentActivity() == null) {
+            return;
         }
+        pr prVar = this.b;
+        prVar.getMessagesController().addUsersToChat(prVar.r, prVar, arrayList, i10, new h3(this, 2), new fr(0), null);
     }
 }

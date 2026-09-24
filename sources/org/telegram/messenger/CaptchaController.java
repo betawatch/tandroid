@@ -10,12 +10,12 @@ import java.util.HashSet;
 import java.util.Iterator;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class CaptchaController {
     public static HashMap<Integer, Request> currentRequests;
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class Request {
         public String action;
         public int currentAccount;
@@ -82,7 +82,7 @@ public class CaptchaController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$request$2(String str, String str2, Request request, RecaptchaTasksClient recaptchaTasksClient) {
-        recaptchaTasksClient.executeTask(getAction(str)).addOnSuccessListener(new q0(str, str2, request, 1)).addOnFailureListener(new r0(request, 1));
+        recaptchaTasksClient.executeTask(getAction(str)).addOnSuccessListener(new r0(str, str2, request, 1)).addOnFailureListener(new s0(request, 1));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -105,7 +105,7 @@ public class CaptchaController {
         request2.requestTokens.add(Integer.valueOf(i11));
         Activity activity = AndroidUtilities.getActivity();
         if (activity != null) {
-            Recaptcha.getTasksClient(activity.getApplication(), str2).addOnSuccessListener(new q0(str, str2, request2, i12)).addOnFailureListener(new r0(request2, i12));
+            Recaptcha.getTasksClient(activity.getApplication(), str2).addOnSuccessListener(new r0(str, str2, request2, i12)).addOnFailureListener(new s0(request2, i12));
         } else {
             FileLog.e("CaptchaController: no activity found");
             request2.done("RECAPTCHA_FAILED_NO_ACTIVITY");

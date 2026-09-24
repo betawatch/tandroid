@@ -10,9 +10,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.o70;
+import org.telegram.ui.Components.y70;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a0 implements Runnable {
     public final /* synthetic */ int a;
@@ -67,13 +67,13 @@ public final /* synthetic */ class a0 implements Runnable {
                         imageView.setImageResource(R.drawable.menu_lightbulb);
                         imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
                         imageView.setScaleType(ImageView.ScaleType.CENTER);
-                        frameLayout.addView(imageView, w7.x5.d(24, 24.0f, 19, 12.0f, 12.0f, 12.0f, 12.0f));
+                        frameLayout.addView(imageView, w7.y5.d(24, 24.0f, 19, 12.0f, 12.0f, 12.0f, 12.0f));
                         TextView textView = new TextView(e0Var.getContext());
                         textView.setText(LocaleController.getString(R.string.StoryCollageMenuHint));
                         textView.setTextSize(1, 13.0f);
                         textView.setTextColor(-1);
-                        frameLayout.addView(textView, w7.x5.d(-1, -2.0f, 23, 47.0f, 8.0f, 24.0f, 8.0f));
-                        o70 F = o70.F(e0Var.a, e0Var.b, e0Var);
+                        frameLayout.addView(textView, w7.y5.d(-1, -2.0f, 23, 47.0f, 8.0f, 24.0f, 8.0f));
+                        y70 F = y70.F(e0Var.a, e0Var.b, e0Var);
                         if (e0Var.j0.n.K) {
                             f8 f8Var = new f8(e0Var.getContext(), 0);
                             f8Var.b = 0.0f;
@@ -88,7 +88,7 @@ public final /* synthetic */ class a0 implements Runnable {
                         F.c(R.drawable.menu_camera_retake, LocaleController.getString(R.string.StoreCollageRetake), new a0(e0Var, 4), false);
                         F.c(R.drawable.msg_delete, LocaleController.getString(R.string.Delete), new a0(e0Var, 5), true);
                         F.o();
-                        F.r(frameLayout, w7.x5.n(220, -2));
+                        F.r(frameLayout, w7.y5.n(220, -2));
                         F.p = new ai.f(6);
                         F.i = 1;
                         F.V = true;

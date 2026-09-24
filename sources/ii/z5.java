@@ -2,9 +2,9 @@ package ii;
 
 import android.text.Editable;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Cells.r9;
+import org.telegram.ui.Cells.q9;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class z5 implements h1 {
     public final /* synthetic */ e6 a;
@@ -14,9 +14,9 @@ public final class z5 implements h1 {
     }
 
     @Override // ii.h1
-    public final void D(i1 i1Var, int i10, int i11) {
+    public final void B(i1 i1Var, int i10, int i11) {
         b6 b6Var;
-        r9 textSelectionHelper;
+        q9 textSelectionHelper;
         e6 e6Var = this.a;
         if (e6Var.n || i10 == i11 || (b6Var = e6Var.y) == null || (textSelectionHelper = ((f3) b6Var).a.getTextSelectionHelper()) == null) {
             return;
@@ -25,7 +25,7 @@ public final class z5 implements h1 {
     }
 
     @Override // ii.h1
-    public final void M(CharSequence charSequence) {
+    public final void K(CharSequence charSequence) {
         b6 b6Var = this.a.y;
         if (b6Var != null) {
             f3 f3Var = (f3) b6Var;
@@ -37,7 +37,7 @@ public final class z5 implements h1 {
     }
 
     @Override // ii.h1
-    public final void W(Editable editable) {
+    public final void U(Editable editable) {
         e6 e6Var = this.a;
         if (e6Var.x == null) {
             return;
@@ -70,7 +70,7 @@ public final class z5 implements h1 {
     }
 
     @Override // ii.h1
-    public final /* synthetic */ boolean b0(boolean z10) {
+    public final /* synthetic */ boolean X(boolean z10) {
         return false;
     }
 
@@ -117,7 +117,7 @@ public final class z5 implements h1 {
     }
 
     @Override // ii.h1
-    public final /* synthetic */ boolean q(i1 i1Var) {
+    public final /* synthetic */ boolean p(i1 i1Var) {
         return false;
     }
 

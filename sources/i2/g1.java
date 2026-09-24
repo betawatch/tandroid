@@ -9,7 +9,7 @@ import java.util.IdentityHashMap;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class g1 {
     public final j2.k a;
@@ -18,7 +18,7 @@ public final class g1 {
     public final e2.z i;
     public boolean k;
     public g2.c0 l;
-    public u2.f1 j = new u2.d1();
+    public u2.g1 j = new u2.e1();
     public final IdentityHashMap c = new IdentityHashMap();
     public final HashMap d = new HashMap();
     public final ArrayList b = new ArrayList();
@@ -32,34 +32,34 @@ public final class g1 {
         this.i = zVar;
     }
 
-    public final b2.k1 a(int i10, ArrayList arrayList, u2.f1 f1Var) {
+    public final b2.k1 a(int i10, ArrayList arrayList, u2.g1 g1Var) {
         if (!arrayList.isEmpty()) {
-            this.j = f1Var;
+            this.j = g1Var;
             for (int i11 = i10; i11 < arrayList.size() + i10; i11++) {
-                f1 f1Var2 = (f1) arrayList.get(i11 - i10);
+                f1 f1Var = (f1) arrayList.get(i11 - i10);
                 ArrayList arrayList2 = this.b;
                 if (i11 > 0) {
-                    f1 f1Var3 = (f1) arrayList2.get(i11 - 1);
-                    f1Var2.d = f1Var3.a.o.e.o() + f1Var3.d;
-                    f1Var2.e = false;
-                    f1Var2.c.clear();
+                    f1 f1Var2 = (f1) arrayList2.get(i11 - 1);
+                    f1Var.d = f1Var2.a.o.e.o() + f1Var2.d;
+                    f1Var.e = false;
+                    f1Var.c.clear();
                 } else {
-                    f1Var2.d = 0;
-                    f1Var2.e = false;
-                    f1Var2.c.clear();
+                    f1Var.d = 0;
+                    f1Var.e = false;
+                    f1Var.c.clear();
                 }
-                int o9 = f1Var2.a.o.e.o();
+                int o9 = f1Var.a.o.e.o();
                 for (int i12 = i11; i12 < arrayList2.size(); i12++) {
                     ((f1) arrayList2.get(i12)).d += o9;
                 }
-                arrayList2.add(i11, f1Var2);
-                this.d.put(f1Var2.b, f1Var2);
+                arrayList2.add(i11, f1Var);
+                this.d.put(f1Var.b, f1Var);
                 if (this.k) {
-                    e(f1Var2);
+                    e(f1Var);
                     if (this.c.isEmpty()) {
-                        this.g.add(f1Var2);
+                        this.g.add(f1Var);
                     } else {
-                        e1 e1Var = (e1) this.f.get(f1Var2);
+                        e1 e1Var = (e1) this.f.get(f1Var);
                         if (e1Var != null) {
                             e1Var.a.d(e1Var.b);
                         }
@@ -135,22 +135,22 @@ public final class g1 {
         a5.a aVar = a0Var.c;
         aVar.getClass();
         CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) aVar.d;
-        u2.i0 i0Var = new u2.i0();
-        i0Var.a = handler;
-        i0Var.b = d1Var;
-        copyOnWriteArrayList.add(i0Var);
+        u2.j0 j0Var = new u2.j0();
+        j0Var.a = handler;
+        j0Var.b = d1Var;
+        copyOnWriteArrayList.add(j0Var);
         Looper myLooper2 = Looper.myLooper();
         if (myLooper2 == null) {
             myLooper2 = Looper.getMainLooper();
         }
         Handler handler2 = new Handler(myLooper2, null);
-        n2.j jVar = a0Var.d;
-        jVar.getClass();
-        CopyOnWriteArrayList copyOnWriteArrayList2 = jVar.c;
-        n2.i iVar = new n2.i();
-        iVar.a = handler2;
-        iVar.b = d1Var;
-        copyOnWriteArrayList2.add(iVar);
+        n2.k kVar = a0Var.d;
+        kVar.getClass();
+        CopyOnWriteArrayList copyOnWriteArrayList2 = kVar.c;
+        n2.j jVar = new n2.j();
+        jVar.a = handler2;
+        jVar.b = d1Var;
+        copyOnWriteArrayList2.add(jVar);
         a0Var.l(r12, this.l, this.a);
     }
 

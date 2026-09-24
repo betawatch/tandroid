@@ -9,7 +9,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class ls extends g6 {
     public boolean E;
@@ -56,7 +56,7 @@ public final class ls extends g6 {
                 View view2 = ((f6) n10.a).a;
                 float c10 = n10.c();
                 if (c10 > 0.0f && (fragmentContextView = this.y) != null && (fragmentContextView == view2 || fragmentContextView.getParent() == view2)) {
-                    id capsuleBlobDrawable = this.y.getCapsuleBlobDrawable();
+                    jd capsuleBlobDrawable = this.y.getCapsuleBlobDrawable();
                     int dp = AndroidUtilities.dp(1.0f) + ((int) capsuleBlobDrawable.c());
                     int i11 = -dp;
                     capsuleBlobDrawable.setBounds(getPaddingLeft() - dp, i11, (getMeasuredWidth() - getPaddingRight()) + dp, (dp * 2) + AndroidUtilities.dp(36.0f) + i11);

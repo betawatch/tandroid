@@ -5,10 +5,10 @@ import android.os.Parcelable;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import n6.l;
 import o6.a;
-import w7.e0;
+import w7.f0;
 import z5.d;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class SignInAccount extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<SignInAccount> CREATOR = new d(2);
@@ -26,10 +26,10 @@ public class SignInAccount extends a implements ReflectedParcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = e0.q(parcel, 20293);
-        e0.l(parcel, 4, this.a);
-        e0.k(parcel, 7, this.b, i10);
-        e0.l(parcel, 8, this.c);
-        e0.r(parcel, q6);
+        int q6 = f0.q(parcel, 20293);
+        f0.l(parcel, 4, this.a);
+        f0.k(parcel, 7, this.b, i10);
+        f0.l(parcel, 8, this.c);
+        f0.r(parcel, q6);
     }
 }

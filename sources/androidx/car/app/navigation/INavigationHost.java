@@ -5,7 +5,7 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public interface INavigationHost extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$navigation$INavigationHost".replace('$', '.');
@@ -16,7 +16,7 @@ public interface INavigationHost extends IInterface {
 
     void updateTrip(w.b bVar);
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class Default implements INavigationHost {
         @Override // android.os.IInterface
         public IBinder asBinder() {
@@ -36,13 +36,13 @@ public interface INavigationHost extends IInterface {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static abstract class Stub extends Binder implements INavigationHost {
         static final int TRANSACTION_navigationEnded = 3;
         static final int TRANSACTION_navigationStarted = 2;
         static final int TRANSACTION_updateTrip = 4;
 
-        /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+        /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
         public static class Proxy implements INavigationHost {
             private IBinder mRemote;
 

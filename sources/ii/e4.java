@@ -15,13 +15,13 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.Components.n01;
-import org.telegram.ui.Components.n51;
-import org.telegram.ui.Components.o01;
+import org.telegram.ui.Components.b11;
+import org.telegram.ui.Components.b61;
+import org.telegram.ui.Components.c11;
 import org.webrtc.MediaStreamTrack;
-import v7.q8;
+import v7.r8;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public abstract class e4 {
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -879,7 +879,7 @@ public abstract class e4 {
             a aVar = (a) list3.get(i19);
             if (!aVar.i) {
                 if (aVar.k.size() > i18) {
-                    cVar2.b(sb3);
+                    cVar2.c(sb3);
                     Long l4 = (Long) ((a) list3.get(iArr[0])).k.get(i18);
                     long longValue = l4.longValue();
                     int i20 = iArr[0];
@@ -898,14 +898,14 @@ public abstract class e4 {
                     sb3.append("<blockquote>");
                     d7.c cVar3 = new d7.c(1);
                     F(sb3, list3, iArr, i20, i11, i12, i13, i14, cVar3, z10, i18 + 1, map);
-                    cVar3.b(sb3);
+                    cVar3.c(sb3);
                     c(sb3, map != null ? k((TL_iv.RichText) map.get(l4)) : null);
                     sb3.append("</blockquote>");
                     i17 = i10;
                     i18 = i15;
                 } else {
                     if (x3.x3(aVar)) {
-                        cVar2.b(sb3);
+                        cVar2.c(sb3);
                         a aVar3 = (a) list3.get(iArr[0]);
                         sb3.append(((TL_iv.pageBlockDetails) aVar3.b).open ? "<details open>" : "<details>");
                         sb3.append("<summary>");
@@ -916,7 +916,7 @@ public abstract class e4 {
                         F(sb3, list3, iArr, i10, i11, i12, i13, i14, cVar4, true, i15, map);
                         list2 = list3;
                         i16 = i10;
-                        cVar4.b(sb3);
+                        cVar4.c(sb3);
                         int i22 = iArr[0];
                         if (i22 <= i16 && i22 < list2.size() && ((a) list2.get(iArr[0])).i) {
                             iArr[0] = iArr[0] + 1;
@@ -926,7 +926,7 @@ public abstract class e4 {
                         i16 = i10;
                         list2 = list3;
                         if (aVar.c <= 0 || l(aVar.b) == null) {
-                            cVar2.b(sb3);
+                            cVar2.c(sb3);
                             int i23 = iArr[0];
                             TL_iv.PageBlock pageBlock = aVar.b;
                             if (pageBlock instanceof TL_iv.pageBlockDivider) {
@@ -1118,7 +1118,7 @@ public abstract class e4 {
                             int i26 = aVar.c;
                             boolean z12 = aVar.d > 0;
                             while (arrayList.size() > i26) {
-                                cVar2.a(sb3);
+                                cVar2.b(sb3);
                             }
                             while (true) {
                                 str2 = "<ul>";
@@ -1131,8 +1131,8 @@ public abstract class e4 {
                                 sb3.append(str2);
                                 arrayList.add(Boolean.valueOf(z12));
                             }
-                            if (!arrayList.isEmpty() && ((Boolean) hg.c.h(1, arrayList)).booleanValue() != z12) {
-                                cVar2.a(sb3);
+                            if (!arrayList.isEmpty() && ((Boolean) hg.c.g(1, arrayList)).booleanValue() != z12) {
+                                cVar2.b(sb3);
                                 sb3.append(z12 ? "<ol>" : "<ul>");
                                 arrayList.add(Boolean.valueOf(z12));
                             }
@@ -1493,14 +1493,14 @@ public abstract class e4 {
             } else {
                 int nextSpanTransition = spanned.nextSpanTransition(i22, length, CharacterStyle.class);
                 int i24 = 0;
-                for (o01 o01Var : (o01[]) spanned.getSpans(i22, nextSpanTransition, o01.class)) {
-                    n01 n01Var = o01Var.b;
-                    if (n01Var != null) {
-                        i24 |= n01Var.a;
+                for (c11 c11Var : (c11[]) spanned.getSpans(i22, nextSpanTransition, c11.class)) {
+                    b11 b11Var = c11Var.b;
+                    if (b11Var != null) {
+                        i24 |= b11Var.a;
                     }
                 }
-                n51[] n51VarArr = (n51[]) spanned.getSpans(i22, nextSpanTransition, n51.class);
-                String url = n51VarArr.length > 0 ? n51VarArr[c10].getURL() : null;
+                b61[] b61VarArr = (b61[]) spanned.getSpans(i22, nextSpanTransition, b61.class);
+                String url = b61VarArr.length > 0 ? b61VarArr[c10].getURL() : null;
                 org.telegram.ui.Components.z5[] z5VarArr = (org.telegram.ui.Components.z5[]) spanned.getSpans(i22, nextSpanTransition, org.telegram.ui.Components.z5.class);
                 if (z5VarArr.length > 0) {
                     org.telegram.ui.Components.z5 z5Var = z5VarArr[c10];
@@ -1860,9 +1860,9 @@ public abstract class e4 {
             spannableStringBuilder.setSpan(new org.telegram.ui.Components.z5(j3, (Paint.FontMetricsInt) null), length, length2, 33);
         }
         if (i10 != 0) {
-            n01 n01Var = new n01();
-            n01Var.a = i10 & 114975;
-            spannableStringBuilder.setSpan(new o01(n01Var, AndroidUtilities.dp(SharedConfig.fontSize)), length, length2, 33);
+            b11 b11Var = new b11();
+            b11Var.a = i10 & 114975;
+            spannableStringBuilder.setSpan(new c11(b11Var, AndroidUtilities.dp(SharedConfig.fontSize)), length, length2, 33);
         }
         if (str2 != null) {
             spannableStringBuilder.setSpan(g6.k(str2), length, length2, 33);
@@ -2322,7 +2322,7 @@ public abstract class e4 {
                             if (arrayList3.isEmpty()) {
                                 arrayList2.add(d4Var);
                             } else {
-                                ((d4) hg.c.h(1, arrayList3)).e.add(d4Var);
+                                ((d4) hg.c.g(1, arrayList3)).e.add(d4Var);
                             }
                         }
                     } else if (str.startsWith("<!--", i12)) {
@@ -2364,7 +2364,7 @@ public abstract class e4 {
                             d4 d4Var2 = null;
                             if (!trim.isEmpty()) {
                                 int i14 = 0;
-                                while (i14 < trim.length() && !q8.a(trim.charAt(i14))) {
+                                while (i14 < trim.length() && !r8.a(trim.charAt(i14))) {
                                     i14++;
                                 }
                                 String lowerCase = trim.substring(0, i14).toLowerCase();
@@ -2372,16 +2372,16 @@ public abstract class e4 {
                                     d4Var2 = new d4();
                                     d4Var2.a = lowerCase;
                                     while (i14 < trim.length()) {
-                                        while (i14 < trim.length() && q8.a(trim.charAt(i14))) {
+                                        while (i14 < trim.length() && r8.a(trim.charAt(i14))) {
                                             i14++;
                                         }
                                         if (i14 < trim.length()) {
                                             int i15 = i14;
-                                            while (i15 < trim.length() && trim.charAt(i15) != '=' && !q8.a(trim.charAt(i15))) {
+                                            while (i15 < trim.length() && trim.charAt(i15) != '=' && !r8.a(trim.charAt(i15))) {
                                                 i15++;
                                             }
                                             String lowerCase2 = trim.substring(i14, i15).toLowerCase();
-                                            while (i15 < trim.length() && q8.a(trim.charAt(i15))) {
+                                            while (i15 < trim.length() && r8.a(trim.charAt(i15))) {
                                                 i15++;
                                             }
                                             if (i15 >= trim.length() || trim.charAt(i15) != '=') {
@@ -2394,7 +2394,7 @@ public abstract class e4 {
                                                     }
                                                     if (i15 < trim.length() || !(trim.charAt(i15) == '\"' || trim.charAt(i15) == c10)) {
                                                         i11 = i15;
-                                                        while (i11 < trim.length() && !q8.a(trim.charAt(i11))) {
+                                                        while (i11 < trim.length() && !r8.a(trim.charAt(i11))) {
                                                             i11++;
                                                         }
                                                         str2 = trim.substring(i15, i11);
@@ -2411,7 +2411,7 @@ public abstract class e4 {
                                                             i10++;
                                                         }
                                                     }
-                                                } while (q8.a(trim.charAt(i15)));
+                                                } while (r8.a(trim.charAt(i15)));
                                                 if (i15 < trim.length()) {
                                                 }
                                                 i11 = i15;
@@ -2437,7 +2437,7 @@ public abstract class e4 {
                                 if (arrayList3.isEmpty()) {
                                     arrayList2.add(d4Var2);
                                 } else {
-                                    ((d4) hg.c.h(1, arrayList3)).e.add(d4Var2);
+                                    ((d4) hg.c.g(1, arrayList3)).e.add(d4Var2);
                                 }
                                 if (!endsWith) {
                                     String str3 = d4Var2.a;
@@ -2515,7 +2515,7 @@ public abstract class e4 {
                                 if (arrayList3.isEmpty()) {
                                     arrayList2.add(d4Var3);
                                 } else {
-                                    ((d4) hg.c.h(1, arrayList3)).e.add(d4Var3);
+                                    ((d4) hg.c.g(1, arrayList3)).e.add(d4Var3);
                                 }
                             }
                         }

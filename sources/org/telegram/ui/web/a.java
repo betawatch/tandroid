@@ -3,19 +3,19 @@ package org.telegram.ui.web;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.v51;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class a implements org.telegram.ui.ActionBar.a2, Utilities.Callback5 {
+public final /* synthetic */ class a implements org.telegram.ui.ActionBar.z1, Utilities.Callback5 {
     public final /* synthetic */ k a;
 
     public /* synthetic */ a(k kVar) {
         this.a = kVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.z1
+    public void f(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
         k kVar = this.a;
         kVar.getContext().getSharedPreferences("webhistory", 0).edit().remove("queries_json").apply();
         kVar.w.Y2.N(true);
@@ -23,15 +23,15 @@ public final /* synthetic */ class a implements org.telegram.ui.ActionBar.a2, Ut
 
     @Override // org.telegram.messenger.Utilities.Callback5
     public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        org.telegram.ui.r rVar;
-        h51 h51Var = (h51) obj;
+        org.telegram.ui.s sVar;
+        v51 v51Var = (v51) obj;
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
-        boolean G = h51Var.G(d.class);
+        boolean G = v51Var.G(d.class);
         k kVar = this.a;
         if (G) {
-            String charSequence = h51Var.l.toString();
+            String charSequence = v51Var.l.toString();
             org.telegram.ui.z zVar = kVar.L;
             if (zVar != null) {
                 zVar.run(charSequence);
@@ -39,11 +39,11 @@ public final /* synthetic */ class a implements org.telegram.ui.ActionBar.a2, Ut
             }
             return;
         }
-        if (!h51Var.G(g.class) || (rVar = kVar.N) == null) {
+        if (!v51Var.G(g.class) || (sVar = kVar.N) == null) {
             return;
         }
         try {
-            rVar.run(k.a((MessageObject) h51Var.H));
+            sVar.run(k.a((MessageObject) v51Var.H));
         } catch (Exception e) {
             FileLog.e(e);
         }

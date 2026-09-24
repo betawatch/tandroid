@@ -1,32 +1,39 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.UndoView;
+import android.content.Intent;
+import android.net.Uri;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class e81 extends UndoView {
-    public final /* synthetic */ SessionsActivity f0;
+public final /* synthetic */ class e81 implements org.telegram.ui.ActionBar.z1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ SessionsActivity b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e81(SessionsActivity sessionsActivity, Context context) {
-        super(context);
-        this.f0 = sessionsActivity;
+    public /* synthetic */ e81(SessionsActivity sessionsActivity, int i10) {
+        this.a = i10;
+        this.b = sessionsActivity;
     }
 
-    @Override // org.telegram.ui.Components.UndoView
-    public final void e(int i10, boolean z10) {
-        int i11;
-        if (!z10 && getCurrentInfoObject() != null) {
-            TLRPC.TL_authorization tL_authorization = (TLRPC.TL_authorization) getCurrentInfoObject();
-            TL_account.resetAuthorization resetauthorization = new TL_account.resetAuthorization();
-            resetauthorization.hash = tL_authorization.hash;
-            i11 = ((org.telegram.ui.ActionBar.n2) this.f0).currentAccount;
-            ConnectionsManager.getInstance(i11).sendRequest(resetauthorization, new wb0(19, this, tL_authorization));
+    @Override // org.telegram.ui.ActionBar.z1
+    public final void f(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
+        switch (this.a) {
+            case 0:
+                SessionsActivity sessionsActivity = this.b;
+                sessionsActivity.getClass();
+                try {
+                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+                    intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
+                    sessionsActivity.getParentActivity().startActivity(intent);
+                    break;
+                } catch (Exception e) {
+                    FileLog.e(e);
+                    return;
+                }
+            default:
+                SessionsActivity.W(this.b);
+                break;
         }
-        super.e(i10, z10);
     }
 }

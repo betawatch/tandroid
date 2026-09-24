@@ -7,7 +7,7 @@ import java.io.Reader;
 import java.util.Arrays;
 import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class a implements Closeable {
     public final Reader a;
@@ -216,7 +216,7 @@ public class a implements Closeable {
     public final IllegalStateException E(String str) {
         String str2 = x() == 9 ? "adapter-not-null-safe" : "unexpected-json-structure";
         StringBuilder w10 = a4.a.w("Expected ", str, " but was ");
-        w10.append(hg.c.E(x()));
+        w10.append(hg.c.D(x()));
         w10.append(m());
         w10.append("\nSee ");
         w10.append("https://github.com/google/gson/blob/main/Troubleshooting.md#".concat(str2));
@@ -679,7 +679,7 @@ public class a implements Closeable {
                 case 8:
                     break;
                 default:
-                    throw new AssertionError(hg.c.i(i12, "Unknown scope value: "));
+                    throw new AssertionError(hg.c.h(i12, "Unknown scope value: "));
             }
             i10++;
         }
@@ -727,9 +727,9 @@ public class a implements Closeable {
     }
 
     final String m() {
-        StringBuilder m10 = hg.c.m(" at line ", this.e + 1, " column ", (this.c - this.f) + 1, " path ");
-        m10.append(h());
-        return m10.toString();
+        StringBuilder k10 = hg.c.k(" at line ", this.e + 1, " column ", (this.c - this.f) + 1, " path ");
+        k10.append(h());
+        return k10.toString();
     }
 
     public boolean n() {

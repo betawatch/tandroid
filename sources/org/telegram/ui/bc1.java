@@ -6,7 +6,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class bc1 implements Runnable {
     public final /* synthetic */ int a;
@@ -107,16 +107,16 @@ public final /* synthetic */ class bc1 implements Runnable {
                 od1Var.X = -1;
                 break;
             case 1:
-                od1Var.presentFragment(ra1.d0(od1Var.getMessagesController().getChat(Long.valueOf(-od1Var.J1)), true));
+                od1Var.presentFragment(sa1.d0(od1Var.getMessagesController().getChat(Long.valueOf(-od1Var.J1)), true));
                 break;
             case 2:
                 od1Var.p1.o1(false);
                 boolean a2 = od1Var.a.a();
-                org.telegram.ui.Components.yi0 yi0Var = od1Var.N1;
-                yi0Var.P(a2 ? yi0Var.e[0] : 0);
-                org.telegram.ui.Components.yi0 yi0Var2 = od1Var.N1;
-                if (yi0Var2 != null) {
-                    yi0Var2.start();
+                org.telegram.ui.Components.ij0 ij0Var = od1Var.N1;
+                ij0Var.P(a2 ? ij0Var.e[0] : 0);
+                org.telegram.ui.Components.ij0 ij0Var2 = od1Var.N1;
+                if (ij0Var2 != null) {
+                    ij0Var2.start();
                 }
                 od1Var.b1(false);
                 od1Var.V0();
@@ -141,7 +141,7 @@ public final /* synthetic */ class bc1 implements Runnable {
                     }
                     ValueAnimator ofFloat = ValueAnimator.ofFloat(od1Var.o1, od1Var.p1.a() ? 1.0f : 0.0f);
                     od1Var.P1 = ofFloat;
-                    ofFloat.addUpdateListener(new s11(od1Var, 13));
+                    ofFloat.addUpdateListener(new q11(od1Var, 13));
                     od1Var.P1.addListener(new sc1(od1Var, 5));
                     od1Var.P1.setDuration(250L);
                     od1Var.P1.setInterpolator(org.telegram.ui.Components.rr.f);
@@ -156,7 +156,7 @@ public final /* synthetic */ class bc1 implements Runnable {
                     j40Var.setAlpha(0.0f);
                     j40Var.setVisibility(4);
                     j40Var.setShowingDuration(4000L);
-                    od1Var.k0.addView(j40Var, w7.x5.d(-2, -2.0f, 51, 4.0f, 0.0f, 4.0f, 0.0f));
+                    od1Var.k0.addView(j40Var, w7.y5.d(-2, -2.0f, 51, 4.0f, 0.0f, 4.0f, 0.0f));
                     if (od1Var.p1.a()) {
                         j40Var.setText(LocaleController.getString(R.string.PreviewWallpaperDay));
                     } else {

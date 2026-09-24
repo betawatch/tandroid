@@ -1,20 +1,62 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.NotificationCenter;
+import java.util.Comparator;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.support.LongSparseIntArray;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class rt implements View.OnAttachStateChangeListener {
-    public qt a;
+public final /* synthetic */ class rt implements Comparator {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewAttachedToWindow(View view) {
-        NotificationCenter.getGlobalInstance().addObserver(this.a, NotificationCenter.emojiLoaded);
+    public /* synthetic */ rt(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewDetachedFromWindow(View view) {
-        NotificationCenter.getGlobalInstance().removeObserver(this.a, NotificationCenter.emojiLoaded);
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        switch (this.a) {
+            case 0:
+                return ((Comparator) this.b).compare(((qt) obj).a, ((qt) obj2).a);
+            case 1:
+                LongSparseIntArray longSparseIntArray = (LongSparseIntArray) this.b;
+                int i10 = longSparseIntArray.get(((Long) obj).longValue());
+                int i11 = longSparseIntArray.get(((Long) obj2).longValue());
+                if (i10 > i11) {
+                    return 1;
+                }
+                return i10 < i11 ? -1 : 0;
+            case 2:
+                LocaleController.LocaleInfo localeInfo = (LocaleController.LocaleInfo) this.b;
+                LocaleController.LocaleInfo localeInfo2 = (LocaleController.LocaleInfo) obj;
+                LocaleController.LocaleInfo localeInfo3 = (LocaleController.LocaleInfo) obj2;
+                if (localeInfo2 != localeInfo) {
+                    if (localeInfo3 != localeInfo) {
+                        int i12 = localeInfo2.serverIndex;
+                        int i13 = localeInfo3.serverIndex;
+                        if (i12 == i13) {
+                            return localeInfo2.name.compareTo(localeInfo3.name);
+                        }
+                        if (i12 <= i13) {
+                            if (i12 >= i13) {
+                                return 0;
+                            }
+                        }
+                    }
+                    return 1;
+                }
+                return -1;
+            default:
+                StickersActivity stickersActivity = (StickersActivity) this.b;
+                int indexOf = stickersActivity.e.indexOf((TLRPC.TL_messages_stickerSet) obj);
+                int indexOf2 = stickersActivity.e.indexOf((TLRPC.TL_messages_stickerSet) obj2);
+                if (indexOf < 0 || indexOf2 < 0) {
+                    return 0;
+                }
+                return indexOf - indexOf2;
+        }
     }
 }

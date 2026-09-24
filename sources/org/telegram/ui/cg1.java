@@ -10,11 +10,11 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class cg1 extends org.telegram.ui.ActionBar.n2 {
+public final class cg1 extends org.telegram.ui.ActionBar.m2 {
     public ag1 a;
-    public org.telegram.ui.Components.ml0 b;
+    public org.telegram.ui.Components.wl0 b;
     public long c;
     public ArrayList d;
     public HashSet e;
@@ -65,30 +65,30 @@ public final class cg1 extends org.telegram.ui.ActionBar.n2 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final View createView(Context context) {
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
-        hg.c.x(false, this.actionBar);
-        this.actionBar.setActionBarMenuOnItemClick(new o81(this, 5));
+        hg.c.v(false, this.actionBar);
+        this.actionBar.setActionBarMenuOnItemClick(new f81(this, 6));
         this.actionBar.setTitle(LocaleController.getString(R.string.NotificationsExceptions));
-        this.b = new org.telegram.ui.Components.ml0(context, null);
+        this.b = new org.telegram.ui.Components.wl0(context, null);
         s4.j jVar = new s4.j();
         jVar.C = false;
         jVar.m = false;
         this.b.setItemAnimator(jVar);
         this.b.setLayoutManager(new s4.c0());
-        org.telegram.ui.Components.ml0 ml0Var = this.b;
+        org.telegram.ui.Components.wl0 wl0Var = this.b;
         ag1 ag1Var = new ag1(this);
         this.a = ag1Var;
-        ml0Var.setAdapter(ag1Var);
+        wl0Var.setAdapter(ag1Var);
         this.b.setOnItemClickListener(new zf1(this));
         frameLayout.addView(this.b);
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.a7, false));
         return this.fragmentView;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final boolean onFragmentCreate() {
         this.c = this.arguments.getLong("dialog_id");
         V();

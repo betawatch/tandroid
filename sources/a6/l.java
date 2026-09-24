@@ -15,10 +15,10 @@ import com.google.android.gms.internal.clearcut.v0;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import org.json.JSONException;
 import t7.u;
-import v7.g5;
-import w7.d9;
+import v7.h5;
+import w7.e9;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class l extends b8.b {
     public final /* synthetic */ int b = 0;
@@ -53,7 +53,7 @@ public final class l extends b8.b {
                         }
                         googleSignInOptions = null;
                     }
-                    v0 a10 = d9.a(revocationBoundService, googleSignInOptions);
+                    v0 a10 = e9.a(revocationBoundService, googleSignInOptions);
                     if (b10 != null) {
                         t0 t0Var = a10.h;
                         Context context = a10.a;
@@ -95,14 +95,14 @@ public final class l extends b8.b {
                 Status status2 = (Status) i7.f.a(parcel, Status.CREATOR);
                 x5.f fVar = (x5.f) i7.f.a(parcel, x5.f.CREATOR);
                 i7.f.b(parcel);
-                g5.a(status2, fVar, (TaskCompletionSource) obj);
+                h5.a(status2, fVar, (TaskCompletionSource) obj);
                 return true;
         }
     }
 
     public void L0() {
         if (!u6.b.e((RevocationBoundService) this.c, Binder.getCallingUid())) {
-            throw new SecurityException(hg.c.j(Binder.getCallingUid(), "Calling UID ", " is not Google Play services."));
+            throw new SecurityException(hg.c.i(Binder.getCallingUid(), "Calling UID ", " is not Google Play services."));
         }
     }
 

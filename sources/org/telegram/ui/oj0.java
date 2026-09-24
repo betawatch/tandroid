@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class oj0 implements Choreographer.FrameCallback {
     public static final Matrix E = new Matrix();
@@ -50,7 +50,7 @@ public final class oj0 implements Choreographer.FrameCallback {
         if (i10 < 0 || i10 >= lineCount) {
             return;
         }
-        nj0 euVar = nj0Var != null ? nj0Var : new eu(layout, 24);
+        nj0 duVar = nj0Var != null ? nj0Var : new du(layout, 24);
         int width = layout.getWidth();
         layout.getHeight();
         int lineTop = layout.getLineTop(i10);
@@ -58,7 +58,7 @@ public final class oj0 implements Choreographer.FrameCallback {
         if (lineTop > 0) {
             canvas.save();
             canvas.clipRect(0.0f, 0.0f, width, lineTop);
-            euVar.a(canvas);
+            duVar.b(canvas);
             canvas.restore();
         }
         float lineLeft = layout.getLineLeft(i10);
@@ -70,7 +70,7 @@ public final class oj0 implements Choreographer.FrameCallback {
         }
         int paragraphDirection = layout.getParagraphDirection(i10);
         float f10 = max - min;
-        float a2 = w7.p.a(f7, 0.0f, f10);
+        float a2 = w7.q.a(f7, 0.0f, f10);
         float f11 = a2 / f10;
         if (a2 <= 0.0f) {
             return;
@@ -78,7 +78,7 @@ public final class oj0 implements Choreographer.FrameCallback {
         if (a2 >= f10) {
             canvas.save();
             canvas.clipRect(0.0f, lineTop, width, lineBottom);
-            euVar.a(canvas);
+            duVar.b(canvas);
             canvas.restore();
             return;
         }
@@ -89,7 +89,7 @@ public final class oj0 implements Choreographer.FrameCallback {
         int saveLayer = canvas.saveLayer(min, f12, max, f13, null);
         canvas.save();
         canvas.clipRect(min, f12, max, f13);
-        euVar.a(canvas);
+        duVar.b(canvas);
         canvas.restore();
         Matrix matrix = E;
         matrix.reset();

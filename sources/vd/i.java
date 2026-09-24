@@ -1,10 +1,10 @@
 package vd;
 
-import w7.m;
+import w7.n;
 
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class i {
     public static final /* synthetic */ i[] a;
@@ -12,7 +12,7 @@ public final class i {
     static {
         i[] iVarArr = {new i("PUBLIC", 0), new i("PROTECTED", 1), new i("INTERNAL", 2), new i("PRIVATE", 3)};
         a = iVarArr;
-        m.a(iVarArr);
+        n.a(iVarArr);
     }
 
     public static i valueOf(String str) {

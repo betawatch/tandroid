@@ -2,38 +2,38 @@ package zg;
 
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.c5;
-import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.ActionBar.p1;
-import org.telegram.ui.Components.sr0;
-import yh.u3;
+import org.telegram.ui.ActionBar.b5;
+import org.telegram.ui.ActionBar.m2;
+import org.telegram.ui.ActionBar.o1;
+import org.telegram.ui.Components.yr0;
+import yh.t3;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class n extends p1 {
-    public final /* synthetic */ u3 x;
+public final class n extends o1 {
+    public final /* synthetic */ t3 x;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n(u3 u3Var, u3 u3Var2) {
-        super(u3Var2);
-        this.x = u3Var;
+    public n(t3 t3Var, t3 t3Var2) {
+        super(t3Var2);
+        this.x = t3Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.p1
+    @Override // org.telegram.ui.ActionBar.o1
     public final boolean b() {
         boolean z10;
         boolean z11;
         q qVar = (q) this.x.c;
-        c5 parentLayout = qVar.getParentLayout();
-        z10 = ((n2) qVar).inPreviewMode;
+        b5 parentLayout = qVar.getParentLayout();
+        z10 = ((m2) qVar).inPreviewMode;
         if (z10 || AndroidUtilities.isTablet()) {
             return false;
         }
-        z11 = ((n2) qVar).inBubbleMode;
+        z11 = ((m2) qVar).inBubbleMode;
         return (z11 || AndroidUtilities.isInMultiwindow || parentLayout == null) ? false : true;
     }
 
-    @Override // org.telegram.ui.ActionBar.p1
+    @Override // org.telegram.ui.ActionBar.o1
     public final void e(float f7, float f10, boolean z10) {
         q qVar = (q) this.x.c;
         if (qVar.getParentLayout() != null) {
@@ -41,14 +41,14 @@ public final class n extends p1 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.p1
+    @Override // org.telegram.ui.ActionBar.o1
     public final void g(int i10, boolean z10) {
         q qVar = (q) this.x.c;
         qVar.w.setVisibility(0);
-        qVar.w.animate().alpha(!z10 ? 1.0f : 0.0f).withEndAction(new sr0(16, this, z10)).start();
+        qVar.w.animate().alpha(!z10 ? 1.0f : 0.0f).withEndAction(new yr0(17, this, z10)).start();
     }
 
-    @Override // org.telegram.ui.ActionBar.p1
+    @Override // org.telegram.ui.ActionBar.o1
     public final void f() {
     }
 }

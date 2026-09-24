@@ -5,7 +5,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class cg implements Parcelable.Creator {
     public final /* synthetic */ int a;
@@ -14,7 +14,7 @@ public final class cg implements Parcelable.Creator {
     public final Object createFromParcel(Parcel parcel) {
         switch (this.a) {
             case 0:
-                int z10 = w7.d0.z(parcel);
+                int z10 = w7.e0.z(parcel);
                 long j3 = 0;
                 int i10 = 0;
                 int i11 = 0;
@@ -24,23 +24,23 @@ public final class cg implements Parcelable.Creator {
                     int readInt = parcel.readInt();
                     char c10 = (char) readInt;
                     if (c10 == 1) {
-                        i10 = w7.d0.u(parcel, readInt);
+                        i10 = w7.e0.u(parcel, readInt);
                     } else if (c10 == 2) {
-                        i11 = w7.d0.u(parcel, readInt);
+                        i11 = w7.e0.u(parcel, readInt);
                     } else if (c10 == 3) {
-                        i12 = w7.d0.u(parcel, readInt);
+                        i12 = w7.e0.u(parcel, readInt);
                     } else if (c10 == 4) {
-                        i13 = w7.d0.u(parcel, readInt);
+                        i13 = w7.e0.u(parcel, readInt);
                     } else if (c10 != 5) {
-                        w7.d0.y(parcel, readInt);
+                        w7.e0.y(parcel, readInt);
                     } else {
-                        j3 = w7.d0.w(parcel, readInt);
+                        j3 = w7.e0.w(parcel, readInt);
                     }
                 }
-                w7.d0.m(parcel, z10);
+                w7.e0.m(parcel, z10);
                 return new ag(i10, i11, i12, j3, i13);
             case 1:
-                int z11 = w7.d0.z(parcel);
+                int z11 = w7.e0.z(parcel);
                 float[] fArr = null;
                 Bitmap bitmap = null;
                 int i14 = 0;
@@ -52,7 +52,7 @@ public final class cg implements Parcelable.Creator {
                     int readInt2 = parcel.readInt();
                     switch ((char) readInt2) {
                         case 1:
-                            int x10 = w7.d0.x(parcel, readInt2);
+                            int x10 = w7.e0.x(parcel, readInt2);
                             int dataPosition = parcel.dataPosition();
                             if (x10 == 0) {
                                 fArr = null;
@@ -63,32 +63,32 @@ public final class cg implements Parcelable.Creator {
                                 break;
                             }
                         case 2:
-                            bitmap = (Bitmap) w7.d0.g(parcel, readInt2, Bitmap.CREATOR);
+                            bitmap = (Bitmap) w7.e0.g(parcel, readInt2, Bitmap.CREATOR);
                             break;
                         case 3:
-                            i14 = w7.d0.u(parcel, readInt2);
+                            i14 = w7.e0.u(parcel, readInt2);
                             break;
                         case 4:
-                            i15 = w7.d0.u(parcel, readInt2);
+                            i15 = w7.e0.u(parcel, readInt2);
                             break;
                         case 5:
-                            i16 = w7.d0.u(parcel, readInt2);
+                            i16 = w7.e0.u(parcel, readInt2);
                             break;
                         case 6:
-                            i17 = w7.d0.u(parcel, readInt2);
+                            i17 = w7.e0.u(parcel, readInt2);
                             break;
                         case 7:
-                            i18 = w7.d0.u(parcel, readInt2);
+                            i18 = w7.e0.u(parcel, readInt2);
                             break;
                         default:
-                            w7.d0.y(parcel, readInt2);
+                            w7.e0.y(parcel, readInt2);
                             break;
                     }
                 }
-                w7.d0.m(parcel, z11);
+                w7.e0.m(parcel, z11);
                 return new hg(fArr, bitmap, i14, i15, i16, i17, i18);
             case 2:
-                int z12 = w7.d0.z(parcel);
+                int z12 = w7.e0.z(parcel);
                 ArrayList arrayList = null;
                 float[] fArr2 = null;
                 Bitmap bitmap2 = null;
@@ -97,9 +97,9 @@ public final class cg implements Parcelable.Creator {
                     int readInt3 = parcel.readInt();
                     char c11 = (char) readInt3;
                     if (c11 == 1) {
-                        arrayList = w7.d0.l(parcel, readInt3, hg.CREATOR);
+                        arrayList = w7.e0.l(parcel, readInt3, hg.CREATOR);
                     } else if (c11 == 2) {
-                        int x11 = w7.d0.x(parcel, readInt3);
+                        int x11 = w7.e0.x(parcel, readInt3);
                         int dataPosition2 = parcel.dataPosition();
                         if (x11 == 0) {
                             fArr2 = null;
@@ -109,11 +109,11 @@ public final class cg implements Parcelable.Creator {
                             fArr2 = createFloatArray;
                         }
                     } else if (c11 == 3) {
-                        bitmap2 = (Bitmap) w7.d0.g(parcel, readInt3, Bitmap.CREATOR);
+                        bitmap2 = (Bitmap) w7.e0.g(parcel, readInt3, Bitmap.CREATOR);
                     } else if (c11 != 4) {
-                        w7.d0.y(parcel, readInt3);
+                        w7.e0.y(parcel, readInt3);
                     } else {
-                        int x12 = w7.d0.x(parcel, readInt3);
+                        int x12 = w7.e0.x(parcel, readInt3);
                         int dataPosition3 = parcel.dataPosition();
                         if (x12 == 0) {
                             arrayList2 = null;
@@ -128,10 +128,10 @@ public final class cg implements Parcelable.Creator {
                         }
                     }
                 }
-                w7.d0.m(parcel, z12);
+                w7.e0.m(parcel, z12);
                 return new ig(arrayList, fArr2, bitmap2, arrayList2);
             default:
-                int z13 = w7.d0.z(parcel);
+                int z13 = w7.e0.z(parcel);
                 boolean z14 = false;
                 boolean z15 = false;
                 boolean z16 = false;
@@ -141,20 +141,20 @@ public final class cg implements Parcelable.Creator {
                     int readInt5 = parcel.readInt();
                     char c12 = (char) readInt5;
                     if (c12 == 1) {
-                        z14 = w7.d0.n(parcel, readInt5);
+                        z14 = w7.e0.n(parcel, readInt5);
                     } else if (c12 == 2) {
-                        z15 = w7.d0.n(parcel, readInt5);
+                        z15 = w7.e0.n(parcel, readInt5);
                     } else if (c12 == 3) {
-                        z16 = w7.d0.n(parcel, readInt5);
+                        z16 = w7.e0.n(parcel, readInt5);
                     } else if (c12 == 4) {
-                        z17 = w7.d0.n(parcel, readInt5);
+                        z17 = w7.e0.n(parcel, readInt5);
                     } else if (c12 != 5) {
-                        w7.d0.y(parcel, readInt5);
+                        w7.e0.y(parcel, readInt5);
                     } else {
-                        z18 = w7.d0.n(parcel, readInt5);
+                        z18 = w7.e0.n(parcel, readInt5);
                     }
                 }
-                w7.d0.m(parcel, z13);
+                w7.e0.m(parcel, z13);
                 return new jg(z14, z15, z16, z17, z18);
         }
     }

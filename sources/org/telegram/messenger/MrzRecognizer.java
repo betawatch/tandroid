@@ -13,11 +13,11 @@ import android.util.SparseArray;
 import java.util.Calendar;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class MrzRecognizer {
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class Result {
         public static final int GENDER_FEMALE = 2;
         public static final int GENDER_MALE = 1;
@@ -413,14 +413,14 @@ public class MrzRecognizer {
             float max = 1500.0f / Math.max(bitmap.getWidth(), bitmap.getHeight());
             bitmap = Bitmap.createScaledBitmap(bitmap, Math.round(bitmap.getWidth() * max), Math.round(bitmap.getHeight() * max), true);
         }
-        lf.i iVar = new lf.i(22);
+        la.h hVar = new la.h(23);
         int width = bitmap.getWidth();
         int height = bitmap.getHeight();
-        iVar.d = bitmap;
-        a3.l lVar = (a3.l) iVar.b;
+        hVar.d = bitmap;
+        a3.l lVar = (a3.l) hVar.b;
         lVar.a = width;
         lVar.b = height;
-        SparseArray Z0 = nVar.Z0(iVar);
+        SparseArray Z0 = nVar.Z0(hVar);
         int i10 = 0;
         for (int i11 = 0; i11 < Z0.size(); i11++) {
             r8.m mVar = (r8.m) Z0.valueAt(i11);

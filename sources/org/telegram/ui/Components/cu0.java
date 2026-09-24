@@ -1,61 +1,70 @@
 package org.telegram.ui.Components;
 
+import android.animation.ObjectAnimator;
+import android.graphics.Canvas;
 import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class cu0 extends org.telegram.ui.mu0 {
-    public final /* synthetic */ du0 a;
+public abstract class cu0 extends FrameLayout {
+    public zk0 E;
+    public int F;
+    public br0 G;
+    public wn0 H;
+    public boolean I;
+    public int J;
+    public boolean K;
+    public float L;
+    public long a;
+    public boolean b;
+    public ObjectAnimator c;
+    public s4.j d;
+    public s4.u0 e;
+    public s4.u0 f;
+    public is0 h;
+    public ah.n n;
+    public bu0 r;
+    public ks0 s;
+    public rs0 v;
+    public ts0 w;
+    public gs0 x;
+    public qs0 y;
 
-    public cu0(du0 du0Var) {
-        this.a = du0Var;
-    }
-
-    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
-    public final org.telegram.ui.wu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
-        ImageReceiver imageReceiver;
-        org.telegram.ui.Cells.t1 t1Var;
-        MessageObject messageObject2;
-        fu0 fu0Var = this.a.c;
-        qt0 qt0Var = fu0Var.r;
-        if (qt0Var != null) {
-            int childCount = qt0Var.getChildCount();
-            for (int i11 = 0; i11 < childCount; i11++) {
-                View childAt = fu0Var.r.getChildAt(i11);
-                if (!(childAt instanceof org.telegram.ui.Cells.t1) || messageObject == null || (messageObject2 = (t1Var = (org.telegram.ui.Cells.t1) childAt).getMessageObject()) == null || messageObject2.getId() != messageObject.getId()) {
-                    imageReceiver = null;
-                } else {
-                    ArrayList<Integer> arrayList = messageObject2.pollMediaMapping;
-                    imageReceiver = (arrayList == null || i10 < 0 || i10 >= arrayList.size()) ? t1Var.F2(i10) : t1Var.F2(messageObject2.pollMediaMapping.get(i10).intValue());
-                }
-                if (imageReceiver != null) {
-                    int[] iArr = new int[2];
-                    childAt.getLocationInWindow(iArr);
-                    org.telegram.ui.wu0 wu0Var = new org.telegram.ui.wu0();
-                    wu0Var.b = iArr[0];
-                    wu0Var.c = childAt.getPaddingTop() + iArr[1];
-                    wu0Var.d = fu0Var.r;
-                    wu0Var.m = null;
-                    wu0Var.a = imageReceiver;
-                    if (z10) {
-                        wu0Var.e = imageReceiver.getBitmapSafe();
-                    }
-                    wu0Var.h = imageReceiver.getRoundRadius(true);
-                    wu0Var.j = 0;
-                    wu0Var.i = 0;
-                    return wu0Var;
-                }
-            }
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        br0 br0Var = this.G;
+        if (br0Var == null || br0Var.getVisibility() != 0) {
+            return;
         }
-        return null;
+        dl0 fastScroll = this.h.getFastScroll();
+        if (fastScroll != null) {
+            float dp = AndroidUtilities.dp(36.0f) + fastScroll.getScrollBarY();
+            if (this.F == 9) {
+                dp += AndroidUtilities.dp(64.0f);
+            }
+            int i10 = this.F;
+            if (i10 == 8 || jv0.w0(i10)) {
+                dp += AndroidUtilities.dp(42.0f);
+            }
+            float measuredWidth = (getMeasuredWidth() - this.G.getMeasuredWidth()) - AndroidUtilities.dp(16.0f);
+            this.G.setPivotX(r2.getMeasuredWidth());
+            this.G.setPivotY(0.0f);
+            this.G.setTranslationX(measuredWidth);
+            this.G.setTranslationY(dp);
+        }
+        if (fastScroll.getProgress() > 0.85f) {
+            jv0.q(this, null, false);
+        }
     }
 
-    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
-    public final boolean K() {
-        return true;
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j3) {
+        if (view == this.r) {
+            return true;
+        }
+        return super.drawChild(canvas, view, j3);
     }
 }

@@ -7,10 +7,11 @@ import android.util.Base64;
 import da.b;
 import java.util.concurrent.Executor;
 import l5.i;
-import l5.t;
-import org.telegram.ui.Components.r11;
+import l5.s;
+import org.telegram.ui.Components.f21;
+import org.telegram.ui.web.f1;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class JobInfoSchedulerService extends JobService {
     public static final /* synthetic */ int a = 0;
@@ -21,15 +22,15 @@ public class JobInfoSchedulerService extends JobService {
         String string2 = jobParameters.getExtras().getString("extras");
         int i10 = jobParameters.getExtras().getInt("priority");
         int i11 = jobParameters.getExtras().getInt("attemptNumber");
-        t.b(getApplicationContext());
+        s.b(getApplicationContext());
         a a2 = i.a();
-        a2.u(string);
+        a2.t(string);
         a2.d = v5.a.b(i10);
         if (string2 != null) {
             a2.c = Base64.decode(string2, 0);
         }
-        b bVar = t.a().d;
-        ((Executor) bVar.e).execute(new r11(bVar, a2.e(), i11, new p2.b(9, this, jobParameters), 16));
+        b bVar = s.a().d;
+        ((Executor) bVar.e).execute(new f21(bVar, a2.e(), i11, new f1(15, this, jobParameters), 16));
         return true;
     }
 

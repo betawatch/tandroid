@@ -13,9 +13,9 @@ import n6.l;
 import o6.a;
 import r7.p;
 import u6.f;
-import w7.e0;
+import w7.f0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class LocationRequest extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<LocationRequest> CREATOR = new j(5);
@@ -239,38 +239,38 @@ public final class LocationRequest extends a implements ReflectedParcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = e0.q(parcel, 20293);
+        int q6 = f0.q(parcel, 20293);
         int i11 = this.a;
-        e0.s(parcel, 1, 4);
+        f0.s(parcel, 1, 4);
         parcel.writeInt(i11);
         long j3 = this.b;
-        e0.s(parcel, 2, 8);
+        f0.s(parcel, 2, 8);
         parcel.writeLong(j3);
         long j10 = this.c;
-        e0.s(parcel, 3, 8);
+        f0.s(parcel, 3, 8);
         parcel.writeLong(j10);
-        e0.s(parcel, 6, 4);
+        f0.s(parcel, 6, 4);
         parcel.writeInt(this.f);
-        e0.s(parcel, 7, 4);
+        f0.s(parcel, 7, 4);
         parcel.writeFloat(this.h);
-        e0.s(parcel, 8, 8);
+        f0.s(parcel, 8, 8);
         parcel.writeLong(this.d);
-        e0.s(parcel, 9, 4);
+        f0.s(parcel, 9, 4);
         parcel.writeInt(this.n ? 1 : 0);
-        e0.s(parcel, 10, 8);
+        f0.s(parcel, 10, 8);
         parcel.writeLong(this.e);
         long j11 = this.r;
-        e0.s(parcel, 11, 8);
+        f0.s(parcel, 11, 8);
         parcel.writeLong(j11);
-        e0.s(parcel, 12, 4);
+        f0.s(parcel, 12, 4);
         parcel.writeInt(this.s);
-        e0.s(parcel, 13, 4);
+        f0.s(parcel, 13, 4);
         parcel.writeInt(this.v);
-        e0.l(parcel, 14, this.w);
-        e0.s(parcel, 15, 4);
+        f0.l(parcel, 14, this.w);
+        f0.s(parcel, 15, 4);
         parcel.writeInt(this.x ? 1 : 0);
-        e0.k(parcel, 16, this.y, i10);
-        e0.k(parcel, 17, this.E, i10);
-        e0.r(parcel, q6);
+        f0.k(parcel, 16, this.y, i10);
+        f0.k(parcel, 17, this.E, i10);
+        f0.r(parcel, q6);
     }
 }

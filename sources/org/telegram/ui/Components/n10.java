@@ -7,7 +7,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n10 implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -28,17 +28,17 @@ public final /* synthetic */ class n10 implements View.OnLongClickListener {
                 float[] fArr = FragmentContextView.O0;
                 final float playbackSpeed = MediaController.getInstance().getPlaybackSpeed(fragmentContextView.V);
                 fragmentContextView.H.d(playbackSpeed, false);
-                org.telegram.ui.ActionBar.b1 b1Var = fragmentContextView.H;
+                org.telegram.ui.ActionBar.a1 a1Var = fragmentContextView.H;
                 int i11 = org.telegram.ui.ActionBar.h6.G8;
-                b1Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.v0(i11, fragmentContextView.p0));
-                org.telegram.ui.ActionBar.b1 b1Var2 = fragmentContextView.H;
-                b1Var2.N = fragmentContextView.h instanceof org.telegram.ui.xn;
-                b1Var2.F.setShader(null);
-                b1Var2.h = null;
-                Bitmap bitmap = b1Var2.f;
+                a1Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.v0(i11, fragmentContextView.p0));
+                org.telegram.ui.ActionBar.a1 a1Var2 = fragmentContextView.H;
+                a1Var2.N = fragmentContextView.h instanceof org.telegram.ui.wn;
+                a1Var2.F.setShader(null);
+                a1Var2.h = null;
+                Bitmap bitmap = a1Var2.f;
                 if (bitmap != null) {
                     bitmap.recycle();
-                    b1Var2.f = null;
+                    a1Var2.f = null;
                 }
                 fragmentContextView.F.B(org.telegram.ui.ActionBar.h6.w0(null, i11, false));
                 fragmentContextView.F.N();
@@ -60,16 +60,16 @@ public final /* synthetic */ class n10 implements View.OnLongClickListener {
                 MessagesController.getGlobalNotificationsSettings().edit().putInt("speedhint", -15).apply();
                 return true;
             case 1:
-                sd0 sd0Var = (sd0) obj;
-                sd0Var.r.setText("");
-                ci.j9.a(sd0Var.s, true);
-                Drawable drawable = sd0Var.a;
-                if (drawable instanceof bc0) {
-                    ((bc0) drawable).y();
+                ce0 ce0Var = (ce0) obj;
+                ce0Var.r.setText("");
+                ci.j9.a(ce0Var.s, true);
+                Drawable drawable = ce0Var.a;
+                if (drawable instanceof mc0) {
+                    ((mc0) drawable).y();
                 }
                 return true;
             default:
-                return hq0.n((hq0) obj);
+                return uq0.n((uq0) obj);
         }
     }
 }

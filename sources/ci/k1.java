@@ -20,7 +20,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class k1 extends FrameLayout {
     public final Paint a;
@@ -53,7 +53,7 @@ public final class k1 extends FrameLayout {
         int i12 = org.telegram.ui.ActionBar.h6.h5;
         s2 s2Var = this.s;
         i1 i1Var = s2Var.f;
-        d6Var = ((org.telegram.ui.ActionBar.f3) s2Var).resourcesProvider;
+        d6Var = ((org.telegram.ui.ActionBar.e3) s2Var).resourcesProvider;
         int v02 = org.telegram.ui.ActionBar.h6.v0(i12, d6Var);
         Paint paint = this.a;
         paint.setColor(v02);
@@ -73,9 +73,9 @@ public final class k1 extends FrameLayout {
         float d = this.h.d(s2Var.x <= 0.0f ? 1.0f : 0.0f, false);
         float paddingTop = (s2Var.x + i1Var.getPaddingTop()) - AndroidUtilities.lerp(AndroidUtilities.dp(8.0f), i1Var.getPaddingTop(), d);
         RectF rectF = AndroidUtilities.rectTmp;
-        i10 = ((org.telegram.ui.ActionBar.f3) s2Var).backgroundPaddingLeft;
+        i10 = ((org.telegram.ui.ActionBar.e3) s2Var).backgroundPaddingLeft;
         int width = getWidth();
-        i11 = ((org.telegram.ui.ActionBar.f3) s2Var).backgroundPaddingLeft;
+        i11 = ((org.telegram.ui.ActionBar.e3) s2Var).backgroundPaddingLeft;
         rectF.set(i10, paddingTop, width - i11, AndroidUtilities.dp(8.0f) + getHeight());
         if (this.d != null) {
             this.f.reset();
@@ -138,9 +138,9 @@ public final class k1 extends FrameLayout {
         super.onLayout(z10, i10, i11, i12, i13);
         if (this.d == null) {
             s2 s2Var = this.s;
-            d6Var = ((org.telegram.ui.ActionBar.f3) s2Var).resourcesProvider;
+            d6Var = ((org.telegram.ui.ActionBar.e3) s2Var).resourcesProvider;
             if (d6Var != null) {
-                d6Var2 = ((org.telegram.ui.ActionBar.f3) s2Var).resourcesProvider;
+                d6Var2 = ((org.telegram.ui.ActionBar.e3) s2Var).resourcesProvider;
                 if (!d6Var2.a()) {
                     return;
                 }

@@ -1,26 +1,17 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public abstract class uk0 extends ll0 {
-    public boolean E(ml0 ml0Var) {
-        return true;
-    }
+public final /* synthetic */ class uk0 {
+    public final /* synthetic */ zk0 a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ boolean d;
 
-    public abstract String F(int i10);
-
-    public abstract void G(ml0 ml0Var, float f7, int[] iArr);
-
-    public float H(ml0 ml0Var) {
-        return ml0Var.computeVerticalScrollOffset() / ((k() * ml0Var.getChildAt(0).getMeasuredHeight()) - ml0Var.getMeasuredHeight());
-    }
-
-    public void I() {
-    }
-
-    public void J(ml0 ml0Var) {
-    }
-
-    public void K() {
+    public /* synthetic */ uk0(zk0 zk0Var, int i10, int i11, boolean z10) {
+        this.a = zk0Var;
+        this.b = i10;
+        this.c = i11;
+        this.d = z10;
     }
 }

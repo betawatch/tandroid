@@ -14,14 +14,14 @@ import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.telegram.messenger.BuildConfig;
-import v7.k8;
+import v7.l8;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public abstract class o extends j9.a implements w {
     public static final boolean d;
     public static final s0 e;
-    public static final k8 f;
+    public static final l8 f;
     public static final Object h;
     public volatile Object a;
     public volatile c b;
@@ -30,7 +30,7 @@ public abstract class o extends j9.a implements w {
     static {
         boolean z10;
         Throwable th2;
-        k8 fVar;
+        l8 fVar;
         try {
             z10 = Boolean.parseBoolean(System.getProperty("guava.concurrent.generate_cancellation_cause", "false"));
         } catch (SecurityException unused) {
@@ -364,9 +364,9 @@ public abstract class o extends j9.a implements w {
             if (nVar2 != nVar) {
                 n nVar3 = new n();
                 while (true) {
-                    k8 k8Var = f;
-                    k8Var.f(nVar3, nVar2);
-                    if (k8Var.c(this, nVar2, nVar3)) {
+                    l8 l8Var = f;
+                    l8Var.f(nVar3, nVar2);
+                    if (l8Var.c(this, nVar2, nVar3)) {
                         j10 = j11;
                         while (true) {
                             LockSupport.parkNanos(this, Math.min(nanos, 2147483647999999999L));
@@ -404,25 +404,25 @@ public abstract class o extends j9.a implements w {
                     u10.append(timeUnit.toString().toLowerCase(locale));
                     String sb2 = u10.toString();
                     if (nanos + 1000 < j10) {
-                        String g10 = w.c.g(sb2, " (plus ");
+                        String t10 = v7.j.t(sb2, " (plus ");
                         long j13 = -nanos;
                         long convert = timeUnit.convert(j13, TimeUnit.NANOSECONDS);
                         long nanos2 = j13 - timeUnit.toNanos(convert);
                         boolean z10 = convert == j10 || nanos2 > 1000;
                         if (convert > j10) {
-                            String str = g10 + convert + " " + lowerCase;
+                            String str = t10 + convert + " " + lowerCase;
                             if (z10) {
-                                str = w.c.g(str, ",");
+                                str = v7.j.t(str, ",");
                             }
-                            g10 = w.c.g(str, " ");
+                            t10 = v7.j.t(str, " ");
                         }
                         if (z10) {
-                            g10 = g10 + nanos2 + " nanoseconds ";
+                            t10 = t10 + nanos2 + " nanoseconds ";
                         }
-                        sb2 = w.c.g(g10, "delay)");
+                        sb2 = v7.j.t(t10, "delay)");
                     }
                     if (isDone()) {
-                        throw new TimeoutException(w.c.g(sb2, " but future completed as timeout expired"));
+                        throw new TimeoutException(v7.j.t(sb2, " but future completed as timeout expired"));
                     }
                     throw new TimeoutException(a4.a.D(sb2, " for ", oVar));
                 }
@@ -605,9 +605,9 @@ public abstract class o extends j9.a implements w {
             if (nVar2 != nVar) {
                 n nVar3 = new n();
                 do {
-                    k8 k8Var = f;
-                    k8Var.f(nVar3, nVar2);
-                    if (k8Var.c(this, nVar2, nVar3)) {
+                    l8 l8Var = f;
+                    l8Var.f(nVar3, nVar2);
+                    if (l8Var.c(this, nVar2, nVar3)) {
                         do {
                             LockSupport.park(this);
                             if (!Thread.interrupted()) {

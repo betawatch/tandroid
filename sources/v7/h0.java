@@ -1,27 +1,30 @@
 package v7;
 
-import android.os.Build;
-import android.webkit.WebView;
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
+import android.os.CancellationSignal;
+import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public abstract class h0 {
-    public static InvocationHandler a() {
-        ClassLoader classLoader;
-        if (Build.VERSION.SDK_INT >= 28) {
-            classLoader = b5.d.t();
-        } else {
-            try {
-                Method declaredMethod = WebView.class.getDeclaredMethod("getFactory", null);
-                declaredMethod.setAccessible(true);
-                classLoader = declaredMethod.invoke(null, null).getClass().getClassLoader();
-            } catch (IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
-                throw new RuntimeException(e);
-            }
+    public static void a(CancellationSignal cancellationSignal, rd.a onResultOrException) {
+        kotlin.jvm.internal.i.e(onResultOrException, "onResultOrException");
+        CredentialProviderPlayServicesImpl.Companion.getClass();
+        if (a1.g.a(cancellationSignal)) {
+            return;
         }
-        return (InvocationHandler) Class.forName("org.chromium.support_lib_glue.SupportLibReflectionUtil", false, classLoader).getDeclaredMethod("createWebViewProviderFactory", null).invoke(null, null);
+        onResultOrException.invoke();
+    }
+
+    public static boolean b(int i10, rd.p pVar, rd.l lVar, CancellationSignal cancellationSignal) {
+        if (i10 == -1) {
+            return false;
+        }
+        kotlin.jvm.internal.p pVar2 = new kotlin.jvm.internal.p();
+        pVar2.a = new w0.h(hg.c.i(i10, "activity with result code: ", " indicating not RESULT_OK"), 2);
+        if (i10 == 0) {
+            pVar2.a = new w0.g("activity is cancelled by the user.");
+        }
+        pVar.invoke(cancellationSignal, new b1.c(lVar, pVar2, 1));
+        return true;
     }
 }

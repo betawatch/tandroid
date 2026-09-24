@@ -4,11 +4,11 @@ import android.os.Bundle;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Cells.t1;
+import org.telegram.ui.Cells.u1;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.xn;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -30,17 +30,17 @@ public final /* synthetic */ class b implements Runnable {
                 AndroidUtilities.runOnUIThread(new b(this.b, this.c, this.d, 1));
                 break;
             default:
-                t1 t1Var = this.b.c;
+                u1 u1Var = this.b.c;
                 long dialogId = this.c.getDialogId();
                 TLRPC.TL_messageMediaGiveawayResults tL_messageMediaGiveawayResults = this.d;
                 if (dialogId != (-tL_messageMediaGiveawayResults.channel_id)) {
                     Bundle bundle = new Bundle();
                     bundle.putLong("chat_id", tL_messageMediaGiveawayResults.channel_id);
                     bundle.putInt("message_id", tL_messageMediaGiveawayResults.launch_msg_id);
-                    LaunchActivity.R().presentFragment(new xn(bundle));
+                    LaunchActivity.R().presentFragment(new wn(bundle));
                     break;
                 } else {
-                    t1Var.getDelegate().b2(t1Var, tL_messageMediaGiveawayResults.launch_msg_id, 0.0f, 0.0f, false);
+                    u1Var.getDelegate().b2(u1Var, tL_messageMediaGiveawayResults.launch_msg_id, 0.0f, 0.0f, false);
                     break;
                 }
         }

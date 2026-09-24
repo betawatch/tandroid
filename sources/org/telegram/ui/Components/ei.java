@@ -6,7 +6,7 @@ import android.view.Menu;
 import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class ei extends ku {
     public final /* synthetic */ wi V;
@@ -31,9 +31,9 @@ public final class ei extends ku {
 
     @Override // org.telegram.ui.Components.ku
     public final void i(Menu menu) {
-        org.telegram.ui.ActionBar.n2 n2Var = this.V.f0;
-        if (n2Var instanceof org.telegram.ui.xn) {
-            org.telegram.ui.xn.k8(menu, ((org.telegram.ui.xn) n2Var).h, true, true, true, true);
+        org.telegram.ui.ActionBar.m2 m2Var = this.V.f0;
+        if (m2Var instanceof org.telegram.ui.wn) {
+            org.telegram.ui.wn.k8(menu, ((org.telegram.ui.wn) m2Var).h, true, true, true, true);
         }
     }
 

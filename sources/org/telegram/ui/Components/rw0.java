@@ -1,10 +1,34 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
+
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class rw0 {
-    public String a;
-    public boolean b;
-    public long c;
-    public String d;
+    public MessagesController.PeerColor a;
+    public org.telegram.ui.ActionBar.d6 b;
+    public int c;
+    public int d;
+    public float e;
+
+    public final void a(MessagesController.PeerColor peerColor) {
+        this.a = peerColor;
+        if (peerColor == null) {
+            this.c = org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.A8, this.b);
+            this.d = org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.s8, this.b);
+            this.c = i0.a.d(this.e, this.c, 603979776);
+            this.d = i0.a.d(this.e, this.d, -1);
+            return;
+        }
+        int bgColor1 = peerColor.getBgColor1(org.telegram.ui.ActionBar.h6.I.q());
+        int bgColor2 = peerColor.getBgColor2(org.telegram.ui.ActionBar.h6.I.q());
+        org.telegram.ui.ActionBar.d6 d6Var = this.b;
+        int d = i0.a.d(0.75f, bgColor2, bgColor1);
+        int v02 = AndroidUtilities.computePerceivedBrightness(d) > 0.721f ? org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.v6, d6Var) : org.telegram.ui.ActionBar.h6.b(0.08f, -0.08f, d);
+        this.c = v02;
+        this.d = AndroidUtilities.computePerceivedBrightness(v02) > 0.721f ? -16777216 : -1;
+        this.c = i0.a.d(this.e, this.c, 603979776);
+        this.d = i0.a.d(this.e, this.d, -1);
+    }
 }

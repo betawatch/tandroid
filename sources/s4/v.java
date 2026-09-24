@@ -5,14 +5,14 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.WeakHashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Cells.l2;
-import org.telegram.ui.yy;
+import org.telegram.ui.Cells.m2;
+import org.telegram.ui.xy;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public abstract class v {
-    public static final l2 b = new l2(1);
-    public static final l2 c = new l2(2);
+    public static final m2 b = new m2(1);
+    public static final m2 c = new m2(2);
     public int a = -1;
 
     public static int c(int i10, int i11) {
@@ -91,7 +91,7 @@ public abstract class v {
     }
 
     public boolean k() {
-        return !(this instanceof yy);
+        return !(this instanceof xy);
     }
 
     public void m(Canvas canvas, RecyclerView recyclerView, c1 c1Var, float f7, float f10, int i10, boolean z10) {

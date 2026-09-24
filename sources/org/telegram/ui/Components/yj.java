@@ -15,12 +15,12 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class yj extends FrameLayout {
     public final w9 a;
     public final ai.z5 b;
-    public final org.telegram.ui.ActionBar.i5 c;
+    public final org.telegram.ui.ActionBar.h5 c;
     public final op d;
     public final h9 e;
     public TLRPC.User f;
@@ -41,7 +41,7 @@ public final class yj extends FrameLayout {
         this.a = w9Var;
         w9Var.setRoundRadius(AndroidUtilities.dp(23.0f));
         boolean z10 = LocaleController.isRTL;
-        addView(w9Var, w7.x5.d(46, 46.0f, (z10 ? 5 : 3) | 48, z10 ? 0.0f : 14.0f, 9.0f, z10 ? 14.0f : 0.0f, 0.0f));
+        addView(w9Var, w7.y5.d(46, 46.0f, (z10 ? 5 : 3) | 48, z10 ? 0.0f : 14.0f, 9.0f, z10 ? 14.0f : 0.0f, 0.0f));
         ai.z5 z5Var = new ai.z5(context, 4);
         this.b = z5Var;
         NotificationCenter.listenEmojiLoading(z5Var);
@@ -50,21 +50,21 @@ public final class yj extends FrameLayout {
         z5Var.setTextSize(16);
         z5Var.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
         boolean z11 = LocaleController.isRTL;
-        addView(z5Var, w7.x5.d(-1, 20.0f, (z11 ? 5 : 3) | 48, z11 ? 28.0f : 72.0f, 12.0f, z11 ? 72.0f : 28.0f, 0.0f));
-        org.telegram.ui.ActionBar.i5 i5Var = new org.telegram.ui.ActionBar.i5(context);
-        this.c = i5Var;
-        i5Var.setTextSize(13);
-        i5Var.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.q5, d6Var));
-        i5Var.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
+        addView(z5Var, w7.y5.d(-1, 20.0f, (z11 ? 5 : 3) | 48, z11 ? 28.0f : 72.0f, 12.0f, z11 ? 72.0f : 28.0f, 0.0f));
+        org.telegram.ui.ActionBar.h5 h5Var = new org.telegram.ui.ActionBar.h5(context);
+        this.c = h5Var;
+        h5Var.setTextSize(13);
+        h5Var.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.q5, d6Var));
+        h5Var.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
         boolean z12 = LocaleController.isRTL;
-        addView(i5Var, w7.x5.d(-1, 20.0f, (z12 ? 5 : 3) | 48, z12 ? 28.0f : 72.0f, 36.0f, z12 ? 72.0f : 28.0f, 0.0f));
+        addView(h5Var, w7.y5.d(-1, 20.0f, (z12 ? 5 : 3) | 48, z12 ? 28.0f : 72.0f, 36.0f, z12 ? 72.0f : 28.0f, 0.0f));
         op opVar = new op(context, 21, d6Var);
         this.d = opVar;
         opVar.b(-1, org.telegram.ui.ActionBar.h6.d6, org.telegram.ui.ActionBar.h6.k7);
         opVar.setDrawUnchecked(false);
         opVar.setDrawBackgroundAsArc(3);
         boolean z13 = LocaleController.isRTL;
-        addView(opVar, w7.x5.d(24, 24.0f, (z13 ? 5 : 3) | 48, z13 ? 0.0f : 44.0f, 37.0f, z13 ? 44.0f : 0.0f, 0.0f));
+        addView(opVar, w7.y5.d(24, 24.0f, (z13 ? 5 : 3) | 48, z13 ? 0.0f : 44.0f, 37.0f, z13 ? 44.0f : 0.0f, 0.0f));
     }
 
     public final void a(TLRPC.User user, CharSequence charSequence, xj xjVar, boolean z10) {
@@ -82,7 +82,7 @@ public final class yj extends FrameLayout {
             setWillNotDraw(!z10);
             b();
         }
-        Utilities.globalQueue.postRunnable(new ph(6, this, xjVar));
+        Utilities.globalQueue.postRunnable(new uc(12, this, xjVar));
     }
 
     public final void b() {

@@ -16,10 +16,9 @@ import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.g91;
-import org.telegram.ui.rs;
+import org.telegram.ui.l21;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class k0 {
     public static final k0 e;
@@ -33,9 +32,9 @@ public final class k0 {
     public final o0.a d;
 
     static {
-        k0 k0Var = new k0("roboto", "PhotoEditorTypefaceRoboto", new o0.a(new rs(27)));
+        k0 k0Var = new k0("roboto", "PhotoEditorTypefaceRoboto", new o0.a(new org.webrtc.audio.b(3)));
         e = k0Var;
-        f = Arrays.asList(k0Var, new k0("italic", "PhotoEditorTypefaceItalic", new o0.a(new rs(28))), new k0("serif", "PhotoEditorTypefaceSerif", new o0.a(new rs(29))), new k0("condensed", "PhotoEditorTypefaceCondensed", new o0.a(new e0(0))), new k0("mono", "PhotoEditorTypefaceMono", new o0.a(new e0(1))), new k0("mw_bold", "PhotoEditorTypefaceMerriweather", new o0.a(new e0(2))));
+        f = Arrays.asList(k0Var, new k0("italic", "PhotoEditorTypefaceItalic", new o0.a(new org.webrtc.audio.b(4))), new k0("serif", "PhotoEditorTypefaceSerif", new o0.a(new org.webrtc.audio.b(5))), new k0("condensed", "PhotoEditorTypefaceCondensed", new o0.a(new org.webrtc.audio.b(6))), new k0("mono", "PhotoEditorTypefaceMono", new o0.a(new org.webrtc.audio.b(7))), new k0("mw_bold", "PhotoEditorTypefaceMerriweather", new o0.a(new org.webrtc.audio.b(8))));
         g = Arrays.asList("Google Sans", "Dancing Script", "Carrois Gothic SC", "Cutive Mono", "Droid Sans Mono", "Coming Soon");
     }
 
@@ -203,7 +202,7 @@ public final class k0 {
         }
         if (arrayList == null && !i) {
             i = true;
-            Utilities.themeQueue.postRunnable(new g91(8));
+            Utilities.themeQueue.postRunnable(new l21(10));
         }
         return f;
     }

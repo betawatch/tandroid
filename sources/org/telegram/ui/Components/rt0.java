@@ -1,70 +1,30 @@
 package org.telegram.ui.Components;
 
-import android.animation.ObjectAnimator;
-import android.graphics.Canvas;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public abstract class rt0 extends FrameLayout {
-    public pk0 E;
-    public int F;
-    public oq0 G;
-    public ar0 H;
-    public boolean I;
-    public int J;
-    public boolean K;
-    public float L;
-    public long a;
-    public boolean b;
-    public ObjectAnimator c;
-    public s4.j d;
-    public s4.u0 e;
-    public s4.u0 f;
-    public xr0 h;
-    public ah.n n;
-    public qt0 r;
-    public zr0 s;
-    public gs0 v;
-    public is0 w;
-    public vr0 x;
-    public fs0 y;
+public final class rt0 extends gv0 {
+    public final /* synthetic */ jv0 G;
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        oq0 oq0Var = this.G;
-        if (oq0Var == null || oq0Var.getVisibility() != 0) {
-            return;
-        }
-        tk0 fastScroll = this.h.getFastScroll();
-        if (fastScroll != null) {
-            float dp = AndroidUtilities.dp(36.0f) + fastScroll.getScrollBarY();
-            if (this.F == 9) {
-                dp += AndroidUtilities.dp(64.0f);
-            }
-            int i10 = this.F;
-            if (i10 == 8 || yu0.w0(i10)) {
-                dp += AndroidUtilities.dp(42.0f);
-            }
-            float measuredWidth = (getMeasuredWidth() - this.G.getMeasuredWidth()) - AndroidUtilities.dp(16.0f);
-            this.G.setPivotX(r2.getMeasuredWidth());
-            this.G.setPivotY(0.0f);
-            this.G.setTranslationX(measuredWidth);
-            this.G.setTranslationY(dp);
-        }
-        if (fastScroll.getProgress() > 0.85f) {
-            yu0.q(this, null, false);
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public rt0(jv0 jv0Var, Context context) {
+        super(jv0Var, context, 0, false);
+        this.G = jv0Var;
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        if (view == this.r) {
-            return true;
+    @Override // org.telegram.ui.Components.gv0, s4.h0
+    public final void l() {
+        super.l();
+        jv0 jv0Var = this.G;
+        cu0 W = jv0Var.W(8);
+        if (W != null && W.r.getVisibility() == 0) {
+            jv0Var.d0.l();
         }
-        return super.drawChild(canvas, view, j3);
+        if (W != null) {
+            ts0 ts0Var = W.w;
+            ai.d9 d9Var = this.s;
+            ts0Var.e(d9Var != null && (d9Var.k() || (jv0Var.i0() && this.s.g() > 0)), true);
+        }
     }
 }

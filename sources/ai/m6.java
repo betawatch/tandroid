@@ -16,7 +16,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.pq;
 import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public abstract class m6 extends View {
     public ArrayList E;
@@ -212,20 +212,20 @@ public abstract class m6 extends View {
                 float f20 = this.r;
                 float f21 = f10 * f20;
                 f11 = measuredWidth;
-                float y3 = org.telegram.messenger.z0.y(f19, f18, 2.0f, b10);
-                float y10 = org.telegram.messenger.z0.y(f21, f20, 2.0f, this.x);
+                float x10 = org.telegram.messenger.f0.x(f19, f18, 2.0f, b10);
+                float x11 = org.telegram.messenger.f0.x(f21, f20, 2.0f, this.x);
                 if (this.y == 0.0f || i14 == (i12 = this.K)) {
                     arrayList2 = arrayList3;
                     arrayList = arrayList4;
                     f12 = f14;
                     i11 = i15;
-                    l6Var.a.setImageCoords(y3, y10, f19, f21);
+                    l6Var.a.setImageCoords(x10, x11, f19, f21);
                 } else {
                     f12 = f14;
                     i11 = i15;
                     arrayList = arrayList4;
                     arrayList2 = arrayList3;
-                    l6Var.a.setImageCoords(AndroidUtilities.lerp(getMeasuredWidth() * (i14 - i12), y3, this.y), AndroidUtilities.lerp(this.a, y10, this.y), AndroidUtilities.lerp(this.b, f19, this.y), AndroidUtilities.lerp(this.c, f21, this.y));
+                    l6Var.a.setImageCoords(AndroidUtilities.lerp(getMeasuredWidth() * (i14 - i12), x10, this.y), AndroidUtilities.lerp(this.a, x11, this.y), AndroidUtilities.lerp(this.b, f19, this.y), AndroidUtilities.lerp(this.c, f21, this.y));
                 }
                 if (this.y == 1.0f || i14 != this.K) {
                     ImageReceiver imageReceiver = l6Var.a;

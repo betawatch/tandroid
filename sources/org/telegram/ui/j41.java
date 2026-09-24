@@ -1,39 +1,47 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.graphics.Canvas;
+import j$.util.Objects;
+import org.telegram.messenger.SaveToGallerySettingsHelper;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class j41 extends org.telegram.ui.Components.p6 {
-    public boolean s;
-    public final org.telegram.ui.Components.e6 v;
-    public final /* synthetic */ SaveToGallerySettingsActivity w;
+public final class j41 extends og.a {
+    public final SaveToGallerySettingsHelper.DialogException c;
+    public final String d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j41(SaveToGallerySettingsActivity saveToGallerySettingsActivity, Activity activity) {
-        super(activity, true, true, false);
-        this.w = saveToGallerySettingsActivity;
-        this.v = new org.telegram.ui.Components.e6(this);
-        getDrawable().D = true;
+    public j41(int i10) {
+        super(i10, false);
+        this.c = null;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        float f7 = this.s ? 1.0f : 0.0f;
-        org.telegram.ui.Components.e6 e6Var = this.v;
-        e6Var.d(f7, false);
-        int i10 = org.telegram.ui.ActionBar.h6.y6;
-        SaveToGallerySettingsActivity saveToGallerySettingsActivity = this.w;
-        setTextColor(i0.a.d(e6Var.c, saveToGallerySettingsActivity.getThemedColor(i10), saveToGallerySettingsActivity.getThemedColor(org.telegram.ui.ActionBar.h6.n6)));
-        super.dispatchDraw(canvas);
-    }
-
-    public final void e(boolean z10, boolean z11) {
-        if (this.s != z10) {
-            this.s = z10;
-            this.v.d(z10 ? 1.0f : 0.0f, z11);
-            invalidate();
+    public final boolean equals(Object obj) {
+        SaveToGallerySettingsHelper.DialogException dialogException;
+        if (this == obj) {
+            return true;
         }
+        if (obj == null || j41.class != obj.getClass()) {
+            return false;
+        }
+        j41 j41Var = (j41) obj;
+        if (this.a != j41Var.a) {
+            return false;
+        }
+        String str = this.d;
+        if (str != null) {
+            return Objects.equals(str, j41Var.d);
+        }
+        SaveToGallerySettingsHelper.DialogException dialogException2 = this.c;
+        return dialogException2 == null || (dialogException = j41Var.c) == null || dialogException2.dialogId == dialogException.dialogId;
+    }
+
+    public j41(SaveToGallerySettingsHelper.DialogException dialogException) {
+        super(2, false);
+        this.c = dialogException;
+    }
+
+    public j41(int i10, String str) {
+        super(i10, false);
+        this.d = str;
+        this.c = null;
     }
 }

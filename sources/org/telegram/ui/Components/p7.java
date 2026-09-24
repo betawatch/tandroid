@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class p7 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -25,9 +25,9 @@ public final class p7 extends FrameLayout {
         TextView textView;
         switch (this.a) {
             case 0:
-                int y3 = org.telegram.messenger.ul.y(248.0f, i12 - i10, 4);
+                int A = org.telegram.messenger.ok.A(248.0f, i12 - i10, 4);
                 for (int i14 = 0; i14 < 5; i14++) {
-                    int dp = (y3 * i14) + AndroidUtilities.dp((i14 * 48) + 4);
+                    int dp = (A * i14) + AndroidUtilities.dp((i14 * 48) + 4);
                     int dp2 = AndroidUtilities.dp(9.0f);
                     j8 j8Var = this.b;
                     View view = j8Var.n0[i14];
@@ -43,8 +43,8 @@ public final class p7 extends FrameLayout {
                 j8 j8Var2 = this.b;
                 if (j8Var2.V != null && (textView = j8Var2.a0) != null) {
                     int left = (textView.getLeft() - AndroidUtilities.dp(4.0f)) - j8Var2.V.getMeasuredWidth();
-                    org.telegram.ui.ActionBar.v0 v0Var = j8Var2.V;
-                    v0Var.layout(left, v0Var.getTop(), j8Var2.V.getMeasuredWidth() + left, j8Var2.V.getBottom());
+                    org.telegram.ui.ActionBar.u0 u0Var = j8Var2.V;
+                    u0Var.layout(left, u0Var.getTop(), j8Var2.V.getMeasuredWidth() + left, j8Var2.V.getBottom());
                     break;
                 }
                 break;

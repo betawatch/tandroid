@@ -1,48 +1,31 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class qd0 extends AnimatorListenerAdapter {
+public final /* synthetic */ class qd0 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ rg0 b;
+    public final /* synthetic */ ae0 b;
+    public final /* synthetic */ String c;
 
-    public /* synthetic */ qd0(rg0 rg0Var, int i10) {
+    public /* synthetic */ qd0(ae0 ae0Var, String str, int i10) {
         this.a = i10;
-        this.b = rg0Var;
+        this.b = ae0Var;
+        this.c = str;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                rg0 rg0Var = this.b;
-                if (rg0Var.d == animator) {
-                    rg0Var.d = null;
-                    break;
-                }
+                AndroidUtilities.runOnUIThread(new sd0(this.b, tL_error, this.c, tLObject));
                 break;
             default:
-                rg0 rg0Var2 = this.b;
-                rg0Var2.c.setVisibility(8);
-                if (rg0Var2.d == animator) {
-                    rg0Var2.d = null;
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.c.setVisibility(0);
-                break;
-            default:
-                super.onAnimationStart(animator);
+                AndroidUtilities.runOnUIThread(new sd0(this.b, tL_error, tLObject, this.c));
                 break;
         }
     }

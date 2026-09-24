@@ -12,14 +12,14 @@ import android.view.View;
 import ci.a9;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.pv0;
+import org.telegram.ui.Components.aw0;
+import org.telegram.ui.Components.ce0;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.sd0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public final class j3 extends pv0 implements org.telegram.ui.ActionBar.u3 {
+public final class j3 extends aw0 implements org.telegram.ui.ActionBar.t3 {
     public final /* synthetic */ k3 A0;
     public final Paint w0;
     public boolean x0;
@@ -38,18 +38,18 @@ public final class j3 extends pv0 implements org.telegram.ui.ActionBar.u3 {
         this.z0 = new Path();
     }
 
-    @Override // org.telegram.ui.Components.pv0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         boolean z10;
         Paint paint;
         k3 k3Var = this.A0;
-        sd0 sd0Var = k3Var.s0;
+        ce0 ce0Var = k3Var.s0;
         Rect rect = k3Var.h;
         Rect rect2 = k3Var.f;
         if (this.x0) {
             return;
         }
-        int visibility = sd0Var.getVisibility();
+        int visibility = ce0Var.getVisibility();
         Paint paint2 = this.w0;
         if (visibility != 0) {
             float f7 = k3Var.f0;
@@ -78,7 +78,7 @@ public final class j3 extends pv0 implements org.telegram.ui.ActionBar.u3 {
             cf.c cVar = k3Var.s;
             int lerp = AndroidUtilities.lerp((getWidth() - rect.left) - rect.right, getWidth(), k3Var.f0);
             getHeight();
-            cVar.r(canvas, true, false, lerp, 1.0f - k3Var.f0);
+            cVar.q(canvas, true, false, lerp, 1.0f - k3Var.f0);
             canvas.translate((1.0f - k3Var.f0) * (-rect.left), 0.0f);
             z10 = true;
         }
@@ -86,7 +86,7 @@ public final class j3 extends pv0 implements org.telegram.ui.ActionBar.u3 {
         if (z10) {
             canvas.restore();
         }
-        if (sd0Var.getVisibility() != 0) {
+        if (ce0Var.getVisibility() != 0) {
             paint2.setColor(h6.l1(k3Var.N0, k3Var.R));
             int i11 = rect2.left;
             if (i11 > 0) {
@@ -115,7 +115,7 @@ public final class j3 extends pv0 implements org.telegram.ui.ActionBar.u3 {
         k3 k3Var = this.A0;
         Rect rect = k3Var.h;
         LaunchActivity launchActivity = LaunchActivity.G1;
-        org.telegram.ui.ActionBar.n3 P = launchActivity != null ? launchActivity.P() : null;
+        org.telegram.ui.ActionBar.m3 P = launchActivity != null ? launchActivity.P() : null;
         if (P != null && rect != null) {
             int i10 = (int) ((1.0f - k3Var.f0) * ((int) P.G));
             if (motionEvent.getY() >= (getHeight() - rect.bottom) - i10 && motionEvent.getY() <= getHeight() - rect.bottom && !AndroidUtilities.isTablet()) {
@@ -170,12 +170,12 @@ public final class j3 extends pv0 implements org.telegram.ui.ActionBar.u3 {
         return drawChild;
     }
 
-    @Override // org.telegram.ui.Components.pv0
+    @Override // org.telegram.ui.Components.aw0
     public /* bridge */ /* synthetic */ int[] getColorKeys() {
         return null;
     }
 
-    @Override // org.telegram.ui.ActionBar.u3
+    @Override // org.telegram.ui.ActionBar.t3
     public RectF getRect() {
         a3 a3Var = this.A0.v;
         float left = a3Var.getLeft();
@@ -187,13 +187,13 @@ public final class j3 extends pv0 implements org.telegram.ui.ActionBar.u3 {
         return rectF;
     }
 
-    @Override // org.telegram.ui.Components.pv0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         qc.a(this, new a9(3));
     }
 
-    @Override // org.telegram.ui.Components.pv0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         qc.h(this);
@@ -217,7 +217,7 @@ public final class j3 extends pv0 implements org.telegram.ui.ActionBar.u3 {
                 int width = getWidth();
                 getHeight();
                 canvas2 = canvas;
-                cVar.r(canvas2, false, false, width, 1.0f - k3Var.f0);
+                cVar.q(canvas2, false, false, width, 1.0f - k3Var.f0);
             } else {
                 canvas2 = canvas;
             }
@@ -234,8 +234,8 @@ public final class j3 extends pv0 implements org.telegram.ui.ActionBar.u3 {
             RectF rectF = AndroidUtilities.rectTmp;
             rectF.set(0.0f, 0.0f, getWidth(), getHeight());
             canvas2.drawRect(rectF, k3Var.O);
-            org.telegram.ui.ActionBar.n3 n3Var = k3Var.r;
-            int i10 = n3Var != null ? (int) n3Var.G : 0;
+            org.telegram.ui.ActionBar.m3 m3Var = k3Var.r;
+            int i10 = m3Var != null ? (int) m3Var.G : 0;
             paint.setColor(k3Var.Q);
             float dp = AndroidUtilities.dp(16.0f) * (AndroidUtilities.isTablet() ? 1.0f : 1.0f - k3Var.b);
             rectF.set(AndroidUtilities.lerp(a3Var.getLeft(), 0, k3Var.f0), AndroidUtilities.lerp(a3Var.getTranslationY(), 0.0f, k3Var.b), a3Var.getRight(), a3Var.getTranslationY() + AndroidUtilities.dp(24.0f) + dp);
@@ -257,7 +257,7 @@ public final class j3 extends pv0 implements org.telegram.ui.ActionBar.u3 {
         return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.u3
+    @Override // org.telegram.ui.ActionBar.t3
     public void setDrawingFromOverlay(boolean z10) {
         if (this.x0 != z10) {
             this.x0 = z10;
@@ -272,7 +272,7 @@ public final class j3 extends pv0 implements org.telegram.ui.ActionBar.u3 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.u3
+    @Override // org.telegram.ui.ActionBar.t3
     public final float x(Canvas canvas, RectF rectF, float f7, RectF rectF2, float f10) {
         k3 k3Var = this.A0;
         a3 a3Var = k3Var.v;

@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import a4.a;
 import hg.c;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 final class zzqh extends zzqk {
     private final int zzc;
@@ -21,7 +21,7 @@ final class zzqh extends zzqk {
             return ((zzqk) this).zza[i10];
         }
         if (i10 < 0) {
-            throw new ArrayIndexOutOfBoundsException(c.i(i10, "Index < 0: "));
+            throw new ArrayIndexOutOfBoundsException(c.h(i10, "Index < 0: "));
         }
         throw new ArrayIndexOutOfBoundsException(a.m(i10, i11, "Index > length: ", ", "));
     }

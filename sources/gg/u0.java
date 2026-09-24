@@ -10,10 +10,10 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.Cells.u4;
 import org.telegram.ui.Cells.v3;
+import org.telegram.ui.Components.gl0;
 import org.telegram.ui.Components.u00;
-import org.telegram.ui.Components.wk0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public abstract class u0 extends c {
     public final Context K;
@@ -28,7 +28,7 @@ public abstract class u0 extends c {
         new u00(context, null).setIsSingleCell(true);
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.vl0
     public final boolean D(s4.c1 c1Var) {
         return true;
     }
@@ -134,6 +134,6 @@ public abstract class u0 extends c {
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
         d6 d6Var = this.L;
         Context context = this.K;
-        return new wk0(i10 == 0 ? new u4(context, d6Var) : new v3(context, d6Var));
+        return new gl0(i10 == 0 ? new u4(context, d6Var) : new v3(context, d6Var));
     }
 }

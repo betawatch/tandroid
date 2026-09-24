@@ -18,7 +18,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class d implements ServiceConnection {
     public final /* synthetic */ int a;
@@ -96,7 +96,7 @@ public final class d implements ServiceConnection {
                 break;
             default:
                 StringBuilder sb2 = new StringBuilder("Connected to SessionLifecycleService. Queue size ");
-                ni.f fVar = (ni.f) this.b;
+                oi.f fVar = (oi.f) this.b;
                 LinkedBlockingDeque linkedBlockingDeque = (LinkedBlockingDeque) fVar.c;
                 sb2.append(linkedBlockingDeque.size());
                 Log.d("SessionLifecycleClient", sb2.toString());
@@ -131,7 +131,7 @@ public final class d implements ServiceConnection {
                 break;
             default:
                 Log.d("SessionLifecycleClient", "Disconnected from SessionLifecycleService");
-                ni.f fVar = (ni.f) this.b;
+                oi.f fVar = (oi.f) this.b;
                 fVar.b = null;
                 fVar.getClass();
                 break;

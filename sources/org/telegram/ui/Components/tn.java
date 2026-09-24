@@ -12,9 +12,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class tn extends ll0 {
+public final class tn extends vl0 {
     public final Context c;
     public final /* synthetic */ vn d;
 
@@ -23,7 +23,7 @@ public final class tn extends ll0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.vl0
     public final boolean D(s4.c1 c1Var) {
         int b10 = c1Var.b();
         vn vnVar = this.d;
@@ -110,19 +110,19 @@ public final class tn extends ll0 {
         }
         boolean z12 = true;
         if (i11 == 6) {
-            org.telegram.ui.Cells.x8 x8Var = (org.telegram.ui.Cells.x8) view;
+            org.telegram.ui.Cells.w8 w8Var = (org.telegram.ui.Cells.w8) view;
             if (i10 == vnVar.y0) {
-                x8Var.f(LocaleController.getString(R.string.TodoAllowAddingTasks), vnVar.f0, vnVar.z0 != -1);
-                x8Var.e(null, true);
+                w8Var.f(LocaleController.getString(R.string.TodoAllowAddingTasks), vnVar.f0, vnVar.z0 != -1);
+                w8Var.e(null, true);
                 return;
             } else if (i10 == vnVar.z0) {
-                x8Var.f(LocaleController.getString(R.string.TodoAllowMarkingDone), vnVar.g0, false);
-                x8Var.e(null, true);
+                w8Var.f(LocaleController.getString(R.string.TodoAllowMarkingDone), vnVar.g0, false);
+                w8Var.e(null, true);
                 return;
             } else {
                 if (i10 == vnVar.J0) {
-                    x8Var.f(LocaleController.getString(R.string.PollV2HideResults), vnVar.W, false);
-                    x8Var.e(null, true);
+                    w8Var.f(LocaleController.getString(R.string.PollV2HideResults), vnVar.W, false);
+                    w8Var.e(null, true);
                     return;
                 }
                 return;
@@ -130,56 +130,56 @@ public final class tn extends ll0 {
         }
         Context context = this.c;
         if (i11 == 2) {
-            org.telegram.ui.Cells.f9 f9Var = (org.telegram.ui.Cells.f9) view;
-            f9Var.setFixedSize(0);
+            org.telegram.ui.Cells.e9 e9Var = (org.telegram.ui.Cells.e9) view;
+            e9Var.setFixedSize(0);
             new qq(new ColorDrawable(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.a7, d6Var)), org.telegram.ui.ActionBar.h6.V0(context, R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.h6.b7)).w = true;
             if (i10 == vnVar.q0) {
-                f9Var.setText(LocaleController.getString(R.string.AddAnExplanationInfo));
+                e9Var.setText(LocaleController.getString(R.string.AddAnExplanationInfo));
                 return;
             }
             if (i10 == vnVar.x0) {
-                f9Var.setFixedSize(12);
-                f9Var.setText(null);
+                e9Var.setFixedSize(12);
+                e9Var.setText(null);
                 return;
             }
             int i12 = vnVar.J - vnVar.M;
             if (i12 <= 0) {
-                f9Var.setText(LocaleController.getString(z11 ? R.string.TodoAddTaskInfoMax : R.string.AddAnOptionInfoMax));
+                e9Var.setText(LocaleController.getString(z11 ? R.string.TodoAddTaskInfoMax : R.string.AddAnOptionInfoMax));
                 return;
             }
             if (z11) {
-                f9Var.setText(LocaleController.formatPluralStringComma("TodoNewTaskInfo", i12));
+                e9Var.setText(LocaleController.formatPluralStringComma("TodoNewTaskInfo", i12));
                 return;
             } else if (i10 == vnVar.K0) {
-                f9Var.setText(LocaleController.getString(R.string.PollV2HideResultsInfo));
+                e9Var.setText(LocaleController.getString(R.string.PollV2HideResultsInfo));
                 return;
             } else {
-                f9Var.setText(LocaleController.formatString(R.string.AddAnOptionInfo, LocaleController.formatPluralString("Option", i12, new Object[0])));
+                e9Var.setText(LocaleController.formatString(R.string.AddAnOptionInfo, LocaleController.formatPluralString("Option", i12, new Object[0])));
                 return;
             }
         }
         if (i11 == 3) {
-            org.telegram.ui.Cells.s8 s8Var = (org.telegram.ui.Cells.s8) view;
+            org.telegram.ui.Cells.r8 r8Var = (org.telegram.ui.Cells.r8) view;
             if (i10 == vnVar.L0) {
                 String string = LocaleController.getString(R.string.PollV2AllowedCountries);
                 ArrayList arrayList = vnVar.P0;
-                s8Var.o(string, arrayList.isEmpty() ? LocaleController.getString(R.string.SearchCountriesSelect) : arrayList.size() == 1 ? LocaleController.getCountryName((String) arrayList.get(0)) : LocaleController.formatPluralString("PollV2AllowedCountriesListManyP", arrayList.size(), new Object[0]), false, true);
+                r8Var.o(string, arrayList.isEmpty() ? LocaleController.getString(R.string.SearchCountriesSelect) : arrayList.size() == 1 ? LocaleController.getCountryName((String) arrayList.get(0)) : LocaleController.formatPluralString("PollV2AllowedCountriesListManyP", arrayList.size(), new Object[0]), false, true);
                 return;
             } else {
                 if (i10 == vnVar.I0) {
-                    vnVar.U(s8Var, false);
+                    vnVar.U(r8Var, false);
                     return;
                 }
-                s8Var.e(-1, org.telegram.ui.ActionBar.h6.il);
+                r8Var.e(-1, org.telegram.ui.ActionBar.h6.il);
                 Drawable drawable = context.getResources().getDrawable(R.drawable.poll_add_circle);
                 Drawable drawable2 = context.getResources().getDrawable(R.drawable.poll_add_plus);
                 int v02 = org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.N6, d6Var);
                 PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
                 drawable.setColorFilter(new PorterDuffColorFilter(v02, mode));
                 drawable2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.k7, d6Var), mode));
-                s8Var.n(LocaleController.getString(z11 ? R.string.TodoNewTask : R.string.AddAnOption), new qq(drawable, drawable2), false);
-                s8Var.w = 20;
-                s8Var.s = 58;
+                r8Var.n(LocaleController.getString(z11 ? R.string.TodoNewTask : R.string.AddAnOption), new qq(drawable, drawable2), false);
+                r8Var.w = 20;
+                r8Var.s = 58;
                 return;
             }
         }
@@ -245,15 +245,15 @@ public final class tn extends ll0 {
                 m4Var = new org.telegram.ui.Cells.m4(this.c, org.telegram.ui.ActionBar.h6.L6, 21, 15, false, vnVar.a);
                 break;
             case 1:
-                View a7Var = new org.telegram.ui.Cells.a7(context, (org.telegram.ui.Cells.q3) null);
+                View b7Var = new org.telegram.ui.Cells.b7(context, (org.telegram.ui.Cells.c1) null);
                 new qq(new ColorDrawable(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.a7, d6Var)), org.telegram.ui.ActionBar.h6.V0(context, R.drawable.greydivider, org.telegram.ui.ActionBar.h6.b7)).w = true;
-                m4Var = a7Var;
+                m4Var = b7Var;
                 break;
             case 2:
-                m4Var = new org.telegram.ui.Cells.f9(context, d6Var);
+                m4Var = new org.telegram.ui.Cells.e9(context, d6Var);
                 break;
             case 3:
-                m4Var = new org.telegram.ui.Cells.s8(context, d6Var);
+                m4Var = new org.telegram.ui.Cells.r8(context, d6Var);
                 break;
             case 4:
             case 11:
@@ -316,7 +316,7 @@ public final class tn extends ll0 {
                 }, vnVar.a);
                 if (!z10) {
                     snVar.setTextRight(140);
-                    snVar.b().setOnClickListener(new org.telegram.ui.qf(23, this, snVar));
+                    snVar.b().setOnClickListener(new org.telegram.ui.pf(23, this, snVar));
                 }
                 int i13 = org.telegram.ui.ActionBar.h6.o7;
                 snVar.setIconsColor(i13);
@@ -340,7 +340,7 @@ public final class tn extends ll0 {
                 m4Var = snVar;
                 break;
             case 6:
-                m4Var = new org.telegram.ui.Cells.x8(context, d6Var);
+                m4Var = new org.telegram.ui.Cells.w8(context, d6Var);
                 break;
             case 7:
                 qn qnVar = new qn(this, context, vnVar.I ? 1 : 0);

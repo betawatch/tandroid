@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class UserNameResolver {
     private static final long CACHE_TIME = 3600000;
@@ -17,7 +17,7 @@ public class UserNameResolver {
     android.util.LruCache<String, CachedPeer> resolvedCache = new android.util.LruCache<>(100);
     HashMap<String, ArrayList<Utilities.Callback<Long>>> resolvingConsumers = new HashMap<>();
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public class CachedPeer {
         final long peerId;
         final long time = System.currentTimeMillis();
@@ -33,7 +33,7 @@ public class UserNameResolver {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void lambda$resolve$0(String str, TLRPC.TL_error tL_error, TLObject tLObject) {
-        org.telegram.ui.ActionBar.n2 R;
+        org.telegram.ui.ActionBar.m2 R;
         ArrayList<Utilities.Callback<Long>> remove = this.resolvingConsumers.remove(str);
         if (remove == null) {
             return;
@@ -68,7 +68,7 @@ public class UserNameResolver {
         if (str3 == null || !str3.contains("FLOOD_WAIT") || (R = LaunchActivity.R()) == null) {
             return;
         }
-        z0.p(R.string.FloodWait, org.telegram.ui.Components.xc.a0(R), null);
+        ok.p(R.string.FloodWait, org.telegram.ui.Components.yc.a0(R), null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -112,7 +112,7 @@ public class UserNameResolver {
                 StringBuilder sb2 = new StringBuilder("resolve username from cache ");
                 sb2.append(str);
                 sb2.append(" ");
-                hg.c.w(sb2, cachedPeer.peerId);
+                hg.c.u(sb2, cachedPeer.peerId);
                 return null;
             }
             this.resolvedCache.remove(str);

@@ -12,18 +12,18 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.y5;
-import org.telegram.ui.Cells.g8;
+import org.telegram.ui.ActionBar.x5;
+import org.telegram.ui.Cells.f8;
 import org.telegram.ui.Components.rr;
-import w7.x5;
+import w7.y5;
 import yf.p;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class c extends FrameLayout implements e, y5 {
+public final class c extends FrameLayout implements e, x5 {
     public ShapeDrawable a;
     public final d6 b;
-    public final g8 c;
+    public final f8 c;
     public final TextView d;
     public final le.c e;
 
@@ -31,16 +31,16 @@ public final class c extends FrameLayout implements e, y5 {
         super(context);
         this.e = new le.c(0, this, rr.h, 380L, false);
         this.b = d6Var;
-        g8 g8Var = new g8(context, d6Var, false);
-        this.c = g8Var;
-        addView(g8Var, x5.d(45, 45.0f, 49, 0.0f, 8.0f, 0.0f, 0.0f));
+        f8 f8Var = new f8(context, d6Var, false);
+        this.c = f8Var;
+        addView(f8Var, y5.d(45, 45.0f, 49, 0.0f, 8.0f, 0.0f, 0.0f));
         TextView textView = new TextView(context);
         this.d = textView;
         textView.setTextSize(1, 10.0f);
         textView.setGravity(17);
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setSingleLine();
-        addView(textView, x5.d(-1, -2.0f, 80, 6.0f, 0.0f, 6.0f, 5.0f));
+        addView(textView, y5.d(-1, -2.0f, 80, 6.0f, 0.0f, 6.0f, 5.0f));
         e();
     }
 
@@ -76,7 +76,7 @@ public final class c extends FrameLayout implements e, y5 {
         super.dispatchDraw(canvas);
     }
 
-    @Override // org.telegram.ui.ActionBar.y5
+    @Override // org.telegram.ui.ActionBar.x5
     public final void e() {
         ShapeDrawable shapeDrawable = this.a;
         d6 d6Var = this.b;

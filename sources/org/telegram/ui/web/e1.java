@@ -4,15 +4,14 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.n2;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class e1 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ g1 a;
+    public final /* synthetic */ h1 a;
 
-    public e1(g1 g1Var) {
-        this.a = g1Var;
+    public e1(h1 h1Var) {
+        this.a = h1Var;
     }
 
     @Override // org.telegram.ui.ActionBar.j
@@ -20,16 +19,16 @@ public final class e1 extends org.telegram.ui.ActionBar.j {
         org.telegram.ui.ActionBar.k kVar;
         org.telegram.ui.ActionBar.k kVar2;
         if (i10 == -1) {
-            g1 g1Var = this.a;
-            kVar = ((n2) g1Var).actionBar;
+            h1 h1Var = this.a;
+            kVar = ((org.telegram.ui.ActionBar.m2) h1Var).actionBar;
             if (!kVar.s()) {
-                g1Var.finishFragment();
+                h1Var.finishFragment();
                 return;
             }
-            kVar2 = ((n2) g1Var).actionBar;
+            kVar2 = ((org.telegram.ui.ActionBar.m2) h1Var).actionBar;
             kVar2.r();
-            g1Var.s.clear();
-            AndroidUtilities.forEachViews((RecyclerView) g1Var.a, (Utilities.Callback<View>) new ai.i(23));
+            h1Var.s.clear();
+            AndroidUtilities.forEachViews((RecyclerView) h1Var.a, (Utilities.Callback<View>) new ai.i(23));
         }
     }
 }

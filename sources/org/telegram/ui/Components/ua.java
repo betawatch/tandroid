@@ -4,7 +4,7 @@ import android.content.Context;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public abstract class ua extends bb {
     public final LinearLayout X;
@@ -18,13 +18,13 @@ public abstract class ua extends bb {
         linearLayout.setOrientation(1);
     }
 
-    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog
+    @Override // org.telegram.ui.ActionBar.e3, android.app.Dialog
     public final void setTitle(CharSequence charSequence) {
         this.e.setTitle(charSequence);
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final ll0 v(ml0 ml0Var) {
+    public final vl0 v(wl0 wl0Var) {
         return new gg.n0(this, 1);
     }
 

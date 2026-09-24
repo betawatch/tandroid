@@ -14,18 +14,18 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.ik0;
-import org.telegram.ui.Components.pv0;
+import org.telegram.ui.Components.aw0;
+import org.telegram.ui.Components.sk0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class bc extends r {
     public final Path R1;
     public final /* synthetic */ lc S1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bc(lc lcVar, Activity activity, FrameLayout frameLayout, pv0 pv0Var, FrameLayout frameLayout2, ai.d dVar, org.telegram.ui.Components.ja jaVar) {
-        super(activity, frameLayout, pv0Var, frameLayout2, dVar, jaVar);
+    public bc(lc lcVar, Activity activity, FrameLayout frameLayout, aw0 aw0Var, FrameLayout frameLayout2, ai.d dVar, org.telegram.ui.Components.ja jaVar) {
+        super(activity, frameLayout, aw0Var, frameLayout2, dVar, jaVar);
         this.S1 = lcVar;
         this.R1 = new Path();
     }
@@ -38,7 +38,7 @@ public final class bc extends r {
             return false;
         }
         int i11 = MessagesController.getInstance(this.U).storyCaptionLengthLimitPremium;
-        SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatPluralString("CaptionPremiumSubtitle", Math.round(i11 / MessagesController.getInstance(this.U).storyCaptionLengthLimitDefault), hg.c.i(i11, "")));
+        SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatPluralString("CaptionPremiumSubtitle", Math.round(i11 / MessagesController.getInstance(this.U).storyCaptionLengthLimitDefault), hg.c.h(i11, "")));
         int indexOf = replaceTags.toString().indexOf("__");
         if (indexOf >= 0) {
             replaceTags.replace(indexOf, indexOf + 2, (CharSequence) "");
@@ -49,7 +49,7 @@ public final class bc extends r {
                 replaceTags.setSpan(new ac(this, i10), indexOf, indexOf2, 33);
             }
         }
-        org.telegram.ui.Components.qc M = new org.telegram.ui.Components.xc(this.S1.l0, this.a).M(LocaleController.getString(R.string.CaptionPremiumTitle), replaceTags, R.raw.caption_limit);
+        org.telegram.ui.Components.qc M = new org.telegram.ui.Components.yc(this.S1.l0, this.a).M(LocaleController.getString(R.string.CaptionPremiumTitle), replaceTags, R.raw.caption_limit);
         M.a = 2;
         M.j = 5000;
         M.k(false);
@@ -107,7 +107,7 @@ public final class bc extends r {
                 for (int i10 = 0; i10 < lcVar.v1.R0.getChildCount(); i10++) {
                     View childAt = lcVar.v1.R0.getChildAt(i10);
                     if (childAt instanceof qg.j) {
-                        ik0 selectionBounds = ((qg.j) childAt).getSelectionBounds();
+                        sk0 selectionBounds = ((qg.j) childAt).getSelectionBounds();
                         RectF rectF = AndroidUtilities.rectTmp;
                         float f11 = selectionBounds.a;
                         float f12 = selectionBounds.b;

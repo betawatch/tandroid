@@ -1,121 +1,76 @@
 package org.telegram.ui;
 
-import android.view.KeyEvent;
-import android.view.MotionEvent;
-import android.widget.TextView;
+import android.view.View;
+import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ql0 implements TextView.OnEditorActionListener {
+public final /* synthetic */ class ql0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ in0 b;
+    public final /* synthetic */ gn0 b;
 
-    public /* synthetic */ ql0(in0 in0Var, int i10) {
+    public /* synthetic */ ql0(gn0 gn0Var, int i10) {
         this.a = i10;
-        this.b = in0Var;
+        this.b = gn0Var;
     }
 
-    @Override // android.widget.TextView.OnEditorActionListener
-    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        ViewGroup viewGroup;
         switch (this.a) {
             case 0:
-                in0 in0Var = this.b;
-                if (i10 != 5) {
-                    if (i10 != 6) {
-                        in0Var.getClass();
-                        break;
-                    } else {
-                        in0Var.L.callOnClick();
-                        break;
-                    }
-                } else {
-                    in0Var.Y[2].requestFocus();
+                gn0 gn0Var = this.b;
+                ViewGroup[] viewGroupArr = gn0Var.Z;
+                if (viewGroupArr != null && (viewGroup = viewGroupArr[0]) != null && viewGroup.getVisibility() == 0) {
+                    gn0Var.Y[0].requestFocus();
+                    AndroidUtilities.showKeyboard(gn0Var.Y[0]);
                     break;
                 }
+                break;
             case 1:
-                in0 in0Var2 = this.b;
-                in0Var2.getClass();
-                if (i10 == 5) {
-                    int intValue = ((Integer) textView.getTag()).intValue() + 1;
-                    EditTextBoldCursor[] editTextBoldCursorArr = in0Var2.Y;
-                    if (intValue < editTextBoldCursorArr.length) {
-                        if (!editTextBoldCursorArr[intValue].isFocusable()) {
-                            in0Var2.Y[intValue].dispatchTouchEvent(MotionEvent.obtain(0L, 0L, 1, 0.0f, 0.0f, 0));
-                            textView.clearFocus();
-                            AndroidUtilities.hideKeyboard(textView);
-                            break;
-                        } else {
-                            in0Var2.Y[intValue].requestFocus();
-                            break;
-                        }
-                    }
-                }
+                gn0 gn0Var2 = this.b;
+                gn0Var2.presentFragment(gn0Var2.h1, true);
+                gn0Var2.h1 = null;
                 break;
             case 2:
-                in0 in0Var3 = this.b;
-                in0Var3.getClass();
-                if (i10 == 5) {
-                    int intValue2 = ((Integer) textView.getTag()).intValue() + 1;
-                    EditTextBoldCursor[] editTextBoldCursorArr2 = in0Var3.a0;
-                    if (intValue2 < editTextBoldCursorArr2.length) {
-                        if (!editTextBoldCursorArr2[intValue2].isFocusable()) {
-                            in0Var3.a0[intValue2].dispatchTouchEvent(MotionEvent.obtain(0L, 0L, 1, 0.0f, 0.0f, 0));
-                            textView.clearFocus();
-                            AndroidUtilities.hideKeyboard(textView);
-                            break;
-                        } else {
-                            in0Var3.a0[intValue2].requestFocus();
-                            break;
-                        }
-                    }
+                gn0 gn0Var3 = this.b;
+                EditTextBoldCursor[] editTextBoldCursorArr = gn0Var3.a0;
+                if (editTextBoldCursorArr != null) {
+                    gn0Var3.I1(editTextBoldCursorArr[0]);
+                    break;
                 }
                 break;
             case 3:
-                in0 in0Var4 = this.b;
-                in0Var4.getClass();
-                if (i10 == 6 || i10 == 5) {
-                    in0Var4.L.callOnClick();
-                    break;
-                }
+                AndroidUtilities.showKeyboard(this.b.Y[2]);
                 break;
             case 4:
-                in0 in0Var5 = this.b;
-                in0Var5.getClass();
-                if (i10 == 5) {
-                    int intValue3 = ((Integer) textView.getTag()).intValue() + 1;
-                    EditTextBoldCursor[] editTextBoldCursorArr3 = in0Var5.Y;
-                    if (intValue3 < editTextBoldCursorArr3.length) {
-                        if (!editTextBoldCursorArr3[intValue3].isFocusable()) {
-                            in0Var5.Y[intValue3].dispatchTouchEvent(MotionEvent.obtain(0L, 0L, 1, 0.0f, 0.0f, 0));
-                            textView.clearFocus();
-                            AndroidUtilities.hideKeyboard(textView);
-                            break;
-                        } else {
-                            in0Var5.Y[intValue3].requestFocus();
-                            break;
-                        }
-                    }
-                }
+                this.b.x1();
                 break;
             case 5:
-                in0 in0Var6 = this.b;
-                in0Var6.getClass();
-                if (i10 == 5 || i10 == 6) {
-                    in0Var6.L.callOnClick();
-                    break;
+                int i10 = 0;
+                while (true) {
+                    gn0 gn0Var4 = this.b;
+                    if (i10 >= gn0Var4.c0.getChildCount()) {
+                        gn0Var4.x1();
+                        gn0Var4.q1.clear();
+                        gn0Var4.p1.clear();
+                        gn0Var4.y.values.clear();
+                        gn0Var4.Q1();
+                        break;
+                    } else {
+                        View childAt = gn0Var4.c0.getChildAt(i10);
+                        if (childAt instanceof fn0) {
+                            gn0Var4.c0.removeView(childAt);
+                            i10--;
+                        }
+                        i10++;
+                    }
                 }
-                break;
             default:
-                in0 in0Var7 = this.b;
-                in0Var7.getClass();
-                if (i10 == 6 || i10 == 5) {
-                    in0Var7.L.callOnClick();
-                    break;
-                }
+                this.b.finishFragment();
                 break;
         }
-        return true;
     }
 }

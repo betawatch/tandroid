@@ -1,60 +1,89 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class gs0 extends u00 {
-    public final /* synthetic */ ur0 U;
-    public final /* synthetic */ yu0 V;
+public final class gs0 extends oz {
+    public final uv0 X;
+    public final /* synthetic */ fs0 Y;
+    public final /* synthetic */ jv0 Z;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gs0(yu0 yu0Var, Context context, ur0 ur0Var) {
-        super(context, null);
-        this.V = yu0Var;
-        this.U = ur0Var;
+    public gs0(jv0 jv0Var, fs0 fs0Var) {
+        super(100, false);
+        this.Z = jv0Var;
+        this.Y = fs0Var;
+        this.X = new uv0();
     }
 
-    @Override // org.telegram.ui.Components.u00
-    public final int getColumnsCount() {
-        return this.V.m1[yu0.p0(this.U.F) ? 1 : 0];
+    @Override // s4.o0
+    public final int A() {
+        if (this.Y.h.getAdapter() != this.Z.O) {
+            return 0;
+        }
+        return B();
     }
 
-    @Override // org.telegram.ui.Components.u00
-    public final int getViewType() {
-        setIsSingleCell(false);
-        int i10 = this.U.F;
-        if (i10 == 0 || i10 == 5) {
-            return 2;
-        }
-        if (i10 == 1) {
-            return 3;
-        }
-        if (i10 != 2 && i10 != 4) {
-            if (i10 == 3) {
-                return 5;
+    @Override // org.telegram.ui.Components.oz
+    public final uv0 D1(int i10) {
+        int i11;
+        int i12;
+        s4.h0 adapter = this.Y.h.getAdapter();
+        jv0 jv0Var = this.Z;
+        yu0[] yu0VarArr = jv0Var.t1;
+        TLRPC.Document document = (adapter != jv0Var.O || yu0VarArr[5].a.isEmpty()) ? null : ((MessageObject) yu0VarArr[5].a.get(i10)).getDocument();
+        uv0 uv0Var = this.X;
+        uv0Var.b = 100.0f;
+        uv0Var.a = 100.0f;
+        if (document != null) {
+            TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 90);
+            if (closestPhotoSizeWithSize != null && (i11 = closestPhotoSizeWithSize.w) != 0 && (i12 = closestPhotoSizeWithSize.h) != 0) {
+                uv0Var.a = i11;
+                uv0Var.b = i12;
             }
-            if (i10 != 7) {
-                if (i10 == 6) {
-                    if (this.V.I0.getTabsCount() == 1) {
-                        setIsSingleCell(true);
-                        return 1;
-                    }
-                } else if (yu0.p0(i10)) {
-                    return 27;
+            ArrayList<TLRPC.DocumentAttribute> arrayList = document.attributes;
+            for (int i13 = 0; i13 < arrayList.size(); i13++) {
+                TLRPC.DocumentAttribute documentAttribute = arrayList.get(i13);
+                if ((documentAttribute instanceof TLRPC.TL_documentAttributeImageSize) || (documentAttribute instanceof TLRPC.TL_documentAttributeVideo)) {
+                    uv0Var.a = documentAttribute.w;
+                    uv0Var.b = documentAttribute.h;
+                    break;
                 }
-                return 1;
             }
         }
-        return 6;
+        return uv0Var;
     }
 
-    @Override // org.telegram.ui.Components.u00, android.view.View
-    public final void onDraw(Canvas canvas) {
-        yu0 yu0Var = this.V;
-        yu0Var.T0.setColor(yu0Var.h0(org.telegram.ui.ActionBar.h6.d6));
-        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), yu0Var.T0);
-        super.onDraw(canvas);
+    @Override // s4.s, s4.o0
+    public final void U(of.e eVar, s4.z0 z0Var, View view, s0.d dVar) {
+        super.U(eVar, z0Var, view, dVar);
+        AccessibilityNodeInfo accessibilityNodeInfo = dVar.a;
+        AccessibilityNodeInfo.CollectionItemInfo collectionItemInfo = accessibilityNodeInfo.getCollectionItemInfo();
+        he.c cVar = collectionItemInfo != null ? new he.c(collectionItemInfo) : null;
+        if (cVar != null) {
+            Object obj = cVar.a;
+            if (((AccessibilityNodeInfo.CollectionItemInfo) obj).isHeading()) {
+                accessibilityNodeInfo.setCollectionItemInfo(AccessibilityNodeInfo.CollectionItemInfo.obtain(((AccessibilityNodeInfo.CollectionItemInfo) obj).getRowIndex(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getRowSpan(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getColumnIndex(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getColumnSpan(), false));
+            }
+        }
+    }
+
+    @Override // s4.c0
+    public final void z0(s4.z0 z0Var, int[] iArr) {
+        super.z0(z0Var, iArr);
+        fs0 fs0Var = this.Y;
+        int i10 = fs0Var.F;
+        if (i10 == 0 || jv0.p0(i10)) {
+            iArr[1] = Math.max(iArr[1], org.telegram.ui.Cells.u7.a(1) * 2);
+        } else if (fs0Var.F == 1) {
+            iArr[1] = Math.max(iArr[1], AndroidUtilities.dp(56.0f) * 2);
+        }
     }
 }

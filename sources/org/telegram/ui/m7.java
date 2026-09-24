@@ -2,17 +2,17 @@ package org.telegram.ui;
 
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class m7 extends og.a {
-    public s6 c;
+    public r6 c;
     public zh.a d;
 
     public final boolean equals(Object obj) {
         zh.a aVar;
         zh.a aVar2;
-        s6 s6Var;
-        s6 s6Var2;
+        r6 r6Var;
+        r6 r6Var2;
         if (this == obj) {
             return true;
         }
@@ -20,8 +20,8 @@ public final class m7 extends og.a {
             m7 m7Var = (m7) obj;
             int i10 = this.a;
             if (i10 == m7Var.a) {
-                if (i10 == 1 && (s6Var = this.c) != null && (s6Var2 = m7Var.c) != null) {
-                    return s6Var.a == s6Var2.a;
+                if (i10 == 1 && (r6Var = this.c) != null && (r6Var2 = m7Var.c) != null) {
+                    return r6Var.a == r6Var2.a;
                 }
                 if (i10 == 2 && (aVar = this.d) != null && (aVar2 = m7Var.d) != null) {
                     return Objects.equals(aVar.a, aVar2.a);

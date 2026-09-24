@@ -6,12 +6,12 @@ import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.pv0;
+import org.telegram.ui.Components.aw0;
 import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public final class a4 extends org.telegram.ui.ActionBar.f3 {
+public final class a4 extends org.telegram.ui.ActionBar.e3 {
     public final z3 b;
     public ValueAnimator c;
     public o1.k d;
@@ -27,25 +27,25 @@ public final class a4 extends org.telegram.ui.ActionBar.f3 {
         z3Var.setMultipleOnClick(false);
         z3Var.setOnBackClickListener(new x3(this, 0));
         z3Var.setOnSelectListener(new bi.v(this, 4));
-        pv0 pv0Var = new pv0(context, null);
-        this.containerView = pv0Var;
+        aw0 aw0Var = new aw0(context, null);
+        this.containerView = aw0Var;
         int i10 = this.backgroundPaddingLeft;
-        pv0Var.setPadding(i10, 0, i10, 0);
+        aw0Var.setPadding(i10, 0, i10, 0);
         this.containerView.addView(z3Var);
     }
 
-    @Override // org.telegram.ui.ActionBar.f3
+    @Override // org.telegram.ui.ActionBar.e3
     public final boolean canDismissWithSwipe() {
         return !this.b.w;
     }
 
-    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
+    @Override // org.telegram.ui.ActionBar.e3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.i2
     public final void dismiss() {
         n(false, new x3(this, 1));
         super.dismiss();
     }
 
-    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog, android.view.Window.Callback
+    @Override // org.telegram.ui.ActionBar.e3, android.app.Dialog, android.view.Window.Callback
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         if (motionEvent.getAction() != 0 || motionEvent.getY() >= this.b.g()) {
             return super.dispatchTouchEvent(motionEvent);
@@ -77,7 +77,7 @@ public final class a4 extends org.telegram.ui.ActionBar.f3 {
         this.c.start();
     }
 
-    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog
+    @Override // org.telegram.ui.ActionBar.e3, android.app.Dialog
     public final void show() {
         super.show();
         n(true, null);

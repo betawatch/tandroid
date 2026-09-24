@@ -10,9 +10,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class mm extends org.telegram.ui.mu0 {
+public final class mm extends org.telegram.ui.lu0 {
     public ArrayList a = new ArrayList();
     public final /* synthetic */ qm b;
 
@@ -20,15 +20,15 @@ public final class mm extends org.telegram.ui.mu0 {
         this.b = qmVar;
     }
 
-    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
+    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
     public final void D() {
         qm qmVar = this.b;
         qmVar.c();
         qmVar.i(qmVar.P.P, false);
     }
 
-    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
-    public final org.telegram.ui.wu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
+    public final org.telegram.ui.vu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
         MediaController.PhotoEntry photoEntry;
         ArrayList arrayList;
         qm qmVar = this.b;
@@ -60,35 +60,35 @@ public final class mm extends org.telegram.ui.mu0 {
                 }
             }
             if (pmVar != null && omVar != null) {
-                org.telegram.ui.wu0 wu0Var = new org.telegram.ui.wu0();
+                org.telegram.ui.vu0 vu0Var = new org.telegram.ui.vu0();
                 int[] iArr = new int[2];
                 qmVar.getLocationInWindow(iArr);
                 if (Build.VERSION.SDK_INT < 26) {
                     iArr[0] = iArr[0] - rmVar.b.getLeftInset();
                 }
-                wu0Var.b = iArr[0];
-                wu0Var.c = iArr[1] + ((int) pmVar.a);
-                wu0Var.k = 1.0f;
-                wu0Var.d = qmVar;
+                vu0Var.b = iArr[0];
+                vu0Var.c = iArr[1] + ((int) pmVar.a);
+                vu0Var.k = 1.0f;
+                vu0Var.d = qmVar;
                 ImageReceiver imageReceiver = omVar.c;
-                wu0Var.a = imageReceiver;
-                wu0Var.e = imageReceiver.getBitmapSafe();
-                wu0Var.h = new int[]{(int) r8.left, (int) r8.top, (int) r8.right, (int) r8.bottom};
+                vu0Var.a = imageReceiver;
+                vu0Var.e = imageReceiver.getBitmapSafe();
+                vu0Var.h = new int[]{(int) r8.left, (int) r8.top, (int) r8.right, (int) r8.bottom};
                 RectF rectF = omVar.q;
-                wu0Var.j = (int) (-qmVar.getY());
-                wu0Var.i = qmVar.getHeight() - ((int) (((-qmVar.getY()) + rmVar.r.getHeight()) - rmVar.b.l1()));
-                return wu0Var;
+                vu0Var.j = (int) (-qmVar.getY());
+                vu0Var.i = qmVar.getHeight() - ((int) (((-qmVar.getY()) + rmVar.r.getHeight()) - rmVar.b.l1()));
+                return vu0Var;
             }
         }
         return null;
     }
 
-    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
+    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
     public final int H() {
         return this.b.h.size();
     }
 
-    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
+    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
     public final int Q(Object obj) {
         int indexOf;
         Integer valueOf = Integer.valueOf(((MediaController.PhotoEntry) obj).imageId);
@@ -101,7 +101,7 @@ public final class mm extends org.telegram.ui.mu0 {
         return indexOf;
     }
 
-    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
+    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
     public final int R(int i10) {
         MediaController.PhotoEntry photoEntry;
         if (i10 < 0 || i10 >= this.a.size() || (photoEntry = (MediaController.PhotoEntry) this.a.get(i10)) == null) {
@@ -110,7 +110,7 @@ public final class mm extends org.telegram.ui.mu0 {
         return this.b.h.indexOf(Integer.valueOf(photoEntry.imageId));
     }
 
-    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
+    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
     public final void W(int i10) {
         MediaController.PhotoEntry photoEntry;
         ArrayList arrayList;
@@ -151,12 +151,12 @@ public final class mm extends org.telegram.ui.mu0 {
         qmVar.invalidate();
     }
 
-    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
+    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
     public final ArrayList c() {
         return this.b.h;
     }
 
-    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
+    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
     public final int k(int i10, VideoEditedInfo videoEditedInfo) {
         if (i10 < 0 || i10 >= this.a.size()) {
             return -1;
@@ -177,17 +177,17 @@ public final class mm extends org.telegram.ui.mu0 {
         return indexOf;
     }
 
-    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
+    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
     public final boolean u() {
         return false;
     }
 
-    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
+    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
     public final HashMap v() {
         return this.b.d;
     }
 
-    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
+    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
     public final boolean x(int i10) {
         if (i10 < 0 || i10 >= this.a.size()) {
             return false;

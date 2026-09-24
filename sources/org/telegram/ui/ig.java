@@ -1,85 +1,77 @@
 package org.telegram.ui;
 
+import android.animation.ValueAnimator;
+import android.view.View;
+import android.widget.ImageView;
 import java.util.ArrayList;
-import java.util.regex.Pattern;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
+import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ig implements Utilities.Callback2 {
+public final /* synthetic */ class ig implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
+    public final /* synthetic */ float b;
     public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
 
-    public /* synthetic */ ig(org.telegram.ui.ActionBar.n2 n2Var, int i10, TLObject tLObject, int i11) {
-        this.a = i11;
-        this.c = n2Var;
-        this.b = i10;
-        this.d = tLObject;
+    public /* synthetic */ ig(Object obj, float f7, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.b = f7;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
-        TLRPC.Updates updates;
-        int i10 = this.a;
-        Object obj3 = this.d;
-        Object obj4 = this.c;
-        switch (i10) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new ei.l3((xn) obj4, this.b, (Boolean) obj, (TLRPC.WebPage) obj2, (TL_account.getWebPagePreview) obj3, 16));
-                break;
-            case 1:
-                LaunchActivity launchActivity = (LaunchActivity) obj4;
-                ia0 ia0Var = (ia0) obj3;
-                TLRPC.ChatInviteJoinResult chatInviteJoinResult = (TLRPC.ChatInviteJoinResult) obj;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                Pattern pattern = LaunchActivity.B1;
-                if (chatInviteJoinResult instanceof TLRPC.TL_chatInviteJoinResultOk) {
-                    TLRPC.Updates updates2 = ((TLRPC.TL_chatInviteJoinResultOk) chatInviteJoinResult).updates;
-                    MessagesController.getInstance(launchActivity.O).processUpdates(updates2, false);
-                    updates = updates2;
-                } else {
-                    if (chatInviteJoinResult instanceof TLRPC.TL_chatInviteJoinResultWebView) {
-                        AndroidUtilities.runOnUIThread(new hw(27, launchActivity, (TLRPC.TL_chatInviteJoinResultWebView) chatInviteJoinResult));
-                    }
-                    updates = null;
-                }
-                AndroidUtilities.runOnUIThread(new ei.l3(launchActivity, ia0Var, tL_error, updates, this.b, 26));
-                break;
-            default:
-                PasskeysActivity passkeysActivity = (PasskeysActivity) obj4;
-                TL_account.Passkey passkey = (TL_account.Passkey) obj3;
-                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
-                ArrayList arrayList = passkeysActivity.b;
-                boolean z10 = ((TLRPC.Bool) obj) instanceof TLRPC.TL_boolFalse;
-                int i11 = this.b;
-                if (!z10) {
-                    if (tL_error2 != null) {
-                        org.telegram.ui.Components.xc.a0(passkeysActivity).d0(tL_error2, false);
-                        arrayList.add(Utilities.clamp(i11, arrayList.size(), 0), passkey);
-                        passkeysActivity.a.Y2.N(true);
-                        break;
-                    }
-                } else {
-                    org.telegram.ui.Components.xc.a0(passkeysActivity).c0("FALSE", false);
-                    arrayList.add(Utilities.clamp(i11, arrayList.size(), 0), passkey);
-                    passkeysActivity.a.Y2.N(true);
+                wn wnVar = (wn) this.c;
+                wnVar.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                wnVar.H8 = floatValue;
+                wnVar.L8 = floatValue / this.b;
+                View view = wnVar.fragmentView;
+                if (view != null) {
+                    view.invalidate();
                     break;
                 }
                 break;
+            case 1:
+                ArrayList arrayList = (ArrayList) this.c;
+                float floatValue2 = 1.0f - ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                    View view2 = (View) arrayList.get(i10);
+                    if (view2 != null) {
+                        view2.setTranslationY(this.b * floatValue2);
+                    }
+                }
+                break;
+            case 2:
+                ((org.telegram.ui.Components.vn) this.c).E.setTranslationY(AndroidUtilities.lerp(this.b, 0.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
+                break;
+            case 3:
+                ((rv0) this.c).R.setTranslationY(AndroidUtilities.lerp(this.b, 0.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
+                break;
+            default:
+                x11 x11Var = (x11) this.c;
+                x11Var.getClass();
+                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                float lerp = AndroidUtilities.lerp(0.0f, this.b, floatValue3);
+                x11Var.a.setTranslationX(lerp);
+                x11Var.b.setTranslationX(lerp);
+                ImageView imageView = x11Var.c;
+                imageView.setTranslationX(lerp);
+                org.telegram.ui.Components.op opVar = x11Var.f;
+                opVar.setTranslationX((LocaleController.isRTL ? AndroidUtilities.dp(32.0f) : -AndroidUtilities.dp(32.0f)) + lerp);
+                float f7 = (floatValue3 * 0.5f) + 0.5f;
+                opVar.setScaleX(f7);
+                opVar.setScaleY(f7);
+                opVar.setAlpha(floatValue3);
+                float f10 = 1.0f - floatValue3;
+                float f11 = (f10 * 0.5f) + 0.5f;
+                imageView.setScaleX(f11);
+                imageView.setScaleY(f11);
+                imageView.setAlpha(f10);
+                break;
         }
-    }
-
-    public /* synthetic */ ig(LaunchActivity launchActivity, ia0 ia0Var, int i10) {
-        this.a = 1;
-        this.c = launchActivity;
-        this.d = ia0Var;
-        this.b = i10;
     }
 }

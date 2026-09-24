@@ -1,47 +1,37 @@
 package qg;
 
-import android.graphics.Insets;
-import android.graphics.Rect;
-import android.os.Build;
-import android.view.View;
-import android.view.WindowInsets;
+import android.content.Context;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class u2 implements View.OnApplyWindowInsetsListener {
-    public final /* synthetic */ v2 a;
+public final class u2 extends b {
+    public final /* synthetic */ v2 E;
 
-    public u2(v2 v2Var) {
-        this.a = v2Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public u2(v2 v2Var, Context context) {
+        super(context);
+        this.E = v2Var;
     }
 
-    @Override // android.view.View.OnApplyWindowInsetsListener
-    public final WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
-        WindowInsets windowInsets2;
-        int i10;
-        int i11;
-        int i12;
-        int i13;
-        v2 v2Var = this.a;
-        ai.f0 f0Var = v2Var.b;
-        Rect rect = v2Var.h;
-        int i14 = Build.VERSION.SDK_INT;
-        if (i14 >= 30) {
-            Insets insets = windowInsets.getInsets(647);
-            i10 = insets.left;
-            i11 = insets.top;
-            i12 = insets.right;
-            i13 = insets.bottom;
-            rect.set(i10, i11, i12, i13);
-        } else {
-            rect.set(windowInsets.getStableInsetLeft(), windowInsets.getStableInsetTop(), windowInsets.getStableInsetRight(), windowInsets.getStableInsetBottom());
+    @Override // org.telegram.ui.Components.eu, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        i iVar = this.E.H;
+        if (iVar == null || iVar.getVisibility() != 0) {
+            return false;
         }
-        f0Var.setPadding(rect.left, rect.top, rect.right, rect.bottom);
-        f0Var.requestLayout();
-        if (i14 < 30) {
-            return windowInsets.consumeSystemWindowInsets();
-        }
-        windowInsets2 = WindowInsets.CONSUMED;
-        return windowInsets2;
+        return super.dispatchTouchEvent(motionEvent);
+    }
+
+    @Override // org.telegram.ui.Components.eu, android.widget.TextView, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        this.E.m();
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        this.E.m();
     }
 }

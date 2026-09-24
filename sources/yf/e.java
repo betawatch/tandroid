@@ -28,10 +28,11 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.pf;
-import org.telegram.ui.Components.yi0;
-import org.telegram.ui.g91;
+import org.telegram.ui.Components.ij0;
+import org.telegram.ui.l21;
+import pg.c1;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class e {
     public static int A;
@@ -54,7 +55,7 @@ public final class e {
     public final File m;
     public int n;
     public final AtomicBoolean o;
-    public final qg.b0 p;
+    public final c1 p;
     public volatile boolean q;
     public volatile boolean r;
     public RandomAccessFile s;
@@ -70,7 +71,7 @@ public final class e {
         this.e = arrayList;
         this.h = new Object();
         this.o = new AtomicBoolean(false);
-        this.p = new qg.b0(this, 9);
+        this.p = new c1(this, 10);
         this.a = (BitmapDrawable) cVar;
         this.b = i10;
         this.c = i11;
@@ -92,7 +93,7 @@ public final class e {
         sb2.append("_");
         sb2.append(i11);
         sb2.append(z10 ? "_nolimit" : " ");
-        File file3 = new File(file2, a4.a.t(sb2, i12 != 0 ? hg.c.i(i12, "_fitz") : "", ".pcache2"));
+        File file3 = new File(file2, a4.a.t(sb2, i12 != 0 ? hg.c.h(i12, "_fitz") : "", ".pcache2"));
         this.m = file3;
         this.f = i10 < AndroidUtilities.dp(60.0f) && i11 < AndroidUtilities.dp(60.0f);
         if (SharedConfig.getDevicePerformanceClass() < 2) {
@@ -154,7 +155,7 @@ public final class e {
         A = i10;
         if (i10 <= 0) {
             A = 0;
-            yi0.T0.postRunnable(new g91(16));
+            ij0.T0.postRunnable(new l21(18));
         }
     }
 

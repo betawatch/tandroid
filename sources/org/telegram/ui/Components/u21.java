@@ -1,48 +1,85 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.app.Activity;
 import android.view.View;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class u21 extends g51 {
-    public static final /* synthetic */ int a = 0;
+public final /* synthetic */ class u21 implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ TLObject n;
 
-    static {
-        g51.setup(new u21());
+    public /* synthetic */ u21(k31 k31Var, boolean z10, org.telegram.ui.ActionBar.e1 e1Var, y70 y70Var, long j3, TLRPC.User user, TLRPC.Chat chat) {
+        this.d = k31Var;
+        this.b = z10;
+        this.e = e1Var;
+        this.f = y70Var;
+        this.c = j3;
+        this.h = user;
+        this.n = chat;
     }
 
-    @Override // org.telegram.ui.Components.g51
-    public final void bindView(View view, h51 h51Var, boolean z10, v51 v51Var, d61 d61Var) {
-        v21 v21Var = (v21) view;
-        boolean z11 = false;
-        if (h51Var.r) {
-            v21Var.e();
-        } else {
-            Object obj = h51Var.G;
-            if (obj == null) {
-                if (h51Var.B == -2) {
-                    v21Var.b(h51Var.q, h51Var.e);
-                } else {
-                    v21Var.c((h51Var.y & 1) != 0, h51Var.q, h51Var.e);
-                }
-            } else if (obj instanceof TLRPC.TL_forumTopic) {
-                if (h51Var.I) {
-                    v21Var.a(h51Var.x, (TLRPC.TL_forumTopic) obj, h51Var.e);
-                } else {
-                    v21Var.f((TLRPC.TL_forumTopic) obj, h51Var.e);
-                }
-            }
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                final k31 k31Var = (k31) this.d;
+                org.telegram.ui.ActionBar.e1 e1Var = (org.telegram.ui.ActionBar.e1) this.e;
+                final y70 y70Var = (y70) this.f;
+                final TLRPC.User user = (TLRPC.User) this.h;
+                final TLRPC.Chat chat = (TLRPC.Chat) this.n;
+                boolean z10 = this.b;
+                final boolean z11 = !z10;
+                e1Var.setVisibility(0);
+                e1Var.setText(LocaleController.getString(!z10 ? R.string.UnbanUserMonoforum : R.string.BanUserMonoforum));
+                final long j3 = this.c;
+                e1Var.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.v21
+                    @Override // android.view.View.OnClickListener
+                    public final void onClick(View view) {
+                        k31 k31Var2 = k31.this;
+                        int i10 = k31Var2.b;
+                        y70Var.u();
+                        boolean z12 = z11;
+                        TLRPC.User user2 = user;
+                        if (!z12) {
+                            MessagesController.getInstance(i10).deleteParticipantFromChat(j3, user2, (TLRPC.Chat) null, false, false);
+                            return;
+                        }
+                        TLRPC.TL_channels_editBanned tL_channels_editBanned = new TLRPC.TL_channels_editBanned();
+                        tL_channels_editBanned.participant = MessagesController.getInputPeer(user2);
+                        tL_channels_editBanned.channel = MessagesController.getInputChannel(chat);
+                        tL_channels_editBanned.banned_rights = new TLRPC.TL_chatBannedRights();
+                        ConnectionsManager.getInstance(i10).sendRequest(tL_channels_editBanned, new y1(k31Var2, 15));
+                    }
+                });
+                break;
+            default:
+                yh.g.Z((yh.g) this.d, (TLRPC.TL_error) this.e, (TwoStepVerificationActivity) this.f, (Activity) this.h, this.b, this.c, this.n);
+                break;
         }
-        if (d61Var != null && d61Var.c3 && v21Var.y) {
-            z11 = true;
-        }
-        v21Var.setReorder(z11);
     }
 
-    @Override // org.telegram.ui.Components.g51
-    public final View createView(Context context, ml0 ml0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
-        return new v21(context, i10, d6Var);
+    public /* synthetic */ u21(yh.g gVar, TLRPC.TL_error tL_error, TwoStepVerificationActivity twoStepVerificationActivity, Activity activity, boolean z10, long j3, TLObject tLObject) {
+        this.d = gVar;
+        this.e = tL_error;
+        this.f = twoStepVerificationActivity;
+        this.h = activity;
+        this.b = z10;
+        this.c = j3;
+        this.n = tLObject;
     }
 }

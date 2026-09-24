@@ -26,19 +26,19 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.z0;
+import org.telegram.messenger.f0;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.al0;
 import org.telegram.ui.Components.e6;
 import org.telegram.ui.Components.n30;
-import org.telegram.ui.Components.qk0;
 import org.telegram.ui.Components.rr;
-import w7.x5;
+import w7.y5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public abstract class i extends ScrollView {
     public final Paint E;
@@ -88,7 +88,7 @@ public abstract class i extends ScrollView {
         AndroidUtilities.setScrollViewEdgeEffectColor(this, h6.w0(null, h6.d6, false));
         ba baVar = new ba(this, context);
         this.d = baVar;
-        addView(baVar, x5.c(-2.0f, -1));
+        addView(baVar, y5.c(-2.0f, -1));
         h2 h2Var = new h2(this, context, 10);
         this.b = h2Var;
         if (Build.VERSION.SDK_INT >= 25) {
@@ -139,7 +139,7 @@ public abstract class i extends ScrollView {
             baVar.c = false;
             AnimatorSet animatorSet = new AnimatorSet();
             baVar.b = animatorSet;
-            animatorSet.addListener(new qk0(22, baVar, n30Var));
+            animatorSet.addListener(new al0(22, baVar, n30Var));
             ArrayList arrayList = baVar.h;
             arrayList.clear();
             arrayList.add(n30Var);
@@ -331,8 +331,8 @@ public abstract class i extends ScrollView {
             return false;
         }
         rect.offset(view.getLeft() - view.getScrollX(), view.getTop() - view.getScrollY());
-        rect.top = z0.C(20.0f, this.H, rect.top);
-        rect.bottom = z0.C(50.0f, this.H, rect.bottom);
+        rect.top = f0.C(20.0f, this.H, rect.top);
+        rect.bottom = f0.C(50.0f, this.H, rect.bottom);
         return super.requestChildRectangleOnScreen(view, rect, z10);
     }
 

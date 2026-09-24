@@ -12,9 +12,9 @@ import e0.i0;
 import e2.v;
 import java.util.ArrayList;
 import java.util.Arrays;
-import n7.a1;
+import n7.z0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class j extends i {
     public i0 n;
@@ -65,10 +65,10 @@ public final class j extends i {
 
     /* JADX WARN: Type inference failed for: r1v59, types: [byte[], java.io.Serializable] */
     @Override // x3.i
-    public final boolean c(v vVar, long j3, a1 a1Var) {
+    public final boolean c(v vVar, long j3, z0 z0Var) {
         i0 i0Var;
         if (this.n != null) {
-            ((s) a1Var.b).getClass();
+            ((s) z0Var.b).getClass();
             return false;
         }
         z zVar = this.q;
@@ -353,7 +353,7 @@ public final class j extends i {
         rVar.J = zVar3.b;
         rVar.t = arrayList;
         rVar.k = r10;
-        a1Var.b = new s(rVar);
+        z0Var.b = new s(rVar);
         return true;
     }
 

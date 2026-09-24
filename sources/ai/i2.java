@@ -5,9 +5,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.iv0;
+import org.telegram.ui.Components.tv0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class i2 extends GestureDetector.SimpleOnGestureListener {
     public float a;
@@ -15,7 +15,7 @@ public final class i2 extends GestureDetector.SimpleOnGestureListener {
     public final /* synthetic */ int c;
 
     public i2(int i10) {
-        iv0 iv0Var = m2.X;
+        tv0 tv0Var = m2.X;
         this.c = i10;
     }
 
@@ -53,7 +53,7 @@ public final class i2 extends GestureDetector.SimpleOnGestureListener {
         kVar2.a = f7;
         kVar2.b = m2Var.O;
         kVar2.c = true;
-        kVar2.u.i = w7.p.a((f10 / 10.0f) + r9, AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - m2Var.K) - AndroidUtilities.dp(16.0f));
+        kVar2.u.i = w7.q.a((f10 / 10.0f) + r9, AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - m2Var.K) - AndroidUtilities.dp(16.0f));
         m2Var.Q.f();
         return true;
     }

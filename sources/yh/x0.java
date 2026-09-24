@@ -14,7 +14,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x0 implements Utilities.Callback3 {
     public final /* synthetic */ int a;
@@ -31,10 +31,10 @@ public final /* synthetic */ class x0 implements Utilities.Callback3 {
         ci.t tVar;
         switch (this.a) {
             case 0:
-                ((y3) this.b).o2((View) obj2, (CharSequence) obj, ((Boolean) obj3).booleanValue());
+                ((x3) this.b).o2((View) obj2, (CharSequence) obj, ((Boolean) obj3).booleanValue());
                 break;
             case 1:
-                y3.v0((y3) this.b, (ArrayList) obj, (Utilities.Callback2) obj2, (Runnable) obj3);
+                x3.v0((x3) this.b, (ArrayList) obj, (Utilities.Callback2) obj2, (Runnable) obj3);
                 break;
             default:
                 lc lcVar = (lc) this.b;

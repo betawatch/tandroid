@@ -5,14 +5,14 @@ import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public class Vector<T extends TLObject> extends TLObject {
     public static final int constructor = 481674261;
     private final TLDeserializer<T> itemDeserializer;
     public final ArrayList<T> objects = new ArrayList<>();
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class Int extends TLObject {
         public int value;
 
@@ -35,7 +35,7 @@ public class Vector<T extends TLObject> extends TLObject {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class Long extends TLObject {
         public long value;
 
@@ -58,7 +58,7 @@ public class Vector<T extends TLObject> extends TLObject {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     @FunctionalInterface
     public interface TLDeserializer<T extends TLObject> {
         T deserialize(InputSerializedData inputSerializedData, int i10, boolean z10);

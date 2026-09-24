@@ -24,23 +24,22 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.d61;
+import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Components.fq;
+import org.telegram.ui.Components.j61;
 import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.r61;
 import org.telegram.ui.Components.up;
-import org.telegram.ui.Components.v51;
-import w7.x5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class f1 extends n2 implements NotificationCenter.NotificationCenterDelegate {
+public final class f1 extends m2 implements NotificationCenter.NotificationCenterDelegate {
     public boolean E;
     public int F;
     public boolean G;
-    public d61 a;
+    public r61 a;
     public qr b;
-    public org.telegram.ui.ActionBar.v0 c;
+    public org.telegram.ui.ActionBar.u0 c;
     public boolean d;
     public FrameLayout e;
     public c1 f;
@@ -71,8 +70,8 @@ public final class f1 extends n2 implements NotificationCenter.NotificationCente
             this.c.setScaleX(V ? 1.0f : 0.0f);
             this.c.setScaleY(V ? 1.0f : 0.0f);
         }
-        d61 d61Var = this.a;
-        if (d61Var == null || d61Var.Y2 == null) {
+        r61 r61Var = this.a;
+        if (r61Var == null || r61Var.Y2 == null) {
             return;
         }
         if (this.G != ((this.w == null || (this.x == null && TextUtils.isEmpty(this.y))) ? false : true)) {
@@ -160,7 +159,7 @@ public final class f1 extends n2 implements NotificationCenter.NotificationCente
     }
 
     public final void X() {
-        v51 v51Var;
+        j61 j61Var;
         if (this.v) {
             return;
         }
@@ -187,9 +186,9 @@ public final class f1 extends n2 implements NotificationCenter.NotificationCente
             this.d = false;
         }
         Y();
-        d61 d61Var = this.a;
-        if (d61Var != null && (v51Var = d61Var.Y2) != null) {
-            v51Var.N(true);
+        r61 r61Var = this.a;
+        if (r61Var != null && (j61Var = r61Var.Y2) != null) {
+            j61Var.N(true);
         }
         this.v = true;
     }
@@ -215,7 +214,7 @@ public final class f1 extends n2 implements NotificationCenter.NotificationCente
         y5Var2.n(ImageLocation.getForWebFile(WebFile.createWithGeoPoint(geoPoint.lat, geoPoint._long, 0L, min * i10, min * 240, 15, min)), a4.a.n(i10, "_240"), this.r, null);
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final View createView(Context context) {
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         int i10 = 1;
@@ -253,7 +252,7 @@ public final class f1 extends n2 implements NotificationCenter.NotificationCente
         this.f.setFilters(new InputFilter[]{new d1()});
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.e = frameLayout2;
-        frameLayout2.addView(this.f, x5.d(-1, -1.0f, 48, 21.0f, 15.0f, 21.0f, 15.0f));
+        frameLayout2.addView(this.f, w7.y5.d(-1, -1.0f, 48, 21.0f, 15.0f, 21.0f, 15.0f));
         FrameLayout frameLayout3 = this.e;
         int i15 = h6.d6;
         frameLayout3.setBackgroundColor(getThemedColor(i15));
@@ -277,15 +276,15 @@ public final class f1 extends n2 implements NotificationCenter.NotificationCente
         this.n = new e1(this, context);
         FrameLayout frameLayout4 = new FrameLayout(context);
         this.h = frameLayout4;
-        frameLayout4.addView(this.s, x5.c(-1.0f, -1));
-        this.h.addView(this.n, x5.d(-2, -2.0f, 17, 0.0f, -31.0f, 0.0f, 0.0f));
+        frameLayout4.addView(this.s, w7.y5.c(-1.0f, -1));
+        this.h.addView(this.n, w7.y5.d(-2, -2.0f, 17, 0.0f, -31.0f, 0.0f, 0.0f));
         Y();
-        d61 d61Var = new d61(this, new bi.v(this, 26), new a1(this, i12), null);
-        this.a = d61Var;
-        d61Var.p1();
-        d61 d61Var2 = this.a;
-        d61Var2.Y2.r = false;
-        frameLayout.addView(d61Var2, x5.c(-1.0f, -1));
+        r61 r61Var = new r61(this, new bi.v(this, 26), new a1(this, i12), null);
+        this.a = r61Var;
+        r61Var.p1();
+        r61 r61Var2 = this.a;
+        r61Var2.Y2.r = false;
+        frameLayout.addView(r61Var2, w7.y5.c(-1.0f, -1));
         this.actionBar.z(this.a, true);
         X();
         this.fragmentView = frameLayout;
@@ -299,17 +298,17 @@ public final class f1 extends n2 implements NotificationCenter.NotificationCente
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final boolean isSupportEdgeToEdge() {
         return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final boolean isSwipeBackEnabled(MotionEvent motionEvent) {
         return !V();
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final boolean onBackPressed(boolean z10) {
         boolean z11 = this.x == null && TextUtils.isEmpty(this.y);
         if (!V() || z11) {
@@ -326,19 +325,19 @@ public final class f1 extends n2 implements NotificationCenter.NotificationCente
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final boolean onFragmentCreate() {
         getNotificationCenter().addObserver(this, NotificationCenter.userInfoDidLoad);
         return super.onFragmentCreate();
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final void onFragmentDestroy() {
         getNotificationCenter().removeObserver(this, NotificationCenter.userInfoDidLoad);
         super.onFragmentDestroy();
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final void onInsets(int i10, int i11, int i12, int i13) {
         this.a.setPadding(0, 0, 0, i13);
         this.a.setClipToPadding(false);

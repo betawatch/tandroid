@@ -30,8 +30,9 @@ import java.util.List;
 import java.util.PriorityQueue;
 import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.TLObject;
+import u2.b1;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class n extends r2.r {
     public static final int[] N1 = {1920, 1600, 1440, 1280, 960, 854, 640, 540, 480};
@@ -233,16 +234,16 @@ public final class n extends r2.r {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:396:0x0740, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:396:0x0741, code lost:
     
         if (r0.equals("ELUGA_Ray_X") == false) goto L101;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:61:0x08ca, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:61:0x08cb, code lost:
     
         if (r13.equals("JSN-L21") == false) goto L664;
      */
     /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x008b A[FALL_THROUGH] */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x008c A[FALL_THROUGH] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1582,7 +1583,7 @@ public final class n extends r2.r {
     public final void I0(r2.l lVar, int i10, long j3) {
         Surface surface;
         Trace.beginSection("releaseOutputBuffer");
-        lVar.g(i10, j3);
+        lVar.f(i10, j3);
         Trace.endSection();
         this.O0.e++;
         this.v1 = 0;
@@ -1647,7 +1648,7 @@ public final class n extends r2.r {
                 Surface D0 = D0(oVar);
                 if (i11 >= 23 && D0 != null) {
                     try {
-                        lVar.k(D0);
+                        lVar.j(D0);
                     } catch (Throwable th2) {
                         th2.printStackTrace();
                         throw new x(th2);
@@ -1656,7 +1657,7 @@ public final class n extends r2.r {
                     if (i11 < 35) {
                         throw new IllegalStateException();
                     }
-                    lVar.f();
+                    lVar.e();
                 }
             }
         }
@@ -1688,9 +1689,9 @@ public final class n extends r2.r {
             j10 -= -this.J1;
         }
         if (j3 < -500000 && !z10) {
-            u2.a1 a1Var = this.r;
-            a1Var.getClass();
-            int j11 = a1Var.j(j10 - this.v);
+            b1 b1Var = this.r;
+            b1Var.getClass();
+            int j11 = b1Var.j(j10 - this.v);
             if (j11 != 0) {
                 PriorityQueue priorityQueue = this.f1;
                 if (z11) {
@@ -2124,7 +2125,7 @@ public final class n extends r2.r {
         int i10;
         r2.l lVar = this.b0;
         if (lVar != null) {
-            lVar.j(this.r1);
+            lVar.i(this.r1);
         }
         if (this.F1) {
             i10 = sVar.y;
@@ -2202,7 +2203,7 @@ public final class n extends r2.r {
             this.r1 = intValue2;
             r2.l lVar = this.b0;
             if (lVar != null) {
-                lVar.j(intValue2);
+                lVar.i(intValue2);
                 return;
             }
             return;
@@ -2406,7 +2407,7 @@ public final class n extends r2.r {
             long nanoTime = System.nanoTime();
             y yVar = this.I1;
             if (yVar != null) {
-                yVar.b(j12, nanoTime, sVar, this.d0);
+                yVar.a(j12, nanoTime, sVar, this.d0);
             }
             I0(lVar, i10, nanoTime);
             O0(zVar.a);
@@ -2421,7 +2422,7 @@ public final class n extends r2.r {
                 y yVar2 = this.I1;
                 if (yVar2 != null) {
                     i13 = i10;
-                    yVar2.b(j12, j13, sVar, this.d0);
+                    yVar2.a(j12, j13, sVar, this.d0);
                 } else {
                     i13 = i10;
                 }
@@ -2506,7 +2507,7 @@ public final class n extends r2.r {
         try {
             super.o();
         } finally {
-            bVar.I(this.O0);
+            bVar.H(this.O0);
             bVar.W(x1.d);
         }
     }
@@ -2666,7 +2667,7 @@ public final class n extends r2.r {
                 l0();
                 j0();
             } finally {
-                hg.c.D(this.V, null);
+                hg.c.A(this.V, null);
                 this.V = null;
             }
         } finally {

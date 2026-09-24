@@ -10,9 +10,9 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class u3 extends org.telegram.ui.Components.pv0 implements org.telegram.ui.ActionBar.k2, org.telegram.ui.ActionBar.u3 {
+public final class u3 extends org.telegram.ui.Components.aw0 implements org.telegram.ui.ActionBar.j2, org.telegram.ui.ActionBar.t3 {
     public final org.telegram.ui.Components.e6 A0;
     public boolean B0;
     public final Path C0;
@@ -43,7 +43,7 @@ public final class u3 extends org.telegram.ui.Components.pv0 implements org.tele
         this.F0 = new Path();
     }
 
-    @Override // org.telegram.ui.Components.pv0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         boolean z10;
         float f7;
@@ -115,7 +115,7 @@ public final class u3 extends org.telegram.ui.Components.pv0 implements org.tele
             canvas.save();
             float lerp2 = AndroidUtilities.lerp(AndroidUtilities.dp(20.0f) + l4 + 1, 0, e);
             canvas.translate(0.0f, lerp2);
-            i4Var.h0.a(canvas, org.telegram.messenger.z0.C(20.0f, l4, 1) - lerp2, e, true);
+            i4Var.h0.a(canvas, org.telegram.messenger.f0.C(20.0f, l4, 1) - lerp2, e, true);
             canvas.restore();
         }
         canvas.translate(0.0f, -max);
@@ -150,12 +150,12 @@ public final class u3 extends org.telegram.ui.Components.pv0 implements org.tele
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.pv0
+    @Override // org.telegram.ui.Components.aw0
     public /* bridge */ /* synthetic */ int[] getColorKeys() {
         return null;
     }
 
-    @Override // org.telegram.ui.ActionBar.u3
+    @Override // org.telegram.ui.ActionBar.t3
     public RectF getRect() {
         v3 v3Var = this.H0;
         float max = (Math.max(1.0f - v3Var.w, v3Var.x) * v3Var.k()) + (v3Var.F ? 0 : v3Var.l() - AndroidUtilities.dp(20.0f));
@@ -185,9 +185,9 @@ public final class u3 extends org.telegram.ui.Components.pv0 implements org.tele
             }
         }
         if (f7 != 0.0f || f10 != 0.0f) {
-            org.telegram.ui.Cells.r9 r9Var = i4Var.O0;
-            AndroidUtilities.cancelRunOnUIThread(r9Var.g0);
-            r9Var.z = false;
+            org.telegram.ui.Cells.q9 q9Var = i4Var.O0;
+            AndroidUtilities.cancelRunOnUIThread(q9Var.g0);
+            q9Var.z = false;
         }
         this.G0 = true;
         return onNestedPreFling;
@@ -209,9 +209,9 @@ public final class u3 extends org.telegram.ui.Components.pv0 implements org.tele
         if (i10 == 0 && i11 == 0) {
             return;
         }
-        org.telegram.ui.Cells.r9 r9Var = i4Var.O0;
-        AndroidUtilities.cancelRunOnUIThread(r9Var.g0);
-        r9Var.z = false;
+        org.telegram.ui.Cells.q9 q9Var = i4Var.O0;
+        AndroidUtilities.cancelRunOnUIThread(q9Var.g0);
+        q9Var.z = false;
     }
 
     @Override // android.view.ViewGroup, android.view.ViewParent
@@ -235,7 +235,7 @@ public final class u3 extends org.telegram.ui.Components.pv0 implements org.tele
         super.onStopNestedScroll(view);
     }
 
-    @Override // org.telegram.ui.ActionBar.u3
+    @Override // org.telegram.ui.ActionBar.t3
     public void setDrawingFromOverlay(boolean z10) {
         if (this.B0 != z10) {
             this.B0 = z10;
@@ -243,7 +243,7 @@ public final class u3 extends org.telegram.ui.Components.pv0 implements org.tele
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.u3
+    @Override // org.telegram.ui.ActionBar.t3
     public final float x(Canvas canvas, RectF rectF, float f7, RectF rectF2, float f10) {
         rectF2.set(getRect());
         AndroidUtilities.lerp(rectF2, rectF, f7, rectF2);

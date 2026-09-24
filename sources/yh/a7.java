@@ -7,10 +7,10 @@ import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.w9;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class a7 extends w9 {
-    public vh.g G;
+    public vh.f G;
     public Path H;
     public RectF I;
     public Drawable J;
@@ -23,7 +23,7 @@ public final class a7 extends w9 {
         Drawable drawable = this.J;
         super.dispatchDraw(canvas);
         if (this.G == null) {
-            this.G = vh.g.e(this);
+            this.G = vh.f.e(this);
         }
         if (this.G != null) {
             rectF.set(0.0f, 0.0f, getWidth(), getHeight());
@@ -43,18 +43,18 @@ public final class a7 extends w9 {
 
     @Override // org.telegram.ui.Components.w9, android.view.View
     public final void onAttachedToWindow() {
-        vh.g gVar = this.G;
-        if (gVar != null) {
-            gVar.a(this);
+        vh.f fVar = this.G;
+        if (fVar != null) {
+            fVar.a(this);
         }
         super.onAttachedToWindow();
     }
 
     @Override // org.telegram.ui.Components.w9, android.view.View
     public final void onDetachedFromWindow() {
-        vh.g gVar = this.G;
-        if (gVar != null) {
-            gVar.b(this);
+        vh.f fVar = this.G;
+        if (fVar != null) {
+            fVar.b(this);
         }
         super.onDetachedFromWindow();
     }

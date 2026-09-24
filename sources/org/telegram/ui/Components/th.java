@@ -15,7 +15,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class th implements Runnable {
     public final /* synthetic */ int a;
@@ -26,7 +26,6 @@ public final /* synthetic */ class th implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        xc a02;
         switch (this.a) {
             case 0:
                 break;
@@ -52,97 +51,91 @@ public final /* synthetic */ class th implements Runnable {
                 }
                 break;
             case 7:
-                org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
-                if (R != null) {
-                    org.telegram.ui.ActionBar.l2 l2Var = new org.telegram.ui.ActionBar.l2();
-                    l2Var.a = true;
-                    R.showAsSheet(new PremiumPreviewFragment(0, "noncontacts"), l2Var);
-                    break;
-                }
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 512);
                 break;
             case 8:
-                int i12 = g01.f;
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
                 break;
             case 9:
-                SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
-                w01.f = Boolean.TRUE;
-                edit.putBoolean("nothanos", true).apply();
-                break;
-            case 10:
-                SharedPreferences.Editor edit2 = MessagesController.getGlobalMainSettings().edit();
-                w01.f = Boolean.TRUE;
-                edit2.putBoolean("nothanos", true).apply();
-                break;
-            case 11:
-                int i13 = w21.f0;
-                break;
-            case 12:
-                SavedMessagesController.openSavedMessages();
-                break;
-            case 13:
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallVisibilityChanged, new Object[0]);
-                break;
-            case 14:
-                org.telegram.ui.Components.voip.m2.i();
-                break;
-            case 15:
-                ai.x7.p();
-                break;
-            case 16:
-                org.telegram.ui.f60 f60Var = org.telegram.ui.f60.D3;
-                if (f60Var != null) {
-                    f60Var.show();
+                org.telegram.ui.ActionBar.m2 R = LaunchActivity.R();
+                if (R != null) {
+                    org.telegram.ui.ActionBar.k2 k2Var = new org.telegram.ui.ActionBar.k2();
+                    k2Var.a = true;
+                    R.showAsSheet(new PremiumPreviewFragment(0, "noncontacts"), k2Var);
                     break;
                 }
                 break;
+            case 10:
+                int i12 = u01.f;
+                break;
+            case 11:
+                SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
+                k11.f = Boolean.TRUE;
+                edit.putBoolean("nothanos", true).apply();
+                break;
+            case 12:
+                SharedPreferences.Editor edit2 = MessagesController.getGlobalMainSettings().edit();
+                k11.f = Boolean.TRUE;
+                edit2.putBoolean("nothanos", true).apply();
+                break;
+            case 13:
+                int i13 = k31.f0;
+                break;
+            case 14:
+                SavedMessagesController.openSavedMessages();
+                break;
+            case 15:
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallVisibilityChanged, new Object[0]);
+                break;
+            case 16:
+                org.telegram.ui.Components.voip.n2.i();
+                break;
             case 17:
+                ai.x7.p();
+                break;
+            case 18:
+                org.telegram.ui.d60 d60Var = org.telegram.ui.d60.D3;
+                if (d60Var != null) {
+                    d60Var.show();
+                    break;
+                }
+                break;
+            case 19:
                 if (VoIPService.getSharedInstance() != null) {
                     VoIPService.getSharedInstance().setMicMute(false, true, false);
                     break;
                 }
                 break;
-            case 18:
+            case 20:
                 Pattern pattern = LaunchActivity.B1;
                 break;
-            case 19:
+            case 21:
                 Pattern pattern2 = LaunchActivity.B1;
                 break;
-            case 20:
+            case 22:
                 Pattern pattern3 = LaunchActivity.B1;
                 ApplicationLoader.mainInterfacePausedStageQueue = false;
                 ApplicationLoader.mainInterfacePausedStageQueueTime = System.currentTimeMillis();
                 break;
-            case 21:
-                break;
-            case 22:
-                CallReceiver.checkLastReceivedCall();
-                break;
             case 23:
-                CallReceiver.checkLastReceivedCall();
                 break;
             case 24:
-                xc.X().N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
+                CallReceiver.checkLastReceivedCall();
                 break;
             case 25:
-                xc.X().N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
+                CallReceiver.checkLastReceivedCall();
                 break;
             case 26:
-                Drawable[] drawableArr = PhotoViewer.U8;
+                yc.X().N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
                 break;
             case 27:
-                xc.X().N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
+                yc.X().N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
                 break;
             case 28:
-                xc.X().N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
+                Drawable[] drawableArr = PhotoViewer.U8;
                 break;
             default:
-                org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
-                if (U != null && (a02 = xc.a0(U)) != null) {
-                    qc M = a02.M(LocaleController.getString(R.string.ReportChatSent), LocaleController.getString(R.string.Reported2), R.raw.msg_antispam);
-                    M.j = 5000;
-                    M.j();
-                    break;
-                }
+                yc.X().N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
                 break;
         }
     }

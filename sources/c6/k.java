@@ -6,7 +6,7 @@ import com.google.android.gms.cast.MediaInfo;
 import java.util.Arrays;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class k extends o6.a {
     public final MediaInfo a;
@@ -59,22 +59,22 @@ public final class k extends o6.a {
     public final void writeToParcel(Parcel parcel, int i10) {
         JSONObject jSONObject = this.n;
         this.h = jSONObject == null ? null : jSONObject.toString();
-        int q6 = w7.e0.q(parcel, 20293);
-        w7.e0.k(parcel, 2, this.a, i10);
-        w7.e0.k(parcel, 3, this.b, i10);
-        w7.e0.a(parcel, 4, this.c);
-        w7.e0.s(parcel, 5, 8);
+        int q6 = w7.f0.q(parcel, 20293);
+        w7.f0.k(parcel, 2, this.a, i10);
+        w7.f0.k(parcel, 3, this.b, i10);
+        w7.f0.a(parcel, 4, this.c);
+        w7.f0.s(parcel, 5, 8);
         parcel.writeLong(this.d);
-        w7.e0.s(parcel, 6, 8);
+        w7.f0.s(parcel, 6, 8);
         parcel.writeDouble(this.e);
-        w7.e0.j(parcel, 7, this.f);
-        w7.e0.l(parcel, 8, this.h);
-        w7.e0.l(parcel, 9, this.r);
-        w7.e0.l(parcel, 10, this.s);
-        w7.e0.l(parcel, 11, this.v);
-        w7.e0.l(parcel, 12, this.w);
-        w7.e0.s(parcel, 13, 8);
+        w7.f0.j(parcel, 7, this.f);
+        w7.f0.l(parcel, 8, this.h);
+        w7.f0.l(parcel, 9, this.r);
+        w7.f0.l(parcel, 10, this.s);
+        w7.f0.l(parcel, 11, this.v);
+        w7.f0.l(parcel, 12, this.w);
+        w7.f0.s(parcel, 13, 8);
         parcel.writeLong(this.x);
-        w7.e0.r(parcel, q6);
+        w7.f0.r(parcel, q6);
     }
 }

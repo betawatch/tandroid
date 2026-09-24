@@ -8,11 +8,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ar0;
 import org.telegram.ui.Components.rr;
-import w7.x5;
+import org.telegram.ui.Components.wn0;
+import w7.y5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class k extends FrameLayout {
     public final j a;
@@ -25,7 +25,7 @@ public final class k extends FrameLayout {
         setWillNotDraw(false);
         j jVar = new j(activity);
         this.a = jVar;
-        addView(jVar, x5.e(52, 52, 5));
+        addView(jVar, y5.e(52, 52, 5));
         TransitionSet transitionSet = new TransitionSet();
         this.b = transitionSet;
         transitionSet.setOrdering(0);
@@ -50,7 +50,7 @@ public final class k extends FrameLayout {
         ViewGroup.LayoutParams layoutParams = jVar.getLayoutParams();
         layoutParams.width = -1;
         jVar.setLayoutParams(layoutParams);
-        AndroidUtilities.runOnUIThread(new ar0(20, this, onClickListener), 500L);
+        AndroidUtilities.runOnUIThread(new wn0(26, this, onClickListener), 500L);
     }
 
     public j getEndCloseView() {

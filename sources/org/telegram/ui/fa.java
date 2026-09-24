@@ -6,16 +6,16 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class fa implements org.telegram.ui.Components.al0 {
+public final class fa implements org.telegram.ui.Components.kl0 {
     public final /* synthetic */ qa a;
 
     public fa(qa qaVar) {
         this.a = qaVar;
     }
 
-    @Override // org.telegram.ui.Components.al0
+    @Override // org.telegram.ui.Components.kl0
     public final void d(int i10, View view) {
         boolean z10 = view instanceof na;
         qa qaVar = this.a;
@@ -40,7 +40,7 @@ public final class fa implements org.telegram.ui.Components.al0 {
         alertDialog$Builder.a.R = LocaleController.getString(tL_username.active ? R.string.UsernameDeactivateLink : R.string.UsernameActivateLink);
         alertDialog$Builder.a.T = LocaleController.getString(tL_username.active ? R.string.UsernameDeactivateLinkProfileMessage : R.string.UsernameActivateLinkProfileMessage);
         alertDialog$Builder.k(LocaleController.getString(tL_username.active ? R.string.Hide : R.string.Show), new da(this, tL_username, i10, view, 0));
-        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new org.telegram.ui.Cells.y7(2));
+        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new u6(4));
         alertDialog$Builder.o();
     }
 }

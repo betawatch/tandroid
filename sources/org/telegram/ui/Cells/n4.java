@@ -25,7 +25,7 @@ import org.telegram.ui.Components.rr;
 import org.telegram.ui.Components.wq;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class n4 extends FrameLayout {
     public boolean E;
@@ -62,7 +62,7 @@ public final class n4 extends FrameLayout {
         org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
         this.a = w9Var;
         w9Var.setRoundRadius(AndroidUtilities.dp(27.0f));
-        addView(w9Var, w7.x5.d(54, 54.0f, 49, 0.0f, 7.0f, 0.0f, 0.0f));
+        addView(w9Var, w7.y5.d(54, 54.0f, 49, 0.0f, 7.0f, 0.0f, 0.0f));
         ai.p4 p4Var = new ai.p4(context, 5);
         this.b = p4Var;
         NotificationCenter.listenEmojiLoading(p4Var);
@@ -72,10 +72,10 @@ public final class n4 extends FrameLayout {
         p4Var.setGravity(49);
         p4Var.setLines(1);
         p4Var.setEllipsize(TextUtils.TruncateAt.END);
-        addView(p4Var, w7.x5.d(-1, -2.0f, 51, 6.0f, 64.0f, 6.0f, 0.0f));
+        addView(p4Var, w7.y5.d(-1, -2.0f, 51, 6.0f, 64.0f, 6.0f, 0.0f));
         xq xqVar = new xq(context, d6Var);
         this.s = xqVar;
-        addView(xqVar, w7.x5.d(-1, 28.0f, 48, 0.0f, 4.0f, 0.0f, 0.0f));
+        addView(xqVar, w7.y5.d(-1, 28.0f, 48, 0.0f, 4.0f, 0.0f, 0.0f));
         int i10 = org.telegram.ui.ActionBar.h6.W8;
         int i11 = org.telegram.ui.ActionBar.h6.U8;
         wq wqVar = xqVar.a;
@@ -88,8 +88,8 @@ public final class n4 extends FrameLayout {
             opVar.b(org.telegram.ui.ActionBar.h6.B5, org.telegram.ui.ActionBar.h6.h5, org.telegram.ui.ActionBar.h6.C5);
             opVar.setDrawUnchecked(false);
             opVar.setDrawBackgroundAsArc(4);
-            opVar.setProgressDelegate(new na(this, 4));
-            addView(opVar, w7.x5.d(24, 24.0f, 49, 19.0f, 42.0f, 0.0f, 0.0f));
+            opVar.setProgressDelegate(new la(this, 4));
+            addView(opVar, w7.y5.d(24, 24.0f, 49, 19.0f, 42.0f, 0.0f, 0.0f));
             opVar.a(false, false);
             setWillNotDraw(false);
         }

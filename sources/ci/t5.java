@@ -1,19 +1,35 @@
 package ci;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public final class t5 implements qg.y1 {
+public final class t5 implements qg.w1 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ qg.x2 b;
+    public final /* synthetic */ qg.v2 b;
     public final /* synthetic */ float c;
 
-    public /* synthetic */ t5(qg.x2 x2Var, float f7, int i10) {
+    public /* synthetic */ t5(qg.v2 v2Var, float f7, int i10) {
         this.a = i10;
-        this.b = x2Var;
+        this.b = v2Var;
         this.c = f7;
     }
 
-    @Override // qg.y1
+    @Override // qg.w1
+    public final void K(float f7) {
+        switch (this.a) {
+            case 0:
+                qg.v2 v2Var = this.b;
+                v2Var.z0 = true;
+                v2Var.setBaseFontSize((int) (this.c * f7));
+                break;
+            default:
+                qg.v2 v2Var2 = this.b;
+                v2Var2.z0 = true;
+                v2Var2.setBaseFontSize((int) (this.c * f7));
+                break;
+        }
+    }
+
+    @Override // qg.w1
     public final float get() {
         float baseFontSize;
         float f7;
@@ -28,21 +44,5 @@ public final class t5 implements qg.y1 {
                 break;
         }
         return baseFontSize / f7;
-    }
-
-    @Override // qg.y1
-    public final void l(float f7) {
-        switch (this.a) {
-            case 0:
-                qg.x2 x2Var = this.b;
-                x2Var.z0 = true;
-                x2Var.setBaseFontSize((int) (this.c * f7));
-                break;
-            default:
-                qg.x2 x2Var2 = this.b;
-                x2Var2.z0 = true;
-                x2Var2.setBaseFontSize((int) (this.c * f7));
-                break;
-        }
     }
 }

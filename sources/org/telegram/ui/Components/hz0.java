@@ -1,88 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class hz0 extends j1.b {
-    public final Rect o;
-    public final /* synthetic */ jz0 p;
+public final class hz0 extends lz0 {
+    public int d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hz0(jz0 jz0Var, jz0 jz0Var2) {
-        super(jz0Var2);
-        this.p = jz0Var;
-        this.o = new Rect();
+    @Override // org.telegram.ui.Components.lz0
+    public final int a(uz0 uz0Var, nz0 nz0Var, gz0 gz0Var, int i10, boolean z10) {
+        return Math.max(0, this.a - gz0Var.a(nz0Var, i10));
     }
 
-    @Override // j1.b
-    public final int g(float f7, float f10) {
-        int i10;
-        jz0 jz0Var = this.p;
-        int childCount = jz0Var.getChildCount();
-        for (int i11 = 0; i11 < childCount; i11++) {
-            cz0 d = jz0Var.d(i11);
-            if (d.k > 0 && (i10 = d.l) > 0) {
-                if (f7 >= d.p && f7 < r6 + r4) {
-                    if (f10 >= d.q && f10 < r3 + i10) {
-                        return i11;
-                    }
-                }
-            }
-        }
-        return TLObject.FLAG_31;
+    @Override // org.telegram.ui.Components.lz0
+    public final void b(int i10, int i11) {
+        super.b(i10, i11);
+        this.d = Math.max(this.d, i10 + i11);
     }
 
-    @Override // j1.b
-    public final void h(ArrayList arrayList) {
-        jz0 jz0Var = this.p;
-        int childCount = jz0Var.getChildCount();
-        for (int i10 = 0; i10 < childCount; i10++) {
-            cz0 d = jz0Var.d(i10);
-            if (d.k > 0 && d.l > 0) {
-                arrayList.add(Integer.valueOf(i10));
-            }
-        }
+    @Override // org.telegram.ui.Components.lz0
+    public final void c() {
+        super.c();
+        this.d = TLObject.FLAG_31;
     }
 
-    @Override // j1.b
-    public final boolean k(int i10, int i11) {
-        return false;
-    }
-
-    @Override // j1.b
-    public final void l(int i10, s0.d dVar) {
-        Rect rect = this.o;
-        if (i10 >= 0) {
-            jz0 jz0Var = this.p;
-            if (i10 < jz0Var.getChildCount()) {
-                cz0 d = jz0Var.d(i10);
-                int i11 = d.p;
-                int i12 = d.q;
-                rect.set(i11, i12, d.k + i11, d.l + i12);
-                dVar.h(rect);
-                dVar.i("android.widget.TextView");
-                dVar.a.setEnabled(true);
-                bz0 bz0Var = d.b;
-                CharSequence text = bz0Var != null ? bz0Var.getText() : null;
-                if (text == null || text.length() == 0) {
-                    text = " ";
-                }
-                dVar.o(text);
-                TL_iv.pageTableCell pagetablecell = d.c;
-                if (pagetablecell == null || !pagetablecell.header) {
-                    return;
-                }
-                dVar.k(true);
-                return;
-            }
-        }
-        rect.set(0, 0, 1, 1);
-        dVar.h(rect);
-        dVar.p(false);
-        dVar.j("");
+    @Override // org.telegram.ui.Components.lz0
+    public final int d(boolean z10) {
+        return Math.max(super.d(z10), this.d);
     }
 }

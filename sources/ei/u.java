@@ -13,16 +13,16 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.d61;
-import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.j61;
+import org.telegram.ui.Components.r61;
 import org.telegram.ui.Components.v51;
-import org.telegram.ui.h5;
-import w7.x5;
+import org.telegram.ui.g5;
+import w7.y5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public final class u extends org.telegram.ui.ActionBar.n2 {
-    public d61 a;
+public final class u extends org.telegram.ui.ActionBar.m2 {
+    public r61 a;
     public final ArrayList b;
     public final HashMap c;
 
@@ -41,27 +41,27 @@ public final class u extends org.telegram.ui.ActionBar.n2 {
             if (spannableStringBuilder == null) {
                 spannableStringBuilder = new SpannableStringBuilder();
                 spannableStringBuilder.append((CharSequence) "a   ");
-                h5 h5Var = new h5(null, 24.0f, uVar.currentAccount);
-                h5Var.e(qVar.a);
-                spannableStringBuilder.setSpan(h5Var, 0, 1, 33);
+                g5 g5Var = new g5(null, 24.0f, uVar.currentAccount);
+                g5Var.e(qVar.a);
+                spannableStringBuilder.setSpan(g5Var, 0, 1, 33);
                 spannableStringBuilder.append((CharSequence) UserObject.getUserName(qVar.a));
                 hashMap.put(qVar, spannableStringBuilder);
             }
-            h51 i11 = h51.i(i10, spannableStringBuilder);
+            v51 i11 = v51.i(i10, spannableStringBuilder);
             i11.K(!qVar.b);
             arrayList.add(i11);
         }
-        hg.c.p(R.string.PrivacyBiometryBotsInfo, arrayList);
+        hg.c.n(R.string.PrivacyBiometryBotsInfo, arrayList);
     }
 
-    public static void V(u uVar, h51 h51Var) {
+    public static void V(u uVar, v51 v51Var) {
         int i10;
-        v51 v51Var;
+        j61 j61Var;
         ArrayList arrayList = uVar.b;
-        if (h51Var.a != 4 || (i10 = h51Var.d) < 0 || i10 >= arrayList.size()) {
+        if (v51Var.a != 4 || (i10 = v51Var.d) < 0 || i10 >= arrayList.size()) {
             return;
         }
-        q qVar = (q) arrayList.get(h51Var.d);
+        q qVar = (q) arrayList.get(v51Var.d);
         qVar.b = !qVar.b;
         Activity parentActivity = uVar.getParentActivity();
         int i11 = uVar.currentAccount;
@@ -75,24 +75,24 @@ public final class u extends org.telegram.ui.ActionBar.n2 {
             edit.putString(String.valueOf(j3), "");
         }
         edit.apply();
-        d61 d61Var = uVar.a;
-        if (d61Var == null || (v51Var = d61Var.Y2) == null) {
+        r61 r61Var = uVar.a;
+        if (r61Var == null || (j61Var = r61Var.Y2) == null) {
             return;
         }
-        v51Var.N(true);
+        j61Var.N(true);
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final View createView(Context context) {
-        hg.c.x(false, this.actionBar);
+        hg.c.v(false, this.actionBar);
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setTitle(LocaleController.getString(R.string.PrivacyBiometryBots));
         this.actionBar.setActionBarMenuOnItemClick(new t(this, 0));
         FrameLayout frameLayout = new FrameLayout(context);
         frameLayout.setBackgroundColor(h6.v0(h6.a7, this.resourceProvider));
-        d61 d61Var = new d61(this, new bi.v(this, 13), new s(this), new s(this));
-        this.a = d61Var;
-        frameLayout.addView(d61Var, x5.e(-1, -1, 119));
+        r61 r61Var = new r61(this, new bi.v(this, 13), new s(this), new s(this));
+        this.a = r61Var;
+        frameLayout.addView(r61Var, y5.e(-1, -1, 119));
         r.d(getParentActivity(), this.currentAccount, new ai.y1(this, 18));
         this.fragmentView = frameLayout;
         return frameLayout;

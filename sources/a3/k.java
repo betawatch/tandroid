@@ -3,7 +3,7 @@ package a3;
 import android.content.Context;
 import android.os.Handler;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class k {
     public final Context a;
@@ -16,6 +16,6 @@ public final class k {
 
     public k(Context context) {
         this.a = context;
-        this.c = new k2.b0(context, 21);
+        this.c = new ka.c(context, 17);
     }
 }

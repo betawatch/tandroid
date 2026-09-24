@@ -1,16 +1,23 @@
 package w7;
 
-import java.nio.ByteBuffer;
+import android.net.Uri;
+import java.util.Collections;
+import java.util.Map;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public abstract class l {
-    public b2.p0 a(l3.a aVar) {
-        ByteBuffer byteBuffer = aVar.c;
-        byteBuffer.getClass();
-        e2.d.b(byteBuffer.position() == 0 && byteBuffer.hasArray() && byteBuffer.arrayOffset() == 0);
-        return b(aVar, byteBuffer);
+    public static g2.m a(m2.m mVar, String str, m2.j jVar, int i10) {
+        Map map = Collections.EMPTY_MAP;
+        Uri m10 = e2.a.m(str, jVar.c);
+        long j3 = jVar.a;
+        long j10 = jVar.b;
+        String a2 = mVar.a();
+        if (a2 == null) {
+            a2 = e2.a.m(((m2.b) mVar.b.get(0)).a, jVar.c).toString();
+        }
+        String str2 = a2;
+        e2.d.i(m10, "The uri must be set.");
+        return new g2.m(m10, 1, null, e9.f1.h, j3, j10, str2, i10);
     }
-
-    public abstract b2.p0 b(l3.a aVar, ByteBuffer byteBuffer);
 }

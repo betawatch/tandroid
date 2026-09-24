@@ -11,13 +11,14 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.Components.q5;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.Components.z5;
-import org.telegram.ui.z61;
+import org.telegram.ui.a71;
+import yh.r5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class p extends z61 {
+public final class p extends a71 {
     public boolean d2;
     public final /* synthetic */ q e2;
 
@@ -29,7 +30,7 @@ public final class p extends z61 {
         setDrawBackground(false);
     }
 
-    @Override // org.telegram.ui.z61, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.a71, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
         if (this.d2) {
@@ -38,7 +39,7 @@ public final class p extends z61 {
         }
     }
 
-    @Override // org.telegram.ui.z61
+    @Override // org.telegram.ui.a71
     public final void p(View view, Long l4, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
         q qVar = this.e2;
         int i10 = qVar.J;
@@ -47,23 +48,23 @@ public final class p extends z61 {
         if (linkedHashMap.containsKey(l4)) {
             arrayList.remove(l4);
             z5 z5Var = (z5) linkedHashMap.remove(l4);
-            z5Var.setRemoved(new uh.i(29, this, z5Var));
+            z5Var.setRemoved(new r5(5, this, z5Var));
             qVar.W(z5Var);
             qVar.b.x(l4, true);
             qVar.Y(false);
             return;
         }
         if (linkedHashMap.size() - (linkedHashMap.containsKey(-1L) ? 1 : 0) >= i10) {
-            xc.a0(qVar).t(LocaleController.formatPluralString("ReactionMaxCountError", i10, new Object[0]), null).j();
+            yc.a0(qVar).t(LocaleController.formatPluralString("ReactionMaxCountError", i10, new Object[0]), null).j();
             return;
         }
         try {
             int editTextSelectionEnd = qVar.n.getEditTextSelectionEnd();
             SpannableString spannableString = new SpannableString("b");
-            z5 e = r0.e(document, l4, qVar.n.getFontMetricsInt());
+            z5 e = q0.e(document, l4, qVar.n.getFontMetricsInt());
             e.cacheType = q5.g();
             e.setAdded();
-            arrayList.add(w7.p.b(editTextSelectionEnd, 0, arrayList.size()), l4);
+            arrayList.add(w7.q.b(editTextSelectionEnd, 0, arrayList.size()), l4);
             linkedHashMap.put(l4, e);
             spannableString.setSpan(e, 0, spannableString.length(), 33);
             qVar.n.getText().insert(editTextSelectionEnd, spannableString);

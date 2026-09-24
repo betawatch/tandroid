@@ -3,19 +3,19 @@ package pg;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class c0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ v0 a;
+    public final /* synthetic */ w0 a;
     public final /* synthetic */ float b;
     public final /* synthetic */ m c;
     public final /* synthetic */ boolean d;
     public final /* synthetic */ Runnable e;
-    public final /* synthetic */ d0 f;
+    public final /* synthetic */ e0 f;
 
-    public c0(d0 d0Var, v0 v0Var, float f7, m mVar, boolean z10, Runnable runnable) {
-        this.f = d0Var;
-        this.a = v0Var;
+    public c0(e0 e0Var, w0 w0Var, float f7, m mVar, boolean z10, Runnable runnable) {
+        this.f = e0Var;
+        this.a = w0Var;
         this.b = f7;
         this.c = mVar;
         this.d = z10;
@@ -24,24 +24,24 @@ public final class c0 extends AnimatorListenerAdapter {
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        c1 c1Var;
-        d0 d0Var = this.f;
-        d0Var.x = null;
-        s0 s0Var = new s0(new v0[]{this.a});
-        d1 d1Var = d0Var.a;
-        int currentColor = d1Var.getCurrentColor();
+        e1 e1Var;
+        e0 e0Var = this.f;
+        e0Var.x = null;
+        t0 t0Var = new t0(new w0[]{this.a});
+        f1 f1Var = e0Var.a;
+        int currentColor = f1Var.getCurrentColor();
         float f7 = this.b * 1.0f;
-        s0Var.c = currentColor;
-        s0Var.d = f7;
+        t0Var.c = currentColor;
+        t0Var.d = f7;
         m mVar = this.c;
-        s0Var.e = mVar;
+        t0Var.e = mVar;
         mVar.getClass();
-        int currentColor2 = mVar instanceof d ? -1 : d1Var.getCurrentColor();
-        r0 painting = d1Var.getPainting();
+        int currentColor2 = mVar instanceof d ? -1 : f1Var.getCurrentColor();
+        s0 painting = f1Var.getPainting();
         boolean z10 = this.d;
-        painting.c(s0Var, currentColor2, z10, null);
-        if (z10 && (c1Var = d1Var.a) != null) {
-            c1Var.e();
+        painting.c(t0Var, currentColor2, z10, null);
+        if (z10 && (e1Var = f1Var.a) != null) {
+            e1Var.e();
         }
         Runnable runnable = this.e;
         if (runnable != null) {

@@ -8,9 +8,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.o70;
+import org.telegram.ui.Components.y70;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a4 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -39,13 +39,13 @@ public final /* synthetic */ class a4 implements View.OnClickListener {
                 int i10 = this.c;
                 if (i10 == 1) {
                     int i11 = rVar.n;
-                    o70 o70Var = rVar.H;
-                    if (o70Var != null) {
-                        o70Var.u();
+                    y70 y70Var = rVar.H;
+                    if (y70Var != null) {
+                        y70Var.u();
                     }
-                    o70 G = o70.G(rVar, d6Var, view, true);
+                    y70 G = y70.G(rVar, d6Var, view, true);
                     G.Q = true;
-                    o70 J = G.J();
+                    y70 J = G.J();
                     boolean z10 = (MessagesController.getInstance(i11).richEditorAllowed() || UserConfig.getInstance(i11).isPremium()) ? false : true;
                     J.c(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new h(G, 0), false);
                     J.k();
@@ -74,11 +74,11 @@ public final /* synthetic */ class a4 implements View.OnClickListener {
                     rVar.H = G;
                     break;
                 } else if (i10 == 2) {
-                    o70 o70Var2 = rVar.H;
-                    if (o70Var2 != null) {
-                        o70Var2.u();
+                    y70 y70Var2 = rVar.H;
+                    if (y70Var2 != null) {
+                        y70Var2.u();
                     }
-                    final o70 F = o70.F(rVar, d6Var, view);
+                    final y70 F = y70.F(rVar, d6Var, view);
                     F.Q = true;
                     F.j(Q2 == null || !Q2.b(), R.drawable.field_carret_empty, null, LocaleController.getString(R.string.ArticleNone), new f(rVar, Q2, 1));
                     F.j((Q2 == null || !Q2.b() || Q2.a() || Q2.c()) ? false : true, R.drawable.iv_list, null, LocaleController.getString(R.string.ArticleListBulleted), new f(rVar, Q2, 2));

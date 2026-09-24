@@ -14,9 +14,8 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.ListIterator;
-import org.telegram.ui.Cells.ja;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class v {
     public final u a;
@@ -59,7 +58,7 @@ public final class v {
         return null;
     }
 
-    public final ja b(v vVar) {
+    public final k2.u b(v vVar) {
         if (vVar == null) {
             throw new NullPointerException("route must not be null");
         }
@@ -68,7 +67,7 @@ public final class v {
         if (fVar == null || !fVar.containsKey(str)) {
             return null;
         }
-        return new ja((o) this.w.get(str), 6);
+        return new k2.u((o) this.w.get(str), 18);
     }
 
     public final h3 c() {
@@ -87,7 +86,7 @@ public final class v {
         if (vVar == this || this.n == 3) {
             return true;
         }
-        return TextUtils.equals(((ComponentName) ((k2.u) c().d).b).getPackageName(), "android") && m("android.media.intent.category.LIVE_AUDIO") && !m("android.media.intent.category.LIVE_VIDEO");
+        return TextUtils.equals(((ComponentName) ((n2.e) c().d).b).getPackageName(), "android") && m("android.media.intent.category.LIVE_AUDIO") && !m("android.media.intent.category.LIVE_VIDEO");
     }
 
     public final boolean e() {

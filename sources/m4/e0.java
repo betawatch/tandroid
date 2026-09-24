@@ -17,12 +17,12 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.j61;
 import org.telegram.ui.Components.ss;
 import org.telegram.ui.Components.us;
-import org.telegram.ui.Components.v51;
 import yh.b7;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e0 implements Runnable {
     public final /* synthetic */ int a;
@@ -32,12 +32,12 @@ public final /* synthetic */ class e0 implements Runnable {
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
 
-    public /* synthetic */ e0(l0 l0Var, int i10, n4.a0 a0Var, k0 k0Var, boolean z10) {
+    public /* synthetic */ e0(k0 k0Var, int i10, n4.a0 a0Var, j0 j0Var, boolean z10) {
         this.a = 0;
-        this.d = l0Var;
+        this.d = k0Var;
         this.c = i10;
         this.e = a0Var;
-        this.f = k0Var;
+        this.f = j0Var;
         this.b = z10;
     }
 
@@ -47,21 +47,21 @@ public final /* synthetic */ class e0 implements Runnable {
         TLRPC.Document document;
         switch (this.a) {
             case 0:
-                l0 l0Var = (l0) this.d;
+                k0 k0Var = (k0) this.d;
                 n4.a0 a0Var = (n4.a0) this.e;
-                k0 k0Var = (k0) this.f;
-                a0 a0Var2 = l0Var.g;
+                j0 j0Var = (j0) this.f;
+                a0 a0Var2 = k0Var.g;
                 if (!a0Var2.j()) {
-                    boolean isActive = ((n4.r) l0Var.k.b).a.isActive();
+                    boolean isActive = ((n4.r) k0Var.k.b).a.isActive();
                     int i10 = this.c;
                     if (isActive) {
-                        r L = l0Var.L(a0Var);
-                        if (l0Var.f.B(L, i10)) {
+                        r L = k0Var.L(a0Var);
+                        if (k0Var.f.B(L, i10)) {
                             na.d dVar = a0Var2.e;
                             a0Var2.s(L);
                             dVar.getClass();
                             try {
-                                k0Var.g(L);
+                                j0Var.g(L);
                             } catch (RemoteException e) {
                                 e2.a.o("MediaSessionLegacyStub", "Exception in " + L, e);
                             }
@@ -75,9 +75,9 @@ public final /* synthetic */ class e0 implements Runnable {
                             break;
                         }
                     } else {
-                        StringBuilder l4 = hg.c.l(i10, "Ignore incoming player command before initialization. command=", ", pid=");
-                        l4.append(a0Var.a.b);
-                        e2.a.n("MediaSessionLegacyStub", l4.toString());
+                        StringBuilder j3 = hg.c.j(i10, "Ignore incoming player command before initialization. command=", ", pid=");
+                        j3.append(a0Var.a.b);
+                        e2.a.n("MediaSessionLegacyStub", j3.toString());
                         break;
                     }
                 }
@@ -154,13 +154,13 @@ public final /* synthetic */ class e0 implements Runnable {
                 }
                 break;
             case 4:
-                pg.r0 r0Var = (pg.r0) this.d;
-                pg.s0 s0Var = (pg.s0) this.e;
+                pg.s0 s0Var = (pg.s0) this.d;
+                pg.t0 t0Var = (pg.t0) this.e;
                 Runnable runnable = (Runnable) this.f;
                 boolean z10 = this.b;
-                r0Var.d(s0Var, this.c, z10 ? r0Var.h : null);
+                s0Var.d(t0Var, this.c, z10 ? s0Var.h : null);
                 if (z10) {
-                    r0Var.h = null;
+                    s0Var.h = null;
                 }
                 if (runnable != null) {
                     runnable.run();
@@ -240,19 +240,19 @@ public final /* synthetic */ class e0 implements Runnable {
         this.f = aVar;
     }
 
-    public /* synthetic */ e0(v51 v51Var, int i10, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z10, TLObject tLObject, int i11) {
+    public /* synthetic */ e0(j61 j61Var, int i10, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z10, TLObject tLObject, int i11) {
         this.a = i11;
-        this.d = v51Var;
+        this.d = j61Var;
         this.c = i10;
         this.e = tL_messages_searchGlobal;
         this.b = z10;
         this.f = tLObject;
     }
 
-    public /* synthetic */ e0(pg.r0 r0Var, pg.s0 s0Var, int i10, boolean z10, Runnable runnable) {
+    public /* synthetic */ e0(pg.s0 s0Var, pg.t0 t0Var, int i10, boolean z10, Runnable runnable) {
         this.a = 4;
-        this.d = r0Var;
-        this.e = s0Var;
+        this.d = s0Var;
+        this.e = t0Var;
         this.c = i10;
         this.b = z10;
         this.f = runnable;

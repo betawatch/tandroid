@@ -7,7 +7,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class rc1 implements org.telegram.ui.Components.mq {
     public final /* synthetic */ od1 a;
@@ -42,18 +42,18 @@ public final class rc1 implements org.telegram.ui.Components.mq {
         }
         if (f6Var.r == null) {
             od1Var.finishFragment();
-            i11 = ((org.telegram.ui.ActionBar.n2) od1Var).currentAccount;
+            i11 = ((org.telegram.ui.ActionBar.m2) od1Var).currentAccount;
             MessagesController.getInstance(i11).saveThemeToServer(f6Var.b, f6Var);
             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needShareTheme, f6Var.b, f6Var);
             return;
         }
         StringBuilder sb2 = new StringBuilder("https://");
-        i10 = ((org.telegram.ui.ActionBar.n2) od1Var).currentAccount;
+        i10 = ((org.telegram.ui.ActionBar.m2) od1Var).currentAccount;
         sb2.append(MessagesController.getInstance(i10).linkPrefix);
         sb2.append("/addtheme/");
         sb2.append(f6Var.r.slug);
         String sb3 = sb2.toString();
-        od1Var.showDialog(new org.telegram.ui.Components.hq0(od1Var.getParentActivity(), null, sb3, false, sb3, false, null));
+        od1Var.showDialog(new org.telegram.ui.Components.uq0(od1Var.getParentActivity(), null, sb3, false, sb3, false, null));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:20:0x00a8  */
@@ -241,11 +241,11 @@ public final class rc1 implements org.telegram.ui.Components.mq {
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(od1Var.getParentActivity());
         alertDialog$Builder.a.R = LocaleController.getString(R.string.DeleteThemeTitle);
         alertDialog$Builder.a.T = LocaleController.getString(R.string.DeleteThemeAlert);
-        alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new nl0(this, 21));
+        alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new ml0(this, 21));
         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-        org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-        od1Var.showDialog(b2Var);
-        TextView textView = (TextView) b2Var.d(-1);
+        org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
+        od1Var.showDialog(a2Var);
+        TextView textView = (TextView) a2Var.d(-1);
         if (textView != null) {
             textView.setTextColor(od1Var.getThemedColor(org.telegram.ui.ActionBar.h6.q7));
         }

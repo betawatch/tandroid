@@ -20,10 +20,10 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.ui.Components.de0;
-import org.telegram.ui.Components.i90;
+import org.telegram.ui.Components.ne0;
+import org.telegram.ui.Components.s90;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class q2 extends View {
     public final Paint a;
@@ -52,7 +52,7 @@ public final class q2 extends View {
         setPadding(0, 0, 0, 0);
         if (s2Var.m0(4)) {
             n2 n2Var = new n2(this, 4, R.drawable.msg_limit_links, LocaleController.getString(R.string.StoryWidgetLink));
-            i11 = ((org.telegram.ui.ActionBar.f3) s2Var).currentAccount;
+            i11 = ((org.telegram.ui.ActionBar.e3) s2Var).currentAccount;
             if (!UserConfig.getInstance(i11).isPremium()) {
                 Drawable mutate = getContext().getResources().getDrawable(R.drawable.msg_mini_lock3).mutate();
                 n2Var.j = mutate;
@@ -74,14 +74,14 @@ public final class q2 extends View {
             sb2.append(" ");
             sb2.append(kdVar == null ? ld.b() ? "24°C" : "72°F" : kdVar.a());
             CharSequence replaceEmoji = Emoji.replaceEmoji(sb2.toString(), textPaint.getFontMetricsInt(), false);
-            i10 = ((org.telegram.ui.ActionBar.f3) s2Var).currentAccount;
+            i10 = ((org.telegram.ui.ActionBar.e3) s2Var).currentAccount;
             CharSequence charSequence = replaceEmoji;
             if (MessagesController.getInstance(i10).storyWeatherPreload) {
                 charSequence = replaceEmoji;
                 charSequence = replaceEmoji;
-                if (de0.f("android.permission.ACCESS_COARSE_LOCATION") && kdVar == null) {
+                if (ne0.f("android.permission.ACCESS_COARSE_LOCATION") && kdVar == null) {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("___");
-                    spannableStringBuilder.setSpan(new i90(AndroidUtilities.dp(68.0f), this), 0, spannableStringBuilder.length(), 33);
+                    spannableStringBuilder.setSpan(new s90(AndroidUtilities.dp(68.0f), this), 0, spannableStringBuilder.length(), 33);
                     n2VarArr[0] = new n2(this, spannableStringBuilder);
                     ld.a(false, new ai.g3(1, this, n2VarArr));
                     charSequence = spannableStringBuilder;
@@ -138,7 +138,7 @@ public final class q2 extends View {
             Object obj2 = arrayList.get(i10);
             i10++;
             m2 m2Var2 = (m2) obj2;
-            m2Var2.a(canvas, com.google.android.gms.internal.vision.e2.A((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight(), this.d[m2Var2.e - 1], 2.0f, getPaddingLeft()) + m2Var2.d, org.telegram.messenger.z0.D(48.0f, m2Var2.e - 1, AndroidUtilities.dp(12.0f)));
+            m2Var2.a(canvas, com.google.android.gms.internal.vision.e2.A((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight(), this.d[m2Var2.e - 1], 2.0f, getPaddingLeft()) + m2Var2.d, org.telegram.messenger.f0.D(48.0f, m2Var2.e - 1, AndroidUtilities.dp(12.0f)));
         }
     }
 
@@ -213,7 +213,7 @@ public final class q2 extends View {
             float[] fArr3 = this.d;
             fArr3[i15] = fArr3[i15] + m2Var2.b;
         }
-        setMeasuredDimension(size, org.telegram.messenger.z0.D(12.0f, i13 - 1, org.telegram.messenger.z0.D(36.0f, i13, AndroidUtilities.dp(24.0f))));
+        setMeasuredDimension(size, org.telegram.messenger.f0.D(12.0f, i13 - 1, org.telegram.messenger.f0.D(36.0f, i13, AndroidUtilities.dp(24.0f))));
     }
 
     @Override // android.view.View

@@ -3,9 +3,9 @@ package ci;
 import android.animation.ValueAnimator;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.od1;
-import org.telegram.ui.up0;
+import org.telegram.ui.tp0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class ub implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -42,10 +42,10 @@ public final class ub implements ValueAnimator.AnimatorUpdateListener {
                 }
                 break;
             case 2:
-                up0 up0Var = (up0) this.c;
-                up0Var.Y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                up0Var.X.invalidate();
-                if (!this.b && up0Var.Y > 0.5f) {
+                tp0 tp0Var = (tp0) this.c;
+                tp0Var.Y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                tp0Var.X.invalidate();
+                if (!this.b && tp0Var.Y > 0.5f) {
                     this.b = true;
                     break;
                 }

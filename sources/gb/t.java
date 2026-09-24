@@ -2,9 +2,9 @@ package gb;
 
 import java.util.Iterator;
 import java.util.Map;
-import v7.m8;
+import v7.n8;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public abstract class t extends db.u {
     public final v a;
@@ -40,7 +40,7 @@ public abstract class t extends db.u {
             aVar.f();
             return b(a2);
         } catch (IllegalAccessException e) {
-            m8 m8Var = ib.c.a;
+            n8 n8Var = ib.c.a;
             throw new RuntimeException("Unexpected IllegalAccessException occurred (Gson 2.11.0). Certain ReflectionAccessFilter features require Java >= 9 to work correctly. If you are not using ReflectionAccessFilter, report this to the Gson maintainers.", e);
         } catch (IllegalStateException e7) {
             throw new db.j(e7);
@@ -61,7 +61,7 @@ public abstract class t extends db.u {
             }
             bVar.f();
         } catch (IllegalAccessException e) {
-            m8 m8Var = ib.c.a;
+            n8 n8Var = ib.c.a;
             throw new RuntimeException("Unexpected IllegalAccessException occurred (Gson 2.11.0). Certain ReflectionAccessFilter features require Java >= 9 to work correctly. If you are not using ReflectionAccessFilter, report this to the Gson maintainers.", e);
         }
     }

@@ -26,18 +26,18 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgress2;
-import org.telegram.ui.Components.f01;
-import org.telegram.ui.Components.h90;
+import org.telegram.ui.Components.r90;
 import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.t01;
+import org.telegram.ui.Components.zc;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class k4 {
     public int A;
     public int B;
     public boolean C;
-    public final t1 a;
+    public final u1 a;
     public i4 b;
     public int d;
     public int e;
@@ -46,14 +46,14 @@ public final class k4 {
     public int h;
     public boolean i;
     public final org.telegram.ui.Components.e6 j;
-    public h90 k;
-    public final vh.g l;
+    public r90 k;
+    public final vh.f l;
     public int m;
-    public final yc n;
+    public final zc n;
     public j4 o;
     public boolean p;
-    public f01 q;
-    public f01 r;
+    public t01 q;
+    public t01 r;
     public long s;
     public Bitmap w;
     public Paint x;
@@ -64,11 +64,11 @@ public final class k4 {
     public final Path u = new Path();
     public final RectF v = new RectF();
 
-    public k4(t1 t1Var) {
-        this.a = t1Var;
-        this.l = vh.g.e(t1Var);
-        this.j = new org.telegram.ui.Components.e6(t1Var, 0L, 350L, rr.h);
-        this.n = new yc(t1Var);
+    public k4(u1 u1Var) {
+        this.a = u1Var;
+        this.l = vh.f.e(u1Var);
+        this.j = new org.telegram.ui.Components.e6(u1Var, 0L, 350L, rr.h);
+        this.n = new zc(u1Var);
     }
 
     public final boolean a() {
@@ -87,7 +87,7 @@ public final class k4 {
 
     public final void b(Canvas canvas) {
         ArrayList arrayList;
-        t1 t1Var;
+        u1 u1Var;
         RectF rectF;
         Path path;
         Path path2;
@@ -105,8 +105,8 @@ public final class k4 {
         org.telegram.ui.Components.e6 e6Var = this.j;
         float e = e6Var.e(z10);
         float e7 = e6Var.e(this.i);
-        t1 t1Var2 = this.a;
-        MessageObject messageObject = t1Var2.getMessageObject();
+        u1 u1Var2 = this.a;
+        MessageObject messageObject = u1Var2.getMessageObject();
         Path path3 = this.u;
         path3.rewind();
         float f14 = Float.MAX_VALUE;
@@ -128,7 +128,7 @@ public final class k4 {
             int i13 = this.e;
             int i14 = j4Var.b;
             float f19 = e7;
-            t1 t1Var3 = t1Var2;
+            u1 u1Var3 = u1Var2;
             imageReceiver.setImageCoords(i11 + i12, i13 + i14, j4Var.c - i12, j4Var.d - i14);
             imageReceiver.draw(canvas2);
             if (imageReceiver.getAnimation() != null) {
@@ -136,7 +136,7 @@ public final class k4 {
                 int round = Math.round(0 / 1000.0f);
                 if (!j4Var.x && j4Var.K != (max = Math.max(0, j4Var.J - round))) {
                     j4Var.K = max;
-                    j4Var.L = new f01(AndroidUtilities.formatLongDuration(max), 12.0f, null);
+                    j4Var.L = new t01(AndroidUtilities.formatLongDuration(max), 12.0f, null);
                 }
             }
             if (f19 > 0.0f) {
@@ -175,12 +175,12 @@ public final class k4 {
             i10++;
             f14 = f21;
             e = f18;
-            t1Var2 = t1Var3;
+            u1Var2 = u1Var3;
             e7 = f19;
         }
         float f22 = e;
         float f23 = e7;
-        t1 t1Var4 = t1Var2;
+        u1 u1Var4 = u1Var2;
         if (f23 > 0.0f) {
             canvas2.save();
             canvas2.clipPath(path3);
@@ -188,14 +188,14 @@ public final class k4 {
             int i16 = (int) (f17 - f15);
             int i17 = (int) (f16 - f14);
             canvas2.saveLayerAlpha(0.0f, 0.0f, i16, i17, (int) (f23 * 255.0f), 31);
-            this.l.c(canvas, t1Var4, i16, i17, 1.0f, t1Var4.pe);
+            this.l.c(canvas, u1Var4, i16, i17, 1.0f, u1Var4.pe);
             canvas2 = canvas;
-            t1Var = t1Var4;
+            u1Var = u1Var4;
             canvas2.restore();
             canvas2.restore();
-            t1Var.invalidate();
+            u1Var.invalidate();
         } else {
-            t1Var = t1Var4;
+            u1Var = u1Var4;
         }
         int i18 = 0;
         while (true) {
@@ -250,7 +250,7 @@ public final class k4 {
             f11 = 5.0f;
             float f30 = this.h;
             f12 = 17.0f;
-            rectF.set(A, com.google.android.gms.internal.vision.e2.A(f30, dp5, 2.0f, f29), org.telegram.messenger.z0.a(f28, dp4, 2.0f, f27), org.telegram.messenger.z0.a(f30, dp5, 2.0f, f29));
+            rectF.set(A, com.google.android.gms.internal.vision.e2.A(f30, dp5, 2.0f, f29), org.telegram.messenger.f0.a(f28, dp4, 2.0f, f27), org.telegram.messenger.f0.a(f30, dp5, 2.0f, f29));
             path.rewind();
             float f31 = dp5 / 2.0f;
             path.addRoundRect(rectF, f31, f31, Path.Direction.CW);
@@ -264,30 +264,30 @@ public final class k4 {
             path2 = path;
             this.q.c((((this.g / 2.0f) + this.d) - (dp4 / 2.0f)) + AndroidUtilities.dp(14.0f), this.e + (this.h / 2.0f), f7, -1, canvas2);
             canvas2.restore();
-            if (t1Var.getDelegate() == null || !t1Var.getDelegate().c1(5, t1Var)) {
-                h90 h90Var = this.k;
-                if (h90Var != null && !h90Var.c() && !this.k.b()) {
+            if (u1Var.getDelegate() == null || !u1Var.getDelegate().c1(5, u1Var)) {
+                r90 r90Var = this.k;
+                if (r90Var != null && !r90Var.c() && !this.k.b()) {
                     this.k.a();
                 }
             } else {
-                h90 h90Var2 = this.k;
-                if (h90Var2 == null) {
-                    h90 h90Var3 = new h90();
-                    this.k = h90Var3;
-                    h90Var3.setCallback(t1Var);
+                r90 r90Var2 = this.k;
+                if (r90Var2 == null) {
+                    r90 r90Var3 = new r90();
+                    this.k = r90Var3;
+                    r90Var3.setCallback(u1Var);
                     this.k.f(org.telegram.ui.ActionBar.h6.l1(0.1f, -1), org.telegram.ui.ActionBar.h6.l1(0.3f, -1), org.telegram.ui.ActionBar.h6.l1(0.35f, -1), org.telegram.ui.ActionBar.h6.l1(0.8f, -1));
-                    h90 h90Var4 = this.k;
-                    h90Var4.C = true;
-                    h90Var4.w.setStrokeWidth(AndroidUtilities.dpf2(1.25f));
-                } else if (h90Var2.b() || this.k.c()) {
-                    h90 h90Var5 = this.k;
-                    h90Var5.b = -1L;
-                    h90Var5.c = -1L;
+                    r90 r90Var4 = this.k;
+                    r90Var4.C = true;
+                    r90Var4.w.setStrokeWidth(AndroidUtilities.dpf2(1.25f));
+                } else if (r90Var2.b() || this.k.c()) {
+                    r90 r90Var5 = this.k;
+                    r90Var5.b = -1L;
+                    r90Var5.c = -1L;
                 }
             }
-            h90 h90Var6 = this.k;
-            if (h90Var6 != null) {
-                h90Var6.d(rectF);
+            r90 r90Var6 = this.k;
+            if (r90Var6 != null) {
+                r90Var6.d(rectF);
                 this.k.j(f31);
                 this.k.setAlpha((int) (f7 * 255.0f));
                 this.k.draw(canvas2);
@@ -297,7 +297,7 @@ public final class k4 {
         if (this.r == null || f7 >= 1.0f || !a()) {
             return;
         }
-        float timeAlpha = t1Var.getTimeAlpha() * (1.0f - f7);
+        float timeAlpha = u1Var.getTimeAlpha() * (1.0f - f7);
         float dp6 = AndroidUtilities.dp(f10) + this.r.c;
         float dp7 = AndroidUtilities.dp(f12);
         float dp8 = AndroidUtilities.dp(f11);
@@ -319,8 +319,8 @@ public final class k4 {
         if (this.b == null) {
             return;
         }
-        t1 t1Var = this.a;
-        int id2 = t1Var.getMessageObject() != null ? t1Var.getMessageObject().getId() : 0;
+        u1 u1Var = this.a;
+        int id2 = u1Var.getMessageObject() != null ? u1Var.getMessageObject().getId() : 0;
         int i10 = this.g;
         int i11 = this.h;
         int max = (int) Math.max(1.0f, i10 > i11 ? 100.0f : (i10 / i11) * 100.0f);
@@ -395,9 +395,9 @@ public final class k4 {
             return;
         }
         this.C = false;
-        vh.g gVar = this.l;
-        if (gVar != null) {
-            gVar.a(this.a);
+        vh.f fVar = this.l;
+        if (fVar != null) {
+            fVar.a(this.a);
         }
         int i10 = 0;
         while (true) {
@@ -417,7 +417,7 @@ public final class k4 {
     public final boolean f(MotionEvent motionEvent) {
         boolean z10;
         j4 j4Var;
-        t1 t1Var;
+        u1 u1Var;
         boolean z11;
         float x10 = motionEvent.getX();
         float y3 = motionEvent.getY();
@@ -441,17 +441,17 @@ public final class k4 {
                     z10 = true;
                     j4Var = this.o;
                     if (j4Var != null && j4Var == d10) {
-                        t1Var = this.a;
-                        if (t1Var.getDelegate() != null && motionEvent.getAction() == 1) {
-                            MessageObject messageObject = t1Var.getMessageObject();
+                        u1Var = this.a;
+                        if (u1Var.getDelegate() != null && motionEvent.getAction() == 1) {
+                            MessageObject messageObject = u1Var.getMessageObject();
                             if (this.p || !z10 || d10.G.i.q != 3 || messageObject == null) {
-                                k1 delegate = t1Var.getDelegate();
+                                l1 delegate = u1Var.getDelegate();
                                 j4 j4Var2 = this.o;
                                 ImageReceiver imageReceiver = j4Var2.f;
                                 TLRPC.MessageExtendedMedia messageExtendedMedia = j4Var2.E;
                                 motionEvent.getX();
                                 motionEvent.getY();
-                                delegate.T1(t1Var, messageExtendedMedia);
+                                delegate.T1(u1Var, messageExtendedMedia);
                             } else if (messageObject.isSending()) {
                                 SendMessagesHelper.getInstance(messageObject.currentAccount).cancelSendingMessage(messageObject);
                             }
@@ -464,18 +464,18 @@ public final class k4 {
             z10 = false;
             j4Var = this.o;
             if (j4Var != null) {
-                t1Var = this.a;
-                if (t1Var.getDelegate() != null) {
-                    MessageObject messageObject2 = t1Var.getMessageObject();
+                u1Var = this.a;
+                if (u1Var.getDelegate() != null) {
+                    MessageObject messageObject2 = u1Var.getMessageObject();
                     if (this.p) {
                     }
-                    k1 delegate2 = t1Var.getDelegate();
+                    l1 delegate2 = u1Var.getDelegate();
                     j4 j4Var22 = this.o;
                     ImageReceiver imageReceiver2 = j4Var22.f;
                     TLRPC.MessageExtendedMedia messageExtendedMedia2 = j4Var22.E;
                     motionEvent.getX();
                     motionEvent.getY();
-                    delegate2.T1(t1Var, messageExtendedMedia2);
+                    delegate2.T1(u1Var, messageExtendedMedia2);
                 }
             }
             this.p = false;
@@ -1078,7 +1078,7 @@ public final class k4 {
                 k4Var = this;
             }
             int i74 = k4Var.m;
-            t1 t1Var = k4Var.a;
+            u1 u1Var = k4Var.a;
             if (i74 > 0) {
                 k4Var.f = i74;
                 messageObject2 = messageObject;
@@ -1088,9 +1088,9 @@ public final class k4 {
                     messageObject2 = messageObject;
                 } else {
                     messageObject2 = messageObject;
-                    k4Var.f = Math.min(t1Var.getParentWidth(), AndroidUtilities.displaySize.y) - AndroidUtilities.dp((t1Var.M0(messageObject2) ? 10 : 0) + 64);
+                    k4Var.f = Math.min(u1Var.getParentWidth(), AndroidUtilities.displaySize.y) - AndroidUtilities.dp((u1Var.M0(messageObject2) ? 10 : 0) + 64);
                 }
-                if (t1Var.z3()) {
+                if (u1Var.z3()) {
                     k4Var.f -= AndroidUtilities.dp(52.0f);
                 }
             }
@@ -1121,12 +1121,12 @@ public final class k4 {
                         j4Var2.F = message2 != null ? message2.attachPath : null;
                     }
                     if (!TextUtils.isEmpty(j4Var2.F)) {
-                        DownloadController.getInstance(t1Var.I7).addLoadingFileObserver(j4Var2.F, messageObject2, j4Var2);
+                        DownloadController.getInstance(u1Var.I7).addLoadingFileObserver(j4Var2.F, messageObject2, j4Var2);
                         if (messageObject2.isSending()) {
                             j4Var2.G.o(messageExtendedMedia2.uploadProgress, false);
                         }
                     }
-                    if (t1Var.M0 && !j4Var2.M) {
+                    if (u1Var.M0 && !j4Var2.M) {
                         j4Var2.M = true;
                         j4Var2.f.onAttachedToWindow();
                     }
@@ -1154,16 +1154,16 @@ public final class k4 {
             k4Var.g = (int) ((i4Var4.d / 1000.0f) * k4Var.f);
             k4Var.h = (int) (i4Var4.g * i4Var4.i);
             if (k4Var.i) {
-                f01 f01Var = new f01(yh.w7.X0(false, LocaleController.formatPluralStringComma("UnlockPaidContent", (int) tL_messageMediaPaidMedia3.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
-                k4Var.q = f01Var;
-                if (f01Var.c > k4Var.g - AndroidUtilities.dp(30.0f)) {
-                    k4Var.q = new f01(yh.w7.X0(false, LocaleController.formatPluralStringComma("UnlockPaidContentShort", (int) tL_messageMediaPaidMedia3.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
+                t01 t01Var = new t01(yh.w7.X0(false, LocaleController.formatPluralStringComma("UnlockPaidContent", (int) tL_messageMediaPaidMedia3.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
+                k4Var.q = t01Var;
+                if (t01Var.c > k4Var.g - AndroidUtilities.dp(30.0f)) {
+                    k4Var.q = new t01(yh.w7.X0(false, LocaleController.formatPluralStringComma("UnlockPaidContentShort", (int) tL_messageMediaPaidMedia3.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
                 }
             }
             if (k4Var.r == null || k4Var.s != tL_messageMediaPaidMedia3.stars_amount) {
                 long j3 = tL_messageMediaPaidMedia3.stars_amount;
                 k4Var.s = j3;
-                k4Var.r = new f01(yh.w7.R0(LocaleController.formatPluralStringComma("PaidMediaPrice", (int) j3), 0.9f, null), 12.0f, AndroidUtilities.bold());
+                k4Var.r = new t01(yh.w7.R0(LocaleController.formatPluralStringComma("PaidMediaPrice", (int) j3), 0.9f, null), 12.0f, AndroidUtilities.bold());
             }
         }
     }
@@ -1173,9 +1173,9 @@ public final class k4 {
         boolean z10;
         boolean z11;
         int i10;
-        t1 t1Var = this.a;
-        boolean z12 = t1Var.Lc > 0 || (t1Var.u1 && !TextUtils.isEmpty(messageObject.caption));
-        boolean z13 = ((t1Var.u1 || TextUtils.isEmpty(messageObject.caption)) && t1Var.N.s && !t1Var.j9) ? false : true;
+        u1 u1Var = this.a;
+        boolean z12 = u1Var.Lc > 0 || (u1Var.u1 && !TextUtils.isEmpty(messageObject.caption));
+        boolean z13 = ((u1Var.u1 || TextUtils.isEmpty(messageObject.caption)) && u1Var.N.s && !u1Var.j9) ? false : true;
         int i11 = this.m;
         if (i11 > 0) {
             f7 = 1000.0f / this.b.d;
@@ -1184,9 +1184,9 @@ public final class k4 {
             if (AndroidUtilities.isTablet()) {
                 this.f = AndroidUtilities.getMinTabletSide() - AndroidUtilities.dp(122.0f);
             } else {
-                this.f = Math.min(t1Var.getParentWidth(), AndroidUtilities.displaySize.y) - AndroidUtilities.dp((t1Var.M0(messageObject) ? 10 : 0) + 64);
+                this.f = Math.min(u1Var.getParentWidth(), AndroidUtilities.displaySize.y) - AndroidUtilities.dp((u1Var.M0(messageObject) ? 10 : 0) + 64);
             }
-            if (t1Var.z3()) {
+            if (u1Var.z3()) {
                 this.f -= AndroidUtilities.dp(52.0f);
             }
             f7 = 1.0f;
@@ -1270,7 +1270,7 @@ public final class k4 {
                         i28 = dp2;
                     }
                 }
-                if (!z10 && t1Var.E) {
+                if (!z10 && u1Var.E) {
                     if (messageObject.isOutOwner()) {
                         i26 = min;
                     } else {
@@ -1304,10 +1304,10 @@ public final class k4 {
         if (this.i) {
             TLRPC.TL_messageMediaPaidMedia tL_messageMediaPaidMedia = messageObject == null ? null : (TLRPC.TL_messageMediaPaidMedia) messageObject.messageOwner.media;
             if (tL_messageMediaPaidMedia != null) {
-                f01 f01Var = new f01(yh.w7.X0(false, LocaleController.formatPluralStringComma("UnlockPaidContent", (int) tL_messageMediaPaidMedia.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
-                this.q = f01Var;
-                if (f01Var.c > this.g - AndroidUtilities.dp(30.0f)) {
-                    this.q = new f01(yh.w7.X0(false, LocaleController.formatPluralStringComma("UnlockPaidContentShort", (int) tL_messageMediaPaidMedia.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
+                t01 t01Var = new t01(yh.w7.X0(false, LocaleController.formatPluralStringComma("UnlockPaidContent", (int) tL_messageMediaPaidMedia.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
+                this.q = t01Var;
+                if (t01Var.c > this.g - AndroidUtilities.dp(30.0f)) {
+                    this.q = new t01(yh.w7.X0(false, LocaleController.formatPluralStringComma("UnlockPaidContentShort", (int) tL_messageMediaPaidMedia.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
                 }
             }
         }

@@ -34,13 +34,13 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.i90;
 import org.telegram.ui.Components.p6;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.s90;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
-import w7.x5;
+import w7.y5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a0 implements Runnable {
     public final /* synthetic */ int a;
@@ -118,9 +118,9 @@ public final /* synthetic */ class a0 implements Runnable {
                     HashMap hashMap = ei.l0.g;
                     ?? alertDialog$Builder = new AlertDialog$Builder(context);
                     String string = LocaleController.getString(R.string.BotDownloadFileTitle);
-                    org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-                    b2Var.R = string;
-                    b2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString(R.string.BotDownloadFileText, userName));
+                    org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
+                    a2Var.R = string;
+                    a2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString(R.string.BotDownloadFileText, userName));
                     ?? linearLayout = new LinearLayout(context);
                     linearLayout.setPadding(AndroidUtilities.dp(22.0f), 0, AndroidUtilities.dp(22.0f), 0);
                     linearLayout.setOrientation(0);
@@ -128,21 +128,21 @@ public final /* synthetic */ class a0 implements Runnable {
                     imageView.setScaleType(ImageView.ScaleType.CENTER);
                     imageView.setBackground(h6.K(AndroidUtilities.dp(44.0f), h6.w0(null, h6.Oh, false)));
                     imageView.setImageResource(R.drawable.msg_round_file_s);
-                    linearLayout.addView(imageView, x5.t(44, 44, 19, 0, 0, 10, 0));
+                    linearLayout.addView(imageView, y5.t(44, 44, 19, 0, 0, 10, 0));
                     ?? linearLayout2 = new LinearLayout(context);
                     linearLayout2.setOrientation(1);
-                    TextView g10 = org.telegram.messenger.z0.g(context, 1, 15.0f);
-                    g10.setTypeface(AndroidUtilities.bold());
-                    g10.setText(str6);
-                    g10.setTextColor(h6.w0(null, h6.n5, false));
-                    linearLayout2.addView(g10, x5.k(0.0f, 0.0f, 0.0f, 3.0f, -1, -2));
+                    TextView f7 = org.telegram.messenger.f0.f(context, 1, 15.0f);
+                    f7.setTypeface(AndroidUtilities.bold());
+                    f7.setText(str6);
+                    f7.setTextColor(h6.w0(null, h6.n5, false));
+                    linearLayout2.addView(f7, y5.k(0.0f, 0.0f, 0.0f, 3.0f, -1, -2));
                     ?? p6Var = new p6(context, true, true, true);
                     p6Var.setTextSize(AndroidUtilities.dp(12.0f));
                     SpannableString spannableString = new SpannableString("l");
-                    i90 i90Var = new i90(AndroidUtilities.dp(55.0f), p6Var);
+                    s90 s90Var = new s90(AndroidUtilities.dp(55.0f), p6Var);
                     int i13 = h6.Ed;
-                    i90Var.a(h6.l1(0.35f, h6.w0(null, i13, false)), h6.l1(0.075f, h6.w0(null, i13, false)));
-                    spannableString.setSpan(i90Var, 0, 1, 33);
+                    s90Var.a(h6.l1(0.35f, h6.w0(null, i13, false)), h6.l1(0.075f, h6.w0(null, i13, false)));
+                    spannableString.setSpan(s90Var, 0, 1, 33);
                     p6Var.setText(spannableString);
                     bi.v vVar = new bi.v(p6Var, 14);
                     HashMap hashMap2 = ei.l0.h;
@@ -153,13 +153,13 @@ public final /* synthetic */ class a0 implements Runnable {
                         new ei.f0(str5, vVar).execute(str5);
                     }
                     p6Var.setTextColor(h6.w0(null, i13, false));
-                    linearLayout2.addView(p6Var, x5.n(-1, 15));
-                    linearLayout.addView(linearLayout2, x5.t(-1, -2, 23, 0, 0, 0, 2));
+                    linearLayout2.addView(p6Var, y5.n(-1, 15));
+                    linearLayout.addView(linearLayout2, y5.t(-1, -2, 23, 0, 0, 0, 2));
                     alertDialog$Builder.n(linearLayout);
                     final boolean[] zArr = new boolean[1];
-                    alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new org.telegram.ui.ActionBar.a2() { // from class: ei.d0
-                        @Override // org.telegram.ui.ActionBar.a2
-                        public final void f(org.telegram.ui.ActionBar.b2 b2Var2, int i14) {
+                    alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new org.telegram.ui.ActionBar.z1() { // from class: ei.d0
+                        @Override // org.telegram.ui.ActionBar.z1
+                        public final void f(org.telegram.ui.ActionBar.a2 a2Var2, int i14) {
                             switch (i12) {
                                 case 0:
                                     boolean[] zArr2 = zArr;
@@ -180,9 +180,9 @@ public final /* synthetic */ class a0 implements Runnable {
                             }
                         }
                     });
-                    alertDialog$Builder.k(LocaleController.getString(R.string.BotDownloadFileDownload), new org.telegram.ui.ActionBar.a2() { // from class: ei.d0
-                        @Override // org.telegram.ui.ActionBar.a2
-                        public final void f(org.telegram.ui.ActionBar.b2 b2Var2, int i14) {
+                    alertDialog$Builder.k(LocaleController.getString(R.string.BotDownloadFileDownload), new org.telegram.ui.ActionBar.z1() { // from class: ei.d0
+                        @Override // org.telegram.ui.ActionBar.z1
+                        public final void f(org.telegram.ui.ActionBar.a2 a2Var2, int i14) {
                             switch (i11) {
                                 case 0:
                                     boolean[] zArr2 = zArr;
@@ -203,8 +203,8 @@ public final /* synthetic */ class a0 implements Runnable {
                             }
                         }
                     });
-                    b2Var.setOnDismissListener(new ei.e0(i12, zArr, e4Var));
-                    b2Var.show();
+                    a2Var.setOnDismissListener(new ei.e0(i12, zArr, e4Var));
+                    a2Var.show();
                     break;
                 }
             case 2:
@@ -224,7 +224,7 @@ public final /* synthetic */ class a0 implements Runnable {
                 TLObject tLObject2 = (TLObject) obj;
                 String[] strArr = (String[]) obj2;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj4;
-                org.telegram.ui.ActionBar.b2 b2Var2 = (org.telegram.ui.ActionBar.b2) obj3;
+                org.telegram.ui.ActionBar.a2 a2Var2 = (org.telegram.ui.ActionBar.a2) obj3;
                 b1Var4.getClass();
                 if (tLObject2 != null) {
                     strArr[0] = "allowed";
@@ -235,7 +235,7 @@ public final /* synthetic */ class a0 implements Runnable {
                 if (tL_error != null) {
                     b1Var4.Z(tL_error.text);
                 }
-                b2Var2.dismiss();
+                a2Var2.dismiss();
                 break;
             case 4:
                 String str9 = (String) obj2;
@@ -257,7 +257,7 @@ public final /* synthetic */ class a0 implements Runnable {
                     }
                     b1 b1Var5 = y0Var.Q;
                     if (b1Var5 != null) {
-                        new xc(b1Var5, b1Var5.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, str12))).k(true);
+                        new yc(b1Var5, b1Var5.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, str12))).k(true);
                         break;
                     }
                 } catch (Exception e) {
@@ -349,7 +349,7 @@ public final /* synthetic */ class a0 implements Runnable {
                                         File directory = FileLoader.getDirectory(4);
                                         StringBuilder sb3 = new StringBuilder();
                                         sb3.append(FileLoader.fixFileName(str14 == null ? "file" : str14));
-                                        sb3.append(i12 > 0 ? hg.c.j(i12, " (", ")") : "");
+                                        sb3.append(i12 > 0 ? hg.c.i(i12, " (", ")") : "");
                                         file = new File(directory, sb3.toString());
                                         i12++;
                                     } else {
@@ -396,23 +396,23 @@ public final /* synthetic */ class a0 implements Runnable {
             default:
                 boolean[] zArr2 = (boolean[]) obj5;
                 WebView webView = (WebView) obj4;
-                b2 b2Var3 = (b2) obj3;
+                c2 c2Var = (c2) obj3;
                 String str16 = (String) obj2;
-                z1 z1Var = (z1) obj;
+                a2 a2Var3 = (a2) obj;
                 if (!zArr2[0]) {
                     zArr2[0] = true;
                     if (!BuildVars.DEBUG_PRIVATE_VERSION) {
                         webView.onPause();
                         webView.destroy();
                         AndroidUtilities.removeFromParent(webView);
-                        AndroidUtilities.removeFromParent(b2Var3);
+                        AndroidUtilities.removeFromParent(c2Var);
                     }
                     try {
                         file = new JSONObject(str16);
                     } catch (Exception e14) {
                         FileLog.e(e14);
                     }
-                    z1Var.run(file);
+                    a2Var3.run(file);
                     break;
                 }
                 break;
@@ -438,13 +438,13 @@ public final /* synthetic */ class a0 implements Runnable {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ a0(b1 b1Var, TLObject tLObject, String[] strArr, TLRPC.TL_error tL_error, org.telegram.ui.ActionBar.b2 b2Var) {
+    public /* synthetic */ a0(b1 b1Var, TLObject tLObject, String[] strArr, TLRPC.TL_error tL_error, org.telegram.ui.ActionBar.a2 a2Var) {
         this.a = 3;
         this.b = b1Var;
         this.c = tLObject;
         this.d = strArr;
         this.e = tL_error;
-        this.f = b2Var;
+        this.f = a2Var;
     }
 
     public /* synthetic */ a0(b1 b1Var, TLRPC.TL_error tL_error, String str, TLRPC.TL_inputInvoiceSlug tL_inputInvoiceSlug, TLObject tLObject) {

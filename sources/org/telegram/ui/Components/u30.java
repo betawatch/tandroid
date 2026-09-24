@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class u30 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -41,7 +41,7 @@ public final class u30 extends AnimatorListenerAdapter {
             case 1:
                 v30 v30Var = this.b.W;
                 if (v30Var != null) {
-                    ((org.telegram.ui.os0) v30Var).a.e0.requestLayout();
+                    ((org.telegram.ui.ns0) v30Var).a.e0.requestLayout();
                     break;
                 }
                 break;

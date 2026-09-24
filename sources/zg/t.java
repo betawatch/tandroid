@@ -11,17 +11,17 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Cells.t1;
-import org.telegram.ui.Components.kg0;
+import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.ug0;
 import org.telegram.ui.ek;
 import org.telegram.ui.rj;
-import org.telegram.ui.xn;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class t extends FrameLayout {
-    public final xn a;
+    public final wn a;
     public s b;
     public List c;
     public boolean d;
@@ -36,17 +36,17 @@ public final class t extends FrameLayout {
     public boolean x;
     public final int[] y;
 
-    public t(xn xnVar, Context context) {
+    public t(wn wnVar, Context context) {
         super(context);
         this.c = Collections.EMPTY_LIST;
         this.f = 22;
         this.h = 24;
         this.y = new int[2];
         setVisibility(8);
-        this.a = xnVar;
+        this.a = wnVar;
         setClipToPadding(false);
         setClipChildren(false);
-        xnVar.x0.j(new kg0(this, 21));
+        wnVar.x0.j(new ug0(this, 21));
     }
 
     public final void a(boolean z10) {
@@ -58,7 +58,7 @@ public final class t extends FrameLayout {
         this.x = false;
         ValueAnimator duration = ValueAnimator.ofFloat(1.0f, 0.0f).setDuration(150L);
         duration.addUpdateListener(new org.telegram.ui.Components.voip.r0(this, 27));
-        duration.addListener(new qg.n0(this, 12));
+        duration.addListener(new pg.d0(this, 13));
         duration.start();
     }
 
@@ -114,20 +114,20 @@ public final class t extends FrameLayout {
             }
             AndroidUtilities.runOnUIThread(new r(this, 0));
         }
-        xn xnVar = this.a;
-        rj rjVar = xnVar.x0;
+        wn wnVar = this.a;
+        rj rjVar = wnVar.x0;
         int[] iArr = this.y;
         rjVar.getLocationInWindow(iArr);
         boolean z13 = true;
         float f12 = iArr[1];
         getLocationInWindow(iArr);
-        float f13 = (f12 - iArr[1]) - xnVar.N9;
+        float f13 = (f12 - iArr[1]) - wnVar.N9;
         boolean z14 = false;
         for (int i10 = 0; i10 < rjVar.getChildCount(); i10++) {
             View childAt = rjVar.getChildAt(i10);
-            if (childAt instanceof t1) {
-                t1 t1Var = (t1) childAt;
-                MessageObject messageObject = t1Var.getMessageObject();
+            if (childAt instanceof u1) {
+                u1 u1Var = (u1) childAt;
+                MessageObject messageObject = u1Var.getMessageObject();
                 if (messageObject.getId() == this.e.getId()) {
                     boolean isOutOwner = messageObject.isOutOwner();
                     s sVar2 = this.b;
@@ -147,16 +147,16 @@ public final class t extends FrameLayout {
                         sVar3.setPadding(i12, dp2, dp3 + i11, AndroidUtilities.dp(f14));
                     }
                     int height2 = getHeight() != 0 ? getHeight() : rjVar.getHeight();
-                    if (t1Var.getCurrentMessagesGroup() != null) {
-                        MessageObject.GroupedMessages.TransitionParams transitionParams = t1Var.getCurrentMessagesGroup().transitionParams;
+                    if (u1Var.getCurrentMessagesGroup() != null) {
+                        MessageObject.GroupedMessages.TransitionParams transitionParams = u1Var.getCurrentMessagesGroup().transitionParams;
                         height = transitionParams.bottom - transitionParams.top;
                     } else {
-                        height = t1Var.getHeight();
+                        height = u1Var.getHeight();
                     }
-                    float y3 = (t1Var.getY() + f13) - AndroidUtilities.dp(74.0f);
+                    float y3 = (u1Var.getY() + f13) - AndroidUtilities.dp(74.0f);
                     float dp4 = AndroidUtilities.dp(14.0f);
                     float dp5 = height2 - AndroidUtilities.dp(218.0f);
-                    ek ekVar = xnVar.X1;
+                    ek ekVar = wnVar.X1;
                     if (ekVar != null && ekVar.getVisibility() == 0) {
                         dp4 += ekVar.getHeight();
                     }
@@ -187,23 +187,23 @@ public final class t extends FrameLayout {
                                     this.b.setVisibility(0);
                                     if (!this.x) {
                                         this.x = true;
-                                        this.b.p(this.e, xnVar.Z7, true);
+                                        this.b.p(this.e, wnVar.Z7, true);
                                     }
                                 }
                             }
-                            this.b.setTranslationY(w7.p.a(interpolation, dp4, dp5));
-                            this.b.setTranslationX(t1Var.E2(true));
+                            this.b.setTranslationY(w7.q.a(interpolation, dp4, dp5));
+                            this.b.setTranslationX(u1Var.E2(true));
                             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.b.getLayoutParams();
-                            int f16 = hg.c.f(32.0f, t1Var.getBackgroundDrawableLeft(), 0);
-                            int f17 = hg.c.f(32.0f, t1Var.getWidth() - t1Var.getBackgroundDrawableRight(), (int) t1Var.E2(true));
+                            int b10 = org.telegram.messenger.f0.b(32.0f, u1Var.getBackgroundDrawableLeft(), 0);
+                            int b11 = org.telegram.messenger.f0.b(32.0f, u1Var.getWidth() - u1Var.getBackgroundDrawableRight(), (int) u1Var.E2(true));
                             int dp6 = AndroidUtilities.dp(40.0f) * 8;
-                            if ((getWidth() - f17) - f16 < dp6) {
+                            if ((getWidth() - b11) - b10 < dp6) {
                                 if (isOutOwner) {
-                                    f16 = Math.min(f16, getWidth() - dp6);
-                                    f17 = 0;
+                                    b10 = Math.min(b10, getWidth() - dp6);
+                                    b11 = 0;
                                 } else {
-                                    f17 = Math.min(f17, getWidth() - dp6);
-                                    f16 = 0;
+                                    b11 = Math.min(b11, getWidth() - dp6);
+                                    b10 = 0;
                                 }
                             }
                             int i13 = isOutOwner ? 5 : 3;
@@ -211,12 +211,12 @@ public final class t extends FrameLayout {
                                 layoutParams.gravity = i13;
                                 z14 = true;
                             }
-                            if (f16 != layoutParams.leftMargin) {
-                                layoutParams.leftMargin = f16;
+                            if (b10 != layoutParams.leftMargin) {
+                                layoutParams.leftMargin = b10;
                                 z14 = true;
                             }
-                            if (f17 != layoutParams.rightMargin) {
-                                layoutParams.rightMargin = f17;
+                            if (b11 != layoutParams.rightMargin) {
+                                layoutParams.rightMargin = b11;
                             } else {
                                 z13 = z14;
                             }
@@ -267,10 +267,10 @@ public final class t extends FrameLayout {
         TLRPC.ChatFull chatFull;
         TLRPC.Message message;
         this.c = list;
-        xn xnVar = this.a;
-        int i10 = xnVar.R3;
+        wn wnVar = this.a;
+        int i10 = wnVar.R3;
         boolean z10 = true;
-        if (i10 != 1 && i10 != 5 && i10 != 6 && !xnVar.A9() && !xnVar.v() && (((chatFull = xnVar.Z7) == null || !(chatFull.available_reactions instanceof TLRPC.TL_chatReactionsNone)) && !list.isEmpty())) {
+        if (i10 != 1 && i10 != 5 && i10 != 6 && !wnVar.A9() && !wnVar.v() && (((chatFull = wnVar.Z7) == null || !(chatFull.available_reactions instanceof TLRPC.TL_chatReactionsNone)) && !list.isEmpty())) {
             long j3 = 0;
             boolean z11 = false;
             for (MessageObject messageObject : list) {

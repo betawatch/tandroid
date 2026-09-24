@@ -8,7 +8,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class yi1 {
     public String a;
@@ -63,11 +63,11 @@ public final class yi1 {
             if (lowerCase != null) {
                 String D = a4.a.D(lowerCase2, "-", lowerCase);
                 if (this.g != null) {
-                    StringBuilder h = w.c.h(D, "&rotation=");
+                    StringBuilder h = v7.j.h(D, "&rotation=");
                     h.append(AndroidUtilities.getWallpaperRotation(this.f, true));
                     lowerCase2 = h.toString();
                 } else {
-                    StringBuilder h10 = w.c.h(D, "?rotation=");
+                    StringBuilder h10 = v7.j.h(D, "?rotation=");
                     h10.append(AndroidUtilities.getWallpaperRotation(this.f, true));
                     lowerCase2 = h10.toString();
                 }
@@ -87,7 +87,7 @@ public final class yi1 {
             return a4.a.r(MessagesController.getInstance(UserConfig.selectedAccount).linkPrefix, "/bg/", lowerCase2, new StringBuilder("https://"));
         }
         String str = "https://" + MessagesController.getInstance(UserConfig.selectedAccount).linkPrefix + "/bg/" + this.g.slug + "?intensity=" + ((int) (this.h * 100.0f)) + "&bg_color=" + lowerCase2;
-        return this.j ? w.c.g(str, "&mode=motion") : str;
+        return this.j ? v7.j.t(str, "&mode=motion") : str;
     }
 
     public yi1(String str, int i10, int i11, int i12, int i13) {

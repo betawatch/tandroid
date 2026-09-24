@@ -11,7 +11,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class yg1 extends ScrollView {
     public final int[] a;
@@ -48,7 +48,7 @@ public final class yg1 extends ScrollView {
         int[] iArr = this.a;
         textView.getLocationOnScreen(iArr);
         int measuredHeight = zg1Var.c.getMeasuredHeight() + iArr[1];
-        kVar = ((org.telegram.ui.ActionBar.n2) zg1Var).actionBar;
+        kVar = ((org.telegram.ui.ActionBar.m2) zg1Var).actionBar;
         boolean z10 = measuredHeight < kVar.getBottom();
         if (z10 != (zg1Var.c.getTag() == null)) {
             zg1Var.c.setTag(z10 ? null : 1);
@@ -63,10 +63,10 @@ public final class yg1 extends ScrollView {
             float[] fArr = {z10 ? 1.0f : 0.0f};
             Property property = View.ALPHA;
             ObjectAnimator ofFloat = ObjectAnimator.ofFloat(r6Var, (Property<ci.r6, Float>) property, fArr);
-            kVar2 = ((org.telegram.ui.ActionBar.n2) zg1Var).actionBar;
-            animatorSet2.playTogether(ofFloat, ObjectAnimator.ofFloat(kVar2.getTitleTextView(), (Property<org.telegram.ui.ActionBar.i5, Float>) property, z10 ? 1.0f : 0.0f));
+            kVar2 = ((org.telegram.ui.ActionBar.m2) zg1Var).actionBar;
+            animatorSet2.playTogether(ofFloat, ObjectAnimator.ofFloat(kVar2.getTitleTextView(), (Property<org.telegram.ui.ActionBar.h5, Float>) property, z10 ? 1.0f : 0.0f));
             zg1Var.K.setDuration(150L);
-            zg1Var.K.addListener(new wq0(this, 25));
+            zg1Var.K.addListener(new xo0(this, 26));
             zg1Var.K.start();
         }
     }

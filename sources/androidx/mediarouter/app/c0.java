@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import s4.c1;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class c0 extends s4.h0 {
     public final ArrayList c = new ArrayList();
@@ -29,10 +29,10 @@ public final class c0 extends s4.h0 {
         this.r = d0Var;
         Context context = d0Var.n;
         this.d = LayoutInflater.from(context);
-        this.e = v7.d0.d(context, R.attr.mediaRouteDefaultIconDrawable);
-        this.f = v7.d0.d(context, R.attr.mediaRouteTvIconDrawable);
-        this.h = v7.d0.d(context, R.attr.mediaRouteSpeakerIconDrawable);
-        this.n = v7.d0.d(context, R.attr.mediaRouteSpeakerGroupIconDrawable);
+        this.e = v7.f0.d(context, R.attr.mediaRouteDefaultIconDrawable);
+        this.f = v7.f0.d(context, R.attr.mediaRouteTvIconDrawable);
+        this.h = v7.f0.d(context, R.attr.mediaRouteSpeakerIconDrawable);
+        this.n = v7.f0.d(context, R.attr.mediaRouteSpeakerGroupIconDrawable);
         D();
     }
 

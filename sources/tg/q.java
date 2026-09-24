@@ -1,34 +1,26 @@
 package tg;
 
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.fr0;
-import org.telegram.ui.yr0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q implements RequestDelegate {
+public final /* synthetic */ class q implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Utilities.Callback b;
-    public final /* synthetic */ Utilities.Callback c;
+    public final /* synthetic */ v b;
 
-    public /* synthetic */ q(Utilities.Callback callback, Utilities.Callback callback2, int i10) {
+    public /* synthetic */ q(v vVar, int i10) {
         this.a = i10;
-        this.b = callback;
-        this.c = callback2;
+        this.b = vVar;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new fr0(tL_error, this.b, this.c, 26));
+                AndroidUtilities.runOnUIThread(new q(this.b, 1));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new yr0(tL_error, this.b, tLObject, this.c, 25));
+                this.b.run(null);
                 break;
         }
     }

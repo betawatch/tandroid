@@ -5,10 +5,10 @@ import android.view.View;
 import org.telegram.messenger.DialogObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.qq;
-import org.telegram.ui.py0;
-import tg.d1;
+import org.telegram.ui.ny0;
+import tg.c1;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class g extends og.a {
     public TLRPC.User c;
@@ -21,10 +21,10 @@ public final class g extends og.a {
     public int j;
     public boolean k;
     public int l;
-    public py0 m;
-    public py0 n;
-    public d1 o;
-    public d1 p;
+    public ny0 m;
+    public ny0 n;
+    public c1 o;
+    public c1 p;
     public View q;
     public qq r;
 

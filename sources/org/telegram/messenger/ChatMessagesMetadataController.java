@@ -5,21 +5,21 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.km;
-import org.telegram.ui.xn;
+import org.telegram.ui.jm;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class ChatMessagesMetadataController {
-    final xn chatActivity;
+    final wn chatActivity;
     private final ArrayList<MessageObject> reactionsToCheck = new ArrayList<>(10);
     private final ArrayList<MessageObject> extendedMediaToCheck = new ArrayList<>(10);
     private final ArrayList<MessageObject> storiesToCheck = new ArrayList<>(10);
     ArrayList<Integer> reactionsRequests = new ArrayList<>();
     ArrayList<Integer> extendedMediaRequests = new ArrayList<>();
 
-    public ChatMessagesMetadataController(xn xnVar) {
-        this.chatActivity = xnVar;
+    public ChatMessagesMetadataController(wn wnVar) {
+        this.chatActivity = wnVar;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -110,12 +110,12 @@ public class ChatMessagesMetadataController {
         }
     }
 
-    public void checkMessages(km kmVar, int i10, int i11, long j3) {
-        ArrayList L = kmVar.L();
+    public void checkMessages(jm jmVar, int i10, int i11, long j3) {
+        ArrayList L = jmVar.L();
         if (this.chatActivity.c() || i10 < 0 || i11 < 0) {
             return;
         }
-        int i12 = kmVar.J;
+        int i12 = jmVar.J;
         int i13 = (i11 - i12) - 10;
         int i14 = (i10 - i12) + 10;
         if (i13 < 0) {
@@ -161,7 +161,7 @@ public class ChatMessagesMetadataController {
         for (int i10 = 0; i10 < arrayList.size(); i10++) {
             tL_messages_getExtendedMedia.id.add(Integer.valueOf(arrayList.get(i10).getId()));
         }
-        this.extendedMediaRequests.add(Integer.valueOf(this.chatActivity.getConnectionsManager().sendRequest(tL_messages_getExtendedMedia, new t0(this, 0))));
+        this.extendedMediaRequests.add(Integer.valueOf(this.chatActivity.getConnectionsManager().sendRequest(tL_messages_getExtendedMedia, new u0(this, 0))));
         if (this.extendedMediaRequests.size() > 10) {
             this.chatActivity.getConnectionsManager().cancelRequest(this.extendedMediaRequests.remove(0).intValue(), false);
         }
@@ -176,7 +176,7 @@ public class ChatMessagesMetadataController {
         for (int i10 = 0; i10 < arrayList.size(); i10++) {
             tL_messages_getMessagesReactions.id.add(Integer.valueOf(arrayList.get(i10).getId()));
         }
-        this.reactionsRequests.add(Integer.valueOf(this.chatActivity.getConnectionsManager().sendRequest(tL_messages_getMessagesReactions, new t0(this, 1))));
+        this.reactionsRequests.add(Integer.valueOf(this.chatActivity.getConnectionsManager().sendRequest(tL_messages_getMessagesReactions, new u0(this, 1))));
         if (this.reactionsRequests.size() > 5) {
             this.chatActivity.getConnectionsManager().cancelRequest(this.reactionsRequests.remove(0).intValue(), true);
         }

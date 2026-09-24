@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteOrder;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class b extends InputStream implements DataInput {
     public static final ByteOrder e = ByteOrder.LITTLE_ENDIAN;
@@ -41,7 +41,7 @@ public class b extends InputStream implements DataInput {
                 }
                 skip = dataInputStream.read(this.d, 0, Math.min(8192, i12));
                 if (skip == -1) {
-                    throw new EOFException(hg.c.j(i10, "Reached EOF while skipping ", " bytes."));
+                    throw new EOFException(hg.c.i(i10, "Reached EOF while skipping ", " bytes."));
                 }
             }
             i11 += skip;

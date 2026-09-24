@@ -5,28 +5,28 @@ import java.math.BigInteger;
 import java.math.RoundingMode;
 import java.util.List;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class p extends n {
-    public final lf.i j;
-    public final lf.i k;
+    public final la.h j;
+    public final la.h k;
     public final long l;
 
-    public p(j jVar, long j3, long j10, long j11, long j12, long j13, List list, long j14, lf.i iVar, lf.i iVar2, long j15, long j16) {
+    public p(j jVar, long j3, long j10, long j11, long j12, long j13, List list, long j14, la.h hVar, la.h hVar2, long j15, long j16) {
         super(jVar, j3, j10, j11, j13, list, j14, j15, j16);
-        this.j = iVar;
-        this.k = iVar2;
+        this.j = hVar;
+        this.k = hVar2;
         this.l = j12;
     }
 
     @Override // m2.s
     public final j a(m mVar) {
-        lf.i iVar = this.j;
-        if (iVar == null) {
+        la.h hVar = this.j;
+        if (hVar == null) {
             return this.a;
         }
         b2.s sVar = mVar.a;
-        return new j(0L, -1L, iVar.u(sVar.j, sVar.a, 0L, 0L));
+        return new j(0L, -1L, hVar.t(sVar.j, sVar.a, 0L, 0L));
     }
 
     @Override // m2.n
@@ -54,6 +54,6 @@ public final class p extends n {
         List list = this.f;
         long j11 = list != null ? ((q) list.get((int) (j3 - j10))).a : (j3 - j10) * this.e;
         b2.s sVar = kVar.a;
-        return new j(0L, -1L, this.k.u(sVar.j, sVar.a, j3, j11));
+        return new j(0L, -1L, this.k.t(sVar.j, sVar.a, j3, j11));
     }
 }

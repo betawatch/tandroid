@@ -1,82 +1,87 @@
 package org.telegram.ui.Components;
 
-import java.util.Collections;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xq0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ yu0 b;
-    public final /* synthetic */ TLRPC.TL_error c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ TLObject f;
+public final class xq0 extends FrameLayout {
+    public final LinearLayout a;
+    public final ImageView b;
+    public final org.telegram.ui.ActionBar.h5 c;
+    public final org.telegram.ui.ActionBar.h5 d;
+    public final org.telegram.ui.ActionBar.h5 e;
+    public final FrameLayout f;
+    public final w9[] h;
+    public final w9 n;
+    public final ImageView r;
+    public final /* synthetic */ zq0 s;
 
-    public /* synthetic */ xq0(yu0 yu0Var, TLRPC.TL_error tL_error, int i10, int i11, TLObject tLObject, int i12) {
-        this.a = i12;
-        this.b = yu0Var;
-        this.c = tL_error;
-        this.d = i10;
-        this.e = i11;
-        this.f = tLObject;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                yu0 yu0Var = this.b;
-                NotificationCenter.getInstance(yu0Var.v1.getCurrentAccount()).doOnIdle(new xq0(yu0Var, this.c, this.d, this.e, this.f, 1));
-                break;
-            default:
-                yu0 yu0Var2 = this.b;
-                nu0[] nu0VarArr = yu0Var2.t1;
-                if (this.c == null) {
-                    int i10 = this.e;
-                    nu0 nu0Var = nu0VarArr[i10];
-                    if (this.d == nu0Var.p) {
-                        TLRPC.TL_messages_searchResultsPositions tL_messages_searchResultsPositions = (TLRPC.TL_messages_searchResultsPositions) this.f;
-                        nu0Var.e.clear();
-                        int size = tL_messages_searchResultsPositions.positions.size();
-                        int i11 = 0;
-                        for (int i12 = 0; i12 < size; i12++) {
-                            TLRPC.TL_searchResultPosition tL_searchResultPosition = tL_messages_searchResultsPositions.positions.get(i12);
-                            int i13 = tL_searchResultPosition.date;
-                            if (i13 != 0) {
-                                wt0 wt0Var = new wt0();
-                                wt0Var.c = i13;
-                                wt0Var.d = tL_searchResultPosition.msg_id;
-                                wt0Var.b = tL_searchResultPosition.offset;
-                                wt0Var.a = LocaleController.formatYearMont(i13, true);
-                                nu0VarArr[i10].e.add(wt0Var);
-                            }
-                        }
-                        Collections.sort(nu0VarArr[i10].e, new org.telegram.ui.df(17));
-                        nu0 nu0Var2 = nu0VarArr[i10];
-                        nu0Var2.f[0] = tL_messages_searchResultsPositions.count;
-                        nu0Var2.h = true;
-                        if (!nu0Var2.e.isEmpty()) {
-                            while (true) {
-                                rt0[] rt0VarArr = yu0Var2.k0;
-                                if (i11 < rt0VarArr.length) {
-                                    rt0 rt0Var = rt0VarArr[i11];
-                                    if (rt0Var.F == i10) {
-                                        rt0Var.b = true;
-                                        yu0Var2.o1(rt0Var, true);
-                                    }
-                                    i11++;
-                                }
-                            }
-                        }
-                        yu0Var2.H.l();
-                        break;
-                    }
-                }
-                break;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public xq0(zq0 zq0Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context);
+        this.s = zq0Var;
+        LinearLayout linearLayout = new LinearLayout(context);
+        this.a = linearLayout;
+        linearLayout.setOrientation(0);
+        linearLayout.setBackground(org.telegram.ui.ActionBar.h6.a0(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.i6, d6Var), 20, 20, 6, 6));
+        w7.a6.b(linearLayout, 0.02f, 1.2f);
+        addView(linearLayout, w7.y5.d(-1, -1.0f, 119, 4.0f, 4.0f, 4.0f, 4.0f));
+        ImageView imageView = new ImageView(context);
+        this.b = imageView;
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.te, d6Var), PorterDuff.Mode.MULTIPLY));
+        linearLayout.addView(imageView, w7.y5.q(40, 38, 51));
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.f = frameLayout;
+        linearLayout.addView(frameLayout, w7.y5.t(-2, -1, 115, 6, 0, 0, 0));
+        this.h = new w9[3];
+        for (int i10 = 2; i10 >= 0; i10--) {
+            this.h[i10] = new w9(context);
+            this.h[i10].setRoundRadius(AndroidUtilities.dp(6.0f));
+            this.h[i10].setVisibility(8);
+            int i11 = 32 - (i10 * 4);
+            this.f.addView(this.h[i10], w7.y5.d(i11, i11, 19, i10 * 12, 0.0f, 0.0f, 0.0f));
         }
+        w9 w9Var = new w9(context);
+        this.n = w9Var;
+        w9Var.setRoundRadius(AndroidUtilities.dp(4.0f));
+        w9Var.setVisibility(8);
+        this.a.addView(w9Var, w7.y5.t(34, 34, 19, 6, 0, 0, 0));
+        FrameLayout frameLayout2 = new FrameLayout(context);
+        this.a.addView(frameLayout2, w7.y5.o(0, -1, 1.0f, 119));
+        org.telegram.ui.ActionBar.h5 h5Var = new org.telegram.ui.ActionBar.h5(context);
+        this.c = h5Var;
+        h5Var.setTextSize(14);
+        h5Var.setTypeface(AndroidUtilities.bold());
+        h5Var.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.ve, d6Var));
+        frameLayout2.addView(h5Var, w7.y5.d(-1, 18.0f, 51, 8.0f, 2.0f, 8.0f, 0.0f));
+        org.telegram.ui.ActionBar.h5 h5Var2 = new org.telegram.ui.ActionBar.h5(context);
+        this.d = h5Var2;
+        h5Var2.setTextSize(14);
+        int i12 = org.telegram.ui.ActionBar.h6.Xk;
+        h5Var2.setTextColor(org.telegram.ui.ActionBar.h6.v0(i12, d6Var));
+        frameLayout2.addView(h5Var2, w7.y5.d(-1, 18.0f, 51, 8.0f, 20.0f, 8.0f, 0.0f));
+        org.telegram.ui.ActionBar.h5 h5Var3 = new org.telegram.ui.ActionBar.h5(context);
+        this.e = h5Var3;
+        h5Var3.setTextSize(14);
+        h5Var3.setTextColor(org.telegram.ui.ActionBar.h6.v0(i12, d6Var));
+        h5Var3.setAlpha(0.0f);
+        frameLayout2.addView(h5Var3, w7.y5.d(-1, 18.0f, 51, 8.0f, 20.0f, 8.0f, 0.0f));
+        ImageView imageView2 = new ImageView(context);
+        this.r = imageView2;
+        imageView2.setScaleType(ImageView.ScaleType.CENTER);
+        imageView2.setImageResource(R.drawable.input_clear);
+        imageView2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Wk, d6Var), PorterDuff.Mode.MULTIPLY));
+        imageView2.setBackground(org.telegram.ui.ActionBar.h6.f0(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.i6, d6Var), 1, AndroidUtilities.dp(18.0f)));
+        imageView2.setVisibility(8);
+        imageView2.setOnClickListener(new i80(this, 15));
+        this.a.addView(imageView2, w7.y5.t(36, 36, 21, 0, 0, 4, 0));
     }
 }

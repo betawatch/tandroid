@@ -1,13 +1,13 @@
 package w6;
 
 import android.content.Context;
-import v0.k;
+import k6.h;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class b {
     public static final b b;
-    public k a;
+    public h a;
 
     static {
         b bVar = new b();
@@ -15,8 +15,8 @@ public final class b {
         b = bVar;
     }
 
-    public static k a(Context context) {
-        k kVar;
+    public static h a(Context context) {
+        h hVar;
         b bVar = b;
         synchronized (bVar) {
             try {
@@ -24,13 +24,13 @@ public final class b {
                     if (context.getApplicationContext() != null) {
                         context = context.getApplicationContext();
                     }
-                    bVar.a = new k(context, 1);
+                    bVar.a = new h(context, (short) 0);
                 }
-                kVar = bVar.a;
+                hVar = bVar.a;
             } catch (Throwable th2) {
                 throw th2;
             }
         }
-        return kVar;
+        return hVar;
     }
 }

@@ -1,36 +1,41 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.MotionEvent;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.view.View;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class m61 extends c20 {
-    public final ci.h2 J;
-    public final /* synthetic */ n61 K;
+public abstract class m61 extends org.telegram.ui.ActionBar.m2 {
+    public l61 a;
+    public int b;
+    public int c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m61(n61 n61Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, d6Var);
-        this.K = n61Var;
-        ci.h2 h2Var = this.r;
-        this.J = h2Var;
-        h2Var.setImeOptions(268435459);
-        h2Var.setHint(LocaleController.getString(R.string.VoipGroupSearchMembers));
-        h2Var.addTextChangedListener(new ci.i2(this, 14));
-        h2Var.setOnEditorActionListener(new e1(this, 10));
+    public m61() {
+        super(null);
+        this.b = -1;
     }
 
-    @Override // org.telegram.ui.Components.c20
-    public /* bridge */ /* synthetic */ int[] getColorKeys() {
-        return null;
-    }
+    public abstract void U(ArrayList arrayList, j61 j61Var);
 
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        this.K.E(motionEvent, this.J);
-        return super.onInterceptTouchEvent(motionEvent);
+    public abstract CharSequence V();
+
+    public abstract void W(v51 v51Var, View view);
+
+    public abstract boolean X(v51 v51Var, View view);
+
+    @Override // org.telegram.ui.ActionBar.m2
+    public View createView(Context context) {
+        hg.c.v(false, this.actionBar);
+        this.actionBar.setAllowOverlayTitle(true);
+        this.actionBar.setTitle(V());
+        this.actionBar.setActionBarMenuOnItemClick(new org.telegram.ui.oo(this, 13));
+        hg.r1 r1Var = new hg.r1(context, null, 1);
+        r1Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.a7, false));
+        l61 l61Var = new l61(this, this, new d(this, 22), new k61(this), new k61(this));
+        this.a = l61Var;
+        r1Var.addView(l61Var, w7.y5.c(-1.0f, -1));
+        this.fragmentView = r1Var;
+        return r1Var;
     }
 }

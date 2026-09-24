@@ -11,11 +11,11 @@ import java.util.ArrayList;
 import java.util.Set;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicReference;
-import v7.f5;
+import v7.g5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
-public abstract class BasePendingResult<R extends com.google.android.gms.common.api.q> extends f5 {
+public abstract class BasePendingResult<R extends com.google.android.gms.common.api.q> extends g5 {
     public static final n1 n = new n1(0);
     public final g b;
     public final WeakReference c;
@@ -50,7 +50,7 @@ public abstract class BasePendingResult<R extends com.google.android.gms.common.
         }
     }
 
-    @Override // v7.f5
+    @Override // v7.g5
     public final void b(com.google.android.gms.common.api.o oVar) {
         synchronized (this.a) {
             try {

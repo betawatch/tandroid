@@ -1,96 +1,92 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
+import org.telegram.ui.ub1;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pm0 implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ wm0 b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ ArrayList d;
-    public final /* synthetic */ ArrayList e;
+public final class pm0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ um0 b;
 
-    public /* synthetic */ pm0(wm0 wm0Var, String str, ArrayList arrayList, ArrayList arrayList2) {
-        this.b = wm0Var;
-        this.c = str;
-        this.d = arrayList;
-        this.e = arrayList2;
+    public /* synthetic */ pm0(um0 um0Var, int i10) {
+        this.a = i10;
+        this.b = um0Var;
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x003a, code lost:
+    
+        if (r2.q0 != false) goto L8;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x0049, code lost:
+    
+        if (r2.q0 != false) goto L8;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:6:0x0022, code lost:
+    
+        if (r2.q0 != false) goto L8;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:7:0x0024, code lost:
+    
+        r5 = 1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x004c, code lost:
+    
+        r2.scrollBy(r0 * r5, 0);
+        org.telegram.messenger.AndroidUtilities.runOnUIThread(r2.s0);
+     */
     @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final void run() {
+        int tabSize;
+        int max;
         switch (this.a) {
             case 0:
-                wm0 wm0Var = this.b;
-                int i10 = wm0Var.d;
-                ArrayList arrayList = new ArrayList();
-                ArrayList arrayList2 = new ArrayList();
-                int i11 = 0;
-                while (true) {
-                    ArrayList arrayList3 = this.d;
-                    int size = arrayList3.size();
-                    String str = this.c;
-                    if (i11 >= size) {
-                        int i12 = 0;
-                        while (true) {
-                            ArrayList arrayList4 = this.e;
-                            if (i12 >= arrayList4.size()) {
-                                AndroidUtilities.runOnUIThread(new pm0(wm0Var, str, arrayList, arrayList2));
-                                break;
-                            } else {
-                                String documentFileName = FileLoader.getDocumentFileName(((MessageObject) arrayList4.get(i12)).getDocument());
-                                if (documentFileName != null && documentFileName.toLowerCase().contains(str)) {
-                                    MessageObject messageObject = new MessageObject(i10, ((MessageObject) arrayList4.get(i12)).messageOwner, false, false);
-                                    messageObject.mediaExists = ((MessageObject) arrayList4.get(i12)).mediaExists;
-                                    messageObject.setQuery(wm0Var.K);
-                                    arrayList2.add(messageObject);
-                                }
-                                i12++;
-                            }
-                        }
-                    } else {
-                        String documentFileName2 = FileLoader.getDocumentFileName(((MessageObject) arrayList3.get(i11)).getDocument());
-                        if (documentFileName2 != null && documentFileName2.toLowerCase().contains(str)) {
-                            MessageObject messageObject2 = new MessageObject(i10, ((MessageObject) arrayList3.get(i11)).messageOwner, false, false);
-                            messageObject2.mediaExists = ((MessageObject) arrayList3.get(i11)).mediaExists;
-                            messageObject2.setQuery(wm0Var.K);
-                            arrayList.add(messageObject2);
-                        }
-                        i11++;
+                um0 um0Var = this.b;
+                ub1 ub1Var = um0Var.e;
+                um0Var.b0 = false;
+                um0Var.V = um0Var.getScrollX() + um0Var.W;
+                tabSize = um0Var.getTabSize();
+                int ceil = ((int) Math.ceil(r3 / tabSize)) - 1;
+                um0Var.U = ceil;
+                um0Var.T = ceil;
+                if (um0Var.e(ceil) && ceil >= 0 && ceil < ub1Var.getChildCount()) {
+                    try {
+                        um0Var.performHapticFeedback(0);
+                    } catch (Exception unused) {
                     }
+                    um0Var.d0 = 0.0f;
+                    um0Var.v = 0.0f;
+                    View childAt = ub1Var.getChildAt(ceil);
+                    um0Var.s = childAt;
+                    um0Var.c0 = childAt.getX() - um0Var.getScrollX();
+                    um0Var.s.invalidate();
+                    ub1Var.invalidate();
+                    um0Var.j();
+                    um0Var.invalidate();
+                    break;
                 }
                 break;
             default:
-                wm0 wm0Var2 = this.b;
-                xw0 xw0Var = wm0Var2.a;
-                if (this.c.equals(wm0Var2.L)) {
-                    if (wm0Var2.r == 0) {
-                        wm0Var2.N.b(0);
-                    }
-                    wm0Var2.e(this.d, this.e, true);
-                    if (wm0Var2.r == 0) {
-                        xw0Var.e(false, true);
-                        d90 d90Var = xw0Var.e;
-                        xw0Var.d.setText(LocaleController.getString(R.string.SearchEmptyViewTitle2));
-                        d90Var.setVisibility(0);
-                        d90Var.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
+                long currentTimeMillis = System.currentTimeMillis();
+                um0 um0Var2 = this.b;
+                long j3 = currentTimeMillis - um0Var2.r0;
+                int i10 = -1;
+                if (j3 >= 3000) {
+                    if (j3 >= 5000) {
+                        max = Math.max(1, AndroidUtilities.dp(4.0f));
+                        break;
+                    } else {
+                        max = Math.max(1, AndroidUtilities.dp(2.0f));
                         break;
                     }
+                } else {
+                    max = Math.max(1, AndroidUtilities.dp(1.0f));
+                    break;
                 }
-                break;
         }
-    }
-
-    public /* synthetic */ pm0(wm0 wm0Var, ArrayList arrayList, String str, ArrayList arrayList2) {
-        this.b = wm0Var;
-        this.d = arrayList;
-        this.c = str;
-        this.e = arrayList2;
     }
 }

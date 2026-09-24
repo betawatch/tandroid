@@ -1,46 +1,35 @@
 package tg;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class u0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ a1 b;
+import j$.util.function.BiConsumer$-CC;
+import java.util.List;
+import java.util.function.BiConsumer;
+import org.telegram.ui.Components.bb;
 
-    public /* synthetic */ u0(a1 a1Var, int i10) {
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class u0 implements BiConsumer {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ bb b;
+
+    public /* synthetic */ u0(bb bbVar, int i10) {
         this.a = i10;
-        this.b = a1Var;
+        this.b = bbVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // java.util.function.BiConsumer
+    public final void accept(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                this.b.W(true);
-                break;
-            case 1:
-                this.b.b0(true, false);
-                break;
-            case 2:
-                this.b.R();
-                break;
-            case 3:
-                this.b.b0(true, false);
-                break;
-            case 4:
-                this.b.b0(true, false);
-                break;
-            case 5:
-                this.b.b0(true, false);
-                break;
-            case 6:
-                a1 a1Var = this.b;
-                a1Var.e0.clear();
-                a1Var.f0.clear();
-                a1Var.dismiss();
+                ((z0) this.b).k0.addAll((List) obj2);
                 break;
             default:
-                this.b.dismiss();
+                ((th.f) this.b).b0.addAll((List) obj2);
                 break;
         }
+    }
+
+    public /* synthetic */ BiConsumer andThen(BiConsumer biConsumer) {
+        int i10 = this.a;
+        return BiConsumer$-CC.$default$andThen(this, biConsumer);
     }
 }

@@ -1,25 +1,44 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.text.style.ReplacementSpan;
+import android.view.KeyEvent;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class db0 extends g.p {
-    public final /* synthetic */ ob0 c;
+public final class db0 extends ReplacementSpan {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ KeyEvent.Callback b;
 
-    public db0(ob0 ob0Var) {
-        this.c = ob0Var;
+    public /* synthetic */ db0(KeyEvent.Callback callback, int i10) {
+        this.a = i10;
+        this.b = callback;
     }
 
-    @Override // g.p
-    public final int i(int i10) {
-        MessageObject messageObject;
-        MessageObject.GroupedMessages a2;
-        if (i10 < 0) {
-            return MediaDataController.MAX_STYLE_RUNS_COUNT;
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+        int i15 = this.a;
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
+        switch (this.a) {
+            case 0:
+                return ((fb0) this.b).x;
+            case 1:
+                return (int) ((org.telegram.ui.lj0) this.b).n0;
+            default:
+                return (int) ((tg.m1) this.b).t0;
         }
-        ob0 ob0Var = this.c;
-        return (i10 >= ob0Var.r.previewMessages.size() || (a2 = ob0.a(ob0Var, (messageObject = ob0Var.r.previewMessages.get(i10)))) == null) ? MediaDataController.MAX_STYLE_RUNS_COUNT : a2.getPosition(messageObject).spanSize;
+    }
+
+    private final void a(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+    }
+
+    private final void b(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+    }
+
+    private final void c(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
     }
 }

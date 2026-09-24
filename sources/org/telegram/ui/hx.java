@@ -1,43 +1,23 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class hx {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ix b;
-    public final /* synthetic */ View c;
+public final class hx extends ai.b0 {
+    public final /* synthetic */ qy O0;
 
-    public /* synthetic */ hx(ix ixVar, View view, int i10) {
-        this.a = i10;
-        this.b = ixVar;
-        this.c = view;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public hx(qy qyVar, Context context, qy qyVar2, int i10, int i11) {
+        super(context, qyVar2, i10, i11);
+        this.O0 = qyVar;
     }
 
-    public final void a(boolean z10) {
-        switch (this.a) {
-            case 0:
-                View view = this.c;
-                if (view instanceof ai.a0) {
-                    this.b.O0.E0.i((ai.a0) view, false);
-                    if (z10) {
-                        AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.th(15), 500L);
-                        break;
-                    }
-                }
-                break;
-            default:
-                View view2 = this.c;
-                if (view2 instanceof ai.a0) {
-                    this.b.O0.E0.i((ai.a0) view2, false);
-                    if (z10) {
-                        AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.th(15), 500L);
-                        break;
-                    }
-                }
-                break;
-        }
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        org.telegram.ui.ActionBar.k kVar;
+        kVar = ((org.telegram.ui.ActionBar.m2) this.O0).actionBar;
+        return !kVar.s() && super.dispatchTouchEvent(motionEvent);
     }
 }

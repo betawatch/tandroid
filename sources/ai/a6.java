@@ -14,16 +14,16 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.cj0;
+import org.telegram.ui.Components.mj0;
 import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class a6 extends FrameLayout {
     public final y5 a;
     public final z5 b;
     public final TextView[] c;
-    public cj0 d;
+    public mj0 d;
     public final c6 e;
     public Paint f;
     public float h;
@@ -38,7 +38,7 @@ public final class a6 extends FrameLayout {
         y5 y5Var = new y5(this, context, 0);
         this.a = y5Var;
         y5Var.setRoundRadius(AndroidUtilities.dp(16.0f));
-        addView(y5Var, w7.x5.d(32, 32.0f, 0, 12.0f, 2.0f, 0.0f, 0.0f));
+        addView(y5Var, w7.y5.d(32, 32.0f, 0, 12.0f, 2.0f, 0.0f, 0.0f));
         setClipChildren(false);
         z5 z5Var = new z5(context, 0);
         this.b = z5Var;
@@ -48,7 +48,7 @@ public final class a6 extends FrameLayout {
         z5Var.setEllipsizeByGradient(AndroidUtilities.dp(4.0f));
         z5Var.setPivotX(0.0f);
         NotificationCenter.listenEmojiLoading(z5Var);
-        addView(z5Var, w7.x5.d(-2, -2.0f, 0, 54.0f, 0.0f, 86.0f, 0.0f));
+        addView(z5Var, w7.y5.d(-2, -2.0f, 0, 54.0f, 0.0f, 86.0f, 0.0f));
         for (int i10 = 0; i10 < 2; i10++) {
             this.c[i10] = new TextView(context);
             this.c[i10].setTextSize(1, 12.0f);
@@ -57,7 +57,7 @@ public final class a6 extends FrameLayout {
             this.c[i10].setEllipsize(TextUtils.TruncateAt.MIDDLE);
             this.c[i10].setTextColor(-1);
             this.c[i10].setPadding(AndroidUtilities.dp(3.0f), 0, AndroidUtilities.dp(3.0f), AndroidUtilities.dp(1.0f));
-            addView(this.c[i10], w7.x5.d(-2, -2.0f, 0, 51.0f, 18.0f, 83.0f, 0.0f));
+            addView(this.c[i10], w7.y5.d(-2, -2.0f, 0, 51.0f, 18.0f, 83.0f, 0.0f));
         }
         this.b.setTextColor(-1);
     }
@@ -88,12 +88,12 @@ public final class a6 extends FrameLayout {
             }
             z11 = false;
         }
-        cj0 cj0Var = this.d;
+        mj0 mj0Var = this.d;
         y5 y5Var = this.a;
-        if (cj0Var == null) {
-            cj0 cj0Var2 = new cj0(y5Var);
-            this.d = cj0Var2;
-            cj0Var2.d(null, true, false);
+        if (mj0Var == null) {
+            mj0 mj0Var2 = new mj0(y5Var);
+            this.d = mj0Var2;
+            mj0Var2.d(null, true, false);
         }
         this.d.q = 0;
         ImageReceiver imageReceiver = y5Var.getImageReceiver();
@@ -107,9 +107,9 @@ public final class a6 extends FrameLayout {
             if (f7 != 1.0f) {
                 Paint t10 = ia.t(imageReceiver, false);
                 t10.setAlpha((int) (this.h * 255.0f));
-                cj0 cj0Var3 = this.d;
-                cj0Var3.t = t10;
-                cj0Var3.a(canvas);
+                mj0 mj0Var3 = this.d;
+                mj0Var3.t = t10;
+                mj0Var3.a(canvas);
             }
             if (this.f == null) {
                 Paint paint = new Paint(1);
@@ -120,9 +120,9 @@ public final class a6 extends FrameLayout {
                 this.f.setStrokeCap(Paint.Cap.ROUND);
             }
             this.f.setAlpha((int) (255.0f * f7 * this.h));
-            cj0 cj0Var4 = this.d;
-            cj0Var4.t = this.f;
-            cj0Var4.a(canvas);
+            mj0 mj0Var4 = this.d;
+            mj0Var4.t = this.f;
+            mj0Var4.a(canvas);
         }
     }
 

@@ -6,12 +6,12 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.ul;
+import org.telegram.messenger.ok;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import w7.x5;
+import w7.y5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class r extends LinearLayout {
     public final TextView a;
@@ -26,15 +26,15 @@ public final class r extends LinearLayout {
         TextView textView = new TextView(context);
         this.a = textView;
         int i10 = h6.y6;
-        ul.o(i10, d6Var, textView, 1, 14.0f);
+        ok.n(i10, d6Var, textView, 1, 14.0f);
         textView.setGravity(17);
         textView.setTextAlignment(4);
-        addView(textView, x5.k(0.0f, 0.0f, 0.0f, 19.0f, -1, -2));
+        addView(textView, y5.k(0.0f, 0.0f, 0.0f, 19.0f, -1, -2));
         q qVar = new q(0, context, d6Var, true);
         this.b = qVar;
         qVar.setMinWidth(AndroidUtilities.dp(200.0f));
         qVar.g(LocaleController.getString(R.string.ProfileBotAddPreview), false, true);
-        addView(qVar, x5.q(-2, 44, 17));
+        addView(qVar, y5.q(-2, 44, 17));
         o oVar = new o(context, d6Var);
         this.c = oVar;
         oVar.setTextColor(h6.v0(i10, d6Var));
@@ -43,10 +43,10 @@ public final class r extends LinearLayout {
         oVar.setTextAlignment(4);
         oVar.setGravity(17);
         oVar.setTypeface(AndroidUtilities.bold());
-        addView(oVar, x5.t(165, -2, 17, 0, 17, 0, 12));
+        addView(oVar, y5.t(165, -2, 17, 0, 17, 0, 12));
         ci.d dVar = new ci.d(context, d6Var, false);
         this.d = dVar;
         dVar.setMinWidth(AndroidUtilities.dp(200.0f));
-        addView(dVar, x5.q(-2, 44, 17));
+        addView(dVar, y5.q(-2, 44, 17));
     }
 }

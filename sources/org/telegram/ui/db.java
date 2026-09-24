@@ -4,17 +4,17 @@ import android.content.Context;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class db extends org.telegram.ui.Components.to {
     public final /* synthetic */ int s;
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 v;
+    public final /* synthetic */ org.telegram.ui.ActionBar.m2 v;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public db(int i10, Context context, org.telegram.ui.ActionBar.n2 n2Var) {
+    public db(int i10, Context context, org.telegram.ui.ActionBar.m2 m2Var) {
         super(context);
         this.s = i10;
-        this.v = n2Var;
+        this.v = m2Var;
         setOrientation(1);
     }
 
@@ -29,7 +29,7 @@ public final class db extends org.telegram.ui.Components.to {
                 break;
             default:
                 if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0) {
-                    ((xn) this.v).A7(true);
+                    ((wn) this.v).A7(true);
                 }
                 break;
         }
@@ -49,7 +49,7 @@ public final class db extends org.telegram.ui.Components.to {
             default:
                 boolean dispatchTouchEvent2 = super.dispatchTouchEvent(motionEvent);
                 if (motionEvent.getAction() == 0 && !dispatchTouchEvent2) {
-                    ((xn) this.v).A7(true);
+                    ((wn) this.v).A7(true);
                 }
                 return dispatchTouchEvent2;
         }

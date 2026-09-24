@@ -1,117 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
 import android.graphics.Canvas;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.Button;
-import android.widget.FrameLayout;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class lp0 extends FrameLayout {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ hq0 b;
+public final class lp0 {
+    public final ou a;
+    public final long b;
+    public final float c;
+    public final float d;
+    public final float e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ lp0(hq0 hq0Var, Context context, int i10) {
-        super(context);
-        this.a = i10;
-        this.b = hq0Var;
+    public lp0(View view) {
+        ou ouVar = new ou(1, view);
+        this.b = System.currentTimeMillis();
+        this.a = ouVar;
+        this.c = AndroidUtilities.lerp(5.0f, 9.0f, Utilities.clamp01(Utilities.fastRandom.nextFloat()));
+        this.d = AndroidUtilities.lerp(2.5f, 5.0f, Utilities.clamp01(Utilities.fastRandom.nextFloat()));
+        this.e = AndroidUtilities.lerp(2.5f, 5.2f, Utilities.clamp01(Utilities.fastRandom.nextFloat()));
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
-        switch (this.a) {
-            case 0:
-                hq0 hq0Var = this.b;
-                hq0Var.X0.setBounds(0, (int) hq0Var.u0, getMeasuredWidth(), getMeasuredHeight());
-                hq0Var.X0.draw(canvas);
-                canvas.save();
-                canvas.clipRect(0.0f, hq0Var.u0, getMeasuredWidth(), getMeasuredHeight());
-                super.dispatchDraw(canvas);
-                canvas.restore();
-                break;
-            default:
-                super.dispatchDraw(canvas);
-                break;
+    public final void a(Canvas canvas, float f7) {
+        ou ouVar;
+        float currentTimeMillis = (System.currentTimeMillis() - this.b) / 1000.0f;
+        canvas.translate(0.0f, 0.0f);
+        canvas.rotate(((float) Math.sin(this.c * currentTimeMillis * 3.141592653589793d)) * 1.0f * f7);
+        canvas.translate(((float) Math.cos(this.d * currentTimeMillis * 3.141592653589793d)) * AndroidUtilities.dp(0.5f) * f7, ((float) Math.sin(currentTimeMillis * this.e * 3.141592653589793d)) * AndroidUtilities.dp(0.5f) * f7);
+        canvas.translate(-0.0f, -0.0f);
+        if (f7 <= 0.0f || (ouVar = this.a) == null) {
+            return;
         }
-    }
-
-    @Override // android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.a) {
-            case 0:
-                hq0 hq0Var = this.b;
-                lp0 lp0Var = hq0Var.c;
-                float f7 = hq0Var.v0;
-                if (f7 != 0.0f && f7 != lp0Var.getTop() + hq0Var.v0) {
-                    ValueAnimator valueAnimator = hq0Var.w0;
-                    if (valueAnimator != null) {
-                        valueAnimator.cancel();
-                    }
-                    float top = hq0Var.v0 - (lp0Var.getTop() + hq0Var.u0);
-                    hq0Var.u0 = top;
-                    ValueAnimator ofFloat = ValueAnimator.ofFloat(top, 0.0f);
-                    hq0Var.w0 = ofFloat;
-                    ofFloat.addUpdateListener(new i70(this, 17));
-                    hq0Var.w0.setInterpolator(rr.f);
-                    hq0Var.w0.setDuration(200L);
-                    hq0Var.w0.start();
-                    hq0Var.v0 = 0.0f;
-                }
-                hq0Var.S[1].setTranslationY((-(lp0Var.getMeasuredHeight() - AndroidUtilities.dp(48.0f))) + hq0Var.u0 + hq0Var.t0 + ((1.0f - getAlpha()) * (lp0Var.getMeasuredHeight() - AndroidUtilities.dp(48.0f))));
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        switch (this.a) {
-            case 1:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setText(LocaleController.formatPluralString("AccDescrShareInChats", this.b.U.m(), new Object[0]));
-                accessibilityNodeInfo.setClassName(Button.class.getName());
-                accessibilityNodeInfo.setLongClickable(true);
-                accessibilityNodeInfo.setClickable(true);
-                break;
-            default:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void setAlpha(float f7) {
-        switch (this.a) {
-            case 0:
-                super.setAlpha(f7);
-                invalidate();
-                break;
-            default:
-                super.setAlpha(f7);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void setVisibility(int i10) {
-        switch (this.a) {
-            case 0:
-                super.setVisibility(i10);
-                if (i10 != 0) {
-                    this.b.S[1].setTranslationY(0.0f);
-                    break;
-                }
-                break;
-            default:
-                super.setVisibility(i10);
-                break;
-        }
+        ouVar.run();
     }
 }

@@ -9,9 +9,9 @@ import android.os.Handler;
 import android.os.Looper;
 import e2.d0;
 import j$.util.Objects;
-import k2.c0;
+import k2.b0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class k {
     public final Spatializer a;
@@ -37,7 +37,7 @@ public final class k {
         e2.d.h(myLooper);
         Handler handler = new Handler(myLooper);
         this.c = handler;
-        spatializer.addOnSpatializerStateChangedListener(new c0(handler, 0), jVar);
+        spatializer.addOnSpatializerStateChangedListener(new b0(handler, 0), jVar);
     }
 
     public final boolean a(b2.e eVar, b2.s sVar) {

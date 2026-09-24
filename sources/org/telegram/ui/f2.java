@@ -10,18 +10,18 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.CodeHighlighting;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class f2 extends View {
-    public final /* synthetic */ r70 a;
+    public final /* synthetic */ p70 a;
     public final /* synthetic */ g4 b;
     public final /* synthetic */ g2 c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f2(g2 g2Var, Context context, r70 r70Var, g4 g4Var) {
+    public f2(g2 g2Var, Context context, p70 p70Var, g4 g4Var) {
         super(context);
         this.c = g2Var;
-        this.a = r70Var;
+        this.a = p70Var;
         this.b = g4Var;
     }
 
@@ -47,17 +47,17 @@ public final class f2 extends View {
         if (pageblockpreformatted != null) {
             CharSequence charSequence = g2Var.h;
             g4 g4Var = this.b;
-            r70 r70Var = this.a;
+            p70 p70Var = this.a;
             if (charSequence == null) {
                 TL_iv.RichText richText = pageblockpreformatted.text;
                 int dp = AndroidUtilities.dp(5000.0f);
                 HashSet hashSet = i4.b1;
-                g2Var.h = i4.C(r70Var, g4Var.E, this, richText, richText, pageblockpreformatted, dp);
+                g2Var.h = i4.C(p70Var, g4Var.E, this, richText, richText, pageblockpreformatted, dp);
                 if (!TextUtils.isEmpty(g2Var.f.language)) {
                     g2Var.h = CodeHighlighting.getHighlighted(g2Var.h, g2Var.f.language);
                 }
             }
-            b3 q6 = i4.q(r70Var, this, g2Var.h, null, AndroidUtilities.dp(5000.0f), 0, g2Var.f, g4Var);
+            b3 q6 = i4.q(p70Var, this, g2Var.h, null, AndroidUtilities.dp(5000.0f), 0, g2Var.f, g4Var);
             g2Var.c = q6;
             if (q6 != null) {
                 i12 = q6.d.getHeight();

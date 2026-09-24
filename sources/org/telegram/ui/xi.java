@@ -2,19 +2,19 @@ package org.telegram.ui;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class xi extends nf.e {
     public final /* synthetic */ int d;
     public final /* synthetic */ int e;
-    public final /* synthetic */ org.telegram.ui.Cells.t1 f;
-    public final /* synthetic */ xn g;
+    public final /* synthetic */ org.telegram.ui.Cells.u1 f;
+    public final /* synthetic */ wn g;
 
-    public /* synthetic */ xi(xn xnVar, int i10, org.telegram.ui.Cells.t1 t1Var, int i11) {
+    public /* synthetic */ xi(wn wnVar, int i10, org.telegram.ui.Cells.u1 u1Var, int i11) {
         this.d = i11;
-        this.g = xnVar;
+        this.g = wnVar;
         this.e = i10;
-        this.f = t1Var;
+        this.f = u1Var;
     }
 
     @Override // nf.e
@@ -46,24 +46,24 @@ public final class xi extends nf.e {
         switch (this.d) {
             case 0:
                 int i10 = this.e;
-                xn xnVar = this.g;
-                xnVar.vb = i10;
-                xnVar.wb = 6;
+                wn wnVar = this.g;
+                wnVar.vb = i10;
+                wnVar.wb = 6;
                 this.f.invalidate();
                 break;
             case 1:
                 int i11 = this.e;
-                xn xnVar2 = this.g;
-                xnVar2.vb = i11;
-                xnVar2.wb = 5;
-                xnVar2.yb = null;
+                wn wnVar2 = this.g;
+                wnVar2.vb = i11;
+                wnVar2.wb = 5;
+                wnVar2.yb = null;
                 this.f.invalidate();
                 break;
             default:
                 int i12 = this.e;
-                xn xnVar3 = this.g;
-                xnVar3.vb = i12;
-                xnVar3.wb = 7;
+                wn wnVar3 = this.g;
+                wnVar3.vb = i12;
+                wnVar3.wb = 7;
                 this.f.invalidate();
                 break;
         }

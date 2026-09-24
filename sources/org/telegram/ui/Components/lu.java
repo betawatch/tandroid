@@ -12,21 +12,21 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class lu extends vh.o {
-    public final a90 R;
-    public e90 S;
+public final class lu extends vh.n {
+    public final k90 R;
+    public o90 S;
     public boolean T;
     public boolean U;
     public boolean V;
 
     public lu(Context context) {
         super(context, null, true);
-        this.R = new a90(this);
+        this.R = new k90(this);
     }
 
-    @Override // vh.o
+    @Override // vh.n
     public final ClickableSpan a(int i10, int i11) {
         Layout layout = getLayout();
         if (layout == null) {
@@ -47,7 +47,7 @@ public final class lu extends vh.o {
         return null;
     }
 
-    @Override // vh.o, android.widget.TextView, android.view.View
+    @Override // vh.n, android.widget.TextView, android.view.View
     public final void onDraw(Canvas canvas) {
         canvas.save();
         if (!this.T) {
@@ -63,27 +63,27 @@ public final class lu extends vh.o {
     @Override // android.widget.TextView, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         CharacterStyle characterStyle;
-        a90 a90Var = this.R;
-        if (a90Var != null) {
+        k90 k90Var = this.R;
+        if (k90Var != null) {
             Layout layout = getLayout();
             ClickableSpan a2 = a((int) motionEvent.getX(), (int) motionEvent.getY());
             if (a2 != null && motionEvent.getAction() == 0) {
-                e90 e90Var = new e90(a2, null, motionEvent.getX(), motionEvent.getY(), 0);
-                this.S = e90Var;
-                a90Var.a(e90Var, null);
+                o90 o90Var = new o90(a2, null, motionEvent.getX(), motionEvent.getY(), 0);
+                this.S = o90Var;
+                k90Var.a(o90Var, null);
                 SpannableString spannableString = new SpannableString(layout.getText());
                 int spanStart = spannableString.getSpanStart(this.S.i);
                 int spanEnd = spannableString.getSpanEnd(this.S.i);
-                x80 b10 = this.S.b();
+                h90 b10 = this.S.b();
                 b10.d(layout, spanStart, getPaddingTop());
                 layout.getSelectionPath(spanStart, spanEnd, b10);
-                AndroidUtilities.runOnUIThread(new yp(this, e90Var, a2), ViewConfiguration.getLongPressTimeout());
+                AndroidUtilities.runOnUIThread(new yp(this, o90Var, a2), ViewConfiguration.getLongPressTimeout());
                 return true;
             }
             if (motionEvent.getAction() == 1) {
-                a90Var.d(true);
-                e90 e90Var2 = this.S;
-                if (e90Var2 != null && (characterStyle = e90Var2.i) == a2) {
+                k90Var.d(true);
+                o90 o90Var2 = this.S;
+                if (o90Var2 != null && (characterStyle = o90Var2.i) == a2) {
                     if (characterStyle != null) {
                         ((ClickableSpan) characterStyle).onClick(this);
                     }
@@ -93,29 +93,29 @@ public final class lu extends vh.o {
                 this.S = null;
             }
             if (motionEvent.getAction() == 3) {
-                a90Var.d(true);
+                k90Var.d(true);
                 this.S = null;
             }
         }
         return this.S != null || super.onTouchEvent(motionEvent);
     }
 
-    @Override // vh.o
+    @Override // vh.n
     public void setDisablePaddingsOffset(boolean z10) {
         this.T = z10;
     }
 
-    @Override // vh.o
+    @Override // vh.n
     public void setDisablePaddingsOffsetX(boolean z10) {
         this.U = z10;
     }
 
-    @Override // vh.o
+    @Override // vh.n
     public void setDisablePaddingsOffsetY(boolean z10) {
         this.V = z10;
     }
 
-    @Override // vh.o, android.widget.TextView
+    @Override // vh.n, android.widget.TextView
     public final void setText(CharSequence charSequence, TextView.BufferType bufferType) {
         super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), bufferType);
     }

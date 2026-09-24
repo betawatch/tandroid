@@ -4,7 +4,7 @@ import org.telegram.messenger.FileLoader;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c3 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -37,14 +37,14 @@ public final /* synthetic */ class c3 implements Runnable {
                 ((FileLoader.1) this.e).lambda$didFinishUploadingFile$0(this.c, this.b, this.d, (TLRPC.InputFile) this.f, (TLRPC.InputEncryptedFile) this.h, (byte[]) this.n, (byte[]) this.r, (FileUploadOperation) this.s);
                 break;
             default:
-                ((MessagesController) this.e).lambda$openApp$498((org.telegram.ui.ActionBar.n2) this.f, (nf.e) this.h, (boolean[]) this.n, (TLRPC.User) this.r, this.b, this.c, this.d, (TL_bots.BotInfo[]) this.s);
+                ((MessagesController) this.e).lambda$openApp$498((org.telegram.ui.ActionBar.m2) this.f, (nf.e) this.h, (boolean[]) this.n, (TLRPC.User) this.r, this.b, this.c, this.d, (TL_bots.BotInfo[]) this.s);
                 break;
         }
     }
 
-    public /* synthetic */ c3(MessagesController messagesController, org.telegram.ui.ActionBar.n2 n2Var, nf.e eVar, boolean[] zArr, TLRPC.User user, String str, boolean z10, boolean z11, TL_bots.BotInfo[] botInfoArr) {
+    public /* synthetic */ c3(MessagesController messagesController, org.telegram.ui.ActionBar.m2 m2Var, nf.e eVar, boolean[] zArr, TLRPC.User user, String str, boolean z10, boolean z11, TL_bots.BotInfo[] botInfoArr) {
         this.e = messagesController;
-        this.f = n2Var;
+        this.f = m2Var;
         this.h = eVar;
         this.n = zArr;
         this.r = user;

@@ -22,16 +22,16 @@ import org.telegram.ui.Cells.i6;
 import org.telegram.ui.Cells.j6;
 import org.telegram.ui.Components.bb;
 import org.telegram.ui.Components.e5;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.ml0;
-import org.telegram.ui.Components.v51;
+import org.telegram.ui.Components.j61;
+import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.wl0;
 import s4.p0;
-import w7.x5;
+import w7.y5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class b extends bb {
-    public v51 X;
+    public j61 X;
     public boolean Y;
     public final FrameLayout Z;
     public final boolean a0;
@@ -63,10 +63,10 @@ public final class b extends bb {
                 i6Var.t(user, null, DialogObject.getName(user), LocaleController.getString(R.string.Bot), false, false);
             }
         }
-        frameLayout.addView(i6Var, x5.c(-2.0f, i10));
-        ml0 ml0Var = this.d;
+        frameLayout.addView(i6Var, y5.c(-2.0f, i10));
+        wl0 wl0Var = this.d;
         int i11 = this.backgroundPaddingLeft;
-        ml0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(64.0f) + AndroidUtilities.navigationBarHeight);
+        wl0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(64.0f) + AndroidUtilities.navigationBarHeight);
         this.d.p1();
         this.d.setClipToPadding(false);
         this.d.setOnItemClickListener(new g(this, 12));
@@ -78,7 +78,7 @@ public final class b extends bb {
         }
         dVar.e();
         dVar.setOnClickListener(new d0(this, callback, chat, 9));
-        this.containerView.addView(dVar, x5.f(48.0f, 80, AndroidUtilities.dp(12.0f) + this.backgroundPaddingLeft, 0, AndroidUtilities.dp(12.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(12.0f) + AndroidUtilities.navigationBarHeight));
+        this.containerView.addView(dVar, y5.f(48.0f, 80, AndroidUtilities.dp(12.0f) + this.backgroundPaddingLeft, 0, AndroidUtilities.dp(12.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(12.0f) + AndroidUtilities.navigationBarHeight));
         this.X.N(false);
     }
 
@@ -98,15 +98,15 @@ public final class b extends bb {
         }
         this.Y = z10;
         int i10 = this.c0 + 1;
-        ml0 ml0Var = this.d;
-        View U0 = ml0Var.U0(i10);
+        wl0 wl0Var = this.d;
+        View U0 = wl0Var.U0(i10);
         if (U0 instanceof j6) {
             ((j6) U0).a(!z10);
             z11 = false;
         } else {
             z11 = true;
         }
-        View U02 = ml0Var.U0(this.c0 + 2);
+        View U02 = wl0Var.U0(this.c0 + 2);
         if (U02 instanceof j6) {
             ((j6) U02).a(z10);
         } else {
@@ -118,11 +118,11 @@ public final class b extends bb {
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final ll0 v(ml0 ml0Var) {
-        v51 v51Var = new v51(this.d, getContext(), this.currentAccount, 0, false, new a(this, 0), this.resourcesProvider);
-        this.X = v51Var;
-        v51Var.r = false;
-        return v51Var;
+    public final vl0 v(wl0 wl0Var) {
+        j61 j61Var = new j61(this.d, getContext(), this.currentAccount, 0, false, new a(this, 0), this.resourcesProvider);
+        this.X = j61Var;
+        j61Var.r = false;
+        return j61Var;
     }
 
     @Override // org.telegram.ui.Components.bb

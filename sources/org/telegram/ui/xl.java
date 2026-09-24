@@ -1,73 +1,71 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.util.Property;
 import android.view.View;
-import java.util.ArrayList;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class xl extends AnimatorListenerAdapter {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ org.telegram.ui.Components.w9 c;
-    public final /* synthetic */ wn d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.i5 e;
-    public final /* synthetic */ boolean f;
-    public final /* synthetic */ ai.p4 h;
-    public final /* synthetic */ xn n;
+public final class xl extends lu0 {
+    public final /* synthetic */ wn a;
 
-    public xl(xn xnVar, boolean z10, boolean z11, org.telegram.ui.Components.w9 w9Var, wn wnVar, org.telegram.ui.ActionBar.i5 i5Var, boolean z12, ai.p4 p4Var) {
-        this.n = xnVar;
-        this.a = z10;
-        this.b = z11;
-        this.c = w9Var;
-        this.d = wnVar;
-        this.e = i5Var;
-        this.f = z12;
-        this.h = p4Var;
+    public xl(wn wnVar) {
+        this.a = wnVar;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
-        xn xnVar = this.n;
-        xnVar.H2[1] = null;
-        xnVar.B2[1].setTranslationY(0.0f);
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0076 A[LOOP:0: B:10:0x002a->B:17:0x0076, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x004b A[SYNTHETIC] */
+    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final vu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        ck ckVar;
+        ImageReceiver imageReceiver;
+        if (i10 >= 0) {
+            wn wnVar = this.a;
+            if (i10 < wnVar.Ha.size() && (ckVar = wnVar.I1) != null && ckVar.getListView() != null) {
+                int childCount = wnVar.I1.getListView().getChildCount();
+                Object obj = wnVar.Ha.get(i10);
+                for (int i11 = 0; i11 < childCount; i11++) {
+                    View childAt = wnVar.I1.getListView().getChildAt(i11);
+                    if (childAt instanceof org.telegram.ui.Cells.f2) {
+                        org.telegram.ui.Cells.f2 f2Var = (org.telegram.ui.Cells.f2) childAt;
+                        if (f2Var.getResult() == obj) {
+                            imageReceiver = f2Var.getPhotoImage();
+                            if (imageReceiver == null) {
+                                int[] iArr = new int[2];
+                                childAt.getLocationInWindow(iArr);
+                                vu0 vu0Var = new vu0();
+                                vu0Var.b = iArr[0];
+                                vu0Var.c = iArr[1];
+                                vu0Var.d = wnVar.I1.getListView();
+                                vu0Var.a = imageReceiver;
+                                vu0Var.e = imageReceiver.getBitmapSafe();
+                                vu0Var.h = imageReceiver.getRoundRadius(true);
+                                return vu0Var;
+                            }
+                        }
+                    }
+                    imageReceiver = null;
+                    if (imageReceiver == null) {
+                    }
+                }
+            }
+        }
+        return null;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        AnimatorSet[] animatorSetArr = this.n.H2;
-        if (animator.equals(animatorSetArr[1])) {
-            org.telegram.ui.Components.w9 w9Var = this.c;
-            boolean z10 = this.b;
-            boolean z11 = this.a;
-            if (!z11 && !z10 && w9Var == null) {
-                animatorSetArr[1] = null;
+    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
+    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
+        if (i10 >= 0) {
+            wn wnVar = this.a;
+            if (i10 >= wnVar.Ha.size()) {
                 return;
             }
-            animatorSetArr[1] = new AnimatorSet();
-            animatorSetArr[1].setInterpolator(org.telegram.ui.Components.rr.h);
-            animatorSetArr[1].setDuration(360L);
-            ArrayList arrayList = new ArrayList();
-            if (z11) {
-                arrayList.add(ObjectAnimator.ofFloat(this.d, (Property<wn, Float>) View.TRANSLATION_Y, 0.0f));
-            }
-            if (z10) {
-                arrayList.add(ObjectAnimator.ofFloat(this.e, (Property<org.telegram.ui.ActionBar.i5, Float>) View.TRANSLATION_Y, 0.0f));
-            }
-            if (this.f) {
-                arrayList.add(ObjectAnimator.ofFloat(this.h, (Property<ai.p4, Float>) View.TRANSLATION_Y, 0.0f));
-            }
-            if (w9Var != null) {
-                arrayList.add(ObjectAnimator.ofFloat(w9Var, (Property<org.telegram.ui.Components.w9, Float>) View.TRANSLATION_Y, 0.0f));
-            }
-            animatorSetArr[1].addListener(new u4(this, 20));
-            animatorSetArr[1].playTogether(arrayList);
-            animatorSetArr[1].start();
+            wnVar.cb((TLRPC.BotInlineResult) wnVar.Ha.get(i10), z10, i11, 0L);
         }
     }
 }

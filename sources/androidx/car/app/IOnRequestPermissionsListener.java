@@ -5,18 +5,18 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public interface IOnRequestPermissionsListener extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$IOnRequestPermissionsListener".replace('$', '.');
 
     void onRequestPermissionsResult(String[] strArr, String[] strArr2);
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static abstract class Stub extends Binder implements IOnRequestPermissionsListener {
         static final int TRANSACTION_onRequestPermissionsResult = 2;
 
-        /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+        /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
         public static class Proxy implements IOnRequestPermissionsListener {
             private IBinder mRemote;
 
@@ -86,7 +86,7 @@ public interface IOnRequestPermissionsListener extends IInterface {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class Default implements IOnRequestPermissionsListener {
         @Override // android.os.IInterface
         public IBinder asBinder() {

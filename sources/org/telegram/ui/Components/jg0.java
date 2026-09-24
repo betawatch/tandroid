@@ -1,62 +1,88 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.os.SystemClock;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class jg0 extends ml0 {
-    public final yf.y X2;
-    public long Y2;
-    public final /* synthetic */ qg0 Z2;
+public final /* synthetic */ class jg0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ og0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jg0(qg0 qg0Var, Context context) {
-        super(context, null);
-        this.Z2 = qg0Var;
-        this.X2 = new yf.y(8);
+    public /* synthetic */ jg0(og0 og0Var, int i10) {
+        this.a = i10;
+        this.b = og0Var;
     }
 
-    @Override // org.telegram.ui.Components.ml0
-    public final boolean E0(float f7) {
-        return f7 >= ((float) (this.Z2.E + AndroidUtilities.statusBarHeight));
-    }
-
-    @Override // org.telegram.ui.Components.ml0, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        float f7;
-        qg0 qg0Var = this.Z2;
-        if (qg0Var.L) {
-            long elapsedRealtime = SystemClock.elapsedRealtime();
-            long abs = Math.abs(this.Y2 - elapsedRealtime);
-            if (abs > 17) {
-                abs = 16;
-            }
-            this.Y2 = elapsedRealtime;
-            qg0Var.J += (abs * qg0Var.K) / 1800.0f;
-            while (true) {
-                f7 = qg0Var.J;
-                float f10 = qg0Var.K * 2.0f;
-                if (f7 < f10) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.u();
+                break;
+            case 1:
+                og0 og0Var = this.b;
+                PhotoViewer photoViewer = og0Var.V;
+                if (photoViewer != null) {
+                    if (og0Var.r != null) {
+                        og0Var.Z = r2.getCurrentPosition() / og0Var.r.getVideoDuration();
+                        og0Var.a0 = og0Var.r.getBufferedPosition();
+                    } else {
+                        if (photoViewer.F2 != null) {
+                            float m10 = og0Var.m();
+                            og0Var.Z = r1.n() / m10;
+                            og0Var.a0 = r1.j() / m10;
+                        }
+                    }
+                    og0Var.b0.invalidate();
+                    AndroidUtilities.runOnUIThread(og0Var.e0, 500L);
+                    break;
+                }
+                break;
+            case 2:
+                og0 og0Var2 = this.b;
+                PhotoViewer photoViewer2 = og0Var2.V;
+                if (photoViewer2 != null) {
+                    if ((photoViewer2.F2 != null || og0Var2.r != null) && !og0Var2.c0 && !og0Var2.Y && !og0Var2.w && !og0Var2.s.isInProgress() && og0Var2.f0) {
+                        s71 s71Var = og0Var2.V.F2;
+                        boolean z10 = og0Var2.g0[0] >= (((float) og0Var2.t()) * og0Var2.J) * 0.5f;
+                        long l4 = og0Var2.l();
+                        long m11 = og0Var2.m();
+                        if (l4 != -9223372036854775807L && m11 >= 15000) {
+                            ag0 ag0Var = og0Var2.r;
+                            if (ag0Var != null) {
+                                PhotoViewer photoViewer3 = og0Var2.V;
+                                photoViewer3.c4.startRewind(ag0Var, z10, og0Var2.g0[0], photoViewer3.t1, og0Var2.R);
+                            } else {
+                                PhotoViewer photoViewer4 = og0Var2.V;
+                                photoViewer4.c4.startRewind(s71Var, z10, og0Var2.g0[0], photoViewer4.t1, og0Var2.R);
+                            }
+                            if (!og0Var2.E) {
+                                og0Var2.E = true;
+                                og0Var2.y(true);
+                                if (!og0Var2.i0) {
+                                    AndroidUtilities.runOnUIThread(og0Var2.j0, 1500L);
+                                    og0Var2.i0 = true;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+                break;
+            default:
+                og0 og0Var3 = this.b;
+                PhotoViewer photoViewer5 = og0Var3.V;
+                if (photoViewer5 != null && photoViewer5.c4.rewinding) {
+                    AndroidUtilities.runOnUIThread(og0Var3.j0, 1500L);
                     break;
                 } else {
-                    qg0Var.J = f7 - f10;
+                    og0Var3.E = false;
+                    og0Var3.y(false);
+                    og0Var3.i0 = false;
+                    break;
                 }
-            }
-            qg0Var.I.setTranslate(f7, 0.0f);
-            qg0Var.H.setLocalMatrix(qg0Var.I);
-            f1();
-            invalidate();
+                break;
         }
-        super.dispatchDraw(canvas);
-        int measuredHeight = getMeasuredHeight() - AndroidUtilities.navigationBarHeight;
-        int measuredWidth = getMeasuredWidth();
-        int measuredHeight2 = getMeasuredHeight();
-        yf.y yVar = this.X2;
-        yVar.setBounds(0, measuredHeight, measuredWidth, measuredHeight2);
-        yVar.b(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.i5, this.p2));
-        yVar.draw(canvas);
     }
 }

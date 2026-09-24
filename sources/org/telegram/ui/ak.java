@@ -5,24 +5,24 @@ import android.graphics.Canvas;
 import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class ak extends org.telegram.ui.Cells.w0 {
-    public final /* synthetic */ xn l2;
+    public final /* synthetic */ wn l2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ak(Context context, org.telegram.ui.ActionBar.d6 d6Var, xn xnVar) {
+    public ak(Context context, org.telegram.ui.ActionBar.d6 d6Var, wn wnVar) {
         super(context, d6Var, false);
-        this.l2 = xnVar;
+        this.l2 = wnVar;
     }
 
     @Override // org.telegram.ui.Cells.w0, android.view.View
     public final void onDraw(Canvas canvas) {
-        xn xnVar = this.l2;
-        if (xnVar.B8 != null) {
+        wn wnVar = this.l2;
+        if (wnVar.B8 != null) {
             return;
         }
-        float y3 = ((xnVar.x0.getY() + xnVar.s9) - getY()) - AndroidUtilities.dp(4.0f);
+        float y3 = ((wnVar.x0.getY() + wnVar.s9) - getY()) - AndroidUtilities.dp(4.0f);
         if (y3 <= 0.0f) {
             super.onDraw(canvas);
         } else if (y3 < getMeasuredHeight()) {
@@ -39,9 +39,9 @@ public final class ak extends org.telegram.ui.Cells.w0 {
         if (getAlpha() == 0.0f) {
             return false;
         }
-        xn xnVar = this.l2;
-        kVar = ((org.telegram.ui.ActionBar.n2) xnVar).actionBar;
-        if (kVar.s() || xnVar.A9()) {
+        wn wnVar = this.l2;
+        kVar = ((org.telegram.ui.ActionBar.m2) wnVar).actionBar;
+        if (kVar.s() || wnVar.A9()) {
             return false;
         }
         return super.onInterceptTouchEvent(motionEvent);
@@ -53,9 +53,9 @@ public final class ak extends org.telegram.ui.Cells.w0 {
         if (getAlpha() == 0.0f) {
             return false;
         }
-        xn xnVar = this.l2;
-        kVar = ((org.telegram.ui.ActionBar.n2) xnVar).actionBar;
-        if (kVar.s() || xnVar.A9()) {
+        wn wnVar = this.l2;
+        kVar = ((org.telegram.ui.ActionBar.m2) wnVar).actionBar;
+        if (kVar.s() || wnVar.A9()) {
             return false;
         }
         return super.onTouchEvent(motionEvent);

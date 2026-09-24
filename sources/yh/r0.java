@@ -6,7 +6,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class r0 extends oh.c implements le.e {
     public static final /* synthetic */ int s = 0;
@@ -31,7 +31,7 @@ public final class r0 extends oh.c implements le.e {
                 bVarArr[0].e(true, false);
                 return;
             } else {
-                this.a.addView(bVarArr[i11], w7.x5.l(1.0f, 0, -1));
+                this.a.addView(bVarArr[i11], w7.y5.l(1.0f, 0, -1));
                 this.n[i11].setOnClickListener(new ci.n4(this, i11, 27));
                 i11++;
             }

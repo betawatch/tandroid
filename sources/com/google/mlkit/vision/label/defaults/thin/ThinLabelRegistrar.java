@@ -6,7 +6,7 @@ import java.util.List;
 import q9.a;
 import q9.j;
 import qb.g;
-import w7.j8;
+import w7.k8;
 import wb.b;
 import x7.m;
 import x7.o;
@@ -14,7 +14,7 @@ import x7.s;
 import zb.d;
 import zb.e;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class ThinLabelRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
@@ -35,7 +35,7 @@ public class ThinLabelRegistrar implements ComponentRegistrar {
         a b12 = a11.b();
         m mVar = o.b;
         Object[] objArr = {b10, b11, b12};
-        j8.a(3, objArr);
+        k8.a(3, objArr);
         return new s(3, objArr);
     }
 }

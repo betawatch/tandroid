@@ -1,6 +1,6 @@
 package i2;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public abstract class f implements j1 {
     public boolean E;
@@ -12,7 +12,7 @@ public abstract class f implements j1 {
     public j2.k f;
     public e2.x h;
     public int n;
-    public u2.a1 r;
+    public u2.b1 r;
     public b2.s[] s;
     public long v;
     public long w;
@@ -78,9 +78,9 @@ public abstract class f implements j1 {
         if (k()) {
             return this.y;
         }
-        u2.a1 a1Var = this.r;
-        a1Var.getClass();
-        return a1Var.e();
+        u2.b1 b1Var = this.r;
+        b1Var.getClass();
+        return b1Var.e();
     }
 
     public abstract void o();
@@ -88,9 +88,9 @@ public abstract class f implements j1 {
     public abstract void q(long j3, boolean z10);
 
     public final int w(n4.y yVar, h2.h hVar, int i10) {
-        u2.a1 a1Var = this.r;
-        a1Var.getClass();
-        int f7 = a1Var.f(yVar, hVar, i10);
+        u2.b1 b1Var = this.r;
+        b1Var.getClass();
+        int f7 = b1Var.f(yVar, hVar, i10);
         if (f7 == -4) {
             if (hVar.isEndOfStream()) {
                 this.x = Long.MIN_VALUE;
@@ -116,9 +116,9 @@ public abstract class f implements j1 {
 
     public abstract void x(long j3, long j10);
 
-    public final void y(b2.s[] sVarArr, u2.a1 a1Var, long j3, long j10, u2.f0 f0Var) {
+    public final void y(b2.s[] sVarArr, u2.b1 b1Var, long j3, long j10, u2.f0 f0Var) {
         e2.d.g(!this.y);
-        this.r = a1Var;
+        this.r = b1Var;
         this.G = f0Var;
         if (this.x == Long.MIN_VALUE) {
             this.x = j3;

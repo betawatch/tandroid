@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class UserConfig extends BaseController {
     private static volatile UserConfig[] Instance = new UserConfig[4];
@@ -675,7 +675,7 @@ public class UserConfig extends BaseController {
             return;
         }
         this.ttlIsLoading = true;
-        getConnectionsManager().sendRequest(new TLRPC.TL_messages_getDefaultHistoryTTL(), new g0(this, 8));
+        getConnectionsManager().sendRequest(new TLRPC.TL_messages_getDefaultHistoryTTL(), new h0(this, 8));
     }
 
     public void resetSavedPassword() {
@@ -691,7 +691,7 @@ public class UserConfig extends BaseController {
     }
 
     public void saveConfig(boolean z10) {
-        NotificationCenter.getInstance(this.currentAccount).doOnIdle(new bi.f(12, this, z10));
+        NotificationCenter.getInstance(this.currentAccount).doOnIdle(new bi.f(13, this, z10));
     }
 
     public void savePassword(byte[] bArr, byte[] bArr2) {

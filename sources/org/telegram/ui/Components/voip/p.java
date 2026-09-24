@@ -15,14 +15,13 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.ui.Cells.q3;
 import org.telegram.ui.Components.or;
-import org.telegram.ui.Components.u81;
-import org.telegram.ui.f60;
+import org.telegram.ui.Components.q81;
+import org.telegram.ui.d60;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class p extends s2 {
+public final class p extends t2 {
     public float g0;
     public final /* synthetic */ ChatObject.Call h0;
     public final /* synthetic */ m0 i0;
@@ -32,13 +31,13 @@ public final class p extends s2 {
     public final /* synthetic */ String m0;
     public final /* synthetic */ float n0;
     public final /* synthetic */ StaticLayout o0;
-    public final /* synthetic */ f60 p0;
+    public final /* synthetic */ d60 p0;
     public final /* synthetic */ String q0;
     public final /* synthetic */ float r0;
     public final /* synthetic */ u s0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p(u uVar, Context context, ChatObject.Call call, m0 m0Var, TextPaint textPaint, StaticLayout staticLayout, TextPaint textPaint2, String str, float f7, StaticLayout staticLayout2, f60 f60Var, String str2, float f10) {
+    public p(u uVar, Context context, ChatObject.Call call, m0 m0Var, TextPaint textPaint, StaticLayout staticLayout, TextPaint textPaint2, String str, float f7, StaticLayout staticLayout2, d60 d60Var, String str2, float f10) {
         super(context, false, false, true, true);
         this.s0 = uVar;
         this.h0 = call;
@@ -49,18 +48,18 @@ public final class p extends s2 {
         this.m0 = str;
         this.n0 = f7;
         this.o0 = staticLayout2;
-        this.p0 = f60Var;
+        this.p0 = d60Var;
         this.q0 = str2;
         this.r0 = f10;
     }
 
-    @Override // org.telegram.ui.Components.voip.s2
+    @Override // org.telegram.ui.Components.voip.t2
     public final void a() {
         super.a();
         this.g0 = this.s0.w0;
     }
 
-    @Override // org.telegram.ui.Components.voip.s2
+    @Override // org.telegram.ui.Components.voip.t2
     public final void b() {
         int i10;
         ChatObject.VideoParticipant videoParticipant;
@@ -78,9 +77,9 @@ public final class p extends s2 {
             pVar.animate().alpha(1.0f).setDuration(150L).start();
         }
         boolean z10 = uVar.s0;
-        r2 r2Var = this.d;
-        if (!z10 && r2Var.getAlpha() != 1.0f) {
-            r2Var.animate().setDuration(300L).alpha(1.0f);
+        s2 s2Var = this.d;
+        if (!z10 && s2Var.getAlpha() != 1.0f) {
+            s2Var.animate().setDuration(300L).alpha(1.0f);
         }
         TextureView textureView = this.e;
         if (textureView != null && textureView.getAlpha() != 1.0f) {
@@ -89,13 +88,13 @@ public final class p extends s2 {
         ImageView imageView = uVar.x0;
         if (imageView != null && imageView.getParent() != null) {
             if (uVar.x0.getAlpha() == 1.0f) {
-                uVar.x0.animate().alpha(0.0f).setDuration(300L).setListener(new u81(this, 3)).start();
+                uVar.x0.animate().alpha(0.0f).setDuration(300L).setListener(new q81(this, 4)).start();
             } else if (uVar.x0.getParent() != null) {
                 pVar.removeView(uVar.x0);
             }
         }
-        int i11 = r2Var.rotatedFrameHeight;
-        if (i11 == 0 || (i10 = r2Var.rotatedFrameWidth) == 0 || (videoParticipant = uVar.w) == null) {
+        int i11 = s2Var.rotatedFrameHeight;
+        if (i11 == 0 || (i10 = s2Var.rotatedFrameWidth) == 0 || (videoParticipant = uVar.w) == null) {
             return;
         }
         videoParticipant.setAspectRatio(i10, i11, call);
@@ -105,7 +104,7 @@ public final class p extends s2 {
     /* JADX WARN: Removed duplicated region for block: B:40:0x046d  */
     /* JADX WARN: Removed duplicated region for block: B:55:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:56:0x0463  */
-    @Override // org.telegram.ui.Components.voip.s2, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.voip.t2, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -113,7 +112,7 @@ public final class p extends s2 {
         float f7;
         or orVar;
         float f10;
-        int a2;
+        int b10;
         float f11;
         int i10;
         float f12;
@@ -126,12 +125,12 @@ public final class p extends s2 {
         ImageReceiver imageReceiver = uVar.l0;
         TextView textView = uVar.O;
         r rVar = uVar.N;
-        r2 r2Var = this.d;
-        boolean isFirstFrameRendered = r2Var.isFirstFrameRendered();
+        s2 s2Var = this.d;
+        boolean isFirstFrameRendered = s2Var.isFirstFrameRendered();
         TextPaint textPaint = this.j0;
         ChatObject.Call call = this.h0;
         m0 m0Var = this.i0;
-        if (!isFirstFrameRendered || (!(r2Var.getAlpha() == 1.0f || this.e.getAlpha() == 1.0f) || uVar.s0)) {
+        if (!isFirstFrameRendered || (!(s2Var.getAlpha() == 1.0f || this.e.getAlpha() == 1.0f) || uVar.s0)) {
             float f15 = uVar.k0;
             if (f15 != 1.0f) {
                 float f16 = f15 + 0.10666667f;
@@ -184,12 +183,12 @@ public final class p extends s2 {
                 int dp2 = AndroidUtilities.dp(33.0f);
                 if (uVar.r || uVar.b) {
                     f10 = 10.0f;
-                    a2 = (int) q3.a(AndroidUtilities.dp(39.0f), m0Var.c, AndroidUtilities.dp(10.0f), dp2);
+                    b10 = (int) org.telegram.ui.Cells.c1.b(AndroidUtilities.dp(39.0f), m0Var.c, AndroidUtilities.dp(10.0f), dp2);
                 } else {
                     f10 = 10.0f;
-                    a2 = (int) ((Math.max(1.0f - m0Var.c, (uVar.h || uVar.f) ? m0Var.n : 0.0f) * AndroidUtilities.dp(10.0f)) + dp2);
+                    b10 = (int) ((Math.max(1.0f - m0Var.c, (uVar.h || uVar.f) ? m0Var.n : 0.0f) * AndroidUtilities.dp(10.0f)) + dp2);
                 }
-                int measuredWidth = (getMeasuredWidth() - a2) / 2;
+                int measuredWidth = (getMeasuredWidth() - b10) / 2;
                 boolean z10 = uVar.h;
                 float f19 = (z10 || uVar.f) ? m0Var.n : 0.0f;
                 float f20 = f18;
@@ -200,10 +199,10 @@ public final class p extends s2 {
                     f20 = (z10 || uVar.f) ? m0Var.n : m0Var.c;
                 }
                 float f21 = f11;
-                int dp3 = (int) ((AndroidUtilities.dp(17.0f) * f20) + ((((getMeasuredHeight() - a2) / 2) - AndroidUtilities.dp(28.0f)) - (((((uVar.b || uVar.r) ? m0Var.c : 0.0f) * AndroidUtilities.dp(74.0f)) + AndroidUtilities.dp(17.0f)) * f21)));
+                int dp3 = (int) ((AndroidUtilities.dp(17.0f) * f20) + ((((getMeasuredHeight() - b10) / 2) - AndroidUtilities.dp(28.0f)) - (((((uVar.b || uVar.r) ? m0Var.c : 0.0f) * AndroidUtilities.dp(74.0f)) + AndroidUtilities.dp(17.0f)) * f21)));
                 orVar = orVar2;
-                int i11 = dp3 + a2;
-                drawable.setBounds(measuredWidth, dp3, measuredWidth + a2, i11);
+                int i11 = dp3 + b10;
+                drawable.setBounds(measuredWidth, dp3, measuredWidth + b10, i11);
                 drawable.draw(canvas);
                 float f22 = m0Var.c;
                 if (f22 > f7 || f19 > f7) {
@@ -216,7 +215,7 @@ public final class p extends s2 {
                         rVar.setAlpha(0.0f);
                     }
                     i10 = i11;
-                    canvas.drawText(this.m0, (a2 / 2.0f) + (measuredWidth - (this.n0 / 2.0f)), AndroidUtilities.dp(32.0f) + i11, textPaint2);
+                    canvas.drawText(this.m0, (b10 / 2.0f) + (measuredWidth - (this.n0 / 2.0f)), AndroidUtilities.dp(32.0f) + i11, textPaint2);
                 } else {
                     rVar.setAlpha(0.0f);
                     i10 = i11;
@@ -226,7 +225,7 @@ public final class p extends s2 {
                 if (m0Var.c < 1.0f && f19 < 1.0f) {
                     textPaint.setAlpha((int) ((1.0d - Math.max(r3, f19)) * 255.0d));
                     canvas.save();
-                    canvas.translate((a2 / 2.0f) + (measuredWidth - (AndroidUtilities.dp(400.0f) / 2.0f)), AndroidUtilities.dp(f10) + i10);
+                    canvas.translate((b10 / 2.0f) + (measuredWidth - (AndroidUtilities.dp(400.0f) / 2.0f)), AndroidUtilities.dp(f10) + i10);
                     this.o0.draw(canvas);
                     canvas.restore();
                 }
@@ -247,9 +246,9 @@ public final class p extends s2 {
                         hVar.g = f23;
                         if (f23 > 4.0f) {
                             hVar.g = 0.0f;
-                            org.telegram.ui.web.t0 t0Var = hVar.p;
-                            if (t0Var != null) {
-                                t0Var.run();
+                            org.telegram.ui.web.q0 q0Var = hVar.p;
+                            if (q0Var != null) {
+                                q0Var.run();
                             }
                         }
                         hVar.h = currentTimeMillis;
@@ -290,7 +289,7 @@ public final class p extends s2 {
         float measuredHeight = (getMeasuredHeight() - this.N) - AndroidUtilities.dp(80.0f);
         if (uVar.w != call.videoNotAvailableParticipant) {
             canvas.save();
-            if ((uVar.b || uVar.r) && !f60.F3 && !f60.G3) {
+            if ((uVar.b || uVar.r) && !d60.F3 && !d60.G3) {
                 measuredHeight = com.google.android.gms.internal.vision.e2.b(1.0f, m0Var.W, AndroidUtilities.dp(90.0f) * m0Var.c, measuredHeight);
             }
             f12 = 0.0f;
@@ -373,7 +372,7 @@ public final class p extends s2 {
         }
     }
 
-    @Override // org.telegram.ui.Components.voip.s2, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.voip.t2, android.view.ViewGroup
     public final boolean drawChild(Canvas canvas, View view, long j3) {
         u uVar = this.s0;
         if (!uVar.j0 || view != uVar.a.d) {
@@ -388,7 +387,7 @@ public final class p extends s2 {
         return drawChild;
     }
 
-    @Override // org.telegram.ui.Components.voip.s2
+    @Override // org.telegram.ui.Components.voip.t2
     public final void e() {
         super.e();
         u uVar = this.s0;
@@ -410,15 +409,15 @@ public final class p extends s2 {
         uVar.Q = false;
     }
 
-    @Override // org.telegram.ui.Components.voip.s2, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.voip.t2, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         int i14;
         ChatObject.VideoParticipant videoParticipant;
         u uVar = this.s0;
         p pVar = uVar.a;
         boolean z11 = uVar.v;
-        r2 r2Var = this.d;
-        if (z11 && uVar.R && r2Var.rotatedFrameHeight != 0 && r2Var.rotatedFrameWidth != 0) {
+        s2 s2Var = this.d;
+        if (z11 && uVar.R && s2Var.rotatedFrameHeight != 0 && s2Var.rotatedFrameWidth != 0) {
             if (uVar.h) {
                 pVar.a0 = 1;
             } else if (uVar.b) {
@@ -433,14 +432,14 @@ public final class p extends s2 {
             uVar.R = false;
         }
         super.onLayout(z10, i10, i11, i12, i13);
-        int i15 = r2Var.rotatedFrameHeight;
-        if (i15 == 0 || (i14 = r2Var.rotatedFrameWidth) == 0 || (videoParticipant = uVar.w) == null) {
+        int i15 = s2Var.rotatedFrameHeight;
+        if (i15 == 0 || (i14 = s2Var.rotatedFrameWidth) == 0 || (videoParticipant = uVar.w) == null) {
             return;
         }
         videoParticipant.setAspectRatio(i14, i15, this.h0);
     }
 
-    @Override // org.telegram.ui.Components.voip.s2, android.view.View, android.view.ViewParent
+    @Override // org.telegram.ui.Components.voip.t2, android.view.View, android.view.ViewParent
     public final void requestLayout() {
         this.s0.requestLayout();
         super.requestLayout();

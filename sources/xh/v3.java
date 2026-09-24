@@ -7,11 +7,11 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ui1;
-import yh.m5;
+import yh.l5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
-public final class v3 implements m5 {
+public final class v3 implements l5 {
     public final int a;
     public final long b;
     public final Utilities.Callback c;
@@ -41,22 +41,22 @@ public final class v3 implements m5 {
         this.c = callback;
     }
 
-    @Override // yh.m5
+    @Override // yh.l5
     public final void a() {
         g(false);
     }
 
-    @Override // yh.m5
+    @Override // yh.l5
     public final int b(int i10) {
         return -1;
     }
 
-    @Override // yh.m5
+    @Override // yh.l5
     public final int c() {
         return this.e;
     }
 
-    @Override // yh.m5
+    @Override // yh.l5
     public final int e() {
         return this.d.size();
     }
@@ -160,7 +160,7 @@ public final class v3 implements m5 {
         }
     }
 
-    @Override // yh.m5
+    @Override // yh.l5
     public final Object get(int i10) {
         return this.d.get(i10);
     }
@@ -183,12 +183,12 @@ public final class v3 implements m5 {
         }
     }
 
-    @Override // yh.m5
+    @Override // yh.l5
     public final int indexOf(Object obj) {
         return this.d.indexOf(obj);
     }
 
-    @Override // yh.m5
+    @Override // yh.l5
     public final void d() {
     }
 }

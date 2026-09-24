@@ -4,7 +4,7 @@ import android.graphics.SurfaceTexture;
 import android.view.Surface;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public interface EglBase {
     public static final int EGL_OPENGL_ES2_BIT = 4;
@@ -17,7 +17,7 @@ public interface EglBase {
     public static final int[] CONFIG_PIXEL_RGBA_BUFFER = e.a().setHasAlphaChannel(true).setSupportsPixelBuffer(true).createConfigAttributes();
     public static final int[] CONFIG_RECORDABLE = e.a().setIsRecordable(true).createConfigAttributes();
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public static class ConfigBuilder {
         private boolean hasAlphaChannel;
         private boolean isRecordable;
@@ -69,7 +69,7 @@ public interface EglBase {
 
         public ConfigBuilder setOpenGlesVersion(int i10) {
             if (i10 < 1 || i10 > 3) {
-                throw new IllegalArgumentException(hg.c.j(i10, "OpenGL ES version ", " not supported"));
+                throw new IllegalArgumentException(hg.c.i(i10, "OpenGL ES version ", " not supported"));
             }
             this.openGlesVersion = i10;
             return this;
@@ -81,7 +81,7 @@ public interface EglBase {
         }
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public interface Context {
         public static final long NO_CONTEXT = 0;
 

@@ -1,36 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
+import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class kb0 implements al0 {
-    public final /* synthetic */ ob0 a;
+public final /* synthetic */ class kb0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ zb0 b;
+    public final /* synthetic */ Context c;
 
-    public kb0(ob0 ob0Var) {
-        this.a = ob0Var;
+    public /* synthetic */ kb0(zb0 zb0Var, Context context, int i10) {
+        this.a = i10;
+        this.b = zb0Var;
+        this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.al0
-    public final void d(int i10, View view) {
-        ob0 ob0Var = this.a;
-        if (ob0Var.a != 1 || ob0Var.r.previewMessages.size() <= 1) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                zb0 zb0Var = this.b;
+                zb0Var.c0.a(false);
+                AndroidUtilities.runOnUIThread(new kb0(zb0Var, this.c, 1));
+                break;
+            default:
+                Context context = this.c;
+                if (AndroidUtilities.isContextSafe(context)) {
+                    new rg.x0(context, 43, this.b.c0.F).show();
+                    break;
+                }
+                break;
         }
-        int id2 = ob0Var.r.previewMessages.get(i10).getId();
-        boolean z10 = ob0Var.r.selectedIds.get(id2, false);
-        boolean z11 = !z10;
-        if (ob0Var.r.selectedIds.size() == 1 && z10) {
-            return;
-        }
-        if (z10) {
-            ob0Var.r.selectedIds.delete(id2);
-        } else {
-            ob0Var.r.selectedIds.put(id2, z11);
-        }
-        if (view instanceof org.telegram.ui.Cells.t1) {
-            ((org.telegram.ui.Cells.t1) view).L3(z11, z11, true);
-        }
-        ob0Var.k(true);
     }
 }

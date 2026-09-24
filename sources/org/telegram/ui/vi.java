@@ -3,19 +3,19 @@ package org.telegram.ui;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class vi implements NotificationCenter.NotificationCenterDelegate {
     public final /* synthetic */ int a;
     public final /* synthetic */ ai.c9 b;
-    public final /* synthetic */ xn c;
-    public final /* synthetic */ xn d;
+    public final /* synthetic */ wn c;
+    public final /* synthetic */ wn d;
 
-    public vi(xn xnVar, int i10, ai.c9 c9Var, xn xnVar2) {
-        this.d = xnVar;
+    public vi(wn wnVar, int i10, ai.c9 c9Var, wn wnVar2) {
+        this.d = wnVar;
         this.a = i10;
         this.b = c9Var;
-        this.c = xnVar2;
+        this.c = wnVar2;
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
@@ -25,7 +25,7 @@ public final class vi implements NotificationCenter.NotificationCenterDelegate {
         if (i10 == i13 && ((Integer) objArr[10]).intValue() == this.a) {
             this.b.run();
             AndroidUtilities.runOnUIThread(new i2.a0(this.c, i10, i11, objArr), 50L);
-            i12 = ((org.telegram.ui.ActionBar.n2) this.d).currentAccount;
+            i12 = ((org.telegram.ui.ActionBar.m2) this.d).currentAccount;
             NotificationCenter.getInstance(i12).removeObserver(this, i13);
         }
     }

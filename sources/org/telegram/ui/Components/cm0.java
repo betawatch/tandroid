@@ -1,37 +1,23 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.messenger.R;
-
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cm0 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ jm0 b;
+public final class cm0 {
+    public final float a;
+    public final float b;
+    public final float c;
+    public final float d;
+    public final boolean e;
 
-    public /* synthetic */ cm0(jm0 jm0Var, int i10) {
-        this.a = i10;
-        this.b = jm0Var;
+    public cm0(float f7, float f10, float f11, float f12, int i10) {
+        this(f7, f10, f11, f12);
+        this.e = true;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                this.b.f.a(((Integer) view.getTag(R.id.index_tag)).intValue());
-                break;
-            case 1:
-                this.b.f.a(((Integer) view.getTag(R.id.index_tag)).intValue());
-                break;
-            case 2:
-                this.b.f.a(((Integer) view.getTag(R.id.index_tag)).intValue());
-                break;
-            case 3:
-                this.b.f.a(((Integer) view.getTag(R.id.index_tag)).intValue());
-                break;
-            default:
-                this.b.f.a(((Integer) view.getTag(R.id.index_tag)).intValue());
-                break;
-        }
+    public cm0(float f7, float f10, float f11, float f12) {
+        this.a = f7;
+        this.b = f10;
+        this.c = f11;
+        this.d = f12;
     }
 }

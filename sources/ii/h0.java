@@ -19,9 +19,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public final class h0 extends a0 implements org.telegram.ui.ActionBar.y5 {
+public final class h0 extends a0 implements org.telegram.ui.ActionBar.x5 {
     public f0 E;
     public final int n;
     public final org.telegram.ui.ActionBar.d6 r;
@@ -44,7 +44,7 @@ public final class h0 extends a0 implements org.telegram.ui.ActionBar.y5 {
         this.v = linearLayout;
         linearLayout.setOrientation(0);
         horizontalScrollView.addView(linearLayout, new FrameLayout.LayoutParams(-2, -1));
-        addView(horizontalScrollView, w7.x5.e(-1, -1, 23));
+        addView(horizontalScrollView, w7.y5.e(-1, -1, 23));
         a2 a2Var = new a2(context, R.drawable.msg_add, d6Var);
         a2Var.e = 19;
         a2Var.e();
@@ -70,7 +70,7 @@ public final class h0 extends a0 implements org.telegram.ui.ActionBar.y5 {
                         if (f0Var != null && (aVar = h0Var.a) != null) {
                             x3 x3Var = ((p3) f0Var).a;
                             x3Var.o3(false);
-                            x3Var.h3.H(new u3(x3Var, aVar, -1), view);
+                            x3Var.h3.J(new u3(x3Var, aVar, -1), view);
                             break;
                         }
                         break;
@@ -80,14 +80,14 @@ public final class h0 extends a0 implements org.telegram.ui.ActionBar.y5 {
                         if (f0Var2 != null && (aVar2 = h0Var2.a) != null) {
                             x3 x3Var2 = ((p3) f0Var2).a;
                             x3Var2.o3(false);
-                            x3Var2.h3.H(new u3(x3Var2, aVar2, -1), view);
+                            x3Var2.h3.J(new u3(x3Var2, aVar2, -1), view);
                             break;
                         }
                         break;
                 }
             }
         });
-        addView(a2Var, w7.x5.e(38, 38, 21));
+        addView(a2Var, w7.y5.e(38, 38, 21));
         TextView textView = new TextView(context);
         this.x = textView;
         textView.setText(LocaleController.getString(R.string.RichEditorAddButton));
@@ -115,7 +115,7 @@ public final class h0 extends a0 implements org.telegram.ui.ActionBar.y5 {
                         if (f0Var != null && (aVar = h0Var.a) != null) {
                             x3 x3Var = ((p3) f0Var).a;
                             x3Var.o3(false);
-                            x3Var.h3.H(new u3(x3Var, aVar, -1), view);
+                            x3Var.h3.J(new u3(x3Var, aVar, -1), view);
                             break;
                         }
                         break;
@@ -125,14 +125,14 @@ public final class h0 extends a0 implements org.telegram.ui.ActionBar.y5 {
                         if (f0Var2 != null && (aVar2 = h0Var2.a) != null) {
                             x3 x3Var2 = ((p3) f0Var2).a;
                             x3Var2.o3(false);
-                            x3Var2.h3.H(new u3(x3Var2, aVar2, -1), view);
+                            x3Var2.h3.J(new u3(x3Var2, aVar2, -1), view);
                             break;
                         }
                         break;
                 }
             }
         });
-        addView(textView, w7.x5.e(-2, 38, 17));
+        addView(textView, w7.y5.e(-2, 38, 17));
         j();
     }
 
@@ -150,7 +150,7 @@ public final class h0 extends a0 implements org.telegram.ui.ActionBar.y5 {
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.y5
+    @Override // org.telegram.ui.ActionBar.x5
     public final void e() {
         this.w.e();
         j();
@@ -190,7 +190,7 @@ public final class h0 extends a0 implements org.telegram.ui.ActionBar.y5 {
                 while (i10 < size) {
                     e0 e0Var = new e0(this, getContext(), pageblockbuttonrow.buttons.get(i10), i10);
                     arrayList2.add(e0Var);
-                    linearLayout.addView(e0Var, w7.x5.t(-2, -1, 16, i10 == 0 ? 0 : 7, 0, 0, 0));
+                    linearLayout.addView(e0Var, w7.y5.t(-2, -1, 16, i10 == 0 ? 0 : 7, 0, 0, 0));
                     i10++;
                 }
                 boolean z10 = size >= 8;

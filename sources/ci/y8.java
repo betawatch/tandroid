@@ -25,9 +25,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_payments;
-import org.telegram.ui.xn;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y8 implements Runnable {
     public final /* synthetic */ int a;
@@ -97,7 +97,7 @@ public final /* synthetic */ class y8 implements Runnable {
             case 5:
                 FirebaseMessaging firebaseMessaging = (FirebaseMessaging) this.b;
                 TaskCompletionSource taskCompletionSource = (TaskCompletionSource) this.c;
-                com.google.firebase.messaging.v vVar = FirebaseMessaging.l;
+                a4.m mVar = FirebaseMessaging.l;
                 firebaseMessaging.getClass();
                 try {
                     taskCompletionSource.setResult(firebaseMessaging.a());
@@ -290,7 +290,7 @@ public final /* synthetic */ class y8 implements Runnable {
                 }
             case 18:
                 ei.k3 k3Var3 = (ei.k3) this.b;
-                org.telegram.ui.Components.qc Q = new org.telegram.ui.Components.xc(k3Var3.p0, k3Var3.E).Q(R.raw.contact_check, 36, AndroidUtilities.replaceTags((String) this.c));
+                org.telegram.ui.Components.qc Q = new org.telegram.ui.Components.yc(k3Var3.p0, k3Var3.E).Q(R.raw.contact_check, 36, AndroidUtilities.replaceTags((String) this.c));
                 Q.j = 5000;
                 Q.k(true);
                 return;
@@ -302,7 +302,7 @@ public final /* synthetic */ class y8 implements Runnable {
                 ei.e4 e4Var2 = (ei.e4) this.b;
                 TL_payments.connectedBotStarRef connectedbotstarref = (TL_payments.connectedBotStarRef) this.c;
                 e4Var2.getClass();
-                e4Var2.presentFragment(xn.R9(connectedbotstarref.bot_id));
+                e4Var2.presentFragment(wn.R9(connectedbotstarref.bot_id));
                 return;
             case 21:
                 ei.q4 q4Var = (ei.q4) this.b;
@@ -319,7 +319,7 @@ public final /* synthetic */ class y8 implements Runnable {
                 }
             case 22:
                 ei.q4 q4Var2 = (ei.q4) this.b;
-                org.telegram.ui.Components.qc Q2 = new org.telegram.ui.Components.xc(q4Var2.b.getContainer(), q4Var2.a).Q(R.raw.contact_check, 36, AndroidUtilities.replaceTags((String) this.c));
+                org.telegram.ui.Components.qc Q2 = new org.telegram.ui.Components.yc(q4Var2.b.getContainer(), q4Var2.a).Q(R.raw.contact_check, 36, AndroidUtilities.replaceTags((String) this.c));
                 Q2.j = 5000;
                 Q2.k(true);
                 return;
@@ -327,10 +327,10 @@ public final /* synthetic */ class y8 implements Runnable {
                 fi.s sVar = (fi.s) this.b;
                 gi.f fVar2 = (gi.f) this.c;
                 sVar.getClass();
-                sVar.presentFragment(xn.R9(fVar2.b.id));
+                sVar.presentFragment(wn.R9(fVar2.b.id));
                 return;
             case 24:
-                ((fi.k0) this.b).s.presentFragment(xn.R9(((gi.f) this.c).b.id));
+                ((fi.k0) this.b).s.presentFragment(wn.R9(((gi.f) this.c).b.id));
                 return;
             case 25:
                 gg.c cVar3 = (gg.c) this.b;

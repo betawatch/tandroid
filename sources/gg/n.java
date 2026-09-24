@@ -19,17 +19,17 @@ import org.telegram.messenger.voip.VoIPGroupNotification;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.hb0;
+import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Components.lo;
-import org.telegram.ui.Components.ob0;
 import org.telegram.ui.Components.po;
-import org.telegram.ui.xn;
+import org.telegram.ui.Components.sb0;
+import org.telegram.ui.Components.zb0;
+import org.telegram.ui.wn;
 import org.webrtc.SurfaceTextureHelper;
 import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n implements Runnable {
     public final /* synthetic */ int a;
@@ -170,11 +170,11 @@ public final /* synthetic */ class n implements Runnable {
                 }
                 break;
             case 7:
-                n2 n2Var = (n2) this.d;
+                m2 m2Var = (m2) this.d;
                 Bundle bundle = new Bundle();
                 bundle.putLong("user_id", UserConfig.getInstance(this.b).getClientUserId());
                 bundle.putInt("message_id", this.c);
-                n2Var.presentFragment(new xn(bundle));
+                m2Var.presentFragment(new wn(bundle));
                 break;
             case 8:
                 po poVar = (po) this.d;
@@ -183,7 +183,7 @@ public final /* synthetic */ class n implements Runnable {
                     SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(this.c);
                     notificationsSettings.edit().putInt("last_selected_mute_until_time", i18).putInt("last_selected_mute_until_time2", notificationsSettings.getInt("last_selected_mute_until_time", 0)).apply();
                 }
-                poVar.t(i18);
+                poVar.u(i18);
                 break;
             case 9:
                 lo loVar = (lo) this.d;
@@ -195,33 +195,33 @@ public final /* synthetic */ class n implements Runnable {
                 loVar.run(Integer.valueOf(i19));
                 break;
             case 10:
-                ob0 ob0Var = ((hb0) this.d).X2;
-                View d = ob0Var.d();
-                hb0 hb0Var = ob0Var.f;
+                zb0 zb0Var = ((sb0) this.d).X2;
+                View d = zb0Var.d();
+                sb0 sb0Var = zb0Var.f;
                 if (d != null) {
                     int top = d.getTop() + this.b;
                     int top2 = d.getTop() + this.c;
                     int i20 = top2 - top;
-                    int paddingTop = hb0Var.getPaddingTop();
-                    int height = hb0Var.getHeight() - hb0Var.getPaddingBottom();
+                    int paddingTop = sb0Var.getPaddingTop();
+                    int height = sb0Var.getHeight() - sb0Var.getPaddingBottom();
                     if (i20 <= height - paddingTop) {
                         top = (top + top2) / 2;
                         paddingTop = (paddingTop + height) / 2;
                     }
                     int i21 = top - paddingTop;
                     if (i21 < 0) {
-                        hb0Var.scrollBy(0, i21);
+                        sb0Var.scrollBy(0, i21);
                         break;
                     }
                 }
                 break;
             case 11:
-                org.telegram.ui.Components.voip.j1 j1Var = ((org.telegram.ui.Components.voip.i1) this.d).a;
-                pf.e eVar = j1Var.O;
+                org.telegram.ui.Components.voip.k1 k1Var = ((org.telegram.ui.Components.voip.j1) this.d).a;
+                pf.e eVar = k1Var.O;
                 if (eVar != null) {
                     eVar.d(this.b, this.c);
                 }
-                j1Var.i(false);
+                k1Var.i(false);
                 break;
             case 12:
                 ((SurfaceTextureHelper) this.d).lambda$setTextureSize$2(this.b, this.c);

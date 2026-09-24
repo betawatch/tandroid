@@ -2,7 +2,7 @@ package ci;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n8 implements Runnable {
     public final /* synthetic */ int a;
@@ -24,10 +24,10 @@ public final /* synthetic */ class n8 implements Runnable {
                 break;
             default:
                 u8 u8Var = this.b;
-                org.telegram.ui.Cells.i3 i3Var = u8Var.Y;
+                org.telegram.ui.Cells.j3 j3Var = u8Var.Y;
                 if (u8Var.isShowing()) {
-                    i3Var.b.requestFocus();
-                    AndroidUtilities.showKeyboard(i3Var.b);
+                    j3Var.b.requestFocus();
+                    AndroidUtilities.showKeyboard(j3Var.b);
                     break;
                 }
                 break;

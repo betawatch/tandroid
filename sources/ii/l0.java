@@ -11,9 +11,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Cells.r9;
+import org.telegram.ui.Cells.q9;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class l0 {
     public final i1 a;
@@ -64,12 +64,12 @@ public final class l0 {
 
     public final void b() {
         TL_iv.PageBlock pageBlock;
-        a N = this.c.N();
-        if (N == null || (pageBlock = N.b) == null) {
+        a M = this.c.M();
+        if (M == null || (pageBlock = M.b) == null) {
             return;
         }
         d(pageBlock);
-        TL_iv.RichText richText = N.b.caption.text;
+        TL_iv.RichText richText = M.b.caption.text;
         String l4 = g6.l(richText);
         i1 i1Var = this.a;
         if (String.valueOf(i1Var.getText()).equals(l4)) {
@@ -81,14 +81,14 @@ public final class l0 {
 
     public final void c(Canvas canvas) {
         k0 k0Var = this.c;
-        r9 E = k0Var.E();
-        if (E != null) {
+        q9 C = k0Var.C();
+        if (C != null) {
             if (this.a.getLayout() == null) {
                 return;
             }
             canvas.save();
             canvas.translate(r2.getPaddingLeft() + r2.getLeft(), r2.getPaddingTop() + r2.getTop());
-            E.a0(canvas, k0Var.K(), 0);
+            C.a0(canvas, k0Var.I(), 0);
             canvas.restore();
         }
     }
@@ -137,11 +137,11 @@ public final class l0 {
 
     public final void i() {
         TL_iv.PageBlock pageBlock;
-        a N = this.c.N();
-        if (N == null || (pageBlock = N.b) == null) {
+        a M = this.c.M();
+        if (M == null || (pageBlock = M.b) == null) {
             return;
         }
         d(pageBlock);
-        N.b.caption.text = g6.f(this.a.getText());
+        M.b.caption.text = g6.f(this.a.getText());
     }
 }

@@ -1,33 +1,21 @@
 package org.telegram.ui;
 
-import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class uc0 extends s4.s0 {
-    public final /* synthetic */ dd0 a;
+public final class uc0 extends org.telegram.ui.ActionBar.m1 {
+    public final /* synthetic */ cd0 o;
 
-    public uc0(dd0 dd0Var) {
-        this.a = dd0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public uc0(cd0 cd0Var, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
+        super(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
+        this.o = cd0Var;
     }
 
-    @Override // s4.s0
-    public final void a(RecyclerView recyclerView, int i10) {
-        boolean z10 = i10 != 0;
-        dd0 dd0Var = this.a;
-        dd0Var.Q = z10;
-        if (z10 || dd0Var.L == null) {
-            return;
-        }
-        dd0Var.L = null;
-    }
-
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        dd0 dd0Var = this.a;
-        dd0Var.A0(false);
-        if (dd0Var.L != null) {
-            dd0Var.N += i11;
-        }
+    @Override // org.telegram.ui.ActionBar.m1, android.widget.PopupWindow
+    public final void dismiss() {
+        d(true);
+        this.o.I0 = null;
     }
 }

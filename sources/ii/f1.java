@@ -3,7 +3,7 @@ package ii;
 import android.text.Editable;
 import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class f1 implements TextWatcher {
     public final /* synthetic */ i1 a;
@@ -26,7 +26,7 @@ public final class f1 implements TextWatcher {
             g6.o(editable2, 0, editable.length(), 1, true, i1Var.L);
         }
         if (i1Var.w || i1Var.n || i1Var.r) {
-            i1Var.c.W(editable2);
+            i1Var.c.U(editable2);
             return;
         }
         i1Var.h = true;
@@ -41,7 +41,7 @@ public final class f1 implements TextWatcher {
         if (z10) {
             i1Var.c.m(i1Var);
         } else {
-            i1Var.c.W(editable2);
+            i1Var.c.U(editable2);
         }
     }
 

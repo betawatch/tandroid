@@ -1,24 +1,51 @@
 package n7;
 
-import java.util.AbstractMap;
+import java.util.Iterator;
+import java.util.Map;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
-public final class q extends n {
-    public final /* synthetic */ r c;
+public final class q extends o {
+    public final /* synthetic */ r d;
 
     public q(r rVar) {
-        this.c = rVar;
+        this.d = rVar;
     }
 
-    @Override // java.util.List
-    public final /* bridge */ /* synthetic */ Object get(int i10) {
-        r rVar = this.c;
-        return new AbstractMap.SimpleImmutableEntry(rVar.d.c.f.get(i10), rVar.d.d.get(i10));
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        if (obj instanceof Map.Entry) {
+            Map.Entry entry = (Map.Entry) obj;
+            Object obj2 = this.d.get(entry.getKey());
+            if (obj2 != null && obj2.equals(entry.getValue())) {
+                return true;
+            }
+        }
+        return false;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // n7.o, java.util.Collection, java.util.Set
+    public final int hashCode() {
+        return a.b(this.d.entrySet());
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final /* synthetic */ Iterator iterator() {
+        return t().listIterator(0);
+    }
+
+    @Override // n7.h
+    public final d0 p() {
+        return t().listIterator(0);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public final int size() {
-        return this.c.d.d.size();
+        return this.d.d.size();
+    }
+
+    @Override // n7.o
+    public final m u() {
+        return new p(this);
     }
 }

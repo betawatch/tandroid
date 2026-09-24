@@ -7,11 +7,11 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ul;
+import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class u6 extends FrameLayout {
     public View a;
@@ -116,14 +116,14 @@ public final class u6 extends FrameLayout {
                 i16++;
             }
         }
-        int min = Math.min(AndroidUtilities.dp(c() ? 20.0f : 30.0f), i16 < 2 ? 0 : ul.A(40.0f, i16, dp) / (i16 - 1));
-        int y3 = ul.y(40.0f, i15, 2);
+        int min = Math.min(AndroidUtilities.dp(c() ? 20.0f : 30.0f), i16 < 2 ? 0 : ok.B(40.0f, i16, dp) / (i16 - 1));
+        int A = ok.A(40.0f, i15, 2);
         int dp2 = (AndroidUtilities.dp(40.0f) + i15) / 2;
-        int dp3 = AndroidUtilities.dp(12.33f) + (!c() ? (ul.A(40.0f, i16, dp) - ((i16 - 1) * min)) / 2 : 0);
+        int dp3 = AndroidUtilities.dp(12.33f) + (!c() ? (ok.B(40.0f, i16, dp) - ((i16 - 1) * min)) / 2 : 0);
         for (int i18 = 0; i18 < arrayList.size(); i18++) {
             if (((s6) arrayList.get(i18)).getVisibility() == 0) {
-                ((s6) arrayList.get(i18)).layout(dp3, y3, AndroidUtilities.dp(40.0f) + dp3, dp2);
-                dp3 = org.telegram.messenger.z0.C(40.0f, min, dp3);
+                ((s6) arrayList.get(i18)).layout(dp3, A, AndroidUtilities.dp(40.0f) + dp3, dp2);
+                dp3 = org.telegram.messenger.f0.C(40.0f, min, dp3);
             }
         }
     }

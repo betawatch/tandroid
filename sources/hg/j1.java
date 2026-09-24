@@ -8,13 +8,13 @@ import ei.d5;
 import java.util.ArrayList;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.d61;
-import w7.x5;
+import org.telegram.ui.ActionBar.m2;
+import org.telegram.ui.Components.r61;
+import w7.y5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class j1 extends n2 {
+public final class j1 extends m2 {
     public final CharSequence a;
     public final ArrayList b;
     public final int c;
@@ -22,7 +22,7 @@ public final class j1 extends n2 {
     public final int e;
     public rc f;
     public gg.x1 h;
-    public d61 n;
+    public r61 n;
     public boolean r;
 
     public j1(CharSequence charSequence, ArrayList arrayList, int i10, int i11, int i12) {
@@ -45,10 +45,10 @@ public final class j1 extends n2 {
         if (arrayList.size() >= this.e) {
             return false;
         }
-        return arrayList.isEmpty() || U() || ((g1) c.h(1, arrayList)).b < Math.min(1438, this.d + (-2));
+        return arrayList.isEmpty() || U() || ((g1) c.g(1, arrayList)).b < Math.min(1438, this.d + (-2));
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final View createView(Context context) {
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
@@ -56,16 +56,16 @@ public final class j1 extends n2 {
         this.actionBar.setActionBarMenuOnItemClick(new ei.t(this, 15));
         FrameLayout frameLayout = new FrameLayout(context);
         frameLayout.setBackgroundColor(h6.w0(null, h6.a7, false));
-        d61 d61Var = new d61(this, new bi.v(this, 28), new d5(this, 4), null);
-        this.n = d61Var;
-        d61Var.p1();
+        r61 r61Var = new r61(this, new bi.v(this, 28), new d5(this, 4), null);
+        this.n = r61Var;
+        r61Var.p1();
         this.actionBar.setAdaptiveBackground(this.n);
-        frameLayout.addView(this.n, x5.c(-1.0f, -1));
+        frameLayout.addView(this.n, y5.c(-1.0f, -1));
         this.fragmentView = frameLayout;
         return frameLayout;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final void onBecomeFullyHidden() {
         gg.x1 x1Var = this.h;
         if (x1Var != null) {
@@ -74,7 +74,7 @@ public final class j1 extends n2 {
         super.onBecomeFullyHidden();
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
         if (this.r) {

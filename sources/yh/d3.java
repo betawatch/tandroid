@@ -1,188 +1,147 @@
 package yh;
 
-import android.content.Context;
-import android.text.Layout;
-import android.text.TextUtils;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BillingController;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ul;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.m40;
-import org.telegram.ui.Components.oz0;
-import org.telegram.ui.dt;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public final class d3 {
-    public final TL_stars.TL_starGiftUnique a;
-    public final Context b;
-    public final int c;
-    public final long d;
-    public final String e;
-    public final boolean f;
-    public final org.telegram.ui.ActionBar.d6 g;
-    public final org.telegram.ui.ActionBar.b2 h;
-    public final m40 i;
-    public final TextView j;
-    public a k;
-    public TextView l;
-    public FrameLayout m;
-    public nf.e n;
-    public final HashMap o;
-    public final HashSet p;
-    public zf.b q;
-    public ci.e4 r;
+public final /* synthetic */ class d3 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ j3 b;
 
-    public d3(Context context, org.telegram.ui.ActionBar.d6 d6Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, b3 b3Var, int i10, long j3, String str, boolean z10, Utilities.Callback2 callback2) {
-        HashMap hashMap = new HashMap();
-        this.o = hashMap;
-        this.p = new HashSet();
-        this.b = context;
-        this.a = tL_starGiftUnique;
-        this.d = j3;
-        this.c = i10;
-        zf.b bVar = b3Var.a;
-        this.q = bVar;
-        hashMap.put(bVar, b3Var);
-        this.g = d6Var;
-        this.e = str;
-        boolean z11 = tL_starGiftUnique.resale_ton_only;
-        this.f = !z11;
-        TLObject user = j3 >= 0 ? MessagesController.getInstance(i10).getUser(Long.valueOf(j3)) : MessagesController.getInstance(i10).getChat(Long.valueOf(-j3));
-        LinearLayout f7 = ul.f(context, 1);
-        c3 c3Var = new c3(this, context);
-        c3Var.addView(f7, w7.x5.c(-2.0f, -1));
-        if (z11) {
-            this.i = null;
-            TextView textView = new TextView(context);
-            ul.o(org.telegram.ui.ActionBar.h6.y6, d6Var, textView, 1, 14.0f);
-            ul.l(R.string.Gift2BuyPriceOnlyTON, textView, 17);
-            f7.addView(textView, w7.x5.t(-2, -2, 17, 24, 4, 24, 4));
-        } else {
-            m40 m40Var = new m40(context, d6Var);
-            this.i = m40Var;
-            ArrayList arrayList = new ArrayList();
-            arrayList.add(LocaleController.getString(R.string.Gift2BuyInStars));
-            arrayList.add(LocaleController.getString(R.string.Gift2BuyInTON));
-            m40Var.b(arrayList, new v(this, 2));
-            f7.addView(m40Var, w7.x5.t(-2, -2, 1, 18, 0, 18, 12));
-        }
-        f7.addView(new a3(context, tL_starGiftUnique, user), w7.x5.t(-1, -2, 48, 0, -4, 0, 0));
-        TextView textView2 = new TextView(context);
-        this.j = textView2;
-        ul.o(org.telegram.ui.ActionBar.h6.j5, d6Var, textView2, 1, 16.0f);
-        f7.addView(textView2, w7.x5.t(-1, -2, 48, 24, 4, 24, 4));
-        if (z10) {
-            oz0 oz0Var = new oz0(context, d6Var);
-            y3.q1(oz0Var, t5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class));
-            y3.q1(oz0Var, t5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class));
-            y3.q1(oz0Var, t5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class));
-            if (!TextUtils.isEmpty(tL_starGiftUnique.slug) && (tL_starGiftUnique.flags & 256) != 0) {
-                oz0Var.c(LocaleController.getString(R.string.GiftValue2), org.telegram.ui.Cells.q3.i("~", BillingController.getInstance().formatCurrency(tL_starGiftUnique.value_amount, tL_starGiftUnique.value_currency, BillingController.getInstance().getCurrencyExp(tL_starGiftUnique.value_currency), true)), null, null);
-            }
-            f7.addView(oz0Var, w7.x5.t(-1, -2, 48, 23, 16, 23, 4));
-        }
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, d6Var);
-        alertDialog$Builder.n(c3Var);
-        alertDialog$Builder.k("_", new org.telegram.ui.Components.e2(this, i10, context, d6Var, callback2, 6));
-        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-        this.h = alertDialog$Builder.a;
+    public /* synthetic */ d3(j3 j3Var, int i10) {
+        this.a = i10;
+        this.b = j3Var;
     }
 
-    public final void a(boolean z10) {
-        ci.e4 e4Var;
-        zf.b bVar = this.q;
-        b3 b3Var = (b3) this.o.get(bVar);
-        TextView textView = this.j;
-        textView.animate().alpha(b3Var != null ? 1.0f : 0.25f).start();
-        textView.setEnabled(b3Var != null);
-        this.l.setEnabled(b3Var != null);
-        a aVar = this.k;
-        if (aVar.e != bVar) {
-            aVar.e = bVar;
-            aVar.a();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.b();
+                break;
+            case 1:
+                j3 j3Var = this.b;
+                u3 u3Var = j3Var.a;
+                if (!j3Var.u) {
+                    j3Var.v = false;
+                    if (j3Var.o) {
+                        j3Var.u = true;
+                        long currentTimeMillis = System.currentTimeMillis();
+                        float min = Math.min((currentTimeMillis - j3Var.m) / 1000.0f, 0.25f);
+                        float f7 = j3Var.n + min;
+                        j3Var.n = f7;
+                        float f10 = j3Var.j.f(min, f7 > AndroidUtilities.lerp(0.1f, 1.0f, j3Var.t));
+                        float f11 = j3Var.k.f(min, j3Var.n > AndroidUtilities.lerp(0.1f, 1.0f, j3Var.t));
+                        float f12 = j3Var.i.f(min, j3Var.j.b(0.5f));
+                        float f13 = j3Var.h.f(min, j3Var.j.b(0.5f) && j3Var.i.b(0.5f));
+                        j3Var.m = currentTimeMillis;
+                        if (j3Var.j.c() && j3Var.i.c() && j3Var.h.c() && !j3Var.p) {
+                            j3Var.p = true;
+                            AndroidUtilities.runOnUIThread(new d3(j3Var, 2));
+                        }
+                        if (j3Var.j.c() && j3Var.i.c() && j3Var.h.b(0.25f) && !j3Var.q) {
+                            j3Var.q = true;
+                            AndroidUtilities.runOnUIThread(new d3(j3Var, 3));
+                        }
+                        o3 o3Var = j3Var.b;
+                        if (o3Var != null) {
+                            f3 f3Var = j3Var.h;
+                            e3 e3Var = f3Var.b;
+                            float f14 = f3Var.e - f13;
+                            float f15 = f14 - 1.0f;
+                            e3 e3Var2 = f3Var.i;
+                            boolean z10 = e3Var == e3Var2;
+                            e3 e3Var3 = f3Var.c;
+                            boolean z11 = e3Var3 == e3Var2;
+                            e3 e3Var4 = f3Var.d;
+                            o3Var.a(e3Var, f15, z10, e3Var3, f14, z11, e3Var4, f14 + 1.0f, e3Var4 == e3Var2);
+                        }
+                        o3 o3Var2 = j3Var.c;
+                        if (o3Var2 != null) {
+                            f3 f3Var2 = j3Var.i;
+                            e3 e3Var5 = f3Var2.b;
+                            float f16 = f3Var2.e - f12;
+                            float f17 = f16 - 1.0f;
+                            e3 e3Var6 = f3Var2.i;
+                            boolean z12 = e3Var5 == e3Var6;
+                            e3 e3Var7 = f3Var2.c;
+                            boolean z13 = e3Var7 == e3Var6;
+                            e3 e3Var8 = f3Var2.d;
+                            o3Var2.a(e3Var5, f17, z12, e3Var7, f16, z13, e3Var8, f16 + 1.0f, e3Var8 == e3Var6);
+                        }
+                        o3 o3Var3 = j3Var.d;
+                        if (o3Var3 != null) {
+                            f3 f3Var3 = j3Var.k;
+                            e3 e3Var9 = f3Var3.b;
+                            float f18 = f3Var3.e - f11;
+                            float f19 = f18 - 1.0f;
+                            e3 e3Var10 = f3Var3.i;
+                            boolean z14 = e3Var9 == e3Var10;
+                            e3 e3Var11 = f3Var3.c;
+                            boolean z15 = e3Var11 == e3Var10;
+                            e3 e3Var12 = f3Var3.d;
+                            o3Var3.a(e3Var9, f19, z14, e3Var11, f18, z15, e3Var12, f18 + 1.0f, e3Var12 == e3Var10);
+                        }
+                        u3Var.g(0, ((i3) j3Var.i.c).c, true);
+                        m3 m3Var = u3Var.c;
+                        f3 f3Var4 = j3Var.h;
+                        e3 e3Var13 = f3Var4.b;
+                        h3 h3Var = (h3) e3Var13;
+                        float f20 = f3Var4.e - f13;
+                        float f21 = f20 - 1.0f;
+                        e3 e3Var14 = f3Var4.i;
+                        boolean z16 = e3Var13 == e3Var14;
+                        e3 e3Var15 = f3Var4.c;
+                        h3 h3Var2 = (h3) e3Var15;
+                        boolean z17 = e3Var15 == e3Var14;
+                        e3 e3Var16 = f3Var4.d;
+                        h3 h3Var3 = (h3) e3Var16;
+                        float f22 = f20 + 1.0f;
+                        boolean z18 = e3Var16 == e3Var14;
+                        f3 f3Var5 = j3Var.j;
+                        g3 g3Var = (g3) f3Var5.b;
+                        float f23 = f3Var5.e - f10;
+                        g3 g3Var2 = (g3) f3Var5.c;
+                        g3 g3Var3 = (g3) f3Var5.d;
+                        m3Var.a = h3Var;
+                        m3Var.b = h3Var2;
+                        m3Var.c = h3Var3;
+                        m3Var.d = f21;
+                        m3Var.e = f20;
+                        m3Var.f = f22;
+                        m3Var.h = z16;
+                        m3Var.n = z17;
+                        m3Var.r = z18;
+                        m3Var.s = g3Var;
+                        m3Var.v = g3Var2;
+                        m3Var.w = g3Var3;
+                        m3Var.x = f23 - 1.0f;
+                        m3Var.y = f23;
+                        m3Var.E = f23 + 1.0f;
+                        m3Var.invalidate();
+                        j3Var.u = false;
+                        j3Var.b();
+                        break;
+                    }
+                }
+                break;
+            case 2:
+                j3 j3Var2 = this.b;
+                j3Var2.o = false;
+                j3Var2.a.c.c();
+                b1 b1Var = j3Var2.r;
+                if (b1Var != null) {
+                    b1Var.run();
+                    break;
+                }
+                break;
+            default:
+                b1 b1Var2 = this.b.s;
+                if (b1Var2 != null) {
+                    b1Var2.run();
+                    break;
+                }
+                break;
         }
-        zf.b bVar2 = zf.b.b;
-        m40 m40Var = this.i;
-        if (m40Var != null) {
-            m40Var.a(bVar == bVar2 ? 1 : 0, z10);
-        }
-        if (bVar == bVar2 && (e4Var = this.r) != null && e4Var.V) {
-            e4Var.e(true);
-        }
-        a aVar2 = this.k;
-        zf.b bVar3 = zf.b.a;
-        if (aVar2 != null) {
-            if (bVar == bVar3) {
-                aVar2.setOnClickListener(new org.telegram.ui.Components.voip.o(this, 24));
-            } else {
-                aVar2.setOnClickListener(new ai.e2(20));
-            }
-        }
-        nf.e eVar = this.n;
-        if (eVar != null) {
-            eVar.a(false);
-            this.n = null;
-        }
-        int i10 = this.c;
-        long j3 = this.d;
-        if (b3Var == null) {
-            nf.e g10 = this.h.g(-1, false, false);
-            this.n = g10;
-            g10.d();
-            if (this.p.add(bVar)) {
-                t5.x(i10, bVar).H(this.a, j3, null, true, new dt(29, this, bVar));
-                return;
-            }
-            return;
-        }
-        zf.b bVar4 = b3Var.a;
-        zf.a aVar3 = b3Var.c;
-        boolean z11 = j3 == UserConfig.getInstance(i10).getClientUserId();
-        String str = this.e;
-        if (bVar4 == bVar3) {
-            this.l.setText(w7.Q0(LocaleController.formatPluralStringComma("Gift2BuyDoPrice2", (int) aVar3.a())));
-            textView.setText(AndroidUtilities.replaceTags(z11 ? LocaleController.formatPluralStringComma("Gift2BuyPriceSelfText", (int) aVar3.a(), str) : LocaleController.formatPluralStringComma("Gift2BuyPriceText", (int) aVar3.a(), str, DialogObject.getShortName(j3))));
-        }
-        if (bVar4 == bVar2) {
-            this.l.setText(w7.S0(LocaleController.formatString(R.string.Gift2BuyDoPrice2TON, aVar3.d()), true));
-            textView.setText(AndroidUtilities.replaceTags(z11 ? LocaleController.formatString(R.string.Gift2BuyPriceSelfTextTON, aVar3.d(), str) : LocaleController.formatString(R.string.Gift2BuyPriceTextTON, aVar3.d(), str, DialogObject.getShortName(j3))));
-        }
-    }
-
-    public final void b() {
-        org.telegram.ui.ActionBar.b2 b2Var = this.h;
-        b2Var.X0 = true;
-        b2Var.show();
-        this.l = (TextView) b2Var.d(-1);
-        this.k = b2Var.Z0;
-        FrameLayout frameLayout = b2Var.Y0;
-        this.m = frameLayout;
-        if (frameLayout != null && this.f) {
-            ci.e4 e4Var = new ci.e4(this.b, 3);
-            e4Var.p(true);
-            e4Var.K = Layout.Alignment.ALIGN_NORMAL;
-            e4Var.d = 5000L;
-            e4Var.s(LocaleController.getString(R.string.Gift2BuyPricePayHintTON));
-            e4Var.u();
-            this.r = e4Var;
-            e4Var.setPadding(AndroidUtilities.dp(7.33f), 0, AndroidUtilities.dp(7.33f), 0);
-            this.m.addView(this.r, w7.x5.d(-2, 100.0f, 48, 0.0f, 26.0f, 0.0f, 0.0f));
-        }
-        a(false);
     }
 }

@@ -9,10 +9,9 @@ import android.support.v4.media.session.MediaSessionCompat$Token;
 import android.util.Log;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
-import org.telegram.ui.Cells.ja;
-import org.telegram.ui.Cells.l7;
+import org.telegram.ui.Cells.t6;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class x {
     public static e c;
@@ -72,9 +71,9 @@ public final class x {
         if (eVar == null) {
             return null;
         }
-        lf.i iVar = eVar.C;
-        if (iVar != null) {
-            android.support.v4.media.session.b0 b0Var = (android.support.v4.media.session.b0) iVar.b;
+        la.h hVar = eVar.C;
+        if (hVar != null) {
+            android.support.v4.media.session.b0 b0Var = (android.support.v4.media.session.b0) hVar.b;
             if (b0Var != null) {
                 return b0Var.a.c;
             }
@@ -109,12 +108,12 @@ public final class x {
         c10.u = zVar;
         if (c10.f()) {
             if (c10.r == null) {
-                k kVar = new k(c10.h, new ja(c10, 5));
+                k kVar = new k(c10.h, new k2.u(c10, 17));
                 c10.r = kVar;
                 c10.a(kVar, true);
                 c10.k();
                 s0 s0Var = c10.c;
-                ((Handler) s0Var.d).post((l7) s0Var.h);
+                ((Handler) s0Var.d).post((t6) s0Var.h);
             }
             if ((zVar2 != null && zVar2.d) != zVar.d) {
                 k kVar2 = c10.r;
@@ -138,7 +137,7 @@ public final class x {
                 }
                 c10.r = null;
                 s0 s0Var2 = c10.c;
-                ((Handler) s0Var2.d).post((l7) s0Var2.h);
+                ((Handler) s0Var2.d).post((t6) s0Var2.h);
             }
         }
         bVar.b(769, zVar);

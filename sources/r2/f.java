@@ -6,9 +6,8 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import i2.j0;
 import java.util.ArrayDeque;
-import org.telegram.ui.Cells.ja;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class f extends MediaCodec.Callback {
     public final HandlerThread b;
@@ -20,7 +19,7 @@ public final class f extends MediaCodec.Callback {
     public long l;
     public boolean m;
     public IllegalStateException n;
-    public ja o;
+    public k2.u o;
     public final Object a = new Object();
     public final a0.h d = new a0.h();
     public final a0.h e = new a0.h();
@@ -78,8 +77,8 @@ public final class f extends MediaCodec.Callback {
         j0 j0Var;
         synchronized (this.a) {
             this.d.a(i10);
-            ja jaVar = this.o;
-            if (jaVar != null && (j0Var = ((r) jaVar.b).W) != null) {
+            k2.u uVar = this.o;
+            if (uVar != null && (j0Var = ((r) uVar.b).W) != null) {
                 j0Var.a();
             }
         }
@@ -98,8 +97,8 @@ public final class f extends MediaCodec.Callback {
                 }
                 this.e.a(i10);
                 this.f.add(bufferInfo);
-                ja jaVar = this.o;
-                if (jaVar != null && (j0Var = ((r) jaVar.b).W) != null) {
+                k2.u uVar = this.o;
+                if (uVar != null && (j0Var = ((r) uVar.b).W) != null) {
                     j0Var.a();
                 }
             } catch (Throwable th2) {

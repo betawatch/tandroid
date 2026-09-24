@@ -14,14 +14,14 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class nz extends FrameLayout {
     public static final /* synthetic */ int h = 0;
     public final org.telegram.ui.ActionBar.d6 a;
     public final TextView b;
     public final View c;
-    public final bj0 d;
+    public final lj0 d;
     public boolean e;
     public int f;
 
@@ -29,7 +29,7 @@ public final class nz extends FrameLayout {
         super(context);
         this.a = d6Var;
         View radialProgressView = new RadialProgressView(context, null);
-        addView(radialProgressView, w7.x5.c(-2.0f, -2));
+        addView(radialProgressView, w7.y5.c(-2.0f, -2));
         this.c = radialProgressView;
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), 0);
@@ -37,20 +37,20 @@ public final class nz extends FrameLayout {
         linearLayout.setClipChildren(false);
         linearLayout.setClipToPadding(false);
         linearLayout.setOrientation(1);
-        bj0 bj0Var = new bj0(context);
-        this.d = bj0Var;
-        bj0Var.setScaleType(ImageView.ScaleType.FIT_XY);
-        bj0Var.setImportantForAccessibility(2);
-        bj0Var.setVisibility(8);
-        linearLayout.addView(bj0Var, w7.x5.t(ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 17, 0, 0, 0, 20));
+        lj0 lj0Var = new lj0(context);
+        this.d = lj0Var;
+        lj0Var.setScaleType(ImageView.ScaleType.FIT_XY);
+        lj0Var.setImportantForAccessibility(2);
+        lj0Var.setVisibility(8);
+        linearLayout.addView(lj0Var, w7.y5.t(ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 17, 0, 0, 0, 20));
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setTextSize(1, 20.0f);
         textView.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.c7, d6Var));
         textView.setGravity(1);
         textView.setText(LocaleController.getString(R.string.NoResult));
-        linearLayout.addView(textView, w7.x5.q(-2, -2, 17));
-        addView(linearLayout, w7.x5.c(-2.0f, -2));
+        linearLayout.addView(textView, w7.y5.q(-2, -2, 17));
+        addView(linearLayout, w7.y5.c(-2.0f, -2));
         AndroidUtilities.updateViewVisibilityAnimated(textView, false, 2.0f, false);
         AndroidUtilities.updateViewVisibilityAnimated(radialProgressView, false, 1.0f, false);
         setOnTouchListener(new bi.d(18));
@@ -58,11 +58,11 @@ public final class nz extends FrameLayout {
 
     public final void a(int i10, int i11, int i12) {
         int i13 = i10 != 0 ? 0 : 8;
-        bj0 bj0Var = this.d;
-        bj0Var.setVisibility(i13);
+        lj0 lj0Var = this.d;
+        lj0Var.setVisibility(i13);
         if (i10 != 0) {
-            bj0Var.f(i10, i11, i12, null);
-            bj0Var.d();
+            lj0Var.f(i10, i11, i12, null);
+            lj0Var.d();
         }
     }
 

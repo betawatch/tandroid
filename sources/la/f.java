@@ -10,18 +10,18 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class f implements ia.e {
     public static final Charset f = Charset.forName("UTF-8");
-    public static final ia.c g = new ia.c("key", hg.c.o(hg.c.n(e.class, new a(1))));
-    public static final ia.c h = new ia.c("value", hg.c.o(hg.c.n(e.class, new a(2))));
+    public static final ia.c g = new ia.c("key", hg.c.m(hg.c.l(e.class, new a(1))));
+    public static final ia.c h = new ia.c("value", hg.c.m(hg.c.l(e.class, new a(2))));
     public static final ka.a i = new ka.a(1);
     public OutputStream a;
     public final HashMap b;
     public final HashMap c;
     public final ia.d d;
-    public final h e = new h(this, 0);
+    public final i e = new i(this, 0);
 
     public f(ByteArrayOutputStream byteArrayOutputStream, HashMap hashMap, HashMap hashMap2, ia.d dVar) {
         this.a = byteArrayOutputStream;
@@ -172,11 +172,11 @@ public final class f implements ia.e {
         }
         ia.f fVar = (ia.f) this.c.get(obj.getClass());
         if (fVar != null) {
-            h hVar = this.e;
-            hVar.b = false;
-            hVar.d = cVar;
-            hVar.c = z10;
-            fVar.a(obj, hVar);
+            i iVar = this.e;
+            iVar.b = false;
+            iVar.d = cVar;
+            iVar.c = z10;
+            fVar.a(obj, iVar);
             return;
         }
         if (obj instanceof c) {

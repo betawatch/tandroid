@@ -27,12 +27,12 @@ import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.ul;
+import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.CheckBoxBase;
 import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class r3 extends FrameLayout {
     public static int d0;
@@ -119,8 +119,8 @@ public final class r3 extends FrameLayout {
         }
         FrameLayout frameLayout = new FrameLayout(context);
         this.I = frameLayout;
-        frameLayout.addView(p3Var, w7.x5.e(26, 26, 17));
-        addView(frameLayout, w7.x5.d(36, 36.0f, 53, 0.0f, 0.0f, 0.0f, 0.0f));
+        frameLayout.addView(p3Var, w7.y5.e(26, 26, 17));
+        addView(frameLayout, w7.y5.d(36, 36.0f, 53, 0.0f, 0.0f, 0.0f, 0.0f));
         frameLayout.setVisibility(0);
         frameLayout.setImportantForAccessibility(2);
         p3Var.setImportantForAccessibility(2);
@@ -368,7 +368,7 @@ public final class r3 extends FrameLayout {
         p3 p3Var = this.J;
         if (z11) {
             frameLayout.setVisibility(0);
-            ul.r(p3Var.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.7f).scaleY(z10 ? 1.0f : 0.7f).withEndAction(new bi.f(1, this, z10)), rr.h, 320L);
+            ok.s(p3Var.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.7f).scaleY(z10 ? 1.0f : 0.7f).withEndAction(new bi.f(1, this, z10)), rr.h, 320L);
         } else {
             frameLayout.setVisibility(z10 ? 0 : 8);
         }

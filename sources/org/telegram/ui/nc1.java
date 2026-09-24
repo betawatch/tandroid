@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class nc1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -27,8 +27,8 @@ public final class nc1 implements View.OnClickListener {
                 dd1 dd1Var = dd1VarArr[0];
                 if (dd1Var != null) {
                     Drawable background = dd1Var.getBackground();
-                    if (background instanceof org.telegram.ui.Components.bc0) {
-                        ((org.telegram.ui.Components.bc0) background).x(false);
+                    if (background instanceof org.telegram.ui.Components.mc0) {
+                        ((org.telegram.ui.Components.mc0) background).x(false);
                     } else {
                         org.telegram.ui.ActionBar.f6 f6Var = od1Var.s;
                         if (od1Var.b == 2) {
@@ -57,15 +57,15 @@ public final class nc1 implements View.OnClickListener {
                 dd1 dd1Var2 = dd1VarArr[1];
                 if (dd1Var2 != null) {
                     Drawable background2 = dd1Var2.getBackground();
-                    if (background2 instanceof org.telegram.ui.Components.bc0) {
-                        ((org.telegram.ui.Components.bc0) background2).x(false);
+                    if (background2 instanceof org.telegram.ui.Components.mc0) {
+                        ((org.telegram.ui.Components.mc0) background2).x(false);
                         break;
                     }
                 }
                 break;
             default:
                 od1 od1Var2 = this.c;
-                org.telegram.ui.ActionBar.p5 p5Var = od1Var2.R;
+                org.telegram.ui.ActionBar.o5 o5Var = od1Var2.R;
                 od1Var2.G0.setRotation(this.b);
                 this.b -= 45;
                 od1Var2.G0.animate().rotationBy(-45.0f).setDuration(300L).setInterpolator(org.telegram.ui.Components.rr.g).start();
@@ -106,8 +106,8 @@ public final class nc1 implements View.OnClickListener {
                     org.telegram.ui.ActionBar.h6.n1(true, true);
                     od1Var2.u0.f1();
                     break;
-                } else if (p5Var.i() != null) {
-                    p5Var.i().x(false);
+                } else if (o5Var.i() != null) {
+                    o5Var.i().x(false);
                     break;
                 }
                 break;

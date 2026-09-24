@@ -1,30 +1,25 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import android.app.Activity;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class hr implements w60 {
-    public final /* synthetic */ b70 a;
-    public final /* synthetic */ qr b;
+public final class hr extends org.telegram.ui.Components.o20 {
+    public final /* synthetic */ pr b;
 
-    public hr(qr qrVar, b70 b70Var) {
-        this.b = qrVar;
-        this.a = b70Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public hr(pr prVar, Activity activity, pr prVar2) {
+        super(activity, prVar2);
+        this.b = prVar;
     }
 
-    @Override // org.telegram.ui.w60
-    public final void i(TLRPC.User user) {
-        this.b.t0(user.id, null, null, null, "", true, 0, false);
+    @Override // org.telegram.ui.Components.o20
+    public final void n() {
+        pr prVar = this.b;
+        prVar.getMessagesController().convertToGigaGroup(prVar.getParentActivity(), prVar.r, prVar, new z0(this, 24));
     }
 
-    @Override // org.telegram.ui.w60
-    public final void j(int i10, ArrayList arrayList) {
-        if (this.a.getParentActivity() == null) {
-            return;
-        }
-        qr qrVar = this.b;
-        qrVar.getMessagesController().addUsersToChat(qrVar.r, qrVar, arrayList, i10, new h3(this, 2), new gr(0), null);
+    @Override // org.telegram.ui.Components.o20
+    public final void m() {
     }
 }

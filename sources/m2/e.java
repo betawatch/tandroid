@@ -29,9 +29,9 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 import org.xmlpull.v1.XmlSerializer;
-import v7.r6;
+import v7.s6;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class e extends DefaultHandler implements y2.o {
     public static final Pattern b = Pattern.compile("(\\d+)(?:/(\\d+))?");
@@ -202,7 +202,7 @@ public final class e extends DefaultHandler implements y2.o {
                     } else {
                         String[] b02 = d0.b0(str);
                         if (b02.length != 0) {
-                            List x10 = new a5.a(new a6.i(new d9.b('.'), 16)).x(r6.b(b02[0].trim()));
+                            List x10 = new a5.a(new a6.i(new d9.b('.'), 16)).x(s6.b(b02[0].trim()));
                             if (x10.size() == 4 && ((String) x10.get(0)).equals("ac-4")) {
                                 String str2 = (String) x10.get(3);
                                 str2.getClass();
@@ -231,7 +231,7 @@ public final class e extends DefaultHandler implements y2.o {
             case 7:
                 String attributeValue5 = xmlPullParser.getAttributeValue(null, "value");
                 if (attributeValue5 != null) {
-                    String b10 = r6.b(attributeValue5);
+                    String b10 = s6.b(attributeValue5);
                     b10.getClass();
                     switch (b10.hashCode()) {
                         case 1596796:
@@ -401,7 +401,7 @@ public final class e extends DefaultHandler implements y2.o {
         String str4;
         String attributeValue = xmlPullParser.getAttributeValue(null, "schemeIdUri");
         if (attributeValue != null) {
-            String b10 = r6.b(attributeValue);
+            String b10 = s6.b(attributeValue);
             b10.getClass();
             switch (b10.hashCode()) {
                 case -1980789791:
@@ -486,7 +486,7 @@ public final class e extends DefaultHandler implements y2.o {
                         }
                         r72 = b2.i.b;
                         str3 = null;
-                        r82 = w3.n.a(r72, uuidArr, null);
+                        r82 = w3.o.a(r72, uuidArr, null);
                         break;
                     } else {
                         e2.a.n("MpdParser", "Ignoring <ContentProtection> with schemeIdUri=\"urn:mpeg:dash:mp4protection:2011\" (ClearKey) due to missing required default_KID attribute.");
@@ -515,7 +515,7 @@ public final class e extends DefaultHandler implements y2.o {
                         }
                         if (name.equals("pssh") && xmlPullParser.next() == 4) {
                             byte[] decode = Base64.decode(xmlPullParser.getText(), 0);
-                            j6.l j3 = w3.n.j(decode);
+                            j6.l j3 = w3.o.j(decode);
                             UUID uuid = j3 == null ? null : (UUID) j3.b;
                             if (uuid == null) {
                                 e2.a.n("MpdParser", "Skipping malformed cenc:pssh data");
@@ -531,7 +531,7 @@ public final class e extends DefaultHandler implements y2.o {
                     if (r82 == 0) {
                         ?? r10 = b2.i.e;
                         if (r10.equals(r72) && e2.d.m(xmlPullParser, "mspr:pro") && xmlPullParser.next() == 4) {
-                            r82 = w3.n.a(r10, null, Base64.decode(xmlPullParser.getText(), 0));
+                            r82 = w3.o.a(r10, null, Base64.decode(xmlPullParser.getText(), 0));
                         }
                     }
                     b(xmlPullParser);
@@ -1535,7 +1535,7 @@ public final class e extends DefaultHandler implements y2.o {
                                                                                                     int i39 = i37;
                                                                                                     f fVar2 = (f) arrayList60.get(i37);
                                                                                                     long j53 = j23;
-                                                                                                    if (r6.a("urn:mpeg:dash:role:2011", fVar2.a)) {
+                                                                                                    if (s6.a("urn:mpeg:dash:role:2011", fVar2.a)) {
                                                                                                         String str115 = fVar2.b;
                                                                                                         i38 |= (str115 != null && (str115.equals("forced_subtitle") || str115.equals("forced-subtitle"))) ? 2 : 0;
                                                                                                     }
@@ -1550,7 +1550,7 @@ public final class e extends DefaultHandler implements y2.o {
                                                                                                 while (i40 < arrayList61.size()) {
                                                                                                     f fVar3 = (f) arrayList61.get(i40);
                                                                                                     int i42 = i40;
-                                                                                                    if (r6.a("urn:mpeg:dash:role:2011", fVar3.a)) {
+                                                                                                    if (s6.a("urn:mpeg:dash:role:2011", fVar3.a)) {
                                                                                                         i41 |= m(fVar3.b);
                                                                                                     }
                                                                                                     i40 = i42 + 1;
@@ -1566,9 +1566,9 @@ public final class e extends DefaultHandler implements y2.o {
                                                                                                     String str116 = fVar4.a;
                                                                                                     String str117 = str46;
                                                                                                     String str118 = fVar4.b;
-                                                                                                    if (r6.a("urn:mpeg:dash:role:2011", str116)) {
+                                                                                                    if (s6.a("urn:mpeg:dash:role:2011", str116)) {
                                                                                                         i16 = m(str118);
-                                                                                                    } else if (r6.a("urn:tva:metadata:cs:AudioPurposeCS:2007", fVar4.a)) {
+                                                                                                    } else if (s6.a("urn:tva:metadata:cs:AudioPurposeCS:2007", fVar4.a)) {
                                                                                                         if (str118 != null) {
                                                                                                             switch (str118.hashCode()) {
                                                                                                                 case Maneuver.TYPE_FERRY_TRAIN_LEFT /* 49 */:
@@ -1649,7 +1649,7 @@ public final class e extends DefaultHandler implements y2.o {
                                                                                                     if (i48 < arrayList25.size()) {
                                                                                                         f fVar5 = (f) arrayList25.get(i48);
                                                                                                         int i49 = i48;
-                                                                                                        if ((r6.a("http://dashif.org/thumbnail_tile", fVar5.a) || r6.a("http://dashif.org/guidelines/thumbnail_tile", fVar5.a)) && (str48 = fVar5.b) != null) {
+                                                                                                        if ((s6.a("http://dashif.org/thumbnail_tile", fVar5.a) || s6.a("http://dashif.org/guidelines/thumbnail_tile", fVar5.a)) && (str48 = fVar5.b) != null) {
                                                                                                             String str120 = d0.a;
                                                                                                             String[] split = str48.split("x", -1);
                                                                                                             if (split.length != 2) {
@@ -2631,7 +2631,7 @@ public final class e extends DefaultHandler implements y2.o {
     public static int n(ArrayList arrayList) {
         int i10 = 0;
         for (int i11 = 0; i11 < arrayList.size(); i11++) {
-            if (r6.a("http://dashif.org/guidelines/trickmode", ((f) arrayList.get(i11)).a)) {
+            if (s6.a("http://dashif.org/guidelines/trickmode", ((f) arrayList.get(i11)).a)) {
                 i10 = 16384;
             }
         }
@@ -2770,7 +2770,7 @@ public final class e extends DefaultHandler implements y2.o {
                 break;
             }
             f fVar = (f) list.get(i10);
-            if (r6.a("http://dashif.org/guidelines/last-segment-number", fVar.a)) {
+            if (s6.a("http://dashif.org/guidelines/last-segment-number", fVar.a)) {
                 j14 = Long.parseLong(fVar.b);
                 break;
             }
@@ -2779,8 +2779,8 @@ public final class e extends DefaultHandler implements y2.o {
         long j23 = j14;
         long j24 = j12 == -9223372036854775807L ? j11 : j12;
         long j25 = j24 == Long.MAX_VALUE ? -9223372036854775807L : j24;
-        lf.i s10 = s(xmlPullParser, "media", pVar != null ? pVar.k : null);
-        lf.i s11 = s(xmlPullParser, "initialization", pVar != null ? pVar.j : null);
+        la.h s10 = s(xmlPullParser, "media", pVar != null ? pVar.k : null);
+        la.h s11 = s(xmlPullParser, "initialization", pVar != null ? pVar.j : null);
         List list2 = null;
         do {
             xmlPullParser.next();
@@ -2841,12 +2841,12 @@ public final class e extends DefaultHandler implements y2.o {
         return arrayList;
     }
 
-    /* JADX WARN: Failed to find 'out' block for switch in B:31:0x0100. Please report as an issue. */
-    public static lf.i s(XmlPullParser xmlPullParser, String str, lf.i iVar) {
+    /* JADX WARN: Failed to find 'out' block for switch in B:31:0x0101. Please report as an issue. */
+    public static la.h s(XmlPullParser xmlPullParser, String str, la.h hVar) {
         String str2;
         String attributeValue = xmlPullParser.getAttributeValue(null, str);
         if (attributeValue == null) {
-            return iVar;
+            return hVar;
         }
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
@@ -2902,7 +2902,7 @@ public final class e extends DefaultHandler implements y2.o {
                 i10 = indexOf2 + 1;
             }
         }
-        return new lf.i(arrayList, arrayList2, arrayList3, 2);
+        return new la.h(arrayList, arrayList2, arrayList3, 3);
     }
 
     @Override // y2.o

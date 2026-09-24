@@ -3,13 +3,13 @@ package org.telegram.ui;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class vj extends g.p {
-    public final /* synthetic */ xn c;
+    public final /* synthetic */ wn c;
 
-    public vj(xn xnVar) {
-        this.c = xnVar;
+    public vj(wn wnVar) {
+        this.c = wnVar;
     }
 
     @Override // g.p
@@ -17,9 +17,9 @@ public final class vj extends g.p {
         int i11;
         MessageObject messageObject;
         MessageObject.GroupedMessages X8;
-        xn xnVar = this.c;
-        km kmVar = xnVar.A0;
-        int i12 = kmVar.J;
-        return (i10 < i12 || i10 >= kmVar.K || (i11 = i10 - i12) < 0 || i11 >= kmVar.L().size() || (X8 = xnVar.X8((messageObject = (MessageObject) xnVar.A0.L().get(i11)))) == null) ? MediaDataController.MAX_STYLE_RUNS_COUNT : X8.getPosition(messageObject).spanSize;
+        wn wnVar = this.c;
+        jm jmVar = wnVar.A0;
+        int i12 = jmVar.J;
+        return (i10 < i12 || i10 >= jmVar.K || (i11 = i10 - i12) < 0 || i11 >= jmVar.L().size() || (X8 = wnVar.X8((messageObject = (MessageObject) wnVar.A0.L().get(i11)))) == null) ? MediaDataController.MAX_STYLE_RUNS_COUNT : X8.getPosition(messageObject).spanSize;
     }
 }

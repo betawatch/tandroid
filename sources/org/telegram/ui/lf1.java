@@ -10,7 +10,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class lf1 extends og.b {
     public final /* synthetic */ wf1 d;
@@ -19,7 +19,7 @@ public final class lf1 extends og.b {
         this.d = wf1Var;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.vl0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         return i10 == 0 || i10 == 3;
@@ -91,7 +91,7 @@ public final class lf1 extends og.b {
         int i16 = tL_forumTopic.id;
         boolean z12 = i15 == i16 && tf1Var3.X4 == i10 && wf1Var.G;
         if (message != null) {
-            i12 = ((org.telegram.ui.ActionBar.n2) wf1Var).currentAccount;
+            i12 = ((org.telegram.ui.ActionBar.m2) wf1Var).currentAccount;
             MessageObject messageObject = new MessageObject(i12, message, false, false);
             if (!wf1Var.getMessagesController().isMonoForum(-j3)) {
                 TLRPC.TL_forumTopic tL_forumTopic4 = tL_forumTopic2;
@@ -147,25 +147,25 @@ public final class lf1 extends og.b {
             if (i10 == 2) {
                 kf1 kf1Var = new kf1(this, wf1Var.getParentActivity());
                 wf1Var.E0 = kf1Var;
-                return new org.telegram.ui.Components.wk0(kf1Var);
+                return new org.telegram.ui.Components.gl0(kf1Var);
             }
             org.telegram.ui.Components.u00 u00Var = new org.telegram.ui.Components.u00(viewGroup.getContext(), null);
             u00Var.setViewType(24);
             u00Var.setIsSingleCell(true);
             u00Var.w = true;
-            return new org.telegram.ui.Components.wk0(u00Var);
+            return new org.telegram.ui.Components.gl0(u00Var);
         }
         tf1 tf1Var = new tf1(wf1Var, viewGroup.getContext(), false);
         if (i10 == 3) {
-            i11 = ((org.telegram.ui.ActionBar.n2) wf1Var).currentAccount;
+            i11 = ((org.telegram.ui.ActionBar.m2) wf1Var).currentAccount;
             boolean isBotForumWithEditableTopics = UserObject.isBotForumWithEditableTopics(i11, -wf1Var.a);
             tf1Var.setForumIcon(ng.d.d(ng.a.k[0], ""));
             tf1Var.setTitleOverride(LocaleController.getString(!isBotForumWithEditableTopics ? R.string.BotForumAskForStartOffNewChatTitle : R.string.BotForumAskForStartNewChatTitle));
             tf1Var.setCustomMessage(LocaleController.getString(!isBotForumWithEditableTopics ? R.string.BotForumAskForStartOffNewChatForward : R.string.BotForumAskForStartNewChatForward));
         }
-        z10 = ((org.telegram.ui.ActionBar.n2) wf1Var).inPreviewMode;
+        z10 = ((org.telegram.ui.ActionBar.m2) wf1Var).inPreviewMode;
         tf1Var.k0 = z10;
         tf1Var.setArchivedPullAnimation(wf1Var.w);
-        return new org.telegram.ui.Components.wk0(tf1Var);
+        return new org.telegram.ui.Components.gl0(tf1Var);
     }
 }

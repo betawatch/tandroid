@@ -1,37 +1,37 @@
 package org.telegram.ui;
 
+import android.app.Activity;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class l31 implements q31 {
-    public final /* synthetic */ boolean[] a;
-    public final /* synthetic */ Utilities.Callback b;
-    public final /* synthetic */ org.telegram.ui.Components.xc c;
+public final class l31 implements p31 {
+    public final /* synthetic */ wn a;
+    public final /* synthetic */ Activity b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.d6 c;
+    public final /* synthetic */ MessageObject d;
 
-    public l31(boolean[] zArr, Utilities.Callback callback, org.telegram.ui.Components.xc xcVar) {
-        this.a = zArr;
-        this.b = callback;
-        this.c = xcVar;
+    public l31(wn wnVar, Activity activity, org.telegram.ui.ActionBar.d6 d6Var, MessageObject messageObject) {
+        this.a = wnVar;
+        this.b = activity;
+        this.c = d6Var;
+        this.d = messageObject;
     }
 
-    @Override // org.telegram.ui.q31
+    @Override // org.telegram.ui.p31
     public final void a() {
-        Utilities.Callback callback;
-        boolean[] zArr = this.a;
-        if (!zArr[0] && (callback = this.b) != null) {
-            zArr[0] = true;
-            callback.run(Boolean.TRUE);
-        }
-        AndroidUtilities.runOnUIThread(new xz0(this.c, 7), 200L);
+        AndroidUtilities.runOnUIThread(new f31(this.a, this.b, this.c, this.d, 2), 200L);
     }
 
-    @Override // org.telegram.ui.q31
-    public final /* synthetic */ void b() {
+    @Override // org.telegram.ui.p31
+    public final void b() {
+        AndroidUtilities.runOnUIThread(new te(this.a, this.d, 8), 200L);
     }
 
-    @Override // org.telegram.ui.q31
-    public final /* synthetic */ void c() {
+    @Override // org.telegram.ui.p31
+    public final void c() {
+        wn wnVar = this.a;
+        wnVar.showDialog(new rg.x0((org.telegram.ui.ActionBar.m2) wnVar, 3, true));
     }
 }

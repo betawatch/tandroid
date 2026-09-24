@@ -1,33 +1,46 @@
 package org.telegram.ui;
 
-import android.widget.Toast;
-import java.util.List;
-import org.telegram.tgnet.ResultCallback;
-import org.telegram.tgnet.TLRPC;
+import android.text.TextUtils;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MrzRecognizer;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class m21 implements ResultCallback {
-    public final /* synthetic */ x21 a;
+public final class m21 implements t9 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.m2 b;
 
-    public m21(x21 x21Var) {
-        this.a = x21Var;
+    public m21(int i10, org.telegram.ui.ActionBar.m2 m2Var) {
+        this.a = i10;
+        this.b = m2Var;
     }
 
-    @Override // org.telegram.tgnet.ResultCallback
-    public final void onComplete(Object obj) {
-        List list = (List) obj;
-        this.a.c0(list);
-        x21.S = list;
+    @Override // org.telegram.ui.t9
+    public final /* synthetic */ String J0() {
+        return null;
     }
 
-    @Override // org.telegram.tgnet.ResultCallback
-    public final /* synthetic */ void onError(Throwable th2) {
-        org.telegram.tgnet.l.a(this, th2);
+    @Override // org.telegram.ui.t9
+    public final void K(String str) {
+        String b10 = nf.f.b(str);
+        if (TextUtils.isEmpty(b10)) {
+            AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.th(29));
+            return;
+        }
+        MessagesController.getInstance(this.a).getUserNameResolver().resolve(b10, new t3(this.b, 21));
     }
 
-    @Override // org.telegram.tgnet.ResultCallback
-    public final void onError(TLRPC.TL_error tL_error) {
-        Toast.makeText(this.a.getParentActivity(), tL_error.text, 0).show();
+    @Override // org.telegram.ui.t9
+    public final /* synthetic */ boolean e1(String str, l9 l9Var) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.t9
+    public final /* synthetic */ void T0(MrzRecognizer.Result result) {
+    }
+
+    @Override // org.telegram.ui.t9
+    public final /* synthetic */ void onDismiss() {
     }
 }

@@ -4,12 +4,12 @@ import android.os.Looper;
 import androidx.lifecycle.p0;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class x extends p0 {
     public androidx.lifecycle.z A;
     public Executor d;
-    public v7.n e;
+    public v7.p e;
     public j6.l f;
     public t g;
     public aa.a h;

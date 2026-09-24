@@ -6,7 +6,7 @@ import androidx.media3.exoplayer.hls.HlsMediaSource$Factory;
 import java.lang.reflect.GenericDeclaration;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class g {
     public boolean a;
@@ -42,7 +42,7 @@ public final class g {
                         iVar = new i2.o(Class.forName("androidx.media3.exoplayer.rtsp.RtspMediaSource$Factory").asSubclass(u2.e0.class), 3);
                     } else {
                         if (i10 != 4) {
-                            throw new IllegalArgumentException(hg.c.i(i10, "Unrecognized contentType: "));
+                            throw new IllegalArgumentException(hg.c.h(i10, "Unrecognized contentType: "));
                         }
                         iVar = new d9.i() { // from class: u2.o
                             @Override // d9.i
@@ -55,7 +55,7 @@ public final class g {
                                     case 2:
                                         return p.e((Class) this, bVar);
                                     default:
-                                        return new u0(bVar, (c3.m) ((c5.g) this).b);
+                                        return new v0(bVar, (c3.m) ((c5.g) this).b);
                                 }
                             }
                         };
@@ -73,7 +73,7 @@ public final class g {
                                 case 2:
                                     return p.e((Class) asSubclass, bVar);
                                 default:
-                                    return new u0(bVar, (c3.m) ((c5.g) asSubclass).b);
+                                    return new v0(bVar, (c3.m) ((c5.g) asSubclass).b);
                             }
                         }
                     };
@@ -91,7 +91,7 @@ public final class g {
                             case 2:
                                 return p.e((Class) asSubclass2, bVar);
                             default:
-                                return new u0(bVar, (c3.m) ((c5.g) asSubclass2).b);
+                                return new v0(bVar, (c3.m) ((c5.g) asSubclass2).b);
                         }
                     }
                 };
@@ -111,7 +111,7 @@ public final class g {
                         case 2:
                             return p.e((Class) asSubclass3, bVar);
                         default:
-                            return new u0(bVar, (c3.m) ((c5.g) asSubclass3).b);
+                            return new v0(bVar, (c3.m) ((c5.g) asSubclass3).b);
                     }
                 }
             };

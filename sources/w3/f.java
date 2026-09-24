@@ -1,15 +1,21 @@
 package w3;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
-/* loaded from: classes.dex */
-public final class f {
-    public final long a;
-    public final boolean b;
-    public final int c;
+import e2.v;
 
-    public f(int i10, long j3, boolean z10) {
-        this.a = j3;
-        this.b = z10;
-        this.c = i10;
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class f implements d9.e, f2.s {
+    public final /* synthetic */ i a;
+
+    @Override // d9.e, i5.e
+    public Object apply(Object obj) {
+        p pVar = (p) obj;
+        this.a.getClass();
+        return pVar;
+    }
+
+    @Override // f2.s
+    public void b(long j3, v vVar) {
+        c3.b.d(j3, vVar, this.a.K);
     }
 }

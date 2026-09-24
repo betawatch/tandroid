@@ -7,7 +7,7 @@ import hg.c;
 import java.io.File;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class b extends a {
     public final MediaMetadataRetriever r;
@@ -55,7 +55,7 @@ public final class b extends a {
         try {
             MediaMetadataRetriever mediaMetadataRetriever2 = this.r;
             if (mediaMetadataRetriever2 != null) {
-                c.t(mediaMetadataRetriever2);
+                c.r(mediaMetadataRetriever2);
             }
         } catch (Exception e7) {
             FileLog.e(e7);

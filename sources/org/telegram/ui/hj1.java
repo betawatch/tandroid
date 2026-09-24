@@ -24,11 +24,11 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class hj1 extends org.telegram.ui.ActionBar.n2 {
+public final class hj1 extends org.telegram.ui.ActionBar.m2 {
     public WebView a;
-    public org.telegram.ui.ActionBar.v0 b;
+    public org.telegram.ui.ActionBar.u0 b;
     public org.telegram.ui.Components.uq c;
     public final String d;
     public final String e;
@@ -36,11 +36,11 @@ public final class hj1 extends org.telegram.ui.ActionBar.n2 {
     public final String h;
     public final MessageObject n;
     public final String r;
-    public x5 s;
+    public w5 s;
 
     public hj1(String str, String str2, String str3, String str4, MessageObject messageObject) {
         super(null);
-        this.s = new x5(this, 15);
+        this.s = new w5(this, 15);
         this.d = str;
         this.e = str2;
         this.f = str3;
@@ -50,7 +50,7 @@ public final class hj1 extends org.telegram.ui.ActionBar.n2 {
         sb2.append(MessagesController.getInstance(this.currentAccount).linkPrefix);
         sb2.append("/");
         sb2.append(str2);
-        sb2.append(TextUtils.isEmpty(str4) ? "" : org.telegram.ui.Cells.q3.i("?game=", str4));
+        sb2.append(TextUtils.isEmpty(str4) ? "" : v7.j.g("?game=", str4));
         this.h = sb2.toString();
     }
 
@@ -103,19 +103,19 @@ public final class hj1 extends org.telegram.ui.ActionBar.n2 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final View createView(Context context) {
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setActionBarMenuOnItemClick(new fj1(this));
-        org.telegram.ui.ActionBar.z n10 = this.actionBar.n();
+        org.telegram.ui.ActionBar.y n10 = this.actionBar.n();
         this.b = n10.g(1, R.drawable.share, AndroidUtilities.dp(54.0f));
         n10.a(0, R.drawable.ic_ab_other).e(2, R.drawable.msg_openin, LocaleController.getString(R.string.OpenInExternalApp));
         this.actionBar.setTitle(this.f);
         this.actionBar.setSubtitle("@" + this.e);
         org.telegram.ui.Components.uq uqVar = new org.telegram.ui.Components.uq(context, 1);
         this.c = uqVar;
-        this.b.addView(uqVar, w7.x5.c(-1.0f, -1));
+        this.b.addView(uqVar, w7.y5.c(-1.0f, -1));
         this.c.setAlpha(0.0f);
         this.c.setScaleX(0.1f);
         this.c.setScaleY(0.1f);
@@ -133,12 +133,12 @@ public final class hj1 extends org.telegram.ui.ActionBar.n2 {
         this.a.getSettings().setMixedContentMode(0);
         CookieManager.getInstance().setAcceptThirdPartyCookies(this.a, true);
         this.a.addJavascriptInterface(new gj1(this), "TelegramWebviewProxy");
-        this.a.setWebViewClient(new ni.i(this, 2));
-        frameLayout.addView(this.a, w7.x5.c(-1.0f, -1));
+        this.a.setWebViewClient(new oi.i(this, 2));
+        frameLayout.addView(this.a, w7.y5.c(-1.0f, -1));
         return this.fragmentView;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final ArrayList getThemeDescriptions() {
         ArrayList arrayList = new ArrayList();
         arrayList.add(new org.telegram.ui.ActionBar.j6(this.fragmentView, 1, null, null, null, null, org.telegram.ui.ActionBar.h6.d6));
@@ -154,12 +154,12 @@ public final class hj1 extends org.telegram.ui.ActionBar.n2 {
         return arrayList;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final boolean isSwipeBackEnabled(MotionEvent motionEvent) {
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
         AndroidUtilities.checkAndroidTheme(getParentActivity(), false);
@@ -180,14 +180,14 @@ public final class hj1 extends org.telegram.ui.ActionBar.n2 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final void onResume() {
         super.onResume();
         AndroidUtilities.cancelRunOnUIThread(this.s);
         this.s.run();
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
         WebView webView;
         if (!z10 || z11 || (webView = this.a) == null) {

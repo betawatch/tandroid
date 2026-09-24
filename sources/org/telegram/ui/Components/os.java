@@ -9,7 +9,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class os implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -25,9 +25,9 @@ public final /* synthetic */ class os implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                org.telegram.ui.ActionBar.b2[] b2VarArr = new org.telegram.ui.ActionBar.b2[1];
+                org.telegram.ui.ActionBar.a2[] a2VarArr = new org.telegram.ui.ActionBar.a2[1];
                 String string = LocaleController.getString(R.string.AppsTabInfoText);
-                ms msVar = new ms(b2VarArr, 0);
+                ms msVar = new ms(a2VarArr, 0);
                 org.telegram.ui.ActionBar.d6 d6Var = this.c;
                 SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(AndroidUtilities.replaceLinks(string, d6Var, msVar));
                 Matcher matcher = Pattern.compile("@([a-zA-Z0-9_-]+)").matcher(replaceTags);
@@ -37,14 +37,14 @@ public final /* synthetic */ class os implements Runnable {
                     if (!find) {
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, d6Var);
                         String string2 = LocaleController.getString(R.string.AppsTabInfoTitle);
-                        org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-                        b2Var.R = string2;
-                        b2Var.T = replaceTags;
+                        org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
+                        a2Var.R = string2;
+                        a2Var.T = replaceTags;
                         alertDialog$Builder.k(LocaleController.getString(R.string.AppsTabInfoButton), null);
-                        b2VarArr[0] = alertDialog$Builder.o();
+                        a2VarArr[0] = alertDialog$Builder.o();
                         break;
                     } else {
-                        replaceTags.setSpan(new org.telegram.ui.o0(b2VarArr, context, matcher.group(1), 1), matcher.start(), matcher.end(), 33);
+                        replaceTags.setSpan(new org.telegram.ui.o0(a2VarArr, context, matcher.group(1), 1), matcher.start(), matcher.end(), 33);
                     }
                 }
             default:

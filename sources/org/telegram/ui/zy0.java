@@ -1,46 +1,33 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class zy0 extends s4.j {
-    public int F = -1;
-    public final /* synthetic */ ProfileActivity G;
+public final /* synthetic */ class zy0 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ cz0 b;
 
-    public zy0(ProfileActivity profileActivity) {
-        this.G = profileActivity;
+    public /* synthetic */ zy0(cz0 cz0Var, int i10) {
+        this.a = i10;
+        this.b = cz0Var;
     }
 
-    @Override // s4.j
-    public final long K(long j3, long j10, long j11) {
-        return 0L;
-    }
-
-    @Override // s4.j
-    public final void N() {
-        AndroidUtilities.runOnUIThread(new jl0(this, 28));
-    }
-
-    @Override // s4.j
-    public final void P(s4.c1 c1Var) {
-        this.G.U4();
-    }
-
-    @Override // s4.j, s4.m0
-    public final void m() {
-        boolean isEmpty = this.p.isEmpty();
-        boolean isEmpty2 = this.r.isEmpty();
-        boolean isEmpty3 = this.s.isEmpty();
-        boolean isEmpty4 = this.q.isEmpty();
-        if (!isEmpty || !isEmpty2 || !isEmpty4 || !isEmpty3) {
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-            ofFloat.addUpdateListener(new c3(this, 26));
-            ofFloat.setDuration(this.e);
-            ofFloat.start();
-            this.F = this.G.getNotificationCenter().setAnimationInProgress(this.F, null);
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                TLRPC.TL_help_dismissSuggestion tL_help_dismissSuggestion = new TLRPC.TL_help_dismissSuggestion();
+                tL_help_dismissSuggestion.suggestion = "VALIDATE_PASSWORD";
+                tL_help_dismissSuggestion.peer = new TLRPC.TL_inputPeerEmpty();
+                cz0 cz0Var = this.b;
+                cz0Var.c.getConnectionsManager().sendRequest(tL_help_dismissSuggestion, new zy0(cz0Var, 1));
+                break;
+            default:
+                this.b.c.getMessagesController().loadAppConfig();
+                break;
         }
-        super.m();
     }
 }

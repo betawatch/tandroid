@@ -1,22 +1,77 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
-/* loaded from: classes3.dex */
-public final class df implements t71, d5 {
-    public final /* synthetic */ ChatActivityEnterView a;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-    public /* synthetic */ df(ChatActivityEnterView chatActivityEnterView) {
-        this.a = chatActivityEnterView;
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* loaded from: classes3.dex */
+public final class df extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ ChatActivityEnterView c;
+
+    public /* synthetic */ df(ChatActivityEnterView chatActivityEnterView, boolean z10, int i10) {
+        this.a = i10;
+        this.c = chatActivityEnterView;
+        this.b = z10;
     }
 
-    @Override // org.telegram.ui.Components.d5
-    public void J(int i10, int i11, boolean z10) {
-        ChatActivityEnterView chatActivityEnterView = this.a;
-        boolean U0 = chatActivityEnterView.U0(i10, z10, i11, true, 0L);
-        mf mfVar = chatActivityEnterView.L0;
-        if (mfVar != null) {
-            mfVar.h(!U0);
-            chatActivityEnterView.L0 = null;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 1:
+                ChatActivityEnterView chatActivityEnterView = this.c;
+                if (animator.equals(chatActivityEnterView.s2)) {
+                    chatActivityEnterView.s2 = null;
+                    break;
+                }
+                break;
+            default:
+                super.onAnimationCancel(animator);
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        af afVar;
+        switch (this.a) {
+            case 0:
+                ChatActivityEnterView chatActivityEnterView = this.c;
+                if (chatActivityEnterView.l5) {
+                    chatActivityEnterView.w1.setVisibility(this.b ? 0 : 8);
+                    break;
+                }
+                break;
+            case 1:
+                ChatActivityEnterView chatActivityEnterView2 = this.c;
+                if (animator.equals(chatActivityEnterView2.s2)) {
+                    chatActivityEnterView2.p1.setVisibility(8);
+                    if (this.b && (afVar = chatActivityEnterView2.J1) != null) {
+                        afVar.setVisibility(8);
+                    }
+                    chatActivityEnterView2.s2 = null;
+                    break;
+                }
+                break;
+            case 2:
+                ChatActivityEnterView chatActivityEnterView3 = this.c;
+                chatActivityEnterView3.M1 = null;
+                if (!this.b) {
+                    chatActivityEnterView3.J1.setVisibility(8);
+                    break;
+                }
+                break;
+            default:
+                float f7 = this.b ? 1.0f : 0.0f;
+                ChatActivityEnterView chatActivityEnterView4 = this.c;
+                chatActivityEnterView4.w0 = f7;
+                eg egVar = chatActivityEnterView4.U0;
+                if (egVar != null) {
+                    egVar.Y();
+                    break;
+                }
+                break;
         }
     }
 }

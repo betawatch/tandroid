@@ -27,14 +27,14 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.e51;
-import org.telegram.ui.Components.n70;
 import org.telegram.ui.Components.pq;
 import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.s51;
+import org.telegram.ui.Components.x70;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public final class h1 extends FrameLayout implements n70 {
+public final class h1 extends FrameLayout implements x70 {
     public final TextView E;
     public final TextView F;
     public final pq[] G;
@@ -51,12 +51,12 @@ public final class h1 extends FrameLayout implements n70 {
     public float f;
     public final d1 h;
     public final LinearLayout n;
-    public final vh.o r;
-    public final vh.o s;
+    public final vh.n r;
+    public final vh.n s;
     public CharSequence v;
     public final org.telegram.ui.Components.w9 w;
     public final org.telegram.ui.Components.h9 x;
-    public final vh.o y;
+    public final vh.n y;
 
     public h1(int i10, Context context, boolean z10) {
         super(context);
@@ -71,62 +71,62 @@ public final class h1 extends FrameLayout implements n70 {
         d1 d1Var = new d1(this, context);
         this.h = d1Var;
         d1Var.setOrientation(0);
-        addView(d1Var, w7.x5.d(-2, -2.0f, 51, 0.0f, 0.5f, 0.0f, 0.5f));
+        addView(d1Var, w7.y5.d(-2, -2.0f, 51, 0.0f, 0.5f, 0.0f, 0.5f));
         this.x = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.d6) null);
         org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
         this.w = w9Var;
         w9Var.setRoundRadius(AndroidUtilities.dp(11.0f));
-        d1Var.addView(w9Var, w7.x5.p(22, 22, 0.0f, 51, 3, 2, 3, 2));
+        d1Var.addView(w9Var, w7.y5.p(22, 22, 0.0f, 51, 3, 2, 3, 2));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        d1Var.addView(linearLayout, w7.x5.p(-2, -2, 1.0f, 51, 4, 3, 7, 3));
+        d1Var.addView(linearLayout, w7.y5.p(-2, -2, 1.0f, 51, 4, 3, 7, 3));
         LinearLayout linearLayout2 = new LinearLayout(context);
         this.n = linearLayout2;
         linearLayout2.setOrientation(0);
         linearLayout2.setVisibility(8);
-        linearLayout.addView(linearLayout2, w7.x5.n(-2, -2));
-        vh.o oVar = new vh.o(context);
-        this.r = oVar;
-        oVar.setTextColor(-1);
-        oVar.setTextSize(1, 14.0f);
-        oVar.setGravity(3);
-        oVar.setTypeface(AndroidUtilities.bold());
-        linearLayout2.addView(oVar, w7.x5.p(-2, -2, 1.0f, 51, 0, 0, 16, 0));
-        vh.o oVar2 = new vh.o(context);
-        this.s = oVar2;
-        oVar2.setTextColor(org.telegram.ui.ActionBar.h6.l1(0.55f, -1));
-        oVar2.setTextSize(1, 12.0f);
-        oVar2.setGravity(5);
-        linearLayout2.addView(oVar2, w7.x5.p(-2, -2, 0.0f, 53, 0, 0, 0, 0));
-        vh.o oVar3 = new vh.o(context);
-        this.y = oVar3;
-        oVar3.setTextColor(-1);
-        oVar3.setTextSize(1, 14.0f);
-        oVar3.setShadowLayer(AndroidUtilities.dp(2.5f), 0.0f, AndroidUtilities.dp(1.5f), org.telegram.ui.ActionBar.h6.l1(0.6f, -16777216));
-        NotificationCenter.listenEmojiLoading(oVar3);
-        linearLayout.addView(oVar3, w7.x5.n(-2, -2));
+        linearLayout.addView(linearLayout2, w7.y5.n(-2, -2));
+        vh.n nVar = new vh.n(context);
+        this.r = nVar;
+        nVar.setTextColor(-1);
+        nVar.setTextSize(1, 14.0f);
+        nVar.setGravity(3);
+        nVar.setTypeface(AndroidUtilities.bold());
+        linearLayout2.addView(nVar, w7.y5.p(-2, -2, 1.0f, 51, 0, 0, 16, 0));
+        vh.n nVar2 = new vh.n(context);
+        this.s = nVar2;
+        nVar2.setTextColor(org.telegram.ui.ActionBar.h6.l1(0.55f, -1));
+        nVar2.setTextSize(1, 12.0f);
+        nVar2.setGravity(5);
+        linearLayout2.addView(nVar2, w7.y5.p(-2, -2, 0.0f, 53, 0, 0, 0, 0));
+        vh.n nVar3 = new vh.n(context);
+        this.y = nVar3;
+        nVar3.setTextColor(-1);
+        nVar3.setTextSize(1, 14.0f);
+        nVar3.setShadowLayer(AndroidUtilities.dp(2.5f), 0.0f, AndroidUtilities.dp(1.5f), org.telegram.ui.ActionBar.h6.l1(0.6f, -16777216));
+        NotificationCenter.listenEmojiLoading(nVar3);
+        linearLayout.addView(nVar3, w7.y5.n(-2, -2));
         TextView textView = new TextView(context);
         this.E = textView;
         textView.setTextColor(-1);
         textView.setTextSize(1, 11.0f);
         textView.setPadding(AndroidUtilities.dp(4.66f), 0, AndroidUtilities.dp(4.66f), 0);
         textView.setVisibility(8);
-        d1Var.addView(textView, w7.x5.p(-2, 16, 0.0f, 21, -3, 0, 6, 0));
+        d1Var.addView(textView, w7.y5.p(-2, 16, 0.0f, 21, -3, 0, 6, 0));
         TextView textView2 = new TextView(context);
         this.F = textView2;
         textView2.setTextColor(-1);
         textView2.setAlpha(0.65f);
         textView2.setTextSize(1, 11.0f);
         textView2.setVisibility(8);
-        d1Var.addView(textView2, w7.x5.p(-2, -2, 0.0f, 85, 0, 3, 10, 0));
+        d1Var.addView(textView2, w7.y5.p(-2, -2, 0.0f, 85, 0, 3, 10, 0));
     }
 
-    @Override // org.telegram.ui.Components.n70
+    @Override // org.telegram.ui.Components.x70
     public final void a(RectF rectF) {
         rectF.set(0.0f, 0.0f, getWidth(), getHeight());
     }
 
-    @Override // org.telegram.ui.Components.n70
+    @Override // org.telegram.ui.Components.x70
     public final void b(Canvas canvas, float f7) {
         d1 d1Var = this.h;
         if (d1Var.getBackground() == null) {
@@ -221,7 +221,7 @@ public final class h1 extends FrameLayout implements n70 {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         boolean z11 = m1Var.b;
         boolean z12 = this.d;
-        vh.o oVar = this.y;
+        vh.n nVar = this.y;
         if (z11) {
             charSequence = "";
             if (m1Var.g <= 0) {
@@ -230,7 +230,7 @@ public final class h1 extends FrameLayout implements n70 {
                 int b14 = g0.b(i12, (int) m1Var.g, 2);
                 tL_textWithEntities = m1Var.f;
                 if (tL_textWithEntities == null) {
-                    CharSequence formatTextWithEntities = MessageObject.formatTextWithEntities(tL_textWithEntities, false, oVar.getPaint());
+                    CharSequence formatTextWithEntities = MessageObject.formatTextWithEntities(tL_textWithEntities, false, nVar.getPaint());
                     this.v = formatTextWithEntities;
                     CharSequence superTrim = AndroidUtilities.superTrim(formatTextWithEntities);
                     this.v = superTrim;
@@ -283,7 +283,7 @@ public final class h1 extends FrameLayout implements n70 {
                     charSequence2 = " ";
                     this.v = charSequence;
                 }
-                oVar.setText(Emoji.replaceEmoji(spannableStringBuilder, oVar.getPaint().getFontMetricsInt(), false));
+                nVar.setText(Emoji.replaceEmoji(spannableStringBuilder, nVar.getPaint().getFontMetricsInt(), false));
                 this.e = null;
                 this.n.setVisibility((m1Var.b || m1Var.g > 0) ? 8 : 0);
                 j3 = m1Var.g;
@@ -294,7 +294,7 @@ public final class h1 extends FrameLayout implements n70 {
                     this.a = z13;
                     d1Var.setWillNotDraw(!z13);
                     d1Var.invalidate();
-                    oVar.setShadowLayer(0.0f, 0.0f, 0.0f, 0);
+                    nVar.setShadowLayer(0.0f, 0.0f, 0.0f, 0);
                     int dp = AndroidUtilities.dp(13.0f);
                     int i17 = org.telegram.ui.ActionBar.h6.a;
                     GradientDrawable gradientDrawable = new GradientDrawable(GradientDrawable.Orientation.RIGHT_LEFT, new int[]{b10, b11});
@@ -311,14 +311,14 @@ public final class h1 extends FrameLayout implements n70 {
                         textView.setText(charSequence);
                         textView2.setVisibility(0);
                         textView2.setBackground(org.telegram.ui.ActionBar.h6.b0(AndroidUtilities.dp(13.0f), org.telegram.ui.ActionBar.h6.l1(0.25f, b12)));
-                        textView2.setText(yh.w7.U0(false, hg.c.k(m1Var.g, ',', new StringBuilder("⭐️ ")), 0.75f, this.G, AndroidUtilities.dp(0.66f), 1.0f));
+                        textView2.setText(yh.w7.U0(false, org.telegram.messenger.f0.h(m1Var.g, ',', new StringBuilder("⭐️ ")), 0.75f, this.G, AndroidUtilities.dp(0.66f), 1.0f));
                         pq pqVar = this.G[0];
                         if (pqVar != null) {
                             pqVar.draw = this.b;
                         }
                     } else {
                         textView.setVisibility(0);
-                        textView.setText(yh.w7.U0(false, hg.c.k(m1Var.g, ',', new StringBuilder("⭐️ ")), 0.75f, this.H, 0.0f, 1.0f));
+                        textView.setText(yh.w7.U0(false, org.telegram.messenger.f0.h(m1Var.g, ',', new StringBuilder("⭐️ ")), 0.75f, this.H, 0.0f, 1.0f));
                         textView2.setVisibility(8);
                         textView2.setText(charSequence);
                     }
@@ -331,7 +331,7 @@ public final class h1 extends FrameLayout implements n70 {
                     Drawable drawable3 = this.e;
                     this.f = 0.5f;
                     drawable3.setAlpha((int) 127.5f);
-                    oVar.setShadowLayer(0.0f, 0.0f, 0.0f, 0);
+                    nVar.setShadowLayer(0.0f, 0.0f, 0.0f, 0);
                     SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
                     spannableStringBuilder2.append((CharSequence) DialogObject.getName(i12, m1Var.c));
                     spannableStringBuilder2.append(charSequence2);
@@ -345,7 +345,7 @@ public final class h1 extends FrameLayout implements n70 {
                 } else {
                     this.a = false;
                     d1Var.setWillNotDraw(true);
-                    oVar.setShadowLayer(AndroidUtilities.dp(2.5f), 0.0f, AndroidUtilities.dp(1.5f), org.telegram.ui.ActionBar.h6.l1(0.6f, -16777216));
+                    nVar.setShadowLayer(AndroidUtilities.dp(2.5f), 0.0f, AndroidUtilities.dp(1.5f), org.telegram.ui.ActionBar.h6.l1(0.6f, -16777216));
                     this.e = null;
                     d1Var.setBackground(null);
                     textView.setVisibility(8);
@@ -366,7 +366,7 @@ public final class h1 extends FrameLayout implements n70 {
         } else {
             z10 = z12;
         }
-        spannableStringBuilder.append(TextUtils.ellipsize(str, oVar.getPaint(), AndroidUtilities.dp(100.0f), TextUtils.TruncateAt.END));
+        spannableStringBuilder.append(TextUtils.ellipsize(str, nVar.getPaint(), AndroidUtilities.dp(100.0f), TextUtils.TruncateAt.END));
         if (z10) {
             i10 = 0;
             i11 = 33;
@@ -375,14 +375,14 @@ public final class h1 extends FrameLayout implements n70 {
             i10 = 0;
             i11 = 33;
         }
-        spannableStringBuilder.setSpan(new e51(AndroidUtilities.bold()), i10, spannableStringBuilder.length(), i11);
+        spannableStringBuilder.setSpan(new s51(AndroidUtilities.bold()), i10, spannableStringBuilder.length(), i11);
         spannableStringBuilder.append((CharSequence) " ");
         int b132 = g0.b(i12, (int) m1Var.g, 1);
         int b142 = g0.b(i12, (int) m1Var.g, 2);
         tL_textWithEntities = m1Var.f;
         if (tL_textWithEntities == null) {
         }
-        oVar.setText(Emoji.replaceEmoji(spannableStringBuilder, oVar.getPaint().getFontMetricsInt(), false));
+        nVar.setText(Emoji.replaceEmoji(spannableStringBuilder, nVar.getPaint().getFontMetricsInt(), false));
         this.e = null;
         this.n.setVisibility((m1Var.b || m1Var.g > 0) ? 8 : 0);
         j3 = m1Var.g;

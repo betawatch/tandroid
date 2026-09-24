@@ -9,22 +9,22 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ry;
+import org.telegram.ui.qy;
 import org.telegram.ui.wf1;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v1 implements Utilities.Callback {
     public final /* synthetic */ wf1 a;
-    public final /* synthetic */ ry b;
+    public final /* synthetic */ qy b;
     public final /* synthetic */ long c;
     public final /* synthetic */ int d;
 
-    public /* synthetic */ v1(wf1 wf1Var, ry ryVar, long j3, int i10) {
+    public /* synthetic */ v1(wf1 wf1Var, qy qyVar, long j3, int i10) {
         this.a = wf1Var;
-        this.b = ryVar;
+        this.b = qyVar;
         this.c = j3;
         this.d = i10;
     }
@@ -36,14 +36,14 @@ public final /* synthetic */ class v1 implements Utilities.Callback {
         TLRPC.Chat chat;
         Boolean bool = (Boolean) obj;
         wf1 wf1Var = this.a;
-        ry ryVar = this.b;
+        qy qyVar = this.b;
         if (wf1Var != null) {
             wf1Var.finishFragment();
-            ryVar.removeSelfFromStack();
+            qyVar.removeSelfFromStack();
         } else {
-            ryVar.finishFragment();
+            qyVar.finishFragment();
         }
-        org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+        org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
         if (U == null) {
             return;
         }
@@ -63,7 +63,7 @@ public final /* synthetic */ class v1 implements Utilities.Callback {
                 chat = chat2;
             }
         }
-        xc a02 = xc.a0(U);
+        yc a02 = yc.a0(U);
         SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString(bool.booleanValue() ? R.string.BotSentRevokeVerifyRequest : R.string.BotSentVerifyRequest, str));
         a02.getClass();
         a02.V(Arrays.asList(chat), replaceTags, null, null).k(false);

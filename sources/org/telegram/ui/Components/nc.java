@@ -6,12 +6,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class nc extends nb {
-    public final bj0 a;
-    public final d90 b;
-    public final d90 c;
+    public final lj0 a;
+    public final n90 b;
+    public final n90 c;
     public final LinearLayout d;
     public final int e;
 
@@ -20,38 +20,38 @@ public final class nc extends nb {
         int i10 = org.telegram.ui.ActionBar.h6.Hi;
         this.e = getThemedColor(i10);
         setBackground(getThemedColor(org.telegram.ui.ActionBar.h6.Fi));
-        bj0 bj0Var = new bj0(context);
-        this.a = bj0Var;
-        bj0Var.setScaleType(ImageView.ScaleType.CENTER);
-        addView(bj0Var, w7.x5.h(56.0f, 48.0f, 8388627));
+        lj0 lj0Var = new lj0(context);
+        this.a = lj0Var;
+        lj0Var.setScaleType(ImageView.ScaleType.CENTER);
+        addView(lj0Var, w7.y5.h(56.0f, 48.0f, 8388627));
         int themedColor = getThemedColor(i10);
         int themedColor2 = getThemedColor(org.telegram.ui.ActionBar.h6.Gi);
         LinearLayout linearLayout = new LinearLayout(context);
         this.d = linearLayout;
         linearLayout.setOrientation(1);
-        addView(linearLayout, w7.x5.i(-2.0f, -2.0f, 8388627, 52.0f, 8.0f, 8.0f, 8.0f));
-        d90 d90Var = new d90(context, null);
-        this.b = d90Var;
-        d90Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
-        d90Var.setTextColor(themedColor);
-        d90Var.setTextSize(1, 14.0f);
-        d90Var.setTypeface(AndroidUtilities.bold());
-        linearLayout.addView(d90Var);
-        d90 d90Var2 = new d90(context, null);
-        this.c = d90Var2;
-        d90Var2.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
-        d90Var2.setTextColor(themedColor);
-        d90Var2.setLinkTextColor(themedColor2);
-        d90Var2.setTypeface(Typeface.SANS_SERIF);
-        d90Var2.setTextSize(1, 13.0f);
-        linearLayout.addView(d90Var2);
+        addView(linearLayout, w7.y5.i(-2.0f, -2.0f, 8388627, 52.0f, 8.0f, 8.0f, 8.0f));
+        n90 n90Var = new n90(context, null);
+        this.b = n90Var;
+        n90Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
+        n90Var.setTextColor(themedColor);
+        n90Var.setTextSize(1, 14.0f);
+        n90Var.setTypeface(AndroidUtilities.bold());
+        linearLayout.addView(n90Var);
+        n90 n90Var2 = new n90(context, null);
+        this.c = n90Var2;
+        n90Var2.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
+        n90Var2.setTextColor(themedColor);
+        n90Var2.setLinkTextColor(themedColor2);
+        n90Var2.setTypeface(Typeface.SANS_SERIF);
+        n90Var2.setTextSize(1, 13.0f);
+        linearLayout.addView(n90Var2);
     }
 
     public final void c(int i10, int i11, int i12, String... strArr) {
-        bj0 bj0Var = this.a;
-        bj0Var.f(i10, i11, i12, null);
+        lj0 lj0Var = this.a;
+        lj0Var.f(i10, i11, i12, null);
         for (String str : strArr) {
-            bj0Var.h(this.e, str);
+            lj0Var.h(this.e, str);
         }
     }
 

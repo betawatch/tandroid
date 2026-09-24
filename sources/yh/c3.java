@@ -1,42 +1,188 @@
 package yh;
 
 import android.content.Context;
-import android.view.View;
+import android.text.Layout;
+import android.text.TextUtils;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BillingController;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.ok;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.m40;
+import org.telegram.ui.Components.zz0;
+import org.telegram.ui.bt;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public final class c3 extends FrameLayout {
-    public final int[] a;
-    public final /* synthetic */ d3 b;
+public final class c3 {
+    public final TL_stars.TL_starGiftUnique a;
+    public final Context b;
+    public final int c;
+    public final long d;
+    public final String e;
+    public final boolean f;
+    public final org.telegram.ui.ActionBar.d6 g;
+    public final org.telegram.ui.ActionBar.a2 h;
+    public final m40 i;
+    public final TextView j;
+    public a k;
+    public TextView l;
+    public FrameLayout m;
+    public nf.e n;
+    public final HashMap o;
+    public final HashSet p;
+    public zf.b q;
+    public ci.e4 r;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c3(d3 d3Var, Context context) {
-        super(context);
-        this.b = d3Var;
-        this.a = new int[2];
+    public c3(Context context, org.telegram.ui.ActionBar.d6 d6Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, a3 a3Var, int i10, long j3, String str, boolean z10, Utilities.Callback2 callback2) {
+        HashMap hashMap = new HashMap();
+        this.o = hashMap;
+        this.p = new HashSet();
+        this.b = context;
+        this.a = tL_starGiftUnique;
+        this.d = j3;
+        this.c = i10;
+        zf.b bVar = a3Var.a;
+        this.q = bVar;
+        hashMap.put(bVar, a3Var);
+        this.g = d6Var;
+        this.e = str;
+        boolean z11 = tL_starGiftUnique.resale_ton_only;
+        this.f = !z11;
+        TLObject user = j3 >= 0 ? MessagesController.getInstance(i10).getUser(Long.valueOf(j3)) : MessagesController.getInstance(i10).getChat(Long.valueOf(-j3));
+        LinearLayout f7 = ok.f(context, 1);
+        b3 b3Var = new b3(this, context);
+        b3Var.addView(f7, w7.y5.c(-2.0f, -1));
+        if (z11) {
+            this.i = null;
+            TextView textView = new TextView(context);
+            ok.n(org.telegram.ui.ActionBar.h6.y6, d6Var, textView, 1, 14.0f);
+            ok.l(R.string.Gift2BuyPriceOnlyTON, textView, 17);
+            f7.addView(textView, w7.y5.t(-2, -2, 17, 24, 4, 24, 4));
+        } else {
+            m40 m40Var = new m40(context, d6Var);
+            this.i = m40Var;
+            ArrayList arrayList = new ArrayList();
+            arrayList.add(LocaleController.getString(R.string.Gift2BuyInStars));
+            arrayList.add(LocaleController.getString(R.string.Gift2BuyInTON));
+            m40Var.b(arrayList, new v(this, 2));
+            f7.addView(m40Var, w7.y5.t(-2, -2, 1, 18, 0, 18, 12));
+        }
+        f7.addView(new z2(context, tL_starGiftUnique, user), w7.y5.t(-1, -2, 48, 0, -4, 0, 0));
+        TextView textView2 = new TextView(context);
+        this.j = textView2;
+        ok.n(org.telegram.ui.ActionBar.h6.j5, d6Var, textView2, 1, 16.0f);
+        f7.addView(textView2, w7.y5.t(-1, -2, 48, 24, 4, 24, 4));
+        if (z10) {
+            zz0 zz0Var = new zz0(context, d6Var);
+            x3.q1(zz0Var, t5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class));
+            x3.q1(zz0Var, t5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class));
+            x3.q1(zz0Var, t5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class));
+            if (!TextUtils.isEmpty(tL_starGiftUnique.slug) && (tL_starGiftUnique.flags & 256) != 0) {
+                zz0Var.c(LocaleController.getString(R.string.GiftValue2), v7.j.g("~", BillingController.getInstance().formatCurrency(tL_starGiftUnique.value_amount, tL_starGiftUnique.value_currency, BillingController.getInstance().getCurrencyExp(tL_starGiftUnique.value_currency), true)), null, null);
+            }
+            f7.addView(zz0Var, w7.y5.t(-1, -2, 48, 23, 16, 23, 4));
+        }
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, d6Var);
+        alertDialog$Builder.n(b3Var);
+        alertDialog$Builder.k("_", new org.telegram.ui.Components.e2(this, i10, context, d6Var, callback2, 6));
+        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
+        this.h = alertDialog$Builder.a;
     }
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        FrameLayout frameLayout;
-        super.onLayout(z10, i10, i11, i12, i13);
-        d3 d3Var = this.b;
-        m40 m40Var = d3Var.i;
-        if (m40Var == null || m40Var.d.getChildCount() < 2 || d3Var.r == null || (frameLayout = d3Var.m) == null) {
+    public final void a(boolean z10) {
+        ci.e4 e4Var;
+        zf.b bVar = this.q;
+        a3 a3Var = (a3) this.o.get(bVar);
+        TextView textView = this.j;
+        textView.animate().alpha(a3Var != null ? 1.0f : 0.25f).start();
+        textView.setEnabled(a3Var != null);
+        this.l.setEnabled(a3Var != null);
+        a aVar = this.k;
+        if (aVar.e != bVar) {
+            aVar.e = bVar;
+            aVar.a();
+        }
+        zf.b bVar2 = zf.b.b;
+        m40 m40Var = this.i;
+        if (m40Var != null) {
+            m40Var.a(bVar == bVar2 ? 1 : 0, z10);
+        }
+        if (bVar == bVar2 && (e4Var = this.r) != null && e4Var.V) {
+            e4Var.e(true);
+        }
+        a aVar2 = this.k;
+        zf.b bVar3 = zf.b.a;
+        if (aVar2 != null) {
+            if (bVar == bVar3) {
+                aVar2.setOnClickListener(new org.telegram.ui.Components.voip.o(this, 24));
+            } else {
+                aVar2.setOnClickListener(new ai.e2(20));
+            }
+        }
+        nf.e eVar = this.n;
+        if (eVar != null) {
+            eVar.a(false);
+            this.n = null;
+        }
+        int i10 = this.c;
+        long j3 = this.d;
+        if (a3Var == null) {
+            nf.e g10 = this.h.g(-1, false, false);
+            this.n = g10;
+            g10.d();
+            if (this.p.add(bVar)) {
+                t5.x(i10, bVar).H(this.a, j3, null, true, new bt(29, this, bVar));
+                return;
+            }
             return;
         }
-        int[] iArr = this.a;
-        frameLayout.getLocationInWindow(iArr);
-        float translationX = iArr[0] - d3Var.m.getTranslationX();
-        float translationY = iArr[1] - d3Var.m.getTranslationY();
-        View childAt = m40Var.d.getChildAt(1);
-        childAt.getLocationInWindow(iArr);
-        float translationX2 = iArr[0] - childAt.getTranslationX();
-        float translationY2 = iArr[1] - childAt.getTranslationY();
-        d3Var.r.setTranslationY(((translationY2 - translationY) - r1.getMeasuredHeight()) - m40Var.getMeasuredHeight());
-        d3Var.r.m(0.0f, ((childAt.getMeasuredWidth() / 2.0f) + (translationX2 - translationX)) - AndroidUtilities.dp(12.0f));
+        zf.b bVar4 = a3Var.a;
+        zf.a aVar3 = a3Var.c;
+        boolean z11 = j3 == UserConfig.getInstance(i10).getClientUserId();
+        String str = this.e;
+        if (bVar4 == bVar3) {
+            this.l.setText(w7.Q0(LocaleController.formatPluralStringComma("Gift2BuyDoPrice2", (int) aVar3.a())));
+            textView.setText(AndroidUtilities.replaceTags(z11 ? LocaleController.formatPluralStringComma("Gift2BuyPriceSelfText", (int) aVar3.a(), str) : LocaleController.formatPluralStringComma("Gift2BuyPriceText", (int) aVar3.a(), str, DialogObject.getShortName(j3))));
+        }
+        if (bVar4 == bVar2) {
+            this.l.setText(w7.S0(LocaleController.formatString(R.string.Gift2BuyDoPrice2TON, aVar3.d()), true));
+            textView.setText(AndroidUtilities.replaceTags(z11 ? LocaleController.formatString(R.string.Gift2BuyPriceSelfTextTON, aVar3.d(), str) : LocaleController.formatString(R.string.Gift2BuyPriceTextTON, aVar3.d(), str, DialogObject.getShortName(j3))));
+        }
+    }
+
+    public final void b() {
+        org.telegram.ui.ActionBar.a2 a2Var = this.h;
+        a2Var.X0 = true;
+        a2Var.show();
+        this.l = (TextView) a2Var.d(-1);
+        this.k = a2Var.Z0;
+        FrameLayout frameLayout = a2Var.Y0;
+        this.m = frameLayout;
+        if (frameLayout != null && this.f) {
+            ci.e4 e4Var = new ci.e4(this.b, 3);
+            e4Var.p(true);
+            e4Var.K = Layout.Alignment.ALIGN_NORMAL;
+            e4Var.d = 5000L;
+            e4Var.s(LocaleController.getString(R.string.Gift2BuyPricePayHintTON));
+            e4Var.u();
+            this.r = e4Var;
+            e4Var.setPadding(AndroidUtilities.dp(7.33f), 0, AndroidUtilities.dp(7.33f), 0);
+            this.m.addView(this.r, w7.y5.d(-2, 100.0f, 48, 0.0f, 26.0f, 0.0f, 0.0f));
+        }
+        a(false);
     }
 }

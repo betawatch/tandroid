@@ -22,15 +22,15 @@ import android.view.ViewConfiguration;
 import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.z0;
+import org.telegram.messenger.f0;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.rr;
-import org.telegram.ui.ba1;
-import org.telegram.ui.nl0;
+import org.telegram.ui.ca1;
+import org.telegram.ui.ml0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public abstract class g extends View implements i {
     public static final boolean A1;
@@ -405,9 +405,9 @@ public abstract class g extends View implements i {
             e eVar = this.Q0;
             if (eVar != null) {
                 getSelectedDate();
-                ba1 ba1Var = (ba1) ((nl0) eVar).b;
-                ba1Var.f();
-                ba1Var.b.t0.d(false, false);
+                ca1 ca1Var = (ca1) ((ml0) eVar).b;
+                ca1Var.f();
+                ca1Var.b.t0.d(false, false);
             }
             B();
             invalidate();
@@ -955,9 +955,9 @@ public abstract class g extends View implements i {
                                 float f17 = p1;
                                 TextPaint textPaint = this.P;
                                 if (f15 < f17) {
-                                    textPaint.setAlpha((int) (i10 * z0.y(f17, f15, f17, f7) * this.h * f10));
+                                    textPaint.setAlpha((int) (i10 * f0.x(f17, f15, f17, f7) * this.h * f10));
                                 } else if (f15 > f16) {
-                                    textPaint.setAlpha((int) (i10 * z0.y(f15, f16, f12, f7) * this.h * f10));
+                                    textPaint.setAlpha((int) (i10 * f0.x(f15, f16, f12, f7) * this.h * f10));
                                 } else {
                                     textPaint.setAlpha((int) (i10 * this.h * f10));
                                 }

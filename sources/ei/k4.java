@@ -7,21 +7,21 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.iv0;
+import org.telegram.ui.Components.tv0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public class k4 extends View {
-    public final iv0 a;
+    public final tv0 a;
     public final Paint b;
     public float c;
     public o1.k d;
 
     public k4(Context context, d6 d6Var) {
         super(context);
-        iv0 iv0Var = new iv0(new d2.c(18), new d2.c(19));
-        iv0Var.c = 100.0f;
-        this.a = iv0Var;
+        tv0 tv0Var = new tv0(new d2.c(18), new d2.c(19));
+        tv0Var.c = 100.0f;
+        this.a = tv0Var;
         Paint paint = new Paint(1);
         this.b = paint;
         paint.setColor(h6.v0(h6.Oh, d6Var));

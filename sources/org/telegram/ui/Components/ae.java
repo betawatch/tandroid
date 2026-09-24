@@ -1,44 +1,60 @@
 package org.telegram.ui.Components;
 
-import android.view.KeyEvent;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ae implements ei.m0, org.telegram.ui.ActionBar.a2, au, org.telegram.ui.ActionBar.l1 {
-    public final /* synthetic */ ChatActivityEnterView a;
+public final /* synthetic */ class ae implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ChatActivityEnterView b;
+    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ ae(ChatActivityEnterView chatActivityEnterView) {
-        this.a = chatActivityEnterView;
+    public /* synthetic */ ae(ChatActivityEnterView chatActivityEnterView, boolean z10, int i10) {
+        this.a = i10;
+        this.b = chatActivityEnterView;
+        this.c = z10;
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        int i11 = ChatActivityEnterView.n5;
-        ChatActivityEnterView chatActivityEnterView = this.a;
-        chatActivityEnterView.P();
-        pf pfVar = chatActivityEnterView.E0;
-        if (pfVar != null) {
-            pfVar.setText("");
-        }
-    }
-
-    @Override // org.telegram.ui.Components.au
-    public void i() {
-        ChatActivityEnterView chatActivityEnterView = this.a;
-        chatActivityEnterView.E0.invalidateEffects();
-        ng ngVar = chatActivityEnterView.Y2;
-        if (ngVar != null) {
-            ngVar.v1(chatActivityEnterView.E0.getTextToUse());
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.l1
-    public void o(KeyEvent keyEvent) {
-        ChatActivityEnterView chatActivityEnterView;
-        lf lfVar;
-        int i10 = ChatActivityEnterView.n5;
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (lfVar = (chatActivityEnterView = this.a).N0) != null && lfVar.isShowing()) {
-            chatActivityEnterView.N0.dismiss();
+    @Override // java.lang.Runnable
+    public final void run() {
+        nf nfVar;
+        int i10 = this.a;
+        ChatActivityEnterView chatActivityEnterView = this.b;
+        boolean z10 = this.c;
+        switch (i10) {
+            case 0:
+                if (!z10) {
+                    chatActivityEnterView.t1.setVisibility(8);
+                    break;
+                } else {
+                    int i11 = ChatActivityEnterView.n5;
+                    chatActivityEnterView.getClass();
+                    break;
+                }
+            case 1:
+                if (!z10) {
+                    chatActivityEnterView.u1.setVisibility(8);
+                    break;
+                } else {
+                    int i12 = ChatActivityEnterView.n5;
+                    chatActivityEnterView.getClass();
+                    break;
+                }
+            default:
+                ChatActivityEnterView chatActivityEnterView2 = this.b;
+                td tdVar = chatActivityEnterView2.F4;
+                chatActivityEnterView2.M0 = System.currentTimeMillis();
+                boolean T0 = chatActivityEnterView2.T0(0, false, 0, true, 0L);
+                if (!z10 && (nfVar = chatActivityEnterView2.L0) != null) {
+                    nfVar.h(!T0);
+                    chatActivityEnterView2.L0 = null;
+                    break;
+                } else {
+                    chatActivityEnterView2.E4 = !T0;
+                    AndroidUtilities.cancelRunOnUIThread(tdVar);
+                    AndroidUtilities.runOnUIThread(tdVar, 500L);
+                    break;
+                }
         }
     }
 }

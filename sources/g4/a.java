@@ -18,10 +18,11 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 import org.telegram.tgnet.TLObject;
+import v7.j;
 import z3.l;
 import z3.m;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class a implements m {
     public final v a = new v();
@@ -94,7 +95,7 @@ public final class a implements m {
     }
 
     @Override // z3.m
-    public final void B(byte[] bArr, int i10, int i11, l lVar, h hVar) {
+    public final void C(byte[] bArr, int i10, int i11, l lVar, h hVar) {
         String v;
         int i12;
         v vVar = this.a;
@@ -147,10 +148,10 @@ public final class a implements m {
                     vVar.K(i13);
                     int j11 = vVar.j();
                     if (D4 > spannableStringBuilder.length()) {
-                        StringBuilder l4 = c.l(D4, "Truncating styl end (", ") to cueText.length() (");
-                        l4.append(spannableStringBuilder.length());
-                        l4.append(").");
-                        e2.a.n("Tx3gParser", l4.toString());
+                        StringBuilder j12 = c.j(D4, "Truncating styl end (", ") to cueText.length() (");
+                        j12.append(spannableStringBuilder.length());
+                        j12.append(").");
+                        e2.a.n("Tx3gParser", j12.toString());
                         D4 = spannableStringBuilder.length();
                     }
                     if (D3 >= D4) {
@@ -182,7 +183,7 @@ public final class a implements m {
 
     @Override // z3.m
     public final /* synthetic */ z3.d r(int i10, int i11, byte[] bArr) {
-        return w.c.a(this, bArr, i11);
+        return j.a(this, bArr, i11);
     }
 
     @Override // z3.m

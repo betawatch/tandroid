@@ -1,158 +1,291 @@
 package org.telegram.ui.Components;
 
+import android.animation.ValueAnimator;
+import android.app.Activity;
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
+import android.graphics.Color;
+import android.graphics.LinearGradient;
 import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.RectF;
+import android.graphics.Shader;
 import android.view.View;
-import android.view.animation.AnimationUtils;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class fg0 extends Drawable {
-    public final Paint a;
-    public final int b;
-    public boolean c;
+public final class fg0 extends View {
+    public ValueAnimator E;
+    public final Paint F;
+    public final Paint G;
+    public final Paint H;
+    public final Paint I;
+    public int J;
+    public int K;
+    public final org.telegram.ui.ActionBar.d6 L;
+    public boolean M;
+    public int a;
+    public int b;
+    public int c;
     public float d;
-    public long e;
-    public View f;
-    public int g = 255;
-    public float h = 300.0f;
+    public int e;
+    public int f;
+    public boolean h;
+    public boolean n;
+    public float r;
+    public float s;
+    public int v;
+    public int w;
+    public final RectF x;
+    public float y;
 
-    public fg0(int i10) {
-        this.b = AndroidUtilities.dp(i10);
+    public fg0(Activity activity, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(activity);
+        this.a = -1;
+        this.b = 0;
+        this.x = new RectF();
         Paint paint = new Paint(1);
-        this.a = paint;
-        paint.setColor(-1);
+        this.H = paint;
+        Paint paint2 = new Paint(1);
+        this.I = paint2;
+        this.J = -1;
+        this.L = d6Var;
+        Paint.Style style = Paint.Style.FILL;
+        paint.setStyle(style);
+        Paint.Cap cap = Paint.Cap.ROUND;
+        paint.setStrokeCap(cap);
+        paint2.setStyle(style);
+        paint2.setStrokeCap(cap);
+        Paint paint3 = new Paint();
+        this.F = paint3;
+        Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+        paint3.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(6.0f), new int[]{-1, 0}, new float[]{0.0f, 1.0f}, tileMode));
+        PorterDuff.Mode mode = PorterDuff.Mode.DST_OUT;
+        paint3.setXfermode(new PorterDuffXfermode(mode));
+        Paint paint4 = new Paint();
+        this.G = paint4;
+        paint4.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(6.0f), new int[]{0, -1}, new float[]{0.0f, 1.0f}, tileMode));
+        paint4.setXfermode(new PorterDuffXfermode(mode));
+        d();
     }
 
-    public final void a(boolean z10, boolean z11) {
-        if (this.c != z10) {
-            this.c = z10;
-            if (!z11) {
-                this.d = z10 ? 1.0f : 0.0f;
+    public final void a() {
+        boolean z10 = (this.n ? Math.max(this.e, this.f) : this.b) > 3;
+        int i10 = z10 ? 2 : 0;
+        if (getLayerType() != i10) {
+            setLayerType(i10, null);
+            invalidate();
+        }
+        this.M = z10;
+    }
+
+    public final void b(int i10) {
+        if (this.n) {
+            this.J = i10;
+            return;
+        }
+        if (!this.h) {
+            this.d = this.a;
+        } else {
+            if (this.c == i10) {
+                return;
             }
-            this.e = AnimationUtils.currentAnimationTimeMillis();
-            invalidateSelf();
-        }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0062  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x009f  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x00e8  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x00aa  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0067  */
-    @Override // android.graphics.drawable.Drawable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void draw(Canvas canvas) {
-        int i10;
-        Canvas canvas2;
-        zd0 zd0Var;
-        long currentAnimationTimeMillis = AnimationUtils.currentAnimationTimeMillis();
-        long j3 = currentAnimationTimeMillis - this.e;
-        this.e = currentAnimationTimeMillis;
-        if (j3 > 18) {
-            j3 = 16;
-        }
-        boolean z10 = this.c;
-        if (z10) {
+            ValueAnimator valueAnimator = this.E;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+            }
             float f7 = this.d;
-            if (f7 < 1.0f) {
-                float f10 = (j3 / this.h) + f7;
-                this.d = f10;
-                if (f10 >= 1.0f) {
-                    this.d = 1.0f;
-                } else {
-                    View view = this.f;
-                    if (view != null) {
-                        view.invalidate();
-                    }
-                    invalidateSelf();
-                }
-                Rect bounds = getBounds();
-                i10 = this.g;
-                if (i10 != 255) {
-                    canvas.save();
-                    canvas2 = canvas;
-                } else {
-                    canvas2 = canvas;
-                    canvas2.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, i10, 31);
-                }
-                canvas2.translate(com.google.android.gms.internal.vision.e2.z(1.0f, this.d, AndroidUtilities.dp(1.0f), bounds.centerX()), bounds.centerY());
-                float f11 = this.d * 500.0f;
-                float interpolation = f11 >= 100.0f ? rr.j.getInterpolation(f11 / 100.0f) * (-5.0f) : f11 < 484.0f ? (rr.j.getInterpolation((f11 - 100.0f) / 384.0f) * 95.0f) - 5.0f : 90.0f;
-                int i11 = this.b;
-                canvas2.scale((i11 * 1.45f) / AndroidUtilities.dp(28.0f), (i11 * 1.5f) / AndroidUtilities.dp(28.0f));
-                canvas2.rotate(interpolation);
-                zd0Var = org.telegram.ui.ActionBar.h6.x3;
-                if (zd0Var != null) {
-                    Paint paint = this.a;
-                    zd0Var.b(canvas2, paint, f11);
-                    canvas2.scale(1.0f, -1.0f);
-                    org.telegram.ui.ActionBar.h6.x3.b(canvas2, paint, f11);
-                }
-                canvas2.restore();
-            }
+            float f10 = this.y;
+            this.d = (this.c * f10) + ((1.0f - f10) * f7);
+        }
+        if (i10 != this.a) {
+            this.c = i10;
+            this.h = true;
+            this.y = 0.0f;
+            invalidate();
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+            this.E = ofFloat;
+            ofFloat.addUpdateListener(new dg0(this, 1));
+            this.E.addListener(new eg0(this, 0));
+            this.E.setInterpolator(rr.f);
+            this.E.setDuration(220L);
+            this.E.start();
+        }
+    }
+
+    public final void c(int i10, int i11, boolean z10) {
+        int i12 = this.a;
+        if (i12 < 0 || i11 == 0 || this.b == 0) {
+            z10 = false;
         }
         if (!z10) {
-            float f12 = this.d;
-            if (f12 > 0.0f) {
-                float f13 = f12 - (j3 / this.h);
-                this.d = f13;
-                if (f13 <= 0.0f) {
-                    this.d = 0.0f;
-                } else {
-                    View view2 = this.f;
-                    if (view2 != null) {
-                        view2.invalidate();
-                    }
-                    invalidateSelf();
+            ValueAnimator valueAnimator = this.E;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+            }
+            this.a = i10;
+            this.b = i11;
+            invalidate();
+        } else if (this.b == i11 && (Math.abs(i12 - i10) <= 2 || this.h || this.n)) {
+            b(i10);
+        } else {
+            ValueAnimator valueAnimator2 = this.E;
+            if (valueAnimator2 != null) {
+                this.J = 0;
+                valueAnimator2.cancel();
+            }
+            int dp = AndroidUtilities.dp(8.0f);
+            int i13 = dp * 2;
+            this.v = (getMeasuredHeight() - i13) / Math.min(this.b, 3);
+            this.w = (getMeasuredHeight() - i13) / Math.min(i11, 3);
+            float f7 = (this.a - 1) * this.v;
+            this.r = f7;
+            if (f7 < 0.0f) {
+                this.r = 0.0f;
+            } else {
+                float f10 = hg.c.f(this.b, 1, r4, dp) - f7;
+                int measuredHeight = getMeasuredHeight() - dp;
+                int i14 = this.v;
+                if (f10 < measuredHeight - i14) {
+                    this.r = hg.c.f(this.b, 1, i14, dp) - ((getMeasuredHeight() - dp) - this.v);
+                }
+            }
+            float f11 = (i10 - 1) * this.w;
+            this.s = f11;
+            if (f11 < 0.0f) {
+                this.s = 0.0f;
+            } else {
+                int i15 = i11 - 1;
+                float f12 = ((r4 * i15) + dp) - f11;
+                int measuredHeight2 = getMeasuredHeight() - dp;
+                int i16 = this.w;
+                if (f12 < measuredHeight2 - i16) {
+                    this.s = ((i15 * i16) + dp) - ((getMeasuredHeight() - dp) - this.w);
+                }
+            }
+            this.d = this.a;
+            this.c = i10;
+            this.a = i10;
+            this.e = this.b;
+            this.f = i11;
+            this.b = i11;
+            this.n = true;
+            this.h = true;
+            this.y = 0.0f;
+            invalidate();
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+            this.E = ofFloat;
+            ofFloat.addUpdateListener(new dg0(this, 0));
+            this.E.addListener(new eg0(this, 1));
+            this.E.setInterpolator(rr.f);
+            this.E.setDuration(220L);
+            this.E.start();
+        }
+        a();
+    }
+
+    public final void d() {
+        int v02 = org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.ee, this.L);
+        this.K = v02;
+        this.H.setColor(i0.a.k(v02, (int) ((Color.alpha(v02) / 255.0f) * 112.0f)));
+        this.I.setColor(this.K);
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        float measuredHeight;
+        float f7;
+        RectF rectF;
+        super.onDraw(canvas);
+        if (this.a < 0 || this.b == 0) {
+            return;
+        }
+        int dp = AndroidUtilities.dp(8.0f);
+        if (this.n) {
+            float f10 = this.v;
+            float f11 = this.y;
+            measuredHeight = (this.w * f11) + ((1.0f - f11) * f10);
+        } else if (this.b == 0) {
+            return;
+        } else {
+            measuredHeight = (getMeasuredHeight() - (dp * 2)) / Math.min(this.b, 3);
+        }
+        if (measuredHeight == 0.0f) {
+            return;
+        }
+        float dpf2 = AndroidUtilities.dpf2(0.7f);
+        if (this.n) {
+            float f12 = this.r;
+            float f13 = this.y;
+            f7 = (this.s * f13) + ((1.0f - f13) * f12);
+        } else {
+            if (this.h) {
+                float f14 = (this.d - 1.0f) * measuredHeight;
+                float f15 = this.y;
+                f7 = ((this.c - 1) * measuredHeight * f15) + ((1.0f - f15) * f14);
+            } else {
+                f7 = (this.a - 1) * measuredHeight;
+            }
+            if (f7 < 0.0f) {
+                f7 = 0.0f;
+            } else {
+                float f16 = dp;
+                if ((((this.b - 1) * measuredHeight) + f16) - f7 < (getMeasuredHeight() - dp) - measuredHeight) {
+                    f7 = (((this.b - 1) * measuredHeight) + f16) - ((getMeasuredHeight() - dp) - measuredHeight);
                 }
             }
         }
-        Rect bounds2 = getBounds();
-        i10 = this.g;
-        if (i10 != 255) {
+        float measuredWidth = getMeasuredWidth() / 2.0f;
+        float f17 = dp;
+        int max = Math.max(0, (int) (((f17 + f7) / measuredHeight) - 1.0f));
+        int min = Math.min(max + 6, this.n ? Math.max(this.e, this.f) : this.b);
+        while (true) {
+            rectF = this.x;
+            if (max >= min) {
+                break;
+            }
+            float f18 = ((max * measuredHeight) + f17) - f7;
+            float f19 = f18 + measuredHeight;
+            if (f19 >= 0.0f && f18 <= getMeasuredHeight()) {
+                rectF.set(0.0f, f18 + dpf2, getMeasuredWidth(), f19 - dpf2);
+                boolean z10 = this.n;
+                Paint paint = this.H;
+                if (z10 && max >= this.f) {
+                    paint.setColor(i0.a.k(this.K, (int) ((1.0f - this.y) * (Color.alpha(r4) / 255.0f) * 76.0f)));
+                    canvas.drawRoundRect(rectF, measuredWidth, measuredWidth, paint);
+                    paint.setColor(i0.a.k(this.K, (int) ((Color.alpha(r4) / 255.0f) * 76.0f)));
+                } else if (!z10 || max < this.e) {
+                    canvas.drawRoundRect(rectF, measuredWidth, measuredWidth, paint);
+                } else {
+                    paint.setColor(i0.a.k(this.K, (int) ((Color.alpha(r4) / 255.0f) * 76.0f * this.y)));
+                    canvas.drawRoundRect(rectF, measuredWidth, measuredWidth, paint);
+                    paint.setColor(i0.a.k(this.K, (int) ((Color.alpha(r4) / 255.0f) * 76.0f)));
+                }
+            }
+            max++;
         }
-        canvas2.translate(com.google.android.gms.internal.vision.e2.z(1.0f, this.d, AndroidUtilities.dp(1.0f), bounds2.centerX()), bounds2.centerY());
-        float f112 = this.d * 500.0f;
-        if (f112 >= 100.0f) {
+        boolean z11 = this.h;
+        Paint paint2 = this.I;
+        if (z11) {
+            float f20 = this.d;
+            float f21 = this.y;
+            float f22 = ((((this.c * f21) + ((1.0f - f21) * f20)) * measuredHeight) + f17) - f7;
+            rectF.set(0.0f, f22 + dpf2, getMeasuredWidth(), (f22 + measuredHeight) - dpf2);
+            canvas.drawRoundRect(rectF, measuredWidth, measuredWidth, paint2);
+        } else {
+            float f23 = ((this.a * measuredHeight) + f17) - f7;
+            rectF.set(0.0f, f23 + dpf2, getMeasuredWidth(), (f23 + measuredHeight) - dpf2);
+            canvas.drawRoundRect(rectF, measuredWidth, measuredWidth, paint2);
         }
-        int i112 = this.b;
-        canvas2.scale((i112 * 1.45f) / AndroidUtilities.dp(28.0f), (i112 * 1.5f) / AndroidUtilities.dp(28.0f));
-        canvas2.rotate(interpolation);
-        zd0Var = org.telegram.ui.ActionBar.h6.x3;
-        if (zd0Var != null) {
+        if (this.M) {
+            float measuredWidth2 = getMeasuredWidth();
+            float dp2 = AndroidUtilities.dp(6.0f);
+            Paint paint3 = this.F;
+            canvas.drawRect(0.0f, 0.0f, measuredWidth2, dp2, paint3);
+            canvas.drawRect(0.0f, getMeasuredHeight() - AndroidUtilities.dp(6.0f), getMeasuredWidth(), getMeasuredHeight(), paint3);
+            canvas.translate(0.0f, getMeasuredHeight() - AndroidUtilities.dp(6.0f));
+            canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), AndroidUtilities.dp(6.0f), this.G);
         }
-        canvas2.restore();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return this.b;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return this.b;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.g = i10;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.a.setColorFilter(colorFilter);
     }
 }

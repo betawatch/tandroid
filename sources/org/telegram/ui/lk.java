@@ -4,15 +4,15 @@ import android.content.Context;
 import android.view.View;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class lk extends org.telegram.ui.Components.pd {
-    public final /* synthetic */ xn d;
+public final class lk extends org.telegram.ui.Components.qd {
+    public final /* synthetic */ wn d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lk(xn xnVar, Context context) {
+    public lk(wn wnVar, Context context) {
         super(context);
-        this.d = xnVar;
+        this.d = wnVar;
     }
 
     @Override // android.view.View
@@ -23,20 +23,20 @@ public final class lk extends org.telegram.ui.Components.pd {
     @Override // android.view.View
     public final void setTranslationY(float f7) {
         super.setTranslationY(f7);
-        xn xnVar = this.d;
-        jk jkVar = xnVar.Y;
+        wn wnVar = this.d;
+        jk jkVar = wnVar.Y;
         if (jkVar != null) {
             jkVar.invalidate();
         }
         if (getVisibility() != 8) {
-            xnVar.h9(true);
-            FrameLayout frameLayout = xnVar.P;
+            wnVar.h9(true);
+            FrameLayout frameLayout = wnVar.P;
             if (frameLayout != null) {
                 frameLayout.setTranslationY(f7);
             }
-            xnVar.o9();
-            xnVar.r9();
-            View view = xnVar.fragmentView;
+            wnVar.o9();
+            wnVar.r9();
+            View view = wnVar.fragmentView;
             if (view != null) {
                 view.invalidate();
             }

@@ -1,7 +1,13 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+import android.view.View;
+
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public abstract class ll0 extends s4.h0 {
-    public abstract boolean D(s4.c1 c1Var);
+public interface ll0 {
+    void c(float f7, float f10, int i10, View view);
+
+    boolean d1(View view);
+
+    void r0(View view, float f7, float f10);
 }

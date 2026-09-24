@@ -3,9 +3,9 @@ package ai;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.em;
-import org.telegram.ui.Components.ux0;
+import org.telegram.ui.Components.fy0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class w4 implements org.telegram.ui.Components.ob {
     public final /* synthetic */ int a;
@@ -40,7 +40,7 @@ public final class w4 implements org.telegram.ui.Components.ob {
                 org.telegram.ui.Components.ub ubVar = qcVar.e;
                 xh.j0 j0Var = (xh.j0) this.b;
                 ch.d c10 = j0Var.e.c(ubVar, null, true);
-                d6Var = ((org.telegram.ui.ActionBar.f3) j0Var).resourcesProvider;
+                d6Var = ((org.telegram.ui.ActionBar.e3) j0Var).resourcesProvider;
                 dh.e eVar = new dh.e(d6Var);
                 eVar.e = new d2.c(4);
                 float dpf2 = AndroidUtilities.dpf2(0.5f);
@@ -102,7 +102,7 @@ public final class w4 implements org.telegram.ui.Components.ob {
             case 4:
                 return ((org.telegram.ui.Components.x7) this.b).e.E.getHeight();
             case 5:
-                return ((org.telegram.ui.ActionBar.n2) this.b).getBottomInset();
+                return ((org.telegram.ui.ActionBar.m2) this.b).getBottomInset();
             case 6:
                 org.telegram.ui.Components.ob obVar = (org.telegram.ui.Components.ob) this.b;
                 if (obVar == null) {
@@ -114,7 +114,7 @@ public final class w4 implements org.telegram.ui.Components.ob {
                 dp = ((em) this.b).c.b.getBottomInset();
                 break;
             case 8:
-                FrameLayout frameLayout = ((ux0) this.b).w;
+                FrameLayout frameLayout = ((fy0) this.b).w;
                 if (frameLayout != null) {
                     return frameLayout.getHeight();
                 }
@@ -129,7 +129,7 @@ public final class w4 implements org.telegram.ui.Components.ob {
             case 10:
                 return 0;
             default:
-                return (int) ((zg.c0) ((yh.u3) this.b).c).u;
+                return (int) ((zg.b0) ((yh.t3) this.b).c).u;
         }
         return dp + editTextHeight;
     }

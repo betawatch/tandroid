@@ -10,11 +10,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import java.lang.reflect.Constructor;
-import l.m;
 import l.n;
-import l.r;
+import l.o;
+import l.s;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class g {
     public CharSequence A;
@@ -39,7 +39,7 @@ public final class g {
     public int w;
     public String x;
     public String y;
-    public n z;
+    public o z;
     public ColorStateList C = null;
     public PorterDuff.Mode D = null;
     public int b = 0;
@@ -98,17 +98,17 @@ public final class g {
             }
         }
         if (this.r >= 2) {
-            if (menuItem instanceof m) {
-                m mVar = (m) menuItem;
-                mVar.x = (mVar.x & (-5)) | 4;
-            } else if (menuItem instanceof r) {
-                r rVar = (r) menuItem;
-                l0.a aVar = rVar.c;
+            if (menuItem instanceof n) {
+                n nVar = (n) menuItem;
+                nVar.x = (nVar.x & (-5)) | 4;
+            } else if (menuItem instanceof s) {
+                s sVar = (s) menuItem;
+                l0.a aVar = sVar.c;
                 try {
-                    if (rVar.d == null) {
-                        rVar.d = aVar.getClass().getDeclaredMethod("setExclusiveCheckable", Boolean.TYPE);
+                    if (sVar.d == null) {
+                        sVar.d = aVar.getClass().getDeclaredMethod("setExclusiveCheckable", Boolean.TYPE);
                     }
-                    rVar.d.invoke(aVar, Boolean.TRUE);
+                    sVar.d.invoke(aVar, Boolean.TRUE);
                 } catch (Exception e7) {
                     Log.w("MenuItemWrapper", "Error while calling setExclusiveCheckable", e7);
                 }
@@ -127,10 +127,10 @@ public final class g {
                 menuItem.setActionView(i11);
             }
         }
-        n nVar = this.z;
-        if (nVar != null) {
+        o oVar = this.z;
+        if (oVar != null) {
             if (menuItem instanceof l0.a) {
-                ((l0.a) menuItem).a(nVar);
+                ((l0.a) menuItem).a(oVar);
             } else {
                 Log.w("MenuItemCompat", "setActionProvider: item does not implement SupportMenuItem; ignoring");
             }

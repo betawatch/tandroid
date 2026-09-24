@@ -18,16 +18,16 @@ import i2.f;
 import i2.f0;
 import java.util.ArrayList;
 import n4.y;
-import w7.l;
+import w7.m;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class b extends f implements Handler.Callback {
     public final a I;
     public final c0 J;
     public final Handler K;
     public final l3.a L;
-    public l M;
+    public m M;
     public boolean N;
     public boolean O;
     public long P;
@@ -69,7 +69,7 @@ public final class b extends f implements Handler.Callback {
             if (a2 != null) {
                 a aVar = this.I;
                 if (aVar.b(a2)) {
-                    l a10 = aVar.a(a2);
+                    m a10 = aVar.a(a2);
                     byte[] c10 = o0VarArr[i10].c();
                     c10.getClass();
                     l3.a aVar2 = this.L;
@@ -181,7 +181,7 @@ public final class b extends f implements Handler.Callback {
                 l3.a aVar = this.L;
                 aVar.clear();
                 y yVar = this.c;
-                yVar.h();
+                yVar.n();
                 int w10 = w(yVar, aVar, 0);
                 if (w10 == -4) {
                     if (aVar.isEndOfStream()) {
@@ -189,9 +189,9 @@ public final class b extends f implements Handler.Callback {
                     } else if (aVar.e >= this.w) {
                         aVar.r = this.P;
                         aVar.c();
-                        l lVar = this.M;
+                        m mVar = this.M;
                         String str = d0.a;
-                        p0 a2 = lVar.a(aVar);
+                        p0 a2 = mVar.a(aVar);
                         if (a2 != null) {
                             ArrayList arrayList = new ArrayList(a2.a.length);
                             C(a2, arrayList);

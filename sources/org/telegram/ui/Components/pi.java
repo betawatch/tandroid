@@ -5,7 +5,7 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class pi extends ri {
     public TLRPC.User b;
@@ -20,7 +20,7 @@ public final class pi extends ri {
         setWillNotDraw(false);
         setFocusable(true);
         setFocusableInTouchMode(true);
-        d6Var = ((org.telegram.ui.ActionBar.f3) wiVar).resourcesProvider;
+        d6Var = ((org.telegram.ui.ActionBar.e3) wiVar).resourcesProvider;
         oh.b bVar = new oh.b(context);
         bVar.d = d6Var;
         bVar.Q = true;
@@ -31,20 +31,20 @@ public final class pi extends ri {
         bVar.a(false);
         w9 w9Var = new w9(context);
         bVar.c = w9Var;
-        bVar.addView(w9Var, w7.x5.d(24, 24.0f, 49, 0.0f, 4.0f, 0.0f, 0.0f));
+        bVar.addView(w9Var, w7.y5.d(24, 24.0f, 49, 0.0f, 4.0f, 0.0f, 0.0f));
         bVar.w = org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.cl, d6Var);
         bVar.s = org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.al, d6Var);
         bVar.v = org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.bl, d6Var);
         bVar.f();
         this.a = bVar;
-        bVar.getBackupImageView().a.setDelegate(new x1(23));
-        addView(this.a, w7.x5.c(-1.0f, -1));
+        bVar.getBackupImageView().a.setDelegate(new x1(25));
+        addView(this.a, w7.y5.c(-1.0f, -1));
     }
 
     public final void a(boolean z10) {
         boolean z11 = this.c != null && (-this.b.id) == this.d.W0;
         this.a.e(z11, z10);
-        yi0 lottieAnimation = this.a.getBackupImageView().getImageReceiver().getLottieAnimation();
+        ij0 lottieAnimation = this.a.getBackupImageView().getImageReceiver().getLottieAnimation();
         if (!z10) {
             if (lottieAnimation != null) {
                 lottieAnimation.stop();

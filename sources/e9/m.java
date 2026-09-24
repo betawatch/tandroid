@@ -1,16 +1,16 @@
 package e9;
 
 import java.util.Map;
-import v7.s6;
+import v7.t6;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public abstract class m implements Map.Entry {
     @Override // java.util.Map.Entry
     public final boolean equals(Object obj) {
         if (obj instanceof Map.Entry) {
             Map.Entry entry = (Map.Entry) obj;
-            if (s6.a(getKey(), entry.getKey()) && s6.a(getValue(), entry.getValue())) {
+            if (t6.a(getKey(), entry.getKey()) && t6.a(getValue(), entry.getValue())) {
                 return true;
             }
         }

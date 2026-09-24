@@ -3,14 +3,14 @@ package i2;
 import java.util.Set;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.pf0;
+import org.telegram.ui.Components.kn0;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.ym0;
-import org.telegram.ui.c10;
+import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.zf0;
+import org.telegram.ui.b10;
 import yh.t5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ int a;
@@ -38,15 +38,15 @@ public final /* synthetic */ class g0 implements Runnable {
                 fVar.q(p5, 1033, new hg.r(p5, i10, i11, this.b));
                 break;
             case 1:
-                ((pf0) this.d).a.b.x3(this.c, this.b);
+                ((zf0) this.d).a.b.x3(this.c, this.b);
                 break;
             case 2:
-                ym0 ym0Var = (ym0) this.d;
-                ym0Var.o = null;
-                ym0Var.c(this.c, this.b, true);
+                kn0 kn0Var = (kn0) this.d;
+                kn0Var.o = null;
+                kn0Var.c(this.c, this.b, true);
                 break;
             case 3:
-                xc a02 = xc.a0((c10) this.d);
+                yc a02 = yc.a0((b10) this.d);
                 boolean z10 = this.b;
                 int i12 = z10 ? R.raw.folder_in : R.raw.folder_out;
                 int i13 = this.c;

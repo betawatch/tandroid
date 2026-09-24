@@ -30,14 +30,14 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
-import org.telegram.messenger.ul;
+import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.op;
 import org.telegram.ui.Components.pq;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class t5 extends FrameLayout {
     public static final Rect a0 = new Rect();
@@ -48,8 +48,8 @@ public final class t5 extends FrameLayout {
     public final Paint I;
     public AnimatorSet J;
     public final org.telegram.ui.ActionBar.d6 K;
-    public vh.h L;
-    public vh.g M;
+    public vh.g L;
+    public vh.f M;
     public boolean N;
     public boolean O;
     public long P;
@@ -85,38 +85,38 @@ public final class t5 extends FrameLayout {
         setWillNotDraw(false);
         o5 o5Var = new o5(this, context);
         this.b = o5Var;
-        addView(o5Var, w7.x5.c(80.0f, 80));
+        addView(o5Var, w7.y5.c(80.0f, 80));
         p5 p5Var = new p5(this, context);
         this.a = p5Var;
         p5Var.setBlurAllowed(true);
-        o5Var.addView(p5Var, w7.x5.c(-1.0f, -1));
+        o5Var.addView(p5Var, w7.y5.c(-1.0f, -1));
         q5 q5Var = new q5(context, 0);
         q5Var.b = new RectF();
         this.h = q5Var;
         q5Var.setWillNotDraw(false);
         q5Var.setPadding(AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(5.0f), 0);
-        o5Var.addView(q5Var, w7.x5.d(-2, 17.0f, 83, 4.0f, 0.0f, 0.0f, 4.0f));
+        o5Var.addView(q5Var, w7.y5.d(-2, 17.0f, 83, 4.0f, 0.0f, 0.0f, 4.0f));
         ImageView imageView = new ImageView(context);
         this.e = imageView;
         imageView.setImageResource(R.drawable.play_mini_video);
-        q5Var.addView(imageView, w7.x5.e(-2, -2, 19));
+        q5Var.addView(imageView, w7.y5.e(-2, -2, 19));
         TextView textView = new TextView(context);
         this.f = textView;
         textView.setTextColor(-1);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setTextSize(1, 12.0f);
         textView.setImportantForAccessibility(2);
-        q5Var.addView(textView, w7.x5.d(-2, -2.0f, 19, 13.0f, -0.7f, 0.0f, 0.0f));
+        q5Var.addView(textView, w7.y5.d(-2, -2.0f, 19, 13.0f, -0.7f, 0.0f, 0.0f));
         op opVar = new op(context, 24, d6Var);
         this.d = opVar;
         opVar.setDrawBackgroundAsArc(7);
         opVar.b(org.telegram.ui.ActionBar.h6.W9, org.telegram.ui.ActionBar.h6.X9, org.telegram.ui.ActionBar.h6.V9);
-        addView(opVar, w7.x5.d(26, 26.0f, 51, 52.0f, 4.0f, 0.0f, 0.0f));
+        addView(opVar, w7.y5.d(26, 26.0f, 51, 52.0f, 4.0f, 0.0f, 0.0f));
         opVar.setVisibility(0);
         setFocusable(true);
         FrameLayout frameLayout = new FrameLayout(context);
         this.c = frameLayout;
-        addView(frameLayout, w7.x5.d(42, 42.0f, 51, 38.0f, 0.0f, 0.0f, 0.0f));
+        addView(frameLayout, w7.y5.d(42, 42.0f, 51, 38.0f, 0.0f, 0.0f, 0.0f));
         this.y = AndroidUtilities.dp(80.0f);
     }
 
@@ -381,7 +381,7 @@ public final class t5 extends FrameLayout {
             q5 q5Var = this.h;
             Property property = View.ALPHA;
             animatorSet3.playTogether(ObjectAnimator.ofFloat(q5Var, (Property<q5, Float>) property, fArr), ObjectAnimator.ofFloat(opVar, (Property<op, Float>) property, z10 ? 1.0f : 0.0f));
-            this.n.addListener(new org.telegram.ui.u4(this, 8));
+            this.n.addListener(new org.telegram.ui.t4(this, 8));
             this.n.start();
         }
     }
@@ -418,12 +418,12 @@ public final class t5 extends FrameLayout {
         }
         if (z10) {
             if (this.M == null) {
-                this.M = vh.g.e(o5Var);
+                this.M = vh.f.e(o5Var);
             }
         } else {
-            vh.g gVar = this.M;
-            if (gVar != null) {
-                gVar.b(this);
+            vh.f fVar = this.M;
+            if (fVar != null) {
+                fVar.b(this);
                 this.M = null;
             }
         }
@@ -432,12 +432,12 @@ public final class t5 extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        vh.g gVar = this.M;
-        if (gVar != null) {
-            if (gVar.i) {
-                this.M = vh.g.e(this);
+        vh.f fVar = this.M;
+        if (fVar != null) {
+            if (fVar.i) {
+                this.M = vh.f.e(this);
             } else {
-                gVar.a(this);
+                fVar.a(this);
             }
         }
     }
@@ -445,9 +445,9 @@ public final class t5 extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        vh.g gVar = this.M;
-        if (gVar != null) {
-            gVar.b(this);
+        vh.f fVar = this.M;
+        if (fVar != null) {
+            fVar.b(this);
         }
     }
 
@@ -478,7 +478,7 @@ public final class t5 extends FrameLayout {
                 sb2.append(LocaleController.getString(R.string.AttachPhoto));
             } else {
                 StringBuilder sb3 = new StringBuilder();
-                ul.m(R.string.AttachVideo, ", ", sb3);
+                c1.n(R.string.AttachVideo, ", ", sb3);
                 sb3.append(LocaleController.formatDuration(this.G.duration));
                 sb2.append(sb3.toString());
             }
@@ -499,7 +499,7 @@ public final class t5 extends FrameLayout {
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
         if (this.x) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.y, TLObject.FLAG_30), ul.C(2.0f, this.y, TLObject.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.y, TLObject.FLAG_30), ok.C(2.0f, this.y, TLObject.FLAG_30));
             return;
         }
         if (this.E) {
@@ -532,7 +532,7 @@ public final class t5 extends FrameLayout {
                 this.v = false;
                 playSoundEffect(0);
                 sendAccessibilityEvent(1);
-                this.w.b(this);
+                this.w.a(this);
                 invalidate();
             } else if (motionEvent.getAction() == 3) {
                 this.v = false;

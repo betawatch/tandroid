@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qd1 implements Runnable {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final /* synthetic */ class qd1 implements Runnable {
         TLRPC.Message message;
         int i10;
         int i11 = this.a;
-        nn nnVar = null;
+        mn mnVar = null;
         boolean z10 = false;
         Object obj = this.c;
         Object obj2 = this.d;
@@ -57,20 +57,20 @@ public final /* synthetic */ class qd1 implements Runnable {
                 break;
             case 2:
                 de1 de1Var = (de1) obj3;
-                xn xnVar = (xn) obj2;
+                wn wnVar = (wn) obj2;
                 MessageObject messageObject = de1Var.G;
                 int i12 = ((TLRPC.TodoItem) obj).id;
                 if (messageObject != null && (message = messageObject.messageOwner) != null && (message.media instanceof TLRPC.TL_messageMediaToDo)) {
                     messageObject.getDialogId();
-                    nnVar = new nn();
-                    nnVar.a = messageObject;
-                    nnVar.b = -1;
-                    nnVar.c = -1;
-                    nnVar.g = true;
-                    nnVar.d = i12;
-                    nnVar.e();
+                    mnVar = new mn();
+                    mnVar.a = messageObject;
+                    mnVar.b = -1;
+                    mnVar.c = -1;
+                    mnVar.g = true;
+                    mnVar.d = i12;
+                    mnVar.e();
                 }
-                xnVar.Cb(messageObject, nnVar);
+                wnVar.Cb(messageObject, mnVar);
                 de1Var.c(false);
                 break;
             case 3:
@@ -85,7 +85,7 @@ public final /* synthetic */ class qd1 implements Runnable {
                 if (le1Var.a.getMeasuredHeight() > 0) {
                     ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                     le1Var.y = ofFloat;
-                    ofFloat.addUpdateListener(new s11(le1Var, 15));
+                    ofFloat.addUpdateListener(new q11(le1Var, 15));
                     le1Var.y.setDuration(100L);
                     le1Var.y.start();
                 } else {
@@ -115,7 +115,7 @@ public final /* synthetic */ class qd1 implements Runnable {
                         TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
                         for (int i14 = 0; i14 < messages_messages.messages.size(); i14++) {
                             TLRPC.Message message2 = messages_messages.messages.get(i14);
-                            i10 = ((org.telegram.ui.ActionBar.n2) sf1Var.t0).currentAccount;
+                            i10 = ((org.telegram.ui.ActionBar.m2) sf1Var.t0).currentAccount;
                             MessageObject messageObject2 = new MessageObject(i10, message2, false, false);
                             messageObject2.setQuery(str3);
                             arrayList3.add(messageObject2);

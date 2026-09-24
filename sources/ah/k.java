@@ -2,7 +2,7 @@ package ah;
 
 import android.graphics.RenderNode;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class k {
     public final RenderNode a;
@@ -24,14 +24,14 @@ public final class k {
         aVar.b = 0L;
         aVar.a = false;
         j jVar = this.b;
-        jVar.m(aVar);
+        jVar.U(aVar);
         long j3 = aVar.a ? -1L : aVar.b;
         boolean z10 = (this.a.hasDisplayList() && width == this.e && height == this.f && j3 == this.d && j3 != -1) ? false : true;
         this.e = width;
         this.f = height;
         this.d = j3;
         if (z10) {
-            jVar.b(this.a.beginRecording());
+            jVar.d(this.a.beginRecording());
             this.a.endRecording();
         }
     }

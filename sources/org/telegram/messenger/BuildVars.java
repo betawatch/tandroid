@@ -7,7 +7,7 @@ import java.lang.Thread;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class BuildVars {
     public static String APP_HASH = null;
@@ -50,7 +50,7 @@ public class BuildVars {
             LOGS_ENABLED = z10;
             if (z10) {
                 final Thread.UncaughtExceptionHandler defaultUncaughtExceptionHandler = Thread.getDefaultUncaughtExceptionHandler();
-                Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() { // from class: org.telegram.messenger.n0
+                Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() { // from class: org.telegram.messenger.o0
                     @Override // java.lang.Thread.UncaughtExceptionHandler
                     public final void uncaughtException(Thread thread, Throwable th2) {
                         BuildVars.lambda$static$0(defaultUncaughtExceptionHandler, thread, th2);

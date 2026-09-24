@@ -8,9 +8,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
-public final class t extends yh.v3 {
+public final class t extends yh.u3 {
     public final Path A0;
     public final float[] B0;
     public final /* synthetic */ v C0;
@@ -23,7 +23,7 @@ public final class t extends yh.v3 {
         this.B0 = new float[8];
     }
 
-    @Override // yh.v3, android.view.ViewGroup, android.view.View
+    @Override // yh.u3, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         canvas.save();
         canvas.clipPath(this.A0);
@@ -31,17 +31,17 @@ public final class t extends yh.v3 {
         canvas.restore();
     }
 
-    @Override // yh.v3
+    @Override // yh.u3
     public final int getFinalHeight() {
         return AndroidUtilities.dp(288.0f);
     }
 
-    @Override // yh.v3
+    @Override // yh.u3
     public final float getRealHeight() {
         return AndroidUtilities.dp(288.0f);
     }
 
-    @Override // yh.v3
+    @Override // yh.u3
     public final void j(int i10) {
         v vVar = this.C0;
         TextView textView = vVar.b0;

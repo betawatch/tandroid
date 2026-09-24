@@ -23,15 +23,15 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class e30 extends LinearLayout implements VoIPService.StateListener, NotificationCenter.NotificationCenterDelegate {
     public float E;
     public float F;
     public TextView a;
     public TextView b;
-    public org.telegram.ui.Components.voip.v2 c;
-    public org.telegram.ui.Components.voip.v2 d;
+    public org.telegram.ui.Components.voip.w2 c;
+    public org.telegram.ui.Components.voip.w2 d;
     public w9 e;
     public RectF f;
     public Paint h;
@@ -51,7 +51,7 @@ public final class e30 extends LinearLayout implements VoIPService.StateListener
     }
 
     public static void b(e30 e30Var, Context context) {
-        org.telegram.ui.f60.t1(e30Var.getContext(), new c30(context, 0), Build.VERSION.SDK_INT < 23 || Settings.canDrawOverlays(context), false);
+        org.telegram.ui.d60.t1(e30Var.getContext(), new c30(context, 0), Build.VERSION.SDK_INT < 23 || Settings.canDrawOverlays(context), false);
     }
 
     public final void c(float f7, float f10, int i10) {
@@ -65,31 +65,31 @@ public final class e30 extends LinearLayout implements VoIPService.StateListener
     public final void d(boolean z10) {
         VoIPService sharedInstance;
         boolean z11;
-        org.telegram.ui.Components.voip.v2 v2Var = this.d;
-        org.telegram.ui.Components.voip.v2 v2Var2 = this.c;
-        if (v2Var2 == null || v2Var == null || (sharedInstance = VoIPService.getSharedInstance()) == null) {
+        org.telegram.ui.Components.voip.w2 w2Var = this.d;
+        org.telegram.ui.Components.voip.w2 w2Var2 = this.c;
+        if (w2Var2 == null || w2Var == null || (sharedInstance = VoIPService.getSharedInstance()) == null) {
             return;
         }
         boolean isBluetoothOn = sharedInstance.isBluetoothOn();
         boolean z12 = !isBluetoothOn && sharedInstance.isSpeakerphoneOn();
-        v2Var2.b(z12, z10);
+        w2Var2.b(z12, z10);
         if (isBluetoothOn) {
             z11 = z10;
-            v2Var2.c(R.drawable.calls_bluetooth, -1, 0, 0.1f, true, LocaleController.getString(R.string.VoipAudioRoutingBluetooth), false, z11);
+            w2Var2.c(R.drawable.calls_bluetooth, -1, 0, 0.1f, true, LocaleController.getString(R.string.VoipAudioRoutingBluetooth), false, z11);
         } else {
             z11 = z10;
             if (z12) {
-                v2Var2.c(R.drawable.calls_speaker, -1, 0, 0.3f, true, LocaleController.getString(R.string.VoipSpeaker), false, z11);
+                w2Var2.c(R.drawable.calls_speaker, -1, 0, 0.3f, true, LocaleController.getString(R.string.VoipSpeaker), false, z11);
             } else if (sharedInstance.isHeadsetPlugged()) {
-                v2Var2.c(R.drawable.calls_headphones, -1, 0, 0.1f, true, LocaleController.getString(R.string.VoipAudioRoutingHeadset), false, z11);
+                w2Var2.c(R.drawable.calls_headphones, -1, 0, 0.1f, true, LocaleController.getString(R.string.VoipAudioRoutingHeadset), false, z11);
             } else {
-                v2Var2.c(R.drawable.calls_speaker, -1, 0, 0.1f, true, LocaleController.getString(R.string.VoipSpeaker), false, z11);
+                w2Var2.c(R.drawable.calls_speaker, -1, 0, 0.1f, true, LocaleController.getString(R.string.VoipSpeaker), false, z11);
             }
         }
         if (sharedInstance.mutedByAdmin()) {
-            v2Var.c(R.drawable.calls_unmute, -1, i0.a.k(-1, 76), 0.1f, true, LocaleController.getString(R.string.VoipMutedByAdminShort), true, z11);
+            w2Var.c(R.drawable.calls_unmute, -1, i0.a.k(-1, 76), 0.1f, true, LocaleController.getString(R.string.VoipMutedByAdminShort), true, z11);
         } else {
-            v2Var.c(R.drawable.calls_unmute, -1, i0.a.k(-1, (int) ((sharedInstance.isMicMute() ? 0.3f : 0.15f) * 255.0f)), 0.1f, true, LocaleController.getString(sharedInstance.isMicMute() ? R.string.VoipUnmute : R.string.VoipMute), sharedInstance.isMicMute(), z11);
+            w2Var.c(R.drawable.calls_unmute, -1, i0.a.k(-1, (int) ((sharedInstance.isMicMute() ? 0.3f : 0.15f) * 255.0f)), 0.1f, true, LocaleController.getString(sharedInstance.isMicMute() ? R.string.VoipUnmute : R.string.VoipMute), sharedInstance.isMicMute(), z11);
         }
         invalidate();
     }

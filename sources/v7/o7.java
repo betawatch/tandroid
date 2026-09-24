@@ -1,14 +1,18 @@
 package v7;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public abstract class o7 {
-    public static int a(int i10, int i11) {
-        long j3 = i10 + i11;
-        int i12 = (int) j3;
-        if (j3 == ((long) i12)) {
-            return i12;
+    public static long a(double d) {
+        if (!b(d)) {
+            throw new IllegalArgumentException("not a normal value");
         }
-        throw new ArithmeticException("overflow: checkedAdd(" + i10 + ", " + i11 + ")");
+        int exponent = Math.getExponent(d);
+        long doubleToRawLongBits = Double.doubleToRawLongBits(d) & 4503599627370495L;
+        return exponent == -1023 ? doubleToRawLongBits << 1 : doubleToRawLongBits | 4503599627370496L;
+    }
+
+    public static boolean b(double d) {
+        return Math.getExponent(d) <= 1023;
     }
 }

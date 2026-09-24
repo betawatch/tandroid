@@ -8,24 +8,24 @@ import android.graphics.Rect;
 import android.os.Build;
 import android.os.Looper;
 import android.view.ViewOutlineProvider;
-import org.telegram.ui.jp0;
+import org.telegram.ui.ip0;
 import org.telegram.ui.t3;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public abstract class i0 {
-    public static final k2 a = new k2(21);
-    public static final k2 b = new k2(22);
+    public static final k2 a = new k2(23);
+    public static final k2 b = new k2(24);
     public static Path c;
     public static Outline d;
     public static Rect e;
 
-    public static void a(Canvas canvas, jp0 jp0Var, t3 t3Var) {
+    public static void a(Canvas canvas, ip0 ip0Var, t3 t3Var) {
         Path path;
         Outline outline;
         Rect rect;
-        ViewOutlineProvider outlineProvider = jp0Var.getOutlineProvider();
-        if (canvas.isHardwareAccelerated() || Build.VERSION.SDK_INT < 24 || !jp0Var.getClipToOutline() || outlineProvider == null) {
+        ViewOutlineProvider outlineProvider = ip0Var.getOutlineProvider();
+        if (canvas.isHardwareAccelerated() || Build.VERSION.SDK_INT < 24 || !ip0Var.getClipToOutline() || outlineProvider == null) {
             t3Var.run(canvas);
             return;
         }
@@ -46,7 +46,7 @@ public abstract class i0 {
             rect = new Rect();
         }
         Path path2 = path;
-        outlineProvider.getOutline(jp0Var, outline);
+        outlineProvider.getOutline(ip0Var, outline);
         path2.rewind();
         if (outline.isEmpty() || !outline.getRect(rect)) {
             t3Var.run(canvas);

@@ -10,9 +10,9 @@ import android.util.Log;
 import androidx.car.app.IStartCarApp;
 import androidx.car.app.utils.g;
 import j$.util.Objects;
-import tg.d;
+import s5.e;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class CarAppNotificationBroadcastReceiver extends BroadcastReceiver {
     public static final /* synthetic */ int a = 0;
@@ -35,7 +35,7 @@ public class CarAppNotificationBroadcastReceiver extends BroadcastReceiver {
         } else {
             IStartCarApp asInterface = IStartCarApp.Stub.asInterface(iBinder);
             Objects.requireNonNull(asInterface);
-            g.d("startCarApp from notification", new d(8, asInterface, intent));
+            g.d("startCarApp from notification", new e(9, asInterface, intent));
         }
     }
 }

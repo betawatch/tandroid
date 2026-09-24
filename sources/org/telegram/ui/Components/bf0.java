@@ -1,14 +1,47 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bf0 implements s61, xe0, ze0 {
-    public final /* synthetic */ jf0 a;
+public final class bf0 extends r6 {
+    public final /* synthetic */ int b;
+    public final /* synthetic */ ef0 c;
 
-    @Override // org.telegram.ui.Components.s61
-    public void b(wz wzVar) {
-        jf0 jf0Var = this.a;
-        jf0Var.l0 = wzVar;
-        wzVar.f(jf0Var);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public bf0(ef0 ef0Var, int i10) {
+        super("thumbAnimationProgress", 0);
+        this.b = i10;
+        switch (i10) {
+            case 1:
+                this.c = ef0Var;
+                super("thumbImageVisibleProgress", 0);
+                break;
+            default:
+                this.c = ef0Var;
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.r6
+    public final void b(Object obj, float f7) {
+        switch (this.b) {
+            case 0:
+                this.c.r = f7;
+                ((ef0) obj).invalidate();
+                break;
+            default:
+                this.c.n = f7;
+                ((ef0) obj).invalidate();
+                break;
+        }
+    }
+
+    @Override // android.util.Property
+    public final Object get(Object obj) {
+        switch (this.b) {
+            case 0:
+                return Float.valueOf(this.c.r);
+            default:
+                return Float.valueOf(this.c.n);
+        }
     }
 }

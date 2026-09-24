@@ -7,9 +7,9 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationsController;
 import org.telegram.messenger.TopicsController;
 import org.telegram.tgnet.tl.TL_communities;
-import org.telegram.ui.xn;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o9 implements Runnable {
     public final /* synthetic */ int a;
@@ -35,11 +35,11 @@ public final /* synthetic */ class o9 implements Runnable {
                 boolean z10 = this.c;
                 long j3 = this.b;
                 if (z10) {
-                    i11 = ((org.telegram.ui.ActionBar.f3) faVar).currentAccount;
+                    i11 = ((org.telegram.ui.ActionBar.e3) faVar).currentAccount;
                     MessagesController.getInstance(i11).loadChannelParticipants(Long.valueOf(j3), new p9(y9Var, j3, 0), 200);
                     break;
                 } else {
-                    i10 = ((org.telegram.ui.ActionBar.f3) faVar).currentAccount;
+                    i10 = ((org.telegram.ui.ActionBar.e3) faVar).currentAccount;
                     MessagesController.getInstance(i10).loadFullChat(j3, 0, true);
                     break;
                 }
@@ -60,7 +60,7 @@ public final /* synthetic */ class o9 implements Runnable {
                 t0Var.a();
                 fi.s0 s0Var = t0Var.h;
                 if (s0Var != null) {
-                    s0Var.e();
+                    s0Var.f();
                 }
                 MessagesController.getInstance(t0Var.d).resolveCommunityJoinPendingRequest(t0Var.e, j10, !this.c, new fi.r0(t0Var, 2));
                 break;
@@ -74,7 +74,7 @@ public final /* synthetic */ class o9 implements Runnable {
                 ((TopicsController) this.d).lambda$reloadTopics$24(this.b, this.c);
                 break;
             case 5:
-                xn.b0((xn) this.d, this.b, this.c);
+                wn.o0((wn) this.d, this.b, this.c);
                 break;
             default:
                 yh.o8 o8Var = (yh.o8) this.d;

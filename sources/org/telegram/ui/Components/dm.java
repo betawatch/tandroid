@@ -6,27 +6,27 @@ import java.util.HashMap;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.VideoEditedInfo;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public abstract class dm extends org.telegram.ui.mu0 {
+public abstract class dm extends org.telegram.ui.lu0 {
     public final /* synthetic */ ChatAttachAlertPhotoLayout a;
 
     public dm(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout) {
         this.a = chatAttachAlertPhotoLayout;
     }
 
-    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
+    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
     public final int H() {
         return ChatAttachAlertPhotoLayout.s1.size();
     }
 
-    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
+    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
     public final boolean N() {
         wi wiVar = this.a.b;
         return wiVar != null && wiVar.i0;
     }
 
-    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
+    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
     public final int R(int i10) {
         boolean z10 = ChatAttachAlertPhotoLayout.q1;
         MediaController.PhotoEntry b02 = this.a.b0(i10);
@@ -36,12 +36,12 @@ public abstract class dm extends org.telegram.ui.mu0 {
         return ChatAttachAlertPhotoLayout.t1.indexOf(Integer.valueOf(b02.imageId));
     }
 
-    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
+    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
     public final ArrayList c() {
         return ChatAttachAlertPhotoLayout.t1;
     }
 
-    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
+    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
     public final int k(int i10, VideoEditedInfo videoEditedInfo) {
         boolean z10;
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.a;
@@ -71,7 +71,7 @@ public abstract class dm extends org.telegram.ui.mu0 {
                         View childAt = ulVar2.getChildAt(i11);
                         if (!(childAt instanceof org.telegram.ui.Cells.t5) || ((Integer) childAt.getTag()).intValue() != i10) {
                             i11++;
-                        } else if ((wiVar.f0 instanceof org.telegram.ui.xn) && wiVar.T1) {
+                        } else if ((wiVar.f0 instanceof org.telegram.ui.wn) && wiVar.T1) {
                             ((org.telegram.ui.Cells.t5) childAt).b(Q, z10, false);
                         } else {
                             ((org.telegram.ui.Cells.t5) childAt).b(-1, z10, false);
@@ -86,7 +86,7 @@ public abstract class dm extends org.telegram.ui.mu0 {
                         View childAt2 = ulVar.getChildAt(i12);
                         if (!(childAt2 instanceof org.telegram.ui.Cells.t5) || ((Integer) childAt2.getTag()).intValue() != i10) {
                             i12++;
-                        } else if ((wiVar.f0 instanceof org.telegram.ui.xn) && wiVar.T1) {
+                        } else if ((wiVar.f0 instanceof org.telegram.ui.wn) && wiVar.T1) {
                             ((org.telegram.ui.Cells.t5) childAt2).b(Q, z10, false);
                         } else {
                             ((org.telegram.ui.Cells.t5) childAt2).b(-1, z10, false);
@@ -100,18 +100,18 @@ public abstract class dm extends org.telegram.ui.mu0 {
         return -1;
     }
 
-    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
+    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
     public final void m() {
         boolean z10 = ChatAttachAlertPhotoLayout.q1;
         this.a.v0();
     }
 
-    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
+    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
     public final HashMap v() {
         return ChatAttachAlertPhotoLayout.s1;
     }
 
-    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
+    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
     public final boolean x(int i10) {
         boolean z10 = ChatAttachAlertPhotoLayout.q1;
         MediaController.PhotoEntry b02 = this.a.b0(i10);

@@ -5,7 +5,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yi0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -22,7 +22,7 @@ public final /* synthetic */ class yi0 implements RequestDelegate {
             case 0:
                 final int i10 = 0;
                 final ej0 ej0Var = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.xi0
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.wi0
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i10) {
@@ -42,7 +42,7 @@ public final /* synthetic */ class yi0 implements RequestDelegate {
             case 1:
                 final int i11 = 1;
                 final ej0 ej0Var2 = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.xi0
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.wi0
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i11) {
@@ -62,7 +62,7 @@ public final /* synthetic */ class yi0 implements RequestDelegate {
             default:
                 final int i12 = 2;
                 final ej0 ej0Var3 = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.xi0
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.wi0
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i12) {

@@ -1,69 +1,34 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.tgnet.TLRPC;
+import android.app.Activity;
+import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class tl extends mu0 {
-    public final /* synthetic */ MessageObject a;
-    public final /* synthetic */ MediaController.PhotoEntry b;
-    public final /* synthetic */ xn c;
+public final class tl extends org.telegram.ui.Components.o20 {
+    public final /* synthetic */ wn b;
 
-    public tl(xn xnVar, MessageObject messageObject, MediaController.PhotoEntry photoEntry) {
-        this.c = xnVar;
-        this.a = messageObject;
-        this.b = photoEntry;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public tl(wn wnVar, Activity activity, org.telegram.ui.ActionBar.m2 m2Var) {
+        super(activity, m2Var);
+        this.b = wnVar;
     }
 
-    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
-    public final wu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
-        return xn.A1(this.c, this.a, null, i10, z10, true);
-    }
-
-    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
-    public final boolean O() {
-        xn xnVar = this.c;
-        if (xnVar.Y == null || !xnVar.x9()) {
-            return false;
-        }
-        xnVar.Y.Q();
-        return true;
-    }
-
-    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
-    public final MessageObject U() {
-        MessageObject messageObject = this.c.p5;
-        MessageObject messageObject2 = this.a;
-        if (messageObject == messageObject2) {
-            return messageObject2;
-        }
-        return null;
-    }
-
-    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
-    public final void e(CharSequence charSequence) {
-        this.c.Y.g1(charSequence, false);
-    }
-
-    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
-    public final boolean g() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
-    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
-        xn xnVar = this.c;
-        if (xnVar.p5 != this.a) {
+    @Override // org.telegram.ui.Components.o20
+    public final void m() {
+        wn wnVar = this.b;
+        wnVar.Q7();
+        UndoView undoView = wnVar.y3;
+        if (undoView == null) {
             return;
         }
-        MediaController.PhotoEntry photoEntry = this.b;
-        if (photoEntry.isCropped || photoEntry.isPainted || photoEntry.isFiltered || videoEditedInfo != null) {
-            xnVar.q(photoEntry, videoEditedInfo, z10, i11, 0, z11, 0L);
-        } else {
-            xnVar.Y.e0();
-        }
+        undoView.j(75, 0L, null);
+        wnVar.getMessagesController().removeSuggestion(wnVar.T5, "CONVERT_GIGAGROUP");
+    }
+
+    @Override // org.telegram.ui.Components.o20
+    public final void n() {
+        wn wnVar = this.b;
+        wnVar.getMessagesController().convertToGigaGroup(wnVar.getParentActivity(), wnVar.e, wnVar, new z0(this, 19));
     }
 }

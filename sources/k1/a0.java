@@ -10,13 +10,13 @@ import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
 import org.telegram.tgnet.TLObject;
-import v7.r7;
 import v7.s7;
 import v7.t7;
-import w7.i6;
+import v7.u7;
+import w7.j6;
 import zd.e0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class a0 implements f {
     public static final LinkedHashSet r = new LinkedHashSet();
@@ -25,7 +25,7 @@ public final class a0 implements f {
     public final na.d b;
     public final xa.c c;
     public final String d = ".tmp";
-    public final gd.g e = s7.a(new k0(this, 1));
+    public final gd.g e = t7.a(new k0(this, 1));
     public final ce.n f = new ce.n(c0.a);
     public List h;
     public final com.google.firebase.messaging.t n;
@@ -54,20 +54,20 @@ public final class a0 implements f {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final Object a(a0 a0Var, j jVar, kd.c cVar) {
+    public static final Object b(a0 a0Var, j jVar, kd.c cVar) {
         q qVar;
         int i10;
         zd.t tVar;
         a0 a0Var2;
-        Object h;
+        Object i11;
         zd.s sVar;
         Throwable a2;
         b0 b0Var;
         if (cVar instanceof q) {
             qVar = (q) cVar;
-            int i11 = qVar.f;
-            if ((i11 & TLObject.FLAG_31) != 0) {
-                qVar.f = i11 - TLObject.FLAG_31;
+            int i12 = qVar.f;
+            if ((i12 & TLObject.FLAG_31) != 0) {
+                qVar.f = i12 - TLObject.FLAG_31;
                 Object obj = qVar.d;
                 jd.a aVar = jd.a.a;
                 i10 = qVar.f;
@@ -79,7 +79,7 @@ public final class a0 implements f {
                                 zd.t tVar2 = qVar.c;
                                 a0 a0Var3 = qVar.b;
                                 j jVar2 = (j) qVar.a;
-                                t7.b(obj);
+                                u7.b(obj);
                                 tVar = tVar2;
                                 a0Var2 = a0Var3;
                                 jVar = jVar2;
@@ -88,11 +88,11 @@ public final class a0 implements f {
                             }
                         }
                         zd.s sVar2 = (zd.s) qVar.a;
-                        t7.b(obj);
+                        u7.b(obj);
                         sVar = sVar2;
                     } catch (Throwable th2) {
                         th = th2;
-                        obj = t7.a(th);
+                        obj = u7.a(th);
                         sVar = a0Var;
                         a2 = gd.f.a(obj);
                         zd.t tVar3 = (zd.t) sVar;
@@ -109,14 +109,14 @@ public final class a0 implements f {
                     }
                     return gd.i.a;
                 }
-                t7.b(obj);
+                u7.b(obj);
                 tVar = jVar.b;
                 try {
                     b0Var = (b0) a0Var.f.c();
                 } catch (Throwable th3) {
                     th = th3;
                     a0Var = tVar;
-                    obj = t7.a(th);
+                    obj = u7.a(th);
                     sVar = a0Var;
                     a2 = gd.f.a(obj);
                     zd.t tVar322 = (zd.t) sVar;
@@ -129,11 +129,11 @@ public final class a0 implements f {
                     id.h hVar = jVar.d;
                     qVar.a = tVar;
                     qVar.f = 1;
-                    h = a0Var.h(r22, hVar, qVar);
-                    if (h == aVar) {
+                    i11 = a0Var.i(r22, hVar, qVar);
+                    if (i11 == aVar) {
                     }
                     zd.t tVar4 = tVar;
-                    obj = h;
+                    obj = i11;
                     sVar = tVar4;
                     a2 = gd.f.a(obj);
                     zd.t tVar3222 = (zd.t) sVar;
@@ -157,9 +157,9 @@ public final class a0 implements f {
                 qVar.b = a0Var;
                 qVar.c = tVar;
                 qVar.f = 2;
-                Object d = a0Var.d(qVar);
+                Object e = a0Var.e(qVar);
                 a0Var2 = a0Var;
-                if (d == aVar) {
+                if (e == aVar) {
                 }
                 return aVar;
                 ?? r23 = jVar.a;
@@ -168,7 +168,7 @@ public final class a0 implements f {
                 qVar.b = null;
                 qVar.c = null;
                 qVar.f = 3;
-                h = a0Var2.h(r23, hVar2, qVar);
+                i11 = a0Var2.i(r23, hVar2, qVar);
             }
         }
         qVar = new q(a0Var, cVar);
@@ -184,11 +184,11 @@ public final class a0 implements f {
         qVar.b = null;
         qVar.c = null;
         qVar.f = 3;
-        h = a0Var2.h(r232, hVar22, qVar);
+        i11 = a0Var2.i(r232, hVar22, qVar);
     }
 
     @Override // k1.f
-    public final Object T(rd.p pVar, kd.c cVar) {
+    public final Object a(rd.p pVar, kd.c cVar) {
         zd.t a2 = e0.a();
         this.n.f(new j(pVar, a2, (b0) this.f.c(), cVar.getContext()));
         Object h = a2.h(cVar);
@@ -196,7 +196,7 @@ public final class a0 implements f {
         return h;
     }
 
-    public final File b() {
+    public final File c() {
         return (File) this.e.a();
     }
 
@@ -211,7 +211,7 @@ public final class a0 implements f {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object c(kd.c cVar) {
+    public final Object d(kd.c cVar) {
         r rVar;
         int i10;
         ie.a a2;
@@ -240,7 +240,7 @@ public final class a0 implements f {
                 jd.a aVar3 = jd.a.a;
                 i10 = rVar.r;
                 if (i10 != 0) {
-                    t7.b(obj);
+                    u7.b(obj);
                     ce.n nVar3 = this.f;
                     if (!kotlin.jvm.internal.i.a(nVar3.c(), c0.a) && !(nVar3.c() instanceof h)) {
                         throw new IllegalStateException("Check failed.");
@@ -252,7 +252,7 @@ public final class a0 implements f {
                     rVar.c = pVar;
                     rVar.d = pVar;
                     rVar.r = 1;
-                    obj = g(rVar);
+                    obj = h(rVar);
                     if (obj != aVar3) {
                         a0Var = this;
                         pVar2 = pVar;
@@ -268,7 +268,7 @@ public final class a0 implements f {
                         nVar2 = (kotlin.jvm.internal.n) rVar.c;
                         pVar4 = (kotlin.jvm.internal.p) rVar.b;
                         a0Var3 = rVar.a;
-                        t7.b(obj);
+                        u7.b(obj);
                         try {
                             nVar2.a = true;
                             ((ie.d) aVar2).e(null);
@@ -287,7 +287,7 @@ public final class a0 implements f {
                     pVar3 = (kotlin.jvm.internal.p) rVar.c;
                     aVar = (ie.a) rVar.b;
                     a0Var2 = rVar.a;
-                    t7.b(obj);
+                    u7.b(obj);
                     while (it.hasNext()) {
                         rd.p pVar5 = (rd.p) it.next();
                         rVar.a = a0Var2;
@@ -331,7 +331,7 @@ public final class a0 implements f {
                 pVar2 = (kotlin.jvm.internal.p) rVar.c;
                 a2 = (ie.a) rVar.b;
                 a0Var = rVar.a;
-                t7.b(obj);
+                u7.b(obj);
                 pVar.a = obj;
                 kotlin.jvm.internal.n nVar5 = new kotlin.jvm.internal.n();
                 t tVar2 = new t(a2, nVar5, pVar2, a0Var);
@@ -399,7 +399,7 @@ public final class a0 implements f {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object d(kd.c cVar) {
+    public final Object e(kd.c cVar) {
         u uVar;
         int i10;
         a0 a0Var;
@@ -412,11 +412,11 @@ public final class a0 implements f {
                 jd.a aVar = jd.a.a;
                 i10 = uVar.d;
                 if (i10 != 0) {
-                    t7.b(obj);
+                    u7.b(obj);
                     try {
                         uVar.a = this;
                         uVar.d = 1;
-                        if (c(uVar) == aVar) {
+                        if (d(uVar) == aVar) {
                             return aVar;
                         }
                     } catch (Throwable th2) {
@@ -431,7 +431,7 @@ public final class a0 implements f {
                     }
                     a0Var = uVar.a;
                     try {
-                        t7.b(obj);
+                        u7.b(obj);
                     } catch (Throwable th3) {
                         th = th3;
                         a0Var.f.d(new h(th));
@@ -455,7 +455,7 @@ public final class a0 implements f {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object e(kd.c cVar) {
+    public final Object f(kd.c cVar) {
         v vVar;
         int i10;
         a0 a0Var;
@@ -468,11 +468,11 @@ public final class a0 implements f {
                 jd.a aVar = jd.a.a;
                 i10 = vVar.d;
                 if (i10 != 0) {
-                    t7.b(obj);
+                    u7.b(obj);
                     try {
                         vVar.a = this;
                         vVar.d = 1;
-                        if (c(vVar) == aVar) {
+                        if (d(vVar) == aVar) {
                             return aVar;
                         }
                     } catch (Throwable th2) {
@@ -487,7 +487,7 @@ public final class a0 implements f {
                     }
                     a0Var = vVar.a;
                     try {
-                        t7.b(obj);
+                        u7.b(obj);
                     } catch (Throwable th3) {
                         th = th3;
                         a0Var.f.d(new h(th));
@@ -521,7 +521,7 @@ public final class a0 implements f {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object f(kd.c cVar) {
+    public final Object g(kd.c cVar) {
         ?? r02;
         int i10;
         FileInputStream fileInputStream;
@@ -538,9 +538,9 @@ public final class a0 implements f {
                     i10 = r02.e;
                     boolean z10 = true;
                     if (i10 != 0) {
-                        t7.b(obj);
+                        u7.b(obj);
                         try {
-                            FileInputStream fileInputStream2 = new FileInputStream(b());
+                            FileInputStream fileInputStream2 = new FileInputStream(c());
                             try {
                                 n1.g gVar = n1.g.a;
                                 r02.a = this;
@@ -561,7 +561,7 @@ public final class a0 implements f {
                         } catch (FileNotFoundException e) {
                             e = e;
                             r02 = this;
-                            if (r02.b().exists()) {
+                            if (r02.c().exists()) {
                                 throw e;
                             }
                             return new n1.b(z10);
@@ -573,24 +573,24 @@ public final class a0 implements f {
                         fileInputStream = r02.b;
                         r02 = r02.a;
                         try {
-                            t7.b(obj);
+                            u7.b(obj);
                         } catch (Throwable th4) {
                             th2 = th4;
                             try {
                                 throw th2;
                             } catch (Throwable th5) {
-                                i6.a(fileInputStream, th2);
+                                j6.a(fileInputStream, th2);
                                 throw th5;
                             }
                         }
                     }
-                    i6.a(fileInputStream, null);
+                    j6.a(fileInputStream, null);
                     return obj;
                 }
             }
             if (i10 != 0) {
             }
-            i6.a(fileInputStream, null);
+            j6.a(fileInputStream, null);
             return obj;
         } catch (FileNotFoundException e7) {
             e = e7;
@@ -602,12 +602,17 @@ public final class a0 implements f {
         boolean z102 = true;
     }
 
+    @Override // k1.f
+    public final ce.b getData() {
+        return this.c;
+    }
+
     /* JADX WARN: Removed duplicated region for block: B:40:0x0066  */
     /* JADX WARN: Removed duplicated region for block: B:8:0x0022  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object g(kd.c cVar) {
+    public final Object h(kd.c cVar) {
         x xVar;
         int i10;
         a0 a0Var;
@@ -624,7 +629,7 @@ public final class a0 implements f {
                     if (i10 == 1) {
                         a0Var = (a0) xVar.a;
                         try {
-                            t7.b(obj);
+                            u7.b(obj);
                             return obj;
                         } catch (a e) {
                             e = e;
@@ -638,12 +643,12 @@ public final class a0 implements f {
                     if (i10 == 2) {
                         a aVar3 = (a) xVar.b;
                         a0 a0Var2 = (a0) xVar.a;
-                        t7.b(obj);
+                        u7.b(obj);
                         try {
                             xVar.a = aVar3;
                             xVar.b = obj;
                             xVar.e = 3;
-                            if (a0Var2.i(obj, xVar) != aVar2) {
+                            if (a0Var2.j(obj, xVar) != aVar2) {
                                 return obj;
                             }
                         } catch (IOException e7) {
@@ -657,22 +662,22 @@ public final class a0 implements f {
                         Object obj2 = xVar.b;
                         aVar = (a) xVar.a;
                         try {
-                            t7.b(obj);
+                            u7.b(obj);
                             return obj2;
                         } catch (IOException e10) {
                             e = e10;
                         }
                     }
-                    r7.a(aVar, e);
+                    s7.a(aVar, e);
                     throw aVar;
                 }
-                t7.b(obj);
+                u7.b(obj);
                 try {
                     xVar.a = this;
                     xVar.e = 1;
-                    Object f7 = f(xVar);
-                    if (f7 != aVar2) {
-                        return f7;
+                    Object g10 = g(xVar);
+                    if (g10 != aVar2) {
+                        return g10;
                     }
                 } catch (a e11) {
                     e = e11;
@@ -695,11 +700,6 @@ public final class a0 implements f {
         return aVar22;
     }
 
-    @Override // k1.f
-    public final ce.b getData() {
-        return this.c;
-    }
-
     /* JADX WARN: Removed duplicated region for block: B:13:0x00a7  */
     /* JADX WARN: Removed duplicated region for block: B:22:0x007f  */
     /* JADX WARN: Removed duplicated region for block: B:25:0x0089  */
@@ -710,7 +710,7 @@ public final class a0 implements f {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object h(rd.p pVar, id.h hVar, kd.c cVar) {
+    public final Object i(rd.p pVar, id.h hVar, kd.c cVar) {
         y yVar;
         int i10;
         b bVar;
@@ -729,7 +729,7 @@ public final class a0 implements f {
                 i10 = yVar.f;
                 id.c cVar2 = null;
                 if (i10 != 0) {
-                    t7.b(obj4);
+                    u7.b(obj4);
                     b bVar2 = (b) this.f.c();
                     Object obj5 = bVar2.a;
                     if ((obj5 != null ? obj5.hashCode() : 0) != bVar2.b) {
@@ -756,14 +756,14 @@ public final class a0 implements f {
                     }
                     obj3 = yVar.b;
                     a0Var2 = yVar.a;
-                    t7.b(obj4);
+                    u7.b(obj4);
                     a0Var2.f.d(new b(obj3, obj3 != null ? obj3.hashCode() : 0));
                     return obj3;
                 }
                 obj = yVar.c;
                 bVar = (b) yVar.b;
                 a0Var = yVar.a;
-                t7.b(obj4);
+                u7.b(obj4);
                 obj2 = bVar.a;
                 if ((obj2 == null ? obj2.hashCode() : 0) == bVar.b) {
                     throw new IllegalStateException("Data in DataStore was mutated but DataStore is only compatible with Immutable types.");
@@ -775,7 +775,7 @@ public final class a0 implements f {
                 yVar.b = obj4;
                 yVar.c = null;
                 yVar.f = 2;
-                if (a0Var.i(obj4, yVar) != aVar) {
+                if (a0Var.j(obj4, yVar) != aVar) {
                     obj3 = obj4;
                     a0Var2 = a0Var;
                     a0Var2.f.d(new b(obj3, obj3 != null ? obj3.hashCode() : 0));
@@ -814,7 +814,7 @@ public final class a0 implements f {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object i(Object obj, kd.c cVar) {
+    public final Object j(Object obj, kd.c cVar) {
         z zVar;
         ?? r32;
         FileOutputStream fileOutputStream;
@@ -831,16 +831,16 @@ public final class a0 implements f {
                     r32 = zVar.h;
                     gd.i iVar = gd.i.a;
                     if (r32 != 0) {
-                        t7.b(obj2);
-                        File b10 = b();
-                        File parentFile = b10.getCanonicalFile().getParentFile();
+                        u7.b(obj2);
+                        File c10 = c();
+                        File parentFile = c10.getCanonicalFile().getParentFile();
                         if (parentFile != null) {
                             parentFile.mkdirs();
                             if (!parentFile.isDirectory()) {
-                                throw new IOException(kotlin.jvm.internal.i.g(b10, "Unable to create parent directories of "));
+                                throw new IOException(kotlin.jvm.internal.i.g(c10, "Unable to create parent directories of "));
                             }
                         }
-                        r32 = new File(kotlin.jvm.internal.i.g(this.d, b().getAbsolutePath()));
+                        r32 = new File(kotlin.jvm.internal.i.g(this.d, c().getAbsolutePath()));
                         FileOutputStream fileOutputStream3 = new FileOutputStream((File) r32);
                         try {
                             n1.g gVar = n1.g.a;
@@ -872,21 +872,21 @@ public final class a0 implements f {
                         r32 = zVar.b;
                         a0Var = zVar.a;
                         try {
-                            t7.b(obj2);
+                            u7.b(obj2);
                             r32 = r32;
                         } catch (Throwable th3) {
                             th = th3;
                             try {
                                 throw th;
                             } catch (Throwable th4) {
-                                i6.a(fileOutputStream, th);
+                                j6.a(fileOutputStream, th);
                                 throw th4;
                             }
                         }
                     }
                     fileOutputStream2.getFD().sync();
-                    i6.a(fileOutputStream, null);
-                    if (!r32.renameTo(a0Var.b())) {
+                    j6.a(fileOutputStream, null);
+                    if (!r32.renameTo(a0Var.c())) {
                         return iVar;
                     }
                     throw new IOException("Unable to rename " + r32 + ".This likely means that there are multiple instances of DataStore for this file. Ensure that you are only creating a single instance of datastore for this file.");
@@ -895,8 +895,8 @@ public final class a0 implements f {
             if (r32 != 0) {
             }
             fileOutputStream2.getFD().sync();
-            i6.a(fileOutputStream, null);
-            if (!r32.renameTo(a0Var.b())) {
+            j6.a(fileOutputStream, null);
+            if (!r32.renameTo(a0Var.c())) {
             }
         } catch (IOException e) {
             if (r32.exists()) {

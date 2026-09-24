@@ -2,37 +2,28 @@ package org.telegram.ui;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class ja1 implements iq {
-    public final /* synthetic */ TLRPC.TL_chatChannelParticipant a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean[] c;
+public final class ja1 extends kq {
+    public final /* synthetic */ boolean[] d1;
+    public final /* synthetic */ sa1 e1;
+    public final /* synthetic */ la1 f1;
 
-    public ja1(TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant, boolean z10, boolean[] zArr) {
-        this.a = tL_chatChannelParticipant;
-        this.b = z10;
-        this.c = zArr;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ja1(la1 la1Var, long j3, long j10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str, boolean z10, boolean[] zArr, sa1 sa1Var) {
+        super(j3, j10, tL_chatAdminRights, null, tL_chatBannedRights, str, 0, true, z10, null);
+        this.f1 = la1Var;
+        this.d1 = zArr;
+        this.e1 = sa1Var;
     }
 
-    @Override // org.telegram.ui.iq
-    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
-        TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant = this.a;
-        if (i10 == 0) {
-            TLRPC.ChannelParticipant channelParticipant = tL_chatChannelParticipant.channelParticipant;
-            channelParticipant.admin_rights = null;
-            channelParticipant.rank = "";
-        } else {
-            TLRPC.ChannelParticipant channelParticipant2 = tL_chatChannelParticipant.channelParticipant;
-            channelParticipant2.admin_rights = tL_chatAdminRights;
-            channelParticipant2.rank = str;
-            if (this.b) {
-                this.c[0] = true;
+    @Override // org.telegram.ui.ActionBar.m2
+    public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
+        if (!z10 && z11 && this.d1[0]) {
+            sa1 sa1Var = this.e1;
+            if (org.telegram.ui.Components.yc.a(sa1Var)) {
+                org.telegram.ui.Components.yc.C(sa1Var, this.f1.a.first_name).j();
             }
         }
-    }
-
-    @Override // org.telegram.ui.iq
-    public final void a(TLRPC.User user) {
     }
 }

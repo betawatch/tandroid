@@ -6,13 +6,13 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.g81;
-import org.telegram.ui.Components.nr0;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.v81;
+import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.zr0;
 import org.telegram.ui.ProfileActivity;
-import yh.k5;
+import yh.j5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g2 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -37,23 +37,23 @@ public final /* synthetic */ class g2 implements Utilities.Callback {
                 break;
             default:
                 TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) obj;
-                nr0 nr0Var = o2Var.a;
-                k5 k5Var = nr0Var.e;
+                zr0 zr0Var = o2Var.a;
+                j5 j5Var = zr0Var.e;
                 int i12 = tL_starGiftCollection.collection_id;
-                k5Var.getClass();
+                j5Var.getClass();
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(savedStarGift);
-                k5Var.a(i12, arrayList);
-                nr0Var.f(true);
-                g81 g81Var = nr0Var.n;
+                j5Var.a(i12, arrayList);
+                zr0Var.f(true);
+                v81 v81Var = zr0Var.n;
                 int i13 = tL_starGiftCollection.collection_id;
-                g81Var.d(i13, nr0Var.e.f(i13) + 1);
-                org.telegram.ui.ActionBar.n2 n2Var = nr0Var.a;
-                if (n2Var instanceof ProfileActivity) {
-                    ((ProfileActivity) n2Var).G4(true);
+                v81Var.d(i13, zr0Var.e.f(i13) + 1);
+                org.telegram.ui.ActionBar.m2 m2Var = zr0Var.a;
+                if (m2Var instanceof ProfileActivity) {
+                    ((ProfileActivity) m2Var).G4(true);
                 }
-                nr0Var.n();
-                xc.a0(n2Var).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2AddedToCollection, yh.y3.D1(savedStarGift.gift), tL_starGiftCollection.title))).j();
+                zr0Var.n();
+                yc.a0(m2Var).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2AddedToCollection, yh.x3.D1(savedStarGift.gift), tL_starGiftCollection.title))).j();
                 break;
         }
     }

@@ -22,9 +22,9 @@ import android.view.inputmethod.InputConnection;
 import android.widget.AbsSeekBar;
 import android.widget.EditText;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
-import w7.n6;
+import w7.o6;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class y {
     public static final int[] d = {R.attr.indeterminateDrawable, R.attr.progressDrawable};
@@ -39,7 +39,7 @@ public class y {
         if (keyListener instanceof NumberKeyListener) {
             return keyListener;
         }
-        ((n7.a1) ((k2.b0) this.c).b).getClass();
+        ((n7.z0) ((ka.c) this.c).b).getClass();
         if (keyListener instanceof q1.e) {
             return keyListener;
         }
@@ -53,7 +53,7 @@ public class y {
         switch (this.a) {
             case 0:
                 AbsSeekBar absSeekBar = (AbsSeekBar) this.b;
-                lf.i Q = lf.i.Q(absSeekBar.getContext(), attributeSet, d, i10);
+                la.h Q = la.h.Q(absSeekBar.getContext(), attributeSet, d, i10);
                 Drawable G = Q.G(0);
                 if (G != null) {
                     if (G instanceof AnimationDrawable) {
@@ -92,28 +92,28 @@ public class y {
     }
 
     public q1.b c(InputConnection inputConnection, EditorInfo editorInfo) {
-        k2.b0 b0Var = (k2.b0) this.c;
+        ka.c cVar = (ka.c) this.c;
         if (inputConnection == null) {
-            b0Var.getClass();
+            cVar.getClass();
             inputConnection = null;
         } else {
-            n7.a1 a1Var = (n7.a1) b0Var.b;
-            a1Var.getClass();
+            n7.z0 z0Var = (n7.z0) cVar.b;
+            z0Var.getClass();
             if (!(inputConnection instanceof q1.b)) {
-                inputConnection = new q1.b((EditText) a1Var.b, inputConnection, editorInfo);
+                inputConnection = new q1.b((EditText) z0Var.b, inputConnection, editorInfo);
             }
         }
         return (q1.b) inputConnection;
     }
 
     public void d(boolean z10) {
-        q1.i iVar = (q1.i) ((n7.a1) ((k2.b0) this.c).b).c;
+        q1.i iVar = (q1.i) ((n7.z0) ((ka.c) this.c).b).c;
         if (iVar.c != z10) {
             if (iVar.b != null) {
                 androidx.emoji2.text.l a2 = androidx.emoji2.text.l.a();
                 q1.h hVar = iVar.b;
                 a2.getClass();
-                n6.a(hVar, "initCallback cannot be null");
+                o6.a(hVar, "initCallback cannot be null");
                 ReentrantReadWriteLock reentrantReadWriteLock = a2.a;
                 reentrantReadWriteLock.writeLock().lock();
                 try {
@@ -177,6 +177,6 @@ public class y {
 
     public y(EditText editText) {
         this.b = editText;
-        this.c = new k2.b0(editText);
+        this.c = new ka.c(editText);
     }
 }

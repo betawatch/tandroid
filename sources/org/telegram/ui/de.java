@@ -3,10 +3,10 @@ package org.telegram.ui;
 import android.content.Context;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class de extends FrameLayout {
-    public final org.telegram.ui.Components.d61 a;
+    public final org.telegram.ui.Components.r61 a;
     public final org.telegram.ui.ActionBar.d6 b;
     public final int c;
     public final int d;
@@ -21,10 +21,10 @@ public final class de extends FrameLayout {
         this.c = i11;
         this.b = d6Var;
         this.e = o8Var;
-        org.telegram.ui.Components.d61 d61Var = new org.telegram.ui.Components.d61(context, i11, i12, true, new c5(this, 3), new z0(this, 13), null, d6Var);
-        this.a = d61Var;
-        addView(d61Var, w7.x5.c(-1.0f, -1));
-        d61Var.setOnScrollListener(new ii.n3(1, this, o8Var));
+        org.telegram.ui.Components.r61 r61Var = new org.telegram.ui.Components.r61(context, i11, i12, true, new b5(this, 3), new z0(this, 13), null, d6Var);
+        this.a = r61Var;
+        addView(r61Var, w7.y5.c(-1.0f, -1));
+        r61Var.setOnScrollListener(new ii.n3(1, this, o8Var));
     }
 
     @Override // android.view.ViewGroup, android.view.View

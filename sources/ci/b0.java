@@ -4,7 +4,7 @@ import android.view.KeyEvent;
 import android.view.TextureView;
 import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b0 implements Runnable {
     public final /* synthetic */ int a;
@@ -47,8 +47,8 @@ public final /* synthetic */ class b0 implements Runnable {
             case 1:
                 ii.x3 x3Var = (ii.x3) this.e;
                 KeyEvent.Callback A4 = x3Var.A4(this.b);
-                if (A4 instanceof org.telegram.ui.Cells.q9) {
-                    x3Var.n3.c0(this.c, this.d, (org.telegram.ui.Cells.q9) A4);
+                if (A4 instanceof org.telegram.ui.Cells.p9) {
+                    x3Var.n3.c0(this.c, this.d, (org.telegram.ui.Cells.p9) A4);
                     break;
                 }
                 break;

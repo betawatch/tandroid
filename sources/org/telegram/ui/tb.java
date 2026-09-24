@@ -4,9 +4,9 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class tb extends w7.y5 {
+public final class tb extends w7.z5 {
     public MessageObject a;
     public int b = 0;
     public boolean c = true;
@@ -18,7 +18,7 @@ public final class tb extends w7.y5 {
         this.f = ubVar;
     }
 
-    @Override // w7.y5
+    @Override // w7.z5
     public final void a() {
         MessageObject messageObject = this.a;
         ub ubVar = this.f;
@@ -33,19 +33,19 @@ public final class tb extends w7.y5 {
         this.a = null;
         ubVar.V = true;
         ubVar.d1();
-        AndroidUtilities.runOnUIThread(new fu0(this, 21));
+        AndroidUtilities.runOnUIThread(new eu0(this, 21));
     }
 
-    @Override // w7.y5
+    @Override // w7.z5
     public final void c() {
         ub ubVar = this.f;
         ubVar.K0 = ubVar.getNotificationCenter().setAnimationInProgress(ubVar.K0, ub.R0);
     }
 
-    @Override // w7.y5
+    @Override // w7.z5
     public final void d(View view) {
-        if (view instanceof org.telegram.ui.Cells.t1) {
-            this.f.h.add((org.telegram.ui.Cells.t1) view);
+        if (view instanceof org.telegram.ui.Cells.u1) {
+            this.f.h.add((org.telegram.ui.Cells.u1) view);
         }
     }
 }

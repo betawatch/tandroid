@@ -1,10 +1,38 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.AndroidUtilities;
+
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class we extends gq {
-    @Override // org.telegram.ui.Components.gq
-    public final int a() {
-        return org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.of, false);
+public final class we extends bh {
+    public final Rect x;
+    public final /* synthetic */ ChatActivityEnterView y;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public we(ChatActivityEnterView chatActivityEnterView, Activity activity) {
+        super(activity, 24);
+        this.y = chatActivityEnterView;
+        this.x = new Rect();
+    }
+
+    @Override // android.view.View
+    public final void draw(Canvas canvas) {
+        ChatActivityEnterView chatActivityEnterView = this.y;
+        if (!chatActivityEnterView.a1) {
+            super.draw(canvas);
+            return;
+        }
+        int measuredWidth = getMeasuredWidth();
+        int measuredHeight = getMeasuredHeight();
+        Rect rect = this.x;
+        rect.set(0, 0, measuredWidth, measuredHeight);
+        rect.inset(AndroidUtilities.dp(7.5f), AndroidUtilities.dp(7.5f));
+        Drawable drawable = getCurrentState() == zg.b ? chatActivityEnterView.O3 : chatActivityEnterView.N3;
+        drawable.setBounds(rect);
+        drawable.draw(canvas);
     }
 }

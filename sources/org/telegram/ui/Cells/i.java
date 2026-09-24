@@ -9,12 +9,12 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
-import org.telegram.ui.Components.ph;
-import org.telegram.ui.Components.xc;
-import org.telegram.ui.ap;
+import org.telegram.ui.Components.uc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.td1;
+import org.telegram.ui.zo;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class i extends ClickableSpan {
     public final /* synthetic */ int a;
@@ -43,23 +43,23 @@ public final class i extends ClickableSpan {
                 break;
             case 2:
                 CharacterStyle characterStyle = (CharacterStyle) this.b;
-                if (!(characterStyle instanceof p1)) {
-                    t1 t1Var = ((q1) this.c).d;
-                    k1 k1Var = t1Var.Jc;
-                    if (k1Var != null) {
-                        k1Var.V0(t1Var, characterStyle, false);
+                if (!(characterStyle instanceof q1)) {
+                    u1 u1Var = ((r1) this.c).d;
+                    l1 l1Var = u1Var.Jc;
+                    if (l1Var != null) {
+                        l1Var.V0(u1Var, characterStyle, false);
                         break;
                     }
                 } else {
-                    ((p1) characterStyle).onClick(view);
+                    ((q1) characterStyle).onClick(view);
                     break;
                 }
                 break;
             case 3:
                 try {
                     ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", (String) this.b));
-                    if (xc.a((org.telegram.ui.qa) this.c)) {
-                        xc.j((org.telegram.ui.qa) this.c).j();
+                    if (yc.a((org.telegram.ui.qa) this.c)) {
+                        yc.j((org.telegram.ui.qa) this.c).j();
                         break;
                     }
                 } catch (Exception e) {
@@ -68,13 +68,13 @@ public final class i extends ClickableSpan {
                 }
                 break;
             case 4:
-                nf.f.s(((x1) this.c).getContext(), "https://fragment.com/username/" + ((String) this.b));
+                nf.f.s(((y1) this.c).getContext(), "https://fragment.com/username/" + ((String) this.b));
                 break;
             case 5:
-                nf.f.s(((ap) this.c).getContext(), "https://fragment.com/username/" + ((String) this.b));
+                nf.f.s(((zo) this.c).getContext(), "https://fragment.com/username/" + ((String) this.b));
                 break;
             case 6:
-                ((ph) this.c).run();
+                ((uc) this.c).run();
                 break;
             case 7:
                 AndroidUtilities.addToClipboard((CharSequence) this.b);
@@ -83,8 +83,8 @@ public final class i extends ClickableSpan {
             default:
                 try {
                     ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", (String) this.b));
-                    if (xc.a((td1) this.c)) {
-                        xc.j((td1) this.c).j();
+                    if (yc.a((td1) this.c)) {
+                        yc.j((td1) this.c).j();
                         break;
                     }
                 } catch (Exception e7) {
@@ -134,9 +134,9 @@ public final class i extends ClickableSpan {
         this.c = runnable;
     }
 
-    public /* synthetic */ i(String str, org.telegram.ui.ActionBar.n2 n2Var, int i10) {
+    public /* synthetic */ i(String str, org.telegram.ui.ActionBar.m2 m2Var, int i10) {
         this.a = i10;
-        this.c = n2Var;
+        this.c = m2Var;
         this.b = str;
     }
 }

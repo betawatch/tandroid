@@ -26,7 +26,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class a implements o {
     public static final int[] s = {13, 14, 16, 18, 20, 21, 27, 32, 6, 7, 6, 6, 1, 1, 1, 1};
@@ -183,7 +183,7 @@ public final class a implements o {
             rVar.r = i12;
             rVar.I = 1;
             rVar.J = i11;
-            c.u(rVar, h0Var);
+            c.s(rVar, h0Var);
         }
         int i13 = 0;
         if (this.g == 0) {
@@ -209,11 +209,11 @@ public final class a implements o {
                         c5.b0 b0Var3 = yVar.a;
                         c5.b0 b0Var4 = yVar.b;
                         if (b0Var4.b == 0 && j3 > 0) {
-                            b0Var3.b(0L);
-                            b0Var4.b(0L);
+                            b0Var3.c(0L);
+                            b0Var4.c(0L);
                         }
-                        b0Var3.b(position);
-                        b0Var4.b(j3);
+                        b0Var3.c(position);
+                        b0Var4.c(j3);
                     }
                     if (this.p && Math.abs(this.q - j3) < 20000) {
                         this.p = false;

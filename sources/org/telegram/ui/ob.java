@@ -11,7 +11,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class ob implements org.telegram.ui.Cells.t0 {
     public final /* synthetic */ qb a;
@@ -21,7 +21,7 @@ public final class ob implements org.telegram.ui.Cells.t0 {
     }
 
     @Override // org.telegram.ui.Cells.t0
-    public final org.telegram.ui.ActionBar.n2 O0() {
+    public final org.telegram.ui.ActionBar.m2 O0() {
         return this.a.n;
     }
 
@@ -38,7 +38,7 @@ public final class ob implements org.telegram.ui.Cells.t0 {
                 ub.A0(ubVar, (TLRPC.TL_messages_exportedChatInvite) obj, ubVar.z0);
                 return;
             } else {
-                org.telegram.messenger.z0.o(R.string.LinkHashExpired, org.telegram.ui.Components.xc.a0(ubVar), R.raw.linkbroken, 36);
+                org.telegram.messenger.f0.p(R.string.LinkHashExpired, org.telegram.ui.Components.yc.a0(ubVar), R.raw.linkbroken, 36);
                 return;
             }
         }
@@ -47,18 +47,18 @@ public final class ob implements org.telegram.ui.Cells.t0 {
         tL_messages_getExportedChatInvite.link = tL_chatInviteExported.link;
         ubVar.A0 = true;
         final boolean[] zArr = new boolean[1];
-        org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(ubVar.getParentActivity(), 3, null);
-        b2Var.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.nb
+        org.telegram.ui.ActionBar.a2 a2Var = new org.telegram.ui.ActionBar.a2(ubVar.getParentActivity(), 3, null);
+        a2Var.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.nb
             @Override // android.content.DialogInterface.OnCancelListener
             public final void onCancel(DialogInterface dialogInterface) {
                 ob.this.a.n.A0 = false;
                 zArr[0] = true;
             }
         });
-        b2Var.q(300L);
-        int sendRequest = ubVar.getConnectionsManager().sendRequest(tL_messages_getExportedChatInvite, new ai.p3(this, tL_chatInviteExported, zArr, b2Var, 4));
+        a2Var.q(300L);
+        int sendRequest = ubVar.getConnectionsManager().sendRequest(tL_messages_getExportedChatInvite, new ai.p3(this, tL_chatInviteExported, zArr, a2Var, 4));
         ConnectionsManager connectionsManager = ubVar.getConnectionsManager();
-        i10 = ((org.telegram.ui.ActionBar.n2) ubVar).classGuid;
+        i10 = ((org.telegram.ui.ActionBar.m2) ubVar).classGuid;
         connectionsManager.bindRequestToGuid(sendRequest, i10);
     }
 
@@ -111,16 +111,16 @@ public final class ob implements org.telegram.ui.Cells.t0 {
         if (j3 < 0) {
             Bundle bundle = new Bundle();
             bundle.putLong("chat_id", -j3);
-            i11 = ((org.telegram.ui.ActionBar.n2) ubVar).currentAccount;
+            i11 = ((org.telegram.ui.ActionBar.m2) ubVar).currentAccount;
             if (MessagesController.getInstance(i11).checkCanOpenChat(bundle, ubVar)) {
-                ubVar.presentFragment(new xn(bundle), true);
+                ubVar.presentFragment(new wn(bundle), true);
                 return;
             }
             return;
         }
-        i10 = ((org.telegram.ui.ActionBar.n2) ubVar).currentAccount;
+        i10 = ((org.telegram.ui.ActionBar.m2) ubVar).currentAccount;
         if (j3 != UserConfig.getInstance(i10).getClientUserId()) {
-            Bundle e = w.c.e(j3, "user_id");
+            Bundle e = v7.j.e(j3, "user_id");
             ub.p0(ubVar, e, j3);
             ProfileActivity profileActivity = new ProfileActivity(e, null);
             profileActivity.N4(0);

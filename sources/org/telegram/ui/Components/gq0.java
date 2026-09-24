@@ -1,58 +1,89 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
+import android.content.Context;
 import android.graphics.Paint;
 import android.graphics.RectF;
-import android.util.Property;
 import android.view.View;
-import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public abstract class gq0 extends FrameLayout {
-    public org.telegram.ui.ActionBar.i5 a;
-    public org.telegram.ui.ActionBar.i5 b;
-    public ci.bb c;
-    public int d;
-    public AnimatorSet e;
-    public Paint f;
-    public RectF h;
+public final class gq0 extends tq0 {
+    public final /* synthetic */ uq0 n;
 
-    public final void a(int i10) {
-        if (this.d == i10) {
-            return;
-        }
-        this.d = i10;
-        AnimatorSet animatorSet = this.e;
-        if (animatorSet != null) {
-            animatorSet.cancel();
-        }
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        this.e = animatorSet2;
-        animatorSet2.playTogether(ObjectAnimator.ofFloat(this.c, (Property<ci.bb, Float>) View.TRANSLATION_X, this.d == 0 ? 0.0f : r0.getMeasuredWidth()));
-        this.e.setDuration(180L);
-        this.e.setInterpolator(rr.g);
-        this.e.addListener(new jd0(this, 12));
-        this.e.start();
-        ((tp0) this).n.Z0();
-    }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public gq0(uq0 uq0Var, Context context) {
+        super(context);
+        this.n = uq0Var;
+        final int i10 = 1;
+        this.f = new Paint(1);
+        this.h = new RectF();
+        View view = new View(context);
+        int dp = AndroidUtilities.dp(18.0f);
+        int i11 = org.telegram.ui.ActionBar.h6.O5;
+        int i12 = uq0.a1;
+        view.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.b0(dp, uq0Var.getThemedColor(i11)));
+        addView(view, w7.y5.d(-1, 36.0f, 51, 14.0f, 0.0f, 14.0f, 0.0f));
+        ci.bb bbVar = new ci.bb(this, context, 23);
+        this.c = bbVar;
+        addView(bbVar, w7.y5.d(-1, 36.0f, 51, 14.0f, 0.0f, 14.0f, 0.0f));
+        org.telegram.ui.ActionBar.h5 h5Var = new org.telegram.ui.ActionBar.h5(context);
+        this.b = h5Var;
+        int i13 = org.telegram.ui.ActionBar.h6.ng;
+        h5Var.setTextColor(uq0Var.getThemedColor(i13));
+        h5Var.setTextSize(13);
+        h5Var.setLeftDrawable(R.drawable.msg_tabs_mic1);
+        final int i14 = 0;
+        h5Var.l(LocaleController.getString(R.string.VoipGroupInviteCanSpeak), false);
+        h5Var.setGravity(17);
+        addView(h5Var, w7.y5.d(-1, -1.0f, 51, 14.0f, 0.0f, 0.0f, 0.0f));
+        h5Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.sq0
+            public final /* synthetic */ gq0 b;
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int size = (View.MeasureSpec.getSize(i10) - AndroidUtilities.dp(28.0f)) / 2;
-        ((FrameLayout.LayoutParams) this.b.getLayoutParams()).width = size;
-        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.a.getLayoutParams();
-        layoutParams.width = size;
-        layoutParams.leftMargin = AndroidUtilities.dp(14.0f) + size;
-        ci.bb bbVar = this.c;
-        ((FrameLayout.LayoutParams) bbVar.getLayoutParams()).width = size;
-        AnimatorSet animatorSet = this.e;
-        if (animatorSet != null) {
-            animatorSet.cancel();
-        }
-        bbVar.setTranslationX(this.d == 0 ? 0.0f : r2.width);
-        super.onMeasure(i10, i11);
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view2) {
+                switch (i14) {
+                    case 0:
+                        this.b.a(0);
+                        break;
+                    default:
+                        this.b.a(1);
+                        break;
+                }
+            }
+        });
+        org.telegram.ui.ActionBar.h5 h5Var2 = new org.telegram.ui.ActionBar.h5(context);
+        this.a = h5Var2;
+        h5Var2.setTextColor(uq0Var.getThemedColor(i13));
+        h5Var2.setTextSize(13);
+        h5Var2.setLeftDrawable(R.drawable.msg_tabs_mic2);
+        h5Var2.l(LocaleController.getString(R.string.VoipGroupInviteListenOnly), false);
+        h5Var2.setGravity(17);
+        addView(h5Var2, w7.y5.d(-1, -1.0f, 51, 0.0f, 0.0f, 14.0f, 0.0f));
+        h5Var2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.sq0
+            public final /* synthetic */ gq0 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view2) {
+                switch (i10) {
+                    case 0:
+                        this.b.a(0);
+                        break;
+                    default:
+                        this.b.a(1);
+                        break;
+                }
+            }
+        });
     }
 }

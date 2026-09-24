@@ -9,13 +9,13 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.d61;
+import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Components.m9;
-import org.telegram.ui.web.t0;
-import w7.x5;
+import org.telegram.ui.Components.r61;
+import org.telegram.ui.web.q0;
+import w7.y5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class q extends FrameLayout {
     public final m9 a;
@@ -34,17 +34,17 @@ public final class q extends FrameLayout {
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setTextSize(1, 16.0f);
         setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(68.0f), 0);
-        addView(textView, x5.g());
+        addView(textView, y5.g());
     }
 
-    public final d61 a(n2 n2Var, long j3, int i10, byte[] bArr, int i11, Utilities.Callback callback) {
+    public final r61 a(m2 m2Var, long j3, int i10, byte[] bArr, int i11, Utilities.Callback callback) {
         k kVar = this.c;
         if (kVar != null) {
             return kVar;
         }
-        p pVar = new p(n2Var.getCurrentAccount(), n2Var.getMessagesController().getInputPeer(j3), i10, bArr, new t0(this, 20), callback);
-        AndroidUtilities.runOnUIThread(new t0(pVar, 21), 1000L);
-        k kVar2 = new k(n2Var, new j(pVar, 0), i11);
+        p pVar = new p(m2Var.getCurrentAccount(), m2Var.getMessagesController().getInputPeer(j3), i10, bArr, new q0(this, 21), callback);
+        AndroidUtilities.runOnUIThread(new q0(pVar, 22), 1000L);
+        k kVar2 = new k(m2Var, new j(pVar, 0), i11);
         this.c = kVar2;
         kVar2.Y2.r = false;
         kVar2.j(new l(this, pVar));

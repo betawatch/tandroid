@@ -4,16 +4,16 @@ import android.widget.EditText;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class wi1 extends org.telegram.ui.ActionBar.f5 {
+public final class wi1 extends org.telegram.ui.ActionBar.e5 {
     public final /* synthetic */ WallpapersListActivity f;
 
     public wi1(WallpapersListActivity wallpapersListActivity) {
         this.f = wallpapersListActivity;
     }
 
-    @Override // org.telegram.ui.ActionBar.f5
+    @Override // org.telegram.ui.ActionBar.e5
     public final void k() {
         WallpapersListActivity wallpapersListActivity = this.f;
         bj1 bj1Var = wallpapersListActivity.J;
@@ -22,7 +22,7 @@ public final class wi1 extends org.telegram.ui.ActionBar.f5 {
         wallpapersListActivity.L.setSearchFieldHint(LocaleController.getString(R.string.SearchBackgrounds));
     }
 
-    @Override // org.telegram.ui.ActionBar.f5
+    @Override // org.telegram.ui.ActionBar.e5
     public final void m() {
         WallpapersListActivity wallpapersListActivity = this.f;
         wallpapersListActivity.H.setAdapter(wallpapersListActivity.I);
@@ -32,14 +32,14 @@ public final class wi1 extends org.telegram.ui.ActionBar.f5 {
         k();
     }
 
-    @Override // org.telegram.ui.ActionBar.f5
+    @Override // org.telegram.ui.ActionBar.e5
     public final void n() {
         WallpapersListActivity wallpapersListActivity = this.f;
         wallpapersListActivity.H.setAdapter(wallpapersListActivity.J);
         wallpapersListActivity.H.invalidate();
     }
 
-    @Override // org.telegram.ui.ActionBar.f5
+    @Override // org.telegram.ui.ActionBar.e5
     public final void q(EditText editText) {
         this.f.J.E(editText.getText().toString(), false);
     }

@@ -12,11 +12,11 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class fe extends LinearLayout {
     public final int a;
-    public final org.telegram.ui.Components.h81 b;
+    public final org.telegram.ui.Components.w81 b;
     public final ee c;
     public final long d;
     public final nd e;
@@ -40,17 +40,17 @@ public final class fe extends LinearLayout {
         this.d = j3;
         this.e = ndVar;
         setOrientation(1);
-        org.telegram.ui.Components.h81 h81Var = new org.telegram.ui.Components.h81(context, null);
-        this.b = h81Var;
+        org.telegram.ui.Components.w81 w81Var = new org.telegram.ui.Components.w81(context, null);
+        this.b = w81Var;
         ee eeVar = new ee(this, context, i10, j3, i11, d6Var);
         this.c = eeVar;
-        h81Var.setAdapter(eeVar);
-        View n10 = h81Var.n(3, true);
+        w81Var.setAdapter(eeVar);
+        View n10 = w81Var.n(3, true);
         View view = new View(context);
         view.setBackgroundColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.d7, d6Var));
-        addView(n10, w7.x5.n(-1, 48));
-        addView(view, new LinearLayout.LayoutParams(w7.x5.z(-1.0f), w7.x5.z(1.0f / AndroidUtilities.density)));
-        addView(h81Var, w7.x5.n(-1, -1));
+        addView(n10, w7.y5.n(-1, 48));
+        addView(view, new LinearLayout.LayoutParams(w7.y5.z(-1.0f), w7.y5.z(1.0f / AndroidUtilities.density)));
+        addView(w81Var, w7.y5.n(-1, -1));
         setBackgroundColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.h5, d6Var));
         c(1);
         c(0);
@@ -133,7 +133,7 @@ public final class fe extends LinearLayout {
                                             } else {
                                                 TLRPC.TL_error tL_error2 = tL_error;
                                                 if (tL_error2 != null) {
-                                                    org.telegram.ui.Components.xc.b0(tL_error2);
+                                                    org.telegram.ui.Components.yc.b0(tL_error2);
                                                 }
                                             }
                                             if (feVar2.a() != z10 && (ndVar = feVar2.e) != null) {
@@ -161,7 +161,7 @@ public final class fe extends LinearLayout {
                                             } else {
                                                 TLRPC.TL_error tL_error3 = tL_error;
                                                 if (tL_error3 != null) {
-                                                    org.telegram.ui.Components.xc.b0(tL_error3);
+                                                    org.telegram.ui.Components.yc.b0(tL_error3);
                                                 }
                                             }
                                             if (feVar3.a() != z10 && (ndVar2 = feVar3.e) != null) {
@@ -205,7 +205,7 @@ public final class fe extends LinearLayout {
                                             } else {
                                                 TLRPC.TL_error tL_error2 = tL_error;
                                                 if (tL_error2 != null) {
-                                                    org.telegram.ui.Components.xc.b0(tL_error2);
+                                                    org.telegram.ui.Components.yc.b0(tL_error2);
                                                 }
                                             }
                                             if (feVar22.a() != z12 && (ndVar = feVar22.e) != null) {
@@ -233,7 +233,7 @@ public final class fe extends LinearLayout {
                                             } else {
                                                 TLRPC.TL_error tL_error3 = tL_error;
                                                 if (tL_error3 != null) {
-                                                    org.telegram.ui.Components.xc.b0(tL_error3);
+                                                    org.telegram.ui.Components.yc.b0(tL_error3);
                                                 }
                                             }
                                             if (feVar3.a() != z12 && (ndVar2 = feVar3.e) != null) {
@@ -300,7 +300,7 @@ public final class fe extends LinearLayout {
                                             } else {
                                                 TLRPC.TL_error tL_error2 = tL_error;
                                                 if (tL_error2 != null) {
-                                                    org.telegram.ui.Components.xc.b0(tL_error2);
+                                                    org.telegram.ui.Components.yc.b0(tL_error2);
                                                 }
                                             }
                                             if (feVar22.a() != z10 && (ndVar = feVar22.e) != null) {
@@ -328,7 +328,7 @@ public final class fe extends LinearLayout {
                                             } else {
                                                 TLRPC.TL_error tL_error3 = tL_error;
                                                 if (tL_error3 != null) {
-                                                    org.telegram.ui.Components.xc.b0(tL_error3);
+                                                    org.telegram.ui.Components.yc.b0(tL_error3);
                                                 }
                                             }
                                             if (feVar3.a() != z10 && (ndVar2 = feVar3.e) != null) {
@@ -372,7 +372,7 @@ public final class fe extends LinearLayout {
                                             } else {
                                                 TLRPC.TL_error tL_error2 = tL_error;
                                                 if (tL_error2 != null) {
-                                                    org.telegram.ui.Components.xc.b0(tL_error2);
+                                                    org.telegram.ui.Components.yc.b0(tL_error2);
                                                 }
                                             }
                                             if (feVar22.a() != z12 && (ndVar = feVar22.e) != null) {
@@ -400,7 +400,7 @@ public final class fe extends LinearLayout {
                                             } else {
                                                 TLRPC.TL_error tL_error3 = tL_error;
                                                 if (tL_error3 != null) {
-                                                    org.telegram.ui.Components.xc.b0(tL_error3);
+                                                    org.telegram.ui.Components.yc.b0(tL_error3);
                                                 }
                                             }
                                             if (feVar3.a() != z12 && (ndVar2 = feVar3.e) != null) {
@@ -424,18 +424,18 @@ public final class fe extends LinearLayout {
     public final void d() {
         int i10 = 0;
         while (true) {
-            org.telegram.ui.Components.h81 h81Var = this.b;
-            if (i10 >= h81Var.getViewPages().length) {
+            org.telegram.ui.Components.w81 w81Var = this.b;
+            if (i10 >= w81Var.getViewPages().length) {
                 return;
             }
-            View view = h81Var.getViewPages()[i10];
+            View view = w81Var.getViewPages()[i10];
             if (view instanceof de) {
                 de deVar = (de) view;
-                org.telegram.ui.Components.d61 d61Var = deVar.a;
-                d61Var.Y2.N(true);
-                if (d61Var.canScrollVertically(1)) {
-                    for (int i11 = 0; i11 < d61Var.getChildCount(); i11++) {
-                        if (!(d61Var.getChildAt(i11) instanceof org.telegram.ui.Components.u00)) {
+                org.telegram.ui.Components.r61 r61Var = deVar.a;
+                r61Var.Y2.N(true);
+                if (r61Var.canScrollVertically(1)) {
+                    for (int i11 = 0; i11 < r61Var.getChildCount(); i11++) {
+                        if (!(r61Var.getChildAt(i11) instanceof org.telegram.ui.Components.u00)) {
                         }
                     }
                 }
@@ -448,23 +448,23 @@ public final class fe extends LinearLayout {
 
     public final void e() {
         this.c.i();
-        org.telegram.ui.Components.h81 h81Var = this.b;
-        h81Var.o(false);
-        View[] viewArr = h81Var.e;
-        int[] iArr = h81Var.f;
-        if (iArr[0] != h81Var.L.h(h81Var.b)) {
-            h81Var.I(0);
+        org.telegram.ui.Components.w81 w81Var = this.b;
+        w81Var.o(false);
+        View[] viewArr = w81Var.e;
+        int[] iArr = w81Var.f;
+        if (iArr[0] != w81Var.L.h(w81Var.b)) {
+            w81Var.I(0);
             View view = viewArr[1];
             if (view != null) {
-                h81Var.h.put(iArr[1], view);
-                h81Var.removeView(viewArr[1]);
+                w81Var.h.put(iArr[1], view);
+                w81Var.removeView(viewArr[1]);
                 viewArr[1] = null;
             }
             viewArr[0].setTranslationX(0.0f);
         }
     }
 
-    public org.telegram.ui.Components.ml0 getCurrentListView() {
+    public org.telegram.ui.Components.wl0 getCurrentListView() {
         View currentView = this.b.getCurrentView();
         if (currentView instanceof de) {
             return ((de) currentView).a;

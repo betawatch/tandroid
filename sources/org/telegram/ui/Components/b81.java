@@ -1,43 +1,77 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.os.AsyncTask;
+import java.util.ArrayList;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class b81 extends s4.d0 {
-    public final /* synthetic */ gg.j0 r;
+public final class b81 extends AsyncTask {
+    public int a = 0;
+    public final Paint b = new Paint(3);
+    public final /* synthetic */ e81 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b81(gg.j0 j0Var, Context context) {
-        super(context);
-        this.r = j0Var;
+    public b81(e81 e81Var) {
+        this.c = e81Var;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x0033, code lost:
-    
-        if ((org.telegram.messenger.AndroidUtilities.dp(21.0f) + r6.getRight()) > ((org.telegram.ui.Components.g81) r5.r.J).getMeasuredWidth()) goto L13;
-     */
-    @Override // s4.d0, s4.y0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void g(View view, s4.x0 x0Var) {
-        int j3 = j(o(), view);
-        if (j3 > 0 || (j3 == 0 && view.getLeft() - AndroidUtilities.dp(21.0f) < 0)) {
-            j3 += AndroidUtilities.dp(60.0f);
-        } else {
-            if (j3 >= 0) {
-                if (j3 == 0) {
+    @Override // android.os.AsyncTask
+    public final Object doInBackground(Object[] objArr) {
+        e81 e81Var = this.c;
+        this.a = ((Integer[]) objArr)[0].intValue();
+        Bitmap bitmap = null;
+        if (!isCancelled()) {
+            try {
+                Bitmap frameAtTime = e81Var.y.getFrameAtTime(e81Var.H * this.a * 1000, 2);
+                try {
+                    if (!isCancelled()) {
+                        if (frameAtTime == null) {
+                            return frameAtTime;
+                        }
+                        Bitmap createBitmap = Bitmap.createBitmap(e81Var.I, e81Var.J, frameAtTime.getConfig());
+                        Canvas canvas = new Canvas(createBitmap);
+                        float max = Math.max(e81Var.I / frameAtTime.getWidth(), e81Var.J / frameAtTime.getHeight());
+                        int width = (int) (frameAtTime.getWidth() * max);
+                        int height = (int) (frameAtTime.getHeight() * max);
+                        Rect rect = new Rect(0, 0, frameAtTime.getWidth(), frameAtTime.getHeight());
+                        int i10 = e81Var.I;
+                        int i11 = e81Var.J;
+                        canvas.drawBitmap(frameAtTime, rect, new Rect((i10 - width) / 2, (i11 - height) / 2, (i10 + width) / 2, (i11 + height) / 2), this.b);
+                        frameAtTime.recycle();
+                        return createBitmap;
+                    }
+                } catch (Exception e) {
+                    e = e;
+                    bitmap = frameAtTime;
+                    FileLog.e(e);
+                    return bitmap;
                 }
+            } catch (Exception e7) {
+                e = e7;
             }
-            j3 -= AndroidUtilities.dp(60.0f);
         }
-        int k10 = k(p(), view);
-        int max = Math.max(180, m((int) Math.sqrt((k10 * k10) + (j3 * j3))));
-        if (max > 0) {
-            x0Var.b(-j3, -k10, max, this.j);
+        return null;
+    }
+
+    @Override // android.os.AsyncTask
+    public final void onPostExecute(Object obj) {
+        Bitmap bitmap = (Bitmap) obj;
+        if (isCancelled()) {
+            return;
+        }
+        e81 e81Var = this.c;
+        ArrayList arrayList = e81Var.F;
+        c81 c81Var = new c81();
+        c81Var.a = bitmap;
+        arrayList.add(c81Var);
+        e81Var.invalidate();
+        int i10 = this.a;
+        if (i10 < e81Var.K) {
+            e81Var.d(i10 + 1);
         }
     }
 }

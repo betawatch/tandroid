@@ -9,9 +9,9 @@ import c6.e0;
 import com.google.android.gms.cast.CastDevice;
 import java.util.HashSet;
 import java.util.Iterator;
-import m4.p0;
+import m4.o0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class j extends b8.b {
     public final /* synthetic */ int b = 2;
@@ -34,16 +34,16 @@ public final class j extends b8.b {
         Object[] objArr = 0;
         switch (i11) {
             case 0:
-                p0 p0Var = (p0) obj;
+                o0 o0Var = (o0) obj;
                 if (i10 == 1) {
-                    x6.b bVar = new x6.b(p0Var);
+                    x6.b bVar = new x6.b(o0Var);
                     parcel2.writeNoException();
                     com.google.android.gms.internal.cast.v.d(parcel2, bVar);
                     break;
                 } else if (i10 == 2) {
                     int readInt = parcel.readInt();
                     com.google.android.gms.internal.cast.v.b(parcel);
-                    p0Var.getClass();
+                    o0Var.getClass();
                     Log.d("CAST_STATE", "onCastStateChanged " + readInt);
                     parcel2.writeNoException();
                     break;
@@ -184,7 +184,7 @@ public final class j extends b8.b {
                         com.google.android.gms.common.api.internal.v e7 = com.google.android.gms.common.api.internal.w.e();
                         e7.c = new c6.b0(e0Var, readString2, readString3, objArr == true ? 1 : 0);
                         e7.a = 8407;
-                        e0Var.e(1, e7.a()).addOnCompleteListener(new a4.m(this, 11));
+                        e0Var.e(1, e7.a()).addOnCompleteListener(new a4.m(this, 12));
                     }
                     parcel2.writeNoException();
                     break;
@@ -261,8 +261,8 @@ public final class j extends b8.b {
         this.c = bVar;
     }
 
-    public j(p0 p0Var) {
+    public j(o0 o0Var) {
         super("com.google.android.gms.cast.framework.ICastStateListener", 1);
-        this.c = p0Var;
+        this.c = o0Var;
     }
 }

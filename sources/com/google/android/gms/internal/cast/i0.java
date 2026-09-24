@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class i0 extends j0 {
     public final transient int c;
@@ -15,7 +15,7 @@ public final class i0 extends j0 {
 
     @Override // java.util.List
     public final Object get(int i10) {
-        v7.k5.a(i10, this.d);
+        v7.l5.a(i10, this.d);
         return this.e.get(i10 + this.c);
     }
 
@@ -37,7 +37,7 @@ public final class i0 extends j0 {
     @Override // com.google.android.gms.internal.cast.j0, java.util.List
     /* renamed from: q, reason: merged with bridge method [inline-methods] */
     public final j0 subList(int i10, int i11) {
-        v7.k5.c(i10, i11, this.d);
+        v7.l5.c(i10, i11, this.d);
         int i12 = this.c;
         return this.e.subList(i10 + i12, i11 + i12);
     }

@@ -11,7 +11,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.Cells.c6;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t0 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -59,11 +59,11 @@ public final /* synthetic */ class t0 implements DialogInterface.OnDismissListen
                 break;
             case 2:
                 EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.c;
-                org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) this.b;
+                org.telegram.ui.ActionBar.m2 m2Var = (org.telegram.ui.ActionBar.m2) this.b;
                 Activity activity = (Activity) this.d;
                 AndroidUtilities.hideKeyboard(editTextBoldCursor);
-                if (n2Var != null) {
-                    AndroidUtilities.requestAdjustResize(activity, n2Var.getClassGuid());
+                if (m2Var != null) {
+                    AndroidUtilities.requestAdjustResize(activity, m2Var.getClassGuid());
                     break;
                 }
                 break;
@@ -86,11 +86,11 @@ public final /* synthetic */ class t0 implements DialogInterface.OnDismissListen
                 break;
             case 5:
                 c6 c6Var = (c6) this.c;
-                org.telegram.ui.ActionBar.n2 n2Var2 = (org.telegram.ui.ActionBar.n2) this.b;
+                org.telegram.ui.ActionBar.m2 m2Var2 = (org.telegram.ui.ActionBar.m2) this.b;
                 Activity activity2 = (Activity) this.d;
                 AndroidUtilities.hideKeyboard(c6Var);
-                if (n2Var2 != null) {
-                    AndroidUtilities.requestAdjustResize(activity2, n2Var2.getClassGuid());
+                if (m2Var2 != null) {
+                    AndroidUtilities.requestAdjustResize(activity2, m2Var2.getClassGuid());
                     break;
                 }
                 break;

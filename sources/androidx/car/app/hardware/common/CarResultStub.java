@@ -9,12 +9,12 @@ import j$.util.Objects;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.Executor;
-import pg.e0;
+import org.telegram.ui.web.f1;
 import r.a;
 import r.c;
 import w.b;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class CarResultStub<T> extends ICarHardwareResult.Stub {
     private final b mBundle;
@@ -53,7 +53,7 @@ public class CarResultStub<T> extends ICarHardwareResult.Stub {
     private void notifyResults(boolean z10, b bVar) {
         T convertAndRecast = z10 ? convertAndRecast(bVar) : this.mUnsupportedValue;
         for (Map.Entry<c, Executor> entry : this.mListeners.entrySet()) {
-            entry.getValue().execute(new p2.b(8, entry, convertAndRecast));
+            entry.getValue().execute(new f1(14, entry, convertAndRecast));
         }
         if (this.mIsSingleShot) {
             this.mListeners.clear();
@@ -85,7 +85,7 @@ public class CarResultStub<T> extends ICarHardwareResult.Stub {
         int i10 = this.mResultType;
         b bVar = this.mBundle;
         aVar.getClass();
-        g.d("unsubscribeCarHardwareResult", new e0(aVar, i10, bVar));
+        g.d("unsubscribeCarHardwareResult", new org.webrtc.audio.b(aVar, i10, bVar));
         return true;
     }
 }

@@ -5,27 +5,27 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class ni {
     public boolean a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ SparseArray c;
-    public final /* synthetic */ xn d;
+    public final /* synthetic */ wn d;
 
-    public ni(xn xnVar, boolean z10, SparseArray sparseArray) {
-        this.d = xnVar;
+    public ni(wn wnVar, boolean z10, SparseArray sparseArray) {
+        this.d = wnVar;
         this.b = z10;
         this.c = sparseArray;
     }
 
     public final boolean a(int i10) {
-        xn xnVar = this.d;
-        int i11 = i10 - xnVar.A0.J;
-        if (i11 < 0 || i11 >= xnVar.u6.size()) {
+        wn wnVar = this.d;
+        int i11 = i10 - wnVar.A0.J;
+        if (i11 < 0 || i11 >= wnVar.u6.size()) {
             return false;
         }
-        MessageObject messageObject = (MessageObject) xnVar.u6.get(i11);
+        MessageObject messageObject = (MessageObject) wnVar.u6.get(i11);
         if (messageObject.contentType != 0) {
             return false;
         }
@@ -43,10 +43,10 @@ public final class ni {
     */
     public final void b(int i10, boolean z10, float f7, float f10) {
         s4.c1 K;
-        xn xnVar = this.d;
-        ArrayList arrayList = xnVar.u6;
-        SparseArray[] sparseArrayArr = xnVar.W5;
-        int i11 = i10 - xnVar.A0.J;
+        wn wnVar = this.d;
+        ArrayList arrayList = wnVar.u6;
+        SparseArray[] sparseArrayArr = wnVar.W5;
+        int i11 = i10 - wnVar.A0.J;
         if (this.b) {
             z10 = !z10;
         }
@@ -59,26 +59,26 @@ public final class ni {
                 if (z10) {
                     if (sparseArrayArr[1].size() + sparseArrayArr[0].size() >= 100) {
                         this.a = true;
-                        K = xnVar.x0.K(i10);
+                        K = wnVar.x0.K(i10);
                         if (K != null) {
                             View view = K.a;
-                            if (view instanceof org.telegram.ui.Cells.t1) {
-                                xn.b2(xnVar, view, false, f7, f10);
+                            if (view instanceof org.telegram.ui.Cells.u1) {
+                                wn.b2(wnVar, view, false, f7, f10);
                                 return;
                             }
                         }
-                        xnVar.x6(messageObject, false, true);
-                        xnVar.dc();
-                        xnVar.Wc(false);
+                        wnVar.x6(messageObject, false, true);
+                        wnVar.dc();
+                        wnVar.Wc(false);
                     }
                 }
                 this.a = false;
-                K = xnVar.x0.K(i10);
+                K = wnVar.x0.K(i10);
                 if (K != null) {
                 }
-                xnVar.x6(messageObject, false, true);
-                xnVar.dc();
-                xnVar.Wc(false);
+                wnVar.x6(messageObject, false, true);
+                wnVar.dc();
+                wnVar.Wc(false);
             }
         }
     }

@@ -1,36 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class hx0 extends hq0 {
-    public final /* synthetic */ ux0 b1;
+public final class hx0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ix0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hx0(ux0 ux0Var, Context context, String str, String str2, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, null, str, false, str2, false, d6Var);
-        this.b1 = ux0Var;
+    public /* synthetic */ hx0(ix0 ix0Var, int i10) {
+        this.a = i10;
+        this.b = ix0Var;
     }
 
-    @Override // org.telegram.ui.Components.hq0
-    public final void R0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        if (z10) {
-            AndroidUtilities.runOnUIThread(new xm(this, iVar, i10, 20), 100L);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.hq0, org.telegram.ui.ActionBar.f3
-    public final void dismissInternal() {
-        super.dismissInternal();
-        org.telegram.ui.ActionBar.n2 n2Var = this.b1.L;
-        if (n2Var instanceof org.telegram.ui.xn) {
-            AndroidUtilities.requestAdjustResize(n2Var.getParentActivity(), n2Var.getClassGuid());
-            if (((org.telegram.ui.xn) n2Var).Y.getVisibility() == 0) {
-                n2Var.getFragmentView().requestLayout();
-            }
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.b.s.setVisibility(8);
+                break;
+            case 1:
+                this.b.s.setVisibility(8);
+                break;
+            default:
+                this.b.s.setVisibility(8);
+                break;
         }
     }
 }

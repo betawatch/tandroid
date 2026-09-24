@@ -4,7 +4,6 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.app.NotificationManager;
 import android.content.Context;
-import android.graphics.RectF;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.Property;
@@ -16,10 +15,9 @@ import androidx.appcompat.widget.ActionMenuView;
 import androidx.appcompat.widget.Toolbar;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import java.io.IOException;
-import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class q4 implements Runnable {
     public final /* synthetic */ int a;
@@ -46,6 +44,7 @@ public final class q4 implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         Object obj;
+        i2.f0 f0Var;
         m.h hVar;
         int i10 = 0;
         switch (this.a) {
@@ -140,8 +139,8 @@ public final class q4 implements Runnable {
                 return;
             case 12:
                 qg.j jVar = ((ci.nb) this.b).J0;
-                if (jVar instanceof qg.x2) {
-                    ((qg.x2) jVar).getEditText();
+                if (jVar instanceof qg.v2) {
+                    ((qg.v2) jVar).getEditText();
                     return;
                 }
                 return;
@@ -213,21 +212,34 @@ public final class q4 implements Runnable {
                 eVar3.h.animate().setDuration(120L).alpha(1.0f).start();
                 return;
             case 24:
+                ki.r0 r0Var = (ki.r0) this.b;
+                if (r0Var.V == 5 && (f0Var = r0Var.R) != null && r0Var.w) {
+                    long J0 = f0Var.J0();
+                    long j3 = r0Var.F;
+                    if (J0 < j3 || J0 >= r0Var.G) {
+                        r0Var.R.W0(5, j3);
+                    }
+                    r0Var.c.getClass();
+                    r0Var.h.postDelayed(this, 33L);
+                    return;
+                }
+                return;
+            case 25:
                 m.r1 r1Var = (m.r1) this.b;
                 r1Var.w = null;
                 r1Var.drawableStateChanged();
                 return;
-            case 25:
+            case 26:
                 ActionMenuView actionMenuView = ((Toolbar) this.b).a;
                 if (actionMenuView == null || (hVar = actionMenuView.J) == null) {
                     return;
                 }
                 hVar.l();
                 return;
-            case 26:
+            case 27:
                 Object obj2 = ((a6.i) this.b).b;
                 return;
-            case 27:
+            case 28:
                 org.telegram.ui.Cells.a0 a0Var = (org.telegram.ui.Cells.a0) this.b;
                 if (a0Var.b == null) {
                     a0Var.b = new androidx.emoji2.text.j(a0Var, 3);
@@ -238,7 +250,7 @@ public final class q4 implements Runnable {
                 jVar2.b = i11;
                 a0Var.postDelayed(jVar2, ViewConfiguration.getLongPressTimeout() - ViewConfiguration.getTapTimeout());
                 return;
-            case 28:
+            default:
                 org.telegram.ui.Cells.v5 v5Var = (org.telegram.ui.Cells.v5) this.b;
                 TextView textView = v5Var.b;
                 textView.setTag(null);
@@ -248,15 +260,8 @@ public final class q4 implements Runnable {
                 animatorSet.playTogether(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 0.0f), ObjectAnimator.ofFloat(v5Var.a, (Property<TextView, Float>) property, 1.0f));
                 v5Var.d.setDuration(250L);
                 v5Var.d.setInterpolator(new DecelerateInterpolator());
-                v5Var.d.addListener(new org.telegram.ui.u4(this, 9));
+                v5Var.d.addListener(new org.telegram.ui.t4(this, 9));
                 v5Var.d.start();
-                return;
-            default:
-                org.telegram.ui.Cells.t6 t6Var = (org.telegram.ui.Cells.t6) this.b;
-                t6Var.a();
-                RectF rectF = t6Var.f;
-                t6Var.invalidate(((int) rectF.left) - 5, ((int) rectF.top) - 5, ((int) rectF.right) + 5, ((int) rectF.bottom) + 5);
-                AndroidUtilities.runOnUIThread(t6Var.v, 1000L);
                 return;
         }
     }
@@ -267,7 +272,7 @@ public final class q4 implements Runnable {
     }
 
     public q4(a6.i iVar, int i10) {
-        this.a = 26;
+        this.a = 27;
         this.b = iVar;
     }
 }

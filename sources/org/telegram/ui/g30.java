@@ -1,11 +1,24 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
-/* loaded from: classes3.dex */
-public final class g30 {
-    public final /* synthetic */ f60 a;
+import android.view.ViewGroup;
 
-    public g30(f60 f60Var) {
-        this.a = f60Var;
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* loaded from: classes3.dex */
+public final class g30 extends s4.j {
+    public final /* synthetic */ d60 F;
+
+    public g30(d60 d60Var) {
+        this.F = d60Var;
+    }
+
+    @Override // s4.j
+    public final void P(s4.c1 c1Var) {
+        ViewGroup viewGroup;
+        d60 d60Var = this.F;
+        d60Var.Q.invalidate();
+        d60Var.a2.invalidate();
+        viewGroup = ((org.telegram.ui.ActionBar.e3) d60Var).containerView;
+        viewGroup.invalidate();
+        d60.J0(d60Var);
     }
 }

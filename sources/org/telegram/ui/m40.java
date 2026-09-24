@@ -1,50 +1,46 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.widget.TextView;
+import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class m40 extends TextView {
-    public final RectF a;
-    public final Paint b;
+public final class m40 extends LinearLayout {
+    public boolean a;
+    public final /* synthetic */ org.telegram.ui.Components.ed0 b;
+    public final /* synthetic */ i40 c;
+    public final /* synthetic */ j40 d;
 
-    public m40(LaunchActivity launchActivity) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m40(LaunchActivity launchActivity, org.telegram.ui.Components.ed0 ed0Var, i40 i40Var, j40 j40Var) {
         super(launchActivity);
-        this.a = new RectF();
-        Paint paint = new Paint(1);
-        this.b = paint;
-        paint.setStyle(Paint.Style.FILL);
-        paint.setColor(-16711936);
+        this.b = ed0Var;
+        this.c = i40Var;
+        this.d = j40Var;
+        this.a = false;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        float measuredWidth = getMeasuredWidth();
-        float measuredHeight = getMeasuredHeight();
-        RectF rectF = this.a;
-        rectF.set(0.0f, 0.0f, measuredWidth, measuredHeight);
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), this.b);
-        super.dispatchDraw(canvas);
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        Paint paint = this.b;
-        paint.setColor(-16711936);
-        float measuredWidth = getMeasuredWidth();
-        float measuredHeight = getMeasuredHeight();
-        RectF rectF = this.a;
-        rectF.set(0.0f, 0.0f, measuredWidth, measuredHeight);
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), paint);
-        super.onDraw(canvas);
-    }
-
-    @Override // android.widget.TextView, android.view.View
+    @Override // android.widget.LinearLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
+        this.a = true;
+        org.telegram.ui.Components.ed0 ed0Var = this.b;
+        ed0Var.setItemCount(5);
+        i40 i40Var = this.c;
+        i40Var.setItemCount(5);
+        j40 j40Var = this.d;
+        j40Var.setItemCount(5);
+        ed0Var.getLayoutParams().height = AndroidUtilities.dp(54.0f) * 5;
+        i40Var.getLayoutParams().height = AndroidUtilities.dp(54.0f) * 5;
+        j40Var.getLayoutParams().height = AndroidUtilities.dp(54.0f) * 5;
+        this.a = false;
         super.onMeasure(i10, i11);
+    }
+
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.a) {
+            return;
+        }
+        super.requestLayout();
     }
 }

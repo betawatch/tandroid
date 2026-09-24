@@ -2,22 +2,22 @@ package ji;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import org.telegram.ui.Cells.t1;
+import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Components.ko;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class e extends AnimatorListenerAdapter {
-    public final /* synthetic */ t1 a;
+    public final /* synthetic */ u1 a;
     public final /* synthetic */ float b;
     public final /* synthetic */ float c;
     public final /* synthetic */ float d;
     public final /* synthetic */ float e;
     public final /* synthetic */ n f;
 
-    public e(n nVar, t1 t1Var, float f7, float f10, float f11, float f12) {
+    public e(n nVar, u1 u1Var, float f7, float f10, float f11, float f12) {
         this.f = nVar;
-        this.a = t1Var;
+        this.a = u1Var;
         this.b = f7;
         this.c = f10;
         this.d = f11;
@@ -26,13 +26,13 @@ public final class e extends AnimatorListenerAdapter {
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        t1 t1Var = this.a;
-        t1Var.getTransitionParams().j();
-        t1Var.getPhotoImage().setImageCoords(this.b, this.c, this.d, this.e);
+        u1 u1Var = this.a;
+        u1Var.getTransitionParams().j();
+        u1Var.getPhotoImage().setImageCoords(this.b, this.c, this.d, this.e);
         ko koVar = this.f.P;
         if (koVar != null) {
             koVar.h.setAlpha(1.0f);
         }
-        t1Var.invalidate();
+        u1Var.invalidate();
     }
 }

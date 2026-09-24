@@ -1,8 +1,8 @@
 package ci;
 
-import org.telegram.ui.f01;
+import org.telegram.ui.d01;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class ec extends gc {
     public final /* synthetic */ int g;
@@ -17,9 +17,9 @@ public final class ec extends gc {
     public final void e() {
         switch (this.g) {
             case 0:
-                f01 f01Var = (f01) this.h;
-                f01Var.Q = false;
-                f01Var.invalidate();
+                d01 d01Var = (d01) this.h;
+                d01Var.Q = false;
+                d01Var.invalidate();
                 break;
             case 1:
                 ai.e6 t10 = ((ai.jc) this.h).t();
@@ -39,9 +39,9 @@ public final class ec extends gc {
     public final void f(boolean z10) {
         switch (this.g) {
             case 0:
-                f01 f01Var = (f01) this.h;
-                f01Var.Q = true;
-                f01Var.invalidate();
+                d01 d01Var = (d01) this.h;
+                d01Var.Q = true;
+                d01Var.invalidate();
                 break;
             case 1:
                 ai.e6 t10 = ((ai.jc) this.h).t();

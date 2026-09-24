@@ -5,40 +5,40 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class lb extends FrameLayout {
     public final TL_stories.MediaArea a;
-    public final qg.v0 b;
+    public final qg.t0 b;
 
-    public lb(Context context, qg.v0 v0Var, TL_stories.MediaArea mediaArea) {
+    public lb(Context context, qg.t0 t0Var, TL_stories.MediaArea mediaArea) {
         super(context);
         this.a = mediaArea;
-        this.b = v0Var;
-        addView(v0Var);
+        this.b = t0Var;
+        addView(t0Var);
     }
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        qg.v0 v0Var = this.b;
-        v0Var.measure(i10, i11);
-        int measuredWidth = (v0Var.getMeasuredWidth() - v0Var.getPaddingLeft()) - v0Var.getPaddingRight();
-        int measuredHeight = (v0Var.getMeasuredHeight() - v0Var.getPaddingTop()) - v0Var.getPaddingBottom();
+        qg.t0 t0Var = this.b;
+        t0Var.measure(i10, i11);
+        int measuredWidth = (t0Var.getMeasuredWidth() - t0Var.getPaddingLeft()) - t0Var.getPaddingRight();
+        int measuredHeight = (t0Var.getMeasuredHeight() - t0Var.getPaddingTop()) - t0Var.getPaddingBottom();
         float f7 = measuredWidth;
         float f10 = f7 / 2.0f;
-        v0Var.setPivotX(v0Var.getPaddingLeft() + f10);
+        t0Var.setPivotX(t0Var.getPaddingLeft() + f10);
         float f11 = measuredHeight;
         float f12 = f11 / 2.0f;
-        v0Var.setPivotY(v0Var.getPaddingTop() + f12);
+        t0Var.setPivotY(t0Var.getPaddingTop() + f12);
         int size = View.MeasureSpec.getSize(i10);
         int size2 = View.MeasureSpec.getSize(i11);
         setMeasuredDimension(size, size2);
         float f13 = size;
         float f14 = size2;
         float min = Math.min(f13 / f7, f14 / f11);
-        v0Var.setTranslationX((f13 / 2.0f) - (f10 + v0Var.getPaddingLeft()));
-        v0Var.setTranslationY((f14 / 2.0f) - (f12 + v0Var.getPaddingTop()));
-        v0Var.setScaleX(min);
-        v0Var.setScaleY(min);
+        t0Var.setTranslationX((f13 / 2.0f) - (f10 + t0Var.getPaddingLeft()));
+        t0Var.setTranslationY((f14 / 2.0f) - (f12 + t0Var.getPaddingTop()));
+        t0Var.setScaleX(min);
+        t0Var.setScaleY(min);
     }
 }

@@ -40,14 +40,15 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.Components.a90;
+import org.telegram.ui.Components.k90;
 import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.ix;
-import org.telegram.ui.ry;
-import v7.h8;
+import org.telegram.ui.hx;
+import org.telegram.ui.qy;
 import v7.i8;
+import v7.j8;
+import w7.a8;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
@@ -63,18 +64,18 @@ public final /* synthetic */ class d implements Runnable {
         boolean z10 = false;
         switch (this.a) {
             case 0:
-                ((f) this.b).g.C();
+                ((f) this.b).g.D();
                 return;
             case 1:
                 ((w) this.b).k--;
                 return;
             case 2:
-                ry ryVar = ((ix) this.b).O0;
-                if (ryVar.L && ryVar.X3().G()) {
-                    ryVar.E0.h();
+                qy qyVar = ((hx) this.b).O0;
+                if (qyVar.L && qyVar.X3().G()) {
+                    qyVar.E0.h();
                     return;
                 } else {
-                    ryVar.x4(true, true);
+                    qyVar.x4(true, true);
                     return;
                 }
             case 3:
@@ -185,7 +186,7 @@ public final /* synthetic */ class d implements Runnable {
                 l9Var.S(y3, z10);
                 return;
             case 18:
-                ((a90) this.b).d(true);
+                ((k90) this.b).d(true);
                 return;
             case 19:
                 ((db) this.b).requestLayout();
@@ -273,24 +274,24 @@ public final /* synthetic */ class d implements Runnable {
                                 Context context = pVar.a;
                                 uVar.getClass();
                                 o0.i[] iVarArr = {d};
-                                h8 h8Var = i0.e.a;
-                                w7.z7.a("TypefaceCompat.createFromFontInfo");
+                                i8 i8Var = i0.e.a;
+                                a8.a("TypefaceCompat.createFromFontInfo");
                                 try {
                                     Typeface b10 = i0.e.a.b(context, iVarArr, 0);
                                     Trace.endSection();
-                                    MappedByteBuffer e = i8.e(pVar.a, d.a);
+                                    MappedByteBuffer e = j8.e(pVar.a, d.a);
                                     if (e == null || b10 == null) {
                                         throw new RuntimeException("Unable to open file.");
                                     }
                                     try {
                                         Trace.beginSection("EmojiCompat.MetadataRepo.create");
-                                        com.google.firebase.messaging.t tVar = new com.google.firebase.messaging.t(b10, v7.x.a(e));
+                                        com.google.firebase.messaging.t tVar = new com.google.firebase.messaging.t(b10, v7.z.a(e));
                                         Trace.endSection();
                                         synchronized (pVar.d) {
                                             try {
-                                                v7.w wVar = pVar.h;
-                                                if (wVar != null) {
-                                                    wVar.b(tVar);
+                                                v7.y yVar = pVar.h;
+                                                if (yVar != null) {
+                                                    yVar.b(tVar);
                                                 }
                                             } finally {
                                             }
@@ -309,9 +310,9 @@ public final /* synthetic */ class d implements Runnable {
                         } catch (Throwable th3) {
                             synchronized (pVar.d) {
                                 try {
-                                    v7.w wVar2 = pVar.h;
-                                    if (wVar2 != null) {
-                                        wVar2.a(th3);
+                                    v7.y yVar2 = pVar.h;
+                                    if (yVar2 != null) {
+                                        yVar2.a(th3);
                                     }
                                     pVar.b();
                                     return;

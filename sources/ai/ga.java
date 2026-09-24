@@ -10,6 +10,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.ok;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.RequestDelegateTimestamp;
@@ -18,14 +19,14 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.bm0;
-import org.telegram.ui.Components.o70;
-import org.telegram.ui.Components.xc;
-import org.telegram.ui.o00;
-import org.telegram.ui.pe;
-import org.telegram.ui.xn;
+import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.y70;
+import org.telegram.ui.Components.yc;
+import org.telegram.ui.n00;
+import org.telegram.ui.qe;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ga implements Runnable {
     public final /* synthetic */ int a;
@@ -114,33 +115,33 @@ public final /* synthetic */ class ga implements Runnable {
                 ((ConnectionsManager) obj5).lambda$sendRequestInternal$7((RequestDelegate) obj3, (TLObject) obj4, (TLRPC.TL_error) obj2, (RequestDelegateTimestamp) obj, this.c);
                 break;
             case 2:
-                xn xnVar = (xn) obj5;
-                bm0 bm0Var = (bm0) obj;
-                ((o70) obj4).n0 = true;
-                Activity parentActivity = xnVar.getParentActivity();
+                wn wnVar = (wn) obj5;
+                mm0 mm0Var = (mm0) obj;
+                ((y70) obj4).n0 = true;
+                Activity parentActivity = wnVar.getParentActivity();
                 long j10 = ((TLRPC.TL_messageEntityFormattedDate) obj3).date;
                 long j11 = this.c;
-                ci.y6 y6Var = new ci.y6(xnVar, (ArrayList) obj2, j11, bm0Var, 1);
-                pe peVar = new pe(bm0Var, i11);
+                ci.y6 y6Var = new ci.y6(wnVar, (ArrayList) obj2, j11, mm0Var, 1);
+                qe qeVar = new qe(mm0Var, i11);
                 Pattern pattern = org.telegram.ui.Components.e5.a;
-                org.telegram.ui.Components.e5.K(parentActivity, j11, j10, 0, true, y6Var, peVar, new org.telegram.ui.Components.c5(null), null);
+                org.telegram.ui.Components.e5.K(parentActivity, j11, j10, 0, true, y6Var, qeVar, new org.telegram.ui.Components.c5(null), null);
                 break;
             case 3:
-                org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) obj5;
+                org.telegram.ui.ActionBar.m2 m2Var = (org.telegram.ui.ActionBar.m2) obj5;
                 TLObject tLObject2 = (TLObject) obj4;
                 MessagesController.DialogFilter dialogFilter = (MessagesController.DialogFilter) obj3;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 Runnable runnable = (Runnable) obj;
-                if (n2Var.getContext() != null) {
+                if (m2Var.getContext() != null) {
                     if (tLObject2 instanceof TL_chatlists.TL_chatlists_exportedInvites) {
                         TL_chatlists.TL_chatlists_exportedInvites tL_chatlists_exportedInvites = (TL_chatlists.TL_chatlists_exportedInvites) tLObject2;
-                        n2Var.getMessagesController().putChats(tL_chatlists_exportedInvites.chats, false);
-                        n2Var.getMessagesController().putUsers(tL_chatlists_exportedInvites.users, false);
-                        new o00(n2Var, dialogFilter, tL_chatlists_exportedInvites.invites).show();
+                        m2Var.getMessagesController().putChats(tL_chatlists_exportedInvites.chats, false);
+                        m2Var.getMessagesController().putUsers(tL_chatlists_exportedInvites.users, false);
+                        new n00(m2Var, dialogFilter, tL_chatlists_exportedInvites.invites).show();
                     } else if (tL_error == null || !"FILTER_ID_INVALID".equals(tL_error.text) || dialogFilter.isDefault()) {
-                        org.telegram.messenger.z0.p(R.string.UnknownError, xc.a0(n2Var), null);
+                        ok.p(R.string.UnknownError, yc.a0(m2Var), null);
                     } else {
-                        new o00(n2Var, dialogFilter, null).show();
+                        new n00(m2Var, dialogFilter, null).show();
                     }
                     if (runnable != null) {
                         AndroidUtilities.runOnUIThread(runnable, Math.max(0L, 200 - (System.currentTimeMillis() - this.c)));
@@ -149,7 +150,7 @@ public final /* synthetic */ class ga implements Runnable {
                 }
                 break;
             case 4:
-                yh.y3.h0((yh.y3) obj5, (TLObject) obj4, (String) obj3, (TL_stars.InputSavedStarGift) obj2, (TLRPC.TL_error) obj, this.c);
+                yh.x3.h0((yh.x3) obj5, (TLObject) obj4, (String) obj3, (TL_stars.InputSavedStarGift) obj2, (TLRPC.TL_error) obj, this.c);
                 break;
             case 5:
                 ((boolean[]) obj3)[0] = true;

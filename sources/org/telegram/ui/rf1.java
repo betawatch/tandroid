@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class rf1 extends org.telegram.ui.Components.z71 {
+public final class rf1 extends org.telegram.ui.Components.n81 {
     public final ArrayList a;
     public final /* synthetic */ sf1 b;
 
@@ -33,13 +33,13 @@ public final class rf1 extends org.telegram.ui.Components.z71 {
         arrayList.add(of1Var5);
     }
 
-    @Override // org.telegram.ui.Components.z71
+    @Override // org.telegram.ui.Components.n81
     public final void b(View view, int i10, int i11) {
         sf1 sf1Var = this.b;
         sf1Var.K(view, i10, sf1Var.b0, true);
     }
 
-    @Override // org.telegram.ui.Components.z71
+    @Override // org.telegram.ui.Components.n81
     public final View d(int i10) {
         int i11;
         sf1 sf1Var = this.b;
@@ -48,25 +48,25 @@ public final class rf1 extends org.telegram.ui.Components.z71 {
             return sf1Var.T;
         }
         if (i10 == 2) {
-            i11 = ((org.telegram.ui.ActionBar.n2) wf1Var).currentAccount;
-            org.telegram.ui.Components.wm0 wm0Var = new org.telegram.ui.Components.wm0(i11, wf1Var);
-            wm0Var.b.j(new qf1(0));
-            wm0Var.setUiCallback(sf1Var);
-            return wm0Var;
+            i11 = ((org.telegram.ui.ActionBar.m2) wf1Var).currentAccount;
+            org.telegram.ui.Components.in0 in0Var = new org.telegram.ui.Components.in0(i11, wf1Var);
+            in0Var.b.j(new qf1(0));
+            in0Var.setUiCallback(sf1Var);
+            return in0Var;
         }
-        u10 u10Var = new u10(wf1Var);
-        u10Var.setChatPreviewDelegate(sf1Var.r0);
-        u10Var.setUiCallback(sf1Var);
-        u10Var.b.j(new qf1(1));
-        return u10Var;
+        t10 t10Var = new t10(wf1Var);
+        t10Var.setChatPreviewDelegate(sf1Var.r0);
+        t10Var.setUiCallback(sf1Var);
+        t10Var.b.j(new qf1(1));
+        return t10Var;
     }
 
-    @Override // org.telegram.ui.Components.z71
+    @Override // org.telegram.ui.Components.n81
     public final int e() {
         return this.a.size();
     }
 
-    @Override // org.telegram.ui.Components.z71
+    @Override // org.telegram.ui.Components.n81
     public final CharSequence g(int i10) {
         ArrayList arrayList = this.a;
         if (((of1) arrayList.get(i10)).a == 0) {
@@ -80,7 +80,7 @@ public final class rf1 extends org.telegram.ui.Components.z71 {
         return str != null ? str : LocaleController.getString(q0Var.b);
     }
 
-    @Override // org.telegram.ui.Components.z71
+    @Override // org.telegram.ui.Components.n81
     public final int h(int i10) {
         ArrayList arrayList = this.a;
         if (((of1) arrayList.get(i10)).a == 0) {

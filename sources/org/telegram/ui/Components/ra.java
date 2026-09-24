@@ -16,7 +16,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public abstract class ra extends View {
     public final org.telegram.ui.ActionBar.d6 a;
@@ -34,8 +34,8 @@ public abstract class ra extends View {
         this.c = new Paint(1);
         this.h = new e6(this, 0L, 210L, rr.h);
         this.a = d6Var;
-        ba0 ba0Var = (ba0) this;
-        this.b = new qa[]{new qa(ba0Var, 0, R.raw.msg_stories_saved, 20, 40, LocaleController.getString(R.string.ProfileMyStoriesTab)), new qa(ba0Var, 1, R.raw.msg_stories_archive, 0, 0, LocaleController.getString(R.string.ProfileStoriesArchiveTab))};
+        ma0 ma0Var = (ma0) this;
+        this.b = new qa[]{new qa(ma0Var, 0, R.raw.msg_stories_saved, 20, 40, LocaleController.getString(R.string.ProfileMyStoriesTab)), new qa(ma0Var, 1, R.raw.msg_stories_archive, 0, 0, LocaleController.getString(R.string.ProfileStoriesArchiveTab))};
         setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
         a(0.0f, false);
     }
@@ -50,30 +50,30 @@ public abstract class ra extends View {
             boolean z11 = ((float) Math.abs(this.e - i10)) < (qaVarArr[i10].l ? 0.25f : 0.35f);
             int i11 = qaVar.k;
             int i12 = qaVar.j;
-            yi0 yi0Var = qaVar.b;
+            ij0 ij0Var = qaVar.b;
             if (qaVar.l != z11) {
                 if (qaVar.n.b[qaVar.a].j != 0) {
                     if (z11) {
-                        yi0Var.P(i12);
-                        if (yi0Var.a0 >= i11 - 2) {
-                            yi0Var.N(0, false, false);
+                        ij0Var.P(i12);
+                        if (ij0Var.a0 >= i11 - 2) {
+                            ij0Var.N(0, false, false);
                         }
-                        if (yi0Var.a0 <= i12) {
-                            yi0Var.start();
+                        if (ij0Var.a0 <= i12) {
+                            ij0Var.start();
                         } else {
-                            yi0Var.M(i12);
+                            ij0Var.M(i12);
                         }
-                    } else if (yi0Var.a0 >= i12 - 1) {
-                        yi0Var.P(i11 - 1);
-                        yi0Var.start();
+                    } else if (ij0Var.a0 >= i12 - 1) {
+                        ij0Var.P(i11 - 1);
+                        ij0Var.start();
                     } else {
-                        yi0Var.P(0);
-                        yi0Var.M(0);
+                        ij0Var.P(0);
+                        ij0Var.M(0);
                     }
                 } else if (z11) {
-                    yi0Var.M(0);
+                    ij0Var.M(0);
                     if (z10) {
-                        yi0Var.start();
+                        ij0Var.start();
                     }
                 }
                 qaVar.l = z11;
@@ -127,7 +127,7 @@ public abstract class ra extends View {
             RectF rectF2 = qaVar.h;
             StaticLayout staticLayout = qaVar.e;
             org.telegram.ui.Cells.z zVar = qaVar.c;
-            yi0 yi0Var = qaVar.b;
+            ij0 ij0Var = qaVar.b;
             int i12 = length;
             rectF2.set(paddingLeft, f13, paddingLeft + length, raVar.getHeight());
             float min2 = 1.0f - Math.min(1.0f, Math.abs(raVar.d - i11));
@@ -139,7 +139,7 @@ public abstract class ra extends View {
             if (qaVar.m != d) {
                 qaVar.m = d;
                 f12 = min2;
-                yi0Var.setColorFilter(new PorterDuffColorFilter(d, PorterDuff.Mode.SRC_IN));
+                ij0Var.setColorFilter(new PorterDuffColorFilter(d, PorterDuff.Mode.SRC_IN));
             } else {
                 f12 = min2;
             }
@@ -159,8 +159,8 @@ public abstract class ra extends View {
             zVar.draw(canvas);
             float dp = AndroidUtilities.dp(29.0f) / 2.0f;
             rect.set((int) (rectF2.centerX() - dp), (int) (AndroidUtilities.dpf2(24.66f) - dp), (int) (rectF2.centerX() + dp), (int) (AndroidUtilities.dpf2(24.66f) + dp));
-            yi0Var.setBounds(rect);
-            yi0Var.draw(canvas);
+            ij0Var.setBounds(rect);
+            ij0Var.draw(canvas);
             canvas.save();
             canvas.translate((rectF2.centerX() - (qaVar.f / 2.0f)) - qaVar.g, AndroidUtilities.dp(50.0f) - (staticLayout.getHeight() / 2.0f));
             staticLayout.draw(canvas);

@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e8 implements Comparator {
     public final /* synthetic */ int a;
@@ -68,7 +68,7 @@ public final /* synthetic */ class e8 implements Comparator {
                 TLRPC.User user2 = MessagesController.getInstance(i10).getUser(Long.valueOf(peerDialogId2));
                 ?? r12 = user2 == null ? 0 : user2.premium;
                 if (r02 == r12) {
-                    return (peerStories2.stories.isEmpty() ? 0 : ((TL_stories.StoryItem) hg.c.h(1, peerStories2.stories)).date) - (peerStories.stories.isEmpty() ? 0 : ((TL_stories.StoryItem) hg.c.h(1, peerStories.stories)).date);
+                    return (peerStories2.stories.isEmpty() ? 0 : ((TL_stories.StoryItem) hg.c.g(1, peerStories2.stories)).date) - (peerStories.stories.isEmpty() ? 0 : ((TL_stories.StoryItem) hg.c.g(1, peerStories.stories)).date);
                 }
                 return r12 - r02;
             case 1:
@@ -101,7 +101,7 @@ public final /* synthetic */ class e8 implements Comparator {
             case 5:
                 return ((Collator) this.b).compare((String) obj, (String) obj2);
             default:
-                float[] fArr = ((yh.q2) this.b).r;
+                float[] fArr = ((yh.p2) this.b).r;
                 return Float.compare(fArr[((Integer) obj).intValue()], fArr[((Integer) obj2).intValue()]);
         }
     }

@@ -1,35 +1,23 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import org.telegram.messenger.AndroidUtilities;
+import android.app.Activity;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class b41 extends vh.o {
-    public final org.telegram.ui.i20 R;
-    public final /* synthetic */ e41 S;
+public final class b41 extends i41 {
+    public final /* synthetic */ org.telegram.ui.rg T;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b41(e41 e41Var, Context context) {
-        super(context);
-        this.S = e41Var;
-        this.R = new org.telegram.ui.i20();
+    public b41(Activity activity, String str, String str2, TLRPC.InputPeer inputPeer, int i10, TL_iv.RichMessage richMessage, org.telegram.ui.rg rgVar) {
+        super(activity, str, str2, null, inputPeer, i10, false, richMessage);
+        this.T = rgVar;
     }
 
-    @Override // vh.o, android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        int dp = AndroidUtilities.dp(8.0f) + this.S.d.getWidth();
-        canvas.saveLayerAlpha(getScrollX(), 0.0f, (getWidth() + getScrollX()) - dp, getHeight(), 255, 31);
-        super.onDraw(canvas);
-        canvas.save();
-        canvas.translate(getPaddingLeft(), getPaddingTop());
-        bw0.a(canvas, getLayout());
-        canvas.restore();
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set((getWidth() - dp) - AndroidUtilities.dp(24.0f), 0.0f, getWidth() - dp, getHeight());
-        this.R.b(canvas, rectF, 2, 1.0f);
-        canvas.restore();
+    @Override // org.telegram.ui.Components.i41, org.telegram.ui.ActionBar.e3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.i2
+    public final void dismiss() {
+        super.dismiss();
+        this.T.run();
     }
 }

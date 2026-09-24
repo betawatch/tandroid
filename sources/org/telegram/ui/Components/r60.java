@@ -1,35 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class r60 extends org.telegram.ui.Cells.f9 {
-    public final org.telegram.ui.Cells.l7 v;
-    public boolean w;
-    public final /* synthetic */ s60 x;
+public final class r60 extends ClickableSpan {
+    public final /* synthetic */ org.telegram.ui.ActionBar.e3[] a;
+    public final /* synthetic */ TLRPC.TL_chatInviteImporter b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r60(s60 s60Var, Context context) {
-        super(context);
-        this.x = s60Var;
-        this.v = new org.telegram.ui.Cells.l7(this, 15);
+    public r60(org.telegram.ui.ActionBar.e3[] e3VarArr, TLRPC.TL_chatInviteImporter tL_chatInviteImporter) {
+        this.a = e3VarArr;
+        this.b = tL_chatInviteImporter;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        org.telegram.ui.Cells.l7 l7Var = this.v;
-        AndroidUtilities.cancelRunOnUIThread(l7Var);
-        if (this.w) {
-            AndroidUtilities.runOnUIThread(l7Var, 500L);
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        this.a[0].dismiss();
+        org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
+        if (U != null) {
+            U.presentFragment(ProfileActivity.m4(this.b.user_id));
         }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        AndroidUtilities.cancelRunOnUIThread(this.v);
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        textPaint.setUnderlineText(false);
     }
 }

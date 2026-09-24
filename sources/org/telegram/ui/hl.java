@@ -1,85 +1,147 @@
 package org.telegram.ui;
 
-import android.animation.AnimatorSet;
-import android.app.Activity;
+import android.content.Context;
 import android.graphics.Canvas;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.accessibility.AccessibilityNodeInfo;
+import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class hl extends FrameLayout {
-    public float a;
-    public float b;
-    public final /* synthetic */ xn c;
+public final class hl extends org.telegram.ui.ActionBar.h5 {
+    public final /* synthetic */ int M0;
+    public final Object N0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hl(xn xnVar, Activity activity) {
-        super(activity);
-        this.c = xnVar;
-        setOnLongClickListener(new v(this, 2));
+    public /* synthetic */ hl(Object obj, Context context, int i10) {
+        super(context);
+        this.M0 = i10;
+        this.N0 = obj;
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        xn xnVar = this.c;
-        if (view == xnVar.z2) {
-            canvas.save();
-            canvas.clipRect(0, 0, getMeasuredWidth(), AndroidUtilities.dp(48.0f));
+    @Override // org.telegram.ui.ActionBar.h5
+    public boolean k(CharSequence charSequence) {
+        org.telegram.ui.ActionBar.h5 h5Var;
+        switch (this.M0) {
+            case 1:
+                AtomicReference atomicReference = (AtomicReference) this.N0;
+                if (atomicReference != null && (h5Var = (org.telegram.ui.ActionBar.h5) atomicReference.get()) != null) {
+                    h5Var.k(charSequence);
+                }
+                return l(charSequence, false);
+            default:
+                return super.k(charSequence);
         }
-        org.telegram.ui.ActionBar.i5[] i5VarArr = xnVar.D2;
-        if (view != i5VarArr[0] && view != i5VarArr[1]) {
-            boolean drawChild = super.drawChild(canvas, view, j3);
-            if (view == xnVar.z2) {
-                canvas.restore();
-            }
-            return drawChild;
-        }
-        canvas.save();
-        canvas.clipRect(0, 0, getMeasuredWidth() - AndroidUtilities.dp(38.0f), getMeasuredHeight());
-        boolean drawChild2 = super.drawChild(canvas, view, j3);
-        canvas.restore();
-        return drawChild2;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        xn xnVar = this.c;
-        if (!xnVar.A2) {
-            return;
+    @Override // org.telegram.ui.ActionBar.h5, android.view.View
+    public void onAttachedToWindow() {
+        switch (this.M0) {
+            case 2:
+                super.onAttachedToWindow();
+                ((rp0) this.N0).s.a();
+                break;
+            default:
+                super.onAttachedToWindow();
+                break;
         }
-        int i12 = 0;
-        while (true) {
-            AnimatorSet[] animatorSetArr = xnVar.H2;
-            if (i12 >= animatorSetArr.length) {
-                xnVar.A2 = false;
-                return;
-            }
-            AnimatorSet animatorSet = animatorSetArr[i12];
-            if (animatorSet != null) {
-                animatorSet.start();
-            }
-            i12++;
+    }
+
+    @Override // org.telegram.ui.ActionBar.h5, android.view.View
+    public void onDetachedFromWindow() {
+        switch (this.M0) {
+            case 2:
+                super.onDetachedFromWindow();
+                ((rp0) this.N0).s.b();
+                break;
+            default:
+                super.onDetachedFromWindow();
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.h5, android.view.View
+    public void onDraw(Canvas canvas) {
+        switch (this.M0) {
+            case 3:
+                int rightDrawableX = getRightDrawableX();
+                super.onDraw(canvas);
+                if (rightDrawableX != getRightDrawableX()) {
+                    ((ProfileActivity) this.N0).V4();
+                    break;
+                }
+                break;
+            default:
+                super.onDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.h5, android.view.View
+    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        switch (this.M0) {
+            case 3:
+                ProfileActivity profileActivity = (ProfileActivity) this.N0;
+                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+                if (isFocusable()) {
+                    if (profileActivity.h != null || profileActivity.n != null) {
+                        StringBuilder sb2 = new StringBuilder(getText());
+                        if (profileActivity.n != null) {
+                            if (sb2.length() > 0) {
+                                sb2.append(", ");
+                            }
+                            sb2.append(profileActivity.n);
+                        }
+                        if (profileActivity.h != null) {
+                            if (sb2.length() > 0) {
+                                sb2.append(", ");
+                            }
+                            sb2.append(profileActivity.h);
+                        }
+                        accessibilityNodeInfo.setText(sb2);
+                        break;
+                    }
+                }
+                break;
+            default:
+                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+                break;
         }
     }
 
     @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        this.a = motionEvent.getY();
-        int action = motionEvent.getAction();
-        xn xnVar = this.c;
-        if (action == 1) {
-            xnVar.finishPreviewFragment();
-        } else if (motionEvent.getAction() == 2) {
-            float f7 = this.b - this.a;
-            xnVar.movePreviewFragment(f7);
-            if (f7 < 0.0f) {
-                this.b = this.a;
-            }
+    public void setTranslationY(float f7) {
+        org.telegram.ui.ActionBar.h5 h5Var;
+        switch (this.M0) {
+            case 0:
+                super.setTranslationY(f7);
+                wn wnVar = (wn) this.N0;
+                if (this == wnVar.D2[0] && wnVar.H2[1] != null) {
+                    if (wnVar.O4 && f7 < 0.0f) {
+                        wnVar.z2.setTranslationY(f7 / 2.0f);
+                        break;
+                    } else {
+                        wnVar.z2.setTranslationY(0.0f);
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                AtomicReference atomicReference = (AtomicReference) this.N0;
+                if (atomicReference != null && (h5Var = (org.telegram.ui.ActionBar.h5) atomicReference.get()) != null) {
+                    h5Var.setTranslationY(f7);
+                }
+                super.setTranslationY(f7);
+                break;
+            default:
+                super.setTranslationY(f7);
+                break;
         }
-        return super.onTouchEvent(motionEvent);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public hl(Context context, AtomicReference atomicReference) {
+        super(context);
+        this.M0 = 1;
+        this.N0 = atomicReference;
     }
 }

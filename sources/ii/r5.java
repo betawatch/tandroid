@@ -18,7 +18,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class r5 extends ViewGroup {
     public final RectF E;
@@ -815,9 +815,9 @@ public final class r5 extends ViewGroup {
         this.d = new int[i16];
         int dp5 = AndroidUtilities.dp(i6Var2.a.compact ? 20.0f : 50.0f);
         int i18 = this.a.a.compact ? 5 : 12;
-        int f7 = i17 == 2 ? hg.c.f(i18 * 4, size / 2, 0) : Math.max(0, Math.round(size / 1.5f));
-        float f10 = i18 * 2;
-        int b10 = org.telegram.messenger.z0.b(f10, f7, dp5);
+        int b10 = i17 == 2 ? org.telegram.messenger.f0.b(i18 * 4, size / 2, 0) : Math.max(0, Math.round(size / 1.5f));
+        float f7 = i18 * 2;
+        int y3 = org.telegram.messenger.f0.y(f7, b10, dp5);
         for (int i19 = 0; i19 < i17; i19++) {
             this.c[i19] = dp5;
         }
@@ -832,9 +832,9 @@ public final class r5 extends ViewGroup {
                 s5 s5Var = (s5) childAt;
                 i1 i1Var = s5Var.a;
                 if (i6.n(s5Var.b) == 1 && (a2 = this.a.a(s5Var.b)) >= 0 && a2 < i17) {
-                    int dp6 = AndroidUtilities.dp(f10) + Math.round(Layout.getDesiredWidth(i1Var.getText(), i1Var.getPaint()));
+                    int dp6 = AndroidUtilities.dp(f7) + Math.round(Layout.getDesiredWidth(i1Var.getText(), i1Var.getPaint()));
                     int[] iArr = this.c;
-                    iArr[a2] = Math.max(iArr[a2], Math.min(b10, dp6));
+                    iArr[a2] = Math.max(iArr[a2], Math.min(y3, dp6));
                 }
             }
             i20++;
@@ -854,7 +854,7 @@ public final class r5 extends ViewGroup {
                         for (int i23 = a10; i23 < min; i23++) {
                             i22 += this.c[i23];
                         }
-                        int min2 = Math.min((min - a10) * b10, AndroidUtilities.dp(f10) + Math.round(Layout.getDesiredWidth(i1Var2.getText(), i1Var2.getPaint()))) - i22;
+                        int min2 = Math.min((min - a10) * y3, AndroidUtilities.dp(f7) + Math.round(Layout.getDesiredWidth(i1Var2.getText(), i1Var2.getPaint()))) - i22;
                         while (a10 < min && min2 > 0) {
                             int i24 = ((min2 + r14) - 1) / (min - a10);
                             int[] iArr2 = this.c;

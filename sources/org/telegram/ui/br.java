@@ -3,23 +3,23 @@ package org.telegram.ui;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class br implements iq {
+public final class br implements hq {
     public final /* synthetic */ TLObject a;
-    public final /* synthetic */ qr b;
+    public final /* synthetic */ pr b;
 
-    public br(qr qrVar, TLObject tLObject) {
-        this.b = qrVar;
+    public br(pr prVar, TLObject tLObject) {
+        this.b = prVar;
         this.a = tLObject;
     }
 
-    @Override // org.telegram.ui.iq
+    @Override // org.telegram.ui.hq
     public final void a(TLRPC.User user) {
-        qr.c0(this.b, user);
+        pr.c0(this.b, user);
     }
 
-    @Override // org.telegram.ui.iq
+    @Override // org.telegram.ui.hq
     public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
         TLObject tLObject = this.a;
         if (tLObject instanceof TLRPC.ChannelParticipant) {
@@ -27,7 +27,7 @@ public final class br implements iq {
             channelParticipant.admin_rights = tL_chatAdminRights;
             channelParticipant.banned_rights = tL_chatBannedRights;
             channelParticipant.rank = str;
-            qr.W(this.b, channelParticipant, tL_chatAdminRights, tL_chatBannedRights);
+            pr.W(this.b, channelParticipant, tL_chatAdminRights, tL_chatBannedRights);
         }
     }
 }

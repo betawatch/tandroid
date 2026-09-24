@@ -1,52 +1,69 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
+import android.view.View;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class ri0 extends ji.n {
-    public Runnable W;
+public final class ri0 extends s4.t {
+    public final /* synthetic */ vi0 S;
 
-    @Override // ji.n, s4.j
-    public final void N() {
-        super.N();
-        Runnable runnable = this.W;
-        if (runnable != null) {
-            AndroidUtilities.cancelRunOnUIThread(runnable);
-            this.W = null;
-        }
-        qi0 qi0Var = new qi0(this, 0);
-        this.W = qi0Var;
-        AndroidUtilities.runOnUIThread(qi0Var);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ri0(vi0 vi0Var) {
+        super(true);
+        this.S = vi0Var;
     }
 
-    @Override // ji.n
-    public final void W() {
-        Runnable runnable = this.W;
-        if (runnable != null) {
-            AndroidUtilities.cancelRunOnUIThread(runnable);
-            this.W = null;
+    @Override // s4.t
+    public final boolean B1(int i10) {
+        byte b10;
+        vi0 vi0Var = this.S;
+        MessageObject messageObject = (MessageObject) vi0Var.N.get((B() - 1) - i10);
+        MessageObject.GroupedMessages l4 = vi0Var.l(messageObject);
+        if (l4 != null) {
+            MessageObject.GroupedMessagePosition position = l4.getPosition(messageObject);
+            if (position.minX != position.maxX && (b10 = position.minY) == position.maxY && b10 != 0) {
+                int size = l4.posArray.size();
+                for (int i11 = 0; i11 < size; i11++) {
+                    MessageObject.GroupedMessagePosition groupedMessagePosition = l4.posArray.get(i11);
+                    if (groupedMessagePosition != position) {
+                        byte b11 = groupedMessagePosition.minY;
+                        byte b12 = position.minY;
+                        if (b11 <= b12 && groupedMessagePosition.maxY >= b12) {
+                            return true;
+                        }
+                    }
+                }
+            }
         }
-        if (BuildVars.LOGS_ENABLED) {
-            FileLog.d("chatItemAnimator disable notifications");
-        }
+        return false;
     }
 
-    @Override // ji.n, s4.j, s4.m0
-    public final void g() {
-        super.g();
-        Runnable runnable = this.W;
-        if (runnable != null) {
-            AndroidUtilities.cancelRunOnUIThread(runnable);
+    @Override // s4.t
+    public final boolean C1(View view) {
+        if (view instanceof org.telegram.ui.Cells.u1) {
+            return !((org.telegram.ui.Cells.u1) view).getMessageObject().isOutOwner();
         }
-        qi0 qi0Var = new qi0(this, 1);
-        this.W = qi0Var;
-        AndroidUtilities.runOnUIThread(qi0Var);
+        return false;
     }
 
-    @Override // s4.j
-    public final void F() {
+    @Override // s4.c0, s4.o0
+    public final int j(s4.z0 z0Var) {
+        return B0(z0Var);
+    }
+
+    @Override // s4.s, s4.c0, s4.o0
+    public final int k(s4.z0 z0Var) {
+        return C0(z0Var);
+    }
+
+    @Override // s4.s, s4.c0, s4.o0
+    public final int l(s4.z0 z0Var) {
+        return D0(z0Var);
+    }
+
+    @Override // s4.s, s4.c0, s4.o0
+    public final boolean y0() {
+        return true;
     }
 }

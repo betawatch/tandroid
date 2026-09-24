@@ -1,31 +1,37 @@
 package org.telegram.ui;
 
+import android.view.KeyEvent;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tz implements org.telegram.ui.ActionBar.a2 {
+public final /* synthetic */ class tz implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ EditTextBoldCursor b;
+    public final /* synthetic */ AlertDialog$Builder b;
 
-    public /* synthetic */ tz(int i10, EditTextBoldCursor editTextBoldCursor) {
+    public /* synthetic */ tz(AlertDialog$Builder alertDialog$Builder, int i10) {
         this.a = i10;
-        this.b = editTextBoldCursor;
+        this.b = alertDialog$Builder;
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    @Override // android.widget.TextView.OnEditorActionListener
+    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.hideKeyboard(this.b);
+                AndroidUtilities.hideKeyboard(textView);
+                this.b.a.d(-1).callOnClick();
                 break;
             case 1:
-                AndroidUtilities.hideKeyboard(this.b);
+                AndroidUtilities.hideKeyboard(textView);
+                this.b.a.d(-1).callOnClick();
                 break;
             default:
-                AndroidUtilities.hideKeyboard(this.b);
+                AndroidUtilities.hideKeyboard(textView);
+                this.b.a.d(-1).callOnClick();
                 break;
         }
+        return false;
     }
 }

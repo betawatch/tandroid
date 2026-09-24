@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.n30;
 import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public abstract class ca extends ScrollView {
     public final Paint E;
@@ -73,7 +73,7 @@ public abstract class ca extends ScrollView {
         AndroidUtilities.setScrollViewEdgeEffectColor(this, org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.d6, false));
         ba baVar = new ba(this, context);
         this.c = baVar;
-        addView(baVar, w7.x5.c(-2.0f, -1));
+        addView(baVar, w7.y5.c(-2.0f, -1));
         h2 h2Var = new h2(this, context, 1);
         this.a = h2Var;
         if (Build.VERSION.SDK_INT >= 25) {
@@ -139,8 +139,8 @@ public abstract class ca extends ScrollView {
             return false;
         }
         rect.offset(view.getLeft() - view.getScrollX(), view.getTop() - view.getScrollY());
-        rect.top = org.telegram.messenger.z0.C(20.0f, this.H, rect.top);
-        rect.bottom = org.telegram.messenger.z0.C(50.0f, this.H, rect.bottom);
+        rect.top = org.telegram.messenger.f0.C(20.0f, this.H, rect.top);
+        rect.bottom = org.telegram.messenger.f0.C(50.0f, this.H, rect.bottom);
         return super.requestChildRectangleOnScreen(view, rect, z10);
     }
 

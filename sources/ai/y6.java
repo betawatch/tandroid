@@ -14,9 +14,9 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.rl0;
+import org.telegram.ui.Components.bm0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class y6 extends FrameLayout {
     public final LinearLayout a;
@@ -29,7 +29,7 @@ public final class y6 extends FrameLayout {
     public final RectF n;
     public float r;
     public int s;
-    public final rl0 v;
+    public final bm0 v;
     public ValueAnimator w;
     public final /* synthetic */ k7 x;
 
@@ -63,27 +63,27 @@ public final class y6 extends FrameLayout {
         textView2.setTypeface(AndroidUtilities.bold());
         textView2.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(4.0f));
         linearLayout.setPadding(0, AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f));
-        linearLayout.addView(textView, w7.x5.t(-2, -2, 0, 13, 0, 0, 0));
-        linearLayout.addView(textView2, w7.x5.t(-2, -2, 0, 0, 0, 0, 0));
+        linearLayout.addView(textView, w7.y5.t(-2, -2, 0, 13, 0, 0, 0));
+        linearLayout.addView(textView2, w7.y5.t(-2, -2, 0, 0, 0, 0, 0));
         LinearLayout linearLayout2 = new LinearLayout(getContext());
         this.a = linearLayout2;
         linearLayout2.setPadding(AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f), 0);
         linearLayout2.setBackground(org.telegram.ui.ActionBar.h6.b0(AndroidUtilities.dp(26.0f), org.telegram.ui.ActionBar.h6.v0(i10, dVar)));
         linearLayout2.setOrientation(0);
-        rl0 rl0Var = new rl0(getContext());
-        this.v = rl0Var;
-        rl0Var.r = true;
-        rl0Var.a(R.drawable.menu_views_reactions3, false);
+        bm0 bm0Var = new bm0(getContext());
+        this.v = bm0Var;
+        bm0Var.r = true;
+        bm0Var.a(R.drawable.menu_views_reactions3, false);
         ImageView imageView = new ImageView(getContext());
         imageView.setScaleType(ImageView.ScaleType.FIT_XY);
-        imageView.setImageDrawable(rl0Var);
+        imageView.setImageDrawable(bm0Var);
         imageView.setPadding(AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f));
-        linearLayout2.addView(imageView, w7.x5.n(26, 26));
+        linearLayout2.addView(imageView, w7.y5.n(26, 26));
         ImageView imageView2 = new ImageView(getContext());
         imageView2.setImageResource(R.drawable.arrow_more);
-        linearLayout2.addView(imageView2, w7.x5.n(16, 26));
-        addView(linearLayout, w7.x5.c(-2.0f, -2));
-        addView(linearLayout2, w7.x5.d(-2, -2.0f, 5, 13.0f, 6.0f, 13.0f, 6.0f));
+        linearLayout2.addView(imageView2, w7.y5.n(16, 26));
+        addView(linearLayout, w7.y5.c(-2.0f, -2));
+        addView(linearLayout2, w7.y5.d(-2, -2.0f, 5, 13.0f, 6.0f, 13.0f, 6.0f));
         final int i12 = 0;
         textView.setOnClickListener(new View.OnClickListener(this) { // from class: ai.v6
             public final /* synthetic */ y6 b;

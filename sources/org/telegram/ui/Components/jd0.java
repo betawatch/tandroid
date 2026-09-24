@@ -1,240 +1,196 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.HorizontalScrollView;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.Region;
+import android.text.TextPaint;
+import android.text.TextUtils;
+import android.widget.EditText;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class jd0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public class jd0 extends FrameLayout {
+    public static final tv0 I;
+    public static final tv0 J;
+    public static final tv0 K;
+    public boolean E;
+    public boolean F;
+    public final org.telegram.ui.ActionBar.d6 G;
+    public float H;
+    public final RectF a;
+    public String b;
+    public final Paint c;
+    public final TextPaint d;
+    public final o1.k e;
+    public float f;
+    public final o1.k h;
+    public float n;
+    public final o1.k r;
+    public float s;
+    public final float v;
+    public final float w;
+    public EditText x;
+    public boolean y;
 
-    public /* synthetic */ jd0(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    static {
+        tv0 tv0Var = new tv0(new fa0(2), new fa0(3));
+        tv0Var.c = 100.0f;
+        I = tv0Var;
+        tv0 tv0Var2 = new tv0(new fa0(4), new fa0(5));
+        tv0Var2.c = 100.0f;
+        J = tv0Var2;
+        tv0 tv0Var3 = new tv0(new fa0(6), new fa0(7));
+        tv0Var3.c = 100.0f;
+        K = tv0Var3;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 3:
-                ((qg0) this.b).h = null;
-                break;
-            default:
-                super.onAnimationCancel(animator);
-                break;
+    public jd0(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context);
+        this.a = new RectF();
+        this.b = "";
+        Paint paint = new Paint(1);
+        this.c = paint;
+        TextPaint textPaint = new TextPaint(1);
+        this.d = textPaint;
+        this.e = new o1.k(this, I);
+        this.h = new o1.k(this, J);
+        this.r = new o1.k(this, K);
+        float max = Math.max(2, AndroidUtilities.dp(0.5f));
+        this.v = max;
+        this.w = AndroidUtilities.dp(1.6667f);
+        this.G = d6Var;
+        setWillNotDraw(false);
+        textPaint.setTextSize(AndroidUtilities.dp(16.0f));
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStrokeWidth(max);
+        f();
+        setPadding(0, AndroidUtilities.dp(6.0f), 0, 0);
+    }
+
+    public static void d(o1.k kVar, float f7) {
+        float f10 = f7 * 100.0f;
+        o1.l lVar = kVar.u;
+        if (lVar == null || f10 != ((float) lVar.i)) {
+            kVar.c();
+            o1.l lVar2 = new o1.l(f10);
+            lVar2.b(500.0f);
+            lVar2.a(1.0f);
+            lVar2.i = f10;
+            kVar.u = lVar2;
+            kVar.f();
         }
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                sd0 sd0Var = (sd0) this.b;
-                sd0Var.setVisibility(8);
-                sd0Var.h();
-                sd0Var.P = 0.0f;
-                sd0Var.f(0.0f);
-                sd0Var.setAlpha(0.0f);
-                break;
-            case 1:
-                AnimatorSet animatorSet = (AnimatorSet) this.b;
-                if (animatorSet != null) {
-                    animatorSet.start();
-                    break;
-                }
-                break;
-            case 2:
-                hf hfVar = (hf) this.b;
-                AnimatorSet animatorSet2 = (AnimatorSet) ((ci.j9) hfVar.c).e;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    ((ci.j9) hfVar.c).e = null;
-                    break;
-                }
-                break;
-            case 3:
-                break;
-            case 4:
-                vg0 vg0Var = (vg0) this.b;
-                vg0Var.f = false;
-                vg0Var.F = null;
-                break;
-            case 5:
-                ((ji0) this.b).b();
-                break;
-            case 6:
-                ((qj0) this.b).h.setVisibility(8);
-                break;
-            case 7:
-                ml0 ml0Var = (ml0) this.b;
-                View view = ml0Var.c1;
-                if (view != null) {
-                    view.setVisibility(8);
-                }
-                if (ml0Var.b1()) {
-                    ml0Var.invalidate();
-                    break;
-                }
-                break;
-            case 8:
-                jm0 jm0Var = (jm0) this.b;
-                if (jm0Var.s != null) {
-                    jm0Var.j();
-                    jm0Var.s.invalidate();
-                    jm0Var.e.invalidate();
-                    jm0Var.invalidate();
-                    jm0Var.s = null;
-                    break;
-                }
-                break;
-            case 9:
-                ((nm0) this.b).d = false;
-                break;
-            case 10:
-                ((yn0) this.b).M0.setVisibility(8);
-                break;
-            case 11:
-                wo0 wo0Var = (wo0) this.b;
-                if (animator == wo0Var.h) {
-                    wo0Var.h = null;
-                    break;
-                }
-                break;
-            case 12:
-                ((gq0) this.b).e = null;
-                break;
-            case 13:
-                oq0 oq0Var = (oq0) this.b;
-                if (oq0Var.getParent() != null) {
-                    ((ViewGroup) oq0Var.getParent()).removeView(oq0Var);
-                    break;
-                }
-                break;
-            case 14:
-                ts0 ts0Var = (ts0) this.b;
-                View view2 = ts0Var.c;
-                view2.setAlpha(1.0f);
-                s4.o0.x0(view2);
-                ts0Var.a.removeView(view2);
-                break;
-            case 15:
-                fv0 fv0Var = (fv0) this.b;
-                if (fv0Var.f == animator) {
-                    fv0Var.f = null;
-                    break;
-                }
-                break;
-            case 16:
-                vw0 vw0Var = (vw0) this.b;
-                vw0Var.setCategoriesShownT(((Float) vw0Var.p3.getAnimatedValue()).floatValue());
-                vw0Var.p3 = null;
-                break;
-            case 17:
-                ux0 ux0Var = (ux0) this.b;
-                ux0Var.x.setVisibility(8);
-                ux0Var.F.setImageDrawable(null);
-                break;
-            case 18:
-                int i10 = 0;
-                while (true) {
-                    by0[] by0VarArr = (by0[]) this.b;
-                    if (i10 >= by0VarArr.length) {
-                        break;
-                    } else {
-                        by0 by0Var = by0VarArr[i10];
-                        if (by0Var != null) {
-                            by0Var.d = false;
-                        }
-                        i10++;
-                    }
-                }
-            case 19:
-                super.onAnimationEnd(animator);
-                ((cy0) this.b).H = null;
-                break;
-            case 20:
-                ((fy0) this.b).e = false;
-                break;
-            case 21:
-                ((m01) this.b).setVisibility(4);
-                break;
-            case 22:
-                ((x11) this.b).setVisibility(8);
-                break;
-            case 23:
-                ai.n4 n4Var = ((r21) this.b).f;
-                n4Var.setScaleX(1.0f);
-                n4Var.setScaleY(1.0f);
-                n4Var.invalidate();
-                break;
-            case 24:
-                v21 v21Var = (v21) this.b;
-                v21Var.K = 1.0f;
-                v21Var.h.invalidate();
-                break;
-            case 25:
-                ((d51) this.b).L = null;
-                break;
-            case 26:
-                UndoView undoView = (UndoView) this.b;
-                undoView.setVisibility(4);
-                undoView.setScaleX(1.0f);
-                undoView.setScaleY(1.0f);
-                undoView.setAlpha(1.0f);
-                break;
-            case 27:
-                k61 k61Var = (k61) this.b;
-                if (k61Var.a.getTag() == null) {
-                    k61Var.a.setVisibility(4);
-                    break;
-                }
-                break;
-            case 28:
-                super.onAnimationEnd(animator);
-                l61 l61Var = (l61) this.b;
-                l61Var.b = 0.0f;
-                l61Var.setTranslationY(0.0f);
-                l61Var.a = null;
-                break;
-            default:
-                g81 g81Var = (g81) this.b;
-                g81Var.J = false;
-                g81Var.setEnabled(true);
-                f81 f81Var = g81Var.y;
-                if (f81Var != null) {
-                    ((ka.c) f81Var).h(1.0f);
-                }
-                g81Var.invalidate();
-                break;
+    private void setColor(int i10) {
+        this.c.setColor(i10);
+        invalidate();
+    }
+
+    public final void a(float f7) {
+        d(this.r, f7);
+    }
+
+    public final void b(float f7, float f10, boolean z10) {
+        if (z10) {
+            d(this.e, f7);
+            d(this.h, f10);
+            return;
         }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 9:
-                nm0 nm0Var = (nm0) this.b;
-                nm0Var.d = true;
-                if (nm0Var.getParent() instanceof HorizontalScrollView) {
-                    ((HorizontalScrollView) nm0Var.getParent()).requestDisallowInterceptTouchEvent(false);
-                    break;
-                }
-                break;
-            default:
-                super.onAnimationStart(animator);
-                break;
+        this.f = f7;
+        this.n = f10;
+        if (!this.y) {
+            float f11 = this.w;
+            float f12 = this.v;
+            this.c.setStrokeWidth(((f11 - f12) * f7) + f12);
         }
+        f();
     }
 
-    public jd0(ts0 ts0Var, s4.o0 o0Var) {
-        this.a = 14;
-        this.b = ts0Var;
+    public final void c(boolean z10, boolean z11) {
+        b(z10 ? 1.0f : 0.0f, z11 ? 1.0f : 0.0f, true);
     }
 
-    private final void a(Animator animator) {
+    public final void e(EditTextBoldCursor editTextBoldCursor) {
+        this.x = editTextBoldCursor;
+        invalidate();
+    }
+
+    public final void f() {
+        int i10 = org.telegram.ui.ActionBar.h6.H6;
+        org.telegram.ui.ActionBar.d6 d6Var = this.G;
+        int d = i0.a.d((!this.y || this.F) ? this.n : 0.0f, org.telegram.ui.ActionBar.h6.v0(i10, d6Var), org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.I6, d6Var));
+        int i11 = org.telegram.ui.ActionBar.h6.q7;
+        this.d.setColor(i0.a.d(this.s, d, org.telegram.ui.ActionBar.h6.v0(i11, d6Var)));
+        setColor(i0.a.d(this.s, i0.a.d((!this.y || this.F) ? this.f : 0.0f, org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.k6, d6Var), org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.l6, d6Var)), org.telegram.ui.ActionBar.h6.v0(i11, d6Var)));
+    }
+
+    public EditText getAttachedEditText() {
+        return this.x;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        TextPaint textPaint = this.d;
+        float paddingTop = getPaddingTop() + ((textPaint.getTextSize() / 2.0f) - AndroidUtilities.dp(1.75f));
+        float textSize = (textPaint.getTextSize() / 2.0f) + (getHeight() / 2.0f);
+        EditText editText = this.x;
+        boolean z10 = (editText != null && editText.length() == 0 && TextUtils.isEmpty(this.x.getHint())) || this.y || this.E;
+        if (z10) {
+            paddingTop = com.google.android.gms.internal.vision.e2.z(1.0f, this.n, textSize - paddingTop, paddingTop);
+        }
+        float f7 = paddingTop;
+        float f10 = z10 ? (1.0f - this.n) * this.H : 0.0f;
+        Paint paint = this.c;
+        float strokeWidth = paint.getStrokeWidth();
+        float z11 = z10 ? com.google.android.gms.internal.vision.e2.z(1.0f, this.n, 0.25f, 0.75f) : 0.75f;
+        float measureText = textPaint.measureText(this.b) * z11;
+        canvas.save();
+        RectF rectF = this.a;
+        rectF.set(AndroidUtilities.dp(10.0f) + getPaddingLeft(), getPaddingTop(), (getWidth() - AndroidUtilities.dp(18.0f)) - getPaddingRight(), (strokeWidth * 2.0f) + getPaddingTop());
+        canvas.clipRect(rectF, Region.Op.DIFFERENCE);
+        rectF.set(getPaddingLeft() + strokeWidth, getPaddingTop() + strokeWidth, (getWidth() - strokeWidth) - getPaddingRight(), (getHeight() - strokeWidth) - getPaddingBottom());
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), paint);
+        canvas.restore();
+        float dp = AndroidUtilities.dp(10.0f) + getPaddingLeft();
+        float paddingTop2 = getPaddingTop() + strokeWidth;
+        float f11 = (measureText / 2.0f) + dp;
+        canvas.drawLine(((((dp + measureText) + AndroidUtilities.dp(10.0f)) - f11) * (z10 ? this.n : 1.0f)) + f11, paddingTop2, ((getWidth() - strokeWidth) - getPaddingRight()) - AndroidUtilities.dp(6.0f), paddingTop2, paint);
+        float dp2 = f11 + AndroidUtilities.dp(4.0f);
+        canvas.drawLine(dp, paddingTop2, ((dp - dp2) * (z10 ? this.n : 1.0f)) + dp2, paddingTop2, paint);
+        canvas.save();
+        canvas.scale(z11, z11, AndroidUtilities.dp(18.0f) + getPaddingLeft(), f7);
+        canvas.drawText(this.b, AndroidUtilities.dp(14.0f) + getPaddingLeft() + f10, f7, textPaint);
+        canvas.restore();
+    }
+
+    public void setForceForceUseCenter(boolean z10) {
+        this.y = z10;
+        this.F = z10;
+        invalidate();
+    }
+
+    public void setForceUseCenter(boolean z10) {
+        this.y = z10;
+        invalidate();
+    }
+
+    public void setForceUseCenter2(boolean z10) {
+        this.E = z10;
+    }
+
+    public void setLeftPadding(float f7) {
+        this.H = f7;
+        invalidate();
+    }
+
+    public void setText(String str) {
+        this.b = str;
+        invalidate();
     }
 }

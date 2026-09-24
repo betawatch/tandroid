@@ -1,35 +1,48 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.view.View;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f70 implements View.OnLayoutChangeListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class f70 extends ix0 {
+    public final /* synthetic */ int K;
 
-    public /* synthetic */ f70(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ f70(Context context, View view, int i10, org.telegram.ui.ActionBar.d6 d6Var, int i11) {
+        super(context, view, i10, d6Var);
+        this.K = i11;
     }
 
-    @Override // android.view.View.OnLayoutChangeListener
-    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
-        switch (this.a) {
+    @Override // org.telegram.ui.Components.ix0, android.view.ViewGroup, android.view.View
+    public void onAttachedToWindow() {
+        switch (this.K) {
             case 0:
-                o70 o70Var = (o70) this.b;
-                if (o70Var.D()) {
-                    o70Var.O();
+                super.onAttachedToWindow();
+                this.b.getImageReceiver().startAnimation();
+                break;
+            case 1:
+                super.onAttachedToWindow();
+                this.b.getImageReceiver().startAnimation();
+                break;
+            default:
+                super.onAttachedToWindow();
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.ix0, android.view.View
+    public void setVisibility(int i10) {
+        switch (this.K) {
+            case 2:
+                super.setVisibility(i10);
+                if (i10 != 0) {
+                    e(false, false);
                     break;
                 }
                 break;
             default:
-                cx0 cx0Var = (cx0) this.b;
-                ai.p4 p4Var = cx0Var.h;
-                if (p4Var != null && p4Var.getLayout() != null) {
-                    cx0Var.F = p4Var.getLayout().getLineWidth(0);
-                    break;
-                }
+                super.setVisibility(i10);
                 break;
         }
     }

@@ -2,16 +2,16 @@ package yh;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ y3 b;
+    public final /* synthetic */ x3 b;
     public final /* synthetic */ long c;
 
-    public /* synthetic */ c1(y3 y3Var, long j3, int i10) {
+    public /* synthetic */ c1(x3 x3Var, long j3, int i10) {
         this.a = i10;
-        this.b = y3Var;
+        this.b = x3Var;
         this.c = j3;
     }
 
@@ -19,9 +19,9 @@ public final /* synthetic */ class c1 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                y3 y3Var = this.b;
-                b1 b1Var = y3Var.n1;
-                y3Var.q2(1, true, null);
+                x3 x3Var = this.b;
+                b1 b1Var = x3Var.n1;
+                x3Var.q2(1, true, null);
                 if (this.c > 0) {
                     AndroidUtilities.cancelRunOnUIThread(b1Var);
                     AndroidUtilities.runOnUIThread(b1Var);
@@ -32,28 +32,28 @@ public final /* synthetic */ class c1 implements Runnable {
                 this.b.X1(this.c);
                 break;
             case 2:
-                y3.P0(this.b, this.c);
+                x3.P0(this.b, this.c);
                 break;
             case 3:
-                y3.d1(this.b, this.c);
+                x3.d1(this.b, this.c);
                 break;
             case 4:
                 this.b.X1(this.c);
                 break;
             case 5:
-                y3.l0(this.b, this.c);
+                x3.l0(this.b, this.c);
                 break;
             case 6:
                 this.b.X1(this.c);
                 break;
             case 7:
-                y3.P(this.b, this.c);
+                x3.P(this.b, this.c);
                 break;
             case 8:
                 this.b.X1(this.c);
                 break;
             case 9:
-                y3.B0(this.b, this.c);
+                x3.B0(this.b, this.c);
                 break;
             case 10:
                 this.b.X1(this.c);

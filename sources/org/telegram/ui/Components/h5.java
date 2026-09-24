@@ -4,7 +4,7 @@ import android.animation.TimeInterpolator;
 import android.os.SystemClock;
 import android.view.View;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class h5 {
     public final View a;
@@ -40,7 +40,7 @@ public final class h5 {
             this.i = elapsedRealtime;
         }
         if (this.h) {
-            float a2 = w7.p.a((elapsedRealtime - this.i) / j3, 0.0f, 1.0f);
+            float a2 = w7.q.a((elapsedRealtime - this.i) / j3, 0.0f, 1.0f);
             if (elapsedRealtime - this.i >= 0) {
                 TimeInterpolator timeInterpolator = this.g;
                 if (timeInterpolator == null) {

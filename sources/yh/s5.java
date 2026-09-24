@@ -19,16 +19,16 @@ import org.telegram.ui.Components.jc;
 import org.telegram.ui.Components.kc;
 import org.telegram.ui.Components.oc;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.xn;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class s5 {
-    public final n5 a;
+    public final m5 a;
     public final MessageObject b;
-    public final xn c;
+    public final wn c;
     public final qc d;
     public final kc e;
     public final jc f;
@@ -37,43 +37,43 @@ public final class s5 {
     public long k;
     public boolean l;
     public boolean m;
-    public c4 o;
-    public final q5 p;
+    public b4 o;
+    public final p5 p;
     public final /* synthetic */ t5 q;
     public boolean i = false;
     public boolean j = false;
     public Long n = null;
 
-    public s5(t5 t5Var, n5 n5Var, MessageObject messageObject, xn xnVar, boolean z10) {
+    public s5(t5 t5Var, m5 m5Var, MessageObject messageObject, wn wnVar, boolean z10) {
         this.q = t5Var;
-        q5 q5Var = new q5(this, 0);
-        this.p = q5Var;
-        this.a = n5Var;
+        p5 p5Var = new p5(this, 0);
+        this.p = p5Var;
+        this.a = m5Var;
         this.b = messageObject;
-        this.c = xnVar;
-        Context t10 = t5.t(xnVar);
-        kc kcVar = new kc(t10, xnVar.ea);
+        this.c = wnVar;
+        Context t10 = t5.t(wnVar);
+        kc kcVar = new kc(t10, wnVar.ea);
         this.e = kcVar;
         kcVar.c(R.raw.stars_topup, new String[0]);
         kcVar.b.setText(d());
-        oc ocVar = new oc(t10, xnVar.ea, true, false);
+        oc ocVar = new oc(t10, wnVar.ea, true, false);
         ocVar.e(LocaleController.getString(R.string.StarsSentUndo));
-        ocVar.a = new q5(this, 1);
-        jc jcVar = new jc(t10, xnVar.ea);
+        ocVar.a = new p5(this, 1);
+        jc jcVar = new jc(t10, wnVar.ea);
         this.f = jcVar;
         jcVar.b = 5000L;
-        jcVar.setColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Gi, xnVar.ea));
-        ocVar.addView(jcVar, w7.x5.d(20, 20.0f, 21, 0.0f, 0.0f, 12.0f, 0.0f));
+        jcVar.setColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Gi, wnVar.ea));
+        ocVar.addView(jcVar, w7.y5.d(20, 20.0f, 21, 0.0f, 0.0f, 12.0f, 0.0f));
         ocVar.d.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(30.0f), AndroidUtilities.dp(8.0f));
         kcVar.setButton(ocVar);
-        qc b10 = xc.a0(xnVar).b(kcVar, -1);
+        qc b10 = yc.a0(wnVar).b(kcVar, -1);
         this.d = b10;
         b10.r = false;
         if (z10) {
             b10.k(true);
             this.m = true;
         }
-        b10.v = q5Var;
+        b10.v = p5Var;
         this.h = 0L;
         System.currentTimeMillis();
         this.g = messageObject.isPaidReactionChosen();
@@ -85,9 +85,9 @@ public final class s5 {
         AndroidUtilities.cancelRunOnUIThread(this.p);
         this.j = true;
         this.d.b();
-        c4 c4Var = this.o;
-        if (c4Var != null) {
-            c4Var.c();
+        b4 b4Var = this.o;
+        if (b4Var != null) {
+            b4Var.c();
         }
         int i11 = (int) (-this.h);
         boolean z10 = this.g;
@@ -159,12 +159,12 @@ public final class s5 {
                 if (parentActivity == null) {
                     parentActivity = ApplicationLoader.applicationContext;
                 }
-                new l7(parentActivity, this.c.getResourceProvider(), j3, 5, str2, new r5(this, j3, i10), 0L).show();
+                new l7(parentActivity, this.c.getResourceProvider(), j3, 5, str2, new q5(this, j3, i10), 0L).show();
             }
         }
         this.d.b();
-        c4 c4Var = this.o;
-        if (c4Var != null && (messageObject = this.b) != null && messageObject.getId() == c4Var.c) {
+        b4 b4Var = this.o;
+        if (b4Var != null && (messageObject = this.b) != null && messageObject.getId() == b4Var.c) {
             this.o.c();
         }
         t5 t5Var3 = this.q;

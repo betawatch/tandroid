@@ -1,49 +1,67 @@
 package org.telegram.ui;
 
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.Typeface;
-import android.text.TextPaint;
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.Window;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class aa1 {
-    public final org.telegram.ui.Components.t00 a;
-    public kg.f b;
-    public final int c;
-    public final /* synthetic */ ba1 d;
+public final class aa1 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ca1 b;
 
-    public aa1(ba1 ba1Var, int i10) {
-        this.d = ba1Var;
-        this.c = i10;
-        org.telegram.ui.Components.t00 t00Var = new org.telegram.ui.Components.t00(ba1Var.getContext());
-        t00Var.c = true;
-        TextPaint textPaint = new TextPaint(1);
-        t00Var.e = textPaint;
-        t00Var.f = new Paint(1);
-        Paint paint = new Paint(1);
-        t00Var.h = paint;
-        Paint paint2 = new Paint(1);
-        t00Var.n = paint2;
-        t00Var.w = AndroidUtilities.dp(35.0f);
-        t00Var.x = AndroidUtilities.dp(22.0f);
-        t00Var.y = AndroidUtilities.dp(8.0f);
-        t00Var.E = AndroidUtilities.dp(3.5f);
-        t00Var.F = new RectF();
-        t00Var.G = 0.0f;
-        textPaint.setTextSize(AndroidUtilities.dp(14.0f));
-        textPaint.setTextAlign(Paint.Align.CENTER);
-        textPaint.setTypeface(Typeface.create("sans-serif-medium", 0));
-        paint.setStrokeWidth(AndroidUtilities.dpf2(1.5f));
-        Paint.Style style = Paint.Style.STROKE;
-        paint.setStyle(style);
-        paint2.setStyle(style);
-        paint2.setStrokeCap(Paint.Cap.ROUND);
-        paint2.setStrokeWidth(AndroidUtilities.dp(2.0f));
-        this.a = t00Var;
-        t00Var.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
-        ba1Var.h.addView(t00Var);
-        ba1Var.n.add(this);
+    public /* synthetic */ aa1(ca1 ca1Var, int i10) {
+        this.a = i10;
+        this.b = ca1Var;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                ca1 ca1Var = this.b;
+                ca1Var.b.setVisibility(4);
+                ig.g gVar = ca1Var.b;
+                gVar.J = false;
+                ig.g gVar2 = ca1Var.c;
+                gVar2.J = true;
+                gVar.y0 = 0;
+                gVar2.y0 = 0;
+                Window window = ca1Var.a;
+                if (window != null) {
+                    window.clearFlags(16);
+                    break;
+                }
+                break;
+            case 1:
+                ca1 ca1Var2 = this.b;
+                ig.g gVar3 = ca1Var2.c;
+                gVar3.setVisibility(4);
+                ig.g gVar4 = ca1Var2.b;
+                gVar4.y0 = 0;
+                gVar3.y0 = 0;
+                gVar4.J = true;
+                gVar3.J = false;
+                if (gVar4 instanceof ig.q) {
+                    gVar4.u0 = false;
+                    gVar4.d();
+                } else {
+                    gVar4.u0 = true;
+                    gVar4.x((gVar4.G0 * gVar4.g0.k) - ig.g.k1);
+                    gVar4.c(true);
+                    gVar4.invalidate();
+                }
+                Window window2 = ca1Var2.a;
+                if (window2 != null) {
+                    window2.clearFlags(16);
+                    break;
+                }
+                break;
+            default:
+                ca1 ca1Var3 = this.b;
+                ca1Var3.b.y0 = 0;
+                ca1Var3.e.setVisibility(8);
+                break;
+        }
     }
 }

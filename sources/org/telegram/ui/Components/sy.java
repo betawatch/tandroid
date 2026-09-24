@@ -12,7 +12,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class sy extends FrameLayout {
     public final ImageView a;
@@ -31,18 +31,18 @@ public final class sy extends FrameLayout {
         imageView.setImageResource(R.drawable.gif_empty);
         int i10 = org.telegram.ui.ActionBar.h6.Le;
         imageView.setColorFilter(new PorterDuffColorFilter(lzVar.z(i10), PorterDuff.Mode.MULTIPLY));
-        addView(imageView, w7.x5.d(-2, -2.0f, 17, 0.0f, 8.0f, 0.0f, 0.0f));
+        addView(imageView, w7.y5.d(-2, -2.0f, 17, 0.0f, 8.0f, 0.0f, 0.0f));
         TextView textView = new TextView(getContext());
         this.b = textView;
         textView.setText(LocaleController.getString(R.string.NoGIFsFound));
         textView.setTextSize(1, 16.0f);
         textView.setTextColor(lzVar.z(i10));
-        addView(textView, w7.x5.d(-2, -2.0f, 17, 0.0f, 42.0f, 0.0f, 0.0f));
+        addView(textView, w7.y5.d(-2, -2.0f, 17, 0.0f, 42.0f, 0.0f, 0.0f));
         RadialProgressView radialProgressView = new RadialProgressView(context, lzVar.Z1);
         this.c = radialProgressView;
         radialProgressView.setVisibility(8);
         radialProgressView.setProgressColor(lzVar.z(org.telegram.ui.ActionBar.h6.h6));
-        addView(radialProgressView, w7.x5.e(-2, -2, 17));
+        addView(radialProgressView, w7.y5.e(-2, -2, 17));
     }
 
     public final void a(boolean z10) {
@@ -56,6 +56,6 @@ public final class sy extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(!this.d ? (int) (org.telegram.messenger.ul.y(8.0f, r0 - r4.b1, 3) * 1.7f) : this.e.h0.getMeasuredHeight() - AndroidUtilities.dp(80.0f), TLObject.FLAG_30));
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(!this.d ? (int) (org.telegram.messenger.ok.A(8.0f, r0 - r4.b1, 3) * 1.7f) : this.e.h0.getMeasuredHeight() - AndroidUtilities.dp(80.0f), TLObject.FLAG_30));
     }
 }

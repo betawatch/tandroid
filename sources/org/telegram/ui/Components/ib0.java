@@ -1,40 +1,38 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.NotificationCenter;
+import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ib0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ jb0 b;
+public final class ib0 extends n81 {
+    public final /* synthetic */ Context a;
+    public final /* synthetic */ fc0 b;
 
-    public /* synthetic */ ib0(jb0 jb0Var, int i10) {
-        this.a = i10;
-        this.b = jb0Var;
+    public ib0(fc0 fc0Var, Context context) {
+        this.b = fc0Var;
+        this.a = context;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                jb0 jb0Var = this.b;
-                if (jb0Var.W != -1) {
-                    NotificationCenter.getInstance(jb0Var.Y.c0.w).onAnimationFinish(jb0Var.W);
-                    jb0Var.W = -1;
-                    break;
-                }
-                break;
-            case 1:
-                this.b.Y.h();
-                break;
-            default:
-                jb0 jb0Var2 = this.b;
-                if (jb0Var2.W != -1) {
-                    NotificationCenter.getInstance(jb0Var2.Y.c0.w).onAnimationFinish(jb0Var2.W);
-                    jb0Var2.W = -1;
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.Components.n81
+    public final void b(View view, int i10, int i11) {
+        zb0 zb0Var = (zb0) view;
+        zb0Var.h();
+        zb0Var.k(false);
+    }
+
+    @Override // org.telegram.ui.Components.n81
+    public final View d(int i10) {
+        return new zb0(this.b, this.a, i10);
+    }
+
+    @Override // org.telegram.ui.Components.n81
+    public final int e() {
+        return this.b.e.a.size();
+    }
+
+    @Override // org.telegram.ui.Components.n81
+    public final int h(int i10) {
+        return ((cc0) this.b.e.a.get(i10)).a;
     }
 }

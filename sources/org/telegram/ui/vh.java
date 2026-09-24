@@ -6,14 +6,15 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
+import org.telegram.messenger.FlagSecureReason;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vh implements r0.n, yf.a0, org.telegram.ui.ActionBar.a2 {
-    public final /* synthetic */ xn a;
+public final /* synthetic */ class vh implements FlagSecureReason.FlagSecureCondition, ev0, r0.n, yf.a0, org.telegram.ui.ActionBar.z1 {
+    public final /* synthetic */ wn a;
 
-    public /* synthetic */ vh(xn xnVar) {
-        this.a = xnVar;
+    public /* synthetic */ vh(wn wnVar) {
+        this.a = wnVar;
     }
 
     @Override // r0.n
@@ -21,26 +22,26 @@ public final /* synthetic */ class vh implements r0.n, yf.a0, org.telegram.ui.Ac
         i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(l1Var, false);
         int i10 = defaultWindowInsets.a;
         int i11 = defaultWindowInsets.c;
-        xn xnVar = this.a;
-        if (xnVar.Ta != i10 || xnVar.Ua != i11) {
-            xnVar.Ta = i10;
-            xnVar.Ua = i11;
-            xnVar.X0.requestLayout();
+        wn wnVar = this.a;
+        if (wnVar.Ta != i10 || wnVar.Ua != i11) {
+            wnVar.Ta = i10;
+            wnVar.Ua = i11;
+            wnVar.X0.requestLayout();
         }
-        xnVar.v.i(l1Var);
-        hh.f fVar = xnVar.K3;
+        wnVar.v.i(l1Var);
+        hh.f fVar = wnVar.K3;
         if (fVar != null) {
             fVar.setPadding(i10, 0, i11, 0);
         }
-        xnVar.n7();
-        xnVar.r7();
-        xnVar.p9();
+        wnVar.n7();
+        wnVar.r7();
+        wnVar.p9();
         boolean p5 = l1Var.a.p(8);
-        if (xnVar.Sa != p5) {
-            xnVar.Sa = p5;
-            xnVar.X0.S();
+        if (wnVar.Sa != p5) {
+            wnVar.Sa = p5;
+            wnVar.X0.S();
         }
-        ci.i1 i1Var = xnVar.q1;
+        ci.i1 i1Var = wnVar.q1;
         if (i1Var != null) {
             r0.i0.b(i1Var, l1Var);
         }
@@ -49,19 +50,32 @@ public final /* synthetic */ class vh implements r0.n, yf.a0, org.telegram.ui.Ac
 
     @Override // yf.a0
     public void a(int i10) {
-        xn.S0(this.a, i10);
+        wn.U0(this.a, i10);
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        xn xnVar = this.a;
-        xnVar.getClass();
+    @Override // org.telegram.ui.ev0
+    public void b(float[] fArr) {
+        wn wnVar = this.a;
+        fArr[1] = wnVar.x0.getBottom() - wnVar.Aa;
+        fArr[0] = (wnVar.x0.getTop() + wnVar.s9) - AndroidUtilities.dp(4.0f);
+    }
+
+    @Override // org.telegram.ui.ActionBar.z1
+    public void f(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
+        wn wnVar = this.a;
+        wnVar.getClass();
         try {
             Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
             intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
-            xnVar.getParentActivity().startActivity(intent);
+            wnVar.getParentActivity().startActivity(intent);
         } catch (Exception e) {
             FileLog.e(e);
         }
+    }
+
+    @Override // org.telegram.messenger.FlagSecureReason.FlagSecureCondition
+    public boolean run() {
+        wn wnVar = this.a;
+        return wnVar.h != null || wnVar.y9();
     }
 }

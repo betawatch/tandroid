@@ -1,30 +1,78 @@
 package v7;
 
-import android.os.CancellationSignal;
-import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
+import android.content.Context;
+import android.content.res.TypedArray;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.util.TypedValue;
+import android.view.ContextThemeWrapper;
+import android.widget.ProgressBar;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public abstract class f0 {
-    public static void a(CancellationSignal cancellationSignal, rd.a onResultOrException) {
-        kotlin.jvm.internal.i.e(onResultOrException, "onResultOrException");
-        CredentialProviderPlayServicesImpl.Companion.getClass();
-        if (a1.g.a(cancellationSignal)) {
-            return;
-        }
-        onResultOrException.invoke();
+    public static ContextThemeWrapper a(Context context, boolean z10) {
+        ContextThemeWrapper contextThemeWrapper = new ContextThemeWrapper(context, g(context, !z10 ? R.attr.dialogTheme : R.attr.alertDialogTheme));
+        return g(contextThemeWrapper, R.attr.mediaRouteTheme) != 0 ? new ContextThemeWrapper(contextThemeWrapper, e(contextThemeWrapper)) : contextThemeWrapper;
     }
 
-    public static boolean b(int i10, rd.p pVar, rd.l lVar, CancellationSignal cancellationSignal) {
-        if (i10 == -1) {
-            return false;
+    public static int b(Context context, int i10) {
+        return i0.a.e(-1, f(context, i10, R.attr.colorPrimary)) >= 3.0d ? -1 : -570425344;
+    }
+
+    public static float c(Context context) {
+        TypedValue typedValue = new TypedValue();
+        if (context.getTheme().resolveAttribute(android.R.attr.disabledAlpha, typedValue, true)) {
+            return typedValue.getFloat();
         }
-        kotlin.jvm.internal.p pVar2 = new kotlin.jvm.internal.p();
-        pVar2.a = new w0.h(hg.c.j(i10, "activity with result code: ", " indicating not RESULT_OK"), 2);
-        if (i10 == 0) {
-            pVar2.a = new w0.g("activity is cancelled by the user.");
+        return 0.5f;
+    }
+
+    public static Drawable d(Context context, int i10) {
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(new int[]{i10});
+        Drawable d = s8.d(w7.b(context, obtainStyledAttributes.getResourceId(0, 0)));
+        if (h(context)) {
+            d.setTint(f0.e.c(context, R.color.mr_dynamic_dialog_icon_light));
         }
-        pVar.invoke(cancellationSignal, new b1.c(lVar, pVar2, 1));
-        return true;
+        obtainStyledAttributes.recycle();
+        return d;
+    }
+
+    public static int e(Context context) {
+        return h(context) ? b(context, 0) == -570425344 ? R.style.Theme_MediaRouter_Light : R.style.Theme_MediaRouter_Light_DarkControlPanel : b(context, 0) == -570425344 ? R.style.Theme_MediaRouter_LightControlPanel : R.style.Theme_MediaRouter;
+    }
+
+    public static int f(Context context, int i10, int i11) {
+        if (i10 != 0) {
+            TypedArray obtainStyledAttributes = context.obtainStyledAttributes(i10, new int[]{i11});
+            int color = obtainStyledAttributes.getColor(0, 0);
+            obtainStyledAttributes.recycle();
+            if (color != 0) {
+                return color;
+            }
+        }
+        TypedValue typedValue = new TypedValue();
+        context.getTheme().resolveAttribute(i11, typedValue, true);
+        return typedValue.resourceId != 0 ? context.getResources().getColor(typedValue.resourceId) : typedValue.data;
+    }
+
+    public static int g(Context context, int i10) {
+        TypedValue typedValue = new TypedValue();
+        if (context.getTheme().resolveAttribute(i10, typedValue, true)) {
+            return typedValue.resourceId;
+        }
+        return 0;
+    }
+
+    public static boolean h(Context context) {
+        TypedValue typedValue = new TypedValue();
+        return context.getTheme().resolveAttribute(R.attr.isLightTheme, typedValue, true) && typedValue.data != 0;
+    }
+
+    public static void i(Context context, ProgressBar progressBar) {
+        if (progressBar.isIndeterminate()) {
+            progressBar.getIndeterminateDrawable().setColorFilter(f0.e.c(context, h(context) ? R.color.mr_cast_progressbar_progress_and_thumb_light : R.color.mr_cast_progressbar_progress_and_thumb_dark), PorterDuff.Mode.SRC_IN);
+        }
     }
 }

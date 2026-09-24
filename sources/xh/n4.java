@@ -12,13 +12,13 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.e51;
-import org.telegram.ui.Components.h51;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.s51;
+import org.telegram.ui.Components.v51;
+import org.telegram.ui.Components.yc;
 import yh.t5;
 import yh.w7;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class n4 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -61,17 +61,17 @@ public final /* synthetic */ class n4 implements Utilities.Callback2 {
                 MessagesController messagesController = MessagesController.getInstance(i13);
                 long j3 = z4Var.Z;
                 long sendPaidMessagesStars = messagesController.getSendPaidMessagesStars(j3);
-                arrayList.add(h51.j(-1, z4Var.h0));
+                arrayList.add(v51.j(-1, z4Var.h0));
                 if (sendPaidMessagesStars <= 0) {
-                    arrayList.add(h51.j(-2, z4Var.s0));
-                    arrayList.add(h51.C(AndroidUtilities.dp(12.0f)));
+                    arrayList.add(v51.j(-2, z4Var.s0));
+                    arrayList.add(v51.C(AndroidUtilities.dp(12.0f)));
                 }
                 if (starGift != null) {
                     if (!starGift.can_upgrade || z13) {
-                        arrayList.add(h51.A(-5, null));
+                        arrayList.add(v51.A(-5, null));
                     } else {
-                        arrayList.add(h51.A(-3, null));
-                        h51 i14 = h51.i(2, w7.X0(false, LocaleController.formatString(z13 ? R.string.Gift2UpgradeSelf : R.string.Gift2Upgrade, Integer.valueOf((int) starGift.upgrade_stars)), 0.78f, null));
+                        arrayList.add(v51.A(-3, null));
+                        v51 i14 = v51.i(2, w7.X0(false, LocaleController.formatString(z13 ? R.string.Gift2UpgradeSelf : R.string.Gift2Upgrade, Integer.valueOf((int) starGift.upgrade_stars)), 0.78f, null));
                         i14.K(z4Var.q0);
                         arrayList.add(i14);
                         if (z12) {
@@ -88,11 +88,11 @@ public final /* synthetic */ class n4 implements Utilities.Callback2 {
                             }
                             replaceArrows = AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(formatString2, new p4(z4Var, 2)), z10);
                         }
-                        h51 A = h51.A(-5, replaceArrows);
+                        v51 A = v51.A(-5, replaceArrows);
                         A.g = (z11 || z12) ? false : true;
                         arrayList.add(A);
                     }
-                    h51 i15 = h51.i(1, LocaleController.getString(z13 ? R.string.Gift2HideSelf : R.string.Gift2Hide));
+                    v51 i15 = v51.i(1, LocaleController.getString(z13 ? R.string.Gift2HideSelf : R.string.Gift2Hide));
                     i15.K(z4Var.p0);
                     arrayList.add(i15);
                     if (z13) {
@@ -103,33 +103,33 @@ public final /* synthetic */ class n4 implements Utilities.Callback2 {
                         i10 = 1;
                         c10 = 0;
                         formatString = LocaleController.formatString(R.string.Gift2HideInfo, str);
-                        arrayList.add(h51.A(-6, formatString));
+                        arrayList.add(v51.A(-6, formatString));
                         if (frameLayout != null) {
                             int i16 = starGift.gifts_per_round;
                             Object[] objArr = new Object[i10];
                             objArr[c10] = Integer.valueOf(i16);
                             CharSequence replaceArrows2 = AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.formatPluralString("Gift2AuctionInfoLearnMore2", i16, objArr), new p4(z4Var, 3)), i10);
-                            arrayList.add(h51.j(-43, frameLayout));
-                            arrayList.add(h51.A(-44, replaceArrows2));
+                            arrayList.add(v51.j(-43, frameLayout));
+                            arrayList.add(v51.A(-44, replaceArrows2));
                         }
                     }
                     formatString = LocaleController.getString(i11);
                     i10 = 1;
                     c10 = 0;
-                    arrayList.add(h51.A(-6, formatString));
+                    arrayList.add(v51.A(-6, formatString));
                     if (frameLayout != null) {
                     }
                 } else {
                     if (sendPaidMessagesStars <= 0) {
-                        arrayList.add(h51.A(-3, LocaleController.formatString(R.string.Gift2MessagePremiumInfo, str)));
+                        arrayList.add(v51.A(-3, LocaleController.formatString(R.string.Gift2MessagePremiumInfo, str)));
                     }
                     if (kVar != null && (kVar.c != null || kVar.d != null)) {
-                        h51 i17 = h51.i(3, w7.X0(false, LocaleController.formatString(R.string.Gift2MessageStars, Integer.valueOf((int) kVar.g())), 0.78f, null));
+                        v51 i17 = v51.i(3, w7.X0(false, LocaleController.formatString(R.string.Gift2MessageStars, Integer.valueOf((int) kVar.g())), 0.78f, null));
                         i17.K(z4Var.r0);
                         arrayList.add(i17);
                         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.formatNumber(t5.y(i13, false).p().amount, ','));
-                        spannableStringBuilder.setSpan(new e51(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
-                        arrayList.add(h51.A(-7, TextUtils.concat(w7.X0(false, LocaleController.formatSpannable(R.string.Gift2MessageStarsInfo, spannableStringBuilder), 0.66f, null), " ", AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.Gift2MessageStarsInfoLink), new p4(z4Var, 4)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)))));
+                        spannableStringBuilder.setSpan(new s51(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
+                        arrayList.add(v51.A(-7, TextUtils.concat(w7.X0(false, LocaleController.formatSpannable(R.string.Gift2MessageStarsInfo, spannableStringBuilder), 0.66f, null), " ", AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.Gift2MessageStarsInfoLink), new p4(z4Var, 4)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)))));
                     }
                 }
                 if (z4Var.P) {
@@ -146,7 +146,7 @@ public final /* synthetic */ class n4 implements Utilities.Callback2 {
                         if ("STARGIFT_USER_USAGE_LIMITED".equalsIgnoreCase(str2)) {
                             AndroidUtilities.hideKeyboard(u4Var);
                             z4Var.dismiss();
-                            xc X = z4Var.X();
+                            yc X = z4Var.X();
                             if (X != null && starGift2 != null && starGift2.limited_per_user) {
                                 X.R(starGift2.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("Gift2PerUserLimit", starGift2.per_user_total))).j();
                                 break;

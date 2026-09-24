@@ -16,12 +16,12 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yq implements Runnable {
     public final /* synthetic */ String[] a;
     public final /* synthetic */ org.telegram.messenger.jb b;
-    public final /* synthetic */ org.telegram.ui.Cells.i3 c;
+    public final /* synthetic */ org.telegram.ui.Cells.j3 c;
     public final /* synthetic */ int[] d;
     public final /* synthetic */ ci.d e;
     public final /* synthetic */ boolean f;
@@ -30,14 +30,14 @@ public final /* synthetic */ class yq implements Runnable {
     public final /* synthetic */ int[] r;
     public final /* synthetic */ boolean[] s;
     public final /* synthetic */ Utilities.Callback v;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f3 w;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e3 w;
     public final /* synthetic */ org.telegram.ui.ActionBar.d6 x;
     public final /* synthetic */ Context y;
 
-    public /* synthetic */ yq(String[] strArr, org.telegram.messenger.jb jbVar, org.telegram.ui.Cells.i3 i3Var, int[] iArr, ci.d dVar, boolean z10, int i10, TLRPC.User user, int[] iArr2, boolean[] zArr, Utilities.Callback callback, org.telegram.ui.ActionBar.f3 f3Var, org.telegram.ui.ActionBar.d6 d6Var, Context context) {
+    public /* synthetic */ yq(String[] strArr, org.telegram.messenger.jb jbVar, org.telegram.ui.Cells.j3 j3Var, int[] iArr, ci.d dVar, boolean z10, int i10, TLRPC.User user, int[] iArr2, boolean[] zArr, Utilities.Callback callback, org.telegram.ui.ActionBar.e3 e3Var, org.telegram.ui.ActionBar.d6 d6Var, Context context) {
         this.a = strArr;
         this.b = jbVar;
-        this.c = i3Var;
+        this.c = j3Var;
         this.d = iArr;
         this.e = dVar;
         this.f = z10;
@@ -46,7 +46,7 @@ public final /* synthetic */ class yq implements Runnable {
         this.r = iArr2;
         this.s = zArr;
         this.v = callback;
-        this.w = f3Var;
+        this.w = e3Var;
         this.x = d6Var;
         this.y = context;
     }
@@ -58,13 +58,13 @@ public final /* synthetic */ class yq implements Runnable {
             this.b.run();
             return;
         }
-        org.telegram.ui.Cells.i3 i3Var = this.c;
-        String trim = i3Var.b.getText().toString().trim();
+        org.telegram.ui.Cells.j3 j3Var = this.c;
+        String trim = j3Var.b.getText().toString().trim();
         if (TextUtils.isEmpty(trim)) {
             int[] iArr = this.d;
             int i10 = -iArr[0];
             iArr[0] = i10;
-            AndroidUtilities.shakeViewSpring(i3Var, i10);
+            AndroidUtilities.shakeViewSpring(j3Var, i10);
             return;
         }
         final ci.d dVar = this.e;
@@ -82,7 +82,7 @@ public final /* synthetic */ class yq implements Runnable {
         final int[] iArr2 = this.r;
         final boolean[] zArr = this.s;
         final Utilities.Callback callback = this.v;
-        final org.telegram.ui.ActionBar.f3 f3Var = this.w;
+        final org.telegram.ui.ActionBar.e3 e3Var = this.w;
         final org.telegram.ui.ActionBar.d6 d6Var = this.x;
         final Context context = this.y;
         iArr2[0] = connectionsManager.sendRequestTyped(createbot, aVar, new Utilities.Callback2() { // from class: org.telegram.ui.Components.br
@@ -94,7 +94,7 @@ public final /* synthetic */ class yq implements Runnable {
                 iArr2[0] = -1;
                 dVar.setLoading(false);
                 int i12 = i11;
-                org.telegram.ui.ActionBar.f3 f3Var2 = f3Var;
+                org.telegram.ui.ActionBar.e3 e3Var2 = e3Var;
                 if (user2 != null) {
                     zArr[0] = true;
                     MessagesController.getInstance(i12).putUser(user2, false);
@@ -102,7 +102,7 @@ public final /* synthetic */ class yq implements Runnable {
                     arrayList.add(user2);
                     MessagesStorage.getInstance(i12).putUsersAndChats(arrayList, null, false, false);
                     callback.run(user2);
-                    f3Var2.dismiss();
+                    e3Var2.dismiss();
                     return;
                 }
                 if (tL_error != null) {
@@ -111,25 +111,25 @@ public final /* synthetic */ class yq implements Runnable {
                     if (equalsIgnoreCase) {
                         MessagesController messagesController2 = MessagesController.getInstance(i12);
                         boolean isPremium = UserConfig.getInstance(i12).isPremium();
-                        xc xcVar = new xc(f3Var2.topBulletinContainer, d6Var2);
+                        yc ycVar = new yc(e3Var2.topBulletinContainer, d6Var2);
                         int i13 = R.raw.error;
                         String string = LocaleController.getString(R.string.CreateManagedBotLimitTitle);
-                        SpannableStringBuilder replaceSingleLink = AndroidUtilities.replaceSingleLink(isPremium ? LocaleController.formatString(R.string.CreateManagedBotLimitText, Integer.valueOf(messagesController2.config.botsCreateLimitPremium.get())) : LocaleController.formatString(R.string.CreateManagedBotLimitTextPremium, Integer.valueOf(messagesController2.config.botsCreateLimitPremium.get()), Integer.valueOf(messagesController2.config.botsCreateLimitDefault.get())), org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Gi, d6Var2), new yp(f3Var2, 2));
-                        ph phVar = new ph(17, f3Var2, context);
+                        SpannableStringBuilder replaceSingleLink = AndroidUtilities.replaceSingleLink(isPremium ? LocaleController.formatString(R.string.CreateManagedBotLimitText, Integer.valueOf(messagesController2.config.botsCreateLimitPremium.get())) : LocaleController.formatString(R.string.CreateManagedBotLimitTextPremium, Integer.valueOf(messagesController2.config.botsCreateLimitPremium.get()), Integer.valueOf(messagesController2.config.botsCreateLimitDefault.get())), org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Gi, d6Var2), new yp(e3Var2, 2));
+                        uc ucVar = new uc(23, e3Var2, context);
                         if (replaceSingleLink == null) {
                             replaceSingleLink = new SpannableStringBuilder(replaceSingleLink);
                         }
                         int charSequenceIndexOf = AndroidUtilities.charSequenceIndexOf(replaceSingleLink, "@BotFather");
                         if (charSequenceIndexOf >= 0) {
-                            replaceSingleLink.setSpan(new org.telegram.ui.Cells.i(d6Var2, phVar, 6), charSequenceIndexOf, charSequenceIndexOf + 10, 33);
+                            replaceSingleLink.setSpan(new org.telegram.ui.Cells.i(d6Var2, ucVar, 6), charSequenceIndexOf, charSequenceIndexOf + 10, 33);
                         }
-                        qc M = xcVar.M(string, replaceSingleLink, i13);
+                        qc M = ycVar.M(string, replaceSingleLink, i13);
                         M.j = 8000;
                         M.j();
                     } else {
                         String str = tL_error.text;
                         if (str != null && str.startsWith("FLOOD_WAIT_")) {
-                            new xc(f3Var2.topBulletinContainer, d6Var2).M(LocaleController.getString(R.string.CreateManagedBotLimitTitle), LocaleController.formatString(R.string.CreateManagedBotLimitTextTime, LocaleController.formatDuration(Integer.parseInt(tL_error.text.substring(11)))), R.raw.error).j();
+                            new yc(e3Var2.topBulletinContainer, d6Var2).M(LocaleController.getString(R.string.CreateManagedBotLimitTitle), LocaleController.formatString(R.string.CreateManagedBotLimitTextTime, LocaleController.formatDuration(Integer.parseInt(tL_error.text.substring(11)))), R.raw.error).j();
                         } else if ("MANAGER_PERMISSION_MISSING".equalsIgnoreCase(tL_error.text)) {
                             TLRPC.User user3 = user;
                             if (TextUtils.isEmpty(UserObject.getPublicUsername(user3))) {
@@ -137,12 +137,12 @@ public final /* synthetic */ class yq implements Runnable {
                             } else {
                                 userName = "@" + UserObject.getPublicUsername(user3);
                             }
-                            new xc(f3Var2.topBulletinContainer, d6Var2).Q(R.raw.error, 36, AndroidUtilities.replaceSingleLinkBold(LocaleController.formatString(R.string.CreateManagedBotUnsupported, userName), org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Gi, d6Var2))).j();
+                            new yc(e3Var2.topBulletinContainer, d6Var2).Q(R.raw.error, 36, AndroidUtilities.replaceSingleLinkBold(LocaleController.formatString(R.string.CreateManagedBotUnsupported, userName), org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Gi, d6Var2))).j();
                         } else {
-                            org.telegram.ui.Cells.q3.r(f3Var2.topBulletinContainer, d6Var2, tL_error, false);
+                            org.telegram.ui.Cells.c1.r(e3Var2.topBulletinContainer, d6Var2, tL_error, false);
                         }
                     }
-                    AndroidUtilities.hideKeyboard(f3Var2.getCurrentFocus());
+                    AndroidUtilities.hideKeyboard(e3Var2.getCurrentFocus());
                 }
             }
         }, 1024);

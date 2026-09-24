@@ -1,21 +1,29 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class t80 extends ki0 {
-    public final /* synthetic */ w80 n;
+public final /* synthetic */ class t80 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ v80 b;
+    public final /* synthetic */ boolean c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t80(w80 w80Var, Context context, String str, String str2, String str3) {
-        super(context, str, str2, str3, false);
-        this.n = w80Var;
+    public /* synthetic */ t80(v80 v80Var, boolean z10, int i10) {
+        this.a = i10;
+        this.b = v80Var;
+        this.c = z10;
     }
 
-    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
-    public final void dismiss() {
-        super.dismiss();
-        this.n.E = null;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.runOnUIThread(new t80(this.b, this.c, 1));
+                break;
+            default:
+                this.b.setJoinRequest(this.c);
+                break;
+        }
     }
 }

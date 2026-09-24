@@ -28,22 +28,22 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 import m1.j;
-import m4.p0;
+import m4.o0;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildConfig;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.secretmedia.ExtendedDefaultDataSourceFactory;
-import org.telegram.ui.Components.xg;
+import org.telegram.ui.Components.yg;
 import t7.u;
 import yc.i;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class d extends i {
     public static final f l;
     public static final HashMap m;
     public final ExtendedDefaultDataSourceFactory e;
-    public final p0 f;
+    public final o0 f;
     public final u g;
     public final HashMap h;
     public Pair i;
@@ -66,7 +66,7 @@ public final class d extends i {
         this.i = null;
         this.j = false;
         this.k = new AtomicInteger();
-        this.f = new p0(25);
+        this.f = new o0(27);
         this.g = new u();
         this.e = new ExtendedDefaultDataSourceFactory(ApplicationLoader.applicationContext, "Mozilla/5.0 (X11; Linux x86_64; rv:10.0) Gecko/20150101 Firefox/47.0 (Chrome)");
     }
@@ -104,7 +104,7 @@ public final class d extends i {
     public final yc.g e(yc.d dVar) {
         String str;
         int incrementAndGet = this.k.incrementAndGet();
-        StringBuilder l4 = hg.c.l(incrementAndGet, "Request ", " ");
+        StringBuilder j3 = hg.c.j(incrementAndGet, "Request ", " ");
         switch (dVar.g) {
             case 1:
                 str = "GET";
@@ -158,28 +158,28 @@ public final class d extends i {
                 str = BuildConfig.BETA_URL;
                 break;
         }
-        l4.append(str);
-        l4.append(" ");
-        l4.append(dVar.f);
-        l4.append(" ");
-        l4.append((String) dVar.i.get("range"));
-        Log.d("CAST_SERVER", l4.toString());
+        j3.append(str);
+        j3.append(" ");
+        j3.append(dVar.f);
+        j3.append(" ");
+        j3.append((String) dVar.i.get("range"));
+        Log.d("CAST_SERVER", j3.toString());
         try {
             yc.g k10 = k(dVar);
-            xg xgVar = k10.e;
-            xgVar.put("Access-Control-Allow-Origin", "*");
-            xgVar.put("Access-Control-Max-Age", "3628800");
-            xgVar.put("Access-Control-Allow-Methods", "*");
-            xgVar.put("Access-Control-Allow-Headers", "*");
+            yg ygVar = k10.e;
+            ygVar.put("Access-Control-Allow-Origin", "*");
+            ygVar.put("Access-Control-Max-Age", "3628800");
+            ygVar.put("Access-Control-Allow-Methods", "*");
+            ygVar.put("Access-Control-Allow-Headers", "*");
             return k10;
         } catch (Throwable unused) {
             Log.d("CAST_SERVER", "Error " + incrementAndGet);
             yc.g c10 = i.c(yc.f.n, "text/plain", "Error reading file");
-            xg xgVar2 = c10.e;
-            xgVar2.put("Access-Control-Allow-Origin", "*");
-            xgVar2.put("Access-Control-Max-Age", "3628800");
-            xgVar2.put("Access-Control-Allow-Methods", "*");
-            xgVar2.put("Access-Control-Allow-Headers", "*");
+            yg ygVar2 = c10.e;
+            ygVar2.put("Access-Control-Allow-Origin", "*");
+            ygVar2.put("Access-Control-Max-Age", "3628800");
+            ygVar2.put("Access-Control-Allow-Methods", "*");
+            ygVar2.put("Access-Control-Allow-Headers", "*");
             return c10;
         }
     }

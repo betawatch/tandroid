@@ -1,78 +1,61 @@
 package v7;
 
 import android.content.Context;
-import android.content.res.TypedArray;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
-import android.util.TypedValue;
-import android.view.ContextThemeWrapper;
-import android.widget.ProgressBar;
-import org.telegram.messenger.beta.R;
+import android.content.pm.PackageManager;
+import android.content.res.Configuration;
+import android.content.res.Resources;
+import android.os.Build;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public abstract class d0 {
-    public static ContextThemeWrapper a(Context context, boolean z10) {
-        ContextThemeWrapper contextThemeWrapper = new ContextThemeWrapper(context, g(context, !z10 ? R.attr.dialogTheme : R.attr.alertDialogTheme));
-        return g(contextThemeWrapper, R.attr.mediaRouteTheme) != 0 ? new ContextThemeWrapper(contextThemeWrapper, e(contextThemeWrapper)) : contextThemeWrapper;
-    }
+    public static Boolean a;
+    public static Boolean b;
+    public static Boolean c;
+    public static Boolean d;
+    public static Boolean e;
+    public static Boolean f;
+    public static Boolean g;
 
-    public static int b(Context context, int i10) {
-        return i0.a.e(-1, f(context, i10, R.attr.colorPrimary)) >= 3.0d ? -1 : -570425344;
-    }
-
-    public static float c(Context context) {
-        TypedValue typedValue = new TypedValue();
-        if (context.getTheme().resolveAttribute(android.R.attr.disabledAlpha, typedValue, true)) {
-            return typedValue.getFloat();
+    public static boolean a(Context context) {
+        PackageManager packageManager = context.getPackageManager();
+        if (f == null) {
+            f = Boolean.valueOf(Build.VERSION.SDK_INT >= 26 && packageManager.hasSystemFeature("android.hardware.type.automotive"));
         }
-        return 0.5f;
+        return f.booleanValue();
     }
 
-    public static Drawable d(Context context, int i10) {
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(new int[]{i10});
-        Drawable d = r8.d(v7.b(context, obtainStyledAttributes.getResourceId(0, 0)));
-        if (h(context)) {
-            d.setTint(f0.e.c(context, R.color.mr_dynamic_dialog_icon_light));
+    public static boolean b(Resources resources) {
+        boolean z10 = false;
+        if (resources == null) {
+            return false;
         }
-        obtainStyledAttributes.recycle();
-        return d;
-    }
-
-    public static int e(Context context) {
-        return h(context) ? b(context, 0) == -570425344 ? R.style.Theme_MediaRouter_Light : R.style.Theme_MediaRouter_Light_DarkControlPanel : b(context, 0) == -570425344 ? R.style.Theme_MediaRouter_LightControlPanel : R.style.Theme_MediaRouter;
-    }
-
-    public static int f(Context context, int i10, int i11) {
-        if (i10 != 0) {
-            TypedArray obtainStyledAttributes = context.obtainStyledAttributes(i10, new int[]{i11});
-            int color = obtainStyledAttributes.getColor(0, 0);
-            obtainStyledAttributes.recycle();
-            if (color != 0) {
-                return color;
+        if (d == null) {
+            Configuration configuration = resources.getConfiguration();
+            if ((configuration.screenLayout & 15) <= 3 && configuration.smallestScreenWidthDp >= 600) {
+                z10 = true;
             }
+            d = Boolean.valueOf(z10);
         }
-        TypedValue typedValue = new TypedValue();
-        context.getTheme().resolveAttribute(i11, typedValue, true);
-        return typedValue.resourceId != 0 ? context.getResources().getColor(typedValue.resourceId) : typedValue.data;
+        return d.booleanValue();
     }
 
-    public static int g(Context context, int i10) {
-        TypedValue typedValue = new TypedValue();
-        if (context.getTheme().resolveAttribute(i10, typedValue, true)) {
-            return typedValue.resourceId;
+    public static boolean c(Context context) {
+        Resources resources = context.getResources();
+        if (resources == null) {
+            return false;
         }
-        return 0;
+        if (b == null) {
+            b = Boolean.valueOf((resources.getConfiguration().screenLayout & 15) > 3 || b(resources));
+        }
+        return b.booleanValue();
     }
 
-    public static boolean h(Context context) {
-        TypedValue typedValue = new TypedValue();
-        return context.getTheme().resolveAttribute(R.attr.isLightTheme, typedValue, true) && typedValue.data != 0;
-    }
-
-    public static void i(Context context, ProgressBar progressBar) {
-        if (progressBar.isIndeterminate()) {
-            progressBar.getIndeterminateDrawable().setColorFilter(f0.e.c(context, h(context) ? R.color.mr_cast_progressbar_progress_and_thumb_light : R.color.mr_cast_progressbar_progress_and_thumb_dark), PorterDuff.Mode.SRC_IN);
+    public static boolean d(Context context) {
+        PackageManager packageManager = context.getPackageManager();
+        if (g == null) {
+            g = Boolean.valueOf(packageManager.hasSystemFeature("com.google.android.tv") || packageManager.hasSystemFeature("android.hardware.type.television") || packageManager.hasSystemFeature("android.software.leanback"));
         }
+        return g.booleanValue();
     }
 }

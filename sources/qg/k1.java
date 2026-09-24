@@ -2,40 +2,36 @@ package qg;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class k1 extends View {
-    public int a;
+    public final Paint a;
     public float b;
-    public final /* synthetic */ l1 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k1(l1 l1Var, Context context) {
+    public k1(Context context) {
         super(context);
-        this.c = l1Var;
-        setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
-        setLayoutParams(new s4.p0(-2, 0));
+        Paint paint = new Paint(1);
+        this.a = paint;
+        paint.setColor(-1);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        l1 l1Var = this.c;
-        l1Var.X2.setColor(this.a);
-        float min = Math.min((getWidth() - getPaddingLeft()) - getPaddingRight(), (getHeight() - getPaddingTop()) - getPaddingBottom()) / 2.0f;
-        if (this.b != 0.0f) {
-            min -= (l1Var.Y2.getStrokeWidth() + AndroidUtilities.dp(3.0f)) * this.b;
-        }
-        float width = ((getWidth() / 2.0f) + getPaddingLeft()) - getPaddingRight();
-        float height = ((getHeight() / 2.0f) + getPaddingTop()) - getPaddingBottom();
-        l1.x1(width, height, min, this.a, canvas);
-        if (this.b != 0.0f) {
-            l1Var.Y2.setColor(this.a);
-            l1Var.Y2.setAlpha(255);
-            canvas.drawCircle(width, height, (Math.min((getWidth() - getPaddingLeft()) - getPaddingRight(), (getHeight() - getPaddingTop()) - getPaddingBottom()) / 2.0f) - AndroidUtilities.dp(2.0f), l1Var.Y2);
-        }
+        Paint paint = this.a;
+        canvas.drawLine((getWidth() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(-6.7f, -7.0f, this.b)), (getHeight() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(0.71f, 0.0f, this.b)), (getWidth() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(-2.45f, 7.0f, this.b)), (getHeight() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(4.79f, 0.0f, this.b)), paint);
+        canvas.drawLine((getWidth() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(-2.45f, 0.0f, this.b)), (getHeight() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(4.79f, 7.0f, this.b)), (getWidth() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(6.59f, 0.0f, this.b)), (getHeight() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(-4.27f, -7.0f, this.b)), paint);
+    }
+
+    public void setProgress(float f7) {
+        this.b = f7;
+        invalidate();
     }
 }

@@ -1,79 +1,101 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.messenger.MessageObject;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.KeyEvent;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ub1;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class rm0 extends s4.o {
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ int f;
-    public final /* synthetic */ ArrayList g;
-    public final /* synthetic */ int h;
-    public final /* synthetic */ int i;
-    public final /* synthetic */ ArrayList j;
-    public final /* synthetic */ wm0 k;
+public final class rm0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ KeyEvent.Callback d;
 
-    public rm0(wm0 wm0Var, int i10, int i11, int i12, int i13, int i14, ArrayList arrayList, int i15, int i16, ArrayList arrayList2) {
-        this.k = wm0Var;
-        this.b = i10;
-        this.c = i11;
-        this.d = i12;
-        this.e = i13;
-        this.f = i14;
-        this.g = arrayList;
-        this.h = i15;
-        this.i = i16;
-        this.j = arrayList2;
+    public /* synthetic */ rm0(KeyEvent.Callback callback, boolean z10, float f7, int i10) {
+        this.a = i10;
+        this.d = callback;
+        this.b = z10;
+        this.c = f7;
     }
 
-    @Override // s4.o
-    public final boolean a(int i10, int i11) {
-        return b(i10, i11);
-    }
-
-    @Override // s4.o
-    public final boolean b(int i10, int i11) {
-        MessageObject messageObject;
-        wm0 wm0Var = this.k;
-        if (i10 >= 0 && i11 >= 0) {
-            if (i10 == this.c && i11 == wm0Var.s) {
-                return true;
-            }
-            if (i10 == this.d && i11 == wm0Var.x) {
-                return true;
-            }
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                um0 um0Var = (um0) this.d;
+                ub1 ub1Var = um0Var.e;
+                um0Var.h0 = null;
+                boolean z10 = this.b;
+                um0Var.i0 = z10 ? 1.0f : 0.0f;
+                for (int i10 = 0; i10 < ub1Var.getChildCount(); i10++) {
+                    ub1Var.getChildAt(i10).invalidate();
+                }
+                ub1Var.invalidate();
+                um0Var.p();
+                if (!z10) {
+                    float childCount = um0Var.k0 * ub1Var.getChildCount();
+                    float scrollX = um0Var.getScrollX();
+                    float f7 = this.c;
+                    float childCount2 = (scrollX + f7) / (um0Var.j0 * ub1Var.getChildCount());
+                    float measuredWidth = (childCount - um0Var.getMeasuredWidth()) / childCount;
+                    if (childCount2 > measuredWidth) {
+                        childCount2 = measuredWidth;
+                        f7 = 0.0f;
+                    }
+                    float f10 = childCount * childCount2;
+                    if (f10 - f7 < 0.0f) {
+                        f10 = f7;
+                    }
+                    um0Var.l0 = (um0Var.getScrollX() + f7) - f10;
+                    int i11 = (int) (f10 - f7);
+                    um0Var.m0 = i11;
+                    if (i11 < 0) {
+                        um0Var.m0 = 0;
+                    }
+                    for (int i12 = 0; i12 < ub1Var.getChildCount(); i12++) {
+                        View childAt = ub1Var.getChildAt(i12);
+                        if (childAt instanceof nx0) {
+                            ((nx0) childAt).setExpanded(false);
+                        }
+                        childAt.getLayoutParams().width = AndroidUtilities.dp(33.0f);
+                    }
+                    um0Var.g0 = false;
+                    um0Var.getLayoutParams().height = AndroidUtilities.dp(36.0f);
+                    ub1Var.requestLayout();
+                    break;
+                }
+                break;
+            default:
+                super.onAnimationEnd(animator);
+                if (!this.b) {
+                    super/*android.app.Dialog*/.dismiss();
+                    break;
+                }
+                break;
         }
-        MessageObject messageObject2 = null;
-        int i12 = this.e;
-        if (i10 < i12 || i10 >= this.f) {
-            int i13 = this.h;
-            messageObject = (i10 < i13 || i10 >= this.i) ? null : (MessageObject) this.j.get(i10 - i13);
-        } else {
-            messageObject = (MessageObject) this.g.get(i10 - i12);
-        }
-        int i14 = wm0Var.v;
-        if (i11 < i14 || i11 >= wm0Var.w) {
-            int i15 = wm0Var.y;
-            if (i11 >= i15 && i11 < wm0Var.E) {
-                messageObject2 = (MessageObject) wm0Var.f.get(i11 - i15);
-            }
-        } else {
-            messageObject2 = (MessageObject) wm0Var.e.get(i11 - i14);
-        }
-        return (messageObject2 == null || messageObject == null || messageObject2.getDocument() == null || messageObject.getDocument() == null || messageObject2.getDocument().id != messageObject.getDocument().id) ? false : true;
     }
 
-    @Override // s4.o
-    public final int d() {
-        return this.k.r;
-    }
-
-    @Override // s4.o
-    public final int e() {
-        return this.b;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 1:
+                super.onAnimationStart(animator);
+                wh.l lVar = ((wh.m) this.d).y;
+                lVar.setVisibility(0);
+                if (this.b) {
+                    float f7 = this.c;
+                    lVar.setScaleX(f7);
+                    lVar.setScaleY(f7);
+                    break;
+                }
+                break;
+            default:
+                super.onAnimationStart(animator);
+                break;
+        }
     }
 }

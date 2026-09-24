@@ -14,9 +14,8 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.messenger.video.MediaCodecVideoConvertor;
-import org.telegram.ui.Cells.q3;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class OutputSurface implements SurfaceTexture.OnFrameAvailableListener {
     private static final int EGL_CONTEXT_CLIENT_VERSION = 12440;
@@ -43,7 +42,7 @@ public class OutputSurface implements SurfaceTexture.OnFrameAvailableListener {
 
     private void checkEglError(String str) {
         if (EGL14.eglGetError() != 12288) {
-            throw new RuntimeException(q3.i("EGL error encountered (see log) at: ", str));
+            throw new RuntimeException(v7.j.g("EGL error encountered (see log) at: ", str));
         }
     }
 

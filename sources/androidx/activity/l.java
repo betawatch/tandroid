@@ -28,9 +28,9 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.beta.R;
-import w7.z7;
+import w7.a8;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public abstract class l extends e0.h implements u0, androidx.lifecycle.i, t4.e {
     public final CopyOnWriteArrayList E;
@@ -39,7 +39,7 @@ public abstract class l extends e0.h implements u0, androidx.lifecycle.i, t4.e {
     public boolean H;
     public boolean I;
     public final f0 b;
-    public final lf.i c;
+    public final la.h c;
     public final androidx.lifecycle.v d;
     public final n e;
     public t0 f;
@@ -56,7 +56,7 @@ public abstract class l extends e0.h implements u0, androidx.lifecycle.i, t4.e {
     public l() {
         f0 f0Var = new f0(1);
         this.b = f0Var;
-        this.c = new lf.i(new a3.d(this, 25));
+        this.c = new la.h(new a3.d(this, 25));
         androidx.lifecycle.v vVar = new androidx.lifecycle.v(this);
         this.d = vVar;
         n nVar = new n(this);
@@ -244,7 +244,7 @@ public abstract class l extends e0.h implements u0, androidx.lifecycle.i, t4.e {
         }
         super.onCreatePanelMenu(i10, menu);
         getMenuInflater();
-        Iterator it = ((CopyOnWriteArrayList) this.c.c).iterator();
+        Iterator it = ((CopyOnWriteArrayList) this.c.d).iterator();
         while (it.hasNext()) {
             ((c0) it.next()).a.k();
         }
@@ -257,7 +257,7 @@ public abstract class l extends e0.h implements u0, androidx.lifecycle.i, t4.e {
             return true;
         }
         if (i10 == 0) {
-            Iterator it = ((CopyOnWriteArrayList) this.c.c).iterator();
+            Iterator it = ((CopyOnWriteArrayList) this.c.d).iterator();
             while (it.hasNext()) {
                 if (((c0) it.next()).a.p()) {
                     return true;
@@ -289,7 +289,7 @@ public abstract class l extends e0.h implements u0, androidx.lifecycle.i, t4.e {
 
     @Override // android.app.Activity, android.view.Window.Callback
     public final void onPanelClosed(int i10, Menu menu) {
-        Iterator it = ((CopyOnWriteArrayList) this.c.c).iterator();
+        Iterator it = ((CopyOnWriteArrayList) this.c.d).iterator();
         while (it.hasNext()) {
             ((c0) it.next()).a.q();
         }
@@ -313,7 +313,7 @@ public abstract class l extends e0.h implements u0, androidx.lifecycle.i, t4.e {
             return true;
         }
         super.onPreparePanel(i10, view, menu);
-        Iterator it = ((CopyOnWriteArrayList) this.c.c).iterator();
+        Iterator it = ((CopyOnWriteArrayList) this.c.d).iterator();
         while (it.hasNext()) {
             ((c0) it.next()).a.t();
         }
@@ -408,8 +408,8 @@ public abstract class l extends e0.h implements u0, androidx.lifecycle.i, t4.e {
     @Override // android.app.Activity
     public final void reportFullyDrawn() {
         try {
-            if (z7.b()) {
-                z7.a("reportFullyDrawn() for ComponentActivity");
+            if (a8.b()) {
+                a8.a("reportFullyDrawn() for ComponentActivity");
             }
             super.reportFullyDrawn();
             n nVar = this.s;

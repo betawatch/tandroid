@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class hi1 extends FrameLayout {
     public float a;
@@ -26,11 +26,11 @@ public final class hi1 extends FrameLayout {
     @Override // android.view.ViewGroup
     public final boolean drawChild(Canvas canvas, View view, long j3) {
         mi1 mi1Var = this.e;
-        org.telegram.ui.Components.voip.c3 c3Var = mi1Var.v;
-        if (view == c3Var && (mi1Var.n0 || mi1Var.m0)) {
+        org.telegram.ui.Components.voip.d3 d3Var = mi1Var.v;
+        if (view == d3Var && (mi1Var.n0 || mi1Var.m0)) {
             return false;
         }
-        if ((view != c3Var && view != mi1Var.c0 && (view != mi1Var.Y || !mi1Var.a0)) || (!mi1Var.g1 && mi1Var.i1 == null)) {
+        if ((view != d3Var && view != mi1Var.c0 && (view != mi1Var.Y || !mi1Var.a0)) || (!mi1Var.g1 && mi1Var.i1 == null)) {
             return super.drawChild(canvas, view, j3);
         }
         canvas.save();
@@ -59,7 +59,7 @@ public final class hi1 extends FrameLayout {
 
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.Components.voip.d3 d3Var;
+        org.telegram.ui.Components.voip.e3 e3Var;
         mi1 mi1Var = this.e;
         wh1 wh1Var = mi1Var.T0;
         if (motionEvent.getActionMasked() == 1) {
@@ -79,18 +79,18 @@ public final class hi1 extends FrameLayout {
             mi1Var.a1 = false;
             mi1Var.g1 = false;
         }
-        org.telegram.ui.Components.voip.s2 s2Var = mi1Var.m0 ? mi1Var.c0 : mi1Var.d0;
+        org.telegram.ui.Components.voip.t2 t2Var = mi1Var.m0 ? mi1Var.c0 : mi1Var.d0;
         if (motionEvent.getActionMasked() == 0 || motionEvent.getActionMasked() == 5) {
             if (motionEvent.getActionMasked() == 0) {
                 RectF rectF = AndroidUtilities.rectTmp;
-                rectF.set(s2Var.getX(), s2Var.getY(), s2Var.getX() + s2Var.getMeasuredWidth(), s2Var.getY() + s2Var.getMeasuredHeight());
-                rectF.inset(((s2Var.getMeasuredHeight() * s2Var.T) - s2Var.getMeasuredHeight()) / 2.0f, ((s2Var.getMeasuredWidth() * s2Var.T) - s2Var.getMeasuredWidth()) / 2.0f);
-                if (f60.F3) {
+                rectF.set(t2Var.getX(), t2Var.getY(), t2Var.getX() + t2Var.getMeasuredWidth(), t2Var.getY() + t2Var.getMeasuredHeight());
+                rectF.inset(((t2Var.getMeasuredHeight() * t2Var.T) - t2Var.getMeasuredHeight()) / 2.0f, ((t2Var.getMeasuredWidth() * t2Var.T) - t2Var.getMeasuredWidth()) / 2.0f);
+                if (d60.F3) {
                     rectF.top = Math.max(rectF.top, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight());
-                    rectF.right = Math.min(rectF.right, s2Var.getMeasuredWidth() - AndroidUtilities.dp(90.0f));
+                    rectF.right = Math.min(rectF.right, t2Var.getMeasuredWidth() - AndroidUtilities.dp(90.0f));
                 } else {
                     rectF.top = Math.max(rectF.top, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight());
-                    rectF.bottom = Math.min(rectF.bottom, s2Var.getMeasuredHeight() - AndroidUtilities.dp(90.0f));
+                    rectF.bottom = Math.min(rectF.bottom, t2Var.getMeasuredHeight() - AndroidUtilities.dp(90.0f));
                 }
                 boolean contains = rectF.contains(motionEvent.getX(), motionEvent.getY());
                 mi1Var.h1 = contains;
@@ -180,8 +180,8 @@ public final class hi1 extends FrameLayout {
                 } else if (mi1Var.z0) {
                     mi1Var.A(!mi1Var.x0);
                     mi1Var.q0 = mi1Var.p0;
-                    if (!mi1Var.x0 && (d3Var = mi1Var.N0) != null && d3Var.V) {
-                        d3Var.e(true);
+                    if (!mi1Var.x0 && (e3Var = mi1Var.N0) != null && e3Var.V) {
+                        e3Var.e(true);
                     }
                     mi1Var.H();
                 }

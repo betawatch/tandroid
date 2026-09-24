@@ -13,7 +13,7 @@ import java.util.Locale;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class j0 extends k0 implements b0 {
     public static final ArrayList I;
@@ -43,7 +43,7 @@ public class j0 extends k0 implements b0 {
     }
 
     public j0(Context context, e eVar) {
-        super(context, new k2.u(new ComponentName("android", k0.class.getName()), 17));
+        super(context, new n2.e(new ComponentName("android", k0.class.getName()), 12));
         this.G = new ArrayList();
         this.H = new ArrayList();
         this.r = eVar;

@@ -21,9 +21,9 @@ import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class ph1 extends org.telegram.ui.Components.uk0 {
+public final class ph1 extends org.telegram.ui.Components.el0 {
     public final Context c;
     public final gg.c2 f;
     public Runnable h;
@@ -82,7 +82,7 @@ public final class ph1 extends org.telegram.ui.Components.uk0 {
         gg.c2 c2Var = new gg.c2(false);
         this.f = c2Var;
         c2Var.p = false;
-        c2Var.a = new nl0(this, 25);
+        c2Var.a = new ml0(this, 25);
     }
 
     @Override // s4.h0
@@ -93,18 +93,18 @@ public final class ph1 extends org.telegram.ui.Components.uk0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.vl0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 1;
     }
 
-    @Override // org.telegram.ui.Components.uk0
+    @Override // org.telegram.ui.Components.el0
     public final String F(int i10) {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.uk0
-    public final void G(org.telegram.ui.Components.ml0 ml0Var, float f7, int[] iArr) {
+    @Override // org.telegram.ui.Components.el0
+    public final void G(org.telegram.ui.Components.wl0 wl0Var, float f7, int[] iArr) {
         iArr[0] = (int) (h() * f7);
         iArr[1] = 0;
     }
@@ -450,6 +450,6 @@ public final class ph1 extends org.telegram.ui.Components.uk0 {
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
         Context context = this.c;
-        return new org.telegram.ui.Components.wk0(i10 != 1 ? new org.telegram.ui.Cells.v3(context, null) : new org.telegram.ui.Cells.g4(context, 1, 0, true));
+        return new org.telegram.ui.Components.gl0(i10 != 1 ? new org.telegram.ui.Cells.v3(context, null) : new org.telegram.ui.Cells.g4(context, 1, 0, true));
     }
 }

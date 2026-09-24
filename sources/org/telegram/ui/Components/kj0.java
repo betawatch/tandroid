@@ -1,29 +1,50 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class kj0 extends s4.s0 {
-    public final /* synthetic */ s4.c0 a;
-    public final /* synthetic */ qj0 b;
+public final class kj0 extends Drawable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ lj0 c;
 
-    public kj0(qj0 qj0Var, s4.c0 c0Var) {
-        this.b = qj0Var;
-        this.a = c0Var;
+    public kj0(lj0 lj0Var, int i10, int i11) {
+        this.c = lj0Var;
+        this.a = i10;
+        this.b = i11;
     }
 
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        int loadCount;
-        qj0 qj0Var = this.b;
-        if (qj0Var.w && qj0Var.x && !qj0Var.v) {
-            int N0 = this.a.N0();
-            int h = qj0Var.f.h() - 1;
-            loadCount = qj0Var.getLoadCount();
-            if (N0 >= h - loadCount) {
-                qj0Var.c();
-            }
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Rect rect = AndroidUtilities.rectTmp2;
+        int centerX = getBounds().centerX();
+        float f7 = this.a;
+        int dp = centerX - (AndroidUtilities.dp(f7) / 2);
+        int centerY = getBounds().centerY();
+        float f10 = this.b;
+        rect.set(dp, centerY - (AndroidUtilities.dp(f10) / 2), (AndroidUtilities.dp(f7) / 2) + getBounds().centerX(), (AndroidUtilities.dp(f10) / 2) + getBounds().centerY());
+        lj0 lj0Var = this.c;
+        lj0Var.c.setImageCoords(rect);
+        lj0Var.c.draw(canvas);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.c.c.setAlpha(i10 / 255.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.c.c.setColorFilter(colorFilter);
     }
 }

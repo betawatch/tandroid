@@ -5,27 +5,27 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.d61;
-import org.telegram.ui.Components.g51;
-import org.telegram.ui.Components.h51;
-import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.j61;
+import org.telegram.ui.Components.r61;
+import org.telegram.ui.Components.u51;
 import org.telegram.ui.Components.v51;
+import org.telegram.ui.Components.wl0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public final class g5 extends g51 {
+public final class g5 extends u51 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        g51.setup(new g5());
+        u51.setup(new g5());
     }
 
-    @Override // org.telegram.ui.Components.g51
-    public final void bindView(View view, h51 h51Var, boolean z10, v51 v51Var, d61 d61Var) {
+    @Override // org.telegram.ui.Components.u51
+    public final void bindView(View view, v51 v51Var, boolean z10, j61 j61Var, r61 r61Var) {
         TL_iv.RichText richText;
         h5 h5Var = (h5) view;
-        a aVar = (a) h51Var.G;
-        f5 f5Var = (f5) h51Var.H;
+        a aVar = (a) v51Var.G;
+        f5 f5Var = (f5) v51Var.H;
         i1 i1Var = h5Var.r;
         h5Var.a = aVar;
         h5Var.s = f5Var;
@@ -43,12 +43,12 @@ public final class g5 extends g51 {
         i1Var.invalidateEffects();
     }
 
-    @Override // org.telegram.ui.Components.g51
-    public final View createView(Context context, ml0 ml0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
+    @Override // org.telegram.ui.Components.u51
+    public final View createView(Context context, wl0 wl0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
         return new h5(context, d6Var);
     }
 
-    @Override // org.telegram.ui.Components.g51
+    @Override // org.telegram.ui.Components.u51
     public final boolean isClickable() {
         return false;
     }

@@ -8,7 +8,7 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class k3 extends org.telegram.ui.web.b1 {
     public final /* synthetic */ m3 S0;
@@ -27,7 +27,7 @@ public final class k3 extends org.telegram.ui.web.b1 {
                 j3 j3Var = m3Var.e;
                 d3 d3Var = new d3(m3Var.getContext());
                 m3Var.r = d3Var;
-                j3Var.addView(d3Var, w7.x5.c(-1.0f, -1));
+                j3Var.addView(d3Var, w7.y5.c(-1.0f, -1));
                 m3Var.r.h.setOnClickListener(new a(m3Var, 2));
                 AndroidUtilities.updateViewVisibilityAnimated(m3Var.r, m3Var.n, 1.0f, false);
             }
@@ -95,10 +95,10 @@ public final class k3 extends org.telegram.ui.web.b1 {
 
     @Override // org.telegram.ui.web.b1
     public final void U(String str, boolean z10) {
-        org.telegram.ui.web.f2 f2Var;
+        org.telegram.ui.web.g2 g2Var;
         m3 m3Var = this.S0;
         i4 i4Var = m3Var.K;
-        if (i4Var.h0 != null && m3Var == i4Var.u0[0] && (f2Var = m3Var.y) != null && f2Var.b() == null) {
+        if (i4Var.h0 != null && m3Var == i4Var.u0[0] && (g2Var = m3Var.y) != null && g2Var.b() == null) {
             m3Var.y.d(getWebView());
         }
         super.U(str, z10);

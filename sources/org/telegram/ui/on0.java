@@ -1,68 +1,36 @@
 package org.telegram.ui;
 
-import android.widget.FrameLayout;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import org.telegram.messenger.FileLog;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class on0 implements OnCompleteListener, org.telegram.ui.ActionBar.a2, wt {
+public final /* synthetic */ class on0 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ qo0 b;
+    public final /* synthetic */ oo0 b;
 
-    public /* synthetic */ on0(qo0 qo0Var, int i10) {
+    public /* synthetic */ on0(oo0 oo0Var, int i10) {
         this.a = i10;
-        this.b = qo0Var;
+        this.b = oo0Var;
     }
 
-    @Override // org.telegram.ui.wt
-    public void a1(st stVar) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
-            case 2:
-                qo0 qo0Var = this.b;
-                qo0Var.A0 = stVar;
-                qo0Var.f[4].setText(stVar.a);
+            case 0:
+                AndroidUtilities.runOnUIThread(new xi0(13, this.b, tL_error));
                 break;
-            default:
-                qo0 qo0Var2 = this.b;
-                qo0Var2.A0 = stVar;
-                qo0Var2.f[4].setText(stVar.a);
-                qo0Var2.B0 = stVar.d;
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        switch (this.a) {
             case 1:
-                qo0 qo0Var = this.b;
-                qo0Var.I0(qo0Var.R0[0]);
+                AndroidUtilities.runOnUIThread(new nn0(this.b, tL_error, tLObject, 0));
                 break;
             case 2:
+                AndroidUtilities.runOnUIThread(new hn0(this.b, tLObject, 2));
+                break;
             default:
-                qo0 qo0Var2 = this.b;
-                qo0Var2.D0(true);
-                qo0Var2.z0();
+                AndroidUtilities.runOnUIThread(new hn0(this.b, tLObject, 0));
                 break;
-            case 3:
-                this.b.A0(true);
-                break;
-        }
-    }
-
-    @Override // com.google.android.gms.tasks.OnCompleteListener
-    public void onComplete(Task task) {
-        qo0 qo0Var = this.b;
-        qo0Var.getClass();
-        if (!task.isSuccessful()) {
-            FileLog.e("isReadyToPay failed", task.getException());
-            return;
-        }
-        FrameLayout frameLayout = qo0Var.O;
-        if (frameLayout != null) {
-            frameLayout.setVisibility(0);
         }
     }
 }

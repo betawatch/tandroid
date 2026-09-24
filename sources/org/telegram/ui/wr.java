@@ -1,23 +1,85 @@
 package org.telegram.ui;
 
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import android.content.Context;
+import android.view.KeyEvent;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class wr {
-    public ActionBarPopupWindow$ActionBarPopupWindowLayout a;
-    public org.telegram.ui.ActionBar.b1 b;
-    public org.telegram.ui.ActionBar.f1[] c;
+public final class wr extends as {
+    public final /* synthetic */ int M;
+    public final /* synthetic */ int N;
+    public final /* synthetic */ yr O;
 
-    public final void a(float f7, boolean z10) {
-        org.telegram.ui.ActionBar.f1[] f1VarArr = this.c;
-        for (int i10 = 0; i10 < f1VarArr.length; i10++) {
-            if (!z10 || ((i10 != 0 || Math.abs(f7 - 0.2f) >= 0.01f) && ((i10 != 1 || Math.abs(f7 - 0.5f) >= 0.1f) && ((i10 != 2 || Math.abs(f7 - 1.0f) >= 0.1f) && ((i10 != 3 || Math.abs(f7 - 1.5f) >= 0.1f) && (i10 != 4 || Math.abs(f7 - 2.0f) >= 0.1f)))))) {
-                f1VarArr[i10].c(-328966, -328966);
-            } else {
-                f1VarArr[i10].c(-9718023, -9718023);
-            }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public wr(yr yrVar, Context context, int i10, int i11) {
+        super(context);
+        this.O = yrVar;
+        this.M = i10;
+        this.N = i11;
+        this.e = 1.0f;
+        this.f = new o1.k(this, as.I);
+        this.h = new o1.k(this, as.J);
+        this.n = new o1.k(this, as.K);
+        this.r = new o1.k(this, as.L);
+        this.s = true;
+        this.v = 1.0f;
+        this.w = 1.0f;
+        this.H = false;
+        setBackground(null);
+        setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.G6, false));
+        setMovementMethod(null);
+        addTextChangedListener(new m0(this, 5));
+    }
+
+    @Override // android.view.View
+    public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
+        if (keyEvent.getKeyCode() == 4) {
+            return false;
         }
-        this.b.d(f7, true);
+        int keyCode = keyEvent.getKeyCode();
+        yr yrVar = this.O;
+        int length = yrVar.f.length;
+        int i10 = this.M;
+        if (i10 >= length) {
+            return false;
+        }
+        if (keyEvent.getAction() != 1) {
+            return isFocused();
+        }
+        if (keyCode == 67 && yrVar.f[i10].length() == 1) {
+            yrVar.f[i10].m();
+            yrVar.f[i10].setText("");
+            return true;
+        }
+        if (keyCode == 67 && yrVar.f[i10].length() == 0 && i10 > 0) {
+            as[] asVarArr = yrVar.f;
+            asVarArr[i10 - 1].setSelection(asVarArr[i10 - 1].length());
+            for (int i11 = 0; i11 < i10; i11++) {
+                if (i11 == i10 - 1) {
+                    yrVar.f[i10 - 1].requestFocus();
+                } else {
+                    yrVar.f[i11].clearFocus();
+                }
+            }
+            yrVar.f[i10 - 1].m();
+            yrVar.f[i10 - 1].setText("");
+            return true;
+        }
+        if (keyCode >= 7 && keyCode <= 16) {
+            String num = Integer.toString(keyCode - 7);
+            if (yrVar.f[i10].getText() != null && num.equals(yrVar.f[i10].getText().toString())) {
+                if (i10 >= this.N - 1) {
+                    yrVar.a();
+                } else {
+                    yrVar.f[i10 + 1].requestFocus();
+                }
+                return true;
+            }
+            if (yrVar.f[i10].length() > 0) {
+                yrVar.f[i10].m();
+            }
+            yrVar.f[i10].setText(num);
+        }
+        return true;
     }
 }

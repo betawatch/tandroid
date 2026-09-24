@@ -12,7 +12,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public abstract class k0 extends FrameLayout {
     public final int a;
@@ -24,16 +24,16 @@ public abstract class k0 extends FrameLayout {
         super(context);
         ImageView imageView = new ImageView(context);
         this.b = imageView;
-        addView(imageView, w7.x5.d(24, 24.0f, 51, 17.0f, 12.0f, 0.0f, 0.0f));
+        addView(imageView, w7.y5.d(24, 24.0f, 51, 17.0f, 12.0f, 0.0f, 0.0f));
         j0 j0Var = new j0(0, context, null, true);
         this.d = j0Var;
         j0Var.setReportChanges(true);
-        j0Var.setDelegate(new k2.u(this, 10));
+        j0Var.setDelegate(new l.d(this));
         j0Var.setImportantForAccessibility(2);
-        addView(j0Var, w7.x5.d(-1, 38.0f, 51, 54.0f, 5.0f, 54.0f, 0.0f));
+        addView(j0Var, w7.y5.d(-1, 38.0f, 51, 54.0f, 5.0f, 54.0f, 0.0f));
         ImageView imageView2 = new ImageView(context);
         this.c = imageView2;
-        addView(imageView2, w7.x5.d(24, 24.0f, 53, 0.0f, 12.0f, 17.0f, 0.0f));
+        addView(imageView2, w7.y5.d(24, 24.0f, 53, 0.0f, 12.0f, 17.0f, 0.0f));
         imageView.setImageResource(R.drawable.msg_brightness_low);
         imageView2.setImageResource(R.drawable.msg_brightness_high);
         this.a = 48;

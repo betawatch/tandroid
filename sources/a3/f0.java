@@ -5,7 +5,7 @@ import b2.r0;
 import b2.x1;
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class f0 {
     public final n4.y a;
@@ -83,7 +83,7 @@ public final class f0 {
                     fVar.h.execute(new e(0, yVar));
                 }
                 b2.s sVar = (b2.s) yVar.b;
-                fVar.i.b(d, nanoTime, sVar == null ? new b2.s(new b2.r()) : sVar, null);
+                fVar.i.a(d, nanoTime, sVar == null ? new b2.s(new b2.r()) : sVar, null);
                 j jVar = (j) fVar.c.remove();
                 jVar.c.I0(jVar.a, jVar.b, nanoTime);
             } else if (a2 == 2 || a2 == 3) {

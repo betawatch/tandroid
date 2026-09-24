@@ -10,9 +10,9 @@ import org.telegram.messenger.SendMessageChatArguments;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.gk;
-import org.telegram.ui.nn;
+import org.telegram.ui.mn;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class i4 implements gk {
     public final /* synthetic */ e6 a;
@@ -30,7 +30,7 @@ public final class i4 implements gk {
             return;
         }
         accountInstance = e6Var.getAccountInstance();
-        SendMessagesHelper.prepareSendingDocuments(accountInstance, (ArrayList<String>) arrayList, (ArrayList<String>) arrayList, (ArrayList<Uri>) null, str, (String) null, e6Var.B1, (MessageObject) null, (MessageObject) null, storyItem, (nn) null, (MessageObject) null, z10, i10, (t0.i) null, (SendMessageChatArguments) null, 0L, false, j10);
+        SendMessagesHelper.prepareSendingDocuments(accountInstance, (ArrayList<String>) arrayList, (ArrayList<String>) arrayList, (ArrayList<Uri>) null, str, (String) null, e6Var.B1, (MessageObject) null, (MessageObject) null, storyItem, (mn) null, (MessageObject) null, z10, i10, (t0.i) null, (SendMessageChatArguments) null, 0L, false, j10);
         e6Var.k0(j10 <= 0);
     }
 
@@ -40,11 +40,11 @@ public final class i4 implements gk {
             Intent intent = new Intent("android.intent.action.GET_CONTENT");
             intent.putExtra("android.intent.extra.ALLOW_MULTIPLE", true);
             intent.setType("*/*");
-            org.telegram.ui.ActionBar.n2 n2Var = this.a.J0.f;
-            if (n2Var.getParentActivity() == null) {
+            org.telegram.ui.ActionBar.m2 m2Var = this.a.J0.f;
+            if (m2Var.getParentActivity() == null) {
                 return;
             }
-            n2Var.getParentActivity().startActivityForResult(intent, 21);
+            m2Var.getParentActivity().startActivityForResult(intent, 21);
         } catch (Exception e) {
             FileLog.e(e);
         }

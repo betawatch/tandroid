@@ -7,33 +7,33 @@ import android.util.ArrayMap;
 import android.util.Log;
 import java.util.ArrayDeque;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class b implements Parcelable {
     public static final Parcelable.Creator<b> CREATOR = new a(0);
     public final Bundle a;
 
     public b(Object obj) {
-        ArrayMap arrayMap = h.a;
-        String i10 = h.i(obj.getClass());
+        ArrayMap arrayMap = g.a;
+        String i10 = g.i(obj.getClass());
         if (Log.isLoggable("CarApp.Bun", 3)) {
             Log.d("CarApp.Bun", "Bundling ".concat(i10));
         }
-        this.a = h.o(obj, i10, new f(null, "", new ArrayDeque()));
+        this.a = g.o(obj, i10, new e(null, "", new ArrayDeque()));
     }
 
     public final Object a() {
-        ArrayMap arrayMap = h.a;
+        ArrayMap arrayMap = g.a;
         boolean isLoggable = Log.isLoggable("CarApp.Bun", 3);
         Bundle bundle = this.a;
         if (isLoggable) {
-            String str = (String) h.b.get(Integer.valueOf(bundle.getInt("tag_class_type")));
+            String str = (String) g.b.get(Integer.valueOf(bundle.getInt("tag_class_type")));
             if (str == null) {
                 str = "unknown";
             }
             Log.d("CarApp.Bun", "Unbundling ".concat(str));
         }
-        return h.f(bundle, new f(null, "", new ArrayDeque()));
+        return g.f(bundle, new e(null, "", new ArrayDeque()));
     }
 
     @Override // android.os.Parcelable

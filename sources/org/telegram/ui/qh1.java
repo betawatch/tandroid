@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class qh1 extends ViewGroup {
     public AnimatorSet a;
@@ -48,7 +48,7 @@ public final class qh1 extends ViewGroup {
         if (z10) {
             AnimatorSet animatorSet2 = new AnimatorSet();
             this.a = animatorSet2;
-            animatorSet2.addListener(new wq0(this, 26));
+            animatorSet2.addListener(new xo0(this, 27));
             this.a.setDuration(150L);
             this.d = n30Var;
             ArrayList arrayList = this.c;
@@ -78,7 +78,7 @@ public final class qh1 extends ViewGroup {
         this.b = false;
         AnimatorSet animatorSet2 = new AnimatorSet();
         this.a = animatorSet2;
-        animatorSet2.addListener(new org.telegram.ui.Components.qk0(16, this, n30Var));
+        animatorSet2.addListener(new org.telegram.ui.Components.al0(16, this, n30Var));
         this.a.setDuration(150L);
         this.e = n30Var;
         ArrayList arrayList = this.c;
@@ -103,7 +103,7 @@ public final class qh1 extends ViewGroup {
         Property property;
         Property property2;
         ArrayList arrayList;
-        int y3;
+        int A;
         int i12;
         int childCount = getChildCount();
         int size = View.MeasureSpec.getSize(i10);
@@ -124,11 +124,11 @@ public final class qh1 extends ViewGroup {
             if (childAt instanceof org.telegram.ui.Components.n30) {
                 childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
                 if (childAt != this.e && childAt.getMeasuredWidth() + i14 > dp) {
-                    dp2 = org.telegram.messenger.z0.C(8.0f, childAt.getMeasuredHeight(), dp2);
+                    dp2 = org.telegram.messenger.f0.C(8.0f, childAt.getMeasuredHeight(), dp2);
                     i14 = 0;
                 }
                 if (childAt.getMeasuredWidth() + i15 > dp) {
-                    dp3 = org.telegram.messenger.z0.C(8.0f, childAt.getMeasuredHeight(), dp3);
+                    dp3 = org.telegram.messenger.f0.C(8.0f, childAt.getMeasuredHeight(), dp3);
                     i15 = 0;
                 }
                 int dp4 = AndroidUtilities.dp(13.0f) + i14;
@@ -157,23 +157,23 @@ public final class qh1 extends ViewGroup {
                     }
                 }
                 if (childAt != this.e) {
-                    i14 = org.telegram.messenger.z0.C(9.0f, childAt.getMeasuredWidth(), i14);
+                    i14 = org.telegram.messenger.f0.C(9.0f, childAt.getMeasuredWidth(), i14);
                 }
-                i15 = org.telegram.messenger.z0.C(9.0f, childAt.getMeasuredWidth(), i15);
+                i15 = org.telegram.messenger.f0.C(9.0f, childAt.getMeasuredWidth(), i15);
             }
             i13++;
         }
         if (AndroidUtilities.isTablet()) {
-            y3 = AndroidUtilities.dp(372.0f) / 3;
+            A = AndroidUtilities.dp(372.0f) / 3;
         } else {
             Point point = AndroidUtilities.displaySize;
-            y3 = org.telegram.messenger.ul.y(158.0f, Math.min(point.x, point.y), 3);
+            A = org.telegram.messenger.ok.A(158.0f, Math.min(point.x, point.y), 3);
         }
-        if (dp - i14 < y3) {
+        if (dp - i14 < A) {
             dp2 += AndroidUtilities.dp(40.0f);
             i14 = 0;
         }
-        if (dp - i15 < y3) {
+        if (dp - i15 < A) {
             dp3 += AndroidUtilities.dp(40.0f);
         }
         UsersSelectActivity usersSelectActivity = this.f;

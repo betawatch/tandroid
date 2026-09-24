@@ -1,13 +1,35 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+import android.content.Context;
+
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public interface eo0 {
-    void B();
+public final class eo0 extends gg.i0 {
+    public final /* synthetic */ org.telegram.ui.qy I0;
+    public final /* synthetic */ Context J0;
+    public final /* synthetic */ org.telegram.ui.zx K0;
 
-    void X(float f7, boolean z10);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public eo0(org.telegram.ui.zx zxVar, Context context, org.telegram.ui.qy qyVar, int i10, int i11, s4.j jVar, boolean z10, org.telegram.ui.qy qyVar2, Context context2) {
+        super(context, qyVar, i10, i11, jVar, z10);
+        this.K0 = zxVar;
+        this.I0 = qyVar2;
+        this.J0 = context2;
+    }
 
-    CharSequence getContentDescription();
-
-    int m0();
+    @Override // s4.h0
+    public final void l() {
+        ai.w0 w0Var;
+        int i10 = this.B0;
+        super.l();
+        org.telegram.ui.zx zxVar = this.K0;
+        if (!zxVar.I0 && (w0Var = zxVar.V) != null) {
+            w0Var.u0(0);
+            zxVar.I0 = true;
+        }
+        if (h() != 0 || i10 == 0 || this.D0 > 0) {
+            return;
+        }
+        zxVar.W.e(false, false);
+    }
 }

@@ -38,11 +38,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.pq;
 import org.telegram.ui.Components.rr;
+import org.telegram.ui.bz;
 import org.telegram.ui.cz;
-import org.telegram.ui.dz;
-import org.telegram.ui.xn;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public abstract class mb extends FrameLayout implements View.OnClickListener {
     public final Path E;
@@ -104,7 +104,7 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
 
     public abstract void b(boolean z10);
 
-    public final void c(TL_stories.StoryItem storyItem, ArrayList arrayList, dz dzVar) {
+    public final void c(TL_stories.StoryItem storyItem, ArrayList arrayList, cz czVar) {
         FrameLayout frameLayout;
         View view;
         ArrayList arrayList2 = this.r;
@@ -143,24 +143,24 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
             TL_stories.MediaArea mediaArea = (TL_stories.MediaArea) arrayList.get(i11);
             if (mediaArea != null && mediaArea.coordinates != null) {
                 if (mediaArea instanceof TL_stories.TL_mediaAreaSuggestedReaction) {
-                    pb pbVar = new pb(getContext(), this, (TL_stories.TL_mediaAreaSuggestedReaction) mediaArea, dzVar);
+                    pb pbVar = new pb(getContext(), this, (TL_stories.TL_mediaAreaSuggestedReaction) mediaArea, czVar);
                     if (storyItem != null) {
                         pbVar.c(storyItem.views, false);
                     }
-                    w7.z5.a(pbVar);
+                    w7.a6.a(pbVar);
                     view = pbVar;
                 } else if (mediaArea instanceof TL_stories.TL_mediaAreaWeather) {
                     TL_stories.TL_mediaAreaWeather tL_mediaAreaWeather = (TL_stories.TL_mediaAreaWeather) mediaArea;
                     kd kdVar = new kd();
                     kdVar.c = tL_mediaAreaWeather.emoji;
                     kdVar.d = (float) tL_mediaAreaWeather.temperature_c;
-                    qg.v0 v0Var = new qg.v0(getContext(), AndroidUtilities.density);
-                    v0Var.setMaxWidth(AndroidUtilities.displaySize.x);
-                    v0Var.setIsVideo(true);
-                    v0Var.d(UserConfig.selectedAccount, kdVar.c);
-                    v0Var.setText(kdVar.a());
-                    v0Var.e(3, tL_mediaAreaWeather.color);
-                    view = new lb(getContext(), v0Var, mediaArea);
+                    qg.t0 t0Var = new qg.t0(getContext(), AndroidUtilities.density);
+                    t0Var.setMaxWidth(AndroidUtilities.displaySize.x);
+                    t0Var.setIsVideo(true);
+                    t0Var.d(UserConfig.selectedAccount, kdVar.c);
+                    t0Var.setText(kdVar.a());
+                    t0Var.e(3, tL_mediaAreaWeather.color);
+                    view = new lb(getContext(), t0Var, mediaArea);
                 } else {
                     view = new kb(getContext(), this.h, mediaArea);
                 }
@@ -172,8 +172,8 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
         frameLayout.bringToFront();
     }
 
-    public final void d(TL_stories.StoryItem storyItem, dz dzVar) {
-        c(storyItem, storyItem != null ? storyItem.media_areas : null, dzVar);
+    public final void d(TL_stories.StoryItem storyItem, cz czVar) {
+        c(storyItem, storyItem != null ? storyItem.media_areas : null, czVar);
     }
 
     @Override // android.view.ViewGroup
@@ -335,24 +335,24 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
                 boolean z13 = e6Var.C1;
                 c6 c6Var = e6Var.O1;
                 if (!z13 && c6Var.a != null) {
-                    zg.p0 d = zg.p0.d(mediaArea.reaction);
-                    if (!d.equals(zg.p0.d(c6Var.a.sent_reaction))) {
+                    zg.o0 d = zg.o0.d(mediaArea.reaction);
+                    if (!d.equals(zg.o0.d(c6Var.a.sent_reaction))) {
                         e6Var.L0(d);
                     }
                 }
                 pbVar.performHapticFeedback(3);
                 pbVar.K.a.startAnimation();
-                dz dzVar = e6Var.k1;
-                Random random = dzVar.h;
-                FrameLayout frameLayout = dzVar.G;
-                ArrayList arrayList2 = dzVar.F;
+                cz czVar = e6Var.k1;
+                Random random = czVar.h;
+                FrameLayout frameLayout = czVar.G;
+                ArrayList arrayList2 = czVar.F;
                 if (arrayList2.size() > 12) {
                     return;
                 }
-                zg.p0 d10 = zg.p0.d(mediaArea.reaction);
+                zg.o0 d10 = zg.o0.d(mediaArea.reaction);
                 String str = d10.f;
                 if (str == null) {
-                    str = MessageObject.findAnimatedEmojiEmoticon(org.telegram.ui.Components.q5.f(dzVar.b, d10.g));
+                    str = MessageObject.findAnimatedEmojiEmoticon(org.telegram.ui.Components.q5.f(czVar.b, d10.g));
                 }
                 float measuredHeight = pbVar.getMeasuredHeight();
                 float measuredWidth = pbVar.getMeasuredWidth();
@@ -364,7 +364,7 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
                     f7 = measuredHeight;
                     f10 = measuredWidth;
                 }
-                String q6 = dz.q(str);
+                String q6 = cz.q(str);
                 int hashCode = pbVar.hashCode();
                 boolean z14 = pbVar.getTranslationX() > ((float) frameLayout.getMeasuredWidth()) / 2.0f;
                 if (d10.f != null) {
@@ -372,23 +372,23 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
                     f11 = f10;
                     f12 = f7;
                     z12 = z14;
-                    if (dzVar.d(q6, hashCode, null, null, -1, false, false, f10, f7, z14)) {
+                    if (czVar.d(q6, hashCode, null, null, -1, false, false, f10, f7, z14)) {
                         if (arrayList.isEmpty()) {
                             return;
                         }
-                        cz czVar = (cz) hg.c.h(1, arrayList);
-                        czVar.getClass();
-                        czVar.e = f12;
-                        czVar.d = f11;
-                        czVar.a = pbVar.getTranslationX() - (czVar.d / 2.0f);
+                        bz bzVar = (bz) hg.c.g(1, arrayList);
+                        bzVar.getClass();
+                        bzVar.e = f12;
+                        bzVar.d = f11;
+                        bzVar.a = pbVar.getTranslationX() - (bzVar.d / 2.0f);
                         float translationY = pbVar.getTranslationY();
-                        float f13 = czVar.d;
-                        czVar.b = translationY - (1.5f * f13);
-                        if (czVar.m) {
-                            czVar.a = ((-f13) * 1.8f) + czVar.a;
+                        float f13 = bzVar.d;
+                        bzVar.b = translationY - (1.5f * f13);
+                        if (bzVar.m) {
+                            bzVar.a = ((-f13) * 1.8f) + bzVar.a;
                             return;
                         } else {
-                            czVar.a = ((-f13) * 0.2f) + czVar.a;
+                            bzVar.a = ((-f13) * 0.2f) + bzVar.a;
                             return;
                         }
                     }
@@ -405,7 +405,7 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
                 int i12 = 0;
                 while (i11 < arrayList.size()) {
                     int i13 = i11;
-                    if (((cz) arrayList.get(i11)).k == d10.g) {
+                    if (((bz) arrayList.get(i11)).k == d10.g) {
                         i12++;
                     }
                     i11 = i13 + 1;
@@ -413,27 +413,27 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
                 if (i12 >= 4) {
                     return;
                 }
-                cz czVar2 = new cz();
-                czVar2.j = zg.d.a(pbVar.getAnimatedEmojiDrawable(), true, true);
-                if (!czVar2.i) {
-                    czVar2.f = ((random.nextInt() % 101) / 100.0f) * (f11 / 4.0f);
-                    czVar2.g = ((random.nextInt() % 101) / 100.0f) * (f12 / 4.0f);
+                bz bzVar2 = new bz();
+                bzVar2.j = zg.d.a(pbVar.getAnimatedEmojiDrawable(), true, true);
+                if (!bzVar2.i) {
+                    bzVar2.f = ((random.nextInt() % 101) / 100.0f) * (f11 / 4.0f);
+                    bzVar2.g = ((random.nextInt() % 101) / 100.0f) * (f12 / 4.0f);
                 }
-                czVar2.p = hashCode;
-                czVar2.q = null;
-                czVar2.k = d10.g;
-                czVar2.m = z12;
-                czVar2.e = f12;
-                czVar2.d = f11;
-                czVar2.a = pbVar.getTranslationX() - (czVar2.d / 2.0f);
+                bzVar2.p = hashCode;
+                bzVar2.q = null;
+                bzVar2.k = d10.g;
+                bzVar2.m = z12;
+                bzVar2.e = f12;
+                bzVar2.d = f11;
+                bzVar2.a = pbVar.getTranslationX() - (bzVar2.d / 2.0f);
                 float translationY2 = pbVar.getTranslationY();
-                float f14 = czVar2.d;
-                czVar2.b = translationY2 - (1.5f * f14);
-                czVar2.a = ((-f14) * 1.8f) + czVar2.a;
-                if (dzVar.n) {
-                    czVar2.j.f(frameLayout);
+                float f14 = bzVar2.d;
+                bzVar2.b = translationY2 - (1.5f * f14);
+                bzVar2.a = ((-f14) * 1.8f) + bzVar2.a;
+                if (czVar.n) {
+                    bzVar2.j.f(frameLayout);
                 }
-                arrayList.add(czVar2);
+                arrayList.add(bzVar2);
                 return;
             }
             if (this.b == view) {
@@ -443,7 +443,7 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
                     Bundle bundle = new Bundle();
                     bundle.putLong("chat_id", ((TL_stories.TL_mediaAreaChannelPost) this.b.b).channel_id);
                     bundle.putInt("message_id", ((TL_stories.TL_mediaAreaChannelPost) this.b.b).msg_id);
-                    ((v4) this).H.H(new xn(bundle));
+                    ((v4) this).H.H(new wn(bundle));
                     this.b = null;
                     invalidate();
                     return;
@@ -560,7 +560,7 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
                     }
                     e4Var2.setOnClickListener(new v0(this, i10));
                     e4Var2.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
-                    this.d.addView(e4Var2, w7.x5.c(f15, -1));
+                    this.d.addView(e4Var2, w7.y5.c(f15, -1));
                     e4Var2.u();
                     b(true);
                 }
@@ -592,7 +592,7 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
             }
             e4Var2.setOnClickListener(new v0(this, i10));
             e4Var2.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
-            this.d.addView(e4Var2, w7.x5.c(f152, -1));
+            this.d.addView(e4Var2, w7.y5.c(f152, -1));
             e4Var2.u();
             b(true);
         }

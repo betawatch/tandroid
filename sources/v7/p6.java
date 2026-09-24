@@ -1,16 +1,22 @@
 package v7;
 
-import android.text.SpannableStringBuilder;
+import android.util.Base64;
+import java.util.LinkedHashMap;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public abstract class p6 {
-    public static void a(Object obj, SpannableStringBuilder spannableStringBuilder, int i10, int i11) {
-        for (Object obj2 : spannableStringBuilder.getSpans(i10, i11, obj.getClass())) {
-            if (spannableStringBuilder.getSpanStart(obj2) == i10 && spannableStringBuilder.getSpanEnd(obj2) == i11 && spannableStringBuilder.getSpanFlags(obj2) == 33) {
-                spannableStringBuilder.removeSpan(obj2);
-            }
+    public static byte[] a(JSONObject jSONObject) {
+        LinkedHashMap linkedHashMap = d1.f.a;
+        String optString = jSONObject.optString("challenge", "");
+        kotlin.jvm.internal.i.b(optString);
+        if (optString.length() == 0) {
+            throw new JSONException("Challenge not found in request or is unexpectedly empty");
         }
-        spannableStringBuilder.setSpan(obj, i10, i11, 33);
+        byte[] decode = Base64.decode(optString, 11);
+        kotlin.jvm.internal.i.d(decode, "decode(...)");
+        return decode;
     }
 }

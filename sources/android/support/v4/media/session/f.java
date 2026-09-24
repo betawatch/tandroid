@@ -13,7 +13,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class f extends Handler {
     public final /* synthetic */ int a = 0;
@@ -30,7 +30,7 @@ public final class f extends Handler {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public boolean a(Message message, n2.v vVar) {
+    public boolean a(Message message, n2.w wVar) {
         long j3;
         n2.a aVar = (n2.a) message.obj;
         if (aVar.b) {
@@ -40,7 +40,7 @@ public final class f extends Handler {
             if (i10 <= 3) {
                 SystemClock.elapsedRealtime();
                 SystemClock.elapsedRealtime();
-                Throwable b5Var = vVar.getCause() instanceof IOException ? (IOException) vVar.getCause() : new b5(vVar.getCause());
+                Throwable b5Var = wVar.getCause() instanceof IOException ? (IOException) wVar.getCause() : new b5(wVar.getCause());
                 qb.b bVar = ((n2.b) this.c).i;
                 int i11 = aVar.d;
                 bVar.getClass();
@@ -124,15 +124,15 @@ public final class f extends Handler {
                 try {
                     int i10 = message.what;
                     if (i10 == 1) {
-                        th2 = ((n2.b) this.c).k.j((n2.p) aVar.c);
+                        th2 = ((n2.b) this.c).k.j((n2.q) aVar.c);
                     } else {
                         if (i10 != 2) {
                             throw new RuntimeException();
                         }
                         n2.b bVar = (n2.b) this.c;
-                        th2 = bVar.k.i(bVar.l, (n2.o) aVar.c);
+                        th2 = bVar.k.i(bVar.l, (n2.p) aVar.c);
                     }
-                } catch (n2.v e) {
+                } catch (n2.w e) {
                     boolean a2 = a(message, e);
                     th2 = e;
                     if (a2) {

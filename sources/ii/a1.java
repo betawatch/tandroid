@@ -23,13 +23,13 @@ import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Cells.p9;
 import org.telegram.ui.Cells.q9;
-import org.telegram.ui.Cells.r9;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public final class a1 extends a0 implements org.telegram.ui.ActionBar.y5, q9, m0, DownloadController.FileDownloadProgressListener {
+public final class a1 extends a0 implements org.telegram.ui.ActionBar.x5, p9, m0, DownloadController.FileDownloadProgressListener {
     public final ImageReceiver E;
     public final l0 F;
     public final int G;
@@ -81,9 +81,9 @@ public final class a1 extends a0 implements org.telegram.ui.ActionBar.y5, q9, m0
         this.E = imageReceiver;
         imageReceiver.setAllowLoadingOnAttachedOnly(true);
         imageReceiver.setRoundRadius(AndroidUtilities.dp(6.0f));
-        l0 l0Var = new l0(context, d6Var, new a4.m(this, 20));
+        l0 l0Var = new l0(context, d6Var, new a4.m(this, 21));
         this.F = l0Var;
-        addView(l0Var.a, w7.x5.e(-2, -2, 51));
+        addView(l0Var.a, w7.y5.e(-2, -2, 51));
         e();
     }
 
@@ -103,7 +103,7 @@ public final class a1 extends a0 implements org.telegram.ui.ActionBar.y5, q9, m0
         this.F.c(canvas);
     }
 
-    @Override // org.telegram.ui.ActionBar.y5
+    @Override // org.telegram.ui.ActionBar.x5
     public final void e() {
         this.s.setColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.uf, this.r));
         l0 l0Var = this.F;
@@ -131,7 +131,7 @@ public final class a1 extends a0 implements org.telegram.ui.ActionBar.y5, q9, m0
         requestLayout();
     }
 
-    @Override // org.telegram.ui.Cells.q9
+    @Override // org.telegram.ui.Cells.p9
     public final void fillTextLayoutBlocks(ArrayList arrayList) {
         this.F.e(arrayList);
     }
@@ -337,7 +337,7 @@ public final class a1 extends a0 implements org.telegram.ui.ActionBar.y5, q9, m0
     public final void onDraw(Canvas canvas) {
         int i10;
         float f7;
-        r9 textSelectionHelper;
+        q9 textSelectionHelper;
         if (i() == null) {
             return;
         }

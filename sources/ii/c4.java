@@ -13,24 +13,25 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
+import org.telegram.messenger.ok;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.ah;
-import org.telegram.ui.Components.bj0;
+import org.telegram.ui.Components.bh;
+import org.telegram.ui.Components.ij0;
+import org.telegram.ui.Components.lj0;
 import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.ug;
-import org.telegram.ui.Components.yg;
-import org.telegram.ui.Components.yi0;
+import org.telegram.ui.Components.vg;
+import org.telegram.ui.Components.zg;
 import org.telegram.ui.ub1;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class c4 extends FrameLayout {
     public final ImageView E;
     public final z1 F;
     public final ub1 G;
     public final FrameLayout H;
-    public final bj0 I;
+    public final lj0 I;
     public final LinearLayout J;
     public int K;
     public final LinearLayout L;
@@ -60,7 +61,7 @@ public final class c4 extends FrameLayout {
     public final FrameLayout s;
     public final FrameLayout v;
     public final LinearLayout w;
-    public final ah x;
+    public final bh x;
     public final LinearLayout y;
 
     public c4(Context context, final m mVar) {
@@ -82,16 +83,16 @@ public final class c4 extends FrameLayout {
         GradientDrawable.Orientation orientation = GradientDrawable.Orientation.TOP_BOTTOM;
         int i10 = org.telegram.ui.ActionBar.h6.d6;
         view.setBackground(new GradientDrawable(orientation, new int[]{org.telegram.ui.ActionBar.h6.v0(i10, d6Var), org.telegram.ui.ActionBar.h6.l1(0.0f, org.telegram.ui.ActionBar.h6.v0(i10, d6Var))}));
-        addView(view, w7.x5.e(-1, 68, 55));
+        addView(view, w7.y5.e(-1, 68, 55));
         View view2 = new View(context);
         this.d = view2;
         view2.setBackground(new GradientDrawable(orientation, new int[]{org.telegram.ui.ActionBar.h6.l1(0.0f, org.telegram.ui.ActionBar.h6.v0(i10, d6Var)), org.telegram.ui.ActionBar.h6.v0(i10, d6Var)}));
-        addView(view2, w7.x5.e(-1, 68, 87));
+        addView(view2, w7.y5.e(-1, 68, 87));
         FrameLayout frameLayout = new FrameLayout(context);
         this.e = frameLayout;
         frameLayout.setClipChildren(false);
         frameLayout.setClipToPadding(false);
-        addView(frameLayout, w7.x5.e(-1, -1, 55));
+        addView(frameLayout, w7.y5.e(-1, -1, 55));
         ImageView imageView = new ImageView(context);
         this.f = imageView;
         imageView.setImageResource(R.drawable.ic_ab_back);
@@ -106,22 +107,22 @@ public final class c4 extends FrameLayout {
         int v04 = org.telegram.ui.ActionBar.h6.v0(i13, d6Var);
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
         imageView.setColorFilter(new PorterDuffColorFilter(v04, mode));
-        w7.z5.a(imageView);
+        w7.a6.a(imageView);
         imageView.setContentDescription(LocaleController.getString(R.string.AccDescrGoBack));
         imageView.setOnClickListener(new ai.e2(mVar, 4));
-        frameLayout.addView(imageView, w7.x5.d(44, 44.0f, 51, 8.0f, 8.0f, 8.0f, 8.0f));
+        frameLayout.addView(imageView, w7.y5.d(44, 44.0f, 51, 8.0f, 8.0f, 8.0f, 8.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         this.h = linearLayout;
         linearLayout.setOrientation(0);
         linearLayout.setBackground(new d2(org.telegram.ui.ActionBar.h6.b0(AndroidUtilities.dp(22.0f), org.telegram.ui.ActionBar.h6.v0(i11, d6Var))));
-        frameLayout.addView(linearLayout, w7.x5.d(82, 44.0f, 53, 8.0f, 8.0f, 8.0f, 8.0f));
+        frameLayout.addView(linearLayout, w7.y5.d(82, 44.0f, 53, 8.0f, 8.0f, 8.0f, 8.0f));
         ImageView imageView2 = new ImageView(context);
         this.n = imageView2;
         imageView2.setImageResource(R.drawable.iv_undo);
         imageView2.setScaleType(scaleType);
         imageView2.setBackground(org.telegram.ui.ActionBar.h6.f0(org.telegram.ui.ActionBar.h6.v0(i12, d6Var), 1, -1));
         imageView2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(i13, d6Var), mode));
-        w7.z5.a(imageView2);
+        w7.a6.a(imageView2);
         imageView2.setContentDescription("Undo");
         final int i14 = 7;
         imageView2.setOnClickListener(new View.OnClickListener() { // from class: ii.y3
@@ -193,14 +194,14 @@ public final class c4 extends FrameLayout {
                 }
             }
         });
-        linearLayout.addView(imageView2, w7.x5.q(41, 41, 16));
+        linearLayout.addView(imageView2, w7.y5.q(41, 41, 16));
         ImageView imageView3 = new ImageView(context);
         this.r = imageView3;
         imageView3.setImageResource(R.drawable.iv_redo);
         imageView3.setScaleType(scaleType);
         imageView3.setBackground(org.telegram.ui.ActionBar.h6.f0(org.telegram.ui.ActionBar.h6.v0(i12, d6Var), 1, -1));
         imageView3.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(i13, d6Var), mode));
-        w7.z5.a(imageView3);
+        w7.a6.a(imageView3);
         imageView3.setContentDescription("Redo");
         final int i15 = 8;
         imageView3.setOnClickListener(new View.OnClickListener() { // from class: ii.y3
@@ -272,30 +273,30 @@ public final class c4 extends FrameLayout {
                 }
             }
         });
-        linearLayout.addView(imageView3, w7.x5.q(41, 41, 16));
+        linearLayout.addView(imageView3, w7.y5.q(41, 41, 16));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.s = frameLayout2;
         frameLayout2.setClipChildren(false);
         frameLayout2.setClipToPadding(false);
-        addView(frameLayout2, w7.x5.e(-1, -1, 87));
+        addView(frameLayout2, w7.y5.e(-1, -1, 87));
         FrameLayout frameLayout3 = new FrameLayout(context);
         this.v = frameLayout3;
         frameLayout3.setClipChildren(false);
         frameLayout3.setClipToPadding(false);
-        frameLayout2.addView(frameLayout3, w7.x5.e(-1, 60, 87));
+        frameLayout2.addView(frameLayout3, w7.y5.e(-1, 60, 87));
         LinearLayout linearLayout2 = new LinearLayout(context);
         this.w = linearLayout2;
         linearLayout2.setClipToPadding(false);
         linearLayout2.setClipChildren(false);
         linearLayout2.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
-        frameLayout3.addView(linearLayout2, w7.x5.e(-1, 60, 87));
+        frameLayout3.addView(linearLayout2, w7.y5.e(-1, 60, 87));
         ImageView imageView4 = new ImageView(context);
         imageView4.setImageDrawable(new org.telegram.ui.Components.i0(context));
         imageView4.setScaleType(scaleType);
         imageView4.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(i13, d6Var), mode));
         imageView4.setBackground(new d2(org.telegram.ui.ActionBar.h6.Z(org.telegram.ui.ActionBar.h6.v0(i11, d6Var), org.telegram.ui.ActionBar.h6.v(org.telegram.ui.ActionBar.h6.v0(i11, d6Var), org.telegram.ui.ActionBar.h6.v0(i12, d6Var)), AndroidUtilities.dp(22.0f), AndroidUtilities.dp(22.0f))));
-        linearLayout2.addView(imageView4, w7.x5.p(44, 44, 0.0f, 19, 0, 0, 8, 0));
-        w7.z5.a(imageView4);
+        linearLayout2.addView(imageView4, w7.y5.p(44, 44, 0.0f, 19, 0, 0, 8, 0));
+        w7.a6.a(imageView4);
         imageView4.setContentDescription("AI");
         final int i16 = 9;
         imageView4.setOnClickListener(new View.OnClickListener() { // from class: ii.y3
@@ -372,7 +373,7 @@ public final class c4 extends FrameLayout {
         frameLayout4.setClipChildren(false);
         FrameLayout frameLayout5 = new FrameLayout(context);
         frameLayout5.setBackground(new d2(org.telegram.ui.ActionBar.h6.b0(AndroidUtilities.dp(22.0f), org.telegram.ui.ActionBar.h6.v0(i10, d6Var))));
-        frameLayout4.addView(frameLayout5, w7.x5.e(-2, 44, 81));
+        frameLayout4.addView(frameLayout5, w7.y5.e(-2, 44, 81));
         x1 x1Var = new x1(context, 1);
         x1Var.setClipToOutline(true);
         x1Var.setOutlineProvider(new ai.k2(5));
@@ -381,18 +382,18 @@ public final class c4 extends FrameLayout {
         linearLayout3.setPadding(AndroidUtilities.dp(2.0f), 0, AndroidUtilities.dp(2.0f), 0);
         linearLayout3.setOrientation(0);
         x1Var.addView(linearLayout3);
-        frameLayout5.addView(x1Var, w7.x5.c(-1.0f, -1));
-        ah ahVar = new ah(context, 24);
-        this.x = ahVar;
-        ahVar.setPadding(AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f));
-        ahVar.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(i13, d6Var), mode));
-        ahVar.setBackground(org.telegram.ui.ActionBar.h6.Z(org.telegram.ui.ActionBar.h6.v0(i10, d6Var), org.telegram.ui.ActionBar.h6.v0(i12, d6Var), AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f)));
-        ahVar.j(yg.e, false);
-        linearLayout3.addView(ahVar, w7.x5.q(38, 38, 16));
-        w7.z5.a(ahVar);
-        ahVar.setContentDescription("Emoji");
+        frameLayout5.addView(x1Var, w7.y5.c(-1.0f, -1));
+        bh bhVar = new bh(context, 24);
+        this.x = bhVar;
+        bhVar.setPadding(AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f));
+        bhVar.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(i13, d6Var), mode));
+        bhVar.setBackground(org.telegram.ui.ActionBar.h6.Z(org.telegram.ui.ActionBar.h6.v0(i10, d6Var), org.telegram.ui.ActionBar.h6.v0(i12, d6Var), AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f)));
+        bhVar.j(zg.e, false);
+        linearLayout3.addView(bhVar, w7.y5.q(38, 38, 16));
+        w7.a6.a(bhVar);
+        bhVar.setContentDescription("Emoji");
         final int i17 = 10;
-        ahVar.setOnClickListener(new View.OnClickListener() { // from class: ii.y3
+        bhVar.setOnClickListener(new View.OnClickListener() { // from class: ii.y3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
                 switch (i17) {
@@ -471,8 +472,8 @@ public final class c4 extends FrameLayout {
         imageView5.setScaleType(scaleType);
         imageView5.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(i13, d6Var), mode));
         imageView5.setBackground(org.telegram.ui.ActionBar.h6.Z(org.telegram.ui.ActionBar.h6.v0(i10, d6Var), org.telegram.ui.ActionBar.h6.v0(i12, d6Var), AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f)));
-        linearLayout3.addView(imageView5, w7.x5.t(38, 38, 16, 2, 0, 0, 0));
-        w7.z5.a(imageView5);
+        linearLayout3.addView(imageView5, w7.y5.t(38, 38, 16, 2, 0, 0, 0));
+        w7.a6.a(imageView5);
         imageView5.setContentDescription("Attach");
         final int i18 = 11;
         imageView5.setOnClickListener(new View.OnClickListener() { // from class: ii.y3
@@ -544,41 +545,41 @@ public final class c4 extends FrameLayout {
                 }
             }
         });
-        linearLayout2.addView(frameLayout4, w7.x5.l(1.0f, 0, 44));
+        linearLayout2.addView(frameLayout4, w7.y5.l(1.0f, 0, 44));
         ub1 ub1Var = new ub1(this, context, 3);
         this.G = ub1Var;
         ub1Var.setOrientation(0);
         ub1Var.setClipToPadding(false);
         ub1Var.setClipChildren(false);
         ub1Var.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
-        frameLayout2.addView(ub1Var, w7.x5.e(-2, 60, 81));
+        frameLayout2.addView(ub1Var, w7.y5.e(-2, 60, 81));
         FrameLayout frameLayout6 = new FrameLayout(context);
         this.H = frameLayout6;
         frameLayout6.setClipChildren(false);
         frameLayout6.setClipToPadding(false);
         frameLayout6.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
-        frameLayout2.addView(frameLayout6, w7.x5.e(80, 60, 81));
-        bj0 bj0Var = new bj0(context);
-        this.I = bj0Var;
-        bj0Var.f(R.raw.group_pip_delete_icon, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), null);
-        yi0 animatedDrawable = bj0Var.getAnimatedDrawable();
+        frameLayout2.addView(frameLayout6, w7.y5.e(80, 60, 81));
+        lj0 lj0Var = new lj0(context);
+        this.I = lj0Var;
+        lj0Var.f(R.raw.group_pip_delete_icon, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), null);
+        ij0 animatedDrawable = lj0Var.getAnimatedDrawable();
         if (animatedDrawable != null) {
             animatedDrawable.h = true;
             animatedDrawable.K(0);
             animatedDrawable.P(0);
         }
-        bj0Var.setScaleType(scaleType);
-        bj0Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(i13, d6Var), mode));
-        bj0Var.setBackground(new d2(org.telegram.ui.ActionBar.h6.b0(AndroidUtilities.dp(22.0f), org.telegram.ui.ActionBar.h6.v0(i11, d6Var))));
-        frameLayout6.addView(bj0Var, w7.x5.e(-1, -1, 119));
+        lj0Var.setScaleType(scaleType);
+        lj0Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(i13, d6Var), mode));
+        lj0Var.setBackground(new d2(org.telegram.ui.ActionBar.h6.b0(AndroidUtilities.dp(22.0f), org.telegram.ui.ActionBar.h6.v0(i11, d6Var))));
+        frameLayout6.addView(lj0Var, w7.y5.e(-1, -1, 119));
         FrameLayout frameLayout7 = new FrameLayout(context);
         frameLayout7.setBackground(new d2(org.telegram.ui.ActionBar.h6.b0(AndroidUtilities.dp(22.0f), org.telegram.ui.ActionBar.h6.v0(i11, d6Var))));
-        ub1Var.addView(frameLayout7, w7.x5.c(44.0f, -2));
+        ub1Var.addView(frameLayout7, w7.y5.c(44.0f, -2));
         b4 b4Var = new b4(this, context, 0);
         b4Var.setHorizontalScrollBarEnabled(false);
         b4Var.setClipToOutline(true);
         b4Var.setOutlineProvider(new ai.k2(6));
-        frameLayout7.addView(b4Var, w7.x5.c(-1.0f, -1));
+        frameLayout7.addView(b4Var, w7.y5.c(-1.0f, -1));
         LinearLayout linearLayout4 = new LinearLayout(context);
         this.J = linearLayout4;
         linearLayout4.setOrientation(0);
@@ -666,7 +667,7 @@ public final class c4 extends FrameLayout {
                 }
             }
         });
-        linearLayout4.addView(a2Var, w7.x5.t(38, 38, 16, linearLayout4.getChildCount() == 0 ? 0 : 2, 0, 0, 0));
+        linearLayout4.addView(a2Var, w7.y5.t(38, 38, 16, linearLayout4.getChildCount() == 0 ? 0 : 2, 0, 0, 0));
         a2 a2Var2 = new a2(context, R.drawable.iv_button, d6Var);
         this.P = a2Var2;
         a2Var2.c(i11);
@@ -741,13 +742,13 @@ public final class c4 extends FrameLayout {
                 }
             }
         });
-        linearLayout4.addView(a2Var2, w7.x5.t(38, 38, 16, linearLayout4.getChildCount() == 0 ? 0 : 2, 0, 0, 0));
+        linearLayout4.addView(a2Var2, w7.y5.t(38, 38, 16, linearLayout4.getChildCount() == 0 ? 0 : 2, 0, 0, 0));
         LinearLayout linearLayout5 = new LinearLayout(context);
         this.M = linearLayout5;
         linearLayout5.setOrientation(0);
         linearLayout5.setPadding(AndroidUtilities.dp(2.0f), 0, AndroidUtilities.dp(2.0f), 0);
         linearLayout5.setBackground(new d2(org.telegram.ui.ActionBar.h6.b0(AndroidUtilities.dp(22.0f), org.telegram.ui.ActionBar.h6.v0(i11, d6Var))));
-        ub1Var.addView(linearLayout5, w7.x5.d(-2, 44.0f, 80, 8.0f, 0.0f, 0.0f, 0.0f));
+        ub1Var.addView(linearLayout5, w7.y5.d(-2, 44.0f, 80, 8.0f, 0.0f, 0.0f, 0.0f));
         a2 a2Var3 = new a2(context, R.drawable.media_link_24, d6Var);
         this.O = a2Var3;
         a2Var3.c(i11);
@@ -822,7 +823,7 @@ public final class c4 extends FrameLayout {
                 }
             }
         });
-        linearLayout5.addView(a2Var3, w7.x5.q(38, 38, 16));
+        linearLayout5.addView(a2Var3, w7.y5.q(38, 38, 16));
         a2 a2Var4 = new a2(context, R.drawable.msg_calendar2, d6Var);
         this.Q = a2Var4;
         a2Var4.c(i11);
@@ -897,13 +898,13 @@ public final class c4 extends FrameLayout {
                 }
             }
         });
-        linearLayout5.addView(a2Var4, w7.x5.q(38, 38, 16));
+        linearLayout5.addView(a2Var4, w7.y5.q(38, 38, 16));
         LinearLayout linearLayout6 = new LinearLayout(context);
         this.N = linearLayout6;
         linearLayout6.setOrientation(0);
         linearLayout6.setPadding(AndroidUtilities.dp(2.0f), 0, AndroidUtilities.dp(2.0f), 0);
         linearLayout6.setBackground(new d2(org.telegram.ui.ActionBar.h6.b0(AndroidUtilities.dp(22.0f), org.telegram.ui.ActionBar.h6.v0(i11, d6Var))));
-        ub1Var.addView(linearLayout6, w7.x5.d(-2, 44.0f, 80, 8.0f, 0.0f, 0.0f, 0.0f));
+        ub1Var.addView(linearLayout6, w7.y5.d(-2, 44.0f, 80, 8.0f, 0.0f, 0.0f, 0.0f));
         a2 a2Var5 = new a2(context, R.drawable.iv_math, d6Var);
         this.R = a2Var5;
         a2Var5.c(i11);
@@ -980,13 +981,13 @@ public final class c4 extends FrameLayout {
                 }
             }
         });
-        linearLayout6.addView(a2Var5, w7.x5.q(38, 38, 16));
+        linearLayout6.addView(a2Var5, w7.y5.q(38, 38, 16));
         LinearLayout linearLayout7 = new LinearLayout(context);
         this.L = linearLayout7;
         linearLayout7.setOrientation(0);
         linearLayout7.setPadding(AndroidUtilities.dp(2.0f), 0, AndroidUtilities.dp(2.0f), 0);
         linearLayout7.setBackground(new d2(org.telegram.ui.ActionBar.h6.b0(AndroidUtilities.dp(22.0f), org.telegram.ui.ActionBar.h6.v0(i11, d6Var))));
-        ub1Var.addView(linearLayout7, 0, w7.x5.d(-2, 44.0f, 80, 0.0f, 0.0f, 8.0f, 0.0f));
+        ub1Var.addView(linearLayout7, 0, w7.y5.d(-2, 44.0f, 80, 0.0f, 0.0f, 8.0f, 0.0f));
         a2 a2Var6 = new a2(context, R.drawable.input_ai, d6Var);
         a2Var6.setImageDrawable(new org.telegram.ui.Components.i0(context));
         a2Var6.c(i11);
@@ -1061,12 +1062,12 @@ public final class c4 extends FrameLayout {
                 }
             }
         });
-        linearLayout7.addView(a2Var6, w7.x5.q(38, 38, 16));
+        linearLayout7.addView(a2Var6, w7.y5.q(38, 38, 16));
         z1 z1Var = new z1(this, context, R.drawable.send_plane_24, d6Var, 1);
         this.F = z1Var;
         z1Var.setBackground(new d2(org.telegram.ui.ActionBar.h6.b0(AndroidUtilities.dp(22.0f), org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Yd, d6Var))));
-        w7.z5.a(z1Var);
-        linearLayout2.addView(z1Var, w7.x5.p(44, 44, 0.0f, 5, 8, 0, 0, 0));
+        w7.a6.a(z1Var);
+        linearLayout2.addView(z1Var, w7.y5.p(44, 44, 0.0f, 5, 8, 0, 0, 0));
         z1Var.setContentDescription("Send");
         final int i25 = 6;
         z1Var.setOnClickListener(new View.OnClickListener() { // from class: ii.y3
@@ -1154,7 +1155,7 @@ public final class c4 extends FrameLayout {
         a2Var.setContentDescription(e2.g0(i11));
         a2Var.setOnClickListener(new a4(this, i11, 1));
         this.T.add(a2Var);
-        linearLayout.addView(a2Var, w7.x5.t(38, 38, 16, linearLayout.getChildCount() == 0 ? 0 : 2, 0, 0, 0));
+        linearLayout.addView(a2Var, w7.y5.t(38, 38, 16, linearLayout.getChildCount() == 0 ? 0 : 2, 0, 0, 0));
     }
 
     public final void b(int i10, int i11, boolean z10) {
@@ -1169,7 +1170,7 @@ public final class c4 extends FrameLayout {
         a2Var.setOnClickListener(new a4(this, i11, 0));
         this.U.add(a2Var);
         LinearLayout linearLayout = this.J;
-        linearLayout.addView(a2Var, w7.x5.t(38, 38, 16, linearLayout.getChildCount() == 0 ? 0 : 2, 0, 0, 0));
+        linearLayout.addView(a2Var, w7.y5.t(38, 38, 16, linearLayout.getChildCount() == 0 ? 0 : 2, 0, 0, 0));
     }
 
     public final void c(int i10, boolean z10, boolean z11, boolean z12, boolean z13, boolean z14) {
@@ -1220,16 +1221,16 @@ public final class c4 extends FrameLayout {
         }
         this.c0 = z10;
         float f7 = z10 ? 1.15f : 1.0f;
-        bj0 bj0Var = this.I;
+        lj0 lj0Var = this.I;
         if (z11) {
-            bj0Var.animate().scaleX(f7).scaleY(f7).setDuration(180L).setInterpolator(rr.h).start();
+            lj0Var.animate().scaleX(f7).scaleY(f7).setDuration(180L).setInterpolator(rr.h).start();
         } else {
-            bj0Var.animate().cancel();
-            bj0Var.setScaleX(f7);
-            bj0Var.setScaleY(f7);
+            lj0Var.animate().cancel();
+            lj0Var.setScaleX(f7);
+            lj0Var.setScaleY(f7);
         }
-        bj0Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(z10 ? org.telegram.ui.ActionBar.h6.q7 : org.telegram.ui.ActionBar.h6.G6, this.b), PorterDuff.Mode.SRC_IN));
-        yi0 animatedDrawable = bj0Var.getAnimatedDrawable();
+        lj0Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(z10 ? org.telegram.ui.ActionBar.h6.q7 : org.telegram.ui.ActionBar.h6.G6, this.b), PorterDuff.Mode.SRC_IN));
+        ij0 animatedDrawable = lj0Var.getAnimatedDrawable();
         if (animatedDrawable != null) {
             if (z10) {
                 if (animatedDrawable.a0 > 34) {
@@ -1401,7 +1402,7 @@ public final class c4 extends FrameLayout {
         return this.x;
     }
 
-    public ug getSendButton() {
+    public vg getSendButton() {
         return this.F;
     }
 
@@ -1414,10 +1415,10 @@ public final class c4 extends FrameLayout {
     }
 
     public void setEmojiOpened(boolean z10) {
-        yg ygVar = z10 ? yg.d : yg.e;
-        ah ahVar = this.x;
-        ahVar.j(ygVar, true);
-        ahVar.setContentDescription(z10 ? "Keyboard" : "Emoji");
+        zg zgVar = z10 ? zg.d : zg.e;
+        bh bhVar = this.x;
+        bhVar.j(zgVar, true);
+        bhVar.setContentDescription(z10 ? "Keyboard" : "Emoji");
     }
 
     public void setPremiumLocked(boolean z10) {
@@ -1449,7 +1450,7 @@ public final class c4 extends FrameLayout {
             return;
         }
         z1Var.setEnabled(z10);
-        z1Var.animate().alpha(z10 ? 1.0f : 0.5f).setDuration(150L).start();
+        ok.r(z1Var.animate(), z10 ? 1.0f : 0.5f, 150L);
     }
 
     public void setSendLoading(boolean z10) {

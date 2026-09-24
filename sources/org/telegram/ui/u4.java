@@ -1,308 +1,228 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
+import android.graphics.LinearGradient;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.graphics.drawable.Drawable;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.FrameLayout;
-import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.AnimatedPhoneNumberEditText;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class u4 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class u4 extends FrameLayout {
+    public final /* synthetic */ int a = 0;
+    public int b;
+    public boolean c;
+    public Object d;
+    public final Object e;
+    public Object f;
+    public Object h;
 
-    public /* synthetic */ u4(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public u4(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context);
+        this.b = AndroidUtilities.dp(64.0f);
+        org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
+        this.d = w9Var;
+        w9Var.setAspectFit(true);
+        w9Var.setRoundRadius(AndroidUtilities.dp(12.0f));
+        addView(w9Var, w7.y5.c(-1.0f, -1));
+        RadialProgress2 radialProgress2 = new RadialProgress2(this, d6Var);
+        this.e = radialProgress2;
+        radialProgress2.E = 0.0f;
+        radialProgress2.setIcon(10, false, false);
+        radialProgress2.setColors(1107296256, 1107296256, -1, -1);
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 11:
-                org.telegram.ui.Cells.q7 q7Var = (org.telegram.ui.Cells.q7) this.b;
-                AnimatorSet animatorSet = q7Var.h;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    q7Var.h = null;
-                    break;
-                }
-                break;
-            case 24:
-                lq lqVar = (lq) this.b;
-                lqVar.h.b(lqVar.H ? 1.0f : 0.0f);
-                lqVar.h.invalidateSelf();
-                break;
-            default:
-                super.onAnimationCancel(animator);
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationEnd(Animator animator) {
-        switch (this.a) {
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        int i10 = this.a;
+        float f7 = 1.0f;
+        Object obj = this.e;
+        final int i11 = 0;
+        switch (i10) {
             case 0:
-                v4 v4Var = (v4) this.b;
-                v4Var.c = false;
-                v4Var.invalidate();
-                break;
-            case 1:
-                ((w5) this.b).f0.setVisibility(8);
-                break;
-            case 2:
-            case 24:
-            default:
-                super.onAnimationEnd(animator);
-                break;
-            case 3:
-                ((u9) this.b).s = null;
-                break;
-            case 4:
-                org.telegram.ui.Cells.j jVar = (org.telegram.ui.Cells.j) this.b;
-                ((n01) jVar).c0.e.c.r = false;
-                FrameLayout frameLayout = jVar.J;
-                if (frameLayout.getBackground() == null) {
-                    frameLayout.setBackground(jVar.K);
-                    break;
-                }
-                break;
-            case 5:
-                org.telegram.ui.Cells.w wVar = (org.telegram.ui.Cells.w) this.b;
-                Button button = wVar.n;
-                org.telegram.ui.Components.yh0 yh0Var = wVar.f;
-                if (button != yh0Var) {
-                    yh0Var.setVisibility(4);
-                    break;
-                } else {
-                    wVar.e.setVisibility(4);
-                    break;
-                }
-            case 6:
-                super.onAnimationEnd(animator);
-                ((org.telegram.ui.Cells.e0) this.b).x = null;
-                break;
-            case 7:
-                ((org.telegram.ui.Cells.g4) this.b).G = null;
-                break;
-            case 8:
-                org.telegram.ui.Cells.t5 t5Var = (org.telegram.ui.Cells.t5) this.b;
-                if (animator.equals(t5Var.n)) {
-                    t5Var.n = null;
-                    break;
-                }
-                break;
-            case 9:
-                ai.q4 q4Var = (ai.q4) this.b;
-                if (animator.equals(((org.telegram.ui.Cells.v5) q4Var.b).d)) {
-                    ((org.telegram.ui.Cells.v5) q4Var.b).d = null;
-                    break;
-                }
-                break;
-            case 10:
-                AndroidUtilities.runOnUIThread(((org.telegram.ui.Cells.v5) this.b).e, 1000L);
-                break;
-            case 11:
-                org.telegram.ui.Cells.q7 q7Var = (org.telegram.ui.Cells.q7) this.b;
-                AnimatorSet animatorSet = q7Var.h;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    q7Var.h = null;
-                    break;
-                }
-                break;
-            case 12:
-                org.telegram.ui.Cells.t7 t7Var = (org.telegram.ui.Cells.t7) this.b;
-                t7Var.n.isMediaSpoilersRevealedInSharedMedia = true;
-                t7Var.invalidate();
-                break;
-            case 13:
-                super.onAnimationEnd(animator);
-                org.telegram.ui.Cells.ga gaVar = (org.telegram.ui.Cells.ga) this.b;
-                ((org.telegram.ui.Cells.ha) gaVar.b).a.getTransitionParams().j();
-                ((org.telegram.ui.Cells.ha) gaVar.b).a.getTransitionParams().g = false;
-                ((org.telegram.ui.Cells.ha) gaVar.b).a.getTransitionParams().K1 = 1.0f;
-                break;
-            case 14:
-                i3 i3Var = (i3) this.b;
-                if (animator.equals(((ub) i3Var.b).R)) {
-                    ((ub) i3Var.b).R = null;
-                    break;
-                }
-                break;
-            case 15:
-                ub ubVar = (ub) this.b;
-                if (animator.equals(ubVar.R)) {
-                    ubVar.R = null;
-                    break;
-                }
-                break;
-            case 16:
-                ((bc) this.b).I.setVisibility(8);
-                break;
-            case 17:
-                ad adVar = (ad) this.b;
-                kc kcVar = adVar.m0;
-                if (kcVar != null) {
-                    if (kcVar.getParent() != null) {
-                        ((ViewGroup) adVar.m0.getParent()).removeView(adVar.m0);
+                RadialProgress2 radialProgress2 = (RadialProgress2) obj;
+                super.dispatchDraw(canvas);
+                if (this.c) {
+                    Drawable drawable = ((org.telegram.ui.Components.w9) this.d).getImageReceiver().getDrawable();
+                    final int i12 = 1;
+                    if ((drawable instanceof org.telegram.ui.Components.d6) && ((org.telegram.ui.Components.d6) drawable).d[4] > 0) {
+                        ValueAnimator valueAnimator = (ValueAnimator) this.h;
+                        if (valueAnimator != null) {
+                            valueAnimator.cancel();
+                            if ((radialProgress2.c ? radialProgress2.j : radialProgress2.i).w < 1.0f) {
+                                radialProgress2.o(1.0f, true);
+                            }
+                            ValueAnimator ofFloat = ValueAnimator.ofFloat(((Float) ((ValueAnimator) this.h).getAnimatedValue()).floatValue(), 0.0f);
+                            this.f = ofFloat;
+                            ofFloat.addListener(new t4(this, i11));
+                            ((ValueAnimator) this.f).addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.s4
+                                public final /* synthetic */ u4 b;
+
+                                {
+                                    this.b = this;
+                                }
+
+                                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                                public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
+                                    switch (i11) {
+                                        case 0:
+                                            this.b.invalidate();
+                                            break;
+                                        default:
+                                            this.b.invalidate();
+                                            break;
+                                    }
+                                }
+                            });
+                            ((ValueAnimator) this.f).setDuration(250L);
+                            ((ValueAnimator) this.f).start();
+                        } else {
+                            this.c = false;
+                        }
+                    } else if (((ValueAnimator) this.h) == null) {
+                        ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
+                        this.h = ofFloat2;
+                        ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.s4
+                            public final /* synthetic */ u4 b;
+
+                            {
+                                this.b = this;
+                            }
+
+                            @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                            public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
+                                switch (i12) {
+                                    case 0:
+                                        this.b.invalidate();
+                                        break;
+                                    default:
+                                        this.b.invalidate();
+                                        break;
+                                }
+                            }
+                        });
+                        ((ValueAnimator) this.h).setStartDelay(250L);
+                        ((ValueAnimator) this.h).setDuration(250L);
+                        ((ValueAnimator) this.h).start();
                     }
-                    adVar.m0 = null;
-                }
-                adVar.o0 = null;
-                super.onAnimationEnd(animator);
-                break;
-            case 18:
-                jk jkVar = (jk) this.b;
-                jkVar.setAnimatedTop(0);
-                View view = jkVar.F1;
-                if (view != null && view.getVisibility() == 0) {
-                    jkVar.F1.setTranslationY(((1.0f - jkVar.getTopViewEnterProgress()) * jkVar.F1.getLayoutParams().height) + jkVar.S1);
-                }
-                jkVar.r5.p9 = null;
-                break;
-            case 19:
-                org.telegram.ui.Components.j40 j40Var = ((ui) this.b).b.e2;
-                if (j40Var != null) {
-                    j40Var.setVisibility(8);
-                    break;
-                }
-                break;
-            case 20:
-                xl xlVar = (xl) this.b;
-                if (xlVar.a) {
-                    xlVar.d.setTranslationY(0.0f);
-                }
-                if (xlVar.b) {
-                    xlVar.e.setTranslationY(0.0f);
-                }
-                if (xlVar.f) {
-                    xlVar.h.setTranslationY(0.0f);
-                }
-                org.telegram.ui.Components.w9 w9Var = xlVar.c;
-                if (w9Var != null) {
-                    w9Var.setTranslationY(0.0f);
-                }
-                xlVar.n.H2[1] = null;
-                break;
-            case 21:
-                em emVar = (em) ((ai.z) this.b).c;
-                dl dlVar = ((km) emVar.c).Q.b3;
-                if (dlVar != null) {
-                    dlVar.setIsMessageTransition(false);
-                    ((km) emVar.c).Q.b3.h(true);
-                    ((km) emVar.c).Q.b3.setVisibility(4);
-                    break;
-                }
-                break;
-            case 22:
-                jm jmVar = (jm) this.b;
-                km kmVar = jmVar.b;
-                ArrayList arrayList = kmVar.Q.n6;
-                org.telegram.ui.Cells.t1 t1Var = jmVar.a;
-                arrayList.remove(t1Var);
-                View view2 = kmVar.Q.fragmentView;
-                if (view2 != null) {
-                    view2.invalidate();
-                    kmVar.Q.x0.invalidate();
-                }
-                t1Var.setAlpha(1.0f);
-                t1Var.getTransitionParams().x0 = false;
-                break;
-            case 23:
-                vp vpVar = (vp) this.b;
-                vpVar.L = 0.0f;
-                vpVar.K = 1.0f;
-                View view3 = vpVar.a0;
-                if (view3 != null) {
-                    view3.invalidate();
-                }
-                vpVar.T.invalidate();
-                aj ajVar = vpVar.Y;
-                if (ajVar != null) {
-                    ajVar.run();
-                    vpVar.Y = null;
-                    break;
-                }
-                break;
-            case 25:
-                xq xqVar = (xq) this.b;
-                View view4 = xqVar.b;
-                view4.setAlpha(1.0f);
-                s4.o0.x0(view4);
-                ((qr) xqVar.d).c.removeView(view4);
-                break;
-            case 26:
-                org.telegram.ui.Components.h6 h6Var = (org.telegram.ui.Components.h6) this.b;
-                h6Var.d = null;
-                h6Var.b.clear();
-                break;
-            case 27:
-                AnimatedPhoneNumberEditText animatedPhoneNumberEditText = (AnimatedPhoneNumberEditText) this.b;
-                animatedPhoneNumberEditText.n = null;
-                animatedPhoneNumberEditText.f.clear();
-                break;
-            case 28:
-                super.onAnimationEnd(animator);
-                org.telegram.ui.Components.o6 o6Var = (org.telegram.ui.Components.o6) this.b;
-                o6Var.c();
-                o6Var.k = null;
-                o6Var.h = 0.0f;
-                o6Var.m = 0.0f;
-                o6Var.invalidateSelf();
-                Runnable runnable = o6Var.V;
-                if (runnable != null) {
-                    runnable.run();
-                }
-                o6Var.o = null;
-                CharSequence charSequence = o6Var.p;
-                if (charSequence == null) {
-                    org.telegram.ui.Components.og ogVar = o6Var.C;
-                    if (ogVar != null) {
-                        ogVar.run();
+                    ValueAnimator valueAnimator2 = (ValueAnimator) this.f;
+                    if (valueAnimator2 == null) {
+                        ValueAnimator valueAnimator3 = (ValueAnimator) this.h;
+                        if (valueAnimator3 != null) {
+                            radialProgress2.E = ((Float) valueAnimator3.getAnimatedValue()).floatValue();
+                            radialProgress2.draw(canvas);
+                            break;
+                        }
+                    } else {
+                        radialProgress2.E = ((Float) valueAnimator2.getAnimatedValue()).floatValue();
+                        radialProgress2.draw(canvas);
                         break;
                     }
-                } else {
-                    o6Var.q(charSequence, true, o6Var.q);
-                    o6Var.p = null;
-                    o6Var.q = false;
-                    break;
                 }
                 break;
-            case 29:
-                org.telegram.ui.Components.w9 w9Var2 = (org.telegram.ui.Components.w9) this.b;
-                w9Var2.setVisibility(8);
-                w9Var2.setImageDrawable(null);
-                w9Var2.setAlpha(1.0f);
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 2:
-                h8 h8Var = (h8) this.b;
-                for (int i10 = 0; i10 < h8Var.b.getChildCount(); i10++) {
-                    e8.a((e8) h8Var.b.getChildAt(i10), h8Var.P, h8Var.Q);
-                }
-                break;
-            case 3:
             default:
-                super.onAnimationStart(animator);
-                break;
-            case 4:
-                ((n01) ((org.telegram.ui.Cells.j) this.b)).c0.e.c.r = true;
+                Paint paint = (Paint) obj;
+                od1 od1Var = (od1) this.h;
+                oc1 oc1Var = od1Var.a;
+                if (this.c) {
+                    RectF rectF = AndroidUtilities.rectTmp;
+                    rectF.set(0.0f, 0.0f, getWidth(), getHeight());
+                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
+                    org.telegram.ui.ActionBar.h6.s(this, od1Var.x0, oc1Var);
+                    Paint G = oc1Var.G("paintChatActionBackground");
+                    ColorFilter colorFilter = G.getColorFilter();
+                    G.setColorFilter((ColorMatrixColorFilter) this.f);
+                    dd1 dd1Var = od1Var.x0;
+                    if (dd1Var != null && (dd1Var.getBackground() instanceof org.telegram.ui.Components.mc0) && od1Var.l1 < 0.0f) {
+                        f7 = 0.33f;
+                    }
+                    int alpha = G.getAlpha();
+                    G.setAlpha((int) (alpha * f7));
+                    canvas.drawRect(rectF, G);
+                    G.setAlpha(alpha);
+                    G.setColorFilter(colorFilter);
+                    if (od1Var.M1) {
+                        float f10 = od1Var.n1;
+                        if (f10 > 0.0f) {
+                            canvas.drawColor(i0.a.k(-16777216, (int) (f10 * 255.0f * od1Var.o1)));
+                        }
+                    }
+                    canvas.save();
+                    if (((LinearGradient) this.d) == null || this.b != getHeight()) {
+                        int height = getHeight();
+                        this.b = height;
+                        LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, height, new int[]{-1, 0}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+                        this.d = linearGradient;
+                        paint.setShader(linearGradient);
+                    }
+                    canvas.drawRect(rectF, paint);
+                    canvas.restore();
+                    canvas.restore();
+                }
+                super.dispatchDraw(canvas);
                 break;
         }
     }
 
-    public u4(xq xqVar, s4.o0 o0Var) {
-        this.a = 25;
-        this.b = xqVar;
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        switch (this.a) {
+            case 0:
+                super.onLayout(z10, i10, i11, i12, i13);
+                int width = getWidth() / 2;
+                int height = getHeight() / 2;
+                RadialProgress2 radialProgress2 = (RadialProgress2) this.e;
+                int i14 = this.b;
+                radialProgress2.q(width - i14, height - i14, width + i14, height + i14);
+                break;
+            default:
+                super.onLayout(z10, i10, i11, i12, i13);
+                break;
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.a) {
+            case 1:
+                super.onMeasure(i10, i11);
+                for (int i12 = 0; i12 < getChildCount(); i12++) {
+                    View childAt = getChildAt(i12);
+                    if (childAt.getMeasuredWidth() > AndroidUtilities.dp(420.0f)) {
+                        childAt.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(420.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(childAt.getMeasuredHeight(), TLObject.FLAG_30));
+                    }
+                }
+                break;
+            default:
+                super.onMeasure(i10, i11);
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public u4(od1 od1Var, Context context, boolean z10) {
+        super(context);
+        this.h = od1Var;
+        this.c = z10;
+        Paint paint = new Paint(3);
+        this.e = paint;
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
+        ColorMatrix colorMatrix = new ColorMatrix();
+        AndroidUtilities.adjustSaturationColorMatrix(colorMatrix, 0.4f);
+        AndroidUtilities.multiplyBrightnessColorMatrix(colorMatrix, 0.65f);
+        this.f = new ColorMatrixColorFilter(colorMatrix);
     }
 }

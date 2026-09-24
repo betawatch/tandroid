@@ -5,7 +5,7 @@ import android.graphics.drawable.BitmapDrawable;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a7 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -24,9 +24,9 @@ public final /* synthetic */ class a7 implements Utilities.Callback2 {
                 j8 j8Var = this.b;
                 j8Var.Y = z10;
                 MediaController mediaController = MediaController.getInstance();
-                org.telegram.ui.ActionBar.b1 b1Var = j8Var.X;
+                org.telegram.ui.ActionBar.a1 a1Var = j8Var.X;
                 float floatValue = ((Float) obj).floatValue();
-                b1Var.getClass();
+                a1Var.getClass();
                 mediaController.setPlaybackSpeed(true, (floatValue * 2.8f) + 0.2f);
                 break;
             default:

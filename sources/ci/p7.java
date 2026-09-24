@@ -2,7 +2,7 @@ package ci;
 
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p7 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -31,10 +31,10 @@ public final /* synthetic */ class p7 implements Utilities.Callback {
                 }
                 break;
             default:
-                org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) obj;
+                org.telegram.ui.ActionBar.m2 m2Var = (org.telegram.ui.ActionBar.m2) obj;
                 s7 s7Var2 = this.b.E;
-                if (s7Var2 != null || n2Var == null) {
-                    s7Var2.c(n2Var);
+                if (s7Var2 != null || m2Var == null) {
+                    s7Var2.c(m2Var);
                     break;
                 }
         }

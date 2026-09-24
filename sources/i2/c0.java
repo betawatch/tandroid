@@ -8,9 +8,9 @@ import b2.w1;
 import ci.rc;
 import gg.x1;
 import java.util.ArrayList;
-import org.telegram.ui.Components.f71;
+import org.telegram.ui.Components.s71;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class c0 implements a3.l0, k2.j, SurfaceHolder.Callback, TextureView.SurfaceTextureListener {
     public final /* synthetic */ f0 a;
@@ -42,7 +42,7 @@ public final class c0 implements a3.l0, k2.j, SurfaceHolder.Callback, TextureVie
         while (i10 < size) {
             Object obj = arrayList.get(i10);
             i10++;
-            if (((f71) ((w1) obj)).J.onSurfaceDestroyed(surfaceTexture)) {
+            if (((s71) ((w1) obj)).J.onSurfaceDestroyed(surfaceTexture)) {
                 return false;
             }
         }
@@ -81,7 +81,7 @@ public final class c0 implements a3.l0, k2.j, SurfaceHolder.Callback, TextureVie
         while (i10 < size) {
             Object obj = arrayList.get(i10);
             i10++;
-            ((f71) ((w1) obj)).J.onSurfaceTextureUpdated(surfaceTexture);
+            ((s71) ((w1) obj)).J.onSurfaceTextureUpdated(surfaceTexture);
         }
     }
 

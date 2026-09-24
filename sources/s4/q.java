@@ -7,9 +7,9 @@ import java.util.Collections;
 import java.util.concurrent.TimeUnit;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
-import rg.w1;
+import rg.q1;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class q implements Runnable {
     public static final ThreadLocal e = new ThreadLocal();
@@ -43,7 +43,7 @@ public final class q implements Runnable {
                 return j10;
             } catch (Exception e7) {
                 FileLog.e(e7);
-                AndroidUtilities.runOnUIThread(new w1(recyclerView, 1));
+                AndroidUtilities.runOnUIThread(new q1(recyclerView, 2));
                 recyclerView.h0(false);
                 return null;
             }

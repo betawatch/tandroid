@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import n7.a1;
+import n7.z0;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
@@ -39,23 +39,23 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.b2;
+import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.l3;
+import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.ActionBar.m3;
-import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.ActionBar.n3;
 import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ez;
+import org.telegram.ui.dz;
 import org.telegram.ui.i4;
 import org.telegram.ui.web.y0;
 import org.telegram.ui.z2;
 import t7.u;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public abstract class f {
-    public static a1 a;
+    public static z0 a;
     public static o0.a b;
     public static a9.d c;
     public static String d;
@@ -116,9 +116,9 @@ public abstract class f {
         return null;
     }
 
-    public static a1 c() {
+    public static z0 c() {
         o0.a aVar = b;
-        a1 a1Var = null;
+        z0 z0Var = null;
         if (aVar == null) {
             a = null;
         } else if (a == null) {
@@ -127,12 +127,12 @@ public abstract class f {
             vf.b bVar = new vf.b(uVar);
             try {
                 if (((vf.c) eVar).G0(bVar)) {
-                    a1Var = new a1(20, bVar, (ComponentName) aVar.c);
+                    z0Var = new z0(20, bVar, (ComponentName) aVar.c);
                 }
             } catch (RemoteException unused) {
             }
-            a = a1Var;
-            new WeakReference(a1Var);
+            a = z0Var;
+            new WeakReference(z0Var);
         }
         return a;
     }
@@ -224,8 +224,8 @@ public abstract class f {
     }
 
     public static boolean e() {
-        ez sheetFragment;
-        n2 U = LaunchActivity.U();
+        dz sheetFragment;
+        m2 U = LaunchActivity.U();
         if (U == null || !(U.getParentLayout() instanceof ActionBarLayout) || (sheetFragment = ((ActionBarLayout) U.getParentLayout()).getSheetFragment()) == null || sheetFragment.getArticleViewer() == null) {
             return (U == null || U.getArticleViewer() == null) ? false : true;
         }
@@ -452,27 +452,27 @@ public abstract class f {
     }
 
     public static void n(String str) {
-        n3 P;
-        m3 m3Var;
+        m3 P;
+        l3 l3Var;
         org.telegram.ui.m3[] m3VarArr;
-        org.telegram.ui.m3 m3Var2;
+        org.telegram.ui.m3 m3Var;
         LaunchActivity launchActivity = LaunchActivity.G1;
         if (launchActivity != null && (P = launchActivity.P()) != null) {
             if (!TextUtils.isEmpty(str)) {
-                ArrayList<m3> tabs = P.getTabs();
+                ArrayList<l3> tabs = P.getTabs();
                 for (int i10 = 0; i10 < tabs.size(); i10++) {
-                    m3Var = tabs.get(i10);
-                    i4 i4Var = m3Var.J;
+                    l3Var = tabs.get(i10);
+                    i4 i4Var = l3Var.J;
                     if (i4Var != null && !i4Var.d0.isEmpty()) {
-                        Object h = hg.c.h(1, m3Var.J.d0);
-                        if (h instanceof z2) {
-                            y0 y0Var = ((z2) h).b;
-                            if (y0Var == null && (m3VarArr = m3Var.J.u0) != null && (m3Var2 = m3VarArr[0]) != null) {
-                                y0Var = m3Var2.getWebView();
+                        Object g10 = hg.c.g(1, l3Var.J.d0);
+                        if (g10 instanceof z2) {
+                            y0 y0Var = ((z2) g10).b;
+                            if (y0Var == null && (m3VarArr = l3Var.J.u0) != null && (m3Var = m3VarArr[0]) != null) {
+                                y0Var = m3Var.getWebView();
                             }
                             if (y0Var != null) {
-                                if (TextUtils.equals(n3.p(y0Var.canGoBack() ? y0Var.getUrl() : y0Var.getOpenURL()), n3.p(str))) {
-                                    P.e(m3Var);
+                                if (TextUtils.equals(m3.p(y0Var.canGoBack() ? y0Var.getUrl() : y0Var.getOpenURL()), m3.p(str))) {
+                                    P.e(l3Var);
                                     break;
                                 }
                             } else {
@@ -484,12 +484,12 @@ public abstract class f {
                     }
                 }
             }
-            m3Var = null;
-            if (m3Var != null) {
+            l3Var = null;
+            if (l3Var != null) {
                 return;
             }
         }
-        n2 U = LaunchActivity.U();
+        m2 U = LaunchActivity.U();
         if (U != null && U.getArticleViewer() != null) {
             U.getArticleViewer().N(null, null, null, str);
             return;
@@ -519,77 +519,77 @@ public abstract class f {
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(30:4|(30:176|177|244|(1:8)(1:175)|(3:138|139|(7:141|(10:143|144|145|(2:147|(2:149|(2:151|(1:153))))|170|11|12|(2:134|135)(1:14)|15|(19:21|(1:23)|127|128|129|26|27|(1:29)|(3:(2:32|(1:34))|35|(3:50|51|(2:53|54)(9:55|(1:57)|58|(1:60)(1:119)|61|62|63|64|66)))|120|(3:98|99|(2:(1:102)|114))|70|(5:97|73|74|(1:76)|(1:(2:83|(4:85|(2:89|(1:91))|92|93)(1:94))(2:95|96))(2:80|81))|72|73|74|(0)|(1:78)|(0)(0))(1:19))(1:172)|154|155|156|157|(2:159|160)(5:161|162|163|164|165)))|10|11|12|(0)(0)|15|(1:17)|21|(0)|127|128|129|26|27|(0)|(0)|120|(0)|70|(0)|72|73|74|(0)|(0)|(0)(0))|6|(0)(0)|(0)|10|11|12|(0)(0)|15|(0)|21|(0)|127|128|129|26|27|(0)|(0)|120|(0)|70|(0)|72|73|74|(0)|(0)|(0)(0)) */
-    /* JADX WARN: Code restructure failed: missing block: B:103:0x041d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:103:0x041f, code lost:
     
         if (org.telegram.messenger.MessagesController.getInstance(r22).isWebBrowserOpenInApp(r3.toString()) != false) goto L223;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:105:0x0429, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:105:0x042b, code lost:
     
         if (android.text.TextUtils.isEmpty(r21) == false) goto L233;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:107:0x042f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:107:0x0431, code lost:
     
         if (r3.getScheme() != null) goto L227;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:109:0x0439, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:109:0x043b, code lost:
     
         if ("https".equals(r3.getScheme()) == false) goto L229;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:111:0x0443, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:111:0x0445, code lost:
     
         if ("http".equals(r3.getScheme()) == false) goto L231;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:113:0x0450, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:113:0x0452, code lost:
     
         if ("tonsite".equals(r3.getScheme()) == false) goto L233;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:115:0x0423, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:115:0x0425, code lost:
     
         if (e() != false) goto L223;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:121:0x02bf, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:121:0x02c1, code lost:
     
         r0 = e;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:131:0x027c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:131:0x027e, code lost:
     
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:132:0x027d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:132:0x027f, code lost:
     
         org.telegram.messenger.FileLog.e(r0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:136:0x0402, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:136:0x0404, code lost:
     
         r0 = e;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:137:0x0403, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:137:0x0405, code lost:
     
         r3 = r20;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:24:0x0274, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x0276, code lost:
     
-        if ("https".equals(r2) != false) goto L267;
+        if ("https".equals(r2) != false) goto L264;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:25:0x0280, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:25:0x0282, code lost:
     
         r3 = r20;
      */
-    /* JADX WARN: Removed duplicated region for block: B:134:0x024b A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:138:0x0197 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x025b  */
-    /* JADX WARN: Removed duplicated region for block: B:175:0x0191  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x0260 A[Catch: Exception -> 0x0255, TRY_ENTER, TRY_LEAVE, TryCatch #5 {Exception -> 0x0255, blocks: (B:135:0x024b, B:17:0x0260, B:23:0x0270), top: B:134:0x024b }] */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0270 A[Catch: Exception -> 0x0255, TRY_ENTER, TRY_LEAVE, TryCatch #5 {Exception -> 0x0255, blocks: (B:135:0x024b, B:17:0x0260, B:23:0x0270), top: B:134:0x024b }] */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x029e A[Catch: Exception -> 0x02bf, TryCatch #1 {Exception -> 0x02bf, blocks: (B:27:0x0282, B:29:0x029e, B:32:0x02c5, B:35:0x02d7, B:37:0x02dd, B:40:0x02e9, B:42:0x02f2, B:44:0x02fc, B:46:0x0300, B:48:0x030b, B:50:0x0315, B:53:0x0325, B:55:0x0334, B:57:0x035f, B:58:0x036a, B:61:0x0379, B:119:0x0375), top: B:26:0x0282 }] */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x02c3  */
-    /* JADX WARN: Removed duplicated region for block: B:76:0x0467 A[Catch: Exception -> 0x04c8, TRY_ENTER, TryCatch #4 {Exception -> 0x04c8, blocks: (B:99:0x040b, B:102:0x0411, B:104:0x0425, B:106:0x042b, B:108:0x0431, B:110:0x043b, B:112:0x0445, B:73:0x045f, B:76:0x0467, B:78:0x0471, B:80:0x0475, B:83:0x0483, B:85:0x048d, B:87:0x0493, B:89:0x049d, B:91:0x04b2, B:92:0x04b6, B:95:0x04be, B:114:0x041f, B:70:0x0452), top: B:98:0x040b }] */
-    /* JADX WARN: Removed duplicated region for block: B:78:0x0471 A[Catch: Exception -> 0x04c8, TryCatch #4 {Exception -> 0x04c8, blocks: (B:99:0x040b, B:102:0x0411, B:104:0x0425, B:106:0x042b, B:108:0x0431, B:110:0x043b, B:112:0x0445, B:73:0x045f, B:76:0x0467, B:78:0x0471, B:80:0x0475, B:83:0x0483, B:85:0x048d, B:87:0x0493, B:89:0x049d, B:91:0x04b2, B:92:0x04b6, B:95:0x04be, B:114:0x041f, B:70:0x0452), top: B:98:0x040b }] */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x0483 A[Catch: Exception -> 0x04c8, TryCatch #4 {Exception -> 0x04c8, blocks: (B:99:0x040b, B:102:0x0411, B:104:0x0425, B:106:0x042b, B:108:0x0431, B:110:0x043b, B:112:0x0445, B:73:0x045f, B:76:0x0467, B:78:0x0471, B:80:0x0475, B:83:0x0483, B:85:0x048d, B:87:0x0493, B:89:0x049d, B:91:0x04b2, B:92:0x04b6, B:95:0x04be, B:114:0x041f, B:70:0x0452), top: B:98:0x040b }] */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x018d  */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x04be A[Catch: Exception -> 0x04c8, TRY_LEAVE, TryCatch #4 {Exception -> 0x04c8, blocks: (B:99:0x040b, B:102:0x0411, B:104:0x0425, B:106:0x042b, B:108:0x0431, B:110:0x043b, B:112:0x0445, B:73:0x045f, B:76:0x0467, B:78:0x0471, B:80:0x0475, B:83:0x0483, B:85:0x048d, B:87:0x0493, B:89:0x049d, B:91:0x04b2, B:92:0x04b6, B:95:0x04be, B:114:0x041f, B:70:0x0452), top: B:98:0x040b }] */
-    /* JADX WARN: Removed duplicated region for block: B:97:0x045e  */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x040b A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:134:0x024d A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:138:0x0199 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x025d  */
+    /* JADX WARN: Removed duplicated region for block: B:175:0x0193  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0262 A[Catch: Exception -> 0x0257, TRY_ENTER, TRY_LEAVE, TryCatch #3 {Exception -> 0x0257, blocks: (B:135:0x024d, B:17:0x0262, B:23:0x0272), top: B:134:0x024d }] */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0272 A[Catch: Exception -> 0x0257, TRY_ENTER, TRY_LEAVE, TryCatch #3 {Exception -> 0x0257, blocks: (B:135:0x024d, B:17:0x0262, B:23:0x0272), top: B:134:0x024d }] */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x02a0 A[Catch: Exception -> 0x02c1, TryCatch #9 {Exception -> 0x02c1, blocks: (B:27:0x0284, B:29:0x02a0, B:32:0x02c7, B:35:0x02d9, B:37:0x02df, B:40:0x02eb, B:42:0x02f4, B:44:0x02fe, B:46:0x0302, B:48:0x030d, B:50:0x0317, B:53:0x0327, B:55:0x0336, B:57:0x0361, B:58:0x036c, B:61:0x037b, B:119:0x0377), top: B:26:0x0284 }] */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x02c5  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x0469 A[Catch: Exception -> 0x04ca, TRY_ENTER, TryCatch #2 {Exception -> 0x04ca, blocks: (B:99:0x040d, B:102:0x0413, B:104:0x0427, B:106:0x042d, B:108:0x0433, B:110:0x043d, B:112:0x0447, B:73:0x0461, B:76:0x0469, B:78:0x0473, B:80:0x0477, B:83:0x0485, B:85:0x048f, B:87:0x0495, B:89:0x049f, B:91:0x04b4, B:92:0x04b8, B:95:0x04c0, B:114:0x0421, B:70:0x0454), top: B:98:0x040d }] */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x0473 A[Catch: Exception -> 0x04ca, TryCatch #2 {Exception -> 0x04ca, blocks: (B:99:0x040d, B:102:0x0413, B:104:0x0427, B:106:0x042d, B:108:0x0433, B:110:0x043d, B:112:0x0447, B:73:0x0461, B:76:0x0469, B:78:0x0473, B:80:0x0477, B:83:0x0485, B:85:0x048f, B:87:0x0495, B:89:0x049f, B:91:0x04b4, B:92:0x04b8, B:95:0x04c0, B:114:0x0421, B:70:0x0454), top: B:98:0x040d }] */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x0485 A[Catch: Exception -> 0x04ca, TryCatch #2 {Exception -> 0x04ca, blocks: (B:99:0x040d, B:102:0x0413, B:104:0x0427, B:106:0x042d, B:108:0x0433, B:110:0x043d, B:112:0x0447, B:73:0x0461, B:76:0x0469, B:78:0x0473, B:80:0x0477, B:83:0x0485, B:85:0x048f, B:87:0x0495, B:89:0x049f, B:91:0x04b4, B:92:0x04b8, B:95:0x04c0, B:114:0x0421, B:70:0x0454), top: B:98:0x040d }] */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x018f  */
+    /* JADX WARN: Removed duplicated region for block: B:95:0x04c0 A[Catch: Exception -> 0x04ca, TRY_LEAVE, TryCatch #2 {Exception -> 0x04ca, blocks: (B:99:0x040d, B:102:0x0413, B:104:0x0427, B:106:0x042d, B:108:0x0433, B:110:0x043d, B:112:0x0447, B:73:0x0461, B:76:0x0469, B:78:0x0473, B:80:0x0477, B:83:0x0485, B:85:0x048f, B:87:0x0495, B:89:0x049f, B:91:0x04b4, B:92:0x04b8, B:95:0x04c0, B:114:0x0421, B:70:0x0454), top: B:98:0x040d }] */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x0460  */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x040d A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -758,7 +758,7 @@ public abstract class f {
                                 Intent intent2 = new Intent(ApplicationLoader.applicationContext, (Class<?>) ShareBroadcastReceiver.class);
                                 intent2.setAction("android.intent.action.SEND");
                                 PendingIntent broadcast = PendingIntent.getBroadcast(ApplicationLoader.applicationContext, 0, new Intent(ApplicationLoader.applicationContext, (Class<?>) CustomTabsCopyReceiver.class), 167772160);
-                                a1 c11 = c();
+                                z0 c11 = c();
                                 Intent intent3 = new Intent("android.intent.action.VIEW");
                                 if (c11 != null) {
                                     intent3.setPackage(((ComponentName) c11.c).getPackageName());
@@ -852,22 +852,22 @@ public abstract class f {
                         if (!z19) {
                         }
                     }
-                    b2[] b2VarArr = new b2[1];
-                    b2VarArr[c10] = new b2(context, 3, null);
+                    a2[] a2VarArr = new a2[1];
+                    a2VarArr[c10] = new a2(context, 3, null);
                     TL_account.getWebPagePreview getwebpagepreview = new TL_account.getWebPagePreview();
                     getwebpagepreview.message = uri.toString();
                     eVar2 = eVar;
                     str4 = str3;
                     z18 = z16;
                     try {
-                        int sendRequest = ConnectionsManager.getInstance(UserConfig.selectedAccount).sendRequest(getwebpagepreview, new a(eVar2, b2VarArr, i11, uri, context, z18));
+                        int sendRequest = ConnectionsManager.getInstance(UserConfig.selectedAccount).sendRequest(getwebpagepreview, new a(eVar2, a2VarArr, i11, uri, context, z18));
                         if (eVar2 != null) {
                             eVar2.d();
                             return;
                         } else {
                             i10 = i11;
                             try {
-                                AndroidUtilities.runOnUIThread(new o8(b2VarArr, sendRequest, i12), 1000L);
+                                AndroidUtilities.runOnUIThread(new o8(a2VarArr, sendRequest, i12), 1000L);
                                 return;
                             } catch (Exception unused3) {
                             }

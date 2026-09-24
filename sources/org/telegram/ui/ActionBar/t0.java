@@ -1,77 +1,210 @@
 package org.telegram.ui.ActionBar;
 
-import android.graphics.drawable.Drawable;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.text.TextUtils;
 import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
-import org.telegram.ui.uh;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.qq;
+import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.w9;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class t0 {
-    public final int a;
-    public int b;
-    public int c;
-    public Drawable d;
-    public CharSequence e;
-    public boolean f;
-    public View g;
-    public int h;
-    public View i;
-    public uh j;
-    public int k = 0;
-    public int l = 0;
-    public Integer m;
-    public Integer n;
+public class t0 extends FrameLayout implements le.e {
+    public final le.c a;
+    public qq b;
+    public final w9 c;
+    public final ImageView d;
+    public final TextView e;
+    public gg.q0 f;
+    public final p h;
+    public final d6 n;
+    public boolean r;
+    public boolean s;
+    public int v;
+    public int w;
 
-    public t0(int i10) {
-        this.a = i10;
+    public t0(Context context, d6 d6Var) {
+        super(context);
+        this.a = new le.c(0, this, rr.h, 380L, false);
+        this.h = new p(this, 2);
+        this.n = d6Var;
+        w9 w9Var = new w9(context);
+        this.c = w9Var;
+        addView(w9Var, w7.y5.c(32.0f, 32));
+        ImageView imageView = new ImageView(context);
+        this.d = imageView;
+        imageView.setImageResource(R.drawable.ic_close_white);
+        addView(imageView, w7.y5.d(24, 24.0f, 16, 8.0f, 0.0f, 0.0f, 0.0f));
+        TextView textView = new TextView(context);
+        this.e = textView;
+        textView.setSingleLine();
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        textView.setTextSize(1, 14.0f);
+        addView(textView, w7.y5.d(-2, -2.0f, 16, 38.0f, 0.0f, 12.0f, 0.0f));
+        this.w = AndroidUtilities.dp(28.0f);
+        a();
     }
 
-    public final void a(int i10, int i11) {
-        Integer num = this.m;
-        if (num == null || this.n == null || num.intValue() != i10 || this.n.intValue() != i11) {
-            this.m = Integer.valueOf(i10);
-            this.n = Integer.valueOf(i11);
-            View view = this.i;
-            if (view instanceof f1) {
-                ((f1) view).c(i10, i11);
+    @Override // le.e
+    public final void D(int i10, float f7, float f10, le.f fVar) {
+        if (i10 == 0) {
+            a();
+            invalidate();
+        }
+    }
+
+    public final void a() {
+        float f7 = this.a.e;
+        boolean z10 = this.r;
+        d6 d6Var = this.n;
+        int l1 = z10 ? h6.l1(0.075f, h6.v0(h6.G6, d6Var)) : h6.v0(h6.ci, d6Var);
+        int i10 = h6.Oh;
+        int v02 = h6.v0(i10, d6Var);
+        int v03 = h6.v0(h6.G6, d6Var);
+        int i11 = h6.Sh;
+        int v04 = h6.v0(i11, d6Var);
+        this.v = i0.a.d(f7, l1, v02);
+        this.e.setTextColor(i0.a.d(f7, v03, v04));
+        ImageView imageView = this.d;
+        imageView.setColorFilter(v04);
+        imageView.setAlpha(f7);
+        float f10 = 0.82f * f7;
+        imageView.setScaleX(f10);
+        imageView.setScaleY(f10);
+        qq qqVar = this.b;
+        if (qqVar != null) {
+            h6.v1(qqVar, h6.v0(i10, d6Var), false);
+            h6.v1(this.b, h6.v0(i11, d6Var), true);
+        }
+        this.c.setAlpha(1.0f - f7);
+        gg.q0 q0Var = this.f;
+        if (q0Var != null && q0Var.d == 7) {
+            setData(q0Var);
+        }
+        invalidate();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        float width = getWidth();
+        float height = getHeight();
+        int i10 = this.w;
+        canvas.drawRoundRect(0.0f, 0.0f, width, height, i10, i10, h6.l0(this.v));
+        super.dispatchDraw(canvas);
+    }
+
+    public gg.q0 getFilter() {
+        return this.f;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i10, int i11) {
+        if (this.s) {
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(135.0f), TLObject.FLAG_31), i11);
+        } else {
+            super.onMeasure(i10, i11);
+        }
+    }
+
+    public void setData(gg.q0 q0Var) {
+        this.f = q0Var;
+        this.s = false;
+        String str = q0Var.c;
+        if (str == null) {
+            str = LocaleController.getString(q0Var.b);
+        }
+        this.e.setText(str);
+        qq L = h6.L(AndroidUtilities.dp(32.0f), q0Var.a);
+        this.b = L;
+        int i10 = h6.Oh;
+        d6 d6Var = this.n;
+        h6.v1(L, h6.v0(i10, d6Var), false);
+        qq qqVar = this.b;
+        int i11 = h6.Sh;
+        h6.v1(qqVar, h6.v0(i11, d6Var), true);
+        int i12 = q0Var.d;
+        w9 w9Var = this.c;
+        if (i12 != 4) {
+            if (i12 != 7) {
+                w9Var.setImageDrawable(this.b);
+                return;
             }
+            qq L2 = h6.L(AndroidUtilities.dp(32.0f), R.drawable.chats_archive);
+            int dp = AndroidUtilities.dp(16.0f);
+            int dp2 = AndroidUtilities.dp(16.0f);
+            L2.e = dp;
+            L2.f = dp2;
+            h6.v1(L2, h6.v0(i10, d6Var), false);
+            h6.v1(L2, h6.v0(i11, d6Var), true);
+            w9Var.setImageDrawable(L2);
+            return;
         }
-    }
-
-    public final void b(int i10) {
-        if (i10 != this.c) {
-            this.c = i10;
-            View view = this.i;
-            if (view instanceof f1) {
-                ((f1) view).setIcon(i10);
+        TLObject tLObject = q0Var.f;
+        if (!(tLObject instanceof TLRPC.User)) {
+            if (tLObject instanceof TLRPC.Chat) {
+                TLRPC.Chat chat = (TLRPC.Chat) tLObject;
+                this.s = ChatObject.isCommunity(chat);
+                ImageReceiver imageReceiver = w9Var.getImageReceiver();
+                int dp3 = AndroidUtilities.dp(this.s ? 10.0f : 16.0f);
+                this.w = dp3;
+                imageReceiver.setRoundRadius(dp3);
+                w9Var.getImageReceiver().setForUserOrChat(chat, this.b);
+                return;
             }
+            return;
+        }
+        TLRPC.User user = (TLRPC.User) tLObject;
+        if (UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser().id != user.id) {
+            w9Var.getImageReceiver().setRoundRadius(AndroidUtilities.dp(16.0f));
+            w9Var.getImageReceiver().setForUserOrChat(user, this.b);
+            return;
+        }
+        qq L3 = h6.L(AndroidUtilities.dp(32.0f), R.drawable.chats_saved);
+        int dp4 = AndroidUtilities.dp(16.0f);
+        int dp5 = AndroidUtilities.dp(16.0f);
+        L3.e = dp4;
+        L3.f = dp5;
+        h6.v1(L3, h6.v0(i10, d6Var), false);
+        h6.v1(L3, h6.v0(i11, d6Var), true);
+        w9Var.setImageDrawable(L3);
+    }
+
+    public void setExpanded(boolean z10) {
+        TextView textView = this.e;
+        if (z10) {
+            textView.setVisibility(0);
+        } else {
+            textView.setVisibility(8);
+            setSelectedForDelete(false);
         }
     }
 
-    public final void c(uh uhVar) {
-        this.j = uhVar;
-        View view = this.i;
-        if (view != null) {
-            view.setOnClickListener(uhVar);
+    public void setSelectedForDelete(boolean z10) {
+        le.c cVar = this.a;
+        if (cVar.f == z10) {
+            return;
+        }
+        p pVar = this.h;
+        AndroidUtilities.cancelRunOnUIThread(pVar);
+        cVar.a(z10, true);
+        if (z10) {
+            AndroidUtilities.runOnUIThread(pVar, 2000L);
         }
     }
 
-    public final void d(CharSequence charSequence) {
-        this.e = charSequence;
-        View view = this.i;
-        if (view instanceof f1) {
-            ((f1) view).setText(charSequence);
-        } else if (view instanceof TextView) {
-            ((TextView) view).setText(charSequence);
-        }
-    }
-
-    public final void e(int i10) {
-        this.k = i10;
-        View view = this.i;
-        if (view != null) {
-            view.setVisibility(i10);
-        }
+    @Override // le.e
+    public final /* synthetic */ void C(float f7, int i10) {
     }
 }

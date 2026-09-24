@@ -1,37 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.view.ViewGroup;
-import org.telegram.tgnet.TLObject;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class ez0 extends ViewGroup.MarginLayoutParams {
-    public gz0 a;
-    public gz0 b;
+public final class ez0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Switch b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ez0() {
-        super(-2, -2);
-        gz0 gz0Var = gz0.e;
-        this.a = gz0Var;
-        this.b = gz0Var;
-        setMargins(TLObject.FLAG_31, TLObject.FLAG_31, TLObject.FLAG_31, TLObject.FLAG_31);
-        this.a = gz0Var;
-        this.b = gz0Var;
+    public /* synthetic */ ez0(Switch r12, int i10) {
+        this.a = i10;
+        this.b = r12;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.b.d = null;
+                break;
+            default:
+                this.b.e = null;
+                break;
         }
-        if (obj == null || ez0.class != obj.getClass()) {
-            return false;
-        }
-        ez0 ez0Var = (ez0) obj;
-        return this.b.equals(ez0Var.b) && this.a.equals(ez0Var.a);
-    }
-
-    public final int hashCode() {
-        return this.b.hashCode() + (this.a.hashCode() * 31);
     }
 }

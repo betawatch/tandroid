@@ -1,88 +1,370 @@
 package org.telegram.ui;
 
-import android.text.Editable;
+import android.content.Context;
+import android.graphics.Typeface;
+import android.os.Bundle;
 import android.text.TextUtils;
-import android.text.TextWatcher;
-import android.view.ViewGroup;
+import android.text.method.PasswordTransformationMethod;
+import android.view.KeyEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.SerializedData;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class ge0 implements TextWatcher {
-    public final /* synthetic */ int a = 0;
-    public boolean b;
-    public final /* synthetic */ ViewGroup c;
+public final class ge0 extends org.telegram.ui.Components.fw0 {
+    public final /* synthetic */ qg0 E;
+    public final org.telegram.ui.Components.jd0[] a;
+    public final EditTextBoldCursor[] b;
+    public final TextView c;
+    public final TextView d;
+    public final TextView e;
+    public final ImageView f;
+    public String h;
+    public String n;
+    public String r;
+    public TL_account.Password s;
+    public Bundle v;
+    public boolean w;
+    public final int x;
+    public boolean y;
 
-    public ge0(qg.x2 x2Var) {
-        this.c = x2Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ge0(qg0 qg0Var, Context context, int i10) {
+        super(context);
+        this.E = qg0Var;
+        this.x = i10;
+        setOrientation(1);
+        int i11 = i10 == 1 ? 1 : 2;
+        this.b = new EditTextBoldCursor[i11];
+        this.a = new org.telegram.ui.Components.jd0[i11];
+        TextView textView = new TextView(context);
+        this.c = textView;
+        float f7 = 18.0f;
+        textView.setTextSize(1, 18.0f);
+        textView.setTypeface(AndroidUtilities.bold());
+        textView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
+        textView.setGravity(49);
+        textView.setText(LocaleController.getString(R.string.SetNewPassword));
+        addView(textView, w7.y5.t(-2, -2, 1, 8, AndroidUtilities.isSmallScreen() ? 16 : 72, 8, 0));
+        TextView textView2 = new TextView(context);
+        this.d = textView2;
+        textView2.setTextSize(1, 16.0f);
+        textView2.setGravity(1);
+        textView2.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
+        addView(textView2, w7.y5.t(-2, -2, 1, 8, 6, 8, 16));
+        final int i12 = 0;
+        while (i12 < this.b.length) {
+            org.telegram.ui.Components.jd0 jd0Var = new org.telegram.ui.Components.jd0(context, null);
+            this.a[i12] = jd0Var;
+            jd0Var.setText(LocaleController.getString(i10 == 0 ? i12 == 0 ? R.string.PleaseEnterNewFirstPasswordHint : R.string.PleaseEnterNewSecondPasswordHint : R.string.PasswordHintPlaceholder));
+            this.b[i12] = new EditTextBoldCursor(context);
+            this.b[i12].setCursorSize(AndroidUtilities.dp(20.0f));
+            this.b[i12].setCursorWidth(1.5f);
+            this.b[i12].setImeOptions(268435461);
+            this.b[i12].setTextSize(1, f7);
+            this.b[i12].setMaxLines(1);
+            this.b[i12].setBackground(null);
+            int dp = AndroidUtilities.dp(16.0f);
+            this.b[i12].setPadding(dp, dp, dp, dp);
+            if (i10 == 0) {
+                this.b[i12].setInputType(129);
+                this.b[i12].setTransformationMethod(PasswordTransformationMethod.getInstance());
+            }
+            this.b[i12].setTypeface(Typeface.DEFAULT);
+            this.b[i12].setGravity(LocaleController.isRTL ? 5 : 3);
+            EditTextBoldCursor editTextBoldCursor = this.b[i12];
+            boolean z10 = i12 == 0 && i10 == 0;
+            editTextBoldCursor.addTextChangedListener(new fe0(this, z10));
+            this.b[i12].setOnFocusChangeListener(new od(jd0Var, 3));
+            if (z10) {
+                LinearLayout linearLayout = new LinearLayout(context);
+                linearLayout.setOrientation(0);
+                linearLayout.setGravity(16);
+                linearLayout.addView(this.b[i12], w7.y5.l(1.0f, 0, -2));
+                ImageView imageView = new ImageView(context);
+                this.f = imageView;
+                imageView.setImageResource(R.drawable.msg_message);
+                AndroidUtilities.updateViewVisibilityAnimated(imageView, true, 0.1f, false);
+                final int i13 = 0;
+                imageView.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.ce0
+                    public final /* synthetic */ ge0 b;
+
+                    {
+                        this.b = this;
+                    }
+
+                    @Override // android.view.View.OnClickListener
+                    public final void onClick(View view) {
+                        switch (i13) {
+                            case 0:
+                                ge0 ge0Var = this.b;
+                                ImageView imageView2 = ge0Var.f;
+                                EditTextBoldCursor[] editTextBoldCursorArr = ge0Var.b;
+                                ge0Var.y = !ge0Var.y;
+                                for (int i14 = 0; i14 < editTextBoldCursorArr.length; i14++) {
+                                    int selectionStart = editTextBoldCursorArr[i14].getSelectionStart();
+                                    int selectionEnd = editTextBoldCursorArr[i14].getSelectionEnd();
+                                    editTextBoldCursorArr[i14].setInputType((ge0Var.y ? 144 : 128) | 1);
+                                    editTextBoldCursorArr[i14].setSelection(selectionStart, selectionEnd);
+                                }
+                                imageView2.setTag(Boolean.valueOf(ge0Var.y));
+                                imageView2.setColorFilter(org.telegram.ui.ActionBar.h6.w0(null, ge0Var.y ? org.telegram.ui.ActionBar.h6.l6 : org.telegram.ui.ActionBar.h6.H6, false));
+                                break;
+                            default:
+                                ge0 ge0Var2 = this.b;
+                                if (ge0Var2.x == 0) {
+                                    ge0Var2.o(null, null);
+                                    break;
+                                } else {
+                                    ge0Var2.o(ge0Var2.n, null);
+                                    break;
+                                }
+                        }
+                    }
+                });
+                linearLayout.addView(imageView, w7.y5.u(24.0f, 24.0f, 0, 0.0f, 0.0f, 14.0f, 0.0f));
+                jd0Var.addView(linearLayout, w7.y5.c(-2.0f, -1));
+            } else {
+                jd0Var.addView(this.b[i12], w7.y5.c(-2.0f, -1));
+            }
+            jd0Var.e(this.b[i12]);
+            addView(jd0Var, w7.y5.t(-1, -2, 1, 16, 16, 16, 0));
+            this.b[i12].setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: org.telegram.ui.de0
+                @Override // android.widget.TextView.OnEditorActionListener
+                public final boolean onEditorAction(TextView textView3, int i14, KeyEvent keyEvent) {
+                    ge0 ge0Var = ge0.this;
+                    if (i12 == 0) {
+                        EditTextBoldCursor[] editTextBoldCursorArr = ge0Var.b;
+                        if (editTextBoldCursorArr.length == 2) {
+                            editTextBoldCursorArr[1].requestFocus();
+                            return true;
+                        }
+                    }
+                    if (i14 == 5) {
+                        ge0Var.h(null);
+                        return true;
+                    }
+                    ge0Var.getClass();
+                    return false;
+                }
+            });
+            i12++;
+            f7 = 18.0f;
+        }
+        if (i10 == 0) {
+            this.d.setText(LocaleController.getString("PleaseEnterNewFirstPasswordLogin", R.string.PleaseEnterNewFirstPasswordLogin));
+        } else {
+            this.d.setText(LocaleController.getString("PasswordHintTextLogin", R.string.PasswordHintTextLogin));
+        }
+        TextView textView3 = new TextView(context);
+        this.e = textView3;
+        textView3.setGravity(19);
+        textView3.setTextSize(1, 15.0f);
+        textView3.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
+        textView3.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
+        textView3.setText(LocaleController.getString(R.string.YourEmailSkip));
+        FrameLayout frameLayout = new FrameLayout(context);
+        frameLayout.addView(textView3, w7.y5.d(-1, 56.0f, 80, 0.0f, 0.0f, 0.0f, 32.0f));
+        addView(frameLayout, w7.y5.q(-1, -1, 80));
+        n7.z0.k(textView3);
+        final int i14 = 1;
+        textView3.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.ce0
+            public final /* synthetic */ ge0 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                switch (i14) {
+                    case 0:
+                        ge0 ge0Var = this.b;
+                        ImageView imageView2 = ge0Var.f;
+                        EditTextBoldCursor[] editTextBoldCursorArr = ge0Var.b;
+                        ge0Var.y = !ge0Var.y;
+                        for (int i142 = 0; i142 < editTextBoldCursorArr.length; i142++) {
+                            int selectionStart = editTextBoldCursorArr[i142].getSelectionStart();
+                            int selectionEnd = editTextBoldCursorArr[i142].getSelectionEnd();
+                            editTextBoldCursorArr[i142].setInputType((ge0Var.y ? 144 : 128) | 1);
+                            editTextBoldCursorArr[i142].setSelection(selectionStart, selectionEnd);
+                        }
+                        imageView2.setTag(Boolean.valueOf(ge0Var.y));
+                        imageView2.setColorFilter(org.telegram.ui.ActionBar.h6.w0(null, ge0Var.y ? org.telegram.ui.ActionBar.h6.l6 : org.telegram.ui.ActionBar.h6.H6, false));
+                        break;
+                    default:
+                        ge0 ge0Var2 = this.b;
+                        if (ge0Var2.x == 0) {
+                            ge0Var2.o(null, null);
+                            break;
+                        } else {
+                            ge0Var2.o(ge0Var2.n, null);
+                            break;
+                        }
+                }
+            }
+        });
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        int clamp;
-        switch (this.a) {
-            case 0:
-                he0 he0Var = (he0) this.c;
-                if (this.b) {
-                    if (he0Var.f.getVisibility() != 0 && !TextUtils.isEmpty(editable)) {
-                        if (he0Var.y) {
-                            he0Var.f.callOnClick();
-                        }
-                        AndroidUtilities.updateViewVisibilityAnimated(he0Var.f, true, 0.1f, true);
-                        break;
-                    } else if (he0Var.f.getVisibility() != 8 && TextUtils.isEmpty(editable)) {
-                        AndroidUtilities.updateViewVisibilityAnimated(he0Var.f, false, 0.1f, true);
-                        break;
-                    }
+    @Override // org.telegram.ui.Components.fw0
+    public final boolean b() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.fw0
+    public final boolean c(boolean z10) {
+        this.E.k1(true, true);
+        this.v = null;
+        this.w = false;
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.fw0
+    public final void d() {
+        this.w = false;
+    }
+
+    @Override // org.telegram.ui.Components.fw0
+    public String getHeaderName() {
+        return LocaleController.getString("NewPassword", R.string.NewPassword);
+    }
+
+    @Override // org.telegram.ui.Components.fw0
+    public final void h(String str) {
+        if (this.w) {
+            return;
+        }
+        EditTextBoldCursor[] editTextBoldCursorArr = this.b;
+        String obj = editTextBoldCursorArr[0].getText().toString();
+        int length = obj.length();
+        qg0 qg0Var = this.E;
+        if (length == 0) {
+            if (qg0Var.getParentActivity() == null) {
+                return;
+            }
+            try {
+                editTextBoldCursorArr[0].performHapticFeedback(3, 2);
+            } catch (Exception unused) {
+            }
+            AndroidUtilities.shakeView(editTextBoldCursorArr[0]);
+            return;
+        }
+        if (this.x != 0) {
+            this.w = true;
+            qg0Var.n1(0, true);
+            o(this.n, obj);
+        } else {
+            if (!obj.equals(editTextBoldCursorArr[1].getText().toString())) {
+                if (qg0Var.getParentActivity() == null) {
+                    return;
                 }
-                break;
-            default:
-                qg.x2 x2Var = (qg.x2) this.c;
-                qg.w2 w2Var = x2Var.q0;
-                if (this.b && x2Var.w0 > 0 && x2Var.x0 > 0 && !x2Var.z0 && w2Var.getLayout() != null) {
-                    float f7 = AndroidUtilities.displaySize.y / 3.0f;
-                    float height = w2Var.getLayout().getHeight();
-                    if (height > f7 && (clamp = Utilities.clamp((int) ((f7 / height) * x2Var.getBaseFontSize()), x2Var.x0, x2Var.w0)) != x2Var.getBaseFontSize()) {
-                        x2Var.setBaseFontSize(clamp);
-                        Runnable runnable = x2Var.y0;
-                        if (runnable != null) {
-                            runnable.run();
-                        }
-                    }
+                try {
+                    editTextBoldCursorArr[1].performHapticFeedback(3, 2);
+                } catch (Exception unused2) {
                 }
-                x2Var.s();
-                break;
+                AndroidUtilities.shakeView(editTextBoldCursorArr[1]);
+                return;
+            }
+            Bundle bundle = new Bundle();
+            bundle.putString("emailCode", this.h);
+            bundle.putString("new_password", obj);
+            bundle.putString("password", this.r);
+            qg0Var.u1(10, true, bundle, false);
         }
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        switch (this.a) {
-            case 0:
-                break;
-            default:
-                this.b = i12 > 3;
-                break;
+    @Override // org.telegram.ui.Components.fw0
+    public final void j() {
+        AndroidUtilities.runOnUIThread(new c10(this, 18), qg0.t0);
+    }
+
+    @Override // org.telegram.ui.Components.fw0
+    public final void k(Bundle bundle) {
+        Bundle bundle2 = bundle.getBundle("recoveryview_params" + this.x);
+        this.v = bundle2;
+        if (bundle2 != null) {
+            m(bundle2, true);
         }
     }
 
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        int i13 = this.a;
+    @Override // org.telegram.ui.Components.fw0
+    public final void l(Bundle bundle) {
+        if (this.v != null) {
+            bundle.putBundle("recoveryview_params" + this.x, this.v);
+        }
     }
 
-    public ge0(he0 he0Var, boolean z10) {
-        this.c = he0Var;
-        this.b = z10;
+    @Override // org.telegram.ui.Components.fw0
+    public final void m(Bundle bundle, boolean z10) {
+        EditTextBoldCursor[] editTextBoldCursorArr;
+        if (bundle == null) {
+            return;
+        }
+        int i10 = 0;
+        while (true) {
+            editTextBoldCursorArr = this.b;
+            if (i10 >= editTextBoldCursorArr.length) {
+                break;
+            }
+            editTextBoldCursorArr[i10].setText("");
+            i10++;
+        }
+        this.v = bundle;
+        this.h = bundle.getString("emailCode");
+        String string = this.v.getString("password");
+        this.r = string;
+        if (string != null) {
+            SerializedData serializedData = new SerializedData(Utilities.hexToBytes(string));
+            TL_account.Password TLdeserialize = TL_account.Password.TLdeserialize(serializedData, serializedData.readInt32(false), false);
+            this.s = TLdeserialize;
+            TwoStepVerificationActivity.m0(TLdeserialize);
+        }
+        this.n = this.v.getString("new_password");
+        qg0.T0(this.E, editTextBoldCursorArr[0]);
+        editTextBoldCursorArr[0].requestFocus();
     }
 
-    private final void a(int i10, int i11, int i12, CharSequence charSequence) {
+    @Override // org.telegram.ui.Components.fw0
+    public final void n() {
+        this.c.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.G6, false));
+        this.d.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.D6, false));
+        for (EditTextBoldCursor editTextBoldCursor : this.b) {
+            editTextBoldCursor.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.G6, false));
+            editTextBoldCursor.setCursorColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.l6, false));
+        }
+        for (org.telegram.ui.Components.jd0 jd0Var : this.a) {
+            jd0Var.f();
+        }
+        this.e.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.q6, false));
+        ImageView imageView = this.f;
+        if (imageView != null) {
+            imageView.setColorFilter(org.telegram.ui.ActionBar.h6.w0(null, this.y ? org.telegram.ui.ActionBar.h6.l6 : org.telegram.ui.ActionBar.h6.H6, false));
+            imageView.setBackground(org.telegram.ui.ActionBar.h6.f0(this.E.getThemedColor(org.telegram.ui.ActionBar.h6.i6), 1, -1));
+        }
     }
 
-    private final void b(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
+    public final void o(String str, String str2) {
+        TLRPC.TL_auth_recoverPassword tL_auth_recoverPassword = new TLRPC.TL_auth_recoverPassword();
+        tL_auth_recoverPassword.code = this.h;
+        if (!TextUtils.isEmpty(str)) {
+            tL_auth_recoverPassword.flags |= 1;
+            TL_account.passwordInputSettings passwordinputsettings = new TL_account.passwordInputSettings();
+            tL_auth_recoverPassword.new_settings = passwordinputsettings;
+            passwordinputsettings.flags |= 1;
+            passwordinputsettings.hint = str2 != null ? str2 : "";
+            passwordinputsettings.new_algo = this.s.new_algo;
+        }
+        Utilities.globalQueue.postRunnable(new org.telegram.ui.Components.vn0(this, str, str2, tL_auth_recoverPassword, 18));
     }
 }

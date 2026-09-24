@@ -21,7 +21,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public class Utilities {
     private static final String RANDOM_STRING_CHARS = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -38,72 +38,72 @@ public class Utilities {
     public static Pattern pattern = Pattern.compile("[\\-0-9]+");
     public static SecureRandom random = new SecureRandom();
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public interface Callback<T> {
         void run(T t10);
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public interface Callback0Return<ReturnType> {
         ReturnType run();
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public interface Callback2<T, T2> {
         void run(T t10, T2 t22);
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public interface Callback2Return<T1, T2, ReturnType> {
         ReturnType run(T1 t12, T2 t22);
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public interface Callback3<T, T2, T3> {
         void run(T t10, T2 t22, T3 t32);
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public interface Callback3Return<T1, T2, T3, ReturnType> {
         ReturnType run(T1 t12, T2 t22, T3 t32);
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public interface Callback4<T, T2, T3, T4> {
         void run(T t10, T2 t22, T3 t32, T4 t42);
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public interface Callback4Return<T, T2, T3, T4, ReturnType> {
         ReturnType run(T t10, T2 t22, T3 t32, T4 t42);
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public interface Callback5<T, T2, T3, T4, T5> {
         void run(T t10, T2 t22, T3 t32, T4 t42, T5 t52);
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public interface Callback5Return<T, T2, T3, T4, T5, ReturnType> {
         ReturnType run(T t10, T2 t22, T3 t32, T4 t42, T5 t52);
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public interface CallbackReturn<Arg, ReturnType> {
         ReturnType run(Arg arg);
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public interface CallbackVoidReturn<ReturnType> {
         ReturnType run();
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public interface IndexedConsumer<T> {
         void accept(T t10, int i10);
     }
 
-    /* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
     public enum libyuv_ScaleFilter {
         None,
         Linear,
@@ -114,14 +114,14 @@ public class Utilities {
     static {
         long nextLong = random.nextLong();
         d5.a aVar = new d5.a(0L);
-        long a2 = v7.q6.a(nextLong);
+        long a2 = v7.r6.a(nextLong);
         aVar.a = a2;
-        long a10 = v7.q6.a(a2);
+        long a10 = v7.r6.a(a2);
         aVar.b = a10;
         if (aVar.a == 0 && a10 == 0) {
-            long a11 = v7.q6.a(3735928559L);
+            long a11 = v7.r6.a(3735928559L);
             aVar.a = a11;
-            aVar.b = v7.q6.a(a11);
+            aVar.b = v7.r6.a(a11);
         }
         fastRandom = aVar;
         stageQueue = new DispatchQueue("stageQueue");

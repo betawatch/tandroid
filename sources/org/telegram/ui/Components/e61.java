@@ -1,46 +1,41 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.view.View;
+import android.text.Selection;
+import android.text.Spannable;
+import android.text.method.LinkMovementMethod;
+import android.text.style.CharacterStyle;
+import android.view.MotionEvent;
+import android.widget.TextView;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e61 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ View b;
+public final class e61 extends LinkMovementMethod {
+    public final /* synthetic */ UndoView a;
 
-    public /* synthetic */ e61(int i10, View view) {
-        this.a = i10;
-        this.b = view;
+    public e61(UndoView undoView) {
+        this.a = undoView;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                f61 f61Var = (f61) this.b;
-                f61Var.getClass();
-                f61Var.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                f61Var.invalidate();
-                break;
-            case 1:
-                l61 l61Var = (l61) this.b;
-                l61Var.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                l61Var.b = floatValue;
-                l61Var.setTranslationY(floatValue);
-                break;
-            default:
-                g81 g81Var = (g81) this.b;
-                g81Var.getClass();
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                g81Var.setAnimationIdicatorProgress(floatValue2);
-                f81 f81Var = g81Var.y;
-                if (f81Var != null) {
-                    ((ka.c) f81Var).h(floatValue2);
-                    break;
+    @Override // android.text.method.LinkMovementMethod, android.text.method.ScrollingMovementMethod, android.text.method.BaseMovementMethod, android.text.method.MovementMethod
+    public final boolean onTouchEvent(TextView textView, Spannable spannable, MotionEvent motionEvent) {
+        CharacterStyle[] characterStyleArr;
+        try {
+            if (motionEvent.getAction() != 0 || ((characterStyleArr = (CharacterStyle[]) spannable.getSpans(textView.getSelectionStart(), textView.getSelectionEnd(), CharacterStyle.class)) != null && characterStyleArr.length != 0)) {
+                if (motionEvent.getAction() != 1) {
+                    return super.onTouchEvent(textView, spannable, motionEvent);
                 }
-                break;
+                CharacterStyle[] characterStyleArr2 = (CharacterStyle[]) spannable.getSpans(textView.getSelectionStart(), textView.getSelectionEnd(), CharacterStyle.class);
+                if (characterStyleArr2 != null && characterStyleArr2.length > 0) {
+                    this.a.b(characterStyleArr2[0]);
+                }
+                Selection.removeSelection(spannable);
+                return true;
+            }
+            return false;
+        } catch (Exception e) {
+            FileLog.e(e);
+            return false;
         }
     }
 }

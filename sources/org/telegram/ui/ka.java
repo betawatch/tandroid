@@ -11,7 +11,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class ka extends FrameLayout {
     public final EditTextBoldCursor a;
@@ -61,9 +61,9 @@ public final class ka extends FrameLayout {
         textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, i10, false));
         textView.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
         textView.setTranslationY(-AndroidUtilities.dp(3.0f));
-        linearLayout.addView(textView, w7.x5.p(-2, -2, 0.0f, 16, 21, 15, 0, 15));
-        linearLayout.addView(editTextBoldCursor, w7.x5.p(-2, -2, 1.0f, 16, 0, 15, 21, 15));
-        addView(linearLayout, w7.x5.e(-1, -1, 48));
+        linearLayout.addView(textView, w7.y5.p(-2, -2, 0.0f, 16, 21, 15, 0, 15));
+        linearLayout.addView(editTextBoldCursor, w7.y5.p(-2, -2, 1.0f, 16, 0, 15, 21, 15));
+        addView(linearLayout, w7.y5.e(-1, -1, 48));
         if (j3 != 0) {
             editTextBoldCursor.setAlpha(0.6f);
             textView.setAlpha(0.6f);

@@ -1,133 +1,102 @@
 package yh;
 
-import android.animation.ValueAnimator;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.RadialGradient;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.ml0;
 import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.w9;
-import org.telegram.ui.Components.yi0;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class w2 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class w2 extends Drawable {
+    public Drawable g;
+    public int h;
+    public int i;
+    public final Paint b = new Paint(1);
+    public final Shader[] c = new Shader[2];
+    public final Matrix d = new Matrix();
+    public final org.telegram.ui.Components.e6 e = new org.telegram.ui.Components.e6(1.0f, new r2(this, 1), 0, 420, rr.h);
+    public final RectF f = new RectF();
+    public final int a = 1;
 
-    public /* synthetic */ w2(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public final void a(int i10, int i11) {
+        if (this.h == i10 && this.i == i11) {
+            return;
+        }
+        Shader[] shaderArr = this.c;
+        shaderArr[0] = shaderArr[1];
+        if (this.a == 0) {
+            this.h = i10;
+            this.i = i11;
+            shaderArr[1] = new LinearGradient(0.0f, 0.0f, 100.0f, 0.0f, new int[]{i10, i11}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+        } else {
+            float dp = AndroidUtilities.dp(340.0f);
+            this.h = i10;
+            this.i = i11;
+            shaderArr[1] = new RadialGradient(0.0f, 0.0f, dp, new int[]{i10, i11}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+        }
+        this.e.d(0.0f, true);
+        invalidateSelf();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        Object obj = this.b;
-        switch (i10) {
-            case 0:
-                ((x2) obj).invalidateSelf();
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Rect bounds = getBounds();
+        RectF rectF = this.f;
+        rectF.set(bounds);
+        rectF.right = rectF.width() + rectF.left;
+        int i10 = 0;
+        float d = this.e.d(1.0f, false);
+        while (true) {
+            Shader[] shaderArr = this.c;
+            if (i10 >= shaderArr.length) {
                 break;
-            case 1:
-                v3 v3Var = (v3) obj;
-                w2 w2Var = v3Var.i0;
-                w9[] w9VarArr = v3Var.d;
-                if (!w9VarArr[2 - v3Var.r0].getImageReceiver().hasImageLoaded()) {
-                    AndroidUtilities.cancelRunOnUIThread(w2Var);
-                    AndroidUtilities.runOnUIThread(w2Var, 150L);
-                    break;
-                } else {
-                    f4.d dVar = v3Var.U;
-                    if (dVar != null && dVar.b == 1 && v3Var.isAttachedToWindow()) {
-                        AndroidUtilities.cancelRunOnUIThread(w2Var);
-                        ValueAnimator valueAnimator = v3Var.h0;
-                        if (valueAnimator != null) {
-                            valueAnimator.cancel();
-                            v3Var.h0 = null;
-                        }
-                        int i11 = 1 - v3Var.r0;
-                        v3Var.r0 = i11;
-                        yi0 lottieAnimation = w9VarArr[2 - i11].getImageReceiver().getLottieAnimation();
-                        yi0 lottieAnimation2 = w9VarArr[v3Var.r0 + 1].getImageReceiver().getLottieAnimation();
-                        if (lottieAnimation2 != null && lottieAnimation != null) {
-                            lottieAnimation2.T(lottieAnimation.t(), false);
-                        }
-                        v3Var.W.c();
-                        int i12 = v3Var.r0 + 1;
-                        TL_stars.starGiftAttributeBackdrop[] stargiftattributebackdropArr = v3Var.V;
-                        TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) v3Var.b0.c();
-                        stargiftattributebackdropArr[i12] = stargiftattributebackdrop;
-                        v3Var.e(i12, stargiftattributebackdrop);
-                        v3Var.g(1, (TL_stars.starGiftAttributePattern) v3Var.a0.c(), true);
-                        v3Var.a();
-                        float f7 = v3Var.r0;
-                        ValueAnimator ofFloat = ValueAnimator.ofFloat(1.0f - f7, f7);
-                        v3Var.h0 = ofFloat;
-                        ofFloat.addUpdateListener(new r3(v3Var, 2));
-                        v3Var.h0.addListener(new t3(v3Var));
-                        v3Var.h0.setDuration(320L);
-                        v3Var.h0.setInterpolator(rr.h);
-                        v3Var.h0.start();
-                        break;
+            }
+            if (shaderArr[i10] != null) {
+                float pow = (float) Math.pow(1.0f - Math.abs(i10 - d), 0.25d);
+                if (pow > 0.0f) {
+                    Matrix matrix = this.d;
+                    matrix.reset();
+                    if (this.a == 1) {
+                        matrix.postTranslate(rectF.centerX(), AndroidUtilities.dp(145.0f));
+                    } else {
+                        matrix.postScale(getBounds().width() / 100.0f, 1.0f);
                     }
+                    shaderArr[i10].setLocalMatrix(matrix);
+                    Shader shader = shaderArr[i10];
+                    Paint paint = this.b;
+                    paint.setShader(shader);
+                    paint.setAlpha((int) (pow * 255.0f));
+                    canvas.drawRoundRect(rectF, 0.0f, 0.0f, paint);
                 }
-                break;
-            case 2:
-                ((sg.e) obj).setPaused(true);
-                break;
-            case 3:
-                AndroidUtilities.showKeyboard((EditTextBoldCursor) obj);
-                break;
-            case 4:
-                ((i0[]) obj)[0].dismiss();
-                break;
-            case 5:
-                di.f fVar = (di.f) obj;
-                fVar.getClass();
-                try {
-                    ml0 currentListView = ((w7) fVar.M0).R.getCurrentListView();
-                    if (currentListView != null && currentListView.getAdapter() != null) {
-                        currentListView.getAdapter().l();
-                        break;
-                    }
-                } catch (Throwable unused) {
-                    return;
-                }
-                break;
-            case 6:
-                nf.f.s(((l7) obj).getContext(), LocaleController.getString(R.string.StarsTOSLink));
-                break;
-            case 7:
-                nf.f.s(((m7) obj).getContext(), LocaleController.getString(R.string.StarsTOSLink));
-                break;
-            case 8:
-                zg.t tVar = (zg.t) ((e2) obj).a;
-                zg.s sVar = tVar.b;
-                if (sVar != null) {
-                    sVar.d();
-                }
-                tVar.a.z7(true);
-                break;
-            case 9:
-                ((ValueAnimator) obj).start();
-                break;
-            default:
-                org.telegram.ui.ActionBar.n2 n2Var = ((zg.y) obj).f2.r;
-                if (!(n2Var instanceof xn)) {
-                    org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
-                    if (R != null) {
-                        R.showDialog(new rg.x0(n2Var, 11, false));
-                        break;
-                    }
-                } else {
-                    n2Var.showDialog(new rg.x0(n2Var, 11, false));
-                    break;
-                }
-                break;
+            }
+            i10++;
         }
+        if (this.g != null) {
+            canvas.save();
+            canvas.translate(rectF.centerX(), AndroidUtilities.dp(145.0f));
+            j0.a(canvas, 0, this.g, rectF.width(), AndroidUtilities.dp(290.0f), 2.0f, 1.0f);
+            canvas.restore();
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

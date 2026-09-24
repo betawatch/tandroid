@@ -28,16 +28,16 @@ import java.util.ArrayList;
 import nf.f;
 import org.telegram.messenger.BotInlineKeyboard;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.ul;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.Cells.k1;
-import org.telegram.ui.Cells.s9;
-import org.telegram.ui.Cells.t1;
+import org.telegram.ui.Cells.c1;
+import org.telegram.ui.Cells.l1;
+import org.telegram.ui.Cells.r9;
+import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Components.z5;
-import org.telegram.ui.iv0;
+import org.telegram.ui.hv0;
 import org.xml.sax.Attributes;
 import pb.b;
 import q9.d;
@@ -49,9 +49,9 @@ import x3.g;
 import y6.c;
 import yf.j;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
-public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, k1, OnFailureListener, k, u5.a, Continuation, g, c, z3.k {
+public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, l1, OnFailureListener, k, u5.a, Continuation, g, c, z3.k {
     public static volatile a b;
     public static a c;
     public final /* synthetic */ int a;
@@ -212,25 +212,25 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, k1, OnFailureLi
         return false;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ void A(t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void A(u1 u1Var) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ void A0(t1 t1Var, TLObject tLObject, boolean z10) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void A0(u1 u1Var, TLObject tLObject, boolean z10) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ boolean A1() {
         switch (this.a) {
         }
         return false;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ void B0(t1 t1Var, float f7, float f10) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void B0(u1 u1Var, float f7, float f10) {
         int i10 = this.a;
     }
 
@@ -245,8 +245,8 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, k1, OnFailureLi
         return stackTraceElementArr2;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ void C1(t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void C1(u1 u1Var) {
         int i10 = this.a;
     }
 
@@ -255,28 +255,28 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, k1, OnFailureLi
         return 1;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public void D0(t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public void D0(u1 u1Var) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ void D1(t1 t1Var, boolean z10) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void D1(u1 u1Var, boolean z10) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ void E(t1 t1Var, BotInlineKeyboard.ButtonCustom buttonCustom) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void E(u1 u1Var, BotInlineKeyboard.ButtonCustom buttonCustom) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ void F(t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void F(u1 u1Var) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ void F0(t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void F0(u1 u1Var) {
         int i10 = this.a;
     }
 
@@ -284,14 +284,14 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, k1, OnFailureLi
     public Object G(cf.c cVar) {
         switch (this.a) {
             case 14:
-                return new pb.c(cVar.w(b.class));
+                return new pb.c(cVar.x(b.class));
             default:
                 return new b(cVar.c(ob.a.class));
         }
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ boolean G1(t1 t1Var, TLRPC.Chat chat) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ boolean G1(u1 u1Var, TLRPC.Chat chat) {
         switch (this.a) {
         }
         return false;
@@ -302,35 +302,35 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, k1, OnFailureLi
         return 1711276032;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ void H1(t1 t1Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void H1(u1 u1Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ void I(MessageObject.TextLayoutBlock textLayoutBlock) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ void I0(t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void I0(u1 u1Var) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ boolean I1() {
         switch (this.a) {
         }
         return false;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ void K1(t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void K1(u1 u1Var) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ void L(t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void L(u1 u1Var) {
         int i10 = this.a;
     }
 
@@ -339,105 +339,105 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, k1, OnFailureLi
         return i10 * 2;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ void M(int i10, t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void M(int i10, u1 u1Var) {
         int i11 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ boolean M0(long j3) {
         switch (this.a) {
         }
         return false;
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ void M1(MessageObject messageObject) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ void N(MessageObject messageObject) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ void N0(t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void N0(u1 u1Var) {
         int i10 = this.a;
     }
 
     /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
-    @Override // org.telegram.ui.Cells.k1
-    public void N1(t1 t1Var, TLRPC.WebPage webPage, String str, boolean z10) {
+    @Override // org.telegram.ui.Cells.l1
+    public void N1(u1 u1Var, TLRPC.WebPage webPage, String str, boolean z10) {
         switch (this.a) {
         }
-        f.s(t1Var.getContext(), str);
+        f.s(u1Var.getContext(), str);
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ boolean O(t1 t1Var, TLRPC.TodoItem todoItem, boolean z10) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ boolean O(u1 u1Var, TLRPC.TodoItem todoItem, boolean z10) {
         switch (this.a) {
         }
         return false;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ CharacterStyle O1(t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ CharacterStyle O1(u1 u1Var) {
         switch (this.a) {
         }
         return null;
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ boolean P() {
         switch (this.a) {
         }
         return false;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ void P0(int i10, t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void P0(int i10, u1 u1Var) {
         int i11 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ void P1(MessageObject messageObject, String str, String str2, String str3, String str4, int i10, int i11) {
         int i12 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ boolean Q(t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ boolean Q(u1 u1Var) {
         switch (this.a) {
         }
         return false;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ boolean Q1(t1 t1Var, MessageObject messageObject) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ boolean Q1(u1 u1Var, MessageObject messageObject) {
         switch (this.a) {
         }
         return false;
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ boolean R() {
         switch (this.a) {
         }
         return false;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ void R0(t1 t1Var, TL_keyboard.KeyboardInlineButton keyboardInlineButton) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void R0(u1 u1Var, TL_keyboard.KeyboardInlineButton keyboardInlineButton) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ void R1() {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ void S(t1 t1Var, TLRPC.Chat chat, int i10, float f7, float f10, boolean z10) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void S(u1 u1Var, TLRPC.Chat chat, int i10, float f7, float f10, boolean z10) {
         int i11 = this.a;
     }
 
@@ -451,35 +451,35 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, k1, OnFailureLi
         }
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ void T(t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void T(u1 u1Var) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ void T1(t1 t1Var, TLRPC.MessageExtendedMedia messageExtendedMedia) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void T1(u1 u1Var, TLRPC.MessageExtendedMedia messageExtendedMedia) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ void U1(t1 t1Var, TLRPC.User user, TLRPC.Document document, String str) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void U1(u1 u1Var, TLRPC.User user, TLRPC.Document document, String str) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ int V() {
         switch (this.a) {
         }
         return 0;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ void V0(t1 t1Var, CharacterStyle characterStyle, boolean z10) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void V0(u1 u1Var, CharacterStyle characterStyle, boolean z10) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ boolean V1(t1 t1Var, TLRPC.PollAnswer pollAnswer) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ boolean V1(u1 u1Var, TLRPC.PollAnswer pollAnswer) {
         switch (this.a) {
         }
         return false;
@@ -490,34 +490,34 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, k1, OnFailureLi
         return false;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ boolean W0(t1 t1Var, boolean z10) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ boolean W0(u1 u1Var, boolean z10) {
         switch (this.a) {
         }
         return false;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ void X0(t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void X0(u1 u1Var) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ hh.a Y() {
         switch (this.a) {
         }
         return null;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ iv0 Y1() {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ hv0 Y1() {
         switch (this.a) {
         }
         return null;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ void Z0(t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void Z0(u1 u1Var) {
         int i10 = this.a;
     }
 
@@ -526,14 +526,14 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, k1, OnFailureLi
         return 872415231;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ boolean a0(t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ boolean a0(u1 u1Var) {
         switch (this.a) {
         }
         return false;
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ boolean a2(long j3) {
         switch (this.a) {
         }
@@ -550,15 +550,15 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, k1, OnFailureLi
         return -1L;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ boolean b0(t1 t1Var, TLRPC.User user) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ boolean b0(u1 u1Var, TLRPC.User user) {
         switch (this.a) {
         }
         return false;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ void b2(t1 t1Var, int i10, float f7, float f10, boolean z10) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void b2(u1 u1Var, int i10, float f7, float f10, boolean z10) {
         int i11 = this.a;
     }
 
@@ -567,15 +567,15 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, k1, OnFailureLi
         return 352321535;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ boolean c1(int i10, t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ boolean c1(int i10, u1 u1Var) {
         switch (this.a) {
         }
         return false;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ boolean c2(t1 t1Var, TLRPC.TodoItem todoItem) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ boolean c2(u1 u1Var, TLRPC.TodoItem todoItem) {
         switch (this.a) {
         }
         return false;
@@ -586,39 +586,39 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, k1, OnFailureLi
         return y6.e.d(context, str, z10);
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ void d0(int i10) {
         int i11 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ boolean e() {
         switch (this.a) {
         }
         return false;
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ boolean e0() {
         switch (this.a) {
         }
         return false;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ void e2(t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void e2(u1 u1Var) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ boolean f() {
         switch (this.a) {
         }
         return true;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ void f0(t1 t1Var, float f7, float f10) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void f0(u1 u1Var, float f7, float f10) {
         int i10 = this.a;
     }
 
@@ -627,52 +627,52 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, k1, OnFailureLi
         return new t(-9223372036854775807L);
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ void g2(t1 t1Var, long j3) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void g2(u1 u1Var, long j3) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ String h(t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ String h(u1 u1Var) {
         switch (this.a) {
         }
         return null;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ int h0(t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ int h0(u1 u1Var) {
         switch (this.a) {
         }
         return 0;
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ boolean h1(MessageObject messageObject) {
         int i10 = this.a;
-        return ul.a(messageObject);
+        return c1.a(messageObject);
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ void i(t1 t1Var, bi.f fVar) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void i(u1 u1Var, bi.f fVar) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ void i0(t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void i0(u1 u1Var) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ void j(t1 t1Var, ArrayList arrayList, int i10, int i11, int i12) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void j(u1 u1Var, ArrayList arrayList, int i10, int i11, int i12) {
         int i13 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ void k() {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ void k1() {
         int i10 = this.a;
     }
@@ -682,15 +682,15 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, k1, OnFailureLi
         return y6.e.a(context, str);
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public boolean l0() {
         switch (this.a) {
         }
         return false;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ boolean l2(t1 t1Var, TL_iv.PageBlock pageBlock) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ boolean l2(u1 u1Var, TL_iv.PageBlock pageBlock) {
         switch (this.a) {
         }
         return false;
@@ -701,32 +701,32 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, k1, OnFailureLi
         return 0;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ void m1(t1 t1Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void m1(u1 u1Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ void m2(t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void m2(u1 u1Var) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ void n(t1 t1Var, TLRPC.PollAnswer pollAnswer, TLRPC.MessageMedia messageMedia, int i10) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void n(u1 u1Var, TLRPC.PollAnswer pollAnswer, TLRPC.MessageMedia messageMedia, int i10) {
         int i11 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ void n0(String str) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ void o(t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void o(u1 u1Var) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ boolean o0(z5 z5Var) {
         switch (this.a) {
         }
@@ -738,13 +738,13 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, k1, OnFailureLi
         Log.e("OptionalModuleUtils", "Failed to request modules install request", exc);
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ void p() {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ void p1(t1 t1Var, TLRPC.Document document) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void p1(u1 u1Var, TLRPC.Document document) {
         int i10 = this.a;
     }
 
@@ -763,38 +763,38 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, k1, OnFailureLi
         return System.currentTimeMillis();
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ void q0(t1 t1Var, float f7, float f10) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void q0(u1 u1Var, float f7, float f10) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ void q2() {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ void r(t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void r(u1 u1Var) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ void s() {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ void t(t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void t(u1 u1Var) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ void t0(t1 t1Var, TLRPC.User user, float f7, float f10) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void t0(u1 u1Var, TLRPC.User user, float f7, float f10) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ void t2(t1 t1Var, TLRPC.ReactionCount reactionCount, boolean z10, float f7, float f10) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void t2(u1 u1Var, TLRPC.ReactionCount reactionCount, boolean z10, float f7, float f10) {
         int i10 = this.a;
     }
 
@@ -803,13 +803,13 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, k1, OnFailureLi
         return null;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ void u(t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void u(u1 u1Var) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ void u1(t1 t1Var, float f7, float f10) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void u1(u1 u1Var, float f7, float f10) {
         int i10 = this.a;
     }
 
@@ -844,26 +844,26 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, k1, OnFailureLi
         }
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ void v0(t1 t1Var, float f7, float f10, boolean z10) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void v0(u1 u1Var, float f7, float f10, boolean z10) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ boolean v2(int i10) {
         switch (this.a) {
         }
         return false;
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ String w(long j3) {
         switch (this.a) {
         }
         return null;
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ boolean w0(MessageObject messageObject) {
         switch (this.a) {
         }
@@ -875,7 +875,7 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, k1, OnFailureLi
         throw new IllegalStateException("This SubtitleParser.Factory doesn't support any formats.");
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ void x2() {
         int i10 = this.a;
     }
@@ -886,7 +886,7 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, k1, OnFailureLi
             throw new IllegalArgumentException("Illegal use of DownsampleAudioResampler");
         }
         if (i12 != 1 && i12 != 2) {
-            throw new IllegalArgumentException(hg.c.i(i12, "Illegal use of DownsampleAudioResampler. Channels:"));
+            throw new IllegalArgumentException(hg.c.h(i12, "Illegal use of DownsampleAudioResampler. Channels:"));
         }
         int remaining = shortBuffer.remaining() / i12;
         int ceil = (int) Math.ceil((i11 / i10) * remaining);
@@ -911,28 +911,28 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, k1, OnFailureLi
         }
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ void y0(t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void y0(u1 u1Var) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ void y2(t1 t1Var, int i10, int i11) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void y2(u1 u1Var, int i10, int i11) {
         int i12 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ void z(t1 t1Var) {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void z(u1 u1Var) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.k1
+    @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ void z0() {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ s9 z2() {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ r9 z2() {
         switch (this.a) {
         }
         return null;
@@ -992,37 +992,37 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, k1, OnFailureLi
     private final /* synthetic */ void x3() {
     }
 
-    private final /* synthetic */ void A2(t1 t1Var) {
+    private final /* synthetic */ void A2(u1 u1Var) {
     }
 
-    private final /* synthetic */ void B2(t1 t1Var) {
+    private final /* synthetic */ void B2(u1 u1Var) {
     }
 
-    private final /* synthetic */ void C2(t1 t1Var) {
+    private final /* synthetic */ void C2(u1 u1Var) {
     }
 
     private final /* synthetic */ void C3(MessageObject messageObject) {
     }
 
-    private final /* synthetic */ void D2(t1 t1Var) {
+    private final /* synthetic */ void D2(u1 u1Var) {
     }
 
     private final /* synthetic */ void D3(MessageObject messageObject) {
     }
 
-    private final /* synthetic */ void G0(t1 t1Var) {
+    private final /* synthetic */ void G0(u1 u1Var) {
     }
 
-    private final /* synthetic */ void G2(t1 t1Var) {
+    private final /* synthetic */ void G2(u1 u1Var) {
     }
 
-    private final /* synthetic */ void H0(t1 t1Var) {
+    private final /* synthetic */ void H0(u1 u1Var) {
     }
 
-    private final /* synthetic */ void H2(t1 t1Var) {
+    private final /* synthetic */ void H2(u1 u1Var) {
     }
 
-    private final /* synthetic */ void Q0(t1 t1Var) {
+    private final /* synthetic */ void Q0(u1 u1Var) {
     }
 
     private final /* synthetic */ void Q2(String str) {
@@ -1031,31 +1031,31 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, k1, OnFailureLi
     private final /* synthetic */ void R2(String str) {
     }
 
-    private final /* synthetic */ void T0(t1 t1Var) {
+    private final /* synthetic */ void T0(u1 u1Var) {
     }
 
     private final /* synthetic */ void U0(MessageObject.TextLayoutBlock textLayoutBlock) {
     }
 
-    private final /* synthetic */ void W2(t1 t1Var) {
+    private final /* synthetic */ void W2(u1 u1Var) {
     }
 
-    private final /* synthetic */ void X2(t1 t1Var) {
+    private final /* synthetic */ void X2(u1 u1Var) {
     }
 
     private final /* synthetic */ void Y0(MessageObject.TextLayoutBlock textLayoutBlock) {
     }
 
-    private final /* synthetic */ void a1(t1 t1Var) {
+    private final /* synthetic */ void a1(u1 u1Var) {
     }
 
-    private final /* synthetic */ void a3(t1 t1Var) {
+    private final /* synthetic */ void a3(u1 u1Var) {
     }
 
-    private final /* synthetic */ void b1(t1 t1Var) {
+    private final /* synthetic */ void b1(u1 u1Var) {
     }
 
-    private final /* synthetic */ void b3(t1 t1Var) {
+    private final /* synthetic */ void b3(u1 u1Var) {
     }
 
     private final /* synthetic */ void c3(MessageObject messageObject) {
@@ -1064,85 +1064,85 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, k1, OnFailureLi
     private final /* synthetic */ void d3(MessageObject messageObject) {
     }
 
-    private final /* synthetic */ void e3(t1 t1Var) {
+    private final /* synthetic */ void e3(u1 u1Var) {
     }
 
-    private final /* synthetic */ void f1(t1 t1Var) {
+    private final /* synthetic */ void f1(u1 u1Var) {
     }
 
-    private final /* synthetic */ void f3(t1 t1Var) {
+    private final /* synthetic */ void f3(u1 u1Var) {
     }
 
-    private final /* synthetic */ void g1(t1 t1Var) {
+    private final /* synthetic */ void g1(u1 u1Var) {
     }
 
-    private final /* synthetic */ void i3(t1 t1Var) {
+    private final /* synthetic */ void i3(u1 u1Var) {
     }
 
-    private final /* synthetic */ void j0(t1 t1Var) {
+    private final /* synthetic */ void j0(u1 u1Var) {
     }
 
-    private final /* synthetic */ void j3(t1 t1Var) {
+    private final /* synthetic */ void j3(u1 u1Var) {
     }
 
-    private final /* synthetic */ void k0(t1 t1Var) {
+    private final /* synthetic */ void k0(u1 u1Var) {
     }
 
-    private final void k3(t1 t1Var) {
+    private final void k3(u1 u1Var) {
     }
 
-    private final /* synthetic */ void l1(t1 t1Var) {
+    private final /* synthetic */ void l1(u1 u1Var) {
     }
 
-    private final /* synthetic */ void m0(t1 t1Var) {
+    private final /* synthetic */ void m0(u1 u1Var) {
     }
 
-    private final void m3(t1 t1Var) {
+    private final void m3(u1 u1Var) {
     }
 
-    private final /* synthetic */ void n1(t1 t1Var) {
+    private final /* synthetic */ void n1(u1 u1Var) {
     }
 
-    private final /* synthetic */ void n2(t1 t1Var) {
+    private final /* synthetic */ void n2(u1 u1Var) {
     }
 
-    private final /* synthetic */ void o2(t1 t1Var) {
+    private final /* synthetic */ void o2(u1 u1Var) {
     }
 
-    private final /* synthetic */ void o3(t1 t1Var) {
+    private final /* synthetic */ void o3(u1 u1Var) {
     }
 
-    private final /* synthetic */ void p0(t1 t1Var) {
+    private final /* synthetic */ void p0(u1 u1Var) {
     }
 
-    private final /* synthetic */ void p3(t1 t1Var) {
+    private final /* synthetic */ void p3(u1 u1Var) {
     }
 
-    private final /* synthetic */ void u0(t1 t1Var) {
+    private final /* synthetic */ void u0(u1 u1Var) {
     }
 
-    private final /* synthetic */ void u2(t1 t1Var) {
+    private final /* synthetic */ void u2(u1 u1Var) {
     }
 
-    private final /* synthetic */ void w1(t1 t1Var) {
+    private final /* synthetic */ void w1(u1 u1Var) {
     }
 
-    private final /* synthetic */ void w2(t1 t1Var) {
+    private final /* synthetic */ void w2(u1 u1Var) {
     }
 
-    private final /* synthetic */ void x0(t1 t1Var) {
+    private final /* synthetic */ void x0(u1 u1Var) {
     }
 
-    private final /* synthetic */ void x1(t1 t1Var) {
+    private final /* synthetic */ void x1(u1 u1Var) {
     }
 
-    private final /* synthetic */ void y1(t1 t1Var) {
+    private final /* synthetic */ void y1(u1 u1Var) {
     }
 
     private final /* synthetic */ void y3(int i10) {
     }
 
-    private final /* synthetic */ void z1(t1 t1Var) {
+    private final /* synthetic */ void z1(u1 u1Var) {
     }
 
     private final /* synthetic */ void z3(int i10) {
@@ -1152,160 +1152,160 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, k1, OnFailureLi
     public void B(long j3) {
     }
 
-    private final /* synthetic */ void C0(t1 t1Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
+    private final /* synthetic */ void C0(u1 u1Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
     }
 
-    private final /* synthetic */ void E0(t1 t1Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
+    private final /* synthetic */ void E0(u1 u1Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
     }
 
-    private final /* synthetic */ void F1(int i10, t1 t1Var) {
+    private final /* synthetic */ void F1(int i10, u1 u1Var) {
     }
 
-    private final /* synthetic */ void J1(int i10, t1 t1Var) {
+    private final /* synthetic */ void J1(int i10, u1 u1Var) {
     }
 
-    private final /* synthetic */ void S2(t1 t1Var, long j3) {
+    private final /* synthetic */ void S2(u1 u1Var, long j3) {
     }
 
-    private final /* synthetic */ void T2(t1 t1Var, long j3) {
+    private final /* synthetic */ void T2(u1 u1Var, long j3) {
     }
 
-    private final /* synthetic */ void X(t1 t1Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
+    private final /* synthetic */ void X(u1 u1Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
     }
 
-    private final /* synthetic */ void Z(t1 t1Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
+    private final /* synthetic */ void Z(u1 u1Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
     }
 
-    private final /* synthetic */ void d1(t1 t1Var, BotInlineKeyboard.ButtonCustom buttonCustom) {
+    private final /* synthetic */ void d1(u1 u1Var, BotInlineKeyboard.ButtonCustom buttonCustom) {
     }
 
-    private final /* synthetic */ void e1(t1 t1Var, BotInlineKeyboard.ButtonCustom buttonCustom) {
+    private final /* synthetic */ void e1(u1 u1Var, BotInlineKeyboard.ButtonCustom buttonCustom) {
     }
 
-    private final /* synthetic */ void g3(t1 t1Var, bi.f fVar) {
+    private final /* synthetic */ void g3(u1 u1Var, bi.f fVar) {
     }
 
-    private final /* synthetic */ void h3(t1 t1Var, bi.f fVar) {
+    private final /* synthetic */ void h3(u1 u1Var, bi.f fVar) {
     }
 
-    private final /* synthetic */ void i1(t1 t1Var, TL_keyboard.KeyboardInlineButton keyboardInlineButton) {
+    private final /* synthetic */ void i1(u1 u1Var, TL_keyboard.KeyboardInlineButton keyboardInlineButton) {
     }
 
-    private final /* synthetic */ void j1(t1 t1Var, TL_keyboard.KeyboardInlineButton keyboardInlineButton) {
+    private final /* synthetic */ void j1(u1 u1Var, TL_keyboard.KeyboardInlineButton keyboardInlineButton) {
     }
 
-    private final /* synthetic */ void l3(t1 t1Var, boolean z10) {
+    private final /* synthetic */ void l3(u1 u1Var, boolean z10) {
     }
 
-    private final /* synthetic */ void n3(t1 t1Var, boolean z10) {
+    private final /* synthetic */ void n3(u1 u1Var, boolean z10) {
     }
 
-    private final /* synthetic */ void r1(int i10, t1 t1Var) {
+    private final /* synthetic */ void r1(int i10, u1 u1Var) {
     }
 
-    private final /* synthetic */ void r2(t1 t1Var, TLRPC.Document document) {
+    private final /* synthetic */ void r2(u1 u1Var, TLRPC.Document document) {
     }
 
-    private final /* synthetic */ void s1(int i10, t1 t1Var) {
+    private final /* synthetic */ void s1(int i10, u1 u1Var) {
     }
 
-    private final /* synthetic */ void s2(t1 t1Var, TLRPC.Document document) {
+    private final /* synthetic */ void s2(u1 u1Var, TLRPC.Document document) {
     }
 
-    private final /* synthetic */ void t1(t1 t1Var, TLRPC.MessageExtendedMedia messageExtendedMedia) {
+    private final /* synthetic */ void t1(u1 u1Var, TLRPC.MessageExtendedMedia messageExtendedMedia) {
     }
 
-    private final /* synthetic */ void v1(t1 t1Var, TLRPC.MessageExtendedMedia messageExtendedMedia) {
+    private final /* synthetic */ void v1(u1 u1Var, TLRPC.MessageExtendedMedia messageExtendedMedia) {
     }
 
-    private final /* synthetic */ void E2(t1 t1Var, float f7, float f10) {
+    private final /* synthetic */ void E2(u1 u1Var, float f7, float f10) {
     }
 
-    private final /* synthetic */ void F2(t1 t1Var, float f7, float f10) {
+    private final /* synthetic */ void F2(u1 u1Var, float f7, float f10) {
     }
 
-    private final /* synthetic */ void K(t1 t1Var, float f7, float f10) {
+    private final /* synthetic */ void K(u1 u1Var, float f7, float f10) {
     }
 
-    private final /* synthetic */ void K2(t1 t1Var, CharacterStyle characterStyle, boolean z10) {
+    private final /* synthetic */ void K2(u1 u1Var, CharacterStyle characterStyle, boolean z10) {
     }
 
-    private final /* synthetic */ void L0(t1 t1Var, TLObject tLObject, boolean z10) {
+    private final /* synthetic */ void L0(u1 u1Var, TLObject tLObject, boolean z10) {
     }
 
-    private final /* synthetic */ void L2(t1 t1Var, CharacterStyle characterStyle, boolean z10) {
+    private final /* synthetic */ void L2(u1 u1Var, CharacterStyle characterStyle, boolean z10) {
     }
 
-    private final /* synthetic */ void O0(t1 t1Var, TLObject tLObject, boolean z10) {
+    private final /* synthetic */ void O0(u1 u1Var, TLObject tLObject, boolean z10) {
     }
 
-    private final /* synthetic */ void U(t1 t1Var, float f7, float f10) {
+    private final /* synthetic */ void U(u1 u1Var, float f7, float f10) {
     }
 
-    private final /* synthetic */ void X1(t1 t1Var, float f7, float f10) {
+    private final /* synthetic */ void X1(u1 u1Var, float f7, float f10) {
     }
 
-    private final /* synthetic */ void Y2(t1 t1Var, float f7, float f10) {
+    private final /* synthetic */ void Y2(u1 u1Var, float f7, float f10) {
     }
 
-    private final /* synthetic */ void Z1(t1 t1Var, float f7, float f10) {
+    private final /* synthetic */ void Z1(u1 u1Var, float f7, float f10) {
     }
 
-    private final /* synthetic */ void Z2(t1 t1Var, float f7, float f10) {
+    private final /* synthetic */ void Z2(u1 u1Var, float f7, float f10) {
     }
 
-    private final /* synthetic */ void o1(t1 t1Var, int i10, int i11) {
+    private final /* synthetic */ void o1(u1 u1Var, int i10, int i11) {
     }
 
-    private final /* synthetic */ void q1(t1 t1Var, int i10, int i11) {
+    private final /* synthetic */ void q1(u1 u1Var, int i10, int i11) {
     }
 
-    private final /* synthetic */ void B1(t1 t1Var, float f7, float f10, boolean z10) {
+    private final /* synthetic */ void B1(u1 u1Var, float f7, float f10, boolean z10) {
     }
 
-    private final /* synthetic */ void E1(t1 t1Var, float f7, float f10, boolean z10) {
+    private final /* synthetic */ void E1(u1 u1Var, float f7, float f10, boolean z10) {
     }
 
-    private final /* synthetic */ void M2(t1 t1Var, TLRPC.User user, float f7, float f10) {
+    private final /* synthetic */ void M2(u1 u1Var, TLRPC.User user, float f7, float f10) {
     }
 
-    private final /* synthetic */ void N2(t1 t1Var, TLRPC.User user, float f7, float f10) {
+    private final /* synthetic */ void N2(u1 u1Var, TLRPC.User user, float f7, float f10) {
     }
 
-    private final /* synthetic */ void O2(t1 t1Var, TLRPC.User user, TLRPC.Document document, String str) {
+    private final /* synthetic */ void O2(u1 u1Var, TLRPC.User user, TLRPC.Document document, String str) {
     }
 
-    private final /* synthetic */ void P2(t1 t1Var, TLRPC.User user, TLRPC.Document document, String str) {
+    private final /* synthetic */ void P2(u1 u1Var, TLRPC.User user, TLRPC.Document document, String str) {
     }
 
-    private final /* synthetic */ void d2(t1 t1Var, TLRPC.PollAnswer pollAnswer, TLRPC.MessageMedia messageMedia, int i10) {
+    private final /* synthetic */ void d2(u1 u1Var, TLRPC.PollAnswer pollAnswer, TLRPC.MessageMedia messageMedia, int i10) {
     }
 
-    private final /* synthetic */ void f2(t1 t1Var, TLRPC.PollAnswer pollAnswer, TLRPC.MessageMedia messageMedia, int i10) {
+    private final /* synthetic */ void f2(u1 u1Var, TLRPC.PollAnswer pollAnswer, TLRPC.MessageMedia messageMedia, int i10) {
     }
 
-    private final /* synthetic */ void U2(t1 t1Var, ArrayList arrayList, int i10, int i11, int i12) {
+    private final /* synthetic */ void U2(u1 u1Var, ArrayList arrayList, int i10, int i11, int i12) {
     }
 
-    private final /* synthetic */ void V2(t1 t1Var, ArrayList arrayList, int i10, int i11, int i12) {
+    private final /* synthetic */ void V2(u1 u1Var, ArrayList arrayList, int i10, int i11, int i12) {
     }
 
-    private final /* synthetic */ void h2(t1 t1Var, TLRPC.ReactionCount reactionCount, boolean z10, float f7, float f10) {
+    private final /* synthetic */ void h2(u1 u1Var, TLRPC.ReactionCount reactionCount, boolean z10, float f7, float f10) {
     }
 
-    private final /* synthetic */ void i2(t1 t1Var, TLRPC.ReactionCount reactionCount, boolean z10, float f7, float f10) {
+    private final /* synthetic */ void i2(u1 u1Var, TLRPC.ReactionCount reactionCount, boolean z10, float f7, float f10) {
     }
 
-    private final /* synthetic */ void j2(t1 t1Var, int i10, float f7, float f10, boolean z10) {
+    private final /* synthetic */ void j2(u1 u1Var, int i10, float f7, float f10, boolean z10) {
     }
 
-    private final /* synthetic */ void k2(t1 t1Var, int i10, float f7, float f10, boolean z10) {
+    private final /* synthetic */ void k2(u1 u1Var, int i10, float f7, float f10, boolean z10) {
     }
 
-    private final /* synthetic */ void J0(t1 t1Var, TLRPC.Chat chat, int i10, float f7, float f10, boolean z10) {
+    private final /* synthetic */ void J0(u1 u1Var, TLRPC.Chat chat, int i10, float f7, float f10, boolean z10) {
     }
 
-    private final /* synthetic */ void K0(t1 t1Var, TLRPC.Chat chat, int i10, float f7, float f10, boolean z10) {
+    private final /* synthetic */ void K0(u1 u1Var, TLRPC.Chat chat, int i10, float f7, float f10, boolean z10) {
     }
 
     private final /* synthetic */ void u3(MessageObject messageObject, String str, String str2, String str3, String str4, int i10, int i11) {

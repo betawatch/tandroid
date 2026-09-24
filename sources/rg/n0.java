@@ -11,10 +11,10 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.rr;
-import org.telegram.ui.gb0;
-import w7.x5;
+import org.telegram.ui.fb0;
+import w7.y5;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class n0 extends FrameLayout implements l0 {
     public final d6 a;
@@ -28,9 +28,9 @@ public final class n0 extends FrameLayout implements l0 {
         super(context);
         this.b = new ArrayList();
         this.a = d6Var;
-        for (gb0 gb0Var : gb0.values()) {
-            if (gb0Var.e) {
-                this.b.add(gb0Var);
+        for (fb0 fb0Var : fb0.values()) {
+            if (fb0Var.e) {
+                this.b.add(fb0Var);
             }
             if (this.b.size() == 3) {
                 break;
@@ -48,28 +48,28 @@ public final class n0 extends FrameLayout implements l0 {
     }
 
     public final m0 a(Context context, int i10) {
-        gb0 gb0Var = (gb0) this.b.get(i10);
+        fb0 fb0Var = (fb0) this.b.get(i10);
         m0 m0Var = new m0(context);
-        u1 u1Var = new u1(20);
-        m0Var.e = u1Var;
+        v1 v1Var = new v1(20);
+        m0Var.e = v1Var;
         Paint paint = new Paint(1);
         m0Var.f = paint;
-        u1Var.r = 12;
-        u1Var.s = 8;
-        u1Var.t = 6;
+        v1Var.r = 12;
+        v1Var.s = 8;
+        v1Var.t = 6;
         if (i10 == 1) {
-            u1Var.N = 1001;
+            v1Var.N = 1001;
         }
         if (i10 == 0) {
-            u1Var.N = 1002;
+            v1Var.N = 1002;
         }
-        u1Var.O = this.a;
-        u1Var.P = h6.Zj;
-        u1Var.c();
+        v1Var.O = this.a;
+        v1Var.P = h6.Zj;
+        v1Var.c();
         paint.setColor(-1);
-        m0Var.setLayoutParams(x5.d(-2, -2.0f, 17, 0.0f, 52.0f, 0.0f, 0.0f));
-        m0Var.setForeground(gb0Var.c);
-        m0Var.setBackgroundResource(gb0Var.b);
+        m0Var.setLayoutParams(y5.d(-2, -2.0f, 17, 0.0f, 52.0f, 0.0f, 0.0f));
+        m0Var.setForeground(fb0Var.c);
+        m0Var.setBackgroundResource(fb0Var.b);
         m0Var.setPadding(AndroidUtilities.dp(8.0f));
         m0Var.setBackgroundOuterPadding(AndroidUtilities.dp(32.0f));
         addView(m0Var);

@@ -9,7 +9,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class kj extends oi {
     public ai.w0 n;
@@ -43,10 +43,10 @@ public final class kj extends oi {
             return ConnectionsManager.DEFAULT_DATACENTER_ID;
         }
         View childAt = w0Var.getChildAt(0);
-        wk0 wk0Var = (wk0) w0Var.G(childAt);
+        gl0 gl0Var = (gl0) w0Var.G(childAt);
         int top = childAt.getTop();
         int dp = AndroidUtilities.dp(7.0f);
-        if (top < AndroidUtilities.dp(7.0f) || wk0Var == null || wk0Var.b() != 0) {
+        if (top < AndroidUtilities.dp(7.0f) || gl0Var == null || gl0Var.b() != 0) {
             top = dp;
         }
         w0Var.setTopGlowOffset(top);

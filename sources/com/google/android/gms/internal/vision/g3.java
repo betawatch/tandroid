@@ -3,7 +3,7 @@ package com.google.android.gms.internal.vision;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class g3 extends o6.a {
     public static final Parcelable.Creator<g3> CREATOR = new a1(1);
@@ -13,37 +13,37 @@ public final class g3 extends o6.a {
     public long d;
     public int e;
 
-    public static g3 b(lf.i iVar) {
+    public static g3 b(la.h hVar) {
         g3 g3Var = new g3();
-        a3.l lVar = (a3.l) iVar.b;
+        a3.l lVar = (a3.l) hVar.b;
         g3Var.a = lVar.a;
         g3Var.b = lVar.b;
         g3Var.e = lVar.c;
         lVar.getClass();
         g3Var.c = 0;
-        ((a3.l) iVar.b).getClass();
+        ((a3.l) hVar.b).getClass();
         g3Var.d = 0L;
         return g3Var;
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.e0.q(parcel, 20293);
+        int q6 = w7.f0.q(parcel, 20293);
         int i11 = this.a;
-        w7.e0.s(parcel, 2, 4);
+        w7.f0.s(parcel, 2, 4);
         parcel.writeInt(i11);
         int i12 = this.b;
-        w7.e0.s(parcel, 3, 4);
+        w7.f0.s(parcel, 3, 4);
         parcel.writeInt(i12);
         int i13 = this.c;
-        w7.e0.s(parcel, 4, 4);
+        w7.f0.s(parcel, 4, 4);
         parcel.writeInt(i13);
         long j3 = this.d;
-        w7.e0.s(parcel, 5, 8);
+        w7.f0.s(parcel, 5, 8);
         parcel.writeLong(j3);
         int i14 = this.e;
-        w7.e0.s(parcel, 6, 4);
+        w7.f0.s(parcel, 6, 4);
         parcel.writeInt(i14);
-        w7.e0.r(parcel, q6);
+        w7.f0.r(parcel, q6);
     }
 }

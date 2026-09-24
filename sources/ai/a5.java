@@ -19,10 +19,10 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.rr;
-import org.telegram.ui.dz;
-import org.telegram.ui.iv0;
+import org.telegram.ui.cz;
+import org.telegram.ui.hv0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class a5 extends i0 {
     public final org.telegram.ui.Components.e6 d;
@@ -370,7 +370,7 @@ public final class a5 extends i0 {
         float f11;
         float f12;
         float f13;
-        dz dzVar;
+        cz czVar;
         l6 l6Var;
         boolean z10;
         float f14;
@@ -402,17 +402,17 @@ public final class a5 extends i0 {
                 invalidate();
             }
             canvas2.save();
-            iv0 iv0Var = e6Var2.X2;
-            if (iv0Var.n) {
+            hv0 hv0Var = e6Var2.X2;
+            if (hv0Var.n) {
                 canvas2.save();
-                float f15 = iv0Var.O;
-                float f16 = iv0Var.A;
+                float f15 = hv0Var.O;
+                float f16 = hv0Var.A;
                 float f17 = ((f15 * f16) + 1.0f) - f16;
-                canvas2.scale(f17, f17, iv0Var.o + iv0Var.s, iv0Var.p + iv0Var.t);
-                float f18 = iv0Var.o;
-                float f19 = iv0Var.J;
-                float f20 = iv0Var.A;
-                canvas2.translate((f19 * f20) + f18, (iv0Var.K * f20) + iv0Var.p);
+                canvas2.scale(f17, f17, hv0Var.o + hv0Var.s, hv0Var.p + hv0Var.t);
+                float f18 = hv0Var.o;
+                float f19 = hv0Var.J;
+                float f20 = hv0Var.A;
+                canvas2.translate((f19 * f20) + f18, (hv0Var.K * f20) + hv0Var.p);
             }
             org.telegram.ui.l4 l4Var2 = (org.telegram.ui.l4) d6Var.e;
             if (l4Var2 == null || (!d6Var.a && ((d2) d6Var.b) == null)) {
@@ -663,9 +663,9 @@ public final class a5 extends i0 {
                     super.dispatchDraw(canvas);
                     b(canvas);
                 }
-                dzVar = e6Var2.k1;
-                if (dzVar == null) {
-                    dzVar.e(canvas2);
+                czVar = e6Var2.k1;
+                if (czVar == null) {
+                    czVar.e(canvas2);
                     return;
                 }
                 return;
@@ -692,8 +692,8 @@ public final class a5 extends i0 {
         }
         if (f11 <= 0.0f) {
         }
-        dzVar = e6Var2.k1;
-        if (dzVar == null) {
+        czVar = e6Var2.k1;
+        if (czVar == null) {
         }
     }
 

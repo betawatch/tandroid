@@ -1,22 +1,17 @@
 package w3;
 
-import e2.v;
-import f2.s;
-
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class e implements d9.e, s {
-    public final /* synthetic */ h a;
+public final class e {
+    public final int a;
+    public final int b;
+    public final int c;
+    public final int d;
 
-    @Override // d9.e, i5.e
-    public Object apply(Object obj) {
-        o oVar = (o) obj;
-        this.a.getClass();
-        return oVar;
-    }
-
-    @Override // f2.s
-    public void b(long j3, v vVar) {
-        c3.b.d(j3, vVar, this.a.K);
+    public e(int i10, int i11, int i12, int i13) {
+        this.a = i10;
+        this.b = i11;
+        this.c = i12;
+        this.d = i13;
     }
 }

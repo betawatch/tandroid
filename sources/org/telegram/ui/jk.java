@@ -7,100 +7,100 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class jk extends ChatActivityEnterView {
     public int o5;
     public int p5;
     public int q5;
-    public final /* synthetic */ xn r5;
+    public final /* synthetic */ wn r5;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jk(xn xnVar, Activity activity, org.telegram.ui.Components.pv0 pv0Var, xn xnVar2, boolean z10, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(activity, pv0Var, xnVar2, z10, d6Var);
-        this.r5 = xnVar;
+    public jk(wn wnVar, Activity activity, org.telegram.ui.Components.aw0 aw0Var, wn wnVar2, boolean z10, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(activity, aw0Var, wnVar2, z10, d6Var);
+        this.r5 = wnVar;
     }
 
     @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final void B0(float f7) {
+    public final void A0(float f7) {
         this.r5.q7();
     }
 
     @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final void D0(int i10, int i11) {
+    public final void C0(int i10, int i11) {
         org.telegram.ui.ActionBar.k kVar;
         org.telegram.ui.ActionBar.k kVar2;
-        xn xnVar = this.r5;
-        if (xnVar.Y != null) {
-            if (xnVar.x0 != null) {
-                if (xnVar.Da > 0.0f) {
+        wn wnVar = this.r5;
+        if (wnVar.Y != null) {
+            if (wnVar.x0 != null) {
+                if (wnVar.Da > 0.0f) {
                     return;
                 }
-                kVar = ((org.telegram.ui.ActionBar.n2) xnVar).actionBar;
+                kVar = ((org.telegram.ui.ActionBar.m2) wnVar).actionBar;
                 if (kVar != null) {
-                    kVar2 = ((org.telegram.ui.ActionBar.n2) xnVar).actionBar;
+                    kVar2 = ((org.telegram.ui.ActionBar.m2) wnVar).actionBar;
                     if (kVar2.s()) {
                         return;
                     }
                 }
             }
-            this.m3 = true;
+            this.n3 = true;
             this.p5 = this.E0.getMeasuredHeight();
             this.q5 = this.E0.getScrollY();
-            xnVar.X0.invalidate();
-            xnVar.b0 = xnVar.Y.getBackgroundTop();
+            wnVar.X0.invalidate();
+            wnVar.b0 = wnVar.Y.getBackgroundTop();
         }
     }
 
     @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final void I0() {
+    public final void H0() {
         if (this.r5.Ea != null) {
             return;
         }
-        super.I0();
+        super.H0();
     }
 
     @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final boolean O0() {
+    public final boolean N0() {
         return this.r5.N5;
     }
 
-    public final void U1() {
+    public final void T1() {
         org.telegram.ui.ActionBar.k kVar;
-        xn xnVar = this.r5;
-        kVar = ((org.telegram.ui.ActionBar.n2) xnVar).actionBar;
+        wn wnVar = this.r5;
+        kVar = ((org.telegram.ui.ActionBar.m2) wnVar).actionBar;
         final int i10 = 0;
-        if (kVar.s() || xnVar.A9()) {
-            ValueAnimator valueAnimator = xnVar.q9;
+        if (kVar.s() || wnVar.A9()) {
+            ValueAnimator valueAnimator = wnVar.q9;
             if (valueAnimator != null) {
                 valueAnimator.cancel();
             }
-            ValueAnimator valueAnimator2 = xnVar.p9;
+            ValueAnimator valueAnimator2 = wnVar.p9;
             if (valueAnimator2 != null) {
                 valueAnimator2.cancel();
             }
-            xnVar.b0 = 0;
-            this.m3 = false;
+            wnVar.b0 = 0;
+            this.n3 = false;
             return;
         }
         int backgroundTop = getBackgroundTop();
-        int i11 = xnVar.b0;
+        int i11 = wnVar.b0;
         final int i12 = 1;
-        if (i11 != 0 && backgroundTop != i11 && this.o5 == xnVar.X0.getMeasuredHeight()) {
-            int i13 = (this.S1 + xnVar.b0) - backgroundTop;
+        if (i11 != 0 && backgroundTop != i11 && this.o5 == wnVar.X0.getMeasuredHeight()) {
+            int i13 = (this.T1 + wnVar.b0) - backgroundTop;
             setAnimatedTop(i13);
-            this.x1.invalidate();
-            ValueAnimator valueAnimator3 = xnVar.p9;
+            this.y1.invalidate();
+            ValueAnimator valueAnimator3 = wnVar.p9;
             if (valueAnimator3 != null) {
                 valueAnimator3.removeAllListeners();
-                xnVar.p9.cancel();
+                wnVar.p9.cancel();
             }
-            View view = this.F1;
+            View view = this.G1;
             if (view != null && view.getVisibility() == 0) {
-                this.F1.setTranslationY(((1.0f - getTopViewEnterProgress()) * this.F1.getLayoutParams().height) + this.S1);
+                this.G1.setTranslationY(((1.0f - getTopViewEnterProgress()) * this.G1.getLayoutParams().height) + this.T1);
             }
             ValueAnimator ofFloat = ValueAnimator.ofFloat(i13, 0.0f);
-            xnVar.p9 = ofFloat;
+            wnVar.p9 = ofFloat;
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.ik
                 public final /* synthetic */ jk b;
 
@@ -113,17 +113,17 @@ public final class jk extends ChatActivityEnterView {
                     switch (i10) {
                         case 0:
                             jk jkVar = this.b;
-                            xn xnVar2 = jkVar.r5;
+                            wn wnVar2 = jkVar.r5;
                             float floatValue = ((Float) valueAnimator4.getAnimatedValue()).floatValue();
                             jkVar.setAnimatedTop((int) floatValue);
-                            View view2 = jkVar.F1;
+                            View view2 = jkVar.G1;
                             if (view2 == null || view2.getVisibility() != 0) {
-                                xnVar2.o9();
-                                xnVar2.r9();
+                                wnVar2.o9();
+                                wnVar2.r9();
                             } else {
-                                jkVar.F1.setTranslationY(((1.0f - jkVar.getTopViewEnterProgress()) * jkVar.F1.getLayoutParams().height) + floatValue);
+                                jkVar.G1.setTranslationY(((1.0f - jkVar.getTopViewEnterProgress()) * jkVar.G1.getLayoutParams().height) + floatValue);
                             }
-                            jkVar.x1.invalidate();
+                            jkVar.y1.invalidate();
                             jkVar.invalidate();
                             break;
                         default:
@@ -132,22 +132,22 @@ public final class jk extends ChatActivityEnterView {
                     }
                 }
             });
-            xnVar.p9.addListener(new u4(this, 18));
-            xnVar.p9.setDuration(250L);
-            xnVar.p9.setInterpolator(ji.n.V);
-            if (!xnVar.o9) {
-                xnVar.p9.start();
+            wnVar.p9.addListener(new t4(this, 18));
+            wnVar.p9.setDuration(250L);
+            wnVar.p9.setInterpolator(ji.n.V);
+            if (!wnVar.o9) {
+                wnVar.p9.start();
             }
-            xnVar.o9();
-            xnVar.r9();
-            xnVar.b0 = 0;
-        } else if (this.o5 != xnVar.X0.getMeasuredHeight()) {
-            xnVar.b0 = 0;
+            wnVar.o9();
+            wnVar.r9();
+            wnVar.b0 = 0;
+        } else if (this.o5 != wnVar.X0.getMeasuredHeight()) {
+            wnVar.b0 = 0;
         }
-        if (this.m3) {
+        if (this.n3) {
             float scrollY = (this.q5 - this.E0.getScrollY()) + (this.p5 - this.E0.getMeasuredHeight());
-            org.telegram.ui.Components.pf pfVar = this.E0;
-            pfVar.setOffsetY(pfVar.getOffsetY() - scrollY);
+            org.telegram.ui.Components.qf qfVar = this.E0;
+            qfVar.setOffsetY(qfVar.getOffsetY() - scrollY);
             ValueAnimator ofFloat2 = ValueAnimator.ofFloat(this.E0.getOffsetY(), 0.0f);
             ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.ik
                 public final /* synthetic */ jk b;
@@ -161,17 +161,17 @@ public final class jk extends ChatActivityEnterView {
                     switch (i12) {
                         case 0:
                             jk jkVar = this.b;
-                            xn xnVar2 = jkVar.r5;
+                            wn wnVar2 = jkVar.r5;
                             float floatValue = ((Float) valueAnimator4.getAnimatedValue()).floatValue();
                             jkVar.setAnimatedTop((int) floatValue);
-                            View view2 = jkVar.F1;
+                            View view2 = jkVar.G1;
                             if (view2 == null || view2.getVisibility() != 0) {
-                                xnVar2.o9();
-                                xnVar2.r9();
+                                wnVar2.o9();
+                                wnVar2.r9();
                             } else {
-                                jkVar.F1.setTranslationY(((1.0f - jkVar.getTopViewEnterProgress()) * jkVar.F1.getLayoutParams().height) + floatValue);
+                                jkVar.G1.setTranslationY(((1.0f - jkVar.getTopViewEnterProgress()) * jkVar.G1.getLayoutParams().height) + floatValue);
                             }
-                            jkVar.x1.invalidate();
+                            jkVar.y1.invalidate();
                             jkVar.invalidate();
                             break;
                         default:
@@ -180,17 +180,17 @@ public final class jk extends ChatActivityEnterView {
                     }
                 }
             });
-            ValueAnimator valueAnimator4 = xnVar.q9;
+            ValueAnimator valueAnimator4 = wnVar.q9;
             if (valueAnimator4 != null) {
                 valueAnimator4.cancel();
             }
-            xnVar.q9 = ofFloat2;
+            wnVar.q9 = ofFloat2;
             ofFloat2.setDuration(250L);
             ofFloat2.setInterpolator(ji.n.V);
             ofFloat2.start();
-            this.m3 = false;
+            this.n3 = false;
         }
-        this.o5 = xnVar.X0.getMeasuredHeight();
+        this.o5 = wnVar.X0.getMeasuredHeight();
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -218,24 +218,24 @@ public final class jk extends ChatActivityEnterView {
     }
 
     @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final void r0(boolean z10) {
-        super.r0(z10);
-        xn xnVar = this.r5;
-        pf pfVar = xnVar.mb;
-        if (pfVar != null) {
-            AndroidUtilities.runOnUIThread(pfVar);
-            xnVar.mb = null;
+    public final void q0(boolean z10) {
+        super.q0(z10);
+        wn wnVar = this.r5;
+        of ofVar = wnVar.mb;
+        if (ofVar != null) {
+            AndroidUtilities.runOnUIThread(ofVar);
+            wnVar.mb = null;
         }
     }
 
     @Override // org.telegram.ui.Components.ChatActivityEnterView, android.view.View
     public final void setVisibility(int i10) {
         super.setVisibility(i10);
-        xn xnVar = this.r5;
-        j6.l lVar = xnVar.Ac;
+        wn wnVar = this.r5;
+        j6.l lVar = wnVar.Ac;
         boolean z10 = false;
         boolean z11 = i10 == 0;
-        if (getMeasuredWidth() > 0 && !xnVar.qc) {
+        if (getMeasuredWidth() > 0 && !wnVar.qc) {
             z10 = true;
         }
         lVar.j(1, z11, z10);

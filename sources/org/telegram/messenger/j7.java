@@ -5,9 +5,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.xn;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class j7 implements Runnable {
     public final /* synthetic */ int a;
@@ -82,23 +82,23 @@ public final /* synthetic */ class j7 implements Runnable {
                 }
                 break;
             case 13:
-                ((org.telegram.ui.m6) this.b).run(Float.valueOf(((int[]) this.e)[0] / this.d), Boolean.valueOf(System.currentTimeMillis() - this.c > 250));
+                ((org.telegram.ui.l6) this.b).run(Float.valueOf(((int[]) this.e)[0] / this.d), Boolean.valueOf(System.currentTimeMillis() - this.c > 250));
                 break;
             case 14:
                 ((ProfileActivity) this.b).getMessagesController().getStoriesController().b(this.d, this.c, (ArrayList) this.e);
                 break;
             default:
                 ci.d dVar = (ci.d) this.b;
-                org.telegram.ui.ActionBar.f3[] f3VarArr = (org.telegram.ui.ActionBar.f3[]) this.e;
+                org.telegram.ui.ActionBar.e3[] e3VarArr = (org.telegram.ui.ActionBar.e3[]) this.e;
                 dVar.setLoading(false);
-                org.telegram.ui.ActionBar.f3 f3Var = f3VarArr[0];
-                if (f3Var != null) {
-                    f3Var.dismiss();
+                org.telegram.ui.ActionBar.e3 e3Var = e3VarArr[0];
+                if (e3Var != null) {
+                    e3Var.dismiss();
                 }
                 yh.t5.y(this.d, false).S();
-                org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+                org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
                 if (U != null) {
-                    U.presentFragment(xn.R9(this.c));
+                    U.presentFragment(wn.R9(this.c));
                     break;
                 }
                 break;

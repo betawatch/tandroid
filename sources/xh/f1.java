@@ -27,9 +27,9 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.e6;
 import org.telegram.ui.Components.q5;
 import org.telegram.ui.Components.rr;
-import v7.u7;
+import v7.v7;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class f1 extends Drawable {
     public static n1 C = new n1();
@@ -74,7 +74,7 @@ public final class f1 extends Drawable {
         this.o = new Matrix();
         Paint paint3 = new Paint(1);
         this.q = paint3;
-        this.r = new e6(new rg.w1(this, 15), 320L, rr.h);
+        this.r = new e6(new rg.q1(this, 16), 320L, rr.h);
         this.s = AndroidUtilities.dp(11.0f);
         this.u = true;
         this.v = 0;
@@ -175,7 +175,7 @@ public final class f1 extends Drawable {
                         float[] fArr = n1Var.g;
                         final float dp = AndroidUtilities.dp(1.66f);
                         final float dp2 = AndroidUtilities.dp(0.33f);
-                        n1Var.b = u7.b(bitmapArr, fArr, dp, dp2, 0, new gh.f() { // from class: gh.e
+                        n1Var.b = v7.b(bitmapArr, fArr, dp, dp2, 0, new gh.f() { // from class: gh.e
                             @Override // gh.f
                             public final void a(Canvas canvas3, RectF rectF2, float[] fArr2) {
                                 Path path = new Path();
@@ -211,7 +211,7 @@ public final class f1 extends Drawable {
                         float[] fArr2 = n1Var2.g;
                         final float dp3 = AndroidUtilities.dp(1.66f);
                         final float dp4 = AndroidUtilities.dp(0.33f);
-                        n1Var2.f = u7.b(bitmapArr2, fArr2, dp3, dp4, v03, new gh.f() { // from class: gh.e
+                        n1Var2.f = v7.b(bitmapArr2, fArr2, dp3, dp4, v03, new gh.f() { // from class: gh.e
                             @Override // gh.f
                             public final void a(Canvas canvas3, RectF rectF2, float[] fArr22) {
                                 Path path = new Path();
@@ -238,7 +238,7 @@ public final class f1 extends Drawable {
                         n1Var3.i = v03;
                         final float f13 = 0.0f;
                         final float f14 = 0.0f;
-                        n1Var3.d = u7.b(n1Var3.c, n1Var3.g, 0.0f, 0.0f, v03, new gh.f() { // from class: gh.e
+                        n1Var3.d = v7.b(n1Var3.c, n1Var3.g, 0.0f, 0.0f, v03, new gh.f() { // from class: gh.e
                             @Override // gh.f
                             public final void a(Canvas canvas3, RectF rectF2, float[] fArr22) {
                                 Path path = new Path();

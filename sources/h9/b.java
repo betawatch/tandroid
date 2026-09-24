@@ -5,10 +5,10 @@ import java.util.AbstractList;
 import java.util.Collections;
 import java.util.List;
 import java.util.RandomAccess;
-import v7.t6;
-import v7.y7;
+import v7.u6;
+import v7.z7;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class b extends AbstractList implements RandomAccess, Serializable {
     public final int[] a;
@@ -23,7 +23,7 @@ public final class b extends AbstractList implements RandomAccess, Serializable 
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public final boolean contains(Object obj) {
-        return (obj instanceof Integer) && y7.d(((Integer) obj).intValue(), this.b, this.c, this.a) != -1;
+        return (obj instanceof Integer) && z7.d(((Integer) obj).intValue(), this.b, this.c, this.a) != -1;
     }
 
     @Override // java.util.AbstractList, java.util.Collection, java.util.List
@@ -49,7 +49,7 @@ public final class b extends AbstractList implements RandomAccess, Serializable 
 
     @Override // java.util.AbstractList, java.util.List
     public final Object get(int i10) {
-        t6.c(i10, size());
+        u6.c(i10, size());
         return Integer.valueOf(this.a[this.b + i10]);
     }
 
@@ -70,7 +70,7 @@ public final class b extends AbstractList implements RandomAccess, Serializable 
         int intValue = ((Integer) obj).intValue();
         int i10 = this.c;
         int i11 = this.b;
-        int d = y7.d(intValue, i11, i10, this.a);
+        int d = z7.d(intValue, i11, i10, this.a);
         if (d >= 0) {
             return d - i11;
         }
@@ -109,7 +109,7 @@ public final class b extends AbstractList implements RandomAccess, Serializable 
     @Override // java.util.AbstractList, java.util.List
     public final Object set(int i10, Object obj) {
         Integer num = (Integer) obj;
-        t6.c(i10, size());
+        u6.c(i10, size());
         int i11 = this.b + i10;
         int[] iArr = this.a;
         int i12 = iArr[i11];
@@ -125,7 +125,7 @@ public final class b extends AbstractList implements RandomAccess, Serializable 
 
     @Override // java.util.AbstractList, java.util.List
     public final List subList(int i10, int i11) {
-        t6.f(i10, i11, size());
+        u6.f(i10, i11, size());
         if (i10 == i11) {
             return Collections.EMPTY_LIST;
         }

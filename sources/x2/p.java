@@ -21,13 +21,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.RandomAccess;
 import org.telegram.messenger.TranslateController;
-import org.telegram.ui.cb1;
-import u2.n1;
+import org.telegram.ui.db1;
+import u2.p1;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class p extends u {
-    public static final y0 l = new w(new cb1(11));
+    public static final y0 l = new w(new db1(11));
     public final Object d;
     public final Context e;
     public final qb.b f;
@@ -56,9 +56,9 @@ public final class p extends u {
         }
     }
 
-    public static void c(n1 n1Var, i iVar, HashMap hashMap) {
-        for (int i10 = 0; i10 < n1Var.a; i10++) {
-            m1 m1Var = (m1) iVar.D.get(n1Var.a(i10));
+    public static void c(p1 p1Var, i iVar, HashMap hashMap) {
+        for (int i10 = 0; i10 < p1Var.a; i10++) {
+            m1 m1Var = (m1) iVar.D.get(p1Var.a(i10));
             if (m1Var != null) {
                 l1 l1Var = m1Var.a;
                 m1 m1Var2 = (m1) hashMap.get(Integer.valueOf(l1Var.c));
@@ -119,9 +119,9 @@ public final class p extends u {
         int i13 = 0;
         while (i13 < i12) {
             if (i10 == tVar2.b[i13]) {
-                n1 n1Var = tVar2.c[i13];
-                for (int i14 = 0; i14 < n1Var.a; i14++) {
-                    l1 a2 = n1Var.a(i14);
+                p1 p1Var = tVar2.c[i13];
+                for (int i14 = 0; i14 < p1Var.a; i14++) {
+                    l1 a2 = p1Var.a(i14);
                     a1 b10 = mVar.b(i13, a2, iArr[i13][i14]);
                     int i15 = a2.a;
                     boolean[] zArr = new boolean[i15];

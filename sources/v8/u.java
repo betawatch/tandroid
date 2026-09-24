@@ -1,22 +1,44 @@
 package v8;
 
-import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
-import w7.e0;
+import android.os.Looper;
+import android.util.SparseArray;
+import com.google.android.gms.internal.cast.c0;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import java.util.concurrent.atomic.AtomicInteger;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
-public final class u extends o6.a {
-    public static final Parcelable.Creator<u> CREATOR = new r(5);
-    public String a;
-    public Bundle b;
+public final class u implements OnCompleteListener, Runnable {
+    public static final c0 d = new c0(Looper.getMainLooper());
+    public static final SparseArray e = new SparseArray(2);
+    public static final AtomicInteger f = new AtomicInteger();
+    public int a;
+    public v b;
+    public Task c;
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = e0.q(parcel, 20293);
-        e0.l(parcel, 2, this.a);
-        e0.b(parcel, 3, this.b);
-        e0.r(parcel, q6);
+    public final void a() {
+        if (this.c == null || this.b == null) {
+            return;
+        }
+        e.delete(this.a);
+        d.removeCallbacks(this);
+        v vVar = this.b;
+        if (vVar != null) {
+            Task task = this.c;
+            int i10 = v.d;
+            vVar.a(task);
+        }
+    }
+
+    @Override // com.google.android.gms.tasks.OnCompleteListener
+    public final void onComplete(Task task) {
+        this.c = task;
+        a();
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        e.delete(this.a);
     }
 }

@@ -4,10 +4,8 @@ import android.content.Context;
 import com.google.mlkit.common.internal.MlKitComponentDiscoveryService;
 import java.util.ArrayList;
 import java.util.concurrent.Executor;
-import k2.u;
-import pg.e0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class g {
     public static final Object b = new Object();
@@ -34,14 +32,14 @@ public final class g {
             if (applicationContext != null) {
                 context = applicationContext;
             }
-            ArrayList g10 = new o0.a(12, context, new u(MlKitComponentDiscoveryService.class, 19)).g();
+            ArrayList q6 = new o0.a(12, context, new n2.e(MlKitComponentDiscoveryService.class, 14)).q();
             ArrayList arrayList = new ArrayList();
             ArrayList arrayList2 = new ArrayList();
-            e0 e0Var = q9.e.A;
-            arrayList.addAll(g10);
+            org.webrtc.audio.b bVar = q9.e.A;
+            arrayList.addAll(q6);
             arrayList2.add(q9.a.c(context, Context.class, new Class[0]));
             arrayList2.add(q9.a.c(gVar2, g.class, new Class[0]));
-            q9.g gVar3 = new q9.g(executor, arrayList, arrayList2, e0Var);
+            q9.g gVar3 = new q9.g(executor, arrayList, arrayList2, bVar);
             gVar2.a = gVar3;
             gVar3.g(true);
             gVar = c;

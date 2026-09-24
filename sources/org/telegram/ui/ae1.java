@@ -9,7 +9,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class ae1 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final class ae1 extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     public void dispatchDraw(Canvas canvas) {
         Canvas canvas2;
-        org.telegram.ui.Cells.t1 t1Var;
+        org.telegram.ui.Cells.u1 u1Var;
         switch (this.a) {
             case 0:
                 de1 de1Var = this.b;
@@ -40,9 +40,9 @@ public final class ae1 extends FrameLayout {
                     canvas2 = canvas;
                     canvas2.drawRect(0.0f, 0.0f, getWidth(), getHeight(), de1Var.v);
                 }
-                if (de1Var.N && (t1Var = de1Var.K) != null) {
-                    t1Var.K7 = de1Var.O;
-                    t1Var.invalidate();
+                if (de1Var.N && (u1Var = de1Var.K) != null) {
+                    u1Var.K7 = de1Var.O;
+                    u1Var.invalidate();
                     de1Var.N = false;
                 }
                 super.dispatchDraw(canvas2);
@@ -122,9 +122,9 @@ public final class ae1 extends FrameLayout {
                             viewGroup2.measure(View.MeasureSpec.makeMeasureSpec(Math.min(size, (int) f10), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
                         }
                     }
-                    org.telegram.ui.Components.gk0 gk0Var = de1Var.P;
-                    if (childAt == gk0Var) {
-                        childAt.measure(View.MeasureSpec.makeMeasureSpec(gk0Var.getTotalWidth(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
+                    org.telegram.ui.Components.qk0 qk0Var = de1Var.P;
+                    if (childAt == qk0Var) {
+                        childAt.measure(View.MeasureSpec.makeMeasureSpec(qk0Var.getTotalWidth(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
                     } else {
                         childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
                     }

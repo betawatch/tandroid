@@ -6,7 +6,7 @@ import java.io.Closeable;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class e implements com.google.android.gms.common.api.q, Iterable, Closeable {
     public final DataHolder a;
@@ -39,7 +39,7 @@ public final class e implements com.google.android.gms.common.api.q, Iterable, C
 
     public final int n(int i10) {
         if (i10 < 0 || i10 >= this.c.size()) {
-            throw new IllegalArgumentException(hg.c.j(i10, "Position ", " is out of bounds for this buffer"));
+            throw new IllegalArgumentException(hg.c.i(i10, "Position ", " is out of bounds for this buffer"));
         }
         return ((Integer) this.c.get(i10)).intValue();
     }

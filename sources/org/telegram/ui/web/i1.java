@@ -1,23 +1,26 @@
 package org.telegram.ui.web;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+import java.io.BufferedInputStream;
+import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.SvgHelper;
+import org.telegram.ui.bt;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class i1 extends AsyncTask {
     public final HashMap a = new HashMap();
-    public final Utilities.Callback b;
+    public final bt b;
     public Exception c;
 
-    public i1(Utilities.Callback callback) {
-        this.b = callback;
+    public i1(bt btVar) {
+        this.b = btVar;
     }
 
     @Override // android.os.AsyncTask
@@ -32,16 +35,11 @@ public final class i1 extends AsyncTask {
             httpURLConnection.setRequestMethod("GET");
             httpURLConnection.setDoInput(true);
             int responseCode = httpURLConnection.getResponseCode();
-            BufferedReader bufferedReader = (responseCode < 200 || responseCode >= 300) ? new BufferedReader(new InputStreamReader(httpURLConnection.getErrorStream())) : new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream()));
-            StringBuilder sb2 = new StringBuilder();
-            while (true) {
-                String readLine = bufferedReader.readLine();
-                if (readLine == null) {
-                    bufferedReader.close();
-                    return sb2.toString();
-                }
-                sb2.append(readLine);
+            if (responseCode >= 200 && responseCode < 300) {
+                return (httpURLConnection.getContentType() == null || !httpURLConnection.getContentType().contains("svg")) ? BitmapFactory.decodeStream(new BufferedInputStream(httpURLConnection.getInputStream())) : SvgHelper.getBitmap((InputStream) new BufferedInputStream(httpURLConnection.getInputStream()), 64, 64, false);
             }
+            httpURLConnection.disconnect();
+            return null;
         } catch (Exception e) {
             this.c = e;
             return null;
@@ -50,13 +48,13 @@ public final class i1 extends AsyncTask {
 
     @Override // android.os.AsyncTask
     public final void onPostExecute(Object obj) {
-        String str = (String) obj;
-        Utilities.Callback callback = this.b;
-        if (callback != null) {
+        Bitmap bitmap = (Bitmap) obj;
+        bt btVar = this.b;
+        if (btVar != null) {
             if (this.c == null) {
-                callback.run(str);
+                btVar.run(bitmap);
             } else {
-                callback.run(null);
+                btVar.run(null);
             }
         }
     }

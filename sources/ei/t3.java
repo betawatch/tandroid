@@ -21,15 +21,15 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.d90;
 import org.telegram.ui.Components.ek;
+import org.telegram.ui.Components.n90;
 import org.telegram.ui.Components.ok;
 import org.telegram.ui.Components.pk;
 import org.telegram.ui.Components.u00;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t3 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -46,12 +46,12 @@ public final /* synthetic */ class t3 implements Runnable {
     public final /* synthetic */ Object w;
     public final /* synthetic */ Object x;
 
-    public /* synthetic */ t3(ci.d dVar, TLObject tLObject, int i10, long j3, org.telegram.ui.ActionBar.f3 f3Var, TL_payments.starRefProgram starrefprogram, long j10, boolean z10, Context context, d6 d6Var, TLRPC.User user, TLRPC.TL_error tL_error) {
+    public /* synthetic */ t3(ci.d dVar, TLObject tLObject, int i10, long j3, org.telegram.ui.ActionBar.e3 e3Var, TL_payments.starRefProgram starrefprogram, long j10, boolean z10, Context context, d6 d6Var, TLRPC.User user, TLRPC.TL_error tL_error) {
         this.n = dVar;
         this.d = tLObject;
         this.b = i10;
         this.f = j3;
-        this.r = f3Var;
+        this.r = e3Var;
         this.s = starrefprogram;
         this.h = j10;
         this.e = z10;
@@ -67,7 +67,7 @@ public final /* synthetic */ class t3 implements Runnable {
      */
     /* JADX WARN: Code restructure failed: missing block: B:79:0x01ff, code lost:
     
-        r9.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.xq(r13, (org.telegram.ui.Components.u00) r2, r1, r12));
+        r9.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.wq(r13, (org.telegram.ui.Components.u00) r2, r1, r12));
      */
     /* JADX WARN: Code restructure failed: missing block: B:80:0x020d, code lost:
     
@@ -83,7 +83,7 @@ public final /* synthetic */ class t3 implements Runnable {
     */
     public final void run() {
         TL_payments.connectedBotStarRef connectedbotstarref;
-        org.telegram.ui.ActionBar.n2 U;
+        org.telegram.ui.ActionBar.m2 U;
         int i10;
         ArrayList arrayList;
         int i11 = this.a;
@@ -99,7 +99,7 @@ public final /* synthetic */ class t3 implements Runnable {
         Object obj6 = this.n;
         switch (i11) {
             case 0:
-                org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) obj5;
+                org.telegram.ui.ActionBar.e3 e3Var = (org.telegram.ui.ActionBar.e3) obj5;
                 TL_payments.starRefProgram starrefprogram = (TL_payments.starRefProgram) obj4;
                 Context context = (Context) obj3;
                 d6 d6Var = (d6) obj2;
@@ -107,7 +107,7 @@ public final /* synthetic */ class t3 implements Runnable {
                 ((ci.d) obj6).setLoading(false);
                 if (!(tLObject instanceof TL_payments.connectedStarRefBots)) {
                     if (tL_error != null) {
-                        org.telegram.ui.Cells.q3.r(f3Var.topBulletinContainer, d6Var, tL_error, false);
+                        org.telegram.ui.Cells.c1.r(e3Var.topBulletinContainer, d6Var, tL_error, false);
                         break;
                     }
                 } else {
@@ -134,7 +134,7 @@ public final /* synthetic */ class t3 implements Runnable {
                     d.h = false;
                     NotificationCenter.getInstance(i13).lambda$postNotificationNameOnUIThread$1(NotificationCenter.channelConnectedBotsUpdate, Long.valueOf(d.b));
                     d.a();
-                    f3Var.dismiss();
+                    e3Var.dismiss();
                     int i14 = 0;
                     while (true) {
                         if (i14 < connectedstarrefbots.connected_bots.size()) {
@@ -165,7 +165,7 @@ public final /* synthetic */ class t3 implements Runnable {
                                 }
                             }
                         }
-                        new xc(e4.H0(context, i12, connectedbotstarref, j10, d6Var).topBulletinContainer, d6Var).V(Arrays.asList(user), LocaleController.getString(R.string.AffiliateProgramJoinedTitle), LocaleController.getString(R.string.AffiliateProgramJoinedText), null).j();
+                        new yc(e4.H0(context, i12, connectedbotstarref, j10, d6Var).topBulletinContainer, d6Var).V(Arrays.asList(user), LocaleController.getString(R.string.AffiliateProgramJoinedTitle), LocaleController.getString(R.string.AffiliateProgramJoinedText), null).j();
                         break;
                     }
                 }
@@ -190,8 +190,8 @@ public final /* synthetic */ class t3 implements Runnable {
                     if (tL_error == null) {
                         ek ekVar = pkVar.r;
                         d7Var.e(false, true);
-                        d90 d90Var = d7Var.e;
-                        vh.o oVar = d7Var.d;
+                        n90 n90Var = d7Var.e;
+                        vh.n nVar = d7Var.d;
                         TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
                         okVar.G = messages_messages.next_rate;
                         ek ekVar2 = ekVar;
@@ -231,13 +231,13 @@ public final /* synthetic */ class t3 implements Runnable {
                         okVar.V = arrayList9.size() >= i16;
                         if (arrayList9.isEmpty()) {
                             if (TextUtils.isEmpty(okVar.K) && this.f == 0 && j3 == 0) {
-                                oVar.setText(LocaleController.getString(R.string.SearchEmptyViewTitle));
-                                d90Var.setVisibility(0);
-                                d90Var.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitleFiles));
+                                nVar.setText(LocaleController.getString(R.string.SearchEmptyViewTitle));
+                                n90Var.setVisibility(0);
+                                n90Var.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitleFiles));
                             } else {
-                                oVar.setText(LocaleController.getString(R.string.SearchEmptyViewTitle2));
-                                d90Var.setVisibility(0);
-                                d90Var.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
+                                nVar.setText(LocaleController.getString(R.string.SearchEmptyViewTitle2));
+                                n90Var.setVisibility(0);
+                                n90Var.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
                             }
                         }
                         if (!z10) {
@@ -284,11 +284,11 @@ public final /* synthetic */ class t3 implements Runnable {
                             break;
                         }
                     } else {
-                        vh.o oVar2 = d7Var.d;
-                        d90 d90Var2 = d7Var.e;
-                        oVar2.setText(LocaleController.getString(R.string.SearchEmptyViewTitle2));
-                        d90Var2.setVisibility(0);
-                        d90Var2.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
+                        vh.n nVar2 = d7Var.d;
+                        n90 n90Var2 = d7Var.e;
+                        nVar2.setText(LocaleController.getString(R.string.SearchEmptyViewTitle2));
+                        n90Var2.setVisibility(0);
+                        n90Var2.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
                         d7Var.e(false, true);
                         break;
                     }

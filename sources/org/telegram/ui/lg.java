@@ -1,76 +1,47 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import android.widget.ImageView;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
+import android.content.DialogInterface;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lg implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class lg implements DialogInterface.OnCancelListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ lg(Object obj, float f7, int i10) {
+    public /* synthetic */ lg(Object obj, int i10) {
         this.a = i10;
-        this.c = obj;
-        this.b = f7;
+        this.b = obj;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // android.content.DialogInterface.OnCancelListener
+    public final void onCancel(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                xn xnVar = (xn) this.c;
-                xnVar.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                xnVar.H8 = floatValue;
-                xnVar.L8 = floatValue / this.b;
-                View view = xnVar.fragmentView;
-                if (view != null) {
-                    view.invalidate();
-                    break;
-                }
+                wn wnVar = (wn) this.b;
+                wnVar.b9 = true;
+                wnVar.Z8 = 0;
+                wnVar.pb = 0;
+                wnVar.N4 = 0;
+                wnVar.r9();
+                wnVar.Nb(false);
                 break;
             case 1:
-                ArrayList arrayList = (ArrayList) this.c;
-                float floatValue2 = 1.0f - ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                    View view2 = (View) arrayList.get(i10);
-                    if (view2 != null) {
-                        view2.setTranslationY(this.b * floatValue2);
-                    }
-                }
+                ro roVar = (ro) this.b;
+                roVar.M0 = false;
+                roVar.b = null;
+                roVar.N0 = false;
                 break;
             case 2:
-                ((org.telegram.ui.Components.vn) this.c).E.setTranslationY(AndroidUtilities.lerp(this.b, 0.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
-                break;
-            case 3:
-                ((tv0) this.c).R.setTranslationY(AndroidUtilities.lerp(this.b, 0.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
+                ((rp) this.b).n = null;
                 break;
             default:
-                z11 z11Var = (z11) this.c;
-                z11Var.getClass();
-                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                float lerp = AndroidUtilities.lerp(0.0f, this.b, floatValue3);
-                z11Var.a.setTranslationX(lerp);
-                z11Var.b.setTranslationX(lerp);
-                ImageView imageView = z11Var.c;
-                imageView.setTranslationX(lerp);
-                org.telegram.ui.Components.op opVar = z11Var.f;
-                opVar.setTranslationX((LocaleController.isRTL ? AndroidUtilities.dp(32.0f) : -AndroidUtilities.dp(32.0f)) + lerp);
-                float f7 = (floatValue3 * 0.5f) + 0.5f;
-                opVar.setScaleX(f7);
-                opVar.setScaleY(f7);
-                opVar.setAlpha(floatValue3);
-                float f10 = 1.0f - floatValue3;
-                float f11 = (f10 * 0.5f) + 0.5f;
-                imageView.setScaleX(f11);
-                imageView.setScaleY(f11);
-                imageView.setAlpha(f10);
+                zb0 zb0Var = (zb0) this.b;
+                if (zb0Var.h >= 0) {
+                    ConnectionsManager.getInstance(zb0Var.b).cancelRequest(zb0Var.h, true);
+                    zb0Var.h = -1;
+                    break;
+                }
                 break;
         }
     }

@@ -4,20 +4,20 @@ import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class gk0 extends org.telegram.ui.Cells.s8 {
+public final class gk0 extends org.telegram.ui.Cells.r8 {
     public ImageView Q;
 
-    @Override // org.telegram.ui.Cells.s8, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Cells.r8, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
         int dp = LocaleController.isRTL ? AndroidUtilities.dp(17.0f) : (i12 - i10) - AndroidUtilities.dp(41.0f);
-        int y3 = org.telegram.messenger.ul.y(24.0f, i13 - i11, 2);
-        this.Q.layout(dp, y3, AndroidUtilities.dp(24.0f) + dp, AndroidUtilities.dp(24.0f) + y3);
+        int A = org.telegram.messenger.ok.A(24.0f, i13 - i11, 2);
+        this.Q.layout(dp, A, AndroidUtilities.dp(24.0f) + dp, AndroidUtilities.dp(24.0f) + A);
     }
 
-    @Override // org.telegram.ui.Cells.s8, android.widget.FrameLayout, android.view.View
+    @Override // org.telegram.ui.Cells.r8, android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
         super.onMeasure(i10, i11);
         this.Q.measure(i10, i11);

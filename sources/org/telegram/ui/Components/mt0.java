@@ -1,97 +1,22 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class mt0 extends ll0 {
-    public final Context c;
-    public final /* synthetic */ yu0 d;
+public final class mt0 extends uq0 {
+    public final /* synthetic */ org.telegram.ui.ActionBar.m2 b1;
 
-    public mt0(yu0 yu0Var, Context context) {
-        this.d = yu0Var;
-        this.c = context;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public mt0(Context context, String str, String str2, org.telegram.ui.ActionBar.d6 d6Var, org.telegram.ui.ActionBar.m2 m2Var) {
+        super(context, null, str, false, str2, false, d6Var);
+        this.b1 = m2Var;
     }
 
-    @Override // org.telegram.ui.Components.ll0
-    public final boolean D(s4.c1 c1Var) {
-        nu0[] nu0VarArr = this.d.t1;
-        return nu0VarArr[5].a.size() != 0 || nu0VarArr[5].g;
-    }
-
-    @Override // s4.h0
-    public final int h() {
-        nu0[] nu0VarArr = this.d.t1;
-        if (nu0VarArr[5].a.size() != 0 || nu0VarArr[5].g) {
-            return nu0VarArr[5].a.size();
-        }
-        return 1;
-    }
-
-    @Override // s4.h0
-    public final long i(int i10) {
-        return i10;
-    }
-
-    @Override // s4.h0
-    public final int j(int i10) {
-        nu0[] nu0VarArr = this.d.t1;
-        return (nu0VarArr[5].a.size() != 0 || nu0VarArr[5].g) ? 12 : 11;
-    }
-
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        if (c1Var.f == 12) {
-            yu0 yu0Var = this.d;
-            MessageObject messageObject = (MessageObject) yu0Var.t1[5].a.get(i10);
-            TLRPC.Document document = messageObject.getDocument();
-            if (document != null) {
-                View view = c1Var.a;
-                if (view instanceof org.telegram.ui.Cells.e2) {
-                    org.telegram.ui.Cells.e2 e2Var = (org.telegram.ui.Cells.e2) view;
-                    e2Var.d(messageObject.messageOwner.date, document, messageObject);
-                    if (yu0Var.C1) {
-                        e2Var.c(yu0Var.Z0[(messageObject.getDialogId() > yu0Var.j1 ? 1 : (messageObject.getDialogId() == yu0Var.j1 ? 0 : -1)) == 0 ? (char) 0 : (char) 1].indexOfKey(messageObject.getId()) >= 0, !yu0Var.b1);
-                    } else {
-                        e2Var.c(false, !yu0Var.b1);
-                    }
-                }
-            }
-        }
-    }
-
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        yu0 yu0Var = this.d;
-        org.telegram.ui.ActionBar.d6 d6Var = yu0Var.F1;
-        Context context = this.c;
-        if (i10 == 11) {
-            lt0 M = yu0.M(5, yu0Var.j1, context, d6Var);
-            M.setLayoutParams(new s4.p0(-1, -1));
-            return new wk0(M);
-        }
-        org.telegram.ui.Cells.e2 e2Var = new org.telegram.ui.Cells.e2(context, d6Var, true);
-        e2Var.setCanPreviewGif(true);
-        return new wk0(e2Var);
-    }
-
-    @Override // s4.h0
-    public final void y(s4.c1 c1Var) {
-        View view = c1Var.a;
-        if (view instanceof org.telegram.ui.Cells.e2) {
-            ImageReceiver photoImage = ((org.telegram.ui.Cells.e2) view).getPhotoImage();
-            if (this.d.k0[0].F == 5) {
-                photoImage.setAllowStartAnimation(true);
-                photoImage.startAnimation();
-            } else {
-                photoImage.setAllowStartAnimation(false);
-                photoImage.stopAnimation();
-            }
-        }
+    @Override // org.telegram.ui.Components.uq0
+    public final void R0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        AndroidUtilities.runOnUIThread(new xm(this.b1, iVar, i10, 14), 100L);
     }
 }

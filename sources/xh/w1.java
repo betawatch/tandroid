@@ -1,15 +1,15 @@
 package xh;
 
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.nr0;
+import org.telegram.ui.Components.zr0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class w1 implements le.e, Utilities.Callback2Return {
-    public final /* synthetic */ nr0 a;
+    public final /* synthetic */ zr0 a;
 
-    public /* synthetic */ w1(nr0 nr0Var) {
-        this.a = nr0Var;
+    public /* synthetic */ w1(zr0 zr0Var) {
+        this.a = zr0Var;
     }
 
     @Override // le.e
@@ -19,12 +19,12 @@ public final /* synthetic */ class w1 implements le.e, Utilities.Callback2Return
 
     @Override // org.telegram.messenger.Utilities.Callback2Return
     public Object run(Object obj, Object obj2) {
-        nr0 nr0Var = this.a;
-        nr0Var.i();
+        zr0 zr0Var = this.a;
+        zr0Var.i();
         if (((Integer) obj).intValue() != -1) {
             return Boolean.FALSE;
         }
-        nr0Var.h(null, new t1(nr0Var, 0));
+        zr0Var.h(null, new t1(zr0Var, 0));
         return Boolean.TRUE;
     }
 

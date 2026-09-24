@@ -9,7 +9,7 @@ import android.util.SparseIntArray;
 import j$.util.Objects;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public class d implements org.telegram.ui.ActionBar.d6 {
     public final HashSet a = new HashSet();
@@ -17,7 +17,7 @@ public class d implements org.telegram.ui.ActionBar.d6 {
     public final Paint c;
     public Paint d;
     public PorterDuffColorFilter e;
-    public org.telegram.ui.ActionBar.e5 f;
+    public org.telegram.ui.ActionBar.d5 f;
 
     public d() {
         SparseIntArray sparseIntArray = new SparseIntArray();
@@ -228,7 +228,7 @@ public class d implements org.telegram.ui.ActionBar.d6 {
             return null;
         }
         if (this.f == null) {
-            this.f = new org.telegram.ui.ActionBar.e5(1, true, false, this);
+            this.f = new org.telegram.ui.ActionBar.d5(1, true, false, this);
         }
         return this.f;
     }

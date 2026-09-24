@@ -15,11 +15,11 @@ import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.concurrent.Executor;
-import org.telegram.ui.Components.og;
+import org.telegram.ui.Components.pg;
 import org.telegram.ui.Components.pk;
 import p4.s0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class g extends BroadcastReceiver {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final class g extends BroadcastReceiver {
         if (Log.isLoggable("FirebaseMessaging", 3) || (Build.VERSION.SDK_INT == 23 && Log.isLoggable("FirebaseMessaging", 3))) {
             Log.d("FirebaseMessaging", "Connectivity change received registered");
         }
-        ((FirebaseMessaging) ((com.google.firebase.messaging.w) this.b).d).b.registerReceiver(this, new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"));
+        ((FirebaseMessaging) ((com.google.firebase.messaging.v) this.b).d).b.registerReceiver(this, new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"));
     }
 
     @Override // android.content.BroadcastReceiver
@@ -47,15 +47,15 @@ public final class g extends BroadcastReceiver {
                 }
                 return;
             case 1:
-                com.google.firebase.messaging.w wVar = (com.google.firebase.messaging.w) this.b;
-                if (wVar != null && wVar.a()) {
+                com.google.firebase.messaging.v vVar = (com.google.firebase.messaging.v) this.b;
+                if (vVar != null && vVar.a()) {
                     if (Log.isLoggable("FirebaseMessaging", 3) || (Build.VERSION.SDK_INT == 23 && Log.isLoggable("FirebaseMessaging", 3))) {
                         Log.d("FirebaseMessaging", "Connectivity changed. Starting background sync.");
                     }
-                    com.google.firebase.messaging.w wVar2 = (com.google.firebase.messaging.w) this.b;
-                    ((FirebaseMessaging) wVar2.d).getClass();
-                    FirebaseMessaging.b(wVar2, 0L);
-                    ((FirebaseMessaging) ((com.google.firebase.messaging.w) this.b).d).b.unregisterReceiver(this);
+                    com.google.firebase.messaging.v vVar2 = (com.google.firebase.messaging.v) this.b;
+                    ((FirebaseMessaging) vVar2.d).getClass();
+                    FirebaseMessaging.b(vVar2, 0L);
+                    ((FirebaseMessaging) ((com.google.firebase.messaging.v) this.b).d).b.unregisterReceiver(this);
                     this.b = null;
                     return;
                 }
@@ -82,17 +82,17 @@ public final class g extends BroadcastReceiver {
                 return;
             case 6:
                 if (Objects.equals(intent.getAction(), "android.intent.action.MEDIA_BUTTON") && (keyEvent = (KeyEvent) intent.getParcelableExtra("android.intent.extra.KEY_EVENT")) != null) {
-                    ((n4.j) ((k2.u) ((m4.l0) this.b).k.c).b).a.dispatchMediaButtonEvent(keyEvent);
+                    ((n4.j) ((k2.u) ((m4.k0) this.b).k.c).b).a.dispatchMediaButtonEvent(keyEvent);
                     return;
                 }
                 return;
             case 7:
-                og ogVar = new og(this, 22);
+                pg pgVar = new pg(this, 22);
                 if ("android.intent.action.MEDIA_UNMOUNTED".equals(intent.getAction())) {
-                    ((pk) this.b).r.postDelayed(ogVar, 1000L);
+                    ((pk) this.b).r.postDelayed(pgVar, 1000L);
                     return;
                 } else {
-                    ogVar.run();
+                    pgVar.run();
                     return;
                 }
             case 8:

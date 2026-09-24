@@ -6,11 +6,11 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.Typeface;
 import android.widget.ImageView;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public class ic extends nb {
     public final ImageView a;
-    public final d90 b;
+    public final n90 b;
 
     public ic(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context, d6Var);
@@ -18,15 +18,15 @@ public class ic extends nb {
         ImageView imageView = new ImageView(context);
         this.a = imageView;
         imageView.setColorFilter(new PorterDuffColorFilter(themedColor, PorterDuff.Mode.MULTIPLY));
-        addView(imageView, w7.x5.i(24.0f, 24.0f, 8388627, 16.0f, 12.0f, 16.0f, 12.0f));
-        d90 d90Var = new d90(context, null);
-        this.b = d90Var;
-        d90Var.setDisablePaddingsOffsetY(true);
-        d90Var.setSingleLine();
-        d90Var.setTextColor(themedColor);
-        d90Var.setTypeface(Typeface.SANS_SERIF);
-        d90Var.setTextSize(1, 15.0f);
-        addView(d90Var, w7.x5.i(-2.0f, -2.0f, 8388627, 56.0f, 0.0f, 16.0f, 0.0f));
+        addView(imageView, w7.y5.i(24.0f, 24.0f, 8388627, 16.0f, 12.0f, 16.0f, 12.0f));
+        n90 n90Var = new n90(context, null);
+        this.b = n90Var;
+        n90Var.setDisablePaddingsOffsetY(true);
+        n90Var.setSingleLine();
+        n90Var.setTextColor(themedColor);
+        n90Var.setTypeface(Typeface.SANS_SERIF);
+        n90Var.setTextSize(1, 15.0f);
+        addView(n90Var, w7.y5.i(-2.0f, -2.0f, 8388627, 56.0f, 0.0f, 16.0f, 0.0f));
     }
 
     @Override // org.telegram.ui.Components.ub

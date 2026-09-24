@@ -11,11 +11,11 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.ml0;
-import org.telegram.ui.Components.o70;
-import org.telegram.ui.rh;
+import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.y70;
+import org.telegram.ui.dh;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o5 implements Utilities.CallbackReturn {
     public final /* synthetic */ int a;
@@ -79,17 +79,17 @@ public final /* synthetic */ class o5 implements Utilities.CallbackReturn {
                         y5Var.container.performHapticFeedback(3);
                     } catch (Exception unused) {
                     }
-                    new org.telegram.ui.Components.xc(y5Var.container, d6Var).Q(R.raw.star_premium_2, 36, AndroidUtilities.premiumText(LocaleController.getString(R.string.StoryLinkPremium), new f5(q6Var, 1))).k(true);
+                    new org.telegram.ui.Components.yc(y5Var.container, d6Var).Q(R.raw.star_premium_2, 36, AndroidUtilities.premiumText(LocaleController.getString(R.string.StoryLinkPremium), new f5(q6Var, 1))).k(true);
                     return Boolean.FALSE;
                 }
                 int i10 = 0;
                 for (int i11 = 0; i11 < j6Var.getChildCount(); i11++) {
-                    if (j6Var.getChildAt(i11) instanceof qg.t0) {
+                    if (j6Var.getChildAt(i11) instanceof qg.r0) {
                         i10++;
                     }
                 }
                 if (i10 >= 3) {
-                    new org.telegram.ui.Components.xc(y5Var.container, d6Var).M(LocaleController.getString(R.string.StoryLinkLimitTitle), LocaleController.formatPluralString("StoryLinkLimitMessage", 3, new Object[0]), R.raw.linkbroken).k(true);
+                    new org.telegram.ui.Components.yc(y5Var.container, d6Var).M(LocaleController.getString(R.string.StoryLinkLimitTitle), LocaleController.formatPluralString("StoryLinkLimitMessage", 3, new Object[0]), R.raw.linkbroken).k(true);
                     return Boolean.FALSE;
                 }
                 zArr[0] = false;
@@ -106,7 +106,7 @@ public final /* synthetic */ class o5 implements Utilities.CallbackReturn {
                     return Boolean.FALSE;
                 }
                 final TL_aicompose.TL_aiComposeTone tL_aiComposeTone = (TL_aicompose.TL_aiComposeTone) aiComposeTone;
-                o70 F = o70.F(e0Var.container, d6Var2, c0Var);
+                y70 F = y70.F(e0Var.container, d6Var2, c0Var);
                 F.W(org.telegram.ui.ActionBar.h6.b0(AndroidUtilities.dp(12.0f), org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.d6, d6Var2)));
                 final int i12 = 0;
                 F.l(R.drawable.msg_edit, LocaleController.getString(R.string.AIEditorEditStyle), new Runnable() { // from class: org.telegram.ui.Components.f
@@ -136,15 +136,15 @@ public final /* synthetic */ class o5 implements Utilities.CallbackReturn {
                                 alertDialog$Builder.a.R = LocaleController.getString(R.string.AIEditorDeleteStyle);
                                 alertDialog$Builder.a.T = LocaleController.getString(R.string.AIEditorDeleteStyleText);
                                 alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-                                alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new org.telegram.ui.u(19, e0Var3, tL_aiComposeTone));
+                                alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new org.telegram.ui.o(20, e0Var3, tL_aiComposeTone));
                                 alertDialog$Builder.d(-1);
                                 alertDialog$Builder.o();
                                 break;
                         }
                     }
                 }, tL_aiComposeTone.creator);
-                F.c(R.drawable.msg_share, LocaleController.getString(R.string.AIEditorShareStyle), new org.telegram.ui.ActionBar.m5(e0Var, tL_aiComposeTone, context, d6Var2, 15), false);
-                F.m(!tL_aiComposeTone.creator, R.drawable.msg_delete, LocaleController.getString(R.string.AIEditorRemoveStyle), true, new rh(19, e0Var, tL_aiComposeTone));
+                F.c(R.drawable.msg_share, LocaleController.getString(R.string.AIEditorShareStyle), new org.telegram.ui.ActionBar.l5(e0Var, tL_aiComposeTone, context, d6Var2, 15), false);
+                F.m(!tL_aiComposeTone.creator, R.drawable.msg_delete, LocaleController.getString(R.string.AIEditorRemoveStyle), true, new dh(25, e0Var, tL_aiComposeTone));
                 final int i13 = 1;
                 F.m(tL_aiComposeTone.creator, R.drawable.msg_delete, LocaleController.getString(R.string.AIEditorDeleteStyle), true, new Runnable() { // from class: org.telegram.ui.Components.f
                     @Override // java.lang.Runnable
@@ -173,7 +173,7 @@ public final /* synthetic */ class o5 implements Utilities.CallbackReturn {
                                 alertDialog$Builder.a.R = LocaleController.getString(R.string.AIEditorDeleteStyle);
                                 alertDialog$Builder.a.T = LocaleController.getString(R.string.AIEditorDeleteStyleText);
                                 alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-                                alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new org.telegram.ui.u(19, e0Var3, tL_aiComposeTone));
+                                alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new org.telegram.ui.o(20, e0Var3, tL_aiComposeTone));
                                 alertDialog$Builder.d(-1);
                                 alertDialog$Builder.o();
                                 break;
@@ -188,17 +188,17 @@ public final /* synthetic */ class o5 implements Utilities.CallbackReturn {
                 MessageObject messageObject = ((rh.g) this.d).b;
                 return rh.c.d((View) obj, str, str2, messageObject.getDocument(), messageObject);
             default:
-                ml0 ml0Var = (ml0) this.b;
+                wl0 wl0Var = (wl0) this.b;
                 Utilities.CallbackReturn callbackReturn = (Utilities.CallbackReturn) this.c;
                 SparseIntArray sparseIntArray = (SparseIntArray) this.d;
                 View view = (View) obj;
                 try {
-                    if (view.getParent() != ml0Var) {
+                    if (view.getParent() != wl0Var) {
                         return Boolean.FALSE;
                     }
                     Boolean bool = (Boolean) callbackReturn.run(view);
                     boolean booleanValue = bool.booleanValue();
-                    s4.c1 T = ml0Var.T(view);
+                    s4.c1 T = wl0Var.T(view);
                     if (T != null) {
                         sparseIntArray.put(T.f, booleanValue ? 1 : 0);
                     }

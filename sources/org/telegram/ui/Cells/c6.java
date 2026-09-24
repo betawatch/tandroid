@@ -15,10 +15,10 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.cu;
-import org.telegram.ui.m61;
-import org.telegram.ui.q51;
+import org.telegram.ui.n61;
+import org.telegram.ui.r51;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class c6 extends cu {
     public final /* synthetic */ int c;
@@ -63,7 +63,7 @@ public final class c6 extends cu {
     public void invalidate() {
         switch (this.c) {
             case 1:
-                if (!zg.f0.b) {
+                if (!zg.e0.b) {
                     super.invalidate();
                     break;
                 }
@@ -115,8 +115,8 @@ public final class c6 extends cu {
                 break;
             case 1:
                 if (z10) {
-                    ((q51) this.d).y.q();
-                    AndroidUtilities.runOnUIThread(new m61(this, 0), 200L);
+                    ((r51) this.d).y.q();
+                    AndroidUtilities.runOnUIThread(new n61(this, 0), 200L);
                 }
                 super.onFocusChanged(z10, i10, rect);
                 break;
@@ -131,7 +131,7 @@ public final class c6 extends cu {
         switch (this.c) {
             case 2:
                 super.onSizeChanged(i10, i11, i12, i13);
-                postOnAnimation(new org.telegram.ui.web.t0(this, 19));
+                postOnAnimation(new org.telegram.ui.web.q0(this, 20));
                 break;
             default:
                 super.onSizeChanged(i10, i11, i12, i13);
@@ -180,10 +180,10 @@ public final class c6 extends cu {
                 }
                 break;
             case 1:
-                if (motionEvent.getAction() != 1 || !((q51) this.d).y.u()) {
+                if (motionEvent.getAction() != 1 || !((r51) this.d).y.u()) {
                     break;
                 } else {
-                    AndroidUtilities.runOnUIThread(new m61(this, 1), 200L);
+                    AndroidUtilities.runOnUIThread(new n61(this, 1), 200L);
                     break;
                 }
         }

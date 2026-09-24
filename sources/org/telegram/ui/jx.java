@@ -1,33 +1,19 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.view.MotionEvent;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class jx extends org.telegram.ui.Components.ia {
-    @Override // org.telegram.ui.Components.ml0, android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        return false;
+public final class jx extends s4.c0 {
+    public final /* synthetic */ py I;
+    public final /* synthetic */ kx J;
+
+    public jx(kx kxVar, py pyVar) {
+        this.J = kxVar;
+        this.I = pyVar;
     }
 
-    @Override // org.telegram.ui.Components.ml0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ml0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ia
-    public final int w1() {
-        return AndroidUtilities.dp(48.0f);
-    }
-
-    @Override // org.telegram.ui.Components.ia, org.telegram.ui.Components.ml0, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
+    @Override // s4.c0
+    public final int R0() {
+        py pyVar = this.I;
+        return (pyVar.s == 0 && this.J.W.Z3() && pyVar.v == 2) ? 1 : 0;
     }
 }

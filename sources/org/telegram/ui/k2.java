@@ -6,15 +6,15 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class k2 extends View {
-    public final r70 a;
+    public final p70 a;
     public final org.telegram.ui.Components.qq b;
 
-    public k2(Context context, r70 r70Var) {
+    public k2(Context context, p70 p70Var) {
         super(context);
-        this.a = r70Var;
+        this.a = p70Var;
         org.telegram.ui.Components.qq qqVar = new org.telegram.ui.Components.qq(new ColorDrawable(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Qk, false)), org.telegram.ui.ActionBar.h6.U0(context, R.drawable.greydivider_bottom, -16777216));
         this.b = qqVar;
         qqVar.w = true;

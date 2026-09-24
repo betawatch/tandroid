@@ -29,7 +29,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public abstract class ko extends LinearLayout {
     public static final /* synthetic */ int L = 0;
@@ -50,7 +50,7 @@ public abstract class ko extends LinearLayout {
     public w9 n;
     public final org.telegram.ui.ActionBar.d6 r;
     public boolean s;
-    public bj0 v;
+    public lj0 v;
     public TextView w;
     public bi.o x;
     public boolean y;
@@ -78,15 +78,15 @@ public abstract class ko extends LinearLayout {
         w9 w9Var = new w9(context);
         this.h = w9Var;
         w9Var.getImageReceiver().setAspectFit(true);
-        frameLayout.addView(this.h, w7.x5.c(112.0f, 112));
-        w7.z5.a(this.h);
+        frameLayout.addView(this.h, w7.y5.c(112.0f, 112));
+        w7.a6.a(this.h);
         w9 w9Var2 = new w9(context);
         this.n = w9Var2;
         w9Var2.getImageReceiver().setAspectFit(true);
-        frameLayout.addView(this.n, w7.x5.c(112.0f, 112));
+        frameLayout.addView(this.n, w7.y5.c(112.0f, 112));
         this.n.setVisibility(8);
         this.n.setAlpha(0.0f);
-        w7.z5.a(this.n);
+        w7.a6.a(this.n);
         e();
         int i11 = org.telegram.ui.ActionBar.h6.ic;
         textView.setTextColor(org.telegram.ui.ActionBar.h6.v0(i11, d6Var));
@@ -185,9 +185,9 @@ public abstract class ko extends LinearLayout {
         this.E = z11;
         if (z10) {
             if (this.v == null) {
-                bj0 bj0Var = new bj0(getContext());
-                this.v = bj0Var;
-                bj0Var.setScaleType(ImageView.ScaleType.CENTER);
+                lj0 lj0Var = new lj0(getContext());
+                this.v = lj0Var;
+                lj0Var.setScaleType(ImageView.ScaleType.CENTER);
                 this.v.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
                 this.v.setBackground(org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(78.0f), 469762048));
                 if (z11) {
@@ -224,7 +224,7 @@ public abstract class ko extends LinearLayout {
                 bi.o oVar2 = this.x;
                 int dp = AndroidUtilities.dp(15.0f);
                 oVar2.setBackground(org.telegram.ui.ActionBar.h6.i0(dp, dp, dp, dp, 503316480, 855638016, 855638016));
-                w7.z5.a(this.x);
+                w7.a6.a(this.x);
             }
             this.x.setText(str);
             this.x.setTextColor(org.telegram.ui.ActionBar.h6.v0(i10, d6Var));
@@ -272,14 +272,14 @@ public abstract class ko extends LinearLayout {
     public final void e() {
         removeAllViews();
         if (!this.y) {
-            addView(this.b, w7.x5.t(-2, -2, 1, 20, 6, 20, 6));
-            addView(this.c, w7.x5.t(-2, -2, 1, 20, 6, 20, 6));
-            addView(this.f, w7.x5.t(112, 112, 1, 16, 10, 16, 16));
+            addView(this.b, w7.y5.t(-2, -2, 1, 20, 6, 20, 6));
+            addView(this.c, w7.y5.t(-2, -2, 1, 20, 6, 20, 6));
+            addView(this.f, w7.y5.t(112, 112, 1, 16, 10, 16, 16));
             return;
         }
-        addView(this.v, w7.x5.t(78, 78, 49, 20, 9, 20, 9));
+        addView(this.v, w7.y5.t(78, 78, 49, 20, 9, 20, 9));
         boolean premiumFeaturesBlocked = MessagesController.getInstance(this.e).premiumFeaturesBlocked();
-        addView(this.w, w7.x5.t(-2, -2, 49, 20, 0, 20, premiumFeaturesBlocked ? 13 : 9));
+        addView(this.w, w7.y5.t(-2, -2, 49, 20, 0, 20, premiumFeaturesBlocked ? 13 : 9));
         if (premiumFeaturesBlocked) {
             return;
         }
@@ -287,7 +287,7 @@ public abstract class ko extends LinearLayout {
         if ((oVar == null || TextUtils.isEmpty(oVar.getText())) && this.E) {
             return;
         }
-        addView(this.x, w7.x5.t(-2, 30, 49, 20, 2, 20, 13));
+        addView(this.x, w7.y5.t(-2, 30, 49, 20, 2, 20, 13));
     }
 
     @Override // android.view.ViewGroup, android.view.View

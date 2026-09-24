@@ -19,11 +19,11 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class v6 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public final int a;
-    public final d90 b;
+    public final n90 b;
     public final Runnable c;
 
     public v6(Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var, Runnable runnable, org.telegram.ui.aj ajVar) {
@@ -33,34 +33,34 @@ public final class v6 extends FrameLayout implements NotificationCenter.Notifica
         ContactsController.getInstance(i10).loadGlobalPrivacySetting();
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        addView(linearLayout, w7.x5.e(-1, -2, 17));
+        addView(linearLayout, w7.y5.e(-1, -2, 17));
         ImageView imageView = new ImageView(context);
         imageView.setBackground(org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(80.0f), org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.K7, d6Var)));
         imageView.setImageResource(R.drawable.large_archive);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        linearLayout.addView(imageView, w7.x5.t(80, 80, 49, 0, ajVar != null ? 14 : 0, 0, 14));
+        linearLayout.addView(imageView, w7.y5.t(80, 80, 49, 0, ajVar != null ? 14 : 0, 0, 14));
         TextView textView = new TextView(context);
         textView.setTextSize(1, 20.0f);
         textView.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.j5, d6Var));
         textView.setTypeface(AndroidUtilities.bold());
         textView.setGravity(1);
         textView.setText(LocaleController.getString(R.string.ArchiveHintHeader1));
-        linearLayout.addView(textView, w7.x5.t(-1, -2, 1, 32, 0, 32, 9));
-        d90 d90Var = new d90(context, null);
-        this.b = d90Var;
-        d90Var.setTextSize(1, 14.0f);
-        d90Var.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.z6, d6Var));
-        d90Var.setGravity(1);
+        linearLayout.addView(textView, w7.y5.t(-1, -2, 1, 32, 0, 32, 9));
+        n90 n90Var = new n90(context, null);
+        this.b = n90Var;
+        n90Var.setTextSize(1, 14.0f);
+        n90Var.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.z6, d6Var));
+        n90Var.setGravity(1);
         b();
-        linearLayout.addView(d90Var, w7.x5.t(-1, -2, 1, 32, 0, 32, 25));
-        linearLayout.addView(a(R.drawable.msg_archive_archive, LocaleController.getString("ArchiveHintSection1"), LocaleController.getString("ArchiveHintSection1Info"), d6Var), w7.x5.t(-1, -2, 7, 32, 0, 32, 16));
-        linearLayout.addView(a(R.drawable.msg_archive_hide, LocaleController.getString("ArchiveHintSection2"), LocaleController.getString("ArchiveHintSection2Info"), d6Var), w7.x5.t(-1, -2, 7, 32, 0, 32, 16));
-        linearLayout.addView(a(R.drawable.msg_archive_stories, LocaleController.getString("ArchiveHintSection3"), LocaleController.getString("ArchiveHintSection3Info"), d6Var), w7.x5.t(-1, -2, 7, 32, 0, 32, 16));
+        linearLayout.addView(n90Var, w7.y5.t(-1, -2, 1, 32, 0, 32, 25));
+        linearLayout.addView(a(R.drawable.msg_archive_archive, LocaleController.getString("ArchiveHintSection1"), LocaleController.getString("ArchiveHintSection1Info"), d6Var), w7.y5.t(-1, -2, 7, 32, 0, 32, 16));
+        linearLayout.addView(a(R.drawable.msg_archive_hide, LocaleController.getString("ArchiveHintSection2"), LocaleController.getString("ArchiveHintSection2Info"), d6Var), w7.y5.t(-1, -2, 7, 32, 0, 32, 16));
+        linearLayout.addView(a(R.drawable.msg_archive_stories, LocaleController.getString("ArchiveHintSection3"), LocaleController.getString("ArchiveHintSection3Info"), d6Var), w7.y5.t(-1, -2, 7, 32, 0, 32, 16));
         if (ajVar != null) {
-            ci.d g10 = org.telegram.messenger.ul.g(24, context, d6Var, true);
+            ci.d g10 = org.telegram.messenger.ok.g(24, context, d6Var, true);
             g10.g(LocaleController.getString("GotIt"), false, true);
             g10.setOnClickListener(new u6(0, ajVar));
-            linearLayout.addView(g10, w7.x5.k(14.0f, 18.0f, 14.0f, 0.0f, -1, 48));
+            linearLayout.addView(g10, w7.y5.k(14.0f, 18.0f, 14.0f, 0.0f, -1, 48));
         }
     }
 
@@ -70,7 +70,7 @@ public final class v6 extends FrameLayout implements NotificationCenter.Notifica
         int i11 = org.telegram.ui.ActionBar.h6.j5;
         imageView.setColorFilter(org.telegram.ui.ActionBar.h6.v0(i11, d6Var));
         imageView.setImageResource(i10);
-        frameLayout.addView(imageView, w7.x5.d(24, 24.0f, 51, 0.0f, 8.0f, 0.0f, 0.0f));
+        frameLayout.addView(imageView, w7.y5.d(24, 24.0f, 51, 0.0f, 8.0f, 0.0f, 0.0f));
         LinearLayout linearLayout = new LinearLayout(getContext());
         linearLayout.setOrientation(1);
         TextView textView = new TextView(getContext());
@@ -78,13 +78,13 @@ public final class v6 extends FrameLayout implements NotificationCenter.Notifica
         textView.setTypeface(AndroidUtilities.bold());
         textView.setTextSize(0, AndroidUtilities.dp(14.0f));
         textView.setText(str);
-        linearLayout.addView(textView, w7.x5.k(0.0f, 2.6f, 0.0f, 0.0f, -1, -2));
+        linearLayout.addView(textView, w7.y5.k(0.0f, 2.6f, 0.0f, 0.0f, -1, -2));
         TextView textView2 = new TextView(getContext());
         textView2.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.z6, d6Var));
         textView2.setTextSize(0, AndroidUtilities.dp(14.0f));
         textView2.setText(str2);
-        linearLayout.addView(textView2, w7.x5.k(0.0f, 2.6f, 0.0f, 0.0f, -1, -2));
-        frameLayout.addView(linearLayout, w7.x5.d(-1, -2.0f, 55, 41.0f, 0.0f, 0.0f, 0.0f));
+        linearLayout.addView(textView2, w7.y5.k(0.0f, 2.6f, 0.0f, 0.0f, -1, -2));
+        frameLayout.addView(linearLayout, w7.y5.d(-1, -2.0f, 55, 41.0f, 0.0f, 0.0f, 0.0f));
         return frameLayout;
     }
 

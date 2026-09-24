@@ -12,10 +12,10 @@ import java.util.List;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import n7.a1;
-import v7.a7;
+import n7.z0;
+import v7.b7;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class i implements cf.a {
     public static final Pattern j = Pattern.compile("^[!\"#\\$%&'\\(\\)\\*\\+,\\-\\./:;<=>\\?@\\[\\\\\\]\\^_`\\{\\|\\}~\\p{Pc}\\p{Pd}\\p{Pe}\\p{Pf}\\p{Pi}\\p{Po}\\p{Ps}]");
@@ -23,7 +23,7 @@ public final class i implements cf.a {
     public static final Pattern l = Pattern.compile("^[\\p{Zs}\t\r\n\f]");
     public static final Pattern m = Pattern.compile("^[!\"#$%&'()*+,./:;<=>?@\\[\\\\\\]^_`{|}~-]");
     public static final Pattern n = Pattern.compile("\\s+");
-    public final a1 a;
+    public final z0 a;
     public final BitSet b;
     public final HashMap c;
     public final HashMap d;
@@ -33,9 +33,9 @@ public final class i implements cf.a {
     public ye.b h;
     public f6.f i;
 
-    public i(a1 a1Var, List list, List list2) {
+    public i(z0 z0Var, List list, List list2) {
         k kVar;
-        this.a = a1Var;
+        this.a = z0Var;
         HashMap hashMap = new HashMap(list.size());
         Iterator it = list.iterator();
         while (it.hasNext()) {
@@ -236,7 +236,7 @@ public final class i implements cf.a {
         if (pVar3 == pVar4) {
             return;
         }
-        a7.b(pVar3, pVar4);
+        b7.b(pVar3, pVar4);
     }
 
     public final String c(Pattern pattern) {
@@ -309,7 +309,7 @@ public final class i implements cf.a {
                         bVar5 = bVar6;
                     }
                     if (sVar2 != sVar && (pVar = (p) sVar2.f) != sVar) {
-                        a7.b(pVar, (p) sVar.e);
+                        b7.b(pVar, (p) sVar.e);
                     }
                     aVar.d(sVar2, sVar, i10);
                     if (bVar4.g == 0) {

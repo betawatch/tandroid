@@ -12,7 +12,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public class o5 extends Drawable implements w5 {
     public yh.i8 E;
@@ -22,7 +22,7 @@ public class o5 extends Drawable implements w5 {
     public int I;
     public int J;
     public final Rect K;
-    public final og L;
+    public final pg L;
     public boolean a;
     public final int b;
     public final OvershootInterpolator c;
@@ -30,7 +30,7 @@ public class o5 extends Drawable implements w5 {
     public final e6 e;
     public final Drawable[] f;
     public View h;
-    public org.telegram.ui.z61 n;
+    public org.telegram.ui.a71 n;
     public final boolean r;
     public final int s;
     public int v;
@@ -89,7 +89,7 @@ public class o5 extends Drawable implements w5 {
         rect.set(bounds);
         rect.offset(this.I, this.J);
         float e = this.e.e(this.y);
-        og ogVar = this.L;
+        pg pgVar = this.L;
         if (e > 0.0f) {
             yh.i8 i8Var = this.E;
             i8Var.c.set(rect);
@@ -98,9 +98,9 @@ public class o5 extends Drawable implements w5 {
             yh.i8 i8Var2 = this.E;
             Integer num = this.F;
             i8Var2.a(canvas, org.telegram.ui.ActionBar.h6.l1(e, num == null ? -1 : num.intValue()));
-            yf.h.d().a(15, ogVar);
+            yf.h.d().a(15, pgVar);
         } else {
-            yf.h.d().f(ogVar);
+            yf.h.d().f(pgVar);
         }
         Drawable[] drawableArr = this.f;
         Drawable drawable = drawableArr[1];
@@ -299,9 +299,9 @@ public class o5 extends Drawable implements w5 {
                 this.h.invalidate();
             }
         }
-        org.telegram.ui.z61 z61Var = this.n;
-        if (z61Var != null) {
-            z61Var.invalidate();
+        org.telegram.ui.a71 a71Var = this.n;
+        if (a71Var != null) {
+            a71Var.invalidate();
         }
         invalidateSelf();
     }
@@ -419,7 +419,7 @@ public class o5 extends Drawable implements w5 {
         this.f = new Drawable[2];
         this.v = 255;
         this.K = new Rect();
-        this.L = new og(this, 6);
+        this.L = new pg(this, 6);
         e6Var.a = view;
         this.h = view;
         e6Var2.a = view;

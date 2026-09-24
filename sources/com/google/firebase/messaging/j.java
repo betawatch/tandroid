@@ -10,11 +10,11 @@ import com.google.android.gms.tasks.Tasks;
 import java.util.concurrent.ExecutorService;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class j {
     public static final Object c = new Object();
-    public static g0 d;
+    public static f0 d;
     public final Object a;
     public final Object b;
 
@@ -24,27 +24,27 @@ public final class j {
     }
 
     public static Task a(Context context, Intent intent, boolean z10) {
-        g0 g0Var;
+        f0 f0Var;
         if (Log.isLoggable("FirebaseMessaging", 3)) {
             Log.d("FirebaseMessaging", "Binding to service");
         }
         synchronized (c) {
             try {
                 if (d == null) {
-                    d = new g0(context);
+                    d = new f0(context);
                 }
-                g0Var = d;
+                f0Var = d;
             } catch (Throwable th2) {
                 throw th2;
             }
         }
         if (!z10) {
-            return g0Var.b(intent).continueWith(new a3.b(2), new w1(26));
+            return f0Var.b(intent).continueWith(new a3.b(2), new w1(26));
         }
         if (t.c().e(context)) {
-            d0.c(context, g0Var, intent);
+            c0.c(context, f0Var, intent);
         } else {
-            g0Var.b(intent);
+            f0Var.b(intent);
         }
         return Tasks.forResult(-1);
     }

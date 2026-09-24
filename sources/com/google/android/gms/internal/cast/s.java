@@ -6,7 +6,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import java.util.HashSet;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class s implements OnSuccessListener, OnFailureListener, d6.h {
     public final /* synthetic */ u a;
@@ -24,7 +24,7 @@ public final /* synthetic */ class s implements OnSuccessListener, OnFailureList
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void i(d6.f fVar, boolean z10) {
+    public /* bridge */ /* synthetic */ void h(d6.f fVar, boolean z10) {
     }
 
     @Override // d6.h
@@ -100,7 +100,7 @@ public final /* synthetic */ class s implements OnSuccessListener, OnFailureList
     }
 
     @Override // d6.h
-    public void w(d6.f fVar, String str) {
+    public void x(d6.f fVar, String str) {
         c6.k kVar;
         g6.b bVar = u.i;
         u uVar = this.a;
@@ -132,6 +132,6 @@ public final /* synthetic */ class s implements OnSuccessListener, OnFailureList
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void x(d6.f fVar, int i10) {
+    public /* bridge */ /* synthetic */ void y(d6.f fVar, int i10) {
     }
 }

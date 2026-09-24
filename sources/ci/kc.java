@@ -15,19 +15,19 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.gk0;
+import org.telegram.ui.Components.aw0;
 import org.telegram.ui.Components.lz;
-import org.telegram.ui.Components.pv0;
+import org.telegram.ui.Components.qk0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public final class kc extends pv0 {
+public final class kc extends aw0 {
     public boolean A0;
     public float B0;
     public float C0;
     public float D0;
     public final /* synthetic */ lc E0;
-    public final org.telegram.ui.Cells.ja w0;
+    public final ka.c w0;
     public final ScaleGestureDetector x0;
     public boolean y0;
     public boolean z0;
@@ -37,7 +37,7 @@ public final class kc extends pv0 {
         super(activity, null);
         this.E0 = lcVar;
         this.A0 = false;
-        this.w0 = new org.telegram.ui.Cells.ja(activity, new ic(this));
+        this.w0 = new ka.c(activity, new ic(this));
         this.x0 = new ScaleGestureDetector(activity, new jc(this));
     }
 
@@ -98,7 +98,7 @@ public final class kc extends pv0 {
     /* JADX WARN: Type inference failed for: r11v3, types: [boolean] */
     /* JADX WARN: Type inference failed for: r11v5 */
     /* JADX WARN: Type inference failed for: r11v7 */
-    @Override // org.telegram.ui.Components.pv0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -108,7 +108,7 @@ public final class kc extends pv0 {
         ?? r11;
         nb nbVar;
         float f7;
-        qg.d2 d2Var;
+        qg.b2 b2Var;
         lc lcVar = this.E0;
         RectF rectF = lcVar.H;
         Path path = lcVar.e0;
@@ -142,8 +142,8 @@ public final class kc extends pv0 {
                     float[] fArr = nbVar.j2;
                     if (nbVar.d2) {
                         nbVar.d2 = r11;
-                        if (nbVar.Z1 != null && (d2Var = nbVar.a2) != null) {
-                            fArr[r11] = d2Var.getMeasuredWidth() / 2.0f;
+                        if (nbVar.Z1 != null && (b2Var = nbVar.a2) != null) {
+                            fArr[r11] = b2Var.getMeasuredWidth() / 2.0f;
                             fArr[1] = nbVar.a2.getMeasuredHeight() / 2.0f;
                             nbVar.a2.getMatrix().mapPoints(fArr);
                             f7 = 1.0f;
@@ -192,12 +192,12 @@ public final class kc extends pv0 {
                                         lcVar.F.e.draw(canvas);
                                         lcVar.F.e.setRoundRadius(i11);
                                     } else {
-                                        org.telegram.ui.Cells.e7 e7Var = gcVar.d;
-                                        if (e7Var != null) {
-                                            e7Var.setBounds((int) rectF3.left, (int) rectF3.top, (int) rectF3.right, (int) rectF3.bottom);
-                                            org.telegram.ui.Cells.e7 e7Var2 = lcVar.F.d;
-                                            e7Var2.d = (int) com.google.android.gms.internal.vision.e2.C(clamp, 255.0f, clamp, clamp);
-                                            e7Var2.draw(canvas);
+                                        org.telegram.ui.Cells.f7 f7Var = gcVar.d;
+                                        if (f7Var != null) {
+                                            f7Var.setBounds((int) rectF3.left, (int) rectF3.top, (int) rectF3.right, (int) rectF3.bottom);
+                                            org.telegram.ui.Cells.f7 f7Var2 = lcVar.F.d;
+                                            f7Var2.d = (int) com.google.android.gms.internal.vision.e2.C(clamp, 255.0f, clamp, clamp);
+                                            f7Var2.draw(canvas);
                                         }
                                     }
                                     lcVar.F.getClass();
@@ -269,7 +269,7 @@ public final class kc extends pv0 {
             this.z0 = false;
         }
         this.x0.onTouchEvent(motionEvent);
-        this.w0.y(motionEvent);
+        this.w0.g0(motionEvent);
         if (motionEvent.getAction() == 1 && !this.y0) {
             if (lcVar.r.getTranslationY() <= 0.0f) {
                 kb kbVar = lcVar.M0;
@@ -288,7 +288,7 @@ public final class kc extends pv0 {
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.pv0
+    @Override // org.telegram.ui.Components.aw0
     public int getBottomPadding() {
         int height = getHeight();
         lc lcVar = this.E0;
@@ -299,7 +299,7 @@ public final class kc extends pv0 {
         return getHeight() - this.E0.r.getBottom();
     }
 
-    @Override // org.telegram.ui.Components.pv0
+    @Override // org.telegram.ui.Components.aw0
     public /* bridge */ /* synthetic */ int[] getColorKeys() {
         return null;
     }
@@ -310,7 +310,7 @@ public final class kc extends pv0 {
         return (height - lcVar.b0) - lcVar.r.getBottom();
     }
 
-    @Override // org.telegram.ui.Components.pv0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.aw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         int i14;
         lz emojiView;
@@ -323,7 +323,7 @@ public final class kc extends pv0 {
             i15 = 0;
         }
         int i16 = lcVar.S;
-        int b10 = w7.p.b((measuredWidth - i16) / 2, lcVar.Y, (measuredWidth - lcVar.a0) - i16);
+        int b10 = w7.q.b((measuredWidth - i16) / 2, lcVar.Y, (measuredWidth - lcVar.a0) - i16);
         int i17 = lcVar.S + b10;
         if (lcVar.V) {
             i14 = lcVar.T;
@@ -363,14 +363,14 @@ public final class kc extends pv0 {
             if (lzVar != null) {
                 lzVar.layout(lcVar.Y, (measuredHeight - lcVar.b0) - lzVar.getMeasuredHeight(), measuredWidth - lcVar.a0, measuredHeight - lcVar.b0);
             }
-            gk0 gk0Var = lcVar.v1.Z1;
-            if (gk0Var != null) {
+            qk0 qk0Var = lcVar.v1.Z1;
+            if (qk0Var != null) {
                 int i21 = lcVar.Y;
-                gk0Var.layout(i21, lcVar.Z, gk0Var.getMeasuredWidth() + i21, lcVar.v1.Z1.getMeasuredHeight() + lcVar.Z);
-                yh.u3 u3Var = lcVar.v1.Z1.getReactionsWindow() != null ? lcVar.v1.Z1.getReactionsWindow().c : null;
-                if (u3Var != null) {
+                qk0Var.layout(i21, lcVar.Z, qk0Var.getMeasuredWidth() + i21, lcVar.v1.Z1.getMeasuredHeight() + lcVar.Z);
+                yh.t3 t3Var = lcVar.v1.Z1.getReactionsWindow() != null ? lcVar.v1.Z1.getReactionsWindow().c : null;
+                if (t3Var != null) {
                     int i22 = lcVar.Y;
-                    u3Var.layout(i22, lcVar.Z, u3Var.getMeasuredWidth() + i22, u3Var.getMeasuredHeight() + lcVar.Z);
+                    t3Var.layout(i22, lcVar.Z, t3Var.getMeasuredWidth() + i22, t3Var.getMeasuredHeight() + lcVar.Z);
                 }
             }
         }
@@ -446,9 +446,9 @@ public final class kc extends pv0 {
             if (lzVar != null) {
                 lzVar.measure(View.MeasureSpec.makeMeasureSpec(i12, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(lcVar.v1.p2.getLayoutParams().height, TLObject.FLAG_30));
             }
-            gk0 gk0Var = lcVar.v1.Z1;
-            if (gk0Var != null) {
-                measureChild(gk0Var, i10, i11);
+            qk0 qk0Var = lcVar.v1.Z1;
+            if (qk0Var != null) {
+                measureChild(qk0Var, i10, i11);
                 if (lcVar.v1.Z1.getReactionsWindow() != null) {
                     measureChild(lcVar.v1.Z1.getReactionsWindow().c, i10, i11);
                 }

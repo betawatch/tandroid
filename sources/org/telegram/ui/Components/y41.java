@@ -1,46 +1,39 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.widget.ScrollView;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class y41 implements sx0 {
-    public final /* synthetic */ TLRPC.InputStickerSet a;
-    public final /* synthetic */ d51 b;
+public final class y41 extends ScrollView {
+    public Drawable a;
+    public e6 b;
+    public boolean c;
 
-    public y41(d51 d51Var, TLRPC.InputStickerSet inputStickerSet) {
-        this.b = d51Var;
-        this.a = inputStickerSet;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        float d = this.b.d(canScrollVertically(-1) ? 1.0f : 0.0f, false) * 0.5f;
+        if (d > 0.0f) {
+            if (this.a == null) {
+                this.a = getContext().getResources().getDrawable(R.drawable.header_shadow);
+            }
+            this.a.setBounds(0, getScrollY(), getWidth(), this.a.getIntrinsicHeight() + getScrollY());
+            this.a.setAlpha((int) (d * 255.0f));
+            this.a.draw(canvas);
+        }
     }
 
-    @Override // org.telegram.ui.Components.sx0
-    public final void a() {
-        d51 d51Var = this.b;
-        s4.h0 adapter = d51Var.n.getAdapter();
-        c51 c51Var = d51Var.s;
-        TLRPC.InputStickerSet inputStickerSet = this.a;
-        int i10 = 0;
-        if (adapter == c51Var) {
-            while (i10 < c51Var.e.size()) {
-                TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) c51Var.e.get(i10);
-                if (stickerSetCovered.set.id == inputStickerSet.id) {
-                    c51Var.F(stickerSetCovered, null);
-                    return;
-                }
-                i10++;
-            }
-            return;
-        }
-        gg.g2 g2Var = d51Var.v;
-        ArrayList arrayList = g2Var.E;
-        while (i10 < arrayList.size()) {
-            TLRPC.StickerSetCovered stickerSetCovered2 = (TLRPC.StickerSetCovered) arrayList.get(i10);
-            if (stickerSetCovered2.set.id == inputStickerSet.id) {
-                g2Var.F(stickerSetCovered2, null);
-                return;
-            }
-            i10++;
+    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
+    public final void onNestedScroll(View view, int i10, int i11, int i12, int i13) {
+        super.onNestedScroll(view, i10, i11, i12, i13);
+        boolean canScrollVertically = canScrollVertically(-1);
+        if (this.c != canScrollVertically) {
+            invalidate();
+            this.c = canScrollVertically;
         }
     }
 }

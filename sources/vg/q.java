@@ -3,9 +3,9 @@ package vg;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.zf0;
+import org.telegram.ui.yf0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class q extends AnimatorListenerAdapter {
     public final /* synthetic */ float[] a;
@@ -28,12 +28,12 @@ public final class q extends AnimatorListenerAdapter {
         float f7 = 1.0f - fArr[0];
         fArr[0] = 1.0f;
         r rVar = this.e;
-        zf0 zf0Var = rVar.a;
-        zf0Var.b.i = AndroidUtilities.lerp(this.b, this.c, 1.0f);
-        sg.a aVar = zf0Var.b;
+        yf0 yf0Var = rVar.a;
+        yf0Var.b.i = AndroidUtilities.lerp(this.b, this.c, 1.0f);
+        sg.a aVar = yf0Var.b;
         aVar.f = (f7 * 360.0f * (this.d ? 1 : -1)) + aVar.f;
         aVar.b();
-        rVar.a(zf0Var.b.i);
-        zf0Var.h(750L);
+        rVar.a(yf0Var.b.i);
+        yf0Var.h(750L);
     }
 }

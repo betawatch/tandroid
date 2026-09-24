@@ -24,7 +24,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 import org.telegram.ui.ub1;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class ub1 extends LinearLayout {
     public final /* synthetic */ int a;
@@ -184,16 +184,16 @@ public final class ub1 extends LinearLayout {
                             }
                         }
                         if (i10 != indexOfChild) {
-                            org.telegram.ui.Components.mm0 mm0Var = scrollSlidingTextTabStrip.b;
+                            org.telegram.ui.Components.xm0 xm0Var = scrollSlidingTextTabStrip.b;
                             sparseIntArray.get(i10);
-                            mm0Var.getClass();
+                            xm0Var.getClass();
                         }
                     }
                 } else if (motionEvent.getAction() == 1) {
                     View view3 = scrollSlidingTextTabStrip.c0;
                     if (view3 != null) {
                         final int i12 = 0;
-                        view3.animate().translationX(0.0f).translationY(0.0f).setDuration(320L).setUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.Components.km0
+                        view3.animate().translationX(0.0f).translationY(0.0f).setDuration(320L).setUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.Components.vm0
                             public final /* synthetic */ ub1 b;
 
                             {
@@ -222,7 +222,7 @@ public final class ub1 extends LinearLayout {
                     View view4 = scrollSlidingTextTabStrip.c0;
                     if (view4 != null) {
                         final int i13 = 1;
-                        view4.animate().translationX(0.0f).translationY(0.0f).setDuration(320L).setUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.Components.km0
+                        view4.animate().translationX(0.0f).translationY(0.0f).setDuration(320L).setUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.Components.vm0
                             public final /* synthetic */ ub1 b;
 
                             {
@@ -250,7 +250,7 @@ public final class ub1 extends LinearLayout {
                 }
                 return scrollSlidingTextTabStrip.c0 != null || super.dispatchTouchEvent(motionEvent);
             case 19:
-                if (((yh.v3) this.b).U.c(0)) {
+                if (((yh.u3) this.b).U.c(0)) {
                     return super.dispatchTouchEvent(motionEvent);
                 }
                 return false;
@@ -291,21 +291,21 @@ public final class ub1 extends LinearLayout {
                 }
                 return super.drawChild(canvas, view, j3);
             case 8:
-                org.telegram.ui.Components.jm0 jm0Var = (org.telegram.ui.Components.jm0) this.b;
-                if (view instanceof org.telegram.ui.Components.cx0) {
-                    ((org.telegram.ui.Components.cx0) view).a(jm0Var.i0);
+                org.telegram.ui.Components.um0 um0Var = (org.telegram.ui.Components.um0) this.b;
+                if (view instanceof org.telegram.ui.Components.nx0) {
+                    ((org.telegram.ui.Components.nx0) view).a(um0Var.i0);
                 }
-                if (view == jm0Var.s) {
+                if (view == um0Var.s) {
                     return true;
                 }
                 return super.drawChild(canvas, view, j3);
             case 13:
                 boolean drawChild = super.drawChild(canvas, view, j3);
-                i70 i70Var = (i70) this.b;
-                if (view == i70Var.b && i70Var.x != null) {
-                    int measuredHeight = i70Var.s.getMeasuredHeight();
-                    i70Var.x.setBounds(0, measuredHeight, getMeasuredWidth(), i70Var.x.getIntrinsicHeight() + measuredHeight);
-                    i70Var.x.draw(canvas);
+                g70 g70Var = (g70) this.b;
+                if (view == g70Var.b && g70Var.x != null) {
+                    int measuredHeight = g70Var.s.getMeasuredHeight();
+                    g70Var.x.setBounds(0, measuredHeight, getMeasuredWidth(), g70Var.x.getIntrinsicHeight() + measuredHeight);
+                    g70Var.x.draw(canvas);
                 }
                 return drawChild;
             case 17:
@@ -357,7 +357,7 @@ public final class ub1 extends LinearLayout {
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         switch (this.a) {
             case 4:
-                return org.telegram.ui.ActionBar.u4.b((org.telegram.ui.ActionBar.u4) this.b);
+                return org.telegram.ui.ActionBar.t4.b((org.telegram.ui.ActionBar.t4) this.b);
             default:
                 return super.onInterceptTouchEvent(motionEvent);
         }
@@ -371,9 +371,9 @@ public final class ub1 extends LinearLayout {
                 int i14 = (i13 - i11) / 2;
                 for (int i15 = 0; i15 < getChildCount(); i15++) {
                     View childAt = getChildAt(i15);
-                    if (childAt != ((org.telegram.ui.Components.bw) this.b).s.F && childAt != null) {
+                    if (childAt != ((org.telegram.ui.Components.cw) this.b).s.F && childAt != null) {
                         childAt.layout(paddingLeft, i14 - (childAt.getMeasuredHeight() / 2), childAt.getMeasuredWidth() + paddingLeft, (childAt.getMeasuredHeight() / 2) + i14);
-                        paddingLeft = org.telegram.messenger.z0.C(2.0f, childAt.getMeasuredWidth(), paddingLeft);
+                        paddingLeft = org.telegram.messenger.f0.C(2.0f, childAt.getMeasuredWidth(), paddingLeft);
                     }
                 }
                 break;
@@ -456,19 +456,19 @@ public final class ub1 extends LinearLayout {
                 super.onMeasure(i10, i11);
                 break;
             case 4:
-                org.telegram.ui.ActionBar.u4 u4Var = (org.telegram.ui.ActionBar.u4) this.b;
-                if (org.telegram.ui.ActionBar.u4.b(u4Var) && (size = u4Var.J) != null) {
+                org.telegram.ui.ActionBar.t4 t4Var = (org.telegram.ui.ActionBar.t4) this.b;
+                if (org.telegram.ui.ActionBar.t4.b(t4Var) && (size = t4Var.J) != null) {
                     i10 = View.MeasureSpec.makeMeasureSpec(size.getWidth(), TLObject.FLAG_30);
                 }
                 super.onMeasure(i10, i11);
                 break;
             case 6:
-                super.onMeasure(Math.max(View.MeasureSpec.getSize(i10), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(((org.telegram.ui.Components.bw) this.b).b.getChildCount() * 32), TLObject.FLAG_30)), i11);
+                super.onMeasure(Math.max(View.MeasureSpec.getSize(i10), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(((org.telegram.ui.Components.cw) this.b).b.getChildCount() * 32), TLObject.FLAG_30)), i11);
                 break;
             case 11:
                 super.onMeasure(i10, i11);
                 if (LocaleController.isRTL) {
-                    ((org.telegram.ui.Components.s31) this.b).c.setPivotX(getMeasuredWidth());
+                    ((org.telegram.ui.Components.g41) this.b).c.setPivotX(getMeasuredWidth());
                     break;
                 }
                 break;
@@ -537,10 +537,10 @@ public final class ub1 extends LinearLayout {
     public void setVisibility(int i10) {
         switch (this.a) {
             case 10:
-                org.telegram.ui.Components.xw0 xw0Var = (org.telegram.ui.Components.xw0) this.b;
-                org.telegram.ui.Components.w9 w9Var = xw0Var.b;
+                org.telegram.ui.Components.ix0 ix0Var = (org.telegram.ui.Components.ix0) this.b;
+                org.telegram.ui.Components.w9 w9Var = ix0Var.b;
                 if (getVisibility() == 8 && i10 == 0) {
-                    xw0Var.c();
+                    ix0Var.c();
                     if (LiteMode.isEnabled(3)) {
                         w9Var.getImageReceiver().startAnimation();
                     }

@@ -8,9 +8,9 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public class s2 extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate {
+public class s2 extends org.telegram.ui.ActionBar.e3 implements NotificationCenter.NotificationCenterDelegate {
     public static int G = 1;
     public hg.h E;
     public Utilities.CallbackReturn F;
@@ -46,7 +46,7 @@ public class s2 extends org.telegram.ui.ActionBar.f3 implements NotificationCent
         this.f = i1Var;
         i1Var.b = z10 ? 0 : G;
         i1Var.setAdapter(new j1(this, z10, context));
-        this.containerView.addView(i1Var, w7.x5.e(-1, -1, 87));
+        this.containerView.addView(i1Var, w7.y5.e(-1, -1, 87));
         new i4(this.containerView, false, new e1(this, 0));
         if (!z10) {
             r2 r2Var = new r2(context);
@@ -54,7 +54,7 @@ public class s2 extends org.telegram.ui.ActionBar.f3 implements NotificationCent
             r2Var.G = new e1(this, 1);
             r2Var.F = i1Var.b;
             r2Var.invalidate();
-            this.containerView.addView(r2Var, w7.x5.e(-1, -2, 87));
+            this.containerView.addView(r2Var, w7.y5.e(-1, -2, 87));
         }
         NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.stickersDidLoad);
         NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.groupStickersDidLoad);
@@ -82,11 +82,11 @@ public class s2 extends org.telegram.ui.ActionBar.f3 implements NotificationCent
                 int i11 = s2Var.keyboardHeight;
                 f7 = Math.min(0.0f, Math.max(((i10 - i11) * 0.3f) - s2Var.x, (-i11) / 3.0f));
             }
-            s2Var.container.animate().translationY(f7).setDuration(250L).setInterpolator(org.telegram.ui.ActionBar.p1.w).start();
+            s2Var.container.animate().translationY(f7).setDuration(250L).setInterpolator(org.telegram.ui.ActionBar.o1.w).start();
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.f3
+    @Override // org.telegram.ui.ActionBar.e3
     public final boolean canDismissWithSwipe() {
         return this.f.getTranslationY() >= ((float) ((int) this.n));
     }
@@ -108,7 +108,7 @@ public class s2 extends org.telegram.ui.ActionBar.f3 implements NotificationCent
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
+    @Override // org.telegram.ui.ActionBar.e3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.i2
     public final void dismiss() {
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.stickersDidLoad);
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.groupStickersDidLoad);
@@ -117,7 +117,7 @@ public class s2 extends org.telegram.ui.ActionBar.f3 implements NotificationCent
         FileLog.disableGson(false);
     }
 
-    @Override // org.telegram.ui.ActionBar.f3
+    @Override // org.telegram.ui.ActionBar.e3
     public final int getContainerViewHeight() {
         return this.containerView.getMeasuredHeight() <= 0 ? AndroidUtilities.displaySize.y : (int) (this.containerView.getMeasuredHeight() - this.f.getY());
     }
@@ -137,7 +137,7 @@ public class s2 extends org.telegram.ui.ActionBar.f3 implements NotificationCent
     public final void o0() {
         l2 l2Var;
         this.keyboardVisible = false;
-        this.container.animate().translationY(0.0f).setDuration(250L).setInterpolator(org.telegram.ui.ActionBar.p1.w).start();
+        this.container.animate().translationY(0.0f).setDuration(250L).setInterpolator(org.telegram.ui.ActionBar.o1.w).start();
         for (View view : this.f.getViewPages()) {
             if (view instanceof e2) {
                 l2 l2Var2 = ((e2) view).f;

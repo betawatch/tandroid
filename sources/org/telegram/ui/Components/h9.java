@@ -24,7 +24,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public class h9 extends Drawable {
     public static final int[][] C = {new int[]{-636796, -1090751, -612560, -35006}, new int[]{-693938, -690388, -11246, -22717}, new int[]{-8160001, -5217281, -36183, -1938945}, new int[]{-16133536, -10560448, -4070106, -8331477}, new int[]{-10569989, -14692629, -12191817, -14683687}, new int[]{-11694593, -13910017, -14622003, -15801871}, new int[]{-439392, -304000, -19910, -98718}};
@@ -210,24 +210,24 @@ public class h9 extends Drawable {
                 float f13 = width / 2.0f;
                 canvas.drawCircle(f13, f13, this.o * f13, paint);
                 if (org.telegram.ui.ActionBar.h6.C1) {
-                    yi0 yi0Var = org.telegram.ui.ActionBar.h6.u1;
-                    yi0Var.Z = true;
-                    yi0Var.Q(org.telegram.ui.ActionBar.h6.w0(null, i12, true), "Arrow1");
+                    ij0 ij0Var = org.telegram.ui.ActionBar.h6.u1;
+                    ij0Var.Z = true;
+                    ij0Var.Q(org.telegram.ui.ActionBar.h6.w0(null, i12, true), "Arrow1");
                     org.telegram.ui.ActionBar.h6.u1.Q(org.telegram.ui.ActionBar.h6.w0(null, i12, true), "Arrow2");
                     org.telegram.ui.ActionBar.h6.u1.o();
                     org.telegram.ui.ActionBar.h6.C1 = false;
                 }
             } else if (!org.telegram.ui.ActionBar.h6.C1) {
-                yi0 yi0Var2 = org.telegram.ui.ActionBar.h6.u1;
-                yi0Var2.Z = true;
-                yi0Var2.Q(this.d, "Arrow1");
+                ij0 ij0Var2 = org.telegram.ui.ActionBar.h6.u1;
+                ij0Var2.Z = true;
+                ij0Var2.Q(this.d, "Arrow1");
                 org.telegram.ui.ActionBar.h6.u1.Q(this.d, "Arrow2");
                 org.telegram.ui.ActionBar.h6.u1.o();
                 org.telegram.ui.ActionBar.h6.C1 = true;
             }
-            yi0 yi0Var3 = org.telegram.ui.ActionBar.h6.u1;
-            int i13 = yi0Var3.b;
-            int i14 = yi0Var3.c;
+            ij0 ij0Var3 = org.telegram.ui.ActionBar.h6.u1;
+            int i13 = ij0Var3.b;
+            int i14 = ij0Var3.c;
             int i15 = (width - i13) / 2;
             int i16 = (width - i14) / 2;
             canvas.save();

@@ -9,26 +9,26 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public class AlertDialog$Builder {
-    public final b2 a;
+    public final a2 a;
     public final boolean[] b;
 
     public AlertDialog$Builder(Context context) {
         this(context, 0, null);
     }
 
-    public final b2 a() {
+    public final a2 a() {
         return this.a;
     }
 
-    public b2 b(Context context, int i10, d6 d6Var) {
-        return new b2(context, i10, d6Var);
+    public a2 b(Context context, int i10, d6 d6Var) {
+        return new a2(context, i10, d6Var);
     }
 
     public final void c() {
-        int i10 = b2.c1;
+        int i10 = a2.c1;
         this.a.getClass();
     }
 
@@ -47,35 +47,35 @@ public class AlertDialog$Builder {
     }
 
     public final void f(CharSequence[] charSequenceArr, DialogInterface.OnClickListener onClickListener) {
-        b2 b2Var = this.a;
-        b2Var.P = charSequenceArr;
-        b2Var.M = onClickListener;
+        a2 a2Var = this.a;
+        a2Var.P = charSequenceArr;
+        a2Var.M = onClickListener;
     }
 
     public final void g(CharSequence charSequence) {
         this.a.T = charSequence;
     }
 
-    public final void h(String str, a2 a2Var) {
-        b2 b2Var = this.a;
-        b2Var.n0 = str;
-        b2Var.o0 = a2Var;
+    public final void h(String str, z1 z1Var) {
+        a2 a2Var = this.a;
+        a2Var.n0 = str;
+        a2Var.o0 = z1Var;
     }
 
-    public final void i(String str, a2 a2Var) {
-        b2 b2Var = this.a;
-        b2Var.r0 = str;
-        b2Var.s0 = a2Var;
+    public final void i(String str, z1 z1Var) {
+        a2 a2Var = this.a;
+        a2Var.r0 = str;
+        a2Var.s0 = z1Var;
     }
 
     public final void j(DialogInterface.OnDismissListener onDismissListener) {
         this.a.setOnDismissListener(onDismissListener);
     }
 
-    public final void k(CharSequence charSequence, a2 a2Var) {
-        b2 b2Var = this.a;
-        b2Var.l0 = charSequence;
-        b2Var.m0 = a2Var;
+    public final void k(CharSequence charSequence, z1 z1Var) {
+        a2 a2Var = this.a;
+        a2Var.l0 = charSequence;
+        a2Var.m0 = z1Var;
     }
 
     public final void l(CharSequence charSequence) {
@@ -83,41 +83,41 @@ public class AlertDialog$Builder {
     }
 
     public final void m(int i10, int i11, int i12, HashMap hashMap) {
-        b2 b2Var = this.a;
-        b2Var.X = i10;
-        b2Var.Y = i11;
-        b2Var.S0 = false;
-        b2Var.c0 = i12;
-        b2Var.Z = hashMap;
+        a2 a2Var = this.a;
+        a2Var.X = i10;
+        a2Var.Y = i11;
+        a2Var.S0 = false;
+        a2Var.c0 = i12;
+        a2Var.Z = hashMap;
     }
 
     public final void n(View view) {
-        b2 b2Var = this.a;
-        b2Var.b = view;
-        b2Var.e = -2;
+        a2 a2Var = this.a;
+        a2Var.b = view;
+        a2Var.e = -2;
     }
 
-    public final b2 o() {
+    public final a2 o() {
         TextView textView;
-        b2 b2Var = this.a;
-        b2Var.show();
+        a2 a2Var = this.a;
+        a2Var.show();
         int i10 = 0;
         while (true) {
             boolean[] zArr = this.b;
             if (i10 >= zArr.length) {
-                return b2Var;
+                return a2Var;
             }
-            if (zArr[i10] && (textView = (TextView) b2Var.d(-(i10 + 1))) != null) {
-                textView.setTextColor(b2Var.e(h6.q7));
+            if (zArr[i10] && (textView = (TextView) a2Var.d(-(i10 + 1))) != null) {
+                textView.setTextColor(a2Var.e(h6.q7));
             }
             i10++;
         }
     }
 
     public AlertDialog$Builder setTopImage(int i10, int i11) {
-        b2 b2Var = this.a;
-        b2Var.U = i10;
-        b2Var.c0 = i11;
+        a2 a2Var = this.a;
+        a2Var.U = i10;
+        a2Var.c0 = i11;
         return this;
     }
 

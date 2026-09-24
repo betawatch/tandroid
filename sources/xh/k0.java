@@ -29,9 +29,9 @@ import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.rr;
 import org.telegram.ui.Components.v5;
 import org.telegram.ui.Components.z5;
-import v7.u7;
+import v7.v7;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class k0 extends Drawable {
     public NinePatchDrawable a;
@@ -85,7 +85,7 @@ public final class k0 extends Drawable {
             drawable.setBounds(0, 0, intrinsicWidth, intrinsicHeight);
             drawable.draw(canvas);
             int i10 = (intrinsicHeight * 4) / 144;
-            this.a = u7.a(createBitmap, new Rect((intrinsicWidth * 27) / 168, i10, (intrinsicWidth * 5) / 168, i10), (intrinsicWidth * 94) / 168, (intrinsicHeight * 71) / 144);
+            this.a = v7.a(createBitmap, new Rect((intrinsicWidth * 27) / 168, i10, (intrinsicWidth * 5) / 168, i10), (intrinsicWidth * 94) / 168, (intrinsicHeight * 71) / 144);
         }
         if (this.b == null) {
             Drawable drawable2 = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.gift_message_bubble_border_24);
@@ -102,7 +102,7 @@ public final class k0 extends Drawable {
             paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.MULTIPLY));
             canvas2.drawRect(0.0f, 0.0f, f7, f10, paint);
             int i11 = (intrinsicHeight2 * 4) / 144;
-            this.b = u7.a(createBitmap2, new Rect((intrinsicWidth2 * 27) / 168, i11, (intrinsicWidth2 * 5) / 168, i11), (intrinsicWidth2 * 94) / 168, (intrinsicHeight2 * 71) / 144);
+            this.b = v7.a(createBitmap2, new Rect((intrinsicWidth2 * 27) / 168, i11, (intrinsicWidth2 * 5) / 168, i11), (intrinsicWidth2 * 94) / 168, (intrinsicHeight2 * 71) / 144);
         }
     }
 

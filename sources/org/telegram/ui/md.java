@@ -7,7 +7,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class md implements Runnable {
     public final /* synthetic */ int a;
@@ -71,7 +71,7 @@ public final /* synthetic */ class md implements Runnable {
                     if (qcVar != null) {
                         org.telegram.ui.Components.ub ubVar = qcVar.e;
                         if ((ubVar instanceof org.telegram.ui.Components.yb) && ubVar.isAttachedToWindow()) {
-                            org.telegram.messenger.ul.q(R.string.BotStarsWithdrawalToast, new Object[]{yh.g.j0(jeVar.L0 - currentTime)}, ((org.telegram.ui.Components.yb) jeVar.Z0.e).b);
+                            org.telegram.messenger.ok.q(R.string.BotStarsWithdrawalToast, new Object[]{yh.g.j0(jeVar.L0 - currentTime)}, ((org.telegram.ui.Components.yb) jeVar.Z0.e).b);
                         }
                     }
                     AndroidUtilities.cancelRunOnUIThread(mdVar2);

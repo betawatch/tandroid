@@ -1,46 +1,100 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.widget.FrameLayout;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class uf0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ vf0 b;
+public final class uf0 extends FrameLayout {
+    public final ci.wc a;
+    public final ci.d b;
+    public final qt c;
+    public s71 d;
+    public long e;
+    public float f;
+    public ci.a4 h;
+    public Utilities.Callback n;
+    public Runnable r;
 
-    public /* synthetic */ uf0(vf0 vf0Var, int i10) {
-        this.a = i10;
-        this.b = vf0Var;
+    public uf0(Context context, org.telegram.ui.ActionBar.d6 d6Var, ja jaVar) {
+        super(context);
+        this.e = -1L;
+        this.f = 1.39f;
+        org.telegram.ui.ActionBar.k kVar = new org.telegram.ui.ActionBar.k(context, d6Var);
+        kVar.setBackButtonImage(R.drawable.ic_ab_back);
+        kVar.setTitle(LocaleController.getString(R.string.EditorSetCoverTitle));
+        kVar.B(-1, false);
+        kVar.A(587202559, false);
+        kVar.setActionBarMenuOnItemClick(new org.telegram.ui.oo(this, 10));
+        addView(kVar, w7.y5.e(-1, -2, 55));
+        ci.wc wcVar = new ci.wc(context, null, null, d6Var, jaVar);
+        this.a = wcVar;
+        wcVar.X0 = true;
+        addView(wcVar, w7.y5.d(-1, 388, 87, 0.0f, 0.0f, 0.0f, 74.0f));
+        ci.d dVar = new ci.d(context, d6Var, true);
+        this.b = dVar;
+        dVar.g(LocaleController.getString(R.string.EditorSetCoverSave), false, true);
+        dVar.e();
+        addView(dVar, w7.y5.d(-1, 48.0f, 87, 16.0f, 10.0f, 16.0f, 16.0f));
+        qt qtVar = new qt(context, LocaleController.getString(R.string.EditorSetCoverGallery));
+        this.c = qtVar;
+        qtVar.setOnClickListener(new ai.d0(this, context, d6Var, 26));
+        addView(qtVar, w7.y5.d(-1, 32.0f, 87, 60.0f, 0.0f, 60.0f, 134.0f));
+        wcVar.setDelegate(new n7.z0(this));
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                vf0 vf0Var = this.b;
-                vf0Var.h = false;
-                vf0Var.a = vf0Var.c;
-                vf0Var.invalidate();
-                int i10 = vf0Var.J;
-                if (i10 >= 0) {
-                    vf0Var.b(i10);
-                    vf0Var.J = -1;
-                    break;
-                }
-                break;
-            default:
-                vf0 vf0Var2 = this.b;
-                vf0Var2.n = false;
-                vf0Var2.h = false;
-                vf0Var2.invalidate();
-                int i11 = vf0Var2.J;
-                if (i11 >= 0) {
-                    vf0Var2.b(i11);
-                    vf0Var2.J = -1;
-                }
-                vf0Var2.a();
-                break;
+    public final void a(MediaController.PhotoEntry photoEntry, s71 s71Var, org.telegram.ui.ActionBar.d6 d6Var) {
+        int i10;
+        ci.d dVar = this.b;
+        dVar.a = d6Var;
+        dVar.j();
+        int i11 = photoEntry.width;
+        if (i11 <= 0 || (i10 = photoEntry.height) <= 0) {
+            this.f = 1.39f;
+        } else {
+            this.f = Utilities.clamp(i10 / i11, 1.39f, 0.85f);
         }
+        this.d = s71Var;
+        long j3 = photoEntry.coverSavedPosition;
+        if (j3 >= 0) {
+            this.e = j3;
+            s71Var.L(j3, false);
+        } else {
+            this.e = s71Var.n();
+        }
+        String path = s71Var.F.getPath();
+        long p5 = s71Var.p();
+        i2.f0 f0Var = s71Var.d;
+        f0Var.B1();
+        this.a.o(false, path, p5, f0Var.Z);
+        long p10 = s71Var.p();
+        float max = 2.8f / Math.max(60L, p10);
+        float max2 = (1.0f - max) * (this.e / Math.max(1L, s71Var.p()));
+        ci.wc wcVar = this.a;
+        wcVar.setVideoLeft(max2);
+        wcVar.setVideoRight(max2 + max);
+        wcVar.Z0 = 0L;
+        wcVar.a1 = p10;
+        ci.qc qcVar = wcVar.h;
+        if (qcVar != null) {
+            ci.qc.a(qcVar, true);
+        }
+        wcVar.k();
+    }
+
+    public long getTime() {
+        return this.e;
+    }
+
+    public void setOnClose(Runnable runnable) {
+        this.r = runnable;
+    }
+
+    public void setOnGalleryImage(Utilities.Callback<MediaController.PhotoEntry> callback) {
+        this.n = callback;
     }
 }

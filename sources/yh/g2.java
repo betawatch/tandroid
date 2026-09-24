@@ -1,27 +1,92 @@
 package yh;
 
-import android.text.TextPaint;
-import android.text.style.ClickableSpan;
+import android.content.Context;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.w81;
+import org.telegram.ui.Components.yr0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public final class g2 extends ClickableSpan {
-    public final /* synthetic */ long a;
-    public final /* synthetic */ y3 b;
+public final class g2 extends w81 {
+    public final /* synthetic */ x3 T;
 
-    public g2(y3 y3Var, long j3) {
-        this.b = y3Var;
-        this.a = j3;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g2(x3 x3Var, Context context) {
+        super(context, null);
+        this.T = x3Var;
     }
 
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        this.b.X1(this.a);
+    @Override // org.telegram.ui.Components.w81
+    public final void E(View view, float f7) {
+        int i10;
+        View view2;
+        xh.n2 n2Var;
+        xh.n2 n2Var2;
+        i2 i2Var;
+        i2 i2Var2;
+        i2 i2Var3;
+        if (getMeasuredWidth() <= 0) {
+            view.setTranslationX(f7);
+            return;
+        }
+        float clamp = Utilities.clamp(f7 / getMeasuredWidth(), 1.0f, -1.0f);
+        x3 x3Var = this.T;
+        i10 = ((org.telegram.ui.ActionBar.e3) x3Var).backgroundPaddingLeft;
+        view.setTranslationX(((-clamp) * 2.0f * i10) + f7);
+        view.setPivotX(clamp <= 0.0f ? view.getMeasuredWidth() : 0.0f);
+        view.setCameraDistance(view.getMeasuredHeight() * 3.4f);
+        view.setScaleX(1.0f - Math.abs(0.25f * clamp));
+        view.setRotationY(clamp * 10.0f);
+        if (view instanceof FrameLayout) {
+            FrameLayout frameLayout = (FrameLayout) view;
+            if (frameLayout.getChildCount() > 0) {
+                view2 = frameLayout.getChildAt(0);
+                n2Var = x3Var.b0;
+                if (n2Var != null && view2 == n2Var.Y && (i2Var3 = n2Var.d0) != null) {
+                    i2Var3.invalidate();
+                }
+                if (view2 == x3Var.Y && (i2Var2 = x3Var.d0) != null) {
+                    i2Var2.invalidate();
+                }
+                n2Var2 = x3Var.c0;
+                if (n2Var2 == null && view2 == n2Var2.Y && (i2Var = n2Var2.d0) != null) {
+                    i2Var.invalidate();
+                    return;
+                }
+                return;
+            }
+        }
+        view2 = null;
+        n2Var = x3Var.b0;
+        if (n2Var != null) {
+            i2Var3.invalidate();
+        }
+        if (view2 == x3Var.Y) {
+            i2Var2.invalidate();
+        }
+        n2Var2 = x3Var.c0;
+        if (n2Var2 == null) {
+        }
     }
 
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        textPaint.setColor(textPaint.linkColor);
+    /* JADX WARN: Type inference failed for: r1v1, types: [boolean] */
+    @Override // org.telegram.ui.Components.w81
+    public final void F() {
+        super.F();
+        int i10 = this.b;
+        x3 x3Var = this.T;
+        if (i10 != x3Var.L1(false)) {
+            AndroidUtilities.runOnUIThread(new yr0(16, this, this.b > x3Var.L1(false)));
+        }
+    }
+
+    @Override // org.telegram.ui.Components.w81
+    public final boolean i(MotionEvent motionEvent) {
+        f4.d dVar = this.T.Y0;
+        return dVar == null || dVar.c(0);
     }
 }

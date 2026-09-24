@@ -1,131 +1,265 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class oo extends mu0 {
-    public final /* synthetic */ so a;
+public final class oo extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public oo(so soVar) {
-        this.a = soVar;
+    public /* synthetic */ oo(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x0029, code lost:
-    
-        if (r0 != null) goto L25;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:31:0x0042, code lost:
-    
-        if (r0 != null) goto L25;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0082  */
-    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final wu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
-        TLRPC.FileLocation fileLocation2;
-        so soVar = this.a;
-        long j3 = soVar.C0;
-        wu0 wu0Var = null;
-        if (fileLocation != null) {
-            if (soVar.D0 != null) {
-                TLRPC.User user = j3 == 0 ? null : soVar.getMessagesController().getUser(Long.valueOf(j3));
-                if (user != null) {
-                    TLRPC.UserProfilePhoto userProfilePhoto = user.photo;
-                    if (userProfilePhoto != null) {
-                        fileLocation2 = userProfilePhoto.photo_big;
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i10) {
+        Runnable runnable;
+        switch (this.a) {
+            case 0:
+                ro roVar = (ro) this.b;
+                if (i10 == -1) {
+                    if (roVar.e0(true)) {
+                        roVar.finishFragment();
+                        break;
+                    }
+                } else if (i10 == 1) {
+                    roVar.j0();
+                    break;
+                }
+                break;
+            case 1:
+                fp fpVar = (fp) this.b;
+                if (i10 == -1) {
+                    fpVar.finishFragment();
+                    break;
+                } else if (i10 == 1) {
+                    org.telegram.ui.Components.qr qrVar = fpVar.r;
+                    if (qrVar == null || qrVar.c <= 0.0f) {
+                        fpVar.Y();
+                        break;
                     }
                 }
-                fileLocation2 = null;
-                if (fileLocation2 != null && fileLocation2.local_id == fileLocation.local_id && fileLocation2.volume_id == fileLocation.volume_id && fileLocation2.dc_id == fileLocation.dc_id) {
-                    int[] iArr = new int[2];
-                    soVar.e.getLocationInWindow(iArr);
-                    wu0Var = new wu0();
-                    wu0Var.b = iArr[0];
-                    wu0Var.c = iArr[1];
-                    ai.y5 y5Var = soVar.e;
-                    wu0Var.d = y5Var;
-                    ImageReceiver imageReceiver = y5Var.getImageReceiver();
-                    wu0Var.a = imageReceiver;
-                    if (j3 == 0) {
-                        j3 = -soVar.w0;
-                    }
-                    wu0Var.f = j3;
-                    wu0Var.e = imageReceiver.getBitmapSafe();
-                    wu0Var.g = -1L;
-                    wu0Var.h = soVar.e.getImageReceiver().getRoundRadius(true);
-                    wu0Var.k = soVar.d.getScaleX();
-                    wu0Var.p = true;
+                break;
+            case 2:
+                if (i10 == -1) {
+                    ((rp) this.b).finishFragment();
+                    break;
                 }
-            } else {
-                TLRPC.Chat chat = soVar.getMessagesController().getChat(Long.valueOf(soVar.w0));
-                if (chat != null) {
-                    TLRPC.ChatPhoto chatPhoto = chat.photo;
-                    if (chatPhoto != null) {
-                        fileLocation2 = chatPhoto.photo_big;
+                break;
+            case 3:
+                if (i10 == -1) {
+                    ((yp) this.b).finishFragment();
+                    break;
+                }
+                break;
+            case 4:
+                kq kqVar = (kq) this.b;
+                if (i10 == -1) {
+                    if (kqVar.m0(true)) {
+                        kqVar.finishFragment();
+                        break;
+                    }
+                } else if (i10 == 1) {
+                    kqVar.r0(true);
+                    break;
+                }
+                break;
+            case 5:
+                pr prVar = (pr) this.b;
+                if (i10 == -1) {
+                    if (prVar.g0(true)) {
+                        prVar.finishFragment();
+                        break;
+                    }
+                } else if (i10 == 1) {
+                    prVar.u0();
+                    break;
+                }
+                break;
+            case 6:
+                org.telegram.ui.Components.j8 j8Var = (org.telegram.ui.Components.j8) this.b;
+                if (i10 == -1) {
+                    j8Var.dismiss();
+                    break;
+                } else {
+                    j8Var.t0(i10);
+                    break;
+                }
+            case 7:
+                if (i10 == -1) {
+                    ((org.telegram.ui.Components.bb) this.b).dismiss();
+                    break;
+                }
+                break;
+            case 8:
+                org.telegram.ui.Components.wi wiVar = (org.telegram.ui.Components.wi) this.b;
+                if (i10 != -1) {
+                    wiVar.y0.t(i10);
+                    break;
+                } else if (!wiVar.y0.i()) {
+                    wiVar.dismiss();
+                    break;
+                }
+                break;
+            case 9:
+                if (i10 == -1) {
+                    ((org.telegram.ui.Components.c40) this.b).finishFragment();
+                    break;
+                }
+                break;
+            case 10:
+                if (i10 == -1 && (runnable = ((org.telegram.ui.Components.uf0) this.b).r) != null) {
+                    AndroidUtilities.runOnUIThread(runnable);
+                    break;
+                }
+                break;
+            case 11:
+                if (i10 == -1) {
+                    ((org.telegram.ui.Components.ah0) this.b).dismiss();
+                    break;
+                }
+                break;
+            case 12:
+                ((org.telegram.ui.Components.uq0) this.b).onBackPressed();
+                break;
+            case 13:
+                if (i10 == -1) {
+                    ((org.telegram.ui.Components.m61) this.b).finishFragment();
+                    break;
+                }
+                break;
+            case 14:
+                if (i10 == -1) {
+                    ((org.telegram.ui.Components.voip.x0) this.b).b(false, false);
+                    break;
+                }
+                break;
+            case 15:
+                if (i10 == -1) {
+                    ((fi1) this.b).a(false, false);
+                    break;
+                }
+                break;
+            case 16:
+                if (i10 == -1) {
+                    ((wt) this.b).finishFragment();
+                    break;
+                }
+                break;
+            case 17:
+                if (i10 == -1) {
+                    ((DataAutoDownloadActivity) this.b).finishFragment();
+                    break;
+                }
+                break;
+            case 18:
+                if (i10 == -1) {
+                    ((DataSettingsActivity) this.b).finishFragment();
+                    break;
+                }
+                break;
+            case 19:
+                if (i10 == -1) {
+                    ((vu) this.b).finishFragment();
+                    break;
+                }
+                break;
+            case 20:
+                if (i10 == -1) {
+                    ((jv) this.b).finishFragment();
+                    break;
+                }
+                break;
+            case 21:
+                if (i10 == -1) {
+                    ((iz) this.b).finishFragment();
+                    break;
+                }
+                break;
+            case 22:
+                yz yzVar = (yz) this.b;
+                if (i10 == -1) {
+                    if (yzVar.W(true)) {
+                        yzVar.finishFragment();
+                        break;
+                    }
+                } else if (i10 == 1) {
+                    if (Math.abs(yzVar.T - 1.0f) < 0.1f) {
+                        yzVar.c0();
+                        break;
+                    } else if (Math.abs(yzVar.T - 0.5f) < 0.1f) {
+                        for (int i11 = 0; i11 < yzVar.a.getChildCount(); i11++) {
+                            View childAt = yzVar.a.getChildAt(i11);
+                            yzVar.a.getClass();
+                            if (RecyclerView.R(childAt) == yzVar.L && (childAt instanceof org.telegram.ui.Components.a10)) {
+                                int i12 = -yzVar.s;
+                                yzVar.s = i12;
+                                AndroidUtilities.shakeViewSpring(childAt, i12);
+                                break;
+                            }
+                        }
+                        break;
                     }
                 }
-                fileLocation2 = null;
-                if (fileLocation2 != null) {
-                    int[] iArr2 = new int[2];
-                    soVar.e.getLocationInWindow(iArr2);
-                    wu0Var = new wu0();
-                    wu0Var.b = iArr2[0];
-                    wu0Var.c = iArr2[1];
-                    ai.y5 y5Var2 = soVar.e;
-                    wu0Var.d = y5Var2;
-                    ImageReceiver imageReceiver2 = y5Var2.getImageReceiver();
-                    wu0Var.a = imageReceiver2;
-                    if (j3 == 0) {
+                break;
+            case 23:
+                b10 b10Var = (b10) this.b;
+                if (i10 == -1) {
+                    if (b10Var.h0(true)) {
+                        b10Var.finishFragment();
+                        break;
                     }
-                    wu0Var.f = j3;
-                    wu0Var.e = imageReceiver2.getBitmapSafe();
-                    wu0Var.g = -1L;
-                    wu0Var.h = soVar.e.getImageReceiver().getRoundRadius(true);
-                    wu0Var.k = soVar.d.getScaleX();
-                    wu0Var.p = true;
+                } else if (i10 == 1) {
+                    b10Var.q0();
+                    break;
                 }
-            }
+                break;
+            case 24:
+                if (i10 == -1) {
+                    ((FiltersSetupActivity) this.b).finishFragment();
+                    break;
+                }
+                break;
+            case 25:
+                if (i10 == -1) {
+                    ((m20) this.b).finishFragment();
+                    break;
+                }
+                break;
+            case 26:
+                z60 z60Var = (z60) this.b;
+                if (i10 == -1) {
+                    if (z60Var.f0(true)) {
+                        z60Var.finishFragment();
+                        break;
+                    }
+                } else if (i10 == 1) {
+                    z60Var.o0();
+                    break;
+                }
+                break;
+            case 27:
+                if (i10 == -1) {
+                    ((g70) this.b).finishFragment();
+                    break;
+                }
+                break;
+            case 28:
+                if (i10 == -1) {
+                    ((i70) this.b).finishFragment();
+                    break;
+                }
+                break;
+            default:
+                if (i10 == -1) {
+                    ((o70) this.b).finishFragment();
+                    break;
+                }
+                break;
         }
-        return wu0Var;
-    }
-
-    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
-    public final void G() {
-        this.a.e.getImageReceiver().setVisible(true, true);
-    }
-
-    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
-    public final boolean M() {
-        so soVar = this.a;
-        long j3 = soVar.C0;
-        if (j3 == 0) {
-            return true;
-        }
-        TLRPC.TL_photos_updateProfilePhoto tL_photos_updateProfilePhoto = new TLRPC.TL_photos_updateProfilePhoto();
-        tL_photos_updateProfilePhoto.bot = soVar.getMessagesController().getInputUser(j3);
-        tL_photos_updateProfilePhoto.flags |= 2;
-        tL_photos_updateProfilePhoto.id = new TLRPC.TL_inputPhotoEmpty();
-        soVar.getConnectionsManager().sendRequest(tL_photos_updateProfilePhoto, new m(this, 2));
-        return false;
-    }
-
-    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
-    public final void f(String str, String str2, boolean z10) {
-        this.a.s.q(str, str2, z10);
-    }
-
-    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
-    public final boolean t() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.mu0, org.telegram.ui.uu0
-    public final int y() {
-        return 1;
     }
 }

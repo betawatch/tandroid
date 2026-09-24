@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_payments;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e1 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final /* synthetic */ class e1 implements Utilities.Callback2 {
                 ((MessagesController) this.b).lambda$fetchJoinedCommunities$251((Utilities.Callback) this.c, (TLRPC.messages_Chats) obj, (TLRPC.TL_error) obj2);
                 break;
             case 3:
-                PasskeysController.lambda$create$4((org.telegram.ui.ActionBar.b2) this.b, (Utilities.Callback2) this.c, (TL_account.Passkey) obj, (TLRPC.TL_error) obj2);
+                PasskeysController.lambda$create$4((org.telegram.ui.ActionBar.a2) this.b, (Utilities.Callback2) this.c, (TL_account.Passkey) obj, (TLRPC.TL_error) obj2);
                 break;
             default:
                 ((UnconfirmedAuthController.UnconfirmedAuth) this.b).lambda$confirm$0((Utilities.Callback) this.c, (TLRPC.Bool) obj, (TLRPC.TL_error) obj2);

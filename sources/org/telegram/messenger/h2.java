@@ -8,7 +8,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h2 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -35,13 +35,13 @@ public final /* synthetic */ class h2 implements RequestDelegate {
                 ((LocationController) this.b).lambda$broadcastLastKnownLocation$7((LocationController.SharingLocationInfo) this.c, (int[]) this.d, (TLRPC.TL_messages_editMessage) this.e, tLObject, tL_error);
                 break;
             case 2:
-                ((MessagesController) this.b).lambda$didReceivedNotification$45((org.telegram.ui.ActionBar.a6) this.c, (TLRPC.TL_wallPaperSettings) this.d, (String) this.e, tLObject, tL_error);
+                ((MessagesController) this.b).lambda$didReceivedNotification$45((org.telegram.ui.ActionBar.z5) this.c, (TLRPC.TL_wallPaperSettings) this.d, (String) this.e, tLObject, tL_error);
                 break;
             case 3:
                 ((MessagesController) this.b).lambda$deleteUserChannelHistory$133((TLRPC.Chat) this.c, (TLRPC.User) this.d, (TLRPC.Chat) this.e, tLObject, tL_error);
                 break;
             case 4:
-                ((SecretChatHelper) this.b).lambda$startSecretChat$30((Context) this.c, (org.telegram.ui.ActionBar.b2) this.d, (TLRPC.User) this.e, tLObject, tL_error);
+                ((SecretChatHelper) this.b).lambda$startSecretChat$30((Context) this.c, (org.telegram.ui.ActionBar.a2) this.d, (TLRPC.User) this.e, tLObject, tL_error);
                 break;
             default:
                 ((SendMessagesHelper) this.b).lambda$sendVote$32((MessageObject) this.c, (String) this.d, (Runnable) this.e, tLObject, tL_error);

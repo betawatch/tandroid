@@ -10,16 +10,16 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import t7.u;
-import w7.l;
+import w7.m;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
-public final class c extends l {
+public final class c extends m {
     public final v a = new v();
     public final h b = new h();
     public b0 c;
 
-    @Override // w7.l
+    @Override // w7.m
     public final p0 b(l3.a aVar, ByteBuffer byteBuffer) {
         b eVar;
         long j3;
@@ -80,7 +80,7 @@ public final class c extends l {
                     vVar.x();
                     vVar.x();
                 }
-                arrayList.add(new k2.b0(arrayList2));
+                arrayList.add(new ka.c(arrayList2));
             }
             eVar = new f(arrayList);
         } else if (i12 == 5) {

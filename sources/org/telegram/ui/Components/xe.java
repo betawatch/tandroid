@@ -1,73 +1,10 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class xe extends ug {
-    public final /* synthetic */ int l0;
-    public final /* synthetic */ ChatActivityEnterView m0;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ xe(ChatActivityEnterView chatActivityEnterView, Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var, int i11) {
-        super(i10, context, d6Var, true);
-        this.l0 = i11;
-        this.m0 = chatActivityEnterView;
-    }
-
-    @Override // org.telegram.ui.Components.ug
-    public boolean d() {
-        switch (this.l0) {
-            case 0:
-                return this.m0.c();
-            default:
-                return super.d();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.ug
-    public final boolean e() {
-        switch (this.l0) {
-            case 0:
-                ChatActivityEnterView chatActivityEnterView = this.m0;
-                return !chatActivityEnterView.c() && chatActivityEnterView.G0 == Integer.MAX_VALUE;
-            default:
-                return !this.m0.p3;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.ug
-    public final boolean f() {
-        switch (this.l0) {
-            case 0:
-                mf mfVar = this.m0.L0;
-                return !(mfVar == null || mfVar.q0) || this.r > 0;
-            default:
-                return true;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.ug
-    public boolean j() {
-        switch (this.l0) {
-            case 0:
-                return this.m0.y4;
-            default:
-                return super.j();
-        }
-    }
-
-    @Override // android.view.View
-    public void setAlpha(float f7) {
-        switch (this.l0) {
-            case 0:
-                super.setAlpha(f7);
-                int i10 = ChatActivityEnterView.n5;
-                this.m0.A1();
-                break;
-            default:
-                super.setAlpha(f7);
-                break;
-        }
+public final class xe extends gq {
+    @Override // org.telegram.ui.Components.gq
+    public final int a() {
+        return org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.of, false);
     }
 }

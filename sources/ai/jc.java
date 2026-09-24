@@ -39,13 +39,13 @@ import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.cu;
 import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public final class jc implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.ActionBar.j2, rf.a {
+public final class jc implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.ActionBar.i2, rf.a {
     public static boolean A1;
     public static boolean D1;
     public static boolean x1;
@@ -107,7 +107,7 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
     public oa d1;
     public float e0;
     public final LongSparseIntArray e1;
-    public final org.telegram.ui.ActionBar.n2 f;
+    public final org.telegram.ui.ActionBar.m2 f;
     public boolean f0;
     public boolean f1;
     public boolean g0;
@@ -144,7 +144,7 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
     public Dialog u0;
     public p9 u1;
     public yb v;
-    public org.telegram.ui.ActionBar.j2 v0;
+    public org.telegram.ui.ActionBar.i2 v0;
     public ValueAnimator v1;
     public s7 w;
     public boolean w0;
@@ -166,7 +166,7 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
     public final RectF T = new RectF();
     public final float[] o0 = new float[2];
 
-    public jc(org.telegram.ui.ActionBar.n2 n2Var) {
+    public jc(org.telegram.ui.ActionBar.m2 m2Var) {
         gc gcVar = new gc();
         gcVar.k = 1.0f;
         this.s0 = gcVar;
@@ -178,7 +178,7 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
         this.b1 = new d5(this, 4);
         this.e1 = new LongSparseIntArray();
         new Paint(1);
-        this.f = n2Var;
+        this.f = m2Var;
     }
 
     public static void J(long j3, TL_stories.StoryItem storyItem, Editable editable) {
@@ -217,7 +217,7 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
                 return true;
             }
         }
-        if ((currentPeerView == null || (a4Var = currentPeerView.b2) == null || !a4Var.x0()) && jcVar.u1 == null) {
+        if ((currentPeerView == null || (a4Var = currentPeerView.b2) == null || !a4Var.w0()) && jcVar.u1 == null) {
             return AndroidUtilities.findClickableView(xbVar, f7, f10, currentPeerView);
         }
         return true;
@@ -346,7 +346,7 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
         this.r.flags = -2147417728;
         this.H0 = false;
         this.c1 = false;
-        org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
+        org.telegram.ui.ActionBar.m2 R = LaunchActivity.R();
         if (this.s == null) {
             this.i0 = new GestureDetector(new tb(this));
             this.s = new xb(this, context, R);
@@ -357,7 +357,7 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
             zb zbVar2 = new zb(this, this.h, context, this, this.y);
             this.n0 = zbVar2;
             zbVar2.setDelegate(new ac(this, d9Var, arrayList, context));
-            this.v.addView(this.n0, w7.x5.e(-1, -1, 1));
+            this.v.addView(this.n0, w7.y5.e(-1, -1, 1));
             this.y0 = new org.telegram.ui.l4(context);
             if (this.a) {
                 SurfaceView surfaceView = new SurfaceView(context);
@@ -382,7 +382,7 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
             oaVar.e = new org.telegram.ui.Components.e6(oaVar);
             paint.setColor(-1);
             this.d1 = oaVar;
-            this.v.addView(oaVar, w7.x5.d(-1, -1.0f, 0, 4.0f, 0.0f, 4.0f, 0.0f));
+            this.v.addView(oaVar, w7.y5.d(-1, -1.0f, 0, 4.0f, 0.0f, 4.0f, 0.0f));
         }
         ci.k4 k4Var2 = this.D0;
         if (k4Var2 != null) {
@@ -512,15 +512,15 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
         B(UserConfig.selectedAccount, context, storyItem, arrayList, i10, d9Var, peerStories, fcVar, z10);
     }
 
-    public final void H(org.telegram.ui.ActionBar.n2 n2Var) {
-        org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
+    public final void H(org.telegram.ui.ActionBar.m2 m2Var) {
+        org.telegram.ui.ActionBar.m2 R = LaunchActivity.R();
         if (R == null) {
             return;
         }
         if (this.b) {
-            R.presentFragment(n2Var);
+            R.presentFragment(m2Var);
         } else {
-            R.presentFragment(n2Var);
+            R.presentFragment(m2Var);
             q(false);
         }
     }
@@ -568,9 +568,9 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
         if (this.b) {
             z(false);
         }
-        org.telegram.ui.ActionBar.n2 n2Var = this.f;
-        if (n2Var != null) {
-            n2Var.removeSheet(this);
+        org.telegram.ui.ActionBar.m2 m2Var2 = this.f;
+        if (m2Var2 != null) {
+            m2Var2.removeSheet(this);
         }
         y1.remove(this);
         this.x0.clear();
@@ -630,11 +630,11 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
     }
 
     public final void N() {
-        org.telegram.ui.ActionBar.n2 n2Var;
-        if (this.A0 == null || (n2Var = this.f) == null || this.D0 == null) {
+        org.telegram.ui.ActionBar.m2 m2Var;
+        if (this.A0 == null || (m2Var = this.f) == null || this.D0 == null) {
             return;
         }
-        Activity findActivity = AndroidUtilities.findActivity(n2Var.getContext());
+        Activity findActivity = AndroidUtilities.findActivity(m2Var.getContext());
         if (sf.c.a(findActivity) > 0) {
             m2.o(findActivity, this.A0);
             q(true);
@@ -673,8 +673,8 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
         }
         boolean w10 = w();
         if (this.b) {
-            org.telegram.ui.ActionBar.n2 n2Var = this.f;
-            if (n2Var.isPaused() || !n2Var.isLastFragment()) {
+            org.telegram.ui.ActionBar.m2 m2Var = this.f;
+            if (m2Var.isPaused() || !m2Var.isLastFragment()) {
                 w10 = true;
             }
         }
@@ -784,7 +784,7 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
                         int[] iArr = new int[2];
                         view.getLocationOnScreen(iArr);
                         View view2 = gcVar.a;
-                        if (view2 instanceof org.telegram.ui.Cells.t1) {
+                        if (view2 instanceof org.telegram.ui.Cells.u1) {
                             iArr[1] = view2.getPaddingTop() + iArr[1];
                         }
                         float f7 = iArr[0];
@@ -921,7 +921,7 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
         this.s.invalidate();
     }
 
-    @Override // org.telegram.ui.ActionBar.j2
+    @Override // org.telegram.ui.ActionBar.i2
     public final boolean attachedToParent() {
         return this.b && this.s != null;
     }
@@ -1049,7 +1049,7 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
         this.z0 = null;
     }
 
-    @Override // org.telegram.ui.ActionBar.j2
+    @Override // org.telegram.ui.ActionBar.i2
     public final void dismiss() {
         q(true);
     }
@@ -1065,21 +1065,21 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
 
     @Override // rf.a
     public final boolean g() {
-        org.telegram.ui.ActionBar.n2 n2Var = this.f;
-        return (n2Var == null || t() == null || AndroidUtilities.findActivity(n2Var.getContext()) == null || this.A0 == null || this.D0 == null || this.H0) ? false : true;
+        org.telegram.ui.ActionBar.m2 m2Var = this.f;
+        return (m2Var == null || t() == null || AndroidUtilities.findActivity(m2Var.getContext()) == null || this.A0 == null || this.D0 == null || this.H0) ? false : true;
     }
 
-    @Override // org.telegram.ui.ActionBar.j2
-    public final /* synthetic */ xc getBulletinFactory() {
+    @Override // org.telegram.ui.ActionBar.i2
+    public final /* synthetic */ yc getBulletinFactory() {
         return null;
     }
 
-    @Override // org.telegram.ui.ActionBar.j2
+    @Override // org.telegram.ui.ActionBar.i2
     public final int getNavigationBarColor(int i10) {
         return i0.a.d((((1.0f - this.V) * 0.5f) + 0.5f) * this.U, i10, -16777216);
     }
 
-    @Override // org.telegram.ui.ActionBar.j2
+    @Override // org.telegram.ui.ActionBar.i2
     public final View getWindowView() {
         return this.s;
     }
@@ -1091,17 +1091,17 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
         return k4Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.j2
+    @Override // org.telegram.ui.ActionBar.i2
     public final boolean isAttachedLightStatusBar() {
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.j2
+    @Override // org.telegram.ui.ActionBar.i2
     public final boolean isFullyVisible() {
         return this.K0;
     }
 
-    @Override // org.telegram.ui.ActionBar.j2
+    @Override // org.telegram.ui.ActionBar.i2
     public final boolean isShown() {
         return !this.H0;
     }
@@ -1122,14 +1122,14 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
                 k4Var.setSecure(!z11);
             }
             if (this.b) {
-                org.telegram.ui.ActionBar.n2 n2Var = this.f;
-                if (n2Var.getParentActivity() != null) {
+                org.telegram.ui.ActionBar.m2 m2Var = this.f;
+                if (m2Var.getParentActivity() != null) {
                     if (z11) {
-                        n2Var.getParentActivity().getWindow().clearFlags(8192);
+                        m2Var.getParentActivity().getWindow().clearFlags(8192);
                         AndroidUtilities.logFlagSecure();
                         return;
                     } else {
-                        n2Var.getParentActivity().getWindow().addFlags(8192);
+                        m2Var.getParentActivity().getWindow().addFlags(8192);
                         AndroidUtilities.logFlagSecure();
                         return;
                     }
@@ -1160,7 +1160,7 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
             ofFloat.addUpdateListener(new qb(this, 2));
             this.H.addListener(new sb(this, 1));
             this.H.setDuration(250L);
-            this.H.setInterpolator(org.telegram.ui.ActionBar.p1.w);
+            this.H.setInterpolator(org.telegram.ui.ActionBar.o1.w);
             this.H.start();
         }
     }
@@ -1209,7 +1209,7 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
         launchActivity.H(true, true, true);
     }
 
-    @Override // org.telegram.ui.ActionBar.j2
+    @Override // org.telegram.ui.ActionBar.i2
     public final boolean onAttachedBackPressed() {
         e6 currentPeerView;
         boolean z10 = false;
@@ -1325,7 +1325,7 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.j2
+    @Override // org.telegram.ui.ActionBar.i2
     public final void setKeyboardHeightFromParent(int i10) {
         if (this.p0 != i10) {
             this.p0 = i10;
@@ -1338,7 +1338,7 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.j2
+    @Override // org.telegram.ui.ActionBar.i2
     public final boolean showDialog(Dialog dialog) {
         try {
             this.u0 = dialog;
@@ -1410,14 +1410,14 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
     }
 
     public final boolean w() {
-        org.telegram.ui.ActionBar.n2 n2Var;
+        org.telegram.ui.ActionBar.m2 m2Var;
         if (this.X0 || this.Z0 || this.Y0 || this.L0 || this.q0 || this.x || this.u0 != null || this.v0 != null || this.H0 || this.I0 || this.U != 1.0f || this.e0 != 0.0f || this.i1) {
             return true;
         }
         if ((this.l1 && this.a) || this.k1 || this.j1 || this.p1 || this.V != 0.0f || this.u1 != null) {
             return true;
         }
-        return (!this.b || (n2Var = this.f) == null || n2Var.getLastStoryViewer() == this) ? false : true;
+        return (!this.b || (m2Var = this.f) == null || m2Var.getLastStoryViewer() == this) ? false : true;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:30:0x007d  */
@@ -1481,7 +1481,7 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.j2
+    @Override // org.telegram.ui.ActionBar.i2
     public final void dismiss(boolean z10) {
         q(true);
     }
@@ -1494,11 +1494,11 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
     public final /* synthetic */ void f(Canvas canvas) {
     }
 
-    @Override // org.telegram.ui.ActionBar.j2
+    @Override // org.telegram.ui.ActionBar.i2
     public final /* synthetic */ void setLastVisible(boolean z10) {
     }
 
-    @Override // org.telegram.ui.ActionBar.j2
+    @Override // org.telegram.ui.ActionBar.i2
     public final void setOnDismissListener(Runnable runnable) {
     }
 }

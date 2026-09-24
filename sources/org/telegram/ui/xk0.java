@@ -11,7 +11,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xk0 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -37,21 +37,21 @@ public final /* synthetic */ class xk0 implements Utilities.Callback2 {
         Object obj5 = this.c;
         switch (i10) {
             case 0:
-                org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) obj4;
+                org.telegram.ui.ActionBar.e3 e3Var = (org.telegram.ui.ActionBar.e3) obj4;
                 String str = (String) serializable;
                 org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) obj3;
-                ((org.telegram.ui.ActionBar.b2) obj5).dismiss();
+                ((org.telegram.ui.ActionBar.a2) obj5).dismiss();
                 if (!(((TLRPC.Bool) obj) instanceof TLRPC.TL_boolTrue)) {
-                    org.telegram.ui.ActionBar.f3 f3Var2 = cl0.a;
-                    if (f3Var2 != null) {
-                        f3Var2.dismiss();
+                    org.telegram.ui.ActionBar.e3 e3Var2 = cl0.a;
+                    if (e3Var2 != null) {
+                        e3Var2.dismiss();
                         cl0.a = null;
                     }
                     cl0.a().M(LocaleController.getString(R.string.BotAuthLoggedInFailTitle), TextUtils.isEmpty(str) ? LocaleController.getString(R.string.BotAuthLoggedInFailNoDomain) : AndroidUtilities.replaceSingleLinkBold(LocaleController.formatString(R.string.BotAuthLoggedInFail, str), org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Gi, d6Var)), R.raw.error).j();
                     break;
                 } else {
-                    cl0.a = f3Var;
-                    f3Var.show();
+                    cl0.a = e3Var;
+                    e3Var.show();
                     break;
                 }
             case 1:
@@ -64,11 +64,11 @@ public final /* synthetic */ class xk0 implements Utilities.Callback2 {
                 org.telegram.ui.ActionBar.d6 d6Var2 = b1Var.e;
                 if (updates == null) {
                     if (tL_error == null) {
-                        new org.telegram.ui.Components.xc(b1Var, d6Var2).c0("UNKNOWN_BUTTON", false);
+                        new org.telegram.ui.Components.yc(b1Var, d6Var2).c0("UNKNOWN_BUTTON", false);
                         b1Var.y(daVar, "requested_chat_failed", org.telegram.ui.web.b1.B(str2, "req_id"));
                         break;
                     } else {
-                        new org.telegram.ui.Components.xc(b1Var, d6Var2).d0(tL_error, false);
+                        new org.telegram.ui.Components.yc(b1Var, d6Var2).d0(tL_error, false);
                         b1Var.y(daVar, "requested_chat_failed", org.telegram.ui.web.b1.B(str2, "req_id"));
                         break;
                     }
@@ -79,7 +79,7 @@ public final /* synthetic */ class xk0 implements Utilities.Callback2 {
                     Bundle bundle = new Bundle();
                     bundle.putLong("user_id", user.id);
                     org.telegram.ui.web.e0 e0Var = new org.telegram.ui.web.e0(b1Var, bundle, user, j3);
-                    org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+                    org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
                     if (U != null) {
                         U.presentFragment(e0Var);
                     }
@@ -91,7 +91,7 @@ public final /* synthetic */ class xk0 implements Utilities.Callback2 {
                 }
                 break;
             default:
-                yh.y3.c0((yh.y3) obj5, (Utilities.Callback2) obj4, (ArrayList) serializable, (Runnable) obj3, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
+                yh.x3.c0((yh.x3) obj5, (Utilities.Callback2) obj4, (ArrayList) serializable, (Runnable) obj3, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
                 break;
         }
     }

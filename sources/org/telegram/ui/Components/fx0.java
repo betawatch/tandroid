@@ -1,36 +1,18 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.CacheFetcher;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fx0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ux0 b;
-
-    public /* synthetic */ fx0(ux0 ux0Var, int i10) {
-        this.a = i10;
-        this.b = ux0Var;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.d.l();
-                break;
-            case 1:
-                this.b.d.l();
-                break;
-            case 2:
-                ux0.t(this.b);
-                break;
-            case 3:
-                MessagesController.getInstance(r0.currentAccount).openByUserName("stickers", this.b.L, 1);
-                break;
-            default:
-                ux0.s(this.b);
-                break;
-        }
+public final class fx0 extends CacheFetcher {
+    @Override // org.telegram.messenger.CacheFetcher
+    public final void getRemote(int i10, Object obj, long j3, Utilities.Callback4 callback4) {
+        TLRPC.TL_messages_searchCustomEmoji tL_messages_searchCustomEmoji = new TLRPC.TL_messages_searchCustomEmoji();
+        tL_messages_searchCustomEmoji.emoticon = (String) obj;
+        tL_messages_searchCustomEmoji.hash = j3;
+        ConnectionsManager.getInstance(i10).sendRequest(tL_messages_searchCustomEmoji, new dx0(callback4, 1));
     }
 }

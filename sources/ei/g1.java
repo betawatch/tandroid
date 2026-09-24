@@ -10,14 +10,14 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.v70;
-import org.telegram.ui.Components.x70;
+import org.telegram.ui.Components.f80;
+import org.telegram.ui.Components.h80;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g1 implements Runnable {
     public final /* synthetic */ int a = 0;
-    public final /* synthetic */ org.telegram.ui.ActionBar.b2 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.a2 b;
     public final /* synthetic */ long c;
     public final /* synthetic */ Context d;
     public final /* synthetic */ int e;
@@ -27,8 +27,8 @@ public final /* synthetic */ class g1 implements Runnable {
     public final /* synthetic */ Object r;
     public final /* synthetic */ Object s;
 
-    public /* synthetic */ g1(org.telegram.ui.ActionBar.b2 b2Var, Context context, int i10, long j3, TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage, File[] fileArr, d6 d6Var, org.telegram.ui.web.s sVar, org.telegram.tgnet.e eVar) {
-        this.b = b2Var;
+    public /* synthetic */ g1(org.telegram.ui.ActionBar.a2 a2Var, Context context, int i10, long j3, TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage, File[] fileArr, d6 d6Var, org.telegram.ui.web.s sVar, org.telegram.tgnet.e eVar) {
+        this.b = a2Var;
         this.d = context;
         this.e = i10;
         this.c = j3;
@@ -52,13 +52,13 @@ public final /* synthetic */ class g1 implements Runnable {
                 new p1(this.d, this.e, this.c, tL_messages_preparedInlineMessage, fileArr[0], null, d6Var, sVar, eVar).show();
                 break;
             default:
-                org.telegram.ui.ActionBar.b2 b2Var = this.b;
+                org.telegram.ui.ActionBar.a2 a2Var = this.b;
                 AccountInstance accountInstance = (AccountInstance) this.h;
-                v70 v70Var = (v70) this.n;
-                org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) this.r;
+                f80 f80Var = (f80) this.n;
+                org.telegram.ui.ActionBar.m2 m2Var = (org.telegram.ui.ActionBar.m2) this.r;
                 TLRPC.Peer peer = (TLRPC.Peer) this.s;
                 try {
-                    b2Var.dismiss();
+                    a2Var.dismiss();
                 } catch (Exception e) {
                     FileLog.e(e);
                 }
@@ -66,17 +66,17 @@ public final /* synthetic */ class g1 implements Runnable {
                 if (tLObject != null) {
                     TL_phone.joinAsPeers joinaspeers = (TL_phone.joinAsPeers) tLObject;
                     if (joinaspeers.peers.size() != 1) {
-                        x70.G = joinaspeers.peers;
+                        h80.G = joinaspeers.peers;
                         long j3 = this.c;
-                        x70.I = j3;
-                        x70.H = SystemClock.elapsedRealtime();
-                        x70.J = accountInstance.getCurrentAccount();
+                        h80.I = j3;
+                        h80.H = SystemClock.elapsedRealtime();
+                        h80.J = accountInstance.getCurrentAccount();
                         accountInstance.getMessagesController().putChats(joinaspeers.chats, false);
                         accountInstance.getMessagesController().putUsers(joinaspeers.users, false);
-                        x70.v(this.d, j3, joinaspeers.peers, n2Var, this.e, peer, v70Var);
+                        h80.v(this.d, j3, joinaspeers.peers, m2Var, this.e, peer, f80Var);
                         break;
                     } else {
-                        v70Var.a(accountInstance.getMessagesController().getInputPeer(MessageObject.getPeerId(joinaspeers.peers.get(0))), false, false, false);
+                        f80Var.a(accountInstance.getMessagesController().getInputPeer(MessageObject.getPeerId(joinaspeers.peers.get(0))), false, false, false);
                         break;
                     }
                 }
@@ -84,14 +84,14 @@ public final /* synthetic */ class g1 implements Runnable {
         }
     }
 
-    public /* synthetic */ g1(org.telegram.ui.ActionBar.b2 b2Var, TLObject tLObject, AccountInstance accountInstance, v70 v70Var, long j3, Context context, org.telegram.ui.ActionBar.n2 n2Var, int i10, TLRPC.Peer peer) {
-        this.b = b2Var;
+    public /* synthetic */ g1(org.telegram.ui.ActionBar.a2 a2Var, TLObject tLObject, AccountInstance accountInstance, f80 f80Var, long j3, Context context, org.telegram.ui.ActionBar.m2 m2Var, int i10, TLRPC.Peer peer) {
+        this.b = a2Var;
         this.f = tLObject;
         this.h = accountInstance;
-        this.n = v70Var;
+        this.n = f80Var;
         this.c = j3;
         this.d = context;
-        this.r = n2Var;
+        this.r = m2Var;
         this.e = i10;
         this.s = peer;
     }

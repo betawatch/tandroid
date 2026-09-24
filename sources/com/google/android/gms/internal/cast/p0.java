@@ -2,7 +2,7 @@ package com.google.android.gms.internal.cast;
 
 import java.util.AbstractMap;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class p0 extends j0 {
     public final /* synthetic */ q0 c;
@@ -14,7 +14,7 @@ public final class p0 extends j0 {
     @Override // java.util.List
     public final /* bridge */ /* synthetic */ Object get(int i10) {
         q0 q0Var = this.c;
-        v7.k5.a(i10, q0Var.f);
+        v7.l5.a(i10, q0Var.f);
         Object[] objArr = q0Var.e;
         int i11 = i10 + i10;
         Object obj = objArr[i11];

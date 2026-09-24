@@ -18,15 +18,15 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.y5;
+import org.telegram.ui.ActionBar.x5;
 import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.w9;
-import w7.x5;
+import w7.y5;
 import yf.p;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
-public final class c extends FrameLayout implements y5 {
+public final class c extends FrameLayout implements x5 {
     public final d6 a;
     public final w9 b;
     public final TextView c;
@@ -39,7 +39,7 @@ public final class c extends FrameLayout implements y5 {
         w9 w9Var = new w9(context);
         this.b = w9Var;
         w9Var.setRoundRadius(AndroidUtilities.dp(9.0f));
-        addView(w9Var, x5.d(32, 32.0f, 19, 20.0f, 0.0f, 0.0f, 0.0f));
+        addView(w9Var, y5.d(32, 32.0f, 19, 20.0f, 0.0f, 0.0f, 0.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         linearLayout.setGravity(16);
@@ -50,19 +50,19 @@ public final class c extends FrameLayout implements y5 {
         textView.setSingleLine(true);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         textView.setEllipsize(truncateAt);
-        linearLayout.addView(textView, x5.n(-1, -2));
+        linearLayout.addView(textView, y5.n(-1, -2));
         TextView textView2 = new TextView(context);
         this.d = textView2;
         textView2.setTextSize(1, 13.0f);
         textView2.setSingleLine(true);
         textView2.setEllipsize(truncateAt);
-        linearLayout.addView(textView2, x5.k(0.0f, 2.0f, 0.0f, 0.0f, -1, -2));
-        addView(linearLayout, x5.d(-1, -2.0f, 19, 67.0f, 0.0f, 48.0f, 1.0f));
+        linearLayout.addView(textView2, y5.k(0.0f, 2.0f, 0.0f, 0.0f, -1, -2));
+        addView(linearLayout, y5.d(-1, -2.0f, 19, 67.0f, 0.0f, 48.0f, 1.0f));
         ImageView imageView = new ImageView(context);
         this.e = imageView;
         imageView.setImageResource(R.drawable.msg_inputarrow);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        addView(imageView, x5.d(24, 24.0f, 21, 0.0f, 0.0f, 11.0f, 0.0f));
+        addView(imageView, y5.d(24, 24.0f, 21, 0.0f, 0.0f, 11.0f, 0.0f));
         e();
     }
 
@@ -84,7 +84,7 @@ public final class c extends FrameLayout implements y5 {
         super.dispatchDraw(canvas);
     }
 
-    @Override // org.telegram.ui.ActionBar.y5
+    @Override // org.telegram.ui.ActionBar.x5
     public final void e() {
         int i10 = h6.z6;
         d6 d6Var = this.a;

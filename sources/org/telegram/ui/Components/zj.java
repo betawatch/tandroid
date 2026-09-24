@@ -21,7 +21,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class zj extends oi implements NotificationCenter.NotificationCenterDelegate, le.e {
     public final tj E;
@@ -58,15 +58,15 @@ public final class zj extends oi implements NotificationCenter.NotificationCente
         ci.h2 h2Var = siVar.r;
         h2Var.setHint(string);
         h2Var.addTextChangedListener(new nj(this));
-        frameLayout.addView(viVar, w7.x5.g());
-        FrameLayout.LayoutParams d = w7.x5.d(-1, 48.0f, 51, 7.0f, 8.0f, 7.0f, 4.0f);
+        frameLayout.addView(viVar, w7.y5.g());
+        FrameLayout.LayoutParams d = w7.y5.d(-1, 48.0f, 51, 7.0f, 8.0f, 7.0f, 4.0f);
         ((ViewGroup.MarginLayoutParams) d).topMargin += AndroidUtilities.statusBarHeight;
         frameLayout.addView(siVar, d);
         nz nzVar = new nz(context, d6Var);
         this.G = nzVar;
         nzVar.c();
         nzVar.setText(LocaleController.getString(R.string.NoContacts));
-        addView(nzVar, w7.x5.d(-1, -1.0f, 51, 0.0f, 52.0f, 0.0f, 0.0f));
+        addView(nzVar, w7.y5.d(-1, -1.0f, 51, 0.0f, 52.0f, 0.0f, 0.0f));
         ai.w0 w0Var = new ai.w0(this, context, d6Var, 12);
         this.s = w0Var;
         this.c = w0Var;
@@ -83,7 +83,7 @@ public final class zj extends oi implements NotificationCenter.NotificationCente
         w0Var.setHorizontalScrollBarEnabled(false);
         w0Var.setVerticalScrollBarEnabled(false);
         w0Var.setClipToPadding(false);
-        addView(w0Var, w7.x5.d(-1, -1.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
+        addView(w0Var, w7.y5.d(-1, -1.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
         tj tjVar = new tj(this, context);
         this.E = tjVar;
         w0Var.setAdapter(tjVar);
@@ -91,7 +91,7 @@ public final class zj extends oi implements NotificationCenter.NotificationCente
         w0Var.setOnItemClickListener(new ai.n6(10, this, d6Var));
         w0Var.setOnScrollListener(new ai.r(this, 18));
         w0Var.setOnItemLongClickListener(new lj(this));
-        FrameLayout.LayoutParams e = w7.x5.e(-1, 60, 51);
+        FrameLayout.LayoutParams e = w7.y5.e(-1, 60, 51);
         ((ViewGroup.MarginLayoutParams) e).height += AndroidUtilities.statusBarHeight;
         addView(frameLayout, e);
         NotificationCenter.getInstance(this.b.J1).addObserver(this, NotificationCenter.contactsDidLoad);
@@ -106,12 +106,12 @@ public final class zj extends oi implements NotificationCenter.NotificationCente
         }
         int i10 = 0;
         View childAt = w0Var.getChildAt(0);
-        wk0 wk0Var = (wk0) w0Var.G(childAt);
-        if (wk0Var == null) {
+        gl0 gl0Var = (gl0) w0Var.G(childAt);
+        if (gl0Var == null) {
             return -1000;
         }
         int paddingTop = w0Var.getPaddingTop();
-        if (wk0Var.b() == 0 && childAt.getTop() >= 0) {
+        if (gl0Var.b() == 0 && childAt.getTop() >= 0) {
             i10 = childAt.getTop();
         }
         return paddingTop - i10;
@@ -174,10 +174,10 @@ public final class zj extends oi implements NotificationCenter.NotificationCente
             String formatString = LocaleController.formatString("AttachContactsSlowMode", R.string.AttachContactsSlowMode, new Object[0]);
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getContext(), 0, this.a);
             String string = LocaleController.getString(R.string.AppName);
-            org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-            b2Var.R = string;
-            b2Var.T = formatString;
-            hg.c.A(R.string.OK, alertDialog$Builder, null);
+            org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
+            a2Var.R = string;
+            a2Var.T = formatString;
+            org.telegram.messenger.f0.o(R.string.OK, alertDialog$Builder, null);
             return;
         }
         pj a2 = pj.a(obj);
@@ -372,11 +372,11 @@ public final class zj extends oi implements NotificationCenter.NotificationCente
             return ConnectionsManager.DEFAULT_DATACENTER_ID;
         }
         View childAt = w0Var.getChildAt(0);
-        wk0 wk0Var = (wk0) w0Var.G(childAt);
+        gl0 gl0Var = (gl0) w0Var.G(childAt);
         int top = (childAt.getTop() - AndroidUtilities.statusBarHeight) - AndroidUtilities.dp(8.0f);
-        int i10 = (top <= 0 || wk0Var == null || wk0Var.b() != 0) ? 0 : top;
+        int i10 = (top <= 0 || gl0Var == null || gl0Var.b() != 0) ? 0 : top;
         le.c cVar = this.n;
-        if (top < 0 || wk0Var == null || wk0Var.b() != 0) {
+        if (top < 0 || gl0Var == null || gl0Var.b() != 0) {
             cVar.a(true, true);
             top = i10;
         } else {

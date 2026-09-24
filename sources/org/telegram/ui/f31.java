@@ -1,57 +1,109 @@
 package org.telegram.ui;
 
+import android.app.Activity;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f31 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ Utilities.Callback c;
+    public final /* synthetic */ wn b;
+    public final /* synthetic */ Activity c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.d6 d;
+    public final /* synthetic */ MessageObject e;
 
-    public /* synthetic */ f31(int i10, Utilities.Callback callback, boolean[] zArr) {
+    public /* synthetic */ f31(wn wnVar, Activity activity, org.telegram.ui.ActionBar.d6 d6Var, MessageObject messageObject, int i10) {
         this.a = i10;
-        this.b = zArr;
-        this.c = callback;
+        this.b = wnVar;
+        this.c = activity;
+        this.d = d6Var;
+        this.e = messageObject;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        Utilities.Callback callback;
-        Utilities.Callback callback2;
-        Utilities.Callback callback3;
         switch (this.a) {
             case 0:
-                boolean[] zArr = this.b;
-                if (!zArr[0] && (callback = this.c) != null) {
-                    zArr[0] = true;
-                    callback.run(Boolean.TRUE);
-                }
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.th(29), 220L);
+                wn wnVar = this.b;
+                org.telegram.ui.Components.yc a02 = org.telegram.ui.Components.yc.a0(wnVar);
+                String string = LocaleController.getString(R.string.AdReported);
+                final int i10 = 1;
+                final Activity activity = this.c;
+                a02.c(AndroidUtilities.replaceSingleTag(string, -1, 2, new Runnable() { // from class: org.telegram.ui.g31
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                nf.f.s(activity, "https://promote.telegram.org/guidelines");
+                                break;
+                            case 1:
+                                nf.f.s(activity, "https://promote.telegram.org/guidelines");
+                                break;
+                            default:
+                                nf.f.s(activity, "https://promote.telegram.org/guidelines");
+                                break;
+                        }
+                    }
+                }, this.d)).j();
+                MessageObject messageObject = this.e;
+                wnVar.Fa(messageObject);
+                wnVar.Ha(messageObject);
                 break;
             case 1:
-                boolean[] zArr2 = this.b;
-                if (!zArr2[0] && (callback2 = this.c) != null) {
-                    zArr2[0] = true;
-                    callback2.run(Boolean.FALSE);
-                    break;
-                }
+                wn wnVar2 = this.b;
+                org.telegram.ui.Components.yc a03 = org.telegram.ui.Components.yc.a0(wnVar2);
+                String string2 = LocaleController.getString(R.string.AdReported);
+                final int i11 = 0;
+                final Activity activity2 = this.c;
+                a03.c(AndroidUtilities.replaceSingleTag(string2, -1, 2, new Runnable() { // from class: org.telegram.ui.g31
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i11) {
+                            case 0:
+                                nf.f.s(activity2, "https://promote.telegram.org/guidelines");
+                                break;
+                            case 1:
+                                nf.f.s(activity2, "https://promote.telegram.org/guidelines");
+                                break;
+                            default:
+                                nf.f.s(activity2, "https://promote.telegram.org/guidelines");
+                                break;
+                        }
+                    }
+                }, this.d)).j();
+                MessageObject messageObject2 = this.e;
+                wnVar2.Fa(messageObject2);
+                wnVar2.Ha(messageObject2);
                 break;
             default:
-                boolean[] zArr3 = this.b;
-                if (!zArr3[0] && (callback3 = this.c) != null) {
-                    callback3.run("cancelled");
-                    zArr3[0] = true;
-                    break;
-                }
+                wn wnVar3 = this.b;
+                org.telegram.ui.Components.yc a04 = org.telegram.ui.Components.yc.a0(wnVar3);
+                String string3 = LocaleController.getString(R.string.AdReported);
+                final int i12 = 2;
+                final Activity activity3 = this.c;
+                a04.c(AndroidUtilities.replaceSingleTag(string3, -1, 2, new Runnable() { // from class: org.telegram.ui.g31
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i12) {
+                            case 0:
+                                nf.f.s(activity3, "https://promote.telegram.org/guidelines");
+                                break;
+                            case 1:
+                                nf.f.s(activity3, "https://promote.telegram.org/guidelines");
+                                break;
+                            default:
+                                nf.f.s(activity3, "https://promote.telegram.org/guidelines");
+                                break;
+                        }
+                    }
+                }, this.d)).j();
+                MessageObject messageObject3 = this.e;
+                wnVar3.Fa(messageObject3);
+                wnVar3.Ha(messageObject3);
                 break;
         }
-    }
-
-    public /* synthetic */ f31(yh.t5 t5Var, boolean[] zArr, Utilities.Callback callback) {
-        this.a = 2;
-        this.b = zArr;
-        this.c = callback;
     }
 }

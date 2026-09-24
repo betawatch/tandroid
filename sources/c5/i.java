@@ -5,7 +5,7 @@ import android.util.Log;
 import java.util.HashMap;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class i {
     public String a;
@@ -13,26 +13,26 @@ public final class i {
     public static void a(aa.a aVar, da.d dVar) {
         String str = dVar.a;
         if (str != null) {
-            aVar.s("X-CRASHLYTICS-GOOGLE-APP-ID", str);
+            aVar.q("X-CRASHLYTICS-GOOGLE-APP-ID", str);
         }
-        aVar.s("X-CRASHLYTICS-API-CLIENT-TYPE", "android");
-        aVar.s("X-CRASHLYTICS-API-CLIENT-VERSION", "18.6.0");
-        aVar.s("Accept", "application/json");
+        aVar.q("X-CRASHLYTICS-API-CLIENT-TYPE", "android");
+        aVar.q("X-CRASHLYTICS-API-CLIENT-VERSION", "18.6.0");
+        aVar.q("Accept", "application/json");
         String str2 = dVar.b;
         if (str2 != null) {
-            aVar.s("X-CRASHLYTICS-DEVICE-MODEL", str2);
+            aVar.q("X-CRASHLYTICS-DEVICE-MODEL", str2);
         }
         String str3 = dVar.c;
         if (str3 != null) {
-            aVar.s("X-CRASHLYTICS-OS-BUILD-VERSION", str3);
+            aVar.q("X-CRASHLYTICS-OS-BUILD-VERSION", str3);
         }
         String str4 = dVar.d;
         if (str4 != null) {
-            aVar.s("X-CRASHLYTICS-OS-DISPLAY-VERSION", str4);
+            aVar.q("X-CRASHLYTICS-OS-DISPLAY-VERSION", str4);
         }
         String str5 = dVar.e.b().a;
         if (str5 != null) {
-            aVar.s("X-CRASHLYTICS-INSTALLATION-ID", str5);
+            aVar.q("X-CRASHLYTICS-INSTALLATION-ID", str5);
         }
     }
 

@@ -1,52 +1,44 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
-import android.content.SharedPreferences;
-import org.telegram.messenger.MessagesController;
+import android.graphics.Rect;
+import android.view.View;
+import android.widget.ImageView;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vy implements DialogInterface.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
+public final class vy implements org.telegram.ui.Components.nl0 {
+    public final Rect a = new Rect();
+    public final /* synthetic */ zy b;
 
-    public /* synthetic */ vy(Object obj, int i10, int i11) {
-        this.a = i11;
-        this.c = obj;
-        this.b = i10;
+    public vy(zy zyVar) {
+        this.b = zyVar;
     }
 
-    @Override // android.content.DialogInterface.OnClickListener
-    public final void onClick(DialogInterface dialogInterface, int i10) {
-        switch (this.a) {
-            case 0:
-                az azVar = ((wy) this.c).b;
-                if (i10 == 0) {
-                    azVar.e.remove(this.b - azVar.n);
-                    azVar.Z();
-                    zy zyVar = azVar.f;
-                    if (zyVar != null) {
-                        zyVar.a();
-                        break;
-                    }
-                }
-                break;
-            case 1:
-                NotificationsSettingsActivity.X((NotificationsSettingsActivity) this.c, this.b, i10);
-                break;
-            default:
-                ThemeActivity themeActivity = (ThemeActivity) this.c;
-                themeActivity.getClass();
-                SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
-                edit.putInt("sortContactsBy", i10);
-                edit.commit();
-                yb1 yb1Var = themeActivity.a;
-                if (yb1Var != null) {
-                    yb1Var.m(this.b);
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Components.nl0
+    public final boolean c(float f7, float f10, int i10, View view) {
+        zy zyVar = this.b;
+        if (zyVar.getParentActivity() != null && (view instanceof org.telegram.ui.Cells.g4)) {
+            ImageView imageView = (ImageView) view.getTag(R.id.object_tag);
+            Rect rect = this.a;
+            imageView.getHitRect(rect);
+            if (!rect.contains((int) f7, (int) f10)) {
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(zyVar.getParentActivity());
+                alertDialog$Builder.f(new CharSequence[]{LocaleController.getString(R.string.Delete)}, new uy(this, i10, 0));
+                zyVar.showDialog(alertDialog$Builder.a);
+                return true;
+            }
         }
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.nl0
+    public final void g() {
+    }
+
+    @Override // org.telegram.ui.Components.nl0
+    public final void q(float f7) {
     }
 }

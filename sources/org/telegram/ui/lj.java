@@ -9,11 +9,11 @@ import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class lj implements View.OnTouchListener {
     public View a;
-    public org.telegram.ui.ActionBar.n1 b;
+    public org.telegram.ui.ActionBar.m1 b;
     public final Rect c = new Rect();
     public boolean d;
     public boolean e;
@@ -23,10 +23,10 @@ public final class lj implements View.OnTouchListener {
     public float r;
     public float s;
     public final /* synthetic */ View v;
-    public final /* synthetic */ xn w;
+    public final /* synthetic */ wn w;
 
-    public lj(xn xnVar, ImageView imageView) {
-        this.w = xnVar;
+    public lj(wn wnVar, ImageView imageView) {
+        this.w = wnVar;
         this.v = imageView;
         org.telegram.ui.Components.k20 k20Var = new org.telegram.ui.Components.k20((Context) null, new g(this, 24));
         this.f = k20Var;

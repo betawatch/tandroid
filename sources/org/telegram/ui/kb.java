@@ -4,11 +4,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class kb extends ji.n {
     public int W;
-    public fu0 X;
+    public eu0 X;
     public final /* synthetic */ ub Y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -21,13 +21,13 @@ public final class kb extends ji.n {
     @Override // ji.n, s4.j
     public final void N() {
         super.N();
-        fu0 fu0Var = this.X;
-        if (fu0Var != null) {
-            AndroidUtilities.cancelRunOnUIThread(fu0Var);
+        eu0 eu0Var = this.X;
+        if (eu0Var != null) {
+            AndroidUtilities.cancelRunOnUIThread(eu0Var);
         }
-        fu0 fu0Var2 = new fu0(this, 20);
-        this.X = fu0Var2;
-        AndroidUtilities.runOnUIThread(fu0Var2);
+        eu0 eu0Var2 = new eu0(this, 20);
+        this.X = eu0Var2;
+        AndroidUtilities.runOnUIThread(eu0Var2);
     }
 
     @Override // ji.n
@@ -35,9 +35,9 @@ public final class kb extends ji.n {
         if (this.W == -1) {
             this.W = this.Y.getNotificationCenter().setAnimationInProgress(this.W, ub.R0, false);
         }
-        fu0 fu0Var = this.X;
-        if (fu0Var != null) {
-            AndroidUtilities.cancelRunOnUIThread(fu0Var);
+        eu0 eu0Var = this.X;
+        if (eu0Var != null) {
+            AndroidUtilities.cancelRunOnUIThread(eu0Var);
             this.X = null;
         }
         if (BuildVars.LOGS_ENABLED) {

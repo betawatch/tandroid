@@ -1,53 +1,30 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
-/* loaded from: classes3.dex */
-public final class wr0 extends g.p {
-    public final /* synthetic */ ur0 c;
-    public final /* synthetic */ yu0 d;
+import android.content.Context;
 
-    public wr0(yu0 yu0Var, ur0 ur0Var) {
-        this.d = yu0Var;
-        this.c = ur0Var;
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* loaded from: classes3.dex */
+public final class wr0 extends gv0 {
+    public final /* synthetic */ jv0 G;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public wr0(jv0 jv0Var, Context context) {
+        super(jv0Var, context, 0, true);
+        this.G = jv0Var;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x003c, code lost:
-    
-        if (r3.h.getAdapter().j(r9) == 2) goto L22;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:4:0x0020, code lost:
-    
-        if (r5.j(r9) == 2) goto L22;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:5:0x0023, code lost:
-    
-        r1 = 1;
-     */
-    @Override // g.p
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final int i(int i10) {
-        yu0 yu0Var = this.d;
-        int[] iArr = yu0Var.m1;
-        mt0 mt0Var = yu0Var.O;
-        ur0 ur0Var = this.c;
-        int i11 = iArr[yu0.p0(ur0Var.F) ? 1 : 0];
-        s4.h0 adapter = ur0Var.h.getAdapter();
-        dt0 dt0Var = yu0Var.H;
-        if (adapter != dt0Var) {
-            if (yu0.u(yu0Var, ur0Var.h.getAdapter()) == -1) {
-                if (ur0Var.h.getAdapter() != mt0Var) {
-                    i11 = ur0Var.x.J;
-                } else if (ur0Var.h.getAdapter() == mt0Var && yu0Var.t1[5].a.isEmpty()) {
-                    i11 = ur0Var.x.J;
-                } else {
-                    vr0 vr0Var = ur0Var.x;
-                    vr0Var.B1();
-                    i11 = vr0Var.R.get(i10);
-                }
-            }
+    @Override // org.telegram.ui.Components.gv0, s4.h0
+    public final void l() {
+        super.l();
+        jv0 jv0Var = this.G;
+        cu0 W = jv0Var.W(9);
+        if (W != null && W.r.getVisibility() == 0) {
+            jv0Var.f0.l();
         }
-        return Math.min(i11, ur0Var.x.J);
+        if (W != null) {
+            ts0 ts0Var = W.w;
+            ai.d9 d9Var = this.s;
+            ts0Var.e(d9Var != null && (d9Var.k() || (jv0Var.i0() && this.s.g() > 0)), true);
+        }
     }
 }

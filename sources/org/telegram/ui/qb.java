@@ -8,7 +8,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class qb extends s4.h0 {
     public final Context c;
@@ -143,7 +143,7 @@ public final class qb extends s4.h0 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void v(s4.c1 c1Var, int i10) {
-        org.telegram.ui.Cells.t1 t1Var;
+        org.telegram.ui.Cells.u1 u1Var;
         boolean z10;
         boolean z11;
         boolean z12;
@@ -166,7 +166,7 @@ public final class qb extends s4.h0 {
             return;
         }
         MessageObject messageObject = (MessageObject) arrayList.get((arrayList.size() - (i10 - this.f)) - 1);
-        if (!(view instanceof org.telegram.ui.Cells.t1)) {
+        if (!(view instanceof org.telegram.ui.Cells.u1)) {
             if (view instanceof org.telegram.ui.Cells.w0) {
                 org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) view;
                 w0Var.setMessageObject(messageObject);
@@ -175,8 +175,8 @@ public final class qb extends s4.h0 {
             }
             return;
         }
-        org.telegram.ui.Cells.t1 t1Var2 = (org.telegram.ui.Cells.t1) view;
-        t1Var2.N7 = true;
+        org.telegram.ui.Cells.u1 u1Var2 = (org.telegram.ui.Cells.u1) view;
+        u1Var2.N7 = true;
         int i15 = i10 + 1;
         int j13 = j(i15);
         int j14 = j(i10 - 1);
@@ -186,22 +186,22 @@ public final class qb extends s4.h0 {
             if (z10) {
                 TLRPC.TL_forumTopic tL_forumTopic = messageObject.replyToForumTopic;
                 if (tL_forumTopic == null) {
-                    i14 = ((org.telegram.ui.ActionBar.n2) ubVar).currentAccount;
+                    i14 = ((org.telegram.ui.ActionBar.m2) ubVar).currentAccount;
                     j11 = MessageObject.getTopicId(i14, messageObject.messageOwner, true);
                 } else {
                     j11 = tL_forumTopic.id;
                 }
                 TLRPC.TL_forumTopic tL_forumTopic2 = messageObject2.replyToForumTopic;
                 if (tL_forumTopic2 == null) {
-                    i13 = ((org.telegram.ui.ActionBar.n2) ubVar).currentAccount;
-                    t1Var = t1Var2;
+                    i13 = ((org.telegram.ui.ActionBar.m2) ubVar).currentAccount;
+                    u1Var = u1Var2;
                     j12 = MessageObject.getTopicId(i13, messageObject2.messageOwner, true);
                 } else {
-                    t1Var = t1Var2;
+                    u1Var = u1Var2;
                     j12 = tL_forumTopic2.id;
                 }
             } else {
-                t1Var = t1Var2;
+                u1Var = u1Var2;
             }
             if (j14 != c1Var.f) {
                 MessageObject messageObject3 = (MessageObject) arrayList.get(arrayList.size() - (i10 - this.f));
@@ -209,7 +209,7 @@ public final class qb extends s4.h0 {
                 if (z13) {
                     TLRPC.TL_forumTopic tL_forumTopic3 = messageObject.replyToForumTopic;
                     if (tL_forumTopic3 == null) {
-                        i12 = ((org.telegram.ui.ActionBar.n2) ubVar).currentAccount;
+                        i12 = ((org.telegram.ui.ActionBar.m2) ubVar).currentAccount;
                         z12 = true;
                         j3 = MessageObject.getTopicId(i12, messageObject.messageOwner, true);
                     } else {
@@ -218,7 +218,7 @@ public final class qb extends s4.h0 {
                     }
                     TLRPC.TL_forumTopic tL_forumTopic4 = messageObject3.replyToForumTopic;
                     if (tL_forumTopic4 == null) {
-                        i11 = ((org.telegram.ui.ActionBar.n2) ubVar).currentAccount;
+                        i11 = ((org.telegram.ui.ActionBar.m2) ubVar).currentAccount;
                         j10 = MessageObject.getTopicId(i11, messageObject3.messageOwner, z12);
                     } else {
                         j10 = tL_forumTopic4.id;
@@ -231,24 +231,24 @@ public final class qb extends s4.h0 {
             } else {
                 z11 = false;
             }
-            org.telegram.ui.Cells.t1 t1Var3 = t1Var;
-            t1Var3.X3(messageObject, null, z10, z11, false, false);
-            t1Var3.setHighlighted(false);
-            t1Var3.S3(ubVar.v0);
+            org.telegram.ui.Cells.u1 u1Var3 = u1Var;
+            u1Var3.X3(messageObject, null, z10, z11, false, false);
+            u1Var3.setHighlighted(false);
+            u1Var3.S3(ubVar.v0);
         }
-        t1Var = t1Var2;
+        u1Var = u1Var2;
         z10 = false;
         if (j14 != c1Var.f) {
         }
-        org.telegram.ui.Cells.t1 t1Var32 = t1Var;
-        t1Var32.X3(messageObject, null, z10, z11, false, false);
-        t1Var32.setHighlighted(false);
-        t1Var32.S3(ubVar.v0);
+        org.telegram.ui.Cells.u1 u1Var32 = u1Var;
+        u1Var32.X3(messageObject, null, z10, z11, false, false);
+        u1Var32.setHighlighted(false);
+        u1Var32.S3(ubVar.v0);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r5v10, types: [android.view.View] */
-    /* JADX WARN: Type inference failed for: r5v2, types: [org.telegram.ui.Cells.u1] */
+    /* JADX WARN: Type inference failed for: r5v2, types: [org.telegram.ui.Cells.v1] */
     /* JADX WARN: Type inference failed for: r5v4, types: [org.telegram.ui.Cells.w0] */
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
@@ -261,28 +261,28 @@ public final class qb extends s4.h0 {
         Context context = this.c;
         if (i10 == 0) {
             if (arrayList.isEmpty()) {
-                i11 = ((org.telegram.ui.ActionBar.n2) ubVar).currentAccount;
-                viewGroup3 = new org.telegram.ui.Cells.t1(context, i11);
+                i11 = ((org.telegram.ui.ActionBar.m2) ubVar).currentAccount;
+                viewGroup3 = new org.telegram.ui.Cells.u1(context, i11);
             } else {
                 ?? r52 = (View) arrayList.get(0);
                 arrayList.remove(0);
                 viewGroup3 = r52;
             }
-            org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) viewGroup3;
-            t1Var.setDelegate(new lb(this));
-            t1Var.setAllowAssistant(true);
+            org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) viewGroup3;
+            u1Var.setDelegate(new lb(this));
+            u1Var.setAllowAssistant(true);
             viewGroup2 = viewGroup3;
         } else if (i10 == 1) {
             ?? mbVar = new mb(context);
             mbVar.setDelegate(new ob(this));
             viewGroup2 = mbVar;
         } else if (i10 == 2) {
-            viewGroup2 = new org.telegram.ui.Cells.v1(context, null);
+            viewGroup2 = new org.telegram.ui.Cells.w1(context, null);
         } else if (i10 == 10) {
-            d6Var = ((org.telegram.ui.ActionBar.n2) ubVar).resourceProvider;
-            ?? u1Var = new org.telegram.ui.Cells.u1(context, d6Var);
-            u1Var.setDelegate(new g(this, 10));
-            viewGroup2 = u1Var;
+            d6Var = ((org.telegram.ui.ActionBar.m2) ubVar).resourceProvider;
+            ?? v1Var = new org.telegram.ui.Cells.v1(context, d6Var);
+            v1Var.setDelegate(new g(this, 10));
+            viewGroup2 = v1Var;
         } else {
             viewGroup2 = new org.telegram.ui.Cells.z0(context, null);
         }
@@ -292,15 +292,15 @@ public final class qb extends s4.h0 {
     @Override // s4.h0
     public final void y(s4.c1 c1Var) {
         View view = c1Var.a;
-        if ((view instanceof org.telegram.ui.Cells.t1) || (view instanceof org.telegram.ui.Cells.w0)) {
+        if ((view instanceof org.telegram.ui.Cells.u1) || (view instanceof org.telegram.ui.Cells.w0)) {
             view.getViewTreeObserver().addOnPreDrawListener(new pb(this, view, c1Var));
         }
-        if (view instanceof org.telegram.ui.Cells.t1) {
-            org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) view;
-            t1Var.getMessageObject();
-            t1Var.setBackgroundDrawable(null);
-            t1Var.K3(true, false);
-            t1Var.setHighlighted(false);
+        if (view instanceof org.telegram.ui.Cells.u1) {
+            org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) view;
+            u1Var.getMessageObject();
+            u1Var.setBackgroundDrawable(null);
+            u1Var.K3(true, false);
+            u1Var.setHighlighted(false);
         }
     }
 }

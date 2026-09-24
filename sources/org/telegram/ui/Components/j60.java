@@ -1,27 +1,37 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.text.SpannableStringBuilder;
-
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class j60 extends w80 {
-    public final /* synthetic */ n60 L;
+public final class j60 {
+    public final int a;
+    public final int b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j60(n60 n60Var, Context context, org.telegram.ui.ActionBar.n2 n2Var, org.telegram.ui.ActionBar.f3 f3Var, boolean z10) {
-        super(context, n2Var, f3Var, false, z10);
-        this.L = n60Var;
+    public j60(int i10, int i11) {
+        this.a = i10;
+        this.b = i11;
     }
 
-    @Override // org.telegram.ui.Components.w80
-    public final void e(int i10, SpannableStringBuilder spannableStringBuilder) {
-        org.telegram.ui.ActionBar.d6 d6Var;
-        s60 s60Var = this.L.c;
-        org.telegram.ui.ActionBar.d3 d3Var = s60Var.container;
-        d6Var = ((org.telegram.ui.ActionBar.f3) s60Var).resourcesProvider;
-        qc Q = new xc(d3Var, d6Var).Q(i10, 36, spannableStringBuilder);
-        Q.r = false;
-        Q.k(true);
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && j60.class == obj.getClass()) {
+            j60 j60Var = (j60) obj;
+            if (this.a == j60Var.a && this.b == j60Var.b) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return (this.a * 31) + this.b;
+    }
+
+    public final String toString() {
+        StringBuilder sb2 = new StringBuilder("IntSize(");
+        sb2.append(this.a);
+        sb2.append(", ");
+        return a4.a.o(this.b, ")", sb2);
     }
 }

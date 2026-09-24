@@ -7,14 +7,14 @@ import b5.g;
 import c5.x;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.firebase.messaging.t;
-import com.google.firebase.messaging.w;
+import com.google.firebase.messaging.v;
 import java.util.concurrent.atomic.AtomicMarkableReference;
 import m.p3;
 import w9.m;
 import w9.o;
 import w9.r;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class c {
     public final o a;
@@ -33,9 +33,9 @@ public final class c {
         mVar.getClass();
         long currentTimeMillis = System.currentTimeMillis();
         t tVar = mVar.e;
-        w wVar = new w(mVar, currentTimeMillis, th2, currentThread);
+        v vVar = new v(mVar, currentTimeMillis, th2, currentThread);
         tVar.getClass();
-        tVar.k(new x(wVar, 7));
+        tVar.k(new x(vVar, 7));
     }
 
     public final void b() {

@@ -32,7 +32,7 @@ import org.telegram.ui.Components.qq;
 import org.telegram.ui.Components.rr;
 import org.telegram.ui.Components.up;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final class j7 extends View implements w2 {
     public boolean A0;
@@ -49,11 +49,11 @@ public final class j7 extends View implements w2 {
     public float H0;
     public final RadialGradient I;
     public final org.telegram.ui.Components.e6 I0;
-    public final org.telegram.ui.Components.yc J;
+    public final org.telegram.ui.Components.zc J;
     public final org.telegram.ui.Components.e6 J0;
-    public final org.telegram.ui.Components.yc K;
+    public final org.telegram.ui.Components.zc K;
     public final org.telegram.ui.Components.e6 K0;
-    public final org.telegram.ui.Components.yc L;
+    public final org.telegram.ui.Components.zc L;
     public final g7 L0;
     public float M;
     public final g7 M0;
@@ -142,9 +142,9 @@ public final class j7 extends View implements w2 {
         this.G = paint8;
         Matrix matrix = new Matrix();
         this.H = matrix;
-        this.J = new org.telegram.ui.Components.yc(this);
-        this.K = new org.telegram.ui.Components.yc(this);
-        this.L = new org.telegram.ui.Components.yc(this);
+        this.J = new org.telegram.ui.Components.zc(this);
+        this.K = new org.telegram.ui.Components.zc(this);
+        this.L = new org.telegram.ui.Components.zc(this);
         rr rrVar = rr.h;
         this.N = new org.telegram.ui.Components.e6(this, 0L, 310L, rrVar);
         this.P = new org.telegram.ui.Components.e6(this, 0L, 330L, rrVar);
@@ -260,7 +260,7 @@ public final class j7 extends View implements w2 {
     }
 
     public final boolean c(float f7, float f10, float f11, float f12, float f13, boolean z10) {
-        return this.r0 ? (!z10 || f12 - f10 <= ((float) AndroidUtilities.dp(100.0f))) && Math.abs(f11 - f7) <= f13 : v7.z6.a(f7, f10, f11, f12) <= f13;
+        return this.r0 ? (!z10 || f12 - f10 <= ((float) AndroidUtilities.dp(100.0f))) && Math.abs(f11 - f7) <= f13 : v7.a7.a(f7, f10, f11, f12) <= f13;
     }
 
     public final void d(float f7) {
@@ -373,7 +373,7 @@ public final class j7 extends View implements w2 {
         float f26;
         float f27;
         org.telegram.ui.Components.e6 e6Var;
-        org.telegram.ui.Components.yc ycVar;
+        org.telegram.ui.Components.zc zcVar;
         float f28;
         int i10;
         float f29;
@@ -391,8 +391,8 @@ public final class j7 extends View implements w2 {
         float d13 = this.B0.d(this.w0 ? 1.0f : 0.0f, false);
         float abs = Math.abs(this.y0 - this.i0);
         float dp = AndroidUtilities.dp(64.0f);
-        org.telegram.ui.Components.yc ycVar2 = this.J;
-        float d14 = this.C0.d((abs >= dp || !(this.r0 || ycVar2.h)) ? 0.0f : 1.0f, false) * d13;
+        org.telegram.ui.Components.zc zcVar2 = this.J;
+        float d14 = this.C0.d((abs >= dp || !(this.r0 || zcVar2.h)) ? 0.0f : 1.0f, false) * d13;
         float d15 = this.D0.d(Math.abs(this.y0 - this.i0) < ((float) AndroidUtilities.dp(64.0f)) ? 1.0f : 0.0f, false) * d13;
         float clamp = Utilities.clamp((this.y0 - this.i0) / AndroidUtilities.dp(16.0f), 1.0f, -1.0f);
         float clamp2 = Utilities.clamp((this.y0 - this.i0) / AndroidUtilities.dp(64.0f), 1.0f, -1.0f);
@@ -440,7 +440,7 @@ public final class j7 extends View implements w2 {
         float lerp = AndroidUtilities.lerp(f36, this.E0.d((AndroidUtilities.dp(4.0f) * clamp) + f36, false), d14);
         float lerp2 = AndroidUtilities.lerp(AndroidUtilities.lerp(AndroidUtilities.dp(29.0f), AndroidUtilities.dp(12.0f), d11), AndroidUtilities.dp(32.0f) - (Math.abs(clamp2) * AndroidUtilities.dp(4.0f)), d14);
         float lerp3 = AndroidUtilities.lerp(AndroidUtilities.lerp(AndroidUtilities.dp(32.0f), AndroidUtilities.dp(7.0f), d11), AndroidUtilities.dp(32.0f), d14);
-        float lerp4 = AndroidUtilities.lerp(ycVar2.a(this.o0 ? 0.0f : 0.2f), (this.h0.d(this.g0, false) * 0.2f) + f14, d11);
+        float lerp4 = AndroidUtilities.lerp(zcVar2.a(this.o0 ? 0.0f : 0.2f), (this.h0.d(this.g0, false) * 0.2f) + f14, d11);
         RectF rectF4 = AndroidUtilities.rectTmp;
         float f37 = lerp - lerp2;
         float f38 = this.j0;
@@ -573,9 +573,9 @@ public final class j7 extends View implements w2 {
         }
         canvas3.restore();
         boolean z10 = this.A0;
-        org.telegram.ui.Components.yc ycVar3 = this.L;
+        org.telegram.ui.Components.zc zcVar3 = this.L;
         if (z10) {
-            float a2 = ycVar3.a(0.2f) * f18;
+            float a2 = zcVar3.a(0.2f) * f18;
             if (a2 > 0.0f) {
                 canvas3.save();
                 canvas3.scale(a2, a2, this.k0, this.j0);
@@ -585,7 +585,7 @@ public final class j7 extends View implements w2 {
                 canvas3.restore();
             }
         }
-        float a10 = ycVar3.a(0.2f) * f33 * f16;
+        float a10 = zcVar3.a(0.2f) * f33 * f16;
         if (a10 > 0.0f) {
             canvas3.save();
             canvas3.scale(a10, a10, this.k0, this.j0);
@@ -596,10 +596,10 @@ public final class j7 extends View implements w2 {
         float d19 = this.P.d(this.O ? 1.0f : 0.0f, false);
         Paint paint8 = this.x;
         org.telegram.ui.Components.e6 e6Var2 = this.N;
-        org.telegram.ui.Components.yc ycVar4 = this.K;
+        org.telegram.ui.Components.zc zcVar4 = this.K;
         if (d19 > 0.0f) {
             canvas3.save();
-            float a11 = ycVar4.a(0.2f) * d19 * f16;
+            float a11 = zcVar4.a(0.2f) * d19 * f16;
             canvas3.scale(a11, a11, this.l0, this.j0);
             canvas3.rotate(e6Var2.d(this.M, false) - getRotation(), this.l0, this.j0);
             canvas3.drawCircle(this.l0, this.j0, AndroidUtilities.dp(22.0f), paint8);
@@ -609,8 +609,8 @@ public final class j7 extends View implements w2 {
         if (d19 < 1.0f) {
             canvas3.save();
             f25 = f16;
-            float A = org.telegram.messenger.z0.A(1.0f, d19, ycVar4.a(0.2f), f25);
-            canvas3.scale(A, A, this.l0, this.j0);
+            float z11 = org.telegram.messenger.f0.z(1.0f, d19, zcVar4.a(0.2f), f25);
+            canvas3.scale(z11, z11, this.l0, this.j0);
             canvas3.rotate(e6Var2.d(this.M, false) - getRotation(), this.l0, this.j0);
             canvas3.drawCircle(this.l0, this.j0, AndroidUtilities.dp(22.0f), this.w);
             this.d.draw(canvas3);
@@ -638,7 +638,7 @@ public final class j7 extends View implements w2 {
             if (abs4 >= lerp2 + (f26 * 2.0f) || clamp3 >= 0.6f) {
                 f27 = f26;
                 e6Var = e6Var2;
-                ycVar = ycVar4;
+                zcVar = zcVar4;
                 f28 = d20;
                 i10 = i11;
                 f29 = f25;
@@ -688,8 +688,8 @@ public final class j7 extends View implements w2 {
                 f27 = f63;
                 f29 = f25;
                 e6Var = e6Var2;
-                ycVar = ycVar4;
-                float min2 = Math.min(1.0f, (abs4 * 2.0f) / f56) * Math.min(clamp3 * 2.4f, v7.z6.a(pointF4.x, pointF4.y, pointF6.x, pointF6.y) / f56);
+                zcVar = zcVar4;
+                float min2 = Math.min(1.0f, (abs4 * 2.0f) / f56) * Math.min(clamp3 * 2.4f, v7.a7.a(pointF4.x, pointF4.y, pointF6.x, pointF6.y) / f56);
                 float f65 = lerp2 * min2;
                 float f66 = f27 * min2;
                 a(pointF4.x, pointF4.y, d26 - 1.5707963705062866d, f65, this.T0);
@@ -728,14 +728,14 @@ public final class j7 extends View implements w2 {
         } else {
             f27 = f26;
             e6Var = e6Var2;
-            ycVar = ycVar4;
+            zcVar = zcVar4;
             f28 = d20;
             i10 = i11;
             f29 = f25;
             f30 = 22.0f;
         }
         if (i10 > 0 || f28 > 0.0f) {
-            float a12 = ycVar3.a(0.2f) * f18 * f29;
+            float a12 = zcVar3.a(0.2f) * f18 * f29;
             canvas3.save();
             Path path3 = this.O0;
             path3.rewind();
@@ -754,7 +754,7 @@ public final class j7 extends View implements w2 {
                 this.h.draw(canvas3);
                 canvas3.restore();
             }
-            float a13 = ycVar.a(0.2f) * f29;
+            float a13 = zcVar.a(0.2f) * f29;
             canvas3.save();
             canvas3.scale(a13, a13, this.l0, this.j0);
             canvas3.rotate(e6Var.d(this.M, false) - getRotation(), this.l0, this.j0);
@@ -768,12 +768,12 @@ public final class j7 extends View implements w2 {
             return;
         }
         boolean b10 = b();
-        boolean z11 = this.a0;
-        boolean z12 = this.r0;
-        if (z11 == z12 && this.b0 == b10 && this.c0 == this.O && this.d0 == this.o0 && this.e0 == this.u0 && this.f0 == this.A0) {
+        boolean z12 = this.a0;
+        boolean z13 = this.r0;
+        if (z12 == z13 && this.b0 == b10 && this.c0 == this.O && this.d0 == this.o0 && this.e0 == this.u0 && this.f0 == this.A0) {
             return;
         }
-        this.a0 = z12;
+        this.a0 = z13;
         this.b0 = b10;
         this.c0 = this.O;
         this.d0 = this.o0;
@@ -823,30 +823,30 @@ public final class j7 extends View implements w2 {
         float y3 = motionEvent.getY() + 0.0f;
         boolean c10 = c(clamp, y3, this.l0, this.j0, AndroidUtilities.dp(7.0f), true);
         boolean z10 = this.u0;
-        org.telegram.ui.Components.yc ycVar = this.L;
-        org.telegram.ui.Components.yc ycVar2 = this.J;
-        org.telegram.ui.Components.yc ycVar3 = this.K;
+        org.telegram.ui.Components.zc zcVar = this.L;
+        org.telegram.ui.Components.zc zcVar2 = this.J;
+        org.telegram.ui.Components.zc zcVar3 = this.K;
         boolean z11 = true;
         if (z10) {
-            ycVar2.c(false);
-            ycVar3.c(false);
-            ycVar.c(false);
+            zcVar2.c(false);
+            zcVar3.c(false);
+            zcVar.c(false);
         } else if (action == 0 || this.w0) {
-            ycVar2.c(c(clamp, y3, this.i0, this.j0, AndroidUtilities.dp(60.0f), false));
-            ycVar3.c(c(clamp, y3, this.l0, this.j0, (float) AndroidUtilities.dp(30.0f), true) && !b());
-            ycVar.c(c(clamp, y3, this.k0, this.j0, (float) AndroidUtilities.dp(30.0f), false) && !b());
+            zcVar2.c(c(clamp, y3, this.i0, this.j0, AndroidUtilities.dp(60.0f), false));
+            zcVar3.c(c(clamp, y3, this.l0, this.j0, (float) AndroidUtilities.dp(30.0f), true) && !b());
+            zcVar.c(c(clamp, y3, this.k0, this.j0, (float) AndroidUtilities.dp(30.0f), false) && !b());
         }
         g7 g7Var = this.M0;
         g7 g7Var2 = this.L0;
         if (action == 0) {
             this.w0 = true;
-            this.x0 = ycVar2.h || ycVar3.h;
+            this.x0 = zcVar2.h || zcVar3.h;
             System.currentTimeMillis();
             this.y0 = clamp;
             if (Math.abs(clamp - this.i0) < AndroidUtilities.dp(50.0f)) {
                 AndroidUtilities.runOnUIThread(g7Var2, ViewConfiguration.getLongPressTimeout());
             }
-            if (ycVar3.h) {
+            if (zcVar3.h) {
                 AndroidUtilities.runOnUIThread(g7Var, ViewConfiguration.getLongPressTimeout());
             }
         } else {
@@ -874,13 +874,13 @@ public final class j7 extends View implements w2 {
                     AndroidUtilities.cancelRunOnUIThread(g7Var2);
                     AndroidUtilities.cancelRunOnUIThread(g7Var);
                     boolean z12 = this.r0;
-                    if (!z12 && ycVar.h) {
+                    if (!z12 && zcVar.h) {
                         lc lcVar2 = ((gb) this.a).a;
                         if (lcVar2.f0 == 0 && !lcVar2.P1 && !lcVar2.Q1 && lc.b(lcVar2)) {
                             lcVar2.f(true);
                         }
                     } else if (z12 && this.z0) {
-                        if (ycVar.h) {
+                        if (zcVar.h) {
                             this.z0 = false;
                             this.G0.d(1.0f, true);
                             b4 b4Var = ((gb) this.a).a.T0;
@@ -892,7 +892,7 @@ public final class j7 extends View implements w2 {
                             this.u0 = true;
                             ((gb) this.a).d(false);
                         }
-                    } else if (ycVar2.h) {
+                    } else if (zcVar2.h) {
                         if (b()) {
                             ((gb) this.a).a();
                         } else if (!this.o0 && !this.r0 && !this.z0) {
@@ -910,13 +910,13 @@ public final class j7 extends View implements w2 {
                         }
                     }
                     this.z0 = false;
-                    if (ycVar3.h) {
+                    if (zcVar3.h) {
                         d(180.0f);
                         ((gb) this.a).b();
                     }
-                    ycVar2.c(false);
-                    ycVar3.c(false);
-                    ycVar.c(false);
+                    zcVar2.c(false);
+                    zcVar3.c(false);
+                    zcVar.c(false);
                     invalidate();
                 }
                 return false;

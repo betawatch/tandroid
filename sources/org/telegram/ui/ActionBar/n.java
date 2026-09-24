@@ -9,9 +9,9 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n implements r0.n, l1, a2 {
+public final /* synthetic */ class n implements r0.n, k1, z1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -46,26 +46,26 @@ public final /* synthetic */ class n implements r0.n, l1, a2 {
             case 3:
             case 5:
             default:
-                y3 y3Var = (y3) obj;
-                y3Var.e = l1Var;
+                x3 x3Var = (x3) obj;
+                x3Var.e = l1Var;
                 i0.b defaultWindowInsets3 = AndroidUtilities.getDefaultWindowInsets(l1Var, false);
                 i0.b defaultWindowInsets4 = AndroidUtilities.getDefaultWindowInsets(l1Var, true);
-                if (!y3Var.f.equals(defaultWindowInsets3) || !y3Var.h.equals(defaultWindowInsets4)) {
+                if (!x3Var.f.equals(defaultWindowInsets3) || !x3Var.h.equals(defaultWindowInsets4)) {
                     AndroidUtilities.statusBarHeight = defaultWindowInsets3.b;
                     AndroidUtilities.navigationBarHeight = defaultWindowInsets3.d;
-                    y3Var.f = defaultWindowInsets3;
-                    y3Var.h = defaultWindowInsets4;
-                    y3Var.requestLayout();
+                    x3Var.f = defaultWindowInsets3;
+                    x3Var.h = defaultWindowInsets4;
+                    x3Var.requestLayout();
                 }
-                int childCount2 = y3Var.getChildCount();
+                int childCount2 = x3Var.getChildCount();
                 while (i11 < childCount2) {
-                    View childAt = y3Var.getChildAt(i11);
+                    View childAt = x3Var.getChildAt(i11);
                     if ((childAt instanceof ActionBarLayout) || childAt.getTag() == null) {
                         r0.i0.b(childAt, l1Var);
                     }
                     i11++;
                 }
-                y3Var.invalidate();
+                x3Var.invalidate();
                 break;
             case 4:
                 r0.i1 i1Var = l1Var.a;
@@ -83,31 +83,31 @@ public final /* synthetic */ class n implements r0.n, l1, a2 {
             case 6:
                 break;
             case 7:
-                w3 w3Var = (w3) obj;
-                w3Var.s = l1Var.a.f(2).d;
-                w3Var.invalidate();
+                v3 v3Var = (v3) obj;
+                v3Var.s = l1Var.a.f(2).d;
+                v3Var.invalidate();
                 break;
         }
         return r0.l1.b;
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void f(b2 b2Var, int i10) {
-        b2 b2Var2 = (b2) this.b;
-        DialogInterface.OnCancelListener onCancelListener = b2Var2.J;
+    @Override // org.telegram.ui.ActionBar.z1
+    public void f(a2 a2Var, int i10) {
+        a2 a2Var2 = (a2) this.b;
+        DialogInterface.OnCancelListener onCancelListener = a2Var2.J;
         if (onCancelListener != null) {
-            onCancelListener.onCancel(b2Var2);
+            onCancelListener.onCancel(a2Var2);
         }
-        b2Var2.dismiss();
+        a2Var2.dismiss();
     }
 
-    @Override // org.telegram.ui.ActionBar.l1
-    public void o(KeyEvent keyEvent) {
-        n1 n1Var;
-        v0 v0Var = (v0) this.b;
-        v0Var.getClass();
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (n1Var = v0Var.d) != null && n1Var.isShowing()) {
-            v0Var.d.d(true);
+    @Override // org.telegram.ui.ActionBar.k1
+    public void p(KeyEvent keyEvent) {
+        m1 m1Var;
+        u0 u0Var = (u0) this.b;
+        u0Var.getClass();
+        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (m1Var = u0Var.d) != null && m1Var.isShowing()) {
+            u0Var.d.d(true);
         }
     }
 }

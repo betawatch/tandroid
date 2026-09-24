@@ -15,7 +15,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import lf.i;
 import org.xmlpull.v1.XmlSerializer;
 import w9.o;
 import x8.m;
@@ -24,7 +23,7 @@ import y8.k0;
 import y8.v0;
 import zd.y0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class e implements Runnable {
     public final /* synthetic */ int a;
@@ -46,11 +45,11 @@ public final class e implements Runnable {
                 ArrayList arrayList = (ArrayList) this.b;
                 shortcutInfoCompatSaverImpl.e(arrayList);
                 File file = shortcutInfoCompatSaverImpl.f;
-                i iVar = new i(file);
-                File file2 = (File) iVar.c;
+                la.h hVar = new la.h(file);
+                File file2 = (File) hVar.c;
                 FileOutputStream fileOutputStream = null;
                 try {
-                    FileOutputStream X = iVar.X();
+                    FileOutputStream X = hVar.X();
                     try {
                         BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(X);
                         XmlSerializer newSerializer = Xml.newSerializer();
@@ -82,7 +81,7 @@ public final class e implements Runnable {
                         } catch (IOException e) {
                             Log.e("AtomicFile", "Failed to close file output stream", e);
                         }
-                        i.U(file2, file);
+                        la.h.U(file2, file);
                         return;
                     } catch (Exception e7) {
                         e = e7;

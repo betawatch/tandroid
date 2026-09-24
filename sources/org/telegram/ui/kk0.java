@@ -10,9 +10,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class kk0 extends org.telegram.ui.Components.ll0 {
+public final class kk0 extends org.telegram.ui.Components.vl0 {
     public final Context c;
     public ArrayList d = new ArrayList();
     public ArrayList e = new ArrayList();
@@ -25,10 +25,10 @@ public final class kk0 extends org.telegram.ui.Components.ll0 {
         this.c = context;
         gg.c2 c2Var = new gg.c2(true);
         this.h = c2Var;
-        c2Var.a = new eu(this, 25);
+        c2Var.a = new du(this, 25);
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.vl0
     public final boolean D(s4.c1 c1Var) {
         return true;
     }
@@ -90,28 +90,28 @@ public final class kk0 extends org.telegram.ui.Components.ll0 {
             ((org.telegram.ui.Cells.v3) view).setText(LocaleController.getString("AddToExceptions", R.string.AddToExceptions));
             return;
         }
-        org.telegram.ui.Cells.bb bbVar = (org.telegram.ui.Cells.bb) view;
+        org.telegram.ui.Cells.za zaVar = (org.telegram.ui.Cells.za) view;
         if (i10 < this.d.size()) {
-            bbVar.g((nk0) this.d.get(i10), (CharSequence) this.e.get(i10), i10 != this.d.size() - 1);
-            bbVar.setAddButtonVisible(false);
+            zaVar.g((nk0) this.d.get(i10), (CharSequence) this.e.get(i10), i10 != this.d.size() - 1);
+            zaVar.setAddButtonVisible(false);
         } else {
             int f7 = com.google.android.gms.internal.vision.e2.f(1, i10, this.d);
             ArrayList arrayList = this.h.e;
-            bbVar.d((TLObject) arrayList.get(f7), null, LocaleController.getString("NotificationsOn", R.string.NotificationsOn), f7 != arrayList.size() - 1);
-            bbVar.setAddButtonVisible(true);
+            zaVar.d((TLObject) arrayList.get(f7), null, LocaleController.getString("NotificationsOn", R.string.NotificationsOn), f7 != arrayList.size() - 1);
+            zaVar.setAddButtonVisible(true);
         }
     }
 
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        View bbVar;
+        View zaVar;
         if (i10 != 0) {
-            bbVar = new org.telegram.ui.Cells.v3(this.c, null);
-            bbVar.setBackgroundColor(0);
-            bbVar.setTag(-33024);
+            zaVar = new org.telegram.ui.Cells.v3(this.c, null);
+            zaVar.setBackgroundColor(0);
+            zaVar.setTag(-33024);
         } else {
-            bbVar = new org.telegram.ui.Cells.bb(4, 0, this.c, null, false, true);
+            zaVar = new org.telegram.ui.Cells.za(4, 0, this.c, null, false, true);
         }
-        return new org.telegram.ui.Components.wk0(bbVar);
+        return new org.telegram.ui.Components.gl0(zaVar);
     }
 }

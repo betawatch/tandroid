@@ -1,89 +1,146 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
+import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
-public final class vr0 extends oz {
-    public final jv0 X;
-    public final /* synthetic */ ur0 Y;
-    public final /* synthetic */ yu0 Z;
+public final class vr0 extends s4.v {
+    public bu0 d;
+    public final /* synthetic */ jv0 e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vr0(yu0 yu0Var, ur0 ur0Var) {
-        super(100, false);
-        this.Z = yu0Var;
-        this.Y = ur0Var;
-        this.X = new jv0();
+    public vr0(jv0 jv0Var) {
+        this.e = jv0Var;
     }
 
-    @Override // s4.o0
-    public final int A() {
-        if (this.Y.h.getAdapter() != this.Z.O) {
-            return 0;
+    @Override // s4.v
+    public final void a(RecyclerView recyclerView, s4.c1 c1Var) {
+        super.a(recyclerView, c1Var);
+        c1Var.a.setPressed(false);
+    }
+
+    @Override // s4.v
+    public final int e(RecyclerView recyclerView, s4.c1 c1Var) {
+        s4.h0 adapter = recyclerView.getAdapter();
+        gv0 gv0Var = adapter instanceof gv0 ? (gv0) adapter : null;
+        if (!k() || gv0Var == null || !gv0Var.M(c1Var.b())) {
+            return s4.v.l(0, 0);
         }
-        return B();
+        cu0 cu0Var = this.e.k0[0];
+        is0 is0Var = cu0Var != null ? cu0Var.h : null;
+        this.d = is0Var;
+        if (is0Var != null) {
+            is0Var.setItemAnimator(cu0Var.d);
+        }
+        return s4.v.l(15, 0);
     }
 
-    @Override // org.telegram.ui.Components.oz
-    public final jv0 D1(int i10) {
-        int i11;
-        int i12;
-        s4.h0 adapter = this.Y.h.getAdapter();
-        yu0 yu0Var = this.Z;
-        nu0[] nu0VarArr = yu0Var.t1;
-        TLRPC.Document document = (adapter != yu0Var.O || nu0VarArr[5].a.isEmpty()) ? null : ((MessageObject) nu0VarArr[5].a.get(i10)).getDocument();
-        jv0 jv0Var = this.X;
-        jv0Var.b = 100.0f;
-        jv0Var.a = 100.0f;
-        if (document != null) {
-            TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 90);
-            if (closestPhotoSizeWithSize != null && (i11 = closestPhotoSizeWithSize.w) != 0 && (i12 = closestPhotoSizeWithSize.h) != 0) {
-                jv0Var.a = i11;
-                jv0Var.b = i12;
-            }
-            ArrayList<TLRPC.DocumentAttribute> arrayList = document.attributes;
-            for (int i13 = 0; i13 < arrayList.size(); i13++) {
-                TLRPC.DocumentAttribute documentAttribute = arrayList.get(i13);
-                if ((documentAttribute instanceof TLRPC.TL_documentAttributeImageSize) || (documentAttribute instanceof TLRPC.TL_documentAttributeVideo)) {
-                    jv0Var.a = documentAttribute.w;
-                    jv0Var.b = documentAttribute.h;
-                    break;
+    @Override // s4.v
+    public final boolean k() {
+        jv0 jv0Var = this.e;
+        if (jv0Var.C1) {
+            return true;
+        }
+        es0 es0Var = jv0Var.W;
+        return es0Var != null && es0Var.w;
+    }
+
+    @Override // s4.v
+    public final boolean n(RecyclerView recyclerView, s4.c1 c1Var, s4.c1 c1Var2) {
+        ai.d9 d9Var;
+        ArrayList arrayList;
+        s4.h0 adapter = recyclerView.getAdapter();
+        gv0 gv0Var = adapter instanceof gv0 ? (gv0) adapter : null;
+        if (gv0Var == null || !gv0Var.M(c1Var.b()) || !gv0Var.M(c1Var2.b())) {
+            return false;
+        }
+        int b10 = c1Var.b();
+        int b11 = c1Var2.b();
+        ArrayList arrayList2 = gv0Var.y;
+        if (!gv0Var.h && (d9Var = gv0Var.s) != null && b10 >= 0 && b10 < d9Var.i.size() && b11 >= 0 && b11 < gv0Var.s.i.size()) {
+            if ((gv0Var.s instanceof ai.u8) || gv0Var.n > 0) {
+                arrayList = new ArrayList();
+                for (int i10 = 0; i10 < gv0Var.s.i.size(); i10++) {
+                    arrayList.add(Integer.valueOf(((MessageObject) gv0Var.s.i.get(i10)).getId()));
                 }
+            } else {
+                arrayList = new ArrayList(gv0Var.s.g);
             }
+            if (!gv0Var.E) {
+                arrayList2.clear();
+                arrayList2.addAll(arrayList);
+                gv0Var.E = true;
+            }
+            MessageObject messageObject = (MessageObject) gv0Var.s.i.get(b10);
+            arrayList.remove(Integer.valueOf(messageObject.getId()));
+            arrayList.add(Utilities.clamp(b11, arrayList.size(), 0), Integer.valueOf(messageObject.getId()));
+            gv0Var.s.C(arrayList, false);
+            gv0Var.p(b10, b11);
         }
-        return jv0Var;
+        return true;
     }
 
-    @Override // s4.s, s4.o0
-    public final void U(of.e eVar, s4.z0 z0Var, View view, s0.d dVar) {
-        super.U(eVar, z0Var, view, dVar);
-        AccessibilityNodeInfo accessibilityNodeInfo = dVar.a;
-        AccessibilityNodeInfo.CollectionItemInfo collectionItemInfo = accessibilityNodeInfo.getCollectionItemInfo();
-        n7.b bVar = collectionItemInfo != null ? new n7.b(collectionItemInfo) : null;
-        if (bVar != null) {
-            Object obj = bVar.a;
-            if (((AccessibilityNodeInfo.CollectionItemInfo) obj).isHeading()) {
-                accessibilityNodeInfo.setCollectionItemInfo(AccessibilityNodeInfo.CollectionItemInfo.obtain(((AccessibilityNodeInfo.CollectionItemInfo) obj).getRowIndex(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getRowSpan(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getColumnIndex(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getColumnSpan(), false));
+    @Override // s4.v
+    public final void p(s4.c1 c1Var, int i10) {
+        ai.d9 d9Var;
+        ArrayList arrayList;
+        bu0 bu0Var = this.d;
+        if (bu0Var != null && c1Var != null) {
+            bu0Var.d1(false);
+        }
+        if (i10 != 0) {
+            bu0 bu0Var2 = this.d;
+            if (bu0Var2 != null) {
+                bu0Var2.I0(false);
             }
+            if (c1Var != null) {
+                c1Var.a.setPressed(true);
+                return;
+            }
+            return;
+        }
+        bu0 bu0Var3 = this.d;
+        if (bu0Var3 != null && (bu0Var3.getAdapter() instanceof gv0)) {
+            gv0 gv0Var = (gv0) this.d.getAdapter();
+            ArrayList arrayList2 = gv0Var.y;
+            if (!gv0Var.h && (d9Var = gv0Var.s) != null && gv0Var.E) {
+                if ((d9Var instanceof ai.u8) || gv0Var.n > 0) {
+                    arrayList = new ArrayList();
+                    for (int i11 = 0; i11 < gv0Var.s.i.size(); i11++) {
+                        arrayList.add(Integer.valueOf(((MessageObject) gv0Var.s.i.get(i11)).getId()));
+                    }
+                } else {
+                    arrayList = d9Var.g;
+                }
+                boolean z10 = arrayList2.size() != arrayList.size();
+                if (!z10) {
+                    int i12 = 0;
+                    while (true) {
+                        if (i12 >= arrayList2.size()) {
+                            break;
+                        }
+                        if (arrayList2.get(i12) != arrayList.get(i12)) {
+                            z10 = true;
+                            break;
+                        }
+                        i12++;
+                    }
+                }
+                if (z10) {
+                    gv0Var.s.C(arrayList, true);
+                }
+                gv0Var.E = false;
+            }
+        }
+        bu0 bu0Var4 = this.d;
+        if (bu0Var4 != null) {
+            bu0Var4.setItemAnimator(null);
         }
     }
 
-    @Override // s4.c0
-    public final void z0(s4.z0 z0Var, int[] iArr) {
-        super.z0(z0Var, iArr);
-        ur0 ur0Var = this.Y;
-        int i10 = ur0Var.F;
-        if (i10 == 0 || yu0.p0(i10)) {
-            iArr[1] = Math.max(iArr[1], org.telegram.ui.Cells.u7.a(1) * 2);
-        } else if (ur0Var.F == 1) {
-            iArr[1] = Math.max(iArr[1], AndroidUtilities.dp(56.0f) * 2);
-        }
+    @Override // s4.v
+    public final void q(s4.c1 c1Var) {
     }
 }

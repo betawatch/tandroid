@@ -13,11 +13,10 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Cells.ja;
-import v7.r8;
-import v7.v7;
+import v7.s8;
+import v7.w7;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes.dex */
 public final class l0 extends g0 {
     public final ImageView A;
@@ -49,13 +48,13 @@ public final class l0 extends g0 {
         CheckBox checkBox = (CheckBox) view.findViewById(R.id.mr_cast_checkbox);
         this.E = checkBox;
         Context context = o0Var.y;
-        Drawable d = r8.d(v7.b(context, R.drawable.mr_cast_checkbox));
-        if (v7.d0.h(context)) {
+        Drawable d = s8.d(w7.b(context, R.drawable.mr_cast_checkbox));
+        if (v7.f0.h(context)) {
             d.setTint(f0.e.c(context, R.color.mr_dynamic_dialog_icon_light));
         }
         checkBox.setButtonDrawable(d);
-        v7.d0.i(context, progressBar);
-        this.F = v7.d0.c(context);
+        v7.f0.i(context, progressBar);
+        this.F = v7.f0.c(context);
         Resources resources = context.getResources();
         DisplayMetrics displayMetrics = resources.getDisplayMetrics();
         TypedValue typedValue = new TypedValue();
@@ -67,7 +66,7 @@ public final class l0 extends g0 {
         if (vVar.g()) {
             return true;
         }
-        ja b10 = this.I.w.r.b(vVar);
+        k2.u b10 = this.I.w.r.b(vVar);
         if (b10 == null) {
             return false;
         }

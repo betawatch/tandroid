@@ -32,18 +32,18 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.e81;
-import org.telegram.ui.Components.f81;
-import org.telegram.ui.Components.g81;
-import org.telegram.ui.Components.wc;
+import org.telegram.ui.Components.t81;
+import org.telegram.ui.Components.u81;
+import org.telegram.ui.Components.v81;
 import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.a01;
-import org.telegram.ui.vl0;
-import org.telegram.ui.xn;
+import org.telegram.ui.da0;
+import org.telegram.ui.wn;
+import org.telegram.ui.yz0;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i3 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -64,7 +64,7 @@ public final /* synthetic */ class i3 implements Utilities.Callback {
     */
     public final void run(Object obj) {
         int[] iArr;
-        f81 f81Var;
+        u81 u81Var;
         ci.y8 y8Var = null;
         r4 = false;
         boolean z10 = false;
@@ -74,7 +74,7 @@ public final /* synthetic */ class i3 implements Utilities.Callback {
                 boolean z11 = this.b;
                 a5 a5Var = e6Var.c1;
                 org.telegram.ui.ActionBar.d6 d6Var = e6Var.B0;
-                new xc(a5Var, d6Var).o(z11 ? wc.h : wc.e, d6Var).j();
+                new yc(a5Var, d6Var).o(z11 ? xc.h : xc.e, d6Var).j();
                 break;
             case 1:
                 Utilities.Callback callback = (Utilities.Callback) this.c;
@@ -92,13 +92,13 @@ public final /* synthetic */ class i3 implements Utilities.Callback {
                         callback.run(null);
                         break;
                     } else {
-                        org.telegram.ui.ActionBar.b2 b2Var = z12 ? new org.telegram.ui.ActionBar.b2(activity, 3, new d()) : null;
+                        org.telegram.ui.ActionBar.a2 a2Var = z12 ? new org.telegram.ui.ActionBar.a2(activity, 3, new d()) : null;
                         if (z12) {
-                            b2Var.q(200L);
+                            a2Var.q(200L);
                         }
                         double latitude = location.getLatitude();
                         double longitude = location.getLongitude();
-                        ed edVar = new ed(z12, b2Var, callback, r4 ? 1 : 0);
+                        ed edVar = new ed(z12, a2Var, callback, r4 ? 1 : 0);
                         Date date = new Date();
                         Calendar calendar = Calendar.getInstance(DesugarTimeZone.getTimeZone("UTC"));
                         calendar.setTime(date);
@@ -124,7 +124,7 @@ public final /* synthetic */ class i3 implements Utilities.Callback {
                             edVar.run(ld.b);
                         }
                         if (z12 && y8Var != null) {
-                            b2Var.setOnCancelListener(new fd(y8Var, r4 ? 1 : 0));
+                            a2Var.setOnCancelListener(new fd(y8Var, r4 ? 1 : 0));
                             break;
                         }
                     }
@@ -216,19 +216,19 @@ public final /* synthetic */ class i3 implements Utilities.Callback {
                 qcVar.invalidate();
                 break;
             case 4:
-                xn xnVar = (xn) this.c;
+                wn wnVar = (wn) this.c;
                 boolean z15 = this.b;
                 View view2 = (View) obj;
-                if (view2 instanceof org.telegram.ui.Cells.t1) {
-                    org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) view2;
-                    if (t1Var.E8 && t1Var.G8) {
+                if (view2 instanceof org.telegram.ui.Cells.u1) {
+                    org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) view2;
+                    if (u1Var.E8 && u1Var.G8) {
                         z10 = true;
                     }
-                    if (z10 != z15 && xnVar.B9()) {
-                        t1Var.E8 = z15;
-                        t1Var.G8 = xnVar.B9();
-                        t1Var.n8 = true;
-                        t1Var.forceLayout();
+                    if (z10 != z15 && wnVar.B9()) {
+                        u1Var.E8 = z15;
+                        u1Var.G8 = wnVar.B9();
+                        u1Var.n8 = true;
+                        u1Var.forceLayout();
                         break;
                     }
                 } else if (view2 instanceof org.telegram.ui.Cells.w0) {
@@ -237,32 +237,32 @@ public final /* synthetic */ class i3 implements Utilities.Callback {
                 }
                 break;
             case 5:
-                g81 g81Var = (g81) this.c;
+                v81 v81Var = (v81) this.c;
                 boolean z16 = this.b;
                 View view3 = (View) obj;
-                g81Var.v.getClass();
+                v81Var.v.getClass();
                 int R = RecyclerView.R(view3);
-                if (view3 instanceof e81) {
-                    ((e81) view3).setReordering(z16 && (f81Var = g81Var.y) != null && ((ka.c) f81Var).d(R));
+                if (view3 instanceof t81) {
+                    ((t81) view3).setReordering(z16 && (u81Var = v81Var.y) != null && ((l.d) u81Var).G(R));
                     break;
                 }
                 break;
             case 6:
-                a01 a01Var = (a01) this.c;
+                yz0 yz0Var = (yz0) this.c;
                 boolean z17 = this.b;
-                ProfileActivity profileActivity = a01Var.b;
+                ProfileActivity profileActivity = yz0Var.b;
                 if (profileActivity.getParentActivity() != null) {
-                    xc.a0(profileActivity).o(z17 ? wc.h : wc.e, null).j();
+                    yc.a0(profileActivity).o(z17 ? xc.h : xc.e, null).j();
                     break;
                 }
                 break;
             case 7:
-                AndroidUtilities.runOnUIThread(new vl0((org.telegram.ui.web.k) this.c, (String) obj, this.b, 10));
+                AndroidUtilities.runOnUIThread(new da0((org.telegram.ui.web.k) this.c, (String) obj, this.b, 11));
                 break;
             case 8:
-                org.telegram.ui.web.y1 y1Var = (org.telegram.ui.web.y1) this.c;
-                y1Var.getMessagesController().addWebBrowserException((String) obj, this.b);
-                y1Var.a.Y2.N(true);
+                org.telegram.ui.web.z1 z1Var = (org.telegram.ui.web.z1) this.c;
+                z1Var.getMessagesController().addWebBrowserException((String) obj, this.b);
+                z1Var.a.Y2.N(true);
                 break;
             default:
                 yh.t5 t5Var = (yh.t5) this.c;

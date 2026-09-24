@@ -11,19 +11,18 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
-import org.telegram.messenger.ul;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.op;
 
-/* compiled from: r8-map-id-6335c94831679a0293b86ea4f052582819b91dec8a01539705019c10615f050f */
+/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
 /* loaded from: classes3.dex */
 public final class z5 extends FrameLayout {
     public org.telegram.ui.Components.w9 a;
     public FrameLayout b;
     public op c;
     public TextView d;
-    public org.telegram.ui.u5 e;
+    public org.telegram.ui.t5 e;
     public int f;
     public int h;
 
@@ -39,7 +38,7 @@ public final class z5 extends FrameLayout {
     }
 
     public void setImage(MediaController.PhotoEntry photoEntry) {
-        org.telegram.ui.u5 u5Var = this.e;
+        org.telegram.ui.t5 t5Var = this.e;
         org.telegram.ui.Components.w9 w9Var = this.a;
         Drawable drawable = getResources().getDrawable(R.drawable.nophotos);
         String str = photoEntry.thumbPath;
@@ -53,21 +52,21 @@ public final class z5 extends FrameLayout {
         }
         w9Var.p(photoEntry.orientation, photoEntry.invert, true);
         if (photoEntry.isLivePhoto()) {
-            u5Var.setVisibility(4);
+            t5Var.setVisibility(4);
             setContentDescription(LocaleController.getString(R.string.AttachLivePhoto));
             w9Var.f("thumb://" + photoEntry.imageId + ":" + photoEntry.path, null, drawable);
             return;
         }
         if (!photoEntry.isVideo) {
-            u5Var.setVisibility(4);
+            t5Var.setVisibility(4);
             setContentDescription(LocaleController.getString(R.string.AttachPhoto));
             w9Var.f("thumb://" + photoEntry.imageId + ":" + photoEntry.path, null, drawable);
             return;
         }
-        u5Var.setVisibility(0);
+        t5Var.setVisibility(0);
         this.d.setText(AndroidUtilities.formatShortDuration(photoEntry.duration));
         StringBuilder sb2 = new StringBuilder();
-        ul.m(R.string.AttachVideo, ", ", sb2);
+        c1.n(R.string.AttachVideo, ", ", sb2);
         sb2.append(LocaleController.formatDuration(photoEntry.duration));
         setContentDescription(sb2.toString());
         w9Var.f("vthumb://" + photoEntry.imageId + ":" + photoEntry.path, null, drawable);
